@@ -1,0 +1,198 @@
+version: '3.8'
+
+services:
+  # -------------------------------------------------------------
+  # Tier 5. Relational Database for HAPI FHIR Node 1
+  # -------------------------------------------------------------
+  postgres-1:
+    image: postgres:16-alpine
+    container_name: hie-postgres-1
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+      - "-c"
+      - "log_min_duration_statement=0"
+      - "-c"
+      - "log_connections=on"
+      - "-c"
+      - "log_disconnections=on"
+    environment:
+      POSTGRES_DB: fhir_node_1
+      POSTGRES_USER: fhir_user
+      POSTGRES_PASSWORD: fhir_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_1:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fhir_user -d fhir_node_1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Tier 5. Relational Database for HAPI FHIR Node 2
+  # -------------------------------------------------------------
+  postgres-2:
+    image: postgres:16-alpine
+    container_name: hie-postgres-2
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+      - "-c"
+      - "log_min_duration_statement=0"
+      - "-c"
+      - "log_connections=on"
+      - "-c"
+      - "log_disconnections=on"
+    environment:
+      POSTGRES_DB: fhir_node_2
+      POSTGRES_USER: fhir_user
+      POSTGRES_PASSWORD: fhir_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data_2:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fhir_user -d fhir_node_2"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Tier 5. Replicated HAPI FHIR JPA Server Nodes (FHIR R5)
+  # -------------------------------------------------------------
+  hapi-fhir-jpa-server-1:
+    build:
+      context: ./hapi-fhir-jpa-server
+      dockerfile: Dockerfile
+    container_name: hie-hapi-fhir-1
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-1:5432/fhir_node_1
+      SPRING_DATASOURCE_USERNAME: fhir_user
+      SPRING_DATASOURCE_PASSWORD: fhir_password
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgres-1:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - hie-network
+
+  hapi-fhir-jpa-server-2:
+    build:
+      context: ./hapi-fhir-jpa-server
+      dockerfile: Dockerfile
+    container_name: hie-hapi-fhir-2
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-2:5432/fhir_node_2
+      SPRING_DATASOURCE_USERNAME: fhir_user
+      SPRING_DATASOURCE_PASSWORD: fhir_password
+    ports:
+      - "8082:8080"
+    depends_on:
+      postgres-2:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Tier 3 & 4. Infinispan Cluster with Custom FHIR Store SPI
+  # -------------------------------------------------------------
+  infinispan-1:
+    build:
+      context: .
+      dockerfile: infinispan-cluster/Dockerfile
+    container_name: hie-infinispan-node1
+    environment:
+      JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir"
+    ports:
+      - "11222:11222"
+      - "7800:7800"
+    depends_on:
+      hapi-fhir-jpa-server-1:
+        condition: service_healthy
+    networks:
+      - hie-network
+
+  infinispan-2:
+    build:
+      context: .
+      dockerfile: infinispan-cluster/Dockerfile
+    container_name: hie-infinispan-node2
+    environment:
+      JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir"
+    ports:
+      - "11223:11222"
+      - "7801:7800"
+    depends_on:
+      hapi-fhir-jpa-server-2:
+        condition: service_healthy
+      infinispan-1:
+        condition: service_started
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Tier 2. WildFly Jakarta EE Backend-For-Frontend (BEFE)
+  # -------------------------------------------------------------
+  befe:
+    build:
+      context: ./befe
+      dockerfile: Dockerfile
+    container_name: hie-befe
+    environment:
+      INFINISPAN_HOST: infinispan-1
+      INFINISPAN_PORT: 11222
+      INFINISPAN_USER: admin
+      INFINISPAN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+    depends_on:
+      - infinispan-1
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Tier 1. TypeScript / Vue 3 SPA with Nginx Gateway
+  # -------------------------------------------------------------
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: hie-ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - befe
+    networks:
+      - hie-network
+
+networks:
+  hie-network:
+    driver: bridge
+
+volumes:
+  postgres_data_1:
+  postgres_data_2:
