@@ -1,1 +1,48 @@
-/ui/dist/
+# Copyright (c) 2026 Mark Hunter
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# UI dependencies and build outputs
+admin-ui/node_modules/
+admin-ui/dist/
+admin-ui/node/
+presentation-services/admin-ui/node_modules/
+presentation-services/admin-ui/dist/
+presentation-services/admin-ui/node/
+presentation-services/fhir-resource-ui/node_modules/
+presentation-services/fhir-resource-ui/dist/
+presentation-services/fhir-resource-ui/node/
+presentation-services/operations-ui/node_modules/
+presentation-services/operations-ui/dist/
+presentation-services/operations-ui/node/
+
+# Logs and runtime artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+id_file
+**/id_file
+.output.txt
+
+# Maven build output
+target/
+**/target/
+dependency-reduced-pom.xml
+**/dependency-reduced-pom.xml
+
+# IDE/local files
+.idea/
+*.iml

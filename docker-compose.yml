@@ -1,3 +1,18 @@
+# Copyright (c) 2026 Mark Hunter
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 version: '3.8'
 
 services:
@@ -66,11 +81,75 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
+  # Tier 5. Relational Database for Operations Node 1
+  # -------------------------------------------------------------
+  postgres-ops-1:
+    image: postgres:16-alpine
+    container_name: hie-postgres-ops-1
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+      - "-c"
+      - "log_min_duration_statement=0"
+      - "-c"
+      - "log_connections=on"
+      - "-c"
+      - "log_disconnections=on"
+    environment:
+      POSTGRES_DB: ops_node_1
+      POSTGRES_USER: ops_user
+      POSTGRES_PASSWORD: ops_password
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_ops_data_1:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ops_user -d ops_node_1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Tier 5. Relational Database for Operations Node 2
+  # -------------------------------------------------------------
+  postgres-ops-2:
+    image: postgres:16-alpine
+    container_name: hie-postgres-ops-2
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+      - "-c"
+      - "log_min_duration_statement=0"
+      - "-c"
+      - "log_connections=on"
+      - "-c"
+      - "log_disconnections=on"
+    environment:
+      POSTGRES_DB: ops_node_2
+      POSTGRES_USER: ops_user
+      POSTGRES_PASSWORD: ops_password
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_ops_data_2:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ops_user -d ops_node_2"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
   # Tier 5. Replicated HAPI FHIR JPA Server Nodes (FHIR R5)
   # -------------------------------------------------------------
   hapi-fhir-jpa-server-1:
     build:
-      context: ./hapi-fhir-jpa-server
+      context: ./data-services/hapi-fhir-jpa-server
       dockerfile: Dockerfile
     container_name: hie-hapi-fhir-1
     environment:
@@ -94,7 +173,7 @@ services:
 
   hapi-fhir-jpa-server-2:
     build:
-      context: ./hapi-fhir-jpa-server
+      context: ./data-services/hapi-fhir-jpa-server
       dockerfile: Dockerfile
     container_name: hie-hapi-fhir-2
     environment:
@@ -117,20 +196,73 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
+  # Tier 5. Replicated Operations JPA Server Nodes (Non-FHIR & TaskSequences)
+  # -------------------------------------------------------------
+  hie-operations-jpa-server-1:
+    build:
+      context: ./data-services/hie-operations-jpa-server
+      dockerfile: Dockerfile
+    container_name: hie-operations-1
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-ops-1:5432/ops_node_1
+      SPRING_DATASOURCE_USERNAME: ops_user
+      SPRING_DATASOURCE_PASSWORD: ops_password
+    ports:
+      - "8085:8080"
+    depends_on:
+      postgres-ops-1:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - hie-network
+
+  hie-operations-jpa-server-2:
+    build:
+      context: ./data-services/hie-operations-jpa-server
+      dockerfile: Dockerfile
+    container_name: hie-operations-2
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-ops-2:5432/ops_node_2
+      SPRING_DATASOURCE_USERNAME: ops_user
+      SPRING_DATASOURCE_PASSWORD: ops_password
+    ports:
+      - "8086:8080"
+    depends_on:
+      postgres-ops-2:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
   # Tier 3 & 4. Infinispan Cluster with Custom FHIR Store SPI
   # -------------------------------------------------------------
   infinispan-1:
     build:
       context: .
-      dockerfile: infinispan-cluster/Dockerfile
+      dockerfile: data-services/infinispan-cluster/Dockerfile
     container_name: hie-infinispan-node1
     environment:
-      JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir"
+      JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-1:8080/api/operations"
     ports:
       - "11222:11222"
       - "7800:7800"
     depends_on:
       hapi-fhir-jpa-server-1:
+        condition: service_healthy
+      hie-operations-jpa-server-1:
         condition: service_healthy
     networks:
       - hie-network
@@ -138,15 +270,17 @@ services:
   infinispan-2:
     build:
       context: .
-      dockerfile: infinispan-cluster/Dockerfile
+      dockerfile: data-services/infinispan-cluster/Dockerfile
     container_name: hie-infinispan-node2
     environment:
-      JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir"
+      JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-2:8080/api/operations"
     ports:
       - "11223:11222"
       - "7801:7800"
     depends_on:
       hapi-fhir-jpa-server-2:
+        condition: service_healthy
+      hie-operations-jpa-server-2:
         condition: service_healthy
       infinispan-1:
         condition: service_started
@@ -158,7 +292,7 @@ services:
   # -------------------------------------------------------------
   befe:
     build:
-      context: ./befe
+      context: ./presentation-services/befe
       dockerfile: Dockerfile
     container_name: hie-befe
     environment:
@@ -166,8 +300,10 @@ services:
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
       INFINISPAN_PASSWORD: admin
+      OPERATIONS_PORT: 8090
     ports:
       - "8080:8080"
+      - "8090:8090"
       - "9990:9990"
     depends_on:
       - infinispan-1
@@ -175,17 +311,79 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
-  # Tier 1. TypeScript / Vue 3 SPA with Nginx Gateway
+  # Tier 1. TypeScript / Vue 3 SPAs with Nginx Gateway
   # -------------------------------------------------------------
-  ui:
+  fhir-resource-ui:
     build:
-      context: ./ui
+      context: ./presentation-services/fhir-resource-ui
       dockerfile: Dockerfile
-    container_name: hie-ui
+    container_name: hie-fhir-resource-ui
     ports:
       - "3000:80"
     depends_on:
       - befe
+    networks:
+      - hie-network
+
+  operations-ui:
+    build:
+      context: ./presentation-services/operations-ui
+      dockerfile: Dockerfile
+    container_name: hie-operations-ui
+    ports:
+      - "3001:80"
+    depends_on:
+      - befe
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Interfacing Services: MLLP Inbound Gateway (HL7 v2.4 Ingestion & Transformation)
+  # -------------------------------------------------------------
+  mllp-gateway:
+    build:
+      context: ./interfacing-services/mllp-gateway-in
+      dockerfile: Dockerfile
+    container_name: hie-mllp-gateway
+    environment:
+      MLLP_HOST: "0.0.0.0"
+      MLLP_PORT: "2575"
+      INFINISPAN_HOST: infinispan-1
+      INFINISPAN_PORT: 11222
+      INFINISPAN_USER: admin
+      INFINISPAN_PASSWORD: admin
+      TASK_BROKER_HOST: task-processor
+      TASK_BROKER_PORT: 61616
+      TASK_PROCESSOR_URL: http://task-processor:8080/api/queue/event
+    ports:
+      - "2575:2575"
+      - "8084:8080"
+    depends_on:
+      - infinispan-1
+      - task-processor
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Workflow Services. Asynchronous Task Sequence Processor (WildFly + Artemis)
+  # -------------------------------------------------------------
+  task-processor:
+    build:
+      context: ./workflow-services/task-sequence-processor
+      dockerfile: Dockerfile
+    container_name: hie-task-processor
+    environment:
+      INFINISPAN_HOST: infinispan-1
+      INFINISPAN_PORT: 11222
+      INFINISPAN_USER: admin
+      INFINISPAN_PASSWORD: admin
+      TASK_BROKER_HOST: "0.0.0.0"
+      TASK_BROKER_PORT: 61616
+    ports:
+      - "8083:8080"
+      - "61616:61616"
+    depends_on:
+      - infinispan-1
     networks:
       - hie-network
 
@@ -196,3 +394,5 @@ networks:
 volumes:
   postgres_data_1:
   postgres_data_2:
+  postgres_ops_data_1:
+  postgres_ops_data_2:

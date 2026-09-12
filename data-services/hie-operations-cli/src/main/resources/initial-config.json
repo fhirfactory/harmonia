@@ -1,0 +1,191 @@
+{
+  "queues": [
+    {
+      "queueId": "task.processing.queue",
+      "queueName": "task.processing.queue",
+      "address": "task.processing.queue",
+      "routingType": "ANYCAST",
+      "durable": false,
+      "maxConsumers": -1,
+      "enabled": true,
+      "description": "Primary task processing queue for asynchronous background task execution"
+    },
+    {
+      "queueId": "task.event.queue",
+      "queueName": "task.event.queue",
+      "address": "task.event.queue",
+      "routingType": "ANYCAST",
+      "durable": false,
+      "maxConsumers": -1,
+      "enabled": true,
+      "description": "Default task event notification queue for all HIE workflow events"
+    },
+    {
+      "queueId": "task.event.queue.mllp-gateway-default",
+      "queueName": "task.event.queue.mllp-gateway-default",
+      "address": "task.event.queue.mllp-gateway-default",
+      "routingType": "ANYCAST",
+      "durable": false,
+      "gatewayInstanceId": "mllp-gateway-default",
+      "maxConsumers": -1,
+      "enabled": true,
+      "description": "Dedicated event queue for the default MLLP Gateway instance"
+    },
+    {
+      "queueId": "task.event.queue.pas-gw",
+      "queueName": "task.event.queue.pas-gw",
+      "address": "task.event.queue.pas-gw",
+      "routingType": "ANYCAST",
+      "durable": false,
+      "gatewayInstanceId": "pas-gw",
+      "maxConsumers": -1,
+      "enabled": true,
+      "description": "Dedicated event queue for PAS (Patient Administration System) MLLP Gateway"
+    },
+    {
+      "queueId": "task.event.queue.lims-gw",
+      "queueName": "task.event.queue.lims-gw",
+      "address": "task.event.queue.lims-gw",
+      "routingType": "ANYCAST",
+      "durable": false,
+      "gatewayInstanceId": "lims-gw",
+      "maxConsumers": -1,
+      "enabled": true,
+      "description": "Dedicated event queue for LIMS (Laboratory Information System) MLLP Gateway"
+    }
+  ],
+  "sequences": [
+    {
+      "sequenceId": "seq-patient-identity-pipeline",
+      "sequenceName": "Patient Identity and Demographics Pipeline",
+      "description": "Default pipeline for ingesting HL7 ADT events, parsing multi-format clinical messages, extracting demographics, and updating patient identity in the HIE",
+      "version": "1.0.0",
+      "enabled": true,
+      "sourceQueueName": "task.event.queue",
+      "targetGatewayInstances": [
+        "*"
+      ],
+      "targetTriggerTypes": [
+        "*"
+      ],
+      "activityIds": {
+        "1": "message-queue-to-exchange",
+        "2": "patient-identity-update",
+        "3": "patient-demographics-update"
+      },
+      "topicSubscriptions": [
+        {
+          "domain": "Health",
+          "model": "HL7",
+          "modelVersion": "*",
+          "dataElement": "ADT",
+          "dataElementQualifier": "*",
+          "source": "*",
+          "target": "*",
+          "origin": "*",
+          "destination": "*"
+        }
+      ]
+    },
+    {
+      "sequenceId": "seq-admission-pipeline",
+      "sequenceName": "Admission Task Sequence",
+      "description": "Processes patient admission events (A01, A04, A05) and enriches patient records with admission and demographic details",
+      "version": "1.0.0",
+      "enabled": true,
+      "sourceQueueName": "task.event.queue.pas-gw",
+      "targetGatewayInstances": [
+        "pas-gw",
+        "mllp-gateway-default"
+      ],
+      "targetTriggerTypes": [
+        "A01",
+        "A04",
+        "A05"
+      ],
+      "activityIds": {
+        "1": "message-queue-to-exchange",
+        "2": "patient-identity-update",
+        "3": "patient-demographics-update"
+      },
+      "topicSubscriptions": [
+        {
+          "domain": "Health",
+          "model": "HL7",
+          "modelVersion": "*",
+          "dataElement": "ADT",
+          "dataElementQualifier": "A01",
+          "source": "*",
+          "target": "*",
+          "origin": "*",
+          "destination": "*"
+        },
+        {
+          "domain": "Health",
+          "model": "HL7",
+          "modelVersion": "*",
+          "dataElement": "ADT",
+          "dataElementQualifier": "A04",
+          "source": "*",
+          "target": "*",
+          "origin": "*",
+          "destination": "*"
+        },
+        {
+          "domain": "Health",
+          "model": "HL7",
+          "modelVersion": "*",
+          "dataElement": "ADT",
+          "dataElementQualifier": "A05",
+          "source": "*",
+          "target": "*",
+          "origin": "*",
+          "destination": "*"
+        }
+      ]
+    },
+    {
+      "sequenceId": "seq-order-result-pipeline",
+      "sequenceName": "Order & Result Task Sequence",
+      "description": "Processes clinical lab results (ORU^R01) and order notifications (ORM^O01)",
+      "version": "1.0.0",
+      "enabled": true,
+      "sourceQueueName": "task.event.queue.lims-gw",
+      "targetGatewayInstances": [
+        "lims-gw"
+      ],
+      "targetTriggerTypes": [
+        "R01",
+        "O01"
+      ],
+      "activityIds": {
+        "1": "message-queue-to-exchange",
+        "2": "patient-identity-update"
+      },
+      "topicSubscriptions": [
+        {
+          "domain": "Health",
+          "model": "HL7",
+          "modelVersion": "*",
+          "dataElement": "ORU",
+          "dataElementQualifier": "R01",
+          "source": "*",
+          "target": "*",
+          "origin": "*",
+          "destination": "*"
+        },
+        {
+          "domain": "Health",
+          "model": "HL7",
+          "modelVersion": "*",
+          "dataElement": "ORM",
+          "dataElementQualifier": "O01",
+          "source": "*",
+          "target": "*",
+          "origin": "*",
+          "destination": "*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2026 Mark Hunter
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -11,12 +28,26 @@
     <name>HIE Platform Parent</name>
     <description>Modular High-Performance Health Information Exchange (HIE) Platform</description>
 
+    <licenses>
+        <license>
+            <name>GNU General Public License, Version 3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Mark Hunter</name>
+        </developer>
+    </developers>
+
     <modules>
-        <module>hapi-fhir-jpa-server</module>
-        <module>persistence-tier</module>
-        <module>infinispan-cluster</module>
-        <module>befe</module>
-        <module>ui</module>
+        <module>hie-common-models</module>
+        <module>data-services</module>
+        <module>presentation-services</module>
+        <module>interfacing-services</module>
+        <module>workflow-services</module>
     </modules>
 
     <properties>
@@ -28,10 +59,12 @@
 
         <!-- Framework Versions -->
         <spring-boot.version>3.2.5</spring-boot.version>
+        <camel.version>4.4.2</camel.version>
         <hapi-fhir.version>7.2.0</hapi-fhir.version>
         <infinispan.version>15.0.3.Final</infinispan.version>
         <jakartaee-api.version>10.0.0</jakartaee-api.version>
         <wildfly.version>31.0.1.Final</wildfly.version>
+        <artemis.version>2.33.0</artemis.version>
 
         <!-- Testing & Utilities -->
         <junit-jupiter.version>5.10.2</junit-jupiter.version>
@@ -46,6 +79,7 @@
         <!-- Plugin Versions -->
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+        <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
         <node.version>v20.12.2</node.version>
@@ -54,6 +88,20 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- HIE Common Models -->
+            <dependency>
+                <groupId>net.fhirfactory.hie</groupId>
+                <artifactId>hie-common-models</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- HIE MLLP Gateway Base -->
+            <dependency>
+                <groupId>net.fhirfactory.hie</groupId>
+                <artifactId>mllp-gateway-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- Jackson BOM -->
             <dependency>
                 <groupId>com.fasterxml.jackson</groupId>
@@ -72,6 +120,15 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- Infinispan BOM -->
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-bom</artifactId>
+                <version>${infinispan.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- Spring Boot Dependencies -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -81,11 +138,18 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Infinispan BOM -->
+            <!-- Apache Camel BOM -->
             <dependency>
-                <groupId>org.infinispan</groupId>
-                <artifactId>infinispan-bom</artifactId>
-                <version>${infinispan.version}</version>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-bom</artifactId>
+                <version>${camel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-bom</artifactId>
+                <version>${camel.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -127,6 +191,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
