@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.service;
 
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.Provenance;
 import org.hl7.fhir.r5.model.Reference;
 import org.junit.jupiter.api.BeforeEach;
@@ -54,11 +56,13 @@ class ProvenanceServiceTest {
         assertThat(created).isNotNull();
         assertThat(created.getIdPart()).isEqualTo("prov-001");
         assertThat(provenanceService.count()).isEqualTo(1);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(created, FhirConfidentialityEnum.N)).isTrue();
 
         Optional<Provenance> fetched = provenanceService.getById("prov-001");
         assertThat(fetched).isPresent();
         assertThat(fetched.get().getTarget()).hasSize(1);
         assertThat(fetched.get().getTargetFirstRep().getReference()).isEqualTo("Task/MSG-1001");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetched.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Update
         Provenance toUpdate = fetched.get();
@@ -71,6 +75,7 @@ class ProvenanceServiceTest {
         assertThat(updated).isPresent();
         assertThat(updated.get().getEntity()).hasSize(1);
         assertThat(updated.get().getEntityFirstRep().getWhat().getReference()).isEqualTo("Communication/comm-1001");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(updated.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Delete
         boolean deleted = provenanceService.delete("prov-001");

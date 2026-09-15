@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -73,6 +74,7 @@ public class MfnAdministrativeResourceBuilder {
         }
 
         if (StringUtils.isBlank(rawMessage)) {
+            orgMap.values().forEach(FhirSecurityTagManager::applyDefaultSecurityTag);
             return new ArrayList<>(orgMap.values());
         }
 
@@ -276,6 +278,7 @@ public class MfnAdministrativeResourceBuilder {
             }
         }
 
+        orgMap.values().forEach(FhirSecurityTagManager::applyDefaultSecurityTag);
         return new ArrayList<>(orgMap.values());
     }
 
@@ -360,6 +363,7 @@ public class MfnAdministrativeResourceBuilder {
             }
         }
 
+        locationMap.values().forEach(FhirSecurityTagManager::applyDefaultSecurityTag);
         return new ArrayList<>(locationMap.values());
     }
 }

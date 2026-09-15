@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -82,6 +83,7 @@ public class AdtClinicalResourceBuilder {
             condition.setVerificationStatus(new CodeableConcept().addCoding(
                     new Coding("http://terminology.hl7.org/CodeSystem/condition-ver-status", "confirmed", "Confirmed")));
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(condition);
             list.add(condition);
             idx++;
         }
@@ -134,6 +136,7 @@ public class AdtClinicalResourceBuilder {
                 }
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(allergy);
             list.add(allergy);
             idx++;
         }
@@ -198,6 +201,7 @@ public class AdtClinicalResourceBuilder {
                 }
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(obs);
             list.add(obs);
             idx++;
         }
@@ -238,6 +242,7 @@ public class AdtClinicalResourceBuilder {
                 pId.setType(new CodeableConcept().setText("Policy Number"));
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(coverage);
             list.add(coverage);
             idx++;
         }

@@ -20,6 +20,7 @@ package net.fhirfactory.harmonia.mllpgateway.service;
 import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
@@ -89,6 +90,7 @@ public class OutboundTaskResourceBuilder {
         note.setTime(new Date());
         note.setText("Outbound task created and in-progress");
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
         return task;
     }
 
@@ -120,6 +122,7 @@ public class OutboundTaskResourceBuilder {
         output.setType(new CodeableConcept().setText("MLLP Transmission Result"));
         output.setValue(new StringType("ACK=" + response.getAckCode() + ", Success=" + response.isSuccessful()));
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
         return task;
     }
 

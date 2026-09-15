@@ -155,8 +155,30 @@ public class ArtemisConnectionManager implements AutoCloseable, ExceptionListene
     }
 
     public synchronized Session createSession(boolean transacted, int acknowledgeMode) throws JMSException {
-        Connection conn = getConnection();
-        return conn.createSession(transacted, acknowledgeMode);
+        try {
+            Connection conn = getConnection();
+            return conn.createSession(transacted, acknowledgeMode);
+        } catch (JMSException e) {
+            log.warn("Failed to create JMS session, attempting connection refresh: {}", e.getMessage());
+            if (!closed.get()) {
+                try {
+                    if (connection != null) {
+                        try {
+                            connection.close();
+                        } catch (Exception ignored) {
+                        }
+                        connection = null;
+                    }
+                    start();
+                    Connection conn = getConnection();
+                    return conn.createSession(transacted, acknowledgeMode);
+                } catch (Exception retryEx) {
+                    log.error("Failed to re-establish connection while creating session: {}", retryEx.getMessage());
+                    throw e;
+                }
+            }
+            throw e;
+        }
     }
 
     public String buildClusterConnectionUrl(PetasosConfig config) {

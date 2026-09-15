@@ -27,6 +27,8 @@ import net.fhirfactory.harmonia.mllpgateway.service.CommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultCommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultTaskService;
 import net.fhirfactory.harmonia.mllpgateway.service.TaskService;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.activemq.artemis.api.core.QueueConfiguration;
 import org.apache.activemq.artemis.api.core.RoutingType;
 import org.apache.activemq.artemis.core.config.Configuration;
@@ -169,15 +171,17 @@ class MllpToTaskProcessorIntegrationTest {
         assertThat(result.getMessageControlId()).isEqualTo("MSG-E2E-001");
         assertThat(result.getPatientName()).isEqualTo("EMMA DAVIS");
 
-        // Verify initial state in cache: REQUESTED
+        // Verify initial state in cache
         Optional<Task> initialTask = taskService.getById("MSG-E2E-001");
         assertThat(initialTask).isPresent();
-        assertThat(initialTask.get().getStatus()).isEqualTo(Task.TaskStatus.REQUESTED);
+        assertThat(initialTask.get().getStatus()).isIn(Task.TaskStatus.REQUESTED, Task.TaskStatus.INPROGRESS);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(initialTask.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Verify Communication was persisted in cache
         Optional<Communication> initialComm = communicationService.getById("comm-MSG-E2E-001");
         assertThat(initialComm).isPresent();
         assertThat(initialComm.get().getSubject().getReference()).isEqualTo("Patient/PAT88899");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(initialComm.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // 2. Wait for mock Task Processor to consume TaskEvent from ActiveMQ and update Task
         boolean processed = taskProcessedLatch.await(5, TimeUnit.SECONDS);

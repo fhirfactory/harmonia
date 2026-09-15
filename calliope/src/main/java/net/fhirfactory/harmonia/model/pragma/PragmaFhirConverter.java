@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.model.pragma;
 
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Annotation;
@@ -26,8 +27,8 @@ import org.hl7.fhir.r5.model.Coding;
 import org.hl7.fhir.r5.model.Enumerations;
 import org.hl7.fhir.r5.model.Extension;
 import org.hl7.fhir.r5.model.Identifier;
-import org.hl7.fhir.r5.model.MarkdownType;
 import org.hl7.fhir.r5.model.Reference;
+import org.hl7.fhir.r5.model.Resource;
 import org.hl7.fhir.r5.model.StringType;
 import org.hl7.fhir.r5.model.Task;
 
@@ -145,7 +146,9 @@ public final class PragmaFhirConverter {
                 if (inputPayload != null) {
                     task.addInput(inputPayload.toTaskInput());
                     if (inputPayload.isFhirResource() && inputPayload.getResourceReference() != null && inputPayload.getResourceReference().getResource() != null) {
-                        task.addContained((org.hl7.fhir.r5.model.Resource) inputPayload.getResourceReference().getResource());
+                        Resource r = (org.hl7.fhir.r5.model.Resource) inputPayload.getResourceReference().getResource();
+                        FhirSecurityTagManager.applyDefaultSecurityTag(r);
+                        task.addContained(r);
                     }
                 }
             }
@@ -157,7 +160,9 @@ public final class PragmaFhirConverter {
                 if (outputPayload != null) {
                     task.addOutput(outputPayload.toTaskOutput());
                     if (outputPayload.isFhirResource() && outputPayload.getResourceReference() != null && outputPayload.getResourceReference().getResource() != null) {
-                        task.addContained((org.hl7.fhir.r5.model.Resource) outputPayload.getResourceReference().getResource());
+                        Resource r = (org.hl7.fhir.r5.model.Resource) outputPayload.getResourceReference().getResource();
+                        FhirSecurityTagManager.applyDefaultSecurityTag(r);
+                        task.addContained(r);
                     }
                 }
             }
@@ -216,6 +221,13 @@ public final class PragmaFhirConverter {
                     task.addExtension(new Extension(EXTENSION_METADATA_PREFIX + entry.getKey(), new StringType(entry.getValue())));
                 }
             }
+        }
+
+        // 12. Security Tagging
+        if (pragma.getMetadata() != null && pragma.getMetadata().containsKey("confidentiality")) {
+            FhirSecurityTagManager.applySecurityTag(task, pragma.getMetadata().get("confidentiality"));
+        } else {
+            FhirSecurityTagManager.applyDefaultSecurityTag(task);
         }
 
         return task;
@@ -371,6 +383,12 @@ public final class PragmaFhirConverter {
                     }
                 }
             }
+        }
+
+        // 12. Security Tagging
+        if (task.hasMeta() && task.getMeta().hasSecurity()) {
+            FhirSecurityTagManager.getConfidentiality(task).ifPresent(c ->
+                    pragma.addMetadata("confidentiality", c.getCode()));
         }
 
         return pragma;

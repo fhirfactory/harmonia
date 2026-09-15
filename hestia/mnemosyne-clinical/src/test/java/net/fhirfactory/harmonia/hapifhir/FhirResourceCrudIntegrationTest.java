@@ -22,6 +22,8 @@ import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 import ca.uhn.fhir.rest.server.exceptions.ResourceGoneException;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -67,6 +69,7 @@ class FhirResourceCrudIntegrationTest {
         Person fetched = client.read().resource(Person.class).withId(personId).execute();
         assertThat(fetched.getNameFirstRep().getFamily()).isEqualTo("Smith");
         assertThat(fetched.getGender()).isEqualTo(Enumerations.AdministrativeGender.FEMALE);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetched, FhirConfidentialityEnum.N)).isTrue();
 
         // Update
         fetched.getNameFirstRep().setFamily("Johnson");
@@ -75,6 +78,7 @@ class FhirResourceCrudIntegrationTest {
 
         Person updated = client.read().resource(Person.class).withId(personId).execute();
         assertThat(updated.getNameFirstRep().getFamily()).isEqualTo("Johnson");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(updated, FhirConfidentialityEnum.N)).isTrue();
 
         // Search by name
         Bundle bundle = client.search().forResource(Person.class)
@@ -441,5 +445,32 @@ class FhirResourceCrudIntegrationTest {
         client.delete().resourceById(new IdType("DocumentReference", id)).execute();
         assertThatThrownBy(() -> client.read().resource(DocumentReference.class).withId(id).execute())
                 .isInstanceOf(ResourceGoneException.class);
+    }
+
+    @Test
+    @DisplayName("15. Security Tagging: Auto-Enforce Default 'N' and Preserve Explicit 'R'")
+    void testSecurityTagEnforcementAndPreservation() {
+        // 1. Default enforcement on untagged resource
+        Organization untaggedOrg = new Organization();
+        untaggedOrg.setName("General Clinic");
+        MethodOutcome outcome1 = client.create().resource(untaggedOrg).execute();
+        String orgId = outcome1.getId().getIdPart();
+
+        Organization fetchedUntagged = client.read().resource(Organization.class).withId(orgId).execute();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetchedUntagged, FhirConfidentialityEnum.N)).isTrue();
+        assertThat(fetchedUntagged.getMeta().getSecurityFirstRep().getSystem()).isEqualTo(FhirConfidentialityEnum.CONFIDENTIALITY_SYSTEM);
+
+        // 2. Preservation of explicit confidentiality security tag
+        Organization restrictedOrg = new Organization();
+        restrictedOrg.setName("Confidential Mental Health Facility");
+        restrictedOrg.setMeta(new Meta());
+        restrictedOrg.getMeta().addSecurity(new Coding(FhirConfidentialityEnum.CONFIDENTIALITY_SYSTEM, "R", "Restricted"));
+
+        MethodOutcome outcome2 = client.create().resource(restrictedOrg).execute();
+        String restId = outcome2.getId().getIdPart();
+
+        Organization fetchedRestricted = client.read().resource(Organization.class).withId(restId).execute();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetchedRestricted, FhirConfidentialityEnum.R)).isTrue();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetchedRestricted, FhirConfidentialityEnum.N)).isFalse();
     }
 }

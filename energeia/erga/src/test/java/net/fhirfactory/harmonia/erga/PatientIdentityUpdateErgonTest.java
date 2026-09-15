@@ -21,6 +21,8 @@ import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.patient.identity.PatientIdentityUpdateErgon;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -205,6 +207,7 @@ class PatientIdentityUpdateErgonTest {
         Optional<Task> cachedTask = activity.getTaskCacheService().getTask(ergonEvent.getTaskId());
         assertThat(cachedTask).isPresent();
         assertThat(cachedTask.get().getFor().getDisplay()).isEqualTo("MS JANE M TAYLOR");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(cachedTask.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Verify discrete output components and Provenance
         assertThat(resultExchange.getProperty(ErgonBase.PROPERTY_PROVENANCE)).isNotNull();

@@ -19,6 +19,7 @@
 import { ref, onMounted } from 'vue';
 import { useSecurityStore } from '../stores/securityStore';
 import type { Consent } from '../models/fhir';
+import SecurityBadge from '../components/SecurityBadge.vue';
 import { Plus, Search, Trash2, Eye, FileCheck, X } from 'lucide-vue-next';
 
 const store = useSecurityStore();
@@ -110,12 +111,13 @@ const viewDetails = (item: any) => {
             <th>Decision</th>
             <th>Subject</th>
             <th>Identifier</th>
+            <th>Confidentiality</th>
             <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="store.consents.length === 0">
-            <td colspan="7" class="text-center text-slate-500 py-6">No Consents found. Click Register Consent above.</td>
+            <td colspan="8" class="text-center text-slate-500 py-6">No Consents found. Click Register Consent above.</td>
           </tr>
           <tr v-for="c in store.consents" :key="c.id">
             <td class="font-mono text-xs text-emerald-400 font-semibold">{{ c.id }}</td>
@@ -128,6 +130,9 @@ const viewDetails = (item: any) => {
             </td>
             <td class="font-mono text-xs text-slate-300">{{ c.subject?.reference || '-' }}</td>
             <td class="font-mono text-xs text-slate-300">{{ c.identifier?.[0]?.value || '-' }}</td>
+            <td>
+              <SecurityBadge :meta="c.meta" />
+            </td>
             <td class="text-right space-x-2">
               <button @click="viewDetails(c)" class="btn btn-secondary py-1 px-2 text-xs" title="View FHIR JSON">
                 <Eye :size="14" />
@@ -198,9 +203,12 @@ const viewDetails = (item: any) => {
     <div v-if="showDetailModal" class="modal-overlay" @click.self="showDetailModal = false">
       <div class="modal-content max-w-2xl">
         <div class="flex items-center justify-between pb-3 border-b border-[#27344d] mb-4">
-          <h3 class="text-lg font-bold text-white font-mono">
-            {{ selectedResource?.resourceType }}/{{ selectedResource?.id }}
-          </h3>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-bold text-white font-mono">
+              {{ selectedResource?.resourceType }}/{{ selectedResource?.id }}
+            </h3>
+            <SecurityBadge v-if="selectedResource" :meta="selectedResource.meta" />
+          </div>
           <button @click="showDetailModal = false" class="text-slate-400 hover:text-white">
             <X :size="20" />
           </button>

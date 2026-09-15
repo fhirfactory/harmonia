@@ -69,41 +69,65 @@ public class ArtemisPetasosProducer implements PetasosProducer {
             throw new IllegalArgumentException("Message must not be null");
         }
 
-        try {
-            // Use non-transacted AUTO_ACKNOWLEDGE session for producer dispatch
-            Session session = connectionManager.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        int maxAttempts = 5;
+        long backoff = 100;
+        Exception lastException = null;
+
+        for (int attempt = 1; attempt <= maxAttempts; attempt++) {
             try {
-                Destination jmsDestination = destination.isQueue()
-                        ? session.createQueue(destination.getName())
-                        : session.createTopic(destination.getName());
+                // Use non-transacted AUTO_ACKNOWLEDGE session for producer dispatch
+                Session session = connectionManager.createSession(false, Session.AUTO_ACKNOWLEDGE);
+                try {
+                    Destination jmsDestination = destination.isQueue()
+                            ? session.createQueue(destination.getName())
+                            : session.createTopic(destination.getName());
 
-                jakarta.jms.MessageProducer producer = session.createProducer(jmsDestination);
-                producer.setDeliveryMode(message.isDurable() ? jakarta.jms.DeliveryMode.PERSISTENT : jakarta.jms.DeliveryMode.NON_PERSISTENT);
-                producer.setPriority(message.getPriority());
+                    jakarta.jms.MessageProducer producer = session.createProducer(jmsDestination);
+                    producer.setDeliveryMode(message.isDurable() ? jakarta.jms.DeliveryMode.PERSISTENT : jakarta.jms.DeliveryMode.NON_PERSISTENT);
+                    producer.setPriority(message.getPriority());
 
-                if (message.getExpiration() != null) {
-                    long ttl = java.time.Duration.between(java.time.Instant.now(), message.getExpiration()).toMillis();
-                    if (ttl > 0) {
-                        producer.setTimeToLive(ttl);
+                    if (message.getExpiration() != null) {
+                        long ttl = java.time.Duration.between(java.time.Instant.now(), message.getExpiration()).toMillis();
+                        if (ttl > 0) {
+                            producer.setTimeToLive(ttl);
+                        }
+                    }
+
+                    jakarta.jms.Message jmsMessage = ArtemisMessageConverter.toJmsMessage(message, session);
+                    producer.send(jmsMessage);
+
+                    metrics.recordMessageSent();
+                    log.debug("Dispatched PetasosMessage [id={}, correlationId={}, type={}] to destination {}",
+                            message.getMessageId(), message.getCorrelationId(), message.getMessageType(), destination);
+                    return;
+
+                } finally {
+                    try {
+                        session.close();
+                    } catch (Exception ignored) {
                     }
                 }
-
-                jakarta.jms.Message jmsMessage = ArtemisMessageConverter.toJmsMessage(message, session);
-                producer.send(jmsMessage);
-
-                metrics.recordMessageSent();
-                log.debug("Dispatched PetasosMessage [id={}, correlationId={}, type={}] to destination {}",
-                        message.getMessageId(), message.getCorrelationId(), message.getMessageType(), destination);
-
-            } finally {
-                session.close();
+            } catch (Exception e) {
+                lastException = e;
+                metrics.recordProcessingFailure();
+                if (attempt < maxAttempts) {
+                    log.warn("Attempt {}/{} failed to send message [id={}] to destination {}: {}. Retrying in {}ms...",
+                            attempt, maxAttempts, message.getMessageId(), destination, e.getMessage(), backoff);
+                    try {
+                        Thread.sleep(backoff);
+                    } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
+                    backoff = Math.min(backoff * 2, 1000);
+                }
             }
-        } catch (Exception e) {
-            metrics.recordProcessingFailure();
-            log.error("Failed to send message [id={}] to destination {}: {}",
-                    message.getMessageId(), destination, e.getMessage(), e);
-            throw new PetasosMessagingException("Failed to send message to " + destination + ": " + e.getMessage(), e);
         }
+
+        log.error("Failed to send message [id={}] to destination {} after {} attempts: {}",
+                message.getMessageId(), destination, maxAttempts, lastException != null ? lastException.getMessage() : "unknown", lastException);
+        throw new PetasosMessagingException("Failed to send message to " + destination + ": "
+                + (lastException != null ? lastException.getMessage() : "unknown"), lastException);
     }
 
     @Override

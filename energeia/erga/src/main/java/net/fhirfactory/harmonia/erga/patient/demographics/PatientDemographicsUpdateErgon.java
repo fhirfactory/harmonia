@@ -23,9 +23,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
+import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -185,6 +187,19 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
                 }
             } else if (body instanceof Patient) {
                 patient = (Patient) body;
+            } else if (body instanceof ErgonEvent) {
+                ErgonEvent event = (ErgonEvent) body;
+                if (StringUtils.isNotBlank(event.getTaskId())) {
+                    task = getTaskCacheService().getTask(event.getTaskId()).orElse(null);
+                    if (task != null && task.hasContained()) {
+                        for (Resource res : task.getContained()) {
+                            if (res instanceof Patient) {
+                                patient = (Patient) res;
+                                break;
+                            }
+                        }
+                    }
+                }
             } else if (StringUtils.isNotBlank(rawPayload)) {
                 String trimmed = rawPayload.trim();
                 if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
@@ -227,6 +242,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
 
         // Set last updated timestamp
         patient.getMeta().setLastUpdated(new Date());
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
 
         // Extract metadata for headers
         String patientId = cleanPatientId(patient.getIdPart());
@@ -288,6 +304,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
         output.setValue(new Reference("Patient/" + patient.getIdPart()).setDisplay(fullName));
 
         task.setLastModified(new Date());
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
 
         // Set updated Task resource on exchange body for TaskProcessingActivity egress
         exchange.getMessage().setBody(task);
@@ -1186,6 +1203,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
         name.setText("Patient Unknown");
 
         patient.setGender(Enumerations.AdministrativeGender.UNKNOWN);
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         return patient;
     }
 

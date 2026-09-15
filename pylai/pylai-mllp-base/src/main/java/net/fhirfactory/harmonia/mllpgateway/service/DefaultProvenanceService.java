@@ -21,6 +21,7 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Provenance;
 import org.infinispan.client.hotrod.RemoteCache;
@@ -84,6 +85,7 @@ public class DefaultProvenanceService implements ProvenanceService {
         if (provenance.getRecorded() == null) {
             provenance.setRecorded(new Date());
         }
+        FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
         provenanceStore.put(id, provenance);
 
         // Write Provenance to Infinispan remote cache
@@ -136,6 +138,7 @@ public class DefaultProvenanceService implements ProvenanceService {
         }
         String cleanId = cleanId(id);
         provenance.setId("Provenance/" + cleanId);
+        FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
         provenanceStore.put(cleanId, provenance);
 
         // Update in remote cache

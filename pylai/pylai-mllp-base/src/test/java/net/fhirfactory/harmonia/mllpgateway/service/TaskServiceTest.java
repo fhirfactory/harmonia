@@ -18,6 +18,8 @@
 package net.fhirfactory.harmonia.mllpgateway.service;
 
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.Enumerations;
 import org.hl7.fhir.r5.model.Reference;
 import org.hl7.fhir.r5.model.Task;
@@ -56,10 +58,12 @@ class TaskServiceTest {
         assertThat(created.getIdPart()).isEqualTo("task-001");
         assertThat(taskService.count()).isEqualTo(1);
         assertThat(ErgonReasonEnum.hasReason(created, ErgonReasonEnum.HIE_SYNTHETIC_TASK)).isTrue();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(created, FhirConfidentialityEnum.N)).isTrue();
 
         Optional<Task> fetched = taskService.getById("task-001");
         assertThat(fetched).isPresent();
         assertThat(fetched.get().getDescription()).isEqualTo("Process HL7 ADT A01 message");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetched.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Update
         Task toUpdate = fetched.get();
@@ -69,6 +73,7 @@ class TaskServiceTest {
         Optional<Task> updated = taskService.getById("task-001");
         assertThat(updated).isPresent();
         assertThat(updated.get().getStatus()).isEqualTo(Task.TaskStatus.INPROGRESS);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(updated.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Delete
         boolean deleted = taskService.delete("task-001");

@@ -21,6 +21,7 @@ import ca.uhn.hl7v2.util.Terser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.mllpgateway.hl7.AdtMessageExtractor;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
@@ -163,6 +164,7 @@ public class AdtCommunicationResourceBuilder {
             payload.setContent(attachment);
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(communication);
         return communication;
     }
 }

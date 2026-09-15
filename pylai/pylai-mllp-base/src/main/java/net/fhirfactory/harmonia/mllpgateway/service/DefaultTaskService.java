@@ -22,6 +22,7 @@ import ca.uhn.fhir.parser.IParser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Task;
 import org.infinispan.client.hotrod.RemoteCache;
@@ -93,6 +94,7 @@ public class DefaultTaskService implements TaskService {
             task.setAuthoredOn(new Date());
         }
         ErgonReasonEnum.ensureSyntheticTaskReason(task);
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
         taskStore.put(id, task);
 
         // Write Task to Infinispan remote cache
@@ -147,6 +149,7 @@ public class DefaultTaskService implements TaskService {
         task.setId("Task/" + cleanId);
         task.setLastModified(new Date());
         ErgonReasonEnum.ensureSyntheticTaskReason(task);
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
         taskStore.put(cleanId, task);
 
         // Update in remote cache

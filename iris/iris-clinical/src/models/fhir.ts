@@ -15,11 +15,21 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+export interface Coding {
+  system?: string;
+  version?: string;
+  code?: string;
+  display?: string;
+  userSelected?: boolean;
+}
+
 export interface Meta {
   versionId?: string;
   lastUpdated?: string;
   source?: string;
   profile?: string[];
+  security?: Coding[];
+  tag?: Coding[];
 }
 
 export interface Identifier {

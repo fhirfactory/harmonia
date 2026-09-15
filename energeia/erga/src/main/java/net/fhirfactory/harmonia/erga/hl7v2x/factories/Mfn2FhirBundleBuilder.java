@@ -23,6 +23,7 @@ import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.util.Terser;
 import ca.uhn.hl7v2.util.idgenerator.NanoTimeGenerator;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
@@ -89,6 +90,7 @@ public class Mfn2FhirBundleBuilder {
             if (parentTask != null) {
                 parentTask.setFor(new Reference("Practitioner/" + fallbackPractitioner.getIdPart()).setDisplay("Unknown Practitioner"));
             }
+            FhirSecurityTagManager.applySecurityTags(bundle);
             return bundle;
         }
 
@@ -174,11 +176,13 @@ public class Mfn2FhirBundleBuilder {
             addEntry(bundle, fallback);
         }
 
+        FhirSecurityTagManager.applySecurityTags(bundle);
         return bundle;
     }
 
     public void addEntry(Bundle bundle, Resource resource) {
         if (resource == null || bundle == null) return;
+        FhirSecurityTagManager.applyDefaultSecurityTag(resource);
         Bundle.BundleEntryComponent entry = bundle.addEntry();
         entry.setFullUrl(resource.getId());
         entry.setResource(resource);

@@ -19,6 +19,8 @@ package net.fhirfactory.harmonia.erga.hl7v2x;
 
 import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import org.apache.camel.CamelContext;
@@ -120,6 +122,11 @@ class Adt2FhirMapperTest {
         // 2. Parse the JSON Bundle and verify
         Bundle bundle = fhirContext.newJsonParser().parseResource(Bundle.class, bundleJson);
         assertThat(bundle.getType()).isEqualTo(Bundle.BundleType.COLLECTION);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(bundle, FhirConfidentialityEnum.N)).isTrue();
+        bundle.getEntry().forEach(entry -> {
+            assertThat(entry.getResource()).isNotNull();
+            assertThat(FhirSecurityTagManager.hasConfidentiality(entry.getResource(), FhirConfidentialityEnum.N)).isTrue();
+        });
 
         Task.TaskOutputComponent originInputOutput = resultTask.getOutput().get(1);
         assertThat(originInputOutput.getType().getText()).contains("Origin Task Input");

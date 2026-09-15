@@ -21,6 +21,8 @@ import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.patient.identity.PatientIdentityUpdateErgon;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -193,6 +195,7 @@ class PatientDemographicsUpdateErgonTest {
         org.hl7.fhir.r5.model.Task cachedTask = activity.getTaskCacheService().getTask(event.getTaskId()).orElse(null);
         assertThat(cachedTask).isNotNull();
         assertThat(cachedTask.getFor().getDisplay()).isEqualTo("ROBERT D JOHNSON");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(cachedTask, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -240,6 +243,7 @@ class PatientDemographicsUpdateErgonTest {
         org.hl7.fhir.r5.model.Task cachedTask = demographicsActivity.getTaskCacheService().getTask(event.getTaskId()).orElse(null);
         assertThat(cachedTask).isNotNull();
         assertThat(cachedTask.getFor().getDisplay()).isEqualTo("ALICE M TAYLOR MS");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(cachedTask, FhirConfidentialityEnum.N)).isTrue();
 
         // Verify patient contained in task has all enriched demographics
         Patient parsed = null;
@@ -250,6 +254,7 @@ class PatientDemographicsUpdateErgonTest {
             }
         }
         assertThat(parsed).isNotNull();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(parsed, FhirConfidentialityEnum.N)).isTrue();
         String parsedId = parsed.getIdPart() != null ? parsed.getIdPart().replace("#", "") : "";
         assertThat(parsedId).isEqualTo("MRN-CHAIN-100");
         assertThat(parsed.getNameFirstRep().getFamily()).isEqualTo("TAYLOR");

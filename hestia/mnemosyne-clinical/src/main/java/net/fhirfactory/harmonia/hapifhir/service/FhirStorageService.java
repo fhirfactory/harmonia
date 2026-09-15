@@ -25,6 +25,7 @@ import ca.uhn.fhir.rest.server.exceptions.UnprocessableEntityException;
 import org.apache.commons.lang3.StringUtils;
 import net.fhirfactory.harmonia.hapifhir.model.FhirResourceEntity;
 import net.fhirfactory.harmonia.hapifhir.repository.FhirResourceRepository;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
@@ -70,6 +71,10 @@ public class FhirStorageService {
             resource.setId(new IdType(resourceType, fhirId, "1"));
         } else {
             resource.setId(new IdType(resourceType, fhirId, "1"));
+        }
+
+        if (resource instanceof Resource res) {
+            FhirSecurityTagManager.applyDefaultSecurityTag(res);
         }
 
         // Set meta version and lastUpdated
@@ -138,6 +143,9 @@ public class FhirStorageService {
         }
 
         resource.setId(new IdType(resourceType, fhirId, String.valueOf(newVersion)));
+        if (resource instanceof Resource res) {
+            FhirSecurityTagManager.applyDefaultSecurityTag(res);
+        }
         Meta meta = ((Resource) resource).getMeta();
         if (meta == null) {
             meta = new Meta();

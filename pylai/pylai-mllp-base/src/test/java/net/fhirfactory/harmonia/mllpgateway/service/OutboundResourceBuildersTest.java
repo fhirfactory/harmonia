@@ -19,6 +19,8 @@ package net.fhirfactory.harmonia.mllpgateway.service;
 
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Enumerations;
@@ -52,11 +54,13 @@ class OutboundResourceBuildersTest {
         assertThat(initialComm.getStatus()).isEqualTo(Enumerations.EventStatus.INPROGRESS);
         assertThat(initialComm.getId()).contains("comm-out-MSG-9001");
         assertThat(initialComm.getPayload()).hasSize(1);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(initialComm, FhirConfidentialityEnum.N)).isTrue();
 
         OutboundMllpResponse response = OutboundMllpResponse.success("MSG-9001", "AA", "MSA|AA|MSG-9001", 30L);
         Communication updatedComm = commBuilder.updateCommunicationWithResponse(initialComm, response);
         assertThat(updatedComm.getStatus()).isEqualTo(Enumerations.EventStatus.COMPLETED);
         assertThat(updatedComm.getPayload()).hasSize(2);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(updatedComm, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -71,11 +75,13 @@ class OutboundResourceBuildersTest {
         assertThat(initialTask.getStatus()).isEqualTo(Task.TaskStatus.INPROGRESS);
         assertThat(initialTask.getId()).contains("task-out-MSG-9002");
         assertThat(initialTask.getFocus().getReference()).isEqualTo(comm.getId());
+        assertThat(FhirSecurityTagManager.hasConfidentiality(initialTask, FhirConfidentialityEnum.N)).isTrue();
 
         OutboundMllpResponse response = OutboundMllpResponse.success("MSG-9002", "AA", "MSA|AA|MSG-9002", 20L);
         Task updatedTask = taskBuilder.updateTaskWithResponse(initialTask, response);
         assertThat(updatedTask.getStatus()).isEqualTo(Task.TaskStatus.COMPLETED);
         assertThat(updatedTask.getOutput()).hasSize(1);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(updatedTask, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -90,5 +96,6 @@ class OutboundResourceBuildersTest {
         assertThat(provenance.getTarget()).hasSize(1);
         assertThat(provenance.getTarget().get(0).getReference()).isEqualTo("Communication/comm-out-MSG-9003");
         assertThat(provenance.getAgent()).hasSize(2);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(provenance, FhirConfidentialityEnum.N)).isTrue();
     }
 }

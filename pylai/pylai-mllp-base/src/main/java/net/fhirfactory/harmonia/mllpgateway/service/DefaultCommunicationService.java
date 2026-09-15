@@ -21,6 +21,7 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Identifier;
@@ -85,6 +86,7 @@ public class DefaultCommunicationService implements CommunicationService {
         if (communication.getReceived() == null) {
             communication.setReceived(new Date());
         }
+        FhirSecurityTagManager.applyDefaultSecurityTag(communication);
         communicationStore.put(id, communication);
 
         // Write Communication to Infinispan remote cache
@@ -137,6 +139,7 @@ public class DefaultCommunicationService implements CommunicationService {
         }
         String cleanId = cleanId(id);
         communication.setId("Communication/" + cleanId);
+        FhirSecurityTagManager.applyDefaultSecurityTag(communication);
         communicationStore.put(cleanId, communication);
 
         // Update in remote cache

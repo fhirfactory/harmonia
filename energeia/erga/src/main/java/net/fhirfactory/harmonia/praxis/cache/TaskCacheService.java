@@ -27,11 +27,9 @@ import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
-import org.hl7.fhir.r5.model.Annotation;
-import org.hl7.fhir.r5.model.CodeableConcept;
-import org.hl7.fhir.r5.model.Provenance;
-import org.hl7.fhir.r5.model.Task;
+import org.hl7.fhir.r5.model.*;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;
 import org.slf4j.Logger;
@@ -130,6 +128,14 @@ public class TaskCacheService {
         }
         try {
             Task task = getJsonParser().parseResource(Task.class, json);
+            if (task != null) {
+                FhirSecurityTagManager.applyDefaultSecurityTag(task);
+                if (task.hasContained()) {
+                    for (Resource r : task.getContained()) {
+                        FhirSecurityTagManager.applyDefaultSecurityTag(r);
+                    }
+                }
+            }
             return Optional.ofNullable(task);
         } catch (Exception e) {
             log.error("Failed to parse cached Task JSON for id: {}", id, e);
@@ -196,6 +202,12 @@ public class TaskCacheService {
             task.setAuthoredOn(new Date());
         }
         ErgonReasonEnum.ensureSyntheticTaskReason(task);
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
+        if (task.hasContained()) {
+            for (Resource r : task.getContained()) {
+                FhirSecurityTagManager.applyDefaultSecurityTag(r);
+            }
+        }
 
         String json = getJsonParser().encodeResourceToString(task);
         putTaskJson(cleanId, json);
@@ -231,6 +243,7 @@ public class TaskCacheService {
         if (provenance.getRecorded() == null) {
             provenance.setRecorded(new Date());
         }
+        FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
 
         String json = getJsonParser().encodeResourceToString(provenance);
         putProvenanceJson(cleanId, json);

@@ -20,6 +20,7 @@ package net.fhirfactory.harmonia.mllpgateway.service;
 import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
@@ -105,6 +106,7 @@ public class OutboundCommunicationResourceBuilder {
             payload.setContent(attachment);
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(communication);
         return communication;
     }
 
@@ -142,6 +144,7 @@ public class OutboundCommunicationResourceBuilder {
             ackPayload.setContent(ackAttachment);
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(communication);
         return communication;
     }
 
