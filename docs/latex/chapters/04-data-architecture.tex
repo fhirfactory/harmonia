@@ -1,0 +1,131 @@
+%% =============================================================================
+%% chapters/04-data-architecture.tex
+%% ArchiMate Data & Information Architecture Layer
+%% =============================================================================
+
+\chapter{Data \& Information Architecture}
+\label{chap:data_architecture}
+
+The Data and Information Architecture layer defines the canonical information models, the task state lifecycle, message transport envelopes, clinical mapping dictionaries, and the 14 supported HL7 FHIR Release 5 (R5) resource schemas.
+
+\section{Canonical Domain Models (\texttt{Calliope})}
+
+Harmonia avoids coupling workflow logic to proprietary or concrete wire formats by establishing strongly-typed canonical domain entities in the \texttt{Calliope} library.
+
+\subsection{1. \texttt{Pragma} (Task State Entity)}
+\texttt{Pragma} represents the single authoritative state representation for an execution task:
+\begin{lstlisting}[language=Java, caption={Canonical Pragma Model Definition in Calliope}]
+public class Pragma implements Serializable {
+    private String pragmaId;         // Unique UUID
+    private String correlationId;    // End-to-end transaction thread
+    private String causationId;      // Triggering event or message ID
+    private String praxisId;         // Workflow sequence definition ID
+    private PragmaStatus status;     // DRAFT, REQUESTED, IN_PROGRESS, COMPLETED, FAILED
+    private Integer priority;        // 1 (Lowest) - 100 (Highest)
+    private Date authoredOn;
+    private Date lastModified;
+    private String source;           // Originating gateway / interface
+    private String destination;      // Target queue or service address
+    private List<ErgonPayload> input = new ArrayList<>();
+    private List<ErgonPayload> output = new ArrayList<>();
+    private List<PragmaCheckpoint> checkpoints = new ArrayList<>();
+    private Map<String, String> metadata = new LinkedHashMap<>();
+}
+\end{lstlisting}
+
+\subsection{2. \texttt{PragmaCheckpoint} (Execution Audit Snapshot)}
+Captures an immutable audit milestone recorded at pipeline transitions:
+\begin{lstlisting}[language=Java, caption={PragmaCheckpoint Model Definition}]
+public class PragmaCheckpoint implements Serializable {
+    private String checkpointId;
+    private String pragmaId;
+    private String ergonId;          // Active Ergon activity
+    private String stageName;        // PIPELINE_INGRESS, PRE_ERGON, POST_ERGON, etc.
+    private Date timestamp;
+    private PragmaStatus status;
+    private String statusMessage;
+    private Integer stepIndex;       // 0-based sequence step
+}
+\end{lstlisting}
+
+\section{The 5-Phase Checkpoint Lifecycle State Flow}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-pragma-state-flow.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Pragma Task State Machine and 5-Phase Checkpoint Lifecycle}
+    \label{fig:pragma_state_flow}
+\end{figure}
+
+The \texttt{PraxisCheckpointManager} stamps and persists snapshots across five deterministic boundaries:
+\begin{enumerate}
+    \item \textbf{\texttt{PIPELINE\_INGRESS}}: Fired when \texttt{PetasosQueueToExchangeConduit} ingests a task from Artemis. Sets status to \texttt{IN\_PROGRESS} and step to \texttt{0}.
+    \item \textbf{\texttt{PRE\_ERGON}}: Fired immediately prior to invoking an individual \texttt{ErgonBase} activity, capturing input payload counts.
+    \item \textbf{\texttt{POST\_ERGON}}: Fired upon successful return from an Ergon step, recording generated output counts and execution duration.
+    \item \textbf{\texttt{PIPELINE\_COMPLETE}}: Fired when the entire Praxis sequence finishes successfully. Sets terminal status to \texttt{COMPLETED}.
+    \item \textbf{\texttt{PIPELINE\_FAILED}}: Fired upon any uncaught exception or \texttt{ErgonException}. Records faulting step, exception class, and stack trace, setting terminal status to \texttt{FAILED}.
+\end{enumerate}
+
+\section{\texttt{PetasosMessage} Transport Envelope}
+
+All asynchronous transport operations across ActiveMQ Artemis use the standard immutable \texttt{PetasosMessage} envelope:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Field} & \textbf{Data Type} & \textbf{Transport Semantic \& Function} \\
+\midrule
+\texttt{messageId} & \texttt{String} & Globally unique UUID. \\
+\texttt{correlationId} & \texttt{String} & Tracks conversational thread or clinical episode. \\
+\texttt{causationId} & \texttt{String} & Identifies immediate predecessor event. \\
+\texttt{messageType} & \texttt{String} & Logical event type (e.g. \texttt{PatientAdmitEvent}). \\
+\texttt{source} / \texttt{destination} & \texttt{String} / \texttt{Destination} & Originating module and target queue address. \\
+\texttt{timestamp} & \texttt{Instant} & Creation timestamp. \\
+\texttt{contentType} & \texttt{String} & MIME type (\texttt{application/json}, \texttt{application/fhir+json}). \\
+\texttt{schemaIdentifier} & \texttt{String} & Canonical StructureDefinition URI. \\
+\texttt{schemaVersion} & \texttt{String} & Model version (\texttt{5.0.0}, \texttt{R5}). \\
+\texttt{payload} & \texttt{byte[]} & Opaque serialized binary/text payload (uninspected by transport). \\
+\texttt{duplicateDetectionId}& \texttt{String} & Mapped to Artemis \texttt{\_AMQ\_DUPL\_ID} for broker deduplication. \\
+\texttt{durable} & \texttt{boolean} & Directs Artemis to write to persistent journal before commit. \\
+\bottomrule
+\end{tabularx}
+\caption{Petasos Standard Message Envelope Attribute Specification}
+\label{tab:petasos_envelope}
+\end{table}
+
+\section{Supported FHIR R5 Resource Schemas}
+
+Harmonia implements full lifecycle CRUD and search capabilities for 14 core FHIR R5 resources:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{4.0cm} X}
+\toprule
+\textbf{FHIR R5 Resource} & \textbf{Domain Classification} & \textbf{Harmonia Platform Role} \\
+\midrule
+\texttt{Patient} & Clinical Individual & Primary care recipient entity with consolidated identifiers. \\
+\texttt{Person} & Demographic Master & Cross-facility master demographic identity. \\
+\texttt{RelatedPerson} & Family / Carer & Emergency contacts, next-of-kin, and legal guardians. \\
+\texttt{Practitioner} & Healthcare Provider & Medical professionals, physicians, and clinical staff. \\
+\texttt{PractitionerRole} & Operational Role & Specialty, location, and organizational assignments for practitioners. \\
+\texttt{Organization} & Facility / Authority & Hospitals, clinics, labs, and health network authorities. \\
+\texttt{Location} & Physical Facility & Wards, rooms, clinics, and physical service delivery sites. \\
+\texttt{HealthcareService} & Clinical Offering & Medical specialties and care services offered at locations. \\
+\texttt{Group} & Cohort Entity & Patient cohorts and specialized care teams. \\
+\texttt{Task} & Workflow Entity & Direct bidirectional projection of \texttt{Pragma} state instances. \\
+\texttt{Communication} & Exchange Audit & Record of incoming MLLP messages and raw wire payloads. \\
+\texttt{DocumentReference} & Clinical Document & Metadata indexing for external clinical notes, CDA, and PDFs. \\
+\texttt{Provenance} & Lineage Tracking & Source attribution, creator identities, and transformation history. \\
+\texttt{AuditEvent} & Security / Access Audit & Detailed audit records capturing all read, write, and failover events. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Supported FHIR R5 Resource Schema Catalog}
+\label{tab:fhir_resources}
+\end{table}
+
+\newpage

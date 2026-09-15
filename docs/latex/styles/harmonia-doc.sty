@@ -1,0 +1,167 @@
+%% =============================================================================
+%% harmonia-doc.sty
+%% Document Styling, Typography, Code Listings & Page Layout for Harmonia
+%% =============================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{styles/harmonia-doc}[2026/09/14 v1.0 Harmonia Document Styling Package]
+
+% --- Page Geometry ---
+\RequirePackage[
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm,
+    headheight=15pt
+]{geometry}
+
+% --- Typography & Fonts ---
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{microtype}
+\RequirePackage{amsmath,amssymb}
+
+% --- Color Management ---
+\RequirePackage[dvipsnames,table]{xcolor}
+\definecolor{harmoniablue}{HTML}{1B365D}
+\definecolor{harmoniaaccent}{HTML}{008080}
+\definecolor{harmoniadark}{HTML}{2C3E50}
+\definecolor{harmonialight}{HTML}{F8F9FA}
+\definecolor{codebg}{HTML}{F4F6F7}
+\definecolor{codeborder}{HTML}{D5D8DC}
+\definecolor{codecomment}{HTML}{7F8C8D}
+\definecolor{codekeyword}{HTML}{1A5276}
+\definecolor{codestring}{HTML}{196F3D}
+
+% --- Tables & Arrays ---
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\RequirePackage{longtable}
+\RequirePackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% --- Graphics & Boxes ---
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\RequirePackage[most]{tcolorbox}
+
+% Callout Boxes
+\newtcolorbox{archinote}[1][]{
+    enhanced,
+    colback=harmonialight,
+    colframe=harmoniablue,
+    arc=3pt,
+    boxrule=1pt,
+    title=\textbf{Architectural Note},
+    fonttitle=\sffamily\bfseries\color{white},
+    colbacktitle=harmoniablue,
+    #1
+}
+
+\newtcolorbox{principlebox}[1]{
+    enhanced,
+    colback=harmonialight,
+    colframe=harmoniaaccent,
+    arc=3pt,
+    boxrule=1pt,
+    title=\textbf{Architectural Principle: #1},
+    fonttitle=\sffamily\bfseries\color{white},
+    colbacktitle=harmoniaaccent
+}
+
+% --- Section Headings ---
+\RequirePackage{titlesec}
+\titleformat{\chapter}[display]
+    {\normalfont\sffamily\huge\bfseries\color{harmoniablue}}
+    {\chaptertitlename\ \thechapter}{16pt}{\Huge\color{harmoniadark}}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+\titleformat{\section}
+    {\normalfont\sffamily\Large\bfseries\color{harmoniablue}}
+    {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+\titleformat{\subsection}
+    {\normalfont\sffamily\large\bfseries\color{harmoniadark}}
+    {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\titleformat{\subsubsection}
+    {\normalfont\sffamily\normalsize\bfseries\color{harmoniablue}}
+    {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
+
+% --- Headers & Footers ---
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small\color{harmoniadark}\leftmark}
+\fancyhead[R]{\sffamily\small\color{harmoniablue}\textbf{Harmonia HIE Architecture}}
+\fancyfoot[C]{\sffamily\small\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\sffamily\small\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% --- Lists & Captions ---
+\RequirePackage{enumitem}
+\setlist{itemsep=2pt, topsep=3pt, parsep=1pt}
+
+\RequirePackage{caption}
+\captionsetup{
+    font={small,sf},
+    labelfont={bf,color=harmoniablue},
+    skip=8pt
+}
+
+% --- Code Listings ---
+\RequirePackage{listings}
+\lstset{
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{codecomment}\itshape,
+    deletekeywords={...},
+    escapeinside={\%*}{*)},
+    extendedchars=true,
+    frame=single,
+    rulecolor=\color{codeborder},
+    keepspaces=true,
+    keywordstyle=\color{codekeyword}\bfseries,
+    numbers=left,
+    numbersep=6pt,
+    numberstyle=\tiny\color{codecomment},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stringstyle=\color{codestring},
+    tabsize=2,
+    xleftmargin=12pt,
+    framexleftmargin=12pt
+}
+
+% --- Hyperlinks ---
+\RequirePackage[
+    colorlinks=true,
+    linkcolor=harmoniablue,
+    citecolor=harmoniaaccent,
+    urlcolor=harmoniablue,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    pdfstartview=FitH,
+    pdftitle={Harmonia Health Information Exchange - ArchiMate 3.2 Architecture Specification},
+    pdfauthor={Harmonia Architecture Team}
+]{hyperref}
+
+\endinput

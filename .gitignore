@@ -17,15 +17,15 @@
 admin-ui/node_modules/
 admin-ui/dist/
 admin-ui/node/
-presentation-services/admin-ui/node_modules/
-presentation-services/admin-ui/dist/
-presentation-services/admin-ui/node/
-presentation-services/fhir-resource-ui/node_modules/
-presentation-services/fhir-resource-ui/dist/
-presentation-services/fhir-resource-ui/node/
-presentation-services/operations-ui/node_modules/
-presentation-services/operations-ui/dist/
-presentation-services/operations-ui/node/
+iris/admin-ui/node_modules/
+iris/admin-ui/dist/
+iris/admin-ui/node/
+iris/iris-clinical/node_modules/
+iris/iris-clinical/dist/
+iris/iris-clinical/node/
+iris/iris-console/node_modules/
+iris/iris-console/dist/
+iris/iris-console/node/
 
 # Logs and runtime artifacts
 *.log

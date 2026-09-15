@@ -1,0 +1,60 @@
+%% =============================================================================
+%% diagrams/fig-motivation-map.tex
+%% ArchiMate Motivation & Strategy Architecture View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Stakeholders ---
+    \node[archi-stakeholder] (stk_hie) at (0, 8.5) {\archibadge{Stakeholder}\archiname{Health Network}\\\archidesc{Regional Operator}};
+    \node[archi-stakeholder] (stk_prov) at (4.2, 8.5) {\archibadge{Stakeholder}\archiname{Healthcare Provider}\\\archidesc{Hospitals \& Clinics}};
+    \node[archi-stakeholder] (stk_clin) at (8.4, 8.5) {\archibadge{Stakeholder}\archiname{Clinician / Care Team}\\\archidesc{Medical Staff}};
+    \node[archi-stakeholder] (stk_pat) at (12.6, 8.5) {\archibadge{Stakeholder}\archiname{Patient}\\\archidesc{Care Recipient}};
+
+    % --- Drivers ---
+    \node[archi-driver] (drv_interop) at (1.0, 6.6) {\archibadge{Driver}\archiname{Clinical Interoperability}\\\archidesc{HL7 v2 to FHIR R5}};
+    \node[archi-driver] (drv_uptime) at (5.2, 6.6) {\archibadge{Driver}\archiname{24/7 Reliability}\\\archidesc{Zero Downtime Operations}};
+    \node[archi-driver] (drv_privacy) at (9.4, 6.6) {\archibadge{Driver}\archiname{Audit \& PHI Privacy}\\\archidesc{Traceability \& Safety}};
+
+    % --- Goals ---
+    \node[archi-goal] (gol_realtime) at (1.0, 4.8) {\archibadge{Goal}\archiname{Real-Time Ingestion}\\\archidesc{Sub-second Pipeline}};
+    \node[archi-goal] (gol_zeroloss) at (5.2, 4.8) {\archibadge{Goal}\archiname{Zero Message Loss}\\\archidesc{Durable Transport}};
+    \node[archi-goal] (gol_subms) at (9.4, 4.8) {\archibadge{Goal}\archiname{Sub-ms Cache Access}\\\archidesc{Distributed Grid}};
+
+    % --- Principles & Requirements ---
+    \node[archi-principle] (prn_atleastonce) at (0.0, 3.0) {\archibadge{Principle}\archiname{At-Least-Once Delivery}\\\archidesc{Idempotent Processing}};
+    \node[archi-requirement] (req_fhir5) at (4.2, 3.0) {\archibadge{Requirement}\archiname{FHIR R5 14-Resource}\\\archidesc{Standard Schemas}};
+    \node[archi-requirement] (req_ha) at (8.4, 3.0) {\archibadge{Requirement}\archiname{Artemis HA Failover}\\\archidesc{Automatic <2s Recovery}};
+    \node[archi-principle] (prn_writebehind) at (12.6, 3.0) {\archibadge{Principle}\archiname{Write-Behind Storage}\\\archidesc{Decoupled Relational IO}};
+
+    % --- Capabilities ---
+    \node[archi-capability] (cap_ingest) at (1.0, 1.2) {\archibadge{Capability}\archiname{Clinical Gateway Ingestion}\\\archidesc{Pylai MLLP / REST}};
+    \node[archi-capability] (cap_msg) at (5.2, 1.2) {\archibadge{Capability}\archiname{Clustered Messaging}\\\archidesc{Petasos HA Transport}};
+    \node[archi-capability] (cap_workflow) at (9.4, 1.2) {\archibadge{Capability}\archiname{Modular Task Execution}\\\archidesc{Ponos / Praxis / Erga}};
+    \node[archi-capability] (cap_grid) at (13.6, 1.2) {\archibadge{Capability}\archiname{In-Memory Cache Grid}\\\archidesc{Hestia / Mneme}};
+
+    % --- Connecting Relationships ---
+    % Stakeholder -> Driver (Association)
+    \draw[archi-association] (stk_hie) -- (drv_interop);
+    \draw[archi-association] (stk_prov) -- (drv_uptime);
+    \draw[archi-association] (stk_clin) -- (drv_interop);
+    \draw[archi-association] (stk_pat) -- (drv_privacy);
+
+    % Driver -> Goal (Influence)
+    \draw[archi-influence] (drv_interop) -- (gol_realtime);
+    \draw[archi-influence] (drv_uptime) -- (gol_zeroloss);
+    \draw[archi-influence] (drv_privacy) -- (gol_subms);
+
+    % Goal -> Principle / Requirement (Realization)
+    \draw[archi-realization] (prn_atleastonce) -- (gol_zeroloss);
+    \draw[archi-realization] (req_fhir5) -- (gol_realtime);
+    \draw[archi-realization] (req_ha) -- (gol_zeroloss);
+    \draw[archi-realization] (prn_writebehind) -- (gol_subms);
+
+    % Principle/Requirement -> Capability (Realization)
+    \draw[archi-realization] (cap_ingest) -- (req_fhir5);
+    \draw[archi-realization] (cap_msg) -- (prn_atleastonce);
+    \draw[archi-realization] (cap_msg) -- (req_ha);
+    \draw[archi-realization] (cap_workflow) -- (req_fhir5);
+    \draw[archi-realization] (cap_grid) -- (prn_writebehind);
+
+\end{tikzpicture}

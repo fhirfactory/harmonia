@@ -1,0 +1,53 @@
+%% =============================================================================
+%% diagrams/fig-deployment-ha.tex
+%% ArchiMate Physical Deployment & Artemis HA Replication Topology
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % Client Tier
+    \node[archi-deployment-node, minimum width=10.0cm] (client_pool) at (6.0, 7.5) {
+        \archibadge{Client Connection Pool}\archiname{Petasos HA Client Runtime}\\
+        \archidesc{Bootstrap: (tcp://pri-a:61616, tcp://bak-a:61617, tcp://pri-b:61618, tcp://bak-b:61619)?ha=true}
+    };
+
+    % Replication Group A Box
+    \node[archi-deployment-node] (pri_a) at (2.5, 4.8) {
+        \archibadge{Live Primary}\archiname{Artemis Primary A}\\
+        \archidesc{Host: 61616, Web: 8161}\\
+        \archidesc{Storage: /vol/artemis-pa}
+    };
+    \node[archi-deployment-node] (bak_a) at (2.5, 1.5) {
+        \archibadge{Passive Backup}\archiname{Artemis Backup A}\\
+        \archidesc{Host: 61617, Web: 8162}\\
+        \archidesc{Storage: /vol/artemis-ba}
+    };
+
+    % Replication Group B Box
+    \node[archi-deployment-node] (pri_b) at (9.5, 4.8) {
+        \archibadge{Live Primary}\archiname{Artemis Primary B}\\
+        \archidesc{Host: 61618, Web: 8163}\\
+        \archidesc{Storage: /vol/artemis-pb}
+    };
+    \node[archi-deployment-node] (bak_b) at (9.5, 1.5) {
+        \archibadge{Passive Backup}\archiname{Artemis Backup B}\\
+        \archidesc{Host: 61619, Web: 8164}\\
+        \archidesc{Storage: /vol/artemis-bb}
+    };
+
+    % --- Connections ---
+    % Client connections to primaries
+    \draw[archi-serving] (pri_a) -- node[left, font=\sffamily\scriptsize]{Active Core TCP} (client_pool);
+    \draw[archi-serving] (pri_b) -- node[right, font=\sffamily\scriptsize]{Active Core TCP} (client_pool);
+
+    % Replication Channels (Group A & Group B)
+    \draw[archi-flow] (pri_a) -- node[left, font=\sffamily\scriptsize]{\textbf{Replication group-a}} (bak_a);
+    \draw[archi-flow] (bak_a) -- node[right, font=\sffamily\scriptsize]{Failback Resync} (pri_a);
+
+    \draw[archi-flow] (pri_b) -- node[left, font=\sffamily\scriptsize]{\textbf{Replication group-b}} (bak_b);
+    \draw[archi-flow] (bak_b) -- node[right, font=\sffamily\scriptsize]{Failback Resync} (pri_b);
+
+    % Server-Side Cluster Mesh
+    \draw[archi-triggering] (pri_a) -- node[above, font=\sffamily\scriptsize]{\textbf{ON\_DEMAND Cluster Mesh}} (pri_b);
+    \draw[archi-triggering] (pri_b) -- node[below, font=\sffamily\scriptsize]{Redistribution Delay = 0} (pri_a);
+
+\end{tikzpicture}

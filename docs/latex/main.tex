@@ -1,0 +1,52 @@
+%% =============================================================================
+%% main.tex
+%% Master Document for Harmonia HIE ArchiMate 3.2 Architecture Specification
+%% =============================================================================
+
+\documentclass[11pt,a4paper,oneside]{report}
+
+% Include Custom Styling Packages
+\usepackage{styles/harmonia-doc}
+\usepackage{styles/harmonia-archimate}
+
+\title{
+    \vspace{-2.0cm}
+    {\Huge\bfseries\color{harmoniablue} Harmonia}\\[0.4cm]
+    {\LARGE\bfseries Health Information Exchange Platform}\\[0.8cm]
+    {\large\scshape ArchiMate 3.2 Technical Architecture Specification \& System Reference}
+}
+\author{
+    \textbf{Harmonia Platform Architecture Team}\\
+    \texttt{architecture@harmonia.health}
+}
+\date{September 2026 --- Version 1.0.0}
+
+\begin{document}
+
+% --- Title Page ---
+\maketitle
+\thispagestyle{empty}
+
+% --- Front Matter ---
+\pagenumbering{roman}
+
+\input{chapters/00-frontmatter.tex}
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+% --- Main Content ---
+\pagenumbering{arabic}
+
+\input{chapters/01-motivation-strategy.tex}
+\input{chapters/02-business-layer.tex}
+\input{chapters/03-application-layer.tex}
+\input{chapters/04-data-architecture.tex}
+\input{chapters/05-technology-layer.tex}
+\input{chapters/06-deployment-ha.tex}
+
+\end{document}

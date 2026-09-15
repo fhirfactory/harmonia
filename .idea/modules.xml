@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/hie.iml" filepath="$PROJECT_DIR$/hie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hie-parent.iml" filepath="$PROJECT_DIR$/hie-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pylai/pylai-mllp-base/mllp-gateway-base.iml" filepath="$PROJECT_DIR$/pylai/pylai-mllp-base/mllp-gateway-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pylai/pylai-mllp-cli/mllp-gateway-cli.iml" filepath="$PROJECT_DIR$/pylai/pylai-mllp-cli/mllp-gateway-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pylai/pylai-mllp-in/mllp-gateway-in.iml" filepath="$PROJECT_DIR$/pylai/pylai-mllp-in/mllp-gateway-in.iml" />
+      <module fileurl="file://$PROJECT_DIR$/energeia/ponos.iml" filepath="$PROJECT_DIR$/energeia/ponos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workflow-services/ponos/task-sequence-processor.iml" filepath="$PROJECT_DIR$/workflow-services/ponos/task-sequence-processor.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,146 @@
+# Copyright (c) 2026 Mark Hunter
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+version: '3.8'
+
+services:
+  # -------------------------------------------------------------
+  # Petasos Artemis HA Cluster: Primary A (Group A)
+  # -------------------------------------------------------------
+  artemis-primary-a:
+    image: apache/activemq-artemis:2.33.0
+    container_name: petasos-artemis-primary-a
+    environment:
+      ARTEMIS_USER: ${ARTEMIS_USER:-admin}
+      ARTEMIS_PASSWORD: ${ARTEMIS_PASSWORD:-adminPassword}
+      CLUSTER_USER: ${CLUSTER_USER:-artemisCluster}
+      CLUSTER_PASSWORD: ${CLUSTER_PASSWORD:-artemisClusterPassword}
+      EXTRA_ARGS: "--override-config /var/lib/artemis-instance/etc-override"
+    ports:
+      - "61616:61616" # CORE/JMS protocol
+      - "8161:8161"   # Management Web Console
+    volumes:
+      - ./artemis/primary-a/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
+      - artemis_primary_a_data:/var/lib/artemis-instance/data
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - petasos-network
+
+  # -------------------------------------------------------------
+  # Petasos Artemis HA Cluster: Backup A (Replicating Group A)
+  # -------------------------------------------------------------
+  artemis-backup-a:
+    image: apache/activemq-artemis:2.33.0
+    container_name: petasos-artemis-backup-a
+    environment:
+      ARTEMIS_USER: ${ARTEMIS_USER:-admin}
+      ARTEMIS_PASSWORD: ${ARTEMIS_PASSWORD:-adminPassword}
+      CLUSTER_USER: ${CLUSTER_USER:-artemisCluster}
+      CLUSTER_PASSWORD: ${CLUSTER_PASSWORD:-artemisClusterPassword}
+      EXTRA_ARGS: "--override-config /var/lib/artemis-instance/etc-override"
+    ports:
+      - "61617:61616" # CORE/JMS protocol (Mapped to 61617)
+      - "8162:8161"   # Management Web Console (Mapped to 8162)
+    volumes:
+      - ./artemis/backup-a/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
+      - artemis_backup_a_data:/var/lib/artemis-instance/data
+    depends_on:
+      artemis-primary-a:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - petasos-network
+
+  # -------------------------------------------------------------
+  # Petasos Artemis HA Cluster: Primary B (Group B)
+  # -------------------------------------------------------------
+  artemis-primary-b:
+    image: apache/activemq-artemis:2.33.0
+    container_name: petasos-artemis-primary-b
+    environment:
+      ARTEMIS_USER: ${ARTEMIS_USER:-admin}
+      ARTEMIS_PASSWORD: ${ARTEMIS_PASSWORD:-adminPassword}
+      CLUSTER_USER: ${CLUSTER_USER:-artemisCluster}
+      CLUSTER_PASSWORD: ${CLUSTER_PASSWORD:-artemisClusterPassword}
+      EXTRA_ARGS: "--override-config /var/lib/artemis-instance/etc-override"
+    ports:
+      - "61618:61616" # CORE/JMS protocol (Mapped to 61618)
+      - "8163:8161"   # Management Web Console (Mapped to 8163)
+    volumes:
+      - ./artemis/primary-b/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
+      - artemis_primary_b_data:/var/lib/artemis-instance/data
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - petasos-network
+
+  # -------------------------------------------------------------
+  # Petasos Artemis HA Cluster: Backup B (Replicating Group B)
+  # -------------------------------------------------------------
+  artemis-backup-b:
+    image: apache/activemq-artemis:2.33.0
+    container_name: petasos-artemis-backup-b
+    environment:
+      ARTEMIS_USER: ${ARTEMIS_USER:-admin}
+      ARTEMIS_PASSWORD: ${ARTEMIS_PASSWORD:-adminPassword}
+      CLUSTER_USER: ${CLUSTER_USER:-artemisCluster}
+      CLUSTER_PASSWORD: ${CLUSTER_PASSWORD:-artemisClusterPassword}
+      EXTRA_ARGS: "--override-config /var/lib/artemis-instance/etc-override"
+    ports:
+      - "61619:61616" # CORE/JMS protocol (Mapped to 61619)
+      - "8164:8161"   # Management Web Console (Mapped to 8164)
+    volumes:
+      - ./artemis/backup-b/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
+      - artemis_backup_b_data:/var/lib/artemis-instance/data
+    depends_on:
+      artemis-primary-b:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - petasos-network
+
+networks:
+  petasos-network:
+    name: petasos-network
+    driver: bridge
+
+volumes:
+  artemis_primary_a_data:
+    name: petasos_artemis_primary_a_data
+  artemis_backup_a_data:
+    name: petasos_artemis_backup_a_data
+  artemis_primary_b_data:
+    name: petasos_artemis_primary_b_data
+  artemis_backup_b_data:
+    name: petasos_artemis_backup_b_data

@@ -1,0 +1,32 @@
+%% =============================================================================
+%% diagrams/fig-pragma-state-flow.tex
+%% ArchiMate Pragma Task Lifecycle & 5-Phase Checkpoint State Flow
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.2cm and 1.2cm, auto]
+
+    % States
+    \node[archi-data-object, fill=archimotivfill, draw=archimotivdraw] (st_draft) at (0.0, 4.0) {\archibadge{Initial State}\archiname{DRAFT / REQUESTED}\\\archidesc{Created at Gateway}};
+    \node[archi-data-object, fill=archiappfill, draw=archiappdraw] (st_progress) at (6.0, 4.0) {\archibadge{Active State}\archiname{IN\_PROGRESS}\\\archidesc{Pipeline Executing}};
+    \node[archi-data-object, fill=architechfill, draw=architechdraw] (st_completed) at (12.0, 5.5) {\archibadge{Terminal State}\archiname{COMPLETED}\\\archidesc{All Erga Success}};
+    \node[archi-data-object, fill=archiimplfill, draw=archiimpldraw] (st_failed) at (12.0, 2.5) {\archibadge{Terminal State}\archiname{FAILED}\\\archidesc{Ergon Fault / Error}};
+
+    % Checkpoints & Stages
+    \node[archi-app-process] (cp_ingress) at (3.0, 5.8) {\archibadge{Checkpoint 1}\archiname{PIPELINE\_INGRESS}\\\archidesc{Conduit Ingestion}};
+    \node[archi-app-process] (cp_ergon) at (6.0, 1.8) {\archibadge{Checkpoints 2 \& 3}\archiname{PRE / POST\_ERGON}\\\archidesc{Step Transitions}};
+    \node[archi-app-process] (cp_complete) at (9.0, 5.8) {\archibadge{Checkpoint 4}\archiname{PIPELINE\_COMPLETE}\\\archidesc{Final Success Audit}};
+    \node[archi-app-process] (cp_fail) at (9.0, 2.5) {\archibadge{Checkpoint 5}\archiname{PIPELINE\_FAILED}\\\archidesc{Exception Context}};
+
+    % Transitions
+    \draw[archi-triggering] (st_draft) -- (cp_ingress);
+    \draw[archi-triggering] (cp_ingress) -- (st_progress);
+
+    \draw[archi-triggering] (st_progress) -- (cp_ergon);
+    \draw[archi-triggering] (cp_ergon) -- (st_progress);
+
+    \draw[archi-triggering] (st_progress) -- (cp_complete);
+    \draw[archi-triggering] (cp_complete) -- (st_completed);
+
+    \draw[archi-triggering] (st_progress) -- (cp_fail);
+    \draw[archi-triggering] (cp_fail) -- (st_failed);
+
+\end{tikzpicture}

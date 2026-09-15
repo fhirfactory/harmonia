@@ -1,0 +1,50 @@
+%% =============================================================================
+%% diagrams/fig-hestia-data-grid.tex
+%% ArchiMate Hestia Data Grid & Write-Behind Persistence Architecture
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % Application Clients
+    \node[archi-app-component] (cli_befe) at (1.5, 8.5) {\archibadge{Client}\archiname{Iris BEFE}\\\archidesc{Clinical/Ops REST}};
+    \node[archi-app-component] (cli_ponos) at (6.0, 8.5) {\archibadge{Client}\archiname{Ponos Engine}\\\archidesc{Checkpoint Writer}};
+    \node[archi-app-component] (cli_pylai) at (10.5, 8.5) {\archibadge{Client}\archiname{Pylai Ingress}\\\archidesc{Communication Log}};
+
+    % HotRod Interface
+    \node[archi-tech-interface] (if_hotrod) at (6.0, 6.8) {\archibadge{Protocol}\archiname{Infinispan HotRod}\\\archidesc{TCP 11222 / 11223}};
+
+    % Mneme Cache Nodes (Group)
+    \node[archi-system-software] (mneme_node1) at (3.5, 5.0) {\archibadge{Infinispan}\archiname{Mneme Node 1}\\\archidesc{Port 11222 / Replica}};
+    \node[archi-system-software] (mneme_node2) at (8.5, 5.0) {\archibadge{Infinispan}\archiname{Mneme Node 2}\\\archidesc{Port 11223 / Replica}};
+
+    % Caches
+    \node[archi-data-object] (cache_task) at (6.0, 3.4) {\archibadge{Replicated Cache}\archiname{task-cache / pragma-cache}\\\archidesc{L1 In-Memory State}};
+
+    % Persistence SPI
+    \node[archi-app-component] (spi_ops) at (3.5, 1.8) {\archibadge{Write-Behind SPI}\archiname{OperationsCacheStore}\\\archidesc{Async REST Store}};
+    \node[archi-app-component] (spi_fhir) at (8.5, 1.8) {\archibadge{Write-Behind SPI}\archiname{FhirRestCacheStore}\\\archidesc{Async REST Store}};
+
+    % Relational Tier
+    \node[archi-app-component] (jpa_ops) at (3.5, 0.0) {\archibadge{Persistence Server}\archiname{Mnemosyne Operations}\\\archidesc{Spring Boot / 8085-8086}};
+    \node[archi-app-component] (jpa_fhir) at (8.5, 0.0) {\archibadge{Persistence Server}\archiname{Mnemosyne Clinical}\\\archidesc{HAPI FHIR / 8081-8082}};
+
+    % --- Relationships ---
+    \draw[archi-serving] (if_hotrod) -- (cli_befe);
+    \draw[archi-serving] (if_hotrod) -- (cli_ponos);
+    \draw[archi-serving] (if_hotrod) -- (cli_pylai);
+
+    \draw[archi-serving] (mneme_node1) -- (if_hotrod);
+    \draw[archi-serving] (mneme_node2) -- (if_hotrod);
+
+    \draw[archi-triggering] (mneme_node1) -- node[above, font=\sffamily\scriptsize]{Replication} (mneme_node2);
+    \draw[archi-triggering] (mneme_node2) -- (mneme_node1);
+
+    \draw[archi-access] (mneme_node1) -- (cache_task);
+    \draw[archi-access] (mneme_node2) -- (cache_task);
+
+    \draw[archi-flow] (cache_task) -- node[left, font=\sffamily\scriptsize]{Async Queue} (spi_ops);
+    \draw[archi-flow] (cache_task) -- node[right, font=\sffamily\scriptsize]{Async Queue} (spi_fhir);
+
+    \draw[archi-flow] (spi_ops) -- (jpa_ops);
+    \draw[archi-flow] (spi_fhir) -- (jpa_fhir);
+
+\end{tikzpicture}

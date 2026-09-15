@@ -1,0 +1,97 @@
+%% =============================================================================
+%% chapters/06-deployment-ha.tex
+%% ArchiMate Physical & High Availability Deployment Architecture Layer
+%% =============================================================================
+
+\chapter{Physical \& High Availability Deployment}
+\label{chap:deployment_ha}
+
+The Physical and Deployment Architecture layer specifies the high-availability infrastructure topology, Apache ActiveMQ Artemis multi-broker replication groups, Infinispan cache grid clustering, Docker Compose deployment configurations, and failover/recovery mechanics.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-deployment-ha.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Physical Deployment \& Multi-Broker ActiveMQ Artemis HA Architecture}
+    \label{fig:deployment_ha}
+\end{figure}
+
+\section{Clustering vs. High Availability (HA) Replication}
+
+Harmonia establishes a clear architectural distinction between horizontal clustering and instance-level replication:
+
+\subsection{1. Server-Side Clustering (\texttt{petasos-cluster})}
+\begin{itemize}
+    \item \textbf{Active-Active Mesh}: Unites multiple live brokers (\texttt{Primary A} and \texttt{Primary B}) into a distributed message routing fabric.
+    \item \textbf{Dynamic Load Distribution (\texttt{ON\_DEMAND})}: Messages published to \texttt{Primary A} are dynamically forwarded across the cluster bridge to \texttt{Primary B} if consumers exist on \texttt{Primary B} and not on \texttt{Primary A}.
+    \item \textbf{Immediate Message Redistribution (\texttt{redistribution-delay = 0})}: When all consumers on one broker disconnect, unconsumed messages are immediately redistributed to alternative nodes with active consumers, preventing queue starvation.
+    \item \textbf{Horizontal Scalability}: Additional Primary/Backup pairs can be introduced dynamically without disrupting existing message flows.
+\end{itemize}
+
+\subsection{2. Journal Replication Groups (\texttt{group-a}, \texttt{group-b})}
+\begin{itemize}
+    \item \textbf{NIO Journal Streaming}: An active Primary continuously streams file journal updates over TCP to its paired passive Backup replica.
+    \item \textbf{Activation on Failure}: If \texttt{Primary A} terminates or loses network connectivity, \texttt{Backup A} detects connection loss within 10 seconds and promotes itself to become the live active broker for \texttt{group-a}.
+    \item \textbf{Automatic Failback (\texttt{allow-failback = true})}: When the failed Primary recovers, it connects to the active Backup, resynchronizes any journal deltas written during downtime, and gracefully resumes the Primary role.
+\end{itemize}
+
+\section{Isolated Persistent Storage Ownership}
+
+To eliminate single points of failure and storage lock contention, multiple brokers \textbf{never share journal directories or filesystems}. Each broker instance owns an independent persistent Docker volume:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{4.0cm} X}
+\toprule
+\textbf{Instance Name} & \textbf{HA Role} & \textbf{Docker Volume} & \textbf{Isolated Storage Path} \\
+\midrule
+\texttt{artemis-primary-a} & Live Primary A & \texttt{artemis\_primary\_a\_data} & \texttt{/var/lib/artemis/data} \\
+\texttt{artemis-backup-a} & Replicating Backup A & \texttt{artemis\_backup\_a\_data} & \texttt{/var/lib/artemis/data} \\
+\texttt{artemis-primary-b} & Live Primary B & \texttt{artemis\_primary\_b\_data} & \texttt{/var/lib/artemis/data} \\
+\texttt{artemis-backup-b} & Replicating Backup B & \texttt{artemis\_backup\_b\_data} & \texttt{/var/lib/artemis/data} \\
+\bottomrule
+\end{tabularx}
+\caption{ActiveMQ Artemis Broker Storage Isolation and Persistent Volume Mapping}
+\label{tab:storage_isolation}
+\end{table}
+
+\section{Client Reconnection \& Failover Configuration}
+
+All Harmonia modules connect to Petasos using a multi-endpoint high-availability bootstrap URL:
+\begin{lstlisting}[language=bash, caption={Petasos Multi-Broker HA Client Bootstrap URL}]
+(tcp://artemis-primary-a:61616,tcp://artemis-backup-a:61617,tcp://artemis-primary-b:61618,tcp://artemis-backup-b:61619)?ha=true&reconnectAttempts=-1&retryInterval=500&maxRetryInterval=2000&retryIntervalMultiplier=1.5&connectionTTL=60000&clientFailureCheckPeriod=10000
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{ha=true}: Enables automatic cluster topology discovery. The client continuously receives live node lists from the brokers.
+    \item \texttt{reconnectAttempts=-1}: Directs the client to attempt reconnection indefinitely during transient network partitions.
+    \item \texttt{retryInterval=500} \& \texttt{maxRetryInterval=2000}: Exponential backoff with jitter prevents thundering herd reconnection storms on broker reboot.
+    \item \texttt{failoverListener}: The \texttt{PetasosArtemisAdapter} registers failover lifecycle listeners to record reconnect telemetry and ensure in-flight transaction integrity.
+\end{itemize}
+
+\section{In-Memory Cache Grid HA Topology (\texttt{Mneme})}
+
+The \texttt{Mneme} distributed cache grid deploys across two clustered Infinispan nodes:
+\begin{itemize}
+    \item \textbf{Replication Strategy}: Caches are configured with \texttt{REPL\_SYNC} mode across \texttt{mneme-node-1} (port \texttt{11222}) and \texttt{mneme-node-2} (port \texttt{11223}).
+    \item \textbf{HotRod Client Smart Routing}: Clients maintain TCP connections to both nodes, automatically routing read/write operations to the nearest available replica.
+    \item \textbf{Node Crash Resilience}: If either node crashes, the surviving node serves read and write traffic without data loss or interruption.
+\end{itemize}
+
+\section{Docker Compose Multi-Container Deployment}
+
+The complete Harmonia platform stack is orchestrated via a unified \texttt{docker-compose.yml} containing:
+\begin{itemize}
+    \item 4 ActiveMQ Artemis instances (Primary A/B, Backup A/B).
+    \item 2 Infinispan distributed cache grid nodes.
+    \item 2 Spring Boot Mnemosyne JPA persistence servers.
+    \item 2 PostgreSQL database servers with persistent volumes.
+    \item 3 WildFly Jakarta EE 10 application containers (\texttt{pylai-mllp-in}, \texttt{ponos}, \texttt{iris-befe}).
+    \item 2 Vue 3 frontend web containers (\texttt{iris-clinical}, \texttt{iris-console}).
+\end{itemize}
+
+Health checks with configurable start periods ensure that dependent containers only boot once their prerequisite messaging, caching, and database services report operational readiness.
+
+\newpage

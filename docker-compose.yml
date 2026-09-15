@@ -145,11 +145,11 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
-  # Tier 5. Replicated HAPI FHIR JPA Server Nodes (FHIR R5)
+  # Tier 5. Replicated Mnemosyne Clinical JPA Server Nodes (FHIR R5)
   # -------------------------------------------------------------
   hapi-fhir-jpa-server-1:
     build:
-      context: ./data-services/hapi-fhir-jpa-server
+      context: ./hestia/mnemosyne-clinical
       dockerfile: Dockerfile
     container_name: hie-hapi-fhir-1
     environment:
@@ -173,7 +173,7 @@ services:
 
   hapi-fhir-jpa-server-2:
     build:
-      context: ./data-services/hapi-fhir-jpa-server
+      context: ./hestia/mnemosyne-clinical
       dockerfile: Dockerfile
     container_name: hie-hapi-fhir-2
     environment:
@@ -196,11 +196,11 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
-  # Tier 5. Replicated Operations JPA Server Nodes (Non-FHIR & TaskSequences)
+  # Tier 5. Replicated Mnemosyne Operations JPA Server Nodes (Non-FHIR & TaskSequences)
   # -------------------------------------------------------------
   hie-operations-jpa-server-1:
     build:
-      context: ./data-services/hie-operations-jpa-server
+      context: ./hestia/mnemosyne-operations
       dockerfile: Dockerfile
     container_name: hie-operations-1
     environment:
@@ -224,7 +224,7 @@ services:
 
   hie-operations-jpa-server-2:
     build:
-      context: ./data-services/hie-operations-jpa-server
+      context: ./hestia/mnemosyne-operations
       dockerfile: Dockerfile
     container_name: hie-operations-2
     environment:
@@ -247,12 +247,12 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
-  # Tier 3 & 4. Infinispan Cluster with Custom FHIR Store SPI
+  # Tier 3 & 4. Mneme (Infinispan) Cluster with Custom Persistence Store SPI
   # -------------------------------------------------------------
   infinispan-1:
     build:
       context: .
-      dockerfile: data-services/infinispan-cluster/Dockerfile
+      dockerfile: hestia/mneme-cluster/Dockerfile
     container_name: hie-infinispan-node1
     environment:
       JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-1:8080/api/operations"
@@ -270,7 +270,7 @@ services:
   infinispan-2:
     build:
       context: .
-      dockerfile: data-services/infinispan-cluster/Dockerfile
+      dockerfile: hestia/mneme-cluster/Dockerfile
     container_name: hie-infinispan-node2
     environment:
       JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-2:8080/api/operations"
@@ -292,7 +292,7 @@ services:
   # -------------------------------------------------------------
   befe:
     build:
-      context: ./presentation-services/befe
+      context: ./iris/iris-befe
       dockerfile: Dockerfile
     container_name: hie-befe
     environment:
@@ -313,11 +313,11 @@ services:
   # -------------------------------------------------------------
   # Tier 1. TypeScript / Vue 3 SPAs with Nginx Gateway
   # -------------------------------------------------------------
-  fhir-resource-ui:
+  iris-clinical:
     build:
-      context: ./presentation-services/fhir-resource-ui
+      context: ./iris/iris-clinical
       dockerfile: Dockerfile
-    container_name: hie-fhir-resource-ui
+    container_name: hie-iris-clinical
     ports:
       - "3000:80"
     depends_on:
@@ -325,11 +325,11 @@ services:
     networks:
       - hie-network
 
-  operations-ui:
+  iris-console:
     build:
-      context: ./presentation-services/operations-ui
+      context: ./iris/iris-console
       dockerfile: Dockerfile
-    container_name: hie-operations-ui
+    container_name: hie-iris-console
     ports:
       - "3001:80"
     depends_on:
@@ -338,11 +338,11 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
-  # Interfacing Services: MLLP Inbound Gateway (HL7 v2.4 Ingestion & Transformation)
+  # Pylai (Interface / Gateway Services): MLLP Inbound Gateway (HL7 v2.4 Ingestion & Transformation)
   # -------------------------------------------------------------
   mllp-gateway:
     build:
-      context: ./interfacing-services/mllp-gateway-in
+      context: ./pylai/pylai-mllp-in
       dockerfile: Dockerfile
     container_name: hie-mllp-gateway
     environment:
@@ -365,11 +365,65 @@ services:
       - hie-network
 
   # -------------------------------------------------------------
-  # Workflow Services. Asynchronous Task Sequence Processor (WildFly + Artemis)
+  # Pylai (Interface / Gateway Services): MLLP Outbound Gateway Instances (Egress)
+  # Demonstrating multi-instance egress with independent dedicated Petasos queues per endpoint
+  # -------------------------------------------------------------
+  mllp-outbound-his:
+    build:
+      context: ./pylai/pylai-mllp-out
+      dockerfile: Dockerfile
+    container_name: hie-mllp-outbound-his
+    environment:
+      MLLP_OUTBOUND_INSTANCE_ID: "mllp-sender-his"
+      MLLP_OUTBOUND_TARGET_ENDPOINT_ID: "HIS_NORTH"
+      MLLP_OUTBOUND_QUEUE_PREFIX: "petasos.queue.mllp.outbound"
+      MLLP_OUTBOUND_PORT: "8087"
+      TASK_PROCESSOR_BROKER_URL: "tcp://task-processor:61616"
+      TASK_PROCESSOR_BROKER_USERNAME: admin
+      TASK_PROCESSOR_BROKER_PASSWORD: admin
+      INFINISPAN_HOST: infinispan-1
+      INFINISPAN_PORT: 11222
+      INFINISPAN_USER: admin
+      INFINISPAN_PASSWORD: admin
+    ports:
+      - "8087:8080"
+    depends_on:
+      - infinispan-1
+      - task-processor
+    networks:
+      - hie-network
+
+  mllp-outbound-lis:
+    build:
+      context: ./pylai/pylai-mllp-out
+      dockerfile: Dockerfile
+    container_name: hie-mllp-outbound-lis
+    environment:
+      MLLP_OUTBOUND_INSTANCE_ID: "mllp-sender-lis"
+      MLLP_OUTBOUND_TARGET_ENDPOINT_ID: "LIS_MAIN"
+      MLLP_OUTBOUND_QUEUE_PREFIX: "petasos.queue.mllp.outbound"
+      MLLP_OUTBOUND_PORT: "8088"
+      TASK_PROCESSOR_BROKER_URL: "tcp://task-processor:61616"
+      TASK_PROCESSOR_BROKER_USERNAME: admin
+      TASK_PROCESSOR_BROKER_PASSWORD: admin
+      INFINISPAN_HOST: infinispan-1
+      INFINISPAN_PORT: 11222
+      INFINISPAN_USER: admin
+      INFINISPAN_PASSWORD: admin
+    ports:
+      - "8088:8080"
+    depends_on:
+      - infinispan-1
+      - task-processor
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Energeia Workflow Services. Asynchronous Task Sequence Processor (WildFly + Artemis)
   # -------------------------------------------------------------
   task-processor:
     build:
-      context: ./workflow-services/task-sequence-processor
+      context: ./energeia/ponos
       dockerfile: Dockerfile
     container_name: hie-task-processor
     environment:

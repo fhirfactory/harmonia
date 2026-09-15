@@ -1,0 +1,87 @@
+%% =============================================================================
+%% chapters/00-frontmatter.tex
+%% Executive Summary, ArchiMate Foundation & System Terminology
+%% =============================================================================
+
+\chapter*{Executive Summary}
+\addcontentsline{toc}{chapter}{Executive Summary}
+
+The \textbf{Harmonia Health Information Exchange (HIE)} is a modular, high-availability, distributed healthcare integration platform engineered for HL7 FHIR Release 5 (R5) compliance, real-time HL7 v2 clinical data ingestion, sub-millisecond in-memory cached access, and resilient asynchronous workflow execution.
+
+Modern healthcare ecosystems demand zero-loss event streaming, high-throughput message translation, resilient task state persistence, and fine-grained clinical data access. Harmonia resolves these challenges through a cohesive five-tier architectural design combining:
+\begin{itemize}
+    \item \textbf{Pylai Ingress Gateways}: High-throughput MLLP and REST ingestion endpoints for clinical events.
+    \item \textbf{Petasos Messaging Subsystem}: High-availability, multi-broker active-active Apache ActiveMQ Artemis messaging cluster with native NIO journal replication and dynamic server-side message load balancing.
+    \item \textbf{Energeia Workflow Engine}: Modular Apache Camel task activities (\textit{Erga}), structured workflow sequence orchestrators (\textit{Praxis}), and WildFly Jakarta EE 10 execution containers (\textit{Ponos}) operating on canonical task instances (\textit{Pragma}).
+    \item \textbf{Hestia Data Services}: Low-latency in-memory data caching grid (\textit{Mneme}) backed by Infinispan 15+ and durable relational relational disk persistence (\textit{Mnemosyne}) backed by PostgreSQL 16+ and Spring Boot HAPI FHIR JPA.
+    \item \textbf{Iris Presentation Services}: Dual-port Jakarta EE Backend-For-Frontend gateway (\textit{Iris BEFE}) and TypeScript / Vue 3 single-page applications for clinical exploration and operational administration.
+\end{itemize}
+
+\section*{ArchiMate 3.2 Architectural Modeling Framework}
+\addcontentsline{toc}{section}{ArchiMate 3.2 Architectural Modeling Framework}
+
+To ensure complete structural rigor, unambiguous domain boundaries, and formal traceability across business, application, and infrastructure tiers, this specification is authored strictly in accordance with \textbf{The Open Group ArchiMate 3.2 Standard}.
+
+The architecture is described across six formal ArchiMate layers:
+\begin{enumerate}
+    \item \textbf{Motivation \& Strategy Layer}: Captures business stakeholders, regulatory drivers, architectural principles, high-level goals, and strategic interoperability capabilities.
+    \item \textbf{Business Layer}: Models healthcare business actors, operational roles, clinical ingestion services, and business process lifecycles.
+    \item \textbf{Application Layer}: Specifies the component landscape, internal module collaborations, application services, and canonical data object flows across the 26 Maven modules.
+    \item \textbf{Data \& Information Layer}: Defines canonical information models, the \texttt{Pragma} task state machine, the \texttt{PetasosMessage} transport envelope, and the 14 supported FHIR R5 resource schemas.
+    \item \textbf{Technology Layer}: Details infrastructure execution nodes, system software runtimes (WildFly, Artemis, Infinispan, PostgreSQL), communication paths, networks, and port allocations.
+    \item \textbf{Physical \& Deployment Layer}: Documents multi-broker high-availability replication pairs, containerization topology, failover mechanics, and disaster recovery pathways.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/legend.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 3.2 Visual Modeling Notation, Layer Color Palette, and Relationship Types}
+    \label{fig:archimate_legend}
+\end{figure}
+
+\section*{Classical Architectural Nomenclature \& System Meanings}
+\addcontentsline{toc}{section}{Classical Architectural Nomenclature \& System Meanings}
+
+Harmonia adopts naming conventions rooted in classical Greek mythology and philosophy. Each name explicitly reflects the functional responsibility and domain boundary of the underlying software component.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{3.2cm} p{3.5cm} X}
+\toprule
+\textbf{Subsystem} & \textbf{Architectural Role} & \textbf{Classical Origin} & \textbf{Platform Responsibilities} \\
+\midrule
+\textbf{\texttt{Harmonia}} & Health Integration Environment & \textit{Harmonia} (Ἁρμονία) --- Goddess of concord and balance. & Overall platform uniting clinical protocols, streaming messaging, cache grids, and relational storage. \\
+\addlinespace
+\textbf{\texttt{Petasos}} & Messaging Transport Subsystem & \textit{Petasos} (πέτασος) --- Winged hat of Hermes, symbol of swift dispatch. & Clustered ActiveMQ Artemis messaging, durable queues, client failover, and \texttt{PetasosMessage} envelopes. \\
+\addlinespace
+\textbf{\texttt{Energeia}} & Workflow Services & \textit{Energeia} (ἐνέργεια) --- Aristotelian actuality and continuous activity. & Top-level workflow services aggregator containing Ponos, Praxis, Erga, and Ponos CLI. \\
+\addlinespace
+\textbf{\texttt{Ponos}} & WorkEngine Execution Container & \textit{Ponos} (Πόνος) --- Personification of industrious toil and labor. & WildFly Jakarta EE 10 container hosting Camel contexts, Petasos conduits, and REST managers. \\
+\addlinespace
+\textbf{\texttt{Erga}} & Modular Task Activities & \textit{Erga} (ἔργα) --- Plural of \textit{Ergon} (ἔργον), works, deeds, or tasks. & Single-responsibility Camel route components (\texttt{ErgonBase}) executing discrete clinical mappings. \\
+\addlinespace
+\textbf{\texttt{Praxis}} & Workflow Sequence Orchestrator & \textit{Praxis} (πρᾶξις) --- Structured action or enactment of theory. & Sequence orchestrator chaining ordered Ergon steps and recording multi-phase state checkpoints. \\
+\addlinespace
+\textbf{\texttt{Pragma}} & Task Instance / State Entity & \textit{Pragma} (πρᾶγμα) --- That which has been done, concrete deed. & Canonical task state model holding inputs, outputs, checkpoints, and bidirectional FHIR \texttt{Task} mapping. \\
+\addlinespace
+\textbf{\texttt{Calliope}} & Canonical Schema Repository & \textit{Calliope} (Καλλιόπη) --- Chief Muse of eloquence and harmonious order. & Shared information models, domain DTOs, schemas, and payload envelopes used across all modules. \\
+\addlinespace
+\textbf{\texttt{Mneme}} & In-Memory Distributed Cache & \textit{Mneme} (Μνήμη) --- Muse of active memory and rapid recall. & Infinispan distributed L1 cache grid providing low-latency \texttt{task-cache} and \texttt{tasksequence-cache}. \\
+\addlinespace
+\textbf{\texttt{Mnemosyne}} & Relational Persistence Tier & \textit{Mnemosyne} (Μνημοσύνη) --- Titaness of durable memory. & Long-term PostgreSQL storage comprising Spring Boot FHIR JPA and Operations JPA servers. \\
+\addlinespace
+\textbf{\texttt{Hestia}} & Data Services Subsystem & \textit{Hestia} (Ἑστία) --- Goddess of the hearth and foundational stability. & Data services aggregator managing caching (Mneme) and persistence (Mnemosyne). \\
+\addlinespace
+\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} (Ἶρις) --- Goddess of the rainbow and divine messenger. & Presentation tier comprising Jakarta EE BEFE gateway, Clinical UI SPA, and Console UI SPA. \\
+\addlinespace
+\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} (Πύλαι) --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways, HL7 parsing, and synthetic test CLI. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Classical Architectural Nomenclature and System Meaning Matrix}
+\label{tab:system_nomenclature}
+\end{table}
+
+\newpage

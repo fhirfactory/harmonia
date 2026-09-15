@@ -1,0 +1,131 @@
+%% =============================================================================
+%% chapters/03-application-layer.tex
+%% ArchiMate Application Component & Service Architecture Layer
+%% =============================================================================
+
+\chapter{Application Architecture}
+\label{chap:application_layer}
+
+The Application Architecture layer models the core software components, internal subsystem collaborations, application services, and application interfaces across Harmonia's 26 Maven modules and presentation SPAs.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-app-overview-5tier.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 5-Tier Application Component Landscape for Harmonia HIE}
+    \label{fig:app_overview_5tier}
+\end{figure}
+
+\section{Presentation Tier: \texttt{Iris} Subsystem}
+
+The \texttt{Iris} subsystem delivers user interfaces and API mediation for clinicians, operations engineers, and administrative operators.
+
+\subsection{\texttt{iris-befe} (Backend-For-Frontend Gateway)}
+\texttt{iris-befe} is a Jakarta EE 10 microprofile application deployed on WildFly providing dual-port isolated REST endpoints:
+\begin{itemize}
+    \item \textbf{Clinical FHIR Port 8080} (\texttt{/api/fhir/\{resourceType\}}): Handles clinical resource queries, FHIR search operations, and CRUD verbs, routing requests directly to the \texttt{Mneme} Infinispan data grid via HotRod protocol.
+    \item \textbf{Operations Port 8090} (\texttt{/api/operations/\{resourceType\}}): Exposes operational telemetry, \texttt{Pragma} task audit histories, and Artemis cluster monitoring endpoints.
+\end{itemize}
+
+\subsection{\texttt{iris-clinical} (Clinical Single-Page Application)}
+A modern web application built with Vue 3, Vite, TypeScript, and Pinia. Provides clinicians with real-time patient lookup, longitudinal medical history timelines, encounter summaries, and diagnostic observation views.
+
+\subsection{\texttt{iris-console} (Operations \& Workflow Console)}
+An administrative single-page application built with Vue 3 and TypeScript. Enables systems engineers to inspect ActiveMQ Artemis broker queue depths, view Infinispan cache topologies, trigger live reload of task sequence configurations, and inspect failing \texttt{Pragma} pipelines.
+
+\section{Interface \& Ingress Tier: \texttt{Pylai} Subsystem}
+
+\texttt{Pylai} serves as the secure edge gateway through which external healthcare facilities exchange data with Harmonia.
+
+\begin{itemize}
+    \item \textbf{\texttt{pylai-mllp-in}}: Hosts an Apache Camel MLLP listener on TCP port \texttt{2575}. It captures HL7 v2 frames (\texttt{<VT>...<FS><CR>}), verifies message integrity, issues immediate HL7 commit acknowledgements (\texttt{ACK}), wraps the payload into a \texttt{PetasosMessage}, and publishes it to Petasos messaging.
+    \item \textbf{\texttt{pylai-mllp-out}}: Dedicated outbound MLLP egress gateway supporting multi-instance deployments with dedicated, independent Petasos queues per destination endpoint (e.g., \texttt{petasos.queue.mllp.outbound.<endpoint-id>}). It features Apache Camel MLLP client routes, strict HL7 v2 ACK/NACK validation, synchronous JAX-RS REST dispatch endpoints (port \texttt{8087}), dynamic destination target resolution, and comprehensive state tracking into Mneme Infinispan cache.
+    \item \textbf{\texttt{pylai-mllp-base}}: Contains shared MLLP framing utilities, outbound request/response models, dynamic destination registry, Camel route builders, and \texttt{Mneme} cache connectors for recording \texttt{Communication}, \texttt{Task}, and \texttt{Provenance} resources.
+    \item \textbf{\texttt{pylai-mllp-cli}}: A diagnostic command-line utility used to generate and dispatch synthetic HL7 v2.4/v2.5 ADT (A01--A40) messages to Pylai gateways for load, functional, and egress testing.
+\end{itemize}
+
+\section{Messaging Transport Subsystem: \texttt{Petasos}}
+
+\texttt{Petasos} provides reliable, durable, and asynchronous message transportation between all Harmonia subsystems, fully encapsulating Apache ActiveMQ Artemis JMS and Core protocol complexity behind clean domain interfaces.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-petasos-messaging.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Petasos Messaging Subsystem \& Clustered Transport Architecture}
+    \label{fig:petasos_messaging}
+\end{figure}
+
+\subsection{\texttt{petasos-api} (Core Abstractions)}
+Defines the client-facing contracts used across Harmonia:
+\begin{itemize}
+    \item \texttt{PetasosProducer}: Synchronous and asynchronous durable message publishing.
+    \item \texttt{PetasosConsumer}: Thread-safe queue polling and event subscription with lifecycle context hooks.
+    \item \texttt{PetasosMessage}: Immutable metadata envelope encapsulating \texttt{messageId}, \texttt{correlationId}, \texttt{causationId}, schema URIs, and payload byte arrays.
+    \item \texttt{PetasosDestination}: Logical address and queue routing identifiers.
+\end{itemize}
+
+\subsection{\texttt{petasos-core} (Serialization \& Deduplication)}
+\begin{itemize}
+    \item \textbf{JSON Envelope Serialization}: High-speed Jackson-based serialization of message headers and payloads.
+    \item \textbf{\texttt{DuplicateDetector}}: An in-memory sliding window cache tracking message IDs to suppress client-side duplicates.
+    \item \textbf{\texttt{PetasosMetricsCollector}}: Thread-safe metrics registry tracking message send/receive counters, failure rates, and reconnection events.
+\end{itemize}
+
+\subsection{\texttt{petasos-artemis} (Artemis Adapter)}
+\begin{itemize}
+    \item \textbf{\texttt{ArtemisConnectionManager}}: Manages pooled JMS connections with automatic reconnect loops, failover listeners (\texttt{FAILURE\_DETECTED}, \texttt{FAILOVER\_COMPLETED}), and exponential backoff retry policies.
+    \item \textbf{\texttt{ArtemisMessageConverter}}: Bidirectional mapping between \texttt{PetasosMessage} and Artemis Core/JMS messages, automatically setting \texttt{\_AMQ\_DUPL\_ID} for broker-level deduplication.
+\end{itemize}
+
+\section{Workflow Services Subsystem: \texttt{Energeia}}
+
+\texttt{Energeia} hosts the task execution and workflow pipeline framework.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-energeia-workflow.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Energeia Workflow Engine \& Sequential Erga Pipeline View}
+    \label{fig:energeia_workflow}
+\end{figure}
+
+\subsection{\texttt{energeia/ponos} (WorkEngine Runtime Container)}
+Deployed on WildFly Jakarta EE 10 (port \texttt{8083}), Ponos hosts the execution environment:
+\begin{itemize}
+    \item \textbf{\texttt{PetasosQueueToExchangeConduit}}: Ingress consumer listening on Petasos queues, extracting incoming \texttt{Pragma} payloads, creating Camel exchanges, and managing acknowledgement lifecycles.
+    \item \textbf{\texttt{PragmaWorkflowDispatcher}}: Resolves matching \texttt{Praxis} workflow definitions based on task metadata and routes exchanges to entry direct endpoints.
+    \item \textbf{\texttt{CamelContextManager}}: Manages the lifecycle of Apache Camel contexts and thread pools.
+\end{itemize}
+
+\subsection{\texttt{energeia/praxis} (Workflow Sequence Orchestration)}
+\begin{itemize}
+    \item \textbf{\texttt{PraxisImplementation}}: Orchestrates ordered sequences of Ergon activities over synchronous Camel direct endpoints (\texttt{direct:seq-<praxisId>-step-<N>}).
+    \item \textbf{\texttt{PraxisCheckpointManager}}: Records the 5-phase execution audit checkpoints (\texttt{PIPELINE\_INGRESS}, \texttt{PRE\_ERGON}, \texttt{POST\_ERGON}, \texttt{PIPELINE\_COMPLETE}, \texttt{PIPELINE\_FAILED}) and snapshots state to Mneme cache.
+    \item \textbf{\texttt{PragmaCacheService}}: Interfaces directly with Mneme's \texttt{task-cache}.
+\end{itemize}
+
+\subsection{\texttt{energeia/erga} (Modular Task Activities)}
+\begin{itemize}
+    \item \textbf{\texttt{ErgonBase}}: Abstract Camel \texttt{RouteBuilder} enforcing the single-responsibility contract: reads from \texttt{pragma.getInput()}, executes domain logic via \texttt{processErgon(Pragma, Exchange)}, and appends resulting artifacts to \texttt{pragma.getOutput()}.
+    \item \textbf{Activity Catalog}: Includes \texttt{Adt2FhirMapper}, \texttt{Mfn2FhirBundle}, \texttt{ExtractPatientFromBundle}, \texttt{PatientIdentityUpdateErgon}, and \texttt{PatientDemographicsUpdateErgon}.
+\end{itemize}
+
+\section{Data Services Subsystem: \texttt{Hestia}}
+
+\texttt{Hestia} delivers multi-tier caching and durable relational persistence:
+\begin{itemize}
+    \item \textbf{\texttt{mneme-cluster}}: 2-node Infinispan 15+ replicated data grid (ports \texttt{11222}--\texttt{11223}) maintaining \texttt{task-cache}, \texttt{tasksequence-cache}, and \texttt{communication-cache}.
+    \item \textbf{\texttt{mneme-persistence}}: Custom \texttt{NonBlockingStore} SPI implementations (\texttt{OperationsRestCacheStore}, \texttt{FhirRestCacheStore}) providing asynchronous write-behind synchronization to Mnemosyne.
+    \item \textbf{\texttt{mnemosyne-clinical}}: Spring Boot HAPI FHIR JPA server (ports \texttt{8081}--\texttt{8082}) backed by PostgreSQL storing canonical FHIR R5 resources.
+    \item \textbf{\texttt{mnemosyne-operations}}: Spring Boot JPA server (ports \texttt{8085}--\texttt{8086}) backed by PostgreSQL storing operational task sequences, Pragmas, and audit logs.
+\end{itemize}
+
+\section{Canonical Schema Repository: \texttt{Calliope}}
+
+\texttt{Calliope} is the shared canonical library defining domain DTOs, the \texttt{Pragma} model, \texttt{ErgonPayload}, and bidirectional converters for FHIR R5 \texttt{Task} resources, guaranteeing type safety across all platform tiers.
+
+\newpage

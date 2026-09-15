@@ -1,0 +1,397 @@
+%% =============================================================================
+%% harmonia-archimate.sty
+%% ArchiMate 3.2 Visual Modeling & TikZ Styling Package for Harmonia HIE
+%% =============================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{styles/harmonia-archimate}[2026/09/14 v1.0 Harmonia ArchiMate 3.2 TikZ Styling Package]
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{calc}
+
+% TikZ Libraries
+\usetikzlibrary{
+    calc,
+    positioning,
+    shapes,
+    shapes.geometric,
+    shapes.symbols,
+    arrows.meta,
+    fit,
+    shadows,
+    backgrounds,
+    decorations.pathmorphing,
+    decorations.markings
+}
+
+% =============================================================================
+% ArchiMate 3.2 Standard Color Palette
+% =============================================================================
+% Motivation & Strategy Layer (Lilac / Purple)
+\definecolor{archimotivfill}{HTML}{E6D0DE}
+\definecolor{archimotivdraw}{HTML}{7A3B69}
+\definecolor{archimotivtext}{HTML}{2B1124}
+
+% Strategy Layer (Sand / Warm Ochre)
+\definecolor{archistratfill}{HTML}{F2E3C6}
+\definecolor{archistratdraw}{HTML}{A67C1E}
+\definecolor{archistrattext}{HTML}{3D2B05}
+
+% Business Layer (Yellow / Amber)
+\definecolor{archibizfill}{HTML}{FFFFB5}
+\definecolor{archibizdraw}{HTML}{9E8B00}
+\definecolor{archibiztext}{HTML}{383200}
+
+% Application Layer (Light Blue / Cyan)
+\definecolor{archiappfill}{HTML}{B5FFFF}
+\definecolor{archiappdraw}{HTML}{008099}
+\definecolor{archiapptext}{HTML}{002E38}
+
+% Technology Layer (Pale Green)
+\definecolor{architechfill}{HTML}{C9E4B5}
+\definecolor{architechdraw}{HTML}{4D8A29}
+\definecolor{architechtext}{HTML}{1A3609}
+
+% Physical & Deployment Layer (Greenish Slate / Olive Green)
+\definecolor{archiphysfill}{HTML}{D5E8D4}
+\definecolor{archiphysdraw}{HTML}{54804E}
+\definecolor{archiphystext}{HTML}{1C3319}
+
+% Implementation & Migration Layer (Rose / Pink)
+\definecolor{archiimplfill}{HTML}{FADBD8}
+\definecolor{archiimpldraw}{HTML}{B03A2E}
+\definecolor{archiimpltext}{HTML}{49120D}
+
+% Data & Information Layer (Pale Teal)
+\definecolor{archidatafill}{HTML}{D1F2EB}
+\definecolor{archidatadraw}{HTML}{117A65}
+\definecolor{archidatatext}{HTML}{0B3C32}
+
+% Group / Plate / Boundary Colors
+\definecolor{archigroupfill}{HTML}{F8F9F9}
+\definecolor{archigroupdraw}{HTML}{BDC3C7}
+\definecolor{archiboxfill}{HTML}{F2F4F4}
+\definecolor{archiboxdraw}{HTML}{95A5A6}
+
+% =============================================================================
+% Base Node Dimensions & Default Geometry
+% =============================================================================
+\tikzset{
+    archimate-base/.style = {
+        align=center,
+        font=\sffamily\footnotesize,
+        line width=0.8pt,
+        inner sep=4pt,
+        text=black,
+        drop shadow={opacity=0.15, shadow xshift=1.5pt, shadow yshift=-1.5pt}
+    },
+    archimate-box/.style = {
+        archimate-base,
+        rectangle,
+        rounded corners=2pt,
+        minimum width=2.8cm,
+        minimum height=1.3cm
+    },
+    archimate-service/.style = {
+        archimate-base,
+        rectangle,
+        rounded corners=9pt,
+        minimum width=2.8cm,
+        minimum height=1.1cm
+    },
+    archimate-interface/.style = {
+        archimate-base,
+        rectangle,
+        rounded corners=1pt,
+        minimum width=2.6cm,
+        minimum height=1.0cm
+    },
+    archimate-process/.style = {
+        archimate-base,
+        rectangle,
+        rounded corners=3pt,
+        minimum width=2.8cm,
+        minimum height=1.2cm
+    },
+    archimate-group/.style = {
+        draw=archigroupdraw,
+        fill=archigroupfill,
+        line width=0.8pt,
+        dashed,
+        rounded corners=4pt,
+        inner sep=10pt
+    },
+    archimate-plate/.style = {
+        draw=archiboxdraw,
+        fill=archiboxfill,
+        line width=0.9pt,
+        rounded corners=4pt,
+        inner sep=12pt
+    }
+}
+
+% =============================================================================
+% Layer-Specific Element Styles
+% =============================================================================
+
+% --- Motivation & Strategy Layer ---
+\tikzset{
+    archi-stakeholder/.style = {
+        archimate-box,
+        fill=archimotivfill,
+        draw=archimotivdraw,
+        text=archimotivtext
+    },
+    archi-driver/.style = {
+        archimate-box,
+        fill=archimotivfill,
+        draw=archimotivdraw,
+        text=archimotivtext
+    },
+    archi-goal/.style = {
+        archimate-box,
+        fill=archimotivfill,
+        draw=archimotivdraw,
+        text=archimotivtext
+    },
+    archi-principle/.style = {
+        archimate-box,
+        fill=archimotivfill,
+        draw=archimotivdraw,
+        text=archimotivtext
+    },
+    archi-requirement/.style = {
+        archimate-box,
+        fill=archimotivfill,
+        draw=archimotivdraw,
+        text=archimotivtext
+    },
+    archi-capability/.style = {
+        archimate-box,
+        fill=archistratfill,
+        draw=archistratdraw,
+        text=archistrattext
+    },
+    archi-valuestream/.style = {
+        archimate-process,
+        fill=archistratfill,
+        draw=archistratdraw,
+        text=archistrattext
+    }
+}
+
+% --- Business Layer ---
+\tikzset{
+    archi-business-actor/.style = {
+        archimate-box,
+        fill=archibizfill,
+        draw=archibizdraw,
+        text=archibiztext
+    },
+    archi-business-role/.style = {
+        archimate-box,
+        fill=archibizfill,
+        draw=archibizdraw,
+        text=archibiztext
+    },
+    archi-business-service/.style = {
+        archimate-service,
+        fill=archibizfill,
+        draw=archibizdraw,
+        text=archibiztext
+    },
+    archi-business-process/.style = {
+        archimate-process,
+        fill=archibizfill,
+        draw=archibizdraw,
+        text=archibiztext
+    },
+    archi-business-event/.style = {
+        archimate-base,
+        signal,
+        signal to=east,
+        fill=archibizfill,
+        draw=archibizdraw,
+        text=archibiztext,
+        minimum width=2.8cm,
+        minimum height=1.1cm
+    },
+    archi-business-object/.style = {
+        archimate-box,
+        fill=archibizfill,
+        draw=archibizdraw,
+        text=archibiztext
+    }
+}
+
+% --- Application Layer ---
+\tikzset{
+    archi-app-component/.style = {
+        archimate-box,
+        fill=archiappfill,
+        draw=archiappdraw,
+        text=archiapptext
+    },
+    archi-app-service/.style = {
+        archimate-service,
+        fill=archiappfill,
+        draw=archiappdraw,
+        text=archiapptext
+    },
+    archi-app-interface/.style = {
+        archimate-interface,
+        fill=archiappfill,
+        draw=archiappdraw,
+        text=archiapptext
+    },
+    archi-app-process/.style = {
+        archimate-process,
+        fill=archiappfill,
+        draw=archiappdraw,
+        text=archiapptext
+    },
+    archi-data-object/.style = {
+        archimate-box,
+        fill=archidatafill,
+        draw=archidatadraw,
+        text=archidatatext
+    }
+}
+
+% --- Technology Layer ---
+\tikzset{
+    archi-node/.style = {
+        archimate-box,
+        fill=architechfill,
+        draw=architechdraw,
+        text=architechtext
+    },
+    archi-device/.style = {
+        archimate-box,
+        fill=architechfill,
+        draw=architechdraw,
+        text=architechtext
+    },
+    archi-system-software/.style = {
+        archimate-box,
+        fill=architechfill,
+        draw=architechdraw,
+        text=architechtext
+    },
+    archi-tech-service/.style = {
+        archimate-service,
+        fill=architechfill,
+        draw=architechdraw,
+        text=architechtext
+    },
+    archi-tech-interface/.style = {
+        archimate-interface,
+        fill=architechfill,
+        draw=architechdraw,
+        text=architechtext
+    },
+    archi-artifact/.style = {
+        archimate-box,
+        fill=architechfill,
+        draw=architechdraw,
+        text=architechtext
+    },
+    archi-comm-path/.style = {
+        draw=architechdraw,
+        line width=1.0pt,
+        dashed
+    }
+}
+
+% --- Physical & Deployment Layer ---
+\tikzset{
+    archi-deployment-node/.style = {
+        archimate-box,
+        fill=archiphysfill,
+        draw=archiphysdraw,
+        text=archiphystext
+    },
+    archi-container/.style = {
+        archimate-box,
+        fill=archiphysfill,
+        draw=archiphysdraw,
+        text=archiphystext
+    }
+}
+
+% =============================================================================
+% ArchiMate 3.2 Formal Relationship Connectors (Arrows)
+% =============================================================================
+\tikzset{
+    % 1. Composition (Solid Line, Solid Diamond at Source)
+    archi-composition/.style = {
+        -{Diamond[length=6pt, width=6pt, fill=black]},
+        line width=0.9pt,
+        draw=black
+    },
+    % 2. Aggregation (Solid Line, Hollow Diamond at Source)
+    archi-aggregation/.style = {
+        -{Diamond[length=6pt, width=6pt, fill=white]},
+        line width=0.9pt,
+        draw=black
+    },
+    % 3. Assignment (Solid Line with Solid Circle at Source, Arrow at Target)
+    archi-assignment/.style = {
+        {Circle[length=4pt, fill=black]}-{Latex[length=5pt, width=4pt]},
+        line width=0.9pt,
+        draw=black
+    },
+    % 4. Realization (Dashed Line, Hollow Triangle Arrow at Target)
+    archi-realization/.style = {
+        -{Triangle[length=6pt, width=6pt, fill=white]},
+        dashed,
+        line width=0.9pt,
+        draw=black
+    },
+    % 5. Serving / Used-By (Solid Line, Open Vee Arrow at Target)
+    archi-serving/.style = {
+        -{Stealth[length=6pt, width=5pt, open]},
+        line width=0.9pt,
+        draw=black
+    },
+    % 6. Access (Dashed Line, Open Vee Arrow at Target)
+    archi-access/.style = {
+        -{Stealth[length=6pt, width=5pt, open]},
+        dashed,
+        line width=0.9pt,
+        draw=black
+    },
+    % 7. Flow (Dashed Line, Solid Filled Arrow at Target)
+    archi-flow/.style = {
+        -{Latex[length=6pt, width=5pt, fill=black]},
+        dashed,
+        line width=0.9pt,
+        draw=black
+    },
+    % 8. Triggering (Solid Line, Solid Filled Arrow at Target)
+    archi-triggering/.style = {
+        -{Latex[length=6pt, width=5pt, fill=black]},
+        line width=1.0pt,
+        draw=black
+    },
+    % 9. Association (Solid Line, No Arrow)
+    archi-association/.style = {
+        -,
+        line width=0.9pt,
+        draw=black
+    },
+    % 10. Influence (Dashed Line, Open Vee Arrow)
+    archi-influence/.style = {
+        -{Stealth[length=5pt, width=4pt, open]},
+        dash pattern=on 3pt off 2pt,
+        line width=0.8pt,
+        draw=black
+    }
+}
+
+% Helper Macros for Stereotypes & Badges
+\newcommand{\archibadge}[1]{{\scriptsize\textbf{\guillemotleft #1\guillemotright}}\\}
+\newcommand{\archiname}[1]{{\textbf{#1}}}
+\newcommand{\archidesc}[1]{{\scriptsize\textit{#1}}}
+
+\endinput

@@ -1,0 +1,43 @@
+%% =============================================================================
+%% diagrams/fig-technology-nodes.tex
+%% ArchiMate Technology Infrastructure, Node & Port Allocation View
+%% =============================================================================
+\begin{tikzpicture}[node distance=0.9cm and 0.8cm, auto]
+
+    % Row 1: Presentation & Gateways
+    \node[archi-node] (node_ui) at (0.0, 7.5) {\archibadge{Web Node}\archiname{Iris SPAs}\\\archidesc{Ports 3000 / 3001}};
+    \node[archi-node] (node_befe) at (4.5, 7.5) {\archibadge{WildFly Node}\archiname{Iris BEFE}\\\archidesc{Ports 8080 / 8090}};
+    \node[archi-node] (node_pylai) at (9.0, 7.5) {\archibadge{Camel Node}\archiname{Pylai Ingress}\\\archidesc{Ports 2575 / 8084}};
+    \node[archi-node] (node_ponos) at (13.5, 7.5) {\archibadge{WildFly Node}\archiname{Ponos Engine}\\\archidesc{Port 8083}};
+
+    % Row 2: Clustered Messaging (Artemis Nodes)
+    \node[archi-system-software] (node_art_pa) at (2.0, 5.0) {\archibadge{ActiveMQ}\archiname{Primary A}\\\archidesc{Port 61616 / 8161}};
+    \node[archi-system-software] (node_art_ba) at (5.5, 5.0) {\archibadge{ActiveMQ}\archiname{Backup A}\\\archidesc{Port 61617 / 8162}};
+    \node[archi-system-software] (node_art_pb) at (9.0, 5.0) {\archibadge{ActiveMQ}\archiname{Primary B}\\\archidesc{Port 61618 / 8163}};
+    \node[archi-system-software] (node_art_bb) at (12.5, 5.0) {\archibadge{ActiveMQ}\archiname{Backup B}\\\archidesc{Port 61619 / 8164}};
+
+    % Row 3: In-Memory Data Grid (Infinispan Nodes)
+    \node[archi-system-software] (node_mneme_1) at (4.5, 2.5) {\archibadge{Infinispan Grid}\archiname{Mneme-1}\\\archidesc{HotRod 11222}};
+    \node[archi-system-software] (node_mneme_2) at (10.0, 2.5) {\archibadge{Infinispan Grid}\archiname{Mneme-2}\\\archidesc{HotRod 11223}};
+
+    % Row 4: Persistence Servers & Relational Databases
+    \node[archi-system-software] (node_jpa_clin) at (2.0, 0.2) {\archibadge{Spring Boot}\archiname{Mnemosyne Clin}\\\archidesc{Ports 8081/8082}};
+    \node[archi-system-software] (node_db_clin) at (5.5, 0.2) {\archibadge{PostgreSQL 16}\archiname{Clinical DB}\\\archidesc{Ports 5432/5433}};
+    \node[archi-system-software] (node_jpa_ops) at (9.0, 0.2) {\archibadge{Spring Boot}\archiname{Mnemosyne Ops}\\\archidesc{Ports 8085/8086}};
+    \node[archi-system-software] (node_db_ops) at (12.5, 0.2) {\archibadge{PostgreSQL 16}\archiname{Operations DB}\\\archidesc{Ports 5434/5435}};
+
+    % --- Inter-Node Paths ---
+    \draw[archi-serving] (node_befe) -- node[above, font=\sffamily\tiny]{REST} (node_ui);
+    \draw[archi-flow] (node_pylai) -- node[above, font=\sffamily\tiny]{Core TCP} (node_art_pa);
+    \draw[archi-flow] (node_art_pb) -- node[above, font=\sffamily\tiny]{Core TCP} (node_ponos);
+
+    \draw[archi-serving] (node_mneme_1) -- (node_befe);
+    \draw[archi-serving] (node_mneme_2) -- (node_ponos);
+
+    \draw[archi-flow] (node_mneme_1) -- (node_jpa_clin);
+    \draw[archi-flow] (node_mneme_2) -- (node_jpa_ops);
+
+    \draw[archi-flow] (node_jpa_clin) -- node[above, font=\sffamily\tiny]{JDBC} (node_db_clin);
+    \draw[archi-flow] (node_jpa_ops) -- node[above, font=\sffamily\tiny]{JDBC} (node_db_ops);
+
+\end{tikzpicture}

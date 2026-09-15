@@ -1,0 +1,45 @@
+%% =============================================================================
+%% diagrams/fig-energeia-workflow.tex
+%% ArchiMate Energeia Workflow Engine & Camel Sequence View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % Ponos Ingress
+    \node[archi-app-component] (conduit) at (0.0, 7.5) {\archibadge{Conduit}\archiname{Petasos Ingress Conduit}\\\archidesc{Queue Consumer}};
+    \node[archi-app-component] (dispatcher) at (5.0, 7.5) {\archibadge{Dispatcher}\archiname{Workflow Dispatcher}\\\archidesc{Praxis Resolver}};
+    \node[archi-app-component] (praxis) at (10.5, 7.5) {\archibadge{Orchestrator}\archiname{Praxis Implementation}\\\archidesc{Pipeline Sequence}};
+
+    % Checkpoint Manager & Cache
+    \node[archi-app-component] (chk_mgr) at (5.0, 5.2) {\archibadge{Checkpoint Mgr}\archiname{PraxisCheckpointMgr}\\\archidesc{5-Phase Auditor}};
+    \node[archi-app-component] (cache_svc) at (10.5, 5.2) {\archibadge{Cache Client}\archiname{PragmaCacheService}\\\archidesc{HotRod Client}};
+    \node[archi-data-object] (mneme_box) at (10.5, 3.2) {\archibadge{Data Grid}\archiname{Mneme task-cache}\\\archidesc{Infinispan Store}};
+
+    % Erga Pipeline Steps
+    \node[archi-app-process] (erg_step0) at (0.0, 1.0) {\archibadge{Ergon Step 0}\archiname{Adt2FhirMapper}\\\archidesc{Parse HL7 ADT}};
+    \node[archi-app-process] (erg_step1) at (3.8, 1.0) {\archibadge{Ergon Step 1}\archiname{ExtractPatient}\\\archidesc{Bundle Unpack}};
+    \node[archi-app-process] (erg_step2) at (7.6, 1.0) {\archibadge{Ergon Step 2}\archiname{PatientIdentity}\\\archidesc{EMPI Resolution}};
+    \node[archi-app-process] (erg_step3) at (11.4, 1.0) {\archibadge{Ergon Step 3}\archiname{PatientDemographics}\\\archidesc{Attribute Merge}};
+
+    % --- Relationships ---
+    % Ingress flow
+    \draw[archi-flow] (conduit) -- (dispatcher);
+    \draw[archi-flow] (dispatcher) -- (praxis);
+
+    % Praxis to Checkpoint Manager
+    \draw[archi-serving] (chk_mgr) -- (praxis);
+    \draw[archi-flow] (chk_mgr) -- (cache_svc);
+    \draw[archi-flow] (cache_svc) -- (mneme_box);
+
+    % Praxis routes to Erga Steps
+    \draw[archi-triggering] (praxis) -- node[left, font=\sffamily\scriptsize]{direct:seq-step-0} (erg_step0);
+    \draw[archi-triggering] (erg_step0) -- node[above, font=\sffamily\scriptsize]{step-1} (erg_step1);
+    \draw[archi-triggering] (erg_step1) -- node[above, font=\sffamily\scriptsize]{step-2} (erg_step2);
+    \draw[archi-triggering] (erg_step2) -- node[above, font=\sffamily\scriptsize]{step-3} (erg_step3);
+
+    % Checkpoint recording flows
+    \draw[archi-flow] (erg_step0) -- (chk_mgr);
+    \draw[archi-flow] (erg_step1) -- (chk_mgr);
+    \draw[archi-flow] (erg_step2) -- (chk_mgr);
+    \draw[archi-flow] (erg_step3) -- (chk_mgr);
+
+\end{tikzpicture}

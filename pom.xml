@@ -21,12 +21,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.fhirfactory.hie</groupId>
-    <artifactId>hie-parent</artifactId>
+    <groupId>net.fhirfactory.harmonia</groupId>
+    <artifactId>harmonia-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>HIE Platform Parent</name>
-    <description>Modular High-Performance Health Information Exchange (HIE) Platform</description>
+    <name>Harmonia Platform Parent</name>
+    <description>Harmonia — Health Integration Environment (HIE): Modular high-performance platform uniting Iris (Presentation), Pylai (Gateways), Ponos (WorkEngine &amp; Erga Tasks), Petasos (Transport/Messaging), Mneme (Cache), Mnemosyne (Persistence), and Hestia (Core Foundation)</description>
 
     <licenses>
         <license>
@@ -43,11 +43,12 @@
     </developers>
 
     <modules>
-        <module>hie-common-models</module>
-        <module>data-services</module>
-        <module>presentation-services</module>
-        <module>interfacing-services</module>
-        <module>workflow-services</module>
+        <module>calliope</module>
+        <module>hestia</module>
+        <module>iris</module>
+        <module>pylai</module>
+        <module>energeia</module>
+        <module>petasos</module>
     </modules>
 
     <properties>
@@ -88,17 +89,34 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- HIE Common Models -->
+            <!-- Calliope (Canonical Model & Schema Library) -->
             <dependency>
-                <groupId>net.fhirfactory.hie</groupId>
-                <artifactId>hie-common-models</artifactId>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>calliope</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
-            <!-- HIE MLLP Gateway Base -->
+            <!-- Pylai MLLP Gateway Base -->
             <dependency>
-                <groupId>net.fhirfactory.hie</groupId>
-                <artifactId>mllp-gateway-base</artifactId>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>pylai-mllp-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Petasos Messaging Framework -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>petasos-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>petasos-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>petasos-artemis</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

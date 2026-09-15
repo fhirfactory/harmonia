@@ -1,0 +1,51 @@
+%% =============================================================================
+%% diagrams/fig-petasos-messaging.tex
+%% ArchiMate Petasos Messaging Subsystem & Artemis Cluster View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % Producer & Ponos
+    \node[archi-app-component] (pylai_prod) at (0.0, 7.5) {\archibadge{Producer}\archiname{Pylai Gateway}\\\archidesc{Inbound HL7}};
+    \node[archi-app-component] (ponos_cons) at (12.0, 7.5) {\archibadge{Consumer}\archiname{Ponos WorkEngine}\\\archidesc{Task Dispatcher}};
+
+    % Petasos API Layer
+    \node[archi-app-interface] (pet_prod_api) at (0.0, 5.5) {\archibadge{API Interface}\archiname{PetasosProducer}\\\archidesc{Durable Publish}};
+    \node[archi-app-interface] (pet_cons_api) at (12.0, 5.5) {\archibadge{API Interface}\archiname{PetasosConsumer}\\\archidesc{At-Least-Once Pull}};
+
+    % Petasos Core & Adapter
+    \node[archi-app-component] (pet_core) at (3.0, 4.0) {\archibadge{App Component}\archiname{Petasos Core}\\\archidesc{Metrics \& Dedup}};
+    \node[archi-app-component] (pet_adapter) at (9.0, 4.0) {\archibadge{App Component}\archiname{Artemis Adapter}\\\archidesc{Failover \& Pooling}};
+
+    % Queue Destination
+    \node[archi-app-interface] (queue_dest) at (6.0, 5.5) {\archibadge{Queue Address}\archiname{clinical.tasks.inbound}\\\archidesc{Durable JMS Queue}};
+
+    % Artemis Clustered Nodes
+    \node[archi-system-software] (art_pri_a) at (2.5, 1.8) {\archibadge{Artemis Live}\archiname{Primary A}\\\archidesc{Port 61616 / Live}};
+    \node[archi-system-software] (art_bak_a) at (2.5, 0.0) {\archibadge{Artemis Replica}\archiname{Backup A}\\\archidesc{Port 61617 / Replica}};
+
+    \node[archi-system-software] (art_pri_b) at (9.5, 1.8) {\archibadge{Artemis Live}\archiname{Primary B}\\\archidesc{Port 61618 / Live}};
+    \node[archi-system-software] (art_bak_b) at (9.5, 0.0) {\archibadge{Artemis Replica}\archiname{Backup B}\\\archidesc{Port 61619 / Replica}};
+
+    % --- Relationships ---
+    \draw[archi-serving] (pet_prod_api) -- (pylai_prod);
+    \draw[archi-serving] (pet_cons_api) -- (ponos_cons);
+
+    \draw[archi-serving] (pet_core) -- (pet_prod_api);
+    \draw[archi-serving] (pet_adapter) -- (pet_cons_api);
+
+    \draw[archi-flow] (pet_prod_api) -- (queue_dest);
+    \draw[archi-flow] (queue_dest) -- (pet_cons_api);
+
+    % Replication Channels
+    \draw[archi-flow] (art_pri_a) -- node[left, font=\sffamily\scriptsize]{Replication} (art_bak_a);
+    \draw[archi-flow] (art_pri_b) -- node[right, font=\sffamily\scriptsize]{Replication} (art_bak_b);
+
+    % Server-Side Cluster Bridge
+    \draw[archi-triggering] (art_pri_a) -- node[above, font=\sffamily\scriptsize]{ON\_DEMAND Clustering} (art_pri_b);
+    \draw[archi-triggering] (art_pri_b) -- (art_pri_a);
+
+    % Adapter Connections to Brokers
+    \draw[archi-serving] (art_pri_a) -- (pet_adapter);
+    \draw[archi-serving] (art_pri_b) -- (pet_adapter);
+
+\end{tikzpicture}
