@@ -32,6 +32,8 @@ Harmonia interacts with a diverse ecosystem of clinical actors, abstracting thei
 \addlinespace
 \textbf{Diagnostic Laboratory} & \textit{Diagnostic Result Producer} & Dispatches lab order notifications and observation reports (HL7 ORU / FHIR \texttt{Observation}) to the platform. \\
 \addlinespace
+\textbf{External System (HIS / LIS)} & \textit{Clinical Data Consumer} & Receives outbound HL7 v2 triggers, ADT notifications, and MFN directory updates via MLLP connections and returns synchronous acknowledgments (\texttt{ACK}). \\
+\addlinespace
 \textbf{Practitioner / Clinician} & \textit{Clinical Care Provider} & Queries longitudinal patient records, reviews historical clinical encounters, and inspects diagnostic summaries via web UI or FHIR APIs. \\
 \addlinespace
 \textbf{Health Network Admin} & \textit{Operations Administrator} & Monitors message queue depths, inspects Artemis cluster topologies, triggers task sequence reload, and audits failed pipelines. \\
@@ -43,7 +45,7 @@ Harmonia interacts with a diverse ecosystem of clinical actors, abstracting thei
 
 \section{Clinical Business Services}
 
-Harmonia exposes four core business services to external healthcare organizations:
+Harmonia exposes five core business services to external healthcare organizations:
 
 \subsection{1. Patient Admission \& Movement Service (\texttt{HL7-ADT})}
 Accepts real-time patient admission, discharge, and transfer (ADT) event streams adhering to HL7 v2.3--v2.5 standards across standard trigger events:
@@ -63,6 +65,9 @@ Provides RESTful search, retrieval, and subscription capabilities across 14 FHIR
 \subsection{4. Operations Telemetry \& Workflow Administration Service}
 Exposes real-time health metrics, ActiveMQ Artemis broker statistics, Infinispan cache hit rates, and Ponos task execution statuses to health network operators.
 
+\subsection{5. Clinical Outbound Notification \& Egress Service (\texttt{HL7-MLLP-OUT})}
+Dispatches transformed, enriched clinical trigger events (ADT, MFN, ORU) and outbound clinical notifications to remote hospital information systems and diagnostic endpoints over resilient MLLP/TCP connections, enforcing synchronous HL7 ACK/NACK validation, automatic retries, and audit tracking.
+
 \section{Clinical Business Process Workflows}
 
 \subsection{Process: Ingest and Reconcile HL7 ADT Trigger}
@@ -73,6 +78,16 @@ The primary clinical ingestion workflow executes through five discrete business 
     \item \textbf{Stage 3: Patient Identity Resolution (EMPI)}: The \texttt{PatientIdentityUpdateErgon} activity extracts the Medical Record Number (MRN), queries the Enterprise Master Patient Index (EMPI) in Mneme cache, and assigns a canonical patient identifier.
     \item \textbf{Stage 4: Demographics Merge \& Enrichment}: The \texttt{PatientDemographicsUpdateErgon} merges telecom, residential addresses, contact persons, and marital status into a consolidated FHIR \texttt{Patient} resource.
     \item \textbf{Stage 5: Audit \& Persistence}: A \texttt{Provenance} and \texttt{AuditEvent} record is linked to the transaction, and the resulting resources are stored in Mneme cache and Mnemosyne PostgreSQL.
+\end{enumerate}
+
+\subsection{Process: Outbound MLLP Dispatch and ACK Validation Lifecycle}
+The outbound clinical egress workflow executes through five structured business stages:
+\begin{enumerate}
+    \item \textbf{Stage 1: Egress Queue Enqueue}: The Ponos WorkEngine or upstream routing activity publishes an outbound dispatch task to the endpoint's dedicated Petasos queue (\texttt{petasos.queue.mllp.outbound.<endpoint-id>}).
+    \item \textbf{Stage 2: Endpoint Resolution \& Dequeue}: The dedicated \texttt{pylai-mllp-out} instance consumes the task and verifies target destination parameters (host, port, timeouts) via the dynamic \texttt{MllpDestinationRegistry}.
+    \item \textbf{Stage 3: MLLP Framing \& Wire Transmission}: The Apache Camel MLLP client component frames the HL7 v2 payload with standard delimiters (\texttt{<VT>} and \texttt{<FS><CR>}) and transmits the message over a dedicated TCP socket.
+    \item \textbf{Stage 4: Synchronous ACK / NACK Evaluation}: The gateway awaits the remote system's acknowledgment frame, parsing the \texttt{MSH} and \texttt{MSA} segments to validate acknowledgment codes (\texttt{AA}/\texttt{CA} for success vs \texttt{AE}/\texttt{AR}/\texttt{CE}/\texttt{CR} for application/commit errors).
+    \item \textbf{Stage 5: State Machine Finalization \& Audit}: The task status is updated in the Mneme cache grid, recording FHIR \texttt{Communication}, \texttt{Task} (\texttt{Pragma}), and \texttt{Provenance} records with remote acknowledgment details and transmission metrics.
 \end{enumerate}
 
 \section{Core Business Objects}

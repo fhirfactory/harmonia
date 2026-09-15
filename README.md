@@ -22,7 +22,7 @@ Harmonia adopts naming conventions rooted in Greek mythology and classical termi
 | **`Mneme`** | **Cache Layer (In-Memory Data Grid)** | *Mneme* (Μνήμη) — The classical Muse of active memory and rapid recollection. | High-throughput, low-latency in-memory data grid (`mneme-cluster`) powered by Infinispan with custom write-behind persistence SPI (`mneme-persistence`). |
 | **`Hestia`** | **Data Services (Persistence &amp; Cache)** | *Hestia* (Ἑστία) — Goddess of the hearth, home, architecture, and foundational stability. | Data persistence services (`hestia`) managing relational databases (Mnemosyne) and in-memory caching grids (Mneme). |
 | **`Iris`** | **User Interface / Presentation Services** | *Iris* (Ἶρις) — Goddess of the rainbow and divine messenger connecting heaven to humanity; symbol of visual representation and presentation. | Presentation tier (`iris`) comprising the WildFly Backend-For-Frontend gateway (`iris-befe`), Clinical UI (`iris-clinical`), and Operations Console (`iris-console`). |
-| **`Pylai`** | **Interface / Gateway Services** | *Pylai* (Πύλαι, pl. of *Pyle* / πύλη) — Greek word for "gates", "gateways", or portals of entry and exit. | The boundary through which Harmonia communicates with external systems (`pylai`), including MLLP inbound gateway (`pylai-mllp-in`), shared gateway base utilities (`pylai-mllp-base`), and MLLP synthetic test CLI (`pylai-mllp-cli`). |
+| **`Pylai`** | **Interface / Gateway Services** | *Pylai* (Πύλαι, pl. of *Pyle* / πύλη) — Greek word for "gates", "gateways", or portals of entry and exit. | The boundary through which Harmonia communicates with external systems (`pylai`), including MLLP inbound gateway (`pylai-mllp-in`), MLLP outbound gateway (`pylai-mllp-out`), shared gateway base utilities (`pylai-mllp-base`), and MLLP synthetic test CLI (`pylai-mllp-cli`). |
 
 ---
 
@@ -39,14 +39,25 @@ graph TD
   end
 
   subgraph Pylai Gateway Tier
-    MLLP[Pylai MLLP Inbound Gateway - Port 2575 / 8084]
+    MLLP_IN[Pylai MLLP Inbound Gateway - Port 2575 / 8084]
+    MLLP_OUT1[Pylai MLLP Outbound Gateway - HIS Instance :8087]
+    MLLP_OUT2[Pylai MLLP Outbound Gateway - LIS Instance :8088]
   end
 
   subgraph Petasos Transport & Ponos WorkEngine
     Petasos[Petasos Messaging: ActiveMQ Artemis Broker - Port 61616]
     Ponos[Ponos WorkEngine: Task Sequence Processor - Port 8083]
-    MLLP -->|Petasos TaskEvents| Petasos
+    MLLP_IN -->|Petasos TaskEvents| Petasos
     Petasos -->|Erga Tasks| Ponos
+    Ponos -->|Dedicated Queue: HIS| MLLP_OUT1
+    Ponos -->|Dedicated Queue: LIS| MLLP_OUT2
+  end
+
+  subgraph External Remote Destinations
+    RemoteHIS[Hospital Information System - Port 2575]
+    RemoteLIS[Laboratory Information System - Port 2576]
+    MLLP_OUT1 -->|MLLP / HL7 v2 + ACK Validation| RemoteHIS
+    MLLP_OUT2 -->|MLLP / HL7 v2 + ACK Validation| RemoteLIS
   end
 
   subgraph Mneme In-Memory Data Grid
@@ -54,7 +65,9 @@ graph TD
     PersistenceSPI[4. Mneme Persistence Tier: REST CacheStore SPI]
     CacheCluster -->|Write-Behind / Load| PersistenceSPI
     BEFE -->|Hot Rod Protocol| CacheCluster
-    MLLP -->|Hot Rod Protocol| CacheCluster
+    MLLP_IN -->|Hot Rod Protocol| CacheCluster
+    MLLP_OUT1 -->|Hot Rod Protocol| CacheCluster
+    MLLP_OUT2 -->|Hot Rod Protocol| CacheCluster
     Ponos -->|Hot Rod Protocol| CacheCluster
   end
 
@@ -104,8 +117,9 @@ The project is structured into domain-driven service groups containing specializ
   - **`iris-console`**: Single Page Application built with Vue 3, Vite, TypeScript, and Pinia dedicated to system topology monitoring, ActiveMQ Artemis messaging queues, distributed cache grid, and TaskSequence workflow management.
 - **`Pylai` (`pylai`)**: Interface / Gateway Services
   - The boundary through which Harmonia communicates with external systems.
-  - **`pylai-mllp-base`**: Core integration library providing Mneme cache services (Communication, Task, Provenance), Petasos (Artemis JMS) event production, and FHIR resource management.
+  - **`pylai-mllp-base`**: Core integration library providing Mneme cache services (Communication, Task, Provenance), Petasos (Artemis JMS) event production, canonical outbound models (`OutboundMllpRequest`, `OutboundMllpResponse`), destination registry (`MllpDestinationRegistry`), and FHIR resource management.
   - **`pylai-mllp-in`**: Jakarta EE 10 MLLP inbound interface with Apache Camel for HL7 v2.4/v2.5 ADT/MFN/ORU/ORM trigger event ingestion, Topic data type resolution, Communication encapsulation, and Ergon task generation.
+  - **`pylai-mllp-out`**: WildFly Jakarta EE 10 MLLP outbound gateway with Apache Camel for reliable HL7 v2.x message transmission to external clinical systems, synchronous HL7 ACK/NACK validation, independent Petasos queues per egress destination (`petasos.queue.mllp.outbound.<endpoint-id>`), dynamic destination registry, Mneme cache state updates (FHIR `Communication`, `Task`, `Provenance`), and REST dispatch APIs (`/api/mllp/outbound/send`, `/api/mllp/outbound/adt/send`, `/api/mllp/outbound/mfn/send`).
   - **`pylai-mllp-cli`**: Command-line tool for generating and sending HL7 v2.4 MLLP messages and ADT trigger events (A01-A40) to Pylai MLLP Gateways with parameter customization (MRN, names, DOB, gender).
 - **`Energeia` (`energeia`)**: Workflow Services &amp; Task Processing
   - **`erga`**: Shared activity library and base Apache Camel Route abstractions (`ErgonBase`) for task execution and HL7-to-FHIR transformations (e.g., `Adt2FhirMapper`, `Mfn2FhirBundle`).
@@ -161,7 +175,7 @@ docker compose up --build -d
 docker compose ps
 ```
 
-All 13 services (across 14 containers) should show `Up` (and `healthy` where applicable):
+All 17 services (across 17 containers) should show `Up` (and `healthy` where applicable):
 - `hie-postgres-1`
 - `hie-postgres-2`
 - `hie-postgres-ops-1`
@@ -176,6 +190,8 @@ All 13 services (across 14 containers) should show `Up` (and `healthy` where app
 - `hie-iris-clinical`
 - `hie-iris-console`
 - `hie-mllp-gateway`
+- `hie-mllp-outbound-his`
+- `hie-mllp-outbound-lis`
 - `hie-task-processor`
 
 ### 3. Service Endpoints and Port Mappings
@@ -193,7 +209,9 @@ All 13 services (across 14 containers) should show `Up` (and `healthy` where app
 | **Mnemosyne Operations JPA Node 2** | `8086` | `8080` | [http://localhost:8086/api/operations](http://localhost:8086/api/operations) (Replicated Operations Node) |
 | **Mneme Cluster Node 1** | `11222`, `7800` | `11222`, `7800` | Hot Rod & JGroups Discovery |
 | **Mneme Cluster Node 2** | `11223`, `7801` | `11222`, `7800` | Hot Rod & JGroups Discovery |
-| **Pylai MLLP Gateway** | `2575`, `8084` | `2575`, `8080` | HL7 v2.4/v2.5 MLLP Interface & REST endpoints |
+| **Pylai MLLP Inbound Gateway** | `2575`, `8084` | `2575`, `8080` | HL7 v2.4/v2.5 MLLP Interface & REST endpoints |
+| **Pylai MLLP Outbound Gateway (HIS Instance)** | `8087` | `8080` | [http://localhost:8087/api/mllp/outbound](http://localhost:8087/api/mllp/outbound) (Outbound MLLP Dispatch REST Endpoints & Health) |
+| **Pylai MLLP Outbound Gateway (LIS Instance)** | `8088` | `8080` | [http://localhost:8088/api/mllp/outbound](http://localhost:8088/api/mllp/outbound) (Outbound MLLP Dispatch REST Endpoints & Health) |
 | **Ponos Task Sequence Processor & Petasos Broker** | `8083`, `61616` | `8080`, `61616` | Workflow Task Processing Engine & Artemis Broker |
 | **PostgreSQL FHIR Database Node 1** | `5432` | `5432` | `jdbc:postgresql://localhost:5432/fhir_node_1` (user: `fhir_user`, pass: `fhir_password`) |
 | **PostgreSQL FHIR Database Node 2** | `5433` | `5432` | `jdbc:postgresql://localhost:5433/fhir_node_2` (user: `fhir_user`, pass: `fhir_password`) |
@@ -292,36 +310,25 @@ npm run dev
 ```
 The Vite development server will start at `http://localhost:3001`.
 
-```xml
-<plugin>
-    <groupId>org.wildfly.plugins</groupId>
-    <artifactId>wildfly-jar-maven-plugin</artifactId>
-    <version>${wildfly-jar-maven-plugin.version}</version>
-    <configuration>
-        <feature-pack-location>wildfly@maven(org.jboss.universe:community-universe)#${wildfly.version}</feature-pack-location>
-        <layers>
-            <layer>jaxrs</layer>
-            <layer>cdi</layer>
-            <layer>jsonb</layer>
-            <layer>management</layer>
-        </layers>
-        <context-root>/</context-root>
-        <cloud/>
-        <excluded-layers>
-            <layer>deployment-scanner</layer>
-        </excluded-layers>
-        <plugin-options>
-            <jboss-fork-embedded>true</jboss-fork-embedded>
-        </plugin-options>
-    </configuration>
-    <executions>
-        <execution>
-            <goals>
-                <goal>package</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
+### 7. Pylai MLLP Inbound Gateway
+```bash
+cd pylai/pylai-mllp-in
+mvn clean package
+# Deploy target/pylai-mllp-in.war to WildFly application server listening on MLLP port 2575 and REST port 8084
+```
+
+### 8. Pylai MLLP Outbound Gateway
+```bash
+cd pylai/pylai-mllp-out
+mvn clean package
+# Deploy target/pylai-mllp-out.war to WildFly application server configured with target destination and Artemis broker properties (e.g. ports 8087 / 8088)
+```
+
+### 9. Ponos Workflow Task Processor
+```bash
+cd energeia/ponos
+mvn clean package
+# Deploy target/ponos.war to WildFly application server connected to Mneme cache grid and ActiveMQ Artemis broker
 ```
 
 ---

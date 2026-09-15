@@ -10,7 +10,7 @@ The \textbf{Harmonia Health Information Exchange (HIE)} is a modular, high-avail
 
 Modern healthcare ecosystems demand zero-loss event streaming, high-throughput message translation, resilient task state persistence, and fine-grained clinical data access. Harmonia resolves these challenges through a cohesive five-tier architectural design combining:
 \begin{itemize}
-    \item \textbf{Pylai Ingress Gateways}: High-throughput MLLP and REST ingestion endpoints for clinical events.
+    \item \textbf{Pylai Ingress \& Egress Gateways}: High-throughput bidirectional MLLP and REST ingestion and egress dispatch gateways for clinical events.
     \item \textbf{Petasos Messaging Subsystem}: High-availability, multi-broker active-active Apache ActiveMQ Artemis messaging cluster with native NIO journal replication and dynamic server-side message load balancing.
     \item \textbf{Energeia Workflow Engine}: Modular Apache Camel task activities (\textit{Erga}), structured workflow sequence orchestrators (\textit{Praxis}), and WildFly Jakarta EE 10 execution containers (\textit{Ponos}) operating on canonical task instances (\textit{Pragma}).
     \item \textbf{Hestia Data Services}: Low-latency in-memory data caching grid (\textit{Mneme}) backed by Infinispan 15+ and durable relational relational disk persistence (\textit{Mnemosyne}) backed by PostgreSQL 16+ and Spring Boot HAPI FHIR JPA.
@@ -53,31 +53,31 @@ Harmonia adopts naming conventions rooted in classical Greek mythology and philo
 \toprule
 \textbf{Subsystem} & \textbf{Architectural Role} & \textbf{Classical Origin} & \textbf{Platform Responsibilities} \\
 \midrule
-\textbf{\texttt{Harmonia}} & Health Integration Environment & \textit{Harmonia} (Ἁρμονία) --- Goddess of concord and balance. & Overall platform uniting clinical protocols, streaming messaging, cache grids, and relational storage. \\
+\textbf{\texttt{Harmonia}} & Health Integration Environment & \textit{Harmonia} --- Goddess of concord and balance. & Overall platform uniting clinical protocols, streaming messaging, cache grids, and relational storage. \\
 \addlinespace
-\textbf{\texttt{Petasos}} & Messaging Transport Subsystem & \textit{Petasos} (πέτασος) --- Winged hat of Hermes, symbol of swift dispatch. & Clustered ActiveMQ Artemis messaging, durable queues, client failover, and \texttt{PetasosMessage} envelopes. \\
+\textbf{\texttt{Petasos}} & Messaging Transport Subsystem & \textit{Petasos} --- Winged hat of Hermes, symbol of swift dispatch. & Clustered ActiveMQ Artemis messaging, durable queues, client failover, and \texttt{PetasosMessage} envelopes. \\
 \addlinespace
-\textbf{\texttt{Energeia}} & Workflow Services & \textit{Energeia} (ἐνέργεια) --- Aristotelian actuality and continuous activity. & Top-level workflow services aggregator containing Ponos, Praxis, Erga, and Ponos CLI. \\
+\textbf{\texttt{Energeia}} & Workflow Services & \textit{Energeia} --- Aristotelian actuality and continuous activity. & Top-level workflow services aggregator containing Ponos, Praxis, Erga, and Ponos CLI. \\
 \addlinespace
-\textbf{\texttt{Ponos}} & WorkEngine Execution Container & \textit{Ponos} (Πόνος) --- Personification of industrious toil and labor. & WildFly Jakarta EE 10 container hosting Camel contexts, Petasos conduits, and REST managers. \\
+\textbf{\texttt{Ponos}} & WorkEngine Execution Container & \textit{Ponos} --- Personification of industrious toil and labor. & WildFly Jakarta EE 10 container hosting Camel contexts, Petasos conduits, and REST managers. \\
 \addlinespace
-\textbf{\texttt{Erga}} & Modular Task Activities & \textit{Erga} (ἔργα) --- Plural of \textit{Ergon} (ἔργον), works, deeds, or tasks. & Single-responsibility Camel route components (\texttt{ErgonBase}) executing discrete clinical mappings. \\
+\textbf{\texttt{Erga}} & Modular Task Activities & \textit{Erga} --- Plural of \textit{Ergon}, works, deeds, or tasks. & Single-responsibility Camel route components (\texttt{ErgonBase}) executing discrete clinical mappings. \\
 \addlinespace
-\textbf{\texttt{Praxis}} & Workflow Sequence Orchestrator & \textit{Praxis} (πρᾶξις) --- Structured action or enactment of theory. & Sequence orchestrator chaining ordered Ergon steps and recording multi-phase state checkpoints. \\
+\textbf{\texttt{Praxis}} & Workflow Sequence Orchestrator & \textit{Praxis} --- Structured action or enactment of theory. & Sequence orchestrator chaining ordered Ergon steps and recording multi-phase state checkpoints. \\
 \addlinespace
-\textbf{\texttt{Pragma}} & Task Instance / State Entity & \textit{Pragma} (πρᾶγμα) --- That which has been done, concrete deed. & Canonical task state model holding inputs, outputs, checkpoints, and bidirectional FHIR \texttt{Task} mapping. \\
+\textbf{\texttt{Pragma}} & Task Instance / State Entity & \textit{Pragma} --- That which has been done, concrete deed. & Canonical task state model holding inputs, outputs, checkpoints, and bidirectional FHIR \texttt{Task} mapping. \\
 \addlinespace
-\textbf{\texttt{Calliope}} & Canonical Schema Repository & \textit{Calliope} (Καλλιόπη) --- Chief Muse of eloquence and harmonious order. & Shared information models, domain DTOs, schemas, and payload envelopes used across all modules. \\
+\textbf{\texttt{Calliope}} & Canonical Schema Repository & \textit{Calliope} --- Chief Muse of eloquence and harmonious order. & Shared information models, domain DTOs, schemas, and payload envelopes used across all modules. \\
 \addlinespace
-\textbf{\texttt{Mneme}} & In-Memory Distributed Cache & \textit{Mneme} (Μνήμη) --- Muse of active memory and rapid recall. & Infinispan distributed L1 cache grid providing low-latency \texttt{task-cache} and \texttt{tasksequence-cache}. \\
+\textbf{\texttt{Mneme}} & In-Memory Distributed Cache & \textit{Mneme} --- Muse of active memory and rapid recall. & Infinispan distributed L1 cache grid providing low-latency \texttt{task-cache} and \texttt{tasksequence-cache}. \\
 \addlinespace
-\textbf{\texttt{Mnemosyne}} & Relational Persistence Tier & \textit{Mnemosyne} (Μνημοσύνη) --- Titaness of durable memory. & Long-term PostgreSQL storage comprising Spring Boot FHIR JPA and Operations JPA servers. \\
+\textbf{\texttt{Mnemosyne}} & Relational Persistence Tier & \textit{Mnemosyne} --- Titaness of durable memory. & Long-term PostgreSQL storage comprising Spring Boot FHIR JPA and Operations JPA servers. \\
 \addlinespace
-\textbf{\texttt{Hestia}} & Data Services Subsystem & \textit{Hestia} (Ἑστία) --- Goddess of the hearth and foundational stability. & Data services aggregator managing caching (Mneme) and persistence (Mnemosyne). \\
+\textbf{\texttt{Hestia}} & Data Services Subsystem & \textit{Hestia} --- Goddess of the hearth and foundational stability. & Data services aggregator managing caching (Mneme) and persistence (Mnemosyne). \\
 \addlinespace
-\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} (Ἶρις) --- Goddess of the rainbow and divine messenger. & Presentation tier comprising Jakarta EE BEFE gateway, Clinical UI SPA, and Console UI SPA. \\
+\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} --- Goddess of the rainbow and divine messenger. & Presentation tier comprising Jakarta EE BEFE gateway, Clinical UI SPA, and Console UI SPA. \\
 \addlinespace
-\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} (Πύλαι) --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways, HL7 parsing, and synthetic test CLI. \\
+\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways (\texttt{pylai-mllp-in}), multi-instance outbound MLLP gateways (\texttt{pylai-mllp-out}), shared integration base library (\texttt{pylai-mllp-base}), and synthetic test CLI (\texttt{pylai-mllp-cli}). \\
 \bottomrule
 \end{tabularx}
 \caption{Harmonia Classical Architectural Nomenclature and System Meaning Matrix}

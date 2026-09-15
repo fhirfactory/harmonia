@@ -80,7 +80,7 @@ Harmonia delivers five core business capabilities organized into a strategic val
 \toprule
 \textbf{Capability} & \textbf{Owning Subsystem} & \textbf{Business Value Delivered} \\
 \midrule
-\textbf{Clinical Gateway Ingestion} & \texttt{Pylai} & Multi-protocol MLLP/TCP and REST ingestion accepting continuous HL7 v2 and FHIR feeds from external hospital systems. \\
+\textbf{Clinical Gateway Interfaces} & \texttt{Pylai} & Multi-protocol MLLP/TCP and REST ingress and reliable egress dispatch accepting and delivering continuous HL7 v2 and FHIR feeds to/from external hospital systems. \\
 \addlinespace
 \textbf{High-Availability Messaging} & \texttt{Petasos} & Clustered, replicated ActiveMQ Artemis transport ensuring message durability, load redistribution, and automatic failover. \\
 \addlinespace
@@ -98,7 +98,7 @@ Harmonia delivers five core business capabilities organized into a strategic val
 \subsection{Strategic Value Stream Flow}
 The end-to-end flow of clinical information across Harmonia realizes the following sequential value stream:
 \begin{equation*}
-\text{Ingest Trigger} \longrightarrow \text{Transport \& Deduplicate} \longrightarrow \text{Orchestrate Erga} \longrightarrow \text{Update Cache Grid} \longrightarrow \text{Serve FHIR APIs}
+\text{Ingest Trigger} \longrightarrow \text{Transport \& Deduplicate} \longrightarrow \text{Orchestrate Erga} \longrightarrow \text{Update Cache Grid} \longrightarrow \text{Dispatch Egress / Serve FHIR APIs}
 \end{equation*}
 
 \newpage

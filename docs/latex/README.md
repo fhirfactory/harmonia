@@ -43,11 +43,11 @@ The documentation is structured across the standard ArchiMate architectural laye
 
 | Layer | Hex Color Scheme | Key Architectural Entities in Harmonia |
 | :--- | :--- | :--- |
-| **Motivation & Strategy** | `#E6D0DE` (Lilac) / `#F2E3C6` (Ochre) | Healthcare Providers, Clinicians, Patients, Interoperability Drivers, 24/7 Availability, Inbound Ingestion Capability, End-to-End Value Streams. |
-| **Business / Clinical** | `#FFFFB5` (Amber / Yellow) | Referring Hospitals, Diagnostic Labs, Clinical ADT/MFN Ingestion Services, Patient Matching & Reconcile Processes. |
-| **Application** | `#B5FFFF` (Cyan / Light Blue) | `Calliope`, `Pylai`, `Petasos`, `Energeia` (`Ponos`, `Praxis`, `Erga`), `Hestia` (`Mneme`, `Mnemosyne`), `Iris` (`BEFE`, `Clinical UI`, `Console UI`). |
-| **Data / Information** | `#D1F2EB` (Pale Teal) | `Pragma` task state model, `PetasosMessage` envelope, `ErgonPayload`, and 14 FHIR R5 Resources (`Patient`, `Task`, `AuditEvent`, etc.). |
-| **Technology / Software** | `#C9E4B5` (Light Green) | WildFly Jakarta EE 10, Apache ActiveMQ Artemis 2.38+, Infinispan 15+, PostgreSQL 16+, TCP/IP, MLLP (2575), HotRod (11222-11223), JMS (61616-61619). |
+| **Motivation & Strategy** | `#E6D0DE` (Lilac) / `#F2E3C6` (Ochre) | Healthcare Providers, Clinicians, Patients, Interoperability Drivers, 24/7 Availability, Inbound & Outbound Gateway Capabilities, End-to-End Value Streams. |
+| **Business / Clinical** | `#FFFFB5` (Amber / Yellow) | Referring Hospitals, Diagnostic Labs, Clinical Ingestion & Outbound Dispatch Services, Patient Matching & Reconcile Processes. |
+| **Application** | `#B5FFFF` (Cyan / Light Blue) | `Calliope`, `Pylai` (`pylai-mllp-in`, `pylai-mllp-out`, `pylai-mllp-base`, `pylai-mllp-cli`), `Petasos`, `Energeia` (`Ponos`, `Praxis`, `Erga`), `Hestia` (`Mneme`, `Mnemosyne`), `Iris` (`BEFE`, `Clinical UI`, `Console UI`). |
+| **Data / Information** | `#D1F2EB` (Pale Teal) | `Pragma` task state model, `OutboundMllpRequest` / `Response`, `PetasosMessage` envelope, `ErgonPayload`, and 14 FHIR R5 Resources (`Patient`, `Task`, `Communication`, `Provenance`, `AuditEvent`, etc.). |
+| **Technology / Software** | `#C9E4B5` (Light Green) | WildFly Jakarta EE 10, Apache ActiveMQ Artemis 2.38+, Infinispan 15+, PostgreSQL 16+, TCP/IP, MLLP (2575), Outbound Gateways (8087, 8088), HotRod (11222-11223), JMS (61616-61619). |
 | **Physical / Deployment** | `#D5E8D4` (Slate Green) | Multi-broker Primary/Backup replication pairs (`group-a`, `group-b`), Docker Compose container topologies, and failover pathways. |
 
 ---

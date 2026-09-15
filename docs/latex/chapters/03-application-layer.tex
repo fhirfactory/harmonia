@@ -34,16 +34,38 @@ A modern web application built with Vue 3, Vite, TypeScript, and Pinia. Provides
 \subsection{\texttt{iris-console} (Operations \& Workflow Console)}
 An administrative single-page application built with Vue 3 and TypeScript. Enables systems engineers to inspect ActiveMQ Artemis broker queue depths, view Infinispan cache topologies, trigger live reload of task sequence configurations, and inspect failing \texttt{Pragma} pipelines.
 
-\section{Interface \& Ingress Tier: \texttt{Pylai} Subsystem}
+\section{Interface \& Gateway Tier: \texttt{Pylai} Subsystem}
 
-\texttt{Pylai} serves as the secure edge gateway through which external healthcare facilities exchange data with Harmonia.
+\texttt{Pylai} serves as the secure edge gateway through which external healthcare facilities exchange data with Harmonia, providing bidirectional ingestion and egress capabilities.
 
+\subsection{\texttt{pylai-mllp-in} (Inbound Clinical MLLP Gateway)}
+Hosts an Apache Camel MLLP listener on TCP port \texttt{2575}. It captures HL7 v2 frames (\texttt{<VT>...<FS><CR>}), verifies message integrity, issues immediate HL7 commit acknowledgements (\texttt{ACK}), wraps the payload into a \texttt{PetasosMessage}, and publishes it to the Petasos messaging cluster for asynchronous workflow execution.
+
+\subsection{\texttt{pylai-mllp-out} (Resilient Multi-Instance Outbound MLLP Gateway)}
+\texttt{pylai-mllp-out} is a dedicated, high-reliability outbound integration gateway deployed as a WildFly Jakarta EE 10 microservice. It provides comprehensive HL7 v2 message transmission to external clinical systems (e.g. Hospital Information Systems, Laboratory Information Systems, and Picture Archiving and Communication Systems).
+
+Key architectural characteristics include:
 \begin{itemize}
-    \item \textbf{\texttt{pylai-mllp-in}}: Hosts an Apache Camel MLLP listener on TCP port \texttt{2575}. It captures HL7 v2 frames (\texttt{<VT>...<FS><CR>}), verifies message integrity, issues immediate HL7 commit acknowledgements (\texttt{ACK}), wraps the payload into a \texttt{PetasosMessage}, and publishes it to Petasos messaging.
-    \item \textbf{\texttt{pylai-mllp-out}}: Dedicated outbound MLLP egress gateway supporting multi-instance deployments with dedicated, independent Petasos queues per destination endpoint (e.g., \texttt{petasos.queue.mllp.outbound.<endpoint-id>}). It features Apache Camel MLLP client routes, strict HL7 v2 ACK/NACK validation, synchronous JAX-RS REST dispatch endpoints (port \texttt{8087}), dynamic destination target resolution, and comprehensive state tracking into Mneme Infinispan cache.
-    \item \textbf{\texttt{pylai-mllp-base}}: Contains shared MLLP framing utilities, outbound request/response models, dynamic destination registry, Camel route builders, and \texttt{Mneme} cache connectors for recording \texttt{Communication}, \texttt{Task}, and \texttt{Provenance} resources.
-    \item \textbf{\texttt{pylai-mllp-cli}}: A diagnostic command-line utility used to generate and dispatch synthetic HL7 v2.4/v2.5 ADT (A01--A40) messages to Pylai gateways for load, functional, and egress testing.
+    \item \textbf{Multi-Instance Egress Architecture}: Each external clinical destination or tenant is serviced by an independent, isolated gateway instance (e.g., \texttt{mllp-outbound-his} on port \texttt{8087} and \texttt{mllp-outbound-lis} on port \texttt{8088}). This multi-instance model provides hardware and process isolation across remote clinical endpoints.
+    \item \textbf{Independent Petasos Queues per Destination}: Outbound tasks are partitioned into dedicated, destination-specific messaging queues (e.g., \texttt{petasos.queue.mllp.outbound.<endpoint-id>}). Slow, lagging, or offline hospital destinations cannot cause head-of-line blocking or degrade dispatch performance for other destinations.
+    \item \textbf{Apache Camel MLLP Client Routes}: The \texttt{OutboundMllpRouteBuilder} configures synchronous Camel MLLP producer endpoints (\texttt{direct:mllp-outbound-send}), managing TCP socket connections, socket timeouts, keep-alives, and automatic reconnection policies.
+    \item \textbf{Outbound Processing \& ACK/NACK Validation}: The \texttt{OutboundMllpProcessor} serializes payloads into standard MLLP frames, while the \texttt{Hl7AckProcessor} performs deep inspection of the returned HL7 \texttt{ACK} frame (\texttt{MSH} and \texttt{MSA} segments), validating acknowledgment codes (\texttt{AA}/\texttt{CA} for success, \texttt{AE}/\texttt{AR}/\texttt{CE}/\texttt{CR} for error states) and extracting error condition descriptions.
+    \item \textbf{Synchronous REST Dispatch APIs}: The \texttt{OutboundMllpResource} exposes high-performance JAX-RS REST endpoints:
+    \begin{itemize}
+        \item \texttt{POST /api/mllp/outbound/send}: Generic HL7 v2 outbound dispatch endpoint.
+        \item \texttt{POST /api/mllp/outbound/adt/send}: Specialized clinical ADT trigger event dispatch.
+        \item \texttt{POST /api/mllp/outbound/mfn/send}: Master file notification directory dispatch.
+        \item \texttt{GET /api/mllp/outbound/health}: Real-time destination connectivity and circuit health status.
+    \end{itemize}
+    \item \textbf{Dynamic Destination Management}: The \texttt{MllpDestinationRegistry} resolves target endpoint hostnames, TCP ports, timeout thresholds, and retry policies dynamically via \texttt{MllpDestinationConfig}.
+    \item \textbf{Mneme Cache State Auditing}: Every outbound dispatch updates the \texttt{Mneme} Infinispan data grid with FHIR \texttt{Communication} (sent message, response ACK, latency), \texttt{Task} (\texttt{Pragma} state transition), and \texttt{Provenance} resources.
 \end{itemize}
+
+\subsection{\texttt{pylai-mllp-base} (Shared Gateway Integration Library)}
+Provides core domain models and shared infrastructure for the Pylai gateway tier, including the \texttt{OutboundMllpRequest} and \texttt{OutboundMllpResponse} DTOs, \texttt{MllpDestinationConfig}, \texttt{MllpDestinationRegistry}, MLLP framing utilities, and \texttt{Mneme} cache connectors.
+
+\subsection{\texttt{pylai-mllp-cli} (Synthetic Test \& Diagnostic Utility)}
+A command-line diagnostic tool used by integration engineers to generate and dispatch parameterized HL7 v2.4/v2.5 ADT (A01--A40) messages to Pylai gateways for end-to-end functional, egress verification, and throughput benchmarking.
 
 \section{Messaging Transport Subsystem: \texttt{Petasos}}
 

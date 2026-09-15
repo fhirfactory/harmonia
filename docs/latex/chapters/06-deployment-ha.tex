@@ -84,14 +84,21 @@ The \texttt{Mneme} distributed cache grid deploys across two clustered Infinispa
 
 The complete Harmonia platform stack is orchestrated via a unified \texttt{docker-compose.yml} containing:
 \begin{itemize}
-    \item 4 ActiveMQ Artemis instances (Primary A/B, Backup A/B).
-    \item 2 Infinispan distributed cache grid nodes.
-    \item 2 Spring Boot Mnemosyne JPA persistence servers.
-    \item 2 PostgreSQL database servers with persistent volumes.
-    \item 3 WildFly Jakarta EE 10 application containers (\texttt{pylai-mllp-in}, \texttt{ponos}, \texttt{iris-befe}).
-    \item 2 Vue 3 frontend web containers (\texttt{iris-clinical}, \texttt{iris-console}).
+    \item 4 PostgreSQL 16 relational database containers (2 Clinical nodes, 2 Operations nodes) with persistent isolated volumes.
+    \item 4 Spring Boot Mnemosyne JPA persistence servers (2 Clinical HAPI FHIR nodes, 2 Operations nodes).
+    \item 2 Infinispan 15+ distributed cache grid nodes (\texttt{infinispan-1}, \texttt{infinispan-2}).
+    \item 5 WildFly Jakarta EE 10 application containers (\texttt{pylai-mllp-in}, \texttt{pylai-mllp-out-his}, \texttt{pylai-mllp-out-lis}, \texttt{ponos}, \texttt{iris-befe}).
+    \item 2 Vue 3 / Nginx frontend web containers (\texttt{iris-clinical}, \texttt{iris-console}).
 \end{itemize}
 
 Health checks with configurable start periods ensure that dependent containers only boot once their prerequisite messaging, caching, and database services report operational readiness.
+
+\subsection{Egress Failure Domain Isolation}
+The multi-instance outbound architecture guarantees complete failure domain isolation across external clinical systems. Each egress instance (\texttt{mllp-outbound-his}, \texttt{mllp-outbound-lis}) consumes from its own dedicated Petasos queue (e.g. \texttt{petasos.queue.mllp.outbound.his}). If a destination hospital system experiences downtime, network unreachability, or socket timeouts:
+\begin{itemize}
+    \item Egress queue backlog is strictly contained within that destination's specific queue without affecting inbound processing or alternate outbound destinations.
+    \item Thread pools and socket resources in the faulting gateway instance remain isolated, preventing thread starvation or memory leaks from propagating to other services.
+    \item Ponos task sequences can continue dispatching messages to healthy clinical destinations concurrently.
+\end{itemize}
 
 \newpage

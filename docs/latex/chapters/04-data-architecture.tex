@@ -48,6 +48,70 @@ public class PragmaCheckpoint implements Serializable {
 }
 \end{lstlisting}
 
+\section{Canonical Outbound Models (\texttt{pylai-mllp-base})}
+
+The Pylai gateway tier standardizes outbound MLLP interactions using canonical data structures:
+
+\subsection{1. \texttt{OutboundMllpRequest}}
+Encapsulates an outbound MLLP dispatch payload with destination routing and clinical metadata:
+\begin{lstlisting}[language=Java, caption={OutboundMllpRequest Model Definition}]
+public class OutboundMllpRequest implements Serializable {
+    private String requestId;          // Unique dispatch UUID
+    private String messageControlId;   // HL7 MSH-10 control identifier
+    private String destinationId;      // Target endpoint identifier (e.g. HIS_NORTH)
+    private String rawMessage;         // Raw HL7 v2 pipe-delimited message string
+    private String targetQueue;        // Destination Petasos queue
+    private Topic topic;               // Resolved clinical topic metadata
+    private Date timestamp;            // Enqueue timestamp
+    private int priority = 4;          // JMS priority
+    private String taskId;             // Associated Pragma / Task resource ID
+    private String facility;           // Clinical facility code
+    private String correlationId;      // End-to-end trace identifier
+}
+\end{lstlisting}
+
+\subsection{2. \texttt{OutboundMllpResponse}}
+Encapsulates the synchronous result and acknowledgment returned from the external clinical endpoint:
+\begin{lstlisting}[language=Java, caption={OutboundMllpResponse Model Definition}]
+public class OutboundMllpResponse implements Serializable {
+    private String requestId;
+    private String messageControlId;
+    private String destinationId;
+    private String ackCode;            // AA, AE, AR, CA, CE, CR
+    private String ackText;            // Error description or text
+    private String rawAckMessage;      // Raw HL7 ACK wire frame
+    private boolean successful;        // True if AA or CA
+    private long durationMs;           // Round-trip transmission latency
+    private Date dispatchedAt;
+    private Date acknowledgedAt;
+    private String errorMessage;
+    private String taskId;
+    private String communicationId;    // Persisted FHIR Communication ID
+    private String provenanceId;       // Persisted FHIR Provenance ID
+}
+\end{lstlisting}
+
+\subsection{3. \texttt{MllpDestinationConfig}}
+Defines connectivity and timeout parameters for remote clinical MLLP servers:
+\begin{lstlisting}[language=Java, caption={MllpDestinationConfig Model Definition}]
+public class MllpDestinationConfig implements Serializable {
+    private String destinationId;      // Unique target key (e.g. LIS_MAIN)
+    private String name;               // Human-readable destination label
+    private String host;               // Target IP or hostname
+    private int port;                  // Target TCP port
+    private int connectTimeoutMs = 5000;
+    private int readTimeoutMs = 10000;
+    private String charset = "UTF-8";
+    private boolean keepAlive = true;
+    private boolean autoAck = true;
+    private String queueName;          // Dedicated Petasos queue override
+    private String queuePrefix = "petasos.queue.mllp.outbound";
+    private boolean sslEnabled = false;
+    private boolean enabled = true;
+    private String facility;
+}
+\end{lstlisting}
+
 \section{The 5-Phase Checkpoint Lifecycle State Flow}
 
 \begin{figure}[htbp]
@@ -117,10 +181,10 @@ Harmonia implements full lifecycle CRUD and search capabilities for 14 core FHIR
 \texttt{Location} & Physical Facility & Wards, rooms, clinics, and physical service delivery sites. \\
 \texttt{HealthcareService} & Clinical Offering & Medical specialties and care services offered at locations. \\
 \texttt{Group} & Cohort Entity & Patient cohorts and specialized care teams. \\
-\texttt{Task} & Workflow Entity & Direct bidirectional projection of \texttt{Pragma} state instances. \\
-\texttt{Communication} & Exchange Audit & Record of incoming MLLP messages and raw wire payloads. \\
+\texttt{Task} & Workflow Entity & Direct bidirectional projection of \texttt{Pragma} state instances and outbound transmission execution tracking. \\
+\texttt{Communication} & Exchange Audit & Record of incoming and outgoing MLLP message transmissions, wire payloads, and ACK/NACK responses. \\
 \texttt{DocumentReference} & Clinical Document & Metadata indexing for external clinical notes, CDA, and PDFs. \\
-\texttt{Provenance} & Lineage Tracking & Source attribution, creator identities, and transformation history. \\
+\texttt{Provenance} & Lineage Tracking & Source and destination attribution, creator identities, and transformation/egress delivery history. \\
 \texttt{AuditEvent} & Security / Access Audit & Detailed audit records capturing all read, write, and failover events. \\
 \bottomrule
 \end{tabularx}

@@ -9,8 +9,9 @@
     \node[archi-app-component] (ui_console) at (6.5, 9.5) {\archibadge{App Component}\archiname{Iris Console UI}\\\archidesc{Vue 3 / Port 3001}};
     \node[archi-app-component] (befe) at (4.0, 7.8) {\archibadge{App Component}\archiname{Iris BEFE Gateway}\\\archidesc{WildFly / Ports 8080/8090}};
 
-    % Tier 2: Interface / Ingress Tier (Pylai)
-    \node[archi-app-component] (pylai_mllp) at (11.5, 7.8) {\archibadge{App Component}\archiname{Pylai MLLP Gateway}\\\archidesc{Camel / Port 2575}};
+    % Tier 2: Interface / Ingress & Egress Tier (Pylai)
+    \node[archi-app-component] (pylai_mllp) at (9.5, 7.8) {\archibadge{App Component}\archiname{Pylai Inbound}\\\archidesc{Camel / Port 2575}};
+    \node[archi-app-component] (pylai_out) at (13.5, 7.8) {\archibadge{App Component}\archiname{Pylai Outbound}\\\archidesc{Camel / Ports 8087/8088}};
 
     % Tier 3: Transport & Workflow Tier (Petasos & Energeia)
     \node[archi-app-component] (petasos_msg) at (11.5, 5.5) {\archibadge{App Component}\archiname{Petasos Messaging}\\\archidesc{ActiveMQ HA Cluster}};
@@ -37,6 +38,8 @@
     % Ingress to Transport
     \draw[archi-flow] (pylai_mllp) -- (petasos_msg);
     \draw[archi-flow] (petasos_msg) -- (ponos_engine);
+    \draw[archi-flow] (ponos_engine) -- (petasos_msg);
+    \draw[archi-flow] (petasos_msg) -- (pylai_out);
 
     % Workflow Internal Chaining
     \draw[archi-serving] (ponos_engine) -- (praxis_seq);
@@ -45,6 +48,7 @@
     % Cache Grid Access
     \draw[archi-serving] (mneme_grid) -- (befe);
     \draw[archi-serving] (mneme_grid) -- (pylai_mllp);
+    \draw[archi-serving] (mneme_grid) -- (pylai_out);
     \draw[archi-serving] (mneme_grid) -- (ponos_engine);
     \draw[archi-flow] (praxis_seq) -- (mneme_grid);
 
@@ -56,5 +60,6 @@
     % Calliope Schema Serving
     \draw[archi-access] (ponos_engine) -- (calliope);
     \draw[archi-access] (erga_acts) -- (calliope);
+    \draw[archi-access] (pylai_out) -- (calliope);
 
 \end{tikzpicture}

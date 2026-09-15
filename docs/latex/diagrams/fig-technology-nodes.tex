@@ -6,9 +6,10 @@
 
     % Row 1: Presentation & Gateways
     \node[archi-node] (node_ui) at (0.0, 7.5) {\archibadge{Web Node}\archiname{Iris SPAs}\\\archidesc{Ports 3000 / 3001}};
-    \node[archi-node] (node_befe) at (4.5, 7.5) {\archibadge{WildFly Node}\archiname{Iris BEFE}\\\archidesc{Ports 8080 / 8090}};
-    \node[archi-node] (node_pylai) at (9.0, 7.5) {\archibadge{Camel Node}\archiname{Pylai Ingress}\\\archidesc{Ports 2575 / 8084}};
-    \node[archi-node] (node_ponos) at (13.5, 7.5) {\archibadge{WildFly Node}\archiname{Ponos Engine}\\\archidesc{Port 8083}};
+    \node[archi-node] (node_befe) at (3.8, 7.5) {\archibadge{WildFly Node}\archiname{Iris BEFE}\\\archidesc{Ports 8080 / 8090}};
+    \node[archi-node] (node_pylai) at (7.6, 7.5) {\archibadge{Camel Node}\archiname{Pylai Ingress}\\\archidesc{Ports 2575 / 8084}};
+    \node[archi-node] (node_pylai_out) at (11.4, 7.5) {\archibadge{WildFly Node}\archiname{Pylai Egress}\\\archidesc{Ports 8087 / 8088}};
+    \node[archi-node] (node_ponos) at (15.2, 7.5) {\archibadge{WildFly Node}\archiname{Ponos Engine}\\\archidesc{Port 8083}};
 
     % Row 2: Clustered Messaging (Artemis Nodes)
     \node[archi-system-software] (node_art_pa) at (2.0, 5.0) {\archibadge{ActiveMQ}\archiname{Primary A}\\\archidesc{Port 61616 / 8161}};
@@ -30,9 +31,11 @@
     \draw[archi-serving] (node_befe) -- node[above, font=\sffamily\tiny]{REST} (node_ui);
     \draw[archi-flow] (node_pylai) -- node[above, font=\sffamily\tiny]{Core TCP} (node_art_pa);
     \draw[archi-flow] (node_art_pb) -- node[above, font=\sffamily\tiny]{Core TCP} (node_ponos);
+    \draw[archi-flow] (node_art_pb) -- node[above, font=\sffamily\tiny]{Core TCP} (node_pylai_out);
 
     \draw[archi-serving] (node_mneme_1) -- (node_befe);
     \draw[archi-serving] (node_mneme_2) -- (node_ponos);
+    \draw[archi-serving] (node_mneme_2) -- (node_pylai_out);
 
     \draw[archi-flow] (node_mneme_1) -- (node_jpa_clin);
     \draw[archi-flow] (node_mneme_2) -- (node_jpa_ops);
