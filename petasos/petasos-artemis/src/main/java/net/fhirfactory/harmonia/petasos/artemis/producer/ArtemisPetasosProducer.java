@@ -88,9 +88,7 @@ public class ArtemisPetasosProducer implements PetasosProducer {
 
                     if (message.getExpiration() != null) {
                         long ttl = java.time.Duration.between(java.time.Instant.now(), message.getExpiration()).toMillis();
-                        if (ttl > 0) {
-                            producer.setTimeToLive(ttl);
-                        }
+                        producer.setTimeToLive(Math.max(1, ttl));
                     }
 
                     jakarta.jms.Message jmsMessage = ArtemisMessageConverter.toJmsMessage(message, session);

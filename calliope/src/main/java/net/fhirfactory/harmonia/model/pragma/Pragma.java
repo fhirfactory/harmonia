@@ -25,15 +25,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -109,6 +115,22 @@ public class Pragma implements Serializable {
 
     @JsonProperty("metadata")
     private Map<String, String> metadata = new LinkedHashMap<>();
+
+    @JsonProperty("originatingPrincipal")
+    @JsonAlias({"originating_principal", "principal"})
+    private ThemisPrincipal originatingPrincipal;
+
+    @JsonProperty("originatingAuthorities")
+    @JsonAlias({"originating_authorities", "authorities"})
+    private Set<ThemisAuthority> originatingAuthorities = new HashSet<>();
+
+    @JsonProperty("originatingSecurityContext")
+    @JsonAlias({"originating_security_context", "securityContext", "security_context"})
+    private ThemisSecurityContext originatingSecurityContext;
+
+    @JsonProperty("policyVersion")
+    @JsonAlias({"policy_version"})
+    private String policyVersion = "1.0.0";
 
     /**
      * Default constructor.
@@ -511,6 +533,58 @@ public class Pragma implements Serializable {
         return this;
     }
 
+    public ThemisPrincipal getOriginatingPrincipal() {
+        return originatingPrincipal;
+    }
+
+    public void setOriginatingPrincipal(ThemisPrincipal originatingPrincipal) {
+        this.originatingPrincipal = originatingPrincipal;
+        touch();
+    }
+
+    public Set<ThemisAuthority> getOriginatingAuthorities() {
+        return Collections.unmodifiableSet(originatingAuthorities);
+    }
+
+    public void setOriginatingAuthorities(Set<ThemisAuthority> originatingAuthorities) {
+        this.originatingAuthorities = originatingAuthorities != null ? new HashSet<>(originatingAuthorities) : new HashSet<>();
+        touch();
+    }
+
+    public Pragma addOriginatingAuthority(ThemisAuthority authority) {
+        if (authority != null) {
+            this.originatingAuthorities.add(authority);
+            touch();
+        }
+        return this;
+    }
+
+    public Pragma addOriginatingAuthority(String authorityCode) {
+        if (authorityCode != null && !authorityCode.isBlank()) {
+            this.originatingAuthorities.add(ThemisAuthority.of(authorityCode));
+            touch();
+        }
+        return this;
+    }
+
+    public ThemisSecurityContext getOriginatingSecurityContext() {
+        return originatingSecurityContext;
+    }
+
+    public void setOriginatingSecurityContext(ThemisSecurityContext originatingSecurityContext) {
+        this.originatingSecurityContext = originatingSecurityContext;
+        touch();
+    }
+
+    public String getPolicyVersion() {
+        return policyVersion;
+    }
+
+    public void setPolicyVersion(String policyVersion) {
+        this.policyVersion = policyVersion;
+        touch();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -559,6 +633,10 @@ public class Pragma implements Serializable {
         private final List<ErgonPayload> output = new ArrayList<>();
         private final List<PragmaCheckpoint> checkpoints = new ArrayList<>();
         private final Map<String, String> metadata = new LinkedHashMap<>();
+        private ThemisPrincipal originatingPrincipal;
+        private final Set<ThemisAuthority> originatingAuthorities = new HashSet<>();
+        private ThemisSecurityContext originatingSecurityContext;
+        private String policyVersion = "1.0.0";
 
         public Builder pragmaId(String pragmaId) {
             this.pragmaId = pragmaId;
@@ -650,10 +728,53 @@ public class Pragma implements Serializable {
             return this;
         }
 
+        public Builder originatingPrincipal(ThemisPrincipal originatingPrincipal) {
+            this.originatingPrincipal = originatingPrincipal;
+            return this;
+        }
+
+        public Builder originatingAuthorities(Set<ThemisAuthority> originatingAuthorities) {
+            if (originatingAuthorities != null) {
+                this.originatingAuthorities.addAll(originatingAuthorities);
+            }
+            return this;
+        }
+
+        public Builder addOriginatingAuthority(ThemisAuthority authority) {
+            if (authority != null) {
+                this.originatingAuthorities.add(authority);
+            }
+            return this;
+        }
+
+        public Builder addOriginatingAuthority(String authorityCode) {
+            if (authorityCode != null && !authorityCode.isBlank()) {
+                this.originatingAuthorities.add(ThemisAuthority.of(authorityCode));
+            }
+            return this;
+        }
+
+        public Builder originatingSecurityContext(ThemisSecurityContext originatingSecurityContext) {
+            this.originatingSecurityContext = originatingSecurityContext;
+            return this;
+        }
+
+        public Builder policyVersion(String policyVersion) {
+            this.policyVersion = policyVersion;
+            return this;
+        }
+
         public Pragma build() {
-            return new Pragma(pragmaId, correlationId, causationId, praxisId, status,
+            Pragma pragma = new Pragma(pragmaId, correlationId, causationId, praxisId, status,
                     priority, priorityCode, authoredOn, lastModified, source, destination,
                     input, output, checkpoints, metadata);
+            pragma.setOriginatingPrincipal(originatingPrincipal);
+            pragma.setOriginatingAuthorities(originatingAuthorities);
+            pragma.setOriginatingSecurityContext(originatingSecurityContext);
+            if (policyVersion != null) {
+                pragma.setPolicyVersion(policyVersion);
+            }
+            return pragma;
         }
     }
 }

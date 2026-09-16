@@ -1,0 +1,82 @@
+%% =============================================================================
+%% diagrams/fig-paradeigma-architecture.tex
+%% ArchiMate 3.2 Paradeigma Clinical Simulation & Testbed Architecture View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Left Column: Paradeigma Upstream Simulators & Scenario Engine ---
+    \node[archi-app-component] (scenario_engine) at (1.5, 9.0) {%
+        \archibadge{App Component}\archiname{Scenario Engine}\\\archidesc{paradeigma-scenarios / Port 8090}%
+    };
+
+    \node[archi-app-component] (pas_sim) at (1.5, 6.5) {%
+        \archibadge{App Component}\archiname{PAS Simulator}\\\archidesc{paradeigma-pas / Port 8091}%
+    };
+
+    \node[archi-app-component] (emr_sim) at (1.5, 4.0) {%
+        \archibadge{App Component}\archiname{EMR Simulator}\\\archidesc{paradeigma-emr / Port 8092}%
+    };
+
+    % --- Center-Left Column: Harmonia Ingress Gateway (Pylai Inbound) ---
+    \node[archi-app-interface] (pylai_in) at (6.5, 5.25) {%
+        \archibadge{App Interface}\archiname{Pylai Inbound MLLP}\\\archidesc{Camel MLLP / Ports 2101--2104}%
+    };
+
+    % --- Center Column: Harmonia Core Messaging & Workflow ---
+    \node[archi-app-component] (petasos_bus) at (10.5, 6.5) {%
+        \archibadge{App Component}\archiname{Petasos Message Bus}\\\archidesc{Artemis Persistent Journal}%
+    };
+
+    \node[archi-app-component] (ponos_erga) at (10.5, 4.0) {%
+        \archibadge{App Component}\archiname{Ponos \& Erga Core}\\\archidesc{Distribution \& Routing}%
+    };
+
+    % --- Center-Right Column: Harmonia Egress Gateway (Pylai Outbound) ---
+    \node[archi-app-interface] (pylai_out) at (14.5, 5.25) {%
+        \archibadge{App Interface}\archiname{Pylai Outbound MLLP}\\\archidesc{Camel MLLP / Ports 2201--2205}%
+    };
+
+    % --- Right Column: Downstream Clinical Subsystem Simulators ---
+    \node[archi-app-component] (lms_sim) at (19.5, 7.5) {%
+        \archibadge{App Component}\archiname{LMS Simulator}\\\archidesc{paradeigma-lms / Port 8093}%
+    };
+
+    \node[archi-app-component] (rispac_sim) at (19.5, 5.0) {%
+        \archibadge{App Component}\archiname{RIS-PAC Simulator}\\\archidesc{paradeigma-rispac / Port 8094}%
+    };
+
+    \node[archi-app-component] (emr_down) at (19.5, 2.5) {%
+        \archibadge{App Component}\archiname{EMR Recipient}\\\archidesc{paradeigma-emr / Port 2201}%
+    };
+
+    % --- Test & Fault Injection Shared Artifact ---
+    \node[archi-data-object] (failure_sim) at (6.5, 9.0) {%
+        \archibadge{Data Object}\archiname{Fault Injection Config}\\\archidesc{FailureSimulator / Latency}%
+    };
+
+    % --- Flow & Serving Relationships ---
+    % Scenario Engine Orchestration
+    \draw[archi-serving] (scenario_engine) -- node[above, font=\tiny] {REST Journey Triggers} (pas_sim);
+    \draw[archi-serving] (scenario_engine) -- node[above, font=\tiny] {REST Orders} (emr_sim);
+    \draw[archi-access] (scenario_engine) -- (failure_sim);
+
+    % Ingress Inbound MLLP Flows (PD-01, PD-04)
+    \draw[archi-flow] (pas_sim) -- node[above, sloped, font=\tiny] {PD-01 (ADT :2101)} (pylai_in);
+    \draw[archi-flow] (emr_sim) -- node[below, sloped, font=\tiny] {PD-04 (ORM :2104)} (pylai_in);
+
+    % Return Inbound Flows from LMS / RIS-PAC (PD-02, PD-03)
+    \draw[archi-flow] (lms_sim) to[bend right=25] node[above, sloped, font=\tiny] {PD-02 (ORU Lab :2102)} (pylai_in);
+    \draw[archi-flow] (rispac_sim) to[bend right=20] node[below, sloped, font=\tiny] {PD-03 (ORU Rad :2103)} (pylai_in);
+
+    % Harmonia Internal Transport & Execution
+    \draw[archi-flow] (pylai_in) -- (petasos_bus);
+    \draw[archi-flow] (petasos_bus) -- (ponos_erga);
+    \draw[archi-flow] (ponos_erga) -- (petasos_bus);
+    \draw[archi-flow] (petasos_bus) -- (pylai_out);
+
+    % Egress Outbound MLLP Flows (PD-05, PD-06, PD-07, PD-08, PD-09)
+    \draw[archi-flow] (pylai_out) -- node[above, sloped, font=\tiny] {PD-06 / PD-08 (:2202/:2204)} (lms_sim);
+    \draw[archi-flow] (pylai_out) -- node[above, sloped, font=\tiny] {PD-07 / PD-09 (:2203/:2205)} (rispac_sim);
+    \draw[archi-flow] (pylai_out) -- node[below, sloped, font=\tiny] {PD-05 (ADT :2201)} (emr_down);
+
+\end{tikzpicture}

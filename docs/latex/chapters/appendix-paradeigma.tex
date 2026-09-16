@@ -1,0 +1,381 @@
+%% =============================================================================
+%% chapters/appendix-paradeigma.tex
+%% Appendix A: Paradeigma Clinical Simulation & Testbed Subsystem
+%% =============================================================================
+
+\chapter{Paradeigma Clinical Simulation Subsystem}
+\label{app:paradeigma}
+
+\section{Subsystem Overview \& Architectural Principles}
+\label{sec:paradeigma_overview}
+
+The \texttt{Paradeigma} subsystem constitutes Harmonia's dedicated clinical simulation environment, reference testbed, and resilience verification framework. In enterprise healthcare integration, testing against live clinical systems (such as hospital PAS, EMR, LMS, and RIS-PACS platforms) introduces substantial clinical risk, privacy constraints under health data regulations, and non-deterministic environment behavior. \texttt{Paradeigma} resolves these constraints by providing deterministic, stateful, and autonomous microservice emulators for each major hospital actor.
+
+\subsection{Core Design Principles}
+
+\begin{enumerate}
+    \item \textbf{High-Fidelity HL7 v2 and MLLP Emulation}: Each simulator operates as an authentic network actor over Minimal Lower Layer Protocol (MLLP) over TCP/IP, adhering to the standard \texttt{<VT>...<FS><CR>} framing protocol and standard HL7 v2.4/v2.5 message structures.
+    \item \textbf{Deterministic Synthetic Generation}: All clinical identities, patient demographics, accession numbers, lab observations, and imaging findings are generated using pseudorandom seed algorithms (\texttt{SeedRandom}). Given the same seed, the generator produces identical, reproducible clinical records across test runs.
+    \item \textbf{Synchronous Acknowledgement Contracts}: Inbound and outbound interfaces strictly enforce HL7 acknowledgment contracts (\texttt{ACK\^{}R01}, \texttt{ACK\^{}O01}, \texttt{ACK\^{}A01}), requiring MSA-2 acknowledgment codes (\texttt{AA}, \texttt{AE}, \texttt{AR}) to reference the originating MSH-10 Message Control ID.
+    \item \textbf{Autonomous and Orchestrated Operating Modes}: Simulators can execute either autonomously on configurable background timer schedules or deterministically driven via the \texttt{ParadeigmaScenarioEngine} REST API.
+    \item \textbf{Integrated Fault Injection}: Every simulator embeds the \texttt{FailureSimulator} engine, permitting runtime injection of connection drops, acknowledgment timeouts, artificial latency, and application rejections for automated resilience verification.
+\end{enumerate}
+
+\section{ArchiMate Application \& Interface Landscape}
+\label{sec:paradeigma_landscape}
+
+Figure~\ref{fig:paradeigma_architecture} illustrates the ArchiMate 3.2 application component landscape for \texttt{Paradeigma} and its integration with Harmonia's \texttt{Pylai} interface gateway and \texttt{Petasos} messaging bus.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-paradeigma-architecture.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 3.2 Component Landscape for the Paradeigma Simulation Subsystem}
+    \label{fig:paradeigma_architecture}
+\end{figure}
+
+The architecture partitions into five microservices:
+\begin{itemize}
+    \item \textbf{\texttt{paradeigma-pas}}: Simulates the Patient Administration System (PAS), initiating patient registration, admission, transfer, demographic updates, and discharge events over interface \texttt{PD-01}.
+    \item \textbf{\texttt{paradeigma-emr}}: Simulates the Electronic Medical Record (EMR), receiving ADT notifications over \texttt{PD-05} and originating laboratory and diagnostic imaging orders over \texttt{PD-04}.
+    \item \textbf{\texttt{paradeigma-lms}}: Simulates the Laboratory Information System (LMS), receiving ADT updates (\texttt{PD-06}) and pathology orders (\texttt{PD-08}), and transmitting structured LOINC pathology results over \texttt{PD-02}.
+    \item \textbf{\texttt{paradeigma-rispac}}: Simulates the Radiology Information System \& PACS, receiving ADT updates (\texttt{PD-07}) and radiology orders (\texttt{PD-09}), and returning DICOM-linked diagnostic imaging reports over \texttt{PD-03}.
+    \item \textbf{\texttt{paradeigma-scenarios}}: Orchestrates multi-system clinical workflows (Patient Journeys) and controls fault injection parameters across the simulation fleet via REST APIs.
+\end{itemize}
+
+\section{Formal Interface Catalogue (PD-01 through PD-09)}
+\label{sec:paradeigma_interfaces}
+
+Table~\ref{tab:paradeigma_interfaces} specifies the formal interface catalogue spanning ingress, egress, and routing channels across the Paradeigma simulation fleet and Harmonia.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{2.2cm} p{2.2cm} p{2.5cm} c p{2.5cm}}
+\toprule
+\textbf{ID} & \textbf{Source Actor} & \textbf{Target Actor} & \textbf{HL7 Message} & \textbf{Port} & \textbf{Trigger / Purpose} \\
+\midrule
+\texttt{PD-01} & \texttt{paradeigma-pas} & Harmonia Inbound & \texttt{ADT\^{}A01..A08} & 2101 & Patient Lifecycle Events \\
+\texttt{PD-02} & \texttt{paradeigma-lms} & Harmonia Inbound & \texttt{ORU\^{}R01} & 2102 & LOINC Lab Results \\
+\texttt{PD-03} & \texttt{paradeigma-rispac} & Harmonia Inbound & \texttt{ORU\^{}R01} & 2103 & Imaging Diagnostic Reports \\
+\texttt{PD-04} & \texttt{paradeigma-emr} & Harmonia Inbound & \texttt{ORM\^{}O01} & 2104 & Lab \& Imaging Orders \\
+\texttt{PD-05} & Harmonia Outbound & \texttt{paradeigma-emr} & \texttt{ADT\^{}A01..A08} & 2201 & EMR Demographics Fan-Out \\
+\texttt{PD-06} & Harmonia Outbound & \texttt{paradeigma-lms} & \texttt{ADT\^{}A01..A08} & 2202 & LMS Demographics Fan-Out \\
+\texttt{PD-07} & Harmonia Outbound & \texttt{paradeigma-rispac} & \texttt{ADT\^{}A01..A08} & 2203 & RIS Demographics Fan-Out \\
+\texttt{PD-08} & Harmonia Outbound & \texttt{paradeigma-lms} & \texttt{ORM\^{}O01} & 2204 & Pathology Order Routing \\
+\texttt{PD-09} & Harmonia Outbound & \texttt{paradeigma-rispac} & \texttt{ORM\^{}O01} & 2205 & Radiology Order Routing \\
+\bottomrule
+\end{tabularx}
+\caption{Paradeigma Interface Catalogue and Port Mappings}
+\label{tab:paradeigma_interfaces}
+\end{table}
+
+\subsection{MLLP Framing \& Transport Protocol}
+
+All network interfaces (PD-01 through PD-09) communicate using the Minimal Lower Layer Protocol (MLLP) over dedicated persistent TCP/IP sockets. An MLLP payload is framed strictly as:
+\begin{equation}
+\langle\text{MLLP Frame}\rangle ::= \texttt{0x0B}\ (\text{Start-of-Block / \texttt{<VT>}}) + \langle\text{HL7 v2 Payload}\rangle + \texttt{0x1C}\ (\text{End-of-Block / \texttt{<FS>}}) + \texttt{0x0D}\ (\text{Trailer / \texttt{<CR>}})
+\end{equation}
+
+\subsection{Synchronous Acknowledgement Contract}
+
+Every transmitted HL7 v2 message requires an immediate, synchronous HL7 acknowledgement (\texttt{ACK}) over the established TCP socket prior to socket closure. The acknowledgment status in \texttt{MSA-1} determines downstream transmission handling:
+\begin{itemize}
+    \item \textbf{\texttt{AA} (Application Accept)}: Indicates successful receipt, structural validation, and internal queue persistence. The sending client marks the transmission as successfully completed.
+    \item \textbf{\texttt{AE} (Application Error)}: Indicates a recoverable or transient downstream processing condition. Triggering clients engage exponential backoff retry.
+    \item \textbf{\texttt{AR} (Application Reject)}: Indicates an unrecoverable structural or schema violation (such as missing required \texttt{PID-3} or malformed segment delimiters). The message is immediately routed to the Dead Letter Queue without automatic retry.
+\end{itemize}
+
+\section{Hospital Simulator Microservice Specifications}
+\label{sec:paradeigma_simulators}
+
+\subsection{Patient Administration System Simulator (\texttt{paradeigma-pas})}
+
+The \texttt{paradeigma-pas} service models an acute care hospital Patient Administration System responsible for master patient identity and encounter tracking.
+\begin{itemize}
+    \item \textbf{Internal State Engine}: Maintains an active in-memory patient directory transitioning through state phases: $\text{UNREGISTERED} \to \text{REGISTERED} \to \text{ADMITTED} \to \text{TRANSFERRED} \to \text{UPDATED} \to \text{DISCHARGED}$.
+    \item \textbf{Autonomous Scheduling Modes}:
+    \begin{itemize}
+        \item \texttt{FIXED}: Emits patient events at a deterministic interval (default 5000\,ms).
+        \item \texttt{RANDOM\_RANGE}: Emits events at random intervals within a bounded window (e.g., 2000--10000\,ms).
+        \item \texttt{OFF}: Background timers disabled; events triggered exclusively via REST endpoints.
+    \end{itemize}
+    \item \textbf{REST Management Interface} (Port \texttt{8091}):
+    \begin{itemize}
+        \item \texttt{GET /api/pas/status}: Returns active configuration, simulated patient count, and message telemetry.
+        \item \texttt{POST /api/pas/config}: Updates generation mode, delay intervals, and target MLLP endpoints.
+        \item \texttt{POST /api/pas/register}, \texttt{POST /api/pas/admit}, \texttt{POST /api/pas/transfer}, \texttt{POST /api/pas/update}, \texttt{POST /api/pas/discharge}: Triggers discrete patient state transitions.
+        \item \texttt{POST /api/pas/trigger-next}: Advances the next patient in the demographic queue through their lifecycle.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Electronic Medical Record Simulator (\texttt{paradeigma-emr})}
+
+The \texttt{paradeigma-emr} service simulates clinician interaction within an Electronic Medical Record:
+\begin{itemize}
+    \item \textbf{Inbound Ingestion} (Port \texttt{2201}, \texttt{PD-05}): Receives inbound \texttt{ADT\^{}A01}--\texttt{A08} broadcasts fanned out from Harmonia, synchronizing local patient and encounter tables.
+    \item \textbf{Order Placement Engine} (Outbound Port \texttt{2104}, \texttt{PD-04}): Generates synthetic \texttt{ORM\^{}O01} orders containing clinical indications, placer order numbers, priority flags (\texttt{STAT} vs. \texttt{ROUTINE}), and attending physician metadata.
+    \item \textbf{REST API} (Port \texttt{8092}):
+    \begin{itemize}
+        \item \texttt{GET /api/emr/status}: Simulator health and received ADT counters.
+        \item \texttt{POST /api/emr/orders/laboratory}: Originates pathology orders for registered patients.
+        \item \texttt{POST /api/emr/orders/imaging}: Originates diagnostic imaging orders for registered patients.
+        \item \texttt{GET /api/emr/patients}: Inspects locally synchronized patient registries.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Laboratory Information System Simulator (\texttt{paradeigma-lms})}
+
+The \texttt{paradeigma-lms} service emulates clinical pathology and laboratory analyzer workflows:
+\begin{itemize}
+    \item \textbf{Inbound Ingestion}: Receives patient admissions on Port \texttt{2202} (\texttt{PD-06}) and lab orders on Port \texttt{2204} (\texttt{PD-08}).
+    \item \textbf{Pathology Result Generation}: Synthesizes \texttt{ORU\^{}R01} observation messages containing multi-segment \texttt{OBX} records mapped to standard LOINC coding systems.
+    \item \textbf{Clinical Pathology Catalog}: Supports standard diagnostic panels detailed in Table~\ref{tab:loinc_catalog}.
+    \item \textbf{REST API} (Port \texttt{8093}):
+    \begin{itemize}
+        \item \texttt{GET /api/lms/status}: Simulator status and received order queues.
+        \item \texttt{POST /api/lms/results/laboratory}: Triggers immediate generation and transmission of completed lab results to Harmonia Port \texttt{2102} (\texttt{PD-02}).
+    \end{itemize}
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l l l l}
+\toprule
+\textbf{Panel Code} & \textbf{Panel Description} & \textbf{LOINC Code} & \textbf{Observation Name} & \textbf{Reference Range} \\
+\midrule
+\texttt{CBC} & Full Blood Count & \texttt{718-7} & Haemoglobin & 130--180\,g/L \\
+             &                   & \texttt{6690-2} & White Blood Cell Count & 4.0--11.0\,$\times 10^9$/L \\
+             &                   & \texttt{777-3} & Platelet Count & 150--400\,$\times 10^9$/L \\
+             &                   & \texttt{4544-3} & Haematocrit & 0.40--0.52\,L/L \\
+             &                   & \texttt{789-8} & Red Blood Cell Count & 4.5--6.5\,$\times 10^{12}$/L \\
+\midrule
+\texttt{ELEC} & Electrolytes \& Urea & \texttt{2951-2} & Sodium & 135--145\,mmol/L \\
+              &                      & \texttt{2823-3} & Potassium & 3.5--5.0\,mmol/L \\
+              &                      & \texttt{2075-0} & Chloride & 95--105\,mmol/L \\
+              &                      & \texttt{2028-9} & Bicarbonate & 22--29\,mmol/L \\
+              &                      & \texttt{2160-0} & Creatinine & 60--110\,$\mu$mol/L \\
+              &                      & \texttt{3094-0} & Urea & 2.5--7.8\,mmol/L \\
+\midrule
+\texttt{LFT} & Liver Function Tests & \texttt{1751-7} & Albumin & 35--50\,g/L \\
+             &                      & \texttt{1975-2} & Total Bilirubin & 3--20\,$\mu$mol/L \\
+             &                      & \texttt{1742-6} & Alanine Aminotransferase (ALT) & 10--40\,U/L \\
+             &                      & \texttt{1920-8} & Aspartate Aminotransferase (AST) & 10--40\,U/L \\
+             &                      & \texttt{6768-6} & Alkaline Phosphatase (ALP) & 30--120\,U/L \\
+\midrule
+\texttt{GLU} & Fasting Blood Glucose & \texttt{2345-7} & Glucose & 3.9--6.0\,mmol/L \\
+\bottomrule
+\end{tabularx}
+\caption{Paradeigma Synthetic Pathology LOINC Catalog}
+\label{tab:loinc_catalog}
+\end{table}
+
+\subsection{Radiology Information System \& PACS Simulator (\texttt{paradeigma-rispac})}
+
+The \texttt{paradeigma-rispac} service simulates diagnostic imaging modalities and PACS archiving:
+\begin{itemize}
+    \item \textbf{Inbound Ingestion}: Receives patient demographic feeds on Port \texttt{2203} (\texttt{PD-07}) and radiology examination orders on Port \texttt{2205} (\texttt{PD-09}).
+    \item \textbf{Diagnostic Report Synthesis}: Formulates structured textual radiology impressions and narratives (\texttt{OBX} value type \texttt{TX}) with associated performing radiologist credentials.
+    \item \textbf{Imaging Modality Catalog}:
+    \begin{itemize}
+        \item \texttt{XR\_CHEST}: 2-View Chest Radiography (evaluating infiltrate, consolidation, cardiomegaly).
+        \item \texttt{CT\_HEAD}: Non-contrast Cranial Computed Tomography (acute hemorrhage and midline shift assessment).
+        \item \texttt{CT\_ABDOMEN}: Contrast-enhanced Abdominal/Pelvic CT (parenchymal organ integrity).
+        \item \texttt{MRI\_BRAIN}: High-resolution Magnetic Resonance Neuroimaging.
+        \item \texttt{US\_ABDOMEN}: Abdominal Diagnostic Ultrasonography.
+    \end{itemize}
+    \item \textbf{REST API} (Port \texttt{8094}):
+    \begin{itemize}
+        \item \texttt{GET /api/rispac/status}: Service health and pending examination list.
+        \item \texttt{POST /api/rispac/results/imaging}: Generates and transmits finalized imaging report \texttt{ORU\^{}R01} messages to Harmonia Port \texttt{2103} (\texttt{PD-03}).
+    \end{itemize}
+\end{itemize}
+
+\section{Synthetic Data Models \& Deterministic Generators}
+\label{sec:paradeigma_models}
+
+\subsection{Canonical Domain Entities}
+
+The \texttt{paradeigma-common} module models realistic clinical workflows using five core profile structures:
+
+\begin{enumerate}
+    \item \textbf{\texttt{PatientProfile}}: Represents master patient demographics.
+    \begin{itemize}
+        \item \texttt{patientId} (MRN, e.g., \texttt{MRN-100421}), \texttt{nationalIdentifier} (e.g., Medicare/NHS identifier).
+        \item Demographic attributes: \texttt{firstName}, \texttt{lastName}, \texttt{dateOfBirth}, \texttt{gender} (\texttt{M}, \texttt{F}, \texttt{O}).
+        \item Contact \& Geo: \texttt{addressLine}, \texttt{city}, \texttt{state}, \texttt{postalCode}, \texttt{phoneNumber}, \texttt{email}.
+        \item Next of Kin: \texttt{nextOfKinName}, \texttt{nextOfKinRelationship}, \texttt{nextOfKinPhone}.
+    \end{itemize}
+    \item \textbf{\texttt{VisitProfile}}: Represents encounter and admission context.
+    \begin{itemize}
+        \item \texttt{visitNumber} (FIN/Account ID, e.g., \texttt{VIS-900421}).
+        \item Admission \& Discharge timestamps, \texttt{visitType} (\texttt{INPATIENT}, \texttt{OUTPATIENT}, \texttt{EMERGENCY}).
+        \item Location context: \texttt{pointOfCare} (e.g., \texttt{WARD-3A}), \texttt{room} (\texttt{RM-12}), \texttt{bed} (\texttt{BED-02}), \texttt{facility} (\texttt{HOSP-MAIN}).
+        \item Care Team: \texttt{attendingDoctorId}, \texttt{attendingDoctorName}, \texttt{admittingDiagnosis}.
+    \end{itemize}
+    \item \textbf{\texttt{OrderProfile}}: Captures clinical orders.
+    \begin{itemize}
+        \item Identifiers: \texttt{placerOrderNumber} (\texttt{ORD-300001}), \texttt{fillerOrderNumber}.
+        \item Context: \texttt{orderType} (\texttt{PATHOLOGY}, \texttt{DIAGNOSTIC\_IMAGING}), \texttt{universalServiceId}, \texttt{universalServiceText}.
+        \item Clinical attributes: \texttt{priority} (\texttt{R} for Routine, \texttt{S} for Stat), \texttt{orderDateTime}, \texttt{clinicalIndication}.
+    \end{itemize}
+    \item \textbf{\texttt{ResultProfile}}: Encapsulates diagnostic report outputs.
+    \begin{itemize}
+        \item Order correlation: \texttt{placerOrderNumber}, \texttt{fillerOrderNumber}, \texttt{resultStatus} (\texttt{F} for Final, \texttt{P} for Preliminary, \texttt{C} for Corrected).
+        \item Narrative report text: \texttt{diagnosticReportNarrative}.
+        \item Observations: \texttt{List<ObservationItem>}.
+    \end{itemize}
+    \item \textbf{\texttt{ObservationItem}}: Represents granular test observations mapped to HL7 \texttt{OBX} segments.
+    \begin{itemize}
+        \item \texttt{setSubId}: Sequential identifier (\texttt{OBX-1}).
+        \item \texttt{valueType}: \texttt{NM} (Numeric), \texttt{ST} (String), \texttt{TX} (Text), or \texttt{CE} (Coded).
+        \item \texttt{observationId}: Standard LOINC or internal test code (\texttt{OBX-3.1}).
+        \item \texttt{observationText}: Observation description (\texttt{OBX-3.2}).
+        \item \texttt{codingSystem}: Coding system identifier, defaults to \texttt{LN} (\texttt{OBX-3.3}).
+        \item \texttt{value}: Quantitative or qualitative test result value (\texttt{OBX-5}).
+        \item \texttt{units}: Measurement units (\texttt{OBX-6}).
+        \item \texttt{referenceRange}: Reference normal boundary (\texttt{OBX-7}).
+        \item \texttt{abnormalFlags}: \texttt{N} (Normal), \texttt{H} (High), \texttt{L} (Low), \texttt{A} (Abnormal) (\texttt{OBX-8}).
+        \item \texttt{resultStatus}: Observation status flag (\texttt{OBX-11}).
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Seed-Based Deterministic Generation Engine}
+
+The \texttt{SeedRandom} utility wraps Java's pseudorandom generation algorithms with strict seed encapsulation. This guarantees that given an identical seed (e.g., patient seed \texttt{100421L}), generators produce identical clinical datasets across distributed test runners:
+
+\begin{lstlisting}[language=Java, caption={SeedRandom Deterministic Generation Pattern in Paradeigma}]
+public class SyntheticPatientGenerator {
+    private final SeedRandom random;
+
+    public SyntheticPatientGenerator(long seed) {
+        this.random = new SeedRandom(seed);
+    }
+
+    public PatientProfile generatePatient(String patientId) {
+        Gender gender = random.nextBoolean(0.5) ? Gender.FEMALE : Gender.MALE;
+        String firstName = random.pick(gender == Gender.FEMALE ? FEMALE_NAMES : MALE_NAMES);
+        String lastName = random.pick(LAST_NAMES);
+        LocalDate dob = LocalDate.now().minusYears(random.nextInt(18, 85))
+                                   .minusDays(random.nextInt(1, 365));
+        return new PatientProfile(patientId, firstName, lastName, dob, gender);
+    }
+}
+\end{lstlisting}
+
+\section{Scenario Orchestration Engine \& Patient Journey Workflows}
+\label{sec:paradeigma_scenarios}
+
+The \texttt{ParadeigmaScenarioEngine} (microservice \texttt{paradeigma-scenarios}, Port \texttt{8090}) orchestrates end-to-end, multi-actor clinical workflows across the simulation testbed.
+
+\subsection{9-Step Canonical Patient Journey Sequence}
+
+A complete synthetic encounter exercises all ingress, egress, routing, and transformation pathways across Harmonia in a deterministic 9-step progression:
+
+\begin{enumerate}
+    \item \textbf{Step 1: Patient Registration (\texttt{PAS} $\to$ \texttt{ADT\^{}A04})}: \texttt{paradeigma-pas} registers a new synthetic patient with full demographic and Next-of-Kin details, transmitting over \texttt{PD-01} (:2101).
+    \item \textbf{Step 2: Inpatient Admission (\texttt{PAS} $\to$ \texttt{ADT\^{}A01})}: \texttt{paradeigma-pas} assigns the patient to an acute inpatient ward (\texttt{WARD-3A}, \texttt{RM-12}, \texttt{BED-02}) and emits an admission event. Harmonia fans out \texttt{ADT\^{}A01} to \texttt{EMR} (\texttt{PD-05}), \texttt{LMS} (\texttt{PD-06}), and \texttt{RIS-PAC} (\texttt{PD-07}).
+    \item \textbf{Step 3: Pathology Order Placement (\texttt{EMR} $\to$ \texttt{ORM\^{}O01})}: \texttt{paradeigma-emr} generates a Full Blood Count (\texttt{CBC}) lab order, transmitting over \texttt{PD-04} (:2104). Harmonia routes this order to \texttt{paradeigma-lms} over \texttt{PD-08} (:2204).
+    \item \textbf{Step 4: Pathology Result Ingestion (\texttt{LMS} $\to$ \texttt{ORU\^{}R01})}: \texttt{paradeigma-lms} analyzes the specimen and produces a multi-line LOINC pathology result (\texttt{718-7}, \texttt{6690-2}, \texttt{777-3}), transmitting to Harmonia over \texttt{PD-02} (:2102).
+    \item \textbf{Step 5: Diagnostic Imaging Order Placement (\texttt{EMR} $\to$ \texttt{ORM\^{}O01})}: \texttt{paradeigma-emr} requests a 2-view Chest X-Ray (\texttt{XR\_CHEST}) over \texttt{PD-04} (:2104). Harmonia routes the radiology order to \texttt{paradeigma-rispac} over \texttt{PD-09} (:2205).
+    \item \textbf{Step 6: Diagnostic Imaging Result Ingestion (\texttt{RIS-PAC} $\to$ \texttt{ORU\^{}R01})}: \texttt{paradeigma-rispac} returns a structured diagnostic report with impression and findings narrative over \texttt{PD-03} (:2103).
+    \item \textbf{Step 7: Inpatient Transfer (\texttt{PAS} $\to$ \texttt{ADT\^{}A02})}: \texttt{paradeigma-pas} transfers the patient to a step-down ward (\texttt{WARD-4B}, \texttt{RM-401}) and broadcasts \texttt{ADT\^{}A02} across all clinical destinations.
+    \item \textbf{Step 8: Patient Demographics Update (\texttt{PAS} $\to$ \texttt{ADT\^{}A08})}: Updates patient contact information and address, triggering fan-out reconciliation across EMR, LMS, and RIS-PAC.
+    \item \textbf{Step 9: Patient Discharge (\texttt{PAS} $\to$ \texttt{ADT\^{}A03})}: Emits encounter close and discharge disposition over \texttt{PD-01}, concluding the patient episode.
+\end{enumerate}
+
+\subsection{Execution Profiles}
+
+The scenario engine supports three operational execution profiles:
+\begin{itemize}
+    \item \textbf{\texttt{TEST}}: Deterministic execution with minimal step pacing (10--50\,ms delay). Optimized for continuous integration pipelines and automated regression test suites.
+    \item \textbf{\texttt{DEMO}}: Human-observable pacing with 2000--10000\,ms intervals between steps, designed for live demonstrations and interactive operational console monitoring.
+    \item \textbf{\texttt{LOAD}}: Concurrent execution across configurable worker thread pools without synthetic pacing delays, evaluating platform throughput, queue depth, and memory footprint.
+\end{itemize}
+
+\subsection{Scenario Control REST API}
+
+Table~\ref{tab:scenario_api} documents the REST control endpoints exposed on port \texttt{8090}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{6.5cm}}
+\toprule
+\textbf{HTTP Method} & \textbf{Endpoint Path} & \textbf{Operational Function} \\
+\midrule
+\texttt{POST} & \texttt{/api/scenarios/journey} & Triggers an immediate single 9-step Patient Journey. \\
+\texttt{POST} & \texttt{/api/scenarios/concurrent} & Initiates $N$ parallel journey executions under specified profile. \\
+\texttt{POST} & \texttt{/api/scenarios/continuous} & Starts sustained continuous journey background generation. \\
+\texttt{POST} & \texttt{/api/scenarios/stop} & Gracefully halts active background scenarios and thread pools. \\
+\texttt{GET}  & \texttt{/api/scenarios/status} & Queries execution telemetry, success rates, and active threads. \\
+\bottomrule
+\end{tabularx}
+\caption{Scenario Engine REST Control Endpoints}
+\label{tab:scenario_api}
+\end{table}
+
+\section{Failure Simulation, Fault Injection \& Automated Recovery}
+\label{sec:paradeigma_failure}
+
+\subsection{Fault Injection Modes (\texttt{FailureSimulator})}
+
+The \texttt{FailureSimulator} embeds within each simulator's MLLP pipeline, permitting dynamic simulation of network anomalies and application failures without modifying underlying platform infrastructure. Table~\ref{tab:fault_modes} enumerates the supported failure modes configured via \texttt{FaultInjectionConfig}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l c p{7.5cm}}
+\toprule
+\textbf{Fault Injection Parameter} & \textbf{Range / Type} & \textbf{Simulated Physical Failure Condition} \\
+\midrule
+\texttt{dropConnectionProbability} & $0.0 - 1.0$ & TCP connection RST / network partition mid-frame. \\
+\texttt{noAckProbability} & $0.0 - 1.0$ & Destination unresponsiveness causing socket read timeout. \\
+\texttt{ackDelayMs} & $\ge 0$\,ms & Network congestion or downstream processing latency. \\
+\texttt{applicationErrorProbability} & $0.0 - 1.0$ & Returns \texttt{MSA-1=AE} simulating transient system error. \\
+\texttt{applicationRejectProbability} & $0.0 - 1.0$ & Returns \texttt{MSA-1=AR} simulating schema/rule validation error. \\
+\texttt{malformedSegmentProbability} & $0.0 - 1.0$ & Corrupts HL7 segment delimiters or required fields. \\
+\texttt{duplicateMsh10Probability} & $0.0 - 1.0$ & Replays previous \texttt{MSH-10} to evaluate deduplication filters. \\
+\bottomrule
+\end{tabularx}
+\caption{FailureSimulator Fault Injection Capabilities}
+\label{tab:fault_modes}
+\end{table}
+
+\subsection{Automated Recovery Acceptance Test Suite}
+
+The integration test suite in \texttt{paradeigma-test} (\texttt{RecoveryAcceptanceTest.java}) automates formal recovery verification across six critical failure scenarios:
+
+\begin{enumerate}
+    \item \textbf{Test 1 --- Broker Journal Recovery}: Verifies that unacknowledged in-flight messages persist across complete ActiveMQ Artemis broker crashes and restarts, replaying cleanly to consumers upon broker recovery without data loss.
+    \item \textbf{Test 2 --- Ponos Worker Crash Recovery}: Simulates worker termination during Camel pipeline execution. Validates that uncommitted Artemis transactions redeliver to healthy worker instances, advancing the associated \texttt{Pragma} to \texttt{COMPLETED}.
+    \item \textbf{Test 3 --- Outbound Destination Outage \& Backoff Recovery}: Simulates an LMS outage during ORM order transmission. Verifies that Pylai engages exponential retry backoff, retaining the message until LMS recovers and returns \texttt{ACK\^{}AA}.
+    \item \textbf{Test 4 --- Duplicate HL7 MSH-10 Idempotency}: Transmits identical \texttt{MSH-10} control IDs twice. Validates that Petasos deduplication filters intercept the re-transmission, returning an idempotent \texttt{AA} acknowledgment without triggering duplicate task executions.
+    \item \textbf{Test 5 --- Partial ADT Fan-Out Isolation}: Simulates an ADT fan-out where EMR and LMS succeed but RIS-PAC fails. Verifies that upon RIS-PAC restoration, only the pending RIS-PAC delivery is retried, avoiding duplicate broadcasts to EMR or LMS.
+    \item \textbf{Test 6 --- Platform Cold Restart Recovery}: Queues multiple clinical transactions and performs a hard platform stop and restart. Verifies that all persistent journal messages and cache state reconstruct cleanly to terminal completion.
+\end{enumerate}
+
+\section{Deployment Topology \& Docker Orchestration}
+\label{sec:paradeigma_deployment}
+
+The Paradeigma simulation fleet deploys seamlessly alongside Harmonia using Docker Compose (\texttt{docker-compose-paradeigma.yml}). Table~\ref{tab:paradeigma_containers} outlines the container topology, port bindings, and health checks.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l c c p{4.0cm}}
+\toprule
+\textbf{Container Service} & \textbf{Base Image} & \textbf{REST Port} & \textbf{MLLP Ports} & \textbf{Health Check Dependency} \\
+\midrule
+\texttt{paradeigma-pas} & OpenJDK 17 & 8091 & --- & \texttt{http://localhost:8091/api/pas/status} \\
+\texttt{paradeigma-emr} & OpenJDK 17 & 8092 & 2201 & \texttt{http://localhost:8092/api/emr/status} \\
+\texttt{paradeigma-lms} & OpenJDK 17 & 8093 & 2202, 2204 & \texttt{http://localhost:8093/api/lms/status} \\
+\texttt{paradeigma-rispac} & OpenJDK 17 & 8094 & 2203, 2205 & \texttt{http://localhost:8094/api/rispac/status} \\
+\texttt{paradeigma-scenarios} & OpenJDK 17 & 8090 & --- & Depends on PAS, EMR, LMS, RIS-PAC healthy \\
+\bottomrule
+\end{tabularx}
+\caption{Paradeigma Docker Compose Deployment Configuration}
+\label{tab:paradeigma_containers}
+\end{table}

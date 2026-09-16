@@ -30,6 +30,7 @@ import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
@@ -96,6 +97,7 @@ public abstract class ErgonBase extends RouteBuilder {
     private String outputEndpoint;
     private String errorEndpoint;
     private boolean enabled = true;
+    private ErgonSecurityDefinition securityDefinition;
 
     /**
      * Default constructor initializing default identifiers.
@@ -1053,6 +1055,14 @@ public abstract class ErgonBase extends RouteBuilder {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public ErgonSecurityDefinition getSecurityDefinition() {
+        return securityDefinition;
+    }
+
+    public void setSecurityDefinition(ErgonSecurityDefinition securityDefinition) {
+        this.securityDefinition = securityDefinition;
     }
 
     @Override

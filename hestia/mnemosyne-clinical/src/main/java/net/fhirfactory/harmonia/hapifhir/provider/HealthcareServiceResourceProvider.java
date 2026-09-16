@@ -83,11 +83,21 @@ public class HealthcareServiceResourceProvider implements IResourceProvider {
             @Description(shortDefinition = "A portion of the service name")
             @OptionalParam(name = "name") StringParam theName,
             @Description(shortDefinition = "A healthcare service Identifier")
-            @OptionalParam(name = "identifier") StringParam theIdentifier
+            @OptionalParam(name = "identifier") StringParam theIdentifier,
+            @Description(shortDefinition = "The organization that provides this service")
+            @OptionalParam(name = "organization") StringParam theOrganization,
+            @Description(shortDefinition = "The location where this service is provided")
+            @OptionalParam(name = "location") StringParam theLocation,
+            @Description(shortDefinition = "Whether this service is in active use")
+            @OptionalParam(name = "active") StringParam theActive
     ) {
-        String idStr = theId != null ? theId.getValue() : null;
-        String nameStr = theName != null ? theName.getValue() : null;
-        String identStr = theIdentifier != null ? theIdentifier.getValue() : null;
-        return storageService.searchResources("HealthcareService", idStr, nameStr, identStr);
+        java.util.Map<String, String> params = new java.util.HashMap<>();
+        if (theId != null) params.put("_id", theId.getValue());
+        if (theName != null) params.put("name", theName.getValue());
+        if (theIdentifier != null) params.put("identifier", theIdentifier.getValue());
+        if (theOrganization != null) params.put("organization", theOrganization.getValue());
+        if (theLocation != null) params.put("location", theLocation.getValue());
+        if (theActive != null) params.put("active", theActive.getValue());
+        return storageService.searchResources("HealthcareService", params);
     }
 }

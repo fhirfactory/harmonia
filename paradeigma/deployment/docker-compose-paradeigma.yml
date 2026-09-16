@@ -1,0 +1,161 @@
+version: '3.8'
+
+networks:
+  hie-network:
+    driver: bridge
+
+services:
+  # =========================================================================
+  # Paradeigma Simulated Healthcare Applications
+  # =========================================================================
+
+  paradeigma-pas:
+    build:
+      context: ../..
+      dockerfile: paradeigma/paradeigma-pas/Dockerfile
+    container_name: paradeigma-pas
+    environment:
+      - SERVER_PORT=8091
+      - HARMONIA_HOST=mllp-gateway
+      - HARMONIA_PAS_ADT_PORT=2101
+      - PAS_TIMER_ENABLED=false
+      - PAS_TIMER_MODE=FIXED
+      - PAS_FIXED_INTERVAL_MS=5000
+      - PAS_EXECUTION_PROFILE=DEMO
+    ports:
+      - "8091:8091"
+    networks:
+      - hie-network
+    depends_on:
+      - mllp-gateway
+
+  paradeigma-emr:
+    build:
+      context: ../..
+      dockerfile: paradeigma/paradeigma-emr/Dockerfile
+    container_name: paradeigma-emr
+    environment:
+      - SERVER_PORT=8092
+      - EMR_ADT_INBOUND_PORT=2201
+      - HARMONIA_HOST=mllp-gateway
+      - HARMONIA_EMR_ORM_PORT=2104
+      - EMR_TIMER_ENABLED=false
+      - EMR_TIMER_MODE=FIXED
+      - EMR_FIXED_INTERVAL_MS=7000
+      - EMR_EXECUTION_PROFILE=DEMO
+    ports:
+      - "8092:8092"
+      - "2201:2201"
+    networks:
+      - hie-network
+    depends_on:
+      - mllp-gateway
+
+  paradeigma-lms:
+    build:
+      context: ../..
+      dockerfile: paradeigma/paradeigma-lms/Dockerfile
+    container_name: paradeigma-lms
+    environment:
+      - SERVER_PORT=8093
+      - LMS_ADT_INBOUND_PORT=2202
+      - LMS_ORM_INBOUND_PORT=2204
+      - HARMONIA_HOST=mllp-gateway
+      - HARMONIA_LMS_ORU_PORT=2102
+      - LMS_AUTO_PRODUCE_RESULTS=true
+      - LMS_RESULT_DELAY_MS=2000
+      - LMS_EXECUTION_PROFILE=DEMO
+    ports:
+      - "8093:8093"
+      - "2202:2202"
+      - "2204:2204"
+    networks:
+      - hie-network
+    depends_on:
+      - mllp-gateway
+
+  paradeigma-rispac:
+    build:
+      context: ../..
+      dockerfile: paradeigma/paradeigma-rispac/Dockerfile
+    container_name: paradeigma-rispac
+    environment:
+      - SERVER_PORT=8094
+      - RISPAC_ADT_INBOUND_PORT=2203
+      - RISPAC_ORM_INBOUND_PORT=2205
+      - HARMONIA_HOST=mllp-gateway
+      - HARMONIA_RISPAC_ORU_PORT=2103
+      - RISPAC_AUTO_PRODUCE_REPORTS=true
+      - RISPAC_REPORTING_DELAY_MS=3000
+      - RISPAC_EXECUTION_PROFILE=DEMO
+    ports:
+      - "8094:8094"
+      - "2203:2203"
+      - "2205:2205"
+    networks:
+      - hie-network
+    depends_on:
+      - mllp-gateway
+
+  paradeigma-scenarios:
+    build:
+      context: ../..
+      dockerfile: paradeigma/paradeigma-scenarios/Dockerfile
+    container_name: paradeigma-scenarios
+    environment:
+      - SERVER_PORT=8090
+      - PAS_BASE_URL=http://paradeigma-pas:8091
+      - EMR_BASE_URL=http://paradeigma-emr:8092
+      - LMS_BASE_URL=http://paradeigma-lms:8093
+      - RISPAC_BASE_URL=http://paradeigma-rispac:8094
+      - SCENARIO_PROFILE=DEMO
+    ports:
+      - "8090:8090"
+    networks:
+      - hie-network
+    depends_on:
+      - paradeigma-pas
+      - paradeigma-emr
+      - paradeigma-lms
+      - paradeigma-rispac
+
+  # =========================================================================
+  # Harmonia Platform Components
+  # =========================================================================
+
+  mllp-gateway:
+    build:
+      context: ../../pylai/pylai-mllp-in
+      dockerfile: Dockerfile
+    container_name: hie-mllp-gateway
+    environment:
+      - MLLP_HOST=0.0.0.0
+      - MLLP_PAS_ADT_PORT=2101
+      - MLLP_LMS_ORU_PORT=2102
+      - MLLP_RISPAC_ORU_PORT=2103
+      - MLLP_EMR_ORM_PORT=2104
+      - INFINISPAN_HOST=infinispan-1
+      - INFINISPAN_PORT=11222
+      - TASK_BROKER_URL=tcp://task-processor:61616
+    ports:
+      - "2101:2101"
+      - "2102:2102"
+      - "2103:2103"
+      - "2104:2104"
+      - "8084:8080"
+    networks:
+      - hie-network
+
+  task-processor:
+    build:
+      context: ../../energeia/ponos
+      dockerfile: Dockerfile
+    container_name: hie-task-processor
+    environment:
+      - TASK_BROKER_HOST=0.0.0.0
+      - TASK_BROKER_PORT=61616
+    ports:
+      - "8083:8080"
+      - "61616:61616"
+    networks:
+      - hie-network

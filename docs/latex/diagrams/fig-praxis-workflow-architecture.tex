@@ -1,0 +1,83 @@
+%% =============================================================================
+%% diagrams/fig-praxis-workflow-architecture.tex
+%% ArchiMate 3.2 Praxis Workflow Sequence Architecture & Pipeline Synthesis View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Column 1: Declarative Metadata & Seeding Tier ---
+    \node[archi-data-object] (praxis_def_json) at (0, 7.5) {%
+        \archibadge{Data Object}\archiname{Praxis Definition}\\\archidesc{JSON Descriptor / Config}%
+    };
+
+    \node[archi-app-component] (praxis_service) at (0, 4.5) {%
+        \archibadge{App Component}\archiname{Praxis Service}\\\archidesc{PraxisService HotRod Client}%
+    };
+
+    \node[archi-node] (sequence_cache) at (0, 1.5) {%
+        \archibadge{Technology Node}\archiname{Task Sequence Cache}\\\archidesc{tasksequence-cache Grid}%
+    };
+
+    % --- Column 2: Dynamic Discovery & CDI Injection Tier ---
+    \node[archi-app-component] (sequence_loader) at (4.5, 7.5) {%
+        \archibadge{App Component}\archiname{Sequence Loader}\\\archidesc{TaskSequenceLoader CDI}%
+    };
+
+    \node[archi-app-component] (cdi_ergon_beans) at (4.5, 4.5) {%
+        \archibadge{App Component}\archiname{CDI Ergon Resolution}\\\archidesc{Instance<ErgonBase> Injection}%
+    };
+
+    \node[archi-app-component] (praxis_impl) at (4.5, 1.5) {%
+        \archibadge{App Component}\archiname{Praxis Implementation}\\\archidesc{Praxis / Route Builder}%
+    };
+
+    % --- Column 3: Dynamic Camel Pipeline Topology Tier ---
+    \node[archi-app-interface] (pipeline_start) at (9.0, 7.5) {%
+        \archibadge{App Interface}\archiname{Pipeline Ingress}\\\archidesc{direct:seq-<praxisId>-start}%
+    };
+
+    \node[archi-app-process] (pipeline_steps) at (9.0, 4.5) {%
+        \archibadge{App Process}\archiname{Chained Erga Steps}\\\archidesc{direct:seq-step-0 \dots\ step-N}%
+    };
+
+    \node[archi-app-interface] (pipeline_complete) at (9.0, 1.5) {%
+        \archibadge{App Interface}\archiname{Pipeline Egress}\\\archidesc{direct:seq-<praxisId>-complete}%
+    };
+
+    % --- Column 4: Checkpointing, Storage & Runtime Operations Tier ---
+    \node[archi-app-component] (checkpoint_manager) at (13.5, 7.5) {%
+        \archibadge{App Component}\archiname{Checkpoint Manager}\\\archidesc{PraxisCheckpointManager}%
+    };
+
+    \node[archi-node] (pragma_cache) at (13.5, 4.5) {%
+        \archibadge{Technology Node}\archiname{Pragma Audit Cache}\\\archidesc{pragma-cache Infinispan}%
+    };
+
+    \node[archi-app-component] (mgmt_resource) at (13.5, 1.5) {%
+        \archibadge{App Component}\archiname{Workflow Ops REST}\\\archidesc{/workflow \& ponos-cli}%
+    };
+
+    % --- Flow & Structural Relationships ---
+    % Declarative loading and cache
+    \draw[archi-access] (praxis_service) -- (praxis_def_json);
+    \draw[archi-flow] (praxis_service) -- node[right, font=\tiny] {HotRod CRUD} (sequence_cache);
+    \draw[archi-serving] (praxis_service) -- (sequence_loader);
+
+    % Dynamic resolution and instantiation
+    \draw[archi-triggering] (sequence_loader) -- (cdi_ergon_beans);
+    \draw[archi-assignment] (cdi_ergon_beans) -- (praxis_impl);
+    \draw[archi-triggering] (sequence_loader) -- (praxis_impl);
+
+    % Dynamic Camel Route Generation
+    \draw[archi-triggering] (praxis_impl) -- node[above, font=\tiny] {createSequenceRoute} (pipeline_start);
+    \draw[archi-flow] (pipeline_start) -- (pipeline_steps);
+    \draw[archi-flow] (pipeline_steps) -- (pipeline_complete);
+
+    % Checkpointing and State Persistence
+    \draw[archi-flow] (pipeline_steps) -- node[above, font=\tiny] {Audit Events} (checkpoint_manager);
+    \draw[archi-flow] (checkpoint_manager) -- node[right, font=\tiny] {Save Checkpoint} (pragma_cache);
+
+    % Operations & Dynamic Reload
+    \draw[archi-serving] (mgmt_resource) -- (sequence_loader);
+    \draw[archi-access] (mgmt_resource) -- (sequence_cache);
+
+\end{tikzpicture}

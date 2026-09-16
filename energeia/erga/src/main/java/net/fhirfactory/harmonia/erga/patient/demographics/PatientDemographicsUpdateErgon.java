@@ -27,6 +27,7 @@ import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.camel.CamelContext;
@@ -80,6 +81,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
     public PatientDemographicsUpdateErgon() {
         super(DEFAULT_ACTIVITY_ID, DEFAULT_ACTIVITY_NAME);
         setActivityDescription("Extracts ADT demographic information and updates the corresponding Patient resource within the HIE");
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(DEFAULT_ACTIVITY_ID));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
@@ -87,12 +89,14 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
     public PatientDemographicsUpdateErgon(CamelContext context) {
         super(context, DEFAULT_ACTIVITY_ID, DEFAULT_ACTIVITY_NAME);
         setActivityDescription("Extracts ADT demographic information and updates the corresponding Patient resource within the HIE");
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(DEFAULT_ACTIVITY_ID));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
 
     public PatientDemographicsUpdateErgon(String activityId, String activityName) {
         super(activityId, activityName);
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(activityId));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }

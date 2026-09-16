@@ -83,11 +83,18 @@ public class GroupResourceProvider implements IResourceProvider {
             @Description(shortDefinition = "A descriptive name of the group")
             @OptionalParam(name = "name") StringParam theName,
             @Description(shortDefinition = "A group Identifier")
-            @OptionalParam(name = "identifier") StringParam theIdentifier
+            @OptionalParam(name = "identifier") StringParam theIdentifier,
+            @Description(shortDefinition = "The type of resources that are in the group")
+            @OptionalParam(name = "type") StringParam theType,
+            @Description(shortDefinition = "Descriptive or actual group")
+            @OptionalParam(name = "actual") StringParam theActual
     ) {
-        String idStr = theId != null ? theId.getValue() : null;
-        String nameStr = theName != null ? theName.getValue() : null;
-        String identStr = theIdentifier != null ? theIdentifier.getValue() : null;
-        return storageService.searchResources("Group", idStr, nameStr, identStr);
+        java.util.Map<String, String> params = new java.util.HashMap<>();
+        if (theId != null) params.put("_id", theId.getValue());
+        if (theName != null) params.put("name", theName.getValue());
+        if (theIdentifier != null) params.put("identifier", theIdentifier.getValue());
+        if (theType != null) params.put("type", theType.getValue());
+        if (theActual != null) params.put("actual", theActual.getValue());
+        return storageService.searchResources("Group", params);
     }
 }

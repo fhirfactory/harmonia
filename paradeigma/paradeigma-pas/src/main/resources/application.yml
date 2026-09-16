@@ -1,0 +1,24 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: paradeigma-pas
+
+paradeigma:
+  pas:
+    harmoniaHost: ${HARMONIA_HOST:localhost}
+    harmoniaPort: ${HARMONIA_PAS_ADT_PORT:2101}
+    timerEnabled: ${PAS_TIMER_ENABLED:false}
+    timerMode: ${PAS_TIMER_MODE:FIXED}
+    fixedIntervalMs: ${PAS_FIXED_INTERVAL_MS:5000}
+    minIntervalMs: ${PAS_MIN_INTERVAL_MS:2000}
+    maxIntervalMs: ${PAS_MAX_INTERVAL_MS:10000}
+    profile: ${PAS_EXECUTION_PROFILE:TEST}
+    seed: ${PAS_SEED:12345}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus

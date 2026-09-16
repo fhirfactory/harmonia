@@ -34,7 +34,11 @@ Harmonia interacts with a diverse ecosystem of clinical actors, abstracting thei
 \addlinespace
 \textbf{External System (HIS / LIS)} & \textit{Clinical Data Consumer} & Receives outbound HL7 v2 triggers, ADT notifications, and MFN directory updates via MLLP connections and returns synchronous acknowledgments (\texttt{ACK}). \\
 \addlinespace
-\textbf{Practitioner / Clinician} & \textit{Clinical Care Provider} & Queries longitudinal patient records, reviews historical clinical encounters, and inspects diagnostic summaries via web UI or FHIR APIs. \\
+\textbf{Practitioner / Clinician} & \textit{Clinical Care Provider} & Queries longitudinal patient records, reviews historical clinical encounters, inspects diagnostic summaries, and looks up provider directory entries via web UI or FHIR APIs. \\
+\addlinespace
+\textbf{Directory Steward} & \textit{Directory Governance Authority} & Governs healthcare provider directory entries, verifies practitioner credentialing, oversees organizational hierarchies, and reviews flagged directory change requests. \\
+\addlinespace
+\textbf{Credentialing Authority} & \textit{Authoritative Identity Source} & National or state medical boards (e.g. AHPRA, HI Service) publishing authoritative provider identifiers (HPI-I, HPI-O) and qualification updates. \\
 \addlinespace
 \textbf{Health Network Admin} & \textit{Operations Administrator} & Monitors message queue depths, inspects Artemis cluster topologies, triggers task sequence reload, and audits failed pipelines. \\
 \bottomrule
@@ -45,7 +49,7 @@ Harmonia interacts with a diverse ecosystem of clinical actors, abstracting thei
 
 \section{Clinical Business Services}
 
-Harmonia exposes five core business services to external healthcare organizations:
+Harmonia exposes six core business services to external healthcare organizations:
 
 \subsection{1. Patient Admission \& Movement Service (\texttt{HL7-ADT})}
 Accepts real-time patient admission, discharge, and transfer (ADT) event streams adhering to HL7 v2.3--v2.5 standards across standard trigger events:
@@ -60,13 +64,16 @@ Accepts real-time patient admission, discharge, and transfer (ADT) event streams
 Maintains an authoritative, synchronized regional directory of healthcare practitioners, specialties, role assignments, and organizational facility hierarchies via HL7 MFN master file notifications.
 
 \subsection{3. FHIR R5 Clinical Data Discovery Service}
-Provides RESTful search, retrieval, and subscription capabilities across 14 FHIR R5 resource types, enabling authorized clinical applications to query patient histories, encounters, and audit logs.
+Provides RESTful search, retrieval, and subscription capabilities across 15 FHIR R5 resource types, enabling authorized clinical applications to query patient histories, encounters, and audit logs.
 
 \subsection{4. Operations Telemetry \& Workflow Administration Service}
 Exposes real-time health metrics, ActiveMQ Artemis broker statistics, Infinispan cache hit rates, and Ponos task execution statuses to health network operators.
 
 \subsection{5. Clinical Outbound Notification \& Egress Service (\texttt{HL7-MLLP-OUT})}
 Dispatches transformed, enriched clinical trigger events (ADT, MFN, ORU) and outbound clinical notifications to remote hospital information systems and diagnostic endpoints over resilient MLLP/TCP connections, enforcing synchronous HL7 ACK/NACK validation, automatic retries, and audit tracking.
+
+\subsection{6. FHIR R5 Provider Directory Management Service}
+Exposes synchronous read/search and governed asynchronous change management APIs for healthcare directory entities (\texttt{Practitioner}, \texttt{PractitionerRole}, \texttt{Organization}, \texttt{Location}, \texttt{HealthcareService}, \texttt{Endpoint}, \texttt{Group}). It enforces automated referential verification, optimistic concurrency locking, duplicate identifier protection, and auditable FHIR \texttt{Task} tracking.
 
 \section{Clinical Business Process Workflows}
 
@@ -90,12 +97,24 @@ The outbound clinical egress workflow executes through five structured business 
     \item \textbf{Stage 5: State Machine Finalization \& Audit}: The task status is updated in the Mneme cache grid, recording FHIR \texttt{Communication}, \texttt{Task} (\texttt{Pragma}), and \texttt{Provenance} records with remote acknowledgment details and transmission metrics.
 \end{enumerate}
 
+\subsection{Process: Governed Provider Registry Change Ingestion \& Verification}
+The governed provider directory change workflow executes through five structured business stages:
+\begin{enumerate}
+    \item \textbf{Stage 1: Ingestion \& Pragma Generation}: The \texttt{pylai-fhir-registry} gateway receives a \texttt{POST} or \texttt{PUT} change request, performs structural validation, generates a \texttt{ProviderRegistryChangePragma}, and dispatches a \texttt{PetasosMessage} to Artemis queue \texttt{harmonia.provider.registry.change.request}, returning \texttt{HTTP 202 Accepted} with \texttt{Location: /Task/\{id\}}.
+    \item \textbf{Stage 2: Sequence Orchestration}: The Ponos WorkEngine consumes the change request and triggers the Praxis sequence \texttt{seq-provider-registry-change-pipeline}, routing the task to the dedicated resource Ergon activity.
+    \item \textbf{Stage 3: Referential \& Business Rule Verification}: The Ergon activity queries \texttt{ProviderRegistryReferenceValidator} to verify that all referenced target entities (Practitioner, Organization, Location, HealthcareService, Endpoint) exist and are active in Mnemosyne storage, while verifying identifier uniqueness.
+    \item \textbf{Stage 4: Automated Approval \& Versioned Persistence}: If verification passes, the change is approved and committed to Mnemosyne PostgreSQL (\texttt{hie\_fhir\_resources}), incrementing the resource \texttt{version\_id} and updating \texttt{last\_updated}. If verification fails, the request transitions to \texttt{REJECTED} with an embedded FHIR \texttt{OperationOutcome}.
+    \item \textbf{Stage 5: Task Status Reflection}: The underlying \texttt{Pragma} transitions to \texttt{COMPLETED} (or \texttt{REJECTED}), making the updated resource immediately visible on synchronous \texttt{GET} read/search paths and reflecting completion on \texttt{GET /Task/\{id\}}.
+\end{enumerate}
+
 \section{Core Business Objects}
 
 \begin{description}
     \item[\textbf{HL7 v2 Message Stream}] The raw wire-format clinical transmission received from legacy hospital interface engines.
     \item[\textbf{Canonical Patient Record (\texttt{FHIR::Patient})}] The consolidated, deduplicated clinical identity representing the care recipient.
     \item[\textbf{Task State Record (\texttt{Pragma})}] The authoritative audit representation of an in-flight integration task, including all historical state checkpoints.
+    \item[\textbf{Provider Registry Change Pragma}] Specialized canonical task entity capturing directory change requests, target resources, correlation IDs, and validation outcomes.
+    \item[\textbf{Authoritative Provider Graph}] Interconnected FHIR R5 directory resources representing practitioners, roles, organizations, locations, healthcare services, endpoints, and groups.
     \item[\textbf{Audit \& Provenance Trail (\texttt{FHIR::AuditEvent} / \texttt{FHIR::Provenance})}] Immutable compliance records establishing source attribution, timestamping, and processing integrity.
 \end{description}
 

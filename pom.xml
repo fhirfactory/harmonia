@@ -44,11 +44,13 @@
 
     <modules>
         <module>calliope</module>
+        <module>themis</module>
         <module>hestia</module>
         <module>iris</module>
         <module>pylai</module>
         <module>energeia</module>
         <module>petasos</module>
+        <module>paradeigma</module>
     </modules>
 
     <properties>
@@ -62,6 +64,7 @@
         <spring-boot.version>3.2.5</spring-boot.version>
         <camel.version>4.4.2</camel.version>
         <hapi-fhir.version>7.2.0</hapi-fhir.version>
+        <hapi-hl7v2.version>2.3</hapi-hl7v2.version>
         <infinispan.version>15.0.3.Final</infinispan.version>
         <jakartaee-api.version>10.0.0</jakartaee-api.version>
         <wildfly.version>31.0.1.Final</wildfly.version>
@@ -96,10 +99,51 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <!-- Themis (Policy & Authorisation Subsystem) -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>themis-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>themis-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>themis-audit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Energeia Modules -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>praxis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>erga</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- Pylai MLLP Gateway Base -->
             <dependency>
                 <groupId>net.fhirfactory.harmonia</groupId>
                 <artifactId>pylai-mllp-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>pylai-fhir-registry</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Hestia Mnemosyne Clinical JPA Server -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>mnemosyne-clinical</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -136,6 +180,60 @@
                 <version>${hapi-fhir.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- HAPI HL7 v2 Base and Structures -->
+            <dependency>
+                <groupId>ca.uhn.hapi</groupId>
+                <artifactId>hapi-base</artifactId>
+                <version>${hapi-hl7v2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ca.uhn.hapi</groupId>
+                <artifactId>hapi-structures-v24</artifactId>
+                <version>${hapi-hl7v2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ca.uhn.hapi</groupId>
+                <artifactId>hapi-structures-v231</artifactId>
+                <version>${hapi-hl7v2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ca.uhn.hapi</groupId>
+                <artifactId>hapi-structures-v25</artifactId>
+                <version>${hapi-hl7v2.version}</version>
+            </dependency>
+
+            <!-- Paradeigma Modules -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>paradeigma-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>paradeigma-pas</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>paradeigma-emr</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>paradeigma-lms</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>paradeigma-rispac</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>paradeigma-scenarios</artifactId>
+                <version>${project.version}</version>
             </dependency>
 
             <!-- Infinispan BOM -->

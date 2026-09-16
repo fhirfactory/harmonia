@@ -15,6 +15,11 @@ Modern healthcare ecosystems demand zero-loss event streaming, high-throughput m
     \item \textbf{Energeia Workflow Engine}: Modular Apache Camel task activities (\textit{Erga}), structured workflow sequence orchestrators (\textit{Praxis}), and WildFly Jakarta EE 10 execution containers (\textit{Ponos}) operating on canonical task instances (\textit{Pragma}).
     \item \textbf{Hestia Data Services}: Low-latency in-memory data caching grid (\textit{Mneme}) backed by Infinispan 15+ and durable relational relational disk persistence (\textit{Mnemosyne}) backed by PostgreSQL 16+ and Spring Boot HAPI FHIR JPA.
     \item \textbf{Iris Presentation Services}: Dual-port Jakarta EE Backend-For-Frontend gateway (\textit{Iris BEFE}) and TypeScript / Vue 3 single-page applications for clinical exploration and operational administration.
+    \item \textbf{Paradeigma Simulation \& Resilience Testbed}: High-fidelity reference hospital actor simulators (PAS, EMR, LMS, RIS-PAC), multi-system Patient Journey scenario orchestration, and automated fault injection testbed (documented in Appendix~\ref{app:paradeigma}).
+    \item \textbf{MLLP Ingress \& Egress Implementation Blueprint}: Production-grade implementation specifications, ArchiMate process models, Camel route blueprints, and testing harnesses for engineering new MLLP gateway services (documented in Appendix~\ref{app:mllp_services}).
+    \item \textbf{Ergon Workflow Activity Module Implementation Blueprint}: Production-grade engineering manual, ArchiMate processing models, \texttt{ErgonBase} Camel route lifecycles, \texttt{Pragma} state checkpointing, and Ponos WildFly deployment runbook for authoring new task activities (documented in Appendix~\ref{app:ergon_modules}).
+    \item \textbf{Praxis Workflow Sequence Implementation Blueprint}: Production-grade engineering guide, ArchiMate sequence topology, dynamic Apache Camel route synthesis, CDI bean discovery, audit checkpointing, and dynamic reload runbook for composing and deploying task sequences (documented in Appendix~\ref{app:praxis_workflow}).
+    \item \textbf{FHIR R5 Provider Registry Implementation Blueprint}: Production-grade implementation specifications, ArchiMate 5-tier topology, synchronous read/search vs asynchronous governed write models, per-resource Erga activities, referential integrity rules, optimistic concurrency, and Paradeigma test harnesses (documented in Appendix~\ref{app:provider_registry}).
 \end{itemize}
 
 \section*{ArchiMate 3.2 Architectural Modeling Framework}
@@ -26,8 +31,8 @@ The architecture is described across six formal ArchiMate layers:
 \begin{enumerate}
     \item \textbf{Motivation \& Strategy Layer}: Captures business stakeholders, regulatory drivers, architectural principles, high-level goals, and strategic interoperability capabilities.
     \item \textbf{Business Layer}: Models healthcare business actors, operational roles, clinical ingestion services, and business process lifecycles.
-    \item \textbf{Application Layer}: Specifies the component landscape, internal module collaborations, application services, and canonical data object flows across the 26 Maven modules.
-    \item \textbf{Data \& Information Layer}: Defines canonical information models, the \texttt{Pragma} task state machine, the \texttt{PetasosMessage} transport envelope, and the 14 supported FHIR R5 resource schemas.
+    \item \textbf{Application Layer}: Specifies the component landscape, internal module collaborations, application services, and canonical data object flows across the 27 Maven modules.
+    \item \textbf{Data \& Information Layer}: Defines canonical information models, the \texttt{Pragma} task state machine, the \texttt{PetasosMessage} transport envelope, and the 15 supported FHIR R5 resource schemas.
     \item \textbf{Technology Layer}: Details infrastructure execution nodes, system software runtimes (WildFly, Artemis, Infinispan, PostgreSQL), communication paths, networks, and port allocations.
     \item \textbf{Physical \& Deployment Layer}: Documents multi-broker high-availability replication pairs, containerization topology, failover mechanics, and disaster recovery pathways.
 \end{enumerate}
@@ -77,7 +82,9 @@ Harmonia adopts naming conventions rooted in classical Greek mythology and philo
 \addlinespace
 \textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} --- Goddess of the rainbow and divine messenger. & Presentation tier comprising Jakarta EE BEFE gateway, Clinical UI SPA, and Console UI SPA. \\
 \addlinespace
-\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways (\texttt{pylai-mllp-in}), multi-instance outbound MLLP gateways (\texttt{pylai-mllp-out}), shared integration base library (\texttt{pylai-mllp-base}), and synthetic test CLI (\texttt{pylai-mllp-cli}). \\
+\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways (\texttt{pylai-mllp-in}), multi-instance outbound MLLP gateways (\texttt{pylai-mllp-out}), FHIR R5 Provider Registry REST gateway (\texttt{pylai-fhir-registry}), shared integration base library (\texttt{pylai-mllp-base}), and synthetic test CLI (\texttt{pylai-mllp-cli}). \\
+\addlinespace
+\textbf{\texttt{Paradeigma}} & Clinical Simulation \& Testbed & \textit{Paradeigma} --- Model, pattern, exemplar. & Reference clinical simulation subsystem providing deterministic hospital actor emulators (PAS, EMR, LMS, RIS-PAC), multi-system Patient Journey orchestration, and automated fault injection testbed. \\
 \bottomrule
 \end{tabularx}
 \caption{Harmonia Classical Architectural Nomenclature and System Meaning Matrix}

@@ -67,6 +67,72 @@ Provides core domain models and shared infrastructure for the Pylai gateway tier
 \subsection{\texttt{pylai-mllp-cli} (Synthetic Test \& Diagnostic Utility)}
 A command-line diagnostic tool used by integration engineers to generate and dispatch parameterized HL7 v2.4/v2.5 ADT (A01--A40) messages to Pylai gateways for end-to-end functional, egress verification, and throughput benchmarking.
 
+\subsection{\texttt{pylai-fhir-registry} (FHIR R5 Provider Registry REST Gateway)}
+\texttt{pylai-fhir-registry} provides an authoritative, standards-compliant HL7 FHIR Release 5 (R5) REST interface for managing healthcare provider directory entities (\texttt{Practitioner}, \texttt{PractitionerRole}, \texttt{Organization}, \texttt{Location}, \texttt{HealthcareService}, \texttt{Endpoint}, \texttt{Group}).
+
+Key architectural components and capabilities include:
+\begin{itemize}
+    \item \textbf{\texttt{FhirRestGatewayController}}: Exposes synchronous \texttt{GET} read and multi-parameter search endpoints delegating directly to Mnemosyne persistence, and asynchronous governed write endpoints (\texttt{POST} and \texttt{PUT}) that return \texttt{HTTP 202 Accepted} with \texttt{Location: /Task/\{id\}}.
+    \item \textbf{\texttt{CapabilityStatementProvider}}: Dynamically generates and serves the server's official FHIR R5 \texttt{CapabilityStatement} on \texttt{GET /metadata}, describing supported resource schemas, search parameters, REST interactions, and security mechanisms.
+    \item \textbf{\texttt{ProviderRegistryTaskResourceProvider}}: Implements standard FHIR \texttt{GET /Task/\{id\}} polling, mapping the underlying \texttt{Pragma} lifecycle state (\texttt{ACCEPTED}, \texttt{IN\_PROGRESS}, \texttt{COMPLETED}, \texttt{REJECTED}, \texttt{FAILED}) to FHIR \texttt{Task.status} and attaching \texttt{OperationOutcome} diagnostics.
+    \item \textbf{\texttt{FhirSecurityInterceptor}}: Fine-grained Spring/JAX-RS security interceptor delegating to \texttt{ThemisService} to enforce default-deny authorization policies, evaluate caller roles (\texttt{HarmoniaRoleEnum}), and map required granular authorities (\texttt{HarmoniaAuthorityEnum}, e.g. \texttt{provider.read}, \texttt{provider.change.submit}).
+    \item \textbf{\texttt{ChangeRequestSubmissionService}}: Packages incoming write payloads into canonical \texttt{ProviderRegistryChangePragma} envelopes, attaching immutable caller security context, and publishes \texttt{PetasosMessage} instances to ActiveMQ Artemis.
+\end{itemize}
+
+\section{Policy \& Authorisation Subsystem: \texttt{Themis}}
+\label{sec:themis_subsystem}
+
+\texttt{Themis} is Harmonia's centralized policy and authorization engine, delivering deterministic default-deny policy evaluation, role-to-authority mapping, data security labeling, immutable caller context propagation, and non-PHI decision auditing.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-themis-security.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Themis Policy \& Multi-Tier Defence-in-Depth Security Architecture}
+    \label{fig:themis_security}
+\end{figure}
+
+\subsection{\texttt{themis-api} (Domain Contracts \& Security Models)}
+Provides framework-independent, lightweight domain models and interfaces decoupled from Spring, Artemis, or WildFly:
+\begin{itemize}
+    \item \textbf{\texttt{ThemisService}}: Core authorization contract defining \texttt{authorize(ThemisAuthorizationRequest)} and \texttt{evaluate(ThemisAuthorizationRequest)}.
+    \item \textbf{\texttt{ThemisPrincipal}}: Immutable identity model capturing \texttt{principalId}, \texttt{PrincipalType} (\texttt{HUMAN}, \texttt{SYSTEM}, \texttt{SERVICE}, \texttt{PROCESS}), \texttt{sourceDomain}, and security attributes.
+    \item \textbf{\texttt{ThemisAuthority}}: Granular capability token representing atomic operations (e.g., \texttt{provider.read}, \texttt{provider.change.submit}, \texttt{provider.resource.update}).
+    \item \textbf{\texttt{ThemisDecisionReason}}: Exhaustive decision reason enumeration (\texttt{ALLOWED\_BY\_POLICY}, \texttt{EXPLICIT\_DENY}, \texttt{DEFAULT\_DENY}, \texttt{POLICY\_NOT\_FOUND}, \texttt{AUTHORITY\_MISSING}, etc.).
+    \item \textbf{\texttt{ThemisSecurityLabel}}: Data classification tags (\texttt{HarmoniaSecurityLabelEnum}) serializable to FHIR R5 \texttt{meta.security}.
+\end{itemize}
+
+\subsection{\texttt{themis-core} (Deterministic Evaluation Engine)}
+\begin{itemize}
+    \item \textbf{Deterministic 3-Stage Evaluation Pipeline}:
+    \begin{enumerate}
+        \item \textbf{Explicit Denials First}: Evaluates explicit prohibition rules; any matching denial terminates evaluation immediately with \texttt{DENY}.
+        \item \textbf{Ordered Policy Matching}: Evaluates registered policies (\texttt{ThemisPolicy}) sorted by order against target domain, resource type, action, and required authorities.
+        \item \textbf{Default-Deny Fallback}: If no active policy explicitly grants access, the engine fails closed to \texttt{DENY} with reason \texttt{POLICY\_NOT\_FOUND} or \texttt{AUTHORITY\_MISSING}.
+    \end{enumerate}
+    \item \textbf{Controlled Mnemonic Roles (\texttt{HarmoniaRoleEnum})}: Maps high-level role codes (\texttt{PRV\_RDR}, \texttt{PRV\_SUB}, \texttt{PRV\_PROC}, \texttt{PRV\_APR}, \texttt{PRV\_ADM}, \texttt{AUD\_RDR}, \texttt{SYS\_INT}, \texttt{SYS\_ADM}) to sets of granular \texttt{ThemisAuthority} tokens.
+    \item \textbf{Built-in Policy Catalog}: Implements domain policies including \texttt{ProviderRegistryReadPolicy}, \texttt{ProviderRegistrySubmitPolicy}, \texttt{ProviderRegistryProcessPolicy}, \texttt{ProviderRegistryPersistPolicy}, and \texttt{SystemAdminPolicy}.
+    \item \textbf{Controlled Service Identities (\texttt{HarmoniaServiceIdentities})}: Defines explicit least-privilege authority sets for internal services (\texttt{service:pylai}, \texttt{service:ponos}, \texttt{service:mnemosyne}, etc.).
+\end{itemize}
+
+\subsection{\texttt{themis-audit} (Structured Security Decision Auditing)}
+\begin{itemize}
+    \item \textbf{\texttt{ThemisAuditService}}: Records every authorization decision as an immutable \texttt{ThemisAuditEvent}.
+    \item \textbf{Strict PHI \& Secret Sanitization}: Audit records capture only structural metadata (\texttt{decisionId}, \texttt{principalId}, \texttt{action}, \texttt{resourceType}, \texttt{resourceId}, \texttt{correlationId}, \texttt{reason}), strictly omitting clinical payload bodies, bearer tokens, or user passwords.
+    \item \textbf{Security Classification}: Audit streams carry the \texttt{AUDIT} security label and require the \texttt{audit.read} authority for inspection.
+\end{itemize}
+
+\subsection{Multi-Tier Boundary Enforcement \& Non-Amplification Invariant}
+Harmonia prevents privilege escalation by enforcing independent Themis checkpoints across each tier:
+\begin{enumerate}
+    \item \textbf{Pylai Ingress Gate}: Validates that the external caller possesses submission authority (\texttt{provider.change.submit}).
+    \item \textbf{Pragma Context Serialization}: Originating caller credentials and authorities are immutably captured into the \texttt{Pragma} and serialized to FHIR R5 Task extensions.
+    \item \textbf{Ponos Dispatch Gate}: Validates both the originating requester claims and the executing Ergon processor authority (\texttt{provider.change.process}).
+    \item \textbf{Ergon Execution Envelope}: The activity executes within its declared \texttt{ErgonSecurityDefinition}.
+    \item \textbf{Mnemosyne Persistence Gate}: The persistence layer independently verifies storage mutation authority (\texttt{provider.resource.update}) before writing to PostgreSQL.
+\end{enumerate}
+
 \section{Messaging Transport Subsystem: \texttt{Petasos}}
 
 \texttt{Petasos} provides reliable, durable, and asynchronous message transportation between all Harmonia subsystems, fully encapsulating Apache ActiveMQ Artemis JMS and Core protocol complexity behind clean domain interfaces.
@@ -118,7 +184,7 @@ Defines the client-facing contracts used across Harmonia:
 \subsection{\texttt{energeia/ponos} (WorkEngine Runtime Container)}
 Deployed on WildFly Jakarta EE 10 (port \texttt{8083}), Ponos hosts the execution environment:
 \begin{itemize}
-    \item \textbf{\texttt{PetasosQueueToExchangeConduit}}: Ingress consumer listening on Petasos queues, extracting incoming \texttt{Pragma} payloads, creating Camel exchanges, and managing acknowledgement lifecycles.
+    \item \textbf{\texttt{PetasosQueueToExchangeConduit}}: Ingress consumer listening on Petasos queues (including clinical ingestion queues and \texttt{harmonia.provider.registry.change.request}), extracting incoming \texttt{Pragma} payloads, creating Camel exchanges, and managing acknowledgement lifecycles.
     \item \textbf{\texttt{PragmaWorkflowDispatcher}}: Resolves matching \texttt{Praxis} workflow definitions based on task metadata and routes exchanges to entry direct endpoints.
     \item \textbf{\texttt{CamelContextManager}}: Manages the lifecycle of Apache Camel contexts and thread pools.
 \end{itemize}
@@ -126,6 +192,7 @@ Deployed on WildFly Jakarta EE 10 (port \texttt{8083}), Ponos hosts the executio
 \subsection{\texttt{energeia/praxis} (Workflow Sequence Orchestration)}
 \begin{itemize}
     \item \textbf{\texttt{PraxisImplementation}}: Orchestrates ordered sequences of Ergon activities over synchronous Camel direct endpoints (\texttt{direct:seq-<praxisId>-step-<N>}).
+    \item \textbf{\texttt{ProviderRegistrySequenceBuilder}}: Configures and seeds the canonical \texttt{seq-provider-registry-change-pipeline} sequence, orchestrating per-resource validation, reference verification, and persistence.
     \item \textbf{\texttt{PraxisCheckpointManager}}: Records the 5-phase execution audit checkpoints (\texttt{PIPELINE\_INGRESS}, \texttt{PRE\_ERGON}, \texttt{POST\_ERGON}, \texttt{PIPELINE\_COMPLETE}, \texttt{PIPELINE\_FAILED}) and snapshots state to Mneme cache.
     \item \textbf{\texttt{PragmaCacheService}}: Interfaces directly with Mneme's \texttt{task-cache}.
 \end{itemize}
@@ -133,7 +200,17 @@ Deployed on WildFly Jakarta EE 10 (port \texttt{8083}), Ponos hosts the executio
 \subsection{\texttt{energeia/erga} (Modular Task Activities)}
 \begin{itemize}
     \item \textbf{\texttt{ErgonBase}}: Abstract Camel \texttt{RouteBuilder} enforcing the single-responsibility contract: reads from \texttt{pragma.getInput()}, executes domain logic via \texttt{processErgon(Pragma, Exchange)}, and appends resulting artifacts to \texttt{pragma.getOutput()}.
-    \item \textbf{Activity Catalog}: Includes \texttt{Adt2FhirMapper}, \texttt{Mfn2FhirBundle}, \texttt{ExtractPatientFromBundle}, \texttt{PatientIdentityUpdateErgon}, and \texttt{PatientDemographicsUpdateErgon}.
+    \item \textbf{Clinical Ingestion Catalog}: Includes \texttt{Adt2FhirMapper}, \texttt{Mfn2FhirBundle}, \texttt{ExtractPatientFromBundle}, \texttt{PatientIdentityUpdateErgon}, and \texttt{PatientDemographicsUpdateErgon}.
+    \item \textbf{Provider Registry Erga Suite}: 7 dedicated per-resource change processing activities:
+    \begin{itemize}
+        \item \texttt{PractitionerChangeErgon}: Validates individual practitioner names, qualifications, and unique HPI-I/NPI identifiers.
+        \item \texttt{PractitionerRoleChangeErgon}: Validates reference links to Practitioner, Organization, Location, HealthcareService, and Endpoint.
+        \item \texttt{OrganizationChangeErgon}: Validates organization identifiers (HPI-O), active status, and parent/child hierarchies.
+        \item \texttt{LocationChangeErgon}: Validates physical facility coordinates, addresses, and managing organization references.
+        \item \texttt{HealthcareServiceChangeErgon}: Validates provided-by organization and operating location references.
+        \item \texttt{EndpointChangeErgon}: Validates technical connection types, address URIs, and payload MIME types.
+        \item \texttt{GroupChangeErgon}: Validates group member references and membership types.
+    \end{itemize}
 \end{itemize}
 
 \section{Data Services Subsystem: \texttt{Hestia}}
@@ -142,12 +219,12 @@ Deployed on WildFly Jakarta EE 10 (port \texttt{8083}), Ponos hosts the executio
 \begin{itemize}
     \item \textbf{\texttt{mneme-cluster}}: 2-node Infinispan 15+ replicated data grid (ports \texttt{11222}--\texttt{11223}) maintaining \texttt{task-cache}, \texttt{tasksequence-cache}, and \texttt{communication-cache}.
     \item \textbf{\texttt{mneme-persistence}}: Custom \texttt{NonBlockingStore} SPI implementations (\texttt{OperationsRestCacheStore}, \texttt{FhirRestCacheStore}) providing asynchronous write-behind synchronization to Mnemosyne.
-    \item \textbf{\texttt{mnemosyne-clinical}}: Spring Boot HAPI FHIR JPA server (ports \texttt{8081}--\texttt{8082}) backed by PostgreSQL storing canonical FHIR R5 resources.
+    \item \textbf{\texttt{mnemosyne-clinical}}: Spring Boot HAPI FHIR JPA server (ports \texttt{8081}--\texttt{8082}) backed by PostgreSQL storing canonical FHIR R5 resources in \texttt{hie\_fhir\_resources}. Implements \texttt{EndpointResourceProvider}, multi-parameter search filtering in \texttt{FhirStorageService}, deep referential integrity checks via \texttt{ProviderRegistryReferenceValidator}, and optimistic concurrency control (\texttt{If-Match}/\texttt{ETag}).
     \item \textbf{\texttt{mnemosyne-operations}}: Spring Boot JPA server (ports \texttt{8085}--\texttt{8086}) backed by PostgreSQL storing operational task sequences, Pragmas, and audit logs.
 \end{itemize}
 
 \section{Canonical Schema Repository: \texttt{Calliope}}
 
-\texttt{Calliope} is the shared canonical library defining domain DTOs, the \texttt{Pragma} model, \texttt{ErgonPayload}, and bidirectional converters for FHIR R5 \texttt{Task} resources, guaranteeing type safety across all platform tiers.
+\texttt{Calliope} is the shared canonical library defining domain DTOs, the \texttt{Pragma} model, \texttt{ErgonPayload}, \texttt{ProviderRegistryChangePragma}, canonical constants (\texttt{ProviderRegistryConstants}), validation error codes (\texttt{PR-VAL-001} through \texttt{PR-VAL-010}), and bidirectional converters for FHIR R5 \texttt{Task} resources, guaranteeing type safety across all platform tiers.
 
 \newpage

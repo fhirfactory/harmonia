@@ -45,6 +45,16 @@
             <artifactId>calliope</artifactId>
         </dependency>
 
+        <!-- Themis (Policy & Authorisation Subsystem) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-core</artifactId>
+        </dependency>
+
         <!-- Praxis Task Sequence Definitions & Structure -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>

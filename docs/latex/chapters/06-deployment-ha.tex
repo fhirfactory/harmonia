@@ -87,11 +87,19 @@ The complete Harmonia platform stack is orchestrated via a unified \texttt{docke
     \item 4 PostgreSQL 16 relational database containers (2 Clinical nodes, 2 Operations nodes) with persistent isolated volumes.
     \item 4 Spring Boot Mnemosyne JPA persistence servers (2 Clinical HAPI FHIR nodes, 2 Operations nodes).
     \item 2 Infinispan 15+ distributed cache grid nodes (\texttt{infinispan-1}, \texttt{infinispan-2}).
-    \item 5 WildFly Jakarta EE 10 application containers (\texttt{pylai-mllp-in}, \texttt{pylai-mllp-out-his}, \texttt{pylai-mllp-out-lis}, \texttt{ponos}, \texttt{iris-befe}).
+    \item 6 Gateway and workflow application containers (\texttt{pylai-mllp-in}, \texttt{pylai-mllp-out-his}, \texttt{pylai-mllp-out-lis}, \texttt{pylai-fhir-registry}, \texttt{ponos}, \texttt{iris-befe}).
     \item 2 Vue 3 / Nginx frontend web containers (\texttt{iris-clinical}, \texttt{iris-console}).
 \end{itemize}
 
 Health checks with configurable start periods ensure that dependent containers only boot once their prerequisite messaging, caching, and database services report operational readiness.
+
+\subsection{Provider Registry High Availability \& Crash Recovery}
+The FHIR Provider Registry subsystem leverages the clustered Petasos messaging fabric and durable Mnemosyne relational storage to guarantee crash resilience:
+\begin{itemize}
+    \item \textbf{Durable Queue Storage}: Change requests published to \texttt{harmonia.provider.registry.change.request} are written to the ActiveMQ Artemis persistent journal before \texttt{HTTP 202 Accepted} is returned to the client.
+    \item \textbf{In-Flight Process Crash Recovery}: If the Ponos container restarts or terminates during Ergon execution, Artemis retains unacknowledged change requests. Upon broker reconnect, the task is redelivered and re-executed idempotently without generating duplicate resources.
+    \item \textbf{Stateless REST Gateways}: The \texttt{pylai-fhir-registry} gateway operates completely statelessly. Multiple instances can be deployed behind a round-robin load balancer for seamless scale-out and zero-downtime rolling upgrades.
+\end{itemize}
 
 \subsection{Egress Failure Domain Isolation}
 The multi-instance outbound architecture guarantees complete failure domain isolation across external clinical systems. Each egress instance (\texttt{mllp-outbound-his}, \texttt{mllp-outbound-lis}) consumes from its own dedicated Petasos queue (e.g. \texttt{petasos.queue.mllp.outbound.his}). If a destination hospital system experiences downtime, network unreachability, or socket timeouts:

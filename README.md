@@ -11,6 +11,7 @@ Harmonia adopts naming conventions rooted in Greek mythology and classical termi
 | System / Subsystem | Architectural Role | Classical Origin & Meaning | Platform Scope & Responsibilities |
 | :--- | :--- | :--- | :--- |
 | **`Harmonia`** | **Health Integration Environment (HIE)** | *Harmonia* (Ἁρμονία) — Greek goddess of harmony, concord, and cosmic balance; the unifying force bringing diverse elements into agreement. | The overall root platform uniting clinical protocols (HL7 v2.x, FHIR R5), streaming message transports, in-memory caching grids, and relational persistence stores into a cohesive health information exchange. |
+| **`Themis`** | **Policy & Authorisation Service** | *Themis* (Θέμις) — Ancient Greek Titaness of divine law, justice, fairness, natural order, and wise counsel. | Centralized policy and authorization subsystem (`themis`) delivering deterministic default-deny policy evaluation, role-to-authority mappings, security label governance, and non-PHI decision auditing. |
 | **`Petasos`** | **Messaging / Transport & Event Distribution** | *Petasos* (πέτασος) — The winged sun hat worn by Hermes, messenger of the gods, symbolizing swift dispatch, journeying, and reliable delivery. | Asynchronous messaging backbone and transport layer (Apache ActiveMQ Artemis JMS message broker, Camel transport routes, and `ErgonEvent` notification publisher). |
 | **`Energeia`** | **Workflow Services** | *Energeia* (ἐνέργεια) — The Aristotelian concept of actuality, activity, being-at-work, and continuous operational energy. | Workflow orchestration and services aggregator (`energeia`) uniting Ponos execution engine (`ponos`), Erga activity processing (`erga`), Praxis task sequences (`praxis`), and Ponos CLI (`ponos-cli`). |
 | **`Ponos`** | **WorkEngine (Workflow Execution Framework)** | *Ponos* (Πόνος) — The Greek personification of hard work, continuous labor, effort, and industrious toil. | WildFly Jakarta EE 10 asynchronous workflow execution engine (`energeia/ponos`) consuming Erga/Praxis tasks and Petasos TaskEvents from message queues and updating Mneme cache. |
@@ -104,6 +105,11 @@ The project is structured into domain-driven service groups containing specializ
 
 - **`Calliope` (`calliope`)**: Canonical Model & Schema Library
   - The authoritative repository and management service for the shared information models, schemas and structural definitions used throughout Harmonia. Shared domain models, DTOs, event definitions (`ErgonEvent`), Pragma/Erga task payload wrappers (`ErgonPayload`), and enumerations (`ErgonReasonEnum`) with FHIR R5 `CodeableConcept` and `CodeableReference` mappings for cross-module reuse.
+- **`Themis` (`themis`)**: Policy & Authorisation Subsystem
+  - **`themis-api`**: Transport- and persistence-independent security contracts, domain models (`ThemisPrincipal`, `ThemisRole`, `ThemisAuthority`, `ThemisAction`, `ThemisResource`, `ThemisSecurityLabel`, `ThemisSecurityContext`), and decision interfaces.
+  - **`themis-core`**: Deterministic default-deny policy evaluator, mnemonic role-to-authority mappings (`HarmoniaRoleEnum` to `HarmoniaAuthorityEnum`), built-in policies (`ProviderRegistryReadPolicy`, `ProviderRegistrySubmitPolicy`, `ProviderRegistryProcessPolicy`, `ProviderRegistryPersistPolicy`, `SystemAdminPolicy`), and controlled service identities (`HarmoniaServiceIdentities`).
+  - **`themis-audit`**: Structured, non-PHI security decision auditing service (`ThemisAuditService`) and correlation logger tagged with the `AUDIT` security label.
+  - **Documentation**: Exhaustive security specifications and boundary topologies in [`docs/security/`](docs/security/architecture.md).
 - **`Petasos` (`petasos`)**: High-Availability Messaging & Transport Subsystem
   - **`petasos-api`**: Core abstractions, interfaces (`Petasos`, `PetasosProducer`, `PetasosConsumer`, `PetasosMessage`, `PetasosDestination`), and standard envelope tracking `messageId`, `correlationId`, and schemas.
   - **`petasos-core`**: Envelope serialization, deduplication sliding window cache, configuration resolvers, and thread-safe metrics collection (`PetasosMetrics`).
@@ -330,6 +336,19 @@ cd energeia/ponos
 mvn clean package
 # Deploy target/ponos.war to WildFly application server connected to Mneme cache grid and ActiveMQ Artemis broker
 ```
+
+---
+
+## Documentation & Architectural Specifications
+
+Comprehensive technical specifications, message lifecycles, and security guides are organized across the following documentation modules:
+
+- **[Security Architecture & Themis Framework](docs/security/architecture.md)**: Defence-in-depth principles, default-deny policy engine, role-to-authority mappings, service identities, and boundary checkpoint matrices.
+- **[Provider Registry Security](docs/provider-registry/security.md)**: Domain-specific access control, FHIR security labels (`PROVIDER_REGISTRY`), and persistence gates.
+- **[Petasos Messaging & Artemis Architecture](docs/architecture.md)**: Clustered messaging topology, replication, message envelope specifications, and delivery guarantees.
+- **[Persistence & Storage Architecture](docs/persistence-architecture.md)**: 4-tier storage model (Artemis journal, Ponos cache grid, Mnemosyne PostgreSQL database, Paradeigma exemplar state).
+- **[Message Lifecycle & Flow Specifications](docs/message-lifecycle.md)**: End-to-end clinical message sequences (ADT fan-out, ORM routing, ORU ingestion) and dual-write failure analyses.
+- **[Failure Recovery & Guarantees](docs/failure-recovery.md)**: Restart recovery, lease reclamation, 4-tier idempotency model, and DLQ handling.
 
 ---
 

@@ -1,0 +1,83 @@
+%% =============================================================================
+%% diagrams/fig-mllp-egress-process.tex
+%% ArchiMate 3.2 MLLP Egress Multi-Instance Architecture & Lifecycle View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Column 1: Petasos Artemis Messaging Layer ---
+    \node[archi-app-interface] (petasos_dest_queue) at (0, 7.5) {%
+        \archibadge{App Interface}\archiname{Petasos Destination Queue}\\\archidesc{petasos.queue.egress.*}%
+    };
+
+    \node[archi-app-component] (queue_consumer) at (0, 4.5) {%
+        \archibadge{App Component}\archiname{Task Queue Consumer}\\\archidesc{OutboundTaskQueueConsumer}%
+    };
+
+    \node[archi-app-interface] (petasos_comp_queue) at (0, 1.5) {%
+        \archibadge{App Interface}\archiname{Completion Queue}\\\archidesc{petasos.queue.egress.completed}%
+    };
+
+    % --- Column 2: Egress Processing & Camel Route Layer ---
+    \node[archi-app-component] (outbound_proc) at (4.5, 7.5) {%
+        \archibadge{App Component}\archiname{Outbound Processor}\\\archidesc{OutboundMllpProcessor}%
+    };
+
+    \node[archi-app-component] (camel_producer) at (4.5, 4.5) {%
+        \archibadge{App Component}\archiname{Camel Dynamic Producer}\\\archidesc{OutboundMllpRouteBuilder (toD)}%
+    };
+
+    \node[archi-app-component] (ack_proc) at (4.5, 1.5) {%
+        \archibadge{App Component}\archiname{HL7 ACK Processor}\\\archidesc{Hl7AckProcessor (MSA/ERR)}%
+    };
+
+    % --- Column 3: Downstream Network & Target Clinical System ---
+    \node[archi-app-interface] (target_mllp_socket) at (9.0, 7.5) {%
+        \archibadge{App Interface}\archiname{Remote TCP Socket}\\\archidesc{mllp://host:2201--2205}%
+    };
+
+    \node[archi-business-actor] (target_system) at (9.0, 4.5) {%
+        \archibadge{Business Actor}\archiname{Downstream Receiver}\\\archidesc{EMR / LMS / RIS-PACS}%
+    };
+
+    \node[archi-data-object] (ack_payload) at (9.0, 1.5) {%
+        \archibadge{Data Object}\archiname{HL7 ACK / NACK Frame}\\\archidesc{AA, AE, AR, CA, CE, CR}%
+    };
+
+    % --- Column 4: Lifecycle, Persistence & Provenance Layer ---
+    \node[archi-app-component] (lifecycle_mgr) at (13.5, 7.5) {%
+        \archibadge{App Component}\archiname{Lifecycle Manager}\\\archidesc{OutboundStateLifecycleManager}%
+    };
+
+    \node[archi-app-process] (provenance_builder) at (13.5, 4.5) {%
+        \archibadge{App Process}\archiname{Provenance Builder}\\\archidesc{OutboundProvenanceResourceBuilder}%
+    };
+
+    \node[archi-app-component] (mneme_storage) at (13.5, 1.5) {%
+        \archibadge{App Component}\archiname{Mneme \& Mnemosyne}\\\archidesc{Task, Comm \& Provenance Store}%
+    };
+
+    % --- Flow & Structural Relationships ---
+    % JMS Consumption & Request Preparation
+    \draw[archi-flow] (petasos_dest_queue) -- node[left, font=\tiny] {JMS TextMessage} (queue_consumer);
+    \draw[archi-triggering] (queue_consumer) -- (outbound_proc);
+    \draw[archi-triggering] (outbound_proc) -- node[left, font=\tiny] {direct:mllp-outbound-send} (camel_producer);
+
+    % Outbound MLLP Dispatch over TCP
+    \draw[archi-flow] (camel_producer) -- (target_mllp_socket);
+    \draw[archi-flow] (target_mllp_socket) -- node[right, font=\tiny] {MLLP Frame} (target_system);
+
+    % Return ACK from Target System
+    \draw[archi-flow] (target_system) -- (ack_payload);
+    \draw[archi-flow] (ack_payload) -- (ack_proc);
+    \draw[archi-triggering] (camel_producer) -- (ack_proc);
+
+    % Lifecycle, Provenance & Persistence Updates
+    \draw[archi-triggering] (ack_proc) to[bend left=20] node[above, font=\tiny] {OutboundMllpResponse} (lifecycle_mgr);
+    \draw[archi-assignment] (lifecycle_mgr) -- (provenance_builder);
+    \draw[archi-flow] (provenance_builder) -- (mneme_storage);
+    \draw[archi-access] (lifecycle_mgr) -- (mneme_storage);
+
+    % Completion Event Dispatch
+    \draw[archi-flow] (lifecycle_mgr) to[bend right=30] node[above, font=\tiny] {Petasos Completion Event} (petasos_comp_queue);
+
+\end{tikzpicture}

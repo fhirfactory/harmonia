@@ -1,0 +1,82 @@
+%% =============================================================================
+%% diagrams/fig-ergon-module-architecture.tex
+%% ArchiMate 3.2 Ergon Activity Module Architecture & Processing Topology View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Column 1: Ponos Ingress & Conduit Dispatch Layer ---
+    \node[archi-app-interface] (artemis_queue) at (0, 7.5) {%
+        \archibadge{App Interface}\archiname{Petasos Artemis Queue}\\\archidesc{petasos.queue.inbound.*}%
+    };
+
+    \node[archi-app-component] (queue_conduit) at (0, 4.5) {%
+        \archibadge{App Component}\archiname{JMS Conduit Adapter}\\\archidesc{PetasosQueueToExchangeConduit}%
+    };
+
+    \node[archi-app-component] (praxis_dispatcher) at (0, 1.5) {%
+        \archibadge{App Component}\archiname{Praxis Dispatcher}\\\archidesc{TaskProcessorRouteBuilder}%
+    };
+
+    % --- Column 2: Ergon Activity Camel Route Lifecycle ---
+    \node[archi-app-interface] (ergon_input_endpoint) at (4.5, 7.5) {%
+        \archibadge{App Interface}\archiname{Ergon Input Endpoint}\\\archidesc{direct:activity-<ergonId>}%
+    };
+
+    \node[archi-app-component] (ergon_route_builder) at (4.5, 4.5) {%
+        \archibadge{App Component}\archiname{Ergon Activity Route}\\\archidesc{ErgonBase RouteBuilder DSL}%
+    };
+
+    \node[archi-app-process] (ergon_process_activity) at (4.5, 1.5) {%
+        \archibadge{App Process}\archiname{Process Activity Hook}\\\archidesc{processActivity(Exchange)}%
+    };
+
+    % --- Column 3: Payload Extraction, Transformation & Enrichment ---
+    \node[archi-app-process] (payload_extractor) at (9.0, 7.5) {%
+        \archibadge{App Process}\archiname{Payload Extractor}\\\archidesc{HAPI Terser / Jackson Parser}%
+    };
+
+    \node[archi-app-process] (fhir_transformer) at (9.0, 4.5) {%
+        \archibadge{App Process}\archiname{FHIR R5 Transformer}\\\archidesc{Enrichment \& Security Tags}%
+    };
+
+    \node[archi-data-object] (pragma_envelope) at (9.0, 1.5) {%
+        \archibadge{Data Object}\archiname{Pragma Task Envelope}\\\archidesc{Input, Output, Checkpoints}%
+    };
+
+    % --- Column 4: Persistence, Checkpointing & Handoff ---
+    \node[archi-app-component] (task_cache_service) at (13.5, 7.5) {%
+        \archibadge{App Component}\archiname{Task Cache Service}\\\archidesc{TaskCacheService HotRod Client}%
+    };
+
+    \node[archi-node] (mneme_grid) at (13.5, 4.5) {%
+        \archibadge{Technology Node}\archiname{Mneme \& Mnemosyne}\\\archidesc{Infinispan Grid \& PostgreSQL}%
+    };
+
+    \node[archi-app-interface] (ergon_output_endpoint) at (13.5, 1.5) {%
+        \archibadge{App Interface}\archiname{Completion Endpoint}\\\archidesc{direct:activity-<id>-complete}%
+    };
+
+    % --- Flow & Structural Relationships ---
+    % Conduit ingestion from Artemis
+    \draw[archi-flow] (artemis_queue) -- node[left, font=\tiny] {TaskEvent / JMS Text} (queue_conduit);
+    \draw[archi-triggering] (queue_conduit) -- (praxis_dispatcher);
+    \draw[archi-flow] (praxis_dispatcher) -- node[above, font=\tiny] {direct:seq-step-N} (ergon_input_endpoint);
+
+    % Ergon Camel Route execution
+    \draw[archi-serving] (ergon_input_endpoint) -- (ergon_route_builder);
+    \draw[archi-triggering] (ergon_route_builder) -- (ergon_process_activity);
+
+    % Processing: Extraction, Transformation, and Envelope State
+    \draw[archi-assignment] (ergon_process_activity) -- (payload_extractor);
+    \draw[archi-triggering] (payload_extractor) -- (fhir_transformer);
+    \draw[archi-access] (fhir_transformer) -- (pragma_envelope);
+
+    % State Checkpointing & Persistence
+    \draw[archi-flow] (fhir_transformer) -- (task_cache_service);
+    \draw[archi-flow] (task_cache_service) -- node[right, font=\tiny] {HotRod Put / Cache} (mneme_grid);
+
+    % Route Completion Handoff
+    \draw[archi-triggering] (task_cache_service) -- (ergon_output_endpoint);
+    \draw[archi-flow] (ergon_process_activity) to[bend right=20] (ergon_output_endpoint);
+
+\end{tikzpicture}

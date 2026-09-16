@@ -41,6 +41,12 @@
             <artifactId>calliope</artifactId>
         </dependency>
 
+        <!-- Hestia Mnemosyne Clinical JPA Server -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>mnemosyne-clinical</artifactId>
+        </dependency>
+
         <!-- Jakarta EE 10 Annotations / CDI -->
         <dependency>
             <groupId>jakarta.platform</groupId>

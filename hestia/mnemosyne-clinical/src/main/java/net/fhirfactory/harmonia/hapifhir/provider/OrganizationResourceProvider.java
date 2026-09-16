@@ -83,11 +83,15 @@ public class OrganizationResourceProvider implements IResourceProvider {
             @Description(shortDefinition = "A portion of the organization's name or alias")
             @OptionalParam(name = "name") StringParam theName,
             @Description(shortDefinition = "An organization Identifier")
-            @OptionalParam(name = "identifier") StringParam theIdentifier
+            @OptionalParam(name = "identifier") StringParam theIdentifier,
+            @Description(shortDefinition = "Whether the organization's record is still in active use")
+            @OptionalParam(name = "active") StringParam theActive
     ) {
-        String idStr = theId != null ? theId.getValue() : null;
-        String nameStr = theName != null ? theName.getValue() : null;
-        String identStr = theIdentifier != null ? theIdentifier.getValue() : null;
-        return storageService.searchResources("Organization", idStr, nameStr, identStr);
+        java.util.Map<String, String> params = new java.util.HashMap<>();
+        if (theId != null) params.put("_id", theId.getValue());
+        if (theName != null) params.put("name", theName.getValue());
+        if (theIdentifier != null) params.put("identifier", theIdentifier.getValue());
+        if (theActive != null) params.put("active", theActive.getValue());
+        return storageService.searchResources("Organization", params);
     }
 }

@@ -220,6 +220,18 @@ public class PetasosQueueToExchangeConduit {
         if (StringUtils.isNotBlank(message.getSource())) {
             pragma.setSource(message.getSource());
         }
+
+        // Attach default service security context if none present on incoming message
+        if (pragma.getOriginatingPrincipal() == null) {
+            String source = StringUtils.isNotBlank(message.getSource()) ? message.getSource() : "service:petasos";
+            net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal principal =
+                    net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal.of(source, net.fhirfactory.harmonia.themis.api.model.PrincipalType.SERVICE, "petasos");
+            pragma.setOriginatingPrincipal(principal);
+            pragma.addOriginatingAuthority(net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority());
+            pragma.addOriginatingAuthority(net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum.SYSTEM_INTEGRATION.toThemisAuthority());
+            pragma.setOriginatingSecurityContext(net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext.fromPrincipal(principal, pragma.getCorrelationId()));
+            pragma.setPolicyVersion("1.0.0");
+        }
         if (message.getDestination() != null) {
             pragma.setDestination(message.getDestination().getName());
         }

@@ -274,6 +274,12 @@ public class MessageQueueService {
         );
         seededList.add(save(baseEventQueue));
 
+        String prQueue = (config != null) ? config.getProviderRegistryChangeQueue() : QueueConfig.DEFAULT_PROVIDER_REGISTRY_QUEUE;
+        PetasosQueueDefinition prQueueDef = new PetasosQueueDefinition(
+                prQueue, prQueue, prQueue, "ANYCAST", true, "FHIR Provider Registry Governed Change Request Queue", null
+        );
+        seededList.add(save(prQueueDef));
+
         String defaultGateway = (config != null)
                 ? config.getDedicatedEventQueueName(QueueConfig.DEFAULT_GATEWAY_INSTANCE_ID)
                 : QueueConfig.DEFAULT_EVENT_QUEUE_PREFIX + "." + QueueConfig.DEFAULT_GATEWAY_INSTANCE_ID;

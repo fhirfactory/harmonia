@@ -1,0 +1,23 @@
+server:
+  port: 8094
+
+spring:
+  application:
+    name: paradeigma-rispac
+
+paradeigma:
+  rispac:
+    inboundAdtPort: ${RISPAC_ADT_INBOUND_PORT:2203}
+    inboundOrmPort: ${RISPAC_ORM_INBOUND_PORT:2205}
+    harmoniaHost: ${HARMONIA_HOST:localhost}
+    harmoniaOruPort: ${HARMONIA_RISPAC_ORU_PORT:2103}
+    autoProduceReports: ${RISPAC_AUTO_PRODUCE_REPORTS:true}
+    reportingDelayMs: ${RISPAC_REPORTING_DELAY_MS:1500}
+    profile: ${RISPAC_EXECUTION_PROFILE:TEST}
+    seed: ${RISPAC_SEED:12345}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus

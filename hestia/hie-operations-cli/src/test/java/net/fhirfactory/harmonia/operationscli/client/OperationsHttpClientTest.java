@@ -43,12 +43,12 @@ class OperationsHttpClientTest {
 
     @BeforeEach
     void setUp() throws IOException {
-        server = HttpServer.create(new InetSocketAddress(0), 0);
+        server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
         port = server.getAddress().getPort();
         server.setExecutor(null);
         server.start();
 
-        client = new OperationsHttpClient("http://localhost:" + port + "/api/operations", 5);
+        client = new OperationsHttpClient("http://127.0.0.1:" + port + "/api/operations", 5);
     }
 
     @AfterEach

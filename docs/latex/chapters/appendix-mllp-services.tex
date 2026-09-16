@@ -1,0 +1,932 @@
+%% =============================================================================
+%% chapters/appendix-mllp-services.tex
+%% Appendix B: Implementation Guide for MLLP Ingress and Egress Services
+%% =============================================================================
+
+\chapter{Implementation Guide for MLLP Ingress and Egress Services}
+\label{app:mllp_services}
+
+\section{Overview \& Engineering Objectives}
+\label{sec:mllp_guide_overview}
+
+This implementation guide provides an exhaustive, production-grade technical manual detailing the architectural patterns, component blueprints, configuration parameters, state persistence workflows, and testing harnesses required to implement:
+\begin{enumerate}
+    \item \textbf{A New MLLP Ingress Service}: Ingesting inbound HL7 v2 messages over Minimal Lower Layer Protocol (MLLP) TCP sockets, validating syntax, constructing canonical FHIR R5 \texttt{Communication} and \texttt{Task} resources, persisting records into the \texttt{Mneme} Infinispan cache grid and \texttt{Mnemosyne} PostgreSQL database, publishing asynchronous \texttt{ErgonEvent} notifications to the \texttt{Petasos} (ActiveMQ Artemis) message bus, and generating synchronous HL7 acknowledgements (\texttt{AA}, \texttt{AE}, \texttt{AR}).
+    \item \textbf{A New MLLP Egress Service}: Consuming outbound clinical dispatch tasks from dedicated \texttt{Petasos} destination queues, transforming canonical models into HL7 v2 payloads, dispatching over Apache Camel MLLP client routes with robust socket timeouts, deeply inspecting downstream HL7 \texttt{ACK}/\texttt{NACK} responses, managing full FHIR \texttt{Communication}, \texttt{Task}, and \texttt{Provenance} lifecycle state transitions in \texttt{Mneme}/\texttt{Mnemosyne}, and isolating destination failure domains through multi-instance container topologies.
+\end{enumerate}
+
+% =============================================================================
+% PART I: IMPLEMENTING AN MLLP INGRESS SERVICE
+% =============================================================================
+\section{Ingress Architectural Blueprint \& Framing Protocols}
+\label{sec:ingress_blueprint}
+
+The MLLP Ingress Gateway (\texttt{pylai-mllp-in}) acts as the secure, high-throughput perimeter gateway of Harmonia, terminating inbound TCP connections from external Patient Administration Systems (PAS), Laboratory Information Systems (LIS), Radiology Information Systems (RIS), and Electronic Medical Records (EMR).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-mllp-ingress-process.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 3.2 Component Flow for the MLLP Ingress Service Processing Pipeline}
+    \label{fig:mllp_ingress_process}
+\end{figure}
+
+\subsection{MLLP Transport Framing}
+
+MLLP provides minimal framing over stream-oriented TCP sockets to delineate discrete message boundaries. All inbound MLLP ingress routes adhere to the standard framing specification:
+\begin{equation}
+\langle\text{Inbound Frame}\rangle ::= \texttt{0x0B}\ (\text{Start-of-Block / \texttt{<VT>}}) + \langle\text{HL7 v2.x Payload}\rangle + \texttt{0x1C}\ (\text{End-of-Block / \texttt{<FS>}}) + \texttt{0x0D}\ (\text{Carriage Return / \texttt{<CR>}})
+\end{equation}
+
+Inbound frames are received over persistent or transient TCP sockets. Camel's Netty-based MLLP component buffers incoming bytes until the End-of-Block trailer (\texttt{0x1C 0x0D}) is detected, strips framing bytes, and passes the raw HL7 string to the downstream pipeline.
+
+\subsection{The 8-Phase Ingress Processing Lifecycle}
+
+Every inbound message traverses an immutable 8-phase execution pipeline:
+\begin{enumerate}
+    \item \textbf{Socket Connection \& TCP Frame Capture}: The client establishes a TCP connection to the configured port (e.g., 2101 for ADT, 2102 for Lab ORU, 2103 for Rad ORU, 2104 for ORM). Camel captures the framed byte stream.
+    \item \textbf{Frame Stripping \& Charset Normalization}: Framing bytes (\texttt{0x0B}, \texttt{0x1C}, \texttt{0x0D}) are stripped; bytes are decoded into UTF-8 or ISO-8859-1 strings based on \texttt{MSH-18} character set headers.
+    \item \textbf{Message Type \& Trigger Event Validation}: The MSH segment is inspected to identify message structure (\texttt{MSH-9.1}), trigger event (\texttt{MSH-9.2}), and message control ID (\texttt{MSH-10}).
+    \item \textbf{HL7 v2 Data Extraction}: Specialized extractors leverage HAPI Terser to navigate segment hierarchies and extract demographic, clinical, and encounter fields.
+    \item \textbf{Canonical FHIR R5 Construction}: Canonical resource builders instantiate:
+    \begin{itemize}
+        \item A FHIR R5 \texttt{Communication} resource preserving the complete raw HL7 message in \texttt{Communication.payload.contentAttachment}.
+        \item A synthetic FHIR R5 \texttt{Task} resource (representing the executable \texttt{Pragma}) encapsulating workflow priority, routing metadata, and correlation IDs.
+    \end{itemize}
+    \item \textbf{Cache \& Database Persistence}: The \texttt{Communication} and \texttt{Task} resources are persisted into the \texttt{Mneme} Infinispan data grid via \texttt{TaskCacheService} and write-behind synced to \texttt{Mnemosyne} JPA stores.
+    \item \textbf{Petasos Event Dispatch}: A lightweight \texttt{ErgonEvent} notification referencing the persistent \texttt{Task.id} and \texttt{Communication.id} is published to the target ActiveMQ Artemis inbound queue (e.g., \texttt{petasos.queue.inbound.adt}).
+    \item \textbf{Synchronous HL7 Acknowledgement Generation}: A standards-compliant HL7 \texttt{ACK} containing matching \texttt{MSA-2} and appropriate \texttt{MSA-1} code (\texttt{AA}, \texttt{AE}, \texttt{AR}) is framed in MLLP and flushed over the TCP socket before closing the connection.
+\end{enumerate}
+
+\section{Ingress Component Implementation}
+\label{sec:ingress_components}
+
+\subsection{Camel RouteBuilder Configuration}
+
+Ingress routes are defined using Apache Camel's Java DSL, configured as CDI \texttt{@Dependent} beans. The route registers an \texttt{mllp://} endpoint, sets connection options, and wires incoming exchanges to dedicated processor wrappers.
+
+\begin{lstlisting}[language=Java, caption={IncomingAdtMessageMllpRouteBuilder Implementation Pattern}]
+@Dependent
+public class IncomingAdtMessageMllpRouteBuilder extends RouteBuilder {
+
+    private static final Logger log = LoggerFactory.getLogger(IncomingAdtMessageMllpRouteBuilder.class);
+
+    @Inject
+    private MllpConfig mllpConfig;
+
+    @Inject
+    private IncomingAdtMessageProcessorWrapper incomingAdtMessageProcessorWrapper;
+
+    @Override
+    public void configure() throws Exception {
+        if (mllpConfig == null) {
+            mllpConfig = new MllpConfig();
+        }
+
+        String host = mllpConfig.getHost();
+        int port = mllpConfig.getAdtPort(); // Port 2101
+        boolean autoAck = mllpConfig.isAutoAck(); // false: explicit ACK control
+        int bindTimeout = mllpConfig.getBindTimeout();
+        int readTimeout = mllpConfig.getReadTimeout();
+
+        // MLLP Ingress Listener Route
+        from(String.format("mllp://%s:%d?autoAck=%b&bindTimeout=%d&readTimeout=%d",
+                host, port, autoAck, bindTimeout, readTimeout))
+            .routeId("hl7-mllp-adt-receiver")
+            .log(LoggingLevel.INFO, log, "MLLP Inbound ADT message received on port " + port)
+            .process(incomingAdtMessageProcessorWrapper)
+            .log(LoggingLevel.INFO, log, "MLLP Inbound ADT processing completed; ACK ready");
+
+        // Internal Direct Route for In-Process Triggers
+        from("direct:adt-events")
+            .routeId("direct-adt-processor")
+            .process(incomingAdtMessageProcessorWrapper);
+    }
+}
+\end{lstlisting}
+
+\subsection{Processor Wrapper \& Context Management}
+
+The \texttt{IncomingAdtMessageProcessorWrapper} acts as the boundary adapter between Apache Camel's exchange model and Harmonia's HL7 domain processor.
+
+\begin{lstlisting}[language=Java, caption={IncomingAdtMessageProcessorWrapper Blueprint}]
+@ApplicationScoped
+public class IncomingAdtMessageProcessorWrapper implements Processor {
+
+    private static final Logger log = LoggerFactory.getLogger(IncomingAdtMessageProcessorWrapper.class);
+
+    @Inject
+    private IncomingAdtMessageProcessor incomingAdtMessageProcessor;
+
+    @Override
+    public void process(Exchange exchange) throws Exception {
+        String hl7Message = exchange.getIn().getBody(String.class);
+        log.debug("Processing inbound HL7 payload of length: {}", hl7Message.length());
+
+        // Delegate to domain processor
+        AdtProcessingResult result = incomingAdtMessageProcessor.process(hl7Message);
+
+        // Populate exchange headers and set synchronous ACK body
+        exchange.getMessage().setHeader("HIE_MESSAGE_CONTROL_ID", result.getMessageControlId());
+        exchange.getMessage().setHeader("HIE_ACK_CODE", result.getAckCode());
+        exchange.getMessage().setBody(result.getAckMessage());
+    }
+}
+\end{lstlisting}
+
+\subsection{HL7 v2 Data Extraction with HAPI Terser}
+
+To ensure resilience against optional or missing segments across varied HL7 versions (2.3, 2.4, 2.5), extractors employ the HAPI HL7 Terser with defensive navigation wrappers:
+
+\begin{lstlisting}[language=Java, caption={AdtMessageExtractor Implementation Blueprint}]
+public class AdtMessageExtractor {
+
+    private final Terser terser;
+
+    public AdtMessageExtractor(Message message) {
+        this.terser = new Terser(message);
+    }
+
+    public String extractMessageControlId() {
+        return getSafeValue("/.MSH-10");
+    }
+
+    public String extractTriggerEvent() {
+        return getSafeValue("/.MSH-9-2");
+    }
+
+    public String extractPatientId() {
+        String pid3 = getSafeValue("/.PID-3-1");
+        return (pid3 != null && !pid3.isEmpty()) ? pid3 : getSafeValue("/.PID-2-1");
+    }
+
+    public String extractFamilyName() {
+        return getSafeValue("/.PID-5-1");
+    }
+
+    public String extractGivenName() {
+        return getSafeValue("/.PID-5-2");
+    }
+
+    public String extractDateOfBirth() {
+        return getSafeValue("/.PID-7-1");
+    }
+
+    public String extractAdministrativeGender() {
+        return getSafeValue("/.PID-8");
+    }
+
+    public String extractVisitNumber() {
+        return getSafeValue("/.PV1-19-1");
+    }
+
+    public String extractPatientClass() {
+        return getSafeValue("/.PV1-2");
+    }
+
+    public String extractAssignedLocation() {
+        String poc = getSafeValue("/.PV1-3-1"); // Point of care
+        String room = getSafeValue("/.PV1-3-2");
+        String bed = getSafeValue("/.PV1-3-3");
+        return String.format("%s/%s/%s", 
+            poc != null ? poc : "", 
+            room != null ? room : "", 
+            bed != null ? bed : "");
+    }
+
+    private String getSafeValue(String terserPath) {
+        try {
+            String value = terser.get(terserPath);
+            return (value != null && !value.trim().isEmpty()) ? value.trim() : null;
+        } catch (HL7Exception e) {
+            return null; // Defensive fallback on missing segment/field
+        }
+    }
+}
+\end{lstlisting}
+
+\section{Canonical FHIR Model Mapping \& Resource Builders}
+\label{sec:ingress_fhir_mapping}
+
+Harmonia normalizes all inbound HL7 messages into dual canonical FHIR R5 entities:
+\begin{enumerate}
+    \item \textbf{FHIR R5 \texttt{Communication}}: Holds message provenance, sender/recipient metadata, and the raw immutable HL7 v2 payload.
+    \item \textbf{FHIR R5 \texttt{Task}}: Models the executable units of work (\texttt{Pragma}) consumed by the \texttt{Ponos} workflow engine.
+\end{enumerate}
+
+\subsection{FHIR Communication Resource Construction}
+
+\begin{lstlisting}[language=Java, caption={AdtCommunicationResourceBuilder Blueprint}]
+public class AdtCommunicationResourceBuilder {
+
+    public Communication buildCommunication(AdtMessageExtractor extractor, String rawHl7) {
+        Communication comm = new Communication();
+        comm.setId(UUID.randomUUID().toString());
+        comm.setStatus(Communication.CommunicationStatus.COMPLETED);
+
+        // Identifiers
+        Identifier msh10Id = new Identifier();
+        msh10Id.setSystem("http://harmonia.hie/identifiers/msh-10");
+        msh10Id.setValue(extractor.extractMessageControlId());
+        comm.addIdentifier(msh10Id);
+
+        // Category
+        CodeableConcept category = new CodeableConcept();
+        category.addCoding().setSystem("http://terminology.hl7.org/CodeSystem/communication-category")
+                            .setCode("notification")
+                            .setDisplay("HL7 Inbound Notification");
+        comm.addCategory(category);
+
+        // Sender & Recipient
+        comm.setSender(new Reference().setDisplay(extractor.getSendingFacility()));
+        comm.addRecipient(new Reference().setDisplay("Harmonia-HIE-Ingress"));
+
+        // Payload Attachment (Raw HL7 Message)
+        Communication.CommunicationPayloadComponent payload = new Communication.CommunicationPayloadComponent();
+        Attachment attachment = new Attachment();
+        attachment.setContentType("text/plain");
+        attachment.setData(rawHl7.getBytes(StandardCharsets.UTF_8));
+        attachment.setCreation(new Date());
+        payload.setContent(attachment);
+        comm.addPayload(payload);
+
+        comm.setSent(new Date());
+        return comm;
+    }
+}
+\end{lstlisting}
+
+\subsection{FHIR Task (Pragma) Resource Construction}
+
+The synthetic \texttt{Task} represents the executable pipeline instance. Table~\ref{tab:hl7_task_mapping} outlines the canonical field mappings.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{3.5cm} l p{4.5cm}}
+\toprule
+\textbf{HL7 v2 Source Field} & \textbf{FHIR R5 Task Property} & \textbf{Datatype} & \textbf{Transformation Logic} \\
+\midrule
+\texttt{MSH-10} & \texttt{Task.identifier[msh10]} & \texttt{Identifier} & Copied verbatim for correlation \\
+\texttt{MSH-9-2} (Trigger) & \texttt{Task.businessStatus} & \texttt{CodeableConcept} & Mapped to clinical event type (e.g. \texttt{A01} $\to$ \texttt{ADMISSION}) \\
+\texttt{PV1-2} (Patient Class) & \texttt{Task.priority} & \texttt{TaskPriority} & \texttt{E} $\to$ \texttt{stat}, \texttt{I} $\to$ \texttt{urgent}, \texttt{O} $\to$ \texttt{routine} \\
+\texttt{PID-3-1} (MRN) & \texttt{Task.for} & \texttt{Reference} & Reference to \texttt{Patient/MRN-\{id\}} \\
+\texttt{PV1-19-1} (Visit Num) & \texttt{Task.encounter} & \texttt{Reference} & Reference to \texttt{Encounter/VIS-\{num\}} \\
+Auto-generated UUID & \texttt{Task.id} & \texttt{IdType} & Unique Pragma identifier \\
+Literal \texttt{"requested"} & \texttt{Task.status} & \texttt{TaskStatus} & Initial state for Ponos engine \\
+Literal \texttt{"order"} & \texttt{Task.intent} & \texttt{TaskIntent} & Required FHIR workflow intent \\
+\bottomrule
+\end{tabularx}
+\caption{HL7 v2 to FHIR R5 Task Canonical Mapping Specifications}
+\label{tab:hl7_task_mapping}
+\end{table}
+
+\section{Persistence, Event Dispatch \& Synchronous Acknowledgement}
+\label{sec:ingress_persistence_ack}
+
+\subsection{Persistence Integration with Mneme \& Mnemosyne}
+
+The ingress processor writes canonical entities into the \texttt{Mneme} Infinispan data grid via \texttt{TaskCacheService} and \texttt{CommunicationService}:
+
+\begin{lstlisting}[language=Java, caption={Ingress Persistence \& Event Dispatch Implementation}]
+public AdtProcessingResult process(String rawHl7) {
+    try {
+        Message hl7Msg = hapiParser.parse(rawHl7);
+        AdtMessageExtractor extractor = new AdtMessageExtractor(hl7Msg);
+
+        // 1. Build Canonical Resources
+        Communication comm = commBuilder.buildCommunication(extractor, rawHl7);
+        Task task = taskBuilder.buildTask(extractor, comm.getId());
+
+        // 2. Persist to Mneme Cache Grid / Mnemosyne Store
+        communicationService.save(comm);
+        taskService.save(task);
+
+        // 3. Publish Asynchronous Notification to Petasos Message Bus
+        ErgonEvent event = new ErgonEvent();
+        event.setEventId(UUID.randomUUID().toString());
+        event.setTaskId(task.getId());
+        event.setCommunicationId(comm.getId());
+        event.setMessageType("ADT");
+        event.setTriggerEvent(extractor.extractTriggerEvent());
+        event.setTimestamp(System.currentTimeMillis());
+
+        taskEventProducerService.publishInboundEvent("petasos.queue.inbound.adt", event);
+
+        // 4. Return Synchronous Application Accept (AA)
+        String ackHl7 = hl7AckGenerator.generateAck(hl7Msg, "AA", "Message Accepted");
+        return new AdtProcessingResult(extractor.extractMessageControlId(), "AA", ackHl7);
+
+    } catch (HL7Exception e) {
+        log.error("HL7 parse error: {}", e.getMessage());
+        String nackHl7 = hl7AckGenerator.generateNack(rawHl7, "AR", "Structural Parse Failure: " + e.getMessage());
+        return new AdtProcessingResult(null, "AR", nackHl7);
+    } catch (Exception e) {
+        log.error("Internal processing error: {}", e.getMessage());
+        String nackHl7 = hl7AckGenerator.generateNack(rawHl7, "AE", "Internal Storage Failure: " + e.getMessage());
+        return new AdtProcessingResult(null, "AE", nackHl7);
+    }
+}
+\end{lstlisting}
+
+\subsection{Synchronous Acknowledgement Mapping Rules}
+
+The ingress service guarantees deterministic acknowledgement status codes as summarized in Table~\ref{tab:ack_rules}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{6.0cm} p{3.0cm}}
+\toprule
+\textbf{ACK Code} & \textbf{Status Name} & \textbf{Triggering Condition} & \textbf{Client Action} \\
+\midrule
+\texttt{AA} & Application Accept & Syntactically valid HL7; successfully written to Mneme cache and Petasos queue. & Message considered durably accepted; do not retry. \\
+\texttt{AE} & Application Error & Transient infrastructure failure (Infinispan timeout, database disconnect, Artemis broker unreachable). & Re-queue and retry with exponential backoff. \\
+\texttt{AR} & Application Reject & Malformed HL7 frame, missing required MSH segments, unsupported major version. & Route to operator dead-letter queue; do not retry. \\
+\bottomrule
+\end{tabularx}
+\caption{Synchronous HL7 Acknowledgement Response Contracts}
+\label{tab:ack_rules}
+\end{table}
+
+\subsection{REST Management \& CDI Deployment Configuration}
+
+Every ingress gateway exposes optional REST endpoints for health checks, administrative ping, and direct HTTP ingestion:
+
+\begin{lstlisting}[language=Java, caption={JAX-RS Direct Ingestion Endpoint (AdtResource)}]
+@Path("/mllp/adt")
+@ApplicationScoped
+public class AdtResource {
+
+    @Inject
+    private IncomingAdtMessageProcessor processor;
+
+    @POST
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response ingestAdtMessage(String rawHl7) {
+        AdtProcessingResult result = processor.process(rawHl7);
+        if ("AA".equals(result.getAckCode())) {
+            return Response.ok(result.getAckMessage()).build();
+        } else if ("AE".equals(result.getAckCode())) {
+            return Response.status(Response.Status.SERVICE_UNAVAILABLE).entity(result.getAckMessage()).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity(result.getAckMessage()).build();
+        }
+    }
+}
+\end{lstlisting}
+
+% =============================================================================
+% PART II: IMPLEMENTING AN MLLP EGRESS SERVICE
+% =============================================================================
+\section{Multi-Instance Egress Architecture \& Queue Partitioning}
+\label{sec:egress_architecture}
+
+In contrast to ingress gateways that bind to inbound listening ports, the MLLP Egress Gateway (\texttt{pylai-mllp-out}) functions as a dynamic TCP client, connecting to downstream clinical endpoints (such as hospital EMR, LMS, and RIS-PACS systems).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-mllp-egress-process.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 3.2 Component Flow for the MLLP Egress Multi-Instance Dispatch Pipeline}
+    \label{fig:mllp_egress_process}
+\end{figure}
+
+\subsection{Head-of-Line Blocking Mitigation \& Destination Isolation}
+
+In healthcare integration environments, downstream clinical systems exhibit disparate network latency, maintenance windows, and failure modes. If a single outbound gateway serviced all destinations from a shared queue:
+\begin{enumerate}
+    \item A transient network outage or TCP socket stall at one hospital endpoint (e.g., LMS analyzer reboot) would block outbound transmissions to healthy endpoints (e.g., EMR, RIS-PACS).
+    \item Retry storms and queue head-of-line blocking would cascade across the entire healthcare exchange.
+\end{enumerate}
+
+To eliminate head-of-line blocking, Harmonia enforces \textbf{destination-partitioned multi-instance isolation}:
+\begin{itemize}
+    \item Each downstream destination is allocated a dedicated, persistent ActiveMQ Artemis queue:
+    \begin{equation}
+    \text{Queue Pattern} ::= \texttt{petasos.queue.egress.}\langle\text{destinationId}\rangle\texttt{.}\langle\text{messageType}\rangle
+    \end{equation}
+    Examples: \texttt{petasos.queue.egress.emr.adt}, \texttt{petasos.queue.egress.lms.orm}, \texttt{petasos.queue.egress.rispac.orm}.
+    \item Each destination runs as an isolated, containerized \texttt{pylai-mllp-out} microservice instance consuming exclusively from its dedicated queue.
+    \item Failures, exponential backoff retries, and socket timeouts in one container never impact message throughput or delivery SLAs of other destinations.
+\end{itemize}
+
+\subsection{Outbound Configuration \& Destination Registry}
+
+Configuration is managed via \texttt{MllpOutboundConfig} and \texttt{MllpDestinationRegistry}, populated via microprofile environment variables at container launch.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{4.0cm} l p{4.0cm}}
+\toprule
+\textbf{Environment Variable} & \textbf{Config Property} & \textbf{Default} & \textbf{Description} \\
+\midrule
+\texttt{MLLP\_OUTBOUND\_DESTINATION\_ID} & \texttt{destinationId} & \texttt{"DEFAULT"} & Unique destination identifier (e.g. \texttt{EMR}, \texttt{LMS}) \\
+\texttt{MLLP\_OUTBOUND\_HOST} & \texttt{host} & \texttt{"localhost"} & Target TCP hostname or IP address \\
+\texttt{MLLP\_OUTBOUND\_PORT} & \texttt{port} & \texttt{2575} & Target MLLP TCP listener port \\
+\texttt{MLLP\_OUTBOUND\_READ\_TIMEOUT\_MS} & \texttt{readTimeoutMs} & \texttt{10000} & Socket read timeout in milliseconds \\
+\texttt{MLLP\_OUTBOUND\_CONNECT\_TIMEOUT\_MS} & \texttt{connectTimeoutMs} & \texttt{5000} & TCP handshake timeout in milliseconds \\
+\texttt{MLLP\_OUTBOUND\_AUTO\_ACK} & \texttt{autoAck} & \texttt{false} & Requires explicit downstream ACK verification \\
+\texttt{MLLP\_OUTBOUND\_QUEUE\_NAME} & \texttt{dedicatedEventQueueName} & \textit{Derived} & Dedicated Artemis subscription queue \\
+\texttt{MLLP\_OUTBOUND\_COMPLETION\_QUEUE\_NAME} & \texttt{completionEventQueueName} & \texttt{"petasos.queue.egress.completed"} & Completion telemetry queue \\
+\bottomrule
+\end{tabularx}
+\caption{MLLP Outbound Gateway Environment Configuration Parameters}
+\label{tab:outbound_config_params}
+\end{table}
+
+\subsection{Outbound Data Transfer Models}
+
+The egress pipeline coordinates transmissions using two standard DTOs:
+\begin{itemize}
+    \item \textbf{\texttt{OutboundMllpRequest}}: Encapsulates \texttt{taskId}, \texttt{communicationId}, \texttt{destinationId}, \texttt{messageControlId}, \texttt{targetHost}, \texttt{targetPort}, \texttt{rawHl7Payload}, and retry metadata.
+    \item \textbf{\texttt{OutboundMllpResponse}}: Encapsulates delivery status (\texttt{isSuccessful}), \texttt{ackCode} (\texttt{AA}, \texttt{AE}, \texttt{AR}, \texttt{CA}, \texttt{CE}, \texttt{CR}), \texttt{rawAckMessage}, \texttt{errorMessage}, \texttt{durationMs}, and \texttt{acknowledgedAt} timestamp.
+\end{itemize}
+
+\section{Outbound Queue Consumer \& Camel Dynamic MLLP Routes}
+\label{sec:egress_routes}
+
+\subsection{Dedicated Task Queue Consumer}
+
+The \texttt{OutboundTaskQueueConsumer} implements JMS \texttt{MessageListener}, pulling outbound tasks from the dedicated Artemis queue and dispatching them through Apache Camel.
+
+\begin{lstlisting}[language=Java, caption={OutboundTaskQueueConsumer Implementation Pattern}]
+@ApplicationScoped
+public class OutboundTaskQueueConsumer implements MessageListener {
+
+    private static final Logger log = LoggerFactory.getLogger(OutboundTaskQueueConsumer.class);
+
+    @Inject
+    private MllpOutboundConfig outboundConfig;
+
+    @Inject
+    private OutboundStateLifecycleManager lifecycleManager;
+
+    private ProducerTemplate producerTemplate;
+
+    @Override
+    public void onMessage(jakarta.jms.Message message) {
+        try {
+            if (message instanceof TextMessage) {
+                String jsonPayload = ((TextMessage) message).getText();
+                OutboundMllpRequest request = JsonUtils.fromJson(jsonPayload, OutboundMllpRequest.class);
+
+                // Dispatch via Camel ProducerTemplate
+                OutboundMllpResponse response = producerTemplate.requestBody(
+                    "direct:mllp-outbound-send", request, OutboundMllpResponse.class);
+
+                // Update FHIR Task, Communication and Provenance states
+                lifecycleManager.handleOutboundResponse(request, response);
+                message.acknowledge(); // Acknowledge JMS message upon lifecycle recording
+            }
+        } catch (Exception e) {
+            log.error("Fatal exception in outbound queue consumer: {}", e.getMessage(), e);
+            // Non-acknowledged message triggers Artemis redelivery policy
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{Camel Dynamic Outbound Route Builder}
+
+The \texttt{OutboundMllpRouteBuilder} configures dynamic dispatch to external TCP sockets using Camel's \texttt{toD} dynamic URI expression, setting connection timeouts and auto-acknowledgment rules.
+
+\begin{lstlisting}[language=Java, caption={OutboundMllpRouteBuilder Dynamic Dispatch DSL}]
+@ApplicationScoped
+public class OutboundMllpRouteBuilder extends RouteBuilder {
+
+    private static final Logger log = LoggerFactory.getLogger(OutboundMllpRouteBuilder.class);
+
+    @Inject
+    private OutboundMllpProcessor outboundMllpProcessor;
+
+    @Inject
+    private Hl7AckProcessor hl7AckProcessor;
+
+    @Override
+    public void configure() throws Exception {
+
+        // Global Exception Handler for Socket / Network Failures
+        onException(Exception.class)
+            .handled(true)
+            .setHeader("HIE_TRANSMISSION_SUCCESS", constant(false))
+            .setHeader("HIE_ACK_CODE", constant("AE"))
+            .setHeader("HIE_ERROR_MESSAGE", simple("${exception.message}"))
+            .process(exchange -> {
+                Exception cause = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
+                String dest = exchange.getIn().getHeader("HIE_DESTINATION_ID", String.class);
+                String msh10 = exchange.getIn().getHeader("HIE_EXPECTED_CONTROL_ID", String.class);
+                long duration = System.currentTimeMillis() - exchange.getProperty("HIE_START_TIME", Long.class);
+                
+                OutboundMllpResponse failure = OutboundMllpResponse.failure(
+                    msh10, "Socket connection error to " + dest + ": " + cause.getMessage(), duration);
+                failure.setDestinationId(dest);
+                exchange.getMessage().setBody(failure);
+            });
+
+        // Outbound Dynamic MLLP Route
+        from("direct:mllp-outbound-send")
+            .routeId("mllp-outbound-dynamic-sender")
+            .process(outboundMllpProcessor) // Validates request and populates Camel headers
+            .setProperty("HIE_START_TIME", simple("${date:now:getTime()}"))
+            .log(LoggingLevel.INFO, log, "Dispatching MLLP frame to ${header.HIE_DEST_HOST}:${header.HIE_DEST_PORT}")
+            
+            // Dynamic MLLP Producer
+            .toD("mllp://${header.HIE_DEST_HOST}:${header.HIE_DEST_PORT}?"
+                + "autoAck=${header.HIE_AUTO_ACK}"
+                + "&readTimeout=${header.HIE_READ_TIMEOUT}"
+                + "&connectTimeout=${header.HIE_CONNECT_TIMEOUT}"
+                + "&charsetName=UTF-8")
+                
+            .process(hl7AckProcessor) // Deep inspection of received ACK/NACK frame
+            .log(LoggingLevel.INFO, log, "Outbound MLLP dispatch complete: ACK=${header.HIE_ACK_CODE}, Success=${header.HIE_TRANSMISSION_SUCCESS}");
+    }
+}
+\end{lstlisting}
+
+\subsection{Outbound MLLP Processor Header Injection}
+
+The \texttt{OutboundMllpProcessor} validates the inbound DTO, resolves target connection parameters from the \texttt{MllpDestinationRegistry}, and initializes exchange headers:
+
+\begin{lstlisting}[language=Java, caption={OutboundMllpProcessor Header Initialization}]
+@ApplicationScoped
+public class OutboundMllpProcessor implements Processor {
+
+    @Inject
+    private MllpOutboundConfig config;
+
+    @Inject
+    private MllpDestinationRegistry destinationRegistry;
+
+    @Override
+    public void process(Exchange exchange) throws Exception {
+        OutboundMllpRequest request = exchange.getIn().getBody(OutboundMllpRequest.class);
+        if (request == null || StringUtils.isBlank(request.getRawHl7Payload())) {
+            throw new IllegalArgumentException("OutboundMllpRequest payload must not be null or blank");
+        }
+
+        String destinationId = StringUtils.isNotBlank(request.getDestinationId()) 
+            ? request.getDestinationId() : config.getDestinationId();
+
+        MllpDestinationConfig destConfig = destinationRegistry.getDestination(destinationId)
+            .orElse(config.toDestinationConfig());
+
+        // Configure Exchange Headers for Dynamic toD URI
+        exchange.getMessage().setHeader("HIE_DESTINATION_ID", destinationId);
+        exchange.getMessage().setHeader("HIE_DEST_HOST", destConfig.getHost());
+        exchange.getMessage().setHeader("HIE_DEST_PORT", destConfig.getPort());
+        exchange.getMessage().setHeader("HIE_READ_TIMEOUT", destConfig.getReadTimeoutMs());
+        exchange.getMessage().setHeader("HIE_CONNECT_TIMEOUT", destConfig.getConnectTimeoutMs());
+        exchange.getMessage().setHeader("HIE_AUTO_ACK", false);
+        exchange.getMessage().setHeader("HIE_EXPECTED_CONTROL_ID", request.getMessageControlId());
+
+        // Set Outbound Body to Raw HL7 Message String
+        exchange.getMessage().setBody(request.getRawHl7Payload());
+    }
+}
+\end{lstlisting}
+
+\section{Downstream HL7 ACK/NACK Deep Inspection}
+\label{sec:egress_ack_inspection}
+
+A critical requirement in clinical integration is preventing false-positive transmission confirmations. Receiving a TCP \texttt{FIN} or \texttt{ACK} at the transport layer does not imply clinical acceptance by the receiving hospital system. The \texttt{Hl7AckProcessor} performs deep structural inspection on the received HL7 acknowledgement frame.
+
+\subsection{MSA \& ERR Segment Parsing Specification}
+
+The processor evaluates the \texttt{MSA} (Message Acknowledgement) and \texttt{ERR} (Error) segments:
+
+\begin{lstlisting}[language=Java, caption={Hl7AckProcessor MSA Evaluation Logic}]
+public OutboundMllpResponse parseAck(String rawAck, String expectedControlId, String destinationId, long durationMs) {
+    if (StringUtils.isBlank(rawAck)) {
+        return OutboundMllpResponse.failure(expectedControlId, "Empty ACK response received from " + destinationId, durationMs);
+    }
+
+    Matcher matcher = MSA_PATTERN.matcher(rawAck);
+    if (!matcher.find()) {
+        OutboundMllpResponse resp = OutboundMllpResponse.failure(
+            expectedControlId, "Malformed ACK: missing MSA segment", durationMs);
+        resp.setRawAckMessage(rawAck);
+        return resp;
+    }
+
+    String ackCode = matcher.group(1).trim().toUpperCase(); // MSA-1: AA, AE, AR, CA, CE, CR
+    String msaControlId = matcher.group(2);                  // MSA-2: Referenced MSH-10
+    String ackText = matcher.group(3);                      // MSA-3: Text explanation
+
+    // Strict Correlation Validation
+    boolean controlIdMatches = true;
+    if (StringUtils.isNotBlank(expectedControlId) && StringUtils.isNotBlank(msaControlId)) {
+        if (!StringUtils.equals(expectedControlId.trim(), msaControlId.trim())) {
+            controlIdMatches = false;
+            log.warn("MSA-2 control ID mismatch: expected '{}' but received '{}'", expectedControlId, msaControlId);
+        }
+    }
+
+    OutboundMllpResponse response = new OutboundMllpResponse();
+    response.setMessageControlId(msaControlId != null ? msaControlId : expectedControlId);
+    response.setDestinationId(destinationId);
+    response.setAckCode(ackCode);
+    response.setAckText(ackText);
+    response.setRawAckMessage(rawAck);
+    response.setDurationMs(durationMs);
+    response.setAcknowledgedAt(new Date());
+
+    boolean isAccept = "AA".equals(ackCode) || "CA".equals(ackCode);
+    if (isAccept && controlIdMatches) {
+        response.setSuccessful(true);
+    } else if (isAccept && !controlIdMatches) {
+        response.setSuccessful(false);
+        response.setErrorMessage("Control ID mismatch: expected " + expectedControlId + " but received " + msaControlId);
+    } else {
+        response.setSuccessful(false);
+        response.setErrorMessage(StringUtils.isNotBlank(ackText) ? ackText : "HL7 Application NACK (" + ackCode + ")");
+    }
+
+    return response;
+}
+\end{lstlisting}
+
+\subsection{Downstream ACK Code Decision Matrix}
+
+Table~\ref{tab:egress_ack_decision} defines the egress gateway behavior across all downstream ACK codes and error conditions.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l c p{4.5cm} p{2.5cm}}
+\toprule
+\textbf{Response Code} & \textbf{Semantics} & \textbf{Success?} & \textbf{State Transition} & \textbf{Retry Strategy} \\
+\midrule
+\texttt{AA} / \texttt{CA} & Application Accept & \textbf{YES} & \texttt{Task.status} $\to$ \texttt{COMPLETED} & None \\
+\texttt{AE} / \texttt{CE} & Application Error & \textbf{NO} & \texttt{Task.status} $\to$ \texttt{IN\_PROGRESS} & Exponential Backoff \\
+\texttt{AR} / \texttt{CR} & Application Reject & \textbf{NO} & \texttt{Task.status} $\to$ \texttt{FAILED} & Terminal (DLQ) \\
+\texttt{TIMEOUT} & Socket Read Timeout & \textbf{NO} & \texttt{Task.status} $\to$ \texttt{IN\_PROGRESS} & Immediate Reconnect \\
+\texttt{CONN\_REFUSED} & Port Closed & \textbf{NO} & \texttt{Task.status} $\to$ \texttt{IN\_PROGRESS} & Linear Backoff \\
+\texttt{MSH-10 MISMATCH} & Correlation Breach & \textbf{NO} & \texttt{Task.status} $\to$ \texttt{FAILED} & Operator Review \\
+\bottomrule
+\end{tabularx}
+\caption{Downstream HL7 Acknowledgement Code Decision Matrix}
+\label{tab:egress_ack_decision}
+\end{table}
+
+\section{State, Task, and Provenance Lifecycle Management}
+\label{sec:egress_lifecycle}
+
+\subsection{Outbound State Lifecycle Synchronization}
+
+Upon receiving the \texttt{OutboundMllpResponse}, the \texttt{OutboundStateLifecycleManager} updates the associated canonical FHIR resources in \texttt{Mneme} and \texttt{Mnemosyne}, constructs an immutable \texttt{Provenance} record, and emits an audit event to Petasos:
+
+\begin{lstlisting}[language=Java, caption={OutboundStateLifecycleManager Implementation}]
+@ApplicationScoped
+public class OutboundStateLifecycleManager {
+
+    @Inject
+    private TaskService taskService;
+
+    @Inject
+    private CommunicationService communicationService;
+
+    @Inject
+    private ProvenanceService provenanceService;
+
+    @Inject
+    private OutboundProvenanceResourceBuilder provenanceBuilder;
+
+    @Inject
+    private TaskEventProducerService taskEventProducerService;
+
+    public void handleOutboundResponse(OutboundMllpRequest request, OutboundMllpResponse response) {
+        // 1. Update Synthetic Task (Pragma) Status
+        if (StringUtils.isNotBlank(request.getTaskId())) {
+            Task task = taskService.getTask(request.getTaskId());
+            if (task != null) {
+                if (response.isSuccessful()) {
+                    task.setStatus(Task.TaskStatus.COMPLETED);
+                    task.setBusinessStatus(new CodeableConcept().setText("DELIVERED_AA"));
+                } else if ("AE".equals(response.getAckCode())) {
+                    task.setStatus(Task.TaskStatus.INPROGRESS);
+                    task.setBusinessStatus(new CodeableConcept().setText("RETRY_PENDING_AE"));
+                } else {
+                    task.setStatus(Task.TaskStatus.FAILED);
+                    task.setBusinessStatus(new CodeableConcept().setText("REJECTED_AR"));
+                }
+                task.setLastModified(new Date());
+                taskService.update(task);
+            }
+        }
+
+        // 2. Build and Persist Immutable Provenance Record
+        Provenance provenance = provenanceBuilder.buildProvenance(request, response);
+        provenanceService.save(provenance);
+
+        // 3. Publish Egress Completion Event to Petasos
+        ErgonEvent completionEvent = new ErgonEvent();
+        completionEvent.setEventId(UUID.randomUUID().toString());
+        completionEvent.setTaskId(request.getTaskId());
+        completionEvent.setDestinationId(response.getDestinationId());
+        completionEvent.setStatus(response.isSuccessful() ? "SUCCESS" : "FAILURE");
+        completionEvent.setDurationMs(response.getDurationMs());
+
+        taskEventProducerService.publishOutboundCompletionEvent("petasos.queue.egress.completed", completionEvent);
+    }
+}
+\end{lstlisting}
+
+\subsection{FHIR Provenance Resource Construction}
+
+The \texttt{OutboundProvenanceResourceBuilder} captures complete transmission audit trails:
+
+\begin{lstlisting}[language=Java, caption={OutboundProvenanceResourceBuilder Blueprint}]
+public class OutboundProvenanceResourceBuilder {
+
+    public Provenance buildProvenance(OutboundMllpRequest request, OutboundMllpResponse response) {
+        Provenance prov = new Provenance();
+        prov.setId(UUID.randomUUID().toString());
+        prov.setRecorded(new Date());
+
+        // Target References (Task & Communication)
+        if (StringUtils.isNotBlank(request.getTaskId())) {
+            prov.addTarget(new Reference("Task/" + request.getTaskId()));
+        }
+        if (StringUtils.isNotBlank(request.getCommunicationId())) {
+            prov.addTarget(new Reference("Communication/" + request.getCommunicationId()));
+        }
+
+        // Activity: Data Transmission
+        CodeableConcept activity = new CodeableConcept();
+        activity.addCoding().setSystem("http://terminology.hl7.org/CodeSystem/v3-DataOperation")
+                            .setCode("TRANSMIT")
+                            .setDisplay("MLLP Outbound Transmission");
+        prov.setActivity(activity);
+
+        // Agent: Transmitter Gateway
+        Provenance.ProvenanceAgentComponent agent = new Provenance.ProvenanceAgentComponent();
+        agent.getType().addCoding().setSystem("http://terminology.hl7.org/CodeSystem/provenance-participant-type")
+                                   .setCode("transmitter")
+                                   .setDisplay("Harmonia MLLP Egress Gateway");
+        agent.setWho(new Reference().setDisplay("pylai-mllp-out-" + response.getDestinationId()));
+        prov.addAgent(agent);
+
+        return prov;
+    }
+}
+\end{lstlisting}
+
+% =============================================================================
+% PART III: TESTING, VERIFICATION & CONTAINERIZATION
+% =============================================================================
+\section{Testing, Verification Harnesses \& Containerization}
+\label{sec:mllp_testing_containerization}
+
+To guarantee high availability and fault resilience prior to hospital production rollout, new MLLP ingress and egress services must be thoroughly validated across four testing tiers.
+
+\subsection{Tier 1: Unit Testing with HAPI HL7 v2 Parsers}
+
+Unit tests validate segment parsing, field extraction, and boundary conditions without network dependencies:
+
+\begin{lstlisting}[language=Java, caption={Unit Test Suite for ADT Message Extraction}]
+public class AdtMessageExtractorTest {
+
+    private final PipeParser parser = new PipeParser();
+
+    @Test
+    public void testSuccessfulAdtExtraction() throws Exception {
+        String hl7 = "MSH|^~\\&|PAS|HOSPITAL|HARMONIA|HIE|20260916080000||ADT^A01|MSG-100421|P|2.4\r"
+                   + "PID|1||MRN-90210^^^HOSP||DOE^JANE^^^^||19850412|F\r"
+                   + "PV1|1|I|WARD-3A^RM-12^BED-02||||1234^SMITH^JOHN^^DR|||||||||||VIS-88001";
+
+        Message msg = parser.parse(hl7);
+        AdtMessageExtractor extractor = new AdtMessageExtractor(msg);
+
+        assertEquals("MSG-100421", extractor.extractMessageControlId());
+        assertEquals("A01", extractor.extractTriggerEvent());
+        assertEquals("MRN-90210", extractor.extractPatientId());
+        assertEquals("DOE", extractor.extractFamilyName());
+        assertEquals("JANE", extractor.extractGivenName());
+        assertEquals("VIS-88001", extractor.extractVisitNumber());
+    }
+}
+\end{lstlisting}
+
+\subsection{Tier 2: Camel Route Harness Testing}
+
+Camel routes are validated using \texttt{CamelTestSupport} and \texttt{MockEndpoint} assertions:
+
+\begin{lstlisting}[language=Java, caption={Camel Route Mock Test Harness}]
+public class OutboundMllpRouteTest extends CamelTestSupport {
+
+    @EndpointInject("mock:mllp-target")
+    private MockEndpoint mockTarget;
+
+    @Test
+    public void testSuccessfulOutboundDispatch() throws Exception {
+        mockTarget.expectedMessageCount(1);
+        mockTarget.whenAnyExchangeReceived(exchange -> {
+            exchange.getMessage().setBody("MSH|^~\\&|||||20260916080001||ACK^A01|ACK-01|P|2.4\rMSA|AA|MSG-100421");
+        });
+
+        OutboundMllpRequest req = new OutboundMllpRequest();
+        req.setMessageControlId("MSG-100421");
+        req.setDestinationId("EMR");
+        req.setRawHl7Payload("MSH|^~\\&|HARMONIA||EMR||20260916080000||ADT^A01|MSG-100421|P|2.4\rPID|1||MRN-90210");
+
+        OutboundMllpResponse resp = template.requestBody("direct:mllp-outbound-send", req, OutboundMllpResponse.class);
+
+        assertTrue(resp.isSuccessful());
+        assertEquals("AA", resp.getAckCode());
+        mockTarget.assertIsSatisfied();
+    }
+}
+\end{lstlisting}
+
+\subsection{Tier 3: Embedded Mock MLLP Server Integration Testing}
+
+Integration tests launch embedded TCP servers (via Paradeigma's \texttt{MllpServer}) to simulate real network conditions, latency, and connection resets:
+
+\begin{lstlisting}[language=Java, caption={Embedded MLLP Integration Test with Fault Simulation}]
+@Test
+public void testTimeoutAndApplicationRejectHandling() throws Exception {
+    // Launch embedded mock MLLP receiver returning AR Reject
+    MllpServer mockHospitalServer = new MllpServer(2204, (req) -> {
+        return "MSH|^~\\&|||||20260916080002||ACK^O01|ACK-99|P|2.4\rMSA|AR|ORD-5501|Patient MRN Not Found";
+    });
+    mockHospitalServer.start();
+
+    try {
+        OutboundMllpRequest req = new OutboundMllpRequest();
+        req.setMessageControlId("ORD-5501");
+        req.setDestinationId("LMS");
+        req.setTargetPort(2204);
+        req.setRawHl7Payload("MSH|^~\\&|HARMONIA||LMS||...|ORM^O01|ORD-5501|P|2.4\r...");
+
+        OutboundMllpResponse resp = template.requestBody("direct:mllp-outbound-send", req, OutboundMllpResponse.class);
+
+        assertFalse(resp.isSuccessful());
+        assertEquals("AR", resp.getAckCode());
+        assertTrue(resp.getErrorMessage().contains("Patient MRN Not Found"));
+    } finally {
+        mockHospitalServer.stop();
+    }
+}
+\end{lstlisting}
+
+\subsection{Tier 4: Multi-Instance Docker Compose Deployment Topology}
+
+Production deployments isolate egress gateways into independent containers with resource quotas and dedicated queues:
+
+\begin{lstlisting}[language=bash, caption={Docker Compose Multi-Instance Egress Architecture}]
+version: '3.8'
+
+services:
+  # Ingress Gateway (Inbound MLLP Listeners)
+  pylai-mllp-in:
+    image: harmonia/pylai-mllp-in:1.0.0
+    ports:
+      - "2101:2101" # ADT Inbound
+      - "2102:2102" # Lab ORU Inbound
+      - "2103:2103" # Rad ORU Inbound
+      - "2104:2104" # ORM Inbound
+    environment:
+      - MLLP_BIND_HOST=0.0.0.0
+      - ARTEMIS_BROKER_URL=tcp://petasos-broker:61616
+      - INFINISPAN_HOTROD_SERVERS=mneme-cluster:11222
+
+  # Egress Gateway Instance 1: Dedicated EMR Gateway
+  pylai-mllp-out-emr:
+    image: harmonia/pylai-mllp-out:1.0.0
+    environment:
+      - MLLP_OUTBOUND_DESTINATION_ID=EMR
+      - MLLP_OUTBOUND_HOST=emr.hospital.internal
+      - MLLP_OUTBOUND_PORT=2201
+      - MLLP_OUTBOUND_QUEUE_NAME=petasos.queue.egress.emr.adt
+      - MLLP_OUTBOUND_READ_TIMEOUT_MS=8000
+      - ARTEMIS_BROKER_URL=tcp://petasos-broker:61616
+
+  # Egress Gateway Instance 2: Dedicated LMS Gateway
+  pylai-mllp-out-lms:
+    image: harmonia/pylai-mllp-out:1.0.0
+    environment:
+      - MLLP_OUTBOUND_DESTINATION_ID=LMS
+      - MLLP_OUTBOUND_HOST=lms.lab.hospital.internal
+      - MLLP_OUTBOUND_PORT=2204
+      - MLLP_OUTBOUND_QUEUE_NAME=petasos.queue.egress.lms.orm
+      - MLLP_OUTBOUND_READ_TIMEOUT_MS=15000
+      - ARTEMIS_BROKER_URL=tcp://petasos-broker:61616
+
+  # Egress Gateway Instance 3: Dedicated RIS-PACS Gateway
+  pylai-mllp-out-rispac:
+    image: harmonia/pylai-mllp-out:1.0.0
+    environment:
+      - MLLP_OUTBOUND_DESTINATION_ID=RISPAC
+      - MLLP_OUTBOUND_HOST=rispac.radiology.hospital.internal
+      - MLLP_OUTBOUND_PORT=2205
+      - MLLP_OUTBOUND_QUEUE_NAME=petasos.queue.egress.rispac.orm
+      - MLLP_OUTBOUND_READ_TIMEOUT_MS=20000
+      - ARTEMIS_BROKER_URL=tcp://petasos-broker:61616
+\end{lstlisting}
+
+\newpage

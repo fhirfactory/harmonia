@@ -17,13 +17,16 @@
 
 package net.fhirfactory.harmonia.model.security;
 
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityLabel;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Bundle;
 import org.hl7.fhir.r5.model.Coding;
 import org.hl7.fhir.r5.model.Meta;
 import org.hl7.fhir.r5.model.Resource;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Centralized utility class for inspecting, applying, and enforcing standard HL7 FHIR Release 5
@@ -215,5 +218,89 @@ public final class FhirSecurityTagManager {
      */
     public static FhirConfidentialityEnum getConfidentialityOrDefault(Resource resource, FhirConfidentialityEnum defaultVal) {
         return getConfidentiality(resource).orElse(defaultVal);
+    }
+
+    // =========================================================================
+    // Harmonia Security Label Management
+    // =========================================================================
+
+    /**
+     * Applies a Harmonia security label (e.g. {@code PROVIDER_REGISTRY}, {@code AUDIT}, {@code INTERNAL})
+     * to the resource's {@code meta.security}. Does not duplicate if already present.
+     */
+    public static <T extends Resource> T applyHarmoniaSecurityLabel(T resource, HarmoniaSecurityLabelEnum label) {
+        if (resource == null || label == null) {
+            return resource;
+        }
+        return applyHarmoniaSecurityLabel(resource, label.toThemisSecurityLabel(), label.getDisplay());
+    }
+
+    /**
+     * Applies a Themis security label to the resource's {@code meta.security}.
+     */
+    public static <T extends Resource> T applyHarmoniaSecurityLabel(T resource, ThemisSecurityLabel label, String display) {
+        if (resource == null || label == null) {
+            return resource;
+        }
+        Meta meta = resource.getMeta();
+        if (meta == null) {
+            meta = new Meta();
+            resource.setMeta(meta);
+        }
+
+        String sys = label.system() != null ? label.system() : HarmoniaSecurityCodeSystem.SECURITY_LABEL_SYSTEM;
+        String code = label.code();
+
+        boolean alreadyPresent = meta.getSecurity().stream().anyMatch(c ->
+                sys.equalsIgnoreCase(c.getSystem()) && code.equalsIgnoreCase(c.getCode())
+        );
+
+        if (!alreadyPresent) {
+            Coding coding = new Coding(sys, code, display);
+            meta.addSecurity(coding);
+        }
+
+        return resource;
+    }
+
+    /**
+     * Checks if the resource has the specified Harmonia security label.
+     */
+    public static boolean hasHarmoniaSecurityLabel(Resource resource, HarmoniaSecurityLabelEnum label) {
+        if (resource == null || label == null) {
+            return false;
+        }
+        return hasHarmoniaSecurityLabel(resource, label.getCode());
+    }
+
+    /**
+     * Checks if the resource has a Harmonia security label matching the given code.
+     */
+    public static boolean hasHarmoniaSecurityLabel(Resource resource, String code) {
+        if (resource == null || code == null || !hasSecurityTag(resource)) {
+            return false;
+        }
+        return resource.getMeta().getSecurity().stream().anyMatch(c ->
+                (c.getSystem() == null || HarmoniaSecurityCodeSystem.SECURITY_LABEL_SYSTEM.equalsIgnoreCase(c.getSystem()))
+                        && code.equalsIgnoreCase(c.getCode())
+        );
+    }
+
+    /**
+     * Extracts all Harmonia security labels from the resource's {@code meta.security}.
+     */
+    public static Set<ThemisSecurityLabel> getHarmoniaSecurityLabels(Resource resource) {
+        if (!hasSecurityTag(resource)) {
+            return Set.of();
+        }
+        Set<ThemisSecurityLabel> labels = new HashSet<>();
+        for (Coding coding : resource.getMeta().getSecurity()) {
+            if (coding.getSystem() != null && HarmoniaSecurityCodeSystem.SECURITY_LABEL_SYSTEM.equalsIgnoreCase(coding.getSystem()) && coding.hasCode()) {
+                labels.add(ThemisSecurityLabel.of(coding.getSystem(), coding.getCode()));
+            } else if (coding.hasCode() && HarmoniaSecurityLabelEnum.fromCode(coding.getCode()).isPresent()) {
+                labels.add(ThemisSecurityLabel.of(HarmoniaSecurityCodeSystem.SECURITY_LABEL_SYSTEM, coding.getCode()));
+            }
+        }
+        return labels;
     }
 }

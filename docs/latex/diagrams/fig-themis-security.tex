@@ -1,0 +1,38 @@
+%% =============================================================================
+%% diagrams/fig-themis-security.tex
+%% ArchiMate Themis Policy & Defence-in-Depth Security Architecture
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % Ingress Tier
+    \node[archi-business-actor] (actor_client) at (0.0, 7.5) {\archibadge{Actor}\archiname{Client / Requester}\\\archidesc{Bearer / Headers}};
+    \node[archi-app-component] (pylai_gate) at (4.2, 7.5) {\archibadge{Ingress Gate}\archiname{FhirSecurityInterceptor}\\\archidesc{Pylai Ingress}};
+
+    % Themis Security Engine
+    \node[archi-app-component] (themis_core) at (4.2, 4.5) {\archibadge{Policy Evaluator}\archiname{ThemisService}\\\archidesc{Deterministic Evaluator}};
+    \node[archi-app-component] (themis_audit) at (0.0, 4.5) {\archibadge{Audit Service}\archiname{ThemisAuditService}\\\archidesc{Non-PHI Decision Trail}};
+
+    % Workflow Tier
+    \node[archi-app-component] (ponos_gate) at (9.0, 7.5) {\archibadge{Dispatch Gate}\archiname{PragmaWorkflowDispatcher}\\\archidesc{Ponos WorkEngine}};
+    \node[archi-app-component] (ergon_exec) at (9.0, 4.5) {\archibadge{Activity Gate}\archiname{PractitionerChangeErgon}\\\archidesc{Ergon Security Envelope}};
+
+    % Persistence Tier
+    \node[archi-app-component] (persist_gate) at (9.0, 1.5) {\archibadge{Storage Gate}\archiname{FhirStorageService}\\\archidesc{Mnemosyne Persistence}};
+    \node[archi-data-object] (db_store) at (4.2, 1.5) {\archibadge{Storage}\archiname{PostgreSQL Store}\\\archidesc{hie\_fhir\_resources}};
+
+    % --- Relationships ---
+    \draw[archi-flow] (actor_client) -- node[above, font=\sffamily\scriptsize]{REST Request} (pylai_gate);
+    \draw[archi-flow] (pylai_gate) -- node[right, font=\sffamily\scriptsize]{1. Evaluate Ingress} (themis_core);
+    \draw[archi-flow] (themis_core) -- node[above, font=\sffamily\scriptsize]{Audit Decision} (themis_audit);
+
+    \draw[archi-flow] (pylai_gate) -- node[above, font=\sffamily\scriptsize]{2. Pragma Context} (ponos_gate);
+    \draw[archi-flow] (ponos_gate) -- node[left, font=\sffamily\scriptsize]{3. Evaluate Dispatch} (themis_core);
+    \draw[archi-flow] (ponos_gate) -- node[right, font=\sffamily\scriptsize]{4. Execute Activity} (ergon_exec);
+
+    \draw[archi-flow] (ergon_exec) -- node[left, font=\sffamily\scriptsize]{5. Evaluate Mutation} (themis_core);
+    \draw[archi-flow] (ergon_exec) -- node[right, font=\sffamily\scriptsize]{6. Storage Request} (persist_gate);
+
+    \draw[archi-flow] (persist_gate) -- node[below, font=\sffamily\scriptsize]{7. Evaluate Persist} (themis_core);
+    \draw[archi-access] (persist_gate) -- node[above, font=\sffamily\scriptsize]{8. Commit Write} (db_store);
+
+\end{tikzpicture}

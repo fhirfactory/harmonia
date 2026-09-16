@@ -45,6 +45,12 @@ public class CamelContextManager {
     private IncomingMfnMessageMllpRouteBuilder incomingMfnMessageMllpRouteBuilder;
 
     @Inject
+    private IncomingOrmMessageMllpRouteBuilder incomingOrmMessageMllpRouteBuilder;
+
+    @Inject
+    private IncomingOruMessageMllpRouteBuilder incomingOruMessageMllpRouteBuilder;
+
+    @Inject
     private ModuleStatusService moduleStatusService;
 
     @Inject
@@ -83,6 +89,12 @@ public class CamelContextManager {
             }
             if (incomingMfnMessageMllpRouteBuilder != null) {
                 camelContext.addRoutes(incomingMfnMessageMllpRouteBuilder);
+            }
+            if (incomingOrmMessageMllpRouteBuilder != null) {
+                camelContext.addRoutes(incomingOrmMessageMllpRouteBuilder);
+            }
+            if (incomingOruMessageMllpRouteBuilder != null) {
+                camelContext.addRoutes(incomingOruMessageMllpRouteBuilder);
             }
             camelContext.start();
             log.info("Apache Camel Context started successfully. Routes: {}", camelContext.getRoutes().size());
@@ -147,6 +159,22 @@ public class CamelContextManager {
 
     public void setMfnMllpRouteBuilder(IncomingMfnMessageMllpRouteBuilder incomingMfnMessageMllpRouteBuilder) {
         this.incomingMfnMessageMllpRouteBuilder = incomingMfnMessageMllpRouteBuilder;
+    }
+
+    public IncomingOrmMessageMllpRouteBuilder getIncomingOrmMessageMllpRouteBuilder() {
+        return incomingOrmMessageMllpRouteBuilder;
+    }
+
+    public void setOrmMllpRouteBuilder(IncomingOrmMessageMllpRouteBuilder incomingOrmMessageMllpRouteBuilder) {
+        this.incomingOrmMessageMllpRouteBuilder = incomingOrmMessageMllpRouteBuilder;
+    }
+
+    public IncomingOruMessageMllpRouteBuilder getIncomingOruMessageMllpRouteBuilder() {
+        return incomingOruMessageMllpRouteBuilder;
+    }
+
+    public void setOruMllpRouteBuilder(IncomingOruMessageMllpRouteBuilder incomingOruMessageMllpRouteBuilder) {
+        this.incomingOruMessageMllpRouteBuilder = incomingOruMessageMllpRouteBuilder;
     }
 
     public ModuleStatusService getModuleStatusService() {

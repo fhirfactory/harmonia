@@ -113,3 +113,16 @@ Petasos provides an immutable, strongly-typed envelope (`PetasosMessage`) design
   * Message redelivery counts.
   * Dead Letter Queue (DLQ) arrival counts.
   * Active producer and consumer counts.
+
+---
+
+### Persistence, Lifecycle & Recovery Documentation Index
+
+For comprehensive deep dives into Harmonia's persistence model, database schemas, message lifecycles, and failure recovery specifications, refer to:
+
+1. **[Persistence Architecture](persistence-architecture.md)**: 4-tier storage model (Artemis journal, Ponos cache grid, Mnemosyne PostgreSQL database, Paradeigma exemplar state), persistent entity catalogue, and ownership boundaries.
+2. **[Database Schema Specification](database-schema.md)**: Detailed relational table definitions (`hie_fhir_resources`, `hie_operations_resources`), JPA mappings, unique constraints, and PostgreSQL physical DDL.
+3. **[Message Lifecycle & Transaction Boundaries](message-lifecycle.md)**: End-to-end clinical message flows (PAS ADT fan-out, EMR ORM routing, LMS/RIS ORU ingestion), Mermaid sequence diagrams, and dual-write failure window analyses.
+4. **[Failure-Recovery Architecture](failure-recovery.md)**: Comprehensive failure matrix, restart recovery procedures, lease/ownership recovery, 4-tier idempotency model, ACK semantics (AA/AE/AR), retry policies, and DLQ handling.
+5. **[Recovery Guarantees & Objectives](recovery-guarantees.md)**: Formal delivery guarantees (at-least-once, effectively-once) and Recovery Point Objectives (RPO) / Recovery Time Objectives (RTO) across all platform boundaries.
+6. **[Persistence & Recovery Gap Analysis](persistence-recovery-gaps.md)**: Catalog of identified implementation deviations (REC-001 through REC-004) with risk ratings and remediation roadmaps.
