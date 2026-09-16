@@ -379,3 +379,486 @@ The Paradeigma simulation fleet deploys seamlessly alongside Harmonia using Dock
 \caption{Paradeigma Docker Compose Deployment Configuration}
 \label{tab:paradeigma_containers}
 \end{table}
+
+% =============================================================================
+% SECTION A.9: PROVIDER REGISTRY SIMULATION & SYNTHETIC FHIR R5 GENERATORS
+% =============================================================================
+\section{Provider Registry Simulation \& Synthetic FHIR R5 Generators}
+\label{sec:paradeigma_provider_registry}
+
+With the introduction of the Harmonia FHIR R5 Provider Registry core services (Appendix~\ref{app:provider_registry}), \texttt{Paradeigma} expands beyond legacy HL7 v2 messaging to provide high-fidelity, deterministic synthetic generation of HL7 FHIR Release 5 directory resources.
+
+\subsection{Standardized Australian Digital Health Identifiers}
+
+All synthetic directory entities adhere strictly to canonical Australian digital health identifier schemas:
+\begin{itemize}
+    \item \textbf{Healthcare Provider Identifier -- Individual (HPI-I)}: Formatted under system URI \texttt{http://ns.electronichealth.net.au/id/hi/hpii/1.0} with standard prefix \texttt{800361} followed by 10 deterministic pseudorandom digits and a Luhn check digit (e.g., \texttt{8003610000000042}).
+    \item \textbf{Healthcare Provider Identifier -- Organisation (HPI-O)}: Formatted under system URI \texttt{http://ns.electronichealth.net.au/id/hi/hpio/1.0} with prefix \texttt{800362} (e.g., \texttt{8003620000000042}).
+    \item \textbf{AHPRA Registration Numbers}: Australian Health Practitioner Regulation Agency practitioner licenses (system \texttt{http://hl7.org.au/id/ahpra-registration-number}, e.g., \texttt{MED0001234567}).
+    \item \textbf{SNOMED CT Specialty Codes}: Standardized Australian clinical specialties and role classifications (system \texttt{http://snomed.info/sct}, e.g., \texttt{309988001} for General Medical Practice).
+\end{itemize}
+
+\subsection{Dedicated Synthetic Generators Catalog}
+
+The package \texttt{net.fhirfactory.harmonia.paradeigma.common.generator} provides seven dedicated, seed-controlled generators corresponding to each managed FHIR R5 resource type:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Generator Class} & \textbf{Target Resource} & \textbf{Key Synthetic Capabilities \& Variations} \\
+\midrule
+\texttt{PractitionerGenerator} & \texttt{Practitioner} & Deterministic human names, HPI-I, AHPRA credentials, qualification codings, telecom endpoints, address history, version updates, and duplicate identifier conflict models. \\
+\addlinespace
+\texttt{PractitionerRoleGenerator} & \texttt{PractitionerRole} & Specialty SNOMED codes, role classifications, multi-target referential linkages (\texttt{Organization}, \texttt{Location}, \texttt{HealthcareService}, \texttt{Endpoint}), and availability schedules. \\
+\addlinespace
+\texttt{OrganizationGenerator} & \texttt{Organization} & Hospital network names, HPI-O identifiers, Australian Business Numbers (ABN), facility types, physical campuses, and postal routing addresses. \\
+\addlinespace
+\texttt{LocationGenerator} & \texttt{Location} & Physical hospital wards, clinical wings, operating suites, physical type codes (\texttt{bu}, \texttt{wi}, \texttt{ro}), and managing organization references. \\
+\addlinespace
+\texttt{HealthcareServiceGenerator} & \texttt{HealthcareService} & Clinical offerings, consultation specialties, operational hours, referral requirements, and parent organization linkages. \\
+\addlinespace
+\texttt{EndpointGenerator} & \texttt{Endpoint} & Technical communication channels across FHIR REST (\texttt{hl7-fhir-rest}), HL7 v2 MLLP (\texttt{direct-project}), and secure messaging endpoints with payload mime-types. \\
+\addlinespace
+\texttt{GroupGenerator} & \texttt{Group} & Practitioner specialist panels, clinical governance committees, on-call rosters, and enumerated clinical team memberships. \\
+\bottomrule
+\end{tabularx}
+\caption{Dedicated FHIR R5 Synthetic Resource Generators}
+\label{tab:paradeigma_fhir_generators}
+\end{table}
+
+\subsection{Interconnected Graph Builders (\texttt{SyntheticProviderRegistryGenerator})}
+
+To test complex relational queries and referential integrity enforcement without manual fixture construction, \texttt{SyntheticProviderRegistryGenerator} provides five canonical graph topology builders:
+
+\begin{enumerate}
+    \item \textbf{Solo Practitioner Graph (\texttt{generateSoloPractitioner(seed)})}: Constructs an isolated practitioner bound to a single healthcare organization and primary practice location via a single \texttt{PractitionerRole}.
+    \item \textbf{Multi-Role Specialist Graph (\texttt{generatePractitionerWithMultipleRoles(seed)})}: Constructs a medical specialist operating across multiple distinct hospital networks and consulting suites, generating multiple \texttt{PractitionerRole} entities referencing independent organizations.
+    \item \textbf{Healthcare Organization Graph (\texttt{generateOrganizationWithLocations(seed)})}: Builds a comprehensive enterprise hospital network comprising headquarters, regional campuses, specialized wings, and technical communication endpoints.
+    \item \textbf{Connected Provider Network (\texttt{generateProviderNetwork(seed)})}: Constructs an exhaustive clinical ecosystem linking all seven resource types: \texttt{Organization}, \texttt{Location}, \texttt{Endpoint}, \texttt{HealthcareService}, \texttt{Practitioner}, \texttt{PractitionerRole}, and multidisciplinary clinical \texttt{Group}.
+    \item \textbf{Invalid Reference Graph (\texttt{generateInvalidReferenceGraph(seed)})}: Deliberately constructs resources containing broken and dangling logical references (such as non-existent target \texttt{Organization/org-missing-999}) for automated negative testing of referential validation and \texttt{OperationOutcome} rejection pipelines.
+\end{enumerate}
+
+\begin{lstlisting}[language=Java, caption={Constructing Topological Graphs with SyntheticProviderRegistryGenerator}]
+// Build deterministic complete provider network topology
+long seed = 42L;
+SyntheticProviderRegistryGenerator generator = new SyntheticProviderRegistryGenerator(seed);
+SyntheticProviderRegistryGenerator.ProviderRegistryGraph network = generator.generateProviderNetwork(seed);
+
+// Access strongly typed generated resources
+Organization org = network.getOrganization();
+Practitioner pract = network.getPractitioner();
+PractitionerRole role = network.getPractitionerRole();
+Location location = network.getLocation();
+HealthcareService service = network.getHealthcareService();
+Endpoint endpoint = network.getEndpoint();
+Group group = network.getGroup();
+\end{lstlisting}
+
+% =============================================================================
+% SECTION A.10: THEMIS SECURITY SIMULATION & AUTHORIZATION FIXTURES
+% =============================================================================
+\section{Themis Security Simulation \& Authorization Fixtures}
+\label{sec:paradeigma_security}
+
+Harmonia's \textbf{Themis} security engine governs role-based access control (RBAC), fine-grained attribute-based access control (ABAC), and dual-authority asynchronous change verification. \texttt{Paradeigma} provides standardized security actor fixtures and context factories in \texttt{net.fhirfactory.harmonia.paradeigma.common.security} to facilitate comprehensive positive and negative authorization testing.
+
+\subsection{Standard Security Actors Catalog}
+
+The \texttt{ParadeigmaSecurityActors} catalog defines seven standard principals, mapped roles, granted authorities, and operational boundaries, as detailed in Table~\ref{tab:paradeigma_security_actors}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{2.5cm} p{3.5cm} X}
+\toprule
+\textbf{Actor Name} & \textbf{Harmonia Roles} & \textbf{Granted Authorities} & \textbf{Permitted Functional Boundary} \\
+\midrule
+\textbf{Provider Steward} & \texttt{PRV\_ADM}, \texttt{PRV\_SUB}, \texttt{PRV\_APR}, \texttt{PRV\_RDR} & \texttt{provider.change.submit}, \texttt{provider.change.approve}, \texttt{provider.read}, \texttt{provider.search}, \texttt{provider.admin} & Full directory governance: synchronous read/search, change request submission, and change approval across all directory resources. \\
+\addlinespace
+\textbf{Clinician} & \texttt{PRV\_RDR} & \texttt{provider.read}, \texttt{provider.search} & Clinical query operations: synchronous read and search. Write or update submissions are rejected with HTTP 403 Forbidden. \\
+\addlinespace
+\textbf{System Administrator} & \texttt{SYS\_ADM}, \texttt{PRV\_ADM} & \texttt{system.admin}, \texttt{provider.admin} & Infrastructure management, pipeline monitoring, security label maintenance, and administrative override. \\
+\addlinespace
+\textbf{Integration Service} & \texttt{SYS\_INT}, \texttt{PRV\_PROC} & \texttt{system.integration}, \texttt{provider.change.process} & Automated messaging queues, Ponos Ergon asynchronous execution, and inter-service dispatch. \\
+\addlinespace
+\textbf{Read-Only User} & \texttt{PRV\_RDR} & \texttt{provider.read} & Resource inspection and single-resource retrieval; search querying restricted. \\
+\addlinespace
+\textbf{Unauthorized User} & \textit{None} & \textit{None} & Authenticated identity without directory permissions; all protected API calls evaluate to \texttt{DENY}. \\
+\addlinespace
+\textbf{Unauthenticated} & \textit{None} & \textit{None} & Anonymous identity; rejected at gateway ingress with HTTP 401 Unauthorized. \\
+\bottomrule
+\end{tabularx}
+\caption{Paradeigma Themis Security Actors Reference Catalog}
+\label{tab:paradeigma_security_actors}
+\end{table}
+
+\subsection{Security Context Orchestration (\texttt{SecurityScenarioContext})}
+
+Test scenarios utilize \texttt{SecurityScenarioContext} to inject validated security credentials, caller correlation identifiers, and client identifiers directly into HTTP requests and Camel exchange headers:
+
+\begin{lstlisting}[language=Java, caption={Orchestrating Security Scenario Contexts and Themis Authorization}]
+// Create Provider Steward context with auto-generated correlation ID
+SecurityScenarioContext stewardContext = SecurityScenarioContext.providerSteward();
+
+// Create Clinician context with explicit correlation ID
+SecurityScenarioContext clinicianContext = SecurityScenarioContext.clinician("corr-audit-901");
+
+// Evaluate authorization against Themis policy evaluator
+ThemisResource resource = ThemisResource.of(
+    "Practitioner",
+    "pract-101",
+    "PROVIDER_REGISTRY",
+    Set.of(ThemisSecurityLabel.of("PROVIDER_REGISTRY"))
+);
+
+ThemisAuthorizationRequest authRequest = ThemisAuthorizationRequest.builder()
+    .principal(stewardContext.principal())
+    .authorities(stewardContext.grantedAuthorities())
+    .action(ThemisAction.CREATE)
+    .target(resource)
+    .context(stewardContext.securityContext())
+    .build();
+
+ThemisAuthorizationDecision decision = evaluator.authorize(authRequest);
+assertThat(decision.isAllowed()).isTrue();
+\end{lstlisting}
+
+\subsection{Negative Testing Authorization Seams}
+
+To verify defensive platform behavior when encountering security anomalies, \texttt{ParadeigmaSecurityActors} exposes context factories that inject specific security faults:
+\begin{itemize}
+    \item \textbf{Expired Context (\texttt{ParadeigmaSecurityActors.expiredContext()})}: Simulates an expired bearer token or session context where \texttt{expirationTime} is in the past, validating that gateway interceptors reject the interaction before routing.
+    \item \textbf{Revoked Authority (\texttt{ParadeigmaSecurityActors.revokedAuthorityContext(...)})}: Simulates a steward whose \texttt{provider.change.submit} authority has been revoked mid-session, verifying policy rejection.
+    \item \textbf{Missing Role (\texttt{ParadeigmaSecurityActors.missingRoleContext(...)})}: Simulates a principal with partial roles missing mandatory execution authorities (\texttt{PRV\_SUB}), confirming granular RBAC boundary enforcement.
+\end{itemize}
+
+% =============================================================================
+% SECTION A.11: PHI-AWARE LOGGING SIMULATION & CREDENTIAL PROTECTION
+% =============================================================================
+\section{PHI-Aware Logging Simulation \& Credential Protection}
+\label{sec:paradeigma_logging}
+
+In accordance with Harmonia's dual-gate PHI logging policy (Appendix~\ref{app:phi_logging}), operational logs (\texttt{INFO}, \texttt{WARN}, \texttt{ERROR}) must remain strictly devoid of clinical payloads, patient identifiers, and credentials under all circumstances.
+
+\subsection{Dual-Gate Verification Probe (\texttt{PhiLogTestProbe})}
+
+The \texttt{PhiLogTestProbe} provides an in-memory, auto-closeable Logback appender probe designed for automated assertion of logging compliance during scenario execution:
+
+\begin{lstlisting}[language=Java, caption={Dual-Gate Assertion Flow using PhiLogTestProbe}]
+try (PhiLogTestProbe probe = PhiLogTestProbe.startCapture()) {
+    // 1. Execute system operation under test
+    gatewayController.createResource("Practitioner", fhirJson, correlationId, "pas", "steward", null);
+
+    // 2. Assert that no PHI attributes leaked into operational logs
+    probe.assertNoPhiInOperationalLogs("Dr. Elena Vance", "8003610000000042");
+
+    // 3. Assert that PHI is routed to diagnostic destination when dual-gate is active
+    probe.assertPhiPresentInDiagnosticLogs("Dr. Elena Vance");
+    probe.assertPhiMarkerAttachedToDiagnosticLogs();
+
+    // 4. Assert zero leakage of credentials or sensitive tokens across ALL log destinations
+    probe.assertNoSecretsInAnyLog(SecretLeakageAssertion.getStandardSyntheticSecrets());
+}
+\end{lstlisting}
+
+\subsection{Synthetic Secret Leakage Protection (\texttt{SecretLeakageAssertion})}
+
+Authentication credentials, connection strings, and crypto keys must never appear in any log sink, regardless of whether diagnostic logging is active. \texttt{SecretLeakageAssertion} generates comprehensive synthetic sentinel values to validate zero-leakage constraints across:
+\begin{itemize}
+    \item Synthetic JWT Bearer and OAuth tokens (\texttt{eyJhbGciOiJIUzI1Ni...}).
+    \item Platform API secret keys (\texttt{harmonia\_sec\_live\_...}).
+    \item Database credentials and PostgreSQL connection strings.
+    \item ActiveMQ Artemis message broker passwords.
+    \item RSA and PKCS\#8 private key blocks (\texttt{-----BEGIN PRIVATE KEY-----}).
+\end{itemize}
+
+\subsection{Integrated Multi-Capability Verification Listing}
+
+Listing~\ref{lst:complete_paradeigma_test} provides a complete, worked exemplar demonstrating the coordinated usage of synthetic generators, security contexts, governed gateway interactions, and PHI logging probes.
+
+\begin{lstlisting}[language=Java, caption={Multi-Capability Integration Test: Registry + Security + PHI Logging}, label={lst:complete_paradeigma_test}]
+@Test
+@DisplayName("Integrated Verification: Seeded Generation + Themis Ingress + Governed Workflow + PHI Isolation")
+void testCompleteGovernedLifecycleWithSecurityAndLogging() throws Exception {
+    long seed = 42L;
+    String correlationId = "corr-exemplar-042";
+
+    // Step 1: Initialize deterministic synthetic generator
+    PractitionerGenerator generator = new PractitionerGenerator(seed);
+    Practitioner practitioner = generator.generateValid("pract-dr-vance-42");
+    String familyName = practitioner.getNameFirstRep().getFamily();
+    String hpii = practitioner.getIdentifierFirstRep().getValue();
+    String fhirJson = FhirContext.forR5().newJsonParser().encodeResourceToString(practitioner);
+
+    // Step 2: Establish Provider Steward Security Context
+    SecurityScenarioContext steward = SecurityScenarioContext.providerSteward();
+    ThemisResource resource = ThemisResource.of(
+        "Practitioner", "pract-dr-vance-42", "PROVIDER_REGISTRY",
+        Set.of(ThemisSecurityLabel.of("PROVIDER_REGISTRY"))
+    );
+
+    // Step 3: Verify Themis Ingress Policy Authorization
+    ThemisAuthorizationRequest authReq = ThemisAuthorizationRequest.builder()
+        .principal(steward.principal())
+        .authorities(steward.grantedAuthorities())
+        .action(ThemisAction.CREATE)
+        .target(resource)
+        .context(steward.securityContext())
+        .build();
+    ThemisAuthorizationDecision decision = policyEvaluator.authorize(authReq);
+    assertThat(decision.isAllowed()).isTrue();
+
+    // Step 4: Attach PHI Test Probe & Execute Governed Ingress
+    PhiLoggingConfig.setPhiEnabled(true);
+    try (PhiLogTestProbe probe = PhiLogTestProbe.startCapture()) {
+        ResponseEntity<String> postResp = gatewayController.createResource(
+            "Practitioner", fhirJson, correlationId, "pas",
+            steward.principal().principalId(), null
+        );
+        assertThat(postResp.getStatusCode().value()).isEqualTo(202);
+
+        // Step 5: Process Governed Workflow via Ponos Ergon
+        String location = postResp.getHeaders().getLocation().toString();
+        String pragmaId = location.substring(location.lastIndexOf('/') + 1);
+        Pragma pragma = pragmaCacheService.getPragma(pragmaId).orElseThrow();
+        practitionerErgon.processErgon(pragma, camelContext.createProducerTemplate().getDefaultEndpoint().createExchange());
+        assertThat(pragma.getStatus()).isEqualTo(PragmaStatus.COMPLETED);
+
+        // Step 6: Validate Synchronous Read via Mnemosyne
+        ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", "pract-dr-vance-42", null);
+        assertThat(getResp.getStatusCode().value()).isEqualTo(200);
+
+        // Step 7: Assert Strict Dual-Gate Logging Policy & Secret Protection
+        probe.assertNoPhiInOperationalLogs(familyName, hpii);
+        probe.assertPhiPresentInDiagnosticLogs(familyName, hpii);
+        probe.assertPhiMarkerAttachedToDiagnosticLogs();
+        probe.assertNoSecretsInAnyLog(SecretLeakageAssertion.getStandardSyntheticSecrets());
+    }
+}
+\end{lstlisting}
+
+% =============================================================================
+% SECTION A.12: COMPREHENSIVE CONFIGURATION REFERENCE MATRIX
+% =============================================================================
+\section{Comprehensive Configuration Reference Matrix}
+\label{sec:paradeigma_config_matrix}
+
+The Paradeigma simulation suite and its integrated security/logging harnesses are controlled through standard Spring Boot properties, JVM system properties, and container environment variables.
+
+\subsection{Simulator Service Properties \& Port Allocations}
+
+Table~\ref{tab:paradeigma_config_matrix} lists the core runtime parameters across the simulation microservices.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l c X}
+\toprule
+\textbf{Configuration Property} & \textbf{Environment Variable} & \textbf{Default} & \textbf{Description} \\
+\midrule
+\texttt{server.port} (PAS) & \texttt{SERVER\_PORT} & \texttt{8091} & REST management port for \texttt{paradeigma-pas}. \\
+\texttt{server.port} (EMR) & \texttt{SERVER\_PORT} & \texttt{8092} & REST management port for \texttt{paradeigma-emr}. \\
+\texttt{server.port} (LMS) & \texttt{SERVER\_PORT} & \texttt{8093} & REST management port for \texttt{paradeigma-lms}. \\
+\texttt{server.port} (RIS-PAC) & \texttt{SERVER\_PORT} & \texttt{8094} & REST management port for \texttt{paradeigma-rispac}. \\
+\texttt{server.port} (Scenarios) & \texttt{SERVER\_PORT} & \texttt{8090} & REST orchestration port for \texttt{paradeigma-scenarios}. \\
+\texttt{server.port} (FHIR Gateway) & \texttt{SERVER\_PORT} & \texttt{8089} & REST FHIR R5 Provider Registry gateway port. \\
+\addlinespace
+\texttt{paradeigma.pas.generation-mode} & \texttt{PAS\_GEN\_MODE} & \texttt{OFF} & Scheduling mode: \texttt{OFF}, \texttt{FIXED}, or \texttt{RANDOM\_RANGE}. \\
+\texttt{paradeigma.pas.interval-ms} & \texttt{PAS\_INTERVAL\_MS} & \texttt{5000} & Pacing interval in milliseconds when operating in \texttt{FIXED} mode. \\
+\texttt{paradeigma.pas.target-host} & \texttt{PAS\_TARGET\_HOST} & \texttt{localhost} & Inbound Harmonia Pylai MLLP bridge hostname. \\
+\texttt{paradeigma.pas.target-port} & \texttt{PAS\_TARGET\_PORT} & \texttt{2101} & Inbound Harmonia Pylai MLLP bridge port for \texttt{PD-01}. \\
+\addlinespace
+\texttt{paradeigma.emr.mllp-port} & \texttt{EMR\_MLLP\_PORT} & \texttt{2201} & Inbound MLLP port for \texttt{PD-05} ADT demographics ingestion. \\
+\texttt{paradeigma.lms.mllp-port-adt} & \texttt{LMS\_MLLP\_PORT\_ADT} & \texttt{2202} & Inbound MLLP port for \texttt{PD-06} ADT demographics ingestion. \\
+\texttt{paradeigma.lms.mllp-port-orm} & \texttt{LMS\_MLLP\_PORT\_ORM} & \texttt{2204} & Inbound MLLP port for \texttt{PD-08} pathology order routing. \\
+\texttt{paradeigma.rispac.mllp-port-adt} & \texttt{RISPAC\_MLLP\_PORT\_ADT} & \texttt{2203} & Inbound MLLP port for \texttt{PD-07} ADT demographics ingestion. \\
+\texttt{paradeigma.rispac.mllp-port-orm} & \texttt{RISPAC\_MLLP\_PORT\_ORM} & \texttt{2205} & Inbound MLLP port for \texttt{PD-09} radiology order routing. \\
+\bottomrule
+\end{tabularx}
+\caption{Paradeigma Simulator Microservice Configuration Properties}
+\label{tab:paradeigma_config_matrix}
+\end{table}
+
+\subsection{Security \& PHI Logging Governance Configuration}
+
+Table~\ref{tab:security_logging_config} details the governance switches controlling Themis policy evaluation and PHI log routing.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l c X}
+\toprule
+\textbf{Configuration Property} & \textbf{Environment Variable} & \textbf{Default} & \textbf{Description} \\
+\midrule
+\texttt{harmonia.logging.phi-enabled} & \texttt{HARMONIA\_LOGGING\_PHI\_ENABLED} & \texttt{false} & Global security gate. When \texttt{true}, permits PHI diagnostic logs to route to \texttt{org.harmonia.phi}. \\
+\addlinespace
+\texttt{themis.security.enabled} & \texttt{THEMIS\_SECURITY\_ENABLED} & \texttt{true} & Enables declarative Themis RBAC/ABAC policy enforcement across gateway ingress controllers. \\
+\addlinespace
+\texttt{themis.audit.trail.enabled} & \texttt{THEMIS\_AUDIT\_TRAIL\_ENABLED} & \texttt{true} & Emits tamper-evident security audit records for all authorization evaluations and policy decisions. \\
+\bottomrule
+\end{tabularx}
+\caption{Security \& PHI Logging Governance Properties}
+\label{tab:security_logging_config}
+\end{table}
+
+\subsection{FailureSimulator Fault Injection Knobs}
+
+Table~\ref{tab:fault_injection_knobs} summarizes the fault injection switches configurable dynamically via \texttt{FaultInjectionConfig}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l c c X}
+\toprule
+\textbf{Property Key} & \textbf{Type / Range} & \textbf{Default} & \textbf{Simulated Fault Behavior} \\
+\midrule
+\texttt{paradeigma.fault.drop-connection-prob} & $0.0 - 1.0$ & \texttt{0.0} & Probability of resetting active TCP connection before transmitting frame. \\
+\texttt{paradeigma.fault.no-ack-prob} & $0.0 - 1.0$ & \texttt{0.0} & Probability of dropping response to trigger socket read timeout in caller. \\
+\texttt{paradeigma.fault.ack-delay-ms} & $\ge 0$\,ms & \texttt{0} & Artificial latency injected prior to returning acknowledgment frame. \\
+\texttt{paradeigma.fault.application-error-prob} & $0.0 - 1.0$ & \texttt{0.0} & Probability of returning \texttt{MSA-1=AE} (transient error). \\
+\texttt{paradeigma.fault.application-reject-prob} & $0.0 - 1.0$ & \texttt{0.0} & Probability of returning \texttt{MSA-1=AR} (schema/validation rejection). \\
+\texttt{paradeigma.fault.malformed-segment-prob} & $0.0 - 1.0$ & \texttt{0.0} & Probability of corrupting message framing or segment delimiters. \\
+\texttt{paradeigma.fault.duplicate-msh10-prob} & $0.0 - 1.0$ & \texttt{0.0} & Probability of duplicating \texttt{MSH-10} to test idempotency filters. \\
+\bottomrule
+\end{tabularx}
+\caption{FailureSimulator Fault Injection Configuration Knobs}
+\label{tab:fault_injection_knobs}
+\end{table}
+
+% =============================================================================
+% SECTION A.13: STEP-BY-STEP CLI & REST EXECUTION INSTRUCTIONS
+% =============================================================================
+\section{Step-by-Step CLI \& REST Execution Instructions}
+\label{sec:paradeigma_execution_guide}
+
+This section provides concrete, copy-pasteable instructions for building, running, and orchestrating the Paradeigma simulation suite across diverse operating environments.
+
+\subsection{Building the Solution via Maven}
+
+To compile all core platform and Paradeigma simulator modules:
+
+\begin{lstlisting}[language=bash, caption={Building Harmonia and Paradeigma Modules}]
+# Build entire repository without running tests
+mvn clean install -DskipTests
+
+# Build only the Paradeigma simulation subsystem
+mvn clean install -pl paradeigma -am -DskipTests
+
+# Run all unit and component tests across Paradeigma
+mvn test -pl paradeigma/paradeigma-common,paradeigma/paradeigma-scenarios
+\end{lstlisting}
+
+\subsection{Running Simulators as Standalone Microservices}
+
+Each simulator microservice can execute locally as an independent Spring Boot process across separate terminal windows:
+
+\begin{lstlisting}[language=bash, caption={Launching Standalone Simulator Microservices}]
+# Terminal 1: Launch Patient Administration System Simulator (Port 8091)
+mvn spring-boot:run -pl paradeigma/paradeigma-pas
+
+# Terminal 2: Launch Electronic Medical Record Simulator (Port 8092, MLLP 2201)
+mvn spring-boot:run -pl paradeigma/paradeigma-emr
+
+# Terminal 3: Launch Laboratory Information System Simulator (Port 8093, MLLP 2202/2204)
+mvn spring-boot:run -pl paradeigma/paradeigma-lms
+
+# Terminal 4: Launch Radiology Information System & PACS (Port 8094, MLLP 2203/2205)
+mvn spring-boot:run -pl paradeigma/paradeigma-rispac
+
+# Terminal 5: Launch Scenario Conductor Engine (Port 8090)
+mvn spring-boot:run -pl paradeigma/paradeigma-scenarios
+\end{lstlisting}
+
+\subsection{Docker Compose Topology Orchestration}
+
+To deploy the unified simulation and platform environment using Docker Compose:
+
+\begin{lstlisting}[language=bash, caption={Docker Compose Lifecycle Management}]
+# Navigate to the Paradeigma deployment directory
+cd paradeigma/deployment
+
+# Build images and start all containers in background
+docker compose -f docker-compose-paradeigma.yml up --build -d
+
+# Check runtime health and container port status
+docker compose -f docker-compose-paradeigma.yml ps
+
+# Tail aggregated logs across the simulation fleet
+docker compose -f docker-compose-paradeigma.yml logs -f
+
+# Gracefully stop and tear down containers
+docker compose -f docker-compose-paradeigma.yml down -v
+\end{lstlisting}
+
+\subsection{REST API Scenario Orchestration (cURL Snippets)}
+
+The \texttt{paradeigma-scenarios} engine and individual simulator management APIs can be controlled via standard HTTP cURL commands:
+
+\begin{lstlisting}[language=bash, caption={REST Orchestration cURL Snippets}]
+# 1. Trigger an immediate single 9-step Patient Journey
+curl -i -X POST http://localhost:8090/api/scenarios/journey
+
+# 2. Trigger concurrent journeys under the high-speed TEST profile
+curl -i -X POST "http://localhost:8090/api/scenarios/concurrent?count=10&profile=TEST"
+
+# 3. Trigger concurrent journeys under human-paced DEMO profile
+curl -i -X POST "http://localhost:8090/api/scenarios/concurrent?count=3&profile=DEMO"
+
+# 4. Query scenario conductor status and execution counters
+curl -s http://localhost:8090/api/scenarios/status | jq .
+
+# 5. Halt all active background scenarios
+curl -i -X POST http://localhost:8090/api/scenarios/stop
+
+# 6. Trigger discrete PAS hospital registration
+curl -i -X POST http://localhost:8091/api/pas/register \
+  -H "Content-Type: application/json" \
+  -d '{"patientId":"MRN-90901","firstName":"Jane","lastName":"Doe","gender":"F"}'
+
+# 7. Ingress FHIR R5 Practitioner Create via Pylai Gateway (Port 8089)
+curl -i -X POST http://localhost:8089/Practitioner \
+  -H "Content-Type: application/fhir+json" \
+  -H "X-Correlation-ID: corr-curl-001" \
+  -H "X-Source-System: pas" \
+  -H "X-Security-Principal: steward" \
+  -d '{
+    "resourceType": "Practitioner",
+    "id": "pract-curl-01",
+    "identifier": [{
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003610000000042"
+    }],
+    "name": [{"family": "Bowman", "given": ["Francis"]}]
+  }'
+\end{lstlisting}
+
+% =============================================================================
+% SECTION A.14: AUTOMATED SCENARIO & INTEGRATION TEST SUITES
+% =============================================================================
+\section{Automated Scenario \& Integration Test Suite Reference}
+\label{sec:paradeigma_test_suites}
+
+The \texttt{paradeigma-test} module houses comprehensive JUnit 5 integration and scenario test suites validating end-to-end platform capabilities:
+
+\begin{itemize}
+    \item \textbf{\texttt{ProviderRegistryLifecycleScenarioTest}}: Validates governed directory resource creation, ETag version updates, optimistic locking conflicts (HTTP 412 Precondition Failed), and referential rejection with \texttt{OperationOutcome}.
+    \item \textbf{\texttt{ProviderRegistrySecurityScenarioTest}}: Exercises Themis RBAC/ABAC policy boundaries across all 7 security actors, validating privilege enforcement and negative failure seams (expired tokens, revoked authorities).
+    \item \textbf{\texttt{ProviderRegistryLoggingScenarioTest}}: Validates dual-gate logging isolation, ensuring PHI diagnostic messages attach the \texttt{PHI} marker and zero secrets leak across logs.
+    \item \textbf{\texttt{ProviderRegistryCrossCapabilityE2ETest}}: Executes coordinated end-to-end multi-capability journeys binding synthetic generation, Themis authorization, Ponos Ergon asynchronous execution, Mnemosyne relational storage, and PHI test probe assertions.
+    \item \textbf{\texttt{RecoveryAcceptanceTest}}: Validates broker journal durability, worker crash recovery, and outbound exponential retry backoff.
+    \item \textbf{\texttt{ThemisDefenceInDepthAcceptanceTest}}: Validates dual-gate security evaluation across gateway ingress, messaging dispatch, and asynchronous Ergon execution.
+\end{itemize}
+
+\begin{lstlisting}[language=bash, caption={Executing Paradeigma Automated Integration Test Suites}]
+# Execute the complete Provider Registry scenario suite
+mvn test -pl paradeigma/paradeigma-test \
+  -Dtest=ProviderRegistryLifecycleScenarioTest,ProviderRegistrySecurityScenarioTest,ProviderRegistryLoggingScenarioTest,ProviderRegistryCrossCapabilityE2ETest
+
+# Execute platform resilience and crash-recovery acceptance tests
+mvn test -pl paradeigma/paradeigma-test -Dtest=RecoveryAcceptanceTest
+
+# Execute Themis defense-in-depth security verification tests
+mvn test -pl paradeigma/paradeigma-test -Dtest=ThemisDefenceInDepthAcceptanceTest
+\end{lstlisting}

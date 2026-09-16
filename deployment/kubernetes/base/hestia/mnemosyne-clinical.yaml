@@ -1,0 +1,165 @@
+---
+# Mnemosyne Clinical Node 1
+apiVersion: v1
+kind: Service
+metadata:
+  name: hapi-fhir-jpa-server-1
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: hapi-fhir-jpa-server-1
+    app.kubernetes.io/component: persistence
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+  selector:
+    app.kubernetes.io/name: hapi-fhir-jpa-server-1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hapi-fhir-jpa-server-1
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: hapi-fhir-jpa-server-1
+    app.kubernetes.io/component: persistence
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hapi-fhir-jpa-server-1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: hapi-fhir-jpa-server-1
+        app.kubernetes.io/component: persistence
+        app.kubernetes.io/part-of: harmonia-platform
+    spec:
+      containers:
+        - name: mnemosyne-clinical
+          image: localhost:32000/harmonia/mnemosyne-clinical:1.0.0-SNAPSHOT
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "postgres"
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgres-1:5432/fhir_node_1"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "fhir_user"
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-db-secrets
+                  key: fhir-password
+                  optional: true
+            - name: SPRING_DATASOURCE_PASSWORD_DEFAULT
+              value: "fhir_password"
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1536Mi
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+
+---
+# Mnemosyne Clinical Node 2
+apiVersion: v1
+kind: Service
+metadata:
+  name: hapi-fhir-jpa-server-2
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: hapi-fhir-jpa-server-2
+    app.kubernetes.io/component: persistence
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+  selector:
+    app.kubernetes.io/name: hapi-fhir-jpa-server-2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hapi-fhir-jpa-server-2
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: hapi-fhir-jpa-server-2
+    app.kubernetes.io/component: persistence
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hapi-fhir-jpa-server-2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: hapi-fhir-jpa-server-2
+        app.kubernetes.io/component: persistence
+        app.kubernetes.io/part-of: harmonia-platform
+    spec:
+      containers:
+        - name: mnemosyne-clinical
+          image: localhost:32000/harmonia/mnemosyne-clinical:1.0.0-SNAPSHOT
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "postgres"
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgres-2:5432/fhir_node_2"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "fhir_user"
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-db-secrets
+                  key: fhir-password
+                  optional: true
+            - name: SPRING_DATASOURCE_PASSWORD_DEFAULT
+              value: "fhir_password"
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1536Mi
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5

@@ -1,0 +1,71 @@
+%% =============================================================================
+%% diagrams/fig-iris-architecture.tex
+%% ArchiMate 3.2 Iris Presentation Tier & BEFE Ecosystem Architecture View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Tier 1: Iris Presentation SPAs (Port 3000, 3001, 3002) ---
+    \node[archi-app-component] (ui_clinical) at (1.5, 9.5) {%
+        \archibadge{App Component}\archiname{Iris Clinical UI}\\\archidesc{Vue 3 SPA / Port 3000}%
+    };
+
+    \node[archi-app-component] (ui_admin) at (7.0, 9.5) {%
+        \archibadge{App Component}\archiname{Iris Administration}\\\archidesc{Vue 3 SPA / Port 3002}%
+    };
+
+    \node[archi-app-component] (ui_console) at (12.5, 9.5) {%
+        \archibadge{App Component}\archiname{Iris Console UI}\\\archidesc{Vue 3 SPA / Port 3001}%
+    };
+
+    % --- Tier 2: Iris BEFE Gateway & Security (Ports 8080, 8090) ---
+    \node[archi-app-interface] (befe_fhir) at (4.25, 7.0) {%
+        \archibadge{App Interface}\archiname{Clinical FHIR Gateway}\\\archidesc{JAX-RS REST / Port 8080}%
+    };
+
+    \node[archi-app-interface] (befe_ops) at (12.5, 7.0) {%
+        \archibadge{App Interface}\archiname{Operations Server}\\\archidesc{OperationsServer / Port 8090}%
+    };
+
+    \node[archi-app-component] (themis_auth) at (4.25, 4.8) {%
+        \archibadge{Security Component}\archiname{Themis Security}\\\archidesc{RBAC Policy Evaluator}%
+    };
+
+    % --- Tier 3: Messaging, Workflow & Persistence ---
+    \node[archi-app-component] (petasos_queue) at (1.5, 2.5) {%
+        \archibadge{App Component}\archiname{Petasos Broker}\\\archidesc{ActiveMQ Artemis / 61616}%
+    };
+
+    \node[archi-app-component] (ponos_engine) at (12.5, 4.8) {%
+        \archibadge{App Component}\archiname{Ponos WorkEngine}\\\archidesc{Praxis Engine / Port 8083}%
+    };
+
+    \node[archi-node] (mneme_grid) at (7.0, 4.8) {%
+        \archibadge{Technology Node}\archiname{Mneme Cache Grid}\\\archidesc{Infinispan / Port 11222}%
+    };
+
+    \node[archi-data-object] (mnemosyne_db) at (7.0, 2.5) {%
+        \archibadge{Data Object}\archiname{Mnemosyne DB}\\\archidesc{PostgreSQL FHIR Store}%
+    };
+
+    % --- Relationships & Interactions ---
+    % UI to BEFE Gateway
+    \draw[archi-flow] (ui_clinical) -- node[left, font=\tiny] {FHIR R5 / REST} (befe_fhir);
+    \draw[archi-flow] (ui_admin) -- node[right, font=\tiny] {FHIR CRUD / Changes} (befe_fhir);
+    \draw[archi-flow] (ui_console) -- node[right, font=\tiny] {Status / Reload} (befe_ops);
+
+    % Security Enforcement
+    \draw[archi-serving] (themis_auth) -- node[right, font=\tiny] {Evaluate Auth} (befe_fhir);
+
+    % Clinical Gateway to Infrastructure
+    \draw[archi-flow] (befe_fhir) -- node[above, font=\tiny] {HotRod Client} (mneme_grid);
+    \draw[archi-flow] (befe_fhir) -- node[left, font=\tiny] {JMS Change Pragma} (petasos_queue);
+
+    % Operations Server to Workflow & Cache
+    \draw[archi-serving] (befe_ops) -- node[right, font=\tiny] {Engine Telemetry} (ponos_engine);
+    \draw[archi-access] (befe_ops) -- node[above, font=\tiny] {Cache Metrics} (mneme_grid);
+
+    % Workflow & Persistence
+    \draw[archi-flow] (petasos_queue) -- node[below, font=\tiny] {Async Dispatch} (ponos_engine);
+    \draw[archi-flow] (mneme_grid) -- node[right, font=\tiny] {Write-Behind} (mnemosyne_db);
+
+\end{tikzpicture}

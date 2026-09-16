@@ -1,0 +1,71 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: harmonia-ingress
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: harmonia-ingress
+    app.kubernetes.io/part-of: harmonia-platform
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "64m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "120"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "120"
+spec:
+  rules:
+    - host: clinical.harmonia.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: iris-clinical
+                port:
+                  number: 80
+    - host: console.harmonia.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: iris-console
+                port:
+                  number: 80
+    - host: admin.harmonia.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: iris-administration
+                port:
+                  number: 80
+    - host: api.harmonia.local
+      http:
+        paths:
+          - path: /clinical
+            pathType: Prefix
+            backend:
+              service:
+                name: befe
+                port:
+                  number: 8080
+          - path: /operations
+            pathType: Prefix
+            backend:
+              service:
+                name: befe
+                port:
+                  number: 8090
+    - host: gateway.harmonia.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mllp-gateway
+                port:
+                  number: 8080

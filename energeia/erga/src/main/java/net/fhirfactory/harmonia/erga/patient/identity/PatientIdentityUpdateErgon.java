@@ -23,6 +23,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
@@ -53,6 +55,7 @@ import java.util.regex.Pattern;
 public class PatientIdentityUpdateErgon extends ErgonBase {
 
     private static final Logger log = LoggerFactory.getLogger(PatientIdentityUpdateErgon.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(PatientIdentityUpdateErgon.class);
 
     public static final String DEFAULT_ACTIVITY_ID = "patient-identity-update";
     public static final String DEFAULT_ACTIVITY_NAME = "Patient Identity Update Activity";
@@ -281,7 +284,8 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
         }
         exchange.getMessage().setHeader(HEADER_PATIENT_UPDATED, Boolean.TRUE);
 
-        log.info("Patient identity updated on exchange: ID={}, MRN={}, Name={}", patientId, mrn, fullName);
+        log.info("Patient identity updated on exchange: patientId={}", patientId);
+        phiLog.debug("Patient identity updated on exchange: ID={}, MRN={}, Name={}", patientId, mrn, fullName);
     }
 
     private String cleanPatientId(String rawId) {

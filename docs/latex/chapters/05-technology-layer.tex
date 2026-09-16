@@ -93,6 +93,29 @@ In the event of an evaluation error, missing policy, or unparseable context, The
     \item \texttt{CONTEXT\_MALFORMED} / \texttt{SECURITY\_SERVICE\_ERROR}: Malformed context or internal evaluation failure.
 \end{itemize}
 
+\section{PHI-Aware Diagnostic Logging Runtime \& Appender Isolation}
+\label{sec:phi_logging_tech_runtime}
+
+Harmonia implements a centralized runtime framework for governed clinical logging that guarantees zero PHI leakage into operational log streams while enabling rich diagnostic capabilities for engineering troubleshooting.
+
+\subsection{Dual-Logger Runtime Framework (\texttt{Calliope} / \texttt{net.fhirfactory.harmonia.logging})}
+Every clinical processing module instantiates two distinct loggers:
+\begin{itemize}
+    \item \textbf{Standard SLF4J Logger}: Emits operational milestones (\texttt{INFO}, \texttt{WARN}, \texttt{ERROR}) carrying non-PHI correlation IDs, transaction status codes, and latency metrics.
+    \item \textbf{Harmonia \texttt{PhiLogger}}: Emits diagnostic messages exclusively at \texttt{DEBUG} and \texttt{TRACE} severity. Compile-time enforcement prevents operational logging via \texttt{PhiLogger}.
+\end{itemize}
+
+\subsection{Dual-Gate Security Evaluation Mechanics}
+Log evaluation through \texttt{PhiLogger} is governed by a dual-gate security check:
+\begin{enumerate}
+    \item \textbf{Gate 1 (Global Configuration Switch)}: Verifies that \texttt{harmonia.logging.phi-enabled=true} (or \texttt{HARMONIA\_LOGGING\_PHI\_ENABLED=true}). When \texttt{false} (the default), all PHI log statements evaluate to strict no-ops.
+    \item \textbf{Gate 2 (Active Severity Level)}: Verifies that the underlying logger is actively configured for \texttt{DEBUG} or \texttt{TRACE}.
+\end{enumerate}
+Supplier lambdas (\texttt{Supplier<?>}) provide lazy evaluation, ensuring zero serialization overhead or heap allocations when the gates are closed.
+
+\subsection{SLF4J Namespace Routing \& Non-Additive Appender Isolation}
+When both gates pass, \texttt{PhiLogger} routes events to the dedicated SLF4J logger namespace \texttt{org.harmonia.phi} with an attached \texttt{PHI} marker. Logback configuration enforces \texttt{additivity="false"} on this logger, isolating diagnostic logs to encrypted, restricted-access storage volumes (\texttt{phi-diagnostic.log}) with strict 7-day retention windows. Complete developer blueprints, API signatures, XML configurations, and testing strategies are cataloged in Appendix~\ref{app:phi_logging}.
+
 \section{Master Platform Port Allocation Specification}
 
 To ensure complete isolation and zero port collisions across development, test, and containerized production environments, Harmonia enforces the following deterministic port allocation matrix:

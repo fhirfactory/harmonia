@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: harmonia
+  labels:
+    app.kubernetes.io/name: harmonia
+    app.kubernetes.io/part-of: harmonia-platform

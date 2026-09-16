@@ -18,21 +18,25 @@ The Application Architecture layer models the core software components, internal
 \end{figure}
 
 \section{Presentation Tier: \texttt{Iris} Subsystem}
+\label{sec:app_iris_tier}
 
-The \texttt{Iris} subsystem delivers user interfaces and API mediation for clinicians, operations engineers, and administrative operators.
+The \texttt{Iris} subsystem delivers user interfaces and API mediation for clinicians, operations engineers, provider directory administrators, and healthcare practitioners. A comprehensive architectural specification, interface catalog, and operational manual for all Iris presentation applications is provided in Appendix~\ref{app:iris_interfaces}.
 
 \subsection{\texttt{iris-befe} (Backend-For-Frontend Gateway)}
 \texttt{iris-befe} is a Jakarta EE 10 microprofile application deployed on WildFly providing dual-port isolated REST endpoints:
 \begin{itemize}
-    \item \textbf{Clinical FHIR Port 8080} (\texttt{/api/fhir/\{resourceType\}}): Handles clinical resource queries, FHIR search operations, and CRUD verbs, routing requests directly to the \texttt{Mneme} Infinispan data grid via HotRod protocol.
-    \item \textbf{Operations Port 8090} (\texttt{/api/operations/\{resourceType\}}): Exposes operational telemetry, \texttt{Pragma} task audit histories, and Artemis cluster monitoring endpoints.
+    \item \textbf{Clinical FHIR Port 8080} (\texttt{/api/v1/\{resourceType\}}): Handles clinical resource queries, FHIR search operations, and governed change submissions, routing requests directly to the \texttt{Mneme} Infinispan data grid via HotRod protocol and evaluated against Themis RBAC security policies.
+    \item \textbf{Operations Port 8090} (\texttt{/api/operations/\{resourceType\}}): Dedicated socket-based operations HTTP server exposing operational telemetry, \texttt{Pragma} task audit histories, ActiveMQ Artemis queue monitoring, Infinispan cache topologies, and dynamic online \texttt{Praxis} sequence reload endpoints.
 \end{itemize}
 
 \subsection{\texttt{iris-clinical} (Clinical Single-Page Application)}
-A modern web application built with Vue 3, Vite, TypeScript, and Pinia. Provides clinicians with real-time patient lookup, longitudinal medical history timelines, encounter summaries, and diagnostic observation views.
+A modern web application built with Vue 3, Vite, TypeScript, and Pinia operating on port 3000. Provides clinicians with real-time patient lookup, longitudinal medical history timelines, encounter summaries, provider directory lookups, care team navigation, and diagnostic observation views.
 
 \subsection{\texttt{iris-console} (Operations \& Workflow Console)}
-An administrative single-page application built with Vue 3 and TypeScript. Enables systems engineers to inspect ActiveMQ Artemis broker queue depths, view Infinispan cache topologies, trigger live reload of task sequence configurations, and inspect failing \texttt{Pragma} pipelines.
+An administrative single-page application built with Vue 3 and TypeScript operating on port 3001. Enables systems engineers to inspect ActiveMQ Artemis broker queue depths, view Infinispan cache topologies, trigger live reload of task sequence configurations, and diagnose failing \texttt{Pragma} pipelines.
+
+\subsection{\texttt{iris-administration} (Provider Directory Administration \& Self-Service Portal)}
+A dual-portal single-page application built with Vue 3, TypeScript, and Pinia operating on port 3002. It serves both individual healthcare providers through a Self-Service Portal (profile inspection, credential review, change proposal submissions) and credentialing staff through a Departmental Administration Portal (work queue triage, directory CRUD, data quality validation, and Themis security governance).
 
 \section{Interface \& Gateway Tier: \texttt{Pylai} Subsystem}
 

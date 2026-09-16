@@ -1,0 +1,99 @@
+%% =============================================================================
+%% diagrams/fig-phi-logging-architecture.tex
+%% ArchiMate 3.2 Diagram: PHI-Aware Logging Security Architecture & Appender Isolation
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.2cm and 1.0cm, auto]
+
+    % -------------------------------------------------------------------------
+    % Layer 1: Application Component & Dual Loggers
+    % -------------------------------------------------------------------------
+    \node[archi-app-component] (app_code) at (0.0, 6.5) {
+        \archibadge{Component Code}
+        \archiname{Clinical Processor}
+        \archidesc{Pylai / Ergon / Hestia}
+    };
+
+    \node[archi-app-interface] (op_logger_api) at (5.0, 8.0) {
+        \archibadge{SLF4J Interface}
+        \archiname{Logger (log)}
+        \archidesc{INFO, WARN, ERROR}
+    };
+
+    \node[archi-app-interface] (phi_logger_api) at (5.0, 5.0) {
+        \archibadge{Harmonia Interface}
+        \archiname{PhiLogger (phiLog)}
+        \archidesc{DEBUG, TRACE only}
+    };
+
+    % -------------------------------------------------------------------------
+    % Layer 2: Dual Security Evaluation Gate
+    % -------------------------------------------------------------------------
+    \node[archi-app-component] (phi_gate) at (9.5, 5.0) {
+        \archibadge{Security Gate 1}
+        \archiname{PhiLoggingConfig}
+        \archidesc{phi-enabled == true}
+    };
+
+    \node[archi-app-component] (level_gate) at (14.0, 5.0) {
+        \archibadge{Security Gate 2}
+        \archiname{Level Evaluator}
+        \archidesc{DEBUG / TRACE Active}
+    };
+
+    \node[archi-artifact] (discard_sink) at (11.75, 2.5) {
+        \archibadge{Suppression}
+        \archiname{No-Op / Discard}
+        \archidesc{Zero Evaluation / Cost}
+    };
+
+    % -------------------------------------------------------------------------
+    % Layer 3: Routing & Namespaces
+    % -------------------------------------------------------------------------
+    \node[archi-tech-service] (op_namespace) at (9.5, 8.0) {
+        \archibadge{SLF4J Routing}
+        \archiname{Component Namespace}
+        \archidesc{net.fhirfactory.*}
+    };
+
+    \node[archi-tech-service] (phi_namespace) at (18.5, 5.0) {
+        \archibadge{Dedicated Namespace}
+        \archiname{org.harmonia.phi}
+        \archidesc{Marker: PHI}
+    };
+
+    % -------------------------------------------------------------------------
+    % Layer 4: Logback Appenders & Physical Storage
+    % -------------------------------------------------------------------------
+    \node[archi-node] (op_appender) at (14.0, 8.0) {
+        \archibadge{Standard Destination}
+        \archiname{OPERATIONAL\_CONSOLE}
+        \archidesc{Console / Syslog}
+    };
+
+    \node[archi-node] (phi_appender) at (18.5, 1.5) {
+        \archibadge{Isolated Destination}
+        \archiname{PHI\_DIAGNOSTIC}
+        \archidesc{additivity = false}
+    };
+
+    % -------------------------------------------------------------------------
+    % Connections & Flows
+    % -------------------------------------------------------------------------
+    % Operational Path
+    \draw[archi-flow] (app_code.north) |- node[above, font=\sffamily\scriptsize, near end] {Non-PHI Lifecycle Events} (op_logger_api.west);
+    \draw[archi-flow] (op_logger_api) -- node[above, font=\sffamily\scriptsize] {SLF4J Route} (op_namespace);
+    \draw[archi-flow] (op_namespace) -- node[above, font=\sffamily\scriptsize] {Standard Pipeline} (op_appender);
+
+    % PHI Diagnostic Path
+    \draw[archi-flow] (app_code.south) |- node[below, font=\sffamily\scriptsize, near end] {Clinical Payloads / Demographics} (phi_logger_api.west);
+    \draw[archi-flow] (phi_logger_api) -- node[above, font=\sffamily\scriptsize] {Check Gate 1} (phi_gate);
+
+    \draw[archi-flow] (phi_gate) -- node[above, font=\sffamily\scriptsize] {Enabled} (level_gate);
+    \draw[archi-flow] (phi_gate) |- node[left, font=\sffamily\scriptsize, near end] {Disabled} (discard_sink);
+
+    \draw[archi-flow] (level_gate) -- node[above, font=\sffamily\scriptsize] {Active} (phi_namespace);
+    \draw[archi-flow] (level_gate) |- node[right, font=\sffamily\scriptsize, near end] {Inactive} (discard_sink);
+
+    \draw[archi-flow] (phi_namespace) -- node[right, font=\sffamily\scriptsize] {Isolated Log Stream} (phi_appender);
+
+\end{tikzpicture}

@@ -1,0 +1,14 @@
+---
+- name: Install MicroK8s snap with specified channel
+  community.general.snap:
+    name: microk8s
+    channel: "{{ microk8s_channel }}"
+    classic: true
+    state: present
+  become: true
+
+- name: Wait for MicroK8s to initialize and report ready
+  ansible.builtin.command: microk8s status --wait-ready --timeout 180
+  register: microk8s_ready_status
+  changed_when: false
+  become: true

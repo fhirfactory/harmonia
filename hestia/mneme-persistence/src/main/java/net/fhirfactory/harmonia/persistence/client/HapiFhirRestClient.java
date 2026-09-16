@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.persistence.client;
 
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +32,7 @@ import java.util.concurrent.CompletionStage;
 public class HapiFhirRestClient {
 
     private static final Logger log = LoggerFactory.getLogger(HapiFhirRestClient.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(HapiFhirRestClient.class);
 
     private final String serverUrl;
     private final HttpClient httpClient;
@@ -82,7 +85,8 @@ public class HapiFhirRestClient {
                     int status = response.statusCode();
                     boolean success = (status >= 200 && status < 300);
                     if (!success) {
-                        log.error("PUT {} failed with status {}: {}", uri, status, response.body());
+                        log.error("PUT {} failed with status {}", uri, status);
+                        phiLog.debug("PUT {} failure response body: {}", uri, response.body());
                     } else {
                         log.info("PUT {} succeeded with status {}", uri, status);
                     }
@@ -103,7 +107,8 @@ public class HapiFhirRestClient {
                     int status = response.statusCode();
                     boolean success = (status >= 200 && status < 300) || status == 404 || status == 410;
                     if (!success) {
-                        log.error("DELETE {} failed with status {}: {}", uri, status, response.body());
+                        log.error("DELETE {} failed with status {}", uri, status);
+                        phiLog.debug("DELETE {} failure response body: {}", uri, response.body());
                     } else {
                         log.debug("Successfully deleted {}/{} on FHIR JPA server", resourceType, id);
                     }

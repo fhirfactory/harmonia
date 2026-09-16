@@ -343,6 +343,7 @@ mvn clean package
 
 Comprehensive technical specifications, message lifecycles, and security guides are organized across the following documentation modules:
 
+- **[PHI-Aware Logging Architecture & Security Policy](docs/security/logging.md)**: 5-tier logging policy matrix, dual-gate security evaluation, `PhiLogger` API specification, dedicated `org.harmonia.phi` routing, appender isolation, and operational security guidelines for PHI diagnostic destinations.
 - **[Security Architecture & Themis Framework](docs/security/architecture.md)**: Defence-in-depth principles, default-deny policy engine, role-to-authority mappings, service identities, and boundary checkpoint matrices.
 - **[Provider Registry Security](docs/provider-registry/security.md)**: Domain-specific access control, FHIR security labels (`PROVIDER_REGISTRY`), and persistence gates.
 - **[Petasos Messaging & Artemis Architecture](docs/architecture.md)**: Clustered messaging topology, replication, message envelope specifications, and delivery guarantees.

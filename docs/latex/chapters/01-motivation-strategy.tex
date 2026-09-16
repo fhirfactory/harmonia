@@ -72,8 +72,8 @@ Workflow pipelines write state snapshots exclusively to the in-memory cache grid
 Internal workflow state is represented using the canonical \texttt{Pragma} domain model in \texttt{Calliope}. All external boundary interactions and REST APIs adhere strictly to HL7 FHIR R5 resource definitions.
 \end{principlebox}
 
-\begin{principlebox}{Strict PHI Privacy \& Zero Payload Logging}
-Transport engines and pipeline logs must never print clinical payload bodies at any log level (\texttt{INFO}, \texttt{DEBUG}, \texttt{ERROR}). Only structured correlation IDs, message IDs, and status codes may be logged.
+\begin{principlebox}{Governed PHI Logging \& Dual-Logger Privacy Controls}
+Operational log streams (\texttt{INFO}, \texttt{WARN}, \texttt{ERROR}) must remain strictly devoid of Protected Health Information (PHI), personally identifiable demographics, and security credentials under all conditions. Clinical payload data and diagnostic identifiers are permitted exclusively at \texttt{DEBUG} and \texttt{TRACE} severity levels via the dedicated \texttt{PhiLogger} dual-gate security evaluation mechanism, routing non-additively to isolated, encrypted diagnostic storage (documented in Appendix~\ref{app:phi_logging}).
 \end{principlebox}
 
 \section{Strategic Capabilities \& End-to-End Value Stream}

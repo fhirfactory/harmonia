@@ -1,0 +1,99 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: petasos-artemis-discovery
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: petasos-artemis
+    app.kubernetes.io/component: messaging
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  clusterIP: None
+  ports:
+    - port: 61616
+      name: core
+    - port: 8161
+      name: console
+  selector:
+    app.kubernetes.io/component: messaging
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis-primary-a
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: artemis-primary-a
+    app.kubernetes.io/component: messaging
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 61616
+      targetPort: 61616
+      name: core
+    - port: 8161
+      targetPort: 8161
+      name: console
+  selector:
+    app.kubernetes.io/name: artemis-primary-a
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis-backup-a
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: artemis-backup-a
+    app.kubernetes.io/component: messaging
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 61616
+      targetPort: 61616
+      name: core
+    - port: 8161
+      targetPort: 8161
+      name: console
+  selector:
+    app.kubernetes.io/name: artemis-backup-a
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis-primary-b
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: artemis-primary-b
+    app.kubernetes.io/component: messaging
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 61616
+      targetPort: 61616
+      name: core
+    - port: 8161
+      targetPort: 8161
+      name: console
+  selector:
+    app.kubernetes.io/name: artemis-primary-b
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis-backup-b
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: artemis-backup-b
+    app.kubernetes.io/component: messaging
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 61616
+      targetPort: 61616
+      name: core
+    - port: 8161
+      targetPort: 8161
+      name: console
+  selector:
+    app.kubernetes.io/name: artemis-backup-b

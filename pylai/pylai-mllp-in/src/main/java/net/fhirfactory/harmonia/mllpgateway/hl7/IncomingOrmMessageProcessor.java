@@ -26,6 +26,8 @@ import ca.uhn.hl7v2.util.idgenerator.NanoTimeGenerator;
 import ca.uhn.hl7v2.validation.impl.NoValidation;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpConfig;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.OrmCommunicationResourceBuilder;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.OrmTaskResourceBuilder;
@@ -49,6 +51,7 @@ import java.util.UUID;
 public class IncomingOrmMessageProcessor {
 
     private static final Logger log = LoggerFactory.getLogger(IncomingOrmMessageProcessor.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(IncomingOrmMessageProcessor.class);
 
     private final HapiContext hapiContext;
     private final PipeParser pipeParser;
@@ -125,11 +128,17 @@ public class IncomingOrmMessageProcessor {
                     sendingFacility != null ? sendingFacility : sendingApp,
                     receivingFacility != null ? receivingFacility : receivingApp);
 
+            phiLog.debug("Inbound HL7 ORM message received [messageControlId={}, topic={}]: {}",
+                    messageControlId, topic, rawHl7Message);
+
             String placerOrder = extractor.extractPlacerOrderNumber(rawHl7Message, terser);
             String universalServiceId = extractor.extractUniversalServiceId(rawHl7Message, terser);
             String patientId = extractor.extractPatientId(rawHl7Message, terser);
             String patientFullName = extractor.extractPatientFullName(rawHl7Message, terser);
             Date messageTimestamp = extractor.parseHl7Date(messageTimestampStr);
+
+            phiLog.debug("Extracted patient details for ORM message {}: patientId={}, patientName={}",
+                    messageControlId, patientId, patientFullName);
 
             Communication comm = communicationBuilder.buildCommunication(
                     rawHl7Message, messageControlId, triggerEvent, topic, terser,
@@ -154,7 +163,7 @@ public class IncomingOrmMessageProcessor {
                     String action = "PROCESS";
                     String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
                     String taskId = savedTask.getIdPart() != null ? savedTask.getIdPart() : messageControlId;
-                    String desc = "HL7 v2.4 ORM^" + triggerEvent + " order " + placerOrder + " for patient " + patientFullName;
+                    String desc = "HL7 v2.4 ORM^" + triggerEvent + " order " + placerOrder;
                     ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
                     taskEventProducerService.sendTaskEvent(event);
                 } catch (Exception e) {

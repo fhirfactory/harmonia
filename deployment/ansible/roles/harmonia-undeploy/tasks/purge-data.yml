@@ -1,0 +1,27 @@
+---
+- name: Confirm destructive data purge intention
+  ansible.builtin.pause:
+    prompt: "WARNING: You have specified harmonia_purge_data=true. This will permanently destroy all PostgreSQL databases and Artemis HA queues. Press Enter to proceed or Ctrl+C to abort."
+  when:
+    - harmonia_purge_data | bool
+    - not (harmonia_purge_data_confirm | default(false) | bool)
+
+- name: Delete all PersistentVolumeClaims in Harmonia namespace
+  ansible.builtin.command: >
+    microk8s kubectl delete pvc --all --namespace {{ harmonia_namespace }}
+  become: true
+  changed_when: true
+
+- name: Delete Harmonia namespace
+  ansible.builtin.command: >
+    microk8s kubectl delete namespace {{ harmonia_namespace }} --ignore-not-found
+  become: true
+  changed_when: true
+
+- name: Report complete data purge
+  ansible.builtin.debug:
+    msg:
+      - "========================================================"
+      - "DESTRUCTIVE DATA PURGE COMPLETE"
+      - "All PersistentVolumeClaims and namespace {{ harmonia_namespace }} destroyed."
+      - "========================================================"

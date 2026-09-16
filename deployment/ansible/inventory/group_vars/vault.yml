@@ -1,0 +1,12 @@
+---
+# ==============================================================================
+# Harmonia Secrets Template (For production, encrypt this file using ansible-vault)
+# Example: ansible-vault encrypt deployment/ansible/inventory/group_vars/vault.yml
+# ==============================================================================
+
+vault_postgres_fhir_password: "fhir_password"
+vault_postgres_ops_password: "ops_password"
+vault_artemis_admin_password: "admin"
+vault_artemis_cluster_password: "artemisClusterPassword"
+vault_infinispan_admin_password: "admin"
+vault_registry_auth_token: ""

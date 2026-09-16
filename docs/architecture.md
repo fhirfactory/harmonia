@@ -116,6 +116,26 @@ Petasos provides an immutable, strongly-typed envelope (`PetasosMessage`) design
 
 ---
 
+### Security Framework & Defence-in-Depth (Themis)
+
+Harmonia implements a multi-tier **defence-in-depth** security architecture governed by **Themis**, the centralized Policy and Authorisation Service:
+
+* **Default-Deny Policy Invariant**: Every ingress request, message queue dispatch, asynchronous task execution, and database mutation is denied unless explicitly permitted by deterministic Themis policy rules.
+* **Role and Authority Decoupling**: Mnemonic roles (`HarmoniaRoleEnum`, e.g., `PRV_RDR`, `PRV_SUB`, `PRV_PROC`, `PRV_APR`, `PRV_ADM`, `AUD_RDR`, `SYS_INT`, `SYS_ADM`) map to granular authorities (`HarmoniaAuthorityEnum`), ensuring that business logic evaluates exact capability tokens.
+* **Immutable Security Context (`Pragma`)**: Ingress caller identities (`ThemisPrincipal`) and authority claims are immutably captured at Pylai and propagated across asynchronous Petasos queues and Ponos pipelines via FHIR R5 Task extensions.
+* **Independent Persistence Gates**: In-memory caching and database persistence services (Mnemosyne) independently evaluate storage mutation permissions before executing writes, preventing privilege amplification or repository bypass.
+* **Non-PHI Auditing**: Every authorization decision is captured by `ThemisAuditService` as a structured, non-PHI `ThemisAuditEvent` carrying correlation lineage.
+
+```mermaid
+graph LR
+    Pylai[1. Pylai Ingress Gate] -->|SUBMIT_UPDATE| Themis[Themis Policy Evaluator]
+    Ponos[2. Ponos Dispatch Gate] -->|PROCESS| Themis
+    Ergon[3. Ergon Activity Gate] -->|CREATE / UPDATE| Themis
+    Mnemosyne[4. Mnemosyne Storage Gate] -->|PERSIST| Themis
+```
+
+---
+
 ### Persistence, Lifecycle & Recovery Documentation Index
 
 For comprehensive deep dives into Harmonia's persistence model, database schemas, message lifecycles, and failure recovery specifications, refer to:
@@ -126,3 +146,27 @@ For comprehensive deep dives into Harmonia's persistence model, database schemas
 4. **[Failure-Recovery Architecture](failure-recovery.md)**: Comprehensive failure matrix, restart recovery procedures, lease/ownership recovery, 4-tier idempotency model, ACK semantics (AA/AE/AR), retry policies, and DLQ handling.
 5. **[Recovery Guarantees & Objectives](recovery-guarantees.md)**: Formal delivery guarantees (at-least-once, effectively-once) and Recovery Point Objectives (RPO) / Recovery Time Objectives (RTO) across all platform boundaries.
 6. **[Persistence & Recovery Gap Analysis](persistence-recovery-gaps.md)**: Catalog of identified implementation deviations (REC-001 through REC-004) with risk ratings and remediation roadmaps.
+
+---
+
+### Security Framework Documentation Index
+
+For complete specifications on the Themis security framework, authorization policies, and boundary enforcement, refer to:
+
+1. **[Security Architecture Overview](security/architecture.md)**: Executive overview, defence-in-depth principles, boundary checkpoint matrix, and non-amplification invariants.
+2. **[Themis Core Subsystem](security/themis.md)**: Subsystem architecture, module organization, `ThemisService` contracts, and deterministic evaluation pipeline.
+3. **[Policy Model & Precedence](security/policy-model.md)**: Policy interface (`ThemisPolicy`), evaluation precedence (`Explicit Deny` $\rightarrow$ `Policy Rules` $\rightarrow$ `Default Deny`), and built-in domain policies.
+4. **[Mnemonic Roles & Granular Authorities](security/roles-authorities.md)**: Complete mapping of mnemonic roles (`HarmoniaRoleEnum`) to granular authorities (`HarmoniaAuthorityEnum`).
+5. **[Principals & Identity Model](security/principals.md)**: Principal types (`HUMAN`, `SYSTEM`, `SERVICE`, `PROCESS`), naming conventions, and credential hygiene.
+6. **[Controlled Service Identities](security/service-identities.md)**: Catalogue of internal service identities (`HarmoniaServiceIdentities`) and administrative separation.
+7. **[Data Security Labels & FHIR Mapping](security/security-labels.md)**: Security labels (`HarmoniaSecurityLabelEnum`) and serialization to FHIR R5 `Resource.meta.security`.
+8. **[Pylai Ingress Security](security/pylai-security.md)**: Gateway interceptor enforcement, interaction mapping, and asynchronous task submission.
+9. **[Pragma Security Context](security/pragma-security.md)**: Immutable caller context propagation and FHIR R5 Task extension serialization.
+10. **[Ponos Execution & Dispatch Security](security/ponos-security.md)**: Asynchronous task dispatch gates, dual-authority verification, and failure handling.
+11. **[Ergon Security Envelopes](security/ergon-security.md)**: Activity security definitions (`ErgonSecurityDefinition`), permitted actions, and execution envelopes.
+12. **[Provider Registry Security](security/provider-registry-security.md)**: Domain-specific security rules, resource classifications, and independent storage gates.
+13. **[Security Decision Auditing](security/audit.md)**: `ThemisAuditEvent` schema, privacy sanitization (no PHI, no tokens), and correlation tracking.
+14. **[Failure Behaviour & Fail-Safe Defaults](security/failure-behaviour.md)**: Fail-closed mechanics, decision reason codes (`ThemisDecisionReason`), and error handling.
+15. **[Threat Model & Risk Analysis](security/threat-model.md)**: Threat vectors, defence-in-depth mitigations, and residual risk assessment.
+16. **[Security Gap Analysis](security/security-gaps.md)**: Architectural security gap tracking matrix (GAP-01 to GAP-07) and remediation roadmap.
+17. **[Testing Strategy & Verification Guide](security/testing.md)**: Utilitarian testing philosophy, acceptance scenarios (A through E), and negative tampering tests.

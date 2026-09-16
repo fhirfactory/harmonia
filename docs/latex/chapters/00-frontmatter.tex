@@ -20,6 +20,8 @@ Modern healthcare ecosystems demand zero-loss event streaming, high-throughput m
     \item \textbf{Ergon Workflow Activity Module Implementation Blueprint}: Production-grade engineering manual, ArchiMate processing models, \texttt{ErgonBase} Camel route lifecycles, \texttt{Pragma} state checkpointing, and Ponos WildFly deployment runbook for authoring new task activities (documented in Appendix~\ref{app:ergon_modules}).
     \item \textbf{Praxis Workflow Sequence Implementation Blueprint}: Production-grade engineering guide, ArchiMate sequence topology, dynamic Apache Camel route synthesis, CDI bean discovery, audit checkpointing, and dynamic reload runbook for composing and deploying task sequences (documented in Appendix~\ref{app:praxis_workflow}).
     \item \textbf{FHIR R5 Provider Registry Implementation Blueprint}: Production-grade implementation specifications, ArchiMate 5-tier topology, synchronous read/search vs asynchronous governed write models, per-resource Erga activities, referential integrity rules, optimistic concurrency, and Paradeigma test harnesses (documented in Appendix~\ref{app:provider_registry}).
+    \item \textbf{PHI-Aware Logging Architecture \& Developer Implementation Blueprint}: Comprehensive architectural specification, dual-gate security evaluation model, SLF4J namespace routing (\texttt{org.harmonia.phi}), Logback appender isolation, supplier-based lazy evaluation, and complete engineering guide for clinical developers (documented in Appendix~\ref{app:phi_logging}).
+    \item \textbf{Iris Presentation Tier and User Interfaces Specification \& User Guide}: Comprehensive architectural specification, dual-port BEFE gateway contracts (Ports 8080 and 8090), full view catalogs for \texttt{iris-clinical}, \texttt{iris-console}, and \texttt{iris-administration}, Themis RBAC security enforcement, Pinia reactive store patterns, and concrete operational walkthroughs (documented in Appendix~\ref{app:iris_interfaces}).
 \end{itemize}
 
 \section*{ArchiMate 3.2 Architectural Modeling Framework}
@@ -80,7 +82,7 @@ Harmonia adopts naming conventions rooted in classical Greek mythology and philo
 \addlinespace
 \textbf{\texttt{Hestia}} & Data Services Subsystem & \textit{Hestia} --- Goddess of the hearth and foundational stability. & Data services aggregator managing caching (Mneme) and persistence (Mnemosyne). \\
 \addlinespace
-\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} --- Goddess of the rainbow and divine messenger. & Presentation tier comprising Jakarta EE BEFE gateway, Clinical UI SPA, and Console UI SPA. \\
+\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} --- Goddess of the rainbow and divine messenger. & Decoupled multi-portal presentation tier comprising Jakarta EE dual-port BEFE gateway, Clinical UI SPA, Console UI SPA, and Administration Dual-Portal SPA. \\
 \addlinespace
 \textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways (\texttt{pylai-mllp-in}), multi-instance outbound MLLP gateways (\texttt{pylai-mllp-out}), FHIR R5 Provider Registry REST gateway (\texttt{pylai-fhir-registry}), shared integration base library (\texttt{pylai-mllp-base}), and synthetic test CLI (\texttt{pylai-mllp-cli}). \\
 \addlinespace

@@ -1,0 +1,30 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: harmonia
+
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: harmonia-platform
+
+resources:
+  - namespace.yaml
+  - network-policy.yaml
+  - hestia/postgres.yaml
+  - hestia/mnemosyne-clinical.yaml
+  - hestia/mnemosyne-operations.yaml
+  - hestia/mneme-cluster.yaml
+  - energeia/ponos.yaml
+  - pylai/pylai-mllp-in.yaml
+  - pylai/pylai-mllp-out.yaml
+  - iris/iris-befe.yaml
+  - iris/iris-clinical.yaml
+  - iris/iris-console.yaml
+  - iris/iris-administration.yaml
+  - petasos/artemis-configmaps.yaml
+  - petasos/artemis-headless-services.yaml
+  - petasos/artemis-primary-a.yaml
+  - petasos/artemis-backup-a.yaml
+  - petasos/artemis-primary-b.yaml
+  - petasos/artemis-backup-b.yaml
+  - ingress.yaml

@@ -1,0 +1,87 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-processor
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: ponos-task-processor
+    app.kubernetes.io/component: workflow
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+    - port: 61616
+      targetPort: 61616
+      name: artemis
+    - port: 9990
+      targetPort: 9990
+      name: management
+  selector:
+    app.kubernetes.io/name: ponos-task-processor
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-processor
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: ponos-task-processor
+    app.kubernetes.io/component: workflow
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ponos-task-processor
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ponos-task-processor
+        app.kubernetes.io/component: workflow
+        app.kubernetes.io/part-of: harmonia-platform
+    spec:
+      containers:
+        - name: ponos
+          image: localhost:32000/harmonia/ponos-task-processor:1.0.0-SNAPSHOT
+          env:
+            - name: INFINISPAN_HOST
+              value: "infinispan-1"
+            - name: INFINISPAN_PORT
+              value: "11222"
+            - name: INFINISPAN_USER
+              value: "admin"
+            - name: INFINISPAN_PASSWORD
+              value: "admin"
+            - name: TASK_BROKER_HOST
+              value: "0.0.0.0"
+            - name: TASK_BROKER_PORT
+              value: "61616"
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 61616
+              name: artemis
+            - containerPort: 9990
+              name: management
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1536Mi
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5

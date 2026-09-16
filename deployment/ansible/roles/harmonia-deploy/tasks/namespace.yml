@@ -1,0 +1,21 @@
+---
+- name: Check if Harmonia namespace exists
+  ansible.builtin.command: "microk8s kubectl get namespace {{ harmonia_namespace }} --no-headers"
+  register: namespace_check
+  failed_when: false
+  changed_when: false
+  become: true
+
+- name: Create Harmonia namespace if not present
+  ansible.builtin.command: "microk8s kubectl create namespace {{ harmonia_namespace }}"
+  when: namespace_check.rc != 0
+  become: true
+
+- name: Label Harmonia namespace
+  ansible.builtin.command: >
+    microk8s kubectl label namespace {{ harmonia_namespace }}
+    app.kubernetes.io/name=harmonia
+    app.kubernetes.io/part-of=harmonia-platform
+    --overwrite
+  become: true
+  changed_when: false

@@ -1,0 +1,47 @@
+---
+# ==============================================================================
+# Playbook: deploy-harmonia.yml
+# Purpose:  Idempotently deploys Harmonia platform workloads onto MicroK8s
+# ==============================================================================
+- name: Deploy Harmonia Health Integration Environment onto MicroK8s
+  hosts: microk8s_hosts
+  become: true
+  gather_facts: false
+
+  vars_files:
+    - inventory/group_vars/all.yml
+    - inventory/group_vars/vault.yml
+
+  pre_tasks:
+    - name: Verify MicroK8s cluster is running and ready
+      ansible.builtin.command: microk8s status --wait-ready --timeout 30
+      changed_when: false
+
+  roles:
+    - role: harmonia-deploy
+
+  post_tasks:
+    - name: Query active pods in Harmonia namespace
+      ansible.builtin.command: microk8s kubectl get pods --namespace {{ harmonia_namespace }}
+      register: final_pod_status
+      changed_when: false
+
+    - name: Display deployment success summary
+      ansible.builtin.debug:
+        msg:
+          - "========================================================"
+          - "HARMONIA DEPLOYMENT SUCCESSFUL"
+          - "Namespace: {{ harmonia_namespace }}"
+          - "Image Tag: {{ harmonia_image_tag }}"
+          - "Image Registry: {{ harmonia_image_registry }}/{{ harmonia_image_namespace }}"
+          - "--------------------------------------------------------"
+          - "Accessible Endpoints (via Ingress / local DNS):"
+          - "  Iris Clinical:       http://clinical.{{ ingress_base_domain }}"
+          - "  Iris Console:        http://console.{{ ingress_base_domain }}"
+          - "  Iris Administration: http://admin.{{ ingress_base_domain }}"
+          - "  Iris BEFE API:       http://api.{{ ingress_base_domain }}/clinical"
+          - "  Pylai MLLP Gateway:  http://gateway.{{ ingress_base_domain }}"
+          - "--------------------------------------------------------"
+          - "Workload Pods:"
+          - "{{ final_pod_status.stdout_lines }}"
+          - "========================================================"

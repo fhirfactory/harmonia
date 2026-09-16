@@ -1,99 +1,53 @@
-# Harmonia Paradeigma — HL7 v2 Reference Solution
+# Harmonia Paradeigma — Simulation, Synthetic Data & Test Framework
 
-**Harmonia Paradeigma** is an end-to-end runnable exemplar demonstrating representative HL7 v2.4 clinical workflows across simulated healthcare systems interacting with the Harmonia Health Integration Environment (HIE).
-
----
-
-## Simulated Healthcare Applications
-
-1. **PAS (Patient Administration System)** (`paradeigma-pas` :8091)
-   - Generates stateful ADT lifecycle events: `A04` (Register) -> `A01` (Admit) -> `A02` (Transfer) -> `A08` (Update) -> `A03` (Discharge).
-   - Ingests into Harmonia on MLLP port `2101` (PD-01).
-
-2. **EMR (Electronic Medical Record)** (`paradeigma-emr` :8092)
-   - Ingests fan-out ADT messages on MLLP port `2201` (PD-05).
-   - Places Laboratory and Diagnostic Imaging `ORM^O01` orders to Harmonia on MLLP port `2104` (PD-04).
-
-3. **LMS (Laboratory Management System)** (`paradeigma-lms` :8093)
-   - Ingests fan-out ADT messages on MLLP port `2202` (PD-06) and routed Lab ORM orders on MLLP port `2204` (PD-08).
-   - Produces synthetic `ORU^R01` pathology results (Haemoglobin, WBC, Potassium, Sodium, etc.) to Harmonia on MLLP port `2102` (PD-02).
-
-4. **RIS-PAC (Diagnostic Imaging & PACS)** (`paradeigma-rispac` :8094)
-   - Ingests fan-out ADT messages on MLLP port `2203` (PD-07) and routed Diagnostic Imaging ORM orders on MLLP port `2205` (PD-09).
-   - Produces synthetic `ORU^R01` radiology reports (Chest X-Ray, CT Head, MRI Brain) to Harmonia on MLLP port `2103` (PD-03).
-
-5. **Scenario Conductor Engine** (`paradeigma-scenarios` :8090)
-   - Orchestrates automated multi-system patient journeys via REST management APIs across `DEMO`, `TEST`, and `LOAD` execution profiles.
+**Harmonia Paradeigma** is the leaf simulation, synthetic data, and scenario framework for the Harmonia Health Integration Environment (HIE). It generates representative synthetic data, executes deterministic multi-system journeys, exercises public Harmonia contracts, and validates observable runtime behavior across HL7 v2 clinical messaging, FHIR R5 Provider Registry, Themis Security, and Dual-Gate PHI Logging.
 
 ---
 
-## Architecture Overview
+## Core Simulation Capabilities
 
-```mermaid
-graph TD
-    subgraph Simulators ["Paradeigma Simulated Systems"]
-        PAS[PAS Simulator :8091]
-        EMR[EMR Simulator :8092 / :2201]
-        LMS[LMS Simulator :8093 / :2202 / :2204]
-        RIS[RIS-PAC Simulator :8094 / :2203 / :2205]
-        SE[Scenario Engine :8090]
-        SE -.->|REST Control| PAS
-        SE -.->|REST Control| EMR
-        SE -.->|REST Control| LMS
-        SE -.->|REST Control| RIS
-    end
+1. **FHIR R5 Provider Registry Simulation**
+   - Deterministic resource generation (`Practitioner`, `PractitionerRole`, `Organization`, `Location`, `HealthcareService`, `Endpoint`, `Group`) with Australian Healthcare Identifiers (HPI-I, HPI-O).
+   - Interconnected topology graph builders and negative broken-reference graph generators.
+   - Governed change request write pipeline lifecycle (`RECEIVED` -> `VALIDATING` -> `APPROVED` -> `COMMITTING` -> `COMPLETED`) with ETag concurrency, duplicate detection, and OperationOutcome capture.
 
-    subgraph Harmonia ["Harmonia Platform (HIE)"]
-        subgraph PylaiIn ["Pylai Inbound Gateways"]
-            P_ADT_IN[PAS ADT Inbound :2101]
-            P_ORM_IN[EMR ORM Inbound :2104]
-            P_LMS_IN[LMS ORU Inbound :2102]
-            P_RIS_IN[RIS ORU Inbound :2103]
-        end
+2. **Themis Security Simulation & RBAC/ABAC Validation**
+   - Pre-configured security actors (`Provider Steward`, `Clinician`, `System Administrator`, `Integration Service`, `Read-Only User`, `Unauthorized User`, `Unauthenticated Principal`).
+   - Granular permission mapping against `HarmoniaRoleEnum` and `HarmoniaAuthorityEnum`.
+   - Simulation test seams for expired contexts, missing roles, and defense-in-depth async execution governance.
 
-        subgraph PonosEngine ["Ponos WorkEngine & Erga Pipelines"]
-            ADT_SEQ[AdtDistributionErgon]
-            ORM_SEQ[OrmRoutingErgon]
-            ORU_SEQ[OruProcessingErgon]
-        end
+3. **Dual-Gate PHI-Aware Logging Probes & Secret Protection**
+   - In-memory `PhiLogTestProbe` for inspecting operational namespaces and dedicated `org.harmonia.phi` diagnostic events with `PHI` marker.
+   - Matrix assertions covering all 5 logging states (`harmonia.logging.phi-enabled` + INFO/DEBUG/TRACE).
+   - `SecretLeakageAssertion` ensuring authentication tokens, passwords, API keys, and JWTs never leak into any log stream.
 
-        subgraph PetasosBus ["Petasos Messaging Queues"]
-            Q_EMR_ADT[(petasos.queue.mllp.outbound.emr_adt)]
-            Q_LMS_ADT[(petasos.queue.mllp.outbound.lms_adt)]
-            Q_RIS_ADT[(petasos.queue.mllp.outbound.ris_adt)]
-            Q_LMS_ORM[(petasos.queue.mllp.outbound.lms_orm)]
-            Q_RIS_ORM[(petasos.queue.mllp.outbound.ris_orm)]
-        end
-    end
+4. **HL7 v2 Clinical Workflow Simulators**
+   - **PAS** (`paradeigma-pas` :8091): ADT registration, admission, transfer, and discharge lifecycle.
+   - **EMR** (`paradeigma-emr` :8092): Ingests ADT fan-out and places laboratory/imaging `ORM^O01` orders.
+   - **LMS** (`paradeigma-lms` :8093): Ingests ADT/ORM and emits synthetic `ORU^R01` pathology results.
+   - **RIS-PAC** (`paradeigma-rispac` :8094): Ingests ADT/ORM and emits synthetic `ORU^R01` diagnostic imaging reports.
+   - **Scenario Conductor Engine** (`paradeigma-scenarios` :8090): Orchestrates automated clinical journeys and registry scenarios.
 
-    PAS -->|PD-01: ADT| P_ADT_IN
-    EMR -->|PD-04: ORM| P_ORM_IN
-    LMS -->|PD-02: ORU| P_LMS_IN
-    RIS -->|PD-03: ORU| P_RIS_IN
+---
 
-    P_ADT_IN --> ADT_SEQ
-    P_ORM_IN --> ORM_SEQ
-    P_LMS_IN --> ORU_SEQ
-    P_RIS_IN --> ORU_SEQ
+## Architectural Principle: Strict Leaf Module Topology
 
-    ADT_SEQ --> Q_EMR_ADT
-    ADT_SEQ --> Q_LMS_ADT
-    ADT_SEQ --> Q_RIS_ADT
-
-    ORM_SEQ -->|OBR-4 Lab| Q_LMS_ORM
-    ORM_SEQ -->|OBR-4 Rad| Q_RIS_ORM
-
-    Q_EMR_ADT -->|PD-05: ADT| EMR
-    Q_LMS_ADT -->|PD-06: ADT| LMS
-    Q_RIS_ADT -->|PD-07: ADT| RIS
-    Q_LMS_ORM -->|PD-08: ORM| LMS
-    Q_RIS_ORM -->|PD-09: ORM| RIS
-```
+Paradeigma is strictly a **test-support and simulation leaf module**:
+- **Allowed Dependency Direction**: `Paradeigma -> Production Harmonia`
+- **Forbidden Dependency Direction**: `Production Harmonia -X-> Paradeigma`
+- **Zero Production Contamination**: No production class imports `net.fhirfactory.harmonia.paradeigma.*`, no production POM declares Paradeigma dependencies, and no production code contains simulation flags (`if (simulationMode)`).
+- **Automated Enforcement**: Enforced at build-time via ArchUnit (`ParadeigmaIsolationArchitectureTest`) and Maven POM dependency checks.
 
 ---
 
 ## Documentation Index
 
+### Provider Registry, Security & Logging
+- [Provider Registry Simulation Guide](docs/provider-registry-simulation.md)
+- [Themis Security Simulation Guide](docs/security-simulation.md)
+- [Dual-Gate PHI Logging Simulation Guide](docs/logging-simulation.md)
+
+### Architecture & Clinical Workflows
 - [Architecture & Design](docs/architecture.md)
 - [Interface Catalogue (PD-01 to PD-09)](docs/interfaces.md)
 - [HL7 Event Specifications](docs/hl7-events.md)

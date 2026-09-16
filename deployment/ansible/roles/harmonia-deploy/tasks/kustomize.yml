@@ -1,0 +1,24 @@
+---
+- name: Ensure temporary deployment directory exists on target host
+  ansible.builtin.file:
+    path: "/tmp/harmonia-deployment/kubernetes"
+    state: directory
+    mode: "0755"
+  become: true
+
+- name: Synchronize Kubernetes declarative manifests to target host
+  ansible.builtin.copy:
+    src: "{{ harmonia_manifests_root }}/"
+    dest: "/tmp/harmonia-deployment/kubernetes/"
+    mode: "0644"
+  become: true
+
+- name: Update image tags in Kustomize overlay if custom tag is specified
+  ansible.builtin.shell: |
+    cd /tmp/harmonia-deployment/kubernetes/environments/{{ harmonia_k8s_environment }}
+    microk8s kubectl kustomize . | \
+      sed "s|localhost:32000/harmonia/\(.*\):1.0.0-SNAPSHOT|{{ harmonia_image_registry }}/{{ harmonia_image_namespace }}/\1:{{ harmonia_image_tag }}|g" | \
+      microk8s kubectl apply --namespace {{ harmonia_namespace }} -f -
+  become: true
+  register: kustomize_apply_result
+  changed_when: "'configured' in kustomize_apply_result.stdout or 'created' in kustomize_apply_result.stdout"

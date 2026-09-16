@@ -1,0 +1,43 @@
+---
+- name: Add deployment user to microk8s group
+  ansible.builtin.user:
+    name: "{{ microk8s_user }}"
+    groups: "{{ microk8s_group }}"
+    append: true
+  become: true
+
+- name: Create .kube configuration directory for deployment user
+  ansible.builtin.file:
+    path: "/home/{{ microk8s_user }}/.kube"
+    state: directory
+    owner: "{{ microk8s_user }}"
+    group: "{{ microk8s_user }}"
+    mode: "0700"
+  become: true
+
+- name: Generate user kubeconfig from MicroK8s
+  ansible.builtin.shell: |
+    microk8s config > /home/{{ microk8s_user }}/.kube/config
+    chown {{ microk8s_user }}:{{ microk8s_user }} /home/{{ microk8s_user }}/.kube/config
+    chmod 0600 /home/{{ microk8s_user }}/.kube/config
+  become: true
+  changed_when: true
+
+- name: Ensure correct ownership on ~/.kube directory
+  ansible.builtin.file:
+    path: "/home/{{ microk8s_user }}/.kube"
+    owner: "{{ microk8s_user }}"
+    group: "{{ microk8s_user }}"
+    recurse: true
+  become: true
+
+- name: Configure convenient shell aliases for kubectl in user profile
+  ansible.builtin.lineinfile:
+    path: "/home/{{ microk8s_user }}/.bashrc"
+    line: "alias kubectl='microk8s kubectl'"
+    state: present
+    create: true
+    owner: "{{ microk8s_user }}"
+    group: "{{ microk8s_user }}"
+    mode: "0644"
+  become: true

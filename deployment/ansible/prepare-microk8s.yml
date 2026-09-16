@@ -1,0 +1,32 @@
+---
+# ==============================================================================
+# Playbook: prepare-microk8s.yml
+# Purpose:  Prepares an Ubuntu host, installs MicroK8s, and configures required add-ons
+# ==============================================================================
+- name: Prepare Ubuntu Reference Host and Provision MicroK8s
+  hosts: microk8s_hosts
+  become: true
+  gather_facts: true
+
+  vars_files:
+    - inventory/group_vars/all.yml
+    - inventory/group_vars/vault.yml
+
+  roles:
+    - role: microk8s
+
+  post_tasks:
+    - name: Display MicroK8s cluster status summary
+      ansible.builtin.command: microk8s status
+      register: final_microk8s_status
+      changed_when: false
+
+    - name: Output status report
+      ansible.builtin.debug:
+        msg:
+          - "========================================================"
+          - "MicroK8s Reference Host Preparation Complete"
+          - "Host: {{ inventory_hostname }} ({{ ansible_host }})"
+          - "Channel: {{ microk8s_channel }}"
+          - "Add-ons Enabled: dns, ingress, hostpath-storage, metrics-server"
+          - "========================================================"

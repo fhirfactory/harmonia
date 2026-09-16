@@ -762,7 +762,8 @@ def generate_odt():
         "appendix-mllp-services.tex",
         "appendix-ergon-module.tex",
         "appendix-praxis-workflow.tex",
-        "appendix-provider-registry.tex"
+        "appendix-provider-registry.tex",
+        "appendix-phi-logging.tex"
     ]
 
     for cfile in chapter_files:

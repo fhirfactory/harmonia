@@ -1,0 +1,111 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: harmonia
+
+resources:
+  - ../../base
+
+patches:
+  - target:
+      kind: StatefulSet
+      name: postgres-1
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: postgres-2
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: postgres-ops-1
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: postgres-ops-2
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: infinispan-1
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: infinispan-2
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: artemis-primary-a
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: artemis-backup-a
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: artemis-primary-b
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+  - target:
+      kind: StatefulSet
+      name: artemis-backup-b
+    patch: |-
+      - op: add
+        path: /spec/volumeClaimTemplates/0/spec/storageClassName
+        value: microk8s-hostpath
+
+images:
+  - name: localhost:32000/harmonia/mnemosyne-clinical
+    newName: localhost:32000/harmonia/mnemosyne-clinical
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/mnemosyne-operations
+    newName: localhost:32000/harmonia/mnemosyne-operations
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/mneme-cluster
+    newName: localhost:32000/harmonia/mneme-cluster
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/ponos-task-processor
+    newName: localhost:32000/harmonia/ponos-task-processor
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/pylai-mllp-in
+    newName: localhost:32000/harmonia/pylai-mllp-in
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/pylai-mllp-out
+    newName: localhost:32000/harmonia/pylai-mllp-out
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/iris-befe
+    newName: localhost:32000/harmonia/iris-befe
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/iris-clinical
+    newName: localhost:32000/harmonia/iris-clinical
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/iris-console
+    newName: localhost:32000/harmonia/iris-console
+    newTag: 1.0.0-SNAPSHOT
+  - name: localhost:32000/harmonia/iris-administration
+    newName: localhost:32000/harmonia/iris-administration
+    newTag: 1.0.0-SNAPSHOT

@@ -1,0 +1,57 @@
+---
+- name: Verify host operating system family is Debian / Ubuntu
+  ansible.builtin.assert:
+    that:
+      - ansible_os_family == "Debian"
+    fail_msg: "Harmonia reference MicroK8s host preparation requires Ubuntu / Debian Linux distribution."
+    success_msg: "Host OS {{ ansible_distribution }} {{ ansible_distribution_version }} validated."
+
+- name: Verify minimum CPU cores
+  ansible.builtin.assert:
+    that:
+      - ansible_processor_vcpus >= ubuntu_min_cpu_cores
+    fail_msg: "Host has {{ ansible_processor_vcpus }} CPU cores. Minimum required is {{ ubuntu_min_cpu_cores }}."
+    success_msg: "Host CPU capacity validated ({{ ansible_processor_vcpus }} cores)."
+  ignore_errors: true
+
+- name: Verify minimum RAM capacity
+  ansible.builtin.assert:
+    that:
+      - (ansible_memtotal_mb / 1024) >= (ubuntu_min_ram_gb - 0.5)
+    fail_msg: "Host RAM is {{ (ansible_memtotal_mb / 1024) | round(1) }} GB. Minimum recommended is {{ ubuntu_min_ram_gb }} GB."
+    success_msg: "Host RAM capacity validated ({{ (ansible_memtotal_mb / 1024) | round(1) }} GB)."
+  ignore_errors: true
+
+- name: Update apt cache and install prerequisite packages
+  ansible.builtin.apt:
+    name:
+      - snapd
+      - iptables
+      - curl
+      - conntrack
+      - socat
+      - ca-certificates
+    state: present
+    update_cache: true
+  become: true
+
+- name: Ensure snapd service is enabled and running
+  ansible.builtin.service:
+    name: snapd
+    state: started
+    enabled: true
+  become: true
+
+- name: Configure Linux kernel parameters for Kubernetes networking
+  ansible.posix.sysctl:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    state: present
+    reload: true
+    sysctl_set: true
+  loop:
+    - { key: 'net.bridge.bridge-nf-call-iptables', value: '1' }
+    - { key: 'net.bridge.bridge-nf-call-ip6tables', value: '1' }
+    - { key: 'net.ipv4.ip_forward', value: '1' }
+  become: true
+  ignore_errors: true

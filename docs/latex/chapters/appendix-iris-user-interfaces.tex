@@ -1,0 +1,527 @@
+%% =============================================================================
+%% chapters/appendix-iris-user-interfaces.tex
+%% Appendix G: Iris Presentation Tier and User Interfaces Specification & User Guide
+%% =============================================================================
+
+\chapter{Iris Presentation Tier and User Interfaces Specification \& User Guide}
+\label{app:iris_interfaces}
+{\textit{\textbf{Architectural Specification, Interface Catalog, and Operational Manual for the Iris Multi-Portal Ecosystem}}}
+
+\section{Presentation Tier Overview \& Architectural Principles}
+\label{sec:iris_overview}
+
+The \textbf{Iris Presentation Tier} provides the unified graphical and interface layer of the Harmonia Health Information Exchange (HIE). Operating as a decoupled, multi-portal presentation environment, Iris delivers tailored, role-specific user interfaces for clinicians, system operations engineers, provider directory administrators, and healthcare practitioners while mediating all backend communication through the \textbf{Iris Backend-For-Frontend (BEFE)} gateway.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-iris-architecture.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 3.2 Component and Interaction View for the Iris Presentation Tier and BEFE Gateway}
+    \label{fig:iris_architecture}
+\end{figure}
+
+\subsection{Multi-Portal Topology and Separation of Concerns}
+
+To guarantee stringent security boundaries, eliminate cognitive clutter, and optimize performance for distinct operational personas, Iris is partitioned into three independent Single-Page Applications (SPAs) developed with TypeScript, Vue 3, and Pinia, complemented by the WildFly-hosted BEFE gateway:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{2.8cm} p{2.2cm} X}
+\toprule
+\textbf{Submodule} & \textbf{Application Type} & \textbf{Network Port} & \textbf{Target Persona \& Core Capabilities} \\
+\midrule
+\texttt{iris-clinical} & Vue 3 SPA & Port 3000 & \textbf{Clinicians \& Care Coordinators}: Longitudinal patient demographics, provider search, location hierarchies, care teams, audit provenance, consent records, and document discovery. \\
+\addlinespace
+\texttt{iris-console} & Vue 3 SPA & Port 3001 & \textbf{Operations \& Systems Engineers}: Real-time ActiveMQ queue telemetry, Infinispan cache topologies, Praxis workflow sequence inspections, and dynamic online route reloads. \\
+\addlinespace
+\texttt{iris-administration} & Vue 3 Dual-Portal & Port 3002 & \textbf{Practitioners \& Directory Administrators}: Self-service profile change requests, role attestations, administrative work queue triage, directory CRUD, data quality audits, and RBAC governance. \\
+\addlinespace
+\texttt{iris-befe} & Jakarta EE 10 / WildFly & Ports 8080 / 8090 & \textbf{Integration Gateway}: Dual-port microprofile gateway providing synchronous FHIR R5 REST endpoints (Port 8080) and dedicated operations socket telemetry (Port 8090). \\
+\bottomrule
+\end{tabularx}
+\caption{Iris Presentation Tier Subsystem and Portal Topology Matrix}
+\label{tab:iris_submodules}
+\end{table}
+
+\subsection{Architectural Principles}
+
+The Iris presentation tier adheres to four core engineering principles:
+
+\begin{principlebox}{1. Strict Domain and Network Port Isolation}
+Clinical FHIR transactions and administrative governance workflows operate over standard JAX-RS REST endpoints on Port 8080, while mission-critical systems operations, broker telemetry, and dynamic sequence reloads execute over a dedicated socket server on Port 8090. Operational spikes or diagnostic queries can never degrade clinical query bandwidth.
+\end{principlebox}
+
+\begin{principlebox}{2. Governed Change Lifecycle over Direct Mutation}
+User interfaces never execute direct synchronous mutations against authoritative provider directory storage. All creations, updates, and attestations submitted via \texttt{iris-administration} are wrapped into canonical \texttt{ProviderRegistryChangePragma} envelopes, queued asynchronously via Petasos, and subjected to automated referential validation and administrative review.
+\end{principlebox}
+
+\begin{principlebox}{3. Zero-Trust Client-Side RBAC \& Visual Security Badging}
+Every route transition in the Iris SPAs is intercepted by Themis-aware navigation guards. Views conditionally render visual \texttt{SecurityBadge} indicators displaying active security contexts (e.g. \texttt{CONFIDENTIALITY: RESTRICTED}, \texttt{AUTHORITY: provider.admin}), preventing unauthorized command dispatch before edge gateway evaluation.
+\end{principlebox}
+
+\begin{principlebox}{4. Reactive State Hydration with Pinia Stores}
+Component state is cleanly decoupled from presentation logic using modular Pinia stores. Stores manage asynchronous fetch lifecycles, optimistic caching, pagination cursors, and active search filters, ensuring instantaneous UI reactivity and resilient error boundary containment.
+\end{principlebox}
+
+% =============================================================================
+% SECTION G.2: IRIS BEFE DUAL-PORT GATEWAY SPECIFICATION
+% =============================================================================
+\section{Iris BEFE Dual-Port Gateway Specification}
+\label{sec:iris_befe_spec}
+
+The \textbf{Iris Backend-For-Frontend (BEFE)} module (\texttt{iris/iris-befe}) is a high-performance Jakarta EE 10 gateway hosted within the Harmonia WildFly application server runtime. It provides translation, aggregation, security policy enforcement, and caching between the browser SPAs and the underlying Harmonia distributed tier.
+
+\subsection{Dual-Port Architecture: Port 8080 vs Port 8090}
+
+BEFE implements an architectural duality separating public clinical services from operational management:
+
+\begin{itemize}
+    \item \textbf{Clinical FHIR REST Gateway (Port 8080)}: Standard Jakarta RESTful Web Services (JAX-RS 3.1) application activated via \texttt{net.fhirfactory.harmonia.befe.config.JaxRsActivator} at root path \texttt{/api/v1}. It mediates all clinical FHIR R5 resource requests, using the \texttt{FhirCacheService} and HotRod clients to query the \texttt{Mneme} Infinispan distributed cache grid.
+    \item \textbf{Dedicated Operations HTTP Server (Port 8090)}: A lightweight, non-blocking socket server managed by \texttt{OperationsServerManager}. It isolates operational diagnostics, queue depth telemetry, and dynamic Praxis workflow reload commands from JAX-RS connection pools and clinical request threads.
+\end{itemize}
+
+\subsection{BEFE JAX-RS Resource Endpoints (Port 8080)}
+
+Table~\ref{tab:befe_clinical_endpoints} catalogs the core clinical and provider directory endpoints hosted on Port 8080.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{3.5cm} X}
+\toprule
+\textbf{HTTP Verb} & \textbf{Path} & \textbf{Required Authority} & \textbf{Description \& Response} \\
+\midrule
+\texttt{GET} & \texttt{/api/v1/Person} & \texttt{provider.read} & Search \texttt{Person} resources by name, identifier, or active status. Returns FHIR \texttt{Bundle}. \\
+\texttt{GET} & \texttt{/api/v1/Practitioner} & \texttt{provider.read} & Query \texttt{Practitioner} directory entries with HPI-I/AHPRA filter parameters. \\
+\texttt{GET} & \texttt{/api/v1/PractitionerRole} & \texttt{provider.read} & Traverse practitioner-to-organization affiliations, specialty codes, and locations. \\
+\texttt{GET} & \texttt{/api/v1/Organization} & \texttt{provider.read} & List healthcare provider organizations, hospital trusts, and departmental units. \\
+\texttt{GET} & \texttt{/api/v1/Location} & \texttt{provider.read} & Retrieve facility hierarchy nodes (jurisdiction, hospital, building, ward, bed). \\
+\texttt{GET} & \texttt{/api/v1/HealthcareService} & \texttt{provider.read} & Retrieve specialized clinical service offerings and operating hours. \\
+\texttt{GET} & \texttt{/api/v1/Group} & \texttt{provider.read} & Discover care teams, clinical specialty rosters, and multidisciplinary units. \\
+\texttt{GET} & \texttt{/api/v1/Provenance} & \texttt{themis.audit} & Retrieve cryptographic audit provenance chains and digital signatures. \\
+\texttt{GET} & \texttt{/api/v1/AuditEvent} & \texttt{themis.audit} & Query longitudinal security and data access event logs. \\
+\texttt{GET} & \texttt{/api/v1/Consent} & \texttt{consent.read} & Inspect patient privacy directives, opt-in/opt-out status, and sharing provisions. \\
+\texttt{GET} & \texttt{/api/v1/Task} & \texttt{provider.read} & Poll asynchronous governed change request processing status. \\
+\texttt{POST} & \texttt{/api/v1/Task} & \texttt{provider.change.submit} & Submit new governed profile change request envelope. Returns \texttt{HTTP 202 Accepted}. \\
+\texttt{GET} & \texttt{/api/v1/Communication} & \texttt{comm.read} & Retrieve clinical notification dispatches and secure message receipts. \\
+\texttt{GET} & \texttt{/api/v1/DocumentReference} & \texttt{doc.read} & Query clinical document manifests and CDA/FHIR attachment pointers. \\
+\bottomrule
+\end{tabularx}
+\caption{Iris BEFE Clinical JAX-RS REST Endpoint Catalog (Port 8080)}
+\label{tab:befe_clinical_endpoints}
+\end{table}
+
+\subsection{Operations Server Endpoints (Port 8090)}
+
+The \texttt{OperationsServerManager} listens on \texttt{0.0.0.0:8090} and dispatches requests to dedicated telemetry producers:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{3.2cm} X}
+\toprule
+\textbf{HTTP Verb} & \textbf{Path} & \textbf{Payload / Query} & \textbf{Operations Function} \\
+\midrule
+\texttt{GET} & \texttt{/api/operations/status} & None & Returns JSON status map of all Harmonia subsystems, JVM memory, and uptime. \\
+\texttt{GET} & \texttt{/api/operations/sequences} & None & Lists all registered Praxis workflow sequence definitions and metadata. \\
+\texttt{GET} & \texttt{/api/operations/sequences/\{id\}} & Path: Sequence ID & Returns full sequence topology, including Ergon step chains and execution metrics. \\
+\texttt{POST} & \texttt{/api/operations/sequences/\{id\}/reload} & JSON reload options & Triggers online dynamic reload of the specified Praxis sequence pipeline in Ponos. \\
+\texttt{GET} & \texttt{/api/operations/queues} & None & Telemetry feed for ActiveMQ Artemis queues (queue depths, message rates, consumer counts). \\
+\texttt{GET} & \texttt{/api/operations/caches} & None & Telemetry feed for Infinispan cache clusters (entry counts, eviction rates, memory use). \\
+\bottomrule
+\end{tabularx}
+\caption{Iris BEFE Operations Management Endpoint Catalog (Port 8090)}
+\label{tab:befe_ops_endpoints}
+\end{table}
+
+\subsection{CORS and Security Headers}
+
+BEFE enforces strict Cross-Origin Resource Sharing (CORS) rules through \texttt{net.fhirfactory.harmonia.befe.config.CorsFilter}. The filter validates origin headers against configured whitelist patterns (\texttt{http://localhost:3000}, \texttt{http://localhost:3001}, \texttt{http://localhost:3002}, or production domain configurations), injecting the necessary response headers:
+
+\begin{lstlisting}[language=Java, caption={BEFE CORS Header Management (CorsFilter.java)}]
+@Provider
+@PreMatching
+public class CorsFilter implements ContainerResponseFilter {
+    @Override
+    public void filter(ContainerRequestContext requestContext, 
+                       ContainerResponseContext responseContext) {
+        responseContext.getHeaders().add("Access-Control-Allow-Origin", 
+            requestContext.getHeaderString("Origin") != null ? 
+            requestContext.getHeaderString("Origin") : "*");
+        responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
+        responseContext.getHeaders().add("Access-Control-Allow-Headers", 
+            "origin, content-type, accept, authorization, x-correlation-id, x-requested-with");
+        responseContext.getHeaders().add("Access-Control-Allow-Methods", 
+            "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+        responseContext.getHeaders().add("Access-Control-Max-Age", "1209600");
+    }
+}
+\end{lstlisting}
+
+% =============================================================================
+% SECTION G.3: IRIS CLINICAL PORTAL SPECIFICATION & USER GUIDE
+% =============================================================================
+\section{Iris Clinical Portal (\texttt{iris-clinical}) Specification \& User Guide}
+\label{sec:iris_clinical_guide}
+
+The \textbf{Iris Clinical Portal} (\texttt{iris/iris-clinical}) is designed for clinical practitioners, care coordinators, and medical ward clerks. Operating on Port 3000, it enables rapid search, exploration, and verification of patient records, provider registries, location trees, and clinical provenance trails.
+
+\subsection{Component Topology and Layout Architecture}
+
+The SPA is structured around a responsive viewport comprising:
+\begin{enumerate}
+    \item \textbf{Top Navigation Bar}: Contains the global patient/provider quick search box, active facility context selector, system notification indicator, and current authenticated user badge with security clearance level.
+    \item \textbf{Collapsible Context Sidebar}: Provides direct navigation across clinical domains, grouping routes into \textit{Identity \& Demographics}, \textit{Provider Directory}, \textit{Governance \& Consent}, and \textit{Clinical Exchange}.
+    \item \textbf{Main Workspace Viewport}: Hosts the active Vue Router component, complete with responsive data tables, detail flyouts, and breadcrumb navigation.
+\end{enumerate}
+
+\subsection{Comprehensive Clinical View Catalog}
+
+\texttt{iris-clinical} provides 13 dedicated views mapped to Vue components in \texttt{src/views/}:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{3.2cm} X}
+\toprule
+\textbf{View Name} & \textbf{Route Path} & \textbf{FHIR Resource} & \textbf{Clinical Workflow Function} \\
+\midrule
+\texttt{DashboardView} & \texttt{/} & Summary Metrics & Overview of platform activity, recent queries, urgent clinical notifications, and favorite practitioner shortcuts. \\
+\texttt{PersonView} & \texttt{/persons} & \texttt{Person} & Search and review patient master index identities, merged records, and cross-system identifier links. \\
+\texttt{PractitionerListView} & \texttt{/practitioners} & \texttt{Practitioner} & Search registered clinicians by name, identifier, specialty, and credential status with full profile inspection. \\
+\texttt{OrganizationView} & \texttt{/organizations} & \texttt{Organization} & Explore hospital networks, clinics, and diagnostic labs with parent-child relationship visualizers. \\
+\texttt{LocationHierarchyView} & \texttt{/locations} & \texttt{Location} & Navigate interactive tree structures of physical facilities from regional jurisdiction down to specific hospital beds. \\
+\texttt{HealthcareServiceView} & \texttt{/services} & \texttt{HealthcareService} & Directory of clinical services (e.g. Cardiology, Radiology) with operating hours, eligibility, and referral paths. \\
+\texttt{GroupManagementView} & \texttt{/groups} & \texttt{Group} & Inspect and manage multidisciplinary care teams, clinical committees, and on-call specialist groups. \\
+\texttt{ProvenanceView} & \texttt{/provenance} & \texttt{Provenance} & Audit the origin, lifecycle transitions, and cryptographic signatures of modified clinical documents. \\
+\texttt{AuditEventView} & \texttt{/audit} & \texttt{AuditEvent} & Review longitudinal access logs, security checks, and data export events for compliance auditing. \\
+\texttt{ConsentView} & \texttt{/consent} & \texttt{Consent} & Review patient consent directives, privacy restrictions, and disclosure rules governing medical record access. \\
+\texttt{TaskView} & \texttt{/tasks} & \texttt{Task} & Track clinical orders, lab fulfillments, and asynchronous workflow execution states. \\
+\texttt{CommunicationView} & \texttt{/communication} & \texttt{Communication} & In-basket for urgent clinical alerts, lab panic results, and secure direct messages. \\
+\texttt{DocumentReferenceView} & \texttt{/documents} & \texttt{DocumentReference} & Query and view clinical discharge summaries, lab reports, and CDA/PDF documents. \\
+\bottomrule
+\end{tabularx}
+\caption{Iris Clinical Portal View Matrix and FHIR Resource Mapping}
+\label{tab:clinical_views}
+\end{table}
+
+\subsection{Pinia State Management: Clinical Store Pattern}
+
+The clinical portal utilizes Pinia stores to manage asynchronous fetch operations, pagination cursors, and local caching. The listing below illustrates the reactive store pattern utilized across all clinical views:
+
+\begin{lstlisting}[language=Java, caption={TypeScript Pinia Store Pattern for Clinical Entities (stores/clinicalStore.ts)}]
+import { defineStore } from 'pinia';
+import axios from 'axios';
+
+const BEFE_API_URL = import.meta.env.VITE_BEFE_API_URL || 'http://localhost:8080/api/v1';
+
+export const useClinicalStore = defineStore('clinical', {
+  state: () => ({
+    practitioners: [] as any[],
+    selectedPractitioner: null as any | null,
+    loading: false,
+    error: null as string | null,
+    searchFilter: {
+      name: '',
+      identifier: '',
+      activeOnly: true
+    }
+  }),
+  actions: {
+    async fetchPractitioners() {
+      this.loading = true;
+      this.error = null;
+      try {
+        const params: any = {};
+        if (this.searchFilter.name) params.name = this.searchFilter.name;
+        if (this.searchFilter.identifier) params.identifier = this.searchFilter.identifier;
+        if (this.searchFilter.activeOnly) params.active = 'true';
+
+        const response = await axios.get(`${BEFE_API_URL}/Practitioner`, { params });
+        this.practitioners = response.data.entry?.map((e: any) => e.resource) || [];
+      } catch (err: any) {
+        this.error = err.response?.data?.message || err.message;
+      } finally {
+        this.loading = false;
+      }
+    }
+  }
+});
+\end{lstlisting}
+
+% =============================================================================
+% SECTION G.4: IRIS OPERATIONS CONSOLE SPECIFICATION & USER GUIDE
+% =============================================================================
+\section{Iris Operations Console (\texttt{iris-console}) Specification \& User Guide}
+\label{sec:iris_console_guide}
+
+The \textbf{Iris Operations Console} (\texttt{iris/iris-console}) is the systems administration and workflow orchestration dashboard operating on Port 3001. Built for Site Reliability Engineers (SREs), integration engineers, and DevOps personnel, it delivers deep real-time observability and dynamic control over the Harmonia runtime.
+
+\subsection{Operational Views and Real-Time Telemetry}
+
+\texttt{iris-console} organizes platform operations into six specialized views:
+
+\begin{enumerate}
+    \item \textbf{Operations Dashboard (\texttt{/})}: Visualizes high-level platform health, JVM memory allocation, ActiveMQ aggregate throughput (messages/sec), active Camel route counts, and active alert banners.
+    \item \textbf{Task Sequence List (\texttt{/sequences})}: Catalog of all registered Praxis workflow sequence definitions (e.g. \texttt{seq-patient-demographics-enrichment}, \texttt{seq-provider-registry-change-pipeline}), showing execution count, average latency, and error rates.
+    \item \textbf{Task Sequence Detail (\texttt{/sequences/:id})}: Interactive graph visualizer detailing individual Ergon steps, checkpoint history, Camel route IDs, and the \textbf{Reload Sequence} trigger button.
+    \item \textbf{Operations Data View (\texttt{/operations-data})}: Live inspector for raw diagnostic payloads, system metric counters, and JVM garbage collection statistics.
+    \item \textbf{Messaging Queues View (\texttt{/queues})}: Live monitor for Apache ActiveMQ Artemis broker queues. Displays per-queue message depth, consumer counts, acknowledging rate, and Dead-Letter Queue (DLQ) alerts.
+    \item \textbf{Cache Cluster View (\texttt{/caches})}: Live Infinispan cache cluster monitor. Displays cache topology (distributed vs replicated), node cluster membership, total entries in \texttt{tasksequence-cache} and \texttt{pragma-cache}, memory utilization, and hit/miss ratios.
+\end{enumerate}
+
+\subsection{Dynamic Praxis Sequence Reload Mechanics}
+
+A primary operational capability of \texttt{iris-console} is the ability to hot-reload workflow pipelines without restarting WildFly or dropping in-flight messages. When an engineer modifies a Praxis JSON sequence definition or deploys an updated Ergon bean:
+
+\begin{figure}[htbp]
+\centering
+\begin{archinote}
+\textbf{Sequence Reload Step-by-Step Procedure}:
+\begin{enumerate}
+    \item The operator navigates to \texttt{/sequences/seq-provider-registry-change-pipeline}.
+    \item The console queries BEFE Port 8090 (\texttt{GET /api/operations/sequences/seq-provider-registry-change-pipeline}) to retrieve current runtime metrics and active route IDs.
+    \item The operator clicks \textbf{Reload Sequence Pipeline}.
+    \item The console dispatches \texttt{POST /api/operations/sequences/seq-provider-registry-change-pipeline/reload} to BEFE Port 8090.
+    \item BEFE's \texttt{OperationsServerManager} forwards the command to Ponos's \texttt{TaskSequenceLoader}.
+    \item Ponos suspends the Camel route consumer, re-reads the sequence definition from Infinispan \texttt{tasksequence-cache}, resolves updated CDI Ergon beans, rebuilds the Camel route graph, and resumes message ingestion within 250 milliseconds.
+    \item The console updates the UI badge to \texttt{STATUS: RELOADED} and displays the new route generation timestamp.
+\end{enumerate}
+\end{archinote}
+\caption{Dynamic Sequence Reload Procedure via Iris Console}
+\label{fig:sequence_reload_box}
+\end{figure}
+
+% =============================================================================
+% SECTION G.5: IRIS PROVIDER ADMINISTRATION SPECIFICATION & USER GUIDE
+% =============================================================================
+\section{Iris Provider Administration (\texttt{iris-administration}) Specification \& User Guide}
+\label{sec:iris_admin_guide}
+
+The \textbf{Iris Provider Administration} portal (\texttt{iris/iris-administration}) is a dual-portal application operating on Port 3002. It serves both individual healthcare providers through a \textbf{Self-Service Portal} and credentialing staff through a \textbf{Departmental Administration Portal}.
+
+\subsection{Dual-Portal Architecture and Route Guarding}
+
+The portal dynamically presents navigation menus and available actions based on authenticated Themis authorities:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l p{3.2cm} X}
+\toprule
+\textbf{Portal Mode} & \textbf{Route Path} & \textbf{Required Authority} & \textbf{Workflow Purpose} \\
+\midrule
+\multicolumn{4}{l}{\textbf{Provider Self-Service Portal}} \\
+\midrule
+My Details & \texttt{/self-service/my-details} & \texttt{provider.read} & Practitioner inspects own demographic profile, qualifications, identifiers, and languages. \\
+My Roles & \texttt{/self-service/my-roles} & \texttt{provider.read} & Review organization affiliations, specialty roles, and clinical locations. \\
+My Organizations & \texttt{/self-service/my-organizations} & \texttt{provider.read} & View managing organization hierarchy and departmental contacts. \\
+My Locations & \texttt{/self-service/my-locations-services} & \texttt{provider.read} & Review physical facility assignments and clinical service offerings. \\
+My Endpoints & \texttt{/self-service/my-endpoints} & \texttt{provider.read} & Verify electronic communication endpoints and secure messaging addresses. \\
+My Requests & \texttt{/self-service/my-requests} & \texttt{provider.read} & Track submitted profile change requests, current review status, and reviewer notes. \\
+Request Change & \texttt{/self-service/request-change} & \texttt{provider.change.submit} & Interactive form to submit updates to address, phone, qualifications, or roles. \\
+\midrule
+\multicolumn{4}{l}{\textbf{Departmental Administration Portal}} \\
+\midrule
+Admin Dashboard & \texttt{/admin/dashboard} & \texttt{provider.admin} & High-level directory statistics, pending work queue counts, and data quality alerts. \\
+Work Queue & \texttt{/admin/work-queue} & \texttt{provider.admin} & Triage, diff review, and approval/rejection of practitioner change requests. \\
+Provider Search & \texttt{/admin/search} & \texttt{provider.search} & Advanced enterprise search across all practitioners, roles, and organizations. \\
+Entity Admin & \texttt{/admin/practitioners} & \texttt{provider.admin} & Full administrative CRUD operations for \texttt{Practitioner} entities. \\
+Role Admin & \texttt{/admin/roles} & \texttt{provider.admin} & Authoritative management of \texttt{PractitionerRole} associations. \\
+Organization Admin & \texttt{/admin/organizations} & \texttt{provider.admin} & Directory management of hospital entities, clinics, and hierarchies. \\
+Location Admin & \texttt{/admin/locations} & \texttt{provider.admin} & Administration of physical healthcare sites, wards, and room mappings. \\
+Service Admin & \texttt{/admin/services} & \texttt{provider.admin} & Configuration of clinical offerings, eligibility criteria, and delivery hours. \\
+Endpoint Admin & \texttt{/admin/endpoints} & \texttt{provider.admin} & Configuration of technical endpoints, TLS certificates, and messaging routes. \\
+Group Admin & \texttt{/admin/groups} & \texttt{provider.admin} & Maintenance of care teams, on-call lists, and clinical groups. \\
+Data Quality & \texttt{/admin/data-quality} & \texttt{provider.admin} & Automated referential orphan detection and duplicate identifier scanner. \\
+Themis Security & \texttt{/admin/security} & \texttt{themis.admin} & User role assignment, authority mapping, and security audit inspection. \\
+Audit Governance & \texttt{/admin/governance} & \texttt{themis.audit} & Complete cryptographic audit trail review for all directory modifications. \\
+\bottomrule
+\end{tabularx}
+\caption{Iris Provider Administration Portal Route and Authority Matrix}
+\label{tab:admin_routes}
+\end{table}
+
+\subsection{The Governed Change Workflow Lifecycle}
+
+Modifications submitted by practitioners or administrators follow a deterministic asynchronous workflow:
+
+\begin{enumerate}
+    \item \textbf{Submission (\texttt{RequestChangeView.vue})}: The practitioner modifies contact details or adds a new practice location. Submitting the form generates a JSON change proposal and dispatches \texttt{POST /api/v1/Task} to BEFE.
+    \item \textbf{Pragma Envelope Creation}: BEFE constructs a \texttt{ProviderRegistryChangePragma} with state \texttt{RECEIVED}, assigns a unique UUID, and returns \texttt{HTTP 202 Accepted} with \texttt{Location: /Task/\{id\}}.
+    \item \textbf{Automated Pre-Validation}: Ponos executes the first phase of \texttt{seq-provider-registry-change-pipeline}, verifying identifier syntax, active status of referenced organizations, and lack of duplicate records. If valid, the task transitions to \texttt{PENDING\_REVIEW}.
+    \item \textbf{Work Queue Triage (\texttt{WorkQueueView.vue})}: A credentialing administrator opens the task, inspects the side-by-side visual diff (highlighting modified fields in green and deprecated fields in red), and evaluates supporting credential documents.
+    \item \textbf{Approval / Rejection}:
+    \begin{itemize}
+        \item If \textbf{Approved}: The admin clicks \textit{Approve Changes}. BEFE updates the Pragma to \texttt{APPROVED}. Ponos executes the commit phase, writing the updated resource to Mnemosyne PostgreSQL with an incremented \texttt{version\_id}, and sets the Pragma to \texttt{COMPLETED}.
+        \item If \textbf{Rejected}: The admin enters a rejection rationale. The Pragma transitions to \texttt{REJECTED}, and a notification appears in the practitioner's \textit{My Requests} view.
+    \end{itemize}
+\end{enumerate}
+
+% =============================================================================
+% SECTION G.6: THEMIS SECURITY & RBAC INTEGRATION
+% =============================================================================
+\section{Themis Security \& RBAC Integration}
+\label{sec:iris_themis_security}
+
+All Iris presentation applications integrate natively with the \textbf{Themis Policy Evaluation Engine}. Security is enforced through a multi-layered defense-in-depth model spanning the browser UI, route navigation guards, and backend BEFE interceptors.
+
+\subsection{Themis Authority Scopes}
+
+Access is governed by granular Themis authority strings:
+
+\begin{itemize}
+    \item \texttt{provider.read}: Read-only query access to public practitioner, location, organization, and service directory records.
+    \item \texttt{provider.search}: Advanced search and multi-criteria query capabilities across directory entities.
+    \item \texttt{provider.change.submit}: Permission to author and submit change proposals via the self-service portal.
+    \item \texttt{provider.admin}: Comprehensive directory administration authority, including work queue triage, direct entity editing, and data quality remediation.
+    \item \texttt{themis.admin}: Administrative access to security policies, role-to-authority mappings, and user account provisioning.
+    \item \texttt{themis.audit}: Access to non-redacted cryptographic audit logs, provenance chains, and system access histories.
+    \item \texttt{ops.read} / \texttt{ops.admin}: Telemetry inspection and dynamic sequence reload authority on Port 8090.
+\end{itemize}
+
+\subsection{Client-Side Router Navigation Guards}
+
+Every SPA registers global Vue Router navigation guards to prevent unauthorized route activation:
+
+\begin{lstlisting}[language=Java, caption={Vue Router Navigation Guard with Themis Authorities (router/index.ts)}]
+router.beforeEach(async (to, from, next) => {
+  const securityStore = useSecurityStore();
+
+  // 1. Ensure security context is initialized
+  if (!securityStore.initialized) {
+    await securityStore.initializeSecurity();
+  }
+
+  // 2. Check for required authority
+  const requiredAuth = to.meta.requiredAuthority as string | undefined;
+  if (requiredAuth && !securityStore.hasAuthority(requiredAuth)) {
+    console.warn(`Access Denied: Missing authority '${requiredAuth}' for route '${to.path}'`);
+    return next({ name: 'AccessDenied' });
+  }
+
+  // 3. Check for specific self-service requirements
+  if (to.meta.requiresSelfService && !securityStore.isProviderAuthenticated) {
+    return next({ name: 'AccessDenied' });
+  }
+
+  next();
+});
+\end{lstlisting}
+
+\subsection{Visual Security Badging}
+
+To ensure complete transparency regarding the active security context, Iris components embed the \texttt{SecurityBadge.vue} component in page headers. The badge displays:
+\begin{itemize}
+    \item Current active user identity and HPI-I identifier.
+    \item Granted Themis role and authority pill tags.
+    \item Confidentiality classification banner (e.g. \texttt{CONFIDENTIALITY: NORMAL} vs \texttt{CONFIDENTIALITY: RESTRICTED}).
+\end{itemize}
+
+% =============================================================================
+% SECTION G.7: CONCRETE OPERATIONAL EXAMPLES & WALKTHROUGHS
+% =============================================================================
+\section{Concrete Operational Examples \& Step-by-Step Walkthroughs}
+\label{sec:iris_examples}
+
+This section provides three concrete, end-to-end operational scenarios demonstrating the real-world utility of the Iris user interfaces and BEFE gateway.
+
+\subsection{Example 1: Clinician Locating an On-Call Specialist and Endpoint}
+
+\textbf{Scenario}: Dr. Sarah Jenkins (Cardiologist) needs to locate the on-call specialist for Acute Pediatric Neurology at St. Jude Hospital and obtain their direct FHIR electronic messaging endpoint.
+
+\begin{enumerate}
+    \item \textbf{User Interaction}: Dr. Jenkins opens \texttt{iris-clinical} (\texttt{http://localhost:3000}), clicks \textbf{Healthcare Services} in the sidebar, and filters by \textit{Specialty: Pediatric Neurology} and \textit{Location: St. Jude Hospital}.
+    \item \textbf{BEFE Request}: The portal executes a REST query to BEFE Port 8080:
+\begin{lstlisting}[caption={HTTP Request to Query Healthcare Services}]
+GET /api/v1/HealthcareService?service-type=pediatric-neurology&organization=org-st-jude-01 HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer eyJhbGciOi...
+Accept: application/fhir+json
+\end{lstlisting}
+    \item \textbf{BEFE Response}: BEFE returns the matching \texttt{HealthcareService} and linked \texttt{PractitionerRole} and \texttt{Endpoint} references:
+\begin{lstlisting}[caption={FHIR R5 Bundle Returned by BEFE}]
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "hcs-ped-neuro-01",
+        "active": true,
+        "providedBy": { "reference": "Organization/org-st-jude-01", "display": "St Jude Childrens Hospital" },
+        "category": [ { "coding": [ { "code": "neurology", "display": "Pediatric Neurology" } ] } ],
+        "location": [ { "reference": "Location/loc-st-jude-bld-b", "display": "Building B, Ward 4" } ],
+        "endpoint": [ { "reference": "Endpoint/ep-secure-msg-09", "display": "Direct Secure Messaging REST" } ]
+      }
+    }
+  ]
+}
+\end{lstlisting}
+    \item \textbf{UI Visualization}: The portal displays the active on-call physician (Dr. Robert Chen), the physical ward location, and a direct button to dispatch a clinical consultation communication.
+\end{enumerate}
+
+\subsection{Example 2: Operations Engineer Diagnosing Backpressure and Triggering Reload}
+
+\textbf{Scenario}: Systems Engineer Alex Rivera detects backpressure in the ActiveMQ Artemis queue \texttt{harmonia.mllp.inbound.v2} and observes that the transformation Ergon is timing out due to an outdated sequence configuration.
+
+\begin{enumerate}
+    \item \textbf{Queue Inspection}: Alex opens \texttt{iris-console} (\texttt{http://localhost:3001}), navigates to \textbf{Messaging Queues}, and inspects \texttt{harmonia.mllp.inbound.v2}, noting \texttt{messageCount: 412} and \texttt{consumerCount: 4}.
+    \item \textbf{Sequence Inspection}: Alex navigates to \textbf{Task Sequences} and selects \texttt{seq-mllp-inbound-adt}. The sequence detail view indicates that step 2 (\texttt{ergon-mllp-v2-parser}) is executing version 1.0.1.
+    \item \textbf{Sequence Reload Dispatch}: After deploying the patched sequence definition to Infinispan, Alex clicks \textbf{Reload Sequence Pipeline}. The console dispatches an HTTP POST request to Port 8090:
+\begin{lstlisting}[caption={HTTP POST Request to Operations Server (Port 8090)}]
+POST /api/operations/sequences/seq-mllp-inbound-adt/reload HTTP/1.1
+Host: localhost:8090
+Content-Type: application/json
+
+{
+  "reason": "Update parser ergon step to v1.0.2 to handle corrupt OBX segments",
+  "requestedBy": "arivera"
+}
+\end{lstlisting}
+    \item \textbf{Operations Server Response}: The server responds immediately with the reload status:
+\begin{lstlisting}[caption={Operations Server Reload Response Payload}]
+{
+  "status": "SUCCESS",
+  "sequenceId": "seq-mllp-inbound-adt",
+  "reloadTimestamp": "2026-09-16T15:10:00Z",
+  "activeRouteId": "route-mllp-inbound-adt-v2",
+  "reloadedErga": ["ergon-mllp-v2-parser", "ergon-fhir-converter"],
+  "message": "Sequence pipeline successfully recompiled and restarted in 184ms"
+}
+\end{lstlisting}
+    \item \textbf{Telemetry Verification}: In the \textbf{Messaging Queues} view, the queue depth drops from 412 to 0 within 8 seconds as the updated pipeline processes the backlog.
+\end{enumerate}
+
+\subsection{Example 3: Practitioner Requesting Address Change and Admin Approval}
+
+\textbf{Scenario}: Dr. Marcus Vance moves his clinical practice to a new medical centre and submits a change request via the Self-Service Portal, which is subsequently approved by the directory administrator.
+
+\begin{enumerate}
+    \item \textbf{Change Submission}: Dr. Vance logs into \texttt{iris-administration} (\texttt{http://localhost:3002}) as a self-service user. Under \textbf{Request Change}, he selects his \texttt{PractitionerRole/prr-vance-cardio}, enters the new clinic address (\textit{450 Health Avenue, Suite 200}), and clicks \textbf{Submit Change Request}.
+    \item \textbf{Task Dispatch}: The SPA issues a \texttt{POST /api/v1/Task} request to BEFE:
+\begin{lstlisting}[caption={Governed Change Request Submission Payload}]
+{
+  "resourceType": "Task",
+  "status": "requested",
+  "intent": "proposal",
+  "code": { "coding": [ { "code": "update-practitioner-role" } ] },
+  "focus": { "reference": "PractitionerRole/prr-vance-cardio" },
+  "requester": { "reference": "Practitioner/prac-vance-01", "display": "Dr. Marcus Vance" },
+  "input": [
+    {
+      "type": { "text": "Proposed Changes" },
+      "valueString": "{\"address\": {\"line\": [\"450 Health Avenue, Suite 200\"], \"city\": \"Metro City\", \"postalCode\": \"3000\"}}"
+    }
+  ]
+}
+\end{lstlisting}
+    \item \textbf{Work Queue Triage}: Administrator Elena Rostova logs into \texttt{iris-administration} with \texttt{provider.admin} authority, opens the \textbf{Work Queue}, and selects Task \texttt{task-prr-change-8821}.
+    \item \textbf{Diff Review and Approval}: The portal displays the existing clinic address next to the proposed clinic address with highlighted diff indicators. Elena clicks \textbf{Approve and Commit}.
+    \item \textbf{Asynchronous Commit}: BEFE updates the Pragma state to \texttt{APPROVED}. Ponos commits the updated \texttt{PractitionerRole} resource to Mnemosyne PostgreSQL, incrementing its version from 2 to 3.
+    \item \textbf{Status Propagation}: Dr. Vance receives an approval alert in his \textbf{My Requests} view, and the new address is immediately searchable in \texttt{iris-clinical}.
+\end{enumerate}

@@ -1,0 +1,18 @@
+---
+- name: Query retained PersistentVolumeClaims
+  ansible.builtin.command: >
+    microk8s kubectl get pvc --namespace {{ harmonia_namespace }} --no-headers
+  register: retained_pvcs
+  failed_when: false
+  changed_when: false
+  become: true
+
+- name: Report retained persistent data volumes
+  ansible.builtin.debug:
+    msg:
+      - "========================================================"
+      - "SAFE UNDEPLOYMENT COMPLETE: Persistent Data Retained"
+      - "Harmonia compute workloads, services, and ingress removed."
+      - "The following PersistentVolumeClaims remain intact:"
+      - "{{ retained_pvcs.stdout_lines | default(['No PVCs found']) }}"
+      - "========================================================"
