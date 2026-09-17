@@ -94,7 +94,7 @@ public class ParadeigmaIsolationArchitectureTest {
         Path projectRoot = findProjectRoot();
         List<Path> productionJavaFiles = new ArrayList<>();
 
-        String[] productionModules = {"calliope", "themis", "hestia", "iris", "pylai", "energeia", "petasos"};
+        String[] productionModules = {"calliope", "themis", "hestia", "iris", "pylai", "energeia", "petasos", "agora"};
         for (String module : productionModules) {
             Path moduleSrc = projectRoot.resolve(module);
             if (Files.exists(moduleSrc)) {
@@ -135,7 +135,8 @@ public class ParadeigmaIsolationArchitectureTest {
                 projectRoot.resolve("iris/iris-console/pom.xml"),
                 projectRoot.resolve("hestia/hie-operations-cli/pom.xml"),
                 projectRoot.resolve("pylai/pylai-mllp-cli/pom.xml"),
-                projectRoot.resolve("energeia/ponos-cli/pom.xml")
+                projectRoot.resolve("energeia/ponos-cli/pom.xml"),
+                projectRoot.resolve("agora/agora-service/pom.xml")
         );
 
         for (Path pomPath : deploymentPoms) {
@@ -150,12 +151,15 @@ public class ParadeigmaIsolationArchitectureTest {
 
     private Path findProjectRoot() {
         Path current = Paths.get(".").toAbsolutePath().normalize();
-        while (current != null && !Files.exists(current.resolve("pom.xml"))) {
+        while (current != null) {
+            if (Files.exists(current.resolve("pom.xml"))
+                    && Files.exists(current.resolve("paradeigma"))
+                    && Files.exists(current.resolve("calliope"))) {
+                return current;
+            }
             current = current.getParent();
         }
-        if (current != null && Files.exists(current.resolve("paradeigma")) && Files.exists(current.resolve("calliope"))) {
-            return current;
-        }
-        return Paths.get("/Users/markhunter/Development/SourceCode/Projects/github/harmonia");
+        throw new IllegalStateException("Could not determine Harmonia repository root from working directory: "
+                + Paths.get(".").toAbsolutePath().normalize());
     }
 }

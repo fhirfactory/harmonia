@@ -1,0 +1,48 @@
+%% =============================================================================
+%% diagrams/fig-petasos-artemis-ha.tex
+%% Apache ActiveMQ Artemis HA Clustering & Journal Replication Topology
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 4.4) rectangle (7.4, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Replication Pair: Group A};
+
+    \draw[archi-plate-bg] (8.2, 4.4) rectangle (16.4, 9.4);
+    \node[archi-plate-title] at (8.4, 9.2) {Replication Pair: Group B};
+
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (16.4, 3.6);
+    \node[archi-plate-title] at (-0.6, 3.4) {Petasos Artemis Client Connection Pool \& Routing};
+
+    % --- Nodes: Group A ---
+    \node[archi-system-software, minimum width=3.4cm] (art_pri_a) at (1.5, 7.8) {\archibadge{Primary A}\archiname{artemis-primary-a}\\\archidesc{Live Node / 61616}};
+    \node[archi-system-software, minimum width=3.4cm] (art_bak_a) at (5.0, 7.8) {\archibadge{Backup A}\archiname{artemis-backup-a}\\\archidesc{Replica Node / 61617}};
+    \node[archi-data-object, minimum width=3.4cm]     (jrn_a)     at (3.2, 5.4) {\archibadge{PVC Storage}\archiname{HostPath Journal A}\\\archidesc{Synchronous Journal}};
+
+    % --- Nodes: Group B ---
+    \node[archi-system-software, minimum width=3.4cm] (art_pri_b) at (10.5, 7.8) {\archibadge{Primary B}\archiname{artemis-primary-b}\\\archidesc{Live Node / 61618}};
+    \node[archi-system-software, minimum width=3.4cm] (art_bak_b) at (14.0, 7.8) {\archibadge{Backup B}\archiname{artemis-backup-b}\\\archidesc{Replica Node / 61619}};
+    \node[archi-data-object, minimum width=3.4cm]     (jrn_b)     at (12.2, 5.4) {\archibadge{PVC Storage}\archiname{HostPath Journal B}\\\archidesc{Synchronous Journal}};
+
+    % --- Nodes: Client Pool ---
+    \node[archi-app-component, minimum width=4.5cm] (pylai_client) at (3.2, 1.8) {\archibadge{Client}\archiname{pylai-mllp-in}\\\archidesc{Producer Pool (Failover URL)}};
+    \node[archi-app-component, minimum width=4.5cm] (ponos_client) at (12.2, 1.8) {\archibadge{Client}\archiname{energeia-ponos}\\\archidesc{Consumer Pool (Failover URL)}};
+
+    % --- Flows & Relationships ---
+    \draw[archi-flow] (art_pri_a) -- node[archi-lbl]{Replicate} (art_bak_a);
+    \draw[archi-flow] (art_pri_b) -- node[archi-lbl]{Replicate} (art_bak_b);
+
+    \draw[archi-access] (art_pri_a) -- (jrn_a);
+    \draw[archi-access] (art_bak_a) -- (jrn_a);
+    \draw[archi-access] (art_pri_b) -- (jrn_b);
+    \draw[archi-access] (art_bak_b) -- (jrn_b);
+
+    % Symmetric Cluster Mesh
+    \draw[archi-triggering] (art_pri_a) -- node[archi-lbl, above]{petasos-cluster (ON\_DEMAND Mesh)} (art_pri_b);
+    \draw[archi-triggering] (art_pri_b) -- (art_pri_a);
+
+    % Clients to Brokers
+    \draw[archi-flow] (pylai_client) -- (art_pri_a);
+    \draw[archi-flow] (ponos_client) -- (art_pri_b);
+
+\end{tikzpicture}

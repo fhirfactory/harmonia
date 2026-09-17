@@ -27,4 +27,13 @@ resources:
   - petasos/artemis-backup-a.yaml
   - petasos/artemis-primary-b.yaml
   - petasos/artemis-backup-b.yaml
+  - agora-secret.yaml
+  - agora-configmap.yaml
+  - agora-service.yaml
+  - agora-deployment.yaml
+  - synapse-secret.yaml
+  - synapse-configmap.yaml
+  - synapse-appservice-registration.yaml
+  - synapse-service.yaml
+  - synapse-statefulset.yaml
   - ingress.yaml

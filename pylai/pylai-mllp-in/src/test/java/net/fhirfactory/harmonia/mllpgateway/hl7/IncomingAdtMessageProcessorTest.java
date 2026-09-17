@@ -27,6 +27,7 @@ import net.fhirfactory.harmonia.mllpgateway.service.DefaultCommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultTaskService;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -284,6 +285,25 @@ class IncomingAdtMessageProcessorTest {
         assertThat(result.isSuccess()).isTrue();
         assertThat(result.getTriggerEvent()).isEqualTo("A40");
         assertThat(result.getTask()).isNotNull();
+    }
+
+    @Test
+    @DisplayName("REC-001: Petasos publish failure returns AE NACK to prevent dual-write data loss")
+    void testPetasosPublishFailureReturnsAeNack() throws Exception {
+        String hl7 = "MSH|^~\\&|APP|FAC|HIE|HIE_IM|20260907100000||ADT^A01|MSG-FAIL-001|P|2.4\r" +
+                "PID|1||PAT111||TEST^USER||19900101|M\r" +
+                "PV1|1|I|WARD1\r";
+
+        TaskEventProducerService failingProducer = mock(TaskEventProducerService.class);
+        doThrow(new RuntimeException("Petasos Artemis broker connection failure"))
+                .when(failingProducer).sendTaskEvent(any(ErgonEvent.class));
+
+        transformer.setTaskEventProducerService(failingProducer);
+
+        AdtProcessingResult result = transformer.processAdtMessage(hl7);
+        assertThat(result.isSuccess()).isFalse();
+        assertThat(result.getAckMessage()).contains("MSA|AE|MSG-FAIL-001");
+        assertThat(result.getErrorMessage()).contains("Petasos Artemis broker connection failure");
     }
 
     @Test

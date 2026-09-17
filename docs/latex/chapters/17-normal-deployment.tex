@@ -1,0 +1,62 @@
+%% =============================================================================
+%% chapters/17-normal-deployment.tex
+%% PART VI: Normal Deployment Architecture
+%% Chapter 17: Normal Workload Deployment & Verification Runbook
+%% =============================================================================
+
+\chapter{Normal Workload Deployment \& Verification Runbook}
+\label{chap:normal_deployment}
+
+This chapter provides the step-by-step engineering runbook for deploying and verifying a normal production Harmonia instance on MicroK8s.
+
+\section{Phase 1: Build \& Container Image Push}
+
+Build all subprojects and push images to the local MicroK8s registry:
+\begin{lstlisting}[language=bash, caption={Maven Build and Container Image Generation}]
+# Execute full Maven build and container packaging
+mvn clean package -DskipTests -Pcontainer-build
+
+# Push tagged images to MicroK8s registry
+docker push localhost:32000/harmonia/pylai-mllp-in:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/pylai-mllp-out:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/ponos-task-processor:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/mnemosyne-clinical:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/mnemosyne-operations:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/iris-befe:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/iris-clinical:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/iris-console:1.0.0-SNAPSHOT
+docker push localhost:32000/harmonia/iris-administration:1.0.0-SNAPSHOT
+\end{lstlisting}
+
+\section{Phase 2: Apply Kustomize Overlay Manifests}
+
+Deploy the complete namespace, middleware StatefulSets, and application pods:
+\begin{lstlisting}[language=bash, caption={Applying Harmonia MicroK8s Manifests}]
+# Apply MicroK8s environment overlay via Kustomize
+kubectl apply -k deployment/kubernetes/environments/microk8s
+
+# Monitor pod rollout across namespace
+kubectl rollout status statefulset/artemis-primary-a -n harmonia
+kubectl rollout status statefulset/infinispan-1 -n harmonia
+kubectl rollout status deployment/befe -n harmonia
+\end{lstlisting}
+
+\section{Phase 3: Verification \& Health Validation Runbook}
+
+Execute the following verification sequence to confirm cluster readiness:
+\begin{lstlisting}[language=bash, caption={Cluster Readiness and Health Probe Verification}]
+# 1. Check all pods are in Running state
+kubectl get pods -n harmonia
+
+# 2. Verify Ingress endpoints
+curl -k https://localhost/health
+
+# 3. Verify MLLP Inbound Port is listening
+nc -zv localhost 30575
+
+# 4. Verify Iris BEFE Actuator health
+curl http://localhost:8080/actuator/health
+\end{lstlisting}
+
+\newpage

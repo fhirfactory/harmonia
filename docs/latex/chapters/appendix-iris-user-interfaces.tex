@@ -13,10 +13,13 @@
 The \textbf{Iris Presentation Tier} provides the unified graphical and interface layer of the Harmonia Health Information Exchange (HIE). Operating as a decoupled, multi-portal presentation environment, Iris delivers tailored, role-specific user interfaces for clinicians, system operations engineers, provider directory administrators, and healthcare practitioners while mediating all backend communication through the \textbf{Iris Backend-For-Frontend (BEFE)} gateway.
 
 \begin{figure}[htbp]
-    \centering
-    \begin{adjustbox}{max width=\textwidth}
-        \input{diagrams/fig-iris-architecture.tex}
-    \end{adjustbox}
+	\setlength{\fboxrule}{0.5pt}
+	\setlength{\fboxsep}{3pt}
+	\centering
+	\fbox{%
+        \includegraphics[width=0.94\textwidth, height=0.82\textheight,keepaspectratio]
+        {images/harmonia-iris-architecture.png}
+    }
     \caption{ArchiMate 3.2 Component and Interaction View for the Iris Presentation Tier and BEFE Gateway}
     \label{fig:iris_architecture}
 \end{figure}
@@ -282,9 +285,9 @@ A primary operational capability of \texttt{iris-console} is the ability to hot-
 \textbf{Sequence Reload Step-by-Step Procedure}:
 \begin{enumerate}
     \item The operator navigates to \texttt{/sequences/seq-provider-registry-change-pipeline}.
-    \item The console queries BEFE Port 8090 (\texttt{GET /api/operations/sequences/seq-provider-registry-change-pipeline}) to retrieve current runtime metrics and active route IDs.
+    \item The console queries BEFE Port 8090 \newline (\texttt{GET /api/operations/sequences/seq-provider-registry-change-pipeline}) \newline to retrieve current runtime metrics and active route IDs.
     \item The operator clicks \textbf{Reload Sequence Pipeline}.
-    \item The console dispatches \texttt{POST /api/operations/sequences/seq-provider-registry-change-pipeline/reload} to BEFE Port 8090.
+    \item The console dispatches to BEFE Port 8090 \newline (\texttt{POST /api/operations/sequences/seq-provider-registry-change-pipeline/reload}).
     \item BEFE's \texttt{OperationsServerManager} forwards the command to Ponos's \texttt{TaskSequenceLoader}.
     \item Ponos suspends the Camel route consumer, re-reads the sequence definition from Infinispan \texttt{tasksequence-cache}, resolves updated CDI Ergon beans, rebuilds the Camel route graph, and resumes message ingestion within 250 milliseconds.
     \item The console updates the UI badge to \texttt{STATUS: RELOADED} and displays the new route generation timestamp.

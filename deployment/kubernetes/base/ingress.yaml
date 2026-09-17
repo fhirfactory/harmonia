@@ -69,3 +69,20 @@ spec:
                 name: mllp-gateway
                 port:
                   number: 8080
+    - host: matrix.harmonia.local
+      http:
+        paths:
+          - path: /_matrix
+            pathType: Prefix
+            backend:
+              service:
+                name: synapse
+                port:
+                  number: 8008
+          - path: /_synapse
+            pathType: Prefix
+            backend:
+              service:
+                name: synapse
+                port:
+                  number: 8008

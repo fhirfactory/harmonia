@@ -1,0 +1,65 @@
+%% =============================================================================
+%% chapters/appendix-h-k8s-register.tex
+%% APPENDIX H: Kubernetes Resource Register
+%% =============================================================================
+
+\chapter{Kubernetes Workload and Resource Register}
+\label{app:k8s_register}
+
+This appendix provides the definitive Kubernetes manifest inventory across all 25 workloads, headless services, ingress objects, and persistent storage claims defined in \nolinkurl{deployment/kubernetes/base/}.
+
+\section{Workload Allocations \& Persistent Claims}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l l P{2.5cm} P{2.0cm} P{2.2cm} Y}
+\toprule
+\textbf{Workload Name} & \textbf{Kind} & \textbf{CPU Req / Lim} & \textbf{Mem Req / Lim} & \textbf{PVC Claim} & \textbf{Storage Class / Notes} \\
+\midrule
+\multicolumn{6}{l}{\textbf{Tier 1: Presentation Tier (Vue 3 SPAs)}} \\
+\midrule
+\nolinkurl{iris-clinical} & Deployment & 50m / 500m & 64Mi / 256Mi & None & Stateless Nginx SPA, Port 80. \\
+\nolinkurl{iris-console} & Deployment & 50m / 500m & 64Mi / 256Mi & None & Stateless Nginx SPA, Port 80. \\
+\nolinkurl{iris-administration} & Deployment & 50m / 500m & 64Mi / 256Mi & None & Stateless Nginx SPA, Port 80. \\
+\midrule
+\multicolumn{6}{l}{\textbf{Tier 2: Boundary Protocol Gateways \& Presentation Backend}} \\
+\midrule
+\nolinkurl{befe} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & WildFly dual-port BEFE (8080/8090). \\
+\nolinkurl{mllp-gateway} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Netty/Camel Inbound MLLP (Port 2575). \\
+\nolinkurl{mllp-outbound-his} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Outbound MLLP HIS Egress Dispatcher. \\
+\nolinkurl{mllp-outbound-lis} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Outbound MLLP LIS Egress Dispatcher. \\
+\nolinkurl{agora} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Matrix AS REST Gateway (Port 8092). \\
+\midrule
+\multicolumn{6}{l}{\textbf{Tier 3: Task Execution \& Collaboration Core}} \\
+\midrule
+\nolinkurl{task-processor} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Ponos Camel WorkEngine (Port 8080). \\
+\nolinkurl{synapse} & StatefulSet & 250m / 1000m & 512Mi / 2048Mi & 5 GiB & \nolinkurl{synapse-data}, Matrix HTTP 8008. \\
+\midrule
+\multicolumn{6}{l}{\textbf{Tier 4: Resilient Messaging \& Distributed Cache Grid}} \\
+\midrule
+\nolinkurl{artemis-primary-a} & StatefulSet & 200m / 1000m & 512Mi / 1024Mi & 2 GiB & \nolinkurl{artemis-primary-a-data}, Netty 61616. \\
+\nolinkurl{artemis-backup-a} & StatefulSet & 200m / 1000m & 512Mi / 1024Mi & 2 GiB & \nolinkurl{artemis-backup-a-data}, Netty 61616. \\
+\nolinkurl{artemis-primary-b} & StatefulSet & 200m / 1000m & 512Mi / 1024Mi & 2 GiB & \nolinkurl{artemis-primary-b-data}, Netty 61616. \\
+\nolinkurl{artemis-backup-b} & StatefulSet & 200m / 1000m & 512Mi / 1024Mi & 2 GiB & \nolinkurl{artemis-backup-b-data}, Netty 61616. \\
+\nolinkurl{infinispan-1} & StatefulSet & 250m / 1000m & 512Mi / 1536Mi & 1 GiB & \nolinkurl{mneme-data-1}, Hot Rod 11222. \\
+\nolinkurl{infinispan-2} & StatefulSet & 250m / 1000m & 512Mi / 1536Mi & 1 GiB & \nolinkurl{mneme-data-2}, Hot Rod 11222. \\
+\midrule
+\multicolumn{6}{l}{\textbf{Tier 5: Durable Relational Persistence \& JPA Servers}} \\
+\midrule
+\nolinkurl{postgres-1} & StatefulSet & 100m / 1000m & 256Mi / 1024Mi & 2 GiB & \nolinkurl{postgres-data-1}, Clinical DB 1. \\
+\nolinkurl{postgres-2} & StatefulSet & 100m / 1000m & 256Mi / 1024Mi & 2 GiB & \nolinkurl{postgres-data-2}, Clinical DB 2. \\
+\nolinkurl{postgres-ops-1} & StatefulSet & 100m / 1000m & 256Mi / 1024Mi & 2 GiB & \nolinkurl{postgres-ops-data-1}, Ops DB 1. \\
+\nolinkurl{postgres-ops-2} & StatefulSet & 100m / 1000m & 256Mi / 1024Mi & 2 GiB & \nolinkurl{postgres-ops-data-2}, Ops DB 2. \\
+\nolinkurl{postgres-synapse} & StatefulSet & 100m / 1000m & 256Mi / 1024Mi & 2 GiB & \nolinkurl{postgres-synapse-data}, Synapse DB. \\
+\nolinkurl{hapi-fhir-jpa-1} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & HAPI FHIR R5 JPA Server 1. \\
+\nolinkurl{hapi-fhir-jpa-2} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & HAPI FHIR R5 JPA Server 2. \\
+\nolinkurl{hie-ops-jpa-1} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Operations JPA Server 1. \\
+\nolinkurl{hie-ops-jpa-2} & Deployment & 250m / 1000m & 512Mi / 1536Mi & None & Operations JPA Server 2. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Kubernetes 25-Workload Resource Allocations and Storage Claims}
+\label{tab:kubernetes_resource_register}
+\end{table}
+
+\newpage

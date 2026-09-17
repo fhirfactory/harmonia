@@ -1,0 +1,47 @@
+%% =============================================================================
+%% chapters/12-microk8s-workloads.tex
+%% PART IV: Runtime Architecture
+%% Chapter 12: MicroK8s Pod Scheduling, Services & Ingress Routing
+%% =============================================================================
+
+\chapter{MicroK8s Pod Scheduling, Services \& Ingress Routing}
+\label{chap:microk8s_workloads}
+
+Harmonia's containerized workloads are orchestrated on Ubuntu MicroK8s using declarative Kustomize base manifests (\texttt{deployment/kubernetes/base}) and environment overlays (\texttt{deployment/kubernetes/environments/microk8s}).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-5tier-deployment-topology.tex}
+    \end{adjustbox}
+    \caption{MicroK8s 5-Tier Deployment Topology and Add-on Integration}
+    \label{fig:5tier_deployment_topology}
+\end{figure}
+
+\section{Service Discovery \& Internal DNS Mesh}
+
+All internal microservice communication is mediated through Kubernetes ClusterIP Services and CoreDNS resolution:
+\begin{itemize}
+    \item \textbf{Artemis Services}: \texttt{petasos-artemis-discovery}, \texttt{artemis-primary-a}, \texttt{artemis-backup-a}, \texttt{artemis-primary-b}, \texttt{artemis-backup-b} (Ports 61616--61619).
+    \item \textbf{Infinispan Services}: \texttt{infinispan-service}, \texttt{infinispan-1}, \texttt{infinispan-2} (Hot Rod Port 11222, JGroups Port 7800).
+    \item \textbf{PostgreSQL Services}: \texttt{postgres-1}, \texttt{postgres-2} (Port 5432) and \texttt{postgres-ops-1}, \texttt{postgres-ops-2} (Port 5434).
+    \item \textbf{Application Services}: \texttt{mllp-gateway}, \texttt{mllp-outbound-his}, \texttt{mllp-outbound-lis}, \texttt{task-processor}, \texttt{hapi-fhir-jpa-server-1/2}, \texttt{hie-operations-jpa-server-1/2}, \texttt{befe}.
+\end{itemize}
+
+\section{Ingress Routing \& NodePort Mapping}
+
+External traffic enters the cluster via two ingress pathways:
+\begin{enumerate}
+    \item \textbf{HTTP/HTTPS Ingress (Ports 80 / 443)}: The Nginx Ingress Controller routes requests by virtual host and path:
+    \begin{itemize}
+        \item \texttt{http://clinical.harmonia.local/}: Routes to \texttt{iris-clinical} SPA (Port 80).
+        \item \texttt{http://console.harmonia.local/}: Routes to \texttt{iris-console} SPA (Port 80).
+        \item \texttt{http://admin.harmonia.local/}: Routes to \texttt{iris-administration} SPA (Port 80).
+        \item \texttt{http://api.harmonia.local/clinical}: Routes to \texttt{befe} gateway (Port 8080).
+        \item \texttt{http://api.harmonia.local/operations}: Routes to \texttt{befe} gateway (Port 8090).
+        \item \texttt{http://gateway.harmonia.local/}: Routes to \texttt{mllp-gateway} Actuator (Port 8080).
+    \end{itemize}
+    \item \textbf{MLLP / TCP Ingress (NodePort 30575 $\rightarrow$ 2575)}: External hospital systems send HL7 v2 frames directly to the host's NodePort 30575, forwarding to \texttt{mllp-gateway}.
+\end{enumerate}
+
+\newpage

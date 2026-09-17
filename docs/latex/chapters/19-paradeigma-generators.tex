@@ -1,0 +1,47 @@
+%% =============================================================================
+%% chapters/19-paradeigma-generators.tex
+%% PART VII: Paradeigma Architecture & Deployment
+%% Chapter 19: Synthetic Clinical Generators & Multi-System Scenario Framework
+%% =============================================================================
+
+\chapter{Synthetic Clinical Generators \& Scenario Framework}
+\label{chap:paradeigma_generators}
+
+The Paradeigma subsystem provides a deterministic synthetic clinical simulation and testing framework. It generates realistic HL7 v2 and FHIR R5 event streams to drive end-to-end integration scenarios, stress testing, and failure recovery validation.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-paradeigma-architecture.tex}
+    \end{adjustbox}
+    \caption{Paradeigma Simulation Architecture: Generators, Personas \& Scenario Engine}
+    \label{fig:paradeigma_generators_architecture}
+\end{figure}
+
+\section{Synthetic Actor Simulators \& Module Inventory}
+
+Paradeigma comprises seven leaf modules under \nolinkurl{paradeigma/}:
+\begin{enumerate}
+    \item \textbf{\texttt{paradeigma-common}}: Pure domain library providing deterministic personas, Australian identifier generators (HPI-I with Luhn check, HPI-O, AHPRA, Medicare), clinical observation catalogues, and test fixtures.
+    \item \textbf{\texttt{paradeigma-pas}}: Simulates hospital Patient Administration Systems (\nolinkurl{PasApplication}, \nolinkurl{PasRestController}, \nolinkurl{PasService}, \nolinkurl{PasScheduler}, \nolinkurl{PasPatientLifecycleManager}), generating HL7 v2 ADT feeds (A01, A03, A08, A40) with synthetic demographic personas.
+    \item \textbf{\texttt{paradeigma-emr}}: Simulates Electronic Medical Records (\nolinkurl{EmrApplication}, \nolinkurl{EmrRestController}, \nolinkurl{EmrService}, \nolinkurl{EmrPatientManager}, \nolinkurl{EmrScheduler}, \nolinkurl{EmrMllpListener}), generating encounter summaries, clinical notes, and receiving fan-out ADT feeds on Port 2201.
+    \item \textbf{\texttt{paradeigma-lms}}: Simulates Laboratory Information Systems (\nolinkurl{LmsApplication}, \nolinkurl{LmsRestController}, \nolinkurl{LmsService}, \nolinkurl{LmsResultWorker}, \nolinkurl{LmsMllpListener}), generating HL7 ORU observation results and pathology reports, listening on Ports 2202 and 2204.
+    \item \textbf{\texttt{paradeigma-rispac}}: Simulates Radiology Information Systems and PACS (\nolinkurl{RispacApplication}, \nolinkurl{RispacRestController}, \nolinkurl{RispacService}, \nolinkurl{RispacResultWorker}, \nolinkurl{RispacMllpListener}), generating imaging orders and diagnostic reports, listening on Ports 2203 and 2205.
+    \item \textbf{\texttt{paradeigma-scenarios}}: The scenario orchestration engine (\nolinkurl{ScenariosApplication}, \nolinkurl{ScenariosRestController}, \nolinkurl{ParadeigmaScenarioEngine}, \nolinkurl{PatientJourneyScenario}) coordinating multi-actor Patient Journeys and automated failure injection tests.
+    \item \textbf{\texttt{paradeigma-test}}: Architecture and regression test harness containing the 24 ArchUnit rules verifying strict compile-time, package, and runtime isolation.
+\end{enumerate}
+
+\section{Deterministic Patient Journeys \& Scenario Engine}
+
+The scenario engine executes reproducible, timestamp-sequenced clinical pathways (e.g., Emergency Admission $\rightarrow$ Lab Order $\rightarrow$ Radiology Examination $\rightarrow$ Transfer $\rightarrow$ Discharge), verifying that Harmonia correctly correlates disparate trigger events into a unified longitudinal record.
+
+\subsection{REST Scenario Orchestration API}
+
+The scenario engine exposes REST endpoints for automated test execution:
+\begin{itemize}
+    \item \textbf{\texttt{POST /api/scenarios/journey}}: Triggers an immediate single 9-step or 12-step Patient Journey. Requires no request body; parameters default to the standard deterministic journey seed.
+    \item \textbf{\texttt{POST /api/scenarios/concurrent}}: Initiates $N$ parallel journey executions via \nolinkurl{ParadeigmaScenarioEngine.runConcurrentJourneys(int count, ExecutionProfile profile)}.
+    \item \textbf{\texttt{GET /api/scenarios/status}}: Queries active and completed scenario run metrics, event success counts, and latency percentiles.
+\end{itemize}
+
+\newpage

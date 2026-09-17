@@ -1,0 +1,39 @@
+%% =============================================================================
+%% diagrams/fig-mneme-cache-grid.tex
+%% Infinispan 15.0.3 Distributed Cache Grid & Hot Rod Client Architecture
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 5.0) rectangle (15.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Hot Rod Application Client Layer};
+
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (15.8, 4.4);
+    \node[archi-plate-title] at (-0.6, 4.2) {Infinispan Distributed Cache Grid (JGroups TCP Discovery)};
+
+    % --- Nodes: Clients ---
+    \node[archi-app-component, minimum width=3.4cm] (client_befe)  at (1.5, 7.2) {\archibadge{Client}\archiname{iris-befe}\\\archidesc{Hot Rod / Port 11222}};
+    \node[archi-app-component, minimum width=3.4cm] (client_ponos) at (6.5, 7.2) {\archibadge{Client}\archiname{energeia-ponos}\\\archidesc{Task State Cache}};
+    \node[archi-app-component, minimum width=3.4cm] (client_pylai) at (11.5, 7.2) {\archibadge{Client}\archiname{pylai-mllp-in}\\\archidesc{Idempotency Window}};
+
+    % --- Nodes: Cache Nodes ---
+    \node[archi-system-software, minimum width=4.5cm] (ispn_1) at (3.5, 2.4) {\archibadge{Cache Pod}\archiname{infinispan-1}\\\archidesc{Port 11222 / JGroups 7800}};
+    \node[archi-system-software, minimum width=4.5cm] (ispn_2) at (11.5, 2.4) {\archibadge{Cache Pod}\archiname{infinispan-2}\\\archidesc{Port 11222 / JGroups 7800}};
+
+    % --- Caches ---
+    \node[archi-data-object, minimum width=2.4cm] (c_task)   at (2.0, 1.0) {\archiname{task-cache}};
+    \node[archi-data-object, minimum width=2.4cm] (c_seq)    at (5.0, 1.0) {\archiname{sequence-cache}};
+    \node[archi-data-object, minimum width=2.4cm] (c_prag)   at (10.0, 1.0) {\archiname{pragma-cache}};
+    \node[archi-data-object, minimum width=2.4cm] (c_status) at (13.0, 1.0) {\archiname{status-cache}};
+
+    % --- JGroups Discovery Mesh ---
+    \draw[archi-triggering] (ispn_1) -- node[archi-lbl, above]{JGroups TCP Cluster (SYM\_ENCRYPT)} (ispn_2);
+    \draw[archi-triggering] (ispn_2) -- (ispn_1);
+
+    % --- Hot Rod Client Connections ---
+    \draw[archi-flow] (client_befe) -- (ispn_1);
+    \draw[archi-flow] (client_ponos) -- (ispn_1);
+    \draw[archi-flow] (client_ponos) -- (ispn_2);
+    \draw[archi-flow] (client_pylai) -- (ispn_2);
+
+\end{tikzpicture}

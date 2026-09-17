@@ -212,7 +212,7 @@ public class EmbeddedArtemisCluster implements AutoCloseable {
         ActiveMQServer server = servers.remove(name);
         if (server != null) {
             log.info("Stopping test Artemis broker: {}", name);
-            server.stop(false, true);
+            server.stop(true, false);
         }
     }
 

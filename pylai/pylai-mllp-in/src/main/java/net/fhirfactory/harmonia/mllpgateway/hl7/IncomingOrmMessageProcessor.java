@@ -158,17 +158,14 @@ public class IncomingOrmMessageProcessor {
                 savedTask = taskService.create(task);
             }
 
+            // Dual-write safety (REC-001): publish failure throws to trigger an AE NACK back to sender
             if (taskEventProducerService != null && savedTask != null) {
-                try {
-                    String action = "PROCESS";
-                    String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
-                    String taskId = savedTask.getIdPart() != null ? savedTask.getIdPart() : messageControlId;
-                    String desc = "HL7 v2.4 ORM^" + triggerEvent + " order " + placerOrder;
-                    ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
-                    taskEventProducerService.sendTaskEvent(event);
-                } catch (Exception e) {
-                    log.warn("Could not dispatch TaskEvent to task-sequence-processor: {}", e.getMessage());
-                }
+                String action = "PROCESS";
+                String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
+                String taskId = savedTask.getIdPart() != null ? savedTask.getIdPart() : messageControlId;
+                String desc = "HL7 v2.4 ORM^" + triggerEvent + " order " + placerOrder;
+                ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
+                taskEventProducerService.sendTaskEvent(event);
             }
 
             Message ackMsg = hl7Message.generateACK();

@@ -59,7 +59,7 @@ If either prerequisite is unsatisfied, PHI log statements are treated as strict 
 \section{Architectural Model \& Security Gates}
 \label{sec:phi_arch_model}
 
-Harmonia implements a decoupled, defence-in-depth logging architecture that enforces compile-time safety, runtime gate evaluation, and physical log destination isolation. Figure~\ref{fig:phi_logging_architecture} illustrates the end-to-end processing topology from component code down to physical Logback appenders.
+Harmonia implements a decoupled, defence-in-depth logging architecture that enforces compile-time safety, runtime gate evaluation, and physical log destination isolation. Figure~\ref{fig:phi_logging_architecture_appendix} illustrates the end-to-end processing topology from component code down to physical Logback appenders.
 
 \begin{figure}[htbp]
     \centering
@@ -67,7 +67,7 @@ Harmonia implements a decoupled, defence-in-depth logging architecture that enfo
         \input{diagrams/fig-phi-logging-architecture.tex}
     \end{adjustbox}
     \caption{ArchiMate 3.2 View: PHI-Aware Logging Security Architecture and Appender Isolation}
-    \label{fig:phi_logging_architecture}
+    \label{fig:phi_logging_architecture_appendix}
 \end{figure}
 
 \subsection{Dual-Gate Security Evaluation Flow}

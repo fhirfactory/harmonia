@@ -41,6 +41,12 @@
             <artifactId>paradeigma-common</artifactId>
         </dependency>
 
+        <!-- Agora Public Contracts -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>agora-api</artifactId>
+        </dependency>
+
         <!-- Spring Boot Web & Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

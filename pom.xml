@@ -50,6 +50,7 @@
         <module>pylai</module>
         <module>energeia</module>
         <module>petasos</module>
+        <module>agora</module>
         <module>paradeigma</module>
     </modules>
 
@@ -168,6 +169,28 @@
             <dependency>
                 <groupId>net.fhirfactory.harmonia</groupId>
                 <artifactId>petasos-artemis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Agora Collaboration & Matrix Subsystem -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>agora-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>agora-matrix</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>agora-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>agora-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -337,6 +360,10 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <forkedProcessTimeoutInSeconds>180</forkedProcessTimeoutInSeconds>
+                        <forkedProcessExitTimeoutInSeconds>30</forkedProcessExitTimeoutInSeconds>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

@@ -1,0 +1,14 @@
+---
+# ==============================================================================
+# Ansible Role Defaults: Synapse Matrix Homeserver
+# ==============================================================================
+
+synapse_enabled: true
+synapse_image: "matrixdotorg/synapse:v1.120.0"
+synapse_server_name: "harmonia.local"
+synapse_port: 8008
+synapse_db_port: 5436
+synapse_report_stats: "no"
+synapse_retention_min_lifetime: "1d"
+synapse_retention_max_lifetime: "90d"
+synapse_rollout_timeout_seconds: "{{ rollout_timeout_seconds | default(300) }}"

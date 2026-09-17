@@ -4,22 +4,29 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.2cm and 1.0cm, auto]
 
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 6.4) rectangle (19.8, 9.6);
+    \node[archi-plate-title] at (-0.6, 9.4) {Standard Operational Logging Pipeline (SLF4J Route)};
+
+    \draw[archi-plate-solid] (-0.8, 0.4) rectangle (19.8, 6.0);
+    \node[archi-plate-title] at (-0.6, 5.8) {Isolated PHI Diagnostic Logging Pipeline (Themis PHI Guard)};
+
     % -------------------------------------------------------------------------
     % Layer 1: Application Component & Dual Loggers
     % -------------------------------------------------------------------------
-    \node[archi-app-component] (app_code) at (0.0, 6.5) {
-        \archibadge{Component Code}
+    \node[archi-app-component, minimum width=3.4cm] (app_code) at (1.0, 6.4) {
+        \archibadge{Application Code}
         \archiname{Clinical Processor}
         \archidesc{Pylai / Ergon / Hestia}
     };
 
-    \node[archi-app-interface] (op_logger_api) at (5.0, 8.0) {
+    \node[archi-app-interface, minimum width=3.2cm] (op_logger_api) at (5.5, 7.8) {
         \archibadge{SLF4J Interface}
         \archiname{Logger (log)}
         \archidesc{INFO, WARN, ERROR}
     };
 
-    \node[archi-app-interface] (phi_logger_api) at (5.0, 5.0) {
+    \node[archi-app-interface, minimum width=3.2cm] (phi_logger_api) at (5.5, 4.5) {
         \archibadge{Harmonia Interface}
         \archiname{PhiLogger (phiLog)}
         \archidesc{DEBUG, TRACE only}
@@ -28,34 +35,34 @@
     % -------------------------------------------------------------------------
     % Layer 2: Dual Security Evaluation Gate
     % -------------------------------------------------------------------------
-    \node[archi-app-component] (phi_gate) at (9.5, 5.0) {
+    \node[archi-app-component, minimum width=3.2cm] (phi_gate) at (9.5, 4.5) {
         \archibadge{Security Gate 1}
         \archiname{PhiLoggingConfig}
         \archidesc{phi-enabled == true}
     };
 
-    \node[archi-app-component] (level_gate) at (14.0, 5.0) {
+    \node[archi-app-component, minimum width=3.2cm] (level_gate) at (13.5, 4.5) {
         \archibadge{Security Gate 2}
         \archiname{Level Evaluator}
         \archidesc{DEBUG / TRACE Active}
     };
 
-    \node[archi-artifact] (discard_sink) at (11.75, 2.5) {
+    \node[archi-artifact, minimum width=3.0cm] (discard_sink) at (11.5, 1.6) {
         \archibadge{Suppression}
         \archiname{No-Op / Discard}
-        \archidesc{Zero Evaluation / Cost}
+        \archidesc{Zero Performance Cost}
     };
 
     % -------------------------------------------------------------------------
     % Layer 3: Routing & Namespaces
     % -------------------------------------------------------------------------
-    \node[archi-tech-service] (op_namespace) at (9.5, 8.0) {
+    \node[archi-tech-service, minimum width=3.2cm] (op_namespace) at (10.5, 7.8) {
         \archibadge{SLF4J Routing}
-        \archiname{Component Namespace}
+        \archiname{Namespace}
         \archidesc{net.fhirfactory.*}
     };
 
-    \node[archi-tech-service] (phi_namespace) at (18.5, 5.0) {
+    \node[archi-tech-service, minimum width=3.2cm] (phi_namespace) at (17.5, 4.5) {
         \archibadge{Dedicated Namespace}
         \archiname{org.harmonia.phi}
         \archidesc{Marker: PHI}
@@ -64,13 +71,13 @@
     % -------------------------------------------------------------------------
     % Layer 4: Logback Appenders & Physical Storage
     % -------------------------------------------------------------------------
-    \node[archi-node] (op_appender) at (14.0, 8.0) {
+    \node[archi-node, minimum width=3.5cm] (op_appender) at (16.0, 7.8) {
         \archibadge{Standard Destination}
-        \archiname{OPERATIONAL\_CONSOLE}
+        \archiname{OPERATIONAL\_LOG}
         \archidesc{Console / Syslog}
     };
 
-    \node[archi-node] (phi_appender) at (18.5, 1.5) {
+    \node[archi-node, minimum width=3.5cm] (phi_appender) at (17.5, 1.6) {
         \archibadge{Isolated Destination}
         \archiname{PHI\_DIAGNOSTIC}
         \archidesc{additivity = false}
@@ -80,20 +87,20 @@
     % Connections & Flows
     % -------------------------------------------------------------------------
     % Operational Path
-    \draw[archi-flow] (app_code.north) |- node[above, font=\sffamily\scriptsize, near end] {Non-PHI Lifecycle Events} (op_logger_api.west);
-    \draw[archi-flow] (op_logger_api) -- node[above, font=\sffamily\scriptsize] {SLF4J Route} (op_namespace);
-    \draw[archi-flow] (op_namespace) -- node[above, font=\sffamily\scriptsize] {Standard Pipeline} (op_appender);
+    \draw[archi-flow] (app_code) |- node[archi-lbl, near end]{Lifecycle Events} (op_logger_api.west);
+    \draw[archi-flow] (op_logger_api) -- node[archi-lbl]{SLF4J} (op_namespace);
+    \draw[archi-flow] (op_namespace) -- node[archi-lbl]{Pipeline} (op_appender);
 
     % PHI Diagnostic Path
-    \draw[archi-flow] (app_code.south) |- node[below, font=\sffamily\scriptsize, near end] {Clinical Payloads / Demographics} (phi_logger_api.west);
-    \draw[archi-flow] (phi_logger_api) -- node[above, font=\sffamily\scriptsize] {Check Gate 1} (phi_gate);
+    \draw[archi-flow] (app_code) |- node[archi-lbl, near end]{Clinical Payloads} (phi_logger_api.west);
+    \draw[archi-flow] (phi_logger_api) -- node[archi-lbl]{Gate 1} (phi_gate);
 
-    \draw[archi-flow] (phi_gate) -- node[above, font=\sffamily\scriptsize] {Enabled} (level_gate);
-    \draw[archi-flow] (phi_gate) |- node[left, font=\sffamily\scriptsize, near end] {Disabled} (discard_sink);
+    \draw[archi-flow] (phi_gate) -- node[archi-lbl]{Enabled} (level_gate);
+    \draw[archi-flow] (phi_gate) |- node[archi-lbl, near end]{Disabled} (discard_sink);
 
-    \draw[archi-flow] (level_gate) -- node[above, font=\sffamily\scriptsize] {Active} (phi_namespace);
-    \draw[archi-flow] (level_gate) |- node[right, font=\sffamily\scriptsize, near end] {Inactive} (discard_sink);
+    \draw[archi-flow] (level_gate) -- node[archi-lbl]{Active} (phi_namespace);
+    \draw[archi-flow] (level_gate) |- node[archi-lbl, near end]{Inactive} (discard_sink);
 
-    \draw[archi-flow] (phi_namespace) -- node[right, font=\sffamily\scriptsize] {Isolated Log Stream} (phi_appender);
+    \draw[archi-flow] (phi_namespace) -- node[archi-lbl]{Isolated Stream} (phi_appender);
 
 \end{tikzpicture}

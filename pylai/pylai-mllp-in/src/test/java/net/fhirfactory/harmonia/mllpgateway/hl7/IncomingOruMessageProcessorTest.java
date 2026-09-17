@@ -74,6 +74,28 @@ class IncomingOruMessageProcessorTest {
     }
 
     @Test
+    @DisplayName("REC-001: Petasos publish failure returns AE NACK to prevent dual-write data loss")
+    void testPetasosPublishFailureReturnsAeNack() throws Exception {
+        String oruHl7 = "MSH|^~\\&|PARADEIGMA_LMS|FACILITY|HARMONIA|HIE|20260915120000||ORU^R01|MSG-ORU-201|P|2.4\r" +
+                "PID|1||PAT-102^^^MRN||Smith^John\r" +
+                "PV1|1|I|WARD-3A^301^A\r" +
+                "ORC|RE|ORD-1002|LMS-2002||CM||||20260915120000\r" +
+                "OBR|1|ORD-1002|LMS-2002|CBC^Complete Blood Count^LN|||20260915115000|||||||||||||||20260915120000|||F\r" +
+                "OBX|1|NM|718-7^Haemoglobin^LN||145.0|g/L|130-180|N|||F\r";
+
+        TaskEventProducerService failingProducer = mock(TaskEventProducerService.class);
+        doThrow(new RuntimeException("Petasos Artemis connection error"))
+                .when(failingProducer).sendTaskEvent(any());
+
+        IncomingOruMessageProcessor failingProcessor = new IncomingOruMessageProcessor(taskService, communicationService, provenanceService, failingProducer, new MllpConfig("0.0.0.0", 2102, true));
+
+        OruProcessingResult result = failingProcessor.processOruMessage(oruHl7);
+        assertThat(result.isSuccess()).isFalse();
+        assertThat(result.getAckMessage()).contains("MSA|AE|MSG-ORU-201");
+        assertThat(result.getErrorMessage()).contains("Petasos Artemis connection error");
+    }
+
+    @Test
     @DisplayName("Process blank payload returns AE error")
     void testProcessBlankPayload() {
         OruProcessingResult result = processor.processOruMessage("");

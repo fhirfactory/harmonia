@@ -1,0 +1,58 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: synapse-config
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: synapse
+    app.kubernetes.io/component: collaboration
+    app.kubernetes.io/part-of: harmonia-platform
+data:
+  homeserver.yaml: |
+    server_name: "harmonia.local"
+    pid_file: "/data/homeserver.pid"
+
+    listeners:
+      - port: 8008
+        tls: false
+        type: http
+        x_forwarded: true
+        resources:
+          - names: [client, federation]
+            compress: false
+
+    database:
+      name: psycopg2
+      args:
+        user: synapse_user
+        password: synapse_db_password
+        database: synapse_db
+        host: postgres-synapse
+        port: 5436
+        cp_min: 5
+        cp_max: 20
+
+    # AGORA-ADR-006: Closed, non-federated deployment
+    federation:
+      enabled: false
+    enable_registration: false
+    allow_guest_access: false
+    enable_room_list_search: false
+
+    # AGORA-ADR-004: Collaboration message retention policy
+    retention:
+      enabled: true
+      default_policy:
+        min_lifetime: 1d
+        max_lifetime: 90d
+
+    # Application Service registration mapping
+    app_service_config_files:
+      - "/data/appservices/appservice-agora.yaml"
+
+    report_stats: false
+    public_baseurl: "http://matrix.harmonia.local/"
+    media_store_path: "/data/media_store"
+    signing_key_path: "/data/harmonia.local.signing.key"
+    suppress_key_server_warning: true

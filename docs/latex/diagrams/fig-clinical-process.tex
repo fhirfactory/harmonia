@@ -4,29 +4,42 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
-    % --- Business Actors & Roles ---
-    \node[archi-business-actor] (act_hospital) at (0, 7.5) {\archibadge{Business Actor}\archiname{Hospital EHR}\\\archidesc{Source System}};
-    \node[archi-business-actor] (act_lab) at (5.0, 7.5) {\archibadge{Business Actor}\archiname{Diagnostic Lab}\\\archidesc{LIS System}};
-    \node[archi-business-actor] (act_clinician) at (10.0, 7.5) {\archibadge{Business Actor}\archiname{Practitioner}\\\archidesc{Clinician / Care Team}};
+    % --- Background Layer Plates ---
+    \draw[archi-plate-bg] (-0.8, 6.2) rectangle (15.8, 9.8);
+    \node[archi-plate-title] at (-0.6, 9.6) {Business Actors \& Roles};
 
-    \node[archi-business-role] (rol_producer) at (2.5, 5.8) {\archibadge{Business Role}\archiname{Clinical Data Producer}\\\archidesc{HL7 Sender}};
-    \node[archi-business-role] (rol_consumer) at (10.0, 5.8) {\archibadge{Business Role}\archiname{Clinical Care Provider}\\\archidesc{FHIR Consumer}};
+    \draw[archi-plate-bg] (-0.8, 4.2) rectangle (15.8, 6.0);
+    \node[archi-plate-title] at (-0.6, 5.8) {Clinical Business Services};
+
+    \draw[archi-plate-bg] (-0.8, 2.2) rectangle (15.8, 4.0);
+    \node[archi-plate-title] at (-0.6, 3.8) {End-to-End Business Process Sequence};
+
+    \draw[archi-plate-bg] (-0.8, 0.2) rectangle (15.8, 2.0);
+    \node[archi-plate-title] at (-0.6, 1.8) {Clinical Business Objects \& Information};
+
+    % --- Business Actors & Roles ---
+    \node[archi-business-actor, minimum width=3.4cm] (act_hospital)  at (1.0, 8.5) {\archibadge{Business Actor}\archiname{Hospital EHR}\\\archidesc{Clinical Source System}};
+    \node[archi-business-actor, minimum width=3.4cm] (act_lab)       at (5.5, 8.5) {\archibadge{Business Actor}\archiname{Diagnostic Lab}\\\archidesc{LIS / Pathology System}};
+    \node[archi-business-actor, minimum width=3.4cm] (act_clinician) at (12.5, 8.5) {\archibadge{Business Actor}\archiname{Practitioner}\\\archidesc{Clinician / Care Team}};
+
+    \node[archi-business-role, minimum width=4.5cm]  (rol_producer)  at (3.25, 7.0) {\archibadge{Business Role}\archiname{Clinical Data Producer}\\\archidesc{HL7 Sender / Ingestion Agent}};
+    \node[archi-business-role, minimum width=4.0cm]  (rol_consumer)  at (12.5, 7.0) {\archibadge{Business Role}\archiname{Clinical Care Provider}\\\archidesc{FHIR Consumer / Analyst}};
 
     % --- Business Services ---
-    \node[archi-business-service] (srv_adt) at (1.0, 4.0) {\archibadge{Business Service}\archiname{Patient Admission Service}\\\archidesc{HL7 ADT Gateway}};
-    \node[archi-business-service] (srv_mfn) at (5.5, 4.0) {\archibadge{Business Service}\archiname{Staff Directory Service}\\\archidesc{HL7 MFN Ingestion}};
-    \node[archi-business-service] (srv_query) at (10.0, 4.0) {\archibadge{Business Service}\archiname{FHIR Clinical Access}\\\archidesc{Resource Discovery}};
+    \node[archi-business-service, minimum width=3.8cm] (srv_adt)   at (1.2, 5.0) {\archibadge{Business Service}\archiname{Admission Service}\\\archidesc{HL7 ADT Gateway}};
+    \node[archi-business-service, minimum width=3.8cm] (srv_mfn)   at (5.6, 5.0) {\archibadge{Business Service}\archiname{Directory Service}\\\archidesc{HL7 MFN Ingestion}};
+    \node[archi-business-service, minimum width=4.2cm] (srv_query) at (12.5, 5.0) {\archibadge{Business Service}\archiname{FHIR Clinical Access}\\\archidesc{Resource Discovery \& REST}};
 
     % --- Business Processes ---
-    \node[archi-business-process] (prc_ingest) at (0.0, 2.0) {\archibadge{Business Process}\archiname{1. Ingest Clinical Trigger}\\\archidesc{Capture \& Verify}};
-    \node[archi-business-process] (prc_match) at (3.8, 2.0) {\archibadge{Business Process}\archiname{2. Match \& Reconcile}\\\archidesc{EMPI Resolution}};
-    \node[archi-business-process] (prc_persist) at (7.6, 2.0) {\archibadge{Business Process}\archiname{3. Store Canonical Record}\\\archidesc{Audit \& Persistence}};
-    \node[archi-business-process] (prc_serve) at (11.4, 2.0) {\archibadge{Business Process}\archiname{4. Expose Resource}\\\archidesc{REST / Search}};
+    \node[archi-business-process, minimum width=3.5cm] (prc_ingest)  at (0.9, 3.0) {\archibadge{Business Process}\archiname{1. Ingest Trigger}\\\archidesc{Capture \& Verify Payload}};
+    \node[archi-business-process, minimum width=3.5cm] (prc_match)   at (5.1, 3.0) {\archibadge{Business Process}\archiname{2. Reconcile}\\\archidesc{EMPI Resolution \& ID}};
+    \node[archi-business-process, minimum width=3.5cm] (prc_persist) at (9.3, 3.0) {\archibadge{Business Process}\archiname{3. Store Record}\\\archidesc{Canonical Persistence}};
+    \node[archi-business-process, minimum width=3.5cm] (prc_serve)   at (13.5, 3.0) {\archibadge{Business Process}\archiname{4. Expose Resource}\\\archidesc{FHIR Query \& Subscriptions}};
 
     % --- Business Objects ---
-    \node[archi-business-object] (obj_hl7) at (0.0, 0.2) {\archibadge{Business Object}\archiname{HL7 v2 Message}\\\archidesc{ADT / MFN Stream}};
-    \node[archi-business-object] (obj_patient) at (5.7, 0.2) {\archibadge{Business Object}\archiname{Clinical Entity}\\\archidesc{FHIR Patient / Person}};
-    \node[archi-business-object] (obj_audit) at (11.4, 0.2) {\archibadge{Business Object}\archiname{Audit \& Provenance}\\\archidesc{AuditEvent Record}};
+    \node[archi-business-object, minimum width=3.5cm] (obj_hl7)     at (0.9, 1.0) {\archibadge{Business Object}\archiname{HL7 v2 Message}\\\archidesc{ADT / MFN Frame}};
+    \node[archi-business-object, minimum width=5.5cm] (obj_patient) at (6.8, 1.0) {\archibadge{Business Object}\archiname{Clinical Entity Model}\\\archidesc{FHIR Patient, Practitioner, Provenance}};
+    \node[archi-business-object, minimum width=3.5cm] (obj_audit)   at (13.5, 1.0) {\archibadge{Business Object}\archiname{AuditEvent Record}\\\archidesc{Audit Trail \& Safety}};
 
     % --- Relationships ---
     % Actor -> Role (Assignment)
@@ -34,7 +47,7 @@
     \draw[archi-assignment] (act_lab) -- (rol_producer);
     \draw[archi-assignment] (act_clinician) -- (rol_consumer);
 
-    % Role -> Service (Serving / Used By)
+    % Role -> Service (Serving)
     \draw[archi-serving] (srv_adt) -- (rol_producer);
     \draw[archi-serving] (srv_mfn) -- (rol_producer);
     \draw[archi-serving] (srv_query) -- (rol_consumer);
@@ -45,7 +58,7 @@
     \draw[archi-realization] (prc_persist) -- (srv_adt);
     \draw[archi-realization] (prc_serve) -- (srv_query);
 
-    % Process Flow (Triggering / Flow)
+    % Process Flow (Triggering)
     \draw[archi-triggering] (prc_ingest) -- (prc_match);
     \draw[archi-triggering] (prc_match) -- (prc_persist);
     \draw[archi-triggering] (prc_persist) -- (prc_serve);

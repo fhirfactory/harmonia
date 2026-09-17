@@ -69,9 +69,9 @@ This document records the architectural and implementation gaps identified durin
 
 ## 3. Gap Summary & Remediation Roadmap
 
-| Gap ID | Area | Current State | Risk Level | Target Release | Remediation Complexity |
+| Gap ID | Area | Current State | Risk Level | Target Release | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **REC-001** | Dual-Write Ingress Window | Log warning on Artemis publish failure, return `AA` | **HIGH** | Phase 2 | Low (Fail with `AE`) / Medium (Outbox) |
-| **REC-002** | Destination Fan-Out Matrix | Parent task lacks granular destination sub-status | **MEDIUM** | Phase 2 | Low (Task Output Extensions) |
-| **REC-003** | Distributed Worker Lease | Dependent solely on JMS consumer timeout | **MEDIUM** | Phase 3 | Medium (Infinispan Distributed Lock) |
-| **REC-004** | Startup Recovery Scan | No active DB reconciliation scan on startup | **LOW-MEDIUM** | Phase 3 | Medium (Scheduled Reconciliation Job) |
+| **REC-001** | Dual-Write Ingress Window | Propagates exception, returns HL7 `AE` NACK on publish failure | Resolved | Phase 2 | `REMEDIATED` |
+| **REC-002** | Destination Fan-Out Matrix | `Task.output` and `PragmaCheckpoint` track granular destination delivery status | Resolved | Phase 2 | `REMEDIATED` |
+| **REC-003** | Distributed Worker Lease | Dependent solely on JMS consumer timeout | **MEDIUM** | Phase 3 | `DESIGNED/PLANNED` |
+| **REC-004** | Startup Recovery Scan | Artemis persistent journal replay active; scheduled DB scanner roadmap | **LOW-MEDIUM** | Phase 3 | `DESIGNED/PLANNED` |

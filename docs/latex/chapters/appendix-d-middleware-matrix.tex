@@ -1,0 +1,166 @@
+%% =============================================================================
+%% chapters/appendix-d-middleware-matrix.tex
+%% APPENDIX D: Middleware Capability Matrix
+%% =============================================================================
+
+\chapter{Middleware Capability Matrix}
+\label{app:middleware_matrix}
+
+This appendix documents the exact capabilities, clustering modes, and architectural features of each middleware technology integrated into Harmonia, contrasting features actively relied upon against deliberately avoided capabilities.
+
+\section{Middleware Technology Summary}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l P{3.4cm} Y}
+\toprule
+\textbf{Technology} & \textbf{Version} & \textbf{Clustering / HA Mode} & \textbf{Harmonia Platform Capabilities Relied Upon} \\
+\midrule
+\textbf{ActiveMQ Artemis} & 2.33.0 & Symmetric mesh + Journal Replication & Durable queues, client failover URL, \nolinkurl{_AMQ_DUPL_ID} deduplication, \nolinkurl{ON_DEMAND} redistribution. \\
+\addlinespace
+\textbf{Infinispan} & 15.0.3 & JGroups TCP Discovery & Hot Rod binary protocol, 17 replicated caches, text/plain encoding, write-behind SPI. \\
+\addlinespace
+\textbf{PostgreSQL} & 16.2 & Separate Clinical, Ops \& Synapse DBs & Relational transactions, JSONB indexing, HikariCP connection pooling, schema isolation. \\
+\addlinespace
+\textbf{WildFly} & 31.0.1 & Standalone Microservices & Jakarta EE 10 CDI, JAX-RS REST endpoints, dual HTTP listener ports (8080/8090). \\
+\addlinespace
+\textbf{Spring Boot} & 3.2.5 & Stateless Microservices & Apache Camel routing, Actuator health probes, HAPI FHIR R5 JPA structures, Netty TCP server. \\
+\addlinespace
+\textbf{Matrix Synapse} & 1.120.0 & Closed Non-Federated StatefulSet & Application Service v1 API, Client-Server v1.11, Spaces hierarchy, 90-day retention cleanup. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Middleware Technology Capability Matrix}
+\label{tab:middleware_capability_matrix}
+\end{table}
+
+\newpage
+\section{Middleware Capabilities: Used vs. Avoided Analysis}
+
+\subsection{ActiveMQ Artemis 2.33.0 Messaging Engine}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{P{3.0cm} P{3.8cm} P{3.8cm} Y}
+\toprule
+\textbf{Dimension} & \textbf{Used / Relied Upon} & \textbf{Avoided / Excluded} & \textbf{Architectural Rationale} \\
+\midrule
+\textbf{Clustering} & Clustered mesh (\nolinkurl{ON_DEMAND} redistribution, discovery) & Static discovery via fixed XML IP lists only & Dynamic mesh prevents message starvation and single points of failure. \\
+\addlinespace
+\textbf{High Availability} & Replicated journal HA (\nolinkurl{<replicated/>}) & Shared-store HA (NFS / SAN file lock clustering) & Eliminates shared storage controller bottlenecks and split-brain lock corruption. \\
+\addlinespace
+\textbf{Transport Protocol} & Artemis Core / Netty Protocol (port 61616) & OpenWire, AMQP 1.0, MQTT, STOMP & Pure Netty transport minimizes protocol translation and connection pool overhead. \\
+\addlinespace
+\textbf{Broker Hosting} & Dedicated StatefulSet pods in Kubernetes & Embedded in-VM Artemis inside production apps & Isolates broker crashes and memory churn from business workflow logic. \\
+\addlinespace
+\textbf{Coordination} & Native Artemis cluster discovery protocol & Apache ZooKeeper / HashiCorp Consul & Reduces operational dependencies and external infrastructure complexity. \\
+\addlinespace
+\textbf{Dead-Letter Handling} & Automatic DLQ (\nolinkurl{DLQ}) \& Expiry (\nolinkurl{ExpiryQueue}) & Silent message drops or infinite redelivery loops & Bounded retry (max 3 attempts) with dead-letter preservation guarantees zero clinical message loss. \\
+\bottomrule
+\end{tabularx}
+\caption{ActiveMQ Artemis Capability Analysis: Used vs. Avoided}
+\label{tab:artemis_used_vs_avoided}
+\end{table}
+
+\subsection{Infinispan 15.0.3 Distributed In-Memory Data Grid}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{P{3.0cm} P{3.8cm} P{3.8cm} Y}
+\toprule
+\textbf{Dimension} & \textbf{Used / Relied Upon} & \textbf{Avoided / Excluded} & \textbf{Architectural Rationale} \\
+\midrule
+\textbf{Synchronization} & Synchronous replication (\nolinkurl{REPL_SYNC}) across all 17 caches & Asynchronous replication (\nolinkurl{REPL_ASYNC}) without ack & Synchronous caching guarantees read-your-writes consistency across pods. \\
+\addlinespace
+\textbf{Transport Protocol} & Hot Rod Binary Protocol (port 11222) & REST, Memcached, WebSocket protocols & Hot Rod binary RPC minimizes serialization latency and payload overhead. \\
+\addlinespace
+\textbf{Discovery} & JGroups TCP discovery (port 7800) over headless service & JGroups UDP multicast discovery & UDP multicast is unreliable or prohibited in standard Kubernetes container networks. \\
+\addlinespace
+\textbf{Query \& Indexing} & Key-based lookup over text/plain payloads & Lucene / Hibernate Search on cache entries & Search indexing is delegated to PostgreSQL; avoids memory exhaustion. \\
+\addlinespace
+\textbf{Transactions} & Non-transactional caches with write-behind SPI & 2-Phase Commit (2PC) / XA distributed transactions & Eliminates 2PC distributed locking overhead; relies on idempotent workflows. \\
+\addlinespace
+\textbf{Cross-Site HA} & Single-cluster multi-pod grid & Cross-site replication (x-site across data centers) & Local HA handles node recovery; cross-site deferred to future phases. \\
+\bottomrule
+\end{tabularx}
+\caption{Infinispan Capability Analysis: Used vs. Avoided}
+\label{tab:infinispan_used_vs_avoided}
+\end{table}
+
+\subsection{PostgreSQL 16 Relational Persistence}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{P{3.0cm} P{3.8cm} P{3.8cm} Y}
+\toprule
+\textbf{Dimension} & \textbf{Used / Relied Upon} & \textbf{Avoided / Excluded} & \textbf{Architectural Rationale} \\
+\midrule
+\textbf{DB Isolation} & Strictly separated clinical, operations, and Synapse DBs & Single unified monolithic database schema & Prevents operational telemetry queries from impacting clinical ACID transaction throughput. \\
+\addlinespace
+\textbf{Persistence Schema} & Relational tables with immutable composite primary keys & In-place row updates without version tracking & Guarantees complete historical auditability and temporal reproducibility of FHIR records. \\
+\addlinespace
+\textbf{Indexing Strategy} & Targeted composite B-Tree indexes on lookup and timestamps & Full-database automated or unchecked index sprawl & Balances fast sub-millisecond retrieval with high-throughput write performance. \\
+\addlinespace
+\textbf{Logic Placement} & Schema definitions, constraints, and standard SQL queries & Database triggers, PL/pgSQL stored procedures, DB rules & Business logic remains in testable Java/Spring services (Themis, Energeia, Mnemosyne). \\
+\addlinespace
+\textbf{Replication} & Independent node instances partitioned by domain & Native PostgreSQL streaming replication / Patroni & Simplifies base container orchestration; HA provided by application-tier redundancy and K8s. \\
+\bottomrule
+\end{tabularx}
+\caption{PostgreSQL Capability Analysis: Used vs. Avoided}
+\label{tab:postgres_used_vs_avoided}
+\end{table}
+
+\subsection{WildFly 31.0.1 Jakarta EE Runtime (Iris BEFE Gateway \& Ponos)}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{P{3.0cm} P{3.8cm} P{3.8cm} Y}
+\toprule
+\textbf{Dimension} & \textbf{Used / Relied Upon} & \textbf{Avoided / Excluded} & \textbf{Architectural Rationale} \\
+\midrule
+\textbf{Component Model} & Jakarta RESTful Web Services (JAX-RS 3.1) \& CDI 4.0 & Stateful Enterprise Java Beans (EJB) \& JMS MDBs & Stateless HTTP REST and Hot Rod binary clients prevent session state stickiness. \\
+\addlinespace
+\textbf{Gateway Pattern} & Decoupled Backend-For-Frontend (BEFE) proxying Mneme & Direct JPA / Hibernate persistence in WildFly & Strictly enforces Invariant 3 (Iris Presentation Decoupling). \\
+\addlinespace
+\textbf{Clustering} & Standalone container instances in Kubernetes & WildFly Domain Mode / mod\_cluster multicast & Kubernetes handles lifecycle, rolling updates, and liveness/readiness probes. \\
+\addlinespace
+\textbf{Messaging} & External ActiveMQ Artemis cluster via Netty / REST & Embedded WildFly Artemis messaging broker subsystem & Prevents broker memory exhaustion and GC pauses from disrupting HTTP gateway responsiveness. \\
+\addlinespace
+\textbf{Security} & Themis REST security context propagation & Container-managed JAAS realms with fixed database auth & Allows centralized default-deny authorization via Themis API. \\
+\bottomrule
+\end{tabularx}
+\caption{WildFly Capability Analysis: Used vs. Avoided}
+\label{tab:wildfly_used_vs_avoided}
+\end{table}
+
+\subsection{Matrix Synapse 1.120.0 Collaboration Homeserver}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{P{3.0cm} P{3.8cm} P{3.8cm} Y}
+\toprule
+\textbf{Dimension} & \textbf{Used / Relied Upon} & \textbf{Avoided / Excluded} & \textbf{Architectural Rationale} \\
+\midrule
+\textbf{Federation} & Closed, non-federated deployment (\nolinkurl{federation.enabled: false}) & Public inter-homeserver federation & Enforces strict healthcare security boundary; isolates collaboration contexts. \\
+\addlinespace
+\textbf{Room Encryption} & Transport TLS 1.3 across hops; unencrypted server-side rooms & Olm/Megolm end-to-end encryption (E2EE) & Allows automated clinical governance, indexing, and Petasos workflow dispatch (AGORA-ADR-002). \\
+\addlinespace
+\textbf{User Provisioning} & Deterministic accounts provisioned via Synapse Admin API & Public open user self-registration & Only authenticated Harmonia principals can access collaboration spaces (AGORA-ADR-001). \\
+\addlinespace
+\textbf{Room Discovery} & Invite-only private Spaces and child rooms & Public room directory and world-readable aliases & Prevents unauthorized browsing of clinical threads (AGORA-ADR-005). \\
+\addlinespace
+\textbf{Event Retention} & 90-day automated cleanup policy & Unbounded permanent event retention & Matrix is ephemeral; authoritative data lives in Mnemosyne (AGORA-ADR-004). \\
+\addlinespace
+\textbf{Transactions} & Durable AS transaction deduplication in PostgreSQL & Stateless transaction ingestion & Prevents duplicate Petasos task dispatch on network retries (AGORA-ADR-007). \\
+\bottomrule
+\end{tabularx}
+\caption{Matrix Synapse Capability Analysis: Used vs. Avoided}
+\label{tab:synapse_used_vs_avoided}
+\end{table}
+
+\newpage

@@ -1,0 +1,31 @@
+%% =============================================================================
+%% chapters/14-configuration-hierarchy.tex
+%% PART V: Configuration Architecture
+%% Chapter 14: Declarative Configuration Hierarchy (Environment, ConfigMaps, Secrets, Vault)
+%% =============================================================================
+
+\chapter{Declarative Configuration Hierarchy}
+\label{chap:configuration_hierarchy}
+
+Harmonia implements a 5-stage declarative configuration hierarchy ensuring clean separation between code, infrastructure settings, and sensitive cryptographic secrets.
+
+\section{The 5-Stage Configuration Hierarchy}
+
+Configuration properties are resolved according to strict precedence rules:
+\begin{enumerate}
+    \item \textbf{Stage 1: Application Base Defaults}: Hardcoded baseline fallbacks embedded within Java \texttt{application.properties} or WildFly \texttt{standalone.xml}.
+    \item \textbf{Stage 2: Declarative ConfigMaps}: Environment-specific parameters (e.g., hostnames, port bindings, timeouts, queue names) declared in Kubernetes ConfigMaps.
+    \item \textbf{Stage 3: Secret Injection \& Vault}: Sensitive credentials (database passwords, Artemis security credentials, TLS private keys) mounted as Kubernetes Secrets or populated from HashiCorp Vault / Ansible Vault.
+    \item \textbf{Stage 4: Container Environment Variables}: Explicit environment variables injected into container pods by Kubernetes manifest overlays.
+    \item \textbf{Stage 5: Command-Line Overrides}: Ephemeral CLI flags and JVM system properties (\texttt{-Dprop=value}) used for localized diagnostic sessions.
+\end{enumerate}
+
+\section{Secret Management \& Zero-Plaintext Policy}
+
+Harmonia strictly forbids plaintext passwords or API keys in source code or unencrypted Git repositories:
+\begin{itemize}
+    \item In development/testing, secrets are managed via sealed Kubernetes Secret manifests.
+    \item In production, secrets are dynamically fetched at startup using external secret operators or Ansible Vault injection during deployment.
+\end{itemize}
+
+\newpage

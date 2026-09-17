@@ -1,0 +1,37 @@
+%% =============================================================================
+%% chapters/21-themis-security.tex
+%% PART VIII: Security, Logging, and Operations
+%% Chapter 21: Themis Policy Evaluation, Default-Deny & Authorization Boundaries
+%% =============================================================================
+
+\chapter[Themis Policy Evaluation \& Security Boundaries]{Themis Policy Evaluation \&\\Security Boundaries}
+\label{chap:themis_security}
+
+The Themis security subsystem (\texttt{themis/themis-core} and \texttt{themis/themis-api}) provides centralized Attribute- and Role-Based Access Control (ABAC/RBAC) across all Harmonia ingress interfaces, queue dispatchers, and persistence layers.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-themis-security-pipeline.tex}
+    \end{adjustbox}
+    \caption{Themis 4-Gate Defence-in-Depth Authorization Pipeline and PDP Evaluation}
+    \label{fig:themis_security_pipeline}
+\end{figure}
+
+\section{Default-Deny Policy Invariant}
+
+\begin{principlebox}{Default-Deny Security Enforcement}
+In accordance with Invariant 6, all integration endpoints, task processors, and persistence operations default to \texttt{ThemisDecision.DENY}. Access is granted if and only if an explicit Themis policy rule evaluates to \texttt{PERMIT} for the authenticated security context.
+\end{principlebox}
+
+\section{The 4-Gate Defence-in-Depth Pipeline}
+
+Security enforcement is applied at four successive gates:
+\begin{enumerate}
+    \item \textbf{Gate 1 --- Ingress Screening}: \texttt{FhirSecurityInterceptor} validates TLS certificates, JWT bearer tokens, and client IP origins.
+    \item \textbf{Gate 2 --- Dispatch Authorization}: Ponos validates whether the authenticated principal has permission to publish to or consume from target Petasos queues.
+    \item \textbf{Gate 3 --- Activity Execution}: Individual Ergon activities evaluate payload-specific security labels and user scopes.
+    \item \textbf{Gate 4 --- Storage Compartment Enforcement}: Mnemosyne JPA mutators verify that the write operation complies with resource compartment and tenancy rules.
+\end{enumerate}
+
+\newpage

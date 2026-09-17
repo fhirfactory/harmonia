@@ -58,6 +58,11 @@ class AdtDistributionErgonTest {
         Pragma outputPragma = exchange.getMessage().getBody(Pragma.class);
         assertThat(outputPragma).isNotNull();
         assertThat(outputPragma.getOutput()).hasSize(3);
+        assertThat(outputPragma.getCheckpoints()).hasSize(3);
+        assertThat(outputPragma.getCheckpoints().get(0).getStageName()).isEqualTo("FANOUT_DISPATCH_INITIATED");
+        assertThat(outputPragma.getCheckpoints().get(0).getMetadata().get("destinationQueue")).isEqualTo(AdtDistributionErgon.QUEUE_EMR_ADT);
+        assertThat(outputPragma.getCheckpoints().get(1).getMetadata().get("destinationQueue")).isEqualTo(AdtDistributionErgon.QUEUE_LMS_ADT);
+        assertThat(outputPragma.getCheckpoints().get(2).getMetadata().get("destinationQueue")).isEqualTo(AdtDistributionErgon.QUEUE_RIS_ADT);
 
         assertThat(exchange.getMessage().getHeader("HIE_FANOUT_COUNT")).isEqualTo(3);
         assertThat(exchange.getMessage().getHeader("HIE_FANOUT_DESTINATIONS", String.class))

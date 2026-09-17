@@ -1,0 +1,83 @@
+%% =============================================================================
+%% chapters/02-conceptual-taxonomy.tex
+%% PART I: Foundations and Concepts
+%% Chapter 2: Conceptual Taxonomy (Hestia, Pylai, Petasos, Energeia, Mneme, Mnemosyne, Calliope, Themis, Iris, Agora, Paradeigma)
+%% =============================================================================
+
+\chapter{Conceptual Taxonomy \& Subsystem Domains}
+\label{chap:conceptual_taxonomy}
+
+Harmonia enforces strict separation of concerns across its conceptual domain landscape. Each domain encapsulates distinct operational responsibilities, persistence boundaries, and protocol lifecycles.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-conceptual-layers.tex}
+    \end{adjustbox}
+    \caption{Harmonia Conceptual Layering Stack and Subsystem Interactions}
+    \label{fig:conceptual_layers}
+\end{figure}
+
+\section{Core Conceptual Domains}
+
+\subsection{Presentation Services (\texttt{Iris})}
+The presentation layer delivers decoupled clinical and administrative web applications supported by a dual-port Backend-For-Frontend (BEFE) gateway.
+\begin{itemize}
+    \item \textbf{iris-clinical}: Clinical single-page application (Vue 3 / TypeScript) providing patient record exploration, search, and longitudinal timeline visualization.
+    \item \textbf{iris-console}: Operational telemetry portal (Vue 3 / TypeScript) exposing message broker queue depths, cache statistics, and cluster health metrics. (Reconciled from legacy terminology \texttt{iris-monitor}).
+    \item \textbf{iris-administration}: Administrative portal (Vue 3 / TypeScript) providing provider directory management and governance controls. Crucially, \texttt{iris-administration} is a presentation client consuming REST endpoints and does not implement server-side registry persistence or state machines.
+    \item \textbf{iris-befe}: WildFly 31 Jakarta EE gateway exposing JAX-RS REST endpoints on Port 8080 and administrative telemetry on Port 8090, connecting to downstream services via Infinispan Hot Rod and Petasos JMS.
+\end{itemize}
+
+\subsection{Gateway \& Protocol Services (\texttt{Pylai})}
+Boundary protocol interface services providing bidirectional translation between external healthcare wire formats and internal event buses.
+\begin{itemize}
+    \item \textbf{pylai-mllp-in}: High-throughput MLLP/TCP ingress gateway (Port 2575) consuming HL7 v2 triggers, validating framing, performing security screening, and publishing durable tasks to Petasos.
+    \item \textbf{pylai-mllp-out}: Multi-instance MLLP egress gateway consuming outbound dispatch queues, transmitting frames over TCP sockets, and evaluating synchronous HL7 ACK/NACK responses.
+    \item \textbf{pylai-fhir-registry}: Spring Boot REST gateway exposing standard HL7 FHIR R5 Provider Directory endpoints (\texttt{/fhir/r5/Practitioner}, etc.), translating write interactions into asynchronous change requests.
+\end{itemize}
+
+\subsection{Messaging \& Transport Subsystem (\texttt{Petasos})}
+Transport abstraction and resilient messaging layer.
+\begin{itemize}
+    \item \textbf{petasos-api}: Pure Java abstraction layer declaring contracts (\nolinkurl{Petasos}, \nolinkurl{PetasosProducer}, \nolinkurl{PetasosConsumer}, \nolinkurl{PetasosMessage}, \nolinkurl{PetasosDestination}) strictly decoupled from JMS and ActiveMQ Artemis.
+    \item \textbf{petasos-core}: Message routing, metrics aggregation, and sliding-window deduplication logic.
+    \item \textbf{petasos-artemis}: Apache ActiveMQ Artemis adapter implementing failover connection pools and JMS transport bridges.
+\end{itemize}
+
+\subsection{Workflow \& Execution Engine (\texttt{Energeia})}
+Composable clinical workflow and activity execution engine.
+\begin{itemize}
+    \item \textbf{energeia-ponos}: WildFly Jakarta EE 10 WAR task execution engine consuming Petasos queue tasks and executing dynamic Camel route pipelines.
+    \item \textbf{energeia-erga}: Library of discrete, single-responsibility Ergon activities executing specific transformations, validation rules, and schema mappings.
+    \item \textbf{energeia-praxis}: Workflow orchestration engine chaining sequential Ergon steps into auditable execution graphs.
+    \item \textbf{Pragma}: Canonical task state entity holding inputs, outputs, execution checkpoints, and bidirectional FHIR \texttt{Task} mappings.
+\end{itemize}
+
+\subsection{Data, Caching \& Persistence Services (\texttt{Hestia})}
+Unified data services aggregator dividing ephemeral operational cache from durable relational persistence.
+\begin{itemize}
+    \item \textbf{Mneme (\texttt{hestia/mneme-cluster})}: Infinispan 15+ distributed cache grid providing sub-millisecond retrieval of active clinical tasks (\nolinkurl{task-cache}), task sequences (\nolinkurl{sequence-cache}), security pragmas, and module statuses over Hot Rod (Port 11222).
+    \item \textbf{Mnemosyne (\texttt{hestia/mnemosyne-clinical} \& \texttt{mnemosyne-operations})}: Durable PostgreSQL 16 relational storage comprising Spring Boot HAPI FHIR JPA servers (clinical store) and Operations JPA servers (task audit and workflow lineage).
+\end{itemize}
+
+\subsection{Canonical Schemas \& Security Governance (\texttt{Calliope} \& \texttt{Themis})}
+Cross-cutting shared libraries and policy engines.
+\begin{itemize}
+    \item \textbf{Calliope}: Centralized canonical schema definitions, domain DTOs, and FHIR converter models used across all modules.
+    \item \textbf{Themis}: Default-deny Attribute- and Role-Based Access Control (ABAC/RBAC) security engine, 4-gate enforcement interceptors, and non-PHI audit event logging.
+\end{itemize}
+
+\subsection{Collaboration Services (\texttt{Agora})}
+Clinical collaboration subsystem bridging Harmonia clinical events into Matrix Synapse.
+\begin{itemize}
+    \item \textbf{agora-api}: Pure Java domain contracts, event models, and Petasos destination constants.
+    \item \textbf{agora-matrix}: Encapsulated Matrix Client-Server REST and Synapse Admin API client adapters.
+    \item \textbf{agora-core}: Lifecycle coordination, deterministic identity provisioning, care team reconciliation, and Themis default-deny policy evaluation.
+    \item \textbf{agora-service}: Spring Boot 3.2.5 microservice exposing the Matrix Application Service transaction endpoint on Port 8092 (management on Port 9992).
+\end{itemize}
+
+\subsection{Synthetic Clinical Simulation (\texttt{Paradeigma})}
+Isolated synthetic simulation subsystem providing deterministic hospital actor emulators (PAS, EMR, LMS, RIS-PAC) and scenario drivers for integration and resilience testing. Production modules maintain strict zero-dependency isolation from Paradeigma.
+
+\newpage

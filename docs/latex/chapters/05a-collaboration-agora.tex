@@ -1,0 +1,102 @@
+%% =============================================================================
+%% chapters/05a-collaboration-agora.tex
+%% PART II: Platform Capabilities and Modules
+%% Chapter 5a: Collaboration & Matrix Integration (Agora)
+%% =============================================================================
+
+\chapter{Collaboration \& Matrix Integration (\texttt{Agora})}
+\label{chap:collaboration_agora}
+
+The Agora subsystem establishes an authoritative, governed architectural boundary between the Harmonia Health Integration Environment and the Matrix Synapse collaboration ecosystem. Acting primarily as a Matrix Application Service (AS), Agora projects authorized clinical collaboration contexts into Matrix Spaces and Rooms, ingests room interactions, and translates them into canonical Harmonia message envelopes over the Petasos messaging backbone.
+
+\begin{principlebox}{Matrix as a Capability, Not Architecture}
+Agora makes Matrix a Harmonia collaboration capability; it does \textbf{not} make Matrix the Harmonia architecture. Harmonia remains authoritative for all healthcare information, FHIR resources, Provider Registry state, identity relationships, security policies, and clinical workflows. Matrix provides authorized collaboration and communication surfaces only.
+\end{principlebox}
+
+\section{Subsystem Decomposition \& Layering}
+
+To guarantee strict architectural separation and prevent Matrix protocol leaks into the clinical domain, Agora is partitioned across four decoupled Maven modules under \nolinkurl{agora/}:
+
+\begin{itemize}
+    \item \textbf{\texttt{agora-api}}: Declares pure Java domain abstractions, event models (\nolinkurl{AgoraCollaborationEvent}), space/room/membership requests, and Petasos destination constants (\nolinkurl{AgoraTopics}). Free of any Matrix, Spring, or persistence dependencies.
+    \item \textbf{\texttt{agora-matrix}}: Encapsulates the Matrix Client-Server REST client (\nolinkurl{MatrixClientAdapter}), the Synapse Administration Gateway (\nolinkurl{SynapseAdministrationGateway}), and Application Service protocol DTOs. Matrix protocol types are strictly quarantined within this module.
+    \item \textbf{\texttt{agora-core}}: Implements core domain orchestration, including \nolinkurl{AgoraCollaborationLifecycleService}, deterministic identity provisioning (\nolinkurl{AgoraIdentityService}), care team reconciliation (\nolinkurl{AgoraMembershipReconciliationService}), Mnemosyne PostgreSQL persistence entities, and Petasos event bridges.
+    \item \textbf{\texttt{agora-service}}: Spring Boot 3.2.5 deployment runtime packaging the Application Service REST controller (\nolinkurl{ApplicationServiceTransactionEndpoint}), security authentication filters, and Spring Actuator health indicators.
+\end{itemize}
+
+\begin{archinote}
+In accordance with Invariant 8, direct dependencies from Agora to Ponos (\nolinkurl{net.fhirfactory.harmonia.energeia.ponos..}) are strictly forbidden. Agora coordinates with clinical workflows exclusively via asynchronous Petasos messaging queues.
+\end{archinote}
+
+\section{Key Architectural Decisions (ADRs)}
+
+The design of Agora is governed by eight platform Architecture Decision Records:
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Agora Architecture Decision Records (ADRs)}
+\label{tab:agora_adrs}
+\begin{tabularx}{\textwidth}{lP{3.5cm}Y}
+\toprule
+\textbf{Identifier} & \textbf{Decision Title} & \textbf{Architectural Summary \& Rationale} \\
+\midrule
+\textbf{AGORA-ADR-001} & Identity Provisioning & Dedicated local Matrix accounts (\nolinkurl{@_harmonia_p_<uuid>:synapse}) are deterministically provisioned via the Synapse Admin REST API, backed by credentials in Mnemosyne. \\
+\textbf{AGORA-ADR-002} & Transport TLS Non-E2EE & Collaboration rooms operate without Olm/Megolm encryption, protected by TLS 1.3 within a closed Kubernetes boundary to allow server-side governance and Petasos dispatch. \\
+\textbf{AGORA-ADR-003} & Authoritative ID Mapping & Mappings between Harmonia entities and Matrix IDs are durably stored in PostgreSQL table \nolinkurl{agora_resource_mappings}. \\
+\textbf{AGORA-ADR-004} & Conversation Retention & Synapse enforces a 90-day maximum message lifetime. Clinical decisions must be committed back to Mnemosyne FHIR storage prior to expiration. \\
+\textbf{AGORA-ADR-005} & PHI Minimisation & Room aliases, Space names, and topics must never include patient names, DOB, or MRNs. Opaque UUIDs are strictly enforced. \\
+\textbf{AGORA-ADR-006} & Closed Deployment & Inter-server federation, public registration, and room directories are disabled (\nolinkurl{federation.enabled: false}). \\
+\textbf{AGORA-ADR-007} & Transaction Idempotency & Incoming homeserver transactions (\nolinkurl{txnId}) are persisted in \nolinkurl{agora_as_transactions} to guarantee idempotent processing. \\
+\textbf{AGORA-ADR-008} & Soft Room Archival & Concluded encounters result in read-only power levels, member removal, and an \nolinkurl{ARCHIVED} status record rather than a destructive purge. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Collaboration Projections \& Room Lifecycles}
+
+Agora manages structured collaboration spaces projected from authoritative Harmonia contexts:
+
+\subsection{Patient Collaboration Space Hierarchy}
+When a patient encounter is initiated, Agora provisions a private Matrix Space linked to four standard child rooms via \nolinkurl{m.space.child} state events:
+\begin{enumerate}
+    \item \textbf{Patient Statistics}: Vitals, clinical trajectory summaries, and encounter metrics.
+    \item \textbf{Patient Tasks}: Clinical workflow assignments, task status transitions, and action notifications.
+    \item \textbf{Patient Discussion}: Real-time multidisciplinary clinical team communication.
+    \item \textbf{Patient Diagnostics}: Laboratory result notifications and diagnostic imaging links.
+\end{enumerate}
+
+\subsection{Practitioner \& Group Spaces}
+In addition to Patient Spaces, Agora provisions:
+\begin{itemize}
+    \item \textbf{Practitioner Spaces}: Individual practitioner spaces containing child rooms partitioned by \nolinkurl{PractitionerRole}.
+    \item \textbf{Group Collaboration Rooms}: Multidisciplinary care team coordination surfaces.
+\end{itemize}
+
+\section{Security Governance \& Reconciliation}
+
+\subsection{Themis Default-Deny Authorization}
+Every collaboration request---including Space creation, room provisioning, user invitation, join approval, and participant kick---is evaluated against Themis. If \nolinkurl{ThemisDecision.isAllowed()} is false, the action is rejected immediately, and a sanitized, non-PHI security audit event is emitted.
+
+\subsection{Membership Drift Reconciliation}
+Care team membership is authoritatively governed in Harmonia's Provider Registry. The \nolinkurl{AgoraMembershipReconciliationService} periodically compares the authoritative roster against active room members retrieved via \nolinkurl{GET /_matrix/client/v3/rooms/{roomId}/members}. Any unauthorized participant is ejected via \nolinkurl{POST /kick}, and newly authorized practitioners are issued invites via \nolinkurl{POST /invite}.
+
+\section{Application Service Endpoint \& Petasos Integration}
+
+Agora exposes the Matrix Application Service transaction endpoint:
+\begin{lstlisting}[language=bash, caption={Application Service Transaction API}]
+PUT /_matrix/app/v1/transactions/{txnId}
+Authorization: Bearer <hs_token>
+\end{lstlisting}
+
+Upon receiving a transaction, Agora executes the following pipeline:
+\begin{enumerate}
+    \item \textbf{Authentication}: Validates the Bearer token against configured \nolinkurl{agora.security.hs-token}.
+    \item \textbf{Deduplication}: Queries \nolinkurl{AgoraTransactionRepository} for \nolinkurl{txnId}. If already processed, returns HTTP 200 \nolinkurl{{}} immediately.
+    \item \textbf{Evaluation \& Dispatch}: Evaluates Themis authorization for each contained event, translates allowed events into \nolinkurl{AgoraCollaborationEvent}, and publishes them onto Petasos queue \nolinkurl{petasos.queue.agora.inbound}.
+    \item \textbf{Commit}: Records \nolinkurl{txnId} in PostgreSQL table \nolinkurl{agora_as_transactions} and acknowledges Synapse with HTTP 200 \nolinkurl{{}}.
+\end{enumerate}
+
+For outbound notifications, \nolinkurl{AgoraPetasosEventConsumer} listens on \nolinkurl{petasos.queue.agora.outbound}, resolves the target Matrix room ID from Mnemosyne, and dispatches the formatted message via \nolinkurl{MatrixClientAdapter.sendMessage()}.
+
+\newpage

@@ -1,0 +1,34 @@
+%% =============================================================================
+%% diagrams/fig-iris-federation.tex
+%% Iris Presentation Federation (SPAs, BEFE Gateway, Hot Rod & REST Endpoints)
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 6.0) rectangle (15.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Iris Presentation SPAs (Vue 3 / TypeScript / Pinia)};
+
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (15.8, 5.2);
+    \node[archi-plate-title] at (-0.6, 5.0) {Backend-For-Frontend (BEFE) Gateway \& Downstream Services};
+
+    % --- SPAs ---
+    \node[archi-app-component, minimum width=3.4cm] (ui_clin)  at (1.5, 7.8) {\archibadge{SPA}\archiname{iris-clinical}\\\archidesc{Clinical Port 80/3000}};
+    \node[archi-app-component, minimum width=3.4cm] (ui_cons)  at (6.5, 7.8) {\archibadge{SPA}\archiname{iris-console}\\\archidesc{Console Port 80/3001}};
+    \node[archi-app-component, minimum width=3.4cm] (ui_admin) at (11.5, 7.8) {\archibadge{SPA}\archiname{iris-administration}\\\archidesc{Admin Port 80/3002}};
+
+    % --- BEFE & Services ---
+    \node[archi-app-component, minimum width=4.5cm] (befe)      at (4.0, 3.4) {\archibadge{BEFE Gateway}\archiname{iris-befe}\\\archidesc{WildFly 31 / JAX-RS / CDI}};
+    \node[archi-app-component, minimum width=4.5cm] (pylai_reg) at (11.5, 3.4) {\archibadge{REST Gateway}\archiname{pylai-fhir-registry}\\\archidesc{Spring Boot FHIR R5}};
+
+    \node[archi-system-software, minimum width=4.5cm] (mneme) at (4.0, 1.4) {\archibadge{Cache}\archiname{mneme-cluster}\\\archidesc{Infinispan Hot Rod 11222}};
+    \node[archi-data-object, minimum width=4.5cm] (mnemo)     at (11.5, 1.4) {\archibadge{Storage}\archiname{mnemosyne-clinical}\\\archidesc{PostgreSQL JPA R5}};
+
+    % --- Flows ---
+    \draw[archi-flow] (ui_clin) -- node[archi-lbl]{REST} (befe);
+    \draw[archi-flow] (ui_cons) -- node[archi-lbl]{REST / WS} (befe);
+    \draw[archi-flow] (ui_admin) -- node[archi-lbl]{FHIR REST} (pylai_reg);
+
+    \draw[archi-serving] (mneme) -- node[archi-lbl]{Hot Rod} (befe);
+    \draw[archi-flow] (pylai_reg) -- node[archi-lbl]{JPA} (mnemo);
+
+\end{tikzpicture}

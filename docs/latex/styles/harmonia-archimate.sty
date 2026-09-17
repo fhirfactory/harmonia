@@ -25,53 +25,53 @@
 }
 
 % =============================================================================
-% ArchiMate 3.2 Standard Color Palette
+% ArchiMate 3.2 Modernized Harmonic Color Palette
 % =============================================================================
-% Motivation & Strategy Layer (Lilac / Purple)
-\definecolor{archimotivfill}{HTML}{E6D0DE}
-\definecolor{archimotivdraw}{HTML}{7A3B69}
-\definecolor{archimotivtext}{HTML}{2B1124}
+% Motivation Layer (Soft Lilac / Plum)
+\definecolor{archimotivfill}{HTML}{EDE2EB}
+\definecolor{archimotivdraw}{HTML}{8A3D73}
+\definecolor{archimotivtext}{HTML}{321128}
 
-% Strategy Layer (Sand / Warm Ochre)
-\definecolor{archistratfill}{HTML}{F2E3C6}
-\definecolor{archistratdraw}{HTML}{A67C1E}
-\definecolor{archistrattext}{HTML}{3D2B05}
+% Strategy Layer (Warm Sand / Ochre)
+\definecolor{archistratfill}{HTML}{FDF4E3}
+\definecolor{archistratdraw}{HTML}{B58428}
+\definecolor{archistrattext}{HTML}{422F07}
 
-% Business Layer (Yellow / Amber)
-\definecolor{archibizfill}{HTML}{FFFFB5}
-\definecolor{archibizdraw}{HTML}{9E8B00}
-\definecolor{archibiztext}{HTML}{383200}
+% Business Layer (Soft Amber / Warm Gold)
+\definecolor{archibizfill}{HTML}{FEF9C3}
+\definecolor{archibizdraw}{HTML}{B45309}
+\definecolor{archibiztext}{HTML}{451A03}
 
-% Application Layer (Light Blue / Cyan)
-\definecolor{archiappfill}{HTML}{B5FFFF}
-\definecolor{archiappdraw}{HTML}{008099}
-\definecolor{archiapptext}{HTML}{002E38}
+% Application Layer (Clean Soft Sky / Cyan)
+\definecolor{archiappfill}{HTML}{E0F2FE}
+\definecolor{archiappdraw}{HTML}{0284C7}
+\definecolor{archiapptext}{HTML}{0C4A6E}
 
-% Technology Layer (Pale Green)
-\definecolor{architechfill}{HTML}{C9E4B5}
-\definecolor{architechdraw}{HTML}{4D8A29}
-\definecolor{architechtext}{HTML}{1A3609}
+% Technology Layer (Pale Soft Sage / Emerald)
+\definecolor{architechfill}{HTML}{DCFCE7}
+\definecolor{architechdraw}{HTML}{16A34A}
+\definecolor{architechtext}{HTML}{14532D}
 
-% Physical & Deployment Layer (Greenish Slate / Olive Green)
-\definecolor{archiphysfill}{HTML}{D5E8D4}
-\definecolor{archiphysdraw}{HTML}{54804E}
-\definecolor{archiphystext}{HTML}{1C3319}
+% Physical & Deployment Layer (Cool Slate)
+\definecolor{archiphysfill}{HTML}{E2E8F0}
+\definecolor{archiphysdraw}{HTML}{475569}
+\definecolor{archiphystext}{HTML}{0F172A}
 
-% Implementation & Migration Layer (Rose / Pink)
-\definecolor{archiimplfill}{HTML}{FADBD8}
-\definecolor{archiimpldraw}{HTML}{B03A2E}
-\definecolor{archiimpltext}{HTML}{49120D}
+% Implementation & Migration Layer (Rose / Coral)
+\definecolor{archiimplfill}{HTML}{FFE4E6}
+\definecolor{archiimpldraw}{HTML}{E11D48}
+\definecolor{archiimpltext}{HTML}{881337}
 
-% Data & Information Layer (Pale Teal)
-\definecolor{archidatafill}{HTML}{D1F2EB}
-\definecolor{archidatadraw}{HTML}{117A65}
-\definecolor{archidatatext}{HTML}{0B3C32}
+% Data & Information Layer (Fresh Mint / Teal)
+\definecolor{archidatafill}{HTML}{CCFBF1}
+\definecolor{archidatadraw}{HTML}{0D9488}
+\definecolor{archidatatext}{HTML}{134E4A}
 
 % Group / Plate / Boundary Colors
-\definecolor{archigroupfill}{HTML}{F8F9F9}
-\definecolor{archigroupdraw}{HTML}{BDC3C7}
-\definecolor{archiboxfill}{HTML}{F2F4F4}
-\definecolor{archiboxdraw}{HTML}{95A5A6}
+\definecolor{archigroupfill}{HTML}{F8FAFC}
+\definecolor{archigroupdraw}{HTML}{CBD5E1}
+\definecolor{archiboxfill}{HTML}{F1F5F9}
+\definecolor{archiboxdraw}{HTML}{94A3B8}
 
 % =============================================================================
 % Base Node Dimensions & Default Geometry
@@ -80,17 +80,17 @@
     archimate-base/.style = {
         align=center,
         font=\sffamily\footnotesize,
-        line width=0.8pt,
+        line width=0.75pt,
         inner sep=4pt,
         text=black,
-        drop shadow={opacity=0.15, shadow xshift=1.5pt, shadow yshift=-1.5pt}
+        drop shadow={opacity=0.12, shadow xshift=1.2pt, shadow yshift=-1.2pt}
     },
     archimate-box/.style = {
         archimate-base,
         rectangle,
-        rounded corners=2pt,
+        rounded corners=3pt,
         minimum width=2.8cm,
-        minimum height=1.3cm
+        minimum height=1.25cm
     },
     archimate-service/.style = {
         archimate-base,
@@ -102,31 +102,60 @@
     archimate-interface/.style = {
         archimate-base,
         rectangle,
-        rounded corners=1pt,
+        rounded corners=2pt,
         minimum width=2.6cm,
-        minimum height=1.0cm
+        minimum height=1.05cm
     },
     archimate-process/.style = {
         archimate-base,
         rectangle,
-        rounded corners=3pt,
+        rounded corners=4pt,
         minimum width=2.8cm,
         minimum height=1.2cm
     },
     archimate-group/.style = {
         draw=archigroupdraw,
         fill=archigroupfill,
-        line width=0.8pt,
+        line width=0.75pt,
         dashed,
-        rounded corners=4pt,
+        rounded corners=6pt,
         inner sep=10pt
     },
     archimate-plate/.style = {
         draw=archiboxdraw,
         fill=archiboxfill,
-        line width=0.9pt,
-        rounded corners=4pt,
-        inner sep=12pt
+        line width=0.75pt,
+        rounded corners=6pt,
+        inner sep=10pt
+    },
+    archi-lbl/.style = {
+        fill=white,
+        fill opacity=0.92,
+        text opacity=1.0,
+        rounded corners=2pt,
+        inner sep=1.5pt,
+        font=\sffamily\fontsize{6.5pt}{7.5pt}\selectfont\bfseries,
+        draw=gray!35,
+        line width=0.4pt
+    },
+    archi-plate-bg/.style = {
+        draw=gray!35,
+        fill=gray!4,
+        line width=0.75pt,
+        dashed,
+        rounded corners=6pt,
+        inner sep=10pt
+    },
+    archi-plate-solid/.style = {
+        draw=gray!30,
+        fill=gray!3,
+        line width=0.75pt,
+        rounded corners=6pt,
+        inner sep=10pt
+    },
+    archi-plate-title/.style = {
+        font=\sffamily\bfseries\scriptsize\color{gray!65},
+        anchor=north west
     }
 }
 
@@ -325,73 +354,73 @@
 \tikzset{
     % 1. Composition (Solid Line, Solid Diamond at Source)
     archi-composition/.style = {
-        -{Diamond[length=6pt, width=6pt, fill=black]},
-        line width=0.9pt,
-        draw=black
+        -{Diamond[length=6pt, width=5.5pt, fill=black]},
+        line width=0.85pt,
+        draw=black!85
     },
     % 2. Aggregation (Solid Line, Hollow Diamond at Source)
     archi-aggregation/.style = {
-        -{Diamond[length=6pt, width=6pt, fill=white]},
-        line width=0.9pt,
-        draw=black
+        -{Diamond[length=6pt, width=5.5pt, fill=white]},
+        line width=0.85pt,
+        draw=black!85
     },
     % 3. Assignment (Solid Line with Solid Circle at Source, Arrow at Target)
     archi-assignment/.style = {
-        {Circle[length=4pt, fill=black]}-{Latex[length=5pt, width=4pt]},
-        line width=0.9pt,
-        draw=black
+        {Circle[length=3.5pt, fill=black!85]}-{Latex[length=4.5pt, width=3.5pt]},
+        line width=0.85pt,
+        draw=black!85
     },
     % 4. Realization (Dashed Line, Hollow Triangle Arrow at Target)
     archi-realization/.style = {
-        -{Triangle[length=6pt, width=6pt, fill=white]},
+        -{Triangle[length=5.5pt, width=5.5pt, fill=white]},
         dashed,
-        line width=0.9pt,
-        draw=black
+        line width=0.85pt,
+        draw=black!85
     },
     % 5. Serving / Used-By (Solid Line, Open Vee Arrow at Target)
     archi-serving/.style = {
-        -{Stealth[length=6pt, width=5pt, open]},
-        line width=0.9pt,
-        draw=black
+        -{Stealth[length=5.5pt, width=4.5pt, open]},
+        line width=0.85pt,
+        draw=black!85
     },
     % 6. Access (Dashed Line, Open Vee Arrow at Target)
     archi-access/.style = {
-        -{Stealth[length=6pt, width=5pt, open]},
+        -{Stealth[length=5.5pt, width=4.5pt, open]},
         dashed,
-        line width=0.9pt,
-        draw=black
+        line width=0.85pt,
+        draw=black!85
     },
     % 7. Flow (Dashed Line, Solid Filled Arrow at Target)
     archi-flow/.style = {
-        -{Latex[length=6pt, width=5pt, fill=black]},
+        -{Latex[length=5.5pt, width=4.5pt, fill=black!85]},
         dashed,
-        line width=0.9pt,
-        draw=black
+        line width=0.85pt,
+        draw=black!85
     },
     % 8. Triggering (Solid Line, Solid Filled Arrow at Target)
     archi-triggering/.style = {
-        -{Latex[length=6pt, width=5pt, fill=black]},
-        line width=1.0pt,
-        draw=black
+        -{Latex[length=5.5pt, width=4.5pt, fill=black!85]},
+        line width=0.95pt,
+        draw=black!85
     },
     % 9. Association (Solid Line, No Arrow)
     archi-association/.style = {
         -,
-        line width=0.9pt,
-        draw=black
+        line width=0.85pt,
+        draw=black!85
     },
     % 10. Influence (Dashed Line, Open Vee Arrow)
     archi-influence/.style = {
         -{Stealth[length=5pt, width=4pt, open]},
         dash pattern=on 3pt off 2pt,
         line width=0.8pt,
-        draw=black
+        draw=black!85
     }
 }
 
 % Helper Macros for Stereotypes & Badges
-\newcommand{\archibadge}[1]{{\scriptsize\textbf{\guillemotleft #1\guillemotright}}\\}
-\newcommand{\archiname}[1]{{\textbf{#1}}}
-\newcommand{\archidesc}[1]{{\scriptsize\textit{#1}}}
+\newcommand{\archibadge}[1]{{\fontsize{6.5pt}{7.5pt}\selectfont\color{black!65}\textbf{\guillemotleft #1\guillemotright}}\\[1.5pt]}
+\newcommand{\archiname}[1]{{\fontsize{8.5pt}{10.5pt}\selectfont\textbf{#1}}}
+\newcommand{\archidesc}[1]{{\fontsize{7pt}{8.5pt}\selectfont\textit{#1}}}
 
 \endinput

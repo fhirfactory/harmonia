@@ -4,27 +4,35 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 6.2) rectangle (15.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Application Client Tier};
+
+    \draw[archi-plate-bg] (-0.8, 3.4) rectangle (15.8, 6.0);
+    \node[archi-plate-title] at (-0.6, 5.8) {Petasos Client Framework \& Logical JMS Topology};
+
+    \draw[archi-plate-bg] (-0.8, -0.6) rectangle (15.8, 3.2);
+    \node[archi-plate-title] at (-0.6, 3.0) {ActiveMQ Artemis 2.33.0 Clustered HA Broker Backbone};
+
     % Producer & Ponos
-    \node[archi-app-component] (pylai_prod) at (0.0, 7.5) {\archibadge{Producer}\archiname{Pylai Gateway}\\\archidesc{Inbound HL7}};
-    \node[archi-app-component] (ponos_cons) at (12.0, 7.5) {\archibadge{Consumer}\archiname{Ponos WorkEngine}\\\archidesc{Task Dispatcher}};
+    \node[archi-app-component, minimum width=3.6cm] (pylai_prod) at (1.5, 7.8) {\archibadge{Producer}\archiname{Pylai Gateway}\\\archidesc{Inbound HL7 / REST}};
+    \node[archi-app-component, minimum width=3.6cm] (ponos_cons) at (13.5, 7.8) {\archibadge{Consumer}\archiname{Ponos WorkEngine}\\\archidesc{Task Dispatcher}};
 
     % Petasos API Layer
-    \node[archi-app-interface] (pet_prod_api) at (0.0, 5.5) {\archibadge{API Interface}\archiname{PetasosProducer}\\\archidesc{Durable Publish}};
-    \node[archi-app-interface] (pet_cons_api) at (12.0, 5.5) {\archibadge{API Interface}\archiname{PetasosConsumer}\\\archidesc{At-Least-Once Pull}};
+    \node[archi-app-interface, minimum width=3.4cm] (pet_prod_api) at (1.5, 4.7) {\archibadge{API Interface}\archiname{PetasosProducer}\\\archidesc{Durable Publish}};
+    \node[archi-app-interface, minimum width=3.4cm] (pet_cons_api) at (13.5, 4.7) {\archibadge{API Interface}\archiname{PetasosConsumer}\\\archidesc{At-Least-Once Pull}};
 
-    % Petasos Core & Adapter
-    \node[archi-app-component] (pet_core) at (3.0, 4.0) {\archibadge{App Component}\archiname{Petasos Core}\\\archidesc{Metrics \& Dedup}};
-    \node[archi-app-component] (pet_adapter) at (9.0, 4.0) {\archibadge{App Component}\archiname{Artemis Adapter}\\\archidesc{Failover \& Pooling}};
+    % Petasos Core & Adapter & Destination
+    \node[archi-app-component, minimum width=2.8cm] (pet_core)    at (5.2, 4.7) {\archibadge{App Component}\archiname{Petasos Core}\\\archidesc{Metrics \& Dedup}};
+    \node[archi-app-interface, minimum width=3.2cm] (queue_dest)   at (7.5, 4.7) {\archibadge{JMS Destination}\archiname{clinical.tasks}\\\archidesc{Durable Queue}};
+    \node[archi-app-component, minimum width=2.8cm] (pet_adapter) at (9.8, 4.7) {\archibadge{App Component}\archiname{Artemis Adapter}\\\archidesc{Failover Pool}};
 
-    % Queue Destination
-    \node[archi-app-interface] (queue_dest) at (6.0, 5.5) {\archibadge{Queue Address}\archiname{clinical.tasks.inbound}\\\archidesc{Durable JMS Queue}};
+    % Artemis Clustered Nodes (Group A & Group B)
+    \node[archi-system-software, minimum width=3.4cm] (art_pri_a) at (2.5, 1.8) {\archibadge{Artemis Live}\archiname{Primary A}\\\archidesc{Port 61616 / Live}};
+    \node[archi-system-software, minimum width=3.4cm] (art_bak_a) at (2.5, 0.2) {\archibadge{Artemis Replica}\archiname{Backup A}\\\archidesc{Port 61617 / Replica}};
 
-    % Artemis Clustered Nodes
-    \node[archi-system-software] (art_pri_a) at (2.5, 1.8) {\archibadge{Artemis Live}\archiname{Primary A}\\\archidesc{Port 61616 / Live}};
-    \node[archi-system-software] (art_bak_a) at (2.5, 0.0) {\archibadge{Artemis Replica}\archiname{Backup A}\\\archidesc{Port 61617 / Replica}};
-
-    \node[archi-system-software] (art_pri_b) at (9.5, 1.8) {\archibadge{Artemis Live}\archiname{Primary B}\\\archidesc{Port 61618 / Live}};
-    \node[archi-system-software] (art_bak_b) at (9.5, 0.0) {\archibadge{Artemis Replica}\archiname{Backup B}\\\archidesc{Port 61619 / Replica}};
+    \node[archi-system-software, minimum width=3.4cm] (art_pri_b) at (12.5, 1.8) {\archibadge{Artemis Live}\archiname{Primary B}\\\archidesc{Port 61618 / Live}};
+    \node[archi-system-software, minimum width=3.4cm] (art_bak_b) at (12.5, 0.2) {\archibadge{Artemis Replica}\archiname{Backup B}\\\archidesc{Port 61619 / Replica}};
 
     % --- Relationships ---
     \draw[archi-serving] (pet_prod_api) -- (pylai_prod);
@@ -37,15 +45,15 @@
     \draw[archi-flow] (queue_dest) -- (pet_cons_api);
 
     % Replication Channels
-    \draw[archi-flow] (art_pri_a) -- node[left, font=\sffamily\scriptsize]{Replication} (art_bak_a);
-    \draw[archi-flow] (art_pri_b) -- node[right, font=\sffamily\scriptsize]{Replication} (art_bak_b);
+    \draw[archi-flow] (art_pri_a) -- node[archi-lbl]{Replication A} (art_bak_a);
+    \draw[archi-flow] (art_pri_b) -- node[archi-lbl]{Replication B} (art_bak_b);
 
     % Server-Side Cluster Bridge
-    \draw[archi-triggering] (art_pri_a) -- node[above, font=\sffamily\scriptsize]{ON\_DEMAND Clustering} (art_pri_b);
+    \draw[archi-triggering] (art_pri_a) -- node[archi-lbl]{ON\_DEMAND Clustering Mesh} (art_pri_b);
     \draw[archi-triggering] (art_pri_b) -- (art_pri_a);
 
     % Adapter Connections to Brokers
-    \draw[archi-serving] (art_pri_a) -- (pet_adapter);
-    \draw[archi-serving] (art_pri_b) -- (pet_adapter);
+    \draw[archi-serving] (art_pri_a) |- (pet_adapter);
+    \draw[archi-serving] (art_pri_b) |- (pet_adapter);
 
 \end{tikzpicture}

@@ -10,3 +10,12 @@ vault_artemis_admin_password: "admin"
 vault_artemis_cluster_password: "artemisClusterPassword"
 vault_infinispan_admin_password: "admin"
 vault_registry_auth_token: ""
+
+# Agora & Matrix Synapse Secrets
+vault_agora_hs_token: "agora_hs_token_secure_value_abc123"
+vault_agora_as_token: "agora_as_token_secure_value_def456"
+vault_agora_admin_token: "synapse_admin_token_secure_value_ghi789"
+vault_synapse_registration_shared_secret: "synapse_reg_secret_shared_12345"
+vault_synapse_macaroon_secret_key: "synapse_macaroon_secret_key_12345"
+vault_synapse_form_secret: "synapse_form_secret_12345"
+vault_synapse_db_password: "synapse_db_password"

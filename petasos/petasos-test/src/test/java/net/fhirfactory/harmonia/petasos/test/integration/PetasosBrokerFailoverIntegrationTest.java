@@ -19,12 +19,15 @@ package net.fhirfactory.harmonia.petasos.test.integration;
 
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.config.PetasosConfig;
+import net.fhirfactory.harmonia.petasos.api.consumer.PetasosConsumer;
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
 import net.fhirfactory.harmonia.petasos.api.health.HealthStatus;
 import net.fhirfactory.harmonia.petasos.api.health.PetasosHealth;
 import net.fhirfactory.harmonia.petasos.api.message.PetasosMessage;
+import net.fhirfactory.harmonia.petasos.api.producer.PetasosProducer;
 import net.fhirfactory.harmonia.petasos.artemis.ArtemisPetasos;
 import net.fhirfactory.harmonia.petasos.test.harness.EmbeddedArtemisCluster;
+import org.apache.activemq.artemis.core.server.ActiveMQServer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -55,13 +58,20 @@ class PetasosBrokerFailoverIntegrationTest {
         cluster.startReplicationPrimary(primaryName, primaryPort, "group-a", backupPort);
         cluster.startReplicationBackup(backupName, backupPort, "group-a", primaryPort);
 
+        // Wait for backup replica to synchronize with primary
+        ActiveMQServer backupServer = cluster.getBroker(backupName);
+        long deadline = System.currentTimeMillis() + 5000;
+        while (backupServer != null && !backupServer.isReplicaSync() && System.currentTimeMillis() < deadline) {
+            Thread.sleep(50);
+        }
+
         // 2. Configure Petasos HA client pointing to both Primary and Backup endpoints
         PetasosConfig config = PetasosConfig.builder()
                 .addBrokerUrl("tcp://127.0.0.1:" + primaryPort)
                 .addBrokerUrl("tcp://127.0.0.1:" + backupPort)
                 .haEnabled(true)
-                .reconnectAttempts(50)
-                .retryInterval(200)
+                .reconnectAttempts(5)
+                .retryInterval(100)
                 .maxRetryInterval(1000)
                 .build();
 
@@ -81,54 +91,61 @@ class PetasosBrokerFailoverIntegrationTest {
     @Test
     void testBrokerFailureAndAutomaticFailover() throws Exception {
         PetasosDestination destination = PetasosDestination.queue("failover.resilience.queue");
-        var producer = petasos.createProducer();
+        PetasosProducer producer = petasos.createProducer();
+        try {
+            // 1. Send messages before failover to Primary A
+            for (int i = 1; i <= 5; i++) {
+                PetasosMessage msg = PetasosMessage.builder()
+                        .messageId("pre-failover-msg-" + i)
+                        .payload("Pre-failover payload #" + i)
+                        .destination(destination)
+                        .durable(true)
+                        .build();
+                producer.send(destination, msg);
+            }
 
-        // 1. Send messages before failover to Primary A
-        for (int i = 1; i <= 5; i++) {
-            PetasosMessage msg = PetasosMessage.builder()
-                    .messageId("pre-failover-msg-" + i)
-                    .payload("Pre-failover payload #" + i)
-                    .destination(destination)
-                    .durable(true)
-                    .build();
-            producer.send(destination, msg);
+            // Check health
+            PetasosHealth initialHealth = petasos.health();
+            assertThat(initialHealth.getStatus()).isEqualTo(HealthStatus.UP);
+
+            // 2. Simulate Primary A failure by terminating Primary A broker
+            ActiveMQServer backupServer = cluster.getBroker(backupName);
+            cluster.stopBroker(primaryName);
+
+            // Wait for Backup A activation
+            if (backupServer != null) {
+                backupServer.waitForActivation(5, TimeUnit.SECONDS);
+            }
+
+            // 3. Send messages during / after failover to Backup A
+            for (int i = 6; i <= 10; i++) {
+                PetasosMessage msg = PetasosMessage.builder()
+                        .messageId("post-failover-msg-" + i)
+                        .payload("Post-failover payload #" + i)
+                        .destination(destination)
+                        .durable(true)
+                        .build();
+                producer.send(destination, msg);
+            }
+
+            // 4. Consume all 10 messages from Backup A
+            PetasosConsumer consumer = petasos.createConsumer();
+            try {
+                List<String> receivedIds = new ArrayList<>();
+
+                for (int i = 1; i <= 10; i++) {
+                    Optional<PetasosMessage> received = consumer.receive(destination, Duration.ofSeconds(10));
+                    assertThat(received).isPresent();
+                    receivedIds.add(received.get().getMessageId());
+                }
+
+                assertThat(receivedIds).hasSize(10);
+                assertThat(receivedIds).contains("pre-failover-msg-1", "post-failover-msg-10");
+            } finally {
+                consumer.close();
+            }
+        } finally {
+            producer.close();
         }
-
-        // Check health
-        PetasosHealth initialHealth = petasos.health();
-        assertThat(initialHealth.getStatus()).isEqualTo(HealthStatus.UP);
-
-        // 2. Simulate Primary A failure by terminating Primary A broker
-        cluster.stopBroker(primaryName);
-
-        // Wait brief moment for Backup A activation
-        Thread.sleep(1500);
-
-        // 3. Send messages during / after failover to Backup A
-        for (int i = 6; i <= 10; i++) {
-            PetasosMessage msg = PetasosMessage.builder()
-                    .messageId("post-failover-msg-" + i)
-                    .payload("Post-failover payload #" + i)
-                    .destination(destination)
-                    .durable(true)
-                    .build();
-            producer.send(destination, msg);
-        }
-
-        // 4. Consume all 10 messages from Backup A
-        var consumer = petasos.createConsumer();
-        List<String> receivedIds = new ArrayList<>();
-
-        for (int i = 1; i <= 10; i++) {
-            Optional<PetasosMessage> received = consumer.receive(destination, Duration.ofSeconds(10));
-            assertThat(received).isPresent();
-            receivedIds.add(received.get().getMessageId());
-        }
-
-        assertThat(receivedIds).hasSize(10);
-        assertThat(receivedIds).contains("pre-failover-msg-1", "post-failover-msg-10");
-
-        consumer.close();
-        producer.close();
     }
 }

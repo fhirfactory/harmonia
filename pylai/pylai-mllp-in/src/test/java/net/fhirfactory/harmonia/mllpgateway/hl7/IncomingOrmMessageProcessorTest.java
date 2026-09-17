@@ -72,6 +72,27 @@ class IncomingOrmMessageProcessorTest {
     }
 
     @Test
+    @DisplayName("REC-001: Petasos publish failure returns AE NACK to prevent dual-write data loss")
+    void testPetasosPublishFailureReturnsAeNack() throws Exception {
+        String ormHl7 = "MSH|^~\\&|PARADEIGMA_EMR|FACILITY|HARMONIA|HIE|20260915120000||ORM^O01|MSG-ORM-101|P|2.4\r" +
+                "PID|1||PAT-101^^^MRN||Smith^John\r" +
+                "PV1|1|I|WARD-3A^301^A\r" +
+                "ORC|NW|ORD-1001|||IP||^^^R||20260915120000\r" +
+                "OBR|1|ORD-1001||CBC^Complete Blood Count^LN\r";
+
+        TaskEventProducerService failingProducer = mock(TaskEventProducerService.class);
+        doThrow(new RuntimeException("Petasos Artemis connection error"))
+                .when(failingProducer).sendTaskEvent(any());
+
+        IncomingOrmMessageProcessor failingProcessor = new IncomingOrmMessageProcessor(taskService, communicationService, provenanceService, failingProducer, new MllpConfig("0.0.0.0", 2104, true));
+
+        OrmProcessingResult result = failingProcessor.processOrmMessage(ormHl7);
+        assertThat(result.isSuccess()).isFalse();
+        assertThat(result.getAckMessage()).contains("MSA|AE|MSG-ORM-101");
+        assertThat(result.getErrorMessage()).contains("Petasos Artemis connection error");
+    }
+
+    @Test
     @DisplayName("Process blank payload returns AE error")
     void testProcessBlankPayload() {
         OrmProcessingResult result = processor.processOrmMessage("");

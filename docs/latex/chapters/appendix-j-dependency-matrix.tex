@@ -1,0 +1,41 @@
+%% =============================================================================
+%% chapters/appendix-j-dependency-matrix.tex
+%% APPENDIX J: Module Dependency Matrix
+%% =============================================================================
+
+\chapter{Module Dependency Matrix}
+\label{app:dependency_matrix}
+
+This appendix defines the allowed unidirectional dependency flows across all 9 subprojects of the Harmonia repository.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l P{4.0cm} Y}
+\toprule
+\textbf{Subproject} & \textbf{Permitted Dependencies} & \textbf{Architectural Constraints \& Forbidden Dependencies} \\
+\midrule
+\textbf{Calliope} & JDK, HAPI FHIR Structures & Pure domain models; zero dependencies on any other Harmonia subproject. \\
+\addlinespace
+\textbf{Themis} & JDK, Calliope, HAPI FHIR & Zero dependencies on storage, messaging, or application tiers. \\
+\addlinespace
+\textbf{Hestia} & Calliope, Themis, Infinispan, HAPI FHIR, PostgreSQL & Persistent storage layer; zero dependencies on gateways or UI. \\
+\addlinespace
+\textbf{Petasos} & JDK, Calliope, Themis API & \nolinkurl{petasos-api} contains zero JMS/Artemis dependencies. \\
+\addlinespace
+\textbf{Energeia} & Calliope, Themis, Hestia, Petasos & Workflow engine; zero dependencies on gateways or UI. \\
+\addlinespace
+\textbf{Pylai} & Calliope, Themis, Petasos, Hestia & Boundary gateways; zero dependencies on Iris or Paradeigma. \\
+\addlinespace
+\textbf{Iris} & Calliope, Themis API, Hot Rod Client & Presentation only; zero direct database or JPA dependencies. \\
+\addlinespace
+\textbf{Agora} & Calliope, Themis API, Petasos API, Mnemosyne Operations & Zero dependencies on Ponos (\nolinkurl{Agora -> Ponos} forbidden); Matrix DTOs encapsulated. \\
+\addlinespace
+\textbf{Paradeigma} & Production APIs (MLLP, REST) & \textbf{Leaf / Simulation Only}. Production modules must NEVER depend on Paradeigma. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Subproject Allowed Dependencies and Unidirectional Invariants}
+\label{tab:module_dependency_matrix}
+\end{table}
+
+\newpage

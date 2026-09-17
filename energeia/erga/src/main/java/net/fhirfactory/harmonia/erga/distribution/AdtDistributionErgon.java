@@ -21,6 +21,8 @@ import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -75,6 +77,13 @@ public class AdtDistributionErgon extends ErgonBase {
                 Topic egressTopic = Topic.forEgress("ADT", extractTriggerEvent(rawHl7), "harmonia", targetQueue, targetQueue);
                 ErgonPayload dispatchPayload = ErgonPayload.fromJson(order++, egressTopic, egressTopic, rawHl7);
                 pragma.addOutput(dispatchPayload);
+
+                // REC-002: Record granular destination fan-out checkpoint sub-state
+                PragmaCheckpoint cp = new PragmaCheckpoint(pragma.getPragmaId(), DEFAULT_ACTIVITY_ID, "FANOUT_DISPATCH_INITIATED", PragmaStatus.IN_PROGRESS, order);
+                cp.addMetadata("destinationQueue", targetQueue);
+                cp.addMetadata("destinationId", targetQueue);
+                cp.addMetadata("status", "QUEUED");
+                pragma.addCheckpoint(cp);
             }
 
             exchange.getMessage().setBody(pragma);

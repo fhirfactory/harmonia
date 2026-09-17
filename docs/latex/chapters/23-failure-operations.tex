@@ -1,0 +1,52 @@
+%% =============================================================================
+%% chapters/23-failure-operations.tex
+%% PART VIII: Security, Logging, and Operations
+%% Chapter 23: Failure Scenarios, Recovery Guarantees & Health Probes
+%% =============================================================================
+
+\chapter{Failure Scenarios, Recovery Guarantees \& Operations}
+\label{chap:failure_operations}
+
+This chapter documents the failure matrix, recovery guarantees, and health monitoring mechanisms implemented across the Harmonia platform.
+
+\section{Platform Failure Scenario Matrix}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{3.2cm} p{3.5cm} X}
+\toprule
+\textbf{Failure Event} & \textbf{Affected Subsystem} & \textbf{Automated Detection} & \textbf{Platform Recovery Guarantee} \\
+\midrule
+\textbf{Artemis Primary Pod Crash} & Petasos Broker A & Synchronous replication heartbeat loss & Backup broker assumes live role within 2s; zero message loss. \\
+\addlinespace
+\textbf{Infinispan Node Loss} & Mneme Cache Grid & JGroups cluster view change event & Data preserved via 2-owner replication on surviving pod. \\
+\addlinespace
+\textbf{Ponos Worker Termination} & Energeia Workflow & Unacknowledged JMS consumer timeout & ActiveMQ Artemis redelivers unacknowledged task to surviving worker. \\
+\addlinespace
+\textbf{Downstream Egress Failure} & Pylai MLLP Outbound & Socket timeout / NACK response & Task retried via exponential backoff; moved to DLQ on max retries. \\
+\addlinespace
+\textbf{PostgreSQL Instance Restart} & Mnemosyne Clinical & HikariCP connection test query failure & HikariCP pool automatically reconnects on DB pod readiness. \\
+\bottomrule
+\end{tabularx}
+\caption{Platform Failure Scenario Matrix and Automated Recovery Guarantees}
+\label{tab:failure_matrix}
+\end{table}
+
+\section{Dead-Letter Queue (DLQ) Governance}
+
+Tasks that exceed maximum redelivery attempts (default: 5) are routed automatically to the centralized dead-letter queue:
+\begin{equation*}
+\texttt{petasos.dlq}
+\end{equation*}
+Engineers can inspect, repair, and replay poisoned messages via \texttt{iris-console} or administrative CLI utilities.
+
+\section{Kubernetes Health \& Readiness Probes}
+
+All application pods expose Spring Boot Actuator health endpoints:
+\begin{itemize}
+    \item \textbf{Liveness Probe}: \texttt{GET /actuator/health/liveness} (Period: 10s, Timeout: 3s). Restarts unresponsive containers.
+    \item \textbf{Readiness Probe}: \texttt{GET /actuator/health/readiness} (Period: 5s, Timeout: 3s). Validates Artemis, Infinispan, and DB connectivity before routing traffic.
+\end{itemize}
+
+\newpage

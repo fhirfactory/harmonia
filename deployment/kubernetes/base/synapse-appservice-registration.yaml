@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: synapse-appservice-registration
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: synapse
+    app.kubernetes.io/component: collaboration
+    app.kubernetes.io/part-of: harmonia-platform
+data:
+  appservice-agora.yaml: |
+    id: "harmonia-agora"
+    url: "http://agora:8092"
+    as_token: "agora_as_token_secure_value_def456"
+    hs_token: "agora_hs_token_secure_value_abc123"
+    sender_localpart: "_harmonia_agora"
+    namespaces:
+      users:
+        - exclusive: true
+          regex: "@_harmonia_.*"
+      aliases:
+        - exclusive: true
+          regex: "#_harmonia_.*"
+      rooms:
+        - exclusive: false
+          regex: ".*"
+    rate_limited: false
+    protocols:
+      - harmonia

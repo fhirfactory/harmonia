@@ -1,0 +1,58 @@
+%% =============================================================================
+%% chapters/25-development-invariants.tex
+%% PART VIII: Development Architecture & Extensibility
+%% Chapter 25: Platform Development, Architecture Invariants & Verification Rules
+%% =============================================================================
+
+\chapter{Platform Development, Architecture Invariants \& Rules}
+\label{chap:development_invariants}
+
+This chapter establishes the authoritative engineering standards, build environments, and mandatory architectural guardrails for developing, extending, and maintaining the Harmonia Health Integration Environment.
+
+\section{Build Environment \& Toolchain Prerequisites}
+
+Harmonia requires modern enterprise development toolchains supporting Java 21, Jakarta EE 10, Spring Boot 3, and Vue 3:
+\begin{itemize}
+    \item \textbf{Java Development Kit}: OpenJDK 21 (LTS) or Eclipse Temurin 21.
+    \item \textbf{Build Tool}: Apache Maven 3.9.6 or higher.
+    \item \textbf{Frontend Toolchain}: Node.js 20.x LTS and npm 10.x.
+    \item \textbf{Container Runtime}: Docker 24.x+ or containerd 1.7+ with BuildKit enabled.
+    \item \textbf{Local Kubernetes}: MicroK8s v1.28+ with DNS, hostpath-storage, and registry add-ons.
+\end{itemize}
+
+\section{Maven Multi-Module Reactor Architecture}
+
+Harmonia is organized as a unified Maven reactor encompassing 9 subprojects and 37 leaf modules:
+\begin{lstlisting}[language=bash, caption={Building Entire Platform Stack}]
+# Fast offline compile and test
+mvn clean install -DskipTests=false
+
+# Target specific subsystem build
+mvn test -pl energeia/erga,energeia/praxis -am
+\end{lstlisting}
+
+\section{The Eight Mandatory Architectural Invariants}
+
+Every software contribution to Harmonia must satisfy eight cross-cutting architectural invariants:
+
+\begin{enumerate}
+    \item \textbf{Invariant 1: Paradeigma Production Isolation}: Production code (\nolinkurl{calliope}, \nolinkurl{themis}, \nolinkurl{hestia}, \nolinkurl{petasos}, \nolinkurl{energeia}, \nolinkurl{pylai}, \nolinkurl{iris}, \nolinkurl{agora}) must never import or declare dependencies on \nolinkurl{paradeigma}. Simulation flags are forbidden in production source trees.
+    \item \textbf{Invariant 2: Petasos API Abstraction}: \nolinkurl{petasos-api} declares pure Java transport contracts. Zero JMS or Artemis types may be imported into the API module.
+    \item \textbf{Invariant 3: Iris Presentation Decoupling}: Iris SPAs and BEFE gateways must remain decoupled from internal databases. Direct JPA, Hibernate, or PostgreSQL imports are strictly forbidden in Iris.
+    \item \textbf{Invariant 4: Ingress Dual-Write Safety (REC-001)}: Inbound gateways must guarantee downstream Petasos queue acceptance before returning an \nolinkurl{AA} acknowledgment to the sender.
+    \item \textbf{Invariant 5: Destination Fan-Out State Tracking (REC-002)}: Parent workflow tasks in Mnemosyne and Pragma envelopes must record granular sub-status per fan-out destination.
+    \item \textbf{Invariant 6: Default-Deny Security Governance}: All ingress endpoints, task processors, and storage mutators must evaluate authorization through Themis, defaulting to \nolinkurl{DENY}.
+    \item \textbf{Invariant 7: Zero-PHI Diagnostic Logging}: Protected Health Information must never be emitted into non-clinical log streams (\nolinkurl{INFO}, \nolinkurl{WARN}, \nolinkurl{ERROR}).
+    \item \textbf{Invariant 8: Agora Collaboration \& Matrix Isolation}: Agora coordinates with Ponos workflows exclusively via asynchronous Petasos queues; direct dependencies from Agora to Ponos are strictly forbidden. Matrix protocol types are quarantined within \nolinkurl{agora-matrix}.
+\end{enumerate}
+
+\section{Continuous ArchUnit Verification}
+
+The architectural invariants are enforced by automated ArchUnit test suites in \nolinkurl{paradeigma/paradeigma-test}:
+\begin{lstlisting}[language=bash, caption={Executing ArchUnit Architectural Guardrail Suite}]
+mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
+\end{lstlisting}
+
+The suite evaluates 24 architectural rules across compile-time dependencies, package layers, security enforcement, and presentation decoupling with sub-10-second execution latency.
+
+\newpage

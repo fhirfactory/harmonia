@@ -1,0 +1,74 @@
+%% =============================================================================
+%% chapters/24-matrix-synapse.tex
+%% PART IV: Middleware Architecture
+%% Chapter 24: Matrix Synapse Homeserver & Collaboration Middleware Architecture
+%% =============================================================================
+
+\chapter{Matrix Synapse Homeserver \& Collaboration Middleware}
+\label{chap:matrix_synapse_middleware}
+
+The Agora collaboration gateway interfaces directly with Matrix Synapse 1.120.0 (packaged using container image \nolinkurl{matrixdotorg/synapse:v1.120.0}). Synapse serves as Harmonia's internal collaboration homeserver, delivering standardized Matrix Client-Server v3, Administration v2, and Application Service (AS) push protocols.
+
+\section{Homeserver Clustered Topology \& Network Architecture}
+
+Synapse is deployed as a single-node stateful workload in the \nolinkurl{harmonia} Kubernetes namespace:
+\begin{itemize}
+    \item \textbf{Container Image}: \nolinkurl{matrixdotorg/synapse:v1.120.0}.
+    \item \textbf{Workload Type}: Kubernetes StatefulSet (\nolinkurl{synapse}) with 1 replica.
+    \item \textbf{HTTP Listener Port}: Port \textbf{8008} exposing both Client-Server and Application Service APIs.
+    \item \textbf{Relational Database}: PostgreSQL 16 database running in StatefulSet \nolinkurl{postgres-synapse} on Port \textbf{5436} (mapped from container port 5432).
+    \item \textbf{Persistent Storage}: 5 GiB PersistentVolumeClaim (\nolinkurl{synapse-data}) mounted at \nolinkurl{/data} for homeserver media, signing keys, and logs.
+\end{itemize}
+
+\section{Application Service Registration (\texttt{appservice-agora.yaml})}
+
+Synapse is integrated with the Agora gateway via declarative Application Service registration:
+\begin{lstlisting}[caption={Agora Matrix Application Service Registration Manifest}]
+id: harmonia-agora
+url: "http://agora.harmonia.svc.cluster.local:8092"
+as_token: "agora_as_token_secret_replace_in_vault"
+hs_token: "synapse_hs_token_secret_replace_in_vault"
+sender_localpart: "_harmonia_bot"
+namespaces:
+  users:
+    - exclusive: true
+      regex: "@_harmonia_.*"
+  aliases:
+    - exclusive: true
+      regex: "#_harmonia_.*"
+  rooms:
+    - exclusive: false
+      regex: ".*"
+\end{lstlisting}
+
+\subsection{Registration Invariants}
+\begin{enumerate}
+    \item \textbf{Exclusive Namespaces}: Agora asserts exclusive ownership over the \nolinkurl{@_harmonia_.*} user namespace and \nolinkurl{#_harmonia_.*} room alias namespace. Synapse prevents non-AS users from claiming matching identifiers.
+    \item \textbf{Push Transaction Endpoint}: Synapse dispatches incoming room events to Agora via HTTP \nolinkurl{PUT /_matrix/app/v1/transactions/{txnId}} on Port 8092 using the shared \nolinkurl{hs_token}.
+    \item \textbf{Service Identity}: System events (such as room invitations and state updates) are enacted using the privileged bot identity \nolinkurl{@_harmonia_bot:synapse}.
+\end{enumerate}
+
+\section{Spaces Hierarchy \& Zero-PHI Metadata Invariant}
+
+Agora manages a strict two-level room hierarchy within Synapse:
+\begin{itemize}
+    \item \textbf{Parent Space}: A Matrix Space (\nolinkurl{creation_content: {type: "m.space"}}) representing an encounter or care team context.
+    \item \textbf{Child Rooms}: Exactly four typed child rooms linked via \nolinkurl{m.space.child} and \nolinkurl{m.space.parent} state events:
+    \begin{enumerate}
+        \item \textbf{Statistics Room}: Longitudinal metrics, vitals, and trajectory telemetry.
+        \item \textbf{Tasks Room}: Real-time clinical action items and workflow assignments.
+        \item \textbf{Discussion Room}: Multidisciplinary care team communication.
+        \item \textbf{Diagnostics Room}: Pathology and radiology result notifications.
+    \end{enumerate}
+\end{itemize}
+
+In strict adherence to AGORA-ADR-005, room aliases and names are constructed exclusively using synthetic identifiers and opaque UUIDs (e.g. \nolinkurl{#encounter_9b1deb4d3b7d4b89:synapse}). Patient names, national identifiers, and medical record numbers are prohibited from room metadata.
+
+\section{Ephemeral Retention \& Database Archival}
+
+In accordance with AGORA-ADR-004:
+\begin{principlebox}{Ephemeral Matrix Retention Invariant}
+Synapse enforces an automated 90-day retention cleanup policy on all room history. Matrix is treated as a transient collaboration surface; all clinical decisions, care orders, and trajectory summaries must be committed to Mnemosyne FHIR storage before retention purge.
+\end{principlebox}
+
+\newpage

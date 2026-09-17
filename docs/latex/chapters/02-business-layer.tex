@@ -51,7 +51,7 @@ Harmonia interacts with a diverse ecosystem of clinical actors, abstracting thei
 
 Harmonia exposes six core business services to external healthcare organizations:
 
-\subsection{1. Patient Admission \& Movement Service (\texttt{HL7-ADT})}
+\subsection{Patient Admission \& Movement Service (\texttt{HL7-ADT})}
 Accepts real-time patient admission, discharge, and transfer (ADT) event streams adhering to HL7 v2.3--v2.5 standards across standard trigger events:
 \begin{itemize}
     \item \textbf{ADT\^{}A01 / A04}: Patient Admission / Outpatient Registration.
@@ -60,32 +60,32 @@ Accepts real-time patient admission, discharge, and transfer (ADT) event streams
     \item \textbf{ADT\^{}A40}: Merge Patient Identifiers (MRN / EMPI consolidation).
 \end{itemize}
 
-\subsection{2. Practitioner \& Staff Directory Service (\texttt{HL7-MFN})}
+\subsection{Practitioner \& Staff Directory Service (\texttt{HL7-MFN})}
 Maintains an authoritative, synchronized regional directory of healthcare practitioners, specialties, role assignments, and organizational facility hierarchies via HL7 MFN master file notifications.
 
-\subsection{3. FHIR R5 Clinical Data Discovery Service}
+\subsection{FHIR R5 Clinical Data Discovery Service}
 Provides RESTful search, retrieval, and subscription capabilities across 15 FHIR R5 resource types, enabling authorized clinical applications to query patient histories, encounters, and audit logs.
 
-\subsection{4. Operations Telemetry \& Workflow Administration Service}
+\subsection{Operations Telemetry \& Workflow Administration Service}
 Exposes real-time health metrics, ActiveMQ Artemis broker statistics, Infinispan cache hit rates, and Ponos task execution statuses to health network operators.
 
-\subsection{5. Clinical Outbound Notification \& Egress Service (\texttt{HL7-MLLP-OUT})}
+\subsection{Clinical Outbound Notification \& Egress Service (\texttt{HL7-MLLP-OUT})}
 Dispatches transformed, enriched clinical trigger events (ADT, MFN, ORU) and outbound clinical notifications to remote hospital information systems and diagnostic endpoints over resilient MLLP/TCP connections, enforcing synchronous HL7 ACK/NACK validation, automatic retries, and audit tracking.
 
-\subsection{6. FHIR R5 Provider Directory Management Service}
+\subsection{FHIR R5 Provider Directory Management Service}
 Exposes synchronous read/search and governed asynchronous change management APIs for healthcare directory entities (\texttt{Practitioner}, \texttt{PractitionerRole}, \texttt{Organization}, \texttt{Location}, \texttt{HealthcareService}, \texttt{Endpoint}, \texttt{Group}). It enforces automated referential verification, optimistic concurrency locking, duplicate identifier protection, and auditable FHIR \texttt{Task} tracking.
 
 \section{Clinical Business Process Workflows}
 
 \subsection{Process: Ingest and Reconcile HL7 ADT Trigger}
 The primary clinical ingestion workflow executes through five discrete business stages:
-\begin{enumerate}
+\begin{itemize}
     \item \textbf{Stage 1: Capture MLLP Frame}: Inbound MLLP gateway receives the TCP stream, validates the MLLP envelope framing (\texttt{<VT>} and \texttt{<FS><CR>}), and returns an immediate HL7 \texttt{ACK} to release the source hospital system.
     \item \textbf{Stage 2: Envelope Encapsulation}: The raw message is wrapped into a \texttt{PetasosMessage} and published onto the clustered Petasos queue (\texttt{clinical.tasks.inbound}).
     \item \textbf{Stage 3: Patient Identity Resolution (EMPI)}: The \texttt{PatientIdentityUpdateErgon} activity extracts the Medical Record Number (MRN), queries the Enterprise Master Patient Index (EMPI) in Mneme cache, and assigns a canonical patient identifier.
     \item \textbf{Stage 4: Demographics Merge \& Enrichment}: The \texttt{PatientDemographicsUpdateErgon} merges telecom, residential addresses, contact persons, and marital status into a consolidated FHIR \texttt{Patient} resource.
     \item \textbf{Stage 5: Audit \& Persistence}: A \texttt{Provenance} and \texttt{AuditEvent} record is linked to the transaction, and the resulting resources are stored in Mneme cache and Mnemosyne PostgreSQL.
-\end{enumerate}
+\end{itemize}
 
 \subsection{Process: Outbound MLLP Dispatch and ACK Validation Lifecycle}
 The outbound clinical egress workflow executes through five structured business stages:

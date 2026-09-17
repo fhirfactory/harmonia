@@ -81,6 +81,8 @@ class OutboundResourceBuildersTest {
         Task updatedTask = taskBuilder.updateTaskWithResponse(initialTask, response);
         assertThat(updatedTask.getStatus()).isEqualTo(Task.TaskStatus.COMPLETED);
         assertThat(updatedTask.getOutput()).hasSize(1);
+        assertThat(updatedTask.getOutputFirstRep().getExtension()).isNotEmpty();
+        assertThat(updatedTask.getOutputFirstRep().getExtensionByUrl("http://example.org/hie/destination-delivery-status")).isNotNull();
         assertThat(FhirSecurityTagManager.hasConfidentiality(updatedTask, FhirConfidentialityEnum.N)).isTrue();
     }
 

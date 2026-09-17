@@ -283,24 +283,20 @@ public class IncomingMfnMessageProcessor {
             Task savedTask = task != null && taskService != null ? taskService.create(task) : task;
 
             // 5. Send TaskEvent to task-sequence-processor queue AFTER writing Task to cache
+            // Dual-write safety (REC-001): publish failure throws to trigger an AE NACK back to sender
             if (savedTask != null && taskEventProducerService != null) {
-                try {
-                    String taskId = savedTask.getIdElement() != null && !savedTask.getIdElement().isEmpty()
-                            ? savedTask.getIdElement().getIdPart() : savedTask.getIdPart();
-                    if (StringUtils.isBlank(taskId)) {
-                        taskId = messageControlId;
-                    }
-                    String action = "PROCESS";
-                    String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
-                    String desc = "HL7 v2.4 " + messageType + "^" + triggerEvent + " event transformed to Task";
-                    ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
-                    taskEventProducerService.sendTaskEvent(event);
-                    log.info("Sent TaskEvent for Task/{} [action={}, status={}, topic={}] to task-sequence-processor",
-                            taskId, action, status, topic);
-                } catch (Exception e) {
-                    log.warn("Could not send TaskEvent to task-sequence-processor for Task/{}: {}",
-                            savedTask.getIdPart(), e.getMessage());
+                String taskId = savedTask.getIdElement() != null && !savedTask.getIdElement().isEmpty()
+                        ? savedTask.getIdElement().getIdPart() : savedTask.getIdPart();
+                if (StringUtils.isBlank(taskId)) {
+                    taskId = messageControlId;
                 }
+                String action = "PROCESS";
+                String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
+                String desc = "HL7 v2.4 " + messageType + "^" + triggerEvent + " event transformed to Task";
+                ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
+                taskEventProducerService.sendTaskEvent(event);
+                log.info("Sent TaskEvent for Task/{} [action={}, status={}, topic={}] to task-sequence-processor",
+                        taskId, action, status, topic);
             }
 
             // Generate HL7 ACK

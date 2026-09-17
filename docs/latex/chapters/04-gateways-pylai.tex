@@ -1,0 +1,79 @@
+%% =============================================================================
+%% chapters/04-gateways-pylai.tex
+%% PART II: Platform Capabilities and Modules
+%% Chapter 4: External Gateways (Pylai MLLP In/Out, FHIR Registry Gateway)
+%% =============================================================================
+
+\chapter{External Gateways (\texttt{Pylai})}
+\label{chap:gateways_pylai}
+
+The Gateway and Interface layer (\texttt{Pylai}) serves as the boundary interface of Harmonia, terminating external protocols, enforcing security screening, isolating network failures, and providing bidirectional translation between external healthcare wire formats and internal event buses.
+
+\section{MLLP Inbound Ingress Gateway (\texttt{pylai-mllp-in})}
+
+The inbound MLLP gateway terminates inbound TCP connections from hospital Electronic Medical Records (EMR), Patient Administration Systems (PAS), Laboratory Information Systems (LIS), and Radiology Information Systems (RIS).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-mllp-ingress-process.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Component Flow for MLLP Ingress Service Processing Pipeline}
+    \label{fig:pylai_mllp_ingress_process}
+\end{figure}
+
+\subsection{MLLP Framing and Transport}
+MLLP provides minimal framing over stream-oriented TCP sockets:
+\begin{equation}
+\langle\text{Frame}\rangle ::= \texttt{0x0B}\ (\text{Start-of-Block}) + \langle\text{HL7 v2 Payload}\rangle + \texttt{0x1C}\ (\text{End-of-Block}) + \texttt{0x0D}\ (\text{CR})
+\end{equation}
+
+In standard Kubernetes deployment, \texttt{pylai-mllp-in} listens on Port 2575 (exposed via NodePort 30575).
+
+\subsection{Ingress Dual-Write Safety (REC-001)}
+In accordance with architectural invariant REC-001, inbound gateways must guarantee end-to-end downstream message acceptance before returning an \texttt{AA} (Application Accept) ACK to the upstream sender:
+\begin{enumerate}
+    \item When an inbound message is received, it is framed and validated.
+    \item The gateway attempts to publish the task event to the downstream Petasos ActiveMQ Artemis queue.
+    \item If downstream publishing succeeds, the gateway returns an HL7 \texttt{AA} ACK.
+    \item If downstream publishing or cache write fails, the exception is caught, and the gateway immediately returns an HL7 \texttt{AE} (Application Error) or \texttt{AR} (Application Reject) NACK frame, prompting the upstream hospital system to retain and retry the message.
+\end{enumerate}
+
+\section{MLLP Outbound Egress Dispatcher (\texttt{pylai-mllp-out})}
+
+The outbound MLLP dispatcher manages reliable delivery of clinical notifications and ADT/MFN messages to external hospital systems.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-mllp-egress-process.tex}
+    \end{adjustbox}
+    \caption{ArchiMate Component Flow for MLLP Egress Dispatch Pipeline}
+    \label{fig:pylai_mllp_egress_process}
+\end{figure}
+
+\subsection{Destination-Isolated Queuing}
+To prevent head-of-line blocking when an external hospital endpoint experiences downtime, Harmonia provisions dedicated Artemis queues per destination endpoint:
+\begin{equation*}
+\texttt{petasos.queue.mllp.outbound.<destination-id>}
+\end{equation*}
+Each queue is consumed by a dedicated outbound worker instance, guaranteeing that a stalled destination does not delay traffic intended for healthy external systems.
+
+\subsection{Synchronous ACK / NACK Evaluation \& Fan-Out Tracking (REC-002)}
+When an outbound frame is transmitted over TCP, the dispatcher awaits the remote system's acknowledgment frame:
+\begin{itemize}
+    \item \textbf{AA / CA}: Remote application accepted the message; task transitions to \texttt{COMPLETED}.
+    \item \textbf{AE / CE}: Remote application error; task is scheduled for retry or transitioned to \texttt{FAILED}.
+    \item \textbf{AR / CR}: Remote application reject; task transitions to \texttt{FAILED}.
+\end{itemize}
+In multi-destination fan-out scenarios (REC-002), individual destination delivery checkpoints (\nolinkurl{destinationId}, \nolinkurl{status}, \nolinkurl{ackCode}, \nolinkurl{timestamp}) are recorded into the parent Task's output extensions.
+
+\section{FHIR Provider Registry Gateway (\texttt{pylai-fhir-registry})}
+
+The \texttt{pylai-fhir-registry} gateway is a Spring Boot REST microservice exposing HL7 FHIR Release 5 Provider Directory endpoints:
+\begin{itemize}
+    \item \textbf{Synchronous Read/Search (\texttt{GET})}: Direct, sub-50ms read queries against \texttt{mnemosyne-clinical} PostgreSQL JPA storage for \nolinkurl{/Practitioner}, \nolinkurl{/PractitionerRole}, \nolinkurl{/Organization}, \nolinkurl{/Location}, \nolinkurl{/HealthcareService}, \nolinkurl{/Endpoint}, and \nolinkurl{/Group}.
+    \item \textbf{Governed Asynchronous Writes (\texttt{POST}/\texttt{PUT})}: Enforces the governed change model. Submissions return \texttt{HTTP 202 Accepted} with \nolinkurl{Location: /Task/{id}} and enqueue a \nolinkurl{ProviderRegistryChangePragma} onto Petasos for validation and approval.
+\end{itemize}
+
+\newpage

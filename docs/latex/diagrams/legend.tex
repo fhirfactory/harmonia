@@ -2,51 +2,56 @@
 %% diagrams/legend.tex
 %% ArchiMate 3.2 Architectural Notation & Relationship Legend
 %% =============================================================================
-\begin{tikzpicture}[node distance=1.2cm and 1.0cm, auto]
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
-    % Layer Color Samples
-    \node[archi-stakeholder, minimum width=2.4cm, minimum height=0.9cm] (l_motiv) at (0, 4.5) {\archibadge{Motivation}Motivation};
-    \node[archi-capability, minimum width=2.4cm, minimum height=0.9cm, right=0.6cm of l_motiv] (l_strat) {\archibadge{Strategy}Strategy};
-    \node[archi-business-service, minimum width=2.4cm, minimum height=0.9cm, right=0.6cm of l_strat] (l_biz) {\archibadge{Business}Business};
-    \node[archi-app-component, minimum width=2.4cm, minimum height=0.9cm, right=0.6cm of l_biz] (l_app) {\archibadge{Application}Application};
-    \node[archi-data-object, minimum width=2.4cm, minimum height=0.9cm, right=0.6cm of l_app] (l_data) {\archibadge{Data Object}Data};
-    \node[archi-node, minimum width=2.4cm, minimum height=0.9cm, right=0.6cm of l_data] (l_tech) {\archibadge{Technology}Technology};
+    % --- Background Plate: Layer Color Palette ---
+    \draw[archi-plate-bg] (-0.8, 4.0) rectangle (15.8, 6.2);
+    \node[archi-plate-title] at (-0.6, 6.0) {ArchiMate 3.2 Layer Color Palette};
 
-    % Relationship Types Legend
-    \node[draw=none, fill=none, font=\sffamily\bfseries\small, anchor=west] at (-0.2, 3.2) {Standard ArchiMate 3.2 Relationships:};
+    \node[archi-stakeholder, minimum width=2.1cm, minimum height=0.9cm] (l_motiv) at (0.3, 4.9) {\archibadge{Motivation}Motivation};
+    \node[archi-capability, minimum width=2.1cm, minimum height=0.9cm] (l_strat) at (2.7, 4.9) {\archibadge{Strategy}Strategy};
+    \node[archi-business-service, minimum width=2.1cm, minimum height=0.9cm] (l_biz) at (5.1, 4.9) {\archibadge{Business}Business};
+    \node[archi-app-component, minimum width=2.1cm, minimum height=0.9cm] (l_app) at (7.5, 4.9) {\archibadge{Application}Application};
+    \node[archi-data-object, minimum width=2.1cm, minimum height=0.9cm] (l_data) at (9.9, 4.9) {\archibadge{Data}Data Object};
+    \node[archi-node, minimum width=2.1cm, minimum height=0.9cm] (l_tech) at (12.3, 4.9) {\archibadge{Technology}Technology};
+    \node[archi-deployment-node, minimum width=2.1cm, minimum height=0.9cm] (l_phys) at (14.7, 4.9) {\archibadge{Physical}Physical/K8s};
 
-    % Row 1 of relationships
-    \node[coordinate] (r1_src) at (0.2, 2.4) {};
-    \node[coordinate] (r1_dst) at (2.2, 2.4) {};
-    \draw[archi-composition] (r1_src) -- node[above, font=\sffamily\scriptsize]{Composition} (r1_dst);
+    % --- Background Plate: Relationships ---
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (15.8, 3.6);
+    \node[archi-plate-title] at (-0.6, 3.4) {Standard ArchiMate 3.2 Relationship Connectors};
 
-    \node[coordinate] (r2_src) at (3.5, 2.4) {};
-    \node[coordinate] (r2_dst) at (5.5, 2.4) {};
-    \draw[archi-aggregation] (r2_src) -- node[above, font=\sffamily\scriptsize]{Aggregation} (r2_dst);
+    % Row 1 of relationships (Structural & Dependency)
+    \node[coordinate] (r1_src) at (0.0, 2.3) {};
+    \node[coordinate] (r1_dst) at (2.4, 2.3) {};
+    \draw[archi-composition] (r1_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Composition} (r1_dst);
 
-    \node[coordinate] (r3_src) at (6.8, 2.4) {};
-    \node[coordinate] (r3_dst) at (8.8, 2.4) {};
-    \draw[archi-assignment] (r3_src) -- node[above, font=\sffamily\scriptsize]{Assignment} (r3_dst);
+    \node[coordinate] (r2_src) at (4.0, 2.3) {};
+    \node[coordinate] (r2_dst) at (6.4, 2.3) {};
+    \draw[archi-aggregation] (r2_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Aggregation} (r2_dst);
 
-    \node[coordinate] (r4_src) at (10.1, 2.4) {};
-    \node[coordinate] (r4_dst) at (12.1, 2.4) {};
-    \draw[archi-realization] (r4_src) -- node[above, font=\sffamily\scriptsize]{Realization} (r4_dst);
+    \node[coordinate] (r3_src) at (8.0, 2.3) {};
+    \node[coordinate] (r3_dst) at (10.4, 2.3) {};
+    \draw[archi-assignment] (r3_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Assignment} (r3_dst);
 
-    % Row 2 of relationships
-    \node[coordinate] (r5_src) at (0.2, 1.2) {};
-    \node[coordinate] (r5_dst) at (2.2, 1.2) {};
-    \draw[archi-serving] (r5_src) -- node[above, font=\sffamily\scriptsize]{Serving} (r5_dst);
+    \node[coordinate] (r4_src) at (12.0, 2.3) {};
+    \node[coordinate] (r4_dst) at (14.4, 2.3) {};
+    \draw[archi-realization] (r4_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Realization} (r4_dst);
 
-    \node[coordinate] (r6_src) at (3.5, 1.2) {};
-    \node[coordinate] (r6_dst) at (5.5, 1.2) {};
-    \draw[archi-access] (r6_src) -- node[above, font=\sffamily\scriptsize]{Access} (r6_dst);
+    % Row 2 of relationships (Dynamic & Dependency)
+    \node[coordinate] (r5_src) at (0.0, 1.1) {};
+    \node[coordinate] (r5_dst) at (2.4, 1.1) {};
+    \draw[archi-serving] (r5_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Serving} (r5_dst);
 
-    \node[coordinate] (r7_src) at (6.8, 1.2) {};
-    \node[coordinate] (r7_dst) at (8.8, 1.2) {};
-    \draw[archi-flow] (r7_src) -- node[above, font=\sffamily\scriptsize]{Flow} (r7_dst);
+    \node[coordinate] (r6_src) at (4.0, 1.1) {};
+    \node[coordinate] (r6_dst) at (6.4, 1.1) {};
+    \draw[archi-access] (r6_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Access} (r6_dst);
 
-    \node[coordinate] (r8_src) at (10.1, 1.2) {};
-    \node[coordinate] (r8_dst) at (12.1, 1.2) {};
-    \draw[archi-triggering] (r8_src) -- node[above, font=\sffamily\scriptsize]{Triggering} (r8_dst);
+    \node[coordinate] (r7_src) at (8.0, 1.1) {};
+    \node[coordinate] (r7_dst) at (10.4, 1.1) {};
+    \draw[archi-flow] (r7_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Flow} (r7_dst);
+
+    \node[coordinate] (r8_src) at (12.0, 1.1) {};
+    \node[coordinate] (r8_dst) at (14.4, 1.1) {};
+    \draw[archi-triggering] (r8_src) -- node[above=1pt, font=\sffamily\scriptsize\bfseries]{Triggering} (r8_dst);
 
 \end{tikzpicture}

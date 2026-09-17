@@ -45,6 +45,19 @@ iris_befe_replicas: 1
 iris_clinical_replicas: 1
 iris_console_replicas: 1
 iris_administration_replicas: 1
+agora_replicas: 1
+synapse_replicas: 1
+
+# Matrix & Synapse Collaboration Architecture
+synapse_image: "matrixdotorg/synapse:v1.120.0"
+synapse_server_name: "harmonia.local"
+synapse_port: 8008
+synapse_db_port: 5436
+synapse_report_stats: "no"
+agora_port: 8092
+agora_management_port: 9992
+agora_appservice_id: "harmonia-agora"
+agora_reconciliation_cron: "0 */15 * * * *"
 
 # Deployment Verification & Rollout Timeouts
 rollout_timeout_seconds: 300

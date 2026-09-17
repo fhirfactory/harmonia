@@ -4,80 +4,93 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
+    % --- Background Plates (Columns) ---
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (3.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Col 1: Network \& ACK Engine};
+
+    \draw[archi-plate-bg] (4.2, 0.4) rectangle (8.8, 9.4);
+    \node[archi-plate-title] at (4.4, 9.2) {Col 2: Ingress Routing};
+
+    \draw[archi-plate-bg] (9.2, 0.4) rectangle (13.8, 9.4);
+    \node[archi-plate-title] at (9.4, 9.2) {Col 3: Transformation \& Cache};
+
+    \draw[archi-plate-bg] (14.2, 0.4) rectangle (18.8, 9.4);
+    \node[archi-plate-title] at (14.4, 9.2) {Col 4: Clustered Dispatch};
+
     % --- Column 1: External Source & MLLP Network Layer ---
-    \node[archi-business-actor] (ext_source) at (0, 7.5) {%
+    \node[archi-business-actor, minimum width=3.8cm] (ext_source) at (1.5, 7.8) {%
         \archibadge{Business Actor}\archiname{Clinical Source}\\\archidesc{PAS / LIS / RIS / EMR}%
     };
 
-    \node[archi-app-interface] (mllp_endpoint) at (0, 4.5) {%
+    \node[archi-app-interface, minimum width=3.8cm] (mllp_endpoint) at (1.5, 4.8) {%
         \archibadge{App Interface}\archiname{Camel MLLP Endpoint}\\\archidesc{mllp://0.0.0.0:2101--2104}%
     };
 
-    \node[archi-app-service] (sync_ack_service) at (0, 1.5) {%
-        \archibadge{App Service}\archiname{Synchronous ACK Engine}\\\archidesc{AA / AE / AR Generation}%
+    \node[archi-app-service, minimum width=3.8cm] (sync_ack_service) at (1.5, 1.8) {%
+        \archibadge{App Service}\archiname{Sync ACK Engine}\\\archidesc{AA / AE / AR Generation}%
     };
 
     % --- Column 2: Ingress Routing & Processing Layer ---
-    \node[archi-app-component] (route_builder) at (4.5, 7.5) {%
+    \node[archi-app-component, minimum width=3.8cm] (route_builder) at (6.5, 7.8) {%
         \archibadge{App Component}\archiname{MLLP RouteBuilder}\\\archidesc{Incoming*RouteBuilder}%
     };
 
-    \node[archi-app-component] (proc_wrapper) at (4.5, 4.5) {%
+    \node[archi-app-component, minimum width=3.8cm] (proc_wrapper) at (6.5, 4.8) {%
         \archibadge{App Component}\archiname{Message Processor}\\\archidesc{Incoming*ProcessorWrapper}%
     };
 
-    \node[archi-app-process] (hl7_extractor) at (4.5, 1.5) {%
+    \node[archi-app-process, minimum width=3.8cm] (hl7_extractor) at (6.5, 1.8) {%
         \archibadge{App Process}\archiname{HL7 Data Extractor}\\\archidesc{HAPI Terser / Validation}%
     };
 
     % --- Column 3: FHIR Transformation & Persistence Layer ---
-    \node[archi-app-process] (fhir_builders) at (9.0, 7.5) {%
-        \archibadge{App Process}\archiname{FHIR Resource Builders}\\\archidesc{Communication \& Task}%
+    \node[archi-app-process, minimum width=3.8cm] (fhir_builders) at (11.5, 7.8) {%
+        \archibadge{App Process}\archiname{FHIR Builders}\\\archidesc{Communication \& Task}%
     };
 
-    \node[archi-app-component] (cache_service) at (9.0, 4.5) {%
+    \node[archi-app-component, minimum width=3.8cm] (cache_service) at (11.5, 4.8) {%
         \archibadge{App Component}\archiname{Mneme \& Mnemosyne}\\\archidesc{HotRod Cache \& JPA Store}%
     };
 
-    \node[archi-data-object] (canonical_resources) at (9.0, 1.5) {%
-        \archibadge{Data Object}\archiname{FHIR R5 Resources}\\\archidesc{Communication \& Task}%
+    \node[archi-data-object, minimum width=3.8cm] (canonical_resources) at (11.5, 1.8) {%
+        \archibadge{Data Object}\archiname{FHIR R5 Resources}\\\archidesc{Domain Models / Schemas}%
     };
 
     % --- Column 4: Asynchronous Messaging & Event Dispatch Layer ---
-    \node[archi-app-component] (event_producer) at (13.5, 7.5) {%
+    \node[archi-app-component, minimum width=3.8cm] (event_producer) at (16.5, 7.8) {%
         \archibadge{App Component}\archiname{TaskEventProducer}\\\archidesc{TaskEventProducerService}%
     };
 
-    \node[archi-app-interface] (petasos_queue) at (13.5, 4.5) {%
-        \archibadge{App Interface}\archiname{Petasos Artemis Queue}\\\archidesc{petasos.queue.inbound.*}%
+    \node[archi-app-interface, minimum width=3.8cm] (petasos_queue) at (16.5, 4.8) {%
+        \archibadge{App Interface}\archiname{Artemis Queue}\\\archidesc{petasos.queue.inbound.*}%
     };
 
-    \node[archi-app-component] (ponos_engine) at (13.5, 1.5) {%
-        \archibadge{App Component}\archiname{Ponos Workflow Engine}\\\archidesc{Ergon Pipeline Dispatch}%
+    \node[archi-app-component, minimum width=3.8cm] (ponos_engine) at (16.5, 1.8) {%
+        \archibadge{App Component}\archiname{Ponos WorkEngine}\\\archidesc{Ergon Pipeline Dispatch}%
     };
 
     % --- Flow & Structural Relationships ---
     % Ingress Inbound TCP Socket Flow
-    \draw[archi-flow] (ext_source) -- node[left, font=\tiny] {HL7 MLLP Frame} (mllp_endpoint);
+    \draw[archi-flow] (ext_source) -- node[archi-lbl]{HL7 Frame} (mllp_endpoint);
     \draw[archi-serving] (mllp_endpoint) -- (route_builder);
     \draw[archi-triggering] (route_builder) -- (proc_wrapper);
     \draw[archi-assignment] (proc_wrapper) -- (hl7_extractor);
 
     % Extraction to FHIR Resource Construction
     \draw[archi-triggering] (hl7_extractor) -- (fhir_builders);
-    \draw[archi-access] (fhir_builders) -- (canonical_resources);
+    \draw[archi-access]     (fhir_builders) -- (canonical_resources);
 
     % Persistence Flows
-    \draw[archi-flow] (fhir_builders) -- (cache_service);
+    \draw[archi-flow]   (fhir_builders) -- (cache_service);
     \draw[archi-access] (cache_service) -- (canonical_resources);
 
     % Petasos Messaging Dispatch
     \draw[archi-triggering] (cache_service) -- (event_producer);
-    \draw[archi-flow] (event_producer) -- node[right, font=\tiny] {ErgonEvent / TaskEvent} (petasos_queue);
-    \draw[archi-flow] (petasos_queue) -- (ponos_engine);
+    \draw[archi-flow]       (event_producer) -- node[archi-lbl]{TaskEvent} (petasos_queue);
+    \draw[archi-flow]       (petasos_queue) -- (ponos_engine);
 
     % Synchronous ACK Return Loop
-    \draw[archi-triggering] (cache_service) to[bend left=20] node[above, font=\tiny] {Success / Error Signal} (sync_ack_service);
-    \draw[archi-flow] (sync_ack_service) -- node[left, font=\tiny] {HL7 ACK (AA/AE/AR)} (ext_source);
+    \draw[archi-triggering] (cache_service) to[bend left=20] node[archi-lbl, above]{Ack Signal} (sync_ack_service);
+    \draw[archi-flow]       (sync_ack_service) -- node[archi-lbl]{HL7 ACK} (ext_source);
 
 \end{tikzpicture}

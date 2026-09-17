@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agora-config
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: agora
+    app.kubernetes.io/component: collaboration
+    app.kubernetes.io/part-of: harmonia-platform
+data:
+  AGORA_SYNAPSE_BASE_URL: "http://synapse:8008"
+  AGORA_SERVER_NAME: "harmonia.local"
+  AGORA_APPSERVICE_ID: "harmonia-agora"
+  AGORA_RECONCILIATION_CRON: "0 */15 * * * *"

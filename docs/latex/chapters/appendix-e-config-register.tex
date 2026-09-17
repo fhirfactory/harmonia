@@ -1,0 +1,80 @@
+%% =============================================================================
+%% chapters/appendix-e-config-register.tex
+%% APPENDIX E: Configuration Property Register
+%% =============================================================================
+
+\chapter{Configuration Property Register}
+\label{app:config_register}
+
+This appendix provides the authoritative cross-reference of environment variables, Spring Boot properties, and JVM system flags across all subsystems of the Harmonia platform.
+
+\section{Dual-Dimension Configuration Discipline}
+
+Harmonia strictly bifurcates its operational parameter space into:
+\begin{enumerate}
+    \item \textbf{Infrastructure Configuration}: Kubernetes CPU/memory requests, limits, PVC sizes, node selectors, readiness/liveness probe thresholds, and network policies (governed via Kustomize in \nolinkurl{deployment/kubernetes/base/}).
+    \item \textbf{Application Configuration}: Spring application YAML, WildFly standalone subsystems, ActiveMQ Artemis broker XML, Infinispan cache definitions, and Themis policy thresholds.
+\end{enumerate}
+
+\section{Global Infrastructure \& Environment Parameters}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{4.0cm} P{3.5cm} Y}
+\toprule
+\textbf{Configuration Key} & \textbf{Environment Variable} & \textbf{Default Value} & \textbf{Architectural Description} \\
+\midrule
+\texttt{harmonia.k8s.namespace} & \nolinkurl{HARMONIA_NAMESPACE} & \texttt{harmonia} & Target Kubernetes namespace for cluster deployment. \\
+\addlinespace
+\texttt{harmonia.storage.class} & \nolinkurl{HARMONIA_STORAGE_CLASS} & \texttt{microk8s-hostpath} & PersistentVolume provisioner storage class. \\
+\addlinespace
+\texttt{harmonia.logging.phi-enabled} & \nolinkurl{HARMONIA_LOGGING_PHI_ENABLED} & \texttt{false} & Global security gate for diagnostic PHI logging. \\
+\addlinespace
+\texttt{harmonia.artemis.url} & \nolinkurl{PETASOS_BROKER_URL} & \nolinkurl{tcp://artemis-primary-a:61616...} & Multi-broker high-availability client connection URL. \\
+\addlinespace
+\texttt{harmonia.infinispan.servers} & \nolinkurl{HARMONIA_CACHE_SERVERS} & \texttt{infinispan-1:11222;...} & Hot Rod cluster endpoints for Mneme cache grid. \\
+\addlinespace
+\texttt{harmonia.agora.hs-token} & \nolinkurl{AGORA_HS_TOKEN} & \textit{Vault Injected} & Shared secret authenticating Synapse AS transactions. \\
+\addlinespace
+\texttt{harmonia.agora.as-token} & \nolinkurl{AGORA_AS_TOKEN} & \textit{Vault Injected} & Shared secret authenticating Agora calls to Synapse. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Global Infrastructure Configuration Parameters}
+\label{tab:app_config_global}
+\end{table}
+
+\newpage
+\section{Subsystem Application Parameters}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{3.8cm} P{3.5cm} Y}
+\toprule
+\textbf{Subsystem} & \textbf{Property Key} & \textbf{Default Value} & \textbf{Operational Behavior \& Invariant} \\
+\midrule
+\textbf{Petasos} & \nolinkurl{petasos.dedup.window-size} & \texttt{50000} & Sliding-window message deduplication cache capacity. \\
+\textbf{Petasos} & \nolinkurl{petasos.broker.reconnect-attempts} & \texttt{-1} (infinite) & Automatic failover reconnection loop bound. \\
+\addlinespace
+\textbf{Ponos} & \nolinkurl{ponos.concurrency.workers} & \texttt{10} & Concurrent Camel task processing consumer threads. \\
+\textbf{Ponos} & \nolinkurl{ponos.task.timeout-seconds} & \texttt{300} & Maximum execution bound before task cancellation. \\
+\addlinespace
+\textbf{Pylai} & \nolinkurl{pylai.mllp.port} & \texttt{2575} & Inbound TCP socket port for HL7 v2 messages. \\
+\textbf{Pylai} & \nolinkurl{pylai.mllp.backlog} & \texttt{1024} & Netty TCP server connection backlog queue. \\
+\addlinespace
+\textbf{Themis} & \nolinkurl{themis.policy.default-deny} & \texttt{true} & Enforcement invariant: unmatched requests evaluate to DENY. \\
+\textbf{Themis} & \nolinkurl{themis.audit.enabled} & \texttt{true} & Emits non-PHI security audit records to ops store. \\
+\addlinespace
+\textbf{Mneme} & \nolinkurl{mneme.cache.mode} & \texttt{REPL\_SYNC} & Synchronous cache replication across 17 data grid caches. \\
+\textbf{Mneme} & \nolinkurl{mneme.store.write-behind-queue} & \texttt{1024} & Asynchronous buffer size for REST cache store flushing. \\
+\addlinespace
+\textbf{Agora} & \nolinkurl{agora.matrix.server-url} & \nolinkurl{http://synapse:8008} & Synapse homeserver REST endpoint. \\
+\textbf{Agora} & \nolinkurl{agora.retention.days} & \texttt{90} & Transient collaboration room retention period. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Subsystem Application Configuration Properties}
+\label{tab:app_config_subsystems}
+\end{table}
+
+\newpage

@@ -101,6 +101,24 @@
             <artifactId>calliope</artifactId>
         </dependency>
 
+        <!-- Agora Submodules -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>agora-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>agora-matrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>agora-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>agora-service</artifactId>
+        </dependency>
+
         <!-- Themis (Policy & Authorisation Subsystem) -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>

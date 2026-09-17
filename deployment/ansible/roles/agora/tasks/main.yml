@@ -1,0 +1,33 @@
+---
+# ==============================================================================
+# Ansible Role Tasks: Agora Collaboration Gateway
+# ==============================================================================
+
+- name: Create or update Agora secrets
+  ansible.builtin.shell: |
+    microk8s kubectl create secret generic harmonia-agora-secrets \
+      --namespace {{ harmonia_namespace }} \
+      --from-literal=hs-token='{{ vault_agora_hs_token | default("agora_hs_token_secure_value_abc123") }}' \
+      --from-literal=as-token='{{ vault_agora_as_token | default("agora_as_token_secure_value_def456") }}' \
+      --from-literal=synapse-admin-token='{{ vault_agora_admin_token | default("synapse_admin_token_secure_value_ghi789") }}' \
+      --dry-run=client -o yaml | microk8s kubectl apply -f -
+  no_log: true
+  become: true
+  changed_when: false
+
+- name: Wait for Agora Deployment rollout to complete
+  ansible.builtin.command: >
+    microk8s kubectl rollout status deployment/agora
+    --namespace {{ harmonia_namespace }}
+    --timeout {{ agora_rollout_timeout_seconds }}s
+  become: true
+  changed_when: false
+
+- name: Verify Agora Actuator health endpoint
+  ansible.builtin.command: >
+    microk8s kubectl exec -n {{ harmonia_namespace }} deployment/agora --
+    curl -sf http://localhost:9992/actuator/health
+  register: agora_health_result
+  failed_when: false
+  changed_when: false
+  become: true

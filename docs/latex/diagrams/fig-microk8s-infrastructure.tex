@@ -1,0 +1,78 @@
+%% =============================================================================
+%% diagrams/fig-microk8s-infrastructure.tex
+%% ArchiMate 3.2 Physical Infrastructure, MicroK8s Add-ons & Workload Topology
+%% =============================================================================
+\begin{tikzpicture}[node distance=0.8cm and 0.6cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 8.8) rectangle (15.8, 10.8);
+    \node[archi-plate-title] at (-0.6, 10.6) {Host Infrastructure Layer};
+
+    \draw[archi-plate-bg] (-0.8, 6.6) rectangle (15.8, 8.6);
+    \node[archi-plate-title] at (-0.6, 8.4) {MicroK8s Kubernetes Control Plane \& Add-ons};
+
+    \draw[archi-plate-bg] (-0.8, 4.0) rectangle (15.8, 6.4);
+    \node[archi-plate-title] at (-0.6, 6.2) {MicroK8s Workload Containers (Tiers 1, 2, 3)};
+
+    \draw[archi-plate-bg] (-0.8, 1.8) rectangle (15.8, 3.8);
+    \node[archi-plate-title] at (-0.6, 3.6) {Clustered Middleware (Artemis HA \& Mneme Cache Grid)};
+
+    \draw[archi-plate-bg] (-0.8, -0.6) rectangle (15.8, 1.6);
+    \node[archi-plate-title] at (-0.6, 1.4) {Persistence StatefulSets \& HostPath Storage Volumes};
+
+    % --- Host Infrastructure Layer (Ubuntu Linux Host) ---
+    \node[archi-device, minimum width=15.0cm, minimum height=1.1cm] (node_host) at (7.5, 9.6) {
+        \archibadge{Physical / Virtual Host Node}\archiname{Ubuntu Linux 22.04 / 24.04 LTS Host Node}\\
+        \archidesc{Kernel 5.15+/6.8+ | bridge-nf-call-iptables=1, ip\_forward=1 | Ingress Ports: 80, 443, 2575, 16443}
+    };
+
+    % --- MicroK8s Runtime & Add-ons Layer ---
+    \node[archi-deployment-node, minimum width=3.4cm] (addon_dns)     at (0.8, 7.5)  {\archibadge{Add-on: dns}\archiname{CoreDNS}\\\archidesc{Cluster DNS :53 | Service Discovery}};
+    \node[archi-deployment-node, minimum width=3.4cm] (addon_ingress) at (5.0, 7.5)  {\archibadge{Add-on: ingress}\archiname{Nginx Ingress}\\\archidesc{L7 Routing :80/:443 | TLS Termination}};
+    \node[archi-deployment-node, minimum width=3.4cm] (addon_storage) at (9.4, 7.5)  {\archibadge{Add-on: storage}\archiname{HostPath Provisioner}\\\archidesc{SC: microk8s-hostpath}};
+    \node[archi-deployment-node, minimum width=3.4cm] (addon_metrics) at (13.8, 7.5) {\archibadge{Add-on: metrics}\archiname{Metrics Server}\\\archidesc{cAdvisor \& Telemetry}};
+
+    % --- Tier 1 & 2: Ingress, Presentation & Gateways ---
+    \node[archi-container, minimum width=4.5cm] (tier_iris)  at (1.8, 5.1)  {\archibadge{Tier 1: Presentation}\archiname{Iris SPAs \& BEFE}\\\archidesc{SPAs :80 | BEFE :8080/:8090}};
+    \node[archi-container, minimum width=4.5cm] (tier_pylai) at (7.5, 5.1)  {\archibadge{Tier 2: Gateways}\archiname{Pylai In/Out MLLP}\\\archidesc{In: 2575/8084 | Out: 8087/8088}};
+    \node[archi-container, minimum width=4.5cm] (tier_ponos) at (13.2, 5.1) {\archibadge{Tier 3: WorkEngine}\archiname{Energeia Ponos}\\\archidesc{Task Sequence Processor :8083}};
+
+    % --- Tier 3 & 4: Messaging & Distributed Cache Grid ---
+    \node[archi-system-software, minimum width=6.5cm] (tier_mneme)   at (3.5, 2.7)  {\archibadge{Tier 4: Distributed Cache}\archiname{Hestia Mneme (Infinispan 15)}\\\archidesc{Hot Rod :11222 | JGroups :7800 | Write-Behind}};
+    \node[archi-system-software, minimum width=6.5cm] (tier_artemis) at (11.5, 2.7) {\archibadge{Tier 3: Messaging Backbone}\archiname{Petasos Artemis 2.33.0 HA}\\\archidesc{Dual Paired Replication :61616 | ON\_DEMAND Mesh}};
+
+    % --- Tier 5: Persistence & Databases ---
+    \node[archi-system-software, minimum width=3.4cm] (tier_mnemosyne) at (0.8, 0.4)  {\archibadge{Tier 5: Persistence}\archiname{Mnemosyne JPA}\\\archidesc{Clinical :8081 | Ops :8085}};
+    \node[archi-system-software, minimum width=7.2cm] (tier_postgres)  at (7.0, 0.4)  {\archibadge{Tier 5: Relational Storage}\archiname{PostgreSQL 16 StatefulSets}\\\archidesc{postgres-1/2 :5432 | ops-1/2 :5432}};
+    \node[archi-artifact, minimum width=3.4cm]        (tier_pvc)       at (13.8, 0.4) {\archibadge{Host Storage}\archiname{HostPath PVCs}\\\archidesc{DB \& Queue Mounts}};
+
+    % --- Connectors & Relationships ---
+    % Host hosting Add-ons
+    \draw[archi-composition] (node_host) -- (addon_dns);
+    \draw[archi-composition] (node_host) -- (addon_ingress);
+    \draw[archi-composition] (node_host) -- (addon_storage);
+    \draw[archi-composition] (node_host) -- (addon_metrics);
+
+    % Ingress routing to Presentation & Gateway
+    \draw[archi-serving] (addon_ingress) -- node[archi-lbl]{HTTP/WS} (tier_iris);
+    \draw[archi-serving] (addon_ingress) -- node[archi-lbl]{REST} (tier_pylai);
+
+    % Storage provisioning PVCs
+    \draw[archi-assignment] (addon_storage) -- (tier_pvc);
+
+    % Presentation & Gateways to Cache & Messaging
+    \draw[archi-serving] (tier_mneme) -- node[archi-lbl]{Hot Rod} (tier_iris);
+    \draw[archi-serving] (tier_mneme) -- node[archi-lbl]{Hot Rod} (tier_pylai);
+    \draw[archi-serving] (tier_mneme) -- node[archi-lbl]{Hot Rod} (tier_ponos);
+    \draw[archi-flow]    (tier_pylai) -- node[archi-lbl]{JMS} (tier_artemis);
+    \draw[archi-flow]    (tier_artemis) -- node[archi-lbl]{JMS} (tier_ponos);
+
+    % Cache to JPA & Databases
+    \draw[archi-flow] (tier_mneme) -- node[archi-lbl]{Write-Behind} (tier_mnemosyne);
+    \draw[archi-flow] (tier_mnemosyne) -- node[archi-lbl]{JDBC} (tier_postgres);
+
+    % PVC storage access
+    \draw[archi-access] (tier_pvc) -- node[archi-lbl]{Mount} (tier_postgres);
+    \draw[archi-access] (tier_pvc) -- node[archi-lbl]{Journal} (tier_artemis);
+
+\end{tikzpicture}

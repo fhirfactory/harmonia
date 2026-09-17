@@ -1,0 +1,37 @@
+%% =============================================================================
+%% chapters/13-resilience-ha.tex
+%% PART IV: Runtime Architecture
+%% Chapter 13: Single-Node Resilience vs Host-Level Availability
+%% =============================================================================
+
+\chapter[Single-Node Resilience vs Host-Level Availability]{Single-Node Resilience vs\\Host-Level Availability}
+\label{chap:resilience_ha}
+
+Understanding the operational boundaries of single-node MicroK8s is vital for production planning and disaster recovery engineering.
+
+\section{Resilience Semantics on Single-Node MicroK8s}
+
+In a single-node reference deployment, MicroK8s provides \textbf{workload and process-level resilience}:
+\begin{itemize}
+    \item \textbf{Process Self-Healing}: Kubernetes kubelet monitors container liveness and restarts failed or unresponsive microservice processes automatically.
+    \item \textbf{Rolling Updates}: Application deployments update pods sequentially with zero service interruption.
+    \item \textbf{Memory \& CPU Fencing}: Cgroup resource requests and limits prevent memory leaks in one container from crashing neighboring services.
+    \item \textbf{Middleware Failover Testing}: The multi-pod middleware configurations (4 Artemis brokers, 2 Infinispan pods, 2 Postgres instances) validate clustering logic, replication channels, and network reconnect loops in a realistic containerized topology.
+\end{itemize}
+
+\section{Host-Level Failure Domain Boundaries}
+
+\begin{archinote}
+\textbf{Host Failure Limitation}: A single physical Ubuntu server represents a single physical failure domain. If the host machine suffers power loss, kernel panic, or physical SSD failure, all platform pods and services become unavailable simultaneously. Single-node MicroK8s does \textbf{not} protect against host hardware failure.
+\end{archinote}
+
+\section{Production Multi-Node Scaling Pathway}
+
+To achieve true host-level High Availability (HA) in production environments:
+\begin{enumerate}
+    \item Form a multi-node MicroK8s cluster (minimum 3 control-plane nodes).
+    \item Distribute Artemis Primary/Backup pairs across distinct physical nodes using Kubernetes \texttt{podAntiAffinity}.
+    \item Replace local \texttt{microk8s-hostpath} storage classes with distributed block storage (e.g., Ceph RBD, Rook, or enterprise SAN CSI drivers).
+\end{enumerate}
+
+\newpage

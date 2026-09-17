@@ -1,0 +1,72 @@
+%% =============================================================================
+%% chapters/20-paradeigma-deployment.tex
+%% PART VII: Paradeigma Architecture & Deployment
+%% Chapter 20: Paradeigma Workload Deployment & Isolation Guardrails
+%% =============================================================================
+
+\chapter{Paradeigma Workload Deployment \& Isolation Guardrails}
+\label{chap:paradeigma_deployment}
+
+The deployment of synthetic simulation workloads is governed by strict architectural isolation invariants to prevent simulation code or test artifacts from leaking into production builds.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-normal-vs-paradeigma.tex}
+    \end{adjustbox}
+    \caption{Normal Production vs Paradeigma Simulation Deployment Isolation Boundary}
+    \label{fig:normal_vs_paradeigma}
+\end{figure}
+
+\section{Strict Production Isolation Invariants}
+
+\begin{principlebox}{Paradeigma Production Isolation Invariant}
+In accordance with Invariant 1:
+\begin{enumerate}
+    \item Production subprojects (\texttt{calliope}, \texttt{themis}, \texttt{hestia}, \texttt{petasos}, \texttt{energeia}, \texttt{pylai}, \texttt{iris}, \texttt{agora}) must \textbf{never} import or declare Maven dependencies on \texttt{net.fhirfactory.harmonia.paradeigma.*}.
+    \item Production classes must not contain simulation toggle flags (e.g. \texttt{paradeigmaMode}, \texttt{simulationMode}, \texttt{syntheticRequest}, \texttt{isParadeigmaGenerated}).
+    \item Production container images must not package simulator classes or scenario runners.
+\end{enumerate}
+\end{principlebox}
+
+\section{Automated ArchUnit Verification}
+
+This isolation rule is enforced continuously by the automated ArchUnit test suite (\texttt{ParadeigmaIsolationArchitectureTest} and \texttt{AgoraIsolationArchitectureTest}) in the CI/CD pipeline:
+\begin{lstlisting}[language=bash, caption={Executing ArchUnit Isolation Test Suite}]
+mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
+\end{lstlisting}
+
+\section{Normal Production vs Paradeigma Simulation Deployment Matrix}
+
+Table~\ref{tab:normal_vs_paradeigma} outlines the authoritative structural differences between normal production and simulation deployments:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l P{4.5cm} P{4.5cm} Y}
+\toprule
+\textbf{Dimension} & \textbf{Normal Production} & \textbf{Simulation Deployment} & \textbf{Isolation Invariant} \\
+\midrule
+\textbf{Workload Count} & \textbf{25 Workloads} (12 StatefulSets + 13 Deployments) & \textbf{30 Workloads} (25 core + 5 simulator pods) & Simulators run as external client pods. \\
+\addlinespace
+\textbf{Persistent Storage} & \textbf{12 PVCs (25 GB total)} & \textbf{12 PVCs (25 GB total)} & Simulators are stateless; request 0 PVCs. \\
+\addlinespace
+\textbf{Network Listeners} & \textbf{18 Platform Listeners} & \textbf{18 Platform + 5 Simulator Listeners} & Core listeners operate identically. \\
+\addlinespace
+\textbf{Clinical Data} & Real patient demographics \& orders & Deterministic synthetic personas & Zero real PHI enters simulation. \\
+\addlinespace
+\textbf{Failure Injection} & Disabled & Programmable network/ACK faults & Isolated to simulation overlay. \\
+\bottomrule
+\end{tabularx}
+\caption{Authoritative Normal Production vs Paradeigma Simulation Deployment Matrix}
+\label{tab:normal_vs_paradeigma}
+\end{table}
+
+\section{Paradeigma Simulation Profile Deployment}
+
+When testing in a dedicated staging or simulation environment, Paradeigma workloads are deployed as external client containers via the simulation overlay:
+\begin{lstlisting}[language=bash, caption={Deploying Paradeigma Simulation Workloads}]
+kubectl apply -k deployment/kubernetes/environments/simulation
+\end{lstlisting}
+
+\newpage

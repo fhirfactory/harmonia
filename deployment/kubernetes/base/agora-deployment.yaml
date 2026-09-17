@@ -1,0 +1,107 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agora
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: agora
+    app.kubernetes.io/component: collaboration
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: agora
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: agora
+        app.kubernetes.io/component: collaboration
+        app.kubernetes.io/part-of: harmonia-platform
+    spec:
+      containers:
+        - name: agora
+          image: localhost:32000/harmonia/agora:1.0.0-SNAPSHOT
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "postgres"
+            - name: SERVER_PORT
+              value: "8092"
+            - name: MANAGEMENT_SERVER_PORT
+              value: "9992"
+            - name: AGORA_SYNAPSE_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: agora-config
+                  key: AGORA_SYNAPSE_BASE_URL
+            - name: AGORA_SERVER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: agora-config
+                  key: AGORA_SERVER_NAME
+            - name: AGORA_APPSERVICE_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: agora-config
+                  key: AGORA_APPSERVICE_ID
+            - name: AGORA_RECONCILIATION_CRON
+              valueFrom:
+                configMapKeyRef:
+                  name: agora-config
+                  key: AGORA_RECONCILIATION_CRON
+            - name: AGORA_HOMESERVER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-agora-secrets
+                  key: hs-token
+            - name: AGORA_APPSERVICE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-agora-secrets
+                  key: as-token
+            - name: AGORA_ADMIN_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-agora-secrets
+                  key: synapse-admin-token
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgres-ops-1:5432/ops_node_1"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "ops_user"
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-db-secrets
+                  key: ops-password
+                  optional: true
+            - name: SPRING_DATASOURCE_PASSWORD_DEFAULT
+              value: "ops_password"
+            - name: PETASOS_BROKER_URL
+              value: "(tcp://artemis-primary-a:61616,tcp://artemis-backup-a:61616,tcp://artemis-primary-b:61618,tcp://artemis-backup-b:61618)?ha=true&reconnectAttempts=-1"
+          ports:
+            - containerPort: 8092
+              name: http-as
+            - containerPort: 9992
+              name: management
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1536Mi
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9992
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9992
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5

@@ -19,6 +19,10 @@
 
   roles:
     - role: harmonia-deploy
+    - role: synapse
+      when: synapse_enabled | default(true) | bool
+    - role: agora
+      when: agora_enabled | default(true) | bool
 
   post_tasks:
     - name: Query active pods in Harmonia namespace
@@ -41,6 +45,8 @@
           - "  Iris Administration: http://admin.{{ ingress_base_domain }}"
           - "  Iris BEFE API:       http://api.{{ ingress_base_domain }}/clinical"
           - "  Pylai MLLP Gateway:  http://gateway.{{ ingress_base_domain }}"
+          - "  Matrix Synapse:      http://matrix.{{ ingress_base_domain }}"
+          - "  Agora AS Gateway:    http://agora.{{ harmonia_namespace }}.svc.cluster.local:8092"
           - "--------------------------------------------------------"
           - "Workload Pods:"
           - "{{ final_pod_status.stdout_lines }}"

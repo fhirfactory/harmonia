@@ -127,6 +127,21 @@ class IncomingMfnMessageProcessorTest {
     }
 
     @Test
+    @DisplayName("REC-001: Petasos publish failure returns AE NACK to prevent dual-write data loss")
+    void testPetasosPublishFailureReturnsAeNack() throws Exception {
+        TaskEventProducerService failingProducer = mock(TaskEventProducerService.class);
+        doThrow(new RuntimeException("Petasos Artemis connection error"))
+                .when(failingProducer).sendTaskEvent(any(ErgonEvent.class));
+
+        transformer.setTaskEventProducerService(failingProducer);
+
+        MfnProcessingResult result = transformer.processMfnMessage(FULL_MFN_M02);
+        assertThat(result.isSuccess()).isFalse();
+        assertThat(result.getAckMessage()).contains("MSA|AE|MSG-MFN-001");
+        assertThat(result.getErrorMessage()).contains("Petasos Artemis connection error");
+    }
+
+    @Test
     @DisplayName("Empty or blank message returns error result and fallback NACK")
     void testProcessBlankMessage() {
         MfnProcessingResult result = transformer.processMfnMessage("   ");

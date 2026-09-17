@@ -1,0 +1,44 @@
+%% =============================================================================
+%% chapters/appendix-l-paradeigma-checklist.tex
+%% APPENDIX L: Paradeigma Deployment Checklist
+%% =============================================================================
+
+\chapter{Paradeigma Simulation Deployment Checklist}
+\label{app:paradeigma_checklist}
+
+This appendix provides the operational checklist for deploying and verifying a 30-workload Harmonia Paradeigma Simulation cluster with strict production isolation.
+
+\section{Phase 1: Production Isolation Pre-Flight Checks}
+\begin{itemize}[label=$\square$]
+    \item Run ArchUnit isolation tests: \nolinkurl{mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest"}.
+    \item Verify 0 production POMs declare dependencies on \nolinkurl{paradeigma-*}.
+    \item Verify 0 production Java classes import \nolinkurl{net.fhirfactory.harmonia.paradeigma.*}.
+    \item Verify zero simulation flags exist in production source code.
+    \item Confirm production container images exclude simulation classes.
+\end{itemize}
+
+\section{Phase 2: Simulation Workload Deployment}
+\begin{itemize}[label=$\square$]
+    \item Apply simulation Kustomize overlay: \nolinkurl{kubectl apply -k deployment/kubernetes/environments/simulation}.
+    \item Verify 5 decoupled simulator pods reach Running state:
+    \begin{itemize}
+        \item \nolinkurl{paradeigma-pas}: HTTP port 8091.
+        \item \nolinkurl{paradeigma-emr}: HTTP port 8092, MLLP port 2201.
+        \item \nolinkurl{paradeigma-lms}: HTTP port 8093, MLLP ports 2202 and 2204.
+        \item \nolinkurl{paradeigma-rispac}: HTTP port 8094, MLLP ports 2203 and 2205.
+        \item \nolinkurl{paradeigma-scenarios}: HTTP port 8090.
+    \end{itemize}
+    \item Verify simulator pods request 0 PersistentVolumeClaims.
+\end{itemize}
+
+\section{Phase 3: Scenario Execution \& Journey Verification}
+\begin{itemize}[label=$\square$]
+    \item Trigger single Patient Journey: \nolinkurl{curl -X POST http://localhost:8090/api/scenarios/journey} (no request body).
+    \item Verify PAS generates and transmits \nolinkurl{ADT^A04} / \nolinkurl{ADT^A01} to \nolinkurl{pylai-mllp-in:2575}.
+    \item Verify Pylai returns synchronous \nolinkurl{AA} acknowledgment to simulator.
+    \item Verify EMR, LMS, and RIS-PAC receive fan-out event notifications on ports 2201--2205.
+    \item Query scenario status: \nolinkurl{curl http://localhost:8090/api/scenarios/status}.
+    \item Verify dual-gate logging invariant: zero PHI in operational logs; diagnostic PHI gated by \nolinkurl{harmonia.logging.phi-enabled}.
+\end{itemize}
+
+\newpage

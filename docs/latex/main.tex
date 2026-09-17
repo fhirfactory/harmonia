@@ -1,6 +1,6 @@
 %% =============================================================================
 %% main.tex
-%% Master Document for Harmonia HIE ArchiMate 3.2 Architecture Specification
+%% Master Document for Harmonia Architecture, Implementation, and Deployment Reference
 %% =============================================================================
 
 \documentclass[10pt,a4paper,oneside]{report}
@@ -13,11 +13,11 @@
     \vspace{-2.0cm}
     {\Huge\bfseries\color{harmoniablue} Harmonia}\\[0.4cm]
     {\LARGE\bfseries Health Information Exchange Platform}\\[0.8cm]
-    {\large\scshape ArchiMate 3.2 Technical Architecture Specification \& System Reference}
+    {\large\scshape Architecture, Implementation, and Deployment Reference}
 }
 \author{
     \textbf{Harmonia Platform Architecture Team}\\
-    \texttt{architecture@harmonia.health}
+    \texttt{m.a.hunter@outlook.com}
 }
 \date{September 2026 --- Version 1.0.0}
 
@@ -42,21 +42,77 @@
 % --- Main Content ---
 \pagenumbering{arabic}
 
+\part{Foundations}
 \input{chapters/01-motivation-strategy.tex}
+\input{chapters/01-foundations.tex}
+\input{chapters/02-conceptual-taxonomy.tex}
 \input{chapters/02-business-layer.tex}
+
+\part{Platform Architecture}
 \input{chapters/03-application-layer.tex}
+\input{chapters/04-gateways-pylai.tex}
+\input{chapters/05-messaging-petasos.tex}
+\input{chapters/05a-collaboration-agora.tex}
+\input{chapters/06-workflow-energeia.tex}
+\input{chapters/07-presentation-iris.tex}
+\input{chapters/appendix-iris-user-interfaces.tex}
+\input{chapters/appendix-provider-registry.tex}
+
+\part{Information \& Integration}
+\input{chapters/03-information-architecture.tex}
 \input{chapters/04-data-architecture.tex}
+\input{chapters/appendix-mllp-services.tex}
+
+\part{Middleware Architecture}
 \input{chapters/05-technology-layer.tex}
+\input{chapters/08-artemis-topology.tex}
+\input{chapters/09-infinispan-grid.tex}
+\input{chapters/10-postgresql-persistence.tex}
+\input{chapters/24-matrix-synapse.tex}
+
+\part{Runtime Architecture}
+\input{chapters/11-container-runtime.tex}
+\input{chapters/12-microk8s-workloads.tex}
+\input{chapters/13-resilience-ha.tex}
 \input{chapters/06-deployment-ha.tex}
+\input{chapters/21-themis-security.tex}
+\input{chapters/22-phi-logging.tex}
+
+\part{Normal Deployment}
+\input{chapters/14-configuration-hierarchy.tex}
+\input{chapters/15-configuration-properties.tex}
+\input{chapters/16-host-preparation.tex}
+\input{chapters/17-normal-deployment.tex}
+\input{chapters/18-undeployment-retention.tex}
+\input{chapters/appendix-infrastructure-configuration.tex}
+
+\part{Paradeigma Simulation}
+\input{chapters/19-paradeigma-generators.tex}
+\input{chapters/20-paradeigma-deployment.tex}
+\input{chapters/appendix-paradeigma.tex}
+
+\part{Development}
+\input{chapters/25-development-invariants.tex}
+\input{chapters/appendix-ergon-module.tex}
+\input{chapters/appendix-praxis-workflow.tex}
+
+\part{Operations}
+\input{chapters/23-failure-operations.tex}
+\input{chapters/appendix-phi-logging.tex}
 
 % --- Appendices ---
 \appendix
-\input{chapters/appendix-paradeigma.tex}
-\input{chapters/appendix-mllp-services.tex}
-\input{chapters/appendix-ergon-module.tex}
-\input{chapters/appendix-praxis-workflow.tex}
-\input{chapters/appendix-provider-registry.tex}
-\input{chapters/appendix-phi-logging.tex}
-\input{chapters/appendix-iris-user-interfaces.tex}
+\input{chapters/appendix-a-glossary.tex}
+\input{chapters/appendix-b-system-inventory.tex}
+\input{chapters/appendix-c-module-register.tex}
+\input{chapters/appendix-d-middleware-matrix.tex}
+\input{chapters/appendix-e-config-register.tex}
+\input{chapters/appendix-f-port-register.tex}
+\input{chapters/appendix-g-container-register.tex}
+\input{chapters/appendix-h-k8s-register.tex}
+\input{chapters/appendix-i-persistence-register.tex}
+\input{chapters/appendix-j-dependency-matrix.tex}
+\input{chapters/appendix-k-normal-checklist.tex}
+\input{chapters/appendix-l-paradeigma-checklist.tex}
 
 \end{document}

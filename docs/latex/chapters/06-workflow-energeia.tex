@@ -1,0 +1,76 @@
+%% =============================================================================
+%% chapters/06-workflow-energeia.tex
+%% PART II: Platform Capabilities and Modules
+%% Chapter 6: Workflow & Task Processing Engine (Ponos, Ergon, Praxis, Pragma)
+%% =============================================================================
+
+\chapter[Workflow \& Task Processing Engine (Energeia)]{Workflow \& Task Processing Engine\\(\texttt{Energeia})}
+\label{chap:workflow_energeia}
+
+The Energeia subsystem is Harmonia's composable, high-performance workflow execution engine. It coordinates discrete clinical processing activities, manages the lifecycle of canonical integration tasks (\texttt{Pragma}), and records end-to-end execution audit trails.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-energeia-workflow.tex}
+    \end{adjustbox}
+    \caption{Energeia Workflow Architecture: Ponos WorkEngine, Praxis Sequences \& Ergon Activities}
+    \label{fig:energeia_workflow}
+\end{figure}
+
+\section{Ponos Task Processor (\texttt{energeia-ponos})}
+
+\texttt{energeia-ponos} is the runtime worker container responsible for:
+\begin{itemize}
+    \item Consuming inbound integration tasks from Petasos queues (\texttt{clinical.tasks.inbound}, etc.).
+    \item Instantiating and orchestrating Apache Camel execution contexts.
+    \item Interacting with the \texttt{Mneme} Infinispan cache grid to store task states and checkpoints.
+    \item Enforcing concurrency controls, transaction boundaries, and thread pool scaling.
+\end{itemize}
+
+\section{Modular Activity Units (\texttt{energeia-erga})}
+
+The \texttt{energeia-erga} module provides a library of discrete, reusable \texttt{Ergon} activity units. Each Ergon implements a single clinical or technical responsibility adhering to the \texttt{ErgonBase} contract:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-ergon-module-architecture.tex}
+    \end{adjustbox}
+    \caption{Ergon Modular Activity Architecture and Checkpoint Lifecycle}
+    \label{fig:energeia_ergon_architecture}
+\end{figure}
+
+\subsection{Standard Ergon Activity Implementations}
+\begin{itemize}
+    \item \textbf{\texttt{Hl7v2ToFhirPatientErgon}}: Parses raw HL7 v2 ADT segments (PID, PD1, NK1) and constructs canonical FHIR R5 \texttt{Patient} resources.
+    \item \textbf{\texttt{PatientIdentityUpdateErgon}}: Queries the Enterprise Master Patient Index (EMPI) in Mneme cache to reconcile Medical Record Numbers (MRNs) into master patient IDs.
+    \item \textbf{\texttt{PatientDemographicsUpdateErgon}}: Merges updated demographic data (names, addresses, telecoms) into existing patient records.
+    \item \textbf{\texttt{AdtDistributionErgon}}: Evaluates clinical distribution rules and fans out outbound notification tasks to dedicated egress queues.
+    \item \textbf{\texttt{AbstractProviderRegistryChangeErgon}}: Base class for provider directory change processors (\texttt{PractitionerChangeErgon}, \texttt{OrganizationChangeErgon}, etc.) performing referential verification.
+\end{itemize}
+
+\section{Workflow Orchestration Sequences (\texttt{energeia-praxis})}
+
+\texttt{energeia-praxis} provides the sequence orchestration engine that chains ordered Ergon steps into auditable pipelines.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-praxis-workflow-architecture.tex}
+    \end{adjustbox}
+    \caption{Praxis Dynamic Route Synthesis and Multi-Stage Pipeline Execution}
+    \label{fig:energeia_praxis_architecture}
+\end{figure}
+
+\subsection{Dynamic Route Synthesis \& Checkpointing}
+Praxis constructs Camel routes dynamically using CDI bean discovery. At each Ergon boundary, Praxis creates an immutable \texttt{PragmaCheckpoint} capturing:
+\begin{equation}
+\begin{aligned}
+\langle\text{Checkpoint}\rangle = (\text{checkpointId}, \text{pragmaId}, \text{ergonId}, \text{stageName}, \\
+                                  &\quad\text{timestamp}, \text{status}, \text{statusMessage}, \text{stepIndex})
+\end{aligned}
+\end{equation}
+Checkpoints are written to the \texttt{Mneme} cache grid, ensuring complete visibility and audit lineage for in-flight tasks.
+
+\newpage

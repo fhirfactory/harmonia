@@ -1,0 +1,37 @@
+%% =============================================================================
+%% chapters/15-configuration-properties.tex
+%% PART V: Configuration Architecture
+%% Chapter 15: Configuration Register & Property Cross-Reference
+%% =============================================================================
+
+\chapter{Configuration Register \& Property Cross-Reference}
+\label{chap:configuration_properties}
+
+This chapter details the primary application and infrastructure configuration parameters across all Harmonia subsystems.
+
+\section{Core Platform Properties Matrix}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l P{4.2cm} P{3.2cm} Y}
+\toprule
+\textbf{Subsystem} & \textbf{Property Name} & \textbf{Default Value} & \textbf{Description \& Scope} \\
+\midrule
+\textbf{Petasos} & \nolinkurl{petasos.artemis.broker-url} & \nolinkurl{(tcp://...)?ha=true} & Artemis failover connection URL for client pools. \\
+\textbf{Petasos} & \nolinkurl{petasos.dedup.window-minutes} & \nolinkurl{30} & In-memory deduplication sliding window duration. \\
+\textbf{Mneme} & \nolinkurl{infinispan.client.hotrod.server_list} & \nolinkurl{infinispan-service:11222} & Hot Rod server endpoint list. \\
+\textbf{Mneme} & \nolinkurl{infinispan.cache.task.owners} & \nolinkurl{2} & Number of cluster owners for in-flight task cache. \\
+\textbf{Mnemosyne} & \nolinkurl{spring.datasource.url} & \nolinkurl{jdbc:postgresql://...:5432} & PostgreSQL JDBC connection string. \\
+\textbf{Mnemosyne} & \nolinkurl{spring.datasource.hikari.maximum-pool-size} & \nolinkurl{20} & Maximum JDBC connection pool limit. \\
+\textbf{Pylai} & \nolinkurl{pylai.mllp.port} & \nolinkurl{2575} & Inbound MLLP TCP listening port. \\
+\textbf{Pylai} & \nolinkurl{pylai.mllp.auto-ack} & \nolinkurl{false} & Disables Camel auto-ACK to ensure dual-write safety. \\
+\textbf{Iris} & \nolinkurl{iris.befe.clinical-port} & \nolinkurl{8080} & BEFE JAX-RS clinical endpoint port. \\
+\textbf{Iris} & \nolinkurl{iris.befe.ops-port} & \nolinkurl{8090} & BEFE operational telemetry endpoint port. \\
+\bottomrule
+\end{tabularx}
+\caption{Primary Platform Configuration Parameters Cross-Reference}
+\label{tab:config_properties_summary}
+\end{table}
+
+\newpage

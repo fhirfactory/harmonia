@@ -31,7 +31,7 @@
 
 - name: Delete Secrets in Harmonia namespace
   ansible.builtin.command: >
-    microk8s kubectl delete secrets harmonia-db-secrets harmonia-artemis-secrets harmonia-infinispan-secrets
+    microk8s kubectl delete secrets harmonia-db-secrets harmonia-artemis-secrets harmonia-infinispan-secrets harmonia-agora-secrets harmonia-synapse-secrets
     --namespace {{ harmonia_namespace }} --ignore-not-found
   become: true
   changed_when: true
