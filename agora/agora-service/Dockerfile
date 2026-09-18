@@ -6,7 +6,7 @@
 # --- Stage 1: Build & Layer Extraction ---
 FROM eclipse-temurin:21-jdk-jammy AS builder
 WORKDIR /workspace
-ARG JAR_FILE=target/agora-service-*.jar
+ARG JAR_FILE=target/agora-service-*-exec.jar
 COPY ${JAR_FILE} app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 
