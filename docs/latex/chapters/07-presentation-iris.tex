@@ -26,16 +26,24 @@ Harmonia provides three purpose-built Vue 3 / TypeScript web applications served
 The clinical portal provides care teams with fast, intuitive access to longitudinal patient histories, encounter summaries, lab observations, and diagnostic reports.
 
 \subsection{2. \texttt{iris-console} (Operations \& Telemetry Portal)}
-The operations console provides platform engineers and system administrators with real-time operational telemetry.
+The operations console provides Site Reliability Engineers (SREs), system administrators, and integration engineers with comprehensive operational telemetry, message flow tracing, and incident remediation capabilities.
+
 \begin{archinote}
 \textbf{Terminology Reconciliation}: Legacy documentation previously referred to this portal as \texttt{iris-monitor}. The canonical, repository-backed identifier is standardized across all modules and documentation as \texttt{iris-console}.
 \end{archinote}
-It visualizes:
-\begin{itemize}
-    \item ActiveMQ Artemis broker cluster health and queue depths.
-    \item Infinispan distributed cache hit ratios and memory utilization.
-    \item In-flight Ponos task statuses and pipeline execution latency.
-\end{itemize}
+
+The console is structured around five primary operational perspectives:
+\begin{enumerate}
+    \item \textbf{SUBSYSTEMS (\texttt{/subsystems})}: Answers \textit{"Is Harmonia healthy?"} Visualizes platform-wide health states across all nine core subsystems (Pylai, Petasos, Energeia [Ponos, Praxis], Mneme, Mnemosyne, Calliope, Themis, Agora, Iris). Provides domain-neutral runtime instance tables with slide-out Pod/container detail drawers, downstream dependency health ratios with round-trip latencies, and native SVG micro-chart trend statistics across configurable time windows (15m, 1h, 6h, 24h).
+    \item \textbf{QUEUES (\texttt{/queues})}: Answers \textit{"Is work moving?"} Monitors Apache ActiveMQ Artemis message broker topology, queue depths, enqueue and dequeue rates, consumer/producer ratios, oldest message age, message redeliveries, and Dead-Letter Queue (DLQ) accumulation surveillance with historical depth sparklines.
+    \item \textbf{WORKFLOWS (\texttt{/workflows})}: Answers \textit{"What work is Harmonia currently performing?"} Displays registered Praxis execution sequences, active, queued, completed, and failed task volumes, processing throughput rates, P95 durations, and deep diagnostic drill-down into individual Pragma execution envelopes and Ergon checkpoint timelines.
+    \item \textbf{EVENTS (\texttt{/events})}: Answers \textit{"What happened to a particular interaction?"} Cross-subsystem end-to-end diagnostic sequence tracing across protocol gateways, message queues, workflow processors, and persistence. Supports multi-attribute filtering (Correlation ID, Causation ID, Message ID, Pragma ID, Subsystem, Event Type, Status, Time Range) rendered as an operational vertical flowchart timeline.
+    \item \textbf{ALERTS (\texttt{/alerts})}: Answers \textit{"What currently requires operator attention?"} Actionable operational conditions categorized by severity (Critical, Warning, Information) and lifecycle status (Active, Acknowledged, Resolved) accompanied by concrete operator remediation guidance and audit-governed acknowledgment actions.
+\end{enumerate}
+
+\begin{principlebox}{Zero-PHI Presentation Boundary (Invariant 7)}
+In strict compliance with Invariant 7, the Iris Operations Console and Operations Backend enforce a complete Zero-PHI boundary. All diagnostic event timelines, queue inspections, and workflow details display only technical identifiers (\texttt{correlationId}, \texttt{pragmaId}, \texttt{messageId}, durations, and error reason codes). Clinical payloads, FHIR resource bodies, HL7 segments, and patient identifiers are strictly excluded from UI rendering and operations API responses.
+\end{principlebox}
 
 \subsection{3. \texttt{iris-administration} (Directory Administration Portal)}
 Provides directory stewards with UI forms for managing practitioners, roles, organizations, and endpoints.
@@ -49,7 +57,17 @@ In accordance with Invariant 3, \texttt{iris-administration} is strictly a front
 \texttt{iris-befe} is a WildFly 31.0.1 Jakarta EE microservice operating on dual HTTP ports:
 \begin{itemize}
     \item \textbf{Port 8080 (Clinical Gateway)}: Serves authenticated clinical FHIR REST endpoints to \texttt{iris-clinical}.
-    \item \textbf{Port 8090 (Operations Gateway)}: Serves system telemetry, health checks, and administration APIs to \texttt{iris-console}.
+    \item \textbf{Port 8090 (Operations Gateway)}: Serves system telemetry, normalized subsystem models, queue statistics, workflow diagnostics, and alert remediation endpoints to \texttt{iris-console}.
+\end{itemize}
+
+\subsection{Operations Backend Architecture (Port 8090)}
+The operations presentation tier communicates exclusively through \texttt{iris-befe} port 8090 via the \texttt{OperationsServerManager}. Telemetry collection is orchestrated by the \texttt{OperationsAggregatorService} through a decoupled provider architecture:
+\begin{itemize}
+    \item \textbf{Subsystem Health Provider SPI (\texttt{SubsystemHealthProvider})}: Concrete provider implementations for each core subsystem (\texttt{PylaiHealthProvider}, \texttt{PetasosHealthProvider}, \texttt{EnergeiaHealthProvider}, \texttt{MnemeHealthProvider}, \texttt{MnemosyneHealthProvider}, \texttt{CalliopeHealthProvider}, \texttt{ThemisHealthProvider}, \texttt{AgoraHealthProvider}, and \texttt{IrisHealthProvider}) normalize disparate telemetry sources into uniform operational models.
+    \item \textbf{Hybrid Telemetry Sourcing}: State is harvested primarily from Infinispan clustered caches (\texttt{modulestatus-cache}, \texttt{task-cache}, \texttt{messagequeue-cache}) supplemented by non-blocking subsystem actuator health probes and ActiveMQ Artemis broker management APIs.
+    \item \textbf{Kubernetes Runtime Discovery (\texttt{KubernetesInstanceProvider})}: Dynamically discovers live Pods in the \texttt{harmonia} namespace using in-cluster ServiceAccount credentials, mapping Pod lifecycle and resource metrics to domain-neutral instances with graceful fallback to Docker Compose.
+    \item \textbf{Themis Default-Deny Governance}: Operations endpoints enforce strict RBAC checks using \texttt{themis-api} contracts, requiring \texttt{operations.viewer} or \texttt{operations.admin} authorities.
+    \item \textbf{Partial Failure Resilience}: When downstream telemetry providers experience timeouts or temporary unavailability, the aggregator tags the corresponding subsystem as \texttt{UNKNOWN} or \texttt{UNAVAILABLE} with stale indicators, guaranteeing that platform summaries continue responding within bounded SLAs ($< 200$\,ms).
 \end{itemize}
 
 \begin{figure}[htbp]

@@ -128,3 +128,183 @@ export interface CacheStatus {
   persistenceStore: string;
   status: 'HEALTHY' | 'DEGRADED';
 }
+
+// ============================================================================
+// Normalized Harmonia Operations Console Domain Models (BEFE :8090)
+// ============================================================================
+
+export type PlatformStatus = 'HEALTHY' | 'DEGRADED' | 'UNAVAILABLE';
+export type SubsystemState = 'HEALTHY' | 'DEGRADED' | 'UNAVAILABLE' | 'UNKNOWN';
+export type AlertSeverity = 'CRITICAL' | 'WARNING' | 'INFORMATION';
+export type AlertStatus = 'ACTIVE' | 'ACKNOWLEDGED' | 'RESOLVED';
+
+export interface OperationalSummary {
+  platformStatus: PlatformStatus;
+  environment: string;
+  cluster: string;
+  timestamp: number;
+  totalSubsystems: number;
+  degradedSubsystems: number;
+  criticalAlerts: number;
+  warningAlerts: number;
+  lastRefreshed: number;
+}
+
+export interface OperationalSubsystem {
+  id: string;
+  name: string;
+  description: string;
+  state: SubsystemState;
+  instanceCount: number;
+  version: string;
+  lastUpdated: number;
+  stale?: boolean;
+  children?: OperationalSubsystem[];
+}
+
+export interface OperationalInstance {
+  instanceId: string;
+  subsystemId: string;
+  role?: string;
+  state: string;
+  ready: boolean;
+  restartCount: number;
+  uptime?: string;
+  startedAt?: number;
+  cpuPercent?: number | null;
+  memoryMb?: number | null;
+  podName?: string;
+  namespace?: string;
+  nodeName?: string;
+  ipAddress?: string;
+  containerImage?: string;
+  appVersion?: string;
+  recentErrors?: string[];
+  dependencies?: string[];
+}
+
+export interface DependencyHealth {
+  name: string;
+  status: SubsystemState | string;
+  latencyMs?: number | null;
+  message?: string;
+}
+
+export interface OperationalHealth {
+  subsystemId: string;
+  status: SubsystemState | string;
+  availabilityPercent?: number | null;
+  failedOperations: number;
+  restartCount: number;
+  p95LatencyMs?: number | null;
+  dependenciesSummary?: string;
+  stale?: boolean;
+  dependencies?: DependencyHealth[];
+  details?: Record<string, any>;
+}
+
+export interface TimeSeriesPoint {
+  timestamp: number;
+  value: number;
+}
+
+export interface TimeSeries {
+  metricName: string;
+  unit?: string;
+  timeWindow?: string;
+  points: TimeSeriesPoint[];
+}
+
+export interface QueueSummary {
+  queueId: string;
+  queueName: string;
+  address?: string;
+  status: string;
+  depth: number;
+  consumerCount: number;
+  producerCount: number;
+  enqueueRate: number;
+  dequeueRate: number;
+  oldestMessageAgeSeconds: number;
+  redeliveryCount: number;
+  dlqDepth: number;
+  expiryCount: number;
+  associatedCapability?: string;
+  depthHistory?: TimeSeriesPoint[];
+}
+
+export interface WorkflowSummary {
+  workflowId: string;
+  name: string;
+  description?: string;
+  activeExecutions: number;
+  queuedWork: number;
+  completedWork: number;
+  failedWork: number;
+  retryingWork: number;
+  processingRate: number;
+  p95DurationMs: number;
+  failureRate: number;
+}
+
+export interface ErgonCheckpoint {
+  checkpointId?: string;
+  ergonId: string;
+  ergonName?: string;
+  status: string;
+  timestamp?: number;
+  startedAt?: number;
+  completedAt?: number;
+  durationMs?: number;
+  errorMessage?: string;
+  detail?: string;
+  details?: Record<string, any>;
+}
+
+export interface PragmaSummary {
+  pragmaId: string;
+  praxisId?: string;
+  status: string;
+  startedAt: number;
+  durationMs: number;
+  currentErgon?: string;
+  completedErgaCount: number;
+  retryCount: number;
+  correlationId?: string;
+  causationId?: string;
+  failureReasonCode?: string;
+  checkpoints?: ErgonCheckpoint[];
+}
+
+export interface OperationalEvent {
+  eventId: string;
+  timestamp: number;
+  subsystem: string;
+  eventType: string;
+  operation: string;
+  status: string;
+  durationMs: number;
+  messageId?: string;
+  correlationId?: string;
+  causationId?: string;
+  pragmaId?: string;
+  praxisId?: string;
+  ergonId?: string;
+  interfaceId?: string;
+  reasonCode?: string;
+}
+
+export interface OperationalAlert {
+  alertId: string;
+  severity: AlertSeverity;
+  subsystem: string;
+  component: string;
+  condition: string;
+  firstObserved: number;
+  lastObserved: number;
+  duration: string;
+  status: AlertStatus;
+  relatedResource?: string;
+  correlationInfo?: string;
+  operatorGuidance?: string;
+}

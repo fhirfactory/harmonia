@@ -13,7 +13,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-version: '3.8'
 
 services:
   # -------------------------------------------------------------
@@ -251,8 +250,8 @@ services:
   # -------------------------------------------------------------
   infinispan-1:
     build:
-      context: .
-      dockerfile: hestia/mneme-cluster/Dockerfile
+      context: ./hestia/mneme-cluster
+      dockerfile: Dockerfile
     container_name: hie-infinispan-node1
     environment:
       JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-1:8080/api/operations"
@@ -269,8 +268,8 @@ services:
 
   infinispan-2:
     build:
-      context: .
-      dockerfile: hestia/mneme-cluster/Dockerfile
+      context: ./hestia/mneme-cluster
+      dockerfile: Dockerfile
     container_name: hie-infinispan-node2
     environment:
       JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-2:8080/api/operations"

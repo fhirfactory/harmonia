@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.befe.server;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -27,11 +28,15 @@ import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.spi.CDI;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
+import net.fhirfactory.harmonia.befe.model.operations.*;
 import net.fhirfactory.harmonia.befe.rest.SystemStatusResource;
 import net.fhirfactory.harmonia.befe.rest.TaskSequenceResource;
+import net.fhirfactory.harmonia.befe.security.ThemisOperationsAuthorizer;
 import net.fhirfactory.harmonia.befe.service.ModuleStatusService;
+import net.fhirfactory.harmonia.befe.service.OperationsAggregatorService;
 import net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService;
 import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,10 +47,9 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -76,6 +80,14 @@ public class OperationsServerManager {
 
     @Inject
     private ModuleStatusService moduleStatusService;
+
+    @Inject
+    private OperationsAggregatorService aggregatorService;
+
+    @Inject
+    private ThemisOperationsAuthorizer authorizer;
+
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     private ServerSocket serverSocket;
     private ExecutorService executor;
@@ -205,6 +217,8 @@ public class OperationsServerManager {
                 path = path.substring(0, path.length() - 1);
             }
 
+            Map<String, String> queryParams = parseQueryParams(fullUri);
+
             // Route: Status endpoint
             if (path.equals("/api/operations/status") || path.equals("/operations/status") || path.equals("/status")) {
                 handleStatus(out);
@@ -273,6 +287,26 @@ public class OperationsServerManager {
 
             if (resourceType != null) {
                 handleGetOperationalResources(out, resourceType);
+                return;
+            }
+
+            // Route: Operations Console 5 Perspectives (/api/operations/* and /operations/*)
+            String normPath = path;
+            if (normPath.startsWith("/api")) {
+                normPath = normPath.substring(4);
+            }
+
+            if (isOperationsPerspectiveRoute(normPath)) {
+                ThemisOperationsAuthorizer auth = getThemisAuthorizer();
+                if (auth != null) {
+                    ThemisAuthorizationDecision decision = auth.authorizeRequest(headers, path, method);
+                    if (decision.isDenied()) {
+                        String errJson = "{\"error\":\"Forbidden\",\"reason\":\"" + escapeJson(decision.reason().name()) + "\",\"message\":\"" + escapeJson(decision.message()) + "\"}";
+                        sendResponse(out, 403, errJson, "application/json");
+                        return;
+                    }
+                }
+                handleOperationsRoute(out, method, normPath, queryParams, body);
                 return;
             }
 
@@ -668,5 +702,401 @@ public class OperationsServerManager {
 
     public void setModuleStatusService(ModuleStatusService moduleStatusService) {
         this.moduleStatusService = moduleStatusService;
+    }
+
+    public OperationsAggregatorService getAggregatorService() {
+        if (aggregatorService == null) {
+            try {
+                aggregatorService = CDI.current().select(OperationsAggregatorService.class).get();
+            } catch (Exception e) {
+                log.debug("Could not resolve OperationsAggregatorService via CDI: {}", e.getMessage());
+            }
+            if (aggregatorService == null) {
+                aggregatorService = new OperationsAggregatorService();
+                aggregatorService.setModuleStatusService(getModuleStatusService());
+                aggregatorService.setTaskSequenceCacheService(getSequenceCacheService());
+                aggregatorService.init();
+            }
+        }
+        return aggregatorService;
+    }
+
+    public void setAggregatorService(OperationsAggregatorService aggregatorService) {
+        this.aggregatorService = aggregatorService;
+    }
+
+    public ThemisOperationsAuthorizer getThemisAuthorizer() {
+        if (authorizer == null) {
+            try {
+                authorizer = CDI.current().select(ThemisOperationsAuthorizer.class).get();
+            } catch (Exception e) {
+                log.debug("Could not resolve ThemisOperationsAuthorizer via CDI: {}", e.getMessage());
+            }
+            if (authorizer == null) {
+                authorizer = new ThemisOperationsAuthorizer();
+            }
+        }
+        return authorizer;
+    }
+
+    public void setThemisAuthorizer(ThemisOperationsAuthorizer authorizer) {
+        this.authorizer = authorizer;
+    }
+
+    public ObjectMapper getObjectMapper() {
+        if (objectMapper == null) {
+            objectMapper = new ObjectMapper();
+        }
+        return objectMapper;
+    }
+
+    public void setObjectMapper(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    private boolean isOperationsPerspectiveRoute(String normPath) {
+        return normPath.equals("/operations/summary") || normPath.equals("/summary")
+                || normPath.equals("/operations/subsystems") || normPath.equals("/subsystems")
+                || normPath.startsWith("/operations/subsystems/") || normPath.startsWith("/subsystems/")
+                || normPath.equals("/operations/queues") || normPath.equals("/queues")
+                || normPath.startsWith("/operations/queues/") || normPath.startsWith("/queues/")
+                || normPath.equals("/operations/workflows") || normPath.equals("/workflows")
+                || normPath.startsWith("/operations/workflows/") || normPath.startsWith("/workflows/")
+                || normPath.startsWith("/operations/pragmas/") || normPath.startsWith("/pragmas/")
+                || normPath.equals("/operations/events") || normPath.equals("/events")
+                || normPath.startsWith("/operations/events/") || normPath.startsWith("/events/")
+                || normPath.equals("/operations/alerts") || normPath.equals("/alerts")
+                || normPath.startsWith("/operations/alerts/") || normPath.startsWith("/alerts/");
+    }
+
+    private void handleOperationsRoute(OutputStream out, String method, String normPath,
+                                       Map<String, String> queryParams, String body) throws IOException {
+        String opPath = normPath;
+        if (opPath.startsWith("/operations")) {
+            opPath = opPath.substring(11);
+        }
+
+        if (opPath.equals("/summary")) {
+            handleOperationsSummary(out);
+        } else if (opPath.equals("/subsystems")) {
+            handleOperationsSubsystems(out);
+        } else if (opPath.startsWith("/subsystems/")) {
+            String remainder = opPath.substring("/subsystems/".length());
+            if (remainder.contains("/")) {
+                String[] parts = remainder.split("/", 2);
+                String subId = parts[0];
+                String subRes = parts[1];
+                if (subRes.equals("instances")) {
+                    handleOperationsSubsystemInstances(out, subId);
+                } else if (subRes.equals("health")) {
+                    handleOperationsSubsystemHealth(out, subId);
+                } else if (subRes.equals("statistics")) {
+                    handleOperationsSubsystemStatistics(out, subId, queryParams);
+                } else {
+                    sendResponse(out, 404, "{\"error\":\"Not Found\"}", "application/json");
+                }
+            } else {
+                handleOperationsSubsystemItem(out, remainder);
+            }
+        } else if (opPath.equals("/queues")) {
+            handleOperationsQueues(out, queryParams);
+        } else if (opPath.startsWith("/queues/")) {
+            String queueId = opPath.substring("/queues/".length());
+            handleOperationsQueueItem(out, queueId);
+        } else if (opPath.equals("/workflows")) {
+            handleOperationsWorkflows(out, queryParams);
+        } else if (opPath.startsWith("/workflows/")) {
+            String remainder = opPath.substring("/workflows/".length());
+            if (remainder.endsWith("/pragmas")) {
+                String workflowId = remainder.substring(0, remainder.length() - "/pragmas".length());
+                handleOperationsWorkflowPragmas(out, workflowId);
+            } else {
+                handleOperationsWorkflowItem(out, remainder);
+            }
+        } else if (opPath.startsWith("/pragmas/")) {
+            String pragmaId = opPath.substring("/pragmas/".length());
+            handleOperationsPragmaItem(out, pragmaId);
+        } else if (opPath.equals("/events")) {
+            handleOperationsEvents(out, queryParams);
+        } else if (opPath.startsWith("/events/")) {
+            String eventId = opPath.substring("/events/".length());
+            handleOperationsEventItem(out, eventId);
+        } else if (opPath.equals("/alerts")) {
+            handleOperationsAlerts(out, queryParams);
+        } else if (opPath.startsWith("/alerts/")) {
+            String remainder = opPath.substring("/alerts/".length());
+            if (remainder.endsWith("/acknowledge")) {
+                String alertId = remainder.substring(0, remainder.length() - "/acknowledge".length());
+                handleOperationsAlertAcknowledge(out, method, alertId, body);
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Not Found\"}", "application/json");
+            }
+        } else {
+            sendResponse(out, 404, "{\"error\":\"Not Found\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsSummary(OutputStream out) throws IOException {
+        try {
+            OperationalSummary summary = getAggregatorService().getOperationsSummary();
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(summary), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve operations summary: {}", e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsSubsystems(OutputStream out) throws IOException {
+        try {
+            List<OperationalSubsystem> subsystems = getAggregatorService().getSubsystems();
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(subsystems), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve operational subsystems: {}", e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsSubsystemItem(OutputStream out, String subId) throws IOException {
+        try {
+            Optional<OperationalSubsystem> sub = getAggregatorService().getSubsystem(subId);
+            if (sub.isPresent()) {
+                sendResponse(out, 200, getObjectMapper().writeValueAsString(sub.get()), "application/json");
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Subsystem not found\",\"subsystemId\":\"" + escapeJson(subId) + "\"}", "application/json");
+            }
+        } catch (Exception e) {
+            log.error("Failed to retrieve subsystem [{}]: {}", subId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsSubsystemInstances(OutputStream out, String subId) throws IOException {
+        try {
+            List<OperationalInstance> instances = getAggregatorService().getSubsystemInstances(subId);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(instances), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve instances for [{}]: {}", subId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsSubsystemHealth(OutputStream out, String subId) throws IOException {
+        try {
+            OperationalHealth health = getAggregatorService().getSubsystemHealth(subId);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(health), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve health for [{}]: {}", subId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsSubsystemStatistics(OutputStream out, String subId, Map<String, String> queryParams) throws IOException {
+        try {
+            String window = queryParams.getOrDefault("window", "15m");
+            Map<String, TimeSeries> stats = getAggregatorService().getSubsystemStatistics(subId, window);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(stats), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve statistics for [{}]: {}", subId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsQueues(OutputStream out, Map<String, String> queryParams) throws IOException {
+        try {
+            String status = queryParams.get("status");
+            String search = queryParams.get("search");
+            List<QueueSummary> queues = getAggregatorService().getQueues(status, search);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(queues), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve queues: {}", e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsQueueItem(OutputStream out, String queueId) throws IOException {
+        try {
+            Optional<QueueSummary> q = getAggregatorService().getQueue(queueId);
+            if (q.isPresent()) {
+                sendResponse(out, 200, getObjectMapper().writeValueAsString(q.get()), "application/json");
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Queue not found\",\"queueId\":\"" + escapeJson(queueId) + "\"}", "application/json");
+            }
+        } catch (Exception e) {
+            log.error("Failed to retrieve queue [{}]: {}", queueId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsWorkflows(OutputStream out, Map<String, String> queryParams) throws IOException {
+        try {
+            String search = queryParams.get("search");
+            List<WorkflowSummary> workflows = getAggregatorService().getWorkflows(search);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(workflows), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve workflows: {}", e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsWorkflowItem(OutputStream out, String workflowId) throws IOException {
+        try {
+            Optional<WorkflowSummary> w = getAggregatorService().getWorkflow(workflowId);
+            if (w.isPresent()) {
+                sendResponse(out, 200, getObjectMapper().writeValueAsString(w.get()), "application/json");
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Workflow not found\",\"workflowId\":\"" + escapeJson(workflowId) + "\"}", "application/json");
+            }
+        } catch (Exception e) {
+            log.error("Failed to retrieve workflow [{}]: {}", workflowId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsWorkflowPragmas(OutputStream out, String workflowId) throws IOException {
+        try {
+            List<PragmaSummary> pragmas = getAggregatorService().getPragmasForWorkflow(workflowId);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(pragmas), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve pragmas for workflow [{}]: {}", workflowId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsPragmaItem(OutputStream out, String pragmaId) throws IOException {
+        try {
+            Optional<PragmaSummary> p = getAggregatorService().getPragma(pragmaId);
+            if (p.isPresent()) {
+                sendResponse(out, 200, getObjectMapper().writeValueAsString(p.get()), "application/json");
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Pragma not found\",\"pragmaId\":\"" + escapeJson(pragmaId) + "\"}", "application/json");
+            }
+        } catch (Exception e) {
+            log.error("Failed to retrieve pragma [{}]: {}", pragmaId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsEvents(OutputStream out, Map<String, String> queryParams) throws IOException {
+        try {
+            String correlationId = queryParams.get("correlationId");
+            String causationId = queryParams.get("causationId");
+            String messageId = queryParams.get("messageId");
+            String pragmaId = queryParams.get("pragmaId");
+            String subsystem = queryParams.get("subsystem");
+            String eventType = queryParams.get("eventType");
+            String status = queryParams.get("status");
+            Long from = parseLongSafe(queryParams.get("from"));
+            Long to = parseLongSafe(queryParams.get("to"));
+            int page = parseIntSafe(queryParams.get("page"), 0);
+            int pageSize = parseIntSafe(queryParams.get("pageSize"), 50);
+
+            List<OperationalEvent> events = getAggregatorService().getEvents(
+                    correlationId, causationId, messageId, pragmaId, subsystem, eventType, status, from, to, page, pageSize
+            );
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(events), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve operational events: {}", e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsEventItem(OutputStream out, String eventId) throws IOException {
+        try {
+            Optional<OperationalEvent> ev = getAggregatorService().getEvent(eventId);
+            if (ev.isPresent()) {
+                sendResponse(out, 200, getObjectMapper().writeValueAsString(ev.get()), "application/json");
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Event not found\",\"eventId\":\"" + escapeJson(eventId) + "\"}", "application/json");
+            }
+        } catch (Exception e) {
+            log.error("Failed to retrieve event [{}]: {}", eventId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsAlerts(OutputStream out, Map<String, String> queryParams) throws IOException {
+        try {
+            String severity = queryParams.get("severity");
+            String status = queryParams.get("status");
+            String subsystem = queryParams.get("subsystem");
+            List<OperationalAlert> alerts = getAggregatorService().getAlerts(severity, status, subsystem);
+            sendResponse(out, 200, getObjectMapper().writeValueAsString(alerts), "application/json");
+        } catch (Exception e) {
+            log.error("Failed to retrieve operational alerts: {}", e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private void handleOperationsAlertAcknowledge(OutputStream out, String method, String alertId, String body) throws IOException {
+        if (!"POST".equalsIgnoreCase(method)) {
+            sendResponse(out, 405, "{\"error\":\"Method Not Allowed\"}", "application/json");
+            return;
+        }
+        try {
+            String operator = "operator";
+            if (body != null && !body.isBlank()) {
+                try {
+                    JsonNode node = getObjectMapper().readTree(body);
+                    if (node.has("operator")) {
+                        operator = node.get("operator").asText();
+                    }
+                } catch (Exception ignored) {}
+            }
+            boolean success = getAggregatorService().acknowledgeAlert(alertId, operator);
+            if (success) {
+                sendResponse(out, 200, "{\"alertId\":\"" + escapeJson(alertId) + "\",\"status\":\"ACKNOWLEDGED\",\"acknowledgedBy\":\"" + escapeJson(operator) + "\"}", "application/json");
+            } else {
+                sendResponse(out, 404, "{\"error\":\"Alert not found\",\"alertId\":\"" + escapeJson(alertId) + "\"}", "application/json");
+            }
+        } catch (Exception e) {
+            log.error("Failed acknowledging alert [{}]: {}", alertId, e.getMessage(), e);
+            sendResponse(out, 500, "{\"error\":\"Internal Server Error\",\"message\":\"" + escapeJson(e.getMessage()) + "\"}", "application/json");
+        }
+    }
+
+    private Map<String, String> parseQueryParams(String fullUri) {
+        Map<String, String> queryParams = new HashMap<>();
+        int qIdx = fullUri.indexOf('?');
+        if (qIdx >= 0 && qIdx < fullUri.length() - 1) {
+            String qStr = fullUri.substring(qIdx + 1);
+            for (String pair : qStr.split("&")) {
+                int eqIdx = pair.indexOf('=');
+                if (eqIdx > 0) {
+                    try {
+                        String key = URLDecoder.decode(pair.substring(0, eqIdx), StandardCharsets.UTF_8);
+                        String val = URLDecoder.decode(pair.substring(eqIdx + 1), StandardCharsets.UTF_8);
+                        queryParams.put(key, val);
+                    } catch (Exception ignored) {}
+                } else if (!pair.isBlank()) {
+                    try {
+                        queryParams.put(java.net.URLDecoder.decode(pair, StandardCharsets.UTF_8), "");
+                    } catch (Exception ignored) {}
+                }
+            }
+        }
+        return queryParams;
+    }
+
+    private Long parseLongSafe(String s) {
+        if (s == null || s.isBlank()) return null;
+        try {
+            return Long.parseLong(s.trim());
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+    private int parseIntSafe(String s, int defaultVal) {
+        if (s == null || s.isBlank()) return defaultVal;
+        try {
+            return Integer.parseInt(s.trim());
+        } catch (NumberFormatException e) {
+            return defaultVal;
+        }
+    }
+
+    private String escapeJson(String s) {
+        if (s == null) return "";
+        return s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r");
     }
 }

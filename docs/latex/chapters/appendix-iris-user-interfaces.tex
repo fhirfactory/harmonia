@@ -37,7 +37,7 @@ To guarantee stringent security boundaries, eliminate cognitive clutter, and opt
 \midrule
 \texttt{iris-clinical} & Vue 3 SPA & Port 3000 & \textbf{Clinicians \& Care Coordinators}: Longitudinal patient demographics, provider search, location hierarchies, care teams, audit provenance, consent records, and document discovery. \\
 \addlinespace
-\texttt{iris-console} & Vue 3 SPA & Port 3001 & \textbf{Operations \& Systems Engineers}: Real-time ActiveMQ queue telemetry, Infinispan cache topologies, Praxis workflow sequence inspections, and dynamic online route reloads. \\
+\texttt{iris-console} & Vue 3 SPA & Port 3001 & \textbf{Operations \& Site Reliability Engineers}: Five canonical operational perspectives (Subsystems, Queues, Workflows, Events, Alerts), cross-subsystem event sequence tracing, instance detail inspections, and alert remediation. \\
 \addlinespace
 \texttt{iris-administration} & Vue 3 Dual-Portal & Port 3002 & \textbf{Practitioners \& Directory Administrators}: Self-service profile change requests, role attestations, administrative work queue triage, directory CRUD, data quality audits, and RBAC governance. \\
 \addlinespace
@@ -53,7 +53,7 @@ To guarantee stringent security boundaries, eliminate cognitive clutter, and opt
 The Iris presentation tier adheres to four core engineering principles:
 
 \begin{principlebox}{1. Strict Domain and Network Port Isolation}
-Clinical FHIR transactions and administrative governance workflows operate over standard JAX-RS REST endpoints on Port 8080, while mission-critical systems operations, broker telemetry, and dynamic sequence reloads execute over a dedicated socket server on Port 8090. Operational spikes or diagnostic queries can never degrade clinical query bandwidth.
+Clinical FHIR transactions and administrative governance workflows operate over standard JAX-RS REST endpoints on Port 8080, while mission-critical systems operations, broker telemetry, cross-subsystem diagnostics, and alert governance execute over a dedicated socket server on Port 8090. Operational spikes or diagnostic queries can never degrade clinical query bandwidth.
 \end{principlebox}
 
 \begin{principlebox}{2. Governed Change Lifecycle over Direct Mutation}
@@ -82,7 +82,7 @@ BEFE implements an architectural duality separating public clinical services fro
 
 \begin{itemize}
     \item \textbf{Clinical FHIR REST Gateway (Port 8080)}: Standard Jakarta RESTful Web Services (JAX-RS 3.1) application activated via \texttt{net.fhirfactory.harmonia.befe.config.JaxRsActivator} at root path \texttt{/api/v1}. It mediates all clinical FHIR R5 resource requests, using the \texttt{FhirCacheService} and HotRod clients to query the \texttt{Mneme} Infinispan distributed cache grid.
-    \item \textbf{Dedicated Operations HTTP Server (Port 8090)}: A lightweight, non-blocking socket server managed by \texttt{OperationsServerManager}. It isolates operational diagnostics, queue depth telemetry, and dynamic Praxis workflow reload commands from JAX-RS connection pools and clinical request threads.
+    \item \textbf{Dedicated Operations HTTP Server (Port 8090)}: A lightweight, non-blocking socket server managed by \texttt{OperationsServerManager}. It isolates normalized subsystem, queue, workflow, event, and alert telemetry from JAX-RS connection pools and clinical request threads.
 \end{itemize}
 
 \subsection{BEFE JAX-RS Resource Endpoints (Port 8080)}
@@ -116,28 +116,6 @@ Table~\ref{tab:befe_clinical_endpoints} catalogs the core clinical and provider 
 \label{tab:befe_clinical_endpoints}
 \end{table}
 
-\subsection{Operations Server Endpoints (Port 8090)}
-
-The \texttt{OperationsServerManager} listens on \texttt{0.0.0.0:8090} and dispatches requests to dedicated telemetry producers:
-
-\begin{table}[htbp]
-\centering
-\small
-\begin{tabularx}{\textwidth}{l l p{3.2cm} X}
-\toprule
-\textbf{HTTP Verb} & \textbf{Path} & \textbf{Payload / Query} & \textbf{Operations Function} \\
-\midrule
-\texttt{GET} & \texttt{/api/operations/status} & None & Returns JSON status map of all Harmonia subsystems, JVM memory, and uptime. \\
-\texttt{GET} & \texttt{/api/operations/sequences} & None & Lists all registered Praxis workflow sequence definitions and metadata. \\
-\texttt{GET} & \texttt{/api/operations/sequences/\{id\}} & Path: Sequence ID & Returns full sequence topology, including Ergon step chains and execution metrics. \\
-\texttt{POST} & \texttt{/api/operations/sequences/\{id\}/reload} & JSON reload options & Triggers online dynamic reload of the specified Praxis sequence pipeline in Ponos. \\
-\texttt{GET} & \texttt{/api/operations/queues} & None & Telemetry feed for ActiveMQ Artemis queues (queue depths, message rates, consumer counts). \\
-\texttt{GET} & \texttt{/api/operations/caches} & None & Telemetry feed for Infinispan cache clusters (entry counts, eviction rates, memory use). \\
-\bottomrule
-\end{tabularx}
-\caption{Iris BEFE Operations Management Endpoint Catalog (Port 8090)}
-\label{tab:befe_ops_endpoints}
-\end{table}
 
 \subsection{CORS and Security Headers}
 
@@ -260,42 +238,103 @@ export const useClinicalStore = defineStore('clinical', {
 \section{Iris Operations Console (\texttt{iris-console}) Specification \& User Guide}
 \label{sec:iris_console_guide}
 
-The \textbf{Iris Operations Console} (\texttt{iris/iris-console}) is the systems administration and workflow orchestration dashboard operating on Port 3001. Built for Site Reliability Engineers (SREs), integration engineers, and DevOps personnel, it delivers deep real-time observability and dynamic control over the Harmonia runtime.
+The \textbf{Iris Operations Console} (\texttt{iris/iris-console}) is the systems administration, telemetry surveillance, and workflow diagnostic dashboard operating on Port 3001. Built for Site Reliability Engineers (SREs), integration engineers, and DevOps personnel, it delivers deep real-time observability, message flow tracing, and incident remediation across the Harmonia integration platform.
 
-\subsection{Operational Views and Real-Time Telemetry}
+\subsection{Architectural Perspectives \& Shell Topology}
 
-\texttt{iris-console} organizes platform operations into six specialized views:
-
-\begin{enumerate}
-    \item \textbf{Operations Dashboard (\texttt{/})}: Visualizes high-level platform health, JVM memory allocation, ActiveMQ aggregate throughput (messages/sec), active Camel route counts, and active alert banners.
-    \item \textbf{Task Sequence List (\texttt{/sequences})}: Catalog of all registered Praxis workflow sequence definitions (e.g. \texttt{seq-patient-demographics-enrichment}, \texttt{seq-provider-registry-change-pipeline}), showing execution count, average latency, and error rates.
-    \item \textbf{Task Sequence Detail (\texttt{/sequences/:id})}: Interactive graph visualizer detailing individual Ergon steps, checkpoint history, Camel route IDs, and the \textbf{Reload Sequence} trigger button.
-    \item \textbf{Operations Data View (\texttt{/operations-data})}: Live inspector for raw diagnostic payloads, system metric counters, and JVM garbage collection statistics.
-    \item \textbf{Messaging Queues View (\texttt{/queues})}: Live monitor for Apache ActiveMQ Artemis broker queues. Displays per-queue message depth, consumer counts, acknowledging rate, and Dead-Letter Queue (DLQ) alerts.
-    \item \textbf{Cache Cluster View (\texttt{/caches})}: Live Infinispan cache cluster monitor. Displays cache topology (distributed vs replicated), node cluster membership, total entries in \texttt{tasksequence-cache} and \texttt{pragma-cache}, memory utilization, and hit/miss ratios.
-\end{enumerate}
-
-\subsection{Dynamic Praxis Sequence Reload Mechanics}
-
-A primary operational capability of \texttt{iris-console} is the ability to hot-reload workflow pipelines without restarting WildFly or dropping in-flight messages. When an engineer modifies a Praxis JSON sequence definition or deploys an updated Ergon bean:
+The console is architected around five primary operational perspectives accessible via a persistent top navigation bar and unified by a global operational header:
 
 \begin{figure}[htbp]
 \centering
 \begin{archinote}
-\textbf{Sequence Reload Step-by-Step Procedure}:
-\begin{enumerate}
-    \item The operator navigates to \texttt{/sequences/seq-provider-registry-change-pipeline}.
-    \item The console queries BEFE Port 8090 \newline (\texttt{GET /api/operations/sequences/seq-provider-registry-change-pipeline}) \newline to retrieve current runtime metrics and active route IDs.
-    \item The operator clicks \textbf{Reload Sequence Pipeline}.
-    \item The console dispatches to BEFE Port 8090 \newline (\texttt{POST /api/operations/sequences/seq-provider-registry-change-pipeline/reload}).
-    \item BEFE's \texttt{OperationsServerManager} forwards the command to Ponos's \texttt{TaskSequenceLoader}.
-    \item Ponos suspends the Camel route consumer, re-reads the sequence definition from Infinispan \texttt{tasksequence-cache}, resolves updated CDI Ergon beans, rebuilds the Camel route graph, and resumes message ingestion within 250 milliseconds.
-    \item The console updates the UI badge to \texttt{STATUS: RELOADED} and displays the new route generation timestamp.
-\end{enumerate}
+\textbf{Persistent Shell Architecture}:
+\begin{itemize}
+    \item \textbf{Global Operations Header (\texttt{GlobalOperationsHeader.vue})}: Displays the active deployment environment (e.g. \texttt{PROD / microk8s-01}), cluster status, platform overall health badge (\texttt{HEALTHY}, \texttt{DEGRADED}, \texttt{UNAVAILABLE}), active subsystem count, critical and warning alert pill indicators, current timestamp, last refresh timestamp, and manual refresh trigger.
+    \item \textbf{Persistent Top Navigation (\texttt{NavigationTopBar.vue})}: Persistent navigation bar with direct, bookmarkable routes to the five canonical operational perspectives: \texttt{/subsystems}, \texttt{/queues}, \texttt{/workflows}, \texttt{/events}, and \texttt{/alerts}.
+\end{itemize}
 \end{archinote}
-\caption{Dynamic Sequence Reload Procedure via Iris Console}
-\label{fig:sequence_reload_box}
+\caption{Iris Operations Console Shell and Global Navigation Layout}
+\label{fig:iris_console_shell}
 \end{figure}
+
+\subsection{The Five Canonical Operational Perspectives}
+
+\begin{enumerate}
+    \item \textbf{SUBSYSTEMS Perspective (\texttt{/subsystems})}:
+    Answers \textit{"Is Harmonia healthy?"}
+    \begin{itemize}
+        \item \textbf{Subsystem Inventory Sidebar (\texttt{SubsystemSidebar.vue})}: Displays the complete operational inventory of Harmonia's nine core subsystems: \texttt{Pylai}, \texttt{Petasos}, \texttt{Energeia} (with expandable child nodes \texttt{Ponos} and \texttt{Praxis}), \texttt{Mneme}, \texttt{Mnemosyne}, \texttt{Calliope}, \texttt{Themis}, \texttt{Agora}, and \texttt{Iris}, each equipped with accessible status indicators (\texttt{Healthy}, \texttt{Degraded}, \texttt{Unavailable}, \texttt{Unknown}).
+        \item \textbf{Subsystem Header (\texttt{SubsystemHeader.vue})}: Shows selected subsystem name, functional description, overall state, runtime instance count, application version, and last telemetry update timestamp.
+        \item \textbf{Instances Table \& Detail Drawer (\texttt{InstanceTable.vue}, \texttt{InstanceDetailDrawer.vue})}: Domain-neutral runtime instance table detailing instance ID, role (Primary, Standby, Worker), state, readiness, restart count, uptime, CPU utilization percentage, and memory allocation in megabytes. Selecting an instance opens a slide-out drawer presenting Kubernetes Pod name, namespace, node, IP address, container image, container version, probe status, and recent operational errors.
+        \item \textbf{Health \& Dependencies Panel (\texttt{HealthDependenciesPanel.vue})}: Reports service operational health, availability percentage, failed operations count, restart count, P95 round-trip latency, dependency health summary ratio (e.g. \texttt{4 / 4 Healthy}), and an interactive table detailing downstream dependencies with individual round-trip ping latencies.
+        \item \textbf{Statistics Panel (\texttt{StatisticsPanel.vue})}: Features time window selectors (\texttt{15m}, \texttt{1h}, \texttt{6h}, \texttt{24h}), key metric summary cards, and reactive, dark-theme native SVG sparkline and time-series trend micro-charts (\texttt{SvgTimeSeriesChart.vue}).
+    \end{itemize}
+
+    \item \textbf{QUEUES Perspective (\texttt{/queues})}:
+    Answers \textit{"Is work moving?"}
+    \begin{itemize}
+        \item \textbf{Summary Metrics}: Displays ActiveMQ Artemis broker cluster topology, total queue count, messages in flight, active consumers, and aggregate Dead-Letter Queue (DLQ) depth.
+        \item \textbf{Queues Table (\texttt{QueueTable.vue})}: Real-time telemetry table detailing Queue and Address names, operational status, message depth, consumer and producer counts, enqueue and dequeue throughput rates (messages/sec), oldest message age, redelivery counts, DLQ depth, and message expiry count. Supports search and filtering by queue name, capability binding, and health status.
+        \item \textbf{Queue Detail Drawer (\texttt{QueueDetailDrawer.vue})}: Slide-out drawer displaying historical message depth sparklines, throughput rates, and consumer thread metadata with zero exposure of message payloads or clinical content.
+    \end{itemize}
+
+    \item \textbf{WORKFLOWS Perspective (\texttt{/workflows})}:
+    Answers \textit{"What work is Harmonia currently performing?"}
+    \begin{itemize}
+        \item \textbf{Summary Cards}: High-level indicators of active Praxis executions, active Pragma instances, queued work, running work, completed work, failed work, retrying work, processing rate, and P95 execution duration.
+        \item \textbf{Praxis Workflow Table (\texttt{WorkflowTable.vue})}: Catalog of registered Praxis workflow sequence definitions showing active executions, queued, completed, and failed counts, and P95 latency.
+        \item \textbf{Pragma Detail Drawer (\texttt{PragmaDetailDrawer.vue})}: Diagnostic drill-down revealing Pragma execution ID, Praxis ID, lifecycle status (\texttt{RUNNING}, \texttt{COMPLETED}, \texttt{FAILED}, \texttt{RETRYING}), started timestamp, duration, current executing Ergon activity, completed Erga count, retry count, Correlation ID, failure reason code, and Ergon checkpoint execution timeline.
+    \end{itemize}
+
+    \item \textbf{EVENTS Perspective (\texttt{/events})}:
+    Answers \textit{"What happened to a particular interaction?"}
+    \begin{itemize}
+        \item \textbf{Diagnostic Search \& Filter (\texttt{EventSearchFilter.vue})}: Multi-attribute search supporting Correlation ID, Causation ID, Message ID, Pragma ID, Subsystem, Event Type, Status (\texttt{SUCCESS}, \texttt{WARNING}, \texttt{FAILURE}), and time window ranges.
+        \item \textbf{Operational Flowchart Timeline (\texttt{EventTimeline.vue})}: Vertical connected operational flowchart visualizing message progression across platform boundaries (e.g. Pylai MLLP In $\rightarrow$ Petasos Inbound Queue $\rightarrow$ Ponos Ingestion $\rightarrow$ Ergon Validation $\rightarrow$ Mnemosyne FHIR Commit), showing hop sequence numbers, durations, timestamps, and subsystem color-coded badges. Operators can toggle between flowchart and tabular views.
+        \item \textbf{Event Detail Drawer (\texttt{EventDetailDrawer.vue})}: Slide-out drawer presenting technical operational metadata, identifier copy utilities, and error diagnostics. Payloads and PHI are strictly omitted.
+    \end{itemize}
+
+    \item \textbf{ALERTS Perspective (\texttt{/alerts})}:
+    Answers \textit{"What currently requires operator attention?"}
+    \begin{itemize}
+        \item \textbf{Severity Tabs \& Filters (\texttt{AlertSeverityTabs.vue})}: Multi-dimensional filtering by severity (\texttt{CRITICAL}, \texttt{WARNING}, \texttt{INFORMATION}), lifecycle status (\texttt{ACTIVE}, \texttt{ACKNOWLEDGED}, \texttt{RESOLVED}), and subsystem.
+        \item \textbf{Actionable Alerts Table (\texttt{AlertTable.vue})}: Tabular view showing Alert ID, severity badge, subsystem, component, condition description, first/last observed timestamps, duration, related infrastructure resource, and concrete operator remediation guidance.
+        \item \textbf{Operator Acknowledge Action}: Allows on-call operators to acknowledge active alerts directly from the UI, updating backend status via \texttt{POST /api/operations/alerts/\{id\}/acknowledge}.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Operations Backend REST API Catalog (Port 8090)}
+
+All operational telemetry is served via \texttt{iris-befe} on Port 8090 under the \texttt{/api/operations/*} resource path:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{3.2cm} X}
+\toprule
+\textbf{HTTP Endpoint} & \textbf{HTTP Method} & \textbf{Operational Telemetry Resource} \\
+\midrule
+\texttt{/api/operations/summary} & \texttt{GET} & Overall platform status, environment, cluster ID, subsystem counts, active alert counts. \\
+\texttt{/api/operations/subsystems} & \texttt{GET} & Inventory of all 9 core subsystems and their operational states. \\
+\texttt{/api/operations/subsystems/\{id\}} & \texttt{GET} & Single subsystem overview, description, instance count, and version. \\
+\texttt{/api/operations/subsystems/\{id\}/instances} & \texttt{GET} & Runtime instances, Pod name, node, role, state, uptime, CPU \%, and memory MB. \\
+\texttt{/api/operations/subsystems/\{id\}/health} & \texttt{GET} & Availability \%, failed ops, restart count, P95 latency, and dependency latencies. \\
+\texttt{/api/operations/subsystems/\{id\}/statistics} & \texttt{GET} & Time-series statistics (events in/out, throughput, latency percentiles) for 15m/1h/6h/24h. \\
+\texttt{/api/operations/queues} & \texttt{GET} & ActiveMQ Artemis queues, depths, consumer counts, rates, and DLQ metrics. \\
+\texttt{/api/operations/queues/\{id\}} & \texttt{GET} & Single queue details and historical message depth trends. \\
+\texttt{/api/operations/workflows} & \texttt{GET} & Praxis workflow sequence executions, throughput rates, and P95 latency. \\
+\texttt{/api/operations/workflows/\{id\}} & \texttt{GET} & Single workflow sequence definition and active counts. \\
+\texttt{/api/operations/pragmas/\{id\}} & \texttt{GET} & Pragma execution lifecycle details, retry count, and Ergon checkpoints. \\
+\texttt{/api/operations/events} & \texttt{GET} & Cross-subsystem interaction diagnostic events with correlation filtering. \\
+\texttt{/api/operations/events/\{id\}} & \texttt{GET} & Single diagnostic event details and correlated sequence metadata. \\
+\texttt{/api/operations/alerts} & \texttt{GET} & Operational alerts filtered by severity, status, and subsystem. \\
+\texttt{/api/operations/alerts/\{id\}/acknowledge} & \texttt{POST} & Acknowledge active operational alert with operator identity payload. \\
+\bottomrule
+\end{tabularx}
+\caption{Operations Backend REST Endpoint Catalog (iris-befe Port 8090)}
+\label{tab:operations_rest_endpoints}
+\end{table}
+
 
 % =============================================================================
 % SECTION G.5: IRIS PROVIDER ADMINISTRATION SPECIFICATION & USER GUIDE
@@ -382,7 +421,7 @@ Access is governed by granular Themis authority strings:
     \item \texttt{provider.admin}: Comprehensive directory administration authority, including work queue triage, direct entity editing, and data quality remediation.
     \item \texttt{themis.admin}: Administrative access to security policies, role-to-authority mappings, and user account provisioning.
     \item \texttt{themis.audit}: Access to non-redacted cryptographic audit logs, provenance chains, and system access histories.
-    \item \texttt{ops.read} / \texttt{ops.admin}: Telemetry inspection and dynamic sequence reload authority on Port 8090.
+    \item \texttt{ops.read} / \texttt{ops.admin}: Telemetry inspection and operational alert governance authority on Port 8090.
 \end{itemize}
 
 \subsection{Client-Side Router Navigation Guards}
@@ -468,36 +507,16 @@ Accept: application/fhir+json
     \item \textbf{UI Visualization}: The portal displays the active on-call physician (Dr. Robert Chen), the physical ward location, and a direct button to dispatch a clinical consultation communication.
 \end{enumerate}
 
-\subsection{Example 2: Operations Engineer Diagnosing Backpressure and Triggering Reload}
+\subsection{Example 2: Operations Engineer Diagnosing Queue Backpressure and Workflow Stalls}
 
-\textbf{Scenario}: Systems Engineer Alex Rivera detects backpressure in the ActiveMQ Artemis queue \texttt{harmonia.mllp.inbound.v2} and observes that the transformation Ergon is timing out due to an outdated sequence configuration.
+\textbf{Scenario}: Systems Engineer Alex Rivera detects backpressure in the ActiveMQ Artemis queue \texttt{harmonia.mllp.inbound.v2} and uses the Operations Console to diagnose the root cause and identify stalled workflow executions.
 
 \begin{enumerate}
-    \item \textbf{Queue Inspection}: Alex opens \texttt{iris-console} (\texttt{http://localhost:3001}), navigates to \textbf{Messaging Queues}, and inspects \texttt{harmonia.mllp.inbound.v2}, noting \texttt{messageCount: 412} and \texttt{consumerCount: 4}.
-    \item \textbf{Sequence Inspection}: Alex navigates to \textbf{Task Sequences} and selects \texttt{seq-mllp-inbound-adt}. The sequence detail view indicates that step 2 (\texttt{ergon-mllp-v2-parser}) is executing version 1.0.1.
-    \item \textbf{Sequence Reload Dispatch}: After deploying the patched sequence definition to Infinispan, Alex clicks \textbf{Reload Sequence Pipeline}. The console dispatches an HTTP POST request to Port 8090:
-\begin{lstlisting}[caption={HTTP POST Request to Operations Server (Port 8090)}]
-POST /api/operations/sequences/seq-mllp-inbound-adt/reload HTTP/1.1
-Host: localhost:8090
-Content-Type: application/json
-
-{
-  "reason": "Update parser ergon step to v1.0.2 to handle corrupt OBX segments",
-  "requestedBy": "arivera"
-}
-\end{lstlisting}
-    \item \textbf{Operations Server Response}: The server responds immediately with the reload status:
-\begin{lstlisting}[caption={Operations Server Reload Response Payload}]
-{
-  "status": "SUCCESS",
-  "sequenceId": "seq-mllp-inbound-adt",
-  "reloadTimestamp": "2026-09-16T15:10:00Z",
-  "activeRouteId": "route-mllp-inbound-adt-v2",
-  "reloadedErga": ["ergon-mllp-v2-parser", "ergon-fhir-converter"],
-  "message": "Sequence pipeline successfully recompiled and restarted in 184ms"
-}
-\end{lstlisting}
-    \item \textbf{Telemetry Verification}: In the \textbf{Messaging Queues} view, the queue depth drops from 412 to 0 within 8 seconds as the updated pipeline processes the backlog.
+    \item \textbf{Queue Inspection}: Alex opens \texttt{iris-console} (\texttt{http://localhost:3001}), navigates to \textbf{Queues} (\texttt{/queues}), and inspects \texttt{harmonia.mllp.inbound.v2}. The queue detail drawer shows \texttt{depth: 412}, \texttt{consumerCount: 4}, and a historical depth sparkline indicating sustained growth over the past 15 minutes.
+    \item \textbf{Workflow Inspection}: Alex navigates to \textbf{Workflows} (\texttt{/workflows}) and selects the \texttt{seq-mllp-inbound-adt} workflow. The workflow summary shows \texttt{activeExecutions: 8}, \texttt{failedWork: 3}, and \texttt{P95 Duration: 2847ms}. Alex drills down into a failed Pragma instance and observes the failure reason code \texttt{ERR-FHIR-VALIDATION-FAILED} at the \texttt{FhirValidationErgon} checkpoint.
+    \item \textbf{Dependency Health Check}: Alex navigates to \textbf{Subsystems} (\texttt{/subsystems}), selects \texttt{Energeia}, and inspects the \textbf{Health \& Dependencies} panel. The panel shows that the \texttt{Mnemosyne} dependency has a round-trip latency of 485ms (elevated from the baseline 14ms), indicating that FHIR validation is timing out due to downstream persistence latency.
+    \item \textbf{Alert Acknowledgement}: Alex navigates to \textbf{Alerts} (\texttt{/alerts}) and observes a \texttt{WARNING} alert: \textit{``Energeia P95 latency elevated to 2847ms; Mnemosyne dependency latency 485ms.''}. Alex clicks \textbf{Acknowledge} to mark the alert as reviewed and notes the operator guidance: \textit{``Check Mnemosyne PostgreSQL connection pool saturation and consider scaling read replicas.''}
+    \item \textbf{Remediation}: Alex contacts the database team to scale Mnemosyne read replicas. Within 5 minutes, the Mnemosyne dependency latency drops to 18ms, the queue depth begins draining, and the alert status transitions to \texttt{RESOLVED}.
 \end{enumerate}
 
 \subsection{Example 3: Practitioner Requesting Address Change and Admin Approval}

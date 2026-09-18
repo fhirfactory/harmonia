@@ -16,111 +16,63 @@
 -->
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import Sidebar from './components/Sidebar.vue';
-import Topbar from './components/Topbar.vue';
+import { onMounted, onUnmounted } from 'vue';
+import { useOperationsStore } from './stores/operationsStore';
+import GlobalOperationsHeader from './components/common/GlobalOperationsHeader.vue';
+import NavigationTopBar from './components/common/NavigationTopBar.vue';
 
-const isSidebarCollapsed = ref(false);
-const isMobileOpen = ref(false);
+const store = useOperationsStore();
 
-onMounted(() => {
-  const saved = localStorage.getItem('hie-ops-sidebar-collapsed');
-  if (saved !== null) {
-    isSidebarCollapsed.value = saved === 'true';
-  }
+onMounted(async () => {
+  await store.fetchSummary();
+  store.startPolling(10000);
 });
 
-const toggleCollapse = () => {
-  isSidebarCollapsed.value = !isSidebarCollapsed.value;
-  localStorage.setItem('hie-ops-sidebar-collapsed', String(isSidebarCollapsed.value));
-};
-
-const toggleMobile = () => {
-  isMobileOpen.value = !isMobileOpen.value;
-};
-
-const closeMobile = () => {
-  isMobileOpen.value = false;
-};
+onUnmounted(() => {
+  store.stopPolling();
+});
 </script>
 
 <template>
-  <div class="app-root min-h-screen flex bg-[#0b0f19] text-slate-100 font-sans">
-    <!-- Collapsible Sidebar -->
-    <Sidebar 
-      :collapsed="isSidebarCollapsed" 
-      :mobile-open="isMobileOpen"
-      @toggle-collapse="toggleCollapse"
-      @close-mobile="closeMobile"
-    />
+  <div class="app-root min-h-screen flex flex-col bg-[#0b0f19] text-slate-100 font-sans selection:bg-sky-500/30 selection:text-white">
+    <!-- Persistent Global Operations Header -->
+    <GlobalOperationsHeader />
 
-    <!-- Main Content Area with Dynamic Margin for Sidebar -->
-    <div 
-      class="app-main-wrapper flex-1 flex flex-col min-w-0"
-      :class="isSidebarCollapsed ? 'app-main--collapsed' : 'app-main--expanded'"
-    >
-      <!-- Topbar Header -->
-      <Topbar 
-        :is-sidebar-collapsed="isSidebarCollapsed"
-        @toggle-mobile="toggleMobile"
-        @toggle-collapse="toggleCollapse"
-      />
+    <!-- Persistent Top Navigation Bar (5 Perspectives) -->
+    <NavigationTopBar />
 
-      <!-- Page Content -->
-      <main class="flex-1 w-full p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
-        <router-view />
-      </main>
+    <!-- Perspective Main Content -->
+    <main class="flex-1 flex flex-col min-w-0">
+      <router-view />
+    </main>
 
-      <!-- App Footer -->
-      <footer class="border-t border-[#1f293d] bg-[#111827]/60 py-4 px-6 text-center md:text-left text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
-          <div>
-            <span class="font-bold text-slate-300">HIE Operations &amp; Task Sequences Control Center</span>
-            <span class="mx-2">&bull;</span>
-            <span>5-Tier High-Availability Clustered Health Information Grid</span>
-          </div>
-          <div class="flex items-center gap-3 text-slate-400">
-            <span>Operations Port: 8090</span>
-            <span>&bull;</span>
-            <span>Infinispan 15</span>
-            <span>&bull;</span>
-            <span>ActiveMQ Artemis</span>
-            <span>&bull;</span>
-            <span>Operations JPA</span>
-          </div>
+    <!-- Operational Platform Footer -->
+    <footer class="border-t border-[#1f293d] bg-[#0d1322] py-3 px-6 text-xs text-slate-500 font-mono">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-slate-300 font-sans">Harmonia Operations Console</span>
+          <span>&bull;</span>
+          <span>Operations Backend :8090</span>
+          <span>&bull;</span>
+          <span class="text-sky-400 font-sans font-semibold">Themis Default-Deny RBAC</span>
         </div>
-      </footer>
-    </div>
+        <div class="flex items-center gap-3 text-slate-400">
+          <span>Infinispan 15</span>
+          <span>&bull;</span>
+          <span>ActiveMQ Artemis</span>
+          <span>&bull;</span>
+          <span class="text-emerald-400 font-sans font-semibold">Zero-PHI Presentation Boundary</span>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style scoped>
 .app-root {
   display: flex;
-  min-height: 100vh;
-  width: 100%;
-}
-
-.app-main-wrapper {
-  display: flex;
   flex-direction: column;
   min-height: 100vh;
-  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (min-width: 768px) {
-  .app-main--expanded {
-    margin-left: 260px;
-  }
-
-  .app-main--collapsed {
-    margin-left: 72px;
-  }
-}
-
-@media (max-width: 767px) {
-  .app-main-wrapper {
-    margin-left: 0 !important;
-  }
+  width: 100%;
 }
 </style>

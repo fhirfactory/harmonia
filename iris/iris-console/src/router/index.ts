@@ -16,19 +16,31 @@
  */
 
 import { createRouter, createWebHistory } from 'vue-router';
+import SubsystemsView from '../views/SubsystemsView.vue';
+import QueuesView from '../views/QueuesView.vue';
+import WorkflowsView from '../views/WorkflowsView.vue';
+import EventsView from '../views/EventsView.vue';
+import AlertsView from '../views/AlertsView.vue';
 import OperationsDashboardView from '../views/OperationsDashboardView.vue';
 import TaskSequenceListView from '../views/TaskSequenceListView.vue';
 import TaskSequenceDetailView from '../views/TaskSequenceDetailView.vue';
 import OperationsDataView from '../views/OperationsDataView.vue';
-import MessagingQueuesView from '../views/MessagingQueuesView.vue';
 import CacheClusterView from '../views/CacheClusterView.vue';
 
-const routes = [
-  { path: '/', name: 'dashboard', component: OperationsDashboardView },
+export const routes = [
+  // Canonical 5-Perspective Operational Routes
+  { path: '/', redirect: '/subsystems' },
+  { path: '/subsystems', name: 'subsystems', component: SubsystemsView },
+  { path: '/queues', name: 'queues', component: QueuesView },
+  { path: '/workflows', name: 'workflows', component: WorkflowsView },
+  { path: '/events', name: 'events', component: EventsView },
+  { path: '/alerts', name: 'alerts', component: AlertsView },
+
+  // Secondary & Legacy Routes
+  { path: '/dashboard', name: 'dashboard', component: OperationsDashboardView },
   { path: '/sequences', name: 'sequences', component: TaskSequenceListView },
   { path: '/sequences/:id', name: 'sequence-detail', component: TaskSequenceDetailView },
   { path: '/operations-data', name: 'operations-data', component: OperationsDataView },
-  { path: '/queues', name: 'queues', component: MessagingQueuesView },
   { path: '/caches', name: 'caches', component: CacheClusterView }
 ];
 
