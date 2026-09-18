@@ -87,6 +87,7 @@
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
         <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
+        <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
         <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
         <exec-maven-plugin.version>3.2.0</exec-maven-plugin.version>
         <node.version>v20.12.2</node.version>
@@ -377,6 +378,11 @@
                     <configuration>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>

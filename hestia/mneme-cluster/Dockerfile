@@ -16,12 +16,12 @@
 FROM quay.io/infinispan/server:15.0.3.Final
 
 # Copy mneme-persistence SPI JAR into Infinispan server lib directory
-COPY hestia/mneme-persistence/target/mneme-persistence-*.jar /opt/infinispan/server/lib/
+COPY target/lib/*.jar /opt/infinispan/server/lib/
 
 # Copy custom Mneme Infinispan cluster configuration
-COPY hestia/mneme-cluster/src/main/resources/infinispan.xml /opt/infinispan/server/conf/infinispan.xml
-COPY hestia/mneme-cluster/src/main/resources/users.properties /opt/infinispan/server/conf/users.properties
-COPY hestia/mneme-cluster/src/main/resources/groups.properties /opt/infinispan/server/conf/groups.properties
+COPY src/main/resources/infinispan.xml /opt/infinispan/server/conf/infinispan.xml
+COPY src/main/resources/users.properties /opt/infinispan/server/conf/users.properties
+COPY src/main/resources/groups.properties /opt/infinispan/server/conf/groups.properties
 
 EXPOSE 11222 7800 46655
 ENTRYPOINT ["/opt/infinispan/bin/server.sh", "-c", "infinispan.xml", "-b", "0.0.0.0"]
