@@ -83,11 +83,15 @@ public class PractitionerResourceProvider implements IResourceProvider {
             @Description(shortDefinition = "A server defined search that may match any of the string fields in the Practitioner.name")
             @OptionalParam(name = "name") StringParam theName,
             @Description(shortDefinition = "A practitioner Identifier")
-            @OptionalParam(name = "identifier") StringParam theIdentifier
+            @OptionalParam(name = "identifier") StringParam theIdentifier,
+            @Description(shortDefinition = "Whether this practitioner record is in active use")
+            @OptionalParam(name = "active") StringParam theActive
     ) {
-        String idStr = theId != null ? theId.getValue() : null;
-        String nameStr = theName != null ? theName.getValue() : null;
-        String identStr = theIdentifier != null ? theIdentifier.getValue() : null;
-        return storageService.searchResources("Practitioner", idStr, nameStr, identStr);
+        java.util.Map<String, String> params = new java.util.HashMap<>();
+        if (theId != null) params.put("_id", theId.getValue());
+        if (theName != null) params.put("name", theName.getValue());
+        if (theIdentifier != null) params.put("identifier", theIdentifier.getValue());
+        if (theActive != null) params.put("active", theActive.getValue());
+        return storageService.searchResources("Practitioner", params);
     }
 }

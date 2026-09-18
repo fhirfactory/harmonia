@@ -1,0 +1,36 @@
+%% =============================================================================
+%% diagrams/fig-themis-security-pipeline.tex
+%% Themis 4-Gate Defence-in-Depth Authorization Pipeline & PDP Evaluation
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 5.2) rectangle (16.4, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Themis Policy Governance \& Decision Point (PDP)};
+
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (16.4, 4.6);
+    \node[archi-plate-title] at (-0.6, 4.4) {4-Gate Defence-in-Depth Policy Enforcement Points (PEP)};
+
+    % --- Themis Core Nodes ---
+    \node[archi-app-component, minimum width=4.5cm] (themis_pdp)   at (4.5, 7.4) {\archibadge{PDP}\archiname{ThemisPolicyEngine}\\\archidesc{ABAC/RBAC Decision Matrix}};
+    \node[archi-app-component, minimum width=4.5cm] (themis_audit) at (11.5, 7.4) {\archibadge{Audit Stream}\archiname{ThemisAuditService}\\\archidesc{Zero-PHI Audit Lineage}};
+
+    % --- 4 PEP Gates ---
+    \node[archi-app-component, minimum width=3.4cm] (gate1) at (1.0, 2.4) {\archibadge{Gate 1: Ingress}\archiname{Pylai / Interceptor}\\\archidesc{TLS / Auth Token / Origin}};
+    \node[archi-app-component, minimum width=3.4cm] (gate2) at (5.2, 2.4) {\archibadge{Gate 2: Dispatch}\archiname{Ponos Dispatcher}\\\archidesc{Queue Authorization}};
+    \node[archi-app-component, minimum width=3.4cm] (gate3) at (9.4, 2.4) {\archibadge{Gate 3: Activity}\archiname{Ergon Activities}\\\archidesc{Payload / Role Check}};
+    \node[archi-app-component, minimum width=3.4cm] (gate4) at (13.6, 2.4) {\archibadge{Gate 4: Storage}\archiname{Mnemosyne JPA}\\\archidesc{Compartment / Write Security}};
+
+    % --- Relationships ---
+    \draw[archi-flow] (gate1) -- node[archi-lbl]{1. Ingress} (themis_pdp);
+    \draw[archi-flow] (gate2) -- node[archi-lbl]{2. Dispatch} (themis_pdp);
+    \draw[archi-flow] (gate3) -- node[archi-lbl]{3. Activity} (themis_pdp);
+    \draw[archi-flow] (gate4) -- node[archi-lbl]{4. Storage} (themis_pdp);
+
+    \draw[archi-flow] (themis_pdp) -- node[archi-lbl, above]{Log Evaluation} (themis_audit);
+
+    \draw[archi-flow] (gate1) -- node[archi-lbl, below]{Pipeline} (gate2);
+    \draw[archi-flow] (gate2) -- node[archi-lbl, below]{Execute} (gate3);
+    \draw[archi-flow] (gate3) -- node[archi-lbl, below]{Persist} (gate4);
+
+\end{tikzpicture}

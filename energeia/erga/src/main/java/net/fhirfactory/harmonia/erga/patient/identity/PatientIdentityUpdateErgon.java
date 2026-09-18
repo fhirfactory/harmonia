@@ -23,9 +23,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
+import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -50,6 +55,7 @@ import java.util.regex.Pattern;
 public class PatientIdentityUpdateErgon extends ErgonBase {
 
     private static final Logger log = LoggerFactory.getLogger(PatientIdentityUpdateErgon.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(PatientIdentityUpdateErgon.class);
 
     public static final String DEFAULT_ACTIVITY_ID = "patient-identity-update";
     public static final String DEFAULT_ACTIVITY_NAME = "Patient Identity Update Activity";
@@ -66,6 +72,7 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
     public PatientIdentityUpdateErgon() {
         super(DEFAULT_ACTIVITY_ID, DEFAULT_ACTIVITY_NAME);
         setActivityDescription("Parses incoming messages and extracts or updates patient identity");
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(DEFAULT_ACTIVITY_ID));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
@@ -73,12 +80,14 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
     public PatientIdentityUpdateErgon(CamelContext context) {
         super(context, DEFAULT_ACTIVITY_ID, DEFAULT_ACTIVITY_NAME);
         setActivityDescription("Parses incoming messages and extracts or updates patient identity");
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(DEFAULT_ACTIVITY_ID));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
 
     public PatientIdentityUpdateErgon(String activityId, String activityName) {
         super(activityId, activityName);
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(activityId));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
@@ -169,6 +178,19 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
                 }
             } else if (body instanceof Patient) {
                 patient = (Patient) body;
+            } else if (body instanceof ErgonEvent) {
+                ErgonEvent event = (ErgonEvent) body;
+                if (StringUtils.isNotBlank(event.getTaskId())) {
+                    task = getTaskCacheService().getTask(event.getTaskId()).orElse(null);
+                    if (task != null && task.hasContained()) {
+                        for (Resource res : task.getContained()) {
+                            if (res instanceof Patient) {
+                                patient = (Patient) res;
+                                break;
+                            }
+                        }
+                    }
+                }
             } else if (StringUtils.isNotBlank(rawPayload)) {
                 String trimmed = rawPayload.trim();
                 if (isHl7Message(trimmed)) {
@@ -202,6 +224,7 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
         // Extract metadata for headers
         String patientId = cleanPatientId(patient.getIdPart());
         patient.setId("Patient/" + (patientId != null ? patientId : "unknown"));
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         String mrn = extractMrn(patient);
         String fullName = extractFullName(patient);
 
@@ -241,6 +264,7 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
         output.setValue(new Reference("Patient/" + patient.getIdPart()).setDisplay(fullName));
 
         task.setLastModified(new Date());
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
 
         // Set Task as OUT body for TaskProcessingActivity egress
         exchange.getMessage().setBody(task);
@@ -260,7 +284,8 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
         }
         exchange.getMessage().setHeader(HEADER_PATIENT_UPDATED, Boolean.TRUE);
 
-        log.info("Patient identity updated on exchange: ID={}, MRN={}, Name={}", patientId, mrn, fullName);
+        log.info("Patient identity updated on exchange: patientId={}", patientId);
+        phiLog.debug("Patient identity updated on exchange: ID={}, MRN={}, Name={}", patientId, mrn, fullName);
     }
 
     private String cleanPatientId(String rawId) {
@@ -651,6 +676,7 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
             contact.setValue(workPhone);
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         return patient;
     }
 
@@ -671,6 +697,7 @@ public class PatientIdentityUpdateErgon extends ErgonBase {
         mrn.setSystem("http://example.org/patients");
         mrn.setValue(cleanIdVal);
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         return patient;
     }
 

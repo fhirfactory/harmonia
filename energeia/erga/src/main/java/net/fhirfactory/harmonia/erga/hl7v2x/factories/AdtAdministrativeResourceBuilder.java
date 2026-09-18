@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -93,6 +94,7 @@ public class AdtAdministrativeResourceBuilder {
                 if (addrParts.length > 4 && StringUtils.isNotBlank(addrParts[4])) addr.setPostalCode(addrParts[4]);
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(rp);
             list.add(rp);
             idx++;
         }
@@ -133,6 +135,7 @@ public class AdtAdministrativeResourceBuilder {
                 cp.setValue(cleanPhoneNumber(phoneField));
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(guarantor);
             list.add(guarantor);
             gIdx++;
         }
@@ -153,6 +156,7 @@ public class AdtAdministrativeResourceBuilder {
             org.setId("Organization/" + id);
             org.setName(sendingFacility);
             org.setActive(true);
+            FhirSecurityTagManager.applyDefaultSecurityTag(org);
             map.put(id, org);
         }
 
@@ -162,6 +166,7 @@ public class AdtAdministrativeResourceBuilder {
             org.setId("Organization/" + id);
             org.setName(receivingFacility);
             org.setActive(true);
+            FhirSecurityTagManager.applyDefaultSecurityTag(org);
             map.put(id, org);
         }
 

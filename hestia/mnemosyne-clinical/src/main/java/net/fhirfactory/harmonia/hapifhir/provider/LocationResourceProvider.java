@@ -83,11 +83,18 @@ public class LocationResourceProvider implements IResourceProvider {
             @Description(shortDefinition = "A portion of the location's name or alias")
             @OptionalParam(name = "name") StringParam theName,
             @Description(shortDefinition = "A location Identifier")
-            @OptionalParam(name = "identifier") StringParam theIdentifier
+            @OptionalParam(name = "identifier") StringParam theIdentifier,
+            @Description(shortDefinition = "The organization that manages the location")
+            @OptionalParam(name = "organization") StringParam theOrganization,
+            @Description(shortDefinition = "The status of the location")
+            @OptionalParam(name = "status") StringParam theStatus
     ) {
-        String idStr = theId != null ? theId.getValue() : null;
-        String nameStr = theName != null ? theName.getValue() : null;
-        String identStr = theIdentifier != null ? theIdentifier.getValue() : null;
-        return storageService.searchResources("Location", idStr, nameStr, identStr);
+        java.util.Map<String, String> params = new java.util.HashMap<>();
+        if (theId != null) params.put("_id", theId.getValue());
+        if (theName != null) params.put("name", theName.getValue());
+        if (theIdentifier != null) params.put("identifier", theIdentifier.getValue());
+        if (theOrganization != null) params.put("organization", theOrganization.getValue());
+        if (theStatus != null) params.put("status", theStatus.getValue());
+        return storageService.searchResources("Location", params);
     }
 }

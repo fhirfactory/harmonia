@@ -1,0 +1,13 @@
+---
+# Main entry point for harmonia-deploy role
+- name: Ensure Harmonia namespace exists and is labeled
+  ansible.builtin.include_tasks: namespace.yml
+
+- name: Provision secure Kubernetes secrets for persistence and messaging
+  ansible.builtin.include_tasks: secrets.yml
+
+- name: Apply declarative Kubernetes manifests via Kustomize
+  ansible.builtin.include_tasks: kustomize.yml
+
+- name: Validate rollout completion and workload readiness
+  ansible.builtin.include_tasks: verify.yml

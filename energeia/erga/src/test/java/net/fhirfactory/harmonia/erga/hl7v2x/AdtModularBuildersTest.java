@@ -23,6 +23,8 @@ import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.util.Terser;
 import net.fhirfactory.harmonia.erga.hl7v2x.common.Hl7v2ParsingSupport;
 import net.fhirfactory.harmonia.erga.hl7v2x.factories.*;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -81,6 +83,7 @@ class AdtModularBuildersTest {
         assertThat(patient.getNameFirstRep().getGivenAsSingleString()).contains("JOHN");
         assertThat(patient.getGender()).isEqualTo(Enumerations.AdministrativeGender.MALE);
         assertThat(patient.getExtension()).isNotEmpty();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(patient, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -96,6 +99,9 @@ class AdtModularBuildersTest {
         assertThat(encounter.getSubject().getReference()).isEqualTo("Patient/MRN-9999");
         assertThat(encounter.getParticipant()).hasSize(practitioners.size());
         assertThat(encounter.getLocation()).hasSize(locations.size());
+        assertThat(FhirSecurityTagManager.hasConfidentiality(encounter, FhirConfidentialityEnum.N)).isTrue();
+        practitioners.forEach(p -> assertThat(FhirSecurityTagManager.hasConfidentiality(p, FhirConfidentialityEnum.N)).isTrue());
+        locations.forEach(l -> assertThat(FhirSecurityTagManager.hasConfidentiality(l, FhirConfidentialityEnum.N)).isTrue());
     }
 
     @Test
@@ -106,6 +112,8 @@ class AdtModularBuildersTest {
 
         assertThat(relatedPersons).hasSize(2); // NK1 and GT1
         assertThat(orgs).hasSize(2);
+        relatedPersons.forEach(rp -> assertThat(FhirSecurityTagManager.hasConfidentiality(rp, FhirConfidentialityEnum.N)).isTrue());
+        orgs.forEach(org -> assertThat(FhirSecurityTagManager.hasConfidentiality(org, FhirConfidentialityEnum.N)).isTrue());
     }
 
     @Test
@@ -124,6 +132,10 @@ class AdtModularBuildersTest {
         assertThat(allergies).isNotEmpty();
         assertThat(observations).isNotEmpty();
         assertThat(coverages).isNotEmpty();
+        conditions.forEach(c -> assertThat(FhirSecurityTagManager.hasConfidentiality(c, FhirConfidentialityEnum.N)).isTrue());
+        allergies.forEach(a -> assertThat(FhirSecurityTagManager.hasConfidentiality(a, FhirConfidentialityEnum.N)).isTrue());
+        observations.forEach(o -> assertThat(FhirSecurityTagManager.hasConfidentiality(o, FhirConfidentialityEnum.N)).isTrue());
+        coverages.forEach(cov -> assertThat(FhirSecurityTagManager.hasConfidentiality(cov, FhirConfidentialityEnum.N)).isTrue());
     }
 
     @Test
@@ -134,6 +146,7 @@ class AdtModularBuildersTest {
         assertThat(comm).isNotNull();
         assertThat(comm.getIdPart()).isEqualTo("comm-MSG-CTRL-1234");
         assertThat(comm.getPayload()).isNotEmpty();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(comm, FhirConfidentialityEnum.N)).isTrue();
 
         Bundle bundle = new Bundle();
         bundle.setId("Bundle/bundle-001");
@@ -144,6 +157,7 @@ class AdtModularBuildersTest {
         assertThat(prov).isNotNull();
         assertThat(prov.getTarget()).isNotEmpty();
         assertThat(prov.getPatient().getReference()).isEqualTo("Patient/MRN-9999");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(prov, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -156,6 +170,11 @@ class AdtModularBuildersTest {
         assertThat(bundle).isNotNull();
         assertThat(bundle.getType()).isEqualTo(Bundle.BundleType.COLLECTION);
         assertThat(bundle.getEntry()).isNotEmpty();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(bundle, FhirConfidentialityEnum.N)).isTrue();
+        bundle.getEntry().forEach(entry -> {
+            assertThat(entry.getResource()).isNotNull();
+            assertThat(FhirSecurityTagManager.hasConfidentiality(entry.getResource(), FhirConfidentialityEnum.N)).isTrue();
+        });
         assertThat(parentTask.getFor().getReference()).isEqualTo("Patient/MRN-9999");
         assertThat(parentTask.getFocus().getReference()).startsWith("Encounter/");
     }

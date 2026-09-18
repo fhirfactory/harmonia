@@ -1,0 +1,66 @@
+%% =============================================================================
+%% diagrams/fig-conceptual-layers.tex
+%% Harmonia Conceptual Layering Stack (Iris -> Pylai -> Energeia -> Petasos -> Hestia/Themis/Calliope)
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Plates / Layers ---
+    \draw[archi-plate-bg] (-0.8, 8.4) rectangle (15.8, 10.6);
+    \node[archi-plate-title] at (-0.6, 10.4) {Presentation Layer (Iris Tier)};
+
+    \draw[archi-plate-bg] (-0.8, 6.0) rectangle (15.8, 8.0);
+    \node[archi-plate-title] at (-0.6, 7.8) {Protocol Gateway Layer (Pylai Tier)};
+
+    \draw[archi-plate-bg] (-0.8, 3.8) rectangle (15.8, 5.6);
+    \node[archi-plate-title] at (-0.6, 5.4) {Workflow \& Execution Layer (Energeia Tier)};
+
+    \draw[archi-plate-bg] (-0.8, 2.0) rectangle (15.8, 3.4);
+    \node[archi-plate-title] at (-0.6, 3.2) {Messaging \& Transport Layer (Petasos Tier)};
+
+    \draw[archi-plate-bg] (-0.8, -0.4) rectangle (15.8, 1.6);
+    \node[archi-plate-title] at (-0.6, 1.4) {Persistence, Governance \& Canonical Foundations (Hestia / Themis / Calliope)};
+
+    % --- Nodes: Presentation ---
+    \node[archi-app-component, minimum width=3.4cm] (iris_clin) at (1.5, 9.4) {\archibadge{SPA}\archiname{iris-clinical}\\\archidesc{Vue 3 Clinical View}};
+    \node[archi-app-component, minimum width=3.4cm] (iris_cons) at (5.5, 9.4) {\archibadge{SPA}\archiname{iris-console}\\\archidesc{Vue 3 Ops \& Status}};
+    \node[archi-app-component, minimum width=3.4cm] (iris_adm)  at (9.5, 9.4) {\archibadge{SPA}\archiname{iris-administration}\\\archidesc{Vue 3 Provider Admin}};
+    \node[archi-app-component, minimum width=3.0cm] (iris_befe) at (13.5, 9.4) {\archibadge{Gateway}\archiname{iris-befe}\\\archidesc{WildFly 31 / JAX-RS}};
+
+    % --- Nodes: Gateways ---
+    \node[archi-app-component, minimum width=4.5cm] (pylai_in)  at (2.5, 6.9) {\archibadge{Ingress}\archiname{pylai-mllp-in}\\\archidesc{Netty / Camel Port 2575}};
+    \node[archi-app-component, minimum width=4.5cm] (pylai_out) at (7.8, 6.9) {\archibadge{Egress}\archiname{pylai-mllp-out}\\\archidesc{Destination-Isolated Dispatches}};
+    \node[archi-app-component, minimum width=4.0cm] (pylai_reg) at (13.0, 6.9) {\archibadge{REST Gateway}\archiname{pylai-fhir-registry}\\\archidesc{Spring Boot FHIR R5}};
+
+    % --- Nodes: Workflow ---
+    \node[archi-app-component, minimum width=4.5cm] (ponos)   at (2.5, 4.6) {\archibadge{Task Engine}\archiname{energeia-ponos}\\\archidesc{Spring Boot Task Worker}};
+    \node[archi-app-component, minimum width=4.5cm] (erga)    at (7.8, 4.6) {\archibadge{Activity Library}\archiname{energeia-erga}\\\archidesc{Discrete Activity Units}};
+    \node[archi-app-component, minimum width=4.0cm] (praxis)  at (13.0, 4.6) {\archibadge{Orchestration}\archiname{energeia-praxis}\\\archidesc{Task Sequence Pipeline}};
+
+    % --- Nodes: Transport ---
+    \node[archi-app-component, minimum width=4.5cm] (petasos_api)  at (2.5, 2.6) {\archibadge{API Contract}\archiname{petasos-api}\\\archidesc{Pure Java Interfaces}};
+    \node[archi-app-component, minimum width=4.5cm] (petasos_core) at (7.8, 2.6) {\archibadge{Core Routing}\archiname{petasos-core}\\\archidesc{Sliding-Window Dedup}};
+    \node[archi-app-component, minimum width=4.0cm] (petasos_art)  at (13.0, 2.6) {\archibadge{HA Adapter}\archiname{petasos-artemis}\\\archidesc{Artemis JMS Client}};
+
+    % --- Nodes: Foundations ---
+    \node[archi-app-component, minimum width=3.4cm] (mneme)    at (1.5, 0.5) {\archibadge{Cache}\archiname{mneme-cluster}\\\archidesc{Infinispan Hot Rod}};
+    \node[archi-app-component, minimum width=3.4cm] (mnemosyne) at (5.5, 0.5) {\archibadge{Persistence}\archiname{mnemosyne-*}\\\archidesc{PostgreSQL JPA}};
+    \node[archi-app-component, minimum width=3.4cm] (themis)   at (9.5, 0.5) {\archibadge{Security}\archiname{themis-core}\\\archidesc{Default-Deny PDP/PEP}};
+    \node[archi-data-object, minimum width=3.0cm]   (calliope) at (13.5, 0.5) {\archibadge{Schemas}\archiname{calliope}\\\archidesc{Canonical Schemas/DTOs}};
+
+    % --- Flows ---
+    \draw[archi-flow] (iris_clin) -- (iris_befe);
+    \draw[archi-flow] (iris_cons) -- (iris_befe);
+    \draw[archi-flow] (iris_adm)  -- (pylai_reg);
+    \draw[archi-flow] (iris_befe) -- (mneme);
+
+    \draw[archi-flow] (pylai_in) -- (petasos_api);
+    \draw[archi-flow] (ponos) -- (erga);
+    \draw[archi-flow] (ponos) -- (praxis);
+    \draw[archi-flow] (erga) -- (themis);
+    \draw[archi-flow] (erga) -- (calliope);
+    \draw[archi-flow] (erga) -- (mnemosyne);
+
+    \draw[archi-serving] (petasos_art) -- (petasos_core);
+    \draw[archi-serving] (petasos_core) -- (petasos_api);
+
+\end{tikzpicture}

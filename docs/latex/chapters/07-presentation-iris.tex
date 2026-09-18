@@ -1,0 +1,64 @@
+%% =============================================================================
+%% chapters/07-presentation-iris.tex
+%% PART II: Platform Capabilities and Modules
+%% Chapter 7: Presentation Services & User Interfaces (Iris BEFE, Clinical, Console, Administration)
+%% =============================================================================
+
+\chapter{Presentation Services \& User Interfaces (\texttt{Iris})}
+\label{chap:presentation_iris}
+
+The Iris subsystem is Harmonia's presentation tier, providing decoupled, modern web user interfaces and a high-performance Backend-For-Frontend (BEFE) gateway.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-iris-architecture.tex}
+    \end{adjustbox}
+    \caption{Iris Presentation Tier and BEFE Gateway Architecture}
+    \label{fig:iris_presentation_tier}
+\end{figure}
+
+\section{Presentation Single-Page Applications (SPAs)}
+
+Harmonia provides three purpose-built Vue 3 / TypeScript web applications served via Nginx:
+
+\subsection{1. \texttt{iris-clinical} (Clinical Portal)}
+The clinical portal provides care teams with fast, intuitive access to longitudinal patient histories, encounter summaries, lab observations, and diagnostic reports.
+
+\subsection{2. \texttt{iris-console} (Operations \& Telemetry Portal)}
+The operations console provides platform engineers and system administrators with real-time operational telemetry.
+\begin{archinote}
+\textbf{Terminology Reconciliation}: Legacy documentation previously referred to this portal as \texttt{iris-monitor}. The canonical, repository-backed identifier is standardized across all modules and documentation as \texttt{iris-console}.
+\end{archinote}
+It visualizes:
+\begin{itemize}
+    \item ActiveMQ Artemis broker cluster health and queue depths.
+    \item Infinispan distributed cache hit ratios and memory utilization.
+    \item In-flight Ponos task statuses and pipeline execution latency.
+\end{itemize}
+
+\subsection{3. \texttt{iris-administration} (Directory Administration Portal)}
+Provides directory stewards with UI forms for managing practitioners, roles, organizations, and endpoints.
+
+\begin{principlebox}{Iris-Administration Role Invariant}
+In accordance with Invariant 3, \texttt{iris-administration} is strictly a frontend presentation client consuming FHIR REST APIs. It contains zero database drivers, no JPA/Hibernate entities, and does not execute Provider Registry state machines or referential integrity verification. All authoritative registry governance is executed server-side.
+\end{principlebox}
+
+\section{Backend-For-Frontend Gateway (\texttt{iris-befe})}
+
+\texttt{iris-befe} is a WildFly 31.0.1 Jakarta EE microservice operating on dual HTTP ports:
+\begin{itemize}
+    \item \textbf{Port 8080 (Clinical Gateway)}: Serves authenticated clinical FHIR REST endpoints to \texttt{iris-clinical}.
+    \item \textbf{Port 8090 (Operations Gateway)}: Serves system telemetry, health checks, and administration APIs to \texttt{iris-console}.
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-iris-federation.tex}
+    \end{adjustbox}
+    \caption{Iris UI Federation, Hot Rod Caching \& REST Endpoint Integration}
+    \label{fig:iris_federation}
+\end{figure}
+
+\newpage

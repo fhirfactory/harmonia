@@ -26,6 +26,8 @@ import net.fhirfactory.harmonia.erga.hl7v2x.factories.Mfn2FhirBundleBuilder;
 import net.fhirfactory.harmonia.erga.hl7v2x.factories.MfnAdministrativeResourceBuilder;
 import net.fhirfactory.harmonia.erga.hl7v2x.factories.MfnMetadataResourceBuilder;
 import net.fhirfactory.harmonia.erga.hl7v2x.factories.MfnPractitionerResourceBuilder;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -118,6 +120,7 @@ class MfnModularBuildersTest {
 
         // Extensions
         assertThat(practitioner.getExtension()).isNotEmpty();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(practitioner, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -140,6 +143,7 @@ class MfnModularBuildersTest {
         assertThat(role.getCode()).isNotEmpty();
         assertThat(role.getSpecialty()).isNotEmpty();
         assertThat(role.getPeriod()).isNotNull();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(role, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -152,9 +156,11 @@ class MfnModularBuildersTest {
         assertThat(orgs.stream().anyMatch(o -> o.getName().contains("HOSPITAL_A"))).isTrue();
         assertThat(orgs.stream().anyMatch(o -> o.getName().contains("Cardiology"))).isTrue();
         assertThat(orgs.stream().anyMatch(o -> o.getName().contains("Johns Hopkins"))).isTrue();
+        orgs.forEach(o -> assertThat(FhirSecurityTagManager.hasConfidentiality(o, FhirConfidentialityEnum.N)).isTrue());
 
         assertThat(locs).isNotEmpty();
         assertThat(locs.stream().anyMatch(l -> l.getName().contains("Cardiology") || l.getName().contains("Clinic"))).isTrue();
+        locs.forEach(l -> assertThat(FhirSecurityTagManager.hasConfidentiality(l, FhirConfidentialityEnum.N)).isTrue());
     }
 
     @Test
@@ -167,6 +173,7 @@ class MfnModularBuildersTest {
         assertThat(comm.getIdPart()).isEqualTo("comm-MSG-CTRL-88801");
         assertThat(comm.getPayload()).isNotEmpty();
         assertThat(comm.getSubject().getReference()).isEqualTo("Practitioner/DOC-12345");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(comm, FhirConfidentialityEnum.N)).isTrue();
 
         Bundle bundle = new Bundle();
         bundle.setId("Bundle/bundle-001");
@@ -177,6 +184,7 @@ class MfnModularBuildersTest {
         assertThat(prov).isNotNull();
         assertThat(prov.getTarget()).isNotEmpty();
         assertThat(prov.getAgent()).isNotEmpty();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(prov, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -189,6 +197,11 @@ class MfnModularBuildersTest {
         assertThat(bundle).isNotNull();
         assertThat(bundle.getType()).isEqualTo(Bundle.BundleType.COLLECTION);
         assertThat(bundle.getEntry()).isNotEmpty();
+        assertThat(FhirSecurityTagManager.hasConfidentiality(bundle, FhirConfidentialityEnum.N)).isTrue();
+        bundle.getEntry().forEach(entry -> {
+            assertThat(entry.getResource()).isNotNull();
+            assertThat(FhirSecurityTagManager.hasConfidentiality(entry.getResource(), FhirConfidentialityEnum.N)).isTrue();
+        });
 
         assertThat(parentTask.getFor().getReference()).isEqualTo("Practitioner/DOC-12345");
         assertThat(parentTask.getFocus().getReference()).isEqualTo("PractitionerRole/DOC-12345-role");

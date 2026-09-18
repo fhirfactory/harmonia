@@ -1,0 +1,95 @@
+%% =============================================================================
+%% diagrams/fig-ergon-module-architecture.tex
+%% ArchiMate 3.2 Ergon Activity Module Architecture & Processing Topology View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates (Columns) ---
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (3.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Col 1: Ponos Ingress};
+
+    \draw[archi-plate-bg] (4.2, 0.4) rectangle (8.8, 9.4);
+    \node[archi-plate-title] at (4.4, 9.2) {Col 2: Ergon Camel Route};
+
+    \draw[archi-plate-bg] (9.2, 0.4) rectangle (13.8, 9.4);
+    \node[archi-plate-title] at (9.4, 9.2) {Col 3: FHIR R5 Processing};
+
+    \draw[archi-plate-bg] (14.2, 0.4) rectangle (18.8, 9.4);
+    \node[archi-plate-title] at (14.4, 9.2) {Col 4: Cache \& Handoff};
+
+    % --- Column 1: Ponos Ingress & Conduit Dispatch Layer ---
+    \node[archi-app-interface, minimum width=3.8cm] (artemis_queue) at (1.5, 7.8) {%
+        \archibadge{App Interface}\archiname{Petasos Queue}\\\archidesc{petasos.queue.inbound.*}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (queue_conduit) at (1.5, 4.8) {%
+        \archibadge{App Component}\archiname{JMS Conduit}\\\archidesc{QueueToExchangeConduit}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (praxis_dispatcher) at (1.5, 1.8) {%
+        \archibadge{App Component}\archiname{Praxis Dispatcher}\\\archidesc{TaskProcessorRouteBuilder}%
+    };
+
+    % --- Column 2: Ergon Activity Camel Route Lifecycle ---
+    \node[archi-app-interface, minimum width=3.8cm] (ergon_input_endpoint) at (6.5, 7.8) {%
+        \archibadge{App Interface}\archiname{Input Endpoint}\\\archidesc{direct:activity-<ergonId>}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (ergon_route_builder) at (6.5, 4.8) {%
+        \archibadge{App Component}\archiname{Ergon Route}\\\archidesc{ErgonBase RouteBuilder DSL}%
+    };
+
+    \node[archi-app-process, minimum width=3.8cm] (ergon_process_activity) at (6.5, 1.8) {%
+        \archibadge{App Process}\archiname{Activity Hook}\\\archidesc{processActivity(Exchange)}%
+    };
+
+    % --- Column 3: Payload Extraction, Transformation & Enrichment ---
+    \node[archi-app-process, minimum width=3.8cm] (payload_extractor) at (11.5, 7.8) {%
+        \archibadge{App Process}\archiname{Payload Extractor}\\\archidesc{HAPI Terser / Jackson Parser}%
+    };
+
+    \node[archi-app-process, minimum width=3.8cm] (fhir_transformer) at (11.5, 4.8) {%
+        \archibadge{App Process}\archiname{FHIR R5 Transformer}\\\archidesc{Enrichment \& Security Tags}%
+    };
+
+    \node[archi-data-object, minimum width=3.8cm] (pragma_envelope) at (11.5, 1.8) {%
+        \archibadge{Data Object}\archiname{Pragma Task Envelope}\\\archidesc{State, Checkpoints, DTO}%
+    };
+
+    % --- Column 4: Persistence, Checkpointing & Handoff ---
+    \node[archi-app-component, minimum width=3.8cm] (task_cache_service) at (16.5, 7.8) {%
+        \archibadge{App Component}\archiname{Task Cache Service}\\\archidesc{HotRod Client / Put}%
+    };
+
+    \node[archi-node, minimum width=3.8cm] (mneme_grid) at (16.5, 4.8) {%
+        \archibadge{Technology Node}\archiname{Mneme \& Mnemosyne}\\\archidesc{Infinispan Grid \& PostgreSQL}%
+    };
+
+    \node[archi-app-interface, minimum width=3.8cm] (ergon_output_endpoint) at (16.5, 1.8) {%
+        \archibadge{App Interface}\archiname{Completion Endpoint}\\\archidesc{direct:activity-complete}%
+    };
+
+    % --- Flow & Structural Relationships ---
+    % Conduit ingestion from Artemis
+    \draw[archi-flow]       (artemis_queue) -- node[archi-lbl]{JMS TaskEvent} (queue_conduit);
+    \draw[archi-triggering] (queue_conduit) -- (praxis_dispatcher);
+    \draw[archi-flow]       (praxis_dispatcher) -- node[archi-lbl]{seq-step-N} (ergon_input_endpoint);
+
+    % Ergon Camel Route execution
+    \draw[archi-serving]    (ergon_input_endpoint) -- (ergon_route_builder);
+    \draw[archi-triggering] (ergon_route_builder) -- (ergon_process_activity);
+
+    % Processing: Extraction, Transformation, and Envelope State
+    \draw[archi-assignment] (ergon_process_activity) -- (payload_extractor);
+    \draw[archi-triggering] (payload_extractor) -- (fhir_transformer);
+    \draw[archi-access]     (fhir_transformer) -- (pragma_envelope);
+
+    % State Checkpointing & Persistence
+    \draw[archi-flow] (fhir_transformer) -- (task_cache_service);
+    \draw[archi-flow] (task_cache_service) -- node[archi-lbl]{HotRod} (mneme_grid);
+
+    % Route Completion Handoff
+    \draw[archi-triggering] (task_cache_service) -- (ergon_output_endpoint);
+    \draw[archi-flow]       (ergon_process_activity) to[bend right=20] (ergon_output_endpoint);
+
+\end{tikzpicture}

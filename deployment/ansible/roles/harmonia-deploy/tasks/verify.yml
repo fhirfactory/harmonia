@@ -1,0 +1,54 @@
+---
+- name: Wait for StatefulSet rollouts to complete
+  ansible.builtin.command: >
+    microk8s kubectl rollout status statefulset/{{ item }}
+    --namespace {{ harmonia_namespace }}
+    --timeout {{ rollout_timeout_seconds }}s
+  loop:
+    - postgres-1
+    - postgres-2
+    - postgres-ops-1
+    - postgres-ops-2
+    - infinispan-1
+    - infinispan-2
+    - artemis-primary-a
+    - artemis-backup-a
+    - artemis-primary-b
+    - artemis-backup-b
+  become: true
+  changed_when: false
+
+- name: Wait for Deployment rollouts to complete
+  ansible.builtin.command: >
+    microk8s kubectl rollout status deployment/{{ item }}
+    --namespace {{ harmonia_namespace }}
+    --timeout {{ rollout_timeout_seconds }}s
+  loop:
+    - hapi-fhir-jpa-server-1
+    - hapi-fhir-jpa-server-2
+    - hie-operations-jpa-server-1
+    - hie-operations-jpa-server-2
+    - task-processor
+    - mllp-gateway
+    - mllp-outbound-his
+    - mllp-outbound-lis
+    - befe
+    - iris-clinical
+    - iris-console
+    - iris-administration
+  become: true
+  changed_when: false
+
+- name: Verify PersistentVolumeClaims are Bound
+  ansible.builtin.command: >
+    microk8s kubectl get pvc --namespace {{ harmonia_namespace }} -o jsonpath='{range .items[*]}{.metadata.name}{": "}{.status.phase}{"\n"}{end}'
+  register: pvc_status_output
+  become: true
+  changed_when: false
+
+- name: Verify Ingress configuration
+  ansible.builtin.command: >
+    microk8s kubectl get ingress harmonia-ingress --namespace {{ harmonia_namespace }} --no-headers
+  register: ingress_status_output
+  become: true
+  changed_when: false

@@ -1,0 +1,41 @@
+---
+# ==============================================================================
+# Playbook: decommission-microk8s.yml
+# Purpose:  DESTRUCTIVE Host Cleanup: Uninstalls MicroK8s and removes snap data
+# ==============================================================================
+- name: Decommission MicroK8s from Reference Host
+  hosts: microk8s_hosts
+  become: true
+  gather_facts: false
+
+  vars:
+    microk8s_confirm_decommission: false
+
+  tasks:
+    - name: Prompt for confirmation before decommissioning MicroK8s
+      ansible.builtin.pause:
+        prompt: "DANGER: You are about to completely uninstall MicroK8s and destroy all cluster workloads and data. Press Enter to proceed or Ctrl+C to cancel."
+      when: not (microk8s_confirm_decommission | bool)
+
+    - name: Stop MicroK8s cluster services
+      ansible.builtin.command: microk8s stop
+      ignore_errors: true
+      changed_when: true
+
+    - name: Remove MicroK8s snap with purge
+      community.general.snap:
+        name: microk8s
+        state: absent
+      ignore_errors: true
+
+    - name: Remove MicroK8s configuration and data directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /var/snap/microk8s
+        - "/home/{{ ansible_user | default('ubuntu') }}/.kube"
+
+    - name: Report decommissioning complete
+      ansible.builtin.debug:
+        msg: "MicroK8s cluster has been successfully decommissioned from host {{ inventory_hostname }}."

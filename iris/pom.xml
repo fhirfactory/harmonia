@@ -38,5 +38,6 @@
         <module>iris-befe</module>
         <module>iris-clinical</module>
         <module>iris-console</module>
+        <module>iris-administration</module>
     </modules>
 </project>

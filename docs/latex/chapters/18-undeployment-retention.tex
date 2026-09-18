@@ -1,0 +1,40 @@
+%% =============================================================================
+%% chapters/18-undeployment-retention.tex
+%% PART VI: Normal Deployment Architecture
+%% Chapter 18: Safe Undeployment & Persistent Storage Retention Mechanics
+%% =============================================================================
+
+\chapter{Safe Undeployment \& Storage Retention Mechanics}
+\label{chap:undeployment_retention}
+
+To prevent accidental data loss during maintenance, cluster upgrades, or redeployments, Harmonia implements a strict two-stage teardown protocol separating workload termination from persistent volume reclamation.
+
+\section{Workload Termination (Data-Preserving)}
+
+Executing standard manifest deletion removes all stateless Deployments and stateful pods while deliberately leaving PersistentVolumeClaims (PVCs) intact:
+\begin{lstlisting}[language=bash, caption={Data-Preserving Workload Teardown}]
+# Delete workloads and services without destroying PVCs
+kubectl delete -k deployment/kubernetes/environments/microk8s
+\end{lstlisting}
+Following this command:
+\begin{itemize}
+    \item Artemis broker journal files on \texttt{microk8s-hostpath} remain preserved.
+    \item PostgreSQL database data directories remain intact on disk.
+    \item Subsequent re-execution of \texttt{kubectl apply -k} reconnects newly scheduled pods to existing volumes, resuming operations without data loss.
+\end{itemize}
+
+\section{Authoritative Storage Wipe Protocol}
+
+When an intentional, permanent teardown of the cluster (including all clinical databases and journals) is required:
+\begin{lstlisting}[language=bash, caption={Permanent Storage Deletion Commands}]
+# 1. Delete all PVCs in the harmonia namespace
+kubectl delete pvc --all -n harmonia
+
+# 2. Delete namespace
+kubectl delete namespace harmonia
+
+# 3. Clean host storage directory
+sudo rm -rf /var/snap/microk8s/common/default-storage/harmonia-*
+\end{lstlisting}
+
+\newpage

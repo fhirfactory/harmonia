@@ -1,0 +1,23 @@
+server:
+  port: 8093
+
+spring:
+  application:
+    name: paradeigma-lms
+
+paradeigma:
+  lms:
+    inboundAdtPort: ${LMS_ADT_INBOUND_PORT:2202}
+    inboundOrmPort: ${LMS_ORM_INBOUND_PORT:2204}
+    harmoniaHost: ${HARMONIA_HOST:localhost}
+    harmoniaOruPort: ${HARMONIA_LMS_ORU_PORT:2102}
+    autoProduceResults: ${LMS_AUTO_PRODUCE_RESULTS:true}
+    resultDelayMs: ${LMS_RESULT_DELAY_MS:1000}
+    profile: ${LMS_EXECUTION_PROFILE:TEST}
+    seed: ${LMS_SEED:12345}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus

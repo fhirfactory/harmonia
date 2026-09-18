@@ -1,0 +1,40 @@
+%% =============================================================================
+%% chapters/22-phi-logging.tex
+%% PART VIII: Security, Logging, and Operations
+%% Chapter 22: PHI-Sanitized Logging & Audit Lineage Tracking
+%% =============================================================================
+
+\chapter{PHI-Sanitized Logging \& Audit Lineage Tracking}
+\label{chap:phi_logging}
+
+Safeguarding Protected Health Information (PHI) while maintaining actionable diagnostic observability requires a strict architectural separation between operational logs and diagnostic audit streams.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-phi-logging-architecture.tex}
+    \end{adjustbox}
+    \caption{Dual-Gate PHI-Aware Logging Architecture and Isolated Logback Routing}
+    \label{fig:phi_logging_architecture}
+\end{figure}
+
+\section{Zero-PHI Logging Invariant}
+
+\begin{principlebox}{Zero-PHI Operational Log Invariant}
+In accordance with Invariant 7:
+\begin{enumerate}
+    \item Standard application log streams (\texttt{INFO}, \texttt{WARN}, \texttt{ERROR}) must \textbf{never} contain unmasked Protected Health Information (patient names, street addresses, dates of birth, clinical notes, or observation values).
+    \item Standard log statements are restricted to technical identifiers (message UUIDs, transaction correlation IDs, anonymized MRNs) and operational timing metrics.
+\end{enumerate}
+\end{principlebox}
+
+\section{Dual-Logger Pattern \& Non-Additive Routing}
+
+When deep diagnostic tracing is required:
+\begin{itemize}
+    \item Components utilize the dedicated \texttt{PhiLogger} facade.
+    \item Log events containing clinical payloads are routed strictly to the isolated \texttt{org.harmonia.phi} logger namespace.
+    \item Logback configuration sets \texttt{additivity="false"}, routing diagnostic payloads exclusively to encrypted, access-controlled audit files and preventing leakage into standard console streams.
+\end{itemize}
+
+\newpage

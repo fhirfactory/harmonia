@@ -19,6 +19,7 @@ package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
 import net.fhirfactory.harmonia.erga.hl7v2x.common.Hl7v2ParsingSupport;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -215,6 +216,7 @@ public class MfnPractitionerResourceBuilder {
                 practitioner.addExtension(citExt);
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(practitioner);
             practitioners.add(practitioner);
             stfIndex++;
         }
@@ -355,6 +357,7 @@ public class MfnPractitionerResourceBuilder {
                 }
             }
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(role);
             roles.add(role);
         }
 
@@ -628,6 +631,7 @@ public class MfnPractitionerResourceBuilder {
         name.setFamily("Unknown");
         name.addGiven("Practitioner");
         name.setText("Unknown Practitioner");
+        FhirSecurityTagManager.applyDefaultSecurityTag(practitioner);
         return practitioner;
     }
 

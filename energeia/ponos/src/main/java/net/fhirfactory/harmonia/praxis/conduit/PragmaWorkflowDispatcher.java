@@ -22,9 +22,25 @@ import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
 import net.fhirfactory.harmonia.praxis.service.PraxisService;
+import net.fhirfactory.harmonia.themis.api.ThemisService;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAction;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationRequest;
+import net.fhirfactory.harmonia.themis.api.model.ThemisDecision;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisResource;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
+import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -32,14 +48,17 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Dispatches canonical {@link Pragma} task instances to matching {@link PraxisImplementation} workflows.
  * <p>
- * Routes tasks based on explicit {@code praxisId}, topic subscriptions, or gateway/trigger criteria.
+ * Enforces Themis dual-authority policy evaluation (originating requester authority + Ergon execution authority)
+ * before dispatching tasks into Camel route execution pipelines.
  */
 @ApplicationScoped
 public class PragmaWorkflowDispatcher {
@@ -52,14 +71,50 @@ public class PragmaWorkflowDispatcher {
     @Inject
     private PraxisService praxisService;
 
+    @Inject
+    private ThemisService themisService;
+
+    @Inject
+    private PragmaCacheService pragmaCacheService;
+
     private final Map<String, PraxisImplementation> registeredWorkflows = new ConcurrentHashMap<>();
 
     public PragmaWorkflowDispatcher() {
+        this.themisService = DeterministicPolicyEvaluator.withDefaultPolicies();
     }
 
     public PragmaWorkflowDispatcher(CamelContext camelContext, PraxisService praxisService) {
+        this(camelContext, praxisService, DeterministicPolicyEvaluator.withDefaultPolicies(), null);
+    }
+
+    public PragmaWorkflowDispatcher(CamelContext camelContext, PraxisService praxisService, ThemisService themisService) {
+        this(camelContext, praxisService, themisService, null);
+    }
+
+    public PragmaWorkflowDispatcher(CamelContext camelContext, PraxisService praxisService, ThemisService themisService, PragmaCacheService pragmaCacheService) {
         this.camelContext = camelContext;
         this.praxisService = praxisService;
+        this.themisService = themisService != null ? themisService : DeterministicPolicyEvaluator.withDefaultPolicies();
+        this.pragmaCacheService = pragmaCacheService;
+    }
+
+    public ThemisService getThemisService() {
+        if (themisService == null) {
+            themisService = DeterministicPolicyEvaluator.withDefaultPolicies();
+        }
+        return themisService;
+    }
+
+    public void setThemisService(ThemisService themisService) {
+        this.themisService = themisService;
+    }
+
+    public PragmaCacheService getPragmaCacheService() {
+        return pragmaCacheService;
+    }
+
+    public void setPragmaCacheService(PragmaCacheService pragmaCacheService) {
+        this.pragmaCacheService = pragmaCacheService;
     }
 
     /**
@@ -88,9 +143,10 @@ public class PragmaWorkflowDispatcher {
 
     /**
      * Dispatches a {@link Pragma} to the most suitable Praxis workflow pipeline.
+     * Evaluates Themis authorization before allowing workflow execution.
      *
      * @param pragma canonical Pragma instance
-     * @return true if successfully executed, false on failure or if no matching workflow exists
+     * @return true if successfully executed, false on authorization failure or execution error
      */
     public boolean dispatchPragma(Pragma pragma) {
         if (pragma == null) {
@@ -104,6 +160,81 @@ public class PragmaWorkflowDispatcher {
             return false;
         }
 
+        // =========================================================================
+        // Themis Defence-in-Depth Policy Checkpoints
+        // =========================================================================
+
+        // 1. Originating Requester Security Evaluation
+        ThemisPrincipal originatingPrincipal = pragma.getOriginatingPrincipal();
+        Set<ThemisAuthority> originatingAuthorities = pragma.getOriginatingAuthorities();
+
+        if (originatingPrincipal == null) {
+            String source = StringUtils.isNotBlank(pragma.getSource()) ? pragma.getSource() : "service:internal";
+            originatingPrincipal = ThemisPrincipal.of(source, PrincipalType.SERVICE, "harmonia");
+            originatingAuthorities = Set.of(
+                    HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority(),
+                    HarmoniaAuthorityEnum.SYSTEM_INTEGRATION.toThemisAuthority()
+            );
+        }
+
+        String resourceType = extractResourceType(pragma, targetWorkflow);
+        ThemisResource targetResource = ThemisResource.builder()
+                .resourceType(resourceType)
+                .securityDomain(HarmoniaSecurityLabelEnum.PROVIDER_REGISTRY.getCode())
+                .securityLabels(Set.of(
+                        HarmoniaSecurityLabelEnum.PROVIDER_REGISTRY.toThemisLabel(),
+                        HarmoniaSecurityLabelEnum.INTERNAL.toThemisLabel()
+                ))
+                .build();
+
+        ThemisSecurityContext origContext = pragma.getOriginatingSecurityContext() != null
+                ? pragma.getOriginatingSecurityContext()
+                : ThemisSecurityContext.builder().principal(originatingPrincipal).correlationId(pragma.getCorrelationId()).build();
+
+        ThemisAuthorizationRequest origAuthReq = ThemisAuthorizationRequest.builder()
+                .principal(originatingPrincipal)
+                .authorities(originatingAuthorities != null ? originatingAuthorities : Set.of())
+                .action(ThemisAction.SUBMIT_UPDATE)
+                .target(targetResource)
+                .context(origContext)
+                .build();
+
+        ThemisAuthorizationDecision origDecision = getThemisService().authorize(origAuthReq);
+        if (origDecision.decision() == ThemisDecision.DENY) {
+            log.warn("Pragma/{} originating requester [{}] denied authority on [{}] (policy={}, reason={})",
+                    pragma.getPragmaId(), originatingPrincipal.principalId(), resourceType, origDecision.policyId(), origDecision.reason());
+            markPragmaAuthorizationFailed(pragma, "Originating requester authority denied: " + origDecision.reason());
+            return false;
+        }
+
+        // 2. Ergon Execution Authority Evaluation (Ponos WorkEngine Gate)
+        Set<ThemisAuthority> executionAuthorities = extractExecutionAuthorities(targetWorkflow);
+        ThemisPrincipal executionPrincipal = ThemisPrincipal.of("process:ponos-engine", PrincipalType.PROCESS, "ponos");
+        ThemisSecurityContext execContext = ThemisSecurityContext.builder()
+                .principal(executionPrincipal)
+                .correlationId(pragma.getCorrelationId())
+                .build();
+
+        ThemisAuthorizationRequest execAuthReq = ThemisAuthorizationRequest.builder()
+                .principal(executionPrincipal)
+                .authorities(executionAuthorities)
+                .action(ThemisAction.PROCESS)
+                .target(targetResource)
+                .context(execContext)
+                .build();
+
+        ThemisAuthorizationDecision execDecision = getThemisService().authorize(execAuthReq);
+        if (execDecision.decision() == ThemisDecision.DENY) {
+            log.warn("Pragma/{} execution authority denied for Praxis [{}] (policy={}, reason={})",
+                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), execDecision.policyId(), execDecision.reason());
+            markPragmaAuthorizationFailed(pragma, "Ergon execution authority denied: " + execDecision.reason());
+            return false;
+        }
+
+        // =========================================================================
+        // Route Dispatching via Apache Camel
+        // =========================================================================
+
         String endpointUri = targetWorkflow.getPipelineInputEndpoint();
         if (camelContext == null) {
             log.error("CamelContext is not available in PragmaWorkflowDispatcher");
@@ -112,8 +243,8 @@ public class PragmaWorkflowDispatcher {
 
         ProducerTemplate template = camelContext.createProducerTemplate();
         try {
-            log.info("Dispatching Pragma/{} into Praxis [{}] via endpoint [{}]",
-                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), endpointUri);
+            log.info("Dispatching Pragma/{} into Praxis [{}] via endpoint [{}] (Originating: {}, Execution: AUTHORIZED)",
+                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), endpointUri, originatingPrincipal.principalId());
 
             Exchange resultExchange = template.request(endpointUri, exchange -> {
                 exchange.getMessage().setBody(pragma);
@@ -144,6 +275,52 @@ public class PragmaWorkflowDispatcher {
             } catch (Exception ignored) {
             }
         }
+    }
+
+    private void markPragmaAuthorizationFailed(Pragma pragma, String reason) {
+        pragma.setStatus(PragmaStatus.FAILED);
+        PragmaCheckpoint checkpoint = PragmaCheckpoint.builder()
+                .pragmaId(pragma.getPragmaId())
+                .stageName("THEMIS_EXECUTION_GATE")
+                .status(PragmaStatus.FAILED)
+                .statusMessage(reason)
+                .build();
+        pragma.addCheckpoint(checkpoint);
+        if (pragmaCacheService != null) {
+            try {
+                pragmaCacheService.savePragma(pragma);
+            } catch (Exception e) {
+                log.warn("Failed to persist failed Pragma status to cache: {}", e.getMessage());
+            }
+        }
+    }
+
+    private String extractResourceType(Pragma pragma, PraxisImplementation workflow) {
+        if (workflow != null && workflow.getActivities() != null) {
+            for (ErgonBase activity : workflow.getActivities().values()) {
+                if (activity.getSecurityDefinition() != null && !activity.getSecurityDefinition().permittedResourceTypes().isEmpty()) {
+                    return activity.getSecurityDefinition().permittedResourceTypes().iterator().next();
+                }
+            }
+        }
+        return "Practitioner";
+    }
+
+    private Set<ThemisAuthority> extractExecutionAuthorities(PraxisImplementation workflow) {
+        Set<ThemisAuthority> authorities = new HashSet<>();
+        boolean hasSecDef = false;
+        if (workflow != null && workflow.getActivities() != null && !workflow.getActivities().isEmpty()) {
+            for (ErgonBase activity : workflow.getActivities().values()) {
+                if (activity.getSecurityDefinition() != null) {
+                    hasSecDef = true;
+                    authorities.addAll(activity.getSecurityDefinition().requiredExecutionAuthorities());
+                }
+            }
+        }
+        if (!hasSecDef && authorities.isEmpty()) {
+            authorities.add(HarmoniaAuthorityEnum.PROVIDER_CHANGE_PROCESS.toThemisAuthority());
+        }
+        return authorities;
     }
 
     /**

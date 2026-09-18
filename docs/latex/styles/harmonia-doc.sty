@@ -43,9 +43,13 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{K}[1]{>{\raggedright\arraybackslash\ttfamily\scriptsize}p{#1}}
 
 % --- Graphics & Boxes ---
 \RequirePackage{graphicx}
+\graphicspath{{./}{images/}{chapters/}{diagrams/}}
 \RequirePackage{adjustbox}
 \RequirePackage[most]{tcolorbox}
 
@@ -99,8 +103,8 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\sffamily\small\color{harmoniadark}\leftmark}
-\fancyhead[R]{\sffamily\small\color{harmoniablue}\textbf{Harmonia HIE Architecture}}
+\fancyhead[L]{\sffamily\fontsize{7pt}{9pt}\selectfont\color{harmoniadark}\leftmark}
+\fancyhead[R]{\sffamily\fontsize{7pt}{9pt}\selectfont\color{harmoniablue}\textbf{Harmonia HIE Architecture}}
 \fancyfoot[C]{\sffamily\small\thepage}
 \renewcommand{\headrulewidth}{0.6pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -151,7 +155,9 @@
     framexleftmargin=12pt
 }
 
-% --- Hyperlinks ---
+% --- Hyperlinks & URLs ---
+\RequirePackage{xurl}
+\RequirePackage{seqsplit}
 \RequirePackage[
     colorlinks=true,
     linkcolor=harmoniablue,

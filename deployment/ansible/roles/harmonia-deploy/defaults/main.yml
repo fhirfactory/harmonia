@@ -1,0 +1,12 @@
+---
+# Defaults for role harmonia-deploy
+harmonia_namespace: "harmonia"
+harmonia_image_registry: "localhost:32000"
+harmonia_image_namespace: "harmonia"
+harmonia_image_tag: "1.0.0-SNAPSHOT"
+
+rollout_timeout_seconds: 300
+deployment_poll_interval_seconds: 5
+
+harmonia_k8s_environment: "microk8s"
+harmonia_manifests_root: "{{ playbook_dir }}/../kubernetes"

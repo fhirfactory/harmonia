@@ -1,0 +1,13 @@
+---
+# Main entry point for microk8s role
+- name: Validate Ubuntu prerequisites
+  ansible.builtin.include_tasks: prerequisites.yml
+
+- name: Install and configure MicroK8s snap
+  ansible.builtin.include_tasks: install.yml
+
+- name: Configure MicroK8s permissions and kubeconfig
+  ansible.builtin.include_tasks: permissions.yml
+
+- name: Enable authoritative MicroK8s add-ons
+  ansible.builtin.include_tasks: addons.yml

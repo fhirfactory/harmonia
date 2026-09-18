@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -361,6 +362,10 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
         if (display != null) {
             ref.setDisplay(display);
         }
+        if (resource instanceof Resource) {
+            FhirSecurityTagManager.applyDefaultSecurityTag((Resource) resource);
+            ref.setResource((Resource) resource);
+        }
         setResourceReference(ref);
     }
 
@@ -543,7 +548,16 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
         }
 
         ErgonPayload ergonPayload = new ErgonPayload();
-        ergonPayload.setPayload(inputComponent.copy());
+        if (inputComponent != null) {
+            Task.TaskInputComponent copy = inputComponent.copy();
+            if (inputComponent.hasValue() && inputComponent.getValue() instanceof Reference) {
+                Reference src = (Reference) inputComponent.getValue();
+                if (src.getResource() != null && copy.getValue() instanceof Reference) {
+                    ((Reference) copy.getValue()).setResource(src.getResource());
+                }
+            }
+            ergonPayload.setPayload(copy);
+        }
 
         if (inputComponent.hasExtension(EXTENSION_PAYLOAD_ORDER)) {
             Extension ext = inputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_ORDER);
@@ -582,7 +596,17 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
                 outputComponent.setType(payload.getType().copy());
             }
             if (payload.hasValue()) {
-                outputComponent.setValue(payload.getValue().copy());
+                DataType val = payload.getValue();
+                if (val instanceof Reference) {
+                    Reference ref = (Reference) val;
+                    Reference copy = ref.copy();
+                    if (ref.getResource() != null) {
+                        copy.setResource(ref.getResource());
+                    }
+                    outputComponent.setValue(copy);
+                } else {
+                    outputComponent.setValue(val.copy());
+                }
             }
         }
 
@@ -625,7 +649,17 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
             input.setType(outputComponent.getType().copy());
         }
         if (outputComponent.hasValue()) {
-            input.setValue(outputComponent.getValue().copy());
+            DataType val = outputComponent.getValue();
+            if (val instanceof Reference) {
+                Reference ref = (Reference) val;
+                Reference copy = ref.copy();
+                if (ref.getResource() != null) {
+                    copy.setResource(ref.getResource());
+                }
+                input.setValue(copy);
+            } else {
+                input.setValue(val.copy());
+            }
         }
         ergonPayload.setPayload(input);
 

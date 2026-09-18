@@ -31,6 +31,10 @@ public class MllpConfig {
     private String host;
     private int port;
     private int mfnPort;
+    private int pasAdtPort;
+    private int lmsOruPort;
+    private int rispacOruPort;
+    private int emrOrmPort;
     private boolean autoAck;
 
     public MllpConfig() {
@@ -39,6 +43,10 @@ public class MllpConfig {
         this.host = getEnvOrProperty("MLLP_HOST", "0.0.0.0");
         this.port = Integer.parseInt(getEnvOrProperty("MLLP_PORT", "2575"));
         this.mfnPort = Integer.parseInt(getEnvOrProperty("MLLP_MFN_PORT", "2576"));
+        this.pasAdtPort = Integer.parseInt(getEnvOrProperty("MLLP_PAS_ADT_PORT", "2101"));
+        this.lmsOruPort = Integer.parseInt(getEnvOrProperty("MLLP_LMS_ORU_PORT", "2102"));
+        this.rispacOruPort = Integer.parseInt(getEnvOrProperty("MLLP_RISPAC_ORU_PORT", "2103"));
+        this.emrOrmPort = Integer.parseInt(getEnvOrProperty("MLLP_EMR_ORM_PORT", "2104"));
         this.autoAck = Boolean.parseBoolean(getEnvOrProperty("MLLP_AUTO_ACK", "true"));
     }
 
@@ -119,6 +127,38 @@ public class MllpConfig {
 
     public void setMfnPort(int mfnPort) {
         this.mfnPort = mfnPort;
+    }
+
+    public int getPasAdtPort() {
+        return pasAdtPort > 0 ? pasAdtPort : port;
+    }
+
+    public void setPasAdtPort(int pasAdtPort) {
+        this.pasAdtPort = pasAdtPort;
+    }
+
+    public int getLmsOruPort() {
+        return lmsOruPort;
+    }
+
+    public void setLmsOruPort(int lmsOruPort) {
+        this.lmsOruPort = lmsOruPort;
+    }
+
+    public int getRispacOruPort() {
+        return rispacOruPort;
+    }
+
+    public void setRispacOruPort(int rispacOruPort) {
+        this.rispacOruPort = rispacOruPort;
+    }
+
+    public int getEmrOrmPort() {
+        return emrOrmPort;
+    }
+
+    public void setEmrOrmPort(int emrOrmPort) {
+        this.emrOrmPort = emrOrmPort;
     }
 
     public boolean isAutoAck() {

@@ -274,6 +274,9 @@ class PragmaTest {
         assertThat(fhirTask.getOutput()).hasSize(1);
         assertThat(fhirTask.getNote()).hasSize(1);
         assertThat(fhirTask.getNote().get(0).getText()).contains("PATIENT_IDENTIFIED");
+        assertThat(fhirTask.hasMeta()).isTrue();
+        assertThat(fhirTask.getMeta().getSecurity()).hasSize(1);
+        assertThat(fhirTask.getMeta().getSecurity().get(0).getCode()).isEqualTo("N");
 
         // 2. Convert FHIR Task -> Pragma
         Pragma reconstructed = PragmaFhirConverter.fromFhirTask(fhirTask);
@@ -289,5 +292,22 @@ class PragmaTest {
         assertThat(reconstructed.getOutput()).hasSize(1);
         assertThat(reconstructed.getCheckpoints()).hasSize(1);
         assertThat(reconstructed.getMetadata()).containsEntry("channel", "HL7_MLLP");
+        assertThat(reconstructed.getMetadata()).containsEntry("confidentiality", "N");
+    }
+
+    @Test
+    @DisplayName("Pragma to FHIR Task with explicit confidentiality security tagging")
+    void testPragmaFhirConverterWithExplicitConfidentiality() {
+        Pragma pragma = Pragma.builder()
+                .pragmaId("pragma-sec-1")
+                .addMetadata("confidentiality", "R")
+                .build();
+
+        Task task = PragmaFhirConverter.toFhirTask(pragma);
+        assertThat(task.getMeta().getSecurity()).hasSize(1);
+        assertThat(task.getMeta().getSecurity().get(0).getCode()).isEqualTo("R");
+
+        Pragma convertedBack = PragmaFhirConverter.fromFhirTask(task);
+        assertThat(convertedBack.getMetadata()).containsEntry("confidentiality", "R");
     }
 }

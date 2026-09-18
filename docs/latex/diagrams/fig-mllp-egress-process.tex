@@ -1,0 +1,96 @@
+%% =============================================================================
+%% diagrams/fig-mllp-egress-process.tex
+%% ArchiMate 3.2 MLLP Egress Multi-Instance Architecture & Lifecycle View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates (Columns) ---
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (3.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Col 1: Artemis Queues};
+
+    \draw[archi-plate-bg] (4.2, 0.4) rectangle (8.8, 9.4);
+    \node[archi-plate-title] at (4.4, 9.2) {Col 2: Egress Processing};
+
+    \draw[archi-plate-bg] (9.2, 0.4) rectangle (13.8, 9.4);
+    \node[archi-plate-title] at (9.4, 9.2) {Col 3: Downstream Target};
+
+    \draw[archi-plate-bg] (14.2, 0.4) rectangle (18.8, 9.4);
+    \node[archi-plate-title] at (14.4, 9.2) {Col 4: Lifecycle \& Audit};
+
+    % --- Column 1: Petasos Artemis Messaging Layer ---
+    \node[archi-app-interface, minimum width=3.8cm] (petasos_dest_queue) at (1.5, 7.8) {%
+        \archibadge{App Interface}\archiname{Destination Queue}\\\archidesc{petasos.queue.egress.*}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (queue_consumer) at (1.5, 4.8) {%
+        \archibadge{App Component}\archiname{Queue Consumer}\\\archidesc{OutboundTaskQueueConsumer}%
+    };
+
+    \node[archi-app-interface, minimum width=3.8cm] (petasos_comp_queue) at (1.5, 1.8) {%
+        \archibadge{App Interface}\archiname{Completion Queue}\\\archidesc{petasos.queue.completed}%
+    };
+
+    % --- Column 2: Egress Processing & Camel Route Layer ---
+    \node[archi-app-component, minimum width=3.8cm] (outbound_proc) at (6.5, 7.8) {%
+        \archibadge{App Component}\archiname{Outbound Processor}\\\archidesc{OutboundMllpProcessor}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (camel_producer) at (6.5, 4.8) {%
+        \archibadge{App Component}\archiname{Dynamic Producer}\\\archidesc{Camel toD DSL / Outbound}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (ack_proc) at (6.5, 1.8) {%
+        \archibadge{App Component}\archiname{HL7 ACK Processor}\\\archidesc{MSA/ERR Frame Parser}%
+    };
+
+    % --- Column 3: Downstream Network & Target Clinical System ---
+    \node[archi-app-interface, minimum width=3.8cm] (target_mllp_socket) at (11.5, 7.8) {%
+        \archibadge{App Interface}\archiname{Remote TCP Socket}\\\archidesc{mllp://host:2201--2205}%
+    };
+
+    \node[archi-business-actor, minimum width=3.8cm] (target_system) at (11.5, 4.8) {%
+        \archibadge{Business Actor}\archiname{Downstream Receiver}\\\archidesc{EMR / LMS / RIS-PACS}%
+    };
+
+    \node[archi-data-object, minimum width=3.8cm] (ack_payload) at (11.5, 1.8) {%
+        \archibadge{Data Object}\archiname{HL7 ACK Frame}\\\archidesc{AA, AE, AR, CA, CE, CR}%
+    };
+
+    % --- Column 4: Lifecycle, Persistence & Provenance Layer ---
+    \node[archi-app-component, minimum width=3.8cm] (lifecycle_mgr) at (16.5, 7.8) {%
+        \archibadge{App Component}\archiname{Lifecycle Manager}\\\archidesc{StateLifecycleManager}%
+    };
+
+    \node[archi-app-process, minimum width=3.8cm] (provenance_builder) at (16.5, 4.8) {%
+        \archibadge{App Process}\archiname{Provenance Builder}\\\archidesc{AuditEvent Resource}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (mneme_storage) at (16.5, 1.8) {%
+        \archibadge{App Component}\archiname{Mneme \& Mnemosyne}\\\archidesc{Audit \& Task Persistence}%
+    };
+
+    % --- Flow & Structural Relationships ---
+    % JMS Consumption & Request Preparation
+    \draw[archi-flow] (petasos_dest_queue) -- node[archi-lbl]{JMS Msg} (queue_consumer);
+    \draw[archi-triggering] (queue_consumer) -- (outbound_proc);
+    \draw[archi-triggering] (outbound_proc) -- node[archi-lbl]{toD send} (camel_producer);
+
+    % Outbound MLLP Dispatch over TCP
+    \draw[archi-flow] (camel_producer) -- (target_mllp_socket);
+    \draw[archi-flow] (target_mllp_socket) -- node[archi-lbl]{MLLP TCP} (target_system);
+
+    % Return ACK from Target System
+    \draw[archi-flow] (target_system) -- (ack_payload);
+    \draw[archi-flow] (ack_payload) -- (ack_proc);
+    \draw[archi-triggering] (camel_producer) -- (ack_proc);
+
+    % Lifecycle, Provenance & Persistence Updates
+    \draw[archi-triggering] (ack_proc) to[bend left=20] node[archi-lbl, above]{Response} (lifecycle_mgr);
+    \draw[archi-assignment] (lifecycle_mgr) -- (provenance_builder);
+    \draw[archi-flow] (provenance_builder) -- (mneme_storage);
+    \draw[archi-access] (lifecycle_mgr) -- (mneme_storage);
+
+    % Completion Event Dispatch
+    \draw[archi-flow] (lifecycle_mgr) to[bend right=30] node[archi-lbl, above]{Completion Event} (petasos_comp_queue);
+
+\end{tikzpicture}

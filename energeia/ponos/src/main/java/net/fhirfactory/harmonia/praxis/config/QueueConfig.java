@@ -26,6 +26,7 @@ public class QueueConfig {
     public static final String DEFAULT_QUEUE_NAME = "task.processing.queue";
     public static final String DEFAULT_EVENT_QUEUE_NAME = "task.event.queue";
     public static final String DEFAULT_EVENT_QUEUE_PREFIX = "task.event.queue";
+    public static final String DEFAULT_PROVIDER_REGISTRY_QUEUE = "harmonia.provider.registry.change.request";
     public static final String DEFAULT_GATEWAY_INSTANCE_ID = "mllp-gateway-default";
     public static final String DEFAULT_BROKER_HOST = "0.0.0.0";
     public static final int DEFAULT_BROKER_PORT = 61616;
@@ -53,6 +54,14 @@ public class QueueConfig {
             return env.trim();
         }
         return System.getProperty("task.event.queue.prefix", DEFAULT_EVENT_QUEUE_PREFIX);
+    }
+
+    public String getProviderRegistryChangeQueue() {
+        String env = System.getenv("PROVIDER_REGISTRY_CHANGE_QUEUE");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        return System.getProperty("provider.registry.change.queue", DEFAULT_PROVIDER_REGISTRY_QUEUE);
     }
 
     public String getDedicatedEventQueueName(String gatewayInstanceId) {

@@ -46,3 +46,6 @@ dependency-reduced-pom.xml
 # IDE/local files
 .idea/
 *.iml
+/iris/iris-administration/node_modules/
+/iris/iris-administration/dist/
+/iris/iris-administration/node/

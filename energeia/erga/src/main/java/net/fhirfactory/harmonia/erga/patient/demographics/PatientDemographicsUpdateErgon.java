@@ -23,9 +23,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
+import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -50,6 +55,7 @@ import java.util.regex.Pattern;
 public class PatientDemographicsUpdateErgon extends ErgonBase {
 
     private static final Logger log = LoggerFactory.getLogger(PatientDemographicsUpdateErgon.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(PatientDemographicsUpdateErgon.class);
 
     public static final String DEFAULT_ACTIVITY_ID = "patient-demographics-update";
     public static final String DEFAULT_ACTIVITY_NAME = "Patient Demographics Update Activity";
@@ -78,6 +84,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
     public PatientDemographicsUpdateErgon() {
         super(DEFAULT_ACTIVITY_ID, DEFAULT_ACTIVITY_NAME);
         setActivityDescription("Extracts ADT demographic information and updates the corresponding Patient resource within the HIE");
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(DEFAULT_ACTIVITY_ID));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
@@ -85,12 +92,14 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
     public PatientDemographicsUpdateErgon(CamelContext context) {
         super(context, DEFAULT_ACTIVITY_ID, DEFAULT_ACTIVITY_NAME);
         setActivityDescription("Extracts ADT demographic information and updates the corresponding Patient resource within the HIE");
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(DEFAULT_ACTIVITY_ID));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
 
     public PatientDemographicsUpdateErgon(String activityId, String activityName) {
         super(activityId, activityName);
+        setSecurityDefinition(ErgonSecurityDefinition.forDemographicsUpdate(activityId));
         this.fhirContext = FhirContext.forR5();
         this.objectMapper = new ObjectMapper();
     }
@@ -185,6 +194,19 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
                 }
             } else if (body instanceof Patient) {
                 patient = (Patient) body;
+            } else if (body instanceof ErgonEvent) {
+                ErgonEvent event = (ErgonEvent) body;
+                if (StringUtils.isNotBlank(event.getTaskId())) {
+                    task = getTaskCacheService().getTask(event.getTaskId()).orElse(null);
+                    if (task != null && task.hasContained()) {
+                        for (Resource res : task.getContained()) {
+                            if (res instanceof Patient) {
+                                patient = (Patient) res;
+                                break;
+                            }
+                        }
+                    }
+                }
             } else if (StringUtils.isNotBlank(rawPayload)) {
                 String trimmed = rawPayload.trim();
                 if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
@@ -227,6 +249,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
 
         // Set last updated timestamp
         patient.getMeta().setLastUpdated(new Date());
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
 
         // Extract metadata for headers
         String patientId = cleanPatientId(patient.getIdPart());
@@ -288,6 +311,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
         output.setValue(new Reference("Patient/" + patient.getIdPart()).setDisplay(fullName));
 
         task.setLastModified(new Date());
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
 
         // Set updated Task resource on exchange body for TaskProcessingActivity egress
         exchange.getMessage().setBody(task);
@@ -314,7 +338,8 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
         exchange.getMessage().setHeader(HEADER_PATIENT_UPDATED, Boolean.TRUE);
         exchange.getMessage().setHeader(HEADER_PATIENT_DEMOGRAPHICS_UPDATED, Boolean.TRUE);
 
-        log.info("Patient demographics updated on exchange: ID={}, MRN={}, Name={}, Gender={}, DOB={}, MaritalStatus={}",
+        log.info("Patient demographics updated on exchange: patientId={}", patientId);
+        phiLog.debug("Patient demographics updated on exchange: ID={}, MRN={}, Name={}, Gender={}, DOB={}, MaritalStatus={}",
                 patientId, mrn, fullName, gender, dob, maritalStatus);
     }
 
@@ -1186,6 +1211,7 @@ public class PatientDemographicsUpdateErgon extends ErgonBase {
         name.setText("Patient Unknown");
 
         patient.setGender(Enumerations.AdministrativeGender.UNKNOWN);
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         return patient;
     }
 

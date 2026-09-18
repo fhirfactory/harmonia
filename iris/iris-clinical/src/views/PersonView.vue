@@ -19,6 +19,7 @@
 import { ref, onMounted } from 'vue';
 import { usePersonStore } from '../stores/personStore';
 import type { Person, RelatedPerson } from '../models/fhir';
+import SecurityBadge from '../components/SecurityBadge.vue';
 import { Plus, Search, Trash2, Eye, User, UsersRound, X } from 'lucide-vue-next';
 
 const store = usePersonStore();
@@ -166,12 +167,13 @@ const viewDetails = (item: any) => {
             <th>Gender</th>
             <th>Identifier / MRN</th>
             <th>Birth Date</th>
+            <th>Confidentiality</th>
             <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="store.persons.length === 0">
-            <td colspan="6" class="text-center text-slate-500 py-6">No Persons found. Click Register Person above to add.</td>
+            <td colspan="7" class="text-center text-slate-500 py-6">No Persons found. Click Register Person above to add.</td>
           </tr>
           <tr v-for="person in store.persons" :key="person.id">
             <td class="font-mono text-xs text-sky-400 font-semibold">{{ person.id }}</td>
@@ -187,6 +189,9 @@ const viewDetails = (item: any) => {
               {{ person.identifier?.[0]?.value || '-' }}
             </td>
             <td>{{ person.birthDate || '-' }}</td>
+            <td>
+              <SecurityBadge :meta="person.meta" />
+            </td>
             <td class="text-right space-x-2">
               <button @click="viewDetails(person)" class="btn btn-secondary py-1 px-2 text-xs" title="View FHIR JSON">
                 <Eye :size="14" />
@@ -209,12 +214,13 @@ const viewDetails = (item: any) => {
             <th>Full Name</th>
             <th>Relationship</th>
             <th>Identifier</th>
+            <th>Confidentiality</th>
             <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="store.relatedPersons.length === 0">
-            <td colspan="5" class="text-center text-slate-500 py-6">No RelatedPersons found. Click Register RelatedPerson above to add.</td>
+            <td colspan="6" class="text-center text-slate-500 py-6">No RelatedPersons found. Click Register RelatedPerson above to add.</td>
           </tr>
           <tr v-for="rp in store.relatedPersons" :key="rp.id">
             <td class="font-mono text-xs text-sky-400 font-semibold">{{ rp.id }}</td>
@@ -228,6 +234,9 @@ const viewDetails = (item: any) => {
             </td>
             <td class="font-mono text-xs text-slate-300">
               {{ rp.identifier?.[0]?.value || '-' }}
+            </td>
+            <td>
+              <SecurityBadge :meta="rp.meta" />
             </td>
             <td class="text-right space-x-2">
               <button @click="viewDetails(rp)" class="btn btn-secondary py-1 px-2 text-xs" title="View FHIR JSON">
@@ -333,9 +342,12 @@ const viewDetails = (item: any) => {
     <div v-if="showDetailModal" class="modal-overlay" @click.self="showDetailModal = false">
       <div class="modal-content max-w-2xl">
         <div class="flex items-center justify-between pb-3 border-b border-[#27344d] mb-4">
-          <h3 class="text-lg font-bold text-white font-mono">
-            {{ selectedResource?.resourceType }}/{{ selectedResource?.id }}
-          </h3>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-bold text-white font-mono">
+              {{ selectedResource?.resourceType }}/{{ selectedResource?.id }}
+            </h3>
+            <SecurityBadge v-if="selectedResource" :meta="selectedResource.meta" />
+          </div>
           <button @click="showDetailModal = false" class="text-slate-400 hover:text-white">
             <X :size="20" />
           </button>

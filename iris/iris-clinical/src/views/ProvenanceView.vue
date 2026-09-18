@@ -20,6 +20,7 @@ import { ref, reactive, computed, onMounted } from 'vue';
 import { useSecurityStore } from '../stores/securityStore';
 import { fhirApi } from '../api/fhirClient';
 import type { Provenance, Reference } from '../models/fhir';
+import SecurityBadge from '../components/SecurityBadge.vue';
 import { 
   Plus, Search, Trash2, Eye, GitBranch, X, 
   ChevronRight, ChevronDown, RotateCw, Layers,
@@ -432,12 +433,13 @@ const viewLinkedResourceJson = (item: LinkedResourceItem) => {
             <th>Activity</th>
             <th>Agent / Actor</th>
             <th>Recorded Date</th>
+            <th>Confidentiality</th>
             <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="store.provenances.length === 0">
-            <td colspan="8" class="text-center text-slate-500 py-6">No Provenance records found. Click Record Provenance above.</td>
+            <td colspan="9" class="text-center text-slate-500 py-6">No Provenance records found. Click Record Provenance above.</td>
           </tr>
           <template v-for="prov in store.provenances" :key="prov.id">
             <!-- Parent Provenance Row -->
@@ -504,6 +506,11 @@ const viewLinkedResourceJson = (item: LinkedResourceItem) => {
               <!-- Recorded Date -->
               <td class="text-slate-400 text-xs">{{ prov.recorded || '-' }}</td>
 
+              <!-- Confidentiality Security Tag -->
+              <td>
+                <SecurityBadge :meta="prov.meta" />
+              </td>
+
               <!-- Actions -->
               <td class="text-right space-x-2" @click.stop>
                 <button @click="toggleExpand(prov)" class="btn btn-secondary py-1 px-2 text-xs" :title="isExpanded(prov.id) ? 'Hide sublist' : 'Show sublist'">
@@ -521,7 +528,7 @@ const viewLinkedResourceJson = (item: LinkedResourceItem) => {
 
             <!-- Expanded Sublist Row: Actual Other Resources -->
             <tr v-if="isExpanded(prov.id)" class="bg-[#0c1322] border-b border-[#27344d]">
-              <td colspan="8" class="p-0">
+              <td colspan="9" class="p-0">
                 <div class="px-6 py-4 bg-[#0d1424] border-l-4 border-orange-500 rounded-r shadow-inner">
                   <!-- Sublist Header -->
                   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-[#1e293b]">
@@ -795,6 +802,7 @@ const viewLinkedResourceJson = (item: LinkedResourceItem) => {
             <h3 class="text-lg font-bold text-white font-mono">
               {{ selectedResource?.resourceType || 'Resource' }}/{{ selectedResource?.id || selectedResource?.reference || 'Details' }}
             </h3>
+            <SecurityBadge v-if="selectedResource && selectedResource.meta" :meta="selectedResource.meta" />
           </div>
           <button @click="showDetailModal = false" class="text-slate-400 hover:text-white">
             <X :size="20" />

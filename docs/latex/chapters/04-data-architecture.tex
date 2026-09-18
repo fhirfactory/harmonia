@@ -48,6 +48,116 @@ public class PragmaCheckpoint implements Serializable {
 }
 \end{lstlisting}
 
+\subsection{3. \texttt{ProviderRegistryChangePragma} (Directory Change Wrapper)}
+Wraps and manages asynchronous change requests submitted via FHIR Provider Registry \texttt{POST}/\texttt{PUT} endpoints:
+\begin{lstlisting}[language=Java, caption={ProviderRegistryChangePragma Model Definition}]
+public class ProviderRegistryChangePragma implements Serializable {
+    private final Pragma pragma;
+
+    public String getPragmaId();
+    public String getCorrelationId();
+    public String getOperation();           // CREATE or UPDATE
+    public String getResourceType();        // Practitioner, Organization, etc.
+    public String getResourceId();          // Target FHIR logical ID
+    public String getRequester();           // Submitting user / principal
+    public String getSourceSystem();        // Source system identifier
+    public String getIfMatch();             // Expected ETag / version header
+    public String getValidationOutcome();   // Validation status / diagnostics
+    public String getResultingResourceVersion();
+    public Resource getRequestedResource(); // Parsed FHIR R5 resource payload
+}
+\end{lstlisting}
+
+\subsection{4. Canonical Provider Registry Validation Codes}
+Harmonia standardizes error diagnostic reporting using canonical issue codes embedded within FHIR \texttt{OperationOutcome} responses:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Error Code} & \textbf{Issue Category} & \textbf{Architectural Description \& Diagnostic Condition} \\
+\midrule
+\texttt{PR-VAL-001} & Structural Error & Malformed FHIR JSON, unparseable attributes, or schema violation. \\
+\texttt{PR-VAL-002} & Missing Field & Required mandatory directory fields missing (e.g. Practitioner name). \\
+\texttt{PR-VAL-003} & Duplicate Identifier & Duplicate deterministic provider identifier (HPI-I, HPI-O, NPI). \\
+\texttt{PR-VAL-004} & Reference Not Found & Referenced target resource does not exist in Mnemosyne storage. \\
+\texttt{PR-VAL-005} & Reference Inactive & Referenced target resource is marked inactive or soft-deleted. \\
+\texttt{PR-VAL-006} & Concurrency Conflict & Stale update rejected due to \texttt{If-Match} / \texttt{ETag} version mismatch. \\
+\texttt{PR-VAL-007} & Invalid Endpoint & Malformed technical endpoint URL, invalid payload type, or status. \\
+\texttt{PR-VAL-008} & Invalid Group & Invalid group membership type or unresolved member references. \\
+\texttt{PR-VAL-009} & Unsupported Resource & Submitted resource type is not supported by Provider Registry. \\
+\texttt{PR-VAL-010} & Business Rule Failure & Custom business validation failure or governance policy violation. \\
+\bottomrule
+\end{tabularx}
+\caption{Canonical Provider Registry Validation and Error Diagnostic Codes}
+\label{tab:provider_registry_validation_codes}
+\end{table}
+
+\section{Canonical Outbound Models (\texttt{pylai-mllp-base})}
+
+The Pylai gateway tier standardizes outbound MLLP interactions using canonical data structures:
+
+\subsection{1. \texttt{OutboundMllpRequest}}
+Encapsulates an outbound MLLP dispatch payload with destination routing and clinical metadata:
+\begin{lstlisting}[language=Java, caption={OutboundMllpRequest Model Definition}]
+public class OutboundMllpRequest implements Serializable {
+    private String requestId;          // Unique dispatch UUID
+    private String messageControlId;   // HL7 MSH-10 control identifier
+    private String destinationId;      // Target endpoint identifier (e.g. HIS_NORTH)
+    private String rawMessage;         // Raw HL7 v2 pipe-delimited message string
+    private String targetQueue;        // Destination Petasos queue
+    private Topic topic;               // Resolved clinical topic metadata
+    private Date timestamp;            // Enqueue timestamp
+    private int priority = 4;          // JMS priority
+    private String taskId;             // Associated Pragma / Task resource ID
+    private String facility;           // Clinical facility code
+    private String correlationId;      // End-to-end trace identifier
+}
+\end{lstlisting}
+
+\subsection{2. \texttt{OutboundMllpResponse}}
+Encapsulates the synchronous result and acknowledgment returned from the external clinical endpoint:
+\begin{lstlisting}[language=Java, caption={OutboundMllpResponse Model Definition}]
+public class OutboundMllpResponse implements Serializable {
+    private String requestId;
+    private String messageControlId;
+    private String destinationId;
+    private String ackCode;            // AA, AE, AR, CA, CE, CR
+    private String ackText;            // Error description or text
+    private String rawAckMessage;      // Raw HL7 ACK wire frame
+    private boolean successful;        // True if AA or CA
+    private long durationMs;           // Round-trip transmission latency
+    private Date dispatchedAt;
+    private Date acknowledgedAt;
+    private String errorMessage;
+    private String taskId;
+    private String communicationId;    // Persisted FHIR Communication ID
+    private String provenanceId;       // Persisted FHIR Provenance ID
+}
+\end{lstlisting}
+
+\subsection{3. \texttt{MllpDestinationConfig}}
+Defines connectivity and timeout parameters for remote clinical MLLP servers:
+\begin{lstlisting}[language=Java, caption={MllpDestinationConfig Model Definition}]
+public class MllpDestinationConfig implements Serializable {
+    private String destinationId;      // Unique target key (e.g. LIS_MAIN)
+    private String name;               // Human-readable destination label
+    private String host;               // Target IP or hostname
+    private int port;                  // Target TCP port
+    private int connectTimeoutMs = 5000;
+    private int readTimeoutMs = 10000;
+    private String charset = "UTF-8";
+    private boolean keepAlive = true;
+    private boolean autoAck = true;
+    private String queueName;          // Dedicated Petasos queue override
+    private String queuePrefix = "petasos.queue.mllp.outbound";
+    private boolean sslEnabled = false;
+    private boolean enabled = true;
+    private String facility;
+}
+\end{lstlisting}
+
 \section{The 5-Phase Checkpoint Lifecycle State Flow}
 
 \begin{figure}[htbp]
@@ -99,7 +209,7 @@ All asynchronous transport operations across ActiveMQ Artemis use the standard i
 
 \section{Supported FHIR R5 Resource Schemas}
 
-Harmonia implements full lifecycle CRUD and search capabilities for 14 core FHIR R5 resources:
+Harmonia implements full lifecycle CRUD and search capabilities for 15 core FHIR R5 resources:
 
 \begin{table}[htbp]
 \centering
@@ -116,16 +226,46 @@ Harmonia implements full lifecycle CRUD and search capabilities for 14 core FHIR
 \texttt{Organization} & Facility / Authority & Hospitals, clinics, labs, and health network authorities. \\
 \texttt{Location} & Physical Facility & Wards, rooms, clinics, and physical service delivery sites. \\
 \texttt{HealthcareService} & Clinical Offering & Medical specialties and care services offered at locations. \\
-\texttt{Group} & Cohort Entity & Patient cohorts and specialized care teams. \\
-\texttt{Task} & Workflow Entity & Direct bidirectional projection of \texttt{Pragma} state instances. \\
-\texttt{Communication} & Exchange Audit & Record of incoming MLLP messages and raw wire payloads. \\
+\texttt{Endpoint} & Electronic Service & Secure messaging, FHIR REST, and MLLP communication endpoints. \\
+\texttt{Group} & Cohort Entity & Patient cohorts, provider directories, and specialized care teams. \\
+\texttt{Task} & Workflow Entity & Direct bidirectional projection of \texttt{Pragma} state instances and outbound transmission execution tracking. \\
+\texttt{Communication} & Exchange Audit & Record of incoming and outgoing MLLP message transmissions, wire payloads, and ACK/NACK responses. \\
 \texttt{DocumentReference} & Clinical Document & Metadata indexing for external clinical notes, CDA, and PDFs. \\
-\texttt{Provenance} & Lineage Tracking & Source attribution, creator identities, and transformation history. \\
+\texttt{Provenance} & Lineage Tracking & Source and destination attribution, creator identities, and transformation/egress delivery history. \\
 \texttt{AuditEvent} & Security / Access Audit & Detailed audit records capturing all read, write, and failover events. \\
 \bottomrule
 \end{tabularx}
 \caption{Harmonia Supported FHIR R5 Resource Schema Catalog}
 \label{tab:fhir_resources}
 \end{table}
+
+\section{Relational Persistence Schema (\texttt{Mnemosyne-Clinical})}
+\label{sec:relational_persistence_schema}
+
+Authoritative clinical and directory resources are persisted in PostgreSQL using a high-performance \textbf{Hybrid Relational-Document Pattern} in table \texttt{hie\_fhir\_resources}:
+
+\begin{lstlisting}[language=SQL, caption={PostgreSQL Relational Schema for hie\_fhir\_resources}]
+CREATE TABLE hie_fhir_resources (
+    id            BIGSERIAL PRIMARY KEY,
+    resource_type VARCHAR(64) NOT NULL,
+    fhir_id       VARCHAR(128) NOT NULL,
+    version_id    BIGINT NOT NULL DEFAULT 1,
+    resource_json TEXT NOT NULL,
+    is_deleted    BOOLEAN NOT NULL DEFAULT FALSE,
+    last_updated  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
+    CONSTRAINT uk_resource_type_fhir_id UNIQUE (resource_type, fhir_id)
+);
+
+CREATE INDEX idx_resource_type_fhir_id ON hie_fhir_resources(resource_type, fhir_id);
+CREATE INDEX idx_resource_type_deleted ON hie_fhir_resources(resource_type, is_deleted);
+\end{lstlisting}
+
+This hybrid storage strategy guarantees:
+\begin{itemize}
+    \item \textbf{Lossless FHIR R5 Fidelity}: The complete resource structure, including complex extensions and contained resources, is stored in \texttt{resource\_json}.
+    \item \textbf{High-Speed Indexed Search}: Hot lookup fields (\texttt{resource\_type}, \texttt{fhir\_id}, \texttt{is\_deleted}) are indexed at the relational engine level.
+    \item \textbf{Optimistic Concurrency \& Versioning}: Each update atomically increments \texttt{version\_id} and stamps \texttt{last\_updated}, supporting \texttt{If-Match} / \texttt{ETag} precondition validation.
+    \item \textbf{Audit-Preserving Soft Delete}: Soft-deleted resources maintain their historical records with \texttt{is\_deleted = TRUE}.
+\end{itemize}
 
 \newpage

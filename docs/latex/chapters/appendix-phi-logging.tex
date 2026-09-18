@@ -1,0 +1,411 @@
+%% =============================================================================
+%% chapters/appendix-phi-logging.tex
+%% Appendix F: PHI-Aware Logging Architecture & Developer Implementation Guide
+%% =============================================================================
+
+\chapter{PHI-Aware Logging Architecture \& Developer Implementation Guide}
+\label{app:phi_logging}
+
+\section{Overview \& Regulatory Objectives}
+\label{sec:phi_logging_overview}
+
+The Harmonia Health Information Exchange (HIE) platform processes high-velocity, distributed healthcare interactions encompassing HL7 v2.x clinical messages, HL7 FHIR R5 resources, and proprietary electronic health record (EHR) interchanges across heterogeneous clinical boundaries. In modern clinical environments, operational diagnostics must coexist with strict privacy, confidentiality, and data protection mandates.
+
+To fulfill regulatory requirements across multiple jurisdictions---including the United States Health Insurance Portability and Accountability Act (HIPAA Security Rule \S164.312(b)), the European Union General Data Protection Regulation (GDPR Article 32), and the Australian Privacy Principles (APP 11)---Harmonia establishes a centralized, architectural control mechanism for logging Protected Health Information (PHI).
+
+The core architectural invariant of Harmonia logging is:
+\begin{principlebox}{Governed PHI Logging}
+Operational log streams (\texttt{INFO}, \texttt{WARN}, \texttt{ERROR}) must remain strictly devoid of Protected Health Information (PHI), personally identifiable demographics, and security credentials under all circumstances. Clinical and diagnostic payload data is permitted exclusively at \texttt{DEBUG} and \texttt{TRACE} severity levels, conditionally governed by an active platform security gate and routed to isolated, encrypted diagnostic storage.
+\end{principlebox}
+
+\subsection{The Logging Policy Matrix}
+
+Table~\ref{tab:phi_logging_policy_matrix} specifies the governance rules across all standard logging severity levels.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Log Level} & \textbf{PHI Policy} & \textbf{Architectural Description \& Governance Rule} \\
+\midrule
+\texttt{TRACE} & \textbf{Conditional} & Deep wire and protocol traces (e.g., raw HL7 v2 ER7 segments, low-level socket payloads). Permitted only when the global PHI gate is enabled \textbf{AND} logger level is set to \texttt{TRACE}. \\
+\addlinespace
+\texttt{DEBUG} & \textbf{Conditional} & Granular clinical diagnostics (e.g., extracted patient demographics, unmasked FHIR resource JSON/XML structures). Permitted only when the global PHI gate is enabled \textbf{AND} logger level is set to \texttt{DEBUG}. \\
+\addlinespace
+\texttt{INFO}  & \textbf{Prohibited}  & High-level lifecycle milestones, task state transitions, routing decisions, and throughput metrics. Strictly prohibited from containing PHI. \\
+\addlinespace
+\texttt{WARN}  & \textbf{Prohibited}  & Recoverable runtime anomalies, circuit breaker activations, and transient network retry events. Strictly prohibited from containing PHI. \\
+\addlinespace
+\texttt{ERROR} & \textbf{Prohibited}  & Unhandled system faults, parsing exceptions, and infrastructure failures. Must never contain clinical payloads, patient identifiers, or unsanitized stack traces. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Platform Logging Policy Matrix}
+\label{tab:phi_logging_policy_matrix}
+\end{table}
+
+\begin{archinote}
+\textbf{Definition of Conditional PHI Emission}: Diagnostic clinical logs are evaluated and output \textbf{only} when both of the following prerequisites are simultaneously met:
+\begin{enumerate}
+    \item Global configuration flag \texttt{harmonia.logging.phi-enabled=true} (or environment variable \texttt{HARMONIA\_LOGGING\_PHI\_ENABLED=true}) is set.
+    \item The underlying SLF4J / Logback logger category level is explicitly configured to \texttt{DEBUG} or \texttt{TRACE}.
+\end{enumerate}
+If either prerequisite is unsatisfied, PHI log statements are treated as strict no-ops without evaluating argument parameters or executing lambda suppliers.
+\end{archinote}
+
+% =============================================================================
+% SECTION F.2: ARCHITECTURAL MODEL & SECURITY GATES
+% =============================================================================
+\section{Architectural Model \& Security Gates}
+\label{sec:phi_arch_model}
+
+Harmonia implements a decoupled, defence-in-depth logging architecture that enforces compile-time safety, runtime gate evaluation, and physical log destination isolation. Figure~\ref{fig:phi_logging_architecture_appendix} illustrates the end-to-end processing topology from component code down to physical Logback appenders.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-phi-logging-architecture.tex}
+    \end{adjustbox}
+    \caption{ArchiMate 3.2 View: PHI-Aware Logging Security Architecture and Appender Isolation}
+    \label{fig:phi_logging_architecture_appendix}
+\end{figure}
+
+\subsection{Dual-Gate Security Evaluation Flow}
+
+The security evaluation pipeline operates as follows:
+\begin{enumerate}
+    \item \textbf{Dual-Logger Invocation}: Application components instantiate standard SLF4J \texttt{Logger} for operational events and Harmonia \texttt{PhiLogger} for diagnostic data.
+    \item \textbf{Gate 1 (Global Platform Switch)}: \texttt{PhiLogger} intercepts calls and consults \texttt{PhiLoggingConfig.isPhiLoggingEnabled()}. If disabled (default \texttt{false}), the method returns immediately, dropping all evaluation.
+    \item \textbf{Gate 2 (Active Logger Level)}: If Gate 1 passes, the underlying SLF4J delegate verifies whether \texttt{isDebugEnabled()} or \texttt{isTraceEnabled()} is active for the target namespace. If inactive, execution terminates.
+    \item \textbf{Dedicated Namespace Routing}: When both gates pass, log events are published to the dedicated SLF4J namespace \texttt{org.harmonia.phi} with an attached SLF4J Marker (\texttt{Marker: PHI}).
+    \item \textbf{Logback Non-Additivity}: The Logback configuration declares \texttt{additivity="false"} on the \texttt{org.harmonia.phi} category, ensuring clinical log entries are directed exclusively to the \texttt{PHI\_DIAGNOSTIC} appender and never leak into operational consoles or system aggregators.
+\end{enumerate}
+
+% =============================================================================
+% SECTION F.3: CONFIGURATION & ENVIRONMENT VARIABLES
+% =============================================================================
+\section{Configuration \& Environment Variables}
+\label{sec:phi_config}
+
+The PHI logging framework is centrally configured through standard system properties and environment variables. Table~\ref{tab:phi_config_properties} summarizes the configuration keys.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l l X}
+\toprule
+\textbf{System Property} & \textbf{Environment Variable} & \textbf{Default} & \textbf{Description} \\
+\midrule
+\texttt{harmonia.logging.phi-enabled} & \texttt{HARMONIA\_LOGGING\_PHI\_ENABLED} & \texttt{false} & Global security gate enabling evaluation and emission of PHI diagnostic logs. \\
+\bottomrule
+\end{tabularx}
+\caption{PHI Logging Configuration Properties}
+\label{tab:phi_config_properties}
+\end{table}
+
+\subsection{Startup Warning Banner}
+
+When \texttt{harmonia.logging.phi-enabled=true} is detected at runtime initialization, \texttt{PhiLoggingConfig} emits a prominent, single-instance warning banner to standard operational logs (\texttt{INFO} level) to alert system operators:
+
+\begin{lstlisting}[language=TeX, numbers=none, caption={Operational Startup Warning Banner for PHI Logging}]
+================================================================================
+PHI diagnostic logging is ENABLED.
+DEBUG/TRACE diagnostic logs may contain protected health information.
+Ensure this setting is NOT active in untrusted or production environments without
+appropriate PHI security controls and restricted destination appenders.
+================================================================================
+\end{lstlisting}
+
+% =============================================================================
+% SECTION F.4: DEVELOPER GUIDE & API USAGE BLUEPRINT
+% =============================================================================
+\section{Developer Guide \& API Usage Blueprint}
+\label{sec:phi_developer_guide}
+
+This section provides actionable blueprints for software engineers developing components across Harmonia subsystems.
+
+\subsection{The Dual-Logger Pattern}
+
+Every service, camel processor, ergon activity, or repository class handling clinical data must declare two distinct logger instances:
+\begin{enumerate}
+    \item \textbf{Standard SLF4J Logger} (\texttt{org.slf4j.Logger}): Bound to the class name; used strictly for operational events (\texttt{info}, \texttt{warn}, \texttt{error}).
+    \item \textbf{Harmonia PhiLogger} (\texttt{net.fhirfactory.harmonia.logging.PhiLogger}): Obtained via \texttt{PhiLoggerFactory.getLogger(...)}; used exclusively for clinical diagnostics (\texttt{debug}, \texttt{trace}).
+\end{enumerate}
+
+\begin{lstlisting}[language=Java, caption={Dual-Logger Instantiation and Usage Pattern}]
+package net.fhirfactory.harmonia.pylai.ingress;
+
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
+import org.hl7.fhir.r5.model.Patient;
+import org.hl7.fhir.r5.model.Task;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class PatientIngressProcessor {
+
+    // 1. Standard SLF4J logger for operational, non-PHI logging
+    private static final Logger log = LoggerFactory.getLogger(PatientIngressProcessor.class);
+
+    // 2. Harmonia PhiLogger for conditionally permitted PHI diagnostics
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(PatientIngressProcessor.class);
+
+    public void processIngress(Task task, Patient patient, String rawHl7) {
+        // Operational log: Non-PHI metadata, identifiers, status enums only
+        log.info("Inbound patient message accepted: taskId={}, status={}",
+                task.getIdPart(), task.getStatus());
+
+        // PHI Diagnostic log: Names, MRNs, DOBs, clinical demographics
+        phiLog.debug("Extracted patient demographics: id={}, name={}, mrn={}",
+                patient.getIdPart(),
+                patient.getNameFirstRep().getNameAsSingleString(),
+                patient.getIdentifierFirstRep().getValue());
+
+        // Low-level wire trace: Raw HL7 ER7 payload
+        phiLog.trace("Inbound raw HL7 ER7 wire payload: {}", rawHl7);
+    }
+}
+\end{lstlisting}
+
+\subsection{Compile-Time Safety and API Contract}
+
+The \texttt{PhiLogger} interface is deliberately designed without \texttt{info(...)}, \texttt{warn(...)}, or \texttt{error(...)} methods. Any developer attempt to log clinical information via \texttt{phiLog.info(...)} will fail at compile-time, preventing accidental leaking of PHI into operational streams.
+
+Table~\ref{tab:phi_logger_api_methods} details the method signatures provided by \texttt{PhiLogger}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X}
+\toprule
+\textbf{Method Signature} & \textbf{Usage \& Evaluation Semantics} \\
+\midrule
+\texttt{boolean isDebugEnabled()} & Returns \texttt{true} iff Gate 1 and Gate 2 (DEBUG) are both satisfied. \\
+\texttt{void debug(String msg)} & Emits a static debug message with originating class prefix. \\
+\texttt{void debug(String format, Object arg)} & Emits a parameterized debug message with single argument. \\
+\texttt{void debug(String format, Object arg1, Object arg2)} & Emits a parameterized debug message with two arguments. \\
+\texttt{void debug(String format, Object... args)} & Emits a parameterized debug message with variable arguments. \\
+\texttt{void debug(String msg, Throwable t)} & Emits a debug message along with exception throwable. \\
+\texttt{void debug(String format, Supplier<?>... suppliers)} & Lazily evaluates argument suppliers and emits debug message. \\
+\addlinespace
+\texttt{boolean isTraceEnabled()} & Returns \texttt{true} iff Gate 1 and Gate 2 (TRACE) are both satisfied. \\
+\texttt{void trace(String msg)} & Emits a static trace message with originating class prefix. \\
+\texttt{void trace(String format, Object arg)} & Emits a parameterized trace message with single argument. \\
+\texttt{void trace(String format, Object arg1, Object arg2)} & Emits a parameterized trace message with two arguments. \\
+\texttt{void trace(String format, Object... args)} & Emits a parameterized trace message with variable arguments. \\
+\texttt{void trace(String msg, Throwable t)} & Emits a trace message along with exception throwable. \\
+\texttt{void trace(String format, Supplier<?>... suppliers)} & Lazily evaluates argument suppliers and emits trace message. \\
+\bottomrule
+\end{tabularx}
+\caption{PhiLogger Interface API Contract}
+\label{tab:phi_logger_api_methods}
+\end{table}
+
+\subsection{Lazy Evaluation with Functional Suppliers}
+
+In high-throughput HIE pipelines, serializing complex FHIR Bundles or HL7 message models to JSON/XML strings creates substantial CPU overhead and garbage collection pressure. To achieve zero-cost execution when PHI logging is disabled, developers must use \texttt{Supplier<?>} functional lambdas:
+
+\begin{lstlisting}[language=Java, caption={Lazy Evaluation Using Functional Suppliers}]
+// Zero overhead when harmonia.logging.phi-enabled=false:
+// The lambda expression is NEVER invoked and JSON serialization is bypassed completely.
+phiLog.debug("Transformed clinical FHIR Bundle: {}", 
+    () -> fhirContext.newJsonParser().setPrettyPrinting().encodeResourceToString(bundle));
+
+phiLog.trace("Generated HL7 ACK segment: {}", 
+    () -> hl7Message.encode());
+\end{lstlisting}
+
+\subsection{Categorization: PHI vs Non-PHI Operational Metadata}
+
+Table~\ref{tab:phi_data_classification} provides concrete guidance distinguishing between operational metadata and protected clinical data.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{4.5cm} X X}
+\toprule
+\textbf{Category} & \textbf{Permitted in Operational Logs (\texttt{log})} & \textbf{Restricted to PHI Diagnostics (\texttt{phiLog})} \\
+\midrule
+\textbf{Identifiers} & System UUIDs, Correlation IDs, Pragma IDs, Task IDs, Message Control IDs (MSH-10) & Medical Record Numbers (MRN), Medicare Numbers, Social Security Numbers (SSN), Driver's License \\
+\addlinespace
+\textbf{Demographics} & Age band (e.g., \texttt{ADULT}, \texttt{PEDIATRIC}), Administrative gender enum & Full Patient Names, Given/Family Names, Street Address, Phone, Email, Exact Date of Birth (DOB) \\
+\addlinespace
+\textbf{Clinical Data} & Resource Type (e.g., \texttt{Observation}, \texttt{Condition}), LOINC code identifier & Diagnostic text, Lab values, Reference ranges, Doctor clinical notes, Diagnosis narratives \\
+\addlinespace
+\textbf{Payloads} & Message byte size, Segment count, Processing duration (ms) & Full ER7 HL7 string, Full FHIR JSON/XML resource payload \\
+\bottomrule
+\end{tabularx}
+\caption{Classification of Operational Metadata vs. Restricted PHI}
+\label{tab:phi_data_classification}
+\end{table}
+
+\subsection{Absolute Prohibition on Secrets and Credentials}
+
+\begin{archinote}
+\textbf{Zero-Trust Secrets Prohibition}: While PHI diagnostic logging conditionally permits protected clinical data for troubleshooting, \textbf{security secrets are strictly prohibited across all logging channels, levels, and appenders without exception}.
+\end{archinote}
+
+The following must \textbf{never} appear in any log:
+\begin{itemize}
+    \item Passwords, hashed passwords, and database connection strings.
+    \item OAuth2 Access Tokens, Refresh Tokens, and Bearer JSON Web Tokens (JWTs).
+    \item API Keys, Client Secrets, and HMAC signatures.
+    \item TLS/SSL private keys, Java Keystore passwords, and PKCS\#12 certificates.
+    \item ActiveMQ Artemis broker credentials and messaging tokens.
+\end{itemize}
+
+\subsection{Exception Handling \& Stack Trace Sanitization}
+
+Because unhandled exceptions and stack traces frequently surface in operational error aggregation dashboards, developers must ensure that exception messages do not embed clinical values or patient identifiers:
+
+\begin{lstlisting}[language=Java, caption={Exception Message Sanitization Pattern}]
+// INCORRECT: Clinical data in exception message propagates to operational logs
+throw new ValidationException("Patient " + patient.getName() + " has invalid Medicare number " + mrn);
+
+// CORRECT: Non-PHI error message with diagnostic logging prior to throw
+phiLog.debug("Validation failed for patient name={}, mrn={}", 
+        patient.getNameFirstRep().getNameAsSingleString(), mrn);
+throw new ValidationException("Demographic validation rule failed: ERR_VAL_042", "ERR_VAL_042");
+\end{lstlisting}
+
+\subsection{Mapped Diagnostic Context (MDC) Invariants}
+
+Mapped Diagnostic Context (MDC) keys are propagated across asynchronous thread boundaries and printed in standard log prefixes.
+\begin{itemize}
+    \item \textbf{Allowed Operational MDC Keys}: \texttt{correlationId}, \texttt{pragmaId}, \texttt{praxisId}, \texttt{ergonId}, \texttt{taskId}, \texttt{messageControlId}, \texttt{interfaceId}, \texttt{component}.
+    \item \textbf{Strictly Forbidden MDC Keys}: Any patient name, MRN, date of birth, clinical finding, or raw message payload.
+\end{itemize}
+
+% =============================================================================
+% SECTION F.5: SUBSYSTEM INTEGRATION PATTERNS
+% =============================================================================
+\section{Subsystem Integration Patterns}
+\label{sec:phi_subsystem_integration}
+
+\subsection{Gateway Tier: Pylai Ingress/Egress}
+In the \textbf{Pylai} gateway tier, inbound HL7 MLLP and FHIR HTTP streams are received. Non-PHI metadata (e.g., source IP, endpoint URI, message control ID) is logged via \texttt{log.info}, while raw wire frames and unparsed segments are dispatched to \texttt{phiLog.trace}.
+
+\subsection{Workflow Tier: Energeia \& Ergon Activities}
+In the \textbf{Energeia} processing tier, Ergon modules (\texttt{ErgonBase}) handle clinical data transformations and LOINC/SNOMED enrichment. Task state progressions and checkpoint records are logged via standard operational loggers, while clinical diffs and enriched FHIR structures are captured via \texttt{phiLog.debug}.
+
+\subsection{Persistence Tier: Hestia \& Mnemosyne}
+In the \textbf{Hestia / Mnemosyne} persistence tier, database transaction commits, table partition metrics, and cache hit rates use \texttt{log.info}. Deep SQL statements containing embedded clinical parameters are isolated to \texttt{phiLog.trace}.
+
+% =============================================================================
+% SECTION F.6: LOGBACK CONFIGURATION & APPENDER ISOLATION
+% =============================================================================
+\section{Logback Configuration \& Appender Isolation}
+\label{sec:phi_logback_config}
+
+To guarantee fail-safe security, Harmonia microservices configure Logback with dedicated diagnostic file appenders and explicit non-additivity.
+
+\begin{lstlisting}[language=XML, caption={Production Logback Configuration (logback.xml)}]
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <!-- 1. Operational Console Appender (Strictly Non-PHI) -->
+    <appender name="OPERATIONAL_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%X{correlationId}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 2. Dedicated PHI Diagnostic Appender (Restricted Encrypted Storage) -->
+    <appender name="PHI_DIAGNOSTIC" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/log/harmonia/phi-diagnostic.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/harmonia/phi-diagnostic-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <!-- Strict retention: max 7 days -->
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%marker] %logger{36} [%X{correlationId}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger: Routes all operational logs to console -->
+    <root level="INFO">
+        <appender-ref ref="OPERATIONAL_CONSOLE" />
+    </root>
+
+    <!-- PHI Logger Category: additivity="false" prevents leakage to Root/Operational Console -->
+    <logger name="org.harmonia.phi" level="DEBUG" additivity="false">
+        <appender-ref ref="PHI_DIAGNOSTIC" />
+    </logger>
+
+</configuration>
+\end{lstlisting}
+
+\subsection{Physical Storage \& Retention Invariants}
+\begin{enumerate}
+    \item \textbf{Disk Encryption}: Storage directories hosting \texttt{phi-diagnostic.log} must reside on AES-256 encrypted volumes.
+    \item \textbf{Strict Retention Limit}: PHI diagnostic logs must enforce a maximum retention window of 7 days (\texttt{<maxHistory>7</maxHistory>}).
+    \item \textbf{Access Control}: Access to diagnostic files is restricted strictly to authorized Privacy/Security Officers and senior support engineers via POSIX file permissions (\texttt{chmod 0600}).
+\end{enumerate}
+
+% =============================================================================
+% SECTION F.7: TESTING & VERIFICATION STRATEGIES
+% =============================================================================
+\section{Testing \& Verification Strategies}
+\label{sec:phi_testing}
+
+Unit and integration test suites can programmatically manipulate the PHI logging configuration using \texttt{PhiLoggingConfig} to verify conditional emission and suppression behaviors.
+
+\begin{lstlisting}[language=Java, caption={Unit Testing Pattern with PhiLoggingConfig}]
+package net.fhirfactory.harmonia.logging;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class PhiLoggingIntegrationTest {
+
+    private final PhiLogger phiLog = PhiLoggerFactory.getLogger(PhiLoggingIntegrationTest.class);
+
+    @BeforeEach
+    void setUp() {
+        PhiLoggingConfig.reset(); // Resets to system property defaults
+    }
+
+    @AfterEach
+    void tearDown() {
+        PhiLoggingConfig.reset();
+    }
+
+    @Test
+    @DisplayName("Should suppress lambda evaluation when PHI logging is disabled")
+    void testSupplierSuppressedWhenDisabled() {
+        PhiLoggingConfig.setPhiLoggingEnabled(false);
+        AtomicBoolean evaluated = new AtomicBoolean(false);
+
+        phiLog.debug("Diagnostic check: {}", () -> {
+            evaluated.set(true);
+            return "Sensitive Clinical Payload";
+        });
+
+        assertThat(evaluated).isFalse();
+    }
+
+    @Test
+    @DisplayName("Should execute lambda evaluation when PHI logging is enabled")
+    void testSupplierExecutedWhenEnabled() {
+        PhiLoggingConfig.setPhiLoggingEnabled(true);
+        AtomicBoolean evaluated = new AtomicBoolean(false);
+
+        phiLog.debug("Diagnostic check: {}", () -> {
+            evaluated.set(true);
+            return "Sensitive Clinical Payload";
+        });
+
+        assertThat(evaluated).isTrue();
+    }
+}
+\end{lstlisting}
+
+\endinput

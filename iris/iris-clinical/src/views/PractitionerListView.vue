@@ -19,6 +19,7 @@
 import { ref, onMounted } from 'vue';
 import { usePractitionerStore } from '../stores/practitionerStore';
 import type { Practitioner, PractitionerRole } from '../models/fhir';
+import SecurityBadge from '../components/SecurityBadge.vue';
 import { Plus, Search, Trash2, Eye, UserCheck, Stethoscope, X } from 'lucide-vue-next';
 
 const store = usePractitionerStore();
@@ -156,12 +157,13 @@ const viewDetails = (item: any) => {
             <th>Gender</th>
             <th>NPI Identifier</th>
             <th>Qualifications</th>
+            <th>Confidentiality</th>
             <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="store.practitioners.length === 0">
-            <td colspan="6" class="text-center text-slate-500 py-6">No Practitioners registered. Click Add Practitioner above.</td>
+            <td colspan="7" class="text-center text-slate-500 py-6">No Practitioners registered. Click Add Practitioner above.</td>
           </tr>
           <tr v-for="practitioner in store.practitioners" :key="practitioner.id">
             <td class="font-mono text-xs text-emerald-400 font-semibold">{{ practitioner.id }}</td>
@@ -174,6 +176,9 @@ const viewDetails = (item: any) => {
             <td class="font-mono text-xs text-slate-300">{{ practitioner.identifier?.[0]?.value || '-' }}</td>
             <td>
               <span class="badge badge-green">{{ practitioner.qualification?.[0]?.code?.text || 'MD' }}</span>
+            </td>
+            <td>
+              <SecurityBadge :meta="practitioner.meta" />
             </td>
             <td class="text-right space-x-2">
               <button @click="viewDetails(practitioner)" class="btn btn-secondary py-1 px-2 text-xs" title="View FHIR JSON">
@@ -197,12 +202,13 @@ const viewDetails = (item: any) => {
             <th>Specialty</th>
             <th>Status</th>
             <th>Role Identifier</th>
+            <th>Confidentiality</th>
             <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="store.practitionerRoles.length === 0">
-            <td colspan="5" class="text-center text-slate-500 py-6">No PractitionerRoles assigned. Click Add Practitioner Role above.</td>
+            <td colspan="6" class="text-center text-slate-500 py-6">No PractitionerRoles assigned. Click Add Practitioner Role above.</td>
           </tr>
           <tr v-for="role in store.practitionerRoles" :key="role.id">
             <td class="font-mono text-xs text-teal-400 font-semibold">{{ role.id }}</td>
@@ -213,6 +219,9 @@ const viewDetails = (item: any) => {
               </span>
             </td>
             <td class="font-mono text-xs text-slate-300">{{ role.identifier?.[0]?.value || '-' }}</td>
+            <td>
+              <SecurityBadge :meta="role.meta" />
+            </td>
             <td class="text-right space-x-2">
               <button @click="viewDetails(role)" class="btn btn-secondary py-1 px-2 text-xs" title="View FHIR JSON">
                 <Eye :size="14" />
@@ -296,9 +305,12 @@ const viewDetails = (item: any) => {
     <div v-if="showDetailModal" class="modal-overlay" @click.self="showDetailModal = false">
       <div class="modal-content max-w-2xl">
         <div class="flex items-center justify-between pb-3 border-b border-[#27344d] mb-4">
-          <h3 class="text-lg font-bold text-white font-mono">
-            {{ selectedResource?.resourceType }}/{{ selectedResource?.id }}
-          </h3>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-bold text-white font-mono">
+              {{ selectedResource?.resourceType }}/{{ selectedResource?.id }}
+            </h3>
+            <SecurityBadge v-if="selectedResource" :meta="selectedResource.meta" />
+          </div>
           <button @click="showDetailModal = false" class="text-slate-400 hover:text-white">
             <X :size="20" />
           </button>

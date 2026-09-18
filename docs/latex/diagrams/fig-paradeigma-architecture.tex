@@ -1,0 +1,92 @@
+%% =============================================================================
+%% diagrams/fig-paradeigma-architecture.tex
+%% ArchiMate 3.2 Paradeigma Clinical Simulation & Testbed Architecture View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 2.0) rectangle (4.2, 10.4);
+    \node[archi-plate-title] at (-0.6, 10.2) {Upstream Simulators};
+
+    \draw[archi-plate-solid] (4.8, 2.0) rectangle (16.2, 10.4);
+    \node[archi-plate-title] at (5.0, 10.2) {Harmonia HIE Core Platform Under Test};
+
+    \draw[archi-plate-bg] (16.8, 2.0) rectangle (21.8, 10.4);
+    \node[archi-plate-title] at (17.0, 10.2) {Downstream Receivers};
+
+    % --- Left Column: Paradeigma Upstream Simulators ---
+    \node[archi-app-component, minimum width=3.8cm] (scenario_engine) at (1.7, 8.8) {%
+        \archibadge{App Component}\archiname{Scenario Engine}\\\archidesc{paradeigma-scenarios / :8090}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (pas_sim) at (1.7, 6.4) {%
+        \archibadge{App Component}\archiname{PAS Simulator}\\\archidesc{paradeigma-pas / :8091}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (emr_sim) at (1.7, 4.0) {%
+        \archibadge{App Component}\archiname{EMR Simulator}\\\archidesc{paradeigma-emr / :8092}%
+    };
+
+    % --- Center-Left Column: Harmonia Ingress Gateway ---
+    \node[archi-app-interface, minimum width=3.2cm] (pylai_in) at (6.5, 5.25) {%
+        \archibadge{App Interface}\archiname{Pylai Inbound MLLP}\\\archidesc{Ports 2101--2104}%
+    };
+
+    % --- Center Column: Harmonia Core Messaging & Workflow ---
+    \node[archi-app-component, minimum width=3.2cm] (petasos_bus) at (10.5, 6.6) {%
+        \archibadge{App Component}\archiname{Petasos Message Bus}\\\archidesc{Artemis Journal}%
+    };
+
+    \node[archi-app-component, minimum width=3.2cm] (ponos_erga) at (10.5, 4.0) {%
+        \archibadge{App Component}\archiname{Ponos \& Erga Core}\\\archidesc{Workflow Engine}%
+    };
+
+    % --- Center-Right Column: Harmonia Egress Gateway ---
+    \node[archi-app-interface, minimum width=3.2cm] (pylai_out) at (14.5, 5.25) {%
+        \archibadge{App Interface}\archiname{Pylai Outbound MLLP}\\\archidesc{Ports 2201--2205}%
+    };
+
+    % --- Right Column: Downstream Clinical Subsystem Simulators ---
+    \node[archi-app-component, minimum width=3.8cm] (lms_sim) at (19.3, 8.2) {%
+        \archibadge{App Component}\archiname{LMS Simulator}\\\archidesc{paradeigma-lms / :8093}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (rispac_sim) at (19.3, 5.7) {%
+        \archibadge{App Component}\archiname{RIS-PAC Simulator}\\\archidesc{paradeigma-rispac / :8094}%
+    };
+
+    \node[archi-app-component, minimum width=3.8cm] (emr_down) at (19.3, 3.2) {%
+        \archibadge{App Component}\archiname{EMR Recipient}\\\archidesc{paradeigma-emr / :2201}%
+    };
+
+    % --- Test & Fault Injection Shared Artifact ---
+    \node[archi-data-object, minimum width=3.2cm] (failure_sim) at (6.5, 8.8) {%
+        \archibadge{Data Object}\archiname{Fault Injection}\\\archidesc{Latency / Fault Config}%
+    };
+
+    % --- Flow & Serving Relationships ---
+    % Scenario Engine Orchestration
+    \draw[archi-serving] (scenario_engine) -- node[archi-lbl]{Journey} (pas_sim);
+    \draw[archi-serving] (scenario_engine) -- node[archi-lbl]{Orders} (emr_sim);
+    \draw[archi-access]  (scenario_engine) -- (failure_sim);
+
+    % Ingress Inbound MLLP Flows (PD-01, PD-04)
+    \draw[archi-flow] (pas_sim) -- node[archi-lbl, sloped]{PD-01 (ADT :2101)} (pylai_in);
+    \draw[archi-flow] (emr_sim) -- node[archi-lbl, sloped]{PD-04 (ORM :2104)} (pylai_in);
+
+    % Return Inbound Flows from LMS / RIS-PAC (PD-02, PD-03)
+    \draw[archi-flow] (lms_sim) to[bend right=25] node[archi-lbl, sloped]{PD-02 (ORU Lab :2102)} (pylai_in);
+    \draw[archi-flow] (rispac_sim) to[bend right=20] node[archi-lbl, sloped]{PD-03 (ORU Rad :2103)} (pylai_in);
+
+    % Harmonia Internal Transport & Execution
+    \draw[archi-flow] (pylai_in) -- (petasos_bus);
+    \draw[archi-flow] (petasos_bus) -- (ponos_erga);
+    \draw[archi-flow] (ponos_erga) -- (petasos_bus);
+    \draw[archi-flow] (petasos_bus) -- (pylai_out);
+
+    % Egress Outbound MLLP Flows (PD-05, PD-06, PD-07, PD-08, PD-09)
+    \draw[archi-flow] (pylai_out) -- node[archi-lbl, sloped]{PD-06 / PD-08 (:2202/:2204)} (lms_sim);
+    \draw[archi-flow] (pylai_out) -- node[archi-lbl, sloped]{PD-07 / PD-09 (:2203/:2205)} (rispac_sim);
+    \draw[archi-flow] (pylai_out) -- node[archi-lbl, sloped]{PD-05 (ADT :2201)} (emr_down);
+
+\end{tikzpicture}

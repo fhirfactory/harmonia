@@ -23,6 +23,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -144,6 +145,10 @@ public class FhirCacheService {
 
         if (resource instanceof Task task) {
             ErgonReasonEnum.ensureSyntheticTaskReason(task);
+        }
+
+        if (resource instanceof Resource res) {
+            FhirSecurityTagManager.applyDefaultSecurityTag(res);
         }
 
         Meta meta = ((Resource) resource).getMeta();

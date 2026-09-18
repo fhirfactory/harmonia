@@ -30,6 +30,8 @@ import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import org.apache.camel.CamelContext;
@@ -95,6 +97,7 @@ public abstract class ErgonBase extends RouteBuilder {
     private String outputEndpoint;
     private String errorEndpoint;
     private boolean enabled = true;
+    private ErgonSecurityDefinition securityDefinition;
 
     /**
      * Default constructor initializing default identifiers.
@@ -323,6 +326,7 @@ public abstract class ErgonBase extends RouteBuilder {
         // Convert to FHIR Task for compatibility
         Task processedTask = PragmaFhirConverter.toFhirTask(processedPragma);
         ErgonReasonEnum.ensureSyntheticTaskReason(processedTask);
+        FhirSecurityTagManager.applyDefaultSecurityTag(processedTask);
         getTaskCacheService().saveTask(processedTask);
         log.info("[{}] Persisted processed Pragma/{} (Task/{}) to cache on egress",
                 getActivityName(), processedPragma.getPragmaId(), processedTask.getIdPart());
@@ -605,6 +609,7 @@ public abstract class ErgonBase extends RouteBuilder {
                         ? outputComp.getType().getText() : "discrete-output-" + (i + 1);
                 outgoingTask.setDescription("Outgoing Task created by " + getActivityName() + " for " + outputDesc);
                 ErgonReasonEnum.ensureSyntheticTaskReason(outgoingTask);
+                FhirSecurityTagManager.applyDefaultSecurityTag(outgoingTask);
 
                 getTaskCacheService().saveTask(outgoingTask);
                 createdTasks.add(outgoingTask);
@@ -636,6 +641,7 @@ public abstract class ErgonBase extends RouteBuilder {
 
             outgoingTask.setDescription("Outgoing Task created by " + getActivityName() + " following task processing");
             ErgonReasonEnum.ensureSyntheticTaskReason(outgoingTask);
+            FhirSecurityTagManager.applyDefaultSecurityTag(outgoingTask);
 
             getTaskCacheService().saveTask(outgoingTask);
             createdTasks.add(outgoingTask);
@@ -687,6 +693,7 @@ public abstract class ErgonBase extends RouteBuilder {
         agent.setType(new CodeableConcept().addCoding(new Coding("http://terminology.hl7.org/CodeSystem/provenance-participant-type", "assembler", "Assembler")));
         agent.setWho(new Reference("Device/" + getActivityId()).setDisplay(getActivityName()));
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
         return provenance;
     }
 
@@ -1048,6 +1055,14 @@ public abstract class ErgonBase extends RouteBuilder {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public ErgonSecurityDefinition getSecurityDefinition() {
+        return securityDefinition;
+    }
+
+    public void setSecurityDefinition(ErgonSecurityDefinition securityDefinition) {
+        this.securityDefinition = securityDefinition;
     }
 
     @Override

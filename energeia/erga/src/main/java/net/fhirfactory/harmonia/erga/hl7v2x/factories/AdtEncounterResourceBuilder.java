@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -100,6 +101,7 @@ public class AdtEncounterResourceBuilder {
             encounter.setAdmission(admission);
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(encounter);
         return encounter;
     }
 
@@ -178,6 +180,7 @@ public class AdtEncounterResourceBuilder {
             if (StringUtils.isNotBlank(facility)) nameBuilder.append(" (").append(facility).append(")");
             loc.setName(nameBuilder.toString().trim());
 
+            FhirSecurityTagManager.applyDefaultSecurityTag(loc);
             list.add(loc);
         }
 
@@ -219,6 +222,7 @@ public class AdtEncounterResourceBuilder {
             name.setText(buildFullName(given, "", family, "", ""));
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(p);
         map.put(cleanId, p);
     }
 }

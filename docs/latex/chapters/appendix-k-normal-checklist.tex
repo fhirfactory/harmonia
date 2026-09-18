@@ -1,0 +1,47 @@
+%% =============================================================================
+%% chapters/appendix-k-normal-checklist.tex
+%% APPENDIX K: Normal Deployment Verification Checklist
+%% =============================================================================
+
+\chapter{Normal Deployment Verification Checklist}
+\label{app:normal_checklist}
+
+This appendix provides the operational checklist for executing and verifying a standard 25-workload Harmonia Normal Deployment on MicroK8s.
+
+\section{Phase 1: Host Preparation \& MicroK8s Setup}
+\begin{itemize}[label=$\square$]
+    \item Verify Ubuntu Linux 22.04 LTS or 24.04 LTS on minimum 8-core, 16 GB RAM host.
+    \item Configure sysctl parameters (\nolinkurl{net.ipv4.ip_forward=1}, \nolinkurl{vm.max_map_count=262144}).
+    \item Install MicroK8s snap via channel \nolinkurl{1.28/stable} with \nolinkurl{--classic}.
+    \item Enable required add-ons: \nolinkurl{dns}, \nolinkurl{hostpath-storage}, \nolinkurl{ingress}, \nolinkurl{registry}.
+    \item Verify cluster readiness via \nolinkurl{microk8s status --wait-ready}.
+\end{itemize}
+
+\section{Phase 2: Persistent Storage \& Volume Claims}
+\begin{itemize}[label=$\square$]
+    \item Verify 12 PersistentVolumeClaims are created and bound in namespace \nolinkurl{harmonia}.
+    \item Confirm 4x Artemis volumes (\nolinkurl{artemis-primary-a/b}, \nolinkurl{artemis-backup-a/b}) mount 2 GiB each.
+    \item Confirm 2x Infinispan volumes (\nolinkurl{mneme-data-1}, \nolinkurl{mneme-data-2}) mount 1 GiB each.
+    \item Confirm 5x PostgreSQL volumes (\nolinkurl{postgres-data-1/2}, \nolinkurl{postgres-ops-data-1/2}, \nolinkurl{postgres-synapse-data}) mount 2 GiB each.
+    \item Confirm 1x Synapse volume (\nolinkurl{synapse-data}) mounts 5 GiB.
+\end{itemize}
+
+\section{Phase 3: Stateful Tier Verification}
+\begin{itemize}[label=$\square$]
+    \item Verify ActiveMQ Artemis 4-broker cluster formed via \nolinkurl{artemis check cluster}.
+    \item Verify Infinispan 2-node grid formed on port 7800 and 17 caches initialized.
+    \item Verify PostgreSQL databases report \nolinkurl{pg_isready} on ports 5432, 5434, and 5436.
+    \item Verify Synapse homeserver responds on port 8008 (\nolinkurl{/_matrix/client/versions}).
+\end{itemize}
+
+\section{Phase 4: Stateless Workloads \& Gateways}
+\begin{itemize}[label=$\square$]
+    \item Verify Inbound MLLP Gateway (\nolinkurl{mllp-gateway}) is listening on TCP port 2575.
+    \item Verify Outbound MLLP Gateways (\nolinkurl{mllp-outbound-his}, \nolinkurl{mllp-outbound-lis}) are active.
+    \item Verify Ponos WorkEngine connected to Petasos queue and Camel routes running.
+    \item Verify Agora gateway connected to Synapse and listening on port 8092.
+    \item Verify Iris BEFE gateway active on ports 8080 and 8090.
+    \item Verify Iris SPAs (\nolinkurl{iris-clinical}, \nolinkurl{iris-console}, \nolinkurl{iris-administration}) serve HTTP 200 on port 80.
+\end{itemize}
+
+\newpage

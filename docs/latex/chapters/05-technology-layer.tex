@@ -22,11 +22,12 @@ The Technology Architecture layer defines the underlying system software runtime
 Harmonia standardizes on production-grade, enterprise open-source software runtimes:
 
 \begin{description}
-    \item[\textbf{WildFly Jakarta EE 10 / Java 21}] Provides the enterprise container runtime for \texttt{iris-befe}, \texttt{ponos}, and \texttt{pylai-mllp-in}, delivering CDI dependency injection, JAX-RS REST endpoints, and managed thread pools.
+    \item[\textbf{WildFly Jakarta EE 10 / Java 21}] Provides the enterprise container runtime for \texttt{iris-befe}, \texttt{ponos}, \texttt{pylai-mllp-in}, and \texttt{pylai-mllp-out}, delivering CDI dependency injection, JAX-RS REST endpoints, Apache Camel routes, and managed thread pools.
+    \item[\textbf{Themis Security Subsystem / Java 21}] Provides deterministic policy evaluation (\texttt{themis-core}), role-to-authority mapping, data security classification tagging, and structured non-PHI security decision audit streaming (\texttt{themis-audit}).
     \item[\textbf{Apache ActiveMQ Artemis 2.38+}] High-performance, non-blocking asynchronous message broker providing asynchronous NIO journal durability, server-side clustering, and real-time replication.
     \item[\textbf{Infinispan 15+ Distributed Cache Grid}] In-memory data grid providing partitioned and replicated L1 caching, non-blocking write-behind SPI stores, and HotRod binary protocol access.
-    \item[\textbf{Spring Boot 3.x / HAPI FHIR JPA}] Serves as the persistence framework for \texttt{mnemosyne-clinical} and \texttt{mnemosyne-operations}, encapsulating JPA 3.1 entity mapping, Liquibase migrations, and HAPI FHIR storage engines.
-    \item[\textbf{PostgreSQL 16+ Relational Database}] ACID-compliant relational persistence backend for clinical resources and operational task histories.
+    \item[\textbf{Spring Boot 3.x / HAPI FHIR JPA}] Serves as the persistence and service framework for \texttt{mnemosyne-clinical}, \texttt{mnemosyne-operations}, and the \texttt{pylai-fhir-registry} REST gateway, encapsulating JPA 3.1 entity mapping, Liquibase migrations, and HAPI FHIR storage engines.
+    \item[\textbf{PostgreSQL 16+ Relational Database}] ACID-compliant relational persistence backend for clinical resources, provider directory records, and operational task histories.
     \item[\textbf{Node.js / Vite / Vue 3}] Presentation runtime for the Iris Clinical and Console Single Page Applications.
 \end{description}
 
@@ -47,6 +48,73 @@ The \texttt{Hestia} data tier separates fast in-memory execution from relational
     \item \textbf{Asynchronous Write-Behind Queue}: When a \texttt{Pragma} checkpoint or \texttt{Communication} is put to the cache, Infinispan immediately acknowledges the write in RAM and places the entry on an asynchronous write-behind persistence queue.
     \item \textbf{\texttt{NonBlockingStore} SPI}: Custom SPI handlers (\texttt{OperationsRestCacheStore}) drain the queue and issue batched HTTP \texttt{PUT}/\texttt{POST} requests to the Mnemosyne REST APIs, preventing pipeline stalls.
 \end{itemize}
+
+\section{Security Governance, Authorization \& Audit Infrastructure (\texttt{Themis})}
+\label{sec:themis_tech_governance}
+
+Themis establishes architectural security governance across runtime execution boundaries, message queues, and persistence stores:
+
+\subsection{Data Classification \& Security Tagging (\texttt{HarmoniaSecurityLabelEnum})}
+Healthcare entities and operational payloads carry explicit security labels mapped to the FHIR R5 \texttt{Resource.meta.security} coding system (\texttt{http://harmonia.net/security-label}):
+\begin{itemize}
+    \item \texttt{PROVIDER\_REGISTRY}: Authoritative healthcare practitioner and organization directory records.
+    \item \texttt{INTERNAL}: Internal queue envelopes, intermediate workflow states, and system metadata.
+    \item \texttt{CLINICAL}: Protected Health Information (PHI), diagnostic observations, and patient identity records.
+    \item \texttt{DIAGNOSTIC}: Laboratory, pathology, and radiology imaging reports.
+    \item \texttt{ADMINISTRATIVE}: Encounter scheduling, billing, and organizational metadata.
+    \item \texttt{AUDIT}: Security decision audit logs, evaluation traces, and compliance records.
+    \item \texttt{RESTRICTED}: High-sensitivity clinical or security records requiring explicit elevated authority.
+\end{itemize}
+
+\subsection{Identity Context Transport \& Serialization}
+Security contexts established at edge gateways are propagated downstream without credential leakage:
+\begin{itemize}
+    \item \textbf{Ingress Translation}: HTTP headers (\texttt{X-User-Roles}, \texttt{X-Security-Scopes}) are decoded into \texttt{ThemisPrincipal} and \texttt{ThemisAuthority} objects at Pylai.
+    \item \textbf{Pragma Extension Binding}: Caller identities and granted authorities are immutably serialized into standardized FHIR R5 Task extensions (\texttt{http://harmonia.net/fhir/StructureDefinition/security-*}).
+    \item \textbf{No Credential Leakage}: Authentication secrets (bearer tokens, passwords, session keys) are stripped at the gateway boundary and never serialized into message queues, caches, or database tables.
+\end{itemize}
+
+\subsection{Non-PHI Decision Audit Trail Architecture (\texttt{ThemisAuditService})}
+Every security evaluation emits a structured \texttt{ThemisAuditEvent} carrying:
+\begin{itemize}
+    \item \textbf{Decision Metadata}: \texttt{decisionId}, \texttt{decision} (\texttt{ALLOW}/\texttt{DENY}), \texttt{reason} (\texttt{ThemisDecisionReason}), and \texttt{policyId}.
+    \item \textbf{Principal \& Action Lineage}: \texttt{principalId}, \texttt{principalType}, \texttt{action}, \texttt{resourceType}, and \texttt{resourceId}.
+    \item \textbf{Distributed Correlation}: \texttt{correlationId} and \texttt{causationId} for cross-subsystem trace alignment.
+    \item \textbf{Zero PHI Invariant}: Clinical payload bodies and sensitive patient attributes are strictly excluded from audit events.
+\end{itemize}
+
+\subsection{Fail-Closed Determinism \& Reason Code Diagnostics}
+In the event of an evaluation error, missing policy, or unparseable context, Themis deterministically fails closed to \texttt{DENY} and logs the diagnostic code:
+\begin{itemize}
+    \item \texttt{ALLOWED\_BY\_POLICY}: Active policy explicitly granted access.
+    \item \texttt{EXPLICIT\_DENY}: Explicit negative policy rule triggered.
+    \item \texttt{DEFAULT\_DENY} / \texttt{POLICY\_NOT\_FOUND}: No matching allow rule; default-deny triggered.
+    \item \texttt{AUTHORITY\_MISSING} / \texttt{EXECUTION\_AUTHORITY\_MISSING}: Principal or activity lacked required capabilities.
+    \item \texttt{CONTEXT\_MALFORMED} / \texttt{SECURITY\_SERVICE\_ERROR}: Malformed context or internal evaluation failure.
+\end{itemize}
+
+\section{PHI-Aware Diagnostic Logging Runtime \& Appender Isolation}
+\label{sec:phi_logging_tech_runtime}
+
+Harmonia implements a centralized runtime framework for governed clinical logging that guarantees zero PHI leakage into operational log streams while enabling rich diagnostic capabilities for engineering troubleshooting.
+
+\subsection{Dual-Logger Runtime Framework (\texttt{Calliope} / \texttt{net.fhirfactory.harmonia.logging})}
+Every clinical processing module instantiates two distinct loggers:
+\begin{itemize}
+    \item \textbf{Standard SLF4J Logger}: Emits operational milestones (\texttt{INFO}, \texttt{WARN}, \texttt{ERROR}) carrying non-PHI correlation IDs, transaction status codes, and latency metrics.
+    \item \textbf{Harmonia \texttt{PhiLogger}}: Emits diagnostic messages exclusively at \texttt{DEBUG} and \texttt{TRACE} severity. Compile-time enforcement prevents operational logging via \texttt{PhiLogger}.
+\end{itemize}
+
+\subsection{Dual-Gate Security Evaluation Mechanics}
+Log evaluation through \texttt{PhiLogger} is governed by a dual-gate security check:
+\begin{enumerate}
+    \item \textbf{Gate 1 (Global Configuration Switch)}: Verifies that \texttt{harmonia.logging.phi-enabled=true} (or \texttt{HARMONIA\_LOGGING\_PHI\_ENABLED=true}). When \texttt{false} (the default), all PHI log statements evaluate to strict no-ops.
+    \item \textbf{Gate 2 (Active Severity Level)}: Verifies that the underlying logger is actively configured for \texttt{DEBUG} or \texttt{TRACE}.
+\end{enumerate}
+Supplier lambdas (\texttt{Supplier<?>}) provide lazy evaluation, ensuring zero serialization overhead or heap allocations when the gates are closed.
+
+\subsection{SLF4J Namespace Routing \& Non-Additive Appender Isolation}
+When both gates pass, \texttt{PhiLogger} routes events to the dedicated SLF4J logger namespace \texttt{org.harmonia.phi} with an attached \texttt{PHI} marker. Logback configuration enforces \texttt{additivity="false"} on this logger, isolating diagnostic logs to encrypted, restricted-access storage volumes (\texttt{phi-diagnostic.log}) with strict 7-day retention windows. Complete developer blueprints, API signatures, XML configurations, and testing strategies are cataloged in Appendix~\ref{app:phi_logging}.
 
 \section{Master Platform Port Allocation Specification}
 
@@ -77,6 +145,9 @@ To ensure complete isolation and zero port collisions across development, test, 
 \texttt{8084} & HTTP REST & \texttt{pylai-mllp-in} & Pylai MLLP gateway health \& administration. \\
 \texttt{8085} & HTTP REST & \texttt{mnemosyne-operations-1} & Operations JPA persistence server (Primary). \\
 \texttt{8086} & HTTP REST & \texttt{mnemosyne-operations-2} & Operations JPA persistence server (Secondary). \\
+\texttt{8087} & HTTP REST & \texttt{pylai-mllp-out-his} & Outbound MLLP gateway (HIS instance) REST dispatch \& telemetry. \\
+\texttt{8088} & HTTP REST & \texttt{pylai-mllp-out-lis} & Outbound MLLP gateway (LIS instance) REST dispatch \& telemetry. \\
+\texttt{8089} & HTTP REST & \texttt{pylai-fhir-registry} & FHIR R5 Provider Registry REST Gateway API \& Task Polling. \\
 \texttt{8090} & HTTP REST & \texttt{iris-befe} & Operations and task sequence management REST API. \\
 \texttt{8161} & HTTP Web & \texttt{artemis-primary-a} & Artemis Primary A web administration console. \\
 \texttt{8162} & HTTP Web & \texttt{artemis-backup-a} & Artemis Backup A web administration console. \\

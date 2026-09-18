@@ -1,0 +1,21 @@
+---
+# Defaults for role microk8s
+microk8s_channel: "1.28/stable"
+microk8s_user: "{{ ansible_user | default('ubuntu') }}"
+microk8s_group: "microk8s"
+
+ubuntu_min_cpu_cores: 4
+ubuntu_min_ram_gb: 8
+ubuntu_min_disk_gb: 40
+
+microk8s_addons:
+  - name: dns
+    description: "CoreDNS for internal Kubernetes service discovery"
+  - name: ingress
+    description: "Nginx Ingress controller for external HTTP routing"
+  - name: hostpath-storage
+    description: "Host-backed dynamic storage provisioner for PVCs"
+  - name: metrics-server
+    description: "Cluster resource metrics monitoring CPU and memory"
+
+microk8s_insecure_registries: []

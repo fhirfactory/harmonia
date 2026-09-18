@@ -5,9 +5,21 @@
         </encoder>
     </appender>
 
+    <!-- Dedicated PHI Diagnostic Appender -->
+    <appender name="PHI_DIAGNOSTIC" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%marker] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <root level="WARN">
         <appender-ref ref="CONSOLE" />
     </root>
 
     <logger name="net.fhirfactory.harmonia.workflowcli" level="INFO" />
+
+    <!-- PHI Diagnostic Logger with strictly isolated additivity -->
+    <logger name="org.harmonia.phi" level="DEBUG" additivity="false">
+        <appender-ref ref="PHI_DIAGNOSTIC" />
+    </logger>
 </configuration>

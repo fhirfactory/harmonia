@@ -1,0 +1,148 @@
+%% =============================================================================
+%% chapters/appendix-b-system-inventory.tex
+%% APPENDIX B: Authoritative Harmonia System Inventory
+%% =============================================================================
+
+\chapter{Authoritative Harmonia System Inventory}
+\label{app:system_inventory}
+
+This appendix provides the authoritative system inventory across all 9 core subprojects and 46 Maven modules (37 leaf modules and 9 parent POMs) of the Harmonia platform, accompanied by infrastructure workload definitions and an end-to-end 11-dimension architectural traceability matrix.
+
+\section{Subproject and Leaf Module Inventory}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{2.5cm} P{2.0cm} P{3.2cm} P{1.8cm} Y}
+\toprule
+\textbf{Subproject} & \textbf{Module Path} & \textbf{Artifact ID} & \textbf{Container / Image} & \textbf{Workload} & \textbf{Role \& Primary Technology} \\
+\midrule
+\multicolumn{6}{l}{\textbf{Calliope (Canonical Models \& Domain Schemas)}} \\
+\midrule
+\textbf{Calliope} & \nolinkurl{calliope} & \texttt{calliope} & Embedded JAR & Library & Java 21, HAPI FHIR R5 Structures, Jackson \\
+\midrule
+\multicolumn{6}{l}{\textbf{Themis (Security Governance \& Policy Enforcement)}} \\
+\midrule
+\textbf{Themis} & \nolinkurl{themis/themis-api} & \texttt{themis-api} & Embedded JAR & Library & Jakarta Security Contracts, Policy Interfaces \\
+\textbf{Themis} & \nolinkurl{themis/themis-core} & \texttt{themis-core} & Embedded JAR & Service & Java 21 ABAC/RBAC Deterministic Evaluator \\
+\textbf{Themis} & \nolinkurl{themis/themis-audit} & \texttt{themis-audit} & Embedded JAR & Service & Non-PHI Security Audit Logging Service \\
+\midrule
+\multicolumn{6}{l}{\textbf{Hestia (Distributed Caching \& Authoritative Persistence)}} \\
+\midrule
+\textbf{Hestia} & \nolinkurl{hestia/mneme-cluster} & \texttt{mneme-cluster} & \nolinkurl{localhost:32000/.../mneme-cluster} & StatefulSet & Infinispan 15.0.3 Data Grid (JGroups TCP) \\
+\textbf{Hestia} & \nolinkurl{hestia/mneme-persistence} & \texttt{mneme-persistence} & Packaged in \nolinkurl{mneme-cluster} & Library & Infinispan NonBlockingStore Write-Behind SPI \\
+\textbf{Hestia} & \nolinkurl{hestia/mnemosyne-clinical} & \texttt{mnemosyne-clinical} & \nolinkurl{localhost:32000/.../mnemosyne-clinical} & Deployment & Spring Boot 3.2.5, HAPI FHIR R5 JPA Server \\
+\textbf{Hestia} & \nolinkurl{hestia/mnemosyne-operations} & \texttt{mnemosyne-operations} & \nolinkurl{localhost:32000/.../mnemosyne-operations} & Deployment & Spring Boot 3.2.5, Operations JPA Server \\
+\textbf{Hestia} & \nolinkurl{hestia/hie-operations-cli} & \texttt{hie-operations-cli} & CLI Binary / JAR & CLI Utility & Java 21 CLI, Picocli / Operations REST \\
+\midrule
+\multicolumn{6}{l}{\textbf{Petasos (Resilient Clustered Transport \& Broker Adapters)}} \\
+\midrule
+\textbf{Petasos} & \nolinkurl{petasos/petasos-api} & \texttt{petasos-api} & Embedded JAR & Library & Pure Java Transport Abstractions (Zero JMS) \\
+\textbf{Petasos} & \nolinkurl{petasos/petasos-core} & \texttt{petasos-core} & Embedded JAR & Library & Message Dedup Window \& Topic Routers \\
+\textbf{Petasos} & \nolinkurl{petasos/petasos-artemis} & \texttt{petasos-artemis} & Embedded JAR & Driver & ActiveMQ Artemis 2.33.0 Core Client Adapter \\
+\textbf{Petasos} & \nolinkurl{petasos/petasos-test} & \texttt{petasos-test} & Test Harness JAR & Test Harness & Embedded Artemis Cluster Testing Harness \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia System Inventory: Foundation, Security, Caching, and Transport Modules}
+\label{tab:system_inventory_foundations}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{2.5cm} P{2.0cm} P{3.2cm} P{1.8cm} Y}
+\toprule
+\textbf{Subproject} & \textbf{Module Path} & \textbf{Artifact ID} & \textbf{Container / Image} & \textbf{Workload} & \textbf{Role \& Primary Technology} \\
+\midrule
+\multicolumn{6}{l}{\textbf{Energeia (Workflow Orchestration \& Erga Task Processing)}} \\
+\midrule
+\textbf{Energeia} & \nolinkurl{energeia/erga} & \texttt{erga} & Embedded JAR & Library & Apache Camel 4.4, HL7/FHIR Activity Units \\
+\textbf{Energeia} & \nolinkurl{energeia/praxis} & \texttt{praxis} & Embedded JAR & Library & TaskSequence Route Orchestration \& Seeding \\
+\textbf{Energeia} & \nolinkurl{energeia/ponos} & \texttt{ponos} & \nolinkurl{localhost:32000/.../ponos-task-processor} & Deployment & WildFly 31 Jakarta EE 10 WAR Task Processor \\
+\textbf{Energeia} & \nolinkurl{energeia/ponos-cli} & \texttt{ponos-cli} & CLI Binary / JAR & CLI Utility & Java 21 CLI, Ponos Management Controller \\
+\midrule
+\multicolumn{6}{l}{\textbf{Pylai (Inbound \& Outbound Protocol Gateways)}} \\
+\midrule
+\textbf{Pylai} & \nolinkurl{pylai/pylai-mllp-base} & \texttt{pylai-mllp-base} & Embedded JAR & Library & Netty / Camel MLLP Base \& Destination Registry \\
+\textbf{Pylai} & \nolinkurl{pylai/pylai-mllp-in} & \texttt{pylai-mllp-in} & \nolinkurl{localhost:32000/.../pylai-mllp-in} & Deployment & WildFly 31 Jakarta EE 10 WAR Inbound Gateway \\
+\textbf{Pylai} & \nolinkurl{pylai/pylai-mllp-out} & \texttt{pylai-mllp-out} & \nolinkurl{localhost:32000/.../pylai-mllp-out} & Deployment & WildFly 31 Jakarta EE 10 WAR Outbound Dispatcher \\
+\textbf{Pylai} & \nolinkurl{pylai/pylai-fhir-registry} & \texttt{pylai-fhir-registry} & Standalone Spring JAR & Service & Spring Boot 3.2.5 FHIR R5 Provider Registry \\
+\textbf{Pylai} & \nolinkurl{pylai/pylai-mllp-cli} & \texttt{pylai-mllp-cli} & CLI Binary / JAR & CLI Utility & Java 21 MLLP Synthetic Test Injector \\
+\midrule
+\multicolumn{6}{l}{\textbf{Iris (Presentation Gateways \& Portal Applications)}} \\
+\midrule
+\textbf{Iris} & \nolinkurl{iris/iris-befe} & \texttt{iris-befe} & \nolinkurl{localhost:32000/.../iris-befe} & Deployment & WildFly 31.0.1 Jakarta EE 10 BEFE Gateway \\
+\textbf{Iris} & \nolinkurl{iris/iris-clinical} & \texttt{iris-clinical} & \nolinkurl{localhost:32000/.../iris-clinical} & Deployment & Vue 3 / Vite Clinical Exploration SPA \\
+\textbf{Iris} & \nolinkurl{iris/iris-console} & \texttt{iris-console} & \nolinkurl{localhost:32000/.../iris-console} & Deployment & Vue 3 / Vite Operations Telemetry SPA \\
+\textbf{Iris} & \nolinkurl{iris/iris-administration} & \texttt{iris-administration} & \nolinkurl{localhost:32000/.../iris-administration} & Deployment & Vue 3 / Vite Provider Registry Admin SPA \\
+\midrule
+\multicolumn{6}{l}{\textbf{Agora (Matrix Collaboration Gateway \& Synapse Integration)}} \\
+\midrule
+\textbf{Agora} & \nolinkurl{agora/agora-api} & \texttt{agora-api} & Embedded JAR & Library & Pure Java Domain Models, Events, Topics \\
+\textbf{Agora} & \nolinkurl{agora/agora-matrix} & \texttt{agora-matrix} & Embedded JAR & Library & Spring WebClient, Matrix v1.11 / Admin DTOs \\
+\textbf{Agora} & \nolinkurl{agora/agora-core} & \texttt{agora-core} & Embedded JAR & Library & Java 21, JPA Persistence, Petasos Bridges \\
+\textbf{Agora} & \nolinkurl{agora/agora-service} & \texttt{agora-service} & \nolinkurl{localhost:32000/.../agora} & Deployment & Spring Boot 3.2.5, AS REST Controller \\
+\midrule
+\multicolumn{6}{l}{\textbf{Paradeigma (Synthetic Clinical Simulation \& Architecture Guardrails)}} \\
+\midrule
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-common} & \texttt{paradeigma-common} & Embedded JAR & Library & Synthetic Personas, Generators, Clinical DTOs \\
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-emr} & \texttt{paradeigma-emr} & \nolinkurl{localhost:32000/.../paradeigma-emr} & Simulation & Synthetic EMR Simulator (HL7 ORM / ADT) \\
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-lms} & \texttt{paradeigma-lms} & \nolinkurl{localhost:32000/.../paradeigma-lms} & Simulation & Synthetic LMS Simulator (HL7 ORU Labs) \\
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-pas} & \texttt{paradeigma-pas} & \nolinkurl{localhost:32000/.../paradeigma-pas} & Simulation & Synthetic PAS Simulator (HL7 ADT A01--A40) \\
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-rispac} & \texttt{paradeigma-rispac} & \nolinkurl{localhost:32000/.../paradeigma-rispac} & Simulation & Synthetic RIS-PAC Simulator (Imaging Orders) \\
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-scenarios} & \texttt{paradeigma-scenarios} & \nolinkurl{localhost:32000/.../paradeigma-scenarios} & Simulation & Orchestrated Multi-System Scenario Driver \\
+\textbf{Paradeigma} & \nolinkurl{paradeigma/paradeigma-test} & \texttt{paradeigma-test} & Test Harness JAR & ArchUnit & ArchUnit Invariant Guardrail Suite (24 Rules) \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia System Inventory: Workflow, Gateways, Presentation, and Simulation Modules}
+\label{tab:system_inventory_applications}
+\end{table}
+
+\newpage
+\section{Infrastructure and Middleware Workloads}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{P{3.4cm} P{3.5cm} P{4.2cm} l Y}
+\toprule
+\textbf{Workload Name} & \textbf{Component Type} & \textbf{Container Image} & \textbf{Kind} & \textbf{Persistent Storage / Scope} \\
+\midrule
+\nolinkurl{artemis-primary-a} & ActiveMQ Artemis Broker & \nolinkurl{apache/activemq-artemis:2.33.0} & StatefulSet & 2 GiB PVC (\nolinkurl{artemis-primary-a-data}), Group A Live \\
+\nolinkurl{artemis-backup-a} & ActiveMQ Artemis Broker & \nolinkurl{apache/activemq-artemis:2.33.0} & StatefulSet & 2 GiB PVC (\nolinkurl{artemis-backup-a-data}), Group A Replicating \\
+\nolinkurl{artemis-primary-b} & ActiveMQ Artemis Broker & \nolinkurl{apache/activemq-artemis:2.33.0} & StatefulSet & 2 GiB PVC (\nolinkurl{artemis-primary-b-data}), Group B Live \\
+\nolinkurl{artemis-backup-b} & ActiveMQ Artemis Broker & \nolinkurl{apache/activemq-artemis:2.33.0} & StatefulSet & 2 GiB PVC (\nolinkurl{artemis-backup-b-data}), Group B Replicating \\
+\midrule
+\nolinkurl{infinispan-1} & Infinispan Cache Grid & \nolinkurl{localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT} & StatefulSet & 1 GiB PVC (\nolinkurl{mneme-data-1}), Node 1 Hot Rod :11222 \\
+\nolinkurl{infinispan-2} & Infinispan Cache Grid & \nolinkurl{localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT} & StatefulSet & 1 GiB PVC (\nolinkurl{mneme-data-2}), Node 2 Hot Rod :11222 \\
+\midrule
+\nolinkurl{postgres-1} & PostgreSQL Database & \nolinkurl{postgres:16-alpine} & StatefulSet & 2 GiB PVC (\nolinkurl{postgres-data-1}), Clinical Store 1 \\
+\nolinkurl{postgres-2} & PostgreSQL Database & \nolinkurl{postgres:16-alpine} & StatefulSet & 2 GiB PVC (\nolinkurl{postgres-data-2}), Clinical Store 2 \\
+\nolinkurl{postgres-ops-1} & PostgreSQL Database & \nolinkurl{postgres:16-alpine} & StatefulSet & 2 GiB PVC (\nolinkurl{postgres-ops-data-1}), Operations Store 1 \\
+\nolinkurl{postgres-ops-2} & PostgreSQL Database & \nolinkurl{postgres:16-alpine} & StatefulSet & 2 GiB PVC (\nolinkurl{postgres-ops-data-2}), Operations Store 2 \\
+\nolinkurl{postgres-synapse} & PostgreSQL Database & \nolinkurl{postgres:16-alpine} & StatefulSet & 2 GiB PVC (\nolinkurl{postgres-synapse-data}), Matrix \& Agora DB \\
+\midrule
+\nolinkurl{synapse} & Matrix Synapse Homeserver & \nolinkurl{matrixdotorg/synapse:v1.120.0} & StatefulSet & 5 GiB PVC (\nolinkurl{synapse-data}), Matrix HTTP :8008 \\
+\midrule
+\nolinkurl{hapi-fhir-jpa-server-1} & FHIR R5 Server & \nolinkurl{localhost:32000/harmonia/mnemosyne-clinical:1.0.0-SNAPSHOT} & Deployment & Stateless, Clinical REST API :8080 \\
+\nolinkurl{hapi-fhir-jpa-server-2} & FHIR R5 Server & \nolinkurl{localhost:32000/harmonia/mnemosyne-clinical:1.0.0-SNAPSHOT} & Deployment & Stateless, Clinical REST API :8080 \\
+\nolinkurl{hie-operations-jpa-server-1} & Operations Server & \nolinkurl{localhost:32000/harmonia/mnemosyne-operations:1.0.0-SNAPSHOT} & Deployment & Stateless, Operations REST API :8080 \\
+\nolinkurl{hie-operations-jpa-server-2} & Operations Server & \nolinkurl{localhost:32000/harmonia/mnemosyne-operations:1.0.0-SNAPSHOT} & Deployment & Stateless, Operations REST API :8080 \\
+\midrule
+\nolinkurl{agora} & Collaboration Gateway & \nolinkurl{localhost:32000/harmonia/agora:1.0.0-SNAPSHOT} & Deployment & Stateless, AS Transaction :8092, Actuator :9992 \\
+\nolinkurl{task-processor} & Ponos WorkEngine & \nolinkurl{localhost:32000/harmonia/ponos-task-processor:1.0.0-SNAPSHOT} & Deployment & Stateless WildFly WAR, Camel Workflows :8080 \\
+\nolinkurl{mllp-gateway} & Inbound MLLP Gateway & \nolinkurl{localhost:32000/harmonia/pylai-mllp-in:1.0.0-SNAPSHOT} & Deployment & Stateless WildFly WAR, Netty MLLP :2575 \\
+\nolinkurl{mllp-outbound-his} & Outbound MLLP Gateway & \nolinkurl{localhost:32000/harmonia/pylai-mllp-out:1.0.0-SNAPSHOT} & Deployment & Stateless WildFly WAR, HIS Egress Queue \\
+\nolinkurl{mllp-outbound-lis} & Outbound MLLP Gateway & \nolinkurl{localhost:32000/harmonia/pylai-mllp-out:1.0.0-SNAPSHOT} & Deployment & Stateless WildFly WAR, LIS Egress Queue \\
+\midrule
+\nolinkurl{befe} & Iris BEFE Gateway & \nolinkurl{localhost:32000/harmonia/iris-befe:1.0.0-SNAPSHOT} & Deployment & Stateless WildFly, Clinical :8080, Ops :8090 \\
+\nolinkurl{iris-clinical} & Clinical UI SPA & \nolinkurl{localhost:32000/harmonia/iris-clinical:1.0.0-SNAPSHOT} & Deployment & Stateless Nginx / Vue 3 SPA, HTTP :80 \\
+\nolinkurl{iris-console} & Console UI SPA & \nolinkurl{localhost:32000/harmonia/iris-console:1.0.0-SNAPSHOT} & Deployment & Stateless Nginx / Vue 3 SPA, HTTP :80 \\
+\nolinkurl{iris-administration} & Admin UI SPA & \nolinkurl{localhost:32000/harmonia/iris-administration:1.0.0-SNAPSHOT} & Deployment & Stateless Nginx / Vue 3 SPA, HTTP :80 \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia 25-Workload Infrastructure and Middleware Inventory}
+\label{tab:system_inventory_workloads}
+\end{table}
+
+\newpage

@@ -1,0 +1,48 @@
+%% =============================================================================
+%% chapters/appendix-g-container-register.tex
+%% APPENDIX G: Container and Image Register
+%% =============================================================================
+
+\chapter{Container and Image Register}
+\label{app:container_register}
+
+This appendix provides the authoritative register of all container images, base distributions, build targets, and runtime security privileges across the Harmonia platform.
+
+\section{Container Image Register}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{4.2cm} P{2.5cm} P{2.0cm} Y}
+\toprule
+\textbf{Workload} & \textbf{Container Image Repository / Tag} & \textbf{Base Distribution} & \textbf{Build Profile} & \textbf{Runtime User \& Security Context} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Presentation Tier (Iris)}} \\
+\midrule
+\nolinkurl{iris-clinical} & \nolinkurl{localhost:32000/harmonia/iris-clinical:1.0.0-SNAPSHOT} & Nginx 1.25 Alpine & Node/Vite Build & Non-root (\texttt{1001:1001}), Read-only rootfs. \\
+\nolinkurl{iris-console} & \nolinkurl{localhost:32000/harmonia/iris-console:1.0.0-SNAPSHOT} & Nginx 1.25 Alpine & Node/Vite Build & Non-root (\texttt{1001:1001}), Read-only rootfs. \\
+\nolinkurl{iris-administration} & \nolinkurl{localhost:32000/harmonia/iris-administration:1.0.0-SNAPSHOT} & Nginx 1.25 Alpine & Node/Vite Build & Non-root (\texttt{1001:1001}), Read-only rootfs. \\
+\nolinkurl{iris-befe} & \nolinkurl{localhost:32000/harmonia/iris-befe:1.0.0-SNAPSHOT} & WildFly 31.0.1 JDK 21 & Maven WAR & Non-root (\texttt{jboss}), Port 8080/8090. \\
+\midrule
+\multicolumn{5}{l}{\textbf{Gateways \& Workflows (Pylai, Energeia, Agora)}} \\
+\midrule
+\nolinkurl{pylai-mllp-in} & \nolinkurl{localhost:32000/harmonia/pylai-mllp-in:1.0.0-SNAPSHOT} & WildFly 31.0.1 JDK 21 & Maven WAR & Non-root (\texttt{jboss}), MLLP Port 2575. \\
+\nolinkurl{pylai-mllp-out} & \nolinkurl{localhost:32000/harmonia/pylai-mllp-out:1.0.0-SNAPSHOT} & WildFly 31.0.1 JDK 21 & Maven WAR & Non-root (\texttt{jboss}), Outbound socket client. \\
+\nolinkurl{task-processor} & \nolinkurl{localhost:32000/harmonia/ponos-task-processor:1.0.0-SNAPSHOT} & WildFly 31.0.1 JDK 21 & Maven WAR & Non-root (\texttt{jboss}), Camel WorkEngine. \\
+\nolinkurl{agora} & \nolinkurl{localhost:32000/harmonia/agora:1.0.0-SNAPSHOT} & Eclipse Temurin 21 Alpine & Spring Boot JAR & Non-root (\texttt{appuser}), Port 8092. \\
+\midrule
+\multicolumn{5}{l}{\textbf{Stateful Middleware \& Storage}} \\
+\midrule
+\nolinkurl{artemis-*} & \nolinkurl{apache/activemq-artemis:2.33.0} & Red Hat UBI 9 Minimal & Upstream Image & Non-root (\texttt{artemis}), Netty Port 61616. \\
+\nolinkurl{infinispan-*} & \nolinkurl{localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT} & Quay Infinispan 15.0.3 & Custom Config & Non-root (\texttt{infinispan}), Port 11222. \\
+\nolinkurl{postgres-*} & \nolinkurl{postgres:16-alpine} & Alpine Linux 3.19 & Upstream Image & Non-root (\texttt{postgres}), Port 5432. \\
+\nolinkurl{synapse} & \nolinkurl{matrixdotorg/synapse:v1.120.0} & Debian Bookworm Slim & Upstream Image & Non-root (\texttt{synapse}), Port 8008. \\
+\nolinkurl{mnemosyne-clinical} & \nolinkurl{localhost:32000/harmonia/mnemosyne-clinical:1.0.0-SNAPSHOT} & Eclipse Temurin 21 Alpine & Spring Boot JAR & Non-root (\texttt{appuser}), FHIR JPA Port 8080. \\
+\nolinkurl{mnemosyne-operations} & \nolinkurl{localhost:32000/harmonia/mnemosyne-operations:1.0.0-SNAPSHOT} & Eclipse Temurin 21 Alpine & Spring Boot JAR & Non-root (\texttt{appuser}), Ops JPA Port 8080. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Container Image and Runtime Security Register}
+\label{tab:container_image_register}
+\end{table}
+
+\newpage

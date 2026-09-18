@@ -1,0 +1,65 @@
+%% =============================================================================
+%% diagrams/fig-5tier-deployment-topology.tex
+%% MicroK8s 5-Tier Deployment Architecture & Add-on Integration View
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 8.4) rectangle (15.8, 10.8);
+    \node[archi-plate-title] at (-0.6, 10.6) {Ingress \& Presentation Tier (Host Ports 80 / 443)};
+
+    \draw[archi-plate-bg] (-0.8, 6.0) rectangle (15.8, 8.0);
+    \node[archi-plate-title] at (-0.6, 7.8) {Integration \& Gateway Tier (NodePort 30575 $\rightarrow$ 2575 / ClusterIP 8080)};
+
+    \draw[archi-plate-bg] (-0.8, 3.8) rectangle (15.8, 5.6);
+    \node[archi-plate-title] at (-0.6, 5.4) {Workflow \& Processing Tier (Ponos Workers \& Task Engine)};
+
+    \draw[archi-plate-bg] (-0.8, 1.8) rectangle (15.8, 3.4);
+    \node[archi-plate-title] at (-0.6, 3.2) {Messaging \& Caching Middleware (Artemis StatefulSets \& Mneme Grid)};
+
+    \draw[archi-plate-bg] (-0.8, -0.4) rectangle (15.8, 1.4);
+    \node[archi-plate-title] at (-0.6, 1.2) {Authoritative Storage Tier (PostgreSQL Instances \& HostPath PVCs)};
+
+    % --- Nodes: Tier 1 ---
+    \node[archi-app-component, minimum width=3.2cm] (k8s_ing) at (1.5, 9.6) {\archibadge{Ingress}\archiname{harmonia-ingress}\\\archidesc{Host 80/443 $\rightarrow$ SPAs/BEFE}};
+    \node[archi-node, minimum width=3.2cm] (spa_clin) at (5.5, 9.6) {\archibadge{Pod}\archiname{iris-clinical}\\\archidesc{Nginx Static SPA}};
+    \node[archi-node, minimum width=3.2cm] (spa_cons) at (9.5, 9.6) {\archibadge{Pod}\archiname{iris-console}\\\archidesc{Nginx Static SPA}};
+    \node[archi-node, minimum width=3.2cm] (spa_adm)  at (13.5, 9.6) {\archibadge{Pod}\archiname{iris-administration}\\\archidesc{Nginx Static SPA}};
+
+    % --- Nodes: Tier 2 ---
+    \node[archi-node, minimum width=4.5cm] (pod_mllp_in)  at (2.5, 7.0) {\archibadge{Pod}\archiname{pylai-mllp-in}\\\archidesc{MLLP Ingress 2575}};
+    \node[archi-node, minimum width=4.5cm] (pod_mllp_out) at (7.8, 7.0) {\archibadge{Pod}\archiname{pylai-mllp-out}\\\archidesc{MLLP Egress Dispatcher}};
+    \node[archi-node, minimum width=4.0cm] (pod_befe)     at (13.0, 7.0) {\archibadge{Pod}\archiname{iris-befe}\\\archidesc{WildFly 31 / 8080/8090}};
+
+    % --- Nodes: Tier 3 ---
+    \node[archi-node, minimum width=4.5cm] (pod_ponos1) at (3.5, 4.7) {\archibadge{Pod}\archiname{ponos-task-processor-1}\\\archidesc{Spring Boot Task Worker}};
+    \node[archi-node, minimum width=4.5cm] (pod_ponos2) at (9.5, 4.7) {\archibadge{Pod}\archiname{ponos-task-processor-2}\\\archidesc{Spring Boot Task Worker}};
+
+    % --- Nodes: Tier 4 ---
+    \node[archi-system-software, minimum width=3.4cm] (ss_art_a) at (1.5, 2.6) {\archibadge{StatefulSet}\archiname{artemis-group-a}\\\archidesc{Primary/Backup / 61616}};
+    \node[archi-system-software, minimum width=3.4cm] (ss_art_b) at (5.5, 2.6) {\archibadge{StatefulSet}\archiname{artemis-group-b}\\\archidesc{Primary/Backup / 61618}};
+    \node[archi-system-software, minimum width=3.4cm] (ss_mneme) at (9.5, 2.6) {\archibadge{StatefulSet}\archiname{infinispan-*}\\\archidesc{Mneme Hot Rod / 11222}};
+    \node[archi-system-software, minimum width=3.0cm] (addon_dns) at (13.5, 2.6) {\archibadge{Add-on}\archiname{CoreDNS / Storage}\\\archidesc{MicroK8s HostPath}};
+
+    % --- Nodes: Tier 5 ---
+    \node[archi-system-software, minimum width=4.5cm] (db_clin) at (3.5, 0.5) {\archibadge{StatefulSet}\archiname{postgres-1 / postgres-2}\\\archidesc{Clinical FHIR DB / Port 5432}};
+    \node[archi-system-software, minimum width=4.5cm] (db_ops)  at (9.5, 0.5) {\archibadge{StatefulSet}\archiname{postgres-ops-1 / ops-2}\\\archidesc{Operations JPA DB / Port 5434}};
+
+    % --- Flows ---
+    \draw[archi-flow] (k8s_ing) -- (spa_clin);
+    \draw[archi-flow] (k8s_ing) -- (spa_cons);
+    \draw[archi-flow] (k8s_ing) -- (spa_adm);
+    \draw[archi-flow] (k8s_ing) |- (pod_befe);
+
+    \draw[archi-flow] (pod_mllp_in) -- (ss_art_a);
+    \draw[archi-flow] (ss_art_a) -- (pod_ponos1);
+    \draw[archi-flow] (ss_art_b) -- (pod_ponos2);
+    \draw[archi-flow] (pod_ponos1) -- (pod_mllp_out);
+
+    \draw[archi-serving] (ss_mneme) -- (pod_ponos1);
+    \draw[archi-serving] (ss_mneme) -- (pod_befe);
+
+    \draw[archi-flow] (pod_ponos1) -- (db_clin);
+    \draw[archi-flow] (pod_ponos2) -- (db_ops);
+
+\end{tikzpicture}

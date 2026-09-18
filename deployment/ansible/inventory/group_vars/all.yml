@@ -1,0 +1,67 @@
+---
+# ==============================================================================
+# Harmonia Global Deployment & Cluster Configuration Variables
+# ==============================================================================
+
+# Harmonia Application Namespace & Identity
+harmonia_namespace: "harmonia"
+harmonia_project_root: "{{ playbook_dir }}/../.."
+harmonia_k8s_manifests_dir: "{{ harmonia_project_root }}/deployment/kubernetes"
+harmonia_k8s_environment: "microk8s"
+
+# Container Image Registry & Tagging
+harmonia_image_registry: "localhost:32000"
+harmonia_image_namespace: "harmonia"
+harmonia_image_tag: "1.0.0-SNAPSHOT"
+
+# Ubuntu Host & MicroK8s Requirements
+ubuntu_min_cpu_cores: 4
+ubuntu_min_ram_gb: 8
+ubuntu_min_disk_gb: 40
+microk8s_channel: "1.28/stable"
+microk8s_user: "{{ ansible_user | default('ubuntu') }}"
+
+# Authoritative Required MicroK8s Add-Ons and Architectural Justifications
+microk8s_addons:
+  - name: dns
+    description: "CoreDNS for internal Kubernetes service discovery (e.g., infinispan-1, postgres-1, task-processor)"
+  - name: ingress
+    description: "Nginx Ingress controller for external HTTP routing of Iris Clinical, Console, Administration, and API endpoints"
+  - name: hostpath-storage
+    description: "Host-backed dynamic storage provisioner ensuring durable PVC binding for PostgreSQL DBs and Artemis journals"
+  - name: metrics-server
+    description: "Cluster resource metrics monitoring CPU and memory utilization for stateless and stateful pods"
+
+# Storage & Network Configuration
+storage_class: "microk8s-hostpath"
+ingress_enabled: true
+ingress_base_domain: "harmonia.local"
+
+# Workload Replica Counts (Configurable per environment)
+pylai_mllp_in_replicas: 1
+pylai_mllp_out_replicas: 1
+ponos_task_processor_replicas: 1
+iris_befe_replicas: 1
+iris_clinical_replicas: 1
+iris_console_replicas: 1
+iris_administration_replicas: 1
+agora_replicas: 1
+synapse_replicas: 1
+
+# Matrix & Synapse Collaboration Architecture
+synapse_image: "matrixdotorg/synapse:v1.120.0"
+synapse_server_name: "harmonia.local"
+synapse_port: 8008
+synapse_db_port: 5436
+synapse_report_stats: "no"
+agora_port: 8092
+agora_management_port: 9992
+agora_appservice_id: "harmonia-agora"
+agora_reconciliation_cron: "0 */15 * * * *"
+
+# Deployment Verification & Rollout Timeouts
+rollout_timeout_seconds: 300
+deployment_poll_interval_seconds: 5
+
+# Safe Data Retention by Default (Explicit opt-in required for destruction)
+harmonia_purge_data: false

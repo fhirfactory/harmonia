@@ -1,0 +1,40 @@
+%% =============================================================================
+%% chapters/11-container-runtime.tex
+%% PART IV: Runtime Architecture
+%% Chapter 11: Container Packaging, WildFly & Spring Boot Runtime Profiles
+%% =============================================================================
+
+\chapter{Container Packaging \& Runtime Profiles}
+\label{chap:container_runtime}
+
+Harmonia standardizes its execution environments using lightweight, containerized runtime profiles running on Eclipse Temurin OpenJDK 21, WildFly 31.0.1, and Spring Boot 3.2.5.
+
+\section{Container Image Hierarchy \& Registry Taxonomy}
+
+All container images are built and pushed to the local MicroK8s registry using canonical tags:
+\begin{equation*}
+\texttt{localhost:32000/harmonia/<artifact-name>:1.0.0-SNAPSHOT}
+\end{equation*}
+
+\subsection{1. Upstream Middleware Base Images}
+\begin{itemize}
+    \item \textbf{ActiveMQ Artemis}: \texttt{apache/activemq-artemis:2.33.0}
+    \item \textbf{PostgreSQL}: \texttt{postgres:16-alpine}
+    \item \textbf{Infinispan}: Built from \texttt{hestia/mneme-cluster/Dockerfile} using base image \texttt{quay.io/infinispan/server:15.0.3.Final}.
+\end{itemize}
+
+\subsection{2. Java Application Runtimes}
+\begin{itemize}
+    \item \textbf{WildFly Jakarta EE WAR Runtime}: Used by \texttt{iris-befe}, \texttt{pylai-mllp-in}, \texttt{pylai-mllp-out}, and \nolinkurl{ponos-task-processor}; each cited Dockerfile deploys a WAR to WildFly and starts \texttt{standalone.sh}.
+    \item \textbf{Spring Boot 3.2.5 Runtimes}: Used by \texttt{pylai-fhir-registry}, \texttt{mnemosyne-clinical}, and \texttt{mnemosyne-operations}; the Mnemosyne Dockerfiles use the Eclipse Temurin 21 JRE Jammy image.
+    \item \textbf{Nginx Static SPAs}: Alpine-based Nginx images serving compiled Vue 3 assets for \texttt{iris-clinical}, \texttt{iris-console}, and \texttt{iris-administration}.
+\end{itemize}
+
+\section{JVM Resource Profiling \& Memory Ergonomics}
+
+Containers configure deterministic memory constraints:
+\begin{equation}
+\text{Container Memory Limit} = \text{JVM Heap (MaxRAMPercentage=75.0)} + \text{Metaspace} + \text{Native Buffers}
+\end{equation}
+
+\newpage

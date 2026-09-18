@@ -1,0 +1,62 @@
+%% =============================================================================
+%% chapters/05-messaging-petasos.tex
+%% PART II: Platform Capabilities and Modules
+%% Chapter 5: Messaging & Event Transport (Petasos Core, Artemis Adapter)
+%% =============================================================================
+
+\chapter{Messaging \& Event Transport (\texttt{Petasos})}
+\label{chap:messaging_petasos}
+
+The Petasos subsystem provides a resilient, high-throughput messaging abstraction layer backed by an active-active clustered Apache ActiveMQ Artemis messaging fabric.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-petasos-messaging.tex}
+    \end{adjustbox}
+    \caption{Petasos Messaging Framework and Artemis Cluster Architecture}
+    \label{fig:petasos_messaging}
+\end{figure}
+
+\section{Transport Abstraction Invariant (\texttt{petasos-api})}
+
+To prevent vendor lock-in and preserve strict architectural boundaries, the \texttt{petasos-api} module declares pure Java interfaces:
+\begin{itemize}
+    \item \textbf{\texttt{Petasos}}: Main engine facade for producer and consumer lifecycle management.
+    \item \textbf{\texttt{PetasosProducer}}: Asynchronous publish operations returning \nolinkurl{CompletableFuture<PetasosPublishResult>}.
+    \item \textbf{\texttt{PetasosConsumer}}: At-least-once message subscription contracts supporting acknowledgement semantics (\nolinkurl{acknowledge()}, \nolinkurl{reject()}).
+    \item \textbf{\texttt{PetasosDestination}}: Logical queue and topic destination abstractions.
+    \item \textbf{\texttt{PetasosMessage}}: Generic message envelope carrying binary or text payloads.
+\end{itemize}
+
+\begin{principlebox}{Zero JMS / Artemis Leakage in Petasos API}
+In accordance with Invariant 2, \texttt{petasos-api} contains zero imports or references to \texttt{org.apache.activemq..}, \texttt{jakarta.jms..}, or \texttt{javax.jms..}. Artemis client libraries are strictly encapsulated in \texttt{petasos-artemis}.
+\end{principlebox}
+
+\section{Core Routing and Deduplication (\texttt{petasos-core})}
+
+\texttt{petasos-core} implements transport routing, metric instrumentation, and multi-tier message deduplication.
+
+\subsection{Sliding-Window Deduplication}
+To prevent duplicate processing caused by network retransmissions, \texttt{DuplicateDetector} maintains an in-memory sliding-window cache of recently processed message control identifiers (\texttt{MSH-10} and \texttt{PetasosMessage.messageId}). Duplicate messages within the sliding window (default: 30 minutes) are logged, acknowledged, and discarded before reaching workflow execution.
+
+\section{ActiveMQ Artemis HA Adapter (\texttt{petasos-artemis})}
+
+\texttt{petasos-artemis} provides the enterprise JMS driver connecting Harmonia microservices to the underlying broker cluster.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-petasos-artemis-ha.tex}
+    \end{adjustbox}
+    \caption{ActiveMQ Artemis HA Replication Pairs and Symmetric Cluster Mesh}
+    \label{fig:petasos_artemis_ha}
+\end{figure}
+
+\subsection{Failover Connection URL Configuration}
+Petasos clients connect using multi-endpoint failover URIs enabling automatic, transparent client reconnection:
+\begin{lstlisting}[language=bash, caption={Petasos Artemis Multi-Endpoint Failover URL}]
+(tcp://artemis-primary-a:61616,tcp://artemis-backup-a:61617,tcp://artemis-primary-b:61618,tcp://artemis-backup-b:61619)?ha=true&retryInterval=1000&retryIntervalMultiplier=1.5&maxRetryInterval=5000&reconnectAttempts=-1
+\end{lstlisting}
+
+\newpage

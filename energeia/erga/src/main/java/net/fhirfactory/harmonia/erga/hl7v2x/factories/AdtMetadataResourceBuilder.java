@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -61,6 +62,7 @@ public class AdtMetadataResourceBuilder {
         attachment.setCreation(new Date());
         payload.setContent(attachment);
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(communication);
         return communication;
     }
 
@@ -91,6 +93,7 @@ public class AdtMetadataResourceBuilder {
         String deviceDisplay = activityName != null ? activityName : "ADT to FHIR Mapper Activity";
         agent.setWho(new Reference("Device/" + deviceId).setDisplay(deviceDisplay));
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
         return provenance;
     }
 }

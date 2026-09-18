@@ -1,0 +1,58 @@
+# Copyright (c) 2026 Mark Hunter
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+server:
+  port: 8092
+
+management:
+  server:
+    port: 9992
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+agora:
+  synapse:
+    base-url: "http://synapse:8008"
+  security:
+    hs-token: "${AGORA_HOMESERVER_TOKEN:dev-hs-token}"
+    as-token: "${AGORA_APPSERVICE_TOKEN:dev-as-token}"
+    admin-token: "${AGORA_ADMIN_TOKEN:dev-admin-token}"
+  appservice:
+    id: "harmonia-agora"
+    url: "http://agora:8092"
+  matrix:
+    server-name: "harmonia.local"
+  reconciliation:
+    cron: "0 */15 * * * *"
+
+spring:
+  application:
+    name: harmonia-agora-service
+  datasource:
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres-ops-1:5432/ops_node_1}"
+    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
+    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false

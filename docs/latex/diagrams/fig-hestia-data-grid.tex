@@ -4,28 +4,38 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 7.0) rectangle (15.8, 9.6);
+    \node[archi-plate-title] at (-0.6, 9.4) {Application Tier: HotRod Clients};
+
+    \draw[archi-plate-bg] (-0.8, 2.6) rectangle (15.8, 6.6);
+    \node[archi-plate-title] at (-0.6, 6.4) {Hestia Mneme: Distributed In-Memory Cache Grid (Infinispan 15)};
+
+    \draw[archi-plate-bg] (-0.8, -0.6) rectangle (15.8, 2.2);
+    \node[archi-plate-title] at (-0.6, 2.0) {Write-Behind SPI \& Mnemosyne Relational Persistence};
+
     % Application Clients
-    \node[archi-app-component] (cli_befe) at (1.5, 8.5) {\archibadge{Client}\archiname{Iris BEFE}\\\archidesc{Clinical/Ops REST}};
-    \node[archi-app-component] (cli_ponos) at (6.0, 8.5) {\archibadge{Client}\archiname{Ponos Engine}\\\archidesc{Checkpoint Writer}};
-    \node[archi-app-component] (cli_pylai) at (10.5, 8.5) {\archibadge{Client}\archiname{Pylai Ingress}\\\archidesc{Communication Log}};
+    \node[archi-app-component, minimum width=3.6cm] (cli_befe)  at (1.8, 8.2) {\archibadge{Client}\archiname{Iris BEFE}\\\archidesc{Clinical/Ops REST}};
+    \node[archi-app-component, minimum width=3.6cm] (cli_ponos) at (7.5, 8.2) {\archibadge{Client}\archiname{Ponos Engine}\\\archidesc{Checkpoint Writer}};
+    \node[archi-app-component, minimum width=3.6cm] (cli_pylai) at (13.2, 8.2) {\archibadge{Client}\archiname{Pylai Ingress}\\\archidesc{Communication Log}};
 
     % HotRod Interface
-    \node[archi-tech-interface] (if_hotrod) at (6.0, 6.8) {\archibadge{Protocol}\archiname{Infinispan HotRod}\\\archidesc{TCP 11222 / 11223}};
+    \node[archi-tech-interface, minimum width=5.5cm] (if_hotrod) at (7.5, 5.7) {\archibadge{Protocol Interface}\archiname{Infinispan HotRod Protocol}\\\archidesc{TCP Ports 11222 / 11223}};
 
     % Mneme Cache Nodes (Group)
-    \node[archi-system-software] (mneme_node1) at (3.5, 5.0) {\archibadge{Infinispan}\archiname{Mneme Node 1}\\\archidesc{Port 11222 / Replica}};
-    \node[archi-system-software] (mneme_node2) at (8.5, 5.0) {\archibadge{Infinispan}\archiname{Mneme Node 2}\\\archidesc{Port 11223 / Replica}};
+    \node[archi-system-software, minimum width=4.5cm] (mneme_node1) at (3.5, 4.2) {\archibadge{Infinispan Node}\archiname{Mneme Node 1}\\\archidesc{Port 11222 / Replica}};
+    \node[archi-system-software, minimum width=4.5cm] (mneme_node2) at (11.5, 4.2) {\archibadge{Infinispan Node}\archiname{Mneme Node 2}\\\archidesc{Port 11223 / Replica}};
 
     % Caches
-    \node[archi-data-object] (cache_task) at (6.0, 3.4) {\archibadge{Replicated Cache}\archiname{task-cache / pragma-cache}\\\archidesc{L1 In-Memory State}};
+    \node[archi-data-object, minimum width=5.5cm] (cache_task) at (7.5, 3.2) {\archibadge{Replicated Cache}\archiname{task-cache / pragma-cache}\\\archidesc{L1 In-Memory State / Off-Heap}};
 
     % Persistence SPI
-    \node[archi-app-component] (spi_ops) at (3.5, 1.8) {\archibadge{Write-Behind SPI}\archiname{OperationsCacheStore}\\\archidesc{Async REST Store}};
-    \node[archi-app-component] (spi_fhir) at (8.5, 1.8) {\archibadge{Write-Behind SPI}\archiname{FhirRestCacheStore}\\\archidesc{Async REST Store}};
+    \node[archi-app-component, minimum width=4.5cm] (spi_ops)  at (3.5, 1.2) {\archibadge{Write-Behind SPI}\archiname{OperationsCacheStore}\\\archidesc{Async REST Store}};
+    \node[archi-app-component, minimum width=4.5cm] (spi_fhir) at (11.5, 1.2) {\archibadge{Write-Behind SPI}\archiname{FhirRestCacheStore}\\\archidesc{Async REST Store}};
 
     % Relational Tier
-    \node[archi-app-component] (jpa_ops) at (3.5, 0.0) {\archibadge{Persistence Server}\archiname{Mnemosyne Operations}\\\archidesc{Spring Boot / 8085-8086}};
-    \node[archi-app-component] (jpa_fhir) at (8.5, 0.0) {\archibadge{Persistence Server}\archiname{Mnemosyne Clinical}\\\archidesc{HAPI FHIR / 8081-8082}};
+    \node[archi-app-component, minimum width=4.5cm] (jpa_ops)  at (3.5, -0.1) {\archibadge{Persistence Server}\archiname{Mnemosyne Operations}\\\archidesc{Spring Boot / 8085--8086}};
+    \node[archi-app-component, minimum width=4.5cm] (jpa_fhir) at (11.5, -0.1) {\archibadge{Persistence Server}\archiname{Mnemosyne Clinical}\\\archidesc{HAPI FHIR / 8081--8082}};
 
     % --- Relationships ---
     \draw[archi-serving] (if_hotrod) -- (cli_befe);
@@ -35,14 +45,14 @@
     \draw[archi-serving] (mneme_node1) -- (if_hotrod);
     \draw[archi-serving] (mneme_node2) -- (if_hotrod);
 
-    \draw[archi-triggering] (mneme_node1) -- node[above, font=\sffamily\scriptsize]{Replication} (mneme_node2);
+    \draw[archi-triggering] (mneme_node1) -- node[archi-lbl]{JGroups Sync} (mneme_node2);
     \draw[archi-triggering] (mneme_node2) -- (mneme_node1);
 
     \draw[archi-access] (mneme_node1) -- (cache_task);
     \draw[archi-access] (mneme_node2) -- (cache_task);
 
-    \draw[archi-flow] (cache_task) -- node[left, font=\sffamily\scriptsize]{Async Queue} (spi_ops);
-    \draw[archi-flow] (cache_task) -- node[right, font=\sffamily\scriptsize]{Async Queue} (spi_fhir);
+    \draw[archi-flow] (cache_task) -- node[archi-lbl]{Async Queue} (spi_ops);
+    \draw[archi-flow] (cache_task) -- node[archi-lbl]{Async Queue} (spi_fhir);
 
     \draw[archi-flow] (spi_ops) -- (jpa_ops);
     \draw[archi-flow] (spi_fhir) -- (jpa_fhir);

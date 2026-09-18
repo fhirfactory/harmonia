@@ -1,0 +1,42 @@
+---
+# ==============================================================================
+# Ansible Role Tasks: Synapse Matrix Homeserver
+# ==============================================================================
+
+- name: Create or update Synapse secrets
+  ansible.builtin.shell: |
+    microk8s kubectl create secret generic harmonia-synapse-secrets \
+      --namespace {{ harmonia_namespace }} \
+      --from-literal=registration-shared-secret='{{ vault_synapse_registration_shared_secret | default("synapse_reg_secret_shared_12345") }}' \
+      --from-literal=macaroon-secret-key='{{ vault_synapse_macaroon_secret_key | default("synapse_macaroon_secret_key_12345") }}' \
+      --from-literal=form-secret='{{ vault_synapse_form_secret | default("synapse_form_secret_12345") }}' \
+      --from-literal=db-password='{{ vault_synapse_db_password | default("synapse_db_password") }}' \
+      --dry-run=client -o yaml | microk8s kubectl apply -f -
+  no_log: true
+  become: true
+  changed_when: false
+
+- name: Wait for PostgreSQL Synapse StatefulSet rollout to complete
+  ansible.builtin.command: >
+    microk8s kubectl rollout status statefulset/postgres-synapse
+    --namespace {{ harmonia_namespace }}
+    --timeout {{ synapse_rollout_timeout_seconds }}s
+  become: true
+  changed_when: false
+
+- name: Wait for Matrix Synapse StatefulSet rollout to complete
+  ansible.builtin.command: >
+    microk8s kubectl rollout status statefulset/synapse
+    --namespace {{ harmonia_namespace }}
+    --timeout {{ synapse_rollout_timeout_seconds }}s
+  become: true
+  changed_when: false
+
+- name: Verify Synapse health endpoint
+  ansible.builtin.command: >
+    microk8s kubectl exec -n {{ harmonia_namespace }} statefulset/synapse --
+    curl -sf http://localhost:8008/_matrix/client/versions
+  register: synapse_versions_result
+  failed_when: false
+  changed_when: false
+  become: true

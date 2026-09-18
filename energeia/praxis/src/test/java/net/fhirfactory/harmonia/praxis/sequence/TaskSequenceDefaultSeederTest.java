@@ -98,4 +98,23 @@ class TaskSequenceDefaultSeederTest {
         assertThat(seeded).hasSize(1);
         assertThat(seeded.get(0).getPraxisId()).isEqualTo("seq-patient-identity-pipeline");
     }
+
+    @Test
+    @DisplayName("Should create provider registry change sequence with all seven erga activities")
+    void testCreateProviderRegistryChangeSequence() {
+        Praxis seq = seeder.createProviderRegistryChangeSequence(Map.of());
+
+        assertThat(seq).isNotNull();
+        assertThat(seq.getPraxisId()).isEqualTo("seq-provider-registry-change-pipeline");
+        assertThat(seq.getActivityIds()).hasSize(7);
+        assertThat(seq.getActivityIds()).containsValues(
+                "practitioner-change-ergon",
+                "practitioner-role-change-ergon",
+                "organization-change-ergon",
+                "location-change-ergon",
+                "healthcare-service-change-ergon",
+                "endpoint-change-ergon",
+                "group-change-ergon"
+        );
+    }
 }

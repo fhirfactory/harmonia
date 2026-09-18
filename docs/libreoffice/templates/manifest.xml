@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.3">
+  <manifest:file-entry manifest:full-path="/" manifest:version="1.3" manifest:media-type="application/vnd.oasis.opendocument.text"/>
+  <manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
+  <manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
+  <manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
+  <manifest:file-entry manifest:full-path="META-INF/manifest.xml" manifest:media-type="text/xml"/>
+  <manifest:file-entry manifest:full-path="Pictures/legend.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-motivation-map.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-clinical-process.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-app-overview-5tier.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-petasos-messaging.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-energeia-workflow.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-pragma-state-flow.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-technology-nodes.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-hestia-data-grid.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-deployment-ha.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-paradeigma-architecture.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-mllp-ingress-process.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-mllp-egress-process.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-ergon-module-architecture.png" manifest:media-type="image/png"/>
+  <manifest:file-entry manifest:full-path="Pictures/fig-praxis-workflow-architecture.png" manifest:media-type="image/png"/>
+</manifest:manifest>

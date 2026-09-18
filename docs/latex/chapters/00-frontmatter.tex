@@ -6,31 +6,41 @@
 \chapter*{Executive Summary}
 \addcontentsline{toc}{chapter}{Executive Summary}
 
-The \textbf{Harmonia Health Information Exchange (HIE)} is a modular, high-availability, distributed healthcare integration platform engineered for HL7 FHIR Release 5 (R5) compliance, real-time HL7 v2 clinical data ingestion, sub-millisecond in-memory cached access, and resilient asynchronous workflow execution.
+\section*{The Harmonia Platform Overview}
 
-Modern healthcare ecosystems demand zero-loss event streaming, high-throughput message translation, resilient task state persistence, and fine-grained clinical data access. Harmonia resolves these challenges through a cohesive five-tier architectural design combining:
+The \textbf{Harmonia Health Information Exchange (HIE)} is a modular, high-availability, distributed healthcare integration platform engineered for HL7 FHIR Release 5 (R5) compliance, real-time HL7 v2 clinical data ingestion, sub-millisecond in-memory cached access, and resilient, audit-compliant workflow execution.
+
+Modern healthcare ecosystems demand zero-loss event streaming, high-throughput message translation, resilient task state persistence, and fine-grained clinical data access across disparate clinical systems. Harmonia addresses these challenges through a cohesive five-tier architectural design and cross-cutting governance framework:
 \begin{itemize}
-    \item \textbf{Pylai Ingress Gateways}: High-throughput MLLP and REST ingestion endpoints for clinical events.
-    \item \textbf{Petasos Messaging Subsystem}: High-availability, multi-broker active-active Apache ActiveMQ Artemis messaging cluster with native NIO journal replication and dynamic server-side message load balancing.
-    \item \textbf{Energeia Workflow Engine}: Modular Apache Camel task activities (\textit{Erga}), structured workflow sequence orchestrators (\textit{Praxis}), and WildFly Jakarta EE 10 execution containers (\textit{Ponos}) operating on canonical task instances (\textit{Pragma}).
-    \item \textbf{Hestia Data Services}: Low-latency in-memory data caching grid (\textit{Mneme}) backed by Infinispan 15+ and durable relational relational disk persistence (\textit{Mnemosyne}) backed by PostgreSQL 16+ and Spring Boot HAPI FHIR JPA.
-    \item \textbf{Iris Presentation Services}: Dual-port Jakarta EE Backend-For-Frontend gateway (\textit{Iris BEFE}) and TypeScript / Vue 3 single-page applications for clinical exploration and operational administration.
+    \item \textbf{Tier 1 --- Presentation Services (\textit{Iris})}: Decoupled Vue 3 / TypeScript single-page applications (\texttt{iris-clinical}, \texttt{iris-console}, \texttt{iris-administration}) supported by a dual-port Jakarta EE Backend-For-Frontend (BEFE) gateway separating clinical read interfaces from administrative operational controls.
+    \item \textbf{Tier 2 --- Interface \& Gateway Services (\textit{Pylai})}: High-throughput bidirectional MLLP and REST ingress and egress dispatch gateways, featuring dedicated destination-isolated queues to eliminate head-of-line blocking across external hospital systems (PAS, EMR, LIS, RIS-PACS).
+    \item \textbf{Tier 3 --- Transport \& Workflow Services (\textit{Petasos} \& \textit{Energeia})}: An active-active Apache ActiveMQ Artemis messaging cluster providing sub-2-second failover and zero message loss, paired with the Ponos/Praxis/Erga modular Apache Camel workflow execution engine operating on canonical task instances (\textit{Pragma}).
+    \item \textbf{Tier 4 --- Distributed Cache Services (\textit{Hestia Mneme})}: An in-memory Infinispan 15+ distributed cache grid delivering sub-millisecond retrieval of active clinical tasks, transaction states, and resource models with asynchronous write-behind persistence.
+    \item \textbf{Tier 5 --- Persistence Services (\textit{Hestia Mnemosyne})}: Durable long-term relational persistence uniting PostgreSQL 16+ database engines with Spring Boot HAPI FHIR JPA and Operations JPA servers.
+    \item \textbf{Cross-Cutting Governance \& Security (\textit{Themis} \& \textit{Calliope})}: Zero-trust role- and attribute-based access control (RBAC/ABAC), dual-gate Protected Health Information (PHI) audit logging, and centralized canonical domain data schemas (DTOs).
+\end{itemize}
+
+\section*{Structure and Scope of the Reference Publication}
+
+This document serves as the authoritative Harmonia Architecture, Implementation, and Deployment Reference. To address the diverse requirements of enterprise architects, integration engineers, system administrators, and clinical application developers, the documentation is divided into nine major Parts and twelve comprehensive Appendices:
+
+\begin{itemize}
+    \item \textbf{PART I: Foundations (Chapters 1--4)}: Formulates platform motivation, the healthcare integration context, classical conceptual taxonomy, and business/clinical architecture.
+    \item \textbf{PART II: Platform Architecture (Chapters 5--12)}: 5-Tier application component architecture, boundary gateways (Pylai), messaging transport (Petasos), collaboration (Agora), workflow orchestration (Energeia), presentation portals (Iris), and FHIR R5 Provider Registry core services.
+    \item \textbf{PART III: Information \& Integration (Chapters 13--15)}: Canonical information models, FHIR R5 schemas, HL7 v2 transformations, and MLLP integration guide.
+    \item \textbf{PART IV: Middleware Architecture (Chapters 16--20)}: Clustered ActiveMQ Artemis HA, Infinispan distributed caching, PostgreSQL/HAPI FHIR R5 persistence, and Matrix Synapse homeserver architecture.
+    \item \textbf{PART V: Runtime Architecture (Chapters 21--26)}: Container packaging, MicroK8s pod scheduling, single-node resilience, physical deployment, Themis security architecture, and governed PHI logging.
+    \item \textbf{PART VI: Normal Deployment (Chapters 27--32)}: Declarative configuration hierarchy, properties reference, Ubuntu host preparation, normal MicroK8s deployment runbooks, and undeployment/retention.
+    \item \textbf{PART VII: Paradeigma Simulation (Chapters 33--35)}: Synthetic clinical generators, scenario framework, workload deployment runbooks, and strict production isolation guardrails.
+    \item \textbf{PART VIII: Development (Chapters 36--38)}: Development environment, architecture invariants, and implementation guides for Ergon activity modules and Praxis workflow sequences.
+    \item \textbf{PART IX: Operations (Chapters 39--40)}: Failure operations, recovery guarantees, operational runbooks, and PHI-aware logging implementation guide.
+    \item \textbf{APPENDICES (Appendices A--L)}: Authoritative registers and checklists: Appendix A (Glossary), Appendix B (System Inventory), Appendix C (Module Register), Appendix D (Middleware Matrix), Appendix E (Configuration Register), Appendix F (Port/Protocol Register), Appendix G (Image Register), Appendix H (Kubernetes Register), Appendix I (Persistence Register), Appendix J (Dependency Matrix), Appendix K (Normal Deployment Checklist), Appendix L (Paradeigma Deployment Checklist).
 \end{itemize}
 
 \section*{ArchiMate 3.2 Architectural Modeling Framework}
 \addcontentsline{toc}{section}{ArchiMate 3.2 Architectural Modeling Framework}
 
 To ensure complete structural rigor, unambiguous domain boundaries, and formal traceability across business, application, and infrastructure tiers, this specification is authored strictly in accordance with \textbf{The Open Group ArchiMate 3.2 Standard}.
-
-The architecture is described across six formal ArchiMate layers:
-\begin{enumerate}
-    \item \textbf{Motivation \& Strategy Layer}: Captures business stakeholders, regulatory drivers, architectural principles, high-level goals, and strategic interoperability capabilities.
-    \item \textbf{Business Layer}: Models healthcare business actors, operational roles, clinical ingestion services, and business process lifecycles.
-    \item \textbf{Application Layer}: Specifies the component landscape, internal module collaborations, application services, and canonical data object flows across the 26 Maven modules.
-    \item \textbf{Data \& Information Layer}: Defines canonical information models, the \texttt{Pragma} task state machine, the \texttt{PetasosMessage} transport envelope, and the 14 supported FHIR R5 resource schemas.
-    \item \textbf{Technology Layer}: Details infrastructure execution nodes, system software runtimes (WildFly, Artemis, Infinispan, PostgreSQL), communication paths, networks, and port allocations.
-    \item \textbf{Physical \& Deployment Layer}: Documents multi-broker high-availability replication pairs, containerization topology, failover mechanics, and disaster recovery pathways.
-\end{enumerate}
 
 \begin{figure}[htbp]
     \centering
@@ -53,31 +63,37 @@ Harmonia adopts naming conventions rooted in classical Greek mythology and philo
 \toprule
 \textbf{Subsystem} & \textbf{Architectural Role} & \textbf{Classical Origin} & \textbf{Platform Responsibilities} \\
 \midrule
-\textbf{\texttt{Harmonia}} & Health Integration Environment & \textit{Harmonia} (Ἁρμονία) --- Goddess of concord and balance. & Overall platform uniting clinical protocols, streaming messaging, cache grids, and relational storage. \\
+\textbf{\texttt{Harmonia}} & Health Integration Environment & \textit{Harmonia} --- Goddess of concord and balance. & Overall platform uniting clinical protocols, streaming messaging, cache grids, and relational storage. \\
 \addlinespace
-\textbf{\texttt{Petasos}} & Messaging Transport Subsystem & \textit{Petasos} (πέτασος) --- Winged hat of Hermes, symbol of swift dispatch. & Clustered ActiveMQ Artemis messaging, durable queues, client failover, and \texttt{PetasosMessage} envelopes. \\
+\textbf{\texttt{Petasos}} & Messaging Transport Subsystem & \textit{Petasos} --- Winged hat of Hermes, symbol of swift dispatch. & Clustered ActiveMQ Artemis messaging, durable queues, client failover, and \texttt{PetasosMessage} envelopes. \\
 \addlinespace
-\textbf{\texttt{Energeia}} & Workflow Services & \textit{Energeia} (ἐνέργεια) --- Aristotelian actuality and continuous activity. & Top-level workflow services aggregator containing Ponos, Praxis, Erga, and Ponos CLI. \\
+\textbf{\texttt{Energeia}} & Workflow Services & \textit{Energeia} --- Aristotelian actuality and continuous activity. & Top-level workflow services aggregator containing Ponos, Praxis, Erga, and Ponos CLI. \\
 \addlinespace
-\textbf{\texttt{Ponos}} & WorkEngine Execution Container & \textit{Ponos} (Πόνος) --- Personification of industrious toil and labor. & WildFly Jakarta EE 10 container hosting Camel contexts, Petasos conduits, and REST managers. \\
+\textbf{\texttt{Ponos}} & WorkEngine Execution Container & \textit{Ponos} --- Personification of industrious toil and labor. & WildFly 31 Jakarta EE 10 WAR container hosting Camel contexts, Petasos conduits, and task worker managers. \\
 \addlinespace
-\textbf{\texttt{Erga}} & Modular Task Activities & \textit{Erga} (ἔργα) --- Plural of \textit{Ergon} (ἔργον), works, deeds, or tasks. & Single-responsibility Camel route components (\texttt{ErgonBase}) executing discrete clinical mappings. \\
+\textbf{\texttt{Erga}} & Modular Task Activities & \textit{Erga} --- Plural of \textit{Ergon}, works, deeds, or tasks. & Single-responsibility Camel route components (\texttt{ErgonBase}) executing discrete clinical mappings. \\
 \addlinespace
-\textbf{\texttt{Praxis}} & Workflow Sequence Orchestrator & \textit{Praxis} (πρᾶξις) --- Structured action or enactment of theory. & Sequence orchestrator chaining ordered Ergon steps and recording multi-phase state checkpoints. \\
+\textbf{\texttt{Praxis}} & Workflow Sequence Orchestrator & \textit{Praxis} --- Structured action or enactment of theory. & Sequence orchestrator chaining ordered Ergon steps and recording multi-phase state checkpoints. \\
 \addlinespace
-\textbf{\texttt{Pragma}} & Task Instance / State Entity & \textit{Pragma} (πρᾶγμα) --- That which has been done, concrete deed. & Canonical task state model holding inputs, outputs, checkpoints, and bidirectional FHIR \texttt{Task} mapping. \\
+\textbf{\texttt{Pragma}} & Task Instance / State Entity & \textit{Pragma} --- That which has been done, concrete deed. & Canonical task state model holding inputs, outputs, checkpoints, and bidirectional FHIR \texttt{Task} mapping. \\
 \addlinespace
-\textbf{\texttt{Calliope}} & Canonical Schema Repository & \textit{Calliope} (Καλλιόπη) --- Chief Muse of eloquence and harmonious order. & Shared information models, domain DTOs, schemas, and payload envelopes used across all modules. \\
+\textbf{\texttt{Calliope}} & Canonical Schema Repository & \textit{Calliope} --- Chief Muse of eloquence and harmonious order. & Shared information models, domain DTOs, schemas, and payload envelopes used across all modules. \\
 \addlinespace
-\textbf{\texttt{Mneme}} & In-Memory Distributed Cache & \textit{Mneme} (Μνήμη) --- Muse of active memory and rapid recall. & Infinispan distributed L1 cache grid providing low-latency \texttt{task-cache} and \texttt{tasksequence-cache}. \\
+\textbf{\texttt{Themis}} & Policy Governance Subsystem & \textit{Themis} --- Titaness of divine law and order. & Default-deny ABAC/RBAC authorization engine, PEP interceptors, and non-PHI audit event logging. \\
 \addlinespace
-\textbf{\texttt{Mnemosyne}} & Relational Persistence Tier & \textit{Mnemosyne} (Μνημοσύνη) --- Titaness of durable memory. & Long-term PostgreSQL storage comprising Spring Boot FHIR JPA and Operations JPA servers. \\
+\textbf{\texttt{Mneme}} & In-Memory Distributed Cache & \textit{Mneme} --- Muse of active memory and rapid recall. & Infinispan distributed L1 cache grid providing low-latency \texttt{task-cache} and \texttt{tasksequence-cache}. \\
 \addlinespace
-\textbf{\texttt{Hestia}} & Data Services Subsystem & \textit{Hestia} (Ἑστία) --- Goddess of the hearth and foundational stability. & Data services aggregator managing caching (Mneme) and persistence (Mnemosyne). \\
+\textbf{\texttt{Mnemosyne}} & Relational Persistence Tier & \textit{Mnemosyne} --- Titaness of durable memory. & Long-term PostgreSQL storage comprising Spring Boot FHIR JPA and Operations JPA servers. \\
 \addlinespace
-\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} (Ἶρις) --- Goddess of the rainbow and divine messenger. & Presentation tier comprising Jakarta EE BEFE gateway, Clinical UI SPA, and Console UI SPA. \\
+\textbf{\texttt{Hestia}} & Data Services Subsystem & \textit{Hestia} --- Goddess of the hearth and foundational stability. & Data services aggregator managing caching (Mneme) and persistence (Mnemosyne). \\
 \addlinespace
-\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} (Πύλαι) --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways, HL7 parsing, and synthetic test CLI. \\
+\textbf{\texttt{Iris}} & Presentation Services & \textit{Iris} --- Goddess of the rainbow and divine messenger. & Decoupled multi-portal presentation tier comprising Jakarta EE dual-port BEFE gateway, Clinical UI SPA, Console UI SPA, and Administration Dual-Portal SPA. \\
+\addlinespace
+\textbf{\texttt{Agora}} & Collaboration Services & \textit{Agora} --- Ancient assembly and civic gathering place. & Collaboration gateway projecting clinical events into Matrix Synapse Spaces, child rooms, and multidisciplinary care team chats. \\
+\addlinespace
+\textbf{\texttt{Pylai}} & Gateway / Interface Services & \textit{Pylai} --- Gateways, portals of entry and exit. & Boundary interface services including inbound MLLP gateways (\texttt{pylai-mllp-in}), multi-instance outbound MLLP gateways (\texttt{pylai-mllp-out}), and FHIR R5 Provider Registry REST gateway (\texttt{pylai-fhir-registry}). \\
+\addlinespace
+\textbf{\texttt{Paradeigma}} & Clinical Simulation \& Testbed & \textit{Paradeigma} --- Model, pattern, exemplar. & Reference clinical simulation subsystem providing deterministic hospital actor emulators (PAS, EMR, LMS, RIS-PAC), multi-system Patient Journey orchestration, and automated fault injection testbed. \\
 \bottomrule
 \end{tabularx}
 \caption{Harmonia Classical Architectural Nomenclature and System Meaning Matrix}

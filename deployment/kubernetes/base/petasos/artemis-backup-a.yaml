@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: artemis-backup-a
+  namespace: harmonia
+  labels:
+    app.kubernetes.io/name: artemis-backup-a
+    app.kubernetes.io/component: messaging
+    app.kubernetes.io/part-of: harmonia-platform
+spec:
+  serviceName: artemis-backup-a
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: artemis-backup-a
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: artemis-backup-a
+        app.kubernetes.io/component: messaging
+        app.kubernetes.io/part-of: harmonia-platform
+    spec:
+      containers:
+        - name: artemis
+          image: apache/activemq-artemis:2.33.0
+          env:
+            - name: ARTEMIS_USER
+              value: "admin"
+            - name: ARTEMIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-artemis-secrets
+                  key: admin-password
+                  optional: true
+            - name: ARTEMIS_PASSWORD_DEFAULT
+              value: "admin"
+            - name: CLUSTER_USER
+              value: "artemisCluster"
+            - name: CLUSTER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-artemis-secrets
+                  key: cluster-password
+                  optional: true
+            - name: CLUSTER_PASSWORD_DEFAULT
+              value: "artemisClusterPassword"
+            - name: EXTRA_ARGS
+              value: "--override-config /var/lib/artemis/etc-override/broker.xml"
+          ports:
+            - containerPort: 61616
+              name: core
+            - containerPort: 8161
+              name: console
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+          livenessProbe:
+            tcpSocket:
+              port: 61616
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+          readinessProbe:
+            tcpSocket:
+              port: 61616
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            timeoutSeconds: 3
+          volumeMounts:
+            - name: artemis-backup-a-data
+              mountPath: /var/lib/artemis/data
+            - name: broker-config
+              mountPath: /var/lib/artemis/etc-override
+      volumes:
+        - name: broker-config
+          configMap:
+            name: artemis-backup-a-config
+  volumeClaimTemplates:
+    - metadata:
+        name: artemis-backup-a-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi

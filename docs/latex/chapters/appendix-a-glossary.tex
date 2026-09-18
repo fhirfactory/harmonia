@@ -1,0 +1,97 @@
+%% =============================================================================
+%% chapters/appendix-a-glossary.tex
+%% APPENDIX A: Glossary of Classical Nomenclature & Platform Terminology
+%% =============================================================================
+
+\chapter{Glossary of Classical Nomenclature \& Terminology}
+\label{app:glossary}
+
+This appendix provides the authoritative glossary of classical Greek architectural naming metaphors, mythological etymologies, healthcare standards, and platform abbreviations utilized across the Harmonia Health Integration Environment.
+
+\section{Core Greek Metaphor Register}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l p{2.2cm} p{3.2cm} Y l}
+\toprule
+\textbf{Concept} & \textbf{Classical Etymology} & \textbf{Mythological / Classical Role} & \textbf{Harmonia Architectural Responsibility} & \textbf{Status} \\
+\midrule
+\textbf{Harmonia} & \textit{harmonia} (agreement, concord) & Goddess of harmony, order, and bringing discordant elements into union. & Overarching Health Integration Environment (HIE) uniting all subsystems. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Hestia} & \textit{hestia} (hearth, altar fire) & Virgin goddess of the hearth, family stability, and the sacred flame. & Persistence foundation subsystem governing both ephemeral caching and relational storage. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Pylai} & \textit{pylai} (gates, portals) & The great ceremonial and defensive city gates controlling entry and egress. & Boundary protocol gateways (inbound/outbound MLLP, FHIR REST Provider Registry). & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Petasos} & \textit{petasos} (winged sun hat) & The broad-brimmed winged hat of Hermes, messenger god of swift travel. & Resilient messaging abstraction layer isolating broker clients behind pure transport contracts. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Energeia} & \textit{energeia} (action, actuality) & Aristotelian concept of activity, energy, and bringing potential into reality. & Task execution and workflow orchestration subsystem (workers, activity units, blueprints). & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Ponos} & \textit{ponos} (toil, hard labor) & Personification of strenuous work, physical labor, and ceaseless exertion. & High-concurrency WorkEngine daemon consuming tasks from message queues and invoking activities. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Ergon} & \textit{ergon} (work, deed, artifact) & A discrete, purposeful piece of work or single finished deed. & Atomic, single-responsibility activity execution unit (parsing ADT, mapping FHIR, egress dispatch). & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Praxis} & \textit{praxis} (practical action) & Practical human action guided by reason; deliberate execution of a plan. & Workflow blueprint definition governing multi-step sequential or parallel task execution stages. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Pragma} & \textit{pragma} (matter, deed done) & A tangible thing done, a matter of fact, or a concrete transaction. & Canonical task execution state envelope carrying metadata, checkpoints, and security context. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Mneme} & \textit{mneme} (memory, recall) & One of the original three Boeotian Muses, personifying short-term memory. & In-memory distributed cache grid (Infinispan 15.0.3 Hot Rod) providing sub-millisecond coordination. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Mnemosyne} & \textit{mnemosyne} (remembrance) & Titaness of memory and mother of the Muses; personifies permanent historical memory. & Authoritative relational persistence tier (HAPI FHIR R5 JPA and Spring Data JPA on PostgreSQL 16). & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Calliope} & \textit{calliope} (beautiful-voiced) & Eldest of the nine Muses, presiding over eloquence and epic poetry. & Canonical data models, shared DTOs, HL7 v2-to-FHIR converters, and standard event envelopes. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Themis} & \textit{themis} (divine law, custom) & Titaness of divine order, justice, and the unwritten cosmic law. & Default-deny policy evaluation engine, role-to-authority mappings, and non-PHI security audit logging. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Iris} & \textit{iris} (rainbow messenger) & Goddess of the rainbow and swift winged messenger connecting sea and sky. & Presentation tier delivering the WildFly BEFE REST gateway and three decoupled Vue 3 web SPAs. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Agora} & \textit{agora} (assembly, market) & Ancient Greek public gathering place for debate, civic assembly, and commerce. & Collaboration gateway projecting clinical events into Matrix Synapse Spaces, child rooms, and care team chats. & \texttt{[IMPLEMENTED]} \\
+\addlinespace
+\textbf{Paradeigma} & \textit{paradeigma} (model, exemplar) & A model, archetype, or pattern used to demonstrate a principle or test a hypothesis. & Synthetic clinical simulation framework generating personas, encounters, and multi-system scenarios. & \texttt{[IMPLEMENTED]} \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Classical Architectural Nomenclature and Etymology Register}
+\label{tab:glossary_greek_metaphors}
+\end{table}
+
+\section{Healthcare \& Enterprise Integration Terminology}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l P{4.0cm} Y}
+\toprule
+\textbf{Term} & \textbf{Full Expansion} & \textbf{Harmonia Definition \& Context} \\
+\midrule
+\textbf{HIE} & Health Integration Environment & Comprehensive enterprise software platform facilitating secure, standardized health data exchange across hospital networks. \\
+\addlinespace
+\textbf{HL7 v2.x} & Health Level Seven Version 2 & Pipe-and-hat delimited messaging protocol utilized by legacy hospital information systems (ADT, ORM, ORU). \\
+\addlinespace
+\textbf{FHIR R5} & Fast Healthcare Interoperability Resources (R5) & Modern RESTful, JSON/XML-based healthcare standard utilized for Harmonia's internal canonical clinical models. \\
+\addlinespace
+\textbf{MLLP} & Minimal Lower Layer Protocol & TCP framing protocol using Start Block \texttt{0x0B} and End Block \texttt{0x1C 0x0D} to delimit HL7 v2 messages. \\
+\addlinespace
+\textbf{PHI} & Protected Health Information & Individually identifiable health information strictly protected under HIPAA, GDPR, and Australian Privacy Principles. \\
+\addlinespace
+\textbf{PAS} & Patient Administration System & Core hospital operational system managing patient admission, discharge, transfer, and demographics. \\
+\addlinespace
+\textbf{EMR / EHR} & Electronic Medical / Health Record & Clinical repository storing longitudinal patient encounter charts, orders, observations, and notes. \\
+\addlinespace
+\textbf{LMS / LIS} & Laboratory Management / Information System & Specialized laboratory diagnostic system managing pathology orders, specimens, and analytical results. \\
+\addlinespace
+\textbf{RIS / PACS} & Radiology Information System / Picture Archiving & Systems managing medical imaging orders, DICOM studies, and diagnostic radiology reports. \\
+\addlinespace
+\textbf{Hot Rod} & Infinispan Hot Rod Protocol & Binary, topology-aware client-server RPC protocol used to communicate with Mneme in-memory cache nodes. \\
+\addlinespace
+\textbf{AS} & Matrix Application Service & Privileged integration protocol connecting the Agora gateway to the Matrix Synapse homeserver. \\
+\addlinespace
+\textbf{REC-001} & Ingress Dual-Write Safety & Architecture invariant: gateways must guarantee Petasos queue acceptance before returning an \texttt{AA} ACK over MLLP. \\
+\addlinespace
+\textbf{REC-002} & Granular Fan-Out Tracking & Architecture invariant: outbound dispatch activities must record destination-specific delivery checkpoints in \texttt{Task.output}. \\
+\bottomrule
+\end{tabularx}
+\caption{Healthcare and Enterprise Integration Terminology Register}
+\label{tab:glossary_healthcare_terms}
+\end{table}
+
+\newpage

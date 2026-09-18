@@ -23,6 +23,8 @@ import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.util.Terser;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.AdtCommunicationResourceBuilder;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.AdtTaskResourceBuilder;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -100,6 +102,7 @@ class AdtModularBuildersTest {
         assertThat(comm.getPayload()).hasSize(1);
         Attachment att = (Attachment) comm.getPayloadFirstRep().getContent();
         assertThat(new String(att.getData(), StandardCharsets.UTF_8)).isEqualTo(hl7);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(comm, FhirConfidentialityEnum.N)).isTrue();
     }
 
     @Test
@@ -126,5 +129,6 @@ class AdtModularBuildersTest {
         Task.TaskInputComponent commInput = task.getInput().get(1);
         assertThat(commInput.getType().getCodingFirstRep().getCode()).isEqualTo("input-communication");
         assertThat(((Reference) commInput.getValue()).getReference()).isEqualTo("#comm-MSG-01");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(task, FhirConfidentialityEnum.N)).isTrue();
     }
 }

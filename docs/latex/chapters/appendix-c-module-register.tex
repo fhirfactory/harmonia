@@ -1,0 +1,89 @@
+%% =============================================================================
+%% chapters/appendix-c-module-register.tex
+%% APPENDIX C: Authoritative Module Register
+%% =============================================================================
+
+\chapter{Authoritative Subproject \& Leaf Module Register}
+\label{app:module_register}
+
+This appendix provides the granular architectural and build register across all 9 subprojects and 37 leaf modules within the Harmonia repository reactor.
+
+\section{Module Taxonomy \& Architectural Classification}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{3.2cm} P{4.0cm} Y l}
+\toprule
+\textbf{Subproject} & \textbf{Leaf Module Artifact} & \textbf{Primary Java Package} & \textbf{Architectural Responsibility \& Contracts} & \textbf{Status} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Calliope (Canonical Domain Models)}} \\
+\midrule
+\textbf{calliope} & \texttt{calliope} & \nolinkurl{net.fhirfactory.harmonia.calliope} & Canonical schemas, DTOs, FHIR converter models. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Themis (Default-Deny Policy Enforcement)}} \\
+\midrule
+\textbf{themis} & \texttt{themis-api} & \nolinkurl{net.fhirfactory.harmonia.themis.api} & Security contracts, policy decision interfaces. & \texttt{[IMPLEMENTED]} \\
+\textbf{themis} & \texttt{themis-core} & \nolinkurl{net.fhirfactory.harmonia.themis.core} & Deterministic ABAC/RBAC 4-gate evaluator. & \texttt{[IMPLEMENTED]} \\
+\textbf{themis} & \texttt{themis-audit} & \nolinkurl{net.fhirfactory.harmonia.themis.audit} & Non-PHI security audit logging pipeline. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Hestia (Persistence \& Caching Subsystem)}} \\
+\midrule
+\textbf{hestia} & \texttt{mneme-cluster} & \nolinkurl{net.fhirfactory.harmonia.mneme} & Clustered Infinispan 15.0.3 data grid server. & \texttt{[CONFIGURED]} \\
+\textbf{hestia} & \texttt{mneme-persistence} & \nolinkurl{net.fhirfactory.harmonia.persistence} & NonBlockingStore write-behind cache SPI. & \texttt{[IMPLEMENTED]} \\
+\textbf{hestia} & \texttt{mnemosyne-clinical} & \nolinkurl{net.fhirfactory.harmonia.hapifhir} & HAPI FHIR R5 JPA server backed by PostgreSQL. & \texttt{[IMPLEMENTED]} \\
+\textbf{hestia} & \texttt{mnemosyne-operations} & \nolinkurl{net.fhirfactory.harmonia.operations} & Spring Data JPA operations persistence server. & \texttt{[IMPLEMENTED]} \\
+\textbf{hestia} & \texttt{hie-operations-cli} & \nolinkurl{net.fhirfactory.harmonia.operationscli} & Picocli administrative operational CLI tool. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Petasos (Transport \& Messaging Subsystem)}} \\
+\midrule
+\textbf{petasos} & \texttt{petasos-api} & \nolinkurl{net.fhirfactory.harmonia.petasos.api} & Pure Java transport abstractions (zero JMS). & \texttt{[IMPLEMENTED]} \\
+\textbf{petasos} & \texttt{petasos-core} & \nolinkurl{net.fhirfactory.harmonia.petasos.core} & Sliding-window deduplication \& topic routing. & \texttt{[IMPLEMENTED]} \\
+\textbf{petasos} & \texttt{petasos-artemis} & \nolinkurl{net.fhirfactory.harmonia.petasos.artemis} & ActiveMQ Artemis 2.33.0 Core client adapter. & \texttt{[IMPLEMENTED]} \\
+\textbf{petasos} & \texttt{petasos-test} & \nolinkurl{net.fhirfactory.harmonia.petasos.test} & Embedded Artemis multi-broker test harness. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Energeia (Task Processing \& Workflow Orchestration)}} \\
+\midrule
+\textbf{energeia} & \texttt{erga} & \nolinkurl{net.fhirfactory.harmonia.erga} & Discrete Camel activity units (AdtDistribution, etc). & \texttt{[IMPLEMENTED]} \\
+\textbf{energeia} & \texttt{praxis} & \nolinkurl{net.fhirfactory.harmonia.praxis} & TaskSequence blueprints and default seeders. & \texttt{[IMPLEMENTED]} \\
+\textbf{energeia} & \texttt{ponos} & \nolinkurl{net.fhirfactory.harmonia.ponos} & WildFly Jakarta EE 10 WAR task worker engine. & \texttt{[IMPLEMENTED]} \\
+\textbf{energeia} & \texttt{ponos-cli} & \nolinkurl{net.fhirfactory.harmonia.workflowcli} & Administrative CLI for Ponos queue inspection. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Pylai (Interface \& Boundary Gateways)}} \\
+\midrule
+\textbf{pylai} & \texttt{pylai-mllp-base} & \nolinkurl{net.fhirfactory.harmonia.pylai.base} & Netty/Camel MLLP base and destination registry. & \texttt{[IMPLEMENTED]} \\
+\textbf{pylai} & \texttt{pylai-mllp-in} & \nolinkurl{net.fhirfactory.harmonia.pylai.inbound} & Inbound MLLP receiver WAR (Port 2575). & \texttt{[IMPLEMENTED]} \\
+\textbf{pylai} & \texttt{pylai-mllp-out} & \nolinkurl{net.fhirfactory.harmonia.pylai.outbound} & Outbound MLLP dispatcher WAR (Egress queues). & \texttt{[IMPLEMENTED]} \\
+\textbf{pylai} & \texttt{pylai-fhir-registry} & \nolinkurl{net.fhirfactory.harmonia.pylai.registry} & Spring Boot FHIR R5 Provider Registry gateway. & \texttt{[IMPLEMENTED]} \\
+\textbf{pylai} & \texttt{pylai-mllp-cli} & \nolinkurl{net.fhirfactory.harmonia.pylai.cli} & MLLP synthetic message injection CLI tool. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Iris (Presentation Tier \& BEFE Gateways)}} \\
+\midrule
+\textbf{iris} & \texttt{iris-befe} & \nolinkurl{net.fhirfactory.harmonia.iris.befe} & WildFly 31.0.1 dual-port BEFE REST gateway. & \texttt{[IMPLEMENTED]} \\
+\textbf{iris} & \texttt{iris-clinical} & \nolinkurl{src/ (Vue 3 / TypeScript)} & Clinical exploration and timeline web SPA. & \texttt{[IMPLEMENTED]} \\
+\textbf{iris} & \texttt{iris-console} & \nolinkurl{src/ (Vue 3 / TypeScript)} & Operations telemetry and queue monitoring SPA. & \texttt{[IMPLEMENTED]} \\
+\textbf{iris} & \texttt{iris-administration} & \nolinkurl{src/ (Vue 3 / TypeScript)} & Provider Registry administration web SPA. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Agora (Collaboration Gateway \& Matrix AS Integration)}} \\
+\midrule
+\textbf{agora} & \texttt{agora-api} & \nolinkurl{net.fhirfactory.harmonia.agora.api} & Collaboration domain models and topics. & \texttt{[IMPLEMENTED]} \\
+\textbf{agora} & \texttt{agora-matrix} & \nolinkurl{net.fhirfactory.harmonia.agora.matrix} & Matrix Client-Server and Synapse Admin client. & \texttt{[IMPLEMENTED]} \\
+\textbf{agora} & \texttt{agora-core} & \nolinkurl{net.fhirfactory.harmonia.agora.core} & Collaboration lifecycle and identity service. & \texttt{[IMPLEMENTED]} \\
+\textbf{agora} & \texttt{agora-service} & \nolinkurl{net.fhirfactory.harmonia.agora.service} & Matrix Application Service REST microservice. & \texttt{[IMPLEMENTED]} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Paradeigma (Synthetic Clinical Simulation \& Testbed)}} \\
+\midrule
+\textbf{paradeigma} & \texttt{paradeigma-common} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.common} & Synthetic personas, identifiers, and clinical DTOs. & \texttt{[IMPLEMENTED]} \\
+\textbf{paradeigma} & \texttt{paradeigma-pas} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.pas} & PAS simulator generating ADT A01--A40 feeds. & \texttt{[IMPLEMENTED]} \\
+\textbf{paradeigma} & \texttt{paradeigma-emr} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.emr} & EMR simulator generating encounter records. & \texttt{[IMPLEMENTED]} \\
+\textbf{paradeigma} & \texttt{paradeigma-lms} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.lms} & LMS laboratory simulator generating ORU results. & \texttt{[IMPLEMENTED]} \\
+\textbf{paradeigma} & \texttt{paradeigma-rispac} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.rispac} & RIS-PAC radiology simulator generating reports. & \texttt{[IMPLEMENTED]} \\
+\textbf{paradeigma} & \texttt{paradeigma-scenarios} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.scenarios} & Multi-system scenario orchestration engine. & \texttt{[IMPLEMENTED]} \\
+\textbf{paradeigma} & \texttt{paradeigma-test} & \nolinkurl{net.fhirfactory.harmonia.paradeigma.test} & ArchUnit architecture guardrail test harness. & \texttt{[IMPLEMENTED]} \\
+\bottomrule
+\end{tabularx}
+\caption{Authoritative 37-Leaf-Module Register Across 9 Subprojects}
+\label{tab:authoritative_module_register}
+\end{table}
+
+\newpage

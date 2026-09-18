@@ -1,0 +1,56 @@
+%% =============================================================================
+%% chapters/10-postgresql-persistence.tex
+%% PART III: Middleware Architecture
+%% Chapter 10: PostgreSQL & HAPI FHIR R5 Persistence Architecture
+%% =============================================================================
+
+\chapter{PostgreSQL \& HAPI FHIR R5 Persistence Architecture}
+\label{chap:postgresql_persistence}
+
+The Mnemosyne subsystem (\texttt{hestia/mnemosyne-clinical} and \texttt{hestia/mnemosyne-operations}) provides long-term durable persistence, structured querying, and regulatory compliance storage for the Harmonia platform.
+
+\section{Database Separation: Clinical vs Operations vs Collaboration}
+
+Harmonia strictly separates clinical health records from operational telemetry, audit logs, and collaboration state by maintaining three independent PostgreSQL 16 database clusters (image \texttt{postgres:16-alpine}):
+
+\subsection{1. Clinical Database (\texttt{postgres-1} \& \texttt{postgres-2})}
+\begin{itemize}
+    \item \textbf{Internal Service Port}: 5432
+    \item \textbf{Schema Name}: \texttt{hie\_fhir\_resources}
+    \item \textbf{Owning Server}: \texttt{mnemosyne-clinical} (Spring Boot HAPI FHIR R5 JPA)
+    \item \textbf{Stored Entities}: Authoritative FHIR R5 resources (\texttt{Patient}, \texttt{Practitioner}, \texttt{Organization}, \texttt{Observation}, \texttt{Encounter}, etc.) with complete version histories and search indexes.
+\end{itemize}
+
+\subsection{2. Operations Database (\texttt{postgres-ops-1} \& \texttt{postgres-ops-2})}
+\begin{itemize}
+    \item \textbf{Internal Service Port}: 5434
+    \item \textbf{Schema Name}: \texttt{hie\_operations\_resources}
+    \item \textbf{Owning Server}: \texttt{mnemosyne-operations} (Spring Boot Operations JPA)
+    \item \textbf{Stored Entities}: Non-clinical \texttt{Task} histories, \texttt{AuditEvent} logs, \texttt{Provenance} lineage, and system configuration records.
+\end{itemize}
+
+\subsection{3. Collaboration Database (\texttt{postgres-synapse})}
+\begin{itemize}
+    \item \textbf{Internal Service Port}: 5436 (mapped to 5432 in pod)
+    \item \textbf{Database Name}: \texttt{synapse\_db}
+    \item \textbf{Owning Services}: Matrix Synapse Homeserver and Agora Core JPA
+    \item \textbf{Stored Entities}: Agora resource ID mappings (\nolinkurl{agora_resource_mappings}), Application Service transactions (\nolinkurl{agora_as_transactions}), and Synapse rooms, state events, and membership rosters.
+\end{itemize}
+
+\section{JPA Server Deployment Architecture}
+
+In the Kubernetes base manifests, the JPA servers are deployed as stateless application Deployments interfacing with the database StatefulSets:
+\begin{itemize}
+    \item \textbf{Clinical Deployments}: \texttt{hapi-fhir-jpa-server-1} and \texttt{hapi-fhir-jpa-server-2} (Ports 8080/8081).
+    \item \textbf{Operations Deployments}: \texttt{hie-operations-jpa-server-1} and \texttt{hie-operations-jpa-server-2} (Ports 8080/8085).
+\end{itemize}
+
+\section{Optimistic Concurrency \& Referential Integrity}
+
+All FHIR R5 directory entities managed by \texttt{mnemosyne-clinical} enforce:
+\begin{itemize}
+    \item \textbf{Optimistic Locking}: Enforced via integer version IDs (\nolinkurl{version_id}) and HTTP \texttt{ETag} headers. Stale updates that fail the \texttt{If-Match} check are rejected with \texttt{PR-VAL-006}.
+    \item \textbf{Referential Validation}: Foreign key links (such as \nolinkurl{PractitionerRole.practitioner} or \nolinkurl{PractitionerRole.organization}) are checked by server-side validators before commit.
+\end{itemize}
+
+\newpage

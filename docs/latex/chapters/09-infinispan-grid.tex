@@ -1,0 +1,83 @@
+%% =============================================================================
+%% chapters/09-infinispan-grid.tex
+%% PART III: Middleware Architecture
+%% Chapter 9: Infinispan Distributed Cache Grid (Hot Rod, JGroups & Cache Modes)
+%% =============================================================================
+
+\chapter{Infinispan Distributed Cache Grid}
+\label{chap:infinispan_grid}
+
+The Mneme caching tier (\texttt{hestia/mneme-cluster}) is deployed as a clustered stateful data grid running Infinispan 15.0.3. The runtime container is packaged as the custom repository image \nolinkurl{localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT} (built from \nolinkurl{hestia/mneme-cluster/Dockerfile} using upstream base \nolinkurl{quay.io/infinispan/server:15.0.3.Final}).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-mneme-cache-grid.tex}
+    \end{adjustbox}
+    \caption{Infinispan 15.0.3 Distributed Cache Grid Topology and Hot Rod Integration}
+    \label{fig:mneme_cache_grid}
+\end{figure}
+
+\section{Clustered Grid Topology \& Protocols}
+
+Harmonia deploys a two-pod StatefulSet (\texttt{infinispan-1}, \texttt{infinispan-2}) exposed via the Kubernetes service \texttt{infinispan-service}:
+\begin{itemize}
+    \item \textbf{Hot Rod Protocol (Port 11222)}: High-speed binary RPC protocol used by \texttt{iris-befe}, \nolinkurl{ponos-task-processor}, and \texttt{pylai-mllp-in} for sub-millisecond key-value operations and near-cache invalidation.
+    \item \textbf{JGroups Cluster Discovery (Port 7800)}: TCP-based peer discovery and symmetric encryption mesh maintaining cluster membership and cache partition state.
+\end{itemize}
+
+\section{Named Cache Configurations \& Semantics}
+
+Mneme configures exactly 17 replicated caches in \texttt{infinispan.xml}. All 17 caches are configured with synchronous replication (\texttt{REPL\_SYNC}), \texttt{text/plain} key/value encoding, and asynchronous write-behind persistence stores:
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l l l l Y}
+\toprule
+\textbf{Cache Name} & \textbf{Mode} & \textbf{Encoding} & \textbf{Store Binding} & \textbf{Target Entity / Operational Role} \\
+\midrule
+\texttt{person-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Person resources (clinical demographics) \\
+\texttt{relatedperson-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR RelatedPerson resources (kin / contacts) \\
+\texttt{practitioner-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Practitioner master entities (Provider Registry) \\
+\texttt{practitionerrole-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR PractitionerRole role bindings \\
+\texttt{organization-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Organization healthcare facilities \\
+\texttt{location-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Location wards, beds, and facilities \\
+\texttt{healthcareservice-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR HealthcareService clinical offerings \\
+\texttt{group-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Group multidisciplinary care teams \\
+\texttt{provenance-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Provenance cryptographic lifecycle lineage \\
+\texttt{auditevent-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR AuditEvent security access events \\
+\texttt{consent-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Consent privacy directives \\
+\texttt{task-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Task active workflow tasks \\
+\texttt{communication-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR Communication collaboration messages \\
+\texttt{documentreference-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & FHIR DocumentReference clinical documents \\
+\midrule
+\texttt{tasksequence-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{OperationsRestCacheStore} & Praxis TaskSequence workflow definitions \\
+\texttt{messagequeue-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{OperationsRestCacheStore} & Petasos message queue state tracking \\
+\texttt{modulestatus-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{OperationsRestCacheStore} & Module health, liveness, and telemetry \\
+\bottomrule
+\end{tabularx}
+\caption{Infinispan 15.0.3 Replicated Named Cache Definitions and Write-Behind Store Bindings}
+\label{tab:infinispan_caches}
+\end{table}
+
+\subsection{Write-Behind Store Architecture (\texttt{mneme-persistence})}
+
+To isolate low-latency in-memory cache operations from relational database latency, Mneme implements Infinispan's \texttt{NonBlockingStore} SPI:
+\begin{itemize}
+    \item \textbf{Asynchronous Flushing}: Cache mutations are queued in a write-behind buffer (\texttt{modification-queue-size="1024"}).
+    \item \textbf{Dual Store Dispatchers}:
+    \begin{itemize}
+        \item \textbf{\texttt{FhirRestCacheStore}}: Flushes clinical cache modifications asynchronously via HTTP REST to \texttt{http://mnemosyne-clinical-1:8080/fhir/r5}.
+        \item \textbf{\texttt{OperationsRestCacheStore}}: Flushes operational telemetry and sequence updates to \texttt{http://mnemosyne-operations-1:8080/api/operations}.
+    \end{itemize}
+    \item \textbf{Replication Guarantee}: Because caches use \texttt{REPL\_SYNC}, every grid node maintains an identical copy in memory, providing instant failover if either node restarts.
+\end{itemize}
+
+\section{Cache Classification Invariant}
+
+\begin{principlebox}{Operational Cache vs Durable Storage}
+Mneme is classified strictly as an \textbf{operational in-memory cache grid}, not durable authoritative storage. While data is replicated across 2 owners in memory to survive single-pod restarts, long-term clinical durability and compliance audit records are owned exclusively by Mnemosyne PostgreSQL databases.
+\end{principlebox}
+
+\newpage

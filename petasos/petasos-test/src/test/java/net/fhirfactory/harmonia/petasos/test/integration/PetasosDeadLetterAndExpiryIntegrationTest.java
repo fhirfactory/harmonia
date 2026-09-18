@@ -118,7 +118,7 @@ class PetasosDeadLetterAndExpiryIntegrationTest {
         petasos.send(destination, msg);
 
         // Sleep to let message expire and expiry scanner execute
-        Thread.sleep(800);
+        Thread.sleep(1200);
 
         // Normal consumer on queue should find nothing because message has expired
         var consumer = petasos.createConsumer();

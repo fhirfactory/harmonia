@@ -81,10 +81,26 @@ public class PractitionerRoleResourceProvider implements IResourceProvider {
             @Description(shortDefinition = "The ID of the resource")
             @OptionalParam(name = "_id") StringParam theId,
             @Description(shortDefinition = "A practitioner role Identifier")
-            @OptionalParam(name = "identifier") StringParam theIdentifier
+            @OptionalParam(name = "identifier") StringParam theIdentifier,
+            @Description(shortDefinition = "Practitioner that is able to provide the defined services for the organization")
+            @OptionalParam(name = "practitioner") StringParam thePractitioner,
+            @Description(shortDefinition = "The organization where the Practitioner performs the role")
+            @OptionalParam(name = "organization") StringParam theOrganization,
+            @Description(shortDefinition = "The location where the Practitioner provides care")
+            @OptionalParam(name = "location") StringParam theLocation,
+            @Description(shortDefinition = "The list of healthcare services that this worker provides for this role's Organization/Location(s)")
+            @OptionalParam(name = "service") StringParam theService,
+            @Description(shortDefinition = "Whether this practitioner role record is in active use")
+            @OptionalParam(name = "active") StringParam theActive
     ) {
-        String idStr = theId != null ? theId.getValue() : null;
-        String identStr = theIdentifier != null ? theIdentifier.getValue() : null;
-        return storageService.searchResources("PractitionerRole", idStr, null, identStr);
+        java.util.Map<String, String> params = new java.util.HashMap<>();
+        if (theId != null) params.put("_id", theId.getValue());
+        if (theIdentifier != null) params.put("identifier", theIdentifier.getValue());
+        if (thePractitioner != null) params.put("practitioner", thePractitioner.getValue());
+        if (theOrganization != null) params.put("organization", theOrganization.getValue());
+        if (theLocation != null) params.put("location", theLocation.getValue());
+        if (theService != null) params.put("service", theService.getValue());
+        if (theActive != null) params.put("active", theActive.getValue());
+        return storageService.searchResources("PractitionerRole", params);
     }
 }

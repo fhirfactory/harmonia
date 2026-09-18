@@ -1,0 +1,5 @@
+---
+# Handlers for microk8s role
+- name: Restart MicroK8s
+  ansible.builtin.command: microk8s stop && microk8s start
+  become: true

@@ -41,6 +41,9 @@ public class TaskSequenceDefaultSeeder {
     public static final String DEFAULT_PATIENT_IDENTITY_SEQUENCE_ID = "seq-patient-identity-pipeline";
     public static final String DEFAULT_PATIENT_IDENTITY_SEQUENCE_NAME = "Patient Identity Update Sequence";
 
+    public static final String DEFAULT_PROVIDER_REGISTRY_SEQUENCE_ID = "seq-provider-registry-change-pipeline";
+    public static final String DEFAULT_PROVIDER_REGISTRY_SEQUENCE_NAME = "Provider Registry Change Pipeline Sequence";
+
     @Inject
     private PraxisService sequenceService;
 
@@ -74,6 +77,91 @@ public class TaskSequenceDefaultSeeder {
     }
 
     /**
+     * Seeds the Provider Registry TaskSequence ({@code seq-provider-registry-change-pipeline}) into cache.
+     */
+    public Praxis seedProviderRegistrySequence(Map<String, ErgonBase> activityIndex) {
+        Praxis prSeq = createProviderRegistryChangeSequence(activityIndex);
+        if (sequenceService != null) {
+            sequenceService.save(prSeq);
+        }
+        log.info("TaskSequenceDefaultSeeder seeded Provider Registry TaskSequence [{}] to Infinispan cache",
+                prSeq.getPraxisId());
+        return prSeq;
+    }
+
+    /**
+     * Seeds all standard Paradeigma TaskSequences (ADT fanout, ORM routing, ORU processing) into cache.
+     */
+    public List<Praxis> seedParadeigmaSequences(Map<String, ErgonBase> activityIndex) {
+        List<Praxis> seeds = new ArrayList<>();
+
+        Praxis patientIdSeq = createPatientIdentityUpdateSequence(activityIndex);
+        seeds.add(patientIdSeq);
+
+        Praxis prSeq = createProviderRegistryChangeSequence(activityIndex);
+        seeds.add(prSeq);
+
+        Praxis orderRoutingSeq = createOrderRoutingSequence(activityIndex);
+        seeds.add(orderRoutingSeq);
+
+        Praxis resultSeq = createResultProcessingSequence(activityIndex);
+        seeds.add(resultSeq);
+
+        if (sequenceService != null) {
+            for (Praxis p : seeds) {
+                sequenceService.save(p);
+            }
+        }
+
+        log.info("TaskSequenceDefaultSeeder seeded {} Paradeigma TaskSequence configuration(s) to Infinispan cache",
+                seeds.size());
+        return seeds;
+    }
+
+    /**
+     * Constructs the Provider Registry Change Pipeline Sequence ({@code seq-provider-registry-change-pipeline}).
+     *
+     * @param activityIndex index of available CDI activities
+     * @return initialized {@link Praxis}
+     */
+    public Praxis createProviderRegistryChangeSequence(Map<String, ErgonBase> activityIndex) {
+        Praxis prSeq = new Praxis(DEFAULT_PROVIDER_REGISTRY_SEQUENCE_ID, DEFAULT_PROVIDER_REGISTRY_SEQUENCE_NAME);
+        prSeq.setDescription("Processes, validates, approves and persists asynchronous FHIR Provider Registry changes");
+        prSeq.setVersion("1.0.0");
+        prSeq.setTargetGatewayInstances(List.of("*"));
+        prSeq.setTargetTriggerTypes(List.of("POST", "PUT", "CREATE", "UPDATE", "CHANGE", "*"));
+
+        TopicSubscription sub = new TopicSubscription("Health", "FHIR", "R5", "*", "*");
+        prSeq.setTopicSubscriptions(List.of(sub));
+
+        Map<Integer, String> activities = new TreeMap<>();
+        int order = 0;
+        String[] ergonIds = new String[]{
+                "practitioner-change-ergon",
+                "practitioner-role-change-ergon",
+                "organization-change-ergon",
+                "location-change-ergon",
+                "healthcare-service-change-ergon",
+                "endpoint-change-ergon",
+                "group-change-ergon"
+        };
+        if (activityIndex != null) {
+            for (String ergonId : ergonIds) {
+                if (activityIndex.containsKey(ergonId)) {
+                    activities.put(order++, ergonId);
+                }
+            }
+        }
+        if (activities.isEmpty()) {
+            for (String ergonId : ergonIds) {
+                activities.put(order++, ergonId);
+            }
+        }
+        prSeq.setActivityIds(activities);
+        return prSeq;
+    }
+
+    /**
      * Constructs the default Patient Identity Update Sequence ({@code seq-patient-identity-pipeline}).
      *
      * @param activityIndex index of available CDI activities
@@ -81,7 +169,7 @@ public class TaskSequenceDefaultSeeder {
      */
     public Praxis createPatientIdentityUpdateSequence(Map<String, ErgonBase> activityIndex) {
         Praxis patientIdSeq = new Praxis(DEFAULT_PATIENT_IDENTITY_SEQUENCE_ID, DEFAULT_PATIENT_IDENTITY_SEQUENCE_NAME);
-        patientIdSeq.setDescription("Extracts, normalizes, and updates patient identity and demographics across all clinical messages");
+        patientIdSeq.setDescription("Extracts, normalizes, and updates patient identity and demographics across all clinical messages and distributes ADT");
         patientIdSeq.setVersion("1.0.0");
         patientIdSeq.setTopicSubscriptions(List.of(TopicSubscription.forAll()));
         patientIdSeq.setTargetGatewayInstances(List.of("*"));
@@ -101,6 +189,9 @@ public class TaskSequenceDefaultSeeder {
             if (activityIndex.containsKey("patient-demographics-update")) {
                 patientSeqActivities.put(pOrder++, "patient-demographics-update");
             }
+            if (activityIndex.containsKey("adt-distribution")) {
+                patientSeqActivities.put(pOrder++, "adt-distribution");
+            }
         }
 
         if (patientSeqActivities.isEmpty()) {
@@ -111,6 +202,56 @@ public class TaskSequenceDefaultSeeder {
 
         patientIdSeq.setActivityIds(patientSeqActivities);
         return patientIdSeq;
+    }
+
+    public Praxis createOrderRoutingSequence(Map<String, ErgonBase> activityIndex) {
+        Praxis orderSeq = new Praxis("seq-order-routing-pipeline", "Orders Routing Task Sequence");
+        orderSeq.setDescription("Deterministically routes ORM orders based on OBR-4 Universal Service Identifier");
+        orderSeq.setVersion("1.0.0");
+        orderSeq.setTargetGatewayInstances(List.of("*"));
+        orderSeq.setTargetTriggerTypes(List.of("ORM^O01", "O01", "ORM"));
+
+        Map<Integer, String> activities = new TreeMap<>();
+        int order = 0;
+        if (activityIndex != null) {
+            if (activityIndex.containsKey(MessageQueueToExchangeConduit.DEFAULT_ACTIVITY_ID)) {
+                activities.put(order++, MessageQueueToExchangeConduit.DEFAULT_ACTIVITY_ID);
+            }
+            if (activityIndex.containsKey("orm-routing")) {
+                activities.put(order++, "orm-routing");
+            }
+        }
+        if (activities.isEmpty()) {
+            activities.put(0, MessageQueueToExchangeConduit.DEFAULT_ACTIVITY_ID);
+            activities.put(1, "orm-routing");
+        }
+        orderSeq.setActivityIds(activities);
+        return orderSeq;
+    }
+
+    public Praxis createResultProcessingSequence(Map<String, ErgonBase> activityIndex) {
+        Praxis resSeq = new Praxis("seq-result-processing-pipeline", "Results Processing Task Sequence");
+        resSeq.setDescription("Processes and records clinical observation results (ORU^R01)");
+        resSeq.setVersion("1.0.0");
+        resSeq.setTargetGatewayInstances(List.of("*"));
+        resSeq.setTargetTriggerTypes(List.of("ORU^R01", "R01", "ORU"));
+
+        Map<Integer, String> activities = new TreeMap<>();
+        int order = 0;
+        if (activityIndex != null) {
+            if (activityIndex.containsKey(MessageQueueToExchangeConduit.DEFAULT_ACTIVITY_ID)) {
+                activities.put(order++, MessageQueueToExchangeConduit.DEFAULT_ACTIVITY_ID);
+            }
+            if (activityIndex.containsKey("oru-processing")) {
+                activities.put(order++, "oru-processing");
+            }
+        }
+        if (activities.isEmpty()) {
+            activities.put(0, MessageQueueToExchangeConduit.DEFAULT_ACTIVITY_ID);
+            activities.put(1, "oru-processing");
+        }
+        resSeq.setActivityIds(activities);
+        return resSeq;
     }
 
     public PraxisService getSequenceService() {

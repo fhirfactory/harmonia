@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -80,6 +81,7 @@ public class MfnMetadataResourceBuilder {
         att.setTitle("HL7 v2.x MFN^" + (StringUtils.isNotBlank(triggerEvent) ? triggerEvent : "M02") + " Message");
         payload.setContent(att);
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(comm);
         return comm;
     }
 
@@ -135,6 +137,7 @@ public class MfnMetadataResourceBuilder {
             entity.setWhat(new Reference("Communication/comm-" + idSeed).setDisplay("Raw MFN Message"));
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
         return provenance;
     }
 }

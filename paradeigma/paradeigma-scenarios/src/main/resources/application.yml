@@ -1,0 +1,23 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: paradeigma-scenarios
+
+paradeigma:
+  scenarios:
+    pasBaseUrl: ${PAS_BASE_URL:http://localhost:8091}
+    emrBaseUrl: ${EMR_BASE_URL:http://localhost:8092}
+    lmsBaseUrl: ${LMS_BASE_URL:http://localhost:8093}
+    rispacBaseUrl: ${RISPAC_BASE_URL:http://localhost:8094}
+    profile: ${SCENARIO_PROFILE:TEST}
+    seed: ${SCENARIO_SEED:12345}
+    concurrentJourneys: ${SCENARIO_CONCURRENCY:5}
+    stepPacingMs: ${SCENARIO_STEP_PACING_MS:50}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus

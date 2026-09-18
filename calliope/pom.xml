@@ -35,6 +35,12 @@
     <description>Calliope — Canonical Model &amp; Schema Library. The authoritative repository and management service for the shared information models, schemas and structural definitions used throughout Harmonia.</description>
 
     <dependencies>
+        <!-- Themis API (Security & Policy Contracts) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-api</artifactId>
+        </dependency>
+
         <!-- HAPI FHIR R5 Structures -->
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>
@@ -76,6 +82,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Testing -->

@@ -20,6 +20,7 @@ package net.fhirfactory.harmonia.mllpgateway.service;
 import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
@@ -89,6 +90,7 @@ public class OutboundTaskResourceBuilder {
         note.setTime(new Date());
         note.setText("Outbound task created and in-progress");
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
         return task;
     }
 
@@ -118,8 +120,21 @@ public class OutboundTaskResourceBuilder {
 
         Task.TaskOutputComponent output = task.addOutput();
         output.setType(new CodeableConcept().setText("MLLP Transmission Result"));
-        output.setValue(new StringType("ACK=" + response.getAckCode() + ", Success=" + response.isSuccessful()));
+        String destId = response.getDestinationId() != null ? response.getDestinationId() : "destination-default";
+        output.setValue(new StringType("destination=" + destId + ", ACK=" + response.getAckCode() + ", Success=" + response.isSuccessful()));
 
+        // REC-002: Add structured destination delivery checkpoint extension
+        Extension destDeliveryExt = output.addExtension();
+        destDeliveryExt.setUrl("http://example.org/hie/destination-delivery-status");
+        destDeliveryExt.addExtension("destinationId", new StringType(destId));
+        destDeliveryExt.addExtension("status", new StringType(response.isSuccessful() ? "COMPLETED" : "FAILED"));
+        destDeliveryExt.addExtension("ackCode", new StringType(response.getAckCode() != null ? response.getAckCode() : ""));
+        destDeliveryExt.addExtension("timestamp", new DateTimeType(new Date()));
+        if (StringUtils.isNotBlank(response.getErrorMessage())) {
+            destDeliveryExt.addExtension("errorMessage", new StringType(response.getErrorMessage()));
+        }
+
+        FhirSecurityTagManager.applyDefaultSecurityTag(task);
         return task;
     }
 

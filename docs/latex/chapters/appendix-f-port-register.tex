@@ -1,0 +1,44 @@
+%% =============================================================================
+%% chapters/appendix-f-port-register.tex
+%% APPENDIX F: Port and Network Protocol Register
+%% =============================================================================
+
+\chapter{Port and Network Protocol Register}
+\label{app:port_register}
+
+This appendix registers the authoritative 18 platform network listeners across all subsystems, transport protocols, traffic directions, and TLS termination boundaries in the Harmonia cluster.
+
+\section{The 18 Platform Network Listeners}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{c l P{2.2cm} P{2.8cm} P{2.6cm} Y}
+\toprule
+\textbf{\#} & \textbf{Port} & \textbf{Protocol} & \textbf{Workload Binding} & \textbf{Traffic Flow} & \textbf{Operational Purpose \& Security Boundary} \\
+\midrule
+\textbf{1} & \textbf{2575} & TCP / MLLP & \nolinkurl{pylai-mllp-in} & Ingress: External $\rightarrow$ Gateway & Inbound HL7 v2 triggers (ADT, ORM, ORU). \\
+\textbf{2} & \textbf{80} & TCP / HTTP & Iris SPAs & Ingress $\rightarrow$ Nginx & Static web assets delivery (Plaintext HTTP). \\
+\textbf{3} & \textbf{443} & TCP / HTTPS & Ingress Controller & External $\rightarrow$ Cluster & Master TLS 1.2/1.3 entrypoint for SPAs \& APIs. \\
+\textbf{4} & \textbf{8080} & TCP / HTTP & \nolinkurl{iris-befe} & Ingress $\rightarrow$ BEFE & Clinical FHIR R5 REST API (\nolinkurl{/clinical/*}). \\
+\textbf{5} & \textbf{8090} & TCP / HTTP & \nolinkurl{iris-befe} & Ingress $\rightarrow$ BEFE & Operations telemetry \& queues (\nolinkurl{/operations/*}). \\
+\textbf{6} & \textbf{9990} & TCP / HTTP & WildFly Containers & Admin $\rightarrow$ Management & Jakarta EE management CLI and console. \\
+\textbf{7} & \textbf{61616} & TCP / Netty & Artemis Brokers & Pods $\leftrightarrow$ Brokers & Petasos CORE transport \& HA journal replication. \\
+\textbf{8} & \textbf{8161} & TCP / HTTP & Artemis Brokers & Admin $\rightarrow$ Management & ActiveMQ Artemis web console and metrics. \\
+\textbf{9} & \textbf{11222} & TCP / Hot Rod & Infinispan Grid & BEFE / Ponos $\rightarrow$ Grid & Hot Rod binary RPC cache protocol (17 caches). \\
+\textbf{10} & \textbf{7800} & TCP / JGroups & Infinispan Grid & Peer $\leftrightarrow$ Peer & JGroups TCP cluster peer discovery \& sync. \\
+\textbf{11} & \textbf{5432} & TCP / Native PG & \nolinkurl{postgres-1} & JPA $\rightarrow$ Clinical DB & Primary clinical FHIR database (\nolinkurl{fhir_node_1}). \\
+\textbf{12} & \textbf{5433} & TCP / Native PG & \nolinkurl{postgres-2} & JPA $\rightarrow$ Clinical DB & Secondary clinical FHIR database (\nolinkurl{fhir_node_2}). \\
+\textbf{13} & \textbf{5434} & TCP / Native PG & \nolinkurl{postgres-ops-1} & JPA $\rightarrow$ Ops DB & Primary operational database (\nolinkurl{ops_node_1}). \\
+\textbf{14} & \textbf{5435} & TCP / Native PG & \nolinkurl{postgres-ops-2} & JPA $\rightarrow$ Ops DB & Secondary operational database (\nolinkurl{ops_node_2}). \\
+\textbf{15} & \textbf{5436} & TCP / Native PG & \nolinkurl{postgres-synapse} & Synapse $\rightarrow$ Synapse DB & Matrix Synapse \& Agora relational database. \\
+\textbf{16} & \textbf{8008} & TCP / HTTP & \nolinkurl{synapse} & Agora / Ingress $\rightarrow$ Synapse & Matrix Client-Server, Admin \& AS APIs. \\
+\textbf{17} & \textbf{8092} & TCP / HTTP & \nolinkurl{agora} & Synapse $\rightarrow$ Agora & AS transaction ingestion (\nolinkurl{PUT /transactions}). \\
+\textbf{18} & \textbf{9992} & TCP / HTTP & \nolinkurl{agora} & Probes $\rightarrow$ Agora & Spring Boot Actuator health, liveness \& metrics. \\
+\bottomrule
+\end{tabularx}
+\caption{Authoritative Harmonia 18-Port Network Listener Register}
+\label{tab:port_protocol_register}
+\end{table}
+
+\newpage

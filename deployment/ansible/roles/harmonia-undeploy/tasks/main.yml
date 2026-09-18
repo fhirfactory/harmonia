@@ -1,0 +1,12 @@
+---
+# Main entry point for harmonia-undeploy role
+- name: Undeploy Harmonia workloads, services, and routing
+  ansible.builtin.include_tasks: undeploy-workloads.yml
+
+- name: Retain and report persistent data volumes (Default behavior)
+  ansible.builtin.include_tasks: pvc-retention.yml
+  when: not (harmonia_purge_data | default(false) | bool)
+
+- name: Execute guarded destructive data purge if requested
+  ansible.builtin.include_tasks: purge-data.yml
+  when: harmonia_purge_data | default(false) | bool

@@ -1,0 +1,14 @@
+---
+# ==============================================================================
+# Ansible Role Defaults: Agora Collaboration Gateway
+# ==============================================================================
+
+agora_enabled: true
+agora_image: "{{ harmonia_image_registry }}/{{ harmonia_image_namespace }}/agora:{{ harmonia_image_tag }}"
+agora_port: 8092
+agora_mgmt_port: 9992
+agora_synapse_base_url: "http://synapse:8008"
+agora_server_name: "harmonia.local"
+agora_appservice_id: "harmonia-agora"
+agora_reconciliation_cron: "0 */15 * * * *"
+agora_rollout_timeout_seconds: "{{ rollout_timeout_seconds | default(300) }}"

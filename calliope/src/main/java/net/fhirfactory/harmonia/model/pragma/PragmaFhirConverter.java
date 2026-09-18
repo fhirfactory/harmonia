@@ -18,7 +18,12 @@
 package net.fhirfactory.harmonia.model.pragma;
 
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Annotation;
 import org.hl7.fhir.r5.model.CodeableConcept;
@@ -26,8 +31,8 @@ import org.hl7.fhir.r5.model.Coding;
 import org.hl7.fhir.r5.model.Enumerations;
 import org.hl7.fhir.r5.model.Extension;
 import org.hl7.fhir.r5.model.Identifier;
-import org.hl7.fhir.r5.model.MarkdownType;
 import org.hl7.fhir.r5.model.Reference;
+import org.hl7.fhir.r5.model.Resource;
 import org.hl7.fhir.r5.model.StringType;
 import org.hl7.fhir.r5.model.Task;
 
@@ -53,6 +58,13 @@ public final class PragmaFhirConverter {
     public static final String EXTENSION_CHECKPOINT_ERGON = "http://fhirfactory.net/hie/task/checkpoint-ergon";
     public static final String EXTENSION_CHECKPOINT_STEP = "http://fhirfactory.net/hie/task/checkpoint-step";
     public static final String EXTENSION_METADATA_PREFIX = "http://fhirfactory.net/hie/task/metadata/";
+
+    public static final String EXTENSION_SECURITY_PREFIX = "http://fhirfactory.net/hie/task/security/";
+    public static final String EXTENSION_SECURITY_PRINCIPAL_ID = EXTENSION_SECURITY_PREFIX + "principal-id";
+    public static final String EXTENSION_SECURITY_PRINCIPAL_TYPE = EXTENSION_SECURITY_PREFIX + "principal-type";
+    public static final String EXTENSION_SECURITY_SOURCE_DOMAIN = EXTENSION_SECURITY_PREFIX + "source-domain";
+    public static final String EXTENSION_SECURITY_AUTHORITY = EXTENSION_SECURITY_PREFIX + "authority";
+    public static final String EXTENSION_SECURITY_POLICY_VERSION = EXTENSION_SECURITY_PREFIX + "policy-version";
 
     private PragmaFhirConverter() {
         // Utility class
@@ -145,7 +157,9 @@ public final class PragmaFhirConverter {
                 if (inputPayload != null) {
                     task.addInput(inputPayload.toTaskInput());
                     if (inputPayload.isFhirResource() && inputPayload.getResourceReference() != null && inputPayload.getResourceReference().getResource() != null) {
-                        task.addContained((org.hl7.fhir.r5.model.Resource) inputPayload.getResourceReference().getResource());
+                        Resource r = (org.hl7.fhir.r5.model.Resource) inputPayload.getResourceReference().getResource();
+                        FhirSecurityTagManager.applyDefaultSecurityTag(r);
+                        task.addContained(r);
                     }
                 }
             }
@@ -157,7 +171,9 @@ public final class PragmaFhirConverter {
                 if (outputPayload != null) {
                     task.addOutput(outputPayload.toTaskOutput());
                     if (outputPayload.isFhirResource() && outputPayload.getResourceReference() != null && outputPayload.getResourceReference().getResource() != null) {
-                        task.addContained((org.hl7.fhir.r5.model.Resource) outputPayload.getResourceReference().getResource());
+                        Resource r = (org.hl7.fhir.r5.model.Resource) outputPayload.getResourceReference().getResource();
+                        FhirSecurityTagManager.applyDefaultSecurityTag(r);
+                        task.addContained(r);
                     }
                 }
             }
@@ -216,6 +232,39 @@ public final class PragmaFhirConverter {
                     task.addExtension(new Extension(EXTENSION_METADATA_PREFIX + entry.getKey(), new StringType(entry.getValue())));
                 }
             }
+        }
+
+        // 12. Originating Security Context
+        if (pragma.getOriginatingPrincipal() != null) {
+            ThemisPrincipal principal = pragma.getOriginatingPrincipal();
+            if (StringUtils.isNotBlank(principal.principalId())) {
+                task.addExtension(new Extension(EXTENSION_SECURITY_PRINCIPAL_ID, new StringType(principal.principalId())));
+            }
+            if (principal.principalType() != null) {
+                task.addExtension(new Extension(EXTENSION_SECURITY_PRINCIPAL_TYPE, new StringType(principal.principalType().name())));
+            }
+            if (StringUtils.isNotBlank(principal.sourceDomain())) {
+                task.addExtension(new Extension(EXTENSION_SECURITY_SOURCE_DOMAIN, new StringType(principal.sourceDomain())));
+            }
+        }
+
+        if (pragma.getOriginatingAuthorities() != null && !pragma.getOriginatingAuthorities().isEmpty()) {
+            for (ThemisAuthority auth : pragma.getOriginatingAuthorities()) {
+                if (auth != null && StringUtils.isNotBlank(auth.authorityCode())) {
+                    task.addExtension(new Extension(EXTENSION_SECURITY_AUTHORITY, new StringType(auth.authorityCode())));
+                }
+            }
+        }
+
+        if (StringUtils.isNotBlank(pragma.getPolicyVersion())) {
+            task.addExtension(new Extension(EXTENSION_SECURITY_POLICY_VERSION, new StringType(pragma.getPolicyVersion())));
+        }
+
+        // 13. Security Tagging
+        if (pragma.getMetadata() != null && pragma.getMetadata().containsKey("confidentiality")) {
+            FhirSecurityTagManager.applySecurityTag(task, pragma.getMetadata().get("confidentiality"));
+        } else {
+            FhirSecurityTagManager.applyDefaultSecurityTag(task);
         }
 
         return task;
@@ -363,14 +412,54 @@ public final class PragmaFhirConverter {
 
         // 11. Metadata from extensions
         if (task.hasExtension()) {
+            String principalId = null;
+            PrincipalType principalType = null;
+            String sourceDomain = null;
+            String policyVersion = null;
+
             for (Extension ext : task.getExtension()) {
-                if (ext.hasUrl() && ext.getUrl().startsWith(EXTENSION_METADATA_PREFIX)) {
-                    String key = ext.getUrl().substring(EXTENSION_METADATA_PREFIX.length());
-                    if (ext.hasValue() && ext.getValue() instanceof StringType) {
-                        pragma.addMetadata(key, ((StringType) ext.getValue()).getValue());
+                if (ext.hasUrl() && ext.getValue() instanceof StringType stringType) {
+                    String url = ext.getUrl();
+                    String val = stringType.getValue();
+                    if (url.startsWith(EXTENSION_METADATA_PREFIX)) {
+                        String key = url.substring(EXTENSION_METADATA_PREFIX.length());
+                        pragma.addMetadata(key, val);
+                    } else if (EXTENSION_SECURITY_PRINCIPAL_ID.equals(url)) {
+                        principalId = val;
+                    } else if (EXTENSION_SECURITY_PRINCIPAL_TYPE.equals(url)) {
+                        try {
+                            principalType = PrincipalType.valueOf(val);
+                        } catch (Exception ignored) {}
+                    } else if (EXTENSION_SECURITY_SOURCE_DOMAIN.equals(url)) {
+                        sourceDomain = val;
+                    } else if (EXTENSION_SECURITY_AUTHORITY.equals(url)) {
+                        pragma.addOriginatingAuthority(val);
+                    } else if (EXTENSION_SECURITY_POLICY_VERSION.equals(url)) {
+                        policyVersion = val;
                     }
                 }
             }
+
+            if (principalId != null) {
+                ThemisPrincipal principal = new ThemisPrincipal(
+                        principalId,
+                        principalType != null ? principalType : PrincipalType.HUMAN,
+                        sourceDomain,
+                        Map.of()
+                );
+                pragma.setOriginatingPrincipal(principal);
+                pragma.setOriginatingSecurityContext(ThemisSecurityContext.fromPrincipal(principal, pragma.getCorrelationId()));
+            }
+
+            if (policyVersion != null) {
+                pragma.setPolicyVersion(policyVersion);
+            }
+        }
+
+        // 12. Security Tagging
+        if (task.hasMeta() && task.getMeta().hasSecurity()) {
+            FhirSecurityTagManager.getConfidentiality(task).ifPresent(c ->
+                    pragma.addMetadata("confidentiality", c.getCode()));
         }
 
         return pragma;

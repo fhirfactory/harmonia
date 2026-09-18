@@ -37,6 +37,8 @@
     <modules>
         <module>pylai-mllp-base</module>
         <module>pylai-mllp-in</module>
+        <module>pylai-mllp-out</module>
         <module>pylai-mllp-cli</module>
+        <module>pylai-fhir-registry</module>
     </modules>
 </project>

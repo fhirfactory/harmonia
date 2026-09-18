@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.erga.hl7v2x.factories;
 
 import ca.uhn.hl7v2.util.Terser;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 
@@ -223,6 +224,7 @@ public class AdtPatientResourceBuilder {
             patient.addGeneralPractitioner(new Reference("Practitioner/" + cleanId(primaryCareDoc)));
         }
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         return patient;
     }
 
@@ -243,6 +245,7 @@ public class AdtPatientResourceBuilder {
         mrn.setSystem("http://example.org/patients");
         mrn.setValue(cleanIdVal);
 
+        FhirSecurityTagManager.applyDefaultSecurityTag(patient);
         return patient;
     }
 }

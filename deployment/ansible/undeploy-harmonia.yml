@@ -1,0 +1,22 @@
+---
+# ==============================================================================
+# Playbook: undeploy-harmonia.yml
+# Purpose:  Undeploys Harmonia workloads while retaining persistent data by default
+#           Pass -e harmonia_purge_data=true to permanently delete persistent data
+# ==============================================================================
+- name: Undeploy Harmonia Platform from MicroK8s
+  hosts: microk8s_hosts
+  become: true
+  gather_facts: false
+
+  vars_files:
+    - inventory/group_vars/all.yml
+    - inventory/group_vars/vault.yml
+
+  pre_tasks:
+    - name: Verify MicroK8s is operational
+      ansible.builtin.command: microk8s status --wait-ready --timeout 30
+      changed_when: false
+
+  roles:
+    - role: harmonia-undeploy

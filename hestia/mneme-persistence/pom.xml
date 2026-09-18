@@ -60,6 +60,12 @@
             <artifactId>hapi-fhir-structures-r5</artifactId>
         </dependency-->
 
+        <!-- Calliope (Canonical Model & Logging) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>calliope</artifactId>
+        </dependency>
+
         <!-- JSON & Logging -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

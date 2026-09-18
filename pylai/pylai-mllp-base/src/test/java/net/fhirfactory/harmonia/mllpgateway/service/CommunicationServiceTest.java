@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.service;
 
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.Attachment;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Enumerations;
@@ -59,10 +61,12 @@ class CommunicationServiceTest {
         assertThat(created).isNotNull();
         assertThat(created.getIdPart()).isEqualTo("comm-001");
         assertThat(communicationService.count()).isEqualTo(1);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(created, FhirConfidentialityEnum.N)).isTrue();
 
         Optional<Communication> fetched = communicationService.getById("comm-001");
         assertThat(fetched).isPresent();
         assertThat(fetched.get().getSubject().getReference()).isEqualTo("Patient/PAT100");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(fetched.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Update
         Communication toUpdate = fetched.get();
@@ -73,6 +77,7 @@ class CommunicationServiceTest {
         assertThat(updated).isPresent();
         assertThat(updated.get().getNote()).hasSize(1);
         assertThat(updated.get().getNoteFirstRep().getText()).isEqualTo("Updated processing note");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(updated.get(), FhirConfidentialityEnum.N)).isTrue();
 
         // Delete
         boolean deleted = communicationService.delete("comm-001");

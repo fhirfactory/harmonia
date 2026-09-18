@@ -26,6 +26,8 @@ import ca.uhn.hl7v2.util.idgenerator.NanoTimeGenerator;
 import ca.uhn.hl7v2.validation.impl.NoValidation;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpConfig;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.MfnCommunicationResourceBuilder;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.MfnTaskResourceBuilder;
@@ -52,6 +54,7 @@ import java.util.UUID;
 public class IncomingMfnMessageProcessor {
 
     private static final Logger log = LoggerFactory.getLogger(IncomingMfnMessageProcessor.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(IncomingMfnMessageProcessor.class);
 
     private TaskService taskService;
     private CommunicationService communicationService;
@@ -250,9 +253,15 @@ public class IncomingMfnMessageProcessor {
                     sendingFacility != null ? sendingFacility : sendingApp,
                     receivingFacility != null ? receivingFacility : receivingApp);
 
+            phiLog.debug("Inbound HL7 MFN message received [messageControlId={}, topic={}]: {}",
+                    messageControlId, topic, hl7MessageString);
+
             // Extract Practitioner / Staff info
             String practitionerId = extractor.extractPractitionerId(hl7MessageString, terser);
             String practitionerFullName = extractor.extractPractitionerFullName(hl7MessageString, terser);
+
+            phiLog.debug("Extracted practitioner details for message {}: id={}, name={}",
+                    messageControlId, practitionerId, practitionerFullName);
 
             // 1. Generate Communication resource containing raw MFN message & metadata using Topic
             Communication communication = communicationBuilder.buildCommunication(terser, topic, hl7MessageString, messageControlId,
@@ -274,24 +283,20 @@ public class IncomingMfnMessageProcessor {
             Task savedTask = task != null && taskService != null ? taskService.create(task) : task;
 
             // 5. Send TaskEvent to task-sequence-processor queue AFTER writing Task to cache
+            // Dual-write safety (REC-001): publish failure throws to trigger an AE NACK back to sender
             if (savedTask != null && taskEventProducerService != null) {
-                try {
-                    String taskId = savedTask.getIdElement() != null && !savedTask.getIdElement().isEmpty()
-                            ? savedTask.getIdElement().getIdPart() : savedTask.getIdPart();
-                    if (StringUtils.isBlank(taskId)) {
-                        taskId = messageControlId;
-                    }
-                    String action = "PROCESS";
-                    String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
-                    String desc = "HL7 v2.4 " + messageType + "^" + triggerEvent + " event transformed to Task for practitioner " + practitionerFullName;
-                    ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
-                    taskEventProducerService.sendTaskEvent(event);
-                    log.info("Sent TaskEvent for Task/{} [action={}, status={}, topic={}] to task-sequence-processor",
-                            taskId, action, status, topic);
-                } catch (Exception e) {
-                    log.warn("Could not send TaskEvent to task-sequence-processor for Task/{}: {}",
-                            savedTask.getIdPart(), e.getMessage());
+                String taskId = savedTask.getIdElement() != null && !savedTask.getIdElement().isEmpty()
+                        ? savedTask.getIdElement().getIdPart() : savedTask.getIdPart();
+                if (StringUtils.isBlank(taskId)) {
+                    taskId = messageControlId;
                 }
+                String action = "PROCESS";
+                String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
+                String desc = "HL7 v2.4 " + messageType + "^" + triggerEvent + " event transformed to Task";
+                ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
+                taskEventProducerService.sendTaskEvent(event);
+                log.info("Sent TaskEvent for Task/{} [action={}, status={}, topic={}] to task-sequence-processor",
+                        taskId, action, status, topic);
             }
 
             // Generate HL7 ACK

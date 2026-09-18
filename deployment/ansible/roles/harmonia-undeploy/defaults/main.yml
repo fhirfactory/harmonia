@@ -1,0 +1,5 @@
+---
+# Defaults for role harmonia-undeploy
+harmonia_namespace: "harmonia"
+harmonia_purge_data: false
+harmonia_purge_data_confirm: false

@@ -1,0 +1,78 @@
+%% =============================================================================
+%% chapters/appendix-i-persistence-register.tex
+%% APPENDIX I: Persistence Register
+%% =============================================================================
+
+\chapter{Persistence Register: Relational Databases \& Cache Grid}
+\label{app:persistence_register}
+
+This appendix provides the authoritative persistence register detailing relational schemas, database tables, primary keys, indexing strategies, and distributed in-memory cache definitions across the Harmonia platform.
+
+\section{Relational Database Schema Register}
+
+Harmonia provisions three decoupled PostgreSQL 16 database clusters:
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l P{2.5cm} P{3.0cm} P{2.8cm} Y}
+\toprule
+\textbf{Database Cluster} & \textbf{Port (Mapped)} & \textbf{Schema / DB Name} & \textbf{Owning Server} & \textbf{Primary Entities \& Operational Role} \\
+\midrule
+\nolinkurl{postgres-1} & 5432 & \nolinkurl{fhir_node_1} & \nolinkurl{mnemosyne-clinical} & Clinical FHIR R5 resources (\nolinkurl{hie_fhir_resources}). \\
+\nolinkurl{postgres-2} & 5433 & \nolinkurl{fhir_node_2} & \nolinkurl{mnemosyne-clinical} & Clinical FHIR R5 secondary replica store. \\
+\addlinespace
+\nolinkurl{postgres-ops-1} & 5434 & \nolinkurl{ops_node_1} & \nolinkurl{mnemosyne-operations} & Workflow state \& audit lineage (\nolinkurl{hie_operations_resources}). \\
+\nolinkurl{postgres-ops-2} & 5435 & \nolinkurl{ops_node_2} & \nolinkurl{mnemosyne-operations} & Workflow state \& audit secondary replica store. \\
+\addlinespace
+\nolinkurl{postgres-synapse} & 5436 & \nolinkurl{synapse_db} & Synapse / Agora & Matrix state, \nolinkurl{agora_resource_mappings}, \nolinkurl{agora_as_transactions}. \\
+\bottomrule
+\end{tabularx}
+\caption{Harmonia Relational Database Register}
+\label{tab:relational_database_register}
+\end{table}
+
+\subsection{Relational Table Definitions}
+\begin{enumerate}
+    \item \textbf{\nolinkurl{hie_fhir_resources}}: Primary key \nolinkurl{(resource_type, resource_id, version_id)}. Stores raw JSON resource payload, optimistic lock version, last-updated timestamp, and JSONB search indexes.
+    \item \textbf{\nolinkurl{hie_operations_resources}}: Primary key \nolinkurl{(operation_id, sequence_id)}. Stores \nolinkurl{Pragma} state envelopes, task checkpoint progressions, and execution latencies.
+    \item \textbf{\nolinkurl{agora_resource_mappings}}: Primary key UUID \nolinkurl{id}. Maps Harmonia resource references to Matrix room/space IDs with \nolinkurl{status} and timestamp columns.
+    \item \textbf{\nolinkurl{agora_as_transactions}}: Primary key \nolinkurl{transaction_id}. Enforces AS push transaction idempotency with receive/process timestamps.
+\end{enumerate}
+
+\section{Distributed Cache Grid Register (Infinispan 15.0.3)}
+
+Table~\ref{tab:persistence_cache_register} details the 17 synchronously replicated caches configured in \nolinkurl{infinispan.xml}:
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l l l l Y}
+\toprule
+\textbf{Cache Name} & \textbf{Mode} & \textbf{Encoding} & \textbf{Write-Behind SPI} & \textbf{Flushing REST Target} \\
+\midrule
+\texttt{person-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{relatedperson-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{practitioner-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{practitionerrole-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{organization-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{location-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{healthcareservice-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{group-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{provenance-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{auditevent-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{consent-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{task-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{communication-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\texttt{documentreference-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{FhirRestCacheStore} & \nolinkurl{http://mnemosyne-clinical-1:8080/fhir/r5} \\
+\midrule
+\texttt{tasksequence-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{OperationsRestCacheStore} & \nolinkurl{http://mnemosyne-operations-1:8080/api/operations} \\
+\texttt{messagequeue-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{OperationsRestCacheStore} & \nolinkurl{http://mnemosyne-operations-1:8080/api/operations} \\
+\texttt{modulestatus-cache} & \texttt{REPL\_SYNC} & \texttt{text/plain} & \texttt{OperationsRestCacheStore} & \nolinkurl{http://mnemosyne-operations-1:8080/api/operations} \\
+\bottomrule
+\end{tabularx}
+\caption{Infinispan In-Memory Replicated Cache Grid Register}
+\label{tab:persistence_cache_register}
+\end{table}
+
+\newpage

@@ -25,6 +25,8 @@ import ca.uhn.hl7v2.util.Terser;
 import ca.uhn.hl7v2.validation.impl.NoValidation;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.MfnCommunicationResourceBuilder;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.MfnTaskResourceBuilder;
+import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -108,6 +110,7 @@ class MfnModularBuildersTest {
         assertThat(comm.getId()).isEqualTo("Communication/comm-MSG-CTRL-99901");
         assertThat(comm.getSubject().getReference()).isEqualTo("Practitioner/DOC-12345");
         assertThat(comm.getPayloadFirstRep().getContent()).isInstanceOf(Attachment.class);
+        assertThat(FhirSecurityTagManager.hasConfidentiality(comm, FhirConfidentialityEnum.N)).isTrue();
 
         Task task = taskBuilder.buildTask(terser, topic, "MSG-CTRL-99901", "DOC-12345", "DR. JOHN SMITH",
                 "STAFF_APP", "HOSPITAL_A", "20260910120000", comm);
@@ -120,5 +123,6 @@ class MfnModularBuildersTest {
         Task.TaskInputComponent commInput = task.getInputFirstRep();
         assertThat(commInput.getType().getCodingFirstRep().getCode()).isEqualTo("input-communication");
         assertThat(((Reference) commInput.getValue()).getReference()).isEqualTo("#comm-MSG-CTRL-99901");
+        assertThat(FhirSecurityTagManager.hasConfidentiality(task, FhirConfidentialityEnum.N)).isTrue();
     }
 }

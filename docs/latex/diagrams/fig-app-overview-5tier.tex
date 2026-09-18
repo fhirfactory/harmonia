@@ -4,57 +4,73 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
-    % Tier 1: Presentation Tier (Iris)
-    \node[archi-app-component] (ui_clinical) at (1.5, 9.5) {\archibadge{App Component}\archiname{Iris Clinical UI}\\\archidesc{Vue 3 / Port 3000}};
-    \node[archi-app-component] (ui_console) at (6.5, 9.5) {\archibadge{App Component}\archiname{Iris Console UI}\\\archidesc{Vue 3 / Port 3001}};
-    \node[archi-app-component] (befe) at (4.0, 7.8) {\archibadge{App Component}\archiname{Iris BEFE Gateway}\\\archidesc{WildFly / Ports 8080/8090}};
+    % --- 5-Tier Background Swimlanes ---
+    \draw[archi-plate-bg] (-0.8, 8.0) rectangle (15.8, 10.8);
+    \node[archi-plate-title] at (-0.6, 10.6) {Tier 1: Presentation Layer (Iris)};
 
-    % Tier 2: Interface / Ingress Tier (Pylai)
-    \node[archi-app-component] (pylai_mllp) at (11.5, 7.8) {\archibadge{App Component}\archiname{Pylai MLLP Gateway}\\\archidesc{Camel / Port 2575}};
+    \draw[archi-plate-bg] (-0.8, 5.8) rectangle (15.8, 7.8);
+    \node[archi-plate-title] at (-0.6, 7.6) {Tier 2: Ingress \& Egress Gateways (Pylai)};
 
-    % Tier 3: Transport & Workflow Tier (Petasos & Energeia)
-    \node[archi-app-component] (petasos_msg) at (11.5, 5.5) {\archibadge{App Component}\archiname{Petasos Messaging}\\\archidesc{ActiveMQ HA Cluster}};
-    \node[archi-app-component] (ponos_engine) at (6.5, 5.5) {\archibadge{App Component}\archiname{Ponos WorkEngine}\\\archidesc{WildFly / Port 8083}};
-    \node[archi-app-component] (praxis_seq) at (2.0, 5.5) {\archibadge{App Component}\archiname{Praxis Orchestrator}\\\archidesc{Sequence Engine}};
-    \node[archi-app-component] (erga_acts) at (2.0, 3.5) {\archibadge{App Component}\archiname{Erga Activities}\\\archidesc{Camel Ergon Routes}};
+    \draw[archi-plate-bg] (-0.8, 3.6) rectangle (15.8, 5.6);
+    \node[archi-plate-title] at (-0.6, 5.4) {Tier 3: Clustered Transport \& Workflow (Petasos \& Energeia)};
 
-    % Tier 4: Cache Tier (Hestia / Mneme)
-    \node[archi-app-component] (mneme_grid) at (7.5, 3.5) {\archibadge{App Component}\archiname{Mneme Cache Grid}\\\archidesc{Infinispan / 11222-11223}};
-    \node[archi-app-component] (mneme_spi) at (7.5, 1.8) {\archibadge{App Component}\archiname{Mneme Persistence SPI}\\\archidesc{Write-Behind Store}};
+    \draw[archi-plate-bg] (-0.8, 1.8) rectangle (15.8, 3.4);
+    \node[archi-plate-title] at (-0.6, 3.2) {Tier 4: Distributed Cache Grid (Hestia Mneme)};
 
-    % Tier 5: Persistence Tier (Hestia / Mnemosyne)
-    \node[archi-app-component] (mnemo_clin) at (3.5, 0.0) {\archibadge{App Component}\archiname{Mnemosyne Clinical}\\\archidesc{HAPI FHIR JPA / 8081-8082}};
-    \node[archi-app-component] (mnemo_ops) at (11.5, 0.0) {\archibadge{App Component}\archiname{Mnemosyne Operations}\\\archidesc{Operations JPA / 8085-8086}};
+    \draw[archi-plate-bg] (-0.8, 0.0) rectangle (15.8, 1.6);
+    \node[archi-plate-title] at (-0.6, 1.4) {Tier 5: Relational \& FHIR Persistence (Mnemosyne)};
 
-    % Canonical Library (Calliope)
-    \node[archi-data-object] (calliope) at (11.5, 3.5) {\archibadge{Data Schema}\archiname{Calliope Library}\\\archidesc{Canonical Domain DTOs}};
+    % --- Tier 1: Presentation Tier (Iris) ---
+    \node[archi-app-component, minimum width=3.2cm] (ui_clinical) at (1.5, 9.8) {\archibadge{App Component}\archiname{Iris Clinical UI}\\\archidesc{Vue 3 / Port 3000}};
+    \node[archi-app-component, minimum width=3.2cm] (ui_console)  at (5.5, 9.8) {\archibadge{App Component}\archiname{Iris Console UI}\\\archidesc{Vue 3 / Port 3001}};
+    \node[archi-app-component, minimum width=4.0cm] (befe)        at (3.5, 8.6) {\archibadge{App Component}\archiname{Iris BEFE Gateway}\\\archidesc{WildFly / Ports 8080/8090}};
+
+    % --- Tier 2: Ingress & Egress Tier (Pylai) ---
+    \node[archi-app-component, minimum width=3.6cm] (pylai_mllp) at (9.5, 6.8) {\archibadge{App Component}\archiname{Pylai Inbound}\\\archidesc{Camel / Port 2575}};
+    \node[archi-app-component, minimum width=3.6cm] (pylai_out)  at (13.5, 6.8) {\archibadge{App Component}\archiname{Pylai Outbound}\\\archidesc{Camel / Ports 8087/8088}};
+
+    % --- Tier 3: Transport & Workflow Tier ---
+    \node[archi-app-component, minimum width=3.2cm] (praxis_seq)   at (1.0, 4.6) {\archibadge{App Component}\archiname{Praxis Engine}\\\archidesc{Pipeline Sequence}};
+    \node[archi-app-component, minimum width=3.2cm] (erga_acts)    at (4.6, 4.6) {\archibadge{App Component}\archiname{Erga Activities}\\\archidesc{Camel Ergon Routes}};
+    \node[archi-app-component, minimum width=3.4cm] (ponos_engine) at (8.4, 4.6) {\archibadge{App Component}\archiname{Ponos WorkEngine}\\\archidesc{WildFly / Port 8083}};
+    \node[archi-app-component, minimum width=3.4cm] (petasos_msg)  at (12.8, 4.6) {\archibadge{App Component}\archiname{Petasos Messaging}\\\archidesc{ActiveMQ HA Cluster}};
+
+    % --- Tier 4: Cache Tier (Hestia / Mneme) & Domain DTOs ---
+    \node[archi-app-component, minimum width=4.5cm] (mneme_grid) at (3.5, 2.6) {\archibadge{App Component}\archiname{Mneme Cache Grid}\\\archidesc{Infinispan / 11222--11223}};
+    \node[archi-app-component, minimum width=4.0cm] (mneme_spi)  at (8.8, 2.6) {\archibadge{App Component}\archiname{Mneme Persistence SPI}\\\archidesc{Write-Behind Store}};
+    \node[archi-data-object, minimum width=2.8cm]   (calliope)   at (13.5, 2.6) {\archibadge{Data Schema}\archiname{Calliope Library}\\\archidesc{Domain Models}};
+
+    % --- Tier 5: Persistence Tier (Mnemosyne) ---
+    \node[archi-app-component, minimum width=4.5cm] (mnemo_clin) at (4.0, 0.8) {\archibadge{App Component}\archiname{Mnemosyne Clinical}\\\archidesc{HAPI FHIR JPA / 8081--8082}};
+    \node[archi-app-component, minimum width=4.5cm] (mnemo_ops)  at (11.0, 0.8) {\archibadge{App Component}\archiname{Mnemosyne Operations}\\\archidesc{Operations JPA / 8085--8086}};
 
     % --- Relationships ---
-    % Presentation Tier
+    % Presentation Tier Internal Serving
     \draw[archi-serving] (befe) -- (ui_clinical);
     \draw[archi-serving] (befe) -- (ui_console);
 
-    % Ingress to Transport
-    \draw[archi-flow] (pylai_mllp) -- (petasos_msg);
-    \draw[archi-flow] (petasos_msg) -- (ponos_engine);
+    % Ingress to Transport & Workflow
+    \draw[archi-flow] (pylai_mllp) -- node[archi-lbl]{JMS} (petasos_msg);
+    \draw[archi-flow] (petasos_msg) -- node[archi-lbl]{Dispatch} (ponos_engine);
+    \draw[archi-flow] (ponos_engine) -- node[archi-lbl]{Complete} (petasos_msg);
+    \draw[archi-flow] (petasos_msg) -- node[archi-lbl]{Egress} (pylai_out);
 
     % Workflow Internal Chaining
-    \draw[archi-serving] (ponos_engine) -- (praxis_seq);
+    \draw[archi-serving] (ponos_engine) -- (erga_acts);
     \draw[archi-serving] (praxis_seq) -- (erga_acts);
 
     % Cache Grid Access
-    \draw[archi-serving] (mneme_grid) -- (befe);
-    \draw[archi-serving] (mneme_grid) -- (pylai_mllp);
-    \draw[archi-serving] (mneme_grid) -- (ponos_engine);
-    \draw[archi-flow] (praxis_seq) -- (mneme_grid);
+    \draw[archi-serving] (mneme_grid) -- node[archi-lbl]{Hot Rod} (befe);
+    \draw[archi-serving] (mneme_grid) -- node[archi-lbl]{Hot Rod} (ponos_engine);
+    \draw[archi-flow]    (praxis_seq) -- node[archi-lbl]{Audit} (mneme_grid);
 
     % Persistence Write-Behind & Serving
-    \draw[archi-flow] (mneme_grid) -- (mneme_spi);
-    \draw[archi-flow] (mneme_spi) -- (mnemo_clin);
-    \draw[archi-flow] (mneme_spi) -- (mnemo_ops);
+    \draw[archi-flow] (mneme_grid) -- node[archi-lbl]{Async} (mneme_spi);
+    \draw[archi-flow] (mneme_spi) -- node[archi-lbl]{JDBC} (mnemo_clin);
+    \draw[archi-flow] (mneme_spi) -- node[archi-lbl]{JDBC} (mnemo_ops);
 
-    % Calliope Schema Serving
-    \draw[archi-access] (ponos_engine) -- (calliope);
+    % Calliope Schema Access
     \draw[archi-access] (erga_acts) -- (calliope);
+    \draw[archi-access] (pylai_out) -- (calliope);
 
 \end{tikzpicture}

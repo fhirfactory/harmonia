@@ -1,0 +1,78 @@
+%% =============================================================================
+%% chapters/08-artemis-topology.tex
+%% PART III: Middleware Architecture
+%% Chapter 8: Apache ActiveMQ Artemis Topology (Clustering, Journal Replication & Message Deduplication)
+%% =============================================================================
+
+\chapter{Apache ActiveMQ Artemis Topology}
+\label{chap:artemis_topology}
+
+The messaging backbone of Harmonia relies on Apache ActiveMQ Artemis 2.33.0 (packaged using container image \texttt{apache/activemq-artemis:2.33.0}). It provides guaranteed message delivery, high-availability journal replication, and dynamic load redistribution across active broker instances.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-petasos-artemis-ha.tex}
+    \end{adjustbox}
+    \caption{ActiveMQ Artemis 2.33.0 4-Broker Clustered HA Messaging Topology and Journal Replication}
+    \label{fig:artemis_cluster_topology}
+\end{figure}
+
+\section{4-Broker HA Clustering Topology}
+
+Harmonia deploys four broker StatefulSets arranged into two replicated high-availability pairs:
+\begin{itemize}
+    \item \textbf{Group A}: \texttt{artemis-primary-a} (Live Primary) and \texttt{artemis-backup-a} (Replicating Backup).
+    \item \textbf{Group B}: \texttt{artemis-primary-b} (Live Primary) and \texttt{artemis-backup-b} (Replicating Backup).
+\end{itemize}
+
+All broker communication---including client connections, synchronous journal replication, and cluster discovery---operates over a unified Netty transport port (\textbf{Port 61616}); separate external replication ports are not utilized within the Kubernetes pod networking namespace.
+
+\subsection{Symmetric Server-Side Clustering (\texttt{petasos-cluster})}
+Primary brokers establish a symmetric cluster connection mesh (\texttt{petasos-cluster}) configured with \texttt{ON\_DEMAND} message load balancing and instantaneous message redistribution (\texttt{redistribution-delay: 0}). When consumer demand fluctuates, messages queued on Primary A are automatically migrated across the cluster bridge to Primary B to maintain balanced processing throughput.
+
+\subsection{Synchronous Journal Replication}
+Within each group, the primary broker continuously replicates its journal transactions over a dedicated TCP channel to the passive backup broker. In the event of primary pod termination or node loss, the backup broker automatically assumes the live role within 2 seconds with zero message loss.
+
+\section{Address \& Queue Settings (\texttt{broker.xml})}
+
+Broker addresses and queues are governed by standardized XML configuration in \texttt{broker.xml}:
+\begin{itemize}
+    \item \textbf{Address Pattern Match}: \texttt{match="\#"} applies global delivery policies across all Petasos addresses.
+    \item \textbf{Dead-Letter Queue Address}: \texttt{DLQ} (messages exceeding maximum delivery attempts are routed to \texttt{DLQ}).
+    \item \textbf{Expiry Address}: \texttt{ExpiryQueue} (expired messages exceeding time-to-live are routed to \texttt{ExpiryQueue}).
+    \item \textbf{Redelivery Policy}: Initial \texttt{redelivery-delay} is \texttt{1000} ms with a multiplier of \texttt{1.5}.
+    \item \textbf{Maximum Delivery Attempts}: Bounded at \texttt{max-delivery-attempts="3"} before dead-letter routing.
+    \item \textbf{Paging Policy}: \texttt{address-full-policy="PAGE"} activates when queue size exceeds 100 MB (\texttt{104857600} bytes), paging in 10 MB (\texttt{10485760} byte) chunks.
+\end{itemize}
+
+\begin{lstlisting}[language=XML, caption={Authoritative ActiveMQ Artemis Address Settings in \texttt{broker.xml}}]
+<address-settings>
+   <address-setting match="#">
+      <dead-letter-address>DLQ</dead-letter-address>
+      <expiry-address>ExpiryQueue</expiry-address>
+      <redelivery-delay>1000</redelivery-delay>
+      <redelivery-delay-multiplier>1.5</redelivery-delay-multiplier>
+      <max-delivery-attempts>3</max-delivery-attempts>
+      <max-size-bytes>104857600</max-size-bytes>
+      <page-size-bytes>10485760</page-size-bytes>
+      <address-full-policy>PAGE</address-full-policy>
+      <redistribution-delay>0</redistribution-delay>
+   </address-setting>
+</address-settings>
+\end{lstlisting}
+
+\section{Durable Journal Persistence \& Storage Requirements}
+
+Each broker pod attaches a dedicated persistent volume:
+\begin{itemize}
+    \item \textbf{PVC Claim Size}: 2 GiB per broker (8 GiB total across all 4 brokers).
+    \item \textbf{Storage Class}: \texttt{microk8s-hostpath} (backed by local SSD storage).
+    \item \textbf{Directory Paths}: \texttt{./data/journal}, \texttt{./data/bindings}, \texttt{./data/paging}, \texttt{./data/large-messages}.
+\end{itemize}
+
+\section{Broker-Level Message Deduplication}
+
+Artemis natively enforces message deduplication via the \texttt{\_AMQ\_DUPL\_ID} header cache. When Petasos producers publish messages, they attach a deterministic unique ID. Artemis validates incoming IDs against its internal ring cache (default size: 20,000 entries), silently discarding duplicates and returning success.
+
+\newpage

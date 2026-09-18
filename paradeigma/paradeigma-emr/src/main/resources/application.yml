@@ -1,0 +1,25 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: paradeigma-emr
+
+paradeigma:
+  emr:
+    inboundAdtPort: ${EMR_ADT_INBOUND_PORT:2201}
+    harmoniaHost: ${HARMONIA_HOST:localhost}
+    harmoniaOrmPort: ${HARMONIA_EMR_ORM_PORT:2104}
+    timerEnabled: ${EMR_TIMER_ENABLED:false}
+    timerMode: ${EMR_TIMER_MODE:FIXED}
+    fixedIntervalMs: ${EMR_FIXED_INTERVAL_MS:7000}
+    minIntervalMs: ${EMR_MIN_INTERVAL_MS:3000}
+    maxIntervalMs: ${EMR_MAX_INTERVAL_MS:15000}
+    profile: ${EMR_EXECUTION_PROFILE:TEST}
+    seed: ${EMR_SEED:12345}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus

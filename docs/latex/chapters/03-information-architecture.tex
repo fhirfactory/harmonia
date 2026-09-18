@@ -1,0 +1,159 @@
+%% =============================================================================
+%% chapters/03-information-architecture.tex
+%% PART I: Foundations and Concepts
+%% Chapter 3: Information Architecture & Standard Message Envelopes
+%% =============================================================================
+
+\chapter[Information Architecture \& Standard Message Envelopes]{Information Architecture \&\\Standard Message Envelopes}
+\label{chap:information_architecture}
+
+The Information Architecture layer defines the canonical domain models, the task state lifecycle, message transport envelopes, clinical mapping dictionaries, and the supported HL7 FHIR Release 5 (R5) resource schemas.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \input{diagrams/fig-pragma-state-flow.tex}
+    \end{adjustbox}
+    \caption{Canonical \texttt{Pragma} State Machine and Lifecycle Progression}
+    \label{fig:info_pragma_state_flow}
+\end{figure}
+
+\section{Canonical Domain Models (\texttt{Calliope})}
+
+Harmonia avoids coupling workflow logic to proprietary or concrete wire formats by establishing strongly-typed canonical domain entities in the \texttt{Calliope} library.
+
+\subsection{1. \texttt{Pragma} (Task State Entity)}
+\texttt{Pragma} represents the single authoritative state representation for an execution task:
+\begin{lstlisting}[language=Java, caption={Canonical Pragma Model Definition in Calliope}]
+public class Pragma implements Serializable {
+    private String pragmaId;         // Unique UUID
+    private String correlationId;    // End-to-end transaction thread
+    private String causationId;      // Triggering event or message ID
+    private String praxisId;         // Workflow sequence definition ID
+    private PragmaStatus status;     // DRAFT, REQUESTED, IN_PROGRESS, COMPLETED, FAILED
+    private Integer priority;        // 1 (Lowest) - 100 (Highest)
+    private Date authoredOn;
+    private Date lastModified;
+    private String source;           // Originating gateway / interface
+    private String destination;      // Target queue or service address
+    private List<ErgonPayload> input = new ArrayList<>();
+    private List<ErgonPayload> output = new ArrayList<>();
+    private List<PragmaCheckpoint> checkpoints = new ArrayList<>();
+    private Map<String, String> metadata = new LinkedHashMap<>();
+}
+\end{lstlisting}
+
+\subsection{2. \texttt{PragmaCheckpoint} (Execution Audit Snapshot)}
+Captures an immutable audit milestone recorded at pipeline transitions:
+\begin{lstlisting}[language=Java, caption={PragmaCheckpoint Model Definition}]
+public class PragmaCheckpoint implements Serializable {
+    private String checkpointId;
+    private String pragmaId;
+    private String ergonId;          // Active Ergon activity
+    private String stageName;        // PIPELINE_INGRESS, PRE_ERGON, POST_ERGON, etc.
+    private Date timestamp;
+    private PragmaStatus status;
+    private String statusMessage;
+    private Integer stepIndex;       // 0-based sequence step
+}
+\end{lstlisting}
+
+\subsection{3. \texttt{ProviderRegistryChangePragma} (Directory Change Wrapper)}
+Wraps and manages asynchronous change requests submitted via FHIR Provider Registry \texttt{POST}/\texttt{PUT} endpoints:
+\begin{lstlisting}[language=Java, caption={ProviderRegistryChangePragma Model Definition}]
+public class ProviderRegistryChangePragma implements Serializable {
+    private final Pragma pragma;
+
+    public String getPragmaId();
+    public String getCorrelationId();
+    public String getOperation();           // CREATE or UPDATE
+    public String getResourceType();        // Practitioner, Organization, etc.
+    public String getResourceId();          // Target FHIR logical ID
+    public String getRequester();           // Submitting user / principal
+    public String getSourceSystem();        // Source system identifier
+    public String getIfMatch();             // Expected ETag / version header
+    public String getValidationOutcome();   // Validation status / diagnostics
+    public String getResultingResourceVersion();
+    public Resource getRequestedResource(); // Parsed FHIR R5 resource payload
+}
+\end{lstlisting}
+
+\subsection{4. Canonical Provider Registry Validation Codes}
+Harmonia standardizes error diagnostic reporting using canonical issue codes embedded within FHIR \texttt{OperationOutcome} responses:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Error Code} & \textbf{Issue Category} & \textbf{Architectural Description \& Diagnostic Condition} \\
+\midrule
+\texttt{PR-VAL-001} & Structural Error & Malformed FHIR JSON, unparseable attributes, or schema violation. \\
+\texttt{PR-VAL-002} & Missing Field & Required mandatory directory fields missing (e.g. Practitioner name). \\
+\texttt{PR-VAL-003} & Duplicate Identifier & Duplicate deterministic provider identifier (HPI-I, HPI-O, NPI). \\
+\texttt{PR-VAL-004} & Reference Not Found & Referenced target resource does not exist in Mnemosyne storage. \\
+\texttt{PR-VAL-005} & Reference Inactive & Referenced target resource is marked inactive or soft-deleted. \\
+\texttt{PR-VAL-006} & Concurrency Conflict & Stale update rejected due to \texttt{If-Match} / \texttt{ETag} version mismatch. \\
+\texttt{PR-VAL-007} & Invalid Endpoint & Malformed technical endpoint URL, invalid payload type, or status. \\
+\texttt{PR-VAL-008} & Invalid Group & Invalid group membership type or unresolved member references. \\
+\texttt{PR-VAL-009} & Unsupported Resource & Submitted resource type is not supported by Provider Registry. \\
+\texttt{PR-VAL-010} & Business Rule Failure & Custom business validation failure or governance policy violation. \\
+\bottomrule
+\end{tabularx}
+\caption{Canonical Provider Registry Validation and Error Diagnostic Codes}
+\label{tab:info_provider_registry_validation_codes}
+\end{table}
+
+\section{Canonical Outbound Models (\texttt{pylai-mllp-base})}
+
+The Pylai gateway tier standardizes outbound MLLP interactions using canonical data structures:
+
+\begin{lstlisting}[language=Java, caption={OutboundMllpRequest Model Definition}]
+public class OutboundMllpRequest implements Serializable {
+    private String requestId;          // Unique dispatch UUID
+    private String messageControlId;   // HL7 MSH-10 control identifier
+    private String destinationId;      // Target endpoint identifier (e.g. HIS_NORTH)
+    private String rawMessage;         // Raw HL7 v2 pipe-delimited message string
+    private String targetQueue;        // Destination Petasos queue
+    private Topic topic;               // Resolved clinical topic metadata
+    private Date timestamp;            // Enqueue timestamp
+}
+\end{lstlisting}
+
+\section{Petasos Messaging Transport Envelopes (\texttt{petasos-api})}
+
+Messages flowing through the messaging backbone are wrapped in a generic, opaque transport envelope:
+\begin{lstlisting}[language=Java, caption={PetasosMessage Envelope Definition}]
+public class PetasosMessage implements Serializable {
+    private String messageId;          // Globally unique message UUID
+    private String correlationId;      // Transaction correlation identifier
+    private String topic;              // Logical clinical topic
+    private String payloadType;        // MIME type (e.g. application/fhir+json, application/hl7-v2)
+    private byte[] payload;            // Opaque binary or UTF-8 text payload
+    private Map<String, String> headers = new HashMap<>();
+    private long creationTimestamp;
+}
+\end{lstlisting}
+
+\section{HL7 FHIR Release 5 (R5) Resource Schemas}
+
+Harmonia maps all clinical domain entities to 15 standardized HL7 FHIR Release 5 resource schemas:
+\begin{enumerate}
+    \item \textbf{\texttt{Patient}}: Care recipient demographics, identifiers, and link registries.
+    \item \textbf{\texttt{Encounter}}: Inpatient admissions, outpatient visits, and emergency encounters.
+    \item \textbf{\texttt{Practitioner}}: Clinical practitioner records, qualifications, and credentials.
+    \item \textbf{\texttt{PractitionerRole}}: Practitioner appointments, roles, and facility assignments.
+    \item \textbf{\texttt{Organization}}: Health systems, hospitals, departments, and external laboratories.
+    \item \textbf{\texttt{Location}}: Physical wards, operating rooms, clinics, and beds.
+    \item \textbf{\texttt{HealthcareService}}: Clinical services offered at locations.
+    \item \textbf{\texttt{Endpoint}}: Technical connection details (MLLP host/port, FHIR base URL).
+    \item \textbf{\texttt{Group}}: Care teams and practitioner groups.
+    \item \textbf{\texttt{Observation}}: Laboratory results, vital signs, and diagnostic findings.
+    \item \textbf{\texttt{DiagnosticReport}}: Multi-component diagnostic summaries and radiology reports.
+    \item \textbf{\texttt{DocumentReference}}: Clinical notes, discharge summaries, and pathology attachments.
+    \item \textbf{\texttt{Task}}: Execution task representation mapped directly from \texttt{Pragma}.
+    \item \textbf{\texttt{AuditEvent}}: Zero-PHI audit trail capturing access, creation, and modification events.
+    \item \textbf{\texttt{Provenance}}: Data lineage, source system tracking, and digital signatures.
+\end{enumerate}
+
+\newpage

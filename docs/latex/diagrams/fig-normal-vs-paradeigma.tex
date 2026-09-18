@@ -1,0 +1,36 @@
+%% =============================================================================
+%% diagrams/fig-normal-vs-paradeigma.tex
+%% Normal Production vs Paradeigma Simulation Deployment Isolation Boundary
+%% =============================================================================
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
+
+    % --- Background Plates ---
+    \draw[archi-plate-bg] (-0.8, 4.8) rectangle (15.8, 9.4);
+    \node[archi-plate-title] at (-0.6, 9.2) {Paradeigma Simulation Workloads (Simulation Profile Only)};
+
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (15.8, 4.2);
+    \node[archi-plate-title] at (-0.6, 4.0) {Harmonia Production Cluster (Strict Isolation Boundary)};
+
+    % --- Paradeigma Nodes ---
+    \node[archi-app-component, minimum width=3.4cm] (sim_emr)  at (1.5, 7.4) {\archibadge{Simulator}\archiname{paradeigma-emr}\\\archidesc{Clinical Simulator}};
+    \node[archi-app-component, minimum width=3.4cm] (sim_pas)  at (5.5, 7.4) {\archibadge{Simulator}\archiname{paradeigma-pas}\\\archidesc{Patient Administration}};
+    \node[archi-app-component, minimum width=3.4cm] (sim_lms)  at (9.5, 7.4) {\archibadge{Simulator}\archiname{paradeigma-lms}\\\archidesc{Laboratory Systems}};
+    \node[archi-app-component, minimum width=3.4cm] (sim_ris)  at (13.5, 7.4) {\archibadge{Simulator}\archiname{paradeigma-rispac}\\\archidesc{Radiology / PACS}};
+
+    \node[archi-app-component, minimum width=6.0cm] (sim_scen) at (7.5, 5.6) {\archibadge{Scenario Engine}\archiname{paradeigma-scenarios}\\\archidesc{Deterministic Patient Journey Driver}};
+
+    % --- Production Gateways ---
+    \node[archi-app-component, minimum width=4.5cm] (pylai_in)  at (3.5, 2.0) {\archibadge{Ingress Endpoint}\archiname{pylai-mllp-in}\\\archidesc{Standard MLLP Port 2575}};
+    \node[archi-app-component, minimum width=4.5cm] (pylai_reg) at (11.5, 2.0) {\archibadge{Ingress Endpoint}\archiname{pylai-fhir-registry}\\\archidesc{Standard FHIR REST 8080}};
+
+    % --- Scenario connections to Simulators ---
+    \draw[archi-flow] (sim_scen) -- (sim_emr);
+    \draw[archi-flow] (sim_scen) -- (sim_pas);
+    \draw[archi-flow] (sim_scen) -- (sim_lms);
+    \draw[archi-flow] (sim_scen) -- (sim_ris);
+
+    % --- Wire Protocol Crossing Only ---
+    \draw[archi-flow, dashed, line width=1pt] (sim_pas) -- node[archi-lbl]{HL7 v2 MLLP (Standard Wire Protocol)} (pylai_in);
+    \draw[archi-flow, dashed, line width=1pt] (sim_emr) -- node[archi-lbl]{FHIR R5 REST (Standard Wire Protocol)} (pylai_reg);
+
+\end{tikzpicture}

@@ -4,33 +4,46 @@
 %% =============================================================================
 \begin{tikzpicture}[node distance=1.0cm and 0.8cm, auto]
 
-    % --- Stakeholders ---
-    \node[archi-stakeholder] (stk_hie) at (0, 8.5) {\archibadge{Stakeholder}\archiname{Health Network}\\\archidesc{Regional Operator}};
-    \node[archi-stakeholder] (stk_prov) at (4.2, 8.5) {\archibadge{Stakeholder}\archiname{Healthcare Provider}\\\archidesc{Hospitals \& Clinics}};
-    \node[archi-stakeholder] (stk_clin) at (8.4, 8.5) {\archibadge{Stakeholder}\archiname{Clinician / Care Team}\\\archidesc{Medical Staff}};
-    \node[archi-stakeholder] (stk_pat) at (12.6, 8.5) {\archibadge{Stakeholder}\archiname{Patient}\\\archidesc{Care Recipient}};
+    % --- Background Layer Plates ---
+    \draw[archi-plate-bg] (-0.8, 7.5) rectangle (15.8, 9.7);
+    \node[archi-plate-title] at (-0.6, 9.5) {Stakeholder Layer};
 
-    % --- Drivers ---
-    \node[archi-driver] (drv_interop) at (1.0, 6.6) {\archibadge{Driver}\archiname{Clinical Interoperability}\\\archidesc{HL7 v2 to FHIR R5}};
-    \node[archi-driver] (drv_uptime) at (5.2, 6.6) {\archibadge{Driver}\archiname{24/7 Reliability}\\\archidesc{Zero Downtime Operations}};
-    \node[archi-driver] (drv_privacy) at (9.4, 6.6) {\archibadge{Driver}\archiname{Audit \& PHI Privacy}\\\archidesc{Traceability \& Safety}};
+    \draw[archi-plate-bg] (-0.8, 4.0) rectangle (15.8, 7.2);
+    \node[archi-plate-title] at (-0.6, 7.0) {Drivers \& Strategic Goals};
 
-    % --- Goals ---
-    \node[archi-goal] (gol_realtime) at (1.0, 4.8) {\archibadge{Goal}\archiname{Real-Time Ingestion}\\\archidesc{Sub-second Pipeline}};
-    \node[archi-goal] (gol_zeroloss) at (5.2, 4.8) {\archibadge{Goal}\archiname{Zero Message Loss}\\\archidesc{Durable Transport}};
-    \node[archi-goal] (gol_subms) at (9.4, 4.8) {\archibadge{Goal}\archiname{Sub-ms Cache Access}\\\archidesc{Distributed Grid}};
+    \draw[archi-plate-bg] (-0.8, 2.2) rectangle (15.8, 3.8);
+    \node[archi-plate-title] at (-0.6, 3.6) {Principles \& Requirements};
 
-    % --- Principles & Requirements ---
-    \node[archi-principle] (prn_atleastonce) at (0.0, 3.0) {\archibadge{Principle}\archiname{At-Least-Once Delivery}\\\archidesc{Idempotent Processing}};
-    \node[archi-requirement] (req_fhir5) at (4.2, 3.0) {\archibadge{Requirement}\archiname{FHIR R5 14-Resource}\\\archidesc{Standard Schemas}};
-    \node[archi-requirement] (req_ha) at (8.4, 3.0) {\archibadge{Requirement}\archiname{Artemis HA Failover}\\\archidesc{Automatic <2s Recovery}};
-    \node[archi-principle] (prn_writebehind) at (12.6, 3.0) {\archibadge{Principle}\archiname{Write-Behind Storage}\\\archidesc{Decoupled Relational IO}};
+    \draw[archi-plate-bg] (-0.8, 0.4) rectangle (15.8, 2.0);
+    \node[archi-plate-title] at (-0.6, 1.8) {Core Capabilities};
 
-    % --- Capabilities ---
-    \node[archi-capability] (cap_ingest) at (1.0, 1.2) {\archibadge{Capability}\archiname{Clinical Gateway Ingestion}\\\archidesc{Pylai MLLP / REST}};
-    \node[archi-capability] (cap_msg) at (5.2, 1.2) {\archibadge{Capability}\archiname{Clustered Messaging}\\\archidesc{Petasos HA Transport}};
-    \node[archi-capability] (cap_workflow) at (9.4, 1.2) {\archibadge{Capability}\archiname{Modular Task Execution}\\\archidesc{Ponos / Praxis / Erga}};
-    \node[archi-capability] (cap_grid) at (13.6, 1.2) {\archibadge{Capability}\archiname{In-Memory Cache Grid}\\\archidesc{Hestia / Mneme}};
+    % --- 1. Stakeholders ---
+    \node[archi-stakeholder, minimum width=3.4cm] (stk_hie)  at (0.8, 8.4) {\archibadge{Stakeholder}\archiname{Health Network}\\\archidesc{Regional Operator}};
+    \node[archi-stakeholder, minimum width=3.4cm] (stk_prov) at (5.0, 8.4) {\archibadge{Stakeholder}\archiname{Healthcare Provider}\\\archidesc{Hospitals \& Clinics}};
+    \node[archi-stakeholder, minimum width=3.4cm] (stk_clin) at (9.2, 8.4) {\archibadge{Stakeholder}\archiname{Care Team}\\\archidesc{Clinicians \& Nurses}};
+    \node[archi-stakeholder, minimum width=3.4cm] (stk_pat)  at (13.4, 8.4) {\archibadge{Stakeholder}\archiname{Patient}\\\archidesc{Care Recipient}};
+
+    % --- 2. Drivers ---
+    \node[archi-driver, minimum width=4.5cm] (drv_interop) at (1.8, 6.0) {\archibadge{Driver}\archiname{Clinical Interoperability}\\\archidesc{HL7 v2 to FHIR R5 Unified Model}};
+    \node[archi-driver, minimum width=4.5cm] (drv_uptime)  at (7.5, 6.0) {\archibadge{Driver}\archiname{24/7 Availability}\\\archidesc{Zero Downtime Fault Tolerance}};
+    \node[archi-driver, minimum width=4.5cm] (drv_privacy) at (13.2, 6.0) {\archibadge{Driver}\archiname{Audit \& PHI Privacy}\\\archidesc{Strict Security \& Compliance}};
+
+    % --- 3. Goals ---
+    \node[archi-goal, minimum width=4.5cm] (gol_realtime) at (1.8, 4.6) {\archibadge{Goal}\archiname{Real-Time Ingestion}\\\archidesc{Sub-second Pipeline Ingestion}};
+    \node[archi-goal, minimum width=4.5cm] (gol_zeroloss) at (7.5, 4.6) {\archibadge{Goal}\archiname{Zero Message Loss}\\\archidesc{Durable Clustered Transport}};
+    \node[archi-goal, minimum width=4.5cm] (gol_subms)    at (13.2, 4.6) {\archibadge{Goal}\archiname{Sub-ms Cache Access}\\\archidesc{Distributed Low-Latency Grid}};
+
+    % --- 4. Principles & Requirements ---
+    \node[archi-principle, minimum width=3.5cm]   (prn_atleastonce) at (0.9, 3.0) {\archibadge{Principle}\archiname{At-Least-Once}\\\archidesc{Idempotent Processing}};
+    \node[archi-requirement, minimum width=3.5cm] (req_fhir5)       at (5.1, 3.0) {\archibadge{Requirement}\archiname{FHIR R5 Schemas}\\\archidesc{14 Core Resource Models}};
+    \node[archi-requirement, minimum width=3.5cm] (req_ha)          at (9.3, 3.0) {\archibadge{Requirement}\archiname{Artemis HA Failover}\\\archidesc{Automatic <2s Recovery}};
+    \node[archi-principle, minimum width=3.5cm]   (prn_writebehind) at (13.5, 3.0) {\archibadge{Principle}\archiname{Write-Behind}\\\archidesc{Decoupled Relational IO}};
+
+    % --- 5. Capabilities ---
+    \node[archi-capability, minimum width=3.5cm] (cap_ingest)   at (0.9, 1.2) {\archibadge{Capability}\archiname{Gateway Ingestion}\\\archidesc{Pylai MLLP / REST}};
+    \node[archi-capability, minimum width=3.5cm] (cap_msg)      at (5.1, 1.2) {\archibadge{Capability}\archiname{Clustered Messaging}\\\archidesc{Petasos HA Backbone}};
+    \node[archi-capability, minimum width=3.5cm] (cap_workflow) at (9.3, 1.2) {\archibadge{Capability}\archiname{Modular Workflows}\\\archidesc{Ponos / Praxis / Erga}};
+    \node[archi-capability, minimum width=3.5cm] (cap_grid)     at (13.5, 1.2) {\archibadge{Capability}\archiname{In-Memory Cache}\\\archidesc{Hestia Mneme Grid}};
 
     % --- Connecting Relationships ---
     % Stakeholder -> Driver (Association)
