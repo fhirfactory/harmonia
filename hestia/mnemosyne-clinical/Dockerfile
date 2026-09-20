@@ -15,7 +15,7 @@
 
 FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
-COPY target/mnemosyne-clinical-*.jar app.jar
+COPY target/mnemosyne-clinical-*-exec.jar app.jar
 EXPOSE 8080
 ENV SPRING_PROFILES_ACTIVE=postgres
 ENTRYPOINT ["java", "-jar", "app.jar"]

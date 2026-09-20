@@ -25,7 +25,8 @@ import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,13 +35,14 @@ import java.util.Optional;
 /**
  * Service validating referential integrity and target existence for FHIR Provider Registry resources.
  */
-@Service
+@Component
 public class ProviderRegistryReferenceValidator {
 
     private static final Logger log = LoggerFactory.getLogger(ProviderRegistryReferenceValidator.class);
 
     private final FhirResourceRepository repository;
 
+    @Autowired
     public ProviderRegistryReferenceValidator(FhirResourceRepository repository) {
         this.repository = repository;
     }

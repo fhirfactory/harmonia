@@ -61,10 +61,8 @@ import java.util.Set;
  */
 public abstract class AbstractProviderRegistryChangeErgon<T extends Resource> extends ErgonBase {
 
-    @Inject
     private FhirStorageService storageService;
 
-    @Inject
     private ProviderRegistryReferenceValidator referenceValidator;
 
     @Inject

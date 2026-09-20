@@ -15,7 +15,7 @@ Iris is Harmonia's presentation tier, providing decoupled, modern browser user i
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
-Iris separates the presentation tier into a dedicated Jakarta EE 10 BEFE gateway and three decoupled TypeScript / Vue 3 Single Page Applications (SPAs):
+Iris separates the presentation tier into a shared presentation foundation, a dedicated Jakarta EE 10 BEFE gateway, and three decoupled TypeScript / Vue 3 Single Page Applications (SPAs):
 
 ```
 +---------------------------------------------------------------------------------------+
@@ -30,7 +30,18 @@ Iris separates the presentation tier into a dedicated Jakarta EE 10 BEFE gateway
 |   |   | (Port 3000 / Nginx)|  | (Port 3001 / Nginx)|  |   (Port 3002 / Nginx)  |   |  |
 |   |   | * Clinical Viewer  |  | * Ops & Telemetry  |  | * Provider Registry UI |   |  |
 |   |   | * FHIR Timeline    |  | * Artemis Queues   |  | * Practitioner Search  |   |  |
-|   |   +--------------------+  +--------------------+  +------------------------+   |  |
+|   |   +--------------------+  +---------+----------+  +------------------------+   |  |
+|   +-------------------------------------|------------------------------------------+  |
+|                                         | imports (@harmonia/iris-befe)               |
+|                                         v                                             |
+|   +--------------------------------------------------------------------------------+  |
+|   |            SHARED DESIGN SYSTEM FOUNDATION (iris/iris-befe/frontend)           |  |
+|   |                                                                                |  |
+|   |   - PrimeVue 4 & Custom Aura Light Theme Preset via definePreset               |  |
+|   |   - Centralized Design Tokens (tokens.css: typography, surfaces, status)       |  |
+|   |   - Domain-Neutral Shell (IrisApplicationShell, IrisHeader, IrisPrimaryNav)    |  |
+|   |   - Presentation Components (IrisStatus, IrisSubsystemIdentity, IrisDataTable) |  |
+|   |   - Invariant: Zero reverse dependencies, zero DB drivers, zero clinical models|  |
 |   +--------------------------------------------------------------------------------+  |
 |                                         | HTTP REST Calls                             |
 |                                         v                                             |

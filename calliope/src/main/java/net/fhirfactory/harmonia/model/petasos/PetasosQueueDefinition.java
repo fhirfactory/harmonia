@@ -64,6 +64,24 @@ public class PetasosQueueDefinition implements Serializable {
     @JsonProperty("enabled")
     private boolean enabled = true;
 
+    @JsonProperty("depth")
+    private Long depth;
+
+    @JsonProperty("consumerCount")
+    private Integer consumerCount;
+
+    @JsonProperty("producerCount")
+    private Integer producerCount;
+
+    @JsonProperty("enqueueRate")
+    private Double enqueueRate;
+
+    @JsonProperty("dequeueRate")
+    private Double dequeueRate;
+
+    @JsonProperty("dlqDepth")
+    private Long dlqDepth;
+
     public PetasosQueueDefinition() {
     }
 
@@ -184,6 +202,54 @@ public class PetasosQueueDefinition implements Serializable {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Long getDepth() {
+        return depth;
+    }
+
+    public void setDepth(Long depth) {
+        this.depth = depth;
+    }
+
+    public Integer getConsumerCount() {
+        return consumerCount;
+    }
+
+    public void setConsumerCount(Integer consumerCount) {
+        this.consumerCount = consumerCount;
+    }
+
+    public Integer getProducerCount() {
+        return producerCount;
+    }
+
+    public void setProducerCount(Integer producerCount) {
+        this.producerCount = producerCount;
+    }
+
+    public Double getEnqueueRate() {
+        return enqueueRate;
+    }
+
+    public void setEnqueueRate(Double enqueueRate) {
+        this.enqueueRate = enqueueRate;
+    }
+
+    public Double getDequeueRate() {
+        return dequeueRate;
+    }
+
+    public void setDequeueRate(Double dequeueRate) {
+        this.dequeueRate = dequeueRate;
+    }
+
+    public Long getDlqDepth() {
+        return dlqDepth;
+    }
+
+    public void setDlqDepth(Long dlqDepth) {
+        this.dlqDepth = dlqDepth;
     }
 
     @Override

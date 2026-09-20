@@ -18,5 +18,5 @@ FROM quay.io/wildfly/wildfly:latest-jdk21
 # Copy Task Sequence Processor WAR file to deployments directory
 COPY target/task-sequence-processor.war /opt/jboss/wildfly/standalone/deployments/ROOT.war
 
-EXPOSE 8080 9990 61616
+EXPOSE 8080 9990
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]

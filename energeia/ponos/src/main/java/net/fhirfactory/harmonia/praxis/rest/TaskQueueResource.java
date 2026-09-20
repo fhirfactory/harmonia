@@ -26,9 +26,9 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
-import net.fhirfactory.harmonia.praxis.messaging.ArtemisBrokerManager;
 import net.fhirfactory.harmonia.praxis.messaging.TaskQueueProducerService;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Task;
@@ -56,7 +56,7 @@ public class TaskQueueResource {
     private QueueConfig queueConfig;
 
     @Inject
-    private ArtemisBrokerManager artemisBrokerManager;
+    private Petasos petasos;
 
     @Inject
     private net.fhirfactory.harmonia.praxis.camel.CamelContextManager camelContextManager;
@@ -138,7 +138,7 @@ public class TaskQueueResource {
     @Path("/reload")
     public Response reload() {
         try {
-            java.util.List<String> queues = artemisBrokerManager != null ? artemisBrokerManager.syncQueues() : java.util.Collections.emptyList();
+            java.util.List<String> queues = java.util.Collections.emptyList();
             boolean seqsReloaded = camelContextManager != null && camelContextManager.reloadSequences();
             Map<String, Object> result = new HashMap<>();
             result.put("status", "SYNCHRONIZED");
@@ -160,7 +160,15 @@ public class TaskQueueResource {
         status.put("module", "task-processor");
         status.put("taskQueueName", queueConfig.getQueueName());
         status.put("eventQueueName", queueConfig.getEventQueueName());
-        status.put("brokerRunning", artemisBrokerManager.isRunning());
+        boolean brokerRunning = false;
+        try {
+            if (petasos != null && petasos.health() != null) {
+                brokerRunning = petasos.health().isHealthy();
+            }
+        } catch (Exception e) {
+            log.debug("Could not determine broker status: {}", e.getMessage());
+        }
+        status.put("brokerRunning", brokerRunning);
         status.put("cachedTasksCount", taskCacheService.count());
         return Response.ok(status).build();
     }

@@ -33,6 +33,20 @@ public final class PetasosConfig implements Serializable {
     public static final String DEFAULT_DLQ_ADDRESS = "DLQ";
     public static final String DEFAULT_EXPIRY_ADDRESS = "ExpiryQueue";
 
+    public static final String ENV_PETASOS_BROKER_URL = "PETASOS_BROKER_URL";
+    public static final String ENV_PETASOS_BROKER_URLS = "PETASOS_BROKER_URLS";
+    public static final String ENV_ARTEMIS_BROKER_URL = "ARTEMIS_BROKER_URL";
+    public static final String ENV_PETASOS_BROKER_USER = "PETASOS_BROKER_USER";
+    public static final String ENV_ARTEMIS_USER = "ARTEMIS_USER";
+    public static final String ENV_PETASOS_BROKER_PASSWORD = "PETASOS_BROKER_PASSWORD";
+    public static final String ENV_ARTEMIS_PASSWORD = "ARTEMIS_PASSWORD";
+    public static final String ENV_PETASOS_HA_ENABLED = "PETASOS_HA_ENABLED";
+
+    public static final String PROP_PETASOS_BROKER_URL = "petasos.broker.url";
+    public static final String PROP_PETASOS_BROKER_URLS = "petasos.broker.urls";
+    public static final String PROP_PETASOS_BROKER_USER = "petasos.broker.user";
+    public static final String PROP_PETASOS_BROKER_PASSWORD = "petasos.broker.password";
+
     private final List<String> brokerUrls;
     private final String username;
     private final String password;
@@ -106,31 +120,46 @@ public final class PetasosConfig implements Serializable {
 
     public static PetasosConfig fromEnvironment() {
         Builder builder = builder();
-        String urls = System.getenv("PETASOS_BROKER_URLS");
+        String urls = System.getenv(ENV_PETASOS_BROKER_URL);
         if (urls == null || urls.isBlank()) {
-            urls = System.getenv("ARTEMIS_BROKER_URL");
+            urls = System.getenv(ENV_PETASOS_BROKER_URLS);
+        }
+        if (urls == null || urls.isBlank()) {
+            urls = System.getenv(ENV_ARTEMIS_BROKER_URL);
+        }
+        if (urls == null || urls.isBlank()) {
+            urls = System.getProperty(PROP_PETASOS_BROKER_URL);
+        }
+        if (urls == null || urls.isBlank()) {
+            urls = System.getProperty(PROP_PETASOS_BROKER_URLS);
         }
         if (urls != null && !urls.isBlank()) {
             builder.brokerUrls(Arrays.asList(urls.split(",")));
         }
 
-        String user = System.getenv("PETASOS_BROKER_USER");
+        String user = System.getenv(ENV_PETASOS_BROKER_USER);
         if (user == null || user.isBlank()) {
-            user = System.getenv("ARTEMIS_USER");
+            user = System.getenv(ENV_ARTEMIS_USER);
+        }
+        if (user == null || user.isBlank()) {
+            user = System.getProperty(PROP_PETASOS_BROKER_USER);
         }
         if (user != null && !user.isBlank()) {
             builder.username(user);
         }
 
-        String pass = System.getenv("PETASOS_BROKER_PASSWORD");
+        String pass = System.getenv(ENV_PETASOS_BROKER_PASSWORD);
         if (pass == null || pass.isBlank()) {
-            pass = System.getenv("ARTEMIS_PASSWORD");
+            pass = System.getenv(ENV_ARTEMIS_PASSWORD);
+        }
+        if (pass == null || pass.isBlank()) {
+            pass = System.getProperty(PROP_PETASOS_BROKER_PASSWORD);
         }
         if (pass != null && !pass.isBlank()) {
             builder.password(pass);
         }
 
-        String ha = System.getenv("PETASOS_HA_ENABLED");
+        String ha = System.getenv(ENV_PETASOS_HA_ENABLED);
         if (ha != null && !ha.isBlank()) {
             builder.haEnabled(Boolean.parseBoolean(ha.trim()));
         }

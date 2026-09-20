@@ -29,8 +29,8 @@ import net.fhirfactory.harmonia.praxis.camel.TaskEventMessageProcessor;
 import net.fhirfactory.harmonia.praxis.camel.TaskMessageProcessor;
 import net.fhirfactory.harmonia.praxis.camel.TaskProcessorRouteBuilder;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
+import net.fhirfactory.harmonia.petasos.test.harness.EmbeddedArtemisCluster;
 import net.fhirfactory.harmonia.praxis.sequence.TaskSequenceLoader;
-import net.fhirfactory.harmonia.praxis.service.MessageQueueService;
 import net.fhirfactory.harmonia.praxis.service.PraxisService;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.patient.demographics.PatientDemographicsUpdateErgon;
@@ -44,8 +44,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.net.ServerSocket;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +56,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class TaskQueueIntegrationTest {
 
-    private static ArtemisBrokerManager brokerManager;
+    private static EmbeddedArtemisCluster embeddedCluster;
+    private static int brokerPort;
     private static CamelContextManager camelContextManager;
     private static TaskQueueProducerService producerService;
     private static TaskCacheService taskCacheService;
@@ -104,21 +107,18 @@ class TaskQueueIntegrationTest {
 
     @BeforeAll
     static void setUpAll() throws Exception {
+        embeddedCluster = new EmbeddedArtemisCluster();
+        brokerPort = findFreePort();
+        embeddedCluster.startStandaloneBroker("test-ponos-broker", brokerPort, false);
+        String brokerUrl = "tcp://127.0.0.1:" + brokerPort;
+
         fhirContext = FhirContext.forR5();
         queueConfig = new QueueConfig();
-
-        // Message Queue Service
-        MessageQueueService messageQueueService = new MessageQueueService(null, queueConfig);
-        messageQueueService.init();
-
-        // Start Broker
-        brokerManager = new ArtemisBrokerManager();
-        setField(brokerManager, "queueConfig", queueConfig);
-        setField(brokerManager, "messageQueueService", messageQueueService);
-        brokerManager.start();
+        queueConfig.setBrokerEnabled(false);
+        queueConfig.setBrokerUrl(brokerUrl);
 
         // Create Connection Factory
-        connectionFactory = new ActiveMQConnectionFactory(queueConfig.getBrokerUrl());
+        connectionFactory = new ActiveMQConnectionFactory(brokerUrl);
 
         // Cache Service
         taskCacheService = new TaskCacheService();
@@ -173,8 +173,24 @@ class TaskQueueIntegrationTest {
         if (camelContextManager != null) {
             camelContextManager.stopCamel();
         }
-        if (brokerManager != null) {
-            brokerManager.stop();
+        if (connectionFactory instanceof AutoCloseable closeable) {
+            try {
+                closeable.close();
+            } catch (Exception ignored) {
+            }
+        }
+        if (embeddedCluster != null) {
+            try {
+                embeddedCluster.close();
+            } catch (Exception ignored) {
+            }
+        }
+    }
+
+    private static int findFreePort() throws IOException {
+        try (ServerSocket socket = new ServerSocket(0)) {
+            socket.setReuseAddress(true);
+            return socket.getLocalPort();
         }
     }
 

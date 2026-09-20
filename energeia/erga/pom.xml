@@ -45,6 +45,12 @@
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>
             <artifactId>mnemosyne-clinical</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Jakarta EE 10 Annotations / CDI -->

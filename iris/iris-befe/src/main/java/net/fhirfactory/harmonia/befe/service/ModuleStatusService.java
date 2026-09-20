@@ -61,10 +61,16 @@ public class ModuleStatusService {
     }
 
     public void updateStatus(ModuleStatus status) {
+        updateStatus(status, true);
+    }
+
+    public void updateStatus(ModuleStatus status, boolean touch) {
         if (status == null || status.getModuleId() == null || status.getModuleId().isBlank()) {
             return;
         }
-        status.touch();
+        if (touch) {
+            status.touch();
+        }
         localFallbackCache.put(status.getModuleId(), status);
 
         RemoteCache<String, String> cache = getRemoteCache();

@@ -66,13 +66,29 @@ public class TaskProcessorConfig {
     }
 
     public String getBrokerUrl() {
-        String env = System.getenv("TASK_BROKER_URL");
+        String env = System.getenv("PETASOS_BROKER_URL");
         if (StringUtils.isNotBlank(env)) {
             return env.trim();
         }
+        String prop = System.getProperty("petasos.broker.url");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        env = System.getenv("TASK_PROCESSOR_BROKER_URL");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("TASK_BROKER_URL");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        prop = System.getProperty("task.broker.url");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
         String host = getBrokerHost();
         int port = getBrokerPort();
-        return System.getProperty("task.broker.url", "tcp://" + host + ":" + port);
+        return "tcp://" + host + ":" + port;
     }
 
     public String getBrokerHost() {
@@ -100,7 +116,23 @@ public class TaskProcessorConfig {
     }
 
     public String getBrokerUsername() {
-        String env = System.getenv("TASK_BROKER_USER");
+        String env = System.getenv("PETASOS_BROKER_USER");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        String prop = System.getProperty("petasos.broker.user");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        env = System.getenv("ARTEMIS_USER");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("TASK_PROCESSOR_BROKER_USERNAME");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("TASK_BROKER_USER");
         if (StringUtils.isNotBlank(env)) {
             return env.trim();
         }
@@ -108,11 +140,27 @@ public class TaskProcessorConfig {
     }
 
     public String getBrokerPassword() {
-        String env = System.getenv("TASK_BROKER_PASSWORD");
+        String env = System.getenv("PETASOS_BROKER_PASSWORD");
         if (StringUtils.isNotBlank(env)) {
             return env.trim();
         }
-        return System.getProperty("task.broker.password", "admin");
+        String prop = System.getProperty("petasos.broker.password");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        env = System.getenv("ARTEMIS_PASSWORD");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("TASK_PROCESSOR_BROKER_PASSWORD");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("TASK_BROKER_PASSWORD");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        return System.getProperty("task.broker.password", "adminPassword");
     }
 
     public String getTaskProcessorUrl() {

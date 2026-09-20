@@ -16,16 +16,46 @@
  */
 
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
-import type { SystemStatus, OperationResource, QueueStatus, CacheStatus, ModuleStatus } from '../models/operations';
+import { ref, computed } from 'vue';
+import type { 
+  SystemStatus, OperationResource, QueueStatus, CacheStatus, ModuleStatus,
+  OperationalSummary, OperationalSubsystem, OperationalInstance,
+  OperationalHealth, TimeSeries, OperationalAlert
+} from '../models/operations';
 import { operationsApi } from '../api/operationsClient';
+import { findAuthoritativeSubsystem } from '../models/subsystemHierarchy';
 
 export const useOperationsStore = defineStore('operations', () => {
+  // --------------------------------------------------------------------------
+  // Normalized Operations State
+  // --------------------------------------------------------------------------
+  const summary = ref<OperationalSummary | null>(null);
+  const subsystems = ref<OperationalSubsystem[]>([]);
+  const selectedSubsystemId = ref<string>('petasos');
+  const instances = ref<OperationalInstance[]>([]);
+  const selectedInstance = ref<OperationalInstance | null>(null);
+  const isInstanceDrawerOpen = ref<boolean>(false);
+  const currentHealth = ref<OperationalHealth | null>(null);
+  const statistics = ref<Record<string, TimeSeries>>({});
+  const selectedWindow = ref<'15m' | '1h' | '6h' | '24h'>('1h');
+  const alerts = ref<OperationalAlert[]>([]);
+  const selectedSeverityFilter = ref<string>('ALL');
+  const selectedStatusFilter = ref<string>('ALL');
+  const selectedAlertSubsystemFilter = ref<string>('ALL');
+
+  const loading = ref(false);
+  const refreshing = ref(false);
+  const error = ref<string | null>(null);
+  const isStale = ref(false);
+  const lastRefreshed = ref<Date | null>(null);
+  let pollingInterval: any = null;
+
+  // --------------------------------------------------------------------------
+  // Legacy / Backward Compatible State
+  // --------------------------------------------------------------------------
   const status = ref<SystemStatus | null>(null);
   const operationalResources = ref<OperationResource[]>([]);
   const modules = ref<ModuleStatus[]>([]);
-  const loading = ref(false);
-  const error = ref<string | null>(null);
 
   const defaultQueues = ref<QueueStatus[]>([
     { queueName: 'task.processing.queue', messageCount: 0, consumerCount: 1, status: 'ACTIVE', targetSequence: 'Standard Processing Queue' },
@@ -47,6 +77,267 @@ export const useOperationsStore = defineStore('operations', () => {
     { cacheName: 'organization-cache', type: 'FHIR', mode: 'SYNC', size: 0, persistenceStore: 'HAPI FHIR JPA (PostgreSQL)', status: 'HEALTHY' }
   ]);
 
+  // --------------------------------------------------------------------------
+  // Computed Properties
+  // --------------------------------------------------------------------------
+  const selectedSubsystem = computed<OperationalSubsystem | null>(() => {
+    const id = selectedSubsystemId.value;
+    for (const sub of subsystems.value) {
+      if (sub.id === id) return sub;
+      if (sub.children) {
+        for (const child of sub.children) {
+          if (child.id === id) return child;
+        }
+      }
+    }
+    const directMatch = subsystems.value.find(s => s.id === id);
+    if (directMatch) return directMatch;
+
+    // Honest fallback synthesis for authoritative components when backend telemetry bean is absent
+    const auth = findAuthoritativeSubsystem(id);
+    if (auth) {
+      return {
+        id: auth.id,
+        name: auth.name,
+        description: auth.description,
+        state: 'UNKNOWN',
+        instanceCount: 0,
+        version: '1.0.0',
+        lastUpdated: Date.now()
+      };
+    }
+
+    return null;
+  });
+
+  const criticalAlertsCount = computed(() => {
+    if (summary.value?.criticalAlerts !== undefined) {
+      return summary.value.criticalAlerts;
+    }
+    return alerts.value.filter(a => a.severity === 'CRITICAL' && a.status === 'ACTIVE').length;
+  });
+
+  const warningAlertsCount = computed(() => {
+    if (summary.value?.warningAlerts !== undefined) {
+      return summary.value.warningAlerts;
+    }
+    return alerts.value.filter(a => a.severity === 'WARNING' && a.status === 'ACTIVE').length;
+  });
+
+  // --------------------------------------------------------------------------
+  // Default Fallback Subsystems Inventory (Honest Telemetry Structure)
+  // --------------------------------------------------------------------------
+  function getDefaultSubsystems(): OperationalSubsystem[] {
+    const now = Date.now();
+    return [
+      { 
+        id: 'pylai', 
+        name: 'Pylai', 
+        description: 'HL7 MLLP & FHIR Inbound/Outbound Protocol Gateways', 
+        state: 'UNKNOWN', 
+        instanceCount: 0, 
+        version: '1.0.0', 
+        lastUpdated: now,
+        children: [
+          { id: 'pylai-mllp-in', name: 'MLLP Inbound Gateway', description: 'Dual-write ACK gateway on ports 2575 / 8084', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pylai-mllp-out-his', name: 'MLLP Outbound HIS', description: 'Outbound HL7 v2 gateway on port 8087', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pylai-mllp-out-lis', name: 'MLLP Outbound LIS', description: 'Outbound HL7 v2 gateway on port 8088', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pylai-fhir-registry', name: 'FHIR Provider Registry Gateway', description: 'Practitioner & Organization endpoint on port 8089', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+        ]
+      },
+      { id: 'petasos', name: 'Petasos', description: 'Resilient Messaging Abstraction & ActiveMQ Artemis Broker', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { 
+        id: 'energeia', 
+        name: 'Energeia', 
+        description: 'Task Processing, Ergon Activity & Praxis Workflow Orchestration', 
+        state: 'UNKNOWN', 
+        instanceCount: 0, 
+        version: '1.0.0', 
+        lastUpdated: now,
+        children: [
+          { id: 'ponos', name: 'Ponos', description: 'Ponos Task Processor & Activity Handler workers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'praxis', name: 'Praxis', description: 'Praxis Workflow Engine & Pragma State Coordinator', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'ergon', name: 'Ergon', description: 'Task / Work Unit Activities & Payload Transformers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pragma', name: 'Pragma', description: 'Task Instances & Runtime Checkpoints', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+        ]
+      },
+      { id: 'mneme', name: 'Mneme', description: 'Infinispan Distributed Replicated In-Memory Cache Grid', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'mnemosyne', name: 'Mnemosyne', description: 'Clinical & Operational HAPI FHIR R5 Persistence', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'calliope', name: 'Calliope', description: 'Canonical Schemas, Transformers & Clinical Models', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'themis', name: 'Themis', description: 'Default-Deny Policy Evaluation & RBAC Engine', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'agora', name: 'Agora', description: 'Matrix/Synapse Collaboration & Healthcare AS Bridge', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { 
+        id: 'iris', 
+        name: 'Iris', 
+        description: 'Presentation Tier & BEFE Dual-Port Gateway', 
+        state: 'UNKNOWN', 
+        instanceCount: 0, 
+        version: '1.0.0', 
+        lastUpdated: now,
+        children: [
+          { id: 'iris-befe', name: 'Iris BEFE Gateway', description: 'WildFly 31 Jakarta EE gateway (:8080 Clinical, :8090 Operations)', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'iris-clinical', name: 'Iris Clinical SPA', description: 'Vue 3 Clinical FHIR R5 web application on port 3000', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'iris-monitor', name: 'Iris Monitor SPA', description: 'Vue 3 Operational telemetry console on port 3001', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'iris-administration', name: 'Iris Administration SPA', description: 'Vue 3 Self-service and registry workbench on port 3002', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+        ]
+      }
+    ];
+  }
+
+  // --------------------------------------------------------------------------
+  // Normalized Operations Actions
+  // --------------------------------------------------------------------------
+  const fetchSummary = async () => {
+    try {
+      summary.value = await operationsApi.getSummary();
+    } catch (err: any) {
+      // Leave the last known summary untouched. An unavailable API is not a healthy platform.
+    }
+  };
+
+  const fetchSubsystems = async () => {
+    try {
+      const data = await operationsApi.getSubsystems();
+      if (data && data.length > 0) {
+        subsystems.value = data;
+      } else if (subsystems.value.length === 0) {
+        subsystems.value = getDefaultSubsystems();
+      }
+    } catch (err: any) {
+      if (subsystems.value.length === 0) {
+        subsystems.value = getDefaultSubsystems();
+      }
+    }
+  };
+
+  const fetchInstances = async (subsystemId: string) => {
+    try {
+      instances.value = await operationsApi.getSubsystemInstances(subsystemId);
+    } catch (err: any) {
+      instances.value = [];
+    }
+  };
+
+  const fetchHealth = async (subsystemId: string) => {
+    try {
+      currentHealth.value = await operationsApi.getSubsystemHealth(subsystemId);
+      isStale.value = Boolean(currentHealth.value?.stale);
+    } catch (err: any) {
+      currentHealth.value = {
+        subsystemId,
+        status: 'UNKNOWN',
+        availabilityPercent: null,
+        failedOperations: 0,
+        restartCount: 0,
+        p95LatencyMs: null,
+        dependenciesSummary: 'Unavailable',
+        stale: true,
+        dependencies: []
+      };
+      isStale.value = true;
+    }
+  };
+
+  const fetchStatistics = async (subsystemId: string, windowVal: '15m' | '1h' | '6h' | '24h' = selectedWindow.value) => {
+    try {
+      statistics.value = await operationsApi.getSubsystemStatistics(subsystemId, windowVal);
+    } catch (err: any) {
+      statistics.value = {};
+    }
+  };
+
+  const fetchAlerts = async (severity?: string, statusVal?: string, subsystem?: string) => {
+    try {
+      const sev = severity !== undefined ? severity : (selectedSeverityFilter.value !== 'ALL' ? selectedSeverityFilter.value : undefined);
+      const st = statusVal !== undefined ? statusVal : (selectedStatusFilter.value !== 'ALL' ? selectedStatusFilter.value : undefined);
+      const sub = subsystem !== undefined ? subsystem : (selectedAlertSubsystemFilter.value !== 'ALL' ? selectedAlertSubsystemFilter.value : undefined);
+      alerts.value = await operationsApi.getAlerts(sev, st, sub);
+    } catch (err: any) {
+      alerts.value = [];
+    }
+  };
+
+  const acknowledgeAlert = async (alertId: string, operator: string = 'operator') => {
+    try {
+      const res = await operationsApi.acknowledgeAlert(alertId);
+      const existing = alerts.value.find(a => a.alertId === alertId);
+      if (existing) {
+        existing.status = 'ACKNOWLEDGED';
+      }
+      return res;
+    } catch (err: any) {
+      error.value = err.message || 'Failed acknowledging alert';
+      throw err;
+    }
+  };
+
+  const selectSubsystem = async (subsystemId: string) => {
+    selectedSubsystemId.value = subsystemId;
+    loading.value = true;
+    error.value = null;
+    try {
+      await Promise.allSettled([
+        fetchInstances(subsystemId),
+        fetchHealth(subsystemId),
+        fetchStatistics(subsystemId, selectedWindow.value)
+      ]);
+    } finally {
+      loading.value = false;
+      lastRefreshed.value = new Date();
+    }
+  };
+
+  const setWindow = async (windowVal: '15m' | '1h' | '6h' | '24h') => {
+    selectedWindow.value = windowVal;
+    if (selectedSubsystemId.value) {
+      await fetchStatistics(selectedSubsystemId.value, windowVal);
+    }
+  };
+
+  const openInstanceDrawer = (instance: OperationalInstance) => {
+    selectedInstance.value = instance;
+    isInstanceDrawerOpen.value = true;
+  };
+
+  const closeInstanceDrawer = () => {
+    isInstanceDrawerOpen.value = false;
+    selectedInstance.value = null;
+  };
+
+  const refreshAll = async () => {
+    refreshing.value = true;
+    try {
+      await Promise.allSettled([
+        fetchSummary(),
+        fetchSubsystems(),
+        selectedSubsystemId.value ? fetchInstances(selectedSubsystemId.value) : Promise.resolve(),
+        selectedSubsystemId.value ? fetchHealth(selectedSubsystemId.value) : Promise.resolve(),
+        selectedSubsystemId.value ? fetchStatistics(selectedSubsystemId.value, selectedWindow.value) : Promise.resolve(),
+        fetchAlerts()
+      ]);
+      lastRefreshed.value = new Date();
+    } finally {
+      refreshing.value = false;
+    }
+  };
+
+  const startPolling = (intervalMs: number = 10000) => {
+    if (pollingInterval) clearInterval(pollingInterval);
+    pollingInterval = setInterval(() => {
+      refreshAll();
+    }, intervalMs);
+  };
+
+  const stopPolling = () => {
+    if (pollingInterval) {
+      clearInterval(pollingInterval);
+      pollingInterval = null;
+    }
+  };
+
+  // --------------------------------------------------------------------------
+  // Legacy Actions
+  // --------------------------------------------------------------------------
   const fetchStatus = async () => {
     loading.value = true;
     error.value = null;
@@ -56,7 +347,6 @@ export const useOperationsStore = defineStore('operations', () => {
         modules.value = status.value.clusterModules;
       }
     } catch (err: any) {
-      // Create healthy default status representation if offline
       status.value = {
         systemName: 'HIE Platform 5-Tier Architecture',
         version: '1.0.0-SNAPSHOT',
@@ -101,13 +391,51 @@ export const useOperationsStore = defineStore('operations', () => {
   };
 
   return {
+    // Operations perspective state
+    summary,
+    subsystems,
+    selectedSubsystemId,
+    selectedSubsystem,
+    instances,
+    selectedInstance,
+    isInstanceDrawerOpen,
+    currentHealth,
+    statistics,
+    selectedWindow,
+    alerts,
+    selectedSeverityFilter,
+    selectedStatusFilter,
+    selectedAlertSubsystemFilter,
+    loading,
+    refreshing,
+    error,
+    isStale,
+    lastRefreshed,
+    criticalAlertsCount,
+    warningAlertsCount,
+
+    // Operations perspective actions
+    fetchSummary,
+    fetchSubsystems,
+    fetchInstances,
+    fetchHealth,
+    fetchStatistics,
+    fetchAlerts,
+    acknowledgeAlert,
+    selectSubsystem,
+    setWindow,
+    openInstanceDrawer,
+    closeInstanceDrawer,
+    refreshAll,
+    startPolling,
+    stopPolling,
+
+    // Legacy state & actions
     status,
     operationalResources,
     modules,
     queues: defaultQueues,
     caches: defaultCaches,
-    loading,
-    error,
     fetchStatus,
     fetchModules,
     fetchOperationalResources

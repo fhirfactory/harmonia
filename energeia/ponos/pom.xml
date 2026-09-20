@@ -118,12 +118,7 @@
             <artifactId>camel-jackson</artifactId>
         </dependency>
 
-        <!-- Open-source ActiveMQ Artemis Jakarta Server & Client -->
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>artemis-jakarta-server</artifactId>
-            <version>${artemis.version}</version>
-        </dependency>
+        <!-- Open-source ActiveMQ Artemis Jakarta Client -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-jakarta-client</artifactId>
@@ -173,6 +168,12 @@
         </dependency>
 
         <!-- Testing Dependencies -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>petasos-test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>

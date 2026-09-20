@@ -20,6 +20,9 @@ package net.fhirfactory.harmonia.praxis.config;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.InputStream;
+import java.util.Properties;
+
 @ApplicationScoped
 public class QueueConfig {
 
@@ -30,7 +33,29 @@ public class QueueConfig {
     public static final String DEFAULT_GATEWAY_INSTANCE_ID = "mllp-gateway-default";
     public static final String DEFAULT_BROKER_HOST = "0.0.0.0";
     public static final int DEFAULT_BROKER_PORT = 61616;
-    public static final String DEFAULT_BROKER_URL = "vm://0";
+    public static final String DEFAULT_BROKER_URL = "tcp://petasos:61616";
+
+    private static final Properties FILE_PROPERTIES = new Properties();
+
+    static {
+        try (InputStream is = QueueConfig.class.getResourceAsStream("/application.properties")) {
+            if (is != null) {
+                FILE_PROPERTIES.load(is);
+            }
+        } catch (Exception ignored) {
+        }
+    }
+
+    private String customBrokerUrl;
+    private Boolean customBrokerEnabled;
+
+    public void setBrokerUrl(String brokerUrl) {
+        this.customBrokerUrl = brokerUrl;
+    }
+
+    public void setBrokerEnabled(boolean brokerEnabled) {
+        this.customBrokerEnabled = brokerEnabled;
+    }
 
     public String getQueueName() {
         String env = System.getenv("TASK_QUEUE_NAME");
@@ -104,11 +129,22 @@ public class QueueConfig {
     }
 
     public boolean isBrokerEnabled() {
+        if (customBrokerEnabled != null) {
+            return customBrokerEnabled;
+        }
         String env = System.getenv("TASK_BROKER_ENABLED");
         if (StringUtils.isNotBlank(env)) {
             return Boolean.parseBoolean(env.trim());
         }
-        return Boolean.parseBoolean(System.getProperty("task.broker.enabled", "true"));
+        String prop = System.getProperty("task.broker.enabled");
+        if (StringUtils.isNotBlank(prop)) {
+            return Boolean.parseBoolean(prop.trim());
+        }
+        String fileProp = FILE_PROPERTIES.getProperty("task.broker.enabled");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return Boolean.parseBoolean(fileProp.trim());
+        }
+        return false;
     }
 
     public String getBrokerHost() {
@@ -131,10 +167,89 @@ public class QueueConfig {
     }
 
     public String getBrokerUrl() {
-        String env = System.getenv("TASK_BROKER_URL");
+        if (customBrokerUrl != null) {
+            return customBrokerUrl;
+        }
+        String env = System.getenv("PETASOS_BROKER_URL");
         if (StringUtils.isNotBlank(env)) {
             return env.trim();
         }
-        return System.getProperty("task.broker.url", DEFAULT_BROKER_URL);
+        String prop = System.getProperty("petasos.broker.url");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        env = System.getenv("TASK_BROKER_URL");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        prop = System.getProperty("task.broker.url");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        String fileProp = FILE_PROPERTIES.getProperty("petasos.broker.url");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return fileProp.trim();
+        }
+        fileProp = FILE_PROPERTIES.getProperty("task.broker.url");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return fileProp.trim();
+        }
+        return DEFAULT_BROKER_URL;
+    }
+
+    public String getBrokerUsername() {
+        String env = System.getenv("PETASOS_BROKER_USER");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("ARTEMIS_USER");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        String prop = System.getProperty("petasos.broker.user");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        prop = System.getProperty("task.broker.user");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        String fileProp = FILE_PROPERTIES.getProperty("petasos.broker.user");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return fileProp.trim();
+        }
+        fileProp = FILE_PROPERTIES.getProperty("task.broker.user");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return fileProp.trim();
+        }
+        return "admin";
+    }
+
+    public String getBrokerPassword() {
+        String env = System.getenv("PETASOS_BROKER_PASSWORD");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        env = System.getenv("ARTEMIS_PASSWORD");
+        if (StringUtils.isNotBlank(env)) {
+            return env.trim();
+        }
+        String prop = System.getProperty("petasos.broker.password");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        prop = System.getProperty("task.broker.password");
+        if (StringUtils.isNotBlank(prop)) {
+            return prop.trim();
+        }
+        String fileProp = FILE_PROPERTIES.getProperty("petasos.broker.password");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return fileProp.trim();
+        }
+        fileProp = FILE_PROPERTIES.getProperty("task.broker.password");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return fileProp.trim();
+        }
+        return "adminPassword";
     }
 }

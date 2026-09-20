@@ -41,6 +41,12 @@
             <artifactId>calliope</artifactId>
         </dependency>
 
+        <!-- Themis API (Policy & Authorisation Contracts) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-api</artifactId>
+        </dependency>
+
         <!-- Jakarta EE 10 API -->
         <dependency>
             <groupId>jakarta.platform</groupId>

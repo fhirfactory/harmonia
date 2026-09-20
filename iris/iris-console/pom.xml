@@ -99,7 +99,9 @@
                                         <argument>build</argument>
                                         <argument>-t</argument>
                                         <argument>${harmonia.container.registry}/${harmonia.container.namespace}/iris-console:${harmonia.image.tag}</argument>
-                                        <argument>.</argument>
+                                        <argument>-f</argument>
+                                        <argument>Dockerfile</argument>
+                                        <argument>..</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -128,7 +130,9 @@
                                         <argument>build</argument>
                                         <argument>-t</argument>
                                         <argument>${harmonia.container.registry}/${harmonia.container.namespace}/iris-console:${harmonia.image.tag}</argument>
-                                        <argument>.</argument>
+                                        <argument>-f</argument>
+                                        <argument>Dockerfile</argument>
+                                        <argument>..</argument>
                                     </arguments>
                                 </configuration>
                             </execution>

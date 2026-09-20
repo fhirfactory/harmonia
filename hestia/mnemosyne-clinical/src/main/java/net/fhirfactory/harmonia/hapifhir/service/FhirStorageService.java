@@ -233,8 +233,8 @@ public class FhirStorageService {
         // Themis Persistence Boundary Enforcement
         authorizePersistence(resourceType, ThemisAction.UPDATE, fhirId, principal, authorities, correlationId);
 
-        Optional<FhirResourceEntity> existingOpt = repository.findByResourceTypeAndFhirId(resourceType, fhirId);
         long newVersion = 1L;
+        Optional<FhirResourceEntity> existingOpt = repository.findByResourceTypeAndFhirId(resourceType, fhirId);
         FhirResourceEntity entity;
         if (existingOpt.isPresent()) {
             entity = existingOpt.get();
@@ -272,7 +272,6 @@ public class FhirStorageService {
         String json = getJsonParser().encodeResourceToString(resource);
         entity.setResourceJson(json);
         repository.save(entity);
-
         log.info("Updated resource {}/{} to version {}", resourceType, fhirId, newVersion);
         return resource;
     }

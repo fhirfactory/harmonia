@@ -111,4 +111,18 @@ public class PackageLayeringArchitectureTest {
 
         rule.check(importedClasses);
     }
+
+    @Test
+    @DisplayName("ArchUnit: Ponos workflow runtime must not depend on Artemis server packages")
+    void ponosMustNotDependOnArtemisServer() {
+        ArchRule rule = noClasses()
+                .that().resideInAnyPackage("net.fhirfactory.harmonia.ponos..", "net.fhirfactory.harmonia.praxis..")
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.apache.activemq.artemis.core.server..",
+                        "org.apache.activemq.artemis.jms.server.."
+                );
+
+        rule.check(importedClasses);
+    }
 }

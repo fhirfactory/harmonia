@@ -118,6 +118,45 @@ public class IrisDecouplingArchitectureTest {
         }
     }
 
+    @Test
+    @DisplayName("Frontend Architecture Check: iris-befe/frontend must not depend on or import from application SPAs")
+    void irisBefeFrontendMustNotDependOnSpas() throws IOException {
+        Path projectRoot = findProjectRoot();
+        Path befeFrontend = projectRoot.resolve("iris/iris-befe/frontend");
+        if (!Files.exists(befeFrontend)) {
+            return;
+        }
+
+        Path packageJson = befeFrontend.resolve("package.json");
+        if (Files.exists(packageJson)) {
+            String content = Files.readString(packageJson);
+            assertThat(content)
+                    .as("iris-befe/frontend/package.json must have zero dependencies on application SPAs")
+                    .doesNotContain("iris-console")
+                    .doesNotContain("iris-clinical")
+                    .doesNotContain("iris-administration");
+        }
+
+        Path srcDir = befeFrontend.resolve("src");
+        if (Files.exists(srcDir)) {
+            try (Stream<Path> paths = Files.walk(srcDir)) {
+                List<Path> sourceFiles = paths
+                        .filter(p -> !p.toString().contains("/__tests__/"))
+                        .filter(p -> p.toString().endsWith(".ts") || p.toString().endsWith(".vue"))
+                        .toList();
+
+                for (Path src : sourceFiles) {
+                    String content = Files.readString(src);
+                    assertThat(content)
+                            .as("iris-befe source %s must not import from application SPAs", src)
+                            .doesNotContain("iris-console")
+                            .doesNotContain("iris-clinical")
+                            .doesNotContain("iris-administration");
+                }
+            }
+        }
+    }
+
     private Path findProjectRoot() {
         Path current = Paths.get(".").toAbsolutePath().normalize();
         while (current != null) {

@@ -221,7 +221,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <archive>
                         <manifestEntries>
-                            <Dependencies>org.infinispan.client.hotrod, org.infinispan.commons, org.apache.activemq.artemis</Dependencies>
+                            <Dependencies>org.infinispan.client.hotrod, org.infinispan.commons</Dependencies>
                         </manifestEntries>
                     </archive>
                 </configuration>
