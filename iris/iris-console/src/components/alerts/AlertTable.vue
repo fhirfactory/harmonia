@@ -17,26 +17,36 @@
 
 <script setup lang="ts">
 import type { OperationalAlert } from '../../models/operations';
-import StatusBadge from '../common/StatusBadge.vue';
+import { IrisDataTable, IrisStatus, type DataTableColumn } from '@harmonia/iris-befe';
 import { 
   AlertOctagon, 
   AlertTriangle, 
   Info, 
   CheckCircle2, 
-  Check, 
-  Clock, 
-  HelpCircle,
-  ExternalLink
+  Check 
 } from 'lucide-vue-next';
 
-const props = defineProps<{
+withDefaults(defineProps<{
   alerts: OperationalAlert[];
   loading?: boolean;
-}>();
+}>(), {
+  loading: false
+});
 
 const emit = defineEmits<{
   (e: 'acknowledge', alertId: string): void;
 }>();
+
+const tableColumns: DataTableColumn[] = [
+  { field: 'severity', header: 'Severity', width: '120px', sortable: true },
+  { field: 'subsystem', header: 'Subsystem', width: '130px', sortable: true },
+  { field: 'component', header: 'Component', width: '160px', sortable: true },
+  { field: 'condition', header: 'Condition' },
+  { field: 'observed', header: 'Observed', width: '110px', sortable: true },
+  { field: 'status', header: 'Status', width: '120px', sortable: true },
+  { field: 'guidance', header: 'Operator Guidance' },
+  { field: 'actions', header: 'Action', width: '130px', align: 'right' }
+];
 
 function formatTime(timestamp?: number): string {
   if (!timestamp) return 'N/A';
@@ -46,133 +56,122 @@ function formatTime(timestamp?: number): string {
 function getSeverityBadgeClass(sev: string) {
   switch (sev?.toUpperCase()) {
     case 'CRITICAL':
-      return 'bg-rose-500/20 text-rose-300 border-rose-500/40';
+      return 'bg-rose-50 text-rose-800 border-rose-200';
     case 'WARNING':
-      return 'bg-amber-500/20 text-amber-300 border-amber-500/40';
+      return 'bg-amber-50 text-amber-800 border-amber-200';
     case 'INFORMATION':
     default:
-      return 'bg-sky-500/20 text-sky-300 border-sky-500/40';
+      return 'bg-sky-50 text-sky-800 border-sky-200';
   }
 }
 </script>
 
 <template>
-  <div class="card p-0 overflow-hidden border border-slate-800 bg-slate-900/90 shadow-xl" aria-label="Operational Alerts Section">
-    <!-- Loading State -->
-    <div v-if="loading" class="p-12 text-center space-y-3">
-      <div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-sky-400 border-t-transparent"></div>
-      <p class="text-xs text-slate-400 font-medium">Evaluating active platform alert conditions...</p>
-    </div>
+  <div class="alert-table-container bg-white border border-[var(--iris-border-default)] rounded-[var(--iris-border-radius)] overflow-hidden shadow-subtle font-sans" aria-label="Operational Alerts Section">
+    <IrisDataTable
+      :value="alerts"
+      :columns="tableColumns"
+      :loading="loading"
+      data-key="alertId"
+      empty-message="No Active Alerts"
+    >
+      <!-- Honest Empty State -->
+      <template #empty>
+        <div class="p-12 text-center space-y-3">
+          <CheckCircle2 :size="40" class="mx-auto text-emerald-600" />
+          <h3 class="text-base font-bold text-slate-900">No Active Alerts</h3>
+          <p class="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+            All Harmonia platform subsystems are operating nominally. No active alert conditions require operator intervention.
+          </p>
+        </div>
+      </template>
 
-    <!-- Honest Empty State -->
-    <div v-else-if="alerts.length === 0" class="p-12 text-center space-y-3">
-      <CheckCircle2 :size="40" class="mx-auto text-emerald-400" />
-      <h3 class="text-base font-bold text-white">No Active Alerts</h3>
-      <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
-        All Harmonia platform subsystems are operating nominally. No active alert conditions require operator intervention.
-      </p>
-    </div>
+      <!-- Severity Column -->
+      <template #severity="{ data }">
+        <span 
+          class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border inline-flex items-center gap-1 font-mono"
+          :class="getSeverityBadgeClass(data.severity)"
+        >
+          <AlertOctagon v-if="data.severity === 'CRITICAL'" :size="11" />
+          <AlertTriangle v-else-if="data.severity === 'WARNING'" :size="11" />
+          <Info v-else :size="11" />
+          <span>{{ data.severity }}</span>
+        </span>
+      </template>
 
-    <!-- Alerts Table -->
-    <div v-else class="table-container">
-      <table class="table" role="table" aria-label="Operational Alerts Table">
-        <thead>
-          <tr>
-            <th scope="col" class="w-28">Severity</th>
-            <th scope="col">Subsystem</th>
-            <th scope="col">Component</th>
-            <th scope="col">Condition</th>
-            <th scope="col">Observed</th>
-            <th scope="col">Status</th>
-            <th scope="col">Operator Guidance</th>
-            <th scope="col" class="w-32 text-right">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="alert in alerts" :key="alert.alertId" class="hover:bg-slate-800/40 transition-colors">
-            <!-- Severity -->
-            <td>
-              <span 
-                class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border inline-flex items-center gap-1"
-                :class="getSeverityBadgeClass(alert.severity)"
-              >
-                <AlertOctagon v-if="alert.severity === 'CRITICAL'" :size="11" />
-                <AlertTriangle v-else-if="alert.severity === 'WARNING'" :size="11" />
-                <Info v-else :size="11" />
-                <span>{{ alert.severity }}</span>
-              </span>
-            </td>
+      <!-- Subsystem Column -->
+      <template #subsystem="{ data }">
+        <span class="font-mono text-xs font-bold text-slate-700 uppercase bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+          {{ (data.subsystem || '').toUpperCase() }}
+        </span>
+      </template>
 
-            <!-- Subsystem -->
-            <td>
-              <span class="font-mono text-xs font-bold text-sky-400 uppercase bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
-                {{ (alert.subsystem || '').toUpperCase() }}
-              </span>
-            </td>
+      <!-- Component Column -->
+      <template #component="{ data }">
+        <span class="font-mono text-xs text-slate-800 whitespace-nowrap">
+          {{ data.component }}
+        </span>
+      </template>
 
-            <!-- Component -->
-            <td class="font-mono text-xs text-slate-300 whitespace-nowrap">
-              {{ alert.component }}
-            </td>
+      <!-- Condition Column -->
+      <template #condition="{ data }">
+        <div class="text-xs text-slate-900 font-medium max-w-xs leading-snug">
+          {{ data.condition }}
+        </div>
+        <div v-if="data.relatedResource" class="text-[10px] font-mono text-slate-500 mt-0.5">
+          Target: {{ data.relatedResource }}
+        </div>
+      </template>
 
-            <!-- Condition -->
-            <td>
-              <div class="text-xs text-white font-medium max-w-xs leading-snug">
-                {{ alert.condition }}
-              </div>
-              <div v-if="alert.relatedResource" class="text-[10px] font-mono text-slate-500 mt-0.5">
-                Target: {{ alert.relatedResource }}
-              </div>
-            </td>
+      <!-- Observed Column -->
+      <template #observed="{ data }">
+        <div class="font-mono text-xs text-slate-600 whitespace-nowrap">
+          <div>{{ formatTime(data.lastObserved) }}</div>
+          <div class="text-[10px] text-slate-400">{{ data.duration || 'Active' }}</div>
+        </div>
+      </template>
 
-            <!-- Observed / Time -->
-            <td class="whitespace-nowrap font-mono text-xs text-slate-400">
-              <div>{{ formatTime(alert.lastObserved) }}</div>
-              <div class="text-[10px] text-slate-500">{{ alert.duration || 'Active' }}</div>
-            </td>
+      <!-- Status Column -->
+      <template #status="{ data }">
+        <IrisStatus :status="data.status" label-format="upper" size="sm" />
+      </template>
 
-            <!-- Status -->
-            <td>
-              <StatusBadge :status="alert.status" size="sm" />
-            </td>
+      <!-- Guidance Column -->
+      <template #guidance="{ data }">
+        <div class="p-2 bg-slate-50 rounded border border-slate-200 text-xs text-slate-800 leading-relaxed">
+          <span class="font-bold text-slate-900">Guidance: </span>
+          {{ data.operatorGuidance || 'Inspect component logs, restart counts, and dependency connectivity.' }}
+        </div>
+      </template>
 
-            <!-- Operator Guidance -->
-            <td class="max-w-md">
-              <div class="p-2 bg-slate-950/80 rounded border border-slate-800/80 text-xs text-slate-300 leading-relaxed">
-                <span class="font-bold text-slate-200">Guidance: </span>
-                {{ alert.operatorGuidance || 'Inspect component logs, restart counts, and dependency connectivity.' }}
-              </div>
-            </td>
-
-            <!-- Action -->
-            <td class="text-right whitespace-nowrap">
-              <button
-                v-if="alert.status === 'ACTIVE'"
-                type="button"
-                data-testid="acknowledge-btn"
-                class="btn-secondary text-xs py-1 px-2.5 flex items-center gap-1 ml-auto border border-amber-500/30 hover:border-amber-500/60 text-amber-300 hover:bg-amber-500/10 rounded-md transition-colors"
-                title="Acknowledge this alert condition"
-                @click="emit('acknowledge', alert.alertId)"
-              >
-                <Check :size="13" />
-                <span>Acknowledge</span>
-              </button>
-              <span 
-                v-else-if="alert.status === 'ACKNOWLEDGED'" 
-                class="text-[11px] font-mono text-slate-500 italic"
-              >
-                Acknowledged
-              </span>
-              <span 
-                v-else 
-                class="text-[11px] font-mono text-emerald-500"
-              >
-                Resolved
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <!-- Action Column -->
+      <template #actions="{ data }">
+        <div class="text-right whitespace-nowrap">
+          <button
+            v-if="data.status === 'ACTIVE'"
+            type="button"
+            data-testid="acknowledge-btn"
+            class="btn-secondary text-xs py-1 px-2.5 flex items-center gap-1 ml-auto bg-white border border-amber-300 hover:border-amber-400 text-amber-800 hover:bg-amber-50 rounded-md shadow-xs transition-colors cursor-pointer font-medium"
+            title="Acknowledge this alert condition"
+            @click="emit('acknowledge', data.alertId)"
+          >
+            <Check :size="13" />
+            <span>Acknowledge</span>
+          </button>
+          <span 
+            v-else-if="data.status === 'ACKNOWLEDGED'" 
+            class="text-[11px] font-mono text-slate-500 italic"
+          >
+            Acknowledged
+          </span>
+          <span 
+            v-else 
+            class="text-[11px] font-mono text-emerald-700 font-bold"
+          >
+            Resolved
+          </span>
+        </div>
+      </template>
+    </IrisDataTable>
   </div>
 </template>

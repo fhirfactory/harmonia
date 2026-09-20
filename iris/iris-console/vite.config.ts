@@ -24,8 +24,10 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+      '@': path.resolve(__dirname, './src'),
+      '@harmonia/iris-befe': path.resolve(__dirname, '../iris-befe/frontend/src')
+    },
+    dedupe: ['vue', 'primevue']
   },
   server: {
     port: 3001,

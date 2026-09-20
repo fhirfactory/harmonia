@@ -59,10 +59,16 @@ spec:
               value: "admin"
             - name: INFINISPAN_PASSWORD
               value: "admin"
-            - name: TASK_BROKER_HOST
-              value: "task-processor"
-            - name: TASK_BROKER_PORT
-              value: "61616"
+            - name: PETASOS_BROKER_URL
+              value: "tcp://petasos-artemis-discovery:61616"
+            - name: PETASOS_BROKER_USER
+              value: "admin"
+            - name: PETASOS_BROKER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-artemis-secrets
+                  key: admin-password
+                  optional: true
             - name: TASK_PROCESSOR_URL
               value: "http://task-processor:8080/api/queue/event"
           ports:

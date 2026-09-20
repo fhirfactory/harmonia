@@ -405,9 +405,21 @@ public class OperationsAggregatorService {
             try {
                 for (String json : cache.values()) {
                     if (json != null && !json.isBlank()) {
+                        try {
+                            com.fasterxml.jackson.databind.JsonNode node = objectMapper.readTree(json);
+                            if (node.has("consumerCount") && node.has("enqueueRate")) {
+                                QueueSummary qs = objectMapper.treeToValue(node, QueueSummary.class);
+                                if (qs != null && qs.getQueueId() != null) {
+                                    combined.put(qs.getQueueId(), qs);
+                                    continue;
+                                }
+                            }
+                        } catch (Exception ignored) {
+                        }
                         PetasosQueueDefinition qd = objectMapper.readValue(json, PetasosQueueDefinition.class);
                         if (qd != null && qd.getQueueId() != null) {
-                            QueueSummary qs = convertQueueDefinitionToSummary(qd);
+                            QueueSummary existing = combined.get(qd.getQueueId());
+                            QueueSummary qs = convertQueueDefinitionToSummary(qd, existing);
                             combined.put(qs.getQueueId(), qs);
                         }
                     }
@@ -458,21 +470,39 @@ public class OperationsAggregatorService {
     }
 
     private QueueSummary convertQueueDefinitionToSummary(PetasosQueueDefinition qd) {
+        return convertQueueDefinitionToSummary(qd, null);
+    }
+
+    private QueueSummary convertQueueDefinitionToSummary(PetasosQueueDefinition qd, QueueSummary existing) {
+        long depth = qd.getDepth() != null ? qd.getDepth() : (existing != null ? existing.getDepth() : 0L);
+        int consumers = qd.getConsumerCount() != null ? qd.getConsumerCount() :
+                (existing != null && existing.getConsumerCount() > 0 ? existing.getConsumerCount() :
+                (qd.getMaxConsumers() != null && qd.getMaxConsumers() > 0 ? qd.getMaxConsumers() : 1));
+        int producers = qd.getProducerCount() != null ? qd.getProducerCount() :
+                (existing != null && existing.getProducerCount() > 0 ? existing.getProducerCount() : 1);
+        double enqueueRate = qd.getEnqueueRate() != null ? qd.getEnqueueRate() : (existing != null ? existing.getEnqueueRate() : 0.0);
+        double dequeueRate = qd.getDequeueRate() != null ? qd.getDequeueRate() : (existing != null ? existing.getDequeueRate() : 0.0);
+        long oldestAge = existing != null ? existing.getOldestMessageAgeSeconds() : 0L;
+        long redeliveries = existing != null ? existing.getRedeliveryCount() : 0L;
+        long dlqDepth = qd.getDlqDepth() != null ? qd.getDlqDepth() : (existing != null ? existing.getDlqDepth() : 0L);
+        long expiryCount = existing != null ? existing.getExpiryCount() : 0L;
+        String desc = qd.getDescription() != null ? qd.getDescription() : (existing != null ? existing.getAssociatedCapability() : "Petasos Queue");
+
         return new QueueSummary(
                 qd.getQueueId(),
                 qd.getQueueName(),
                 qd.getAddress(),
                 qd.isEnabled() ? "HEALTHY" : "DEGRADED",
-                0L,
-                qd.getMaxConsumers() != null && qd.getMaxConsumers() > 0 ? qd.getMaxConsumers() : 1,
-                1,
-                0.0,
-                0.0,
-                0L,
-                0L,
-                0L,
-                0L,
-                qd.getDescription() != null ? qd.getDescription() : "Petasos Queue"
+                depth,
+                consumers,
+                producers,
+                enqueueRate,
+                dequeueRate,
+                oldestAge,
+                redeliveries,
+                dlqDepth,
+                expiryCount,
+                desc
         );
     }
 

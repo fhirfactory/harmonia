@@ -19,15 +19,10 @@
 import { computed } from 'vue';
 import { 
   BarChart2, 
-  TrendingUp, 
-  Activity, 
-  Clock, 
-  Zap, 
-  Layers, 
-  HelpCircle 
+  Clock 
 } from 'lucide-vue-next';
 import { useOperationsStore } from '../../stores/operationsStore';
-import type { TimeSeries, TimeSeriesPoint } from '../../models/operations';
+import type { TimeSeries } from '../../models/operations';
 import SvgTimeSeriesChart from '../common/SvgTimeSeriesChart.vue';
 
 const store = useOperationsStore();
@@ -65,42 +60,42 @@ const metricCards = computed(() => [
   {
     title: 'Events In',
     series: getMetricSeries(['events_in', 'eventsIn']),
-    stroke: '#38bdf8', // sky
+    stroke: '#0284c7', // sky 600
     unit: ' evt/s',
     description: 'Inbound message event ingestion rate'
   },
   {
     title: 'Events Out',
     series: getMetricSeries(['events_out', 'eventsOut']),
-    stroke: '#818cf8', // indigo
+    stroke: '#4f46e5', // indigo 600
     unit: ' evt/s',
     description: 'Outbound dispatched message rate'
   },
   {
     title: 'Tasks Processed',
     series: getMetricSeries(['tasks_processed', 'tasksProcessed']),
-    stroke: '#34d399', // emerald
+    stroke: '#059669', // emerald 600
     unit: ' tasks',
     description: 'Successfully completed Erga & workflow tasks'
   },
   {
     title: 'Tasks Failed',
     series: getMetricSeries(['tasks_failed', 'tasksFailed']),
-    stroke: '#f87171', // rose
+    stroke: '#dc2626', // rose 600
     unit: ' tasks',
     description: 'Failed or errored activity executions'
   },
   {
     title: 'Processing Rate',
     series: getMetricSeries(['processing_rate', 'processingRate', 'throughput']),
-    stroke: '#fbbf24', // amber
+    stroke: '#d97706', // amber 600
     unit: ' op/s',
     description: 'Mean operational throughput'
   },
   {
     title: 'Latency (P95)',
     series: getMetricSeries(['latency_p95', 'latencyP95', 'latency']),
-    stroke: '#c084fc', // purple
+    stroke: '#9333ea', // purple 600
     unit: ' ms',
     description: '95th percentile operational latency'
   }
@@ -108,24 +103,25 @@ const metricCards = computed(() => [
 </script>
 
 <template>
-  <div class="bg-[#151c2c] border border-[#27344d] rounded-xl overflow-hidden shadow-sm">
+  <div class="statistics-panel">
     <!-- Panel Header with Time Window Selector -->
-    <div class="px-4 py-3 bg-slate-900/60 border-b border-[#27344d] flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <BarChart2 :size="16" class="text-sky-400" />
-        <h2 class="text-sm font-bold text-white tracking-tight uppercase">Operational Statistics &amp; Metrics</h2>
+    <div class="stats-panel__header">
+      <div class="stats-panel__header-left">
+        <div class="stats-panel__icon-box">
+          <BarChart2 :size="15" />
+        </div>
+        <h2 class="stats-panel__title">Operational Statistics &amp; Metrics</h2>
       </div>
 
       <!-- Time Window Selector Buttons -->
-      <div class="flex items-center gap-1 bg-[#0b0f19] p-1 rounded-lg border border-slate-700/60">
+      <div class="stats-panel__window-selector">
         <button
           v-for="w in timeWindows"
           :key="w"
+          type="button"
           @click="onSelectWindow(w)"
-          class="px-2.5 py-1 rounded text-xs font-mono font-semibold transition cursor-pointer"
-          :class="selectedWindow === w 
-            ? 'bg-sky-500 text-white shadow-sm' 
-            : 'text-slate-400 hover:text-white hover:bg-slate-800/60'"
+          class="stats-panel__window-btn"
+          :class="{ 'is-active': selectedWindow === w }"
           :aria-pressed="selectedWindow === w"
           :title="`View ${w} operational time window`"
         >
@@ -135,35 +131,35 @@ const metricCards = computed(() => [
     </div>
 
     <!-- Micro-Charts Grid -->
-    <div class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="stats-panel__grid">
       <div
         v-for="card in metricCards"
         :key="card.title"
-        class="p-4 rounded-xl bg-slate-900/40 border border-[#27344d]/80 flex flex-col justify-between hover:border-slate-700 transition"
+        class="stats-panel__card"
       >
         <!-- Card Header -->
-        <div class="flex items-start justify-between mb-2">
+        <div class="stats-panel__card-header">
           <div>
-            <span class="text-xs font-bold text-white tracking-tight block">{{ card.title }}</span>
-            <span class="text-[10px] text-slate-400 leading-tight block">{{ card.description }}</span>
+            <span class="stats-panel__card-title">{{ card.title }}</span>
+            <span class="stats-panel__card-desc">{{ card.description }}</span>
           </div>
 
           <!-- Value Pill -->
-          <div class="text-right font-mono">
+          <div class="stats-panel__card-value font-mono">
             <span 
               v-if="!getLatestValue(card.series).isNa" 
-              class="text-base font-bold text-white"
+              class="stats-panel__val-num"
             >
-              {{ getLatestValue(card.series).val }}<span class="text-xs text-slate-400 font-normal">{{ card.unit }}</span>
+              {{ getLatestValue(card.series).val }}<span class="stats-panel__val-unit">{{ card.unit }}</span>
             </span>
-            <span v-else class="text-xs font-semibold text-slate-500 italic">
+            <span v-else class="stats-panel__val-na">
               N/A
             </span>
           </div>
         </div>
 
         <!-- SVG Sparkline Chart -->
-        <div class="mt-2 pt-2 border-t border-slate-800/80">
+        <div class="stats-panel__chart-wrapper">
           <SvgTimeSeriesChart
             :points="card.series?.points || []"
             :stroke-color="card.stroke"
@@ -179,9 +175,194 @@ const metricCards = computed(() => [
     </div>
 
     <!-- Notice Footer -->
-    <div class="px-4 py-2 bg-slate-900/40 border-t border-[#27344d]/60 text-[11px] text-slate-500 font-mono flex items-center justify-between">
+    <div class="stats-panel__footer">
       <span>Zero fake metrics: unmeasured series surface as N/A</span>
       <span>Window: {{ selectedWindow }}</span>
     </div>
   </div>
 </template>
+
+<style scoped>
+.statistics-panel {
+  background-color: var(--iris-bg-surface, #ffffff);
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  font-family: var(--iris-font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.stats-panel__header {
+  padding: 12px 16px;
+  background-color: var(--iris-bg-page, #f8fafc);
+  border-bottom: 1px solid var(--iris-border-default, #e2e8f0);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stats-panel__header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats-panel__icon-box {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-panel__title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--iris-text-primary, #0f172a);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.stats-panel__window-selector {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--iris-border-light, #f1f5f9);
+  padding: 2px;
+  border-radius: 6px;
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+}
+
+.stats-panel__window-btn {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--iris-font-mono, monospace);
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--iris-text-secondary, #475569);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stats-panel__window-btn:hover {
+  color: var(--iris-text-primary, #0f172a);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.stats-panel__window-btn.is-active {
+  background-color: var(--iris-bg-surface, #ffffff);
+  color: var(--iris-color-primary, #0284c7);
+  border-color: var(--iris-border-default, #e2e8f0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.stats-panel__grid {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stats-panel__card {
+  padding: 14px;
+  border-radius: 6px;
+  background-color: var(--iris-bg-page, #f8fafc);
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.15s;
+}
+
+.stats-panel__card:hover {
+  border-color: #cbd5e1;
+}
+
+.stats-panel__card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stats-panel__card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--iris-text-primary, #0f172a);
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+.stats-panel__card-desc {
+  font-size: 10px;
+  color: var(--iris-text-muted, #64748b);
+  display: block;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.stats-panel__card-value {
+  text-align: right;
+}
+
+.stats-panel__val-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--iris-text-primary, #0f172a);
+}
+
+.stats-panel__val-unit {
+  font-size: 11px;
+  color: var(--iris-text-muted, #64748b);
+  font-weight: 400;
+}
+
+.stats-panel__val-na {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--iris-text-muted, #94a3b8);
+  font-style: italic;
+}
+
+.stats-panel__chart-wrapper {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--iris-border-default, #e2e8f0);
+}
+
+.stats-panel__footer {
+  padding: 8px 16px;
+  background-color: var(--iris-bg-page, #f8fafc);
+  border-top: 1px solid var(--iris-border-default, #e2e8f0);
+  font-size: 11px;
+  color: var(--iris-text-muted, #64748b);
+  font-family: var(--iris-font-mono, monospace);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.font-mono {
+  font-family: var(--iris-font-mono, monospace);
+}
+
+@media (max-width: 960px) {
+  .stats-panel__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-panel__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

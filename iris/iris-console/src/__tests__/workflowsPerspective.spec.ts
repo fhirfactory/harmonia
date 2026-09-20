@@ -30,7 +30,8 @@ vi.mock('../api/operationsClient', () => ({
     getWorkflows: vi.fn(),
     getWorkflow: vi.fn(),
     getWorkflowPragmas: vi.fn(),
-    getPragma: vi.fn()
+    getPragma: vi.fn(),
+    getSubsystems: vi.fn()
   }
 }));
 
@@ -110,6 +111,7 @@ describe('Workflows Perspective Components', () => {
     vi.clearAllMocks();
     (operationsApi.getWorkflows as any).mockResolvedValue([]);
     (operationsApi.getWorkflowPragmas as any).mockResolvedValue([]);
+    (operationsApi.getSubsystems as any).mockResolvedValue([]);
   });
 
   describe('WorkflowTable.vue', () => {
@@ -209,6 +211,28 @@ describe('Workflows Perspective Components', () => {
   });
 
   describe('WorkflowsView.vue', () => {
+    it('derives the Energeia identity status from live subsystem telemetry', async () => {
+      (operationsApi.getWorkflows as any).mockResolvedValue(mockWorkflows);
+      (operationsApi.getSubsystems as any).mockResolvedValue([
+        {
+          id: 'energeia',
+          name: 'Energeia',
+          description: 'Workflow execution',
+          state: 'UNAVAILABLE',
+          instanceCount: 0,
+          version: '1.0.0',
+          lastUpdated: Date.now()
+        }
+      ]);
+
+      const wrapper = mount(WorkflowsView);
+      await flushPromises();
+
+      const identityStatus = wrapper.findAll('[role="status"]')[0];
+      expect(identityStatus.text()).toContain('Unavailable');
+      expect(identityStatus.attributes('aria-label')).toBe('Unavailable failure state');
+    });
+
     it('renders summary cards with active, queued, completed, failed, and throughput rate', async () => {
       (operationsApi.getWorkflows as any).mockResolvedValue(mockWorkflows);
       const wrapper = mount(WorkflowsView);

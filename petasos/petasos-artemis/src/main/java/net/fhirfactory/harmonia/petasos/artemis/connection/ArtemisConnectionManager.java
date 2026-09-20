@@ -274,6 +274,13 @@ public class ArtemisConnectionManager implements AutoCloseable, ExceptionListene
     }
 
     public PetasosHealth health() {
+        if (connection == null && !closed.get()) {
+            try {
+                getConnection();
+            } catch (Exception e) {
+                log.debug("Health probe could not establish initial connection: {}", e.getMessage());
+            }
+        }
         ConnectionState state = connectionState.get();
         String broker = getConnectedBroker();
         String nodeId = getActiveNodeId();

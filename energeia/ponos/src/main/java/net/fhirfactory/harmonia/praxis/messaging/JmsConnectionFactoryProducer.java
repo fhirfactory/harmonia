@@ -22,6 +22,9 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import jakarta.jms.ConnectionFactory;
+import net.fhirfactory.harmonia.petasos.api.Petasos;
+import net.fhirfactory.harmonia.petasos.api.config.PetasosConfig;
+import net.fhirfactory.harmonia.petasos.artemis.ArtemisPetasos;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.slf4j.Logger;
@@ -35,27 +38,49 @@ public class JmsConnectionFactoryProducer {
     @Inject
     private QueueConfig queueConfig;
 
-    @Inject
-    private ArtemisBrokerManager artemisBrokerManager;
-
     private ActiveMQConnectionFactory connectionFactory;
+    private ArtemisPetasos petasos;
 
     @Produces
     @ApplicationScoped
     public ConnectionFactory produceConnectionFactory() {
         if (connectionFactory == null) {
-            if (artemisBrokerManager != null && (queueConfig == null || queueConfig.isBrokerEnabled())) {
-                artemisBrokerManager.start();
-            }
             String brokerUrl = queueConfig != null ? queueConfig.getBrokerUrl() : QueueConfig.DEFAULT_BROKER_URL;
+            String username = queueConfig != null ? queueConfig.getBrokerUsername() : "admin";
+            String password = queueConfig != null ? queueConfig.getBrokerPassword() : "adminPassword";
             log.info("Initializing ActiveMQConnectionFactory connecting to {}", brokerUrl);
-            connectionFactory = new ActiveMQConnectionFactory(brokerUrl);
+            connectionFactory = new ActiveMQConnectionFactory(brokerUrl, username, password);
         }
         return connectionFactory;
     }
 
+    @Produces
+    @ApplicationScoped
+    public Petasos producePetasos() {
+        if (petasos == null) {
+            String brokerUrl = queueConfig != null ? queueConfig.getBrokerUrl() : QueueConfig.DEFAULT_BROKER_URL;
+            String username = queueConfig != null ? queueConfig.getBrokerUsername() : "admin";
+            String password = queueConfig != null ? queueConfig.getBrokerPassword() : "adminPassword";
+            log.info("Initializing ArtemisPetasos connecting to {}", brokerUrl);
+            PetasosConfig config = PetasosConfig.builder()
+                    .addBrokerUrl(brokerUrl)
+                    .username(username)
+                    .password(password)
+                    .build();
+            petasos = ArtemisPetasos.create(config);
+        }
+        return petasos;
+    }
+
     @PreDestroy
     public void cleanup() {
+        if (petasos != null) {
+            try {
+                petasos.close();
+            } catch (Exception e) {
+                log.debug("Error closing Petasos instance: {}", e.getMessage());
+            }
+        }
         if (connectionFactory != null) {
             try {
                 connectionFactory.close();

@@ -18,89 +18,197 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { 
-  Server, 
   Layers, 
   Clock, 
-  Tag, 
-  AlertCircle,
-  RefreshCw
+  Server,
+  Radio,
+  GitMerge,
+  Cpu,
+  Activity,
+  Database,
+  ShieldCheck,
+  MessageSquare,
+  Monitor
 } from 'lucide-vue-next';
 import { useOperationsStore } from '../../stores/operationsStore';
-import StatusBadge from '../common/StatusBadge.vue';
+import { findAuthoritativeSubsystem } from '../../models/subsystemHierarchy';
+import { IrisSubsystemIdentity } from '@harmonia/iris-befe';
 
 const store = useOperationsStore();
 
 const subsystem = computed(() => store.selectedSubsystem);
 
+const authoritativeInfo = computed(() => {
+  if (!subsystem.value) return null;
+  return findAuthoritativeSubsystem(subsystem.value.id);
+});
+
+const englishTitle = computed(() => {
+  return authoritativeInfo.value?.englishTitle || '';
+});
+
 const lastUpdatedText = computed(() => {
   if (!subsystem.value?.lastUpdated) return 'Recently';
-  return new Date(subsystem.value.lastUpdated).toLocaleString();
+  return new Date(subsystem.value.lastUpdated).toLocaleTimeString();
+});
+
+const subsystemIcons: Record<string, any> = {
+  pylai: Radio,
+  petasos: Server,
+  energeia: GitMerge,
+  ponos: Cpu,
+  praxis: Activity,
+  ergon: GitMerge,
+  pragma: Layers,
+  mneme: Database,
+  mnemosyne: Database,
+  calliope: Layers,
+  themis: ShieldCheck,
+  agora: MessageSquare,
+  iris: Monitor
+};
+
+const currentIcon = computed(() => {
+  if (!subsystem.value) return Layers;
+  return subsystemIcons[subsystem.value.id.toLowerCase()] || Layers;
 });
 </script>
 
 <template>
-  <div class="bg-[#111827] border-b border-[#1f293d] p-4 lg:p-6">
-    <div v-if="subsystem" class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-      <!-- Title & Description -->
-      <div class="space-y-1 min-w-0">
-        <div class="flex items-center gap-3 flex-wrap">
-          <h1 class="text-xl lg:text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
-            <span>{{ subsystem.name }}</span>
-            <span class="text-xs font-normal text-slate-500 font-mono">({{ subsystem.id }})</span>
-          </h1>
+  <div v-if="subsystem" class="subsystem-header">
+    <IrisSubsystemIdentity
+      :name="subsystem.name"
+      :description="subsystem.description"
+      :version="subsystem.version || '1.0.0'"
+      :status="subsystem.state"
+      :stale="subsystem.stale"
+    >
+      <template #icon>
+        <component :is="currentIcon" :size="24" class="subsystem-header__icon" />
+      </template>
 
-          <!-- Health Status Badge -->
-          <StatusBadge 
-            :status="subsystem.state" 
-            size="md" 
-            :show-pulse="true" 
-            :stale="subsystem.stale"
-          />
+      <template #badges>
+        <span v-if="englishTitle" class="subsystem-header__english-title">
+          — {{ englishTitle }}
+        </span>
+        <span class="subsystem-header__id-pill">({{ subsystem.id }})</span>
+        <span 
+          v-if="subsystem.stale" 
+          class="subsystem-header__stale-pill"
+          title="Telemetry from cached snapshot; live probe unacknowledged"
+        >
+          <Clock :size="12" />
+          <span>Cached Snapshot</span>
+        </span>
+      </template>
 
-          <!-- Stale Data Warning Pill -->
-          <span 
-            v-if="subsystem.stale" 
-            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/15 border border-purple-500/30 text-purple-300"
-            title="Telemetry from cached snapshot; live probe unacknowledged"
-          >
-            <Clock :size="12" />
-            <span>Cached Snapshot</span>
-          </span>
+      <template #metadata>
+        <div class="subsystem-header__meta-row">
+          <!-- Instance Count -->
+          <div class="subsystem-header__meta-pill">
+            <Layers :size="14" class="subsystem-header__meta-icon" />
+            <span class="subsystem-header__meta-value">{{ subsystem.instanceCount }}</span>
+            <span class="subsystem-header__meta-label">{{ subsystem.instanceCount === 1 ? 'Instance' : 'Instances' }}</span>
+          </div>
+
+          <!-- Last Updated -->
+          <div class="subsystem-header__meta-pill">
+            <Clock :size="14" class="subsystem-header__meta-icon-muted" />
+            <span class="subsystem-header__meta-label">Updated {{ lastUpdatedText }}</span>
+          </div>
         </div>
+      </template>
+    </IrisSubsystemIdentity>
+  </div>
 
-        <p class="text-xs lg:text-sm text-slate-400 max-w-3xl leading-relaxed">
-          {{ subsystem.description }}
-        </p>
-      </div>
-
-      <!-- Metadata Badges -->
-      <div class="flex items-center gap-3 flex-wrap text-xs font-mono shrink-0">
-        <!-- Instance Count -->
-        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-300">
-          <Layers :size="14" class="text-sky-400" />
-          <span class="font-bold text-white">{{ subsystem.instanceCount }}</span>
-          <span class="text-slate-400">{{ subsystem.instanceCount === 1 ? 'Instance' : 'Instances' }}</span>
-        </div>
-
-        <!-- Version -->
-        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-300">
-          <Tag :size="14" class="text-emerald-400" />
-          <span class="text-slate-400">v</span>
-          <span class="font-semibold text-white">{{ subsystem.version || '1.0.0' }}</span>
-        </div>
-
-        <!-- Last Updated -->
-        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-400">
-          <Clock :size="14" class="text-slate-500" />
-          <span class="text-[11px]">{{ lastUpdatedText }}</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Empty/Loading State if subsystem is not yet resolved -->
-    <div v-else class="flex items-center gap-3 text-slate-400 py-4">
-      <RefreshCw :size="18" class="animate-spin text-sky-400" />
-      <span class="text-sm">Loading subsystem telemetry...</span>
-    </div>
+  <!-- Empty/Loading State -->
+  <div v-else class="subsystem-header__loading">
+    <span class="subsystem-header__loading-text">Loading subsystem telemetry...</span>
   </div>
 </template>
+
+<style scoped>
+.subsystem-header {
+  font-family: var(--iris-font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.subsystem-header__icon {
+  color: var(--iris-color-primary, #0284c7);
+}
+
+.subsystem-header__english-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--iris-text-secondary, #475569);
+}
+
+.subsystem-header__id-pill {
+  font-size: 11px;
+  font-family: var(--iris-font-mono, monospace);
+  color: var(--iris-text-muted, #94a3b8);
+}
+
+.subsystem-header__stale-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #faf5ff;
+  border: 1px solid #e9d5ff;
+  color: #7e22ce;
+}
+
+.subsystem-header__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.subsystem-header__meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: var(--iris-bg-surface, #ffffff);
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.subsystem-header__meta-icon {
+  color: var(--iris-color-primary, #0284c7);
+}
+
+.subsystem-header__meta-icon-muted {
+  color: var(--iris-text-muted, #94a3b8);
+}
+
+.subsystem-header__meta-value {
+  font-weight: 700;
+  font-family: var(--iris-font-mono, monospace);
+  color: var(--iris-text-primary, #0f172a);
+}
+
+.subsystem-header__meta-label {
+  color: var(--iris-text-secondary, #64748b);
+  font-size: 11px;
+}
+
+.subsystem-header__loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  color: var(--iris-text-muted, #64748b);
+}
+
+.subsystem-header__loading-text {
+  font-size: 13px;
+}
+</style>

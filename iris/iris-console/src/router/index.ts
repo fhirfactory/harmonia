@@ -16,28 +16,36 @@
  */
 
 import { createRouter, createWebHistory } from 'vue-router';
+import OverviewView from '../views/OverviewView.vue';
 import SubsystemsView from '../views/SubsystemsView.vue';
-import QueuesView from '../views/QueuesView.vue';
-import WorkflowsView from '../views/WorkflowsView.vue';
+import MessagesView from '../views/MessagesView.vue';
+import WorkView from '../views/WorkView.vue';
 import EventsView from '../views/EventsView.vue';
 import AlertsView from '../views/AlertsView.vue';
-import OperationsDashboardView from '../views/OperationsDashboardView.vue';
+import InterfacesView from '../views/InterfacesView.vue';
+import HealthView from '../views/HealthView.vue';
 import TaskSequenceListView from '../views/TaskSequenceListView.vue';
 import TaskSequenceDetailView from '../views/TaskSequenceDetailView.vue';
 import OperationsDataView from '../views/OperationsDataView.vue';
 import CacheClusterView from '../views/CacheClusterView.vue';
 
 export const routes = [
-  // Canonical 5-Perspective Operational Routes
+  // Canonical Operational Perspectives
   { path: '/', redirect: '/subsystems' },
+  { path: '/overview', name: 'overview', component: OverviewView },
   { path: '/subsystems', name: 'subsystems', component: SubsystemsView },
-  { path: '/queues', name: 'queues', component: QueuesView },
-  { path: '/workflows', name: 'workflows', component: WorkflowsView },
+  { path: '/subsystems/:id', name: 'subsystem-detail', component: SubsystemsView },
+  { path: '/messages', name: 'messages', component: MessagesView },
+  { path: '/queues', name: 'queues', component: MessagesView },
+  { path: '/work', name: 'work', component: WorkView },
+  { path: '/workflows', name: 'workflows', component: WorkView },
+  { path: '/interfaces', name: 'interfaces', component: InterfacesView },
   { path: '/events', name: 'events', component: EventsView },
   { path: '/alerts', name: 'alerts', component: AlertsView },
+  { path: '/health', name: 'health', component: HealthView },
 
   // Secondary & Legacy Routes
-  { path: '/dashboard', name: 'dashboard', component: OperationsDashboardView },
+  { path: '/dashboard', name: 'dashboard', redirect: '/overview' },
   { path: '/sequences', name: 'sequences', component: TaskSequenceListView },
   { path: '/sequences/:id', name: 'sequence-detail', component: TaskSequenceDetailView },
   { path: '/operations-data', name: 'operations-data', component: OperationsDataView },

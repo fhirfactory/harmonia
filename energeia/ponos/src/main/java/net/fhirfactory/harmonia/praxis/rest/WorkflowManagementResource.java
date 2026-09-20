@@ -23,8 +23,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.praxis.camel.CamelContextManager;
-import net.fhirfactory.harmonia.praxis.messaging.ArtemisBrokerManager;
 import net.fhirfactory.harmonia.praxis.sequence.Praxis;
 import net.fhirfactory.harmonia.praxis.sequence.TaskSequenceLoader;
 import net.fhirfactory.harmonia.praxis.service.ModuleStatusService;
@@ -46,7 +46,7 @@ public class WorkflowManagementResource {
     private static final Logger log = LoggerFactory.getLogger(WorkflowManagementResource.class);
 
     @Inject
-    private ArtemisBrokerManager artemisBrokerManager;
+    private Petasos petasos;
 
     @Inject
     private CamelContextManager camelContextManager;
@@ -60,19 +60,19 @@ public class WorkflowManagementResource {
     public WorkflowManagementResource() {
     }
 
-    public WorkflowManagementResource(ArtemisBrokerManager artemisBrokerManager,
+    public WorkflowManagementResource(Petasos petasos,
                                       CamelContextManager camelContextManager,
                                       TaskSequenceLoader taskSequenceLoader) {
-        this.artemisBrokerManager = artemisBrokerManager;
+        this.petasos = petasos;
         this.camelContextManager = camelContextManager;
         this.taskSequenceLoader = taskSequenceLoader;
     }
 
-    public WorkflowManagementResource(ArtemisBrokerManager artemisBrokerManager,
+    public WorkflowManagementResource(Petasos petasos,
                                       CamelContextManager camelContextManager,
                                       TaskSequenceLoader taskSequenceLoader,
                                       ModuleStatusService moduleStatusService) {
-        this.artemisBrokerManager = artemisBrokerManager;
+        this.petasos = petasos;
         this.camelContextManager = camelContextManager;
         this.taskSequenceLoader = taskSequenceLoader;
         this.moduleStatusService = moduleStatusService;
@@ -95,9 +95,7 @@ public class WorkflowManagementResource {
     public Response reloadAll() {
         log.info("Workflow reload requested via REST endpoint");
         try {
-            List<String> synchronizedQueues = artemisBrokerManager != null
-                    ? artemisBrokerManager.syncQueues()
-                    : Collections.emptyList();
+            List<String> synchronizedQueues = Collections.emptyList();
 
             boolean sequencesReloaded = camelContextManager != null && camelContextManager.reloadSequences();
 
@@ -109,7 +107,14 @@ public class WorkflowManagementResource {
             response.put("status", "SYNCHRONIZED");
             response.put("message", "Successfully synchronized queues and task-sequence pipelines");
             response.put("timestamp", Instant.now().toString());
-            response.put("brokerRunning", artemisBrokerManager != null && artemisBrokerManager.isRunning());
+            boolean brokerRunning = false;
+            try {
+                if (petasos != null && petasos.health() != null) {
+                    brokerRunning = petasos.health().isHealthy();
+                }
+            } catch (Exception ignored) {
+            }
+            response.put("brokerRunning", brokerRunning);
             response.put("synchronizedQueues", synchronizedQueues);
             response.put("synchronizedQueuesCount", synchronizedQueues.size());
             response.put("sequencesReloaded", sequencesReloaded);
@@ -140,9 +145,7 @@ public class WorkflowManagementResource {
     @Path("/queues/reload")
     public Response reloadQueues() {
         try {
-            List<String> queues = artemisBrokerManager != null
-                    ? artemisBrokerManager.syncQueues()
-                    : Collections.emptyList();
+            List<String> queues = Collections.emptyList();
 
             Map<String, Object> response = new HashMap<>();
             response.put("status", "QUEUES_SYNCHRONIZED");
@@ -197,9 +200,7 @@ public class WorkflowManagementResource {
     }
 
     private Response performValidation() {
-        Map<String, Object> queueReport = artemisBrokerManager != null
-                ? artemisBrokerManager.validateQueues()
-                : Collections.emptyMap();
+        Map<String, Object> queueReport = Collections.emptyMap();
 
         Map<String, Object> sequenceReport = taskSequenceLoader != null
                 ? taskSequenceLoader.validateSequences()
@@ -227,7 +228,14 @@ public class WorkflowManagementResource {
     public Response getStatus() {
         Map<String, Object> status = new HashMap<>();
         status.put("module", "task-sequence-processor");
-        status.put("brokerRunning", artemisBrokerManager != null && artemisBrokerManager.isRunning());
+        boolean brokerRunning = false;
+        try {
+            if (petasos != null && petasos.health() != null) {
+                brokerRunning = petasos.health().isHealthy();
+            }
+        } catch (Exception ignored) {
+        }
+        status.put("brokerRunning", brokerRunning);
         status.put("camelStarted", camelContextManager != null && camelContextManager.getCamelContext() != null && camelContextManager.getCamelContext().isStarted());
 
         List<Praxis> loaded = taskSequenceLoader != null

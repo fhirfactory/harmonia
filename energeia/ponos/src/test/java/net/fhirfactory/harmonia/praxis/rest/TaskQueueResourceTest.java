@@ -19,9 +19,10 @@ package net.fhirfactory.harmonia.praxis.rest;
 
 import ca.uhn.fhir.context.FhirContext;
 import jakarta.ws.rs.core.Response;
+import net.fhirfactory.harmonia.petasos.api.Petasos;
+import net.fhirfactory.harmonia.petasos.api.health.PetasosHealth;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
-import net.fhirfactory.harmonia.praxis.messaging.ArtemisBrokerManager;
 import net.fhirfactory.harmonia.praxis.messaging.TaskQueueProducerService;
 import org.hl7.fhir.r5.model.Task;
 import org.junit.jupiter.api.BeforeEach;
@@ -43,7 +44,7 @@ class TaskQueueResourceTest {
     private TaskQueueProducerService producerService;
     private TaskCacheService taskCacheService;
     private QueueConfig queueConfig;
-    private ArtemisBrokerManager brokerManager;
+    private Petasos petasos;
     private FhirContext fhirContext;
 
     @BeforeEach
@@ -54,17 +55,20 @@ class TaskQueueResourceTest {
         taskCacheService.clear();
 
         producerService = Mockito.mock(TaskQueueProducerService.class);
-        brokerManager = Mockito.mock(ArtemisBrokerManager.class);
+        petasos = Mockito.mock(Petasos.class);
+        PetasosHealth health = Mockito.mock(PetasosHealth.class);
+        when(health.isHealthy()).thenReturn(true);
+        when(petasos.health()).thenReturn(health);
+
         queueConfig = new QueueConfig();
 
-        when(brokerManager.isRunning()).thenReturn(true);
         doNothing().when(producerService).sendTask(any(Task.class));
 
         resource = new TaskQueueResource();
         setField(resource, "producerService", producerService);
         setField(resource, "taskCacheService", taskCacheService);
         setField(resource, "queueConfig", queueConfig);
-        setField(resource, "artemisBrokerManager", brokerManager);
+        setField(resource, "petasos", petasos);
     }
 
     @Test

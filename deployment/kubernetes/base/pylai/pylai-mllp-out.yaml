@@ -53,12 +53,16 @@ spec:
               value: "petasos.queue.mllp.outbound"
             - name: MLLP_OUTBOUND_PORT
               value: "8080"
-            - name: TASK_PROCESSOR_BROKER_URL
-              value: "tcp://task-processor:61616"
-            - name: TASK_PROCESSOR_BROKER_USERNAME
+            - name: PETASOS_BROKER_URL
+              value: "tcp://petasos-artemis-discovery:61616"
+            - name: PETASOS_BROKER_USER
               value: "admin"
-            - name: TASK_PROCESSOR_BROKER_PASSWORD
-              value: "admin"
+            - name: PETASOS_BROKER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-artemis-secrets
+                  key: admin-password
+                  optional: true
             - name: INFINISPAN_HOST
               value: "infinispan-1"
             - name: INFINISPAN_PORT
@@ -147,12 +151,16 @@ spec:
               value: "petasos.queue.mllp.outbound"
             - name: MLLP_OUTBOUND_PORT
               value: "8080"
-            - name: TASK_PROCESSOR_BROKER_URL
-              value: "tcp://task-processor:61616"
-            - name: TASK_PROCESSOR_BROKER_USERNAME
+            - name: PETASOS_BROKER_URL
+              value: "tcp://petasos-artemis-discovery:61616"
+            - name: PETASOS_BROKER_USER
               value: "admin"
-            - name: TASK_PROCESSOR_BROKER_PASSWORD
-              value: "admin"
+            - name: PETASOS_BROKER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-artemis-secrets
+                  key: admin-password
+                  optional: true
             - name: INFINISPAN_HOST
               value: "infinispan-1"
             - name: INFINISPAN_PORT

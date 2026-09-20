@@ -23,6 +23,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Destroyed;
 import jakarta.enterprise.context.Initialized;
 import jakarta.enterprise.event.Observes;
+import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import jakarta.jms.ConnectionFactory;
 import net.fhirfactory.harmonia.praxis.service.ModuleStatusService;
@@ -171,7 +172,12 @@ public class CamelContextManager {
         this.moduleStatusService = moduleStatusService;
     }
 
+    @Produces
+    @ApplicationScoped
     public CamelContext getCamelContext() {
+        if (camelContext == null) {
+            startCamel();
+        }
         return camelContext;
     }
 }

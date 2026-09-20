@@ -28,7 +28,8 @@ import type { QueueSummary } from '../models/operations';
 vi.mock('../api/operationsClient', () => ({
   operationsApi: {
     getQueues: vi.fn(),
-    getQueue: vi.fn()
+    getQueue: vi.fn(),
+    getSubsystems: vi.fn()
   }
 }));
 
@@ -97,6 +98,7 @@ describe('Queues Perspective Components', () => {
     store = useQueueStore();
     vi.clearAllMocks();
     (operationsApi.getQueues as any).mockResolvedValue([]);
+    (operationsApi.getSubsystems as any).mockResolvedValue([]);
   });
 
   describe('QueueTable.vue', () => {
@@ -198,6 +200,28 @@ describe('Queues Perspective Components', () => {
   });
 
   describe('QueuesView.vue', () => {
+    it('derives the Petasos identity status from live subsystem telemetry', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      (operationsApi.getSubsystems as any).mockResolvedValue([
+        {
+          id: 'petasos',
+          name: 'Petasos',
+          description: 'Messaging',
+          state: 'DEGRADED',
+          instanceCount: 1,
+          version: '1.0.0',
+          lastUpdated: Date.now()
+        }
+      ]);
+
+      const wrapper = mount(QueuesView);
+      await flushPromises();
+
+      const identityStatus = wrapper.findAll('[role="status"]')[0];
+      expect(identityStatus.text()).toContain('Degraded');
+      expect(identityStatus.attributes('aria-label')).toBe('Degraded operational warning');
+    });
+
     it('renders summary cards with broker topology, queues count, in-flight messages, and DLQ depth', async () => {
       (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
       const wrapper = mount(QueuesView);

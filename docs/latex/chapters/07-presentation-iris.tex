@@ -32,13 +32,15 @@ The operations console provides Site Reliability Engineers (SREs), system admini
 \textbf{Terminology Reconciliation}: Legacy documentation previously referred to this portal as \texttt{iris-monitor}. The canonical, repository-backed identifier is standardized across all modules and documentation as \texttt{iris-console}.
 \end{archinote}
 
-The console is structured around five primary operational perspectives:
+The operations console is structured around six primary operational perspectives and a diagnostic event flow:
 \begin{enumerate}
-    \item \textbf{SUBSYSTEMS (\texttt{/subsystems})}: Answers \textit{"Is Harmonia healthy?"} Visualizes platform-wide health states across all nine core subsystems (Pylai, Petasos, Energeia [Ponos, Praxis], Mneme, Mnemosyne, Calliope, Themis, Agora, Iris). Provides domain-neutral runtime instance tables with slide-out Pod/container detail drawers, downstream dependency health ratios with round-trip latencies, and native SVG micro-chart trend statistics across configurable time windows (15m, 1h, 6h, 24h).
-    \item \textbf{QUEUES (\texttt{/queues})}: Answers \textit{"Is work moving?"} Monitors Apache ActiveMQ Artemis message broker topology, queue depths, enqueue and dequeue rates, consumer/producer ratios, oldest message age, message redeliveries, and Dead-Letter Queue (DLQ) accumulation surveillance with historical depth sparklines.
-    \item \textbf{WORKFLOWS (\texttt{/workflows})}: Answers \textit{"What work is Harmonia currently performing?"} Displays registered Praxis execution sequences, active, queued, completed, and failed task volumes, processing throughput rates, P95 durations, and deep diagnostic drill-down into individual Pragma execution envelopes and Ergon checkpoint timelines.
-    \item \textbf{EVENTS (\texttt{/events})}: Answers \textit{"What happened to a particular interaction?"} Cross-subsystem end-to-end diagnostic sequence tracing across protocol gateways, message queues, workflow processors, and persistence. Supports multi-attribute filtering (Correlation ID, Causation ID, Message ID, Pragma ID, Subsystem, Event Type, Status, Time Range) rendered as an operational vertical flowchart timeline.
-    \item \textbf{ALERTS (\texttt{/alerts})}: Answers \textit{"What currently requires operator attention?"} Actionable operational conditions categorized by severity (Critical, Warning, Information) and lifecycle status (Active, Acknowledged, Resolved) accompanied by concrete operator remediation guidance and audit-governed acknowledgment actions.
+    \item \textbf{OVERVIEW (\texttt{/overview})}: Answers \textit{"Is Harmonia healthy? Is work moving? Are messages backing up?"} Features a concise, desktop-dense platform health strip, active alert summary ribbons with direct links to degraded subsystems, active work execution rates, and an area-by-area operational status summary. Giant dark KPI cards are eliminated in favor of restrained, readable light summary strips.
+    \item \textbf{SUBSYSTEMS (\texttt{/subsystems})}: Answers \textit{"What is the authoritative architectural status?"} Serves as the primary proving ground for the Iris Design System using a Split-Tree Master-Detail layout. The left tree panel presents Harmonia's six authoritative architectural areas (\textit{Integration \& Transport}, \textit{Execution \& Processing}, \textit{Information \& State}, \textit{Security \& Policy}, \textit{Collaboration}, \textit{Presentation}) with child subsystems, accessible status badges, and mandatory English subtitles alongside Greek names. The right master-detail panel provides \texttt{IrisSubsystemIdentity}, top-level action controls (\texttt{IrisToolbar}), and tabbed inspection of Runtime Instances, Operational Health \& Dependencies, and Telemetry Statistics. Middleware runtimes (Artemis, Infinispan, PostgreSQL, Synapse) are subordinated under their consuming capabilities (Petasos, Mneme, Mnemosyne, Agora).
+    \item \textbf{INTERFACES (\texttt{/interfaces})}: Answers \textit{"Are protocol gateways listening and communicating?"} Compact operational table of Pylai inbound and outbound gateways (\texttt{pylai-mllp-in}, \texttt{pylai-mllp-out-his}, \texttt{pylai-mllp-out-lis}, \texttt{pylai-fhir-registry}) detailing direction, protocol, port, live status, and safety policy compliance (Invariant 4 Dual-Write AA ACK safety and Invariant 5 Destination Fan-Out). Where real-time message rates are pending live Camel telemetry, honest placeholders are rendered per \texttt{IRIS-API-GAP-001}.
+    \item \textbf{WORK (\texttt{/work})}: Answers \textit{"What tasks and workflows are currently executing?"} Displays Energeia Ponos task worker rates, Praxis workflow sequence definitions, and deep diagnostic drill-down into concrete Pragma execution envelopes and Ergon checkpoint timelines.
+    \item \textbf{MESSAGES (\texttt{/messages})}: Answers \textit{"How are messaging transport and queues performing?"} Petasos-centric messaging view subordinating Apache ActiveMQ Artemis cluster node health, queue depth, consumers, producers, enqueue/dequeue throughput rates, and Dead-Letter Queue (DLQ) accumulation surveillance.
+    \item \textbf{HEALTH \& ALERTS (\texttt{/health}, \texttt{/alerts})}: Answers \textit{"What currently requires operator attention?"} Cross-subsystem operational health matrix, dependency latencies, actionable operational alerts classified by severity (Critical, Warning, Information) and status (Active, Acknowledged, Resolved) with structured remediation guidance ribbons.
+    \item \textbf{EVENTS (\texttt{/events})}: Answers \textit{"What happened to a particular interaction?"} Cross-subsystem diagnostic timeline tracing messages across gateways, brokers, workflow processors, and persistence using technical Correlation IDs, Causation IDs, Message IDs, and Pragma IDs with dual Flowchart and Table views.
 \end{enumerate}
 
 \begin{principlebox}{Zero-PHI Presentation Boundary (Invariant 7)}
@@ -78,5 +80,39 @@ The operations presentation tier communicates exclusively through \texttt{iris-b
     \caption{Iris UI Federation, Hot Rod Caching \& REST Endpoint Integration}
     \label{fig:iris_federation}
 \end{figure}
+
+\section{The Iris Design System (\texttt{@harmonia/iris-befe})}
+\label{sec:iris_design_system}
+
+To establish visual cohesion, eliminate duplication, and enforce strict presentation boundaries across the Iris application family, \texttt{iris-befe/frontend} packages the authoritative Iris Design System as an internal workspace source package (\texttt{@harmonia/iris-befe}).
+
+\subsection{Architecture and Three-Tier Provenance}
+The design system enforces a strict three-tier provenance model:
+\begin{enumerate}
+    \item \textbf{UI Primitives Layer}: PrimeVue 4 core components (\texttt{primevue@\string^4.3.0}) and the \texttt{@primevue/themes} foundation.
+    \item \textbf{Shared Iris Foundation Layer (\texttt{iris-befe/frontend})}: Custom Aura Light theme preset defined via PrimeVue's \texttt{definePreset}, centralized design tokens (\texttt{tokens.css}), domain-neutral application shell components (\texttt{IrisApplicationShell}, \texttt{IrisHeader}, \texttt{IrisPrimaryNavigation}, \texttt{IrisToolbar}, \texttt{IrisBreadcrumbs}), and accessible presentation primitives (\texttt{IrisStatus}, \texttt{IrisSubsystemIdentity}, \texttt{IrisDataTable}, \texttt{IrisHierarchy}, \texttt{IrisEmptyState}).
+    \item \textbf{Application Layer}: Specialized SPAs (\texttt{iris-console}, and planned migrations for \texttt{iris-clinical} and \texttt{iris-administration}) consuming the shared package via Vite path aliases and file dependencies.
+\end{enumerate}
+
+\begin{principlebox}{Unidirectional Presentation Dependency}
+The Iris Presentation Tier strictly enforces unidirectional dependency flow: \texttt{SPAs $\rightarrow$ iris-befe/frontend}. The shared design system package contains zero reverse dependencies on \texttt{iris-console}, \texttt{iris-clinical}, or \texttt{iris-administration}, and imports zero domain models or database drivers. This boundary is verified continuously by \texttt{IrisDecouplingArchitectureTest.java} and automated frontend test suites.
+\end{principlebox}
+
+\subsection{Design Tokens and Light Theme Baseline}
+The visual language replaces fragmented dark utility styling with an accessible, high-contrast Aura Light theme:
+\begin{itemize}
+    \item \textbf{Surfaces}: Glare-free Slate-50 background (\texttt{\#f8fafc}) paired with pure white cards and table surfaces (\texttt{\#ffffff}).
+    \item \textbf{Typography \& Contrast}: Slate-900 primary text (\texttt{\#0f172a}, 13:1 contrast ratio) and Slate-600 secondary metadata (\texttt{\#475569}, 5.5:1 ratio), fully compliant with WCAG 2.1 AA benchmarks.
+    \item \textbf{Accessible Status Semantics}: \texttt{IrisStatus} enforces color-independent status recognition by pairing distinct symbols ($\bullet$ Healthy, $\blacktriangle$ Degraded, $\times$ Unavailable, ? Unknown) with explicit textual labels and staleness indicators.
+\end{itemize}
+
+\section{Future Migration Assessment: \texttt{iris-clinical} \& \texttt{iris-administration}}
+\label{sec:iris_migration_assessment}
+
+While \texttt{iris-console} serves as the initial proving ground, the Iris Design System is engineered to enable seamless adoption across Harmonia's other portals:
+\begin{itemize}
+    \item \textbf{\texttt{iris-clinical} Migration}: Can adopt \texttt{IrisApplicationShell} with \texttt{application="Clinical"}, \texttt{IrisPrimaryNavigation} across patient/encounter routes, \texttt{IrisToolbar} for FHIR search filtering, and \texttt{IrisDataTable} for clinical resource browsing. Estimated migration effort is Low-to-Medium (2--3 engineering days) with zero changes to existing Pinia stores or backend REST contracts.
+    \item \textbf{\texttt{iris-administration} Migration}: Can replace legacy dark topbars with \texttt{IrisApplicationShell} and \texttt{IrisPrimaryNavigation}, standardize directory tables with \texttt{IrisDataTable}, and replace local status badges with \texttt{IrisStatus}. Estimated effort is Medium (3--4 engineering days), maintaining strict compliance with Invariant 3.
+\end{itemize}
 
 \newpage

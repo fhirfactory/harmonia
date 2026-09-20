@@ -49,9 +49,20 @@ public class MllpOutboundConfig implements Serializable {
         this.instanceId = getEnvOrProperty("MLLP_OUTBOUND_INSTANCE_ID", DEFAULT_INSTANCE_ID);
         this.targetEndpointId = getEnvOrProperty("MLLP_OUTBOUND_TARGET_ENDPOINT_ID", null);
         this.queuePrefix = getEnvOrProperty("MLLP_OUTBOUND_QUEUE_PREFIX", DEFAULT_QUEUE_PREFIX);
-        this.brokerUrl = getEnvOrProperty("TASK_PROCESSOR_BROKER_URL", getEnvOrProperty("BROKER_URL", DEFAULT_BROKER_URL));
-        this.brokerUsername = getEnvOrProperty("TASK_PROCESSOR_BROKER_USERNAME", getEnvOrProperty("BROKER_USERNAME", "admin"));
-        this.brokerPassword = getEnvOrProperty("TASK_PROCESSOR_BROKER_PASSWORD", getEnvOrProperty("BROKER_PASSWORD", "admin"));
+        this.brokerUrl = getEnvOrProperty("PETASOS_BROKER_URL",
+                getEnvOrProperty("petasos.broker.url",
+                        getEnvOrProperty("TASK_PROCESSOR_BROKER_URL",
+                                getEnvOrProperty("BROKER_URL", DEFAULT_BROKER_URL))));
+        this.brokerUsername = getEnvOrProperty("PETASOS_BROKER_USER",
+                getEnvOrProperty("petasos.broker.user",
+                        getEnvOrProperty("ARTEMIS_USER",
+                                getEnvOrProperty("TASK_PROCESSOR_BROKER_USERNAME",
+                                        getEnvOrProperty("BROKER_USERNAME", "admin")))));
+        this.brokerPassword = getEnvOrProperty("PETASOS_BROKER_PASSWORD",
+                getEnvOrProperty("petasos.broker.password",
+                        getEnvOrProperty("ARTEMIS_PASSWORD",
+                                getEnvOrProperty("TASK_PROCESSOR_BROKER_PASSWORD",
+                                        getEnvOrProperty("BROKER_PASSWORD", "adminPassword")))));
         this.restPort = Integer.parseInt(getEnvOrProperty("MLLP_OUTBOUND_PORT", String.valueOf(DEFAULT_REST_PORT)));
         this.concurrency = Integer.parseInt(getEnvOrProperty("MLLP_OUTBOUND_CONCURRENCY", "1"));
     }

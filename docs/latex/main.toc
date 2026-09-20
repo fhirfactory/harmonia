@@ -102,418 +102,424 @@
 \contentsline {subsection}{\numberline {10.1.1}1. \texttt {iris-clinical} (Clinical Portal)}{35}{subsection.10.1.1}%
 \contentsline {subsection}{\numberline {10.1.2}2. \texttt {iris-console} (Operations \& Telemetry Portal)}{35}{subsection.10.1.2}%
 \contentsline {subsection}{\numberline {10.1.3}3. \texttt {iris-administration} (Directory Administration Portal)}{36}{subsection.10.1.3}%
-\contentsline {section}{\numberline {10.2}Backend-For-Frontend Gateway (\texttt {iris-befe})}{36}{section.10.2}%
-\contentsline {chapter}{\numberline {11}Iris Presentation Tier and User Interfaces Specification \& User Guide}{37}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Presentation Tier Overview \& Architectural Principles}{37}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}Multi-Portal Topology and Separation of Concerns}{37}{subsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.1.2}Architectural Principles}{37}{subsection.11.1.2}%
-\contentsline {section}{\numberline {11.2}Iris BEFE Dual-Port Gateway Specification}{38}{section.11.2}%
-\contentsline {subsection}{\numberline {11.2.1}Dual-Port Architecture: Port 8080 vs Port 8090}{39}{subsection.11.2.1}%
-\contentsline {subsection}{\numberline {11.2.2}BEFE JAX-RS Resource Endpoints (Port 8080)}{39}{subsection.11.2.2}%
-\contentsline {subsection}{\numberline {11.2.3}Operations Server Endpoints (Port 8090)}{40}{subsection.11.2.3}%
-\contentsline {subsection}{\numberline {11.2.4}CORS and Security Headers}{40}{subsection.11.2.4}%
-\contentsline {section}{\numberline {11.3}Iris Clinical Portal (\texttt {iris-clinical}) Specification \& User Guide}{41}{section.11.3}%
-\contentsline {subsection}{\numberline {11.3.1}Component Topology and Layout Architecture}{41}{subsection.11.3.1}%
-\contentsline {subsection}{\numberline {11.3.2}Comprehensive Clinical View Catalog}{41}{subsection.11.3.2}%
-\contentsline {subsection}{\numberline {11.3.3}Pinia State Management: Clinical Store Pattern}{41}{subsection.11.3.3}%
-\contentsline {section}{\numberline {11.4}Iris Operations Console (\texttt {iris-console}) Specification \& User Guide}{43}{section.11.4}%
-\contentsline {subsection}{\numberline {11.4.1}Operational Views and Real-Time Telemetry}{43}{subsection.11.4.1}%
-\contentsline {subsection}{\numberline {11.4.2}Dynamic Praxis Sequence Reload Mechanics}{43}{subsection.11.4.2}%
-\contentsline {section}{\numberline {11.5}Iris Provider Administration (\texttt {iris-administration}) Specification \& User Guide}{44}{section.11.5}%
-\contentsline {subsection}{\numberline {11.5.1}Dual-Portal Architecture and Route Guarding}{44}{subsection.11.5.1}%
-\contentsline {subsection}{\numberline {11.5.2}The Governed Change Workflow Lifecycle}{44}{subsection.11.5.2}%
-\contentsline {section}{\numberline {11.6}Themis Security \& RBAC Integration}{44}{section.11.6}%
-\contentsline {subsection}{\numberline {11.6.1}Themis Authority Scopes}{44}{subsection.11.6.1}%
-\contentsline {subsection}{\numberline {11.6.2}Client-Side Router Navigation Guards}{46}{subsection.11.6.2}%
-\contentsline {subsection}{\numberline {11.6.3}Visual Security Badging}{46}{subsection.11.6.3}%
-\contentsline {section}{\numberline {11.7}Concrete Operational Examples \& Step-by-Step Walkthroughs}{46}{section.11.7}%
-\contentsline {subsection}{\numberline {11.7.1}Example 1: Clinician Locating an On-Call Specialist and Endpoint}{46}{subsection.11.7.1}%
-\contentsline {subsection}{\numberline {11.7.2}Example 2: Operations Engineer Diagnosing Backpressure and Triggering Reload}{47}{subsection.11.7.2}%
-\contentsline {subsection}{\numberline {11.7.3}Example 3: Practitioner Requesting Address Change and Admin Approval}{47}{subsection.11.7.3}%
-\contentsline {chapter}{\numberline {12}Provider Registry Core Services}{49}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Overview \& Engineering Objectives}{49}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Architectural Topology \& 5-Tier Interaction Model}{49}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}Synchronous Read and Search Data Path}{50}{subsection.12.2.1}%
-\contentsline {subsection}{\numberline {12.2.2}Asynchronous Governed Change Path}{50}{subsection.12.2.2}%
-\contentsline {section}{\numberline {12.3}FHIR R5 Provider Registry Resource Model \& Relationship Topology}{50}{section.12.3}%
-\contentsline {subsection}{\numberline {12.3.1}Relationship Graph and Referential Topology}{50}{subsection.12.3.1}%
-\contentsline {subsection}{\numberline {12.3.2}Endpoint as an Independent First-Class Entity}{50}{subsection.12.3.2}%
-\contentsline {section}{\numberline {12.4}REST API Gateway Contract \& Interaction Matrix}{52}{section.12.4}%
-\contentsline {subsection}{\numberline {12.4.1}Multi-Parameter Search Capabilities}{52}{subsection.12.4.1}%
-\contentsline {subsection}{\numberline {12.4.2}CapabilityStatement Specification (\texttt {GET /metadata})}{52}{subsection.12.4.2}%
-\contentsline {subsection}{\numberline {12.4.3}Asynchronous Task Polling (\texttt {GET /Task/\{id\}})}{52}{subsection.12.4.3}%
-\contentsline {section}{\numberline {12.5}Governed Change Processing Lifecycle \& Pragma State Machine}{53}{section.12.5}%
-\contentsline {subsection}{\numberline {12.5.1}State Machine Transition Rules}{53}{subsection.12.5.1}%
-\contentsline {section}{\numberline {12.6}Per-Resource Ergon Processing Activities \& Referential Integrity Engine}{54}{section.12.6}%
-\contentsline {subsection}{\numberline {12.6.1}\texttt {ProviderRegistryReferenceValidator} Engine}{54}{subsection.12.6.1}%
-\contentsline {section}{\numberline {12.7}Authoritative Persistence, Optimistic Concurrency \& Versioning Model}{55}{section.12.7}%
-\contentsline {subsection}{\numberline {12.7.1}Monotonic Version Incrementing}{55}{subsection.12.7.1}%
-\contentsline {subsection}{\numberline {12.7.2}Optimistic Concurrency Control (\texttt {If-Match} / \texttt {ETag})}{55}{subsection.12.7.2}%
-\contentsline {section}{\numberline {12.8}Security, Themis Governance \& Multi-Tier Authorization}{55}{section.12.8}%
-\contentsline {subsection}{\numberline {12.8.1}Mnemonic Roles and Granular Authority Matrix}{55}{subsection.12.8.1}%
-\contentsline {subsection}{\numberline {12.8.2}\texttt {FhirSecurityInterceptor} \& Defence-in-Depth Pipeline}{55}{subsection.12.8.2}%
-\contentsline {section}{\numberline {12.9}Paradeigma Exemplar Generation \& Verification Testbed}{56}{section.12.9}%
-\contentsline {subsection}{\numberline {12.9.1}\texttt {SyntheticProviderRegistryGenerator}}{56}{subsection.12.9.1}%
-\contentsline {subsection}{\numberline {12.9.2}Automated Integration \& Verification Test Suites}{56}{subsection.12.9.2}%
-\contentsline {section}{\numberline {12.10}Summary \& Engineering Checklist}{57}{section.12.10}%
-\contentsline {part}{III\hspace {1em}Information \& Integration}{58}{part.3}%
-\contentsline {chapter}{\numberline {13}Information Architecture \& Standard Message Envelopes}{59}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Canonical Domain Models (\texttt {Calliope})}{59}{section.13.1}%
-\contentsline {subsection}{\numberline {13.1.1}1. \texttt {Pragma} (Task State Entity)}{59}{subsection.13.1.1}%
-\contentsline {subsection}{\numberline {13.1.2}2. \texttt {PragmaCheckpoint} (Execution Audit Snapshot)}{60}{subsection.13.1.2}%
-\contentsline {subsection}{\numberline {13.1.3}3. \texttt {ProviderRegistryChangePragma} (Directory Change Wrapper)}{60}{subsection.13.1.3}%
-\contentsline {subsection}{\numberline {13.1.4}4. Canonical Provider Registry Validation Codes}{60}{subsection.13.1.4}%
-\contentsline {section}{\numberline {13.2}Canonical Outbound Models (\texttt {pylai-mllp-base})}{60}{section.13.2}%
-\contentsline {section}{\numberline {13.3}Petasos Messaging Transport Envelopes (\texttt {petasos-api})}{61}{section.13.3}%
-\contentsline {section}{\numberline {13.4}HL7 FHIR Release 5 (R5) Resource Schemas}{61}{section.13.4}%
-\contentsline {chapter}{\numberline {14}Data \& Information Architecture}{62}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Canonical Domain Models (\texttt {Calliope})}{62}{section.14.1}%
-\contentsline {subsection}{\numberline {14.1.1}1. \texttt {Pragma} (Task State Entity)}{62}{subsection.14.1.1}%
-\contentsline {subsection}{\numberline {14.1.2}2. \texttt {PragmaCheckpoint} (Execution Audit Snapshot)}{62}{subsection.14.1.2}%
-\contentsline {subsection}{\numberline {14.1.3}3. \texttt {ProviderRegistryChangePragma} (Directory Change Wrapper)}{62}{subsection.14.1.3}%
-\contentsline {subsection}{\numberline {14.1.4}4. Canonical Provider Registry Validation Codes}{63}{subsection.14.1.4}%
-\contentsline {section}{\numberline {14.2}Canonical Outbound Models (\texttt {pylai-mllp-base})}{63}{section.14.2}%
-\contentsline {subsection}{\numberline {14.2.1}1. \texttt {OutboundMllpRequest}}{63}{subsection.14.2.1}%
-\contentsline {subsection}{\numberline {14.2.2}2. \texttt {OutboundMllpResponse}}{63}{subsection.14.2.2}%
-\contentsline {subsection}{\numberline {14.2.3}3. \texttt {MllpDestinationConfig}}{64}{subsection.14.2.3}%
-\contentsline {section}{\numberline {14.3}The 5-Phase Checkpoint Lifecycle State Flow}{64}{section.14.3}%
-\contentsline {section}{\numberline {14.4}\texttt {PetasosMessage} Transport Envelope}{65}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Supported FHIR R5 Resource Schemas}{65}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Relational Persistence Schema (\texttt {Mnemosyne-Clinical})}{65}{section.14.6}%
-\contentsline {chapter}{\numberline {15}Implementation Guide for MLLP Ingress and Egress Services}{67}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Overview \& Engineering Objectives}{67}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Ingress Architectural Blueprint \& Framing Protocols}{67}{section.15.2}%
-\contentsline {subsection}{\numberline {15.2.1}MLLP Transport Framing}{68}{subsection.15.2.1}%
-\contentsline {subsection}{\numberline {15.2.2}The 8-Phase Ingress Processing Lifecycle}{68}{subsection.15.2.2}%
-\contentsline {section}{\numberline {15.3}Ingress Component Implementation}{68}{section.15.3}%
-\contentsline {subsection}{\numberline {15.3.1}Camel RouteBuilder Configuration}{68}{subsection.15.3.1}%
-\contentsline {subsection}{\numberline {15.3.2}Processor Wrapper \& Context Management}{69}{subsection.15.3.2}%
-\contentsline {subsection}{\numberline {15.3.3}HL7 v2 Data Extraction with HAPI Terser}{69}{subsection.15.3.3}%
-\contentsline {section}{\numberline {15.4}Canonical FHIR Model Mapping \& Resource Builders}{70}{section.15.4}%
-\contentsline {subsection}{\numberline {15.4.1}FHIR Communication Resource Construction}{70}{subsection.15.4.1}%
-\contentsline {subsection}{\numberline {15.4.2}FHIR Task (Pragma) Resource Construction}{71}{subsection.15.4.2}%
-\contentsline {section}{\numberline {15.5}Persistence, Event Dispatch \& Synchronous Acknowledgement}{71}{section.15.5}%
-\contentsline {subsection}{\numberline {15.5.1}Persistence Integration with Mneme \& Mnemosyne}{72}{subsection.15.5.1}%
-\contentsline {subsection}{\numberline {15.5.2}Synchronous Acknowledgement Mapping Rules}{72}{subsection.15.5.2}%
-\contentsline {subsection}{\numberline {15.5.3}REST Management \& CDI Deployment Configuration}{73}{subsection.15.5.3}%
-\contentsline {section}{\numberline {15.6}Multi-Instance Egress Architecture \& Queue Partitioning}{73}{section.15.6}%
-\contentsline {subsection}{\numberline {15.6.1}Head-of-Line Blocking Mitigation \& Destination Isolation}{73}{subsection.15.6.1}%
-\contentsline {subsection}{\numberline {15.6.2}Outbound Configuration \& Destination Registry}{74}{subsection.15.6.2}%
-\contentsline {subsection}{\numberline {15.6.3}Outbound Data Transfer Models}{74}{subsection.15.6.3}%
-\contentsline {section}{\numberline {15.7}Outbound Queue Consumer \& Camel Dynamic MLLP Routes}{74}{section.15.7}%
-\contentsline {subsection}{\numberline {15.7.1}Dedicated Task Queue Consumer}{74}{subsection.15.7.1}%
-\contentsline {subsection}{\numberline {15.7.2}Camel Dynamic Outbound Route Builder}{75}{subsection.15.7.2}%
-\contentsline {subsection}{\numberline {15.7.3}Outbound MLLP Processor Header Injection}{76}{subsection.15.7.3}%
-\contentsline {section}{\numberline {15.8}Downstream HL7 ACK/NACK Deep Inspection}{77}{section.15.8}%
-\contentsline {subsection}{\numberline {15.8.1}MSA \& ERR Segment Parsing Specification}{77}{subsection.15.8.1}%
-\contentsline {subsection}{\numberline {15.8.2}Downstream ACK Code Decision Matrix}{78}{subsection.15.8.2}%
-\contentsline {section}{\numberline {15.9}State, Task, and Provenance Lifecycle Management}{78}{section.15.9}%
-\contentsline {subsection}{\numberline {15.9.1}Outbound State Lifecycle Synchronization}{78}{subsection.15.9.1}%
-\contentsline {subsection}{\numberline {15.9.2}FHIR Provenance Resource Construction}{79}{subsection.15.9.2}%
-\contentsline {section}{\numberline {15.10}Testing, Verification Harnesses \& Containerization}{80}{section.15.10}%
-\contentsline {subsection}{\numberline {15.10.1}Tier 1: Unit Testing with HAPI HL7 v2 Parsers}{80}{subsection.15.10.1}%
-\contentsline {subsection}{\numberline {15.10.2}Tier 2: Camel Route Harness Testing}{80}{subsection.15.10.2}%
-\contentsline {subsection}{\numberline {15.10.3}Tier 3: Embedded Mock MLLP Server Integration Testing}{81}{subsection.15.10.3}%
-\contentsline {subsection}{\numberline {15.10.4}Tier 4: Multi-Instance Docker Compose Deployment Topology}{81}{subsection.15.10.4}%
-\contentsline {part}{IV\hspace {1em}Middleware Architecture}{83}{part.4}%
-\contentsline {chapter}{\numberline {16}Technology \& Infrastructure Architecture}{84}{chapter.16}%
-\contentsline {section}{\numberline {16.1}System Software Runtimes}{84}{section.16.1}%
-\contentsline {section}{\numberline {16.2}In-Memory Cache Grid \& Persistence SPI (\texttt {Hestia})}{85}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Security Governance, Authorization \& Audit Infrastructure (\texttt {Themis})}{85}{section.16.3}%
-\contentsline {subsection}{\numberline {16.3.1}Data Classification \& Security Tagging (\texttt {HarmoniaSecurityLabelEnum})}{85}{subsection.16.3.1}%
-\contentsline {subsection}{\numberline {16.3.2}Identity Context Transport \& Serialization}{86}{subsection.16.3.2}%
-\contentsline {subsection}{\numberline {16.3.3}Non-PHI Decision Audit Trail Architecture (\texttt {ThemisAuditService})}{86}{subsection.16.3.3}%
-\contentsline {subsection}{\numberline {16.3.4}Fail-Closed Determinism \& Reason Code Diagnostics}{86}{subsection.16.3.4}%
-\contentsline {section}{\numberline {16.4}PHI-Aware Diagnostic Logging Runtime \& Appender Isolation}{86}{section.16.4}%
-\contentsline {subsection}{\numberline {16.4.1}Dual-Logger Runtime Framework (\texttt {Calliope} / \texttt {net.fhirfactory.harmonia.logging})}{86}{subsection.16.4.1}%
-\contentsline {subsection}{\numberline {16.4.2}Dual-Gate Security Evaluation Mechanics}{86}{subsection.16.4.2}%
-\contentsline {subsection}{\numberline {16.4.3}SLF4J Namespace Routing \& Non-Additive Appender Isolation}{87}{subsection.16.4.3}%
-\contentsline {section}{\numberline {16.5}Master Platform Port Allocation Specification}{87}{section.16.5}%
-\contentsline {chapter}{\numberline {17}Apache ActiveMQ Artemis Topology}{88}{chapter.17}%
-\contentsline {section}{\numberline {17.1}4-Broker HA Clustering Topology}{88}{section.17.1}%
-\contentsline {subsection}{\numberline {17.1.1}Symmetric Server-Side Clustering (\texttt {petasos-cluster})}{88}{subsection.17.1.1}%
-\contentsline {subsection}{\numberline {17.1.2}Synchronous Journal Replication}{88}{subsection.17.1.2}%
-\contentsline {section}{\numberline {17.2}Address \& Queue Settings (\texttt {broker.xml})}{89}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Durable Journal Persistence \& Storage Requirements}{89}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Broker-Level Message Deduplication}{89}{section.17.4}%
-\contentsline {chapter}{\numberline {18}Infinispan Distributed Cache Grid}{90}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Clustered Grid Topology \& Protocols}{90}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Named Cache Configurations \& Semantics}{90}{section.18.2}%
-\contentsline {subsection}{\numberline {18.2.1}Write-Behind Store Architecture (\texttt {mneme-persistence})}{90}{subsection.18.2.1}%
-\contentsline {section}{\numberline {18.3}Cache Classification Invariant}{91}{section.18.3}%
-\contentsline {chapter}{\numberline {19}PostgreSQL \& HAPI FHIR R5 Persistence Architecture}{92}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Database Separation: Clinical vs Operations vs Collaboration}{92}{section.19.1}%
-\contentsline {subsection}{\numberline {19.1.1}1. Clinical Database (\texttt {postgres-1} \& \texttt {postgres-2})}{92}{subsection.19.1.1}%
-\contentsline {subsection}{\numberline {19.1.2}2. Operations Database (\texttt {postgres-ops-1} \& \texttt {postgres-ops-2})}{92}{subsection.19.1.2}%
-\contentsline {subsection}{\numberline {19.1.3}3. Collaboration Database (\texttt {postgres-synapse})}{92}{subsection.19.1.3}%
-\contentsline {section}{\numberline {19.2}JPA Server Deployment Architecture}{92}{section.19.2}%
-\contentsline {section}{\numberline {19.3}Optimistic Concurrency \& Referential Integrity}{92}{section.19.3}%
-\contentsline {chapter}{\numberline {20}Matrix Synapse Homeserver \& Collaboration Middleware}{94}{chapter.20}%
-\contentsline {section}{\numberline {20.1}Homeserver Clustered Topology \& Network Architecture}{94}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Application Service Registration (\texttt {appservice-agora.yaml})}{94}{section.20.2}%
-\contentsline {subsection}{\numberline {20.2.1}Registration Invariants}{94}{subsection.20.2.1}%
-\contentsline {section}{\numberline {20.3}Spaces Hierarchy \& Zero-PHI Metadata Invariant}{95}{section.20.3}%
-\contentsline {section}{\numberline {20.4}Ephemeral Retention \& Database Archival}{95}{section.20.4}%
-\contentsline {part}{V\hspace {1em}Runtime Architecture}{96}{part.5}%
-\contentsline {chapter}{\numberline {21}Container Packaging \& Runtime Profiles}{97}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Container Image Hierarchy \& Registry Taxonomy}{97}{section.21.1}%
-\contentsline {subsection}{\numberline {21.1.1}1. Upstream Middleware Base Images}{97}{subsection.21.1.1}%
-\contentsline {subsection}{\numberline {21.1.2}2. Java Application Runtimes}{97}{subsection.21.1.2}%
-\contentsline {section}{\numberline {21.2}JVM Resource Profiling \& Memory Ergonomics}{97}{section.21.2}%
-\contentsline {chapter}{\numberline {22}MicroK8s Pod Scheduling, Services \& Ingress Routing}{98}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Service Discovery \& Internal DNS Mesh}{98}{section.22.1}%
-\contentsline {section}{\numberline {22.2}Ingress Routing \& NodePort Mapping}{99}{section.22.2}%
-\contentsline {chapter}{\numberline {23}Single-Node Resilience vs Host-Level Availability}{100}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Resilience Semantics on Single-Node MicroK8s}{100}{section.23.1}%
-\contentsline {section}{\numberline {23.2}Host-Level Failure Domain Boundaries}{100}{section.23.2}%
-\contentsline {section}{\numberline {23.3}Production Multi-Node Scaling Pathway}{100}{section.23.3}%
-\contentsline {chapter}{\numberline {24}Physical \& High Availability Deployment}{101}{chapter.24}%
-\contentsline {section}{\numberline {24.1}Clustering vs. High Availability (HA) Replication}{101}{section.24.1}%
-\contentsline {subsection}{\numberline {24.1.1}1. Server-Side Clustering (\texttt {petasos-cluster})}{101}{subsection.24.1.1}%
-\contentsline {subsection}{\numberline {24.1.2}2. Journal Replication Groups (\texttt {group-a}, \texttt {group-b})}{101}{subsection.24.1.2}%
-\contentsline {section}{\numberline {24.2}Isolated Persistent Storage Ownership}{102}{section.24.2}%
-\contentsline {section}{\numberline {24.3}Client Reconnection \& Failover Configuration}{102}{section.24.3}%
-\contentsline {section}{\numberline {24.4}In-Memory Cache Grid HA Topology (\texttt {Mneme})}{102}{section.24.4}%
-\contentsline {section}{\numberline {24.5}Docker Compose Multi-Container Deployment}{102}{section.24.5}%
-\contentsline {subsection}{\numberline {24.5.1}Provider Registry High Availability \& Crash Recovery}{103}{subsection.24.5.1}%
-\contentsline {subsection}{\numberline {24.5.2}Egress Failure Domain Isolation}{103}{subsection.24.5.2}%
-\contentsline {chapter}{\numberline {25}Themis Policy Evaluation \& Security Boundaries}{104}{chapter.25}%
-\contentsline {section}{\numberline {25.1}Default-Deny Policy Invariant}{104}{section.25.1}%
-\contentsline {section}{\numberline {25.2}The 4-Gate Defence-in-Depth Pipeline}{104}{section.25.2}%
-\contentsline {chapter}{\numberline {26}PHI-Sanitized Logging \& Audit Lineage Tracking}{106}{chapter.26}%
-\contentsline {section}{\numberline {26.1}Zero-PHI Logging Invariant}{106}{section.26.1}%
-\contentsline {section}{\numberline {26.2}Dual-Logger Pattern \& Non-Additive Routing}{106}{section.26.2}%
-\contentsline {part}{VI\hspace {1em}Normal Deployment}{107}{part.6}%
-\contentsline {chapter}{\numberline {27}Declarative Configuration Hierarchy}{108}{chapter.27}%
-\contentsline {section}{\numberline {27.1}The 5-Stage Configuration Hierarchy}{108}{section.27.1}%
-\contentsline {section}{\numberline {27.2}Secret Management \& Zero-Plaintext Policy}{108}{section.27.2}%
-\contentsline {chapter}{\numberline {28}Configuration Register \& Property Cross-Reference}{109}{chapter.28}%
-\contentsline {section}{\numberline {28.1}Core Platform Properties Matrix}{109}{section.28.1}%
-\contentsline {chapter}{\numberline {29}Ubuntu Host Preparation \& MicroK8s Add-ons}{110}{chapter.29}%
-\contentsline {section}{\numberline {29.1}Hardware Prerequisites \& OS Requirements}{110}{section.29.1}%
-\contentsline {section}{\numberline {29.2}Kernel Parameter \& Sysctl Tuning}{110}{section.29.2}%
-\contentsline {section}{\numberline {29.3}MicroK8s Installation \& Required Add-ons}{110}{section.29.3}%
-\contentsline {chapter}{\numberline {30}Normal Workload Deployment \& Verification Runbook}{111}{chapter.30}%
-\contentsline {section}{\numberline {30.1}Phase 1: Build \& Container Image Push}{111}{section.30.1}%
-\contentsline {section}{\numberline {30.2}Phase 2: Apply Kustomize Overlay Manifests}{111}{section.30.2}%
-\contentsline {section}{\numberline {30.3}Phase 3: Verification \& Health Validation Runbook}{111}{section.30.3}%
-\contentsline {chapter}{\numberline {31}Safe Undeployment \& Storage Retention Mechanics}{113}{chapter.31}%
-\contentsline {section}{\numberline {31.1}Workload Termination (Data-Preserving)}{113}{section.31.1}%
-\contentsline {section}{\numberline {31.2}Authoritative Storage Wipe Protocol}{113}{section.31.2}%
-\contentsline {chapter}{\numberline {32}Platform Infrastructure, MicroK8s \& Middleware Configuration}{114}{chapter.32}%
-\contentsline {section}{\numberline {32.1}Platform Overview \& Infrastructure Separation Strategy}{114}{section.32.1}%
-\contentsline {subsection}{\numberline {32.1.1}Architectural Separation of Concerns}{114}{subsection.32.1.1}%
-\contentsline {subsection}{\numberline {32.1.2}Single-Node MicroK8s Resilience Semantics vs Multi-Node Scaling}{114}{subsection.32.1.2}%
-\contentsline {section}{\numberline {32.2}Platform \& Host Infrastructure Prerequisites}{115}{section.32.2}%
-\contentsline {subsection}{\numberline {32.2.1}Supported Operating Systems \& Architecture Support}{115}{subsection.32.2.1}%
-\contentsline {subsection}{\numberline {32.2.2}Hardware Sizing Profiles \& Resource Allocation Matrix}{115}{subsection.32.2.2}%
-\contentsline {subsection}{\numberline {32.2.3}Linux Kernel Networking \& Sysctl Configuration}{115}{subsection.32.2.3}%
-\contentsline {subsection}{\numberline {32.2.4}Host Firewall, Ingress Routing \& Port Exposure Matrix}{116}{subsection.32.2.4}%
-\contentsline {section}{\numberline {32.3}MicroK8s Component Architecture \& Add-on Specification}{116}{section.32.3}%
-\contentsline {subsection}{\numberline {32.3.1}Snap Packaging, Confinement \& Permission Management}{116}{subsection.32.3.1}%
-\contentsline {subsection}{\numberline {32.3.2}Authoritative Add-on Matrix}{116}{subsection.32.3.2}%
-\contentsline {subsection}{\numberline {32.3.3}CoreDNS Add-on (\texttt {dns}) Configuration}{116}{subsection.32.3.3}%
-\contentsline {subsection}{\numberline {32.3.4}Nginx Ingress Controller (\texttt {ingress}) Specification}{118}{subsection.32.3.4}%
-\contentsline {subsection}{\numberline {32.3.5}Dynamic Storage Provisioner (\texttt {hostpath-storage}) Specification}{119}{subsection.32.3.5}%
-\contentsline {subsection}{\numberline {32.3.6}Resource Telemetry Add-on (\texttt {metrics-server}) Specification}{119}{subsection.32.3.6}%
-\contentsline {section}{\numberline {32.4}Kubernetes Middleconfiguration \& Cluster Architecture}{119}{section.32.4}%
-\contentsline {subsection}{\numberline {32.4.1}Declarative Kustomize Base and Overlay Hierarchy}{119}{subsection.32.4.1}%
-\contentsline {subsection}{\numberline {32.4.2}Namespace Governance \& Multi-Tier NetworkPolicies}{120}{subsection.32.4.2}%
-\contentsline {subsection}{\numberline {32.4.3}Secret Management, Sensitive Credentials \& Ansible Vault}{121}{subsection.32.4.3}%
-\contentsline {subsection}{\numberline {32.4.4}Container Health Probes \& Resource Allocation Matrix}{121}{subsection.32.4.4}%
-\contentsline {section}{\numberline {32.5}Tier-by-Tier Subsystem Middleware Configuration Catalog}{121}{section.32.5}%
-\contentsline {subsection}{\numberline {32.5.1}Petasos Messaging: Apache ActiveMQ Artemis 2.33.0 HA Cluster}{121}{subsection.32.5.1}%
-\contentsline {subsection}{\numberline {32.5.2}Hestia Mneme: Infinispan 15 Distributed In-Memory Cache Grid}{122}{subsection.32.5.2}%
-\contentsline {subsection}{\numberline {32.5.3}Hestia Mnemosyne \& PostgreSQL 16 Relational Persistence}{122}{subsection.32.5.3}%
-\contentsline {subsection}{\numberline {32.5.4}Energeia Ponos: WildFly 31 Workflow Execution Engine}{122}{subsection.32.5.4}%
-\contentsline {subsection}{\numberline {32.5.5}Pylai Gateways: Inbound \& Outbound MLLP Interfaces}{122}{subsection.32.5.5}%
-\contentsline {subsection}{\numberline {32.5.6}Iris Presentation: BEFE Gateway \& Vue 3 SPAs}{123}{subsection.32.5.6}%
-\contentsline {section}{\numberline {32.6}Ansible Deployment Automation, Storage Lifecycle \& Operational Runbooks}{123}{section.32.6}%
-\contentsline {subsection}{\numberline {32.6.1}Automated Playbook Architecture \& Workflow Pipeline}{123}{subsection.32.6.1}%
-\contentsline {subsection}{\numberline {32.6.2}Persistent Storage Lifecycle Governance: Safe Teardown vs Destructive Purge}{123}{subsection.32.6.2}%
-\contentsline {subsection}{\numberline {32.6.3}Operational Health Check Runbooks \& Diagnostic Commands}{123}{subsection.32.6.3}%
-\contentsline {subsection}{\numberline {32.6.4}Disaster Recovery \& Single-Node Node Restoration Procedures}{124}{subsection.32.6.4}%
-\contentsline {part}{VII\hspace {1em}Paradeigma Simulation}{126}{part.7}%
-\contentsline {chapter}{\numberline {33}Synthetic Clinical Generators \& Scenario Framework}{127}{chapter.33}%
-\contentsline {section}{\numberline {33.1}Synthetic Actor Simulators \& Module Inventory}{127}{section.33.1}%
-\contentsline {section}{\numberline {33.2}Deterministic Patient Journeys \& Scenario Engine}{128}{section.33.2}%
-\contentsline {subsection}{\numberline {33.2.1}REST Scenario Orchestration API}{128}{subsection.33.2.1}%
-\contentsline {chapter}{\numberline {34}Paradeigma Workload Deployment \& Isolation Guardrails}{129}{chapter.34}%
-\contentsline {section}{\numberline {34.1}Strict Production Isolation Invariants}{129}{section.34.1}%
-\contentsline {section}{\numberline {34.2}Automated ArchUnit Verification}{129}{section.34.2}%
-\contentsline {section}{\numberline {34.3}Normal Production vs Paradeigma Simulation Deployment Matrix}{130}{section.34.3}%
-\contentsline {section}{\numberline {34.4}Paradeigma Simulation Profile Deployment}{130}{section.34.4}%
-\contentsline {chapter}{\numberline {35}Paradeigma Clinical Simulation Subsystem}{131}{chapter.35}%
-\contentsline {section}{\numberline {35.1}Subsystem Overview \& Architectural Principles}{131}{section.35.1}%
-\contentsline {subsection}{\numberline {35.1.1}Core Design Principles}{131}{subsection.35.1.1}%
-\contentsline {section}{\numberline {35.2}ArchiMate Application \& Interface Landscape}{131}{section.35.2}%
-\contentsline {section}{\numberline {35.3}Formal Interface Catalogue (PD-01 through PD-09)}{132}{section.35.3}%
-\contentsline {subsection}{\numberline {35.3.1}MLLP Framing \& Transport Protocol}{132}{subsection.35.3.1}%
-\contentsline {subsection}{\numberline {35.3.2}Synchronous Acknowledgement Contract}{132}{subsection.35.3.2}%
-\contentsline {section}{\numberline {35.4}Hospital Simulator Microservice Specifications}{133}{section.35.4}%
-\contentsline {subsection}{\numberline {35.4.1}Patient Administration System Simulator (\texttt {paradeigma-pas})}{133}{subsection.35.4.1}%
-\contentsline {subsection}{\numberline {35.4.2}Electronic Medical Record Simulator (\texttt {paradeigma-emr})}{133}{subsection.35.4.2}%
-\contentsline {subsection}{\numberline {35.4.3}Laboratory Information System Simulator (\texttt {paradeigma-lms})}{133}{subsection.35.4.3}%
-\contentsline {subsection}{\numberline {35.4.4}Radiology Information System \& PACS Simulator (\texttt {paradeigma-rispac})}{134}{subsection.35.4.4}%
-\contentsline {section}{\numberline {35.5}Synthetic Data Models \& Deterministic Generators}{134}{section.35.5}%
-\contentsline {subsection}{\numberline {35.5.1}Canonical Domain Entities}{134}{subsection.35.5.1}%
-\contentsline {subsection}{\numberline {35.5.2}Seed-Based Deterministic Generation Engine}{135}{subsection.35.5.2}%
-\contentsline {section}{\numberline {35.6}Scenario Orchestration Engine \& Patient Journey Workflows}{136}{section.35.6}%
-\contentsline {subsection}{\numberline {35.6.1}9-Step Canonical Patient Journey Sequence}{136}{subsection.35.6.1}%
-\contentsline {subsection}{\numberline {35.6.2}Execution Profiles}{136}{subsection.35.6.2}%
-\contentsline {subsection}{\numberline {35.6.3}Scenario Control REST API}{136}{subsection.35.6.3}%
-\contentsline {section}{\numberline {35.7}Failure Simulation, Fault Injection \& Automated Recovery}{136}{section.35.7}%
-\contentsline {subsection}{\numberline {35.7.1}Fault Injection Modes (\texttt {FailureSimulator})}{136}{subsection.35.7.1}%
-\contentsline {subsection}{\numberline {35.7.2}Automated Recovery Acceptance Test Suite}{136}{subsection.35.7.2}%
-\contentsline {section}{\numberline {35.8}Deployment Topology \& Docker Orchestration}{137}{section.35.8}%
-\contentsline {section}{\numberline {35.9}Provider Registry Simulation \& Synthetic FHIR R5 Generators}{137}{section.35.9}%
-\contentsline {subsection}{\numberline {35.9.1}Standardized Australian Digital Health Identifiers}{138}{subsection.35.9.1}%
-\contentsline {subsection}{\numberline {35.9.2}Dedicated Synthetic Generators Catalog}{138}{subsection.35.9.2}%
-\contentsline {subsection}{\numberline {35.9.3}Interconnected Graph Builders (\texttt {SyntheticProviderRegistryGenerator})}{138}{subsection.35.9.3}%
-\contentsline {section}{\numberline {35.10}Themis Security Simulation \& Authorization Fixtures}{139}{section.35.10}%
-\contentsline {subsection}{\numberline {35.10.1}Standard Security Actors Catalog}{139}{subsection.35.10.1}%
-\contentsline {subsection}{\numberline {35.10.2}Security Context Orchestration (\texttt {SecurityScenarioContext})}{139}{subsection.35.10.2}%
-\contentsline {subsection}{\numberline {35.10.3}Negative Testing Authorization Seams}{141}{subsection.35.10.3}%
-\contentsline {section}{\numberline {35.11}PHI-Aware Logging Simulation \& Credential Protection}{141}{section.35.11}%
-\contentsline {subsection}{\numberline {35.11.1}Dual-Gate Verification Probe (\texttt {PhiLogTestProbe})}{141}{subsection.35.11.1}%
-\contentsline {subsection}{\numberline {35.11.2}Synthetic Secret Leakage Protection (\texttt {SecretLeakageAssertion})}{142}{subsection.35.11.2}%
-\contentsline {subsection}{\numberline {35.11.3}Integrated Multi-Capability Verification Listing}{142}{subsection.35.11.3}%
-\contentsline {section}{\numberline {35.12}Comprehensive Configuration Reference Matrix}{143}{section.35.12}%
-\contentsline {subsection}{\numberline {35.12.1}Simulator Service Properties \& Port Allocations}{143}{subsection.35.12.1}%
-\contentsline {subsection}{\numberline {35.12.2}Security \& PHI Logging Governance Configuration}{144}{subsection.35.12.2}%
-\contentsline {subsection}{\numberline {35.12.3}FailureSimulator Fault Injection Knobs}{144}{subsection.35.12.3}%
-\contentsline {section}{\numberline {35.13}Step-by-Step CLI \& REST Execution Instructions}{144}{section.35.13}%
-\contentsline {subsection}{\numberline {35.13.1}Building the Solution via Maven}{144}{subsection.35.13.1}%
-\contentsline {subsection}{\numberline {35.13.2}Running Simulators as Standalone Microservices}{145}{subsection.35.13.2}%
-\contentsline {subsection}{\numberline {35.13.3}Docker Compose Topology Orchestration}{145}{subsection.35.13.3}%
-\contentsline {subsection}{\numberline {35.13.4}REST API Scenario Orchestration (cURL Snippets)}{145}{subsection.35.13.4}%
-\contentsline {section}{\numberline {35.14}Automated Scenario \& Integration Test Suite Reference}{146}{section.35.14}%
-\contentsline {part}{VIII\hspace {1em}Development}{147}{part.8}%
-\contentsline {chapter}{\numberline {36}Platform Development, Architecture Invariants \& Rules}{148}{chapter.36}%
-\contentsline {section}{\numberline {36.1}Build Environment \& Toolchain Prerequisites}{148}{section.36.1}%
-\contentsline {section}{\numberline {36.2}Maven Multi-Module Reactor Architecture}{148}{section.36.2}%
-\contentsline {section}{\numberline {36.3}The Eight Mandatory Architectural Invariants}{148}{section.36.3}%
-\contentsline {section}{\numberline {36.4}Continuous ArchUnit Verification}{149}{section.36.4}%
-\contentsline {chapter}{\numberline {37}Implementation and Deployment Guide for Ergon Workflow Activity Modules}{150}{chapter.37}%
-\contentsline {section}{\numberline {37.1}Overview \& Engineering Objectives}{150}{section.37.1}%
-\contentsline {section}{\numberline {37.2}Architectural Blueprint \& the ErgonBase Contract}{150}{section.37.2}%
-\contentsline {subsection}{\numberline {37.2.1}RouteBuilder Inheritance and Processing Topologies}{150}{subsection.37.2.1}%
-\contentsline {subsection}{\numberline {37.2.2}Exchange Headers and Properties Invariants}{151}{subsection.37.2.2}%
-\contentsline {subsection}{\numberline {37.2.3}The Pragma Task Envelope Model}{151}{subsection.37.2.3}%
-\contentsline {subsection}{\numberline {37.2.4}Security Tagging with FhirSecurityTagManager}{152}{subsection.37.2.4}%
-\contentsline {section}{\numberline {37.3}Step-by-Step Code Development Blueprint}{152}{section.37.3}%
-\contentsline {subsection}{\numberline {37.3.1}Step 1: Maven Project Configuration}{152}{subsection.37.3.1}%
-\contentsline {subsection}{\numberline {37.3.2}Step 2: Subclassing ErgonBase \& Constructor Wiring}{152}{subsection.37.3.2}%
-\contentsline {subsection}{\numberline {37.3.3}Step 3: Defensive Payload Extraction}{153}{subsection.37.3.3}%
-\contentsline {subsection}{\numberline {37.3.4}Step 4: Clinical Transformation \& Resource Generation}{153}{subsection.37.3.4}%
-\contentsline {subsection}{\numberline {37.3.5}Step 5: Pragma Output \& Checkpoint Recording}{153}{subsection.37.3.5}%
-\contentsline {subsection}{\numberline {37.3.6}Step 6: Structured Exception Handling}{153}{subsection.37.3.6}%
-\contentsline {section}{\numberline {37.4}Production Reference Implementation: ObservationEnrichmentErgon}{153}{section.37.4}%
-\contentsline {section}{\numberline {37.5}Praxis Workflow Orchestration \& Step Chaining}{156}{section.37.5}%
-\contentsline {subsection}{\numberline {37.5.1}Linear Workflow Sequences}{156}{subsection.37.5.1}%
-\contentsline {subsection}{\numberline {37.5.2}Conditional Branching and Error Recovery}{156}{subsection.37.5.2}%
-\contentsline {section}{\numberline {37.6}CDI Configuration, Dependency Injection \& Scoping}{157}{section.37.6}%
-\contentsline {subsection}{\numberline {37.6.1}Bean Scoping: @Dependent vs. @ApplicationScoped}{157}{subsection.37.6.1}%
-\contentsline {subsection}{\numberline {37.6.2}CDI Deployment Descriptor (beans.xml)}{157}{subsection.37.6.2}%
-\contentsline {section}{\numberline {37.7}Testing Strategies, Test Fixtures \& Validation}{157}{section.37.7}%
-\contentsline {subsection}{\numberline {37.7.1}CamelTestSupport Unit Testing Pattern}{157}{subsection.37.7.1}%
-\contentsline {section}{\numberline {37.8}Deployment, Containerization \& Operational Runbook}{158}{section.37.8}%
-\contentsline {subsection}{\numberline {37.8.1}WildFly \& Ponos Container Architecture}{158}{subsection.37.8.1}%
-\contentsline {subsection}{\numberline {37.8.2}Dynamic Live Reload via ponos-cli}{158}{subsection.37.8.2}%
-\contentsline {subsection}{\numberline {37.8.3}Concurrency Tuning and Thread Pool Sizing}{158}{subsection.37.8.3}%
-\contentsline {subsection}{\numberline {37.8.4}Dead-Letter Queue (DLQ) Recovery Operations}{159}{subsection.37.8.4}%
-\contentsline {section}{\numberline {37.9}Summary \& Best Practices Checklist}{159}{section.37.9}%
-\contentsline {chapter}{\numberline {38}Implementation and Deployment Guide for Praxis Workflow Sequences}{161}{chapter.38}%
-\contentsline {section}{\numberline {38.1}Overview \& Engineering Objectives}{161}{section.38.1}%
-\contentsline {section}{\numberline {38.2}Architectural Blueprint \& the Praxis Paradigm}{161}{section.38.2}%
-\contentsline {subsection}{\numberline {38.2.1}Decoupling Definition from Runtime Execution}{162}{subsection.38.2.1}%
-\contentsline {subsection}{\numberline {38.2.2}Topic Subscription Matching \& Hierarchical Routing}{162}{subsection.38.2.2}%
-\contentsline {subsection}{\numberline {38.2.3}Audit Checkpoint Lifecycle across Execution Boundaries}{163}{subsection.38.2.3}%
-\contentsline {subsection}{\numberline {38.2.4}Dual-Cache Architecture in the Mneme Grid}{163}{subsection.38.2.4}%
-\contentsline {section}{\numberline {38.3}Step-by-Step Praxis Creation Blueprint}{163}{section.38.3}%
-\contentsline {subsection}{\numberline {38.3.1}Phase 1: Defining Declarative Workflow Metadata}{163}{subsection.38.3.1}%
-\contentsline {subsection}{\numberline {38.3.2}Phase 2: Activity Ordering and Sequence Validation}{164}{subsection.38.3.2}%
-\contentsline {subsection}{\numberline {38.3.3}Phase 3: Route Synthesis and Ingress Conduits}{164}{subsection.38.3.3}%
-\contentsline {subsection}{\numberline {38.3.4}Phase 4: Error Boundary \& Exception Trapping}{164}{subsection.38.3.4}%
-\contentsline {section}{\numberline {38.4}Production Reference Implementation: PatientCareAdmissionPraxis}{165}{section.38.4}%
-\contentsline {section}{\numberline {38.5}Dynamic Route Generation \& Camel Pipeline Topology}{166}{section.38.5}%
-\contentsline {subsection}{\numberline {38.5.1}Route Synthesis Architecture}{166}{subsection.38.5.1}%
-\contentsline {subsection}{\numberline {38.5.2}Exchange Property Invariants and Header Preservation}{167}{subsection.38.5.2}%
-\contentsline {section}{\numberline {38.6}Dynamic Discovery, Seeding \& Runtime Registration}{167}{section.38.6}%
-\contentsline {subsection}{\numberline {38.6.1}CDI Bean Resolution via Jakarta EE Instance}{167}{subsection.38.6.1}%
-\contentsline {subsection}{\numberline {38.6.2}Initial Seeding via TaskSequenceDefaultSeeder}{168}{subsection.38.6.2}%
-\contentsline {section}{\numberline {38.7}Multi-Tier Testing Strategies}{169}{section.38.7}%
-\contentsline {subsection}{\numberline {38.7.1}CamelTestSupport Unit Test Harness}{169}{subsection.38.7.1}%
-\contentsline {subsection}{\numberline {38.7.2}Failure Snapshotting and Checkpoint Assertions}{170}{subsection.38.7.2}%
-\contentsline {section}{\numberline {38.8}Deployment, Cluster Management \& Operational Runbook}{170}{section.38.8}%
-\contentsline {subsection}{\numberline {38.8.1}Containerization within Ponos WildFly Container}{170}{subsection.38.8.1}%
-\contentsline {subsection}{\numberline {38.8.2}REST Administrative API: /workflow}{170}{subsection.38.8.2}%
-\contentsline {subsection}{\numberline {38.8.3}Dynamic Live Reload via ponos-cli}{170}{subsection.38.8.3}%
-\contentsline {section}{\numberline {38.9}Summary \& Best Practices Checklist}{170}{section.38.9}%
-\contentsline {part}{IX\hspace {1em}Operations}{172}{part.9}%
-\contentsline {chapter}{\numberline {39}Failure Scenarios, Recovery Guarantees \& Operations}{173}{chapter.39}%
-\contentsline {section}{\numberline {39.1}Platform Failure Scenario Matrix}{173}{section.39.1}%
-\contentsline {section}{\numberline {39.2}Dead-Letter Queue (DLQ) Governance}{173}{section.39.2}%
-\contentsline {section}{\numberline {39.3}Kubernetes Health \& Readiness Probes}{173}{section.39.3}%
-\contentsline {chapter}{\numberline {40}PHI-Aware Logging Architecture \& Developer Implementation Guide}{175}{chapter.40}%
-\contentsline {section}{\numberline {40.1}Overview \& Regulatory Objectives}{175}{section.40.1}%
-\contentsline {subsection}{\numberline {40.1.1}The Logging Policy Matrix}{175}{subsection.40.1.1}%
-\contentsline {section}{\numberline {40.2}Architectural Model \& Security Gates}{176}{section.40.2}%
-\contentsline {subsection}{\numberline {40.2.1}Dual-Gate Security Evaluation Flow}{176}{subsection.40.2.1}%
-\contentsline {section}{\numberline {40.3}Configuration \& Environment Variables}{176}{section.40.3}%
-\contentsline {subsection}{\numberline {40.3.1}Startup Warning Banner}{177}{subsection.40.3.1}%
-\contentsline {section}{\numberline {40.4}Developer Guide \& API Usage Blueprint}{177}{section.40.4}%
-\contentsline {subsection}{\numberline {40.4.1}The Dual-Logger Pattern}{177}{subsection.40.4.1}%
-\contentsline {subsection}{\numberline {40.4.2}Compile-Time Safety and API Contract}{178}{subsection.40.4.2}%
-\contentsline {subsection}{\numberline {40.4.3}Lazy Evaluation with Functional Suppliers}{178}{subsection.40.4.3}%
-\contentsline {subsection}{\numberline {40.4.4}Categorization: PHI vs Non-PHI Operational Metadata}{179}{subsection.40.4.4}%
-\contentsline {subsection}{\numberline {40.4.5}Absolute Prohibition on Secrets and Credentials}{179}{subsection.40.4.5}%
-\contentsline {subsection}{\numberline {40.4.6}Exception Handling \& Stack Trace Sanitization}{179}{subsection.40.4.6}%
-\contentsline {subsection}{\numberline {40.4.7}Mapped Diagnostic Context (MDC) Invariants}{179}{subsection.40.4.7}%
-\contentsline {section}{\numberline {40.5}Subsystem Integration Patterns}{180}{section.40.5}%
-\contentsline {subsection}{\numberline {40.5.1}Gateway Tier: Pylai Ingress/Egress}{180}{subsection.40.5.1}%
-\contentsline {subsection}{\numberline {40.5.2}Workflow Tier: Energeia \& Ergon Activities}{180}{subsection.40.5.2}%
-\contentsline {subsection}{\numberline {40.5.3}Persistence Tier: Hestia \& Mnemosyne}{180}{subsection.40.5.3}%
-\contentsline {section}{\numberline {40.6}Logback Configuration \& Appender Isolation}{180}{section.40.6}%
-\contentsline {subsection}{\numberline {40.6.1}Physical Storage \& Retention Invariants}{181}{subsection.40.6.1}%
-\contentsline {section}{\numberline {40.7}Testing \& Verification Strategies}{181}{section.40.7}%
-\contentsline {chapter}{\numberline {A}Glossary of Classical Nomenclature \& Terminology}{183}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Core Greek Metaphor Register}{183}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Healthcare \& Enterprise Integration Terminology}{183}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Authoritative Harmonia System Inventory}{186}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Subproject and Leaf Module Inventory}{186}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Infrastructure and Middleware Workloads}{188}{section.B.2}%
-\contentsline {chapter}{\numberline {C}Authoritative Subproject \& Leaf Module Register}{190}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Module Taxonomy \& Architectural Classification}{190}{section.C.1}%
-\contentsline {chapter}{\numberline {D}Middleware Capability Matrix}{192}{appendix.D}%
-\contentsline {section}{\numberline {D.1}Middleware Technology Summary}{192}{section.D.1}%
-\contentsline {section}{\numberline {D.2}Middleware Capabilities: Used vs. Avoided Analysis}{193}{section.D.2}%
-\contentsline {subsection}{\numberline {D.2.1}ActiveMQ Artemis 2.33.0 Messaging Engine}{193}{subsection.D.2.1}%
-\contentsline {subsection}{\numberline {D.2.2}Infinispan 15.0.3 Distributed In-Memory Data Grid}{193}{subsection.D.2.2}%
-\contentsline {subsection}{\numberline {D.2.3}PostgreSQL 16 Relational Persistence}{193}{subsection.D.2.3}%
-\contentsline {subsection}{\numberline {D.2.4}WildFly 31.0.1 Jakarta EE Runtime (Iris BEFE Gateway \& Ponos)}{193}{subsection.D.2.4}%
-\contentsline {subsection}{\numberline {D.2.5}Matrix Synapse 1.120.0 Collaboration Homeserver}{193}{subsection.D.2.5}%
-\contentsline {chapter}{\numberline {E}Configuration Property Register}{195}{appendix.E}%
-\contentsline {section}{\numberline {E.1}Dual-Dimension Configuration Discipline}{195}{section.E.1}%
-\contentsline {section}{\numberline {E.2}Global Infrastructure \& Environment Parameters}{195}{section.E.2}%
-\contentsline {section}{\numberline {E.3}Subsystem Application Parameters}{196}{section.E.3}%
-\contentsline {chapter}{\numberline {F}Port and Network Protocol Register}{197}{appendix.F}%
-\contentsline {section}{\numberline {F.1}The 18 Platform Network Listeners}{197}{section.F.1}%
-\contentsline {chapter}{\numberline {G}Container and Image Register}{198}{appendix.G}%
-\contentsline {section}{\numberline {G.1}Container Image Register}{198}{section.G.1}%
-\contentsline {chapter}{\numberline {H}Kubernetes Workload and Resource Register}{199}{appendix.H}%
-\contentsline {section}{\numberline {H.1}Workload Allocations \& Persistent Claims}{199}{section.H.1}%
-\contentsline {chapter}{\numberline {I}Persistence Register: Relational Databases \& Cache Grid}{201}{appendix.I}%
-\contentsline {section}{\numberline {I.1}Relational Database Schema Register}{201}{section.I.1}%
-\contentsline {subsection}{\numberline {I.1.1}Relational Table Definitions}{201}{subsection.I.1.1}%
-\contentsline {section}{\numberline {I.2}Distributed Cache Grid Register (Infinispan 15.0.3)}{201}{section.I.2}%
-\contentsline {chapter}{\numberline {J}Module Dependency Matrix}{203}{appendix.J}%
-\contentsline {chapter}{\numberline {K}Normal Deployment Verification Checklist}{204}{appendix.K}%
-\contentsline {section}{\numberline {K.1}Phase 1: Host Preparation \& MicroK8s Setup}{204}{section.K.1}%
-\contentsline {section}{\numberline {K.2}Phase 2: Persistent Storage \& Volume Claims}{204}{section.K.2}%
-\contentsline {section}{\numberline {K.3}Phase 3: Stateful Tier Verification}{204}{section.K.3}%
-\contentsline {section}{\numberline {K.4}Phase 4: Stateless Workloads \& Gateways}{204}{section.K.4}%
-\contentsline {chapter}{\numberline {L}Paradeigma Simulation Deployment Checklist}{205}{appendix.L}%
-\contentsline {section}{\numberline {L.1}Phase 1: Production Isolation Pre-Flight Checks}{205}{section.L.1}%
-\contentsline {section}{\numberline {L.2}Phase 2: Simulation Workload Deployment}{205}{section.L.2}%
-\contentsline {section}{\numberline {L.3}Phase 3: Scenario Execution \& Journey Verification}{205}{section.L.3}%
+\contentsline {section}{\numberline {10.2}Backend-For-Frontend Gateway (\texttt {iris-befe})}{37}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Operations Backend Architecture (Port 8090)}{37}{subsection.10.2.1}%
+\contentsline {section}{\numberline {10.3}The Iris Design System (\texttt {@harmonia/iris-befe})}{37}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Architecture and Three-Tier Provenance}{37}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Design Tokens and Light Theme Baseline}{38}{subsection.10.3.2}%
+\contentsline {section}{\numberline {10.4}Future Migration Assessment: \texttt {iris-clinical} \& \texttt {iris-administration}}{38}{section.10.4}%
+\contentsline {chapter}{\numberline {11}Iris Presentation Tier and User Interfaces Specification \& User Guide}{39}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Presentation Tier Overview \& Architectural Principles}{39}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Multi-Portal Topology and Separation of Concerns}{39}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}Architectural Principles}{39}{subsection.11.1.2}%
+\contentsline {section}{\numberline {11.2}Iris BEFE Dual-Port Gateway Specification}{40}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Dual-Port Architecture: Port 8080 vs Port 8090}{41}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}BEFE JAX-RS Resource Endpoints (Port 8080)}{41}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}CORS and Security Headers}{42}{subsection.11.2.3}%
+\contentsline {section}{\numberline {11.3}Iris Clinical Portal (\texttt {iris-clinical}) Specification \& User Guide}{42}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Component Topology and Layout Architecture}{42}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Comprehensive Clinical View Catalog}{42}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Pinia State Management: Clinical Store Pattern}{42}{subsection.11.3.3}%
+\contentsline {section}{\numberline {11.4}Iris Operations Console (\texttt {iris-console}) Specification \& User Guide}{44}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Architectural Perspectives \& Shell Topology}{44}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}The Six Canonical Operational Perspectives}{44}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Telemetry Gaps Register (\texttt {IRIS-API-GAP})}{45}{subsection.11.4.3}%
+\contentsline {subsection}{\numberline {11.4.4}Operations Backend REST API Catalog (Port 8090)}{46}{subsection.11.4.4}%
+\contentsline {section}{\numberline {11.5}Iris Provider Administration (\texttt {iris-administration}) Specification \& User Guide}{46}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Dual-Portal Architecture and Route Guarding}{47}{subsection.11.5.1}%
+\contentsline {subsection}{\numberline {11.5.2}The Governed Change Workflow Lifecycle}{47}{subsection.11.5.2}%
+\contentsline {section}{\numberline {11.6}Themis Security \& RBAC Integration}{47}{section.11.6}%
+\contentsline {subsection}{\numberline {11.6.1}Themis Authority Scopes}{47}{subsection.11.6.1}%
+\contentsline {subsection}{\numberline {11.6.2}Client-Side Router Navigation Guards}{47}{subsection.11.6.2}%
+\contentsline {subsection}{\numberline {11.6.3}Visual Security Badging}{49}{subsection.11.6.3}%
+\contentsline {section}{\numberline {11.7}Concrete Operational Examples \& Step-by-Step Walkthroughs}{49}{section.11.7}%
+\contentsline {subsection}{\numberline {11.7.1}Example 1: Clinician Locating an On-Call Specialist and Endpoint}{49}{subsection.11.7.1}%
+\contentsline {subsection}{\numberline {11.7.2}Example 2: Operations Engineer Diagnosing Queue Backpressure and Workflow Stalls}{50}{subsection.11.7.2}%
+\contentsline {subsection}{\numberline {11.7.3}Example 3: Practitioner Requesting Address Change and Admin Approval}{50}{subsection.11.7.3}%
+\contentsline {chapter}{\numberline {12}Provider Registry Core Services}{52}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Overview \& Engineering Objectives}{52}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Architectural Topology \& 5-Tier Interaction Model}{52}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Synchronous Read and Search Data Path}{53}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Asynchronous Governed Change Path}{53}{subsection.12.2.2}%
+\contentsline {section}{\numberline {12.3}FHIR R5 Provider Registry Resource Model \& Relationship Topology}{53}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Relationship Graph and Referential Topology}{53}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}Endpoint as an Independent First-Class Entity}{53}{subsection.12.3.2}%
+\contentsline {section}{\numberline {12.4}REST API Gateway Contract \& Interaction Matrix}{55}{section.12.4}%
+\contentsline {subsection}{\numberline {12.4.1}Multi-Parameter Search Capabilities}{55}{subsection.12.4.1}%
+\contentsline {subsection}{\numberline {12.4.2}CapabilityStatement Specification (\texttt {GET /metadata})}{55}{subsection.12.4.2}%
+\contentsline {subsection}{\numberline {12.4.3}Asynchronous Task Polling (\texttt {GET /Task/\{id\}})}{55}{subsection.12.4.3}%
+\contentsline {section}{\numberline {12.5}Governed Change Processing Lifecycle \& Pragma State Machine}{56}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}State Machine Transition Rules}{56}{subsection.12.5.1}%
+\contentsline {section}{\numberline {12.6}Per-Resource Ergon Processing Activities \& Referential Integrity Engine}{57}{section.12.6}%
+\contentsline {subsection}{\numberline {12.6.1}\texttt {ProviderRegistryReferenceValidator} Engine}{57}{subsection.12.6.1}%
+\contentsline {section}{\numberline {12.7}Authoritative Persistence, Optimistic Concurrency \& Versioning Model}{58}{section.12.7}%
+\contentsline {subsection}{\numberline {12.7.1}Monotonic Version Incrementing}{58}{subsection.12.7.1}%
+\contentsline {subsection}{\numberline {12.7.2}Optimistic Concurrency Control (\texttt {If-Match} / \texttt {ETag})}{58}{subsection.12.7.2}%
+\contentsline {section}{\numberline {12.8}Security, Themis Governance \& Multi-Tier Authorization}{58}{section.12.8}%
+\contentsline {subsection}{\numberline {12.8.1}Mnemonic Roles and Granular Authority Matrix}{58}{subsection.12.8.1}%
+\contentsline {subsection}{\numberline {12.8.2}\texttt {FhirSecurityInterceptor} \& Defence-in-Depth Pipeline}{58}{subsection.12.8.2}%
+\contentsline {section}{\numberline {12.9}Paradeigma Exemplar Generation \& Verification Testbed}{59}{section.12.9}%
+\contentsline {subsection}{\numberline {12.9.1}\texttt {SyntheticProviderRegistryGenerator}}{59}{subsection.12.9.1}%
+\contentsline {subsection}{\numberline {12.9.2}Automated Integration \& Verification Test Suites}{59}{subsection.12.9.2}%
+\contentsline {section}{\numberline {12.10}Summary \& Engineering Checklist}{60}{section.12.10}%
+\contentsline {part}{III\hspace {1em}Information \& Integration}{61}{part.3}%
+\contentsline {chapter}{\numberline {13}Information Architecture \& Standard Message Envelopes}{62}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Canonical Domain Models (\texttt {Calliope})}{62}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}1. \texttt {Pragma} (Task State Entity)}{62}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}2. \texttt {PragmaCheckpoint} (Execution Audit Snapshot)}{63}{subsection.13.1.2}%
+\contentsline {subsection}{\numberline {13.1.3}3. \texttt {ProviderRegistryChangePragma} (Directory Change Wrapper)}{63}{subsection.13.1.3}%
+\contentsline {subsection}{\numberline {13.1.4}4. Canonical Provider Registry Validation Codes}{63}{subsection.13.1.4}%
+\contentsline {section}{\numberline {13.2}Canonical Outbound Models (\texttt {pylai-mllp-base})}{63}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Petasos Messaging Transport Envelopes (\texttt {petasos-api})}{64}{section.13.3}%
+\contentsline {section}{\numberline {13.4}HL7 FHIR Release 5 (R5) Resource Schemas}{64}{section.13.4}%
+\contentsline {chapter}{\numberline {14}Data \& Information Architecture}{65}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Canonical Domain Models (\texttt {Calliope})}{65}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}1. \texttt {Pragma} (Task State Entity)}{65}{subsection.14.1.1}%
+\contentsline {subsection}{\numberline {14.1.2}2. \texttt {PragmaCheckpoint} (Execution Audit Snapshot)}{65}{subsection.14.1.2}%
+\contentsline {subsection}{\numberline {14.1.3}3. \texttt {ProviderRegistryChangePragma} (Directory Change Wrapper)}{65}{subsection.14.1.3}%
+\contentsline {subsection}{\numberline {14.1.4}4. Canonical Provider Registry Validation Codes}{66}{subsection.14.1.4}%
+\contentsline {section}{\numberline {14.2}Canonical Outbound Models (\texttt {pylai-mllp-base})}{66}{section.14.2}%
+\contentsline {subsection}{\numberline {14.2.1}1. \texttt {OutboundMllpRequest}}{66}{subsection.14.2.1}%
+\contentsline {subsection}{\numberline {14.2.2}2. \texttt {OutboundMllpResponse}}{66}{subsection.14.2.2}%
+\contentsline {subsection}{\numberline {14.2.3}3. \texttt {MllpDestinationConfig}}{67}{subsection.14.2.3}%
+\contentsline {section}{\numberline {14.3}The 5-Phase Checkpoint Lifecycle State Flow}{67}{section.14.3}%
+\contentsline {section}{\numberline {14.4}\texttt {PetasosMessage} Transport Envelope}{68}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Supported FHIR R5 Resource Schemas}{68}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Relational Persistence Schema (\texttt {Mnemosyne-Clinical})}{68}{section.14.6}%
+\contentsline {chapter}{\numberline {15}Implementation Guide for MLLP Ingress and Egress Services}{70}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Overview \& Engineering Objectives}{70}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Ingress Architectural Blueprint \& Framing Protocols}{70}{section.15.2}%
+\contentsline {subsection}{\numberline {15.2.1}MLLP Transport Framing}{71}{subsection.15.2.1}%
+\contentsline {subsection}{\numberline {15.2.2}The 8-Phase Ingress Processing Lifecycle}{71}{subsection.15.2.2}%
+\contentsline {section}{\numberline {15.3}Ingress Component Implementation}{71}{section.15.3}%
+\contentsline {subsection}{\numberline {15.3.1}Camel RouteBuilder Configuration}{71}{subsection.15.3.1}%
+\contentsline {subsection}{\numberline {15.3.2}Processor Wrapper \& Context Management}{72}{subsection.15.3.2}%
+\contentsline {subsection}{\numberline {15.3.3}HL7 v2 Data Extraction with HAPI Terser}{72}{subsection.15.3.3}%
+\contentsline {section}{\numberline {15.4}Canonical FHIR Model Mapping \& Resource Builders}{73}{section.15.4}%
+\contentsline {subsection}{\numberline {15.4.1}FHIR Communication Resource Construction}{73}{subsection.15.4.1}%
+\contentsline {subsection}{\numberline {15.4.2}FHIR Task (Pragma) Resource Construction}{74}{subsection.15.4.2}%
+\contentsline {section}{\numberline {15.5}Persistence, Event Dispatch \& Synchronous Acknowledgement}{74}{section.15.5}%
+\contentsline {subsection}{\numberline {15.5.1}Persistence Integration with Mneme \& Mnemosyne}{75}{subsection.15.5.1}%
+\contentsline {subsection}{\numberline {15.5.2}Synchronous Acknowledgement Mapping Rules}{75}{subsection.15.5.2}%
+\contentsline {subsection}{\numberline {15.5.3}REST Management \& CDI Deployment Configuration}{76}{subsection.15.5.3}%
+\contentsline {section}{\numberline {15.6}Multi-Instance Egress Architecture \& Queue Partitioning}{76}{section.15.6}%
+\contentsline {subsection}{\numberline {15.6.1}Head-of-Line Blocking Mitigation \& Destination Isolation}{76}{subsection.15.6.1}%
+\contentsline {subsection}{\numberline {15.6.2}Outbound Configuration \& Destination Registry}{77}{subsection.15.6.2}%
+\contentsline {subsection}{\numberline {15.6.3}Outbound Data Transfer Models}{77}{subsection.15.6.3}%
+\contentsline {section}{\numberline {15.7}Outbound Queue Consumer \& Camel Dynamic MLLP Routes}{77}{section.15.7}%
+\contentsline {subsection}{\numberline {15.7.1}Dedicated Task Queue Consumer}{77}{subsection.15.7.1}%
+\contentsline {subsection}{\numberline {15.7.2}Camel Dynamic Outbound Route Builder}{78}{subsection.15.7.2}%
+\contentsline {subsection}{\numberline {15.7.3}Outbound MLLP Processor Header Injection}{79}{subsection.15.7.3}%
+\contentsline {section}{\numberline {15.8}Downstream HL7 ACK/NACK Deep Inspection}{80}{section.15.8}%
+\contentsline {subsection}{\numberline {15.8.1}MSA \& ERR Segment Parsing Specification}{80}{subsection.15.8.1}%
+\contentsline {subsection}{\numberline {15.8.2}Downstream ACK Code Decision Matrix}{81}{subsection.15.8.2}%
+\contentsline {section}{\numberline {15.9}State, Task, and Provenance Lifecycle Management}{81}{section.15.9}%
+\contentsline {subsection}{\numberline {15.9.1}Outbound State Lifecycle Synchronization}{81}{subsection.15.9.1}%
+\contentsline {subsection}{\numberline {15.9.2}FHIR Provenance Resource Construction}{82}{subsection.15.9.2}%
+\contentsline {section}{\numberline {15.10}Testing, Verification Harnesses \& Containerization}{83}{section.15.10}%
+\contentsline {subsection}{\numberline {15.10.1}Tier 1: Unit Testing with HAPI HL7 v2 Parsers}{83}{subsection.15.10.1}%
+\contentsline {subsection}{\numberline {15.10.2}Tier 2: Camel Route Harness Testing}{83}{subsection.15.10.2}%
+\contentsline {subsection}{\numberline {15.10.3}Tier 3: Embedded Mock MLLP Server Integration Testing}{84}{subsection.15.10.3}%
+\contentsline {subsection}{\numberline {15.10.4}Tier 4: Multi-Instance Docker Compose Deployment Topology}{84}{subsection.15.10.4}%
+\contentsline {part}{IV\hspace {1em}Middleware Architecture}{86}{part.4}%
+\contentsline {chapter}{\numberline {16}Technology \& Infrastructure Architecture}{87}{chapter.16}%
+\contentsline {section}{\numberline {16.1}System Software Runtimes}{87}{section.16.1}%
+\contentsline {section}{\numberline {16.2}In-Memory Cache Grid \& Persistence SPI (\texttt {Hestia})}{88}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Security Governance, Authorization \& Audit Infrastructure (\texttt {Themis})}{88}{section.16.3}%
+\contentsline {subsection}{\numberline {16.3.1}Data Classification \& Security Tagging (\texttt {HarmoniaSecurityLabelEnum})}{88}{subsection.16.3.1}%
+\contentsline {subsection}{\numberline {16.3.2}Identity Context Transport \& Serialization}{89}{subsection.16.3.2}%
+\contentsline {subsection}{\numberline {16.3.3}Non-PHI Decision Audit Trail Architecture (\texttt {ThemisAuditService})}{89}{subsection.16.3.3}%
+\contentsline {subsection}{\numberline {16.3.4}Fail-Closed Determinism \& Reason Code Diagnostics}{89}{subsection.16.3.4}%
+\contentsline {section}{\numberline {16.4}PHI-Aware Diagnostic Logging Runtime \& Appender Isolation}{89}{section.16.4}%
+\contentsline {subsection}{\numberline {16.4.1}Dual-Logger Runtime Framework (\texttt {Calliope} / \texttt {net.fhirfactory.harmonia.logging})}{89}{subsection.16.4.1}%
+\contentsline {subsection}{\numberline {16.4.2}Dual-Gate Security Evaluation Mechanics}{89}{subsection.16.4.2}%
+\contentsline {subsection}{\numberline {16.4.3}SLF4J Namespace Routing \& Non-Additive Appender Isolation}{90}{subsection.16.4.3}%
+\contentsline {section}{\numberline {16.5}Master Platform Port Allocation Specification}{90}{section.16.5}%
+\contentsline {chapter}{\numberline {17}Apache ActiveMQ Artemis Topology}{91}{chapter.17}%
+\contentsline {section}{\numberline {17.1}4-Broker HA Clustering Topology}{91}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Symmetric Server-Side Clustering (\texttt {petasos-cluster})}{91}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}Synchronous Journal Replication}{91}{subsection.17.1.2}%
+\contentsline {section}{\numberline {17.2}Address \& Queue Settings (\texttt {broker.xml})}{92}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Durable Journal Persistence \& Storage Requirements}{92}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Broker-Level Message Deduplication}{92}{section.17.4}%
+\contentsline {chapter}{\numberline {18}Infinispan Distributed Cache Grid}{93}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Clustered Grid Topology \& Protocols}{93}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Named Cache Configurations \& Semantics}{93}{section.18.2}%
+\contentsline {subsection}{\numberline {18.2.1}Write-Behind Store Architecture (\texttt {mneme-persistence})}{93}{subsection.18.2.1}%
+\contentsline {section}{\numberline {18.3}Cache Classification Invariant}{94}{section.18.3}%
+\contentsline {chapter}{\numberline {19}PostgreSQL \& HAPI FHIR R5 Persistence Architecture}{95}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Database Separation: Clinical vs Operations vs Collaboration}{95}{section.19.1}%
+\contentsline {subsection}{\numberline {19.1.1}1. Clinical Database (\texttt {postgres-1} \& \texttt {postgres-2})}{95}{subsection.19.1.1}%
+\contentsline {subsection}{\numberline {19.1.2}2. Operations Database (\texttt {postgres-ops-1} \& \texttt {postgres-ops-2})}{95}{subsection.19.1.2}%
+\contentsline {subsection}{\numberline {19.1.3}3. Collaboration Database (\texttt {postgres-synapse})}{95}{subsection.19.1.3}%
+\contentsline {section}{\numberline {19.2}JPA Server Deployment Architecture}{95}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Optimistic Concurrency \& Referential Integrity}{95}{section.19.3}%
+\contentsline {chapter}{\numberline {20}Matrix Synapse Homeserver \& Collaboration Middleware}{97}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Homeserver Clustered Topology \& Network Architecture}{97}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Application Service Registration (\texttt {appservice-agora.yaml})}{97}{section.20.2}%
+\contentsline {subsection}{\numberline {20.2.1}Registration Invariants}{97}{subsection.20.2.1}%
+\contentsline {section}{\numberline {20.3}Spaces Hierarchy \& Zero-PHI Metadata Invariant}{98}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Ephemeral Retention \& Database Archival}{98}{section.20.4}%
+\contentsline {part}{V\hspace {1em}Runtime Architecture}{99}{part.5}%
+\contentsline {chapter}{\numberline {21}Container Packaging \& Runtime Profiles}{100}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Container Image Hierarchy \& Registry Taxonomy}{100}{section.21.1}%
+\contentsline {subsection}{\numberline {21.1.1}1. Upstream Middleware Base Images}{100}{subsection.21.1.1}%
+\contentsline {subsection}{\numberline {21.1.2}2. Java Application Runtimes}{100}{subsection.21.1.2}%
+\contentsline {section}{\numberline {21.2}JVM Resource Profiling \& Memory Ergonomics}{100}{section.21.2}%
+\contentsline {chapter}{\numberline {22}MicroK8s Pod Scheduling, Services \& Ingress Routing}{101}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Service Discovery \& Internal DNS Mesh}{101}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Ingress Routing \& NodePort Mapping}{102}{section.22.2}%
+\contentsline {chapter}{\numberline {23}Single-Node Resilience vs Host-Level Availability}{103}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Resilience Semantics on Single-Node MicroK8s}{103}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Host-Level Failure Domain Boundaries}{103}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Production Multi-Node Scaling Pathway}{103}{section.23.3}%
+\contentsline {chapter}{\numberline {24}Physical \& High Availability Deployment}{104}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Clustering vs. High Availability (HA) Replication}{104}{section.24.1}%
+\contentsline {subsection}{\numberline {24.1.1}1. Server-Side Clustering (\texttt {petasos-cluster})}{104}{subsection.24.1.1}%
+\contentsline {subsection}{\numberline {24.1.2}2. Journal Replication Groups (\texttt {group-a}, \texttt {group-b})}{104}{subsection.24.1.2}%
+\contentsline {section}{\numberline {24.2}Isolated Persistent Storage Ownership}{105}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Client Reconnection \& Failover Configuration}{105}{section.24.3}%
+\contentsline {section}{\numberline {24.4}In-Memory Cache Grid HA Topology (\texttt {Mneme})}{105}{section.24.4}%
+\contentsline {section}{\numberline {24.5}Docker Compose Multi-Container Deployment}{105}{section.24.5}%
+\contentsline {subsection}{\numberline {24.5.1}Provider Registry High Availability \& Crash Recovery}{106}{subsection.24.5.1}%
+\contentsline {subsection}{\numberline {24.5.2}Egress Failure Domain Isolation}{106}{subsection.24.5.2}%
+\contentsline {chapter}{\numberline {25}Themis Policy Evaluation \& Security Boundaries}{107}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Default-Deny Policy Invariant}{107}{section.25.1}%
+\contentsline {section}{\numberline {25.2}The 4-Gate Defence-in-Depth Pipeline}{107}{section.25.2}%
+\contentsline {chapter}{\numberline {26}PHI-Sanitized Logging \& Audit Lineage Tracking}{109}{chapter.26}%
+\contentsline {section}{\numberline {26.1}Zero-PHI Logging Invariant}{109}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Dual-Logger Pattern \& Non-Additive Routing}{109}{section.26.2}%
+\contentsline {part}{VI\hspace {1em}Normal Deployment}{110}{part.6}%
+\contentsline {chapter}{\numberline {27}Declarative Configuration Hierarchy}{111}{chapter.27}%
+\contentsline {section}{\numberline {27.1}The 5-Stage Configuration Hierarchy}{111}{section.27.1}%
+\contentsline {section}{\numberline {27.2}Secret Management \& Zero-Plaintext Policy}{111}{section.27.2}%
+\contentsline {chapter}{\numberline {28}Configuration Register \& Property Cross-Reference}{112}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Core Platform Properties Matrix}{112}{section.28.1}%
+\contentsline {chapter}{\numberline {29}Ubuntu Host Preparation \& MicroK8s Add-ons}{113}{chapter.29}%
+\contentsline {section}{\numberline {29.1}Hardware Prerequisites \& OS Requirements}{113}{section.29.1}%
+\contentsline {section}{\numberline {29.2}Kernel Parameter \& Sysctl Tuning}{113}{section.29.2}%
+\contentsline {section}{\numberline {29.3}MicroK8s Installation \& Required Add-ons}{113}{section.29.3}%
+\contentsline {chapter}{\numberline {30}Normal Workload Deployment \& Verification Runbook}{114}{chapter.30}%
+\contentsline {section}{\numberline {30.1}Phase 1: Build \& Container Image Push}{114}{section.30.1}%
+\contentsline {section}{\numberline {30.2}Phase 2: Apply Kustomize Overlay Manifests}{114}{section.30.2}%
+\contentsline {section}{\numberline {30.3}Phase 3: Verification \& Health Validation Runbook}{114}{section.30.3}%
+\contentsline {chapter}{\numberline {31}Safe Undeployment \& Storage Retention Mechanics}{116}{chapter.31}%
+\contentsline {section}{\numberline {31.1}Workload Termination (Data-Preserving)}{116}{section.31.1}%
+\contentsline {section}{\numberline {31.2}Authoritative Storage Wipe Protocol}{116}{section.31.2}%
+\contentsline {chapter}{\numberline {32}Platform Infrastructure, MicroK8s \& Middleware Configuration}{117}{chapter.32}%
+\contentsline {section}{\numberline {32.1}Platform Overview \& Infrastructure Separation Strategy}{117}{section.32.1}%
+\contentsline {subsection}{\numberline {32.1.1}Architectural Separation of Concerns}{117}{subsection.32.1.1}%
+\contentsline {subsection}{\numberline {32.1.2}Single-Node MicroK8s Resilience Semantics vs Multi-Node Scaling}{117}{subsection.32.1.2}%
+\contentsline {section}{\numberline {32.2}Platform \& Host Infrastructure Prerequisites}{118}{section.32.2}%
+\contentsline {subsection}{\numberline {32.2.1}Supported Operating Systems \& Architecture Support}{118}{subsection.32.2.1}%
+\contentsline {subsection}{\numberline {32.2.2}Hardware Sizing Profiles \& Resource Allocation Matrix}{118}{subsection.32.2.2}%
+\contentsline {subsection}{\numberline {32.2.3}Linux Kernel Networking \& Sysctl Configuration}{118}{subsection.32.2.3}%
+\contentsline {subsection}{\numberline {32.2.4}Host Firewall, Ingress Routing \& Port Exposure Matrix}{119}{subsection.32.2.4}%
+\contentsline {section}{\numberline {32.3}MicroK8s Component Architecture \& Add-on Specification}{119}{section.32.3}%
+\contentsline {subsection}{\numberline {32.3.1}Snap Packaging, Confinement \& Permission Management}{119}{subsection.32.3.1}%
+\contentsline {subsection}{\numberline {32.3.2}Authoritative Add-on Matrix}{119}{subsection.32.3.2}%
+\contentsline {subsection}{\numberline {32.3.3}CoreDNS Add-on (\texttt {dns}) Configuration}{119}{subsection.32.3.3}%
+\contentsline {subsection}{\numberline {32.3.4}Nginx Ingress Controller (\texttt {ingress}) Specification}{121}{subsection.32.3.4}%
+\contentsline {subsection}{\numberline {32.3.5}Dynamic Storage Provisioner (\texttt {hostpath-storage}) Specification}{122}{subsection.32.3.5}%
+\contentsline {subsection}{\numberline {32.3.6}Resource Telemetry Add-on (\texttt {metrics-server}) Specification}{122}{subsection.32.3.6}%
+\contentsline {section}{\numberline {32.4}Kubernetes Middleconfiguration \& Cluster Architecture}{122}{section.32.4}%
+\contentsline {subsection}{\numberline {32.4.1}Declarative Kustomize Base and Overlay Hierarchy}{122}{subsection.32.4.1}%
+\contentsline {subsection}{\numberline {32.4.2}Namespace Governance \& Multi-Tier NetworkPolicies}{123}{subsection.32.4.2}%
+\contentsline {subsection}{\numberline {32.4.3}Secret Management, Sensitive Credentials \& Ansible Vault}{124}{subsection.32.4.3}%
+\contentsline {subsection}{\numberline {32.4.4}Container Health Probes \& Resource Allocation Matrix}{124}{subsection.32.4.4}%
+\contentsline {section}{\numberline {32.5}Tier-by-Tier Subsystem Middleware Configuration Catalog}{124}{section.32.5}%
+\contentsline {subsection}{\numberline {32.5.1}Petasos Messaging: Apache ActiveMQ Artemis 2.33.0 HA Cluster}{124}{subsection.32.5.1}%
+\contentsline {subsection}{\numberline {32.5.2}Hestia Mneme: Infinispan 15 Distributed In-Memory Cache Grid}{125}{subsection.32.5.2}%
+\contentsline {subsection}{\numberline {32.5.3}Hestia Mnemosyne \& PostgreSQL 16 Relational Persistence}{125}{subsection.32.5.3}%
+\contentsline {subsection}{\numberline {32.5.4}Energeia Ponos: WildFly 31 Workflow Execution Engine}{125}{subsection.32.5.4}%
+\contentsline {subsection}{\numberline {32.5.5}Pylai Gateways: Inbound \& Outbound MLLP Interfaces}{125}{subsection.32.5.5}%
+\contentsline {subsection}{\numberline {32.5.6}Iris Presentation: BEFE Gateway \& Vue 3 SPAs}{126}{subsection.32.5.6}%
+\contentsline {section}{\numberline {32.6}Ansible Deployment Automation, Storage Lifecycle \& Operational Runbooks}{126}{section.32.6}%
+\contentsline {subsection}{\numberline {32.6.1}Automated Playbook Architecture \& Workflow Pipeline}{126}{subsection.32.6.1}%
+\contentsline {subsection}{\numberline {32.6.2}Persistent Storage Lifecycle Governance: Safe Teardown vs Destructive Purge}{126}{subsection.32.6.2}%
+\contentsline {subsection}{\numberline {32.6.3}Operational Health Check Runbooks \& Diagnostic Commands}{126}{subsection.32.6.3}%
+\contentsline {subsection}{\numberline {32.6.4}Disaster Recovery \& Single-Node Node Restoration Procedures}{127}{subsection.32.6.4}%
+\contentsline {part}{VII\hspace {1em}Paradeigma Simulation}{129}{part.7}%
+\contentsline {chapter}{\numberline {33}Synthetic Clinical Generators \& Scenario Framework}{130}{chapter.33}%
+\contentsline {section}{\numberline {33.1}Synthetic Actor Simulators \& Module Inventory}{130}{section.33.1}%
+\contentsline {section}{\numberline {33.2}Deterministic Patient Journeys \& Scenario Engine}{131}{section.33.2}%
+\contentsline {subsection}{\numberline {33.2.1}REST Scenario Orchestration API}{131}{subsection.33.2.1}%
+\contentsline {chapter}{\numberline {34}Paradeigma Workload Deployment \& Isolation Guardrails}{132}{chapter.34}%
+\contentsline {section}{\numberline {34.1}Strict Production Isolation Invariants}{132}{section.34.1}%
+\contentsline {section}{\numberline {34.2}Automated ArchUnit Verification}{132}{section.34.2}%
+\contentsline {section}{\numberline {34.3}Normal Production vs Paradeigma Simulation Deployment Matrix}{133}{section.34.3}%
+\contentsline {section}{\numberline {34.4}Paradeigma Simulation Profile Deployment}{133}{section.34.4}%
+\contentsline {chapter}{\numberline {35}Paradeigma Clinical Simulation Subsystem}{134}{chapter.35}%
+\contentsline {section}{\numberline {35.1}Subsystem Overview \& Architectural Principles}{134}{section.35.1}%
+\contentsline {subsection}{\numberline {35.1.1}Core Design Principles}{134}{subsection.35.1.1}%
+\contentsline {section}{\numberline {35.2}ArchiMate Application \& Interface Landscape}{134}{section.35.2}%
+\contentsline {section}{\numberline {35.3}Formal Interface Catalogue (PD-01 through PD-09)}{135}{section.35.3}%
+\contentsline {subsection}{\numberline {35.3.1}MLLP Framing \& Transport Protocol}{135}{subsection.35.3.1}%
+\contentsline {subsection}{\numberline {35.3.2}Synchronous Acknowledgement Contract}{135}{subsection.35.3.2}%
+\contentsline {section}{\numberline {35.4}Hospital Simulator Microservice Specifications}{136}{section.35.4}%
+\contentsline {subsection}{\numberline {35.4.1}Patient Administration System Simulator (\texttt {paradeigma-pas})}{136}{subsection.35.4.1}%
+\contentsline {subsection}{\numberline {35.4.2}Electronic Medical Record Simulator (\texttt {paradeigma-emr})}{136}{subsection.35.4.2}%
+\contentsline {subsection}{\numberline {35.4.3}Laboratory Information System Simulator (\texttt {paradeigma-lms})}{136}{subsection.35.4.3}%
+\contentsline {subsection}{\numberline {35.4.4}Radiology Information System \& PACS Simulator (\texttt {paradeigma-rispac})}{137}{subsection.35.4.4}%
+\contentsline {section}{\numberline {35.5}Synthetic Data Models \& Deterministic Generators}{137}{section.35.5}%
+\contentsline {subsection}{\numberline {35.5.1}Canonical Domain Entities}{137}{subsection.35.5.1}%
+\contentsline {subsection}{\numberline {35.5.2}Seed-Based Deterministic Generation Engine}{138}{subsection.35.5.2}%
+\contentsline {section}{\numberline {35.6}Scenario Orchestration Engine \& Patient Journey Workflows}{139}{section.35.6}%
+\contentsline {subsection}{\numberline {35.6.1}9-Step Canonical Patient Journey Sequence}{139}{subsection.35.6.1}%
+\contentsline {subsection}{\numberline {35.6.2}Execution Profiles}{139}{subsection.35.6.2}%
+\contentsline {subsection}{\numberline {35.6.3}Scenario Control REST API}{139}{subsection.35.6.3}%
+\contentsline {section}{\numberline {35.7}Failure Simulation, Fault Injection \& Automated Recovery}{139}{section.35.7}%
+\contentsline {subsection}{\numberline {35.7.1}Fault Injection Modes (\texttt {FailureSimulator})}{139}{subsection.35.7.1}%
+\contentsline {subsection}{\numberline {35.7.2}Automated Recovery Acceptance Test Suite}{139}{subsection.35.7.2}%
+\contentsline {section}{\numberline {35.8}Deployment Topology \& Docker Orchestration}{140}{section.35.8}%
+\contentsline {section}{\numberline {35.9}Provider Registry Simulation \& Synthetic FHIR R5 Generators}{140}{section.35.9}%
+\contentsline {subsection}{\numberline {35.9.1}Standardized Australian Digital Health Identifiers}{141}{subsection.35.9.1}%
+\contentsline {subsection}{\numberline {35.9.2}Dedicated Synthetic Generators Catalog}{141}{subsection.35.9.2}%
+\contentsline {subsection}{\numberline {35.9.3}Interconnected Graph Builders (\texttt {SyntheticProviderRegistryGenerator})}{141}{subsection.35.9.3}%
+\contentsline {section}{\numberline {35.10}Themis Security Simulation \& Authorization Fixtures}{142}{section.35.10}%
+\contentsline {subsection}{\numberline {35.10.1}Standard Security Actors Catalog}{142}{subsection.35.10.1}%
+\contentsline {subsection}{\numberline {35.10.2}Security Context Orchestration (\texttt {SecurityScenarioContext})}{142}{subsection.35.10.2}%
+\contentsline {subsection}{\numberline {35.10.3}Negative Testing Authorization Seams}{144}{subsection.35.10.3}%
+\contentsline {section}{\numberline {35.11}PHI-Aware Logging Simulation \& Credential Protection}{144}{section.35.11}%
+\contentsline {subsection}{\numberline {35.11.1}Dual-Gate Verification Probe (\texttt {PhiLogTestProbe})}{144}{subsection.35.11.1}%
+\contentsline {subsection}{\numberline {35.11.2}Synthetic Secret Leakage Protection (\texttt {SecretLeakageAssertion})}{145}{subsection.35.11.2}%
+\contentsline {subsection}{\numberline {35.11.3}Integrated Multi-Capability Verification Listing}{145}{subsection.35.11.3}%
+\contentsline {section}{\numberline {35.12}Comprehensive Configuration Reference Matrix}{146}{section.35.12}%
+\contentsline {subsection}{\numberline {35.12.1}Simulator Service Properties \& Port Allocations}{146}{subsection.35.12.1}%
+\contentsline {subsection}{\numberline {35.12.2}Security \& PHI Logging Governance Configuration}{147}{subsection.35.12.2}%
+\contentsline {subsection}{\numberline {35.12.3}FailureSimulator Fault Injection Knobs}{147}{subsection.35.12.3}%
+\contentsline {section}{\numberline {35.13}Step-by-Step CLI \& REST Execution Instructions}{147}{section.35.13}%
+\contentsline {subsection}{\numberline {35.13.1}Building the Solution via Maven}{147}{subsection.35.13.1}%
+\contentsline {subsection}{\numberline {35.13.2}Running Simulators as Standalone Microservices}{148}{subsection.35.13.2}%
+\contentsline {subsection}{\numberline {35.13.3}Docker Compose Topology Orchestration}{148}{subsection.35.13.3}%
+\contentsline {subsection}{\numberline {35.13.4}REST API Scenario Orchestration (cURL Snippets)}{148}{subsection.35.13.4}%
+\contentsline {section}{\numberline {35.14}Automated Scenario \& Integration Test Suite Reference}{149}{section.35.14}%
+\contentsline {part}{VIII\hspace {1em}Development}{150}{part.8}%
+\contentsline {chapter}{\numberline {36}Platform Development, Architecture Invariants \& Rules}{151}{chapter.36}%
+\contentsline {section}{\numberline {36.1}Build Environment \& Toolchain Prerequisites}{151}{section.36.1}%
+\contentsline {section}{\numberline {36.2}Maven Multi-Module Reactor Architecture}{151}{section.36.2}%
+\contentsline {section}{\numberline {36.3}The Eight Mandatory Architectural Invariants}{151}{section.36.3}%
+\contentsline {section}{\numberline {36.4}Continuous ArchUnit Verification}{152}{section.36.4}%
+\contentsline {chapter}{\numberline {37}Implementation and Deployment Guide for Ergon Workflow Activity Modules}{153}{chapter.37}%
+\contentsline {section}{\numberline {37.1}Overview \& Engineering Objectives}{153}{section.37.1}%
+\contentsline {section}{\numberline {37.2}Architectural Blueprint \& the ErgonBase Contract}{153}{section.37.2}%
+\contentsline {subsection}{\numberline {37.2.1}RouteBuilder Inheritance and Processing Topologies}{153}{subsection.37.2.1}%
+\contentsline {subsection}{\numberline {37.2.2}Exchange Headers and Properties Invariants}{154}{subsection.37.2.2}%
+\contentsline {subsection}{\numberline {37.2.3}The Pragma Task Envelope Model}{154}{subsection.37.2.3}%
+\contentsline {subsection}{\numberline {37.2.4}Security Tagging with FhirSecurityTagManager}{155}{subsection.37.2.4}%
+\contentsline {section}{\numberline {37.3}Step-by-Step Code Development Blueprint}{155}{section.37.3}%
+\contentsline {subsection}{\numberline {37.3.1}Step 1: Maven Project Configuration}{155}{subsection.37.3.1}%
+\contentsline {subsection}{\numberline {37.3.2}Step 2: Subclassing ErgonBase \& Constructor Wiring}{155}{subsection.37.3.2}%
+\contentsline {subsection}{\numberline {37.3.3}Step 3: Defensive Payload Extraction}{156}{subsection.37.3.3}%
+\contentsline {subsection}{\numberline {37.3.4}Step 4: Clinical Transformation \& Resource Generation}{156}{subsection.37.3.4}%
+\contentsline {subsection}{\numberline {37.3.5}Step 5: Pragma Output \& Checkpoint Recording}{156}{subsection.37.3.5}%
+\contentsline {subsection}{\numberline {37.3.6}Step 6: Structured Exception Handling}{156}{subsection.37.3.6}%
+\contentsline {section}{\numberline {37.4}Production Reference Implementation: ObservationEnrichmentErgon}{156}{section.37.4}%
+\contentsline {section}{\numberline {37.5}Praxis Workflow Orchestration \& Step Chaining}{159}{section.37.5}%
+\contentsline {subsection}{\numberline {37.5.1}Linear Workflow Sequences}{159}{subsection.37.5.1}%
+\contentsline {subsection}{\numberline {37.5.2}Conditional Branching and Error Recovery}{159}{subsection.37.5.2}%
+\contentsline {section}{\numberline {37.6}CDI Configuration, Dependency Injection \& Scoping}{160}{section.37.6}%
+\contentsline {subsection}{\numberline {37.6.1}Bean Scoping: @Dependent vs. @ApplicationScoped}{160}{subsection.37.6.1}%
+\contentsline {subsection}{\numberline {37.6.2}CDI Deployment Descriptor (beans.xml)}{160}{subsection.37.6.2}%
+\contentsline {section}{\numberline {37.7}Testing Strategies, Test Fixtures \& Validation}{160}{section.37.7}%
+\contentsline {subsection}{\numberline {37.7.1}CamelTestSupport Unit Testing Pattern}{160}{subsection.37.7.1}%
+\contentsline {section}{\numberline {37.8}Deployment, Containerization \& Operational Runbook}{161}{section.37.8}%
+\contentsline {subsection}{\numberline {37.8.1}WildFly \& Ponos Container Architecture}{161}{subsection.37.8.1}%
+\contentsline {subsection}{\numberline {37.8.2}Dynamic Live Reload via ponos-cli}{161}{subsection.37.8.2}%
+\contentsline {subsection}{\numberline {37.8.3}Concurrency Tuning and Thread Pool Sizing}{161}{subsection.37.8.3}%
+\contentsline {subsection}{\numberline {37.8.4}Dead-Letter Queue (DLQ) Recovery Operations}{162}{subsection.37.8.4}%
+\contentsline {section}{\numberline {37.9}Summary \& Best Practices Checklist}{162}{section.37.9}%
+\contentsline {chapter}{\numberline {38}Implementation and Deployment Guide for Praxis Workflow Sequences}{164}{chapter.38}%
+\contentsline {section}{\numberline {38.1}Overview \& Engineering Objectives}{164}{section.38.1}%
+\contentsline {section}{\numberline {38.2}Architectural Blueprint \& the Praxis Paradigm}{164}{section.38.2}%
+\contentsline {subsection}{\numberline {38.2.1}Decoupling Definition from Runtime Execution}{165}{subsection.38.2.1}%
+\contentsline {subsection}{\numberline {38.2.2}Topic Subscription Matching \& Hierarchical Routing}{165}{subsection.38.2.2}%
+\contentsline {subsection}{\numberline {38.2.3}Audit Checkpoint Lifecycle across Execution Boundaries}{166}{subsection.38.2.3}%
+\contentsline {subsection}{\numberline {38.2.4}Dual-Cache Architecture in the Mneme Grid}{166}{subsection.38.2.4}%
+\contentsline {section}{\numberline {38.3}Step-by-Step Praxis Creation Blueprint}{166}{section.38.3}%
+\contentsline {subsection}{\numberline {38.3.1}Phase 1: Defining Declarative Workflow Metadata}{166}{subsection.38.3.1}%
+\contentsline {subsection}{\numberline {38.3.2}Phase 2: Activity Ordering and Sequence Validation}{167}{subsection.38.3.2}%
+\contentsline {subsection}{\numberline {38.3.3}Phase 3: Route Synthesis and Ingress Conduits}{167}{subsection.38.3.3}%
+\contentsline {subsection}{\numberline {38.3.4}Phase 4: Error Boundary \& Exception Trapping}{167}{subsection.38.3.4}%
+\contentsline {section}{\numberline {38.4}Production Reference Implementation: PatientCareAdmissionPraxis}{168}{section.38.4}%
+\contentsline {section}{\numberline {38.5}Dynamic Route Generation \& Camel Pipeline Topology}{169}{section.38.5}%
+\contentsline {subsection}{\numberline {38.5.1}Route Synthesis Architecture}{169}{subsection.38.5.1}%
+\contentsline {subsection}{\numberline {38.5.2}Exchange Property Invariants and Header Preservation}{170}{subsection.38.5.2}%
+\contentsline {section}{\numberline {38.6}Dynamic Discovery, Seeding \& Runtime Registration}{170}{section.38.6}%
+\contentsline {subsection}{\numberline {38.6.1}CDI Bean Resolution via Jakarta EE Instance}{170}{subsection.38.6.1}%
+\contentsline {subsection}{\numberline {38.6.2}Initial Seeding via TaskSequenceDefaultSeeder}{171}{subsection.38.6.2}%
+\contentsline {section}{\numberline {38.7}Multi-Tier Testing Strategies}{172}{section.38.7}%
+\contentsline {subsection}{\numberline {38.7.1}CamelTestSupport Unit Test Harness}{172}{subsection.38.7.1}%
+\contentsline {subsection}{\numberline {38.7.2}Failure Snapshotting and Checkpoint Assertions}{173}{subsection.38.7.2}%
+\contentsline {section}{\numberline {38.8}Deployment, Cluster Management \& Operational Runbook}{173}{section.38.8}%
+\contentsline {subsection}{\numberline {38.8.1}Containerization within Ponos WildFly Container}{173}{subsection.38.8.1}%
+\contentsline {subsection}{\numberline {38.8.2}REST Administrative API: /workflow}{173}{subsection.38.8.2}%
+\contentsline {subsection}{\numberline {38.8.3}Dynamic Live Reload via ponos-cli}{173}{subsection.38.8.3}%
+\contentsline {section}{\numberline {38.9}Summary \& Best Practices Checklist}{173}{section.38.9}%
+\contentsline {part}{IX\hspace {1em}Operations}{175}{part.9}%
+\contentsline {chapter}{\numberline {39}Failure Scenarios, Recovery Guarantees \& Operations}{176}{chapter.39}%
+\contentsline {section}{\numberline {39.1}Platform Failure Scenario Matrix}{176}{section.39.1}%
+\contentsline {section}{\numberline {39.2}Dead-Letter Queue (DLQ) Governance}{176}{section.39.2}%
+\contentsline {section}{\numberline {39.3}Kubernetes Health \& Readiness Probes}{176}{section.39.3}%
+\contentsline {chapter}{\numberline {40}PHI-Aware Logging Architecture \& Developer Implementation Guide}{178}{chapter.40}%
+\contentsline {section}{\numberline {40.1}Overview \& Regulatory Objectives}{178}{section.40.1}%
+\contentsline {subsection}{\numberline {40.1.1}The Logging Policy Matrix}{178}{subsection.40.1.1}%
+\contentsline {section}{\numberline {40.2}Architectural Model \& Security Gates}{179}{section.40.2}%
+\contentsline {subsection}{\numberline {40.2.1}Dual-Gate Security Evaluation Flow}{179}{subsection.40.2.1}%
+\contentsline {section}{\numberline {40.3}Configuration \& Environment Variables}{179}{section.40.3}%
+\contentsline {subsection}{\numberline {40.3.1}Startup Warning Banner}{180}{subsection.40.3.1}%
+\contentsline {section}{\numberline {40.4}Developer Guide \& API Usage Blueprint}{180}{section.40.4}%
+\contentsline {subsection}{\numberline {40.4.1}The Dual-Logger Pattern}{180}{subsection.40.4.1}%
+\contentsline {subsection}{\numberline {40.4.2}Compile-Time Safety and API Contract}{181}{subsection.40.4.2}%
+\contentsline {subsection}{\numberline {40.4.3}Lazy Evaluation with Functional Suppliers}{181}{subsection.40.4.3}%
+\contentsline {subsection}{\numberline {40.4.4}Categorization: PHI vs Non-PHI Operational Metadata}{182}{subsection.40.4.4}%
+\contentsline {subsection}{\numberline {40.4.5}Absolute Prohibition on Secrets and Credentials}{182}{subsection.40.4.5}%
+\contentsline {subsection}{\numberline {40.4.6}Exception Handling \& Stack Trace Sanitization}{182}{subsection.40.4.6}%
+\contentsline {subsection}{\numberline {40.4.7}Mapped Diagnostic Context (MDC) Invariants}{182}{subsection.40.4.7}%
+\contentsline {section}{\numberline {40.5}Subsystem Integration Patterns}{183}{section.40.5}%
+\contentsline {subsection}{\numberline {40.5.1}Gateway Tier: Pylai Ingress/Egress}{183}{subsection.40.5.1}%
+\contentsline {subsection}{\numberline {40.5.2}Workflow Tier: Energeia \& Ergon Activities}{183}{subsection.40.5.2}%
+\contentsline {subsection}{\numberline {40.5.3}Persistence Tier: Hestia \& Mnemosyne}{183}{subsection.40.5.3}%
+\contentsline {section}{\numberline {40.6}Logback Configuration \& Appender Isolation}{183}{section.40.6}%
+\contentsline {subsection}{\numberline {40.6.1}Physical Storage \& Retention Invariants}{184}{subsection.40.6.1}%
+\contentsline {section}{\numberline {40.7}Testing \& Verification Strategies}{184}{section.40.7}%
+\contentsline {chapter}{\numberline {A}Glossary of Classical Nomenclature \& Terminology}{186}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Core Greek Metaphor Register}{186}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Healthcare \& Enterprise Integration Terminology}{186}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Authoritative Harmonia System Inventory}{189}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Subproject and Leaf Module Inventory}{189}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Infrastructure and Middleware Workloads}{191}{section.B.2}%
+\contentsline {chapter}{\numberline {C}Authoritative Subproject \& Leaf Module Register}{193}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Module Taxonomy \& Architectural Classification}{193}{section.C.1}%
+\contentsline {chapter}{\numberline {D}Middleware Capability Matrix}{195}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Middleware Technology Summary}{195}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Middleware Capabilities: Used vs. Avoided Analysis}{196}{section.D.2}%
+\contentsline {subsection}{\numberline {D.2.1}ActiveMQ Artemis 2.33.0 Messaging Engine}{196}{subsection.D.2.1}%
+\contentsline {subsection}{\numberline {D.2.2}Infinispan 15.0.3 Distributed In-Memory Data Grid}{196}{subsection.D.2.2}%
+\contentsline {subsection}{\numberline {D.2.3}PostgreSQL 16 Relational Persistence}{196}{subsection.D.2.3}%
+\contentsline {subsection}{\numberline {D.2.4}WildFly 31.0.1 Jakarta EE Runtime (Iris BEFE Gateway \& Ponos)}{196}{subsection.D.2.4}%
+\contentsline {subsection}{\numberline {D.2.5}Matrix Synapse 1.120.0 Collaboration Homeserver}{196}{subsection.D.2.5}%
+\contentsline {chapter}{\numberline {E}Configuration Property Register}{198}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Dual-Dimension Configuration Discipline}{198}{section.E.1}%
+\contentsline {section}{\numberline {E.2}Global Infrastructure \& Environment Parameters}{198}{section.E.2}%
+\contentsline {section}{\numberline {E.3}Subsystem Application Parameters}{199}{section.E.3}%
+\contentsline {chapter}{\numberline {F}Port and Network Protocol Register}{200}{appendix.F}%
+\contentsline {section}{\numberline {F.1}The 18 Platform Network Listeners}{200}{section.F.1}%
+\contentsline {chapter}{\numberline {G}Container and Image Register}{201}{appendix.G}%
+\contentsline {section}{\numberline {G.1}Container Image Register}{201}{section.G.1}%
+\contentsline {chapter}{\numberline {H}Kubernetes Workload and Resource Register}{202}{appendix.H}%
+\contentsline {section}{\numberline {H.1}Workload Allocations \& Persistent Claims}{202}{section.H.1}%
+\contentsline {chapter}{\numberline {I}Persistence Register: Relational Databases \& Cache Grid}{204}{appendix.I}%
+\contentsline {section}{\numberline {I.1}Relational Database Schema Register}{204}{section.I.1}%
+\contentsline {subsection}{\numberline {I.1.1}Relational Table Definitions}{204}{subsection.I.1.1}%
+\contentsline {section}{\numberline {I.2}Distributed Cache Grid Register (Infinispan 15.0.3)}{204}{section.I.2}%
+\contentsline {chapter}{\numberline {J}Module Dependency Matrix}{206}{appendix.J}%
+\contentsline {chapter}{\numberline {K}Normal Deployment Verification Checklist}{207}{appendix.K}%
+\contentsline {section}{\numberline {K.1}Phase 1: Host Preparation \& MicroK8s Setup}{207}{section.K.1}%
+\contentsline {section}{\numberline {K.2}Phase 2: Persistent Storage \& Volume Claims}{207}{section.K.2}%
+\contentsline {section}{\numberline {K.3}Phase 3: Stateful Tier Verification}{207}{section.K.3}%
+\contentsline {section}{\numberline {K.4}Phase 4: Stateless Workloads \& Gateways}{207}{section.K.4}%
+\contentsline {chapter}{\numberline {L}Paradeigma Simulation Deployment Checklist}{208}{appendix.L}%
+\contentsline {section}{\numberline {L.1}Phase 1: Production Isolation Pre-Flight Checks}{208}{section.L.1}%
+\contentsline {section}{\numberline {L.2}Phase 2: Simulation Workload Deployment}{208}{section.L.2}%
+\contentsline {section}{\numberline {L.3}Phase 3: Scenario Execution \& Journey Verification}{208}{section.L.3}%

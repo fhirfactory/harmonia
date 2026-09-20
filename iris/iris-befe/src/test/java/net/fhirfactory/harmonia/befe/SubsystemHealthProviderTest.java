@@ -207,4 +207,35 @@ class SubsystemHealthProviderTest {
         assertThat(health.getDependencies()).isEmpty();
         assertThat(health.getDetails()).containsEntry("embedded", true);
     }
+
+    @Test
+    @DisplayName("7. Petasos provider surfaces live broker telemetry details from modulestatus-cache")
+    void testPetasosBrokerTelemetryDetails() {
+        ModuleStatus live = new ModuleStatus("petasos", "Petasos Messaging", "MESSAGING", "READY", true);
+        live.setDetails(Map.of(
+                "brokerStatus", "HEALTHY",
+                "brokerMessage", "Connected to Artemis broker at tcp://petasos:61616",
+                "connectedBroker", "tcp://petasos:61616",
+                "connectionState", "CONNECTED",
+                "brokerTopology", "Standalone Single-Broker",
+                "primaryUrl", "tcp://petasos:61616",
+                "reconnectCount", 0
+        ));
+        moduleStatusService.updateStatus(live, false);
+
+        assertThat(petasosProvider.getSubsystemOverview().getState()).isEqualTo("HEALTHY");
+        OperationalHealth health = petasosProvider.getOperationalHealth();
+        assertThat(health.getStatus()).isEqualTo("HEALTHY");
+        assertThat(health.getDependencies())
+                .anySatisfy(d -> {
+                    assertThat(d.getName()).isEqualTo("Artemis Broker");
+                    assertThat(d.getStatus()).isEqualTo("HEALTHY");
+                    assertThat(d.getMessage()).contains("tcp://petasos:61616");
+                });
+        assertThat(health.getDetails())
+                .containsEntry("brokerTopology", "Standalone Single-Broker")
+                .containsEntry("connectedBroker", "tcp://petasos:61616")
+                .containsEntry("connectionState", "CONNECTED")
+                .containsEntry("brokerPort", 61616);
+    }
 }

@@ -242,66 +242,69 @@ The \textbf{Iris Operations Console} (\texttt{iris/iris-console}) is the systems
 
 \subsection{Architectural Perspectives \& Shell Topology}
 
-The console is architected around five primary operational perspectives accessible via a persistent top navigation bar and unified by a global operational header:
+The console is architected around six canonical operational perspectives and a diagnostic event flow, unified by the shared \texttt{@harmonia/iris-befe} design system and Aura Light theme:
 
 \begin{figure}[htbp]
 \centering
 \begin{archinote}
-\textbf{Persistent Shell Architecture}:
+\textbf{Persistent Shell Architecture (\texttt{IrisApplicationShell.vue})}:
 \begin{itemize}
-    \item \textbf{Global Operations Header (\texttt{GlobalOperationsHeader.vue})}: Displays the active deployment environment (e.g. \texttt{PROD / microk8s-01}), cluster status, platform overall health badge (\texttt{HEALTHY}, \texttt{DEGRADED}, \texttt{UNAVAILABLE}), active subsystem count, critical and warning alert pill indicators, current timestamp, last refresh timestamp, and manual refresh trigger.
-    \item \textbf{Persistent Top Navigation (\texttt{NavigationTopBar.vue})}: Persistent navigation bar with direct, bookmarkable routes to the five canonical operational perspectives: \texttt{/subsystems}, \texttt{/queues}, \texttt{/workflows}, \texttt{/events}, and \texttt{/alerts}.
+    \item \textbf{Global Operations Header (\texttt{IrisHeader.vue})}: Displays active deployment environment (e.g. \texttt{PROD / microk8s-01}), cluster status, platform overall health badge (\texttt{HEALTHY}, \texttt{DEGRADED}, \texttt{UNAVAILABLE}), active subsystem count, critical and warning alert pill indicators, current timestamp, last refresh timestamp, and manual refresh trigger.
+    \item \textbf{Persistent Top Navigation (\texttt{IrisPrimaryNavigation.vue})}: High-contrast top navigation bar with direct routes to the six canonical operational perspectives: \texttt{/overview}, \texttt{/subsystems}, \texttt{/interfaces}, \texttt{/work}, \texttt{/messages}, and \texttt{/health}.
+    \item \textbf{Standardized Page Action Bar (\texttt{IrisToolbar.vue})}: Consistent page-level action bar supporting search filtering, time-window selectors (\texttt{15m}, \texttt{1h}, \texttt{6h}, \texttt{24h}), manual refresh with spin indicator, and action triggers.
 \end{itemize}
 \end{archinote}
 \caption{Iris Operations Console Shell and Global Navigation Layout}
 \label{fig:iris_console_shell}
 \end{figure}
 
-\subsection{The Five Canonical Operational Perspectives}
+\subsection{The Six Canonical Operational Perspectives}
 
 \begin{enumerate}
+    \item \textbf{OVERVIEW Perspective (\texttt{/overview})}:
+    Answers \textit{"Is Harmonia healthy? Is work moving? Are messages backing up?"}
+    Features a high-density platform health strip, active alert ribbons with direct links to degraded subsystems, active work execution rates, and an area-by-area summary across all six Harmonia architectural areas.
+
     \item \textbf{SUBSYSTEMS Perspective (\texttt{/subsystems})}:
-    Answers \textit{"Is Harmonia healthy?"}
+    Answers \textit{"What is the authoritative architectural status?"}
+    Operates as the primary proving ground for the Iris Design System via a Split-Tree Master-Detail layout:
     \begin{itemize}
-        \item \textbf{Subsystem Inventory Sidebar (\texttt{SubsystemSidebar.vue})}: Displays the complete operational inventory of Harmonia's nine core subsystems: \texttt{Pylai}, \texttt{Petasos}, \texttt{Energeia} (with expandable child nodes \texttt{Ponos} and \texttt{Praxis}), \texttt{Mneme}, \texttt{Mnemosyne}, \texttt{Calliope}, \texttt{Themis}, \texttt{Agora}, and \texttt{Iris}, each equipped with accessible status indicators (\texttt{Healthy}, \texttt{Degraded}, \texttt{Unavailable}, \texttt{Unknown}).
-        \item \textbf{Subsystem Header (\texttt{SubsystemHeader.vue})}: Shows selected subsystem name, functional description, overall state, runtime instance count, application version, and last telemetry update timestamp.
-        \item \textbf{Instances Table \& Detail Drawer (\texttt{InstanceTable.vue}, \texttt{InstanceDetailDrawer.vue})}: Domain-neutral runtime instance table detailing instance ID, role (Primary, Standby, Worker), state, readiness, restart count, uptime, CPU utilization percentage, and memory allocation in megabytes. Selecting an instance opens a slide-out drawer presenting Kubernetes Pod name, namespace, node, IP address, container image, container version, probe status, and recent operational errors.
-        \item \textbf{Health \& Dependencies Panel (\texttt{HealthDependenciesPanel.vue})}: Reports service operational health, availability percentage, failed operations count, restart count, P95 round-trip latency, dependency health summary ratio (e.g. \texttt{4 / 4 Healthy}), and an interactive table detailing downstream dependencies with individual round-trip ping latencies.
-        \item \textbf{Statistics Panel (\texttt{StatisticsPanel.vue})}: Features time window selectors (\texttt{15m}, \texttt{1h}, \texttt{6h}, \texttt{24h}), key metric summary cards, and reactive, dark-theme native SVG sparkline and time-series trend micro-charts (\texttt{SvgTimeSeriesChart.vue}).
+        \item \textbf{Architectural Tree Navigator (\texttt{SubsystemTreeNavigator.vue} / \texttt{IrisHierarchy})}: Organizes Harmonia into the six authoritative architectural areas: \textit{Integration \& Transport} (Pylai, Petasos), \textit{Execution \& Processing} (Energeia: Ponos, Ergon, Praxis), \textit{Information \& State} (Calliope, Mneme, Mnemosyne), \textit{Security \& Policy} (Themis), \textit{Collaboration} (Agora), and \textit{Presentation} (Iris). Displays accessible status badges and mandatory English subtitles alongside Greek mythological names.
+        \item \textbf{Subsystem Header (\texttt{IrisSubsystemIdentity.vue})}: Displays Greek name, English architectural description, version, status badge, and action buttons.
+        \item \textbf{Master-Detail Tabbed Inspection}: Features three tabs: \textit{Runtime Instances} (using \texttt{IrisDataTable} with compact row density and slide-out Pod detail drawer), \textit{Operational Health \& Dependencies} (reporting P95 latency and dependency round-trip latencies), and \textit{Telemetry Statistics} (reactive SVG micro-charts styled with Iris light theme tokens).
+        \item \textbf{Middleware Subordination}: Subordinates runtime infrastructure under consuming Harmonia capabilities (ActiveMQ Artemis under Petasos, Infinispan under Mneme, PostgreSQL under Mnemosyne, Synapse under Agora).
     \end{itemize}
 
-    \item \textbf{QUEUES Perspective (\texttt{/queues})}:
-    Answers \textit{"Is work moving?"}
-    \begin{itemize}
-        \item \textbf{Summary Metrics}: Displays ActiveMQ Artemis broker cluster topology, total queue count, messages in flight, active consumers, and aggregate Dead-Letter Queue (DLQ) depth.
-        \item \textbf{Queues Table (\texttt{QueueTable.vue})}: Real-time telemetry table detailing Queue and Address names, operational status, message depth, consumer and producer counts, enqueue and dequeue throughput rates (messages/sec), oldest message age, redelivery counts, DLQ depth, and message expiry count. Supports search and filtering by queue name, capability binding, and health status.
-        \item \textbf{Queue Detail Drawer (\texttt{QueueDetailDrawer.vue})}: Slide-out drawer displaying historical message depth sparklines, throughput rates, and consumer thread metadata with zero exposure of message payloads or clinical content.
-    \end{itemize}
+    \item \textbf{INTERFACES Perspective (\texttt{/interfaces})}:
+    Answers \textit{"Are protocol gateways listening and communicating?"}
+    Compact operational table of Pylai inbound and outbound gateways (\texttt{pylai-mllp-in}, \texttt{pylai-mllp-out-his}, \texttt{pylai-mllp-out-lis}, \texttt{pylai-fhir-registry}) displaying direction, protocol, port, live status, and safety policy compliance (Invariant 4 Dual-Write AA ACK safety and Invariant 5 Destination Fan-Out). Where real-time throughput metrics are pending live Camel hooks, honest placeholders are rendered per \texttt{IRIS-API-GAP-001}.
 
-    \item \textbf{WORKFLOWS Perspective (\texttt{/workflows})}:
-    Answers \textit{"What work is Harmonia currently performing?"}
-    \begin{itemize}
-        \item \textbf{Summary Cards}: High-level indicators of active Praxis executions, active Pragma instances, queued work, running work, completed work, failed work, retrying work, processing rate, and P95 execution duration.
-        \item \textbf{Praxis Workflow Table (\texttt{WorkflowTable.vue})}: Catalog of registered Praxis workflow sequence definitions showing active executions, queued, completed, and failed counts, and P95 latency.
-        \item \textbf{Pragma Detail Drawer (\texttt{PragmaDetailDrawer.vue})}: Diagnostic drill-down revealing Pragma execution ID, Praxis ID, lifecycle status (\texttt{RUNNING}, \texttt{COMPLETED}, \texttt{FAILED}, \texttt{RETRYING}), started timestamp, duration, current executing Ergon activity, completed Erga count, retry count, Correlation ID, failure reason code, and Ergon checkpoint execution timeline.
-    \end{itemize}
+    \item \textbf{WORK Perspective (\texttt{/work}, formerly \texttt{/workflows})}:
+    Answers \textit{"What tasks and workflows are currently executing?"}
+    High-level indicators of active Praxis executions, Ponos task worker rates, queued/running/completed/failed work, and diagnostic drill-down into concrete Pragma execution envelopes and Ergon checkpoint timelines.
 
-    \item \textbf{EVENTS Perspective (\texttt{/events})}:
-    Answers \textit{"What happened to a particular interaction?"}
-    \begin{itemize}
-        \item \textbf{Diagnostic Search \& Filter (\texttt{EventSearchFilter.vue})}: Multi-attribute search supporting Correlation ID, Causation ID, Message ID, Pragma ID, Subsystem, Event Type, Status (\texttt{SUCCESS}, \texttt{WARNING}, \texttt{FAILURE}), and time window ranges.
-        \item \textbf{Operational Flowchart Timeline (\texttt{EventTimeline.vue})}: Vertical connected operational flowchart visualizing message progression across platform boundaries (e.g. Pylai MLLP In $\rightarrow$ Petasos Inbound Queue $\rightarrow$ Ponos Ingestion $\rightarrow$ Ergon Validation $\rightarrow$ Mnemosyne FHIR Commit), showing hop sequence numbers, durations, timestamps, and subsystem color-coded badges. Operators can toggle between flowchart and tabular views.
-        \item \textbf{Event Detail Drawer (\texttt{EventDetailDrawer.vue})}: Slide-out drawer presenting technical operational metadata, identifier copy utilities, and error diagnostics. Payloads and PHI are strictly omitted.
-    \end{itemize}
+    \item \textbf{MESSAGES Perspective (\texttt{/messages}, formerly \texttt{/queues})}:
+    Answers \textit{"How are messaging transport and queues performing?"}
+    Petasos-centric messaging view subordinating Apache ActiveMQ Artemis cluster node health, queue depth, consumers, producers, enqueue/dequeue throughput rates, and Dead-Letter Queue (DLQ) accumulation surveillance.
 
-    \item \textbf{ALERTS Perspective (\texttt{/alerts})}:
+    \item \textbf{HEALTH \& ALERTS Perspective (\texttt{/health}, \texttt{/alerts})}:
     Answers \textit{"What currently requires operator attention?"}
-    \begin{itemize}
-        \item \textbf{Severity Tabs \& Filters (\texttt{AlertSeverityTabs.vue})}: Multi-dimensional filtering by severity (\texttt{CRITICAL}, \texttt{WARNING}, \texttt{INFORMATION}), lifecycle status (\texttt{ACTIVE}, \texttt{ACKNOWLEDGED}, \texttt{RESOLVED}), and subsystem.
-        \item \textbf{Actionable Alerts Table (\texttt{AlertTable.vue})}: Tabular view showing Alert ID, severity badge, subsystem, component, condition description, first/last observed timestamps, duration, related infrastructure resource, and concrete operator remediation guidance.
-        \item \textbf{Operator Acknowledge Action}: Allows on-call operators to acknowledge active alerts directly from the UI, updating backend status via \texttt{POST /api/operations/alerts/\{id\}/acknowledge}.
-    \end{itemize}
+    Cross-subsystem operational health matrix, dependency latencies, actionable operational alerts classified by severity (\texttt{CRITICAL}, \texttt{WARNING}, \texttt{INFORMATION}) and lifecycle status (\texttt{ACTIVE}, \texttt{ACKNOWLEDGED}, \texttt{RESOLVED}), with operator remediation guidance and one-click acknowledgment actions.
+
+    \item \textbf{EVENTS Diagnostic Flow (\texttt{/events})}:
+    Answers \textit{"What happened to a particular interaction?"}
+    Cross-subsystem diagnostic sequence tracing with dual Flowchart and Table views, correlation filtering, and zero-PHI technical metadata inspection.
 \end{enumerate}
+
+\subsection{Telemetry Gaps Register (\texttt{IRIS-API-GAP})}
+Where backend JAX-RS endpoints on Port 8090 do not yet supply full operational telemetry, limitations are formalized in the API Gap Register:
+\begin{itemize}
+    \item \textbf{\texttt{IRIS-API-GAP-001}}: Live Interface Throughput and Error Metrics (requires live Camel MBean hooks in \texttt{PylaiHealthProvider}).
+    \item \textbf{\texttt{IRIS-API-GAP-002}}: Granular Synapse Matrix Collaboration Metrics (Matrix room counts and AS transaction rates from Agora).
+    \item \textbf{\texttt{IRIS-API-GAP-003}}: Granular Interface Restart History and Wire Diagnostics.
+    \item \textbf{\texttt{IRIS-API-GAP-004}}: Granular Container CPU/Memory Metrics Outside Kubernetes.
+    \item \textbf{\texttt{IRIS-API-GAP-005}}: Durable Alert Acknowledgement Persistence.
+\end{itemize}
 
 \subsection{Operations Backend REST API Catalog (Port 8090)}
 

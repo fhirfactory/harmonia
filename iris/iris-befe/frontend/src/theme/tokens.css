@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2026 Mark Hunter
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+:root {
+  /* Surfaces & Backgrounds */
+  --iris-bg-page: #f8fafc;        /* Slate 50 - clean, glare-free light page background */
+  --iris-bg-surface: #ffffff;     /* Pure white for panels, cards, and data surfaces */
+  --iris-bg-subtle: #f1f5f9;      /* Slate 100 - navigation backgrounds, table headers */
+  --iris-bg-hover: #e2e8f0;       /* Slate 200 - subtle interactive hover state */
+  --iris-bg-selected: #e0f2fe;    /* Sky 100 - active selection surface */
+  --iris-bg-selected-hover: #bae6fd; /* Sky 200 - active selection hover state */
+
+  /* Borders & Dividers */
+  --iris-border-default: #e2e8f0; /* Slate 200 - clean, restrained dividers */
+  --iris-border-subtle: #cbd5e1;  /* Slate 300 - panel outlines */
+  --iris-border-strong: #94a3b8;  /* Slate 400 - prominent divider borders */
+  --iris-border-focus: #0284c7;   /* Sky 600 - accessible high-contrast focus ring */
+
+  /* Typography & Text Contrast */
+  --iris-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --iris-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --iris-text-primary: #0f172a;   /* Slate 900 - dark, high-contrast readable text (13:1) */
+  --iris-text-secondary: #475569; /* Slate 600 - readable metadata and subtitles (5.5:1) */
+  --iris-text-muted: #64748b;     /* Slate 500 - auxiliary captions (4.6:1 WCAG AA) */
+  --iris-text-accent: #0284c7;    /* Sky 600 - brand/interactive accent text */
+  --iris-text-inverse: #ffffff;   /* Pure white - text on dark/accent surfaces */
+
+  /* Semantic Status Semantics */
+  --iris-status-healthy-bg: #ecfdf5;   /* Emerald 50 */
+  --iris-status-healthy-text: #065f46; /* Emerald 800 */
+  --iris-status-healthy-border: #a7f3d0;
+  --iris-status-degraded-bg: #fffbeb;  /* Amber 50 */
+  --iris-status-degraded-text: #92400e;/* Amber 800 */
+  --iris-status-degraded-border: #fde68a;
+  --iris-status-unavailable-bg: #fef2f2;/* Rose 50 */
+  --iris-status-unavailable-text: #991b1b;/* Rose 800 */
+  --iris-status-unavailable-border: #fecaca;
+  --iris-status-unknown-bg: #f8fafc;   /* Slate 50 */
+  --iris-status-unknown-text: #475569; /* Slate 600 */
+  --iris-status-unknown-border: #cbd5e1;
+
+  /* Desktop Density Sizing */
+  --iris-spacing-unit: 0.25rem;
+  --iris-header-height: 48px;
+  --iris-nav-height: 40px;
+  --iris-toolbar-height: 44px;
+  --iris-table-row-height: 38px;
+  --iris-border-radius: 4px;      /* Restrained, professional corner rounding */
+  --iris-border-radius-sm: 2px;
+  --iris-border-radius-lg: 6px;
+  --iris-shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --iris-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --iris-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--iris-bg-page);
+  color: var(--iris-text-primary);
+  font-family: var(--iris-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--iris-border-focus);
+  outline-offset: 2px;
+}

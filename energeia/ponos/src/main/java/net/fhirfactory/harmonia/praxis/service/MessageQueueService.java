@@ -70,6 +70,11 @@ public class MessageQueueService {
         if (this.objectMapper == null) {
             this.objectMapper = new ObjectMapper();
         }
+        try {
+            getAll();
+        } catch (Exception e) {
+            log.debug("Initial queue cache seed deferred: {}", e.getMessage());
+        }
     }
 
     public ObjectMapper getObjectMapper() {

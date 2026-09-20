@@ -27,6 +27,7 @@ import java.util.Properties;
  */
 public final class PetasosPropertyResolver {
 
+    public static final String PROP_BROKER_URL = "petasos.broker.url";
     public static final String PROP_BROKER_URLS = "petasos.broker.urls";
     public static final String PROP_BROKER_USER = "petasos.broker.user";
     public static final String PROP_BROKER_PASSWORD = "petasos.broker.password";
@@ -41,78 +42,132 @@ public final class PetasosPropertyResolver {
     public static final String PROP_EXPIRY_ADDRESS = "petasos.address.expiry";
     public static final String PROP_SSL_ENABLED = "petasos.ssl.enabled";
 
-    public static PetasosConfig fromProperties(Properties props) {
-        if (props == null || props.isEmpty()) {
-            return PetasosConfig.defaultLocal();
-        }
+    public static final String ENV_BROKER_URL = "PETASOS_BROKER_URL";
+    public static final String ENV_BROKER_URLS = "PETASOS_BROKER_URLS";
+    public static final String ENV_ARTEMIS_URL = "ARTEMIS_BROKER_URL";
+    public static final String ENV_BROKER_USER = "PETASOS_BROKER_USER";
+    public static final String ENV_ARTEMIS_USER = "ARTEMIS_USER";
+    public static final String ENV_BROKER_PASSWORD = "PETASOS_BROKER_PASSWORD";
+    public static final String ENV_ARTEMIS_PASSWORD = "ARTEMIS_PASSWORD";
+    public static final String ENV_HA_ENABLED = "PETASOS_HA_ENABLED";
 
+    private PetasosPropertyResolver() {
+    }
+
+    public static PetasosConfig fromEnvironment() {
+        return PetasosConfig.fromEnvironment();
+    }
+
+    public static PetasosConfig resolve() {
+        return fromProperties(System.getProperties());
+    }
+
+    public static PetasosConfig fromProperties(Properties props) {
         PetasosConfig.Builder builder = PetasosConfig.builder();
 
-        String urls = props.getProperty(PROP_BROKER_URLS);
+        String urls = getPropertyOrEnv(props, PROP_BROKER_URL, null);
+        if (urls == null || urls.isBlank()) {
+            urls = getPropertyOrEnv(props, PROP_BROKER_URLS, null);
+        }
+        if (urls == null || urls.isBlank()) {
+            urls = System.getenv(ENV_BROKER_URL);
+        }
+        if (urls == null || urls.isBlank()) {
+            urls = System.getenv(ENV_BROKER_URLS);
+        }
+        if (urls == null || urls.isBlank()) {
+            urls = System.getenv(ENV_ARTEMIS_URL);
+        }
         if (urls != null && !urls.isBlank()) {
             builder.brokerUrls(Arrays.asList(urls.split(",")));
         }
 
-        String user = props.getProperty(PROP_BROKER_USER);
+        String user = getPropertyOrEnv(props, PROP_BROKER_USER, ENV_BROKER_USER);
+        if (user == null || user.isBlank()) {
+            user = System.getenv(ENV_ARTEMIS_USER);
+        }
         if (user != null && !user.isBlank()) {
-            builder.username(user);
+            builder.username(user.trim());
         }
 
-        String pass = props.getProperty(PROP_BROKER_PASSWORD);
+        String pass = getPropertyOrEnv(props, PROP_BROKER_PASSWORD, ENV_BROKER_PASSWORD);
+        if (pass == null || pass.isBlank()) {
+            pass = System.getenv(ENV_ARTEMIS_PASSWORD);
+        }
         if (pass != null && !pass.isBlank()) {
-            builder.password(pass);
+            builder.password(pass.trim());
         }
 
-        String ha = props.getProperty(PROP_HA_ENABLED);
+        String ha = getPropertyOrEnv(props, PROP_HA_ENABLED, ENV_HA_ENABLED);
         if (ha != null && !ha.isBlank()) {
             builder.haEnabled(Boolean.parseBoolean(ha.trim()));
         }
 
-        String reconnect = props.getProperty(PROP_RECONNECT_ATTEMPTS);
+        String reconnect = getPropertyOrEnv(props, PROP_RECONNECT_ATTEMPTS, null);
         if (reconnect != null && !reconnect.isBlank()) {
             builder.reconnectAttempts(Integer.parseInt(reconnect.trim()));
         }
 
-        String retry = props.getProperty(PROP_RETRY_INTERVAL);
+        String retry = getPropertyOrEnv(props, PROP_RETRY_INTERVAL, null);
         if (retry != null && !retry.isBlank()) {
             builder.retryInterval(Long.parseLong(retry.trim()));
         }
 
-        String maxRetry = props.getProperty(PROP_MAX_RETRY_INTERVAL);
+        String maxRetry = getPropertyOrEnv(props, PROP_MAX_RETRY_INTERVAL, null);
         if (maxRetry != null && !maxRetry.isBlank()) {
             builder.maxRetryInterval(Long.parseLong(maxRetry.trim()));
         }
 
-        String ttl = props.getProperty(PROP_CONNECTION_TTL);
+        String ttl = getPropertyOrEnv(props, PROP_CONNECTION_TTL, null);
         if (ttl != null && !ttl.isBlank()) {
             builder.connectionTtl(Long.parseLong(ttl.trim()));
         }
 
-        String timeout = props.getProperty(PROP_CALL_TIMEOUT);
+        String timeout = getPropertyOrEnv(props, PROP_CALL_TIMEOUT, null);
         if (timeout != null && !timeout.isBlank()) {
             builder.callTimeout(Long.parseLong(timeout.trim()));
         }
 
-        String dedup = props.getProperty(PROP_DUPLICATE_DETECTION);
+        String dedup = getPropertyOrEnv(props, PROP_DUPLICATE_DETECTION, null);
         if (dedup != null && !dedup.isBlank()) {
             builder.duplicateDetectionEnabled(Boolean.parseBoolean(dedup.trim()));
         }
 
-        String dlq = props.getProperty(PROP_DLQ_ADDRESS);
+        String dlq = getPropertyOrEnv(props, PROP_DLQ_ADDRESS, null);
         if (dlq != null && !dlq.isBlank()) {
             builder.deadLetterAddress(dlq.trim());
         }
 
-        String expiry = props.getProperty(PROP_EXPIRY_ADDRESS);
+        String expiry = getPropertyOrEnv(props, PROP_EXPIRY_ADDRESS, null);
         if (expiry != null && !expiry.isBlank()) {
             builder.expiryAddress(expiry.trim());
         }
 
-        String ssl = props.getProperty(PROP_SSL_ENABLED);
+        String ssl = getPropertyOrEnv(props, PROP_SSL_ENABLED, null);
         if (ssl != null && !ssl.isBlank()) {
             builder.sslEnabled(Boolean.parseBoolean(ssl.trim()));
         }
 
         return builder.build();
+    }
+
+    private static String getPropertyOrEnv(Properties props, String propKey, String envKey) {
+        if (props != null) {
+            String val = props.getProperty(propKey);
+            if (val != null && !val.isBlank()) {
+                return val.trim();
+            }
+        }
+        String sysVal = System.getProperty(propKey);
+        if (sysVal != null && !sysVal.isBlank()) {
+            return sysVal.trim();
+        }
+        if (envKey != null) {
+            String envVal = System.getenv(envKey);
+            if (envVal != null && !envVal.isBlank()) {
+                return envVal.trim();
+            }
+        }
+        return null;
     }
 }

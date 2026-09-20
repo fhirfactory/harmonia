@@ -299,6 +299,15 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- Apache ActiveMQ Artemis BOM (Convergence with Petasos strategy) -->
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>artemis-bom</artifactId>
+                <version>${artemis.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- Spring Boot Dependencies -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>

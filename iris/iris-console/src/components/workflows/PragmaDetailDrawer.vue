@@ -16,9 +16,9 @@
 -->
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, computed } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import type { PragmaSummary } from '../../models/operations';
-import StatusBadge from '../common/StatusBadge.vue';
+import { IrisStatus } from '@harmonia/iris-befe';
 import { 
   X, 
   GitMerge, 
@@ -28,16 +28,22 @@ import {
   Activity, 
   CheckCircle2, 
   AlertCircle, 
-  RefreshCw,
   Copy,
   Check
 } from 'lucide-vue-next';
-import { ref } from 'vue';
 
-const props = defineProps<{
-  pragma: PragmaSummary | null;
-  isOpen: boolean;
-}>();
+const props = withDefaults(
+  defineProps<{
+    pragma: PragmaSummary | null;
+    isOpen: boolean;
+    teleport?: boolean;
+  }>(),
+  {
+    pragma: null,
+    isOpen: false,
+    teleport: false
+  }
+);
 
 const emit = defineEmits<{
   (e: 'close'): void;
@@ -87,213 +93,214 @@ async function copyText(text: string | undefined, field: string) {
 </script>
 
 <template>
-  <div v-if="isOpen && pragma" class="fixed inset-0 z-50 overflow-hidden" role="dialog" aria-modal="true" :aria-label="`Pragma Details: ${pragma.pragmaId}`">
-    <!-- Backdrop -->
-    <div 
-      class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity" 
-      aria-hidden="true" 
-      @click="emit('close')"
-    ></div>
+  <teleport to="body" :disabled="!teleport">
+    <div v-if="isOpen && pragma" class="fixed inset-0 z-50 overflow-hidden" role="dialog" aria-modal="true" :aria-label="`Pragma Details: ${pragma.pragmaId}`">
+      <!-- Backdrop -->
+      <div 
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" 
+        aria-hidden="true" 
+        @click="emit('close')"
+      ></div>
 
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-      <div class="w-screen max-w-2xl bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col">
+      <aside class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[500px] lg:w-[600px] bg-white border-l border-slate-200 z-50 flex flex-col shadow-2xl transition-transform transform duration-300 ease-in-out font-sans text-slate-800">
         <!-- Header -->
-        <div class="p-6 border-b border-slate-800 bg-slate-950/60 flex items-start justify-between">
-          <div class="space-y-1 pr-4">
-            <div class="flex items-center gap-2">
-              <GitMerge :size="20" class="text-sky-400" />
-              <h2 class="text-lg font-bold text-white font-mono break-all">{{ pragma.pragmaId }}</h2>
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="p-2 rounded-md bg-sky-50 border border-sky-100 text-sky-700 shrink-0">
+              <GitMerge :size="20" />
             </div>
-            <div class="flex flex-wrap items-center gap-2 pt-1">
-              <StatusBadge :status="pragma.status || 'UNKNOWN'" size="sm" />
-              <span class="px-2 py-0.5 rounded text-xs font-mono bg-sky-500/10 text-sky-300 border border-sky-500/20">
-                {{ pragma.praxisId || 'Praxis Workflow' }}
-              </span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">
-                Pragma Envelope
-              </span>
+            <div class="min-w-0 pr-2">
+              <h2 class="text-base font-bold text-slate-900 tracking-tight font-mono break-all leading-tight">
+                {{ pragma.pragmaId }}
+              </h2>
+              <div class="flex items-center gap-2 mt-0.5">
+                <span class="text-xs text-slate-500 font-mono">
+                  {{ pragma.praxisId || 'Praxis Workflow' }}
+                </span>
+                <span class="text-slate-300">&bull;</span>
+                <span class="text-xs text-sky-700 font-sans font-medium">Pragma Instance</span>
+              </div>
             </div>
           </div>
+
           <button 
-            type="button" 
-            class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            type="button"
+            class="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 rounded-md transition cursor-pointer shrink-0"
             aria-label="Close pragma details drawer"
+            title="Close drawer (ESC)"
             @click="emit('close')"
           >
-            <X :size="20" />
+            <X :size="18" />
           </button>
         </div>
 
-        <!-- Content -->
+        <!-- Body -->
         <div class="flex-1 overflow-y-auto p-6 space-y-6">
-          <!-- Zero PHI Banner -->
-          <div class="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3">
-            <ShieldCheck :size="22" class="text-emerald-400 shrink-0" />
-            <div class="text-xs text-slate-300">
-              <span class="font-bold text-emerald-400">Zero-PHI Safe Telemetry:</span>
-              Clinical FHIR/HL7 content is omitted per Harmonia Invariant 7. Only execution state, timing, and correlation IDs are displayed.
+          <!-- Status & Execution Info -->
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between shadow-xs">
+            <div>
+              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Execution Status</span>
+              <IrisStatus :status="pragma.status || 'UNKNOWN'" size="md" :show-pulse="true" label-format="upper" />
+            </div>
+
+            <div class="text-right">
+              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Execution Time</span>
+              <div class="flex items-center gap-1.5 text-xs font-mono font-semibold text-slate-800 justify-end">
+                <Clock :size="13" class="text-slate-400" />
+                <span>{{ formatDuration(pragma.durationMs) }}</span>
+              </div>
+              <span class="text-[10px] text-slate-500 font-mono">Started: {{ formatTime(pragma.startedAt) }}</span>
             </div>
           </div>
 
-          <!-- Safe Execution Metadata Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800">
-              <span class="text-[11px] font-semibold text-slate-400 block uppercase">Started At</span>
-              <div class="text-sm font-bold font-mono mt-1 text-slate-200">
-                {{ formatTime(pragma.startedAt) }}
-              </div>
-              <span class="text-[10px] text-slate-500">Initiation timestamp</span>
-            </div>
+          <!-- Distributed Tracing Identifiers (Zero-PHI Safe) -->
+          <div class="space-y-3">
+            <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <Activity :size="14" class="text-sky-600" />
+              <span>Distributed Correlation Identifiers</span>
+            </h3>
 
-            <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800">
-              <span class="text-[11px] font-semibold text-slate-400 block uppercase">Execution Duration</span>
-              <div class="text-sm font-bold font-mono mt-1 text-sky-400">
-                {{ formatDuration(pragma.durationMs) }}
-              </div>
-              <span class="text-[10px] text-slate-500">Total elapsed time</span>
-            </div>
-
-            <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800">
-              <span class="text-[11px] font-semibold text-slate-400 block uppercase">Current Ergon</span>
-              <div class="text-sm font-bold font-mono mt-1 text-slate-200 truncate" :title="pragma.currentErgon || 'None'">
-                {{ pragma.currentErgon || 'None' }}
-              </div>
-              <span class="text-[10px] text-slate-500">Active activity unit</span>
-            </div>
-
-            <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800">
-              <span class="text-[11px] font-semibold text-slate-400 block uppercase">Completed Erga</span>
-              <div class="text-sm font-bold font-mono mt-1 text-emerald-400">
-                {{ pragma.completedErgaCount }}
-              </div>
-              <span class="text-[10px] text-slate-500">Finished checkpoints</span>
-            </div>
-
-            <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800">
-              <span class="text-[11px] font-semibold text-slate-400 block uppercase">Retries</span>
-              <div 
-                class="text-sm font-bold font-mono mt-1"
-                :class="pragma.retryCount > 0 ? 'text-amber-400 font-bold' : 'text-slate-400'"
-              >
-                {{ pragma.retryCount }}
-              </div>
-              <span class="text-[10px] text-slate-500">Retry attempts</span>
-            </div>
-
-            <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800">
-              <span class="text-[11px] font-semibold text-slate-400 block uppercase">Reason Code</span>
-              <div 
-                class="text-sm font-bold font-mono mt-1 truncate"
-                :class="pragma.failureReasonCode ? 'text-rose-400' : 'text-slate-500'"
-                :title="pragma.failureReasonCode || 'N/A'"
-              >
-                {{ pragma.failureReasonCode || 'N/A' }}
-              </div>
-              <span class="text-[10px] text-slate-500">Error diagnostic code</span>
-            </div>
-          </div>
-
-          <!-- Trace Identifiers -->
-          <div class="space-y-2">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Trace &amp; Correlation Identifiers
-            </h4>
-
-            <div class="rounded-lg border border-slate-800 bg-slate-950/40 divide-y divide-slate-800/60 text-xs font-mono">
-              <div class="p-3 flex items-center justify-between gap-2">
-                <span class="text-slate-400 font-sans">Correlation ID:</span>
-                <div class="flex items-center gap-2 truncate">
-                  <span class="text-sky-400 truncate">{{ pragma.correlationId || 'N/A' }}</span>
+            <div class="bg-white border border-slate-200 rounded-lg p-4 space-y-2.5 text-xs font-mono shadow-xs">
+              <!-- Correlation ID -->
+              <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Correlation ID:</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-slate-900 font-semibold select-all">{{ pragma.correlationId || 'N/A' }}</span>
                   <button 
                     v-if="pragma.correlationId"
-                    type="button" 
-                    class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                    title="Copy Correlation ID"
+                    type="button"
+                    class="p-1 rounded hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition cursor-pointer"
+                    title="Copy correlation ID"
                     @click="copyText(pragma.correlationId, 'corr')"
                   >
-                    <Check v-if="copiedField === 'corr'" :size="13" class="text-emerald-400" />
-                    <Copy v-else :size="13" />
+                    <Check v-if="copiedField === 'corr'" :size="12" class="text-emerald-600" />
+                    <Copy v-else :size="12" />
                   </button>
                 </div>
               </div>
 
-              <div class="p-3 flex items-center justify-between gap-2">
-                <span class="text-slate-400 font-sans">Causation ID:</span>
-                <div class="flex items-center gap-2 truncate">
-                  <span class="text-slate-300 truncate">{{ pragma.causationId || 'N/A' }}</span>
+              <!-- Causation ID -->
+              <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Causation ID:</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-slate-900 font-semibold select-all">{{ pragma.causationId || 'N/A' }}</span>
                   <button 
                     v-if="pragma.causationId"
-                    type="button" 
-                    class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                    title="Copy Causation ID"
-                    @click="copyText(pragma.causationId, 'cause')"
+                    type="button"
+                    class="p-1 rounded hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition cursor-pointer"
+                    title="Copy causation ID"
+                    @click="copyText(pragma.causationId, 'caus')"
                   >
-                    <Check v-if="copiedField === 'cause'" :size="13" class="text-emerald-400" />
-                    <Copy v-else :size="13" />
+                    <Check v-if="copiedField === 'caus'" :size="12" class="text-emerald-600" />
+                    <Copy v-else :size="12" />
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Ergon Execution Checkpoints -->
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <h4 class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
-                <Layers :size="14" class="text-sky-400" />
-                Ergon Checkpoint Progression
-              </h4>
-              <span class="text-[11px] text-slate-400 font-mono">
-                {{ pragma.checkpoints?.length || 0 }} Checkpoints
-              </span>
-            </div>
-
-            <div v-if="!pragma.checkpoints || pragma.checkpoints.length === 0" class="p-6 text-center text-xs text-slate-500 bg-slate-950/30 rounded-lg border border-slate-800">
-              No Ergon checkpoints recorded for this execution instance.
-            </div>
-
-            <div v-else class="space-y-2">
-              <div 
-                v-for="(cp, idx) in pragma.checkpoints" 
-                :key="cp.checkpointId || idx"
-                class="p-3 rounded-lg border border-slate-800 bg-slate-950/40 space-y-1.5"
-              >
-                <div class="flex items-center justify-between gap-2">
-                  <div class="flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-mono text-slate-300 font-bold shrink-0">
-                      {{ idx + 1 }}
-                    </span>
-                    <span class="font-bold text-xs text-slate-200">{{ cp.ergonName || cp.ergonId }}</span>
-                  </div>
-                  <StatusBadge :status="cp.status || 'UNKNOWN'" size="sm" />
-                </div>
-
-                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pl-7">
-                  <span class="text-slate-500">{{ cp.ergonId }}</span>
-                  <span>{{ formatDuration(cp.durationMs) }}</span>
-                </div>
-
-                <div v-if="cp.detail || cp.errorMessage" class="text-xs text-slate-400 pl-7 pt-1 font-sans">
-                  <span :class="cp.errorMessage ? 'text-rose-400' : 'text-slate-400'">
-                    {{ cp.errorMessage || cp.detail }}
-                  </span>
-                </div>
+              <!-- Current Ergon Activity -->
+              <div class="flex items-center justify-between py-1">
+                <span class="text-slate-500 font-sans">Active Ergon Activity:</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-sky-50 text-sky-800 border border-sky-200">
+                  {{ pragma.currentErgon || 'None' }}
+                </span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Footer -->
-        <div class="p-4 border-t border-slate-800 bg-slate-950/70 flex justify-end">
-          <button 
-            type="button" 
-            class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium transition-colors"
-            @click="emit('close')"
-          >
-            Close Details
-          </button>
+          <!-- Checkpoints Timeline -->
+          <div class="space-y-3">
+            <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <Layers :size="14" class="text-emerald-600" />
+                <span>Ergon Checkpoint Progression</span>
+              </span>
+              <span class="text-[10px] text-slate-500 font-normal">
+                {{ pragma.completedErgaCount }} of {{ (pragma.checkpoints || []).length }} Erga completed
+              </span>
+            </h3>
+
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg shadow-xs">
+              <div v-if="pragma.checkpoints && pragma.checkpoints.length > 0" class="space-y-4">
+                <div 
+                  v-for="(cp, idx) in pragma.checkpoints" 
+                  :key="cp.checkpointId || idx"
+                  class="flex items-start gap-3 relative"
+                >
+                  <!-- Line connector -->
+                  <div 
+                    v-if="idx < pragma.checkpoints.length - 1" 
+                    class="absolute left-3 top-6 bottom-0 w-0.5 -ml-px"
+                    :class="cp.status === 'COMPLETED' ? 'bg-emerald-300' : 'bg-slate-200'"
+                  ></div>
+
+                  <!-- Icon Status -->
+                  <div class="shrink-0 mt-0.5">
+                    <div 
+                      v-if="cp.status === 'COMPLETED'" 
+                      class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200"
+                    >
+                      <CheckCircle2 :size="14" />
+                    </div>
+                    <div 
+                      v-else-if="cp.status === 'RUNNING'" 
+                      class="w-6 h-6 rounded-full bg-sky-50 text-sky-700 flex items-center justify-center border border-sky-200 animate-pulse"
+                    >
+                      <Activity :size="14" />
+                    </div>
+                    <div 
+                      v-else-if="cp.status === 'FAILED'" 
+                      class="w-6 h-6 rounded-full bg-rose-50 text-rose-700 flex items-center justify-center border border-rose-200"
+                    >
+                      <AlertCircle :size="14" />
+                    </div>
+                    <div 
+                      v-else 
+                      class="w-6 h-6 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center border border-slate-200"
+                    >
+                      <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+                    </div>
+                  </div>
+
+                  <!-- Checkpoint Details -->
+                  <div class="flex-1 min-w-0 pb-3">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-bold text-slate-900 font-mono truncate">
+                        {{ cp.ergonName }}
+                      </span>
+                      <span class="text-[10px] font-mono text-slate-500">
+                        {{ formatDuration(cp.durationMs) }}
+                      </span>
+                    </div>
+
+                    <p v-if="cp.detail" class="text-[11px] text-slate-600 font-sans mt-0.5">
+                      {{ cp.detail }}
+                    </p>
+
+                    <div class="flex items-center gap-3 mt-1 text-[10px] text-slate-400 font-mono">
+                      <span v-if="cp.startedAt">Time: {{ formatTime(cp.startedAt) }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div v-else class="py-6 text-center text-xs text-slate-500 italic">
+                No checkpoints recorded yet for this Pragma envelope.
+              </div>
+            </div>
+          </div>
+
+          <!-- Zero-PHI Boundary Notice -->
+          <div class="p-3 rounded-lg bg-sky-50 border border-sky-200 text-xs text-sky-900 flex items-start gap-2.5">
+            <ShieldCheck :size="16" class="text-sky-700 shrink-0 mt-0.5" />
+            <div class="space-y-0.5">
+              <p class="font-bold">Zero-PHI Safe Telemetry</p>
+              <p class="text-[11px] text-sky-800/80 leading-relaxed font-sans">
+                Pragma monitoring inspects pipeline stage checkpoints and envelope correlation tokens. Patient identifiers, demographics, and clinical observation records are excluded from telemetry envelopes.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </aside>
     </div>
-  </div>
+  </teleport>
 </template>

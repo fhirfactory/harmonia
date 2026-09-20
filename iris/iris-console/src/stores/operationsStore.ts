@@ -23,6 +23,7 @@ import type {
   OperationalHealth, TimeSeries, OperationalAlert
 } from '../models/operations';
 import { operationsApi } from '../api/operationsClient';
+import { findAuthoritativeSubsystem } from '../models/subsystemHierarchy';
 
 export const useOperationsStore = defineStore('operations', () => {
   // --------------------------------------------------------------------------
@@ -89,7 +90,24 @@ export const useOperationsStore = defineStore('operations', () => {
         }
       }
     }
-    return subsystems.value.find(s => s.id === id) || null;
+    const directMatch = subsystems.value.find(s => s.id === id);
+    if (directMatch) return directMatch;
+
+    // Honest fallback synthesis for authoritative components when backend telemetry bean is absent
+    const auth = findAuthoritativeSubsystem(id);
+    if (auth) {
+      return {
+        id: auth.id,
+        name: auth.name,
+        description: auth.description,
+        state: 'UNKNOWN',
+        instanceCount: 0,
+        version: '1.0.0',
+        lastUpdated: Date.now()
+      };
+    }
+
+    return null;
   });
 
   const criticalAlertsCount = computed(() => {
@@ -112,27 +130,57 @@ export const useOperationsStore = defineStore('operations', () => {
   function getDefaultSubsystems(): OperationalSubsystem[] {
     const now = Date.now();
     return [
-      { id: 'pylai', name: 'Pylai', description: 'HL7 MLLP & FHIR Inbound/Outbound Protocol Gateways', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-      { id: 'petasos', name: 'Petasos', description: 'Resilient Messaging Abstraction & ActiveMQ Artemis Broker', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
+      { 
+        id: 'pylai', 
+        name: 'Pylai', 
+        description: 'HL7 MLLP & FHIR Inbound/Outbound Protocol Gateways', 
+        state: 'UNKNOWN', 
+        instanceCount: 0, 
+        version: '1.0.0', 
+        lastUpdated: now,
+        children: [
+          { id: 'pylai-mllp-in', name: 'MLLP Inbound Gateway', description: 'Dual-write ACK gateway on ports 2575 / 8084', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pylai-mllp-out-his', name: 'MLLP Outbound HIS', description: 'Outbound HL7 v2 gateway on port 8087', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pylai-mllp-out-lis', name: 'MLLP Outbound LIS', description: 'Outbound HL7 v2 gateway on port 8088', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pylai-fhir-registry', name: 'FHIR Provider Registry Gateway', description: 'Practitioner & Organization endpoint on port 8089', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+        ]
+      },
+      { id: 'petasos', name: 'Petasos', description: 'Resilient Messaging Abstraction & ActiveMQ Artemis Broker', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
       { 
         id: 'energeia', 
         name: 'Energeia', 
         description: 'Task Processing, Ergon Activity & Praxis Workflow Orchestration', 
-        state: 'HEALTHY', 
-        instanceCount: 2, 
+        state: 'UNKNOWN', 
+        instanceCount: 0, 
         version: '1.0.0', 
         lastUpdated: now,
         children: [
-          { id: 'ponos', name: 'Ponos', description: 'Ponos Task Processor & Activity Handler', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-          { id: 'praxis', name: 'Praxis', description: 'Praxis Workflow Engine & Pragma State Coordinator', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now }
+          { id: 'ponos', name: 'Ponos', description: 'Ponos Task Processor & Activity Handler workers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'praxis', name: 'Praxis', description: 'Praxis Workflow Engine & Pragma State Coordinator', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'ergon', name: 'Ergon', description: 'Task / Work Unit Activities & Payload Transformers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'pragma', name: 'Pragma', description: 'Task Instances & Runtime Checkpoints', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
         ]
       },
-      { id: 'mneme', name: 'Mneme', description: 'Infinispan Distributed Replicated In-Memory Cache Grid', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-      { id: 'mnemosyne', name: 'Mnemosyne', description: 'Clinical & Operational HAPI FHIR R5 Persistence', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-      { id: 'calliope', name: 'Calliope', description: 'Canonical Schemas, Transformers & Clinical Models', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-      { id: 'themis', name: 'Themis', description: 'Default-Deny Policy Evaluation & RBAC Engine', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-      { id: 'agora', name: 'Agora', description: 'Matrix/Synapse Collaboration & Healthcare AS Bridge', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now },
-      { id: 'iris', name: 'Iris', description: 'Presentation Tier & BEFE Dual-Port Gateway', state: 'HEALTHY', instanceCount: 1, version: '1.0.0', lastUpdated: now }
+      { id: 'mneme', name: 'Mneme', description: 'Infinispan Distributed Replicated In-Memory Cache Grid', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'mnemosyne', name: 'Mnemosyne', description: 'Clinical & Operational HAPI FHIR R5 Persistence', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'calliope', name: 'Calliope', description: 'Canonical Schemas, Transformers & Clinical Models', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'themis', name: 'Themis', description: 'Default-Deny Policy Evaluation & RBAC Engine', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { id: 'agora', name: 'Agora', description: 'Matrix/Synapse Collaboration & Healthcare AS Bridge', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+      { 
+        id: 'iris', 
+        name: 'Iris', 
+        description: 'Presentation Tier & BEFE Dual-Port Gateway', 
+        state: 'UNKNOWN', 
+        instanceCount: 0, 
+        version: '1.0.0', 
+        lastUpdated: now,
+        children: [
+          { id: 'iris-befe', name: 'Iris BEFE Gateway', description: 'WildFly 31 Jakarta EE gateway (:8080 Clinical, :8090 Operations)', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'iris-clinical', name: 'Iris Clinical SPA', description: 'Vue 3 Clinical FHIR R5 web application on port 3000', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'iris-monitor', name: 'Iris Monitor SPA', description: 'Vue 3 Operational telemetry console on port 3001', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+          { id: 'iris-administration', name: 'Iris Administration SPA', description: 'Vue 3 Self-service and registry workbench on port 3002', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+        ]
+      }
     ];
   }
 
@@ -143,20 +191,7 @@ export const useOperationsStore = defineStore('operations', () => {
     try {
       summary.value = await operationsApi.getSummary();
     } catch (err: any) {
-      // Graceful offline fallback summary
-      if (!summary.value) {
-        summary.value = {
-          platformStatus: 'HEALTHY',
-          environment: 'PROD / microk8s-01',
-          cluster: 'harmonia-cluster',
-          timestamp: Date.now(),
-          totalSubsystems: 9,
-          degradedSubsystems: 0,
-          criticalAlerts: 0,
-          warningAlerts: 0,
-          lastRefreshed: Date.now()
-        };
-      }
+      // Leave the last known summary untouched. An unavailable API is not a healthy platform.
     }
   };
 

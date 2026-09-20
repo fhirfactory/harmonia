@@ -22,6 +22,7 @@ import { useOperationsStore } from '../stores/operationsStore';
 import InstanceTable from '../components/subsystems/InstanceTable.vue';
 import InstanceDetailDrawer from '../components/subsystems/InstanceDetailDrawer.vue';
 import type { OperationalInstance } from '../models/operations';
+import { createIris } from '@harmonia/iris-befe';
 
 describe('InstanceTable and InstanceDetailDrawer', () => {
   let store: any;
@@ -54,7 +55,7 @@ describe('InstanceTable and InstanceDetailDrawer', () => {
   });
 
   it('renders instance row in InstanceTable with honest N/A for null CPU', () => {
-    const wrapper = mount(InstanceTable);
+    const wrapper = mount(InstanceTable, { global: { plugins: [createIris() as any] } });
     const text = wrapper.text();
 
     expect(text).toContain('petasos-broker-0');
@@ -67,7 +68,7 @@ describe('InstanceTable and InstanceDetailDrawer', () => {
   });
 
   it('triggers store.openInstanceDrawer when row is clicked', async () => {
-    const wrapper = mount(InstanceTable);
+    const wrapper = mount(InstanceTable, { global: { plugins: [createIris() as any] } });
     const row = wrapper.find('tbody tr');
     expect(row.exists()).toBe(true);
 
@@ -81,7 +82,8 @@ describe('InstanceTable and InstanceDetailDrawer', () => {
     store.isInstanceDrawerOpen = true;
 
     const wrapper = mount(InstanceDetailDrawer, {
-      attachTo: document.body
+      attachTo: document.body,
+      global: { plugins: [createIris() as any] }
     });
 
     const bodyText = document.body.textContent || '';
@@ -105,7 +107,8 @@ describe('InstanceTable and InstanceDetailDrawer', () => {
     store.isInstanceDrawerOpen = true;
 
     const wrapper = mount(InstanceDetailDrawer, {
-      attachTo: document.body
+      attachTo: document.body,
+      global: { plugins: [createIris() as any] }
     });
 
     const closeBtn = document.body.querySelector('button[aria-label="Close drawer"]') as HTMLButtonElement;

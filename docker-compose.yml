@@ -326,13 +326,46 @@ services:
 
   iris-console:
     build:
-      context: ./iris/iris-console
-      dockerfile: Dockerfile
+      context: ./iris
+      dockerfile: iris-console/Dockerfile
     container_name: hie-iris-console
     ports:
       - "3001:80"
     depends_on:
       - befe
+    networks:
+      - hie-network
+
+  # -------------------------------------------------------------
+  # Petasos Messaging Services: Standalone ActiveMQ Artemis Broker Runtime
+  # -------------------------------------------------------------
+  petasos:
+    image: apache/activemq-artemis:2.33.0
+    container_name: hie-petasos
+    # Start as root so entrypoint can chown the named petasos_data volume, then drop to artemis.
+    user: "0"
+    entrypoint: ["/bin/bash", "/docker-entrypoint.sh"]
+    environment:
+      ARTEMIS_USER: ${ARTEMIS_USER:-admin}
+      ARTEMIS_PASSWORD: ${ARTEMIS_PASSWORD:-adminPassword}
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-harmonia}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
+      # Valid artemis create flags only. etc-override/broker.xml is applied by docker-entrypoint.sh.
+      # Do not use --override-config (unsupported by artemis create).
+      EXTRA_ARGS: "--http-host 0.0.0.0 --relax-jolokia --nio"
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    volumes:
+      - ./petasos/deployment/artemis/standalone/docker-entrypoint.sh:/docker-entrypoint.sh:ro
+      - ./petasos/deployment/artemis/standalone/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
+      - petasos_data:/var/lib/artemis-instance/data
+    healthcheck:
+      test: ["CMD-SHELL", "/bin/bash -c '</dev/tcp/127.0.0.1/61616' || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
     networks:
       - hie-network
 
@@ -351,15 +384,20 @@ services:
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
       INFINISPAN_PASSWORD: admin
-      TASK_BROKER_HOST: task-processor
-      TASK_BROKER_PORT: 61616
+      PETASOS_BROKER_URL: "tcp://petasos:61616"
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
       TASK_PROCESSOR_URL: http://task-processor:8080/api/queue/event
     ports:
       - "2575:2575"
       - "8084:8080"
     depends_on:
-      - infinispan-1
-      - task-processor
+      infinispan-1:
+        condition: service_started
+      petasos:
+        condition: service_healthy
+      task-processor:
+        condition: service_started
     networks:
       - hie-network
 
@@ -377,9 +415,12 @@ services:
       MLLP_OUTBOUND_TARGET_ENDPOINT_ID: "HIS_NORTH"
       MLLP_OUTBOUND_QUEUE_PREFIX: "petasos.queue.mllp.outbound"
       MLLP_OUTBOUND_PORT: "8087"
-      TASK_PROCESSOR_BROKER_URL: "tcp://task-processor:61616"
-      TASK_PROCESSOR_BROKER_USERNAME: admin
-      TASK_PROCESSOR_BROKER_PASSWORD: admin
+      PETASOS_BROKER_URL: "tcp://petasos:61616"
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      TASK_PROCESSOR_BROKER_URL: "tcp://petasos:61616"
+      TASK_PROCESSOR_BROKER_USERNAME: ${PETASOS_BROKER_USER:-admin}
+      TASK_PROCESSOR_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
       INFINISPAN_HOST: infinispan-1
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
@@ -387,8 +428,12 @@ services:
     ports:
       - "8087:8080"
     depends_on:
-      - infinispan-1
-      - task-processor
+      infinispan-1:
+        condition: service_started
+      petasos:
+        condition: service_healthy
+      task-processor:
+        condition: service_started
     networks:
       - hie-network
 
@@ -402,9 +447,12 @@ services:
       MLLP_OUTBOUND_TARGET_ENDPOINT_ID: "LIS_MAIN"
       MLLP_OUTBOUND_QUEUE_PREFIX: "petasos.queue.mllp.outbound"
       MLLP_OUTBOUND_PORT: "8088"
-      TASK_PROCESSOR_BROKER_URL: "tcp://task-processor:61616"
-      TASK_PROCESSOR_BROKER_USERNAME: admin
-      TASK_PROCESSOR_BROKER_PASSWORD: admin
+      PETASOS_BROKER_URL: "tcp://petasos:61616"
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      TASK_PROCESSOR_BROKER_URL: "tcp://petasos:61616"
+      TASK_PROCESSOR_BROKER_USERNAME: ${PETASOS_BROKER_USER:-admin}
+      TASK_PROCESSOR_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
       INFINISPAN_HOST: infinispan-1
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
@@ -412,8 +460,12 @@ services:
     ports:
       - "8088:8080"
     depends_on:
-      - infinispan-1
-      - task-processor
+      infinispan-1:
+        condition: service_started
+      petasos:
+        condition: service_healthy
+      task-processor:
+        condition: service_started
     networks:
       - hie-network
 
@@ -430,13 +482,16 @@ services:
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
       INFINISPAN_PASSWORD: admin
-      TASK_BROKER_HOST: "0.0.0.0"
-      TASK_BROKER_PORT: 61616
+      PETASOS_BROKER_URL: "tcp://petasos:61616"
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
     ports:
       - "8083:8080"
-      - "61616:61616"
     depends_on:
-      - infinispan-1
+      infinispan-1:
+        condition: service_started
+      petasos:
+        condition: service_healthy
     networks:
       - hie-network
 
@@ -449,3 +504,4 @@ volumes:
   postgres_data_2:
   postgres_ops_data_1:
   postgres_ops_data_2:
+  petasos_data:

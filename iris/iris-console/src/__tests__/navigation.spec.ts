@@ -19,7 +19,8 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import { createRouter, createMemoryHistory } from 'vue-router';
-import NavigationTopBar from '../components/common/NavigationTopBar.vue';
+import { createIris } from '@harmonia/iris-befe';
+import App from '../App.vue';
 import { routes } from '../router';
 
 describe('Navigation and Routing', () => {
@@ -33,37 +34,43 @@ describe('Navigation and Routing', () => {
     });
   });
 
-  it('renders all five canonical operational perspectives in NavigationTopBar', async () => {
+  it('renders all canonical operational perspectives in the application shell', async () => {
     router.push('/subsystems');
     await router.isReady();
 
-    const wrapper = mount(NavigationTopBar, {
+    const wrapper = mount(App, {
       global: {
-        plugins: [router]
+        plugins: [router, createIris() as any]
       }
     });
 
     const text = wrapper.text().toUpperCase();
+    expect(text).toContain('OVERVIEW');
     expect(text).toContain('SUBSYSTEMS');
+    expect(text).toContain('INTERFACES');
+    expect(text).toContain('MESSAGES');
     expect(text).toContain('QUEUES');
+    expect(text).toContain('WORK');
     expect(text).toContain('WORKFLOWS');
     expect(text).toContain('EVENTS');
     expect(text).toContain('ALERTS');
+    expect(text).toContain('HEALTH');
   });
 
-  it('highlights the active perspective route', async () => {
+  it('highlights the active perspective route with styled active state', async () => {
     router.push('/subsystems');
     await router.isReady();
 
-    const wrapper = mount(NavigationTopBar, {
+    const wrapper = mount(App, {
       global: {
-        plugins: [router]
+        plugins: [router, createIris() as any]
       }
     });
 
     const activeLink = wrapper.find('a[href="/subsystems"]');
     expect(activeLink.exists()).toBe(true);
-    expect(activeLink.classes()).toContain('text-sky-300');
+    expect(activeLink.classes()).toContain('iris-primary-nav__link--active');
+    expect(activeLink.attributes('aria-current')).toBe('page');
   });
 
   it('redirects root / to /subsystems', async () => {
@@ -74,10 +81,29 @@ describe('Navigation and Routing', () => {
   });
 
   it('supports direct bookmarkable routes for all perspectives', async () => {
-    for (const path of ['/subsystems', '/queues', '/workflows', '/events', '/alerts']) {
+    for (const path of ['/overview', '/subsystems', '/health', '/interfaces', '/queues', '/workflows', '/events', '/alerts']) {
       await router.push(path);
       expect(router.currentRoute.value.path).toBe(path);
       expect(router.currentRoute.value.matched.length).toBeGreaterThan(0);
     }
+  });
+
+  it('renders standard IrisApplicationShell masthead and environment in App.vue', async () => {
+    router.push('/subsystems');
+    await router.isReady();
+
+    const wrapper = mount(App, {
+      global: {
+        plugins: [router, createIris() as any]
+      }
+    });
+
+    expect(wrapper.find('.iris-shell').exists()).toBe(true);
+    expect(wrapper.text()).toContain('HARMONIA');
+    expect(wrapper.text()).toContain('Operations Console');
+    expect(wrapper.text()).toContain('PROD / microk8s-01');
+    expect(wrapper.text()).toContain('Subsystems');
+    expect(wrapper.text()).toContain('Critical');
+    expect(wrapper.text()).toContain('Warn');
   });
 });

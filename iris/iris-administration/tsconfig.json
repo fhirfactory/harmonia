@@ -15,6 +15,14 @@
     "jsx": "preserve",
     "types": ["vite/client"],
 
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@harmonia/iris-befe": ["../iris-befe/frontend/src"],
+      "@harmonia/iris-befe/*": ["../iris-befe/frontend/src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": false,

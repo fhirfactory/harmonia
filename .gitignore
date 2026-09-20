@@ -20,12 +20,29 @@ admin-ui/node/
 iris/admin-ui/node_modules/
 iris/admin-ui/dist/
 iris/admin-ui/node/
+iris/iris-befe/frontend/node_modules/
+iris/iris-befe/frontend/dist/
+iris/iris-befe/frontend/node/
 iris/iris-clinical/node_modules/
 iris/iris-clinical/dist/
 iris/iris-clinical/node/
 iris/iris-console/node_modules/
 iris/iris-console/dist/
 iris/iris-console/node/
+/iris/iris-administration/node_modules/
+/iris/iris-administration/dist/
+/iris/iris-administration/node/
+
+# LaTeX compilation artifacts
+docs/latex/*.aux
+docs/latex/*.fdb_latexmk
+docs/latex/*.fls
+docs/latex/*.lof
+docs/latex/*.lot
+docs/latex/*.out
+docs/latex/*.synctex.gz
+docs/latex/*.pdf
+docs/latex/*.toc
 
 # Logs and runtime artifacts
 *.log
@@ -36,6 +53,7 @@ pnpm-debug.log*
 id_file
 **/id_file
 .output.txt
+test-summary.txt
 
 # Maven build output
 target/
@@ -46,6 +64,3 @@ dependency-reduced-pom.xml
 # IDE/local files
 .idea/
 *.iml
-/iris/iris-administration/node_modules/
-/iris/iris-administration/dist/
-/iris/iris-administration/node/

@@ -70,22 +70,22 @@ function selectSeverity(sev: string) {
 </script>
 
 <template>
-  <div class="card p-4 space-y-4 border border-slate-800 bg-slate-900/90 shadow-md" aria-label="Alert Filter Controls">
+  <div class="alert-severity-tabs space-y-4 border border-[var(--iris-border-default)] bg-white rounded-[var(--iris-border-radius)] p-3 shadow-subtle font-sans" aria-label="Alert Filter Controls">
     <div class="flex flex-wrap items-center justify-between gap-4">
       <!-- Severity Filter Tabs -->
-      <div class="inline-flex rounded-lg bg-slate-950 p-1 border border-slate-800" role="tablist" aria-label="Alert Severity Filter">
+      <div class="inline-flex rounded-lg bg-slate-100 p-1 border border-slate-200" role="tablist" aria-label="Alert Severity Filter">
         <!-- ALL -->
         <button
           type="button"
           role="tab"
           :aria-selected="selectedSeverity === 'ALL'"
-          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors"
-          :class="selectedSeverity === 'ALL' ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-400 hover:text-white'"
+          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors cursor-pointer"
+          :class="selectedSeverity === 'ALL' ? 'bg-white text-slate-900 shadow-xs border border-slate-200' : 'text-slate-600 hover:text-slate-900 border border-transparent'"
           @click="selectSeverity('ALL')"
         >
-          <Bell :size="13" />
+          <Bell :size="13" class="text-slate-500" />
           <span>All Severities</span>
-          <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-900 text-slate-300 ml-0.5">
+          <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-200 text-slate-700 ml-0.5">
             {{ totalCount }}
           </span>
         </button>
@@ -95,15 +95,15 @@ function selectSeverity(sev: string) {
           type="button"
           role="tab"
           :aria-selected="selectedSeverity === 'CRITICAL'"
-          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors"
-          :class="selectedSeverity === 'CRITICAL' ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-sm' : 'text-slate-400 hover:text-rose-300'"
+          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors cursor-pointer"
+          :class="selectedSeverity === 'CRITICAL' ? 'bg-rose-50 text-rose-800 border border-rose-300 shadow-xs' : 'text-slate-600 hover:text-rose-700 border border-transparent'"
           @click="selectSeverity('CRITICAL')"
         >
-          <AlertOctagon :size="13" class="text-rose-400" />
+          <AlertOctagon :size="13" class="text-rose-600" />
           <span>Critical</span>
           <span 
             class="px-1.5 py-0.2 rounded-full text-[10px] font-mono ml-0.5"
-            :class="criticalCount > 0 ? 'bg-rose-500 text-white font-bold' : 'bg-slate-900 text-slate-400'"
+            :class="criticalCount > 0 ? 'bg-rose-600 text-white font-bold' : 'bg-slate-200 text-slate-600'"
           >
             {{ criticalCount }}
           </span>
@@ -114,15 +114,15 @@ function selectSeverity(sev: string) {
           type="button"
           role="tab"
           :aria-selected="selectedSeverity === 'WARNING'"
-          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors"
-          :class="selectedSeverity === 'WARNING' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm' : 'text-slate-400 hover:text-amber-300'"
+          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors cursor-pointer"
+          :class="selectedSeverity === 'WARNING' ? 'bg-amber-50 text-amber-800 border border-amber-300 shadow-xs' : 'text-slate-600 hover:text-amber-700 border border-transparent'"
           @click="selectSeverity('WARNING')"
         >
-          <AlertTriangle :size="13" class="text-amber-400" />
+          <AlertTriangle :size="13" class="text-amber-600" />
           <span>Warning</span>
           <span 
             class="px-1.5 py-0.2 rounded-full text-[10px] font-mono ml-0.5"
-            :class="warningCount > 0 ? 'bg-amber-500/80 text-white font-bold' : 'bg-slate-900 text-slate-400'"
+            :class="warningCount > 0 ? 'bg-amber-600 text-white font-bold' : 'bg-slate-200 text-slate-600'"
           >
             {{ warningCount }}
           </span>
@@ -133,13 +133,13 @@ function selectSeverity(sev: string) {
           type="button"
           role="tab"
           :aria-selected="selectedSeverity === 'INFORMATION'"
-          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors"
-          :class="selectedSeverity === 'INFORMATION' ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm' : 'text-slate-400 hover:text-sky-300'"
+          class="px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors cursor-pointer"
+          :class="selectedSeverity === 'INFORMATION' ? 'bg-sky-50 text-sky-800 border border-sky-300 shadow-xs' : 'text-slate-600 hover:text-sky-700 border border-transparent'"
           @click="selectSeverity('INFORMATION')"
         >
-          <Info :size="13" class="text-sky-400" />
+          <Info :size="13" class="text-sky-600" />
           <span>Info</span>
-          <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-900 text-slate-400 ml-0.5">
+          <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-200 text-slate-600 ml-0.5">
             {{ infoCount }}
           </span>
         </button>
@@ -149,11 +149,11 @@ function selectSeverity(sev: string) {
       <div class="flex items-center gap-2.5">
         <!-- Status Dropdown -->
         <div class="flex items-center gap-1.5">
-          <label for="alert-filter-status" class="text-xs text-slate-400 font-medium">Status:</label>
+          <label for="alert-filter-status" class="text-xs text-slate-600 font-medium">Status:</label>
           <select
             id="alert-filter-status"
             :value="selectedStatus"
-            class="input py-1.5 px-2.5 text-xs bg-slate-950 border-slate-700/80 text-white rounded-lg focus:border-sky-500"
+            class="input py-1.5 px-2.5 text-xs bg-white border border-[var(--iris-border-default)] text-slate-900 rounded-md focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             @change="emit('update:status', ($event.target as HTMLSelectElement).value)"
           >
             <option v-for="opt in statusOptions" :key="opt.value" :value="opt.value">
@@ -164,11 +164,11 @@ function selectSeverity(sev: string) {
 
         <!-- Subsystem Dropdown -->
         <div class="flex items-center gap-1.5">
-          <label for="alert-filter-subsystem" class="text-xs text-slate-400 font-medium">Subsystem:</label>
+          <label for="alert-filter-subsystem" class="text-xs text-slate-600 font-medium">Subsystem:</label>
           <select
             id="alert-filter-subsystem"
             :value="selectedSubsystem"
-            class="input py-1.5 px-2.5 text-xs bg-slate-950 border-slate-700/80 text-white rounded-lg focus:border-sky-500"
+            class="input py-1.5 px-2.5 text-xs bg-white border border-[var(--iris-border-default)] text-slate-900 rounded-md focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             @change="emit('update:subsystem', ($event.target as HTMLSelectElement).value)"
           >
             <option v-for="sub in subsystems" :key="sub.value" :value="sub.value">

@@ -13,9 +13,6 @@ spec:
     - port: 8080
       targetPort: 8080
       name: http
-    - port: 61616
-      targetPort: 61616
-      name: artemis
     - port: 9990
       targetPort: 9990
       name: management
@@ -55,15 +52,19 @@ spec:
               value: "admin"
             - name: INFINISPAN_PASSWORD
               value: "admin"
-            - name: TASK_BROKER_HOST
-              value: "0.0.0.0"
-            - name: TASK_BROKER_PORT
-              value: "61616"
+            - name: PETASOS_BROKER_URL
+              value: "tcp://petasos-artemis-discovery:61616"
+            - name: PETASOS_BROKER_USER
+              value: "admin"
+            - name: PETASOS_BROKER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: harmonia-artemis-secrets
+                  key: admin-password
+                  optional: true
           ports:
             - containerPort: 8080
               name: http
-            - containerPort: 61616
-              name: artemis
             - containerPort: 9990
               name: management
           resources:
