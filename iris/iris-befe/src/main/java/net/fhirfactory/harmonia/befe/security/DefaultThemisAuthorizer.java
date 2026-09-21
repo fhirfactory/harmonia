@@ -21,6 +21,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.themis.api.ThemisAuthorizer;
 import net.fhirfactory.harmonia.themis.api.model.*;
 
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -51,14 +52,14 @@ public class DefaultThemisAuthorizer implements ThemisAuthorizer {
     );
 
     private static final Set<String> ALLOWED_AUTHORITIES = Set.of(
-            AUTH_SYSTEM_ADMIN.toLowerCase(),
-            AUTH_SYSTEM_INTEGRATION.toLowerCase(),
-            AUTH_OPERATIONS_READ.toLowerCase(),
-            AUTH_OPERATIONS_ADMIN.toLowerCase(),
-            "role_" + ROLE_SYS_ADM.toLowerCase(),
-            "role_" + ROLE_SYS_INT.toLowerCase(),
-            "role_" + ROLE_OPS_ADM.toLowerCase(),
-            "role_" + ROLE_OPS_VIEWER.toLowerCase()
+            AUTH_SYSTEM_ADMIN.toLowerCase(Locale.ROOT),
+            AUTH_SYSTEM_INTEGRATION.toLowerCase(Locale.ROOT),
+            AUTH_OPERATIONS_READ.toLowerCase(Locale.ROOT),
+            AUTH_OPERATIONS_ADMIN.toLowerCase(Locale.ROOT),
+            "role_" + ROLE_SYS_ADM.toLowerCase(Locale.ROOT),
+            "role_" + ROLE_SYS_INT.toLowerCase(Locale.ROOT),
+            "role_" + ROLE_OPS_ADM.toLowerCase(Locale.ROOT),
+            "role_" + ROLE_OPS_VIEWER.toLowerCase(Locale.ROOT)
     );
 
     @Override
@@ -72,7 +73,8 @@ public class DefaultThemisAuthorizer implements ThemisAuthorizer {
         // 1. Verify Principal
         ThemisPrincipal principal = request.principal();
         if (principal == null || principal.principalId() == null || principal.principalId().isBlank()
-                || "anonymous".equalsIgnoreCase(principal.principalId())) {
+                || "anonymous".equalsIgnoreCase(principal.principalId())
+                || "system:anonymous".equalsIgnoreCase(principal.principalId())) {
             return ThemisAuthorizationDecision.deny(
                     ThemisDecisionReason.PRINCIPAL_MISSING,
                     POLICY_OPERATIONS_RBAC,
@@ -88,7 +90,7 @@ public class DefaultThemisAuthorizer implements ThemisAuthorizer {
         if (authorities != null) {
             for (ThemisAuthority auth : authorities) {
                 if (auth != null && auth.authorityCode() != null) {
-                    String authCode = auth.authorityCode().toLowerCase();
+                    String authCode = auth.authorityCode().toLowerCase(Locale.ROOT);
                     if (ALLOWED_AUTHORITIES.contains(authCode)) {
                         authorized = true;
                         break;
@@ -100,7 +102,7 @@ public class DefaultThemisAuthorizer implements ThemisAuthorizer {
         // Check principal attributes for roles if authorities were empty
         if (!authorized && principal.attributes() != null) {
             String roleAttr = principal.attributes().get("role");
-            if (roleAttr != null && ALLOWED_ROLES.contains(roleAttr.toUpperCase())) {
+            if (roleAttr != null && ALLOWED_ROLES.contains(roleAttr.toUpperCase(Locale.ROOT))) {
                 authorized = true;
             }
         }
@@ -113,6 +115,7 @@ public class DefaultThemisAuthorizer implements ThemisAuthorizer {
             );
         }
 
+        // Default Deny
         return ThemisAuthorizationDecision.deny(
                 ThemisDecisionReason.ACTION_NOT_PERMITTED,
                 POLICY_OPERATIONS_RBAC,
