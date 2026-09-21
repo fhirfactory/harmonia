@@ -19,10 +19,22 @@ export type StatusState =
   | 'HEALTHY'
   | 'DEGRADED'
   | 'UNAVAILABLE'
+  | 'IDLE'
+  | 'PAUSED'
+  | 'PENDING'
+  | 'INACTIVE'
+  | 'QUEUED'
+  | 'NEUTRAL'
   | 'UNKNOWN'
   | 'healthy'
   | 'degraded'
   | 'unavailable'
+  | 'idle'
+  | 'paused'
+  | 'pending'
+  | 'inactive'
+  | 'queued'
+  | 'neutral'
   | 'unknown';
 
 export interface NavItem {

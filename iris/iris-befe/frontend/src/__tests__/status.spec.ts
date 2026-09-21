@@ -94,4 +94,45 @@ describe('IrisStatus.vue', () => {
     })
     expect(wrapper.find('.iris-status-pulse').exists()).toBe(true)
   })
+
+  it('renders a neutral IDLE state rather than reporting Unknown', () => {
+    const wrapper = mount(IrisStatus, {
+      props: { status: 'IDLE' }
+    })
+    expect(wrapper.text()).toContain('Idle')
+    expect(wrapper.text()).not.toContain('Unknown')
+    expect(wrapper.text()).toContain('\u2016')
+    expect(wrapper.attributes('aria-label')).toBe('Idle operational state')
+    expect(wrapper.classes()).toContain('iris-status--neutral')
+    expect(wrapper.classes()).not.toContain('iris-status--unknown')
+  })
+
+  it('renders neutral presentation for PAUSED, PENDING, INACTIVE and QUEUED while preserving actual operational label', () => {
+    const cases = [
+      { status: 'PAUSED', expectedLabel: 'Paused' },
+      { status: 'pending', expectedLabel: 'Pending' },
+      { status: 'Inactive', expectedLabel: 'Inactive' },
+      { status: 'QUEUED', expectedLabel: 'Queued' }
+    ]
+    for (const { status, expectedLabel } of cases) {
+      const wrapper = mount(IrisStatus, { props: { status } })
+      expect(wrapper.classes()).toContain('iris-status--neutral')
+      expect(wrapper.text()).toContain(expectedLabel)
+      expect(wrapper.text()).not.toContain('Unknown')
+      expect(wrapper.text()).not.toContain('Idle')
+    }
+  })
+
+  it('renders uppercase labels for neutral states when labelFormat is upper', () => {
+    for (const status of ['IDLE', 'PAUSED', 'PENDING', 'INACTIVE', 'QUEUED']) {
+      const wrapper = mount(IrisStatus, { props: { status, labelFormat: 'upper' } })
+      expect(wrapper.classes()).toContain('iris-status--neutral')
+      expect(wrapper.text()).toContain(status)
+    }
+  })
+
+  it('still reports genuinely unrecognised values as Unknown', () => {
+    const wrapper = mount(IrisStatus, { props: { status: 'FLUX' } })
+    expect(wrapper.classes()).toContain('iris-status--unknown')
+  })
 })

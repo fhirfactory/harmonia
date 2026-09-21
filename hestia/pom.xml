@@ -37,7 +37,7 @@
     <modules>
         <module>mnemosyne-clinical</module>
         <module>mnemosyne-operations</module>
-        <module>hie-operations-cli</module>
+        <module>mnemosyne-operations-cli</module>
         <module>mneme-persistence</module>
         <module>mneme-cluster</module>
     </modules>

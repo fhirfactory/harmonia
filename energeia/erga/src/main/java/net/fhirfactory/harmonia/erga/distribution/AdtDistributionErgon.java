@@ -90,6 +90,9 @@ public class AdtDistributionErgon extends ErgonBase {
         }
 
         // Set distribution headers on Camel exchange
+        exchange.getMessage().setHeader("HARMONIA_FANOUT_DESTINATIONS", String.join(",", targetQueues));
+        exchange.getMessage().setHeader("HARMONIA_FANOUT_COUNT", targetQueues.size());
+        // Backwards compatibility headers
         exchange.getMessage().setHeader("HIE_FANOUT_DESTINATIONS", String.join(",", targetQueues));
         exchange.getMessage().setHeader("HIE_FANOUT_COUNT", targetQueues.size());
     }

@@ -17,7 +17,7 @@
 
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { createPinia, setActivePinia } from 'pinia';
-import { useOperationsStore } from '../stores/operationsStore';
+import { useOperationsStore, getDefaultSubsystems } from '../stores/operationsStore';
 import { operationsApi } from '../api/operationsClient';
 
 vi.mock('../api/operationsClient', () => ({
@@ -63,15 +63,79 @@ describe('useOperationsStore', () => {
 
     await store.fetchSummary();
     expect(store.summary).toEqual(mockSummary);
+    expect(store.summaryState.kind).toBe('loaded');
   });
 
-  it('fetchSubsystems populates 9 canonical subsystems', async () => {
+  it('flags the summary slice unavailable without discarding the last known value', async () => {
+    const mockSummary = { platformStatus: 'HEALTHY' } as any;
+    (operationsApi.getSummary as any).mockResolvedValue(mockSummary);
+    await store.fetchSummary();
+
+    (operationsApi.getSummary as any).mockRejectedValue(new Error('ECONNREFUSED'));
+    await store.fetchSummary();
+
+    expect(store.summary).toEqual(mockSummary);
+    expect(store.summaryState.kind).toBe('unavailable');
+    expect(store.summaryState.message).toContain('Operations API unavailable');
+    expect(store.isOperationsApiUnavailable).toBe(true);
+  });
+
+  it('distinguishes an empty alerts result set from an unreachable operations API', async () => {
+    (operationsApi.getAlerts as any).mockResolvedValue([]);
+    await store.fetchAlerts();
+    expect(store.alertsState.kind).toBe('empty');
+    expect(store.isOperationsApiUnavailable).toBe(false);
+
+    (operationsApi.getAlerts as any).mockRejectedValue(new Error('Network Error'));
+    await store.fetchAlerts();
+    expect(store.alertsState.kind).toBe('unavailable');
+    expect(store.isOperationsApiUnavailable).toBe(true);
+  });
+
+  it('never exposes a stack trace in a recorded load state message', async () => {
+    const err = new Error('Request failed');
+    err.stack = 'Error: Request failed\n    at somewhere (file.ts:1:1)';
+    (operationsApi.getSubsystemInstances as any).mockRejectedValue(err);
+
+    await store.fetchInstances('petasos');
+
+    expect(store.instancesState.kind).toBe('unavailable');
+    expect(store.instancesState.message).not.toContain('at somewhere');
+  });
+
+  it('does not populate a fallback subsystem tree on empty or unavailable API responses', async () => {
     (operationsApi.getSubsystems as any).mockResolvedValue([]);
 
     await store.fetchSubsystems();
+    expect(store.subsystems.length).toBe(0);
+    expect(store.subsystemsAreFallback).toBe(false);
+    expect(store.subsystemsState.kind).toBe('empty');
+
+    (operationsApi.getSubsystems as any).mockRejectedValue(new Error('Network Error'));
+    await store.fetchSubsystems();
+    expect(store.subsystems.length).toBe(0);
+    expect(store.subsystemsAreFallback).toBe(false);
+    expect(store.subsystemsState.kind).toBe('unavailable');
+    expect(store.isOperationsApiUnavailable).toBe(true);
+  });
+
+  it('retains getDefaultSubsystems explicitly for tests and fixtures without stale iris-monitor', () => {
+    const demo = getDefaultSubsystems();
+    expect(demo.length).toBe(9);
+    expect(demo.map((s: any) => s.id)).toContain('petasos');
+    expect(demo.map((s: any) => s.id)).toContain('energeia');
+
+    const iris = demo.find((s: any) => s.id === 'iris');
+    const childIds = (iris?.children || []).map((c: any) => c.id);
+    expect(childIds).not.toContain('iris-monitor');
+    expect(childIds).toContain('iris-befe');
+  });
+
+  it('allows explicit loading of demo subsystems for fixtures/demonstrations', () => {
+    store.loadDemoSubsystems();
     expect(store.subsystems.length).toBe(9);
-    expect(store.subsystems.map((s: any) => s.id)).toContain('petasos');
-    expect(store.subsystems.map((s: any) => s.id)).toContain('energeia');
+    expect(store.subsystemsAreFallback).toBe(true);
+    expect(store.subsystemsState.kind).toBe('loaded');
   });
 
   it('selectSubsystem coordinates instances, health, and statistics fetches', async () => {

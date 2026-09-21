@@ -26,8 +26,8 @@
   loop:
     - hapi-fhir-jpa-server-1
     - hapi-fhir-jpa-server-2
-    - hie-operations-jpa-server-1
-    - hie-operations-jpa-server-2
+    - operations-1
+    - operations-2
     - task-processor
     - mllp-gateway
     - mllp-outbound-his

@@ -17,160 +17,96 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
-import { 
-  Radio, 
-  ArrowDownLeft, 
-  ArrowUpRight, 
-  ShieldCheck, 
-  AlertTriangle, 
-  Info, 
-  ChevronRight,
-  Layers
-} from 'lucide-vue-next';
-import { 
-  IrisSubsystemIdentity, 
-  IrisStatus, 
+import { ArrowDownLeft, ArrowUpRight, ChevronRight, FileCog, Info } from 'lucide-vue-next';
+import {
+  IrisPageHeader,
   IrisToolbar,
+  IrisSection,
+  IrisStatus,
   IrisDataTable,
+  IrisEmptyState,
+  IrisLoadingState,
+  IrisErrorState,
   type DataTableColumn
 } from '@harmonia/iris-befe';
 import { useOperationsStore } from '../stores/operationsStore';
+import { useInterfacesStore } from '../stores/interfacesStore';
+import { isPending } from '../models/loadState';
 import InterfaceDetailDrawer, { type PylaiGateway } from '../components/interfaces/InterfaceDetailDrawer.vue';
 
-const store = useOperationsStore();
+/**
+ * Interfaces perspective.
+ *
+ * The page keeps two bodies of knowledge strictly apart:
+ *   - the CONFIGURED gateway inventory, declared in the deployment; and
+ *   - the OBSERVED Pylai runtime facts the operations API actually returned.
+ *
+ * Nothing on this page is derived by mixing the two, and no runtime-sounding
+ * value is ever synthesised from configuration.
+ */
+const operationsStore = useOperationsStore();
+const interfacesStore = useInterfacesStore();
 
-const searchQuery = ref('');
-const directionFilter = ref<'ALL' | 'INBOUND' | 'OUTBOUND'>('ALL');
 const selectedGateway = ref<PylaiGateway | null>(null);
 const isDrawerOpen = ref(false);
 
-const authoritativeGateways: PylaiGateway[] = [
-  {
-    id: 'pylai-mllp-in',
-    name: 'MLLP Inbound Gateway',
-    englishTitle: 'Ingress Interface',
-    description: 'Dual-write ACK gateway translating external clinical wire protocols (hospital ADT/ORM inbound streams) into Petasos events.',
-    direction: 'INBOUND',
-    protocol: 'HL7 v2 / MLLP',
-    port: 2575,
-    managementPort: 8084,
-    targetQueue: 'petasos.queue.pylai.mllp.in',
-    complianceRule: 'Invariant 4 (Dual-Write Safety: AA ACK issued only after downstream Petasos enqueue)',
-    activeListeners: 1,
-    currentConnections: 1
-  },
-  {
-    id: 'pylai-mllp-out-his',
-    name: 'MLLP Outbound HIS',
-    englishTitle: 'HIS Distribution Interface',
-    description: 'Outbound HL7 v2 clinical messaging gateway distributing messages to Hospital Information System.',
-    direction: 'OUTBOUND',
-    protocol: 'HL7 v2 / MLLP',
-    port: 8087,
-    managementPort: 8084,
-    targetQueue: 'petasos.queue.mllp.outbound.his',
-    complianceRule: 'Invariant 5 (Destination Fan-Out Tracking: Checkpoint on HIS transmission)',
-    activeListeners: 1,
-    currentConnections: 0
-  },
-  {
-    id: 'pylai-mllp-out-lis',
-    name: 'MLLP Outbound LIS',
-    englishTitle: 'LIS Distribution Interface',
-    description: 'Outbound HL7 v2 pathology/lab distribution gateway to Laboratory Information System.',
-    direction: 'OUTBOUND',
-    protocol: 'HL7 v2 / MLLP',
-    port: 8088,
-    managementPort: 8084,
-    targetQueue: 'petasos.queue.mllp.outbound.lis',
-    complianceRule: 'Invariant 5 (Destination Fan-Out Tracking: Checkpoint on LIS transmission)',
-    activeListeners: 1,
-    currentConnections: 0
-  },
-  {
-    id: 'pylai-fhir-registry',
-    name: 'FHIR Provider Registry Gateway',
-    englishTitle: 'REST Registry Ingress',
-    description: 'FHIR R5 Practitioner & Organization practitioner self-service and directory interface.',
-    direction: 'INBOUND',
-    protocol: 'FHIR R5 / REST',
-    port: 8089,
-    managementPort: 8084,
-    targetQueue: 'petasos.queue.ponos.dispatch',
-    complianceRule: 'Invariant 3 & 6 (Themis Default-Deny RBAC; zero-JPA presentation boundary)',
-    activeListeners: 1,
-    currentConnections: 0
-  }
-];
+const NOT_MEASURED = 'Not measured';
 
-onMounted(async () => {
-  await Promise.all([
-    store.fetchSubsystems(),
-    store.fetchInstances('pylai'),
-    store.fetchHealth('pylai')
-  ]);
+onMounted(() => {
+  refreshAll();
 });
 
-async function handleRefresh() {
-  await Promise.all([
-    store.fetchSubsystems(),
-    store.fetchInstances('pylai'),
-    store.fetchHealth('pylai')
+async function refreshAll() {
+  await Promise.allSettled([
+    operationsStore.fetchSubsystems(),
+    interfacesStore.fetchRuntime()
   ]);
 }
 
-const pylaiSubsystem = computed(() => {
-  return store.subsystems.find(s => s.id === 'pylai') || null;
+// ---------------------------------------------------------------------------
+// Configured inventory (provenance: CONFIGURED)
+// ---------------------------------------------------------------------------
+const provenanceNotice = interfacesStore.provenanceNotice;
+const configuredCount = computed(() => interfacesStore.configuredCount);
+const inboundCount = computed(() => interfacesStore.inboundCount);
+const outboundCount = computed(() => interfacesStore.outboundCount);
+const filteredInterfaces = computed<PylaiGateway[]>(() => interfacesStore.filteredInterfaces);
+
+const searchQuery = computed({
+  get: () => interfacesStore.searchQuery,
+  set: (value: string) => interfacesStore.setSearchQuery(value)
 });
 
-const pylaiStatus = computed(() => {
-  return pylaiSubsystem.value?.state || 'UNKNOWN';
-});
+const directionFilter = computed(() => interfacesStore.directionFilter);
 
-const isStale = computed(() => store.isStale);
-
-const filteredGateways = computed(() => {
-  return authoritativeGateways.filter(gw => {
-    // Direction filter
-    if (directionFilter.value !== 'ALL' && gw.direction !== directionFilter.value) {
-      return false;
-    }
-    // Search query
-    if (searchQuery.value.trim()) {
-      const q = searchQuery.value.toLowerCase().trim();
-      const matchName = gw.name.toLowerCase().includes(q);
-      const matchId = gw.id.toLowerCase().includes(q);
-      const matchTitle = gw.englishTitle.toLowerCase().includes(q);
-      const matchDesc = gw.description.toLowerCase().includes(q);
-      const matchProto = gw.protocol.toLowerCase().includes(q);
-      const matchPort = String(gw.port).includes(q);
-      const matchQueue = gw.targetQueue.toLowerCase().includes(q);
-      if (!matchName && !matchId && !matchTitle && !matchDesc && !matchProto && !matchPort && !matchQueue) {
-        return false;
-      }
-    }
-    return true;
-  });
-});
-
-const totalGatewaysCount = computed(() => authoritativeGateways.length);
-const inboundCount = computed(() => authoritativeGateways.filter(g => g.direction === 'INBOUND').length);
-const outboundCount = computed(() => authoritativeGateways.filter(g => g.direction === 'OUTBOUND').length);
-const activeListenersCount = computed(() => authoritativeGateways.reduce((sum, g) => sum + (g.activeListeners || 0), 0));
-
-const tableColumns: DataTableColumn[] = [
-  { field: 'name', header: 'Interface Name' },
-  { field: 'direction', header: 'Direction', width: '120px' },
-  { field: 'protocol', header: 'Protocol', width: '160px' },
-  { field: 'port', header: 'Port', width: '100px' },
-  { field: 'status', header: 'Status', width: '130px' },
-  { field: 'throughput', header: 'Throughput / Activity', width: '180px' },
-  { field: 'errorState', header: 'Error State', width: '120px' },
-  { field: 'actions', header: 'Action', width: '90px', align: 'right' }
+const directionOptions: { value: 'ALL' | 'INBOUND' | 'OUTBOUND'; label: string }[] = [
+  { value: 'ALL', label: 'All' },
+  { value: 'INBOUND', label: 'Inbound' },
+  { value: 'OUTBOUND', label: 'Outbound' }
 ];
 
-function openGatewayDrawer(gw: PylaiGateway) {
-  selectedGateway.value = gw;
+function directionCount(value: 'ALL' | 'INBOUND' | 'OUTBOUND'): number {
+  if (value === 'INBOUND') return inboundCount.value;
+  if (value === 'OUTBOUND') return outboundCount.value;
+  return configuredCount.value;
+}
+
+/**
+ * Columns are limited to facts the configuration genuinely declares. There is
+ * no status, throughput or error column: the platform does not measure those
+ * per interface.
+ */
+const tableColumns: DataTableColumn[] = [
+  { field: 'name', header: 'Interface' },
+  { field: 'direction', header: 'Direction', width: '130px' },
+  { field: 'protocol', header: 'Protocol', width: '170px' },
+  { field: 'port', header: 'Port', width: '100px' },
+  { field: 'targetQueue', header: 'Target queue' },
+  { field: 'actions', header: 'Detail', width: '110px', align: 'right' }
+];
+
+function openGatewayDrawer(gateway: PylaiGateway) {
+  selectedGateway.value = gateway;
   isDrawerOpen.value = true;
 }
 
@@ -178,217 +114,231 @@ function closeGatewayDrawer() {
   isDrawerOpen.value = false;
   selectedGateway.value = null;
 }
+
+// ---------------------------------------------------------------------------
+// Observed runtime (provenance: OBSERVED) — Pylai instances and health only
+// ---------------------------------------------------------------------------
+const runtimeState = computed(() => interfacesStore.runtimeState);
+const instances = computed(() => interfacesStore.instances);
+const health = computed(() => interfacesStore.health);
+
+const runtimeFailureMessage = computed(() => {
+  const state = runtimeState.value;
+  return 'message' in state ? state.message : '';
+});
+
+const isRuntimeLoading = computed(() => isPending(runtimeState.value) && instances.value.length === 0 && !health.value);
+const isRuntimeEmpty = computed(() => instances.value.length === 0 && !health.value);
+
+const pylaiSubsystem = computed(() => operationsStore.subsystems.find(s => s.id === 'pylai') || null);
+
+/**
+ * The only honest gateway state is the one Pylai health actually reported.
+ * When it did not report, the page says so rather than defaulting to healthy.
+ */
+const observedPylaiStatus = computed<string>(() => {
+  if (health.value?.status) return String(health.value.status);
+  if (pylaiSubsystem.value?.state) return String(pylaiSubsystem.value.state);
+  return 'UNKNOWN';
+});
+
+const isPylaiStateMeasured = computed(() => Boolean(health.value?.status || pylaiSubsystem.value?.state));
+
+function measured(value: number | null | undefined, suffix = ''): string {
+  return value == null ? NOT_MEASURED : `${value}${suffix}`;
+}
+
+const healthFacts = computed(() => [
+  { label: 'Availability', value: measured(health.value?.availabilityPercent, '%') },
+  { label: 'Failed operations', value: measured(health.value?.failedOperations) },
+  { label: 'Restart count', value: measured(health.value?.restartCount) },
+  { label: 'P95 latency', value: measured(health.value?.p95LatencyMs, ' ms') },
+  { label: 'Dependencies', value: health.value?.dependenciesSummary || NOT_MEASURED }
+]);
+
+function instanceStarted(startedAt?: number): string {
+  return startedAt ? new Date(startedAt).toLocaleString() : NOT_MEASURED;
+}
 </script>
 
 <template>
-  <div class="interfaces-view space-y-4 font-sans">
-    <!-- View Header with Authoritative Pylai Identity -->
-    <IrisSubsystemIdentity
-      name="Pylai"
-      description="Harmonia Inbound/Outbound protocol gateways translating external clinical wire protocols (HL7 v2 MLLP, FHIR REST) into Petasos messaging events."
-      :status="pylaiStatus"
-      :stale="isStale"
+  <div class="interfaces-view">
+    <IrisPageHeader
+      title="Interfaces"
+      subtitle="Configured Pylai gateway inventory, shown separately from the Pylai runtime facts the operations API actually reports."
     >
-      <template #icon>
-        <Radio :size="22" class="text-sky-700" />
-      </template>
-
       <template #badges>
-        <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
-          Interface Gateways
+        <span class="interfaces-view__badge interfaces-view__badge--configured">
+          <FileCog :size="12" aria-hidden="true" />
+          <span>Configured inventory</span>
         </span>
-        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs" title="Invariant 4 Dual-Write Safety active on ingress">
-          <ShieldCheck :size="12" class="text-emerald-600" />
-          <span>REC-001 Dual-Write Safety</span>
-        </span>
-        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-sky-50 text-sky-800 border border-sky-200 shadow-xs" title="Live message/sec rates pending Camel metrics provider">
-          <Info :size="12" class="text-sky-600" />
-          <span>IRIS-API-GAP-001</span>
-        </span>
+        <IrisStatus
+          v-if="isPylaiStateMeasured"
+          :status="observedPylaiStatus"
+          size="sm"
+          label-format="upper"
+        />
       </template>
+    </IrisPageHeader>
 
-      <template #metadata>
-        <div class="text-xs text-slate-500 mt-0.5">
-          Architectural Area: <span class="font-semibold text-slate-700">Integration &amp; Transport</span> &bull; 
-          Protocol adaptation, wire validation, dual-write ACK safety, and fan-out delivery.
-        </div>
-      </template>
-    </IrisSubsystemIdentity>
-
-    <!-- Compact Operational Summary Strip -->
-    <div class="bg-white border border-[var(--iris-border-default)] rounded-[var(--iris-border-radius)] p-3 shadow-subtle flex flex-wrap items-center justify-between gap-3 text-xs">
-      <div class="flex items-center gap-4 flex-wrap font-mono">
-        <!-- Configured Interfaces -->
-        <div class="flex items-center gap-1.5 text-slate-700">
-          <span class="text-slate-400 font-sans">Configured Interfaces:</span>
-          <span class="font-bold text-slate-900">{{ totalGatewaysCount }} Interfaces</span>
-        </div>
-
-        <span class="text-slate-300">&bull;</span>
-
-        <!-- Inbound Interfaces -->
-        <div class="flex items-center gap-1.5 text-slate-700">
-          <span class="text-slate-400 font-sans">Inbound Interfaces:</span>
-          <span class="font-bold text-sky-800">{{ inboundCount }}</span>
-        </div>
-
-        <span class="text-slate-300">&bull;</span>
-
-        <!-- Outbound Interfaces -->
-        <div class="flex items-center gap-1.5 text-slate-700">
-          <span class="text-slate-400 font-sans">Outbound Interfaces:</span>
-          <span class="font-bold text-purple-800">{{ outboundCount }}</span>
-        </div>
-
-        <span class="text-slate-300">&bull;</span>
-
-        <!-- Active Listeners -->
-        <div class="flex items-center gap-1.5 text-slate-700">
-          <span class="text-slate-400 font-sans">Active Listeners:</span>
-          <span class="font-bold text-emerald-800">{{ activeListenersCount }}</span>
-        </div>
-      </div>
-
-      <div class="text-[11px] font-mono text-slate-500 hidden md:block">
-        Ports: :2575, :8087, :8088, :8089
-      </div>
-    </div>
-
-    <!-- Action & Filter Toolbar -->
     <IrisToolbar
       v-model:searchQuery="searchQuery"
       :show-search="true"
-      search-placeholder="Filter interfaces by name, port, protocol..."
+      search-placeholder="Filter interfaces by name, protocol, port or queue..."
       :show-refresh="true"
-      :refreshing="store.loading"
-      @refresh="handleRefresh"
+      :refreshing="operationsStore.refreshing || isPending(runtimeState)"
+      @refresh="refreshAll"
     >
       <template #filter>
-        <div class="inline-flex rounded-md shadow-xs" role="group" aria-label="Filter by interface direction">
+        <div class="interfaces-view__filter" role="group" aria-label="Filter by interface direction">
           <button
+            v-for="option in directionOptions"
+            :key="option.value"
             type="button"
-            class="px-2.5 py-1 text-xs font-semibold border rounded-l-md transition cursor-pointer"
-            :class="directionFilter === 'ALL'
-              ? 'bg-sky-50 text-sky-800 border-sky-300 shadow-xs'
-              : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'"
-            @click="directionFilter = 'ALL'"
+            class="interfaces-view__filter-btn"
+            :class="{ 'interfaces-view__filter-btn--active': directionFilter === option.value }"
+            :aria-pressed="directionFilter === option.value"
+            @click="interfacesStore.setDirectionFilter(option.value)"
           >
-            All ({{ totalGatewaysCount }})
-          </button>
-          <button
-            type="button"
-            class="px-2.5 py-1 text-xs font-semibold border-t border-b border-r transition cursor-pointer"
-            :class="directionFilter === 'INBOUND'
-              ? 'bg-sky-50 text-sky-800 border-sky-300 shadow-xs'
-              : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'"
-            @click="directionFilter = 'INBOUND'"
-          >
-            Inbound ({{ inboundCount }})
-          </button>
-          <button
-            type="button"
-            class="px-2.5 py-1 text-xs font-semibold border-t border-b border-r rounded-r-md transition cursor-pointer"
-            :class="directionFilter === 'OUTBOUND'
-              ? 'bg-sky-50 text-sky-800 border-sky-300 shadow-xs'
-              : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'"
-            @click="directionFilter = 'OUTBOUND'"
-          >
-            Outbound ({{ outboundCount }})
+            {{ option.label }} ({{ directionCount(option.value) }})
           </button>
         </div>
       </template>
     </IrisToolbar>
 
-    <!-- High-Density IrisDataTable for Interfaces -->
-    <IrisDataTable
-      :value="filteredGateways"
-      :columns="tableColumns"
-      data-key="id"
-      empty-message="No Pylai gateways match your search or direction filter criteria."
-      @row-click="openGatewayDrawer($event.data)"
+    <!-- Configured inventory -->
+    <IrisSection
+      title="Configured gateway inventory"
+      description="Declared in the Harmonia deployment configuration. Every column below is a configured fact."
     >
-      <!-- Interface Name & Subtitle -->
-      <template #name="{ data }">
-        <div>
-          <div class="font-bold font-mono text-slate-900">{{ data.name }}</div>
-          <div class="text-[11px] text-slate-500 font-sans truncate max-w-sm">{{ data.description }}</div>
+      <p class="interfaces-view__provenance" role="note">
+        <Info :size="14" aria-hidden="true" />
+        <span>{{ provenanceNotice }}</span>
+      </p>
+
+      <IrisDataTable
+        :value="filteredInterfaces"
+        :columns="tableColumns"
+        data-key="id"
+        empty-message="No configured interface matches the current search or direction filter."
+        @row-click="openGatewayDrawer($event.data)"
+      >
+        <template #name="{ data }">
+          <div class="interfaces-view__name">
+            <span class="interfaces-view__name-primary">{{ data.name }}</span>
+            <span class="interfaces-view__name-secondary">{{ data.englishTitle }}</span>
+          </div>
+        </template>
+
+        <template #direction="{ data }">
+          <span
+            class="interfaces-view__direction"
+            :class="data.direction === 'INBOUND'
+              ? 'interfaces-view__direction--inbound'
+              : 'interfaces-view__direction--outbound'"
+          >
+            <ArrowDownLeft v-if="data.direction === 'INBOUND'" :size="11" aria-hidden="true" />
+            <ArrowUpRight v-else :size="11" aria-hidden="true" />
+            <span>{{ data.direction }}</span>
+          </span>
+        </template>
+
+        <template #protocol="{ data }">
+          <span class="interfaces-view__mono">{{ data.protocol }}</span>
+        </template>
+
+        <template #port="{ data }">
+          <span class="interfaces-view__mono interfaces-view__mono--strong">:{{ data.port }}</span>
+        </template>
+
+        <template #targetQueue="{ data }">
+          <span class="interfaces-view__mono interfaces-view__queue">{{ data.targetQueue }}</span>
+        </template>
+
+        <template #actions="{ data }">
+          <button
+            type="button"
+            class="iris-inspect-btn interfaces-view__inspect"
+            :aria-label="`Inspect ${data.name}`"
+            @click.stop="openGatewayDrawer(data)"
+          >
+            <span>Inspect</span>
+            <ChevronRight :size="12" aria-hidden="true" />
+          </button>
+        </template>
+      </IrisDataTable>
+    </IrisSection>
+
+    <!-- Observed runtime -->
+    <IrisSection
+      title="Observed Pylai runtime"
+      description="Only what the operations API measured for the Pylai subsystem. Nothing here is derived from configuration."
+    >
+      <IrisErrorState
+        v-if="runtimeState.kind === 'unavailable'"
+        title="Pylai runtime observation unavailable"
+        :message="runtimeFailureMessage"
+        :retryable="true"
+        retry-label="Retry"
+        @retry="refreshAll"
+      />
+      <IrisLoadingState v-else-if="isRuntimeLoading" size="sm" message="Loading Pylai runtime state..." />
+      <template v-else>
+        <div v-if="runtimeState.kind === 'partial'" class="interfaces-view__partial" role="status">
+          {{ runtimeFailureMessage }}
         </div>
-      </template>
 
-      <!-- Direction Badge -->
-      <template #direction="{ data }">
-        <span 
-          class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border inline-flex items-center gap-1 font-mono"
-          :class="data.direction === 'INBOUND' 
-            ? 'bg-sky-50 text-sky-800 border-sky-200' 
-            : 'bg-purple-50 text-purple-800 border-purple-200'"
-        >
-          <ArrowDownLeft v-if="data.direction === 'INBOUND'" :size="11" />
-          <ArrowUpRight v-else :size="11" />
-          <span>{{ data.direction }}</span>
-        </span>
-      </template>
-
-      <!-- Protocol -->
-      <template #protocol="{ data }">
-        <span class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-slate-100 text-slate-700 border border-slate-200">
-          {{ data.protocol }}
-        </span>
-      </template>
-
-      <!-- Port -->
-      <template #port="{ data }">
-        <span class="font-mono font-bold text-slate-800 text-xs">
-          :{{ data.port }}
-        </span>
-      </template>
-
-      <!-- Status -->
-      <template #status>
-        <IrisStatus 
-          :status="pylaiStatus" 
-          :stale="isStale"
-          label-format="upper" 
-          size="sm" 
+        <IrisEmptyState
+          v-if="isRuntimeEmpty"
+          title="No Pylai runtime state reported"
+          description="The operations API responded successfully but reported no Pylai instances or health record."
         />
+        <template v-else>
+          <ul class="interfaces-view__facts">
+            <li class="interfaces-view__fact">
+              <span class="interfaces-view__fact-label">Reported state</span>
+              <IrisStatus
+                v-if="health?.status"
+                :status="String(health.status)"
+                size="sm"
+                label-format="upper"
+              />
+              <span v-else class="interfaces-view__not-measured">{{ NOT_MEASURED }}</span>
+            </li>
+            <li v-for="fact in healthFacts" :key="fact.label" class="interfaces-view__fact">
+              <span class="interfaces-view__fact-label">{{ fact.label }}</span>
+              <span
+                class="interfaces-view__fact-value"
+                :class="{ 'interfaces-view__not-measured': fact.value === NOT_MEASURED }"
+              >
+                {{ fact.value }}
+              </span>
+            </li>
+          </ul>
+
+          <h3 class="interfaces-view__subheading">Pylai instances</h3>
+          <p v-if="instances.length === 0" class="interfaces-view__not-measured">
+            The operations API reported no Pylai instances.
+          </p>
+          <ul v-else class="interfaces-view__instances">
+            <li v-for="instance in instances" :key="instance.instanceId" class="interfaces-view__instance">
+              <span class="interfaces-view__mono interfaces-view__mono--strong">{{ instance.instanceId }}</span>
+              <IrisStatus :status="instance.state" size="sm" label-format="upper" />
+              <span class="interfaces-view__instance-meta">Started: {{ instanceStarted(instance.startedAt) }}</span>
+            </li>
+          </ul>
+        </template>
       </template>
 
-      <!-- Throughput (Honest Fallback) -->
-      <template #throughput>
-        <div class="text-xs font-mono text-slate-500" title="Wire rates pending Camel metrics provider (IRIS-API-GAP-001)">
-          &mdash; <span class="text-[11px] text-slate-400 italic">(Telemetry initializing)</span>
-        </div>
-      </template>
+      <p class="interfaces-view__gap" role="note">
+        Per-interface throughput, connection counts and error rates are not measured by any Harmonia API
+        (IRIS-API-GAP-001). They are omitted rather than estimated.
+      </p>
+    </IrisSection>
 
-      <!-- Error State -->
-      <template #errorState="{ data }">
-        <span 
-          class="text-xs font-mono"
-          :class="pylaiStatus === 'HEALTHY' ? 'text-emerald-700' : 'text-amber-700'"
-        >
-          {{ pylaiStatus === 'HEALTHY' ? 'Nominal (0 err)' : 'Degraded (1 err)' }}
-        </span>
-      </template>
-
-      <!-- Action Button -->
-      <template #actions="{ data }">
-        <button
-          type="button"
-          class="iris-inspect-btn inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-sky-700 hover:text-sky-900 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded transition cursor-pointer"
-          @click.stop="openGatewayDrawer(data)"
-          :aria-label="`Inspect ${data.name}`"
-        >
-          <span>Inspect</span>
-          <ChevronRight :size="12" />
-        </button>
-      </template>
-    </IrisDataTable>
-
-    <!-- Slide-over Interface Detail Drawer -->
     <InterfaceDetailDrawer
       :gateway="selectedGateway"
       :is-open="isDrawerOpen"
-      :pylai-status="pylaiStatus"
       @close="closeGatewayDrawer"
     />
   </div>
@@ -396,6 +346,248 @@ function closeGatewayDrawer() {
 
 <style scoped>
 .interfaces-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
   width: 100%;
+  font-family: var(--iris-font-sans);
+}
+
+.interfaces-view__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 2px 8px;
+  border-radius: var(--iris-border-radius);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.interfaces-view__badge--configured {
+  border: 1px solid var(--iris-status-idle-border);
+  background-color: var(--iris-status-idle-bg);
+  color: var(--iris-status-idle-text);
+}
+
+.interfaces-view__filter {
+  display: inline-flex;
+}
+
+.interfaces-view__filter-btn {
+  padding: 0.25rem 0.625rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--iris-text-secondary);
+  background-color: var(--iris-bg-surface);
+  border: 1px solid var(--iris-border-default);
+  border-right-width: 0;
+  cursor: pointer;
+}
+
+.interfaces-view__filter-btn:first-child {
+  border-top-left-radius: var(--iris-border-radius);
+  border-bottom-left-radius: var(--iris-border-radius);
+}
+
+.interfaces-view__filter-btn:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: var(--iris-border-radius);
+  border-bottom-right-radius: var(--iris-border-radius);
+}
+
+.interfaces-view__filter-btn:hover {
+  background-color: var(--iris-bg-hover);
+}
+
+.interfaces-view__filter-btn--active {
+  background-color: var(--iris-bg-selected);
+  color: var(--iris-text-accent);
+}
+
+.interfaces-view__provenance {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0 0 0.625rem 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--iris-text-secondary);
+  background-color: var(--iris-bg-subtle);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.interfaces-view__provenance svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.interfaces-view__name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.interfaces-view__name-primary {
+  font-weight: 600;
+  color: var(--iris-text-primary);
+}
+
+.interfaces-view__name-secondary {
+  font-size: 0.6875rem;
+  color: var(--iris-text-muted);
+}
+
+.interfaces-view__direction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1px 6px;
+  border-radius: var(--iris-border-radius);
+  font-family: var(--iris-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--iris-border-default);
+  background-color: var(--iris-bg-subtle);
+  color: var(--iris-text-secondary);
+}
+
+.interfaces-view__direction--inbound {
+  background-color: var(--iris-bg-selected);
+  color: var(--iris-text-accent);
+}
+
+.interfaces-view__mono {
+  font-family: var(--iris-font-mono);
+  font-size: 0.75rem;
+  color: var(--iris-text-secondary);
+}
+
+.interfaces-view__mono--strong {
+  font-weight: 700;
+  color: var(--iris-text-primary);
+}
+
+.interfaces-view__queue {
+  word-break: break-all;
+}
+
+.interfaces-view__inspect {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1875rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--iris-text-accent);
+  background-color: var(--iris-bg-surface);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  cursor: pointer;
+}
+
+.interfaces-view__inspect:hover {
+  background-color: var(--iris-bg-hover);
+}
+
+.interfaces-view__partial {
+  margin-bottom: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  background-color: var(--iris-status-degraded-bg);
+  border: 1px solid var(--iris-status-degraded-border);
+  border-radius: var(--iris-border-radius);
+  color: var(--iris-status-degraded-text);
+}
+
+.interfaces-view__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.interfaces-view__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  background-color: var(--iris-bg-subtle);
+}
+
+.interfaces-view__fact-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-muted);
+}
+
+.interfaces-view__fact-value {
+  font-family: var(--iris-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--iris-text-primary);
+}
+
+.interfaces-view__not-measured {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--iris-text-muted);
+}
+
+.interfaces-view__subheading {
+  margin: 0.875rem 0 0.375rem 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-secondary);
+}
+
+.interfaces-view__instances {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.interfaces-view__instance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3125rem 0.5rem;
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  font-size: 0.8125rem;
+}
+
+.interfaces-view__instance-meta {
+  font-size: 0.6875rem;
+  color: var(--iris-text-muted);
+}
+
+.interfaces-view__gap {
+  margin: 0.875rem 0 0 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--iris-text-muted);
+}
+
+@media (max-width: 900px) {
+  .interfaces-view__filter {
+    flex-wrap: wrap;
+  }
 }
 </style>

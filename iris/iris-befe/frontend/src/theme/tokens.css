@@ -49,6 +49,12 @@
   --iris-status-unavailable-bg: #fef2f2;/* Rose 50 */
   --iris-status-unavailable-text: #991b1b;/* Rose 800 */
   --iris-status-unavailable-border: #fecaca;
+  --iris-status-neutral-bg: #f1f5f9;      /* Slate 100 - neutral, non-alarming operational states */
+  --iris-status-neutral-text: #334155;    /* Slate 700 */
+  --iris-status-neutral-border: #cbd5e1;  /* Slate 300 */
+  --iris-status-idle-bg: var(--iris-status-neutral-bg);
+  --iris-status-idle-text: var(--iris-status-neutral-text);
+  --iris-status-idle-border: var(--iris-status-neutral-border);
   --iris-status-unknown-bg: #f8fafc;   /* Slate 50 */
   --iris-status-unknown-text: #475569; /* Slate 600 */
   --iris-status-unknown-border: #cbd5e1;

@@ -62,14 +62,14 @@ public class OutboundTaskResourceBuilder {
 
         if (topic != null) {
             Identifier topicId = task.addIdentifier();
-            topicId.setSystem("http://example.org/hie/topic");
+            topicId.setSystem("http://fhirfactory.net/harmonia/topic");
             topicId.setValue(topic.toTopicString());
-            topicId.setType(new CodeableConcept().setText("HIE Topic"));
+            topicId.setType(new CodeableConcept().setText("Harmonia Topic"));
         }
 
         if (request != null && StringUtils.isNotBlank(request.getDestinationId())) {
             Identifier destId = task.addIdentifier();
-            destId.setSystem("http://example.org/hie/destination-id");
+            destId.setSystem("http://fhirfactory.net/harmonia/destination-id");
             destId.setValue(request.getDestinationId());
         }
 
@@ -125,7 +125,7 @@ public class OutboundTaskResourceBuilder {
 
         // REC-002: Add structured destination delivery checkpoint extension
         Extension destDeliveryExt = output.addExtension();
-        destDeliveryExt.setUrl("http://example.org/hie/destination-delivery-status");
+        destDeliveryExt.setUrl("http://fhirfactory.net/harmonia/destination-delivery-status");
         destDeliveryExt.addExtension("destinationId", new StringType(destId));
         destDeliveryExt.addExtension("status", new StringType(response.isSuccessful() ? "COMPLETED" : "FAILED"));
         destDeliveryExt.addExtension("ackCode", new StringType(response.getAckCode() != null ? response.getAckCode() : ""));

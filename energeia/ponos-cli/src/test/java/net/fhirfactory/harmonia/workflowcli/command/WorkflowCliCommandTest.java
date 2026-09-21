@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.workflowcli.command;
 
 import com.sun.net.httpserver.HttpServer;
-import net.fhirfactory.harmonia.workflowcli.HieWorkflowCliMain;
+import net.fhirfactory.harmonia.workflowcli.WorkflowCliMain;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -190,12 +190,12 @@ class WorkflowCliCommandTest {
     }
 
     @Test
-    @DisplayName("HieWorkflowCliMain executeWithStreams wrapper works")
+    @DisplayName("WorkflowCliMain executeWithStreams wrapper works")
     void testMainWrapper() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         ByteArrayOutputStream err = new ByteArrayOutputStream();
 
-        int exitCode = HieWorkflowCliMain.executeWithStreams(new PrintStream(out), new PrintStream(err), "--help");
+        int exitCode = WorkflowCliMain.executeWithStreams(new PrintStream(out), new PrintStream(err), "--help");
         assertThat(exitCode).isEqualTo(0);
         assertThat(out.toString()).contains("ponos-cli");
     }

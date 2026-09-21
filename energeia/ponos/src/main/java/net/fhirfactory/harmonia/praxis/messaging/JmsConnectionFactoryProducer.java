@@ -61,11 +61,13 @@ public class JmsConnectionFactoryProducer {
             String brokerUrl = queueConfig != null ? queueConfig.getBrokerUrl() : QueueConfig.DEFAULT_BROKER_URL;
             String username = queueConfig != null ? queueConfig.getBrokerUsername() : "admin";
             String password = queueConfig != null ? queueConfig.getBrokerPassword() : "adminPassword";
-            log.info("Initializing ArtemisPetasos connecting to {}", brokerUrl);
+            boolean haEnabled = queueConfig != null ? queueConfig.isHaEnabled() : true;
+            log.info("Initializing ArtemisPetasos connecting to {} (haEnabled={})", brokerUrl, haEnabled);
             PetasosConfig config = PetasosConfig.builder()
                     .addBrokerUrl(brokerUrl)
                     .username(username)
                     .password(password)
+                    .haEnabled(haEnabled)
                     .build();
             petasos = ArtemisPetasos.create(config);
         }

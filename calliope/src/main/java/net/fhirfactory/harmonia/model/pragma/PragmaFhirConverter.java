@@ -48,23 +48,30 @@ import java.util.Objects;
  */
 public final class PragmaFhirConverter {
 
-    public static final String IDENTIFIER_SYSTEM_PRAGMA_ID = "http://fhirfactory.net/hie/task/pragma-id";
-    public static final String IDENTIFIER_SYSTEM_CORRELATION_ID = "http://fhirfactory.net/hie/task/correlation-id";
-    public static final String IDENTIFIER_SYSTEM_CAUSATION_ID = "http://fhirfactory.net/hie/task/causation-id";
+    public static final String IDENTIFIER_SYSTEM_PRAGMA_ID = "http://fhirfactory.net/harmonia/task/pragma-id";
+    public static final String IDENTIFIER_SYSTEM_CORRELATION_ID = "http://fhirfactory.net/harmonia/task/correlation-id";
+    public static final String IDENTIFIER_SYSTEM_CAUSATION_ID = "http://fhirfactory.net/harmonia/task/causation-id";
 
-    public static final String EXTENSION_PRAXIS_ID = "http://fhirfactory.net/hie/task/praxis-id";
-    public static final String EXTENSION_CHECKPOINT = "http://fhirfactory.net/hie/task/checkpoint";
-    public static final String EXTENSION_CHECKPOINT_STAGE = "http://fhirfactory.net/hie/task/checkpoint-stage";
-    public static final String EXTENSION_CHECKPOINT_ERGON = "http://fhirfactory.net/hie/task/checkpoint-ergon";
-    public static final String EXTENSION_CHECKPOINT_STEP = "http://fhirfactory.net/hie/task/checkpoint-step";
-    public static final String EXTENSION_METADATA_PREFIX = "http://fhirfactory.net/hie/task/metadata/";
+    public static final String EXTENSION_PRAXIS_ID = "http://fhirfactory.net/harmonia/task/praxis-id";
+    public static final String EXTENSION_CHECKPOINT = "http://fhirfactory.net/harmonia/task/checkpoint";
+    public static final String EXTENSION_CHECKPOINT_STAGE = "http://fhirfactory.net/harmonia/task/checkpoint-stage";
+    public static final String EXTENSION_CHECKPOINT_ERGON = "http://fhirfactory.net/harmonia/task/checkpoint-ergon";
+    public static final String EXTENSION_CHECKPOINT_STEP = "http://fhirfactory.net/harmonia/task/checkpoint-step";
+    public static final String EXTENSION_METADATA_PREFIX = "http://fhirfactory.net/harmonia/task/metadata/";
 
-    public static final String EXTENSION_SECURITY_PREFIX = "http://fhirfactory.net/hie/task/security/";
+    public static final String EXTENSION_SECURITY_PREFIX = "http://fhirfactory.net/harmonia/task/security/";
     public static final String EXTENSION_SECURITY_PRINCIPAL_ID = EXTENSION_SECURITY_PREFIX + "principal-id";
     public static final String EXTENSION_SECURITY_PRINCIPAL_TYPE = EXTENSION_SECURITY_PREFIX + "principal-type";
     public static final String EXTENSION_SECURITY_SOURCE_DOMAIN = EXTENSION_SECURITY_PREFIX + "source-domain";
     public static final String EXTENSION_SECURITY_AUTHORITY = EXTENSION_SECURITY_PREFIX + "authority";
     public static final String EXTENSION_SECURITY_POLICY_VERSION = EXTENSION_SECURITY_PREFIX + "policy-version";
+
+    public static final String LEGACY_IDENTIFIER_SYSTEM_PRAGMA_ID = "http://fhirfactory.net/hie/task/pragma-id";
+    public static final String LEGACY_IDENTIFIER_SYSTEM_CORRELATION_ID = "http://fhirfactory.net/hie/task/correlation-id";
+    public static final String LEGACY_IDENTIFIER_SYSTEM_CAUSATION_ID = "http://fhirfactory.net/hie/task/causation-id";
+    public static final String LEGACY_EXTENSION_PRAXIS_ID = "http://fhirfactory.net/hie/task/praxis-id";
+    public static final String LEGACY_EXTENSION_METADATA_PREFIX = "http://fhirfactory.net/hie/task/metadata/";
+    public static final String LEGACY_EXTENSION_SECURITY_PREFIX = "http://fhirfactory.net/hie/task/security/";
 
     private PragmaFhirConverter() {
         // Utility class
@@ -290,11 +297,11 @@ public final class PragmaFhirConverter {
 
         if (task.hasIdentifier()) {
             for (Identifier identifier : task.getIdentifier()) {
-                if (Objects.equals(identifier.getSystem(), IDENTIFIER_SYSTEM_PRAGMA_ID)) {
+                if (Objects.equals(identifier.getSystem(), IDENTIFIER_SYSTEM_PRAGMA_ID) || Objects.equals(identifier.getSystem(), LEGACY_IDENTIFIER_SYSTEM_PRAGMA_ID)) {
                     pragma.setPragmaId(identifier.getValue());
-                } else if (Objects.equals(identifier.getSystem(), IDENTIFIER_SYSTEM_CORRELATION_ID)) {
+                } else if (Objects.equals(identifier.getSystem(), IDENTIFIER_SYSTEM_CORRELATION_ID) || Objects.equals(identifier.getSystem(), LEGACY_IDENTIFIER_SYSTEM_CORRELATION_ID)) {
                     pragma.setCorrelationId(identifier.getValue());
-                } else if (Objects.equals(identifier.getSystem(), IDENTIFIER_SYSTEM_CAUSATION_ID)) {
+                } else if (Objects.equals(identifier.getSystem(), IDENTIFIER_SYSTEM_CAUSATION_ID) || Objects.equals(identifier.getSystem(), LEGACY_IDENTIFIER_SYSTEM_CAUSATION_ID)) {
                     pragma.setCausationId(identifier.getValue());
                 }
             }
@@ -325,6 +332,11 @@ public final class PragmaFhirConverter {
             pragma.setPraxisId(task.getInstantiatesCanonical());
         } else if (task.hasExtension(EXTENSION_PRAXIS_ID)) {
             Extension praxisExt = task.getExtensionByUrl(EXTENSION_PRAXIS_ID);
+            if (praxisExt.hasValue() && praxisExt.getValue() instanceof StringType) {
+                pragma.setPraxisId(((StringType) praxisExt.getValue()).getValue());
+            }
+        } else if (task.hasExtension(LEGACY_EXTENSION_PRAXIS_ID)) {
+            Extension praxisExt = task.getExtensionByUrl(LEGACY_EXTENSION_PRAXIS_ID);
             if (praxisExt.hasValue() && praxisExt.getValue() instanceof StringType) {
                 pragma.setPraxisId(((StringType) praxisExt.getValue()).getValue());
             }
@@ -424,17 +436,20 @@ public final class PragmaFhirConverter {
                     if (url.startsWith(EXTENSION_METADATA_PREFIX)) {
                         String key = url.substring(EXTENSION_METADATA_PREFIX.length());
                         pragma.addMetadata(key, val);
-                    } else if (EXTENSION_SECURITY_PRINCIPAL_ID.equals(url)) {
+                    } else if (url.startsWith(LEGACY_EXTENSION_METADATA_PREFIX)) {
+                        String key = url.substring(LEGACY_EXTENSION_METADATA_PREFIX.length());
+                        pragma.addMetadata(key, val);
+                    } else if (EXTENSION_SECURITY_PRINCIPAL_ID.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "principal-id").equals(url)) {
                         principalId = val;
-                    } else if (EXTENSION_SECURITY_PRINCIPAL_TYPE.equals(url)) {
+                    } else if (EXTENSION_SECURITY_PRINCIPAL_TYPE.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "principal-type").equals(url)) {
                         try {
                             principalType = PrincipalType.valueOf(val);
                         } catch (Exception ignored) {}
-                    } else if (EXTENSION_SECURITY_SOURCE_DOMAIN.equals(url)) {
+                    } else if (EXTENSION_SECURITY_SOURCE_DOMAIN.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "source-domain").equals(url)) {
                         sourceDomain = val;
-                    } else if (EXTENSION_SECURITY_AUTHORITY.equals(url)) {
+                    } else if (EXTENSION_SECURITY_AUTHORITY.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "authority").equals(url)) {
                         pragma.addOriginatingAuthority(val);
-                    } else if (EXTENSION_SECURITY_POLICY_VERSION.equals(url)) {
+                    } else if (EXTENSION_SECURITY_POLICY_VERSION.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "policy-version").equals(url)) {
                         policyVersion = val;
                     }
                 }

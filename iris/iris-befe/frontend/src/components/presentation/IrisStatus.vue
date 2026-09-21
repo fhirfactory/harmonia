@@ -22,7 +22,8 @@ import {
   AlertTriangle,
   XCircle,
   HelpCircle,
-  Clock
+  Clock,
+  PauseCircle
 } from 'lucide-vue-next'
 import type { StatusState } from '../../types'
 
@@ -46,9 +47,9 @@ const props = withDefaults(
   }
 )
 
-type NormalizedStatus = 'HEALTHY' | 'DEGRADED' | 'UNAVAILABLE' | 'UNKNOWN' | 'STALE'
+type SemanticCategory = 'HEALTHY' | 'DEGRADED' | 'UNAVAILABLE' | 'NEUTRAL' | 'UNKNOWN' | 'STALE'
 
-const normalized = computed<NormalizedStatus>(() => {
+const semanticCategory = computed<SemanticCategory>(() => {
   if (props.stale) return 'STALE'
   if (!props.status) return 'UNKNOWN'
   const s = String(props.status).toUpperCase()
@@ -82,6 +83,16 @@ const normalized = computed<NormalizedStatus>(() => {
   ) {
     return 'UNAVAILABLE'
   }
+  if (
+    s === 'IDLE' ||
+    s === 'PAUSED' ||
+    s === 'PENDING' ||
+    s === 'INACTIVE' ||
+    s === 'QUEUED' ||
+    s === 'NEUTRAL'
+  ) {
+    return 'NEUTRAL'
+  }
   return 'UNKNOWN'
 })
 
@@ -99,22 +110,51 @@ const label = computed(() => {
     return String(props.status).toUpperCase()
   }
 
-  // title case mapping
-  switch (normalized.value) {
+  // title case mapping - preserves actual operational state meaning
+  const s = String(props.status).toUpperCase()
+  switch (s) {
     case 'HEALTHY':
+    case 'UP':
+    case 'RUNNING':
+    case 'ACTIVE':
+    case 'READY':
+    case 'SUCCESS':
+    case 'RESOLVED':
       return 'Healthy'
     case 'DEGRADED':
+    case 'WARNING':
+    case 'WARN':
+    case 'RETRYING':
+    case 'ACKNOWLEDGED':
       return 'Degraded'
     case 'UNAVAILABLE':
+    case 'DOWN':
+    case 'FAILED':
+    case 'CRITICAL':
+    case 'ERROR':
+    case 'TERMINATED':
       return 'Unavailable'
+    case 'IDLE':
+      return 'Idle'
+    case 'PAUSED':
+      return 'Paused'
+    case 'PENDING':
+      return 'Pending'
+    case 'INACTIVE':
+      return 'Inactive'
+    case 'QUEUED':
+      return 'Queued'
+    case 'NEUTRAL':
+      return 'Neutral'
     case 'UNKNOWN':
-    default:
       return 'Unknown'
+    default:
+      return String(props.status).charAt(0).toUpperCase() + String(props.status).slice(1).toLowerCase()
   }
 })
 
 const config = computed(() => {
-  switch (normalized.value) {
+  switch (semanticCategory.value) {
     case 'HEALTHY':
       return {
         variantClass: 'iris-status--healthy',
@@ -138,6 +178,14 @@ const config = computed(() => {
         icon: XCircle,
         symbol: '✖',
         aria: 'Unavailable failure state'
+      }
+    case 'NEUTRAL':
+      return {
+        variantClass: 'iris-status--neutral iris-status--idle',
+        dotClass: 'iris-status-dot--neutral iris-status-dot--idle',
+        icon: PauseCircle,
+        symbol: '‖',
+        aria: `${label.value} operational state`
       }
     case 'STALE':
       return {
@@ -253,6 +301,13 @@ const iconSize = computed(() => {
   border-color: var(--iris-status-unavailable-border);
 }
 
+.iris-status--neutral,
+.iris-status--idle {
+  background-color: var(--iris-status-neutral-bg, var(--iris-status-idle-bg));
+  color: var(--iris-status-neutral-text, var(--iris-status-idle-text));
+  border-color: var(--iris-status-neutral-border, var(--iris-status-idle-border));
+}
+
 .iris-status--stale {
   background-color: #f3e8ff;
   color: #6b21a8;
@@ -318,6 +373,11 @@ const iconSize = computed(() => {
 
 .iris-status-dot--unavailable {
   background-color: var(--iris-status-unavailable-text);
+}
+
+.iris-status-dot--neutral,
+.iris-status-dot--idle {
+  background-color: var(--iris-status-neutral-text, var(--iris-status-idle-text));
 }
 
 .iris-status-dot--stale {

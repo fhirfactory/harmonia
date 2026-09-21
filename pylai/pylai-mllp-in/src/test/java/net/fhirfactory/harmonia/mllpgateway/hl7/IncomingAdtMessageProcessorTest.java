@@ -88,7 +88,7 @@ class IncomingAdtMessageProcessorTest {
         assertThat(comm.getSubject().getReference()).isEqualTo("Patient/PAT10099");
         assertThat(comm.getSubject().getDisplay()).isEqualTo("JOHN SMITH");
         assertThat(comm.getSender().getDisplay()).contains("EPIC @ HOSPITAL");
-        assertThat(comm.getRecipientFirstRep().getDisplay()).isEqualTo("HIE MLLP Gateway");
+        assertThat(comm.getRecipientFirstRep().getDisplay()).isEqualTo("Harmonia MLLP Gateway");
         assertThat(comm.getNoteFirstRep().getText()).contains("Raw HL7 v2.4 A01 ADT message received");
 
         // Verify Communication contains raw ADT message payload
@@ -107,8 +107,8 @@ class IncomingAdtMessageProcessorTest {
         assertThat(task).isNotNull();
         assertThat(task.getStatus()).isEqualTo(Task.TaskStatus.REQUESTED);
         assertThat(task.getPriority()).isEqualTo(Enumerations.RequestPriority.ROUTINE);
-        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HIE_SYNTHETIC_TASK)).isTrue();
-        assertThat(task.getReasonFirstRep().getConcept().getText()).isEqualTo("HIE-Synthetic-Task");
+        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK)).isTrue();
+        assertThat(task.getReasonFirstRep().getConcept().getText()).isEqualTo("Harmonia-Synthetic-Task");
         assertThat(task.getDescription()).contains("ADT^A01 (Admit/Visit Notification) for Patient JOHN SMITH (ID: PAT10099)");
         assertThat(task.getFor().getReference()).isEqualTo("Patient/PAT10099");
         assertThat(task.getFor().getDisplay()).isEqualTo("JOHN SMITH");

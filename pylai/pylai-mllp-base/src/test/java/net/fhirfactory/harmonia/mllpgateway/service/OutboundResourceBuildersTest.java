@@ -82,7 +82,7 @@ class OutboundResourceBuildersTest {
         assertThat(updatedTask.getStatus()).isEqualTo(Task.TaskStatus.COMPLETED);
         assertThat(updatedTask.getOutput()).hasSize(1);
         assertThat(updatedTask.getOutputFirstRep().getExtension()).isNotEmpty();
-        assertThat(updatedTask.getOutputFirstRep().getExtensionByUrl("http://example.org/hie/destination-delivery-status")).isNotNull();
+        assertThat(updatedTask.getOutputFirstRep().getExtensionByUrl("http://fhirfactory.net/harmonia/destination-delivery-status")).isNotNull();
         assertThat(FhirSecurityTagManager.hasConfidentiality(updatedTask, FhirConfidentialityEnum.N)).isTrue();
     }
 

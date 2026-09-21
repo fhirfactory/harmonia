@@ -92,7 +92,7 @@ energeia/
   - `net.fhirfactory.harmonia.workflowcli.command`
   - `net.fhirfactory.harmonia.workflowcli.formatter`
 - **Key Classes**:
-  - `HieWorkflowCliMain`: Command-line interface entry point.
+  - `WorkflowCliMain`: Command-line interface entry point.
   - `WorkflowHttpClient`: REST client connecting to Ponos and Mnemosyne Operations endpoints.
   - `WorkflowCliCommand`: Administrative commands for inspecting worker thread states, queue depths, and forcing blueprint reload.
   - `WorkflowOutputFormatter`: Pretty-prints workflow metrics in ASCII tables or JSON.

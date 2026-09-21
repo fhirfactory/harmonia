@@ -23,25 +23,46 @@ import { operationsApi } from '../api/operationsClient';
 
 vi.mock('../api/operationsClient', () => ({
   operationsApi: {
-    getSystemStatus: vi.fn(),
+    getSummary: vi.fn(),
     getSubsystems: vi.fn(),
     getAlerts: vi.fn(),
     getQueues: vi.fn(),
-    getWorkflows: vi.fn()
+    getSubsystemStatistics: vi.fn()
   }
 }));
 
 const RouterLinkStub = {
-  template: '<a><slot /></a>'
+  props: ['to'],
+  template: '<a :href="to"><slot /></a>'
 };
 
-describe('Overview perspective telemetry and visual layout', () => {
+function mountOverview() {
+  return mount(OverviewView, {
+    global: {
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    }
+  });
+}
+
+describe('Overview perspective', () => {
   let wrapper: ReturnType<typeof mount> | null = null;
 
   beforeEach(() => {
     setActivePinia(createPinia());
     vi.clearAllMocks();
-    (operationsApi.getSystemStatus as any).mockResolvedValue(null);
+    (operationsApi.getSummary as any).mockResolvedValue({
+      platformStatus: 'DEGRADED',
+      environment: 'PROD',
+      cluster: 'harmonia-cluster-01',
+      timestamp: Date.now(),
+      totalSubsystems: 2,
+      degradedSubsystems: 1,
+      criticalAlerts: 0,
+      warningAlerts: 1,
+      lastRefreshed: Date.now()
+    });
     (operationsApi.getSubsystems as any).mockResolvedValue([
       {
         id: 'themis',
@@ -56,7 +77,7 @@ describe('Overview perspective telemetry and visual layout', () => {
         id: 'petasos',
         name: 'Petasos',
         description: 'Messaging & Transport',
-        state: 'HEALTHY',
+        state: 'DEGRADED',
         instanceCount: 2,
         version: '1.0.0',
         lastUpdated: Date.now()
@@ -75,7 +96,7 @@ describe('Overview perspective telemetry and visual layout', () => {
       }
     ]);
     (operationsApi.getQueues as any).mockResolvedValue([]);
-    (operationsApi.getWorkflows as any).mockResolvedValue([]);
+    (operationsApi.getSubsystemStatistics as any).mockResolvedValue({});
   });
 
   afterEach(() => {
@@ -83,81 +104,68 @@ describe('Overview perspective telemetry and visual layout', () => {
     wrapper = null;
   });
 
-  it('renders platform operational status strip and triage sections', async () => {
-    wrapper = mount(OverviewView, {
-      global: {
-        stubs: {
-          RouterLink: RouterLinkStub
-        }
-      }
-    });
+  it('renders a compact platform status strip driven by the summary payload', async () => {
+    wrapper = mountOverview();
     await flushPromises();
 
     const text = wrapper.text();
-    expect(text).toContain('Platform Operational Overview');
-    expect(text).toContain('PLATFORM STATUS:');
-    expect(text).toContain('Subsystems:');
-    expect(text).toContain('2/2 Up');
-    expect(text).toContain('Active Queues:');
-    expect(text).toContain('Executing Tasks:');
-    expect(text).toContain('Alerts:');
-    expect(text).toContain('1');
-
-    // The 3 core operational questions in IrisSection
-    expect(text).toContain('Is Harmonia healthy?');
-    expect(text).toContain('Is work moving?');
-    expect(text).toContain('Are messages backing up?');
+    expect(text).toContain('Overview');
+    expect(text).toContain('Platform status');
+    expect(text).toContain('Subsystems healthy');
+    expect(text).toContain('1 of 2');
+    expect(text).toContain('Environment');
+    expect(text).toContain('PROD');
+    expect(text).toContain('harmonia-cluster-01');
   });
 
-  it('renders all 6 Harmonia architectural areas in high-density IrisDataTable', async () => {
-    wrapper = mount(OverviewView, {
-      global: {
-        stubs: {
-          RouterLink: RouterLinkStub
-        }
-      }
-    });
+  it('renders a dense subsystem grid linking to each subsystem detail page', async () => {
+    wrapper = mountOverview();
+    await flushPromises();
+
+    const links = wrapper.findAll('.overview-view__grid-link');
+    expect(links).toHaveLength(2);
+    expect(links.map(l => l.attributes('href'))).toEqual(['/subsystems/themis', '/subsystems/petasos']);
+    expect(wrapper.text()).toContain('subsystem(s) need attention: Petasos');
+  });
+
+  it('links the alert and queue summaries onward to their detail pages', async () => {
+    wrapper = mountOverview();
+    await flushPromises();
+
+    const hrefs = wrapper.findAll('a').map(a => a.attributes('href'));
+    expect(hrefs).toContain('/subsystems');
+    expect(hrefs).toContain('/alerts');
+    expect(hrefs).toContain('/messages');
+    expect(wrapper.text()).toContain('High evaluation latency detected');
+  });
+
+  it('uses only the four permitted operations endpoints', async () => {
+    wrapper = mountOverview();
+    await flushPromises();
+
+    expect(operationsApi.getSummary).toHaveBeenCalled();
+    expect(operationsApi.getSubsystems).toHaveBeenCalled();
+    expect(operationsApi.getAlerts).toHaveBeenCalled();
+    expect(operationsApi.getQueues).toHaveBeenCalled();
+    expect((operationsApi as any).getSystemStatus).toBeUndefined();
+    expect((operationsApi as any).getWorkflows).toBeUndefined();
+  });
+
+  it('distinguishes an empty queue result from an unreachable API', async () => {
+    wrapper = mountOverview();
     await flushPromises();
 
     const text = wrapper.text();
-    expect(text).toContain('Subsystem Summary by Architectural Area');
-    expect(text).toContain('6 Authoritative Areas');
-
-    // 6 Area titles
-    expect(text).toContain('Security & Policy');
-    expect(text).toContain('Integration & Transport');
-    expect(text).toContain('Information & State');
-    expect(text).toContain('Execution & Processing');
-    expect(text).toContain('Collaboration');
-    expect(text).toContain('Presentation');
+    expect(text).toContain('No queues present');
+    expect(text).toContain('The operations API responded successfully but reported no queues.');
+    expect(text).not.toContain('Queue activity unavailable');
   });
 
-  it('uses honest placeholders when no queue or workflow telemetry is available', async () => {
-    (operationsApi.getSubsystems as any).mockResolvedValue([]);
-    (operationsApi.getAlerts as any).mockResolvedValue([]);
-    wrapper = mount(OverviewView, {
-      global: {
-        stubs: {
-          RouterLink: RouterLinkStub
-        }
-      }
-    });
-    await flushPromises();
-
-    const text = wrapper.text();
-    expect(text).toContain('No live telemetry');
-    expect(text).not.toContain('184 msg/s');
-    expect(text).not.toContain('42.0');
-    expect(text).not.toContain('99.98% hit rate');
-    expect(text).not.toContain('340 eval/s');
-    expect(text).not.toContain('28 req/s');
-  });
-
-  it('does not turn genuine zero rates into fabricated non-zero throughput', async () => {
+  it('never fabricates a broker topology when the payload does not supply one', async () => {
     (operationsApi.getQueues as any).mockResolvedValue([{
-      queueId: 'petasos.queue.empty',
-      queueName: 'petasos.queue.empty',
-      status: 'HEALTHY',
+      queueId: 'petasos.queue.task',
+      queueName: 'petasos.queue.task',
+      status: 'IDLE',
       depth: 0,
       consumerCount: 0,
       producerCount: 0,
@@ -168,31 +176,63 @@ describe('Overview perspective telemetry and visual layout', () => {
       dlqDepth: 0,
       expiryCount: 0
     }]);
-    (operationsApi.getWorkflows as any).mockResolvedValue([{
-      workflowId: 'sequence-without-traffic',
-      name: 'Sequence Without Traffic',
-      activeExecutions: 0,
-      queuedWork: 0,
-      completedWork: 0,
-      failedWork: 0,
-      retryingWork: 0,
-      processingRate: 0,
-      p95DurationMs: 0,
-      failureRate: 0
-    }]);
 
-    wrapper = mount(OverviewView, {
-      global: {
-        stubs: {
-          RouterLink: RouterLinkStub
-        }
-      }
-    });
+    wrapper = mountOverview();
     await flushPromises();
 
     const text = wrapper.text();
-    expect(text).toContain('Telemetry initializing');
-    expect(text).not.toContain('184 msg/s');
-    expect(text).not.toContain('42.0');
+    expect(text).toContain('Broker topology:');
+    expect(text).toContain('Not reported by the operations API');
+    expect(text).not.toContain('Artemis');
+  });
+
+  it('states plainly when the whole operations API is unreachable', async () => {
+    (operationsApi.getSummary as any).mockRejectedValue(new Error('Network Error'));
+    (operationsApi.getSubsystems as any).mockRejectedValue(new Error('Network Error'));
+    (operationsApi.getAlerts as any).mockRejectedValue(new Error('Network Error'));
+    (operationsApi.getQueues as any).mockRejectedValue(new Error('Network Error'));
+
+    wrapper = mountOverview();
+    await flushPromises();
+
+    const text = wrapper.text();
+    expect(text).toContain('Operations API unavailable');
+    expect(text).not.toContain('No queues present');
+    expect(text).not.toContain('No active alerts present');
+  });
+
+  it('reports a partial failure without hiding the sections that did load', async () => {
+    (operationsApi.getQueues as any).mockRejectedValue(new Error('Network Error'));
+
+    wrapper = mountOverview();
+    await flushPromises();
+
+    const text = wrapper.text();
+    expect(text).toContain('Partial data');
+    expect(text).toContain('Queue activity');
+    expect(text).toContain('Queue activity unavailable');
+    // Sections that loaded are still shown
+    expect(text).toContain('Themis');
+    expect(text).toContain('High evaluation latency detected');
+  });
+
+  it('never renders a stack trace for a failed slice', async () => {
+    const err = new Error('Request failed\n    at XMLHttpRequest.handleError');
+    (operationsApi.getAlerts as any).mockRejectedValue(err);
+
+    wrapper = mountOverview();
+    await flushPromises();
+
+    expect(wrapper.text()).not.toContain('at XMLHttpRequest');
+  });
+
+  it('renders no fabricated throughput or workflow telemetry', async () => {
+    wrapper = mountOverview();
+    await flushPromises();
+
+    const text = wrapper.text();
+    expect(text).not.toContain('msg/s');
+    expect(text).not.toContain('Is work moving?');
+    expect(text).not.toContain('Telemetry initializing');
   });
 });

@@ -43,10 +43,60 @@ describe('useQueueStore', () => {
 
     expect(store.queues.length).toBe(0);
     expect(store.totalQueues).toBe(0);
-    expect(store.brokerTopology).toContain('Artemis');
     expect(store.isDrawerOpen).toBe(false);
     expect(store.selectedQueue).toBeNull();
     expect(store.error).toBeNull();
+    // An empty result set is empty, not unavailable.
+    expect(store.queuesState.kind).toBe('empty');
+  });
+
+  it('reports broker topology as unknown when the payload supplies no broker facts', async () => {
+    (operationsApi.getQueues as any).mockResolvedValue([]);
+    await store.fetchQueues();
+
+    expect(store.brokerTopology).toBeNull();
+    expect(store.isBrokerTopologyKnown).toBe(false);
+    expect(store.brokerFacts.brokerName).toBeNull();
+  });
+
+  it('derives broker facts only from values the queues payload actually supplies', async () => {
+    (operationsApi.getQueues as any).mockResolvedValue([
+      {
+        queueId: 'q1',
+        queueName: 'q1',
+        address: 'q1',
+        brokerName: 'artemis-broker-0',
+        brokerVersion: '2.33.0'
+      }
+    ]);
+    await store.fetchQueues();
+
+    expect(store.isBrokerTopologyKnown).toBe(true);
+    expect(store.brokerTopology).toBe('artemis-broker-0 / 2.33.0');
+    expect(store.brokerFacts.brokerUrl).toBeNull();
+    expect(store.brokerFacts.addressCount).toBe(1);
+  });
+
+  it('distinguishes an unreachable operations API from an empty result set', async () => {
+    (operationsApi.getQueues as any).mockRejectedValue(new Error('Network Error'));
+    await store.fetchQueues();
+
+    expect(store.queuesState.kind).toBe('unavailable');
+    expect(store.queuesState.message).toContain('Operations API unavailable');
+    expect(store.error).toContain('Operations API unavailable');
+    expect(store.isStale).toBe(true);
+  });
+
+  it('records a selection failure in store state rather than logging to the console', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    (operationsApi.getQueue as any).mockRejectedValue(new Error('404'));
+
+    await store.selectQueue('missing-queue');
+
+    expect(store.isDrawerOpen).toBe(false);
+    expect(store.selectedQueueError).toContain('missing-queue');
+    expect(warn).not.toHaveBeenCalled();
+    warn.mockRestore();
   });
 
   it('populates queues when operationsApi returns queue telemetry', async () => {
@@ -73,6 +123,7 @@ describe('useQueueStore', () => {
     expect(store.queues.length).toBe(1);
     expect(store.totalQueues).toBe(1);
     expect(store.messagesInFlight).toBe(5);
+    expect(store.queuesState.kind).toBe('loaded');
   });
 
   it('computes total in-flight messages, consumers, and DLQ depth', () => {

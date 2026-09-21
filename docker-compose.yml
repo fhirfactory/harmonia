@@ -20,7 +20,7 @@ services:
   # -------------------------------------------------------------
   postgres-1:
     image: postgres:16-alpine
-    container_name: hie-postgres-1
+    container_name: harmonia-postgres-1
     command:
       - "postgres"
       - "-c"
@@ -45,14 +45,14 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 5. Relational Database for HAPI FHIR Node 2
   # -------------------------------------------------------------
   postgres-2:
     image: postgres:16-alpine
-    container_name: hie-postgres-2
+    container_name: harmonia-postgres-2
     command:
       - "postgres"
       - "-c"
@@ -77,14 +77,14 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 5. Relational Database for Operations Node 1
   # -------------------------------------------------------------
   postgres-ops-1:
     image: postgres:16-alpine
-    container_name: hie-postgres-ops-1
+    container_name: harmonia-postgres-ops-1
     command:
       - "postgres"
       - "-c"
@@ -109,14 +109,14 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 5. Relational Database for Operations Node 2
   # -------------------------------------------------------------
   postgres-ops-2:
     image: postgres:16-alpine
-    container_name: hie-postgres-ops-2
+    container_name: harmonia-postgres-ops-2
     command:
       - "postgres"
       - "-c"
@@ -141,7 +141,7 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 5. Replicated Mnemosyne Clinical JPA Server Nodes (FHIR R5)
@@ -150,7 +150,7 @@ services:
     build:
       context: ./hestia/mnemosyne-clinical
       dockerfile: Dockerfile
-    container_name: hie-hapi-fhir-1
+    container_name: harmonia-hapi-fhir-1
     environment:
       SPRING_PROFILES_ACTIVE: postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-1:5432/fhir_node_1
@@ -168,13 +168,13 @@ services:
       retries: 5
       start_period: 20s
     networks:
-      - hie-network
+      - harmonia-network
 
   hapi-fhir-jpa-server-2:
     build:
       context: ./hestia/mnemosyne-clinical
       dockerfile: Dockerfile
-    container_name: hie-hapi-fhir-2
+    container_name: harmonia-hapi-fhir-2
     environment:
       SPRING_PROFILES_ACTIVE: postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-2:5432/fhir_node_2
@@ -192,16 +192,16 @@ services:
       retries: 5
       start_period: 20s
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 5. Replicated Mnemosyne Operations JPA Server Nodes (Non-FHIR & TaskSequences)
   # -------------------------------------------------------------
-  hie-operations-jpa-server-1:
+  operations-1:
     build:
       context: ./hestia/mnemosyne-operations
       dockerfile: Dockerfile
-    container_name: hie-operations-1
+    container_name: harmonia-operations-1
     environment:
       SPRING_PROFILES_ACTIVE: postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-ops-1:5432/ops_node_1
@@ -219,13 +219,13 @@ services:
       retries: 5
       start_period: 20s
     networks:
-      - hie-network
+      - harmonia-network
 
-  hie-operations-jpa-server-2:
+  operations-2:
     build:
       context: ./hestia/mnemosyne-operations
       dockerfile: Dockerfile
-    container_name: hie-operations-2
+    container_name: harmonia-operations-2
     environment:
       SPRING_PROFILES_ACTIVE: postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-ops-2:5432/ops_node_2
@@ -243,7 +243,7 @@ services:
       retries: 5
       start_period: 20s
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 3 & 4. Mneme (Infinispan) Cluster with Custom Persistence Store SPI
@@ -252,39 +252,39 @@ services:
     build:
       context: ./hestia/mneme-cluster
       dockerfile: Dockerfile
-    container_name: hie-infinispan-node1
+    container_name: harmonia-infinispan-node1
     environment:
-      JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-1:8080/api/operations"
+      JAVA_OPTIONS: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://operations-1:8080/api/operations"
     ports:
       - "11222:11222"
       - "7800:7800"
     depends_on:
       hapi-fhir-jpa-server-1:
         condition: service_healthy
-      hie-operations-jpa-server-1:
+      operations-1:
         condition: service_healthy
     networks:
-      - hie-network
+      - harmonia-network
 
   infinispan-2:
     build:
       context: ./hestia/mneme-cluster
       dockerfile: Dockerfile
-    container_name: hie-infinispan-node2
+    container_name: harmonia-infinispan-node2
     environment:
-      JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-2:8080/api/operations"
+      JAVA_OPTIONS: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://operations-2:8080/api/operations"
     ports:
       - "11223:11222"
       - "7801:7800"
     depends_on:
       hapi-fhir-jpa-server-2:
         condition: service_healthy
-      hie-operations-jpa-server-2:
+      operations-2:
         condition: service_healthy
       infinispan-1:
         condition: service_started
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 2. WildFly Jakarta EE Backend-For-Frontend (BEFE)
@@ -293,7 +293,7 @@ services:
     build:
       context: ./iris/iris-befe
       dockerfile: Dockerfile
-    container_name: hie-befe
+    container_name: harmonia-befe
     environment:
       INFINISPAN_HOST: infinispan-1
       INFINISPAN_PORT: 11222
@@ -307,7 +307,7 @@ services:
     depends_on:
       - infinispan-1
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Tier 1. TypeScript / Vue 3 SPAs with Nginx Gateway
@@ -316,32 +316,32 @@ services:
     build:
       context: ./iris/iris-clinical
       dockerfile: Dockerfile
-    container_name: hie-iris-clinical
+    container_name: harmonia-iris-clinical
     ports:
       - "3000:80"
     depends_on:
       - befe
     networks:
-      - hie-network
+      - harmonia-network
 
   iris-console:
     build:
       context: ./iris
       dockerfile: iris-console/Dockerfile
-    container_name: hie-iris-console
+    container_name: harmonia-iris-console
     ports:
       - "3001:80"
     depends_on:
       - befe
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Petasos Messaging Services: Standalone ActiveMQ Artemis Broker Runtime
   # -------------------------------------------------------------
   petasos:
     image: apache/activemq-artemis:2.33.0
-    container_name: hie-petasos
+    container_name: harmonia-petasos
     # Start as root so entrypoint can chown the named petasos_data volume, then drop to artemis.
     user: "0"
     entrypoint: ["/bin/bash", "/docker-entrypoint.sh"]
@@ -361,13 +361,13 @@ services:
       - ./petasos/deployment/artemis/standalone/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
       - petasos_data:/var/lib/artemis-instance/data
     healthcheck:
-      test: ["CMD-SHELL", "/bin/bash -c '</dev/tcp/127.0.0.1/61616' || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8161/ || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 5
       start_period: 10s
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Pylai (Interface / Gateway Services): MLLP Inbound Gateway (HL7 v2.4 Ingestion & Transformation)
@@ -376,7 +376,7 @@ services:
     build:
       context: ./pylai/pylai-mllp-in
       dockerfile: Dockerfile
-    container_name: hie-mllp-gateway
+    container_name: harmonia-mllp-gateway
     environment:
       MLLP_HOST: "0.0.0.0"
       MLLP_PORT: "2575"
@@ -384,9 +384,10 @@ services:
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
       INFINISPAN_PASSWORD: admin
+      PETASOS_HA_ENABLED: "false"
       PETASOS_BROKER_URL: "tcp://petasos:61616"
-      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
-      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-harmonia}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
       TASK_PROCESSOR_URL: http://task-processor:8080/api/queue/event
     ports:
       - "2575:2575"
@@ -399,7 +400,7 @@ services:
       task-processor:
         condition: service_started
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Pylai (Interface / Gateway Services): MLLP Outbound Gateway Instances (Egress)
@@ -409,18 +410,19 @@ services:
     build:
       context: ./pylai/pylai-mllp-out
       dockerfile: Dockerfile
-    container_name: hie-mllp-outbound-his
+    container_name: harmonia-mllp-outbound-his
     environment:
       MLLP_OUTBOUND_INSTANCE_ID: "mllp-sender-his"
       MLLP_OUTBOUND_TARGET_ENDPOINT_ID: "HIS_NORTH"
       MLLP_OUTBOUND_QUEUE_PREFIX: "petasos.queue.mllp.outbound"
       MLLP_OUTBOUND_PORT: "8087"
+      PETASOS_HA_ENABLED: "false"
       PETASOS_BROKER_URL: "tcp://petasos:61616"
-      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
-      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-harmonia}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
       TASK_PROCESSOR_BROKER_URL: "tcp://petasos:61616"
-      TASK_PROCESSOR_BROKER_USERNAME: ${PETASOS_BROKER_USER:-admin}
-      TASK_PROCESSOR_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      TASK_PROCESSOR_BROKER_USERNAME: ${PETASOS_BROKER_USER:-harmonia}
+      TASK_PROCESSOR_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
       INFINISPAN_HOST: infinispan-1
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
@@ -435,24 +437,25 @@ services:
       task-processor:
         condition: service_started
     networks:
-      - hie-network
+      - harmonia-network
 
   mllp-outbound-lis:
     build:
       context: ./pylai/pylai-mllp-out
       dockerfile: Dockerfile
-    container_name: hie-mllp-outbound-lis
+    container_name: harmonia-mllp-outbound-lis
     environment:
       MLLP_OUTBOUND_INSTANCE_ID: "mllp-sender-lis"
       MLLP_OUTBOUND_TARGET_ENDPOINT_ID: "LIS_MAIN"
       MLLP_OUTBOUND_QUEUE_PREFIX: "petasos.queue.mllp.outbound"
       MLLP_OUTBOUND_PORT: "8088"
+      PETASOS_HA_ENABLED: "false"
       PETASOS_BROKER_URL: "tcp://petasos:61616"
-      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
-      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-harmonia}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
       TASK_PROCESSOR_BROKER_URL: "tcp://petasos:61616"
-      TASK_PROCESSOR_BROKER_USERNAME: ${PETASOS_BROKER_USER:-admin}
-      TASK_PROCESSOR_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      TASK_PROCESSOR_BROKER_USERNAME: ${PETASOS_BROKER_USER:-harmonia}
+      TASK_PROCESSOR_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
       INFINISPAN_HOST: infinispan-1
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
@@ -467,7 +470,7 @@ services:
       task-processor:
         condition: service_started
     networks:
-      - hie-network
+      - harmonia-network
 
   # -------------------------------------------------------------
   # Energeia Workflow Services. Asynchronous Task Sequence Processor (WildFly + Artemis)
@@ -476,15 +479,16 @@ services:
     build:
       context: ./energeia/ponos
       dockerfile: Dockerfile
-    container_name: hie-task-processor
+    container_name: harmonia-task-processor
     environment:
       INFINISPAN_HOST: infinispan-1
       INFINISPAN_PORT: 11222
       INFINISPAN_USER: admin
       INFINISPAN_PASSWORD: admin
+      PETASOS_HA_ENABLED: "false"
       PETASOS_BROKER_URL: "tcp://petasos:61616"
-      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-admin}
-      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-adminPassword}
+      PETASOS_BROKER_USER: ${PETASOS_BROKER_USER:-harmonia}
+      PETASOS_BROKER_PASSWORD: ${PETASOS_BROKER_PASSWORD:-harmoniaPassword}
     ports:
       - "8083:8080"
     depends_on:
@@ -493,10 +497,10 @@ services:
       petasos:
         condition: service_healthy
     networks:
-      - hie-network
+      - harmonia-network
 
 networks:
-  hie-network:
+  harmonia-network:
     driver: bridge
 
 volumes:

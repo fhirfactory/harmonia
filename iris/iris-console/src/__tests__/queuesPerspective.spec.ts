@@ -15,14 +15,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { flushPromises, mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import { useQueueStore } from '../stores/queueStore';
 import { operationsApi } from '../api/operationsClient';
 import QueueTable from '../components/queues/QueueTable.vue';
 import QueueDetailDrawer from '../components/queues/QueueDetailDrawer.vue';
-import QueuesView from '../views/QueuesView.vue';
+import MessagesView from '../views/MessagesView.vue';
 import type { QueueSummary } from '../models/operations';
 
 vi.mock('../api/operationsClient', () => ({
@@ -33,7 +33,7 @@ vi.mock('../api/operationsClient', () => ({
   }
 }));
 
-describe('Queues Perspective Components', () => {
+describe('Messages (Petasos queue activity) perspective', () => {
   let store: any;
 
   const mockQueues: QueueSummary[] = [
@@ -94,6 +94,7 @@ describe('Queues Perspective Components', () => {
   ];
 
   beforeEach(() => {
+    vi.useFakeTimers();
     setActivePinia(createPinia());
     store = useQueueStore();
     vi.clearAllMocks();
@@ -101,14 +102,19 @@ describe('Queues Perspective Components', () => {
     (operationsApi.getSubsystems as any).mockResolvedValue([]);
   });
 
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  async function mountView() {
+    const wrapper = mount(MessagesView);
+    await flushPromises();
+    return wrapper;
+  }
+
   describe('QueueTable.vue', () => {
-    it('renders queue rows with status badge, rates, depth, and consumer counts', () => {
-      const wrapper = mount(QueueTable, {
-        props: {
-          queues: mockQueues,
-          loading: false
-        }
-      });
+    it('renders queue rows with status, rates, depth and consumer counts', () => {
+      const wrapper = mount(QueueTable, { props: { queues: mockQueues, loading: false } });
 
       const text = wrapper.text();
       expect(text).toContain('petasos.queue.pylai.mllp.in');
@@ -116,20 +122,20 @@ describe('Queues Perspective Components', () => {
       expect(text).toContain('12');
       expect(text).toContain('14.5 /s');
       expect(text).toContain('5s');
-
       expect(text).toContain('petasos.queue.ponos.dispatch');
       expect(text).toContain('75');
       expect(text).toContain('DEGRADED');
-      expect(text).toContain('4'); // DLQ
     });
 
-    it('emits select event when a row or details button is clicked', async () => {
-      const wrapper = mount(QueueTable, {
-        props: {
-          queues: mockQueues,
-          loading: false
-        }
-      });
+    it('no longer advertises a hard-coded Artemis broker port', () => {
+      const wrapper = mount(QueueTable, { props: { queues: mockQueues, loading: false } });
+
+      expect(wrapper.text()).not.toContain('61616');
+      expect(wrapper.text()).not.toContain('ActiveMQ Artemis Port');
+    });
+
+    it('emits select when a row is clicked', async () => {
+      const wrapper = mount(QueueTable, { props: { queues: mockQueues, loading: false } });
 
       const rows = wrapper.findAll('tbody tr');
       expect(rows.length).toBe(3);
@@ -139,68 +145,168 @@ describe('Queues Perspective Components', () => {
       expect(wrapper.emitted('select')![0][0]).toEqual(mockQueues[0]);
     });
 
-    it('renders honest empty state when queues array is empty', () => {
-      const wrapper = mount(QueueTable, {
-        props: {
-          queues: [],
-          loading: false
-        }
-      });
-
+    it('renders an honest empty state when no queues are supplied', () => {
+      const wrapper = mount(QueueTable, { props: { queues: [], loading: false } });
       expect(wrapper.text()).toContain('No message queues found');
     });
   });
 
   describe('QueueDetailDrawer.vue', () => {
-    it('renders safe queue operational telemetry and zero-PHI boundary notice', () => {
-      const wrapper = mount(QueueDetailDrawer, {
-        props: {
-          queue: mockQueues[0],
-          isOpen: true
-        }
-      });
+    it('renders queue telemetry, status via IrisStatus and the zero-PHI notice', () => {
+      const wrapper = mount(QueueDetailDrawer, { props: { queue: mockQueues[0], isOpen: true } });
 
       const text = wrapper.text();
       expect(text).toContain('petasos.queue.pylai.mllp.in');
       expect(text).toContain('Pylai Inbound MLLP Gateway');
-      expect(text).toContain('Zero-PHI Safe Telemetry');
-      expect(text).toContain('12'); // Current depth
-      expect(text).toContain('14.5 msg/sec'); // Enqueue rate
-      expect(text).toContain('14.0 msg/sec'); // Dequeue rate
-      expect(text).toContain('5s'); // Oldest age
-      expect(text).toContain('Historical Depth Trend');
+      expect(text).toContain('Zero-PHI safe telemetry');
+      expect(text).toContain('12');
+      expect(text).toContain('14.5 msg/sec');
+      expect(text).toContain('14.0 msg/sec');
+      expect(text).toContain('5s');
+      expect(text).toContain('Historical depth trend');
+      expect(wrapper.findAll('[role="status"]').length).toBeGreaterThan(0);
     });
 
-    it('emits close event when the close button is clicked', async () => {
-      const wrapper = mount(QueueDetailDrawer, {
-        props: {
-          queue: mockQueues[0],
-          isOpen: true
-        }
-      });
+    it('emits close from the close button and from Escape', async () => {
+      const wrapper = mount(QueueDetailDrawer, { props: { queue: mockQueues[0], isOpen: true } });
 
       const closeBtn = wrapper.find('button[aria-label="Close queue details drawer"]');
       expect(closeBtn.exists()).toBe(true);
-
       await closeBtn.trigger('click');
       expect(wrapper.emitted('close')).toBeTruthy();
-    });
 
-    it('emits close event when Escape key is pressed', async () => {
-      const wrapper = mount(QueueDetailDrawer, {
-        props: {
-          queue: mockQueues[0],
-          isOpen: true
-        }
-      });
-
+      const other = mount(QueueDetailDrawer, { props: { queue: mockQueues[0], isOpen: true } });
       window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
-      expect(wrapper.emitted('close')).toBeTruthy();
+      expect(other.emitted('close')).toBeTruthy();
     });
   });
 
-  describe('QueuesView.vue', () => {
-    it('derives the Petasos identity status from live subsystem telemetry', async () => {
+  describe('MessagesView.vue', () => {
+    it('states plainly that the page shows Petasos queue and broker activity', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      const text = wrapper.text();
+      expect(text).toContain('Messages');
+      expect(text).toContain('Petasos queue and broker activity');
+      expect(text).toContain('Message browsing, message detail and message replay are not available');
+    });
+
+    it('renders a compact metric strip derived from the queue store getters', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      const metrics = wrapper.findAll('.messages-view__metric');
+      expect(metrics.length).toBe(5);
+
+      const labels = metrics.map(m => m.find('.messages-view__metric-label').text());
+      expect(labels).toEqual(['Queues', 'Queued depth', 'Consumers', 'Producers', 'DLQ depth']);
+
+      const values = metrics.map(m => m.find('.messages-view__metric-value').text());
+      expect(values).toEqual(['3', '87', '2', '4', '4']);
+    });
+
+    it('does not render any replay, retry or resubmit affordance', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      // The words may appear in the notice explaining the capability is absent;
+      // what must not exist is an actual affordance.
+      const controls = wrapper.findAll('button, a, input[type="button"], [role="button"]');
+      expect(controls.length).toBeGreaterThan(0);
+      for (const control of controls) {
+        const label = `${control.text()} ${control.attributes('aria-label') || ''}`.toLowerCase();
+        expect(/replay|resubmit|redeliver/.test(label)).toBe(false);
+      }
+
+      const actionArea = wrapper.find('[data-testid="messages-action-area"]');
+      expect(actionArea.exists()).toBe(true);
+      expect(actionArea.findAll('button').length).toBe(0);
+    });
+
+    it('reports broker facts only when the queues payload supplies them', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      const text = wrapper.text();
+      expect(text).not.toContain('Artemis 2.33');
+      expect(text).not.toContain('61616');
+      expect(text).toContain('Not reported by the operations API');
+    });
+
+    it('renders broker facts the payload does supply', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue([
+        { ...mockQueues[0], brokerName: 'Artemis', brokerVersion: '2.33.0' } as any
+      ]);
+      const wrapper = await mountView();
+
+      expect(wrapper.text()).toContain('Artemis');
+      expect(wrapper.text()).toContain('2.33.0');
+    });
+
+    it('distinguishes an unavailable operations API from an empty result set', async () => {
+      (operationsApi.getQueues as any).mockRejectedValue(new Error('Network Error'));
+      const unavailable = await mountView();
+
+      expect(store.queuesState.kind).toBe('unavailable');
+      expect(unavailable.text()).toContain('Operations API unavailable');
+      expect(unavailable.text()).not.toContain('No Petasos queues present');
+
+      setActivePinia(createPinia());
+      store = useQueueStore();
+      (operationsApi.getQueues as any).mockResolvedValue([]);
+      const empty = await mountView();
+
+      expect(store.queuesState.kind).toBe('empty');
+      expect(empty.text()).toContain('No Petasos queues present');
+      expect(empty.text()).not.toContain('Operations API unavailable');
+    });
+
+    it('never renders a stack trace when the API fails', async () => {
+      const err = new Error('Request failed\n    at fetchQueues (queueStore.ts:1:1)');
+      (operationsApi.getQueues as any).mockRejectedValue(err);
+      const wrapper = await mountView();
+
+      expect(wrapper.text()).not.toContain('at fetchQueues');
+    });
+
+    it('filters queues through the toolbar search bound to the store', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      const input = wrapper.find('input[type="search"]');
+      await input.setValue('mllp');
+
+      expect(store.searchQuery).toBe('mllp');
+      expect(wrapper.text()).toContain('petasos.queue.pylai.mllp.in');
+      expect(wrapper.text()).not.toContain('petasos.queue.ponos.dispatch');
+    });
+
+    it('filters queues by the status filter group', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      const degradedBtn = wrapper.findAll('.messages-view__filter-btn').find(b => b.text() === 'DEGRADED');
+      expect(degradedBtn).toBeDefined();
+
+      await degradedBtn!.trigger('click');
+      expect(store.statusFilter).toBe('DEGRADED');
+      expect(wrapper.text()).toContain('petasos.queue.ponos.dispatch');
+      expect(wrapper.text()).not.toContain('petasos.queue.pylai.mllp.in');
+    });
+
+    it('separates a filter mismatch from a genuinely empty backend result', async () => {
+      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
+      const wrapper = await mountView();
+
+      await wrapper.find('input[type="search"]').setValue('no-such-queue');
+      await flushPromises();
+
+      expect(wrapper.text()).toContain('No queue matches the current filter');
+      expect(wrapper.text()).not.toContain('No Petasos queues present');
+    });
+
+    it('shows the reported Petasos subsystem state and nothing when it is unreported', async () => {
       (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
       (operationsApi.getSubsystems as any).mockResolvedValue([
         {
@@ -214,57 +320,28 @@ describe('Queues Perspective Components', () => {
         }
       ]);
 
-      const wrapper = mount(QueuesView);
-      await flushPromises();
-
-      const identityStatus = wrapper.findAll('[role="status"]')[0];
-      expect(identityStatus.text()).toContain('Degraded');
-      expect(identityStatus.attributes('aria-label')).toBe('Degraded operational warning');
+      const wrapper = await mountView();
+      expect(wrapper.text()).toContain('DEGRADED');
     });
 
-    it('renders summary cards with broker topology, queues count, in-flight messages, and DLQ depth', async () => {
+    it('opens the queue detail drawer in place when a row is selected', async () => {
       (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
-      const wrapper = mount(QueuesView);
+      const wrapper = await mountView();
+
+      await wrapper.findAll('tbody tr')[0].trigger('click');
       await flushPromises();
 
-      const text = wrapper.text();
-      expect(text).toContain('Broker Topology');
-      expect(text).toContain('Artemis 2.33 Core');
-      expect(text).toContain('Total Queues');
-      expect(text).toContain('3');
-      expect(text).toContain('Messages In Flight');
-      expect(text).toContain('87'); // 12 + 75
-      expect(text).toContain('Active Consumers');
-      expect(text).toContain('2');
-      expect(text).toContain('DLQ Depth');
-      expect(text).toContain('4');
+      expect(store.isDrawerOpen).toBe(true);
+      expect(store.selectedQueue?.queueId).toBe('petasos.queue.pylai.mllp.in');
     });
 
-    it('filters queues by search query input', async () => {
+    it('only calls the queue and subsystem endpoints that genuinely exist', async () => {
       (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
-      const wrapper = mount(QueuesView);
-      await flushPromises();
+      await mountView();
 
-      const input = wrapper.find('input[type="text"]');
-      await input.setValue('mllp');
-
-      expect(store.searchQuery).toBe('mllp');
-      expect(wrapper.text()).toContain('petasos.queue.pylai.mllp.in');
-      expect(wrapper.text()).not.toContain('petasos.queue.ponos.dispatch');
-    });
-
-    it('filters queues by status tab buttons', async () => {
-      (operationsApi.getQueues as any).mockResolvedValue(mockQueues);
-      const wrapper = mount(QueuesView);
-      await flushPromises();
-
-      const degradedBtn = wrapper.findAll('button').find(b => b.text() === 'DEGRADED');
-      expect(degradedBtn).toBeDefined();
-
-      await degradedBtn!.trigger('click');
-      expect(store.statusFilter).toBe('DEGRADED');
-      expect(wrapper.text()).toContain('petasos.queue.ponos.dispatch');
-      expect(wrapper.text()).not.toContain('petasos.queue.pylai.mllp.in');
+      expect(operationsApi.getQueues).toHaveBeenCalled();
+      expect(operationsApi.getSubsystems).toHaveBeenCalled();
+      expect(operationsApi.getQueue).not.toHaveBeenCalled();
     });
   });
 });

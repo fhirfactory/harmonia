@@ -62,24 +62,30 @@ public abstract class ErgonBase extends RouteBuilder {
 
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
-    public static final String HEADER_PRAGMA_ID = "HIE_PRAGMA_ID";
-    public static final String HEADER_TASK_ID = "HIE_TASK_ID";
-    public static final String HEADER_ACTION = "HIE_ACTION";
-    public static final String HEADER_STATUS = "HIE_STATUS";
-    public static final String HEADER_TASK_PROCESSED = "HIE_TASK_PROCESSED";
-    public static final String HEADER_RAW_MESSAGE = "HIE_RAW_MESSAGE";
-    public static final String HEADER_GATEWAY_INSTANCE = "HIE_GATEWAY_INSTANCE";
-    public static final String HEADER_TRIGGER_TYPE = "HIE_TRIGGER_TYPE";
-    public static final String HEADER_MESSAGE_TYPE = "HIE_MESSAGE_TYPE";
-    public static final String HEADER_CONTROL_ID = "HIE_CONTROL_ID";
-    public static final String HEADER_TOPIC = "HIE_TOPIC";
+    public static final String HEADER_PRAGMA_ID = "HARMONIA_PRAGMA_ID";
+    public static final String HEADER_TASK_ID = "HARMONIA_TASK_ID";
+    public static final String HEADER_ACTION = "HARMONIA_ACTION";
+    public static final String HEADER_STATUS = "HARMONIA_STATUS";
+    public static final String HEADER_TASK_PROCESSED = "HARMONIA_TASK_PROCESSED";
+    public static final String HEADER_RAW_MESSAGE = "HARMONIA_RAW_MESSAGE";
+    public static final String HEADER_GATEWAY_INSTANCE = "HARMONIA_GATEWAY_INSTANCE";
+    public static final String HEADER_TRIGGER_TYPE = "HARMONIA_TRIGGER_TYPE";
+    public static final String HEADER_MESSAGE_TYPE = "HARMONIA_MESSAGE_TYPE";
+    public static final String HEADER_CONTROL_ID = "HARMONIA_CONTROL_ID";
+    public static final String HEADER_TOPIC = "HARMONIA_TOPIC";
 
-    public static final String PROPERTY_PRAGMA = "HIE_PRAGMA";
-    public static final String PROPERTY_INCOMING_TASK = "HIE_INCOMING_TASK";
-    public static final String PROPERTY_PROVENANCE = "HIE_PROVENANCE";
-    public static final String PROPERTY_PROVENANCES = "HIE_PROVENANCES";
-    public static final String PROPERTY_OUTGOING_TASKS = "HIE_OUTGOING_TASKS";
-    public static final String PROPERTY_TASK_EVENTS = "HIE_TASK_EVENTS";
+    public static final String PROPERTY_PRAGMA = "HARMONIA_PRAGMA";
+    public static final String PROPERTY_INCOMING_TASK = "HARMONIA_INCOMING_TASK";
+    public static final String PROPERTY_PROVENANCE = "HARMONIA_PROVENANCE";
+    public static final String PROPERTY_PROVENANCES = "HARMONIA_PROVENANCES";
+    public static final String PROPERTY_OUTGOING_TASKS = "HARMONIA_OUTGOING_TASKS";
+    public static final String PROPERTY_TASK_EVENTS = "HARMONIA_TASK_EVENTS";
+
+    // Legacy headers & properties for backwards compatibility
+    public static final String LEGACY_HEADER_PRAGMA_ID = "HIE_PRAGMA_ID";
+    public static final String LEGACY_HEADER_TASK_ID = "HIE_TASK_ID";
+    public static final String LEGACY_PROPERTY_PRAGMA = "HIE_PRAGMA";
+    public static final String LEGACY_PROPERTY_INCOMING_TASK = "HIE_INCOMING_TASK";
 
     @Inject
     private TaskCacheService taskCacheService;
@@ -390,6 +396,9 @@ public abstract class ErgonBase extends RouteBuilder {
         }
 
         Object incPragma = exchange != null ? exchange.getProperty(PROPERTY_PRAGMA) : null;
+        if (incPragma == null && exchange != null) {
+            incPragma = exchange.getProperty(LEGACY_PROPERTY_PRAGMA);
+        }
         if (incPragma instanceof Pragma) {
             return (Pragma) incPragma;
         }
@@ -458,6 +467,9 @@ public abstract class ErgonBase extends RouteBuilder {
         }
 
         Object incTask = exchange != null ? exchange.getProperty(PROPERTY_INCOMING_TASK) : null;
+        if (incTask == null && exchange != null) {
+            incTask = exchange.getProperty(LEGACY_PROPERTY_INCOMING_TASK);
+        }
         if (incTask instanceof Task) {
             return PragmaFhirConverter.fromFhirTask((Task) incTask);
         }
@@ -478,11 +490,17 @@ public abstract class ErgonBase extends RouteBuilder {
         }
 
         Object incPragma = exchange.getProperty(PROPERTY_PRAGMA);
+        if (incPragma == null) {
+            incPragma = exchange.getProperty(LEGACY_PROPERTY_PRAGMA);
+        }
         if (incPragma instanceof Pragma) {
             return (Pragma) incPragma;
         }
 
         Object incTask = exchange.getProperty(PROPERTY_INCOMING_TASK);
+        if (incTask == null) {
+            incTask = exchange.getProperty(LEGACY_PROPERTY_INCOMING_TASK);
+        }
         if (incTask instanceof Task) {
             return PragmaFhirConverter.fromFhirTask((Task) incTask);
         }
@@ -846,6 +864,9 @@ public abstract class ErgonBase extends RouteBuilder {
         }
 
         String taskId = exchange.getMessage().getHeader(HEADER_TASK_ID, String.class);
+        if (StringUtils.isBlank(taskId)) {
+            taskId = exchange.getMessage().getHeader(LEGACY_HEADER_TASK_ID, String.class);
+        }
         if (StringUtils.isNotBlank(taskId)) {
             Optional<Task> cached = getTaskCacheService().getTask(taskId);
             if (cached.isPresent()) {
@@ -854,6 +875,9 @@ public abstract class ErgonBase extends RouteBuilder {
         }
 
         Object incoming = exchange.getProperty(PROPERTY_INCOMING_TASK);
+        if (incoming == null) {
+            incoming = exchange.getProperty(LEGACY_PROPERTY_INCOMING_TASK);
+        }
         if (incoming instanceof Task) {
             return (Task) incoming;
         }
@@ -867,6 +891,15 @@ public abstract class ErgonBase extends RouteBuilder {
     private String extractTaskId(Exchange exchange, Object body) {
         if (exchange != null && exchange.getMessage() != null) {
             String headerId = exchange.getMessage().getHeader(HEADER_TASK_ID, String.class);
+            if (StringUtils.isBlank(headerId)) {
+                headerId = exchange.getMessage().getHeader(LEGACY_HEADER_TASK_ID, String.class);
+            }
+            if (StringUtils.isBlank(headerId)) {
+                headerId = exchange.getMessage().getHeader(HEADER_PRAGMA_ID, String.class);
+            }
+            if (StringUtils.isBlank(headerId)) {
+                headerId = exchange.getMessage().getHeader(LEGACY_HEADER_PRAGMA_ID, String.class);
+            }
             if (StringUtils.isNotBlank(headerId)) {
                 return cleanId(headerId);
             }

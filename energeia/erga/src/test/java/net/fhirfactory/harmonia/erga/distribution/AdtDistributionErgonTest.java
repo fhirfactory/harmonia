@@ -64,10 +64,11 @@ class AdtDistributionErgonTest {
         assertThat(outputPragma.getCheckpoints().get(1).getMetadata().get("destinationQueue")).isEqualTo(AdtDistributionErgon.QUEUE_LMS_ADT);
         assertThat(outputPragma.getCheckpoints().get(2).getMetadata().get("destinationQueue")).isEqualTo(AdtDistributionErgon.QUEUE_RIS_ADT);
 
-        assertThat(exchange.getMessage().getHeader("HIE_FANOUT_COUNT")).isEqualTo(3);
-        assertThat(exchange.getMessage().getHeader("HIE_FANOUT_DESTINATIONS", String.class))
+        assertThat(exchange.getMessage().getHeader("HARMONIA_FANOUT_COUNT")).isEqualTo(3);
+        assertThat(exchange.getMessage().getHeader("HARMONIA_FANOUT_DESTINATIONS", String.class))
                 .contains(AdtDistributionErgon.QUEUE_EMR_ADT)
                 .contains(AdtDistributionErgon.QUEUE_LMS_ADT)
                 .contains(AdtDistributionErgon.QUEUE_RIS_ADT);
+        assertThat(exchange.getMessage().getHeader("HIE_FANOUT_COUNT")).isEqualTo(3);
     }
 }

@@ -99,7 +99,10 @@ function getFieldValue(data: any, field: any): any {
           :field="col.field"
           :header="col.header"
           :sortable="col.sortable"
-          :style="col.width ? { width: col.width } : undefined"
+          :style="{
+            ...(col.width ? { width: col.width } : {}),
+            ...(col.align ? { textAlign: col.align } : {})
+          }"
         >
           <template #body="{ data, field, index }">
             <slot :name="String(field)" :data="data" :field="field" :index="index">

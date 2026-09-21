@@ -48,6 +48,7 @@ public class QueueConfig {
 
     private String customBrokerUrl;
     private Boolean customBrokerEnabled;
+    private Boolean customHaEnabled;
 
     public void setBrokerUrl(String brokerUrl) {
         this.customBrokerUrl = brokerUrl;
@@ -55,6 +56,10 @@ public class QueueConfig {
 
     public void setBrokerEnabled(boolean brokerEnabled) {
         this.customBrokerEnabled = brokerEnabled;
+    }
+
+    public void setHaEnabled(boolean haEnabled) {
+        this.customHaEnabled = haEnabled;
     }
 
     public String getQueueName() {
@@ -251,5 +256,36 @@ public class QueueConfig {
             return fileProp.trim();
         }
         return "adminPassword";
+    }
+
+    public boolean isHaEnabled() {
+        if (customHaEnabled != null) {
+            return customHaEnabled;
+        }
+        String env = System.getenv("PETASOS_HA_ENABLED");
+        if (StringUtils.isNotBlank(env)) {
+            return Boolean.parseBoolean(env.trim());
+        }
+        env = System.getenv("TASK_BROKER_HA_ENABLED");
+        if (StringUtils.isNotBlank(env)) {
+            return Boolean.parseBoolean(env.trim());
+        }
+        String prop = System.getProperty("petasos.ha.enabled");
+        if (StringUtils.isNotBlank(prop)) {
+            return Boolean.parseBoolean(prop.trim());
+        }
+        prop = System.getProperty("task.broker.ha.enabled");
+        if (StringUtils.isNotBlank(prop)) {
+            return Boolean.parseBoolean(prop.trim());
+        }
+        String fileProp = FILE_PROPERTIES.getProperty("petasos.ha.enabled");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return Boolean.parseBoolean(fileProp.trim());
+        }
+        fileProp = FILE_PROPERTIES.getProperty("task.broker.ha.enabled");
+        if (StringUtils.isNotBlank(fileProp)) {
+            return Boolean.parseBoolean(fileProp.trim());
+        }
+        return true;
     }
 }

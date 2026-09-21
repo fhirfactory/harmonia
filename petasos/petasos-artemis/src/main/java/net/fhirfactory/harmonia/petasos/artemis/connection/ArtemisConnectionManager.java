@@ -97,37 +97,39 @@ public class ArtemisConnectionManager implements AutoCloseable, ExceptionListene
                 locator.setClientFailureCheckPeriod(config.getClientFailureCheckPeriod());
                 locator.setCallTimeout(config.getCallTimeout());
 
-                // Register cluster topology listener
-                locator.addClusterTopologyListener(new ClusterTopologyListener() {
-                    @Override
-                    public void nodeUP(TopologyMember member, boolean last) {
-                        if (member != null && member.getNodeId() != null) {
-                            String liveConnector = member.getLive() != null ? member.getLive().toString() : "unknown";
-                            String backupConnector = member.getBackup() != null ? member.getBackup().toString() : null;
-                            BrokerNodeInfo info = new BrokerNodeInfo(
-                                    member.getNodeId(),
-                                    member.getNodeId(),
-                                    liveConnector,
-                                    backupConnector,
-                                    true,
-                                    member.getBackup() != null,
-                                    "cluster"
-                            );
-                            discoveredNodes.put(member.getNodeId(), info);
-                            log.debug("Discovered active Artemis cluster node: {} ({})", member.getNodeId(), liveConnector);
+                // Register cluster topology listener only when HA is enabled
+                if (config.isHaEnabled()) {
+                    locator.addClusterTopologyListener(new ClusterTopologyListener() {
+                        @Override
+                        public void nodeUP(TopologyMember member, boolean last) {
+                            if (member != null && member.getNodeId() != null) {
+                                String liveConnector = member.getLive() != null ? member.getLive().toString() : "unknown";
+                                String backupConnector = member.getBackup() != null ? member.getBackup().toString() : null;
+                                BrokerNodeInfo info = new BrokerNodeInfo(
+                                        member.getNodeId(),
+                                        member.getNodeId(),
+                                        liveConnector,
+                                        backupConnector,
+                                        true,
+                                        member.getBackup() != null,
+                                        "cluster"
+                                );
+                                discoveredNodes.put(member.getNodeId(), info);
+                                log.debug("Discovered active Artemis cluster node: {} ({})", member.getNodeId(), liveConnector);
+                            }
                         }
-                    }
 
-                    @Override
-                    public void nodeDown(long eventUID, String nodeID) {
-                        if (nodeID != null) {
-                            discoveredNodes.computeIfPresent(nodeID, (id, info) ->
-                                    new BrokerNodeInfo(info.getNodeId(), info.getBrokerName(), info.getLiveConnector(),
-                                            info.getBackupConnector(), false, info.isBackup(), info.getClusterGroup()));
-                            log.debug("Artemis cluster node down event for node ID: {}", nodeID);
+                        @Override
+                        public void nodeDown(long eventUID, String nodeID) {
+                            if (nodeID != null) {
+                                discoveredNodes.computeIfPresent(nodeID, (id, info) ->
+                                        new BrokerNodeInfo(info.getNodeId(), info.getBrokerName(), info.getLiveConnector(),
+                                                info.getBackupConnector(), false, info.isBackup(), info.getClusterGroup()));
+                                log.debug("Artemis cluster node down event for node ID: {}", nodeID);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
 
             this.connection = connectionFactory.createConnection();

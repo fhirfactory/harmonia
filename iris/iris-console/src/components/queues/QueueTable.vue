@@ -67,23 +67,12 @@ function formatCount(val?: number | null): string {
 </script>
 
 <template>
-  <div class="queue-table-container bg-white border border-slate-200 rounded-lg overflow-hidden shadow-xs font-sans">
+  <div class="queue-table">
     <!-- Panel Header -->
-    <div class="px-5 py-3.5 bg-slate-50/70 border-b border-slate-200 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <div class="p-1.5 rounded bg-sky-50 text-sky-700 border border-sky-100">
-          <Radio :size="15" />
-        </div>
-        <h3 class="text-xs font-bold text-slate-800 tracking-wider uppercase">
-          Petasos Message Queues &amp; Addresses
-        </h3>
-        <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold border border-slate-200">
-          {{ queues.length }}
-        </span>
-      </div>
-      <span class="text-xs text-slate-500 font-mono">
-        ActiveMQ Artemis Port 61616
-      </span>
+    <div class="queue-table__header">
+      <Radio :size="15" class="queue-table__header-icon" aria-hidden="true" />
+      <h3 class="queue-table__title">Petasos message queues &amp; addresses</h3>
+      <span class="queue-table__count">{{ queues.length }}</span>
     </div>
 
     <!-- High-Density IrisDataTable -->
@@ -97,11 +86,11 @@ function formatCount(val?: number | null): string {
     >
       <!-- Custom Empty State -->
       <template #empty>
-        <div class="p-12 text-center space-y-3">
-          <Inbox :size="36" class="mx-auto text-slate-400" />
-          <p class="text-sm font-semibold text-slate-700">No message queues found</p>
-          <p class="text-xs text-slate-500 max-w-sm mx-auto">
-            No Petasos queues match your current search query or status filter. Try clearing filters.
+        <div class="queue-table__empty">
+          <Inbox :size="32" aria-hidden="true" />
+          <p class="queue-table__empty-title">No message queues found</p>
+          <p class="queue-table__empty-detail">
+            No Petasos queues match the current search query or status filter.
           </p>
         </div>
       </template>
@@ -113,26 +102,27 @@ function formatCount(val?: number | null): string {
 
       <!-- Queue Name & Capability Column -->
       <template #queueName="{ data }">
-        <div class="max-w-xs">
-          <div class="font-bold text-sky-700 truncate group-hover:text-sky-900 transition-colors font-mono" :title="data.queueName">
-            {{ data.queueName }}
-          </div>
-          <div v-if="data.associatedCapability" class="text-[11px] text-slate-500 font-sans truncate" :title="data.associatedCapability">
+        <div class="queue-table__name">
+          <span class="queue-table__name-primary" :title="data.queueName">{{ data.queueName }}</span>
+          <span
+            v-if="data.associatedCapability"
+            class="queue-table__name-secondary"
+            :title="data.associatedCapability"
+          >
             {{ data.associatedCapability }}
-          </div>
+          </span>
         </div>
       </template>
 
       <!-- Depth Column -->
       <template #depth="{ data }">
-        <span 
-          class="font-mono font-bold"
-          :class="[
-            data.depth == null ? 'text-slate-400' :
-            data.depth > 50 ? 'text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded border border-rose-200' : 
-            data.depth > 0 ? 'text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200' : 
-            'text-slate-800'
-          ]"
+        <span
+          class="queue-table__metric queue-table__metric--strong"
+          :class="{
+            'queue-table__metric--muted': data.depth == null,
+            'queue-table__metric--bad': data.depth != null && data.depth > 50,
+            'queue-table__metric--warn': data.depth != null && data.depth > 0 && data.depth <= 50
+          }"
         >
           {{ formatCount(data.depth) }}
         </span>
@@ -140,60 +130,57 @@ function formatCount(val?: number | null): string {
 
       <!-- Consumers Column -->
       <template #consumerCount="{ data }">
-        <span class="font-mono" :class="data.consumerCount && data.consumerCount > 0 ? 'text-emerald-700 font-semibold' : 'text-slate-400'">
+        <span
+          class="queue-table__metric"
+          :class="data.consumerCount && data.consumerCount > 0
+            ? 'queue-table__metric--ok'
+            : 'queue-table__metric--muted'"
+        >
           {{ formatCount(data.consumerCount) }}
         </span>
       </template>
 
       <!-- Producers Column -->
       <template #producerCount="{ data }">
-        <span class="font-mono text-slate-700">
-          {{ formatCount(data.producerCount) }}
-        </span>
+        <span class="queue-table__metric">{{ formatCount(data.producerCount) }}</span>
       </template>
 
       <!-- Enqueue Rate Column -->
       <template #enqueueRate="{ data }">
-        <span class="font-mono text-slate-700">
-          {{ formatRate(data.enqueueRate) }}
-        </span>
+        <span class="queue-table__metric">{{ formatRate(data.enqueueRate) }}</span>
       </template>
 
       <!-- Dequeue Rate Column -->
       <template #dequeueRate="{ data }">
-        <span class="font-mono text-slate-700">
-          {{ formatRate(data.dequeueRate) }}
-        </span>
+        <span class="queue-table__metric">{{ formatRate(data.dequeueRate) }}</span>
       </template>
 
       <!-- Oldest Message Age Column -->
       <template #oldestMessageAgeSeconds="{ data }">
-        <span class="font-mono text-slate-600">
-          {{ formatAge(data.oldestMessageAgeSeconds) }}
-        </span>
+        <span class="queue-table__metric">{{ formatAge(data.oldestMessageAgeSeconds) }}</span>
       </template>
 
       <!-- DLQ Depth Column -->
       <template #dlqDepth="{ data }">
-        <span 
+        <span
           v-if="data.dlqDepth != null && data.dlqDepth > 0"
-          class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200 font-mono"
+          class="queue-table__metric queue-table__metric--strong queue-table__metric--bad"
         >
           {{ data.dlqDepth }}
         </span>
-        <span v-else class="text-slate-400 font-mono">0</span>
+        <span v-else class="queue-table__metric queue-table__metric--muted">0</span>
       </template>
 
       <!-- Actions Column -->
       <template #actions="{ data }">
-        <button 
+        <button
           type="button"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-300 text-xs font-medium transition cursor-pointer font-sans"
+          class="queue-table__details-btn"
           :aria-label="`Inspect details for queue ${data.queueName}`"
           @click.stop="emit('select', data)"
         >
           <span>Details</span>
-          <ArrowRight :size="12" class="text-slate-400 group-hover:text-sky-600 transition" />
+          <ArrowRight :size="12" aria-hidden="true" />
         </button>
       </template>
     </IrisDataTable>
@@ -201,6 +188,136 @@ function formatCount(val?: number | null): string {
 </template>
 
 <style scoped>
+.queue-table {
+  overflow: hidden;
+  background-color: var(--iris-bg-surface);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  font-family: var(--iris-font-sans);
+}
+
+.queue-table__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--iris-bg-subtle);
+  border-bottom: 1px solid var(--iris-border-default);
+}
+
+.queue-table__header-icon {
+  flex-shrink: 0;
+  color: var(--iris-text-accent);
+}
+
+.queue-table__title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-secondary);
+}
+
+.queue-table__count {
+  padding: 1px 6px;
+  font-family: var(--iris-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--iris-text-primary);
+  background-color: var(--iris-bg-surface);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.queue-table__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--iris-text-muted);
+}
+
+.queue-table__empty-title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--iris-text-secondary);
+}
+
+.queue-table__empty-detail {
+  margin: 0;
+  max-width: 24rem;
+  font-size: 0.75rem;
+}
+
+.queue-table__name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.queue-table__name-primary {
+  font-family: var(--iris-font-mono);
+  font-weight: 700;
+  color: var(--iris-text-accent);
+  word-break: break-all;
+}
+
+.queue-table__name-secondary {
+  font-size: 0.6875rem;
+  color: var(--iris-text-muted);
+}
+
+.queue-table__metric {
+  font-family: var(--iris-font-mono);
+  font-size: 0.75rem;
+  color: var(--iris-text-secondary);
+}
+
+.queue-table__metric--strong {
+  font-weight: 700;
+  color: var(--iris-text-primary);
+}
+
+.queue-table__metric--muted {
+  color: var(--iris-text-muted);
+}
+
+.queue-table__metric--ok {
+  font-weight: 600;
+  color: var(--iris-status-healthy-text);
+}
+
+.queue-table__metric--warn {
+  color: var(--iris-status-degraded-text);
+}
+
+.queue-table__metric--bad {
+  color: var(--iris-status-unavailable-text);
+}
+
+.queue-table__details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1875rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--iris-text-accent);
+  background-color: var(--iris-bg-surface);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  cursor: pointer;
+}
+
+.queue-table__details-btn:hover {
+  background-color: var(--iris-bg-hover);
+}
+
 :deep(.p-datatable-tbody > tr) {
   cursor: pointer;
 }

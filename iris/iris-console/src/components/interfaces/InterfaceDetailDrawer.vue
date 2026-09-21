@@ -17,50 +17,36 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
-import { 
-  X, 
-  Radio, 
-  ArrowDownLeft, 
-  ArrowUpRight, 
-  ShieldCheck, 
-  AlertTriangle, 
-  Info, 
-  Server, 
-  ExternalLink,
+import {
+  X,
+  Radio,
+  ArrowDownLeft,
+  ArrowUpRight,
+  ShieldCheck,
+  Info,
+  Server,
   Layers,
-  Cpu,
   FileCode
 } from 'lucide-vue-next';
-import { IrisStatus } from '@harmonia/iris-befe';
 
-export interface PylaiGateway {
-  id: string;
-  name: string;
-  englishTitle: string;
-  description: string;
-  direction: 'INBOUND' | 'OUTBOUND';
-  protocol: 'HL7 v2 / MLLP' | 'FHIR R5 / REST';
-  port: number;
-  managementPort?: number;
-  targetQueue: string;
-  complianceRule: string;
-  activeListeners?: number;
-  currentConnections?: number;
-  status?: string;
-}
+import type { ConfiguredInterface } from '../../models/interfaces';
+
+/**
+ * The drawer renders the CONFIGURED inventory record only. Runtime-sounding
+ * fields are deliberately absent: the platform does not measure them.
+ */
+export type PylaiGateway = ConfiguredInterface;
 
 const props = withDefaults(
   defineProps<{
     gateway: PylaiGateway | null;
     isOpen: boolean;
     teleport?: boolean;
-    pylaiStatus?: string;
   }>(),
   {
     gateway: null,
     isOpen: false,
-    teleport: true,
-    pylaiStatus: 'HEALTHY'
+    teleport: true
   }
 );
 
@@ -112,11 +98,11 @@ onUnmounted(() => {
             <Radio :size="20" />
           </div>
           <div class="interface-drawer__header-titles">
-            <h2 class="interface-drawer__title font-mono">
+            <h2 class="interface-drawer__title">
               {{ gateway.name }}
             </h2>
             <p class="interface-drawer__subtitle">
-              {{ gateway.englishTitle }} &bull; Protocol: <span class="interface-drawer__protocol font-mono">{{ gateway.protocol }}</span>
+              {{ gateway.englishTitle }} &bull; Protocol: <span class="interface-drawer__protocol">{{ gateway.protocol }}</span>
             </p>
           </div>
         </div>
@@ -134,60 +120,57 @@ onUnmounted(() => {
 
       <!-- Drawer Body -->
       <div class="interface-drawer__body">
-        <!-- Status & Direction Banner -->
+        <!-- Provenance & Direction Banner -->
         <div class="interface-drawer__status-banner">
           <div>
-            <span class="interface-drawer__section-label">State</span>
-            <IrisStatus :status="gateway.status || pylaiStatus" size="md" :show-pulse="true" />
+            <span class="interface-drawer__section-label">Provenance</span>
+            <span class="interface-drawer__provenance-chip">
+              <Info :size="13" aria-hidden="true" />
+              <span>Configured &mdash; not runtime-discovered</span>
+            </span>
           </div>
 
-          <div class="flex items-center gap-2">
-            <span 
-              class="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider inline-flex items-center gap-1.5"
-              :class="gateway.direction === 'INBOUND' 
-                ? 'bg-sky-50 text-sky-800 border border-sky-200' 
-                : 'bg-purple-50 text-purple-800 border border-purple-200'"
+          <div class="interface-drawer__chip-row">
+            <span
+              class="interface-drawer__chip"
+              :class="gateway.direction === 'INBOUND'
+                ? 'interface-drawer__chip--inbound'
+                : 'interface-drawer__chip--outbound'"
             >
-              <ArrowDownLeft v-if="gateway.direction === 'INBOUND'" :size="13" />
-              <ArrowUpRight v-else :size="13" />
+              <ArrowDownLeft v-if="gateway.direction === 'INBOUND'" :size="13" aria-hidden="true" />
+              <ArrowUpRight v-else :size="13" aria-hidden="true" />
               <span>{{ gateway.direction }}</span>
             </span>
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
-              :{{ gateway.port }}
-            </span>
+            <span class="interface-drawer__chip">:{{ gateway.port }}</span>
           </div>
         </div>
 
         <!-- Technical Parameters Card -->
         <div class="interface-drawer__section">
           <h3 class="interface-drawer__section-heading">
-            <Server :size="14" class="interface-drawer__section-icon text-sky" />
+            <Server :size="14" class="interface-drawer__section-icon" aria-hidden="true" />
             <span>Technical Parameters</span>
           </h3>
 
-          <div class="interface-drawer__spec-card font-mono">
+          <div class="interface-drawer__spec-card">
             <div class="interface-drawer__spec-row">
-              <span class="interface-drawer__spec-label font-sans">Gateway ID:</span>
-              <span class="interface-drawer__spec-value font-semibold">{{ gateway.id }}</span>
+              <span class="interface-drawer__spec-label">Gateway ID:</span>
+              <span class="interface-drawer__spec-value">{{ gateway.id }}</span>
             </div>
             <div class="interface-drawer__spec-row">
-              <span class="interface-drawer__spec-label font-sans">Wire Protocol:</span>
-              <span class="interface-drawer__spec-value text-sky font-semibold">{{ gateway.protocol }}</span>
+              <span class="interface-drawer__spec-label">Wire Protocol:</span>
+              <span class="interface-drawer__spec-value">{{ gateway.protocol }}</span>
             </div>
             <div class="interface-drawer__spec-row">
-              <span class="interface-drawer__spec-label font-sans">Ingress/Egress Port:</span>
-              <span class="interface-drawer__spec-value font-bold">:{{ gateway.port }}</span>
+              <span class="interface-drawer__spec-label">Ingress/Egress Port:</span>
+              <span class="interface-drawer__spec-value">:{{ gateway.port }}</span>
             </div>
             <div class="interface-drawer__spec-row">
-              <span class="interface-drawer__spec-label font-sans">Management / Probing Port:</span>
-              <span class="interface-drawer__spec-value">{{ gateway.managementPort ? `:${gateway.managementPort}` : ':8084 (Shared WildFly Management)' }}</span>
+              <span class="interface-drawer__spec-label">Management / Probing Port:</span>
+              <span class="interface-drawer__spec-value">{{ gateway.managementPort ? `:${gateway.managementPort}` : 'Not configured' }}</span>
             </div>
             <div class="interface-drawer__spec-row">
-              <span class="interface-drawer__spec-label font-sans">Active Listeners:</span>
-              <span class="interface-drawer__spec-value text-emerald font-semibold">{{ gateway.activeListeners ?? (gateway.direction === 'INBOUND' ? 1 : 0) }}</span>
-            </div>
-            <div class="interface-drawer__spec-row">
-              <span class="interface-drawer__spec-label font-sans">Subsystem Boundary:</span>
+              <span class="interface-drawer__spec-label">Subsystem Boundary:</span>
               <span class="interface-drawer__spec-value">Pylai (Gateways)</span>
             </div>
           </div>
@@ -196,38 +179,35 @@ onUnmounted(() => {
         <!-- Messaging & Transport Routing Section -->
         <div class="interface-drawer__section">
           <h3 class="interface-drawer__section-heading">
-            <Layers :size="14" class="interface-drawer__section-icon text-emerald" />
+            <Layers :size="14" class="interface-drawer__section-icon" aria-hidden="true" />
             <span>Petasos Messaging &amp; Target Queue</span>
           </h3>
 
-          <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-2">
-            <div class="text-[11px] font-sans text-slate-500">Destination Queue Address:</div>
-            <div class="p-2 bg-white border border-slate-200 rounded font-mono text-xs font-bold text-sky-800 break-all select-all">
-              {{ gateway.targetQueue }}
-            </div>
-            <div class="text-[11px] text-slate-500 flex items-center justify-between">
-              <span>Broker: ActiveMQ Artemis (Cluster)</span>
-              <span>Port: 61616</span>
-            </div>
+          <div class="interface-drawer__panel-card">
+            <div class="interface-drawer__panel-label">Destination Queue Address:</div>
+            <div class="interface-drawer__queue">{{ gateway.targetQueue }}</div>
+            <p class="interface-drawer__panel-note">
+              Configured destination. Broker identity is not reported by the operations API.
+            </p>
           </div>
         </div>
 
         <!-- Architectural Invariant Section -->
         <div class="interface-drawer__section">
           <h3 class="interface-drawer__section-heading">
-            <ShieldCheck :size="14" class="interface-drawer__section-icon text-emerald" />
+            <ShieldCheck :size="14" class="interface-drawer__section-icon" aria-hidden="true" />
             <span>Architectural Compliance</span>
           </h3>
 
-          <div class="p-3 bg-emerald-50/70 border border-emerald-200 rounded-lg space-y-2">
-            <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-900 font-mono">
-              <ShieldCheck :size="14" class="text-emerald-700 shrink-0" />
+          <div class="interface-drawer__panel-card">
+            <div class="interface-drawer__compliance-title">
+              <ShieldCheck :size="14" aria-hidden="true" />
               <span>{{ gateway.direction === 'INBOUND' ? 'REC-001 Dual-Write Safety (Invariant 4)' : 'REC-002 Fan-Out Destination Tracking (Invariant 5)' }}</span>
             </div>
-            <p class="text-xs text-emerald-950 leading-relaxed font-sans">
+            <p class="interface-drawer__panel-text">
               {{ gateway.complianceRule }}
             </p>
-            <p class="text-[11px] text-emerald-800 leading-relaxed font-sans">
+            <p class="interface-drawer__panel-note">
               {{ gateway.direction === 'INBOUND'
                 ? 'Inbound gateways (pylai-mllp-in) must guarantee end-to-end downstream message acceptance before returning an AA (Application Accept) ACK to the upstream sender. If downstream publishing fails, an AE NACK response is emitted.'
                 : 'Outbound gateways track granular fan-out delivery per destination, recording transmission checkpoints in the executing Pragma and updating FHIR Task output with structured delivery status extensions.' }}
@@ -235,20 +215,18 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Telemetry Notice Section -->
+        <!-- Not-measured notice -->
         <div class="interface-drawer__section">
           <h3 class="interface-drawer__section-heading">
-            <Info :size="14" class="interface-drawer__section-icon text-sky" />
-            <span>Telemetry Honesty Notice (Rule 9)</span>
+            <Info :size="14" class="interface-drawer__section-icon" aria-hidden="true" />
+            <span>Runtime Observation</span>
           </h3>
 
-          <div class="p-3 bg-sky-50/70 border border-sky-200 rounded-lg space-y-1.5 text-xs text-sky-950">
-            <div class="font-mono font-bold text-sky-900 flex items-center gap-1.5">
-              <AlertTriangle :size="13" class="text-amber-600 shrink-0" />
-              <span>IRIS-API-GAP-001: Pylai Gateway Telemetry Probe</span>
-            </div>
-            <p class="leading-relaxed font-sans text-[11px]">
-              Live wire message throughput, connection pooling counters, and byte-rate metrics are pending implementation in the WildFly Operations BEFE gateway. Fabricated telemetry is strictly prohibited; honest placeholders ("Telemetry initializing") are displayed.
+          <div class="interface-drawer__panel-card">
+            <p class="interface-drawer__panel-text">
+              This interface has no runtime observation. Harmonia exposes no per-interface throughput,
+              connection or error metric (IRIS-API-GAP-001), so none is shown. Pylai subsystem-level
+              observations appear in the Observed Pylai runtime section of the Interfaces page.
             </p>
           </div>
         </div>
@@ -256,10 +234,10 @@ onUnmounted(() => {
         <!-- Description -->
         <div class="interface-drawer__section">
           <h3 class="interface-drawer__section-heading">
-            <FileCode :size="14" class="interface-drawer__section-icon text-slate-500" />
+            <FileCode :size="14" class="interface-drawer__section-icon" aria-hidden="true" />
             <span>Interface Description</span>
           </h3>
-          <p class="text-xs text-slate-600 bg-white border border-slate-200 rounded-lg p-3 leading-relaxed">
+          <p class="interface-drawer__panel-card interface-drawer__panel-text">
             {{ gateway.description }}
           </p>
         </div>
@@ -270,7 +248,7 @@ onUnmounted(() => {
         <button
           type="button"
           @click="close"
-          class="interface-drawer__footer-close-btn font-sans"
+          class="interface-drawer__footer-close-btn"
         >
           Close Drawer
         </button>
@@ -487,11 +465,99 @@ onUnmounted(() => {
   color: var(--iris-text-primary, #0f172a);
 }
 
-.text-sky {
-  color: #0284c7;
+.interface-drawer__section-icon {
+  color: var(--iris-text-muted, #64748b);
 }
 
-.text-emerald {
-  color: #059669;
+.interface-drawer__provenance-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: var(--iris-border-radius, 6px);
+  border: 1px solid var(--iris-status-idle-border, #e2e8f0);
+  background-color: var(--iris-status-idle-bg, #f8fafc);
+  color: var(--iris-status-idle-text, #475569);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.interface-drawer__chip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interface-drawer__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--iris-border-radius, 6px);
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+  background-color: var(--iris-bg-subtle, #f8fafc);
+  color: var(--iris-text-secondary, #475569);
+  font-family: var(--iris-font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.interface-drawer__chip--inbound {
+  background-color: var(--iris-bg-selected, #f0f9ff);
+  color: var(--iris-text-accent, #0369a1);
+}
+
+.interface-drawer__panel-card {
+  padding: 12px;
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+  border-radius: 8px;
+  background-color: var(--iris-bg-subtle, #f8fafc);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.interface-drawer__panel-label {
+  font-size: 11px;
+  color: var(--iris-text-muted, #64748b);
+}
+
+.interface-drawer__panel-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--iris-text-secondary, #475569);
+}
+
+.interface-drawer__panel-note {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--iris-text-muted, #64748b);
+}
+
+.interface-drawer__queue {
+  padding: 8px;
+  background-color: var(--iris-bg-surface, #ffffff);
+  border: 1px solid var(--iris-border-default, #e2e8f0);
+  border-radius: 4px;
+  font-family: var(--iris-font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--iris-text-accent, #0369a1);
+  word-break: break-all;
+  user-select: all;
+}
+
+.interface-drawer__compliance-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--iris-font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--iris-text-primary, #0f172a);
 }
 </style>

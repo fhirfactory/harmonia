@@ -19,6 +19,15 @@ import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import type { QueueSummary, TimeSeriesPoint } from '../models/operations';
 import { operationsApi } from '../api/operationsClient';
+import {
+  IDLE_STATE,
+  describeFailure,
+  empty as emptyState,
+  loaded as loadedState,
+  loading as loadingState,
+  unavailable as unavailableState,
+  type LoadState
+} from '../models/loadState';
 
 export const useQueueStore = defineStore('queues', () => {
   // --------------------------------------------------------------------------
@@ -35,7 +44,9 @@ export const useQueueStore = defineStore('queues', () => {
 
   const searchQuery = ref<string>('');
   const statusFilter = ref<string>('ALL');
-  const brokerTopology = ref<string>('ActiveMQ Artemis 2.33 / Clustered (Core JMS tcp://0.0.0.0:61616)');
+
+  const queuesState = ref<LoadState>(IDLE_STATE);
+  const selectedQueueError = ref<string | null>(null);
 
   // --------------------------------------------------------------------------
   // Computed Properties
@@ -60,6 +71,42 @@ export const useQueueStore = defineStore('queues', () => {
     const sumDlq = queues.value.reduce((acc, q) => acc + (q.dlqDepth != null ? q.dlqDepth : 0), 0);
     return Math.max(directDlq, sumDlq);
   });
+
+  /**
+   * Broker facts, derived only from what the queues payload actually supplies.
+   *
+   * The operations API does not currently return broker identity, version or
+   * transport URL, so those remain null and the presentation tier must render
+   * an explicit "unknown" rather than a plausible-looking topology string.
+   */
+  const brokerFacts = computed(() => {
+    const payload = queues.value as unknown as Array<Record<string, any>>;
+    const first = (field: string): string | null => {
+      for (const q of payload) {
+        const value = q?.[field];
+        if (typeof value === 'string' && value.trim()) return value.trim();
+      }
+      return null;
+    };
+    const addresses = new Set(
+      queues.value.map(q => q.address).filter((a): a is string => Boolean(a && a.trim()))
+    );
+    return {
+      brokerName: first('brokerName'),
+      brokerVersion: first('brokerVersion'),
+      brokerUrl: first('brokerUrl'),
+      addressCount: addresses.size
+    };
+  });
+
+  /** Null when the backend supplied no broker identity. Never fabricated. */
+  const brokerTopology = computed<string | null>(() => {
+    const facts = brokerFacts.value;
+    const parts = [facts.brokerName, facts.brokerVersion, facts.brokerUrl].filter(Boolean);
+    return parts.length > 0 ? parts.join(' / ') : null;
+  });
+
+  const isBrokerTopologyKnown = computed(() => brokerTopology.value !== null);
 
   const filteredQueues = computed(() => {
     let result = queues.value;
@@ -93,12 +140,16 @@ export const useQueueStore = defineStore('queues', () => {
       loading.value = true;
     }
     error.value = null;
+    queuesState.value = loadingState();
 
     try {
       const data = await operationsApi.getQueues();
       queues.value = Array.isArray(data) ? data : [];
       isStale.value = false;
       lastRefreshed.value = new Date();
+      queuesState.value = queues.value.length > 0
+        ? loadedState(lastRefreshed.value)
+        : emptyState(lastRefreshed.value);
 
       // If drawer was open for a queue, refresh selectedQueue reference
       if (selectedQueue.value) {
@@ -108,8 +159,9 @@ export const useQueueStore = defineStore('queues', () => {
         }
       }
     } catch (err: any) {
-      console.warn('Failed to fetch queues telemetry:', err);
-      error.value = err.message || 'Failed to fetch queues';
+      const message = describeFailure(err, 'queue activity');
+      queuesState.value = unavailableState(message);
+      error.value = message;
       isStale.value = true;
     } finally {
       loading.value = false;
@@ -118,6 +170,7 @@ export const useQueueStore = defineStore('queues', () => {
   }
 
   async function selectQueue(queueId: string) {
+    selectedQueueError.value = null;
     const existing = queues.value.find(q => q.queueId === queueId || q.queueName === queueId);
     if (existing) {
       selectedQueue.value = existing;
@@ -130,13 +183,14 @@ export const useQueueStore = defineStore('queues', () => {
       selectedQueue.value = item;
       isDrawerOpen.value = true;
     } catch (err) {
-      console.warn(`Queue ${queueId} not found remotely`, err);
+      selectedQueueError.value = describeFailure(err, `queue ${queueId}`);
     }
   }
 
   function closeDrawer() {
     isDrawerOpen.value = false;
     selectedQueue.value = null;
+    selectedQueueError.value = null;
   }
 
   function setSearchQuery(query: string) {
@@ -158,7 +212,11 @@ export const useQueueStore = defineStore('queues', () => {
     lastRefreshed,
     searchQuery,
     statusFilter,
+    queuesState,
+    selectedQueueError,
+    brokerFacts,
     brokerTopology,
+    isBrokerTopologyKnown,
     totalQueues,
     messagesInFlight,
     totalConsumers,

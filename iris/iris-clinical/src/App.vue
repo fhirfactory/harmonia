@@ -24,7 +24,7 @@ const isSidebarCollapsed = ref(false);
 const isMobileOpen = ref(false);
 
 onMounted(() => {
-  const saved = localStorage.getItem('hie-fhir-sidebar-collapsed');
+  const saved = localStorage.getItem('harmonia-fhir-sidebar-collapsed');
   if (saved !== null) {
     isSidebarCollapsed.value = saved === 'true';
   }
@@ -32,7 +32,7 @@ onMounted(() => {
 
 const toggleCollapse = () => {
   isSidebarCollapsed.value = !isSidebarCollapsed.value;
-  localStorage.setItem('hie-fhir-sidebar-collapsed', String(isSidebarCollapsed.value));
+  localStorage.setItem('harmonia-fhir-sidebar-collapsed', String(isSidebarCollapsed.value));
 };
 
 const toggleMobile = () => {
@@ -75,7 +75,7 @@ const closeMobile = () => {
       <footer class="border-t border-[#1f293d] bg-[#111827]/60 py-4 px-6 text-center md:text-left text-xs text-slate-500">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           <div>
-            <span class="font-bold text-slate-300">HIE FHIR Resource Explorer</span>
+            <span class="font-bold text-slate-300">Harmonia Clinical Explorer</span>
             <span class="mx-2">&bull;</span>
             <span>FHIR R5 Clinical &amp; Administrative Data Repository</span>
           </div>

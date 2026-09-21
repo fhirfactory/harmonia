@@ -85,9 +85,9 @@ public class MfnTaskResourceBuilder {
 
         if (topic != null) {
             Identifier topicId = task.addIdentifier();
-            topicId.setSystem("http://example.org/hie/topic");
+            topicId.setSystem("http://fhirfactory.net/harmonia/topic");
             topicId.setValue(topic.toTopicString());
-            topicId.setType(new CodeableConcept().setText("HIE Topic"));
+            topicId.setType(new CodeableConcept().setText("Harmonia Topic"));
         }
 
         if (StringUtils.isNotBlank(practitionerId) && !"UNKNOWN".equalsIgnoreCase(practitionerId)) {
@@ -120,8 +120,8 @@ public class MfnTaskResourceBuilder {
         task.setIntent(Task.TaskIntent.ORDER);
         task.setPriority(Enumerations.RequestPriority.ROUTINE);
 
-        // Task Reason (HIE-Synthetic-Task)
-        ErgonReasonEnum.HIE_SYNTHETIC_TASK.applyTo(task);
+        // Task Reason (Harmonia-Synthetic-Task)
+        ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK.applyTo(task);
 
         // Task Code / Category
         CodeableConcept taskCode = task.getCode();
@@ -134,7 +134,7 @@ public class MfnTaskResourceBuilder {
 
         if (topic != null) {
             Coding topicCoding = taskCode.addCoding();
-            topicCoding.setSystem("http://example.org/hie/topic");
+            topicCoding.setSystem("http://fhirfactory.net/harmonia/topic");
             topicCoding.setCode(topic.toTopicString());
             topicCoding.setDisplay("Topic: " + topic.toTopicString());
         }

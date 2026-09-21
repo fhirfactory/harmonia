@@ -65,7 +65,7 @@ const filteredResources = computed(() => {
           <h1 class="text-2xl font-bold text-white">Operational Data Store</h1>
           <span class="badge badge-amber">Non-FHIR Relational Entities</span>
         </div>
-        <p class="subtitle mt-1">Direct view of operational definitions persisted via HIE Operations JPA Server &amp; Infinispan SPI.</p>
+        <p class="subtitle mt-1">Direct view of operational definitions persisted via Harmonia Operations JPA Server &amp; Infinispan SPI.</p>
       </div>
 
       <button @click="changeType" class="btn btn-primary text-xs">

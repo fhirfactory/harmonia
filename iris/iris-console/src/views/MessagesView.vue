@@ -21,26 +21,36 @@ import { useOperationsStore } from '../stores/operationsStore';
 import { useQueueStore } from '../stores/queueStore';
 import QueueTable from '../components/queues/QueueTable.vue';
 import QueueDetailDrawer from '../components/queues/QueueDetailDrawer.vue';
-import { IrisSubsystemIdentity, IrisStatus, IrisToolbar } from '@harmonia/iris-befe';
-import { 
-  Radio, 
-  Server, 
-  Search, 
-  AlertTriangle, 
-  Clock,
-  Layers
-} from 'lucide-vue-next';
+import {
+  IrisPageHeader,
+  IrisToolbar,
+  IrisSection,
+  IrisStatus,
+  IrisEmptyState,
+  IrisLoadingState,
+  IrisErrorState
+} from '@harmonia/iris-befe';
+import { isPending } from '../models/loadState';
+import { Clock, Info } from 'lucide-vue-next';
 
+/**
+ * Messages perspective.
+ *
+ * The navigation label is "Messages", but the page states plainly that what it
+ * currently shows is Petasos queue and broker activity: Harmonia exposes no
+ * message-observability API, so no message list, payload view or replay control
+ * is rendered here. A single page-level action area is reserved for that future
+ * capability and deliberately left empty.
+ */
 const queueStore = useQueueStore();
 const operationsStore = useOperationsStore();
-let refreshTimer: any = null;
 
-const petasosSubsystem = computed(() => operationsStore.subsystems.find(subsystem => subsystem.id === 'petasos'));
-const petasosStatus = computed(() => petasosSubsystem.value?.state || 'UNKNOWN');
-const petasosStale = computed(() => Boolean(petasosSubsystem.value?.stale));
+let refreshTimer: ReturnType<typeof setInterval> | null = null;
+
+const NOT_REPORTED = 'Not reported by the operations API';
 
 onMounted(async () => {
-  await Promise.all([queueStore.fetchQueues(), operationsStore.fetchSubsystems()]);
+  await refreshAll();
   refreshTimer = setInterval(() => {
     queueStore.fetchQueues(true);
   }, 10000);
@@ -49,153 +59,160 @@ onMounted(async () => {
 onUnmounted(() => {
   if (refreshTimer) {
     clearInterval(refreshTimer);
+    refreshTimer = null;
   }
+});
+
+async function refreshAll() {
+  await Promise.allSettled([queueStore.fetchQueues(), operationsStore.fetchSubsystems()]);
+}
+
+// ---------------------------------------------------------------------------
+// Petasos subsystem state — reported, never assumed
+// ---------------------------------------------------------------------------
+const petasosSubsystem = computed(
+  () => operationsStore.subsystems.find(subsystem => subsystem.id === 'petasos') || null
+);
+const isPetasosStateReported = computed(() => Boolean(petasosSubsystem.value?.state));
+const petasosStatus = computed(() => String(petasosSubsystem.value?.state || 'UNKNOWN'));
+
+// ---------------------------------------------------------------------------
+// Data states
+// ---------------------------------------------------------------------------
+const queuesState = computed(() => queueStore.queuesState);
+const failureMessage = computed(() => {
+  const state = queuesState.value;
+  return 'message' in state ? state.message : '';
+});
+const isLoadingFirstResult = computed(
+  () => isPending(queuesState.value) && queueStore.queues.length === 0
+);
+const isUnavailable = computed(() => queuesState.value.kind === 'unavailable');
+const isPartial = computed(() => queuesState.value.kind === 'partial');
+const isEmptyResult = computed(
+  () => queuesState.value.kind === 'empty' && queueStore.queues.length === 0
+);
+const hasFilterMismatch = computed(
+  () => queueStore.queues.length > 0 && queueStore.filteredQueues.length === 0
+);
+
+// ---------------------------------------------------------------------------
+// Compact metric strip — every figure is a queueStore rollup of API values
+// ---------------------------------------------------------------------------
+const metrics = computed(() => [
+  { key: 'queues', label: 'Queues', value: queueStore.totalQueues, tone: 'neutral' },
+  {
+    key: 'depth',
+    label: 'Queued depth',
+    value: queueStore.messagesInFlight,
+    tone: queueStore.messagesInFlight > 50 ? 'warn' : 'neutral'
+  },
+  {
+    key: 'consumers',
+    label: 'Consumers',
+    value: queueStore.totalConsumers,
+    tone: queueStore.totalConsumers > 0 ? 'ok' : 'warn'
+  },
+  { key: 'producers', label: 'Producers', value: queueStore.totalProducers, tone: 'neutral' },
+  {
+    key: 'dlq',
+    label: 'DLQ depth',
+    value: queueStore.totalDlqDepth,
+    tone: queueStore.totalDlqDepth > 0 ? 'bad' : 'neutral'
+  }
+]);
+
+// ---------------------------------------------------------------------------
+// Broker facts — only what the queues payload supplied
+// ---------------------------------------------------------------------------
+const brokerFactRows = computed(() => {
+  const facts = queueStore.brokerFacts;
+  return [
+    { label: 'Broker', value: facts.brokerName },
+    { label: 'Version', value: facts.brokerVersion },
+    { label: 'Transport', value: facts.brokerUrl },
+    { label: 'Addresses', value: facts.addressCount > 0 ? String(facts.addressCount) : null }
+  ];
+});
+
+const searchQuery = computed({
+  get: () => queueStore.searchQuery,
+  set: (value: string) => queueStore.setSearchQuery(value)
 });
 
 const statusOptions = ['ALL', 'HEALTHY', 'DEGRADED', 'UNHEALTHY'];
 </script>
 
 <template>
-  <div class="messages-view space-y-5 font-sans">
-    <!-- Subsystem Identity & Subordinated Artemis Metadata -->
-    <IrisSubsystemIdentity 
-      name="Petasos" 
-      description="ActiveMQ Artemis message broker topology, message flow rates, consumer bindings, and DLQ depth."
-      :status="petasosStatus"
-      :stale="petasosStale"
+  <div class="messages-view">
+    <IrisPageHeader
+      title="Messages"
+      subtitle="Petasos queue and broker activity. Harmonia does not yet expose per-message observability, so no message list or payload is shown here."
     >
-      <template #icon>
-        <Radio :size="22" class="text-sky-700" />
-      </template>
       <template #badges>
-        <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
-          Messaging &amp; Transport
-        </span>
-        <span v-if="queueStore.isStale" class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-amber-50 text-amber-800 border border-amber-300">
-          <Clock :size="12" />
-          STALE TELEMETRY
+        <IrisStatus
+          v-if="isPetasosStateReported"
+          :status="petasosStatus"
+          size="sm"
+          label-format="upper"
+        />
+        <span v-if="queueStore.isStale" class="messages-view__badge messages-view__badge--stale">
+          <Clock :size="12" aria-hidden="true" />
+          <span>Stale telemetry</span>
         </span>
       </template>
+
       <template #actions>
-        <!-- Subordinated Middleware Pill: Artemis Broker -->
-        <div class="p-2.5 rounded-md bg-slate-50 border border-slate-200 text-xs text-slate-700 flex items-center gap-3 shrink-0">
-          <div class="p-1.5 rounded bg-sky-50 text-sky-700 border border-sky-100">
-            <Server :size="16" />
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Subordinated Middleware</span>
-              <span class="px-1.5 py-0.2 rounded text-[10px] font-mono bg-sky-100 text-sky-800 font-semibold">ActiveMQ Artemis</span>
-            </div>
-            <div class="font-mono text-slate-900 font-bold text-xs mt-0.5">
-              Port 61616 &bull; Core JMS Cluster
-            </div>
-          </div>
-        </div>
+        <!--
+          Reserved page-level action area for the future message list / detail /
+          replay capability. No replay, retry or resubmit control is rendered.
+        -->
+        <div
+          class="messages-view__action-area"
+          data-testid="messages-action-area"
+          aria-hidden="true"
+        ></div>
       </template>
-    </IrisSubsystemIdentity>
+    </IrisPageHeader>
 
-    <!-- Metric Strip: Answering "Are messages backing up?" -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-      <!-- Broker Topology -->
-      <div class="p-3.5 bg-white border border-slate-200 rounded-lg shadow-xs flex flex-col justify-between">
-        <div>
-          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Broker Topology</span>
-          <div class="text-sm font-bold text-slate-900 flex items-center gap-2 mt-1">
-            <Server :size="15" class="text-sky-700 shrink-0" />
-            <span class="truncate" title="ActiveMQ Artemis 2.33 Core">Artemis 2.33 Core</span>
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-500 mt-2 font-mono truncate">tcp://0.0.0.0:61616</p>
-      </div>
+    <p class="messages-view__scope" role="note">
+      <Info :size="14" aria-hidden="true" />
+      <span>
+        This page reports Petasos queue depths, consumer and producer bindings and dead-letter
+        depth. Message browsing, message detail and message replay are not available
+        (IRIS-API-GAP-002).
+      </span>
+    </p>
 
-      <!-- Total Queues -->
-      <div class="p-3.5 bg-white border border-slate-200 rounded-lg shadow-xs flex flex-col justify-between">
-        <div>
-          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Total Queues</span>
-          <div class="text-2xl font-extrabold text-sky-700 mt-1 font-mono">
-            {{ queueStore.totalQueues }}
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-500 mt-1 font-sans">Active addresses in cluster</p>
-      </div>
+    <ul class="messages-view__metrics">
+      <li
+        v-for="metric in metrics"
+        :key="metric.key"
+        class="messages-view__metric"
+        :class="`messages-view__metric--${metric.tone}`"
+      >
+        <span class="messages-view__metric-label">{{ metric.label }}</span>
+        <span class="messages-view__metric-value">{{ metric.value }}</span>
+      </li>
+    </ul>
 
-      <!-- Messages In Flight -->
-      <div class="p-3.5 bg-white border border-slate-200 rounded-lg shadow-xs flex flex-col justify-between">
-        <div>
-          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Messages In Flight</span>
-          <div 
-            class="text-2xl font-extrabold mt-1 font-mono"
-            :class="queueStore.messagesInFlight > 50 ? 'text-amber-700' : 'text-slate-800'"
-          >
-            {{ queueStore.messagesInFlight }}
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-500 mt-1 font-sans">Accumulated queue depth</p>
-      </div>
-
-      <!-- Total Consumers -->
-      <div class="p-3.5 bg-white border border-slate-200 rounded-lg shadow-xs flex flex-col justify-between">
-        <div>
-          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Active Consumers</span>
-          <div 
-            class="text-2xl font-extrabold mt-1 font-mono"
-            :class="queueStore.totalConsumers > 0 ? 'text-emerald-700' : 'text-amber-700'"
-          >
-            {{ queueStore.totalConsumers }}
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-500 mt-1 font-sans">Active consumer bindings</p>
-      </div>
-
-      <!-- DLQ Depth -->
-      <div class="p-3.5 bg-white border border-slate-200 rounded-lg shadow-xs flex flex-col justify-between">
-        <div>
-          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">DLQ Depth</span>
-          <div 
-            class="text-2xl font-extrabold mt-1 font-mono"
-            :class="queueStore.totalDlqDepth > 0 ? 'text-rose-700' : 'text-slate-400'"
-          >
-            {{ queueStore.totalDlqDepth }}
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-500 mt-1 font-sans">Dead lettered messages</p>
-      </div>
-    </div>
-
-    <!-- Standardized Page Toolbar -->
-    <IrisToolbar 
-      :show-search="false"
+    <IrisToolbar
+      v-model:searchQuery="searchQuery"
+      :show-search="true"
+      search-placeholder="Filter queues by name, address or capability..."
       :show-refresh="true"
       :refreshing="queueStore.loading || queueStore.refreshing"
-      @refresh="queueStore.fetchQueues()"
+      @refresh="refreshAll"
     >
-      <template #left>
-        <!-- Search Input -->
-        <div class="relative w-full sm:w-80">
-          <Search :size="14" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-          <input 
-            type="text" 
-            placeholder="Filter by queue, address, capability..." 
-            class="w-full bg-slate-50 border border-slate-300 rounded-md pl-9 pr-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 font-sans"
-            :value="queueStore.searchQuery"
-            @input="queueStore.setSearchQuery(($event.target as HTMLInputElement).value)"
-            aria-label="Filter queues input"
-          />
-        </div>
-      </template>
-
       <template #filter>
-        <!-- Status Filter Tabs -->
-        <div class="flex items-center gap-1.5 overflow-x-auto">
+        <div class="messages-view__filter" role="group" aria-label="Filter queues by status">
           <button
             v-for="status in statusOptions"
             :key="status"
             type="button"
-            class="px-2.5 py-1 rounded-md text-xs font-semibold transition-colors uppercase tracking-wider cursor-pointer"
-            :class="queueStore.statusFilter === status 
-              ? 'bg-sky-50 text-sky-800 border border-sky-300 font-bold shadow-xs' 
-              : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200'"
+            class="messages-view__filter-btn"
+            :class="{ 'messages-view__filter-btn--active': queueStore.statusFilter === status }"
+            :aria-pressed="queueStore.statusFilter === status"
             @click="queueStore.setStatusFilter(status)"
           >
             {{ status }}
@@ -204,34 +221,254 @@ const statusOptions = ['ALL', 'HEALTHY', 'DEGRADED', 'UNHEALTHY'];
       </template>
     </IrisToolbar>
 
-    <!-- Error Warning -->
-    <div v-if="queueStore.error" class="p-3 rounded-lg bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <AlertTriangle :size="16" class="text-rose-600 shrink-0" />
-        <span>{{ queueStore.error }}</span>
-      </div>
-      <button 
-        type="button" 
-        class="text-xs font-bold underline hover:text-rose-900 ml-4 cursor-pointer"
-        @click="queueStore.fetchQueues()"
-      >
-        Retry
-      </button>
-    </div>
+    <IrisSection
+      title="Broker"
+      description="Broker facts are shown only where the queues payload supplies them."
+    >
+      <ul class="messages-view__facts">
+        <li v-for="fact in brokerFactRows" :key="fact.label" class="messages-view__fact">
+          <span class="messages-view__fact-label">{{ fact.label }}</span>
+          <span v-if="fact.value" class="messages-view__fact-value">{{ fact.value }}</span>
+          <span v-else class="messages-view__not-reported">{{ NOT_REPORTED }}</span>
+        </li>
+      </ul>
+    </IrisSection>
 
-    <!-- Queues Table -->
-    <QueueTable 
-      :queues="queueStore.filteredQueues" 
-      :loading="queueStore.loading"
-      @select="queueStore.selectQueue($event.queueId)"
-    />
+    <IrisSection
+      title="Queue activity"
+      description="Petasos queues and addresses as reported by the operations API."
+    >
+      <IrisErrorState
+        v-if="isUnavailable"
+        title="Operations API unavailable"
+        :message="failureMessage"
+        :retryable="true"
+        retry-label="Retry"
+        @retry="refreshAll"
+      />
+      <IrisLoadingState
+        v-else-if="isLoadingFirstResult"
+        size="sm"
+        message="Loading Petasos queue activity..."
+      />
+      <template v-else>
+        <div v-if="isPartial" class="messages-view__partial" role="status">
+          {{ failureMessage }}
+        </div>
 
-    <!-- Queue Detail Drawer -->
-    <QueueDetailDrawer 
-      :queue="queueStore.selectedQueue" 
-      :is-open="queueStore.isDrawerOpen" 
+        <IrisEmptyState
+          v-if="isEmptyResult"
+          title="No Petasos queues present"
+          description="The operations API responded successfully and reported no queues."
+        />
+        <IrisEmptyState
+          v-else-if="hasFilterMismatch"
+          title="No queue matches the current filter"
+          description="Clear the search text or select the ALL status filter to see every reported queue."
+        />
+        <QueueTable
+          v-else
+          :queues="queueStore.filteredQueues"
+          :loading="queueStore.loading"
+          @select="queueStore.selectQueue($event.queueId)"
+        />
+      </template>
+    </IrisSection>
+
+    <QueueDetailDrawer
+      :queue="queueStore.selectedQueue"
+      :is-open="queueStore.isDrawerOpen"
       :teleport="true"
-      @close="queueStore.closeDrawer()" 
+      @close="queueStore.closeDrawer()"
     />
   </div>
 </template>
+
+<style scoped>
+.messages-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
+  font-family: var(--iris-font-sans);
+}
+
+.messages-view__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 2px 8px;
+  border-radius: var(--iris-border-radius);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.messages-view__badge--stale {
+  border: 1px solid var(--iris-status-stale-border);
+  background-color: var(--iris-status-stale-bg);
+  color: var(--iris-status-stale-text);
+}
+
+.messages-view__action-area {
+  min-width: 0;
+}
+
+.messages-view__scope {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--iris-text-secondary);
+  background-color: var(--iris-bg-subtle);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.messages-view__scope svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.messages-view__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages-view__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  background-color: var(--iris-bg-surface);
+}
+
+.messages-view__metric-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-muted);
+}
+
+.messages-view__metric-value {
+  font-family: var(--iris-font-mono);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--iris-text-primary);
+}
+
+.messages-view__metric--ok .messages-view__metric-value {
+  color: var(--iris-status-healthy-text);
+}
+
+.messages-view__metric--warn .messages-view__metric-value {
+  color: var(--iris-status-degraded-text);
+}
+
+.messages-view__metric--bad .messages-view__metric-value {
+  color: var(--iris-status-unavailable-text);
+}
+
+.messages-view__filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.messages-view__filter-btn {
+  padding: 0.25rem 0.625rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--iris-text-secondary);
+  background-color: var(--iris-bg-surface);
+  border: 1px solid var(--iris-border-default);
+  border-right-width: 0;
+  cursor: pointer;
+}
+
+.messages-view__filter-btn:first-child {
+  border-top-left-radius: var(--iris-border-radius);
+  border-bottom-left-radius: var(--iris-border-radius);
+}
+
+.messages-view__filter-btn:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: var(--iris-border-radius);
+  border-bottom-right-radius: var(--iris-border-radius);
+}
+
+.messages-view__filter-btn:hover {
+  background-color: var(--iris-bg-hover);
+}
+
+.messages-view__filter-btn--active {
+  background-color: var(--iris-bg-selected);
+  color: var(--iris-text-accent);
+}
+
+.messages-view__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages-view__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  background-color: var(--iris-bg-subtle);
+}
+
+.messages-view__fact-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-muted);
+}
+
+.messages-view__fact-value {
+  font-family: var(--iris-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--iris-text-primary);
+  word-break: break-all;
+}
+
+.messages-view__not-reported {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--iris-text-muted);
+}
+
+.messages-view__partial {
+  margin-bottom: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  background-color: var(--iris-status-degraded-bg);
+  border: 1px solid var(--iris-status-degraded-border);
+  border-radius: var(--iris-border-radius);
+  color: var(--iris-status-degraded-text);
+}
+
+@media (max-width: 900px) {
+  .messages-view__metrics {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+}
+</style>

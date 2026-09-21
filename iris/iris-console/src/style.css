@@ -15,7 +15,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/*
+ * Global resets and font wiring for iris-console.
+ *
+ * Theme ownership belongs to @harmonia/iris-befe: every colour, radius and
+ * shadow below defers to an --iris-* token. Fonts are loaded once in
+ * index.html, so no @import is declared here.
+ *
+ * The small layout helper block further down is NOT a utility framework
+ * (Tailwind is not installed anywhere in Iris). It is retained only because
+ * the Work / Events / Alerts / Health views still depend on it. New views use
+ * scoped BEM CSS over --iris-* tokens, as SubsystemsView.vue does.
+ */
 
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -62,7 +73,7 @@ a {
   text-decoration: none;
 }
 
-/* Layout Utilities */
+/* Legacy layout helpers - retained for views not yet converted to scoped BEM CSS */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -83,7 +94,6 @@ a {
 .gap-2 { gap: 0.5rem; }
 .gap-3 { gap: 0.75rem; }
 .gap-4 { gap: 1rem; }
-.gap-6 { gap: 1.5rem; }
 
 .grid { display: grid; }
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
@@ -147,12 +157,13 @@ p.subtitle { color: var(--text-muted); font-size: 0.875rem; }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  background-color: var(--primary);
   color: #ffffff;
-  border-color: #0284c7;
+  border-color: var(--primary);
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .btn-secondary {

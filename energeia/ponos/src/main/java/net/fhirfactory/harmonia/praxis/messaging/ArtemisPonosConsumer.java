@@ -20,6 +20,7 @@ package net.fhirfactory.harmonia.praxis.messaging;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
+import net.fhirfactory.harmonia.petasos.api.config.PetasosConfig;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageHandler;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosSubscription;
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
@@ -82,7 +83,16 @@ public class ArtemisPonosConsumer implements AutoCloseable {
     private Petasos ensurePetasos() {
         if (petasos == null) {
             String brokerUrl = queueConfig != null ? queueConfig.getBrokerUrl() : QueueConfig.DEFAULT_BROKER_URL;
-            petasos = ArtemisPetasos.create(brokerUrl);
+            String username = queueConfig != null ? queueConfig.getBrokerUsername() : "admin";
+            String password = queueConfig != null ? queueConfig.getBrokerPassword() : "adminPassword";
+            boolean haEnabled = queueConfig != null ? queueConfig.isHaEnabled() : true;
+            PetasosConfig config = PetasosConfig.builder()
+                    .addBrokerUrl(brokerUrl)
+                    .username(username)
+                    .password(password)
+                    .haEnabled(haEnabled)
+                    .build();
+            petasos = ArtemisPetasos.create(config);
         }
         return petasos;
     }

@@ -133,7 +133,7 @@ public class MfnPractitionerResourceBuilder {
                             }
                         }
                         if (parts.length > 3 && StringUtils.isNotBlank(parts[3]) && !id.hasSystem()) {
-                            id.setSystem("http://fhirfactory.net/hie/identifier/" + parts[3].toLowerCase());
+                            id.setSystem("http://fhirfactory.net/harmonia/identifier/" + parts[3].toLowerCase());
                         }
                     }
                 }

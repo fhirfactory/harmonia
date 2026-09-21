@@ -58,13 +58,18 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String EXTENSION_PAYLOAD_ORDER = "http://fhirfactory.net/hie/task/payload-order";
-    public static final String EXTENSION_PAYLOAD_CONTAINER = "http://fhirfactory.net/hie/task/payload-container";
-    public static final String EXTENSION_PAYLOAD_CONTENT = "http://fhirfactory.net/hie/task/payload-content";
+    public static final String EXTENSION_PAYLOAD_ORDER = "http://fhirfactory.net/harmonia/task/payload-order";
+    public static final String EXTENSION_PAYLOAD_CONTAINER = "http://fhirfactory.net/harmonia/task/payload-container";
+    public static final String EXTENSION_PAYLOAD_CONTENT = "http://fhirfactory.net/harmonia/task/payload-content";
 
-    public static final String TASK_PAYLOAD_TYPE_SYSTEM = "http://fhirfactory.net/hie/task/payload-type";
+    public static final String TASK_PAYLOAD_TYPE_SYSTEM = "http://fhirfactory.net/harmonia/task/payload-type";
     public static final String TASK_PAYLOAD_TYPE_FHIR_RESOURCE = "fhir-resource";
     public static final String TASK_PAYLOAD_TYPE_JSON_OBJECT = "json-object";
+
+    public static final String LEGACY_EXTENSION_PAYLOAD_ORDER = "http://fhirfactory.net/hie/task/payload-order";
+    public static final String LEGACY_EXTENSION_PAYLOAD_CONTAINER = "http://fhirfactory.net/hie/task/payload-container";
+    public static final String LEGACY_EXTENSION_PAYLOAD_CONTENT = "http://fhirfactory.net/hie/task/payload-content";
+    public static final String LEGACY_TASK_PAYLOAD_TYPE_SYSTEM = "http://fhirfactory.net/hie/task/payload-type";
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
@@ -564,6 +569,11 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
             if (ext != null && ext.getValue() instanceof IntegerType) {
                 ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
             }
+        } else if (inputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_ORDER)) {
+            Extension ext = inputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_ORDER);
+            if (ext != null && ext.getValue() instanceof IntegerType) {
+                ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
+            }
         }
 
         if (inputComponent.hasExtension(EXTENSION_PAYLOAD_CONTAINER)) {
@@ -571,10 +581,20 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
             if (ext != null && ext.getValue() instanceof StringType) {
                 ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
             }
+        } else if (inputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTAINER)) {
+            Extension ext = inputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTAINER);
+            if (ext != null && ext.getValue() instanceof StringType) {
+                ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
+            }
         }
 
         if (inputComponent.hasExtension(EXTENSION_PAYLOAD_CONTENT)) {
             Extension ext = inputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_CONTENT);
+            if (ext != null && ext.getValue() instanceof StringType) {
+                ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
+            }
+        } else if (inputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTENT)) {
+            Extension ext = inputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTENT);
             if (ext != null && ext.getValue() instanceof StringType) {
                 ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
             }
@@ -668,6 +688,11 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
             if (ext != null && ext.getValue() instanceof IntegerType) {
                 ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
             }
+        } else if (outputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_ORDER)) {
+            Extension ext = outputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_ORDER);
+            if (ext != null && ext.getValue() instanceof IntegerType) {
+                ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
+            }
         }
 
         if (outputComponent.hasExtension(EXTENSION_PAYLOAD_CONTAINER)) {
@@ -675,10 +700,20 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
             if (ext != null && ext.getValue() instanceof StringType) {
                 ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
             }
+        } else if (outputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTAINER)) {
+            Extension ext = outputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTAINER);
+            if (ext != null && ext.getValue() instanceof StringType) {
+                ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
+            }
         }
 
         if (outputComponent.hasExtension(EXTENSION_PAYLOAD_CONTENT)) {
             Extension ext = outputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_CONTENT);
+            if (ext != null && ext.getValue() instanceof StringType) {
+                ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
+            }
+        } else if (outputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTENT)) {
+            Extension ext = outputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTENT);
             if (ext != null && ext.getValue() instanceof StringType) {
                 ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
             }

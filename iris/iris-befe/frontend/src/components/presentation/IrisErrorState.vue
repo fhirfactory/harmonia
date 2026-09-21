@@ -22,12 +22,14 @@ withDefaults(
   defineProps<{
     title?: string
     message?: string
+    detail?: string
     retryable?: boolean
     retryLabel?: string
   }>(),
   {
     title: 'An error occurred',
     message: '',
+    detail: '',
     retryable: false,
     retryLabel: 'Retry'
   }
@@ -53,6 +55,7 @@ defineEmits<{
       <p v-if="message || $slots.message" class="iris-error-state__message">
         <slot name="message">{{ message }}</slot>
       </p>
+      <p v-if="detail" class="iris-error-state__detail">{{ detail }}</p>
       <slot />
     </div>
 
@@ -113,6 +116,14 @@ defineEmits<{
   font-size: 0.8125rem;
   line-height: 1.4;
   opacity: 0.95;
+}
+
+.iris-error-state__detail {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-family: var(--iris-font-mono);
+  opacity: 0.85;
 }
 
 .iris-error-state__actions {

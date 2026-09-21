@@ -35,7 +35,7 @@ services:
       - ./artemis/primary-a/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
       - artemis_primary_a_data:/var/lib/artemis-instance/data
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8161/ || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -65,7 +65,7 @@ services:
       artemis-primary-a:
         condition: service_started
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8161/ || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -92,7 +92,7 @@ services:
       - ./artemis/primary-b/broker.xml:/var/lib/artemis-instance/etc-override/broker.xml:ro
       - artemis_primary_b_data:/var/lib/artemis-instance/data
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8161/ || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -122,7 +122,7 @@ services:
       artemis-primary-b:
         condition: service_started
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 61616 || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8161/ || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 5

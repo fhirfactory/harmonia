@@ -103,7 +103,7 @@ const getSubsystemState = (subsystemId: string) => {
       }
     }
   }
-  return { state: 'HEALTHY', stale: false, instanceCount: 1 };
+  return { state: 'UNKNOWN', stale: false, instanceCount: 0 };
 };
 
 const handleSelect = (id: string) => {

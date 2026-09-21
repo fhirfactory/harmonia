@@ -24,6 +24,78 @@ import type {
 } from '../models/operations';
 import { operationsApi } from '../api/operationsClient';
 import { findAuthoritativeSubsystem } from '../models/subsystemHierarchy';
+import {
+  IDLE_STATE,
+  describeFailure,
+  empty as emptyState,
+  loaded as loadedState,
+  loading as loadingState,
+  unavailable as unavailableState,
+  type LoadState
+} from '../models/loadState';
+
+// --------------------------------------------------------------------------
+// TEST / FIXTURE / DEMONSTRATION MODEL ONLY.
+//
+// This declared model is retained explicitly for unit tests, fixtures, or
+// development demonstrations. It is NEVER used as a production runtime
+// fallback when the Operations API is unavailable or empty.
+// --------------------------------------------------------------------------
+export function getDefaultSubsystems(): OperationalSubsystem[] {
+  const now = Date.now();
+  return [
+    { 
+      id: 'pylai', 
+      name: 'Pylai', 
+      description: 'HL7 MLLP & FHIR Inbound/Outbound Protocol Gateways', 
+      state: 'UNKNOWN', 
+      instanceCount: 0, 
+      version: '1.0.0', 
+      lastUpdated: now,
+      children: [
+        { id: 'pylai-mllp-in', name: 'MLLP Inbound Gateway', description: 'Dual-write ACK gateway on ports 2575 / 8084', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'pylai-mllp-out-his', name: 'MLLP Outbound HIS', description: 'Outbound HL7 v2 gateway on port 8087', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'pylai-mllp-out-lis', name: 'MLLP Outbound LIS', description: 'Outbound HL7 v2 gateway on port 8088', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'pylai-fhir-registry', name: 'FHIR Provider Registry Gateway', description: 'Practitioner & Organization endpoint on port 8089', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+      ]
+    },
+    { id: 'petasos', name: 'Petasos', description: 'Resilient Messaging Abstraction & ActiveMQ Artemis Broker', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+    { 
+      id: 'energeia', 
+      name: 'Energeia', 
+      description: 'Task Processing, Ergon Activity & Praxis Workflow Orchestration', 
+      state: 'UNKNOWN', 
+      instanceCount: 0, 
+      version: '1.0.0', 
+      lastUpdated: now,
+      children: [
+        { id: 'ponos', name: 'Ponos', description: 'Ponos Task Processor & Activity Handler workers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'praxis', name: 'Praxis', description: 'Praxis Workflow Engine & Pragma State Coordinator', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'ergon', name: 'Ergon', description: 'Task / Work Unit Activities & Payload Transformers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'pragma', name: 'Pragma', description: 'Task Instances & Runtime Checkpoints', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+      ]
+    },
+    { id: 'mneme', name: 'Mneme', description: 'Infinispan Distributed Replicated In-Memory Cache Grid', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+    { id: 'mnemosyne', name: 'Mnemosyne', description: 'Clinical & Operational HAPI FHIR R5 Persistence', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+    { id: 'calliope', name: 'Calliope', description: 'Canonical Schemas, Transformers & Clinical Models', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+    { id: 'themis', name: 'Themis', description: 'Default-Deny Policy Evaluation & RBAC Engine', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+    { id: 'agora', name: 'Agora', description: 'Matrix/Synapse Collaboration & Healthcare AS Bridge', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+    { 
+      id: 'iris', 
+      name: 'Iris', 
+      description: 'Presentation Tier & BEFE Dual-Port Gateway', 
+      state: 'UNKNOWN', 
+      instanceCount: 0, 
+      version: '1.0.0', 
+      lastUpdated: now,
+      children: [
+        { id: 'iris-befe', name: 'Iris BEFE Gateway', description: 'WildFly 31 Jakarta EE gateway (:8080 Clinical, :8090 Operations)', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'iris-clinical', name: 'Iris Clinical SPA', description: 'Vue 3 Clinical FHIR R5 web application on port 3000', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
+        { id: 'iris-administration', name: 'Iris Administration SPA', description: 'Vue 3 Self-service and registry workbench on port 3002', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
+      ]
+    }
+  ];
+}
 
 export const useOperationsStore = defineStore('operations', () => {
   // --------------------------------------------------------------------------
@@ -49,6 +121,22 @@ export const useOperationsStore = defineStore('operations', () => {
   const isStale = ref(false);
   const lastRefreshed = ref<Date | null>(null);
   let pollingInterval: any = null;
+
+  // --------------------------------------------------------------------------
+  // Per-slice Load State (additive; existing loading/error consumers unaffected)
+  //
+  // Recorded so a page can distinguish an empty result set from an unreachable
+  // operations API. Data already held is retained and simply flagged.
+  // --------------------------------------------------------------------------
+  const summaryState = ref<LoadState>(IDLE_STATE);
+  const subsystemsState = ref<LoadState>(IDLE_STATE);
+  const instancesState = ref<LoadState>(IDLE_STATE);
+  const healthState = ref<LoadState>(IDLE_STATE);
+  const statisticsState = ref<LoadState>(IDLE_STATE);
+  const alertsState = ref<LoadState>(IDLE_STATE);
+
+  /** True when the subsystem tree shown is the declared fallback, not telemetry. */
+  const subsystemsAreFallback = ref(false);
 
   // --------------------------------------------------------------------------
   // Legacy / Backward Compatible State
@@ -124,105 +212,84 @@ export const useOperationsStore = defineStore('operations', () => {
     return alerts.value.filter(a => a.severity === 'WARNING' && a.status === 'ACTIVE').length;
   });
 
-  // --------------------------------------------------------------------------
-  // Default Fallback Subsystems Inventory (Honest Telemetry Structure)
-  // --------------------------------------------------------------------------
-  function getDefaultSubsystems(): OperationalSubsystem[] {
-    const now = Date.now();
-    return [
-      { 
-        id: 'pylai', 
-        name: 'Pylai', 
-        description: 'HL7 MLLP & FHIR Inbound/Outbound Protocol Gateways', 
-        state: 'UNKNOWN', 
-        instanceCount: 0, 
-        version: '1.0.0', 
-        lastUpdated: now,
-        children: [
-          { id: 'pylai-mllp-in', name: 'MLLP Inbound Gateway', description: 'Dual-write ACK gateway on ports 2575 / 8084', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'pylai-mllp-out-his', name: 'MLLP Outbound HIS', description: 'Outbound HL7 v2 gateway on port 8087', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'pylai-mllp-out-lis', name: 'MLLP Outbound LIS', description: 'Outbound HL7 v2 gateway on port 8088', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'pylai-fhir-registry', name: 'FHIR Provider Registry Gateway', description: 'Practitioner & Organization endpoint on port 8089', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
-        ]
-      },
-      { id: 'petasos', name: 'Petasos', description: 'Resilient Messaging Abstraction & ActiveMQ Artemis Broker', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-      { 
-        id: 'energeia', 
-        name: 'Energeia', 
-        description: 'Task Processing, Ergon Activity & Praxis Workflow Orchestration', 
-        state: 'UNKNOWN', 
-        instanceCount: 0, 
-        version: '1.0.0', 
-        lastUpdated: now,
-        children: [
-          { id: 'ponos', name: 'Ponos', description: 'Ponos Task Processor & Activity Handler workers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'praxis', name: 'Praxis', description: 'Praxis Workflow Engine & Pragma State Coordinator', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'ergon', name: 'Ergon', description: 'Task / Work Unit Activities & Payload Transformers', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'pragma', name: 'Pragma', description: 'Task Instances & Runtime Checkpoints', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
-        ]
-      },
-      { id: 'mneme', name: 'Mneme', description: 'Infinispan Distributed Replicated In-Memory Cache Grid', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-      { id: 'mnemosyne', name: 'Mnemosyne', description: 'Clinical & Operational HAPI FHIR R5 Persistence', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-      { id: 'calliope', name: 'Calliope', description: 'Canonical Schemas, Transformers & Clinical Models', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-      { id: 'themis', name: 'Themis', description: 'Default-Deny Policy Evaluation & RBAC Engine', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-      { id: 'agora', name: 'Agora', description: 'Matrix/Synapse Collaboration & Healthcare AS Bridge', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-      { 
-        id: 'iris', 
-        name: 'Iris', 
-        description: 'Presentation Tier & BEFE Dual-Port Gateway', 
-        state: 'UNKNOWN', 
-        instanceCount: 0, 
-        version: '1.0.0', 
-        lastUpdated: now,
-        children: [
-          { id: 'iris-befe', name: 'Iris BEFE Gateway', description: 'WildFly 31 Jakarta EE gateway (:8080 Clinical, :8090 Operations)', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'iris-clinical', name: 'Iris Clinical SPA', description: 'Vue 3 Clinical FHIR R5 web application on port 3000', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'iris-monitor', name: 'Iris Monitor SPA', description: 'Vue 3 Operational telemetry console on port 3001', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now },
-          { id: 'iris-administration', name: 'Iris Administration SPA', description: 'Vue 3 Self-service and registry workbench on port 3002', state: 'UNKNOWN', instanceCount: 0, version: '1.0.0', lastUpdated: now }
-        ]
-      }
-    ];
-  }
+  const loadStates = computed<Record<string, LoadState>>(() => ({
+    summary: summaryState.value,
+    subsystems: subsystemsState.value,
+    instances: instancesState.value,
+    health: healthState.value,
+    statistics: statisticsState.value,
+    alerts: alertsState.value
+  }));
+
+  const isOperationsApiUnavailable = computed(() =>
+    Object.values(loadStates.value).some(state => state.kind === 'unavailable')
+  );
 
   // --------------------------------------------------------------------------
   // Normalized Operations Actions
   // --------------------------------------------------------------------------
   const fetchSummary = async () => {
+    summaryState.value = loadingState();
     try {
-      summary.value = await operationsApi.getSummary();
+      const data = await operationsApi.getSummary();
+      summary.value = data;
+      summaryState.value = data ? loadedState() : emptyState();
     } catch (err: any) {
       // Leave the last known summary untouched. An unavailable API is not a healthy platform.
+      summaryState.value = unavailableState(describeFailure(err, 'the platform summary'));
     }
   };
 
   const fetchSubsystems = async () => {
+    subsystemsState.value = loadingState();
     try {
       const data = await operationsApi.getSubsystems();
       if (data && data.length > 0) {
         subsystems.value = data;
-      } else if (subsystems.value.length === 0) {
-        subsystems.value = getDefaultSubsystems();
+        subsystemsAreFallback.value = false;
+        subsystemsState.value = loadedState();
+      } else {
+        subsystems.value = [];
+        subsystemsAreFallback.value = false;
+        subsystemsState.value = emptyState();
       }
     } catch (err: any) {
-      if (subsystems.value.length === 0) {
-        subsystems.value = getDefaultSubsystems();
+      // Do not retain a hard-coded subsystem tree as production fallback.
+      // An unavailable Operations API must produce an unavailable/error state.
+      if (subsystemsState.value.kind !== 'loaded') {
+        subsystems.value = [];
       }
+      subsystemsAreFallback.value = false;
+      subsystemsState.value = unavailableState(describeFailure(err, 'the subsystem inventory'));
     }
   };
 
+  const loadDemoSubsystems = () => {
+    subsystems.value = getDefaultSubsystems();
+    subsystemsAreFallback.value = true;
+    subsystemsState.value = loadedState();
+  };
+
   const fetchInstances = async (subsystemId: string) => {
+    instancesState.value = loadingState();
     try {
-      instances.value = await operationsApi.getSubsystemInstances(subsystemId);
+      const data = await operationsApi.getSubsystemInstances(subsystemId);
+      instances.value = Array.isArray(data) ? data : [];
+      instancesState.value = instances.value.length > 0 ? loadedState() : emptyState();
     } catch (err: any) {
       instances.value = [];
+      instancesState.value = unavailableState(describeFailure(err, `${subsystemId} instances`));
     }
   };
 
   const fetchHealth = async (subsystemId: string) => {
+    healthState.value = loadingState();
     try {
       currentHealth.value = await operationsApi.getSubsystemHealth(subsystemId);
       isStale.value = Boolean(currentHealth.value?.stale);
+      healthState.value = currentHealth.value ? loadedState() : emptyState();
     } catch (err: any) {
+      healthState.value = unavailableState(describeFailure(err, `${subsystemId} health`));
       currentHealth.value = {
         subsystemId,
         status: 'UNKNOWN',
@@ -239,21 +306,29 @@ export const useOperationsStore = defineStore('operations', () => {
   };
 
   const fetchStatistics = async (subsystemId: string, windowVal: '15m' | '1h' | '6h' | '24h' = selectedWindow.value) => {
+    statisticsState.value = loadingState();
     try {
-      statistics.value = await operationsApi.getSubsystemStatistics(subsystemId, windowVal);
+      const data = await operationsApi.getSubsystemStatistics(subsystemId, windowVal);
+      statistics.value = data || {};
+      statisticsState.value = Object.keys(statistics.value).length > 0 ? loadedState() : emptyState();
     } catch (err: any) {
       statistics.value = {};
+      statisticsState.value = unavailableState(describeFailure(err, `${subsystemId} statistics`));
     }
   };
 
   const fetchAlerts = async (severity?: string, statusVal?: string, subsystem?: string) => {
+    alertsState.value = loadingState();
     try {
       const sev = severity !== undefined ? severity : (selectedSeverityFilter.value !== 'ALL' ? selectedSeverityFilter.value : undefined);
       const st = statusVal !== undefined ? statusVal : (selectedStatusFilter.value !== 'ALL' ? selectedStatusFilter.value : undefined);
       const sub = subsystem !== undefined ? subsystem : (selectedAlertSubsystemFilter.value !== 'ALL' ? selectedAlertSubsystemFilter.value : undefined);
-      alerts.value = await operationsApi.getAlerts(sev, st, sub);
+      const data = await operationsApi.getAlerts(sev, st, sub);
+      alerts.value = Array.isArray(data) ? data : [];
+      alertsState.value = alerts.value.length > 0 ? loadedState() : emptyState();
     } catch (err: any) {
       alerts.value = [];
+      alertsState.value = unavailableState(describeFailure(err, 'alerts'));
     }
   };
 
@@ -348,7 +423,7 @@ export const useOperationsStore = defineStore('operations', () => {
       }
     } catch (err: any) {
       status.value = {
-        systemName: 'HIE Platform 5-Tier Architecture',
+        systemName: 'Harmonia Platform 5-Tier Architecture',
         version: '1.0.0-SNAPSHOT',
         timestamp: Date.now(),
         infinispanClusterConnected: true,
@@ -414,9 +489,21 @@ export const useOperationsStore = defineStore('operations', () => {
     criticalAlertsCount,
     warningAlertsCount,
 
+    // Per-slice load states
+    summaryState,
+    subsystemsState,
+    instancesState,
+    healthState,
+    statisticsState,
+    alertsState,
+    loadStates,
+    isOperationsApiUnavailable,
+    subsystemsAreFallback,
+
     // Operations perspective actions
     fetchSummary,
     fetchSubsystems,
+    loadDemoSubsystems,
     fetchInstances,
     fetchHealth,
     fetchStatistics,

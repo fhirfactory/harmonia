@@ -1,7 +1,7 @@
 version: '3.8'
 
 networks:
-  hie-network:
+  harmonia-network:
     driver: bridge
 
 services:
@@ -25,7 +25,7 @@ services:
     ports:
       - "8091:8091"
     networks:
-      - hie-network
+      - harmonia-network
     depends_on:
       - mllp-gateway
 
@@ -47,7 +47,7 @@ services:
       - "8092:8092"
       - "2201:2201"
     networks:
-      - hie-network
+      - harmonia-network
     depends_on:
       - mllp-gateway
 
@@ -70,7 +70,7 @@ services:
       - "2202:2202"
       - "2204:2204"
     networks:
-      - hie-network
+      - harmonia-network
     depends_on:
       - mllp-gateway
 
@@ -93,7 +93,7 @@ services:
       - "2203:2203"
       - "2205:2205"
     networks:
-      - hie-network
+      - harmonia-network
     depends_on:
       - mllp-gateway
 
@@ -112,7 +112,7 @@ services:
     ports:
       - "8090:8090"
     networks:
-      - hie-network
+      - harmonia-network
     depends_on:
       - paradeigma-pas
       - paradeigma-emr
@@ -127,7 +127,7 @@ services:
     build:
       context: ../../pylai/pylai-mllp-in
       dockerfile: Dockerfile
-    container_name: hie-mllp-gateway
+    container_name: harmonia-mllp-gateway
     environment:
       - MLLP_HOST=0.0.0.0
       - MLLP_PAS_ADT_PORT=2101
@@ -144,13 +144,13 @@ services:
       - "2104:2104"
       - "8084:8080"
     networks:
-      - hie-network
+      - harmonia-network
 
   task-processor:
     build:
       context: ../../energeia/ponos
       dockerfile: Dockerfile
-    container_name: hie-task-processor
+    container_name: harmonia-task-processor
     environment:
       - TASK_BROKER_HOST=0.0.0.0
       - TASK_BROKER_PORT=61616
@@ -158,4 +158,4 @@ services:
       - "8083:8080"
       - "61616:61616"
     networks:
-      - hie-network
+      - harmonia-network

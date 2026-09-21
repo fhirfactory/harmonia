@@ -776,7 +776,7 @@ const viewLinkedResourceJson = (item: LinkedResourceItem) => {
             </div>
             <div class="form-group">
               <label class="form-label">Performing Agent / System</label>
-              <input v-model="newProv.agent" type="text" placeholder="e.g. HIE MLLP Gateway or Dr. Smith" class="form-input" />
+              <input v-model="newProv.agent" type="text" placeholder="e.g. Harmonia MLLP Gateway or Dr. Smith" class="form-input" />
             </div>
           </div>
 

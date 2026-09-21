@@ -92,7 +92,7 @@ class IncomingMfnMessageProcessorTest {
         assertThat(comm.getStatus()).isEqualTo(Enumerations.EventStatus.COMPLETED);
         assertThat(comm.getSubject().getReference()).isEqualTo("Practitioner/DOC-12345");
         assertThat(comm.getSender().getDisplay()).contains("STAFF_APP @ HOSPITAL_A");
-        assertThat(comm.getRecipientFirstRep().getDisplay()).isEqualTo("HIE MLLP Gateway");
+        assertThat(comm.getRecipientFirstRep().getDisplay()).isEqualTo("Harmonia MLLP Gateway");
         assertThat(communicationService.getById("comm-MSG-MFN-001")).isPresent();
 
         // Verify Task

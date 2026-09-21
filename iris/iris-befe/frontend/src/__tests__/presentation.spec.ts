@@ -124,4 +124,29 @@ describe('Iris Presentation Components', () => {
     await retryBtn.trigger('click')
     expect(wrapper.emitted('retry')).toBeTruthy()
   })
+
+  it('renders an optional IrisErrorState detail line without any stack trace', () => {
+    const wrapper = mount(IrisErrorState, {
+      props: {
+        title: 'Operations API unavailable',
+        message: 'The console could not reach the operations API.',
+        detail: 'GET /operations/summary - no response'
+      }
+    })
+    expect(wrapper.find('.iris-error-state__detail').text()).toBe(
+      'GET /operations/summary - no response'
+    )
+    expect(wrapper.text()).not.toContain('at ')
+  })
+
+  it('applies column alignment when declared', () => {
+    const wrapper = mount(IrisDataTable, {
+      global: { plugins: [PrimeVue] },
+      props: {
+        value: [{ id: '1', depth: 4 }],
+        columns: [{ field: 'depth', header: 'Depth', align: 'right' as const }]
+      }
+    })
+    expect(wrapper.find('th').attributes('style')).toContain('text-align: right')
+  })
 })

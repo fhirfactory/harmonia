@@ -46,6 +46,7 @@ public final class PetasosConfig implements Serializable {
     public static final String PROP_PETASOS_BROKER_URLS = "petasos.broker.urls";
     public static final String PROP_PETASOS_BROKER_USER = "petasos.broker.user";
     public static final String PROP_PETASOS_BROKER_PASSWORD = "petasos.broker.password";
+    public static final String PROP_PETASOS_HA_ENABLED = "petasos.ha.enabled";
 
     private final List<String> brokerUrls;
     private final String username;
@@ -160,6 +161,9 @@ public final class PetasosConfig implements Serializable {
         }
 
         String ha = System.getenv(ENV_PETASOS_HA_ENABLED);
+        if (ha == null || ha.isBlank()) {
+            ha = System.getProperty(PROP_PETASOS_HA_ENABLED);
+        }
         if (ha != null && !ha.isBlank()) {
             builder.haEnabled(Boolean.parseBoolean(ha.trim()));
         }

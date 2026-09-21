@@ -109,7 +109,7 @@ const currentPageInfo = computed(() => {
           target="_blank" 
           rel="noopener noreferrer"
           class="topbar-action-btn"
-          title="Open HIE Operations Center (Port 3001)"
+          title="Open Harmonia Operations Console (Port 3001)"
         >
           <Sparkles :size="14" class="text-emerald-400" />
           <span class="hidden md:inline text-xs font-medium text-slate-300">Operations UI</span>

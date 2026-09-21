@@ -260,7 +260,7 @@ const handleNavClick = () => {
 
         <div v-if="!collapsed" class="sidebar-system-info">
           <div class="flex items-center justify-between text-[11px] text-slate-500">
-            <span>HIE Platform v1.0</span>
+            <span>Harmonia Platform v1.0</span>
             <span class="flex items-center gap-1 text-emerald-400">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               Online

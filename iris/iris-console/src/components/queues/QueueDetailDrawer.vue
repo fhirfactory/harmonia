@@ -90,164 +90,368 @@ const depthPoints = computed(() => {
 
 <template>
   <teleport to="body" :disabled="!teleport">
-    <div v-if="isOpen && queue" class="fixed inset-0 z-50 overflow-hidden" role="dialog" aria-modal="true" :aria-label="`Queue Details: ${queue.queueName}`">
-      <!-- Backdrop -->
-      <div 
-        class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" 
-        aria-hidden="true" 
-        @click="emit('close')"
-      ></div>
+    <div
+      v-if="isOpen && queue"
+      class="queue-drawer"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="`Queue details: ${queue.queueName}`"
+    >
+      <div class="queue-drawer__backdrop" aria-hidden="true" @click="emit('close')"></div>
 
-      <aside class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[500px] lg:w-[580px] bg-white border-l border-slate-200 z-50 flex flex-col shadow-2xl transition-transform transform duration-300 ease-in-out font-sans text-slate-800">
-        <!-- Drawer Header -->
-        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-          <div class="flex items-center gap-3 min-w-0">
-            <div class="p-2 rounded-md bg-sky-50 border border-sky-100 text-sky-700 shrink-0">
-              <Radio :size="20" />
-            </div>
-            <div class="min-w-0 pr-2">
-              <h2 class="text-base font-bold text-slate-900 tracking-tight font-mono break-all leading-tight">
-                {{ queue.queueName }}
-              </h2>
-              <p v-if="queue.associatedCapability" class="text-xs text-slate-500 mt-0.5 truncate font-sans">
+      <aside class="queue-drawer__panel">
+        <!-- Header -->
+        <div class="queue-drawer__header">
+          <div class="queue-drawer__identity">
+            <Radio :size="18" class="queue-drawer__identity-icon" aria-hidden="true" />
+            <div class="queue-drawer__identity-text">
+              <h2 class="queue-drawer__title">{{ queue.queueName }}</h2>
+              <p v-if="queue.associatedCapability" class="queue-drawer__subtitle">
                 {{ queue.associatedCapability }}
               </p>
             </div>
           </div>
 
-          <button 
+          <button
             type="button"
-            class="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 rounded-md transition cursor-pointer shrink-0"
+            class="queue-drawer__close"
             aria-label="Close queue details drawer"
-            title="Close drawer (ESC)"
+            title="Close drawer (Esc)"
             @click="emit('close')"
           >
-            <X :size="18" />
+            <X :size="16" aria-hidden="true" />
           </button>
         </div>
 
-        <!-- Drawer Body -->
-        <div class="flex-1 overflow-y-auto p-6 space-y-6">
-          <!-- Status & Capability Banner -->
-          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between shadow-xs">
-            <div>
-              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Queue Status</span>
+        <!-- Body -->
+        <div class="queue-drawer__body">
+          <div class="queue-drawer__banner">
+            <div class="queue-drawer__banner-block">
+              <span class="queue-drawer__label">Queue status</span>
               <IrisStatus :status="queue.status || 'UNKNOWN'" size="md" :show-pulse="true" label-format="upper" />
             </div>
-
-            <div class="text-right">
-              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Protocol / Address</span>
-              <span class="text-xs font-mono font-semibold text-slate-800">
-                {{ queue.address || queue.queueName }}
-              </span>
+            <div class="queue-drawer__banner-block queue-drawer__banner-block--end">
+              <span class="queue-drawer__label">Address</span>
+              <span class="queue-drawer__mono">{{ queue.address || queue.queueName }}</span>
             </div>
           </div>
 
-          <!-- Metrics Grid -->
-          <div class="space-y-3">
-            <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-              <Activity :size="14" class="text-sky-600" />
-              <span>Messaging Telemetry</span>
+          <section class="queue-drawer__section">
+            <h3 class="queue-drawer__heading">
+              <Activity :size="13" aria-hidden="true" />
+              <span>Messaging telemetry</span>
             </h3>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <!-- Current Depth -->
-              <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center shadow-xs">
-                <span class="text-[10px] text-slate-500 uppercase font-bold block mb-0.5">Current Depth</span>
-                <span 
-                  class="text-lg font-bold font-mono block"
-                  :class="queue.depth && queue.depth > 50 ? 'text-rose-700' : 'text-slate-900'"
-                >
-                  {{ formatCount(queue.depth) }}
-                </span>
-              </div>
+            <ul class="queue-drawer__metrics">
+              <li class="queue-drawer__metric">
+                <span class="queue-drawer__label">Current depth</span>
+                <span class="queue-drawer__metric-value">{{ formatCount(queue.depth) }}</span>
+              </li>
+              <li class="queue-drawer__metric">
+                <span class="queue-drawer__label">Consumers</span>
+                <span class="queue-drawer__metric-value">{{ formatCount(queue.consumerCount) }}</span>
+              </li>
+              <li class="queue-drawer__metric">
+                <span class="queue-drawer__label">Producers</span>
+                <span class="queue-drawer__metric-value">{{ formatCount(queue.producerCount) }}</span>
+              </li>
+              <li class="queue-drawer__metric">
+                <span class="queue-drawer__label">DLQ messages</span>
+                <span class="queue-drawer__metric-value">{{ formatCount(queue.dlqDepth) }}</span>
+              </li>
+            </ul>
+          </section>
 
-              <!-- Consumers -->
-              <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center shadow-xs">
-                <span class="text-[10px] text-slate-500 uppercase font-bold block mb-0.5">Consumers</span>
-                <span class="text-lg font-bold font-mono text-emerald-700 block">
-                  {{ formatCount(queue.consumerCount) }}
-                </span>
-              </div>
+          <ul class="queue-drawer__facts">
+            <li class="queue-drawer__fact">
+              <span class="queue-drawer__fact-label">Enqueue rate</span>
+              <span class="queue-drawer__mono">{{ formatRate(queue.enqueueRate) }}</span>
+            </li>
+            <li class="queue-drawer__fact">
+              <span class="queue-drawer__fact-label">Dequeue rate</span>
+              <span class="queue-drawer__mono">{{ formatRate(queue.dequeueRate) }}</span>
+            </li>
+            <li class="queue-drawer__fact">
+              <span class="queue-drawer__fact-label">Oldest message age</span>
+              <span class="queue-drawer__mono">{{ formatAge(queue.oldestMessageAgeSeconds) }}</span>
+            </li>
+            <li class="queue-drawer__fact">
+              <span class="queue-drawer__fact-label">Associated capability</span>
+              <span v-if="queue.associatedCapability">{{ queue.associatedCapability }}</span>
+              <span v-else class="queue-drawer__not-reported">Not reported by the operations API</span>
+            </li>
+          </ul>
 
-              <!-- Producers -->
-              <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center shadow-xs">
-                <span class="text-[10px] text-slate-500 uppercase font-bold block mb-0.5">Producers</span>
-                <span class="text-lg font-bold font-mono text-slate-800 block">
-                  {{ formatCount(queue.producerCount) }}
-                </span>
-              </div>
-
-              <!-- DLQ Messages -->
-              <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center shadow-xs">
-                <span class="text-[10px] text-slate-500 uppercase font-bold block mb-0.5">DLQ Messages</span>
-                <span 
-                  class="text-lg font-bold font-mono block"
-                  :class="queue.dlqDepth && queue.dlqDepth > 0 ? 'text-rose-700' : 'text-slate-500'"
-                >
-                  {{ formatCount(queue.dlqDepth) }}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Throughput Rates & Age -->
-          <div class="bg-white border border-slate-200 rounded-lg p-4 space-y-2 text-xs font-mono shadow-xs">
-            <div class="flex justify-between py-1 border-b border-slate-100">
-              <span class="text-slate-500 font-sans">Enqueue Rate:</span>
-              <span class="text-sky-700 font-semibold">{{ formatRate(queue.enqueueRate) }}</span>
-            </div>
-            <div class="flex justify-between py-1 border-b border-slate-100">
-              <span class="text-slate-500 font-sans">Dequeue Rate:</span>
-              <span class="text-emerald-700 font-semibold">{{ formatRate(queue.dequeueRate) }}</span>
-            </div>
-            <div class="flex justify-between py-1 border-b border-slate-100">
-              <span class="text-slate-500 font-sans">Oldest Message Age:</span>
-              <span class="text-slate-800">{{ formatAge(queue.oldestMessageAgeSeconds) }}</span>
-            </div>
-            <div class="flex justify-between py-1">
-              <span class="text-slate-500 font-sans">Associated Capability:</span>
-              <span class="text-slate-800 font-sans">{{ queue.associatedCapability || 'Petasos Internal Transport' }}</span>
-            </div>
-          </div>
-
-          <!-- Historical Sparkline Chart -->
-          <div class="space-y-3">
-            <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center justify-between">
-              <span class="flex items-center gap-1.5">
-                <Clock :size="14" class="text-emerald-600" />
-                <span>Historical Depth Trend</span>
-              </span>
-              <span class="text-[10px] text-slate-500 font-normal">Last 30 data points</span>
+          <section class="queue-drawer__section">
+            <h3 class="queue-drawer__heading">
+              <Clock :size="13" aria-hidden="true" />
+              <span>Historical depth trend</span>
             </h3>
 
-            <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg shadow-xs">
-              <div v-if="depthPoints.length > 0">
-                <SvgTimeSeriesChart 
-                  :data="depthPoints" 
-                  color="#0284c7" 
-                  :height="100" 
-                  unit=" msgs"
-                />
-              </div>
-              <div v-else class="py-6 text-center text-xs text-slate-500 italic">
-                Awaiting time-series depth polling data...
-              </div>
-            </div>
-          </div>
-
-          <!-- Zero-PHI Boundary Notice -->
-          <div class="p-3 rounded-lg bg-sky-50 border border-sky-200 text-xs text-sky-900 flex items-start gap-2.5">
-            <ShieldCheck :size="16" class="text-sky-700 shrink-0 mt-0.5" />
-            <div class="space-y-0.5">
-              <p class="font-bold">Zero-PHI Safe Telemetry</p>
-              <p class="text-[11px] text-sky-800/80 leading-relaxed font-sans">
-                Petasos treats payload buffers as opaque streams. No patient names, MRNs, or clinical observations are logged or inspected.
+            <div class="queue-drawer__chart">
+              <SvgTimeSeriesChart
+                v-if="depthPoints.length > 0"
+                :data="depthPoints"
+                color="#0284c7"
+                :height="100"
+                unit=" msgs"
+              />
+              <p v-else class="queue-drawer__not-reported">
+                The operations API reported no depth history for this queue.
               </p>
             </div>
-          </div>
+          </section>
+
+          <p class="queue-drawer__phi" role="note">
+            <ShieldCheck :size="14" aria-hidden="true" />
+            <span>
+              <strong>Zero-PHI safe telemetry.</strong>
+              Petasos treats payload buffers as opaque streams. No patient names, MRNs or clinical
+              observations are logged or inspected.
+            </span>
+          </p>
         </div>
       </aside>
     </div>
   </teleport>
 </template>
+
+<style scoped>
+.queue-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  font-family: var(--iris-font-sans);
+}
+
+.queue-drawer__backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+}
+
+.queue-drawer__panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  width: min(560px, 100%);
+  background-color: var(--iris-bg-surface);
+  border-left: 1px solid var(--iris-border-default);
+  color: var(--iris-text-primary);
+}
+
+.queue-drawer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--iris-bg-subtle);
+  border-bottom: 1px solid var(--iris-border-default);
+}
+
+.queue-drawer__identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.queue-drawer__identity-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--iris-text-accent);
+}
+
+.queue-drawer__identity-text {
+  min-width: 0;
+}
+
+.queue-drawer__title {
+  margin: 0;
+  font-family: var(--iris-font-mono);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.queue-drawer__subtitle {
+  margin: 2px 0 0 0;
+  font-size: 0.75rem;
+  color: var(--iris-text-muted);
+}
+
+.queue-drawer__close {
+  flex-shrink: 0;
+  display: inline-flex;
+  padding: 4px;
+  color: var(--iris-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--iris-border-radius);
+  cursor: pointer;
+}
+
+.queue-drawer__close:hover {
+  color: var(--iris-text-primary);
+  background-color: var(--iris-bg-hover);
+  border-color: var(--iris-border-default);
+}
+
+.queue-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 1rem;
+}
+
+.queue-drawer__banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--iris-bg-subtle);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.queue-drawer__banner-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.queue-drawer__banner-block--end {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.queue-drawer__label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-muted);
+}
+
+.queue-drawer__mono {
+  font-family: var(--iris-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--iris-text-primary);
+  word-break: break-all;
+}
+
+.queue-drawer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.queue-drawer__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--iris-text-secondary);
+}
+
+.queue-drawer__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.queue-drawer__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  background-color: var(--iris-bg-subtle);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.queue-drawer__metric-value {
+  font-family: var(--iris-font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.queue-drawer__facts {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0.25rem 0.75rem;
+  list-style: none;
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+  font-size: 0.8125rem;
+}
+
+.queue-drawer__fact {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.3125rem 0;
+  border-bottom: 1px solid var(--iris-border-subtle);
+}
+
+.queue-drawer__fact:last-child {
+  border-bottom: none;
+}
+
+.queue-drawer__fact-label {
+  color: var(--iris-text-muted);
+}
+
+.queue-drawer__chart {
+  padding: 0.75rem;
+  background-color: var(--iris-bg-subtle);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.queue-drawer__not-reported {
+  margin: 0;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--iris-text-muted);
+}
+
+.queue-drawer__phi {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--iris-text-secondary);
+  background-color: var(--iris-bg-subtle);
+  border: 1px solid var(--iris-border-default);
+  border-radius: var(--iris-border-radius);
+}
+
+.queue-drawer__phi svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+</style>

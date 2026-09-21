@@ -51,7 +51,7 @@ public class OutboundCommunicationResourceBuilder {
         category.addCoding(new Coding("http://terminology.hl7.org/CodeSystem/communication-category", "notification", "Notification"));
         category.addCoding(new Coding("http://example.org/hl7/transmission-direction", "outbound", "Outbound Transmission"));
         if (topic != null) {
-            category.addCoding(new Coding("http://example.org/hie/topic", topic.toTopicString(), "HIE Topic: " + topic.toTopicString()));
+            category.addCoding(new Coding("http://fhirfactory.net/harmonia/topic", topic.toTopicString(), "Harmonia Topic: " + topic.toTopicString()));
         }
         category.setText("HL7 Outbound Egress Transmission");
 
@@ -64,15 +64,15 @@ public class OutboundCommunicationResourceBuilder {
         }
         if (request != null && StringUtils.isNotBlank(request.getDestinationId())) {
             Identifier destId = communication.addIdentifier();
-            destId.setSystem("http://example.org/hie/destination-id");
+            destId.setSystem("http://fhirfactory.net/harmonia/destination-id");
             destId.setValue(request.getDestinationId());
             destId.setType(new CodeableConcept().setText("Target Destination ID"));
         }
         if (topic != null) {
             Identifier topicId = communication.addIdentifier();
-            topicId.setSystem("http://example.org/hie/topic");
+            topicId.setSystem("http://fhirfactory.net/harmonia/topic");
             topicId.setValue(topic.toTopicString());
-            topicId.setType(new CodeableConcept().setText("HIE Topic"));
+            topicId.setType(new CodeableConcept().setText("Harmonia Topic"));
         }
 
         communication.setSent(request != null && request.getTimestamp() != null ? request.getTimestamp() : new Date());

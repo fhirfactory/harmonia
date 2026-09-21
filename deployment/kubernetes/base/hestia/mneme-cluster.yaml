@@ -88,7 +88,7 @@ spec:
           image: localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT
           env:
             - name: JAVA_OPTIONS
-              value: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-1:8080/api/operations"
+              value: "-Dinfinispan.node.name=node1 -Dfhir.server.url=http://hapi-fhir-jpa-server-1:8080/fhir -Dops.server.url=http://operations-1:8080/api/operations"
           ports:
             - containerPort: 11222
               name: hotrod
@@ -154,7 +154,7 @@ spec:
           image: localhost:32000/harmonia/mneme-cluster:1.0.0-SNAPSHOT
           env:
             - name: JAVA_OPTIONS
-              value: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://hie-operations-jpa-server-2:8080/api/operations"
+              value: "-Dinfinispan.node.name=node2 -Dfhir.server.url=http://hapi-fhir-jpa-server-2:8080/fhir -Dops.server.url=http://operations-2:8080/api/operations"
           ports:
             - containerPort: 11222
               name: hotrod

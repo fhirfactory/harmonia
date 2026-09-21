@@ -27,8 +27,8 @@ import InstanceTable from '../components/subsystems/InstanceTable.vue';
 import InstanceDetailDrawer from '../components/subsystems/InstanceDetailDrawer.vue';
 import HealthDependenciesPanel from '../components/subsystems/HealthDependenciesPanel.vue';
 import StatisticsPanel from '../components/subsystems/StatisticsPanel.vue';
-import { IrisBreadcrumbs, IrisToolbar } from '@harmonia/iris-befe';
-import { AlertCircle, Server, HeartPulse, BarChart2, Layers } from 'lucide-vue-next';
+import { IrisBreadcrumbs, IrisToolbar, IrisErrorState } from '@harmonia/iris-befe';
+import { Server, HeartPulse, BarChart2, Layers } from 'lucide-vue-next';
 
 const store = useOperationsStore();
 const route = useRoute();
@@ -190,13 +190,13 @@ const refreshCurrent = async () => {
       </div>
 
       <!-- Error banner if present -->
-      <div 
-        v-if="store.error" 
-        class="subsystems-view__error-banner"
-        role="alert"
-      >
-        <AlertCircle :size="16" class="subsystems-view__error-icon" />
-        <span>{{ store.error }}</span>
+      <div v-if="store.error" class="subsystems-view__error-banner">
+        <IrisErrorState
+          title="Subsystem data could not be loaded"
+          :message="store.error"
+          :retryable="true"
+          @retry="refreshCurrent"
+        />
       </div>
 
       <!-- Tab Content Area -->
@@ -339,21 +339,6 @@ const refreshCurrent = async () => {
 
 .subsystems-view__error-banner {
   margin: 16px 20px 0 20px;
-  padding: 10px 14px;
-  border-radius: 6px;
-  background-color: #fff1f2;
-  border: 1px solid #fecdd3;
-  color: #9f1239;
-  font-size: 12px;
-  font-family: var(--iris-font-mono, monospace);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.subsystems-view__error-icon {
-  color: #e11d48;
-  flex-shrink: 0;
 }
 
 .subsystems-view__content {

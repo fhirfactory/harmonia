@@ -255,16 +255,16 @@ docker compose ps
 ```
 
 All services across the containers should show `Up` (and `healthy` where applicable):
-- `hie-postgres-1`, `hie-postgres-2` (PostgreSQL Clinical DB nodes)
-- `hie-postgres-ops-1`, `hie-postgres-ops-2` (PostgreSQL Operations DB nodes)
-- `hie-hapi-fhir-1`, `hie-hapi-fhir-2` (Mnemosyne Clinical JPA servers)
-- `hie-operations-1`, `hie-operations-2` (Mnemosyne Operations JPA servers)
-- `hie-infinispan-node1`, `hie-infinispan-node2` (Mneme In-Memory Cache Grid nodes)
-- `hie-befe` (Iris WildFly Backend-For-Frontend)
-- `hie-iris-clinical`, `hie-iris-console` (Iris Vue 3 SPAs)
-- `hie-mllp-gateway` (Pylai Inbound MLLP Gateway)
-- `hie-mllp-outbound-his`, `hie-mllp-outbound-lis` (Pylai Outbound MLLP Gateways)
-- `hie-task-processor` (Ponos WorkEngine & Petasos Artemis Broker)
+- `harmonia-postgres-1`, `harmonia-postgres-2` (PostgreSQL Clinical DB nodes)
+- `harmonia-postgres-ops-1`, `harmonia-postgres-ops-2` (PostgreSQL Operations DB nodes)
+- `harmonia-hapi-fhir-1`, `harmonia-hapi-fhir-2` (Mnemosyne Clinical JPA servers)
+- `harmonia-operations-1`, `harmonia-operations-2` (Mnemosyne Operations JPA servers)
+- `harmonia-infinispan-node1`, `harmonia-infinispan-node2` (Mneme In-Memory Cache Grid nodes)
+- `harmonia-befe` (Iris WildFly Backend-For-Frontend)
+- `harmonia-iris-clinical`, `harmonia-iris-console` (Iris Vue 3 SPAs)
+- `harmonia-mllp-gateway` (Pylai Inbound MLLP Gateway)
+- `harmonia-mllp-outbound-his`, `harmonia-mllp-outbound-lis` (Pylai Outbound MLLP Gateways)
+- `harmonia-task-processor` (Ponos WorkEngine & Petasos Artemis Broker)
 
 ### 3. Service Endpoints and Port Mappings
 

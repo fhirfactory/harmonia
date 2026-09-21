@@ -26,7 +26,7 @@ describe('Iris Design System Unidirectional Dependency & Decoupling', () => {
       ...((pkgJson as any).peerDependencies || {})
     }
 
-    const forbiddenPackages = ['iris-console', 'iris-clinical', 'iris-administration', 'hie-iris-console']
+    const forbiddenPackages = ['iris-console', 'iris-clinical', 'iris-administration', 'hie-iris-console', '@harmonia/iris-console', '@harmonia/iris-clinical', '@harmonia/iris-administration']
     for (const pkg of forbiddenPackages) {
       expect(allDeps[pkg]).toBeUndefined()
     }

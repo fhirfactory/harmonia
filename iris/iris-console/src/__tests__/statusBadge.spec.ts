@@ -15,61 +15,89 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/**
+ * Status presentation in iris-console is owned entirely by the shared
+ * iris-befe IrisStatus primitive. The former local components/common/StatusBadge.vue
+ * has been deleted; this spec is retargeted at its replacement so the console
+ * keeps an explicit guarantee over the status treatment it renders.
+ */
+
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import StatusBadge from '../components/common/StatusBadge.vue';
+import { IrisStatus } from '@harmonia/iris-befe';
 
-describe('StatusBadge.vue', () => {
-  it('renders HEALTHY status correctly with accessible attributes', () => {
-    const wrapper = mount(StatusBadge, {
-      props: { status: 'HEALTHY' }
-    });
-    expect(wrapper.text()).toContain('HEALTHY');
+describe('IrisStatus (replacement for the local StatusBadge)', () => {
+  it('renders HEALTHY status with accessible attributes', () => {
+    const wrapper = mount(IrisStatus, { props: { status: 'HEALTHY' } });
+    expect(wrapper.text()).toContain('Healthy');
     expect(wrapper.attributes('role')).toBe('status');
     expect(wrapper.attributes('aria-label')).toBe('Healthy status');
-    expect(wrapper.classes()).toContain('text-emerald-400');
   });
 
-  it('renders DEGRADED status correctly', () => {
-    const wrapper = mount(StatusBadge, {
-      props: { status: 'DEGRADED' }
-    });
-    expect(wrapper.text()).toContain('DEGRADED');
+  it('renders DEGRADED status', () => {
+    const wrapper = mount(IrisStatus, { props: { status: 'DEGRADED' } });
+    expect(wrapper.text()).toContain('Degraded');
     expect(wrapper.attributes('aria-label')).toBe('Degraded operational warning');
-    expect(wrapper.classes()).toContain('text-amber-400');
   });
 
-  it('renders UNAVAILABLE status correctly', () => {
-    const wrapper = mount(StatusBadge, {
-      props: { status: 'UNAVAILABLE' }
-    });
-    expect(wrapper.text()).toContain('UNAVAILABLE');
+  it('renders UNAVAILABLE status', () => {
+    const wrapper = mount(IrisStatus, { props: { status: 'UNAVAILABLE' } });
+    expect(wrapper.text()).toContain('Unavailable');
     expect(wrapper.attributes('aria-label')).toBe('Unavailable failure state');
-    expect(wrapper.classes()).toContain('text-rose-400');
   });
 
-  it('renders UNKNOWN when status is null or unrecognized', () => {
-    const wrapper = mount(StatusBadge, {
-      props: { status: null }
-    });
-    expect(wrapper.text()).toContain('UNKNOWN');
-    expect(wrapper.attributes('aria-label')).toBe('Unknown operational state');
+  it('renders UNKNOWN when status is null or unrecognised', () => {
+    expect(mount(IrisStatus, { props: { status: null } }).text()).toContain('Unknown');
+    const odd = mount(IrisStatus, { props: { status: 'SOMETHING-ELSE' } });
+    expect(odd.attributes('aria-label')).toBe('Unknown operational state');
   });
 
-  it('renders STALE TELEMETRY when stale prop is true', () => {
-    const wrapper = mount(StatusBadge, {
-      props: { status: 'HEALTHY', stale: true }
-    });
-    expect(wrapper.text()).toContain('STALE TELEMETRY');
+  it('renders queue idle-like states neutrally while preserving distinct operational state labels', () => {
+    const states = [
+      { status: 'IDLE', expected: 'Idle' },
+      { status: 'PAUSED', expected: 'Paused' },
+      { status: 'PENDING', expected: 'Pending' },
+      { status: 'INACTIVE', expected: 'Inactive' },
+      { status: 'QUEUED', expected: 'Queued' }
+    ];
+    for (const { status, expected } of states) {
+      const wrapper = mount(IrisStatus, { props: { status } });
+      expect(wrapper.attributes('aria-label')).toBe(`${expected} operational state`);
+      expect(wrapper.classes()).toContain('iris-status--neutral');
+      expect(wrapper.classes()).toContain('iris-status--idle');
+      expect(wrapper.text()).toContain(expected);
+    }
+  });
+
+  it('renders stale telemetry when the stale prop is set', () => {
+    const wrapper = mount(IrisStatus, { props: { status: 'HEALTHY', stale: true } });
+    expect(wrapper.text()).toContain('Stale Telemetry');
     expect(wrapper.attributes('aria-label')).toBe('Stale cached telemetry');
-    expect(wrapper.classes()).toContain('text-purple-300');
   });
 
-  it('handles size prop variants (sm, md, lg)', () => {
-    const small = mount(StatusBadge, { props: { status: 'HEALTHY', size: 'sm' } });
-    expect(small.classes()).toContain('text-[11px]');
+  it('conveys status by symbol and text, not colour alone', () => {
+    const wrapper = mount(IrisStatus, { props: { status: 'UNAVAILABLE' } });
+    expect(wrapper.find('.iris-status__symbol').exists()).toBe(true);
+    expect(wrapper.find('.iris-status__label').text().length).toBeGreaterThan(0);
+  });
 
-    const large = mount(StatusBadge, { props: { status: 'HEALTHY', size: 'lg' } });
-    expect(large.classes()).toContain('text-sm');
+  it('supports the size variants the console uses', () => {
+    expect(mount(IrisStatus, { props: { status: 'HEALTHY', size: 'sm' } }).classes())
+      .toContain('iris-status--sm');
+    expect(mount(IrisStatus, { props: { status: 'HEALTHY', size: 'lg' } }).classes())
+      .toContain('iris-status--lg');
+  });
+
+  it('no longer ships the local StatusBadge or the orphaned shell components', () => {
+    const modules = (import.meta as any).glob('../components/**/*.vue');
+    const paths = Object.keys(modules);
+    for (const dead of [
+      '../components/common/StatusBadge.vue',
+      '../components/Navbar.vue',
+      '../components/Sidebar.vue',
+      '../components/Topbar.vue'
+    ]) {
+      expect(paths).not.toContain(dead);
+    }
   });
 });

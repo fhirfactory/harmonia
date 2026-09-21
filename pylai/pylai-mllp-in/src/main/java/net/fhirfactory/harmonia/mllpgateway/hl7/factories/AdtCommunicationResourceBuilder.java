@@ -76,7 +76,7 @@ public class AdtCommunicationResourceBuilder {
         category.addCoding(new Coding("http://terminology.hl7.org/CodeSystem/communication-category", "notification", "Notification"));
         category.addCoding(new Coding("http://example.org/hl7/trigger-event", triggerEvent, "HL7 ADT " + triggerEvent));
         if (topic != null) {
-            category.addCoding(new Coding("http://example.org/hie/topic", topic.toTopicString(), "HIE Topic: " + topic.toTopicString()));
+            category.addCoding(new Coding("http://fhirfactory.net/harmonia/topic", topic.toTopicString(), "Harmonia Topic: " + topic.toTopicString()));
         }
         category.setText("HL7 v2.4 ADT Ingestion Notification");
 
@@ -95,9 +95,9 @@ public class AdtCommunicationResourceBuilder {
         }
         if (topic != null) {
             Identifier topicId = communication.addIdentifier();
-            topicId.setSystem("http://example.org/hie/topic");
+            topicId.setSystem("http://fhirfactory.net/harmonia/topic");
             topicId.setValue(topic.toTopicString());
-            topicId.setType(new CodeableConcept().setText("HIE Topic"));
+            topicId.setType(new CodeableConcept().setText("Harmonia Topic"));
         }
         if (StringUtils.isNotBlank(sendingFacility)) {
             Identifier facilityId = communication.addIdentifier();
@@ -145,7 +145,7 @@ public class AdtCommunicationResourceBuilder {
         // Recipient
         Reference recipientRef = new Reference();
         recipientRef.setType("Device");
-        recipientRef.setDisplay("HIE MLLP Gateway");
+        recipientRef.setDisplay("Harmonia MLLP Gateway");
         communication.addRecipient(recipientRef);
 
         // Note

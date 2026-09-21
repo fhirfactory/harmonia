@@ -30,12 +30,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ErgonReasonEnumTest {
 
     @Test
-    @DisplayName("Verify all required HIE Task reasons exist with correct codes")
+    @DisplayName("Verify all required Harmonia Task reasons exist with correct codes")
     void testEnumCodes() {
-        assertThat(ErgonReasonEnum.HIE_SYNTHETIC_TASK.getCode()).isEqualTo("HIE-Synthetic-Task");
-        assertThat(ErgonReasonEnum.HIE_ADMINISTRATION_TASK.getCode()).isEqualTo("HIE-Administration-Task");
-        assertThat(ErgonReasonEnum.HIE_APPROVAL_TASK.getCode()).isEqualTo("HIE-Approval-Task");
-        assertThat(ErgonReasonEnum.HIE_INFORMATION_REQUEST_TASK.getCode()).isEqualTo("HIE-InformationRequest-Task");
+        assertThat(ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK.getCode()).isEqualTo("Harmonia-Synthetic-Task");
+        assertThat(ErgonReasonEnum.HARMONIA_ADMINISTRATION_TASK.getCode()).isEqualTo("Harmonia-Administration-Task");
+        assertThat(ErgonReasonEnum.HARMONIA_APPROVAL_TASK.getCode()).isEqualTo("Harmonia-Approval-Task");
+        assertThat(ErgonReasonEnum.HARMONIA_INFORMATION_REQUEST_TASK.getCode()).isEqualTo("Harmonia-InformationRequest-Task");
     }
 
     @ParameterizedTest
@@ -65,35 +65,37 @@ class ErgonReasonEnumTest {
     @DisplayName("Apply reason to Task and verify hasReason and ensureSyntheticTaskReason")
     void testApplyToTask() {
         Task task = new Task();
-        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HIE_SYNTHETIC_TASK)).isFalse();
+        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK)).isFalse();
 
-        ErgonReasonEnum.HIE_SYNTHETIC_TASK.applyTo(task);
+        ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK.applyTo(task);
         assertThat(task.hasReason()).isTrue();
-        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HIE_SYNTHETIC_TASK)).isTrue();
-        assertThat(task.getReason().get(0).getConcept().getCodingFirstRep().getCode()).isEqualTo("HIE-Synthetic-Task");
+        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK)).isTrue();
+        assertThat(task.getReason().get(0).getConcept().getCodingFirstRep().getCode()).isEqualTo("Harmonia-Synthetic-Task");
 
         // Overwrite / change reason
-        ErgonReasonEnum.HIE_APPROVAL_TASK.applyTo(task);
-        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HIE_APPROVAL_TASK)).isTrue();
+        ErgonReasonEnum.HARMONIA_APPROVAL_TASK.applyTo(task);
+        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HARMONIA_APPROVAL_TASK)).isTrue();
 
         // ensureSyntheticTaskReason when reason already exists should not overwrite
         ErgonReasonEnum.ensureSyntheticTaskReason(task);
-        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HIE_APPROVAL_TASK)).isTrue();
+        assertThat(ErgonReasonEnum.hasReason(task, ErgonReasonEnum.HARMONIA_APPROVAL_TASK)).isTrue();
 
         // ensureSyntheticTaskReason on empty task should set synthetic task
         Task emptyTask = new Task();
         ErgonReasonEnum.ensureSyntheticTaskReason(emptyTask);
-        assertThat(ErgonReasonEnum.hasReason(emptyTask, ErgonReasonEnum.HIE_SYNTHETIC_TASK)).isTrue();
+        assertThat(ErgonReasonEnum.hasReason(emptyTask, ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK)).isTrue();
     }
 
     @Test
     @DisplayName("Test fromCode lookup")
     void testFromCode() {
-        assertThat(ErgonReasonEnum.fromCode("HIE-Synthetic-Task")).contains(ErgonReasonEnum.HIE_SYNTHETIC_TASK);
-        assertThat(ErgonReasonEnum.fromCode("HIE-Administration-Task")).contains(ErgonReasonEnum.HIE_ADMINISTRATION_TASK);
-        assertThat(ErgonReasonEnum.fromCode("HIE-Approval-Task")).contains(ErgonReasonEnum.HIE_APPROVAL_TASK);
-        assertThat(ErgonReasonEnum.fromCode("HIE-InformationRequest-Task")).contains(ErgonReasonEnum.HIE_INFORMATION_REQUEST_TASK);
-        assertThat(ErgonReasonEnum.fromCode("hie_synthetic_task")).contains(ErgonReasonEnum.HIE_SYNTHETIC_TASK);
+        assertThat(ErgonReasonEnum.fromCode("Harmonia-Synthetic-Task")).contains(ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK);
+        assertThat(ErgonReasonEnum.fromCode("Harmonia-Administration-Task")).contains(ErgonReasonEnum.HARMONIA_ADMINISTRATION_TASK);
+        assertThat(ErgonReasonEnum.fromCode("Harmonia-Approval-Task")).contains(ErgonReasonEnum.HARMONIA_APPROVAL_TASK);
+        assertThat(ErgonReasonEnum.fromCode("Harmonia-InformationRequest-Task")).contains(ErgonReasonEnum.HARMONIA_INFORMATION_REQUEST_TASK);
+        assertThat(ErgonReasonEnum.fromCode("HIE-Synthetic-Task")).contains(ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK);
+        assertThat(ErgonReasonEnum.fromCode("HIE-Administration-Task")).contains(ErgonReasonEnum.HARMONIA_ADMINISTRATION_TASK);
+        assertThat(ErgonReasonEnum.fromCode("hie_synthetic_task")).contains(ErgonReasonEnum.HARMONIA_SYNTHETIC_TASK);
         assertThat(ErgonReasonEnum.fromCode("unknown")).isEmpty();
         assertThat(ErgonReasonEnum.fromCode(null)).isEmpty();
     }
