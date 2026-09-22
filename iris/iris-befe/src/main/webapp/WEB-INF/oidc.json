@@ -1,0 +1,8 @@
+{
+  "client-id": "${env.OIDC_CLIENT_ID:iris-befe}",
+  "provider-url": "${env.OIDC_ISSUER_URL}",
+  "bearer-only": true,
+  "ssl-required": "external",
+  "principal-attribute": "sub",
+  "verify-token-audience": true
+}

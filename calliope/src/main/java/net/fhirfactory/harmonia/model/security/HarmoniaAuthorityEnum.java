@@ -33,6 +33,11 @@ public enum HarmoniaAuthorityEnum {
     PROVIDER_RESOURCE_DELETE("provider.resource.delete", "Delete Provider Registry entities in storage"),
     PROVIDER_RESOURCE_VALIDATE("provider.resource.validate", "Validate Provider Registry resources"),
     PROVIDER_ADMIN("provider.admin", "Full administrative control over Provider Registry"),
+    CLINICAL_READ("clinical.read", "Read Clinical resources"),
+    CLINICAL_SEARCH("clinical.search", "Search Clinical resources"),
+    CLINICAL_CREATE("clinical.create", "Create Clinical resources"),
+    CLINICAL_UPDATE("clinical.update", "Update Clinical resources"),
+    CLINICAL_ADMIN("clinical.admin", "Administrative control over Clinical resources"),
     AUDIT_READ("audit.read", "Read security decision audit records"),
     SYSTEM_INTEGRATION("system.integration", "Internal system-to-system integration tasks"),
     SYSTEM_ADMIN("system.admin", "System administrator access");

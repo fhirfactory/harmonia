@@ -30,6 +30,8 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import net.fhirfactory.harmonia.themis.api.policy.ThemisPolicy;
 import net.fhirfactory.harmonia.themis.core.constants.HarmoniaSecurityConstants;
 import net.fhirfactory.harmonia.themis.core.policy.AuditReadPolicy;
+import net.fhirfactory.harmonia.themis.core.policy.ClinicalAuthorizationPolicy;
+import net.fhirfactory.harmonia.themis.core.policy.OperationsAuthorizationPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.ProviderRegistryPersistPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.ProviderRegistryProcessPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.ProviderRegistryReadPolicy;
@@ -83,6 +85,8 @@ public class DeterministicPolicyEvaluator implements ThemisService {
         evaluator.registerPolicy(new ProviderRegistryProcessPolicy());
         evaluator.registerPolicy(new ProviderRegistryPersistPolicy());
         evaluator.registerPolicy(new AuditReadPolicy());
+        evaluator.registerPolicy(new ClinicalAuthorizationPolicy());
+        evaluator.registerPolicy(new OperationsAuthorizationPolicy());
         return evaluator;
     }
 

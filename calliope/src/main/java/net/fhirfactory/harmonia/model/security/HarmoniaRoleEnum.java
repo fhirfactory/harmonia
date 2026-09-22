@@ -54,6 +54,23 @@ public enum HarmoniaRoleEnum {
             HarmoniaAuthorityEnum.PROVIDER_RESOURCE_UPDATE,
             HarmoniaAuthorityEnum.PROVIDER_RESOURCE_DELETE),
 
+    CLINICAL_READ("CLINICAL_READ", "Clinical Reader",
+            HarmoniaAuthorityEnum.CLINICAL_READ,
+            HarmoniaAuthorityEnum.CLINICAL_SEARCH),
+
+    CLINICAL_WRITE("CLINICAL_WRITE", "Clinical Writer",
+            HarmoniaAuthorityEnum.CLINICAL_READ,
+            HarmoniaAuthorityEnum.CLINICAL_SEARCH,
+            HarmoniaAuthorityEnum.CLINICAL_CREATE,
+            HarmoniaAuthorityEnum.CLINICAL_UPDATE),
+
+    CLINICAL_ADMIN("CLINICAL_ADMIN", "Clinical Administrator",
+            HarmoniaAuthorityEnum.CLINICAL_READ,
+            HarmoniaAuthorityEnum.CLINICAL_SEARCH,
+            HarmoniaAuthorityEnum.CLINICAL_CREATE,
+            HarmoniaAuthorityEnum.CLINICAL_UPDATE,
+            HarmoniaAuthorityEnum.CLINICAL_ADMIN),
+
     AUD_RDR("AUD_RDR", "Audit Reader",
             HarmoniaAuthorityEnum.AUDIT_READ),
 

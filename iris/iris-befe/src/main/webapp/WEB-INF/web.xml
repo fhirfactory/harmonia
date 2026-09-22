@@ -26,4 +26,19 @@
         <listener-class>net.fhirfactory.harmonia.befe.server.OperationsServerContextListener</listener-class>
     </listener>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Clinical FHIR Endpoints</web-resource-name>
+            <url-pattern>/api/fhir/*</url-pattern>
+            <url-pattern>/fhir/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>**</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>OIDC</auth-method>
+    </login-config>
+
 </web-app>

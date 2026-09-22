@@ -300,6 +300,8 @@ services:
       INFINISPAN_USER: admin
       INFINISPAN_PASSWORD: admin
       OPERATIONS_PORT: 8090
+      OIDC_ISSUER_URL: ${OIDC_ISSUER_URL:-http://localhost:8081/realms/harmonia}
+      OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-iris-befe}
     ports:
       - "8080:8080"
       - "8090:8090"

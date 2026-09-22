@@ -57,6 +57,10 @@ spec:
               value: "admin"
             - name: OPERATIONS_PORT
               value: "8090"
+            - name: OIDC_ISSUER_URL
+              value: "http://keycloak.harmonia.svc.cluster.local:8080/realms/harmonia"
+            - name: OIDC_CLIENT_ID
+              value: "iris-befe"
           ports:
             - containerPort: 8080
               name: clinical

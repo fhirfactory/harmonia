@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM quay.io/wildfly/wildfly:latest-jdk21
+FROM quay.io/wildfly/wildfly:31.0.1.Final-jdk21
 
 # Copy BEFE WAR file to deployments directory
 COPY target/iris-befe.war /opt/jboss/wildfly/standalone/deployments/ROOT.war

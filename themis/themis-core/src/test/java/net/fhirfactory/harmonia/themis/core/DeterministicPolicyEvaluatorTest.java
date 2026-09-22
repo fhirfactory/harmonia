@@ -30,6 +30,9 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityLabel;
 import net.fhirfactory.harmonia.themis.api.policy.ThemisPolicy;
 import net.fhirfactory.harmonia.themis.core.constants.HarmoniaSecurityConstants;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
+import net.fhirfactory.harmonia.themis.core.policy.ClinicalAuthorizationPolicy;
+import net.fhirfactory.harmonia.themis.core.policy.OperationsAuthorizationPolicy;
+import net.fhirfactory.harmonia.themis.core.policy.SystemAdminPolicy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -47,6 +50,8 @@ class DeterministicPolicyEvaluatorTest {
     private ThemisPrincipal testService;
     private ThemisResource providerResource;
     private ThemisResource auditResource;
+    private ThemisResource clinicalResource;
+    private ThemisResource operationsResource;
 
     @BeforeEach
     void setUp() {
@@ -55,6 +60,8 @@ class DeterministicPolicyEvaluatorTest {
         testService = ThemisPrincipal.service("service:pylai");
         providerResource = ThemisResource.of("Practitioner", "practitioner-123", "PROVIDER_REGISTRY", Set.of(ThemisSecurityLabel.of("PROVIDER_REGISTRY")));
         auditResource = ThemisResource.of("AuditEvent", "audit-456", "AUDIT", Set.of(ThemisSecurityLabel.of("AUDIT")));
+        clinicalResource = ThemisResource.of("Patient", "patient-789", "CLINICAL", Set.of(ThemisSecurityLabel.of("CLINICAL")));
+        operationsResource = ThemisResource.of("OperationsResource", "/api/operations/summary", "OPERATIONS", Set.of(ThemisSecurityLabel.of("OPERATIONS")));
     }
 
     @Nested
@@ -233,6 +240,130 @@ class DeterministicPolicyEvaluatorTest {
     }
 
     @Nested
+    @DisplayName("Clinical Policy Evaluation")
+    class ClinicalPolicyTests {
+
+        @Test
+        @DisplayName("READ allowed with clinical.read")
+        void testClinicalReadAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_CLINICAL_READ)
+                    .action(ThemisAction.READ)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo("clinical-authorization-policy");
+        }
+
+        @Test
+        @DisplayName("SEARCH allowed with clinical.search")
+        void testClinicalSearchAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_CLINICAL_SEARCH)
+                    .action(ThemisAction.SEARCH)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo("clinical-authorization-policy");
+        }
+
+        @Test
+        @DisplayName("CREATE allowed with clinical.create")
+        void testClinicalCreateAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_CLINICAL_CREATE)
+                    .action(ThemisAction.CREATE)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo("clinical-authorization-policy");
+        }
+
+        @Test
+        @DisplayName("UPDATE allowed with clinical.update")
+        void testClinicalUpdateAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_CLINICAL_UPDATE)
+                    .action(ThemisAction.UPDATE)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo("clinical-authorization-policy");
+        }
+
+        @Test
+        @DisplayName("ADMINISTER allowed with clinical.admin")
+        void testClinicalAdminAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_CLINICAL_ADMIN)
+                    .action(ThemisAction.ADMINISTER)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo("clinical-authorization-policy");
+        }
+
+        @Test
+        @DisplayName("READ denied when authority is missing")
+        void testClinicalReadDeniedWithoutAuthority() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .action(ThemisAction.READ)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.AUTHORITY_MISSING);
+        }
+
+        @Test
+        @DisplayName("DELETE denied even with clinical.admin")
+        void testClinicalDeleteDenied() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_CLINICAL_ADMIN)
+                    .action(ThemisAction.DELETE)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
+        }
+
+        @Test
+        @DisplayName("Provider authority does not allow clinical READ")
+        void testProviderAuthorityDoesNotAllowClinicalRead() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_PROVIDER_READ)
+                    .action(ThemisAction.READ)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.AUTHORITY_MISSING);
+        }
+    }
+
+    @Nested
     @DisplayName("Explicit Deny Precedence")
     class ExplicitDenyTests {
 
@@ -356,6 +487,102 @@ class DeterministicPolicyEvaluatorTest {
     }
 
     @Nested
+    @DisplayName("Operations Authorization Policy Evaluation")
+    class OperationsPolicyTests {
+
+        @Test
+        @DisplayName("operations.read grants READ on Operations resource via operations-authorization-policy")
+        void testOperationsReadAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_OPERATIONS_READ)
+                    .action(ThemisAction.READ)
+                    .target(operationsResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo(OperationsAuthorizationPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("operations.admin grants EXECUTE on Operations resource via operations-authorization-policy")
+        void testOperationsAdminExecuteAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_OPERATIONS_ADMIN)
+                    .action(ThemisAction.EXECUTE)
+                    .target(operationsResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo(OperationsAuthorizationPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("operations.read is denied on EXECUTE")
+        void testOperationsReadExecuteDenied() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_OPERATIONS_READ)
+                    .action(ThemisAction.EXECUTE)
+                    .target(operationsResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.AUTHORITY_MISSING);
+        }
+
+        @Test
+        @DisplayName("operations.read on Clinical resource is denied by DEFAULT_DENY")
+        void testOperationsAuthorityCannotAccessClinical() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_OPERATIONS_READ)
+                    .action(ThemisAction.READ)
+                    .target(clinicalResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.AUTHORITY_MISSING);
+            assertThat(decision.policyId()).isEqualTo(ClinicalAuthorizationPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("system.admin on Operations resource is allowed via system-admin-policy")
+        void testSystemAdminAllowsOperationsResource() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_ADMIN)
+                    .action(ThemisAction.READ)
+                    .target(operationsResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo(SystemAdminPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("system.integration on Operations resource is allowed for READ via operations-authorization-policy")
+        void testSystemIntegrationAllowsOperationsResource() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testService)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_INTEGRATION)
+                    .action(ThemisAction.READ)
+                    .target(operationsResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo(OperationsAuthorizationPolicy.POLICY_ID);
+        }
+    }
+
+    @Nested
     @DisplayName("Role Catalogue and Default Deny")
     class DefaultDenyAndRolesTests {
 
@@ -367,6 +594,18 @@ class DeterministicPolicyEvaluatorTest {
             assertThat(roleOpt.get().authorities())
                     .extracting(ThemisAuthority::authorityCode)
                     .containsExactlyInAnyOrder(HarmoniaSecurityConstants.AUTH_PROVIDER_READ, HarmoniaSecurityConstants.AUTH_PROVIDER_SEARCH);
+
+            var opsViewerOpt = HarmoniaSecurityConstants.getRole("OPS_VIEWER");
+            assertThat(opsViewerOpt).isPresent();
+            assertThat(opsViewerOpt.get().authorities())
+                    .extracting(ThemisAuthority::authorityCode)
+                    .containsExactlyInAnyOrder(HarmoniaSecurityConstants.AUTH_OPERATIONS_READ);
+
+            var opsAdmOpt = HarmoniaSecurityConstants.getRole("OPS_ADM");
+            assertThat(opsAdmOpt).isPresent();
+            assertThat(opsAdmOpt.get().authorities())
+                    .extracting(ThemisAuthority::authorityCode)
+                    .containsExactlyInAnyOrder(HarmoniaSecurityConstants.AUTH_OPERATIONS_READ, HarmoniaSecurityConstants.AUTH_OPERATIONS_ADMIN);
         }
 
         @Test

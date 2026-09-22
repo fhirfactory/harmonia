@@ -47,6 +47,17 @@ import java.util.*;
  *
  * Enforces Invariant 6 (Default-Deny Security Governance).
  * Ensures no FHIR Resource method can execute without a positive Themis authorization decision.
+ *
+ * Authentication & Authorization Boundary:
+ * - Authentication is managed upstream at the WildFly container layer via elytron-oidc-client
+ *   (configured via WEB-INF/web.xml and WEB-INF/oidc.json).
+ * - Container authentication executes prior to JAX-RS filters, validating bearer JWT signatures,
+ *   issuer, audience, and expiration, and populating SecurityContext.getUserPrincipal() with
+ *   the validated subject identifier (sub claim).
+ * - This filter consumes the container-authenticated principal as PrincipalType.HUMAN, performs
+ *   defense-in-depth validation against missing/anonymous identities, and delegates authorization
+ *   decisions to Themis (default-deny 403 Forbidden until clinical policies are provisioned in Task 03).
+ * - Caller-supplied identity/role headers (e.g. X-Harmonia-*, X-Principal-Id) are strictly ignored.
  */
 @Provider
 @PreMatching

@@ -20,14 +20,12 @@ package net.fhirfactory.harmonia.befe.security;
 import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.themis.api.ThemisAuthorizer;
 import net.fhirfactory.harmonia.themis.api.model.*;
-
-import java.util.Locale;
-import java.util.Set;
+import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
 
 /**
  * Default ThemisAuthorizer implementation for Iris BEFE.
  * Strictly adheres to Invariant 6 (Default-Deny Security Governance).
- * Evaluates operational RBAC roles and permissions, rejecting any unauthenticated or unauthorized requests.
+ * Delegates domain-neutral authorization decisions to the deterministic Themis policy evaluator.
  */
 @ApplicationScoped
 public class DefaultThemisAuthorizer implements ThemisAuthorizer {
@@ -44,83 +42,21 @@ public class DefaultThemisAuthorizer implements ThemisAuthorizer {
     public static final String AUTH_OPERATIONS_READ = "operations.read";
     public static final String AUTH_OPERATIONS_ADMIN = "operations.admin";
 
-    private static final Set<String> ALLOWED_ROLES = Set.of(
-            ROLE_SYS_ADM,
-            ROLE_SYS_INT,
-            ROLE_OPS_ADM,
-            ROLE_OPS_VIEWER
-    );
+    private final ThemisAuthorizer evaluator;
 
-    private static final Set<String> ALLOWED_AUTHORITIES = Set.of(
-            AUTH_SYSTEM_ADMIN.toLowerCase(Locale.ROOT),
-            AUTH_SYSTEM_INTEGRATION.toLowerCase(Locale.ROOT),
-            AUTH_OPERATIONS_READ.toLowerCase(Locale.ROOT),
-            AUTH_OPERATIONS_ADMIN.toLowerCase(Locale.ROOT),
-            "role_" + ROLE_SYS_ADM.toLowerCase(Locale.ROOT),
-            "role_" + ROLE_SYS_INT.toLowerCase(Locale.ROOT),
-            "role_" + ROLE_OPS_ADM.toLowerCase(Locale.ROOT),
-            "role_" + ROLE_OPS_VIEWER.toLowerCase(Locale.ROOT)
-    );
+    public DefaultThemisAuthorizer() {
+        this(DeterministicPolicyEvaluator.withDefaultPolicies());
+    }
+
+    public DefaultThemisAuthorizer(ThemisAuthorizer evaluator) {
+        this.evaluator = evaluator != null ? evaluator : DeterministicPolicyEvaluator.withDefaultPolicies();
+    }
 
     @Override
     public ThemisAuthorizationDecision authorize(ThemisAuthorizationRequest request) {
         if (request == null) {
             return ThemisAuthorizationDecision.defaultDeny(null, "ThemisAuthorizationRequest is null");
         }
-
-        String correlationId = request.context() != null ? request.context().correlationId() : null;
-
-        // 1. Verify Principal
-        ThemisPrincipal principal = request.principal();
-        if (principal == null || principal.principalId() == null || principal.principalId().isBlank()
-                || "anonymous".equalsIgnoreCase(principal.principalId())
-                || "system:anonymous".equalsIgnoreCase(principal.principalId())) {
-            return ThemisAuthorizationDecision.deny(
-                    ThemisDecisionReason.PRINCIPAL_MISSING,
-                    POLICY_OPERATIONS_RBAC,
-                    correlationId,
-                    "Authentication required: principal is missing or anonymous"
-            );
-        }
-
-        // 2. Verify Authorities / Roles
-        Set<ThemisAuthority> authorities = request.authorities();
-        boolean authorized = false;
-
-        if (authorities != null) {
-            for (ThemisAuthority auth : authorities) {
-                if (auth != null && auth.authorityCode() != null) {
-                    String authCode = auth.authorityCode().toLowerCase(Locale.ROOT);
-                    if (ALLOWED_AUTHORITIES.contains(authCode)) {
-                        authorized = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        // Check principal attributes for roles if authorities were empty
-        if (!authorized && principal.attributes() != null) {
-            String roleAttr = principal.attributes().get("role");
-            if (roleAttr != null && ALLOWED_ROLES.contains(roleAttr.toUpperCase(Locale.ROOT))) {
-                authorized = true;
-            }
-        }
-
-        if (authorized) {
-            return ThemisAuthorizationDecision.allow(
-                    POLICY_OPERATIONS_RBAC,
-                    correlationId,
-                    "Authorized by Operations RBAC policy for principal: " + principal.principalId()
-            );
-        }
-
-        // Default Deny
-        return ThemisAuthorizationDecision.deny(
-                ThemisDecisionReason.ACTION_NOT_PERMITTED,
-                POLICY_OPERATIONS_RBAC,
-                correlationId,
-                "Principal " + principal.principalId() + " lacks required operations authorization"
-        );
+        return evaluator.authorize(request);
     }
 }

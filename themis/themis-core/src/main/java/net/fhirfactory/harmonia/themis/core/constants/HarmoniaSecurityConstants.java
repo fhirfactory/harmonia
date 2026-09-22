@@ -40,6 +40,7 @@ public final class HarmoniaSecurityConstants {
     public static final String LABEL_AUDIT = "AUDIT";
     public static final String LABEL_RESTRICTED = "RESTRICTED";
     public static final String LABEL_CLINICAL = "CLINICAL";
+    public static final String LABEL_OPERATIONS = "OPERATIONS";
 
     // Authority Codes
     public static final String AUTH_PROVIDER_READ = "provider.read";
@@ -52,6 +53,14 @@ public final class HarmoniaSecurityConstants {
     public static final String AUTH_PROVIDER_RESOURCE_DELETE = "provider.resource.delete";
     public static final String AUTH_PROVIDER_RESOURCE_VALIDATE = "provider.resource.validate";
     public static final String AUTH_PROVIDER_ADMIN = "provider.admin";
+    public static final String AUTH_CLINICAL_READ = "clinical.read";
+    public static final String AUTH_CLINICAL_SEARCH = "clinical.search";
+    public static final String AUTH_CLINICAL_CREATE = "clinical.create";
+    public static final String AUTH_CLINICAL_UPDATE = "clinical.update";
+    public static final String AUTH_CLINICAL_ADMIN = "clinical.admin";
+
+    public static final String AUTH_OPERATIONS_READ = "operations.read";
+    public static final String AUTH_OPERATIONS_ADMIN = "operations.admin";
 
     public static final String AUTH_AUDIT_READ = "audit.read";
     public static final String AUTH_SYSTEM_INTEGRATION = "system.integration";
@@ -63,6 +72,11 @@ public final class HarmoniaSecurityConstants {
     public static final String ROLE_PRV_PROC = "PRV_PROC";
     public static final String ROLE_PRV_APR = "PRV_APR";
     public static final String ROLE_PRV_ADM = "PRV_ADM";
+    public static final String ROLE_CLINICAL_READ = "CLINICAL_READ";
+    public static final String ROLE_CLINICAL_WRITE = "CLINICAL_WRITE";
+    public static final String ROLE_CLINICAL_ADMIN = "CLINICAL_ADMIN";
+    public static final String ROLE_OPS_VIEWER = "OPS_VIEWER";
+    public static final String ROLE_OPS_ADM = "OPS_ADM";
     public static final String ROLE_AUD_RDR = "AUD_RDR";
     public static final String ROLE_SYS_INT = "SYS_INT";
     public static final String ROLE_SYS_ADM = "SYS_ADM";
@@ -108,6 +122,50 @@ public final class HarmoniaSecurityConstants {
             )
     );
 
+    public static final ThemisRole CLINICAL_READ = ThemisRole.of(
+            ROLE_CLINICAL_READ,
+            "Clinical Reader",
+            Set.of(ThemisAuthority.of(AUTH_CLINICAL_READ), ThemisAuthority.of(AUTH_CLINICAL_SEARCH))
+    );
+
+    public static final ThemisRole CLINICAL_WRITE = ThemisRole.of(
+            ROLE_CLINICAL_WRITE,
+            "Clinical Writer",
+            Set.of(
+                    ThemisAuthority.of(AUTH_CLINICAL_READ),
+                    ThemisAuthority.of(AUTH_CLINICAL_SEARCH),
+                    ThemisAuthority.of(AUTH_CLINICAL_CREATE),
+                    ThemisAuthority.of(AUTH_CLINICAL_UPDATE)
+            )
+    );
+
+    public static final ThemisRole CLINICAL_ADMIN = ThemisRole.of(
+            ROLE_CLINICAL_ADMIN,
+            "Clinical Administrator",
+            Set.of(
+                    ThemisAuthority.of(AUTH_CLINICAL_READ),
+                    ThemisAuthority.of(AUTH_CLINICAL_SEARCH),
+                    ThemisAuthority.of(AUTH_CLINICAL_CREATE),
+                    ThemisAuthority.of(AUTH_CLINICAL_UPDATE),
+                    ThemisAuthority.of(AUTH_CLINICAL_ADMIN)
+            )
+    );
+
+    public static final ThemisRole OPS_VIEWER = ThemisRole.of(
+            ROLE_OPS_VIEWER,
+            "Operations Viewer",
+            Set.of(ThemisAuthority.of(AUTH_OPERATIONS_READ))
+    );
+
+    public static final ThemisRole OPS_ADM = ThemisRole.of(
+            ROLE_OPS_ADM,
+            "Operations Administrator",
+            Set.of(
+                    ThemisAuthority.of(AUTH_OPERATIONS_READ),
+                    ThemisAuthority.of(AUTH_OPERATIONS_ADMIN)
+            )
+    );
+
     public static final ThemisRole AUD_RDR = ThemisRole.of(
             ROLE_AUD_RDR,
             "Audit Reader",
@@ -134,6 +192,11 @@ public final class HarmoniaSecurityConstants {
         ROLES_BY_CODE.put(ROLE_PRV_PROC, PRV_PROC);
         ROLES_BY_CODE.put(ROLE_PRV_APR, PRV_APR);
         ROLES_BY_CODE.put(ROLE_PRV_ADM, PRV_ADM);
+        ROLES_BY_CODE.put(ROLE_CLINICAL_READ, CLINICAL_READ);
+        ROLES_BY_CODE.put(ROLE_CLINICAL_WRITE, CLINICAL_WRITE);
+        ROLES_BY_CODE.put(ROLE_CLINICAL_ADMIN, CLINICAL_ADMIN);
+        ROLES_BY_CODE.put(ROLE_OPS_VIEWER, OPS_VIEWER);
+        ROLES_BY_CODE.put(ROLE_OPS_ADM, OPS_ADM);
         ROLES_BY_CODE.put(ROLE_AUD_RDR, AUD_RDR);
         ROLES_BY_CODE.put(ROLE_SYS_INT, SYS_INT);
         ROLES_BY_CODE.put(ROLE_SYS_ADM, SYS_ADM);

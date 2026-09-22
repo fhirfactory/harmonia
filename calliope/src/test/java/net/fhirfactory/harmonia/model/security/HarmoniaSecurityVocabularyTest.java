@@ -83,4 +83,38 @@ class HarmoniaSecurityVocabularyTest {
                 .extracting(ThemisAuthority::authorityCode)
                 .contains("provider.admin", "provider.read", "provider.change.submit", "provider.change.process", "provider.resource.create", "provider.resource.update");
     }
+
+    @Test
+    @DisplayName("Clinical roles map to their approved authorities without delete")
+    void testClinicalRoleAuthoritiesMapping() {
+        assertThat(HarmoniaRoleEnum.CLINICAL_READ.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactlyInAnyOrder("clinical.read", "clinical.search");
+
+        assertThat(HarmoniaRoleEnum.CLINICAL_WRITE.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactlyInAnyOrder("clinical.read", "clinical.search", "clinical.create", "clinical.update");
+
+        assertThat(HarmoniaRoleEnum.CLINICAL_ADMIN.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactlyInAnyOrder("clinical.read", "clinical.search", "clinical.create", "clinical.update", "clinical.admin")
+                .doesNotContain("clinical.delete");
+    }
+
+    @Test
+    @DisplayName("Existing Provider Registry, Audit, and System roles retain their authority mappings")
+    void testExistingRoleAuthoritiesRemainUnchanged() {
+        assertThat(HarmoniaRoleEnum.PRV_RDR.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactlyInAnyOrder("provider.read", "provider.search");
+        assertThat(HarmoniaRoleEnum.AUD_RDR.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactly("audit.read");
+        assertThat(HarmoniaRoleEnum.SYS_INT.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactly("system.integration");
+        assertThat(HarmoniaRoleEnum.SYS_ADM.getThemisAuthorities())
+                .extracting(ThemisAuthority::authorityCode)
+                .containsExactly("system.admin");
+    }
 }

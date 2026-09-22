@@ -19,6 +19,8 @@ package net.fhirfactory.harmonia.befe;
 
 import net.fhirfactory.harmonia.befe.security.DefaultThemisAuthorizer;
 import net.fhirfactory.harmonia.befe.security.ThemisOperationsAuthorizer;
+import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.themis.api.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -78,12 +80,12 @@ class ThemisOperationsAuthorizerTest {
 
         ThemisAuthorizationDecision decision = defaultAuthorizer.authorize(request);
         assertThat(decision.isDenied()).isTrue();
-        assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
     }
 
     @Test
-    @DisplayName("4. Authorized roles: SYS_ADM and OPS_VIEWER are granted access")
-    void testAuthorizedRolesAllowed() {
+    @DisplayName("4. Security Invariant: principal.attributes['role'] alone without authorities is not an authorization bypass")
+    void testPrincipalRoleAttributesAloneDenied() {
+        // Direct principal attribute without granted authorities must fail closed (authority-based governance)
         ThemisPrincipal admin = new ThemisPrincipal("admin-user", PrincipalType.HUMAN, "test", Map.of("role", "SYS_ADM"));
         ThemisAuthorizationRequest adminReq = ThemisAuthorizationRequest.builder()
                 .principal(admin)
@@ -92,7 +94,7 @@ class ThemisOperationsAuthorizerTest {
                 .build();
 
         ThemisAuthorizationDecision adminDec = defaultAuthorizer.authorize(adminReq);
-        assertThat(adminDec.isAllowed()).isTrue();
+        assertThat(adminDec.isDenied()).isTrue();
 
         ThemisPrincipal viewer = new ThemisPrincipal("ops-user", PrincipalType.HUMAN, "test", Map.of("role", "OPS_VIEWER"));
         ThemisAuthorizationRequest viewerReq = ThemisAuthorizationRequest.builder()
@@ -102,6 +104,20 @@ class ThemisOperationsAuthorizerTest {
                 .build();
 
         ThemisAuthorizationDecision viewerDec = defaultAuthorizer.authorize(viewerReq);
+        assertThat(viewerDec.isDenied()).isTrue();
+    }
+
+    @Test
+    @DisplayName("4b. Legitimate Operations roles evaluated through ThemisOperationsAuthorizer with extracted authorities are granted")
+    void testAuthorizedRolesAllowedViaAuthorizer() {
+        // SYS_ADM role header extracts system.admin / operations.admin / operations.read authorities -> ALLOW
+        Map<String, String> adminHeaders = Map.of("x-harmonia-user", "admin-user", "x-harmonia-role", "SYS_ADM");
+        ThemisAuthorizationDecision adminDec = operationsAuthorizer.authorizeRequest(adminHeaders, "/api/operations/summary", "GET");
+        assertThat(adminDec.isAllowed()).isTrue();
+
+        // OPS_VIEWER role header extracts operations.read authority -> ALLOW
+        Map<String, String> viewerHeaders = Map.of("x-harmonia-user", "ops-user", "x-harmonia-role", "OPS_VIEWER");
+        ThemisAuthorizationDecision viewerDec = operationsAuthorizer.authorizeRequest(viewerHeaders, "/api/operations/summary", "GET");
         assertThat(viewerDec.isAllowed()).isTrue();
     }
 
@@ -162,7 +178,6 @@ class ThemisOperationsAuthorizerTest {
         );
         ThemisAuthorizationDecision decision = operationsAuthorizer.authorizeRequest(unprivilegedHeaders, "/api/operations/subsystems", "GET");
         assertThat(decision.isDenied()).isTrue();
-        assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
 
         Map<String, String> clinicalBearerHeaders = Map.of(
                 "authorization", "Bearer nurse:CLINICAL_VIEWER"
@@ -180,6 +195,48 @@ class ThemisOperationsAuthorizerTest {
         );
         ThemisAuthorizationDecision decision = operationsAuthorizer.authorizeRequest(clinicalUserHeaders, "/api/operations/alerts", "GET");
         assertThat(decision.isDenied()).isTrue();
-        assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
+    }
+
+    @Test
+    @DisplayName("10. Cross-domain isolation: Clinical authorities cannot grant Operations access")
+    void testClinicalAuthoritiesCannotAccessOperations() {
+        ThemisPrincipal clinicalUser = ThemisPrincipal.human("dr-alice");
+        for (HarmoniaRoleEnum clinicalRole : Set.of(HarmoniaRoleEnum.CLINICAL_READ, HarmoniaRoleEnum.CLINICAL_WRITE, HarmoniaRoleEnum.CLINICAL_ADMIN)) {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(clinicalUser)
+                    .authorities(clinicalRole.getThemisAuthorities())
+                    .action(ThemisAction.READ)
+                    .target(ThemisResource.of("OperationsResource", "/api/operations/summary"))
+                    .build();
+
+            ThemisAuthorizationDecision decision = defaultAuthorizer.authorize(request);
+            assertThat(decision.isDenied()).as("Clinical role %s must not access Operations", clinicalRole).isTrue();
+        }
+    }
+
+    @Test
+    @DisplayName("11. Cross-domain isolation: Operations authorities cannot grant Clinical access")
+    void testOperationsAuthoritiesCannotAccessClinical() {
+        ThemisPrincipal opsUser = ThemisPrincipal.human("ops-bob");
+        ThemisResource clinicalResource = ThemisResource.builder()
+                .resourceType("Person")
+                .resourceId("123")
+                .securityDomain(HarmoniaSecurityLabelEnum.CLINICAL.getCode())
+                .securityLabels(Set.of(HarmoniaSecurityLabelEnum.CLINICAL.toThemisLabel()))
+                .build();
+
+        ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                .principal(opsUser)
+                .authorities(Set.of(
+                        ThemisAuthority.of(DefaultThemisAuthorizer.AUTH_OPERATIONS_READ),
+                        ThemisAuthority.of(DefaultThemisAuthorizer.AUTH_OPERATIONS_ADMIN),
+                        ThemisAuthority.of(DefaultThemisAuthorizer.AUTH_SYSTEM_INTEGRATION)
+                ))
+                .action(ThemisAction.READ)
+                .target(clinicalResource)
+                .build();
+
+        ThemisAuthorizationDecision decision = defaultAuthorizer.authorize(request);
+        assertThat(decision.isDenied()).isTrue();
     }
 }

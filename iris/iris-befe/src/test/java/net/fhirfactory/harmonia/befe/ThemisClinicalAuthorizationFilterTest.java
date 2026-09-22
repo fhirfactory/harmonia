@@ -25,7 +25,9 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 import jakarta.ws.rs.core.UriInfo;
 import net.fhirfactory.harmonia.befe.security.DefaultThemisAuthorizer;
+import net.fhirfactory.harmonia.befe.security.OidcTestTokenHelper;
 import net.fhirfactory.harmonia.befe.security.ThemisClinicalAuthorizationFilter;
+import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.themis.api.ThemisAuthorizer;
 import net.fhirfactory.harmonia.themis.api.model.*;
 import org.hl7.fhir.r5.model.OperationOutcome;
@@ -37,11 +39,34 @@ import org.mockito.ArgumentCaptor;
 import java.io.IOException;
 import java.net.URI;
 import java.security.Principal;
+import java.util.Map;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
+/**
+ * Unit and anti-spoofing regression tests for {@link ThemisClinicalAuthorizationFilter}.
+ *
+ * Boundary & Verification Contract:
+ * 1. WildFly Container-Level OIDC Authentication Boundary:
+ *    - In the production WAR runtime on WildFly 31, authentication is managed exclusively by the
+ *      {@code elytron-oidc-client} subsystem configured in {@code web.xml} and {@code oidc.json}.
+ *    - Container authentication executes before JAX-RS {@code @PreMatching} filters. Missing,
+ *      expired, or cryptographically invalid bearer tokens are rejected at the container boundary
+ *      with HTTP 401 Unauthorized (RFC 6750 {@code WWW-Authenticate: Bearer}).
+ * 2. JAX-RS Themis Authorization Boundary:
+ *    - Valid bearer tokens establish a container {@link SecurityContext} principal populated
+ *      with the validated {@code sub} claim.
+ *    - {@link ThemisClinicalAuthorizationFilter} consumes {@code SecurityContext.getUserPrincipal()}
+ *      as {@link PrincipalType#HUMAN} and delegates authorization to Themis.
+ *    - Under default-deny governance (Task 01), authenticated clinical requests without an approved
+ *      clinical authorization policy (Task 03) return HTTP 403 Forbidden with a FHIR {@link OperationOutcome}.
+ * 3. Anti-Spoofing Invariants:
+ *    - Caller-supplied HTTP headers (e.g. {@code X-Harmonia-*}, {@code X-Principal-Id}, {@code X-Requester})
+ *      and arbitrary or raw bearer text cannot establish identity or elevate authorization.
+ *    - The application filter does NOT perform in-filter token parsing or trust raw authorization headers.
+ */
 class ThemisClinicalAuthorizationFilterTest {
 
     private ThemisAuthorizer mockAuthorizer;
@@ -421,5 +446,448 @@ class ThemisClinicalAuthorizationFilterTest {
         assertThat(filter.mapMethodToAction("HEAD", "123")).isEqualTo(ThemisAction.READ);
         assertThat(filter.mapMethodToAction("PATCH", "123")).isEqualTo(ThemisAction.UPDATE);
         assertThat(filter.mapMethodToAction("INVALID", null)).isNull();
+    }
+
+    // N. Container principal extraction correctly extracts validated subject into ThemisPrincipal(HUMAN)
+    @Test
+    @DisplayName("N1. Valid container principal subject is correctly mapped to ThemisPrincipal with PrincipalType.HUMAN")
+    void testExtractPrincipalValidSubjectMapping() {
+        SecurityContext sc = mock(SecurityContext.class);
+        when(sc.getUserPrincipal()).thenReturn(() -> "sub-oidc-uuid-98765");
+
+        ThemisPrincipal principal = filter.extractPrincipal(sc);
+        assertThat(principal).isNotNull();
+        assertThat(principal.principalId()).isEqualTo("sub-oidc-uuid-98765");
+        assertThat(principal.principalType()).isEqualTo(PrincipalType.HUMAN);
+        assertThat(principal.sourceDomain()).isEqualTo("harmonia-clinical");
+        assertThat(principal.attributes()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("N2. Null, blank, whitespace, or anonymous container principals are rejected by extractPrincipal")
+    void testExtractPrincipalRejections() {
+        assertThat(filter.extractPrincipal(null)).isNull();
+
+        SecurityContext nullPrincipalContext = mock(SecurityContext.class);
+        when(nullPrincipalContext.getUserPrincipal()).thenReturn(null);
+        assertThat(filter.extractPrincipal(nullPrincipalContext)).isNull();
+
+        SecurityContext emptyPrincipalContext = mock(SecurityContext.class);
+        when(emptyPrincipalContext.getUserPrincipal()).thenReturn(() -> "");
+        assertThat(filter.extractPrincipal(emptyPrincipalContext)).isNull();
+
+        SecurityContext blankPrincipalContext = mock(SecurityContext.class);
+        when(blankPrincipalContext.getUserPrincipal()).thenReturn(() -> "   ");
+        assertThat(filter.extractPrincipal(blankPrincipalContext)).isNull();
+
+        SecurityContext anonymousContext = mock(SecurityContext.class);
+        when(anonymousContext.getUserPrincipal()).thenReturn(() -> "anonymous");
+        assertThat(filter.extractPrincipal(anonymousContext)).isNull();
+
+        SecurityContext systemAnonymousContext = mock(SecurityContext.class);
+        when(systemAnonymousContext.getUserPrincipal()).thenReturn(() -> "system:anonymous");
+        assertThat(filter.extractPrincipal(systemAnonymousContext)).isNull();
+    }
+
+    // O. Valid signed JWT in Authorization header without container auth fails closed (401)
+    @Test
+    @DisplayName("O. Valid signed JWT in Authorization header without container SecurityContext fails closed with 401")
+    void testValidJwtWithoutContainerAuthFailsClosed() throws IOException {
+        String validJwt = OidcTestTokenHelper.generateValidToken("sub-clinician-123");
+        configureRequest("GET", "fhir/Person/123");
+        headers.putSingle("Authorization", "Bearer " + validJwt);
+        // Container auth did not populate SecurityContext (or failed)
+        when(securityContext.getUserPrincipal()).thenReturn(null);
+
+        filter.filter(requestContext);
+
+        ArgumentCaptor<Response> responseCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(responseCaptor.capture());
+        Response response = responseCaptor.getValue();
+        assertThat(response.getStatus()).isEqualTo(401);
+        assertThat(response.getMediaType().toString()).isEqualTo("application/fhir+json");
+
+        String entity = (String) response.getEntity();
+        OperationOutcome outcome = fhirContext.newJsonParser().parseResource(OperationOutcome.class, entity);
+        assertThat(outcome.getIssueFirstRep().getSeverity()).isEqualTo(OperationOutcome.IssueSeverity.ERROR);
+        assertThat(outcome.getIssueFirstRep().getCode()).isEqualTo(OperationOutcome.IssueType.SECURITY);
+        assertThat(outcome.getIssueFirstRep().getDiagnostics()).contains("Authentication required");
+
+        verifyNoInteractions(mockAuthorizer);
+    }
+
+    // P. Valid container authentication evaluates to 403 Forbidden under DefaultThemisAuthorizer
+    @Test
+    @DisplayName("P. Authenticated caller with valid OIDC subject receives 403 OperationOutcome under default-deny")
+    void testAuthenticatedCallerReceivesForbiddenDefaultDeny() throws IOException {
+        String tokenSub = "sub-clinician-456";
+        String validJwt = OidcTestTokenHelper.generateValidToken(tokenSub);
+
+        ThemisClinicalAuthorizationFilter defaultFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+        configureRequest("POST", "fhir/Person");
+        headers.putSingle("Authorization", "Bearer " + validJwt);
+        configureContainerPrincipal(tokenSub);
+
+        defaultFilter.filter(requestContext);
+
+        ArgumentCaptor<Response> responseCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(responseCaptor.capture());
+
+        Response response = responseCaptor.getValue();
+        assertThat(response.getStatus()).isEqualTo(403);
+        assertThat(response.getMediaType().toString()).isEqualTo("application/fhir+json");
+
+        String entity = (String) response.getEntity();
+        OperationOutcome outcome = fhirContext.newJsonParser().parseResource(OperationOutcome.class, entity);
+        assertThat(outcome.getIssueFirstRep().getSeverity()).isEqualTo(OperationOutcome.IssueSeverity.ERROR);
+        assertThat(outcome.getIssueFirstRep().getCode()).isEqualTo(OperationOutcome.IssueType.FORBIDDEN);
+        assertThat(outcome.getIssueFirstRep().getDiagnostics()).contains("Access denied");
+    }
+
+    // Q. Comprehensive anti-spoof header immunity
+    @Test
+    @DisplayName("Q. Comprehensive anti-spoof: All legacy and custom headers are ignored; only container principal is used")
+    void testComprehensiveAntiSpoofHeadersIgnored() throws IOException {
+        configureRequest("PUT", "fhir/Person/patient-001");
+        configureContainerPrincipal("sub-legitimate-user");
+
+        // Attacker injects comprehensive spoofing headers
+        headers.putSingle("X-Principal-Id", "admin-spoofed");
+        headers.putSingle("X-Requester", "system:root");
+        headers.putSingle("X-User-Roles", "CLINICAL_ADMIN,SYSTEM_ADMIN");
+        headers.putSingle("X-Security-Scopes", "fhir.all,clinical.write");
+        headers.putSingle("x-harmonia-user", "service:themis");
+        headers.putSingle("x-harmonia-role", "SYS_ADM");
+        headers.putSingle("x-harmonia-authorities", "admin.all");
+        headers.putSingle("Authorization", "Bearer " + OidcTestTokenHelper.generateValidToken("spoofed-sub-in-jwt"));
+
+        when(mockAuthorizer.authorize(any(ThemisAuthorizationRequest.class))).thenReturn(
+                ThemisAuthorizationDecision.deny(ThemisDecisionReason.ACTION_NOT_PERMITTED, "themis.policy.clinical", "corr-q", "Denied")
+        );
+
+        filter.filter(requestContext);
+
+        ArgumentCaptor<ThemisAuthorizationRequest> captor = ArgumentCaptor.forClass(ThemisAuthorizationRequest.class);
+        verify(mockAuthorizer).authorize(captor.capture());
+        ThemisAuthorizationRequest authReq = captor.getValue();
+
+        // Must strictly bind to the container principal, never any spoofed header or raw bearer claim
+        assertThat(authReq.principal().principalId()).isEqualTo("sub-legitimate-user");
+        assertThat(authReq.principal().principalType()).isEqualTo(PrincipalType.HUMAN);
+        assertThat(authReq.authorities()).isEmpty();
+    }
+
+    // =========================================================================
+    // R. End-to-End Evaluator-Backed Clinical Policy Outcomes & Cross-Domain Isolation
+    // =========================================================================
+
+    @Test
+    @DisplayName("R1. CLINICAL_READ: permits GET instance (READ) and GET search (SEARCH), denies CREATE, UPDATE, DELETE")
+    void testClinicalReadRoleOutcomes() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        // 1. GET instance (READ) -> ALLOW
+        configureRequest("GET", "fhir/Person/123");
+        configureContainerPrincipal("nurse-read", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 2. GET search (SEARCH) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("GET", "fhir/Person");
+        configureContainerPrincipal("nurse-read", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 3. POST (CREATE) -> 403 DENY
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("POST", "fhir/Person");
+        configureContainerPrincipal("nurse-read", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        e2eFilter.filter(requestContext);
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+
+        // 4. PUT (UPDATE) -> 403 DENY
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("PUT", "fhir/Person/123");
+        configureContainerPrincipal("nurse-read", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        e2eFilter.filter(requestContext);
+        resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+
+        // 5. PATCH (UPDATE) -> 403 DENY
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("PATCH", "fhir/Person/123");
+        configureContainerPrincipal("nurse-read", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        e2eFilter.filter(requestContext);
+        resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+
+        // 6. DELETE -> 403 DENY
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("DELETE", "fhir/Person/123");
+        configureContainerPrincipal("nurse-read", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        e2eFilter.filter(requestContext);
+        resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R2. CLINICAL_WRITE: permits READ, SEARCH, CREATE, UPDATE (including PATCH), denies DELETE")
+    void testClinicalWriteRoleOutcomes() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        // 1. GET instance (READ) -> ALLOW
+        configureRequest("GET", "fhir/Person/123");
+        configureContainerPrincipal("dr-write", HarmoniaRoleEnum.CLINICAL_WRITE.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 2. GET search (SEARCH) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("GET", "fhir/Person");
+        configureContainerPrincipal("dr-write", HarmoniaRoleEnum.CLINICAL_WRITE.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 3. POST (CREATE) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("POST", "fhir/Person");
+        configureContainerPrincipal("dr-write", HarmoniaRoleEnum.CLINICAL_WRITE.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 4. PUT (UPDATE) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("PUT", "fhir/Person/123");
+        configureContainerPrincipal("dr-write", HarmoniaRoleEnum.CLINICAL_WRITE.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 5. PATCH (UPDATE) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("PATCH", "fhir/Person/123");
+        configureContainerPrincipal("dr-write", HarmoniaRoleEnum.CLINICAL_WRITE.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 6. DELETE -> 403 DENY (Fail-closed)
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("DELETE", "fhir/Person/123");
+        configureContainerPrincipal("dr-write", HarmoniaRoleEnum.CLINICAL_WRITE.getRoleCode());
+        e2eFilter.filter(requestContext);
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R3. CLINICAL_ADMIN: permits READ, SEARCH, CREATE, UPDATE (including PATCH), denies DELETE")
+    void testClinicalAdminRoleOutcomes() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        // 1. GET instance (READ) -> ALLOW
+        configureRequest("GET", "fhir/Person/123");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 2. GET search (SEARCH) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("GET", "fhir/Person");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 3. POST (CREATE) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("POST", "fhir/Person");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 4. PUT (UPDATE) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("PUT", "fhir/Person/123");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 5. PATCH (UPDATE) -> ALLOW
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("PATCH", "fhir/Person/123");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+        e2eFilter.filter(requestContext);
+        verify(requestContext, never()).abortWith(any());
+
+        // 6. DELETE -> 403 DENY (Fail-closed: clinical.delete does not exist)
+        reset(requestContext);
+        when(requestContext.getUriInfo()).thenReturn(uriInfo);
+        when(requestContext.getHeaders()).thenReturn(headers);
+        when(requestContext.getSecurityContext()).thenReturn(securityContext);
+        configureRequest("DELETE", "fhir/Person/123");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+        e2eFilter.filter(requestContext);
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R4. Authenticated caller without Clinical role is denied with 403")
+    void testAuthenticatedCallerWithoutClinicalRoleDenied() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+        configureRequest("GET", "fhir/Person/123");
+        configureContainerPrincipal("no-role-user");
+
+        e2eFilter.filter(requestContext);
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R5. Caller with unknown role is denied with 403")
+    void testCallerWithUnknownRoleDenied() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+        configureRequest("GET", "fhir/Person/123");
+        configureContainerPrincipal("unknown-role-user", "SOME_UNKNOWN_ROLE");
+
+        e2eFilter.filter(requestContext);
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R6. Cross-domain isolation: Unrelated Provider, Audit, and Operations roles do not grant Clinical access")
+    void testUnrelatedDomainRolesDoNotGrantClinicalAccess() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        String[] unrelatedRoles = {
+                HarmoniaRoleEnum.PRV_RDR.getRoleCode(),
+                HarmoniaRoleEnum.PRV_ADM.getRoleCode(),
+                HarmoniaRoleEnum.AUD_RDR.getRoleCode(),
+                DefaultThemisAuthorizer.ROLE_OPS_VIEWER,
+                DefaultThemisAuthorizer.ROLE_OPS_ADM,
+                DefaultThemisAuthorizer.ROLE_SYS_INT
+        };
+
+        for (String role : unrelatedRoles) {
+            reset(requestContext);
+            when(requestContext.getUriInfo()).thenReturn(uriInfo);
+            when(requestContext.getHeaders()).thenReturn(headers);
+            when(requestContext.getSecurityContext()).thenReturn(securityContext);
+            configureRequest("GET", "fhir/Person/123");
+            configureContainerPrincipal("user-" + role, role);
+
+            e2eFilter.filter(requestContext);
+
+            ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+            verify(requestContext).abortWith(resCaptor.capture());
+            assertThat(resCaptor.getValue().getStatus())
+                    .as("Role %s must not grant Clinical access", role)
+                    .isEqualTo(403);
+        }
+    }
+
+    @Test
+    @DisplayName("R7. Anti-spoofing: CLINICAL_READ caller cannot elevate to write/delete via headers")
+    void testClinicalReadCannotElevateViaSpoofedHeaders() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        // Attacker with CLINICAL_READ attempts POST with spoofed write/admin headers
+        configureRequest("POST", "fhir/Person");
+        configureContainerPrincipal("read-only-attacker", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+
+        headers.putSingle("x-harmonia-role", "CLINICAL_WRITE");
+        headers.putSingle("x-harmonia-authorities", "clinical.create,clinical.update,clinical.delete");
+        headers.putSingle("X-User-Roles", "CLINICAL_ADMIN");
+
+        e2eFilter.filter(requestContext);
+
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R8. Anti-spoofing: Unprivileged caller cannot gain read access via spoofed headers")
+    void testUnprivilegedCallerCannotGainReadViaSpoofedHeaders() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        configureRequest("GET", "fhir/Person/123");
+        configureContainerPrincipal("unprivileged-user"); // No container roles
+
+        headers.putSingle("x-harmonia-role", "CLINICAL_READ");
+        headers.putSingle("x-harmonia-authorities", "clinical.read");
+        headers.putSingle("Authorization", "Bearer " + OidcTestTokenHelper.generateValidToken("spoofed"));
+
+        e2eFilter.filter(requestContext);
+
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    @Test
+    @DisplayName("R9. Unsupported HTTP method fails closed with 403 Forbidden")
+    void testUnsupportedHttpMethodFailsClosed() throws IOException {
+        ThemisClinicalAuthorizationFilter e2eFilter = new ThemisClinicalAuthorizationFilter(new DefaultThemisAuthorizer());
+
+        configureRequest("TRACE", "fhir/Person/123");
+        configureContainerPrincipal("admin-user", HarmoniaRoleEnum.CLINICAL_ADMIN.getRoleCode());
+
+        e2eFilter.filter(requestContext);
+
+        ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
+        verify(requestContext).abortWith(resCaptor.capture());
+        assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
     }
 }
