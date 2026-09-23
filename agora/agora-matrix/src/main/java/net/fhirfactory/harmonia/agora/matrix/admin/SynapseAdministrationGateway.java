@@ -97,9 +97,9 @@ public class SynapseAdministrationGateway {
                             error = node.get("error").asText();
                         }
                     } catch (IOException ignored) {
-                        // Keep raw body in message if not JSON
+                        // Non-JSON error body; do not leak raw body into exception message
                     }
-                    throw new SynapseAdminException(status, errcode, error, bodyStr);
+                    throw new SynapseAdminException(status, errcode, error);
                 });
     }
 

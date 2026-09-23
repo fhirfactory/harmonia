@@ -21,14 +21,11 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.server.HardcodedServerAddressStrategy;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
-import ca.uhn.fhir.rest.server.interceptor.CorsInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
 import jakarta.servlet.ServletException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.web.cors.CorsConfiguration;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 public class JpaRestfulServer extends RestfulServer {
@@ -58,13 +55,5 @@ public class JpaRestfulServer extends RestfulServer {
 
         // Response Highlighter
         registerInterceptor(new ResponseHighlighterInterceptor());
-
-        // CORS Interceptor
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(Arrays.asList("*"));
-        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
-        corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept", "Origin", "User-Agent", "DNT", "Cache-Control", "X-Mx-ReqToken", "Keep-Alive", "X-Requested-With", "If-Modified-Since"));
-        corsConfiguration.setMaxAge(300L);
-        registerInterceptor(new CorsInterceptor(corsConfiguration));
     }
 }

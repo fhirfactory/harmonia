@@ -51,6 +51,75 @@ public final class DuplicateDetector {
     }
 
     /**
+     * Checks whether the given ID has been recorded within the sliding window.
+     * Does NOT record the ID.
+     *
+     * @param id message or duplicate detection ID
+     * @return true if known duplicate within window, false otherwise
+     */
+    public synchronized boolean isDuplicate(String id) {
+        if (id == null || id.isBlank()) {
+            return false;
+        }
+        Instant now = Instant.now();
+        Instant previous = seenIds.get(id);
+        if (previous == null) {
+            return false;
+        }
+        if (Duration.between(previous, now).compareTo(windowDuration) >= 0) {
+            seenIds.remove(id);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Records the given ID as successfully processed at the current timestamp.
+     *
+     * @param id message or duplicate detection ID
+     */
+    public synchronized void record(String id) {
+        if (id == null || id.isBlank()) {
+            return;
+        }
+        Instant now = Instant.now();
+        cleanupExpired(now);
+        seenIds.put(id, now);
+    }
+
+    /**
+     * Alias for {@link #record(String)} to explicitly mark an ID as processed.
+     *
+     * @param id message or duplicate detection ID
+     */
+    public synchronized void markProcessed(String id) {
+        record(id);
+    }
+
+    /**
+     * Removes the ID from the seen cache, for example if handling failed.
+     *
+     * @param id message or duplicate detection ID
+     * @return true if the ID was present and removed, false otherwise
+     */
+    public synchronized boolean remove(String id) {
+        if (id == null || id.isBlank()) {
+            return false;
+        }
+        return seenIds.remove(id) != null;
+    }
+
+    /**
+     * Alias for {@link #remove(String)} to remove an ID on failure.
+     *
+     * @param id message or duplicate detection ID
+     * @return true if the ID was present and removed, false otherwise
+     */
+    public synchronized boolean removeOnFailure(String id) {
+        return remove(id);
+    }
+
+    /**
      * Checks whether the given message or duplicate ID has been seen within the sliding window.
      * If not seen, records the ID and returns true (unique). If seen, returns false (duplicate).
      *
@@ -61,33 +130,11 @@ public final class DuplicateDetector {
         if (id == null || id.isBlank()) {
             return true;
         }
-
-        Instant now = Instant.now();
-        cleanupExpired(now);
-
-        Instant previous = seenIds.get(id);
-        if (previous != null) {
-            if (Duration.between(previous, now).compareTo(windowDuration) < 0) {
-                return false; // Duplicate within window
-            }
+        if (isDuplicate(id)) {
+            return false;
         }
-
-        seenIds.put(id, now);
+        record(id);
         return true;
-    }
-
-    /**
-     * Checks if ID is known duplicate without recording it.
-     */
-    public synchronized boolean isDuplicate(String id) {
-        if (id == null || id.isBlank()) {
-            return false;
-        }
-        Instant previous = seenIds.get(id);
-        if (previous == null) {
-            return false;
-        }
-        return Duration.between(previous, Instant.now()).compareTo(windowDuration) < 0;
     }
 
     public synchronized void clear() {
@@ -107,8 +154,6 @@ public final class DuplicateDetector {
             Map.Entry<String, Instant> entry = it.next();
             if (Duration.between(entry.getValue(), now).compareTo(windowDuration) >= 0) {
                 it.remove();
-            } else {
-                break; // Since access-ordered, older entries come first
             }
         }
     }

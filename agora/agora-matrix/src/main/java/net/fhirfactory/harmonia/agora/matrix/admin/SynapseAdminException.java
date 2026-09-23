@@ -40,6 +40,10 @@ public class SynapseAdminException extends RuntimeException {
         this.error = null;
     }
 
+    public SynapseAdminException(int httpStatus, String errcode, String error) {
+        this(httpStatus, errcode, error, null);
+    }
+
     public SynapseAdminException(int httpStatus, String errcode, String error, String message) {
         super(formatMessage(httpStatus, errcode, error, message));
         this.httpStatus = httpStatus;

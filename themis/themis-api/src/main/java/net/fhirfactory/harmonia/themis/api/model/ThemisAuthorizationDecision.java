@@ -17,6 +17,9 @@
 
 package net.fhirfactory.harmonia.themis.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
@@ -25,6 +28,7 @@ import java.util.UUID;
 /**
  * Immutable outcome of a Themis authorization evaluation.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public record ThemisAuthorizationDecision(
         String decisionId,
         ThemisDecision decision,
@@ -42,10 +46,12 @@ public record ThemisAuthorizationDecision(
         evaluatedAt = evaluatedAt == null ? Instant.now() : evaluatedAt;
     }
 
+    @JsonIgnore
     public boolean isAllowed() {
         return decision.isAllowed();
     }
 
+    @JsonIgnore
     public boolean isDenied() {
         return decision.isDenied();
     }

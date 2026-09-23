@@ -156,4 +156,60 @@ class SynapseAdministrationGatewayTest {
 
         mockServer.verify();
     }
+
+    @Test
+    @DisplayName("Synapse admin suppresses raw response body and PHI/secret markers in SynapseAdminException")
+    void testAdminErrorSanitizationSuppressesPhiAndSecret() {
+        String errorJson = """
+                {
+                  "errcode": "M_FORBIDDEN",
+                  "error": "Admin access denied",
+                  "patient_id": "PATIENT-PHI-MARKER-92831",
+                  "secret_token": "TOKEN-SECRET-MARKER-81742"
+                }
+                """;
+
+        mockServer.expect(requestTo("http://synapse:8008/_synapse/admin/v2/users/%40user%3Aharmonia.local"))
+                .andExpect(method(HttpMethod.GET))
+                .andRespond(withStatus(org.springframework.http.HttpStatus.FORBIDDEN).body(errorJson).contentType(MediaType.APPLICATION_JSON));
+
+        assertThatThrownBy(() -> adminGateway.getUser("@user:harmonia.local"))
+                .isInstanceOf(SynapseAdminException.class)
+                .satisfies(ex -> {
+                    SynapseAdminException aex = (SynapseAdminException) ex;
+                    assertThat(aex.getMessage())
+                            .doesNotContain("PATIENT-PHI-MARKER-92831")
+                            .doesNotContain("TOKEN-SECRET-MARKER-81742")
+                            .doesNotContain("patient_id");
+                    assertThat(aex.getHttpStatus()).isEqualTo(403);
+                    assertThat(aex.getErrcode()).isEqualTo("M_FORBIDDEN");
+                });
+
+        mockServer.verify();
+    }
+
+    @Test
+    @DisplayName("Synapse admin non-JSON error body suppresses raw body and PHI/secret markers")
+    void testAdminNonJsonErrorSuppressesRawBodyAndPhi() {
+        String htmlError = "<html><body>Internal Server Error: PATIENT-PHI-MARKER-92831 TOKEN-SECRET-MARKER-81742</body></html>";
+
+        mockServer.expect(requestTo("http://synapse:8008/_synapse/admin/v2/users/%40user%3Aharmonia.local"))
+                .andExpect(method(HttpMethod.GET))
+                .andRespond(withStatus(org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR).body(htmlError).contentType(MediaType.TEXT_HTML));
+
+        assertThatThrownBy(() -> adminGateway.getUser("@user:harmonia.local"))
+                .isInstanceOf(SynapseAdminException.class)
+                .satisfies(ex -> {
+                    SynapseAdminException aex = (SynapseAdminException) ex;
+                    assertThat(aex.getMessage())
+                            .doesNotContain("PATIENT-PHI-MARKER-92831")
+                            .doesNotContain("TOKEN-SECRET-MARKER-81742")
+                            .doesNotContain("<html>");
+                    assertThat(aex.getHttpStatus()).isEqualTo(500);
+                    assertThat(aex.getErrcode()).isNull();
+                    assertThat(aex.getError()).isNull();
+                });
+
+        mockServer.verify();
+    }
 }

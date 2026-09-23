@@ -64,3 +64,5 @@ dependency-reduced-pom.xml
 # IDE/local files
 .idea/
 *.iml
+
+*.toc

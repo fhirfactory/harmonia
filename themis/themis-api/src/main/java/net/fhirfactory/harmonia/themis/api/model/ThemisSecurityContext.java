@@ -19,14 +19,24 @@ package net.fhirfactory.harmonia.themis.api.model;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
- * Encapsulates contextual and environmental attributes for authorization requests.
+ * Encapsulates contextual, identity, authority, and environmental attributes for authorization requests and distributed execution.
+ * <p>
+ * Supports distinct tracking of the initiating/originating principal (e.g. {@link PrincipalType#HUMAN})
+ * and the active executing/delegated principal (e.g. {@link PrincipalType#PROCESS} or {@link PrincipalType#SERVICE}).
  */
 public record ThemisSecurityContext(
         ThemisPrincipal requestingPrincipal,
+        ThemisPrincipal executingPrincipal,
+        String securityDomain,
+        Set<ThemisAuthority> authorities,
         String correlationId,
         String causationId,
         String tenantId,
@@ -37,19 +47,110 @@ public record ThemisSecurityContext(
 
     public ThemisSecurityContext {
         requestedAt = requestedAt == null ? Instant.now() : requestedAt;
+        authorities = authorities == null ? Set.of() : Collections.unmodifiableSet(Set.copyOf(authorities));
         attributes = attributes == null ? Map.of() : Collections.unmodifiableMap(Map.copyOf(attributes));
     }
 
+    /**
+     * Backward-compatible 7-parameter constructor.
+     */
+    public ThemisSecurityContext(
+            ThemisPrincipal requestingPrincipal,
+            String correlationId,
+            String causationId,
+            String tenantId,
+            String clientIp,
+            Instant requestedAt,
+            Map<String, String> attributes
+    ) {
+        this(requestingPrincipal, null, null, Set.of(), correlationId, causationId, tenantId, clientIp, requestedAt, attributes);
+    }
+
+    /**
+     * Canonical alias for {@link #requestingPrincipal()} providing initiating/originating principal semantics.
+     *
+     * @return the initiating/originating principal
+     */
+    public ThemisPrincipal originatingPrincipal() {
+        return requestingPrincipal;
+    }
+
+    /**
+     * Derives an immutable copy with an updated executing/delegated principal.
+     *
+     * @param newExecutingPrincipal active executing/worker principal
+     * @return new {@link ThemisSecurityContext} with updated executing principal
+     */
+    public ThemisSecurityContext withExecutingPrincipal(ThemisPrincipal newExecutingPrincipal) {
+        return new ThemisSecurityContext(
+                this.requestingPrincipal,
+                newExecutingPrincipal,
+                this.securityDomain,
+                this.authorities,
+                this.correlationId,
+                this.causationId,
+                this.tenantId,
+                this.clientIp,
+                this.requestedAt,
+                this.attributes
+        );
+    }
+
+    /**
+     * Derives an immutable copy with an updated causation ID.
+     *
+     * @param newCausationId causation/parent message ID
+     * @return new {@link ThemisSecurityContext} with updated causation ID
+     */
+    public ThemisSecurityContext withCausationId(String newCausationId) {
+        return new ThemisSecurityContext(
+                this.requestingPrincipal,
+                this.executingPrincipal,
+                this.securityDomain,
+                this.authorities,
+                this.correlationId,
+                newCausationId,
+                this.tenantId,
+                this.clientIp,
+                this.requestedAt,
+                this.attributes
+        );
+    }
+
+    @Override
+    public String toString() {
+        return "ThemisSecurityContext[" +
+                "originatingPrincipal=" + requestingPrincipal +
+                ", executingPrincipal=" + executingPrincipal +
+                ", securityDomain=" + securityDomain +
+                ", correlationId=" + correlationId +
+                ", causationId=" + causationId +
+                ", tenantId=" + tenantId +
+                ", clientIp=" + clientIp +
+                ", requestedAt=" + requestedAt +
+                ", authoritiesCount=" + (authorities != null ? authorities.size() : 0) +
+                ", attributeCount=" + (attributes != null ? attributes.size() : 0) +
+                "]";
+    }
+
+    public Builder toBuilder() {
+        return builder().from(this);
+    }
+
     public static ThemisSecurityContext anonymous() {
-        return new ThemisSecurityContext(null, null, null, null, null, Instant.now(), Map.of());
+        return builder().build();
     }
 
     public static ThemisSecurityContext fromPrincipal(ThemisPrincipal principal, String correlationId) {
-        return new ThemisSecurityContext(principal, correlationId, null, null, null, Instant.now(), Map.of());
+        return builder()
+                .requestingPrincipal(principal)
+                .securityDomain(principal != null ? principal.sourceDomain() : null)
+                .correlationId(correlationId)
+                .build();
     }
 
     public static ThemisSecurityContext of(ThemisPrincipal principal, String correlationId, String causationId, Map<String, String> attributes) {
-        return new ThemisSecurityContext(principal, correlationId, causationId, null, null, Instant.now(), attributes);
+        return builder().requestingPrincipal(principal).correlationId(correlationId).causationId(causationId).attributes(attributes).build();
     }
 
     public static Builder builder() {
@@ -57,7 +158,10 @@ public record ThemisSecurityContext(
     }
 
     public static class Builder {
-        private ThemisPrincipal principal;
+        private ThemisPrincipal requestingPrincipal;
+        private ThemisPrincipal executingPrincipal;
+        private String securityDomain;
+        private Set<ThemisAuthority> authorities = Set.of();
         private String correlationId;
         private String causationId;
         private String tenantId;
@@ -65,13 +169,72 @@ public record ThemisSecurityContext(
         private Instant requestedAt;
         private Map<String, String> attributes = Map.of();
 
+        public Builder from(ThemisSecurityContext context) {
+            if (context != null) {
+                this.requestingPrincipal = context.requestingPrincipal();
+                this.executingPrincipal = context.executingPrincipal();
+                this.securityDomain = context.securityDomain();
+                this.authorities = context.authorities();
+                this.correlationId = context.correlationId();
+                this.causationId = context.causationId();
+                this.tenantId = context.tenantId();
+                this.clientIp = context.clientIp();
+                this.requestedAt = context.requestedAt();
+                this.attributes = context.attributes();
+            }
+            return this;
+        }
+
         public Builder principal(ThemisPrincipal principal) {
-            this.principal = principal;
+            this.requestingPrincipal = principal;
             return this;
         }
 
         public Builder requestingPrincipal(ThemisPrincipal principal) {
-            this.principal = principal;
+            this.requestingPrincipal = principal;
+            return this;
+        }
+
+        public Builder originatingPrincipal(ThemisPrincipal principal) {
+            this.requestingPrincipal = principal;
+            return this;
+        }
+
+        public Builder executingPrincipal(ThemisPrincipal executingPrincipal) {
+            this.executingPrincipal = executingPrincipal;
+            return this;
+        }
+
+        public Builder securityDomain(String securityDomain) {
+            this.securityDomain = securityDomain;
+            return this;
+        }
+
+        public Builder authorities(Set<ThemisAuthority> authorities) {
+            this.authorities = authorities != null ? Set.copyOf(authorities) : Set.of();
+            return this;
+        }
+
+        public Builder authorities(Collection<ThemisAuthority> authorities) {
+            this.authorities = authorities != null ? Set.copyOf(authorities) : Set.of();
+            return this;
+        }
+
+        public Builder addAuthority(ThemisAuthority authority) {
+            if (authority != null) {
+                Set<ThemisAuthority> updated = new HashSet<>(this.authorities);
+                updated.add(authority);
+                this.authorities = Collections.unmodifiableSet(updated);
+            }
+            return this;
+        }
+
+        public Builder addAuthority(String authorityCode) {
+            if (authorityCode != null && !authorityCode.isBlank()) {
+                Set<ThemisAuthority> updated = new HashSet<>(this.authorities);
+                updated.add(ThemisAuthority.of(authorityCode));
+                this.authorities = Collections.unmodifiableSet(updated);
+            }
             return this;
         }
 
@@ -101,12 +264,32 @@ public record ThemisSecurityContext(
         }
 
         public Builder attributes(Map<String, String> attributes) {
-            this.attributes = attributes != null ? attributes : Map.of();
+            this.attributes = attributes != null ? Map.copyOf(attributes) : Map.of();
+            return this;
+        }
+
+        public Builder addAttribute(String key, String value) {
+            if (key != null && value != null) {
+                Map<String, String> updated = new LinkedHashMap<>(this.attributes);
+                updated.put(key, value);
+                this.attributes = Collections.unmodifiableMap(updated);
+            }
             return this;
         }
 
         public ThemisSecurityContext build() {
-            return new ThemisSecurityContext(principal, correlationId, causationId, tenantId, clientIp, requestedAt, attributes);
+            return new ThemisSecurityContext(
+                    requestingPrincipal,
+                    executingPrincipal,
+                    securityDomain,
+                    authorities,
+                    correlationId,
+                    causationId,
+                    tenantId,
+                    clientIp,
+                    requestedAt,
+                    attributes
+            );
         }
     }
 }

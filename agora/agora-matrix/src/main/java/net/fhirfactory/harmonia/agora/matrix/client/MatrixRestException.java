@@ -40,6 +40,10 @@ public class MatrixRestException extends RuntimeException {
         this.error = null;
     }
 
+    public MatrixRestException(int httpStatus, String errcode, String error) {
+        this(httpStatus, errcode, error, null);
+    }
+
     public MatrixRestException(int httpStatus, String errcode, String error, String message) {
         super(formatMessage(httpStatus, errcode, error, message));
         this.httpStatus = httpStatus;

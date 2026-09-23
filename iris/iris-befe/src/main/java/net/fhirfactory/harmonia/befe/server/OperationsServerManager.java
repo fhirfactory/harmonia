@@ -28,6 +28,7 @@ import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.spi.CDI;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
+import net.fhirfactory.harmonia.befe.config.BefeCorsConfig;
 import net.fhirfactory.harmonia.befe.model.operations.*;
 import net.fhirfactory.harmonia.befe.rest.SystemStatusResource;
 import net.fhirfactory.harmonia.befe.rest.TaskSequenceResource;
@@ -88,6 +89,7 @@ public class OperationsServerManager {
     private ThemisOperationsAuthorizer authorizer;
 
     private ObjectMapper objectMapper = new ObjectMapper();
+    private static final ThreadLocal<String> CURRENT_ALLOWED_ORIGIN = new ThreadLocal<>();
 
     private ServerSocket serverSocket;
     private ExecutorService executor;
@@ -187,25 +189,40 @@ public class OperationsServerManager {
                 }
             }
 
-            // Read request body if Content-Length present
-            int contentLength = 0;
-            if (headers.containsKey("content-length")) {
-                try {
-                    contentLength = Integer.parseInt(headers.get("content-length"));
-                } catch (NumberFormatException ignored) {}
+            String originHeader = headers.get("origin");
+            String allowedOrigin = null;
+            if (originHeader != null && BefeCorsConfig.isOriginAllowed(originHeader)) {
+                allowedOrigin = BefeCorsConfig.normalizeOrigin(originHeader);
             }
+            CURRENT_ALLOWED_ORIGIN.set(allowedOrigin);
+            try {
+                // Read request body if Content-Length present
+                int contentLength = 0;
+                if (headers.containsKey("content-length")) {
+                    try {
+                        contentLength = Integer.parseInt(headers.get("content-length"));
+                    } catch (NumberFormatException ignored) {}
+                }
 
-            String body = "";
-            if (contentLength > 0) {
-                byte[] bodyBytes = readBody(in, contentLength);
-                body = new String(bodyBytes, StandardCharsets.UTF_8);
-            }
+                String body = "";
+                if (contentLength > 0) {
+                    byte[] bodyBytes = readBody(in, contentLength);
+                    body = new String(bodyBytes, StandardCharsets.UTF_8);
+                }
 
-            // Handle CORS OPTIONS preflight
-            if ("OPTIONS".equals(method)) {
-                sendResponse(out, 200, "", "application/json");
-                return;
-            }
+                // Handle CORS OPTIONS preflight
+                if ("OPTIONS".equals(method)) {
+                    if (originHeader != null) {
+                        if (allowedOrigin != null) {
+                            sendPreflightResponse(out, 200, allowedOrigin);
+                        } else {
+                            sendResponse(out, 403, "{\"error\":\"Forbidden: Untrusted Origin\"}", "application/json");
+                        }
+                    } else {
+                        sendResponse(out, 405, "{\"error\":\"Method Not Allowed\"}", "application/json");
+                    }
+                    return;
+                }
 
             // Extract path without query parameters
             String path = fullUri;
@@ -318,6 +335,9 @@ public class OperationsServerManager {
 
             sendResponse(out, 404, "{\"error\":\"Not Found\"}", "application/json");
 
+            } finally {
+                CURRENT_ALLOWED_ORIGIN.remove();
+            }
         } catch (Exception e) {
             log.error("Error processing operations socket request: {}", e.getMessage(), e);
         }
@@ -508,6 +528,22 @@ public class OperationsServerManager {
         }
     }
 
+    private void sendPreflightResponse(OutputStream out, int statusCode, String allowedOrigin) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        sb.append("HTTP/1.1 ").append(statusCode).append(" OK\r\n");
+        sb.append("Content-Length: 0\r\n");
+        sb.append("Access-Control-Allow-Origin: ").append(allowedOrigin).append("\r\n");
+        sb.append("Vary: Origin\r\n");
+        sb.append("Access-Control-Allow-Methods: ").append(BefeCorsConfig.ALLOWED_METHODS).append("\r\n");
+        sb.append("Access-Control-Allow-Headers: ").append(BefeCorsConfig.ALLOWED_HEADERS).append("\r\n");
+        sb.append("Access-Control-Max-Age: ").append(BefeCorsConfig.MAX_AGE_SECONDS).append("\r\n");
+        sb.append("Connection: close\r\n");
+        sb.append("\r\n");
+
+        out.write(sb.toString().getBytes(StandardCharsets.UTF_8));
+        out.flush();
+    }
+
     private void sendResponse(OutputStream out, int statusCode, String responseText, String contentType) throws IOException {
         byte[] bytes = responseText != null ? responseText.getBytes(StandardCharsets.UTF_8) : new byte[0];
         String statusText = switch (statusCode) {
@@ -515,6 +551,7 @@ public class OperationsServerManager {
             case 201 -> "Created";
             case 204 -> "No Content";
             case 400 -> "Bad Request";
+            case 403 -> "Forbidden";
             case 404 -> "Not Found";
             case 405 -> "Method Not Allowed";
             default -> "Server Error";
@@ -524,10 +561,13 @@ public class OperationsServerManager {
         sb.append("HTTP/1.1 ").append(statusCode).append(" ").append(statusText).append("\r\n");
         sb.append("Content-Type: ").append(contentType).append("\r\n");
         sb.append("Content-Length: ").append(bytes.length).append("\r\n");
-        sb.append("Access-Control-Allow-Origin: *\r\n");
-        sb.append("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH\r\n");
-        sb.append("Access-Control-Allow-Headers: origin, content-type, accept, authorization, x-requested-with\r\n");
-        sb.append("Access-Control-Max-Age: 1209600\r\n");
+
+        String allowedOrigin = CURRENT_ALLOWED_ORIGIN.get();
+        if (allowedOrigin != null) {
+            sb.append("Access-Control-Allow-Origin: ").append(allowedOrigin).append("\r\n");
+            sb.append("Vary: Origin\r\n");
+        }
+
         sb.append("Connection: close\r\n");
         sb.append("\r\n");
 

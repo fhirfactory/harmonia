@@ -120,6 +120,10 @@ public class Pragma implements Serializable {
     @JsonAlias({"originating_principal", "principal"})
     private ThemisPrincipal originatingPrincipal;
 
+    @JsonProperty("executingPrincipal")
+    @JsonAlias({"executing_principal", "executor"})
+    private ThemisPrincipal executingPrincipal;
+
     @JsonProperty("originatingAuthorities")
     @JsonAlias({"originating_authorities", "authorities"})
     private Set<ThemisAuthority> originatingAuthorities = new HashSet<>();
@@ -234,6 +238,13 @@ public class Pragma implements Serializable {
             if (other.metadata != null) {
                 this.metadata.putAll(other.metadata);
             }
+            this.originatingPrincipal = other.originatingPrincipal;
+            this.executingPrincipal = other.executingPrincipal;
+            if (other.originatingAuthorities != null) {
+                this.originatingAuthorities.addAll(other.originatingAuthorities);
+            }
+            this.originatingSecurityContext = other.originatingSecurityContext;
+            this.policyVersion = other.policyVersion;
         } else {
             this.pragmaId = UUID.randomUUID().toString();
             this.correlationId = UUID.randomUUID().toString();
@@ -542,6 +553,82 @@ public class Pragma implements Serializable {
         touch();
     }
 
+    public ThemisPrincipal getExecutingPrincipal() {
+        return executingPrincipal;
+    }
+
+    public void setExecutingPrincipal(ThemisPrincipal executingPrincipal) {
+        this.executingPrincipal = executingPrincipal;
+        touch();
+    }
+
+    /**
+     * Resolves the initiating (human/requesting) principal, falling back to the originating security context.
+     *
+     * @return initiating principal, or null
+     */
+    public ThemisPrincipal getInitiatingPrincipal() {
+        if (originatingPrincipal != null) {
+            return originatingPrincipal;
+        }
+        if (originatingSecurityContext != null) {
+            return originatingSecurityContext.originatingPrincipal();
+        }
+        return null;
+    }
+
+    /**
+     * Resolves the effective executing (process/worker) principal, falling back to the originating security context.
+     *
+     * @return executing principal, or null
+     */
+    public ThemisPrincipal getEffectiveExecutingPrincipal() {
+        if (executingPrincipal != null) {
+            return executingPrincipal;
+        }
+        if (originatingSecurityContext != null) {
+            return originatingSecurityContext.executingPrincipal();
+        }
+        return null;
+    }
+
+    /**
+     * Resolves canonical {@link ThemisSecurityContext} from this Pragma's security and correlation fields.
+     *
+     * @return resolved ThemisSecurityContext, or null
+     */
+    public ThemisSecurityContext resolveSecurityContext() {
+        if (originatingSecurityContext != null) {
+            ThemisSecurityContext.Builder b = originatingSecurityContext.toBuilder();
+            if (originatingPrincipal != null && originatingSecurityContext.requestingPrincipal() == null) {
+                b.originatingPrincipal(originatingPrincipal);
+            }
+            if (executingPrincipal != null && originatingSecurityContext.executingPrincipal() == null) {
+                b.executingPrincipal(executingPrincipal);
+            }
+            if (!originatingAuthorities.isEmpty() && originatingSecurityContext.authorities().isEmpty()) {
+                b.authorities(originatingAuthorities);
+            }
+            if (correlationId != null && originatingSecurityContext.correlationId() == null) {
+                b.correlationId(correlationId);
+            }
+            if (causationId != null && originatingSecurityContext.causationId() == null) {
+                b.causationId(causationId);
+            }
+            return b.build();
+        }
+        if (originatingPrincipal != null || executingPrincipal != null || !originatingAuthorities.isEmpty()) {
+            return ThemisSecurityContext.builder()
+                    .originatingPrincipal(originatingPrincipal)
+                    .executingPrincipal(executingPrincipal)
+                    .authorities(originatingAuthorities)
+                    .correlationId(correlationId)
+                    .causationId(causationId)
+                    .build();
+        }
+        return null;
+    }
+
     public Set<ThemisAuthority> getOriginatingAuthorities() {
         return Collections.unmodifiableSet(originatingAuthorities);
     }
@@ -634,6 +721,7 @@ public class Pragma implements Serializable {
         private final List<PragmaCheckpoint> checkpoints = new ArrayList<>();
         private final Map<String, String> metadata = new LinkedHashMap<>();
         private ThemisPrincipal originatingPrincipal;
+        private ThemisPrincipal executingPrincipal;
         private final Set<ThemisAuthority> originatingAuthorities = new HashSet<>();
         private ThemisSecurityContext originatingSecurityContext;
         private String policyVersion = "1.0.0";
@@ -733,6 +821,11 @@ public class Pragma implements Serializable {
             return this;
         }
 
+        public Builder executingPrincipal(ThemisPrincipal executingPrincipal) {
+            this.executingPrincipal = executingPrincipal;
+            return this;
+        }
+
         public Builder originatingAuthorities(Set<ThemisAuthority> originatingAuthorities) {
             if (originatingAuthorities != null) {
                 this.originatingAuthorities.addAll(originatingAuthorities);
@@ -769,6 +862,7 @@ public class Pragma implements Serializable {
                     priority, priorityCode, authoredOn, lastModified, source, destination,
                     input, output, checkpoints, metadata);
             pragma.setOriginatingPrincipal(originatingPrincipal);
+            pragma.setExecutingPrincipal(executingPrincipal);
             pragma.setOriginatingAuthorities(originatingAuthorities);
             pragma.setOriginatingSecurityContext(originatingSecurityContext);
             if (policyVersion != null) {

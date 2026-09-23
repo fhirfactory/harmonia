@@ -41,6 +41,7 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisResource;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -168,15 +169,6 @@ public class PragmaWorkflowDispatcher {
         ThemisPrincipal originatingPrincipal = pragma.getOriginatingPrincipal();
         Set<ThemisAuthority> originatingAuthorities = pragma.getOriginatingAuthorities();
 
-        if (originatingPrincipal == null) {
-            String source = StringUtils.isNotBlank(pragma.getSource()) ? pragma.getSource() : "service:internal";
-            originatingPrincipal = ThemisPrincipal.of(source, PrincipalType.SERVICE, "harmonia");
-            originatingAuthorities = Set.of(
-                    HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority(),
-                    HarmoniaAuthorityEnum.SYSTEM_INTEGRATION.toThemisAuthority()
-            );
-        }
-
         String resourceType = extractResourceType(pragma, targetWorkflow);
         ThemisResource targetResource = ThemisResource.builder()
                 .resourceType(resourceType)
@@ -189,7 +181,13 @@ public class PragmaWorkflowDispatcher {
 
         ThemisSecurityContext origContext = pragma.getOriginatingSecurityContext() != null
                 ? pragma.getOriginatingSecurityContext()
-                : ThemisSecurityContext.builder().principal(originatingPrincipal).correlationId(pragma.getCorrelationId()).build();
+                : (originatingPrincipal != null
+                        ? ThemisSecurityContext.builder()
+                                .originatingPrincipal(originatingPrincipal)
+                                .correlationId(pragma.getCorrelationId())
+                                .causationId(pragma.getCausationId())
+                                .build()
+                        : null);
 
         ThemisAuthorizationRequest origAuthReq = ThemisAuthorizationRequest.builder()
                 .principal(originatingPrincipal)
@@ -202,17 +200,22 @@ public class PragmaWorkflowDispatcher {
         ThemisAuthorizationDecision origDecision = getThemisService().authorize(origAuthReq);
         if (origDecision.decision() == ThemisDecision.DENY) {
             log.warn("Pragma/{} originating requester [{}] denied authority on [{}] (policy={}, reason={})",
-                    pragma.getPragmaId(), originatingPrincipal.principalId(), resourceType, origDecision.policyId(), origDecision.reason());
+                    pragma.getPragmaId(),
+                    originatingPrincipal != null ? originatingPrincipal.principalId() : "unauthenticated",
+                    resourceType,
+                    origDecision.policyId(),
+                    origDecision.reason());
             markPragmaAuthorizationFailed(pragma, "Originating requester authority denied: " + origDecision.reason());
             return false;
         }
 
         // 2. Ergon Execution Authority Evaluation (Ponos WorkEngine Gate)
         Set<ThemisAuthority> executionAuthorities = extractExecutionAuthorities(targetWorkflow);
-        ThemisPrincipal executionPrincipal = ThemisPrincipal.of("process:ponos-engine", PrincipalType.PROCESS, "ponos");
+        ThemisPrincipal executionPrincipal = HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS;
         ThemisSecurityContext execContext = ThemisSecurityContext.builder()
                 .principal(executionPrincipal)
                 .correlationId(pragma.getCorrelationId())
+                .causationId(pragma.getCausationId())
                 .build();
 
         ThemisAuthorizationRequest execAuthReq = ThemisAuthorizationRequest.builder()
@@ -232,6 +235,25 @@ public class PragmaWorkflowDispatcher {
         }
 
         // =========================================================================
+        // Transition Executing Principal to Ponos Engine on Dual-Gate Success
+        // =========================================================================
+        pragma.setExecutingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+        ThemisSecurityContext activeContext = origContext != null
+                ? origContext.withExecutingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS)
+                : ThemisSecurityContext.builder()
+                        .originatingPrincipal(originatingPrincipal)
+                        .executingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS)
+                        .authorities(originatingAuthorities != null ? originatingAuthorities : Set.of())
+                        .correlationId(pragma.getCorrelationId())
+                        .causationId(pragma.getCausationId())
+                        .securityDomain(HarmoniaSecurityLabelEnum.PROVIDER_REGISTRY.getCode())
+                        .build();
+        if (activeContext.causationId() == null && pragma.getCausationId() != null) {
+            activeContext = activeContext.withCausationId(pragma.getCausationId());
+        }
+        pragma.setOriginatingSecurityContext(activeContext);
+
+        // =========================================================================
         // Route Dispatching via Apache Camel
         // =========================================================================
 
@@ -244,7 +266,8 @@ public class PragmaWorkflowDispatcher {
         ProducerTemplate template = camelContext.createProducerTemplate();
         try {
             log.info("Dispatching Pragma/{} into Praxis [{}] via endpoint [{}] (Originating: {}, Execution: AUTHORIZED)",
-                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), endpointUri, originatingPrincipal.principalId());
+                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), endpointUri,
+                    originatingPrincipal != null ? originatingPrincipal.principalId() : "unauthenticated");
 
             Exchange resultExchange = template.request(endpointUri, exchange -> {
                 exchange.getMessage().setBody(pragma);
@@ -260,14 +283,16 @@ public class PragmaWorkflowDispatcher {
             if (success) {
                 log.info("Successfully executed Praxis [{}] for Pragma/{}", targetWorkflow.getPraxisId(), pragma.getPragmaId());
             } else {
-                log.error("Execution failure in Praxis [{}] for Pragma/{}: {}",
-                        targetWorkflow.getPraxisId(), pragma.getPragmaId(),
-                        resultExchange != null ? resultExchange.getException() : "null exchange");
+                String exceptionClass = (resultExchange != null && resultExchange.getException() != null)
+                        ? resultExchange.getException().getClass().getName()
+                        : "None";
+                log.error("Execution failure in Praxis [{}] for Pragma/{} [exception={}, category=WORKFLOW_EXECUTION_FAILURE]",
+                        targetWorkflow.getPraxisId(), pragma.getPragmaId(), exceptionClass);
             }
             return success;
         } catch (Exception e) {
-            log.error("Exception dispatching Pragma/{} to Praxis [{}]: {}",
-                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), e.getMessage(), e);
+            log.error("Exception dispatching Pragma/{} to Praxis [{}] [exception={}, category=DISPATCH_FAILURE]",
+                    pragma.getPragmaId(), targetWorkflow.getPraxisId(), e.getClass().getName());
             return false;
         } finally {
             try {
@@ -290,7 +315,8 @@ public class PragmaWorkflowDispatcher {
             try {
                 pragmaCacheService.savePragma(pragma);
             } catch (Exception e) {
-                log.warn("Failed to persist failed Pragma status to cache: {}", e.getMessage());
+                log.warn("Failed to persist failed Pragma status to cache for Pragma/{} [exception={}, category=CACHE_PERSIST_FAILURE]",
+                        pragma.getPragmaId(), e.getClass().getName());
             }
         }
     }

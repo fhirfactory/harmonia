@@ -1,0 +1,47 @@
+%% =============================================================================
+%% appendices/appendix-decisions.tex
+%% Harmonia Architecture Decision Register
+%% =============================================================================
+
+\chapter{Architecture Decisions}
+\label{app:decisions}
+
+This appendix records architecture choices that constrain how Harmonia requirements are realised. Decisions are distinct from requirements: a requirement states what Harmonia must achieve; a decision records the architectural approach selected to achieve or protect that outcome.
+
+\section{Current Decisions}
+
+\subsection{ADR-001 --- Petasos Owns Messaging Runtime}
+Petasos is the standalone Harmonia messaging capability and owns the ActiveMQ Artemis runtime. Ponos consumes Petasos messaging services and owns workflow/work execution; it does not own broker lifecycle.
+
+\subsection{ADR-002 --- Pylai Owns External Interface and Protocol Behaviour}
+Pylai owns external protocol/interface behaviour, including HL7/FHIR ingress and egress. Domain workflow logic remains outside the protocol boundary.
+
+\subsection{ADR-003 --- Mnemosyne Owns Durable Application State}
+Mnemosyne is the durable persistence capability. Mneme/Infinispan provides operational/cache state and must not redefine the existence of durable governed information.
+
+\subsection{ADR-004 --- Calliope Owns Canonical Models and Semantic Governance}
+Calliope owns canonical model definitions, profiles, terminology bindings, and semantic governance used by Harmonia processing.
+
+\subsection{ADR-005 --- Themis Owns Security Policy Decisions}
+Themis is the common Harmonia authorisation/policy capability. Authentication boundaries establish trusted identity; Themis evaluates permissions.
+
+\subsection{ADR-006 --- FHIR R5 Is the Clinical Interoperability Boundary}
+The durable clinical interoperability service is represented and exposed using HL7 FHIR R5. Proprietary source models are translated into the governed representation rather than propagated as the enterprise integration contract.
+
+\subsection{ADR-007 --- Harmonia Is an Interoperability Authority, Not Universal Clinical Truth}
+Source systems may remain authoritative for the activities they manage. Harmonia maintains the governed, vendor-neutral interoperability representation and preserves provenance and Information Authority rather than claiming universal clinical source-of-truth status.
+
+\subsection{ADR-008 --- Iris-Clinical Begins as a Longitudinal Record Viewer}
+The initial Iris-Clinical capability is read-oriented. The architecture permits selective clinical authoring later, but authoring is introduced only where terminology, validation, security, governance, and workflow prerequisites are satisfied.
+
+\subsection{ADR-009 --- Information Authority Is Cross-Cutting}
+AUTHORITATIVE, INFORMATIONAL, and ANECDOTAL classification is a core Harmonia concept rather than an Iris or Clinical-only feature.
+
+\subsection{ADR-010 --- Clinical Search Must Be Authoritative-Backed}
+Cache contents are not the definition of the clinical record. Clinical read/search must remain correct from durable state after cache loss or restart.
+
+\subsection{ADR-011 --- Agora Uses Restricted Self-Hosted Matrix/Synapse}
+The initial Agora collaboration environment is self-hosted, restricted, and non-federated. Patient collaboration rooms and membership are governed by Harmonia rather than unmanaged public federation.
+
+\subsection{ADR-012 --- Paradeigma Is an Isolated Exemplar/Test Subsystem}
+Paradeigma exists to exercise Harmonia interfaces and workflows with deterministic synthetic clinical scenarios. It is not a production clinical dependency and must remain isolated from production architecture.

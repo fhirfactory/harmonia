@@ -27,9 +27,11 @@ import jakarta.ws.rs.core.UriInfo;
 import net.fhirfactory.harmonia.befe.security.DefaultThemisAuthorizer;
 import net.fhirfactory.harmonia.befe.security.OidcTestTokenHelper;
 import net.fhirfactory.harmonia.befe.security.ThemisClinicalAuthorizationFilter;
+import net.fhirfactory.harmonia.befe.security.ThemisSecurityContextProvider;
 import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.themis.api.ThemisAuthorizer;
 import net.fhirfactory.harmonia.themis.api.model.*;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.hl7.fhir.r5.model.OperationOutcome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -889,5 +891,108 @@ class ThemisClinicalAuthorizationFilterTest {
         ArgumentCaptor<Response> resCaptor = ArgumentCaptor.forClass(Response.class);
         verify(requestContext).abortWith(resCaptor.capture());
         assertThat(resCaptor.getValue().getStatus()).isEqualTo(403);
+    }
+
+    // =========================================================================
+    // S. Synchronous CDI Security Context Propagation Tests (Step 2)
+    // =========================================================================
+
+    @Test
+    @DisplayName("S1. Authorized ingress populates ThemisSecurityContextProvider with canonical context")
+    void testAuthorizedIngressPopulatesCdiContextProvider() throws IOException {
+        ThemisSecurityContextProvider provider = new ThemisSecurityContextProvider();
+        ThemisClinicalAuthorizationFilter authFilter = new ThemisClinicalAuthorizationFilter(mockAuthorizer, provider);
+
+        configureRequest("GET", "fhir/Person/patient-101");
+        configureContainerPrincipal("dr-alice", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+        headers.putSingle("x-correlation-id", "corr-uuid-999");
+
+        when(mockAuthorizer.authorize(any())).thenReturn(
+                ThemisAuthorizationDecision.allow("clinical-policy-1", "corr-uuid-999", "Authorized")
+        );
+
+        authFilter.filter(requestContext);
+
+        verify(requestContext, never()).abortWith(any());
+        assertThat(provider.hasSecurityContext()).isTrue();
+
+        ThemisSecurityContext secContext = provider.requireSecurityContext();
+        assertThat(secContext.requestingPrincipal()).isNotNull();
+        assertThat(secContext.requestingPrincipal().principalId()).isEqualTo("dr-alice");
+        assertThat(secContext.requestingPrincipal().principalType()).isEqualTo(PrincipalType.HUMAN);
+        assertThat(secContext.requestingPrincipal().sourceDomain()).isEqualTo("harmonia-clinical");
+
+        assertThat(secContext.executingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_IRIS_BEFE);
+        assertThat(secContext.securityDomain()).isEqualTo("CLINICAL");
+        assertThat(secContext.correlationId()).isEqualTo("corr-uuid-999");
+        assertThat(secContext.requestedAt()).isNotNull();
+        assertThat(secContext.authorities()).isNotEmpty();
+    }
+
+    @Test
+    @DisplayName("S2. Denied request does not populate ThemisSecurityContextProvider")
+    void testDeniedRequestDoesNotPopulateCdiContextProvider() throws IOException {
+        ThemisSecurityContextProvider provider = new ThemisSecurityContextProvider();
+        ThemisClinicalAuthorizationFilter authFilter = new ThemisClinicalAuthorizationFilter(mockAuthorizer, provider);
+
+        configureRequest("DELETE", "fhir/Person/patient-101");
+        configureContainerPrincipal("dr-alice", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+
+        when(mockAuthorizer.authorize(any())).thenReturn(
+                ThemisAuthorizationDecision.deny(ThemisDecisionReason.ACTION_NOT_PERMITTED, "policy", "corr-1", "Denied")
+        );
+
+        authFilter.filter(requestContext);
+
+        verify(requestContext).abortWith(any());
+        assertThat(provider.hasSecurityContext()).isFalse();
+        assertThat(provider.getSecurityContext()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("S3. Unauthenticated request does not populate ThemisSecurityContextProvider")
+    void testUnauthenticatedRequestDoesNotPopulateCdiContextProvider() throws IOException {
+        ThemisSecurityContextProvider provider = new ThemisSecurityContextProvider();
+        ThemisClinicalAuthorizationFilter authFilter = new ThemisClinicalAuthorizationFilter(mockAuthorizer, provider);
+
+        configureRequest("GET", "fhir/Person/123");
+        when(securityContext.getUserPrincipal()).thenReturn(null);
+
+        authFilter.filter(requestContext);
+
+        verify(requestContext).abortWith(any());
+        assertThat(provider.hasSecurityContext()).isFalse();
+        assertThat(provider.getSecurityContext()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("S4. Anti-spoofing: Spoofed identity headers do not taint ThemisSecurityContextProvider")
+    void testSpoofedHeadersDoNotTaintCdiContextProvider() throws IOException {
+        ThemisSecurityContextProvider provider = new ThemisSecurityContextProvider();
+        ThemisClinicalAuthorizationFilter authFilter = new ThemisClinicalAuthorizationFilter(mockAuthorizer, provider);
+
+        configureRequest("GET", "fhir/Person/patient-101");
+        configureContainerPrincipal("dr-bob", HarmoniaRoleEnum.CLINICAL_READ.getRoleCode());
+
+        headers.putSingle("x-harmonia-user", "root-admin");
+        headers.putSingle("x-principal-id", "attacker");
+        headers.putSingle("x-principal-type", "SYSTEM");
+        headers.putSingle("x-harmonia-role", "SUPER_ADMIN");
+        headers.putSingle("x-security-domain", "ADMIN");
+
+        when(mockAuthorizer.authorize(any())).thenReturn(
+                ThemisAuthorizationDecision.allow("clinical-policy-1", "corr-uuid-123", "Authorized")
+        );
+
+        authFilter.filter(requestContext);
+
+        verify(requestContext, never()).abortWith(any());
+        assertThat(provider.hasSecurityContext()).isTrue();
+
+        ThemisSecurityContext secContext = provider.requireSecurityContext();
+        assertThat(secContext.requestingPrincipal().principalId()).isEqualTo("dr-bob");
+        assertThat(secContext.requestingPrincipal().principalType()).isEqualTo(PrincipalType.HUMAN);
+        assertThat(secContext.executingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_IRIS_BEFE);
+        assertThat(secContext.securityDomain()).isEqualTo("CLINICAL");
     }
 }

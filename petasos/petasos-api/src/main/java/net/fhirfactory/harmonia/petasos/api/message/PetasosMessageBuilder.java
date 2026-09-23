@@ -18,6 +18,8 @@
 package net.fhirfactory.harmonia.petasos.api.message;
 
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -49,6 +51,8 @@ public final class PetasosMessageBuilder {
     private int priority = PetasosMessage.DEFAULT_PRIORITY;
     private Instant expiration;
     private String duplicateDetectionId;
+    private ThemisSecurityContext securityContext;
+    private ThemisPrincipal originatingPrincipal;
 
     public PetasosMessageBuilder() {
         this.messageId = UUID.randomUUID().toString();
@@ -73,6 +77,8 @@ public final class PetasosMessageBuilder {
         this.priority = copy.getPriority();
         this.expiration = copy.getExpiration();
         this.duplicateDetectionId = copy.getDuplicateDetectionId();
+        this.securityContext = copy.getSecurityContext();
+        this.originatingPrincipal = copy.getOriginatingPrincipal();
     }
 
     public PetasosMessageBuilder messageId(String messageId) {
@@ -203,6 +209,16 @@ public final class PetasosMessageBuilder {
         return this;
     }
 
+    public PetasosMessageBuilder securityContext(ThemisSecurityContext securityContext) {
+        this.securityContext = securityContext;
+        return this;
+    }
+
+    public PetasosMessageBuilder originatingPrincipal(ThemisPrincipal originatingPrincipal) {
+        this.originatingPrincipal = originatingPrincipal;
+        return this;
+    }
+
     public PetasosMessage build() {
         if (messageId == null || messageId.isBlank()) {
             messageId = UUID.randomUUID().toString();
@@ -233,7 +249,9 @@ public final class PetasosMessageBuilder {
                 durable,
                 priority,
                 expiration,
-                duplicateDetectionId
+                duplicateDetectionId,
+                securityContext,
+                originatingPrincipal
         );
     }
 }

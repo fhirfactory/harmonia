@@ -34,6 +34,9 @@ import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
@@ -254,6 +257,12 @@ public abstract class ErgonBase extends RouteBuilder {
             pragma.setAuthoredOn(new Date());
             pragma.setLastModified(new Date());
 
+            // Harden fallback: blank synthetic task cannot manufacture trusted security credentials
+            pragma.setOriginatingPrincipal(null);
+            pragma.setExecutingPrincipal(null);
+            pragma.setOriginatingAuthorities(new HashSet<>());
+            pragma.setOriginatingSecurityContext(null);
+
             if (body != null) {
                 Topic container = exchange.getMessage().getHeader(HEADER_TOPIC, Topic.class);
                 if (container == null) {
@@ -268,7 +277,7 @@ public abstract class ErgonBase extends RouteBuilder {
                 }
             }
             getTaskCacheService().savePragma(pragma);
-            log.info("[{}] Created baseline Pragma/{} in cache for ingress", getActivityName(), pragmaId);
+            log.info("[{}] Created unauthenticated baseline Pragma/{} in cache for ingress", getActivityName(), pragmaId);
         } else if (StringUtils.isNotBlank(taskId) && StringUtils.isBlank(pragma.getPragmaId())) {
             pragma.setPragmaId(cleanId(taskId));
         }
@@ -338,7 +347,7 @@ public abstract class ErgonBase extends RouteBuilder {
                 getActivityName(), processedPragma.getPragmaId(), processedTask.getIdPart());
 
         // (b) Create a new Task resource for each discrete object contained within the Task.output.payload attribute
-        List<Task> createdOutgoingTasks = createOutgoingTasks(processedTask);
+        List<Task> createdOutgoingTasks = createOutgoingTasks(processedTask, processedPragma);
         exchange.setProperty(PROPERTY_OUTGOING_TASKS, createdOutgoingTasks);
 
         // (c) Create Provenance objects
@@ -562,22 +571,44 @@ public abstract class ErgonBase extends RouteBuilder {
 
     /**
      * Creates new outgoing Task resources for each discrete object in Task.output.
+     * Delegates to {@link #createOutgoingTasks(Task, Pragma)} using cached Pragma if available.
      *
      * @param processedTask parent processed Task
      * @return list of newly created outgoing Task resources
      */
     public List<Task> createOutgoingTasks(Task processedTask) {
+        Pragma pragma = null;
+        if (processedTask != null && StringUtils.isNotBlank(processedTask.getIdPart()) && getTaskCacheService() != null) {
+            pragma = getTaskCacheService().getPragma(processedTask.getIdPart()).orElse(null);
+        }
+        return createOutgoingTasks(processedTask, pragma);
+    }
+
+    /**
+     * Creates new outgoing Task resources for each discrete object in Task.output,
+     * propagating lineage (correlation-id, causation-id) and security extensions from the authoritative {@link Pragma}.
+     *
+     * @param processedTask       parent processed Task
+     * @param authoritativePragma authoritative Pragma carrying security and provenance context
+     * @return list of newly created outgoing Task resources
+     */
+    public List<Task> createOutgoingTasks(Task processedTask, Pragma authoritativePragma) {
         List<Task> createdTasks = new ArrayList<>();
         if (processedTask == null) {
             return createdTasks;
         }
+
+        String parentTaskId = processedTask.getIdPart();
+        String correlationId = (authoritativePragma != null && StringUtils.isNotBlank(authoritativePragma.getCorrelationId()))
+                ? authoritativePragma.getCorrelationId()
+                : extractCorrelationId(processedTask);
 
         List<Task.TaskOutputComponent> outputs = processedTask.getOutput();
         if (outputs != null && !outputs.isEmpty()) {
             for (int i = 0; i < outputs.size(); i++) {
                 Task.TaskOutputComponent outputComp = outputs.get(i);
                 Task outgoingTask = new Task();
-                String childTaskId = processedTask.getIdPart() + "-out-" + (i + 1);
+                String childTaskId = parentTaskId + "-out-" + (i + 1);
                 outgoingTask.setId("Task/" + childTaskId);
                 outgoingTask.setStatus(Task.TaskStatus.REQUESTED);
                 outgoingTask.setAuthoredOn(new Date());
@@ -592,7 +623,25 @@ public abstract class ErgonBase extends RouteBuilder {
                 if (processedTask.hasGroupIdentifier()) {
                     outgoingTask.setGroupIdentifier(processedTask.getGroupIdentifier());
                 }
-                outgoingTask.addPartOf(new Reference("Task/" + processedTask.getIdPart()).setType("Task").setDisplay("Parent Task"));
+                outgoingTask.addPartOf(new Reference("Task/" + parentTaskId).setType("Task").setDisplay("Parent Task"));
+
+                // Identifiers: Pragma ID, Correlation ID, Causation ID (parent task)
+                outgoingTask.addIdentifier(new Identifier()
+                        .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_PRAGMA_ID)
+                        .setValue(childTaskId));
+                if (StringUtils.isNotBlank(correlationId)) {
+                    outgoingTask.addIdentifier(new Identifier()
+                            .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID)
+                            .setValue(correlationId));
+                }
+                if (StringUtils.isNotBlank(parentTaskId)) {
+                    outgoingTask.addIdentifier(new Identifier()
+                            .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_CAUSATION_ID)
+                            .setValue(parentTaskId));
+                }
+
+                // Propagate security extensions from authoritative Pragma / ThemisSecurityContext
+                applyAuthoritativeSecurityExtensions(outgoingTask, authoritativePragma);
 
                 if (outputComp.hasValue()) {
                     Task.TaskInputComponent inputComp = outgoingTask.addInput();
@@ -632,11 +681,11 @@ public abstract class ErgonBase extends RouteBuilder {
                 getTaskCacheService().saveTask(outgoingTask);
                 createdTasks.add(outgoingTask);
                 log.info("[{}] Created discrete outgoing Task/{} from Task/{} output [{}]",
-                        getActivityName(), childTaskId, processedTask.getIdPart(), outputDesc);
+                        getActivityName(), childTaskId, parentTaskId, outputDesc);
             }
         } else {
             Task outgoingTask = new Task();
-            String childTaskId = processedTask.getIdPart() + "-out-1";
+            String childTaskId = parentTaskId + "-out-1";
             outgoingTask.setId("Task/" + childTaskId);
             outgoingTask.setStatus(Task.TaskStatus.REQUESTED);
             outgoingTask.setAuthoredOn(new Date());
@@ -651,7 +700,25 @@ public abstract class ErgonBase extends RouteBuilder {
             if (processedTask.hasGroupIdentifier()) {
                 outgoingTask.setGroupIdentifier(processedTask.getGroupIdentifier());
             }
-            outgoingTask.addPartOf(new Reference("Task/" + processedTask.getIdPart()).setType("Task").setDisplay("Parent Task"));
+            outgoingTask.addPartOf(new Reference("Task/" + parentTaskId).setType("Task").setDisplay("Parent Task"));
+
+            // Identifiers: Pragma ID, Correlation ID, Causation ID (parent task)
+            outgoingTask.addIdentifier(new Identifier()
+                    .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_PRAGMA_ID)
+                    .setValue(childTaskId));
+            if (StringUtils.isNotBlank(correlationId)) {
+                outgoingTask.addIdentifier(new Identifier()
+                        .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID)
+                        .setValue(correlationId));
+            }
+            if (StringUtils.isNotBlank(parentTaskId)) {
+                outgoingTask.addIdentifier(new Identifier()
+                        .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_CAUSATION_ID)
+                        .setValue(parentTaskId));
+            }
+
+            // Propagate security extensions from authoritative Pragma / ThemisSecurityContext
+            applyAuthoritativeSecurityExtensions(outgoingTask, authoritativePragma);
 
             for (Resource res : processedTask.getContained()) {
                 outgoingTask.addContained(res);
@@ -666,6 +733,76 @@ public abstract class ErgonBase extends RouteBuilder {
         }
 
         return createdTasks;
+    }
+
+    private void applyAuthoritativeSecurityExtensions(Task outgoingTask, Pragma authoritativePragma) {
+        if (outgoingTask == null || authoritativePragma == null) {
+            return;
+        }
+
+        ThemisPrincipal originatingPrincipal = authoritativePragma.getOriginatingPrincipal();
+        if (originatingPrincipal == null && authoritativePragma.getOriginatingSecurityContext() != null) {
+            originatingPrincipal = authoritativePragma.getOriginatingSecurityContext().originatingPrincipal();
+        }
+        if (originatingPrincipal != null) {
+            if (StringUtils.isNotBlank(originatingPrincipal.principalId())) {
+                outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_ID, new StringType(originatingPrincipal.principalId())));
+            }
+            if (originatingPrincipal.principalType() != null) {
+                outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_TYPE, new StringType(originatingPrincipal.principalType().name())));
+            }
+            if (StringUtils.isNotBlank(originatingPrincipal.sourceDomain())) {
+                outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_SOURCE_DOMAIN, new StringType(originatingPrincipal.sourceDomain())));
+            }
+        }
+
+        ThemisPrincipal execPrincipal = authoritativePragma.getExecutingPrincipal();
+        if (execPrincipal == null && authoritativePragma.getOriginatingSecurityContext() != null) {
+            execPrincipal = authoritativePragma.getOriginatingSecurityContext().executingPrincipal();
+        }
+        if (execPrincipal == null) {
+            execPrincipal = HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS;
+        }
+        if (execPrincipal != null) {
+            if (StringUtils.isNotBlank(execPrincipal.principalId())) {
+                outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID, new StringType(execPrincipal.principalId())));
+            }
+            if (execPrincipal.principalType() != null) {
+                outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_TYPE, new StringType(execPrincipal.principalType().name())));
+            }
+            if (StringUtils.isNotBlank(execPrincipal.sourceDomain())) {
+                outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_SOURCE_DOMAIN, new StringType(execPrincipal.sourceDomain())));
+            }
+        }
+
+        Set<ThemisAuthority> authorities = authoritativePragma.getOriginatingAuthorities();
+        if ((authorities == null || authorities.isEmpty()) && authoritativePragma.getOriginatingSecurityContext() != null) {
+            authorities = authoritativePragma.getOriginatingSecurityContext().authorities();
+        }
+        if (authorities != null && !authorities.isEmpty()) {
+            for (ThemisAuthority auth : authorities) {
+                if (auth != null && StringUtils.isNotBlank(auth.authorityCode())) {
+                    outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_AUTHORITY, new StringType(auth.authorityCode())));
+                }
+            }
+        }
+
+        String policyVersion = authoritativePragma.getPolicyVersion();
+        if (StringUtils.isNotBlank(policyVersion)) {
+            outgoingTask.addExtension(new Extension(PragmaFhirConverter.EXTENSION_SECURITY_POLICY_VERSION, new StringType(policyVersion)));
+        }
+    }
+
+    private String extractCorrelationId(Task task) {
+        if (task != null && task.hasIdentifier()) {
+            for (Identifier identifier : task.getIdentifier()) {
+                if (Objects.equals(identifier.getSystem(), PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID)
+                        || Objects.equals(identifier.getSystem(), PragmaFhirConverter.LEGACY_IDENTIFIER_SYSTEM_CORRELATION_ID)) {
+                    return identifier.getValue();
+                }
+            }
+        }
+        return null;
     }
 
     /**

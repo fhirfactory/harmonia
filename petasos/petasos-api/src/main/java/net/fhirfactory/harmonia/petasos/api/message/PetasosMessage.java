@@ -21,6 +21,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 
 import java.io.Serializable;
 import java.nio.charset.Charset;
@@ -32,7 +34,7 @@ import java.util.*;
  * Standard Petasos message envelope for the Harmonia integration platform.
  * <p>
  * Transports opaque payloads between modules while tracking message identity,
- * correlation, causation lineage, schemas, timestamps, and routing metadata.
+ * correlation, causation lineage, schemas, timestamps, security context, and routing metadata.
  * Payload contents are strictly opaque to the Petasos transport subsystem.
  */
 public final class PetasosMessage implements Serializable {
@@ -58,6 +60,30 @@ public final class PetasosMessage implements Serializable {
     private final int priority;
     private final Instant expiration;
     private final String duplicateDetectionId;
+    private final ThemisSecurityContext securityContext;
+    private final ThemisPrincipal originatingPrincipal;
+
+    public PetasosMessage(
+            String messageId,
+            String correlationId,
+            String causationId,
+            String messageType,
+            String source,
+            PetasosDestination destination,
+            Instant timestamp,
+            String contentType,
+            String schemaIdentifier,
+            String schemaVersion,
+            byte[] payload,
+            Map<String, Object> metadata,
+            boolean durable,
+            int priority,
+            Instant expiration,
+            String duplicateDetectionId) {
+        this(messageId, correlationId, causationId, messageType, source, destination, timestamp,
+                contentType, schemaIdentifier, schemaVersion, payload, metadata, durable, priority,
+                expiration, duplicateDetectionId, null, null);
+    }
 
     @JsonCreator
     public PetasosMessage(
@@ -76,7 +102,9 @@ public final class PetasosMessage implements Serializable {
             @JsonProperty("durable") boolean durable,
             @JsonProperty("priority") int priority,
             @JsonProperty("expiration") Instant expiration,
-            @JsonProperty("duplicateDetectionId") String duplicateDetectionId) {
+            @JsonProperty("duplicateDetectionId") String duplicateDetectionId,
+            @JsonProperty("securityContext") ThemisSecurityContext securityContext,
+            @JsonProperty("originatingPrincipal") ThemisPrincipal originatingPrincipal) {
 
         this.messageId = messageId != null && !messageId.isBlank() ? messageId : UUID.randomUUID().toString();
         this.correlationId = correlationId != null && !correlationId.isBlank() ? correlationId : this.messageId;
@@ -96,6 +124,22 @@ public final class PetasosMessage implements Serializable {
         this.duplicateDetectionId = duplicateDetectionId != null && !duplicateDetectionId.isBlank()
                 ? duplicateDetectionId
                 : this.messageId;
+
+        if (originatingPrincipal != null) {
+            this.originatingPrincipal = originatingPrincipal;
+        } else if (securityContext != null) {
+            this.originatingPrincipal = securityContext.originatingPrincipal();
+        } else {
+            this.originatingPrincipal = null;
+        }
+
+        if (securityContext != null) {
+            this.securityContext = securityContext;
+        } else if (this.originatingPrincipal != null) {
+            this.securityContext = ThemisSecurityContext.fromPrincipal(this.originatingPrincipal, this.correlationId);
+        } else {
+            this.securityContext = null;
+        }
     }
 
     public static PetasosMessageBuilder builder() {
@@ -204,6 +248,14 @@ public final class PetasosMessage implements Serializable {
 
     public String getDuplicateDetectionId() {
         return duplicateDetectionId;
+    }
+
+    public ThemisSecurityContext getSecurityContext() {
+        return securityContext;
+    }
+
+    public ThemisPrincipal getOriginatingPrincipal() {
+        return originatingPrincipal;
     }
 
     @Override

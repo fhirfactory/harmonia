@@ -37,7 +37,6 @@
     <modules>
         <module>themis-api</module>
         <module>themis-core</module>
-        <module>themis-audit</module>
     </modules>
 
 </project>

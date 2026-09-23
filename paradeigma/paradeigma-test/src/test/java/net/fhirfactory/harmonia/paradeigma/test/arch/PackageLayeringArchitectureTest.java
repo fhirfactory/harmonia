@@ -51,7 +51,7 @@ public class PackageLayeringArchitectureTest {
                 .should().dependOnClassesThat()
                 .resideInAnyPackage(
                         "net.fhirfactory.harmonia.themis.core..",
-                        "net.fhirfactory.harmonia.themis.audit..",
+                        "net.fhirfactory.harmonia.kleio..",
                         "net.fhirfactory.harmonia.hestia..",
                         "net.fhirfactory.harmonia.petasos.core..",
                         "net.fhirfactory.harmonia.petasos.artemis..",
@@ -76,7 +76,7 @@ public class PackageLayeringArchitectureTest {
                 .should().dependOnClassesThat()
                 .resideInAnyPackage(
                         "net.fhirfactory.harmonia.themis.core..",
-                        "net.fhirfactory.harmonia.themis.audit..",
+                        "net.fhirfactory.harmonia.kleio..",
                         "net.fhirfactory.harmonia.hestia..",
                         "net.fhirfactory.harmonia.petasos..",
                         "net.fhirfactory.harmonia.erga..",

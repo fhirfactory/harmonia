@@ -182,7 +182,8 @@ public class IncomingOruMessageProcessor {
                     universalServiceId, patientId, comm, savedTask, null, ack);
 
         } catch (Exception e) {
-            log.error("Failed to parse and process HL7 ORU message: {}", e.getMessage(), e);
+            log.error("Failed to parse and process HL7 ORU message [exception={}, errorCode=AE, description=Processing error]",
+                    e.getClass().getName());
             String ack = extractor.generateFallbackAck(rawHl7Message, "AE", e.getMessage());
             return OruProcessingResult.failure("UNKNOWN", "R01", ack, e.getMessage());
         }

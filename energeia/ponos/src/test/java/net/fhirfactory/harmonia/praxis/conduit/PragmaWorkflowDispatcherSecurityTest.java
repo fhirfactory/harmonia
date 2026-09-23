@@ -33,6 +33,7 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -124,6 +125,12 @@ class PragmaWorkflowDispatcherSecurityTest {
 
         boolean result = dispatcher.dispatchPragma(pragma);
         assertThat(result).isTrue();
+        assertThat(pragma.getExecutingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+        assertThat(pragma.getOriginatingPrincipal()).isEqualTo(principal);
+        assertThat(pragma.getOriginatingAuthorities()).contains(submitAuth);
+        assertThat(pragma.getOriginatingSecurityContext()).isNotNull();
+        assertThat(pragma.getOriginatingSecurityContext().originatingPrincipal()).isEqualTo(principal);
+        assertThat(pragma.getOriginatingSecurityContext().executingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
     }
 
     @Test
@@ -208,5 +215,189 @@ class PragmaWorkflowDispatcherSecurityTest {
         assertThat(pragma.getCheckpoints())
                 .anyMatch(cp -> cp.getStageName().equals("THEMIS_EXECUTION_GATE")
                         && cp.getStatusMessage().contains("EXECUTION_AUTHORITY_MISSING"));
+    }
+
+    @Test
+    @DisplayName("Fails closed (DENY) when originating principal is missing (Missing Context Hardening)")
+    void testDeniedDispatchWhenOriginatingPrincipalIsMissing() throws Exception {
+        DummyErgon ergon = new DummyErgon("ergon:practitioner-change", "Practitioner Change Ergon");
+        DummyPraxis praxis = new DummyPraxis("praxis:practitioner-change", "Practitioner Change Praxis", ergon);
+
+        praxis.registerRoutes(camelContext);
+        camelContext.addRoutes(praxis.createSequencePipelineRoute());
+        camelContext.start();
+
+        dispatcher.registerWorkflow(praxis);
+
+        // Pragma lacking originating principal and security context (no synthetic fallback allowed)
+        Pragma pragma = Pragma.builder()
+                .pragmaId("pragma-anon-001")
+                .praxisId("praxis:practitioner-change")
+                .status(PragmaStatus.ACCEPTED)
+                .source("service:unauthenticated-gateway")
+                .build();
+
+        pragma.addInput(ErgonPayload.fromJson(0,
+                new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
+                null,
+                "{\"resourceType\":\"Practitioner\",\"id\":\"PR-ANON\"}"));
+
+        boolean result = dispatcher.dispatchPragma(pragma);
+        assertThat(result).isFalse();
+        assertThat(pragma.getStatus()).isEqualTo(PragmaStatus.FAILED);
+        assertThat(pragma.getCheckpoints())
+                .anyMatch(cp -> cp.getStageName().equals("THEMIS_EXECUTION_GATE")
+                        && cp.getStatusMessage().contains("PRINCIPAL_MISSING"));
+    }
+
+    @Test
+    @DisplayName("Fails closed (DENY) when originating principal is present but has empty authorities")
+    void testDeniedDispatchWhenOriginatingPrincipalHasNoAuthorities() throws Exception {
+        DummyErgon ergon = new DummyErgon("ergon:practitioner-change", "Practitioner Change Ergon");
+        DummyPraxis praxis = new DummyPraxis("praxis:practitioner-change", "Practitioner Change Praxis", ergon);
+
+        praxis.registerRoutes(camelContext);
+        camelContext.addRoutes(praxis.createSequencePipelineRoute());
+        camelContext.start();
+
+        dispatcher.registerWorkflow(praxis);
+
+        ThemisPrincipal principal = ThemisPrincipal.of("user:no-authorities", PrincipalType.HUMAN, "hospital-east");
+        Pragma pragma = Pragma.builder()
+                .pragmaId("pragma-noauth-001")
+                .praxisId("praxis:practitioner-change")
+                .status(PragmaStatus.ACCEPTED)
+                .originatingPrincipal(principal)
+                .policyVersion("1.0.0")
+                .build();
+
+        pragma.addInput(ErgonPayload.fromJson(0,
+                new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
+                null,
+                "{\"resourceType\":\"Practitioner\",\"id\":\"PR-NOAUTH\"}"));
+
+        boolean result = dispatcher.dispatchPragma(pragma);
+        assertThat(result).isFalse();
+        assertThat(pragma.getStatus()).isEqualTo(PragmaStatus.FAILED);
+        assertThat(pragma.getCheckpoints())
+                .anyMatch(cp -> cp.getStageName().equals("THEMIS_EXECUTION_GATE")
+                        && cp.getStatusMessage().contains("AUTHORITY_MISSING"));
+    }
+
+    @Test
+    @DisplayName("Dispatched Pragma transitions executingPrincipal to Ponos while strictly preserving causationId and originating provenance")
+    void testExecutionPrincipalTransitionAndCausationPreservedOnDispatch() throws Exception {
+        DummyErgon ergon = new DummyErgon("ergon:practitioner-change", "Practitioner Change Ergon");
+        DummyPraxis praxis = new DummyPraxis("praxis:practitioner-change", "Practitioner Change Praxis", ergon);
+
+        praxis.registerRoutes(camelContext);
+        camelContext.addRoutes(praxis.createSequencePipelineRoute());
+        camelContext.start();
+
+        dispatcher.registerWorkflow(praxis);
+
+        ThemisPrincipal humanPrincipal = ThemisPrincipal.of("user:dr-smith", PrincipalType.HUMAN, "hospital-east");
+        ThemisAuthority submitAuth = HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority();
+        ThemisPrincipal ingressGatewayPrincipal = ThemisPrincipal.of("service:iris-befe", PrincipalType.SERVICE, "iris");
+
+        ThemisSecurityContext initialContext = ThemisSecurityContext.builder()
+                .requestingPrincipal(humanPrincipal)
+                .executingPrincipal(ingressGatewayPrincipal)
+                .authorities(Set.of(submitAuth))
+                .correlationId("corr-trace-456")
+                .causationId("msg-causation-123")
+                .securityDomain("PROVIDER_REGISTRY")
+                .build();
+
+        Pragma pragma = Pragma.builder()
+                .pragmaId("pragma-auth-002")
+                .praxisId("praxis:practitioner-change")
+                .status(PragmaStatus.ACCEPTED)
+                .correlationId("corr-trace-456")
+                .causationId("msg-causation-123")
+                .originatingPrincipal(humanPrincipal)
+                .executingPrincipal(ingressGatewayPrincipal)
+                .addOriginatingAuthority(submitAuth)
+                .originatingSecurityContext(initialContext)
+                .policyVersion("1.0.0")
+                .build();
+
+        pragma.addInput(ErgonPayload.fromJson(0,
+                new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
+                null,
+                "{\"resourceType\":\"Practitioner\",\"id\":\"PR-99\"}"));
+
+        boolean result = dispatcher.dispatchPragma(pragma);
+        assertThat(result).isTrue();
+
+        // Execution principal transitions to canonical Ponos process
+        assertThat(pragma.getExecutingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+        assertThat(pragma.getEffectiveExecutingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+
+        // Originating principal, correlation ID, and causation ID are strictly preserved
+        assertThat(pragma.getOriginatingPrincipal()).isEqualTo(humanPrincipal);
+        assertThat(pragma.getInitiatingPrincipal()).isEqualTo(humanPrincipal);
+        assertThat(pragma.getCorrelationId()).isEqualTo("corr-trace-456");
+        assertThat(pragma.getCausationId()).isEqualTo("msg-causation-123");
+        assertThat(pragma.getOriginatingAuthorities()).containsExactly(submitAuth);
+
+        // Security context reflects active Ponos executor while preserving originating requester, authorities, correlation, and causation
+        ThemisSecurityContext secContext = pragma.getOriginatingSecurityContext();
+        assertThat(secContext).isNotNull();
+        assertThat(secContext.requestingPrincipal()).isEqualTo(humanPrincipal);
+        assertThat(secContext.originatingPrincipal()).isEqualTo(humanPrincipal);
+        assertThat(secContext.executingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+        assertThat(secContext.correlationId()).isEqualTo("corr-trace-456");
+        assertThat(secContext.causationId()).isEqualTo("msg-causation-123");
+        assertThat(secContext.authorities()).containsExactly(submitAuth);
+    }
+
+    @Test
+    @DisplayName("Service-originated Pragma executes cleanly with Ponos process executor and preserved causation")
+    void testServiceOriginatedDispatchAllowed() throws Exception {
+        DummyErgon ergon = new DummyErgon("ergon:practitioner-change", "Practitioner Change Ergon");
+        DummyPraxis praxis = new DummyPraxis("praxis:practitioner-change", "Practitioner Change Praxis", ergon);
+
+        praxis.registerRoutes(camelContext);
+        camelContext.addRoutes(praxis.createSequencePipelineRoute());
+        camelContext.start();
+
+        dispatcher.registerWorkflow(praxis);
+
+        ThemisPrincipal servicePrincipal = HarmoniaServiceIdentities.PRINCIPAL_PYLAI;
+        ThemisAuthority submitAuth = HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority();
+
+        ThemisSecurityContext serviceContext = ThemisSecurityContext.builder()
+                .requestingPrincipal(servicePrincipal)
+                .authorities(Set.of(submitAuth, HarmoniaAuthorityEnum.SYSTEM_INTEGRATION.toThemisAuthority()))
+                .correlationId("corr-service-789")
+                .causationId("msg-service-456")
+                .securityDomain("PROVIDER_REGISTRY")
+                .build();
+
+        Pragma pragma = Pragma.builder()
+                .pragmaId("pragma-service-001")
+                .praxisId("praxis:practitioner-change")
+                .status(PragmaStatus.ACCEPTED)
+                .correlationId("corr-service-789")
+                .causationId("msg-service-456")
+                .originatingPrincipal(servicePrincipal)
+                .addOriginatingAuthority(submitAuth)
+                .originatingSecurityContext(serviceContext)
+                .policyVersion("1.0.0")
+                .build();
+
+        pragma.addInput(ErgonPayload.fromJson(0,
+                new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
+                null,
+                "{\"resourceType\":\"Practitioner\",\"id\":\"PR-SVC\"}"));
+
+        boolean result = dispatcher.dispatchPragma(pragma);
+        assertThat(result).isTrue();
+
+        assertThat(pragma.getExecutingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+        assertThat(pragma.getOriginatingPrincipal()).isEqualTo(servicePrincipal);
+        assertThat(pragma.getCausationId()).isEqualTo("msg-service-456");
+        assertThat(pragma.getCorrelationId()).isEqualTo("corr-service-789");
     }
 }

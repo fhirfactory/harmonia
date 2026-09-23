@@ -110,4 +110,60 @@ class PetasosDeduplicationIntegrationTest {
 
         subscription.close();
     }
+
+    @Test
+    void testBrokerRedeliveryAfterHandlerFailureIsProcessed() throws Exception {
+        PetasosDestination destination = PetasosDestination.queue("dedup.clinical.retry");
+        List<String> attempts = new ArrayList<>();
+        CountDownLatch redeliverySuccessLatch = new CountDownLatch(1);
+
+        PetasosSubscription subscription = petasos.receive(destination, (message, context) -> {
+            synchronized (attempts) {
+                attempts.add("delivery-" + context.getRedeliveryCount());
+                if (context.getRedeliveryCount() == 1) {
+                    // First attempt: simulate processing failure to trigger session recovery / broker redelivery
+                    throw new RuntimeException("Simulated transient failure on attempt 1");
+                }
+            }
+            context.acknowledge();
+            redeliverySuccessLatch.countDown();
+        });
+
+        String duplicateKey = "RETRY-DEDUP-KEY-777";
+        PetasosMessage msg = PetasosMessage.builder()
+                .messageId("msg-transient-1")
+                .duplicateDetectionId(duplicateKey)
+                .payload("Clinical Update with Transient Failure")
+                .destination(destination)
+                .build();
+        petasos.send(destination, msg);
+
+        boolean redelivered = redeliverySuccessLatch.await(5, TimeUnit.SECONDS);
+        assertThat(redelivered).isTrue();
+
+        synchronized (attempts) {
+            assertThat(attempts).contains("delivery-1", "delivery-2");
+        }
+
+        // Now that redelivery was acknowledged, a subsequent duplicate transmission must be skipped
+        CountDownLatch duplicateLatch = new CountDownLatch(1);
+        List<String> duplicateAttempts = new ArrayList<>();
+
+        PetasosMessage duplicateMsg = PetasosMessage.builder()
+                .messageId("msg-transient-duplicate")
+                .duplicateDetectionId(duplicateKey)
+                .payload("Duplicate transmission")
+                .destination(destination)
+                .build();
+        petasos.send(destination, duplicateMsg);
+
+        Thread.sleep(1000);
+
+        synchronized (attempts) {
+            // No new deliveries to the handler should have occurred
+            assertThat(attempts).hasSize(2);
+        }
+
+        subscription.close();
+    }
 }

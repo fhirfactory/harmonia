@@ -1,0 +1,65 @@
+%% =============================================================================
+%% appendices/appendix-findings.tex
+%% Harmonia Architecture Conformance Findings
+%% =============================================================================
+
+\chapter{Architecture Conformance Findings}
+\label{app:findings}
+
+This appendix records implementation observations discovered during architecture and code reviews. Findings describe the implementation at a point in time; they are not themselves architecture requirements. A finding may create one or more backlog items and may later be closed without changing the underlying requirement.
+
+\section{Open / Recently Identified Findings}
+
+\subsection{FND-001 --- Clinical Search Has Been Cache-Dependent}
+Clinical/FHIR search was identified as scanning in-memory cache values rather than querying the authoritative persisted dataset. This can produce false-negative searches after restart, eviction, or cold start.
+
+\textbf{Related:} \texttt{DATA-002}, \texttt{DATA-003}; \texttt{BL-DATA-002}, \texttt{BL-DATA-003}.
+
+\subsection{FND-002 --- Volatile Clinical Fallback Path}
+A clinical persistence path was identified that could fall back to unbacked JVM memory, allowing state to disappear on process/pod restart.
+
+\textbf{Related:} \texttt{DATA-001}, \texttt{DATA-007}; \texttt{BL-DATA-001}.
+
+\subsection{FND-003 --- Clinical API Authorisation Gap}
+Review identified Clinical FHIR endpoints that did not consistently pass through Themis authorisation.
+
+\textbf{Related:} \texttt{SEC-002}--\texttt{SEC-004}; \texttt{BL-SEC-001}.
+
+\subsection{FND-004 --- Clinical Browser Authentication Gap}
+Review identified an Iris-Clinical path without a complete authenticated browser-to-BEFE identity flow.
+
+\textbf{Related:} \texttt{SEC-001}; \texttt{BL-SEC-001}.
+
+\subsection{FND-005 --- Credentialed Wildcard CORS}
+A BEFE CORS configuration was identified that permitted wildcard origins while supporting credentials.
+
+\textbf{Related:} \texttt{SEC-007}; \texttt{BL-SEC-004}.
+
+\subsection{FND-006 --- Mutable AuditEvent Surface}
+AuditEvent update/delete operations and corresponding UI controls were identified despite the target immutable audit model.
+
+\textbf{Related:} \texttt{PROV-005}; \texttt{BL-PROV-002}, \texttt{BL-IRIS-004}.
+
+\subsection{FND-007 --- Unbounded Iris Collection Loading}
+Iris was identified as discarding useful Bundle total metadata and performing broad/unbounded parallel resource searches in some views.
+
+\textbf{Related:} \texttt{DATA-004}; \texttt{BL-DATA-003}, \texttt{BL-IRIS-005}.
+
+\subsection{FND-008 --- Pylai Header Trust Risk}
+A Pylai security interceptor path was identified that could derive principal/authority context from raw HTTP headers unless protected by a trusted upstream boundary.
+
+\textbf{Related:} \texttt{SEC-007}; \texttt{BL-SEC-003}.
+
+\subsection{FND-009 --- Legacy Embedded-Broker Assumptions}
+Historical Ponos/Pylai deployment and configuration paths contained assumptions that Ponos hosted Artemis. The runtime has been converged toward standalone Petasos ownership, but remaining legacy assumptions should continue to be removed when encountered.
+
+\textbf{Related:} \texttt{CORE-002}, \texttt{INT-002}; \texttt{BL-MSG-001}, \texttt{BL-MSG-002}.
+
+\subsection{FND-010 --- Partial Queue Telemetry Population}
+Operational contracts exist for queue depth and producer/consumer metrics, but the development topology has not always populated all live queue metrics.
+
+\textbf{Related:} \texttt{OPS-004}; \texttt{BL-MSG-003}.
+
+\section{Finding Lifecycle}
+
+A finding should be marked closed when verification demonstrates that the implementation conforms to the relevant requirement. Closing a finding does not remove or retire the requirement. Where useful, closed findings may be retained as architecture history.

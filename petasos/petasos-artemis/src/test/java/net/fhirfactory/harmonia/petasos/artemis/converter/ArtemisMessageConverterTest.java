@@ -17,15 +17,16 @@
 
 package net.fhirfactory.harmonia.petasos.artemis.converter;
 
-import jakarta.jms.BytesMessage;
-import jakarta.jms.DeliveryMode;
-import jakarta.jms.Session;
+import jakarta.jms.*;
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
 import net.fhirfactory.harmonia.petasos.api.message.PetasosMessage;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.*;
 
@@ -80,6 +81,13 @@ class ArtemisMessageConverterTest {
         }).when(bytesMessage).setBooleanProperty(anyString(), anyBoolean());
 
         Instant now = Instant.now();
+        ThemisPrincipal principal = ThemisPrincipal.of("dr.mark", PrincipalType.HUMAN, "CLINICAL");
+        ThemisSecurityContext secCtx = ThemisSecurityContext.builder()
+                .originatingPrincipal(principal)
+                .securityDomain("CLINICAL")
+                .correlationId("corr-888")
+                .build();
+
         PetasosMessage original = PetasosMessage.builder()
                 .messageId("msg-999")
                 .correlationId("corr-888")
@@ -92,6 +100,7 @@ class ArtemisMessageConverterTest {
                 .schema("Observation", "5.0.0")
                 .payload("{\"resourceType\":\"Observation\",\"id\":\"obs-1\"}")
                 .header("labCode", "LAB-01")
+                .securityContext(secCtx)
                 .durable(true)
                 .priority(8)
                 .duplicateDetectionId("dedup-999")
@@ -99,6 +108,25 @@ class ArtemisMessageConverterTest {
 
         jakarta.jms.Message jmsMessage = ArtemisMessageConverter.toJmsMessage(original, session);
         assertThat(jmsMessage).isNotNull();
+
+        // Verify non-authoritative diagnostic headers and operational metadata are set
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_HARMONIA_INITIATING_PRINCIPAL, "dr.mark");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_HARMONIA_SECURITY_DOMAIN, "CLINICAL");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_HARMONIA_CORRELATION_ID, "corr-888");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_MESSAGE_ID, "msg-999");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_CORRELATION_ID, "corr-888");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_CAUSATION_ID, "cause-777");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_MESSAGE_TYPE, "ObservationEvent");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_SOURCE, "lab-analyzer-1");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_DESTINATION_NAME, "observation.queue");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_DESTINATION_TYPE, "QUEUE");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_CONTENT_TYPE, "application/fhir+json");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_SCHEMA_ID, "Observation");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_SCHEMA_VER, "5.0.0");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_AMQ_DUPL_ID, "dedup-999");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_DURABLE, true);
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_PETASOS_TIMESTAMP, now.toEpochMilli());
+        assertThat(properties).containsEntry("labCode", "LAB-01");
 
         // Prepare mock for reading back
         when(bytesMessage.getBodyLength()).thenReturn((long) byteOut.size());
@@ -133,5 +161,151 @@ class ArtemisMessageConverterTest {
         assertThat(converted.isDurable()).isTrue();
         assertThat(converted.getPriority()).isEqualTo(8);
         assertThat(converted.getDuplicateDetectionId()).isEqualTo("dedup-999");
+
+        // Critical security assertion: reverse conversion MUST NOT reconstruct ThemisPrincipal or ThemisSecurityContext from transport headers
+        assertThat(converted.getOriginatingPrincipal()).isNull();
+        assertThat(converted.getSecurityContext()).isNull();
+    }
+
+    @Test
+    void testTamperingJmsPrincipalHeadersCannotManufacturePrincipalOrSecurityContext() throws Exception {
+        BytesMessage bytesMessage = mock(BytesMessage.class);
+        when(bytesMessage.getBodyLength()).thenReturn(0L);
+
+        Map<String, Object> properties = new HashMap<>();
+        properties.put(ArtemisMessageConverter.HDR_PETASOS_MESSAGE_ID, "msg-attacker-1");
+        properties.put(ArtemisMessageConverter.HDR_PETASOS_CORRELATION_ID, "corr-attacker-1");
+        // Mallory attempts to inject administrative credentials via non-authoritative transport headers
+        properties.put(ArtemisMessageConverter.HDR_HARMONIA_INITIATING_PRINCIPAL, "mallory-attacker");
+        properties.put(ArtemisMessageConverter.HDR_HARMONIA_SECURITY_DOMAIN, "SUPER_ADMIN");
+        properties.put("customAppHeader", "safe-value");
+
+        when(bytesMessage.getStringProperty(anyString())).thenAnswer(inv -> properties.get(inv.getArgument(0)));
+        when(bytesMessage.getObjectProperty(anyString())).thenAnswer(inv -> properties.get(inv.getArgument(0)));
+        when(bytesMessage.propertyExists(anyString())).thenAnswer(inv -> properties.containsKey(inv.getArgument(0)));
+        when(bytesMessage.getPropertyNames()).thenReturn(Collections.enumeration(properties.keySet()));
+
+        PetasosMessage converted = ArtemisMessageConverter.toPetasosMessage(bytesMessage);
+
+        // Assert that untrusted transport headers NEVER manufacture trusted security context or principal
+        assertThat(converted.getOriginatingPrincipal()).isNull();
+        assertThat(converted.getSecurityContext()).isNull();
+
+        // Assert that harmonia_* transport headers are not leaked into application metadata
+        assertThat(converted.getMetadata()).doesNotContainKey(ArtemisMessageConverter.HDR_HARMONIA_INITIATING_PRINCIPAL);
+        assertThat(converted.getMetadata()).doesNotContainKey(ArtemisMessageConverter.HDR_HARMONIA_SECURITY_DOMAIN);
+        assertThat(converted.getMetadata()).containsEntry("customAppHeader", "safe-value");
+    }
+
+    @Test
+    void testToJmsWithoutSecurityContext() throws Exception {
+        Session session = mock(Session.class);
+        BytesMessage bytesMessage = mock(BytesMessage.class);
+        when(session.createBytesMessage()).thenReturn(bytesMessage);
+
+        Map<String, Object> properties = new HashMap<>();
+        doAnswer(invocation -> {
+            properties.put(invocation.getArgument(0), invocation.getArgument(1));
+            return null;
+        }).when(bytesMessage).setStringProperty(anyString(), any());
+
+        PetasosMessage message = PetasosMessage.builder()
+                .messageId("msg-anon-1")
+                .correlationId("corr-anon-1")
+                .payload("anon-data")
+                .build();
+
+        ArtemisMessageConverter.toJmsMessage(message, session);
+
+        assertThat(properties).doesNotContainKey(ArtemisMessageConverter.HDR_HARMONIA_INITIATING_PRINCIPAL);
+        assertThat(properties).doesNotContainKey(ArtemisMessageConverter.HDR_HARMONIA_SECURITY_DOMAIN);
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_HARMONIA_CORRELATION_ID, "corr-anon-1");
+    }
+
+    @Test
+    void testToJmsWithOriginatingPrincipalOnly() throws Exception {
+        Session session = mock(Session.class);
+        BytesMessage bytesMessage = mock(BytesMessage.class);
+        when(session.createBytesMessage()).thenReturn(bytesMessage);
+
+        Map<String, Object> properties = new HashMap<>();
+        doAnswer(invocation -> {
+            properties.put(invocation.getArgument(0), invocation.getArgument(1));
+            return null;
+        }).when(bytesMessage).setStringProperty(anyString(), any());
+
+        ThemisPrincipal servicePrincipal = ThemisPrincipal.of("service:pylai-gateway", PrincipalType.SERVICE, "INTEGRATION");
+
+        PetasosMessage message = PetasosMessage.builder()
+                .messageId("msg-svc-1")
+                .correlationId("corr-svc-1")
+                .originatingPrincipal(servicePrincipal)
+                .payload("svc-data")
+                .build();
+
+        ArtemisMessageConverter.toJmsMessage(message, session);
+
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_HARMONIA_INITIATING_PRINCIPAL, "service:pylai-gateway");
+        assertThat(properties).containsEntry(ArtemisMessageConverter.HDR_HARMONIA_SECURITY_DOMAIN, "INTEGRATION");
+    }
+
+    @Test
+    void testPayloadExtractionFromTextMessageAndObjectMessage() throws Exception {
+        // TextMessage
+        TextMessage textMessage = mock(TextMessage.class);
+        when(textMessage.getText()).thenReturn("Hello Text Payload");
+        when(textMessage.getStringProperty(ArtemisMessageConverter.HDR_PETASOS_MESSAGE_ID)).thenReturn("msg-txt-1");
+
+        PetasosMessage fromText = ArtemisMessageConverter.toPetasosMessage(textMessage);
+        assertThat(fromText.getPayloadAsString()).isEqualTo("Hello Text Payload");
+
+        // ObjectMessage with byte[]
+        ObjectMessage objMessageBytes = mock(ObjectMessage.class);
+        byte[] rawBytes = "Object Payload Bytes".getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        when(objMessageBytes.getObject()).thenReturn((Serializable) rawBytes);
+        when(objMessageBytes.getStringProperty(ArtemisMessageConverter.HDR_PETASOS_MESSAGE_ID)).thenReturn("msg-obj-1");
+
+        PetasosMessage fromObjBytes = ArtemisMessageConverter.toPetasosMessage(objMessageBytes);
+        assertThat(fromObjBytes.getPayloadAsString()).isEqualTo("Object Payload Bytes");
+
+        // ObjectMessage with Object string
+        ObjectMessage objMessageStr = mock(ObjectMessage.class);
+        when(objMessageStr.getObject()).thenReturn("String In Object");
+        when(objMessageStr.getStringProperty(ArtemisMessageConverter.HDR_PETASOS_MESSAGE_ID)).thenReturn("msg-obj-2");
+
+        PetasosMessage fromObjStr = ArtemisMessageConverter.toPetasosMessage(objMessageStr);
+        assertThat(fromObjStr.getPayloadAsString()).isEqualTo("String In Object");
+    }
+
+    @Test
+    void testDestinationExtractionTopicAndQueue() throws Exception {
+        // Destination by property TOPIC
+        BytesMessage jmsMessageTopic = mock(BytesMessage.class);
+        when(jmsMessageTopic.getBodyLength()).thenReturn(0L);
+        when(jmsMessageTopic.getStringProperty(ArtemisMessageConverter.HDR_PETASOS_DESTINATION_NAME)).thenReturn("events.topic");
+        when(jmsMessageTopic.getStringProperty(ArtemisMessageConverter.HDR_PETASOS_DESTINATION_TYPE)).thenReturn("TOPIC");
+
+        PetasosMessage msgTopic = ArtemisMessageConverter.toPetasosMessage(jmsMessageTopic);
+        assertThat(msgTopic.getDestination()).isEqualTo(PetasosDestination.topic("events.topic"));
+
+        // Destination fallback by JMS Topic
+        BytesMessage jmsFallbackTopic = mock(BytesMessage.class);
+        Topic topic = mock(Topic.class);
+        when(topic.getTopicName()).thenReturn("fallback.topic");
+        when(jmsFallbackTopic.getBodyLength()).thenReturn(0L);
+        when(jmsFallbackTopic.getJMSDestination()).thenReturn(topic);
+
+        PetasosMessage msgFallbackTopic = ArtemisMessageConverter.toPetasosMessage(jmsFallbackTopic);
+        assertThat(msgFallbackTopic.getDestination()).isEqualTo(PetasosDestination.topic("fallback.topic"));
+
+        // Destination fallback by JMS Queue
+        BytesMessage jmsFallbackQueue = mock(BytesMessage.class);
+        jakarta.jms.Queue queue = mock(jakarta.jms.Queue.class);
+        when(queue.getQueueName()).thenReturn("fallback.queue");
+        when(jmsFallbackQueue.getBodyLength()).thenReturn(0L);
+        when(jmsFallbackQueue.getJMSDestination()).thenReturn(queue);
+
+        PetasosMessage msgFallbackQueue = ArtemisMessageConverter.toPetasosMessage(jmsFallbackQueue);
+        assertThat(msgFallbackQueue.getDestination()).isEqualTo(PetasosDestination.queue("fallback.queue"));
     }
 }

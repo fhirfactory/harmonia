@@ -116,6 +116,44 @@ class PragmaSecurityContextTest {
     }
 
     @Test
+    @DisplayName("Pragma supports dual-principal tracking and resolution")
+    void testPragmaDualPrincipalAndResolution() {
+        ThemisPrincipal human = ThemisPrincipal.of("dr.mark", PrincipalType.HUMAN, "CLINICAL");
+        ThemisPrincipal worker = ThemisPrincipal.of("process:ponos-engine", PrincipalType.PROCESS, "WORKFLOW");
+
+        Pragma pragma = Pragma.builder()
+                .pragmaId("pragma-dual-1")
+                .correlationId("corr-root-1")
+                .causationId("msg-parent-1")
+                .originatingPrincipal(human)
+                .executingPrincipal(worker)
+                .addOriginatingAuthority("clinical.create")
+                .build();
+
+        assertThat(pragma.getInitiatingPrincipal()).isEqualTo(human);
+        assertThat(pragma.getExecutingPrincipal()).isEqualTo(worker);
+        assertThat(pragma.getEffectiveExecutingPrincipal()).isEqualTo(worker);
+
+        ThemisSecurityContext resolved = pragma.resolveSecurityContext();
+        assertThat(resolved).isNotNull();
+        assertThat(resolved.originatingPrincipal()).isEqualTo(human);
+        assertThat(resolved.executingPrincipal()).isEqualTo(worker);
+        assertThat(resolved.correlationId()).isEqualTo("corr-root-1");
+        assertThat(resolved.causationId()).isEqualTo("msg-parent-1");
+        assertThat(resolved.authorities()).containsExactly(ThemisAuthority.of("clinical.create"));
+
+        // Test FHIR roundtrip with dual-principal
+        Task fhirTask = PragmaFhirConverter.toFhirTask(pragma);
+        Pragma reconstructed = PragmaFhirConverter.fromFhirTask(fhirTask);
+
+        assertThat(reconstructed.getInitiatingPrincipal()).isEqualTo(human);
+        assertThat(reconstructed.getExecutingPrincipal()).isEqualTo(worker);
+        assertThat(reconstructed.getOriginatingSecurityContext()).isNotNull();
+        assertThat(reconstructed.getOriginatingSecurityContext().originatingPrincipal()).isEqualTo(human);
+        assertThat(reconstructed.getOriginatingSecurityContext().executingPrincipal()).isEqualTo(worker);
+    }
+
+    @Test
     @DisplayName("ErgonSecurityDefinition validates execution authorities, actions and domains")
     void testErgonSecurityDefinition() {
         ErgonSecurityDefinition def = ErgonSecurityDefinition.forProviderRegistryChange("ergon:practitioner-change", "Practitioner");

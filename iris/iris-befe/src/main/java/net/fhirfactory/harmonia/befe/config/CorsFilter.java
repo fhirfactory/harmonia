@@ -18,26 +18,78 @@
 package net.fhirfactory.harmonia.befe.config;
 
 import jakarta.ws.rs.container.ContainerRequestContext;
+import jakarta.ws.rs.container.ContainerRequestFilter;
 import jakarta.ws.rs.container.ContainerResponseContext;
 import jakarta.ws.rs.container.ContainerResponseFilter;
+import jakarta.ws.rs.container.PreMatching;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.Provider;
 
 import java.io.IOException;
+import java.util.List;
 
+/**
+ * Hardened JAX-RS PreMatching CORS filter for Iris BEFE presentation endpoints.
+ * <p>
+ * Short-circuits preflight OPTIONS requests before resource matching, returns 403 Forbidden
+ * for untrusted preflight origins, and decorates trusted responses with exact allowed origin
+ * and {@code Vary: Origin}.
+ * </p>
+ */
 @Provider
-public class CorsFilter implements ContainerResponseFilter {
+@PreMatching
+public class CorsFilter implements ContainerRequestFilter, ContainerResponseFilter {
+
+    @Override
+    public void filter(ContainerRequestContext requestContext) throws IOException {
+        if ("OPTIONS".equalsIgnoreCase(requestContext.getMethod())) {
+            String origin = requestContext.getHeaderString("Origin");
+            if (origin != null && !origin.isBlank()) {
+                if (BefeCorsConfig.isOriginAllowed(origin)) {
+                    String normalizedOrigin = BefeCorsConfig.normalizeOrigin(origin);
+                    Response preflightResponse = Response.ok()
+                            .header("Access-Control-Allow-Origin", normalizedOrigin)
+                            .header("Vary", "Origin")
+                            .header("Access-Control-Allow-Methods", BefeCorsConfig.ALLOWED_METHODS)
+                            .header("Access-Control-Allow-Headers", BefeCorsConfig.ALLOWED_HEADERS)
+                            .header("Access-Control-Max-Age", BefeCorsConfig.MAX_AGE_SECONDS)
+                            .build();
+                    requestContext.abortWith(preflightResponse);
+                } else {
+                    requestContext.abortWith(Response.status(Response.Status.FORBIDDEN).build());
+                }
+            }
+        }
+    }
 
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
-        responseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
-        responseContext.getHeaders().add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization, x-requested-with");
-        responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
-        responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH");
-        responseContext.getHeaders().add("Access-Control-Max-Age", "1209600");
+        String origin = requestContext.getHeaderString("Origin");
+        if (origin != null && !origin.isBlank() && BefeCorsConfig.isOriginAllowed(origin)) {
+            String normalizedOrigin = BefeCorsConfig.normalizeOrigin(origin);
+            responseContext.getHeaders().putSingle("Access-Control-Allow-Origin", normalizedOrigin);
 
-        if ("OPTIONS".equalsIgnoreCase(requestContext.getMethod())) {
-            responseContext.setStatus(Response.Status.OK.getStatusCode());
+            List<Object> varyHeaders = responseContext.getHeaders().get("Vary");
+            if (varyHeaders == null || varyHeaders.isEmpty()) {
+                responseContext.getHeaders().putSingle("Vary", "Origin");
+            } else {
+                boolean hasOrigin = false;
+                for (Object v : varyHeaders) {
+                    if (v != null && v.toString().contains("Origin")) {
+                        hasOrigin = true;
+                        break;
+                    }
+                }
+                if (!hasOrigin) {
+                    responseContext.getHeaders().add("Vary", "Origin");
+                }
+            }
+
+            if ("OPTIONS".equalsIgnoreCase(requestContext.getMethod())) {
+                responseContext.getHeaders().putSingle("Access-Control-Allow-Methods", BefeCorsConfig.ALLOWED_METHODS);
+                responseContext.getHeaders().putSingle("Access-Control-Allow-Headers", BefeCorsConfig.ALLOWED_HEADERS);
+                responseContext.getHeaders().putSingle("Access-Control-Max-Age", BefeCorsConfig.MAX_AGE_SECONDS);
+            }
         }
     }
 }

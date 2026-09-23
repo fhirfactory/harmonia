@@ -22,6 +22,8 @@ import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
 import net.fhirfactory.harmonia.petasos.api.exception.PetasosMessagingException;
 import net.fhirfactory.harmonia.petasos.api.message.PetasosMessage;
 import net.fhirfactory.harmonia.petasos.api.message.PetasosMessageBuilder;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import org.apache.activemq.artemis.api.core.Message;
 
 import java.time.Instant;
@@ -47,6 +49,11 @@ public final class ArtemisMessageConverter {
     public static final String HDR_PETASOS_DESTINATION_NAME = "petasos_destination_name";
     public static final String HDR_PETASOS_DESTINATION_TYPE = "petasos_destination_type";
     public static final String HDR_AMQ_DUPL_ID = Message.HDR_DUPLICATE_DETECTION_ID.toString(); // "_AMQ_DUPL_ID"
+
+    // Harmonia operational transport projection headers
+    public static final String HDR_HARMONIA_INITIATING_PRINCIPAL = "harmonia_initiating_principal";
+    public static final String HDR_HARMONIA_SECURITY_DOMAIN = "harmonia_security_domain";
+    public static final String HDR_HARMONIA_CORRELATION_ID = "harmonia_correlation_id";
 
     public static jakarta.jms.Message toJmsMessage(PetasosMessage petasosMessage, Session session) throws JMSException {
         if (petasosMessage == null) {
@@ -108,6 +115,23 @@ public final class ArtemisMessageConverter {
         if (petasosMessage.getDestination() != null) {
             jmsMessage.setStringProperty(HDR_PETASOS_DESTINATION_NAME, petasosMessage.getDestination().getName());
             jmsMessage.setStringProperty(HDR_PETASOS_DESTINATION_TYPE, petasosMessage.getDestination().getType().name());
+        }
+
+        // Operational transport projection headers for correlation, causation, routing and tracing
+        if (petasosMessage.getCorrelationId() != null) {
+            jmsMessage.setStringProperty(HDR_HARMONIA_CORRELATION_ID, petasosMessage.getCorrelationId());
+        }
+        ThemisPrincipal initPrincipal = petasosMessage.getOriginatingPrincipal() != null
+                ? petasosMessage.getOriginatingPrincipal()
+                : (petasosMessage.getSecurityContext() != null ? petasosMessage.getSecurityContext().originatingPrincipal() : null);
+        if (initPrincipal != null && initPrincipal.principalId() != null) {
+            jmsMessage.setStringProperty(HDR_HARMONIA_INITIATING_PRINCIPAL, initPrincipal.principalId());
+        }
+        String secDomain = petasosMessage.getSecurityContext() != null && petasosMessage.getSecurityContext().securityDomain() != null
+                ? petasosMessage.getSecurityContext().securityDomain()
+                : (initPrincipal != null ? initPrincipal.sourceDomain() : null);
+        if (secDomain != null && !secDomain.isBlank()) {
+            jmsMessage.setStringProperty(HDR_HARMONIA_SECURITY_DOMAIN, secDomain);
         }
 
         // Application metadata map
@@ -230,13 +254,16 @@ public final class ArtemisMessageConverter {
             }
         }
 
-        // Extract metadata (all custom properties not starting with petasos_ or _AMQ_)
+        // Non-authoritative diagnostic transport properties (harmonia_initiating_principal, harmonia_security_domain)
+        // are strictly for broker-level tracing and must NOT be used to instantiate trusted ThemisPrincipal or ThemisSecurityContext.
+
+        // Extract metadata (all custom properties not starting with petasos_, harmonia_, or _AMQ_)
         Map<String, Object> metadata = new LinkedHashMap<>();
         Enumeration<?> propertyNames = jmsMessage.getPropertyNames();
         if (propertyNames != null) {
             while (propertyNames.hasMoreElements()) {
                 String name = propertyNames.nextElement().toString();
-                if (!name.startsWith("petasos_") && !name.startsWith("_AMQ_") && !name.startsWith("JMS")) {
+                if (!name.startsWith("petasos_") && !name.startsWith("harmonia_") && !name.startsWith("_AMQ_") && !name.startsWith("JMS")) {
                     metadata.put(name, jmsMessage.getObjectProperty(name));
                 }
             }

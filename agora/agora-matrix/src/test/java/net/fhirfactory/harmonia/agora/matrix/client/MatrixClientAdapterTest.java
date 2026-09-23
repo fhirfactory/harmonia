@@ -273,4 +273,60 @@ class MatrixClientAdapterTest {
 
         mockServer.verify();
     }
+
+    @Test
+    @DisplayName("Matrix client suppresses raw response body and PHI/secret markers in MatrixRestException")
+    void testErrorSanitizationSuppressesPhiAndSecret() {
+        String errorJson = """
+                {
+                  "errcode": "M_UNKNOWN",
+                  "error": "Generic error",
+                  "echoed_payload": "PATIENT-PHI-MARKER-92831",
+                  "auth_header": "Bearer TOKEN-SECRET-MARKER-81742"
+                }
+                """;
+
+        mockServer.expect(requestTo("http://synapse:8008/_matrix/client/v3/rooms/%21room456/invite"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withStatus(org.springframework.http.HttpStatus.BAD_REQUEST).body(errorJson).contentType(MediaType.APPLICATION_JSON));
+
+        assertThatThrownBy(() -> clientAdapter.inviteUser("!room456", "@user:harmonia.local", "Invite"))
+                .isInstanceOf(MatrixRestException.class)
+                .satisfies(ex -> {
+                    MatrixRestException rex = (MatrixRestException) ex;
+                    assertThat(rex.getMessage())
+                            .doesNotContain("PATIENT-PHI-MARKER-92831")
+                            .doesNotContain("TOKEN-SECRET-MARKER-81742")
+                            .doesNotContain("echoed_payload");
+                    assertThat(rex.getHttpStatus()).isEqualTo(400);
+                    assertThat(rex.getErrcode()).isEqualTo("M_UNKNOWN");
+                });
+
+        mockServer.verify();
+    }
+
+    @Test
+    @DisplayName("Matrix client non-JSON error body suppresses raw body and PHI/secret markers")
+    void testNonJsonErrorSuppressesRawBodyAndPhi() {
+        String htmlError = "<html><body>Error 502 Bad Gateway: PATIENT-PHI-MARKER-92831 TOKEN-SECRET-MARKER-81742</body></html>";
+
+        mockServer.expect(requestTo("http://synapse:8008/_matrix/client/v3/rooms/%21room456/invite"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withStatus(org.springframework.http.HttpStatus.BAD_GATEWAY).body(htmlError).contentType(MediaType.TEXT_HTML));
+
+        assertThatThrownBy(() -> clientAdapter.inviteUser("!room456", "@user:harmonia.local", "Invite"))
+                .isInstanceOf(MatrixRestException.class)
+                .satisfies(ex -> {
+                    MatrixRestException rex = (MatrixRestException) ex;
+                    assertThat(rex.getMessage())
+                            .doesNotContain("PATIENT-PHI-MARKER-92831")
+                            .doesNotContain("TOKEN-SECRET-MARKER-81742")
+                            .doesNotContain("<html>");
+                    assertThat(rex.getHttpStatus()).isEqualTo(502);
+                    assertThat(rex.getErrcode()).isNull();
+                    assertThat(rex.getError()).isNull();
+                });
+
+        mockServer.verify();
+    }
 }

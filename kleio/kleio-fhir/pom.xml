@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.fhirfactory.harmonia</groupId>
+        <artifactId>kleio</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>kleio-fhir</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Harmonia :: Kleio (FHIR Mapper)</name>
+    <description>Kleio — FHIR Mapping and Persistence representation for Harmonia audit events</description>
+
+    <dependencies>
+        <!-- Harmonia Dependencies -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>kleio-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>calliope</artifactId>
+        </dependency>
+
+        <!-- HAPI FHIR R5 -->
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-r5</artifactId>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

@@ -101,10 +101,11 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
             petasosMessage = ArtemisMessageConverter.toPetasosMessage(jmsMessage);
             metrics.recordMessageReceived();
 
+            String dedupId = duplicateDetector != null ? petasosMessage.getDuplicateDetectionId() : null;
+
             // Client-side deduplication check if detector is enabled
-            if (duplicateDetector != null) {
-                String dedupId = petasosMessage.getDuplicateDetectionId();
-                if (!duplicateDetector.isUnique(dedupId)) {
+            if (duplicateDetector != null && dedupId != null) {
+                if (duplicateDetector.isDuplicate(dedupId)) {
                     log.warn("Duplicate message detected by Petasos consumer: [id={}, dedupId={}]. Acknowledging and skipping.",
                             petasosMessage.getMessageId(), dedupId);
                     jmsMessage.acknowledge();
@@ -124,7 +125,9 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
                     destination,
                     deliveryCount,
                     connectionManager,
-                    metrics
+                    metrics,
+                    duplicateDetector,
+                    dedupId
             );
 
             log.debug("Delivering PetasosMessage [id={}, type={}] to consumer handler for {}",
@@ -139,13 +142,16 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
 
         } catch (Exception e) {
             metrics.recordProcessingFailure();
-            log.error("Error processing Petasos message from {}: {}", destination, e.getMessage(), e);
+            String messageId = petasosMessage != null ? petasosMessage.getMessageId() : "unknown";
+            log.error("Error processing Petasos message [id={}] from destination {} [exception={}]",
+                    messageId, destination, e.getClass().getName());
 
             if (config.isAutoRejectOnError()) {
                 try {
                     session.recover(); // Triggers Artemis redelivery / DLQ routing based on max-delivery-attempts
                 } catch (JMSException ex) {
-                    log.error("Failed to recover session after error: {}", ex.getMessage(), ex);
+                    log.error("Failed to recover session after error for destination {} [exception={}]",
+                            destination, ex.getClass().getName());
                 }
             }
         }
@@ -168,12 +174,12 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
             try {
                 consumer.close();
             } catch (Exception e) {
-                log.debug("Error closing JMS MessageConsumer: {}", e.getMessage());
+                log.debug("Error closing JMS MessageConsumer [exception={}]", e.getClass().getName());
             }
             try {
                 session.close();
             } catch (Exception e) {
-                log.debug("Error closing JMS Session: {}", e.getMessage());
+                log.debug("Error closing JMS Session [exception={}]", e.getClass().getName());
             }
             log.debug("ArtemisPetasosSubscription closed for {}", destination);
         }
@@ -187,6 +193,8 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
         private final int deliveryCount;
         private final ArtemisConnectionManager connectionManager;
         private final PetasosMetricsCollector metrics;
+        private final DuplicateDetector duplicateDetector;
+        private final String dedupId;
         private final AtomicBoolean handled = new AtomicBoolean(false);
 
         public PetasosMessageContextImpl(
@@ -196,7 +204,9 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
                 PetasosDestination destination,
                 int deliveryCount,
                 ArtemisConnectionManager connectionManager,
-                PetasosMetricsCollector metrics) {
+                PetasosMetricsCollector metrics,
+                DuplicateDetector duplicateDetector,
+                String dedupId) {
             this.jmsMessage = jmsMessage;
             this.session = session;
             this.message = message;
@@ -204,6 +214,8 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
             this.deliveryCount = deliveryCount;
             this.connectionManager = connectionManager;
             this.metrics = metrics;
+            this.duplicateDetector = duplicateDetector;
+            this.dedupId = dedupId;
         }
 
         public boolean isHandled() {
@@ -215,9 +227,12 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
             if (handled.compareAndSet(false, true)) {
                 try {
                     jmsMessage.acknowledge();
+                    if (duplicateDetector != null && dedupId != null) {
+                        duplicateDetector.record(dedupId);
+                    }
                 } catch (JMSException e) {
                     metrics.recordProcessingFailure();
-                    throw new PetasosMessagingException("Failed to acknowledge message: " + e.getMessage(), e);
+                    throw new PetasosMessagingException("Failed to acknowledge message [exception=" + e.getClass().getName() + "]", e);
                 }
             }
         }
@@ -242,9 +257,12 @@ public class ArtemisPetasosSubscription implements PetasosSubscription, MessageL
                             dlqProducer.close();
                         }
                         jmsMessage.acknowledge();
+                        if (duplicateDetector != null && dedupId != null) {
+                            duplicateDetector.record(dedupId);
+                        }
                     }
                 } catch (JMSException e) {
-                    throw new PetasosMessagingException("Failed to reject message: " + e.getMessage(), e);
+                    throw new PetasosMessagingException("Failed to reject message [exception=" + e.getClass().getName() + "]", e);
                 }
             }
         }

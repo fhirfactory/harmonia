@@ -18,6 +18,10 @@
 package net.fhirfactory.harmonia.petasos.api.message;
 
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
@@ -99,5 +103,34 @@ class PetasosMessageTest {
         assertThat(copy.getMetadata()).containsEntry("key1", "val1").containsEntry("key2", "val2");
         assertThat(original.getMessageId()).isEqualTo("orig-1");
         assertThat(original.getMetadata()).doesNotContainKey("key2");
+    }
+
+    @Test
+    void testSecurityContextPropagationOnMessage() {
+        ThemisPrincipal human = ThemisPrincipal.of("dr.mark", PrincipalType.HUMAN, "CLINICAL");
+        ThemisSecurityContext secCtx = ThemisSecurityContext.builder()
+                .originatingPrincipal(human)
+                .securityDomain("CLINICAL")
+                .addAuthority("clinical.create")
+                .correlationId("corr-msg-1")
+                .build();
+
+        PetasosMessage message = PetasosMessage.builder()
+                .messageId("msg-sec-1")
+                .correlationId("corr-msg-1")
+                .securityContext(secCtx)
+                .payload("{\"resourceType\":\"Patient\"}")
+                .build();
+
+        assertThat(message.getSecurityContext()).isNotNull();
+        assertThat(message.getSecurityContext().originatingPrincipal()).isEqualTo(human);
+        assertThat(message.getOriginatingPrincipal()).isEqualTo(human);
+        assertThat(message.getSecurityContext().authorities()).extracting(ThemisAuthority::authorityCode).contains("clinical.create");
+
+        // Verify toBuilder retains security context
+        PetasosMessage cloned = message.toBuilder().causationId("parent-msg-1").build();
+        assertThat(cloned.getSecurityContext()).isNotNull();
+        assertThat(cloned.getOriginatingPrincipal()).isEqualTo(human);
+        assertThat(cloned.getCausationId()).isEqualTo("parent-msg-1");
     }
 }

@@ -26,6 +26,10 @@ import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -329,5 +333,120 @@ class ErgonBaseTest {
         assertThat(cachedPragma).isPresent();
         assertThat(cachedPragma.get().getOutput()).hasSize(3);
         assertThat(cachedPragma.get().getCheckpoints()).hasSize(2); // INGRESS and EGRESS
+    }
+
+    @Test
+    @DisplayName("Requirement 3: Child task creation propagates lineage, causation, and authoritative security context")
+    void testChildTaskSecurityAndLineageContextPropagation() {
+        DummyProcessorActivity activity = new DummyProcessorActivity();
+
+        Pragma parentPragma = new Pragma("PRAGMA-PARENT-999", "praxis-security-test", PragmaStatus.IN_PROGRESS);
+        parentPragma.setCorrelationId("CORR-ROOT-100");
+        parentPragma.setCausationId("MSG-INGRESS-001");
+        parentPragma.setPolicyVersion("1.0.0");
+
+        ThemisPrincipal originatingPrincipal = ThemisPrincipal.of("dr-smith", PrincipalType.HUMAN, "clinical");
+        parentPragma.setOriginatingPrincipal(originatingPrincipal);
+        parentPragma.addOriginatingAuthority("provider.change.submit");
+        parentPragma.addOriginatingAuthority("provider.read");
+        parentPragma.setExecutingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
+
+        Topic obsTopic = new Topic("Health", "FHIR", "R5", "Observation", null);
+        parentPragma.addOutput(ErgonPayload.fromFhirResource(0, obsTopic, obsTopic,
+                new Reference("Observation/OBS-1").setDisplay("Blood Glucose")));
+        parentPragma.addOutput(ErgonPayload.fromFhirResource(1, obsTopic, obsTopic,
+                new Reference("Observation/OBS-2").setDisplay("Blood Pressure")));
+
+        Task processedTask = PragmaFhirConverter.toFhirTask(parentPragma);
+        List<Task> childTasks = activity.createOutgoingTasks(processedTask, parentPragma);
+
+        assertThat(childTasks).hasSize(2);
+
+        for (int i = 0; i < childTasks.size(); i++) {
+            Task child = childTasks.get(i);
+            String expectedChildId = "PRAGMA-PARENT-999-out-" + (i + 1);
+            assertThat(child.getIdPart()).isEqualTo(expectedChildId);
+
+            // Identifiers: Pragma ID, Correlation ID, Causation ID (parent task ID)
+            assertThat(child.getIdentifier()).anyMatch(id ->
+                    PragmaFhirConverter.IDENTIFIER_SYSTEM_PRAGMA_ID.equals(id.getSystem()) && expectedChildId.equals(id.getValue()));
+            assertThat(child.getIdentifier()).anyMatch(id ->
+                    PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID.equals(id.getSystem()) && "CORR-ROOT-100".equals(id.getValue()));
+            assertThat(child.getIdentifier()).anyMatch(id ->
+                    PragmaFhirConverter.IDENTIFIER_SYSTEM_CAUSATION_ID.equals(id.getSystem()) && "PRAGMA-PARENT-999".equals(id.getValue()));
+
+            // Parent link
+            assertThat(child.getPartOfFirstRep().getReference()).isEqualTo("Task/PRAGMA-PARENT-999");
+
+            // Authoritative Originating Principal extensions
+            assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_ID).getValue().toString()).isEqualTo("dr-smith");
+            assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_TYPE).getValue().toString()).isEqualTo("HUMAN");
+            assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_SOURCE_DOMAIN).getValue().toString()).isEqualTo("clinical");
+
+            // Executing Principal extensions (PROCESS:ponos-engine)
+            assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID).getValue().toString()).isEqualTo("process:ponos-engine");
+            assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_TYPE).getValue().toString()).isEqualTo("PROCESS");
+
+            // Authority extensions
+            List<String> authorityValues = child.getExtensionsByUrl(PragmaFhirConverter.EXTENSION_SECURITY_AUTHORITY).stream()
+                    .map(e -> ((StringType) e.getValue()).getValue())
+                    .toList();
+            assertThat(authorityValues).containsExactlyInAnyOrder("provider.change.submit", "provider.read");
+
+            // Policy version extension
+            assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_POLICY_VERSION).getValue().toString()).isEqualTo("1.0.0");
+        }
+    }
+
+    @Test
+    @DisplayName("Requirement 4: Ingress fallback Pragma does not manufacture trusted security state")
+    void testIngressFallbackHardenedAgainstSecurityManufacture() throws Exception {
+        DummyProcessorActivity activity = new DummyProcessorActivity();
+
+        Exchange exchange = new org.apache.camel.support.DefaultExchange(camelContext);
+        exchange.getMessage().setHeader(ErgonBase.HEADER_TASK_ID, "TASK-UNAUTH-001");
+        exchange.getMessage().setBody("{\"raw\":\"payload\"}");
+
+        activity.processIngress(exchange);
+
+        Pragma ingressPragma = (Pragma) exchange.getMessage().getBody();
+        assertThat(ingressPragma).isNotNull();
+        assertThat(ingressPragma.getOriginatingPrincipal()).isNull();
+        assertThat(ingressPragma.getExecutingPrincipal()).isNull();
+        assertThat(ingressPragma.getOriginatingAuthorities()).isEmpty();
+        assertThat(ingressPragma.getOriginatingSecurityContext()).isNull();
+
+        Task fhirTask = (Task) exchange.getProperty(ErgonBase.PROPERTY_INCOMING_TASK);
+        assertThat(fhirTask).isNotNull();
+        assertThat(fhirTask.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_ID)).isNull();
+        assertThat(fhirTask.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID)).isNull();
+        assertThat(fhirTask.getExtensionsByUrl(PragmaFhirConverter.EXTENSION_SECURITY_AUTHORITY)).isEmpty();
+    }
+
+    @Test
+    @DisplayName("Requirement 5: createOutgoingTasks without authoritative Pragma does not manufacture security credentials")
+    void testOutgoingTaskWithoutAuthoritativePragmaDoesNotManufactureSecurityState() {
+        DummyProcessorActivity activity = new DummyProcessorActivity();
+
+        Task processedTask = new Task();
+        processedTask.setId("Task/TASK-NO-AUTH-001");
+        processedTask.addIdentifier(new Identifier()
+                .setSystem(PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID)
+                .setValue("CORR-NO-AUTH-123"));
+
+        List<Task> outgoingTasks = activity.createOutgoingTasks(processedTask, null);
+        assertThat(outgoingTasks).hasSize(1);
+        Task child = outgoingTasks.get(0);
+
+        assertThat(child.getIdPart()).isEqualTo("TASK-NO-AUTH-001-out-1");
+        assertThat(child.getIdentifier()).anyMatch(id ->
+                PragmaFhirConverter.IDENTIFIER_SYSTEM_CAUSATION_ID.equals(id.getSystem()) && "TASK-NO-AUTH-001".equals(id.getValue()));
+        assertThat(child.getIdentifier()).anyMatch(id ->
+                PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID.equals(id.getSystem()) && "CORR-NO-AUTH-123".equals(id.getValue()));
+
+        // Ensure zero security extensions are manufactured
+        assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_ID)).isNull();
+        assertThat(child.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID)).isNull();
+        assertThat(child.getExtensionsByUrl(PragmaFhirConverter.EXTENSION_SECURITY_AUTHORITY)).isEmpty();
     }
 }

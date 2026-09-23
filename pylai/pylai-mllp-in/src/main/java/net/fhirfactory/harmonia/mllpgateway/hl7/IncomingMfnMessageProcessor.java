@@ -311,7 +311,8 @@ public class IncomingMfnMessageProcessor {
             return MfnProcessingResult.success(messageControlId, triggerEvent, topic, practitionerId, practitionerFullName, savedCommunication, savedTask, ackString);
 
         } catch (Exception e) {
-            log.error("Error processing HL7 v2.4 MFN message: {}", e.getMessage(), e);
+            log.error("Error processing HL7 v2.4 MFN message [controlId={}, triggerEvent={}, exception={}, errorCode=AE, description=Processing error]",
+                    messageControlId, triggerEvent, e.getClass().getName());
             String ackString = extractor.generateFallbackAck(messageControlId, triggerEvent, "AE", e.getMessage());
             return MfnProcessingResult.failure(messageControlId, triggerEvent, topic, ackString, e.getMessage());
         }

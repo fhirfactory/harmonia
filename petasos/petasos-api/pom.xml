@@ -35,6 +35,13 @@
     <description>Petasos messaging abstraction layer for Harmonia modules without Artemis dependencies</description>
 
     <dependencies>
+        <!-- Themis API (Contracts & Domain Models) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>

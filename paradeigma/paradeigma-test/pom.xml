@@ -130,9 +130,15 @@
             <artifactId>themis-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- Kleio (Audit & Provenance Subsystem) -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>
-            <artifactId>themis-audit</artifactId>
+            <artifactId>kleio-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>kleio-fhir</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -189,10 +195,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

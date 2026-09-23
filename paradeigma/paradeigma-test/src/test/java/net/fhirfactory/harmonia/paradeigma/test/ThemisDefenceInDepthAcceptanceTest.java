@@ -51,8 +51,7 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisDecisionReason;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisResource;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
-import net.fhirfactory.harmonia.themis.audit.model.ThemisAuditEvent;
-import net.fhirfactory.harmonia.themis.audit.service.InMemoryThemisAuditService;
+import net.fhirfactory.harmonia.kleio.audit.service.InMemoryAuditService;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -88,7 +87,7 @@ class ThemisDefenceInDepthAcceptanceTest {
 
     private CamelContext camelContext;
     private ThemisService themisService;
-    private InMemoryThemisAuditService auditService;
+    private InMemoryAuditService auditService;
     private FhirStorageService storageServiceMock;
     private ProviderRegistryReferenceValidator referenceValidatorMock;
     private PragmaCacheService pragmaCacheServiceMock;
@@ -102,7 +101,7 @@ class ThemisDefenceInDepthAcceptanceTest {
     void setUp() throws Exception {
         camelContext = new DefaultCamelContext();
         themisService = DeterministicPolicyEvaluator.withDefaultPolicies();
-        auditService = new InMemoryThemisAuditService();
+        auditService = new InMemoryAuditService();
         storageServiceMock = Mockito.mock(FhirStorageService.class);
         referenceValidatorMock = Mockito.mock(ProviderRegistryReferenceValidator.class);
         pragmaCacheServiceMock = Mockito.mock(PragmaCacheService.class);

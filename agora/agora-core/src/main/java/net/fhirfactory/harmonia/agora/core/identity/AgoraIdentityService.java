@@ -318,7 +318,13 @@ public class AgoraIdentityService {
         String matrixUserId = deriveMatrixUserId(principalId);
 
         LOGGER.info("Deactivating user for principalId={}, userId={}, erase={}", principalId, matrixUserId, erase);
-        adminGateway.deactivateUser(matrixUserId, erase);
+        try {
+            adminGateway.deactivateUser(matrixUserId, erase);
+        } catch (SynapseAdminException e) {
+            LOGGER.warn("Synapse user deactivation failed for userId={}, status={}, errcode={}",
+                    matrixUserId, e.getHttpStatus(), e.getErrcode());
+            throw e;
+        }
 
         mappingRepository.findByHarmoniaResourceTypeAndHarmoniaResourceIdAndMatrixEntityType(
                 RESOURCE_TYPE_PRACTITIONER, principalId, MATRIX_ENTITY_USER
@@ -335,8 +341,8 @@ public class AgoraIdentityService {
                 return adminGateway.createOrUpdateUser(userRequest);
             } catch (SynapseAdminException e) {
                 lastException = e;
-                LOGGER.warn("Synapse user provisioning attempt {}/{} failed for userId={}, status={}: {}",
-                        attempt, maxRetries, userRequest.getUserId(), e.getHttpStatus(), e.getMessage());
+                LOGGER.warn("Synapse user provisioning attempt {}/{} failed for userId={}, status={}, errcode={}",
+                        attempt, maxRetries, userRequest.getUserId(), e.getHttpStatus(), e.getErrcode());
                 if (attempt < maxRetries) {
                     try {
                         Thread.sleep(50L * attempt);

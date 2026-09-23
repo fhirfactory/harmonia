@@ -102,7 +102,7 @@ public class PetasosQueueToExchangeConduit {
             log.info("Started PetasosQueueToExchangeConduit on queue [{}] -> target [{}]",
                     destinationQueue, targetEndpointUri != null ? targetEndpointUri : "dynamic-dispatcher");
         } catch (Exception e) {
-            log.error("Failed to start Petasos consumer for queue [{}]: {}", destinationQueue, e.getMessage(), e);
+            log.error("Failed to start Petasos consumer for queue [{}] [exception={}]", destinationQueue, e.getClass().getName());
         }
     }
 
@@ -121,7 +121,7 @@ public class PetasosQueueToExchangeConduit {
             running.set(false);
             log.info("Stopped PetasosQueueToExchangeConduit on queue [{}]", destinationQueue);
         } catch (Exception e) {
-            log.warn("Error stopping PetasosQueueToExchangeConduit: {}", e.getMessage());
+            log.warn("Error stopping PetasosQueueToExchangeConduit on queue [{}] [exception={}]", destinationQueue, e.getClass().getName());
         }
     }
 
@@ -157,7 +157,8 @@ public class PetasosQueueToExchangeConduit {
                 log.warn("Rejected Petasos message [id={}] due to workflow processing failure", message.getMessageId());
             }
         } catch (Exception e) {
-            log.error("Error dispatching Petasos message [id={}]: {}", message.getMessageId(), e.getMessage(), e);
+            log.error("Error dispatching Petasos message [id={}, pragmaId={}, queue={}, exception={}, category=DISPATCH_FAILURE]",
+                    message.getMessageId(), pragma != null ? pragma.getPragmaId() : "unknown", destinationQueue, e.getClass().getName());
             if (context != null) {
                 try {
                     context.reject();
@@ -201,6 +202,15 @@ public class PetasosQueueToExchangeConduit {
         if (pragma == null) {
             String pragmaId = StringUtils.isNotBlank(message.getMessageId()) ? message.getMessageId() : UUID.randomUUID().toString();
             pragma = new Pragma(pragmaId, null, PragmaStatus.REQUESTED);
+            if (StringUtils.isNotBlank(message.getCorrelationId())) {
+                pragma.setCorrelationId(message.getCorrelationId());
+            }
+            if (StringUtils.isNotBlank(message.getCausationId())) {
+                pragma.setCausationId(message.getCausationId());
+            }
+            if (StringUtils.isNotBlank(message.getSource())) {
+                pragma.setSource(message.getSource());
+            }
             pragma.setAuthoredOn(message.getTimestamp() != null ? Date.from(message.getTimestamp()) : new Date());
 
             if (StringUtils.isNotBlank(payloadStr)) {
@@ -208,37 +218,28 @@ public class PetasosQueueToExchangeConduit {
                 Topic content = new Topic("Health", "Payload", "1.0", "MessageContent", message.getContentType());
                 pragma.addInput(ErgonPayload.fromJson(0, container, content, payloadStr));
             }
+        } else {
+            // Pragma was deserialized from payload: only propagate transport metadata if not already set in Pragma
+            if (StringUtils.isBlank(pragma.getCorrelationId()) && StringUtils.isNotBlank(message.getCorrelationId())) {
+                pragma.setCorrelationId(message.getCorrelationId());
+            }
+            if (StringUtils.isBlank(pragma.getCausationId()) && StringUtils.isNotBlank(message.getCausationId())) {
+                pragma.setCausationId(message.getCausationId());
+            }
+            if (StringUtils.isBlank(pragma.getSource()) && StringUtils.isNotBlank(message.getSource())) {
+                pragma.setSource(message.getSource());
+            }
         }
 
-        // Propagate Petasos envelope metadata
-        if (StringUtils.isNotBlank(message.getCorrelationId())) {
-            pragma.setCorrelationId(message.getCorrelationId());
-        }
-        if (StringUtils.isNotBlank(message.getCausationId())) {
-            pragma.setCausationId(message.getCausationId());
-        }
-        if (StringUtils.isNotBlank(message.getSource())) {
-            pragma.setSource(message.getSource());
-        }
-
-        // Attach default service security context if none present on incoming message
-        if (pragma.getOriginatingPrincipal() == null) {
-            String source = StringUtils.isNotBlank(message.getSource()) ? message.getSource() : "service:petasos";
-            net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal principal =
-                    net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal.of(source, net.fhirfactory.harmonia.themis.api.model.PrincipalType.SERVICE, "petasos");
-            pragma.setOriginatingPrincipal(principal);
-            pragma.addOriginatingAuthority(net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority());
-            pragma.addOriginatingAuthority(net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum.SYSTEM_INTEGRATION.toThemisAuthority());
-            pragma.setOriginatingSecurityContext(net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext.fromPrincipal(principal, pragma.getCorrelationId()));
-            pragma.setPolicyVersion("1.0.0");
-        }
-        if (message.getDestination() != null) {
+        if (StringUtils.isBlank(pragma.getDestination()) && message.getDestination() != null) {
             pragma.setDestination(message.getDestination().getName());
         }
-        pragma.setPriority(message.getPriority());
+        if (pragma.getPriority() == null && message.getPriority() > 0) {
+            pragma.setPriority(message.getPriority());
+        }
         if (message.getMetadata() != null) {
             for (var entry : message.getMetadata().entrySet()) {
-                if (entry.getKey() != null && entry.getValue() != null) {
+                if (entry.getKey() != null && entry.getValue() != null && !pragma.getMetadata().containsKey(entry.getKey())) {
                     pragma.addMetadata(entry.getKey(), entry.getValue().toString());
                 }
             }

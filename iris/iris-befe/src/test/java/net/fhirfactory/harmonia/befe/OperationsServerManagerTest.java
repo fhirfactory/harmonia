@@ -17,6 +17,7 @@
 
 package net.fhirfactory.harmonia.befe;
 
+import net.fhirfactory.harmonia.befe.config.BefeCorsConfig;
 import net.fhirfactory.harmonia.befe.rest.SystemStatusResource;
 import net.fhirfactory.harmonia.befe.rest.TaskSequenceResource;
 import net.fhirfactory.harmonia.befe.server.OperationsServerManager;
@@ -48,6 +49,9 @@ class OperationsServerManagerTest {
 
     @BeforeEach
     void setUp() throws Exception {
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+        BefeCorsConfig.setAllowedOriginsOverrideForTesting("https://clinical.harmonia.local,https://console.harmonia.local");
+
         sequenceCacheService = new TaskSequenceCacheService();
         sequenceCacheService.init();
 
@@ -81,6 +85,7 @@ class OperationsServerManagerTest {
 
     @AfterEach
     void tearDown() {
+        BefeCorsConfig.resetAllowedOriginsForTesting();
         if (serverManager != null) {
             serverManager.stopServer();
         }
@@ -204,16 +209,68 @@ class OperationsServerManagerTest {
     }
 
     @Test
-    @DisplayName("3. Operations HTTP Server supports CORS preflight")
+    @DisplayName("3. Operations HTTP Server supports CORS preflight and hardened origin validation")
     void testCorsPreflight() throws Exception {
+        // 1. Trusted origin preflight
         URI uri = URI.create("http://127.0.0.1:" + testPort + "/api/operations/sequences");
         HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection();
         conn.setRequestMethod("OPTIONS");
+        conn.setRequestProperty("Origin", "https://clinical.harmonia.local");
         conn.connect();
 
         assertThat(conn.getResponseCode()).isEqualTo(200);
-        assertThat(conn.getHeaderField("Access-Control-Allow-Origin")).isEqualTo("*");
+        assertThat(conn.getHeaderField("Access-Control-Allow-Origin")).isEqualTo("https://clinical.harmonia.local");
+        assertThat(conn.getHeaderField("Vary")).isEqualTo("Origin");
         assertThat(conn.getHeaderField("Access-Control-Allow-Methods")).contains("GET", "POST", "PUT", "DELETE", "OPTIONS");
+        assertThat(conn.getHeaderField("Access-Control-Allow-Headers")).contains("Authorization", "Content-Type");
+        assertThat(conn.getHeaderField("Access-Control-Max-Age")).isEqualTo("86400");
+        assertThat(conn.getHeaderField("Access-Control-Allow-Credentials")).isNull();
+
+        // 2. Untrusted origin preflight is rejected with 403 Forbidden
+        HttpURLConnection untrustedConn = (HttpURLConnection) uri.toURL().openConnection();
+        untrustedConn.setRequestMethod("OPTIONS");
+        untrustedConn.setRequestProperty("Origin", "https://attacker.example");
+        untrustedConn.connect();
+
+        assertThat(untrustedConn.getResponseCode()).isEqualTo(403);
+        assertThat(untrustedConn.getHeaderField("Access-Control-Allow-Origin")).isNull();
+
+        // 3. Non-CORS OPTIONS request receives 405 Method Not Allowed
+        HttpURLConnection nonCorsConn = (HttpURLConnection) uri.toURL().openConnection();
+        nonCorsConn.setRequestMethod("OPTIONS");
+        nonCorsConn.connect();
+
+        assertThat(nonCorsConn.getResponseCode()).isEqualTo(405);
+        assertThat(nonCorsConn.getHeaderField("Access-Control-Allow-Origin")).isNull();
+
+        // 4. Trusted origin GET receives exact origin and Vary: Origin
+        URI statusUri = URI.create("http://127.0.0.1:" + testPort + "/api/operations/status");
+        HttpURLConnection getTrustedConn = (HttpURLConnection) statusUri.toURL().openConnection();
+        getTrustedConn.setRequestMethod("GET");
+        getTrustedConn.setRequestProperty("Origin", "https://clinical.harmonia.local");
+        getTrustedConn.connect();
+
+        assertThat(getTrustedConn.getResponseCode()).isEqualTo(200);
+        assertThat(getTrustedConn.getHeaderField("Access-Control-Allow-Origin")).isEqualTo("https://clinical.harmonia.local");
+        assertThat(getTrustedConn.getHeaderField("Vary")).isEqualTo("Origin");
+        assertThat(getTrustedConn.getHeaderField("Access-Control-Allow-Credentials")).isNull();
+
+        // 5. Untrusted origin GET receives response without Access-Control-Allow-Origin
+        HttpURLConnection getUntrustedConn = (HttpURLConnection) statusUri.toURL().openConnection();
+        getUntrustedConn.setRequestMethod("GET");
+        getUntrustedConn.setRequestProperty("Origin", "https://attacker.example");
+        getUntrustedConn.connect();
+
+        assertThat(getUntrustedConn.getResponseCode()).isEqualTo(200);
+        assertThat(getUntrustedConn.getHeaderField("Access-Control-Allow-Origin")).isNull();
+
+        // 6. Non-CORS GET receives response without Access-Control-Allow-Origin
+        HttpURLConnection getNonCorsConn = (HttpURLConnection) statusUri.toURL().openConnection();
+        getNonCorsConn.setRequestMethod("GET");
+        getNonCorsConn.connect();
+
+        assertThat(getNonCorsConn.getResponseCode()).isEqualTo(200);
+        assertThat(getNonCorsConn.getHeaderField("Access-Control-Allow-Origin")).isNull();
     }
 
     @Test

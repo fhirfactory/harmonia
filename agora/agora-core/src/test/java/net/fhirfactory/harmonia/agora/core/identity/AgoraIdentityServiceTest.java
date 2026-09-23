@@ -36,6 +36,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.read.ListAppender;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -246,5 +253,81 @@ class AgoraIdentityServiceTest {
                 .findByHarmoniaResourceTypeAndHarmoniaResourceIdAndMatrixEntityType("PRACTITIONER", principalId, "USER");
         assertThat(mappingOpt).isPresent();
         assertThat(mappingOpt.get().getStatus()).isEqualTo("DEACTIVATED");
+    }
+
+    @Test
+    @DisplayName("Provisioning retry logging suppresses PHI and secret markers in SynapseAdminException")
+    void testProvisionUserRetryLoggingSuppressesPhiAndSecrets() {
+        String principalId = "practitioner-phi-retry";
+        String expectedUserId = identityService.deriveMatrixUserId(principalId);
+
+        Logger logger = (Logger) LoggerFactory.getLogger(AgoraIdentityService.class);
+        ListAppender<ILoggingEvent> appender = new ListAppender<>();
+        appender.start();
+        logger.addAppender(appender);
+
+        try {
+            when(adminGateway.createOrUpdateUser(any(MatrixUserDto.class)))
+                    .thenThrow(new SynapseAdminException(503, "M_UNAVAILABLE", "Downstream error",
+                            "Echo: PATIENT-PHI-MARKER-92831 TOKEN-SECRET-MARKER-81742"));
+
+            assertThatThrownBy(() -> identityService.provisionUser("PRACTITIONER", principalId, "Dr. Secret", adminContext))
+                    .isInstanceOf(IllegalStateException.class);
+
+            List<ILoggingEvent> warnEvents = appender.list.stream()
+                    .filter(e -> e.getLevel() == Level.WARN)
+                    .toList();
+
+            assertThat(warnEvents).isNotEmpty();
+            for (ILoggingEvent event : warnEvents) {
+                assertThat(event.getFormattedMessage())
+                        .contains("userId=" + expectedUserId)
+                        .contains("status=503")
+                        .contains("errcode=M_UNAVAILABLE")
+                        .doesNotContain("PATIENT-PHI-MARKER-92831")
+                        .doesNotContain("TOKEN-SECRET-MARKER-81742");
+            }
+        } finally {
+            logger.detachAppender(appender);
+            appender.stop();
+        }
+    }
+
+    @Test
+    @DisplayName("Deactivation error logging suppresses PHI and secret markers in SynapseAdminException")
+    void testDeactivateUserLoggingSuppressesPhiAndSecrets() {
+        String principalId = "practitioner-phi-deact";
+        String expectedUserId = identityService.deriveMatrixUserId(principalId);
+
+        Logger logger = (Logger) LoggerFactory.getLogger(AgoraIdentityService.class);
+        ListAppender<ILoggingEvent> appender = new ListAppender<>();
+        appender.start();
+        logger.addAppender(appender);
+
+        try {
+            doThrow(new SynapseAdminException(500, "M_UNKNOWN", "Downstream error",
+                    "Echo: PATIENT-PHI-MARKER-92831 TOKEN-SECRET-MARKER-81742"))
+                    .when(adminGateway).deactivateUser(expectedUserId, false);
+
+            assertThatThrownBy(() -> identityService.deactivateUser(principalId, false, adminContext))
+                    .isInstanceOf(SynapseAdminException.class);
+
+            List<ILoggingEvent> warnEvents = appender.list.stream()
+                    .filter(e -> e.getLevel() == Level.WARN)
+                    .toList();
+
+            assertThat(warnEvents).isNotEmpty();
+            for (ILoggingEvent event : warnEvents) {
+                assertThat(event.getFormattedMessage())
+                        .contains("userId=" + expectedUserId)
+                        .contains("status=500")
+                        .contains("errcode=M_UNKNOWN")
+                        .doesNotContain("PATIENT-PHI-MARKER-92831")
+                        .doesNotContain("TOKEN-SECRET-MARKER-81742");
+            }
+        } finally {
+            logger.detachAppender(appender);
+            appender.stop();
+        }
     }
 }

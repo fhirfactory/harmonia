@@ -73,7 +73,9 @@ public class IncomingMfnMessageProcessorWrapper implements Processor {
         Object body = exchange.getMessage().getBody();
         String hl7Message = convertToString(body);
 
-        log.debug("Received HL7 MFN message for processing:\n{}", hl7Message);
+        String[] metadata = extractMshMetadata(hl7Message);
+        log.debug("Received HL7 MFN message for processing [messageType={}, controlId={}, length={}]",
+                metadata[0], metadata[1], hl7Message != null ? hl7Message.length() : 0);
 
         MfnProcessingResult result = transformer.processMfnMessage(hl7Message);
 
@@ -113,9 +115,28 @@ public class IncomingMfnMessageProcessorWrapper implements Processor {
         }
 
         if (!result.isSuccess()) {
-            log.warn("MFN trigger event processing failed for control ID: {}, error: {}",
-                    result.getMessageControlId(), result.getErrorMessage());
+            log.warn("MFN trigger event processing failed [controlId={}, triggerEvent={}, category=MFN_PROCESSING_FAILED]",
+                    result.getMessageControlId(), result.getTriggerEvent());
         }
+    }
+
+    private static String[] extractMshMetadata(String raw) {
+        if (raw == null) {
+            return new String[]{"UNKNOWN", "UNKNOWN"};
+        }
+        String trimmed = raw.stripLeading();
+        if (!trimmed.startsWith("MSH")) {
+            return new String[]{"UNKNOWN", "UNKNOWN"};
+        }
+        int endOfFirstLine = trimmed.indexOf('\r');
+        if (endOfFirstLine == -1) {
+            endOfFirstLine = trimmed.indexOf('\n');
+        }
+        String msh = endOfFirstLine >= 0 ? trimmed.substring(0, endOfFirstLine) : trimmed;
+        String[] parts = msh.split("\\|", -1);
+        String messageType = (parts.length > 8 && !parts[8].isBlank()) ? parts[8].trim() : "UNKNOWN";
+        String controlId = (parts.length > 9 && !parts[9].isBlank()) ? parts[9].trim() : "UNKNOWN";
+        return new String[]{messageType, controlId};
     }
 
     private String convertToString(Object body) {

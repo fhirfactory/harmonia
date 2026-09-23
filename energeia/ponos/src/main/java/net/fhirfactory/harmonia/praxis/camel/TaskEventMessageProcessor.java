@@ -23,6 +23,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
 import net.fhirfactory.harmonia.model.topic.Topic;
@@ -43,6 +45,7 @@ import java.util.Optional;
 public class TaskEventMessageProcessor implements Processor {
 
     private static final Logger log = LoggerFactory.getLogger(TaskEventMessageProcessor.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(TaskEventMessageProcessor.class);
 
     @Inject
     private TaskCacheService taskCacheService;
@@ -63,7 +66,7 @@ public class TaskEventMessageProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         Object body = exchange.getMessage().getBody();
         if (body == null) {
-            log.warn("Received empty/null TaskEvent message body on Camel route");
+            log.warn("Received empty/null TaskEvent message body on Camel route [category=EMPTY_PAYLOAD, stage=RECEIVED]");
             return;
         }
 
@@ -77,33 +80,29 @@ public class TaskEventMessageProcessor implements Processor {
         if (body instanceof ErgonEvent) {
             ergonEvent = (ErgonEvent) body;
             rawContent = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(ergonEvent);
-        } else if (body instanceof byte[]) {
-            rawContent = new String((byte[]) body);
-            ergonEvent = objectMapper.readValue(rawContent, ErgonEvent.class);
-        } else if (body instanceof String) {
-            rawContent = (String) body;
-            ergonEvent = objectMapper.readValue(rawContent, ErgonEvent.class);
         } else {
-            rawContent = body.toString();
+            if (body instanceof byte[]) {
+                rawContent = new String((byte[]) body);
+            } else if (body instanceof String) {
+                rawContent = (String) body;
+            } else {
+                rawContent = body.toString();
+            }
+
             try {
                 ergonEvent = objectMapper.readValue(rawContent, ErgonEvent.class);
             } catch (Exception e) {
-                log.warn("Could not parse body as TaskEvent JSON, attempting fallback: {}", e.getMessage());
-                ergonEvent = new ErgonEvent(rawContent.trim(), "PROCESS", "COMPLETED");
+                log.warn("Could not parse body as TaskEvent JSON [exception={}, category=TASK_EVENT_PARSE_FAILURE], attempting fallback", e.getClass().getName());
+                String fallbackId = rawContent.trim();
+                if (fallbackId.contains("{") || fallbackId.contains("\n") || fallbackId.length() > 128) {
+                    fallbackId = "unknown";
+                }
+                ergonEvent = new ErgonEvent(fallbackId, "PROCESS", "COMPLETED");
             }
         }
 
-        // Print out the message content as required
-        System.out.println("=================================================");
-        System.out.println("[TASK-EVENT-PROCESSOR] Incoming TaskEvent Content Received:");
-        System.out.println("TaskId: " + (ergonEvent != null ? ergonEvent.getTaskId() : "null")
-                + " | Gateway: " + (ergonEvent != null ? ergonEvent.getGatewayInstanceId() : "null")
-                + " | Trigger: " + (ergonEvent != null ? (ergonEvent.getMessageType() + "^" + ergonEvent.getTriggerType()) : "null")
-                + " | Action: " + (ergonEvent != null ? ergonEvent.getAction() : "null")
-                + " | Status: " + (ergonEvent != null ? ergonEvent.getStatus() : "null"));
-        System.out.println(rawContent);
-        System.out.println("=================================================");
-        log.info("[TASK-EVENT-PROCESSOR] Processing incoming TaskEvent:\n{}", rawContent);
+        // Diagnostic payload inspection routed exclusively to PhiLogger at DEBUG
+        phiLog.debug("[TASK-EVENT-PROCESSOR] Incoming TaskEvent payload: {}", rawContent);
 
         // Populate any missing fields from exchange headers if available
         if (ergonEvent != null) {
@@ -129,12 +128,22 @@ public class TaskEventMessageProcessor implements Processor {
             }
         }
 
-        if (ergonEvent == null || StringUtils.isBlank(ergonEvent.getTaskId())) {
-            log.error("TaskEvent does not contain a valid taskId: {}", rawContent);
+        if (ergonEvent == null || StringUtils.isBlank(ergonEvent.getTaskId()) || "unknown".equals(ergonEvent.getTaskId())) {
+            log.error("TaskEvent does not contain a valid taskId [category=INVALID_TASK_EVENT, stage=VALIDATION, payloadLength={}]",
+                    rawContent != null ? rawContent.length() : 0);
             return;
         }
 
-        String taskId = ergonEvent.getTaskId().trim();
+        String eventTaskId = ergonEvent.getTaskId().trim();
+        String eventBusinessStatus = StringUtils.isNotBlank(ergonEvent.getAction()) ? ergonEvent.getAction() : "none";
+        String eventPriority = "none";
+        String eventType = StringUtils.isNotBlank(ergonEvent.getMessageType()) ? ergonEvent.getMessageType() : "ErgonEvent";
+        String triggerReason = StringUtils.isNotBlank(ergonEvent.getTriggerType()) ? ergonEvent.getTriggerType() : eventBusinessStatus;
+
+        log.info("[TASK-EVENT-PROCESSOR] Processing incoming TaskEvent: [taskId={}, businessStatus={}, priority={}, eventType={}, triggerReason={}, stage=PROCESSING]",
+                eventTaskId, eventBusinessStatus, eventPriority, eventType, triggerReason);
+
+        String taskId = eventTaskId;
         if (taskId.startsWith("Task/")) {
             taskId = taskId.substring("Task/".length());
         }
@@ -144,9 +153,9 @@ public class TaskEventMessageProcessor implements Processor {
         Task task;
         if (cachedTaskOpt.isPresent()) {
             task = cachedTaskOpt.get();
-            log.info("Retrieved Task/{} from cache for TaskEvent processing", taskId);
+            log.info("Retrieved Task/{} from cache for TaskEvent processing [stage=CACHE_LOOKUP]", taskId);
         } else {
-            log.warn("Task/{} not found in cache. Creating baseline Task instance.", taskId);
+            log.warn("Task/{} not found in cache. Creating baseline Task instance [category=TASK_CACHE_MISS, stage=CACHE_LOOKUP].", taskId);
             task = new Task();
             task.setId("Task/" + taskId);
             task.setAuthoredOn(new Date());
@@ -205,11 +214,13 @@ public class TaskEventMessageProcessor implements Processor {
 
         // Save updated task to Infinispan cache
         taskCacheService.saveTask(task);
-        log.info("Task/{} updated and persisted to cache following TaskEvent [action={}]", taskId, actionText);
+        log.info("Task/{} updated and persisted to cache following TaskEvent [action={}, stage=COMPLETED]", taskId, actionText);
 
         // Output processed task JSON on exchange
         IParser parser = (fhirContext != null ? fhirContext : FhirContext.forR5()).newJsonParser().setPrettyPrint(true);
         String taskJson = parser.encodeResourceToString(task);
+        phiLog.trace("[TASK-EVENT-PROCESSOR] Updated Task output payload: {}", taskJson);
+
         exchange.getMessage().setBody(taskJson);
         exchange.getMessage().setHeader("HIE_TASK_ID", taskId);
         exchange.getMessage().setHeader("HIE_TASK_EVENT_ACTION", actionText);

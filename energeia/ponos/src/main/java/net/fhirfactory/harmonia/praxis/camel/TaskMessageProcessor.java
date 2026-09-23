@@ -21,10 +21,13 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.logging.PhiLogger;
+import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.commons.lang3.StringUtils;
+import org.hl7.fhir.r5.model.CodeableReference;
 import org.hl7.fhir.r5.model.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +36,7 @@ import org.slf4j.LoggerFactory;
 public class TaskMessageProcessor implements Processor {
 
     private static final Logger log = LoggerFactory.getLogger(TaskMessageProcessor.class);
+    private static final PhiLogger phiLog = PhiLoggerFactory.getLogger(TaskMessageProcessor.class);
 
     @Inject
     private TaskCacheService taskCacheService;
@@ -44,7 +48,7 @@ public class TaskMessageProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         Object body = exchange.getMessage().getBody();
         if (body == null) {
-            log.warn("Received empty/null message body on Camel route");
+            log.warn("Received empty/null message body on Camel route [category=EMPTY_PAYLOAD, stage=RECEIVED]");
             return;
         }
 
@@ -61,12 +65,8 @@ public class TaskMessageProcessor implements Processor {
             rawContent = body.toString();
         }
 
-        // Print out the message content as required
-        System.out.println("=================================================");
-        System.out.println("[TASK-PROCESSOR] Incoming Message Content Received:");
-        System.out.println(rawContent);
-        System.out.println("=================================================");
-        log.info("[TASK-PROCESSOR] Processing incoming message content:\n{}", rawContent);
+        // Diagnostic payload inspection routed exclusively to PhiLogger at DEBUG
+        phiLog.debug("[TASK-PROCESSOR] Incoming Task message payload: {}", rawContent);
 
         // Parse to FHIR Task if not already parsed
         if (task == null && StringUtils.isNotBlank(rawContent)) {
@@ -77,11 +77,14 @@ public class TaskMessageProcessor implements Processor {
                 }
                 task = parser.parseResource(Task.class, rawContent);
             } catch (Exception e) {
-                log.warn("Payload is not directly parseable as a FHIR Task resource: {}. Checking if it is a Task ID.", e.getMessage());
+                log.warn("Payload is not directly parseable as a FHIR Task resource [exception={}, category=TASK_PARSE_FAILURE]. Checking if it is a Task ID.", e.getClass().getName());
                 // Fallback: check if content is a Task ID
                 String cleanId = rawContent.trim().replace("\"", "");
+                if (cleanId.contains("{") || cleanId.contains("\n") || cleanId.length() > 128) {
+                    cleanId = "unknown";
+                }
                 task = taskCacheService.getTask(cleanId).orElse(null);
-                if (task == null) {
+                if (task == null && !"unknown".equals(cleanId)) {
                     task = new Task();
                     task.setId("Task/" + cleanId);
                 }
@@ -89,14 +92,42 @@ public class TaskMessageProcessor implements Processor {
         }
 
         if (task == null) {
-            log.error("Could not obtain or create a Task resource from payload: {}", rawContent);
+            log.error("Could not obtain or create a Task resource [category=TASK_CREATION_FAILURE, stage=PARSE, payloadLength={}]",
+                    rawContent != null ? rawContent.length() : 0);
             return;
         }
+
+        // Extract safe operational metadata for logging
+        String taskId = task.hasId() ? task.getIdElement().getIdPart() : "unknown";
+        String businessStatus = task.hasBusinessStatus() ? task.getBusinessStatus().getText() : "none";
+        String priority = (task.hasPriority() && task.getPriority() != null) ? task.getPriority().toCode() : "none";
+        String eventType = exchange.getMessage().getHeader("HIE_MESSAGE_TYPE", String.class);
+        if (StringUtils.isBlank(eventType)) {
+            eventType = "Task";
+        }
+        String triggerReason = exchange.getMessage().getHeader("HIE_TRIGGER_TYPE", String.class);
+        if (StringUtils.isBlank(triggerReason)) {
+            triggerReason = exchange.getMessage().getHeader("HIE_TASK_EVENT_ACTION", String.class);
+        }
+        if (StringUtils.isBlank(triggerReason) && task.hasReason() && !task.getReason().isEmpty()) {
+            CodeableReference ref = task.getReason().get(0);
+            if (ref.hasConcept() && ref.getConcept().hasText()) {
+                triggerReason = ref.getConcept().getText();
+            } else if (ref.hasConcept() && !ref.getConcept().getCoding().isEmpty()) {
+                triggerReason = ref.getConcept().getCoding().get(0).getCode();
+            }
+        }
+        if (StringUtils.isBlank(triggerReason)) {
+            triggerReason = "none";
+        }
+
+        log.info("[TASK-PROCESSOR] Processing incoming Task: [taskId={}, businessStatus={}, priority={}, eventType={}, triggerReason={}, stage=PROCESSING]",
+                taskId, businessStatus, priority, eventType, triggerReason);
 
         // Update the Task persisted within the Infinispan cache to indicate that it has been processed
         Task processedTask = taskCacheService.markTaskAsProcessed(task);
 
-        log.info("Task [id={}, status={}, businessStatus={}] successfully updated and marked as processed in Infinispan cache",
+        log.info("Task [id={}, status={}, businessStatus={}, stage=COMPLETED] successfully updated and marked as processed in Infinispan cache",
                 processedTask.getId(),
                 processedTask.getStatus(),
                 processedTask.hasBusinessStatus() ? processedTask.getBusinessStatus().getText() : "none");
@@ -104,6 +135,8 @@ public class TaskMessageProcessor implements Processor {
         // Set the processed Task and JSON as output on the exchange
         IParser prettyParser = (fhirContext != null ? fhirContext : FhirContext.forR5()).newJsonParser().setPrettyPrint(true);
         String updatedJson = prettyParser.encodeResourceToString(processedTask);
+        phiLog.trace("[TASK-PROCESSOR] Processed Task output payload: {}", updatedJson);
+
         exchange.getMessage().setBody(updatedJson);
         exchange.getMessage().setHeader("HIE_TASK_ID", processedTask.getIdElement().getIdPart());
         exchange.getMessage().setHeader("HIE_TASK_PROCESSED", true);

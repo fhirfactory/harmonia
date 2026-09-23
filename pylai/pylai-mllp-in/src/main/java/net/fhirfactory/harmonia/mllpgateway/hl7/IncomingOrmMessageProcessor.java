@@ -181,7 +181,8 @@ public class IncomingOrmMessageProcessor {
                     universalServiceId, patientId, comm, savedTask, null, ack);
 
         } catch (Exception e) {
-            log.error("Failed to parse and process HL7 ORM message: {}", e.getMessage(), e);
+            log.error("Failed to parse and process HL7 ORM message [exception={}, errorCode=AE, description=Processing error]",
+                    e.getClass().getName());
             String ack = extractor.generateFallbackAck(rawHl7Message, "AE", e.getMessage());
             return OrmProcessingResult.failure("UNKNOWN", "O01", ack, e.getMessage());
         }

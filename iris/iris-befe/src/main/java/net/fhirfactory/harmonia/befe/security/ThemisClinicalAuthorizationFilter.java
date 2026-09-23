@@ -33,12 +33,14 @@ import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.themis.api.ThemisAuthorizer;
 import net.fhirfactory.harmonia.themis.api.model.*;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.OperationOutcome;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.util.*;
 
 /**
@@ -78,11 +80,27 @@ public class ThemisClinicalAuthorizationFilter implements ContainerRequestFilter
     @Inject
     private ThemisAuthorizer themisAuthorizer;
 
+    @Inject
+    private ThemisSecurityContextProvider contextProvider;
+
     public ThemisClinicalAuthorizationFilter() {
     }
 
     public ThemisClinicalAuthorizationFilter(ThemisAuthorizer themisAuthorizer) {
         this.themisAuthorizer = themisAuthorizer;
+    }
+
+    public ThemisClinicalAuthorizationFilter(ThemisAuthorizer themisAuthorizer, ThemisSecurityContextProvider contextProvider) {
+        this.themisAuthorizer = themisAuthorizer;
+        this.contextProvider = contextProvider;
+    }
+
+    public ThemisSecurityContextProvider getContextProvider() {
+        return contextProvider;
+    }
+
+    public void setContextProvider(ThemisSecurityContextProvider contextProvider) {
+        this.contextProvider = contextProvider;
     }
 
     @Override
@@ -146,7 +164,14 @@ public class ThemisClinicalAuthorizationFilter implements ContainerRequestFilter
                 .build();
 
         // 7. Build Security Context and Authorization Request
-        ThemisSecurityContext secContext = ThemisSecurityContext.fromPrincipal(principal, correlationId);
+        ThemisSecurityContext secContext = ThemisSecurityContext.builder()
+                .requestingPrincipal(principal)
+                .executingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_IRIS_BEFE)
+                .securityDomain(HarmoniaSecurityLabelEnum.CLINICAL.getCode())
+                .authorities(authorities)
+                .correlationId(correlationId)
+                .requestedAt(Instant.now())
+                .build();
         ThemisAuthorizationRequest authRequest = ThemisAuthorizationRequest.builder()
                 .principal(principal)
                 .authorities(authorities)
@@ -182,6 +207,10 @@ public class ThemisClinicalAuthorizationFilter implements ContainerRequestFilter
         requestContext.setProperty(ATTR_THEMIS_AUTHORITIES, authorities);
         requestContext.setProperty(ATTR_THEMIS_CONTEXT, secContext);
         requestContext.setProperty(ATTR_THEMIS_DECISION, decision);
+
+        if (contextProvider != null) {
+            contextProvider.setSecurityContext(secContext);
+        }
 
         log.debug("Themis clinical authorization GRANTED for principal [{}] performing [{}] on [{}{}]",
                 principal.principalId(), action, resourceType, resourceId != null ? "/" + resourceId : "");

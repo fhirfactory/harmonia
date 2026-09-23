@@ -59,4 +59,14 @@ public record ThemisPrincipal(
     public static ThemisPrincipal process(String principalId) {
         return of(principalId, PrincipalType.PROCESS);
     }
+
+    @Override
+    public String toString() {
+        return "ThemisPrincipal[" +
+                "principalId=" + principalId +
+                ", principalType=" + principalType +
+                ", sourceDomain=" + sourceDomain +
+                ", attributeCount=" + (attributes != null ? attributes.size() : 0) +
+                "]";
+    }
 }

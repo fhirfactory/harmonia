@@ -51,6 +51,7 @@
         <module>energeia</module>
         <module>petasos</module>
         <module>agora</module>
+        <module>kleio</module>
         <module>paradeigma</module>
     </modules>
 
@@ -119,9 +120,16 @@
                 <artifactId>themis-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <!-- Kleio (Audit & Provenance Subsystem) -->
             <dependency>
                 <groupId>net.fhirfactory.harmonia</groupId>
-                <artifactId>themis-audit</artifactId>
+                <artifactId>kleio-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>kleio-fhir</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

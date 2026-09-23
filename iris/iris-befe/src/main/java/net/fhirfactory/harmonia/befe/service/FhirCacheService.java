@@ -22,8 +22,10 @@ import ca.uhn.fhir.parser.IParser;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import net.fhirfactory.harmonia.befe.security.ThemisSecurityContextProvider;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -44,12 +46,27 @@ public class FhirCacheService {
     @Inject
     private RemoteCacheManager remoteCacheManager;
 
+    @Inject
+    private ThemisSecurityContextProvider securityContextProvider;
+
     private FhirContext fhirContext;
     private final Map<String, Map<String, String>> localFallbackCaches = new ConcurrentHashMap<>();
 
     @PostConstruct
     public void init() {
         this.fhirContext = FhirContext.forR5();
+    }
+
+    public ThemisSecurityContextProvider getSecurityContextProvider() {
+        return securityContextProvider;
+    }
+
+    public void setSecurityContextProvider(ThemisSecurityContextProvider securityContextProvider) {
+        this.securityContextProvider = securityContextProvider;
+    }
+
+    public Optional<ThemisSecurityContext> getActiveSecurityContext() {
+        return securityContextProvider != null ? securityContextProvider.getSecurityContext() : Optional.empty();
     }
 
     public FhirContext getFhirContext() {

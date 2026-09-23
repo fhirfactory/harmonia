@@ -1,0 +1,269 @@
+%% =============================================================================
+%% appendices/appendix-backlog.tex
+%% Harmonia Architecture & Implementation Backlog
+%% =============================================================================
+
+\chapter{Architecture and Implementation Backlog}
+\label{app:backlog}
+
+This appendix records identified work required to converge the Harmonia implementation toward the target architecture. Unlike the Architecture Requirements catalogue, backlog items are intentionally implementation-aware and may be completed, replaced, decomposed, or retired as the codebase evolves.
+
+\section{Backlog Conventions}
+
+Backlog identifiers use the form \texttt{BL-<DOMAIN>-nnn}. Each item should identify the requirement(s) it supports and, where relevant, the architecture finding that caused the work to be raised.
+
+Suggested lifecycle states are \texttt{IDENTIFIED}, \texttt{PLANNED}, \texttt{IN-PROGRESS}, \texttt{BLOCKED}, \texttt{DONE}, and \texttt{SUPERSEDED}.
+
+\section{Foundation Convergence}
+
+\subsection{BL-SEC-001 --- Complete Clinical Authorisation Boundary}
+Ensure all Clinical FHIR endpoints pass through the trusted Themis authorisation boundary using authenticated container identity, deterministic policy evaluation, correct action/resource mapping, default-deny behaviour, and 401/403 semantics.
+
+\textbf{Supports:} \texttt{SEC-001}, \texttt{SEC-002}, \texttt{SEC-003}, \texttt{SEC-004}.
+
+\subsection{BL-SEC-002 --- Complete Security Context Propagation}
+Propagate the canonical Themis security context across Iris BEFE, Pylai, Petasos messages, Ponos/Erga processing, Mnemosyne persistence, retry, replay, and recovery while retaining initiating and executing principals.
+
+\textbf{Supports:} \texttt{SEC-005}, \texttt{SEC-006}, \texttt{SEC-008}, \texttt{PROV-003}.
+
+\subsection{BL-SEC-003 --- Close Internal Trust-Boundary Spoofing Paths}
+Remove or protect code paths that accept caller-controlled principal/role headers. Establish a trusted internal service-to-service context propagation mechanism before accepting forwarded security context.
+
+\textbf{Supports:} \texttt{SEC-007}, \texttt{SEC-009}.
+
+\subsection{BL-SEC-004 --- Restrict Browser CORS}
+Replace wildcard credentialed CORS behaviour with configured trusted Iris origins.
+
+\textbf{Supports:} \texttt{SEC-007}, \texttt{SEC-009}.
+
+\subsection{BL-PROV-001 --- Complete End-to-End Provenance Framework}
+Ensure ingress, workflow, transformation, persistence, and egress produce/retain sufficient provenance, including source context and initiating/executing actor relationships.
+
+\textbf{Supports:} \texttt{PROV-001}--\texttt{PROV-004}.
+
+\subsection{BL-PROV-002 --- Enforce AuditEvent WORM Behaviour}
+Remove ordinary update/delete behaviour for AuditEvent from service and UI layers; establish durable immutable audit persistence and governed search.
+
+\textbf{Supports:} \texttt{PROV-005}, \texttt{PROV-006}.
+
+\subsection{BL-DATA-001 --- Remove Volatile Clinical Persistence Fallback}
+Eliminate any in-JVM fallback that can accept governed clinical state without durable backing. Fail explicitly when the durable path is unavailable.
+
+\textbf{Supports:} \texttt{DATA-001}, \texttt{DATA-007}.
+
+\subsection{BL-DATA-002 --- Make Clinical Search Authoritative-Backed}
+Replace cache-value scanning with authoritative Mnemosyne-backed search so persisted resources remain discoverable after restart, eviction, or cold start.
+
+\textbf{Supports:} \texttt{DATA-002}, \texttt{DATA-003}.
+
+\subsection{BL-DATA-003 --- Implement Server-Side FHIR Paging and Totals}
+Push search filtering/paging to persistence and return appropriate FHIR Bundle paging/total metadata. Update Iris clients to consume it.
+
+\textbf{Supports:} \texttt{DATA-004}, \texttt{INT-004}.
+
+\subsection{BL-DATA-004 --- Validate Write-Behind Failure and Recovery}
+Define and test retry, ordering, idempotency, recovery, and observability for Mneme-to-Mnemosyne write-behind persistence.
+
+\textbf{Supports:} \texttt{DATA-007}, \texttt{DATA-008}.
+
+\subsection{BL-DATA-005 --- Preserve Context During Persistence Recovery}
+Ensure cache-store/recovery paths retain security, provenance, authority, correlation, and causation metadata.
+
+\textbf{Supports:} \texttt{DATA-008}, \texttt{SEC-005}, \texttt{PROV-001}.
+
+\section{Architecture Technical Debt}
+\subsection{Execution Context and Context Propagation}
+\subsubsection{BL-ARCH-01 --- Replace ThreadLocal CORS Context in OperationsServerManager}
+\paragraph{Description}
+Review and refactor OperationsServerManager so the validated CORS origin is propagated explicitly as request scoped state rather than through CURRENT\_ALLOWED\_ORIGIN ThreadLocal..
+\paragraph{Priority} 
+Low.
+\paragraph{Driver} 
+Maintainability and future concurrency safety.
+\paragraph{Rationale} 
+The current implementation is safe because the value is established and cleared within a finally block. However, correctness depends on the server's current thread-per-request execution model. Explicit request-context propagation would remove that coupling and make future asynchronous/executor-based processing safer.
+\paragraph{Acceptance Criteria} 
+No CORS/security state stored in ThreadLocal; validated origin travels explicitly with request/response processing; existing trusted/untrusted/no-origin/preflight behaviour unchanged; existing CORS tests remain green; no changes to authentication or Themis authorization semantics.
+\paragraph{Supports} 
+
+\paragraph{Related} 
+CORS Hardenning (see xxxx).
+
+\section{Messaging and Runtime Backlog}
+
+\subsection{BL-MSG-001 --- Preserve Petasos/Ponos Separation}
+Maintain the verified architecture in which Petasos owns standalone Artemis messaging and Ponos is a messaging client/work executor. Remove remaining legacy embedded-broker assumptions where found.
+
+\textbf{Supports:} \texttt{CORE-002}, \texttt{INT-002}, \texttt{INT-003}.
+
+\subsection{BL-MSG-002 --- Standardise Broker Configuration}
+Converge runtime configuration on the approved Petasos broker connection contract across Ponos, Pylai, Agora, and related clients.
+
+\textbf{Supports:} \texttt{CORE-002}, \texttt{OPS-001}.
+
+\subsection{BL-MSG-003 --- Complete Petasos Runtime Telemetry}
+Populate and expose live broker/queue health, depth, producer/consumer, retry, and DLQ telemetry through the existing operational monitoring abstractions.
+
+\textbf{Supports:} \texttt{OPS-003}, \texttt{OPS-004}.
+
+\subsection{BL-MSG-004 --- Verify Broker Persistence and Failover}
+Exercise restart, reconnection, redelivery, persistence, and supported HA/failover scenarios with context preservation and no acknowledged message loss.
+
+\textbf{Supports:} \texttt{INT-002}, \texttt{INT-003}, \texttt{DATA-008}.
+
+\subsection{BL-MSG-005 --- Petasos Message Replay}
+Implement governed Petasos message replay only after the current security, provenance, persistence, and UI convergence baseline is complete.
+
+\textbf{Supports:} \texttt{INT-002}, \texttt{PROV-001}, \texttt{DATA-008}.
+
+\section{Provider Registry Backlog}
+
+\subsection{BL-DIR-001 --- Complete Provider Registry Validation}
+Complete resource-specific validation and referential checks for Practitioner, PractitionerRole, Organization, Location, HealthcareService, Endpoint, and Group.
+
+\textbf{Supports:} \texttt{DIR-001}, \texttt{DIR-004}, \texttt{INT-006}.
+
+\subsection{BL-DIR-002 --- Complete Governed Change Workflow}
+Ensure Provider Registry POST/PUT requests consistently create governed change work, validation, approval/stewarding, persistence, versioning, and structured outcomes.
+
+\textbf{Supports:} \texttt{DIR-003}, \texttt{DATA-005}.
+
+\subsection{BL-DIR-003 --- Provider Registry Syndication}
+Implement outbound Provider Registry syndication after the stable UI and foundational processing/security baseline is complete.
+
+\textbf{Supports:} \texttt{DIR-001}, \texttt{DIR-002}, \texttt{INT-001}.
+
+\section{Iris Baseline Backlog}
+
+\subsection{BL-IRIS-001 --- Maintain Shared Iris Design System}
+Continue convergence of Clinical, Monitor, and Administration applications on iris-befe/PrimeVue shared design patterns and consistent navigation.
+
+\textbf{Supports:} \texttt{UX-001}, \texttt{UX-002}.
+
+\subsection{BL-IRIS-002 --- Remove Fabricated Runtime Presentation}
+Ensure operational UI values are sourced from real runtime telemetry or explicitly marked unavailable/configured; do not generate plausible fake values.
+
+\textbf{Supports:} \texttt{UX-003}, \texttt{UX-004}, \texttt{OPS-004}.
+
+\subsection{BL-IRIS-003 --- Complete Monitor Runtime Drill-Down}
+Complete subsystem/component/runtime drill-down for pods/state, useful operational detail, and event/task/statistics panes using real backend data.
+
+\textbf{Supports:} \texttt{UX-001}, \texttt{UX-003}, \texttt{OPS-004}.
+
+\subsection{BL-IRIS-004 --- Make Audit UI Read-Only}
+Remove create/update/delete affordances for immutable audit records and retain search/detail inspection.
+
+\textbf{Supports:} \texttt{PROV-005}.
+
+\subsection{BL-IRIS-005 --- Eliminate Unbounded Dashboard Searches}
+Replace broad parallel unbounded resource loads with bounded overview queries and server-side counts/paging.
+
+\textbf{Supports:} \texttt{DATA-004}, \texttt{UX-004}.
+
+\section{Clinical / Longitudinal Health Record Backlog}
+
+\subsection{BL-CLIN-001 --- Clinical FHIR Information Layer}
+Establish the vendor-neutral, independently persisted Clinical FHIR information service across Pylai, Mnemosyne, and Calliope. Source systems remain authoritative for their defined activities while Harmonia becomes the governed interoperability representation.
+
+\textbf{Supports:} \texttt{CLIN-001}, \texttt{CLIN-004}, \texttt{CLIN-005}.
+
+\subsection{BL-CLIN-002 --- Core Clinical Resource Model}
+Implement the initial LHR resource set: Patient, Flag, AllergyIntolerance, EpisodeOfCare, Encounter, Condition, Observation, ServiceRequest, DiagnosticReport, and required supporting references.
+
+\textbf{Supports:} \texttt{CLIN-002}, \texttt{INT-004}, \texttt{INT-006}.
+
+\subsection{BL-CLIN-003 --- Medication Information Model}
+Implement Medication, MedicationRequest, the appropriate R5 medication-use representation, MedicationAdministration, MedicationDispense, and their longitudinal relationships.
+
+\textbf{Supports:} \texttt{CLIN-003}.
+
+\subsection{BL-CLIN-004 --- Information Authority Framework}
+Implement source-, packet-, and assertion-level Information Authority metadata and governance using AUTHORITATIVE, INFORMATIONAL, and ANECDOTAL classifications.
+
+\textbf{Supports:} \texttt{CORE-001}, \texttt{CLIN-005}, \texttt{CLIN-006}.
+
+\subsection{BL-CLIN-005 --- LHR Reconciliation and Update Processing}
+Implement Ponos/Erga rules that use source, authority, provenance, resource type, and current state to accept, retain, reconcile, supersede, review, quarantine, or reject incoming assertions without hard-coding outcomes to authority categories.
+
+\textbf{Supports:} \texttt{CLIN-006}, \texttt{CLIN-007}.
+
+\subsection{BL-CLIN-006 --- Clinical Source-System Ingestion}
+Implement governed ingestion patterns for EMR, PAS, LIS, RIS/PACS, and other clinical systems, preserving source identifiers, provenance, authority, and clinical semantics.
+
+\textbf{Supports:} \texttt{CLIN-001}, \texttt{CLIN-004}, \texttt{CLIN-005}, \texttt{PROV-002}.
+
+\subsection{BL-CLIN-007 --- Iris-Clinical LHR Viewer}
+Implement the read-oriented patient viewer with Find/Select Patient, multiple patient workspaces, Demographics, Flags, Allergies/Intolerances, Episodes/Encounters, Problems, Medications, Observations, Diagnostics, Referrals, and provenance/source context.
+
+\textbf{Supports:} \texttt{CLIN-010}, \texttt{UX-005}--\texttt{UX-009}.
+
+\subsection{BL-CLIN-008 --- Clinical Authoring and Terminology Services}
+Introduce selective clinical create/update only after terminology lookup/search, ValueSet expansion/validation, profile governance, security, reconciliation, and workflow controls exist. Keep Iris decoupled from the terminology-server product.
+
+\textbf{Supports:} \texttt{CLIN-011}, \texttt{INT-006}, \texttt{INT-007}.
+
+\subsection{BL-CLIN-009 --- Patient Identity / Golden Record Processing}
+Elaborate and implement governed patient matching, identifier reconciliation, source history, merge handling, and golden-record behaviour appropriate to the LHR.
+
+\textbf{Supports:} \texttt{CLIN-009}.
+
+\section{Agora Backlog}
+
+\subsection{BL-AGORA-001 --- Complete Matrix/Synapse Clinical Mapping}
+Complete the governed Patient-to-hidden-room/sub-room, PractitionerRole-to-room, Group-to-room, and Practitioner-to-space mappings with membership managed by Agora.
+
+\textbf{Supports:} \texttt{CORE-002}, \texttt{SEC-004}.
+
+\subsection{BL-AGORA-002 --- Align Agora Security Context}
+Ensure Agora collaboration access respects Themis identity/authority and relevant resource/Pragma security tags.
+
+\textbf{Supports:} \texttt{SEC-004}, \texttt{SEC-005}, \texttt{SEC-008}.
+
+\section{Deployment and Operations Backlog}
+
+\subsection{BL-OPS-001 --- Maintain Docker Compose Known-Good Baseline}
+Keep the verified Docker Compose runtime reproducible while architectural convergence work proceeds; avoid UI work silently modifying backend topology.
+
+\textbf{Supports:} \texttt{OPS-001}, \texttt{OPS-006}.
+
+\subsection{BL-OPS-002 --- Complete MicroK8s Deployment Automation}
+Complete Maven image build/publish and Ansible deployment/undeployment workflows for the target MicroK8s host, including required persistent storage and registry configuration.
+
+\textbf{Supports:} \texttt{OPS-001}, \texttt{OPS-002}, \texttt{OPS-005}.
+
+\subsection{BL-OPS-003 --- Architecture Regression Guardrails}
+Expand automated architecture tests to protect subsystem ownership, security boundaries, dependency direction, Paradeigma isolation, and other critical invariants.
+
+\textbf{Supports:} \texttt{OPS-006}, \texttt{CORE-002}.
+
+\section{Harmonia - Audit}
+\subsection{BL-AUDIT-01 — Introduce a typed Harmonia Security Domain}
+
+Replace the current string-based securityDomain representation ("CLINICAL", "AUDIT", "OPERATIONS", "PROVIDER_REGISTRY", etc.) with a canonical typed Harmonia/Themis security-domain value or enum, and propagate it consistently through ThemisSecurityContext, ThemisResource, ThemisAuditEvent, policies and related contracts.
+
+\paragraph{Rationale:} Task 06 correctly retained String securityDomain because the repository currently only has string constants and changing this would expand Step 01 substantially. The exploration explicitly identified this as the smallest compatible choice.
+
+\paragrahp{Timing:} Foundations cleanup after Tasks 06–10, unless another task creates a natural migration point.
+
+\subsection{BL-AUDIT-02 — Relocate immutable audit evidence to dedicated Operations/Audit persistence} 
+Logical ownership is AUDIT/operations rather than clinical; defer physical movement so Task 06 doesn't turn into the persistence redesign covered by later tasks.
+
+\subsection{BL-AUDIT-03 — Database-level audit immutability hardening}
+ Consider PostgreSQL permissions/triggers or equivalent append-only/WORM controls after the application/persistence architecture settles. This adds defence-in-depth beneath the service and persistence invariants.
+
+\section{Backlog Sequencing}
+
+The current preferred sequence is:
+
+\begin{enumerate}
+    \item complete Security convergence;
+    \item complete Provenance and immutable Audit convergence;
+    \item complete persistence/search/recovery convergence;
+    \item complete validation/governance and Ponos/Erga processing foundations;
+    \item preserve and verify Petasos/runtime convergence;
+    \item commence the Clinical/LHR backlog (\texttt{BL-CLIN-001} onward);
+    \item implement Iris-Clinical against the stable Clinical FHIR service;
+    \item introduce selective clinical authoring only after terminology and governance prerequisites exist.
+\end{enumerate}
+
+Large capability backlog items, particularly \texttt{BL-CLIN-002} and \texttt{BL-CLIN-003}, should remain capability-sized until their prerequisite foundations converge. They can then be decomposed into bounded Junie-sized implementation work packages.

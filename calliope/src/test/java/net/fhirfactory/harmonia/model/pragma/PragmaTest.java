@@ -21,12 +21,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import org.hl7.fhir.r5.model.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -309,5 +314,81 @@ class PragmaTest {
 
         Pragma convertedBack = PragmaFhirConverter.fromFhirTask(task);
         assertThat(convertedBack.getMetadata()).containsEntry("confidentiality", "R");
+    }
+
+    @Test
+    @DisplayName("Bi-directional Pragma to FHIR Task round-trip with security context, executing principal, and causation ID")
+    void testPragmaFhirConverterRoundTripWithExecutingPrincipalAndCausation() {
+        ThemisPrincipal originatingPrincipal = ThemisPrincipal.of("dr-smith", PrincipalType.HUMAN, "clinical");
+        ThemisPrincipal executingPrincipal = ThemisPrincipal.of("process:ponos-engine", PrincipalType.PROCESS, "ponos");
+
+        Pragma pragma = Pragma.builder()
+                .pragmaId("PRAGMA-E2E-SEC-001")
+                .correlationId("CORR-ROOT-999")
+                .causationId("CAUSE-PARENT-888")
+                .praxisId("praxis-sec-pipeline")
+                .status(PragmaStatus.IN_PROGRESS)
+                .policyVersion("2.1.0")
+                .originatingPrincipal(originatingPrincipal)
+                .executingPrincipal(executingPrincipal)
+                .addOriginatingAuthority("provider.change.submit")
+                .addOriginatingAuthority("provider.read")
+                .build();
+
+        // 1. Convert to FHIR Task
+        Task task = PragmaFhirConverter.toFhirTask(pragma);
+        assertThat(task).isNotNull();
+        assertThat(task.getId()).isEqualTo("PRAGMA-E2E-SEC-001");
+
+        // Causation and Correlation identifiers
+        assertThat(task.getIdentifier()).anyMatch(id ->
+                PragmaFhirConverter.IDENTIFIER_SYSTEM_CORRELATION_ID.equals(id.getSystem()) && "CORR-ROOT-999".equals(id.getValue()));
+        assertThat(task.getIdentifier()).anyMatch(id ->
+                PragmaFhirConverter.IDENTIFIER_SYSTEM_CAUSATION_ID.equals(id.getSystem()) && "CAUSE-PARENT-888".equals(id.getValue()));
+
+        // Originating principal extensions
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_ID).getValue().toString()).isEqualTo("dr-smith");
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_PRINCIPAL_TYPE).getValue().toString()).isEqualTo("HUMAN");
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_SOURCE_DOMAIN).getValue().toString()).isEqualTo("clinical");
+
+        // Executing principal extensions
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID).getValue().toString()).isEqualTo("process:ponos-engine");
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_PRINCIPAL_TYPE).getValue().toString()).isEqualTo("PROCESS");
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_EXECUTING_SOURCE_DOMAIN).getValue().toString()).isEqualTo("ponos");
+
+        // Authorities
+        List<String> auths = task.getExtensionsByUrl(PragmaFhirConverter.EXTENSION_SECURITY_AUTHORITY).stream()
+                .map(e -> ((org.hl7.fhir.r5.model.StringType) e.getValue()).getValue())
+                .toList();
+        assertThat(auths).containsExactlyInAnyOrder("provider.change.submit", "provider.read");
+
+        // Policy version
+        assertThat(task.getExtensionByUrl(PragmaFhirConverter.EXTENSION_SECURITY_POLICY_VERSION).getValue().toString()).isEqualTo("2.1.0");
+
+        // 2. Convert back to Pragma
+        Pragma reconstructed = PragmaFhirConverter.fromFhirTask(task);
+        assertThat(reconstructed).isNotNull();
+        assertThat(reconstructed.getPragmaId()).isEqualTo("PRAGMA-E2E-SEC-001");
+        assertThat(reconstructed.getCorrelationId()).isEqualTo("CORR-ROOT-999");
+        assertThat(reconstructed.getCausationId()).isEqualTo("CAUSE-PARENT-888");
+        assertThat(reconstructed.getPolicyVersion()).isEqualTo("2.1.0");
+
+        assertThat(reconstructed.getOriginatingPrincipal()).isEqualTo(originatingPrincipal);
+        assertThat(reconstructed.getExecutingPrincipal()).isEqualTo(executingPrincipal);
+        assertThat(reconstructed.getOriginatingAuthorities()).containsExactlyInAnyOrder(
+                ThemisAuthority.of("provider.change.submit"),
+                ThemisAuthority.of("provider.read")
+        );
+
+        ThemisSecurityContext secCtx = reconstructed.getOriginatingSecurityContext();
+        assertThat(secCtx).isNotNull();
+        assertThat(secCtx.originatingPrincipal()).isEqualTo(originatingPrincipal);
+        assertThat(secCtx.executingPrincipal()).isEqualTo(executingPrincipal);
+        assertThat(secCtx.correlationId()).isEqualTo("CORR-ROOT-999");
+        assertThat(secCtx.causationId()).isEqualTo("CAUSE-PARENT-888");
+        assertThat(secCtx.authorities()).containsExactlyInAnyOrder(
+                ThemisAuthority.of("provider.change.submit"),
+                ThemisAuthority.of("provider.read")
+        );
     }
 }

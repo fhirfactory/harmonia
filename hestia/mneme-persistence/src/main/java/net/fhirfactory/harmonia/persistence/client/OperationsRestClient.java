@@ -38,16 +38,46 @@ import java.util.concurrent.CompletionStage;
 public class OperationsRestClient {
 
     private static final Logger log = LoggerFactory.getLogger(OperationsRestClient.class);
+    static final String TARGET_SERVICE = "OperationsServer";
 
     private final String serverUrl;
     private final HttpClient httpClient;
 
     public OperationsRestClient(String serverUrl, int timeoutSeconds) {
-        this.serverUrl = serverUrl.endsWith("/") ? serverUrl.substring(0, serverUrl.length() - 1) : serverUrl;
-        this.httpClient = HttpClient.newBuilder()
+        this(serverUrl, HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(timeoutSeconds))
                 .version(HttpClient.Version.HTTP_1_1)
-                .build();
+                .build());
+    }
+
+    OperationsRestClient(String serverUrl, HttpClient httpClient) {
+        this.serverUrl = serverUrl.endsWith("/") ? serverUrl.substring(0, serverUrl.length() - 1) : serverUrl;
+        this.httpClient = httpClient;
+    }
+
+    static String categorizeHttpStatus(int status) {
+        if (status >= 400 && status < 500) {
+            return switch (status) {
+                case 400 -> "CLIENT_ERROR_BAD_REQUEST";
+                case 401 -> "CLIENT_ERROR_UNAUTHORIZED";
+                case 403 -> "CLIENT_ERROR_FORBIDDEN";
+                case 404 -> "CLIENT_ERROR_NOT_FOUND";
+                case 409 -> "CLIENT_ERROR_CONFLICT";
+                case 410 -> "CLIENT_ERROR_GONE";
+                case 422 -> "CLIENT_ERROR_UNPROCESSABLE_ENTITY";
+                case 429 -> "CLIENT_ERROR_TOO_MANY_REQUESTS";
+                default -> "CLIENT_ERROR";
+            };
+        } else if (status >= 500 && status < 600) {
+            return switch (status) {
+                case 500 -> "SERVER_ERROR_INTERNAL";
+                case 502 -> "SERVER_ERROR_BAD_GATEWAY";
+                case 503 -> "SERVER_ERROR_SERVICE_UNAVAILABLE";
+                case 504 -> "SERVER_ERROR_GATEWAY_TIMEOUT";
+                default -> "SERVER_ERROR";
+            };
+        }
+        return "HTTP_ERROR";
     }
 
     public CompletionStage<String> getResourceJson(String objectType, String id) {
@@ -66,7 +96,8 @@ public class OperationsRestClient {
                     } else if (status == 404 || status == 410) {
                         return null;
                     } else {
-                        log.warn("GET {} failed with status {}", uri, status);
+                        log.warn("[{}] target={}, operation=GET, uri={}, status={}, category={}",
+                                TARGET_SERVICE, TARGET_SERVICE, uri, status, categorizeHttpStatus(status));
                         return null;
                     }
                 });
@@ -86,9 +117,10 @@ public class OperationsRestClient {
                     int status = response.statusCode();
                     boolean success = (status >= 200 && status < 300);
                     if (!success) {
-                        log.error("PUT {} failed with status {}: {}", uri, status, response.body());
+                        log.error("[{}] target={}, operation=PUT, uri={}, status={}, category={}",
+                                TARGET_SERVICE, TARGET_SERVICE, uri, status, categorizeHttpStatus(status));
                     } else {
-                        log.info("PUT {} succeeded with status {}", uri, status);
+                        log.info("[{}] PUT {} succeeded with status {}", TARGET_SERVICE, uri, status);
                     }
                     return success;
                 });
@@ -107,7 +139,8 @@ public class OperationsRestClient {
                     int status = response.statusCode();
                     boolean success = (status >= 200 && status < 300) || status == 404 || status == 410;
                     if (!success) {
-                        log.error("DELETE {} failed with status {}: {}", uri, status, response.body());
+                        log.error("[{}] target={}, operation=DELETE, uri={}, status={}, category={}",
+                                TARGET_SERVICE, TARGET_SERVICE, uri, status, categorizeHttpStatus(status));
                     } else {
                         log.debug("Successfully deleted operational resource {}/{}", objectType, id);
                     }
@@ -146,11 +179,13 @@ public class OperationsRestClient {
                             }
                             return result;
                         } catch (Exception e) {
-                            log.error("Failed parsing list response from {}: {}", uri, e.getMessage());
+                            log.error("[{}] target={}, operation=GET, uri={}, status={}, exception={}, category={}",
+                                    TARGET_SERVICE, TARGET_SERVICE, uri, status, e.getClass().getName(), "PAYLOAD_PARSE_FAILURE");
                             return Collections.emptyList();
                         }
                     } else {
-                        log.warn("GET {} failed with status {}", uri, status);
+                        log.warn("[{}] target={}, operation=GET, uri={}, status={}, category={}",
+                                TARGET_SERVICE, TARGET_SERVICE, uri, status, categorizeHttpStatus(status));
                         return Collections.emptyList();
                     }
                 });
@@ -186,7 +221,9 @@ public class OperationsRestClient {
                     return (status >= 200 && status < 300);
                 })
                 .exceptionally(ex -> {
-                    log.debug("Readiness check to {} failed: {}", uri, ex.getMessage());
+                    Throwable cause = (ex.getCause() != null) ? ex.getCause() : ex;
+                    log.debug("[{}] target={}, operation=GET, uri={}, exception={}, category={}",
+                            TARGET_SERVICE, TARGET_SERVICE, uri, cause.getClass().getName(), "READINESS_CHECK_FAILURE");
                     return false;
                 });
     }

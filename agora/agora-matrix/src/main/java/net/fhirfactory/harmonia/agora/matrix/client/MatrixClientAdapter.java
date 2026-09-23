@@ -99,9 +99,9 @@ public class MatrixClientAdapter {
                             error = node.get("error").asText();
                         }
                     } catch (IOException ignored) {
-                        // Keep raw body in message if not JSON
+                        // Non-JSON error body; do not leak raw body into exception message
                     }
-                    throw new MatrixRestException(status, errcode, error, bodyStr);
+                    throw new MatrixRestException(status, errcode, error);
                 });
     }
 

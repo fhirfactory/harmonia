@@ -61,6 +61,8 @@ spec:
               value: "http://keycloak.harmonia.svc.cluster.local:8080/realms/harmonia"
             - name: OIDC_CLIENT_ID
               value: "iris-befe"
+            - name: HARMONIA_BEFE_CORS_ALLOWED_ORIGINS
+              value: "https://clinical.harmonia.local,https://console.harmonia.local,https://admin.harmonia.local"
           ports:
             - containerPort: 8080
               name: clinical

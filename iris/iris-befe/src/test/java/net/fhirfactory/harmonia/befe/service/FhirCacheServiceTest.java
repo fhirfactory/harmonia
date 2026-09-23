@@ -17,8 +17,15 @@
 
 package net.fhirfactory.harmonia.befe.service;
 
+import net.fhirfactory.harmonia.befe.security.ThemisSecurityContextProvider;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
+import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
+import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
+import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
+import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
 import org.hl7.fhir.r5.model.Coding;
 import org.hl7.fhir.r5.model.Meta;
 import org.hl7.fhir.r5.model.Organization;
@@ -27,16 +34,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
+import java.util.Set;
+import java.util.UUID;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class FhirCacheServiceTest {
 
     private FhirCacheService cacheService;
+    private ThemisSecurityContextProvider securityContextProvider;
 
     @BeforeEach
     void setUp() {
         cacheService = new FhirCacheService();
         cacheService.init();
+        securityContextProvider = new ThemisSecurityContextProvider();
+        cacheService.setSecurityContextProvider(securityContextProvider);
     }
 
     @Test
@@ -75,5 +89,37 @@ class FhirCacheServiceTest {
         Organization fetched = cacheService.getResource("Organization", saved.getIdPart(), Organization.class);
         assertThat(fetched).isNotNull();
         assertThat(FhirSecurityTagManager.hasConfidentiality(fetched, FhirConfidentialityEnum.R)).isTrue();
+    }
+
+    @Test
+    @DisplayName("Verify active security context is accessible in FhirCacheService when bound")
+    void testActiveSecurityContextAccessibleWhenBound() {
+        ThemisPrincipal human = ThemisPrincipal.of("dr.watson", PrincipalType.HUMAN, "harmonia-clinical");
+        ThemisSecurityContext context = ThemisSecurityContext.builder()
+                .requestingPrincipal(human)
+                .executingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_IRIS_BEFE)
+                .securityDomain(HarmoniaSecurityLabelEnum.CLINICAL.getCode())
+                .authorities(Set.of(ThemisAuthority.of("clinical.create"), ThemisAuthority.of("clinical.read")))
+                .correlationId(UUID.randomUUID().toString())
+                .requestedAt(Instant.now())
+                .build();
+
+        securityContextProvider.setSecurityContext(context);
+
+        assertThat(cacheService.getActiveSecurityContext()).contains(context);
+        assertThat(cacheService.getActiveSecurityContext().get().requestingPrincipal().principalId()).isEqualTo("dr.watson");
+        assertThat(cacheService.getActiveSecurityContext().get().executingPrincipal()).isEqualTo(HarmoniaServiceIdentities.PRINCIPAL_IRIS_BEFE);
+    }
+
+    @Test
+    @DisplayName("Verify active security context returns empty when unbound without error")
+    void testActiveSecurityContextEmptyWhenUnbound() {
+        assertThat(cacheService.getActiveSecurityContext()).isEmpty();
+
+        Person person = new Person();
+        person.getNameFirstRep().setFamily("Doe").addGiven("John");
+
+        Person saved = cacheService.saveResource(person);
+        assertThat(saved).isNotNull();
     }
 }

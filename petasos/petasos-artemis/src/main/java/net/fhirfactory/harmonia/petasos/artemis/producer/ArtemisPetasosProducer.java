@@ -109,8 +109,8 @@ public class ArtemisPetasosProducer implements PetasosProducer {
                 lastException = e;
                 metrics.recordProcessingFailure();
                 if (attempt < maxAttempts) {
-                    log.warn("Attempt {}/{} failed to send message [id={}] to destination {}: {}. Retrying in {}ms...",
-                            attempt, maxAttempts, message.getMessageId(), destination, e.getMessage(), backoff);
+                    log.warn("Attempt {}/{} failed to send message [id={}] to destination {} [exception={}]. Retrying in {}ms...",
+                            attempt, maxAttempts, message.getMessageId(), destination, e.getClass().getName(), backoff);
                     try {
                         Thread.sleep(backoff);
                     } catch (InterruptedException ie) {
@@ -122,10 +122,10 @@ public class ArtemisPetasosProducer implements PetasosProducer {
             }
         }
 
-        log.error("Failed to send message [id={}] to destination {} after {} attempts: {}",
-                message.getMessageId(), destination, maxAttempts, lastException != null ? lastException.getMessage() : "unknown", lastException);
-        throw new PetasosMessagingException("Failed to send message to " + destination + ": "
-                + (lastException != null ? lastException.getMessage() : "unknown"), lastException);
+        log.error("Failed to send message [id={}] to destination {} after {} attempts [exception={}]",
+                message.getMessageId(), destination, maxAttempts, lastException != null ? lastException.getClass().getName() : "unknown");
+        throw new PetasosMessagingException("Failed to send message to " + destination + " [exception="
+                + (lastException != null ? lastException.getClass().getName() : "unknown") + "]", lastException);
     }
 
     @Override
