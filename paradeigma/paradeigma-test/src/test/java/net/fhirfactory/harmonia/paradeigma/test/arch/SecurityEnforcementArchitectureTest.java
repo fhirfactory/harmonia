@@ -845,6 +845,58 @@ public class SecurityEnforcementArchitectureTest {
         noAuditModelInThemis.check(classes);
     }
 
+    @Test
+    @DisplayName("Architecture Check: Kleio subproject boundary isolation and persistence layering")
+    void kleioSubprojectIsolationAndPersistenceLayering() {
+        JavaClasses classes = getHarmoniaClasses();
+
+        // Rule 1: Kleio Core Independence
+        ArchRule kleioCoreIndependenceRule = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.kleio.audit..")
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "jakarta.persistence..",
+                        "java.sql..",
+                        "javax.sql..",
+                        "org.springframework..",
+                        "ca.uhn.fhir..",
+                        "org.hl7.fhir.."
+                );
+        kleioCoreIndependenceRule.check(classes);
+
+        // Rule 2: Kleio FHIR Independence
+        ArchRule kleioFhirIndependenceRule = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.kleio.fhir..")
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "jakarta.persistence..",
+                        "java.sql..",
+                        "javax.sql..",
+                        "org.springframework.."
+                );
+        kleioFhirIndependenceRule.check(classes);
+
+        // Rule 3: Kleio Persistence Layering & Jakarta EE Compliance
+        ArchRule kleioPersistenceLayeringRule = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.kleio.persistence..")
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.springframework..",
+                        "net.fhirfactory.harmonia.hestia..",
+                        "net.fhirfactory.harmonia.iris..",
+                        "net.fhirfactory.harmonia.petasos..",
+                        "net.fhirfactory.harmonia.themis.core.."
+                );
+        kleioPersistenceLayeringRule.check(classes);
+
+        // Rule 4: No External Dependents on Kleio Persistence from Themis
+        ArchRule noThemisDependOnKleioPersistenceRule = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.themis..")
+                .should().dependOnClassesThat()
+                .resideInAPackage("net.fhirfactory.harmonia.kleio.persistence..");
+        noThemisDependOnKleioPersistenceRule.check(classes);
+    }
+
     private void assertAuditModelSourceFilesDoNotContainImports(String... forbiddenImports) throws IOException {
         Path projectRoot = findProjectRoot();
         Path modelSrcDir = projectRoot.resolve("kleio/kleio-core/src/main/java/net/fhirfactory/harmonia/kleio/audit/model");

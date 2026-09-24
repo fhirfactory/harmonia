@@ -20,6 +20,7 @@ package net.fhirfactory.harmonia.kleio.audit.service;
 import net.fhirfactory.harmonia.kleio.audit.model.AuditAction;
 import net.fhirfactory.harmonia.kleio.audit.model.AuditClassification;
 import net.fhirfactory.harmonia.kleio.audit.model.AuditOutcome;
+import net.fhirfactory.harmonia.kleio.audit.model.AuditQuery;
 import net.fhirfactory.harmonia.kleio.audit.model.AuditTarget;
 import net.fhirfactory.harmonia.kleio.audit.model.HarmoniaAuditEvent;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
@@ -378,5 +379,197 @@ class AuditServiceTest {
 
         assertThat(auditService.recordDecision(null, dec)).isNull();
         assertThat(auditService.recordDecision(req, null)).isNull();
+    }
+
+    @Test
+    @DisplayName("Finds audit events with AuditQuery by eventId, classification, action, outcome")
+    void testFindAuditQueryByPredicates() {
+        Instant baseTime = Instant.parse("2026-09-24T10:00:00Z");
+
+        HarmoniaAuditEvent event1 = HarmoniaAuditEvent.builder()
+                .eventId("query-evt-001")
+                .recordedAt(baseTime)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.AUTHORIZE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.human("user:alice"))
+                .securityDomain("CLINICAL")
+                .correlationId("corr-101")
+                .operationId("op-101")
+                .build();
+
+        HarmoniaAuditEvent event2 = HarmoniaAuditEvent.builder()
+                .eventId("query-evt-002")
+                .recordedAt(baseTime.plusSeconds(10))
+                .classification(AuditClassification.CLINICAL)
+                .action(AuditAction.READ)
+                .outcome(AuditOutcome.DENIED)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:bot"))
+                .target(AuditTarget.of("Patient", "PT-999", "CLINICAL"))
+                .securityDomain("CLINICAL")
+                .correlationId("corr-102")
+                .operationId("op-102")
+                .build();
+
+        auditService.append(event1);
+        auditService.append(event2);
+
+        // Match by eventId
+        List<HarmoniaAuditEvent> byId = auditService.find(AuditQuery.builder().eventId("query-evt-001").build());
+        assertThat(byId).containsExactly(event1);
+
+        // Match by classification
+        List<HarmoniaAuditEvent> byClass = auditService.find(AuditQuery.builder().classification(AuditClassification.CLINICAL).build());
+        assertThat(byClass).containsExactly(event2);
+
+        // Match by action
+        List<HarmoniaAuditEvent> byAction = auditService.find(AuditQuery.builder().action(AuditAction.READ).build());
+        assertThat(byAction).containsExactly(event2);
+
+        // Match by outcome
+        List<HarmoniaAuditEvent> byOutcome = auditService.find(AuditQuery.builder().outcome(AuditOutcome.SUCCESS).build());
+        assertThat(byOutcome).containsExactly(event1);
+
+        // Match by principal
+        List<HarmoniaAuditEvent> byPrincipal = auditService.find(AuditQuery.builder().principalId("user:alice").build());
+        assertThat(byPrincipal).containsExactly(event1);
+
+        // Match by target
+        List<HarmoniaAuditEvent> byTarget = auditService.find(AuditQuery.builder().targetId("PT-999").build());
+        assertThat(byTarget).containsExactly(event2);
+
+        // Match by correlation and operation
+        List<HarmoniaAuditEvent> byCorrOp = auditService.find(AuditQuery.builder()
+                .correlationId("corr-101")
+                .operationId("op-101")
+                .build());
+        assertThat(byCorrOp).containsExactly(event1);
+
+        // Point read get alias
+        assertThat(auditService.get("query-evt-001")).contains(event1);
+        assertThat(auditService.get("missing")).isEmpty();
+    }
+
+    @Test
+    @DisplayName("Finds audit events with AuditQuery filtering by canonical recordedAt occurrence time")
+    void testFindAuditQueryByTimeRange() {
+        Instant t1 = Instant.parse("2026-09-24T08:00:00Z");
+        Instant t2 = Instant.parse("2026-09-24T09:00:00Z");
+        Instant t3 = Instant.parse("2026-09-24T10:00:00Z");
+
+        HarmoniaAuditEvent e1 = HarmoniaAuditEvent.builder()
+                .eventId("time-evt-001")
+                .recordedAt(t1)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.EXECUTE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:daemon"))
+                .securityDomain("OPS")
+                .build();
+
+        HarmoniaAuditEvent e2 = HarmoniaAuditEvent.builder()
+                .eventId("time-evt-002")
+                .recordedAt(t2)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.EXECUTE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:daemon"))
+                .securityDomain("OPS")
+                .build();
+
+        HarmoniaAuditEvent e3 = HarmoniaAuditEvent.builder()
+                .eventId("time-evt-003")
+                .recordedAt(t3)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.EXECUTE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:daemon"))
+                .securityDomain("OPS")
+                .build();
+
+        // Append out of chronological order
+        auditService.append(e2);
+        auditService.append(e1);
+        auditService.append(e3);
+
+        // Filter window [08:30, 09:30]
+        List<HarmoniaAuditEvent> window = auditService.find(AuditQuery.builder()
+                .startTime(Instant.parse("2026-09-24T08:30:00Z"))
+                .endTime(Instant.parse("2026-09-24T09:30:00Z"))
+                .build());
+        assertThat(window).containsExactly(e2);
+
+        // Open-ended start time [09:00, inf)
+        List<HarmoniaAuditEvent> fromT2 = auditService.find(AuditQuery.builder()
+                .startTime(t2)
+                .build());
+        assertThat(fromT2).containsExactly(e3, e2); // recordedAt DESC
+    }
+
+    @Test
+    @DisplayName("AuditQuery enforces canonical ordering: recordedAt DESC, eventId DESC")
+    void testCanonicalOrderingWithEqualTimestamps() {
+        Instant commonTimestamp = Instant.parse("2026-09-24T12:00:00Z");
+
+        HarmoniaAuditEvent evtA = HarmoniaAuditEvent.builder()
+                .eventId("order-evt-A")
+                .recordedAt(commonTimestamp)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.EXECUTE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:daemon"))
+                .securityDomain("OPS")
+                .build();
+
+        HarmoniaAuditEvent evtC = HarmoniaAuditEvent.builder()
+                .eventId("order-evt-C")
+                .recordedAt(commonTimestamp)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.EXECUTE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:daemon"))
+                .securityDomain("OPS")
+                .build();
+
+        HarmoniaAuditEvent evtB = HarmoniaAuditEvent.builder()
+                .eventId("order-evt-B")
+                .recordedAt(commonTimestamp)
+                .classification(AuditClassification.SECURITY)
+                .action(AuditAction.EXECUTE)
+                .outcome(AuditOutcome.SUCCESS)
+                .initiatingPrincipal(ThemisPrincipal.system("sys:daemon"))
+                .securityDomain("OPS")
+                .build();
+
+        auditService.append(evtA);
+        auditService.append(evtC);
+        auditService.append(evtB);
+
+        List<HarmoniaAuditEvent> results = auditService.find(AuditQuery.builder()
+                .startTime(commonTimestamp)
+                .endTime(commonTimestamp)
+                .build());
+
+        // Secondary tie breaker: eventId DESC -> C, B, A
+        assertThat(results).containsExactly(evtC, evtB, evtA);
+    }
+
+    @Test
+    @DisplayName("AuditQuery limit bounding and clamping")
+    void testAuditQueryLimitBounding() {
+        AuditQuery defaultQuery = AuditQuery.builder().build();
+        assertThat(defaultQuery.limit()).isEqualTo(AuditQuery.DEFAULT_LIMIT);
+
+        AuditQuery negativeQuery = AuditQuery.builder().limit(-10).build();
+        assertThat(negativeQuery.limit()).isEqualTo(AuditQuery.DEFAULT_LIMIT);
+
+        AuditQuery zeroQuery = AuditQuery.builder().limit(0).build();
+        assertThat(zeroQuery.limit()).isEqualTo(AuditQuery.DEFAULT_LIMIT);
+
+        AuditQuery excessiveQuery = AuditQuery.builder().limit(5000).build();
+        assertThat(excessiveQuery.limit()).isEqualTo(AuditQuery.MAX_LIMIT);
+
+        AuditQuery customQuery = AuditQuery.builder().limit(15).build();
+        assertThat(customQuery.limit()).isEqualTo(15);
     }
 }

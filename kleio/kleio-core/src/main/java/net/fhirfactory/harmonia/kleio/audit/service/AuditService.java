@@ -17,6 +17,7 @@
 
 package net.fhirfactory.harmonia.kleio.audit.service;
 
+import net.fhirfactory.harmonia.kleio.audit.model.AuditQuery;
 import net.fhirfactory.harmonia.kleio.audit.model.HarmoniaAuditEvent;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationRequest;
@@ -46,6 +47,25 @@ public interface AuditService {
      * @return optional containing the matching audit event if found
      */
     Optional<HarmoniaAuditEvent> findById(String eventId);
+
+    /**
+     * Backward-compatible point read alias for {@link #findById(String)}.
+     *
+     * @param eventId event identifier
+     * @return optional containing the matching audit event if found
+     */
+    default Optional<HarmoniaAuditEvent> get(String eventId) {
+        return findById(eventId);
+    }
+
+    /**
+     * Finds audit events matching the provided query criteria.
+     * Results are ordered chronologically descending (recordedAt DESC, eventId DESC) and bounded by query limit.
+     *
+     * @param query criteria for audit event retrieval
+     * @return matching audit events ordered recordedAt DESC, eventId DESC
+     */
+    List<HarmoniaAuditEvent> find(AuditQuery query);
 
     /**
      * Retrieves audit events linked to a specific correlation identifier.

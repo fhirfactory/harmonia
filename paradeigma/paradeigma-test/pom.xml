@@ -141,6 +141,11 @@
             <artifactId>kleio-fhir</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>kleio-persistence</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <!-- Apache Camel Core for Pipeline Testing -->
         <dependency>

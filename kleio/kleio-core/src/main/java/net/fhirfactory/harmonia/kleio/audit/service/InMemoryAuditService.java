@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.kleio.audit.service;
 
 import net.fhirfactory.harmonia.kleio.audit.model.AuditOutcome;
+import net.fhirfactory.harmonia.kleio.audit.model.AuditQuery;
 import net.fhirfactory.harmonia.kleio.audit.model.HarmoniaAuditEvent;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationRequest;
@@ -27,6 +28,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +46,9 @@ public class InMemoryAuditService implements AuditService {
 
     private static final Logger log = LoggerFactory.getLogger(InMemoryAuditService.class);
     private static final int DEFAULT_MAX_CAPACITY = 5000;
+    private static final Comparator<HarmoniaAuditEvent> CANONICAL_ORDER = Comparator
+            .comparing(HarmoniaAuditEvent::recordedAt, Comparator.reverseOrder())
+            .thenComparing(HarmoniaAuditEvent::eventId, Comparator.reverseOrder());
 
     private final int maxCapacity;
     private final List<HarmoniaAuditEvent> eventLog = new ArrayList<>();
@@ -111,6 +116,21 @@ public class InMemoryAuditService implements AuditService {
         readLock.lock();
         try {
             return Optional.ofNullable(eventsById.get(eventId));
+        } finally {
+            readLock.unlock();
+        }
+    }
+
+    @Override
+    public List<HarmoniaAuditEvent> find(AuditQuery query) {
+        Objects.requireNonNull(query, "query must not be null");
+        readLock.lock();
+        try {
+            return eventLog.stream()
+                    .filter(query::matches)
+                    .sorted(CANONICAL_ORDER)
+                    .limit(query.limit())
+                    .toList();
         } finally {
             readLock.unlock();
         }

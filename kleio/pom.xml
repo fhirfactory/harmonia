@@ -37,6 +37,7 @@
     <modules>
         <module>kleio-core</module>
         <module>kleio-fhir</module>
+        <module>kleio-persistence</module>
     </modules>
 
     <dependencyManagement>
@@ -49,6 +50,11 @@
             <dependency>
                 <groupId>net.fhirfactory.harmonia</groupId>
                 <artifactId>kleio-fhir</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>kleio-persistence</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
