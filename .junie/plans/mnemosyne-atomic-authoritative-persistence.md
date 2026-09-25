@@ -287,14 +287,14 @@ Add atomic conditional update queries and unique constraint validation to the re
 - Add repository helper methods to distinguish between resource absence and version mismatch upon conditional update failure.
 - Ensure `FhirResourceEntity` mapping and table constraint `uk_resource_type_fhir_id` are preserved and leveraged for uniqueness enforcement.
 
-### * Step 2: Define AuthoritativePersistencePort and Sealed Result Model Family
+### ✓ Step 2: Define AuthoritativePersistencePort and Sealed Result Model Family
 Define the persistence port and sealed result model family adhering to Calliope contracts without external framework leakage.
 
 - Define `AuthoritativePersistenceResult<T>` sealed interface with `Committed<T>`, `Conflict<T>`, `NotCommitted<T>`, and `OutcomeUnknown<T>` records in `net.fhirfactory.harmonia.hapifhir.persistence.model`.
 - Define `AuthoritativePersistencePort<T extends IBaseResource>` in `net.fhirfactory.harmonia.hapifhir.persistence` declaring `create(ResourceKey, T)` and `update(ResourceKey, T, ExpectedAuthoritativeVersion)`.
 - Ensure zero dependency on Infinispan/Hot Rod, Themis, or JPA types within the public port signature.
 
-###   Step 3: Implement AuthoritativePersistenceService with Transaction Boundary
+### ✓ Step 3: Implement AuthoritativePersistenceService with Transaction Boundary
 Implement the authoritative persistence port with programmatic Spring TransactionTemplate management and atomic semantics.
 
 - Implement `AuthoritativePersistenceService` in `hestia/mnemosyne-clinical` implementing `AuthoritativePersistencePort<IBaseResource>`.
@@ -303,13 +303,13 @@ Implement the authoritative persistence port with programmatic Spring Transactio
 - Implement `update`: validate `ExpectedAuthoritativeVersion` non-null and numeric (fail-fast on malformed input), compute `nextVersion = expectedVersion + 1L`, update FHIR `meta.versionId`, execute `updateIfVersionMatches`. If 0 rows updated, perform diagnostic check to return `AuthoritativePersistenceResult.Conflict` with `expectedVersionMismatch` or absent resource conflict. Never upsert.
 - Catch indeterminate commit-phase exceptions to return `AuthoritativePersistenceResult.OutcomeUnknown`.
 
-###   Step 4: Implement Concurrency and Failure Test Suite
+### ✓ Step 4: Implement Concurrency and Failure Test Suite
 Validate atomic CREATE and UPDATE preconditions, failure paths, and high-concurrency race conditions against PostgreSQL Testcontainers and H2.
 
 - Implement `AuthoritativePersistenceServiceTest` covering all functional and failure scenarios (precondition checks, malformed version handling, absent resource updates, immutable audit events, outcome UNKNOWN demarcation).
 - Implement `AuthoritativePersistencePostgreSqlConcurrencyTest` using Testcontainers (`postgres:16-alpine`) and multi-threaded `CountDownLatch` executing concurrent CREATEs on the same `ResourceKey` (proving at most 1 commits) and concurrent UPDATEs with the same predecessor version (proving at most 1 commits with remainder receiving `EXPECTED_VERSION_MISMATCH`).
 
-###   Step 5: Add Architecture Guardrails and Implementation Report
+### ✓ Step 5: Add Architecture Guardrails and Implementation Report
 Enforce architectural boundaries via ArchUnit and document implementation details and test evidence.
 
 - Add ArchUnit rules to `MnemosyneAuthoritativePersistenceArchitectureTest` in `paradeigma-test` asserting that `mnemosyne` authoritative persistence does not depend on Mneme/Hot Rod coordination types, and caller contracts remain free of JPA/JDBC types.
