@@ -49,7 +49,6 @@ public class MessageQueueService {
     private QueueConfig queueConfig;
 
     private ObjectMapper objectMapper;
-    private final Map<String, String> localFallbackCache = new ConcurrentHashMap<>();
 
     public MessageQueueService() {
     }
@@ -71,7 +70,9 @@ public class MessageQueueService {
             this.objectMapper = new ObjectMapper();
         }
         try {
-            getAll();
+            if (remoteCacheManager != null && remoteCacheManager.isStarted()) {
+                getAll();
+            }
         } catch (Exception e) {
             log.debug("Initial queue cache seed deferred: {}", e.getMessage());
         }
@@ -105,6 +106,14 @@ public class MessageQueueService {
             }
         }
         return null;
+    }
+
+    private RemoteCache<String, String> requireRemoteCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + QUEUE_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
     }
 
     public String toJson(PetasosQueueDefinition queueDef) {
@@ -141,19 +150,9 @@ public class MessageQueueService {
         }
 
         String json = toJson(queueDef);
-        localFallbackCache.put(queueId, json);
-
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                cache.put(queueId, json);
-                log.info("Persisted MessageQueueDefinition [{}] to remote Infinispan cache [{}]", queueId, QUEUE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Failed persisting MessageQueueDefinition [{}] to remote cache: {}", queueId, e.getMessage());
-            }
-        } else {
-            log.debug("Remote cache unavailable; saved MessageQueueDefinition [{}] to local fallback cache", queueId);
-        }
+        RemoteCache<String, String> cache = requireRemoteCache();
+        cache.put(queueId, json);
+        log.info("Persisted MessageQueueDefinition [{}] to remote Infinispan cache [{}]", queueId, QUEUE_CACHE_NAME);
         return queueDef;
     }
 
@@ -162,22 +161,10 @@ public class MessageQueueService {
             return Optional.empty();
         }
 
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                String json = cache.get(queueId);
-                if (StringUtils.isNotBlank(json)) {
-                    localFallbackCache.put(queueId, json);
-                    return Optional.ofNullable(fromJson(json));
-                }
-            } catch (Exception e) {
-                log.debug("Remote cache lookup failed for MessageQueueDefinition [{}]: {}", queueId, e.getMessage());
-            }
-        }
-
-        String fallbackJson = localFallbackCache.get(queueId);
-        if (StringUtils.isNotBlank(fallbackJson)) {
-            return Optional.ofNullable(fromJson(fallbackJson));
+        RemoteCache<String, String> cache = requireRemoteCache();
+        String json = cache.get(queueId);
+        if (StringUtils.isNotBlank(json)) {
+            return Optional.ofNullable(fromJson(json));
         }
 
         return Optional.empty();
@@ -187,18 +174,10 @@ public class MessageQueueService {
         if (StringUtils.isBlank(queueId)) {
             return false;
         }
-        boolean removed = localFallbackCache.remove(queueId) != null;
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                String old = cache.remove(queueId);
-                if (old != null) {
-                    removed = true;
-                }
-                log.info("Deleted MessageQueueDefinition [{}] from remote Infinispan cache [{}]", queueId, QUEUE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Failed deleting MessageQueueDefinition [{}] from remote cache: {}", queueId, e.getMessage());
-            }
+        RemoteCache<String, String> cache = requireRemoteCache();
+        boolean removed = cache.remove(queueId) != null;
+        if (removed) {
+            log.info("Deleted MessageQueueDefinition [{}] from remote Infinispan cache [{}]", queueId, QUEUE_CACHE_NAME);
         }
         return removed;
     }
@@ -206,49 +185,28 @@ public class MessageQueueService {
     public List<PetasosQueueDefinition> getAll() {
         Map<String, PetasosQueueDefinition> resultMap = new LinkedHashMap<>();
 
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                Collection<String> values = cache.values();
-                if (values != null && !values.isEmpty()) {
-                    for (String json : values) {
-                        PetasosQueueDefinition def = fromJson(json);
-                        if (def != null && def.getQueueId() != null) {
-                            resultMap.put(def.getQueueId(), def);
-                            localFallbackCache.put(def.getQueueId(), json);
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                log.debug("Remote cache values query failed for [{}]: {}", QUEUE_CACHE_NAME, e.getMessage());
-            }
-
-            if (resultMap.isEmpty()) {
-                try {
-                    Set<String> keys = cache.keySet();
-                    if (keys != null) {
-                        for (String key : keys) {
-                            String json = cache.get(key);
-                            if (StringUtils.isNotBlank(json)) {
-                                PetasosQueueDefinition def = fromJson(json);
-                                if (def != null && def.getQueueId() != null) {
-                                    resultMap.put(def.getQueueId(), def);
-                                    localFallbackCache.put(def.getQueueId(), json);
-                                }
-                            }
-                        }
-                    }
-                } catch (Exception e) {
-                    log.debug("Remote cache keySet scan failed for [{}]: {}", QUEUE_CACHE_NAME, e.getMessage());
+        RemoteCache<String, String> cache = requireRemoteCache();
+        Collection<String> values = cache.values();
+        if (values != null && !values.isEmpty()) {
+            for (String json : values) {
+                PetasosQueueDefinition def = fromJson(json);
+                if (def != null && def.getQueueId() != null) {
+                    resultMap.put(def.getQueueId(), def);
                 }
             }
         }
 
-        for (Map.Entry<String, String> entry : localFallbackCache.entrySet()) {
-            if (!resultMap.containsKey(entry.getKey())) {
-                PetasosQueueDefinition def = fromJson(entry.getValue());
-                if (def != null && def.getQueueId() != null) {
-                    resultMap.put(def.getQueueId(), def);
+        if (resultMap.isEmpty()) {
+            Set<String> keys = cache.keySet();
+            if (keys != null) {
+                for (String key : keys) {
+                    String json = cache.get(key);
+                    if (StringUtils.isNotBlank(json)) {
+                        PetasosQueueDefinition def = fromJson(json);
+                        if (def != null && def.getQueueId() != null) {
+                            resultMap.put(def.getQueueId(), def);
+                        }
+                    }
                 }
             }
         }
@@ -262,6 +220,16 @@ public class MessageQueueService {
         }
 
         return new ArrayList<>(resultMap.values());
+    }
+
+    public long count() {
+        RemoteCache<String, String> cache = requireRemoteCache();
+        return cache.size();
+    }
+
+    public void clear() {
+        RemoteCache<String, String> cache = requireRemoteCache();
+        cache.clear();
     }
 
     public synchronized List<PetasosQueueDefinition> seedDefaultQueues(QueueConfig config) {

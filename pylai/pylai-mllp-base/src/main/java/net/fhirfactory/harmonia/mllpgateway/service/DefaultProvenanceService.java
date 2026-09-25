@@ -45,13 +45,34 @@ public class DefaultProvenanceService implements ProvenanceService {
     @Inject
     private FhirContext fhirContext;
 
-    private final Map<String, Provenance> provenanceStore = new ConcurrentHashMap<>();
-
     public DefaultProvenanceService() {
+    }
+
+    public DefaultProvenanceService(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
     }
 
     public DefaultProvenanceService(RemoteCacheManager remoteCacheManager, FhirContext fhirContext) {
         this.remoteCacheManager = remoteCacheManager;
+        this.fhirContext = fhirContext;
+    }
+
+    public RemoteCacheManager getRemoteCacheManager() {
+        return remoteCacheManager;
+    }
+
+    public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
+    public FhirContext getFhirContext() {
+        if (fhirContext == null) {
+            fhirContext = FhirContext.forR5();
+        }
+        return fhirContext;
+    }
+
+    public void setFhirContext(FhirContext fhirContext) {
         this.fhirContext = fhirContext;
     }
 
@@ -66,8 +87,16 @@ public class DefaultProvenanceService implements ProvenanceService {
         return null;
     }
 
+    private RemoteCache<String, String> requireRemoteCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + PROVENANCE_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
+    }
+
     private IParser getJsonParser() {
-        return (fhirContext != null ? fhirContext : FhirContext.forR5()).newJsonParser().setPrettyPrint(true);
+        return getFhirContext().newJsonParser().setPrettyPrint(true);
     }
 
     @Override
@@ -86,21 +115,11 @@ public class DefaultProvenanceService implements ProvenanceService {
             provenance.setRecorded(new Date());
         }
         FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
-        provenanceStore.put(id, provenance);
 
-        // Write Provenance to Infinispan remote cache
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = getJsonParser().encodeResourceToString(provenance);
-                remoteCache.put(id, json);
-                log.info("Persisted Provenance/{} to remote Infinispan cache [{}]", id, PROVENANCE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Could not persist Provenance/{} to remote Infinispan cache: {}", id, e.getMessage());
-            }
-        }
-
-        log.info("Created Provenance with id: {}", id);
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = getJsonParser().encodeResourceToString(provenance);
+        remoteCache.put(id, json);
+        log.info("Persisted Provenance/{} to remote Infinispan cache [{}]", id, PROVENANCE_CACHE_NAME);
         return provenance;
     }
 
@@ -110,25 +129,13 @@ public class DefaultProvenanceService implements ProvenanceService {
             return Optional.empty();
         }
         String cleanId = cleanId(id);
-
-        // Try Infinispan remote cache first
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = remoteCache.get(cleanId);
-                if (json != null) {
-                    Provenance parsed = getJsonParser().parseResource(Provenance.class, json);
-                    if (parsed != null) {
-                        provenanceStore.put(cleanId, parsed);
-                        return Optional.of(parsed);
-                    }
-                }
-            } catch (Exception e) {
-                log.debug("Remote cache lookup for Provenance/{} failed: {}", cleanId, e.getMessage());
-            }
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = remoteCache.get(cleanId);
+        if (json == null || json.isBlank()) {
+            return Optional.empty();
         }
-
-        return Optional.ofNullable(provenanceStore.get(cleanId));
+        Provenance parsed = getJsonParser().parseResource(Provenance.class, json);
+        return Optional.ofNullable(parsed);
     }
 
     @Override
@@ -139,20 +146,11 @@ public class DefaultProvenanceService implements ProvenanceService {
         String cleanId = cleanId(id);
         provenance.setId("Provenance/" + cleanId);
         FhirSecurityTagManager.applyDefaultSecurityTag(provenance);
-        provenanceStore.put(cleanId, provenance);
 
-        // Update in remote cache
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = getJsonParser().encodeResourceToString(provenance);
-                remoteCache.put(cleanId, json);
-                log.info("Updated Provenance/{} in remote Infinispan cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Could not update Provenance/{} in remote Infinispan cache: {}", cleanId, e.getMessage());
-            }
-        }
-
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = getJsonParser().encodeResourceToString(provenance);
+        remoteCache.put(cleanId, json);
+        log.info("Updated Provenance/{} in remote Infinispan cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
         return provenance;
     }
 
@@ -162,44 +160,33 @@ public class DefaultProvenanceService implements ProvenanceService {
             return false;
         }
         String cleanId = cleanId(id);
-        boolean removed = provenanceStore.remove(cleanId) != null;
-
-        // Delete from remote cache
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.remove(cleanId);
-                log.info("Deleted Provenance/{} from remote Infinispan cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Could not delete Provenance/{} from remote Infinispan cache: {}", cleanId, e.getMessage());
-            }
-        }
-
-        return removed;
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String removed = remoteCache.remove(cleanId);
+        log.info("Deleted Provenance/{} from remote Infinispan cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
+        return removed != null;
     }
 
     @Override
     public List<Provenance> getAll() {
-        // Sync from remote cache if available
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                for (Map.Entry<String, String> entry : remoteCache.entrySet()) {
-                    if (!provenanceStore.containsKey(entry.getKey())) {
-                        try {
-                            Provenance p = getJsonParser().parseResource(Provenance.class, entry.getValue());
-                            if (p != null) {
-                                provenanceStore.put(entry.getKey(), p);
-                            }
-                        } catch (Exception ignored) {}
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        Collection<String> values = remoteCache.values();
+        if (values == null || values.isEmpty()) {
+            return Collections.emptyList();
+        }
+        List<Provenance> provenances = new ArrayList<>(values.size());
+        for (String json : values) {
+            if (json != null && !json.isBlank()) {
+                try {
+                    Provenance p = getJsonParser().parseResource(Provenance.class, json);
+                    if (p != null) {
+                        provenances.add(p);
                     }
+                } catch (Exception e) {
+                    log.debug("Failed parsing Provenance JSON from cache: {}", e.getMessage());
                 }
-            } catch (Exception e) {
-                log.debug("Remote cache bulk sync for provenances failed: {}", e.getMessage());
             }
         }
-
-        return new ArrayList<>(provenanceStore.values());
+        return provenances;
     }
 
     @Override
@@ -214,24 +201,14 @@ public class DefaultProvenanceService implements ProvenanceService {
 
     @Override
     public long count() {
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                return remoteCache.size();
-            } catch (Exception ignored) {}
-        }
-        return provenanceStore.size();
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        return remoteCache.size();
     }
 
     @Override
     public void clear() {
-        provenanceStore.clear();
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.clear();
-            } catch (Exception ignored) {}
-        }
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        remoteCache.clear();
     }
 
     private String extractId(Provenance provenance) {

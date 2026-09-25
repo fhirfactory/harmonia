@@ -156,18 +156,22 @@ public class ThemisClinicalAuthorizationFilter implements ContainerRequestFilter
         Set<ThemisAuthority> authorities = extractAuthorities(requestContext.getSecurityContext(), principal);
 
         // 6. Build Themis Resource Context
+        HarmoniaSecurityLabelEnum domainLabel = "AuditEvent".equalsIgnoreCase(resourceType)
+                ? HarmoniaSecurityLabelEnum.AUDIT
+                : HarmoniaSecurityLabelEnum.CLINICAL;
+
         ThemisResource target = ThemisResource.builder()
                 .resourceType(resourceType)
                 .resourceId(resourceId)
-                .securityDomain(HarmoniaSecurityLabelEnum.CLINICAL.getCode())
-                .securityLabels(Set.of(HarmoniaSecurityLabelEnum.CLINICAL.toThemisLabel()))
+                .securityDomain(domainLabel.getCode())
+                .securityLabels(Set.of(domainLabel.toThemisLabel()))
                 .build();
 
         // 7. Build Security Context and Authorization Request
         ThemisSecurityContext secContext = ThemisSecurityContext.builder()
                 .requestingPrincipal(principal)
                 .executingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_IRIS_BEFE)
-                .securityDomain(HarmoniaSecurityLabelEnum.CLINICAL.getCode())
+                .securityDomain(domainLabel.getCode())
                 .authorities(authorities)
                 .correlationId(correlationId)
                 .requestedAt(Instant.now())

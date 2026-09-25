@@ -22,13 +22,13 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisAction;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationRequest;
-import net.fhirfactory.harmonia.themis.api.model.ThemisDecision;
 import net.fhirfactory.harmonia.themis.api.model.ThemisDecisionReason;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisResource;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import net.fhirfactory.harmonia.themis.api.policy.ThemisPolicy;
 import net.fhirfactory.harmonia.themis.core.constants.HarmoniaSecurityConstants;
+import net.fhirfactory.harmonia.themis.core.policy.AuditImmutabilityDenyPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.AuditReadPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.ClinicalAuthorizationPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.OperationsAuthorizationPolicy;
@@ -40,7 +40,6 @@ import net.fhirfactory.harmonia.themis.core.policy.SystemAdminPolicy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -79,6 +78,7 @@ public class DeterministicPolicyEvaluator implements ThemisService {
 
     public static DeterministicPolicyEvaluator withDefaultPolicies() {
         DeterministicPolicyEvaluator evaluator = new DeterministicPolicyEvaluator();
+        evaluator.registerPolicy(new AuditImmutabilityDenyPolicy());
         evaluator.registerPolicy(new SystemAdminPolicy());
         evaluator.registerPolicy(new ProviderRegistryReadPolicy());
         evaluator.registerPolicy(new ProviderRegistrySubmitPolicy());

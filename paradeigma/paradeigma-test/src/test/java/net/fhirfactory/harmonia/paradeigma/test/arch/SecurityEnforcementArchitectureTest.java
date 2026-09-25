@@ -38,6 +38,8 @@ import net.fhirfactory.harmonia.kleio.audit.model.HarmoniaAuditEvent;
 import net.fhirfactory.harmonia.kleio.audit.service.AuditService;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
 import net.fhirfactory.harmonia.themis.core.identities.HarmoniaServiceIdentities;
+import net.fhirfactory.harmonia.themis.core.policy.AuditImmutabilityDenyPolicy;
+import net.fhirfactory.harmonia.themis.core.policy.AuditReadPolicy;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption;
@@ -895,6 +897,140 @@ public class SecurityEnforcementArchitectureTest {
                 .should().dependOnClassesThat()
                 .resideInAPackage("net.fhirfactory.harmonia.kleio.persistence..");
         noThemisDependOnKleioPersistenceRule.check(classes);
+    }
+
+    @Test
+    @DisplayName("Architecture Check: AuditImmutabilityDenyPolicy is registered in default evaluator and enforces explicit-deny for AUDIT domain")
+    void auditImmutabilityDenyPolicyRegisteredInDefaultEvaluator() {
+        DeterministicPolicyEvaluator evaluator = DeterministicPolicyEvaluator.withDefaultPolicies();
+        List<ThemisPolicy> registered = evaluator.getRegisteredPolicies();
+
+        assertThat(registered)
+                .anyMatch(p -> p instanceof AuditImmutabilityDenyPolicy);
+
+        AuditImmutabilityDenyPolicy policy = registered.stream()
+                .filter(p -> p instanceof AuditImmutabilityDenyPolicy)
+                .map(p -> (AuditImmutabilityDenyPolicy) p)
+                .findFirst()
+                .orElseThrow();
+
+        assertThat(policy.isExplicitDeny()).isTrue();
+        assertThat(policy.getOrder()).isEqualTo(10);
+        assertThat(policy.getPolicyId()).isEqualTo("audit-immutability-deny-policy");
+    }
+
+    @Test
+    @DisplayName("Guardrail Check: Iris BEFE AuditEvent endpoint is protected by ThemisClinicalAuthorizationFilter without local bypasses")
+    void irisBefeAuditEventProtectedByThemisClinicalAuthorizationFilter() throws IOException {
+        Path projectRoot = findProjectRoot();
+
+        // 1. AuditEventResource must declare @Path("/fhir/AuditEvent")
+        Path auditResourcePath = projectRoot.resolve("iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/rest/AuditEventResource.java");
+        assertThat(Files.exists(auditResourcePath))
+                .as("AuditEventResource must exist")
+                .isTrue();
+
+        String auditResourceContent = Files.readString(auditResourcePath);
+        assertThat(auditResourceContent)
+                .contains("@Path(\"/fhir/AuditEvent\")");
+
+        // 2. ThemisClinicalAuthorizationFilter must classify AuditEvent as AUDIT domain/label
+        Path filterPath = projectRoot.resolve("iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/security/ThemisClinicalAuthorizationFilter.java");
+        assertThat(Files.exists(filterPath)).isTrue();
+        String filterContent = Files.readString(filterPath);
+        assertThat(filterContent)
+                .contains("\"AuditEvent\".equalsIgnoreCase(resourceType)")
+                .contains("HarmoniaSecurityLabelEnum.AUDIT")
+                .contains("HarmoniaSecurityLabelEnum.CLINICAL");
+
+        // 3. Iris BEFE package must not contain local ThemisPolicy implementations or audit authorization bypasses
+        Path befeSrc = projectRoot.resolve("iris/iris-befe/src/main/java");
+        assertThat(Files.exists(befeSrc)).isTrue();
+        try (Stream<Path> paths = Files.walk(befeSrc)) {
+            List<Path> javaFiles = paths.filter(p -> p.toString().endsWith(".java")).toList();
+            assertThat(javaFiles).isNotEmpty();
+            for (Path javaFile : javaFiles) {
+                String content = Files.readString(javaFile);
+                assertThat(content)
+                        .as("iris-befe source %s must not implement ThemisPolicy directly", javaFile.getFileName())
+                        .doesNotContain("implements ThemisPolicy")
+                        .doesNotContain("implements net.fhirfactory.harmonia.themis.api.policy.ThemisPolicy");
+            }
+        }
+    }
+
+    @Test
+    @DisplayName("Architecture Check: Mnemosyne must not expose AuditEvent resource provider or mutable AuditEvent methods")
+    void mnemosyneMustNotExposeMutableAuditEventProviders() throws IOException {
+        JavaClasses classes = getHarmoniaClasses();
+
+        // 1. ArchUnit: No AuditEventResourceProvider class in hapifhir package
+        ArchRule noAuditEventProviderRule = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.hapifhir..")
+                .should().haveSimpleName("AuditEventResourceProvider");
+        noAuditEventProviderRule.check(classes);
+
+        // 2. ArchUnit: No IResourceProvider in hapifhir package depends on AuditEvent
+        ArchRule noIResourceProviderForAuditEvent = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.hapifhir..")
+                .and().implement("ca.uhn.fhir.rest.server.IResourceProvider")
+                .should().dependOnClassesThat()
+                .haveFullyQualifiedName("org.hl7.fhir.r5.model.AuditEvent");
+        noIResourceProviderForAuditEvent.check(classes);
+
+        // 3. Class.forName verification
+        assertThatThrownBy(() -> Class.forName("net.fhirfactory.harmonia.hapifhir.provider.AuditEventResourceProvider"))
+                .isInstanceOf(ClassNotFoundException.class);
+
+        // 4. File-level check verifying AuditEventResourceProvider.java is absent
+        Path projectRoot = findProjectRoot();
+        Path providerPath = projectRoot.resolve("hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/provider/AuditEventResourceProvider.java");
+        assertThat(Files.exists(providerPath))
+                .as("AuditEventResourceProvider.java must not exist in mnemosyne-clinical")
+                .isFalse();
+
+        // 5. Verification that no provider classes in hapifhir expose mutable annotations (@Create, @Update, @Delete, @Patch) for AuditEvent
+        Path mnemosyneJavaSrc = projectRoot.resolve("hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/provider");
+        assertThat(Files.exists(mnemosyneJavaSrc)).isTrue();
+        try (Stream<Path> paths = Files.walk(mnemosyneJavaSrc)) {
+            List<Path> javaFiles = paths.filter(p -> p.toString().endsWith(".java")).toList();
+            assertThat(javaFiles).isNotEmpty();
+            for (Path javaFile : javaFiles) {
+                String content = Files.readString(javaFile);
+                assertThat(content)
+                        .as("Provider source %s must not reference AuditEvent", javaFile.getFileName())
+                        .doesNotContain("AuditEvent");
+            }
+        }
+    }
+
+    @Test
+    @DisplayName("Architecture Check: Mnemosyne clinical and hapifhir packages must have zero dependencies on Kleio")
+    void mnemosyneMustNotDependOnKleio() throws IOException {
+        JavaClasses classes = getHarmoniaClasses();
+
+        // 1. ArchUnit rule: hapifhir / hestia packages must not depend on kleio
+        ArchRule noKleioRule = noClasses()
+                .that().resideInAPackage("net.fhirfactory.harmonia.hapifhir..")
+                .or().resideInAPackage("net.fhirfactory.harmonia.hestia..")
+                .should().dependOnClassesThat()
+                .resideInAPackage("net.fhirfactory.harmonia.kleio..");
+        noKleioRule.check(classes);
+
+        // 2. Source-level check: mnemosyne-clinical source files must not import kleio
+        Path projectRoot = findProjectRoot();
+        Path mnemosyneSrc = projectRoot.resolve("hestia/mnemosyne-clinical/src/main/java");
+        assertThat(Files.exists(mnemosyneSrc)).isTrue();
+        try (Stream<Path> paths = Files.walk(mnemosyneSrc)) {
+            List<Path> javaFiles = paths.filter(p -> p.toString().endsWith(".java")).toList();
+            assertThat(javaFiles).isNotEmpty();
+            for (Path javaFile : javaFiles) {
+                String content = Files.readString(javaFile);
+                assertThat(content)
+                        .as("mnemosyne-clinical source %s must not import net.fhirfactory.harmonia.kleio", javaFile.getFileName())
+                        .doesNotContain("net.fhirfactory.harmonia.kleio");
+            }
+        }
     }
 
     private void assertAuditModelSourceFilesDoNotContainImports(String... forbiddenImports) throws IOException {

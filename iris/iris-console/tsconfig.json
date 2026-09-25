@@ -18,10 +18,9 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@harmonia/iris-befe": ["../iris-befe/frontend/src"],
-      "@harmonia/iris-befe/*": ["../iris-befe/frontend/src/*"]
+      "@/*": ["src/*"]
     },
+    "preserveSymlinks": true,
 
     /* Linting */
     "strict": true,

@@ -18,26 +18,35 @@
 package net.fhirfactory.harmonia.hapifhir.service;
 
 import ca.uhn.fhir.rest.server.exceptions.ForbiddenOperationException;
+import net.fhirfactory.harmonia.hapifhir.model.FhirResourceEntity;
 import net.fhirfactory.harmonia.hapifhir.repository.FhirResourceRepository;
 import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.themis.api.ThemisService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
+import org.hl7.fhir.r5.model.AuditEvent;
+import org.hl7.fhir.r5.model.CodeableConcept;
 import org.hl7.fhir.r5.model.HumanName;
 import org.hl7.fhir.r5.model.Practitioner;
+import org.hl7.fhir.r5.model.Reference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.time.Instant;
+import java.util.Date;
+import java.util.Optional;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @DisplayName("Mnemosyne FhirStorageService Themis Security Gate Tests")
 class FhirStorageServiceSecurityTest {
@@ -88,5 +97,152 @@ class FhirStorageServiceSecurityTest {
                 "corr-store-02"
         )).isInstanceOf(ForbiddenOperationException.class)
           .hasMessageContaining("Persistence authorization denied by Themis");
+    }
+
+    @Test
+    @DisplayName("Denies AuditEvent create and never invokes repository save")
+    void testCreateAuditEventForbidden() {
+        AuditEvent auditEvent = new AuditEvent();
+        auditEvent.setId("AE-SEC-01");
+        auditEvent.setAction(AuditEvent.AuditEventAction.C);
+        auditEvent.setRecorded(new Date());
+
+        ThemisPrincipal principal = ThemisPrincipal.of("service:admin", PrincipalType.SERVICE, "hestia");
+
+        // Single-arg createResource
+        assertThatThrownBy(() -> storageService.createResource(auditEvent))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        // 4-arg createResource with full authorities
+        assertThatThrownBy(() -> storageService.createResource(
+                auditEvent,
+                principal,
+                Set.of(HarmoniaAuthorityEnum.PROVIDER_RESOURCE_CREATE.toThemisAuthority()),
+                "corr-audit-01"
+        )).isInstanceOf(ForbiddenOperationException.class)
+          .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        verify(repositoryMock, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("Denies AuditEvent update across all overloads and never invokes repository save")
+    void testUpdateAuditEventForbidden() {
+        AuditEvent auditEvent = new AuditEvent();
+        auditEvent.setId("AE-SEC-02");
+        auditEvent.setAction(AuditEvent.AuditEventAction.U);
+
+        ThemisPrincipal principal = ThemisPrincipal.of("service:admin", PrincipalType.SERVICE, "hestia");
+
+        // 2-arg updateResource
+        assertThatThrownBy(() -> storageService.updateResource("AE-SEC-02", auditEvent))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        // 3-arg updateResource
+        assertThatThrownBy(() -> storageService.updateResource("AE-SEC-02", auditEvent, "1"))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        // 6-arg updateResource
+        assertThatThrownBy(() -> storageService.updateResource(
+                "AE-SEC-02",
+                auditEvent,
+                "1",
+                principal,
+                Set.of(HarmoniaAuthorityEnum.PROVIDER_RESOURCE_UPDATE.toThemisAuthority()),
+                "corr-audit-02"
+        )).isInstanceOf(ForbiddenOperationException.class)
+          .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        verify(repositoryMock, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("Blocks AuditEvent soft-delete resurrection via updateResource even if row exists in repository")
+    void testUpdateAuditEventResurrectionBlocked() {
+        AuditEvent auditEvent = new AuditEvent();
+        auditEvent.setId("AE-RESURRECT-01");
+        auditEvent.setAction(AuditEvent.AuditEventAction.E);
+
+        // Pre-configure repository to have a soft-deleted entity
+        FhirResourceEntity softDeletedEntity = new FhirResourceEntity(
+                "AuditEvent",
+                "AE-RESURRECT-01",
+                1L,
+                "{\"resourceType\":\"AuditEvent\",\"id\":\"AE-RESURRECT-01\"}",
+                true, // deleted
+                Instant.now()
+        );
+        when(repositoryMock.findByResourceTypeAndFhirId("AuditEvent", "AE-RESURRECT-01"))
+                .thenReturn(Optional.of(softDeletedEntity));
+
+        // Attempt resurrection via updateResource
+        assertThatThrownBy(() -> storageService.updateResource("AE-RESURRECT-01", auditEvent))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        // Repository save is never called, and findByResourceTypeAndFhirId is short-circuited
+        verify(repositoryMock, never()).save(any());
+        verify(repositoryMock, never()).findByResourceTypeAndFhirId(any(), any());
+    }
+
+    @Test
+    @DisplayName("Denies AuditEvent delete (case-insensitive) and never touches repository")
+    void testDeleteAuditEventForbidden() {
+        assertThatThrownBy(() -> storageService.deleteResource("AuditEvent", "AE-DEL-01"))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        assertThatThrownBy(() -> storageService.deleteResource("auditevent", "AE-DEL-02"))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        assertThatThrownBy(() -> storageService.deleteResource("AUDITEVENT", "AE-DEL-03"))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        verify(repositoryMock, never()).save(any());
+        verify(repositoryMock, never()).findByResourceTypeAndFhirId(any(), any());
+    }
+
+    @Test
+    @DisplayName("Allows update and delete for ordinary non-AuditEvent resources")
+    void testOrdinaryResourceUpdateAndDeleteAuthorized() {
+        Practitioner practitioner = new Practitioner();
+        practitioner.setId("PR-MUT-1");
+        practitioner.addName(new HumanName().setFamily("Taylor").addGiven("Robin"));
+
+        FhirResourceEntity existing = new FhirResourceEntity(
+                "Practitioner",
+                "PR-MUT-1",
+                1L,
+                "{\"resourceType\":\"Practitioner\",\"id\":\"PR-MUT-1\"}",
+                false,
+                Instant.now()
+        );
+        when(repositoryMock.findByResourceTypeAndFhirId("Practitioner", "PR-MUT-1"))
+                .thenReturn(Optional.of(existing));
+
+        ThemisPrincipal principal = ThemisPrincipal.of("service:provider-registry", PrincipalType.SERVICE, "hestia");
+
+        // Update succeeds
+        assertThatCode(() -> storageService.updateResource(
+                "PR-MUT-1",
+                practitioner,
+                "1",
+                principal,
+                Set.of(HarmoniaAuthorityEnum.PROVIDER_RESOURCE_UPDATE.toThemisAuthority()),
+                "corr-mut-01"
+        )).doesNotThrowAnyException();
+
+        verify(repositoryMock).save(existing);
+
+        // Delete succeeds
+        assertThatCode(() -> storageService.deleteResource("Practitioner", "PR-MUT-1"))
+                .doesNotThrowAnyException();
+
+        assertThat(existing.isDeleted()).isTrue();
     }
 }

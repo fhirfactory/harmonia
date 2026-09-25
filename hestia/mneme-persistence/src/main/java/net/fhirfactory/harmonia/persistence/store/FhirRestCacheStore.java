@@ -26,6 +26,7 @@ import org.infinispan.persistence.spi.InitializationContext;
 import org.infinispan.persistence.spi.MarshallableEntry;
 import org.infinispan.persistence.spi.MarshallableEntryFactory;
 import org.infinispan.persistence.spi.NonBlockingStore;
+import org.infinispan.persistence.spi.PersistenceException;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
 import org.slf4j.Logger;
@@ -108,16 +109,15 @@ public class FhirRestCacheStore<K, V> implements NonBlockingStore<K, V> {
 
         log.info("Write-behind persistence executing for {}/{}", coord.resourceType(), coord.id());
         return restClient.saveResourceJson(coord.resourceType(), coord.id(), jsonPayload)
-                .thenAccept(success -> {
-                    if (!success) {
-                        log.warn("Write-behind failed to persist {}/{}", coord.resourceType(), coord.id());
-                    } else {
+                .thenCompose(success -> {
+                    if (Boolean.TRUE.equals(success)) {
                         log.info("Write-behind successfully persisted {}/{}", coord.resourceType(), coord.id());
+                        return CompletableFuture.completedFuture(null);
+                    } else {
+                        log.error("Write-behind failed to persist {}/{}", coord.resourceType(), coord.id());
+                        return CompletableFuture.failedFuture(
+                                new PersistenceException("Failed to persist " + coord.resourceType() + "/" + coord.id() + " to FHIR server"));
                     }
-                })
-                .exceptionally(error -> {
-                    log.error("Write-behind crashed while persisting {}/{}: {}", coord.resourceType(), coord.id(), error.getMessage(), error);
-                    return null;
                 });
     }
 

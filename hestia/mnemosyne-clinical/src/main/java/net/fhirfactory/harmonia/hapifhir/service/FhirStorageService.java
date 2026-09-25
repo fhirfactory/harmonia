@@ -133,6 +133,13 @@ public class FhirStorageService {
         return fhirContext.newJsonParser().setPrettyPrint(true);
     }
 
+    private void assertMutableResourceType(String resourceType) {
+        if ("AuditEvent".equalsIgnoreCase(resourceType)) {
+            log.warn("Rejected mutable operation on immutable resource type: {}", resourceType);
+            throw new ForbiddenOperationException("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+        }
+    }
+
     @Transactional
     public <T extends IBaseResource> T createResource(T resource) {
         return createResource(resource, null, null, null);
@@ -145,6 +152,7 @@ public class FhirStorageService {
         }
 
         String resourceType = resource.fhirType();
+        assertMutableResourceType(resourceType);
         String fhirId = null;
         if (resource.getIdElement() != null && StringUtils.isNotBlank(resource.getIdElement().getIdPart())) {
             fhirId = cleanId(resource.getIdElement().getIdPart(), resourceType);
@@ -229,6 +237,7 @@ public class FhirStorageService {
             throw new UnprocessableEntityException("Resource body cannot be null");
         }
         String resourceType = resource.fhirType();
+        assertMutableResourceType(resourceType);
 
         // Themis Persistence Boundary Enforcement
         authorizePersistence(resourceType, ThemisAction.UPDATE, fhirId, principal, authorities, correlationId);
@@ -278,6 +287,7 @@ public class FhirStorageService {
 
     @Transactional
     public void deleteResource(String resourceType, String fhirId) {
+        assertMutableResourceType(resourceType);
         authorizePersistence(resourceType, ThemisAction.DELETE, fhirId, null, null, null);
         Optional<FhirResourceEntity> entityOpt = repository.findByResourceTypeAndFhirId(resourceType, fhirId);
         if (entityOpt.isEmpty()) {

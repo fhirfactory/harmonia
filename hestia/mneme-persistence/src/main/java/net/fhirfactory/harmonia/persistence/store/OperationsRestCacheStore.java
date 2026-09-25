@@ -26,6 +26,7 @@ import org.infinispan.persistence.spi.InitializationContext;
 import org.infinispan.persistence.spi.MarshallableEntry;
 import org.infinispan.persistence.spi.MarshallableEntryFactory;
 import org.infinispan.persistence.spi.NonBlockingStore;
+import org.infinispan.persistence.spi.PersistenceException;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
 import org.slf4j.Logger;
@@ -112,17 +113,15 @@ public class OperationsRestCacheStore<K, V> implements NonBlockingStore<K, V> {
 
         log.info("Write-behind operations persistence executing for {}/{}", coord.objectType(), coord.id());
         return restClient.saveResourceJson(coord.objectType(), coord.id(), jsonPayload)
-                .thenAccept(success -> {
-                    if (success) {
+                .thenCompose(success -> {
+                    if (Boolean.TRUE.equals(success)) {
                         log.debug("Successfully persisted {}/{} to Operations JPA server", coord.objectType(), coord.id());
+                        return CompletableFuture.completedFuture(null);
                     } else {
-                        log.warn("Failed to persist {}/{} to Operations JPA server", coord.objectType(), coord.id());
+                        log.error("Failed to persist {}/{} to Operations JPA server", coord.objectType(), coord.id());
+                        return CompletableFuture.failedFuture(
+                                new PersistenceException("Failed to persist " + coord.objectType() + "/" + coord.id() + " to Operations JPA server"));
                     }
-                })
-                .exceptionally(throwable -> {
-                    log.error("Exception during write-behind operations persistence for {}/{}: {}",
-                            coord.objectType(), coord.id(), throwable.getMessage(), throwable);
-                    return null;
                 });
     }
 

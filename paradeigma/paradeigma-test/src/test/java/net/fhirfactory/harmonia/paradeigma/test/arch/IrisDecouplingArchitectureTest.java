@@ -157,6 +157,38 @@ public class IrisDecouplingArchitectureTest {
         }
     }
 
+    @Test
+    @DisplayName("AuditEventResource Dependency Check: AuditEventResource must not depend on cache or persistence")
+    void auditEventResourceMustNotDependOnCacheOrPersistence() throws IOException {
+        Path projectRoot = findProjectRoot();
+        Path auditEventResource = projectRoot.resolve("iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/rest/AuditEventResource.java");
+
+        assertThat(Files.exists(auditEventResource)).isTrue();
+
+        String content = Files.readString(auditEventResource);
+
+        // Assert forbidden dependencies are NOT present
+        String[] forbidden = {
+                "FhirCacheService",
+                "AppendOnlyAuditEventRepository",
+                "JdbcAppendOnlyAuditEventRepository",
+                "DataSource",
+                "java.sql",
+                "jakarta.persistence",
+                "org.hibernate"
+        };
+
+        for (String token : forbidden) {
+            assertThat(content)
+                    .as("AuditEventResource must not contain forbidden dependency: %s", token)
+                    .doesNotContain(token);
+        }
+
+        // Assert required dependencies ARE present
+        assertThat(content).contains("AuditService");
+        assertThat(content).contains("HarmoniaAuditEventMapper");
+    }
+
     private Path findProjectRoot() {
         Path current = Paths.get(".").toAbsolutePath().normalize();
         while (current != null) {

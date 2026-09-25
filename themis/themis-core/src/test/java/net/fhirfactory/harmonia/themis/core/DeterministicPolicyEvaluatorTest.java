@@ -21,15 +21,17 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisAction;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationRequest;
-import net.fhirfactory.harmonia.themis.api.model.ThemisDecision;
 import net.fhirfactory.harmonia.themis.api.model.ThemisDecisionReason;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisResource;
+import net.fhirfactory.harmonia.themis.api.model.ThemisRole;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityLabel;
 import net.fhirfactory.harmonia.themis.api.policy.ThemisPolicy;
 import net.fhirfactory.harmonia.themis.core.constants.HarmoniaSecurityConstants;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
+import net.fhirfactory.harmonia.themis.core.policy.AuditImmutabilityDenyPolicy;
+import net.fhirfactory.harmonia.themis.core.policy.AuditReadPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.ClinicalAuthorizationPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.OperationsAuthorizationPolicy;
 import net.fhirfactory.harmonia.themis.core.policy.SystemAdminPolicy;
@@ -579,6 +581,159 @@ class DeterministicPolicyEvaluatorTest {
             ThemisAuthorizationDecision decision = evaluator.authorize(request);
             assertThat(decision.isAllowed()).isTrue();
             assertThat(decision.policyId()).isEqualTo(OperationsAuthorizationPolicy.POLICY_ID);
+        }
+    }
+
+    @Nested
+    @DisplayName("Audit Policy Evaluation & Explicit-Deny Immutability")
+    class AuditPolicyTests {
+
+        @Test
+        @DisplayName("audit.read allows READ on AUDIT resource")
+        void testAuditReadAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_AUDIT_READ)
+                    .action(ThemisAction.READ)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo(AuditReadPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("audit.read allows SEARCH on AUDIT resource")
+        void testAuditSearchAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_AUDIT_READ)
+                    .action(ThemisAction.SEARCH)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+            assertThat(decision.policyId()).isEqualTo(AuditReadPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("system.admin allows READ on AUDIT resource")
+        void testSystemAdminAuditReadAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_ADMIN)
+                    .action(ThemisAction.READ)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+        }
+
+        @Test
+        @DisplayName("system.admin allows SEARCH on AUDIT resource")
+        void testSystemAdminAuditSearchAllowed() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_ADMIN)
+                    .action(ThemisAction.SEARCH)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isAllowed()).isTrue();
+        }
+
+        @Test
+        @DisplayName("Explicit Deny: system.admin is DENIED CREATE on AUDIT resource")
+        void testSystemAdminAuditCreateDeniedByExplicitDeny() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_ADMIN)
+                    .action(ThemisAction.CREATE)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
+            assertThat(decision.policyId()).isEqualTo(AuditImmutabilityDenyPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("Explicit Deny: system.admin is DENIED UPDATE on AUDIT resource")
+        void testSystemAdminAuditUpdateDeniedByExplicitDeny() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_ADMIN)
+                    .action(ThemisAction.UPDATE)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
+            assertThat(decision.policyId()).isEqualTo(AuditImmutabilityDenyPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("Explicit Deny: system.admin is DENIED DELETE on AUDIT resource")
+        void testSystemAdminAuditDeleteDeniedByExplicitDeny() {
+            ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                    .principal(testHuman)
+                    .authority(HarmoniaSecurityConstants.AUTH_SYSTEM_ADMIN)
+                    .action(ThemisAction.DELETE)
+                    .target(auditResource)
+                    .build();
+
+            ThemisAuthorizationDecision decision = evaluator.authorize(request);
+            assertThat(decision.isDenied()).isTrue();
+            assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
+            assertThat(decision.policyId()).isEqualTo(AuditImmutabilityDenyPolicy.POLICY_ID);
+        }
+
+        @Test
+        @DisplayName("Explicit Deny: audit.read is DENIED CREATE, UPDATE, DELETE on AUDIT resource")
+        void testAuditReaderMutationDenied() {
+            for (ThemisAction action : Set.of(ThemisAction.CREATE, ThemisAction.UPDATE, ThemisAction.DELETE)) {
+                ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                        .principal(testHuman)
+                        .authority(HarmoniaSecurityConstants.AUTH_AUDIT_READ)
+                        .action(action)
+                        .target(auditResource)
+                        .build();
+
+                ThemisAuthorizationDecision decision = evaluator.authorize(request);
+                assertThat(decision.isDenied()).isTrue();
+                assertThat(decision.reason()).isEqualTo(ThemisDecisionReason.ACTION_NOT_PERMITTED);
+                assertThat(decision.policyId()).isEqualTo(AuditImmutabilityDenyPolicy.POLICY_ID);
+            }
+        }
+
+        @Test
+        @DisplayName("Clinical and Operations roles are denied AUDIT READ and SEARCH")
+        void testOtherRolesCannotReadAudit() {
+            for (ThemisRole role : Set.of(
+                    HarmoniaSecurityConstants.CLINICAL_READ,
+                    HarmoniaSecurityConstants.CLINICAL_WRITE,
+                    HarmoniaSecurityConstants.CLINICAL_ADMIN,
+                    HarmoniaSecurityConstants.OPS_VIEWER,
+                    HarmoniaSecurityConstants.OPS_ADM,
+                    HarmoniaSecurityConstants.PRV_RDR
+            )) {
+                ThemisAuthorizationRequest request = ThemisAuthorizationRequest.builder()
+                        .principal(testHuman)
+                        .authorities(role.authorities())
+                        .action(ThemisAction.READ)
+                        .target(auditResource)
+                        .build();
+
+                ThemisAuthorizationDecision decision = evaluator.authorize(request);
+                assertThat(decision.isDenied()).isTrue();
+                assertThat(decision.policyId()).isEqualTo(AuditReadPolicy.POLICY_ID);
+            }
         }
     }
 

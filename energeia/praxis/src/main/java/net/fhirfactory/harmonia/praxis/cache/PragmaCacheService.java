@@ -55,36 +55,67 @@ public class PragmaCacheService {
     @Inject
     private TaskCacheService taskCacheService;
 
-    private RemoteCache<String, String> pragmaCache;
-    private final Map<String, Pragma> localFallbackCache = new ConcurrentHashMap<>();
     private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
     public PragmaCacheService() {
     }
 
+    public PragmaCacheService(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
     public PragmaCacheService(RemoteCacheManager remoteCacheManager, TaskCacheService taskCacheService) {
         this.remoteCacheManager = remoteCacheManager;
         this.taskCacheService = taskCacheService;
-        init();
     }
 
     @PostConstruct
     public void init() {
-        if (remoteCacheManager != null) {
+        if (remoteCacheManager != null && remoteCacheManager.isStarted()) {
             try {
-                this.pragmaCache = remoteCacheManager.getCache(PRAGMA_CACHE_NAME);
-                if (this.pragmaCache != null) {
+                RemoteCache<String, String> cache = remoteCacheManager.getCache(PRAGMA_CACHE_NAME);
+                if (cache != null) {
                     log.info("Initialized RemoteCache [{}] for Pragma persistence in Mneme", PRAGMA_CACHE_NAME);
-                } else {
-                    log.warn("RemoteCache [{}] unavailable from manager, using local fallback store", PRAGMA_CACHE_NAME);
                 }
             } catch (Exception e) {
-                log.warn("Could not connect to Mneme cluster for [{}]: {}. Using local fallback store.",
-                        PRAGMA_CACHE_NAME, e.getMessage());
+                log.debug("RemoteCache [{}] unavailable from manager during init: {}", PRAGMA_CACHE_NAME, e.getMessage());
             }
-        } else {
-            log.info("No RemoteCacheManager injected, PragmaCacheService running with local in-memory store");
         }
+    }
+
+    public RemoteCacheManager getRemoteCacheManager() {
+        return remoteCacheManager;
+    }
+
+    public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
+    public TaskCacheService getTaskCacheService() {
+        return taskCacheService;
+    }
+
+    public void setTaskCacheService(TaskCacheService taskCacheService) {
+        this.taskCacheService = taskCacheService;
+    }
+
+    private RemoteCache<String, String> getRemoteCache() {
+        if (remoteCacheManager != null && remoteCacheManager.isStarted()) {
+            try {
+                return remoteCacheManager.getCache(PRAGMA_CACHE_NAME);
+            } catch (Exception e) {
+                log.debug("Remote cache [{}] query failed: {}", PRAGMA_CACHE_NAME, e.getMessage());
+            }
+        }
+        return null;
+    }
+
+    private RemoteCache<String, String> requireRemoteCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + PRAGMA_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
     }
 
     /**
@@ -103,16 +134,18 @@ public class PragmaCacheService {
         pragma.touch();
 
         String id = cleanId(pragma.getPragmaId());
-        localFallbackCache.put(id, new Pragma(pragma));
+        RemoteCache<String, String> cache = requireRemoteCache();
 
         try {
             String json = objectMapper.writeValueAsString(pragma);
-            if (pragmaCache != null) {
-                pragmaCache.put(id, json);
-                log.debug("Saved Pragma/{} to remote cache [{}]", id, PRAGMA_CACHE_NAME);
-            }
+            cache.put(id, json);
+            log.debug("Saved Pragma/{} to remote cache [{}]", id, PRAGMA_CACHE_NAME);
         } catch (Exception e) {
-            log.warn("Failed to serialize or store Pragma/{} in remote cache: {}", id, e.getMessage());
+            log.error("Failed to serialize or store Pragma/{} in remote cache: {}", id, e.getMessage());
+            if (e instanceof RuntimeException) {
+                throw (RuntimeException) e;
+            }
+            throw new RuntimeException("Serialization error: " + e.getMessage(), e);
         }
 
         if (taskCacheService != null) {
@@ -136,26 +169,27 @@ public class PragmaCacheService {
             return Optional.empty();
         }
         String id = cleanId(pragmaId);
+        RemoteCache<String, String> cache = requireRemoteCache();
 
-        if (pragmaCache != null) {
-            try {
-                String json = pragmaCache.get(id);
-                if (StringUtils.isNotBlank(json)) {
-                    Pragma pragma = objectMapper.readValue(json, Pragma.class);
-                    return Optional.ofNullable(pragma);
-                }
-            } catch (Exception e) {
-                log.warn("Error reading Pragma/{} from remote cache: {}", id, e.getMessage());
+        try {
+            String json = cache.get(id);
+            if (StringUtils.isNotBlank(json)) {
+                Pragma pragma = objectMapper.readValue(json, Pragma.class);
+                return Optional.ofNullable(pragma);
             }
-        }
-
-        Pragma local = localFallbackCache.get(id);
-        if (local != null) {
-            return Optional.of(new Pragma(local));
+        } catch (Exception e) {
+            log.warn("Error reading Pragma/{} from remote cache: {}", id, e.getMessage());
+            if (e instanceof RuntimeException) {
+                throw (RuntimeException) e;
+            }
+            throw new RuntimeException("Deserialization error: " + e.getMessage(), e);
         }
 
         if (taskCacheService != null) {
-            return taskCacheService.getPragma(id);
+            try {
+                return taskCacheService.getPragma(id);
+            } catch (Exception ignored) {
+            }
         }
 
         return Optional.empty();
@@ -182,19 +216,14 @@ public class PragmaCacheService {
             return false;
         }
         String id = cleanId(pragmaId);
-        boolean removed = localFallbackCache.remove(id) != null;
-
-        if (pragmaCache != null) {
-            try {
-                pragmaCache.remove(id);
-                removed = true;
-            } catch (Exception e) {
-                log.warn("Error deleting Pragma/{} from remote cache: {}", id, e.getMessage());
-            }
-        }
+        RemoteCache<String, String> cache = requireRemoteCache();
+        boolean removed = cache.remove(id) != null;
 
         if (taskCacheService != null) {
-            taskCacheService.deletePragma(id);
+            try {
+                taskCacheService.deletePragma(id);
+            } catch (Exception ignored) {
+            }
         }
 
         return removed;
@@ -215,10 +244,11 @@ public class PragmaCacheService {
      * Clears all local cached entries.
      */
     public void clear() {
-        localFallbackCache.clear();
-        if (pragmaCache != null) {
+        RemoteCache<String, String> cache = requireRemoteCache();
+        cache.clear();
+        if (taskCacheService != null) {
             try {
-                pragmaCache.clear();
+                taskCacheService.clear();
             } catch (Exception ignored) {
             }
         }

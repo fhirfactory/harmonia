@@ -62,36 +62,16 @@ export const useSecurityStore = defineStore('security', () => {
     }
   }
 
-  // AuditEvent
-  async function fetchAuditEvents(name?: string) {
+  // AuditEvent (Read-only façade over Kleio immutable audit log)
+  async function fetchAuditEvents(id?: string) {
     loading.value = true;
+    error.value = null;
     try {
       const params: Record<string, string> = {};
-      if (name) params.name = name;
+      if (id) params._id = id;
       auditEvents.value = await fhirApi.search<AuditEvent>('AuditEvent', params);
     } catch (err: any) {
       error.value = err.message || 'Failed to fetch AuditEvents';
-    } finally {
-      loading.value = false;
-    }
-  }
-
-  async function createAuditEvent(audit: Partial<AuditEvent>) {
-    loading.value = true;
-    try {
-      const created = await fhirApi.create<AuditEvent>('AuditEvent', audit);
-      auditEvents.value.unshift(created);
-      return created;
-    } finally {
-      loading.value = false;
-    }
-  }
-
-  async function deleteAuditEvent(id: string) {
-    loading.value = true;
-    try {
-      await fhirApi.delete('AuditEvent', id);
-      auditEvents.value = auditEvents.value.filter(a => a.id !== id);
     } finally {
       loading.value = false;
     }
@@ -142,8 +122,6 @@ export const useSecurityStore = defineStore('security', () => {
     createProvenance,
     deleteProvenance,
     fetchAuditEvents,
-    createAuditEvent,
-    deleteAuditEvent,
     fetchConsents,
     createConsent,
     deleteConsent

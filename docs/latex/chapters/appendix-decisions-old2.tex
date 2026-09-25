@@ -1,0 +1,458 @@
+%% =============================================================================
+%% appendices/appendix-decisions.tex
+%% Harmonia Architecture Decision Register
+%% =============================================================================
+
+\chapter{Architecture Decisions}
+\label{app:decisions}
+
+This appendix records architecture choices that constrain how Harmonia requirements are realised. Decisions are distinct from requirements: a requirement states what Harmonia must achieve; a decision records the architectural approach selected to achieve or protect that outcome.
+
+\section{Current Decisions}
+
+\subsection{ADR-001 --- Petasos Owns Messaging Runtime}
+Petasos is the standalone Harmonia messaging capability and owns the ActiveMQ Artemis runtime. Ponos consumes Petasos messaging services and owns workflow/work execution; it does not own broker lifecycle.
+
+\subsection{ADR-002 --- Pylai Owns External Interface and Protocol Behaviour}
+Pylai owns external protocol/interface behaviour, including HL7/FHIR ingress and egress. Domain workflow logic remains outside the protocol boundary.
+
+\subsection{ADR-003 --- Mnemosyne Owns Durable Application State}
+Mnemosyne is the durable persistence capability. Mneme/Infinispan provides operational/cache state and must not redefine the existence of durable governed information.
+
+\subsection{ADR-004 --- Calliope Owns Canonical Models and Semantic Governance}
+Calliope owns canonical model definitions, profiles, terminology bindings, and semantic governance used by Harmonia processing.
+
+\subsection{ADR-005 --- Themis Owns Security Policy Decisions}
+Themis is the common Harmonia authorisation/policy capability. Authentication boundaries establish trusted identity; Themis evaluates permissions.
+
+\subsection{ADR-006 --- FHIR R5 Is the Clinical Interoperability Boundary}
+The durable clinical interoperability service is represented and exposed using HL7 FHIR R5. Proprietary source models are translated into the governed representation rather than propagated as the enterprise integration contract.
+
+\subsection{ADR-007 --- Harmonia Is an Interoperability Authority, Not Universal Clinical Truth}
+Source systems may remain authoritative for the activities they manage. Harmonia maintains the governed, vendor-neutral interoperability representation and preserves provenance and Information Authority rather than claiming universal clinical source-of-truth status.
+
+\subsection{ADR-008 --- Iris-Clinical Begins as a Longitudinal Record Viewer}
+The initial Iris-Clinical capability is read-oriented. The architecture permits selective clinical authoring later, but authoring is introduced only where terminology, validation, security, governance, and workflow prerequisites are satisfied.
+
+\subsection{ADR-009 --- Information Authority Is Cross-Cutting}
+AUTHORITATIVE, INFORMATIONAL, and ANECDOTAL classification is a core Harmonia concept rather than an Iris or Clinical-only feature.
+
+\subsection{ADR-010 --- Clinical Search Must Be Authoritative-Backed}
+Cache contents are not the definition of the clinical record. Clinical read/search must remain correct from durable state after cache loss or restart.
+
+\subsection{ADR-011 --- Agora Uses Restricted Self-Hosted Matrix/Synapse}
+The initial Agora collaboration environment is self-hosted, restricted, and non-federated. Patient collaboration rooms and membership are governed by Harmonia rather than unmanaged public federation.
+
+\subsection{ADR-012 --- Paradeigma Is an Isolated Exemplar/Test Subsystem}
+Paradeigma exists to exercise Harmonia interfaces and workflows with deterministic synthetic clinical scenarios. It is not a production clinical dependency and must remain isolated from production architecture.
+
+\subsection{ADR-013 --- Kleio Owns Audit Evidence and Provenance}
+Kleio is the Harmonia capability responsible for immutable audit evidence and governed provenance. Themis, Pylai, Ponos, Ergon, Iris, and other Harmonia subsystems may produce evidence, but do not independently own the enterprise audit model or durable audit record. Accepted audit evidence is append-only and shall not be updated, replaced, patched, deleted, or resurrected through ordinary application persistence mechanisms.
+
+\subsection{ADR-014 --- Petasos Owns Durable Processing Transition Boundaries}
+Petasos governs the durable transfer of work between independently recoverable Harmonia processing activities. Ponos owns execution and orchestration of those activities; Petasos establishes the durable boundary at which responsibility for work is transferred. ActiveMQ Artemis is an implementation mechanism used by Petasos and does not itself define Harmonia processing semantics.
+
+\subsection{ADR-015 --- Replay Is Anchored to Explicit Durable Transitions}
+Replay is supported only from Petasos-governed durable transition points explicitly designated as replayable. Harmonia does not provide arbitrary replay from internal implementation states. A deliberate replay creates a new processing attempt linked to the original transition through correlation, causation, and provenance; it does not modify, replace, or impersonate the original event or processing attempt. Replay, deterministic reprocessing, transport redelivery, and redelivery of an established result are distinct operations and shall not be treated as equivalent.
+
+\subsection{ADR-016 --- Audit Is Anchored to Architecturally Significant Transitions}
+Kleio AuditEvents are generated for architecturally significant actions and transitions, including acceptance or rejection of work, significant commitment or authority transitions, external dispatch, and deliberate replay where policy requires evidence. Internal implementation steps such as parsing, mapping helpers, individual validation rules, and ordinary method execution are not independently audited merely because they occur. Audit, provenance, and replay remain distinct concepts but may share a durable Petasos transition as their architectural anchor.
+
+\subsection{ADR-017 --- Processing Pressure Is Expressed as Durable Backlog}
+Where processing demand exceeds downstream capacity, Harmonia shall preferentially express pressure as bounded, observable, durable Petasos/Artemis backlog rather than unbounded growth in JVM heap, worker threads, database connections, or volatile work state. Queue depth, oldest-transition age, processing rate, retry/replay count, dead-letter count, and backlog drain rate form part of the operational model for transition processing.
+
+\subsection{ADR-018 --- Mnemosyne Defines the Authoritative Durable State Boundary}
+\label{adr:018-mnemosyne-durable-state-boundary}
+
+\textbf{Status:} Accepted\\
+\textbf{Date:} 24 September 2026
+
+\subsubsection{Context}
+
+Harmonia requires application state to remain available and recoverable across process, node and infrastructure failures while supporting high throughput, horizontal scaling and deployment across multiple failure domains.
+
+The original Mneme architecture considered using Infinispan as more than a conventional cache. Under this model, application state would be synchronously replicated across multiple Infinispan instances, potentially distributed across independent sites or data centres. Each site could then independently persist replicated state through its local cache-store mechanism into a local Mnemosyne persistence service.
+
+The intended benefits were:
+\begin{itemize}
+    \item high availability at the application and middleware tier rather than relying primarily upon database or storage-tier high availability;
+    \item low write latency by allowing application processing to complete following distributed cache acceptance rather than waiting for physical database persistence;
+    \item resilience to failure of an individual persistence store;
+    \item independent persistence of replicated state at multiple sites;
+    \item reduced dependence on expensive database replication and highly available storage infrastructure; and
+    \item eventual reconciliation of persistence stores following temporary database, site or network failure.
+\end{itemize}
+
+Conceptually, the distributed Mneme fabric would therefore have formed the immediate acceptance boundary, with Mnemosyne persistence occurring asynchronously behind it.
+
+This approach is technically feasible. However, for replicated cache state to constitute authoritative durable state, Harmonia would also need to guarantee recovery following cache, process, site and network failures. This would require Harmonia to own mechanisms for durable outstanding-write tracking, persistence retry, restart recovery, cross-site reconciliation, version consistency, conflict resolution, partition handling and eventual convergence of independent persistence stores.
+
+The resulting capability would effectively introduce a distributed persistence and consistency layer above the existing durable persistence technologies.
+
+Harmonia already provides distinct technologies appropriate to the principal resilience requirements:
+\begin{itemize}
+    \item \textbf{Mnemosyne/PostgreSQL} provides durable application-state persistence;
+    \item \textbf{Petasos/Artemis} provides durable transfer of work between independently recoverable processing activities; and
+    \item \textbf{Mneme/Infinispan} provides distributed caching and efficient access to reconstructable state.
+\end{itemize}
+
+The additional complexity required to make Mneme itself an authoritative persistence boundary is therefore not justified by the expected performance, availability or infrastructure-cost benefits.
+
+\subsubsection{Decision}
+
+\textbf{Mnemosyne defines the authoritative durable application-state boundary for Harmonia.}
+
+Application state that requires durable persistence is not considered durably accepted solely because it has been written to, replicated by, or is currently available from Mneme/Infinispan.
+
+A successful Mneme cache operation does not constitute durable application-state acceptance.
+
+State requiring durable persistence is considered accepted when:
+\begin{enumerate}
+    \item it has been successfully committed through Mnemosyne to its authoritative durable persistence mechanism; or
+    \item responsibility for further processing has been successfully transferred across an explicitly defined durable Petasos transition, where the state necessary to complete or reconstruct that processing is durably recoverable.
+\end{enumerate}
+
+Petasos/Artemis may therefore provide a durable \textbf{work acceptance} boundary, but does not replace Mnemosyne as the authoritative repository for committed application state.
+
+Mneme/Infinispan will remain a distributed caching capability. State held by Mneme must be reconstructable from authoritative durable state or from an explicitly defined durable processing transition where reconstruction is part of that transition's contract.
+
+Volatile or cached state must never be the sole recoverable representation of application state or work that Harmonia has acknowledged as durably accepted.
+
+\subsubsection{Architectural Responsibilities}
+
+\begin{center}
+    \begin{tabular}{p{0.13\textwidth} p{0.29\textwidth} p{0.18\textwidth} p{0.29\textwidth}}
+        \hline
+        \textbf{Subsystem} & \textbf{Responsibility} & \textbf{Primary Technology} & \textbf{Durability Role} \\
+        \hline
+        Mneme & Distributed caching and efficient state access & Infinispan & Non-authoritative, reconstructable state \\
+        Mnemosyne & Durable application-state persistence & PostgreSQL & Authoritative durable application state \\
+        Petasos & Transfer of work between independently recoverable processing activities & ActiveMQ Artemis & Durable processing transitions \\
+        Kleio & Immutable audit and provenance evidence & PostgreSQL & Durable immutable evidence \\
+        \hline
+    \end{tabular}
+\end{center}
+
+These responsibilities are deliberately distinct. Harmonia must not introduce implicit overlap between cache availability, processing durability and authoritative persistence.
+
+\subsubsection{Consequences}
+
+The decision simplifies Harmonia's failure and recovery semantics.
+
+\paragraph{Positive Consequences}
+
+\begin{itemize}
+    \item Harmonia does not need to implement its own distributed database consistency and convergence mechanisms.
+    \item Persistence failure can be represented explicitly rather than hidden behind successful cache operations.
+    \item Database recovery and replication can use established PostgreSQL capabilities appropriate to each deployment topology.
+    \item Petasos/Artemis can absorb processing pressure and temporary downstream outages as durable backlog rather than requiring volatile cache state to act as a persistence substitute.
+    \item Mneme remains independently scalable and distributable without carrying an authoritative durability obligation.
+    \item Cache contents may safely be evicted, restarted or reconstructed without causing loss of acknowledged authoritative state.
+    \item Different deployment profiles may provide different levels of PostgreSQL, Artemis and Infinispan redundancy without changing Harmonia's logical durability semantics.
+    \item Failure behaviour becomes easier to test and reason about.
+\end{itemize}
+
+\paragraph{Negative Consequences}
+
+\begin{itemize}
+    \item authoritative synchronous writes may incur greater latency than memory/cache acceptance;
+    \item PostgreSQL remains part of the critical path for operations requiring immediate durable application-state commitment;
+    \item deployments requiring high availability of authoritative state must provide an appropriate PostgreSQL HA/DR topology;
+    \item Infinispan replication cannot by itself be used to mask loss of the authoritative persistence service; and
+    \item some existing Harmonia persistence and cache interactions must be changed because they currently allow cache or JVM-local state to be treated as successfully persisted state.
+\end{itemize}
+
+These costs are accepted in preference to Harmonia assuming responsibility for distributed persistence, reconciliation and consistency.
+
+\subsubsection{Failure Semantics}
+
+The following invariant applies:
+
+\begin{quote}
+    \textbf{Accepted state must be durably recoverable.}
+\end{quote}
+
+This does \textbf{not} imply:
+
+\begin{quote}
+    Accepted state must always have already been committed to PostgreSQL.
+\end{quote}
+
+A durable Petasos transition may constitute acceptance of work where the information necessary to continue processing is durably recoverable from that transition.
+
+However:
+
+\begin{quote}
+    \textbf{Cache presence, cache replication, JVM-local state or an asynchronous persistence attempt does not by itself constitute durable acceptance.}
+\end{quote}
+
+Consequently:
+\begin{itemize}
+    \item failure to persist required authoritative state must be propagated as failure;
+    \item a local in-memory fallback must not convert unavailable durable persistence into apparent success;
+    \item asynchronous processing may return acceptance only after the corresponding durable work boundary has been established;
+    \item failure after a durable Petasos transition must result in recoverable backlog, redelivery or controlled failure rather than silent loss;
+    \item cache loss must be recoverable from Mnemosyne or another explicitly defined durable source; and
+    \item transient processing state such as a Pragma may remain volatile where it can be reconstructed without loss of acknowledged work.
+\end{itemize}
+
+\subsubsection{Rejected Alternative --- Mneme as a Distributed Persistence Fabric}
+
+The rejected architecture would have treated replicated Infinispan state as Harmonia's primary immediate persistence/availability boundary.
+
+Multiple independent Mneme instances or sites would replicate state between them. Each site would independently write replicated state through its cache-store implementation to a local Mnemosyne persistence service. Failure of an individual database or persistence site would not prevent application acceptance, with failed persistence operations subsequently retried and stores gradually reconciled.
+
+This model was rejected \textbf{not because it is technically invalid}, but because completing it safely would require Harmonia to provide substantial additional distributed-systems capability, including:
+\begin{itemize}
+    \item durable tracking of outstanding persistence operations;
+    \item recovery of pending writes following process or site restart;
+    \item persistence retry and backoff;
+    \item store convergence monitoring;
+    \item version and ordering semantics;
+    \item duplicate and idempotency handling;
+    \item conflict detection and resolution;
+    \item network-partition behaviour;
+    \item reconciliation of independently persisted copies; and
+    \item operational tooling for detecting and repairing divergence.
+\end{itemize}
+
+These responsibilities would duplicate capabilities already available through established database and durable-messaging technologies while materially increasing implementation, testing and operational complexity.
+
+The likely reduction in persistence latency and infrastructure cost does not justify that complexity for Harmonia's expected workload and availability requirements.
+
+\subsubsection{Relationship to Other Decisions}
+
+This decision reinforces:
+\begin{itemize}
+    \item \textbf{ADR-003 --- Mnemosyne Owns Durable Application State}
+    \item \textbf{ADR-010 --- Clinical Search Must Be Authoritative-Backed}
+    \item \textbf{ADR-014 --- Petasos Owns Durable Processing Transition Boundaries}
+    \item \textbf{ADR-015 --- Replay Is Anchored to Explicit Durable Transitions}
+    \item \textbf{ADR-017 --- Processing Pressure Is Expressed as Durable Backlog}
+\end{itemize}
+
+It also establishes the architectural basis for the current implementation sequence:
+
+\begin{verbatim}
+Task 07   Remove volatile persistence fallback
+             |
+Task 08   Establish authoritative Clinical writes
+             |
+Task 09   Establish cache-aside point reads
+             |
+Task 10   Establish authoritative Clinical search
+\end{verbatim}
+
+Task 07 must remove cases where cache or JVM-local state is incorrectly treated as durable acceptance without prematurely redesigning the authoritative Clinical write path that is addressed by Task 08.
+
+\subsubsection{Architectural Principle}
+
+\begin{quote}
+    \textbf{Petasos makes work recoverable.}\\
+    \textbf{Mnemosyne makes application state durable.}\\
+    \textbf{Mneme makes access to state fast.}\\
+    \textbf{Kleio makes evidence permanent.}
+\end{quote}
+
+Harmonia will prefer these explicit responsibilities over introducing a distributed persistence protocol spanning them.
+
+% =============================================================================
+% ADR-019 --- Mneme Owns the Distributed Working-State Cache
+% =============================================================================
+
+\subsection{ADR-019 --- Mneme Owns the Distributed Working-State Cache}
+\label{adr:019-mneme-distributed-working-state-cache}
+
+\textbf{Status:} Accepted\\
+\textbf{Date:} 25 September 2026
+
+\subsubsection{Context}
+
+Harmonia processes resources through validation, transformation, workflow, integration and persistence activities. During processing, access to these resources is expected to be uneven and potentially highly repetitive.
+
+A relatively small subset of the total resource population may be actively involved in processing at any point in time. Resources within this active working set may be repeatedly accessed by multiple Harmonia components while being validated, referenced, transformed, enriched or progressed through workflows.
+
+Repeatedly retrieving this working state from Mnemosyne would unnecessarily increase persistence traffic, database connection utilisation and processing latency.
+
+Mneme was introduced to provide a distributed caching capability for this purpose. Infinispan allows the active working set to be distributed across Harmonia runtime instances and provides efficient access to resources experiencing high-volume or jittery access patterns.
+
+ADR-018 establishes that Mneme is \textbf{not} an authoritative durability boundary. Authoritative application state remains the responsibility of Mnemosyne, while durable transfer of processing responsibility remains the responsibility of Petasos.
+
+This does not make Mneme merely an optional optimisation.
+
+Where Harmonia components are designed to use Mneme, they rely upon the characteristics of a \textbf{shared distributed working-state cache}, including visibility of cached state across processing nodes and avoidance of unnecessary repeated retrieval from authoritative persistence.
+
+Several Harmonia services currently contain process-local \texttt{ConcurrentHashMap} or equivalent in-memory fallbacks that can be used when the configured Infinispan/Hot Rod capability is unavailable.
+
+Such fallbacks alter the semantics of Mneme. Different Harmonia runtime instances may independently hold different values, different resource versions or no value at all. The system has silently changed from a distributed working-state model to isolated process-local caches.
+
+This behaviour is undesirable even though the cached information is not itself authoritative.
+
+\subsubsection{Decision}
+
+\begin{quote}
+    \textbf{Mneme owns Harmonia's distributed working-state cache.}
+\end{quote}
+
+Mneme will use Infinispan to provide efficient distributed access to the active subset of resources being processed by Harmonia.
+
+Its principal purpose is to absorb \textbf{high-volume, repetitive and potentially jittery access patterns} against this active working set, thereby reducing unnecessary access to Mnemosyne and avoiding persistence infrastructure becoming the default mechanism for repeated working-state retrieval.
+
+Mneme state is:
+\begin{itemize}
+    \item \textbf{distributed} --- where Mneme semantics are required, cached state is shared through the configured Infinispan capability rather than independently maintained by individual Harmonia processes;
+    \item \textbf{non-authoritative} --- Mneme does not determine the authoritative durable state of an application resource;
+    \item \textbf{reconstructable} --- loss of cached state must not result in loss of authoritative application state or acknowledged durable work;
+    \item \textbf{performance-oriented} --- caching exists primarily to reduce repeated authoritative retrieval and efficiently support active processing; and
+    \item \textbf{explicitly unavailable when its distributed capability is unavailable} --- Harmonia must not silently substitute process-local application-state caches for Mneme.
+\end{itemize}
+
+\subsubsection{Process-Local Fallback}
+
+Where a component requires Mneme semantics:
+
+\begin{quote}
+    \textbf{Loss of Mneme must be visible as loss of that capability. It must not silently degrade into process-local application state.}
+\end{quote}
+
+Production services must therefore not use \texttt{ConcurrentHashMap}, local collections or equivalent process-memory structures as fallback substitutes for Mneme-backed application state.
+
+A component may respond to Mneme unavailability by:
+\begin{enumerate}
+    \item failing the operation where distributed working-state semantics are required; or
+    \item explicitly bypassing Mneme and retrieving authoritative state from Mnemosyne where the operation supports such degraded behaviour.
+\end{enumerate}
+
+The second behaviour must be deliberate and architecturally visible. It must not establish an alternative local cache that implicitly replaces Mneme.
+
+This decision does \textbf{not} prohibit normal use of process-local memory.
+
+Local collections remain appropriate for genuinely process-local concerns such as temporary computation state, immutable configuration, implementation metadata, logger caches, local registrations and other information whose loss or node-local visibility does not alter Harmonia's application-state semantics.
+
+The distinction is therefore:
+
+\begin{quote}
+    \textbf{Process-local state is permitted. Process-local substitution for distributed Mneme state is not.}
+\end{quote}
+
+\subsubsection{Relationship Between Mneme and Mnemosyne}
+
+The normal read model is:
+
+\begin{verbatim}
+Request
+   |
+   v
+ Mneme ---- HIT ----------------------> Return
+   |
+  MISS
+   |
+   v
+Mnemosyne
+   |
+   +----> Populate Mneme
+   |
+   +----> Return
+\end{verbatim}
+
+Where an explicitly supported degraded mode exists:
+
+\begin{verbatim}
+Mneme unavailable
+       |
+       v
+   Mnemosyne
+       |
+       v
+     Return
+\end{verbatim}
+
+There is deliberately no:
+
+\begin{verbatim}
+Mneme unavailable
+       |
+       v
+ConcurrentHashMap
+       |
+       v
+Pretend Mneme exists
+\end{verbatim}
+
+\subsubsection{Consequences}
+
+The decision gives Mneme a clear architectural responsibility independent of persistence.
+
+\paragraph{Positive Consequences}
+
+\begin{itemize}
+    \item repeated access to active resources does not unnecessarily load Mnemosyne;
+    \item high-volume and jittery access patterns can be absorbed by the distributed working-state cache;
+    \item Harmonia processing nodes operate against consistent distributed-cache semantics rather than independent local fallback caches;
+    \item cache contents may be evicted, restarted or reconstructed without violating Harmonia's durability guarantees;
+    \item Mneme can be scaled and distributed independently of authoritative persistence; and
+    \item failure behaviour becomes explicit and easier to observe, test and reason about.
+\end{itemize}
+
+\paragraph{Negative Consequences}
+
+\begin{itemize}
+    \item loss of Infinispan may become visible to callers rather than being concealed by local fallback behaviour;
+    \item operations that require Mneme semantics may fail until the capability is restored unless they explicitly support authoritative retrieval from Mnemosyne;
+    \item appropriate monitoring of Mneme availability becomes operationally important; and
+    \item removal of existing process-local fallback behaviour may expose infrastructure or configuration failures that were previously hidden.
+\end{itemize}
+
+These consequences are accepted in preference to allowing individual Harmonia nodes to silently establish divergent working-state caches.
+
+\subsubsection{Rejected Alternative --- Process-Local Cache Fallback}
+
+The rejected model allows individual services to substitute local \texttt{ConcurrentHashMap} or equivalent storage when Infinispan or Hot Rod is unavailable.
+
+Although this can make individual services appear more available, it changes the semantics of the application. Different runtime nodes may hold different resource versions, different processing states or no cached representation at all.
+
+For example:
+
+\begin{verbatim}
+Node A                 Node B                 Node C
+
+Person/123 v7          Person/123 v6          Person/123 absent
+Task/456 PROCESSING    Task/456 RECEIVED      Task/456 absent
+\end{verbatim}
+
+None of these copies is authoritative durable state, but components are no longer operating against the distributed working-state capability they were designed to use.
+
+This creates node-dependent behaviour, makes failures difficult to observe, hides infrastructure problems and increases the possibility of inconsistent processing decisions.
+
+The apparent availability benefit therefore does not justify the semantic ambiguity introduced by local fallback.
+
+\subsubsection{Relationship to Other Decisions}
+
+This decision complements rather than changes ADR-018.
+
+\begin{itemize}
+    \item \textbf{ADR-003 --- Mnemosyne Owns Durable Application State} establishes where authoritative application state resides.
+    \item \textbf{ADR-014 --- Petasos Owns Durable Processing Transition Boundaries} establishes where responsibility for durable work transfer resides.
+    \item \textbf{ADR-018 --- Mnemosyne Defines the Authoritative Durable State Boundary} establishes that cached state does not constitute durable acceptance.
+\end{itemize}
+
+ADR-019 establishes Mneme's positive responsibility:
+
+\begin{quote}
+    \textbf{Mneme provides the distributed, reconstructable working-state cache used to efficiently service the active resource set during Harmonia processing.}
+\end{quote}
+
+Together:
+\begin{itemize}
+    \item \textbf{Mnemosyne} answers: Where does authoritative application state live?
+    \item \textbf{Petasos} answers: Will accepted work survive until processing can continue?
+    \item \textbf{Mneme} answers: How is the active working set accessed efficiently and consistently across processing nodes?
+    \item \textbf{Kleio} answers: What durable evidence exists of significant actions and transitions?
+\end{itemize}
+
+\subsubsection{Architectural Principle}
+
+\begin{quote}
+    \textbf{Mneme makes active state fast, shared and reconstructable --- never authoritative and never secretly local.}
+\end{quote}
+

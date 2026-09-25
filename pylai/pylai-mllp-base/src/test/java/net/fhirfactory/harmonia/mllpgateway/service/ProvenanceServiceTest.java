@@ -17,32 +17,93 @@
 
 package net.fhirfactory.harmonia.mllpgateway.service;
 
+import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.Provenance;
 import org.hl7.fhir.r5.model.Reference;
+import org.infinispan.client.hotrod.RemoteCache;
+import org.infinispan.client.hotrod.RemoteCacheManager;
+import org.infinispan.client.hotrod.exceptions.HotRodClientException;
+import org.infinispan.commons.util.CloseableIterator;
+import org.infinispan.commons.util.CloseableIteratorCollection;
+import org.infinispan.commons.util.CloseableIteratorSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
 
 class ProvenanceServiceTest {
 
     private DefaultProvenanceService provenanceService;
+    private RemoteCacheManager mockCacheManager;
+    private RemoteCache<String, String> mockCache;
+    private Map<String, String> remoteStore;
+
+    private static <T> CloseableIterator<T> toCloseableIterator(Iterator<T> iterator) {
+        return new CloseableIterator<T>() {
+            @Override
+            public void close() {}
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext();
+            }
+
+            @Override
+            public T next() {
+                return iterator.next();
+            }
+        };
+    }
 
     @BeforeEach
+    @SuppressWarnings("unchecked")
     void setUp() {
-        provenanceService = new DefaultProvenanceService();
-        provenanceService.clear();
+        mockCacheManager = mock(RemoteCacheManager.class);
+        mockCache = mock(RemoteCache.class);
+        remoteStore = new ConcurrentHashMap<>();
+
+        when(mockCacheManager.isStarted()).thenReturn(true);
+        doReturn(mockCache).when(mockCacheManager).getCache(eq(DefaultProvenanceService.PROVENANCE_CACHE_NAME));
+
+        when(mockCache.get(anyString())).thenAnswer(i -> remoteStore.get(i.getArgument(0)));
+        when(mockCache.put(anyString(), anyString())).thenAnswer(i -> remoteStore.put(i.getArgument(0), i.getArgument(1)));
+        when(mockCache.remove(anyString())).thenAnswer(i -> remoteStore.remove(i.getArgument(0)));
+        doAnswer(i -> {
+            remoteStore.clear();
+            return null;
+        }).when(mockCache).clear();
+        when(mockCache.size()).thenAnswer(i -> remoteStore.size());
+        when(mockCache.isEmpty()).thenAnswer(i -> remoteStore.isEmpty());
+
+        CloseableIteratorCollection<String> mockValues = mock(CloseableIteratorCollection.class);
+        when(mockValues.iterator()).thenAnswer(i -> toCloseableIterator(remoteStore.values().iterator()));
+        when(mockValues.stream()).thenAnswer(i -> remoteStore.values().stream());
+        when(mockValues.isEmpty()).thenAnswer(i -> remoteStore.isEmpty());
+        when(mockValues.size()).thenAnswer(i -> remoteStore.size());
+        doReturn(mockValues).when(mockCache).values();
+
+        CloseableIteratorSet<String> mockKeys = mock(CloseableIteratorSet.class);
+        when(mockKeys.iterator()).thenAnswer(i -> toCloseableIterator(remoteStore.keySet().iterator()));
+        when(mockKeys.stream()).thenAnswer(i -> remoteStore.keySet().stream());
+        when(mockKeys.isEmpty()).thenAnswer(i -> remoteStore.isEmpty());
+        when(mockKeys.size()).thenAnswer(i -> remoteStore.size());
+        doReturn(mockKeys).when(mockCache).keySet();
+
+        provenanceService = new DefaultProvenanceService(mockCacheManager, FhirContext.forR5());
     }
 
     @Test
-    @DisplayName("Create, Read, Update, Delete Provenance resource")
+    @DisplayName("Create, Read, Update, Delete Provenance resource in remote cache")
     void testCrudOperations() {
         Provenance prov = new Provenance();
         prov.setId("Provenance/prov-001");
@@ -57,6 +118,9 @@ class ProvenanceServiceTest {
         assertThat(created.getIdPart()).isEqualTo("prov-001");
         assertThat(provenanceService.count()).isEqualTo(1);
         assertThat(FhirSecurityTagManager.hasConfidentiality(created, FhirConfidentialityEnum.N)).isTrue();
+
+        // Verify it was persisted to remote store
+        assertThat(remoteStore).containsKey("prov-001");
 
         Optional<Provenance> fetched = provenanceService.getById("prov-001");
         assertThat(fetched).isPresent();
@@ -82,10 +146,11 @@ class ProvenanceServiceTest {
         assertThat(deleted).isTrue();
         assertThat(provenanceService.count()).isEqualTo(0);
         assertThat(provenanceService.getById("prov-001")).isEmpty();
+        assertThat(remoteStore).doesNotContainKey("prov-001");
     }
 
     @Test
-    @DisplayName("Search Provenance by Target, Agent, and Patient")
+    @DisplayName("Search Provenance by Target, Agent, and Patient in remote cache")
     void testSearchOperations() {
         Provenance prov1 = new Provenance();
         prov1.setId("Provenance/prov-A01");
@@ -118,5 +183,130 @@ class ProvenanceServiceTest {
         List<Provenance> byPatient = provenanceService.search(null, null, null, "PAT-200");
         assertThat(byPatient).hasSize(1);
         assertThat(byPatient.get(0).getIdPart()).isEqualTo("prov-A08");
+    }
+
+    @Test
+    @DisplayName("Valid cache miss returns empty Optional rather than exception")
+    void testValidCacheMissReturnsEmpty() {
+        Optional<Provenance> result = provenanceService.getById("non-existent-prov");
+        assertThat(result).isEmpty();
+    }
+
+    @Test
+    @DisplayName("Throws IllegalStateException when RemoteCacheManager is null")
+    void testExplicitFailureWhenRemoteCacheManagerNull() {
+        DefaultProvenanceService unconfiguredService = new DefaultProvenanceService(null, FhirContext.forR5());
+        Provenance prov = new Provenance();
+        prov.setId("Provenance/prov-null-mgr");
+
+        assertThatThrownBy(() -> unconfiguredService.create(prov))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(() -> unconfiguredService.getById("prov-null-mgr"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(() -> unconfiguredService.update("prov-null-mgr", prov))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(() -> unconfiguredService.delete("prov-null-mgr"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(unconfiguredService::getAll)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(() -> unconfiguredService.search(null, null, null, null))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(unconfiguredService::count)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(unconfiguredService::clear)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+    }
+
+    @Test
+    @DisplayName("Throws IllegalStateException when RemoteCacheManager is not started")
+    void testExplicitFailureWhenRemoteCacheManagerNotStarted() {
+        when(mockCacheManager.isStarted()).thenReturn(false);
+        Provenance prov = new Provenance();
+        prov.setId("Provenance/prov-unstarted");
+
+        assertThatThrownBy(() -> provenanceService.create(prov))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+
+        assertThatThrownBy(() -> provenanceService.getById("prov-unstarted"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+    }
+
+    @Test
+    @DisplayName("Throws IllegalStateException when getCache returns null")
+    void testExplicitFailureWhenNamedCacheNull() {
+        when(mockCacheManager.getCache(eq(DefaultProvenanceService.PROVENANCE_CACHE_NAME))).thenReturn(null);
+        Provenance prov = new Provenance();
+        prov.setId("Provenance/prov-no-cache");
+
+        assertThatThrownBy(() -> provenanceService.create(prov))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Mneme cache [provenance-cache] is unavailable");
+    }
+
+    @Test
+    @DisplayName("Propagates HotRodClientException from RemoteCache")
+    void testRemoteCacheExceptionPropagation() {
+        when(mockCache.put(anyString(), anyString())).thenThrow(new HotRodClientException("HotRod transport error"));
+        Provenance prov = new Provenance();
+        prov.setId("Provenance/prov-fail");
+
+        assertThatThrownBy(() -> provenanceService.create(prov))
+                .isInstanceOf(HotRodClientException.class)
+                .hasMessageContaining("HotRod transport error");
+    }
+
+    @Test
+    @DisplayName("Zero local fallback state mutation when cache fails")
+    void testZeroLocalFallbackStateMutation() {
+        when(mockCacheManager.isStarted()).thenReturn(false);
+        Provenance prov = new Provenance();
+        prov.setId("Provenance/prov-no-fallback");
+
+        assertThatThrownBy(() -> provenanceService.create(prov))
+                .isInstanceOf(IllegalStateException.class);
+
+        // Reconnect cache
+        when(mockCacheManager.isStarted()).thenReturn(true);
+
+        // Cache was never populated with prov-no-fallback
+        Optional<Provenance> fetched = provenanceService.getById("prov-no-fallback");
+        assertThat(fetched).isEmpty();
+        assertThat(provenanceService.count()).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("Service recovery upon cache reconnection")
+    void testRecoveryUponReconnect() {
+        when(mockCacheManager.isStarted()).thenReturn(false);
+        Provenance prov = new Provenance();
+        prov.setId("Provenance/prov-reconnect");
+
+        assertThatThrownBy(() -> provenanceService.create(prov))
+                .isInstanceOf(IllegalStateException.class);
+
+        // Reconnect
+        when(mockCacheManager.isStarted()).thenReturn(true);
+
+        Provenance created = provenanceService.create(prov);
+        assertThat(created).isNotNull();
+        assertThat(provenanceService.getById("prov-reconnect")).isPresent();
+        assertThat(provenanceService.count()).isEqualTo(1);
     }
 }

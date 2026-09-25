@@ -50,8 +50,6 @@ public class PraxisService {
 
     private ObjectMapper objectMapper;
 
-    private final Map<String, String> localFallbackCache = new ConcurrentHashMap<>();
-
     public PraxisService() {
     }
 
@@ -96,6 +94,14 @@ public class PraxisService {
             }
         }
         return null;
+    }
+
+    private RemoteCache<String, String> requireRemoteCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + SEQUENCE_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
     }
 
     public String toJson(PraxisDefinition sequence) {
@@ -148,19 +154,9 @@ public class PraxisService {
         }
         String json = toJson(sequence);
 
-        localFallbackCache.put(sequenceId, json);
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.put(sequenceId, json);
-                log.info("Persisted TaskSequenceDefinition [{}] to remote Infinispan cache [{}]", sequenceId, SEQUENCE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Failed writing TaskSequenceDefinition [{}] to remote cache [{}]: {}. Persisted in local fallback.",
-                        sequenceId, SEQUENCE_CACHE_NAME, e.getMessage());
-            }
-        } else {
-            log.debug("Persisted TaskSequenceDefinition [{}] to local fallback cache", sequenceId);
-        }
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        remoteCache.put(sequenceId, json);
+        log.info("Persisted TaskSequenceDefinition [{}] to remote Infinispan cache [{}]", sequenceId, SEQUENCE_CACHE_NAME);
         return sequence;
     }
 
@@ -177,69 +173,43 @@ public class PraxisService {
             return Optional.empty();
         }
         String cleanId = sequenceId.trim();
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = remoteCache.get(cleanId);
-                if (json != null) {
-                    return Optional.ofNullable(fromJson(json));
-                }
-            } catch (Exception e) {
-                log.warn("Error reading TaskSequenceDefinition [{}] from remote cache [{}]: {}", cleanId, SEQUENCE_CACHE_NAME, e.getMessage());
-            }
-        }
-        String fallbackJson = localFallbackCache.get(cleanId);
-        if (fallbackJson != null) {
-            return Optional.ofNullable(fromJson(fallbackJson));
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = remoteCache.get(cleanId);
+        if (json != null) {
+            return Optional.ofNullable(fromJson(json));
         }
         return Optional.empty();
     }
 
     public List<PraxisDefinition> getAll() {
         Map<String, PraxisDefinition> sequenceMap = new LinkedHashMap<>();
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                Collection<String> values = remoteCache.values();
-                if (values != null && !values.isEmpty()) {
-                    for (String json : values) {
-                        if (json != null) {
-                            try {
-                                PraxisDefinition seq = fromJson(json);
-                                if (seq != null) {
-                                    sequenceMap.put(seq.getPraxisId(), seq);
-                                }
-                            } catch (Exception ignored) {}
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        Collection<String> values = remoteCache.values();
+        if (values != null && !values.isEmpty()) {
+            for (String json : values) {
+                if (json != null) {
+                    try {
+                        PraxisDefinition seq = fromJson(json);
+                        if (seq != null) {
+                            sequenceMap.put(seq.getPraxisId(), seq);
                         }
-                    }
-                } else {
-                    Set<String> keys = remoteCache.keySet();
-                    if (keys != null) {
-                        for (String key : keys) {
-                            String json = remoteCache.get(key);
-                            if (json != null) {
-                                try {
-                                    PraxisDefinition seq = fromJson(json);
-                                    if (seq != null) {
-                                        sequenceMap.put(seq.getPraxisId(), seq);
-                                    }
-                                } catch (Exception ignored) {}
+                    } catch (Exception ignored) {}
+                }
+            }
+        } else {
+            Set<String> keys = remoteCache.keySet();
+            if (keys != null) {
+                for (String key : keys) {
+                    String json = remoteCache.get(key);
+                    if (json != null) {
+                        try {
+                            PraxisDefinition seq = fromJson(json);
+                            if (seq != null) {
+                                sequenceMap.put(seq.getPraxisId(), seq);
                             }
-                        }
+                        } catch (Exception ignored) {}
                     }
                 }
-            } catch (Exception e) {
-                log.warn("Error scanning remote cache [{}] values: {}", SEQUENCE_CACHE_NAME, e.getMessage());
-            }
-        }
-        for (Map.Entry<String, String> entry : localFallbackCache.entrySet()) {
-            if (!sequenceMap.containsKey(entry.getKey())) {
-                try {
-                    PraxisDefinition seq = fromJson(entry.getValue());
-                    if (seq != null) {
-                        sequenceMap.put(seq.getPraxisId(), seq);
-                    }
-                } catch (Exception ignored) {}
             }
         }
         return new ArrayList<>(sequenceMap.values());
@@ -271,37 +241,17 @@ public class PraxisService {
             return false;
         }
         String cleanId = sequenceId.trim();
-        boolean removed = false;
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String prev = remoteCache.remove(cleanId);
-                if (prev != null) {
-                    removed = true;
-                }
-            } catch (Exception e) {
-                log.warn("Error removing TaskSequenceDefinition [{}] from remote cache [{}]: {}", cleanId, SEQUENCE_CACHE_NAME, e.getMessage());
-            }
-        }
-        if (localFallbackCache.remove(cleanId) != null) {
-            removed = true;
-        }
-        return removed;
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        return remoteCache.remove(cleanId) != null;
     }
 
     public long count() {
-        return getAll().size();
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        return remoteCache.size();
     }
 
     public void clear() {
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.clear();
-            } catch (Exception e) {
-                log.warn("Error clearing remote cache [{}]: {}", SEQUENCE_CACHE_NAME, e.getMessage());
-            }
-        }
-        localFallbackCache.clear();
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        remoteCache.clear();
     }
 }

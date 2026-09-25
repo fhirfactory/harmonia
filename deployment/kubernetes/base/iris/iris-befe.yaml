@@ -63,6 +63,12 @@ spec:
               value: "iris-befe"
             - name: HARMONIA_BEFE_CORS_ALLOWED_ORIGINS
               value: "https://clinical.harmonia.local,https://console.harmonia.local,https://admin.harmonia.local"
+            - name: FHIR_DB_URL
+              value: "jdbc:postgresql://postgres-1:5432/fhir_node_1"
+            - name: FHIR_DB_USER
+              value: "fhir_user"
+            - name: FHIR_DB_PASSWORD
+              value: "fhir_password"
           ports:
             - containerPort: 8080
               name: clinical

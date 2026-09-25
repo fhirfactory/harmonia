@@ -47,7 +47,13 @@ public class TaskSequenceCacheService {
     private RemoteCacheManager remoteCacheManager;
 
     private ObjectMapper objectMapper;
-    private final Map<String, String> localFallbackCache = new ConcurrentHashMap<>();
+
+    public TaskSequenceCacheService() {
+    }
+
+    public TaskSequenceCacheService(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
 
     @PostConstruct
     public void init() {
@@ -56,13 +62,17 @@ public class TaskSequenceCacheService {
     }
 
     public synchronized void ensureDefaultSequences() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            log.debug("Remote cache [{}] is unavailable during ensureDefaultSequences; skipping seeding", SEQUENCE_CACHE_NAME);
+            return;
+        }
         try {
-            if (count() == 0) {
+            if (cache.isEmpty()) {
                 seedDefaultSequences();
             }
         } catch (Exception e) {
-            log.warn("Failed ensuring default task sequences during init: {}. Seeding local fallback.", e.getMessage());
-            seedDefaultSequences();
+            log.warn("Failed ensuring default task sequences during init: {}", e.getMessage());
         }
     }
 
@@ -112,6 +122,14 @@ public class TaskSequenceCacheService {
         return null;
     }
 
+    private RemoteCache<String, String> requireRemoteCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + SEQUENCE_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
+    }
+
     public List<PraxisDefinition> getAllSequences() {
         List<String> jsons = getAllSequenceJsons();
         List<PraxisDefinition> list = new ArrayList<>();
@@ -129,52 +147,18 @@ public class TaskSequenceCacheService {
     }
 
     public List<String> getAllSequenceJsons() {
-        Map<String, String> map = new LinkedHashMap<>();
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                Collection<String> values = cache.values();
-                if (values != null && !values.isEmpty()) {
-                    for (String json : values) {
-                        if (json != null) {
-                            try {
-                                JsonNode node = getObjectMapper().readTree(json);
-                                String id = node.has("sequenceId") ? node.get("sequenceId").asText() : null;
-                                if (id != null) {
-                                    map.put(id, json);
-                                } else {
-                                    map.put(UUID.randomUUID().toString(), json);
-                                }
-                            } catch (Exception ignored) {
-                                map.put(UUID.randomUUID().toString(), json);
-                            }
-                        }
-                    }
-                } else {
-                    Set<String> keys = cache.keySet();
-                    if (keys != null) {
-                        for (String key : keys) {
-                            String json = cache.get(key);
-                            if (json != null) {
-                                map.put(key, json);
-                            }
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                log.warn("Error retrieving task sequences from remote cache: {}", e.getMessage());
+        RemoteCache<String, String> cache = requireRemoteCache();
+        Collection<String> values = cache.values();
+        if (values == null || values.isEmpty()) {
+            return Collections.emptyList();
+        }
+        List<String> list = new ArrayList<>(values.size());
+        for (String json : values) {
+            if (json != null) {
+                list.add(json);
             }
         }
-        for (Map.Entry<String, String> entry : localFallbackCache.entrySet()) {
-            if (!map.containsKey(entry.getKey())) {
-                map.put(entry.getKey(), entry.getValue());
-            }
-        }
-        if (map.isEmpty()) {
-            seedDefaultSequences();
-            return new ArrayList<>(localFallbackCache.values());
-        }
-        return new ArrayList<>(map.values());
+        return list;
     }
 
     public Optional<PraxisDefinition> getSequence(String sequenceId) {
@@ -193,18 +177,8 @@ public class TaskSequenceCacheService {
             return Optional.empty();
         }
         String cleanId = sequenceId.trim();
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                String json = cache.get(cleanId);
-                if (json != null) {
-                    return Optional.of(json);
-                }
-            } catch (Exception e) {
-                log.warn("Error reading sequence [{}] from remote cache: {}", cleanId, e.getMessage());
-            }
-        }
-        return Optional.ofNullable(localFallbackCache.get(cleanId));
+        RemoteCache<String, String> cache = requireRemoteCache();
+        return Optional.ofNullable(cache.get(cleanId));
     }
 
     public PraxisDefinition saveSequence(PraxisDefinition definition) {
@@ -216,14 +190,15 @@ public class TaskSequenceCacheService {
             id = "seq-" + UUID.randomUUID().toString().substring(0, 8);
             definition.setPraxisId(id);
         }
+        String json;
         try {
-            String json = getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(definition);
-            saveSequence(id, json);
-            return definition;
+            json = getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(definition);
         } catch (Exception e) {
             log.error("Failed serializing TaskSequenceDefinition [{}]: {}", id, e.getMessage(), e);
             throw new RuntimeException("Serialization error: " + e.getMessage(), e);
         }
+        saveSequence(id, json);
+        return definition;
     }
 
     public String saveSequence(String sequenceId, String jsonPayload) {
@@ -251,18 +226,9 @@ public class TaskSequenceCacheService {
             }
         }
 
-        localFallbackCache.put(actualId, jsonPayload);
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                cache.put(actualId, jsonPayload);
-                log.info("BEFE saved TaskSequence [{}] to remote cache [{}]", actualId, SEQUENCE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Error writing sequence [{}] to remote cache: {}. Persisted in local fallback.", actualId, e.getMessage());
-            }
-        } else {
-            log.info("BEFE saved TaskSequence [{}] to local fallback cache", actualId);
-        }
+        RemoteCache<String, String> cache = requireRemoteCache();
+        cache.put(actualId, jsonPayload);
+        log.info("BEFE saved TaskSequence [{}] to remote cache [{}]", actualId, SEQUENCE_CACHE_NAME);
         return jsonPayload;
     }
 
@@ -271,25 +237,13 @@ public class TaskSequenceCacheService {
             return false;
         }
         String cleanId = sequenceId.trim();
-        boolean removed = false;
-        RemoteCache<String, String> cache = getRemoteCache();
-        if (cache != null) {
-            try {
-                if (cache.remove(cleanId) != null) {
-                    removed = true;
-                }
-            } catch (Exception e) {
-                log.warn("Error deleting sequence [{}] from remote cache: {}", cleanId, e.getMessage());
-            }
-        }
-        if (localFallbackCache.remove(cleanId) != null) {
-            removed = true;
-        }
-        return removed;
+        RemoteCache<String, String> cache = requireRemoteCache();
+        return cache.remove(cleanId) != null;
     }
 
     public long count() {
-        return getAllSequenceJsons().size();
+        RemoteCache<String, String> cache = requireRemoteCache();
+        return cache.size();
     }
 
     public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {

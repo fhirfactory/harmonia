@@ -20,6 +20,7 @@ package net.fhirfactory.harmonia.persistence.store;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
+import net.fhirfactory.harmonia.persistence.client.HapiFhirRestClient;
 import net.fhirfactory.harmonia.persistence.config.FhirStoreConfiguration;
 import org.infinispan.commons.configuration.attributes.AttributeSet;
 import org.infinispan.configuration.cache.AsyncStoreConfiguration;
@@ -27,14 +28,18 @@ import org.infinispan.configuration.cache.PersistenceConfigurationBuilder;
 import org.infinispan.persistence.spi.InitializationContext;
 import org.infinispan.persistence.spi.MarshallableEntry;
 import org.infinispan.persistence.spi.MarshallableEntryFactory;
+import org.infinispan.persistence.spi.PersistenceException;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -109,6 +114,56 @@ class FhirRestCacheStoreTest {
 
         verify(putRequestedFor(urlEqualTo("/fhir/Person/101"))
                 .withHeader("Content-Type", containing("application/fhir+json")));
+    }
+
+    @Test
+    @DisplayName("Write should fail exceptionally when FHIR server returns HTTP error (false result)")
+    void testWriteFailureOnServerError() {
+        stubFor(put(urlEqualTo("/fhir/Person/101"))
+                .willReturn(aResponse().withStatus(500).withBody("Internal Server Error")));
+
+        MarshallableEntry<String, String> entry = mock(MarshallableEntry.class);
+        when(entry.getKey()).thenReturn("101");
+        when(entry.getValue()).thenReturn("{\"resourceType\":\"Person\",\"id\":\"101\"}");
+
+        assertThatThrownBy(() -> store.write(0, entry).toCompletableFuture().get(5, TimeUnit.SECONDS))
+                .isInstanceOf(ExecutionException.class)
+                .hasCauseInstanceOf(PersistenceException.class)
+                .hasMessageContaining("Failed to persist Person/101");
+    }
+
+    @Test
+    @DisplayName("Write should propagate exception when REST client fails exceptionally")
+    void testWriteFailureOnClientException() {
+        HapiFhirRestClient mockClient = mock(HapiFhirRestClient.class);
+        RuntimeException error = new RuntimeException("Connection refused");
+        when(mockClient.saveResourceJson(any(), any(), any()))
+                .thenReturn(CompletableFuture.failedFuture(error));
+        store.setRestClient(mockClient);
+
+        MarshallableEntry<String, String> entry = mock(MarshallableEntry.class);
+        when(entry.getKey()).thenReturn("101");
+        when(entry.getValue()).thenReturn("{\"resourceType\":\"Person\",\"id\":\"101\"}");
+
+        assertThatThrownBy(() -> store.write(0, entry).toCompletableFuture().get(5, TimeUnit.SECONDS))
+                .isInstanceOf(ExecutionException.class)
+                .hasCause(error);
+    }
+
+    @Test
+    @DisplayName("Write should complete normally for null entry, key, or value")
+    void testWriteNullHandling() throws Exception {
+        assertThat(store.write(0, null).toCompletableFuture().get(5, TimeUnit.SECONDS)).isNull();
+
+        MarshallableEntry<String, String> nullKeyEntry = mock(MarshallableEntry.class);
+        when(nullKeyEntry.getKey()).thenReturn(null);
+        when(nullKeyEntry.getValue()).thenReturn("{}");
+        assertThat(store.write(0, nullKeyEntry).toCompletableFuture().get(5, TimeUnit.SECONDS)).isNull();
+
+        MarshallableEntry<String, String> nullValueEntry = mock(MarshallableEntry.class);
+        when(nullValueEntry.getKey()).thenReturn("101");
+        when(nullValueEntry.getValue()).thenReturn(null);
+        assertThat(store.write(0, nullValueEntry).toCompletableFuture().get(5, TimeUnit.SECONDS)).isNull();
     }
 
     @Test

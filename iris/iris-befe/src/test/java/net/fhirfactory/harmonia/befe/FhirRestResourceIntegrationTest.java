@@ -20,21 +20,82 @@ package net.fhirfactory.harmonia.befe;
 import jakarta.ws.rs.core.Response;
 import net.fhirfactory.harmonia.befe.rest.*;
 import net.fhirfactory.harmonia.befe.service.FhirCacheService;
+import net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService;
+import org.infinispan.client.hotrod.RemoteCache;
+import org.infinispan.client.hotrod.RemoteCacheManager;
+import org.infinispan.commons.util.CloseableIterator;
+import org.infinispan.commons.util.CloseableIteratorCollection;
+import org.infinispan.commons.util.CloseableIteratorSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
 
 class FhirRestResourceIntegrationTest {
 
     private FhirCacheService cacheService;
+    private RemoteCacheManager mockCacheManager;
+    private Map<String, Map<String, String>> mockStore;
+
+    private static <T> CloseableIterator<T> toCloseableIterator(Iterator<T> iterator) {
+        return new CloseableIterator<T>() {
+            @Override
+            public void close() {}
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext();
+            }
+
+            @Override
+            public T next() {
+                return iterator.next();
+            }
+        };
+    }
 
     @BeforeEach
+    @SuppressWarnings("unchecked")
     void setUp() {
-        cacheService = new FhirCacheService();
+        mockStore = new ConcurrentHashMap<>();
+        mockCacheManager = mock(RemoteCacheManager.class);
+        when(mockCacheManager.isStarted()).thenReturn(true);
+        when(mockCacheManager.getCache(anyString())).thenAnswer(inv -> {
+            String cacheName = inv.getArgument(0);
+            Map<String, String> cacheMap = mockStore.computeIfAbsent(cacheName, k -> new ConcurrentHashMap<>());
+            RemoteCache<String, String> mockCache = mock(RemoteCache.class);
+            when(mockCache.get(anyString())).thenAnswer(i -> cacheMap.get(i.getArgument(0)));
+            when(mockCache.put(anyString(), anyString())).thenAnswer(i -> cacheMap.put(i.getArgument(0), i.getArgument(1)));
+            when(mockCache.remove(anyString())).thenAnswer(i -> cacheMap.remove(i.getArgument(0)));
+
+            CloseableIteratorCollection<String> mockValues = mock(CloseableIteratorCollection.class);
+            when(mockValues.iterator()).thenAnswer(i -> toCloseableIterator(cacheMap.values().iterator()));
+            when(mockValues.stream()).thenAnswer(i -> cacheMap.values().stream());
+            when(mockValues.isEmpty()).thenAnswer(i -> cacheMap.isEmpty());
+            when(mockValues.size()).thenAnswer(i -> cacheMap.size());
+            doReturn(mockValues).when(mockCache).values();
+
+            CloseableIteratorSet<String> mockKeys = mock(CloseableIteratorSet.class);
+            when(mockKeys.iterator()).thenAnswer(i -> toCloseableIterator(cacheMap.keySet().iterator()));
+            when(mockKeys.stream()).thenAnswer(i -> cacheMap.keySet().stream());
+            when(mockKeys.isEmpty()).thenAnswer(i -> cacheMap.isEmpty());
+            when(mockKeys.size()).thenAnswer(i -> cacheMap.size());
+            doReturn(mockKeys).when(mockCache).keySet();
+
+            when(mockCache.size()).thenAnswer(i -> cacheMap.size());
+            when(mockCache.isEmpty()).thenAnswer(i -> cacheMap.isEmpty());
+            return mockCache;
+        });
+
+        cacheService = new FhirCacheService(mockCacheManager);
         cacheService.init();
     }
 
@@ -153,7 +214,7 @@ class FhirRestResourceIntegrationTest {
     }
 
     @Test
-    @DisplayName("4. Provenance, AuditEvent, Consent, Task, Communication & DocumentReference Controllers")
+    @DisplayName("4. Provenance, Consent, Task, Communication & DocumentReference Controllers")
     void testNewResourceControllers() throws Exception {
         // Provenance
         ProvenanceResource provController = new ProvenanceResource();
@@ -162,14 +223,6 @@ class FhirRestResourceIntegrationTest {
         assertThat(provRes.getStatus()).isEqualTo(201);
         String provId = provRes.getLocation().getPath().substring(provRes.getLocation().getPath().lastIndexOf('/') + 1);
         assertThat(provController.read(provId).getStatus()).isEqualTo(200);
-
-        // AuditEvent
-        AuditEventResource auditController = new AuditEventResource();
-        injectService(auditController);
-        Response auditRes = auditController.create("{\"resourceType\":\"AuditEvent\",\"action\":\"C\",\"code\":{\"text\":\"Create\"}}");
-        assertThat(auditRes.getStatus()).isEqualTo(201);
-        String auditId = auditRes.getLocation().getPath().substring(auditRes.getLocation().getPath().lastIndexOf('/') + 1);
-        assertThat(auditController.read(auditId).getStatus()).isEqualTo(200);
 
         // Consent
         ConsentResource consentController = new ConsentResource();
@@ -207,7 +260,7 @@ class FhirRestResourceIntegrationTest {
     @Test
     @DisplayName("5. TaskSequence & SystemStatus REST Controllers")
     void testTaskSequenceAndStatusControllers() throws Exception {
-        net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService seqService = new net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService();
+        TaskSequenceCacheService seqService = new TaskSequenceCacheService(mockCacheManager);
         seqService.init();
 
         TaskSequenceResource seqResource = new TaskSequenceResource();

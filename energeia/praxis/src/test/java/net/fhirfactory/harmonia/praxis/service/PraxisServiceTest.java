@@ -18,23 +18,84 @@
 package net.fhirfactory.harmonia.praxis.service;
 
 import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import org.infinispan.client.hotrod.RemoteCache;
+import org.infinispan.client.hotrod.RemoteCacheManager;
+import org.infinispan.client.hotrod.exceptions.HotRodClientException;
+import org.infinispan.commons.util.CloseableIterator;
+import org.infinispan.commons.util.CloseableIteratorCollection;
+import org.infinispan.commons.util.CloseableIteratorSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
 
 class PraxisServiceTest {
 
     private PraxisService sequenceService;
+    private RemoteCacheManager mockCacheManager;
+    private RemoteCache<String, String> mockCache;
+    private Map<String, String> remoteStore;
+
+    private static <T> CloseableIterator<T> toCloseableIterator(Iterator<T> iterator) {
+        return new CloseableIterator<T>() {
+            @Override
+            public void close() {}
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext();
+            }
+
+            @Override
+            public T next() {
+                return iterator.next();
+            }
+        };
+    }
 
     @BeforeEach
+    @SuppressWarnings("unchecked")
     void setUp() {
-        sequenceService = new PraxisService();
+        mockCacheManager = mock(RemoteCacheManager.class);
+        mockCache = mock(RemoteCache.class);
+        remoteStore = new ConcurrentHashMap<>();
+
+        when(mockCacheManager.isStarted()).thenReturn(true);
+        doReturn(mockCache).when(mockCacheManager).getCache(eq(PraxisService.SEQUENCE_CACHE_NAME));
+
+        when(mockCache.get(anyString())).thenAnswer(i -> remoteStore.get(i.getArgument(0)));
+        when(mockCache.put(anyString(), anyString())).thenAnswer(i -> remoteStore.put(i.getArgument(0), i.getArgument(1)));
+        when(mockCache.remove(anyString())).thenAnswer(i -> remoteStore.remove(i.getArgument(0)));
+        doAnswer(i -> {
+            remoteStore.clear();
+            return null;
+        }).when(mockCache).clear();
+        when(mockCache.size()).thenAnswer(i -> remoteStore.size());
+        when(mockCache.isEmpty()).thenAnswer(i -> remoteStore.isEmpty());
+
+        CloseableIteratorCollection<String> mockValues = mock(CloseableIteratorCollection.class);
+        when(mockValues.iterator()).thenAnswer(i -> toCloseableIterator(remoteStore.values().iterator()));
+        when(mockValues.stream()).thenAnswer(i -> remoteStore.values().stream());
+        when(mockValues.isEmpty()).thenAnswer(i -> remoteStore.isEmpty());
+        when(mockValues.size()).thenAnswer(i -> remoteStore.size());
+        when(mockCache.values()).thenReturn(mockValues);
+
+        CloseableIteratorSet<String> mockKeySet = mock(CloseableIteratorSet.class);
+        when(mockKeySet.iterator()).thenAnswer(i -> toCloseableIterator(remoteStore.keySet().iterator()));
+        when(mockKeySet.stream()).thenAnswer(i -> remoteStore.keySet().stream());
+        when(mockKeySet.isEmpty()).thenAnswer(i -> remoteStore.isEmpty());
+        when(mockKeySet.size()).thenAnswer(i -> remoteStore.size());
+        when(mockCache.keySet()).thenReturn(mockKeySet);
+
+        sequenceService = new PraxisService(mockCacheManager);
         sequenceService.init();
         sequenceService.clear();
     }
@@ -166,5 +227,92 @@ class PraxisServiceTest {
         assertThat(sequenceService.toJson(null)).isNull();
         assertThat(sequenceService.fromJson(null)).isNull();
         assertThat(sequenceService.fromJson("")).isNull();
+    }
+
+    @Test
+    @DisplayName("Explicit failure when RemoteCacheManager is null")
+    void testExplicitFailureWhenCacheManagerNull() {
+        PraxisService unconfigured = new PraxisService();
+        PraxisDefinition def = new PraxisDefinition("seq-test", "Test Sequence");
+
+        assertThatThrownBy(() -> unconfigured.save(def))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+
+        assertThatThrownBy(() -> unconfigured.getById("seq-test"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+
+        assertThatThrownBy(unconfigured::getAll)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+
+        assertThatThrownBy(() -> unconfigured.delete("seq-test"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+
+        assertThatThrownBy(unconfigured::count)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+
+        assertThatThrownBy(unconfigured::clear)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+    }
+
+    @Test
+    @DisplayName("Explicit failure when RemoteCacheManager is not started")
+    void testExplicitFailureWhenCacheManagerNotStarted() {
+        when(mockCacheManager.isStarted()).thenReturn(false);
+        PraxisDefinition def = new PraxisDefinition("seq-test", "Test Sequence");
+
+        assertThatThrownBy(() -> sequenceService.save(def))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("tasksequence-cache");
+    }
+
+    @Test
+    @DisplayName("Remote cache transport exception propagation")
+    void testRemoteCacheExceptionPropagation() {
+        when(mockCache.put(anyString(), anyString())).thenThrow(new HotRodClientException("Connection timed out"));
+        PraxisDefinition def = new PraxisDefinition("seq-test", "Test Sequence");
+
+        assertThatThrownBy(() -> sequenceService.save(def))
+                .isInstanceOf(HotRodClientException.class)
+                .hasMessageContaining("Connection timed out");
+    }
+
+    @Test
+    @DisplayName("Zero local fallback state mutation when cache fails")
+    void testZeroLocalFallbackStateMutation() {
+        when(mockCacheManager.isStarted()).thenReturn(false);
+        PraxisDefinition def = new PraxisDefinition("seq-fail", "Fail Sequence");
+
+        assertThatThrownBy(() -> sequenceService.save(def))
+                .isInstanceOf(IllegalStateException.class);
+
+        // Reconnect cache
+        when(mockCacheManager.isStarted()).thenReturn(true);
+
+        assertThat(sequenceService.getById("seq-fail")).isEmpty();
+        assertThat(sequenceService.count()).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("Service recovery upon cache reconnection")
+    void testRecoveryUponReconnect() {
+        when(mockCacheManager.isStarted()).thenReturn(false);
+        PraxisDefinition def = new PraxisDefinition("seq-reconnect", "Reconnect Sequence");
+
+        assertThatThrownBy(() -> sequenceService.save(def))
+                .isInstanceOf(IllegalStateException.class);
+
+        // Reconnect
+        when(mockCacheManager.isStarted()).thenReturn(true);
+
+        PraxisDefinition saved = sequenceService.save(def);
+        assertThat(saved).isNotNull();
+        assertThat(sequenceService.getById("seq-reconnect")).isPresent();
+        assertThat(sequenceService.count()).isEqualTo(1);
     }
 }

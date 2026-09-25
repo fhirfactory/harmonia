@@ -24,9 +24,9 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@harmonia/iris-befe': path.resolve(__dirname, '../iris-befe/frontend/src')
+      '@': path.resolve(__dirname, './src')
     },
+    preserveSymlinks: true,
     dedupe: ['vue', 'primevue']
   },
   server: {

@@ -19,6 +19,7 @@ package net.fhirfactory.harmonia.praxis.cache;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.annotation.PostConstruct;
@@ -57,11 +58,13 @@ public class TaskCacheService {
     @Inject
     private FhirContext fhirContext;
 
-    private final Map<String, String> localFallbackCache = new ConcurrentHashMap<>();
-    private final Map<String, String> localFallbackProvenanceCache = new ConcurrentHashMap<>();
     private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
     public TaskCacheService() {
+    }
+
+    public TaskCacheService(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
     }
 
     public TaskCacheService(RemoteCacheManager remoteCacheManager, FhirContext fhirContext) {
@@ -74,6 +77,25 @@ public class TaskCacheService {
         if (this.fhirContext == null) {
             this.fhirContext = FhirContext.forR5();
         }
+    }
+
+    public RemoteCacheManager getRemoteCacheManager() {
+        return remoteCacheManager;
+    }
+
+    public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
+    public FhirContext getFhirContext() {
+        if (this.fhirContext == null) {
+            this.fhirContext = FhirContext.forR5();
+        }
+        return this.fhirContext;
+    }
+
+    public void setFhirContext(FhirContext fhirContext) {
+        this.fhirContext = fhirContext;
     }
 
     public IParser getJsonParser() {
@@ -91,6 +113,14 @@ public class TaskCacheService {
         return null;
     }
 
+    private RemoteCache<String, String> requireTaskCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + TASK_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
+    }
+
     private RemoteCache<String, String> getProvenanceRemoteCache() {
         if (remoteCacheManager != null && remoteCacheManager.isStarted()) {
             try {
@@ -102,23 +132,21 @@ public class TaskCacheService {
         return null;
     }
 
+    private RemoteCache<String, String> requireProvenanceCache() {
+        RemoteCache<String, String> cache = getProvenanceRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + PROVENANCE_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
+    }
+
     public String getTaskJson(String id) {
         if (StringUtils.isBlank(id)) {
             return null;
         }
         String cleanId = cleanId(id);
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = remoteCache.get(cleanId);
-                if (json != null) {
-                    return json;
-                }
-            } catch (Exception e) {
-                log.warn("Error reading Task/{} from remote cache [{}]: {}", cleanId, TASK_CACHE_NAME, e.getMessage());
-            }
-        }
-        return localFallbackCache.get(cleanId);
+        RemoteCache<String, String> remoteCache = requireTaskCache();
+        return remoteCache.get(cleanId);
     }
 
     public Optional<Task> getTask(String id) {
@@ -156,8 +184,9 @@ public class TaskCacheService {
             String json = objectMapper.writeValueAsString(pragma);
             putTaskJson(pragma.getPragmaId(), json);
             log.info("Persisted Pragma/{} to cache [{}]", pragma.getPragmaId(), TASK_CACHE_NAME);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             log.error("Failed to serialize Pragma/{} for caching", pragma.getPragmaId(), e);
+            throw new RuntimeException("Serialization failure", e);
         }
 
         return pragma;
@@ -216,19 +245,9 @@ public class TaskCacheService {
 
     public void putTaskJson(String id, String jsonPayload) {
         String cleanId = cleanId(id);
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.put(cleanId, jsonPayload);
-                log.info("Persisted Task/{} to Infinispan remote cache [{}]", cleanId, TASK_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Error putting Task/{} to remote Infinispan cache, falling back to local: {}", cleanId, e.getMessage());
-                localFallbackCache.put(cleanId, jsonPayload);
-            }
-        } else {
-            localFallbackCache.put(cleanId, jsonPayload);
-            log.info("Persisted Task/{} to local fallback cache [{}]", cleanId, TASK_CACHE_NAME);
-        }
+        RemoteCache<String, String> remoteCache = requireTaskCache();
+        remoteCache.put(cleanId, jsonPayload);
+        log.info("Persisted Task/{} to Infinispan remote cache [{}]", cleanId, TASK_CACHE_NAME);
     }
 
     public Provenance saveProvenance(Provenance provenance) {
@@ -252,19 +271,9 @@ public class TaskCacheService {
 
     public void putProvenanceJson(String id, String jsonPayload) {
         String cleanId = cleanProvenanceId(id);
-        RemoteCache<String, String> remoteCache = getProvenanceRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.put(cleanId, jsonPayload);
-                log.info("Persisted Provenance/{} to Infinispan remote cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Error putting Provenance/{} to remote Infinispan cache, falling back to local: {}", cleanId, e.getMessage());
-                localFallbackProvenanceCache.put(cleanId, jsonPayload);
-            }
-        } else {
-            localFallbackProvenanceCache.put(cleanId, jsonPayload);
-            log.info("Persisted Provenance/{} to local fallback cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
-        }
+        RemoteCache<String, String> remoteCache = requireProvenanceCache();
+        remoteCache.put(cleanId, jsonPayload);
+        log.info("Persisted Provenance/{} to Infinispan remote cache [{}]", cleanId, PROVENANCE_CACHE_NAME);
     }
 
     public Optional<Provenance> getProvenance(String id) {
@@ -286,18 +295,8 @@ public class TaskCacheService {
             return null;
         }
         String cleanId = cleanProvenanceId(id);
-        RemoteCache<String, String> remoteCache = getProvenanceRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = remoteCache.get(cleanId);
-                if (json != null) {
-                    return json;
-                }
-            } catch (Exception e) {
-                log.warn("Error reading Provenance/{} from remote cache [{}]: {}", cleanId, PROVENANCE_CACHE_NAME, e.getMessage());
-            }
-        }
-        return localFallbackProvenanceCache.get(cleanId);
+        RemoteCache<String, String> remoteCache = requireProvenanceCache();
+        return remoteCache.get(cleanId);
     }
 
     public boolean deleteProvenance(String id) {
@@ -305,17 +304,8 @@ public class TaskCacheService {
             return false;
         }
         String cleanId = cleanProvenanceId(id);
-        boolean removed = localFallbackProvenanceCache.remove(cleanId) != null;
-        RemoteCache<String, String> remoteCache = getProvenanceRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String prev = remoteCache.remove(cleanId);
-                if (prev != null) removed = true;
-            } catch (Exception e) {
-                log.warn("Error removing Provenance/{} from remote Infinispan cache: {}", cleanId, e.getMessage());
-            }
-        }
-        return removed;
+        RemoteCache<String, String> remoteCache = requireProvenanceCache();
+        return remoteCache.remove(cleanId) != null;
     }
 
     public Task markTaskAsProcessed(Task task) {
@@ -392,40 +382,20 @@ public class TaskCacheService {
             return false;
         }
         String cleanId = cleanId(id);
-        boolean removed = localFallbackCache.remove(cleanId) != null;
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String prev = remoteCache.remove(cleanId);
-                if (prev != null) removed = true;
-            } catch (Exception e) {
-                log.warn("Error removing Task/{} from remote Infinispan cache: {}", cleanId, e.getMessage());
-            }
-        }
-        return removed;
+        RemoteCache<String, String> remoteCache = requireTaskCache();
+        return remoteCache.remove(cleanId) != null;
     }
 
     public void clear() {
-        localFallbackCache.clear();
-        localFallbackProvenanceCache.clear();
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.clear();
-            } catch (Exception ignored) {
-            }
-        }
-        RemoteCache<String, String> provCache = getProvenanceRemoteCache();
-        if (provCache != null) {
-            try {
-                provCache.clear();
-            } catch (Exception ignored) {
-            }
-        }
+        RemoteCache<String, String> remoteCache = requireTaskCache();
+        remoteCache.clear();
+        RemoteCache<String, String> provCache = requireProvenanceCache();
+        provCache.clear();
     }
 
     public int count() {
-        return localFallbackCache.size();
+        RemoteCache<String, String> remoteCache = requireTaskCache();
+        return remoteCache.size();
     }
 
     private String extractId(Task task) {

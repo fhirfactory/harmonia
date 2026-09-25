@@ -24,6 +24,11 @@ import net.fhirfactory.harmonia.befe.server.OperationsServerManager;
 import net.fhirfactory.harmonia.befe.service.FhirCacheService;
 import net.fhirfactory.harmonia.befe.service.ModuleStatusService;
 import net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService;
+import org.infinispan.client.hotrod.RemoteCache;
+import org.infinispan.client.hotrod.RemoteCacheManager;
+import org.infinispan.commons.util.CloseableIterator;
+import org.infinispan.commons.util.CloseableIteratorCollection;
+import org.infinispan.commons.util.CloseableIteratorSet;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -35,27 +40,86 @@ import java.net.HttpURLConnection;
 import java.net.ServerSocket;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
 
 class OperationsServerManagerTest {
+
+    static {
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+    }
 
     private OperationsServerManager serverManager;
     private TaskSequenceCacheService sequenceCacheService;
     private TaskSequenceResource sequenceResource;
     private SystemStatusResource statusResource;
     private ModuleStatusService moduleStatusService;
+    private RemoteCacheManager mockCacheManager;
+    private Map<String, Map<String, String>> mockStore;
     private int testPort;
 
+    private static <T> CloseableIterator<T> toCloseableIterator(Iterator<T> iterator) {
+        return new CloseableIterator<T>() {
+            @Override
+            public void close() {}
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext();
+            }
+
+            @Override
+            public T next() {
+                return iterator.next();
+            }
+        };
+    }
+
     @BeforeEach
+    @SuppressWarnings("unchecked")
     void setUp() throws Exception {
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         BefeCorsConfig.setAllowedOriginsOverrideForTesting("https://clinical.harmonia.local,https://console.harmonia.local");
 
-        sequenceCacheService = new TaskSequenceCacheService();
+        mockStore = new ConcurrentHashMap<>();
+        mockCacheManager = mock(RemoteCacheManager.class);
+        when(mockCacheManager.isStarted()).thenReturn(true);
+        when(mockCacheManager.getCache(anyString())).thenAnswer(inv -> {
+            String cacheName = inv.getArgument(0);
+            Map<String, String> cacheMap = mockStore.computeIfAbsent(cacheName, k -> new ConcurrentHashMap<>());
+            RemoteCache<String, String> mockCache = mock(RemoteCache.class);
+            when(mockCache.get(anyString())).thenAnswer(i -> cacheMap.get(i.getArgument(0)));
+            when(mockCache.put(anyString(), anyString())).thenAnswer(i -> cacheMap.put(i.getArgument(0), i.getArgument(1)));
+            when(mockCache.remove(anyString())).thenAnswer(i -> cacheMap.remove(i.getArgument(0)));
+
+            CloseableIteratorCollection<String> mockValues = mock(CloseableIteratorCollection.class);
+            when(mockValues.iterator()).thenAnswer(i -> toCloseableIterator(cacheMap.values().iterator()));
+            when(mockValues.stream()).thenAnswer(i -> cacheMap.values().stream());
+            when(mockValues.isEmpty()).thenAnswer(i -> cacheMap.isEmpty());
+            when(mockValues.size()).thenAnswer(i -> cacheMap.size());
+            doReturn(mockValues).when(mockCache).values();
+
+            CloseableIteratorSet<String> mockKeys = mock(CloseableIteratorSet.class);
+            when(mockKeys.iterator()).thenAnswer(i -> toCloseableIterator(cacheMap.keySet().iterator()));
+            when(mockKeys.stream()).thenAnswer(i -> cacheMap.keySet().stream());
+            when(mockKeys.isEmpty()).thenAnswer(i -> cacheMap.isEmpty());
+            when(mockKeys.size()).thenAnswer(i -> cacheMap.size());
+            doReturn(mockKeys).when(mockCache).keySet();
+
+            when(mockCache.size()).thenAnswer(i -> cacheMap.size());
+            when(mockCache.isEmpty()).thenAnswer(i -> cacheMap.isEmpty());
+            return mockCache;
+        });
+
+        sequenceCacheService = new TaskSequenceCacheService(mockCacheManager);
         sequenceCacheService.init();
 
-        moduleStatusService = new ModuleStatusService();
+        moduleStatusService = new ModuleStatusService(mockCacheManager);
 
         sequenceResource = new TaskSequenceResource();
         java.lang.reflect.Field seqField = TaskSequenceResource.class.getDeclaredField("sequenceCacheService");
@@ -65,7 +129,7 @@ class OperationsServerManagerTest {
         statusResource = new SystemStatusResource();
         statusResource.setTaskSequenceCacheService(sequenceCacheService);
         statusResource.setModuleStatusService(moduleStatusService);
-        FhirCacheService fhirCacheService = new FhirCacheService();
+        FhirCacheService fhirCacheService = new FhirCacheService(mockCacheManager);
         fhirCacheService.init();
         statusResource.setFhirCacheService(fhirCacheService);
 

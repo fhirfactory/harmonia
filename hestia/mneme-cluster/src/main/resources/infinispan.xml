@@ -56,7 +56,7 @@
     <cache-container name="hie-cluster-container" default-cache="person-cache" statistics="true">
         <transport cluster="hie-fhir-cluster" stack="tcp-stack" node-name="${infinispan.node.name:node1}"/>
 
-        <!-- Replicated Caches with Write-Behind Persistence -->
+        <!-- Replicated Caches with Synchronous Persistence -->
         <replicated-cache name="person-cache" mode="SYNC" statistics="true">
    
             <encoding>
@@ -67,7 +67,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -82,7 +81,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024"/>
                 </store>
             </persistence>
         </replicated-cache>
@@ -97,7 +95,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024"  />
                 </store>
             </persistence>
         </replicated-cache>
@@ -112,7 +109,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -127,7 +123,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024"  />
                 </store>
             </persistence>
         </replicated-cache>
@@ -142,7 +137,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -157,7 +151,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024"  />
                 </store>
             </persistence>
         </replicated-cache>
@@ -172,7 +165,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024"  />
                 </store>
             </persistence>
         </replicated-cache>
@@ -186,7 +178,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -200,7 +191,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -214,7 +204,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -228,7 +217,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -242,7 +230,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -256,7 +243,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.FhirRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${fhir.server.url:http://mnemosyne-clinical-1:8080/fhir}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -270,7 +256,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.OperationsRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${ops.server.url:http://mnemosyne-operations-1:8080/api/operations}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -284,7 +269,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.OperationsRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${ops.server.url:http://mnemosyne-operations-1:8080/api/operations}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>
@@ -298,7 +282,6 @@
                 <store class="net.fhirfactory.harmonia.persistence.store.OperationsRestCacheStore" shared="false" preload="false" fetch-state="false" segmented="false">
                     <property name="serverUrl">${ops.server.url:http://mnemosyne-operations-1:8080/api/operations}</property>
                     <property name="timeoutSeconds">10</property>
-                    <write-behind modification-queue-size="1024" />
                 </store>
             </persistence>
         </replicated-cache>

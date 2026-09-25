@@ -30,6 +30,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Default implementation of {@link ModuleStatusService} interacting with Infinispan Hot Rod cache.
+ * <p>
+ * Process-local operational status map {@code localFallbackCache} is retained as legitimate local node
+ * telemetry / readiness snapshot per ADR-019 (not workflow, task, or clinical working state).
  */
 @ApplicationScoped
 public class DefaultModuleStatusService implements ModuleStatusService {
@@ -39,6 +42,9 @@ public class DefaultModuleStatusService implements ModuleStatusService {
     @Inject
     private RemoteCacheManager remoteCacheManager;
 
+    /**
+     * Retained process-local operational status snapshot for local module readiness and telemetry.
+     */
     private final Map<String, ModuleStatus> localFallbackCache = new ConcurrentHashMap<>();
 
     public DefaultModuleStatusService() {

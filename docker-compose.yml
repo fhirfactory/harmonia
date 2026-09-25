@@ -302,6 +302,9 @@ services:
       OPERATIONS_PORT: 8090
       OIDC_ISSUER_URL: ${OIDC_ISSUER_URL:-http://localhost:8081/realms/harmonia}
       OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-iris-befe}
+      FHIR_DB_URL: ${FHIR_DB_URL:-jdbc:postgresql://postgres-1:5432/fhir_node_1}
+      FHIR_DB_USER: ${FHIR_DB_USER:-fhir_user}
+      FHIR_DB_PASSWORD: ${FHIR_DB_PASSWORD:-fhir_password}
     ports:
       - "8080:8080"
       - "8090:8090"

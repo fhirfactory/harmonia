@@ -52,13 +52,34 @@ public class DefaultTaskService implements TaskService {
     @Inject
     private FhirContext fhirContext;
 
-    private final Map<String, Task> taskStore = new ConcurrentHashMap<>();
-
     public DefaultTaskService() {
+    }
+
+    public DefaultTaskService(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
     }
 
     public DefaultTaskService(RemoteCacheManager remoteCacheManager, FhirContext fhirContext) {
         this.remoteCacheManager = remoteCacheManager;
+        this.fhirContext = fhirContext;
+    }
+
+    public RemoteCacheManager getRemoteCacheManager() {
+        return remoteCacheManager;
+    }
+
+    public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
+    public FhirContext getFhirContext() {
+        if (fhirContext == null) {
+            fhirContext = FhirContext.forR5();
+        }
+        return fhirContext;
+    }
+
+    public void setFhirContext(FhirContext fhirContext) {
         this.fhirContext = fhirContext;
     }
 
@@ -73,8 +94,16 @@ public class DefaultTaskService implements TaskService {
         return null;
     }
 
+    private RemoteCache<String, String> requireRemoteCache() {
+        RemoteCache<String, String> cache = getRemoteCache();
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + TASK_CACHE_NAME + "] is unavailable");
+        }
+        return cache;
+    }
+
     private IParser getJsonParser() {
-        return (fhirContext != null ? fhirContext : FhirContext.forR5()).newJsonParser().setPrettyPrint(true);
+        return getFhirContext().newJsonParser().setPrettyPrint(true);
     }
 
     @Override
@@ -95,21 +124,11 @@ public class DefaultTaskService implements TaskService {
         }
         ErgonReasonEnum.ensureSyntheticTaskReason(task);
         FhirSecurityTagManager.applyDefaultSecurityTag(task);
-        taskStore.put(id, task);
 
-        // Write Task to Infinispan remote cache
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = getJsonParser().encodeResourceToString(task);
-                remoteCache.put(id, json);
-                log.info("Persisted Task/{} to remote Infinispan cache [{}]", id, TASK_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Could not persist Task/{} to remote Infinispan cache: {}", id, e.getMessage());
-            }
-        }
-
-        log.info("Created Task with id: {}", id);
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = getJsonParser().encodeResourceToString(task);
+        remoteCache.put(id, json);
+        log.info("Persisted Task/{} to remote Infinispan cache [{}]", id, TASK_CACHE_NAME);
         return task;
     }
 
@@ -119,25 +138,13 @@ public class DefaultTaskService implements TaskService {
             return Optional.empty();
         }
         String cleanId = cleanId(id);
-
-        // Try Infinispan remote cache first
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = remoteCache.get(cleanId);
-                if (json != null) {
-                    Task parsed = getJsonParser().parseResource(Task.class, json);
-                    if (parsed != null) {
-                        taskStore.put(cleanId, parsed);
-                        return Optional.of(parsed);
-                    }
-                }
-            } catch (Exception e) {
-                log.debug("Remote cache lookup for Task/{} failed: {}", cleanId, e.getMessage());
-            }
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = remoteCache.get(cleanId);
+        if (json == null || json.isBlank()) {
+            return Optional.empty();
         }
-
-        return Optional.ofNullable(taskStore.get(cleanId));
+        Task parsed = getJsonParser().parseResource(Task.class, json);
+        return Optional.ofNullable(parsed);
     }
 
     @Override
@@ -150,20 +157,11 @@ public class DefaultTaskService implements TaskService {
         task.setLastModified(new Date());
         ErgonReasonEnum.ensureSyntheticTaskReason(task);
         FhirSecurityTagManager.applyDefaultSecurityTag(task);
-        taskStore.put(cleanId, task);
 
-        // Update in remote cache
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                String json = getJsonParser().encodeResourceToString(task);
-                remoteCache.put(cleanId, json);
-                log.info("Updated Task/{} in remote Infinispan cache [{}]", cleanId, TASK_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Could not update Task/{} in remote Infinispan cache: {}", cleanId, e.getMessage());
-            }
-        }
-
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String json = getJsonParser().encodeResourceToString(task);
+        remoteCache.put(cleanId, json);
+        log.info("Updated Task/{} in remote Infinispan cache [{}]", cleanId, TASK_CACHE_NAME);
         return task;
     }
 
@@ -173,43 +171,32 @@ public class DefaultTaskService implements TaskService {
             return false;
         }
         String cleanId = cleanId(id);
-        boolean removed = taskStore.remove(cleanId) != null;
-
-        // Delete from remote cache
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.remove(cleanId);
-                log.info("Deleted Task/{} from remote Infinispan cache [{}]", cleanId, TASK_CACHE_NAME);
-            } catch (Exception e) {
-                log.warn("Could not delete Task/{} from remote Infinispan cache: {}", cleanId, e.getMessage());
-            }
-        }
-
-        return removed;
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        String removed = remoteCache.remove(cleanId);
+        log.info("Deleted Task/{} from remote Infinispan cache [{}]", cleanId, TASK_CACHE_NAME);
+        return removed != null;
     }
 
     public List<Task> getAll() {
-        // Sync from remote cache if available
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                for (Map.Entry<String, String> entry : remoteCache.entrySet()) {
-                    if (!taskStore.containsKey(entry.getKey())) {
-                        try {
-                            Task t = getJsonParser().parseResource(Task.class, entry.getValue());
-                            if (t != null) {
-                                taskStore.put(entry.getKey(), t);
-                            }
-                        } catch (Exception ignored) {}
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        Collection<String> values = remoteCache.values();
+        if (values == null || values.isEmpty()) {
+            return Collections.emptyList();
+        }
+        List<Task> tasks = new ArrayList<>(values.size());
+        for (String json : values) {
+            if (json != null && !json.isBlank()) {
+                try {
+                    Task t = getJsonParser().parseResource(Task.class, json);
+                    if (t != null) {
+                        tasks.add(t);
                     }
+                } catch (Exception e) {
+                    log.debug("Failed parsing Task JSON from cache: {}", e.getMessage());
                 }
-            } catch (Exception e) {
-                log.debug("Remote cache bulk sync for tasks failed: {}", e.getMessage());
             }
         }
-
-        return new ArrayList<>(taskStore.values());
+        return tasks;
     }
 
     @Override
@@ -226,24 +213,14 @@ public class DefaultTaskService implements TaskService {
 
     @Override
     public int count() {
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                return (int) remoteCache.size();
-            } catch (Exception ignored) {}
-        }
-        return taskStore.size();
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        return (int) remoteCache.size();
     }
 
     @Override
     public void clear() {
-        taskStore.clear();
-        RemoteCache<String, String> remoteCache = getRemoteCache();
-        if (remoteCache != null) {
-            try {
-                remoteCache.clear();
-            } catch (Exception ignored) {}
-        }
+        RemoteCache<String, String> remoteCache = requireRemoteCache();
+        remoteCache.clear();
     }
 
     private String extractId(Task task) {

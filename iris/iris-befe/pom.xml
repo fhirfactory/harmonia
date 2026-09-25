@@ -53,6 +53,12 @@
             <artifactId>themis-core</artifactId>
         </dependency>
 
+        <!-- Kleio Persistence (Durable Append-Only Audit Subsystem) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>kleio-persistence</artifactId>
+        </dependency>
+
         <!-- Jakarta EE 10 API -->
         <dependency>
             <groupId>jakarta.platform</groupId>
@@ -149,11 +155,33 @@
             <version>6.2.7.Final</version>
             <scope>test</scope>
         </dependency>
+        <!-- Weld SE for CDI Runtime Composition Testing -->
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+            <version>5.1.2.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- H2 Database for in-memory testing -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <finalName>iris-befe</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <sun.net.http.allowRestrictedHeaders>true</sun.net.http.allowRestrictedHeaders>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -173,6 +201,7 @@
                         <layer>cdi</layer>
                         <layer>jsonb</layer>
                         <layer>transactions</layer>
+                        <layer>datasources</layer>
                         <layer>management</layer>
                     </layers>
                     <context-root>/</context-root>

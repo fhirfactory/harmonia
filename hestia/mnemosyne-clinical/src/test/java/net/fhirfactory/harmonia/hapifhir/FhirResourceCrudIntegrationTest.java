@@ -20,7 +20,10 @@ package net.fhirfactory.harmonia.hapifhir;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
+import ca.uhn.fhir.rest.server.exceptions.ForbiddenOperationException;
 import ca.uhn.fhir.rest.server.exceptions.ResourceGoneException;
+import ca.uhn.fhir.rest.server.exceptions.ResourceNotFoundException;
+import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
@@ -28,6 +31,7 @@ import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
@@ -41,6 +45,9 @@ class FhirResourceCrudIntegrationTest {
 
     @LocalServerPort
     private int port;
+
+    @Autowired
+    private FhirStorageService storageService;
 
     private IGenericClient client;
     private final FhirContext fhirContext = FhirContext.forR5();
@@ -315,9 +322,10 @@ class FhirResourceCrudIntegrationTest {
     }
 
     @Test
-    @DisplayName("10. AuditEvent Lifecycle: Create, Read, Update, Search, Delete")
+    @DisplayName("10. AuditEvent Mutation Rejection: Provider Absence and Generic Storage Immutability")
     void testAuditEventLifecycle() {
         AuditEvent auditEvent = new AuditEvent();
+        auditEvent.setId("AE-TEST-001");
         auditEvent.setAction(AuditEvent.AuditEventAction.C);
         auditEvent.setRecorded(new java.util.Date());
         AuditEvent.AuditEventAgentComponent agent = new AuditEvent.AuditEventAgentComponent();
@@ -325,21 +333,34 @@ class FhirResourceCrudIntegrationTest {
         auditEvent.addAgent(agent);
         auditEvent.setCode(new CodeableConcept().setText("REST Create Audit"));
 
-        MethodOutcome outcome = client.create().resource(auditEvent).execute();
-        String id = outcome.getId().getIdPart();
+        // 1. REST Client attempt fails because AuditEvent provider is absent
+        assertThatThrownBy(() -> client.create().resource(auditEvent).execute())
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessageContaining("Unknown resource type 'AuditEvent'");
 
-        AuditEvent fetched = client.read().resource(AuditEvent.class).withId(id).execute();
-        assertThat(fetched.getAction()).isEqualTo(AuditEvent.AuditEventAction.C);
+        assertThatThrownBy(() -> client.read().resource(AuditEvent.class).withId("AE-TEST-001").execute())
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessageContaining("Unknown resource type 'AuditEvent'");
 
-        fetched.setAction(AuditEvent.AuditEventAction.U);
-        client.update().resource(fetched).execute();
+        // 2. Direct FhirStorageService CREATE fails closed
+        assertThatThrownBy(() -> storageService.createResource(auditEvent))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
 
-        AuditEvent updated = client.read().resource(AuditEvent.class).withId(id).execute();
-        assertThat(updated.getAction()).isEqualTo(AuditEvent.AuditEventAction.U);
+        // 3. Direct FhirStorageService UPDATE fails closed (blocking modification and resurrection)
+        assertThatThrownBy(() -> storageService.updateResource("AE-TEST-001", auditEvent))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
 
-        client.delete().resourceById(new IdType("AuditEvent", id)).execute();
-        assertThatThrownBy(() -> client.read().resource(AuditEvent.class).withId(id).execute())
-                .isInstanceOf(ResourceGoneException.class);
+        // 4. Direct FhirStorageService DELETE fails closed
+        assertThatThrownBy(() -> storageService.deleteResource("AuditEvent", "AE-TEST-001"))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
+
+        // 5. Direct FhirStorageService DELETE with lowercase resource type also fails closed
+        assertThatThrownBy(() -> storageService.deleteResource("auditevent", "AE-TEST-001"))
+                .isInstanceOf(ForbiddenOperationException.class)
+                .hasMessageContaining("AuditEvent is immutable and cannot be created, updated, or deleted via generic FHIR storage");
     }
 
     @Test

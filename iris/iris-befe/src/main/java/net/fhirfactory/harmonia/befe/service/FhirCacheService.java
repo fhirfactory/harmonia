@@ -50,7 +50,21 @@ public class FhirCacheService {
     private ThemisSecurityContextProvider securityContextProvider;
 
     private FhirContext fhirContext;
-    private final Map<String, Map<String, String>> localFallbackCaches = new ConcurrentHashMap<>();
+
+    public FhirCacheService() {
+    }
+
+    public FhirCacheService(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
+    public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {
+        this.remoteCacheManager = remoteCacheManager;
+    }
+
+    public RemoteCacheManager getRemoteCacheManager() {
+        return remoteCacheManager;
+    }
 
     @PostConstruct
     public void init() {
@@ -113,18 +127,18 @@ public class FhirCacheService {
         return null;
     }
 
+    private RemoteCache<String, String> requireRemoteCache(String cacheName) {
+        RemoteCache<String, String> cache = getRemoteCache(cacheName);
+        if (cache == null) {
+            throw new IllegalStateException("Mneme cache [" + cacheName + "] is unavailable");
+        }
+        return cache;
+    }
+
     public String getResourceJson(String resourceType, String id) {
         String cacheName = resolveCacheName(resourceType);
-        RemoteCache<String, String> remoteCache = getRemoteCache(cacheName);
-        if (remoteCache != null) {
-            try {
-                return remoteCache.get(id);
-            } catch (Exception e) {
-                log.warn("Error reading from remote cache [{}]: {}", cacheName, e.getMessage());
-            }
-        }
-        Map<String, String> localMap = localFallbackCaches.get(cacheName);
-        return localMap != null ? localMap.get(id) : null;
+        RemoteCache<String, String> remoteCache = requireRemoteCache(cacheName);
+        return remoteCache.get(id);
     }
 
     public <T extends IBaseResource> T getResource(String resourceType, String id, Class<T> resourceClass) {
@@ -137,18 +151,9 @@ public class FhirCacheService {
 
     public String putResourceJson(String resourceType, String id, String jsonPayload) {
         String cacheName = resolveCacheName(resourceType);
-        RemoteCache<String, String> remoteCache = getRemoteCache(cacheName);
-        if (remoteCache != null) {
-            try {
-                remoteCache.put(id, jsonPayload);
-                log.info("BEFE cached {}/{} to remote Infinispan cache [{}]", resourceType, id, cacheName);
-                return jsonPayload;
-            } catch (Exception e) {
-                log.warn("Error putting to remote cache [{}]: {}", cacheName, e.getMessage());
-            }
-        }
-        localFallbackCaches.computeIfAbsent(cacheName, k -> new ConcurrentHashMap<>()).put(id, jsonPayload);
-        log.info("BEFE cached {}/{} to local memory cache [{}]", resourceType, id, cacheName);
+        RemoteCache<String, String> remoteCache = requireRemoteCache(cacheName);
+        remoteCache.put(id, jsonPayload);
+        log.info("BEFE cached {}/{} to remote Infinispan cache [{}]", resourceType, id, cacheName);
         return jsonPayload;
     }
 
@@ -189,16 +194,8 @@ public class FhirCacheService {
 
     public boolean deleteResource(String resourceType, String id) {
         String cacheName = resolveCacheName(resourceType);
-        RemoteCache<String, String> remoteCache = getRemoteCache(cacheName);
-        if (remoteCache != null) {
-            try {
-                return remoteCache.remove(id) != null;
-            } catch (Exception e) {
-                log.warn("Error deleting from remote cache [{}]: {}", cacheName, e.getMessage());
-            }
-        }
-        Map<String, String> localMap = localFallbackCaches.get(cacheName);
-        return localMap != null && localMap.remove(id) != null;
+        RemoteCache<String, String> remoteCache = requireRemoteCache(cacheName);
+        return remoteCache.remove(id) != null;
     }
 
     public Bundle searchAsBundle(String resourceType, String id, String name, String identifier) {
@@ -215,26 +212,15 @@ public class FhirCacheService {
 
     public List<IBaseResource> searchResources(String resourceType, String id, String name, String identifier) {
         String cacheName = resolveCacheName(resourceType);
-        RemoteCache<String, String> remoteCache = getRemoteCache(cacheName);
-        Collection<String> jsonValues;
-
-        if (remoteCache != null) {
-            try {
-                jsonValues = new ArrayList<>(remoteCache.values());
-            } catch (Exception e) {
-                log.warn("Error listing values from remote cache [{}]: {}", cacheName, e.getMessage());
-                jsonValues = new ArrayList<>(
-                        localFallbackCaches.computeIfAbsent(cacheName, k -> new ConcurrentHashMap<>()).values()
-                );
-            }
-        } else {
-            jsonValues = new ArrayList<>(
-                    localFallbackCaches.computeIfAbsent(cacheName, k -> new ConcurrentHashMap<>()).values()
-            );
+        RemoteCache<String, String> remoteCache = requireRemoteCache(cacheName);
+        Collection<String> jsonValues = remoteCache.values();
+        if (jsonValues == null || jsonValues.isEmpty()) {
+            return Collections.emptyList();
         }
 
         IParser parser = getJsonParser();
         return jsonValues.stream()
+                .filter(Objects::nonNull)
                 .map(parser::parseResource)
                 .filter(res -> matchesFilter(res, id, name, identifier))
                 .collect(Collectors.toList());
@@ -330,9 +316,5 @@ public class FhirCacheService {
         if (id == null) return false;
         if (id.getValue() != null && id.getValue().toLowerCase().contains(target)) return true;
         return id.getSystem() != null && id.getSystem().toLowerCase().contains(target);
-    }
-
-    public void setRemoteCacheManager(RemoteCacheManager remoteCacheManager) {
-        this.remoteCacheManager = remoteCacheManager;
     }
 }

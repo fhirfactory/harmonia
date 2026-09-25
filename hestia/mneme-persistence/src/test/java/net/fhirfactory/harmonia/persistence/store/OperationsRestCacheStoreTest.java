@@ -20,19 +20,25 @@ package net.fhirfactory.harmonia.persistence.store;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
+import net.fhirfactory.harmonia.persistence.client.OperationsRestClient;
 import net.fhirfactory.harmonia.persistence.config.OperationsStoreConfiguration;
 import org.infinispan.commons.configuration.attributes.AttributeSet;
 import org.infinispan.configuration.cache.AsyncStoreConfiguration;
 import org.infinispan.persistence.spi.InitializationContext;
 import org.infinispan.persistence.spi.MarshallableEntry;
 import org.infinispan.persistence.spi.MarshallableEntryFactory;
+import org.infinispan.persistence.spi.PersistenceException;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -106,6 +112,56 @@ class OperationsRestCacheStoreTest {
 
         verify(putRequestedFor(urlEqualTo("/api/operations/tasksequence/seq-001"))
                 .withHeader("Content-Type", containing("application/json")));
+    }
+
+    @Test
+    @DisplayName("Write should fail exceptionally when Operations server returns HTTP error (false result)")
+    void testWriteFailureOnServerError() {
+        stubFor(put(urlEqualTo("/api/operations/tasksequence/seq-001"))
+                .willReturn(aResponse().withStatus(500).withBody("Internal Server Error")));
+
+        MarshallableEntry<String, String> entry = mock(MarshallableEntry.class);
+        when(entry.getKey()).thenReturn("seq-001");
+        when(entry.getValue()).thenReturn("{\"sequenceId\":\"seq-001\",\"sequenceName\":\"Admissions\"}");
+
+        assertThatThrownBy(() -> store.write(0, entry).toCompletableFuture().get(5, TimeUnit.SECONDS))
+                .isInstanceOf(ExecutionException.class)
+                .hasCauseInstanceOf(PersistenceException.class)
+                .hasMessageContaining("Failed to persist tasksequence/seq-001");
+    }
+
+    @Test
+    @DisplayName("Write should propagate exception when REST client fails exceptionally")
+    void testWriteFailureOnClientException() {
+        OperationsRestClient mockClient = mock(OperationsRestClient.class);
+        RuntimeException error = new RuntimeException("Operations endpoint unreachable");
+        when(mockClient.saveResourceJson(any(), any(), any()))
+                .thenReturn(CompletableFuture.failedFuture(error));
+        store.setRestClient(mockClient);
+
+        MarshallableEntry<String, String> entry = mock(MarshallableEntry.class);
+        when(entry.getKey()).thenReturn("seq-001");
+        when(entry.getValue()).thenReturn("{\"sequenceId\":\"seq-001\",\"sequenceName\":\"Admissions\"}");
+
+        assertThatThrownBy(() -> store.write(0, entry).toCompletableFuture().get(5, TimeUnit.SECONDS))
+                .isInstanceOf(ExecutionException.class)
+                .hasCause(error);
+    }
+
+    @Test
+    @DisplayName("Write should complete normally for null entry, key, or value")
+    void testWriteNullHandling() throws Exception {
+        assertThat(store.write(0, null).toCompletableFuture().get(5, TimeUnit.SECONDS)).isNull();
+
+        MarshallableEntry<String, String> nullKeyEntry = mock(MarshallableEntry.class);
+        when(nullKeyEntry.getKey()).thenReturn(null);
+        when(nullKeyEntry.getValue()).thenReturn("{}");
+        assertThat(store.write(0, nullKeyEntry).toCompletableFuture().get(5, TimeUnit.SECONDS)).isNull();
+
+        MarshallableEntry<String, String> nullValueEntry = mock(MarshallableEntry.class);
+        when(nullValueEntry.getKey()).thenReturn("seq-001");
+        when(nullValueEntry.getValue()).thenReturn(null);
+        assertThat(store.write(0, nullValueEntry).toCompletableFuture().get(5, TimeUnit.SECONDS)).isNull();
     }
 
     @Test
