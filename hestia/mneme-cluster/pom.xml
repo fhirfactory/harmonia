@@ -34,6 +34,12 @@
     <description>Mneme (Cache) — Clustered High-Availability Infinispan Data Grid with write-behind persistence SPI store to Mnemosyne</description>
 
     <dependencies>
+        <!-- Canonical Models & Governed Write Contracts -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>calliope</artifactId>
+        </dependency>
+
         <!-- Mneme Persistence SPI -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>

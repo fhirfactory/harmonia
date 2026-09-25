@@ -79,6 +79,12 @@
         </dependency>
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>mneme-cluster</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
             <artifactId>pylai-fhir-registry</artifactId>
             <version>${project.version}</version>
         </dependency>

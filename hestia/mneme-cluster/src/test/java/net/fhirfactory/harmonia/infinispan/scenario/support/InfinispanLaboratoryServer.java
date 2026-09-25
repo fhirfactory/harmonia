@@ -71,6 +71,7 @@ public class InfinispanLaboratoryServer implements AutoCloseable {
         node1.defineConfiguration("person-cache", cacheConfig);
         node1.defineConfiguration("task-cache", cacheConfig);
         node1.defineConfiguration("practitioner-cache", cacheConfig);
+        node1.defineConfiguration("active-coordination-cache", cacheConfig);
         node1.start();
 
         // Node 2
@@ -80,6 +81,7 @@ public class InfinispanLaboratoryServer implements AutoCloseable {
         node2.defineConfiguration("person-cache", cacheConfig);
         node2.defineConfiguration("task-cache", cacheConfig);
         node2.defineConfiguration("practitioner-cache", cacheConfig);
+        node2.defineConfiguration("active-coordination-cache", cacheConfig);
         node2.start();
 
         // Hot Rod Server 1 bound to Node 1
