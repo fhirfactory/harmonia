@@ -131,7 +131,7 @@ class InfinispanClusterConfigTest {
     }
 
     @Test
-    @DisplayName("Verify production infinispan.xml defines synchronous persistence for all 17 caches")
+    @DisplayName("Verify production infinispan.xml defines 18 replicated caches (17 persistent, 1 non-persistent coordination cache)")
     void testProductionXmlConfiguration() throws Exception {
         InputStream xmlStream = getClass().getClassLoader().getResourceAsStream("infinispan.xml");
         assertThat(xmlStream).isNotNull();
@@ -144,6 +144,9 @@ class InfinispanClusterConfigTest {
         assertThat(writeBehindNodes.getLength()).isEqualTo(0);
 
         NodeList replicatedCaches = doc.getElementsByTagName("replicated-cache");
-        assertThat(replicatedCaches.getLength()).isEqualTo(17);
+        assertThat(replicatedCaches.getLength()).isEqualTo(18);
+
+        NodeList stores = doc.getElementsByTagName("store");
+        assertThat(stores.getLength()).isEqualTo(17);
     }
 }

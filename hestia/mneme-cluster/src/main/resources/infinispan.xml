@@ -285,6 +285,14 @@
                 </store>
             </persistence>
         </replicated-cache>
+
+        <!-- Dedicated Non-Persistent Active Coordination Cache -->
+        <replicated-cache name="active-coordination-cache" mode="SYNC" statistics="true">
+            <encoding>
+                <key media-type="text/plain"/>
+                <value media-type="text/plain"/>
+            </encoding>
+        </replicated-cache>
     </cache-container>
 
     <server xmlns="urn:infinispan:server:15.0">

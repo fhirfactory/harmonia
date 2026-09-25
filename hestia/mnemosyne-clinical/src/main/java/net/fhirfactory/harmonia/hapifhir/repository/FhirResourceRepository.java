@@ -19,8 +19,12 @@ package net.fhirfactory.harmonia.hapifhir.repository;
 
 import net.fhirfactory.harmonia.hapifhir.model.FhirResourceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,4 +42,14 @@ public interface FhirResourceRepository extends JpaRepository<FhirResourceEntity
     boolean existsByResourceTypeAndFhirIdAndDeletedFalse(String resourceType, String fhirId);
 
     long countByResourceTypeAndDeletedFalse(String resourceType);
+
+    @Modifying
+    @Query("UPDATE FhirResourceEntity e SET e.resourceJson = :resourceJson, e.versionId = :newVersion, e.lastUpdated = :lastUpdated WHERE e.resourceType = :resourceType AND e.fhirId = :fhirId AND e.versionId = :expectedVersion AND e.deleted = false")
+    int updateIfVersionMatches(
+            @Param("resourceType") String resourceType,
+            @Param("fhirId") String fhirId,
+            @Param("expectedVersion") Long expectedVersion,
+            @Param("newVersion") Long newVersion,
+            @Param("resourceJson") String resourceJson,
+            @Param("lastUpdated") Instant lastUpdated);
 }

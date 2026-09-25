@@ -4,7 +4,7 @@ sessionId: session-260925-154602-l5rl
 
 # Delivery Steps
 
-### * Step 1: Implementation
+### ✓ Step 1: Implementation
 Optional spending limit; leave empty for no limit: 50
 Required for Goal Mode: Auto
 Pause for plan review before starting the goal: No
@@ -779,3 +779,233 @@ Verification: `mvn test -pl paradeigma/paradeigma-test -am -Dtest="*Architecture
 
 This task has no prior planning phase. Before implementation, analyze the task and codebase, define acceptance criteria if not explicitly provided in the task description, and plan your approach. 
 The Reviewer must independently define its own acceptance criteria and will verify them.
+
+### ✓ Step 2: Update / Follow-up
+You have executed the wrong task.
+
+The work just completed is effectively a refinement/re-run of Step 08.03.
+Retain any useful documentation corrections you made, but DO NOT continue
+working on the 08.03 design document.
+
+We are now performing:
+
+HARMONIA — TASK 08
+STEP 08.04A — FOUNDATIONAL GOVERNED-WRITE CONTRACTS
+
+The purpose of 08.04A is specifically to IMPLEMENT the small Java
+caller-facing contract so that we can inspect the actual API before
+implementing the runtime protocol.
+
+This step MUST create production Java contract types and their unit tests.
+
+It MUST NOT implement Mneme CAS, Mnemosyne conditional persistence,
+convergence, or migrate any existing write path.
+
+
+IMPLEMENT ONLY THE MINIMUM CONTRACT VOCABULARY
+
+First inspect the existing module dependency graph and choose the smallest
+existing suitable module/package.
+
+DO NOT create:
+
+    hestia-governance
+    hestia-api
+    a new Maven module
+    a new subsystem
+    a new deployable service
+
+If no existing module can host the contract without an unacceptable
+dependency cycle, STOP and report that problem rather than inventing a module.
+
+
+Implement approximately the following concepts, simplifying where possible:
+
+    ResourceKey
+
+    ActiveCoordinationToken
+
+    AuthoritativeVersion
+        or ExpectedAuthoritativeVersion
+
+    GovernedRead<T>
+
+    GovernedWriteContext
+        ONLY if actually required;
+        reuse existing ThemisSecurityContext /
+        PersistenceOperationEnvelope / Pragma context rather than
+        duplicating correlation, causation, principal or provenance fields
+
+    GovernedWriter
+
+    WriteResult<T>
+
+    minimal conflict/precondition types
+
+
+REQUIRED SEMANTICS
+
+ActiveCoordinationToken:
+
+    immutable
+    opaque
+    no arithmetic
+    no ordering
+    no Infinispan/Hot Rod type exposed
+
+GovernedRead<T>:
+
+    resource key
+    resource
+    active coordination token
+    authoritative predecessor/version
+
+GovernedWriter:
+
+    CREATE
+    UPDATE
+
+There is NO governed DELETE.
+
+UPDATE should accept the GovernedRead<T> so the caller does not manually
+assemble concurrency tokens.
+
+
+AUTHORITATIVE PRECONDITION MODEL
+
+Do NOT collapse these into one vague conflict:
+
+    RESOURCE_ALREADY_EXISTS
+
+        CREATE expected authoritative absence.
+
+    EXPECTED_VERSION_MISMATCH
+
+        UPDATE expected authoritative predecessor X.
+
+They may share a small conceptual AuthoritativePreconditionConflict model.
+
+Keep:
+
+    ActiveStateConflict
+
+separate.
+
+
+AUTHORITATIVE COMMIT OUTCOME
+
+Represent explicitly:
+
+    COMMITTED
+    NOT_COMMITTED
+    UNKNOWN
+
+UNKNOWN is first-class.
+
+Do NOT reduce it to:
+
+    success = false
+
+and do not expose it merely as a generic exception that encourages blind
+retry.
+
+
+WRITE RESULT
+
+Design WriteResult<T> so invalid state combinations are difficult to create.
+
+It must cleanly represent:
+
+    successful authoritative commit
+
+    active-state conflict
+
+    authoritative precondition conflict
+
+    known non-commit/failure
+
+    authoritative outcome UNKNOWN
+
+    committed but Mneme convergence degraded
+
+Prefer a small sealed result model if that makes the invariants clearer.
+
+Do not create a large nullable status bag.
+
+
+TESTS
+
+Add unit tests demonstrating the ACTUAL API:
+
+1. GovernedRead carries active and authoritative concurrency context.
+2. ActiveCoordinationToken is opaque.
+3. CREATE conflict can express RESOURCE_ALREADY_EXISTS.
+4. UPDATE conflict can express EXPECTED_VERSION_MISMATCH.
+5. Active conflict is distinct from authoritative conflict.
+6. COMMITTED / NOT_COMMITTED / UNKNOWN are distinct.
+7. committed + degraded convergence is representable as committed.
+8. no governed DELETE exists.
+9. invalid WriteResult combinations cannot readily be constructed.
+
+
+ARCHITECTURE GUARDRAILS
+
+Add only low-risk architecture tests appropriate to the new contract:
+
+    no Infinispan dependency exposed
+    no RemoteCache exposed
+    no JPA dependency exposed
+    no HTTP framework dependency exposed
+    no governed DELETE
+
+Do NOT block or migrate existing legacy write paths yet.
+
+
+DO NOT IMPLEMENT
+
+    Mneme CAS
+    coordination cache
+    guarded convergence
+    Mnemosyne conditional SQL/JPA
+    @Version
+    database/schema changes
+    BEFE migration
+    Pylai migration
+    Ergon/Ponos migration
+    retries
+    semantic conflict handling
+    information-authority handling
+    DELETE removal
+
+
+REQUIRED FINAL OUTPUT
+
+Show me the ACTUAL resulting Java API, including package names.
+
+Show examples using the ACTUAL types for:
+
+    CREATE
+    UPDATE
+    ActiveStateConflict
+    ResourceAlreadyExists
+    ExpectedVersionMismatch
+    CommitOutcomeUnknown
+    CommittedButConvergenceDegraded
+
+List every production Java file and test file added or changed.
+
+Explain why the selected existing module/package is the correct dependency
+location.
+
+Run the relevant unit tests and architecture tests.
+
+Explicitly confirm:
+
+    no write path was migrated;
+    no new Maven module was created;
+    no new subsystem was created;
+    no runtime concurrency mechanism was implemented.
+
+STOP after 08.04A.
+
+Do not begin 08.04B.
