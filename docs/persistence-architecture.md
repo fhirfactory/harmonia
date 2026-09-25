@@ -62,7 +62,7 @@ Harmonia explicitly distinguishes between three different durability guarantees:
 ### 2.3 Application Durability (Mnemosyne / PostgreSQL)
 * **Storage Engine**: PostgreSQL Relational Database (`hie_fhir_resources`, `hie_operations_resources`).
 * **Purpose**: Permanent, auditable, and queryable system of record for FHIR R5 clinical resources (`Communication`, `Task`, `Patient`, `Encounter`, `Observation`, `Provenance`, etc.) and non-FHIR operational metadata.
-* **Scope**: Permanent. Preserves full clinical history, versioning (`version_id`), and soft-deletion (`is_deleted`) status for compliance, auditability, and clinical governance.
+* **Scope**: Permanent. Preserves full clinical history, versioning (`version_id`), and domain-appropriate lifecycle state (represented via domain-native attributes such as `status`, `active`; with relational `is_deleted` maintained as an existing schema artefact) for compliance, auditability, and clinical governance (ADR-020).
 
 ### 2.4 Exemplar State (Paradeigma Clinical Simulator)
 * **Storage Engine**: In-memory test bed state.
@@ -84,7 +84,7 @@ Harmonia explicitly distinguishes between three different durability guarantees:
 | **Foreign Keys** | None (Logical references in JSON payload) | None (Logical references in JSON payload) | `causationId`, `praxisId` | `correlationId`, `causationId` | None |
 | **Created By** | `FhirStorageService` | `OperationStorageService` | `IncomingAdtMessageProcessor` / `ErgonBase` | `ArtemisPetasosProducer` | `TopicSubscription` / Gateways |
 | **Updated By** | `FhirStorageService` | `OperationStorageService` | `TaskEventMessageProcessor` / `Erga` | Artemis Broker (Redelivery count) | Static configuration |
-| **Lifecycle** | Insert -> Version Update -> Soft Delete | Insert -> Version Update -> Soft Delete | Created -> In-Progress -> Completed / Failed | Queued -> Persisted -> Consumed -> ACKed / DLQ | Static / Lifecycle configuration |
+| **Lifecycle** | Insert -> Version Update -> Lifecycle State Transition (UPDATE) | Insert -> Version Update -> Lifecycle State Transition (UPDATE) | Created -> In-Progress -> Completed / Failed | Queued -> Persisted -> Consumed -> ACKed / DLQ | Static / Lifecycle configuration |
 | **Recovery Role** | Point of record for clinical queries & audit | Stores diagnostic logs & configuration | Reconstructs task execution chain | Replays unacknowledged messages upon restart | Rebuilds subscription topology |
 | **Retention** | Indefinite (clinical regulatory retention) | Configurable operational retention policy | Evicted post-completion or TTL (7 days) | Evicted immediately on consumer ACK | Ephemeral |
 
@@ -167,7 +167,7 @@ To eliminate data corruption and split-brain states, persistence ownership is st
 | **Persistence Mechanism** | Append-only pre-allocated disk files (`data/journal`) | Relational WAL (Write-Ahead Logging) & Heap Tables |
 | **Write Latency** | Sub-millisecond (sequential append with OS cache flushes) | 2–10 ms (ACID relational transaction, index updates) |
 | **Primary Data Structure** | Sequential byte records in rolling journal files | B-Tree indexed relational rows with JSON LOBs |
-| **Deletion Model** | Compacted upon consumer message acknowledgment | Soft delete (`is_deleted = true`) or regulatory purge |
+| **Deletion / Lifecycle Model** | Compacted upon consumer message acknowledgment | Domain lifecycle state transition (authoritative UPDATE); archival/purge is out of scope (ADR-020) |
 | **Query Capability** | FIFO / Selector-based queue consumption only | Arbitrary SQL, type lookup, version retrieval, metadata search |
 | **Recovery Role** | Immediate replay of unacknowledged in-flight queue messages | Authoritative audit reconstruction and clinical state retrieval |
 | **Concurrency Control** | Broker internal lock-free actor / queue mutexes | Optimistic locking via `version_id` column |
@@ -184,7 +184,7 @@ erDiagram
         varchar fhir_id "Logical FHIR identifier (UUID)"
         bigint version_id "Optimistic locking / version number"
         text resource_json "Serialized FHIR R5 JSON payload"
-        boolean is_deleted "Soft-delete flag"
+        boolean is_deleted "Relational retirement flag (schema-level column; domain lifecycle governed per ADR-020)"
         timestamp last_updated "UTC update timestamp"
     }
 
@@ -194,7 +194,7 @@ erDiagram
         varchar object_id "Unique object identifier"
         bigint version_id "Optimistic locking / version number"
         text data_json "Serialized JSON metadata or operational state"
-        boolean is_deleted "Soft-delete flag"
+        boolean is_deleted "Relational retirement flag (schema-level column; domain lifecycle governed per ADR-020)"
         timestamp created_date "UTC creation timestamp"
         timestamp last_updated "UTC update timestamp"
     }
@@ -229,7 +229,9 @@ Harmonia enforces strict data integrity constraints at both the database level a
    - `uk_resource_type_fhir_id` on `hie_fhir_resources(resource_type, fhir_id)` prevents accidental duplicate inserts of the same FHIR resource.
    - `uk_ops_object_type_object_id` on `hie_operations_resources(object_type, object_id)` ensures operational objects remain strictly single-instance.
 2. **Optimistic Versioning (`version_id`)**:
-   - Every update to `FhirResourceEntity` and `OperationResourceEntity` increments `version_id` by 1.
-   - If concurrent worker threads attempt to update the same resource concurrently, version collision checks ensure updates do not silently overwrite interleaved modifications.
-3. **Soft Deletion (`is_deleted`)**:
-   - Clinical and operational resources are never physically deleted (`DELETE FROM ...`) in normal operations. Soft-deleted records have `is_deleted = true`, preserving complete audit traceability.
+   - Updates to `FhirResourceEntity` and `OperationResourceEntity` maintain optimistic locking checks via the JPA `@Version` column (`version_id`) to prevent lost database updates.
+   - If concurrent worker threads attempt to update the same persisted entity concurrently, version collision checks ensure updates do not silently overwrite interleaved modifications.
+3. **Domain Lifecycle State Transitions & No Physical Delete (ADR-020)**:
+   - Harmonia does not provide physical DELETE semantics for governed persisted information. Clinical and operational resources are never physically deleted (`DELETE FROM ...`) in normal operations.
+   - Deactivations, retirements, or logical deletions are domain-appropriate lifecycle transitions executed as concurrency-controlled authoritative `UPDATE` operations under the write and concurrency protocols defined by Task 08, preserving complete Kleio audit evidence, provenance, and referential integrity.
+   - Long-term archival, retention-based purge, and physical storage disposal are formally outside the scope of the current Harmonia framework.

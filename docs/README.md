@@ -59,6 +59,9 @@ docs/
 │   ├── persistence-lifecycle.md              # 4-tier storage architecture & transaction boundaries
 │   └── convergence-report.md                 # Authoritative 25-point final convergence baseline report
 │
+├── design/                                   # Platform engineering & concurrency design contracts
+│   └── governed-write-concurrency-contract.md # Authoritative Strong Hybrid write & concurrency contract
+│
 ├── middleware/                               # Granular middleware capability profiling
 │   ├── overview.md                           # Middleware stack inventory & used vs avoided matrix
 │   ├── activeMQ-artemis.md                   # Apache ActiveMQ Artemis 2.33.0 HA clustering & replication

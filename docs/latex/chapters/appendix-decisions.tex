@@ -245,6 +245,8 @@ Task 10   Establish authoritative Clinical search
 
 Task 07 must remove cases where cache or JVM-local state is incorrectly treated as durable acceptance without prematurely redesigning the authoritative Clinical write path that is addressed by Task 08.
 
+In alignment with ADR-020, Task 08 establishes authoritative CREATE and UPDATE write semantics, treating domain-appropriate lifecycle changes as conditional updates, without providing a physical authoritative DELETE path.
+
 \subsubsection{Architectural Principle}
 
 \begin{quote}
@@ -502,5 +504,147 @@ Together:
 
 \begin{quote}
     \textbf{Mneme makes active state available, coordinated and fast across Harmonia --- reconstructable, never authoritative, and never secretly local.}
+\end{quote}
+
+% =============================================================================
+% ADR-020 --- Governed Information Uses Lifecycle State Rather Than Physical Deletion
+% =============================================================================
+
+\subsection{ADR-020 --- Governed Information Uses Lifecycle State Rather Than Physical Deletion}
+\label{adr:020-governed-information-lifecycle-state}
+
+\textbf{Status:} Accepted\\
+\textbf{Date:} 25 September 2026
+
+\subsubsection{Context}
+
+In healthcare integration and interoperability environments, persisted resources (including patients, encounters, practitioners, clinical observations, documents, and processing tasks) represent clinical, legal, regulatory, and evidentiary facts.
+
+Traditional persistence architectures often treat physical deletion (\texttt{DELETE} in SQL or HTTP \texttt{DELETE} in REST APIs) as a standard CRUD primitive that permanently removes records from durable storage. In a distributed health integration platform such as Harmonia, physical deletion introduces severe operational, clinical, and governance failures:
+
+\begin{enumerate}
+    \item \textbf{Loss of Clinical and Legal History} --- destroying persisted records erases the longitudinal record of care, compromises traceability, and violates healthcare data retention and evidentiary standards.
+    \item \textbf{Referential Integrity Destruction} --- physical deletion of an entity breaks references in downstream systems, clinical documents, immutable audit records, and related resources across the enterprise.
+    \item \textbf{Audit and Provenance Invalidation} --- accepted audit evidence governed by Kleio (ADR-013) must point to verifiable historical and provenance contexts; deleting the underlying entities destroys the audit graph.
+    \item \textbf{Distributed State Ambiguity} --- in an ecosystem combining distributed caching (Mneme) and durable persistence (Mnemosyne), physical deletion creates unsolvable race conditions, stale read anomalies, and ambiguity regarding whether an absent cache record was deleted, evicted, or never created.
+\end{enumerate}
+
+In clinical and administrative domains, when an entity is retired, deactivated, cancelled, completed, entered in error, or otherwise logically removed, this action constitutes a domain-significant lifecycle transition rather than data destruction.
+
+Furthermore, lower-level distributed cache capabilities (such as Infinispan's version-aware conditional removal primitive \texttt{removeWithVersion()} characterized in laboratory evaluations) must not be conflated with governed resource deletion. Similarly, long-term data archival and regulatory purge have sometimes been improperly assumed to be standard in-band application persistence features.
+
+A definitive architectural decision is required to establish Harmonia's platform invariant regarding governed persisted information, the write semantics for authoritative Clinical operations (Task 08), the boundary between cache eviction and resource state, and the formal scope of archival and purge.
+
+\subsubsection{Decision}
+
+\begin{quote}
+    \textbf{Harmonia does not provide physical DELETE semantics for governed persisted information. Logical deletion is a domain-appropriate lifecycle transition and therefore an authoritative UPDATE.}
+\end{quote}
+
+Harmonia establishes the following normative platform guardrail:
+
+\begin{quote}
+    \textbf{Harmonia SHALL NOT expose physical deletion as a normal operation for governed persisted information. Logical deletion SHALL be represented as a domain-appropriate lifecycle transition and processed as a concurrency-controlled authoritative update. Mneme cache eviction SHALL NOT be interpreted as deletion of authoritative state. Archival, retention-based purge and physical disposal are outside the current Harmonia framework scope.}
+\end{quote}
+
+\subsubsection{Four Core Distinctions}
+
+To ensure conceptual clarity across architecture, design, and implementation, Harmonia strictly distinguishes four operational concepts:
+
+\begin{enumerate}
+    \item \textbf{Resource Lifecycle Transition}: An authoritative state change in Mnemosyne reflecting domain progression (illustrative examples include transitioning to \texttt{inactive}, \texttt{entered-in-error}, \texttt{cancelled}, \texttt{completed}, or \texttt{superseded}). A lifecycle transition is committed to Mnemosyne as a concurrency-controlled authoritative \texttt{UPDATE}, subject to version advancement, provenance capture, and Kleio audit logging.
+    \item \textbf{Mneme Eviction}: The removal, invalidation, or expiration of a reconstructable active-state entry from the distributed cache (Mneme/Infinispan) according to cache capacity, TTL/idle policies, explicit invalidation, or cache-clearing operations. Cache eviction affects only the non-authoritative active cache working set; it does NOT alter, mutate, or delete authoritative durable state in Mnemosyne.
+    \item \textbf{Archival}: The long-term migration, cold-storage management, or offline tiering of historical records. Archival is formally designated as outside the scope of the current Harmonia framework and must be managed by external operational and database lifecycle procedures.
+    \item \textbf{Purge / Physical Disposal}: The physical destruction, cryptographic erasure, or permanent scrubbing of persisted records under statutory data-retention schedules or legal mandates. Retention-based purge and physical disposal are formally designated as outside the scope of the current Harmonia framework.
+\end{enumerate}
+
+\subsubsection{Write Semantics and Task 08 Consequence}
+
+Harmonia categorizes authoritative write operations into distinct primitives:
+
+\begin{itemize}
+    \item \textbf{CREATE}: Establishes a new authoritative resource in Mnemosyne, establishes initial durable state and provenance, and participates in the version and coordination protocol defined by Task 08.
+    \item \textbf{UPDATE}: Modifies existing authoritative resource attributes or lifecycle state in Mnemosyne, advances authoritative state under the version and concurrency control protocol defined by Task 08, and coordinates state with Mneme.
+    \item \textbf{LIFECYCLE TRANSITION}: A semantic specialization of \textbf{UPDATE} that alters lifecycle attributes (illustrative examples include domain-appropriate fields such as FHIR \texttt{status}, \texttt{active}, or \texttt{verificationStatus}). It executes strictly through the authoritative \texttt{UPDATE} write pipeline.
+    \item \textbf{DELETE (Physical)}: \textbf{Not supported.} Harmonia does not provide an authoritative physical delete path or database \texttt{DELETE} protocol for governed persisted information.
+\end{itemize}
+
+Implementation sequence Task 08 (``Establish authoritative Clinical writes'') is consequently scoped to design and implement authoritative \texttt{CREATE} and \texttt{UPDATE} write protocols between Mneme coordination and Mnemosyne persistence. Task 08 does not design, implement, or expose a physical authoritative \texttt{DELETE} path.
+
+\subsubsection{Concurrency and Distributed Cache Semantics}
+
+All lifecycle transitions execute through concurrency-controlled \texttt{UPDATE} protocols in Mnemosyne:
+
+\begin{itemize}
+    \item A lifecycle transition participates in the same concurrency-control and conflict-rejection mechanisms as any other authoritative update in Mnemosyne. Stale updates that conflict with committed durable state are rejected according to the concurrency protocol established in Task 08.
+    \item Invalid lifecycle state transitions (such as attempting an illegal transition on an already terminal resource) are rejected by domain validation rules.
+    \item In Mneme, Infinispan's \texttt{removeWithVersion()} is a version-aware conditional removal capability that Harmonia may use for reconstructable cache management and cluster coordination. It operates strictly within the non-authoritative active cache working set and does not define or execute governed resource deletion semantics.
+\end{itemize}
+
+\subsubsection{FHIR and Domain Lifecycle Semantics}
+
+At the protocol and API surface:
+
+\begin{itemize}
+    \item External protocol interactions conceptually mapped to deletion (such as HTTP \texttt{DELETE} in FHIR REST APIs) do not execute physical database deletions in Mnemosyne.
+    \item Instead, inbound protocol adapters and workflow pipelines translate such interactions into domain-appropriate lifecycle updates (illustrative examples include updating \texttt{active = false} or setting \texttt{status = 'entered-in-error'}), committing an authoritative update with associated provenance and audit evidence.
+    \item Where domain or protocol specifications dictate specific responses (such as HTTP \texttt{410 Gone}) for retired or entered-in-error resources, the response is determined by evaluating governed lifecycle attributes in authoritative persistence, not by the physical absence of a record.
+\end{itemize}
+
+\subsubsection{Audit and Provenance}
+
+In conformance with ADR-013 (Kleio Owns Audit Evidence and Provenance):
+
+\begin{itemize}
+    \item Accepted audit evidence in Kleio is append-only, permanent, and immutable.
+    \item Every lifecycle transition produces immutable Kleio \texttt{AuditEvent} records capturing the actor, authorization context, transition timestamp, prior state, and resulting state.
+    \item Because persisted entities remain permanently in Mnemosyne, audit trails and provenance graphs remain intact and verifiable throughout the system's life.
+\end{itemize}
+
+\subsubsection{Consequences}
+
+\paragraph{Positive Consequences}
+
+\begin{itemize}
+    \item \textbf{Information Preservation}: Clinical and operational history is preserved without loss of longitudinal record integrity.
+    \item \textbf{Referential Integrity}: Cross-resource references, patient links, and downstream integrations remain structurally sound without dangling foreign keys.
+    \item \textbf{Audit Compliance}: Kleio audit evidence and provenance graphs remain anchored to permanent, verifiable historical records.
+    \item \textbf{Concurrency Safety}: Lifecycle transitions are protected by concurrency control and version checks, preventing lost updates and race conditions.
+    \item \textbf{Clear Architectural Boundaries}: Distinguishes non-authoritative Mneme cache eviction from authoritative Mnemosyne state transitions, and excludes complex archival/purge engines from platform scope.
+\end{itemize}
+
+\paragraph{Negative Consequences}
+
+\begin{itemize}
+    \item \textbf{Monotonic Storage Growth}: Persistent database tables grow monotonically, requiring operational database capacity monitoring and storage planning.
+    \item \textbf{Query Filtering Discipline}: Search queries and read pipelines must consistently filter on domain lifecycle state (e.g. \texttt{active = true}, \texttt{status != 'entered-in-error'}) to prevent retired records from appearing in active clinical queries.
+    \item \textbf{API Mapping Rigor}: Inbound protocol gateways must carefully map incoming deletion requests to domain-specific lifecycle state changes.
+\end{itemize}
+
+\subsubsection{Rejected Alternatives}
+
+\begin{itemize}
+    \item \textbf{Physical DELETE as Persistence Primitive}: Rejected because physical deletion destroys clinical history, invalidates foreign keys, breaks audit chains, and creates severe synchronization failures across distributed nodes.
+    \item \textbf{Universal Generic Soft-Delete Flag (\texttt{is\_deleted = true})}: Rejected as the primary mechanism for domain lifecycle governance in favor of domain-native lifecycle attributes (e.g., FHIR \texttt{status}, \texttt{active}, \texttt{verificationStatus}, \texttt{period.end}). Generic boolean flags obscure domain semantics, fail to capture clinical context or reason for retirement, and complicate state validation. Any database-level columns (such as \texttt{is\_deleted}) are implementation artefacts and do not replace domain-level lifecycle representation.
+    \item \textbf{In-Band Platform Purge and Archival Subsystem}: Rejected for the current Harmonia framework. Implementing compliant multi-jurisdictional data retention, cold-storage migration, and tombstone synchronization would add significant operational complexity not justified by the core integration mission.
+\end{itemize}
+
+\subsubsection{Relationship to Other Decisions}
+
+This decision complements and reinforces:
+\begin{itemize}
+    \item \textbf{ADR-003 --- Mnemosyne Owns Durable Application State}
+    \item \textbf{ADR-006 --- FHIR R5 Is the Clinical Interoperability Boundary}
+    \item \textbf{ADR-010 --- Clinical Search Must Be Authoritative-Backed}
+    \item \textbf{ADR-013 --- Kleio Owns Audit Evidence and Provenance}
+    \item \textbf{ADR-018 --- Mnemosyne Defines the Authoritative Durable State Boundary}
+    \item \textbf{ADR-019 --- Mneme Owns Distributed Resource Access and Coordination}
+\end{itemize}
+
+\subsubsection{Architectural Principle}
+
+\begin{quote}
+    \textbf{Governed information progresses through lifecycle states; it is never erased.}\\
+    \textbf{State changes are authoritative updates; cache evictions are not deletions; archival and purge belong to external governance.}
 \end{quote}
 

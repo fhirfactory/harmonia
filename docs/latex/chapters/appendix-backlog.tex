@@ -237,19 +237,19 @@ Expand automated architecture tests to protect subsystem ownership, security bou
 \textbf{Supports:} \texttt{OPS-006}, \texttt{CORE-002}.
 
 \section{Harmonia - Audit}
-\subsection{BL-AUDIT-01 — Introduce a typed Harmonia Security Domain}
+\subsection{BL-AUDIT-01 --- Introduce a typed Harmonia Security Domain}
 
-Replace the current string-based securityDomain representation ("CLINICAL", "AUDIT", "OPERATIONS", "PROVIDER_REGISTRY", etc.) with a canonical typed Harmonia/Themis security-domain value or enum, and propagate it consistently through ThemisSecurityContext, ThemisResource, ThemisAuditEvent, policies and related contracts.
+Replace the current string-based securityDomain representation (\texttt{"CLINICAL"}, \texttt{"AUDIT"}, \texttt{"OPERATIONS"}, \texttt{"PROVIDER\_REGISTRY"}, etc.) with a canonical typed Harmonia/Themis security-domain value or enum, and propagate it consistently through \texttt{ThemisSecurityContext}, \texttt{ThemisResource}, \texttt{ThemisAuditEvent}, policies and related contracts.
 
 \paragraph{Rationale:} Task 06 correctly retained String securityDomain because the repository currently only has string constants and changing this would expand Step 01 substantially. The exploration explicitly identified this as the smallest compatible choice.
 
-\paragrahp{Timing:} Foundations cleanup after Tasks 06–10, unless another task creates a natural migration point.
+\paragraph{Timing:} Foundations cleanup after Tasks 06--10, unless another task creates a natural migration point.
 
-\subsection{BL-AUDIT-02 — Relocate immutable audit evidence to dedicated Operations/Audit persistence} 
+\subsection{BL-AUDIT-02 --- Relocate immutable audit evidence to dedicated Operations/Audit persistence} 
 Logical ownership is AUDIT/operations rather than clinical; defer physical movement so Task 06 doesn't turn into the persistence redesign covered by later tasks.
 
-\subsection{BL-AUDIT-03 — Database-level audit immutability hardening}
- Consider PostgreSQL permissions/triggers or equivalent append-only/WORM controls after the application/persistence architecture settles. This adds defence-in-depth beneath the service and persistence invariants.
+\subsection{BL-AUDIT-03 --- Database-level audit immutability hardening}
+Consider PostgreSQL permissions/triggers or equivalent append-only/WORM controls after the application/persistence architecture settles. This adds defence-in-depth beneath the service and persistence invariants.
 
 \section{Backlog Sequencing}
 

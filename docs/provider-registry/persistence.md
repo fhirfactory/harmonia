@@ -36,7 +36,7 @@ CREATE INDEX idx_resource_type_deleted ON hie_fhir_resources (resource_type, is_
 | `fhir_id` | `VARCHAR(128)` | Business/logical FHIR identifier (e.g. `pract-dr-bowman-01`, `org-stvincents-01`). |
 | `version_id` | `BIGINT` | Monotonically increasing version counter for optimistic concurrency and history. |
 | `resource_json` | `TEXT` | Complete FHIR R5 JSON representation (including meta, names, identifiers, extensions, and security tags). |
-| `is_deleted` | `BOOLEAN` | Soft-deletion flag enabling FHIR `410 Gone` semantics and audit retention. |
+| `is_deleted` | `BOOLEAN` | Relational retirement flag enabling FHIR `410 Gone` lifecycle semantics and audit retention (ADR-020). |
 | `last_updated` | `TIMESTAMP` | Timestamp of latest mutation. Synchronized with FHIR `Meta.lastUpdated`. |
 
 ### 4. Versioning & Optimistic Concurrency Control
@@ -46,3 +46,4 @@ CREATE INDEX idx_resource_type_deleted ON hie_fhir_resources (resource_type, is_
   - Direct read (`GET /{resourceType}/{id}`) returns `ETag: W/"{version_id}"`.
   - Update requests (`PUT /{resourceType}/{id}`) accept `If-Match: W/"{version_id}"`.
   - If the requested baseline version does not match the stored `version_id`, an optimistic lock conflict is thrown (`PreconditionFailedException`), causing the change Pragma to transition to `FAILED` with `PR-VAL-006`.
+- **Lifecycle Transitions (ADR-020)**: Physical deletion is not supported. Deactivation or retirement of provider directory records is executed as an authoritative `UPDATE` modifying status/active fields, preserving audit history and referential relationships.

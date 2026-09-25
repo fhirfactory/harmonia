@@ -209,7 +209,7 @@ All asynchronous transport operations across ActiveMQ Artemis use the standard i
 
 \section{Supported FHIR R5 Resource Schemas}
 
-Harmonia implements full lifecycle CRUD and search capabilities for 15 core FHIR R5 resources:
+Harmonia implements full lifecycle create, read, update, domain lifecycle state transitions, and search capabilities for 15 core FHIR R5 resources (ADR-020):
 
 \begin{table}[htbp]
 \centering
@@ -265,7 +265,7 @@ This hybrid storage strategy guarantees:
     \item \textbf{Lossless FHIR R5 Fidelity}: The complete resource structure, including complex extensions and contained resources, is stored in \texttt{resource\_json}.
     \item \textbf{High-Speed Indexed Search}: Hot lookup fields (\texttt{resource\_type}, \texttt{fhir\_id}, \texttt{is\_deleted}) are indexed at the relational engine level.
     \item \textbf{Optimistic Concurrency \& Versioning}: Each update atomically increments \texttt{version\_id} and stamps \texttt{last\_updated}, supporting \texttt{If-Match} / \texttt{ETag} precondition validation.
-    \item \textbf{Audit-Preserving Soft Delete}: Soft-deleted resources maintain their historical records with \texttt{is\_deleted = TRUE}.
+    \item \textbf{Audit-Preserving Lifecycle State (ADR-020)}: Governed persisted information is never physically deleted. Deactivated or retired resources maintain their historical records and Kleio audit evidence with \texttt{is\_deleted = TRUE} via authoritative \texttt{UPDATE} operations.
 \end{itemize}
 
 \newpage

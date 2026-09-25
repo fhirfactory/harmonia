@@ -28,7 +28,7 @@ Both tables use a hybrid relational-document storage pattern: relational metadat
 | `fhir_id` | `VARCHAR(128)` | `NOT NULL` | - | Logical FHIR resource identifier (UUID). |
 | `version_id` | `BIGINT` | `NOT NULL` | `1` | Monotonically increasing version counter for optimistic locking. |
 | `resource_json` | `TEXT` | `NOT NULL` | - | Serialized FHIR R5 JSON payload. |
-| `is_deleted` | `BOOLEAN` | `NOT NULL` | `FALSE` | Soft-delete flag (records are retained for regulatory audit). |
+| `is_deleted` | `BOOLEAN` | `NOT NULL` | `FALSE` | Relational retirement flag reflecting domain lifecycle status (records are retained for regulatory audit; see ADR-020). |
 | `last_updated` | `TIMESTAMP` | `NOT NULL` | `CURRENT_TIMESTAMP` | UTC timestamp of the last write or mutation. |
 
 #### Constraints & Indexes
@@ -58,7 +58,7 @@ Both tables use a hybrid relational-document storage pattern: relational metadat
 | `object_id` | `VARCHAR(128)` | `NOT NULL` | - | Logical unique identifier for the operational object. |
 | `version_id` | `BIGINT` | `NOT NULL` | `1` | Monotonically increasing version counter for optimistic locking. |
 | `data_json` | `TEXT` | `NOT NULL` | `""` | Serialized JSON operational payload or configuration blob. |
-| `is_deleted` | `BOOLEAN` | `NOT NULL` | `FALSE` | Soft-delete flag for operational telemetry. |
+| `is_deleted` | `BOOLEAN` | `NOT NULL` | `FALSE` | Relational retirement flag for operational telemetry (see ADR-020). |
 | `created_date` | `TIMESTAMP` | `NOT NULL` | `CURRENT_TIMESTAMP` | UTC creation timestamp. |
 | `last_updated` | `TIMESTAMP` | `NOT NULL` | `CURRENT_TIMESTAMP` | UTC timestamp of last update. |
 
@@ -153,8 +153,8 @@ erDiagram
 
 ## 5. Retention & Data Governance
 
-1. **Clinical Retention Compliance**:
-   - In accordance with health data compliance standards, clinical entries in `hie_fhir_resources` are never physically dropped during daily execution. 
-   - `is_deleted = true` marks logical retirement while preserving complete historical provenance and audit trails.
-2. **Operational Purging**:
-   - `hie_operations_resources` can be archived or trimmed by an administrative maintenance job using `last_updated < NOW() - INTERVAL '90 days' AND is_deleted = true` without compromising clinical data integrity.
+1. **Clinical Retention Compliance (ADR-020)**:
+   - In accordance with healthcare data compliance standards and platform architectural invariants (ADR-020), clinical entries in `hie_fhir_resources` are never physically deleted during normal operations.
+   - Logical deactivations or retirements are domain-appropriate lifecycle transitions executed as authoritative `UPDATE` operations, preserving complete historical provenance, Kleio audit evidence, and referential integrity.
+2. **Archival, Retention-Based Purge, and Physical Disposal**:
+   - Long-term archival, retention-based purge policies, and physical storage disposal are formally designated as outside the scope of the current Harmonia framework (see ADR-020). Any out-of-band operational lifecycle procedures implemented by host infrastructure must preserve audit immutability and clinical safety.

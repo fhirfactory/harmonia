@@ -101,7 +101,7 @@ flowchart TD
 - **Components**:
   - `pylai-mllp-in` `[IMPLEMENTED]`: Netty-based MLLP listener on TCP port `2575`. Translates HL7 v2.x messages (ADT, ORU, ORM, MFN) into FHIR `Communication` and `Task`/`Pragma` models. Enforces **Ingress Dual-Write Safety (REC-001)**: guarantees Petasos enqueue before emitting an `AA` acknowledgment.
   - `pylai-mllp-out` `[IMPLEMENTED]`: Netty-based outbound MLLP dispatcher consuming from dedicated per-destination queues. Enforces **Destination Fan-Out State Tracking (REC-002)**.
-  - `pylai-fhir-registry` `[IMPLEMENTED]`: High-performance RESTful FHIR gateway providing standard FHIR R5 search and CRUD operations for Provider Registry master data.
+  - `pylai-fhir-registry` `[IMPLEMENTED]`: High-performance RESTful FHIR gateway providing standard FHIR R5 search, create, update, and lifecycle operations for Provider Registry master data (ADR-020).
 
 ### Tier 3: Workflow & Task Execution Tier (Energeia) `[IMPLEMENTED]`
 - **Role**: Executes asynchronous integration tasks, manages workflow pipelines, and coordinates activity sequences.

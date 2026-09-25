@@ -103,6 +103,10 @@ public class InfinispanLaboratoryServer implements AutoCloseable {
         return createClientForServer(server2.getPort(), "Client-B");
     }
 
+    public RemoteCacheManager createClientC() {
+        return createClientForServer(server1.getPort(), "Client-C");
+    }
+
     public RemoteCacheManager createClientForServer(int port, String clientName) {
         org.infinispan.client.hotrod.configuration.ConfigurationBuilder cb =
                 new org.infinispan.client.hotrod.configuration.ConfigurationBuilder();

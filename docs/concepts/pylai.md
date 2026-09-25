@@ -39,7 +39,7 @@ Pylai comprises three primary functional gateways:
 |   |                             (pylai-fhir-registry)                              |  |
 |   |                                                                                |  |
 |   | * High-Throughput HTTP REST API Gateway on Port 8080                           |  |
-|   | * Direct Provider Registry CRUD Operations (Practitioner, Organization)        |  |
+|   | * Provider Registry Lifecycle Operations (Practitioner, Organization)          |  |
 |   | * Themis Ingress Policy Evaluation Gate                                        |  |
 |   +--------------------------------------------------------------------------------+  |
 |                                                                                       |
@@ -61,7 +61,7 @@ Pylai comprises three primary functional gateways:
 - Upstream MLLP acknowledgment generation (`AA`, `AE`, `AR`).
 - Outbound MLLP connection pooling, remote socket management, and delivery timeout handling.
 - Egress queue bindings and destination-specific dispatchers (`pylai-mllp-out`).
-- Ingress REST API endpoints for Provider Registry search and CRUD (`pylai-fhir-registry`).
+- Ingress REST API endpoints for Provider Registry search and lifecycle operations (`pylai-fhir-registry`; see ADR-020).
 - Synthetic HL7 v2 CLI load generation and testing tool (`pylai-mllp-cli`).
 
 ### What Pylai Explicitly Does NOT Own (Anti-Responsibilities)

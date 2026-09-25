@@ -52,7 +52,7 @@ Hestia is Harmonia's foundational data management subsystem, uniting low-latency
 
 ### 3.1 Clinical Persistence (`mnemosyne-clinical`)
 - **Framework**: Spring Boot 3.2.5 with HAPI FHIR R5 JPA structures (`ca.uhn.fhir.jpa`).
-- **Supported Resources**: Complete CRUD and search for 14 core FHIR R5 resources (`Person`, `RelatedPerson`, `Practitioner`, `PractitionerRole`, `Organization`, `Location`, `HealthcareService`, `Group`, `Provenance`, `AuditEvent`, `Consent`, `Task`, `Communication`, `DocumentReference`).
+- **Supported Resources**: Complete lifecycle operations (create, read, update, domain lifecycle transition, search, history) for 14 core FHIR R5 resources (`Person`, `RelatedPerson`, `Practitioner`, `PractitionerRole`, `Organization`, `Location`, `HealthcareService`, `Group`, `Provenance`, `AuditEvent`, `Consent`, `Task`, `Communication`, `DocumentReference`; see ADR-020).
 - **Database**: PostgreSQL 16 (`fhir_node_1`, `fhir_node_2`).
 
 ### 3.2 Operations Persistence (`mnemosyne-operations`)
