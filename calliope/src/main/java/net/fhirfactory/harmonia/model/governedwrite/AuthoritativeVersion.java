@@ -42,6 +42,14 @@ public record AuthoritativeVersion(
         return new AuthoritativeVersion(String.valueOf(versionNumber));
     }
 
+    public long longValue() {
+        try {
+            return Long.parseLong(value);
+        } catch (NumberFormatException e) {
+            return 0L;
+        }
+    }
+
     public ExpectedAuthoritativeVersion toExpected() {
         return ExpectedAuthoritativeVersion.of(this);
     }

@@ -46,7 +46,6 @@ public class FhirResourceEntity {
     @Column(name = "version_id", nullable = false)
     private Long versionId = 1L;
 
-    @Lob
     @Column(name = "resource_json", nullable = false, columnDefinition = "TEXT")
     private String resourceJson;
 

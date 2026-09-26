@@ -309,4 +309,21 @@ class GovernedWriteContractTest {
         assertThat(methodNames).containsExactlyInAnyOrder("observe", "consume");
         assertThat(methodNames).noneMatch(name -> name.toLowerCase().contains("delete") || name.toLowerCase().contains("remove"));
     }
+
+    @Test
+    @DisplayName("12. ActiveStateConvergencePort declares pure convergence method without delete or payload eviction")
+    void activeStateConvergencePortDeclaresPureConvergenceMethod() throws NoSuchMethodException {
+        assertThat(ActiveStateConvergencePort.class.isInterface()).isTrue();
+
+        Method convergeMethod = ActiveStateConvergencePort.class.getMethod("converge", ResourceKey.class, Object.class, AuthoritativeVersion.class);
+        assertThat(convergeMethod.getReturnType()).isEqualTo(ConvergenceStatus.class);
+
+        Method[] methods = ActiveStateConvergencePort.class.getMethods();
+        List<String> methodNames = Arrays.stream(methods)
+                .map(Method::getName)
+                .toList();
+
+        assertThat(methodNames).containsExactlyInAnyOrder("converge");
+        assertThat(methodNames).noneMatch(name -> name.toLowerCase().contains("delete") || name.toLowerCase().contains("remove") || name.toLowerCase().contains("evict"));
+    }
 }
