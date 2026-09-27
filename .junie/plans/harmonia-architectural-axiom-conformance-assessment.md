@@ -191,14 +191,14 @@ The assessment findings will be reviewed in the following prioritized sequence:
 
 # Delivery Steps
 
-### * Step 1: Evaluate Ingress/Egress Boundaries, Operational Metadata Containment, and Security Context Propagation
+### ✓ Step 1: Evaluate Ingress/Egress Boundaries, Operational Metadata Containment, and Security Context Propagation
 Investigate and document evidence regarding Pylai gateway boundaries, egress projection filtering, and security context minting.
 
 - Inspect `pylai-fhir-registry` and `calliope` (`PragmaFhirConverter`, `FhirRestGatewayController`) to evaluate whether private operational extension URIs are exposed across egress boundaries (`AX-02`, `AX-12`, `AX-13`, Candidate MAT-03).
 - Inspect Pylai HTTP interceptors and controllers to evaluate `ThemisSecurityContext` minting from incoming request headers (`AX-07`, `AX-13`, Candidate MAT-08).
 - Analyze `FhirSecurityTagManager` and resource persistence flows to evaluate the boundary between transient security context and persisted clinical data (`AX-07`, Candidate MAT-04).
 
-###   Step 2: Evaluate State Separation, Active Cache Usage, and Presentation Tier Decoupling
+### ✓ Step 2: Evaluate State Separation, Active Cache Usage, and Presentation Tier Decoupling
 Investigate and document evidence regarding Mneme active state, Mnemosyne durable state, and presentation tier decoupling.
 
 - Inspect `iris-befe` (`FhirCacheService`, `PractitionerResource`) for raw Infinispan `remoteCache.put` and `remoteCache.remove` invocations bypassing Mnemosyne (`AX-05`, `AX-10`, `AX-11`, Candidate MAT-01).
@@ -206,14 +206,14 @@ Investigate and document evidence regarding Mneme active state, Mnemosyne durabl
 - Inspect `AuditDataSourceProducer` and `iris-befe/pom.xml` for direct PostgreSQL DataSource definitions and JDBC dependencies (`AX-05`, `AX-12`, Candidate MAT-05).
 - Inspect `pylai-mllp-base` (`DefaultProvenanceService`) for cache-based provenance mutations and physical deletions (`AX-05`, `AX-08`, Candidate MAT-09).
 
-###   Step 3: Evaluate Persistence Engines, Native Platform Machinery, and Workflow Lifecycle Semantics
+### ✓ Step 3: Evaluate Persistence Engines, Native Platform Machinery, and Workflow Lifecycle Semantics
 Investigate and document evidence regarding Mnemosyne persistence, platform machinery utilization, and error handling.
 
 - Inspect `hestia/mnemosyne-clinical` (`AuthoritativePersistenceService`, `FhirResourceRepository`, `FhirResourceEntity`) to assess custom relational storage vs native HAPI FHIR JPA Server capabilities (`AX-04`, `AX-01`, Candidate MAT-06).
 - Inspect `DefaultCommunicationService` and `PraxisService` for silent `ConcurrentHashMap` fallback behaviour during cache degradation (`AX-10`, Candidate MAT-07).
 - Review native engine usage across Artemis (`Petasos`), Infinispan (`Hestia/Mneme`), and PostgreSQL (`Kleio`, `Mnemosyne`) against claimed semantic invariants.
 
-###   Step 4: Evaluate Mechanical Architecture Tests, ADR Consistency, and Synthesize Final Conformance Report
+### ✓ Step 4: Evaluate Mechanical Architecture Tests, ADR Consistency, and Synthesize Final Conformance Report
 Verify all 20 ADRs, assess ArchUnit test coverage, and produce the comprehensive architectural conformance report.
 
 - Validate ADR-001 through ADR-020 directly against `docs/architecture-decisions.md` and assess consistency with exact axioms AX-01 to AX-13.

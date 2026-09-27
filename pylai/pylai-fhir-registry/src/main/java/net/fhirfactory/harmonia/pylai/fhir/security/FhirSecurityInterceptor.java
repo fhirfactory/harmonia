@@ -40,6 +40,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.security.Principal;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -94,26 +96,20 @@ public class FhirSecurityInterceptor {
      * @throws AuthenticationException     if authentication is missing/invalid
      */
     public void authorize(String resourceType, String interaction, HttpServletRequest request) {
-        if (request == null) {
-            return;
-        }
-
-        // Allow capability metadata without restriction
+        // Allow capability metadata without restriction per FHIR R5 specification
         if ("metadata".equalsIgnoreCase(resourceType) || "CapabilityStatement".equalsIgnoreCase(resourceType)) {
             return;
         }
 
-        // Authentication token integrity check
-        String authHeader = request.getHeader(HEADER_AUTH_TOKEN);
-        if (StringUtils.isNotBlank(authHeader) && authHeader.equalsIgnoreCase("Bearer invalid-token")) {
-            throw new AuthenticationException("Invalid authentication token");
+        ThemisPrincipal principal = extractPrincipal(request);
+        if (principal == null) {
+            throw new AuthenticationException("Trusted caller identity not established");
         }
 
-        ThemisPrincipal principal = extractPrincipal(request);
         Set<ThemisAuthority> authorities = extractAuthorities(request);
         ThemisAction action = mapToAction(interaction);
 
-        String correlationId = request.getHeader(HEADER_CORRELATION_ID);
+        String correlationId = request != null ? request.getHeader(HEADER_CORRELATION_ID) : null;
         if (StringUtils.isBlank(correlationId)) {
             correlationId = UUID.randomUUID().toString();
         }
@@ -143,10 +139,12 @@ public class FhirSecurityInterceptor {
         ThemisAuthorizationDecision decision = themisService.authorize(authReq);
 
         // Store resolved security attributes on HttpServletRequest for downstream use
-        request.setAttribute(ATTR_THEMIS_PRINCIPAL, principal);
-        request.setAttribute(ATTR_THEMIS_AUTHORITIES, authorities);
-        request.setAttribute(ATTR_THEMIS_CONTEXT, context);
-        request.setAttribute(ATTR_THEMIS_DECISION, decision);
+        if (request != null) {
+            request.setAttribute(ATTR_THEMIS_PRINCIPAL, principal);
+            request.setAttribute(ATTR_THEMIS_AUTHORITIES, authorities);
+            request.setAttribute(ATTR_THEMIS_CONTEXT, context);
+            request.setAttribute(ATTR_THEMIS_DECISION, decision);
+        }
 
         if (decision.decision() == ThemisDecision.DENY) {
             log.warn("Themis authorization DENIED for principal [{}] performing [{}] on [{}] (policy={}, reason={})",
@@ -161,39 +159,16 @@ public class FhirSecurityInterceptor {
 
     public ThemisPrincipal extractPrincipal(HttpServletRequest request) {
         if (request == null) {
-            return ThemisPrincipal.of("system:anonymous", PrincipalType.SYSTEM, "pylai");
+            return null;
         }
 
-        String principalId = request.getHeader(HEADER_PRINCIPAL_ID);
-        if (StringUtils.isBlank(principalId)) {
-            principalId = request.getHeader(HEADER_REQUESTER);
-        }
-        if (StringUtils.isBlank(principalId) && request.getUserPrincipal() != null) {
-            principalId = request.getUserPrincipal().getName();
-        }
-        if (StringUtils.isBlank(principalId)) {
-            principalId = "system:anonymous";
+        Principal userPrincipal = request.getUserPrincipal();
+        if (userPrincipal == null || StringUtils.isBlank(userPrincipal.getName()) || "system:anonymous".equalsIgnoreCase(userPrincipal.getName().trim())) {
+            return null;
         }
 
-        String typeHeader = request.getHeader(HEADER_PRINCIPAL_TYPE);
-        PrincipalType principalType = null;
-        if (StringUtils.isNotBlank(typeHeader)) {
-            try {
-                principalType = PrincipalType.valueOf(typeHeader.trim().toUpperCase());
-            } catch (IllegalArgumentException ignored) {
-            }
-        }
-        if (principalType == null) {
-            if (principalId.startsWith("service:")) {
-                principalType = PrincipalType.SERVICE;
-            } else if (principalId.startsWith("system:")) {
-                principalType = PrincipalType.SYSTEM;
-            } else if (principalId.startsWith("process:")) {
-                principalType = PrincipalType.PROCESS;
-            } else {
-                principalType = PrincipalType.HUMAN;
-            }
-        }
+        String principalId = userPrincipal.getName().trim();
+        PrincipalType principalType = resolvePrincipalType(principalId);
 
         String sourceDomain = request.getHeader(HEADER_SOURCE_DOMAIN);
         if (StringUtils.isBlank(sourceDomain)) {
@@ -206,74 +181,31 @@ public class FhirSecurityInterceptor {
         return ThemisPrincipal.of(principalId, principalType, sourceDomain);
     }
 
-    public Set<ThemisAuthority> extractAuthorities(HttpServletRequest request) {
-        Set<ThemisAuthority> authorities = new HashSet<>();
-        if (request == null) {
-            return authorities;
+    private PrincipalType resolvePrincipalType(String principalId) {
+        if (principalId.startsWith("service:")) {
+            return PrincipalType.SERVICE;
+        } else if (principalId.startsWith("system:")) {
+            return PrincipalType.SYSTEM;
+        } else if (principalId.startsWith("process:")) {
+            return PrincipalType.PROCESS;
+        } else {
+            return PrincipalType.HUMAN;
         }
-
-        Set<String> rawTokens = new HashSet<>();
-        extractHeaderTokens(request.getHeader(HEADER_USER_ROLES), rawTokens);
-        extractHeaderTokens(request.getHeader(HEADER_SECURITY_SCOPES), rawTokens);
-
-        for (String token : rawTokens) {
-            // 1. Check Mnemonic Harmonia Role (e.g. PRV_RDR, PRV_SUB, PRV_PROC, PRV_APR, PRV_ADM, AUD_RDR, SYS_INT, SYS_ADM)
-            Optional<HarmoniaRoleEnum> roleOpt = HarmoniaRoleEnum.fromCode(token);
-            if (roleOpt.isPresent()) {
-                authorities.addAll(roleOpt.get().getThemisAuthorities());
-                continue;
-            }
-
-            // 2. Check Granular Harmonia Authority (e.g. provider.read, provider.change.submit)
-            Optional<HarmoniaAuthorityEnum> authOpt = HarmoniaAuthorityEnum.fromCode(token);
-            if (authOpt.isPresent()) {
-                authorities.add(authOpt.get().toThemisAuthority());
-                continue;
-            }
-
-            // 3. Super Admin & Platform Admin wildcards
-            if (token.equals("*") ||
-                token.equalsIgnoreCase("ROLE_ADMIN") ||
-                token.equalsIgnoreCase("provider-registry.admin") ||
-                token.equalsIgnoreCase("system/*.*")) {
-                authorities.addAll(HarmoniaRoleEnum.SYS_ADM.getThemisAuthorities());
-                continue;
-            }
-
-            // 4. Support legacy permission naming: e.g. "Practitioner.read", "Practitioner.search", "Practitioner.*", "Practitioner.create.request"
-            String lower = token.toLowerCase();
-            if (lower.endsWith(".read") || lower.equals("read")) {
-                authorities.add(HarmoniaAuthorityEnum.PROVIDER_READ.toThemisAuthority());
-            }
-            if (lower.endsWith(".search") || lower.equals("search")) {
-                authorities.add(HarmoniaAuthorityEnum.PROVIDER_SEARCH.toThemisAuthority());
-            }
-            if (lower.endsWith(".*") || lower.contains("create") || lower.contains("update") || lower.contains("submit")) {
-                authorities.add(HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority());
-                if (lower.endsWith(".*")) {
-                    authorities.add(HarmoniaAuthorityEnum.PROVIDER_READ.toThemisAuthority());
-                    authorities.add(HarmoniaAuthorityEnum.PROVIDER_SEARCH.toThemisAuthority());
-                }
-            }
-
-            // Always add raw token as custom authority for ABAC / specialized policies
-            try {
-                authorities.add(ThemisAuthority.of(token));
-            } catch (Exception ignored) {
-            }
-        }
-
-        return authorities;
     }
 
-    private void extractHeaderTokens(String headerValue, Set<String> target) {
-        if (StringUtils.isNotBlank(headerValue)) {
-            for (String part : headerValue.split("[,;\\s]+")) {
-                if (StringUtils.isNotBlank(part)) {
-                    target.add(part.trim());
-                }
+    public Set<ThemisAuthority> extractAuthorities(HttpServletRequest request) {
+        Set<ThemisAuthority> authorities = new HashSet<>();
+        if (request == null || request.getUserPrincipal() == null) {
+            return Collections.emptySet();
+        }
+
+        for (HarmoniaRoleEnum role : HarmoniaRoleEnum.values()) {
+            if (request.isUserInRole(role.getRoleCode()) || request.isUserInRole("ROLE_" + role.getRoleCode())) {
+                authorities.addAll(role.getThemisAuthorities());
             }
         }
+
+        return Collections.unmodifiableSet(authorities);
     }
 
     public ThemisAction mapToAction(String interaction) {

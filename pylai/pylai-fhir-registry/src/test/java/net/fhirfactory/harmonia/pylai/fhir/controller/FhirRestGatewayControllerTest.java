@@ -33,8 +33,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.RequestPostProcessor;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.List;
@@ -43,9 +43,14 @@ import java.util.Optional;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@DisplayName("Pylai FHIR REST Gateway Controller Tests")
 class FhirRestGatewayControllerTest {
 
     private MockMvc mockMvc;
@@ -55,6 +60,16 @@ class FhirRestGatewayControllerTest {
     private FhirSecurityInterceptor securityInterceptor;
     private PragmaCacheService pragmaCacheService;
     private final FhirContext fhirContext = FhirContext.forR5();
+
+    private static RequestPostProcessor auth(String principalName, String... roles) {
+        return request -> {
+            request.setUserPrincipal(() -> principalName);
+            for (String role : roles) {
+                request.addUserRole(role);
+            }
+            return request;
+        };
+    }
 
     @BeforeEach
     void setUp() {
@@ -78,7 +93,7 @@ class FhirRestGatewayControllerTest {
     }
 
     @Test
-    @DisplayName("GET /metadata returns 200 OK with FHIR CapabilityStatement")
+    @DisplayName("GET /metadata returns 200 OK with FHIR CapabilityStatement without authentication")
     void testGetMetadata() throws Exception {
         mockMvc.perform(get("/metadata"))
                 .andExpect(status().isOk())
@@ -89,7 +104,18 @@ class FhirRestGatewayControllerTest {
     }
 
     @Test
-    @DisplayName("GET /Practitioner/{id} returns 200 OK with ETag")
+    @DisplayName("GET /fhir/metadata returns 200 OK with FHIR CapabilityStatement without authentication")
+    void testGetFhirMetadata() throws Exception {
+        mockMvc.perform(get("/fhir/metadata"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith("application/fhir+json"))
+                .andExpect(jsonPath("$.resourceType").value("CapabilityStatement"))
+                .andExpect(jsonPath("$.status").value("active"))
+                .andExpect(jsonPath("$.fhirVersion").value("5.0.0"));
+    }
+
+    @Test
+    @DisplayName("GET /Practitioner/{id} returns 200 OK with ETag when container-authenticated with PRV_RDR")
     void testReadPractitionerSuccess() throws Exception {
         Practitioner pr = new Practitioner();
         pr.setId("Practitioner/PR-100");
@@ -99,8 +125,7 @@ class FhirRestGatewayControllerTest {
         when(storageService.getResource("Practitioner", "PR-100")).thenReturn(pr);
 
         mockMvc.perform(get("/Practitioner/PR-100")
-                        .header("X-User-Roles", "PRV_RDR")
-                        .header("X-Requester", "user:dr-smith"))
+                        .with(auth("user:dr-smith", "PRV_RDR")))
                 .andExpect(status().isOk())
                 .andExpect(header().string("ETag", "W/\"1\""))
                 .andExpect(jsonPath("$.resourceType").value("Practitioner"))
@@ -108,7 +133,7 @@ class FhirRestGatewayControllerTest {
     }
 
     @Test
-    @DisplayName("GET /Practitioner performs multi-parameter search and returns searchset Bundle")
+    @DisplayName("GET /Practitioner performs multi-parameter search and returns searchset Bundle when container-authenticated with PRV_RDR")
     void testSearchPractitioners() throws Exception {
         Practitioner pr = new Practitioner();
         pr.setId("Practitioner/PR-101");
@@ -117,8 +142,7 @@ class FhirRestGatewayControllerTest {
         when(storageService.searchResources(eq("Practitioner"), any())).thenReturn(List.of(pr));
 
         mockMvc.perform(get("/Practitioner?name=Smith")
-                        .header("X-User-Roles", "PRV_RDR")
-                        .header("X-Requester", "user:dr-smith"))
+                        .with(auth("user:dr-smith", "PRV_RDR")))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.resourceType").value("Bundle"))
                 .andExpect(jsonPath("$.type").value("searchset"))
@@ -127,7 +151,7 @@ class FhirRestGatewayControllerTest {
     }
 
     @Test
-    @DisplayName("POST /Practitioner returns 202 Accepted with Task Location and Correlation ID")
+    @DisplayName("POST /Practitioner returns 202 Accepted with Task Location and Correlation ID when container-authenticated with PRV_SUB")
     void testCreatePractitionerAccepted() throws Exception {
         Practitioner pr = new Practitioner();
         pr.addName(new HumanName().setFamily("Doe").addGiven("John"));
@@ -155,9 +179,8 @@ class FhirRestGatewayControllerTest {
 
         mockMvc.perform(post("/Practitioner")
                         .contentType("application/fhir+json")
-                        .header("X-User-Roles", "PRV_SUB")
-                        .header("X-Requester", "user:submitter")
                         .header("X-Correlation-Id", "corr-post-1")
+                        .with(auth("user:submitter", "PRV_SUB"))
                         .content(json))
                 .andExpect(status().isAccepted())
                 .andExpect(header().string("Location", "/Task/" + pragma.getPragmaId()))
@@ -167,7 +190,7 @@ class FhirRestGatewayControllerTest {
     }
 
     @Test
-    @DisplayName("GET /Task/{id} returns Task representing Pragma status")
+    @DisplayName("GET /Task/{id} returns Task representing Pragma status when container-authenticated with PRV_RDR")
     void testGetTaskStatus() throws Exception {
         Practitioner pr = new Practitioner();
         pr.setId("PR-200");
@@ -184,22 +207,52 @@ class FhirRestGatewayControllerTest {
         when(pragmaCacheService.getPragma(pragma.getPragmaId())).thenReturn(Optional.of(pragma));
 
         mockMvc.perform(get("/Task/" + pragma.getPragmaId())
-                        .header("X-User-Roles", "PRV_RDR")
-                        .header("X-Requester", "user:dr-smith"))
+                        .with(auth("user:dr-smith", "PRV_RDR")))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.resourceType").value("Task"))
                 .andExpect(jsonPath("$.status").value("completed"));
     }
 
     @Test
-    @DisplayName("GET /Practitioner/{id} denied with 403 when no user roles provided (Default Deny)")
-    void testReadDeniedDefaultDeny() throws Exception {
+    @DisplayName("GET /Practitioner/{id} denied with 401 Unauthorized when request is unauthenticated (Fail-Closed)")
+    void testReadDeniedUnauthenticated() throws Exception {
         mockMvc.perform(get("/Practitioner/PR-100"))
-                .andExpect(status().isForbidden());
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.resourceType").value("OperationOutcome"))
+                .andExpect(jsonPath("$.issue[0].severity").value("error"))
+                .andExpect(jsonPath("$.issue[0].code").value("security"));
     }
 
     @Test
-    @DisplayName("POST /Practitioner denied with 403 when caller only has PRV_RDR role")
+    @DisplayName("POST /Practitioner denied with 401 Unauthorized when request is unauthenticated")
+    void testCreateDeniedUnauthenticated() throws Exception {
+        Practitioner pr = new Practitioner();
+        pr.addName(new HumanName().setFamily("Doe").addGiven("John"));
+        String json = fhirContext.newJsonParser().encodeResourceToString(pr);
+
+        mockMvc.perform(post("/Practitioner")
+                        .contentType("application/fhir+json")
+                        .content(json))
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.resourceType").value("OperationOutcome"))
+                .andExpect(jsonPath("$.issue[0].severity").value("error"))
+                .andExpect(jsonPath("$.issue[0].code").value("security"));
+    }
+
+    @Test
+    @DisplayName("GET /Practitioner/{id} denied with 401 when caller attempts header spoofing without container principal")
+    void testHeaderSpoofingRejectedWithoutContainerPrincipal() throws Exception {
+        mockMvc.perform(get("/Practitioner/PR-100")
+                        .header("X-Principal-Id", "admin")
+                        .header("X-Requester", "superuser")
+                        .header("X-User-Roles", "PRV_ADM, ROLE_ADMIN, *")
+                        .header("X-Security-Scopes", "system/*.*"))
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.resourceType").value("OperationOutcome"));
+    }
+
+    @Test
+    @DisplayName("POST /Practitioner denied with 403 Forbidden when caller only has PRV_RDR role")
     void testCreateDeniedForReader() throws Exception {
         Practitioner pr = new Practitioner();
         pr.addName(new HumanName().setFamily("Doe").addGiven("John"));
@@ -207,9 +260,29 @@ class FhirRestGatewayControllerTest {
 
         mockMvc.perform(post("/Practitioner")
                         .contentType("application/fhir+json")
-                        .header("X-User-Roles", "PRV_RDR")
-                        .header("X-Requester", "user:reader-only")
+                        .with(auth("user:reader-only", "PRV_RDR"))
                         .content(json))
-                .andExpect(status().isForbidden());
+                .andExpect(status().isForbidden())
+                .andExpect(jsonPath("$.resourceType").value("OperationOutcome"))
+                .andExpect(jsonPath("$.issue[0].severity").value("error"))
+                .andExpect(jsonPath("$.issue[0].code").value("forbidden"));
+    }
+
+    @Test
+    @DisplayName("POST /Practitioner denied with 403 when caller with PRV_RDR role attempts role header injection")
+    void testRoleHeaderInjectionIgnoredDeniedForbidden() throws Exception {
+        Practitioner pr = new Practitioner();
+        pr.addName(new HumanName().setFamily("Doe").addGiven("John"));
+        String json = fhirContext.newJsonParser().encodeResourceToString(pr);
+
+        mockMvc.perform(post("/Practitioner")
+                        .contentType("application/fhir+json")
+                        .header("X-User-Roles", "PRV_SUB, PRV_ADM, SYS_ADM, *")
+                        .header("X-Security-Scopes", "system/*.*")
+                        .with(auth("user:dr-smith", "PRV_RDR"))
+                        .content(json))
+                .andExpect(status().isForbidden())
+                .andExpect(jsonPath("$.resourceType").value("OperationOutcome"))
+                .andExpect(jsonPath("$.issue[0].code").value("forbidden"));
     }
 }

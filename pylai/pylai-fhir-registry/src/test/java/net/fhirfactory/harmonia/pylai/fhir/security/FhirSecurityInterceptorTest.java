@@ -25,6 +25,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
+import java.security.Principal;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -35,11 +37,11 @@ class FhirSecurityInterceptorTest {
     private final FhirSecurityInterceptor interceptor = new FhirSecurityInterceptor();
 
     @Test
-    @DisplayName("Allows read/search when PRV_RDR mnemonic role is granted")
+    @DisplayName("Allows read/search when PRV_RDR mnemonic role is container-authenticated")
     void testAuthorizedPrvRdrRole() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_RDR");
-        request.addHeader(FhirSecurityInterceptor.HEADER_REQUESTER, "user:dr-smith");
+        request.setUserPrincipal(() -> "user:dr-smith");
+        request.addUserRole("PRV_RDR");
 
         assertThatCode(() -> interceptor.authorize("Practitioner", "read", request))
                 .doesNotThrowAnyException();
@@ -48,11 +50,11 @@ class FhirSecurityInterceptorTest {
     }
 
     @Test
-    @DisplayName("Allows submit create/update when PRV_SUB mnemonic role is granted")
+    @DisplayName("Allows submit create/update when PRV_SUB mnemonic role is container-authenticated")
     void testAuthorizedPrvSubRole() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_SUB");
-        request.addHeader(FhirSecurityInterceptor.HEADER_REQUESTER, "user:registry-submitter");
+        request.setUserPrincipal(() -> "user:registry-submitter");
+        request.addUserRole("PRV_SUB");
 
         assertThatCode(() -> interceptor.authorize("Practitioner", "create.request", request))
                 .doesNotThrowAnyException();
@@ -61,11 +63,11 @@ class FhirSecurityInterceptorTest {
     }
 
     @Test
-    @DisplayName("Denies write interactions when caller only has PRV_RDR")
+    @DisplayName("Denies write interactions when caller only has container role PRV_RDR")
     void testDeniedWriteForPrvRdr() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_RDR");
-        request.addHeader(FhirSecurityInterceptor.HEADER_REQUESTER, "user:reader-only");
+        request.setUserPrincipal(() -> "user:reader-only");
+        request.addUserRole("PRV_RDR");
 
         assertThatThrownBy(() -> interceptor.authorize("Practitioner", "create.request", request))
                 .isInstanceOf(ForbiddenOperationException.class)
@@ -73,67 +75,141 @@ class FhirSecurityInterceptorTest {
     }
 
     @Test
-    @DisplayName("Allows interaction when specific permission is granted")
-    void testAuthorizedSpecificPermission() {
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "Practitioner.read");
-
-        assertThatCode(() -> interceptor.authorize("Practitioner", "read", request))
-                .doesNotThrowAnyException();
-    }
-
-    @Test
-    @DisplayName("Allows interaction when wildcard permission is granted")
-    void testAuthorizedWildcardPermission() {
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "Practitioner.*");
-
-        assertThatCode(() -> interceptor.authorize("Practitioner", "create.request", request))
-                .doesNotThrowAnyException();
-    }
-
-    @Test
-    @DisplayName("Allows interaction when admin role is present")
+    @DisplayName("Allows interaction when PRV_ADM role is container-authenticated")
     void testAuthorizedAdminRole() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "ROLE_ADMIN");
+        request.setUserPrincipal(() -> "user:admin");
+        request.addUserRole("PRV_ADM");
 
         assertThatCode(() -> interceptor.authorize("Endpoint", "update.request", request))
                 .doesNotThrowAnyException();
     }
 
     @Test
-    @DisplayName("Denies interaction when permission is missing (Default Deny)")
-    void testDeniedMissingPermission() {
+    @DisplayName("Fails closed with AuthenticationException when request is unauthenticated")
+    void testUnauthenticatedFailsClosed() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "Practitioner.read");
 
+        assertThatThrownBy(() -> interceptor.authorize("Practitioner", "read", request))
+                .isInstanceOf(AuthenticationException.class)
+                .hasMessageContaining("Trusted caller identity not established");
+    }
+
+    @Test
+    @DisplayName("Fails closed when principal is system:anonymous or blank")
+    void testAnonymousPrincipalFailsClosed() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.setUserPrincipal(() -> "system:anonymous");
+
+        assertThatThrownBy(() -> interceptor.authorize("Practitioner", "read", request))
+                .isInstanceOf(AuthenticationException.class)
+                .hasMessageContaining("Trusted caller identity not established");
+
+        MockHttpServletRequest blankRequest = new MockHttpServletRequest();
+        blankRequest.setUserPrincipal(() -> "  ");
+
+        assertThatThrownBy(() -> interceptor.authorize("Practitioner", "read", blankRequest))
+                .isInstanceOf(AuthenticationException.class)
+                .hasMessageContaining("Trusted caller identity not established");
+    }
+
+    @Test
+    @DisplayName("Rejects spoofed identity/role headers when container principal is absent")
+    void testHeaderSpoofingRejectedWithoutContainerPrincipal() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.addHeader(FhirSecurityInterceptor.HEADER_PRINCIPAL_ID, "admin");
+        request.addHeader(FhirSecurityInterceptor.HEADER_REQUESTER, "superuser");
+        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "ROLE_ADMIN, SYS_ADM, *");
+        request.addHeader(FhirSecurityInterceptor.HEADER_SECURITY_SCOPES, "system/*.*");
+
+        assertThatThrownBy(() -> interceptor.authorize("Practitioner", "read", request))
+                .isInstanceOf(AuthenticationException.class)
+                .hasMessageContaining("Trusted caller identity not established");
+    }
+
+    @Test
+    @DisplayName("Ignores injected role headers and evaluates strictly against container roles")
+    void testRoleHeaderInjectionIgnored() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.setUserPrincipal(() -> "user:dr-smith");
+        request.addUserRole("PRV_RDR");
+        // Caller attempts to inject admin roles via HTTP headers
+        request.addHeader(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_ADM, SYS_ADM, ROLE_ADMIN, *");
+        request.addHeader(FhirSecurityInterceptor.HEADER_SECURITY_SCOPES, "system/*.*");
+
+        // Read is permitted because container has PRV_RDR
+        assertThatCode(() -> interceptor.authorize("Practitioner", "read", request))
+                .doesNotThrowAnyException();
+
+        // Write is denied despite header injection because container only has PRV_RDR
         assertThatThrownBy(() -> interceptor.authorize("Practitioner", "create.request", request))
                 .isInstanceOf(ForbiddenOperationException.class)
                 .hasMessageContaining("missing required permission [Practitioner.create.request]");
     }
 
     @Test
-    @DisplayName("Throws AuthenticationException for invalid bearer token")
-    void testInvalidTokenThrowsAuthenticationException() {
+    @DisplayName("Allows unauthenticated metadata and CapabilityStatement discovery")
+    void testMetadataUnauthenticatedDiscoveryAllowed() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_AUTH_TOKEN, "Bearer invalid-token");
 
-        assertThatThrownBy(() -> interceptor.authorize("Practitioner", "read", request))
-                .isInstanceOf(AuthenticationException.class);
+        assertThatCode(() -> interceptor.authorize("metadata", "read", request))
+                .doesNotThrowAnyException();
+        assertThatCode(() -> interceptor.authorize("CapabilityStatement", "read", request))
+                .doesNotThrowAnyException();
     }
 
     @Test
-    @DisplayName("Extracts principal identity and attributes into request")
+    @DisplayName("Extracts principal identity and attributes from container principal")
     void testPrincipalExtraction() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        request.addHeader(FhirSecurityInterceptor.HEADER_PRINCIPAL_ID, "service:pylai-gateway");
-        request.addHeader(FhirSecurityInterceptor.HEADER_PRINCIPAL_TYPE, "SERVICE");
+        request.setUserPrincipal(() -> "service:pylai-gateway");
         request.addHeader(FhirSecurityInterceptor.HEADER_SOURCE_DOMAIN, "gateway-cluster");
 
         ThemisPrincipal principal = interceptor.extractPrincipal(request);
+        assertThat(principal).isNotNull();
         assertThat(principal.principalId()).isEqualTo("service:pylai-gateway");
         assertThat(principal.principalType()).isEqualTo(PrincipalType.SERVICE);
         assertThat(principal.sourceDomain()).isEqualTo("gateway-cluster");
+    }
+
+    @Test
+    @DisplayName("Maps container roles with ROLE_ prefix correctly")
+    void testRolePrefixMapping() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.setUserPrincipal(() -> "user:dr-smith");
+        request.addUserRole("ROLE_PRV_RDR");
+
+        assertThatCode(() -> interceptor.authorize("Practitioner", "read", request))
+                .doesNotThrowAnyException();
+    }
+
+    @Test
+    @DisplayName("Extracts multiple container roles into aggregated authorities")
+    void testExtractAuthoritiesMultipleRoles() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.setUserPrincipal(() -> "user:power-user");
+        request.addUserRole("PRV_RDR");
+        request.addUserRole("PRV_SUB");
+
+        assertThatCode(() -> interceptor.authorize("Practitioner", "read", request))
+                .doesNotThrowAnyException();
+        assertThatCode(() -> interceptor.authorize("Practitioner", "create.request", request))
+                .doesNotThrowAnyException();
+    }
+
+    @Test
+    @DisplayName("Populates ThemisSecurityContext with correlation ID and transport metadata")
+    void testSecurityContextPopulation() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.setUserPrincipal(() -> "user:dr-smith");
+        request.addUserRole("PRV_RDR");
+        request.addHeader(FhirSecurityInterceptor.HEADER_CORRELATION_ID, "corr-abc-123");
+        request.addHeader(FhirSecurityInterceptor.HEADER_SOURCE_SYSTEM, "ehr-system");
+
+        interceptor.authorize("Practitioner", "read", request);
+
+        assertThat(request.getAttribute(FhirSecurityInterceptor.ATTR_THEMIS_CONTEXT)).isNotNull();
+        assertThat(request.getAttribute(FhirSecurityInterceptor.ATTR_THEMIS_PRINCIPAL)).isNotNull();
+        assertThat(request.getAttribute(FhirSecurityInterceptor.ATTR_THEMIS_AUTHORITIES)).isNotNull();
     }
 }

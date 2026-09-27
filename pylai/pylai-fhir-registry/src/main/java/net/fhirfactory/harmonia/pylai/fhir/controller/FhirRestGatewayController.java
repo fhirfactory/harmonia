@@ -25,7 +25,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.ProviderRegistryChangePragma;
 import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
@@ -35,7 +34,6 @@ import net.fhirfactory.harmonia.pylai.fhir.service.ChangeRequestSubmissionServic
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
-import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.Bundle;
 import org.hl7.fhir.r5.model.CapabilityStatement;
