@@ -28,6 +28,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
+import net.fhirfactory.harmonia.pylai.fhir.publication.PylaiFhirPublicationProjector;
 import net.fhirfactory.harmonia.pylai.fhir.security.FhirSecurityInterceptor;
 import net.fhirfactory.harmonia.pylai.fhir.service.ChangeRequestSubmissionService;
 import net.fhirfactory.harmonia.pylai.fhir.service.ChangeRequestSubmissionService.SubmissionResult;
@@ -60,6 +61,24 @@ import java.util.Set;
  * Provides synchronous READ and SEARCH paths directly backed by {@link FhirStorageService},
  * and asynchronous governed CREATE / UPDATE change submissions returning {@code HTTP 202 Accepted}
  * with status tracking via standard {@code /Task/{id}}.
+ * <p>
+ * Governed by the Pylai External FHIR Publication Boundary (AX-05 Information Authority &amp; Lifecycle,
+ * AX-13 Egress &amp; Publication Boundary, and AGENTS.md Invariant 9). All managed FHIR resources and change-tracking
+ * Task representations emitted through this controller are projected non-destructively through
+ * {@link PylaiFhirPublicationProjector} to strip Harmonia-private operational metadata (authoritative persistence
+ * versioning, Mneme active-state tokens, Praxis execution IDs, internal checkpoints, operational security labels)
+ * while preserving standard FHIR metadata (ETag, Last-Modified, versionId, lastUpdated, profiles) and permitted
+ * clinical confidentiality security tags.
+ * <p>
+ * <b>Synthetic / Gateway-Generated Responses:</b>
+ * <ul>
+ *   <li>{@link CapabilityStatement}: Generated on-the-fly by {@link CapabilityStatementProvider} from static structural
+ *       definitions of supported interactions and search parameters. It contains no managed clinical or operational
+ *       state from Mneme/Mnemosyne, zero internal operational metadata or security labels, and does not require projection.</li>
+ *   <li>{@link OperationOutcome}: Synthesized error responses (e.g. 400, 401, 403, 404, 410, 422) created on-the-fly
+ *       containing only standard FHIR IssueSeverity, IssueType, and diagnostic error text. They contain no Harmonia-managed
+ *       resource state or operational metadata and do not require projection.</li>
+ * </ul>
  */
 @RestController
 @RequestMapping(produces = {"application/fhir+json", "application/json"})
@@ -73,6 +92,7 @@ public class FhirRestGatewayController {
     private final CapabilityStatementProvider capabilityStatementProvider;
     private final FhirSecurityInterceptor securityInterceptor;
     private final PragmaCacheService pragmaCacheService;
+    private final PylaiFhirPublicationProjector publicationProjector;
     private final FhirContext fhirContext;
 
     public FhirRestGatewayController(
@@ -81,11 +101,23 @@ public class FhirRestGatewayController {
             CapabilityStatementProvider capabilityStatementProvider,
             FhirSecurityInterceptor securityInterceptor,
             @Autowired(required = false) PragmaCacheService pragmaCacheService) {
+        this(storageService, submissionService, capabilityStatementProvider, securityInterceptor, pragmaCacheService, new PylaiFhirPublicationProjector());
+    }
+
+    @Autowired
+    public FhirRestGatewayController(
+            @Autowired(required = false) FhirStorageService storageService,
+            ChangeRequestSubmissionService submissionService,
+            CapabilityStatementProvider capabilityStatementProvider,
+            FhirSecurityInterceptor securityInterceptor,
+            @Autowired(required = false) PragmaCacheService pragmaCacheService,
+            @Autowired(required = false) PylaiFhirPublicationProjector publicationProjector) {
         this.storageService = storageService;
         this.submissionService = submissionService;
         this.capabilityStatementProvider = capabilityStatementProvider;
         this.securityInterceptor = securityInterceptor;
         this.pragmaCacheService = pragmaCacheService;
+        this.publicationProjector = publicationProjector != null ? publicationProjector : new PylaiFhirPublicationProjector();
         this.fhirContext = FhirContext.forR5();
     }
 
@@ -95,6 +127,8 @@ public class FhirRestGatewayController {
 
     /**
      * FHIR CapabilityStatement discovery endpoint.
+     * <p>
+     * Synthetic response generated from static structural definitions; contains no managed resource state.
      */
     @GetMapping(value = {"/metadata", "/fhir/metadata"})
     public ResponseEntity<String> getMetadata(HttpServletRequest request) {
@@ -119,7 +153,8 @@ public class FhirRestGatewayController {
             Optional<Pragma> pragmaOpt = pragmaCacheService.getPragma(id);
             if (pragmaOpt.isPresent()) {
                 Task fhirTask = PragmaFhirConverter.toFhirTask(pragmaOpt.get());
-                String json = getJsonParser().encodeResourceToString(fhirTask);
+                Task projectedTask = publicationProjector.projectForPublication(fhirTask);
+                String json = getJsonParser().encodeResourceToString(projectedTask);
                 return ResponseEntity.ok().contentType(MediaType.parseMediaType(FHIR_JSON)).body(json);
             }
         }
@@ -128,7 +163,8 @@ public class FhirRestGatewayController {
         if (storageService != null) {
             try {
                 Task task = storageService.getResource("Task", id);
-                String json = getJsonParser().encodeResourceToString(task);
+                Task projectedTask = publicationProjector.projectForPublication(task);
+                String json = getJsonParser().encodeResourceToString(projectedTask);
                 return ResponseEntity.ok().contentType(MediaType.parseMediaType(FHIR_JSON)).body(json);
             } catch (ResourceNotFoundException ignored) {
             }
@@ -165,12 +201,18 @@ public class FhirRestGatewayController {
 
         try {
             IBaseResource resource = storageService.getResource(resourceType, id);
-            String json = getJsonParser().encodeResourceToString(resource);
+            IBaseResource projectedResource = publicationProjector.projectForPublication(resource);
+            String json = getJsonParser().encodeResourceToString(projectedResource);
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.parseMediaType(FHIR_JSON));
-            if (resource instanceof org.hl7.fhir.r5.model.Resource r && r.getMeta() != null && r.getMeta().getVersionId() != null) {
-                headers.setETag("W/\"" + r.getMeta().getVersionId() + "\"");
+            if (projectedResource instanceof org.hl7.fhir.r5.model.Resource r && r.getMeta() != null) {
+                if (r.getMeta().getVersionId() != null) {
+                    headers.setETag("W/\"" + r.getMeta().getVersionId() + "\"");
+                }
+                if (r.getMeta().getLastUpdated() != null) {
+                    headers.setLastModified(r.getMeta().getLastUpdated().toInstant());
+                }
             }
 
             return new ResponseEntity<>(json, headers, HttpStatus.OK);
@@ -227,7 +269,8 @@ public class FhirRestGatewayController {
             }
         }
 
-        String json = getJsonParser().encodeResourceToString(searchBundle);
+        Bundle projectedBundle = publicationProjector.projectForPublication(searchBundle);
+        String json = getJsonParser().encodeResourceToString(projectedBundle);
         return ResponseEntity.ok().contentType(MediaType.parseMediaType(FHIR_JSON)).body(json);
     }
 
@@ -264,7 +307,8 @@ public class FhirRestGatewayController {
         );
 
         Task fhirTask = PragmaFhirConverter.toFhirTask(result.getPragma());
-        String taskJson = getJsonParser().encodeResourceToString(fhirTask);
+        Task projectedTask = publicationProjector.projectForPublication(fhirTask);
+        String taskJson = getJsonParser().encodeResourceToString(projectedTask);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(FHIR_JSON));
@@ -310,7 +354,8 @@ public class FhirRestGatewayController {
         );
 
         Task fhirTask = PragmaFhirConverter.toFhirTask(result.getPragma());
-        String taskJson = getJsonParser().encodeResourceToString(fhirTask);
+        Task projectedTask = publicationProjector.projectForPublication(fhirTask);
+        String taskJson = getJsonParser().encodeResourceToString(projectedTask);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(FHIR_JSON));

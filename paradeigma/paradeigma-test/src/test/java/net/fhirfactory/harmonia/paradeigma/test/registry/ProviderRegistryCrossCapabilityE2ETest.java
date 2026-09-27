@@ -59,6 +59,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mock.web.MockHttpServletRequest;
+import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
 
 import java.util.Map;
 import java.util.Optional;
@@ -215,13 +217,20 @@ public class ProviderRegistryCrossCapabilityE2ETest {
                     practitioner.getNameFirstRep().getFamily(),
                     practitioner.getIdentifierFirstRep().getValue());
 
+            MockHttpServletRequest postRequest = new MockHttpServletRequest();
+            postRequest.setUserPrincipal(() -> steward.principal().principalId());
+            for (HarmoniaRoleEnum role : steward.assignedRoles()) {
+                postRequest.addUserRole(role.getRoleCode());
+            }
+            postRequest.addHeader("X-Correlation-Id", correlationId);
+
             ResponseEntity<String> postResp = gatewayController.createResource(
                     "Practitioner",
                     json,
                     correlationId,
                     "pas",
                     steward.principal().principalId(),
-                    null
+                    postRequest
             );
 
             assertThat(postResp.getStatusCode().value()).isEqualTo(202);
@@ -249,7 +258,14 @@ public class ProviderRegistryCrossCapabilityE2ETest {
             String savedId = savedPract.get().getFhirId();
 
             // 6. Verify Synchronous Read & Search
-            ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", savedId, null);
+            MockHttpServletRequest getRequest = new MockHttpServletRequest();
+            getRequest.setUserPrincipal(() -> steward.principal().principalId());
+            for (HarmoniaRoleEnum role : steward.assignedRoles()) {
+                getRequest.addUserRole(role.getRoleCode());
+            }
+            getRequest.addHeader("X-Correlation-Id", correlationId);
+
+            ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", savedId, getRequest);
             assertThat(getResp.getStatusCode().value()).isEqualTo(200);
 
             // 7. Verify PHI Dual-Gate Logging & Marker

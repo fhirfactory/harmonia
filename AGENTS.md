@@ -330,6 +330,9 @@ changes against the ArchUnit architecture suite located in
     dependency layering across all subproject packages.
 -   `SecurityEnforcementArchitectureTest`: Asserts Themis policy
     contracts and security context structures.
+-   `PylaiPublicationBoundaryArchitectureTest`: Asserts Pylai external
+    publication encapsulation, non-destructive projection, and AX-13
+    egress publication boundary rules.
 -   Architecture and integration tests SHOULD enforce Mneme/Mnemosyne
     separation and the Pylai external-publication boundary as concrete
     testable consequences of AX-05 and AX-13. New test classes should be
