@@ -25,6 +25,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -325,5 +326,226 @@ class GovernedWriteContractTest {
 
         assertThat(methodNames).containsExactlyInAnyOrder("converge");
         assertThat(methodNames).noneMatch(name -> name.toLowerCase().contains("delete") || name.toLowerCase().contains("remove") || name.toLowerCase().contains("evict"));
+    }
+
+    @Test
+    @DisplayName("13. ResourceKey enforces structural validity while remaining policy-neutral")
+    void resourceKeyEnforcesStructuralValidityWhileRemainingPolicyNeutral() {
+        // Structurally valid Provider Registry types succeed
+        ResourceKey keyPrac = ResourceKey.of("Practitioner", "prac-1");
+        assertThat(keyPrac.resourceType()).isEqualTo("Practitioner");
+        assertThat(keyPrac.id()).isEqualTo("prac-1");
+        assertThat(keyPrac.toQualifiedPath()).isEqualTo("Practitioner/prac-1");
+
+        // Structurally valid non-Provider-Registry / unclassified types also succeed at construction
+        ResourceKey keyPatient = ResourceKey.of("Patient", "pat-999");
+        assertThat(keyPatient.resourceType()).isEqualTo("Patient");
+        assertThat(keyPatient.id()).isEqualTo("pat-999");
+        assertThat(keyPatient.toQualifiedPath()).isEqualTo("Patient/pat-999");
+
+        ResourceKey keyCustom = ResourceKey.of("CustomDomainEntity", "custom-42");
+        assertThat(keyCustom.resourceType()).isEqualTo("CustomDomainEntity");
+        assertThat(keyCustom.id()).isEqualTo("custom-42");
+        assertThat(keyCustom.toQualifiedPath()).isEqualTo("CustomDomainEntity/custom-42");
+
+        // Null checks
+        assertThatThrownBy(() -> ResourceKey.of(null, "id-1"))
+                .isInstanceOf(NullPointerException.class)
+                .hasMessageContaining("resourceType");
+        assertThatThrownBy(() -> ResourceKey.of("Practitioner", null))
+                .isInstanceOf(NullPointerException.class)
+                .hasMessageContaining("id");
+
+        // Blank checks
+        assertThatThrownBy(() -> ResourceKey.of("", "id-1"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("resourceType");
+        assertThatThrownBy(() -> ResourceKey.of("   ", "id-1"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("resourceType");
+        assertThatThrownBy(() -> ResourceKey.of("Practitioner", ""))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("id");
+        assertThatThrownBy(() -> ResourceKey.of("Practitioner", "   "))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("id");
+    }
+
+    @Test
+    @DisplayName("14. GovernedBoundaryValidator enforces fail-closed classification on managed types")
+    void governedBoundaryValidatorEnforcesFailClosedClassification() {
+        // Supported Provider Registry types are accepted
+        List<String> supportedTypes = List.of(
+                "Practitioner",
+                "PractitionerRole",
+                "Organization",
+                "Location",
+                "HealthcareService",
+                "Endpoint",
+                "Group"
+        );
+        for (String type : supportedTypes) {
+            assertThat(GovernedBoundaryValidator.isManagedType(type)).isTrue();
+            ResourceKey key = ResourceKey.of(type, "id-test");
+            assertThat(GovernedBoundaryValidator.isManagedType(key)).isTrue();
+            // requireManagedType must not throw
+            GovernedBoundaryValidator.requireManagedType(key);
+            GovernedBoundaryValidator.requireManagedType(type);
+        }
+
+        // Unclassified / unsupported types are rejected fail-closed
+        List<String> unsupportedTypes = List.of(
+                "Patient",
+                "Observation",
+                "Encounter",
+                "Condition",
+                "UnclassifiedType",
+                "ArbitraryEntity"
+        );
+        for (String type : unsupportedTypes) {
+            assertThat(GovernedBoundaryValidator.isManagedType(type)).isFalse();
+            ResourceKey key = ResourceKey.of(type, "id-test");
+            assertThat(GovernedBoundaryValidator.isManagedType(key)).isFalse();
+
+            assertThatThrownBy(() -> GovernedBoundaryValidator.requireManagedType(key))
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessageContaining("not a supported managed type");
+            assertThatThrownBy(() -> GovernedBoundaryValidator.requireManagedType(type))
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessageContaining("not a supported managed type");
+        }
+
+        // Null and blank handling
+        assertThat(GovernedBoundaryValidator.isManagedType((String) null)).isFalse();
+        assertThat(GovernedBoundaryValidator.isManagedType((ResourceKey) null)).isFalse();
+        assertThatThrownBy(() -> GovernedBoundaryValidator.requireManagedType((ResourceKey) null))
+                .isInstanceOf(NullPointerException.class);
+        assertThatThrownBy(() -> GovernedBoundaryValidator.requireManagedType((String) null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> GovernedBoundaryValidator.requireManagedType("   "))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("15. GovernedReader declares pure point read without delete or mutation")
+    void governedReaderDeclaresPurePointRead() throws NoSuchMethodException {
+        assertThat(GovernedReader.class.isInterface()).isTrue();
+
+        Method readMethod = GovernedReader.class.getMethod("read", ResourceKey.class, ThemisSecurityContext.class);
+        assertThat(readMethod.getReturnType()).isEqualTo(Optional.class);
+
+        Method[] methods = GovernedReader.class.getMethods();
+        List<String> methodNames = Arrays.stream(methods)
+                .map(Method::getName)
+                .toList();
+
+        assertThat(methodNames).containsExactlyInAnyOrder("read");
+        assertThat(methodNames).noneMatch(name ->
+                name.toLowerCase().contains("delete")
+                        || name.toLowerCase().contains("remove")
+                        || name.toLowerCase().contains("purge")
+                        || name.toLowerCase().contains("evict")
+        );
+    }
+
+    @Test
+    @DisplayName("16. GovernedAccess composes GovernedReader and GovernedWriter with zero delete methods")
+    void governedAccessComposesReaderAndWriterWithZeroDeleteMethods() {
+        assertThat(GovernedAccess.class.isInterface()).isTrue();
+        assertThat(GovernedReader.class.isAssignableFrom(GovernedAccess.class)).isTrue();
+        assertThat(GovernedWriter.class.isAssignableFrom(GovernedAccess.class)).isTrue();
+
+        Method[] methods = GovernedAccess.class.getMethods();
+        List<String> methodNames = Arrays.stream(methods)
+                .map(Method::getName)
+                .toList();
+
+        assertThat(methodNames).containsExactlyInAnyOrder("read", "create", "update");
+        assertThat(methodNames).noneMatch(name ->
+                name.toLowerCase().contains("delete")
+                        || name.toLowerCase().contains("remove")
+                        || name.toLowerCase().contains("purge")
+                        || name.toLowerCase().contains("evict")
+        );
+    }
+
+    @Test
+    @DisplayName("17. GovernedRead preserves domain payload without destructive mutation")
+    void governedReadPreservesDomainPayloadWithoutDestructiveMutation() {
+        record ComplexDomainResource(String id, String name, String telecom, boolean active) {}
+
+        ComplexDomainResource domainObj = new ComplexDomainResource("prac-42", "Dr. Jane Doe", "555-1234", true);
+        ActiveStateToken activeToken = ActiveStateTokenBridge.create(9999L);
+        AuthoritativeVersion authVersion = AuthoritativeVersion.of(7L);
+        ResourceKey key = ResourceKey.of("Practitioner", "prac-42");
+
+        GovernedRead<ComplexDomainResource> readEnvelope = GovernedRead.of(key, domainObj, activeToken, authVersion);
+
+        // Domain object is intact and unmodified
+        assertThat(readEnvelope.resource()).isSameAs(domainObj);
+        assertThat(readEnvelope.resource().id()).isEqualTo("prac-42");
+        assertThat(readEnvelope.resource().name()).isEqualTo("Dr. Jane Doe");
+        assertThat(readEnvelope.resource().telecom()).isEqualTo("555-1234");
+        assertThat(readEnvelope.resource().active()).isTrue();
+
+        // Envelope carries active and authoritative coordination tokens
+        assertThat(readEnvelope.key()).isEqualTo(key);
+        assertThat(readEnvelope.activeToken()).isEqualTo(activeToken);
+        assertThat(readEnvelope.authoritativeVersion()).isEqualTo(authVersion);
+        assertThat(readEnvelope.expectedAuthoritativeVersion().value()).contains("7");
+    }
+
+    @Test
+    @DisplayName("18. GovernedAccess boundary rejects unclassified types fail-closed")
+    void governedAccessBoundaryRejectsUnclassifiedTypesFailClosed() {
+        // Boundary implementation enforcing GovernedBoundaryValidator
+        GovernedAccess boundaryAccess = new GovernedAccess() {
+            @Override
+            public <T> Optional<GovernedRead<T>> read(ResourceKey key, ThemisSecurityContext securityContext) {
+                GovernedBoundaryValidator.requireManagedType(key);
+                return Optional.empty();
+            }
+
+            @Override
+            public <T> WriteResult<T> create(ResourceKey key, T resource, ThemisSecurityContext securityContext) {
+                if (!GovernedBoundaryValidator.isManagedType(key)) {
+                    return WriteResult.notCommitted(key, "Resource type [" + key.resourceType() + "] is unclassified");
+                }
+                return WriteResult.committed(key, resource, AuthoritativeVersion.of(1L));
+            }
+
+            @Override
+            public <T> WriteResult<T> update(GovernedRead<T> current, T proposed, ThemisSecurityContext securityContext) {
+                if (!GovernedBoundaryValidator.isManagedType(current.key())) {
+                    return WriteResult.notCommitted(current.key(), "Resource type [" + current.key().resourceType() + "] is unclassified");
+                }
+                return WriteResult.committed(current.key(), proposed, AuthoritativeVersion.of(current.authoritativeVersion().longValue() + 1));
+            }
+        };
+
+        // Classified types pass boundary validation
+        ResourceKey validKey = ResourceKey.of("Practitioner", "prac-1");
+        assertThat(boundaryAccess.read(validKey, sampleContext)).isEmpty();
+        WriteResult<String> createResult = boundaryAccess.create(validKey, "payload", sampleContext);
+        assertThat(createResult.isCommitted()).isTrue();
+
+        GovernedRead<String> validRead = GovernedRead.of(
+                validKey,
+                "payload",
+                ActiveStateTokenBridge.create(100L),
+                AuthoritativeVersion.of(1L)
+        );
+        WriteResult<String> updateResult = boundaryAccess.update(validRead, "updated-payload", sampleContext);
+        assertThat(updateResult.isCommitted()).isTrue();
+
+        // Unclassified types fail closed at boundary
+        ResourceKey unclassifiedKey = ResourceKey.of("Patient", "pat-1");
+        assertThatThrownBy(() -> boundaryAccess.read(unclassifiedKey, sampleContext))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("not a supported managed type");
+
+        WriteResult<String> unclassifiedCreate = boundaryAccess.create(unclassifiedKey, "payload", sampleContext);
+        assertThat(unclassifiedCreate.isCommitted()).isFalse();
+        assertThat(unclassifiedCreate.commitOutcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
     }
 }
