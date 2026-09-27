@@ -37,7 +37,7 @@ The goal of this task is to perform a comprehensive dependency convergence and r
 - **FR-4**: Full stack Docker Compose deployment must bring up PostgreSQL, Infinispan, Ponos, MLLP Inbound, MLLP Outbound, and Iris BEFE with diagnostic log inspection to detect the next runtime obstacle.
 
 ### Non-Functional Requirements
-- **NFR-1 (Architectural Guardrails)**: Adhere to `AGENTS.md` Invariant 1 (Paradeigma isolation), Invariant 2 (Petasos abstraction), and Invariant 3 (Iris decoupling).
+- **NFR-1 (Architectural Guardrails)**: Adhere to `../../AGENTS-old.md` Invariant 1 (Paradeigma isolation), Invariant 2 (Petasos abstraction), and Invariant 3 (Iris decoupling).
 - **NFR-2 (Minimal Touch)**: Smallest possible dependency correction avoiding blanket upgrades or unnecessary file alterations.
 
 # Technical Design

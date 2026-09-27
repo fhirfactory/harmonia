@@ -405,7 +405,7 @@ Key architectural conclusions of this design:
 - **Zero Information Loss**: All 17 canonical fields of `HarmoniaAuditEvent` and its nested value objects (`AuditTarget`, `AuditAuthorizationEvidence`, `AuditSource`, `ThemisPrincipal`, `ThemisAuthority`, `ThemisSecurityLabel`) map to FHIR R5 and back with **zero loss of audit semantics** (achieving exact or normalized equivalent round-trip fidelity).
 - **Native-First Alignment**: In accordance with core design principles, 11 top-level concepts leverage native FHIR R5 elements (such as `recorded`, `action`, `code`, `category`, `outcome`, `agent`, `entity`, and `source`) enriched with governed Harmonia CodeSystems.
 - **Minimal, Justified Extension Register**: Exactly 5 top-level extensions and 2 nested backbone extensions are specified to address genuine structural gaps in the FHIR R5 `AuditEvent` specification (such as the absence of top-level correlation/causation/operation IDs, top-level security domain, and arbitrary attribute key-value collections).
-- **Strict Architecture Boundaries**: In conformance with repository layering guardrails (`AGENTS.md` and `PackageLayeringArchitectureTest`), `kleio-core` remains a pure Java domain module free of HAPI FHIR dependencies. For Step 02.2, a new subproject module `kleio/kleio-fhir` is recommended to house the bidirectional mapper, while Calliope retains shared security vocabularies and canonical schema definitions.
+- **Strict Architecture Boundaries**: In conformance with repository layering guardrails (`../../AGENTS-old.md` and `PackageLayeringArchitectureTest`), `kleio-core` remains a pure Java domain module free of HAPI FHIR dependencies. For Step 02.2, a new subproject module `kleio/kleio-fhir` is recommended to house the bidirectional mapper, while Calliope retains shared security vocabularies and canonical schema definitions.
 
 This investigation and design report is strictly read-only; no code was modified, no dependencies were added, and no mapper was implemented.
 
@@ -977,7 +977,7 @@ kleio/
 
 **29. Security / PHI Considerations**
 
-In conformance with Task 05 and `AGENTS.md` (Invariants 6 & 7):
+In conformance with Task 05 and `../../AGENTS-old.md` (Invariants 6 & 7):
 1. **Zero-PHI Logging**: The mapper’s internal `toString()` or logging must never emit unmasked clinical observation values, patient names, or attributes.
 2. **Target References**: Targets must only record resource identifiers (e.g., `Patient/P123`), never serialized patient records.
 3. **Attribute Sanitization**: The mapper must filter or reject sensitive keys (e.g. `authorization`, `password`, `token`, `secret`, `ssn`).
@@ -1055,7 +1055,7 @@ Key architectural conclusions of this design:
 - **Zero Information Loss**: All 17 canonical fields of `HarmoniaAuditEvent` and its nested value objects (`AuditTarget`, `AuditAuthorizationEvidence`, `AuditSource`, `ThemisPrincipal`, `ThemisAuthority`, `ThemisSecurityLabel`) map to FHIR R5 and back with **zero loss of audit semantics** (achieving exact or normalized equivalent round-trip fidelity).
 - **Native-First Alignment**: In accordance with core design principles, 11 top-level concepts leverage native FHIR R5 elements (such as `recorded`, `action`, `code`, `category`, `outcome`, `agent`, `entity`, and `source`) enriched with governed Harmonia CodeSystems.
 - **Minimal, Justified Extension Register**: Exactly 5 top-level extensions and 2 nested backbone extensions are specified to address genuine structural gaps in the FHIR R5 `AuditEvent` specification (such as the absence of top-level correlation/causation/operation IDs, top-level security domain, and arbitrary attribute key-value collections).
-- **Strict Architecture Boundaries**: In conformance with repository layering guardrails (`AGENTS.md` and `PackageLayeringArchitectureTest`), `kleio-core` remains a pure Java domain module free of HAPI FHIR dependencies. For Step 02.2, a new subproject module `kleio/kleio-fhir` is recommended to house the bidirectional mapper, while Calliope retains shared security vocabularies and canonical schema definitions.
+- **Strict Architecture Boundaries**: In conformance with repository layering guardrails (`../../AGENTS-old.md` and `PackageLayeringArchitectureTest`), `kleio-core` remains a pure Java domain module free of HAPI FHIR dependencies. For Step 02.2, a new subproject module `kleio/kleio-fhir` is recommended to house the bidirectional mapper, while Calliope retains shared security vocabularies and canonical schema definitions.
 
 This investigation and design report is strictly read-only; no code was modified, no dependencies were added, and no mapper was implemented.
 
@@ -1627,7 +1627,7 @@ kleio/
 
 **29. Security / PHI Considerations**
 
-In conformance with Task 05 and `AGENTS.md` (Invariants 6 & 7):
+In conformance with Task 05 and `../../AGENTS-old.md` (Invariants 6 & 7):
 1. **Zero-PHI Logging**: The mapper’s internal `toString()` or logging must never emit unmasked clinical observation values, patient names, or attributes.
 2. **Target References**: Targets must only record resource identifiers (e.g., `Patient/P123`), never serialized patient records.
 3. **Attribute Sanitization**: The mapper must filter or reject sensitive keys (e.g. `authorization`, `password`, `token`, `secret`, `ssn`).

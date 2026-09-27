@@ -348,7 +348,7 @@ Under the target architecture:
     - Petasos health status, queue metrics, and topology must be exposed to Iris BEFE via existing `PetasosHealth` and Infinispan `messagequeue-cache` SPIs.
 
 **Non-Functional Requirements**
-- **Architectural Guardrails**: Must adhere strictly to all `AGENTS.md` invariants:
+- **Architectural Guardrails**: Must adhere strictly to all `../../AGENTS-old.md` invariants:
     - *Invariant 1*: Zero production dependencies or imports of Paradeigma.
     - *Invariant 2*: `petasos-api` remains completely free of JMS and ActiveMQ Artemis imports.
     - *Invariant 3*: Iris presentation decoupling maintained; no direct database or JPA access.

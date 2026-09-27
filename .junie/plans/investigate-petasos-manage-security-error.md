@@ -45,14 +45,14 @@ This investigation provides the root-cause analysis, evaluates architectural req
    - Assess whether MANAGE is required for normal application messaging or monitoring.
    - Confirm boundaries between application roles (`harmonia`) and management roles (`admin`).
 3. **Remediation Blueprint**:
-   - Formulate concrete configuration and code changes that resolve both warnings while preserving `AGENTS.md` invariants.
+   - Formulate concrete configuration and code changes that resolve both warnings while preserving `../../AGENTS-old.md` invariants.
 
 ---
 
 ### Non-Functional Requirements
 - **Least Privilege**: Application identities must not be granted administrative `MANAGE` permissions.
-- **Zero-PHI Diagnostic Logging (`AGENTS.md` Invariant 7)**: Error logs must be clean of false-positive security warnings to ensure operational visibility.
-- **Petasos API Abstraction (`AGENTS.md` Invariant 2)**: Client facade must remain pure and free of unnecessary vendor management coupling.
+- **Zero-PHI Diagnostic Logging (`../../AGENTS-old.md` Invariant 7)**: Error logs must be clean of false-positive security warnings to ensure operational visibility.
+- **Petasos API Abstraction (`../../AGENTS-old.md` Invariant 2)**: Client facade must remain pure and free of unnecessary vendor management coupling.
 
 # Technical Design
 

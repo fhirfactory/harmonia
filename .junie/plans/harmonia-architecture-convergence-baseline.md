@@ -27,7 +27,7 @@ All findings, components, and capabilities across the platform are evaluated and
 - Deployment artifact auditing across `docker-compose.yml`, 15 Dockerfiles, Kubernetes Kustomize bases/overlays, and Ansible automation roles.
 - Middleware verification for ActiveMQ Artemis 2.33.0 (clustering & HA replication), Infinispan 15.0.3 (Hot Rod / JGroups), PostgreSQL 16 (HAPI FHIR R5 JPA & Operations), WildFly 31.0.1, Spring Boot 3.2.5, Nginx, and single-node MicroK8s semantics.
 - Auditing and remediating known architectural gaps (e.g. REC-001 dual-write ingress, REC-002 fan-out sub-status, Petasos API encapsulation, Iris-administration vs Provider Registry decoupling).
-- Creation and expansion of repository `AGENTS.md` and module-level architecture rules.
+- Creation and expansion of repository `../../AGENTS-old.md` and module-level architecture rules.
 - Automated ArchUnit test suite additions for architectural boundary enforcement.
 - Complete reconstruction of repository Markdown (`docs/`) and formal LaTeX publication (`docs/latex/`).
 
@@ -410,7 +410,7 @@ Execute the complete repository discovery and audit across all 8 subprojects (Ca
 Apply approved fixes for identified implementation and documentation defects, establish repository-level AGENTS.md guardrails, and implement automated ArchUnit architecture tests to prevent regression.
 
 - Correct approved `IMPLEMENTATION DEFECT` findings (e.g. REC-001 dual-write ingress handling in `pylai-mllp-in`, REC-002 fan-out sub-status in `erga`/`pylai-mllp-out`, and any Petasos API abstraction leaks).
-- Establish repository-wide `AGENTS.md` and module-specific architectural guidance defining component boundaries, dependency directions, security invariants, and PHI logging policies.
+- Establish repository-wide `../../AGENTS-old.md` and module-specific architectural guidance defining component boundaries, dependency directions, security invariants, and PHI logging policies.
 - Extend ArchUnit automated architecture tests (`ParadeigmaIsolationArchitectureTest` and new tests) to continuously enforce:
   - Zero production $\rightarrow$ Paradeigma dependencies or imports.
   - Zero Provider Registry $\rightarrow$ `iris-administration` dependencies.

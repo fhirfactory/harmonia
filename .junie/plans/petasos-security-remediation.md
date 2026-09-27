@@ -60,10 +60,10 @@ This plan implements the approved security remediation:
 ---
 
 ### Non-Functional Requirements
-- **Security & Governance (`AGENTS.md` Invariant 6)**: Strict default-deny and least-privilege security model across broker and application identities.
-- **Zero-PHI Diagnostic Logging (`AGENTS.md` Invariant 7)**: Diagnostic logs must remain clean of false-positive connection errors (`AMQ229031`, `AMQ229032`).
-- **Petasos API Abstraction (`AGENTS.md` Invariant 2)**: Client facade in `petasos-api` remains completely free of JMS and ActiveMQ Artemis runtime classes.
-- **Dual-Write Safety (`AGENTS.md` Invariant 4)**: Inbound MLLP ACK emission remains bound to confirmed Petasos publishing.
+- **Security & Governance (`../../AGENTS-old.md` Invariant 6)**: Strict default-deny and least-privilege security model across broker and application identities.
+- **Zero-PHI Diagnostic Logging (`../../AGENTS-old.md` Invariant 7)**: Diagnostic logs must remain clean of false-positive connection errors (`AMQ229031`, `AMQ229032`).
+- **Petasos API Abstraction (`../../AGENTS-old.md` Invariant 2)**: Client facade in `petasos-api` remains completely free of JMS and ActiveMQ Artemis runtime classes.
+- **Dual-Write Safety (`../../AGENTS-old.md` Invariant 4)**: Inbound MLLP ACK emission remains bound to confirmed Petasos publishing.
 
 # Technical Design
 
@@ -281,5 +281,5 @@ The full Docker Compose environment runs cleanly with zero `AMQ229031`/`AMQ22903
 Clustered HA topology discovery remains functional when `PETASOS_HA_ENABLED=true` without compromising the application security model, and all repository architecture tests pass.
 
 - Verify via test inspection in `ArtemisConnectionManagerTest` that setting `haEnabled=true` registers `ClusterTopologyListener` and preserves multi-broker cluster URL formatting with `ha=true`.
-- Execute the complete ArchUnit architecture test suite (`mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false`) to ensure compliance with all `AGENTS.md` invariants (Petasos API isolation, Paradeigma isolation, Iris decoupling, Package layering, Security enforcement).
+- Execute the complete ArchUnit architecture test suite (`mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false`) to ensure compliance with all `../../AGENTS-old.md` invariants (Petasos API isolation, Paradeigma isolation, Iris decoupling, Package layering, Security enforcement).
 - Compile the final remediation report summarizing changed files, selected healthcheck mechanism, permission matrices, topology behaviors, test results, and live runtime verification logs.

@@ -1499,7 +1499,7 @@ Following the completion of Step 1 (model hardening in `kleio-core`), the three 
 3. **Bounded Principal Model (`AuditPrincipal`)**: Arbitrary runtime/session attributes (`ThemisPrincipal.attributes`) are eliminated from durable audit equality through the introduction of the immutable `AuditPrincipal` value object (`principalId`, `principalType`, `sourceDomain`), removing PHI/credential leakage risks and eliminating the `agent-attribute` extension.
 
 **Governance & Layering Boundaries**
-- **`kleio-core`**: Remains a pure Java domain module containing only canonical records, value objects, and append-only service contracts. In accordance with `AGENTS.md` and `PackageLayeringArchitectureTest`, `kleio-core` has **zero** compile or runtime dependencies on HAPI FHIR, JPA, or web frameworks.
+- **`kleio-core`**: Remains a pure Java domain module containing only canonical records, value objects, and append-only service contracts. In accordance with `../../AGENTS-old.md` and `PackageLayeringArchitectureTest`, `kleio-core` has **zero** compile or runtime dependencies on HAPI FHIR, JPA, or web frameworks.
 - **`kleio-fhir` (Step 02.2)**: A dedicated module to be created under `kleio/` to house `HarmoniaAuditEventMapper`. It will depend unidirectionally on `kleio-core`, `calliope`, and HAPI FHIR R5 structures.
 - **`calliope`**: Retains governance of cross-domain security vocabularies (`HarmoniaSecurityCodeSystem`), canonical schemas, and shared terminology URIs.
 - **Hestia Mnemosyne & Iris BEFE**: Existing mutable CRUD/cache REST endpoints (`AuditEventResourceProvider`, `AuditEventResource`) remain untouched until Step 04 convergence.

@@ -41,7 +41,7 @@ This plan establishes an **agent-level continuation of the interrupted, reposito
 
 ### Non-Functional Requirements
 - **Process Safety**: No test command or build process may execute indefinitely without timeouts. Tests must fail cleanly rather than blocking.
-- **Strict Repository Guardrails**: Continually enforce the 7 mandatory architectural invariants defined in `AGENTS.md` via ArchUnit.
+- **Strict Repository Guardrails**: Continually enforce the 7 mandatory architectural invariants defined in `../../AGENTS-old.md` via ArchUnit.
 - **Zero-PHI & Secret Hygiene**: All configuration properties, sample payloads, and logs must be free of raw PHI and real secrets.
 
 # Technical Design
@@ -65,7 +65,7 @@ Inspection of the Git working tree, commit history, and test reports demonstrate
    - **Verification Result**: All 17 ArchUnit tests pass with 0 failures, 0 errors.
 
 3. **Markdown Engineering Documentation (`docs/`)**:
-   - Authored complete modular hierarchy: `architecture/` (overview, persistence lifecycle, failure recovery, system inventory, port register), `concepts/` (Calliope, Themis, Hestia, Petasos, Energeia, Pylai), `modules/` (all 8 subprojects), `middleware/` (Artemis, Infinispan, PostgreSQL, WildFly), `configuration/` (configuration register, environment matrix), `deployment/` (Kubernetes workloads, MicroK8s guide, Ansible orchestration), `paradeigma/` (simulation framework, isolation invariants, deployment guide), `operations/` (health/readiness, PHI sanitization, verification runbook), and `AGENTS.md`.
+   - Authored complete modular hierarchy: `architecture/` (overview, persistence lifecycle, failure recovery, system inventory, port register), `concepts/` (Calliope, Themis, Hestia, Petasos, Energeia, Pylai), `modules/` (all 8 subprojects), `middleware/` (Artemis, Infinispan, PostgreSQL, WildFly), `configuration/` (configuration register, environment matrix), `deployment/` (Kubernetes workloads, MicroK8s guide, Ansible orchestration), `paradeigma/` (simulation framework, isolation invariants, deployment guide), `operations/` (health/readiness, PHI sanitization, verification runbook), and `../../AGENTS-old.md`.
 
 4. **Formal LaTeX Reference Manual (`docs/latex/`)**:
    - Reconstructed `main.tex` into 8 Parts, 23 Chapters, and 9 Appendices matching the required specification.
@@ -168,7 +168,7 @@ NEXT DIAGNOSTIC/REMEDIATION ACTION:
 | **Configuration Inventory** | `COMPLETE` | Dual-dimension documented in `docs/configuration/`, LaTeX Ch 14-15, Appendix B. |
 | **Port / Protocol Inventory** | `COMPLETE` | Documented in `docs/architecture/port-protocol-register.md`, Appendix C. |
 | **System Inventory** | `COMPLETE` | Complete traceability matrix in `docs/architecture/system-inventory.md`, Appendix A. |
-| **Architecture Guardrails** | `COMPLETE` | 7 invariants established in root `AGENTS.md` and `docs/AGENTS.md`. |
+| **Architecture Guardrails** | `COMPLETE` | 7 invariants established in root `../../AGENTS-old.md` and `docs/AGENTS.md`. |
 | **Architecture Tests** | `COMPLETE` | 6 ArchUnit test classes, 17 rules in `paradeigma-test`, 100% passing. |
 | **Markdown Documentation** | `COMPLETE` | 24 modular engineering references across all subdirectories in `docs/`. |
 | **LaTeX Documentation** | `COMPLETE` | 8 Parts, 23 Chapters, 9 Appendices in `docs/latex/`, compiles cleanly to PDF. |
