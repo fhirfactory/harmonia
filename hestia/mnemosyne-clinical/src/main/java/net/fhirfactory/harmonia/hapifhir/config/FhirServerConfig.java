@@ -27,11 +27,6 @@ import org.springframework.context.annotation.Configuration;
 public class FhirServerConfig {
 
     @Bean
-    public FhirContext fhirContext() {
-        return FhirContext.forR5();
-    }
-
-    @Bean
     public ServletRegistrationBean<JpaRestfulServer> fhirServletRegistration(ApplicationContext applicationContext, FhirContext fhirContext) {
         JpaRestfulServer servlet = new JpaRestfulServer(applicationContext, fhirContext);
         ServletRegistrationBean<JpaRestfulServer> registration = new ServletRegistrationBean<>(servlet, "/fhir/*");

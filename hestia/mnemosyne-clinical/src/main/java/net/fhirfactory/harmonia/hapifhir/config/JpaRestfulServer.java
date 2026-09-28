@@ -41,9 +41,12 @@ public class JpaRestfulServer extends RestfulServer {
     protected void initialize() throws ServletException {
         super.initialize();
 
-        // Register Resource Providers
-        Collection<IResourceProvider> providers = applicationContext.getBeansOfType(IResourceProvider.class).values();
-        setResourceProviders(providers);
+        // Register Harmonia Resource Providers
+        Collection<IResourceProvider> allProviders = applicationContext.getBeansOfType(IResourceProvider.class).values();
+        Collection<IResourceProvider> harmoniaProviders = allProviders.stream()
+                .filter(p -> p.getClass().getPackageName().startsWith("net.fhirfactory.harmonia"))
+                .toList();
+        setResourceProviders(harmoniaProviders.isEmpty() ? allProviders : harmoniaProviders);
 
         // Configure Address Strategy
         setServerAddressStrategy(new HardcodedServerAddressStrategy("http://localhost:8080/fhir"));

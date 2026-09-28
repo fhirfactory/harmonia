@@ -21,48 +21,62 @@ def format_duration(seconds):
     mins, secs = divmod(int(seconds), 60)
     return f"{mins}m {secs:02d}s" if mins > 0 else f"{secs}s"
 
-def collect_surefire_failures(start_time, search_root="."):
+def collect_surefire_results(start_time, search_root=".", baseline_mtimes=None):
+    """Read authoritative totals and diagnostics from the reports written by this run.
+
+    Maven can print more than one summary for a test execution (for example, a
+    fork summary followed by the module summary).  Console summaries therefore
+    must not be added together.  Each Surefire XML report represents one unique
+    test class and its aggregate attributes are the source of truth.
+    """
     failures = []
     seen = set()
+    totals = {"tests": 0, "failures": 0, "errors": 0, "skipped": 0}
     for p in Path(search_root).glob("**/target/surefire-reports/TEST-*.xml"):
         try:
-            mtime = p.stat().st_mtime
-            if mtime >= start_time - 5:
-                tree = ET.parse(p)
-                root = tree.getroot()
-                for tc in root.findall(".//testcase"):
-                    classname = tc.get("classname", "")
-                    testname = tc.get("name", "")
-                    full_name = f"{classname}.{testname}"
-                    for fail in tc.findall("failure"):
-                        msg = fail.get("message")
-                        if not msg:
-                            text = (fail.text or "").strip()
-                            msg = text.split("\n")[0] if text else "Assertion failed"
-                        key = (full_name, "FAILURE", msg.strip())
-                        if key not in seen:
-                            seen.add(key)
-                            failures.append({
-                                "test": full_name,
-                                "type": "FAILURE",
-                                "message": msg.strip()
-                            })
-                    for err in tc.findall("error"):
-                        msg = err.get("message")
-                        if not msg:
-                            text = (err.text or "").strip()
-                            msg = text.split("\n")[0] if text else "Error"
-                        key = (full_name, "ERROR", msg.strip())
-                        if key not in seen:
-                            seen.add(key)
-                            failures.append({
-                                "test": full_name,
-                                "type": "ERROR",
-                                "message": msg.strip()
-                            })
+            stat = p.stat()
+            if baseline_mtimes is not None:
+                if stat.st_mtime_ns <= baseline_mtimes.get(p, -1):
+                    continue
+            elif stat.st_mtime < start_time - 5:
+                continue
+            tree = ET.parse(p)
+            root = tree.getroot()
+            for key in totals:
+                totals[key] += int(root.get(key, "0"))
+            for tc in root.findall(".//testcase"):
+                classname = tc.get("classname", "")
+                testname = tc.get("name", "")
+                full_name = f"{classname}.{testname}"
+                for fail in tc.findall("failure"):
+                    msg = fail.get("message")
+                    if not msg:
+                        text = (fail.text or "").strip()
+                        msg = text.split("\n")[0] if text else "Assertion failed"
+                    key = (full_name, "FAILURE", msg.strip())
+                    if key not in seen:
+                        seen.add(key)
+                        failures.append({
+                            "test": full_name,
+                            "type": "FAILURE",
+                            "message": msg.strip()
+                        })
+                for err in tc.findall("error"):
+                    msg = err.get("message")
+                    if not msg:
+                        text = (err.text or "").strip()
+                        msg = text.split("\n")[0] if text else "Error"
+                    key = (full_name, "ERROR", msg.strip())
+                    if key not in seen:
+                        seen.add(key)
+                        failures.append({
+                            "test": full_name,
+                            "type": "ERROR",
+                            "message": msg.strip()
+                        })
         except Exception:
             pass
-    return failures
+    return totals, failures
 
 def parse_cli_args(args):
     process_timeout = 300
@@ -133,13 +147,13 @@ def main():
     in_error_section = False
     timed_out = [False]
 
-    total_tests = [0]
-    total_failures = [0]
-    total_errors = [0]
-    total_skipped = [0]
     stop_watchdog = threading.Event()
 
     proc_holder = []
+    report_mtimes = {
+        p: p.stat().st_mtime_ns
+        for p in Path(".").glob("**/target/surefire-reports/TEST-*.xml")
+    }
 
     def watchdog():
         while not stop_watchdog.wait(5):
@@ -207,10 +221,6 @@ def main():
             res_match = test_result_pattern.search(clean_line)
             if res_match:
                 runs, fails, errs, skips = (int(x) for x in res_match.groups())
-                total_tests[0] += runs
-                total_failures[0] += fails
-                total_errors[0] += errs
-                total_skipped[0] += skips
                 if fails > 0 or errs > 0:
                     failures_summary.append(f"{current_module[0]} -> {current_test[0]}: Fails={fails}, Errs={errs}")
                     print(f"[{datetime.now().strftime('%H:%M:%S')}]   RESULT FAILED: {clean_line}", flush=True)
@@ -242,7 +252,7 @@ def main():
         ret_code = 124
 
     total_time = format_duration(time.time() - start_time)
-    detailed_failures = collect_surefire_failures(start_time)
+    report_totals, detailed_failures = collect_surefire_results(start_time, baseline_mtimes=report_mtimes)
 
     lines = []
     lines.append("\n" + "=" * 80)
@@ -252,10 +262,11 @@ def main():
     lines.append(f"Exit Code:            {ret_code}")
     lines.append(f"Total Elapsed Time:   {total_time}")
     lines.append(f"Modules Processed:    {len(modules)}")
-    lines.append(f"Total Tests Run:      {total_tests[0]}")
-    lines.append(f"Total Test Failures:  {total_failures[0]}")
-    lines.append(f"Total Test Errors:    {total_errors[0]}")
-    lines.append(f"Total Test Skipped:   {total_skipped[0]}")
+    lines.append("Totals source:        Surefire XML reports written during this run")
+    lines.append(f"Total Tests Run:      {report_totals['tests']}")
+    lines.append(f"Total Test Failures:  {report_totals['failures']}")
+    lines.append(f"Total Test Errors:    {report_totals['errors']}")
+    lines.append(f"Total Test Skipped:   {report_totals['skipped']}")
     lines.append(f"Last Active Module:   {current_module[0]}")
     lines.append(f"Last Active Test:     {current_test[0]}")
 

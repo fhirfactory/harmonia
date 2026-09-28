@@ -464,4 +464,40 @@ class AuthoritativePersistenceServiceTest {
         assertThat(entityOpt).isPresent();
         assertThat(entityOpt.get().getVersionId()).isEqualTo(2L);
     }
+
+    @Test
+    @DisplayName("13. READ: returns Committed for existing resource with matching payload and version")
+    void testReadExistingResource() {
+        String id = "pat-" + UUID.randomUUID();
+        ResourceKey key = ResourceKey.of("Patient", id);
+
+        Patient patient = new Patient();
+        patient.setActive(true);
+        patient.addName(new HumanName().setFamily("Doe").addGiven("John"));
+
+        AuthoritativePersistenceResult<IBaseResource> createRes = persistenceService.create(key, patient);
+        assertThat(createRes.isCommitted()).isTrue();
+
+        AuthoritativePersistenceResult<IBaseResource> readRes = persistenceService.read(key);
+        assertThat(readRes).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+        assertThat(readRes.isCommitted()).isTrue();
+
+        AuthoritativePersistenceResult.Committed<IBaseResource> committed =
+                (AuthoritativePersistenceResult.Committed<IBaseResource>) readRes;
+        assertThat(committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of(1L));
+        Patient readPatient = (Patient) committed.persistedResource();
+        assertThat(readPatient.getIdElement().getIdPart()).isEqualTo(id);
+    }
+
+    @Test
+    @DisplayName("14. READ: returns NotCommitted for non-existent resource or null key")
+    void testReadNonExistentResource() {
+        ResourceKey absentKey = ResourceKey.of("Patient", "absent-" + UUID.randomUUID());
+        AuthoritativePersistenceResult<IBaseResource> readRes = persistenceService.read(absentKey);
+        assertThat(readRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+        assertThat(readRes.isCommitted()).isFalse();
+
+        AuthoritativePersistenceResult<IBaseResource> nullKeyRes = persistenceService.read(null);
+        assertThat(nullKeyRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+    }
 }

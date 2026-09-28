@@ -21,6 +21,8 @@ server:
 spring:
   application:
     name: mnemosyne-clinical
+  main:
+    allow-circular-references: true
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchClientAutoConfiguration
@@ -30,7 +32,7 @@ spring:
       sniffer:
         interval: -1ms
   datasource:
-    url: jdbc:h2:mem:fhir_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    url: jdbc:h2:mem:fhir_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=LEGACY
     driver-class-name: org.h2.Driver
     username: sa
     password: ""
@@ -42,6 +44,13 @@ spring:
     properties:
       hibernate:
         format_sql: false
+        search:
+          backend:
+            type: lucene
+            analysis:
+              configurer: ca.uhn.fhir.jpa.search.HapiHSearchAnalysisConfigurers$HapiLuceneAnalysisConfigurer
+            directory:
+              type: local-heap
 
 hapi:
   fhir:

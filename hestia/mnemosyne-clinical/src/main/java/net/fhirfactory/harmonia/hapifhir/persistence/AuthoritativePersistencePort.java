@@ -31,6 +31,14 @@ import org.hl7.fhir.instance.model.api.IBaseResource;
 public interface AuthoritativePersistencePort<T extends IBaseResource> {
 
     /**
+     * Authoritatively reads an existing resource by its unique resource key.
+     *
+     * @param key unique resource key (type + id)
+     * @return result indicating COMMITTED or failure (e.g. not committed if absent or deleted)
+     */
+    AuthoritativePersistenceResult<T> read(ResourceKey key);
+
+    /**
      * Atomically creates a new authoritative resource.
      * Fails with conflict if the resource already exists.
      *

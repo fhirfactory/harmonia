@@ -35,6 +35,7 @@ import org.hl7.fhir.r5.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.CannotCreateTransactionException;
@@ -52,6 +53,7 @@ import java.util.Optional;
  * within programmatic transaction boundaries (TransactionTemplate).
  */
 @Service
+@Primary
 public class AuthoritativePersistenceService implements AuthoritativePersistencePort<IBaseResource> {
 
     private static final Logger log = LoggerFactory.getLogger(AuthoritativePersistenceService.class);
@@ -89,6 +91,35 @@ public class AuthoritativePersistenceService implements AuthoritativePersistence
 
     private boolean isImmutableResourceType(String resourceType) {
         return "AuditEvent".equalsIgnoreCase(resourceType);
+    }
+
+    @Override
+    public AuthoritativePersistenceResult<IBaseResource> read(ResourceKey key) {
+        if (key == null) {
+            return new AuthoritativePersistenceResult.NotCommitted<>("Resource key must not be null");
+        }
+        try {
+            Optional<FhirResourceEntity> entityOpt = repository.findByResourceTypeAndFhirId(key.resourceType(), key.id());
+            if (entityOpt.isEmpty()) {
+                return new AuthoritativePersistenceResult.NotCommitted<>(
+                        "Resource not found: " + key.toQualifiedPath());
+            }
+            FhirResourceEntity entity = entityOpt.get();
+            if (entity.isDeleted()) {
+                return new AuthoritativePersistenceResult.NotCommitted<>(
+                        "Resource is deleted: " + key.toQualifiedPath());
+            }
+            IBaseResource resource = getJsonParser().parseResource(entity.getResourceJson());
+            AuthoritativeVersion version = AuthoritativeVersion.of(entity.getVersionId());
+            return new AuthoritativePersistenceResult.Committed<>(resource, version);
+        } catch (CannotCreateTransactionException ccte) {
+            log.error("Cannot connect to transaction coordinator for READ {}: {}", key, ccte.getMessage(), ccte);
+            return new AuthoritativePersistenceResult.OutcomeUnknown<>(
+                    "Transaction coordinator connection failure: " + ccte.getMessage(), ccte);
+        } catch (Exception e) {
+            log.error("Persistence failure reading {}: {}", key, e.getMessage(), e);
+            return new AuthoritativePersistenceResult.NotCommitted<>("Persistence failure: " + e.getMessage(), e);
+        }
     }
 
     @Override
