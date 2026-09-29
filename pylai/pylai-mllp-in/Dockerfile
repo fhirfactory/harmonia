@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM quay.io/wildfly/wildfly:latest-jdk21
+FROM quay.io/wildfly/wildfly:32.0.1.Final-jdk21
 
 # Copy MLLP Gateway WAR file to deployments directory
 COPY target/mllp-gateway.war /opt/jboss/wildfly/standalone/deployments/ROOT.war
