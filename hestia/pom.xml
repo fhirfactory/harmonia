@@ -35,6 +35,7 @@
     <description>Harmonia Hestia (Data Services) — Mnemosyne (Relational Disk Persistence: Clinical FHIR &amp; Operations JPA) and Mneme (In-Memory Clustered Cache &amp; Persistence SPI)</description>
 
     <modules>
+        <module>mnemosyne-api</module>
         <module>mnemosyne-clinical</module>
         <module>mnemosyne-operations</module>
         <module>mnemosyne-operations-cli</module>

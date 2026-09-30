@@ -163,7 +163,12 @@
                 <version>${project.version}</version>
             </dependency>
 
-            <!-- Hestia Mnemosyne Clinical JPA Server -->
+            <!-- Hestia Mnemosyne API & Clinical JPA Server -->
+            <dependency>
+                <groupId>net.fhirfactory.harmonia</groupId>
+                <artifactId>mnemosyne-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>net.fhirfactory.harmonia</groupId>
                 <artifactId>mnemosyne-clinical</artifactId>

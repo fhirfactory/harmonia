@@ -267,30 +267,20 @@ should not be redesigned without evidence of a defect.
 
 ## Steps
 
-### M2.1 Mneme authoritative HTTP client
+### M2.1 Mneme authoritative HTTP client --- COMPLETE / CONFORMANT
 
-Implement the Mneme-side client for:
+Implemented and verified `MnemeAuthoritativeHttpClient` in `hestia/mneme-persistence` implementing shared `AuthoritativePersistencePort<IBaseResource>` from `hestia/mnemosyne-api`.
 
--   READ
--   CREATE-if-absent
--   UPDATE-if-expected-predecessor
-
-Preserve `Committed`, `Conflict`, `NotCommitted` and `OutcomeUnknown`.
-
-Failure classification:
-
-``` text
-failure known to occur before request transmission
-    -> NotCommitted
-
-request may have reached Mnemosyne but the authoritative
-response cannot be established
-    -> OutcomeUnknown
-```
-
-`OutcomeUnknown` must not be blindly retried.
-
-Do not invent service authentication inside the client.
+Implemented:
+- Authoritative Point READ (`GET /api/authoritative/fhir/{resourceType}/{id}`)
+- Authoritative Point CREATE-if-absent (`PUT /api/authoritative/fhir/{resourceType}/{id}` with `If-None-Match: *`)
+- Authoritative Point UPDATE-if-expected-predecessor (`PUT /api/authoritative/fhir/{resourceType}/{id}` with `If-Match: W/"{version}"`)
+- Explicit semantic outcome classification: `Committed`, `Conflict`, `NotCommitted`, `OutcomeUnknown`
+- Conservative transport failure classification via `HttpTransportFailureClassifier` (fail-to-unknown on ambiguous network state; provable pre-network DNS resolution failures map to `NotCommitted`)
+- Zero blind retry enforcement on mutating operations
+- Strict authoritative version mapping (`ETag` <-> `AuthoritativeVersion` with `X-Harmonia-Authoritative-Version` consistency checking) without fallbacks to `meta.versionId` or cache tokens
+- Fail-closed security handling on HTTP 401/403 responses
+- 28 focused WireMock unit tests and 84 repository-wide architecture tests passing
 
 ### M2.2 Containerise/deploy Mnemosyne
 

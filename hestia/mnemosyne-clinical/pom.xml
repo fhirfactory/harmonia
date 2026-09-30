@@ -34,6 +34,12 @@
     <description>Mnemosyne (Persistence) — Replicated Spring Boot Mnemosyne Clinical FHIR R5 JPA Server with PostgreSQL / H2 persistence</description>
 
     <dependencies>
+        <!-- Mnemosyne API (Shared Persistence Port & Result Models) -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>mnemosyne-api</artifactId>
+        </dependency>
+
         <!-- Calliope (Canonical Model & Schema Library) -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>
