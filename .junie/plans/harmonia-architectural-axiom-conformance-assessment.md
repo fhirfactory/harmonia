@@ -8,9 +8,9 @@ sessionId: session-260927-095355-tubz
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -88,7 +88,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 #### Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`

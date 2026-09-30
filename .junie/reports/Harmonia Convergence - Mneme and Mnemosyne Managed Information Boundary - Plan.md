@@ -50,7 +50,7 @@ All analyses adhere strictly to the Harmonia Architectural Authority Hierarchy:
     - **AX-11**: Responsive and highly available managed information access.
     - **AX-12**: Hide plumbing, not information.
     - **AX-13**: Harmonia management has an explicit boundary (fail-closed egress projection).
-2. `AGENTS.md` (Repository Invariants 1 through 10, particularly Invariant 3 [Iris Presentation Decoupling] and Invariant 8 [Mneme/Mnemosyne State Separation]).
+2. `../../AGENTS-old2.md` (Repository Invariants 1 through 10, particularly Invariant 3 [Iris Presentation Decoupling] and Invariant 8 [Mneme/Mnemosyne State Separation]).
 3. Accepted Architecture Decisions (`ADR-003`, `ADR-006`, `ADR-010`, `ADR-013`, `ADR-018`, `ADR-019`, `ADR-020`).
 
 **Technical Design**
@@ -398,7 +398,7 @@ All analyses adhere strictly to the Harmonia Architectural Authority Hierarchy:
     - **AX-11**: Responsive and highly available managed information access.
     - **AX-12**: Hide plumbing, not information.
     - **AX-13**: Harmonia management has an explicit boundary (fail-closed egress projection).
-2. `AGENTS.md` (Repository Invariants 1 through 10, particularly Invariant 3 [Iris Presentation Decoupling] and Invariant 8 [Mneme/Mnemosyne State Separation]).
+2. `../../AGENTS-old2.md` (Repository Invariants 1 through 10, particularly Invariant 3 [Iris Presentation Decoupling] and Invariant 8 [Mneme/Mnemosyne State Separation]).
 3. Accepted Architecture Decisions (`ADR-003`, `ADR-006`, `ADR-010`, `ADR-013`, `ADR-018`, `ADR-019`, `ADR-020`).
 
 **Technical Design**
@@ -972,7 +972,7 @@ All analyses adhere strictly to the Harmonia Architectural Authority Hierarchy:
     - **AX-11**: Responsive and highly available managed information access.
     - **AX-12**: Hide plumbing, not information.
     - **AX-13**: Harmonia management has an explicit boundary (fail-closed egress projection).
-2. `AGENTS.md` (Repository Invariants 1 through 10, particularly Invariant 3 [Iris Presentation Decoupling] and Invariant 8 [Mneme/Mnemosyne State Separation]).
+2. `../../AGENTS-old2.md` (Repository Invariants 1 through 10, particularly Invariant 3 [Iris Presentation Decoupling] and Invariant 8 [Mneme/Mnemosyne State Separation]).
 3. Accepted Architecture Decisions (`ADR-003`, `ADR-006`, `ADR-010`, `ADR-013`, `ADR-018`, `ADR-019`, `ADR-020`).
 
 **Technical Design**

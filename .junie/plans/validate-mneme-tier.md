@@ -23,7 +23,7 @@ Mneme serves as Harmonia's distributed in-memory data grid and application-facin
 - **Out of Scope**:
   - Starting Tier 1 (Iris presentation SPAs), Tier 2 (Pylai gateways, BEFE), or Tier 3 (Petasos Artemis messaging, Ponos task processor).
   - Modifying application domain logic, FHIR schemas, cache definitions, or persistence store semantics.
-  - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+  - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
   - Introducing direct application-to-Mnemosyne access or making Mneme an independent durable authority.
 
 ### User Stories

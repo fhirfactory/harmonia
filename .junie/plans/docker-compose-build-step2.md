@@ -20,7 +20,7 @@ The goal of Step 2 is to achieve 100% reproducible, isolated, and fast Docker bu
   - Creating a repository-root `/srv/harmonia/.dockerignore` (since the repository root `/srv/harmonia` is not used as an active Docker build context in `docker-compose.yml`).
   - Rebuilding or modifying Maven source code or re-running full Maven compilation (Step 1 artifacts are preserved).
   - Altering application runtime behavior, configuration semantics, or database schemas.
-  - Modifying architectural boundaries or violating `AGENTS.md` invariants (e.g., Paradeigma isolation, Themis default-deny, Iris presentation decoupling).
+  - Modifying architectural boundaries or violating `../../AGENTS-old2.md` invariants (e.g., Paradeigma isolation, Themis default-deny, Iris presentation decoupling).
   - Starting long-running containers or modifying runtime service orchestration.
 
 ### User Stories
@@ -148,5 +148,5 @@ All 13 container images in `docker-compose.yml` build cleanly and reproducibly f
 The complete multi-service image set in `docker-compose.yml` builds successfully and reproducibly in a clean end-to-end execution, and a detailed diagnostic report is compiled.
 
 - Execute a full `docker compose build --no-cache` across all 13 built services in `docker-compose.yml` to verify end-to-end build reproducibility without relying on cached layers.
-- Verify that no application runtime behavior, data contracts, or architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md` were modified.
+- Verify that no application runtime behavior, data contracts, or architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md` were modified.
 - Compile a comprehensive build report documenting all issues identified, files modified, reasons for changes, affected Docker images, and final image build statuses.

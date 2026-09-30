@@ -373,27 +373,18 @@ changes against the ArchUnit architecture suite located in
     mvn test
     ```
 
-## 6. Junie Plans, Reports and Implementation Sequencing
+## 6. Junie Plans and Reports
 
 Files under `.junie/plans/` and `.junie/reports/` are working and historical
 execution artefacts. They are NOT sources of architectural authority.
 
-### 6.1 Authority hierarchy
-
 A Junie plan MUST be interpreted against, in order of authority:
 
 1. `docs/architectural-axioms.md`
-2. this `AGENTS.md`
+2. this `AGENTS-old2.md`
 3. applicable accepted Architecture Decision Records
 4. applicable requirements and design contracts
-5. `docs/implementation/harmonia-convergence-runtime-integration-plan.md` for
-   convergence/runtime implementation sequencing
-6. the task-specific Junie plan
-
-The convergence/runtime implementation plan is authoritative for the **order
-and scope of implementation activities**, but it does not override the
-Architectural Axioms, this `AGENTS.md`, accepted ADRs, or applicable design
-contracts.
+5. the task-specific plan
 
 Where an existing Junie plan or report conflicts with a higher-authority
 source, the higher-authority source prevails.
@@ -405,90 +396,3 @@ implemented, proposed, or approved.
 Before executing a material architectural plan, Junie MUST identify the
 applicable Architectural Axioms and report any conflict between the proposed
 work, the existing implementation, and those axioms.
-
-### 6.2 Master convergence and runtime implementation plan
-
-The repository-wide master implementation sequence for the current Harmonia
-convergence and runtime-integration programme is:
-
-    docs/implementation/harmonia-convergence-runtime-integration-plan.md
-
-Junie MUST consult that document before planning or implementing work that
-falls within the convergence/runtime programme.
-
-The master plan combines the previously separate architecture-convergence and
-Docker/runtime/deployment activity streams into one ordered programme:
-
-1. Stable Docker Runtime Baseline
-2. Distributed Authoritative Path
-3. Governed Access
-4. Application Migration
-5. Authoritative Search
-6. MicroK8s Runtime
-7. Remaining Convergence Findings
-8. Convergence Closure
-
-For work governed by that plan, Junie MUST:
-
-1. identify the current milestone and exact step before proposing changes;
-2. inspect the repository for evidence of the current implementation state;
-3. preserve accepted outcomes from completed milestones and steps;
-4. implement only the smallest bounded change required by the current step;
-5. add focused verification/conformance evidence appropriate to that step;
-6. report discovered prerequisites, conflicts or missing architectural
-   decisions rather than silently inventing a solution;
-7. stop at the defined step boundary; and
-8. NOT commence a later step or milestone without explicit instruction or
-   approval.
-
-The operating principle is:
-
-> **One plan. One current milestone. One next step.**
-
-### 6.3 Scope discipline
-
-A future milestone MUST NOT be used to justify speculative implementation in
-the current milestone.
-
-In particular, unless the current approved step explicitly requires it, Junie
-MUST NOT:
-
-- introduce MicroK8s concerns before the Docker/component topology is stable;
-- implement authoritative search while completing authoritative point access;
-- migrate application consumers before governed access is production-ready;
-- invent transport authentication inside application code;
-- treat Mneme/Infinispan active-state content as authoritative persistence;
-- expose Mnemosyne persistence implementation as an application-access path;
-- introduce physical DELETE as managed-information lifecycle semantics;
-- introduce a new runtime service, protocol, process or network boundary
-  without explicit architectural justification; or
-- opportunistically fix unrelated MAT findings while executing a bounded
-  convergence step.
-
-If work in the current step reveals a prerequisite belonging to another step,
-Junie MUST report it and stop where necessary rather than silently broadening
-scope.
-
-### 6.4 Step completion and plan maintenance
-
-A convergence/runtime step is not complete merely because code compiles.
-
-The completion report SHOULD identify:
-
-- milestone and step;
-- implementation changes;
-- architectural invariants affected;
-- tests and verification actually executed;
-- exact material test results;
-- unresolved deployment or operational prerequisites;
-- conformance impact, where applicable; and
-- confirmation that later-step work was not commenced.
-
-When a step completes, the master implementation plan SHOULD be updated to
-record its status, material outcome, current milestone, and next step.
-
-Material changes to the sequence or milestone intent MUST be explicit and
-reviewed before subsequent implementation proceeds. Junie MUST NOT rewrite
-historical milestone intent merely to make later implementation appear to have
-followed the plan.
-

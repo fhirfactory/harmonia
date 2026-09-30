@@ -31,7 +31,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**
@@ -204,7 +204,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**
@@ -479,7 +479,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**
@@ -652,7 +652,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**
@@ -972,7 +972,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**
@@ -1145,7 +1145,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**
@@ -1496,7 +1496,7 @@ The Mnemosyne persistence tier comprises:
 - **Out of Scope**:
     - Starting Tier 1 (Iris presentation), Tier 2 (Pylai gateways, BEFE), Tier 3 (Petasos Artemis, Ponos task processor), or Tier 4 (Mneme Infinispan cluster).
     - Modifying application business logic, domain models, FHIR structures, or persistence semantics.
-    - Modifying architectural boundaries defined in `AGENTS.md` and `docs/architectural-axioms.md`.
+    - Modifying architectural boundaries defined in `../../AGENTS-old2.md` and `docs/architectural-axioms.md`.
     - Modifying unrelated application unit tests.
 
 **Functional Requirements & Acceptance Criteria**

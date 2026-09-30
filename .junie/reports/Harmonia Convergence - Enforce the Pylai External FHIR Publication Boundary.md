@@ -1316,7 +1316,7 @@ In conformance with Harmonia Architectural Axioms (**AX-05 Information Authority
     - Updated scenario test to attach caller principal and role credentials to `MockHttpServletRequest` across `createResource` and `readResource` calls to satisfy default-deny Themis security evaluation in `FhirSecurityInterceptor`.
     - Verified end-to-end integration across Pylai Ingress -> Themis Authorization -> Ponos Ergon -> Mnemosyne durable commit -> Dual-gate PHI logging -> Clean REST egress read.
 
-3. **`AGENTS.md`**:
+3. **`../../AGENTS-old2.md`**:
     - Documented `PylaiPublicationBoundaryArchitectureTest` in Section 4 (*Automated Architecture Test Suite*).
 
 **3. Verification & Test Execution Results**
@@ -1349,7 +1349,7 @@ Please verify that the new architecture test enforces a meaningful invariant rat
 - whether `PylaiPublicationBoundaryArchitectureTest` meaningfully protects the external publication boundary and module/package rules;
 - whether the source/static checks are justified and robust enough;
 - whether the E2E verification and module test runs are credible and scoped appropriately;
-- whether any changes to `ProviderRegistryCrossCapabilityE2ETest` or `AGENTS.md` are necessary and correct.
+- whether any changes to `ProviderRegistryCrossCapabilityE2ETest` or `../../AGENTS-old2.md` are necessary and correct.
 
 
 

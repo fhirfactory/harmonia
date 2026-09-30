@@ -1,3 +1,4 @@
+```{=html}
 <!--
   Copyright (c) 2026 Mark Hunter
 
@@ -14,113 +15,480 @@
   You should have received a copy of the GNU General Public License
   along with this program. If not, see <https://www.gnu.org/licenses/>.
 -->
-
+```
 # Harmonia Architectural Guardrails & Rules for AI Agents (AGENTS.md)
 
-This document establishes the authoritative repository-wide architectural rules, boundaries, and development constraints for autonomous and co-executor agents working on the Harmonia Health Integration Environment (HIE) codebase.
+This document establishes the authoritative repository-wide
+architectural rules, boundaries, and development constraints for
+autonomous and co-executor agents working on the Harmonia Health
+Integration Environment (HIE) codebase.
 
----
+------------------------------------------------------------------------
 
-## 1. System Taxonomy & Module Hierarchy
+## 1. Architectural Authority
 
-Harmonia enforces strict separation of concerns across its 8 core subprojects:
+All architecture, design, implementation and automated-agent activity
+within Harmonia is governed by the Harmonia Architectural Axioms defined
+in:
 
-| Subproject | Domain / Responsibility | Allowed Dependencies | Invariants & Constraints |
-| :--- | :--- | :--- | :--- |
-| **Calliope** (`calliope`) | Canonical Schemas, Common Models, HL7/FHIR converters, Topic definitions | JDK, HAPI FHIR Structures | Pure domain models; zero dependencies on higher layers (Themis, Hestia, Petasos, Energeia, Pylai, Iris, Paradeigma). |
-| **Themis** (`themis/`) | Policy evaluation, RBAC/ABAC authorization, non-PHI security auditing | JDK, Calliope, HAPI FHIR | Default-deny security engine; `themis-api` contains pure contracts without engine or storage dependencies. |
-| **Hestia** (`hestia/`) | Mneme (Infinispan caching) and Mnemosyne (HAPI FHIR R5 / PostgreSQL JPA persistence) | Calliope, Themis, Infinispan, HAPI FHIR, PostgreSQL | Persistent authoritative storage; separate clinical (`fhir_node_*`) and operations (`ops_node_*`) databases. |
-| **Petasos** (`petasos/`) | Resilient messaging abstraction and ActiveMQ Artemis broker adapters | JDK, Calliope, Themis API | `petasos-api` is strictly free of JMS or Artemis dependencies. Artemis client code is isolated to `petasos-artemis`. |
-| **Energeia** (`energeia/`) | Task processing (Ponos), Ergon activity units (Erga), Workflow orchestration (Praxis) | Calliope, Themis, Hestia, Petasos | Activity execution handles `Pragma` envelopes and FHIR `Task` lifecycle. |
-| **Pylai** (`pylai/`) | Inbound/Outbound protocol gateways (MLLP, FHIR REST Registry) | Calliope, Themis, Petasos, Hestia | Translates external wire protocols into Petasos events and Mnemosyne tasks. |
-| **Iris** (`iris/`) | Presentation services (iris-befe WildFly gateway, iris-clinical, iris-console, iris-administration SPAs) | Calliope, Themis API, Hot Rod Client | Strictly decoupled from backend storage/JPA; communicates via REST and Hot Rod only. |
-| **Paradeigma** (`paradeigma/`) | Synthetic clinical simulation (EMR, LMS, PAS, RIS-PAC simulators, scenario engine) | Production APIs (MLLP, FHIR REST, Petasos API) | **Leaf / Simulation Only**. Production modules MUST NEVER depend on or import Paradeigma. |
+    docs/architectural-axioms.md
 
----
+The Architectural Axioms are the highest-level design authority within
+the Harmonia repository.
 
-## 2. Mandatory Architectural Invariants
+Architecture decisions, architectural invariants, design contracts,
+implementation patterns and existing source code MUST be interpreted
+consistently with those axioms.
+
+Where an existing implementation, architectural decision, requirement,
+documentation statement or requested change appears to conflict with an
+Architectural Axiom, the conflict MUST be reported rather than silently
+resolved in favour of the existing implementation.
+
+Existing implementation is not, by itself, evidence of architectural
+intent.
+
+Before proposing or implementing a material architectural change, an
+agent MUST identify the Architectural Axioms materially relevant to that
+change and demonstrate that the proposed approach is consistent with
+them.
+
+## 2. System Taxonomy & Module Hierarchy
+
+Harmonia enforces strict separation of concerns across its 9 core
+subprojects:
+
+  -------------------------------------------------------------------------------
+  Subproject        Domain /              Allowed           Invariants &
+                    Responsibility        Dependencies      Constraints
+  ----------------- --------------------- ----------------- ---------------------
+  **Calliope**      Canonical Schemas,    JDK, HAPI FHIR    Pure domain models;
+  (`calliope`)      Common Models,        Structures        zero dependencies on
+                    HL7/FHIR converters,                    higher layers
+                    Topic definitions                       (Themis, Hestia,
+                                                            Petasos, Energeia,
+                                                            Pylai, Iris,
+                                                            Paradeigma, Agora).
+
+  **Themis**        Policy evaluation,    JDK, Calliope,    Default-deny security
+  (`themis/`)       RBAC/ABAC             HAPI FHIR         engine; `themis-api`
+                    authorization,                          contains pure
+                    non-PHI security                        contracts without
+                    auditing                                engine or storage
+                                                            dependencies.
+
+  **Hestia**        Mneme:                Calliope, Themis, Mneme state is active
+  (`hestia/`)       application-facing    Infinispan, HAPI  and reconstructable,
+                    managed-information   FHIR, PostgreSQL  never authoritative.
+                    access, distributed                     Mnemosyne establishes
+                    active state,                           durable truth and
+                    observation and                         does not expose its
+                    coordination.                           persistence
+                    Mnemosyne:                              implementation as an
+                    authoritative durable                   application-access
+                    managed-information                     mechanism.
+                    state and                               
+                    authoritative state                     
+                    progression.                            
+
+  **Petasos**       Resilient messaging   JDK, Calliope,    `petasos-api` is
+  (`petasos/`)      abstraction and       Themis API        strictly free of JMS
+                    ActiveMQ Artemis                        or Artemis
+                    broker adapters                         dependencies. Artemis
+                                                            client code is
+                                                            isolated to
+                                                            `petasos-artemis`.
+
+  **Energeia**      Task processing       Calliope, Themis, Activity execution
+  (`energeia/`)     (Ponos), Ergon        Hestia, Petasos   handles `Pragma`
+                    activity units                          envelopes and FHIR
+                    (Erga), Workflow                        `Task` lifecycle.
+                    orchestration                           
+                    (Praxis)                                
+
+  **Pylai**         Interoperability      Calliope, Themis, Establishes
+  (`pylai/`)        membrane and          Petasos, Hestia   standards-compliant
+                    inbound/outbound                        ingress/egress
+                    protocol gateways                       boundaries. External
+                    (including MLLP and                     contracts must not
+                    FHIR REST)                              expose
+                                                            Harmonia-private
+                                                            operational
+                                                            semantics; egress
+                                                            terminates Harmonia
+                                                            management of the
+                                                            emitted
+                                                            representation.
+
+  **Iris**          Presentation services Calliope, Themis  Strictly decoupled
+  (`iris/`)         (iris-befe WildFly    API, Mneme        from authoritative
+                    gateway,              client-facing     persistence/JPA.
+                    iris-clinical,        contracts         Managed-information
+                    iris-console,                           access must use
+                    iris-administration                     defined
+                    SPAs)                                   application-facing
+                                                            interfaces; Iris must
+                                                            not treat raw cache
+                                                            or database access as
+                                                            an alternative
+                                                            persistence path.
+
+  **Agora**         Matrix/Synapse        Calliope, Themis  Zero Ponos
+  (`agora/`)        collaboration         API, Petasos API, dependencies; Matrix
+                    projection, AS        Mnemosyne         DTO encapsulation;
+                    transaction           Operations        Themis default-deny
+                    ingestion, room/space                   governance; zero-PHI
+                    lifecycle                               metadata.
+
+  **Paradeigma**    Synthetic clinical    Production APIs   **Leaf / Simulation
+  (`paradeigma/`)   simulation (EMR, LMS, (MLLP, FHIR REST, Only**. Production
+                    PAS, RIS-PAC          Petasos API)      modules MUST NEVER
+                    simulators, scenario                    depend on or import
+                    engine)                                 Paradeigma.
+  -------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## 3. Derived Architectural Invariants and Guardrails
+
+The following rules implement or protect the Architectural Axioms. They
+are mandatory but subordinate to the axioms from which Harmonia's
+architecture is derived.
 
 ### Invariant 1: Paradeigma Production Isolation
-- **Rule**: `Production Code -> Paradeigma` is strictly **forbidden**.
-- **Enforcement**:
-  1. No production POM may declare a `<dependency>` on any `net.fhirfactory.harmonia:paradeigma*` artifact.
-  2. No production Java class may import `net.fhirfactory.harmonia.paradeigma.*`.
-  3. No production class may include simulation flags (e.g. `paradeigmaMode`, `simulationMode`, `syntheticRequest`, `isParadeigmaGenerated`).
-  4. Verified continuously by `ParadeigmaIsolationArchitectureTest`.
+
+-   **Rule**: `Production Code -> Paradeigma` is strictly **forbidden**.
+-   **Enforcement**:
+    1.  No production POM may declare a `<dependency>` on any
+        `net.fhirfactory.harmonia:paradeigma*` artifact.
+    2.  No production Java class may import
+        `net.fhirfactory.harmonia.paradeigma.*`.
+    3.  No production class may include simulation flags
+        (e.g. `paradeigmaMode`, `simulationMode`, `syntheticRequest`,
+        `isParadeigmaGenerated`).
+    4.  Verified continuously by `ParadeigmaIsolationArchitectureTest`.
 
 ### Invariant 2: Petasos API Abstraction & Encapsulation
-- **Rule**: `petasos-api` contains pure Java abstractions (`Petasos`, `PetasosProducer`, `PetasosConsumer`, `PetasosMessage`, `PetasosDestination`).
-- **Enforcement**:
-  1. Zero `org.apache.activemq..`, `jakarta.jms..`, or `javax.jms..` classes may be exposed in or imported by `petasos-api`.
-  2. Message payloads in Petasos are treated as opaque binary/text streams (`byte[]` / `String`). Petasos never parses HL7 or FHIR business content.
-  3. Verified continuously by `PetasosApiIsolationArchitectureTest`.
+
+-   **Rule**: `petasos-api` contains pure Java abstractions (`Petasos`,
+    `PetasosProducer`, `PetasosConsumer`, `PetasosMessage`,
+    `PetasosDestination`).
+-   **Enforcement**:
+    1.  Zero `org.apache.activemq..`, `jakarta.jms..`, or `javax.jms..`
+        classes may be exposed in or imported by `petasos-api`.
+    2.  Message payloads in Petasos are treated as opaque binary/text
+        streams (`byte[]` / `String`). Petasos never parses HL7 or FHIR
+        business content.
+    3.  Verified continuously by `PetasosApiIsolationArchitectureTest`.
 
 ### Invariant 3: Iris Presentation Decoupling
-- **Rule**: The Iris presentation tier (`iris-befe` and Vue 3 SPAs) must remain presentation-only and decoupled from internal databases.
-- **Enforcement**:
-  1. Iris modules must not depend on or import JPA/Hibernate (`jakarta.persistence..`, `org.hibernate..`), PostgreSQL drivers (`org.postgresql..`), or server-side JPA (`ca.uhn.fhir.jpa..`).
-  2. `iris-administration` is a Vue 3 SPA consuming FHIR REST endpoints (`/fhir/r5/Practitioner`, etc.). It must not implement Provider Registry database storage, authoritative validation state machines, or referential integrity rules.
-  3. Server-side Provider Registry governance is owned exclusively by `mnemosyne-clinical`, `energeia-erga`, and `themis-core`.
-  4. Verified continuously by `IrisDecouplingArchitectureTest` and `ProviderRegistryArchitectureTest`.
+
+-   **Rule**: The Iris presentation tier (`iris-befe` and Vue 3 SPAs)
+    must remain presentation-only and decoupled from internal databases.
+-   **Enforcement**:
+    1.  Iris modules must not depend on or import JPA/Hibernate
+        (`jakarta.persistence..`, `org.hibernate..`), PostgreSQL drivers
+        (`org.postgresql..`), or server-side JPA (`ca.uhn.fhir.jpa..`).
+    2.  `iris-administration` is a Vue 3 SPA consuming FHIR REST
+        endpoints (`/fhir/r5/Practitioner`, etc.). It must not implement
+        Provider Registry database storage, authoritative validation
+        state machines, or referential integrity rules.
+    3.  Server-side Provider Registry governance is owned exclusively by
+        `mnemosyne-clinical`, `energeia-erga`, and `themis-core`.
+    4.  Verified continuously by `IrisDecouplingArchitectureTest` and
+        `ProviderRegistryArchitectureTest`.
 
 ### Invariant 4: Ingress Dual-Write Safety (REC-001)
-- **Rule**: Inbound gateways (`pylai-mllp-in`) must guarantee end-to-end downstream message acceptance before returning an `AA` (Application Accept) ACK to the upstream sender.
-- **Enforcement**:
-  1. If downstream Petasos queue publishing (`taskEventProducerService.sendTaskEvent(...)`) or cache write fails, the exception must NOT be swallowed.
-  2. The failure MUST trigger an `AE` (Application Error) NACK response back over MLLP to prompt upstream sender retry.
+
+-   **Rule**: Inbound gateways (`pylai-mllp-in`) must guarantee
+    end-to-end downstream message acceptance before returning an `AA`
+    (Application Accept) ACK to the upstream sender.
+-   **Enforcement**:
+    1.  If downstream Petasos queue publishing
+        (`taskEventProducerService.sendTaskEvent(...)`) or cache write
+        fails, the exception must NOT be swallowed.
+    2.  The failure MUST trigger an `AE` (Application Error) NACK
+        response back over MLLP to prompt upstream sender retry.
 
 ### Invariant 5: Destination Fan-Out State Tracking (REC-002)
-- **Rule**: Parent workflow tasks in Mnemosyne and Pragma envelopes must track granular sub-status per fan-out destination.
-- **Enforcement**:
-  1. `AdtDistributionErgon` records destination checkpoints (`FANOUT_DISPATCH_INITIATED`, `destinationQueue`, `status=QUEUED`) in the `Pragma`.
-  2. `OutboundTaskResourceBuilder` updates `Task.output` with structured `http://example.org/hie/destination-delivery-status` extensions capturing `destinationId`, `status`, `ackCode`, and timestamps upon delivery.
+
+-   **Rule**: Parent workflow tasks in Mnemosyne and Pragma envelopes
+    must track granular sub-status per fan-out destination.
+-   **Enforcement**:
+    1.  `AdtDistributionErgon` records destination checkpoints
+        (`FANOUT_DISPATCH_INITIATED`, `destinationQueue`,
+        `status=QUEUED`) in the `Pragma`.
+    2.  `OutboundTaskResourceBuilder` updates `Task.output` with
+        structured `http://example.org/hie/destination-delivery-status`
+        extensions capturing `destinationId`, `status`, `ackCode`, and
+        timestamps upon delivery.
 
 ### Invariant 6: Default-Deny Security Governance (Themis)
-- **Rule**: All ingress endpoints, task processors, and storage mutators must evaluate authorization through Themis.
-- **Enforcement**:
-  1. Unauthenticated or unauthorized requests must default to `DENY` (`ThemisDecision.DENY`).
-  2. Context propagation across pipelines must use immutable `PragmaSecurityContext` and FHIR security labels (`FhirSecurityTagManager`).
-  3. Audit records must be dispatched to `ThemisAuditService` without logging unmasked PHI.
+
+-   **Rule**: All governed ingress, processing and state-changing
+    operations must execute within an established security context and
+    evaluate authorization through Themis.
+-   **Enforcement**:
+    1.  Unauthenticated or unauthorized requests must default to `DENY`
+        (`ThemisDecision.DENY`).
+    2.  Security context propagation must use the canonical immutable
+        `ThemisSecurityContext` (or an explicitly defined transport
+        representation of that context); callers must not establish
+        authority through caller-controlled resource attributes or FHIR
+        tags.
+    3.  Security context is operational context and must not
+        automatically become persisted resource content.
+    4.  Security-significant evidence must be recorded through the
+        Harmonia audit/evidence boundary (Kleio) according to policy,
+        without logging unmasked PHI.
 
 ### Invariant 7: Zero-PHI Diagnostic Logging
-- **Rule**: Protected Health Information (PHI) must never be emitted into non-clinical log streams.
-- **Enforcement**:
-  1. Log identifiers (MRN, control IDs) only; mask or omit patient names, addresses, and clinical observation values in standard log statements.
-  2. Use `FhirSanitizer` or `PhiLogRouting` for diagnostic message logging.
 
----
+-   **Rule**: Protected Health Information (PHI) must never be emitted
+    into non-clinical log streams.
+-   **Enforcement**:
+    1.  Log identifiers (MRN, control IDs) only; mask or omit patient
+        names, addresses, and clinical observation values in standard
+        log statements.
+    2.  Use `FhirSanitizer` or `PhiLogRouting` for diagnostic message
+        logging.
 
-## 3. Automated Architecture Test Suite
+### Invariant 8: Mneme / Mnemosyne State Separation
 
-All agents making modifications to the Harmonia repository must verify changes against the ArchUnit architecture suite located in `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/`:
+-   **Rule**: Mneme manages active distributed use of managed
+    information; Mnemosyne alone establishes authoritative durable
+    state.
+-   **Enforcement**:
+    1.  Application and presentation code must not use Mnemosyne
+        database/JPA access as an application-facing information-access
+        mechanism.
+    2.  Loss of Mneme must not silently promote process-local or cached
+        state to authoritative state.
+    3.  Loss of Mnemosyne must not cause Mneme to treat active cache
+        state as authoritative durable state.
+    4.  Ungoverned raw cache mutation must not be exposed as an
+        alternative application path for Harmonia-managed information.
 
-- `ParadeigmaIsolationArchitectureTest`: Asserts zero production dependencies, imports, or simulation flags for Paradeigma.
-- `PetasosApiIsolationArchitectureTest`: Asserts zero JMS or ActiveMQ Artemis API leakage into `petasos-api`.
-- `IrisDecouplingArchitectureTest`: Asserts zero direct JPA, Hibernate, or PostgreSQL database dependencies in Iris.
-- `ProviderRegistryArchitectureTest`: Asserts `iris-administration` separation from server-side Provider Registry governance.
-- `PackageLayeringArchitectureTest`: Asserts strict unidirectional dependency layering across all subproject packages.
-- `SecurityEnforcementArchitectureTest`: Asserts Themis policy contracts and security context structures.
+### Invariant 9: External Interoperability Boundary
 
----
+-   **Rule**: Standards govern Harmonia's external contracts;
+    Harmonia-private operational semantics remain internal.
+-   **Enforcement**:
+    1.  Pylai must construct externally publishable representations
+        without destructively altering the internally managed
+        representation.
+    2.  External publication must be fail-closed: only information and
+        extensions permitted by the applicable interoperability contract
+        may be emitted.
+    3.  Harmonia-private cache, persistence, authority, governance,
+        security-context and distributed-concurrency metadata must not
+        be exposed merely because it exists internally.
+    4.  Egress terminates Harmonia management of the emitted
+        representation; retained provenance or audit evidence does not
+        extend operational control beyond the boundary.
 
-## 4. Execution & Build Commands
+### Invariant 10: Agora Collaboration & Matrix Isolation
 
-- **Run Architecture Tests**:
-  ```bash
-  mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
-  ```
+-   **Rule**: Agora makes Matrix a Harmonia collaboration capability; it
+    does NOT make Matrix the Harmonia architecture.
+-   **Enforcement**:
+    1.  **Ponos Decoupling**: Direct dependency from Agora to Ponos
+        (`net.fhirfactory.harmonia.energeia.ponos..`) is strictly
+        forbidden. Agora coordinates with workflows exclusively via
+        Petasos queues (`petasos.queue.agora.*`).
+    2.  **Matrix DTO Encapsulation**: Matrix protocol structures
+        (Client-Server and Synapse Admin DTOs) must be encapsulated in
+        `agora-matrix`. Raw Matrix types must never leak into other
+        Harmonia modules.
+    3.  **Themis Default-Deny Authorization**: Every room creation,
+        invite, join, or kick operation must be gated by Themis policy
+        evaluation (`themisAuthorizer.evaluate(...)`).
+    4.  **Zero-PHI Room Metadata**: Room aliases, Space names, and
+        topics must never include patient names, DOB, MRN, or clinical
+        details (use opaque UUIDs).
 
-- **Run Inbound MLLP Gateway Tests (REC-001)**:
-  ```bash
-  mvn test -pl pylai/pylai-mllp-in -am
-  ```
+------------------------------------------------------------------------
 
-- **Run Ergon Activity & Outbound Gateway Tests (REC-002)**:
-  ```bash
-  mvn test -pl energeia/erga,pylai/pylai-mllp-out -am
-  ```
+## 4. Automated Architecture Test Suite
 
-- **Run Full Repository Test Suite**:
-  ```bash
-  mvn test
-  ```
+All agents making modifications to the Harmonia repository must verify
+changes against the ArchUnit architecture suite located in
+`paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/`:
+
+-   `ParadeigmaIsolationArchitectureTest`: Asserts zero production
+    dependencies, imports, or simulation flags for Paradeigma across all
+    modules (including `agora`).
+-   `AgoraIsolationArchitectureTest`: Asserts Ponos decoupling, Matrix
+    DTO encapsulation, and Paradeigma isolation for Agora.
+-   `PetasosApiIsolationArchitectureTest`: Asserts zero JMS or ActiveMQ
+    Artemis API leakage into `petasos-api`.
+-   `IrisDecouplingArchitectureTest`: Asserts zero direct JPA,
+    Hibernate, or PostgreSQL database dependencies in Iris.
+-   `ProviderRegistryArchitectureTest`: Asserts `iris-administration`
+    separation from server-side Provider Registry governance.
+-   `PackageLayeringArchitectureTest`: Asserts strict unidirectional
+    dependency layering across all subproject packages.
+-   `SecurityEnforcementArchitectureTest`: Asserts Themis policy
+    contracts and security context structures.
+-   `PylaiPublicationBoundaryArchitectureTest`: Asserts Pylai external
+    publication encapsulation, non-destructive projection, and AX-13
+    egress publication boundary rules.
+-   Architecture and integration tests SHOULD enforce Mneme/Mnemosyne
+    separation and the Pylai external-publication boundary as concrete
+    testable consequences of AX-05 and AX-13. New test classes should be
+    named for the invariant they enforce rather than for a transient
+    implementation mechanism.
+
+------------------------------------------------------------------------
+
+## 5. Execution & Build Commands
+
+-   **Run Architecture Tests**:
+
+    ``` bash
+    mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
+    ```
+
+-   **Run Agora Subsystem Tests**:
+
+    ``` bash
+    mvn test -pl agora/agora-service -am
+    ```
+
+-   **Run Inbound MLLP Gateway Tests (REC-001)**:
+
+    ``` bash
+    mvn test -pl pylai/pylai-mllp-in -am
+    ```
+
+-   **Run Ergon Activity & Outbound Gateway Tests (REC-002)**:
+
+    ``` bash
+    mvn test -pl energeia/erga,pylai/pylai-mllp-out -am
+    ```
+
+-   **Run Full Repository Test Suite**:
+
+    ``` bash
+    mvn test
+    ```
+
+## 6. Junie Plans, Reports and Implementation Sequencing
+
+Files under `.junie/plans/` and `.junie/reports/` are working and historical
+execution artefacts. They are NOT sources of architectural authority.
+
+### 6.1 Authority hierarchy
+
+A Junie plan MUST be interpreted against, in order of authority:
+
+1. `docs/architectural-axioms.md`
+2. this `AGENTS.md`
+3. applicable accepted Architecture Decision Records
+4. applicable requirements and design contracts
+5. `docs/implementation/harmonia-convergence-runtime-integration-plan.md` for
+   convergence/runtime implementation sequencing
+6. the task-specific Junie plan
+
+The convergence/runtime implementation plan is authoritative for the **order
+and scope of implementation activities**, but it does not override the
+Architectural Axioms, this `AGENTS.md`, accepted ADRs, or applicable design
+contracts.
+
+Where an existing Junie plan or report conflicts with a higher-authority
+source, the higher-authority source prevails.
+
+Historical plans and reports MUST NOT be used as evidence that an
+architectural pattern remains valid merely because it was previously
+implemented, proposed, or approved.
+
+Before executing a material architectural plan, Junie MUST identify the
+applicable Architectural Axioms and report any conflict between the proposed
+work, the existing implementation, and those axioms.
+
+### 6.2 Master convergence and runtime implementation plan
+
+The repository-wide master implementation sequence for the current Harmonia
+convergence and runtime-integration programme is:
+
+    docs/implementation/harmonia-convergence-runtime-integration-plan.md
+
+Junie MUST consult that document before planning or implementing work that
+falls within the convergence/runtime programme.
+
+The master plan combines the previously separate architecture-convergence and
+Docker/runtime/deployment activity streams into one ordered programme:
+
+1. Stable Docker Runtime Baseline
+2. Distributed Authoritative Path
+3. Governed Access
+4. Application Migration
+5. Authoritative Search
+6. MicroK8s Runtime
+7. Remaining Convergence Findings
+8. Convergence Closure
+
+For work governed by that plan, Junie MUST:
+
+1. identify the current milestone and exact step before proposing changes;
+2. inspect the repository for evidence of the current implementation state;
+3. preserve accepted outcomes from completed milestones and steps;
+4. implement only the smallest bounded change required by the current step;
+5. add focused verification/conformance evidence appropriate to that step;
+6. report discovered prerequisites, conflicts or missing architectural
+   decisions rather than silently inventing a solution;
+7. stop at the defined step boundary; and
+8. NOT commence a later step or milestone without explicit instruction or
+   approval.
+
+The operating principle is:
+
+> **One plan. One current milestone. One next step.**
+
+### 6.3 Scope discipline
+
+A future milestone MUST NOT be used to justify speculative implementation in
+the current milestone.
+
+In particular, unless the current approved step explicitly requires it, Junie
+MUST NOT:
+
+- introduce MicroK8s concerns before the Docker/component topology is stable;
+- implement authoritative search while completing authoritative point access;
+- migrate application consumers before governed access is production-ready;
+- invent transport authentication inside application code;
+- treat Mneme/Infinispan active-state content as authoritative persistence;
+- expose Mnemosyne persistence implementation as an application-access path;
+- introduce physical DELETE as managed-information lifecycle semantics;
+- introduce a new runtime service, protocol, process or network boundary
+  without explicit architectural justification; or
+- opportunistically fix unrelated MAT findings while executing a bounded
+  convergence step.
+
+If work in the current step reveals a prerequisite belonging to another step,
+Junie MUST report it and stop where necessary rather than silently broadening
+scope.
+
+### 6.4 Step completion and plan maintenance
+
+A convergence/runtime step is not complete merely because code compiles.
+
+The completion report SHOULD identify:
+
+- milestone and step;
+- implementation changes;
+- architectural invariants affected;
+- tests and verification actually executed;
+- exact material test results;
+- unresolved deployment or operational prerequisites;
+- conformance impact, where applicable; and
+- confirmation that later-step work was not commenced.
+
+When a step completes, the master implementation plan SHOULD be updated to
+record its status, material outcome, current milestone, and next step.
+
+Material changes to the sequence or milestone intent MUST be explicit and
+reviewed before subsequent implementation proceeds. Junie MUST NOT rewrite
+historical milestone intent merely to make later implementation appear to have
+followed the plan.
+

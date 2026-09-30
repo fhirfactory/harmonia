@@ -8,9 +8,9 @@ Pause for plan review before starting the goal: No
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -88,7 +88,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -243,7 +243,7 @@ Code is Ready
 
 **Step 1 Architectural Conformance Assessment: Ingress/Egress Boundaries, Operational Metadata Containment, and Security Context Propagation**
 
-This assessment delivers the empirical findings, semantic disambiguation, and architectural conformance classifications for Step 1, evaluating Candidates **MAT-03**, **MAT-04**, and **MAT-08** against the foundational architectural baseline (`docs/architectural-axioms.md`, `AGENTS.md`, and applicable Architecture Decision Records).
+This assessment delivers the empirical findings, semantic disambiguation, and architectural conformance classifications for Step 1, evaluating Candidates **MAT-03**, **MAT-04**, and **MAT-08** against the foundational architectural baseline (`docs/architectural-axioms.md`, `../../AGENTS-old2.md`, and applicable Architecture Decision Records).
 
 ---
 
@@ -269,7 +269,7 @@ All findings in this assessment are evaluated strictly against the exact titles 
 - **Target Files:**
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/controller/FhirRestGatewayController.java` (Lines 112–147, 268–277, 318–323)
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaFhirConverter.java` (Lines 51–71, 99–112, 143, 215–296)
-- **Applicable Axioms & Governance:** `AX-02`, `AX-12`, `AX-13`; `docs/architectural-axioms.md` (Section 4); `AGENTS.md` (Invariant 9); `ADR-002`, `ADR-006`.
+- **Applicable Axioms & Governance:** `AX-02`, `AX-12`, `AX-13`; `docs/architectural-axioms.md` (Section 4); `../../AGENTS-old2.md` (Invariant 9); `ADR-002`, `ADR-006`.
 - **Observed Empirical Facts:**
     1. `PragmaFhirConverter.toFhirTask(Pragma pragma)` maps internal `Pragma` execution envelopes to standard HL7 FHIR R5 `Task` resources. During this mapping, it writes private internal identifiers, workflow state, and operational security context into FHIR extensions:
         - Identifier Systems: `http://fhirfactory.net/harmonia/task/pragma-id`, `http://fhirfactory.net/harmonia/task/correlation-id`, `http://fhirfactory.net/harmonia/task/causation-id` (lines 51–53, 99–112).
@@ -283,7 +283,7 @@ All findings in this assessment are evaluated strictly against the exact titles 
     - `Pragma` represents Harmonia's internal runtime workflow execution envelope (carrying runtime orchestration metadata, execution state, checkpoints, internal correlation IDs, and operational security context). FHIR `Task` represents a standardized healthcare interoperability task resource.
     - The use of Harmonia-private extension URIs (`http://fhirfactory.net/harmonia/*`) is valid internally within Harmonia's subsystem boundaries. However, emitting private operational extensions across an external HTTP REST egress boundary directly violates the requirement that Pylai present a clean, standards-compliant external projection.
 - **Classification:** `AXIOM CONFLICT`
-    - Directly contradicts `AX-02` ("Harmonia's internal operational semantics are private to Harmonia. External systems SHALL NOT be required to understand, preserve, reproduce or participate in them"), `AX-12` ("Internal mechanics SHALL NOT leak across subsystem boundaries or into external contracts"), `AX-13` / Section 4 ("Harmonia-specific operational extensions, value sets and metadata SHALL NOT be exposed to external FHIR consumers... Publication SHALL be fail-closed"), and `AGENTS.md` Invariant 9.
+    - Directly contradicts `AX-02` ("Harmonia's internal operational semantics are private to Harmonia. External systems SHALL NOT be required to understand, preserve, reproduce or participate in them"), `AX-12` ("Internal mechanics SHALL NOT leak across subsystem boundaries or into external contracts"), `AX-13` / Section 4 ("Harmonia-specific operational extensions, value sets and metadata SHALL NOT be exposed to external FHIR consumers... Publication SHALL be fail-closed"), and `../../AGENTS-old2.md` Invariant 9.
 
 ---
 
@@ -292,7 +292,7 @@ All findings in this assessment are evaluated strictly against the exact titles 
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/security/FhirSecurityInterceptor.java` (Lines 106–267)
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/controller/FhirRestGatewayController.java` (Lines 248–254, 294–300)
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/service/ChangeRequestSubmissionService.java` (Lines 145–176)
-- **Applicable Axioms & Governance:** `AX-07`, `AX-13`; `AGENTS.md` (Invariant 6); `ADR-005`.
+- **Applicable Axioms & Governance:** `AX-07`, `AX-13`; `../../AGENTS-old2.md` (Invariant 6); `ADR-005`.
 - **Observed Empirical Facts:**
     1. `FhirSecurityInterceptor.extractPrincipal(request)` (lines 162–207) mints a `ThemisPrincipal` directly from unauthenticated HTTP request headers (`X-Principal-Id`, `X-Requester`, `X-Principal-Type`, `X-Source-Domain`, `X-Source-System`) without cryptographic verification or token validation.
     2. `FhirSecurityInterceptor.extractAuthorities(request)` (lines 209–267) extracts caller permissions and roles directly from the `X-User-Roles` and `X-Security-Scopes` HTTP headers:
@@ -303,7 +303,7 @@ All findings in this assessment are evaluated strictly against the exact titles 
 - **Semantic Disambiguation:**
     - Security context evaluation must be distinguished from untrusted caller assertions. While `Themis` provides a default-deny policy evaluator, minting `ThemisSecurityContext` directly from client-controlled, unauthenticated HTTP headers bypasses boundary authentication, allowing arbitrary external callers to claim arbitrary authorities.
 - **Classification:** `AXIOM CONFLICT`
-    - Contradicts `AX-07` ("Trusted identity and security context SHALL be established before governed actions are performed... Security SHALL be enforced by framework and platform boundaries where practicable and SHALL NOT depend solely upon developer knowledge, coding convention or voluntary caller behaviour") and `AGENTS.md` Invariant 6 ("callers must not establish authority through caller-controlled resource attributes or FHIR tags").
+    - Contradicts `AX-07` ("Trusted identity and security context SHALL be established before governed actions are performed... Security SHALL be enforced by framework and platform boundaries where practicable and SHALL NOT depend solely upon developer knowledge, coding convention or voluntary caller behaviour") and `../../AGENTS-old2.md` Invariant 6 ("callers must not establish authority through caller-controlled resource attributes or FHIR tags").
 
 ---
 
@@ -384,9 +384,9 @@ None. Findings are accurate, cited lines match the source, semantic disambiguati
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -464,7 +464,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -604,9 +604,9 @@ Verify all 20 ADRs, assess ArchUnit test coverage, and produce the comprehensive
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -684,7 +684,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -839,7 +839,7 @@ Code is Ready
 
 **Step 2 Architectural Conformance Assessment: State Separation, Active Cache Usage, and Presentation Tier Decoupling**
 
-This assessment delivers the empirical findings, architectural evaluations, and conformance classifications for Step 2 of the Harmonia Architectural Assessment Plan. It investigates Candidates **MAT-01**, **MAT-02**, **MAT-05**, and **MAT-09** against the foundational architectural baseline (`docs/architectural-axioms.md`, `AGENTS.md`, and accepted Architecture Decision Records `ADR-003`, `ADR-008`, `ADR-010`, `ADR-013`, `ADR-018`, `ADR-019`, and `ADR-020`).
+This assessment delivers the empirical findings, architectural evaluations, and conformance classifications for Step 2 of the Harmonia Architectural Assessment Plan. It investigates Candidates **MAT-01**, **MAT-02**, **MAT-05**, and **MAT-09** against the foundational architectural baseline (`docs/architectural-axioms.md`, `../../AGENTS-old2.md`, and accepted Architecture Decision Records `ADR-003`, `ADR-008`, `ADR-010`, `ADR-013`, `ADR-018`, `ADR-019`, and `ADR-020`).
 
 ---
 
@@ -866,7 +866,7 @@ All evaluations are conducted against the exact titles and normative mandates of
 - **Target Files:**
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/service/FhirCacheService.java` (Lines 152–199)
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/rest/PractitionerResource.java` (Lines 64–100)
-- **Applicable Axioms & Governance:** `AX-05`, `AX-10`, `AX-11`; `AGENTS.md` (Section 2, Invariant 3, Invariant 8); `ADR-003`, `ADR-008`, `ADR-018`, `ADR-020`.
+- **Applicable Axioms & Governance:** `AX-05`, `AX-10`, `AX-11`; `../../AGENTS-old2.md` (Section 2, Invariant 3, Invariant 8); `ADR-003`, `ADR-008`, `ADR-018`, `ADR-020`.
 - **Observed Empirical Facts:**
     1. `PractitionerResource.java` provides direct mutation and deletion REST endpoints:
         - `create(String payload)` (`POST /fhir/Practitioner`, lines 64–76) parses the payload and calls `cacheService.saveResource(resource)`.
@@ -882,7 +882,7 @@ All evaluations are conducted against the exact titles and normative mandates of
     - `Mneme` (Infinispan) is an active distributed coordination and caching capability. It is non-authoritative and reconstructable (`ADR-018`, `ADR-019`).
     - Treating raw `remoteCache.put` and `remoteCache.remove` as the application persistence path in the presentation tier conflates active cache availability with authoritative durable state.
 - **Classification:** `AXIOM CONFLICT`
-    - Directly contradicts `AX-05` ("Active State and Authoritative Durable State Are Distinct" — "Presentation and application tiers SHALL NOT treat raw cache access as an alternative persistence path. Governed state mutations SHALL be committed through authoritative persistence"), `AGENTS.md` Invariant 8 ("Ungoverned raw cache mutation must not be exposed as an alternative application path for Harmonia-managed information"), `ADR-008` (Iris begins as a read-oriented viewer), `ADR-018`, and `ADR-020`.
+    - Directly contradicts `AX-05` ("Active State and Authoritative Durable State Are Distinct" — "Presentation and application tiers SHALL NOT treat raw cache access as an alternative persistence path. Governed state mutations SHALL be committed through authoritative persistence"), `../../AGENTS-old2.md` Invariant 8 ("Ungoverned raw cache mutation must not be exposed as an alternative application path for Harmonia-managed information"), `ADR-008` (Iris begins as a read-oriented viewer), `ADR-018`, and `ADR-020`.
 
 ---
 
@@ -913,7 +913,7 @@ All evaluations are conducted against the exact titles and normative mandates of
     - `iris/iris-befe/pom.xml` (Lines 56–60)
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/rest/AuditEventResource.java` (Lines 41–178)
     - `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/IrisDecouplingArchitectureTest.java` (Lines 37–95)
-- **Applicable Axioms & Governance:** `AX-05`, `AX-12`; `AGENTS.md` (Section 2, Invariant 3).
+- **Applicable Axioms & Governance:** `AX-05`, `AX-12`; `../../AGENTS-old2.md` (Section 2, Invariant 3).
 - **Observed Empirical Facts:**
     1. `iris/iris-befe/pom.xml` declares a direct compile dependency on `net.fhirfactory.harmonia:kleio-persistence` (lines 57–60).
     2. `AuditDataSourceProducer.java` defines a container `@DataSourceDefinition` connecting directly to the PostgreSQL database:
@@ -930,10 +930,10 @@ All evaluations are conducted against the exact titles and normative mandates of
     3. `AuditEventResource.java` injects `AuditService` (satisfied at runtime by `DurableAuditService` from `kleio-persistence`), executing direct JDBC SQL queries against PostgreSQL from within the `iris-befe` WAR container.
     4. `IrisDecouplingArchitectureTest` contains static checks that assert Iris POMs do not contain `<artifactId>postgresql</artifactId>` and Java files do not contain `import org.postgresql`. However, `AuditDataSourceProducer` specifies `"org.postgresql.ds.PGSimpleDataSource"` as a string literal attribute in the `@DataSourceDefinition` annotation, which evaded the ArchUnit token check while establishing direct JDBC PostgreSQL connectivity from the presentation tier.
 - **Semantic Disambiguation:**
-    - `AGENTS.md` Section 2 and Invariant 3 mandate that `Iris` presentation services must be strictly decoupled from backend databases and JDBC drivers, communicating through defined application-facing service interfaces.
+    - `../../AGENTS-old2.md` Section 2 and Invariant 3 mandate that `Iris` presentation services must be strictly decoupled from backend databases and JDBC drivers, communicating through defined application-facing service interfaces.
     - While Kleio audit records are immutable and append-only (`AX-08`), embedding physical relational DataSources and direct SQL persistence dependencies inside the presentation tier violates presentation tier encapsulation (`AX-12`, Invariant 3).
 - **Classification:** `AXIOM CONFLICT`
-    - Contradicts `AGENTS.md` Invariant 3 ("The Iris presentation tier (`iris-befe` and Vue 3 SPAs) must remain presentation-only and decoupled from internal databases... Iris modules must not depend on or import JPA/Hibernate, PostgreSQL drivers, or server-side JPA") and `AX-12` ("Subsystems SHALL encapsulate their internal implementation mechanisms, storage strategies, and operational choreography behind clean, semantically meaningful interfaces").
+    - Contradicts `../../AGENTS-old2.md` Invariant 3 ("The Iris presentation tier (`iris-befe` and Vue 3 SPAs) must remain presentation-only and decoupled from internal databases... Iris modules must not depend on or import JPA/Hibernate, PostgreSQL drivers, or server-side JPA") and `AX-12` ("Subsystems SHALL encapsulate their internal implementation mechanisms, storage strategies, and operational choreography behind clean, semantically meaningful interfaces").
 
 ---
 
@@ -965,7 +965,7 @@ All evaluations are conducted against the exact titles and normative mandates of
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`MAT-01`** | **Iris BEFE** | `FhirCacheService.java`, `PractitionerResource.java` | `AX-05`, `AX-10`, `AX-11`; `ADR-008`, `ADR-018`, `ADR-020` | **`AXIOM CONFLICT`** | Direct `remoteCache.put` and `remoteCache.remove` invocations in `iris-befe` treat volatile Infinispan cache as an alternative persistence path, bypassing Mnemosyne durable storage. |
 | **`MAT-02`** | **Iris BEFE** | `FhirCacheService.java`, `PractitionerResource.java` | `AX-04`, `AX-05`, `AX-11`; `ADR-010`, `ADR-019` | **`AXIOM CONFLICT`** | `searchResources(...)` downloads full cache datasets via `remoteCache.values()` into JVM heap for linear string matching, bypassing engine query indexing and durable search backing. |
-| **`MAT-05`** | **Iris BEFE / Kleio** | `AuditDataSourceProducer.java`, `iris-befe/pom.xml`, `AuditEventResource.java` | `AX-05`, `AX-12`; `AGENTS.md` (Invariant 3) | **`AXIOM CONFLICT`** | `iris-befe` defines a direct PostgreSQL container `@DataSourceDefinition` and depends on `kleio-persistence` JDBC queries, violating presentation tier decoupling. |
+| **`MAT-05`** | **Iris BEFE / Kleio** | `AuditDataSourceProducer.java`, `iris-befe/pom.xml`, `AuditEventResource.java` | `AX-05`, `AX-12`; `../../AGENTS-old2.md` (Invariant 3) | **`AXIOM CONFLICT`** | `iris-befe` defines a direct PostgreSQL container `@DataSourceDefinition` and depends on `kleio-persistence` JDBC queries, violating presentation tier decoupling. |
 | **`MAT-09`** | **Pylai MLLP Base** | `DefaultProvenanceService.java`, `ProvenanceService.java` | `AX-05`, `AX-08`, `AX-10`; `ADR-013`, `ADR-018`, `ADR-020` | **`AXIOM CONFLICT`** | `DefaultProvenanceService` stores FHIR `Provenance` exclusively in volatile cache and provides physical deletion (`remoteCache.remove`), violating state durability and immutability. |
 
 ---
@@ -1024,9 +1024,9 @@ Better approach: quote AX-05/AX-08/AX-10 verbatim from the axioms file and cite 
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -1104,7 +1104,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -1244,9 +1244,9 @@ Verify all 20 ADRs, assess ArchUnit test coverage, and produce the comprehensive
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -1324,7 +1324,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -1485,7 +1485,7 @@ Code is Ready
 
 **Step 3 Architectural Conformance Assessment: Persistence Engines, Native Platform Machinery, and Workflow Lifecycle Semantics**
 
-This assessment delivers the empirical findings, architectural evaluations, and conformance classifications for Step 3 of the Harmonia Architectural Assessment Plan. It investigates Candidates **MAT-06** and **MAT-07**, and evaluates native platform machinery usage across ActiveMQ Artemis (`Petasos`), Infinispan (`Hestia`/`Mneme`), HAPI FHIR (`Calliope`/`Pylai`/`Hestia`), and PostgreSQL (`Kleio`/`Mnemosyne`) against `docs/architectural-axioms.md`, `AGENTS.md`, and accepted Architecture Decision Records (`ADR-001`, `ADR-003`, `ADR-004`, `ADR-010`, `ADR-013`, `ADR-014`, `ADR-018`, and `ADR-020`).
+This assessment delivers the empirical findings, architectural evaluations, and conformance classifications for Step 3 of the Harmonia Architectural Assessment Plan. It investigates Candidates **MAT-06** and **MAT-07**, and evaluates native platform machinery usage across ActiveMQ Artemis (`Petasos`), Infinispan (`Hestia`/`Mneme`), HAPI FHIR (`Calliope`/`Pylai`/`Hestia`), and PostgreSQL (`Kleio`/`Mnemosyne`) against `docs/architectural-axioms.md`, `../../AGENTS-old2.md`, and accepted Architecture Decision Records (`ADR-001`, `ADR-003`, `ADR-004`, `ADR-010`, `ADR-013`, `ADR-014`, `ADR-018`, and `ADR-020`).
 
 ---
 
@@ -1596,7 +1596,7 @@ Harmonia’s integration with underlying technology engines (ActiveMQ Artemis, I
 **(a) Appropriate Native Machinery Usage Already Present**
 1. **ActiveMQ Artemis (`Petasos` Subsystem):**
     - `petasos-artemis` (`ArtemisPetasos`, `ArtemisConnectionManager`, `ArtemisPetasosProducer`, `ArtemisPetasosConsumer`) leverages Artemis Core JMS client pooling, durable destination queues, message acknowledgments, transaction boundaries, and dead-letter queue routing (`AX-04`, `AX-09`, `ADR-001`, `ADR-014`).
-    - `petasos-api` cleanly encapsulates message transport without leaking JMS or ActiveMQ classes (`AGENTS.md` Invariant 2).
+    - `petasos-api` cleanly encapsulates message transport without leaking JMS or ActiveMQ classes (`../../AGENTS-old2.md` Invariant 2).
 2. **PostgreSQL Relational Persistence (`Kleio` & `Mnemosyne`):**
     - `JdbcAppendOnlyAuditEventRepository` (`kleio-persistence`) uses native PostgreSQL `INSERT ... ON CONFLICT DO NOTHING` and `DataSource` connection pooling to enforce immutable append-only storage (`AX-08`, `ADR-013`).
     - `AuthoritativePersistenceService` (`mnemosyne-clinical`) utilizes PostgreSQL programmatic transaction management (`TransactionTemplate`) and atomic CAS queries (`updateIfVersionMatches`) with database unique constraints (`uk_resource_type_fhir_id`) for monotonic version progression (`AX-05`, `ADR-018`).
@@ -1677,9 +1677,9 @@ None blocking.
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -1757,7 +1757,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -1897,9 +1897,9 @@ Verify all 20 ADRs, assess ArchUnit test coverage, and produce the comprehensive
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -1977,7 +1977,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
@@ -2145,7 +2145,7 @@ Code is Ready
 
 **Harmonia Architectural Conformance Assessment Report**
 
-**Assessment Authority Baseline:** `docs/architectural-axioms.md` (Highest Authority), `AGENTS.md`, and Accepted `ADR-001` through `ADR-020`  
+**Assessment Authority Baseline:** `docs/architectural-axioms.md` (Highest Authority), `../../AGENTS-old2.md`, and Accepted `ADR-001` through `ADR-020`  
 **Assessment Date:** September 2026  
 **Assessment Scope:** Repository-wide architectural conformance analysis across all 9 core subprojects (`calliope`, `themis`, `hestia`, `petasos`, `energeia`, `pylai`, `iris`, `agora`, `paradeigma`) and supporting modules (`kleio`).
 
@@ -2211,7 +2211,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/service/FhirCacheService.java` (Lines 83–109)
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/rest/PractitionerResource.java` (Lines 64–98)
-- **Applicable Axioms & Governance:** `AX-05` ("Active State and Authoritative Durable State Are Distinct"), `AX-10`, `AX-11`; `ADR-003`, `ADR-018`, `ADR-020`; `AGENTS.md` (Invariant 3 & Invariant 8).
+- **Applicable Axioms & Governance:** `AX-05` ("Active State and Authoritative Durable State Are Distinct"), `AX-10`, `AX-11`; `ADR-003`, `ADR-018`, `ADR-020`; `../../AGENTS-old2.md` (Invariant 3 & Invariant 8).
 - **Observed Empirical Facts:**
     1. `FhirCacheService.saveResource(String resourceType, String id, String json)` invokes `remoteCache.put(cacheKey, json)` directly against Infinispan (lines 88–92).
     2. `FhirCacheService.deleteResource(String resourceType, String id)` invokes `remoteCache.remove(cacheKey)` directly (lines 104–108).
@@ -2239,7 +2239,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/controller/FhirRestGatewayController.java` (Lines 88–142)
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaFhirConverter.java` (Lines 68–122)
-- **Applicable Axioms & Governance:** `AX-02` ("Standards at the Boundary; Harmonia Within the Boundary"), `AX-12` ("Hide Plumbing, Not Information"), `AX-13` ("Harmonia Management Has an Explicit Boundary"); `ADR-002`, `ADR-006`; `AGENTS.md` (Invariant 9).
+- **Applicable Axioms & Governance:** `AX-02` ("Standards at the Boundary; Harmonia Within the Boundary"), `AX-12` ("Hide Plumbing, Not Information"), `AX-13` ("Harmonia Management Has an Explicit Boundary"); `ADR-002`, `ADR-006`; `../../AGENTS-old2.md` (Invariant 9).
 - **Observed Empirical Facts:**
     1. `PragmaFhirConverter.toFhirTask(Pragma pragma)` maps internal execution state into FHIR `Task` extensions with URIs:
         - `http://fhirfactory.net/harmonia/task/praxis-id`
@@ -2256,7 +2256,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/security/FhirSecurityTagManager.java` (Lines 34–98)
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaFhirConverter.java` (Lines 45–66)
-- **Applicable Axioms & Governance:** `AX-06` ("Information Authority Is Explicit"), `AX-07` ("Security Is Intrinsic to Managed Operations"); `ADR-005`, `ADR-009`; `AGENTS.md` (Invariant 6).
+- **Applicable Axioms & Governance:** `AX-06` ("Information Authority Is Explicit"), `AX-07` ("Security Is Intrinsic to Managed Operations"); `ADR-005`, `ADR-009`; `../../AGENTS-old2.md` (Invariant 6).
 - **Observed Empirical Facts:**
     1. `FhirSecurityTagManager` inspects and applies standard FHIR `meta.security` tags (`http://terminology.hl7.org/CodeSystem/v3-Confidentiality`, e.g. `R`, `N`, `V`).
     2. These confidentiality labels represent domain-level clinical privacy classifications intrinsic to the health data, rather than dynamic operational execution context.
@@ -2270,13 +2270,13 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java` (Lines 35–62)
     - `iris/iris-befe/pom.xml` (Lines 68–82)
-- **Applicable Axioms & Governance:** `AX-04`, `AX-05`, `AX-12`; `AGENTS.md` (Invariant 3: "Iris Presentation Decoupling").
+- **Applicable Axioms & Governance:** `AX-04`, `AX-05`, `AX-12`; `../../AGENTS-old2.md` (Invariant 3: "Iris Presentation Decoupling").
 - **Observed Empirical Facts:**
     1. `AuditDataSourceProducer.java` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`className = "org.postgresql.ds.PGSimpleDataSource"`, `url = "jdbc:postgresql://localhost:5432/harmonia_audit"`).
     2. It produces a `javax.sql.DataSource` and passes it to `kleio-persistence` (`JdbcAppendOnlyAuditEventRepository`), executing direct JDBC SQL queries from the presentation tier.
     3. `iris-befe/pom.xml` declares direct dependencies on `kleio-persistence` and `postgresql`.
 - **Classification:** **`AXIOM CONFLICT`**
-    - Directly contradicts `AX-05` (*"Presentation and application tiers must not treat raw cache access as an alternative persistence path"*), `AX-12`, and `AGENTS.md` Invariant 3 (*"The Iris presentation tier must remain presentation-only and decoupled from internal databases"*).
+    - Directly contradicts `AX-05` (*"Presentation and application tiers must not treat raw cache access as an alternative persistence path"*), `AX-12`, and `../../AGENTS-old2.md` Invariant 3 (*"The Iris presentation tier must remain presentation-only and decoupled from internal databases"*).
 
 ---
 
@@ -2316,7 +2316,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/controller/FhirRestGatewayController.java` (Lines 72–85)
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/interceptor/FhirSecurityInterceptor.java` (Lines 45–78)
-- **Applicable Axioms & Governance:** `AX-07` ("Security Is Intrinsic to Managed Operations"), `AX-13` ("Harmonia Management Has an Explicit Boundary"); `ADR-005`; `AGENTS.md` (Invariant 6).
+- **Applicable Axioms & Governance:** `AX-07` ("Security Is Intrinsic to Managed Operations"), `AX-13` ("Harmonia Management Has an Explicit Boundary"); `ADR-005`; `../../AGENTS-old2.md` (Invariant 6).
 - **Observed Empirical Facts:**
     1. `FhirRestGatewayController` extracts `X-Requester` and `X-Source-System` HTTP headers directly from incoming unauthenticated HTTP requests.
     2. It constructs a `ThemisSecurityContext` with elevated system roles based entirely on these unvalidated header values, bypassing cryptographic token validation, mutual TLS client authentication, or API gateway signatures.
@@ -2340,7 +2340,7 @@ Evaluations are performed against the exact repository titles and normative mand
 **Finding MAT-10: Mechanical Architecture Test Coverage and Semantic Fidelity**
 - **Target Files:**
     - `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/*`
-- **Applicable Axioms & Governance:** `AX-12` ("Hide Plumbing, Not Information"), `AX-05`, `AX-13`; `AGENTS.md` (Section 4).
+- **Applicable Axioms & Governance:** `AX-12` ("Hide Plumbing, Not Information"), `AX-05`, `AX-13`; `../../AGENTS-old2.md` (Section 4).
 - **Observed Empirical Facts:**
     1. Existing ArchUnit test suites (`ParadeigmaIsolationArchitectureTest`, `PetasosApiIsolationArchitectureTest`, `AgoraIsolationArchitectureTest`, `PackageLayeringArchitectureTest`, `GovernedWriteContractArchitectureTest`, `MnemosyneAuthoritativePersistenceArchitectureTest`) successfully assert static package boundaries, class dependencies, and method naming patterns.
     2. However, existing tests rely heavily on static source string checking (`"import org.postgresql"`) which fails to catch runtime bypasses such as container `@DataSourceDefinition` declarations in `iris-befe` (`MAT-05`).
@@ -2419,9 +2419,9 @@ In accordance with `AX-04`, technology engines provide implementation machinery 
 The ArchUnit test suite in `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/` was evaluated for invariant coverage:
 
 **Enforced Invariants**
-- **Paradeigma Isolation (`ParadeigmaIsolationArchitectureTest`):** Guarantees zero production dependencies, imports, or simulation flags for Paradeigma across all modules (`AGENTS.md` Invariant 1).
-- **Petasos API Encapsulation (`PetasosApiIsolationArchitectureTest`):** Enforces zero JMS or ActiveMQ Artemis leakage in `petasos-api` (`AGENTS.md` Invariant 2).
-- **Agora Isolation (`AgoraIsolationArchitectureTest`):** Asserts Ponos decoupling, Matrix DTO encapsulation, and Themis default-deny governance (`AGENTS.md` Invariant 10).
+- **Paradeigma Isolation (`ParadeigmaIsolationArchitectureTest`):** Guarantees zero production dependencies, imports, or simulation flags for Paradeigma across all modules (`../../AGENTS-old2.md` Invariant 1).
+- **Petasos API Encapsulation (`PetasosApiIsolationArchitectureTest`):** Enforces zero JMS or ActiveMQ Artemis leakage in `petasos-api` (`../../AGENTS-old2.md` Invariant 2).
+- **Agora Isolation (`AgoraIsolationArchitectureTest`):** Asserts Ponos decoupling, Matrix DTO encapsulation, and Themis default-deny governance (`../../AGENTS-old2.md` Invariant 10).
 - **Governed Write Port Contracts (`GovernedWriteContractArchitectureTest`, `MnemosyneAuthoritativePersistenceArchitectureTest`):** Asserts that `GovernedWriter` and `AuthoritativePersistencePort` expose zero physical `delete`, `remove`, or `purge` methods (`ADR-020`).
 - **Package Layering (`PackageLayeringArchitectureTest`):** Enforces unidirectional dependency layering across subprojects.
 
@@ -2578,7 +2578,7 @@ Code is Ready
 
 **Harmonia Architectural Conformance Assessment Report**
 
-**Assessment Authority Baseline:** `docs/architectural-axioms.md` (Highest Authority), `AGENTS.md`, and Accepted `ADR-001` through `ADR-020`  
+**Assessment Authority Baseline:** `docs/architectural-axioms.md` (Highest Authority), `../../AGENTS-old2.md`, and Accepted `ADR-001` through `ADR-020`  
 **Assessment Date:** September 2026  
 **Assessment Scope:** Repository-wide architectural conformance analysis across all 9 core subprojects (`calliope`, `themis`, `hestia`, `petasos`, `energeia`, `pylai`, `iris`, `agora`, `paradeigma`) and supporting modules (`kleio`).
 
@@ -2644,7 +2644,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/service/FhirCacheService.java` (Lines 152–199)
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/rest/PractitionerResource.java` (Lines 64–100)
-- **Applicable Axioms & Governance:** `AX-05` (*"Active State and Authoritative Durable State Are Distinct"*), `AX-10`, `AX-11`; `ADR-003`, `ADR-018`, `ADR-020`; `AGENTS.md` (Invariant 3 & Invariant 8).
+- **Applicable Axioms & Governance:** `AX-05` (*"Active State and Authoritative Durable State Are Distinct"*), `AX-10`, `AX-11`; `ADR-003`, `ADR-018`, `ADR-020`; `../../AGENTS-old2.md` (Invariant 3 & Invariant 8).
 - **Observed Empirical Facts:**
     1. `FhirCacheService.putResourceJson(String resourceType, String id, String jsonPayload)` invokes `remoteCache.put(id, jsonPayload)` directly against Infinispan (lines 152–158).
     2. `FhirCacheService.saveResource(T resource)` serializes the resource and delegates directly to `putResourceJson` (lines 160–193).
@@ -2673,7 +2673,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/controller/FhirRestGatewayController.java` (Lines 112–147)
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaFhirConverter.java` (Lines 55–70, 89–122)
-- **Applicable Axioms & Governance:** `AX-02` (*"Standards at the Boundary; Harmonia Within the Boundary"*), `AX-12` (*"Hide Plumbing, Not Information"*), `AX-13` (*"Harmonia Management Has an Explicit Boundary"*); `ADR-002`, `ADR-006`; `AGENTS.md` (Invariant 9).
+- **Applicable Axioms & Governance:** `AX-02` (*"Standards at the Boundary; Harmonia Within the Boundary"*), `AX-12` (*"Hide Plumbing, Not Information"*), `AX-13` (*"Harmonia Management Has an Explicit Boundary"*); `ADR-002`, `ADR-006`; `../../AGENTS-old2.md` (Invariant 9).
 - **Observed Empirical Facts:**
     1. `PragmaFhirConverter.toFhirTask(Pragma pragma)` maps internal execution state into FHIR `Task` extensions with URIs:
         - `http://fhirfactory.net/harmonia/task/praxis-id`
@@ -2690,7 +2690,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/security/FhirSecurityTagManager.java` (Lines 34–98)
     - `calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaFhirConverter.java` (Lines 62–71)
-- **Applicable Axioms & Governance:** `AX-06` (*"Information Authority Is Explicit"*), `AX-07` (*"Security Is Intrinsic to Managed Operations"*); `ADR-005`, `ADR-009`; `AGENTS.md` (Invariant 6).
+- **Applicable Axioms & Governance:** `AX-06` (*"Information Authority Is Explicit"*), `AX-07` (*"Security Is Intrinsic to Managed Operations"*); `ADR-005`, `ADR-009`; `../../AGENTS-old2.md` (Invariant 6).
 - **Observed Empirical Facts:**
     1. `FhirSecurityTagManager` inspects and applies standard FHIR `meta.security` tags (`http://terminology.hl7.org/CodeSystem/v3-Confidentiality`, e.g. `R`, `N`, `V`).
     2. These confidentiality labels represent domain-level clinical privacy classifications intrinsic to the health data, rather than dynamic operational execution context.
@@ -2704,13 +2704,13 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java` (Lines 34–45, 51–56)
     - `iris/iris-befe/pom.xml` (Lines 68–82)
-- **Applicable Axioms & Governance:** `AX-04`, `AX-05`, `AX-12`; `AGENTS.md` (Invariant 3: *"Iris Presentation Decoupling"*).
+- **Applicable Axioms & Governance:** `AX-04`, `AX-05`, `AX-12`; `../../AGENTS-old2.md` (Invariant 3: *"Iris Presentation Decoupling"*).
 - **Observed Empirical Facts:**
     1. `AuditDataSourceProducer.java` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`className = "org.postgresql.ds.PGSimpleDataSource"`, `url = "${env.FHIR_DB_URL:jdbc:postgresql://postgres-1:5432/fhir_node_1}"`).
     2. It produces a `javax.sql.DataSource` and passes it to `kleio-persistence` (`JdbcAppendOnlyAuditEventRepository`), executing direct JDBC SQL queries from the presentation tier.
     3. `iris-befe/pom.xml` declares direct dependencies on `kleio-persistence` and `postgresql`.
 - **Architectural Interpretation & Classification:** **`AXIOM CONFLICT`**
-    - Contradicts `AX-05` (*"Mneme manages active use; Mnemosyne establishes durable truth"*), `AX-12`, and `AGENTS.md` Invariant 3 (*"The Iris presentation tier (iris-befe and Vue 3 SPAs) must remain presentation-only and decoupled from internal databases"*).
+    - Contradicts `AX-05` (*"Mneme manages active use; Mnemosyne establishes durable truth"*), `AX-12`, and `../../AGENTS-old2.md` Invariant 3 (*"The Iris presentation tier (iris-befe and Vue 3 SPAs) must remain presentation-only and decoupled from internal databases"*).
 
 ---
 
@@ -2748,7 +2748,7 @@ Evaluations are performed against the exact repository titles and normative mand
 - **Target Files:**
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/security/FhirSecurityInterceptor.java` (Lines 58–66, 112–160, 162–207)
     - `pylai/pylai-fhir-registry/src/main/java/net/fhirfactory/harmonia/pylai/fhir/controller/FhirRestGatewayController.java` (Lines 103, 117, 162)
-- **Applicable Axioms & Governance:** `AX-07` (*"Security Is Intrinsic to Managed Operations"*), `AX-13` (*"Harmonia Management Has an Explicit Boundary"*); `ADR-005`; `AGENTS.md` (Invariant 6).
+- **Applicable Axioms & Governance:** `AX-07` (*"Security Is Intrinsic to Managed Operations"*), `AX-13` (*"Harmonia Management Has an Explicit Boundary"*); `ADR-005`; `../../AGENTS-old2.md` (Invariant 6).
 - **Observed Empirical Facts:**
     1. `FhirSecurityInterceptor.extractPrincipal(HttpServletRequest request)` (lines 162–207) extracts `X-Principal-Id`, `X-Requester`, `X-Principal-Type`, `X-Source-Domain`, and `X-Source-System` HTTP headers directly from incoming HTTP requests without cryptographic token verification or mutual TLS authentication.
     2. In `extractAuthorities(HttpServletRequest request)` (lines 209–250), roles and security scopes are extracted directly from `X-User-Roles` and `X-Security-Scopes` headers and converted into `ThemisAuthority` permissions.
@@ -2773,7 +2773,7 @@ Evaluations are performed against the exact repository titles and normative mand
 **Finding MAT-10: Mechanical Architecture Test Coverage and Semantic Fidelity**
 - **Target Files:**
     - `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/*`
-- **Applicable Axioms & Governance:** `AX-12` (*"Hide Plumbing, Not Information"*), `AX-05`, `AX-13`; `AGENTS.md` (Section 4).
+- **Applicable Axioms & Governance:** `AX-12` (*"Hide Plumbing, Not Information"*), `AX-05`, `AX-13`; `../../AGENTS-old2.md` (Section 4).
 - **Observed Empirical Facts:**
     1. Existing ArchUnit test suites (`ParadeigmaIsolationArchitectureTest`, `PetasosApiIsolationArchitectureTest`, `AgoraIsolationArchitectureTest`, `PackageLayeringArchitectureTest`, `GovernedWriteContractArchitectureTest`, `MnemosyneAuthoritativePersistenceArchitectureTest`) assert static package boundaries, class dependencies, and method naming patterns.
     2. Existing tests rely on static source string checking (`"import org.postgresql"`) which does not catch container `@DataSourceDefinition` declarations in `iris-befe` (`MAT-05`).
@@ -2852,9 +2852,9 @@ In accordance with `AX-04`, technology engines provide implementation machinery 
 The ArchUnit test suite in `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/` was evaluated for invariant coverage:
 
 **Enforced Invariants**
-- **Paradeigma Isolation (`ParadeigmaIsolationArchitectureTest`):** Guarantees zero production dependencies, imports, or simulation flags for Paradeigma across all modules (`AGENTS.md` Invariant 1).
-- **Petasos API Encapsulation (`PetasosApiIsolationArchitectureTest`):** Enforces zero JMS or ActiveMQ Artemis leakage in `petasos-api` (`AGENTS.md` Invariant 2).
-- **Agora Isolation (`AgoraIsolationArchitectureTest`):** Asserts Ponos decoupling, Matrix DTO encapsulation, and Themis default-deny governance (`AGENTS.md` Invariant 10).
+- **Paradeigma Isolation (`ParadeigmaIsolationArchitectureTest`):** Guarantees zero production dependencies, imports, or simulation flags for Paradeigma across all modules (`../../AGENTS-old2.md` Invariant 1).
+- **Petasos API Encapsulation (`PetasosApiIsolationArchitectureTest`):** Enforces zero JMS or ActiveMQ Artemis leakage in `petasos-api` (`../../AGENTS-old2.md` Invariant 2).
+- **Agora Isolation (`AgoraIsolationArchitectureTest`):** Asserts Ponos decoupling, Matrix DTO encapsulation, and Themis default-deny governance (`../../AGENTS-old2.md` Invariant 10).
 - **Governed Write Port Contracts (`GovernedWriteContractArchitectureTest`, `MnemosyneAuthoritativePersistenceArchitectureTest`):** Asserts that `GovernedWriter` and `AuthoritativePersistencePort` expose zero physical `delete`, `remove`, or `purge` methods (`ADR-020`).
 - **Package Layering (`PackageLayeringArchitectureTest`):** Enforces unidirectional dependency layering across subprojects.
 
@@ -2899,7 +2899,7 @@ The ArchUnit test suite in `paradeigma/paradeigma-test/src/test/java/net/fhirfac
 1. **Priority 1: Ingress Authentication & Egress Boundary Sanitization (`MAT-03`, `MAT-08`)**
     - *Review Objective:* Review external gateway boundaries to verify compliance with interoperability standards (`AX-02`), fail-closed egress sanitization (`AX-13`), and trusted identity minting for security contexts (`AX-07`).
 2. **Priority 2: Active State vs Durable State Separation & Presentation Decoupling (`MAT-01`, `MAT-05`, `MAT-09`)**
-    - *Review Objective:* Review data mutation paths across presentation and gateway tiers to verify alignment with Mnemosyne authoritative state boundaries (`AX-05`), presentation tier decoupling (`AGENTS.md` Invariant 3), and immutable audit ownership (`AX-08`, `ADR-013`).
+    - *Review Objective:* Review data mutation paths across presentation and gateway tiers to verify alignment with Mnemosyne authoritative state boundaries (`AX-05`), presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3), and immutable audit ownership (`AX-08`, `ADR-013`).
 3. **Priority 3: Authoritative-Backed Search (`MAT-02`)**
     - *Review Objective:* Review search query execution paths to verify alignment with durable search backing (`ADR-010`) and engine indexing capabilities (`AX-04`, `AX-11`) rather than in-memory cluster cache scans.
 4. **Priority 4: Distribution Resilience & Visible Failure (`MAT-07a`)**
@@ -3073,9 +3073,9 @@ None. The ADR-020 source-fidelity defect flagged in the prior FAIL is fully reso
 
 The purpose of this assessment plan is to define the methodology and execution framework for a rigorous, read-only architectural conformance assessment of the Harmonia repository against the foundational architectural baseline.
 
-In accordance with `AGENTS.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
+In accordance with `../../AGENTS-old2.md` and `docs/architectural-axioms.md`, the assessment applies the strict architectural authority hierarchy:
 1. `docs/architectural-axioms.md` (Highest architectural authority)
-2. `AGENTS.md` (Repository guardrails and invariants)
+2. `../../AGENTS-old2.md` (Repository guardrails and invariants)
 3. Applicable accepted Architecture Decision Records (`ADR-001` through `ADR-020`)
 4. Applicable requirements and design contracts
 5. Existing source code, unit/integration tests, and historical plans/reports (treated as empirical evidence of current/historical state, never as authority that conflicting behaviour is correct)
@@ -3153,7 +3153,7 @@ The following candidate investigation areas (MAT-01 through MAT-10) will be rigo
 - **Target Files:** `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/config/AuditDataSourceProducer.java`, `iris/iris-befe/pom.xml`
 - **Applicable Axioms:** `AX-04` (Engines Provide Machinery), `AX-05` (State Separation), `AX-12` (Hide Plumbing)
 - **Investigation Objective:** Check whether `iris-befe` configures a container `@DataSourceDefinition` connecting directly to PostgreSQL (`org.postgresql.ds.PGSimpleDataSource`) to execute JDBC queries via `kleio-persistence`.
-- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`AGENTS.md` Invariant 3) and `AX-05`.
+- **Evaluation Criteria:** Assess whether direct database connectivity in presentation tiers violates presentation tier decoupling (`../../AGENTS-old2.md` Invariant 3) and `AX-05`.
 
 **Candidate MAT-06: Mnemosyne Persistence Architecture & HAPI FHIR JPA Capabilities**
 - **Target Files:** `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistenceService.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/repository/FhirResourceRepository.java`, `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/model/FhirResourceEntity.java`
