@@ -282,16 +282,16 @@ Implemented:
 - Fail-closed security handling on HTTP 401/403 responses
 - 28 focused WireMock unit tests and 84 repository-wide architecture tests passing
 
-### M2.2 Containerise/deploy Mnemosyne
+### M2.2 Containerise/deploy Mnemosyne --- COMPLETE / CONFORMANT
 
-Prove:
+Proved:
 
 ``` text
-Mneme container
+Mneme container / Deployment Harness
       |
-      | internal HTTP
+      | internal HTTP / Docker DNS (mnemosyne-clinical:8080)
       v
-Mnemosyne container
+Mnemosyne container (AuthoritativeSecurityInterceptor -> 401 in M2.2)
       |
       v
 HAPI FHIR JPA
@@ -300,8 +300,14 @@ HAPI FHIR JPA
 PostgreSQL
 ```
 
-No shared-JVM or `localhost` shortcut should defeat the intended runtime
-boundary.
+- Verified Docker Compose topology with network alias `mnemosyne-clinical` for `hapi-fhir-jpa-server-1` on `harmonia-network`.
+- **Path A (Docker Authoritative Boundary Proof)**: Verified internal Docker DNS resolution of `mnemosyne-clinical:8080` and `hapi-fhir-jpa-server-1:8080`, container HTTP routing, and fail-closed HTTP 401 Unauthorized security enforcement via `AuthoritativeSecurityInterceptor`.
+- Verified `MnemeAuthoritativeHttpClient` maps 401 safely to `AuthoritativePersistenceResult.NotCommitted`.
+- Verified public `/fhir/*` (`JpaRestfulServer`) remains strictly isolated and is not substituted for the authoritative endpoint.
+- **Path B (Mnemosyne Durable Persistence Proof)**: Verified transactional persistence below the HTTP boundary via `HapiJpaAuthoritativePersistenceAdapter` against PostgreSQL (`postgres-1` `fhir_node_1` database `HFJ_*` tables).
+- Verified durable state preservation across Mnemosyne container restarts and Compose lifecycle stop/start cycles.
+- Verified independent startup and resilience of `infinispan-1` during Mnemosyne outage with zero cache promotion to authority.
+- All 58 `mneme-persistence` tests, 107 `mnemosyne-clinical` tests, and 84 repository-wide architecture tests passing.
 
 ### M2.3 Establish service identity
 
@@ -700,6 +706,7 @@ Runtime evidence
 -   M2.1 Mneme Authoritative HTTP Client --- COMPLETE / CONFORMANT.
 -   Step 3.3 Mnemosyne internal authoritative HTTP server adapter (`AuthoritativeFhirResourceController`, `AuthoritativeSecurityInterceptor`) --- COMPLETE / CONFORMANT.
 -   Server-side authoritative HTTP/security/conformance tests --- COMPLETE (106 unit/integration tests passing).
+-   M2.2 Containerise/deploy Mnemosyne and prove the Mneme -> Mnemosyne authoritative path across the Docker network --- COMPLETE / CONFORMANT.
 -   MAT-03 --- RESOLVED / CONFORMANT.
 -   MAT-04 --- CONFORMANT.
 -   MAT-06 --- CLOSED / CONFORMANT with implementation evidence.
@@ -708,11 +715,11 @@ Runtime evidence
 
 ## Current activity
 
-Mnemosyne authoritative HTTP server adapter and canonical contract resolution verified.
+M2.2 Docker deployment-boundary proof and persistence durability verified.
 
 **Current milestone:** M2 --- Distributed Authoritative Path.
 
-**Next convergence implementation step:** M2.2 --- Containerise/deploy Mnemosyne and prove the Mneme -> Mnemosyne authoritative path across the Docker network.
+**Next convergence implementation step:** M2.3 --- Establish authenticated service:mneme transport identity and map to ThemisPrincipal.
 
 ------------------------------------------------------------------------
 

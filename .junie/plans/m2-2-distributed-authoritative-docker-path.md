@@ -5,262 +5,262 @@ sessionId: session-261001-102037-1h57
 # Requirements
 
 ### Overview & Goals
-Milestones **M1 (Stable Docker Runtime Baseline)** and **M2.1 (Mneme Authoritative HTTP Client)** are complete and accepted baselines. Repository history and source code analysis have established that the server-side authoritative HTTP adapter was never implemented in `hestia/mnemosyne-clinical`. Consequently, milestone **M2.2 (Distributed Authoritative Docker Path)** is blocked.
+Milestones **M1 (Stable Docker Runtime Baseline)**, **M2.1 (Mneme Authoritative HTTP Client)**, and **Step 3.3 (Mnemosyne Authoritative HTTP Server Adapter)** are complete, conformant, and accepted baselines. In accordance with the repository authority hierarchy (`docs/architectural-axioms.md`, `AGENTS.md`, ADR-021, ADR-022) and the master convergence roadmap (`docs/implementation/harmonia-convergence-runtime-integration-plan.md`), the current and only authorized step is **M2.2 — Containerise/deploy Mnemosyne and prove the Mneme → Mnemosyne authoritative path across the Docker network**.
 
-In accordance with the repository authority hierarchy (`docs/architectural-axioms.md`, `AGENTS.md`, ADR-021, ADR-022) and the master convergence roadmap (`docs/implementation/harmonia-convergence-runtime-integration-plan.md`), the current and only authorized step is **Step 3.3 — Mnemosyne Authoritative HTTP Server Adapter**.
-
-The goal of Step 3.3 is to implement the missing internal synchronous HTTP server boundary in `hestia/mnemosyne-clinical` that exposes the existing `AuthoritativePersistencePort<IBaseResource>` (`HapiJpaAuthoritativePersistenceAdapter`) to the M2.1 `MnemeAuthoritativeHttpClient` at `/api/authoritative/fhir/{resourceType}/{id}`, protected by a fail-closed Themis default-deny security boundary, while removing the stale duplicate `AuthoritativePersistencePort` in `mnemosyne-clinical`.
+The objective of M2.2 is to execute a rigorous **Docker deployment-boundary proof** by deploying `mnemosyne-clinical` (`hapi-fhir-jpa-server-1`) alongside `postgres-1` and `infinispan-1` on the Docker bridge network (`harmonia-network`), explicitly separating two distinct verification paths:
+1. **Path A (Docker Authoritative-Boundary Proof)**: `MnemeAuthoritativeHttpClient` connects across Docker DNS to `AuthoritativeSecurityInterceptor` at `/api/authoritative/fhir/*`, verifying Docker DNS resolution, container routing, and fail-closed HTTP `401 Unauthorized` security enforcement.
+2. **Path B (Mnemosyne Durable-Persistence Proof)**: Exercises the existing Mnemosyne/HAPI-JPA persistence integration using an existing legitimate integration-test mechanism below the HTTP security boundary, persisting a test resource to PostgreSQL, restarting Mnemosyne / cycling Compose, and verifying that durable database state remains intact without implying creation occurred through unauthenticated HTTP.
 
 ### Scope
-- **In Scope (Step 3.3)**:
-  - **Canonical Contract Cleanup**: Removal of the stale duplicate `hestia/mnemosyne-clinical/.../AuthoritativePersistencePort.java` and verification that all `mnemosyne-clinical` components resolve against canonical `hestia/mnemosyne-api`.
-  - **Dedicated Authoritative Controller**: Implementation of the internal authoritative Spring `@RestController` in `hestia/mnemosyne-clinical` mapping `/api/authoritative/fhir/{resourceType}/{id}`.
-  - **Deterministic M2.1 Client Wire Contract**: Exact implementation of `GET` (Point READ), `PUT` with `If-None-Match: *` (Point CREATE-if-absent), and `PUT` with `If-Match: W/"{expectedVersion}"` (Point UPDATE-if-expected-predecessor) with 100% deterministic, unambiguous HTTP status codes.
-  - **Normative Version Transport Mapping**: Definition of `X-Harmonia-Authoritative-Version` as the normative representation of Mnemosyne `AuthoritativeVersion`, alongside standard `ETag: W/"{version}"` for HTTP preconditions, preserving strict separation across the 4 version domains.
-  - **Request Identity & Precondition Validation**: Validation of path vs payload resource identity, malformed JSON bodies, and deterministic precondition handling (`428 Precondition Required`, `400 Bad Request`, `422 Unprocessable Entity`).
-  - **Fail-Closed Security Boundary**: Implementation of `AuthoritativeSecurityInterceptor` consuming trusted `HttpServletRequest.getUserPrincipal()` to construct `ThemisSecurityContext` and evaluate `ThemisAuthorizer`, returning `401 Unauthorized` for missing/unauthenticated callers and `403 Forbidden` for policy-denied callers.
-  - **Comprehensive Verification**: Unit/MockMvc wire contract tests, security fail-closed tests, Spring/HAPI JPA integration tests, and ArchUnit architecture/dependency conformance.
+- **In Scope (M2.2)**:
+  - Containerization and build verification of `mnemosyne-clinical` using `hestia/mnemosyne-clinical/Dockerfile` and JRE 21 runtime.
+  - Configuration of Docker Compose topology in `docker-compose.yml` for Mnemosyne (`hapi-fhir-jpa-server-1`), PostgreSQL (`postgres-1`), and Mneme (`infinispan-1`) on `harmonia-network` with Docker DNS.
+  - Configuring network alias `mnemosyne-clinical` for `hapi-fhir-jpa-server-1` on `harmonia-network`.
+  - **Verification Path A**: Deployment verification harness utilizing `MnemeAuthoritativeHttpClient` within the Docker network context to prove Docker DNS resolution, container routing, and fail-closed `401 Unauthorized` security enforcement against `/api/authoritative/fhir/*`.
+  - Verification that the dedicated `/api/authoritative/fhir/*` endpoint is targeted and that public `/fhir/*` (`JpaRestfulServer`) is never substituted.
+  - **Verification Path B**: Mnemosyne durable persistence proof below the HTTP security boundary (exercising `HapiJpaAuthoritativePersistenceAdapter` against PostgreSQL `postgres-1`), verifying that durable records in `postgres_data_1` survive Mnemosyne container restarts and Compose stop/start cycles.
+  - Verification of independent startup and operational resilience of `infinispan-1` when Mnemosyne is offline (without injecting unused client configuration or promoting cache to authority).
+  - Preservation of exact M2.1 failure classifications (`NotCommitted`, `OutcomeUnknown`, `Conflict`, `Committed`).
+  - ArchUnit architecture enforcement guaranteeing zero dependency or architectural boundary leakage.
 
 - **Out of Scope (Explicit Exclusions)**:
-  - **M2.2**: Docker Compose topology changes, container image builds, or Docker network testing.
-  - **M2.3**: Implementation of deployment-level transport authentication mechanisms (mTLS, service tokens) for `service:mneme`.
-  - **M2.4**: Distributed multi-container end-to-end semantic verification across Docker bridge networks.
-  - Public FHIR REST API changes (`/fhir/*` / `JpaRestfulServer`).
-  - Physical DELETE operations (strictly forbidden by ADR-020).
+  - **M2.3**: Implementation of deployment-level transport authentication mechanisms (e.g. mTLS, service tokens) for `service:mneme`.
+  - **M2.4**: Distributed multi-container authenticated semantic proof (CREATE/READ/UPDATE/conflicts) across the Docker network using the deployment harness.
+  - Inventing temporary API keys, caller-controlled identity headers, test bypasses, or disabled security.
+  - Exposing another production API or using public `/fhir/*` as a substitute for the authoritative API.
+  - Creating an artificial production Mneme runtime in `infinispan-1`.
+  - M3 Governed Reader / Writer integration (`DefaultGovernedReader`, `DefaultGovernedWriter`).
+  - Application migration (Iris BEFE, Pylai gateways, Ponos workflow tasks).
   - Authoritative search / GraphQL / bulk operations (M5).
+  - MicroK8s / Kubernetes production deployments (M6).
+  - Physical DELETE operations (forbidden by ADR-020).
   - Modifying or removing legacy cache stores (`FhirRestCacheStore`).
-  - Redesign of M2.1 client semantics (`MnemeAuthoritativeHttpClient`) or Mnemosyne persistence (`HapiJpaAuthoritativePersistenceAdapter`).
+  - Unrelated MAT remediation or redesign of M2.1 client / Step 3.3 server semantics.
 
 ### User Stories
-- **As a Distributed Persistence Engine**, I want `mnemosyne-clinical` to expose a dedicated internal authoritative REST endpoint at `/api/authoritative/fhir/{resourceType}/{id}` so that `MnemeAuthoritativeHttpClient` can execute synchronous point `READ`, `CREATE`, and `UPDATE` operations across process and network boundaries.
-- **As a Clinical Security & Governance Officer**, I want every invocation of the authoritative endpoint to be gated by Themis default-deny policy evaluation so that unauthenticated or unauthorized callers are rejected fail-closed without relying on network-level trust assumptions.
-- **As an Architectural Guardian**, I want pure point preconditions (`If-None-Match`, `If-Match`) and conflict outcomes to map deterministically to HTTP headers and status codes with zero version leakage from `meta.versionId` so that authoritative state progression remains atomic and unambiguous.
+- **As a Distributed Integration Platform**, I want Mnemosyne to deploy as an isolated Docker container on `harmonia-network` communicating with PostgreSQL over Docker DNS so that authoritative persistence is completely separated from application runtimes.
+- **As a Clinical Security & Governance Officer**, I want all unauthenticated requests arriving at `/api/authoritative/fhir/*` across the Docker network to be rejected fail-closed with `401 Unauthorized` by `AuthoritativeSecurityInterceptor` so that network presence is never mistaken for authentication.
+- **As a Systems Operator**, I want Mnemosyne to connect durably to PostgreSQL in Docker and preserve clinical records across container restarts so that authoritative data survives process restarts without loss.
+- **As an Architectural Guardian**, I want `infinispan-1` to remain independently operational and decoupled from Mnemosyne downtime without treating active cache as authoritative persistence.
 
 ### Functional Requirements
-- **FR-1 Dedicated Internal Route**: Server must expose `GET` and `PUT` on `/api/authoritative/fhir/{resourceType}/{id}`. Public `/fhir/*` servlet must remain completely distinct.
-- **FR-2 Deterministic Point READ Handling**:
-  - `GET /api/authoritative/fhir/{resourceType}/{id}` invokes `AuthoritativePersistencePort.read(ResourceKey)`.
-  - On `Committed(resource, version)`: returns `200 OK` with serialized FHIR R5 JSON body, `ETag: W/"{version}"`, `X-Harmonia-Authoritative-Version: {version}`, and `Content-Type: application/fhir+json; charset=UTF-8`.
-  - On `NotCommitted` (resource absent): returns `404 Not Found`.
-  - On unauthenticated invocation: returns `401 Unauthorized`.
-  - On unauthorized invocation (Themis DENY): returns `403 Forbidden`.
-  - On malformed URI parameters: returns `400 Bad Request`.
-  - On internal storage failure / unexpected exception: returns `500 Internal Server Error`.
-- **FR-3 Deterministic Point CREATE-if-absent Handling**:
-  - `PUT /api/authoritative/fhir/{resourceType}/{id}` with `If-None-Match: *` invokes `AuthoritativePersistencePort.create(ResourceKey, IBaseResource)`.
-  - On `Committed(resource, version)`: returns `201 Created` with persisted FHIR JSON body, `ETag: W/"{version}"`, and `X-Harmonia-Authoritative-Version: {version}`.
-  - On `Conflict(RESOURCE_ALREADY_EXISTS)`: returns `412 Precondition Failed` (with current version in `ETag` and `X-Harmonia-Authoritative-Version`).
-  - On URI `{resourceType}` or `{id}` mismatch against JSON payload, or malformed JSON syntax: returns `400 Bad Request`.
-  - On unparseable/invalid resource schema: returns `422 Unprocessable Entity`.
-  - On unauthenticated invocation: returns `401 Unauthorized`.
-  - On unauthorized invocation: returns `403 Forbidden`.
-  - On internal storage failure: returns `500 Internal Server Error`.
-- **FR-4 Deterministic Point UPDATE-if-expected-predecessor Handling**:
-  - `PUT /api/authoritative/fhir/{resourceType}/{id}` with `If-Match: W/"{expectedVersion}"` invokes `AuthoritativePersistencePort.update(ResourceKey, IBaseResource, ExpectedAuthoritativeVersion)`.
-  - On `Committed(resource, version)`: returns `200 OK` with updated FHIR JSON body, `ETag: W/"{version}"`, and `X-Harmonia-Authoritative-Version: {version}`.
-  - On `Conflict(EXPECTED_VERSION_MISMATCH)` (version mismatch / stale version): returns `412 Precondition Failed` (with actual current version in `ETag` and `X-Harmonia-Authoritative-Version`).
-  - On target resource absent for UPDATE: returns `404 Not Found`.
-  - On URI `{resourceType}` or `{id}` mismatch against JSON payload, or malformed JSON syntax: returns `400 Bad Request`.
-  - On unparseable/invalid resource schema: returns `422 Unprocessable Entity`.
-  - On unauthenticated invocation: returns `401 Unauthorized`.
-  - On unauthorized invocation: returns `403 Forbidden`.
-  - On internal storage failure: returns `500 Internal Server Error`.
-- **FR-5 Deterministic Precondition Discrimination & Header Validation**:
-  - `PUT` request without `If-None-Match` or `If-Match`: returns `428 Precondition Required`.
-  - `PUT` request specifying both `If-None-Match` and `If-Match`: returns `400 Bad Request`.
-  - `PUT` request with invalid/empty `If-Match` format: returns `400 Bad Request`.
-- **FR-6 Fail-Closed Security Governance**:
-  - Invocations lacking trusted container/transport authentication (`HttpServletRequest.getUserPrincipal() == null`): returns `401 Unauthorized`.
-  - Invocations evaluated by Themis returning `ThemisDecision.DENY`: returns `403 Forbidden`.
-  - Caller-controlled identity headers, bypass tokens, synthetic credentials, or unauthenticated modes are strictly forbidden.
-- **FR-7 Canonical Contract Cleanup**:
-  - Delete `hestia/mnemosyne-clinical/.../AuthoritativePersistencePort.java`.
-  - Verify all `mnemosyne-clinical` source files bind exclusively to `net.fhirfactory.harmonia.hapifhir.persistence.AuthoritativePersistencePort` in `mnemosyne-api`.
+- **FR-1 Mnemosyne Containerization & DNS**: `mnemosyne-clinical` must build reproducibly via Dockerfile and resolve `postgres-1:5432` over internal Docker DNS on `harmonia-network`.
+- **FR-2 Docker DNS Resolution & Transport Routing (Path A)**: A deployment verification harness on `harmonia-network` must resolve `http://mnemosyne-clinical:8080/api/authoritative/fhir` (or `http://hapi-fhir-jpa-server-1:8080/api/authoritative/fhir`) via internal Docker DNS and establish TCP/HTTP communication.
+- **FR-3 Fail-Closed Security Boundary Proof (Path A)**: Invocations of `/api/authoritative/fhir/{resourceType}/{id}` over the Docker network lacking trusted transport identity must return `401 Unauthorized` through the real `AuthoritativeSecurityInterceptor`.
+- **FR-4 Pure Point Boundary Enforcement**: The internal authoritative endpoint must remain strictly isolated from public `/fhir/*` (`JpaRestfulServer`).
+- **FR-5 Independent Runtime Resilience**: Mneme (`infinispan-1`) must start and remain operational when Mnemosyne is offline. No client failure or outage must cause Infinispan cache to become authoritative.
+- **FR-6 PostgreSQL Persistence & Schema Initialization (Path B)**: Mnemosyne must connect to PostgreSQL (`postgres-1`), auto-initialize the HAPI JPA schema (`HFJ_*`), and execute persistence operations against `fhir_node_1` below the HTTP security boundary.
+- **FR-7 Container Restart Durability (Path B)**: Durable records persisted in PostgreSQL (`postgres_data_1` volume) via the persistence verification fixture below the HTTP boundary must remain intact and retrievable after Mnemosyne container restarts (`docker compose restart hapi-fhir-jpa-server-1`) and Compose cycles (`docker compose stop` / `up`).
 
 ### Non-Functional Requirements
-- **Modularity & Layering**: Production code in `mnemosyne-clinical` must not import or depend on `mneme-persistence` or Paradeigma simulation modules (asserted by ArchUnit).
-- **Idempotency & Safety**: Mutating operations must not perform transparent retries and must execute within atomic HAPI JPA database transactions.
-- **Fail-Closed Diagnostics**: Security failures must emit sanitized diagnostic messages without PHI or sensitive token credentials.
+- **Modularity & Layering**: Production code in Mneme must not depend on `mnemosyne-clinical`, Hibernate, JPA, or PostgreSQL drivers (verified by ArchUnit Invariant 8).
+- **Security Invariance**: Docker network presence must never be treated as trusted service identity (AGENTS.md Invariant 6).
+- **Diagnostics & Observability**: Container logs must reflect clear DNS resolution, HTTP status codes, and health check transitions without logging unmasked PHI (AGENTS.md Invariant 7).
 
 # Technical Design
 
 ### Repository Baseline & Existing Assets
 
-1. **Existing Persistence Baseline (`hestia/mnemosyne-clinical`, `hestia/mnemosyne-api`)**:
-   - Canonical `AuthoritativePersistencePort<IBaseResource>` exists in `hestia/mnemosyne-api`.
-   - Stale duplicate `AuthoritativePersistencePort.java` exists in `hestia/mnemosyne-clinical` and must be deleted.
-   - `HapiJpaAuthoritativePersistenceAdapter` in `mnemosyne-clinical` implements `AuthoritativePersistencePort<IBaseResource>` via HAPI FHIR `DaoRegistry` and transactional JPA persistence.
-   - `FhirServerConfig` registers public `JpaRestfulServer` servlet on `/fhir/*`.
-2. **Existing Client Contract Baseline (`hestia/mneme-persistence`)**:
-   - `MnemeAuthoritativeHttpClient` implements `AuthoritativePersistencePort<IBaseResource>` connecting to `/api/authoritative/fhir/{resourceType}/{id}`.
-   - Fully tested against 28 WireMock test cases in `MnemeAuthoritativeHttpClientTest`.
-3. **Existing Themis Security Engine Baseline (`themis/themis-api`, `themis/themis-core`)**:
-   - `DeterministicPolicyEvaluator` implements `ThemisAuthorizer` and `ThemisService`, evaluating `ThemisAuthorizationRequest` against priority-ordered `ThemisPolicy` rules with default-deny fallback.
-   - `HarmoniaServiceIdentities` defines canonical service principals (`ID_MNEME = "service:mneme"`, `PRINCIPAL_MNEME`) and default least-privilege authorities (`clinical.read`, `clinical.create`, `clinical.update`).
-   - `ThemisClinicalAuthorizationFilter` in `iris/iris-befe` provides an established reference pattern for extracting container-authenticated `getUserPrincipal()`, mapping to `ThemisPrincipal`, and enforcing Themis authorization.
-4. **Unstaged Working Tree Modification (`hestia/mnemosyne-api/pom.xml`)**:
-   - Unstaged modification adds explicit `<packaging>jar</packaging>` to `hestia/mnemosyne-api/pom.xml`.
-   - Relevance to Step 3.3: Declares standard JAR packaging for the shared contract module; fully compatible and does not impact Step 3.3.
+1. **Docker Compose Baseline (`docker-compose.yml`)**:
+   - `postgres-1`: `postgres:16-alpine`, port `5432:5432`, DB `fhir_node_1`, user `fhir_user`, password `fhir_password`, volume `postgres_data_1`, healthcheck `pg_isready`.
+   - `hapi-fhir-jpa-server-1`: built from `./hestia/mnemosyne-clinical`, JRE 21, port `8081:8080`, profile `postgres`, connected to `postgres-1` via `jdbc:postgresql://postgres-1:5432/fhir_node_1`, healthcheck on `/actuator/health`.
+   - `infinispan-1`: built from `./hestia/mneme-cluster`, port `11222:11222`, network `harmonia-network`. Contains `mneme-persistence` SPI JAR in `/opt/infinispan/server/lib/` for Infinispan cache-store extensions (`FhirRestCacheStore` targeting `/fhir`). Runs independently and does not instantiate `MnemeAuthoritativeHttpClient`.
+2. **Mneme Authoritative HTTP Client Baseline (`hestia/mneme-persistence`)**:
+   - `MnemeAuthoritativeHttpClient` implements `AuthoritativePersistencePort<IBaseResource>` and connects to `/api/authoritative/fhir/*`.
+   - `MnemeAuthoritativeClientConfig` reads `HARMONIA_MNEMOSYNE_AUTHORITATIVE_URL` (env) or `mnemosyne.authoritative.url` (property), defaulting to `http://mnemosyne-clinical:8080/api/authoritative/fhir`.
+   - Wire contracts and conservative failure classifications are verified by WireMock and ArchUnit tests in M2.1.
+   - **Runtime Grounding Finding**: `MnemeAuthoritativeHttpClient` is not instantiated or invoked inside the `infinispan-1` server process. Production caller integration belongs to the Governed Access layer (M3). In M2.2, a dedicated deployment verification harness executes `MnemeAuthoritativeHttpClient` within the `harmonia-network` Docker context to verify DNS resolution, routing, and fail-closed security.
+3. **Mnemosyne Authoritative Server Baseline (`hestia/mnemosyne-clinical`)**:
+   - `AuthoritativeFhirResourceController` maps `/api/authoritative/fhir/{resourceType}/{id}` for GET (READ) and PUT (CREATE/UPDATE).
+   - `AuthoritativeSecurityInterceptor` intercepts all `/api/authoritative/fhir/**` requests, checking `HttpServletRequest.getUserPrincipal()` and failing closed with `401 Unauthorized` when unauthenticated.
+   - `HapiJpaAuthoritativePersistenceAdapter` implements `AuthoritativePersistencePort<IBaseResource>` against HAPI DAOs and PostgreSQL.
 
 ### Key Decisions
 
-- **Decision 1: Implement Dedicated Spring `@RestController` for `/api/authoritative/fhir/*`**:
-  - *Approach*: Add `AuthoritativeFhirResourceController` in `hestia/mnemosyne-clinical` injecting `AuthoritativePersistencePort<IBaseResource>`.
-  - *Rationale*: Isolates the internal authoritative contract from HAPI's public `/fhir/*` servlet (`JpaRestfulServer`), providing clean path routing, standard header extraction, and unified exception mapping.
-- **Decision 2: Explicit Normative Version Transport Mapping**:
-  - *Approach*: Define `X-Harmonia-Authoritative-Version` as the normative HTTP representation of Mnemosyne `AuthoritativeVersion`. `ETag: W/"{version}"` is generated for standard HTTP conditional caching/preconditions (`If-Match`, `If-None-Match`).
-  - *Rationale*: Strictly preserves separation between the four version domains: (1) FHIR `meta.versionId`, (2) HTTP `ETag`, (3) Mneme active-state token, and (4) Mnemosyne `AuthoritativeVersion`. Zero fallback to `meta.versionId` is permitted.
-- **Decision 3: Grounded Fail-Closed Security Adapter (`AuthoritativeSecurityInterceptor`)**:
-  - *Approach*: Implement a Spring MVC `HandlerInterceptor` that consumes trusted `HttpServletRequest.getUserPrincipal()`, maps to `ThemisPrincipal` via `HarmoniaServiceIdentities`, constructs `ThemisSecurityContext` and `ThemisAuthorizationRequest`, and evaluates `ThemisAuthorizer.authorize(...)`.
-  - *Rationale*: Step 3.3 consumes trusted container/transport identity and delegates to Themis without inventing caller-controlled headers, temporary credentials, or network-level trust assumptions. Transport authentication for `service:mneme` over the network is deferred to M2.3.
+- **Decision 1: Ground M2.2 Verification in Real Fail-Closed 401 Responses**:
+  - *Approach*: Exercise the cross-container HTTP transport path from the deployment verification harness to Mnemosyne over Docker DNS and verify that `MnemeAuthoritativeHttpClient` receives HTTP 401 Unauthorized from `AuthoritativeSecurityInterceptor`.
+  - *Rationale*: M2.3 is responsible for establishing trusted `service:mneme` service identity. In M2.2, an unauthenticated request reaching Mnemosyne and returning 401 proves network connectivity, Docker DNS, container routing, and fail-closed security without weakening Themis or inventing fake credentials.
+- **Decision 2: Independent Container Lifecycle & Decoupled Startup**:
+  - *Approach*: Do not configure `HARMONIA_MNEMOSYNE_AUTHORITATIVE_URL` on `infinispan-1`, and ensure `infinispan-1` runs as an independent active-state engine.
+  - *Rationale*: Infinispan server does not consume this environment variable. Preserving clean runtime boundaries prevents configuration pollution and reinforces that Mneme active state is decoupled from authoritative persistence.
+- **Decision 3: Docker DNS Network Aliasing**:
+  - *Approach*: Assign network alias `mnemosyne-clinical` to `hapi-fhir-jpa-server-1` on `harmonia-network`.
+  - *Rationale*: Matches the default URL configured in `MnemeAuthoritativeClientConfig` (`http://mnemosyne-clinical:8080/api/authoritative/fhir`) and ensures inter-container resolution without localhost or workstation IP dependencies.
 
-### Normative HTTP Wire Contract & Version Domains
+### Target Docker Topology & Configuration
 
-#### 1. Version Domain Separation
-| Domain | Representation / Scope | Usage in Step 3.3 |
-| :--- | :--- | :--- |
-| **Mnemosyne `AuthoritativeVersion`** | Numerical string / opaque token (`AuthoritativeVersion`) | Core domain model representing durable persistence version in PostgreSQL (`HFJ_RES_VER`). |
-| **Normative HTTP Version Header** | `X-Harmonia-Authoritative-Version: {version}` | Normative wire representation of Mnemosyne `AuthoritativeVersion`. |
-| **HTTP ETag Header** | `ETag: W/"{version}"` | Generated HTTP weak ETag used exclusively for HTTP conditional headers (`If-Match`, `If-None-Match`). |
-| **FHIR `meta.versionId`** | Resource meta element | Independent FHIR resource metadata; never used as authoritative version source or fallback. |
-| **Mneme Active-State Token** | Distributed cache token (Infinispan) | Ephemeral active-state coordination token; never treated as authoritative durable state. |
-
-#### 2. Normative Wire Contract Matrix
-| Operation | HTTP Method | Precondition Headers | Server Adapter Invocation | Normative Success Response | Normative Conflict / Precondition Response | Normative Error Response |
+| Service / Container | Image / Build Context | Internal Hostname & Port | Host Port | Network | Volumes | Dependencies / Role |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Point READ** | `GET /api/authoritative/fhir/{type}/{id}` | (None) | `persistencePort.read(key)` | `200 OK`<br/>`ETag: W/"{v}"`<br/>`X-Harmonia-Authoritative-Version: {v}`<br/>Payload body | `404 Not Found` (resource absent) | `401 Unauthorized` (unauthenticated)<br/>`403 Forbidden` (unauthorized)<br/>`400 Bad Request` (bad URI)<br/>`500 Internal Server Error` |
-| **Point CREATE** | `PUT /api/authoritative/fhir/{type}/{id}` | `If-None-Match: *` | `persistencePort.create(key, resource)` | `201 Created`<br/>`ETag: W/"{v}"`<br/>`X-Harmonia-Authoritative-Version: {v}`<br/>Payload body | `412 Precondition Failed`<br/>`ETag: W/"{curVer}"`<br/>`X-Harmonia-Authoritative-Version: {curVer}` (exists) | `400 Bad Request` (URI/body mismatch)<br/>`422 Unprocessable Entity` (invalid schema)<br/>`401 Unauthorized`<br/>`403 Forbidden`<br/>`500 Internal Server Error` |
-| **Point UPDATE** | `PUT /api/authoritative/fhir/{type}/{id}` | `If-Match: W/"{expVer}"` | `persistencePort.update(key, resource, expVer)` | `200 OK`<br/>`ETag: W/"{v}"`<br/>`X-Harmonia-Authoritative-Version: {v}`<br/>Payload body | `412 Precondition Failed`<br/>`ETag: W/"{curVer}"`<br/>`X-Harmonia-Authoritative-Version: {curVer}` (stale/mismatch)<br/>`404 Not Found` (absent) | `400 Bad Request` (URI/body mismatch)<br/>`422 Unprocessable Entity` (invalid schema)<br/>`401 Unauthorized`<br/>`403 Forbidden`<br/>`500 Internal Server Error` |
+| **`postgres-1`** (`harmonia-postgres-1`) | `postgres:16-alpine` | `postgres-1:5432` | `5432:5432` | `harmonia-network` | `postgres_data_1:/var/lib/postgresql/data` | Healthcheck: `pg_isready -U fhir_user -d fhir_node_1` |
+| **`hapi-fhir-jpa-server-1`** (`harmonia-hapi-fhir-1`) | `./hestia/mnemosyne-clinical` (`eclipse-temurin:21-jre-jammy`) | `hapi-fhir-jpa-server-1:8080`<br/>*(alias: `mnemosyne-clinical`)* | `8081:8080` | `harmonia-network` | None | Depends on `postgres-1: service_healthy`<br/>Healthcheck: `/actuator/health` |
+| **`infinispan-1`** (`harmonia-infinispan-node1`) | `./hestia/mneme-cluster` (`quay.io/infinispan/server:15.0.3.Final`) | `infinispan-1:11222` | `11222:11222`<br/>`7800:7800` | `harmonia-network` | None | Active-state cache cluster node (independent startup). |
+| **`Deployment Verification Harness`** | JVM / Test Context on Docker Network | Ephemeral client | N/A | `harmonia-network` | None | Harness executing `MnemeAuthoritativeHttpClient` to prove Docker DNS & 401 fail-closed boundary. |
 
-#### 3. Normative Precondition & Request Validation Rules
-- **Missing Preconditions**: `PUT` request with neither `If-None-Match` nor `If-Match` -> `428 Precondition Required`.
-- **Conflicting Preconditions**: `PUT` request specifying both `If-None-Match` and `If-Match` -> `400 Bad Request`.
-- **Malformed ETag in `If-Match`**: `PUT` request with unparseable or blank `If-Match` header -> `400 Bad Request`.
-- **Identity Mismatch**: `PUT` where JSON payload `resourceType` does not match path `{type}`, or where payload `id` is present and does not match path `{id}` -> `400 Bad Request`.
-- **Malformed JSON**: Request body contains invalid JSON syntax -> `400 Bad Request`.
-
-### Security Adapter & Themis Integration Flow
+### Architecture & Milestone Separation
 
 ```mermaid
 graph TD
-    Client[MnemeAuthoritativeHttpClient / Caller] -->|HTTP GET/PUT /api/authoritative/fhir/*| Interceptor[AuthoritativeSecurityInterceptor]
-    Interceptor -->|Inspect HttpServletRequest.getUserPrincipal| PrincCheck{Principal present & non-anonymous?}
-    PrincCheck -- No --> Deny401[401 Unauthorized / Fail Closed]
-    PrincCheck -- Yes --> MapPrinc[Resolve ThemisPrincipal via HarmoniaServiceIdentities]
-    MapPrinc --> BuildReq[Build ThemisAuthorizationRequest & ThemisResource]
-    BuildReq --> Evaluator[ThemisAuthorizer / DeterministicPolicyEvaluator]
-    Evaluator -->|Evaluate Policy Rules| DecCheck{Themis Decision?}
-    DecCheck -- DENY --> Deny403[403 Forbidden / Fail Closed]
-    DecCheck -- PERMIT --> Controller[AuthoritativeFhirResourceController]
-    Controller -->|Invoke Point Op| Port[AuthoritativePersistencePort]
-    Port --> Adapter[HapiJpaAuthoritativePersistenceAdapter]
-    Adapter --> DAO[HAPI FHIR DAO Registry / PostgreSQL]
+    subgraph Verification Path A: Docker Authoritative Boundary Proof [Docker Network Context]
+        MAC[MnemeAuthoritativeHttpClient]
+    end
+
+    subgraph Verification Path B: Durable Persistence Proof [Integration Test Fixture below HTTP]
+        PVF[Mnemosyne Persistence Verification Fixture<br/>HapiJpaAuthoritativePersistenceAdapter]
+    end
+
+    subgraph Mnemosyne Container [hapi-fhir-jpa-server-1 / mnemosyne-clinical]
+        ASI[AuthoritativeSecurityInterceptor]
+        AFRC[AuthoritativeFhirResourceController<br/>/api/authoritative/fhir/*]
+        APP[AuthoritativePersistencePort]
+        HJPA[HapiJpaAuthoritativePersistenceAdapter]
+
+        ASI -->|401 Unauthorized / Fail-Closed in Path A| MAC
+        ASI -.->|When Authenticated in M2.3/M2.4| AFRC
+        AFRC --> APP
+        APP --> HJPA
+        PVF -->|Direct Persistence below HTTP in Path B| HJPA
+    end
+
+    subgraph PostgreSQL Container [postgres-1]
+        PG[(PostgreSQL 16<br/>fhir_node_1<br/>HFJ_*)]
+        HJPA --> PG
+    end
+
+    subgraph Infinispan Active-State Runtime [infinispan-1]
+        ISC[Infinispan Server 15<br/>Independent Active State<br/>No authoritative client invocation yet]
+    end
+
+    MAC -- "HTTP GET/PUT across Docker DNS" --> ASI
 ```
 
-#### Grounded Security Implementation Details:
-1. **Principal Extraction**: The interceptor calls `request.getUserPrincipal()`. If null, empty, or `"anonymous"`, it aborts with HTTP `401 Unauthorized`.
-2. **ThemisPrincipal Resolution**: Resolves the principal using `HarmoniaServiceIdentities` (e.g., `"service:mneme"` maps to `HarmoniaServiceIdentities.PRINCIPAL_MNEME` with authorities `clinical.read`, `clinical.create`, `clinical.update`).
-3. **ThemisContext & Request Construction**:
-   - Constructs `ThemisResource` with `resourceType`, `resourceId`, security domain `HarmoniaSecurityLabelEnum.CLINICAL.getCode()`.
-   - Constructs `ThemisSecurityContext` with requesting principal and executing principal (`HarmoniaServiceIdentities.PRINCIPAL_MNEMOSYNE`).
-   - Maps HTTP method to `ThemisAction` (`GET` -> `ThemisAction.READ`, `PUT` with `If-None-Match` -> `ThemisAction.EXECUTE` / `CREATE`, `PUT` with `If-Match` -> `ThemisAction.UPDATE`).
-4. **Policy Evaluation**: Injected `ThemisAuthorizer` evaluates the request. If decision is not `PERMIT`, returns `403 Forbidden`.
+- **M2.2 Scope**:
+  - **Path A (Authoritative Boundary)**: Proves `MAC -> Docker DNS (mnemosyne-clinical:8080) -> ASI -> 401 Unauthorized` (Fail-Closed Network Proof).
+  - **Path B (Durable Persistence)**: Proves `PVF -> HJPA -> PostgreSQL` operational persistence, restart survival, and Compose cycle preservation below the HTTP security boundary.
+  - Confirms `infinispan-1` operational independence.
+- **M2.3 Scope (Next Milestone)**:
+  - Establishes authenticated `service:mneme` transport identity mapped to `ThemisPrincipal`.
+- **M2.4 Scope (Subsequent Milestone)**:
+  - Executes full distributed semantic verification (`CREATE`, `READ`, `UPDATE`, conflict handling) via authenticated harness through `/api/authoritative/fhir/*`.
+- **M3 Scope (Governed Access Integration)**:
+  - Integrates production callers (`DefaultGovernedWriter` / `DefaultGovernedReader`) with `MnemeAuthoritativeHttpClient`.
 
-### Files to Add, Modify, and Remove
+# Verification & Failure Strategy
 
-#### 1. Files to Remove
-- `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistencePort.java` (stale duplicate).
+### 1. Mnemosyne Image Build & Health Verification
+- Build image: `docker compose build hapi-fhir-jpa-server-1`.
+- Start container: `docker compose up -d postgres-1 hapi-fhir-jpa-server-1`.
+- Verify container health status transitions to `healthy` via `http://localhost:8081/actuator/health`.
+- Confirm PostgreSQL schema is initialized with `HFJ_*` tables in `fhir_node_1`.
 
-#### 2. Files to Add
-- `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/controller/AuthoritativeFhirResourceController.java`: Spring `@RestController` implementing GET/PUT endpoints, header extraction, and result mapping.
-- `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/controller/security/AuthoritativeSecurityInterceptor.java`: Spring `HandlerInterceptor` executing Themis security evaluation.
-- `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/controller/dto/AuthoritativeVersionHelper.java`: Utility class for header parsing and `AuthoritativeVersion` formatting.
-- `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/config/AuthoritativeWebMvcConfig.java`: Spring `@Configuration` registering the interceptor for `/api/authoritative/fhir/**`.
-- `hestia/mnemosyne-clinical/src/test/java/net/fhirfactory/harmonia/hapifhir/controller/AuthoritativeFhirResourceControllerTest.java`: MockMvc unit tests for status codes, headers, and precondition discrimination.
-- `hestia/mnemosyne-clinical/src/test/java/net/fhirfactory/harmonia/hapifhir/controller/AuthoritativeFhirResourceControllerSecurityTest.java`: MockMvc tests validating fail-closed behavior for unauthenticated and unauthorized requests.
-- `hestia/mnemosyne-clinical/src/test/java/net/fhirfactory/harmonia/hapifhir/controller/AuthoritativeFhirResourceIntegrationTest.java`: Spring Boot integration test with real `HapiJpaAuthoritativePersistenceAdapter` and database persistence.
+### 2. Path A — Distributed Docker Authoritative Boundary Proof
+- **Network Path & DNS Resolution**:
+  - Execute client request from deployment verification harness to `http://mnemosyne-clinical:8080/api/authoritative/fhir/Patient/pat-test-1`.
+  - Verify DNS resolves and HTTP connection is established across `harmonia-network`.
+- **Fail-Closed Security Rejection**:
+  - Verify that unauthenticated GET and PUT requests return HTTP `401 Unauthorized` from `AuthoritativeSecurityInterceptor`.
+  - Verify that `MnemeAuthoritativeHttpClient` correctly maps the HTTP 401 response to `AuthoritativePersistenceResult.NotCommitted` (fail-closed, zero mutation).
+  - Verify that public `/fhir/*` path is not invoked or substituted.
+  - *Boundary Rule*: This proves deployment, DNS, HTTP routing, and fail-closed security only. Authenticated semantic calls are deferred to M2.3/M2.4.
 
-#### 3. Files to Modify
-- `docs/implementation/harmonia-convergence-runtime-integration-plan.md`: Update Step 3.3 status and current position upon completion.
+### 3. Path B — Mnemosyne Durable Persistence & Restart Proof
+- **Persistence Below HTTP Boundary**:
+  - Exercise the existing Mnemosyne/HAPI-JPA persistence integration using an existing legitimate integration-test mechanism / persistence fixture below the HTTP security boundary (`HapiJpaAuthoritativePersistenceAdapter`).
+  - Persist a test clinical resource directly to PostgreSQL `fhir_node_1` (`HFJ_RESOURCE` / `HFJ_RES_VER`).
+- **Mnemosyne Restart Durability**:
+  - Restart Mnemosyne container: `docker compose restart hapi-fhir-jpa-server-1`.
+  - Wait for health status `healthy`.
+  - Verify that previously written records in `HFJ_RESOURCE` / `HFJ_RES_VER` remain intact and readable from PostgreSQL.
+- **Compose Cycle Durability**:
+  - Execute `docker compose stop postgres-1 hapi-fhir-jpa-server-1` followed by `docker compose up -d`.
+  - Confirm volume `postgres_data_1` preserved all database tables and rows.
+- **Boundary Constraints for Path B**:
+  - MUST NOT bypass or disable `AuthoritativeSecurityInterceptor`.
+  - MUST NOT invent service credentials or caller headers.
+  - MUST NOT expose another production API or use public `/fhir/*`.
+  - MUST NOT imply that authenticated distributed authoritative semantics have been proven over HTTP.
 
-# Verification & Testing
+### 4. Failure Mode & Resilience Verification
+- **Exact M2.1 Failure Semantics Preservation**:
+  - `NotCommitted`: Returned exclusively when zero mutation / zero transmission is positively established:
+    - Pre-network DNS resolution failure (`UnknownHostException`, `UnresolvedAddressException`).
+    - Local client-side precondition or argument errors.
+    - Server-side fail-closed rejection before persistence execution: HTTP `401 Unauthorized` / HTTP `403 Forbidden`.
+    - Server-side validation rejection: HTTP `400 Bad Request` / HTTP `422 Unprocessable Entity`.
+    - Server-side resource absent for READ: HTTP `404 Not Found` / HTTP `410 Gone`.
+  - `OutcomeUnknown`: Returned for all indeterminate transport states where request may have reached Mnemosyne:
+    - Connection failure / socket timeout / connection reset / mid-stream disconnect (`ConnectException`, `HttpTimeoutException`, `SocketTimeoutException`, `IOException`).
+    - HTTP `500 Internal Server Error`, `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout`.
+    - Missing or malformed ETag headers on HTTP 200/201 responses.
+  - `Conflict`: Returned on HTTP `412 Precondition Failed` (CREATE collision or UPDATE stale expected version).
+  - `Committed`: Returned on HTTP `200 OK` (READ/UPDATE) or `201 Created` (CREATE) with valid ETag and matching version headers.
+- **Mnemosyne Offline Resilience**:
+  - Stop Mnemosyne (`docker compose stop hapi-fhir-jpa-server-1`).
+  - Verify Mneme (`infinispan-1`) remains running and operational.
+  - Execute authoritative client call: verify `MnemeAuthoritativeHttpClient` classifies the transport failure conservatively as `OutcomeUnknown` (or `NotCommitted` on unresolvable DNS) without crashing or hanging, and Mneme never treats local cache as authoritative persistence.
+- **PostgreSQL Offline Resilience**:
+  - Stop PostgreSQL (`docker compose stop postgres-1`).
+  - Verify Mnemosyne healthcheck reports unhealthy; incoming requests fail safely (HTTP 500/503 -> client receives `OutcomeUnknown`).
 
-### Test Scenarios & Suites
-
-#### 1. Controller Wire Contract Tests (`AuthoritativeFhirResourceControllerTest`)
-- **GET (Point READ)**:
-  - `GET /api/authoritative/fhir/Patient/pat-1` -> `200 OK`, `ETag: W/"1"`, `X-Harmonia-Authoritative-Version: 1`, `Content-Type: application/fhir+json; charset=UTF-8`, valid Patient JSON payload.
-  - `GET /api/authoritative/fhir/Patient/unknown` -> `404 Not Found`.
-- **PUT CREATE (If-None-Match: *)**:
-  - `PUT /api/authoritative/fhir/Patient/pat-1` with `If-None-Match: *` and new Patient -> `201 Created`, `ETag: W/"1"`, `X-Harmonia-Authoritative-Version: 1`, persisted payload.
-  - `PUT /api/authoritative/fhir/Patient/pat-1` with `If-None-Match: *` when resource already exists -> `412 Precondition Failed` with current version in `ETag` and `X-Harmonia-Authoritative-Version`.
-- **PUT UPDATE (If-Match: W/"{version}")**:
-  - `PUT /api/authoritative/fhir/Patient/pat-1` with `If-Match: W/"1"` and updated Patient -> `200 OK`, `ETag: W/"2"`, `X-Harmonia-Authoritative-Version: 2`.
-  - `PUT /api/authoritative/fhir/Patient/pat-1` with `If-Match: W/"999"` (stale version) -> `412 Precondition Failed` with actual version headers.
-  - `PUT /api/authoritative/fhir/Patient/nonexistent` with `If-Match: W/"1"` -> `404 Not Found`.
-- **Precondition & Request Validation**:
-  - `PUT` without `If-None-Match` or `If-Match` -> `428 Precondition Required`.
-  - `PUT` with both `If-None-Match` and `If-Match` -> `400 Bad Request`.
-  - `PUT` with invalid/empty `If-Match` -> `400 Bad Request`.
-  - `PUT` where payload `resourceType` is `Practitioner` but path is `Patient` -> `400 Bad Request`.
-  - `PUT` where payload `id` is `pat-2` but path is `pat-1` -> `400 Bad Request`.
-  - `PUT` with malformed JSON body syntax -> `400 Bad Request`.
-  - `PUT` with unparseable FHIR schema -> `422 Unprocessable Entity`.
-
-#### 2. Security Fail-Closed Tests (`AuthoritativeFhirResourceControllerSecurityTest`)
-- **Unauthenticated Invocations**:
-  - Request with `request.getUserPrincipal() == null` -> `401 Unauthorized`.
-  - Request with anonymous principal -> `401 Unauthorized`.
-  - Request with caller-controlled header (e.g. `X-Service-Name: mneme`) without verified transport context -> `401 Unauthorized`.
-- **Unauthorized Invocations**:
-  - Request with authenticated principal lacking required clinical authority -> `403 Forbidden`.
-  - Request evaluated by Themis policy returning `ThemisDecision.DENY` -> `403 Forbidden`.
-- **Authorized Invocations**:
-  - Request with trusted `service:mneme` principal and valid authorities -> proceeds to persistence adapter returning `200`/`201`.
-
-#### 3. Spring Boot JPA Integration Tests (`AuthoritativeFhirResourceIntegrationTest`)
-- Executes full Spring Boot web slice / HTTP request dispatching through `AuthoritativeFhirResourceController` down to `HapiJpaAuthoritativePersistenceAdapter` and HAPI DAO tables.
-- Validates that CREATE commits to `HFJ_RESOURCE` / `HFJ_RES_VER`, READ loads from JPA, and UPDATE increments database version.
-
-#### 4. Architecture & Dependency Conformance
-- Run repository ArchUnit test suite:
+### 5. Architecture Conformance Verification
+- Execute ArchUnit architecture tests:
   `mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false`
-- Verify:
-  - Invariant 1: Zero Paradeigma leakage.
-  - Invariant 6: Default-deny Themis security enforcement.
-  - Invariant 8: `mneme-persistence` depends only on `mnemosyne-api`, never on `mnemosyne-clinical`.
-  - All `mnemosyne-clinical` source files compile cleanly against canonical `mnemosyne-api`.
+- Verify zero violations of Invariants 1, 2, 3, 6, 8, and 9.
 
-# Implementation Sequence & Stop Conditions
+# Implementation Architecture & Files
+
+### Existing Assets Reused vs. Changed
+
+| Asset / File | Current Role | M2.2 Required Change | Reason |
+| :--- | :--- | :--- | :--- |
+| `hestia/mnemosyne-clinical/Dockerfile` | JRE 21 container image definition | **Reused without modification** | Validated in M1; builds Spring Boot executable JAR cleanly. |
+| `hestia/mneme-cluster/Dockerfile` | Infinispan 15 cluster container definition | **Reused without modification** | Validated in M1; contains `mneme-persistence` in classpath. |
+| `hestia/mneme-persistence/.../MnemeAuthoritativeHttpClient.java` | M2.1 Authoritative HTTP client | **Reused without modification** | Implements HTTP transport, headers, and failure classification. |
+| `hestia/mnemosyne-clinical/.../AuthoritativeFhirResourceController.java` | Step 3.3 Authoritative REST controller | **Reused without modification** | Implements dedicated `/api/authoritative/fhir/*` endpoint. |
+| `hestia/mnemosyne-clinical/.../AuthoritativeSecurityInterceptor.java` | Step 3.3 Themis security interceptor | **Reused without modification** | Implements fail-closed authentication/authorization check. |
+| `docker-compose.yml` | Multi-container Compose topology | **Update service configuration** | Add `mnemosyne-clinical` network alias to `hapi-fhir-jpa-server-1` (and `hapi-fhir-jpa-server-2`). |
+| `docs/implementation/harmonia-convergence-runtime-integration-plan.md` | Master roadmap | **Update M2.2 status upon completion** | Maintains authoritative record of convergence progress. |
+
+### Files Expected to Change / Be Added
+
+- **Modified Files**:
+  1. `docker-compose.yml`
+  2. `docs/implementation/harmonia-convergence-runtime-integration-plan.md`
+- **New Test Files (Deployment Verification Harness)**:
+  1. `hestia/mneme-persistence/src/test/java/net/fhirfactory/harmonia/persistence/client/DistributedAuthoritativeDockerPathTest.java` (or equivalent Docker network verification test runner)
 
 ### Implementation Sequence
 
-### ✓ Step 1: Canonical Contract Cleanup and Maven Resolution
-- Delete stale duplicate `hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/persistence/AuthoritativePersistencePort.java`.
-- Ensure all usages in `mnemosyne-clinical` bind to canonical `mnemosyne-api`. Verify with `mvn clean compile -pl hestia/mnemosyne-clinical -am`.
+### ✓ Step 1: Configure Docker Compose Topology and Network Aliases
+- Update `docker-compose.yml` to assign network alias `mnemosyne-clinical` to `hapi-fhir-jpa-server-1` on `harmonia-network`.
+- Verify `infinispan-1` configuration remains clean and decoupled.
 
-### ✓ Step 2: Implement Mnemosyne Authoritative REST Controller & Helpers
-- Implement `AuthoritativeVersionHelper` for version header extraction and formatting.
-- Implement `AuthoritativeFhirResourceController` mapping `/api/authoritative/fhir/{resourceType}/{id}` for GET and PUT.
-- Implement deterministic status code mappings, ETag and `X-Harmonia-Authoritative-Version` response headers, and request validations (`400`, `404`, `412`, `422`, `428`, `500`).
+### ✓ Step 2: Build Mnemosyne Container Image & Verify Packaging
+- Package `mnemosyne-clinical` executable JAR (`target/mnemosyne-clinical-*-exec.jar`).
+- Build Docker container image `harmonia-hapi-fhir-1` via Docker Compose.
+- Verify health check `/actuator/health` and PostgreSQL connectivity to `postgres-1`.
 
-### ✓ Step 3: Implement Fail-Closed Themis Security Interceptor
-- Implement `AuthoritativeSecurityInterceptor` extracting `HttpServletRequest.getUserPrincipal()`, mapping to `ThemisPrincipal`, and evaluating `ThemisAuthorizer`.
-- Register interceptor in `AuthoritativeWebMvcConfig` for path `/api/authoritative/fhir/**`.
+### ✓ Step 3: Execute Path A — Distributed Docker Authoritative Boundary Proof
+- Start topology (`docker compose up -d postgres-1 hapi-fhir-jpa-server-1 infinispan-1`).
+- Run deployment verification harness: prove DNS resolution of `mnemosyne-clinical:8080` and TCP connection over `harmonia-network`.
+- Prove fail-closed security response: unauthenticated requests over the network return HTTP 401 Unauthorized via `AuthoritativeSecurityInterceptor`.
+- Confirm `MnemeAuthoritativeHttpClient` handles the 401 response safely as `NotCommitted` without throwing unhandled exceptions.
 
-### ✓ Step 4: Author Test Suite & Execute Conformance Verification
-- Author `AuthoritativeFhirResourceControllerTest`, `AuthoritativeFhirResourceControllerSecurityTest`, and `AuthoritativeFhirResourceIntegrationTest`.
-- Execute module test suite `mvn test -pl hestia/mnemosyne-clinical` and full ArchUnit suite `mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest"`.
+### ✓ Step 4: Execute Path B — Mnemosyne Durable Persistence & Restart Proof
+- Execute persistence verification fixture below the HTTP security boundary (`HapiJpaAuthoritativePersistenceAdapter`), persisting a test record to PostgreSQL `postgres_data_1`.
+- Restart `hapi-fhir-jpa-server-1` and verify state survives cleanly in PostgreSQL.
+- Stop and restart Compose stack, verifying persistence preservation across container lifecycle.
+- Stop `hapi-fhir-jpa-server-1` and verify Mneme handles downtime safely with zero cache fallback.
 
-### ✓ Step 5: Update Master Convergence Plan
-- Update `docs/implementation/harmonia-convergence-runtime-integration-plan.md` to record Step 3.3 completion.
+### ✓ Step 5: Run Architecture Conformance & Update Master Plan
+- Execute full ArchUnit test suite (`mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest"`).
+- Update `docs/implementation/harmonia-convergence-runtime-integration-plan.md` recording M2.2 completion and establishing M2.3 as next step.
 
-### Boundary Rules & Stop Conditions
+### Stop Conditions & Exit Criteria
 
-- **No Deployment Scope Expansion**: Step 3.3 must NOT implement Docker Compose topology changes, container builds, or M2.2 network verifications.
-- **No Synthetic Security Bypass**: Step 3.3 must NOT invent temporary credentials or bypass Themis. Unauthenticated requests must fail closed.
-- **Milestone Discipline**: Step 3.3 terminates upon completing and verifying the server adapter in `mnemosyne-clinical`. M2.2 will be planned and executed only after Step 3.3 is complete and approved.
+- **Stop Condition — M2.3 Dependency**: M2.2 MUST NOT implement transport authentication or invent temporary credentials. When the network path and fail-closed 401 security response are verified over Docker DNS (Path A) and durable persistence survival is proven below the HTTP boundary (Path B), M2.2 is complete.
+- **Stop Condition — No Scope Creep**: M2.2 stops immediately upon completing Docker deployment verification. Do not commence M2.3, M2.4, or M3.
+- **M2.2 Exit Criterion**: Mnemosyne and PostgreSQL deploy reproducibly under Docker Compose; the deployment harness resolves and reaches Mnemosyne over internal Docker DNS; unauthenticated requests fail closed with HTTP 401 (Path A); durable PostgreSQL state survives container restarts below the HTTP boundary (Path B); and `infinispan-1` operates independently without acquiring authority during outages.
 
 ```
-STEP 3.3 PLAN COMPLETE — NO IMPLEMENTATION COMMENCED
+M2.2 PLAN COMPLETE — AWAITING IMPLEMENTATION APPROVAL
 ```
