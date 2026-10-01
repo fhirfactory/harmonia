@@ -696,27 +696,23 @@ Runtime evidence
 -   HAPI JPA runtime activation --- COMPLETE.
 -   Authoritative HAPI JPA persistence adapter --- COMPLETE.
 -   PostgreSQL concurrency proof --- COMPLETE / CONFORMANT.
--   Mnemosyne internal authoritative HTTP server --- COMPLETE /
-    CONFORMANT.
--   Server-side authoritative HTTP/security/conformance tests ---
-    COMPLETE.
+-   M1 Stable Docker Runtime Baseline --- COMPLETE.
+-   M2.1 Mneme Authoritative HTTP Client --- COMPLETE / CONFORMANT.
+-   Step 3.3 Mnemosyne internal authoritative HTTP server adapter (`AuthoritativeFhirResourceController`, `AuthoritativeSecurityInterceptor`) --- COMPLETE / CONFORMANT.
+-   Server-side authoritative HTTP/security/conformance tests --- COMPLETE (106 unit/integration tests passing).
 -   MAT-03 --- RESOLVED / CONFORMANT.
 -   MAT-04 --- CONFORMANT.
 -   MAT-06 --- CLOSED / CONFORMANT with implementation evidence.
 -   MAT-07b --- CONFORMANT.
--   MAT-08 application boundary --- RESOLVED; deployment authentication
-    remains an operational prerequisite.
+-   MAT-08 application boundary --- RESOLVED; deployment authentication remains an operational prerequisite.
 
 ## Current activity
 
-Mneme is operating within the Docker work on `harmonia-srv`.
+Mnemosyne authoritative HTTP server adapter and canonical contract resolution verified.
 
-**Current milestone:** M1 --- Stable Docker Runtime Baseline.
+**Current milestone:** M2 --- Distributed Authoritative Path.
 
-**Next milestone after M1:** M2 --- Distributed Authoritative Path.
-
-**Next convergence implementation step:** M2.1 --- Mneme authoritative
-HTTP client.
+**Next convergence implementation step:** M2.2 --- Containerise/deploy Mnemosyne and prove the Mneme -> Mnemosyne authoritative path across the Docker network.
 
 ------------------------------------------------------------------------
 
