@@ -24,16 +24,23 @@ import java.util.Objects;
  * Immutable configuration for the Mneme Authoritative HTTP Client.
  * <p>
  * Supports configuration via environment variables or system properties without hardcoding
- * localhost or developer workstation IP addresses.
+ * localhost or developer workstation IP addresses, including mutual TLS (mTLS) credentials.
  */
 public record MnemeAuthoritativeClientConfig(
         String baseUrl,
         Duration connectTimeout,
-        Duration requestTimeout
+        Duration requestTimeout,
+        String keyStorePath,
+        String keyStorePassword,
+        String keyStoreType,
+        String trustStorePath,
+        String trustStorePassword,
+        String trustStoreType
 ) {
     public static final String DEFAULT_BASE_URL = "http://mnemosyne-clinical:8080/api/authoritative/fhir";
     public static final Duration DEFAULT_CONNECT_TIMEOUT = Duration.ofSeconds(5);
     public static final Duration DEFAULT_REQUEST_TIMEOUT = Duration.ofSeconds(15);
+    public static final String DEFAULT_KEYSTORE_TYPE = "PKCS12";
 
     public static final String ENV_BASE_URL = "HARMONIA_MNEMOSYNE_AUTHORITATIVE_URL";
     public static final String PROP_BASE_URL = "mnemosyne.authoritative.url";
@@ -44,6 +51,24 @@ public record MnemeAuthoritativeClientConfig(
     public static final String ENV_REQUEST_TIMEOUT_SEC = "HARMONIA_MNEMOSYNE_REQUEST_TIMEOUT_SEC";
     public static final String PROP_REQUEST_TIMEOUT_SEC = "mnemosyne.request.timeout.seconds";
 
+    public static final String ENV_KEYSTORE_PATH = "HARMONIA_MNEMOSYNE_TLS_KEYSTORE_PATH";
+    public static final String PROP_KEYSTORE_PATH = "mnemosyne.authoritative.tls.keystore.path";
+
+    public static final String ENV_KEYSTORE_PASSWORD = "HARMONIA_MNEMOSYNE_TLS_KEYSTORE_PASSWORD";
+    public static final String PROP_KEYSTORE_PASSWORD = "mnemosyne.authoritative.tls.keystore.password";
+
+    public static final String ENV_KEYSTORE_TYPE = "HARMONIA_MNEMOSYNE_TLS_KEYSTORE_TYPE";
+    public static final String PROP_KEYSTORE_TYPE = "mnemosyne.authoritative.tls.keystore.type";
+
+    public static final String ENV_TRUSTSTORE_PATH = "HARMONIA_MNEMOSYNE_TLS_TRUSTSTORE_PATH";
+    public static final String PROP_TRUSTSTORE_PATH = "mnemosyne.authoritative.tls.truststore.path";
+
+    public static final String ENV_TRUSTSTORE_PASSWORD = "HARMONIA_MNEMOSYNE_TLS_TRUSTSTORE_PASSWORD";
+    public static final String PROP_TRUSTSTORE_PASSWORD = "mnemosyne.authoritative.tls.truststore.password";
+
+    public static final String ENV_TRUSTSTORE_TYPE = "HARMONIA_MNEMOSYNE_TLS_TRUSTSTORE_TYPE";
+    public static final String PROP_TRUSTSTORE_TYPE = "mnemosyne.authoritative.tls.truststore.type";
+
     public MnemeAuthoritativeClientConfig {
         Objects.requireNonNull(baseUrl, "baseUrl must not be null");
         Objects.requireNonNull(connectTimeout, "connectTimeout must not be null");
@@ -53,12 +78,41 @@ public record MnemeAuthoritativeClientConfig(
         }
     }
 
+    public MnemeAuthoritativeClientConfig(String baseUrl, Duration connectTimeout, Duration requestTimeout) {
+        this(baseUrl, connectTimeout, requestTimeout, null, null, DEFAULT_KEYSTORE_TYPE, null, null, DEFAULT_KEYSTORE_TYPE);
+    }
+
     public static MnemeAuthoritativeClientConfig of(String baseUrl) {
         return new MnemeAuthoritativeClientConfig(baseUrl, DEFAULT_CONNECT_TIMEOUT, DEFAULT_REQUEST_TIMEOUT);
     }
 
     public static MnemeAuthoritativeClientConfig of(String baseUrl, Duration connectTimeout, Duration requestTimeout) {
         return new MnemeAuthoritativeClientConfig(baseUrl, connectTimeout, requestTimeout);
+    }
+
+    public static MnemeAuthoritativeClientConfig ofTls(
+            String baseUrl,
+            String keyStorePath,
+            String keyStorePassword,
+            String trustStorePath,
+            String trustStorePassword) {
+        return new MnemeAuthoritativeClientConfig(
+                baseUrl,
+                DEFAULT_CONNECT_TIMEOUT,
+                DEFAULT_REQUEST_TIMEOUT,
+                keyStorePath,
+                keyStorePassword,
+                DEFAULT_KEYSTORE_TYPE,
+                trustStorePath,
+                trustStorePassword,
+                DEFAULT_KEYSTORE_TYPE
+        );
+    }
+
+    public boolean isTlsConfigured() {
+        return (keyStorePath != null && !keyStorePath.isBlank())
+                || (trustStorePath != null && !trustStorePath.isBlank())
+                || baseUrl.startsWith("https://");
     }
 
     public static MnemeAuthoritativeClientConfig fromEnvironment() {
@@ -70,7 +124,25 @@ public record MnemeAuthoritativeClientConfig(
         String requestSec = getEnvOrProp(ENV_REQUEST_TIMEOUT_SEC, PROP_REQUEST_TIMEOUT_SEC, null);
         Duration requestTimeout = requestSec != null ? Duration.ofSeconds(Long.parseLong(requestSec)) : DEFAULT_REQUEST_TIMEOUT;
 
-        return new MnemeAuthoritativeClientConfig(url, connectTimeout, requestTimeout);
+        String keyStorePath = getEnvOrProp(ENV_KEYSTORE_PATH, PROP_KEYSTORE_PATH, null);
+        String keyStorePassword = getEnvOrProp(ENV_KEYSTORE_PASSWORD, PROP_KEYSTORE_PASSWORD, null);
+        String keyStoreType = getEnvOrProp(ENV_KEYSTORE_TYPE, PROP_KEYSTORE_TYPE, DEFAULT_KEYSTORE_TYPE);
+
+        String trustStorePath = getEnvOrProp(ENV_TRUSTSTORE_PATH, PROP_TRUSTSTORE_PATH, null);
+        String trustStorePassword = getEnvOrProp(ENV_TRUSTSTORE_PASSWORD, PROP_TRUSTSTORE_PASSWORD, null);
+        String trustStoreType = getEnvOrProp(ENV_TRUSTSTORE_TYPE, PROP_TRUSTSTORE_TYPE, DEFAULT_KEYSTORE_TYPE);
+
+        return new MnemeAuthoritativeClientConfig(
+                url,
+                connectTimeout,
+                requestTimeout,
+                keyStorePath,
+                keyStorePassword,
+                keyStoreType,
+                trustStorePath,
+                trustStorePassword,
+                trustStoreType
+        );
     }
 
     private static String getEnvOrProp(String envKey, String propKey, String defaultValue) {

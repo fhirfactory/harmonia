@@ -1,0 +1,27 @@
+# Copyright (c) 2026 Mark Hunter
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+server:
+  port: ${SERVER_PORT:8443}
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: ${SERVER_SSL_KEY_STORE:/etc/harmonia/tls/mnemosyne-keystore.p12}
+    key-store-password: ${SERVER_SSL_KEY_STORE_PASSWORD:harmoniapass}
+    key-store-type: ${SERVER_SSL_KEY_STORE_TYPE:PKCS12}
+    key-alias: ${SERVER_SSL_KEY_ALIAS:mnemosyne}
+    trust-store: ${SERVER_SSL_TRUST_STORE:/etc/harmonia/tls/mnemosyne-truststore.p12}
+    trust-store-password: ${SERVER_SSL_TRUST_STORE_PASSWORD:harmoniapass}
+    trust-store-type: ${SERVER_SSL_TRUST_STORE_TYPE:PKCS12}

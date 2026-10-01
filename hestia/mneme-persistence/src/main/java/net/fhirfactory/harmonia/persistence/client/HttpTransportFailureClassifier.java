@@ -20,18 +20,23 @@ package net.fhirfactory.harmonia.persistence.client;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import java.net.ConnectException;
 import java.net.UnknownHostException;
+import java.net.http.HttpConnectTimeoutException;
 import java.nio.channels.UnresolvedAddressException;
+import java.security.cert.CertificateException;
 
 /**
- * Conservative transport failure classifier for authoritative persistence operations.
+ * Precise, conservative transport failure classifier for authoritative persistence operations.
  * <p>
  * Governing rule (AX-01, AX-05): {@code NotCommitted} is returned ONLY when it is positively
- * established that no authoritative request could have reached Mnemosyne (e.g. client validation
- * or unequivocal pre-network failure such as DNS resolution failure).
+ * established that no authoritative request could have reached Mnemosyne (e.g. client validation,
+ * DNS resolution failure, connection refusal, or pre-transmission TLS handshake rejection).
  * <p>
- * All other connection, timeout, socket-reuse, stream, or transport failures fail conservatively
- * to {@code OutcomeUnknown}.
+ * All other ambiguous connection resets, mid-stream socket failures, read timeouts, or post-handshake
+ * IO failures fail conservatively to {@code OutcomeUnknown}.
  */
 public final class HttpTransportFailureClassifier {
 
@@ -55,16 +60,7 @@ public final class HttpTransportFailureClassifier {
                     "Unknown transport failure during " + operationName);
         }
 
-        Throwable rootCause = getRootCause(throwable);
-
-        // Positively established pre-network DNS failures
-        if (rootCause instanceof UnknownHostException || rootCause instanceof UnresolvedAddressException) {
-            return new AuthoritativePersistenceResult.NotCommitted<>(
-                    "DNS resolution failed before request transmission during " + operationName + ": " + rootCause.getMessage(),
-                    throwable);
-        }
-
-        // Positively established client-side validation failures
+        // 1. Positively established client-side validation failures
         if (throwable instanceof IllegalArgumentException
                 || throwable instanceof NullPointerException
                 || throwable instanceof IllegalStateException) {
@@ -73,17 +69,47 @@ public final class HttpTransportFailureClassifier {
                     throwable);
         }
 
-        // All ambiguous connection, timeout, mid-stream, reset, and IO failures fail conservatively to OutcomeUnknown
+        // 2. Check exception chain for provable pre-transmission network/TLS failures
+        if (hasCause(throwable, UnknownHostException.class) || hasCause(throwable, UnresolvedAddressException.class)) {
+            return new AuthoritativePersistenceResult.NotCommitted<>(
+                    "DNS resolution failed before request transmission during " + operationName + ": " + throwable.getMessage(),
+                    throwable);
+        }
+        if (hasCause(throwable, SSLHandshakeException.class)
+                || hasCause(throwable, SSLPeerUnverifiedException.class)
+                || hasCause(throwable, CertificateException.class)) {
+            return new AuthoritativePersistenceResult.NotCommitted<>(
+                    "TLS handshake rejected before request transmission during " + operationName + ": " + throwable.getMessage(),
+                    throwable);
+        }
+        if (hasCause(throwable, HttpConnectTimeoutException.class)) {
+            return new AuthoritativePersistenceResult.NotCommitted<>(
+                    "TCP/TLS connection setup timed out before request transmission during " + operationName + ": " + throwable.getMessage(),
+                    throwable);
+        }
+        if (hasCause(throwable, ConnectException.class)) {
+            return new AuthoritativePersistenceResult.NotCommitted<>(
+                    "Connection refused before request transmission during " + operationName + ": " + throwable.getMessage(),
+                    throwable);
+        }
+
+        // 3. All ambiguous mid-stream, read timeout, reset, and IO failures fail conservatively to OutcomeUnknown
         return new AuthoritativePersistenceResult.OutcomeUnknown<>(
                 "Indeterminate transport failure during " + operationName + " (state unknown): " + throwable.getMessage(),
                 throwable);
     }
 
-    private static Throwable getRootCause(Throwable throwable) {
-        Throwable cause = throwable;
-        while (cause.getCause() != null && cause.getCause() != cause) {
-            cause = cause.getCause();
+    private static boolean hasCause(Throwable throwable, Class<? extends Throwable> targetType) {
+        Throwable current = throwable;
+        while (current != null) {
+            if (targetType.isInstance(current)) {
+                return true;
+            }
+            if (current.getCause() == current) {
+                break;
+            }
+            current = current.getCause();
         }
-        return cause;
+        return false;
     }
 }

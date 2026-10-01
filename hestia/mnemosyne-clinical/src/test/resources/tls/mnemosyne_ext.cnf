@@ -1,0 +1,11 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = mnemosyne-clinical
+DNS.2 = hapi-fhir-jpa-server-1
+DNS.3 = localhost
+IP.1 = 127.0.0.1

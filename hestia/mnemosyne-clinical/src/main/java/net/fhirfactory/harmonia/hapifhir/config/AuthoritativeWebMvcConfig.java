@@ -18,16 +18,22 @@
 package net.fhirfactory.harmonia.hapifhir.config;
 
 import net.fhirfactory.harmonia.hapifhir.controller.security.AuthoritativeSecurityInterceptor;
+import net.fhirfactory.harmonia.hapifhir.controller.security.X509CertificateAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
  * Spring MVC configuration registering the fail-closed Themis security interceptor
- * for all authoritative routes under {@code /api/authoritative/fhir/**}.
+ * and X.509 client certificate authentication filter for all authoritative routes
+ * under {@code /api/authoritative/fhir/**}.
  */
 @Configuration
 public class AuthoritativeWebMvcConfig implements WebMvcConfigurer {
@@ -43,5 +49,15 @@ public class AuthoritativeWebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(securityInterceptor)
                 .addPathPatterns("/api/authoritative/fhir/**");
+    }
+
+    @Bean
+    public FilterRegistrationBean<X509CertificateAuthenticationFilter> x509CertificateAuthenticationFilterRegistration(
+            X509CertificateAuthenticationFilter filter) {
+        FilterRegistrationBean<X509CertificateAuthenticationFilter> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(filter);
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        registrationBean.setUrlPatterns(List.of("/api/authoritative/fhir/*"));
+        return registrationBean;
     }
 }

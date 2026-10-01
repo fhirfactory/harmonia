@@ -152,17 +152,27 @@ services:
       dockerfile: Dockerfile
     container_name: harmonia-hapi-fhir-1
     environment:
-      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_PROFILES_ACTIVE: postgres,mtls
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-1:5432/fhir_node_1
       SPRING_DATASOURCE_USERNAME: fhir_user
       SPRING_DATASOURCE_PASSWORD: fhir_password
+      SERVER_PORT: 8443
+      SERVER_SSL_ENABLED: "true"
+      SERVER_SSL_CLIENT_AUTH: "need"
+      SERVER_SSL_KEY_STORE: "/etc/harmonia/tls/mnemosyne-keystore.p12"
+      SERVER_SSL_KEY_STORE_PASSWORD: "harmoniapass"
+      SERVER_SSL_TRUST_STORE: "/etc/harmonia/tls/mnemosyne-truststore.p12"
+      SERVER_SSL_TRUST_STORE_PASSWORD: "harmoniapass"
     ports:
+      - "8443:8443"
       - "8081:8080"
+    volumes:
+      - ./.pki/dev-tls:/etc/harmonia/tls:ro
     depends_on:
       postgres-1:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      test: ["CMD-SHELL", "curl -k -f https://localhost:8443/actuator/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -178,17 +188,27 @@ services:
       dockerfile: Dockerfile
     container_name: harmonia-hapi-fhir-2
     environment:
-      SPRING_PROFILES_ACTIVE: postgres
+      SPRING_PROFILES_ACTIVE: postgres,mtls
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-2:5432/fhir_node_2
       SPRING_DATASOURCE_USERNAME: fhir_user
       SPRING_DATASOURCE_PASSWORD: fhir_password
+      SERVER_PORT: 8443
+      SERVER_SSL_ENABLED: "true"
+      SERVER_SSL_CLIENT_AUTH: "need"
+      SERVER_SSL_KEY_STORE: "/etc/harmonia/tls/mnemosyne-keystore.p12"
+      SERVER_SSL_KEY_STORE_PASSWORD: "harmoniapass"
+      SERVER_SSL_TRUST_STORE: "/etc/harmonia/tls/mnemosyne-truststore.p12"
+      SERVER_SSL_TRUST_STORE_PASSWORD: "harmoniapass"
     ports:
+      - "8444:8443"
       - "8082:8080"
+    volumes:
+      - ./.pki/dev-tls:/etc/harmonia/tls:ro
     depends_on:
       postgres-2:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      test: ["CMD-SHELL", "curl -k -f https://localhost:8443/actuator/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5

@@ -14,9 +14,19 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
   servlet:
     context-path: /
+  ssl:
+    enabled: ${SERVER_SSL_ENABLED:false}
+    client-auth: ${SERVER_SSL_CLIENT_AUTH:need}
+    key-store: ${SERVER_SSL_KEY_STORE:}
+    key-store-password: ${SERVER_SSL_KEY_STORE_PASSWORD:}
+    key-store-type: ${SERVER_SSL_KEY_STORE_TYPE:PKCS12}
+    key-alias: ${SERVER_SSL_KEY_ALIAS:mnemosyne}
+    trust-store: ${SERVER_SSL_TRUST_STORE:}
+    trust-store-password: ${SERVER_SSL_TRUST_STORE_PASSWORD:}
+    trust-store-type: ${SERVER_SSL_TRUST_STORE_TYPE:PKCS12}
 
 spring:
   application:

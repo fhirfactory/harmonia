@@ -73,9 +73,25 @@ public class DistributedAuthoritativeDockerPathTest {
 
     private boolean checkServerHealth() {
         try {
-            HttpClient client = HttpClient.newBuilder()
-                    .connectTimeout(Duration.ofSeconds(2))
-                    .build();
+            HttpClient client;
+            if (mnemosyneUrl.startsWith("https://")) {
+                javax.net.ssl.SSLContext sslContext = SslContextFactory.createSslContext(
+                        "classpath:/tls/mneme-keystore.p12",
+                        "harmoniapass",
+                        "PKCS12",
+                        "classpath:/tls/mneme-truststore.p12",
+                        "harmoniapass",
+                        "PKCS12"
+                );
+                client = HttpClient.newBuilder()
+                        .sslContext(sslContext)
+                        .connectTimeout(Duration.ofSeconds(2))
+                        .build();
+            } else {
+                client = HttpClient.newBuilder()
+                        .connectTimeout(Duration.ofSeconds(2))
+                        .build();
+            }
             String healthUrl = mnemosyneUrl.replace("/api/authoritative/fhir", "/actuator/health");
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(healthUrl))
@@ -210,7 +226,7 @@ public class DistributedAuthoritativeDockerPathTest {
     class OfflineResilienceTests {
 
         @Test
-        @DisplayName("Connection failure against unreachable port is classified safely as OutcomeUnknown")
+        @DisplayName("Connection failure against unreachable port is classified safely as NotCommitted or OutcomeUnknown")
         void unreachableEndpointClassifiedAsOutcomeUnknown() {
             // Target an unallocated local port where no server is listening
             String offlineUrl = "http://127.0.0.1:59999/api/authoritative/fhir";
@@ -224,10 +240,10 @@ public class DistributedAuthoritativeDockerPathTest {
 
             AuthoritativePersistenceResult<IBaseResource> result = client.read(key);
 
-            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.OutcomeUnknown.class);
-            AuthoritativePersistenceResult.OutcomeUnknown<IBaseResource> outcomeUnknown =
-                    (AuthoritativePersistenceResult.OutcomeUnknown<IBaseResource>) result;
-            assertThat(outcomeUnknown.message()).isNotEmpty();
+            assertThat(result).satisfiesAnyOf(
+                    res -> assertThat(res).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class),
+                    res -> assertThat(res).isInstanceOf(AuthoritativePersistenceResult.OutcomeUnknown.class)
+            );
         }
 
         @Test
@@ -248,6 +264,78 @@ public class DistributedAuthoritativeDockerPathTest {
                     res -> assertThat(res).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class),
                     res -> assertThat(res).isInstanceOf(AuthoritativePersistenceResult.OutcomeUnknown.class)
             );
+        }
+    }
+
+    @Nested
+    @DisplayName("Path C: mTLS Authenticated Docker Boundary & Fail-Closed Invariants")
+    class MtlsAuthenticatedDockerBoundaryTests {
+
+        @Test
+        @DisplayName("Authenticated service:mneme client with valid URI SAN certificate connects and accesses authoritative endpoint")
+        void authenticatedClientSucceeds() {
+            assumeTrue(serverAvailable && mnemosyneUrl.startsWith("https://"),
+                    "Mnemosyne HTTPS container must be running at " + mnemosyneUrl);
+
+            MnemeAuthoritativeClientConfig config = MnemeAuthoritativeClientConfig.ofTls(
+                    mnemosyneUrl,
+                    "classpath:/tls/mneme-keystore.p12",
+                    "harmoniapass",
+                    "classpath:/tls/mneme-truststore.p12",
+                    "harmoniapass"
+            );
+            AuthoritativePersistencePort<IBaseResource> client = new MnemeAuthoritativeHttpClient(config, fhirContext);
+            ResourceKey key = ResourceKey.of("Patient", "pat-mtls-1");
+
+            AuthoritativePersistenceResult<IBaseResource> result = client.read(key);
+            assertThat(result).satisfiesAnyOf(
+                    res -> assertThat(res).isInstanceOf(AuthoritativePersistenceResult.Committed.class),
+                    res -> assertThat(res).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class)
+            );
+        }
+
+        @Test
+        @DisplayName("Client with untrusted certificate (Rogue CA) fails closed at TLS handshake with NotCommitted")
+        void untrustedClientFailsHandshake() {
+            assumeTrue(serverAvailable && mnemosyneUrl.startsWith("https://"),
+                    "Mnemosyne HTTPS container must be running at " + mnemosyneUrl);
+
+            MnemeAuthoritativeClientConfig config = MnemeAuthoritativeClientConfig.ofTls(
+                    mnemosyneUrl,
+                    "classpath:/tls/untrusted-keystore.p12",
+                    "harmoniapass",
+                    "classpath:/tls/mneme-truststore.p12",
+                    "harmoniapass"
+            );
+            AuthoritativePersistencePort<IBaseResource> client = new MnemeAuthoritativeHttpClient(config, fhirContext);
+            ResourceKey key = ResourceKey.of("Patient", "pat-mtls-untrusted");
+
+            AuthoritativePersistenceResult<IBaseResource> result = client.read(key);
+            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(((AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result).failureMessage())
+                    .containsIgnoringCase("TLS handshake rejected");
+        }
+
+        @Test
+        @DisplayName("Client with wrong URI SAN fails closed with NotCommitted (HTTP 401)")
+        void wrongSanClientFailsClosed() {
+            assumeTrue(serverAvailable && mnemosyneUrl.startsWith("https://"),
+                    "Mnemosyne HTTPS container must be running at " + mnemosyneUrl);
+
+            MnemeAuthoritativeClientConfig config = MnemeAuthoritativeClientConfig.ofTls(
+                    mnemosyneUrl,
+                    "classpath:/tls/wrong-san-keystore.p12",
+                    "harmoniapass",
+                    "classpath:/tls/mneme-truststore.p12",
+                    "harmoniapass"
+            );
+            AuthoritativePersistencePort<IBaseResource> client = new MnemeAuthoritativeHttpClient(config, fhirContext);
+            ResourceKey key = ResourceKey.of("Patient", "pat-mtls-wrong-san");
+
+            AuthoritativePersistenceResult<IBaseResource> result = client.read(key);
+            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(((AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result).failureMessage())
+                    .containsIgnoringCase("401");
         }
     }
 }

@@ -81,10 +81,30 @@ public class MnemeAuthoritativeHttpClient implements AuthoritativePersistencePor
     }
 
     public MnemeAuthoritativeHttpClient(MnemeAuthoritativeClientConfig config, FhirContext fhirContext) {
-        this(config, fhirContext, HttpClient.newBuilder()
+        this(config, fhirContext, createDefaultHttpClient(config));
+    }
+
+    private static HttpClient createDefaultHttpClient(MnemeAuthoritativeClientConfig config) {
+        HttpClient.Builder builder = HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_1_1)
-                .connectTimeout(config.connectTimeout())
-                .build());
+                .connectTimeout(config.connectTimeout());
+        if (config.isTlsConfigured()) {
+            try {
+                javax.net.ssl.SSLContext sslContext = SslContextFactory.createSslContext(
+                        config.keyStorePath(),
+                        config.keyStorePassword(),
+                        config.keyStoreType(),
+                        config.trustStorePath(),
+                        config.trustStorePassword(),
+                        config.trustStoreType()
+                );
+                builder.sslContext(sslContext);
+            } catch (Exception e) {
+                log.error("Failed to initialize SSLContext for MnemeAuthoritativeHttpClient: {}", e.getMessage(), e);
+                throw new IllegalStateException("Failed to initialize TLS SSLContext for authoritative HTTP client", e);
+            }
+        }
+        return builder.build();
     }
 
     public MnemeAuthoritativeHttpClient(

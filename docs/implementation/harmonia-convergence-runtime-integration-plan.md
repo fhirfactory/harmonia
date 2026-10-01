@@ -309,25 +309,45 @@ PostgreSQL
 - Verified independent startup and resilience of `infinispan-1` during Mnemosyne outage with zero cache promotion to authority.
 - All 58 `mneme-persistence` tests, 107 `mnemosyne-clinical` tests, and 84 repository-wide architecture tests passing.
 
-### M2.3 Establish service identity
+### M2.3 Establish service identity --- COMPLETE / CONFORMANT
 
-Resolve the deployment-level identity mechanism for Mneme -\> Mnemosyne:
+Resolved and implemented the deployment-level transport authentication and identity mapping mechanism for Mneme -> Mnemosyne:
 
 ``` text
-transport authentication
+TLS / container JSSE infrastructure (mTLS / server.ssl.client-auth=need)
         |
         v
-trusted service identity
+trusted certificate identity (URI SAN: urn:harmonia:service:mneme)
         |
         v
-ThemisPrincipal
+bounded service-identity mapping (CertificateServiceIdentityMapper)
+        |
+        v
+service:mneme
+        |
+        v
+HttpServletRequest.getUserPrincipal()
+        |
+        v
+AuthoritativeSecurityInterceptor
+        |
+        v
+HarmoniaServiceIdentities.PRINCIPAL_MNEME
         |
         v
 Themis authorization
 ```
 
-Record the selected mechanism explicitly as an architecture/deployment
-decision.
+Architectural Outcomes:
+- **Mutual TLS (mTLS)** selected and implemented as the deployment-level transport authentication mechanism for the Mneme -> Mnemosyne authoritative boundary.
+- **Normative Service Identity**: Established exclusively from X.509 Subject Alternative Name (SAN) URI `urn:harmonia:service:mneme` (type 6). Certificate Subject CN (`CN=service:mneme`) is descriptive only and does not establish service identity.
+- **Fail-Closed Identity Mapping**: Implemented `CertificateServiceIdentityMapper` with strict whitelist mapping. Missing, unregistered, or conflicting SAN URIs fail closed to `Optional.empty()`.
+- **Runtime Principal Binding**: Implemented `X509CertificateAuthenticationFilter` (highest precedence) extracting `jakarta.servlet.request.X509Certificate`, resolving identity via `CertificateServiceIdentityMapper`, and wrapping `HttpServletRequest` so `getUserPrincipal()` returns `Principal("service:mneme")`.
+- **Security Interceptor & Themis Authorization**: `AuthoritativeSecurityInterceptor` consumes `request.getUserPrincipal()`, resolves `HarmoniaServiceIdentities.PRINCIPAL_MNEME`, and executes Themis authorization without caller-controlled headers.
+- **Precise Failure Classification**: Updated `HttpTransportFailureClassifier` to classify pre-transmission TLS handshake rejections, untrusted certificates, connect timeouts, and DNS failures as `NotCommitted`, while keeping indeterminate IO / stream failures conservatively as `OutcomeUnknown`.
+- **Client mTLS**: Implemented `SslContextFactory` and updated `MnemeAuthoritativeClientConfig` / `MnemeAuthoritativeHttpClient` to support PKCS12 keystores and truststores.
+- **Development PKI & Docker**: Created `scripts/pki/generate-dev-certs.sh` and updated `docker-compose.yml` mounting `/etc/harmonia/tls` and exposing HTTPS port 8443.
+- **Verification**: Verified via unit tests, WireMock HTTPS tests, Docker boundary tests, and 84 repository-wide ArchUnit architecture tests passing with 0 violations.
 
 ### M2.4 Distributed authoritative-path verification
 
