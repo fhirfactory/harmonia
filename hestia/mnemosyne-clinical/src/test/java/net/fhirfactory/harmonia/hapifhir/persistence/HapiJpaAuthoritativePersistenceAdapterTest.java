@@ -69,11 +69,11 @@ class HapiJpaAuthoritativePersistenceAdapterTest {
         AuthoritativePersistenceResult<IBaseResource> result = adapter.create(key, patient);
 
         assertThat(result).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
-        assertThat(result.outcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);
         assertThat(result.isCommitted()).isTrue();
 
         AuthoritativePersistenceResult.Committed<IBaseResource> committed =
                 (AuthoritativePersistenceResult.Committed<IBaseResource>) result;
+        assertThat(committed.outcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);
         assertThat(committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of(1L));
 
         Patient persisted = (Patient) committed.persistedResource();
@@ -97,11 +97,11 @@ class HapiJpaAuthoritativePersistenceAdapterTest {
         AuthoritativePersistenceResult<IBaseResource> result2 = adapter.create(key, org2);
 
         assertThat(result2).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
-        assertThat(result2.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
         assertThat(result2.isCommitted()).isFalse();
 
         AuthoritativePersistenceResult.Conflict<IBaseResource> conflict =
                 (AuthoritativePersistenceResult.Conflict<IBaseResource>) result2;
+        assertThat(conflict.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
         assertThat(conflict.conflict().reason()).isEqualTo(PreconditionFailureReason.RESOURCE_ALREADY_EXISTS);
         assertThat(conflict.conflict().key()).isEqualTo(key);
     }
@@ -116,7 +116,7 @@ class HapiJpaAuthoritativePersistenceAdapterTest {
         AuthoritativePersistenceResult<IBaseResource> result = adapter.create(key, auditEvent);
 
         assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
-        assertThat(result.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
+        assertThat(((AuthoritativePersistenceResult.NotCommitted<?>) result).outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
     }
 
     @Test
@@ -273,11 +273,11 @@ class HapiJpaAuthoritativePersistenceAdapterTest {
     }
 
     @Test
-    @DisplayName("12. READ: returns NotCommitted for non-existent resource or null key")
+    @DisplayName("12. READ: returns Absent for non-existent resource, NotCommitted for null key")
     void testReadNonExistentResource() {
         ResourceKey absentKey = ResourceKey.of("Patient", "absent-" + UUID.randomUUID());
         AuthoritativePersistenceResult<IBaseResource> readRes = adapter.read(absentKey);
-        assertThat(readRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+        assertThat(readRes).isInstanceOf(AuthoritativePersistenceResult.Absent.class);
 
         AuthoritativePersistenceResult<IBaseResource> nullKeyRes = adapter.read(null);
         assertThat(nullKeyRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);

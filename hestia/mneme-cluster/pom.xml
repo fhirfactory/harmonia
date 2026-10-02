@@ -40,6 +40,12 @@
             <artifactId>calliope</artifactId>
         </dependency>
 
+        <!-- Themis Security Authorization Contracts -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-api</artifactId>
+        </dependency>
+
         <!-- Mneme Persistence SPI -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>

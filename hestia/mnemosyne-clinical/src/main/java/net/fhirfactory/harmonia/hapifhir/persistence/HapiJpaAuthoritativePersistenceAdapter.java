@@ -112,7 +112,7 @@ public class HapiJpaAuthoritativePersistenceAdapter implements AuthoritativePers
         try {
             IBaseResource resource = dao.read(new IdType(key.resourceType(), key.id()));
             if (resource == null) {
-                return new AuthoritativePersistenceResult.NotCommitted<>(
+                return new AuthoritativePersistenceResult.Absent<>(
                         "Resource not found: " + key.toQualifiedPath());
             }
             String versionId = resource.getIdElement() != null ? resource.getIdElement().getVersionIdPart() : null;
@@ -123,8 +123,8 @@ public class HapiJpaAuthoritativePersistenceAdapter implements AuthoritativePers
             AuthoritativeVersion version = AuthoritativeVersion.of(versionId);
             return new AuthoritativePersistenceResult.Committed<>(resource, version);
         } catch (ResourceNotFoundException rnfe) {
-            return new AuthoritativePersistenceResult.NotCommitted<>(
-                    "Resource not found: " + key.toQualifiedPath(), rnfe);
+            return new AuthoritativePersistenceResult.Absent<>(
+                    "Resource not found: " + key.toQualifiedPath());
         } catch (ResourceGoneException rge) {
             return new AuthoritativePersistenceResult.NotCommitted<>(
                     "Resource is deleted: " + key.toQualifiedPath(), rge);

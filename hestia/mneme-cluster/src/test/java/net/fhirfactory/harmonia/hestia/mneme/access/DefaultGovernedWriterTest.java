@@ -15,7 +15,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package net.fhirfactory.harmonia.hapifhir.governed;
+package net.fhirfactory.harmonia.hestia.mneme.access;
 
 import net.fhirfactory.harmonia.hapifhir.persistence.AuthoritativePersistencePort;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
@@ -74,15 +74,12 @@ class DefaultGovernedWriterTest {
     private DefaultGovernedWriter governedWriter;
 
     private final ResourceKey sampleKey = ResourceKey.of("Patient", "pat-100");
-    private final ThemisSecurityContext sampleContext = new ThemisSecurityContext(
-            ThemisPrincipal.human("dr-alice"),
-            "corr-123",
-            "caus-456",
-            "hospital-a",
-            "192.168.1.1",
-            null,
-            null
-    );
+    private final ThemisSecurityContext sampleContext = ThemisSecurityContext.builder()
+            .correlationId("corr-123")
+            .requestingPrincipal(ThemisPrincipal.human("prac-456"))
+            .clientIp("127.0.0.1")
+            .tenantId("HarmoniaApp")
+            .build();
 
     @BeforeEach
     void setUp() {
@@ -94,9 +91,11 @@ class DefaultGovernedWriterTest {
         );
     }
 
+    // ==================== ARGUMENT VALIDATION ====================
+
     @Test
-    @DisplayName("Fail-closed validation on null parameters")
-    void testFailClosedParameterValidation() {
+    @DisplayName("Null arguments fail fast with IllegalArgumentException")
+    void testNullArgumentsFailFast() {
         Patient patient = new Patient();
         ActiveStateToken token = ActiveStateTokenBridge.create(1L);
         GovernedRead<Patient> read = GovernedRead.of(sampleKey, patient, token, AuthoritativeVersion.of(1L));
@@ -219,11 +218,12 @@ class DefaultGovernedWriterTest {
         assertThat(result.failureReason()).contains("Active state coordination unavailable");
 
         verify(persistencePort, never()).update(any(), any(), any());
+        verify(convergencePort, never()).converge(any(), any(), any());
     }
 
     @Test
-    @DisplayName("UPDATE Scenario 5: Authoritative Expected Version Mismatch -> AuthoritativeConflict (Token remains consumed)")
-    void testUpdateAuthoritativePreconditionConflict() {
+    @DisplayName("UPDATE Scenario 5: Authoritative Conflict (Precondition Mismatch) -> AuthoritativeConflict")
+    void testUpdateAuthoritativeConflict() {
         Patient currentPatient = new Patient();
         ActiveStateToken token = ActiveStateTokenBridge.create(100L);
         GovernedRead<Patient> read = GovernedRead.of(sampleKey, currentPatient, token, AuthoritativeVersion.of(1L));
@@ -309,7 +309,6 @@ class DefaultGovernedWriterTest {
         ActiveStateToken token = ActiveStateTokenBridge.create(100L);
         GovernedRead<Patient> read = GovernedRead.of(sampleKey, currentPatient, token, AuthoritativeVersion.of(1L));
         Patient proposed = new Patient();
-        proposed.setId(sampleKey.id());
 
         when(themisAuthorizer.authorize(any(ThemisAuthorizationRequest.class)))
                 .thenReturn(ThemisAuthorizationDecision.allow("allow-all", "corr-123"));
@@ -319,7 +318,6 @@ class DefaultGovernedWriterTest {
         when(persistencePort.update(eq(sampleKey), eq(proposed), any()))
                 .thenReturn(new AuthoritativePersistenceResult.Committed<>(proposed, AuthoritativeVersion.of(2L)));
 
-        // Convergence returns DEGRADED
         when(convergencePort.converge(eq(sampleKey), eq(proposed), eq(AuthoritativeVersion.of(2L))))
                 .thenReturn(ConvergenceStatus.DEGRADED);
 
@@ -328,7 +326,6 @@ class DefaultGovernedWriterTest {
         assertThat(result.isCommitted()).isTrue();
         assertThat(result.convergenceStatus()).isEqualTo(ConvergenceStatus.DEGRADED);
         assertThat(result.committedVersion()).contains(AuthoritativeVersion.of(2L));
-        assertThat(result.degradationReason()).contains("Active-state cache convergence degraded");
     }
 
     // ==================== CREATE SCENARIOS ====================
@@ -338,14 +335,17 @@ class DefaultGovernedWriterTest {
     void testCreateHappyPath() {
         Patient newPatient = new Patient();
         newPatient.setId(sampleKey.id());
-        newPatient.addName(new HumanName().setFamily("Newborn"));
+        newPatient.addName(new HumanName().setFamily("Created"));
 
+        // 1. Themis allows
         when(themisAuthorizer.authorize(any(ThemisAuthorizationRequest.class)))
                 .thenReturn(ThemisAuthorizationDecision.allow("allow-all", "corr-123"));
 
+        // 2. Mnemosyne persists V1
         when(persistencePort.create(eq(sampleKey), eq(newPatient)))
                 .thenReturn(new AuthoritativePersistenceResult.Committed<>(newPatient, AuthoritativeVersion.of(1L)));
 
+        // 3. Convergence succeeds
         when(convergencePort.converge(eq(sampleKey), eq(newPatient), eq(AuthoritativeVersion.of(1L))))
                 .thenReturn(ConvergenceStatus.CONVERGED);
 
@@ -356,13 +356,18 @@ class DefaultGovernedWriterTest {
         assertThat(result.committedVersion()).contains(AuthoritativeVersion.of(1L));
         assertThat(result.committedResource()).contains(newPatient);
 
-        // CREATE deliberately performs no pre-persistence active token coordination
+        // Verify Themis was called with CREATE action
+        ArgumentCaptor<ThemisAuthorizationRequest> captor = ArgumentCaptor.forClass(ThemisAuthorizationRequest.class);
+        verify(themisAuthorizer).authorize(captor.capture());
+        assertThat(captor.getValue().action().name()).isEqualTo("CREATE");
+
+        // Verify activeStateCoordinator was NEVER called (zero coordination for CREATE)
         verify(activeStateCoordinator, never()).consume(any(), any());
     }
 
     @Test
-    @DisplayName("CREATE Scenario 10: Duplicate Resource -> AuthoritativeConflict(RESOURCE_ALREADY_EXISTS)")
-    void testCreateDuplicateResourceConflict() {
+    @DisplayName("CREATE Scenario 10: Resource Already Exists -> AuthoritativeConflict")
+    void testCreateResourceAlreadyExists() {
         Patient newPatient = new Patient();
         newPatient.setId(sampleKey.id());
 

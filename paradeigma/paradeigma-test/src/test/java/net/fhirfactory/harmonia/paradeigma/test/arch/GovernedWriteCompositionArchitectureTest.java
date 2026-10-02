@@ -66,20 +66,31 @@ public class GovernedWriteCompositionArchitectureTest {
     }
 
     @Test
-    @DisplayName("ArchUnit: DefaultGovernedWriter must reside in mnemosyne-clinical (net.fhirfactory.harmonia.hapifhir.governed)")
-    void defaultGovernedWriterMustResideInMnemosyneClinical() {
+    @DisplayName("ArchUnit: DefaultGovernedReader must reside in mneme-cluster (net.fhirfactory.harmonia.hestia.mneme.access)")
+    void defaultGovernedReaderMustResideInMnemeCluster() {
         ArchRule rule = classes()
-                .that().haveSimpleName("DefaultGovernedWriter")
-                .should().resideInAPackage("net.fhirfactory.harmonia.hapifhir.governed..");
+                .that().haveSimpleName("DefaultGovernedReader")
+                .should().resideInAPackage("net.fhirfactory.harmonia.hestia.mneme.access..");
 
         rule.check(allProductionClasses);
     }
 
     @Test
-    @DisplayName("ArchUnit: DefaultGovernedWriter must not depend on Infinispan, JPA, or Hibernate")
-    void defaultGovernedWriterMustNotDependOnInfinispanOrJpa() {
+    @DisplayName("ArchUnit: DefaultGovernedWriter must reside in mneme-cluster (net.fhirfactory.harmonia.hestia.mneme.access)")
+    void defaultGovernedWriterMustResideInMnemeCluster() {
+        ArchRule rule = classes()
+                .that().haveSimpleName("DefaultGovernedWriter")
+                .should().resideInAPackage("net.fhirfactory.harmonia.hestia.mneme.access..");
+
+        rule.check(allProductionClasses);
+    }
+
+    @Test
+    @DisplayName("ArchUnit: Governed access classes (Reader and Writer) must not depend on Infinispan, JPA, or Hibernate")
+    void governedAccessClassesMustNotDependOnInfinispanOrJpa() {
         ArchRule rule = noClasses()
                 .that().haveSimpleName("DefaultGovernedWriter")
+                .or().haveSimpleName("DefaultGovernedReader")
                 .should().dependOnClassesThat()
                 .resideInAnyPackage(
                         "org.infinispan..",
@@ -109,10 +120,11 @@ public class GovernedWriteCompositionArchitectureTest {
     }
 
     @Test
-    @DisplayName("ArchUnit: GovernedWriter, ActiveStateCoordinator, and AuthoritativePersistencePort must not expose DELETE methods (ADR-020)")
+    @DisplayName("ArchUnit: GovernedReader, GovernedWriter, ActiveStateCoordinator, and AuthoritativePersistencePort must not expose DELETE methods (ADR-020)")
     void governedWritePortsMustNotExposeDeleteMethods() {
         ArchRule rule = methods()
-                .that().areDeclaredInClassesThat().haveSimpleNameStartingWith("GovernedWriter")
+                .that().areDeclaredInClassesThat().haveSimpleNameStartingWith("GovernedReader")
+                .or().areDeclaredInClassesThat().haveSimpleNameStartingWith("GovernedWriter")
                 .or().areDeclaredInClassesThat().haveSimpleNameStartingWith("ActiveStateCoordinator")
                 .or().areDeclaredInClassesThat().haveSimpleNameStartingWith("ActiveStateConvergencePort")
                 .or().areDeclaredInClassesThat().haveSimpleNameStartingWith("AuthoritativePersistencePort")
@@ -124,15 +136,14 @@ public class GovernedWriteCompositionArchitectureTest {
     }
 
     @Test
-    @DisplayName("Static Source Check: DefaultGovernedWriter Java source must not import Infinispan or JPA")
-    void defaultGovernedWriterSourceMustNotContainForbiddenImports() throws IOException {
+    @DisplayName("Static Source Check: Governed access Java sources must not import Infinispan or JPA")
+    void governedAccessSourceMustNotContainForbiddenImports() throws IOException {
         Path projectRoot = findProjectRoot();
-        Path sourceFile = projectRoot.resolve(
-                "hestia/mnemosyne-clinical/src/main/java/net/fhirfactory/harmonia/hapifhir/governed/DefaultGovernedWriter.java"
-        );
-        assertThat(Files.exists(sourceFile)).isTrue();
+        Path[] sources = {
+                projectRoot.resolve("hestia/mneme-cluster/src/main/java/net/fhirfactory/harmonia/hestia/mneme/access/DefaultGovernedWriter.java"),
+                projectRoot.resolve("hestia/mneme-cluster/src/main/java/net/fhirfactory/harmonia/hestia/mneme/access/DefaultGovernedReader.java")
+        };
 
-        String content = Files.readString(sourceFile);
         String[] forbidden = {
                 "import org.infinispan",
                 "import jakarta.persistence",
@@ -141,8 +152,12 @@ public class GovernedWriteCompositionArchitectureTest {
                 "import ca.uhn.fhir.jpa"
         };
 
-        for (String forbiddenImport : forbidden) {
-            assertThat(content).doesNotContain(forbiddenImport);
+        for (Path sourceFile : sources) {
+            assertThat(Files.exists(sourceFile)).isTrue();
+            String content = Files.readString(sourceFile);
+            for (String forbiddenImport : forbidden) {
+                assertThat(content).doesNotContain(forbiddenImport);
+            }
         }
     }
 

@@ -383,12 +383,12 @@ public class DistributedAuthoritativeDockerPathTest {
             String patientId = "pat-m24-" + UUID.randomUUID().toString().substring(0, 8);
             ResourceKey key = ResourceKey.of("Patient", patientId);
 
-            // Step 1: Initial READ of absent resource -> HTTP 404 -> NotCommitted (Zero state created)
+            // Step 1: Initial READ of absent resource -> HTTP 404 -> Absent (Zero state created)
             AuthoritativePersistenceResult<IBaseResource> step1Result = client.read(key);
-            assertThat(step1Result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
-            AuthoritativePersistenceResult.NotCommitted<IBaseResource> step1NotCommitted =
-                    (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) step1Result;
-            assertThat(step1NotCommitted.failureMessage()).contains("HTTP 404");
+            assertThat(step1Result).isInstanceOf(AuthoritativePersistenceResult.Absent.class);
+            AuthoritativePersistenceResult.Absent<IBaseResource> step1Absent =
+                    (AuthoritativePersistenceResult.Absent<IBaseResource>) step1Result;
+            assertThat(step1Absent.message()).contains("HTTP 404");
 
             // Step 2: Conditional CREATE-if-absent (If-None-Match: *) -> HTTP 201 -> Committed(version 1)
             Patient initialPatient = createSamplePatient(patientId, "M24Test", "Initial");

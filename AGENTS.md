@@ -373,6 +373,39 @@ changes against the ArchUnit architecture suite located in
     mvn test
     ```
 
+### 5.1 Bounded Command, Test and Verification Execution
+
+Commands, tests, builds, container operations, health checks and verification activities MUST NOT be allowed to wait indefinitely. An agent MUST use bounded waiting and MUST recover control when an operation ceases to make meaningful progress.
+
+#### Execution rules
+
+1. Before starting a potentially blocking operation, the agent SHOULD establish a reasonable expected completion or progress interval from the command type, prior runs, test configuration or current runtime context.
+2. Ordinary unit tests, architecture tests and focused Maven test invocations SHOULD normally be treated as suspicious when they produce no meaningful progress for approximately **2 minutes**.
+3. Integration tests, container startup, dependency resolution, image build/pull, distributed verification and full-repository builds MAY require longer. They MUST nevertheless have a bounded wait appropriate to the operation and SHOULD normally be investigated after approximately **5 minutes without meaningful progress**, unless repository evidence establishes that a longer interval is expected.
+4. A single command or verification activity MUST NOT consume more than approximately **10 minutes without meaningful progress** unless the task explicitly requires a known long-running operation and the reason for continuing is reported.
+5. Meaningful progress means observable evidence that the operation is advancing, such as new test completion, build phases, dependency activity, container state transition, application startup milestones, health-state changes or relevant log output. Repeated identical output, an unchanged spinner, an open process with no relevant output, or repeated polling with no state change is NOT meaningful progress.
+6. When the applicable no-progress interval is exceeded, the agent MUST regain control: inspect available process/test/container state, capture relevant output, and terminate or time out the stalled operation where safe. The agent MUST NOT simply continue waiting.
+7. If termination could destroy material state needed to diagnose an authoritative mutation, persistence operation or distributed outcome, the agent MUST preserve AX-15 uncertainty semantics: capture evidence and report the operation as unresolved rather than assuming success or failure.
+8. A timed-out or stalled command MUST be reported as **TIMEOUT** or **STALLED**. It MUST NOT be reported as PASS or FAIL unless that semantic result was independently established.
+9. The agent MUST distinguish an implementation/test failure from a harness, environment, dependency, deadlock, blocking-resource or command-invocation problem before changing production code.
+10. A stalled command MUST NOT be repeatedly rerun unchanged. Before retrying, the agent MUST identify a concrete reason to expect a different outcome, such as correcting configuration, releasing a blocked resource, narrowing the test, increasing an evidenced insufficient timeout, or obtaining additional diagnostics.
+11. Where practical, agents SHOULD prefer command-level or test-framework timeout mechanisms so that control returns automatically rather than relying solely on observation. Timeout values MUST remain appropriate to the operation and MUST NOT be inflated merely to avoid diagnosing a stall.
+12. If a required verification cannot complete within a reasonable bounded period, the agent MUST stop the affected implementation step and report: the command, elapsed/no-progress interval, last meaningful progress, captured diagnostics, termination action, known state, unresolved uncertainty and recommended next diagnostic action.
+
+#### Result semantics
+
+The following outcomes are distinct and MUST NOT be collapsed:
+
+- **PASS** — the required behaviour was positively established.
+- **FAIL** — the required behaviour was executed and a failure was positively established.
+- **TIMEOUT** — the allowed execution/wait period expired before completion was established.
+- **STALLED** — the operation remained active but ceased to demonstrate meaningful progress.
+- **UNRESOLVED** — available evidence is insufficient to determine the semantic outcome safely.
+
+A timeout or stall is diagnostic evidence, not proof that the implementation is incorrect.
+
+> **Wait long enough to establish expected behaviour; never wait indefinitely. Unknown or stalled is a result to investigate, not a reason to keep waiting.**
+
 ## 6. Junie Plans, Reports and Implementation Sequencing
 
 Files under `.junie/plans/` and `.junie/reports/` are working and historical

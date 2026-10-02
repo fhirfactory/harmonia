@@ -15,7 +15,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package net.fhirfactory.harmonia.hapifhir.governed;
+package net.fhirfactory.harmonia.hestia.mneme.access;
 
 import net.fhirfactory.harmonia.hapifhir.persistence.AuthoritativePersistencePort;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;

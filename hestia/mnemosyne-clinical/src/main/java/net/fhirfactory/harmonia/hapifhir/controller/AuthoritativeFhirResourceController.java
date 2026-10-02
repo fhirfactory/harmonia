@@ -120,10 +120,16 @@ public class AuthoritativeFhirResourceController {
             return new ResponseEntity<>(payload, headers, HttpStatus.OK);
         }
 
-        if (result instanceof AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted) {
-            log.debug("Authoritative READ not committed (resource absent) for {}: {}", key, notCommitted.failureMessage());
+        if (result instanceof AuthoritativePersistenceResult.Absent<IBaseResource> absent) {
+            log.debug("Authoritative READ absent for {}: {}", key, absent.message());
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("Resource not found: " + key);
+        }
+
+        if (result instanceof AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted) {
+            log.warn("Authoritative READ not committed for {}: {}", key, notCommitted.failureMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Read not committed: " + notCommitted.failureMessage());
         }
 
         if (result instanceof AuthoritativePersistenceResult.OutcomeUnknown<IBaseResource> outcomeUnknown) {

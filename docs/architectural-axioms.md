@@ -248,6 +248,12 @@ where applicable.
 operation. \* Mnemosyne is exposed as an application database API. \*
 Mneme and Mnemosyne must use the same version or concurrency mechanism.
 
+Mneme active-state generation SHALL represent successfully established active state. A valid active-state token SHALL identify an observed generation of that state.
+
+Failed or degraded convergence following authoritative state progression SHALL NOT establish or advance a valid active-state generation. Where the active representation cannot be successfully converged, its coordination state SHALL be treated as untrusted until reconciled with authoritative state.
+
+Mneme active-state generation and Mnemosyne authoritative version SHALL remain distinct concurrency domains. Neither SHALL be inferred from, substituted for, or treated as an alias of the other.
+
 ### AX-06 --- Information Authority Is Explicit
 
 #### Axiom
@@ -553,6 +559,76 @@ not.
 ceases to be managed when a representation is published. \* Harmonia
 forgets what it transmitted. \* Acknowledgements and transaction
 outcomes are irrelevant to audit or provenance.
+
+### AX-14 — Semantic Distinctions Are Preserved
+#### Axiom
+Harmonia SHALL preserve meaningful distinctions between states, outcomes and concepts throughout its internal processing and across subsystem boundaries.
+
+A distinction that is significant to information meaning, authority, security, concurrency, persistence, processing outcome or operational correctness SHALL NOT be collapsed merely because an underlying technology, transport, API or implementation abstraction does not represent that distinction directly.
+
+Where an external interface contract intentionally presents a simpler or different semantic model, Harmonia MAY project its internal semantics into that contract explicitly at the applicable boundary.
+
+#### Rationale
+Loss of semantic distinction causes information about what Harmonia knows, what occurred and what may safely happen next to be lost.
+
+Two conditions may produce similar implementation behaviour while having materially different meanings. Resource absence, access denial, persistence failure and indeterminate outcome may all prevent information from being returned, but they do not describe the same state.
+
+Likewise, persistence version, active-state generation, interoperability version and information authority describe different properties even where an implementation happens to correlate them.
+
+Implementation convenience SHALL NOT redefine those meanings.
+
+#### Consequences
+Semantically distinct outcomes SHALL remain distinguishable through Harmonia's internal contracts.
+
+Security denial SHALL NOT be represented as resource absence merely because both prevent access to information.
+
+A failure to establish authoritative state SHALL NOT be represented as authoritative absence.
+
+An indeterminate outcome SHALL NOT be represented as either success or failure unless subsequent processing establishes that outcome.
+
+ActiveStateToken, AuthoritativeVersion, externally meaningful version identifiers and standards-defined version metadata SHALL remain distinct where they represent different semantic domains.
+
+Where an underlying engine or protocol lacks a distinction required by Harmonia, Harmonia SHALL introduce an appropriate semantic representation rather than infer meaning from incidental implementation details such as exception classes, message text or correlated version values.
+
+Boundary projection MAY deliberately reduce or transform semantic distinctions where required by an external contract or policy, but such projection SHALL be explicit and SHALL NOT redefine Harmonia's internal semantics.
+
+#### Maxim
+Preserve semantics internally; project deliberately at boundaries.
+
+This does not mean: Harmonia must expose every internal distinction externally. Similar outcomes can never share implementation machinery. Every semantic distinction requires a separate Java type. External standards or interface contracts may be ignored in favour of Harmonia's internal model.
+
+### AX-15 — Uncertainty Is Preserved Until Resolved
+#### Axiom
+Where Harmonia cannot establish the state, outcome or effect of an operation with the certainty required by its governing contract, that uncertainty SHALL be represented explicitly.
+
+Harmonia SHALL NOT infer, manufacture or assume a more certain outcome merely to simplify processing, recovery or application behaviour.
+
+Uncertainty MAY be resolved through authoritative observation, reconciliation or other governed evidence capable of establishing the required state.
+
+#### Rationale
+Distributed operations can fail at points where the observable failure does not establish whether the requested operation occurred.
+
+For example, loss of a connection after transmitting a request does not establish whether the receiving subsystem processed or committed that request. Treating such an outcome as either success or failure introduces information that Harmonia does not possess.
+
+Preserving uncertainty allows subsequent processing to determine what actually occurred without compounding an unknown outcome through unsafe assumptions or repeated actions.
+
+#### Consequences
+An indeterminate operation outcome SHALL remain distinguishable from both confirmed success and confirmed non-occurrence.
+
+Harmonia SHALL NOT automatically retry a state-changing operation where the previous attempt may have succeeded unless the operation's contract makes that retry demonstrably safe.
+
+Recovery from an uncertain outcome SHOULD preferentially establish the current authoritative state and reconcile against it before further state-changing action is attempted.
+
+Timeouts, connection failures and similar technical events SHALL NOT, by themselves, determine semantic outcome. Their interpretation SHALL depend upon what can be established about the operation's progress and the governing boundary contract.
+
+Where subsequent authoritative observation or other governed evidence resolves an uncertainty, Harmonia MAY continue processing from the newly established state.
+
+Uncertainty SHALL NOT cause transient, cached or process-local state to be promoted into authoritative state.
+
+#### Maxim
+__Do not turn “unknown” into “yes” or “no”.__
+
+__This does not mean:__ Harmonia must retain uncertainty indefinitely. Every technical failure produces an uncertain outcome. Operations known not to have crossed the relevant state-changing boundary cannot be safely retried. Reconciliation must always require human intervention.
 
 ## 3. Subsystem Responsibilities Derived from the Axioms
 

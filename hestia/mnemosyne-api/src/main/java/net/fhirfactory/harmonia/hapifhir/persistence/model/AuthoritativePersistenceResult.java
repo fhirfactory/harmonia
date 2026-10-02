@@ -33,13 +33,20 @@ import java.util.Optional;
 public sealed interface AuthoritativePersistenceResult<T> extends Serializable
         permits AuthoritativePersistenceResult.Committed,
                 AuthoritativePersistenceResult.Conflict,
+                AuthoritativePersistenceResult.Absent,
                 AuthoritativePersistenceResult.NotCommitted,
                 AuthoritativePersistenceResult.OutcomeUnknown {
 
-    AuthoritativeCommitOutcome outcome();
-
     default boolean isCommitted() {
-        return outcome() == AuthoritativeCommitOutcome.COMMITTED;
+        return this instanceof Committed;
+    }
+
+    record Absent<T>(
+            String message
+    ) implements AuthoritativePersistenceResult<T> {
+        public Absent {
+            Objects.requireNonNull(message, "message must not be null");
+        }
     }
 
     record Committed<T>(
@@ -51,7 +58,6 @@ public sealed interface AuthoritativePersistenceResult<T> extends Serializable
             Objects.requireNonNull(authoritativeVersion, "authoritativeVersion must not be null");
         }
 
-        @Override
         public AuthoritativeCommitOutcome outcome() {
             return AuthoritativeCommitOutcome.COMMITTED;
         }
@@ -64,7 +70,6 @@ public sealed interface AuthoritativePersistenceResult<T> extends Serializable
             Objects.requireNonNull(conflict, "conflict must not be null");
         }
 
-        @Override
         public AuthoritativeCommitOutcome outcome() {
             return AuthoritativeCommitOutcome.NOT_COMMITTED;
         }
@@ -82,7 +87,6 @@ public sealed interface AuthoritativePersistenceResult<T> extends Serializable
             this(failureMessage, null);
         }
 
-        @Override
         public AuthoritativeCommitOutcome outcome() {
             return AuthoritativeCommitOutcome.NOT_COMMITTED;
         }
@@ -104,7 +108,6 @@ public sealed interface AuthoritativePersistenceResult<T> extends Serializable
             this(message, null);
         }
 
-        @Override
         public AuthoritativeCommitOutcome outcome() {
             return AuthoritativeCommitOutcome.UNKNOWN;
         }

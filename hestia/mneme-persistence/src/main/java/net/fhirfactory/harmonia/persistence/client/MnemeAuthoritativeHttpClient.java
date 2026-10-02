@@ -157,9 +157,14 @@ public class MnemeAuthoritativeHttpClient implements AuthoritativePersistencePor
                 return new AuthoritativePersistenceResult.Committed<>(resource, versionRes.version());
             }
 
-            if (statusCode == 404 || statusCode == 410) {
+            if (statusCode == 404) {
+                return new AuthoritativePersistenceResult.Absent<>(
+                        "Resource not found on authoritative server: " + key + " (HTTP 404)");
+            }
+
+            if (statusCode == 410) {
                 return new AuthoritativePersistenceResult.NotCommitted<>(
-                        "Resource not found on authoritative server: " + key + " (HTTP " + statusCode + ")");
+                        "Resource gone / deleted on authoritative server: " + key + " (HTTP 410)");
             }
 
             if (statusCode == 400) {

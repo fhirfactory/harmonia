@@ -128,7 +128,7 @@ class AuthoritativePersistencePostgreSqlConcurrencyTest {
                         } else if (result instanceof AuthoritativePersistenceResult.Conflict<IBaseResource> conflict) {
                             conflictResults.add(conflict);
                         } else {
-                            unexpectedErrors.add(new IllegalStateException("Unexpected result outcome: " + result.outcome()));
+                            unexpectedErrors.add(new IllegalStateException("Unexpected result: " + result));
                         }
                     } catch (Throwable t) {
                         unexpectedErrors.add(t);
@@ -210,7 +210,7 @@ class AuthoritativePersistencePostgreSqlConcurrencyTest {
                         } else if (result instanceof AuthoritativePersistenceResult.Conflict<IBaseResource> conflict) {
                             conflictResults.add(conflict);
                         } else {
-                            unexpectedErrors.add(new IllegalStateException("Unexpected result outcome: " + result.outcome()));
+                            unexpectedErrors.add(new IllegalStateException("Unexpected result: " + result));
                         }
                     } catch (Throwable t) {
                         unexpectedErrors.add(t);

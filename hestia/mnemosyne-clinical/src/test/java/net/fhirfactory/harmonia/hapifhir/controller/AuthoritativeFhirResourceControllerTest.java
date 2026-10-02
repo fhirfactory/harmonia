@@ -95,15 +95,27 @@ class AuthoritativeFhirResourceControllerTest {
         }
 
         @Test
-        @DisplayName("READ on non-existing resource returns 404 Not Found")
+        @DisplayName("READ on absent resource returns 404 Not Found")
         void testReadNotFound() throws Exception {
             ResourceKey key = ResourceKey.of("Patient", "missing-99");
             when(persistencePort.read(key))
-                    .thenReturn(new AuthoritativePersistenceResult.NotCommitted<>("Resource not found"));
+                    .thenReturn(new AuthoritativePersistenceResult.Absent<>("Resource not found"));
 
             mockMvc.perform(get("/api/authoritative/fhir/Patient/missing-99")
                             .accept("application/fhir+json"))
                     .andExpect(status().isNotFound());
+        }
+
+        @Test
+        @DisplayName("READ returning NotCommitted returns 500 Internal Server Error")
+        void testReadNotCommitted() throws Exception {
+            ResourceKey key = ResourceKey.of("Patient", "pat-fail");
+            when(persistencePort.read(key))
+                    .thenReturn(new AuthoritativePersistenceResult.NotCommitted<>("Persistence failure"));
+
+            mockMvc.perform(get("/api/authoritative/fhir/Patient/pat-fail")
+                            .accept("application/fhir+json"))
+                    .andExpect(status().isInternalServerError());
         }
 
         @Test

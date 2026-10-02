@@ -168,8 +168,8 @@ class MnemeAuthoritativeHttpClientTest {
         }
 
         @Test
-        @DisplayName("Scenario 1.4: 404 Not Found returns NotCommitted")
-        void read404ReturnsNotCommitted() {
+        @DisplayName("Scenario 1.4: 404 Not Found returns Absent")
+        void read404ReturnsAbsent() {
             ResourceKey key = ResourceKey.of("Practitioner", "pr-missing");
 
             stubFor(get(urlEqualTo("/api/authoritative/fhir/Practitioner/pr-missing"))
@@ -177,10 +177,11 @@ class MnemeAuthoritativeHttpClientTest {
 
             AuthoritativePersistenceResult<IBaseResource> result = client.read(key);
 
-            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
-            AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted =
-                    (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result;
-            assertThat(notCommitted.failureMessage()).contains("Resource not found");
+            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.Absent.class);
+            AuthoritativePersistenceResult.Absent<IBaseResource> absent =
+                    (AuthoritativePersistenceResult.Absent<IBaseResource>) result;
+            assertThat(absent.message()).contains("Resource not found");
+            assertThat(result.isCommitted()).isFalse();
         }
 
         @Test
@@ -194,6 +195,53 @@ class MnemeAuthoritativeHttpClientTest {
             AuthoritativePersistenceResult<IBaseResource> result = client.read(key);
 
             assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted =
+                    (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result;
+            assertThat(notCommitted.failureMessage()).contains("HTTP 410");
+        }
+
+        @Test
+        @DisplayName("Absent is structurally distinguishable from all NotCommitted failure modes without string parsing")
+        void readAbsentIsDistinguishableFromAllNotCommitted() {
+            // 404 -> Absent
+            stubFor(get(urlEqualTo("/api/authoritative/fhir/Practitioner/pr-absent"))
+                    .willReturn(aResponse().withStatus(404)));
+            AuthoritativePersistenceResult<IBaseResource> absentRes = client.read(ResourceKey.of("Practitioner", "pr-absent"));
+            assertThat(absentRes).isInstanceOf(AuthoritativePersistenceResult.Absent.class);
+            assertThat(absentRes instanceof AuthoritativePersistenceResult.NotCommitted).isFalse();
+
+            // 410 -> NotCommitted
+            stubFor(get(urlEqualTo("/api/authoritative/fhir/Practitioner/pr-gone-dist"))
+                    .willReturn(aResponse().withStatus(410)));
+            AuthoritativePersistenceResult<IBaseResource> goneRes = client.read(ResourceKey.of("Practitioner", "pr-gone-dist"));
+            assertThat(goneRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(goneRes instanceof AuthoritativePersistenceResult.Absent).isFalse();
+
+            // 400 -> NotCommitted
+            stubFor(get(urlEqualTo("/api/authoritative/fhir/Practitioner/pr-bad-dist"))
+                    .willReturn(aResponse().withStatus(400)));
+            AuthoritativePersistenceResult<IBaseResource> badRes = client.read(ResourceKey.of("Practitioner", "pr-bad-dist"));
+            assertThat(badRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(badRes instanceof AuthoritativePersistenceResult.Absent).isFalse();
+
+            // 401 -> NotCommitted
+            stubFor(get(urlEqualTo("/api/authoritative/fhir/Practitioner/pr-unauth-dist"))
+                    .willReturn(aResponse().withStatus(401)));
+            AuthoritativePersistenceResult<IBaseResource> unauthRes = client.read(ResourceKey.of("Practitioner", "pr-unauth-dist"));
+            assertThat(unauthRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(unauthRes instanceof AuthoritativePersistenceResult.Absent).isFalse();
+
+            // 403 -> NotCommitted
+            stubFor(get(urlEqualTo("/api/authoritative/fhir/Practitioner/pr-forbid-dist"))
+                    .willReturn(aResponse().withStatus(403)));
+            AuthoritativePersistenceResult<IBaseResource> forbidRes = client.read(ResourceKey.of("Practitioner", "pr-forbid-dist"));
+            assertThat(forbidRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(forbidRes instanceof AuthoritativePersistenceResult.Absent).isFalse();
+
+            // Local validation failure -> NotCommitted
+            AuthoritativePersistenceResult<IBaseResource> nullKeyRes = client.read(null);
+            assertThat(nullKeyRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(nullKeyRes instanceof AuthoritativePersistenceResult.Absent).isFalse();
         }
 
         @Test

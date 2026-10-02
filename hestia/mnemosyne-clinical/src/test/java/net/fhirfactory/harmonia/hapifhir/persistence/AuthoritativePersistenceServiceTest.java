@@ -82,11 +82,11 @@ class AuthoritativePersistenceServiceTest {
         AuthoritativePersistenceResult<IBaseResource> result = persistenceService.create(key, patient);
 
         assertThat(result).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
-        assertThat(result.outcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);
         assertThat(result.isCommitted()).isTrue();
 
         AuthoritativePersistenceResult.Committed<IBaseResource> committed =
                 (AuthoritativePersistenceResult.Committed<IBaseResource>) result;
+        assertThat(committed.outcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);
         assertThat(committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of(1L));
 
         Patient persisted = (Patient) committed.persistedResource();
@@ -116,10 +116,10 @@ class AuthoritativePersistenceServiceTest {
         AuthoritativePersistenceResult<IBaseResource> result2 = persistenceService.create(key, org2);
 
         assertThat(result2).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
-        assertThat(result2.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
 
         AuthoritativePersistenceResult.Conflict<IBaseResource> conflict =
                 (AuthoritativePersistenceResult.Conflict<IBaseResource>) result2;
+        assertThat(conflict.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
         assertThat(conflict.conflict().reason()).isEqualTo(PreconditionFailureReason.RESOURCE_ALREADY_EXISTS);
         assertThat(conflict.conflict().key()).isEqualTo(key);
         assertThat(conflict.conflict().currentVersion()).isEqualTo(AuthoritativeVersion.of(1L));
@@ -153,10 +153,10 @@ class AuthoritativePersistenceServiceTest {
         AuthoritativePersistenceResult<IBaseResource> updateRes = persistenceService.update(key, updated, expectedVersion);
 
         assertThat(updateRes).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
-        assertThat(updateRes.outcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);
 
         AuthoritativePersistenceResult.Committed<IBaseResource> committed =
                 (AuthoritativePersistenceResult.Committed<IBaseResource>) updateRes;
+        assertThat(committed.outcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);
         assertThat(committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of(2L));
 
         Person committedPerson = (Person) committed.persistedResource();
@@ -191,10 +191,10 @@ class AuthoritativePersistenceServiceTest {
                 persistenceService.update(key, staleUpdate, ExpectedAuthoritativeVersion.of(1L));
 
         assertThat(staleRes).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
-        assertThat(staleRes.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
 
         AuthoritativePersistenceResult.Conflict<IBaseResource> conflict =
                 (AuthoritativePersistenceResult.Conflict<IBaseResource>) staleRes;
+        assertThat(conflict.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
         assertThat(conflict.conflict().reason()).isEqualTo(PreconditionFailureReason.EXPECTED_VERSION_MISMATCH);
         assertThat(conflict.conflict().expectedVersion()).isEqualTo(ExpectedAuthoritativeVersion.of(1L));
         assertThat(conflict.conflict().currentVersion()).isEqualTo(AuthoritativeVersion.of(2L));
@@ -218,10 +218,10 @@ class AuthoritativePersistenceServiceTest {
                 persistenceService.update(key, patient, ExpectedAuthoritativeVersion.of(1L));
 
         assertThat(res).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
-        assertThat(res.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
 
         AuthoritativePersistenceResult.Conflict<IBaseResource> conflict =
                 (AuthoritativePersistenceResult.Conflict<IBaseResource>) res;
+        assertThat(conflict.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
         assertThat(conflict.conflict().reason()).isEqualTo(PreconditionFailureReason.EXPECTED_VERSION_MISMATCH);
 
         // Verify resource was NOT created
@@ -298,12 +298,12 @@ class AuthoritativePersistenceServiceTest {
 
         AuthoritativePersistenceResult<IBaseResource> createRes = serviceWithFailingTx.create(key, patient);
         assertThat(createRes).isInstanceOf(AuthoritativePersistenceResult.OutcomeUnknown.class);
-        assertThat(createRes.outcome()).isEqualTo(AuthoritativeCommitOutcome.UNKNOWN);
+        assertThat(((AuthoritativePersistenceResult.OutcomeUnknown<?>) createRes).outcome()).isEqualTo(AuthoritativeCommitOutcome.UNKNOWN);
 
         AuthoritativePersistenceResult<IBaseResource> updateRes =
                 serviceWithFailingTx.update(key, patient, ExpectedAuthoritativeVersion.of(1L));
         assertThat(updateRes).isInstanceOf(AuthoritativePersistenceResult.OutcomeUnknown.class);
-        assertThat(updateRes.outcome()).isEqualTo(AuthoritativeCommitOutcome.UNKNOWN);
+        assertThat(((AuthoritativePersistenceResult.OutcomeUnknown<?>) updateRes).outcome()).isEqualTo(AuthoritativeCommitOutcome.UNKNOWN);
     }
 
     @Test
@@ -325,7 +325,7 @@ class AuthoritativePersistenceServiceTest {
 
         AuthoritativePersistenceResult<IBaseResource> createRes = serviceWithConnFail.create(key, patient);
         assertThat(createRes).isInstanceOf(AuthoritativePersistenceResult.OutcomeUnknown.class);
-        assertThat(createRes.outcome()).isEqualTo(AuthoritativeCommitOutcome.UNKNOWN);
+        assertThat(((AuthoritativePersistenceResult.OutcomeUnknown<?>) createRes).outcome()).isEqualTo(AuthoritativeCommitOutcome.UNKNOWN);
     }
 
     @Test
@@ -362,7 +362,7 @@ class AuthoritativePersistenceServiceTest {
                     } else if (result instanceof AuthoritativePersistenceResult.Conflict<IBaseResource> conflict) {
                         conflictResults.add(conflict);
                     } else {
-                        unexpectedErrors.add(new IllegalStateException("Unexpected result outcome: " + result.outcome()));
+                        unexpectedErrors.add(new IllegalStateException("Unexpected result: " + result));
                     }
                 } catch (Throwable t) {
                     unexpectedErrors.add(t);
@@ -435,7 +435,7 @@ class AuthoritativePersistenceServiceTest {
                     } else if (result instanceof AuthoritativePersistenceResult.Conflict<IBaseResource> conflict) {
                         conflictResults.add(conflict);
                     } else {
-                        unexpectedErrors.add(new IllegalStateException("Unexpected result outcome: " + result.outcome()));
+                        unexpectedErrors.add(new IllegalStateException("Unexpected result: " + result));
                     }
                 } catch (Throwable t) {
                     unexpectedErrors.add(t);

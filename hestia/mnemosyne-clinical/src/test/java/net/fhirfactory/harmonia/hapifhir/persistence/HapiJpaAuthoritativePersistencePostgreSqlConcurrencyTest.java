@@ -129,7 +129,7 @@ class HapiJpaAuthoritativePersistencePostgreSqlConcurrencyTest {
                         } else if (result instanceof AuthoritativePersistenceResult.Conflict<IBaseResource> conflict) {
                             conflictResults.add(conflict);
                         } else {
-                            unexpectedErrors.add(new IllegalStateException("Unexpected result outcome: " + result.outcome() + " - " + result));
+                            unexpectedErrors.add(new IllegalStateException("Unexpected result: " + result));
                         }
                     } catch (Throwable t) {
                         unexpectedErrors.add(t);
@@ -230,7 +230,7 @@ class HapiJpaAuthoritativePersistencePostgreSqlConcurrencyTest {
                         } else if (result instanceof AuthoritativePersistenceResult.Conflict<IBaseResource> conflict) {
                             conflictResults.add(conflict);
                         } else {
-                            unexpectedErrors.add(new IllegalStateException("Unexpected result outcome: " + result.outcome() + " - " + result));
+                            unexpectedErrors.add(new IllegalStateException("Unexpected result: " + result));
                         }
                     } catch (Throwable t) {
                         unexpectedErrors.add(t);
@@ -330,7 +330,7 @@ class HapiJpaAuthoritativePersistencePostgreSqlConcurrencyTest {
         // Read absent resource
         AuthoritativePersistenceResult<IBaseResource> absentRead = adapter.read(key);
         assertThat(absentRead.isCommitted()).isFalse();
-        assertThat(absentRead.outcome()).isEqualTo(AuthoritativeCommitOutcome.NOT_COMMITTED);
+        assertThat(absentRead).isInstanceOf(AuthoritativePersistenceResult.Absent.class);
 
         // Create resource
         Patient patient = new Patient();
