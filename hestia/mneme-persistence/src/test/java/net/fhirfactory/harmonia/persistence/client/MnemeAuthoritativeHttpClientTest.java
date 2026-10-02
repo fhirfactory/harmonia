@@ -465,8 +465,8 @@ class MnemeAuthoritativeHttpClientTest {
         }
 
         @Test
-        @DisplayName("Scenario 3.4: 404 Not Found on update returns Conflict (target absent)")
-        void update404ReturnsConflict() {
+        @DisplayName("Scenario 3.4: 404 Not Found on update returns NotCommitted (target absent)")
+        void update404ReturnsNotCommitted() {
             ResourceKey key = ResourceKey.of("Practitioner", "pr-300");
             Practitioner proposed = samplePractitioner("pr-300", "Smith", "Jane");
             ExpectedAuthoritativeVersion expectedVersion = ExpectedAuthoritativeVersion.of("1");
@@ -476,9 +476,10 @@ class MnemeAuthoritativeHttpClientTest {
 
             AuthoritativePersistenceResult<IBaseResource> result = client.update(key, proposed, expectedVersion);
 
-            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
-            assertThat(((AuthoritativePersistenceResult.Conflict<IBaseResource>) result).conflict().reason())
-                    .isEqualTo(PreconditionFailureReason.EXPECTED_VERSION_MISMATCH);
+            assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted =
+                    (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result;
+            assertThat(notCommitted.failureMessage()).contains("HTTP 404");
         }
 
         @Test

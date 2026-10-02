@@ -276,7 +276,7 @@ Implemented:
 - Authoritative Point CREATE-if-absent (`PUT /api/authoritative/fhir/{resourceType}/{id}` with `If-None-Match: *`)
 - Authoritative Point UPDATE-if-expected-predecessor (`PUT /api/authoritative/fhir/{resourceType}/{id}` with `If-Match: W/"{version}"`)
 - Explicit semantic outcome classification: `Committed`, `Conflict`, `NotCommitted`, `OutcomeUnknown`
-- Conservative transport failure classification via `HttpTransportFailureClassifier` (fail-to-unknown on ambiguous network state; provable pre-network DNS resolution failures map to `NotCommitted`)
+- Conservative transport failure classification via `HttpTransportFailureClassifier` (fail-to-unknown on ambiguous network state; provable pre-authoritative-HTTP-transmission TLS handshake and DNS resolution failures map to `NotCommitted`)
 - Zero blind retry enforcement on mutating operations
 - Strict authoritative version mapping (`ETag` <-> `AuthoritativeVersion` with `X-Harmonia-Authoritative-Version` consistency checking) without fallbacks to `meta.versionId` or cache tokens
 - Fail-closed security handling on HTTP 401/403 responses
@@ -349,11 +349,22 @@ Architectural Outcomes:
 - **Development PKI & Docker**: Created `scripts/pki/generate-dev-certs.sh` and updated `docker-compose.yml` mounting `/etc/harmonia/tls` and exposing HTTPS port 8443.
 - **Verification**: Verified via unit tests, WireMock HTTPS tests, Docker boundary tests, and 84 repository-wide ArchUnit architecture tests passing with 0 violations.
 
-### M2.4 Distributed authoritative-path verification
+### M2.4 Distributed authoritative-path verification --- COMPLETE / CONFORMANT
 
-Verify actual Docker-network behaviour for CREATE, READ, UPDATE, CREATE
-collision, stale UPDATE, Mnemosyne unavailability, ambiguous outcome
-where practical, and fail-closed security.
+Verified actual distributed Docker network behaviour (`harmonia-network` bridge, direct internal Docker DNS `https://mnemosyne-clinical:8443` without host port traversal) across the complete authoritative point-access semantic cycle using `MnemeAuthoritativeHttpClient`:
+
+1. **Initial READ of absent resource**: HTTP 404 -> `AuthoritativePersistenceResult.NotCommitted` (zero state created in PostgreSQL `HFJ_RESOURCE`).
+2. **Conditional CREATE-if-absent (`If-None-Match: *`)**: HTTP 201 -> `AuthoritativePersistenceResult.Committed(version 1)`, with `X-Harmonia-Authoritative-Version: 1` and `ETag: W/"1"`, verified via follow-up authoritative READ.
+3. **Duplicate CREATE collision (`If-None-Match: *`)**: HTTP 412 -> `AuthoritativePersistenceResult.Conflict(resourceAlreadyExists)`, confirming version 1 and existing state remain unchanged.
+4. **Existing READ**: HTTP 200 -> `AuthoritativePersistenceResult.Committed(version 1)` returning verified FHIR resource and version 1.
+5. **Predecessor UPDATE (`If-Match: W/"1"`)**: HTTP 200 -> `AuthoritativePersistenceResult.Committed(version 2)`, headers `X-Harmonia-Authoritative-Version: 2` and `ETag: W/"2"`, verified via follow-up READ.
+6. **Stale UPDATE collision (`If-Match: W/"1"`)**: HTTP 412 -> `AuthoritativePersistenceResult.Conflict(expectedVersionMismatch)`, state and version 2 remain intact and authoritative.
+7. **Absent UPDATE (`If-Match: W/"1"` on non-existent resource)**: HTTP 404 -> `AuthoritativePersistenceResult.NotCommitted` (zero state created).
+8. **Durable Persistence & Container Restart Verification**: Created version 1, updated to version 2 across Docker mTLS boundary, restarted `hapi-fhir-jpa-server-1` container, executed authenticated mTLS READ post-restart, and verified version 2 and updated content recovered intact from PostgreSQL.
+
+Preserved strict 4-way version domain discipline (zero fallback from `AuthoritativeVersion` to `meta.versionId` or Infinispan cache tokens), conservative failure classifications with zero blind retries on mutations, and default-deny security governance.
+
+Next authorized milestone: **M3 — Governed Access Integration**.
 
 ## Exit criterion
 

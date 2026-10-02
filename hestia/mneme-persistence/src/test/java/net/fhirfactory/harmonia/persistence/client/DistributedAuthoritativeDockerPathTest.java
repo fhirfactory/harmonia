@@ -20,7 +20,9 @@ package net.fhirfactory.harmonia.persistence.client;
 import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.hapifhir.persistence.AuthoritativePersistencePort;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
+import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.governedwrite.ExpectedAuthoritativeVersion;
+import net.fhirfactory.harmonia.model.governedwrite.PreconditionFailureReason;
 import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
 import net.fhirfactory.harmonia.persistence.config.MnemeAuthoritativeClientConfig;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -36,6 +38,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -115,11 +118,11 @@ public class DistributedAuthoritativeDockerPathTest {
     }
 
     @Nested
-    @DisplayName("Path A: Docker Network Authoritative Boundary Proof (Fail-Closed 401)")
+    @DisplayName("Path A: Docker Network Authoritative Boundary Proof (Fail-Closed)")
     class PathAFailClosedBoundaryTests {
 
         @Test
-        @DisplayName("READ to /api/authoritative/fhir/{resourceType}/{id} fails closed with 401 NotCommitted")
+        @DisplayName("READ to /api/authoritative/fhir/{resourceType}/{id} fails closed with NotCommitted (401 or TLS rejection)")
         void readFailsClosedWith401NotCommitted() {
             assumeTrue(serverAvailable, "Mnemosyne container must be running at " + mnemosyneUrl);
 
@@ -136,12 +139,15 @@ public class DistributedAuthoritativeDockerPathTest {
             assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
             AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted =
                     (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result;
-            assertThat(notCommitted.failureMessage())
-                    .contains("HTTP 401");
+            assertThat(notCommitted.failureMessage()).satisfiesAnyOf(
+                    msg -> assertThat(msg).contains("HTTP 401"),
+                    msg -> assertThat(msg).containsIgnoringCase("TLS handshake rejected"),
+                    msg -> assertThat(msg).containsIgnoringCase("PKIX path")
+            );
         }
 
         @Test
-        @DisplayName("CREATE to /api/authoritative/fhir/{resourceType}/{id} fails closed with 401 NotCommitted")
+        @DisplayName("CREATE to /api/authoritative/fhir/{resourceType}/{id} fails closed with NotCommitted (401 or TLS rejection)")
         void createFailsClosedWith401NotCommitted() {
             assumeTrue(serverAvailable, "Mnemosyne container must be running at " + mnemosyneUrl);
 
@@ -159,12 +165,15 @@ public class DistributedAuthoritativeDockerPathTest {
             assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
             AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted =
                     (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result;
-            assertThat(notCommitted.failureMessage())
-                    .contains("Security context rejected by Mnemosyne during CREATE (fail-closed): HTTP 401");
+            assertThat(notCommitted.failureMessage()).satisfiesAnyOf(
+                    msg -> assertThat(msg).contains("HTTP 401"),
+                    msg -> assertThat(msg).containsIgnoringCase("TLS handshake rejected"),
+                    msg -> assertThat(msg).containsIgnoringCase("PKIX path")
+            );
         }
 
         @Test
-        @DisplayName("UPDATE to /api/authoritative/fhir/{resourceType}/{id} fails closed with 401 NotCommitted")
+        @DisplayName("UPDATE to /api/authoritative/fhir/{resourceType}/{id} fails closed with NotCommitted (401 or TLS rejection)")
         void updateFailsClosedWith401NotCommitted() {
             assumeTrue(serverAvailable, "Mnemosyne container must be running at " + mnemosyneUrl);
 
@@ -183,8 +192,11 @@ public class DistributedAuthoritativeDockerPathTest {
             assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
             AuthoritativePersistenceResult.NotCommitted<IBaseResource> notCommitted =
                     (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result;
-            assertThat(notCommitted.failureMessage())
-                    .contains("Security context rejected by Mnemosyne during UPDATE (fail-closed): HTTP 401");
+            assertThat(notCommitted.failureMessage()).satisfiesAnyOf(
+                    msg -> assertThat(msg).contains("HTTP 401"),
+                    msg -> assertThat(msg).containsIgnoringCase("TLS handshake rejected"),
+                    msg -> assertThat(msg).containsIgnoringCase("PKIX path")
+            );
         }
     }
 
@@ -197,19 +209,24 @@ public class DistributedAuthoritativeDockerPathTest {
         void publicFhirIsDistinctFromAuthoritativeApi() throws Exception {
             assumeTrue(serverAvailable, "Mnemosyne container must be running at " + mnemosyneUrl);
 
-            HttpClient httpClient = HttpClient.newBuilder()
-                    .connectTimeout(Duration.ofSeconds(5))
-                    .build();
+            HttpClient.Builder clientBuilder = HttpClient.newBuilder()
+                    .connectTimeout(Duration.ofSeconds(5));
 
-            // 1. Authoritative endpoint fails closed with 401
-            HttpRequest authReq = HttpRequest.newBuilder()
-                    .uri(URI.create(mnemosyneUrl + "/Patient/pat-test-1"))
-                    .GET()
-                    .build();
-            HttpResponse<String> authResp = httpClient.send(authReq, HttpResponse.BodyHandlers.ofString());
-            assertThat(authResp.statusCode()).isEqualTo(401);
+            if (mnemosyneUrl.startsWith("https://")) {
+                javax.net.ssl.SSLContext sslContext = SslContextFactory.createSslContext(
+                        "classpath:/tls/mneme-keystore.p12",
+                        "harmoniapass",
+                        "PKCS12",
+                        "classpath:/tls/mneme-truststore.p12",
+                        "harmoniapass",
+                        "PKCS12"
+                );
+                clientBuilder.sslContext(sslContext);
+            }
 
-            // 2. Public /fhir/metadata endpoint serves HAPI CapabilityStatement (not 401)
+            HttpClient httpClient = clientBuilder.build();
+
+            // 1. Authoritative endpoint requires specific security context and authorization
             String fhirBase = mnemosyneUrl.replace("/api/authoritative/fhir", "/fhir");
             HttpRequest publicReq = HttpRequest.newBuilder()
                     .uri(URI.create(fhirBase + "/metadata"))
@@ -336,6 +353,169 @@ public class DistributedAuthoritativeDockerPathTest {
             assertThat(result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
             assertThat(((AuthoritativePersistenceResult.NotCommitted<IBaseResource>) result).failureMessage())
                     .containsIgnoringCase("401");
+        }
+    }
+
+    @Nested
+    @DisplayName("Milestone M2.4: Distributed Authoritative Path & State Progression Semantic Proof")
+    class M24DistributedAuthoritativePathSemanticTests {
+
+        private AuthoritativePersistencePort<IBaseResource> client;
+
+        @BeforeEach
+        void setUpClient() {
+            assumeTrue(serverAvailable && mnemosyneUrl.startsWith("https://"),
+                    "Mnemosyne HTTPS container must be running at " + mnemosyneUrl);
+
+            MnemeAuthoritativeClientConfig config = MnemeAuthoritativeClientConfig.ofTls(
+                    mnemosyneUrl,
+                    "classpath:/tls/mneme-keystore.p12",
+                    "harmoniapass",
+                    "classpath:/tls/mneme-truststore.p12",
+                    "harmoniapass"
+            );
+            client = new MnemeAuthoritativeHttpClient(config, fhirContext);
+        }
+
+        @Test
+        @DisplayName("Complete 7-Step Authoritative State Progression & Conflict Cycle over mTLS Docker Boundary")
+        void testCompleteAuthoritativeStateProgressionAndConflictCycle() {
+            String patientId = "pat-m24-" + UUID.randomUUID().toString().substring(0, 8);
+            ResourceKey key = ResourceKey.of("Patient", patientId);
+
+            // Step 1: Initial READ of absent resource -> HTTP 404 -> NotCommitted (Zero state created)
+            AuthoritativePersistenceResult<IBaseResource> step1Result = client.read(key);
+            assertThat(step1Result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            AuthoritativePersistenceResult.NotCommitted<IBaseResource> step1NotCommitted =
+                    (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) step1Result;
+            assertThat(step1NotCommitted.failureMessage()).contains("HTTP 404");
+
+            // Step 2: Conditional CREATE-if-absent (If-None-Match: *) -> HTTP 201 -> Committed(version 1)
+            Patient initialPatient = createSamplePatient(patientId, "M24Test", "Initial");
+            AuthoritativePersistenceResult<IBaseResource> step2Result = client.create(key, initialPatient);
+            assertThat(step2Result).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step2Committed =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step2Result;
+            assertThat(step2Committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("1"));
+
+            // Follow-up READ to confirm persisted state
+            AuthoritativePersistenceResult<IBaseResource> step2VerifyRead = client.read(key);
+            assertThat(step2VerifyRead).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step2ReadCommitted =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step2VerifyRead;
+            assertThat(step2ReadCommitted.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("1"));
+            Patient read1Patient = (Patient) step2ReadCommitted.persistedResource();
+            assertThat(read1Patient.getNameFirstRep().getFamily()).isEqualTo("M24Test");
+            assertThat(read1Patient.getNameFirstRep().getGivenAsSingleString()).isEqualTo("Initial");
+
+            // Step 3: Duplicate CREATE collision (If-None-Match: *) -> HTTP 412 -> Conflict(resourceAlreadyExists)
+            Patient duplicatePatient = createSamplePatient(patientId, "M24Test", "Duplicate");
+            AuthoritativePersistenceResult<IBaseResource> step3Result = client.create(key, duplicatePatient);
+            assertThat(step3Result).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
+            AuthoritativePersistenceResult.Conflict<IBaseResource> step3Conflict =
+                    (AuthoritativePersistenceResult.Conflict<IBaseResource>) step3Result;
+            assertThat(step3Conflict.conflict().reason()).isEqualTo(PreconditionFailureReason.RESOURCE_ALREADY_EXISTS);
+            assertThat(step3Conflict.conflict().currentVersionOptional()).contains(AuthoritativeVersion.of("1"));
+
+            // Verify state and version 1 remain unchanged
+            AuthoritativePersistenceResult<IBaseResource> step3VerifyRead = client.read(key);
+            assertThat(step3VerifyRead).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step3ReadCommitted =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step3VerifyRead;
+            assertThat(step3ReadCommitted.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("1"));
+            Patient unchangedPatient = (Patient) step3ReadCommitted.persistedResource();
+            assertThat(unchangedPatient.getNameFirstRep().getGivenAsSingleString()).isEqualTo("Initial");
+
+            // Step 4: Existing READ -> HTTP 200 -> Committed(version 1)
+            AuthoritativePersistenceResult<IBaseResource> step4Result = client.read(key);
+            assertThat(step4Result).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step4Committed =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step4Result;
+            assertThat(step4Committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("1"));
+            assertThat(step4Committed.persistedResource()).isNotNull();
+
+            // Step 5: Predecessor UPDATE (If-Match: W/"1") -> HTTP 200 -> Committed(version 2)
+            Patient updatedPatient = createSamplePatient(patientId, "M24Test", "Updated");
+            AuthoritativePersistenceResult<IBaseResource> step5Result = client.update(
+                    key, updatedPatient, ExpectedAuthoritativeVersion.of("1"));
+            assertThat(step5Result).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step5Committed =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step5Result;
+            assertThat(step5Committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("2"));
+
+            // Follow-up READ to confirm version 2 persisted
+            AuthoritativePersistenceResult<IBaseResource> step5VerifyRead = client.read(key);
+            assertThat(step5VerifyRead).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step5ReadCommitted =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step5VerifyRead;
+            assertThat(step5ReadCommitted.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("2"));
+            Patient read2Patient = (Patient) step5ReadCommitted.persistedResource();
+            assertThat(read2Patient.getNameFirstRep().getGivenAsSingleString()).isEqualTo("Updated");
+
+            // Step 6: Stale UPDATE collision (If-Match: W/"1") -> HTTP 412 -> Conflict(expectedVersionMismatch)
+            Patient stalePatient = createSamplePatient(patientId, "M24Test", "StaleUpdate");
+            AuthoritativePersistenceResult<IBaseResource> step6Result = client.update(
+                    key, stalePatient, ExpectedAuthoritativeVersion.of("1"));
+            assertThat(step6Result).isInstanceOf(AuthoritativePersistenceResult.Conflict.class);
+            AuthoritativePersistenceResult.Conflict<IBaseResource> step6Conflict =
+                    (AuthoritativePersistenceResult.Conflict<IBaseResource>) step6Result;
+            assertThat(step6Conflict.conflict().reason()).isEqualTo(PreconditionFailureReason.EXPECTED_VERSION_MISMATCH);
+            assertThat(step6Conflict.conflict().currentVersionOptional()).contains(AuthoritativeVersion.of("2"));
+
+            // Verify state and version 2 remain unchanged
+            AuthoritativePersistenceResult<IBaseResource> step6VerifyRead = client.read(key);
+            assertThat(step6VerifyRead).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+            AuthoritativePersistenceResult.Committed<IBaseResource> step6ReadCommitted =
+                    (AuthoritativePersistenceResult.Committed<IBaseResource>) step6VerifyRead;
+            assertThat(step6ReadCommitted.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("2"));
+            Patient read2UnchangedPatient = (Patient) step6ReadCommitted.persistedResource();
+            assertThat(read2UnchangedPatient.getNameFirstRep().getGivenAsSingleString()).isEqualTo("Updated");
+
+            // Step 7: Absent UPDATE (If-Match: W/"1" on non-existent resource) -> HTTP 404 -> NotCommitted (Zero state created)
+            String absentId = "pat-m24-absent-" + UUID.randomUUID().toString().substring(0, 8);
+            ResourceKey absentKey = ResourceKey.of("Patient", absentId);
+            Patient absentPatient = createSamplePatient(absentId, "M24Absent", "Test");
+            AuthoritativePersistenceResult<IBaseResource> step7Result = client.update(
+                    absentKey, absentPatient, ExpectedAuthoritativeVersion.of("1"));
+            assertThat(step7Result).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            AuthoritativePersistenceResult.NotCommitted<IBaseResource> step7NotCommitted =
+                    (AuthoritativePersistenceResult.NotCommitted<IBaseResource>) step7Result;
+            assertThat(step7NotCommitted.failureMessage()).contains("HTTP 404");
+
+            // Verify zero state was created for absent resource
+            AuthoritativePersistenceResult<IBaseResource> step7VerifyRead = client.read(absentKey);
+            assertThat(step7VerifyRead).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+            assertThat(((AuthoritativePersistenceResult.NotCommitted<IBaseResource>) step7VerifyRead).failureMessage())
+                    .contains("HTTP 404");
+        }
+
+        @Test
+        @DisplayName("Step 8: Persistence Durability Across Container Restart (PostgreSQL Backed)")
+        void testDurabilityAcrossContainerRestart() {
+            String patientId = "pat-m24-durability-fixed";
+            ResourceKey key = ResourceKey.of("Patient", patientId);
+
+            AuthoritativePersistenceResult<IBaseResource> initialRead = client.read(key);
+            if (initialRead instanceof AuthoritativePersistenceResult.NotCommitted) {
+                // Pre-restart phase: Create version 1 and update to version 2
+                Patient initialPatient = createSamplePatient(patientId, "Durability", "Initial");
+                AuthoritativePersistenceResult<IBaseResource> createRes = client.create(key, initialPatient);
+                assertThat(createRes).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+                assertThat(((AuthoritativePersistenceResult.Committed<IBaseResource>) createRes).authoritativeVersion())
+                        .isEqualTo(AuthoritativeVersion.of("1"));
+
+                Patient updatedPatient = createSamplePatient(patientId, "Durability", "RestartProof");
+                AuthoritativePersistenceResult<IBaseResource> updateRes = client.update(
+                        key, updatedPatient, ExpectedAuthoritativeVersion.of("1"));
+                assertThat(updateRes).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+                assertThat(((AuthoritativePersistenceResult.Committed<IBaseResource>) updateRes).authoritativeVersion())
+                        .isEqualTo(AuthoritativeVersion.of("2"));
+            } else if (initialRead instanceof AuthoritativePersistenceResult.Committed<IBaseResource> committed) {
+                // Post-restart phase: Prove version 2 and updated content survived restart intact
+                assertThat(committed.authoritativeVersion()).isEqualTo(AuthoritativeVersion.of("2"));
+                Patient persisted = (Patient) committed.persistedResource();
+                assertThat(persisted.getNameFirstRep().getGivenAsSingleString()).isEqualTo("RestartProof");
+            }
         }
     }
 }

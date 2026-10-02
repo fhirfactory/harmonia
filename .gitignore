@@ -68,3 +68,7 @@ dependency-reduced-pom.xml
 *.toc
 
 .DS_Store
+
+# PKI and local security artifacts
+.pki/
+**/.pki/

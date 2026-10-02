@@ -327,13 +327,8 @@ public class MnemeAuthoritativeHttpClient implements AuthoritativePersistencePor
             }
 
             if (statusCode == 404) {
-                return new AuthoritativePersistenceResult.Conflict<>(
-                        new AuthoritativePreconditionConflict(
-                                key,
-                                net.fhirfactory.harmonia.model.governedwrite.PreconditionFailureReason.EXPECTED_VERSION_MISMATCH,
-                                expectedVersion,
-                                null,
-                                "Target resource does not exist for UPDATE (HTTP 404)"));
+                return new AuthoritativePersistenceResult.NotCommitted<>(
+                        "Target resource does not exist on authoritative server for UPDATE: " + key + " (HTTP 404)");
             }
 
             if (statusCode == 400 || statusCode == 422) {
