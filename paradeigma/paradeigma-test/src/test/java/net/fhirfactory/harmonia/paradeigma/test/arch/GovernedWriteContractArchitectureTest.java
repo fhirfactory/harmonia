@@ -44,6 +44,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class GovernedWriteContractArchitectureTest {
 
     private static final String GOVERNED_WRITE_PACKAGE = "net.fhirfactory.harmonia.model.governedwrite..";
+    private static final String ALIGNMENT_PACKAGE = "net.fhirfactory.harmonia.model.alignment..";
 
     private static JavaClasses importedClasses;
 
@@ -51,7 +52,10 @@ public class GovernedWriteContractArchitectureTest {
     static void loadClasses() {
         importedClasses = new ClassFileImporter()
                 .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-                .importPackages("net.fhirfactory.harmonia.model.governedwrite");
+                .importPackages(
+                        "net.fhirfactory.harmonia.model.governedwrite",
+                        "net.fhirfactory.harmonia.model.alignment"
+                );
     }
 
     @Test
@@ -175,6 +179,104 @@ public class GovernedWriteContractArchitectureTest {
                 "import jakarta.ws.rs",
                 "import javax.ws.rs",
                 "import org.postgresql"
+        };
+
+        try (Stream<Path> paths = Files.walk(sourceDir)) {
+            List<Path> javaFiles = paths.filter(p -> p.toString().endsWith(".java")).toList();
+            assertThat(javaFiles).isNotEmpty();
+
+            for (Path javaFile : javaFiles) {
+                String content = Files.readString(javaFile);
+                for (String forbidden : forbiddenImports) {
+                    assertThat(content)
+                            .as("File %s must not contain forbidden import '%s'", javaFile, forbidden)
+                            .doesNotContain(forbidden);
+                }
+            }
+        }
+    }
+
+    @Test
+    @DisplayName("ArchUnit: Calliope alignment contract classes must not depend on Infinispan or Hot Rod")
+    void alignmentMustNotDependOnInfinispan() {
+        ArchRule rule = noClasses()
+                .that().resideInAPackage(ALIGNMENT_PACKAGE)
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.infinispan..",
+                        "org.infinispan.client.hotrod..",
+                        "org.infinispan.commons.."
+                );
+
+        rule.check(importedClasses);
+    }
+
+    @Test
+    @DisplayName("ArchUnit: Calliope alignment contract classes must not depend on JPA, Hibernate, or database drivers")
+    void alignmentMustNotDependOnJpaOrDatabase() {
+        ArchRule rule = noClasses()
+                .that().resideInAPackage(ALIGNMENT_PACKAGE)
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "jakarta.persistence..",
+                        "javax.persistence..",
+                        "org.hibernate..",
+                        "org.postgresql..",
+                        "ca.uhn.fhir.jpa.."
+                );
+
+        rule.check(importedClasses);
+    }
+
+    @Test
+    @DisplayName("ArchUnit: Calliope alignment contract classes must not depend on Mneme active-state concepts or coordination")
+    void alignmentMustNotDependOnMnemeActiveState() {
+        ArchRule rule = noClasses()
+                .that().resideInAPackage(ALIGNMENT_PACKAGE)
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "net.fhirfactory.harmonia.hestia.mneme.."
+                );
+
+        rule.check(importedClasses);
+    }
+
+    @Test
+    @DisplayName("ArchUnit: Calliope alignment contract classes must not depend on HTTP/Web frameworks")
+    void alignmentMustNotDependOnHttpFrameworks() {
+        ArchRule rule = noClasses()
+                .that().resideInAPackage(ALIGNMENT_PACKAGE)
+                .should().dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.springframework.web..",
+                        "jakarta.ws.rs..",
+                        "javax.ws.rs..",
+                        "jakarta.servlet..",
+                        "javax.servlet..",
+                        "org.apache.http..",
+                        "org.apache.hc.."
+                );
+
+        rule.check(importedClasses);
+    }
+
+    @Test
+    @DisplayName("Static Source Check: Calliope alignment Java sources must not contain forbidden imports")
+    void alignmentSourcesMustNotContainForbiddenImports() throws IOException {
+        Path projectRoot = findProjectRoot();
+        Path sourceDir = projectRoot.resolve("calliope/src/main/java/net/fhirfactory/harmonia/model/alignment");
+        assertThat(Files.exists(sourceDir)).isTrue();
+
+        String[] forbiddenImports = {
+                "import org.infinispan",
+                "import jakarta.persistence",
+                "import javax.persistence",
+                "import org.hibernate",
+                "import org.springframework.web",
+                "import jakarta.ws.rs",
+                "import javax.ws.rs",
+                "import org.postgresql",
+                "import net.fhirfactory.harmonia.hestia.mneme"
         };
 
         try (Stream<Path> paths = Files.walk(sourceDir)) {

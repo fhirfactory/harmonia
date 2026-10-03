@@ -410,7 +410,7 @@ public class InfinispanActiveStateCoordinatorScenarioTest {
         narrator.narrate();
 
         assertThat(result).isEqualTo(ActiveStateCoordinationResult.CONSUMED);
-        assertThat(coordValue).isEqualTo("ACTIVE");
+        assertThat(coordValue).isEqualTo(HotRodActiveStateCoordinator.NO_HEGEMON_MARKER);
         assertThat(personValue).isNull();
         assertThat(taskValue).isNull();
     }
