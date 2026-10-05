@@ -12,6 +12,7 @@ Harmonia is a modular, high-performance, healthcare-grade integration and intero
 docs/
 ├── README.md                                 # Master documentation index & navigation (this file)
 ├── AGENTS.md                                 # Authoritative architectural rules for autonomous agents
+├── deferred-document-register.md             # Register of deferred architectural documentation items
 │
 ├── getting-started/                          # Introductory guides & first deployment
 │   ├── introduction.md                       # Overview of Harmonia, healthcare context & 5 tiers

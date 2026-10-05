@@ -1,0 +1,67 @@
+# Master Requirements Navigation & Traceability Catalogue
+
+## Overview
+
+The **Master Requirements Navigation & Traceability Catalogue** serves as the repository-wide index connecting platform motivation, architectural axioms, and downstream requirements across all architecture domains.
+
+### Scope & Architectural Authority
+- **Domain 01 Ownership**: Domain 01 owns the four cross-cutting [Foundational Platform Requirements](foundational-requirements.md) (`REQ-FND-001` through `REQ-FND-004`), the three generalized external constraint categories (`CST-EXT-001` through `CST-EXT-003`), and this master navigation catalogue.
+- **Downstream Ownership**: Detailed, subsystem-specific requirements remain strictly owned by their respective downstream architecture domains (Domain 04 Information, Domain 05 Application, Domain 06 Integration, Domain 08 Security, Domain 11 Solution Packs, Domain 13 Governance). Downstream requirements are marked `Candidate` until their owning architecture domains undergo formal canonical reconciliation.
+- **Navigation Index, Not Duplicate Database**: This catalogue provides global traceability and lifecycle status tracking. It does not duplicate detailed functional specifications owned downstream.
+- **Realistic Traceability**: Traceability captures meaningful, architecturally established relationships without forcing an artificial, fully connected graph across all elements; absence of a relationship between unrelated items is architecturally valid.
+
+---
+
+## 1. Master Requirements & Constraints Catalogue
+
+The following table indexes platform requirements, foundational axioms, owning domains, and current governance status:
+
+| Identifier | Short Title | Owning Architecture Domain | Governing Principles | Primary Motivation / Driver | Classification | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **REQ-FND-001** | [Durable Ingress Acceptance Boundary](foundational-requirements.md) | Domain 01 (Motivation) | [AX-05](../principles/architectural-axioms.md), [AX-10](../principles/architectural-axioms.md), [AX-15](../principles/architectural-axioms.md) | [Silent Data Loss via False Acceptance](../drivers-assessments/assessments.md) | Foundational Platform Requirement | **Accepted** |
+| **REQ-FND-002** | [Operational Activity Progression State](foundational-requirements.md) | Domain 01 (Motivation) | [AX-16](../principles/architectural-axioms.md) | [Unmonitored Destination Failure](../drivers-assessments/assessments.md) | Foundational Platform Requirement | **Accepted** |
+| **REQ-FND-003** | [Subject Referential Integrity](foundational-requirements.md) | Domain 01 (Motivation) | [AX-06](../principles/architectural-axioms.md), [AX-14](../principles/architectural-axioms.md) | [Patient Safety & Identity Integrity](../drivers-assessments/drivers.md) | Foundational Platform Requirement | **Accepted** |
+| **REQ-FND-004** | [Explicit Indeterminate Outcome](foundational-requirements.md) | Domain 01 (Motivation) | [AX-15](../principles/architectural-axioms.md) | [Silent Data Loss via False Acceptance](../drivers-assessments/assessments.md) | Foundational Platform Requirement | **Accepted** |
+| **CST-EXT-001** | [Applicable Privacy & Data-Protection](external-constraints.md) | Domain 01 (Motivation) | [AX-07](../principles/architectural-axioms.md), [AX-08](../principles/architectural-axioms.md) | [Statutory Health Privacy](../drivers-assessments/drivers.md) | External Constraint Category | **Accepted** |
+| **CST-EXT-002** | [Applicable Healthcare Identifiers](external-constraints.md) | Domain 01 (Motivation) | [AX-06](../principles/architectural-axioms.md), [AX-14](../principles/architectural-axioms.md) | [Patient Safety & Identity Integrity](../drivers-assessments/drivers.md) | External Constraint Category | **Accepted** |
+| **CST-EXT-003** | [Mandated Interoperability Contracts](external-constraints.md) | Domain 01 (Motivation) | [AX-02](../principles/architectural-axioms.md), [AX-03](../principles/architectural-axioms.md) | [Clinical Interoperability](../drivers-assessments/drivers.md) | External Constraint Category | **Accepted** |
+| **CORE-001** | Authority Classification | Domain 04 (Information) | [AX-06](../principles/architectural-axioms.md) | [Clinical Information Independence](../drivers-assessments/drivers.md) | Core Semantic Requirement | **Candidate** |
+| **CORE-003** | Governed Canonical Semantics | Domain 04 (Information) | [AX-02](../principles/architectural-axioms.md), [AX-03](../principles/architectural-axioms.md) | [Clinical Interoperability](../drivers-assessments/drivers.md) | Core Semantic Requirement | **Candidate** |
+| **SEC-001** | Trusted Identity & Authentication | Domain 08 (Security) | [AX-07](../principles/architectural-axioms.md) | [Implicit Perimeter Trust](../drivers-assessments/assessments.md) | Security Architecture Requirement | **Candidate** |
+| **SEC-002** | Default-Deny Authorization | Domain 08 (Security) | [AX-07](../principles/architectural-axioms.md) | [Implicit Perimeter Trust](../drivers-assessments/assessments.md) | Security Architecture Requirement | **Candidate** |
+| **SEC-010** | PHI-Safe Operational Logging | Domain 08 (Security) / Domain 13 (Governance) | [AX-07](../principles/architectural-axioms.md) | [PHI Leakage through Operational Logging](../drivers-assessments/assessments.md) | Security Architecture Requirement | **Candidate** |
+| **PROV-001** | End-to-End Accountable Provenance | Domain 08 (Security) / Domain 04 (Info) | [AX-08](../principles/architectural-axioms.md) | [Statutory Health Privacy](../drivers-assessments/drivers.md) | Security & Provenance Requirement | **Candidate** |
+| **INT-TRANS-001**| At-Least-Once Transport & Idempotency | Domain 06 (Integration) | [AX-10](../principles/architectural-axioms.md) | [Continuous Clinical Availability](../drivers-assessments/drivers.md) | Integration Architecture Requirement | **Candidate** |
+| **APP-SEP-001** | Transport / Business Separation | Domain 05 (App) / Domain 06 (Integration) | [AX-02](../principles/architectural-axioms.md), [AX-04](../principles/architectural-axioms.md) | [Clinical Interoperability](../drivers-assessments/drivers.md) | Application Layering Pattern | **Candidate** |
+| **DIR-001..006** | Provider Directory Workflow Pragmas | Domain 11 (Solution Pack: Provider Directory) | [AX-14](../principles/architectural-axioms.md), [AX-16](../principles/architectural-axioms.md) | [Directory & Endpoint Governance](../drivers-assessments/drivers.md) | Solution-Specific Requirement | **Candidate** |
+
+---
+
+## 2. Reclassification & Supersession Registry
+
+The following table records historical patterns, legacy requirements, and design formulations that have been formally superseded, retired, or reclassified during the canonical consolidation of Domain 01:
+
+| Historical / Legacy Element | Previous Status | Current Canonical Status | Target Allocation | Architectural Rationale for Supersession / Reclassification |
+| :--- | :--- | :--- | :--- | :--- |
+| **Write-Behind Caching Persistence** | Proposed Principle | **Retired / Superseded** | None | Conflated active in-memory cache state with authoritative durable state; violated AX-05 by risking silent data loss if volatile cache crashed prior to database flush. |
+| **Pre-Persistence Positive ACK** | Implementation Practice | **Retired / Superseded** | None | Violated Invariant 4 (`REC-001`) and `REQ-FND-001`; returning an HL7 `AA` ACK before durable persistence creates severe vulnerability to silent message loss. |
+| **AX-12 ("Hide Plumbing")** | Motivation Principle | **Reclassified** | Domain 05 (Application Architecture) | Component design rule and developer interface guideline rather than enterprise motivation axiom; retained as historical note to avoid renumbering AX-13..AX-16. |
+| **At-Least-Once Delivery & Idempotency** | Architecture Pattern | **Reclassified** | Domain 06 (Integration Architecture) | Wire transport and message broker delivery contract rather than universal enterprise motivation axiom. |
+| **Transport / Business Separation** | Architecture Rule | **Reclassified** | Domain 05 / 06 (App & Integration) | Internal layering pattern governing Petasos messaging and Erga activity processing boundaries. |
+| **Canonical FHIR R5 Schemas** | Architecture Rule | **Reclassified** | Domain 04 / 06 (Info & Integration) | Specific interface and serialization contract selection rather than universal motivation principle. |
+| **Zero-PHI Diagnostic Logging** | Principle Definition | **Reclassified** | Domain 08 (Security) / Domain 13 (Governance) | Downstream Security Architecture operational requirement/constraint derived from AX-07; formal architectural guardrails cleanly deferred to Domain 13. |
+| **DIR-001 through DIR-006** | Architecture Requirements | **Reclassified** | Domain 11 (Solution Pack: Provider Directory) | Solution-specific workflow rules and pragma definitions for Provider Directory change events. |
+
+---
+
+## 3. Downstream Domain Traceability Handoff
+
+Domain 01 Motivation establishes the bedrock upon which subsequent architecture domains build:
+
+- **Domain 02 (Strategy)**: Consumes Strategic Goals and Platform Drivers to define enterprise capabilities, resource allocations, and clinical value streams.
+- **Domain 04 (Information Architecture)**: Realizes `CORE-001` (Authority Classification), `CORE-003` (Canonical Semantics), and `REQ-FND-003` (Subject Referential Integrity) through formal data models and FHIR profiles.
+- **Domain 05 (Application Architecture)**: Realizes `REQ-FND-002` (Activity Progression State), incorporates reclassified principle `AX-12` (Domain Model Primacy over Plumbing), and enforces the separation between active state and authoritative persistence (`AX-05`).
+- **Domain 06 (Integration Architecture)**: Realizes `REQ-FND-001` (Durable Ingress Acceptance Boundary via `REC-001`), `INT-TRANS-001` (At-Least-Once Transport), and external wire protocol gateways (`CST-EXT-003`).
+- **Domain 08 (Security Architecture)**: Realizes `SEC-001`, `SEC-002`, `SEC-010` (PHI-Safe Operational Logging), and `PROV-001` derived from `AX-07`, `AX-08`, and `CST-EXT-001`.
+- **Domain 11 (Solution Packs)**: Implements specialized solution workflows (such as Provider Directory `DIR-001..DIR-006`).
+- **Domain 13 (Governance & Decisions)**: Owns formal architectural guardrails, Architecture Decision Records (ADRs), and compliance enforcement.
