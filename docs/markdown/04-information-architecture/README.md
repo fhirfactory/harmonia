@@ -117,8 +117,16 @@ docs/markdown/04-information-architecture/
 │   └── assemblies-and-views.md                  # Assembly vs View, candidate context definitions
 ├── guardrails/
 │   └── modelling-guardrails.md                  # The 16 canonical Information Architecture guardrails
-└── traceability/
-    └── domain03-traceability.md                 # Derivation framework and representative examples
+├── traceability/
+│   └── domain03-traceability.md                 # Derivation framework and representative examples
+└── information-families/                        # Detailed Information Families
+    ├── README.md                                # Overview, metamodel derivation, authority rules
+    ├── person-healthcare-subject.md             # Person, Identity, Correlation, Subject Context
+    ├── practitioner.md                          # Practitioner, Registration, Roles, Privileges
+    ├── organisation.md                          # Organisation, Identifiers, Hierarchies, Contacts
+    ├── healthcare-location.md                   # Locations, Care-Places, Spatial Containment
+    ├── healthcare-service.md                    # 5-Stage Service Model & Service Provision Map Evaluation
+    └── device.md                                # Device Definition, Instance, Endpoints
 ```
 
 ### Navigating the Documentation Suite
@@ -134,3 +142,10 @@ docs/markdown/04-information-architecture/
 4. **[Assemblies & Views](assemblies-views/assemblies-and-views.md)**: Governance of semantic compositions (`Information Assembly`) and projections (`Information View`) with illustrative candidate context definitions (Healthcare Subject Context, Longitudinal Clinical Record, Encounter Context, etc.).
 5. **[Modelling Guardrails](guardrails/modelling-guardrails.md)**: The 16 authoritative repository-wide guardrails for Information Architecture.
 6. **[Domain 03 Traceability](traceability/domain03-traceability.md)**: The 4-tier derivation chain (`Capability/Feature → Function/Process → Information Responsibility → Domain 04 Concept`) and representative reference mappings.
+7. **[Detailed Information Families](information-families/README.md)**: Concrete information family models for foundational entities, identities, locations, services, and devices:
+   - **[Person and Healthcare Subject](information-families/person-healthcare-subject.md)**
+   - **[Practitioner](information-families/practitioner.md)**
+   - **[Organisation](information-families/organisation.md)**
+   - **[Healthcare Location / Care Place](information-families/healthcare-location.md)**
+   - **[Healthcare Service](information-families/healthcare-service.md)**
+   - **[Device](information-families/device.md)**
