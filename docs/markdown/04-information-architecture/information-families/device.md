@@ -26,11 +26,13 @@ graph TD
 
 ## 2. Domain 03 Responsibility & Traceability
 
-This information family derives directly from Domain 03 Business Information Responsibilities under `L1: Clinical Device Administration`:
+Owner names and evidenced responsibilities remain established. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under [approved G1 K9](../reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); this traceability does not manufacture missing hierarchy.
+
+This information family derives directly from Domain 03 Business Information Responsibilities under `Clinical Device Administration`:
 
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
-| **`L1: Clinical Device Administration`** | `Maintain Device Definition`, `Maintain Device Instance Identity`, `Maintain Device Association`, `Maintain Device Communication Endpoints` | `Device Registry & Association Ledger`, `Medical Device Type Registry`, `Physical Device Instance Directory`, `Device Association Ledger`, `Device Communication Endpoint Map` | `Device Definition`, `Device Instance`, `Device Association`, `Endpoint` |
+| **`Clinical Device Administration`** | `Maintain Device Definition`, `Maintain Device Instance Identity`, `Maintain Device Association`, `Maintain Device Communication Endpoints` | `Device Registry & Association Ledger`, `Medical Device Type Registry`, `Physical Device Instance Directory`, `Device Association Ledger`, `Device Communication Endpoint Map` | `Device Definition`, `Device Instance`, `Device Association`, `Endpoint` |
 
 ---
 

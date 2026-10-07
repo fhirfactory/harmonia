@@ -39,13 +39,15 @@ graph TD
 
 ## 2. Domain 03 Responsibility & Traceability
 
+Owner names and evidenced responsibilities remain established. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under [approved G1 K9](../reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); this traceability does not manufacture missing hierarchy.
+
 This information family derives directly from Domain 03 Business Information Responsibilities:
 
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
-| **`L2: Person Identity`** *(under `L1: Client Administration`)* | `Resolve Person Identifier`, `Correlate Person Identifiers`, `Maintain Person Identity Aliases`, `Apply Governed Person Identity Correction` | `Person Identity & Identifier Correlation Graph`, `Identity Aliases`, `Identity Merge/Split Audit Log` | `Person`, `Person Identity`, `Identifier`, `Identity Alias`, `Identity Correlation Graph`, `Identity Correction` |
-| **`L2: Healthcare Subject Context`** *(under `L1: Client Administration`)* | `Establish Healthcare Subject Context`, `Govern Subject Demographic Context` | `Healthcare Subject Profile`, `Demographic History`, `Communication Preferences` | `Healthcare Subject Context`, `Demographic Trait Assertion`, `Communication Preference` |
-| **`L2: Client Relationships & Support Network`** *(under `L1: Client Administration`)* | `Maintain Client Relationships`, `Govern Client Relationship Validity` | `Client Support Network & Legal Mandates`, `Representative Legal Mandate`, `Carer Contact Directory` | `Family Relationship`, `Carer Relationship`, `Legal Representation`, `Support Person Relationship` |
+| **`Person Identity`** *(established parent: `Client Administration`; complete ancestry unresolved)* | `Resolve Person Identifier`, `Correlate Person Identifiers`, `Maintain Person Identity Aliases`, `Apply Governed Person Identity Correction` | `Person Identity & Identifier Correlation Graph`, `Identity Aliases`, `Identity Merge/Split Audit Log` | `Person`, `Person Identity`, `Identifier`, `Identity Alias`, `Identity Correlation Graph`, `Identity Correction` |
+| **`Healthcare Subject Context`** *(catalogued in the Client Administration grouping; complete ancestry unresolved)* | `Establish Healthcare Subject Context`, `Govern Subject Demographic Context` | `Healthcare Subject Profile`, `Demographic History`, `Communication Preferences` | `Healthcare Subject Context`, `Demographic Trait Assertion`, `Communication Preference` |
+| **`Client Relationships & Support Network`** *(catalogued in the Client Administration grouping; complete ancestry unresolved)* | `Maintain Client Relationships`, `Govern Client Relationship Validity` | `Client Support Network & Legal Mandates`, `Representative Legal Mandate`, `Carer Contact Directory` | `Family Relationship`, `Carer Relationship`, `Legal Representation`, `Support Person Relationship` |
 
 ---
 

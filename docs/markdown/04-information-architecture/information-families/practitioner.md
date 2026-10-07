@@ -32,11 +32,13 @@ graph TD
 
 ## 2. Domain 03 Responsibility & Traceability
 
-This information family derives directly from Domain 03 Business Information Responsibilities under `L1: Provider Administration`:
+Owner names and evidenced responsibilities remain established. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under [approved G1 K9](../reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); this traceability does not manufacture missing hierarchy.
+
+This information family derives directly from Domain 03 Business Information Responsibilities under `Provider Administration`:
 
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
-| **`L1: Provider Administration`** | `Verify Practitioner Registration`, `Govern Practitioner Profile`, `Maintain Practitioner Roles`, `Bind Practitioner Electronic Endpoints`, `Maintain Practitioner Affiliations`, `Maintain Clinical Privileges` | `Practitioner Registry & Role Bindings`, `Professional Registration Status`, `Practitioner Role Bindings`, `Electronic Communication Endpoints`, `Scope of Practice Privileges` | `Practitioner`, `Practitioner Identity`, `Practitioner Identifier`, `Professional Registration`, `Professional Profile`, `Clinical Privilege`, `Practitioner Role Binding`, `Endpoint` |
+| **`Provider Administration`** | `Verify Practitioner Registration`, `Govern Practitioner Profile`, `Maintain Practitioner Roles`, `Bind Practitioner Electronic Endpoints`, `Maintain Practitioner Affiliations`, `Maintain Clinical Privileges` | `Practitioner Registry & Role Bindings`, `Professional Registration Status`, `Practitioner Role Bindings`, `Electronic Communication Endpoints`, `Scope of Practice Privileges` | `Practitioner`, `Practitioner Identity`, `Practitioner Identifier`, `Professional Registration`, `Professional Profile`, `Clinical Privilege`, `Practitioner Role Binding`, `Endpoint` |
 
 ---
 

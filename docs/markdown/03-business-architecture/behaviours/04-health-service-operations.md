@@ -2,6 +2,8 @@
 
 ## 1. Contextual Scope & Architectural Intent
 
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under [approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); document grouping and numbering do not establish architectural identity or hierarchy.
+
 Health Service Operations governs the operational logistics, physical resource management, facility capacity, staff dispatch, and operational movement required to support healthcare delivery across clinical facilities.
 
 ### Operational Logistics vs. Software Plumbing
@@ -26,14 +28,14 @@ Health Service Operations Contexts
 ├── 11. Work Allocation & Dispatch
 ├── 12. Credential Management
 ├── 13. Patient Transport
-├── 14. Clinical Logistics
+├── 14. Clinical Logistics Coordination
 └── 15. Discharge Management
 ```
 
 ---
 
 ### 2.1 Clinic & Practice Operations
-- **Owning Capability**: `L1: Clinic & Practice Operations`
+- **Owning Capability**: `Clinic & Practice Operations`
 - **Functions & Exposed Services**:
   - **Feature: Operational Queue Progression**:
     - *Function*: `Manage Clinic Queue Progression` — Tracks patient arrival, rooming, consultation in-progress, and check-out states.
@@ -44,7 +46,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.2 Ward Operations
-- **Owning Capability**: `L1: Ward Operations`
+- **Owning Capability**: `Ward Operations`
 - **Functions & Exposed Services**:
   - **Feature: Ward Patient Flow Coordination**:
     - *Function*: `Coordinate Ward Operational State` — Manages ward acuity distribution, nurse-to-patient ratios, and isolation cohorting.
@@ -54,7 +56,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.3 Theatre Operations
-- **Owning Capability**: `L1: Theatre Operations`
+- **Owning Capability**: `Theatre Operations`
 - **Functions & Exposed Services**:
   - **Feature: Operating Theatre Case Progression**:
     - *Function*: `Manage Theatre Case Progression` — Coordinates surgical case milestones: *Case Called* $\to$ *Patient in Anaesthetic Bay* $\to$ *Anaesthesia Commenced* $\to$ *Knife to Skin* $\to$ *Procedure Finished* $\to$ *In PACU/Recovery* $\to$ *Ward Handover Complete*.
@@ -65,7 +67,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.4 Emergency Department Operations
-- **Owning Capability**: `L1: Emergency Department Operations`
+- **Owning Capability**: `Emergency Department Operations`
 - **Functions & Exposed Services**:
   - **Feature: ED Length of Stay Tracking**:
     - *Function*: `Coordinate ED Departmental Capacity` — Tracks waiting room occupancy, resuscitation bay availability, and time-to-triage metrics.
@@ -75,7 +77,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.5 Outpatient Operations
-- **Owning Capability**: `L1: Outpatient Operations`
+- **Owning Capability**: `Outpatient Operations`
 - **Functions & Exposed Services**:
   - **Feature: Outpatient Arrival Registration**:
     - *Function*: `Coordinate Outpatient Session Utilisation` — Tracks specialty clinic room allocation and clinician arrival.
@@ -85,7 +87,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.6 Bed & Care-Place Management
-- **Owning Capability**: `L1: Bed & Care-Place Management`
+- **Owning Capability**: `Bed & Care-Place Management`
 - **Key Architectural Semantics**:
   - **Operational State vs. Definition**: While *Location Administration* defines the physical care-place, *Bed & Care-Place Management* owns the real-time operational status (*Available*, *Occupied*, *Reserved*, *Blocked*, *Dirty*, *Cleaning In-Progress*, *Maintenance Lock*).
 - **Functions & Exposed Services**:
@@ -101,7 +103,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.7 Clinical Resource Management
-- **Owning Capability**: `L1: Clinical Resource Management`
+- **Owning Capability**: `Clinical Resource Management`
 - **Functions & Exposed Services**:
   - **Feature: Mobile Clinical Equipment Tracking**:
     - *Function*: `Track Mobile Clinical Asset Operational State` — Manages the real-time location and operational readiness of mobile ventilators, infusion pumps, and telemetry transmitters.
@@ -111,7 +113,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.8 Service Capacity Management
-- **Owning Capability**: `L1: Service Capacity Management`
+- **Owning Capability**: `Service Capacity Management`
 - **Functions & Exposed Services**:
   - **Feature: Operational Capacity Metric Aggregation**:
     - *Function*: `Aggregate Service Capacity Telemetry` — Gathers bed occupancy, ICU surge capacity, and ventilator availability across regional hospitals.
@@ -121,7 +123,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.9 Mobile Staff Management
-- **Owning Capability**: `L1: Mobile Staff Management`
+- **Owning Capability**: `Mobile Staff Management`
 - **Functions & Exposed Services**:
   - **Feature: Mobile Worker Task Dispatch**:
     - *Function*: `Track Operational Staff Presence` — Tracks active on-duty presence and physical zone assignment for porters, phlebotomists, and roving nurses.
@@ -131,7 +133,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.10 On-Call Management
-- **Owning Capability**: `L1: On-Call Management`
+- **Owning Capability**: `On-Call Management`
 - **Functions & Exposed Services**:
   - **Feature: Active On-Call Provider Resolution**:
     - *Function*: `Resolve Active On-Call Coverage` — Resolves primary, secondary, and tertiary on-call clinical specialists for emergency escalation.
@@ -141,7 +143,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.11 Work Allocation & Dispatch
-- **Owning Capability**: `L1: Work Allocation & Dispatch`
+- **Owning Capability**: `Work Allocation & Dispatch`
 - **Key Architectural Semantics**:
   - **Ownership Guardrail**: Owns the dispatching, queuing, assignment, and operational progression of non-clinical work orders (e.g., patient transfers, cleaning, specimen pickups). It does **not** acquire ownership of Practitioners, Locations, Services, or Credentials.
 - **Functions & Exposed Services**:
@@ -157,9 +159,10 @@ Health Service Operations Contexts
 ---
 
 ### 2.12 Credential Management
-- **Owning Capability**: `L1: Credential Management`
+- **Owning Capability**: `Credential Management`
 - **Functions & Exposed Services**:
-  - **Feature: Operational Credential Check**:
+  - **Capability-scoped behaviour: Operational Credential Check** (Feature association not established):
+    - *Distinction*: Operational badge/access `Credential Management` is distinct from Strategy `Clinical Qualification Management`. Lexical similarity does not bind this behaviour to qualification/competency Feature `FEAT-HSO-23`.
     - *Function*: `Verify Operational Access Credential` — Verifies physical access badges, specialty ward entry authorizations, and restricted area permissions.
     - *Exposed Service*: `Operational Credential Checkpoint Service` — Evaluates physical/operational access rights.
 - **Information Responsibility**: Operational Access Authorization Ledger, Badge Credential Binding Register.
@@ -167,7 +170,7 @@ Health Service Operations Contexts
 ---
 
 ### 2.13 Patient Transport
-- **Owning Capability**: `L1: Patient Transport`
+- **Owning Capability**: `Patient Transport`
 - **Functions & Exposed Services**:
   - **Feature: Transport Dispatch & Progress Tracking**:
     - *Function*: `Manage Patient Transport Progression` — Coordinates intra-facility and inter-facility patient movements: *Transport Requested* $\to$ *Porter Dispatched* $\to$ *Patient Collected* $\to$ *In-Transit* $\to$ *Delivered at Destination* $\to$ *Handover Completed*.
@@ -177,8 +180,10 @@ Health Service Operations Contexts
 
 ---
 
-### 2.14 Clinical Logistics
-- **Owning Capability**: `L1: Clinical Logistics`
+<a id="214-clinical-logistics"></a>
+
+### 2.14 Clinical Logistics Coordination
+- **Owning Capability**: `Clinical Logistics Coordination`
 - **Functions & Exposed Services**:
   - **Feature: Pathology Specimen Transport Tracking**:
     - *Function*: `Manage Specimen Transport Progression` — Tracks the physical transit of pathology bio-specimens, blood products, and surgical trays: *Collected* $\to$ *Courier Picked Up* $\to$ *In-Transit* $\to$ *Laboratory Ingress Received*.
@@ -189,10 +194,11 @@ Health Service Operations Contexts
 ---
 
 ### 2.15 Discharge Management
-- **Owning Capability**: `L1: Discharge Management`
+- **Owning Capability**: `Discharge Management`
 - **Functions & Exposed Services**:
   - **Feature: Discharge Readiness & Coordination Oversight**:
     - *Function*: `Manage Discharge Coordination Progression` — Synchronises multi-agency discharge readiness: *Discharge Planning Initiated* $\to$ *Medications Reconciled* $\to$ *Transport Booked* $\to$ *Discharge Summary Finalised* $\to$ *Physically Departed*.
+    - *Scope qualification*: Summary finalisation and signing are distinct. The relationship between this summary, Process publication before departure and dependency publication upon departure remains unresolved; no separate publication events are inferred.
     - *Exposed Service*: `Discharge Readiness Telemetry` — Discloses discharge barrier checklists and planned departure times.
     - *Governed Process*: **Discharge Progression Process**.
 - **Information Responsibility**: Discharge Readiness Checklist Ledger, Estimated Date of Discharge (EDD) Register.

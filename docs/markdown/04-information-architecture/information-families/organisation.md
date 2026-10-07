@@ -29,11 +29,13 @@ graph TD
 
 ## 2. Domain 03 Responsibility & Traceability
 
-This information family derives directly from Domain 03 Business Information Responsibilities under `L1: Organisation Administration`:
+Owner names and evidenced responsibilities remain established. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under [approved G1 K9](../reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); this traceability does not manufacture missing hierarchy.
+
+This information family derives directly from Domain 03 Business Information Responsibilities under `Organisation Administration`:
 
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
-| **`L1: Organisation Administration`** | `Verify Healthcare Organisation`, `Govern Organisation Profile`, `Maintain Organisational Structure`, `Maintain Organisation Contacts` | `Healthcare Organisation Registry`, `National Facility Identifier Bindings`, `Department Hierarchy Graph`, `Organisation Contact Directory` | `Healthcare Organisation`, `Organisation Identity`, `Organisation Identifier`, `Organisation Profile`, `Organisation Classification`, `Organisation Contact Information`, `Organisational Unit` |
+| **`Organisation Administration`** | `Verify Healthcare Organisation`, `Govern Organisation Profile`, `Maintain Organisational Structure`, `Maintain Organisation Contacts` | `Healthcare Organisation Registry`, `National Facility Identifier Bindings`, `Department Hierarchy Graph`, `Organisation Contact Directory` | `Healthcare Organisation`, `Organisation Identity`, `Organisation Identifier`, `Organisation Profile`, `Organisation Classification`, `Organisation Contact Information`, `Organisational Unit` |
 
 ---
 

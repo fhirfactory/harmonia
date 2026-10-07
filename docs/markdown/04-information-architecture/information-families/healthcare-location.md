@@ -21,11 +21,13 @@ graph TD
 
 ## 2. Domain 03 Responsibility & Traceability
 
-This information family derives directly from Domain 03 Business Information Responsibilities under `L1: Location Administration`:
+Owner names and evidenced responsibilities remain established. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under [approved G1 K9](../reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); this traceability does not manufacture missing hierarchy.
+
+This information family derives directly from Domain 03 Business Information Responsibilities under `Location Administration`:
 
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
-| **`L1: Location Administration`** | `Maintain Healthcare Location`, `Maintain Physical Location Hierarchy`, `Maintain Care-Place Definition` | `Location & Care-Place Definitions`, `Physical Hierarchy Graph`, `Care-Place Specifications` | `Healthcare Location`, `Location Identity`, `Location Classification`, `Geospatial Address`, `Care-Place Definition` |
+| **`Location Administration`** | `Maintain Healthcare Location`, `Maintain Physical Location Hierarchy`, `Maintain Care-Place Definition` | `Location & Care-Place Definitions`, `Physical Hierarchy Graph`, `Care-Place Specifications` | `Healthcare Location`, `Location Identity`, `Location Classification`, `Geospatial Address`, `Care-Place Definition` |
 
 ---
 
@@ -90,7 +92,7 @@ $$\text{Care-Place Definition [Location Admin]} \neq \text{Care-Place Operationa
 
 | Dimension | `Care-Place Definition` *(Domain 04)* | `Care-Place Operational State` *(Operational Family)* |
 | :--- | :--- | :--- |
-| **Owning Capability** | `L1: Location Administration` | `L1: Bed & Care-Place Management` |
+| **Owning Capability** | `Location Administration` | `Bed & Care-Place Management` |
 | **Semantic Nature** | Static architectural and engineering specifications. | Dynamic, real-time operational status. |
 | **Typical Assertions** | Bed type, negative pressure capability, oxygen outlet, fixed telemetry port. | *Available*, *Occupied*, *Reserved*, *Blocked*, *Dirty*, *Cleaning In-Progress*, *Maintenance Lock*. |
 | **Lifecycle** | Long-term facility lifecycle (months / years). | Transient operational lifecycle (minutes / hours). |

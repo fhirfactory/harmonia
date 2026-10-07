@@ -6,29 +6,50 @@ The Harmonia Business Architecture metamodel defines the structural and behaviou
 
 ```mermaid
 graph TD
-    L1["L1 Capability"] --> L2["L2 Capability"]
-    L2 --> L3["L3 Capability"]
-    L3 --> FEAT["Feature<br/>(Capability Specialisation)"]
-    FEAT --> FUNC["Delivers Business Function(s)"]
-    FUNC -->|Exposed outside boundary| SERV["Exposes Business Service(s)"]
-    FEAT --> PROC["Encompasses Business Process(es)<br/>(Where Progression is Material)"]
-    FEAT --> INFO["Establishes Business Information Responsibility"]
+    subgraph OWNER["Owning Capability or Feature responsibility context"]
+        CT1["CT1 Capability"] -->|May decompose into| CT2["CT2 Capability"]
+        CT2 -->|May decompose into| CT3["CT3 Capability"]
+        CT1 -.->|May specialise as| FT["FT Feature<br/>(Capability Specialisation)"]
+        CT2 -.->|May specialise as| FT
+        CT3 -.->|May specialise as| FT
+    end
+    OWNER -->|Delivers| FUNC["Business Function(s)"]
+    FUNC -->|Exposed outside owning boundary| SERV["Business Service(s)"]
+    OWNER -->|Encompasses where progression is material| PROC["Business Process(es)"]
+    OWNER -->|Establishes| INFO["Business Information Responsibility"]
 ```
 
-### 1.1 Four-Tier Capability Hierarchy
+The diagram groups the permissible responsibility contexts; it does not require every branch to materialise every Capability Tier or a Feature before delivering behaviour.
 
-Harmonia structures capabilities in a strict four-tier hierarchy:
+### 1.1 Capability Decomposition and Terminology
 
-$$\text{L1 Capability} \longrightarrow \text{L2 Capability} \longrightarrow \text{L3 Capability} \longrightarrow \text{Feature}$$
+The following terminology SHALL be used canonically:
 
-- **L1 Capability**: High-level healthcare operational domain (e.g., Client Administration, Order Administration).
-- **L2 Capability**: Coherent grouping of functional responsibilities within an L1 domain (e.g., Person Identity, Diagnostic Orders).
-- **L3 Capability**: Bounded system-enabled capability boundary (e.g., Identifier Resolution, Closed-Loop Order Progression).
-- **Feature**: A **Feature** is a finer-grained specialisation of Capability beneath the L3 Capability hierarchy and inherits Capability semantics.
+| Term | Meaning |
+| :--- | :--- |
+| **Layer / Architectural Layer** | Architectural layering within the TOGAF / ArchiMate architecture model. |
+| **Capability Tier** | Hierarchical decomposition within a Capability Model. |
+| **Derivation / Derivation Progression** | Progression between different architectural constructs or models. A Derivation Stage is a stage in that progression. |
+| **CT1** | Capability Tier 1. |
+| **CT2** | Capability Tier 2. |
+| **CT3** | Capability Tier 3. |
+| **FT** | Feature. |
+
+`Layer ≠ Capability Tier ≠ Derivation Stage`. `L1`, `L2` and `L3` are deprecated as canonical capability classifications.
+
+Capability decomposition MAY proceed as follows:
+
+$$\text{CT1 Capability} \longrightarrow \text{CT2 Capability} \longrightarrow \text{CT3 Capability} \longrightarrow \text{FT Feature}$$
+
+Not every branch is required to materialise every possible lower tier. A Feature remains a finer-grained specialisation of Capability and inherits Capability semantics; FT SHALL NOT be classified as CT3. Intermediate Capabilities or Features SHALL NOT be invented to complete a hierarchy or to anchor behaviour.
+
+Where a lower Capability Tier is materialised, its established higher-tier Capability ancestry SHALL be represented in its Canonical ID. An unidentified ancestor SHALL NOT be treated as permission to omit that tier. Required but unresolved ancestry SHALL leave the Canonical ID unresolved, as specified in §8.
+
+The five-stage [Domain02 derivation progression](../../02-strategy/capability-maps/capability-tier-model.md) SHALL NOT be reinterpreted as CT1 / CT2 / CT3 / FT. Enablement, derivation and contextual-view membership do not, by themselves, establish a Capability Tier assignment.
 
 ### 1.2 Hierarchy Naming & Uniqueness Rules
-1. **Global Uniqueness**: L1, L2, and L3 Capability names are globally unique across the entire Harmonia architecture.
-2. **Feature Scoping**: Feature names must be unique within their owning L1 Capability hierarchy.
+1. **Global Uniqueness**: Capability names across CT1, CT2 and CT3 are globally unique across the entire Harmonia architecture.
+2. **Feature Scoping**: Feature names must be unique within their owning CT1 Capability hierarchy. An unresolved CT1 ancestor SHALL be recorded as unresolved rather than assigned speculatively.
 3. **No Disconnected Elements**: Business Functions, Business Services, and Business Processes must **never** be modelled as free-standing global catalogues disconnected from an owning Capability or Feature context.
 
 ---
@@ -47,6 +68,8 @@ A Capability or Feature establishes:
 ---
 
 ## 3. Function and Service Semantics
+
+Shared subject matter, Capability context or clinical purpose SHALL NOT establish that a Function or Service realises, specialises or belongs to a Strategy Feature. Association requires semantic evidence. Where absent, preserve the Feature, Function, Service and established owning Capability, and record **Feature association not established** without assigning a replacement Feature.
 
 Harmonia enforces strict semantic rules governing Functions and Services to prevent architectural ambiguity:
 
@@ -104,6 +127,12 @@ If a proposed Business Process appears to span multiple Capability responsibilit
 
 **Cross-capability processes must never be used to erase or blur Capability ownership boundaries.** Cross-boundary coordination is achieved via event notifications and service invocations between bounded capabilities.
 
+### 4.3 Behaviour and Process Consistency
+
+A Business Process may elaborate progression for a defined activity within its owning Capability or Feature without reproducing the Behaviour stage list. It SHALL preserve established responsibility, ownership, authority boundaries and supported obligations. Scoped applicability, compound checkpoints and alternative dispositions SHALL remain explicit; additional Process detail SHALL NOT silently become a universal requirement or redefine owning responsibility.
+
+Omission of a Process checkpoint from a Behaviour summary does not invalidate that checkpoint; omission of Behaviour responsibility from a Process does not remove that responsibility. Stage-count equality is not required. Greater Process detail does not override established responsibility.
+
 ---
 
 ## 5. Cross-Cutting Responsibility Rule
@@ -132,7 +161,7 @@ Harmonia establishes an essential architectural guardrail to maintain component 
   - JSON schemas, DTOs, or wire payloads;
   - Java classes or programming interfaces.
   
-*(Such technology mappings belong exclusively to downstream Information Architecture Domain 04 and Application Architecture Domain 05).*
+Domain04 formalises conceptual information meaning, semantic relationships and responsibility traceability. Realised representations are downstream: application logical/software representation in Domain05; exchange contracts, interoperability profiles, wire payloads and transformations in Domain06; physical platform/runtime/product/deployment realisation in Domain07. Persistence realisation may involve Domain05 and Domain07; a more precise allocation is not established. Representation does not define upstream business or conceptual meaning.
 
 ---
 
@@ -166,3 +195,129 @@ To unambiguously express participants, their acting capacity, and situational co
 1. The **Role** identifies stable architectural/business capacity.
 2. The **Context Qualifier** identifies situational nuance; it does **not** create a new Role.
 3. This notation is a **reference grammar**, not a new architectural metamodel class.
+
+---
+
+## 8. Architectural Element Identity and Canonical Identification
+
+### 8.1 Common Identity Properties
+
+Every governed Business Architecture element SHALL have the following identity properties:
+
+| Property | Cardinality | Meaning |
+| :--- | :--- | :--- |
+| **Element Type** | Exactly one | The element's architectural semantic type. |
+| **Canonical Name** | Exactly one | The current authoritative architectural name. |
+| **Canonical ID** | Exactly one current value | The Canonical Architectural Identifier expressing current architectural responsibility context. |
+| **Name Alias** | Zero or more | A retained alternative or historical name for the same element. |
+| **ID Alias** | Zero or more | A retained non-canonical identifier resolving directly to the same current element. |
+
+These properties SHALL preserve the semantic distinctions between Capability, Feature, Business Function, Business Service and Business Process. Existing canonical-name uniqueness and ownership rules remain applicable.
+
+This convention establishes the identification requirement; it does not assert that the existing architecture corpus already conforms. Where required ancestry or identifier allocation is not established, the Canonical ID SHALL remain explicitly unresolved. A placeholder or speculative identifier SHALL NOT be treated as an allocated Canonical ID.
+
+### 8.2 Typed Canonical Identifier Grammar
+
+The general form is `<architectural-context>.<element-identifier>`. A root CT1 Capability has no preceding context. For Capability, Feature, Business Function, Business Service and Business Process elements, the structural grammar is:
+
+```text
+canonical-id =
+    capability-path
+  | capability-path "." feature-token
+  | capability-path "." behaviour-token
+  | capability-path "." feature-token "." behaviour-token
+
+capability-path = ct1-token [ "." ct2-token [ "." ct3-token ] ]
+
+ct1-token = "CT1-" <approved-local-code>
+ct2-token = "CT2-" <approved-local-code>
+ct3-token = "CT3-" <approved-local-code>
+feature-token = "FEAT-" <approved-feature-code>
+behaviour-token =
+    "FN-" <approved-local-code>
+  | "SV-" <approved-local-code>
+  | "PR-" <approved-local-code>
+```
+
+Codes SHALL be approved, nonempty tokens without the context separator `.`. This grammar establishes no code allocation or numeric width. Existing established Feature identifiers SHALL retain their canonical spelling, including `FEAT-EM-01`; `FEAT-EM01` SHALL NOT be substituted or assumed equivalent.
+
+Capability tokens SHALL explicitly carry their Capability Tier type. Untyped forms such as `CT01`, `CT02` and `CT03` SHALL NOT be used as canonical Capability tokens. The FN / SV / PR prefixes identify behaviour types and SHALL NOT constitute additional Capability Tiers.
+
+The following are syntax examples only; they SHALL NOT assign identifiers or Capability Tiers to existing architectural elements:
+
+```text
+CT1-01
+CT1-01.CT2-02
+CT1-01.CT2-02.CT3-03
+CT1-01.CT2-02.CT3-03.FEAT-EM-01
+CT1-01.FN-01
+CT1-01.CT2-02.PR-01
+CT1-01.CT2-02.CT3-03.SV-01
+CT1-01.CT2-02.CT3-03.FEAT-EM-01.FN-01
+```
+
+Every ancestor prefix in a current Canonical ID SHALL identify the corresponding current Capability or Feature in the established responsibility ancestry. `CT1-01.CT3-02` SHALL NOT be generated merely because CT2 ancestry has not been identified. Unresolved ancestry SHALL remain unresolved rather than being omitted or manufactured.
+
+The common identity properties apply to other governed Business Architecture element types, but this decision does not establish their token vocabularies or structural contexts. Those SHALL NOT be inferred from this grammar. The Qualified Architectural Reference Grammar in §7 remains distinct and unchanged.
+
+### 8.3 Behavioural Anchoring and Contextual Containment
+
+Business Functions, Business Services and Business Processes MAY be anchored directly at any Capability Tier or Feature establishing responsibility for that behaviour. CT2, CT3 or FT elements SHALL NOT be invented merely to provide behavioural anchoring.
+
+Canonical identifier containment SHALL express architectural responsibility context. It SHALL NOT redefine semantic relationships or Element Type, and SHALL NOT be interpreted as implementation containment. A Function beneath CT2 remains a Function; a Service beneath CT1 remains a Service; a Process beneath a Feature remains a Process. Function delivery, Service exposure and justified Process progression retain the rules in §§2–4.
+
+The complete Canonical ID SHALL preserve contextual architectural standing in flat documents, generated diagrams, models, traceability matrices, cross-document references and AI contexts without depending on Markdown nesting. A flat representation retaining that context is permitted; disconnected ownership is not.
+
+### 8.4 Rename, Relocation and Alias Rules
+
+A Canonical Name change alone SHALL NOT change architectural identity or require a Canonical ID change. A previous name MAY be retained as a Name Alias for historical or search purposes.
+
+The approved rename `Clinical Credential Management → Clinical Qualification Management` preserves the existing practitioner professional / clinical qualification and competency responsibility. `Clinical Credential Management` MAY be retained as a Name Alias only for that same element. It SHALL remain distinct from Domain03 `Credential Management`, whose separately established responsibility concerns operational badges and physical access. The rename SHALL NOT establish equivalence or aliasing between those elements.
+
+Where an element changes architectural responsibility context, its Canonical ID SHALL change to express current structural truth. The previous Canonical ID SHALL be retained as an ID Alias. This rule also applies to descendant elements whose responsibility paths change. The following relocation is a syntax example only:
+
+```text
+Previous Canonical ID: CT1-01.CT2-02.FN-01
+Current Canonical ID:  CT1-01.CT2-02.CT3-03.FN-01
+ID Alias:              CT1-01.CT2-02.FN-01
+```
+
+An ID Alias SHALL:
+
+- refer to the same architectural element;
+- be searchable and resolvable;
+- be non-canonical;
+- resolve directly to the current architectural element, without requiring an alias chain;
+- never be used for a new authoritative architectural reference.
+
+Canonical IDs and ID Aliases SHALL occupy one globally unique, non-reusable identifier namespace. Once an identifier has referred to an element, canonically or as a historical Canonical ID, it SHALL NOT subsequently identify another element. An ID Alias SHALL NOT collide with a current Canonical ID or an ID Alias assigned to another element. All retained aliases SHALL continue resolving directly after subsequent relocations. New authoritative references SHALL use the current Canonical ID.
+
+Name Aliases are names, not members of the identifier namespace. Neither Name nor ID Aliases SHALL establish equivalence merely from similar wording or nested behaviour. The [approved G1 K5 rules](../../04-information-architecture/reviews/package2-g1-review.md#65-metamodel-guardrail) remain controlling: finer-grained Functions or Services SHALL NOT be promoted to Features, or assigned a broader Feature's identity, solely to obtain traceability symmetry.
+
+### 8.5 Machine-Validation and Generation Intent
+
+This convention is intended to support future automated architectural navigation, diagram generation, model generation, traceability matrices, cross-document references and AI-assisted architecture interpretation. It SHALL permit validation of at least:
+
+- Canonical ID uniqueness;
+- ID Alias uniqueness;
+- Canonical ID / ID Alias collisions;
+- ancestor existence and complete, correctly typed ancestry;
+- valid element-type suffix or terminal token;
+- valid Capability / Feature responsibility context;
+- resolvable references;
+- direct, unambiguous alias resolution;
+- orphaned identifiers.
+
+This decision implements no validators, schemas or classes. Generation intent does not require the exhaustive capability matrices excluded by Domain02's modelling position.
+
+<a id="86-k9-prerequisite-and-reconciliation-boundary"></a>
+
+### 8.6 Approved K9 Derivation and Uncertainty Rules
+
+[Approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing) found no affected legacy owner assignment sufficiently validated to authorise mechanical conversion to CT1 / CT2 / CT3. Established identities and responsibilities remain valid; affected Capability Tier, complete ancestry and root status remain unresolved.
+
+Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation from an otherwise established owning Capability or Feature and its relevant responsibility. Downstream traceability SHALL reference that element without manufacturing structural ancestry. Document structure, catalogue grouping, numbering, indentation and decomposition presentation SHALL NOT by themselves establish Architectural Element identity.
+
+`Client Administration → Person Identity → Identifier Resolution [FT / FEAT-EM-01]` is an established partial responsibility chain and SHALL be preserved. Its full structural Canonical ID remains unresolved until actual Capability Tier ancestry and identifier allocation are architecturally established. The former incorrect L3 example SHALL NOT supply that ancestry.
+
+These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and [AX-17 architectural authority and explicit uncertainty](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty). They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.

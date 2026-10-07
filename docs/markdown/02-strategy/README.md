@@ -53,7 +53,7 @@ Harmonia adapts the core Strategy elements defined in the **The Open Group Archi
 
 ArchiMate 3.2 provides a single generic `Capability` element. In complex healthcare integration, treating all capabilities at a single undifferentiated level inevitably leads to confusion between clinical business practice, software enablement, atomic functional requirements, and reusable middleware functions.
 
-Harmonia explicitly specialises the ArchiMate capability concept into a **four-tier capability framework**:
+Harmonia relates distinct capability constructs through the following **derivation progression**:
 
 ```text
 BUSINESS CAPABILITY TIER
@@ -81,7 +81,7 @@ Cross-cutting technical enablement considerations
 (Framed through the 18 ICT Foundation capabilities)
 ```
 
-This multi-tier progression is a Harmonia architectural modeling convention. It respects ArchiMate 3.2 semantics while providing the necessary vertical traceability required for clinical safety and software engineering.
+This progression relates different architectural constructs; it does not establish CT1 / CT2 / CT3 ancestry for the affected Business Enabling Capabilities. Capability Tier, complete ancestry and structural Canonical IDs remain unresolved where not established by architecture. This derivation progression is a Harmonia architectural modeling convention. It respects ArchiMate 3.2 semantics while providing the necessary vertical traceability required for clinical safety and software engineering.
 
 ---
 
@@ -104,7 +104,7 @@ WHAT MUST SYSTEMS ENABLE?
        ▼  5 Contextual Views: Entity, Admin, Delivery, Operations, Intrinsic
 WHAT SYSTEM BEHAVIOUR IS REQUIRED?
        │  [Domain 02: Features]
-       ▼  Atomic, testable system-enabled behaviours for Relevant & Core L3s
+       ▼  Atomic, testable system-enabled behaviours in established owning contexts
 WHAT SHOULD BE REUSABLE?
        │  [Domain 02: Enterprise Capabilities]
        ▼  EC-01 through EC-13 reusable platform capabilities
@@ -143,7 +143,7 @@ Domain 02: Strategy  ───────────────────�
 
 - **Domain 01 (Motivation) $\to$ Domain 02 (Strategy)**: Domain 01 supplies the goals, drivers, assessments, external constraints, and foundational principles (Axioms AX-01..AX-16) that justify and bound Domain 02 capabilities and courses of action.
 - **Domain 02 (Strategy) $\to$ Domain 03 (Business Architecture)**: Domain 02 identifies the Business and Business Enabling capabilities; Domain 03 models the business actors, clinical roles, business processes, and organizational structures that perform them.
-- **Domain 02 (Strategy) $\to$ Domain 04 (Information Architecture)**: Domain 02 identifies managed information requirements (EC-04) and candidate resources; Domain 04 specifies the canonical information models, FHIR profiles, terminologies, and lifecycle states.
+- **Domain 02 (Strategy) $\to$ Domain 04 (Information Architecture)**: Domain 02 identifies managed information requirements (EC-04) and candidate resources; Domain 04 formalises conceptual information meaning, semantic relationships, responsibility traceability, terminology qualifications and lifecycle semantics. FHIR interoperability profiles are downstream in Domain 06; they do not define upstream concepts.
 - **Domain 02 (Strategy) $\to$ Domains 05 & 06 (Application & Integration Architecture)**: Domain 02 establishes the strategic logical component responsibility model; Domains 05 and 06 define software components, package hierarchies, boundary adapters, and wire protocols.
 - **Domain 02 (Strategy) $\to$ Domain 07 (Technology Architecture)**: Domain 02 articulates the technology-neutral Enterprise Capabilities; Domain 07 selects the concrete runtime platforms, databases, cache fabrics, and execution runtimes that realize them.
 
@@ -156,7 +156,7 @@ To preserve architectural clarity, Domain 02 enforces strict boundary rules:
 ### What Belongs in Domain 02
 - The 16 canonical L1 Business Capabilities and their Harmonia relevance classifications.
 - The Business Enabling Capability model across five authentic healthcare operating contexts (Entity Management, Service Administration, Service Delivery, Health Service Operations, Intrinsic / Shared Enablement).
-- Atomic Features for all Harmonia-Relevant and Harmonia-Core L3 capabilities.
+- Atomic Features within established Harmonia-Relevant and Harmonia-Core Capability contexts.
 - The 13 technology-neutral Enterprise Capabilities (EC-01 through EC-13).
 - The 18 ICT Foundation capabilities acting as cross-cutting technical enablement lenses.
 - The multi-tier capability progression model and representative derivation examples.
@@ -169,7 +169,7 @@ To preserve architectural clarity, Domain 02 enforces strict boundary rules:
 - **Motivational Foundations**: Stakeholders, drivers, operational risk assessments, goals, and architectural axioms (governed exclusively in Domain 01).
 - **Physical Software Products**: Specific software libraries, engines, or products (HAPI FHIR, Infinispan, PostgreSQL, ActiveMQ Artemis, Apache Camel, Netty, Vue, Spring) must never define capabilities.
 - **Runtime Concurrency Plumbing**: Thread pools, worker threads, queues, topics, socket ports, and network CIDRs (relegated to Domains 05, 06, and 07).
-- **Physical Schemas & DDL**: Database table schemas, JPA entity annotations, JSON schemas, and MLLP framing bytes (relegated to Domains 04 and 06).
+- **Physical Schemas & DDL**: Database table schemas, JPA entity annotations, JSON schemas, and MLLP framing bytes (application logical/software representation belongs downstream in Domain 05, exchange contracts and wire payloads in Domain 06, and physical realisation in Domain 07; persistence realisation may involve Domains 05 and 07 without a more precise allocation being established).
 - **Runtime Component Topologies**: Physical container deployments, clustering configurations, and execution topologies (relegated to Domains 05 and 07).
 - **Exhaustive Many-to-Many Matrices**: Large, brittle NxM mapping matrices between tiers that create maintenance overhead without architectural value.
 

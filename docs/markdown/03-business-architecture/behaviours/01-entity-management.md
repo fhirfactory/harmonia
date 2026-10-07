@@ -2,6 +2,8 @@
 
 ## 1. Contextual Scope & Architectural Intent
 
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under [approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); document grouping and numbering do not establish architectural identity or hierarchy.
+
 Entity Management establishes the canonical master data governance, identity correlation, and structural definitions for all core business entities participating in healthcare delivery: Clients/Patients, Healthcare Practitioners, Healthcare Organisations, Locations, Health Services, and Clinical Devices.
 
 ---
@@ -11,7 +13,7 @@ Entity Management establishes the canonical master data governance, identity cor
 Client Administration governs the identity, demographic context, relationship associations, and privacy directives of persons receiving care.
 
 ### 2.1 Person Identity
-- **Owning Capability**: `L2: Person Identity` (under `L1: Client Administration`)
+- **Owning Capability**: `Person Identity` (under `Client Administration`)
 - **Key Architectural Semantics**:
   - **Identifier Resolution**: Asks for authoritative detail and verification regarding a specific person identifier within a single domain namespace.
   - **Identifier Correlation**: Discovers, establishes, and maintains governed cross-authority associations between distinct identifier namespaces across the enterprise.
@@ -35,7 +37,7 @@ Client Administration governs the identity, demographic context, relationship as
 ---
 
 ### 2.2 Healthcare Subject
-- **Owning Capability**: `L2: Healthcare Subject Context`
+- **Owning Capability**: `Healthcare Subject Context`
 - **Functions & Exposed Services**:
   - **Feature: Subject Context Binding**:
     - *Function*: `Establish Healthcare Subject Context` — Binds demographic, cultural, and communication requirements to a patient record.
@@ -48,7 +50,7 @@ Client Administration governs the identity, demographic context, relationship as
 ---
 
 ### 2.3 Client Relationship
-- **Owning Capability**: `L2: Client Relationships & Support Network`
+- **Owning Capability**: `Client Relationships & Support Network`
 - **Functions & Exposed Services**:
   - **Feature: Next-of-Kin & Guardian Association**:
     - *Function*: `Maintain Client Relationships` — Records links between patients and carers, next of kin, nominated representatives, and legal guardians.
@@ -61,7 +63,7 @@ Client Administration governs the identity, demographic context, relationship as
 ---
 
 ### 2.4 Client Privacy
-- **Owning Capability**: `L2: Client Privacy & Consent Directives`
+- **Owning Capability**: `Client Privacy & Consent Directives`
 - **Functions & Exposed Services**:
   - **Feature: Consent Directive Evaluation**:
     - *Function*: `Evaluate Client Consent` — Evaluates patient opt-in, opt-out, and general information sharing preferences against proposed exchanges.
@@ -77,7 +79,7 @@ Client Administration governs the identity, demographic context, relationship as
 
 Provider Administration governs individual healthcare practitioners, their professional qualifications, clinical roles, electronic communication endpoints, and organizational affiliations.
 
-- **Owning Capability**: `L1: Provider Administration`
+- **Owning Capability**: `Provider Administration`
 - **Key Architectural Semantics**:
   - **Practitioner $\neq$ Service Provider**: A *Practitioner* is an individual professional. A *Service Provider* is an organisation or facility offering health services. A Practitioner may act in the *Service Provider* role in private practice.
 - **Functions & Exposed Services**:
@@ -108,7 +110,7 @@ Provider Administration governs individual healthcare practitioners, their profe
 
 Organisation Administration maintains the authoritative registry of healthcare organisations, networks, directorates, and administrative subdivisions.
 
-- **Owning Capability**: `L1: Organisation Administration`
+- **Owning Capability**: `Organisation Administration`
 - **Functions & Exposed Services**:
   - **Feature: National Organisation Verification**:
     - *Function*: `Verify Healthcare Organisation` — Validates enterprise legal identity, national facility identifiers (e.g., HPI-O), and accreditation status.
@@ -130,7 +132,7 @@ Organisation Administration maintains the authoritative registry of healthcare o
 
 Location Administration defines the physical, functional, and geospatial structure of healthcare environments, including sites, buildings, floors, wards, rooms, bays, and bed care-places.
 
-- **Owning Capability**: `L1: Location Administration`
+- **Owning Capability**: `Location Administration`
 - **Key Architectural Semantics**:
   - **Definition vs. Operational State**: *Location Administration* defines what a physical location or care-place **IS** (its static attributes, type, capacity, hierarchy). *Health Service Operations* owns what is **operationally happening** to that care-place (occupancy, cleaning status, isolation locks, turnover).
 - **Functions & Exposed Services**:
@@ -151,7 +153,7 @@ Location Administration defines the physical, functional, and geospatial structu
 
 Health Service Administration governs the catalogue of clinical services offered across the healthcare network and resolves the critical multi-dimensional mapping between Services, Providers, Locations, and Practitioners.
 
-- **Owning Capability**: `L1: Health Service Administration`
+- **Owning Capability**: `Health Service Administration`
 - **Key Architectural Semantics**:
   - **Service / Location / Provider Map**: This capability models the multi-way relationship:
     $$\text{Healthcare Service} \longleftrightarrow \text{Service Provider} \longleftrightarrow \text{Healthcare Location} \longleftrightarrow \text{Practitioner Role}$$
@@ -183,7 +185,7 @@ Health Service Administration governs the catalogue of clinical services offered
 
 Clinical Device Administration governs the master definition, instance identification, and electronic communication endpoints of medical equipment and point-of-care appliances.
 
-- **Owning Capability**: `L1: Clinical Device Administration`
+- **Owning Capability**: `Clinical Device Administration`
 - **Functions & Exposed Services**:
   - **Feature: Device Type Specification**:
     - *Function*: `Maintain Device Definition` — Models medical device models, manufacturers, regulatory classifications (e.g., TGA/FDA classes), and calibration specifications.

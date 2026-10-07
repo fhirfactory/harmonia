@@ -13,7 +13,7 @@ The primary purpose of Domain 04 is to answer the fundamental architectural ques
         ▼  Axioms, Strategic Drivers, Enduring Principles
 WHAT CAPABILITIES ARE NEEDED?
         │  [Domain 02: Strategy]
-        ▼  Value Streams, Capability Tiers (L1 → L2 → L3 → Feature)
+        ▼  Value Streams, established Capabilities & Features (unresolved ancestry preserved)
 HOW DOES THE BUSINESS OPERATE?
         │  [Domain 03: Business Architecture]
         ▼  Actors, Roles, Collaborations, Interactions, Functions, Services, Processes, Information Ownership

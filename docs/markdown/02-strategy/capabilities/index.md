@@ -51,7 +51,7 @@ Harmonia structures its capability architecture into a **five-stage vertical pro
 
 ---
 
-## The Four Tiers Explained
+## The Derivation Stages Explained
 
 ### 1. Business Capability Tier
 Business Capabilities represent what the healthcare enterprise must be capable of doing to fulfill its healthcare mission. They exist entirely independently of IT systems, software products, or organizational structures.
@@ -70,9 +70,9 @@ Business Enabling Capabilities define what software and information systems must
 - **Documentation**: [Business Enabling Capabilities](business-enabling-capabilities.md).
 
 ### 3. Feature Level
-Features represent the atomic target of the Business Enabling model. A Feature is the **smallest useful statement of required system-enabled behaviour** beneath an L3 Business Enabling Capability.
+Features represent the atomic target of the Business Enabling model. A Feature is the **smallest useful statement of required system-enabled behaviour** within an established owning Business Enabling Capability context. Derivation-stage position does not establish CT1 / CT2 / CT3 ancestry; affected tiers, complete ancestry and structural Canonical IDs remain unresolved.
 - **Characteristics**: Independently understandable, testable in principle, technology-independent, component-independent, and implementation-independent.
-- **Scope Boundary**: Defined for all Harmonia-Relevant and Harmonia-Core L3 capabilities. Reference and Adjacent capabilities are not mechanically decomposed into features merely for cosmetic symmetry.
+- **Scope Boundary**: Defined within established Harmonia-Relevant and Harmonia-Core Capability contexts. Reference and Adjacent capabilities are not mechanically decomposed into features merely for cosmetic symmetry.
 - **Documentation**: Integrated within [Business Enabling Capabilities](business-enabling-capabilities.md).
 
 ### 4. Enterprise Capability Tier (EC-01 .. EC-13)

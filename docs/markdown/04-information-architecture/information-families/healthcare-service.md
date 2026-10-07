@@ -6,12 +6,14 @@ The **Healthcare Service** information family formalises the semantic models for
 
 This family exercises the frozen Domain 04 **Definition-to-Accountability Progression** across five distinct semantic stages, models clinical requisition directives (`Order`) as an associated request mechanism, and formalises the multi-dimensional Service Provision mapping derived from Domain 03 Business Information Responsibilities.
 
+An Information Concept may refer to a real-world clinical activity, event, result or consequence without becoming it. Responsibility for its information representation does not confer responsibility for performing the represented phenomenon or originating authority over it. The following chain remains conceptual; Harmonia does not perform healthcare service delivery.
+
 ```mermaid
 graph TD
     OFFERED["1. OfferedHealthcareService<br/>(Catalogue Service Definition)"]
     DELIV["2. DeliverableHealthcareService<br/>(Contextual Service Binding)"]
     ORDER["Associated Request:<br/>Order<br/>(Clinical Requisition / Directive)"]
-    DELIVERY["3. HealthcareServiceDelivery<br/>(Actual Execution / Delivery)"]
+    DELIVERY["3. HealthcareServiceDelivery<br/>(Information Referring to Execution / Delivery)"]
     OUTCOME["4. ServiceOutcome<br/>(Clinical, Diagnostic, Therapeutic, Operational Outcome)"]
     ASSURED["5. AssuredHealthcareService<br/>(Quality Assurance, Accreditation, Accountability)"]
 
@@ -28,15 +30,17 @@ graph TD
 
 ## 2. Domain 03 Responsibility & Traceability
 
+Owner names and evidenced responsibilities remain established. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under [approved G1 K9](../reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); this traceability does not manufacture missing hierarchy.
+
 This information family derives directly from Domain 03 Business Information Responsibilities:
 
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
-| **`L1: Health Service Administration`** | `Maintain Healthcare Service Definition`, `Maintain Service / Location / Provider Map`, `Maintain Service Availability`, `Maintain Service Eligibility Rules` | `Service Catalogue & Service/Location/Provider Map`, `Service Availability Schedules`, `Service Eligibility Rule Sets` | `OfferedHealthcareService`, `DeliverableHealthcareService`, `Availability Schedule`, `Eligibility Rule Set` |
-| **Performing Clinical / Operational Capabilities** *(e.g. `L1: Inpatient Care Enablement`, `L1: Diagnostic Administration`)* | Service execution and clinical delivery functions | Execution records and clinical activity outputs | `HealthcareServiceDelivery` |
-| **Diagnostic / Clinical Capabilities** | Result reporting, diagnostic interpretation, and outcome logging | Clinical findings, diagnostic reports, and operational outputs | `ServiceOutcome` |
+| **`Health Service Administration`** | `Maintain Healthcare Service Definition`, `Maintain Service / Location / Provider Map`, `Maintain Service Availability`, `Maintain Service Eligibility Rules` | `Service Catalogue & Service/Location/Provider Map`, `Service Availability Schedules`, `Service Eligibility Rule Sets` | `OfferedHealthcareService`, `DeliverableHealthcareService`, `Availability Schedule`, `Eligibility Rule Set` |
+| **Established information-management contexts** *(e.g. Episode & Encounter Administration, Medication Administration, Procedure Administration)* | Encounter context/state tracking, medication-event ingestion and procedural documentation ingestion within their evidenced scopes | Encounter, medication-event and procedure information responsibilities | `HealthcareServiceDelivery` *(information referring to execution; no universal owning Capability is established)* |
+| **Diagnostic Administration and other evidenced information contexts** | Diagnostic correlation, report ingestion/binding, notification, status and addenda/correction handling; other contexts retain their own established responsibilities | Diagnostic correlation/linkage and distribution information; originating findings remain externally attributable | `ServiceOutcome` *(result, finding, change, consequence or administrative artefact remain distinct; no universal owner is established)* |
 | **Clinical Governance / Quality & Assurance** *(Reference / Contextual)* | Audit review and quality compliance monitoring | Compliance audit ledgers, assurance certifications, and funding reconciliation | `AssuredHealthcareService` *(Reference / Contextual)* |
-| **`L1: Order Administration`** | `Receive Order Request`, `Resolve Order Destination`, `Manage Order Progression`, `Coordinate Order Modification / Cancellation`, `Associate Order Outcome` | `Clinical Order Master Record`, `Closed-Loop Tracking Ledger`, `Order-Result Correlation Matrix` | `Order` *(Associated Request / Direction Mechanism)* |
+| **`Order Administration`** | `Receive Order Request`, `Resolve Order Destination`, `Manage Order Progression`, `Coordinate Order Modification / Cancellation`, `Associate Order Outcome` | `Clinical Order Master Record`, `Closed-Loop Tracking Ledger`, `Order-Result Correlation Matrix` | `Order` *(Associated Request / Direction Mechanism)* |
 
 ---
 
@@ -55,19 +59,20 @@ This information family derives directly from Domain 03 Business Information Res
 
 ### Stage 3: HealthcareServiceDelivery (Fulfilment)
 - **Semantic Classification**: `Activity / Fulfilment`
-- **Definition**: The real-world execution and performance of a healthcare service for a specific target subject (or facility target) at a concrete point in time.
+- **Definition**: An Information Concept referring to the real-world execution or performance of a healthcare service for a specific target subject (or facility target) at a concrete point in time. It represents information about the activity rather than becoming the activity or implying that Harmonia performs it.
 - **Key Characteristics**: Actual start/end timestamps, performing practitioners, delivery location, executing devices/equipment, and execution status progression.
 - **Healthcare Subject Invariant**: While clinical service deliveries typically associate with a `Healthcare Subject Context`, broader service semantics (e.g., *Facility Sanitisation*, *Water Quality Testing*, *Equipment Calibration*) do not universally require a Healthcare Subject.
 
 ### Stage 4: ServiceOutcome (Outcome)
 - **Semantic Classification**: `Outcome`
-- **Definition**: The demonstrable clinical finding, diagnostic observation, therapeutic change, operational result, or administrative artifact produced by a service delivery.
+- **Definition**: An Information Concept concerning a result, finding, change, consequence or administrative artefact associated with a service delivery. These information kinds remain distinct; representing them does not confer responsibility for their production, clinical interpretation or originating authority.
 - **Key Scope**: Spans across:
   - **Clinical Outcomes**: Diagnoses, physiological improvements, symptom resolutions;
   - **Diagnostic Outcomes**: Pathology findings, radiology reports, ECG interpretations;
   - **Therapeutic Outcomes**: Medication administration confirmations, surgical revisions;
   - **Operational Outcomes**: Sanitised bed bay certification, repaired asset state;
   - **Administrative Outcomes**: Completed intake assessments, eligibility confirmations.
+- **Preserved uncertainty**: Exact information-kind semantics and a universal Delivery/Outcome ownership model are not established. No single representation model, lifecycle or performing Capability is inferred.
 
 ### Stage 5: AssuredHealthcareService (Accountability)
 - **Semantic Classification**: `Accountability / Audit Record`
@@ -86,7 +91,7 @@ $$\text{Order} \neq \text{Healthcare Service}$$
 graph TD
     ORDER["Order<br/>(Authoritative Requisition / Directive)"]
     DELIV["DeliverableHealthcareService<br/>(Bound Service Context)"]
-    DELIVERY["HealthcareServiceDelivery<br/>(Service Execution)"]
+    DELIVERY["HealthcareServiceDelivery<br/>(Information Referring to Service Execution)"]
 
     DELIV -.->|"may be requested / directed via"| ORDER
     ORDER -.->|"requests / directs"| DELIVERY
@@ -96,7 +101,7 @@ graph TD
 ### Key Semantics & Invariants
 1. **Associated Request Mechanism**: An `Order` is an authoritative clinical requisition, directive, or prescription requesting the delivery of a service. It is **NOT** a mandatory lifecycle stage of `Healthcare Service`.
 2. **Delivery Without an Order**: Service delivery may legitimately occur without an `Order` where business or clinical semantics permit (e.g. *Emergency Resuscitation*, *Triage Assessment*, *Direct Routine Nursing Care*, *Scheduled Facility Maintenance*).
-3. **Independent Lifecycles**: An `Order` possesses its own lifecycle states (*Requested*, *Accepted*, *In-Progress*, *Completed*, *Discontinued*), owned by `L1: Order Administration`, distinct from the lifecycle of the service delivery itself.
+3. **Independent Lifecycles**: An `Order` possesses its own lifecycle states (*Requested*, *Accepted*, *In-Progress*, *Completed*, *Discontinued*), owned by `Order Administration`, distinct from the lifecycle of the service delivery itself.
 
 ---
 
@@ -156,12 +161,14 @@ graph TD
 | **Service Definition Containment** | `OfferedHealthcareService` (*Parent Service*) | `OfferedHealthcareService` (*Sub-Service*) | *Service Composition Containment* | Qualified forward containment modelling catalogue service hierarchies. |
 | **Service Contextualisation** | `OfferedHealthcareService` (*Catalogue Definition*) | `DeliverableHealthcareService` (*Local Binding*) | *Contextual Binding* | Binds a generic service definition into a concrete deliverable facility context. |
 | **Service Provision** | `DeliverableHealthcareService` (*Bound Service*) | `Healthcare Organisation` (*Delivering Provider*) | *Service Provision* | Direct service provision binding (`DeliverableHealthcareService provided-by Healthcare Organisation`) where the organisation fulfils the Domain 03 `Service Provider` Business Role. |
-| **Service Execution** | `DeliverableHealthcareService` (*Service Model*) | `HealthcareServiceDelivery` (*Execution Instance*) | *Fulfilment* | Instantiates the delivery of a deliverable service in practice. |
-| **Outcome Generation** | `HealthcareServiceDelivery` (*Delivery Activity*) | `ServiceOutcome` (*Result Artifact*) | *Outcome Production* | Records the clinical findings, diagnostic reports, or operational outputs yielded by delivery. |
+| **Service Execution** | `DeliverableHealthcareService` (*Service Model*) | `HealthcareServiceDelivery` (*Information Referring to Execution*) | *Fulfilment* | Represents the established relationship between a deliverable service and information referring to its real-world delivery. |
+| **Outcome Generation** | `HealthcareServiceDelivery` (*Delivery Information*) | `ServiceOutcome` (*Outcome Information*) | *Outcome Production* | Represents information concerning results, findings, changes, consequences or artefacts associated with delivery without equating the information with the represented phenomenon. |
 
 ---
 
 ## 7. Assertion-Level Governance & Provenance
+
+The following provenance is retained according to the represented information’s applicable context. Ingestion, correlation, binding, notification and correction management do not establish originating clinical authority or imply diagnostic analysis by Harmonia. Diagnostic verification attributes do not universally apply to every kind of ServiceOutcome.
 
 1. **Service Definition Governance**: Catalogue service definitions are governed by health service administration and clinical governance boards.
 2. **Delivery Attestation**: Every `HealthcareServiceDelivery` carries the assertion provenance of the performing practitioner(s), start/stop timestamps, and delivery location.

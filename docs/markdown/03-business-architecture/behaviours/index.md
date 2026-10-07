@@ -2,9 +2,7 @@
 
 ## 1. Structuring Principles
 
-Harmonia structures all business behaviour strictly within the four-tier capability framework defined in **[Domain 02 (Strategy)](../../02-strategy/capabilities/business-enabling-capabilities.md)**:
-
-$$\text{L1 Capability} \longrightarrow \text{L2 Capability} \longrightarrow \text{L3 Capability} \longrightarrow \text{Feature} \longrightarrow \text{Function} \longrightarrow \text{Exposed Service}$$
+Harmonia structures business behaviour within established Capability or Feature responsibility contexts from **[Domain 02 (Strategy)](../../02-strategy/capabilities/business-enabling-capabilities.md)**. Unresolved Capability Tier, complete ancestry or structural Canonical ID does not prevent derivation from established responsibility and SHALL NOT be completed through inference. The five contextual views are organisational views, not identifier ancestors.
 
 ### 1.1 No Disconnected Global Catalogues
 Business Functions and exposed Business Services are **never** defined in isolated, flat catalogues. Every function and service exists solely within the responsibility boundary of an owning Capability or Feature.
@@ -27,11 +25,13 @@ docs/markdown/03-business-architecture/behaviours/
 ## 2. Derivation Conventions
 
 For every documented capability and feature:
-1. **Owning Capability / Feature**: Explicitly identified using its canonical Strategy name and identifier.
+1. **Owning Capability / Feature**: Identified by the established architectural element; an unavailable full Canonical ID or unestablished Feature association remains explicit.
 2. **Business Function**: The internal behaviour delivered *within* the capability boundary to discharge its mandate.
 3. **Exposed Business Service**: Behaviour exposed *outside* the boundary to identifiable internal or external consumers.
 4. **Governed Process (Where Justified)**: State progression lifecycles encompassing the activity.
 5. **Information Responsibility**: The conceptual information assets owned and maintained by the capability.
+
+Behaviour and Process descriptions are complementary. A scoped Process may elaborate checkpoints without reproducing the Behaviour stage list or redefining responsibility. Omission of a Process checkpoint from a Behaviour summary does not invalidate it; omission of Behaviour responsibility from a Process does not remove it. Scoped applicability, compound checkpoints and alternative dispositions remain explicit. See the [metamodel](../metamodel/business-architecture-metamodel.md#43-behaviour-and-process-consistency) and approved G1 K10/K11.
 
 ---
 

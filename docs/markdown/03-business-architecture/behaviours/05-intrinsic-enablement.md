@@ -2,6 +2,8 @@
 
 ## 1. Contextual Scope & Architectural Intent
 
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under [approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing); document grouping and numbering do not establish architectural identity or hierarchy.
+
 Intrinsic and Shared Enablement encompasses the horizontal platform capabilities that provide foundational security, longitudinal clinical record assembly, information exchange, workflow orchestration, collaborative spaces, and semantic governance across all healthcare contexts.
 
 ### The Cross-Cutting Boundary Guardrail
@@ -30,7 +32,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.1 Patient Clinical Record
-- **Owning Capability**: `L1: Patient Clinical Record`
+- **Owning Capability**: `Patient Clinical Record`
 - **Architectural Mandate**: Governs the canonical, longitudinal, cross-institutional health record for every patient across the healthcare region.
 - **Functions & Exposed Services**:
   - **Feature: Longitudinal Health Record (LHR) Assembly**:
@@ -47,7 +49,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.2 Health Information Exchange (HIE)
-- **Owning Capability**: `L1: Health Information Exchange`
+- **Owning Capability**: `Health Information Exchange`
 - **Architectural Mandate**: Manages the ingestion, transformation, routing, addressed distribution, and publish-subscribe syndication of health information across organizational and jurisdictional boundaries.
 - **Ownership Invariant**: Health Information Exchange owns **exchange transaction state, delivery receipts, and routing policies**. It does **not** acquire ownership of the business information transported.
 - **Functions & Exposed Services**:
@@ -68,7 +70,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.3 Health Information Access
-- **Owning Capability**: `L1: Health Information Access`
+- **Owning Capability**: `Health Information Access`
 - **Architectural Mandate**: Provides high-performance search, retrieval, and access-qualified filtering of clinical information across the longitudinal record.
 - **Ownership Invariant**: Consumes access control and consent determinations from *Health Information Control*. Search behaviour does **not** own security policy.
 - **Functions & Exposed Services**:
@@ -86,7 +88,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.4 Health Information Communication
-- **Owning Capability**: `L1: Health Information Communication`
+- **Owning Capability**: `Health Information Communication`
 - **Architectural Mandate**: Encapsulates standards-based health information communication to mediate technical transmission between participating parties.
 - **Ownership Invariant**: Does **not** own every business interaction communicated through it; provides protocol adaptation and secure transport mediation.
 - **Functions & Exposed Services**:
@@ -98,7 +100,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.5 Health Information Control
-- **Owning Capability**: `L1: Health Information Control`
+- **Owning Capability**: `Health Information Control`
 - **Architectural Mandate**: Enforces enterprise default-deny authorization, ABAC/RBAC policy evaluation, consent restriction enforcement, immutable security context propagation, and non-repudiation audit logging.
 - **Functions & Exposed Services**:
   - **Feature: Health Information Access & Consent Control**:
@@ -118,7 +120,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.6 Clinical Knowledge Services
-- **Owning Capability**: `L1: Clinical Knowledge Services`
+- **Owning Capability**: `Clinical Knowledge Services`
 - **Architectural Mandate**: Resolves canonical medical ontologies (SNOMED-CT, LOINC, ICD-10, AMT) and executes cross-terminology concept mappings.
 - **Functions & Exposed Services**:
   - **Feature: Clinical Concept Resolution**:
@@ -132,7 +134,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.7 Clinical Collaboration
-- **Owning Capability**: `L1: Clinical Collaboration`
+- **Owning Capability**: `Clinical Collaboration`
 - **Architectural Mandate**: Governs real-time multidisciplinary clinical collaboration channels, patient care-team virtual workspaces, and secure clinical discussions.
 - **Key Architectural Semantics**:
   - **Discourse vs. Record Guardrail**: Real-time collaborative discussion and messaging in team channels do **not** automatically constitute authoritative clinical health records or observations. Authoritative entries require explicit formal document submission.
@@ -143,6 +145,8 @@ Intrinsic / Shared Enablement Capabilities
   - **Feature: In-Conversation LHR Query Resolution**:
     - *Function*: `Resolve LHR Query within Collaboration` — Contextually projects active patient summaries directly into collaborative clinical discussion channels.
     - *Exposed Service*: `Collaboration Clinical Summary Resolution` — Embeds clinical summaries in collaboration feeds.
+    - *Established ownership*: `Clinical Collaboration → In-Conversation LHR Query Resolution [FEAT-ISE-17] → Resolve LHR Query within Collaboration → Collaboration Clinical Summary Resolution`.
+    - *Unresolved dependency*: The precise source Service/provider, direct versus mediated retrieval, formal consuming Capability/Function for the exposed Service and intended referent of the withdrawn dependency row remain unestablished. Information ownership, Function ownership, Service ownership, consumption, information use and presentation are distinct; no substitute dependency is implied.
   - **Feature: Zero-PHI Collaboration Metadata Governance**:
     - *Function*: `Govern Collaboration Metadata` — Enforces privacy policies, participant access gates, and zero-PHI space metadata rules.
     - *Exposed Service*: `Collaboration Space Governance Service` — Governs space lifecycles and membership.
@@ -151,7 +155,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.8 General Collaboration
-- **Owning Capability**: `L1: General Collaboration`
+- **Owning Capability**: `General Collaboration`
 - **Functions & Exposed Services**:
   - **Feature: Operational Team Chat Enablement**:
     - *Function*: `Coordinate Operational Collaboration` — Provides communication spaces for facility logistics, disaster management teams, and administrative committees.
@@ -161,7 +165,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.9 Workflow & Activity Coordination
-- **Owning Capability**: `L1: Workflow & Activity Coordination`
+- **Owning Capability**: `Workflow & Activity Coordination`
 - **Architectural Mandate**: Coordinates execution state, task dispatch, timers, deadlines, and escalations across three distinct activity archetypes:
   1. **Work Order**: Assigned physical/human operational tasks (*human doing* — e.g., transport a patient, clean a bay).
   2. **To Do**: Assigned clinical review or administrative decision tasks (*human reviewing/updating/deciding* — e.g., review abnormal lab result, countersign discharge summary).
@@ -188,7 +192,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.10 Calendar Management
-- **Owning Capability**: `L1: Calendar Management`
+- **Owning Capability**: `Calendar Management`
 - **Architectural Mandate**: Projects unified chronological timelines across appointments, on-call rosters, and scheduled operational events.
 - **Ownership Invariant**: Does **not** acquire authoritative ownership of rosters or appointment bookings (which remain owned by source scheduling and workforce systems).
 - **Functions & Exposed Services**:
@@ -203,7 +207,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.11 Presentation Services
-- **Owning Capability**: `L1: Presentation Services`
+- **Owning Capability**: `Presentation Services`
 - **Architectural Mandate**: Delivers user-facing portals, clinical dashboards, administrative consoles, and mobile views.
 - **Ownership Invariant**: Presentation owns **rendering, user interaction, and layout concerns**. It does **not** own the underlying clinical or operational information being rendered.
 - **Functions & Exposed Services**:
@@ -215,7 +219,7 @@ Intrinsic / Shared Enablement Capabilities
 ---
 
 ### 2.12 Information Design Governance
-- **Owning Capability**: `L1: Information Design Governance`
+- **Owning Capability**: `Information Design Governance`
 - **Architectural Mandate**: Governs the enterprise canonical information model, data definitions, constraint schemas, terminology bindings, and exchange profiles.
 - **Functions & Exposed Services**:
   - **Feature: Information Standards & Semantic Governance**:

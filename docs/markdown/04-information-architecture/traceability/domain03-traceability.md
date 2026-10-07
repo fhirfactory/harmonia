@@ -1,10 +1,12 @@
 # Domain 03 to Domain 04 Traceability Framework
 
-## 1. The Four-Tier Derivation Framework
+<a id="1-the-four-tier-derivation-framework"></a>
+
+## 1. The Four-Stage Derivation Framework
 
 The Information Architecture (Domain 04) is derived systematically from the business semantics established in the Business Architecture (Domain 03).
 
-Every Information Concept, Relationship, and Assembly traces upward through a canonical four-tier derivation chain:
+Information Concepts, Relationships and Assemblies trace through established business responsibility using the following four-stage derivation framework. It does not allocate Capability Tiers or require invented hierarchy, Feature associations or dependencies:
 
 ```text
 1. Business Capability / Feature (Domain 02 / Domain 03)
@@ -32,6 +34,7 @@ graph TD
 1. **Derivation, Not Redefinition**: Domain 04 does not invent new business capabilities or alter the ownership boundaries established in Domain 03.
 2. **Purity of Information Responsibilities**: The Business Information Responsibility matrix (`docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md`) is the authoritative source for architectural information responsibilities. Architectural information responsibility is a capability property and is distinct from the governance role of `Information Steward`.
 3. **Bounded Responsibility Derivation**: Information Concepts for which Harmonia claims architectural responsibility SHALL trace to an owning Domain 03 Information Responsibility. Referenced, consumed, externally authoritative or contextual Information Concepts may be represented where required to discharge a traced Harmonia responsibility, but SHALL NOT thereby acquire Harmonia ownership or authority.
+4. **Truthful Traceability**: Under [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty), traceability represents established relationships and explicitly preserves unestablished ones. Unresolved Capability Tier, complete ancestry or full Canonical ID does not prevent derivation from an established owning element and responsibility. Candidates remain non-authoritative until accepted.
 
 ---
 
@@ -93,19 +96,34 @@ Identifier Namespace Binding (Assertion)
 Cross-Authority Correlation Link (Relationship with Qualification & Authority)
 ```
 
-### 2.3 Representative Example 3: Clinical Order Administration
+<a id="23-representative-example-3-clinical-order-administration"></a>
+
+### 2.3 Representative Example 3: Order Administration
 
 ```text
-Order Administration (Capability / Feature: Closed-Loop Order Status Tracking)
-    ↓ delivers
-Track Order Fulfilment Status (Function)
+Order Administration (Capability)
+    ↓ established Features
+FEAT-SA-11 — Order Request Ingestion
+FEAT-SA-12 — Order Destination Resolution & Routing
+FEAT-SA-13 — Order Closed-Loop Progression Tracking
+FEAT-SA-14 — Order Cancellation & Modification Coordination
+    ↓ established Functions / exposed Services
+Receive Order Request / Order Requisition Ingress
+Resolve Order Destination / Order Dispatch Service
+Manage Order Progression / Order Status & Tracking Query
+Associate Order Outcome / Order Outcome Notification (Capability-scoped; Feature association not established)
+    ↓ governed Process
+Closed-Loop Order Progression Process
     ↓ establishes
-Clinical Order Record, Order Status History, Order-Result Reconciliation Binding (Information Responsibility)
+Clinical Order & Closed-Loop Matrix (Information Responsibility)
+Supporting: Clinical Order Master Record, Closed-Loop Tracking Ledger, Order-Result Correlation Matrix
     ↓ realised as
 Order (Associated Direction Mechanism)
 Order Routing Directive (Assertion / Instruction)
 Order-Result Correlation Link (Relationship with Provenance & Status)
 ```
+
+This retained Foundation example supplies canonical terminology, not Package2 derivation. A ledger/history label does not establish comprehensive retention; correlation does not establish conflict adjudication. Each Function/Service remains in its evidenced owning context without inferring a one-to-one Feature association.
 
 ---
 
@@ -113,4 +131,4 @@ Order-Result Correlation Link (Relationship with Provenance & Status)
 
 This foundation establishes the canonical derivation mechanism and validates it through representative references.
 
-> **Scope Note**: Full, detailed derivation across all 110 atomic business enabling capabilities and the complete Domain 03 Business Information Responsibility matrix remains reserved for subsequent, dedicated Domain 04 modelling packages.
+> **Scope Note**: Full, detailed derivation across the 137 established Strategy Features and their evidenced owning contexts and the complete Domain 03 Business Information Responsibility matrix remains reserved for subsequent, dedicated Domain 04 modelling packages.

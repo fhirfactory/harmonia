@@ -205,6 +205,6 @@ The 16 L1 Business Capabilities are organized into four natural operational regi
 ## Downstream Progression
 
 The 16 Business Capabilities define what the healthcare enterprise must do. The next tier in the Strategy architecture defines what software systems and information infrastructure must enable in support of these business capabilities:
-- [Business Enabling Capabilities](business-enabling-capabilities.md): Five authentic healthcare contextual views with full L1/L2/L3 decomposition and atomic Features.
+- [Business Enabling Capabilities](business-enabling-capabilities.md): Five authentic healthcare contextual views with established Capability responsibilities and atomic Features; affected Capability Tier and complete ancestry remain unresolved.
 - [Enterprise Capabilities](enterprise-capabilities.md): Cross-cutting reusable ICT capabilities (EC-01 .. EC-13).
 - [Capability Tier Progression Model](../capability-maps/capability-tier-model.md): Detailed vertical derivation rules and composition dynamics.

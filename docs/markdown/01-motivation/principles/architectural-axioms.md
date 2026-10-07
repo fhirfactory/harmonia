@@ -1,4 +1,4 @@
-# Architectural Axioms (AX-01 to AX-16)
+# Architectural Axioms (AX-01 to AX-17)
 
 ## Overview
 
@@ -10,6 +10,8 @@ In accordance with platform governance, each axiom is documented using a standar
 3. **Current Harmonia Realisation**: Concrete technological and framework choices currently deployed within Harmonia (clearly delineated as non-normative realisations).
 
 Historical identifiers are strictly preserved. Note that **AX-12** has been formally reclassified to Domain 05 Application Architecture (see [Historical Reclassifications](reclassified-principles.md)).
+
+For [AX-17 — Architectural Authority and Explicit Uncertainty](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty), consult the authoritative axiom register. Its normative text is maintained there.
 
 ---
 

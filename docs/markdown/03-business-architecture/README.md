@@ -12,13 +12,13 @@ Where Domain 02 answers **what capabilities are required to respond to healthcar
         ▼  Axioms, Strategic Drivers, Enduring Principles
 WHAT CAPABILITIES ARE NEEDED?
         │  [Domain 02: Strategy]
-        ▼  Value Streams, Capability Tiers (L1 → L2 → L3 → Feature)
+        ▼  Value Streams, established Capabilities & Features (unresolved ancestry preserved)
 HOW DOES THE BUSINESS OPERATE?
         │  [Domain 03: Business Architecture] (This Domain)
         ▼  Actors, Roles, Collaborations, Interactions, Functions, Services, Processes, Information Ownership
 HOW IS INFORMATION STRUCTURED?
         │  [Domain 04: Information Architecture]
-        ▼  Conceptual, Logical & Interoperability Information Models
+        ▼  Conceptual information meaning, relationships & responsibility traceability
 HOW IS SOFTWARE BEHAVIOUR ALLOCATED?
         │  [Domain 05: Application Architecture]
         ▼  Subsystems, Components, Services, Application State Demarcations
@@ -29,7 +29,7 @@ HOW IS SOFTWARE BEHAVIOUR ALLOCATED?
 ## 1. Scope & Architectural Purpose
 
 Domain 03 establishes the technology-neutral, vendor-independent R1 Business Architecture baseline. It serves as the primary contract for all subsequent technical architecture domains:
-- **Information Architecture (Domain 04)**: Directly realises conceptual Information Responsibilities into governed domain models and interchange profiles.
+- **Information Architecture (Domain 04)**: Formalises conceptual Information Responsibilities into governed conceptual meaning, semantic relationships and traceability. Interoperability profiles are downstream in Domain 06.
 - **Application Architecture (Domain 05)**: Maps capability-scoped Business Functions, Services, and Processes to software components while strictly honouring architectural ownership boundaries.
 - **Integration Architecture (Domain 06)**: Implements Business Interactions across interoperability membranes and communication topologies.
 
@@ -46,17 +46,14 @@ Harmonia adopts an explicit Business Architecture metamodel bridging capabilitie
 
 ```mermaid
 graph TD
-    L1["L1 Capability"] --> L2["L2 Capability"]
-    L2 --> L3["L3 Capability"]
-    L3 --> FEAT["Feature<br/>(Capability Specialisation)"]
-    FEAT --> FUNC["Delivers Business Function(s)"]
+    OWNER["Established owning Capability or Feature"] --> FUNC["Delivers Business Function(s)"]
     FUNC -->|Exposed outside boundary| SERV["Exposes Business Service(s)"]
-    FEAT --> PROC["Encompasses Business Process(es)<br/>(Where Progression is Material)"]
-    FEAT --> INFO["Establishes Business Information Responsibility"]
+    OWNER --> PROC["Encompasses Business Process(es)<br/>(Where Progression is Material)"]
+    OWNER --> INFO["Establishes Business Information Responsibility"]
 ```
 
 ### Key Metamodel Principles
-- **Four-Tier Hierarchy**: `L1 Capability` $\to$ `L2 Capability` $\to$ `L3 Capability` $\to$ `Feature`. A **Feature** is a fine-grained capability specialisation that inherits full capability semantics.
+- **Capability Decomposition**: CT1 / CT2 / CT3 / FT distinguish Capability Tiers and Feature type from derivation stages. A Feature inherits Capability semantics. Behaviour may anchor directly to its established owning Capability or Feature; affected tier, complete ancestry and structural Canonical IDs remain unresolved under approved K9.
 - **Function vs. Service**:
   - A **Business Function** is behaviour delivered *within* its owning Capability or Feature boundary.
   - A **Business Service** is behaviour *exposed outside* the owning boundary for consumption by other Capabilities or external participants. Ownership of the behaviour remains with the exposing Capability.
@@ -118,4 +115,4 @@ docs/markdown/03-business-architecture/
 Domain 03 derives directly from the Business Enabling Capabilities articulated in:
 - **`docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md`**
 
-All 110 atomic features across Harmonia-Core and Harmonia-Relevant capabilities retain their canonical naming and structural alignment. Domain 03 enriches these features with concrete Functions, exposed Services, stateful Processes, and Information Responsibilities while leaving the Strategy baseline intact.
+The 137 established Strategy Features retain their canonical names and identifiers. Domain03 preserves established Capability-scoped Functions, Services, Processes and Information Responsibilities. Feature association requires semantic evidence: shared subject matter, Capability context or clinical purpose does not establish containment, equivalence, specialisation or realisation. Where not established, the association remains explicitly unestablished without a replacement Feature or invented ancestry.

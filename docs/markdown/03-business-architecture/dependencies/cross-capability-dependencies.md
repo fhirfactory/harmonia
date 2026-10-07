@@ -49,30 +49,35 @@ The matrix below documents the primary inter-capability service dependencies acr
 | :--- | :--- | :--- | :--- |
 | **Referral Administration** | `Person Identifier Resolution` | **Person Identity** *(Client Admin)* | Disambiguates and validates referred patient identity against master registries. |
 | **Referral Administration** | `Service Provision Resolution` | **Health Service Administration** | Resolves target clinical specialty clinics, receiving providers, and referral catchment rules. |
-| **Episode & Encounter Admin** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical ward, room, and bed structural attributes for encounter bed placement. |
-| **Episode & Encounter Admin** | `Bed Availability Query` | **Bed & Care-Place Management** | Checks real-time operational bed readiness before confirming patient bed moves. |
+| **Episode & Encounter Administration** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical ward, room, and bed structural attributes for encounter bed placement. |
+| **Episode & Encounter Administration** | `Bed Availability Query` | **Bed & Care-Place Management** | Checks real-time operational bed readiness before confirming patient bed moves. |
 | **Order Administration** | `Practitioner Role Resolution` | **Provider Administration** | Validates requesting and attending clinician credentials and ordering privileges. |
 | **Order Administration** | `Service Provision Resolution` | **Health Service Administration** | Determines performing diagnostic laboratory or imaging centre routing destinations. |
 | **Diagnostic Administration** | `Order Requisition Ingress` | **Order Administration** | Correlates incoming diagnostic observations with active closed-loop order requisitions. |
 | **Diagnostic Administration** | `Terminology Mapping Service` | **Clinical Knowledge Services** | Normalises local laboratory and radiology test codes to canonical SNOMED-CT/LOINC concepts. |
 | **Clinical Record Administration** | `Healthcare Subject Context Resolution` | **Healthcare Subject Context** | Validates patient demographic context and indigenous/interpreter requirements for document headers. |
 | **Clinical Record Administration** | `Semantic Conformance Verification Service` | **Information Design Governance** | Verifies clinical document structural and semantic compliance against governed interchange profiles. |
-| **Primary Care Enablement** | `Longitudinal Clinical Record Query` | **Patient Clinical Record** | Retrieves regional patient history, past discharge summaries, and medication timelines for GP consultations. |
-| **Acute Care Enablement** | `Consent Enforcement Service` | **Health Information Control** | Evaluates patient consent directives and break-glass emergency access permissions during acute admissions. |
-| **Emergency Care Enablement** | `Person Identifier Correlation` | **Person Identity** *(Client Admin)* | Rapidly links trauma and ambulance presentations to regional hospital records using fast-match correlation. |
-| **Inpatient Care Enablement** | `Discharge Readiness Telemetry` | **Discharge Management** | Coordinates multidisciplinary ward discharge checklists and pharmacy reconciliation. |
+| **Primary Care** | `Longitudinal Clinical Record Query` | **Patient Clinical Record** | Retrieves regional patient history, past discharge summaries, and medication timelines for GP consultations. |
+| **Acute Care** | `Consent Enforcement Service` | **Health Information Control** | Evaluates patient consent directives and break-glass emergency access permissions during acute admissions. |
+| **Emergency Care** | `Person Identifier Correlation` | **Person Identity** *(Client Admin)* | Rapidly links trauma and ambulance presentations to regional hospital records using fast-match correlation. |
+| **Inpatient Care** | `Discharge Readiness Telemetry` | **Discharge Management** | Coordinates multidisciplinary ward discharge checklists and pharmacy reconciliation. |
 | **Bed & Care-Place Management** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical care-place capabilities (e.g., negative pressure, telemetry wiring) for isolation placement. |
 | **Work Allocation & Dispatch** | `Staff Presence Telemetry Query` | **Mobile Staff Management** | Allocates portering and cleaning work orders to active on-duty staff in the nearest physical zone. |
-| **Patient Transport** | `Encounter Location History Query` | **Episode & Encounter Admin** | Validates current patient ward location and target diagnostic department before dispatching porters. |
-| **Clinical Logistics** | `Secure Clinical Message Dispatch` | **Clinical Communication Admin** | Sends automated electronic specimen tracking notifications and urgent critical result dispatch alerts. |
+| **Patient Transport** | `Encounter Location History Query` | **Episode & Encounter Administration** | Validates current patient ward location and target diagnostic department before dispatching porters. |
+| **Clinical Logistics Coordination** | `Secure Clinical Message Dispatch` | **Clinical Communication Administration** | Sends automated electronic specimen tracking notifications and urgent critical result dispatch alerts. |
 | **Discharge Management** | `Clinical Document Lifecycle Service` | **Clinical Record Administration** | Triggers publication of signed clinical discharge summaries upon patient departure. |
-| **Clinical Collaboration** | `Collaboration Clinical Summary Resolution` | **Patient Clinical Record** | Projects real-time clinical summaries into multidisciplinary care-team discussion feeds. |
 | **Workflow & Activity Coordination**| `Policy Evaluation & Authorisation Service` | **Health Information Control** | Evaluates actor task-claiming permissions before allowing work order acceptance or document countersignature. |
 | **Presentation Services** | `Clinical Information Search Service` | **Health Information Access** | Executes search queries across longitudinal clinical records for display in clinical portals. |
 
 ---
 
 ## 3. Dependency Governance Rules
+
+The former Clinical Collaboration consumption of `Collaboration Clinical Summary Resolution` from Patient Clinical Record is withdrawn as unsupported under approved G1 K12. Clinical Collaboration retains ownership of that exposed Service through `FEAT-ISE-17` and `Resolve LHR Query within Collaboration`. Its precise source Service/provider, direct or mediated retrieval, formal Service consumer and the incorrect row’s intended referent remain unresolved. No replacement dependency is established.
+
+Patient Clinical Record retains longitudinal assembly, active record maintenance, durable preservation and canonical integrated synthesis; Clinical Collaboration retains spaces, membership, discourse, in-conversation resolution and contextual clinical-summary projection; Health Information Access retains search, retrieval, access-qualified filtering, query execution context and result projection state. Information ownership, Function ownership, Service ownership, consumption, use and presentation remain distinct.
+
+Discharge publication timing remains unresolved: the dependency row describes publication upon departure while the Process describes publication before departure. Neither assertion is silently chosen as the resolution.
 
 1. **Unidirectional Service Coupling**: Dependency arrows point strictly from the consuming capability to the exposed Business Service. The exposing capability remains completely agnostic of which downstream capabilities consume its services.
 2. **Encapsulated Implementation**: Consuming capabilities depend exclusively upon the abstract service contract and its business semantics, never upon internal algorithms or persistence structures.

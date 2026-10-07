@@ -630,6 +630,108 @@ __Do not turn “unknown” into “yes” or “no”.__
 
 __This does not mean:__ Harmonia must retain uncertainty indefinitely. Every technical failure produces an uncertain outcome. Operations known not to have crossed the relevant state-changing boundary cannot be safely retried. Reconciliation must always require human intervention.
 
+### AX-17 — Architectural Authority and Explicit Uncertainty
+
+#### Axiom
+
+Documented architectural decisions, definitions, relationships, boundaries
+and constraints are authoritative and SHALL NOT be silently reinterpreted,
+replaced, bypassed or contradicted by downstream architecture or
+implementation.
+
+Where the architecture does not establish a fact, relationship,
+responsibility or decision, that absence SHALL be preserved explicitly
+rather than completed through inference, convention, structural
+convenience, lexical similarity or anticipated implementation.
+
+Unresolved architecture MAY be accompanied by clearly identified
+candidates, suggestions or recommendations, but these SHALL remain
+explicitly non-authoritative until explicitly accepted into the
+architecture.
+
+Where evidence indicates that authoritative architecture may be incorrect,
+incomplete or internally inconsistent, the conflict SHALL be raised
+explicitly for architectural review. The existing architecture remains
+authoritative until an approved architectural change is made. That
+approved change becomes the new authoritative architecture.
+
+#### Rationale
+
+Downstream derivation must distinguish established architectural knowledge
+from gaps and proposed resolutions. A plausible relationship supplies no
+authority merely because it makes a model or implementation appear
+complete. Absence of an established relationship is architecturally
+meaningful information.
+
+Repeated architectural review during Domain04 Package2 G1 confirmed this
+need across different traceability relationships:
+
+- K9: unresolved Capability hierarchy must not be completed through
+  invented ancestry.
+- K10: Behaviour / Process traceability must not be completed through
+  invented stage equivalence.
+- K11: Function / Service traceability must not be completed through
+  unsupported Feature association.
+- K12: cross-capability dependency traceability must not be completed
+  through invented Service ownership or consumption.
+- K13: downstream representation traceability must not be completed through
+  anticipated FHIR, application or technology mappings.
+
+These examples justify an architecture-wide rule; its application does
+not depend on Domain04 or G1 terminology.
+
+#### Consequences
+
+Human architects, human developers and AI development agents SHALL apply
+this axiom to architecture derivation, documentation generation and
+implementation.
+
+Architectural traceability SHALL represent established relationships and
+explicitly preserve unresolved or unestablished relationships.
+Completeness SHALL NOT be manufactured through:
+
+- inferred hierarchy;
+- structural convenience;
+- lexical similarity;
+- conventional modelling patterns;
+- assumed equivalence;
+- anticipated implementation;
+- familiar standards;
+- probable application design.
+
+Candidates, suggestions and recommendations SHALL be distinguishable from
+documented, approved architecture. A proposed resolution or apparently
+better alternative SHALL NOT acquire authority through downstream use.
+
+AI development agents SHOULD challenge architecture when evidence
+warrants architectural review. They SHALL NOT silently bypass it because
+they recognise a familiar destination.
+
+This axiom applies the authority and explicit-review obligations in
+[Purpose](#1-purpose), [Relationship to Architecture Decisions](#6-relationship-to-architecture-decisions)
+and [Architectural Review Rule](#7-architectural-review-rule) to downstream
+derivation and implementation.
+
+[AX-14](#ax-14--semantic-distinctions-are-preserved) preserves semantic
+distinctions; this axiom preserves the distinction between established,
+unresolved and proposed architecture.
+[AX-15](#ax-15--uncertainty-is-preserved-until-resolved) governs uncertainty
+about operational state, outcome or effect; this axiom governs uncertainty
+about the architecture itself. Neither form of uncertainty may be silently
+resolved by assumption.
+
+[AX-02](#ax-02-----standards-at-the-boundary-harmonia-within-the-boundary)
+and [AX-04](#ax-04-----harmonia-owns-the-semantics-engines-provide-the-machinery)
+preserve Harmonia's internal semantics from external standards and engine
+assumptions. Familiar standards or technology patterns do not establish
+otherwise undocumented architectural relationships.
+[AX-06](#ax-06-----information-authority-is-explicit) governs the authority
+of managed information; architectural authority remains a distinct concern.
+
+#### Maxim
+
+**Traceability must be truthful, not artificially complete.**
+
 ## 3. Subsystem Responsibilities Derived from the Axioms
 
 The axioms establish the following high-level responsibilities: \*

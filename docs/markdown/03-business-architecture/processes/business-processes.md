@@ -2,6 +2,10 @@
 
 ## 1. Process Demarcation & Justification Rules
 
+The named owning Capabilities retain their established responsibilities. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under approved G1 K9. The explicit `Client Administration → Person Identity` relationship remains a partial chain, not a tier allocation.
+
+Processes may elaborate scoped progression without reproducing Behaviour stage lists. Established ownership, responsibility, authority boundaries and supported obligations remain controlling. Omitted Process checkpoints are not invalidated by a Behaviour summary; omitted Behaviour responsibilities are not removed by a Process. Stage-count equality is not required, and extra detail does not establish universal applicability.
+
 In the Harmonia Business Architecture, a **Business Process** represents the governed progression of a healthcare activity instance through a defined lifecycle of meaningful states, dispositions, and operational outcomes within an owning Capability or Feature boundary.
 
 ### 1.1 Process Inclusion Rule
@@ -48,7 +52,7 @@ Principal Business Processes (R1)
 ## 2. Entity & Administrative Processes
 
 ### 2.1 Governed Person Identity Correction Process
-- **Owning Capability**: `L2: Person Identity` (under `Client Administration`)
+- **Owning Capability**: `Person Identity` (under `Client Administration`)
 - **Process Purpose**: Governs the formal, audited remediation, merging, unlinking, or correction of person demographic records and identifier linkages following identity fraud, misidentification, or duplicate registration.
 - **State Progression Lifecycle**:
   $$\text{Correction Requested} \longrightarrow \text{HIM Triage} \longrightarrow \text{Evidence Verified} \longrightarrow \text{Correction Approved} \longrightarrow \text{Merge/Unlink Executed} \longrightarrow \text{Change Broadcasted} \longrightarrow \text{Closed}$$
@@ -63,7 +67,7 @@ Principal Business Processes (R1)
 ---
 
 ### 2.2 Practitioner Verification Process
-- **Owning Capability**: `L1: Provider Administration`
+- **Owning Capability**: `Provider Administration`
 - **Process Purpose**: Governs the lifecycle of validating, certifying, and periodically re-verifying a healthcare practitioner's professional credentials, registration status, and clinical scope of practice.
 - **State Progression Lifecycle**:
   $$\text{Verification Initiated} \longrightarrow \text{Regulatory Registry Queried} \longrightarrow \text{Credentials Validated} \longrightarrow \text{Privileges Endorsed} \longrightarrow \text{Active Verified} \longrightarrow \text{Expired / Suspended}$$
@@ -80,8 +84,9 @@ Principal Business Processes (R1)
 ## 3. Clinical Lifecycle & Service Administration Processes
 
 ### 3.3 Referral Progression Process
-- **Owning Capability**: `L1: Referral Administration`
+- **Owning Capability**: `Referral Administration`
 - **Process Purpose**: Governs the end-to-end operational progression of an incoming clinical referral from receipt through specialist clinical triage, booking, and final service acceptance.
+- **Scope qualification**: This illustrates a specialist booking/attendance pathway; Referral does not universally require acceptance, scheduling, attendance or discharge, or establish delivery, responsibility actually assumed or Transfer of Care. Decline, rejection and redirection remain valid dispositions without invented transition paths. `Accepted / Waitlisted` is a local compound checkpoint, not universal equivalence between acceptance and waitlisting.
 - **State Progression Lifecycle**:
   $$\text{Submitted} \longrightarrow \text{Intake Validated} \longrightarrow \text{Clinically Triaged} \longrightarrow \text{Accepted / Waitlisted} \longrightarrow \text{Scheduled} \longrightarrow \text{Consultation Attended} \longrightarrow \text{Discharged / Rejected}$$
 - **Key State Dispositions**:
@@ -96,7 +101,7 @@ Principal Business Processes (R1)
 ---
 
 ### 3.4 Encounter Lifecycle Process
-- **Owning Capability**: `L1: Episode & Encounter Administration`
+- **Owning Capability**: `Episode & Encounter Administration`
 - **Process Purpose**: Governs the clinical and administrative lifecycle of an acute, emergency, inpatient, or outpatient encounter between a patient and healthcare services.
 - **State Progression Lifecycle**:
   $$\text{Planned / Booked} \longrightarrow \text{Arrived} \longrightarrow \text{Triaged / Ingested} \longrightarrow \text{Active In-Progress} \longrightarrow \text{Discharged} \longrightarrow \text{Completed / Encoded}$$
@@ -107,27 +112,29 @@ Principal Business Processes (R1)
   - `Active In-Progress`: Inpatient care, bedside monitoring, and clinical orders actively underway.
   - `Discharged`: Patient clinically discharged; care-place vacated.
   - `Completed / Encoded`: Clinical documentation finalized, ICD/DRG coding completed, and encounter legally closed.
+- **Scope qualification**: These completion criteria retain their locally described applicability; they do not establish universal signing, legal closure or originating authority over clinical information. Finalisation, signing and legal qualification remain distinct. The relationship with Strategy `ON_LEAVE`, including applicability and transitions, remains unresolved.
 
 ---
 
 ### 3.5 Closed-Loop Order Progression Process
-- **Owning Capability**: `L1: Order Administration`
+- **Owning Capability**: `Order Administration`
 - **Process Purpose**: Governs the rigorous, closed-loop tracking of diagnostic pathology, radiology, and procedural orders from requisition to result correlation, preventing dropped or unfulfilled investigations.
+- **Scope qualification**: These examples describe a diagnostic/procedural progression and do not exclude medication from the broader Order Administration responsibility. Specimen and result checkpoints are scoped. The signed requisition/report requirements remain within this illustrated scope; signing is not universally equivalent to finalisation or authority. Result consumption/binding does not define originating validity, authority, authorship or legal status.
 - **State Progression Lifecycle**:
   $$\text{Requisition Placed} \longrightarrow \text{Order Dispatched} \longrightarrow \text{Specimen Collected / Scheduled} \longrightarrow \text{In-Execution} \longrightarrow \text{Preliminary Result Bound} \longrightarrow \text{Final Result Bound} \longrightarrow \text{Closed / Verified}$$
 - **Key State Dispositions**:
   - `Requisition Placed`: Electronic order created and signed by requesting clinician.
-  - `Order Dispatched`: Order routed and accepted by performing diagnostic service.
+  - `Order Dispatched`: Order routed and accepted by performing diagnostic service. This local compound checkpoint retains routing and recipient acceptance as distinct facts; dispatch alone establishes neither receipt nor acceptance. Behaviour `Received` is not equated with this checkpoint without evidence.
   - `Specimen Collected / Scheduled`: Bio-specimen collected or imaging appointment booked.
   - `In-Execution`: Laboratory analysis or diagnostic scanning underway.
   - `Preliminary Result Bound`: Critical or interim observations published and linked to order.
   - `Final Result Bound`: Authoritative diagnostic report signed and bound to order.
-  - `Closed / Verified`: Requesting clinician acknowledges result; order closed.
+  - `Closed / Verified`: Requesting clinician acknowledges result; order closed. This Order-closure checkpoint does not establish diagnostic-content verification, approval or clinical incorporation.
 
 ---
 
 ### 3.6 Clinical Document Lifecycle Process
-- **Owning Capability**: `L1: Clinical Record Administration`
+- **Owning Capability**: `Clinical Record Administration`
 - **Process Purpose**: Governs the versioning, clinical sign-off, addenda, superseding, and legal status of clinical documents (discharge summaries, specialist letters, advance care directives).
 - **State Progression Lifecycle**:
   $$\text{Draft} \longrightarrow \text{Preliminary} \longrightarrow \text{Final Signed} \longrightarrow \text{Amended / Addended} \longrightarrow \text{Superseded} \longrightarrow \text{Entered-in-Error}$$
@@ -138,13 +145,14 @@ Principal Business Processes (R1)
   - `Amended / Addended`: Governed supplementary clinical addendum appended to signed document.
   - `Superseded`: Entire document replaced by a newer revision; prior version retained for audit.
   - `Entered-in-Error`: Document formally retracted due to wrong patient or invalid content; content struck through with retraction notice.
+- **Scope qualification**: `Final ≠ automatically Final Signed`. The described signing/countersigning and legal qualifications remain local requirements, not a universal document lifecycle. Authorship, attestation, approval, authentication, verification, signature, finalisation, authority and legal qualification remain distinct. Amendment, supersession and entered-in-error are not mandatory stages for every document, and consumer processing does not establish originating authority or legal status.
 
 ---
 
 ## 4. Healthcare Facility & Logistics Operations Processes
 
 ### 4.7 Theatre Case Progression Process
-- **Owning Capability**: `L1: Theatre Operations`
+- **Owning Capability**: `Theatre Operations`
 - **Process Purpose**: Governs the perioperative operational milestones of a surgical procedure within the operating theatre suite.
 - **State Progression Lifecycle**:
   $$\text{Case Called} \longrightarrow \text{In Anaesthetic Bay} \longrightarrow \text{Anaesthesia Commenced} \longrightarrow \text{Patient in Theatre} \longrightarrow \text{Knife-to-Skin} \longrightarrow \text{Procedure Finished} \longrightarrow \text{In PACU Recovery} \longrightarrow \text{Ward Handover Complete}$$
@@ -161,7 +169,7 @@ Principal Business Processes (R1)
 ---
 
 ### 4.8 Clinic / Operational Queue Progression Process
-- **Owning Capability**: `L1: Clinic & Practice Operations`
+- **Owning Capability**: `Clinic & Practice Operations`
 - **Process Purpose**: Governs the movement and state tracking of outpatients through an ambulatory specialty clinic session.
 - **State Progression Lifecycle**:
   $$\text{Scheduled} \longrightarrow \text{Patient Arrived} \longrightarrow \text{Checked-In} \longrightarrow \text{Roomed / Pre-Consult} \longrightarrow \text{Consultation In-Progress} \longrightarrow \text{Consultation Concluded} \longrightarrow \text{Departed}$$
@@ -177,7 +185,7 @@ Principal Business Processes (R1)
 ---
 
 ### 4.9 Bed Turnover Process
-- **Owning Capability**: `L1: Bed & Care-Place Management`
+- **Owning Capability**: `Bed & Care-Place Management`
 - **Process Purpose**: Governs the rapid physical turnover, cleaning, sanitisation, and re-allocation of inpatient and emergency care-places.
 - **State Progression Lifecycle**:
   $$\text{Bed Vacated} \longrightarrow \text{Cleaning Dispatched} \longrightarrow \text{Sanitisation In-Progress} \longrightarrow \text{Terminal Cleaning Verified} \longrightarrow \text{Bed Ready / Available} \longrightarrow \text{Bed Allocated / Occupied}$$
@@ -192,7 +200,7 @@ Principal Business Processes (R1)
 ---
 
 ### 4.10 Operational Work Progression Process
-- **Owning Capability**: `L1: Work Allocation & Dispatch`
+- **Owning Capability**: `Work Allocation & Dispatch`
 - **Process Purpose**: Governs the dispatch, assignment, execution, and completion of facility operational jobs (e.g., equipment moves, waste removal, linen supply).
 - **State Progression Lifecycle**:
   $$\text{Work Requested} \longrightarrow \text{Queued in Dispatch} \longrightarrow \text{Assigned to Worker} \longrightarrow \text{Job Accepted} \longrightarrow \text{Work In-Progress} \longrightarrow \text{Work Completed / Aborted}$$
@@ -207,7 +215,7 @@ Principal Business Processes (R1)
 ---
 
 ### 4.11 Patient Transport Process
-- **Owning Capability**: `L1: Patient Transport`
+- **Owning Capability**: `Patient Transport`
 - **Process Purpose**: Governs the physical portering and transport of patients between hospital departments, wards, diagnostic suites, and external facilities.
 - **State Progression Lifecycle**:
   $$\text{Transport Requested} \longrightarrow \text{Porter Dispatched} \longrightarrow \text{Patient Collected} \longrightarrow \text{In-Transit} \longrightarrow \text{Delivered at Destination} \longrightarrow \text{Clinical Handover Complete}$$
@@ -222,7 +230,7 @@ Principal Business Processes (R1)
 ---
 
 ### 4.12 Specimen Transport Process
-- **Owning Capability**: `L1: Clinical Logistics`
+- **Owning Capability**: `Clinical Logistics Coordination`
 - **Process Purpose**: Governs the physical courier chain-of-custody, transport, and delivery of pathology bio-specimens, blood products, and surgical biopsies.
 - **State Progression Lifecycle**:
   $$\text{Specimen Packaged} \longrightarrow \text{Courier Dispatched} \longrightarrow \text{Chain-of-Custody Signed} \longrightarrow \text{In-Transit (Monitored)} \longrightarrow \text{Lab Ingress Received} \longrightarrow \text{Specimen Accepted}$$
@@ -237,7 +245,7 @@ Principal Business Processes (R1)
 ---
 
 ### 4.13 Discharge Progression Process
-- **Owning Capability**: `L1: Discharge Management`
+- **Owning Capability**: `Discharge Management`
 - **Process Purpose**: Governs the multidisciplinary coordination of patient discharge planning, pharmacy reconciliation, transport, and community handover.
 - **State Progression Lifecycle**:
   $$\text{Discharge Planning Initiated} \longrightarrow \text{Clinical Readiness Confirmed} \longrightarrow \text{Medications Reconciled} \longrightarrow \text{Transport & Services Booked} \longrightarrow \text{Discharge Summary Signed} \longrightarrow \text{Physically Departed}$$
@@ -248,13 +256,14 @@ Principal Business Processes (R1)
   - `Transport & Services Booked`: Community nursing, home equipment, and patient transport booked.
   - `Discharge Summary Signed`: Final discharge summary published and sent to GP.
   - `Physically Departed`: Patient departs ward; care-place turnover triggered.
+- **Preserved uncertainty**: `Discharge Summary Signed` and Behaviour `Discharge Summary Finalised` are not universal equivalents. The Process publication/transmission before physical departure and dependency publication upon departure remain unreconciled timing assertions; no replacement timing or separate publication events are established.
 
 ---
 
 ## 5. Horizontal Workflow Coordination Processes
 
 ### 5.14 Work Order Progression Process
-- **Owning Capability**: `L1: Workflow & Activity Coordination`
+- **Owning Capability**: `Workflow & Activity Coordination`
 - **Activity Archetype**: **Human Doing** — physical or operational task executed by healthcare staff.
 - **State Progression Lifecycle**:
   $$\text{Created} \longrightarrow \text{Ready} \longrightarrow \text{Dispatched} \longrightarrow \text{Accepted} \longrightarrow \text{In-Progress} \longrightarrow \text{Completed / Failed / Cancelled}$$
@@ -269,7 +278,7 @@ Principal Business Processes (R1)
 ---
 
 ### 5.15 To Do Progression Process
-- **Owning Capability**: `L1: Workflow & Activity Coordination`
+- **Owning Capability**: `Workflow & Activity Coordination`
 - **Activity Archetype**: **Human Reviewing / Updating / Deciding** — clinical review, document countersignature, or administrative authorization task.
 - **State Progression Lifecycle**:
   $$\text{Issued} \longrightarrow \text{In-Inbox} \longrightarrow \text{Opened / Under-Review} \longrightarrow \text{Actioned / Decided} \longrightarrow \text{Dismissed / Delegated}$$
@@ -279,11 +288,12 @@ Principal Business Processes (R1)
   - `Opened / Under-Review`: Clinician inspecting relevant clinical context.
   - `Actioned / Decided`: Decision executed (e.g., signed off, order placed, acknowledged).
   - `Dismissed / Delegated`: Task reassigned to registrar or dismissed with comment.
+- **Preserved uncertainty**: Whether dismissal/delegation is an alternative disposition, a subsequent action or a scoped variant remains unresolved; the displayed order does not authorise an inferred transition model.
 
 ---
 
 ### 5.16 Synthetic Task Progression Process
-- **Owning Capability**: `L1: Workflow & Activity Coordination`
+- **Owning Capability**: `Workflow & Activity Coordination`
 - **Activity Archetype**: **Non-Human Executable Work** — automated system workflows, batch syndications, or policy evaluation tasks.
 - **State Progression Lifecycle**:
   $$\text{Draft / Scheduled} \longrightarrow \text{Executing} \longrightarrow \text{Awaiting-Dependency} \longrightarrow \text{Completed} \longrightarrow \text{Progression Stalled / Failed}$$
@@ -293,3 +303,4 @@ Principal Business Processes (R1)
   - `Awaiting-Dependency`: Paused awaiting asynchronous external reply or event.
   - `Completed`: Automated execution succeeded and output artifact produced.
   - `Progression Stalled / Failed`: Transient fault triggers scheduled recovery attempt; permanent failure records failure evidence.
+- **Preserved uncertainty**: Whether stalled/failed is an alternative outcome, reopening/post-completion behaviour or a presentation defect remains unresolved. The displayed sequence does not make success and failure equivalent or establish post-completion transitions.

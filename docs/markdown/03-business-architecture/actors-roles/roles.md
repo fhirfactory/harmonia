@@ -147,7 +147,10 @@ Harmonia enforces strict guardrails to prevent role conflation and maintain arch
 
 ### 3.2 Referral Direction is Contextual
 - Do **not** introduce `Referring Provider` or `Receiving Provider` as fundamental architectural Roles.
-- Referral direction is contextual: an organisation or practitioner acts in the stable role of `Service Provider` or `Practitioner`, taking on the contextual qualifier of `Referrer` (source) or `Referee` (target) within a specific `Service Referral` interaction.
+- `Referrer` remains the canonical Business Role representing the capacity to formally refer, distinct from `Requester` and `Service Provider`. An Actor fulfils a Role and participates in a particular Referral; the Actor, Role, participation, local Relationship Role and context qualifier are distinct.
+- Practitioner fulfilment of Referrer is supported. Eligibility of other Actor kinds is not exhaustively established; an Organisation being a referral source does not by itself establish fulfilment of the Referrer Business Role.
+- `Organisation#ACT Health-as-ServiceProvider#ReferralSource` remains a qualified reference: `ReferralSource` is a contextual qualifier, not a new Business Role. The target qualifier/role is not established by the former `Referee` wording and remains unresolved.
+- Package1 `Referring Clinician` remains a local Relationship Role; it does not redefine the Referrer Business Role.
 
 ### 3.3 Practitioner vs. Service Provider
 - `Practitioner` is **not** synonymous with `Service Provider`.

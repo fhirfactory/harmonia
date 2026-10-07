@@ -9,7 +9,7 @@ A foundational principle of the Harmonia Information Architecture is the explici
 Different categories of healthcare and operational information progress through fundamentally different states:
 - A **Catalogue Definition** progresses through publication and versioning lifecycles (*Draft* $\to$ *Active* $\to$ *Deprecated* $\to$ *Retired*).
 - An **Active Task Fulfilment** progresses through real-time operational execution (*Proposed* $\to$ *Accepted* $\to$ *In-Progress* $\to$ *Completed* / *Failed*).
-- A **Clinical Document** progresses through legal authoring states (*Draft* $\to$ *Preliminary* $\to$ *Final* $\to$ *Amended* $\to$ *Superseded*).
+- A **Clinical Document** progresses through legal authoring states (*Draft* $\to$ *Preliminary* $\to$ *Final* $\to$ *Amended* $\to$ *Superseded*). This is a scoped lifecycle illustration: `Final ≠ automatically Final Signed`. Signing, finalisation, authorship, attestation, approval, authentication, verification, authority and legal qualification remain distinct; locally established signing requirements are preserved without making them universal. Amendment and supersession are not mandatory for every document, and consumer processing does not define originating validity or authority.
 - A **Clinical Assertion / Finding** progresses through epistemic verification (*Suspected* $\to$ *Confirmed* $\to$ *Refuted* / *Entered-in-Error*).
 - An **Encounter** progresses through admission, movement, and discharge stages (*Planned* $\to$ *Arrived* $\to$ *In-Care* $\to$ *Discharged*).
 

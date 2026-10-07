@@ -1,8 +1,22 @@
-# Harmonia Capability Tier Model & Derivation Dynamics
+# Harmonia Capability Decomposition & Derivation Progression
 
 ## Overview
 
-The Harmonia Capability Tier Model establishes the conceptual progression, composition relationships, and derivation rules that connect high-level healthcare enterprise capabilities with reusable platform capabilities and downstream architectural responsibility boundaries.
+This model distinguishes hierarchical Capability decomposition from the derivation progression, composition relationships, and derivation rules connecting high-level healthcare enterprise capabilities with reusable platform capabilities and downstream architectural responsibility boundaries.
+
+Canonical terminology SHALL distinguish:
+
+- **Layer / Architectural Layer**: architectural layering within the TOGAF / ArchiMate architecture model.
+- **Capability Tier**: hierarchical decomposition within a Capability Model.
+- **Derivation / Derivation Progression**: progression between different architectural constructs or models; a Derivation Stage is a stage in that progression.
+
+`Layer ≠ Capability Tier ≠ Derivation Stage`.
+
+Capability decomposition uses `CT1` (Capability Tier 1), `CT2` (Capability Tier 2), `CT3` (Capability Tier 3) and `FT` (Feature). `L1`, `L2` and `L3` are deprecated as canonical capability classifications. Decomposition MAY proceed `CT1 → CT2 → CT3 → FT` without requiring every branch to materialise every possible lower tier. Established higher-tier ancestry SHALL be represented when a lower Capability Tier is materialised; missing ancestry SHALL remain unresolved rather than being invented or skipped.
+
+The [Domain03 Business Architecture metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#8-architectural-element-identity-and-canonical-identification) governs typed Canonical IDs, identity, aliases and behavioural anchoring. The five-stage derivation progression below SHALL NOT be reinterpreted as CT1 / CT2 / CT3 / FT or used to assign Capability Tiers or identifier codes to existing elements. [Approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing) establishes that affected legacy owner assignments are insufficiently evidenced; they SHALL NOT be mechanically translated to CT1 / CT2 / CT3. Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved where not established.
+
+Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation where the owning Capability or Feature and its relevant responsibility are established. Traceability SHALL reference that element without manufacturing ancestry, as required by [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty). Document structure, grouping, numbering, indentation and decomposition presentation SHALL NOT by themselves establish Architectural Element identity.
 
 The model ensures that:
 1. Enterprise healthcare practice is clearly demarcated from software enablement.
@@ -13,41 +27,41 @@ The model ensures that:
 
 ---
 
-## 1. The Multi-Tier Capability Progression
+## 1. The Five-Stage Derivation Progression
 
-The capability framework progresses top-down through five distinct architectural tiers:
+The framework progresses through five derivation stages relating different architectural constructs and models. Their stage numbers SHALL NOT denote Capability Tiers or Architectural Layers:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 1: BUSINESS CAPABILITY                                            │
+│ STAGE 1: BUSINESS CAPABILITY                                           │
 │ What the enterprise must be capable of doing                           │
-│ (16 L1s across 4 natural healthcare regions)                           │
+│ (16 catalogued capabilities across 4 natural healthcare regions)       │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ requires enablement by
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 2: BUSINESS ENABLING CAPABILITY                                   │
+│ STAGE 2: BUSINESS ENABLING CAPABILITY                                   │
 │ What systems must enable or provide in support of the business         │
 │ (Structured across 5 authentic healthcare contextual views)            │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ specifies atomic behaviour as
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 3: FEATURE                                                        │
+│ STAGE 3: FEATURE (FT)                                                  │
 │ Smallest useful statement of required system-enabled behaviour         │
 │ (Independently understandable, testable, technology-neutral)           │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ derived into reusable
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 4: ENTERPRISE CAPABILITY (EC-01 .. EC-13)                         │
+│ STAGE 4: ENTERPRISE CAPABILITY (EC-01 .. EC-13)                          │
 │ Reusable ICT functionality recurring across multiple domains           │
 │ (Decoupled from concurrency, message brokers, and storage DDL)         │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ viewed through
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 5: ICT FOUNDATION CAPABILITY LENSES (18 Lenses)                   │
+│ STAGE 5: ICT FOUNDATION CAPABILITY LENSES (18 Lenses)                   │
 │ Cross-cutting technical enablement considerations                      │
 │ (Evaluates technical realization via technology-substitution test)     │
 └───────────────────────────────────┬────────────────────────────────────┘
@@ -61,19 +75,19 @@ The capability framework progresses top-down through five distinct architectural
 
 ---
 
-## 2. Conceptual Tier Definitions
+## 2. Derivation Stage Definitions
 
-### Tier 1: Business Capability
+### Stage 1: Business Capability
 - **Definition**: What the healthcare enterprise must be capable of doing to deliver healthcare services, govern operations, and ensure patient safety.
 - **Independence**: Exists independently of IT systems, software products, commercial organizational hierarchies, or automation.
-- **Structure**: 16 L1 Business Capabilities grouped into four natural regions:
+- **Structure**: 16 catalogued Business Capabilities grouped into four natural regions; this derivation-stage position does not assign Capability Tier or Canonical ID:
   - *Care & Health Delivery* (01–08)
   - *Health Information & Digital Health* (09–12)
   - *Research & Innovation* (13)
   - *Enterprise Management* (14–16)
 - **Harmonia Principle**: Harmonia provides core technical enablement for Health Information and Connected Health capabilities (09–12) and materially enables delivery and workforce capabilities (01, 02, 04, 06, 15) without asserting platform ownership over healthcare business practice.
 
-### Tier 2: Business Enabling Capability
+### Stage 2: Business Enabling Capability
 - **Definition**: What software systems and information infrastructure must enable or provide to support the enterprise healthcare capabilities.
 - **Structuring Axis**: Organized into five contextual views reflecting genuine healthcare operating environments:
   1. *Entity Management*: Governance of practitioners, organizations, locations, services, products, and devices.
@@ -83,22 +97,22 @@ The capability framework progresses top-down through five distinct architectural
   5. *Intrinsic / Shared Enablement*: Longitudinal clinical records, health information exchange, clinical collaboration, and workflow coordination.
 - **Independence**: Independent of commercial software product boundaries (PAS, EMR, LIS, RIS) and internal middleware engines.
 
-### Tier 3: Feature
-- **Definition**: The **smallest useful statement of required system-enabled behaviour** beneath an L3 Business Enabling Capability.
+### Stage 3: Feature (FT)
+- **Definition**: The **smallest useful statement of required system-enabled behaviour** within its owning Business Enabling Capability context. FT is a Feature classification; derivation stage 3 SHALL NOT classify it as CT3.
 - **Criteria**:
   - *Independently understandable*: Conveys a self-contained operational meaning.
   - *Testable in principle*: Allows clear verification that the behavior occurred or was enabled.
   - *Technology-independent*: Contains no product names, protocols, or storage mechanisms.
   - *Component-independent*: Does not prescribe which software module executes it.
-- **Scope Demarcation**: Formally authored for all Harmonia-Relevant and Harmonia-Core L3 capabilities. Reference and Adjacent capabilities are intentionally not decomposed into features.
+- **Scope Demarcation**: Formally authored for Harmonia-Relevant and Harmonia-Core capabilities in the established catalogue. Reference and Adjacent capabilities are intentionally not decomposed into features. This scope statement establishes no new Capability Tier assignment or mandatory intermediate hierarchy.
 
-### Tier 4: Enterprise Capability (EC-01 .. EC-13)
+### Stage 4: Enterprise Capability (EC-01 .. EC-13)
 - **Definition**: Reusable architectural functionality derived from recurring system-enabled features across multiple healthcare domains.
 - **Derivation Logic**: Derived by analyzing features and asking: *"How is this function delivered?"* Functions that recur vertically across multiple distinct healthcare domains are abstracted into reusable Enterprise Capabilities.
 - **Catalogue**: EC-01 Managed Entity & Relationship through EC-13 Semantic Governance & Conformance.
 - **Collaborative Nature**: Cross-cutting capabilities (EC-02 Context Management, EC-06 Policy & Control, EC-07 Provenance & Traceability, EC-12 Operational Assurance) are collaborative capabilities realized across multiple components rather than centralized bottleneck services.
 
-### Tier 5: ICT Foundation Capability Lenses
+### Stage 5: ICT Foundation Capability Lenses
 - **Definition**: Technical enablement lenses that provide cross-cutting engineering criteria, architectural considerations, and technology-substitution testing for realizing Enterprise Capabilities.
 - **Role**: They are technical lenses, NOT peers of the Business Enabling capabilities.
 - **Test**: Governed by the *Technology-Substitution Test*: *"If the named product, protocol, programming language, or deployment mechanism were replaced tomorrow, would the capability still exist?"*
