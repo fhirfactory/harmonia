@@ -45,12 +45,12 @@ Harmonia acts as an integration environment bridging heterogeneous external heal
 
 This course of action establishes that:
 - Runtime management of information, active relationships, context, and state is an operational governance concern requiring high availability, concurrent access, and responsive query navigation.
-- Durable preservation and recovery is an authoritative preservation concern ensuring historical retention, immutability, and state reconstruction.
+- Authoritative durable state establishment, preservation and recovery atomically establish authoritative state and authoritative version progression, preserve the durable management metadata required to interpret that state, and ensure historical retention, immutability, and state reconstruction.
 - The distinction is strictly one of **architectural responsibility**, not a crude division between "ephemeral data" and "durable data". Information managed at runtime frequently represents durable healthcare concepts, but runtime management and durable preservation fulfill distinct architectural purposes.
 
 #### Motivational Grounding & Traceability
 - **Architectural Axioms**:
-  - `AX-05` (Active vs Durable State): Runtime state access and durable preservation remain separate architectural concerns.
+  - `AX-05` (Active vs Durable State): Application-facing active state access/coordination and authoritative durable state/version establishment remain separate architectural concerns.
   - `AX-09` (Ephemeral Operational State): Transient execution states are reconstructable and decoupled from durable health records.
   - `AX-11` (High Availability & Responsiveness): Information access must not be blocked by backend persistence latencies or recovery locks.
   - `AX-14` (Preserve Distinctions): Preserve the boundary between runtime information governance and storage mechanics.
@@ -58,7 +58,7 @@ This course of action establishes that:
 
 #### Capability Realisation & Configuration
 - **Primary Capabilities**: Shapes `EC-03` (State & Lifecycle Governance) and `EC-04` (Information Management & Access).
-- **Component Boundary Impact**: Explicitly establishes the seam between **Mneme** (runtime management of information, context, and state) and **Mnemosyne** (durable preservation and recovery). Neither component subsumes the other; Mnemosyne does not own state progression or application-facing query interfaces.
+- **Component Boundary Impact**: Explicitly establishes the seam between **Mneme** (application-facing access and active information/state management) and **Mnemosyne** (authoritative durable state/version establishment, preservation and recovery). Neither component subsumes the other; Mnemosyne does not own operational activity progression, workflow execution, active distributed state, Digital Twin coordination, or application-facing query interfaces. Mneme may reject or coordinate a proposed state progression before persistence; only Mnemosyne establishes the new authoritative durable state. Following authoritative commit, Mneme converges its active representation toward that state. Mneme active-state generation and Mnemosyne authoritative version remain distinct concurrency domains (`AX-05`).
 
 #### Downstream Direction (Domains 03–13)
 - Application Architecture (Domain 05) must forbid direct presentation/application access to database/JPA layers (enforcing Invariant 8).
@@ -179,7 +179,7 @@ The following matrix synthesises the strategic alignment between Domain 01 Motiv
 | Course of Action | Core Motivational Axioms | Key Strategic Drivers & Goals | Supported Enterprise Capabilities | Key Downstream Architectural Constraint |
 | :--- | :--- | :--- | :--- | :--- |
 | **COA-01: Boundary Membrane Sovereignty** | `AX-02`, `AX-03`, `AX-13`, `AX-14` | Interoperability Mandates, Vendor Independence | `EC-08`, `EC-13` | External standards (FHIR) govern boundary interaction, never internal domain/execution models. |
-| **COA-02: Distinct Management & Preservation of State** | `AX-05`, `AX-09`, `AX-11`, `AX-14` | 24/7 Availability, Enduring Information Preservation | `EC-03`, `EC-04` | Mneme manages runtime access/state; Mnemosyne durably preserves/recovers. No direct DB access by apps. |
+| **COA-02: Distinct Management & Preservation of State** | `AX-05`, `AX-09`, `AX-11`, `AX-14` | 24/7 Availability, Enduring Information Preservation | `EC-03`, `EC-04` | Mneme manages active access/state; Mnemosyne establishes authoritative durable state/versions and preserves/recovers them. No direct DB access by apps. |
 | **COA-03: Meaning-Centric Provenance & Traceability** | `AX-06`, `AX-07`, `AX-08`, `AX-14` | Clinical Governance, Legal Auditability | `EC-06`, `EC-07` | Business and security assertions captured as non-PHI evidence; transient mechanics treated as telemetry. |
 | **COA-04: Governed Asynchronous Activity Progression** | `AX-10`, `AX-15`, `AX-16` | Asynchronous Integration, Resilient Recovery | `EC-03`, `EC-09`, `EC-10` | Units of work track discrete state; execution progression is strictly decoupled from transport/connectivity. |
 | **COA-05: Entity-Centred Operational Coordination** | `AX-01`, `AX-11`, `AX-16` | Patient-Centric Care, High Horizontal Concurrency | `EC-01`, `EC-02`, `EC-10` | Digital Twins coordinate entity state/activity across Mneme/Ponos on demand; twin $\neq$ single FHIR resource. |

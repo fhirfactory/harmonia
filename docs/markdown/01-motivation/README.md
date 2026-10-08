@@ -1,5 +1,7 @@
 # Domain 01 — Motivation
 
+**Domain01 Motivation Architecture: CLOSED / FROZEN**
+
 ## Overview & Pedagogical Guide
 
 Domain 01 — Motivation is the conceptual bedrock of the Harmonia Health Integration Environment (HIE). It establishes an authoritative, unambiguous, and enduring answer to the foundational architectural questions:
@@ -65,6 +67,12 @@ Harmonia explicitly rejects this linear model. In real-world healthcare integrat
 
 This interwoven model is captured visually in the [Harmonia Motivation Orientation View](orientation-view.md).
 
+### Independent Assurance Reconciliation — 2026-10-08
+
+Domain01 has been deliberately reopened through authorised architectural review to establish the real-world need for independent governed assurance. [`REQ-FND-005 — Independent Assurance of Governed Activity`](requirements-constraints/foundational-requirements.md#req-fnd-005-independent-assurance-of-governed-activity) adds assurance of activities, information and outcomes where required, sufficient and trustworthy evidence, separation of assurance authority from subject performance/control, separation from operational management, and explicit inability to conclude when evidence is insufficient.
+
+The [reconciliation record](reviews/independent-assurance-reconciliation.md) records human architectural approval of the normative wording and relationships, unchanged from the completed reconciliation. The Independent Assurance reconciliation is **APPROVED / CLOSED** and `REQ-FND-005` is **APPROVED**. The original four foundational requirements and seven orientation threads are preserved. The new requirement uses existing stakeholder concerns and accountability/evidence motivation without manufacturing a Goal, Outcome or axiom. Domain01 is again **CLOSED / FROZEN**; downstream responsibility, behaviour and information derivation remain unresolved, and subsequent Strategy reconciliation requires separate instruction.
+
 ---
 
 ## 5. Relationship to Downstream Domains
@@ -98,7 +106,7 @@ To preserve architectural hygiene and avoid conceptual leakage, Domain 01 enforc
 - Strategic platform goals and common business outcomes.
 - Enduring, technology-independent architectural principles (Axioms AX-01..AX-11, AX-13..AX-17) and their implications.
 - Historical reclassification and supersession records (e.g., AX-12 transfer to Domain 05).
-- Foundational, protocol-neutral platform requirements (REQ-FND-001..004).
+- Foundational, protocol-neutral platform requirements (REQ-FND-001..005; REQ-FND-005 is APPROVED).
 - Generalized external constraint categories (privacy, identifiers, mandated protocols).
 - Master requirements navigation index and traceability across all domains.
 
@@ -135,6 +143,8 @@ The canonical documentation for Domain 01 is structured into the following topic
    - [AX-17 — Architectural Authority and Explicit Uncertainty](../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty): The authoritative rule for downstream derivation, explicit architectural uncertainty and non-authoritative proposals.
    - [Historical Reclassifications](principles/reclassified-principles.md): Rationale and reclassification details for principles moved downstream (AX-12).
 6. **Requirements & Constraints**
-   - [Foundational Platform Requirements](requirements-constraints/foundational-requirements.md): The four cross-cutting, protocol-neutral platform requirements.
+   - [Foundational Platform Requirements](requirements-constraints/foundational-requirements.md): The five cross-cutting, protocol-neutral platform requirements; `REQ-FND-005` is APPROVED.
    - [External Constraints](requirements-constraints/external-constraints.md): The three generalized external constraint categories.
    - [Master Requirements Navigation Catalogue](requirements-constraints/master-requirements-catalogue.md): Platform-wide requirements traceability index and supersession registry.
+7. **Architectural Reconciliation Record**
+   - [Independent Assurance Reconciliation](reviews/independent-assurance-reconciliation.md): The authorised reopening, bounded Motivation change, truthful traceability, retained distinctions and APPROVED / CLOSED decision.

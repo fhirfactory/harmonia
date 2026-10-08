@@ -22,7 +22,7 @@ The model ensures that:
 1. Enterprise healthcare practice is clearly demarcated from software enablement.
 2. System-enabled capabilities reflect authentic clinical, administrative, and operational contexts rather than integration software mechanics.
 3. System behaviours are decomposed into atomic, testable features.
-4. Cross-cutting, reusable capabilities (EC-01 .. EC-13) are derived systematically without creating centralized bottleneck services.
+4. Cross-cutting, reusable capabilities (EC-01 .. EC-14) are derived systematically without creating centralized bottleneck services.
 5. Technical realisations are guided by ICT Foundation lenses without allowing physical software products to define architectural capabilities.
 
 ---
@@ -35,7 +35,7 @@ The framework progresses through five derivation stages relating different archi
 ┌────────────────────────────────────────────────────────────────────────┐
 │ STAGE 1: BUSINESS CAPABILITY                                           │
 │ What the enterprise must be capable of doing                           │
-│ (16 catalogued capabilities across 4 natural healthcare regions)       │
+│ (18 catalogued capabilities across 5 natural healthcare regions)       │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ requires enablement by
                                     ▼
@@ -54,7 +54,7 @@ The framework progresses through five derivation stages relating different archi
                                     │ derived into reusable
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ STAGE 4: ENTERPRISE CAPABILITY (EC-01 .. EC-13)                          │
+│ STAGE 4: ENTERPRISE CAPABILITY (EC-01 .. EC-14)                          │
 │ Reusable ICT functionality recurring across multiple domains           │
 │ (Decoupled from concurrency, message brokers, and storage DDL)         │
 └───────────────────────────────────┬────────────────────────────────────┘
@@ -80,12 +80,15 @@ The framework progresses through five derivation stages relating different archi
 ### Stage 1: Business Capability
 - **Definition**: What the healthcare enterprise must be capable of doing to deliver healthcare services, govern operations, and ensure patient safety.
 - **Independence**: Exists independently of IT systems, software products, commercial organizational hierarchies, or automation.
-- **Structure**: 16 catalogued Business Capabilities grouped into four natural regions; this derivation-stage position does not assign Capability Tier or Canonical ID:
+- **Structure**: 18 catalogued Business Capabilities grouped into five natural regions; this derivation-stage position does not assign Capability Tier or Canonical ID:
   - *Care & Health Delivery* (01–08)
   - *Health Information & Digital Health* (09–12)
   - *Research & Innovation* (13)
-  - *Enterprise Management* (14–16)
+  - *Health Service Management* (14–16)
+  - *Governance & Assurance* (17–18)
 - **Harmonia Principle**: Harmonia provides core technical enablement for Health Information and Connected Health capabilities (09–12) and materially enables delivery and workforce capabilities (01, 02, 04, 06, 15) without asserting platform ownership over healthcare business practice.
+
+Natural regions are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from Business Enabling contextual views. The appended 17 Health Service Governance and 18 Health Service Assurance retain unresolved relevance classification; 17's enabling derivation remains unresolved. The [approved Health Service Assurance derivation](health-service-assurance-derivation.md) establishes only REQ-FND-005 → BC-18 → the three named Business Enabling Capabilities → collaborative Enterprise Capability realisation. Stage diagrams and existing examples do not establish additional relationships.
 
 ### Stage 2: Business Enabling Capability
 - **Definition**: What software systems and information infrastructure must enable or provide to support the enterprise healthcare capabilities.
@@ -97,6 +100,8 @@ The framework progresses through five derivation stages relating different archi
   5. *Intrinsic / Shared Enablement*: Longitudinal clinical records, health information exchange, clinical collaboration, and workflow coordination.
 - **Independence**: Independent of commercial software product boundaries (PAS, EMR, LIS, RIS) and internal middleware engines.
 
+The approved [Assurance Design, Assurance Criteria Management and Governed Assurance](../capabilities/business-enabling-capabilities.md#health-service-assurance-approved-business-enabling-capabilities) additionally support BC-18. Their contextual-view placement, relevance classification, Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved. Their direct Strategy derivation does not create intermediate Features, a sixth view or inferred hierarchy.
+
 ### Stage 3: Feature (FT)
 - **Definition**: The **smallest useful statement of required system-enabled behaviour** within its owning Business Enabling Capability context. FT is a Feature classification; derivation stage 3 SHALL NOT classify it as CT3.
 - **Criteria**:
@@ -106,11 +111,13 @@ The framework progresses through five derivation stages relating different archi
   - *Component-independent*: Does not prescribe which software module executes it.
 - **Scope Demarcation**: Formally authored for Harmonia-Relevant and Harmonia-Core capabilities in the established catalogue. Reference and Adjacent capabilities are intentionally not decomposed into features. This scope statement establishes no new Capability Tier assignment or mandatory intermediate hierarchy.
 
-### Stage 4: Enterprise Capability (EC-01 .. EC-13)
+### Stage 4: Enterprise Capability (EC-01 .. EC-14)
 - **Definition**: Reusable architectural functionality derived from recurring system-enabled features across multiple healthcare domains.
 - **Derivation Logic**: Derived by analyzing features and asking: *"How is this function delivered?"* Functions that recur vertically across multiple distinct healthcare domains are abstracted into reusable Enterprise Capabilities.
-- **Catalogue**: EC-01 Managed Entity & Relationship through EC-13 Semantic Governance & Conformance.
+- **Catalogue**: The established EC-01 Managed Entity & Relationship through EC-13 Semantic Governance & Conformance, plus approved EC-14 Service Guardian.
 - **Collaborative Nature**: Cross-cutting capabilities (EC-02 Context Management, EC-06 Policy & Control, EC-07 Provenance & Traceability, EC-12 Operational Assurance) are collaborative capabilities realized across multiple components rather than centralized bottleneck services.
+
+EC-14 supplies the assurance-specific semantics needed to bind existing reusable capabilities into governed assurance. The [approved first-pass contribution matrix](health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix) establishes collaborative realisation without extending EC-12's semantics or allocating EC-14 to a component. The generic progression through Features describes the existing derivation convention; it does not manufacture Feature relationships for this explicitly approved assurance derivation.
 
 ### Stage 5: ICT Foundation Capability Lenses
 - **Definition**: Technical enablement lenses that provide cross-cutting engineering criteria, architectural considerations, and technology-substitution testing for realizing Enterprise Capabilities.
@@ -127,7 +134,7 @@ $$\text{\bf Harmonia Capability} = \text{domain-specific enabling behaviour} + \
 
 Where:
 - **Domain-Specific Enabling Behaviour**: The specific clinical or operational logic, context rules, and progression semantics unique to a healthcare domain (e.g., healthcare identifier system rules, diagnostic order workflows, bed turnover readiness).
-- **Reusable Enterprise Capabilities**: The horizontal, platform-wide capabilities (EC-01 through EC-13) that execute state management, context propagation, policy evaluation, provenance capture, and interoperable transport.
+- **Reusable Enterprise Capabilities**: The horizontal, platform-wide capabilities (EC-01 through EC-14) that provide state management, context propagation, policy evaluation, provenance capture, interoperable transport and the approved assurance-specific semantics.
 
 ### Informing Strategic Logical Component Boundaries
 
@@ -158,6 +165,8 @@ When specific combinations of Enterprise Capabilities and domain-specific behavi
 ```
 
 *Architectural Principle*: This composition informs component boundaries; it does **not** imply a rigid, mathematical one-to-one derivation. Components represent cohesive responsibility centres, not one-to-one wrappings of individual capabilities.
+
+The displayed component-clustering examples remain the established EC-01 through EC-13 derivations. This convention does not allocate EC-14 or the three assurance Business Enabling Capabilities to a strategic logical component or establish a relationship to an existing implementation construct.
 
 ---
 
@@ -237,6 +246,8 @@ Harmonia explicitly rejects the generation of exhaustive $N \times M$ traceabili
 
 > **The Business Enabling Capability model was derived with explicit consideration of the Business Capability model and is intended to provide the system-enabled capabilities necessary to support that business landscape. A formal many-to-many mapping between Business Capabilities and Business Enabling Capabilities has not been produced, as such traceability is not required for the current Harmonia architecture and strategy objectives. Such mapping may be developed subsequently where required for benefits realisation, investment analysis, business-case development or other value-traceability purposes.**
 
+This statement records the existing derivation. BC-17 enabling derivation and relationships beyond the approved BC-18 derivation remain unresolved under [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty). The [Health Service Assurance view](health-service-assurance-derivation.md) adds only the approved three Business Enabling Capabilities and bounded fourteen-row EC contribution matrix. That explicit matrix is not an exhaustive Business Capability-to-Business Enabling or Feature-to-Enterprise mapping, does not imply other coverage, and does not change EC-12's established operational semantics.
+
 ### Utilitarian Justification
 1. **Avoidance of False Precision**: In a complex regional HIE, a single Business Capability (e.g., *Care Access & Coordination*) draws upon dozens of enabling capabilities across Entity Management, Service Administration, and Shared Enablement. An exhaustive matrix suggests mechanical one-to-one connections where real systems operate through dynamic, contextual composition.
 2. **Maintenance Overhead vs. Value**: Maintaining a static matrix of hundreds of capabilities across thousands of cells creates substantial documentation drift without providing actionable guidance to software engineers or architects.
@@ -251,4 +262,5 @@ Harmonia explicitly rejects the generation of exhaustive $N \times M$ traceabili
 - [Business Capabilities](../capabilities/business-capabilities.md)
 - [Business Enabling Capabilities](../capabilities/business-enabling-capabilities.md)
 - [Enterprise Capabilities](../capabilities/enterprise-capabilities.md)
+- [Health Service Assurance Strategy Derivation](health-service-assurance-derivation.md)
 - [ICT Foundation Lenses](../capabilities/ict-foundation-lenses.md)

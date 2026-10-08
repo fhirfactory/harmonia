@@ -31,9 +31,12 @@ Subsystems encapsulate distinct architectural purposes. The adoption of an exter
 ### Guardrail G3: Managed Information/State and Managed Activity Remain Distinct
 > **Managed information/state and managed activity remain distinct architectural responsibilities.**
 
-- **Mneme** governs what is known and its current managed state.
+- **Mneme** manages active use of what is known and its current active representation.
 - **Ponos** governs what is happening and how operational activity progresses.
-- **Digital Twins** coordinate the two for real-world entities without collapsing those distinct responsibilities into each other.
+- **Mnemosyne** establishes authoritative durable state and authoritative version progression.
+- **Digital Twins** coordinate active information/state management and operational activity for real-world entities without collapsing those distinct responsibilities into each other.
+
+Under [AX-05](../../../architectural-axioms.md#ax-05-----active-state-and-authoritative-durable-state-are-distinct), operational activity progression, active information/state management, and authoritative durable state establishment are distinct responsibilities. Digital Twins coordinate information/state and activity across the Mneme/Ponos seam; they do not assume Mnemosyne's durable-state authority.
 
 ### Guardrail G4: Execution, Standards Interaction and Transport Remain Distinct Responsibilities
 > **Execution determines that an external interaction is required; standards-facing capability determines the required external representation and interaction semantics; transport and connectivity capabilities determine how that interaction is physically conveyed.**
@@ -67,13 +70,14 @@ To validate each candidate logical component boundary against architectural requ
 #### Strategic Architectural Responsibility
 > **Mneme governs and provides runtime management of Harmonia-managed information, relationships, context, and state.**
 
-Mneme serves as the application-facing operational authority for Harmonia-managed clinical, administrative, and operational entities. It provides distributed runtime access, active relationship navigation, entity context correlation, and active state governance.
+Mneme provides the application-facing access boundary for Harmonia-managed clinical, administrative, and operational entities. It provides distributed runtime access, active relationship navigation, entity context correlation, and active state governance.
 
 #### Architectural Scope & Clarification
 - Mneme governs what Harmonia currently knows about managed entities and their active relationships.
-- **Architectural Clarification**: Mneme is **not** merely an "ephemeral cache" or a "transient state tier". Information and state managed through Mneme frequently represent enduring, durable business concepts. The distinction between Mneme and Mnemosyne is one of **architectural responsibility** (runtime management vs. durable preservation), not a crude division between "ephemeral versus durable data".
+- **Architectural Clarification**: Mneme is **not** merely an "ephemeral cache" or a "transient state tier". Information and state managed through Mneme frequently represent enduring, durable business concepts. The distinction between Mneme and Mnemosyne is one of **architectural responsibility** (active runtime management vs. authoritative durable state establishment, preservation and recovery), not a crude division between "ephemeral versus durable data".
 
 #### Anti-Responsibilities (What Mneme Does NOT Own)
+- Does not establish authoritative durable state or authoritative version progression (owned by Mnemosyne).
 - Does not own durable historical preservation or cold-start recovery mechanisms (owned by Mnemosyne).
 - Does not own operational activity progression or task workflow execution (owned by Ponos).
 - Does not govern external standards representation or external wire interaction semantics (owned by Pylai).
@@ -93,24 +97,25 @@ Mneme serves as the application-facing operational authority for Harmonia-manage
 ### Component 2: Mnemosyne (Durable Preservation & Recovery)
 
 #### Strategic Architectural Responsibility
-> **Mnemosyne provides durable preservation and recovery of Harmonia-managed information and state.**
+> **Mnemosyne establishes authoritative durable state and authoritative version progression and provides durable preservation and recovery of Harmonia-managed information and state.**
 
-Mnemosyne is responsible for the enduring retention, historical version preservation, immutability, and state recovery of Harmonia-managed information and lifecycle history.
+Mnemosyne atomically establishes authoritative state and authoritative version progression and persists the durable management metadata required to interpret that state. It is also responsible for the enduring retention, historical version preservation, immutability, and state recovery of Harmonia-managed information and lifecycle history.
 
 #### Architectural Scope & Clarification
 - Mnemosyne ensures that once information or state is committed, it is durably preserved against loss, system failure, or disaster, and can be reliably recovered.
-- **Architectural Clarification**: Mnemosyne does **not** own authoritative state progression, authoritative version progression, "durable truth", or the progression of operational state. Ponos progresses operational activity; Mneme governs runtime information management. Mnemosyne preserves what has been committed and provides the recovery baseline.
+- **Architectural Clarification**: Mnemosyne establishes durable truth; it does **not** own operational activity progression or workflow execution. Ponos progresses operational activity; Mneme manages active information/state use and may reject or coordinate a proposed state progression before persistence. Only Mnemosyne can establish a new authoritative durable state. Following authoritative commit, Mneme converges its active representation toward the authoritative state. Mneme active-state generation and Mnemosyne authoritative version remain distinct concurrency domains; neither substitutes for the other (`AX-05`).
 
 #### Anti-Responsibilities (What Mnemosyne Does NOT Own)
 - Does not govern application-facing runtime access or query presentation (owned by Mneme).
 - Does not own workflow progression or operational task execution (owned by Ponos).
+- Does not own active distributed state (owned by Mneme) or entity-centred Digital Twin coordination.
 - Does not govern external standards interaction semantics (owned by Pylai).
 - Does not expose its persistence implementation (e.g., JPA entities, SQL schemas) as an application-facing query path.
 
 #### 6-Point Boundary Test Evaluation
-- **Responsibility**: PASS. Singular focus on durable preservation and authoritative recovery.
-- **Cohesion**: PASS. Durable persistence, version archiving, and recovery mechanics are tightly cohesive.
-- **Authority**: PASS. Authoritative for durable retention and recovery baselines.
+- **Responsibility**: PASS. Singular focus on authoritative durable state establishment, preservation and recovery.
+- **Cohesion**: PASS. Atomic authoritative persistence, authoritative version progression, version preservation, and recovery mechanics are tightly cohesive.
+- **Authority**: PASS. Establishes authoritative durable state and authoritative versions, including the durable management metadata and recovery baseline.
 - **Dependency**: PASS. Consumes `EC-03`, `EC-04`, and `EC-07` without duplicating them.
 - **Exclusion**: PASS. Excludes application query APIs, workflow progression, and external protocols.
 - **Substitutability**: PASS. Boundary survives replacing underlying relational, document, or object storage technologies.
@@ -130,6 +135,7 @@ Ponos is the execution engine responsible for progressing governed operational a
 - Ponos models and preserves explicit uncertainty (`AX-15`) during distributed execution.
 
 #### Anti-Responsibilities (What Ponos Does NOT Own)
+- Does not establish authoritative durable information state or authoritative version progression (owned by Mnemosyne), including when activity execution causes information to change.
 - Does not own transport adapters, network listeners, or wire protocol logic (governed by Guardrail G4).
 - Does not govern durable preservation or storage management (owned by Mnemosyne).
 - Does not own semantic definitions or canonical schemas (owned by Calliope).
@@ -305,8 +311,8 @@ To prevent architectural drift, a Digital Twin must NEVER be modeled or implemen
 
 | Candidate Boundary | Primary Strategic Responsibility | Primary Anti-Responsibilities | Boundary Test Result |
 | :--- | :--- | :--- | :---: |
-| **Mneme** | Governs and provides runtime management of Harmonia-managed information, relationships, context, and state. | Does not provide durable preservation/recovery; does not own operational activity progression; does not govern external standards representation. | **PASS** (Logical Component) |
-| **Mnemosyne** | Provides durable preservation and recovery of Harmonia-managed information and state. | Does not govern application-facing runtime management; does not own operational activity progression; does not govern external standards representation. | **PASS** (Logical Component) |
+| **Mneme** | Governs and provides runtime management of Harmonia-managed information, relationships, context, and state. | Does not establish authoritative durable state/versions or provide durable preservation/recovery; does not own operational activity progression; does not govern external standards representation. | **PASS** (Logical Component) |
+| **Mnemosyne** | Establishes authoritative durable state/versions and provides durable preservation and recovery of Harmonia-managed information and state. | Does not govern application-facing runtime management; does not own operational activity progression; does not govern external standards representation. | **PASS** (Logical Component) |
 | **Ponos** | Executes and progresses Harmonia-managed operational activity within governed context. | Does not own external transport/connectivity machinery; does not govern durable preservation; does not own semantic definitions. | **PASS** (Logical Component) |
 | **Pylai** | Governs standards-conformant external representation and interaction semantics across the boundary. | Does not progress internal operational activities; does not alter internal managed state destructively; does not own transport/connectivity machinery. | **PASS** (Logical Component) |
 | **Calliope** | Governs semantic definitions, canonical data models, terminology bindings, and conformance rules. | Does not synchronously mediate runtime transactions; does not own durable clinical persistence; does not execute operational tasks. | **PASS** (Logical Component) |
@@ -330,8 +336,8 @@ Harmonia defines six critical cross-component seams where architectural responsi
    ┌───────────┐         ┌───────────┐
    │   Mneme   │◄───────►│   Ponos   │
    └─────┬─────┘         └─────┬─────┘
-         │ Runtime /           │ Execution /
-         │ Preservation        │ Standards Interaction
+         │ Active /            │ Execution /
+         │ Authoritative State │ Standards Interaction
          ▼                     ▼
    ┌───────────┐         ┌───────────┐
    │ Mnemosyne │         │   Pylai   │
@@ -341,16 +347,16 @@ Harmonia defines six critical cross-component seams where architectural responsi
 ```
 
 ### Seam 1: Mneme ↔ Mnemosyne
-- **Architectural Boundary**: Separation of runtime information/state management from durable preservation and recovery.
+- **Architectural Boundary**: Separation of active runtime information/state management from authoritative durable state establishment, preservation and recovery.
 - **Responsibility Split**:
   - **Mneme**: Governs and provides runtime management of Harmonia-managed information, active relationships, context, and state.
-  - **Mnemosyne**: Provides durable preservation and recovery of Harmonia-managed information and state.
-- **Seam Rule**: The distinction is one of **architectural responsibility**, not "ephemeral vs durable data". State managed through Mneme may represent durable business concepts. Mnemosyne does not own state progression or durable truth; Ponos progresses activity, Mneme manages runtime state, and Mnemosyne preserves it. Application tiers must never bypass Mneme to access Mnemosyne persistence stores directly.
+  - **Mnemosyne**: Atomically establishes authoritative durable state and authoritative version progression, persists the durable management metadata required to interpret that state, and provides durable preservation and recovery.
+- **Seam Rule**: The distinction is one of **architectural responsibility**, not "ephemeral vs durable data". State managed through Mneme may represent durable business concepts. Ponos progresses operational activity; Mneme manages active use and may reject or coordinate a proposed state progression before persistence; Mnemosyne establishes durable truth. Following authoritative commit, Mneme converges its active representation toward authoritative state. Active-state generation and authoritative version remain distinct concurrency domains. Application tiers must never bypass Mneme to access Mnemosyne persistence stores directly.
 
 ### Seam 2: Mneme ↔ Ponos
 - **Architectural Boundary**: Separation of managed information/state from operational activity execution (Guardrail G3).
 - **Responsibility Split**:
-  - **Mneme**: Governs what is known and its current managed state.
+  - **Mneme**: Manages active use of what is known and its current active representation.
   - **Ponos**: Governs what is happening and executes operational activity within governed context.
 - **Seam Rule**: Ponos never updates clinical entity state arbitrarily; it requests state transitions through governed contracts. Conversely, Mneme never progresses workflow activities or manages task queues; it reflects state updates resulting from governed activity progression (`AX-16`).
 
@@ -376,10 +382,10 @@ Harmonia defines six critical cross-component seams where architectural responsi
 - **Seam Rule**: Calliope is the design authority; it does not synchronously mediate runtime transactions. Schemas and terminology mappings are published and distributed for local evaluation across components.
 
 ### Seam 6: Iris ↔ Mneme / Ponos
-- **Architectural Boundary**: Decoupled presentation vs. authoritative information and execution.
+- **Architectural Boundary**: Decoupled presentation vs. governed application-facing information access and operational execution.
 - **Responsibility Split**:
   - **Iris**: Provides contextual human interaction, presentation rendering, and human task initiation while remaining strictly non-authoritative.
-  - **Mneme & Ponos**: Serve as the authoritative backend authorities for managed information/state (Mneme) and activity execution (Ponos).
+  - **Mneme & Ponos**: Provide governed application-facing information/state access (Mneme) and operational activity execution (Ponos). Authoritative durable state and authoritative version establishment remain with Mnemosyne.
 - **Seam Rule**: Iris never writes directly to databases or caches. It queries information through defined application-facing interfaces and initiates workflows via governed execution requests.
 
 ---
@@ -400,7 +406,7 @@ The logical component responsibilities emerge naturally from the composition of 
 [EC-03 State & Lifecycle Governance]
 + [EC-04 Information Management & Access]
 + [EC-07 Provenance & Traceability]
-    └──► MNEMOSYNE (Durable Preservation & Recovery)
+    └──► MNEMOSYNE (Authoritative Durable State Establishment, Preservation & Recovery)
 
 [EC-02 Context Management]
 + [EC-03 State & Lifecycle Governance]
@@ -467,12 +473,14 @@ It is **not** a runtime call graph, sequence diagram, integration topology, tran
      │ Definitions │    │            │  & State  │                 │ Activity  │
      │ & Terminology    │            └─────┬─────┘                 │ Execution │
      └─────────────┘    │                  │                       └─────┬─────┘
-                        │                  │ Runtime /                   │
-                        │                  │ Preservation Seam           │
+                        │                  │ Active /                    │
+                        │                  │ Authoritative State Seam    │
                         │                  ▼                             │
                         │            ┌───────────┐                       │
                         │            │ MNEMOSYNE │                       │
-                        │            │  Durable  │                       │
+                        │            │ Durable   │                       │
+                        │            │ State &   │                       │
+                        │            │ Versions  │                       │
                         │            │Preservation                       │
                         │            │ & Recovery│                       │
                         │            └───────────┘                       │
@@ -506,7 +514,7 @@ graph TD
 
     subgraph InformationAndState ["Information & State Governance"]
         Mneme["<b>Mneme</b><br/>Managed Information & State Runtime Management<br/><i>Runtime access, relationship navigation, context & active state</i>"]
-        Mnemosyne["<b>Mnemosyne</b><br/>Durable Preservation & Recovery<br/><i>Durable preservation and recovery of managed information & state</i>"]
+        Mnemosyne["<b>Mnemosyne</b><br/>Authoritative Durable State Establishment, Preservation & Recovery<br/><i>Atomic authoritative state/version establishment and durable management metadata</i>"]
     end
 
     subgraph Execution ["Operational Activity Progression"]
@@ -535,7 +543,7 @@ The Strategic Logical Component Responsibility Model articulates a clean, robust
 1. **Pylai** governs the external standards-facing boundary membrane.
 2. **Calliope** establishes authoritative semantic definitions without runtime transaction bottlenecks.
 3. **Mneme** governs runtime management of information, context, and state.
-4. **Mnemosyne** provides durable preservation and recovery without exposing direct persistence paths.
+4. **Mnemosyne** establishes authoritative durable state and authoritative version progression and provides durable preservation and recovery without exposing direct persistence paths.
 5. **Ponos** progresses operational units of work and workflows without acquiring transport machinery.
 6. **Iris** delivers non-authoritative contextual presentation.
 7. **The Digital Twin** acts as an active management construct coordinating entity-centred state and activity across the Mneme/Ponos seam.

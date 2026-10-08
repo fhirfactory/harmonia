@@ -15,6 +15,8 @@ Where Business Capabilities define the high-level healthcare landscape (what the
 
 Under [approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing), the five views, catalogue numbering, indentation and decomposition presentation do not establish Architectural Element identity, CT1 / CT2 / CT3 assignment, ancestry or root status. The 137 established Features retain their FT type, names and identifiers. Affected complete Capability ancestry and structural Canonical IDs remain unresolved. Derivation may proceed from established ownership and responsibility without inventing intermediate elements.
 
+The approved [Health Service Assurance derivation](../capability-maps/health-service-assurance-derivation.md) additionally establishes **Assurance Design**, **Assurance Criteria Management** and **Governed Assurance** as Business Enabling Capabilities supporting BC-18. Their definitions and assurance principles are recorded [below](#health-service-assurance-approved-business-enabling-capabilities). Their contextual-view placement, relevance classification, Capability Tier, complete ancestry and structural Canonical IDs remain unresolved; they are not assigned through document position or lexical similarity. No additional Feature catalogue is derived.
+
 ---
 
 ## The Five Contextual Views
@@ -659,9 +661,113 @@ Presentation Services consumes established identity, security, and clinical cont
 
 ---
 
+## Health Service Assurance: Approved Business Enabling Capabilities
+
+[REQ-FND-005 — Independent Assurance of Governed Activity](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-005-independent-assurance-of-governed-activity) motivates [BC-18 — Health Service Assurance](business-capabilities.md#18-health-service-assurance). BC-18 requires the three Business Enabling Capabilities defined here. They are collaboratively realised by the approved contributions of existing Enterprise Capabilities and [EC-14 — Service Guardian](enterprise-capabilities.md#ec-14-service-guardian), as recorded in the [contribution matrix](../capability-maps/health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix).
+
+These are Strategy capabilities and semantic boundaries. Their presentation does not create a sixth contextual view, allocate them to an existing view, establish CT1 / CT2 / CT3 ancestry, or derive Business Functions, Services, Processes, Features or assurance Information Concepts.
+
+### Assurance Design
+
+- **Definition**: The capability to determine and define how satisfaction of a governed requirement, constraint or expected behaviour will be assured, including its assurance disposition, applicable criteria, required evidence and evaluation expectations.
+- **Fundamental Question**: **How will satisfaction of this requirement, constraint or expected behaviour be assured?**
+- **Boundary**: Assurance Design is a peer concern to Behaviour Design and Failure/Recovery Design when implementing governed behaviour. This relationship establishes design concerns, not additional capability entries, application design or implementation specifications.
+
+### Assurance Criteria Management
+
+- **Definition**: The capability to establish and manage reusable, governed and temporally identifiable assurance criteria through which subjects may be evaluated.
+- **Scope**: Criteria may express governance rule boundaries, quality constraints, performance expectations, compliance criteria, temporal criteria, evidence requirements or completeness expectations. These are examples, not an exhaustive taxonomy.
+- **Boundary**: Criteria management does not own or replace the authoritative governance requirement from which a criterion may derive. Not every assurance criterion is required to derive from formal Governance. Criteria may have their own lifecycle, version and temporal applicability.
+
+> **Assurance Criteria may operationalise a governing requirement for evaluation, but SHALL NOT silently alter, weaken, strengthen or replace the authoritative requirement from which they derive.**
+
+### Governed Assurance
+
+- **Definition**: The capability to independently evaluate a governed subject against applicable assurance criteria through the assembly and evaluation of sufficient trustworthy evidence, establishing explicit findings, exceptions and assurance conclusions.
+- **Fundamental Question**: **What can we independently establish about this subject against these criteria from the available trustworthy evidence?**
+- **Assurance Semantics**: Establishing the subject/context of assurance, applicable assurance criteria, evidentiary association, assessment, adjudication, findings, exceptions and conclusions.
+- **Boundary**: Governed Assurance does not manage, remediate, assign, delegate, escalate operationally or complete the subject activity. It may manage its own assurance activity; findings may inform operational response without transferring responsibility for that response.
+
+### Assurance Disposition
+
+Every implemented behaviour has an assurance aspect. Every governed obligation, functional requirement, non-functional requirement or other defined implementation requirement SHALL have an explicit assurance disposition identifying how its satisfaction is assured.
+
+The approved disposition concepts are:
+
+- **Generic Assurance sufficient**
+- **Existing Specific Assurance applies**
+- **Existing Assurance must be extended**
+- **New Specific Assurance required**
+- **Not Assurable**
+- **Not Worth Assuring**
+
+These are architectural semantics, not an information model or software enumeration. **Not Assurable** does not mean the requirement is not required. **Not Worth Assuring** does not mean the requirement is optional or unimportant. Both are explicit governed assurance decisions, not absence of assurance configuration. An explicit disposition does not require specific assurance of every individual activity, information item or outcome; REQ-FND-005 applies where assurance is required.
+
+### Generic Processing Assurance and System Operations
+
+Harmonia-managed workflow behaviour SHALL be subject to applicable generic processing assurance. This concerns business-level processing behaviour above and beyond System Operations. Potential concerns include progression, completion, timeliness, expected processing pathway, failure behaviour, recovery behaviour, outcome, and aggregate or pattern behaviour. This is not a final exhaustive criteria catalogue.
+
+System Operations asks whether the technical machinery is operating. Generic processing assurance asks whether governed business behaviour is operating within expected boundaries.
+
+> **Operational Health ≠ Processing Assurance.**
+
+Failure and recovery are part of the expected behavioural space of the activity being executed. The activity/Praxis remains responsible for handling its own expected failure and recovery behaviour. Assurance independently establishes whether normal, failure and recovery behaviour remain within applicable expectations. This responsibility boundary does not allocate assurance execution to Praxis or another solution construct.
+
+[EC-12 Operational Assurance](enterprise-capabilities.md#ec-12-operational-assurance) retains its established resilience, concurrency, exception/recovery and telemetry responsibilities and may contribute directly to generic operational/processing assurance. [EC-14 Service Guardian](enterprise-capabilities.md#ec-14-service-guardian) supplies the distinguishing assurance-specific semantics; neither replaces System Operations or the other Enterprise Capability.
+
+### Assurance Evidence Assembly and Information Ownership
+
+Assurance Evidence Assembly is the evidence-assembly concern within Governed Assurance; this statement does not establish a fourth Business Enabling Capability or a downstream Function, Service or Information Concept.
+
+Underlying information used as assurance evidence remains owned and managed by the capability responsible for that information. Assurance owns the contextual association that particular information constitutes evidence for a particular assurance purpose. Being evidence is contextual, not an intrinsic universal property of source information.
+
+Evidence may be associated through reference, linkage, aggregation, representation, mirroring or derivation. These possibilities do not prescribe technical storage or replication. An association may identify a particular version, state or temporal context of the underlying information.
+
+> **Evidence inclusion may be temporally and version-specific. Association of information as assurance evidence SHALL be capable of distinguishing the particular information state relevant to the assurance activity from the information's current state.**
+
+### Temporally Appropriate Evidence and Criteria
+
+Applicable assurance criteria may themselves be versioned and temporally applicable. A conclusion may depend both on the information state relevant to the evidence and on the criterion state applicable to the subject at the relevant time. Assurance evaluates temporally appropriate evidence against temporally appropriate criteria. No persistence, active-state, replication or retention mechanism is derived here.
+
+### Assessment, Adjudication and Explicit Insufficiency
+
+| Concern | Fundamental question | Semantic boundary |
+| :--- | :--- | :--- |
+| **Assessment** | What does this evidence demonstrate with respect to the applicable criterion? | May supply quantitative, qualitative, compound, temporal or confidence-bearing information. |
+| **Adjudication** | What assurance finding or conclusion follows from that assessment? | Establishes the finding or conclusion from assessed detail; it is distinct from assessment and operational response. |
+
+Assurance SHALL NOT be reduced universally to PASS / FAIL / UNKNOWN. Insufficient evidence is not equivalent to either satisfaction or non-satisfaction. Under REQ-FND-005, where available evidence cannot establish the required assurance conclusion with sufficient confidence, that inability and evidence insufficiency SHALL remain explicit.
+
+An assurance activity may execute correctly while lacking sufficient evidence to establish a conclusion about its subject. This is distinct from an indeterminate execution outcome or execution failure. [REQ-FND-004](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-004-explicit-indeterminate-outcome) and [AX-15](../../../architectural-axioms.md#ax-15--uncertainty-is-preserved-until-resolved) continue to govern uncertainty about operational state, effect or outcome, including the assurance activity's own execution where applicable.
+
+### Assurance Independence
+
+Independent Assurance is performed through an independently governed activity whose progression and assurance conclusion are not controlled by the activity or mechanism responsible for performing or managing the subject being assured.
+
+Independence does not require a different organisation, person, application, Kubernetes cluster or database, an external auditor, or physical separation. The subject activity may supply evidence but SHALL NOT solely determine, suppress, manufacture or retrospectively alter its own assurance conclusion.
+
+> **Evidence dependency does not compromise assurance independence; control dependency does.**
+
+Assurance may manage its own assurance activity without assuming management of the subject activity. No technical or organisational separation is prescribed by this boundary.
+
+### Clinical Services Delivery Assurance Boundary
+
+Health Service Assurance SHALL NOT be represented as Clinical Services Delivery Assurance. Harmonia does not thereby assume responsibility for assuring clinical judgement, professional practice, clinical adequacy of care, or delivery of clinical services by healthcare practitioners or healthcare organisations.
+
+Information concerning clinical service delivery MAY be the subject of governed assurance where an explicit applicable requirement establishes that concern. This does not transfer responsibility for Clinical Services Delivery Assurance to Harmonia. [Capability 06 — Clinical Quality, Safety & Improvement](business-capabilities.md#06-clinical-quality-safety--improvement) retains its established clinical quality/safety responsibilities.
+
+> **Harmonia may assure facts and behaviour concerning clinical activity where explicitly required; it does not thereby assure the clinical adequacy of care.**
+
+### Strategy Derivation Boundary
+
+The [approved derivation view](../capability-maps/health-service-assurance-derivation.md#unresolved-relationships-and-downstream-boundary) stops at collaborative Enterprise Capability realisation. No strategic logical or application component is allocated these capabilities or EC-14. No Dokimasia, Ponos, Praxis, Pragma, Digital Twin, Mneme, Mnemosyne, Calliope, Iris, Pylai or other implementation relationship is established. Business Architecture, Information Architecture and solution derivation remain subsequent activities.
+
+---
+
 ## Downstream Progression
 
 The Business Enabling Capability catalogue and its atomic Features establish what systems must enable for the healthcare enterprise. These features serve as the empirical basis for deriving the reusable, technology-neutral platform capabilities:
-- [Enterprise Capabilities (EC-01 .. EC-13)](enterprise-capabilities.md): Reusable architectural capabilities derived across features.
+- [Enterprise Capabilities (EC-01 .. EC-14)](enterprise-capabilities.md): The established EC-01 through EC-13 and approved EC-14 Service Guardian; the Health Service Assurance contribution model is established without adding Feature or component allocations.
+- [Health Service Assurance Derivation](../capability-maps/health-service-assurance-derivation.md): REQ-FND-005 → BC-18 → the three approved Business Enabling Capabilities → collaborative Enterprise Capability realisation.
 - [Capability Tier Progression Model](../capability-maps/capability-tier-model.md): Detailed vertical derivation rules and representative composition examples.
 - [ICT Foundation Lenses](ict-foundation-lenses.md): Technical enablement considerations guiding technology realization.

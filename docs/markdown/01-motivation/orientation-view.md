@@ -27,7 +27,7 @@ The orientation view is intentionally **selective**: it is designed for cognitiv
 
 ## Canonical Orientation Diagram
 
-The following Mermaid diagram represents the conceptually frozen Harmonia Motivation Orientation View. It models the seven approved threads, co-governing principle relationships, constraint entry points, and direct goal-to-outcome handovers.
+The following Mermaid diagram retains the seven-thread baseline of the Harmonia Motivation Orientation View. It models the seven approved threads, co-governing principle relationships, constraint entry points, and direct goal-to-outcome handovers. The [Independent Assurance reconciliation branch](#independent-assurance-reconciliation-branch), documented separately below, is **APPROVED / CLOSED**; Domain01 is again **CLOSED / FROZEN**.
 
 ```mermaid
 flowchart LR
@@ -330,6 +330,14 @@ flowchart LR
 - **Governing Principle**: [AX-16 Operational Activity & Entity State Progress Together](principles/architectural-axioms.md). Operational activities are not treated merely as disconnected message transfers.
 - **Requirement**: [`REQ-FND-002` Operational Activity Progression State](requirements-constraints/foundational-requirements.md) (`REQ-COORD-001`).
 - **Outcome Handover**: Handover to [Continuous and Resilient Regional Health Information Exchange (O2)](goals-outcomes/business-outcomes.md).
+
+---
+
+## Independent Assurance Reconciliation Branch
+
+[`REQ-FND-005 — Independent Assurance of Governed Activity`](requirements-constraints/foundational-requirements.md#req-fnd-005-independent-assurance-of-governed-activity) is the single new Motivation element in the authorised reconciliation. Its [motivation relationships](requirements-constraints/foundational-requirements.md#motivation-relationships) branch directly from the existing Operator's compliance/forensic-review concerns and engineers' incident-review/verification concerns, with supporting privacy motivation. AX-06, AX-07, AX-08 and AX-14 co-govern; CST-EXT-001 bounds the applicable privacy obligations. O3 remains an intrinsic accountability property related textually to the requirement, without a new causal handover or assurance-outcome equivalence.
+
+The new obligation establishes assurance independence and its operational-management boundary explicitly; neither is inferred from the seven existing threads. Observable progression under REQ-FND-002 may supply evidence but is not assurance. REQ-FND-004 / AX-15 continue to govern operational uncertainty; insufficient evidence for an assurance conclusion is a separate condition, preserved by REQ-FND-005 even when assurance activity executes correctly. No new Goal, Outcome, Driver, Assessment or axiom is needed to complete a visual chain. The [reconciliation record](reviews/independent-assurance-reconciliation.md) records considered and rejected relationships and the completed human approval/refreeze decision; the approved wording and relationships are unchanged.
 
 ---
 

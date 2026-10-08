@@ -24,6 +24,8 @@ The canonical strategic views in this section are:
 1. [Strategic Value Streams](strategic-value-streams.md): Normative R1.x/R2.x Strategic Value Stream model defining the four principal value transformations (VS-01 through VS-04), value transformation stages, Mermaid models, sufficiency boundaries, and representative traceability.
 2. [Strategic Logical Component Responsibility Model](logical-component-responsibilities.md): Comprehensive formulation of the 7 candidate logical responsibilities (Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris, and the Digital Twin construct), including 6-point boundary tests, 6 critical seam validations, representative Enterprise Capability compositions, and the canonical Strategic Responsibility View.
 
+The [AX-05 state-responsibility reconciliation record](../reviews/ax05-state-responsibility-reconciliation.md) documents the bounded review, statement inventory, and correction of the existing Mneme/Mnemosyne responsibility inconsistency against unchanged AX-05.
+
 To navigate across adjacent Domain 02 Strategy areas:
 - [Domain 02 Strategy Overview](../README.md)
 - [Strategic Resources](../resources/index.md)

@@ -71,7 +71,7 @@ The smallest useful statement of required system-enabled behaviour
 (Atomic, testable, technology-neutral)
              │
              ▼
-ENTERPRISE CAPABILITY TIER (EC-01 .. EC-13)
+ENTERPRISE CAPABILITY TIER (EC-01 .. EC-14)
 Reusable platform functionality derived across features
 (Free of middleware, concurrency plumbing, or database specifics)
              │
@@ -82,6 +82,8 @@ Cross-cutting technical enablement considerations
 ```
 
 This progression relates different architectural constructs; it does not establish CT1 / CT2 / CT3 ancestry for the affected Business Enabling Capabilities. Capability Tier, complete ancestry and structural Canonical IDs remain unresolved where not established by architecture. This derivation progression is a Harmonia architectural modeling convention. It respects ArchiMate 3.2 semantics while providing the necessary vertical traceability required for clinical safety and software engineering.
+
+The approved [Health Service Assurance Strategy derivation](capability-maps/health-service-assurance-derivation.md) explicitly establishes **REQ-FND-005 → BC-18 Health Service Assurance → Assurance Design, Assurance Criteria Management and Governed Assurance → collaborative Enterprise Capability realisation, including EC-14 Service Guardian**. No intermediate Features, Capability Tier ancestry or strategic logical component allocation are inferred from the generic progression.
 
 ---
 
@@ -98,7 +100,7 @@ WHAT VALUE DOES HARMONIA CREATE?
        ▼  VS-01 through VS-04 Normative Healthcare Value Transformations
 WHAT MUST THE ENTERPRISE DO?
        │  [Domain 02: Business Capabilities]
-       ▼  16 L1 Business Capabilities across 4 Natural Regions
+       ▼  18 L1 Business Capabilities across 5 Natural Regions
 WHAT MUST SYSTEMS ENABLE?
        │  [Domain 02: Business Enabling Capabilities]
        ▼  5 Contextual Views: Entity, Admin, Delivery, Operations, Intrinsic
@@ -107,7 +109,7 @@ WHAT SYSTEM BEHAVIOUR IS REQUIRED?
        ▼  Atomic, testable system-enabled behaviours in established owning contexts
 WHAT SHOULD BE REUSABLE?
        │  [Domain 02: Enterprise Capabilities]
-       ▼  EC-01 through EC-13 reusable platform capabilities
+       ▼  EC-01 through EC-14 reusable platform capabilities
 WHAT STRATEGIC APPROACHES GUIDE REALISATION?
        │  [Domain 02: Courses of Action]
        ▼  COA-01 through COA-06 Strategic Approaches
@@ -121,6 +123,8 @@ HOW ARE THOSE RESPONSIBILITIES REALISED?
           [Domains 03–13: Architecture Realisation]
           Business, Information, Application, Integration, Technology
 ```
+
+The five natural Business Capability regions are Care & Health Delivery, Health Information & Digital Health, Research & Innovation, Health Service Management, and Governance & Assurance. They are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from the five Business Enabling contextual views. Relevance classification for 17–18, enabling derivation for 17 and relationships beyond the approved BC-18 assurance derivation remain unresolved. The reading path establishes no additional relationships or allocation of EC-14 to the displayed logical components.
 
 ---
 
@@ -141,7 +145,7 @@ Domain 02: Strategy  ───────────────────�
                                                  - Domains 08–13: Security, Operations, etc.
 ```
 
-- **Domain 01 (Motivation) $\to$ Domain 02 (Strategy)**: Domain 01 supplies the goals, drivers, assessments, external constraints, and foundational principles (Axioms AX-01..AX-16) that justify and bound Domain 02 capabilities and courses of action.
+- **Domain 01 (Motivation) $\to$ Domain 02 (Strategy)**: Domain 01 supplies the goals, drivers, assessments, external constraints, foundational requirements (including REQ-FND-005), and governing axioms that justify and bound Domain 02 capabilities and courses of action. AX-17 requires established, unresolved and proposed architecture to remain distinguishable.
 - **Domain 02 (Strategy) $\to$ Domain 03 (Business Architecture)**: Domain 02 identifies the Business and Business Enabling capabilities; Domain 03 models the business actors, clinical roles, business processes, and organizational structures that perform them.
 - **Domain 02 (Strategy) $\to$ Domain 04 (Information Architecture)**: Domain 02 identifies managed information requirements (EC-04) and candidate resources; Domain 04 formalises conceptual information meaning, semantic relationships, responsibility traceability, terminology qualifications and lifecycle semantics. FHIR interoperability profiles are downstream in Domain 06; they do not define upstream concepts.
 - **Domain 02 (Strategy) $\to$ Domains 05 & 06 (Application & Integration Architecture)**: Domain 02 establishes the strategic logical component responsibility model; Domains 05 and 06 define software components, package hierarchies, boundary adapters, and wire protocols.
@@ -154,10 +158,11 @@ Domain 02: Strategy  ───────────────────�
 To preserve architectural clarity, Domain 02 enforces strict boundary rules:
 
 ### What Belongs in Domain 02
-- The 16 canonical L1 Business Capabilities and their Harmonia relevance classifications.
+- The 18 canonical L1 Business Capabilities across five natural operational regions, with existing Harmonia relevance classifications for 01–16; classification for 17–18 and enabling derivation for 17 remain unresolved, while BC-18 has the approved bounded assurance derivation.
 - The Business Enabling Capability model across five authentic healthcare operating contexts (Entity Management, Service Administration, Service Delivery, Health Service Operations, Intrinsic / Shared Enablement).
 - Atomic Features within established Harmonia-Relevant and Harmonia-Core Capability contexts.
-- The 13 technology-neutral Enterprise Capabilities (EC-01 through EC-13).
+- The 14 technology-neutral Enterprise Capabilities (EC-01 through EC-14), preserving the existing thirteen semantics and distinguishing EC-12 Operational Assurance from EC-14 Service Guardian.
+- The three approved assurance Business Enabling Capabilities, assurance principles and first-pass collaborative EC contribution matrix, without additional Feature, contextual-view, Capability Tier or component allocation.
 - The 18 ICT Foundation capabilities acting as cross-cutting technical enablement lenses.
 - The multi-tier capability progression model and representative derivation examples.
 - Strategic logical component responsibility boundaries (Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris, and Digital Twin).
@@ -173,6 +178,8 @@ To preserve architectural clarity, Domain 02 enforces strict boundary rules:
 - **Runtime Component Topologies**: Physical container deployments, clustering configurations, and execution topologies (relegated to Domains 05 and 07).
 - **Exhaustive Many-to-Many Matrices**: Large, brittle NxM mapping matrices between tiers that create maintenance overhead without architectural value.
 
+The assurance reconciliation ends at Strategy. Health Service Assurance does not provide Clinical Services Delivery Assurance: explicitly required assurance of facts and behaviour concerning clinical activity does not assure the clinical adequacy of care. No downstream Business Architecture, Information Architecture, strategic logical component, application component or implementation solution is derived for the assurance capabilities or EC-14.
+
 ---
 
 ## 7. Domain Navigation
@@ -185,9 +192,11 @@ The documentation for Domain 02 is organized as follows:
    - [Strategic Logical Component Responsibilities](strategic-views/logical-component-responsibilities.md): Comprehensive 7-component responsibility model, 6-point boundary tests, 6 critical seam validations, capability compositions, and Strategic Responsibility View.
 2. **Capability Model & Catalogues**
    - [Capability Framework Index](capabilities/index.md): Multi-tier capability progression framework and directory guide.
-   - [Business Capabilities](capabilities/business-capabilities.md): Complete catalogue of the 16 L1 Business Capabilities across four natural regions, with quality rules and Harmonia relevance tiers.
+   - [Business Capabilities](capabilities/business-capabilities.md): Complete catalogue of the 18 L1 Business Capabilities across five natural regions, with quality rules, established Harmonia relevance classifications and explicit unresolved downstream matters for 17–18.
+   - [Five-Region Business Capability Reconciliation](reviews/business-capability-five-region-reconciliation.md): Bounded record of the approved human decision, direct documentary corrections and deferred downstream consequences; the catalogue remains the normative model.
    - [Business Enabling Capabilities](capabilities/business-enabling-capabilities.md): Complete catalogue across 5 contextual views (Entity Management, Service Administration, Service Delivery, Health Service Operations, Intrinsic / Shared Enablement) and atomic Features.
-   - [Enterprise Capabilities](capabilities/enterprise-capabilities.md): Technology-neutral specifications for EC-01 through EC-13 and multi-capability derivation methodology.
+   - [Enterprise Capabilities](capabilities/enterprise-capabilities.md): Technology-neutral specifications for EC-01 through EC-14 and multi-capability derivation methodology; no EC-14 component allocation.
+   - [Health Service Assurance Derivation](capability-maps/health-service-assurance-derivation.md): Approved Motivation → Strategy traceability, fourteen-row collaborative contribution model, preserved semantic boundaries and unresolved downstream relationships.
    - [ICT Foundation Lenses](capabilities/ict-foundation-lenses.md): The 18 ICT Foundation capabilities framed as cross-cutting technical enablement lenses.
 3. **Capability Maps & Derivations**
    - [Capability Maps Index](capability-maps/index.md): Conceptual overview of capability mapping and tier derivation.

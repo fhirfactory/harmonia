@@ -288,14 +288,16 @@ Strategic Value Streams provide the critical bridge between Domain 01 Motivation
 ```mermaid
 graph TD
     MOT["Domain 01: Motivation<br/>Axioms AX-01..16, Drivers, Goals"] --> VS["Strategic Value Streams<br/>VS-01 .. VS-04"]
-    VS --> BC["Business Capabilities<br/>16 L1s across 4 Natural Regions"]
+    VS --> BC["Business Capabilities<br/>18 L1s across 5 Natural Regions"]
     BC --> BEC["Business Enabling Capabilities<br/>5 Healthcare Operating Contexts"]
     BEC --> FEAT["Atomic Features<br/>Testable System Behaviours"]
-    FEAT --> EC["Enterprise Capabilities<br/>EC-01 .. EC-13 Reusable Assets"]
+    FEAT --> EC["Enterprise Capabilities<br/>EC-01 .. EC-13 Established Stream Contributions"]
     EC --> COA["Courses of Action & Resources<br/>COA-01..06 & SR-01..03"]
     COA --> COMP["Strategic Logical Responsibilities<br/>Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris, Digital Twin"]
     COMP --> REAL["Domains 03-13: Downstream Realisation"]
 ```
+
+The Business Capability count reflects the approved [five-region/eighteen-capability model](../capabilities/business-capabilities.md). The aggregate progression diagram does not establish Value Stream relationships for appended Capabilities 17 and 18. The separately approved [Health Service Assurance Strategy derivation](../capability-maps/health-service-assurance-derivation.md) adds the BC-18 Business Enabling and collaborative Enterprise Capability relationships, including EC-14, without establishing a stream, stage, Course of Action, resource or component allocation. The diagram retains the existing EC-01 through EC-13 stream contributions; it does not connect EC-14 to the displayed downstream responsibilities. Assurance-related Value Stream relationships remain unresolved.
 
 ### Traceability Principles
 

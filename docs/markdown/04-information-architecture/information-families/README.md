@@ -21,6 +21,19 @@ The foundational **Entity, Identity, and Service Information Families** establis
 
 ---
 
+## Package2 — G2 Block 1 Candidate Families
+
+The following bounded drafts derive from the current reconciled Business Architecture. They are **G2 candidates awaiting architectural review**, not approved, CLOSED or FROZEN families:
+
+1. **[Referral](referral.md)**: Formal care-assessment/management/responsibility requests, historical progression evidence, supporting referral context, and governed Referral Outcome information for assurance and traceability as approved by G2-D04.
+2. **[Appointment / Scheduling](appointment-scheduling.md)**: Externally authoritative planned arrangements, received scheduling milestones, Harmonia synchronisation knowledge and a proposed consolidated schedule View.
+3. **[Episode / Encounter](episode-encounter.md)**: Encounter tracking context, progression and temporal care-place associations; Episode's longitudinal treatment meaning is approved by G2-D01, with authority/responsibility and association rules unresolved.
+4. **[Order](order.md)**: Bounded requested fulfilment, routing, closed-loop evidence, modification/cancellation coordination and outcome association, reusing the existing Order Concept.
+
+The [G2 Block 1 review](../reviews/package2-g2-block1-review.md) records cross-family relationships, A–D standing, preserved uncertainty and seven architectural review questions. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure). G2 is not CLOSED; G3 and the later Package2 families have not commenced. Package1 semantics above remain unchanged.
+
+---
+
 ## Relationship to the Domain 04 Metamodel & Foundational Patterns
 
 Every concept within an Information Family is an instance of an **Information Concept** classified into one of the canonical metamodel semantic categories:

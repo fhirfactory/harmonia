@@ -1,4 +1,4 @@
-# Canonical Enterprise Capability Model (EC-01 .. EC-13)
+# Canonical Enterprise Capability Model (EC-01 .. EC-14)
 
 ## Overview & Purpose
 
@@ -18,10 +18,10 @@ Where Business Enabling capabilities are defined within authentic clinical, oper
                                     │ "How is this function delivered?"
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ ENTERPRISE CAPABILITY TIER (EC-01 .. EC-13)                            │
-│ 13 Reusable, Technology-Neutral Architectural Capabilities             │
+│ ENTERPRISE CAPABILITY TIER (EC-01 .. EC-14)                             │
+│ 14 Reusable, Technology-Neutral Architectural Capabilities             │
 └───────────────────────────────────┬────────────────────────────────────┘
-                                    │ informs clustering of
+                                    │ EC-01 .. EC-13 inform clustering of
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
 │ STRATEGIC LOGICAL COMPONENTS (Pass B Responsibility Model)             │
@@ -29,11 +29,13 @@ Where Business Enabling capabilities are defined within authentic clinical, oper
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
+The component-clustering progression describes established EC-01 through EC-13 derivations only. EC-14 is added by the approved [Health Service Assurance Strategy derivation](../capability-maps/health-service-assurance-derivation.md); no strategic logical or application component is allocated EC-14 by this diagram or catalogue.
+
 ---
 
 ## Derivation Methodology & Architectural Principles
 
-The 13 Enterprise Capabilities were derived by systematically analyzing the system-enabled features across all five Business Enabling views. The derivation adheres to five strict architectural principles:
+The established EC-01 through EC-13 were derived by systematically analyzing the system-enabled features across all five Business Enabling views. EC-14 Service Guardian is the approved addition derived from REQ-FND-005, BC-18 and the three assurance Business Enabling Capabilities. Their [first-pass contribution model](../capability-maps/health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix) records the explicitly approved relationships without inventing intermediate Features or component allocations. The derivation adheres to five strict architectural principles:
 
 ### 1. Vertical Recurrence Test
 A functional requirement qualifies as an Enterprise Capability only if it recurs vertically across multiple, diverse healthcare domains.
@@ -71,7 +73,7 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
 
 ---
 
-## The 13 Canonical Enterprise Capabilities
+## The 14 Canonical Enterprise Capabilities
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -88,6 +90,7 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
 │  EC-11  Interaction & Experience                                       │
 │  EC-12  Operational Assurance                                          │
 │  EC-13  Semantic Governance & Conformance                              │
+│  EC-14  Service Guardian                                              │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -201,6 +204,10 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
   - Emitting platform telemetry, operational health metrics, and queue processing metrics.
 - **Collaborative Nature**: Realized collaboratively across boundary gateways, messaging infrastructure, execution workers, and storage layers.
 
+#### EC-12 / EC-14 Boundary
+
+EC-12 retains the established scope and responsibilities above. It may contribute directly to generic operational/processing assurance, limited to that contribution in the [approved assurance matrix](../capability-maps/health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix). It does not own the general semantics of assurance disposition, assurance-specific criteria applicability, evidentiary association, assessment against assurance criteria, adjudication, or independent assurance findings and conclusions. Those distinguishing responsibilities are introduced through EC-14 Service Guardian. Operational health and business-level processing assurance remain distinct; EC-12 is not expanded to absorb EC-14.
+
 ### EC-13: Semantic Governance & Conformance
 - **Architectural Scope**: Govern canonical models, schemas, terminologies, value sets, mapping tables, constraint rules, and semantic conformance validation across the enterprise.
 - **Functional Responsibilities**:
@@ -209,6 +216,36 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
   - Validating inbound and outbound message representations against published semantic rules.
   - Governing semantic versioning, deprecation, and backward compatibility across schema revisions.
 - **Component Relationship**: Informs the Calliope strategic logical component, but Calliope is the responsibility centre, not the capability definition.
+
+### EC-14: Service Guardian
+
+- **Architectural Scope**: Service Guardian provides the reusable capability to independently establish whether governed service behaviour, state or outcomes remain within defined assurance expectations by associating applicable criteria and trustworthy evidence with a governed subject, assessing that evidence, adjudicating the assessment, and establishing reportable assurance findings and conclusions.
+- **Functional Responsibilities**:
+  - Supplying assurance-specific semantics for assurance disposition and assurance criteria applicability.
+  - Associating a governed subject/context with applicable criteria and sufficient trustworthy evidence for a particular assurance purpose.
+  - Assessing evidence against applicable criteria and adjudicating assessed detail to establish reportable findings, exceptions and conclusions.
+  - Preserving assurance independence, temporal/version-specific evidence and criteria applicability, and explicit inability to establish a conclusion where evidence is insufficient.
+- **Collaborative Nature**: Supplies the assurance-specific semantics required to bind existing reusable capabilities into governed assurance. It contributes directly to Assurance Design, Assurance Criteria Management and Governed Assurance; direct contribution is not sole realisation. The [approved matrix](../capability-maps/health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix) preserves the contributions of EC-01 through EC-13.
+- **Anti-Responsibilities**: Does not own the underlying governed subject, authoritative governance requirements, or source information used as evidence. Does not perform, manage, remediate, assign, delegate or operationally escalate the subject activity. Does not replace System Operations or EC-12 Operational Assurance, and does not provide Clinical Services Delivery Assurance.
+- **Allocation Boundary**: No strategic logical component, application component, runtime service or implementation construct is allocated EC-14. The catalogue defines a capability, not a software component or deployment boundary.
+
+#### Conceptual Behavioural Sequence
+
+```text
+Define Good Behaviour
+    ↓
+Gather Evidence
+    ↓
+Assess Evidence against Good Behaviour
+    ↓
+Adjudicate Assessed Detail
+    ↓
+Report
+```
+
+This sequence explains the capability; it is not an implementation workflow specification or a derived Business Process. “Define Good Behaviour” identifies assurance expectations and criteria; it does not transfer ownership of governing requirements to Service Guardian. Source information ownership remains with its responsible capability; assurance owns its contextual evidentiary association.
+
+The [Business Enabling assurance principles](business-enabling-capabilities.md#health-service-assurance-approved-business-enabling-capabilities) govern disposition, generic processing assurance, evidence/criteria temporality, assessment/adjudication, independence, failure/recovery and explicit evidence insufficiency. These semantics are not universally reducible to PASS / FAIL / UNKNOWN and do not imply an assurance information model or persistence mechanism.
 
 ---
 
@@ -229,6 +266,7 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
 | **EC-11** | Interaction & Experience | Decoupled presentation, user interaction, dashboards | BEFE mediation, clinical view rendering, alert display |
 | **EC-12** | Operational Assurance | Resilience, concurrency integrity, duplicate suppression | Dual-write safety, deduplication, recovery, telemetry |
 | **EC-13** | Semantic Governance & Conformance| Canonical schemas, terminologies, conformance rules | Schema publishing, concept mapping, constraint checking |
+| **EC-14** | Service Guardian | Independent governed assurance of service behaviour, state and outcomes | Assurance disposition, criteria applicability, evidentiary association, assessment, adjudication, findings and conclusions |
 
 ---
 
@@ -279,3 +317,5 @@ Enterprise Capabilities represent what reusable functions the platform delivers.
 - **Domains 05–07 (Application, Integration, Technology)**: Implements these capabilities through concrete software packages, integration protocols, and runtime technologies.
 - [ICT Foundation Lenses](ict-foundation-lenses.md): Cross-cutting technical enablement considerations guiding technology realization.
 - [Capability Tier Progression Model](../capability-maps/capability-tier-model.md): Detailed vertical derivation rules.
+
+The established component derivations and examples for EC-01 through EC-13 remain unchanged. EC-14 and the three assurance Business Enabling Capabilities stop at the [approved Strategy derivation boundary](../capability-maps/health-service-assurance-derivation.md#unresolved-relationships-and-downstream-boundary): no allocation to Dokimasia, Ponos, Praxis, Pragma, Digital Twin, Mneme, Mnemosyne, Calliope, Iris, Pylai or any other logical/application construct is established. No downstream Business, Information or solution architecture is derived here.
