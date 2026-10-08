@@ -51,7 +51,8 @@ Business Role
 │   ├── Information Steward
 │   ├── Information Custodian
 │   ├── Terminology Steward
-│   └── Guardian
+│   ├── Service Assurance Modeller
+│   └── Service Guardian
 └── Information / Service Participation Roles
     ├── Service Provider
     ├── Information Supplier
@@ -113,7 +114,7 @@ Operational Roles represent personnel and logistics agents responsible for manag
 
 ### 2.5 Governance / Authority Roles
 
-Governance and Authority Roles represent statutory regulators, policy bodies, enterprise data stewards and independent governed-assurance responsibility. Membership of this family does not make governance definition, stewardship and Guardianship the same responsibility or grant the Guardian authority to define governing requirements.
+Governance and Authority Roles represent statutory regulators, policy bodies, enterprise data stewards, Service Assurance modelling and independent governed-assurance responsibility. Membership of this family does not make governance authority, assurance modelling, stewardship and Guardianship the same responsibility or grant either assurance Role authority to approve governing requirements, Assurance Definitions or Assurance Criteria.
 
 - **Regulator**: A statutory authority responsible for professional registration, healthcare standards enforcement, and accreditation (e.g., AHPRA).
 - **Policy Authority**: An entity responsible for defining enterprise or jurisdictional clinical, security, and operational policies.
@@ -122,17 +123,31 @@ Governance and Authority Roles represent statutory regulators, policy bodies, en
 - **Information Custodian**: An entity or designated role holding operational custody and legal responsibility for safeguarding, preserving, and managing access to health records.
 - **Terminology Steward**: An authority responsible for authoring, validating, and governing canonical value sets, clinical ontologies, and semantic mapping tables.
 
+<a id="service-assurance-modeller"></a>
+
+#### Service Assurance Modeller
+
+- **Canonical Name**: `Service Assurance Modeller`. **Element Type**: Business Role. Canonical ID remains unresolved; the metamodel does not establish Role identifier tokens or structural context.
+- **Fundamental Responsibility**: Determine and model how satisfaction of a governed requirement, constraint or expected behaviour is to be assured.
+- **Responsibility Contexts**: [Assurance Design](../../02-strategy/capabilities/business-enabling-capabilities.md#assurance-design) and [Assurance Criteria Management](../../02-strategy/capabilities/business-enabling-capabilities.md#assurance-criteria-management).
+- **Performed Business Functions**: [Design Service Assurance](../behaviours/health-service-assurance.md#design-service-assurance), owned by Assurance Design; [Manage Assurance Criteria](../behaviours/health-service-assurance.md#manage-assurance-criteria), owned by Assurance Criteria Management. Role performance does not replace capability ownership.
+- **Authority Boundary**: Modelling does not inherently confer authority to approve the governing requirement, Assurance Definition or Assurance Criteria. Governance Authority is exercised through existing mandated authority Roles as described in [§3.7](#37-governance-authority-and-assurance-modelling).
+- **Clinical and Operational Boundary**: The Role confers no clinical authority, clinical correctness or adequacy determination, professional clinical judgement, peer-review or clinical-governance authority, or Clinical Services Delivery Assurance. It does not manage, perform, remediate, assign, delegate or operationally escalate the subject activity merely because it models assurance concerning that activity. Explicitly required assurance concerning clinical information or behaviour does not transfer clinical responsibility.
+- **Allocation Boundary**: The Role models how satisfaction is assured; it does not perform the resulting independent assurance merely by fulfilling this Role. Detailed Actor eligibility, mandates, approval workflows, Interactions and Collaborations remain unresolved. No application, runtime or implementation allocation is established.
+
 <a id="guardian-governed-assurance"></a>
+<a id="service-guardian"></a>
 
-#### Guardian — Governed Assurance
+#### Service Guardian
 
-- **Canonical Name**: `Guardian`. **Element Type**: Business Role. Canonical ID remains unresolved; the metamodel does not establish Role identifier tokens or structural context. This definition is distinct from the existing care-support Guardian under Representative; the name/reference collision is explicitly unresolved in [§3.6](#36-canonical-role-name-collision--unresolved).
+- **Canonical Name**: `Service Guardian`. **Element Type**: Business Role. Canonical ID remains unresolved. The previous assurance-role name collision is [resolved in §3.6](#36-assurance-role-naming--resolved); the care-support Guardian under Representative is unchanged.
 - **Definition**: A Business Role responsible for independently evaluating governed activity, information, state or outcomes against applicable assurance criteria and establishing assurance findings and conclusions from sufficient trustworthy evidence.
-- **Derivation**: [REQ-FND-005](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-005-independent-assurance-of-governed-activity), [BC-18 Health Service Assurance](../../02-strategy/capabilities/business-capabilities.md#18-health-service-assurance) and [Governed Assurance](../../02-strategy/capabilities/business-enabling-capabilities.md#governed-assurance) establish the independent evaluation/conclusion responsibility documented in the [bounded Domain03 assurance derivation](../behaviours/health-service-assurance.md). Guardian is not EC-14 Service Guardian: EC-14 is an Enterprise Capability, not a Business Role or software component.
-- **Management Boundary**: A Guardian may manage its own assurance activity but does not thereby manage, perform, remediate, assign, delegate or operationally escalate the subject being assured. Findings may identify a need for operational response; responsibility for that response remains with its applicable operational capability and authority.
-- **Clinical Boundary**: Guardian confers no clinical authority and does not establish clinical adequacy, clinical correctness or professional clinical judgement. Clinical review and clinical assurance remain with their applicable clinical processes and authorities. Information concerning clinical activity may be subject to Guardianship where an explicit applicable governed requirement establishes that concern; this does not constitute Clinical Services Delivery Assurance.
-- **Conclusion Boundary**: Evidence assembly and assessment do not themselves establish a conclusion. Adjudication establishes the finding or conclusion from assessed evidence against applicable criteria. Where evidence is insufficient to conclude with the required confidence, insufficiency remains explicit and implies neither satisfaction nor non-satisfaction. This is distinct from execution failure or uncertainty about whether assurance activity occurred.
-- **Allocation Boundary**: The Role establishes evaluation and conclusion responsibility within Governed Assurance. It does not automatically assign Assurance Design, criterion approval, clinical review or operational response to Guardian. Eligible Actors, mandates, additional Role relationships, Interactions and Collaborations remain unresolved. It has no application, runtime or implementation allocation.
+- **Derivation**: [REQ-FND-005](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-005-independent-assurance-of-governed-activity), [BC-18 Health Service Assurance](../../02-strategy/capabilities/business-capabilities.md#18-health-service-assurance) and [Governed Assurance](../../02-strategy/capabilities/business-enabling-capabilities.md#governed-assurance) establish the independent evaluation/conclusion responsibility documented in the [bounded Domain03 assurance derivation](../behaviours/health-service-assurance.md). The shared name is intentional: **EC-14 Service Guardian is an Enterprise Capability; Service Guardian here is a Business Role.** Neither is a software component.
+- **Performed Business Functions**: [Establish Assurance Context](../behaviours/health-service-assurance.md#establish-assurance-context), [Assess Assurance Evidence](../behaviours/health-service-assurance.md#assess-assurance-evidence) and [Adjudicate Assurance Assessment](../behaviours/health-service-assurance.md#adjudicate-assurance-assessment), all owned by Governed Assurance. Context establishment includes evidence assembly; adjudication includes establishment of findings/conclusions. No separate evidence-assembly, conclusion-establishment or reporting Function is added.
+- **Management Boundary**: Service Guardian may manage progression of its own assurance activity but does not thereby manage, perform, remediate, assign, delegate or operationally escalate the subject being assured. Findings may cause another responsible party to initiate operational response; responsibility for that response remains with its applicable operational capability and authority.
+- **Clinical Boundary**: Service Guardian confers no clinical authority and does not establish clinical adequacy, clinical correctness or professional clinical judgement, replace clinical peer review or clinical governance, or assume Clinical Services Delivery Assurance. Clinical review and clinical assurance remain with their applicable clinical processes and authorities. Information and behaviour concerning clinical activity may be subject to Guardianship where an explicit applicable governed requirement establishes that concern; this does not transfer clinical responsibility.
+- **Conclusion Boundary**: Evidence assessment remains distinct from adjudication. Adjudication determines the finding or conclusion from assessed evidence and applicable criteria. Where evidence is insufficient to conclude with the required confidence, insufficiency remains explicit and implies neither satisfaction nor non-satisfaction. This is distinct from execution failure or uncertainty about whether assurance activity occurred.
+- **Allocation Boundary**: The Role performs independent assurance within Governed Assurance. It does not inherently approve governing requirements, Assurance Definitions or Assurance Criteria, or acquire modelling, clinical review or operational-response responsibility. Eligible Actors, mandates, additional Role relationships, Interactions and Collaborations remain unresolved. It has no application, runtime or implementation allocation.
 
 ---
 
@@ -176,10 +191,20 @@ Harmonia enforces strict guardrails to prevent role conflation and maintain arch
 
 **Governance defines → Management performs → Guardianship assures** is a semantic responsibility distinction, not a required organisational structure, execution sequence or technical topology. A real-world Actor may potentially fulfil different Roles in different contexts where governance permits. REQ-FND-005 still requires independently governed assurance progression and conclusion: the subject's performer or manager must not solely determine, suppress, manufacture or retrospectively alter its assurance outcome. Supplying evidence does not confer control of assurance.
 
-Existing Clinician, Practitioner, Care Coordinator, Policy Authority, steward and operational Role responsibilities remain distinct. Clinical review or clinical assurance does not become Guardian responsibility through lexical similarity, and no generic clinical-assurance authority Role is created. A Role does not itself confer information-access authority.
+Existing Clinician, Practitioner, Care Coordinator, Policy Authority, steward and operational Role responsibilities remain distinct. Neither Service Assurance Modeller nor Service Guardian acquires clinical review or clinical assurance responsibility through lexical similarity, and no generic clinical-assurance authority Role is created. A Role does not itself confer information-access authority.
 
-### 3.6 Canonical Role Name Collision — Unresolved
+<a id="36-canonical-role-name-collision--unresolved"></a>
 
-The incoming catalogue already uses **Guardian** under **Care Support → Representative** for legally appointed custody and personal welfare decision-making. That definition remains authoritative and unchanged. The newly requested **Guardian** under **Governance / Authority** expresses independent governed assurance, not legal representation. Neither role implies the other's mandate or authority.
+### 3.6 Assurance Role Naming — Resolved
 
-An explicit human architectural decision is required to disambiguate their canonical names and references without silently renaming the established Role. Until that decision, references in this derivation identify the governed-assurance definition by its dedicated document anchor and responsibility context. An unqualified `-as-Guardian` reference is ambiguous; a context qualifier does not establish a new canonical Role identity. No Role alias, identifier namespace, grammar extension or migration is invented to resolve the collision. The two meanings remain explicit under AX-14 and the identification decision remains unresolved under AX-17.
+The approved human review decision on 2026-10-08 names the governed-assurance Business Role **Service Guardian**. **Guardian** under **Care Support → Representative** retains its established legal custody and personal-welfare definition unchanged. The naming collision is **resolved**; neither Role implies the other's mandate or authority. EC-14 retains the intentional shared name Service Guardian as a distinct Enterprise Capability.
+
+Qualified references use the existing grammar and identify **Service Guardian** in the Role position for governed assurance; **Guardian** identifies the legal/personal-welfare Role. No actor-specific assurance reference or compact Role token is allocated here because detailed Actor eligibility and such token allocation are unestablished. The earlier assurance wording Guardian is not allocated as an alternative canonical name or Role alias. The old document anchors are retained solely to resolve historical navigation, not as Role identifiers or aliases. Canonical IDs remain unresolved without a namespace or grammar change.
+
+### 3.7 Governance Authority and Assurance Modelling
+
+**Governance Authority establishes what is authoritative. Service Assurance Modeller models how satisfaction will be assured. Service Guardian independently establishes what the applicable evidence demonstrates.**
+
+Governance Authority describes the authority exercised through existing mandated Roles, not a new Business Role. **Policy Authority** already represents enterprise or jurisdictional policy authority; **Regulator** represents statutory authority. Existing steward Roles retain their established subject-specific governance mandates. This reference reuses those responsibilities without expanding their mandates or assigning an approval workflow for Assurance Definitions or Assurance Criteria.
+
+Modelling or managing a criterion does not transfer authority for the requirement from which it derives. Approval authority for a governing requirement, Assurance Definition or Assurance Criteria must be established by the applicable governance mandate; neither assurance Role possesses it merely through modelling or assurance. Exact approval allocation and workflows remain unresolved. See the [responsibility model](../behaviours/health-service-assurance.md#2-governance-management-guardianship-and-clinical-authority).

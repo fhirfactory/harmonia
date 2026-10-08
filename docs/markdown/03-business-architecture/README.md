@@ -73,7 +73,7 @@ docs/markdown/03-business-architecture/
 │   └── business-architecture-metamodel.md       # Metamodel rules, grammar, function/service semantics
 ├── actors-roles/
 │   ├── actors.md                                # 7 Business Actor categories & definitions
-│   └── roles.md                                 # 6 Business Role families, Guardian & guardrails
+│   └── roles.md                                 # 6 Role families; legal Guardian and two assurance Roles
 ├── collaborations-interactions/
 │   ├── collaborations.md                        # 7 Business Collaborations & composition model
 │   └── interactions.md                          # 10 interaction categories & R1 catalogue
@@ -84,7 +84,7 @@ docs/markdown/03-business-architecture/
 │   ├── 03-service-delivery.md                   # Service Delivery Functions & Services (care enablement)
 │   ├── 04-health-service-operations.md          # Health Service Operations Functions & Services (logistics)
 │   ├── 05-intrinsic-enablement.md               # Intrinsic / Shared Enablement Functions & Services
-│   └── health-service-assurance.md              # Bounded assurance responsibility derivation; view placement unresolved
+│   └── health-service-assurance.md              # Two assurance Roles & five Functions; view placement unresolved
 ├── processes/
 │   └── business-processes.md                    # 16 Principal Business Processes & state models
 ├── information-responsibility/
@@ -109,7 +109,7 @@ docs/markdown/03-business-architecture/
 6. **[Business Information Responsibility](information-responsibility/information-responsibility.md)**: Codifies conceptual data stewardship and ownership invariants.
 7. **[Cross-Capability Dependencies](dependencies/cross-capability-dependencies.md)**: Maps inter-capability service consumption relationships and high-level architectural topologies.
 
-**[Bounded Health Service Assurance Derivation](behaviours/health-service-assurance.md)** carries the approved assurance Strategy into the Guardian Business Role and directly supported behaviour, responsibility and information demarcations. It preserves Governance, operational management, Guardianship and clinical review/clinical assurance as distinct responsibilities. Additional Functions, exposed Services, Processes, Interactions, Guardian collaborations and authority relationships remain unresolved where architectural judgement is required. The existing legal care-support Guardian and the new governed-assurance Guardian meanings are distinct; their canonical-name/reference disambiguation remains explicitly unresolved in the Role catalogue.
+**[Bounded Health Service Assurance Derivation](behaviours/health-service-assurance.md)** establishes the approved **Service Assurance Modeller** and **Service Guardian** Business Roles and exactly five [Business Functions](behaviours/health-service-assurance.md#3-direct-capability-scoped-responsibility-consequences): Design Service Assurance, Manage Assurance Criteria, Establish Assurance Context, Assess Assurance Evidence and Adjudicate Assurance Assessment. It documents the [Governance Authority / modelling / Guardianship responsibility model](behaviours/health-service-assurance.md#2-governance-management-guardianship-and-clinical-authority), the [EC-02 / EC-14 context contribution](behaviours/health-service-assurance.md#41-context-management-contribution) and Assurance Definition as a conceptual modelling output. The naming collision is resolved: legal care-support Guardian remains intact; Service Guardian unambiguously names the assurance Role, distinct from the intentionally same-named EC-14 Enterprise Capability. Further Functions, exposed Services, Processes, Interactions, Collaborations, approval allocations and formal information modelling remain unresolved. No freeze/refreeze is performed.
 
 ---
 
@@ -120,4 +120,4 @@ Domain 03 derives directly from the Business Enabling Capabilities articulated i
 
 The 137 established Strategy Features retain their canonical names and identifiers. Domain03 preserves established Capability-scoped Functions, Services, Processes and Information Responsibilities. Feature association requires semantic evidence: shared subject matter, Capability context or clinical purpose does not establish containment, equivalence, specialisation or realisation. Where not established, the association remains explicitly unestablished without a replacement Feature or invented ancestry.
 
-The [approved Health Service Assurance Strategy](../02-strategy/capability-maps/health-service-assurance-derivation.md) additionally establishes BC-18's Assurance Design, Assurance Criteria Management and Governed Assurance responsibilities and collaborative Enterprise Capability contributions including EC-14 Service Guardian. The [bounded Business Architecture derivation](behaviours/health-service-assurance.md) documents their direct consequences without inferring contextual-view placement, Capability Tier, ancestry, Feature decomposition, structural IDs or further element allocation. Guardian is a Business Role; EC-14 remains an Enterprise Capability. This derivation stops before Information Architecture and introduces no application or implementation allocation.
+The [approved Health Service Assurance Strategy](../02-strategy/capability-maps/health-service-assurance-derivation.md) establishes BC-18's Assurance Design, Assurance Criteria Management and Governed Assurance responsibilities and collaborative Enterprise Capability contributions including EC-02 Context Management and EC-14 Service Guardian. Approved human review supplies the bounded Domain03 Role/Function decisions documented in the [Business Architecture derivation](behaviours/health-service-assurance.md); the Strategy contribution matrix alone does not name Functions or expose Services. Governance authority, assurance modelling, independent Guardianship, operational management and clinical authority remain separate. Contextual-view placement, Capability Tier, ancestry, Feature decomposition and structural IDs remain unresolved. This derivation stops before Information Architecture and introduces no application or implementation allocation.

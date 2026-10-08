@@ -101,8 +101,10 @@ Harmonia explicitly prohibits recreating the following deprecated or redundant c
 - `Practitioner` is **not** synonymous with `Service Provider`.
 - A `Practitioner` represents an individual clinician, whereas a `Service Provider` represents an organisation or facility offering health services (which a practitioner may fulfil).
 
-### 4.4 Guardian Collaboration Derivation Boundary
+<a id="44-guardian-collaboration-derivation-boundary"></a>
 
-The [Guardian Role](../actors-roles/roles.md#guardian-governed-assurance) does not by itself establish a new Business Collaboration or membership of any of the seven existing Collaborations. The approved Strategy's collaborative Enterprise Capability realisation describes capability contributions, not an enduring Actor/Role association. A Guardian collaboration requires an explicit purpose, participants and independently governed control relationships before it can meet the existence threshold in §4.1; those decisions remain unresolved in the [bounded assurance derivation](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established).
+### 4.4 Assurance Role Collaboration Derivation Boundary
+
+The approved [Service Assurance Modeller](../actors-roles/roles.md#service-assurance-modeller) and [Service Guardian](../actors-roles/roles.md#service-guardian) Roles and their five Functions do not by themselves establish a new Business Collaboration or membership of any of the seven existing Collaborations. The approved Strategy's collaborative Enterprise Capability realisation describes capability contributions, not an enduring Actor/Role association. A collaboration involving either assurance Role requires an explicit purpose, participants and governed control relationships, preserving assurance independence, before it can meet the existence threshold in §4.1; those decisions remain unresolved in the [bounded assurance derivation](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established).
 
 Practitioner Collaboration retains clinical peer review, diagnostic consultation and clinical governance discussions; Care-Team and Service-Delivery Collaborations retain their existing clinical responsibilities. These activities do not become Guardianship through review or assurance terminology. Information-Sharing Collaboration's compliance monitoring does not automatically establish independent assurance. No existing collaboration composition or prohibited collaboration concept is changed.
