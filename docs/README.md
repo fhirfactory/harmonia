@@ -39,7 +39,7 @@ docs/
 │   ├── agora.md                              # Matrix Synapse collaboration gateway & Patient Spaces
 │   └── paradeigma.md                         # Synthetic clinical simulation & production isolation
 │
-├── modules/                                  # Deep-dive specifications for all 9 subprojects & 37 leaf modules
+├── modules/                                  # Subproject specifications and framework orientation
 │   ├── calliope.md                           # Canonical models, schemas & converters (1 leaf module)
 │   ├── themis.md                             # Themis API, Core policy engine & Audit stream (3 leaf modules)
 │   ├── hestia.md                             # Mneme caching grid & Mnemosyne JPA servers (5 leaf modules)
@@ -48,7 +48,8 @@ docs/
 │   ├── pylai.md                              # MLLP Inbound/Outbound & FHIR REST gateways (5 leaf modules)
 │   ├── iris.md                               # Iris BEFE WildFly gateway & Vue 3 SPAs (4 leaf modules)
 │   ├── agora.md                              # Matrix AS transaction endpoint & client adapters (4 leaf modules)
-│   └── paradeigma.md                         # Synthetic hospital simulators & ArchUnit suites (7 leaf modules)
+│   ├── paradeigma.md                         # Synthetic hospital simulators & ArchUnit suites (7 leaf modules)
+│   └── dokimasia.md                          # Assurance framework orientation; solution allocation unresolved
 │
 ├── architecture/                             # Core platform architectural specifications
 │   ├── overview.md                           # 5-tier architecture, system layers & domain decomposition
@@ -169,3 +170,7 @@ All architectural descriptions, parameters, and capabilities in this documentati
 - `[CONFIGURED]`: Declared and wired in deployment descriptors, Kustomize manifests, Docker Compose, or configuration files.
 - `[DESIGNED/PLANNED]`: Architectural intent or roadmap capabilities intended for future implementation, never conflated with existing code.
 - `[EXAMPLE/REFERENCE]`: Illustrative sample data, tutorial payloads, or testing fixtures.
+
+## Assurance Framework Orientation
+
+[Dokimasia](modules/dokimasia.md) provides navigation to the approved Health Service Assurance architecture and its unresolved downstream allocation. The [runtime-AI execution position](architecture/execution-model.md#6-runtime-ai-as-adjunct-ergo-execution-capability) records AI as adjunct Ergo capability.

@@ -139,3 +139,53 @@ Ponos WorkEngine manages background worker concurrency using configured worker p
 | `ponos.worker.threads.max` | `PONOS_WORKER_MAX` | `50` | Maximum bursting threads for high-volume spikes. |
 | `ponos.worker.queue.capacity` | `PONOS_QUEUE_CAPACITY` | `1000` | In-memory work queue capacity before backpressure. |
 | `ponos.task.timeout.seconds` | `PONOS_TASK_TIMEOUT` | `30` | Execution timeout before task abort and DLQ escalation. |
+
+
+---
+
+## 6. Runtime AI as Adjunct Ergo Execution Capability
+
+This section records an architectural position, not an implemented AI capability or a runtime topology. It applies [AX-04](../architectural-axioms.md#ax-04-----harmonia-owns-the-semantics-engines-provide-the-machinery), AX-06, AX-07 and AX-08 to preserve Harmonia semantics, authority, governance and meaningful evidence; [AX-14](../architectural-axioms.md#ax-14--semantic-distinctions-are-preserved) and [AX-17](../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) preserve responsibility distinctions and explicit architectural uncertainty.
+
+> **Runtime AI is an adjunct execution capability available to Ergo business logic. Use of an AI agent or AI service does not alter the architectural responsibility, authority, governance or execution semantics of the Ergo, Praxis or Digital Twin invoking it.**
+
+Here, *Ergo* denotes the activity business-logic construct documented as [Ergon (plural Erga)](../concepts/ergon.md). An Ergo may use deterministic business logic, rules/algorithms, governed information/service access or an AI agent/service where appropriate:
+
+```text
+Digital Twin / Praxis
+        |
+        v
+       Ergo
+        +-- deterministic business logic
+        +-- rules / algorithms
+        +-- governed information/service access
+        +-- AI Agent / AI Service
+                    |
+                    v
+             result returned into
+             governed Ergo execution
+```
+
+This is conceptual responsibility/execution guidance, not mandatory runtime topology. An Ergo does not require AI to be an Ergo. A [Digital Twin](../markdown/02-strategy/strategic-views/logical-component-responsibilities.md#component-7-digital-twin-entity-centred-operational-coordination-construct) does not require AI to be a Digital Twin; AI, assurance and Dokimasia do not define Twin identity.
+
+An AI agent/service may perform or assist with business logic on behalf of a governed Harmonia execution construct. Architectural responsibility remains with the Harmonia construct invoking and governing that execution. Use alone does not make the AI a Digital Twin, Business Role, Service Guardian, governance authority, independent workflow authority or owner of the business responsibility. AI remains execution capability unless later approved architecture explicitly establishes a different responsibility. The existing [Praxis](../concepts/praxis.md) and [Ponos](../concepts/ponos.md) responsibility boundaries remain applicable; this principle allocates no Dokimasia execution engine.
+
+### 6.1 Runtime AI and AI-Assisted Development
+
+**AI-assisted development** uses tools such as Codex, Junie, ChatGPT or other AI tooling to design, document, analyse, test or implement Harmonia. These are development-time capabilities; their use to build Harmonia does not make them participants in its runtime business execution.
+
+**Runtime AI** comprises AI agents/services intentionally invoked by Harmonia runtime behaviour, for example Ergo business logic, to contribute to governed business execution. The distinction concerns the purpose of invocation, not the product name: development tooling helps build Harmonia; runtime AI participates in executing Harmonia business behaviour.
+
+### 6.2 Assurance Use and Authority Boundaries
+
+Health Service Assurance is expected to be a significant consumer of runtime AI because assurance involves criteria, patterns and expected behaviour, evidence, contextual interpretation, assessment and potentially complex reasoning. Evidence interpretation, pattern recognition, criteria evaluation and assistance with other governed assurance activities are possible examples, not mandatory implementation decisions.
+
+Assurance semantics remain derived through [Motivation](../markdown/01-motivation/requirements-constraints/foundational-requirements.md), [approved Strategy](../markdown/02-strategy/capability-maps/health-service-assurance-derivation.md) and the [approved Health Service Assurance Business Architecture](../markdown/03-business-architecture/behaviours/health-service-assurance.md). Neither runtime AI nor [Dokimasia](../modules/dokimasia.md) redefines those semantics.
+
+AI may assist with or execute assurance business logic, but its use transfers no assurance authority or responsibility from the governed assurance construct to the agent/service. AI does not become [Service Guardian](../markdown/03-business-architecture/actors-roles/roles.md#service-guardian) merely because it is used during Establish Assurance Context, Assess Assurance Evidence or Adjudicate Assurance Assessment. If future approved architecture permits AI-backed Ergo logic to perform assessment or adjudication, the authority remains that of the governed assurance process/construct under which the Ergo executes. This section neither approves nor prohibits that future allocation.
+
+The approved [non-recursion boundary](../markdown/03-business-architecture/behaviours/health-service-assurance.md#assurance-non-recursion-boundary) remains intact:
+
+> **Governed Assurance does not recursively assure its own execution. Assurance activity execution integrity is provided by the established activity execution framework.**
+
+Adding AI to an assurance Ergo introduces no Assurance of AI, Assurance of Assurance, Guardian-of-Guardian, recursive assurance workflow or requirement for another Service Guardian to oversee the invocation. Any future AI-specific governance, safety, provenance or control requirements must be derived separately if required. No such requirements or detailed AI execution model are established here.
