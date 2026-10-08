@@ -304,3 +304,13 @@ Principal Business Processes (R1)
   - `Completed`: Automated execution succeeded and output artifact produced.
   - `Progression Stalled / Failed`: Transient fault triggers scheduled recovery attempt; permanent failure records failure evidence.
 - **Preserved uncertainty**: Whether stalled/failed is an alternative outcome, reopening/post-completion behaviour or a presentation defect remains unresolved. The displayed sequence does not make success and failure equivalent or establish post-completion transitions.
+
+---
+
+## 6. Governed Assurance Process Derivation Boundary
+
+The [approved assurance Strategy](../../02-strategy/capability-maps/health-service-assurance-derivation.md) establishes independently governed assurance progression and permits management of assurance's own activity. It supplies a reason to assess a bounded assurance Process, but does not establish its canonical name, activity-instance lifecycle, initiation/completion conditions, states, transitions or dispositions. EC-14's conceptual behavioural sequence is explicitly not a derived Business Process. These decisions remain [unresolved](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established); no seventeenth Process is added.
+
+The sixteen existing Processes retain their owning responsibilities and operational or clinical purposes. Clinical review, sign-off, countersignature and the clinical decision coordinated by To Do progression remain with their applicable clinical processes and authorities. To Do completion is not an independent assurance conclusion. Generic Work Order, To Do and Synthetic Task progression do not establish an assurance lifecycle or an assurance execution allocation.
+
+[Guardian](../actors-roles/roles.md#guardian-governed-assurance) may manage its own assurance activity without managing the subject. The subject's progression, expected failure/recovery, operational escalation and remediation remain its responsibility. Generic processing assurance evaluates that behaviour against applicable expectations without taking control of it. Correct execution of assurance with insufficient subject evidence remains distinct from execution failure or indeterminate execution outcome; a later assurance Process must preserve those distinctions rather than reuse operational completion/failure as conclusion semantics.

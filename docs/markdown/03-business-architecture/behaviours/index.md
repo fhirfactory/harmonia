@@ -20,6 +20,8 @@ docs/markdown/03-business-architecture/behaviours/
 └── 05-intrinsic-enablement.md           # Horizontal platform services (LHR, HIE, Control, Workflow, Collab)
 ```
 
+The [bounded Health Service Assurance derivation](health-service-assurance.md) additionally documents Guardian and the directly supported responsibilities of Assurance Design, Assurance Criteria Management and Governed Assurance. It is a capability-scoped view outside the five-view placement model: approved Strategy has not assigned those capabilities to a contextual view. It creates neither a sixth view nor new named Functions, exposed Services or Processes; those derivations remain explicitly unresolved where naming, decomposition, exposure or progression requires architectural judgement.
+
 ---
 
 ## 2. Derivation Conventions

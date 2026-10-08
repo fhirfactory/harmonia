@@ -82,3 +82,13 @@ Discharge publication timing remains unresolved: the dependency row describes pu
 1. **Unidirectional Service Coupling**: Dependency arrows point strictly from the consuming capability to the exposed Business Service. The exposing capability remains completely agnostic of which downstream capabilities consume its services.
 2. **Encapsulated Implementation**: Consuming capabilities depend exclusively upon the abstract service contract and its business semantics, never upon internal algorithms or persistence structures.
 3. **Fail-Closed Security Context**: All cross-capability service invocations must carry a valid, immutable `Security Context` evaluated by *Health Information Control*.
+
+---
+
+## 4. Assurance Dependency Derivation Boundary
+
+The [approved Strategy contribution matrix](../../02-strategy/capability-maps/health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix) establishes contributions to Assurance Design, Assurance Criteria Management and Governed Assurance. It is not a Business Service consumption matrix: neither Direct nor Supporting identifies an exposed Service, its owning Function or an identifiable Business Service consumer. No assurance row or topology edge is added to §2 or §1.2 from those contributions.
+
+Governed Assurance needs applicable criteria and trustworthy evidence. Source-information ownership and subject management remain with their established capabilities. The subject may supply evidence, but that dependency must not give it control of assurance progression or conclusion: **evidence dependency does not compromise assurance independence; control dependency does**. [Guardian](../actors-roles/roles.md#guardian-governed-assurance) does not acquire assignment, delegation, escalation or remediation responsibility through a finding.
+
+Exact evidence/criteria providers, exposed behaviour, Business Service names, contracts, consumers and any findings-to-operational-response interaction remain [unresolved](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established). Existing Service ownership, consumption relationships, security rules and recorded uncertainties remain unchanged. Guardian's Role alone does not grant information-access authority or bypass governed access.

@@ -73,3 +73,21 @@ The table below defines the authoritative R1 Business Information Responsibility
 1. **Stewardship by Owning Capability**: The capability that creates or governs a business information asset is solely accountable for its semantic validity, lifecycle progression, and retention policies.
 2. **Access via Defined Services**: Consuming capabilities must interact with information assets exclusively through the exposed Business Services of the owning capability.
 3. **No Secondary Truth**: Active states, search projections, exchange wrappers, and presentation views are non-authoritative derived artifacts; they must never be treated as secondary sources of durable truth.
+
+---
+
+## 4. Assurance-Related Business Information Responsibilities
+
+The [approved assurance definitions](../../02-strategy/capabilities/business-enabling-capabilities.md#health-service-assurance-approved-business-enabling-capabilities) directly support the following responsibility demarcations. They supplement the existing matrix without inventing named information assets, assigning an Information Object identity or commencing Information Architecture. The [capability-scoped assurance view](../behaviours/health-service-assurance.md#3-direct-capability-scoped-responsibility-consequences) documents the behaviour supporting each responsibility; discrete Function/Process decomposition remains unresolved.
+
+| Established responsibility context | Directly supported assurance-related information responsibility | Preserved boundary / unresolved authority |
+| :--- | :--- | :--- |
+| **Assurance Design** | Defines how satisfaction is assured: assurance disposition, applicable criteria, required evidence and evaluation expectations. | Does not own or redefine the governing requirement. Responsibility for approving a disposition or establishing its governing authority is not derived. No asset name or detailed information lifecycle is assigned. |
+| **Assurance Criteria Management** | Establishes and manages reusable, governed, temporally identifiable assurance criteria, including applicable evidence and completeness expectations where defined. | Criteria do not silently alter, weaken, strengthen or replace their source requirement; not all criteria must derive from formal Governance. Criterion approval authority, detailed lifecycle and retention responsibilities remain unresolved. |
+| **Governed Assurance** | Owns the contextual association that particular information constitutes evidence for a particular assurance purpose; establishes its assessments, findings, exceptions and conclusions while preserving evidence insufficiency. | Does not acquire source-information ownership, originating authority or control of the subject. Additional asset decomposition, custody, conclusion approval/revision authority, lifecycle and retention rules remain unresolved. |
+
+The [Guardian Role](../actors-roles/roles.md#guardian-governed-assurance) establishes evaluation and conclusion responsibility; a Role assignment does not transfer capability ownership of source information or confer clinical authority. Legal mandates in Client Relationships and clinical review, clinical qualification, clinical document and clinical-information authority remain distinct from governed assurance.
+
+Evidence inclusion is contextual, potentially temporal and version-specific. Its association must distinguish the information state relevant to assurance from the current source state. Evaluation uses temporally appropriate evidence and criteria. These obligations do not select a storage, replication or preservation mechanism or make all operational observations permanent evidence.
+
+Provenance, audit information, evidence, assessment, findings/conclusions, Business Outcomes and the operational response remain distinct. Insufficient assurance evidence establishes neither satisfaction nor non-satisfaction; it is distinct from the assurance activity's own execution uncertainty or failure. A governed assurance conclusion does not establish clinical adequacy, clinical correctness or professional judgement. No assurance information taxonomy, representation, persistence structure or downstream information model is derived.

@@ -100,3 +100,9 @@ Harmonia explicitly prohibits recreating the following deprecated or redundant c
 `Patient`, `Practitioner`, and `Service Provider` are foundational architectural entities and subjects within the Harmonia ecosystem:
 - `Practitioner` is **not** synonymous with `Service Provider`.
 - A `Practitioner` represents an individual clinician, whereas a `Service Provider` represents an organisation or facility offering health services (which a practitioner may fulfil).
+
+### 4.4 Guardian Collaboration Derivation Boundary
+
+The [Guardian Role](../actors-roles/roles.md#guardian-governed-assurance) does not by itself establish a new Business Collaboration or membership of any of the seven existing Collaborations. The approved Strategy's collaborative Enterprise Capability realisation describes capability contributions, not an enduring Actor/Role association. A Guardian collaboration requires an explicit purpose, participants and independently governed control relationships before it can meet the existence threshold in §4.1; those decisions remain unresolved in the [bounded assurance derivation](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established).
+
+Practitioner Collaboration retains clinical peer review, diagnostic consultation and clinical governance discussions; Care-Team and Service-Delivery Collaborations retain their existing clinical responsibilities. These activities do not become Guardianship through review or assurance terminology. Information-Sharing Collaboration's compliance monitoring does not automatically establish independent assurance. No existing collaboration composition or prohibited collaboration concept is changed.

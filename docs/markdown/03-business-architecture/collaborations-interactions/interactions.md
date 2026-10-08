@@ -127,6 +127,8 @@ Interactions governing clinical quality audits, mortality reviews, and peer eval
 - **Review Request**: A formal submission requesting clinical peer review, adverse event evaluation, or diagnostic second opinion.
 - **Review Outcome**: The documented findings, consensus decisions, and quality recommendations resulting from a clinical review.
 
+These retain their clinical-review purpose and applicable clinical authorities. A clinical-quality audit label alone does not establish independent-assurance exchange semantics. Independent evaluation of explicitly governed facts concerning clinical activity must preserve the assurance boundaries; its Interaction definition remains unresolved rather than being inferred from Review Request/Outcome. See the [Guardianship boundary](#4-guardianship-and-clinical-review-boundary).
+
 ### 2.10 Participation & Alignment Interactions
 Interactions governing an entity's formal participation in care programmes, registries, or distribution lists.
 
@@ -169,3 +171,9 @@ Harmonia enforces strict semantic boundary rules to prevent misclassification of
 | **Work Progress vs. Work Outcome** | **Work Progress** | **Work Outcome** | Progress conveys *interim state during active execution*. Outcome conveys *final completion and task disposition*. |
 | **Incident Registration vs. Report** | **Incident Registration** | **Incident Report** | Registration is the *initial call to action bringing an event under governance*. Report is the *investigative communication and findings*. |
 | **Governance vs. Consent Authorisation** | **Authorisation — Governance** | **Authorisation — Consent** | Governance derives from *organisational or statutory mandate*. Consent derives from the *individual patient or legal representative*. |
+
+## 4. Guardianship and Clinical Review Boundary
+
+[Guardian](../actors-roles/roles.md#guardian-governed-assurance) independently evaluates a governed subject against applicable assurance criteria; the Role confers no clinical-review authority. Clinical Information Review and Review Request/Outcome retain their clinical evaluation and professional-judgement semantics. Information Qualification, Policy Direction, operational alerts, Work Progress/Outcome and Incident Registration/Report also retain their defined purposes; none is automatically an assurance conclusion or a Guardian interaction.
+
+The approved upstream architecture permits evidence contribution and establishes reportable assurance findings/conclusions. It does not establish the participating Actors/Roles, request/response commitments, exchange semantics or canonical names needed to add assurance Interactions. Those decisions remain [unresolved](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established). Findings may inform operational response without giving Guardian authority to assign, delegate, remediate or operationally escalate the subject. Explicitly required assurance concerning clinical activity does not constitute Clinical Services Delivery Assurance. The ten existing categories and supplementary Interaction definitions are preserved.
