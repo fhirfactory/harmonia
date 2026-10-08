@@ -16,7 +16,7 @@ A Business Interaction is **not** synonymous with a Business Service:
 
 ## 2. The Canonical R1 Business Interaction Catalogue
 
-Harmonia defines an authoritative catalogue of Business Interactions structured into ten primary functional categories:
+Harmonia defines an authoritative catalogue of Business Interactions structured into ten primary functional categories. The [three approved Service Assurance Interactions](#5-approved-service-assurance-interactions) supplement the existing catalogue without reclassifying its established categories or deriving an additional category through symmetry:
 
 ```text
 Business Interaction Catalogue
@@ -30,9 +30,13 @@ Business Interaction Catalogue
 ├── 8. Event & Alert Notification Interactions
 ├── 9. Review & Clinical Governance Interactions
 ├── 10. Participation & Alignment Interactions
-└── Supplementary Categories:
-    ├── Service Offering & Catalogue Interactions
-    └── Incident Management Interactions
+├── Supplementary Categories:
+│   ├── Service Offering & Catalogue Interactions
+│   └── Incident Management Interactions
+└── Approved Service Assurance Interactions:
+    ├── Service Assurance Request
+    ├── Service Assurance Status
+    └── Service Assurance Outcome Communication
 ```
 
 ---
@@ -127,7 +131,7 @@ Interactions governing clinical quality audits, mortality reviews, and peer eval
 - **Review Request**: A formal submission requesting clinical peer review, adverse event evaluation, or diagnostic second opinion.
 - **Review Outcome**: The documented findings, consensus decisions, and quality recommendations resulting from a clinical review.
 
-These retain their clinical-review purpose and applicable clinical authorities. A clinical-quality audit label alone does not establish independent-assurance exchange semantics. Independent evaluation of explicitly governed facts concerning clinical activity must preserve the assurance boundaries; its Interaction definition remains unresolved rather than being inferred from Review Request/Outcome. See the [Guardianship boundary](#4-guardianship-and-clinical-review-boundary).
+These retain their clinical-review purpose and applicable clinical authorities. A clinical-quality audit label alone does not establish independent-assurance exchange semantics. The separately [approved assurance Interactions](#5-approved-service-assurance-interactions) preserve the assurance boundaries and are not inferred from Review Request/Outcome. See the [Guardianship boundary](#4-guardianship-and-clinical-review-boundary).
 
 ### 2.10 Participation & Alignment Interactions
 Interactions governing an entity's formal participation in care programmes, registries, or distribution lists.
@@ -176,4 +180,48 @@ Harmonia enforces strict semantic boundary rules to prevent misclassification of
 
 [Service Guardian](../actors-roles/roles.md#service-guardian) independently evaluates a governed subject against applicable assurance criteria; [Service Assurance Modeller](../actors-roles/roles.md#service-assurance-modeller) models how satisfaction will be assured. Neither Role confers clinical-review authority, replaces clinical peer review or clinical governance, or assumes Clinical Services Delivery Assurance. Clinical Information Review and Review Request/Outcome retain their clinical evaluation and professional-judgement semantics. Information Qualification, Policy Direction, operational alerts, Work Progress/Outcome and Incident Registration/Report also retain their defined purposes; none is automatically an assurance conclusion or an assurance-Role interaction.
 
-The approved architecture permits evidence contribution and establishes reportable assurance findings/conclusions. The five approved Functions, modelling output and responsibility diagram do not establish participating Actors, exchange-specific Role participation, request/response commitments, initiation semantics, exchange semantics or canonical names needed to add assurance Interactions. Those decisions remain [unresolved](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established). Findings may cause another responsible party to initiate operational response without giving Service Guardian authority to assign, delegate, remediate or operationally escalate the subject. Neither assurance Role acquires that management responsibility. Explicitly required assurance concerning clinical activity does not transfer clinical responsibility. The ten existing categories and supplementary Interaction definitions are preserved.
+The approved human review now establishes exactly the three Interactions below with their associated Services and Role participants. Detailed Actor eligibility, initiation mechanics, information semantics and further exchange commitments remain [unresolved](../behaviours/health-service-assurance.md#6-additional-business-elements-not-yet-established). Findings may cause another responsible party to initiate operational response without giving Service Guardian authority to assign, delegate, remediate or operationally escalate the subject. Neither assurance Role acquires that management responsibility. Care Coordinator may request/receive applicable assurance, but clinical interpretation, professional judgement, clinical adequacy and subsequent clinical management/action remain with the applicable clinical authority. Service Coordinator's request/receipt and System Steward's status observation do not transfer operational management, task progression or improvement responsibility. The ten existing categories and supplementary Interaction definitions are preserved.
+
+## 5. Approved Service Assurance Interactions
+
+Exactly three new assurance Interactions are established. **Element Type: Business Interaction** applies to each. **Canonical IDs remain unresolved**; existing Domain03 Interaction conventions are retained without inventing identifier tokens, Actor instances or a new namespace. The Service Guardian Role participates in Governed Assurance; the other participants act within their existing mandates. Services remain owned by Governed Assurance. Role participation is not Collaboration membership or an extension of clinical, operational or governance authority.
+
+<a id="service-assurance-request"></a>
+
+### 5.1 Service Assurance Request
+
+- **Canonical Name**: `Service Assurance Request`.
+- **Participants**: `Service Guardian` and **one authorised requesting Role** from `Care Coordinator`, `Service Coordinator`, `Regulator`, `Policy Authority`, `System Steward`.
+- **Purpose**: Establishes a request by an authorised Business Role for Service Assurance to be performed against an identifiable governed subject under an applicable assurance basis.
+- **Associated Business Service**: [Request Service Assurance](../behaviours/health-service-assurance.md#request-service-assurance).
+- **Boundary**: The requesting Role identifies the need within its responsibility/authority; it does not control assurance evidence assessment, adjudication or the resulting finding/conclusion, nor acquire authority to define/alter the Assurance Definition or Assurance Criteria. REQ-FND-005 independence remains controlling. Participant variation does not create five separate Interactions. Detailed request information and initiation mechanics remain unresolved.
+
+<a id="service-assurance-status"></a>
+
+### 5.2 Service Assurance Status
+
+- **Canonical Name**: `Service Assurance Status`.
+- **Participants**: `System Steward`, `Service Guardian`.
+- **Purpose**: Enables the System Steward to obtain the current business progression state of an identifiable Service Assurance activity for stewardship purposes.
+- **Associated Business Service**: [Request Service Assurance Status](../behaviours/health-service-assurance.md#request-service-assurance-status).
+- **Boundary**: **Service Assurance Status concerns progression of the assurance activity and SHALL NOT constitute, imply or expose an unadjudicated Assurance Finding or Conclusion.** It supplies no provisional/predicted finding or incomplete assessment presented as a conclusion. Only System Steward consumes the associated Service; requesting assurance does not grant another Role access to status. Status taxonomy remains unresolved.
+
+This Interaction is stewardship / management observation of assurance activity progression, not recursive assurance. Management Monitoring observes activity state to progress/manage activity; assurance evaluates a governed subject against governing criteria to establish a conclusion. Obtaining status is not itself assurance. The [non-recursion boundary](../behaviours/health-service-assurance.md#assurance-non-recursion-boundary) applies.
+
+<a id="service-assurance-outcome-communication"></a>
+
+### 5.3 Service Assurance Outcome Communication
+
+- **Canonical Name**: `Service Assurance Outcome Communication`.
+- **Participants**: `Service Guardian` and **one or more authorised recipient Roles** from `Care Coordinator`, `Service Coordinator`, `Regulator`, `Policy Authority`, `System Steward`.
+- **Purpose**: Communicates an established Assurance Finding or Conclusion to authorised Business Roles for use within their respective responsibilities.
+- **Associated Business Service**: [Communicate Service Assurance Outcome](../behaviours/health-service-assurance.md#communicate-service-assurance-outcome).
+- **Boundary**: The outcome is already established; communication does not assess/adjudicate, reinterpret or alter it. This Interaction is not necessarily a broadcast: one, some or all legitimate recipients may receive the applicable outcome according to authority, responsibility and information requirements. The requesting Role, status consumer and outcome recipient need not coincide. Communication need not require a documentary report.
+
+Service Guardian does not become responsible for the recipient's interpretation within its own authority, management action, remediation, escalation, policy change, process improvement, clinical action or other subsequent response. Financial relevance does not establish Harmonia financial-governance responsibility; the [deliberate Financial Governance exclusion](../behaviours/health-service-assurance.md#financial-governance-exclusion) applies, with exact external recipients still unresolved.
+
+### 5.4 Further Exchange and Collaboration Boundaries
+
+Establish Assurance Context associates source-owned information as evidence; that does not establish that evidence arrives through a new explicit Role-to-Role exchange. Evidence may be available through existing governed information access. Existing Information Access and other authoritative Interactions retain their own meanings and are not reinterpreted as assurance evidence exchanges. Evidence acquisition/exchange Interaction requirements remain unresolved; no Assurance Evidence Contribution, Submit/Provide Assurance Evidence or Evidence Exchange Interaction is introduced.
+
+Use of an Assurance Definition establishes a responsibility/information dependency, not a Modeller-to-Guardian Interaction. No explicit exchange between those Roles is approved here. The three approved Interactions do not establish an enduring structured collective, new Service Assurance Collaboration or membership of an existing Collaboration. [Collaboration decisions remain unresolved](collaborations.md#44-assurance-role-collaboration-derivation-boundary).

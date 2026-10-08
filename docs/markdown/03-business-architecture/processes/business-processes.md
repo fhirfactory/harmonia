@@ -19,12 +19,14 @@ Generic, stateless, or purely retrieval-oriented operations do **not** constitut
 - Terminology and code lookup;
 - User interface presentation and rendering.
 
-### 1.2 The 16 Canonical R1 Business Processes
+<a id="12-the-16-canonical-r1-business-processes"></a>
 
-Harmonia recognises exactly sixteen justified principal Business Processes in R1:
+### 1.2 Canonical Business Process Catalogue
+
+The sixteen established R1 Business Processes are preserved. Three approved Health Service Assurance Processes extend this catalogue to **nineteen Business Processes**; the assurance Processes have established purposes and responsibility boundaries while detailed lifecycle states and transitions remain unresolved.
 
 ```text
-Principal Business Processes (R1)
+Principal Business Processes
 ├── Entity & Administrative Processes
 │   ├── 1. Governed Person Identity Correction
 │   └── 2. Practitioner Verification
@@ -41,10 +43,14 @@ Principal Business Processes (R1)
 │   ├── 11. Patient Transport
 │   ├── 12. Specimen Transport
 │   └── 13. Discharge Progression
-└── Horizontal Workflow Coordination Processes
-    ├── 14. Work Order Progression (Human Doing)
-    ├── 15. To Do Progression (Human Reviewing / Deciding)
-    └── 16. Synthetic Task Progression (Automated System Work)
+├── Horizontal Workflow Coordination Processes
+│   ├── 14. Work Order Progression (Human Doing)
+│   ├── 15. To Do Progression (Human Reviewing / Deciding)
+│   └── 16. Synthetic Task Progression (Automated System Work)
+└── Health Service Assurance Processes
+    ├── 17. Assurance Process Design
+    ├── 18. Assurance Process Execution
+    └── 19. Assurance Process Reporting / Communication
 ```
 
 ---
@@ -307,12 +313,73 @@ Principal Business Processes (R1)
 
 ---
 
-## 6. Governed Assurance Process Derivation Boundary
+<a id="6-governed-assurance-process-derivation-boundary"></a>
 
-The [approved assurance Strategy](../../02-strategy/capability-maps/health-service-assurance-derivation.md) establishes independently governed assurance progression and permits management of assurance's own activity. It supplies a reason to assess a bounded assurance Process, but does not establish its canonical name, activity-instance lifecycle, initiation/completion conditions, states, transitions or dispositions. EC-14's conceptual behavioural sequence is explicitly not a derived Business Process. These decisions remain [unresolved](../behaviours/health-service-assurance.md#5-additional-business-elements-not-yet-established); no seventeenth Process is added.
+## 6. Health Service Assurance Processes
 
-The approved Service Assurance Modeller and Service Guardian Roles, their five Functions and the [responsibility model](../behaviours/health-service-assurance.md#2-governance-management-guardianship-and-clinical-authority) establish semantic responsibilities, not a complete Business Process or mandatory sequence. Distinct assessment and adjudication Functions do not establish lifecycle states or transitions. Assurance Definition is a conceptual modelling output/boundary, not an approval or initiation Process. Detailed criterion lifecycle states and approval workflows remain unresolved.
+The approved human review decisions on 2026-10-08 establish exactly the following three assurance Processes, building on the [assurance Strategy](../../02-strategy/capability-maps/health-service-assurance-derivation.md) and the two established assurance Roles and five Functions. **Element Type: Business Process (PR)** applies to each. Capability ownership below follows the established responsibility; **Feature association is not established** and **Canonical IDs remain unresolved** because Capability Tier, complete ancestry and local identifier allocation remain unestablished. Catalogue numbering is navigation, not identifier allocation.
 
-The sixteen existing Processes retain their owning responsibilities and operational or clinical purposes. Clinical review, sign-off, countersignature and the clinical decision coordinated by To Do progression remain with their applicable clinical processes and authorities. To Do completion is not an independent assurance conclusion. Generic Work Order, To Do and Synthetic Task progression do not establish an assurance lifecycle or an assurance execution allocation.
+<a id="assurance-process-design"></a>
 
-[Service Guardian](../actors-roles/roles.md#service-guardian) may manage progression of its own assurance activity without managing the subject. [Service Assurance Modeller](../actors-roles/roles.md#service-assurance-modeller) does not manage the subject merely by modelling its assurance. The subject's progression, expected failure/recovery, operational escalation and remediation remain its responsibility. Generic processing assurance evaluates that behaviour against applicable expectations without taking control of it. Correct execution of assurance with insufficient subject evidence remains distinct from execution failure or indeterminate execution outcome; a later assurance Process must preserve those distinctions rather than reuse operational completion/failure as conclusion semantics.
+### 6.1 Assurance Process Design
+
+- **Canonical Name**: `Assurance Process Design`.
+- **Owning Capability**: [Assurance Design](../../02-strategy/capabilities/business-enabling-capabilities.md#assurance-design).
+- **Process Purpose**: Establishes and maintains how satisfaction of a governed requirement, constraint or expected behaviour is to be assured.
+- **Principal Performing Role**: [Service Assurance Modeller](../actors-roles/roles.md#service-assurance-modeller).
+- **Participating Functions**: [Design Service Assurance](../behaviours/health-service-assurance.md#design-service-assurance) and [Manage Assurance Criteria](../behaviours/health-service-assurance.md#manage-assurance-criteria). Manage Assurance Criteria retains ownership within Assurance Criteria Management; its participation does not subsume that Capability's criteria lifecycle or transfer its information responsibility to Assurance Design.
+- **Conceptual Output**: [Assurance Definition](../behaviours/health-service-assurance.md#42-assurance-definition--conceptual-modelling-output), retaining its conceptual Business Architecture output/boundary treatment.
+- **Boundary**: Governance Authority establishes what is authoritative. Design does not grant Service Assurance Modeller approval authority. Detailed Assurance Definition lifecycle, approval/publication workflows, criteria lifecycle and information modelling remain unresolved. Participation of the two Functions does not establish a cross-capability lifecycle or a new exchange/Service between their owners.
+
+<a id="assurance-process-execution"></a>
+
+### 6.2 Assurance Process Execution
+
+- **Canonical Name**: `Assurance Process Execution`.
+- **Owning Capability**: [Governed Assurance](../../02-strategy/capabilities/business-enabling-capabilities.md#governed-assurance).
+- **Process Purpose**: Performs defined assurance for an identifiable governed subject in accordance with an applicable Assurance Definition and establishes an Assurance Finding / Conclusion from applicable trustworthy evidence.
+- **Principal Performing Role**: [Service Guardian](../actors-roles/roles.md#service-guardian).
+- **Participating Functions**: [Establish Assurance Context](../behaviours/health-service-assurance.md#establish-assurance-context), [Assess Assurance Evidence](../behaviours/health-service-assurance.md#assess-assurance-evidence) and [Adjudicate Assurance Assessment](../behaviours/health-service-assurance.md#adjudicate-assurance-assessment), all retaining Governed Assurance ownership.
+- **Conceptual Basis and Output**: Applicable Assurance Definition plus identifiable governed subject; Assurance Finding / Conclusion established through adjudication where sufficient trustworthy evidence permits. Correct execution with insufficient evidence does not imply satisfaction or non-satisfaction or force a conclusion.
+- **Boundary**: Function completion does not define Process lifecycle states. No Context Established, Evidence Assessed, Adjudicated or Concluded states are inferred. Detailed lifecycle states, transitions and initiation mechanics remain unresolved. Requesting this Process does not grant control of evidence assessment, adjudication or the resulting finding/conclusion.
+
+```mermaid
+graph TD
+    DEF["Applicable Assurance Definition<br/>Conceptual basis"] -->|Assurance basis| EXEC["PR: Assurance Process Execution<br/>Owner: Governed Assurance"]
+    SUBJECT["Identifiable Governed Subject"] -->|Subject of assurance| EXEC
+    EXEC -->|Participating Function| CONTEXT["FN: Establish Assurance Context"]
+    EXEC -->|Participating Function| ASSESS["FN: Assess Assurance Evidence"]
+    EXEC -->|Participating Function| ADJ["FN: Adjudicate Assurance Assessment"]
+    EXEC -->|Establishes through adjudication| FINDING["Assurance Finding / Conclusion"]
+```
+
+<a id="assurance-process-reporting-communication"></a>
+
+### 6.3 Assurance Process Reporting / Communication
+
+- **Canonical Name**: `Assurance Process Reporting / Communication`.
+- **Owning Capability**: [Governed Assurance](../../02-strategy/capabilities/business-enabling-capabilities.md#governed-assurance).
+- **Process Purpose**: Communicates applicable established Assurance Findings and Conclusions to legitimate recipients according to their responsibilities, authority and information requirements, without altering the established assurance outcome or assuming responsibility for the recipient's subsequent action.
+- **Starting Basis**: An already established Assurance Finding / Conclusion. This Process does not perform assessment or adjudication, alter or reinterpret the established outcome.
+- **Communication Participation**: Service Guardian participates through [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication), associated with [Communicate Service Assurance Outcome](../behaviours/health-service-assurance.md#communicate-service-assurance-outcome). No additional Function is introduced to populate this Process.
+- **Boundary**: Reporting / Communication is not limited to documentary report production; an appropriate Business Interaction may communicate the outcome without a report document. It assumes no operational response, remediation, escalation, policy/compliance response, process improvement, clinical management, clinical judgement or other recipient action. Detailed communication progression and completion semantics remain unresolved.
+
+### 6.4 Process-Family Relationship and Preserved Boundaries
+
+```mermaid
+graph TD
+    DESIGN["PR: Assurance Process Design<br/>Owner: Assurance Design"] -->|Conceptual output| DEF["Assurance Definition"]
+    DEF -->|Reusable assurance basis| EXEC["PR: Assurance Process Execution<br/>Owner: Governed Assurance"]
+    EXEC -->|Established through adjudication| FINDING["Assurance Finding / Conclusion"]
+    FINDING -->|Already established outcome| COMM["PR: Assurance Process Reporting / Communication<br/>Owner: Governed Assurance"]
+```
+
+Both diagrams express semantic Business Architecture relationships, not lifecycle states, mandatory runtime topology, application orchestration, deployment sequence, component structure, message flow or a complete implementation workflow. An applicable Assurance Definition may be reused by multiple Execution instances; each assurance activity does not require a newly executed Design instance. Using the modelling output establishes a responsibility/information dependency, not a Modeller-to-Guardian Interaction or Collaboration.
+
+> **Governed Assurance does not recursively assure its own execution. Assurance activity execution integrity is provided by the established activity execution framework.**
+
+Managed progression of assurance activity does not make that execution another Service Assurance subject. No recursive assurance Process, Function, Service or conclusion is established; the activity execution framework reference allocates no solution component. System Steward's status observation is management/stewardship of progression, not assurance of assurance. See the [non-recursion boundary](../behaviours/health-service-assurance.md#assurance-non-recursion-boundary).
+
+The sixteen pre-existing Processes retain their owners, definitions and state models. Clinical review, sign-off, countersignature and clinical decisions remain with applicable clinical processes/authorities; To Do completion is not an independent assurance conclusion. Generic Work Order, To Do and Synthetic Task progression do not supply assurance lifecycle states or an assurance execution allocation.
+
+Service Guardian may manage its own assurance progression without managing its subject. Neither assurance Role acquires the subject's progression, assignment, delegation, failure/recovery, operational escalation, remediation or improvement responsibility. Execution failure/indeterminate outcome remain distinct from correctly executed assurance with insufficient evidence. [Remaining decisions](../behaviours/health-service-assurance.md#6-additional-business-elements-not-yet-established) include lifecycle states/transitions, initiation mechanics, detailed information semantics and response mechanisms; the three Process names and purposes are resolved.

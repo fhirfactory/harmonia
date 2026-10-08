@@ -76,7 +76,7 @@ docs/markdown/03-business-architecture/
 │   └── roles.md                                 # 6 Role families; legal Guardian and two assurance Roles
 ├── collaborations-interactions/
 │   ├── collaborations.md                        # 7 Business Collaborations & composition model
-│   └── interactions.md                          # 10 interaction categories & R1 catalogue
+│   └── interactions.md                          # 10 categories; three approved assurance Interactions
 ├── behaviours/
 │   ├── index.md                                 # Capability-scoped behaviour structuring principles
 │   ├── 01-entity-management.md                  # Entity Management Functions & Services
@@ -84,9 +84,9 @@ docs/markdown/03-business-architecture/
 │   ├── 03-service-delivery.md                   # Service Delivery Functions & Services (care enablement)
 │   ├── 04-health-service-operations.md          # Health Service Operations Functions & Services (logistics)
 │   ├── 05-intrinsic-enablement.md               # Intrinsic / Shared Enablement Functions & Services
-│   └── health-service-assurance.md              # Two assurance Roles & five Functions; view placement unresolved
+│   └── health-service-assurance.md              # Two Roles, five Functions, three Services & assurance boundaries
 ├── processes/
-│   └── business-processes.md                    # 16 Principal Business Processes & state models
+│   └── business-processes.md                    # 19 Processes; assurance lifecycle detail unresolved
 ├── information-responsibility/
 │   └── information-responsibility.md            # Conceptual Business Information Responsibility matrix
 └── dependencies/
@@ -97,7 +97,7 @@ docs/markdown/03-business-architecture/
 
 1. **[Metamodel & Modelling Rules](metamodel/business-architecture-metamodel.md)**: Establishes the formal architectural definitions, the Qualified Architectural Reference Grammar (`<EntityType>#<Entity>-as-<Role>[#<ContextQualifier>]`), and ownership preservation rules.
 2. **[Business Actors](actors-roles/actors.md) & [Business Roles](actors-roles/roles.md)**: Defines the 7 participant categories (`Person`, `Group`, `Organisation`, `Organisational Unit`, `Government / Regulatory Body`, `System`, `Device`) and the 6 functional role families.
-3. **[Business Collaborations](collaborations-interactions/collaborations.md) & [Business Interactions](collaborations-interactions/interactions.md)**: Details collective collaborative structures and the complete 10-category catalogue of business interactions with boundary guardrails.
+3. **[Business Collaborations](collaborations-interactions/collaborations.md) & [Business Interactions](collaborations-interactions/interactions.md)**: Details collective collaborative structures, ten established Interaction categories and the three approved assurance Interactions with boundary guardrails.
 4. **Capability-Scoped Behaviours across Five Contextual Views**:
    - **[Overview](behaviours/index.md)**: Principles of capability scoping without disconnected global catalogues.
    - **[01. Entity Management](behaviours/01-entity-management.md)**: Client identity, healthcare subjects, provider registries, organisations, locations, and clinical devices.
@@ -105,11 +105,13 @@ docs/markdown/03-business-architecture/
    - **[03. Service Delivery](behaviours/03-service-delivery.md)**: Clinical service enablement contexts across primary, acute, emergency, inpatient, and virtual care.
    - **[04. Health Service Operations](behaviours/04-health-service-operations.md)**: Operational logistics, ward/theatre operations, bed turnover, dispatch, transport, and discharge coordination.
    - **[05. Intrinsic / Shared Enablement](behaviours/05-intrinsic-enablement.md)**: Platform-wide longitudinal clinical record aggregation, information exchange, security control, collaboration, and workflow coordination.
-5. **[Principal Business Processes](processes/business-processes.md)**: Specifies the 16 justified R1 operational state progression lifecycles.
+5. **[Principal Business Processes](processes/business-processes.md)**: Preserves sixteen established R1 Processes/state models and adds three approved assurance Processes, bringing the catalogue to nineteen. Detailed assurance lifecycle states/transitions remain unresolved.
 6. **[Business Information Responsibility](information-responsibility/information-responsibility.md)**: Codifies conceptual data stewardship and ownership invariants.
 7. **[Cross-Capability Dependencies](dependencies/cross-capability-dependencies.md)**: Maps inter-capability service consumption relationships and high-level architectural topologies.
 
-**[Bounded Health Service Assurance Derivation](behaviours/health-service-assurance.md)** establishes the approved **Service Assurance Modeller** and **Service Guardian** Business Roles and exactly five [Business Functions](behaviours/health-service-assurance.md#3-direct-capability-scoped-responsibility-consequences): Design Service Assurance, Manage Assurance Criteria, Establish Assurance Context, Assess Assurance Evidence and Adjudicate Assurance Assessment. It documents the [Governance Authority / modelling / Guardianship responsibility model](behaviours/health-service-assurance.md#2-governance-management-guardianship-and-clinical-authority), the [EC-02 / EC-14 context contribution](behaviours/health-service-assurance.md#41-context-management-contribution) and Assurance Definition as a conceptual modelling output. The naming collision is resolved: legal care-support Guardian remains intact; Service Guardian unambiguously names the assurance Role, distinct from the intentionally same-named EC-14 Enterprise Capability. Further Functions, exposed Services, Processes, Interactions, Collaborations, approval allocations and formal information modelling remain unresolved. No freeze/refreeze is performed.
+**[Bounded Health Service Assurance Derivation](behaviours/health-service-assurance.md)** preserves **Service Assurance Modeller**, **Service Guardian** and the five approved [Functions](behaviours/health-service-assurance.md#3-direct-capability-scoped-responsibility-consequences), and establishes exactly three [Processes](processes/business-processes.md#6-health-service-assurance-processes), three [Services and their consumers](behaviours/health-service-assurance.md#5-approved-governed-assurance-business-services) and three [Interactions and participants](collaborations-interactions/interactions.md#5-approved-service-assurance-interactions). All five approved requesting/recipient Roles remain within their authority; only System Steward consumes assurance status. Status concerns activity progression, distinct from an adjudicated finding/conclusion. Outcome communication is not mandatory broadcast or responsibility for recipient action. [Financial Governance is deliberately excluded](behaviours/health-service-assurance.md#financial-governance-exclusion) and [assurance does not recurse over its own execution](behaviours/health-service-assurance.md#assurance-non-recursion-boundary).
+
+The [Governance Authority / modelling / Guardianship responsibility model](behaviours/health-service-assurance.md#2-governance-management-guardianship-and-clinical-authority), [EC-02 / EC-14 context contribution](behaviours/health-service-assurance.md#41-context-management-contribution), conceptual Assurance Definition and legal Guardian distinction remain intact. Detailed Process states, further Services/Interactions/Functions, evidence exchange, Collaborations, approval allocation, formal information modelling and downstream allocation remain [unresolved](behaviours/health-service-assurance.md#6-additional-business-elements-not-yet-established). No freeze/refreeze is performed.
 
 ---
 
@@ -120,4 +122,4 @@ Domain 03 derives directly from the Business Enabling Capabilities articulated i
 
 The 137 established Strategy Features retain their canonical names and identifiers. Domain03 preserves established Capability-scoped Functions, Services, Processes and Information Responsibilities. Feature association requires semantic evidence: shared subject matter, Capability context or clinical purpose does not establish containment, equivalence, specialisation or realisation. Where not established, the association remains explicitly unestablished without a replacement Feature or invented ancestry.
 
-The [approved Health Service Assurance Strategy](../02-strategy/capability-maps/health-service-assurance-derivation.md) establishes BC-18's Assurance Design, Assurance Criteria Management and Governed Assurance responsibilities and collaborative Enterprise Capability contributions including EC-02 Context Management and EC-14 Service Guardian. Approved human review supplies the bounded Domain03 Role/Function decisions documented in the [Business Architecture derivation](behaviours/health-service-assurance.md); the Strategy contribution matrix alone does not name Functions or expose Services. Governance authority, assurance modelling, independent Guardianship, operational management and clinical authority remain separate. Contextual-view placement, Capability Tier, ancestry, Feature decomposition and structural IDs remain unresolved. This derivation stops before Information Architecture and introduces no application or implementation allocation.
+The [approved Health Service Assurance Strategy](../02-strategy/capability-maps/health-service-assurance-derivation.md) establishes BC-18's Assurance Design, Assurance Criteria Management and Governed Assurance responsibilities and collaborative Enterprise Capability contributions including EC-02 Context Management and EC-14 Service Guardian. Approved human review supplies the bounded Domain03 Role/Function and Process/Service/Interaction decisions documented in the [Business Architecture derivation](behaviours/health-service-assurance.md); the Strategy contribution matrix alone does not name these behaviours or expose Services. Governance authority, assurance modelling, independent Guardianship, operational management and clinical authority remain separate. Contextual-view placement, Capability Tier, ancestry, Feature decomposition and structural IDs remain unresolved. This derivation stops before Information Architecture and introduces no application or implementation allocation.
