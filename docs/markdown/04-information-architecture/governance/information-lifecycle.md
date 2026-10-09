@@ -67,3 +67,16 @@ In accordance with healthcare safety and legal compliance:
 - **No Physical Destruction / Deletion**: Information Concepts, once asserted or recorded into durable truth, are never subjected to physical destructive deletion.
 - **State Invalidation via Explicit Supersession / Error Status**: Corrections and retractions are represented as new, append-only assertion events (*Superseded*, *Entered-in-Error*, *Refuted*) that preserve the historical record alongside the rationale for correction.
 - **Bi-Temporal Integrity**: Information architecture supports reconstructing what was known at any specific past historical point in time (*as-of query*), distinguishing when an event occurred from when it was recorded or amended.
+
+---
+
+## 4. Information Unit Context and Managed-State Boundary
+
+Lifecycle and Temporal Context are conceptual management concerns within an
+[Information Unit's Context](../metamodel/information-architecture-metamodel.md#65-context).
+The Unit boundary does not impose a universal lifecycle, new lifecycle states or
+temporal model. Authoritative representation/Version progression remains
+distinct from valid Active Generation under AX-05. Documenting these concerns
+does not complete managed-state, history, snapshot or evidence/retention
+reconciliation, or equate information lifecycle with real-world activity or
+workflow progression.

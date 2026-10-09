@@ -55,12 +55,12 @@ Business Information Concept
 - Domain 04 defines semantic models, NOT implementation structures.
 
 ### What Belongs in Domain 04
-- The canonical Information Architecture Metamodel and core semantic concept definitions.
+- The canonical Information Architecture Metamodel and core semantic concept definitions, including Harmonia-managed information and the Information Unit boundary.
 - Reusable information modelling patterns (e.g. Information Relationships, Qualified Containment, Collections, and Definition-to-Accountability progressions).
 - Information governance principles: assertions, granular authority, custody, responsibility, and provenance.
 - Concept-specific information lifecycle governance.
 - Governed information assemblies and purpose-specific information views.
-- The 16 canonical Information Architecture modelling guardrails.
+- The 16 core Information Architecture modelling guardrails and the Information Unit guardrails.
 - Traceability frameworks demonstrating explicit derivation from Domain 03 Business Architecture.
 
 ### What Is Explicitly Excluded from Domain 04
@@ -74,7 +74,13 @@ Business Information Concept
 
 ## 2. Information Architecture Metamodel Overview
 
-Harmonia adopts an explicit, non-hierarchical metamodel rooted in the **Information Concept**:
+Harmonia adopts an explicit, non-hierarchical semantic metamodel rooted in the
+**Information Concept**. The complementary
+[Harmonia-managed information and Information Unit model](metamodel/information-architecture-metamodel.md#5-harmonia-managed-information)
+defines explicit management responsibility and the governed boundary associating
+a Governed Representation with its Management Context. Information Concept
+describes meaning; Information Unit defines the management boundary. Neither
+establishes a downstream schema or representation mapping.
 
 ```mermaid
 graph TD
@@ -96,6 +102,7 @@ graph TD
 7. **Authority Preservation in Assemblies**: Assemblies and Views project and coordinate information without acquiring originating authority over constituent data.
 8. **Bounded Task Semantics**: `ActionableTaskArchetype` defines reusable work; `ActionableTask` identifies particular work; `FulfillmentTask` represents an undertaking (`0..*` per work instance, including concurrency where work semantics allow); `TaskOutcome` represents outcome information. Detailed TaskOutcome questions and ReportedTask remain unresolved.
 9. **Observable Information ≠ Intrinsic Domain Comprehension**: Harmonia governs its own information/execution semantics without intrinsically inferring the meaning of all encapsulated domain content. Developer-defined Ergo logic may intentionally interpret content or invoke optional runtime AI within its governed execution boundary.
+8. **Information Unit Boundary**: Identity, Metadata, Content and Context are conceptual partitions. Unit Structure, Content Structure and Content Format remain distinct; supported Unit structures and semantics are explicitly bound within each architectural release. Persistence, security, provenance and transport must recognise both the Unit and its represented information. Detailed structures and search-result management remain unresolved; see the [canonical Unit model](metamodel/information-architecture-metamodel.md#6-information-unit).
 
 ---
 
@@ -135,7 +142,7 @@ docs/markdown/04-information-architecture/
 
 ### Navigating the Documentation Suite
 
-1. **[Metamodel & Concept Model](metamodel/information-architecture-metamodel.md)**: Establishes the foundational `Information Concept`, semantic categories, characteristics, and the boundary separating semantic models from technical representations.
+1. **[Metamodel & Concept Model](metamodel/information-architecture-metamodel.md)**: Establishes `Information Concept`, semantic categories/characteristics, [Harmonia-managed information](metamodel/information-architecture-metamodel.md#5-harmonia-managed-information), [Information Unit and its conceptual partition](metamodel/information-architecture-metamodel.md#6-information-unit), the [release-bound model](metamodel/information-architecture-metamodel.md#7-release-bound-information-unit-model), [platform/framework obligations](metamodel/information-architecture-metamodel.md#9-platform--framework-obligations) and [downstream/deferred decisions](metamodel/information-architecture-metamodel.md#11-downstream-derivation-and-retained-questions).
 2. **Reusable Information Patterns**:
    - **[Information Relationships](patterns/information-relationships.md)**: The canonical relationship structure, fundamental elements, available characteristics, and strict separation between Relationship Roles and Business Roles.
    - **[Containment and Collections](patterns/containment-and-collections.md)**: Qualified forward recursive containment (`Object.contains(Object)`), entity recursion boundaries, and distinct collection membership semantics.
@@ -144,8 +151,8 @@ docs/markdown/04-information-architecture/
    - **[Authority, Custody & Provenance](governance/authority-custody-provenance.md)**: Definitions of `Assertion`, granular authority at assertion/relationship level, custody, and provenance models.
    - **[Information Lifecycle](governance/information-lifecycle.md)**: Concept-specific lifecycle principles and transition provenance.
 4. **[Assemblies & Views](assemblies-views/assemblies-and-views.md)**: Governance of semantic compositions (`Information Assembly`) and projections (`Information View`) with illustrative candidate context definitions (Healthcare Subject Context, Longitudinal Clinical Record, Encounter Context, etc.).
-5. **[Modelling Guardrails](guardrails/modelling-guardrails.md)**: The 16 authoritative repository-wide guardrails for Information Architecture.
    - **[Observable Information and Domain Meaning](guardrails/observable-information-and-domain-meaning.md)**: Semantic-agnosticism, the conceptual governed Ergo boundary and optional runtime AI, distinct from AI-assisted development.
+5. **[Modelling Guardrails](guardrails/modelling-guardrails.md)**: The 16 core guardrails and navigation to the additional Information Unit guardrails.
 6. **[Domain 03 Traceability](traceability/domain03-traceability.md)**: The 4-tier derivation chain (`Capability/Feature → Function/Process → Information Responsibility → Domain 04 Concept`) and representative reference mappings.
 7. **[Detailed Information Families](information-families/README.md)**: Concrete information family models for foundational entities, identities, locations, services, and devices:
    - **[Person and Healthcare Subject](information-families/person-healthcare-subject.md)**

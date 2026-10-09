@@ -10,11 +10,21 @@ Harmonia formalises the distinction between an **Information Assembly** and an *
 >
 > **Information View**: A purpose- or consumer-oriented projection of information from one or more Information Concepts or Assemblies tailored for a specific actor, role, presentation display, or external integration contract.
 
+The [Information Unit](../metamodel/information-architecture-metamodel.md#8-relationship-to-existing-information-architecture)
+is a distinct governed management boundary. It permits structured, composite or
+related Content according to its defined structure without redefining Assembly
+or View. Composition, presentation or a contextual view does not by itself
+establish an Information Unit or acceptance of management responsibility. No
+Assembly/View-to-Unit mapping follows. For search, the circumstances in which
+Harmonia accepts management of returned information within supported Units
+[remain unresolved](../metamodel/information-architecture-metamodel.md#11-downstream-derivation-and-retained-questions);
+individual resources, result sets, neither and both remain undecided alternatives.
+
 ```mermaid
 graph TD
     subgraph SourceConcepts ["Independently Governed Information Concepts"]
-        C1["Person Identity Record<br/>(Authority: Client Admin)"]
-        C2["Consent Directive<br/>(Authority: Client Privacy)"]
+        C1["Person Identity Record<br/>(Responsibility: Person Identity)"]
+        C2["Consent Directive<br/>(Responsibility: Client Privacy)"]
         C3["Active Problems<br/>(Authority: Attending Clinicians)"]
         C4["Current Allergies<br/>(Authority: Diagnostic Providers/GPs)"]
         C5["Recent Diagnostic Reports<br/>(Authority: Diagnostic Providers)"]
@@ -40,6 +50,8 @@ graph TD
     ASM --> V2
     ASM --> V3
 ```
+
+The Person Identity and Client Privacy labels identify [Business information responsibility](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix), not originating assertion authority. Constituent sources/attestors retain their authority; this illustration establishes no universal clinical source allocation or revised credibility model.
 
 ### 1.1 The Authority Preservation Invariant
 > **Assemblies and Views SHALL NOT acquire originating authority over their constituent information merely through composition, aggregation, or presentation.**

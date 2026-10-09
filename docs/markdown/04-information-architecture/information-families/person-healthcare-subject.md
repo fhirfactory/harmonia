@@ -14,7 +14,7 @@ graph TD
         ID["Identifier<br/>(Value + Authority / Namespace)"]
         ALIAS["Identity Alias<br/>(Governed Name & Alias Assertions)"]
         CORR["Identity Correlation Graph<br/>(Cross-Authority Identifier Linkage)"]
-        CORR_AUDIT["Identity Correction<br/>(Governed Merge / Split / Rectification)"]
+        CORR_AUDIT["Identity Correction<br/>(Source-Established Merge / Split / Rectification)"]
         SUBJ_CTX["Healthcare Subject Context<br/>(Contextual Subject Profile & Preferences)"]
     end
 
@@ -46,8 +46,10 @@ This information family derives directly from Domain 03 Business Information Res
 | Domain 03 Capability | Domain 03 Function / Feature | Domain 03 Information Responsibility | Realised Domain 04 Concepts |
 | :--- | :--- | :--- | :--- |
 | **`Person Identity`** *(established parent: `Client Administration`; complete ancestry unresolved)* | `Resolve Person Identifier`, `Correlate Person Identifiers`, `Maintain Person Identity Aliases`, `Apply Governed Person Identity Correction` | `Person Identity & Identifier Correlation Graph`, `Identity Aliases`, `Identity Merge/Split Audit Log` | `Person`, `Person Identity`, `Identifier`, `Identity Alias`, `Identity Correlation Graph`, `Identity Correction` |
-| **`Healthcare Subject Context`** *(catalogued in the Client Administration grouping; complete ancestry unresolved)* | `Establish Healthcare Subject Context`, `Govern Subject Demographic Context` | `Healthcare Subject Profile`, `Demographic History`, `Communication Preferences` | `Healthcare Subject Context`, `Demographic Trait Assertion`, `Communication Preference` |
-| **`Client Relationships & Support Network`** *(catalogued in the Client Administration grouping; complete ancestry unresolved)* | `Maintain Client Relationships`, `Govern Client Relationship Validity` | `Client Support Network & Legal Mandates`, `Representative Legal Mandate`, `Carer Contact Directory` | `Family Relationship`, `Carer Relationship`, `Legal Representation`, `Support Person Relationship` |
+| **`Healthcare Subject`** *(catalogued in the Client Administration grouping; complete ancestry unresolved)* | `Establish Healthcare Subject Context`, `Govern Subject Demographic Context` | `Healthcare Subject Profile`, `Demographic History`, `Communication Preferences` | `Healthcare Subject Context`, `Demographic Trait Assertion`, `Communication Preference` |
+| **`Client Relationship`** *(catalogued in the Client Administration grouping; complete ancestry unresolved)* | `Maintain Client Relationships`, `Govern Client Relationship Validity` | `Client Support Network & Legal Mandates`, `Representative Legal Mandate`, `Carer Contact Directory` | `Family Relationship`, `Carer Relationship`, `Legal Representation`, `Support Person Relationship` |
+
+The [Person Identity authority boundary](../../03-business-architecture/behaviours/01-entity-management.md#21-person-identity), [Strategy R1.x/R2.x identity scope](../../02-strategy/capabilities/business-enabling-capabilities.md#architectural-scope-statement-harmonia-1x2x-vs-3x-roadmap) and [REQ-FND-003](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-003-subject-referential-integrity) govern this family. Harmonia ingests and maintains source-authoritative identifiers, aliases, established relationships and correlation/federation information, applies source-established corrections/merge outcomes and preserves its operational history. It does not originate probabilistic person/patient matching, golden-record determination, master-person/master-patient selection, authoritative MPI/EMPI reconciliation or identity-merge decisions. Correlation alone does not authorise a merge.
 
 ---
 
@@ -79,13 +81,13 @@ This information family derives directly from Domain 03 Business Information Res
 ### 3.5 Identity Correlation Graph
 - **Semantic Classification**: `Relationship / Correlation Graph`
 - **Definition**: The network of qualified associations linking distinct identifiers originating from different authority namespaces to the same underlying `Person`.
-- **Key Characteristics**: Linkage type (e.g. *Deterministic Match*, *Probabilistic Match*, *Manually Verified*), match confidence score, verification authority, and effective period.
+- **Key Characteristics**: Source-established linkage type, supplied confidence/verification evidence, originating decision authority, and effective period. These describe attributable received information; they do not assign matching or merge-decision authority to Harmonia. Detailed linkage/evidence semantics remain unresolved.
 - **Authority Invariant**: Cross-authority correlation links distinct identifier namespaces without merging or transferring their originating authorities, and without implying destructive consolidation into a single authoritative source identity.
 
 ### 3.6 Identity Correction
 - **Semantic Classification**: `Activity / Governance Record`
-- **Definition**: The formal, audited rectification of identity errors, encompassing person record merges, split operations, and demographic corrections.
-- **Key Characteristics**: Correction type (*Merge*, *Split*, *Rectification*), target identities, rationale, authorizing officer, and timestamp.
+- **Definition**: The audited record and managed consequences of source-established identity corrections, including merge, split/unlink outcomes and demographic rectification within established administrative scope. Harmonia does not adjudicate the originating person-merge decision.
+- **Key Characteristics**: Source-established correction type (*Merge*, *Split*, *Rectification*), target identities, supplied rationale, originating authorising party, and timestamp. Exact correction/evidence semantics beyond the established authority boundary remain unresolved.
 - **Governance Invariant**: Identity corrections preserve full provenance and audit logs. They do not destructively overwrite historical assertions or break historical provenance chains. Source authorities remain distinct and intact.
 
 ### 3.7 Healthcare Subject Context
@@ -144,7 +146,7 @@ In accordance with the frozen Domain 04 foundational guardrail (Guardrail 9):
 
 1. **Federated Identifier Authorities**: Each `Identifier` retains its link to its originating authority (e.g., national identifier scheme, hospital medical record administration, pathology laboratory). Harmonia does not become the originating authority by holding or correlating identifiers.
 2. **Demographic Assertions & Provenance**: Individual demographic assertions (e.g., date of birth, home address, indigenous status) carry their own source provenance, assertion timestamp, and verification status.
-3. **Audit Continuity for Merges/Splits**: When two person identities are merged under governed administration, both historical identifiers and assertion records remain linked through the `Identity Correction` audit log, allowing historical reconstruction of data states at any prior point in time.
+3. **Audit Continuity for Merges/Splits**: When Harmonia applies a source-authoritative merge/split outcome, both historical identifiers and assertion records remain linked through the `Identity Correction` audit log, allowing historical reconstruction of data states at any prior point in time. Application and preservation of that outcome do not make Harmonia its originating decision authority.
 
 ---
 
