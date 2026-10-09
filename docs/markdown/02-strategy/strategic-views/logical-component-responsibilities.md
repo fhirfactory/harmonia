@@ -42,7 +42,7 @@ Subsystems encapsulate distinct architectural purposes. The adoption of an exter
 - **Mnemosyne** establishes authoritative durable state and authoritative version progression.
 - **Digital Twins** coordinate active information/state management and operational activity for real-world entities without collapsing those distinct responsibilities into each other.
 
-Under [AX-05](../../../architectural-axioms.md#ax-05-----active-state-and-authoritative-durable-state-are-distinct), operational activity progression, active information/state management, and authoritative durable state establishment are distinct responsibilities. Digital Twins coordinate information/state and activity across the Mneme/Ponos seam; they do not assume Mnemosyne's durable-state authority.
+Under [AX-05](../../governance/architectural-axioms.md#ax-05), operational activity progression, active information/state management, and authoritative durable state establishment are distinct responsibilities. Digital Twins coordinate information/state and activity across the Mneme/Ponos seam; they do not assume Mnemosyne's durable-state authority.
 
 ### Guardrail G4: Execution, Standards Interaction and Transport Remain Distinct Responsibilities
 > **Execution determines that an external interaction is required; standards-facing capability determines the required external representation and interaction semantics; transport and connectivity capabilities determine how that interaction is physically conveyed.**

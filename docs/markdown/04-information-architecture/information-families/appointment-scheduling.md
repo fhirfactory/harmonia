@@ -108,4 +108,4 @@ No scheduling engine, slot, calendar, recurrence structure, booking algorithm or
 
 G2-Q02 retains metamodel classification, source/context qualification, retrospective-establishment responsibility and unsupported Appointment → Encounter cardinality; it no longer questions the approved scheduling-context meaning or distinction from Encounter. G2-Q06 retains the View boundary. Requested need/proposed context remain unestablished as independently governed Concepts. Roles of schedulers and notification reporters are identified by source evidence; no new Scheduler Business Role or exhaustive participant eligibility is invented.
 
-This is conceptual Information Architecture. No FHIR resource/profile, application object, cache/persistence model, schema, API or integration contract is allocated. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) remains authoritative.
+This is conceptual Information Architecture. No FHIR resource/profile, application object, cache/persistence model, schema, API or integration contract is allocated. [AX-17](../../governance/architectural-axioms.md#ax-17) remains authoritative.

@@ -31,7 +31,7 @@ Regional health integration is an inherently high-stakes domain. Harmonia operat
 Harmonia requires a rigorous Motivation Architecture to:
 - **Anchor Invariants to Human and Clinical Needs**: Ensure every technical requirement (e.g., dual-write safety, default-deny security) traces back to clinical safety, patient privacy, and operational continuity.
 - **Prevent Technical and Architectural Drift**: Guard against the tendency for software frameworks or messaging middleware to dictate integration semantics.
-- **Maintain Clear Architectural Precedence**: Provide an authoritative benchmark (`AGENTS.md`, `docs/architectural-axioms.md`) against which downstream designs, pull requests, and automated agent proposals can be evaluated and governed.
+- **Maintain Clear Architectural Precedence**: Provide an authoritative benchmark (`AGENTS.md`, `docs/markdown/governance/architectural-axioms.md`) against which downstream designs, pull requests, and automated agent proposals can be evaluated and governed.
 - **Prevent False Solutions**: Avoid the anti-pattern of "solutions looking for problems," ensuring that architectural complexity is introduced only where driven by demonstrable operational or clinical necessities.
 
 ---
@@ -104,8 +104,8 @@ To preserve architectural hygiene and avoid conceptual leakage, Domain 01 enforc
 - Demarcation of external regulatory and standards authorities as sources of constraints.
 - Agreed platform drivers and operational/technical assessments.
 - Strategic platform goals and common business outcomes.
-- Enduring, technology-independent architectural principles (Axioms AX-01..AX-11, AX-13..AX-17) and their implications.
-- Historical reclassification and supersession records (e.g., AX-12 transfer to Domain 05).
+- Motivation orientation and navigation to the cross-domain architectural axioms (AX-01..AX-18), maintained in the single canonical governance register.
+- Historical navigation and supersession notes; AX-12 remains a current cross-domain architectural axiom.
 - Foundational, protocol-neutral platform requirements (REQ-FND-001..005; REQ-FND-005 is APPROVED).
 - Generalized external constraint categories (privacy, identifiers, mandated protocols).
 - Master requirements navigation index and traceability across all domains.
@@ -139,9 +139,9 @@ The canonical documentation for Domain 01 is structured into the following topic
    - [Strategic Platform Goals](goals-outcomes/strategic-goals.md): The six core strategic goals and their explicit architectural boundaries.
    - [Enterprise & Clinical Outcomes](goals-outcomes/business-outcomes.md): The three high-level clinical, operational, and accountability outcomes.
 5. **Principles & Axioms**
-   - [Architectural Axioms (AX-01..AX-17)](principles/architectural-axioms.md): The enduring principles governing Harmonia, structured across Principle, Implications, and Realisation, with AX-17 linked to its authoritative register entry.
-   - [AX-17 — Architectural Authority and Explicit Uncertainty](../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty): The authoritative rule for downstream derivation, explicit architectural uncertainty and non-authoritative proposals.
-   - [Historical Reclassifications](principles/reclassified-principles.md): Rationale and reclassification details for principles moved downstream (AX-12).
+   - [Canonical Architectural Axioms (AX-01..AX-18)](../governance/architectural-axioms.md): The single maintained cross-domain register. [Motivation orientation](principles/architectural-axioms.md) provides navigation without reproducing normative definitions.
+   - [AX-17 — Architectural Authority and Explicit Uncertainty](../governance/architectural-axioms.md#ax-17): The authoritative rule for downstream derivation, explicit architectural uncertainty and non-authoritative proposals.
+   - [AX-12 Current Standing](principles/reclassified-principles.md): Compatibility navigation recording retention of AX-12 and supersession of the earlier transfer claim; no Domain05 transfer is made.
 6. **Requirements & Constraints**
    - [Foundational Platform Requirements](requirements-constraints/foundational-requirements.md): The five cross-cutting, protocol-neutral platform requirements; `REQ-FND-005` is APPROVED.
    - [External Constraints](requirements-constraints/external-constraints.md): The three generalized external constraint categories.

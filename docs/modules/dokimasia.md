@@ -2,7 +2,7 @@
 
 Dokimasia is Harmonia's independent assurance framework responsible for coordinating governed assurance activity over a subject in accordance with the authoritative assurance architecture. It provides an orientation for downstream realisation of Health Service Assurance; detailed solution architecture and responsibility allocation remain to be derived.
 
-This page is an orientation/navigation artefact. Motivation, Strategy, the approved Business Architecture and later approved architecture remain authoritative over it. Under [AX-17](../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty), a conceptual framework is not an established Application Component, deployable module or implementation allocation.
+This page is an orientation/navigation artefact. Motivation, Strategy, the approved Business Architecture and later approved architecture remain authoritative over it. Under [AX-17](../markdown/governance/architectural-axioms.md#ax-17), a conceptual framework is not an established Application Component, deployable module or implementation allocation.
 
 ## Canonical Assurance Architecture
 

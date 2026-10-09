@@ -124,4 +124,4 @@ G2-Q07 retains who may request/authorise changes, the meaning of performing-syst
 
 No Order subtype taxonomy, universal healthcare request superclass, order-entry system, clinical verification system or unsupported Service dependency is designed. Order Outcome association has no allocated Feature identity. The assessment Referral/bounded Order semantic boundary remains unresolved rather than merged.
 
-No FHIR/resource/profile mapping, Java/application representation, schema, persistence/cache model, API, integration message, topic or implementation allocation is created. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) governs all candidate and unestablished derivation links.
+No FHIR/resource/profile mapping, Java/application representation, schema, persistence/cache model, API, integration message, topic or implementation allocation is created. [AX-17](../../governance/architectural-axioms.md#ax-17) governs all candidate and unestablished derivation links.

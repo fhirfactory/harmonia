@@ -18,7 +18,7 @@ Items 01–03 remain resolved by Domain 02 Strategy Pass C. Item 04 records subs
 | **Identified / recovered** | 2026-10-08 |
 | **Arose from** | Architectural review following the Domain 02 Health Service Assurance Strategy reconciliation. The [approved Health Service Assurance derivation](markdown/02-strategy/capability-maps/health-service-assurance-derivation.md) records that reconciliation's Strategy context; it is not asserted to document all recovered metamodel decisions below. |
 | **Outstanding work** | Formally document and reconcile the recovered Capability Modelling Metamodel and identifier conventions into canonical architecture documentation in a separately authorised metamodel documentation task. |
-| **Governing authority** | [AX-17 — Architectural Authority and Explicit Uncertainty](architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty). |
+| **Governing authority** | [AX-17 — Architectural Authority and Explicit Uncertainty](markdown/governance/architectural-axioms.md#ax-17). |
 
 The following are recovered architectural decisions supplied for this documentation-control task, not new Codex proposals. Their capture preserves architectural knowledge independently of conversational history or AI memory. Recording this item does not perform canonical reconciliation, change the Capability Model or establish missing modelling details.
 

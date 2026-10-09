@@ -741,7 +741,7 @@ Applicable assurance criteria may themselves be versioned and temporally applica
 
 Assurance SHALL NOT be reduced universally to PASS / FAIL / UNKNOWN. Insufficient evidence is not equivalent to either satisfaction or non-satisfaction. Under REQ-FND-005, where available evidence cannot establish the required assurance conclusion with sufficient confidence, that inability and evidence insufficiency SHALL remain explicit.
 
-An assurance activity may execute correctly while lacking sufficient evidence to establish a conclusion about its subject. This is distinct from an indeterminate execution outcome or execution failure. [REQ-FND-004](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-004-explicit-indeterminate-outcome) and [AX-15](../../../architectural-axioms.md#ax-15--uncertainty-is-preserved-until-resolved) continue to govern uncertainty about operational state, effect or outcome, including the assurance activity's own execution where applicable.
+An assurance activity may execute correctly while lacking sufficient evidence to establish a conclusion about its subject. This is distinct from an indeterminate execution outcome or execution failure. [REQ-FND-004](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-004-explicit-indeterminate-outcome) and [AX-15](../../governance/architectural-axioms.md#ax-15) continue to govern uncertainty about operational state, effect or outcome, including the assurance activity's own execution where applicable.
 
 ### Assurance Independence
 

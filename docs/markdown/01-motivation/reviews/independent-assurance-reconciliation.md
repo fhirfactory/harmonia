@@ -16,7 +16,7 @@ Human architectural review accepted that gap and expressly authorised this Domai
 
 Human architectural approval on 2026-10-08 accepts `REQ-FND-005` and its existing wording and relationships as the authorised correction of the Domain01 architectural gap identified by the Dokimasia R1 investigation. That decision closes the Independent Assurance reconciliation and refreezes Domain01. This approval/refreeze transaction changes status only; it does not refine, reinterpret or extend the approved architecture or commence Strategy reconciliation.
 
-The [central Architectural Axioms](../../../architectural-axioms.md) and repository [AGENTS.md](../../../../AGENTS.md) govern this change. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) requires an explicit review rather than silent upstream reinterpretation, truthful relationships rather than manufactured completeness, and preservation of unresolved downstream architecture. Authorisation to prepare this reconciliation did not itself constitute acceptance or refreezing of its final formulation; the human approval recorded above now establishes both.
+The [central Architectural Axioms](../../governance/architectural-axioms.md) and repository [AGENTS.md](../../../../AGENTS.md) govern this change. [AX-17](../../governance/architectural-axioms.md#ax-17) requires an explicit review rather than silent upstream reinterpretation, truthful relationships rather than manufactured completeness, and preservation of unresolved downstream architecture. Authorisation to prepare this reconciliation did not itself constitute acceptance or refreezing of its final formulation; the human approval recorded above now establishes both.
 
 ## 2. Approved Real-World Motivation
 

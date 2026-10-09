@@ -48,7 +48,7 @@ DOMAIN 02: STRATEGY
 ### The 5-Point Quality Test
 Every proposed Course of Action must satisfy five mandatory quality criteria:
 
-1. **Motivational Traceability**: Explicitly addresses one or more strategic Drivers, Goals, Business Outcomes, or Architectural Axioms in the [current authoritative register](../../../architectural-axioms.md), including AX-17 as the authority and explicit-uncertainty guardrail.
+1. **Motivational Traceability**: Explicitly addresses one or more strategic Drivers, Goals, Business Outcomes, or Architectural Axioms in the [current authoritative register](../../governance/architectural-axioms.md), including AX-17 as the authority and explicit-uncertainty guardrail.
 2. **Capability Influence**: Materially shapes how Enterprise Capabilities (`EC-01` through `EC-14`) are configured, scoped, and delivered.
 3. **Technology Invariance**: Remains valid, meaningful, and binding even if underlying software libraries, databases, or runtime platforms are replaced.
 4. **Architectural Breadth**: Spans more than a single component implementation decision, establishing broad platform-wide architectural direction.

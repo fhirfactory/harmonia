@@ -8,7 +8,7 @@ This is a bounded architectural finding and impact analysis. It records the expl
 
 ## 1. Authority and Status of Statements
 
-The [central Architectural Axioms](../../../architectural-axioms.md) and repository [AGENTS.md](../../../../AGENTS.md) govern. The [Domain04 upstream immutability boundary](../README.md#upstream-authority--immutability-context) identifies Domain01–03 as CLOSED and FROZEN. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) requires absent relationships to remain explicit. This review's approval authorises capture of the name and conceptual boundaries below; it does not authorise upstream reconciliation or complete placement.
+The [central Architectural Axioms](../../governance/architectural-axioms.md) and repository [AGENTS.md](../../../../AGENTS.md) govern. The [Domain04 upstream immutability boundary](../README.md#upstream-authority--immutability-context) identifies Domain01–03 as CLOSED and FROZEN. [AX-17](../../governance/architectural-axioms.md#ax-17) requires absent relationships to remain explicit. This review's approval authorises capture of the name and conceptual boundaries below; it does not authorise upstream reconciliation or complete placement.
 
 | Classification | Meaning in this finding |
 | :--- | :--- |
@@ -160,7 +160,7 @@ No G2-D04 text, Referral family, G2-Q02–Q07, G2-D01–D03, G1 closure/decision
 | [REQ-FND-002 and REQ-FND-004](../../01-motivation/requirements-constraints/foundational-requirements.md) | Require observable operational progression/outcome and explicit indeterminate outcome. Progression is evidence; uncertainty must not be converted into a favourable assurance conclusion. | Distinguish an assurance evidence need from a new assurance-activity obligation. These Requirements remain unchanged. |
 | [CST-EXT-001–003](../../01-motivation/requirements-constraints/external-constraints.md) | Applicable privacy/retention, identifier and interoperability obligations may supply assurance bases. They establish no universal independent-assessor rule. | Determine applicable obligations per assurance context, without universalising a jurisdictional rule. |
 
-The materially relevant [central Axioms](../../../architectural-axioms.md) constrain this capture as follows:
+The materially relevant [central Axioms](../../governance/architectural-axioms.md) constrain this capture as follows:
 
 | Axiom — already established | Consistency of the captured approach |
 | :--- | :--- |

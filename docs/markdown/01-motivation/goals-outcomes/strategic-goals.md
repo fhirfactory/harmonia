@@ -49,7 +49,7 @@ In a regional network processing thousands of concurrent clinical interactions, 
 ### Architectural Boundary & Technology Independence
 - **Strictly Technology-Independent**: This goal does **not** mandate caching, in-memory grids, Infinispan, Redis, or non-blocking reactive frameworks.
 - It defines the architectural intent: separating active, responsive query and coordination paths from heavy transactional persistence locks.
-- Realized downstream under [AX-11 (Responsive & Resilient Access)](../principles/architectural-axioms.md) and [AX-05 (State Separation)](../principles/architectural-axioms.md).
+- Realized downstream under [AX-11 (Responsive & Resilient Access)](../../governance/architectural-axioms.md#ax-11) and [AX-05 (State Separation)](../../governance/architectural-axioms.md#ax-05).
 
 ---
 
@@ -79,7 +79,7 @@ Harmonia shall establish and maintain a vendor-neutral, semantically coherent re
 Patient care spans decades across multiple disparate healthcare institutions. Commercial EMR platforms have short market lifecycles and store data in proprietary, closed schemas that create vendor lock-in. To ensure continuity of care, the regional health network requires an enduring clinical asset that preserves the semantic meaning, units of measure, clinical nuance, and temporal sequence of health events across disparate provider systems.
 
 ### Architectural Boundary
-- Governed by [AX-01 (Health-Information Centricity)](../principles/architectural-axioms.md), [AX-02 (Standards at Boundary)](../principles/architectural-axioms.md), and [AX-06 (Explicit Information Authority)](../principles/architectural-axioms.md).
+- Governed by [AX-01 (Health-Information Centricity)](../../governance/architectural-axioms.md#ax-01), [AX-02 (Standards at Boundary)](../../governance/architectural-axioms.md#ax-02), and [AX-06 (Explicit Information Authority)](../../governance/architectural-axioms.md#ax-06).
 - Hands over directly to [Reduced Clinical Risk (O1)](business-outcomes.md) and [Continuous Regional Exchange (O2)](business-outcomes.md).
 
 ---
@@ -95,4 +95,4 @@ Healthcare integration activities (such as ADT distribution, lab order dispatch,
 ### Architectural Boundary & Intent
 - **Beyond Conventional Workflow Engines**: Avoid language implying that Harmonia is merely a generic workflow engine. Harmonia does not simply execute arbitrary BPMN scripts; it coordinates distributed integration activities in lockstep with the real-world lifecycle of clinical entities (e.g., patient admission state, lab specimen lifecycle, encounter status).
 - Requires explicit, observable progression state across multi-stage activities ([`REQ-FND-002`](../requirements-constraints/foundational-requirements.md)).
-- Governed by [AX-16 (Operational Activity & Entity State Progress Together)](../principles/architectural-axioms.md).
+- Governed by [AX-16 (Operational Activity & Entity State Progress Together)](../../governance/architectural-axioms.md#ax-16).

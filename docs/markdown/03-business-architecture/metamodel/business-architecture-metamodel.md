@@ -366,7 +366,7 @@ Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation f
 
 `Client Administration → Person Identity → Identifier Resolution [FT / FEAT-EM-01]` is an established partial responsibility chain and SHALL be preserved. Its full structural Canonical ID remains unresolved until actual Capability Tier ancestry and identifier allocation are architecturally established. The former incorrect L3 example SHALL NOT supply that ancestry.
 
-These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and [AX-17 architectural authority and explicit uncertainty](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty). They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.
+These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and [AX-17 architectural authority and explicit uncertainty](../../governance/architectural-axioms.md#ax-17). They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.
 
 ## 9. R1.x/R2.x Semantic Sufficiency Boundary
 

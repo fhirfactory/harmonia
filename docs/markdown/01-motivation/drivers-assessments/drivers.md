@@ -23,7 +23,7 @@ Harmonia must bridge these heterogeneous standards without forcing disruptive, m
 - **Primary Stakeholders**: [Regional Health Network Operator](../stakeholders/enterprise-stakeholders.md), [Healthcare Delivery Organizations](../stakeholders/enterprise-stakeholders.md)
 - **External Constraint**: [Mandated External Interoperability Contracts](../requirements-constraints/external-constraints.md)
 - **Associated Goal**: [Vendor-Independent Longitudinal Clinical Information Coherence](../goals-outcomes/strategic-goals.md)
-- **Governing Axioms**: [AX-02 (Standards at Boundary)](../principles/architectural-axioms.md), [AX-03 (Native Standards Representations)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-02 (Standards at Boundary)](../../governance/architectural-axioms.md#ax-02), [AX-03 (Native Standards Representations)](../../governance/architectural-axioms.md#ax-03)
 
 ---
 
@@ -39,7 +39,7 @@ Harmonia must establish durable clinical information independence. Patient healt
 
 - **Primary Stakeholders**: [Clinicians & Care Teams](../stakeholders/enterprise-stakeholders.md), [Healthcare Delivery Organizations](../stakeholders/enterprise-stakeholders.md)
 - **Associated Goal**: [Vendor-Independent Longitudinal Clinical Information Coherence](../goals-outcomes/strategic-goals.md)
-- **Governing Axioms**: [AX-01 (Health-Information Centricity)](../principles/architectural-axioms.md), [AX-06 (Explicit Information Authority)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-01 (Health-Information Centricity)](../../governance/architectural-axioms.md#ax-01), [AX-06 (Explicit Information Authority)](../../governance/architectural-axioms.md#ax-06)
 
 ---
 
@@ -56,7 +56,7 @@ Harmonia must provide continuous clinical service availability. The platform mus
 - **Primary Stakeholders**: [Clinicians & Care Teams](../stakeholders/enterprise-stakeholders.md), [Platform Operations & Integration Engineers](../stakeholders/enterprise-stakeholders.md), [Healthcare Delivery Organizations](../stakeholders/enterprise-stakeholders.md)
 - **Key Assessments**: [Silent Data Loss via False Acceptance](assessments.md), [Centralised Synchronous Persistence Can Constrain Concurrency](assessments.md)
 - **Associated Goals**: [Durable Acceptance & Preservation of Clinical Events](../goals-outcomes/strategic-goals.md), [Responsive Access to Managed Information](../goals-outcomes/strategic-goals.md)
-- **Governing Axioms**: [AX-10 (Failure as Normal Condition)](../principles/architectural-axioms.md), [AX-11 (Responsive & Resilient Access)](../principles/architectural-axioms.md), [AX-05 (State Separation)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-10 (Failure as Normal Condition)](../../governance/architectural-axioms.md#ax-10), [AX-11 (Responsive & Resilient Access)](../../governance/architectural-axioms.md#ax-11), [AX-05 (State Separation)](../../governance/architectural-axioms.md#ax-05)
 
 ---
 
@@ -75,7 +75,7 @@ Harmonia must rigorously preserve and validate subject referential integrity acr
 - **Primary Stakeholders**: [Patients & Care Recipients](../stakeholders/enterprise-stakeholders.md), [Clinicians & Care Teams](../stakeholders/enterprise-stakeholders.md)
 - **External Constraint**: [Applicable National / Jurisdictional Healthcare Identifier Obligations](../requirements-constraints/external-constraints.md)
 - **Associated Goal**: [Reliable Subject Identity & Referential Integrity](../goals-outcomes/strategic-goals.md)
-- **Governing Axioms**: [AX-06 (Explicit Information Authority)](../principles/architectural-axioms.md), [AX-14 (Preservation of Semantic Distinctions)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-06 (Explicit Information Authority)](../../governance/architectural-axioms.md#ax-06), [AX-14 (Preservation of Semantic Distinctions)](../../governance/architectural-axioms.md#ax-14)
 
 ---
 
@@ -92,7 +92,7 @@ Harmonia must implement intrinsic, default-deny security and privacy controls ac
 - **Primary Stakeholders**: [Patients & Care Recipients](../stakeholders/enterprise-stakeholders.md), [Platform Operations & Integration Engineers](../stakeholders/enterprise-stakeholders.md)
 - **External Constraint**: [Applicable Health-Information Privacy and Data-Protection Obligations](../requirements-constraints/external-constraints.md)
 - **Key Assessments**: [Implicit Perimeter Trust](assessments.md), [PHI Leakage through Operational Logging](assessments.md)
-- **Governing Axioms**: [AX-07 (Security Is Intrinsic to Managed Operations)](../principles/architectural-axioms.md), [AX-08 (Evidence Records Meaning)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-07 (Security Is Intrinsic to Managed Operations)](../../governance/architectural-axioms.md#ax-07), [AX-08 (Evidence Records Meaning)](../../governance/architectural-axioms.md#ax-08)
 
 ---
 
@@ -109,7 +109,7 @@ Harmonia must govern practitioner credentials and electronic service endpoints t
 - **Primary Stakeholders**: [Healthcare Directory Stewards & Registrars](../stakeholders/enterprise-stakeholders.md), [Clinicians & Care Teams](../stakeholders/enterprise-stakeholders.md)
 - **External Authorities**: [HI Service](../stakeholders/external-authorities.md), [AHPRA](../stakeholders/external-authorities.md)
 - **Associated Goal**: [Reliable Subject Identity & Referential Integrity](../goals-outcomes/strategic-goals.md)
-- **Governing Axiom**: [AX-14 (Preservation of Semantic Distinctions)](../principles/architectural-axioms.md)
+- **Governing Axiom**: [AX-14 (Preservation of Semantic Distinctions)](../../governance/architectural-axioms.md#ax-14)
 
 ---
 
@@ -126,4 +126,4 @@ Harmonia must coordinate multi-stage operational activity in lockstep with the g
 - **Primary Stakeholders**: [Healthcare Delivery Organizations](../stakeholders/enterprise-stakeholders.md), [Platform Operations & Integration Engineers](../stakeholders/enterprise-stakeholders.md)
 - **Key Assessment**: [Unmonitored Destination Failure / Fan-Out Divergence](assessments.md)
 - **Associated Goal**: [Coordinated Progression of Operational Activities & Associated Entity State](../goals-outcomes/strategic-goals.md)
-- **Governing Axiom**: [AX-16 (Operational Activity & Entity State Progress Together)](../principles/architectural-axioms.md)
+- **Governing Axiom**: [AX-16 (Operational Activity & Entity State Progress Together)](../../governance/architectural-axioms.md#ax-16)

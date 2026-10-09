@@ -123,4 +123,4 @@ G2-Q03 retains metamodel classification and the administrative tracking/Assembly
 
 G2-Q05's Encounter/delivery optional contextual association and [0..*] multiplicity are resolved by G2-D03; additional authority/evidence qualifications and the unrelated Referral portion remain unreviewed. G2-Q06 retains the Assembly boundary. G1 U4's universal delivery/outcome authority, U8's ON_LEAVE correspondence and U9's discharge publication timing remain unresolved. No clinical responsibility transfer is inferred from movement or discharge, and no operational bed model is derived.
 
-No FHIR mapping, application component, class, persistence entity, schema, API, integration message, cache model or implementation allocation is created. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) governs the derivation itself.
+No FHIR mapping, application component, class, persistence entity, schema, API, integration message, cache model or implementation allocation is created. [AX-17](../../governance/architectural-axioms.md#ax-17) governs the derivation itself.

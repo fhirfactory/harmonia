@@ -145,7 +145,7 @@ Ponos WorkEngine manages background worker concurrency using configured worker p
 
 ## 6. Runtime AI as Adjunct Ergo Execution Capability
 
-This section records an architectural position, not an implemented AI capability or a runtime topology. It applies [AX-04](../architectural-axioms.md#ax-04-----harmonia-owns-the-semantics-engines-provide-the-machinery), AX-06, AX-07 and AX-08 to preserve Harmonia semantics, authority, governance and meaningful evidence; [AX-14](../architectural-axioms.md#ax-14--semantic-distinctions-are-preserved) and [AX-17](../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) preserve responsibility distinctions and explicit architectural uncertainty.
+This section records an architectural position, not an implemented AI capability or a runtime topology. It applies [AX-04](../markdown/governance/architectural-axioms.md#ax-04), AX-06, AX-07 and AX-08 to preserve Harmonia semantics, authority, governance and meaningful evidence; [AX-14](../markdown/governance/architectural-axioms.md#ax-14) and [AX-17](../markdown/governance/architectural-axioms.md#ax-17) preserve responsibility distinctions and explicit architectural uncertainty.
 
 > **Runtime AI is an adjunct execution capability available to Ergo business logic. Use of an AI agent or AI service does not alter the architectural responsibility, authority, governance or execution semantics of the Ergo, Praxis or Digital Twin invoking it.**
 

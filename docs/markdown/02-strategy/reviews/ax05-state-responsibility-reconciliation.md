@@ -16,13 +16,13 @@ The [earlier architectural investigation](../../04-information-architecture/revi
 
 At session entry, the worktree already contained AX-05 corrections in [logical-component-responsibilities.md](../strategic-views/logical-component-responsibilities.md) and [strategic-courses-of-action.md](../courses-of-action/strategic-courses-of-action.md), alongside unrelated changes in Domains01/04 and reports. The corrections in those two Strategy files were inspected and retained. They are not claimed as newly authored in this session. The smallest additional semantic edit qualifies the remaining G3 pronoun “the two” after its expanded three-responsibility list. A navigation link, this review record and the [completion report](../../../../.junie/reports/2026-10-08-ax05-domain02-strategy-reconciliation.md) complete the work.
 
-Repository-wide and documentation AGENTS.md govern the review. [Central architectural axioms](../../../architectural-axioms.md#1-purpose) are the highest architectural authority; accepted decisions and requirements refine their application. Existing code, document repetition and historical execution reports cannot override them.
+Repository-wide and documentation AGENTS.md govern the review. [Central architectural axioms](../../governance/architectural-axioms.md#1-purpose) are the highest architectural authority; accepted decisions and requirements refine their application. Existing code, document repetition and historical execution reports cannot override them.
 
 **No inspected approved amendment, superseding decision or accepted ADR requires reconsidering AX-05.** The relevant authority chain corroborates it. No higher-authority responsibility conflict requiring the specified stop was found.
 
 ## 2. Canonical AX-05 and Corroborating Evidence
 
-The governing wording is [central AX-05](../../../architectural-axioms.md#ax-05-----active-state-and-authoritative-durable-state-are-distinct):
+The governing wording is [central AX-05](../../governance/architectural-axioms.md#ax-05):
 
 > Mneme owns Harmonia's application-facing access to managed information
 > and the distributed active-state representation, observation and
@@ -49,7 +49,7 @@ Its consequences permit Mneme to reject or coordinate proposed state progression
 | [Assessments](../../01-motivation/drivers-assessments/assessments.md), false acceptance and persistence contention; [Drivers](../../01-motivation/drivers-assessments/drivers.md), availability and coordinated activity; [strategic goals](../../01-motivation/goals-outcomes/strategic-goals.md), durable acceptance and responsive access | Motivate durable acceptance and responsive active access without assigning durable authority to operational execution. |
 | [Approved/refrozen Domain01 review](../../01-motivation/reviews/independent-assurance-reconciliation.md) and [foundational requirements](../../01-motivation/requirements-constraints/foundational-requirements.md) | REQ-FND-005 approval and Domain01 CLOSED / FROZEN are preserved. The prior unresolved Strategy issue is historical discovery evidence; assurance derivation is not authorised here. |
 
-AX-14 preserves these semantic distinctions. AX-15 preserves uncertain operational outcomes. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) requires truthful authority and traceability: no missing responsibility, protocol, assurance relationship or deployment decision is supplied by inference. AX-12 classification and AX-16 central-register standing remain separate, unchanged matters.
+AX-14 preserves these semantic distinctions. AX-15 preserves uncertain operational outcomes. [AX-17](../../governance/architectural-axioms.md#ax-17) requires truthful authority and traceability: no missing responsibility, protocol, assurance relationship or deployment decision is supplied by inference. AX-12 classification and AX-16 central-register standing remain separate, unchanged matters.
 
 ## 3. Responsibility Domains and Progression Terminology
 

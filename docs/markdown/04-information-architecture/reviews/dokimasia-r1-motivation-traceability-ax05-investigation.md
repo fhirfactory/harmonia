@@ -8,7 +8,7 @@
 
 ## 1. Scope, Authority and Subject of the Test
 
-The [central Architectural Axioms](../../../architectural-axioms.md), repository [AGENTS.md](../../../../AGENTS.md), applicable accepted ADRs and documented Domain01 relationships govern this investigation. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) requires missing relationships and conflicting statements to remain explicit. [Domain04's upstream immutability boundary](../README.md#upstream-authority--immutability-context) remains intact.
+The [central Architectural Axioms](../../governance/architectural-axioms.md), repository [AGENTS.md](../../../../AGENTS.md), applicable accepted ADRs and documented Domain01 relationships govern this investigation. [AX-17](../../governance/architectural-axioms.md#ax-17) requires missing relationships and conflicting statements to remain explicit. [Domain04's upstream immutability boundary](../README.md#upstream-authority--immutability-context) remains intact.
 
 The [approved Dokimasia finding](dokimasia-assurance-architectural-finding.md#2-approved-conceptual-definition-and-boundaries) supplies the requirement being tested, not retrospective evidence that Domain01 already derives it. This document's location records the review's origin; it does not place Dokimasia in Domain04. The Junie completion report is execution evidence, not architectural authority.
 

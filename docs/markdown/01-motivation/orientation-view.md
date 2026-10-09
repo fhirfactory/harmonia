@@ -255,8 +255,8 @@ flowchart LR
 - **External Constraint**: [Mandated External Interoperability Contracts](requirements-constraints/external-constraints.md). Point-to-point connections mandate strict adherence to external wire protocols at the integration boundary.
 - **Goal**: [Vendor-Independent Longitudinal Clinical Information Coherence](goals-outcomes/strategic-goals.md). Clinical narratives must remain coherent across diverse systems without vendor lock-in.
 - **Governing Principles**: 
-  - [AX-02 Standards at Boundary; Sovereignty Within](principles/architectural-axioms.md): Harmonia respects external standards at ingress/egress membranes, but enforces its own canonical domain model internally.
-  - [AX-03 Native Standards Representations](principles/architectural-axioms.md): Standards models are preserved in their native structure without lossy premature conversion.
+  - [AX-02 Standards at Boundary; Sovereignty Within](../governance/architectural-axioms.md#ax-02): Harmonia respects external standards at ingress/egress membranes, but enforces its own canonical domain model internally.
+  - [AX-03 Native Standards Representations](../governance/architectural-axioms.md#ax-03): Standards models are preserved in their native structure without lossy premature conversion.
 - **Requirement**: `CORE-003` Governed Canonical Semantics.
 - **Outcome Handover**: Handover to [Continuous and Resilient Regional Health Information Exchange (O2)](goals-outcomes/business-outcomes.md).
 
@@ -265,8 +265,8 @@ flowchart LR
 - **Driver**: [Durable Clinical Information Independence](drivers-assessments/drivers.md). Patient records must outlive the commercial lifecycles and proprietary schemas of underlying EMR software products.
 - **Goal**: [Vendor-Independent Longitudinal Clinical Information Coherence](goals-outcomes/strategic-goals.md). Information must remain durable, interpretable, and queryable across decades.
 - **Governing Principles**:
-  - [AX-01 Health-Information Centricity](principles/architectural-axioms.md): Information is the primary asset; processing components and middleware exist only to serve information lifecycle needs.
-  - [AX-06 Explicit Information Authority](principles/architectural-axioms.md): Every piece of clinical information is explicitly tagged as Authoritative, Informational, or Anecdotal.
+  - [AX-01 Health-Information Centricity](../governance/architectural-axioms.md#ax-01): Information is the primary asset; processing components and middleware exist only to serve information lifecycle needs.
+  - [AX-06 Explicit Information Authority](../governance/architectural-axioms.md#ax-06): Every piece of clinical information is explicitly tagged as Authoritative, Informational, or Anecdotal.
 - **Requirement**: `CORE-001` Authority Classification.
 - **Outcome Handover**: Handover to [Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information (O1)](goals-outcomes/business-outcomes.md).
 
@@ -276,9 +276,9 @@ flowchart LR
 - **Assessment**: [Silent Data Loss via False Acceptance](drivers-assessments/assessments.md). Positively acknowledging an incoming event before responsibility has crossed an authoritative durable boundary risks severe, unrecoverable data loss during gateway crashes.
 - **Goal**: [Durable Acceptance & Preservation of Clinical Events](goals-outcomes/strategic-goals.md). Ensure that no accepted clinical event can be silently lost.
 - **Governing Principles**:
-  - [AX-10 Distribution & Failure as Normal Operating Conditions](principles/architectural-axioms.md): Hardware, networks, and downstream services will fail; architecture must be fail-safe.
-  - [AX-05 Active Coordination ≠ Authoritative State](principles/architectural-axioms.md): In-memory active coordination is volatile; durable truth requires persistent boundary crossing.
-  - [AX-15 Explicit Representation of Uncertainty](principles/architectural-axioms.md): Indeterminate states must never be assumed as success or failure.
+  - [AX-10 Distribution & Failure as Normal Operating Conditions](../governance/architectural-axioms.md#ax-10): Hardware, networks, and downstream services will fail; architecture must be fail-safe.
+  - [AX-05 Active Coordination ≠ Authoritative State](../governance/architectural-axioms.md#ax-05): In-memory active coordination is volatile; durable truth requires persistent boundary crossing.
+  - [AX-15 Explicit Representation of Uncertainty](../governance/architectural-axioms.md#ax-15): Indeterminate states must never be assumed as success or failure.
 - **Requirements**:
   - [`REQ-FND-001` Durable Ingress Acceptance Boundary](requirements-constraints/foundational-requirements.md) (`REQ-INGRESS-001`): Positive acceptance is forbidden until responsibility has crossed the durable acceptance boundary.
   - [`REQ-FND-004` Explicit Indeterminate Outcome](requirements-constraints/foundational-requirements.md) (`REQ-UNCERT-001`): Indeterminate states are explicitly surfaced for reconciliation.
@@ -290,9 +290,9 @@ flowchart LR
 - **Assessment**: [Centralised Synchronous Persistence Can Constrain Concurrent Processing](drivers-assessments/assessments.md). Requiring central synchronous persistence interaction for every unit of active processing can introduce contention, latency, unnecessary I/O and coordination bottlenecks that limit concurrent throughput and scalability.
 - **Goal**: [Responsive Access to Managed Information](goals-outcomes/strategic-goals.md). Consumers must enjoy responsive access to managed information decoupled from central persistence bottlenecks.
 - **Governing Principles**:
-  - [AX-11 Responsive & Resilient Information Access](principles/architectural-axioms.md): Access to managed information is highly available and decoupled from transaction contention.
-  - [AX-05 Active Coordination ≠ Authoritative State](principles/architectural-axioms.md): Active operational data is segregated from authoritative persistence.
-  - [AX-09 Default Ephemerality of Operational State](principles/architectural-axioms.md): Operational coordination state is discarded once activity lifecycle completes.
+  - [AX-11 Responsive & Resilient Information Access](../governance/architectural-axioms.md#ax-11): Access to managed information is highly available and decoupled from transaction contention.
+  - [AX-05 Active Coordination ≠ Authoritative State](../governance/architectural-axioms.md#ax-05): Active operational data is segregated from authoritative persistence.
+  - [AX-09 Default Ephemerality of Operational State](../governance/architectural-axioms.md#ax-09): Operational coordination state is discarded once activity lifecycle completes.
 - **Outcome Handover**: Handover to [Continuous and Resilient Regional Health Information Exchange (O2)](goals-outcomes/business-outcomes.md).
 
 ### Thread 5: Subject Identity & Referential Integrity
@@ -301,8 +301,8 @@ flowchart LR
 - **External Constraint**: [National / Jurisdictional Healthcare Identifier Obligations](requirements-constraints/external-constraints.md). Mandates strict compliance with national identifier schemes (e.g., IHI, Medicare) and privacy acts.
 - **Goal**: [Reliable Subject Identity & Referential Integrity](goals-outcomes/strategic-goals.md). Clinical associations must be structurally and referentially verified without establishing Harmonia as an unauthorized golden-record engine.
 - **Governing Principles**:
-  - [AX-06 Explicit Information Authority](principles/architectural-axioms.md): Provenance and authority of subject identifiers are explicitly distinguished.
-  - [AX-14 Preservation of Semantic Distinctions](principles/architectural-axioms.md): Distinct identifiers and demographic nuances are preserved rather than lossily unified.
+  - [AX-06 Explicit Information Authority](../governance/architectural-axioms.md#ax-06): Provenance and authority of subject identifiers are explicitly distinguished.
+  - [AX-14 Preservation of Semantic Distinctions](../governance/architectural-axioms.md#ax-14): Distinct identifiers and demographic nuances are preserved rather than lossily unified.
 - **Requirement**: [`REQ-FND-003` Subject Referential Integrity](requirements-constraints/foundational-requirements.md) (`REQ-IDENT-001`).
 - **Outcome Handover**: Handover to [Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information (O1)](goals-outcomes/business-outcomes.md).
 
@@ -315,10 +315,10 @@ flowchart LR
   - [PHI Leakage through Operational Logging](drivers-assessments/assessments.md): Emitting identifiable patient data into diagnostic application logs violates privacy laws and creates data breach exposures.
 - **Governing Principles & Downstream Requirements**:
   - *Deliberate Structure*: This thread has **no manufactured Goal**; assessments feed directly into intrinsic architectural axioms.
-  - [AX-07 Security Is Intrinsic to Managed Operations](principles/architectural-axioms.md): Every operation executes within an established security context; security is platform-enforced.
+  - [AX-07 Security Is Intrinsic to Managed Operations](../governance/architectural-axioms.md#ax-07): Every operation executes within an established security context; security is platform-enforced.
     - Governs `SEC-001 / SEC-002`: Trusted Authentication & Default-Deny Authorization.
     - Governs `SEC-010`: PHI-Safe Operational Logging (prohibiting unmasked clinical data in logs).
-  - [AX-08 Evidence Records Meaning, Not Machinery](principles/architectural-axioms.md): Audit records capture semantic clinical meaning, not transient middleware mechanics.
+  - [AX-08 Evidence Records Meaning, Not Machinery](../governance/architectural-axioms.md#ax-08): Audit records capture semantic clinical meaning, not transient middleware mechanics.
     - Governs `PROV-001`: End-to-End Accountable Provenance.
 - **Outcome Handover**: Axioms AX-07 and AX-08 have **zero causal edges** to outcomes; outcomes (such as O3) act as common sinks realized across the platform.
 
@@ -327,7 +327,7 @@ flowchart LR
 - **Driver**: [Coordinated Operational Activity and Entity State](drivers-assessments/drivers.md). Healthcare integration involves multi-stage workflows (e.g., ADT distribution, lab orders, result fan-out).
 - **Assessment**: [Unmonitored Destination Failure / Fan-Out Divergence](drivers-assessments/assessments.md). Broadcasting clinical events to multiple downstream systems without tracking individual delivery status leads to silent divergence and broken care coordination.
 - **Goal**: [Coordinated Progression of Operational Activities & Associated Entity State](goals-outcomes/strategic-goals.md). Workflows must progress through observable state transitions aligned with the real-world state of the clinical entity.
-- **Governing Principle**: [AX-16 Operational Activity & Entity State Progress Together](principles/architectural-axioms.md). Operational activities are not treated merely as disconnected message transfers.
+- **Governing Principle**: [AX-16 Operational Activity & Entity State Progress Together](../governance/architectural-axioms.md#ax-16). Operational activities are not treated merely as disconnected message transfers.
 - **Requirement**: [`REQ-FND-002` Operational Activity Progression State](requirements-constraints/foundational-requirements.md) (`REQ-COORD-001`).
 - **Outcome Handover**: Handover to [Continuous and Resilient Regional Health Information Exchange (O2)](goals-outcomes/business-outcomes.md).
 

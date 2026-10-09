@@ -2,6 +2,8 @@
 
 Welcome to the authoritative engineering documentation for the **Harmonia Health Integration Environment (HIE)**.
 
+[Canonical Architectural Axioms](markdown/governance/architectural-axioms.md) — the single maintained axiom register in [cross-domain governance](markdown/governance/README.md).
+
 [Harmonia R1.x/R2.x Architecture Completion Plan](markdown/architecture-completion-plan.md)
 
 Harmonia is a modular, high-performance, healthcare-grade integration and interoperability platform uniting presentation services (**Iris**), perimeter protocol gateways (**Pylai**), workflow and task processing (**Energeia**: Ponos/Erga/Praxis), resilient messaging (**Petasos**), in-memory caching (**Mneme**), durable relational persistence (**Mnemosyne**), core data foundation (**Hestia**), security policy governance (**Themis**), canonical schemas (**Calliope**), collaboration bridging (**Agora**), and synthetic clinical simulation (**Paradeigma**).

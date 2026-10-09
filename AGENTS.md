@@ -31,7 +31,7 @@ All architecture, design, implementation and automated-agent activity
 within Harmonia is governed by the Harmonia Architectural Axioms defined
 in:
 
-    docs/architectural-axioms.md
+    docs/markdown/governance/architectural-axioms.md
 
 The Architectural Axioms are the highest-level design authority within
 the Harmonia repository.
@@ -442,7 +442,7 @@ execution artefacts. They are NOT sources of architectural authority.
 
 A Junie plan MUST be interpreted against, in order of authority:
 
-1. `docs/architectural-axioms.md`
+1. `docs/markdown/governance/architectural-axioms.md`
 2. this `AGENTS.md`
 3. applicable accepted Architecture Decision Records
 4. applicable requirements and design contracts

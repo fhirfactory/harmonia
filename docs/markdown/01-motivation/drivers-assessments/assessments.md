@@ -31,7 +31,7 @@ In traditional HL7 v2 and MLLP transport middleware, inbound gateways often retu
 - Ingress boundaries must guarantee that incoming event responsibility is durably accepted before emitting a positive acceptance response to the sender. If durable acceptance cannot be established, an explicit negative or indeterminate response must be emitted so the sender retains retry responsibility.
 - **Related Driver**: [Continuous Clinical Service Availability](drivers.md)
 - **Target Goal**: [Durable Acceptance & Preservation of Clinical Events](../goals-outcomes/strategic-goals.md)
-- **Governing Axioms**: [AX-10 (Failure as Normal Condition)](../principles/architectural-axioms.md), [AX-05 (State Separation)](../principles/architectural-axioms.md), [AX-15 (Explicit Representation of Uncertainty)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-10 (Failure as Normal Condition)](../../governance/architectural-axioms.md#ax-10), [AX-05 (State Separation)](../../governance/architectural-axioms.md#ax-05), [AX-15 (Explicit Representation of Uncertainty)](../../governance/architectural-axioms.md#ax-15)
 - **Foundational Requirement**: [`REQ-FND-001` Durable Ingress Acceptance Boundary](../requirements-constraints/foundational-requirements.md)
 
 ---
@@ -60,7 +60,7 @@ If the integration platform considers the parent activity "completed" merely bec
 - Parent activities must maintain fine-grained sub-status across the entire fan-out lifecycle until every individual destination delivery is deterministically confirmed or explicitly flagged as failed/indeterminate.
 - **Related Driver**: [Coordinated Operational Activity and Entity State](drivers.md)
 - **Target Goal**: [Coordinated Progression of Operational Activities & Associated Entity State](../goals-outcomes/strategic-goals.md)
-- **Governing Axiom**: [AX-16 (Operational Activity & Entity State Progress Together)](../principles/architectural-axioms.md)
+- **Governing Axiom**: [AX-16 (Operational Activity & Entity State Progress Together)](../../governance/architectural-axioms.md#ax-16)
 - **Foundational Requirement**: [`REQ-FND-002` Operational Activity Progression State](../requirements-constraints/foundational-requirements.md)
 
 ---
@@ -82,7 +82,7 @@ In a healthcare environment, these logs are ingested into centralized search clu
 - Operational log streams must be structurally segregated from clinical data payloads.
 - Diagnostic logs must emit only non-sensitive operational metadata (transaction UUIDs, message control IDs, timestamps, masked identifiers) and strictly prohibit unmasked clinical observation values, demographic text, or free-text clinical notes.
 - **Related Driver**: [Statutory Health Information Privacy & Protection](drivers.md)
-- **Governing Axiom**: [AX-07 (Security Is Intrinsic to Managed Operations)](../principles/architectural-axioms.md)
+- **Governing Axiom**: [AX-07 (Security Is Intrinsic to Managed Operations)](../../governance/architectural-axioms.md#ax-07)
 - **Derived Guardrail & Requirement**: Classifies downstream as a mandatory Security Architecture requirement (`SEC-010` PHI-Safe Operational Logging), with formal governance guardrails owned under Domain 13.
 
 ---
@@ -105,7 +105,7 @@ In modern distributed and containerized integration environments, perimeter-only
 - Every internal request, service invocation, and state mutation must execute within an established, verifiable security context subject to platform-enforced security policy.
 - Downstream security architecture (Domain 08) derives specific enforcement patterns, such as default-deny authorization and authenticated service communication, from governing axiom AX-07.
 - **Related Driver**: [Statutory Health Information Privacy & Protection](drivers.md)
-- **Governing Axiom**: [AX-07 (Security Is Intrinsic to Managed Operations)](../principles/architectural-axioms.md)
+- **Governing Axiom**: [AX-07 (Security Is Intrinsic to Managed Operations)](../../governance/architectural-axioms.md#ax-07)
 - **Downstream Requirements**: `SEC-001 / SEC-002` (Trusted Authentication & Default-Deny Authorization).
 
 ---
@@ -129,4 +129,4 @@ In a high-volume regional integration hub, thousands of clinical messages arrive
 - High-frequency operational checks and client-facing queries must be served through responsive, concurrent access paths without imposing transactional lock contention on authoritative storage.
 - **Related Driver**: [Continuous Clinical Service Availability](drivers.md)
 - **Target Goal**: [Responsive Access to Managed Information](../goals-outcomes/strategic-goals.md)
-- **Governing Axioms**: [AX-11 (Responsive & Resilient Information Access)](../principles/architectural-axioms.md), [AX-05 (Active Coordination ≠ Authoritative State)](../principles/architectural-axioms.md), [AX-09 (Default Ephemerality of Operational State)](../principles/architectural-axioms.md)
+- **Governing Axioms**: [AX-11 (Responsive & Resilient Information Access)](../../governance/architectural-axioms.md#ax-11), [AX-05 (Active Coordination ≠ Authoritative State)](../../governance/architectural-axioms.md#ax-05), [AX-09 (Default Ephemerality of Operational State)](../../governance/architectural-axioms.md#ax-09)

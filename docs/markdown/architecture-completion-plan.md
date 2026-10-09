@@ -35,10 +35,10 @@ documentation. The documentation serves three related purposes:
    quality, maintainability, efficiency and cost optimisation.
 
 The derivation between architectural layers is itself part of the deliverable.
-The [Architectural Axioms](../architectural-axioms.md), applicable repository
+The [Architectural Axioms](governance/architectural-axioms.md), applicable repository
 `AGENTS.md` instructions and authoritative upstream architecture govern this
 programme. In particular,
-[AX-17 — Architectural Authority and Explicit Uncertainty](../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty)
+[AX-17 — Architectural Authority and Explicit Uncertainty](governance/architectural-axioms.md#ax-17)
 requires established, unresolved and proposed architecture to remain distinct.
 
 The canonical-corpus goal below does not relocate or override current
@@ -119,7 +119,27 @@ a future stage. This plan changes no architecture-domain status.
 
 The authorised Domain 03 **Step 3 — Residual Semantic Adjudication and Capacity Management Pattern Review** is complete. The 2026-10-09 assessment establishes **semantic completion for the agreed R1.x/R2.x Business Architecture scope** against the Domain Completion Gate. The [Domain 03 metamodel](03-business-architecture/metamodel/business-architecture-metamodel.md#9-r1xr2x-semantic-sufficiency-boundary), [residual Service Delivery decisions](03-business-architecture/behaviours/03-service-delivery.md#residual-feature-sufficiency) and [HSO capacity responsibilities](03-business-architecture/behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary) record the authoritative outcomes; the [Domain 03 completion boundary](03-business-architecture/README.md#5-completion-boundary-and-retained-uncertainty) retains downstream, governance and deliberately unestablished matters. Completion requires semantic sufficiency, not graph density. No freeze/refreeze or final R1.x/R2.x programme baseline is declared.
 
-The next domain stage remains **Domain 04 — Information Architecture Reconciliation**, subject to separate bounded authorisation. It has not commenced through Step 3. Canonical Architectural Axioms Migration and the proposed HSO-16 Strategy name correction remain separately controlled follow-on tasks; neither was performed as part of this reconciliation.
+The next domain stage remains **Domain 04 — Information Architecture Reconciliation**, subject to separate bounded authorisation. It has not commenced through Step 3 or the axiom migration recorded below. The proposed HSO-16 Strategy name correction remains a separately controlled follow-on task. Neither that correction nor the axiom migration was performed as part of the Domain03 reconciliation.
+
+### Canonical Architectural Axioms Migration — Completed
+
+The separately authorised 2026-10-09 migration is complete. The single maintained
+axiom authority is [the canonical governance register](governance/architectural-axioms.md).
+AX-01 through AX-17 and their supporting normative material are semantically
+preserved. [AX-18](governance/architectural-axioms.md#ax-18) is an approved new
+human architectural decision established at this migration boundary.
+
+Motivation now provides orientation/navigation, and the former external register
+is a non-authoritative compatibility pointer. Semantic, authority, Markdown/link,
+whitespace and architecture validation passed; the
+[Step 2 execution report](../../.junie/reports/2026-10-09-canonical-architectural-axioms-migration-step2.md)
+records the evidence. Domain04 changes were link-only; its semantic reconciliation
+remains the next separately authorised stage.
+
+This completes canonicalisation of the axiom knowledge, not overall corpus
+consolidation. Accepted ADRs, execution-model material and other external
+architectural dependencies still require separately authorised assessment and
+consolidation under this plan.
 
 ### Earlier Recorded Programme Position
 
@@ -224,7 +244,7 @@ for the authoritative architecture.
 Where sufficient architectural authority cannot be located, or available
 authority is ambiguous or contradictory, the uncertainty SHALL be made
 explicit in accordance with
-[AX-17](../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty)
+[AX-17](governance/architectural-axioms.md#ax-17)
 rather than resolved from prior conversational context, model memory,
 convention or inference. A plausible relationship does not become an
 authoritative relationship through navigation assistance or prior AI

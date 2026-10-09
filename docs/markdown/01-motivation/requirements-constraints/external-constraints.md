@@ -62,7 +62,7 @@ Many modern nations operate statutory healthcare identifier services to uniquely
 ### Context & Architectural Boundary
 Harmonia operates as an integration hub connecting hundreds of disparate health systems. The platform cannot dictate the internal wire protocols of external hospitals, laboratory analyzers, or national repositories. At its ingress and egress boundaries, Harmonia must conform strictly to the wire formats, message structures, and transport handshakes mandated by external systems.
 
-However, in accordance with [AX-02 (Standards at Boundary; Sovereignty Within)](../principles/architectural-axioms.md), external contracts govern only the external membrane. Once an event crosses into Harmonia, the platform enforces its own canonical domain semantics.
+However, in accordance with [AX-02 (Standards at Boundary; Sovereignty Within)](../../governance/architectural-axioms.md#ax-02), external contracts govern only the external membrane. Once an event crosses into Harmonia, the platform enforces its own canonical domain semantics.
 
 ### Representative Instances & Examples
 - **HL7 v2.x over MLLP**: Minimal Lower Layer Protocol (MLLP) framing over raw TCP, utilizing pipe-and-hat (`ER7`) segment syntax for admissions (ADT), orders (ORM), and observations (ORU).

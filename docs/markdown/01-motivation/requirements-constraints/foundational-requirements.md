@@ -26,7 +26,7 @@ Releasing an upstream sender from responsibility (by returning a positive transp
   - In Ingress Dual-Write safety (`REC-001`), this rule enforces that in-memory active caching alone is insufficient to satisfy positive acceptance.
 
 - **Primary Motivation**: [Silent Data Loss via False Acceptance](../drivers-assessments/assessments.md), [Continuous Clinical Service Availability](../drivers-assessments/drivers.md)
-- **Governing Principles**: [AX-05 (State Separation)](../principles/architectural-axioms.md), [AX-10 (Failure as Normal Condition)](../principles/architectural-axioms.md), [AX-15 (Explicit Representation of Uncertainty)](../principles/architectural-axioms.md)
+- **Governing Principles**: [AX-05 (State Separation)](../../governance/architectural-axioms.md#ax-05), [AX-10 (Failure as Normal Condition)](../../governance/architectural-axioms.md#ax-10), [AX-15 (Explicit Representation of Uncertainty)](../../governance/architectural-axioms.md#ax-15)
 - **Historical Identifier Reference**: `REQ-INGRESS-001`
 
 ---
@@ -46,7 +46,7 @@ Harmonia mandates that every multi-stage operational activity must maintain expl
 - Does not mandate a specific workflow engine; it mandates observable progression state synchronized with real-world entity state.
 
 - **Primary Motivation**: [Unmonitored Destination Failure / Fan-Out Divergence](../drivers-assessments/assessments.md), [Coordinated Operational Activity and Entity State](../drivers-assessments/drivers.md)
-- **Governing Principle**: [AX-16 (Operational Activity & Entity State Progress Together)](../principles/architectural-axioms.md)
+- **Governing Principle**: [AX-16 (Operational Activity & Entity State Progress Together)](../../governance/architectural-axioms.md#ax-16)
 - **Historical Identifier Reference**: `REQ-COORD-001`
 
 ---
@@ -68,7 +68,7 @@ Harmonia mandates that any subject reference attached to a managed clinical even
 
 - **Primary Motivation**: [Patient Safety & Identity Integrity](../drivers-assessments/drivers.md)
 - **External Constraint**: [Applicable National / Jurisdictional Healthcare Identifier Obligations](external-constraints.md)
-- **Governing Principles**: [AX-06 (Explicit Information Authority)](../principles/architectural-axioms.md), [AX-14 (Preservation of Semantic Distinctions)](../principles/architectural-axioms.md)
+- **Governing Principles**: [AX-06 (Explicit Information Authority)](../../governance/architectural-axioms.md#ax-06), [AX-14 (Preservation of Semantic Distinctions)](../../governance/architectural-axioms.md#ax-14)
 - **Historical Identifier Reference**: `REQ-IDENT-001`
 
 ---
@@ -88,7 +88,7 @@ A frequent architectural failure mode is "binary collapsing": assuming an unconf
 - It mandates that retry mechanisms must be safe, idempotent, and reconciliation-aware. An indeterminate outcome must be resolved through explicit reconciliation (such as querying destination state or verifying idempotency tokens) rather than blind, speculative assumption.
 
 - **Primary Motivation**: [Silent Data Loss via False Acceptance](../drivers-assessments/assessments.md), [Continuous Clinical Service Availability](../drivers-assessments/drivers.md)
-- **Governing Principle**: [AX-15 (Uncertainty Is Preserved Until Resolved)](../principles/architectural-axioms.md)
+- **Governing Principle**: [AX-15 (Uncertainty Is Preserved Until Resolved)](../../governance/architectural-axioms.md#ax-15)
 - **Historical Identifier Reference**: `REQ-UNCERT-001`
 
 ---
@@ -138,7 +138,7 @@ Assurance finding ≠ Operational response
 Assurance responsibility ≠ Operational management responsibility
 ```
 
-[`REQ-FND-004`](#req-fnd-004-explicit-indeterminate-outcome) and [AX-15](../../../architectural-axioms.md#ax-15--uncertainty-is-preserved-until-resolved) continue to govern uncertainty about an operation's state, effect or outcome, including an assurance activity's own execution where applicable. Separately, an assurance activity may execute correctly yet lack sufficient evidence to establish a conclusion about its subject. This requirement preserves that insufficiency without treating it as an uncertain execution outcome, execution failure, assurance or non-assurance. Neither existing operational rule is rewritten or extended into an assurance-evidence sufficiency rule.
+[`REQ-FND-004`](#req-fnd-004-explicit-indeterminate-outcome) and [AX-15](../../governance/architectural-axioms.md#ax-15) continue to govern uncertainty about an operation's state, effect or outcome, including an assurance activity's own execution where applicable. Separately, an assurance activity may execute correctly yet lack sufficient evidence to establish a conclusion about its subject. This requirement preserves that insufficiency without treating it as an uncertain execution outcome, execution failure, assurance or non-assurance. Neither existing operational rule is rewritten or extended into an assurance-evidence sufficiency rule.
 
 ### Motivation Relationships
 
@@ -151,12 +151,12 @@ These are branching relationships, not a sequential motivation pipeline. The ind
 | [Statutory Health Information Privacy & Protection Driver](../drivers-assessments/drivers.md#5-statutory-health-information-privacy--protection) | Supports the requirement's need to evaluate handling against applicable obligations and controls. | Privacy supplies one valid motivation, not the entire assurance scope or independence obligation. |
 | [O3](../goals-outcomes/business-outcomes.md#3-demonstrable-protection-and-accountable-handling-of-health-information-o3) | The requirement supports O3's existing demonstrability and accountability purpose. | Textual contribution only; no new causal handover, intermediate Goal or assurance-outcome equivalence. |
 | [CST-EXT-001](external-constraints.md#cst-ext-001-applicable-health-information-privacy-and-data-protection-obligations) | Bounds assurance concerning health-information privacy and protection by applicable obligations. | No universal external requirement for independent assurance is claimed. |
-| [AX-06](../../../architectural-axioms.md#ax-06-----information-authority-is-explicit) | Co-governs interpretation of evidence authority and credibility independently of technical state. | Information authority does not establish assessor independence. |
-| [AX-07](../../../architectural-axioms.md#ax-07-----security-is-intrinsic-to-managed-operations) | Co-governs security context and policy for assurance activity. | Security enforcement does not establish independent conclusion authority. |
-| [AX-08](../../../architectural-axioms.md#ax-08-----evidence-records-meaning-not-machinery) | Co-governs meaningful provenance and audit evidence used in assurance. | Preserving evidence does not perform assurance or establish a conclusion. |
-| [AX-14](../../../architectural-axioms.md#ax-14--semantic-distinctions-are-preserved) | Co-governs preservation of the requirement's semantic distinctions. | Distinct meanings do not prescribe separate technologies or information types. |
+| [AX-06](../../governance/architectural-axioms.md#ax-06) | Co-governs interpretation of evidence authority and credibility independently of technical state. | Information authority does not establish assessor independence. |
+| [AX-07](../../governance/architectural-axioms.md#ax-07) | Co-governs security context and policy for assurance activity. | Security enforcement does not establish independent conclusion authority. |
+| [AX-08](../../governance/architectural-axioms.md#ax-08) | Co-governs meaningful provenance and audit evidence used in assurance. | Preserving evidence does not perform assurance or establish a conclusion. |
+| [AX-14](../../governance/architectural-axioms.md#ax-14) | Co-governs preservation of the requirement's semantic distinctions. | Distinct meanings do not prescribe separate technologies or information types. |
 
-[AX-09](../../../architectural-axioms.md#ax-09-----transient-operational-state-is-ephemeral-by-default) remains an evidence-selection and retention boundary: observations and progression state are not automatically provenance or audit evidence. [`REQ-FND-002`](#req-fnd-002-operational-activity-progression-state) can supply observable operational facts; it is a complementary evidence relationship, not an independence parent or assurance conclusion. `REQ-FND-004` / AX-15 have the complementary uncertainty relationship described above. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) governs this explicit reconciliation and preservation of unresolved downstream derivation; it is not a source of the real-world assurance need.
+[AX-09](../../governance/architectural-axioms.md#ax-09) remains an evidence-selection and retention boundary: observations and progression state are not automatically provenance or audit evidence. [`REQ-FND-002`](#req-fnd-002-operational-activity-progression-state) can supply observable operational facts; it is a complementary evidence relationship, not an independence parent or assurance conclusion. `REQ-FND-004` / AX-15 have the complementary uncertainty relationship described above. [AX-17](../../governance/architectural-axioms.md#ax-17) governs this explicit reconciliation and preservation of unresolved downstream derivation; it is not a source of the real-world assurance need.
 
 ### Downstream Derivation Boundary
 

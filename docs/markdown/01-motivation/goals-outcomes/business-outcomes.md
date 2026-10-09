@@ -55,7 +55,7 @@ Sensitive health information is demonstrably safeguarded across all integration 
 
 ### Relationship to Motivational Principles
 Unlike Outcomes O1 and O2 (which receive direct handovers from specific strategic goals), Outcome O3 is an **intrinsic platform property**:
-- It is realized through the foundational architectural principles [AX-07 (Security Is Intrinsic to Managed Operations)](../principles/architectural-axioms.md) and [AX-08 (Evidence Records Meaning)](../principles/architectural-axioms.md).
+- It is realized through the foundational architectural principles [AX-07 (Security Is Intrinsic to Managed Operations)](../../governance/architectural-axioms.md#ax-07) and [AX-08 (Evidence Records Meaning)](../../governance/architectural-axioms.md#ax-08).
 - Security and privacy are enforced intrinsically across all governed ingress, processing, and egress paths rather than being isolated to a single integration workflow.
 - As established in the [Orientation View](../orientation-view.md), AX-07 and AX-08 do not maintain causal arrows to outcomes; O3 acts as a common consequence sink for the entire platform.
 
