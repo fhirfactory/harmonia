@@ -30,9 +30,11 @@ $$\text{Actor} \longrightarrow \text{fulfils Role} \longrightarrow \text{partici
 
 ---
 
-## 3. The 7 Canonical R1 Business Collaborations
+<a id="3-the-7-canonical-r1-business-collaborations"></a>
 
-Harmonia recognises exactly seven canonical Business Collaborations in R1:
+## 3. The 7 Canonical R1.x/R2.x Business Collaborations
+
+Harmonia recognises exactly seven canonical Business Collaborations in the current R1.x/R2.x baseline:
 
 ```text
 Business Collaboration
@@ -57,7 +59,7 @@ Business Collaboration
 
 ### 3.3 Service Provider Collaboration
 - **Purpose**: Governs formal inter-organisational healthcare service partnerships, diagnostic service level agreements, shared service networks, and regional commissioning alliances.
-- **Participating Roles**: `Service Provider`, `Organisation`, `Organisational Unit`, `Service Coordinator`.
+- **Participants**: Actors in the `Organisation` and `Organisational Unit` categories; participation through the `Service Provider` and `Service Coordinator` Business Roles. Actor categories and Roles remain distinct; no universal Actor-to-Role assignment is established.
 - **Governed Activities**: Service directory coordination, regional capacity sharing, diagnostic panel contracting, and cross-organisational service eligibility alignment.
 
 ### 3.4 Care-Team Collaboration

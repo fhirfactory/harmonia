@@ -513,6 +513,7 @@ $$\text{Event} \longrightarrow \text{Entity Context} \longrightarrow \text{Requi
 #### 11. Mobile Staff Management (`Harmonia-Relevant`)
 - **11.1 Mobile Worker Dispatch & Safety**
   - `FEAT-HSO-16`: **Mobile Worker Task Dispatch**: Dispatch community care tasks and urgent visits to roving clinicians' mobile devices.
+    - **Architectural scope qualification (2026-10-09 human adjudication)**: Dispatch here concerns integration with external/business mobile work-management mechanisms: exchanging externally established assignment, dispatch and operational progression/status information with applicable worker/context information. Harmonia does not thereby determine or manage clinical work, clinical handover, clinical allocation or EMR worklists. External “work/task” vocabulary does not redefine Harmonia synthetic Task. The Feature name/identifier are retained; the proposed name `Mobile Work Task Management Integration` requires separate human confirmation. See the [Business integration boundary](../../03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary).
   - `FEAT-HSO-17`: **Mobile Visit Status Tracking**: Ingest arrival, visit progression, and safety check-in milestones from roving staff.
 
 #### 12. On-Call Management (`Harmonia-Relevant`)

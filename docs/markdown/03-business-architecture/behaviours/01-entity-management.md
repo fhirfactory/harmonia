@@ -16,20 +16,21 @@ Client Administration governs the identity, demographic context, relationship as
 - **Owning Capability**: `Person Identity` (under `Client Administration`)
 - **Key Architectural Semantics**:
   - **Identifier Resolution**: Asks for authoritative detail and verification regarding a specific person identifier within a single domain namespace.
-  - **Identifier Correlation**: Discovers, establishes, and maintains governed cross-authority associations between distinct identifier namespaces across the enterprise.
+  - **Identifier Correlation**: Ingests and maintains cross-authority associations between identifier namespaces where the governing relationship is established by authoritative information.
   - **Identity Alias**: Contextual, legal, or alternative identity expressions (e.g., preferred names, maiden names, emergency aliases) by which a person is known. It is conceptually distinct from cross-domain correlation.
+  - **R1.x/R2.x authority boundary**: Harmonia ingests and maintains authoritative identifiers, aliases and identity relationships, processes externally authoritative corrections/merge outcomes and propagates managed-state consequences. It does not originate probabilistic matching, golden-record determination, authoritative master-person selection or person-merge decisions. [REQ-FND-003](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-003-subject-referential-integrity) and the [Strategy scope statement](../../02-strategy/capabilities/business-enabling-capabilities.md#architectural-scope-statement-harmonia-1x2x-vs-3x-roadmap) govern this boundary.
 - **Functions & Exposed Services**:
   - **Feature: Identifier Resolution**:
     - *Function*: `Resolve Person Identifier` — Validates and retrieves the authoritative demographic record bound to a specific identifier.
     - *Exposed Service*: `Person Identifier Resolution` — Exposed to Service Administration and Service Delivery to disambiguate client identities.
   - **Feature: Cross-Authority Identifier Correlation**:
-    - *Function*: `Correlate Person Identifiers` — Evaluates deterministic and probabilistic linkage across multiple local patient identifiers (e.g., Hospital MRN, National IHI, Pathology ID).
+    - *Function*: `Correlate Person Identifiers` — Correlates local identifiers (e.g., Hospital MRN, National IHI, Pathology ID) using relationships established by authoritative information, retaining their source and namespace.
     - *Exposed Service*: `Person Identifier Correlation` — Exposed across the HIE to establish patient cross-reference mappings.
   - **Feature: Identity Alias Association**:
     - *Function*: `Maintain Person Identity Aliases` — Records and qualifies alias names, titles, and emergency aliases for a governed person identity.
     - *Exposed Service*: *(Internal Function — accessed via Person Identifier Resolution)*.
   - **Feature: Governed Identity Correction**:
-    - *Function*: `Apply Governed Person Identity Correction` — Executes audited merges, unlinks, and demographic rectifications under formal data governance.
+    - *Function*: `Apply Governed Person Identity Correction` — Processes externally authoritative corrections and merge/unlink outcomes, updates governed identity associations and propagates resulting managed-state consequences with audit history. Harmonia does not adjudicate the originating person-merge decision.
     - *Exposed Service*: `Person Identity Correction` — Exposed to authorized HIM/Medical Records administrators.
     - *Governed Process*: **Governed Person Identity Correction Process**.
 - **Information Responsibility**: Person Identity Record, Identifier Namespace Bindings, Cross-Authority Correlation Graph, Identity Aliases, Identity Merge/Split Audit Log.
@@ -37,7 +38,8 @@ Client Administration governs the identity, demographic context, relationship as
 ---
 
 ### 2.2 Healthcare Subject
-- **Owning Capability**: `Healthcare Subject Context`
+- **Owning Capability**: `Healthcare Subject`.
+- **Owner derivation**: Strategy Healthcare Subject owns Subject Context Binding and Demographic Context Governance; the Functions below discharge those same responsibilities. “Healthcare Subject Context” describes information/behaviour context, not another Capability or alias.
 - **Functions & Exposed Services**:
   - **Feature: Subject Context Binding**:
     - *Function*: `Establish Healthcare Subject Context` — Binds demographic, cultural, and communication requirements to a patient record.
@@ -50,7 +52,8 @@ Client Administration governs the identity, demographic context, relationship as
 ---
 
 ### 2.3 Client Relationship
-- **Owning Capability**: `Client Relationships & Support Network`
+- **Owning Capability**: `Client Relationship`.
+- **Owner derivation**: Strategy Client Relationship owns Next-of-Kin & Guardian Association and Relationship Validity Tracking. Support-network wording describes those responsibilities without establishing a separate Capability, alias or specialisation.
 - **Functions & Exposed Services**:
   - **Feature: Next-of-Kin & Guardian Association**:
     - *Function*: `Maintain Client Relationships` — Records links between patients and carers, next of kin, nominated representatives, and legal guardians.
@@ -63,7 +66,8 @@ Client Administration governs the identity, demographic context, relationship as
 ---
 
 ### 2.4 Client Privacy
-- **Owning Capability**: `Client Privacy & Consent Directives`
+- **Owning Capability**: `Client Privacy`.
+- **Owner derivation**: Strategy Client Privacy owns Consent Directive Evaluation and Confidentiality Flag Enforcement. Consent-directive wording describes that responsibility without creating a separate Capability.
 - **Functions & Exposed Services**:
   - **Feature: Consent Directive Evaluation**:
     - *Function*: `Evaluate Client Consent` — Evaluates patient opt-in, opt-out, and general information sharing preferences against proposed exchanges.
@@ -82,6 +86,7 @@ Provider Administration governs individual healthcare practitioners, their profe
 - **Owning Capability**: `Provider Administration`
 - **Key Architectural Semantics**:
   - **Practitioner $\neq$ Service Provider**: A *Practitioner* is an individual professional. A *Service Provider* is an organisation or facility offering health services. A Practitioner may act in the *Service Provider* role in private practice.
+  - **Role and privilege**: Practitioner Role Resolution supplies role/capacity information; it does not establish Clinical Privilege or Operational Privilege. Clinical Privilege Verification retains its clinical scope. An activity may require both distinct privilege determinations; neither follows from Role information alone.
 - **Functions & Exposed Services**:
   - **Feature: National Practitioner Verification**:
     - *Function*: `Verify Practitioner Registration` — Validates national registration, specialty endorsements, and disciplinary sanctions against regulatory registries (e.g., AHPRA).

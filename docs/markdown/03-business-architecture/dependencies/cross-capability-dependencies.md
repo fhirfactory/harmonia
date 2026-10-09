@@ -22,6 +22,8 @@ graph LR
 
 The diagram below illustrates the major inter-capability dependency relationships across the five healthcare contextual views:
 
+These nodes are contextual views, not typed Capabilities or identifier ancestors. The arrows summarise established responsibility needs; they do not allocate particular Services, participating Interactions or Collaborations.
+
 ```mermaid
 graph TD
     EM["Entity Management<br/>(Identity, Providers, Orgs, Locations, Services)"]
@@ -45,27 +47,24 @@ graph TD
 
 The matrix below documents the primary inter-capability service dependencies across Harmonia:
 
-| Consuming Capability Context | Exposed Business Service Consumed | Exposing / Owning Capability | Business Purpose & Collaboration Interaction |
+| Consuming Capability Context | Exposed Business Service Consumed | Exposing / Owning Capability | Business Purpose |
 | :--- | :--- | :--- | :--- |
-| **Referral Administration** | `Person Identifier Resolution` | **Person Identity** *(Client Admin)* | Disambiguates and validates referred patient identity against master registries. |
+| **Referral Administration** | `Person Identifier Resolution` | **Person Identity** *(Client Administration)* | Validates source-attributed identifiers against their authoritative issuing information; does not determine a master person. |
 | **Referral Administration** | `Service Provision Resolution` | **Health Service Administration** | Resolves target clinical specialty clinics, receiving providers, and referral catchment rules. |
 | **Episode & Encounter Administration** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical ward, room, and bed structural attributes for encounter bed placement. |
 | **Episode & Encounter Administration** | `Bed Availability Query` | **Bed & Care-Place Management** | Checks real-time operational bed readiness before confirming patient bed moves. |
-| **Order Administration** | `Practitioner Role Resolution` | **Provider Administration** | Validates requesting and attending clinician credentials and ordering privileges. |
 | **Order Administration** | `Service Provision Resolution` | **Health Service Administration** | Determines performing diagnostic laboratory or imaging centre routing destinations. |
-| **Diagnostic Administration** | `Order Requisition Ingress` | **Order Administration** | Correlates incoming diagnostic observations with active closed-loop order requisitions. |
 | **Diagnostic Administration** | `Terminology Mapping Service` | **Clinical Knowledge Services** | Normalises local laboratory and radiology test codes to canonical SNOMED-CT/LOINC concepts. |
-| **Clinical Record Administration** | `Healthcare Subject Context Resolution` | **Healthcare Subject Context** | Validates patient demographic context and indigenous/interpreter requirements for document headers. |
+| **Clinical Record Administration** | `Healthcare Subject Context Resolution` | **Healthcare Subject** | Validates patient demographic context and indigenous/interpreter requirements for document headers. |
 | **Clinical Record Administration** | `Semantic Conformance Verification Service` | **Information Design Governance** | Verifies clinical document structural and semantic compliance against governed interchange profiles. |
 | **Primary Care** | `Longitudinal Clinical Record Query` | **Patient Clinical Record** | Retrieves regional patient history, past discharge summaries, and medication timelines for GP consultations. |
 | **Acute Care** | `Consent Enforcement Service` | **Health Information Control** | Evaluates patient consent directives and break-glass emergency access permissions during acute admissions. |
-| **Emergency Care** | `Person Identifier Correlation` | **Person Identity** *(Client Admin)* | Rapidly links trauma and ambulance presentations to regional hospital records using fast-match correlation. |
+| **Emergency Care** | `Person Identifier Correlation` | **Person Identity** *(Client Administration)* | Resolves established, source-authoritative identity associations for emergency presentations; does not originate probabilistic matching or person-merge decisions. |
 | **Inpatient Care** | `Discharge Readiness Telemetry` | **Discharge Management** | Coordinates multidisciplinary ward discharge checklists and pharmacy reconciliation. |
 | **Bed & Care-Place Management** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical care-place capabilities (e.g., negative pressure, telemetry wiring) for isolation placement. |
 | **Work Allocation & Dispatch** | `Staff Presence Telemetry Query` | **Mobile Staff Management** | Allocates portering and cleaning work orders to active on-duty staff in the nearest physical zone. |
 | **Patient Transport** | `Encounter Location History Query` | **Episode & Encounter Administration** | Validates current patient ward location and target diagnostic department before dispatching porters. |
 | **Clinical Logistics Coordination** | `Secure Clinical Message Dispatch` | **Clinical Communication Administration** | Sends automated electronic specimen tracking notifications and urgent critical result dispatch alerts. |
-| **Discharge Management** | `Clinical Document Lifecycle Service` | **Clinical Record Administration** | Triggers publication of signed clinical discharge summaries upon patient departure. |
 | **Workflow & Activity Coordination**| `Policy Evaluation & Authorisation Service` | **Health Information Control** | Evaluates actor task-claiming permissions before allowing work order acceptance or document countersignature. |
 | **Presentation Services** | `Clinical Information Search Service` | **Health Information Access** | Executes search queries across longitudinal clinical records for display in clinical portals. |
 
@@ -77,7 +76,13 @@ The former Clinical Collaboration consumption of `Collaboration Clinical Summary
 
 Patient Clinical Record retains longitudinal assembly, active record maintenance, durable preservation and canonical integrated synthesis; Clinical Collaboration retains spaces, membership, discourse, in-conversation resolution and contextual clinical-summary projection; Health Information Access retains search, retrieval, access-qualified filtering, query execution context and result projection state. Information ownership, Function ownership, Service ownership, consumption, use and presentation remain distinct.
 
-Discharge publication timing remains unresolved: the dependency row describes publication upon departure while the Process describes publication before departure. Neither assertion is silently chosen as the resolution.
+The Order Administration → Practitioner Role Resolution row is withdrawn: the Service resolves Role/capacity information, not Clinical Privilege or Operational Privilege. The Diagnostic Administration → Order Requisition Ingress row is withdrawn: that Service ingests requisitions, not the asserted correlation of incoming reports. Both Services retain their owners and valid exposed behaviour. Required privilege/correlation behaviour remains valid, but precise consuming Service relationships remain unestablished; no replacement edge is inferred.
+
+Clinical Privilege concerns a practitioner's authority/credentials for applicable clinical activity; Operational Privilege concerns an actor's authority for applicable operational activity. Either or both may be required. Practitioner Role information may contribute context but establishes neither.
+
+The former Discharge Management → Clinical Document Lifecycle Service “publication upon departure” assertion is withdrawn. That Service exposes authoring addenda/corrections; the alleged discharge-publication consumption is not established. Discharge Management retains a capability dependency on Clinical Record Administration for applicable discharge information, with the precise Service/provider contract unresolved. Preparation, information availability/publication, discharge authorisation and physical departure remain distinct. Applicable information may be prepared/communicated before departure; `FEAT-HSO-29` dispatch preserves confirmed physical exit as its trigger. No universal publication sequence, additional publication event or replacement Service edge is inferred.
+
+Typed references distinguish Capability dependency, Service consumption, Interaction participation and Collaboration involvement. Abbreviated/descriptive wording is not an alias. Where identity or relationship is not established, retain the reference as unresolved rather than convert it into an edge.
 
 1. **Unidirectional Service Coupling**: Dependency arrows point strictly from the consuming capability to the exposed Business Service. The exposing capability remains completely agnostic of which downstream capabilities consume its services.
 2. **Encapsulated Implementation**: Consuming capabilities depend exclusively upon the abstract service contract and its business semantics, never upon internal algorithms or persistence structures.
@@ -93,7 +98,7 @@ Governed Assurance needs applicable criteria and trustworthy evidence. Source-in
 
 The approved [EC-02 / EC-14 contribution relationship](../behaviours/health-service-assurance.md#41-context-management-contribution) supports **Establish Assurance Context** through generic context-management capability and assurance-specific semantics together. It does not identify an exposed Business Service, a Service consumer, sole realisation, a technical mechanism or an implementation allocation. The five approved Functions establish internal capability-owned behaviour; they do not mechanically create exposed Services or consumption rows.
 
-The approved human review separately establishes the following three [Governed Assurance Services](../behaviours/health-service-assurance.md#5-approved-governed-assurance-business-services) and their Role-level consumption/communication relationships. These are approved relationships across the owning responsibility boundary, not inferred from EC contributions or Role-name similarity. No consuming Capability is allocated solely from a Role's name; §2's existing Capability rows and §1.2's topology remain unchanged.
+The approved human review separately establishes the following three [Governed Assurance Services](../behaviours/health-service-assurance.md#5-approved-governed-assurance-business-services) and their Role-level consumption/communication relationships. These are approved relationships across the owning responsibility boundary, not inferred from EC contributions or Role-name similarity. No consuming Capability is allocated solely from a Role's name; these assurance relationships do not determine §2's other Capability rows or §1.2's contextual-view topology.
 
 | Approved Business Service | Exposing / Owning Capability | Approved consumer / potential recipient Roles | Associated Business Interaction |
 | :--- | :--- | :--- | :--- |

@@ -36,7 +36,7 @@ Service Administration governs the clinical administrative lifecycles, coordinat
     - *Function*: `Assemble Referral Context` — Gathers relevant clinical history, medications, and diagnostic investigations into the referral package.
     - *Exposed Service*: `Referral Context Query` — Provides comprehensive referral dossiers to intake triage clinicians.
   - **Feature: Referral Status & Outcome Tracking**:
-    - *Function*: `Manage Referral Progression` — Tracks referral disposition across triage states: *Submitted* $\to$ *Triaged* $\to$ *Accepted/Waitlisted* $\to$ *Scheduled* $\to$ *Discharged*.
+    - *Function*: `Manage Referral Progression` — Tracks referral disposition in an **illustrative specialist pathway; dispositions vary**: *Submitted* $\to$ *Triaged* $\to$ *Accepted/Waitlisted* $\to$ *Scheduled* $\to$ *Discharged*.
     - *Exposed Service*: `Referral Status & Outcome Service` — Exposes progression milestones to referrers and patients.
     - *Governed Process*: **Referral Progression Process**.
     - *Scope qualification*: The displayed specialist pathway is illustrative, not mandatory for every Referral; acceptance, waitlisting, decline and redirection retain their contextual meanings.
@@ -68,7 +68,7 @@ Service Administration governs the clinical administrative lifecycles, coordinat
     - *Function*: `Establish Encounter Context` — Binds patient, attending practitioner, clinical class (e.g., Inpatient, Emergency, Ambulatory), and admitting diagnosis to a unique encounter identifier.
     - *Exposed Service*: `Encounter Context Resolution` — Discloses active encounter details to clinical applications.
   - **Feature: Encounter State Progression**:
-    - *Function*: `Progress Encounter State` — Coordinates encounter state transitions: *Planned* $\to$ *Arrived* $\to$ *In-Progress* $\to$ *Discharged* $\to$ *Completed*.
+    - *Function*: `Progress Encounter State` — Coordinates encounter progression (**scoped illustration; ON_LEAVE relationship unresolved**): *Planned* $\to$ *Arrived* $\to$ *In-Progress* $\to$ *Discharged* $\to$ *Completed*.
     - *Exposed Service*: `Encounter Lifecycle Event Notification` — Emits encounter transition events across the HIE.
     - *Governed Process*: **Encounter Lifecycle Process**.
     - *Scope qualification*: Process completion qualifications remain local; their correspondence with Strategy `ON_LEAVE` is unresolved. A shorter summary neither removes established states nor creates universal signing or legal-closure requirements.
@@ -92,7 +92,7 @@ Service Administration governs the clinical administrative lifecycles, coordinat
     - *Function*: `Resolve Order Destination` — Evaluates order routing rules to determine target laboratory, imaging centre, or procedural unit.
     - *Exposed Service*: `Order Dispatch Service` — Transmits orders to performing diagnostic systems.
   - **Feature: Order Closed-Loop Progression Tracking**:
-    - *Function*: `Manage Order Progression` — Tracks order state: *Placed* $\to$ *Received* $\to$ *Specimen Collected* $\to$ *In-Progress* $\to$ *Preliminary Result* $\to$ *Final Result* $\to$ *Closed*.
+    - *Function*: `Manage Order Progression` — Tracks order state (**scoped diagnostic/procedural illustration**): *Placed* $\to$ *Received* $\to$ *Specimen Collected* $\to$ *In-Progress* $\to$ *Preliminary Result* $\to$ *Final Result* $\to$ *Closed*.
     - *Exposed Service*: `Order Status & Tracking Query` — Provides real-time order tracking to ordering clinicians.
     - *Governed Process*: **Closed-Loop Order Progression Process**.
     - *Scope qualification*: Specimen, investigation and result checkpoints describe the illustrated diagnostic/procedural progression. Dispatch, receipt and acceptance remain distinct; Behaviour `Received` is not equated to a Process checkpoint without evidence. Cancellation/modification responsibility remains valid even where absent from that sequence.
@@ -168,12 +168,12 @@ Service Administration governs the clinical administrative lifecycles, coordinat
     - *Function*: `Receive Clinical Document` — Receives clinical documents from information suppliers.
     - *Exposed Service*: `Clinical Document Ingress` — Exposes document submission endpoints across the HIE.
   - **Feature: Document Versioning & Supersession**:
-    - *Function*: `Govern Clinical Document Lifecycle` — Manages document states: *Draft* $\to$ *Preliminary* $\to$ *Final* $\to$ *Amended* $\to$ *Superseded* $\to$ *Entered-in-Error*.
+    - *Function*: `Govern Clinical Document Lifecycle` — Manages document states (**scoped illustration, not a universal transition model**): *Draft* $\to$ *Preliminary* $\to$ *Final* $\to$ *Amended* $\to$ *Superseded* $\to$ *Entered-in-Error*.
     - *Exposed Service*: `Clinical Document Lifecycle Service` — Allows authoring clinicians to publish addenda or corrections.
     - *Governed Process*: **Clinical Document Lifecycle Process**.
     - *Scope qualification*: `Final ≠ automatically Final Signed`. Authorship, attestation, approval, authentication, verification, signature, finalisation, authority and legal qualification remain distinct. Process signing/countersigning requirements retain their local scope, and amendment/supersession/error states are not mandatory for every document. Ingestion and consumer processing do not define originating validity, authority, authorship or legal status.
   - **Feature: Document Metadata Indexing**:
-    - *Function*: `Index Clinical Document Metadata` ��� Indexes author, specialty, encounter, date, and document type (LOINC/SNOMED).
+    - *Function*: `Index Clinical Document Metadata` — Indexes author, specialty, encounter, date, and document type (LOINC/SNOMED).
     - *Exposed Service*: `Document Metadata Registry Query` — Discloses document registry metadata to clinical viewers.
 - **Information Responsibility**: Clinical Document Registry, Document Version History, Document Lifecycle State Register.
 

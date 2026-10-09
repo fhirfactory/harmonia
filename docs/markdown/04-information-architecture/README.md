@@ -50,7 +50,7 @@ Business Information Concept
 ```
 
 ### Upstream Authority & Immutability Context
-- **Domain 01 (Motivation)**, **Domain 02 (Strategy)**, and **Domain 03 (Business Architecture)** are **CLOSED and FROZEN** authoritative baselines. They must remain untouched.
+- **Historical baseline context**: Domains 01–03 were described as CLOSED/FROZEN for an earlier baseline. Governed subsequent changes require separate authorisation; that historical description does not prohibit them. **Current Domain 03 context** is the [R1.x/R2.x Business Architecture baseline under completion](../03-business-architecture/README.md). This metadata clarification changes no Domain 01/02 status or Domain 04 architecture.
 - Domain 04 derives strictly from the business meaning, capabilities, functions, services, processes, and conceptual information responsibilities established in Domain 03 (specifically `docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md`).
 - Domain 04 defines semantic models, NOT implementation structures.
 

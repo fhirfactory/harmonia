@@ -42,8 +42,8 @@ Intrinsic / Shared Enablement Capabilities
     - *Function*: `Maintain Active Clinical Record` — Maintains active problem lists, current medication regimens, allergies, and open clinical alerts for active care coordination.
     - *Exposed Service*: `Active Problem & Allergy Summary Query` — Exposes immediate active clinical summaries.
   - **Feature: Durable Clinical Record Preservation**:
-    - *Function*: `Preserve Durable Clinical Record` — Establishes durable, immutable, append-only historical truth with complete provenance and versioning.
-    - *Exposed Service*: `Historical Clinical Record Access` — Provides legal health record retrieval.
+    - *Function*: `Preserve Durable Clinical Record` — Preserves the governed longitudinal representation and durable, immutable, append-only history of what Harmonia received, knew, asserted or managed, with provenance and versioning. Corrections/supersession establish changed knowledge without retrospectively altering that history or acquiring originating clinical authority.
+    - *Exposed Service*: `Historical Clinical Record Access` — Provides governed historical record retrieval for authorised clinical and legal review; preservation does not itself establish legal qualification or originating authority.
 - **Information Responsibility**: Governed Longitudinal Health Record (LHR), Canonical Clinical Timeline, Active Problem List, Immutable Historical Record Store.
 
 ---
@@ -77,10 +77,11 @@ Intrinsic / Shared Enablement Capabilities
   - **Feature: Federated Clinical Query**:
     - *Function*: `Search Health Information` — Executes structured semantic searches across diagnostic reports, clinical notes, and medication histories.
     - *Exposed Service*: `Clinical Information Search Service` — Discloses search capabilities to clinical user interfaces.
-  - **Feature: Access-Controlled Information Filtering**:
+  - **Capability-scoped Functions / Services**:
+    - *Feature association not established*: `FEAT-ISE-09 — Access-Controlled Information Filtering` requires access-controlled disclosure/filtering; retrieval of discrete information alone does not materially realise that responsibility. No replacement Feature is assigned.
     - *Function*: `Retrieve Health Information` — Fetches discrete clinical observations and original attachments.
     - *Exposed Service*: `Clinical Resource Retrieval Service` — Delivers structured clinical information to requesting applications.
-  - **Feature: Access-Qualified Result Filtering**:
+  - **Capability-scoped behaviour: Access-Qualified Result Filtering** (Feature identity not established):
     - *Function*: `Apply Access-Qualified Result Filtering` — Redacts or masks search results and clinical content based on the caller's verified security context and patient consent directives.
     - *Exposed Service*: *(Embedded within Search and Retrieval Services)*.
 - **Information Responsibility**: Query Execution Context, Filtered Result Projection State.
@@ -106,12 +107,14 @@ Intrinsic / Shared Enablement Capabilities
   - **Feature: Health Information Access & Consent Control**:
     - *Function*: `Evaluate Information Access Authority` — Evaluates user role, organisation, patient relationship, purpose of use, and break-glass overrides against default-deny policies.
     - *Exposed Service*: `Policy Evaluation & Authorisation Service` — Evaluates access requests across the platform.
-  - **Feature: Security Context Propagation**:
+  - **Capability-scoped Functions / Services**:
+    - *Feature association not established*: `FEAT-ISE-12 — Security Context Propagation` propagates attributable security context; evaluating consent constraints does not materially realise that responsibility. No replacement Feature is assigned.
     - *Function*: `Evaluate Consent Constraint` — Cross-references access requests against client consent directives and sensitive health category restrictions.
     - *Exposed Service*: `Consent Enforcement Service` — Returns masking and redaction instructions.
-  - **Feature: Security Context Binding**:
+  - **Capability-scoped behaviour: Security Context Binding** (Feature identity not established):
     - *Function*: `Propagate Security Context` — Generates and binds canonical, immutable security contexts to all intra-platform transactions.
     - *Exposed Service*: `Security Context Validation Service` — Verifies transaction security credentials.
+    - *Exposure qualification*: Validation is the declared Service behaviour. Its juxtaposition with Propagate Security Context does not establish a one-to-one Function/Service relationship; the precise internal mapping remains unestablished.
   - **Feature: Non-PHI Compliance Auditing**:
     - *Function*: `Record Security-Significant Activity` — Records tamper-evident audit evidence (who, what, when, why, patient MRN, policy outcome) without logging unmasked PHI.
     - *Exposed Service*: `Security Audit Ingress` — Ingests audit events across all capabilities.
@@ -128,7 +131,7 @@ Intrinsic / Shared Enablement Capabilities
     - *Exposed Service*: `Terminology Concept Resolution Service` — Exposes concept validation lookups.
   - **Feature: Bidirectional Terminology Mapping**:
     - *Function*: `Map Clinical Concept` — Translates local lab codes and legacy terms to canonical SNOMED/LOINC codes using governed translation maps.
-    - *Exposed Service*: `Terminology Mapping Service` ��� Translates codes across terminology systems.
+    - *Exposed Service*: `Terminology Mapping Service` — Translates codes across terminology systems.
 - **Information Responsibility**: Canonical Clinical Ontologies, Semantic Value Sets, Cross-Terminology Mapping Tables.
 
 ---
@@ -171,14 +174,16 @@ Intrinsic / Shared Enablement Capabilities
   2. **To Do**: Assigned clinical review or administrative decision tasks (*human reviewing/updating/deciding* — e.g., review abnormal lab result, countersign discharge summary).
   3. **Synthetic Task**: Automated system-executable activities (*non-human executable work* — e.g., generate summary, syndicate batch, evaluate rules).
 - **Ownership Invariant**: Workflow & Activity Coordination owns **generic activity coordination semantics and timers**. It does **not** acquire ownership of the business meaning or clinical outcome of the activity.
+- **Clinical-work boundary**: Coordination supports externally established work requirements and authorised human review/update/approval. It does not determine clinical tasks, manage clinical handover or own EMR clinical worklists. The [clinical-work integration rule](../metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary) preserves clinical authority and the three work-unit meanings; Task remains synthetic work.
+- **Outcome uncertainty**: For materially significant managed activity outcomes, missing acknowledgement, response or observation does not establish success or failure. Preserve uncertainty pending authoritative observation/reconciliation. This is a Business obligation, not a universal new lifecycle state; assurance evidence insufficiency remains distinct from execution uncertainty.
 - **Functions & Exposed Services**:
   - **Feature: Work Order Progression**:
     - *Function*: `Coordinate Work Order` — Coordinates operational task lifecycles and dispatches.
     - *Exposed Service*: `Work Order Coordination Service` — Manages operational work progression.
     - *Governed Process*: **Work Order Progression Process**.
   - **Feature: To Do Decision & Approval Coordination**:
-    - *Function*: `Coordinate To Do` — Manages clinical review worklists, reminders, and sign-off queues.
-    - *Exposed Service*: `To Do Management Service` — Provides task inbox and sign-off management.
+    - *Function*: `Coordinate To Do` — Coordinates human review/update/approval items, reminders and sign-off queues within Harmonia's operational responsibility; clinical requirements and decisions remain with accountable clinical authority.
+    - *Exposed Service*: `To Do Management Service` — Provides To Do inbox and sign-off coordination without acquiring underlying clinical-work management.
     - *Governed Process*: **To Do Progression Process**.
   - **Feature: Synthetic Task Orchestration**:
     - *Function*: `Coordinate Synthetic Task` — Orchestrates automated system workflows and operational progression.
@@ -225,13 +230,13 @@ Intrinsic / Shared Enablement Capabilities
   - **Feature: Information Standards & Semantic Governance**:
     - *Function*: `Govern Information Semantics` — Authors and validates canonical data concepts and entity relationships.
     - *Exposed Service*: `Semantic Model Definition Service` — Discloses canonical model definitions.
-  - **Feature: Information Definition & Schema Governance**:
+  - **Capability-scoped behaviour: Information Definition & Schema Governance** (Feature identity not established):
     - *Function*: `Govern Information Definition` — Maintains governed data element dictionaries, data types, and structural rules.
     - *Exposed Service*: `Information Dictionary Query` — Provides data dictionary specifications.
-  - **Feature: Terminology Binding Governance**:
+  - **Capability-scoped behaviour: Terminology Binding Governance** (Feature identity not established):
     - *Function*: `Govern Terminology Binding` — Binds canonical data elements to authoritative terminology value sets.
     - *Exposed Service*: `Terminology Binding Specification Lookup` — Discloses value set bindings.
-  - **Feature: Exchange Profile Governance**:
+  - **Capability-scoped behaviour: Exchange Profile Governance** (Feature identity not established):
     - *Function*: `Govern Exchange Profile` — Defines standards-based interchange profiles and message constraints.
     - *Exposed Service*: `Exchange Profile Specification Query` — Discloses interoperability schemas.
   - **Feature: Semantic Conformance Verification**:

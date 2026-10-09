@@ -6,6 +6,10 @@ The named owning Capabilities retain their established responsibilities. Affecte
 
 Processes may elaborate scoped progression without reproducing Behaviour stage lists. Established ownership, responsibility, authority boundaries and supported obligations remain controlling. Omitted Process checkpoints are not invalidated by a Behaviour summary; omitted Behaviour responsibilities are not removed by a Process. Stage-count equality is not required, and extra detail does not establish universal applicability.
 
+Illustrations are not complete normative transition models. Their scoped applicability and visible uncertainty annotations retain independent Business meaning; detailed execution-state machinery remains downstream. For a materially significant managed outcome that available evidence cannot establish, preserve uncertainty rather than infer success or failure from an absent acknowledgement, response or observation. No universal additional Process state is prescribed.
+
+Where Healthcare Service context is material to the activity's meaning, authority, coordination, progression or accountability, retain that context in the relevant activity/information responsibility. Location, Organisation, Practitioner or Role cannot substitute for it; no representation or implementation binding follows.
+
 In the Harmonia Business Architecture, a **Business Process** represents the governed progression of a healthcare activity instance through a defined lifecycle of meaningful states, dispositions, and operational outcomes within an owning Capability or Feature boundary.
 
 ### 1.1 Process Inclusion Rule
@@ -23,7 +27,7 @@ Generic, stateless, or purely retrieval-oriented operations do **not** constitut
 
 ### 1.2 Canonical Business Process Catalogue
 
-The sixteen established R1 Business Processes are preserved. Three approved Health Service Assurance Processes extend this catalogue to **nineteen Business Processes**; the assurance Processes have established purposes and responsibility boundaries while detailed lifecycle states and transitions remain unresolved.
+The sixteen pre-existing Business Processes remain in the current R1.x/R2.x baseline with the authorised identity/discharge reconciliations and explicit lifecycle qualifications. Three approved Health Service Assurance Processes extend this catalogue to **nineteen Business Processes**; their existing authority/progression boundaries are sufficient for this baseline while detailed lifecycle states and transitions remain unestablished.
 
 ```text
 Principal Business Processes
@@ -59,15 +63,16 @@ Principal Business Processes
 
 ### 2.1 Governed Person Identity Correction Process
 - **Owning Capability**: `Person Identity` (under `Client Administration`)
-- **Process Purpose**: Governs the formal, audited remediation, merging, unlinking, or correction of person demographic records and identifier linkages following identity fraud, misidentification, or duplicate registration.
+- **Process Purpose**: Processes externally authoritative identity corrections and merge/unlink outcomes, applies their consequences to Harmonia-managed identity information and identifier associations, and communicates resulting changes with an audit history.
+- **Authority boundary**: Person correction/merge decisions originate externally. Internal triage, evidence verification and approval concern applicability and governed processing of that authoritative outcome, not person matching, golden-record determination, master-person selection or originating merge adjudication.
 - **State Progression Lifecycle**:
   $$\text{Correction Requested} \longrightarrow \text{HIM Triage} \longrightarrow \text{Evidence Verified} \longrightarrow \text{Correction Approved} \longrightarrow \text{Merge/Unlink Executed} \longrightarrow \text{Change Broadcasted} \longrightarrow \text{Closed}$$
 - **Key State Dispositions**:
-  - `Correction Requested`: Demographic discrepancy or duplicate identity flag submitted.
-  - `HIM Triage`: Health Information Manager reviews candidate identity records.
-  - `Evidence Verified`: Primary identity documentation or statutory declarations verified.
-  - `Correction Approved`: Authorised correction decision signed off.
-  - `Merge/Unlink Executed`: Canonical identifier correlation graph updated and audit record sealed.
+  - `Correction Requested`: Externally authoritative correction or merge/unlink outcome received for governed application.
+  - `HIM Triage`: Health Information Manager reviews the received decision/outcome and its applicability.
+  - `Evidence Verified`: Authoritative source decision and supporting provenance/documentation verified.
+  - `Correction Approved`: Governed application of the externally authoritative outcome approved; this does not originate a person-merge decision.
+  - `Merge/Unlink Executed`: External merge/unlink consequences applied to Harmonia's managed identifier associations and audit history.
   - `Change Broadcasted`: Downstream clinical systems notified of merged or rectified identity.
 
 ---
@@ -94,7 +99,7 @@ Principal Business Processes
 - **Process Purpose**: Governs the end-to-end operational progression of an incoming clinical referral from receipt through specialist clinical triage, booking, and final service acceptance.
 - **Scope qualification**: This illustrates a specialist booking/attendance pathway; Referral does not universally require acceptance, scheduling, attendance or discharge, or establish delivery, responsibility actually assumed or Transfer of Care. Decline, rejection and redirection remain valid dispositions without invented transition paths. `Accepted / Waitlisted` is a local compound checkpoint, not universal equivalence between acceptance and waitlisting.
 - **State Progression Lifecycle**:
-  $$\text{Submitted} \longrightarrow \text{Intake Validated} \longrightarrow \text{Clinically Triaged} \longrightarrow \text{Accepted / Waitlisted} \longrightarrow \text{Scheduled} \longrightarrow \text{Consultation Attended} \longrightarrow \text{Discharged / Rejected}$$
+  $$\text{Submitted} \longrightarrow \text{Intake Validated} \longrightarrow \text{Clinically Triaged} \longrightarrow \text{Accepted / Waitlisted} \longrightarrow \text{Scheduled} \longrightarrow \text{Consultation Attended} \longrightarrow \text{Discharged / Rejected} \qquad \text{(Illustrative specialist pathway; dispositions vary)}$$
 - **Key State Dispositions**:
   - `Submitted`: Electronic referral received from GP or external facility.
   - `Intake Validated`: Administrative validation of patient details, mandatory fields, and tests.
@@ -110,7 +115,7 @@ Principal Business Processes
 - **Owning Capability**: `Episode & Encounter Administration`
 - **Process Purpose**: Governs the clinical and administrative lifecycle of an acute, emergency, inpatient, or outpatient encounter between a patient and healthcare services.
 - **State Progression Lifecycle**:
-  $$\text{Planned / Booked} \longrightarrow \text{Arrived} \longrightarrow \text{Triaged / Ingested} \longrightarrow \text{Active In-Progress} \longrightarrow \text{Discharged} \longrightarrow \text{Completed / Encoded}$$
+  $$\text{Planned / Booked} \longrightarrow \text{Arrived} \longrightarrow \text{Triaged / Ingested} \longrightarrow \text{Active In-Progress} \longrightarrow \text{Discharged} \longrightarrow \text{Completed / Encoded} \qquad \text{(Scoped illustration; ON_LEAVE relationship unresolved)}$$
 - **Key State Dispositions**:
   - `Planned / Booked`: Elective admission or clinic appointment scheduled.
   - `Arrived`: Patient presents at facility or emergency desk.
@@ -127,7 +132,7 @@ Principal Business Processes
 - **Process Purpose**: Governs the rigorous, closed-loop tracking of diagnostic pathology, radiology, and procedural orders from requisition to result correlation, preventing dropped or unfulfilled investigations.
 - **Scope qualification**: These examples describe a diagnostic/procedural progression and do not exclude medication from the broader Order Administration responsibility. Specimen and result checkpoints are scoped. The signed requisition/report requirements remain within this illustrated scope; signing is not universally equivalent to finalisation or authority. Result consumption/binding does not define originating validity, authority, authorship or legal status.
 - **State Progression Lifecycle**:
-  $$\text{Requisition Placed} \longrightarrow \text{Order Dispatched} \longrightarrow \text{Specimen Collected / Scheduled} \longrightarrow \text{In-Execution} \longrightarrow \text{Preliminary Result Bound} \longrightarrow \text{Final Result Bound} \longrightarrow \text{Closed / Verified}$$
+  $$\text{Requisition Placed} \longrightarrow \text{Order Dispatched} \longrightarrow \text{Specimen Collected / Scheduled} \longrightarrow \text{In-Execution} \longrightarrow \text{Preliminary Result Bound} \longrightarrow \text{Final Result Bound} \longrightarrow \text{Closed / Verified} \qquad \text{(Scoped diagnostic/procedural illustration)}$$
 - **Key State Dispositions**:
   - `Requisition Placed`: Electronic order created and signed by requesting clinician.
   - `Order Dispatched`: Order routed and accepted by performing diagnostic service. This local compound checkpoint retains routing and recipient acceptance as distinct facts; dispatch alone establishes neither receipt nor acceptance. Behaviour `Received` is not equated with this checkpoint without evidence.
@@ -143,7 +148,7 @@ Principal Business Processes
 - **Owning Capability**: `Clinical Record Administration`
 - **Process Purpose**: Governs the versioning, clinical sign-off, addenda, superseding, and legal status of clinical documents (discharge summaries, specialist letters, advance care directives).
 - **State Progression Lifecycle**:
-  $$\text{Draft} \longrightarrow \text{Preliminary} \longrightarrow \text{Final Signed} \longrightarrow \text{Amended / Addended} \longrightarrow \text{Superseded} \longrightarrow \text{Entered-in-Error}$$
+  $$\text{Draft} \longrightarrow \text{Preliminary} \longrightarrow \text{Final Signed} \longrightarrow \text{Amended / Addended} \longrightarrow \text{Superseded} \longrightarrow \text{Entered-in-Error} \qquad \text{(Scoped illustration; no universal document lifecycle)}$$
 - **Key State Dispositions**:
   - `Draft`: Incomplete clinical document saved during consultation.
   - `Preliminary`: Document authored pending senior registrar or consultant countersignature.
@@ -254,15 +259,16 @@ Principal Business Processes
 - **Owning Capability**: `Discharge Management`
 - **Process Purpose**: Governs the multidisciplinary coordination of patient discharge planning, pharmacy reconciliation, transport, and community handover.
 - **State Progression Lifecycle**:
-  $$\text{Discharge Planning Initiated} \longrightarrow \text{Clinical Readiness Confirmed} \longrightarrow \text{Medications Reconciled} \longrightarrow \text{Transport & Services Booked} \longrightarrow \text{Discharge Summary Signed} \longrightarrow \text{Physically Departed}$$
+  $$\text{Discharge Planning Initiated} \longrightarrow \text{Clinical Readiness Confirmed} \longrightarrow \text{Medications Reconciled} \longrightarrow \text{Transport & Services Booked} \longrightarrow \text{Discharge Summary Signed} \longrightarrow \text{Physically Departed} \qquad \text{(Illustrative preparation; publication, authorisation and exit distinct)}$$
 - **Key State Dispositions**:
   - `Discharge Planning Initiated`: Estimated Date of Discharge (EDD) set on admission.
   - `Clinical Readiness Confirmed`: Attending medical team declares patient fit for discharge.
   - `Medications Reconciled`: Hospital pharmacy reconciles and dispenses discharge medications.
   - `Transport & Services Booked`: Community nursing, home equipment, and patient transport booked.
-  - `Discharge Summary Signed`: Final discharge summary published and sent to GP.
-  - `Physically Departed`: Patient departs ward; care-place turnover triggered.
-- **Preserved uncertainty**: `Discharge Summary Signed` and Behaviour `Discharge Summary Finalised` are not universal equivalents. The Process publication/transmission before physical departure and dependency publication upon departure remain unreconciled timing assertions; no replacement timing or separate publication events are established.
+  - `Discharge Summary Signed`: Applicable signed summary is available/published and may be communicated before departure where the Business behaviour requires it; signing, finalisation, publication and discharge authorisation remain distinct.
+  - `Physically Departed`: Confirmed physical exit triggers departure notifications, updated bed-state communication and finalised-summary dispatch to external care providers under `FEAT-HSO-29`; care-place turnover follows its own responsibility.
+- **Timing reconciliation**: Preparation, information availability/publication, applicable discharge authorisation and physical exit are distinct. Earlier preparation/communication is permitted; it does not realise a Feature triggered by confirmed exit. This illustrated local pathway establishes neither universal publication timing nor a universal discharge state machine, and adds no inferred publication event or authorisation state.
+- **Preserved uncertainty**: Summary signing and finalisation are not universal equivalents. Detailed applicability, discharge-authority workflows and timing beyond the established preparation/confirmed-exit distinction remain unestablished.
 
 ---
 
@@ -287,14 +293,24 @@ Principal Business Processes
 - **Owning Capability**: `Workflow & Activity Coordination`
 - **Activity Archetype**: **Human Reviewing / Updating / Deciding** — clinical review, document countersignature, or administrative authorization task.
 - **State Progression Lifecycle**:
-  $$\text{Issued} \longrightarrow \text{In-Inbox} \longrightarrow \text{Opened / Under-Review} \longrightarrow \text{Actioned / Decided} \longrightarrow \text{Dismissed / Delegated}$$
+
+```mermaid
+graph LR
+    I["Issued"] --> B["In-Inbox"]
+    B --> R["Opened / Under-Review"]
+    R --> A["Actioned / Decided"]
+    D["Dismissed / Delegated<br/>Disposition/position unresolved"]
+    NOTE["Illustrative progression, not a normative transition model.<br/>Relationship of dismissal/delegation to action/decision is unestablished."]
+    classDef note fill:#fff8dc,stroke:#8a6d3b,stroke-dasharray:5 5;
+    class NOTE,D note;
+```
 - **Key State Dispositions**:
   - `Issued`: To Do generated (e.g., review abnormal potassium result).
   - `In-Inbox`: Displayed in practitioner's actionable task list.
   - `Opened / Under-Review`: Clinician inspecting relevant clinical context.
   - `Actioned / Decided`: Decision executed (e.g., signed off, order placed, acknowledged).
   - `Dismissed / Delegated`: Task reassigned to registrar or dismissed with comment.
-- **Preserved uncertainty**: Whether dismissal/delegation is an alternative disposition, a subsequent action or a scoped variant remains unresolved; the displayed order does not authorise an inferred transition model.
+- **Preserved uncertainty**: Whether dismissal/delegation is an alternative disposition, a subsequent action or a scoped variant remains unresolved; its disconnected diagram node establishes no transition or position in the illustrative progression.
 
 ---
 
@@ -302,14 +318,24 @@ Principal Business Processes
 - **Owning Capability**: `Workflow & Activity Coordination`
 - **Activity Archetype**: **Non-Human Executable Work** — automated system workflows, batch syndications, or policy evaluation tasks.
 - **State Progression Lifecycle**:
-  $$\text{Draft / Scheduled} \longrightarrow \text{Executing} \longrightarrow \text{Awaiting-Dependency} \longrightarrow \text{Completed} \longrightarrow \text{Progression Stalled / Failed}$$
+
+```mermaid
+graph LR
+    D["Draft / Scheduled"] --> E["Executing"]
+    E --> W["Awaiting-Dependency"]
+    W --> C["Completed"]
+    F["Progression Stalled / Failed<br/>Outcome/position unresolved"]
+    NOTE["Illustrative progression, not a normative transition model.<br/>No Completed-to-Stalled/Failed transition is established."]
+    classDef note fill:#fff8dc,stroke:#8a6d3b,stroke-dasharray:5 5;
+    class NOTE,F note;
+```
 - **Key State Dispositions**:
   - `Draft / Scheduled`: Automated task instantiated and scheduled for processing.
   - `Executing`: System actively processing task.
   - `Awaiting-Dependency`: Paused awaiting asynchronous external reply or event.
   - `Completed`: Automated execution succeeded and output artifact produced.
   - `Progression Stalled / Failed`: Transient fault triggers scheduled recovery attempt; permanent failure records failure evidence.
-- **Preserved uncertainty**: Whether stalled/failed is an alternative outcome, reopening/post-completion behaviour or a presentation defect remains unresolved. The displayed sequence does not make success and failure equivalent or establish post-completion transitions.
+- **Preserved uncertainty**: Whether stalled/failed is an alternative outcome, reopening/post-completion behaviour or a presentation defect remains unresolved. Its disconnected diagram node does not make success and failure equivalent or establish post-completion transitions.
 
 ---
 

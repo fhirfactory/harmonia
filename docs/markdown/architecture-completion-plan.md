@@ -117,6 +117,14 @@ a future stage. This plan changes no architecture-domain status.
 
 ## 4. Current Programme Position
 
+The authorised Domain 03 **Step 3 — Residual Semantic Adjudication and Capacity Management Pattern Review** is complete. The 2026-10-09 assessment establishes **semantic completion for the agreed R1.x/R2.x Business Architecture scope** against the Domain Completion Gate. The [Domain 03 metamodel](03-business-architecture/metamodel/business-architecture-metamodel.md#9-r1xr2x-semantic-sufficiency-boundary), [residual Service Delivery decisions](03-business-architecture/behaviours/03-service-delivery.md#residual-feature-sufficiency) and [HSO capacity responsibilities](03-business-architecture/behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary) record the authoritative outcomes; the [Domain 03 completion boundary](03-business-architecture/README.md#5-completion-boundary-and-retained-uncertainty) retains downstream, governance and deliberately unestablished matters. Completion requires semantic sufficiency, not graph density. No freeze/refreeze or final R1.x/R2.x programme baseline is declared.
+
+The next domain stage remains **Domain 04 — Information Architecture Reconciliation**, subject to separate bounded authorisation. It has not commenced through Step 3. Canonical Architectural Axioms Migration and the proposed HSO-16 Strategy name correction remain separately controlled follow-on tasks; neither was performed as part of this reconciliation.
+
+### Earlier Recorded Programme Position
+
+The following records the programme position previously captured by this plan, rather than a prohibition on subsequent bounded authorisation:
+
 - Domain 02 Strategy Cleanup Step 1 assessment has been completed.
 - Its findings have subsequently been architecturally adjudicated.
 - Domain 02 cleanup implementation remains a separately authorised task.

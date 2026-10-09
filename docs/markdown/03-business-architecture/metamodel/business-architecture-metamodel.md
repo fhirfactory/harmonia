@@ -69,7 +69,7 @@ A Capability or Feature establishes:
 
 ## 3. Function and Service Semantics
 
-Shared subject matter, Capability context or clinical purpose SHALL NOT establish that a Function or Service realises, specialises or belongs to a Strategy Feature. Association requires semantic evidence. Where absent, preserve the Feature, Function, Service and established owning Capability, and record **Feature association not established** without assigning a replacement Feature.
+Domain03 SHALL NOT establish a Feature identity that Strategy has not established. A Strategy Feature may be associated with Business behaviour only where that behaviour materially realises the semantic responsibility expressed by the Feature. Shared subject matter, terminology, information, Actor, Capability context or clinical purpose is insufficient. Where semantic realisation is not established, preserve the Feature, Function, Service and established owning Capability, and record **Feature association not established** without assigning a replacement Feature.
 
 Harmonia enforces strict semantic rules governing Functions and Services to prevent architectural ambiguity:
 
@@ -102,6 +102,32 @@ Capability B (Consumer)
    - **Harmonia-Internal Consumption**: Services consumed by other Harmonia capabilities (e.g., Service Administration consuming Person Identifier Resolution from Entity Management).
    - **Enterprise/External Consumption**: Services consumed by external healthcare participants, client systems, or national registries (e.g., Referral Submission exposed to external GP practices).
 
+### 3.4 Significance-Driven Relationships and Typed Dependencies
+
+Role, Actor, Function, Service, Interaction, Collaboration and Process relationships SHALL be established where they materially explain responsibility, participation, exposure, collaboration or Business progression. Their absence alone does not establish missing architecture. Exhaustive Function-to-Role, Function-to-Service, Interaction-to-Service or Actor-to-Function matrices are not required.
+
+A Service dependency requires consuming behaviour that needs behaviour actually exposed by that Service. Related information or subject matter is insufficient. Capability dependency, Service consumption, Interaction participation and Collaboration involvement SHALL retain their distinct types and meanings. Descriptive or abbreviated references do not create aliases. An unestablished element or relationship SHALL remain explicitly unresolved; no replacement dependency is inferred.
+
+### 3.5 Clinical and Operational Privilege
+
+**Clinical Privilege** concerns whether a practitioner is authorised/credentialed to undertake applicable clinical activity. **Operational Privilege** concerns whether an actor is authorised to undertake applicable operational activity. They are distinct responsibilities; an activity may require both.
+
+Practitioner Role information may contextualise or contribute to a privilege determination, but Practitioner Role Resolution establishes neither Clinical Privilege nor Operational Privilege. These distinctions do not allocate new Roles, Services or policy mechanisms.
+
+### 3.6 Business Responsibility and Reusable Composition
+
+Business Architecture SHALL describe responsibility meaningful to the Business at its declared architectural layer. Shared downstream machinery does not establish a shared Business Function. In service-delivery operational contexts, **Capacity Management** concerns understanding and managing available, committed and utilised service capacity. Contexts may have materially different capacity semantics. A generalised operational-state capture mechanism is a downstream derivation concern and SHALL NOT replace those Business responsibilities. The [HSO capacity responsibility boundary](../behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary) distinguishes context-specific capacity from resource state and higher-order consumers.
+
+A domain-specific Business Enabling Feature MAY be realised through composition of established reusable capabilities and configured workflow/Praxis without a correspondingly specialised Business Function. The composition must sufficiently express the required responsibility; clinical purpose or setting alone does not establish another Harmonia information-management responsibility. Do not create a Feature-to-Function relationship where only a composition-level sufficiency decision is established.
+
+### 3.7 Clinical Work Integration Boundary
+
+**Harmonia may integrate and coordinate around clinical work; it does not thereby manage clinical work.** It may exchange work information, receive externally established requirements, route operational activity, observe progression, coordinate Harmonia-managed consequences and apply established qualification, privilege and policy constraints. It SHALL NOT thereby determine clinical work, manage clinical handover, acquire clinical allocation or decision authority, own clinical worklists or assume EMR workflow ownership. Information assembly for handover is distinct from performing or managing the handover.
+
+Clinical facts retain their originating authority when consumed by patient-flow, capacity or discharge coordination. Clinical progression and operational patient progression SHALL remain distinct. A clinical/professional clearance may affect discharge readiness without the operational consumer acquiring authority to establish that clearance. Clinical Privilege and Operational Privilege retain §3.5's distinct meanings.
+
+Harmonia terminology remains **Work Order = human doing**, **To Do = human review/update/approval**, and **Task = synthetic task**. External work/task vocabulary does not redefine Harmonia Task. Coordination of a To Do supports an authorised review or approval; it does not confer clinical-work management authority.
+
 ---
 
 ## 4. Business Process Semantics
@@ -133,6 +159,12 @@ A Business Process may elaborate progression for a defined activity within its o
 
 Omission of a Process checkpoint from a Behaviour summary does not invalidate that checkpoint; omission of Behaviour responsibility from a Process does not remove that responsibility. Stage-count equality is not required. Greater Process detail does not override established responsibility.
 
+### 4.4 Illustrative Progression and Material Outcome Uncertainty
+
+Illustrative progression SHALL NOT imply an authoritative transition model. Only established states/transitions may be normative. Where alternatives, terminal behaviour or post-completion relationships remain unresolved, both the surrounding text and the affected diagram SHALL visibly identify the uncertainty.
+
+Where Harmonia manages or governs an activity with a materially significant outcome and available evidence cannot establish that outcome, the uncertainty SHALL remain explicit. Absence of acknowledgement, response, observation or evidence does not by itself establish success or failure. This follows [REQ-FND-004](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-004-explicit-indeterminate-outcome) and AX-15; it creates no universal INDETERMINATE Process state or downstream execution-state machinery.
+
 ---
 
 ## 5. Cross-Cutting Responsibility Rule
@@ -163,6 +195,18 @@ Harmonia establishes an essential architectural guardrail to maintain component 
   
 Domain04 formalises conceptual information meaning, semantic relationships and responsibility traceability. Realised representations are downstream: application logical/software representation in Domain05; exchange contracts, interoperability profiles, wire payloads and transformations in Domain06; physical platform/runtime/product/deployment realisation in Domain07. Persistence realisation may involve Domain05 and Domain07; a more precise allocation is not established. Representation does not define upstream business or conceptual meaning.
 
+### 6.1 Management, Originating Authority and Historical Truth
+
+Managing, preserving, governing access to, communicating, contextualising or maintaining the history of information SHALL NOT imply originating authority for the represented facts.
+
+Within Harmonia's operational boundaries, Harmonia may maintain durable, immutable, append-only historical truth concerning what it received, knew, asserted, managed, decided, communicated or did. Subsequent correction, supersession or changed knowledge SHALL NOT retrospectively alter that historical record. Current authoritative state and historical operational truth remain distinct. This does not make every transient observation durable evidence or weaken the active/durable-state separation.
+
+### 6.2 Business Terminology and Context
+
+Interpret an element according to its declared architectural layer and Business meaning. Cache, index, routing, topic, session and similar terms do not prescribe a technology or product merely because those words also have technical uses. Preserve clear Business meanings; implementation structures or bindings require explicit downstream authority.
+
+Where Healthcare Service context is material to an activity's meaning, authority, coordination, progression or accountability, that context SHALL remain identifiable through relevant Business behaviour and information responsibility. Organisation, Location, Practitioner or Role association does not imply that context. The obligation is contextual, not universal, and defines no representation, identifier structure, persistence mechanism, FHIR representation or implementation binding.
+
 ---
 
 ## 7. Qualified Architectural Reference Grammar
@@ -174,21 +218,23 @@ To unambiguously express participants, their acting capacity, and situational co
 ```
 
 ### 7.1 Grammar Structure
-- `<EntityType>`: The authoritative Business Actor category (`Person`, `Group`, `Organisation`, `Organisational Unit`, `GovernmentRegulatoryBody`, `System`, `Device`).
+- `<EntityType>`: A rendering of the canonical Business Actor category (`Person`, `Group`, `Organisation`, `Organisational Unit`, `Government / Regulatory Body`, `System`, `Device`).
 - `<Entity>`: The specific business instance identifier or name.
 - `<Role>`: The canonical Business Role representing the stable business/functional capacity being fulfilled.
 - `[#<ContextQualifier>]`: *(Optional)* The contextual function or situational qualifier in a specific interaction or collaboration.
+
+Qualified references resolve to canonical architectural identities. For compact rendering, CamelCase SHOULD be used where possible: Information Supplier → `InformationSupplier`, Service Provider → `ServiceProvider`, Organisational Unit → `OrganisationalUnit`. This is syntactic rendering, not an alias or independent element. Preserve meaning and disambiguate where a compact expression could resolve to more than one identity; compact spelling alone SHALL NOT establish identity.
 
 ### 7.2 Canonical Examples
 
 | Qualified Expression | Actor Category | Entity Name | Fulfilled Role | Context Qualifier |
 | :--- | :--- | :--- | :--- | :--- |
-| `Organisation#ACT Pathology-as-InformationSupplier` | `Organisation` | ACT Pathology | `InformationSupplier` | *(none)* |
-| `Organisation#ACT Health-as-ServiceProvider#ReferralSource` | `Organisation` | ACT Health | `ServiceProvider` | `ReferralSource` |
-| `System#ACT Pathology LIS-as-InformationSupplier#DiagnosticResultSource` | `System` | ACT Pathology LIS | `InformationSupplier` | `DiagnosticResultSource` |
+| `Organisation#ACT Pathology-as-InformationSupplier` | `Organisation` | ACT Pathology | `Information Supplier` | *(none)* |
+| `Organisation#ACT Health-as-ServiceProvider#ReferralSource` | `Organisation` | ACT Health | `Service Provider` | `ReferralSource` |
+| `System#ACT Pathology LIS-as-InformationSupplier#DiagnosticResultSource` | `System` | ACT Pathology LIS | `Information Supplier` | `DiagnosticResultSource` |
 | `Person#Fred-as-Patient` | `Person` | Fred | `Patient` | *(none)* |
 | `Person#Dr Smith-as-Clinician#Reviewer` | `Person` | Dr Smith | `Clinician` | `Reviewer` |
-| `OrganisationalUnit#Finance Directorate-as-InformationCustodian` | `Organisational Unit` | Finance Directorate | `InformationCustodian` | *(none)* |
+| `OrganisationalUnit#Finance Directorate-as-InformationCustodian` | `Organisational Unit` | Finance Directorate | `Information Custodian` | *(none)* |
 | `GovernmentRegulatoryBody#AHPRA-as-Regulator` | `Government / Regulatory Body` | AHPRA | `Regulator` | *(none)* |
 
 ### 7.3 Governance Guardrails
@@ -321,3 +367,13 @@ Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation f
 `Client Administration → Person Identity → Identifier Resolution [FT / FEAT-EM-01]` is an established partial responsibility chain and SHALL be preserved. Its full structural Canonical ID remains unresolved until actual Capability Tier ancestry and identifier allocation are architecturally established. The former incorrect L3 example SHALL NOT supply that ancestry.
 
 These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and [AX-17 architectural authority and explicit uncertainty](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty). They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.
+
+## 9. R1.x/R2.x Semantic Sufficiency Boundary
+
+The human architectural adjudication of 2026-10-09 establishes semantic sufficiency rather than graph density. Domain03 must express the Business behaviour required by Strategy without mirroring Strategy's structure. Complete identifier allocation is not a prerequisite for semantic completeness; deterministic corrections preserve established identities, while unresolved ancestry, tiers and code allocations remain explicit.
+
+Semantic completeness requires sufficient Business expression to derive Strategy's required behaviour. It requires neither one Function per Feature, one Service per Function, exhaustive Role/Function or Feature/Function mappings, identical decomposition nor structural symmetry. A composition/workflow realisation under §3.6 may suffice without a specialised Function; unestablished individual relationships remain unestablished. The residual SD-03, SD-08 and SD-14 decisions are recorded in the [Service Delivery catalogue](../behaviours/03-service-delivery.md#residual-feature-sufficiency), while HSO-09 and HSO-16 are reconciled within their [operational responsibilities](../behaviours/04-health-service-operations.md).
+
+The current approved assurance authority boundary and the three assurance Process purposes/progression descriptions are sufficient for this baseline. Detailed approval allocation and lifecycle transitions remain unestablished and may be revisited if later architecture demonstrates a genuine Business requirement. Evidentiary use alone establishes no Service, Interaction or dependency. The approved assurance catalogue remains two Roles, five Functions, three Processes, three Services and three Interactions; financial governance exclusion and non-recursion remain intact.
+
+The approved G1 capability-scoped corrections and unresolved Feature/dependency relationships remain valid unless a separately authorised semantic decision establishes more. No exhaustive Value Stream derivation, participant/exposure matrix, Twin Business Actor or workflow, or organisational risk-management responsibility is required for structural completeness.

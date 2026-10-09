@@ -282,6 +282,16 @@ To determine whether an entity warrants Digital Twin coordination, Harmonia appl
 **Complementary Rule: Representation alone does not justify a Digital Twin.**  
 An entity may be represented and durably preserved by Harmonia without requiring active Twin coordination. A Twin becomes operationally active only when entity-centred coordination of evolving state and activity is genuinely required.
 
+<a id="entity-specific-operational-coordination"></a>
+
+#### Entity-Specific Operational Coordination
+
+The 2026-10-09 human adjudication establishes the following rule within the existing Digital Twin construct: **where operational activity becomes associated with a specific managed real-world entity, execution SHOULD be coordinated through that entity's Digital Twin unless an explicit architectural reason requires non-Twin execution.** Any exception requires an explicit architectural reason; it is not inferred from implementation convenience. This applies the entity-centred meaning above and AX-16 without allocating a new Twin archetype, Business Actor or execution mechanism.
+
+Population/cohort identification may occur before individual patient activity is created. Once operational activity concerns a specific managed patient, the Patient Twin is its natural coordination context, with the applicable configured workflow/Praxis. This does not require population activity or every search/query to execute through a Twin, transfer originating clinical-information authority to the Twin, or turn a Patient Twin into an EMR.
+
+Clinical-activity/workflow wording in this view concerns coordination around work governed by accountable clinical actors and external/business clinical work-management mechanisms. Neither entity subject association nor Twin coordination confers clinical-work determination, clinical handover management, clinical allocation authority, clinical worklist ownership or clinical decision authority. The [Business clinical-work boundary](../../03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary) remains controlling. The construct coordinates information and operational consequences; existing execution, active-state and durable-state responsibilities remain distinct.
+
 #### Recognised Digital Twin Archetypes (Historical Reference)
 Based on operational healthcare integration models, Harmonia recognises the following archetypes as illustrative examples:
 1. **Service Provider Organisation Twin**: Healthcare provider organisations (e.g., nursing home, rehabilitation facility, primary care practice).

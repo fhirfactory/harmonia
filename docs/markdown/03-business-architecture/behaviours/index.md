@@ -26,12 +26,14 @@ The [bounded Health Service Assurance derivation](health-service-assurance.md) p
 
 ## 2. Derivation Conventions
 
-For every documented capability and feature:
+For documented capability/Feature behaviour, record the following where architecturally significant; this is not a mandatory decomposition checklist:
 1. **Owning Capability / Feature**: Identified by the established architectural element; an unavailable full Canonical ID or unestablished Feature association remains explicit.
 2. **Business Function**: The internal behaviour delivered *within* the capability boundary to discharge its mandate.
 3. **Exposed Business Service**: Behaviour exposed *outside* the boundary to identifiable internal or external consumers.
 4. **Governed Process (Where Justified)**: State progression lifecycles encompassing the activity.
 5. **Information Responsibility**: The conceptual information assets owned and maintained by the capability.
+
+Relationships explain material responsibility, participation, exposure, collaboration and Business progression; absent exhaustive matrices do not establish missing architecture. Feature association requires material semantic realisation of Strategy responsibility. A Function does not mechanically require a Service or performing-Role row. See the [metamodel](../metamodel/business-architecture-metamodel.md#34-significance-driven-relationships-and-typed-dependencies).
 
 Behaviour and Process descriptions are complementary. A scoped Process may elaborate checkpoints without reproducing the Behaviour stage list or redefining responsibility. Omission of a Process checkpoint from a Behaviour summary does not invalidate it; omission of Behaviour responsibility from a Process does not remove it. Scoped applicability, compound checkpoints and alternative dispositions remain explicit. See the [metamodel](../metamodel/business-architecture-metamodel.md#43-behaviour-and-process-consistency) and approved G1 K10/K11.
 

@@ -14,7 +14,9 @@ A Business Interaction is **not** synonymous with a Business Service:
 
 ---
 
-## 2. The Canonical R1 Business Interaction Catalogue
+<a id="2-the-canonical-r1-business-interaction-catalogue"></a>
+
+## 2. The Canonical R1.x/R2.x Business Interaction Catalogue
 
 Harmonia defines an authoritative catalogue of Business Interactions structured into ten primary functional categories. The [three approved Service Assurance Interactions](#5-approved-service-assurance-interactions) supplement the existing catalogue without reclassifying its established categories or deriving an additional category through symmetry:
 
