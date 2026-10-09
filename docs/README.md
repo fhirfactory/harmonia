@@ -1,6 +1,16 @@
 # Harmonia Engineering Documentation & Architecture Reference `[IMPLEMENTED]`
 
-Welcome to the authoritative engineering documentation for the **Harmonia Health Integration Environment (HIE)**.
+Welcome to the engineering documentation index for the **Harmonia Health Integration Environment (HIE)**.
+
+`/docs/markdown` is the **Reference Architecture Documentation Set (RADS)**,
+authoritative for the current Harmonia architecture. Documentation elsewhere
+in the repository is **legacy-doco**, governed by the standing
+[RADS and legacy documentation rules](../AGENTS.md#12-rads-and-legacy-documentation-governance).
+Architectural information requires review, reconciliation and any necessary
+adjudication before incorporation into RADS; affected legacy sections are
+preserved unchanged within supersession wrappers referencing their RADS
+replacements. Implementation-status labels in this index do not confer
+architectural authority.
 
 [Canonical Architectural Axioms](markdown/governance/architectural-axioms.md) — the single maintained axiom register in [cross-domain governance](markdown/governance/README.md).
 

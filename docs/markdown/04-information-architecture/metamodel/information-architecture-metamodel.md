@@ -55,6 +55,17 @@ graph TD
 3. **Standards Independence**: FHIR resources, HL7 messages, and OpenEHR archetypes do not define Harmonia Information Architecture. While Harmonia projects information to and from these standards via Pylai gateways, its internal semantic models remain technology-neutral.
 4. **Structural Similarity ≠ Semantic Identity**: Two concepts with identical or overlapping data attributes (such as `Practitioner` and `Person`, or `DeliverableHealthcareService` and `HealthcareServiceDelivery`) remain semantically distinct because their business meanings, lifecycles, and responsibilities differ.
 
+### Observable Information and Domain Comprehension
+
+Harmonia manages information through established architectural semantics;
+observing or carrying encapsulated domain content does not intrinsically
+require comprehension or inference of its domain meaning. The
+[observable-information and domain-meaning boundary](../guardrails/observable-information-and-domain-meaning.md)
+defines this distinction, the governed Context Loading → Ergo Logic Process →
+Context Unloading boundary, and optional runtime AI intentionally invoked by
+developer-defined Ergo logic. Such interpretation does not make the Platform
+intrinsically intelligent or change its own semantic-governance obligations.
+
 ---
 
 ## 2. The Core Information Concept
@@ -83,15 +94,23 @@ graph LR
 | Semantic Category | Definition | Representative Healthcare / HIE Examples |
 | :--- | :--- | :--- |
 | **Entity** | An enduring physical, legal, organizational, or conceptual subject that possesses identity and participates in healthcare processes. | `Person`, `Practitioner`, `Healthcare Organisation`, `Healthcare Location`, `Clinical Device`. |
-| **Activity** | A dynamic, stateful unit of clinical or operational work performed by human actors, automated systems, or collaborating parties. | `FulfillmentTask`, `HealthcareServiceDelivery`, `Patient Transport Execution`, `Bed Cleaning Activity`. |
+| **Activity** | Information representing a dynamic, stateful undertaking of clinical or operational work by human actors, automated systems or collaborating parties; the information does not become the represented activity. | `FulfillmentTask`, `HealthcareServiceDelivery`, information about patient transport or bed cleaning. |
 | **Event** | An instantaneous, immutable occurrence at a specific point in time that alters state or records a notable happening. | `Admission Notice`, `Discharge Notification`, `Vital Status Transition (Death)`, `Order Dispatch Event`. |
 | **Assertion** | A formal statement of clinical, demographic, or operational fact made by an identifiable source within a qualified context. | `Active Allergy Finding`, `Diagnostic Report Interpretation`, `Verified Identifier Linkage`, `Consent Directive`. |
 | **Relationship** | A reified semantic association connecting a source concept to a target concept with defined roles, qualification, and temporal validity. | `Practitioner Role Binding`, `Subject-to-Carer Association`, `Location Containment`, `Service Delivery Association`. |
-| **Definition** | A catalogue, template, rule, or specification describing a permitted semantic space, prerequisite conditions, or expected outcomes. | `OfferedHealthcareService`, `ActionableTask Template`, `Clinical Care Plan Definition`, `Service Catalogue Specification`. |
+| **Definition** | A catalogue, template, rule, or specification describing a permitted semantic space, prerequisite conditions, or expected outcomes. | `OfferedHealthcareService`, `ActionableTaskArchetype`, `Clinical Care Plan Definition`, `Service Catalogue Specification`. |
 | **Collection** | An explicit grouping of Information Concepts governed under common criteria without implying physical containment or composition. | `Patient Cohort`, `Active Problem List`, `Dispatch Work Queue`, `Departmental Intake Batch`. |
 | **Assembly** | A governed composite projection of multiple independently meaningful Information Concepts assembled for a specific operational or clinical context. | `Healthcare Subject Context`, `Longitudinal Clinical Record`, `Encounter Context`, `Operational Work Context`. |
 
 These categories are conceptual patterns rather than an inheritance tree. A concept may draw semantic characteristics from multiple categories where meaningful (e.g. a `Consent Directive` is both an `Assertion` and a `Definition`).
+
+The [bounded Task / Work model](../information-families/task-work.md)
+distinguishes `ActionableTaskArchetype` (definition), `ActionableTask`
+(identifiable work instance), `FulfillmentTask` (identifiable undertaking) and
+`TaskOutcome` (outcome information). These are not lifecycle states or implied
+implementation subclasses. General metamodel characteristics below do not
+settle the expressly deferred TaskOutcome identity/cardinality/lifecycle
+questions or the unresolved ReportedTask meaning.
 
 ---
 

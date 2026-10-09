@@ -30,7 +30,23 @@ The following bounded drafts derive from the current reconciled Business Archite
 3. **[Episode / Encounter](episode-encounter.md)**: Encounter tracking context, progression and temporal care-place associations; Episode's longitudinal treatment meaning is approved by G2-D01, with authority/responsibility and association rules unresolved.
 4. **[Order](order.md)**: Bounded requested fulfilment, routing, closed-loop evidence, modification/cancellation coordination and outcome association, reusing the existing Order Concept.
 
-The [G2 Block 1 review](../reviews/package2-g2-block1-review.md) records cross-family relationships, A–D standing, preserved uncertainty and seven architectural review questions. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure). G2 is not CLOSED; G3 and the later Package2 families have not commenced. Package1 semantics above remain unchanged.
+The [G2 Block 1 review](../reviews/package2-g2-block1-review.md) records cross-family relationships, A–D standing, preserved uncertainty and seven architectural review questions. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure). G2 is not CLOSED; G3 and the wider later Package2 families have not commenced. The separately authorised Task reconciliation below does not commence or close those packages. Package1 semantics above remain unchanged.
+
+---
+
+## Bounded Task / Work Reconciliation
+
+The authorised 2026-10-10 [Task / Work model](task-work.md) establishes
+`ActionableTaskArchetype` → `ActionableTask` → `FulfillmentTask` → `TaskOutcome`,
+including zero/multiple/concurrent undertakings where work semantics permit,
+ActionableTask-level outcomes and possible outcome encapsulation. It preserves
+Domain03 Work Order / To Do / Synthetic Task as Business classifications.
+Detailed TaskOutcome questions and ReportedTask remain explicitly unresolved.
+This is neither a complete Task family nor Domain04 completion or baseline.
+
+The accompanying [observable-information boundary](../guardrails/observable-information-and-domain-meaning.md)
+records Platform semantic-agnosticism, the conceptual governed Ergo logic
+boundary, and optional runtime AI as distinct from AI-assisted development.
 
 ---
 
@@ -69,6 +85,8 @@ graph TD
 2. **Pure Business Semantics**: Concepts represent genuine healthcare, workforce, organisational, and physical entities and activities. They are not defined by or constrained by downstream implementation classes, database tables, or FHIR resources (Guardrails 1, 2, 3).
 3. **Conceptual Distinction ≠ Physical Storage Separation**: Distinct Information Concepts may downstream be persisted into shared physical structures without forfeiting their conceptual demarcation in Domain 04 (Guardrail 4).
 4. **Separation of Semantic Stages**: Definitions, contextual bindings, fulfilments, outcomes, and accountability models are distinct semantic concepts with independent identities and lifecycles—never collapsed into lifecycle status values of a single record (Guardrail 11).
+   The pattern does not adjudicate expressly reserved TaskOutcome identity or
+   lifecycle questions, or require a ReportedTask Accountability concept.
 5. **Separation of Relationship Roles from Business Roles**: A `Relationship Role` (e.g. *Parent*, *Attending*, *Supervising*) describes a participant's local function within an Information Relationship. It does not create or imply a Domain 03 `Business Role` (e.g. *Service Provider*, *Practitioner*, *Clinician*, *Patient*) (Guardrail 8).
 6. **Qualified Forward Authoritative Containment**: Hierarchical containment (`Object.contains(Object)`) is authored and validated in the natural forward direction. Containment does not imply membership, affiliation, or service provision (Guardrails 9, 10).
 7. **No Forced Binary Simplification**: Inherently contextual multi-party relationships (such as Service Provision) are preserved in their full contextual/n-ary semantic structure rather than artificially collapsed into binary foreign key pairs (Guardrail 15).

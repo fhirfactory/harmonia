@@ -127,6 +127,25 @@ This retained Foundation example supplies canonical terminology, not Package2 de
 
 ---
 
+### 2.4 Bounded Task / Work Responsibility Basis
+
+The [Task / Work model](../information-families/task-work.md#4-relationship-to-domain03-business-work-classifications)
+traces to Workflow & Activity Coordination's established Functions
+(`Coordinate Work Order`, `Coordinate To Do`, `Coordinate Synthetic Task`,
+`Supervise Activity Timeout / Escalation`) and generic Activity Instance
+Registry, Task State Progression Graph and SLA Deadline & Timer Ledger
+information responsibilities. Work Order, To Do and Synthetic Task retain
+their distinct Business meanings and progression authority.
+
+The authorised Task information concepts distinguish archetype, particular
+work, undertaking and outcome information without assuming ownership of
+business meaning or clinical outcome. This responsibility basis allocates no
+unestablished definition-authoring/outcome-authority owner or specialised
+archetype/undertaking/outcome subclasses; ReportedTask and detailed TaskOutcome
+questions remain unresolved.
+
+---
+
 ## 3. Scope Boundary for Detailed Model Population
 
 This foundation establishes the canonical derivation mechanism and validates it through representative references.

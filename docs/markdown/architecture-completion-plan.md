@@ -156,7 +156,9 @@ reproduced or encoded here.
 
 ## 5. Canonical Architecture Corpus
 
-> `/docs/markdown` is the canonical Harmonia architecture documentation corpus.
+> `/docs/markdown` is the Reference Architecture Documentation Set (RADS), the
+> canonical Harmonia architecture documentation corpus authoritative for the
+> current Harmonia architecture.
 >
 > No architectural knowledge required to understand, derive, govern or
 > implement Harmonia SHALL depend upon documentation outside `/docs/markdown`.
@@ -164,6 +166,12 @@ reproduced or encoded here.
 > Architectural content found elsewhere under `/docs` SHALL be treated as
 > migration input. It must be assessed and semantically incorporated into the
 > appropriate architectural domain rather than mechanically copied.
+
+The standing repository [RADS and legacy documentation rules](../../AGENTS.md#12-rads-and-legacy-documentation-governance)
+govern reconciliation and preservation throughout the repository, including
+documentation outside `/docs`. Required architectural dependencies still held
+in legacy-doco remain explicit pending separately authorised reconciliation;
+their discovery or reference does not establish incorporation into RADS.
 
 The requirement concerns architectural knowledge. It does not require every
 file under `/docs` to move. Implementation guidance, developer documentation,
@@ -182,7 +190,13 @@ architectural material found outside `/docs/markdown`, determine:
 4. which TOGAF/ArchiMate architecture domain or governance artefact owns it;
 5. whether it is already represented canonically;
 6. whether it should be incorporated, reconciled, retained as supporting
-   material, or retired.
+   material, or have its architectural meaning retired.
+
+When authoritative RADS content replaces a legacy section's architectural
+meaning, apply the standing section-supersession rule: preserve the original
+content unchanged and surround only the affected section with a wrapper
+referencing the RADS replacement. Retirement of architectural meaning does not
+authorise deletion or rewriting of the legacy information.
 
 Migration SHALL NOT confer architectural authority merely because material
 exists elsewhere under `/docs`. AX-17 applies to all reconciliation: preserve

@@ -8,7 +8,7 @@ A foundational principle of the Harmonia Information Architecture is the explici
 
 Different categories of healthcare and operational information progress through fundamentally different states:
 - A **Catalogue Definition** progresses through publication and versioning lifecycles (*Draft* $\to$ *Active* $\to$ *Deprecated* $\to$ *Retired*).
-- An **Active Task Fulfilment** progresses through real-time operational execution (*Proposed* $\to$ *Accepted* $\to$ *In-Progress* $\to$ *Completed* / *Failed*).
+- A **FulfillmentTask** represents a particular undertaking and carries applicable execution progression (illustratively, *Proposed* $\to$ *Accepted* $\to$ *In-Progress* $\to$ *Completed* / *Failed*). This is not a universal transition model; multiple/concurrent undertakings may exist for one ActionableTask where its work semantics allow them.
 - A **Clinical Document** progresses through legal authoring states (*Draft* $\to$ *Preliminary* $\to$ *Final* $\to$ *Amended* $\to$ *Superseded*). This is a scoped lifecycle illustration: `Final ≠ automatically Final Signed`. Signing, finalisation, authorship, attestation, approval, authentication, verification, authority and legal qualification remain distinct; locally established signing requirements are preserved without making them universal. Amendment and supersession are not mandatory for every document, and consumer processing does not define originating validity or authority.
 - A **Clinical Assertion / Finding** progresses through epistemic verification (*Suspected* $\to$ *Confirmed* $\to$ *Refuted* / *Entered-in-Error*).
 - An **Encounter** progresses through admission, movement, and discharge stages (*Planned* $\to$ *Arrived* $\to$ *In-Care* $\to$ *Discharged*).
@@ -19,7 +19,7 @@ graph TD
         D1["Draft"] --> D2["Active"] --> D3["Deprecated"] --> D4["Retired"]
     end
 
-    subgraph TaskLC ["Task Fulfilment Lifecycle"]
+    subgraph TaskLC ["FulfillmentTask Execution — Illustrative"]
         T1["Proposed"] --> T2["Accepted"] --> T3["In-Progress"] --> T4["Completed"]
         T3 --> T5["Failed"]
     end
@@ -34,6 +34,12 @@ graph TD
         A2 --> A4["Entered-in-Error"]
     end
 ```
+
+The [bounded Task / Work model](../information-families/task-work.md) separates
+the archetype, work instance, undertaking and outcome information. Completion
+of an undertaking does not inherently satisfy its parent ActionableTask.
+This lifecycle guidance does not adjudicate TaskOutcome lifecycle/identity or
+the unresolved ReportedTask meaning.
 
 ---
 

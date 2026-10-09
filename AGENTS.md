@@ -80,6 +80,85 @@ rather than resolve it through memory, convention or inference.
 The [Architecture Completion Plan's context-loading guardrail](docs/markdown/architecture-completion-plan.md#81-ai-context-independence-and-progressive-authority-loading)
 provides the programme guidance. The existing authority rules remain in force.
 
+### 1.2 RADS and Legacy Documentation Governance
+
+These standing rules apply to human and AI documentation work throughout the
+repository.
+
+#### Definitions and Authority
+
+`/docs/markdown` (relative to the repository root) is the **Reference
+Architecture Documentation Set (RADS)**. RADS is authoritative for the current
+Harmonia architecture, with the Architectural Axioms remaining the highest-level
+design authority under section 1. Unresolved matters, candidates and proposals
+within RADS MUST remain distinguishable from approved architecture under AX-17.
+
+**Legacy documentation (legacy-doco)** comprises architectural, design,
+execution, module and other documentation elsewhere in the repository, outside
+`/docs/markdown`. Its location, historical status or correspondence to existing
+implementation MUST NOT, by itself, establish current architectural authority
+or permit it to override RADS. Repository governance instructions and explicitly
+assigned implementation-sequencing authority remain in force in their defined
+roles; they do not make legacy architectural descriptions authoritative over
+RADS.
+
+#### Reconciliation Before Incorporation
+
+Architectural information discovered in legacy-doco MUST NOT simply be copied
+into RADS. It MUST first be reviewed and reconciled against the current
+architecture and, where necessary, explicitly architecturally adjudicated
+before incorporation into the appropriate RADS material. The direction is:
+
+```text
+legacy-doco -> architectural review/adjudication -> RADS
+```
+
+RADS MUST NOT be reverse-derived from legacy implementation merely because that
+implementation already exists. Conflicts, missing authority and unresolved
+architectural dependencies on legacy-doco MUST be reported and preserved under
+AX-17 rather than silently resolved through copying or inference. A reference
+to legacy-doco does not establish that its architectural meaning has been
+reconciled or incorporated into RADS. Discovery and these standing rules do not
+authorise migration beyond the explicitly authorised task scope.
+
+#### Preservation and Section Supersession
+
+When information from a specific legacy section has been incorporated,
+reconciled, superseded or otherwise replaced by authoritative RADS content, the
+original legacy content MUST be preserved unchanged. It MUST NOT be rewritten
+merely to make it agree with RADS. Instead, the affected section MUST be
+surrounded by an explicit supersession wrapper equivalent to:
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+<RADS reference(s)>
+---------------------------------------------------------
+
+<ORIGINAL LEGACY CONTENT — UNCHANGED>
+
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+The wrapper MUST include RADS replacement references and SHOULD identify the
+specific authoritative sections replacing or encapsulating the legacy
+architectural meaning. Equivalent formatting appropriate to the source format
+MAY be used while preserving the explicit boundaries, replacement references
+and unchanged original content.
+
+Enclosed legacy content MAY contradict RADS. Such contradictions are acceptable
+as explicitly superseded historical architecture, design or implementation
+information; they do not challenge the authority of the current RADS content.
+Supersession MUST apply only to the relevant section or content. An entire
+legacy document MUST NOT be marked superseded merely because one part has
+migrated to RADS.
+
+Legacy-doco MAY continue to contain useful implementation detail, historical
+reasoning and execution information. Supersession of its architectural meaning
+does not imply deletion of that information. This preservation rule governs
+future reconciliation work; it does not authorise retrospective rewriting,
+deletion or migration of existing legacy material.
+
 ## 2. System Taxonomy & Module Hierarchy
 
 Harmonia enforces strict separation of concerns across its 9 core

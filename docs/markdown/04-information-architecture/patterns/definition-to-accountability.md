@@ -50,6 +50,11 @@ graph TD
 4. **Binding Without Redundant Replication**:
    A contextualised or fulfilment instance binds to its governing definition by reference (including definition version and namespace) rather than redundantly copying the entire specification.
 
+These are reusable distinctions and illustrative characteristics, not a
+substitute for concept-specific adjudication. The pattern does not establish
+reserved identity, cardinality, lifecycle or accountability rules for the
+[bounded Task / Work model](../information-families/task-work.md#5-explicitly-unresolved-architecture).
+
 ---
 
 ## 2. Reference Example 1: Healthcare Service
@@ -97,41 +102,58 @@ graph TD
 
 ## 3. Reference Example 2: Task / Work Progression
 
-The Task / Work information family provides the canonical operational example of the pattern across human and automated activities:
+The [bounded Task / Work information model](../information-families/task-work.md)
+provides the operational example across human and automated work. Its
+authorised distinction is definition → work instance → undertaking → outcome
+information; the Accountability intersection remains unresolved.
 
 ```text
-ActionableTask
-    ↓ instantiated / bound
-FulfillmentTask
-    ↓ executes & yields
-TaskOutcome
-    ↓ reported & accounted by
-ReportedTask
+ActionableTaskArchetype                Definition
+    ↓ instantiated as
+ActionableTask                        Contextualisation / work instance
+    ↓ may be undertaken through
+FulfillmentTask [0..*]                 Fulfilment / undertaking
+    ↓ may produce / establish
+TaskOutcome                           Outcome information
+
+Accountability / ReportedTask          Unresolved; no relationship settled here
 ```
 
-```mermaid
-graph TD
-    AT["ActionableTask<br/>(Task Template / Definition)"]
-    AT -->|"instantiated / bound"| FT["FulfillmentTask<br/>(Progressed in Context)"]
-    FT -->|"executes & yields"| TO["TaskOutcome<br/>(Actual Result / Output)"]
-    FT -.->|"reported & accounted by"| RT["ReportedTask<br/>(Accountable Historical Report)"]
-    TO -.->|"reported & accounted by"| RT
-```
+Additionally, a `TaskOutcome` may be associated with `ActionableTask`, and may
+contain / encapsulate other `TaskOutcomes` (`0..*`). The
+[conceptual relationship diagram](../information-families/task-work.md#3-established-conceptual-relationships)
+records these agreed relationships without further cardinalities or
+composition semantics.
 
 ### 3.1 Task Concepts & Activity Classifications
 
 | Information Concept | Pattern Stage | Governed Business Semantics | Key Architectural Demarcations |
 | :--- | :--- | :--- | :--- |
-| **`ActionableTask`** | **Definition** | The task template or definition describing permitted parameters, performer qualification requirements, prerequisite milestones, completion criteria, and escalation thresholds. | Defines what work *can* be done and how it is bounded. |
-| **`FulfillmentTask`** | **Fulfilment** | The active, stateful instantiation of work progressing through an operational lifecycle within a concrete context (assigned worker, target subject, active timers). | Owns active execution state progression (*Accepted*, *In-Progress*, *Suspended*, *Completed*, *Failed*). |
-| **`TaskOutcome`** | **Outcome** | The actual physical, clinical, or operational result or artifact yielded by executing the task (e.g. *Cleaned Bed Bay*, *Delivered Specimen Package*, *Triage Decision*). | Captures what was achieved or produced, separate from the task timers. |
-| **`ReportedTask`** | **Accountability** | The immutable, audited historical record that formally reports and accounts for **both the `FulfillmentTask` and its `TaskOutcome`**. | **`FulfillmentTask.state = Completed` $\neq$ `ReportedTask`**. A reported task is the formal governance, audit, and reporting projection of the completed work. |
+| **`ActionableTaskArchetype`** | **Definition** | Reusable definition of a kind of actionable work, including applicable meaning, constraints and expectations. | Not an instance of work; content expectations do not require structural definition or Platform domain comprehension. |
+| **`ActionableTask`** | **Contextualisation / work instance** | Identifiable particular thing-to-be-done, instantiated from / governed by an applicable archetype. | Neither definition nor undertaking. |
+| **`FulfillmentTask`** | **Fulfilment** | Identifiable undertaking of an ActionableTask, carrying the execution information needed to represent doing / attempting the work. | Zero or more per ActionableTask; concurrency where work semantics permit or require. Completion of one undertaking does not inherently satisfy its parent. |
+| **`TaskOutcome`** | **Outcome** | Information produced or established as an outcome of work. | May associate with a work instance or undertaking and encapsulate other outcomes; content may be opaque. Identity, detailed composition/cardinality and lifecycle remain reserved. |
+| **`ReportedTask`** | **Existing Accountability intersection — unresolved** | Necessity and semantics await separate Assurance / Accountability adjudication. | This task does not reaffirm the earlier immutable accountable-report interpretation or its relationships. |
 
 ### 3.2 Harmonia Activity Classifications
-Harmonia preserves three distinct operational activity classifications across all task modelling:
 
-1. **Work Order**: A unit of actionable work allocated to a human actor requiring physical or operational doing (e.g. *Porter patient from Ward 4 to Radiology*, *Sanitise Bed 12*).
-2. **To Do**: A unit of work allocated to a human actor requiring review, validation, clinical judgment, or decision-making (e.g. *Review abnormal pathology result*, *Authorise medication discharge prescription*).
-3. **Synthetic Task**: An automated, non-human executable unit of work processed by internal engines, integration bridges, or automated rules (e.g. *Synthesise longitudinal allergy summary*, *Publish HL7 MLLP notification*).
+Domain03 preserves **Work Order — human doing**, **To Do — human
+review/update/validation/judgment/decision/approval**, and **Synthetic Task —
+automated/non-human executable work**. These are distinct Business
+classifications; the generic Task information semantics must represent work
+arising from them without renaming Domain03's business **Task = synthetic
+task** vocabulary or creating specialised archetype, undertaking or outcome
+subclasses. Their
+[business meanings, responsibilities and progression authority](../information-families/task-work.md#4-relationship-to-domain03-business-work-classifications)
+remain intact.
 
-> **Guardrail**: *Do not prematurely map these conceptual task classifications to Ponos Java classes or implementation queue envelopes.*
+### 3.3 Accountability and ReportedTask — Unresolved
+
+The earlier example placed `ReportedTask` at Accountability as an immutable,
+audited report of fulfilment and outcome. That interpretation is **not
+reaffirmed** by this reconciliation. Its necessity and semantics may overlap
+accountability, assurance, audit, historical representation and evidence.
+Separate architectural adjudication is required under
+[AX-17](../../governance/architectural-axioms.md#ax-17); no ReportedTask
+relationship or lifecycle is settled here. Execution completion alone does
+not settle accountability or constitute an independent assurance evaluation.

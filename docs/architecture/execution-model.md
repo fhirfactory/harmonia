@@ -1,5 +1,13 @@
 # Energeia Workflow & Task Execution Model `[IMPLEMENTED]`
 
+This is legacy architecture and implementation documentation under the
+repository [RADS / legacy-doco policy](../../AGENTS.md#12-rads-and-legacy-documentation-governance).
+The general runtime-AI position in §§6–6.1 is superseded by
+[Domain04's optional adjunct boundary](../markdown/04-information-architecture/guardrails/observable-information-and-domain-meaning.md#4-runtime-ai-as-an-optional-adjunct).
+The wrapper preserves that original content. The other sections, including
+§6.2's assurance-specific material, remain reconciliation input or supporting
+detail and do not independently establish current architecture.
+
 Energeia constitutes Harmonia's core workflow and task processing engine. It organizes processing into a deterministic, four-tier task execution hierarchy: **Praxis** (Workflow DAGs), **Pragma** (Canonical State Machines), **Ponos** (WorkEngine Daemons), and **Erga** (Single-Responsibility Activities).
 
 ---
@@ -143,6 +151,18 @@ Ponos WorkEngine manages background worker concurrency using configured worker p
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Domain04 — Runtime AI as an Optional Adjunct (§4)](../markdown/04-information-architecture/guardrails/observable-information-and-domain-meaning.md#4-runtime-ai-as-an-optional-adjunct)
+- [Domain04 — Runtime AI and AI-Assisted Development (§4.1)](../markdown/04-information-architecture/guardrails/observable-information-and-domain-meaning.md#41-runtime-ai-and-ai-assisted-development)
+
+```text
+---------------------------------------------------------
+```
+
 ## 6. Runtime AI as Adjunct Ergo Execution Capability
 
 This section records an architectural position, not an implemented AI capability or a runtime topology. It applies [AX-04](../markdown/governance/architectural-axioms.md#ax-04), AX-06, AX-07 and AX-08 to preserve Harmonia semantics, authority, governance and meaningful evidence; [AX-14](../markdown/governance/architectural-axioms.md#ax-14) and [AX-17](../markdown/governance/architectural-axioms.md#ax-17) preserve responsibility distinctions and explicit architectural uncertainty.
@@ -175,6 +195,10 @@ An AI agent/service may perform or assist with business logic on behalf of a gov
 **AI-assisted development** uses tools such as Codex, Junie, ChatGPT or other AI tooling to design, document, analyse, test or implement Harmonia. These are development-time capabilities; their use to build Harmonia does not make them participants in its runtime business execution.
 
 **Runtime AI** comprises AI agents/services intentionally invoked by Harmonia runtime behaviour, for example Ergo business logic, to contribute to governed business execution. The distinction concerns the purpose of invocation, not the product name: development tooling helps build Harmonia; runtime AI participates in executing Harmonia business behaviour.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### 6.2 Assurance Use and Authority Boundaries
 

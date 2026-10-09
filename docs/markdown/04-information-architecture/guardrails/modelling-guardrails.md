@@ -28,7 +28,7 @@ This document codifies the sixteen authoritative, repository-wide modelling guar
 ### Guardrail 4: Shared Physical Mapping
 > **Distinct Information Concepts MAY map to shared physical storage downstream without forfeiting their conceptual distinction.**
 >
-> For technical efficiency, multiple distinct conceptual entities (e.g. `Work Order`, `To Do`, `Synthetic Task`) may downstream be persisted into a unified table or processed via a common runtime envelope. Such physical consolidation is an Application/Technology Architecture decision (Domains 05/07) and does not merge or erase their conceptual separation in Domain 04.
+> Work arising from Domain03's distinct Business classifications (`Work Order`, `To Do`, `Synthetic Task`) may downstream share physical storage or runtime machinery. Such consolidation is an Application/Technology Architecture decision (Domains 05/07); it does not erase the Business distinctions or turn them into Information Architecture subclasses. The [generic Task information model](../information-families/task-work.md#4-relationship-to-domain03-business-work-classifications) must remain capable of representing work arising from each classification.
 
 ---
 
@@ -65,6 +65,12 @@ This document codifies the sixteen authoritative, repository-wide modelling guar
 >
 > A patient belonging to a *Diabetic Cohort Collection* is not "contained" by the cohort; removing the member does not alter the patient's identity or existence. Conversely, a physical bed is structurally contained within a ward. Furthermore, Person-oriented concepts SHALL NOT use recursive containment merely to represent familial, social, care, representation or authority relationships. Those semantics SHALL use appropriate Information Relationships or Collections.
 
+The authorised statement that TaskOutcome may contain other TaskOutcomes does
+not yet decide whether that containment means composition, aggregation,
+reference or another relationship. This guardrail SHALL NOT be used to settle
+that [reserved question](../information-families/task-work.md#5-explicitly-unresolved-architecture)
+by inference.
+
 ---
 
 ### Guardrail 10: Forward Authoritative Semantics
@@ -79,6 +85,12 @@ This document codifies the sixteen authoritative, repository-wide modelling guar
 >
 > An `OfferedHealthcareService` (catalogue definition) is not the same entity as a `HealthcareServiceDelivery` (fulfilment) or an `AssuredHealthcareService` (accountability audit). They must not be collapsed into status enum values on one table.
 
+For Task / Work, preserve archetype, work instance, undertaking and outcome
+information as distinct meanings. Stage separation does not adjudicate
+reserved TaskOutcome identity/lifecycle/cardinality or require a ReportedTask
+Accountability concept; those matters remain
+[explicitly unresolved](../information-families/task-work.md#5-explicitly-unresolved-architecture).
+
 ---
 
 ### Guardrail 12: Granular Assertion-Level and Relationship-Level Authority
@@ -91,7 +103,7 @@ This document codifies the sixteen authoritative, repository-wide modelling guar
 ### Guardrail 13: Concept-Specific Lifecycles
 > **Harmonia SHALL NOT impose a universal lifecycle across heterogeneous Information Concepts.**
 >
-> Concept lifecycles must reflect their authentic business and clinical progression. Definitions version; tasks execute; documents amend; assertions verify.
+> Concept lifecycles must reflect their authentic business and clinical progression. Definitions version; undertakings execute; documents amend; assertions verify. A FulfillmentTask's execution state does not inherently determine satisfaction or completion of its ActionableTask.
 
 ---
 
@@ -113,3 +125,9 @@ This document codifies the sixteen authoritative, repository-wide modelling guar
 > **An Information Concept SHALL NOT be introduced merely because an external technology, standard, or database schema provides an equivalent structure.**
 >
 > Every concept in Domain 04 must be justified by an authentic requirement, capability, function, or information responsibility established in the authoritative baselines (Domains 01–03).
+
+The [observable-information and domain-meaning boundary](observable-information-and-domain-meaning.md)
+applies across these guardrails: Harmonia governs its own semantic constructs
+without intrinsically inferring the meaning of all encapsulated domain
+content. Optional AI invoked by developer-defined Ergo logic does not change
+that boundary or supply missing architectural authority.

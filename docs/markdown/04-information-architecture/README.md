@@ -94,6 +94,8 @@ graph TD
 5. **Definition-to-Accountability Progression**: The 5-stage pattern (`Definition → Contextualisation / Binding → Fulfilment → Outcome → Accountability`) represents independent semantic concepts with distinct identities, authorities, and lifecycles (encompassing clinical, operational, and administrative outcomes)—not lifecycle states of a single record.
 6. **Granular Assertion-Level Authority**: Information Authority can attach directly to individual assertions and relationships, enabling multi-author composite health records.
 7. **Authority Preservation in Assemblies**: Assemblies and Views project and coordinate information without acquiring originating authority over constituent data.
+8. **Bounded Task Semantics**: `ActionableTaskArchetype` defines reusable work; `ActionableTask` identifies particular work; `FulfillmentTask` represents an undertaking (`0..*` per work instance, including concurrency where work semantics allow); `TaskOutcome` represents outcome information. Detailed TaskOutcome questions and ReportedTask remain unresolved.
+9. **Observable Information ≠ Intrinsic Domain Comprehension**: Harmonia governs its own information/execution semantics without intrinsically inferring the meaning of all encapsulated domain content. Developer-defined Ergo logic may intentionally interpret content or invoke optional runtime AI within its governed execution boundary.
 
 ---
 
@@ -116,7 +118,8 @@ docs/markdown/04-information-architecture/
 ├── assemblies-views/
 │   └── assemblies-and-views.md                  # Assembly vs View, candidate context definitions
 ├── guardrails/
-│   └── modelling-guardrails.md                  # The 16 canonical Information Architecture guardrails
+│   ├── modelling-guardrails.md                  # The 16 canonical Information Architecture guardrails
+│   └── observable-information-and-domain-meaning.md # Domain comprehension and optional runtime-AI boundary
 ├── traceability/
 │   └── domain03-traceability.md                 # Derivation framework and representative examples
 └── information-families/                        # Detailed Information Families
@@ -126,7 +129,8 @@ docs/markdown/04-information-architecture/
     ├── organisation.md                          # Organisation, Identifiers, Hierarchies, Contacts
     ├── healthcare-location.md                   # Locations, Care-Places, Spatial Containment
     ├── healthcare-service.md                    # 5-Stage Service Model & Service Provision Map Evaluation
-    └── device.md                                # Device Definition, Instance, Endpoints
+    ├── device.md                                # Device Definition, Instance, Endpoints
+    └── task-work.md                             # Bounded archetype, work instance, undertaking, outcome semantics
 ```
 
 ### Navigating the Documentation Suite
@@ -135,12 +139,13 @@ docs/markdown/04-information-architecture/
 2. **Reusable Information Patterns**:
    - **[Information Relationships](patterns/information-relationships.md)**: The canonical relationship structure, fundamental elements, available characteristics, and strict separation between Relationship Roles and Business Roles.
    - **[Containment and Collections](patterns/containment-and-collections.md)**: Qualified forward recursive containment (`Object.contains(Object)`), entity recursion boundaries, and distinct collection membership semantics.
-   - **[Definition to Accountability](patterns/definition-to-accountability.md)**: The 5-stage semantic progression, illustrated via *Healthcare Service* (`OfferedHealthcareService` to `AssuredHealthcareService` with `Order` as an associated direction mechanism) and *Task / Work* (`ActionableTask` to `ReportedTask`).
+   - **[Definition to Accountability](patterns/definition-to-accountability.md)**: The 5-stage semantic progression, illustrated via *Healthcare Service* (`OfferedHealthcareService` to `AssuredHealthcareService` with `Order` as an associated direction mechanism) and the bounded *Task / Work* model (`ActionableTaskArchetype` → `ActionableTask` → `FulfillmentTask` → `TaskOutcome`), with ReportedTask / Accountability unresolved.
 3. **Information Governance & Lifecycles**:
    - **[Authority, Custody & Provenance](governance/authority-custody-provenance.md)**: Definitions of `Assertion`, granular authority at assertion/relationship level, custody, and provenance models.
    - **[Information Lifecycle](governance/information-lifecycle.md)**: Concept-specific lifecycle principles and transition provenance.
 4. **[Assemblies & Views](assemblies-views/assemblies-and-views.md)**: Governance of semantic compositions (`Information Assembly`) and projections (`Information View`) with illustrative candidate context definitions (Healthcare Subject Context, Longitudinal Clinical Record, Encounter Context, etc.).
 5. **[Modelling Guardrails](guardrails/modelling-guardrails.md)**: The 16 authoritative repository-wide guardrails for Information Architecture.
+   - **[Observable Information and Domain Meaning](guardrails/observable-information-and-domain-meaning.md)**: Semantic-agnosticism, the conceptual governed Ergo boundary and optional runtime AI, distinct from AI-assisted development.
 6. **[Domain 03 Traceability](traceability/domain03-traceability.md)**: The 4-tier derivation chain (`Capability/Feature → Function/Process → Information Responsibility → Domain 04 Concept`) and representative reference mappings.
 7. **[Detailed Information Families](information-families/README.md)**: Concrete information family models for foundational entities, identities, locations, services, and devices:
    - **[Person and Healthcare Subject](information-families/person-healthcare-subject.md)**
@@ -149,3 +154,4 @@ docs/markdown/04-information-architecture/
    - **[Healthcare Location / Care Place](information-families/healthcare-location.md)**
    - **[Healthcare Service](information-families/healthcare-service.md)**
    - **[Device](information-families/device.md)**
+   - **[Task / Work — Bounded Information Model](information-families/task-work.md)**: The four adjudicated Task concepts, multiple/concurrent undertakings, bounded outcomes and retained Accountability uncertainty. This reconciliation does not complete Domain04 or the wider Task / Work family.

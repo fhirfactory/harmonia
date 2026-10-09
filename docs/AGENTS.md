@@ -21,7 +21,10 @@
 All work under docs/ inherits the repository [AGENTS.md](../AGENTS.md) in full.
 That root file is the single maintained instruction set for architectural authority,
 fresh-context and progressive authority loading, bounded command execution,
-architectural guardrails and required verification. Read and apply it before work.
+architectural guardrails, documentation governance and required verification.
+Read and apply it before work, including the standing
+[RADS and legacy-doco rules](../AGENTS.md#12-rads-and-legacy-documentation-governance)
+for reconciliation, original-content preservation and section supersession.
 
 For architecture-completion tasks, also follow the
 [Architecture Completion Plan](markdown/architecture-completion-plan.md),
