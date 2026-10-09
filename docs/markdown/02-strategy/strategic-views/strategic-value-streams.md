@@ -34,6 +34,14 @@ Such mappings confuse stakeholder value with system execution topologies. Value 
 
 ---
 
+### Traceability Standing and Re-Derivation Boundary
+
+The superseded BC, contextual-view, Driver, Goal and axiom-meaning assertions formerly included in the four traceability blocks are retired as current architectural authority. They have not been translated into the current identifiers. The blocks below retain only existing relationships whose referenced responsibilities and meanings remain current; they do not establish replacement relationships for retired assertions.
+
+The [current Motivation catalogues](../../01-motivation/README.md), [Business Capability model](../capabilities/business-capabilities.md), [Business Enabling catalogue](../capabilities/business-enabling-capabilities.md) and [Enterprise Capability definitions](../capabilities/enterprise-capabilities.md) supply the elements against which re-derivation was checked. They do not establish the missing stream-to-Business-Capability or stream-to-Business-Enabling relationships. A valid lower-level contribution does not supply those missing intermediate relationships. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) requires these gaps to remain explicit; no candidate mapping is promoted to authority.
+
+The stream purposes, stages and intended outcomes remain established. A missing traceability relationship does not invalidate a stream or an otherwise authoritative capability.
+
 ## 2. The Four Normative R1.x/R2.x Strategic Value Streams
 
 Harmonia R1.x/R2.x defines exactly four principal Strategic Value Streams:
@@ -87,11 +95,13 @@ Harmonia provides **governed, vendor-neutral longitudinal clinical representatio
 
 #### Representative Strategic Traceability
 
-- **Motivational Axioms**: `AX-01` (Patient-Centricity), `AX-02` (Open Standards), `AX-03` (Canonical Representation), `AX-04` (Semantic Preservation), `AX-06` (Provenance & Attribution), `AX-08` (Auditability), `AX-13` (Interoperability Membrane), `AX-14` (Jurisdictional Alignment).
-- **Strategic Drivers & Goals**: `DRV-01` (Fragmented Care Delivery), `DRV-02` (Semantic Heterogeneity), `DRV-04` (Clinical Safety); `GOAL-01` (Unified Longitudinal View), `GOAL-02` (Semantic Interoperability), `GOAL-04` (Patient Safety).
-- **Business Capabilities**: `BC-01` (Patient Identification & Demographics), `BC-02` (Clinical Document Ingress & Processing), `BC-03` (Longitudinal Record Management), `BC-04` (Terminology & Semantic Harmonisation), `BC-08` (Clinical Query & Retrieval), `BC-12` (Diagnostic & Pathology Integration).
-- **Business Enabling Contexts**: View 1 (Ingress & Processing), View 2 (Information Store & Query), View 4 (Cross-Enterprise Interoperability).
-- **Enterprise Capabilities**: `EC-01` (Identifier Resolution), `EC-02` (Context Management), `EC-03` (Semantic Normalisation), `EC-04` (Longitudinal Record Management), `EC-07` (Provenance & Traceability), `EC-08` (Standards-Based Interoperability), `EC-13` (Clinical Terminology Services).
+| Traceability level | Current architectural standing |
+| :--- | :--- |
+| Motivation | Unresolved: the retired block does not establish a replacement stream-specific axiom set or current named Driver/Goal relationship. |
+| Current Business Capability contribution | **Unresolved / not presently established.** The superseded BC relationships are retired; no relationship to BC-01 through BC-18 is supplied by identifier position or similarity. |
+| Current Business Enabling contribution and contextual view | **Unresolved / not presently established.** Old view ordinals and meanings are retired; no enabling-capability or Feature relationship is inferred. |
+| Existing current Enterprise Capability contributions | **Established, partial:** [EC-02 — Context Management](../capabilities/enterprise-capabilities.md#ec-02-context-management); [EC-07 — Provenance & Traceability](../capabilities/enterprise-capabilities.md#ec-07-provenance--traceability). These previously documented contributions retain their canonical meanings. Other current contributions are unresolved; the retired EC labels do not establish replacements. |
+
 - **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-02` (Distinct Management and Durable Preservation), `COA-03` (Meaning-Centric Provenance and Traceability).
 
 ---
@@ -140,12 +150,14 @@ $$\text{Aggregation} \longrightarrow \text{Processing} \longrightarrow \text{Per
 
 #### Representative Strategic Traceability
 
-- **Motivational Axioms**: `AX-02` (Open Standards), `AX-03` (Canonical Representation), `AX-05` (State Separation), `AX-07` (Default-Deny Security), `AX-09` (Non-Destructive Evolution), `AX-11` (Component Responsibility), `AX-13` (Interoperability Membrane), `AX-14` (Jurisdictional Alignment).
-- **Strategic Drivers & Goals**: `DRV-02` (Semantic Heterogeneity), `DRV-03` (Regulatory Compliance); `GOAL-02` (Semantic Interoperability), `GOAL-03` (Security & Privacy Governance), `GOAL-05` (Information Longevity).
-- **Business Capabilities**: `BC-02` (Clinical Document Ingress & Processing), `BC-03` (Longitudinal Record Management), `BC-06` (Security & Access Control), `BC-07` (Audit & Compliance), `BC-08` (Clinical Query & Retrieval), `BC-11` (Integration Membrane Governance), `BC-12` (Diagnostic & Pathology Integration).
-- **Business Enabling Contexts**: View 1 (Ingress & Processing), View 2 (Information Store & Query), View 3 (Security & Audit), View 4 (Cross-Enterprise Interoperability).
-- **Enterprise Capabilities**: `EC-01` (Identifier Resolution), `EC-02` (Context Management), `EC-03` (Semantic Normalisation), `EC-04` (Longitudinal Record Management), `EC-06` (Policy & Control), `EC-07` (Provenance & Traceability), `EC-08` (Standards-Based Interoperability), `EC-13` (Clinical Terminology Services).
-- **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-02` (Distinct Management and Durable Preservation), `COA-03` (Meaning-Centric Provenance and Traceability), `COA-06` (Collaborative Cross-Cutting Capability Realisation).
+| Traceability level | Current architectural standing |
+| :--- | :--- |
+| Motivation | Established existing constraints: [AX-05 — Active State and Authoritative Durable State Are Distinct](../../../architectural-axioms.md#ax-05-----active-state-and-authoritative-durable-state-are-distinct) and [AX-07 — Security Is Intrinsic to Managed Operations](../../../architectural-axioms.md#ax-07-----security-is-intrinsic-to-managed-operations). Current named Driver/Goal relationships and a replacement for the retired axiom meanings remain unresolved. |
+| Current Business Capability contribution | **Unresolved / not presently established.** The superseded BC relationships are retired; no relationship to BC-01 through BC-18 is supplied by identifier position or similarity. |
+| Current Business Enabling contribution and contextual view | **Unresolved / not presently established.** Old view ordinals and meanings are retired; no enabling-capability or Feature relationship is inferred. |
+| Existing current Enterprise Capability contributions | **Established, partial:** [EC-02 — Context Management](../capabilities/enterprise-capabilities.md#ec-02-context-management); [EC-06 — Policy & Control](../capabilities/enterprise-capabilities.md#ec-06-policy--control); [EC-07 — Provenance & Traceability](../capabilities/enterprise-capabilities.md#ec-07-provenance--traceability). These previously documented contributions retain their canonical meanings. Other current contributions are unresolved; the retired EC labels do not establish replacements. |
+
+- **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-02` (Distinct Management and Durable Preservation), `COA-03` (Meaning-Centric Provenance and Traceability), `COA-06` (Collaborative Reusable Capability Realisation).
 
 ---
 
@@ -189,16 +201,20 @@ graph LR
 
 #### Decoupling Note: Execution Constructs Below the Value Stream
 
-In accordance with architectural principles, execution constructs (such as Ponos execution engines, Digital Twin active threads, worker pools, messaging queues, Work Orders, To Dos, and FHIR Tasks) remain strictly **below** the Value Stream. They serve as enabling enterprise capabilities and downstream realisation mechanisms, not as stage names within the strategic value stream itself.
+Digital Twin activity is demand-driven and coordinated through the established activity-execution architecture; Digital Twin identity does not imply a dedicated or permanently active execution thread, process or runtime engine. The Twin remains the [entity-centred coordination construct](logical-component-responsibilities.md#component-7-digital-twin-entity-centred-operational-coordination-construct).
+
+Activity execution constructs and downstream mechanisms (illustratively, worker pools, messaging queues and FHIR Tasks) remain **below** the Value Stream. Their names are not stage names or technology choices made by this Strategy view.
 
 #### Representative Strategic Traceability
 
-- **Motivational Axioms**: `AX-01` (Patient-Centricity), `AX-06` (Provenance & Attribution), `AX-10` (Asynchronous Operational Progression), `AX-11` (Component Responsibility), `AX-15` (Explicit Uncertainty), `AX-16` (Operational Activity and Entity State Progress Together).
-- **Strategic Drivers & Goals**: `DRV-04` (Clinical Safety), `DRV-05` (Operational Inefficiency); `GOAL-04` (Patient Safety), `GOAL-06` (Operational Efficiency).
-- **Business Capabilities**: `BC-05` (Healthcare Resource & Facility Management), `BC-09` (Care Coordination & Workflow), `BC-10` (Referral & Order Management), `BC-14` (Secure Clinical Communication & Collaboration), `BC-15` (Operational Activity Progression), `BC-16` (Real-World Entity State Progression).
-- **Business Enabling Contexts**: View 1 (Ingress & Processing), View 5 (Operational Activity & Workflow).
-- **Enterprise Capabilities**: `EC-01` (Identifier Resolution), `EC-02` (Context Management), `EC-05` (Entity State Coordination), `EC-09` (Activity Lifecycle Management), `EC-10` (Task Envelope Management), `EC-11` (Collaboration & Notification), `EC-12` (Operational Assurance).
-- **Strategic Courses of Action**: `COA-04` (Governed Asynchronous Activity Progression), `COA-05` (Entity-Centred Operational Coordination), `COA-06` (Collaborative Cross-Cutting Capability Realisation).
+| Traceability level | Current architectural standing |
+| :--- | :--- |
+| Motivation | Established: [AX-15 — Uncertainty Is Preserved Until Resolved](../../../architectural-axioms.md#ax-15--uncertainty-is-preserved-until-resolved) and [AX-16 — Operational Activity & Entity State Progress Together](../../../architectural-axioms.md#ax-16--operational-activity--entity-state-progress-together). AX-16 is explicitly applied by this stream’s purpose and entity-state progression stage. Current named Driver/Goal relationships and replacement grounding for the other retired axiom meanings remain unresolved. |
+| Current Business Capability contribution | **Unresolved / not presently established.** The superseded BC relationships are retired; no relationship to BC-01 through BC-18 is supplied by identifier position or similarity. |
+| Current Business Enabling contribution and contextual view | **Unresolved / not presently established.** Old view ordinals and meanings are retired; no enabling-capability or Feature relationship is inferred. |
+| Existing current Enterprise Capability contributions | **Established, partial:** [EC-02 — Context Management](../capabilities/enterprise-capabilities.md#ec-02-context-management); [EC-12 — Operational Assurance](../capabilities/enterprise-capabilities.md#ec-12-operational-assurance). These previously documented contributions retain their canonical meanings. Other current contributions are unresolved; the retired EC labels do not establish replacements. |
+
+- **Strategic Courses of Action**: `COA-04` (Governed Asynchronous Activity Progression), `COA-05` (Entity-Centred Operational Coordination), `COA-06` (Collaborative Reusable Capability Realisation).
 
 ---
 
@@ -250,12 +266,14 @@ Harmonia establishes the governed information context in which clinical collabor
 
 #### Representative Strategic Traceability
 
-- **Motivational Axioms**: `AX-01` (Patient-Centricity), `AX-04` (Semantic Preservation), `AX-06` (Provenance & Attribution), `AX-07` (Default-Deny Security), `AX-11` (Component Responsibility), `AX-13` (Interoperability Membrane), `AX-14` (Jurisdictional Alignment).
-- **Strategic Drivers & Goals**: `DRV-01` (Fragmented Care Delivery), `DRV-04` (Clinical Safety); `GOAL-01` (Unified Longitudinal View), `GOAL-04` (Patient Safety).
-- **Business Capabilities**: `BC-01` (Patient Identification & Demographics), `BC-03` (Longitudinal Record Management), `BC-04` (Terminology & Semantic Harmonisation), `BC-13` (Longitudinal Record Presentation & Exploration), `BC-14` (Secure Clinical Communication & Collaboration).
-- **Business Enabling Contexts**: View 2 (Information Store & Query), View 3 (Security & Audit), View 4 (Cross-Enterprise Interoperability), View 5 (Operational Activity & Workflow).
-- **Enterprise Capabilities**: `EC-01` (Identifier Resolution), `EC-02` (Context Management), `EC-04` (Longitudinal Record Management), `EC-06` (Policy & Control), `EC-08` (Standards-Based Interoperability), `EC-11` (Collaboration & Notification), `EC-13` (Clinical Terminology Services).
-- **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-03` (Meaning-Centric Provenance and Traceability), `COA-06` (Collaborative Cross-Cutting Capability Realisation).
+| Traceability level | Current architectural standing |
+| :--- | :--- |
+| Motivation | Established existing constraint: [AX-07 — Security Is Intrinsic to Managed Operations](../../../architectural-axioms.md#ax-07-----security-is-intrinsic-to-managed-operations). Current named Driver/Goal relationships and a replacement for the retired axiom meanings remain unresolved. |
+| Current Business Capability contribution | **Unresolved / not presently established.** The superseded BC relationships are retired; no relationship to BC-01 through BC-18 is supplied by identifier position or similarity. |
+| Current Business Enabling contribution and contextual view | **Unresolved / not presently established.** Old view ordinals and meanings are retired; no enabling-capability or Feature relationship is inferred. |
+| Existing current Enterprise Capability contributions | **Established, partial:** [EC-02 — Context Management](../capabilities/enterprise-capabilities.md#ec-02-context-management); [EC-06 — Policy & Control](../capabilities/enterprise-capabilities.md#ec-06-policy--control). These previously documented contributions retain their canonical meanings. Other current contributions are unresolved; the retired EC labels do not establish replacements. |
+
+- **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-03` (Meaning-Centric Provenance and Traceability), `COA-06` (Collaborative Reusable Capability Realisation).
 
 ---
 
@@ -283,24 +301,20 @@ $$\text{Ingest Trigger} \longrightarrow \text{Transport \& Deduplicate} \longrig
 
 ## 4. End-to-End Strategic Traceability Model
 
-Strategic Value Streams provide the critical bridge between Domain 01 Motivation and Domain 02 Strategy realization:
+The intended direction for truthful re-derivation is shown below. Dashed edges describe the derivation method; they do not assert that every level is populated or that a specific catalogue element is already connected to a stream.
 
 ```mermaid
 graph TD
-    MOT["Domain 01: Motivation<br/>Axioms AX-01..16, Drivers, Goals"] --> VS["Strategic Value Streams<br/>VS-01 .. VS-04"]
-    VS --> BC["Business Capabilities<br/>18 L1s across 5 Natural Regions"]
-    BC --> BEC["Business Enabling Capabilities<br/>5 Healthcare Operating Contexts"]
-    BEC --> FEAT["Atomic Features<br/>Testable System Behaviours"]
-    FEAT --> EC["Enterprise Capabilities<br/>EC-01 .. EC-13 Established Stream Contributions"]
-    EC --> COA["Courses of Action & Resources<br/>COA-01..06 & SR-01..03"]
-    COA --> COMP["Strategic Logical Responsibilities<br/>Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris, Digital Twin"]
-    COMP --> REAL["Domains 03-13: Downstream Realisation"]
+    MOT["Current Motivation<br/>Drivers, Goals and current Axiom Register including AX-17"] -.-> VS["Current Strategic Value Stream<br/>VS-01 .. VS-04"]
+    VS -.-> BC["Current Business Capability contribution<br/>Only where established"]
+    BC -.-> BEC["Current Business Enabling Capability contribution<br/>Only where established"]
+    BEC -.-> EC["Current Enterprise Capability contribution<br/>Only where established"]
 ```
 
-The Business Capability count reflects the approved [five-region/eighteen-capability model](../capabilities/business-capabilities.md). The aggregate progression diagram does not establish Value Stream relationships for appended Capabilities 17 and 18. The separately approved [Health Service Assurance Strategy derivation](../capability-maps/health-service-assurance-derivation.md) adds the BC-18 Business Enabling and collaborative Enterprise Capability relationships, including EC-14, without establishing a stream, stage, Course of Action, resource or component allocation. The diagram retains the existing EC-01 through EC-13 stream contributions; it does not connect EC-14 to the displayed downstream responsibilities. Assurance-related Value Stream relationships remain unresolved.
+The [five-region/eighteen-capability model](../capabilities/business-capabilities.md) establishes the current Business Capabilities, not their stream membership. The [Health Service Assurance derivation](../capability-maps/health-service-assurance-derivation.md) independently establishes REQ-FND-005 → BC-18 → the three assurance Business Enabling Capabilities → the approved collaborative EC contribution model, including EC-14. It establishes no Value Stream or stage relationship. BC-17, BC-18 and EC-14 stream relationships remain unresolved; no Course of Action, resource or strategic logical component allocation follows from the diagram.
 
 ### Traceability Principles
 
 1. **Lightweight & Representative**: Traceability is maintained through clear, representative relationships rather than brittle, exhaustive $N \times M$ matrices.
-2. **Bi-Directional Justification**: Every capability in Harmonia exists to serve one or more Strategic Value Streams; every Value Stream is anchored in governing Motivation Axioms and Strategic Drivers.
+2. **Truthful Contribution Traceability**: Where a Harmonia capability contributes to delivery of a Strategic Value Stream, that contribution SHOULD be explicitly traceable. Absence of an established Value Stream relationship does not invalidate an otherwise authoritative capability and SHALL NOT be completed through inference.
 3. **Decoupled Evolution**: Capabilities and Courses of Action may be enhanced, refactored, or substituted over time without destabilizing the overarching stakeholder value streams.

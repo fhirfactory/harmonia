@@ -53,6 +53,33 @@ agent MUST identify the Architectural Axioms materially relevant to that
 change and demonstrate that the proposed approach is consistent with
 them.
 
+### 1.1 AI Context and Architecture Authority
+
+Start substantive architecture and implementation tasks assuming no prior
+AI-session context. Fresh AI context is the preferred default for a new
+bounded task; clarification, mechanical correction, review before closure
+and other tightly coupled work within that same authorised task do not
+require a session restart.
+
+Agents MUST use repository-held architectural authority and explicitly
+authorised task decisions rather than remembered, summarised or
+previous-session interpretations. Load the minimum authoritative context
+sufficient for the bounded task, then progressively expand it by following
+architectural dependencies, references and traceability where required.
+This does not impose a fixed reading sequence or arbitrary context budget,
+or waive required task inputs and repository instructions.
+
+Prior conversation, model memory, generated or compacted summaries,
+previous-session explanations, `.junie/plans` and `.junie/reports` MAY assist
+navigation or investigation but do not constitute architectural authority.
+Navigation aids identify sources; they do not replace authoritative material.
+If sufficient authority cannot be established, or authority is ambiguous or
+contradictory, agents MUST preserve and raise the uncertainty under AX-17
+rather than resolve it through memory, convention or inference.
+
+The [Architecture Completion Plan's context-loading guardrail](docs/markdown/architecture-completion-plan.md#81-ai-context-independence-and-progressive-authority-loading)
+provides the programme guidance. The existing authority rules remain in force.
+
 ## 2. System Taxonomy & Module Hierarchy
 
 Harmonia enforces strict separation of concerns across its 9 core

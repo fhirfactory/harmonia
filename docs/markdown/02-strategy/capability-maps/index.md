@@ -26,7 +26,7 @@ Harmonia replaces exhaustive matrices with **structural tier progression models*
 - [Strategic Value Streams](../strategic-views/strategic-value-streams.md): Normative R1.x/R2.x model defining the four principal value transformations (VS-01..VS-04), value transformation stages, and representative traceability.
 - [Capability Tier Progression Model](capability-tier-model.md): Detailed formulation of the vertical progression from Business Capabilities through Business Enabling Capabilities and Features to Enterprise Capabilities, including composition rules, representative derivations, and the architectural rationale for omitting exhaustive $N \times M$ matrices.
 - [Health Service Assurance Derivation](health-service-assurance-derivation.md): Approved REQ-FND-005 → BC-18 → Assurance Design, Assurance Criteria Management and Governed Assurance → collaborative Enterprise Capability realisation, including EC-14 Service Guardian; bounded first-pass contribution matrix with no component or downstream solution allocation.
-- [Strategic Logical Component Responsibilities](../strategic-views/logical-component-responsibilities.md): Capability compositions deriving the 7 logical component responsibilities and the canonical Strategic Responsibility View.
+- [Strategic Logical Component Responsibilities](../strategic-views/logical-component-responsibilities.md): Capability compositions describing six strategic logical components and the Digital Twin coordination construct and the canonical Strategic Responsibility View.
 
 ---
 

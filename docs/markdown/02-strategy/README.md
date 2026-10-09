@@ -10,9 +10,9 @@ Domain 02 establishes an authoritative, technology-neutral architecture that def
 - **What the healthcare enterprise must do**: The enterprise healthcare business capabilities that exist in the operating environment.
 - **What systems must enable**: The system-enabled healthcare capabilities required across genuine clinical, operational, and administrative settings.
 - **What atomic system behaviour is required**: The atomic, testable features that constitute those enabling capabilities.
-- **What should be reusable**: The cross-cutting Enterprise Capabilities that recur across clinical and operational features.
+- **What should be reusable**: The reusable Enterprise Capabilities that recur across clinical and operational features.
 - **How technical realization is evaluated**: The ICT Foundation lenses that guide technical realization without distorting functional capability boundaries.
-- **How architectural responsibility is organized**: How coherent clusters of capabilities inform the strategic logical component responsibility boundaries (elaborated in Pass B).
+- **How architectural responsibility is organized**: How coherent clusters of capabilities inform the strategic logical component responsibility boundaries as defined in the [Strategic Logical Component Responsibility Model](strategic-views/logical-component-responsibilities.md).
 
 ---
 
@@ -189,12 +189,12 @@ The documentation for Domain 02 is organized as follows:
 1. **Strategic Views & Value Streams**
    - [Strategic Views Index](strategic-views/index.md): Architectural views overview and conceptual guidelines.
    - [Strategic Value Streams](strategic-views/strategic-value-streams.md): Normative R1.x/R2.x model defining VS-01 through VS-04, value transformation stages, sufficiency boundaries, and representative traceability.
-   - [Strategic Logical Component Responsibilities](strategic-views/logical-component-responsibilities.md): Comprehensive 7-component responsibility model, 6-point boundary tests, 6 critical seam validations, capability compositions, and Strategic Responsibility View.
+   - [Strategic Logical Component Responsibilities](strategic-views/logical-component-responsibilities.md): Responsibility model for six strategic logical components and the Digital Twin coordination construct, 6-point boundary tests, 6 critical seam validations, capability compositions, and Strategic Responsibility View.
 2. **Capability Model & Catalogues**
    - [Capability Framework Index](capabilities/index.md): Multi-tier capability progression framework and directory guide.
    - [Business Capabilities](capabilities/business-capabilities.md): Complete catalogue of the 18 L1 Business Capabilities across five natural regions, with quality rules, established Harmonia relevance classifications and explicit unresolved downstream matters for 17–18.
    - [Five-Region Business Capability Reconciliation](reviews/business-capability-five-region-reconciliation.md): Bounded record of the approved human decision, direct documentary corrections and deferred downstream consequences; the catalogue remains the normative model.
-   - [Business Enabling Capabilities](capabilities/business-enabling-capabilities.md): Complete catalogue across 5 contextual views (Entity Management, Service Administration, Service Delivery, Health Service Operations, Intrinsic / Shared Enablement) and atomic Features.
+   - [Business Enabling Capabilities](capabilities/business-enabling-capabilities.md): Established R1.x/R2.x capability and Feature baseline across five contextual views, plus the approved assurance capabilities with no artificial Feature decomposition.
    - [Enterprise Capabilities](capabilities/enterprise-capabilities.md): Technology-neutral specifications for EC-01 through EC-14 and multi-capability derivation methodology; no EC-14 component allocation.
    - [Health Service Assurance Derivation](capability-maps/health-service-assurance-derivation.md): Approved Motivation → Strategy traceability, fourteen-row collaborative contribution model, preserved semantic boundaries and unresolved downstream relationships.
    - [ICT Foundation Lenses](capabilities/ict-foundation-lenses.md): The 18 ICT Foundation capabilities framed as cross-cutting technical enablement lenses.

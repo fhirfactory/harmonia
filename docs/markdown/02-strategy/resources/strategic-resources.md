@@ -20,7 +20,7 @@ The following table records the formal adjudication determinations for all evalu
 | **Healthcare Interoperability Standards and Specifications** | External normative healthcare exchange standards | Foundational specifications defining healthcare interoperability semantics, schemas, and interaction rules across enterprise boundaries. Without them, regional interoperability cannot be achieved. | **ADMIT as Strategic Resource** | Domain 02 Strategy (`SR-01`) |
 | **Australian National Healthcare Directory & Identifier Specifications** | Jurisdictional directory, endpoint, and identifier specifications | External normative specifications and infrastructure defining endpoint discovery, directory federation, and national provider/organisation identification (HPI-I, HPI-O, IHI). Enduring strategic dependency. | **ADMIT as Strategic Resource** | Domain 02 Strategy (`SR-02`) |
 | **National Clinical Terminology Assets (SNOMED CT-AU / AMT)** | Authoritative clinical vocabularies and ontologies | External normative clinical vocabularies required for clinical semantic governance, unambiguous coding, and meaning-preserving transformations. | **ADMIT as Strategic Resource** | Domain 02 Strategy (`SR-03`) |
-| **Healthcare Regulatory & Privacy Compliance Frameworks** | Governing legal, privacy, and regulatory acts | Governing legal requirements (Privacy Act 1988, My Health Record Act 2012) shaping platform behaviour. While essential, they represent external constraints rather than operational assets. Admitting them as Strategy Resources adds no architectural meaning beyond the Motivation constraint model. | **CLASSIFY as External Constraint** | Domain 01 Motivation (`CON-01..CON-11`) |
+| **Healthcare Regulatory & Privacy Compliance Frameworks** | Governing legal, privacy, and regulatory acts | Governing legal requirements (Privacy Act 1988, My Health Record Act 2012) shaping platform behaviour. While essential, they represent external constraints rather than operational assets. Admitting them as Strategy Resources adds no architectural meaning beyond the Motivation constraint model. | **CLASSIFY as External Constraint** | Domain 01 Motivation ([CST-EXT-001](../../01-motivation/requirements-constraints/external-constraints.md#cst-ext-001-applicable-health-information-privacy-and-data-protection-obligations)) |
 | **Authoritative Healthcare Provider Graph** | Aggregated graph of practitioners, organisations, and endpoints | Represents information actively ingested, reconciled, and managed by Harmonia rather than an enabling external resource. | **RELEGATE to Information Architecture** | Domain 04 Information Architecture (`EC-01`, `EC-04`) |
 | **Vendor-Neutral Longitudinal Clinical Record** | Aggregated longitudinal patient clinical history | Represents core managed health information resulting from capability execution, not an external or enabling platform resource. | **RELEGATE to Information Architecture** | Domain 04 Information Architecture (`EC-04`) |
 | **Canonical Pragma Task Envelope & Schema Library** | Internal distributed execution envelope and schemas | Represents an internal application architecture construct and domain execution envelope. | **RELEGATE to Application Architecture** | Domain 05 Application Architecture / Calliope |
@@ -28,6 +28,12 @@ The following table records the formal adjudication determinations for all evalu
 | **Paradeigma Synthetic Persona & Simulation Testbeds** | Synthetic clinical personas, test generators, and harnesses | Represents an offline verification and simulation capability rather than a production operational strategic resource. | **RELEGATE to Testing Architecture** | Domain 10 Testing Architecture |
 
 ---
+
+### Jurisdictional Baseline
+
+Harmonia's current R1.x/R2.x strategic resource baseline is Australian-healthcare oriented. This establishes the concrete jurisdictional resources presently modelled; it does not establish Australia as an intrinsic platform boundary. Other jurisdictional obligations apply where required by the deployment or operating context and SHALL be incorporated through the applicable governance and constraint mechanisms.
+
+The three admitted resources and their Australian instances are preserved. No additional jurisdictional resource or obligation is admitted merely because it appears as an example in the wider constraint catalogue.
 
 ## 2. Admitted Strategic Resources
 
@@ -98,14 +104,29 @@ These terminology assets enable Harmonia to evaluate clinical semantic equivalen
 
 ---
 
-## 3. Formal Relegation Dispositions
+## 3. Current Constraint Relationships
+
+Historical CON-01 through CON-11 references are retired as current traceability. The relationships below were checked against the [current Domain 01 constraint definitions and explicit instances](../../01-motivation/requirements-constraints/external-constraints.md); they are not an identifier crosswalk.
+
+| Resource or candidate | Current constraint relationship | Authoritative basis and limit |
+| :--- | :--- | :--- |
+| SR-01 — Healthcare Interoperability Standards and Specifications | Established: [CST-EXT-003 — Mandated External Interoperability Contracts](../../01-motivation/requirements-constraints/external-constraints.md#cst-ext-003-mandated-external-interoperability-contracts) bounds use at the applicable external interface. | The category expressly governs mandated protocols, information standards and serialisation and identifies FHIR REST and regional profiles as instances. SR-01 supplies those normative specifications; their use does not define private Harmonia semantics. |
+| SR-02 — Australian National Healthcare Directory & Identifier Specifications | Established: [CST-EXT-002 — Applicable National / Jurisdictional Healthcare Identifier Obligations](../../01-motivation/requirements-constraints/external-constraints.md#cst-ext-002-applicable-national--jurisdictional-healthcare-identifier-obligations) bounds its HI-ecosystem facet where the deployment participates. | The category explicitly identifies the Australian HI Act/operating rules and IHI, HPI-I and HPI-O. This does not establish a constraint mapping for every directory/locator specification. |
+| SR-03 — National Clinical Terminology Assets | Specific constraint relationship unresolved / not presently established. | The current constraint model supplies no explicit resource-specific terminology relationship. No relationship is inferred from the historical range or the asset’s status as a specification. |
+| Candidate 1 — Healthcare Regulatory & Privacy Compliance Frameworks | Established classification: CST-EXT-001; external constraint, not an admitted Strategic Resource. | The category explicitly lists the Australian privacy, My Health Records and state health-records obligations considered here. Other obligations apply according to deployment context without expanding this resource baseline. |
+
+Individual historical CON relationships and category relationships beyond those explicitly supported above remain unresolved. No eleven-to-three correspondence is asserted.
+
+---
+
+## 4. Formal Relegation Dispositions
 
 The following candidate assets were evaluated against the Strategic Significance Test and determined to belong outside Domain 02 Strategic Resources:
 
 ### Candidate 1: Healthcare Regulatory & Privacy Compliance Frameworks
 - **Candidate Frameworks**: Privacy Act 1988, Australian Privacy Principles (APPs), My Health Record Act 2012, and state/territory health records legislation.
-- **Strategic Significance Assessment**: These legal frameworks dictate mandatory compliance boundaries, consent models, and data sovereignty rules across Harmonia. However, they represent legal and societal constraints under which all platform capabilities must operate, rather than operational or architectural assets. Classifying them as Strategy Resources would duplicate the external constraints model without adding distinct architectural meaning. (Note: Foreign regulations such as HIPAA or GDPR are excluded as outside Harmonia's canonical Australian healthcare scope).
-- **Disposition**: **CLASSIFY as External Constraints in Domain 01 Motivation** (`CON-01` through `CON-11`).
+- **Strategic Significance Assessment**: These legal frameworks dictate mandatory compliance boundaries, consent models, and data sovereignty rules across Harmonia. However, they represent legal and societal constraints under which all platform capabilities must operate, rather than operational or architectural assets. Classifying them as Strategy Resources would duplicate the external constraints model without adding distinct architectural meaning. Applicable obligations are determined by jurisdiction and deployment context under the current Domain 01 constraint model.
+- **Disposition**: **CLASSIFY as External Constraints in Domain 01 Motivation** ([CST-EXT-001](../../01-motivation/requirements-constraints/external-constraints.md#cst-ext-001-applicable-health-information-privacy-and-data-protection-obligations)). This relationship is re-derived from the current category’s explicit Australian privacy and health-records instances, not translated from historical CON identifiers.
 
 ### Candidate 2: Authoritative Healthcare Provider Graph
 - **Candidate Description**: The consolidated, reconciled graph of practitioners, organisations, healthcare services, and endpoints managed by Harmonia.
@@ -134,7 +155,7 @@ The following candidate assets were evaluated against the Strategic Significance
 
 ---
 
-## 4. Architectural Summary
+## 5. Architectural Summary
 
 Harmonia's Strategic Resources are intentionally kept minimal and enduring:
 - **SR-01 (Healthcare Interoperability Standards and Specifications)** defines *how interoperability is achieved standardly*.

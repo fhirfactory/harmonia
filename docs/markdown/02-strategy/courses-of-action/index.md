@@ -32,14 +32,14 @@ Harmonia derives its Courses of Action top-down by synthesising foundational Dri
 
 ```text
 DOMAIN 01: MOTIVATION
-Drivers ──► Strategic Goals ──► Architectural Axioms (AX-01..16)
+Drivers ──► Strategic Goals ──► Current Architectural Axiom Register (including AX-17)
                     │
                     ▼
 DOMAIN 02: STRATEGY
        Courses of Action (COA-01 .. COA-06)
                     │
                     ▼
-       Enterprise Capabilities (EC-01 .. EC-13)
+       Enterprise Capabilities (EC-01 .. EC-14)
                     │
                     ▼
        Strategic Logical Component Responsibilities
@@ -48,8 +48,8 @@ DOMAIN 02: STRATEGY
 ### The 5-Point Quality Test
 Every proposed Course of Action must satisfy five mandatory quality criteria:
 
-1. **Motivational Traceability**: Explicitly addresses one or more strategic Drivers, Goals, Business Outcomes, or Architectural Axioms (`AX-01` through `AX-16`).
-2. **Capability Influence**: Materially shapes how Enterprise Capabilities (`EC-01` through `EC-13`) are configured, scoped, and delivered.
+1. **Motivational Traceability**: Explicitly addresses one or more strategic Drivers, Goals, Business Outcomes, or Architectural Axioms in the [current authoritative register](../../../architectural-axioms.md), including AX-17 as the authority and explicit-uncertainty guardrail.
+2. **Capability Influence**: Materially shapes how Enterprise Capabilities (`EC-01` through `EC-14`) are configured, scoped, and delivered.
 3. **Technology Invariance**: Remains valid, meaningful, and binding even if underlying software libraries, databases, or runtime platforms are replaced.
 4. **Architectural Breadth**: Spans more than a single component implementation decision, establishing broad platform-wide architectural direction.
 5. **Downstream Direction**: Provides actionable architectural constraints and guidance for downstream execution domains (Domains 03 through 13).
@@ -66,7 +66,7 @@ Candidates that describe specific technologies, software frameworks, or runtime 
 
 ## 3. Core Strategic Courses of Action Catalogue
 
-Harmonia establishes six core technology-neutral Courses of Action:
+Harmonia establishes six core technology-neutral Courses of Action. Their specific capability relationships remain bounded to the established EC-01 through EC-13 mappings. Generic eligibility does not establish a COA-to-EC-14 relationship; those relationships remain unresolved:
 
 | ID | Course of Action | Summary Strategic Approach | Primary Axiom Grounding |
 | :--- | :--- | :--- | :--- |
@@ -75,7 +75,7 @@ Harmonia establishes six core technology-neutral Courses of Action:
 | **COA-03** | **Meaning-Centric Provenance and Traceability** | Preserve provenance, authority, attribution and traceability for information-significant and business-significant actions and state changes, while avoiding unnecessary elevation of transient operational mechanics into enduring business evidence. | `AX-06`, `AX-07`, `AX-08`, `AX-14` |
 | **COA-04** | **Governed Asynchronous Activity Progression** | Progress multi-stage operational activities through explicit, observable unit-of-work transitions coordinated with entity state, separating execution from boundary exchange. | `AX-10`, `AX-15`, `AX-16` |
 | **COA-05** | **Entity-Centred Operational Coordination** | Coordinate governed information, state and operational activity around real-world healthcare entities where those entities are operationally significant in their own right and require active management, without requiring every managed entity to maintain a permanently active execution construct. | `AX-01`, `AX-11`, `AX-16` |
-| **COA-06** | **Collaborative Cross-Cutting Capability Realisation** | Realize cross-cutting platform capabilities (context, policy, provenance, assurance) collaboratively across participating components rather than through centralized, bottlenecked runtime services. | `AX-04`, `AX-07`, `AX-11` |
+| **COA-06** | **Collaborative Reusable Capability Realisation** | Realize bounded reusable platform capabilities (context, policy, provenance, EC-12 Operational Assurance) collaboratively across participating components rather than through centralized, bottlenecked runtime services. | `AX-04`, `AX-07`, `AX-11` |
 
 ---
 

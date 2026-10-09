@@ -22,7 +22,7 @@ The model ensures that:
 1. Enterprise healthcare practice is clearly demarcated from software enablement.
 2. System-enabled capabilities reflect authentic clinical, administrative, and operational contexts rather than integration software mechanics.
 3. System behaviours are decomposed into atomic, testable features.
-4. Cross-cutting, reusable capabilities (EC-01 .. EC-14) are derived systematically without creating centralized bottleneck services.
+4. Reusable capabilities (EC-01 .. EC-14) are derived systematically without creating centralized bottleneck services.
 5. Technical realisations are guided by ICT Foundation lenses without allowing physical software products to define architectural capabilities.
 
 ---
@@ -115,7 +115,7 @@ The approved [Assurance Design, Assurance Criteria Management and Governed Assur
 - **Definition**: Reusable architectural functionality derived from recurring system-enabled features across multiple healthcare domains.
 - **Derivation Logic**: Derived by analyzing features and asking: *"How is this function delivered?"* Functions that recur vertically across multiple distinct healthcare domains are abstracted into reusable Enterprise Capabilities.
 - **Catalogue**: The established EC-01 Managed Entity & Relationship through EC-13 Semantic Governance & Conformance, plus approved EC-14 Service Guardian.
-- **Collaborative Nature**: Cross-cutting capabilities (EC-02 Context Management, EC-06 Policy & Control, EC-07 Provenance & Traceability, EC-12 Operational Assurance) are collaborative capabilities realized across multiple components rather than centralized bottleneck services.
+- **Collaborative Nature**: Enterprise Capabilities represent bounded reusable responsibilities. Their realisation may require participation, consumption or enforcement across multiple architectural elements, but this does not imply shared semantic ownership or prohibit establishment of a responsibility centre. **Distributed participation does not imply distributed responsibility. Cross-cutting concern does not imply cross-cutting responsibility.**
 
 EC-14 supplies the assurance-specific semantics needed to bind existing reusable capabilities into governed assurance. The [approved first-pass contribution matrix](health-service-assurance-derivation.md#collaborative-enterprise-capability-contribution-matrix) establishes collaborative realisation without extending EC-12's semantics or allocating EC-14 to a component. The generic progression through Features describes the existing derivation convention; it does not manufacture Feature relationships for this explicitly approved assurance derivation.
 
@@ -153,7 +153,7 @@ When specific combinations of Enterprise Capabilities and domain-specific behavi
                             │ informs clustering for
                             ▼
 ┌────────────────────────────────────────────────────────┐
-│  STRATEGIC LOGICAL COMPONENT (Pass B)                  │
+│  STRATEGIC LOGICAL RESPONSIBILITY MODEL                │
 │  - Mneme (Managed Information & Active State)          │
 │  - Mnemosyne (Durable Preservation & Recovery)         │
 │  - Ponos (Managed Operational Activity Execution)      │
@@ -200,7 +200,7 @@ A clinical diagnostic or procedure order requires governed progression from init
   $$\text{Destination} \longrightarrow \text{Route} \longrightarrow \text{Deliver} \longrightarrow \text{Acknowledge} \longrightarrow \text{Progress} \longrightarrow \text{Complete} \longrightarrow \text{Outcome}$$
 - **Critical Healthcare Distinction**:
   $$\text{\bf Technical Delivery Acknowledgement} \neq \text{\bf Business Acknowledgement}$$
-  A transport-level ACK (e.g., MLLP commit or HTTP 200/202) confirms only that the receiver obtained the bits; it does *not* confirm that the receiving laboratory accepted clinical responsibility for performing the ordered test.
+  A technical acknowledgement establishes only the acceptance state defined by the applicable interaction contract. It SHALL NOT be interpreted as durable acceptance, committed business state, successful processing or successful business disposition unless that meaning is explicitly established by the governing contract. HTTP 200/202 and MLLP acknowledgements are interpreted under their applicable contracts. A handoff acknowledgement alone does not establish the eventual downstream business outcome or the receiving laboratory's clinical responsibility. [REQ-FND-001](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-001-durable-ingress-acceptance-boundary) retains its explicit Harmonia durable-ingress requirement.
 - **Reusable Enterprise Capability Contributions**:
   - **EC-02 Context Management**: Establishing and propagating the clinical encounter, ordering provider, and subject-of-care context across all order lifecycle events.
   - **EC-05 Search & Discovery**: Resolving the target fulfillment service endpoint and receiving facility capabilities.

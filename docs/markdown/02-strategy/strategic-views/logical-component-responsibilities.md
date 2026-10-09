@@ -4,6 +4,8 @@
 
 This document establishes Harmonia's **Strategic Logical Component Responsibility Model**. It defines the fundamental responsibility boundaries that emerge from the composition of Harmonia's Business Enabling Features and reusable Enterprise Capabilities (`EC-01` through `EC-13`).
 
+The current catalogue also includes **EC-14 Service Guardian**. Its strategic logical and application component allocation remains unresolved under the [approved Health Service Assurance derivation](../capability-maps/health-service-assurance-derivation.md#unresolved-relationships-and-downstream-boundary). The existing EC-01 through EC-13 compositions are preserved; this model establishes six strategic logical components and the Digital Twin coordination construct.
+
 The purpose of this model is strictly strategic:
 - It explains **why** Harmonia's major logical responsibilities exist.
 - It defines clear, enduring responsibility boundaries and anti-responsibilities.
@@ -19,7 +21,11 @@ The logical component responsibility model is governed by four mandatory archite
 ### Guardrail G1: Reusable Capability $\neq$ Centralised Service
 > **Reusable capability does not imply centralised service.**
 
-Enterprise Capabilities describe reusable functionality across the platform. Intrinsically cross-cutting capabilities—such as Context Management (`EC-02`), Policy & Control (`EC-06`), Provenance & Traceability (`EC-07`), and Operational Assurance (`EC-12`)—are collaborative across participating components rather than centralized runtime bottlenecks. 
+Enterprise Capabilities represent bounded reusable responsibilities. Their realisation may require participation, consumption or enforcement across multiple architectural elements, but this does not imply shared semantic ownership or prohibit establishment of a responsibility centre.
+
+**Distributed participation does not imply distributed responsibility. Cross-cutting concern does not imply cross-cutting responsibility.**
+
+Context Management (`EC-02`), Policy & Control (`EC-06`), Provenance & Traceability (`EC-07`) and Operational Assurance (`EC-12`) illustrate distributed participation in bounded responsibilities without requiring monolithic runtime services.
 
 Furthermore, affinity between an Enterprise Capability and a logical component does not imply exclusive ownership of all underlying machinery: for example, Pylai's affinity with the standards-facing aspects of `EC-08` does not imply that Pylai owns all routing, transport, or delivery mechanisms.
 
@@ -133,6 +139,8 @@ Ponos is the execution engine responsible for progressing governed operational a
 #### Architectural Scope & Clarification
 - Ponos coordinates discrete task units, evaluates workflow step progression, and ensures that operational activity advances in lockstep with governed entity state (`AX-16`).
 - Ponos models and preserves explicit uncertainty (`AX-15`) during distributed execution.
+- Ponos consumes **EC-12 Operational Assurance** to support dependable activity execution, progression, monitoring, failure handling and recovery. This does not confer responsibility or authority for independent Governed Assurance, assurance adjudication, or establishment of Assurance Findings or Conclusions. No EC-14 allocation to Ponos is thereby implied.
+- Ponos may support the execution and activity-observation machinery used by management responsibilities; Business Architecture determines who performs Management Monitoring. This does not establish Ponos as its owner.
 
 #### Anti-Responsibilities (What Ponos Does NOT Own)
 - Does not establish authoritative durable information state or authoritative version progression (owned by Mnemosyne), including when activity execution causes information to change.
@@ -219,13 +227,13 @@ Iris encapsulates presentation services, clinical discovery user interfaces, ope
 #### Architectural Scope & Clarification
 - Iris delivers role-tailored, context-sensitive human interaction with clinical records, provider directories, and integration workflows.
 - It translates human intent into governed operational requests.
-- **Architectural Clarification**: Iris remains strictly non-authoritative for clinical information and operational activity. Displaying or initiating an action does not transfer authority to the presentation tier. Iris is decoupled from backend databases and direct persistence layers (Invariant 3).
+- **Architectural Clarification**: Iris provides contextual human interaction, including presentation, capture of user input, and initiation or continuation of governed activity. Iris does not acquire clinical, semantic, policy or durable-state authority merely by presenting information, capturing an assertion or initiating activity. Any authority associated with user input derives from the authorised actor, governed process, information source or other applicable architectural responsibility. Authoritative human assertions may enter Harmonia through Iris; their authority does not originate from Iris. Iris remains decoupled from backend databases and direct persistence layers (Invariant 3).
 
 #### Anti-Responsibilities (What Iris Does NOT Own)
-- Does not own clinical identity, clinical authority, or state validation (owned by Mneme / Themis).
+- Does not originate clinical, semantic, policy or durable-state authority through presentation or input capture. Governed validation and source/actor authority remain with their applicable architectural responsibilities.
 - Does not access persistence stores or databases directly (violating Invariant 3).
 - Does not execute autonomous backend workflows or task progression (owned by Ponos).
-- Does not establish authoritative clinical or audit records.
+- Does not independently establish authoritative clinical or audit records; it may capture authorised assertions and submit them through governed activity and information-access interfaces.
 
 #### 6-Point Boundary Test Evaluation
 - **Responsibility**: PASS. Singular focus on human interaction, presentation, and user experience.
@@ -326,7 +334,7 @@ To prevent architectural drift, a Digital Twin must NEVER be modeled or implemen
 Harmonia defines six critical cross-component seams where architectural responsibilities meet. Validating these seams ensures that components collaborate cleanly without blurred boundaries or circular dependencies.
 
 ```text
-               ┌────���─────┐
+               ┌──────────┐
                │   Iris   │
                └────┬─────┘
                     │ Contextual Human Interaction (Non-authoritative)
@@ -384,7 +392,7 @@ Harmonia defines six critical cross-component seams where architectural responsi
 ### Seam 6: Iris ↔ Mneme / Ponos
 - **Architectural Boundary**: Decoupled presentation vs. governed application-facing information access and operational execution.
 - **Responsibility Split**:
-  - **Iris**: Provides contextual human interaction, presentation rendering, and human task initiation while remaining strictly non-authoritative.
+  - **Iris**: Provides contextual human interaction, presentation, input capture and initiation or continuation of governed activity. An authorised actor may submit an authoritative assertion without Iris becoming the source of that authority.
   - **Mneme & Ponos**: Provide governed application-facing information/state access (Mneme) and operational activity execution (Ponos). Authoritative durable state and authoritative version establishment remain with Mnemosyne.
 - **Seam Rule**: Iris never writes directly to databases or caches. It queries information through defined application-facing interfaces and initiates workflows via governed execution requests.
 
@@ -397,21 +405,21 @@ The logical component responsibilities emerge naturally from the composition of 
 ```text
 [EC-01 Managed Entity & Relationship]
 + [EC-02 Context Management]
-+ [EC-03 State & Lifecycle Governance]
-+ [EC-04 Information Management & Access]
++ [EC-03 Managed State & Lifecycle]
++ [EC-04 Information Management]
 + [EC-05 Search & Discovery]
 + [EC-06 Policy & Control]
     └──► MNEME (Managed Information & State Runtime Management)
 
-[EC-03 State & Lifecycle Governance]
-+ [EC-04 Information Management & Access]
+[EC-03 Managed State & Lifecycle]
++ [EC-04 Information Management]
 + [EC-07 Provenance & Traceability]
     └──► MNEMOSYNE (Authoritative Durable State Establishment, Preservation & Recovery)
 
 [EC-02 Context Management]
-+ [EC-03 State & Lifecycle Governance]
-+ [EC-09 Event & Subscription Management]
-+ [EC-10 Activity & Execution Coordination]
++ [EC-03 Managed State & Lifecycle]
++ [EC-09 Event & Subscription]
++ [EC-10 Activity & Execution]
 + [EC-12 Operational Assurance]
     └──► PONOS (Managed Activity Execution)
 
@@ -422,7 +430,7 @@ The logical component responsibilities emerge naturally from the composition of 
     └──► PYLAI (Boundary Interoperability Membrane)
 
 [EC-01 Managed Entity & Relationship]
-+ [EC-04 Information Management & Access]
++ [EC-04 Information Management]
 + [EC-13 Semantic Governance & Conformance]
     └──► CALLIOPE (Semantic Authority & Conformance)
 
@@ -432,8 +440,8 @@ The logical component responsibilities emerge naturally from the composition of 
 
 [EC-01 Managed Entity & Relationship]
 + [EC-02 Context Management]
-+ [EC-03 State & Lifecycle Governance]
-+ [EC-10 Activity & Execution Coordination]
++ [EC-03 Managed State & Lifecycle]
++ [EC-10 Activity & Execution]
     └──► DIGITAL TWIN (Entity-Centred Coordination Construct across Mneme/Ponos Seam)
 ```
 
@@ -457,7 +465,7 @@ It is **not** a runtime call graph, sequence diagram, integration topology, tran
              ┌─────────────────────┐               ┌─────────────────────┐
              │        PYLAI        │               │        IRIS         │
              │ Standards-Conformant│               │  Contextual Human   │
-             │ Interaction Semantics               │ Interaction (Non-   │
+             │Interaction Semantics│               │ Interaction (Non-   │
              └──────────┬──────────┘               │    Authoritative)   │
                         │                          └──────────┬──────────┘
                         │ External /                          │ Presentation /
@@ -471,24 +479,24 @@ It is **not** a runtime call graph, sequence diagram, integration topology, tran
      │  CALLIOPE   │    │            │  Managed  │                 │   PONOS   │
      │  Canonical  │◄───┼───────────►│Information│◄───────────────►│  Managed  │
      │ Definitions │    │            │  & State  │                 │ Activity  │
-     │ & Terminology    │            └─────┬─────┘                 │ Execution │
+     │& Terminology│    │            └─────┬─────┘                 │ Execution │
      └─────────────┘    │                  │                       └─────┬─────┘
                         │                  │ Active /                    │
                         │                  │ Authoritative State Seam    │
                         │                  ▼                             │
-                        │            ┌───────────┐                       │
-                        │            │ MNEMOSYNE │                       │
-                        │            │ Durable   │                       │
-                        │            │ State &   │                       │
-                        │            │ Versions  │                       │
-                        │            │Preservation                       │
-                        │            │ & Recovery│                       │
-                        │            └───────────┘                       │
+                        │            ┌────────────┐                      │
+                        │            │ MNEMOSYNE  │                      │
+                        │            │ Durable    │                      │
+                        │            │ State &    │                      │
+                        │            │ Versions   │                      │
+                        │            │Preservation│                      │
+                        │            │ & Recovery │                      │
+                        │            └────────────┘                      │
                         │                                                │
                         │        [ ENTITY COORDINATION CONSTRUCT ]       │
                         │             ┌─────────────────────┐            │
                         │             │    DIGITAL TWIN     │            │
-                        │             │ Active Entity-Centred            │
+                        │             │Active Entity-Centred│            │
                         └────────────►│ Coordination Across ├────────────┘
                                       │  Mneme/Ponos Seam   │
                                       └─────────────────────┘

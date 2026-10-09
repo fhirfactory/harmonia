@@ -11,7 +11,7 @@ Where Business Capabilities define the high-level healthcare landscape (what the
 2. **Independence from Commercial Product Boundaries**: Capabilities are defined independently of commercial software product boundaries (such as PAS, EMR, LIS, RIS, HRMS, or FMIS). A commercial product may implement multiple capabilities, drawing "dotted lines" around parts of the model; the capability model remains orthogonal to vendor packaging.
 3. **Atomic Feature Decomposition**: Within established Harmonia-Relevant and Harmonia-Core Capability contexts, system behaviour is decomposed into atomic **Features**—the smallest useful, testable, technology-neutral statements of system-enabled behaviour. Reference and Adjacent capabilities are intentionally not decomposed into features.
 4. **Technology Neutrality**: No capability or feature is defined in terms of specific software products (HAPI FHIR, Infinispan, PostgreSQL, ActiveMQ Artemis, Camel, Netty, Vue, Spring) or runtime plumbing (threads, queues, ports, DDL).
-5. **Architectural Scope Sufficiency**: This model is considered **sufficient for the architecture and strategic analysis of Harmonia 1.x and 2.x**. Roadmap items (such as authoritative master-patient EMPI reconciliation) are explicitly demarcated as uncommitted Harmonia 3.x candidates.
+5. **Architectural Scope Sufficiency**: The Business Enabling Feature catalogue provides the established R1.x/R2.x Feature baseline for the capabilities and contextual views presently decomposed. Completeness SHALL NOT be interpreted as requiring artificial Feature decomposition of capabilities for which no Feature-level decomposition has been architecturally established. Roadmap items (such as authoritative master-patient EMPI reconciliation) are explicitly demarcated as uncommitted Harmonia 3.x candidates.
 
 Under [approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing), the five views, catalogue numbering, indentation and decomposition presentation do not establish Architectural Element identity, CT1 / CT2 / CT3 assignment, ancestry or root status. The 137 established Features retain their FT type, names and identifiers. Affected complete Capability ancestry and structural Canonical IDs remain unresolved. Derivation may proceed from established ownership and responsibility without inventing intermediate elements.
 
@@ -46,19 +46,19 @@ The Business Enabling capabilities are structured across five contextual views:
 │    patient transport, and discharge progression.                       │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 5. INTRINSIC / SHARED ENABLEMENT                                       │
-│    Cross-cutting system capabilities: Longitudinal Clinical Record,    │
+│    Reusable system capabilities: Longitudinal Clinical Record,         │
 │    Health Information Exchange, Information Access, Policy & Security  │
 │    Control, Collaboration, Workflow Coordination, and Presentation.    │
-└────────────��───────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## Architectural Scope Statement (Harmonia 1.x/2.x vs. 3.x Roadmap)
 
-> **The Business Enabling Capability model is considered sufficient for the architecture and strategic analysis of Harmonia 1.x and 2.x.**
+> The Business Enabling Feature catalogue provides the established R1.x/R2.x Feature baseline for the capabilities and contextual views presently decomposed. Completeness SHALL NOT be interpreted as requiring artificial Feature decomposition of capabilities for which no Feature-level decomposition has been architecturally established.
 
-- **Coverage Sufficiency**: The model provides comprehensive capability and Feature coverage to define Harmonia's intended responsibilities, boundaries, dependencies, and enabling relationships for versions 1.x and 2.x.
+- **Established Coverage**: The model records established capability responsibilities and the 137-Feature baseline. BC-17 enablement and the assurance capabilities' unestablished contextual-view, tier, ancestry and Feature relationships remain explicit gaps; structural symmetry is not a completion requirement.
 - **Sufficient Does Not Mean Frozen Forever**: Additional capabilities and features may be introduced where future Harmonia scope requires them.
 - **Roadmap Demarcation — Patient Identity**:
   - **Harmonia 1.x/2.x Scope**: Includes cross-system identifier resolution, identifier correlation, identity alias association, identity provenance, identity federation across regional nodes, and governed administrative correction.
@@ -258,9 +258,11 @@ Service Administration encompasses systems enablement for the operational, admin
 - **Order Administration**: An **Order** requests a defined, bounded **fulfilment activity** (e.g., execute a diagnostic test, dispense a medication, perform a procedure) and strictly supports a **closed-loop progression** returning an outcome to the requester.
 
 #### Distinction: Technical ACK vs. Business ACK
-- **Technical Delivery Acknowledgement**: A transport-level receipt (e.g., MLLP commit, HTTP 200/202, message broker ACK) confirming that bytes crossed the boundary and were durably accepted into an integration queue.
+- **Technical Delivery Acknowledgement**: A technical acknowledgement establishes only the acceptance state defined by the applicable interaction contract. It SHALL NOT be interpreted as durable acceptance, committed business state, successful processing or successful business disposition unless that meaning is explicitly established by the governing contract. HTTP 200 does not universally establish successful business disposition, and HTTP 202 does not universally establish durable queue acceptance; either may have stronger meaning under an explicit contract.
 - **Business Acknowledgement**: A clinical/operational message generated by the receiving application or clinical staff confirming that the order or referral has been reviewed, accepted for execution, scheduled, or rejected.
 $$\text{\bf Technical Delivery Acknowledgement} \neq \text{\bf Business Acknowledgement}$$
+
+Acknowledgement of a handoff is not, by itself, evidence of eventual downstream business outcome. [REQ-FND-001](../../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-001-durable-ingress-acceptance-boundary) continues to require the applicable durable acceptance boundary before Harmonia positively acknowledges ingress acceptance.
 
 Business acknowledgement is contextual and may communicate acceptance, rejection or another explicit disposition; it does not establish a universal reviewed → accepted → scheduled progression or transfer originating authority.
 
@@ -519,7 +521,7 @@ $$\text{Event} \longrightarrow \text{Entity Context} \longrightarrow \text{Requi
 
 #### 13. Work Allocation & Dispatch (`Harmonia-Core`)
 - **13.1 Operational Work Assignment & Supervision**
-  - `FEAT-HSO-19`: **Work Item Instantiation**: Instatiate operational units of work from clinical triggers (e.g., bed cleaning required, specimen transport required).
+  - `FEAT-HSO-19`: **Work Item Instantiation**: Instantiate operational units of work from clinical triggers (e.g., bed cleaning required, specimen transport required).
   - `FEAT-HSO-20`: **Worker Matching & Allocation**: Match work items against available staff roles, credentials, and locations based on allocation policies.
   - `FEAT-HSO-21`: **Work Dispatch Delivery**: Deliver work orders to target workers, devices, or team queues with technical and operational acknowledgement capture.
   - `FEAT-HSO-22`: **Work Progress Oversight & Escalation**: Monitor work progression against time-to-completion thresholds, escalating stalled or unacknowledged tasks.

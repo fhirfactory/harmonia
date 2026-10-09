@@ -630,6 +630,22 @@ __Do not turn “unknown” into “yes” or “no”.__
 
 __This does not mean:__ Harmonia must retain uncertainty indefinitely. Every technical failure produces an uncertain outcome. Operations known not to have crossed the relevant state-changing boundary cannot be safely retried. Reconciliation must always require human intervention.
 
+### AX-16 — Operational Activity & Entity State Progress Together
+
+The established [Domain 01 definition](markdown/01-motivation/principles/architectural-axioms.md#ax-16-operational-activity-and-entity-state-progress-together) is reproduced below. Current Harmonia realisation describes downstream machinery and is non-normative.
+
+#### Axiom
+> **Operational activity associated with a real-world entity progresses through explicit and observable state transitions coordinated with the governed state of that entity. Operational activity is not treated merely as a sequence of disconnected message transfers.**
+
+#### Architectural Implications
+- Health integration involves multi-stage workflows (e.g., ADT distribution, lab specimen processing).
+- Operational tasks must be tracked in lockstep with the real-world state of the clinical entity.
+- Prevents silent destination divergence during fan-out processing: every destination hop is an observable sub-state of the parent operational activity.
+
+#### Current Harmonia Realisation (Non-Normative)
+- Implemented in `energeia-erga` (e.g., `AdtDistributionErgon` tracking destination fan-out checkpoints).
+- Multi-destination statuses (`FANOUT_DISPATCH_INITIATED`, `QUEUED`, `DELIVERED`) are recorded in Pragma envelopes and FHIR `Task.output` extensions.
+
 ### AX-17 — Architectural Authority and Explicit Uncertainty
 
 #### Axiom

@@ -4,9 +4,11 @@
 
 This catalogue establishes the six authoritative **Strategic Courses of Action** for Harmonia. Each Course of Action defines a technology-neutral architectural approach that configures Harmonia's resources and capabilities to satisfy the foundational drivers, goals, and axioms established in **Domain 01 (Motivation)**.
 
-All Courses of Action comply with the five-point quality test: they possess explicit motivational traceability, materially shape Enterprise Capabilities (`EC-01` through `EC-13`), remain invariant under technology substitution, provide broad platform guidance, and offer actionable direction for downstream domains (Domains 03–13).
+All Courses of Action comply with the five-point quality test: they possess explicit motivational traceability, materially shape the Enterprise Capability catalogue (`EC-01` through `EC-14`), remain invariant under technology substitution, provide broad platform guidance, and offer actionable direction for downstream domains (Domains 03–13).
 
 ---
+
+The existing specific COA mappings remain bounded to their established EC-01 through EC-13 contributions. Generic eligibility does not establish a COA-to-EC-14 relationship; those relationships remain unresolved.
 
 ## 1. Catalogue of Strategic Courses of Action
 
@@ -17,7 +19,7 @@ All Courses of Action comply with the five-point quality test: they possess expl
 
 Harmonia acts as an integration environment bridging heterogeneous external healthcare systems and internal integration services. This course of action establishes that:
 - External exchange contracts (such as FHIR REST interactions, MLLP message streams, or directory protocols) govern only the interaction semantics at the enterprise boundary.
-- Internal Harmonia processing, context propagation, execution coordination, and state management must never adopt an external exchange representation as their private operational domain model.
+- External or standards-based representations MAY remain native Harmonia information representations where appropriate. Their use SHALL NOT cause an external exchange contract or representation to define Harmonia-private management, execution, governance or coordination semantics.
 - Egress across the boundary terminates Harmonia's governance of the emitted representation.
 
 #### Motivational Grounding & Traceability
@@ -34,7 +36,7 @@ Harmonia acts as an integration environment bridging heterogeneous external heal
 
 #### Downstream Direction (Domains 03–13)
 - Application Architecture (Domain 05) and Integration Architecture (Domain 06) must implement fail-closed boundary projections, ensuring private coordination metadata (e.g., distributed transaction IDs, internal routing tags) is never emitted externally.
-- Information Architecture (Domain 04) must maintain distinct canonical information models rather than treating external FHIR structures as the sole internal representation.
+- Information Architecture (Domain 04) preserves conceptual meaning and responsibility independently of external contracts. Native standards representations remain permitted under AX-03; no parallel information model is required merely to accommodate Harmonia-private management concerns.
 
 ---
 
@@ -57,7 +59,7 @@ This course of action establishes that:
 - **Strategic Drivers & Goals**: 24/7 Clinical Operational Continuity, High-Throughput Access, Authoritative Preservation.
 
 #### Capability Realisation & Configuration
-- **Primary Capabilities**: Shapes `EC-03` (State & Lifecycle Governance) and `EC-04` (Information Management & Access).
+- **Primary Capabilities**: Shapes `EC-03` (Managed State & Lifecycle) and `EC-04` (Information Management).
 - **Component Boundary Impact**: Explicitly establishes the seam between **Mneme** (application-facing access and active information/state management) and **Mnemosyne** (authoritative durable state/version establishment, preservation and recovery). Neither component subsumes the other; Mnemosyne does not own operational activity progression, workflow execution, active distributed state, Digital Twin coordination, or application-facing query interfaces. Mneme may reject or coordinate a proposed state progression before persistence; only Mnemosyne establishes the new authoritative durable state. Following authoritative commit, Mneme converges its active representation toward that state. Mneme active-state generation and Mnemosyne authoritative version remain distinct concurrency domains (`AX-05`).
 
 #### Downstream Direction (Domains 03–13)
@@ -72,13 +74,14 @@ This course of action establishes that:
 > **Preserve provenance, authority, attribution and traceability for information-significant and business-significant actions and state changes, while avoiding unnecessary elevation of transient operational mechanics into enduring business evidence.**
 
 Healthcare integration requires undeniable accountability without overwhelming storage or logging systems with low-level operational noise. This course of action establishes that:
-- Every action that modifies clinical information, asserts authority, alters lifecycle state, or executes an access decision must capture semantic provenance: who, what, when, why, and under whose authority.
+- Harmonia SHALL preserve provenance, audit and operational evidence where required by governing obligations, architectural significance, accountability, reconstruction, security or assurance needs. Routine technical activity SHALL NOT automatically require durable evidentiary recording.
+- Required semantic attribution records who, what, when, why and under whose authority. Telemetry, operational facts, provenance, audit and assurance evidence remain distinct; being evidence is contextual, not intrinsic to every recorded fact.
 - Transient operational mechanics (e.g., thread switches, socket retries, queue polling, network pinging) represent operational telemetry, not business or clinical evidence.
 - Strategy sets the architectural requirement for semantic attribution and non-repudiation without dictating specific implementation mechanisms (such as cryptographic signatures, write-once ledgers, or specific storage engines) at this layer.
 
 #### Motivational Grounding & Traceability
 - **Architectural Axioms**:
-  - `AX-06` (Explicit Authority): Every state change and action must trace to an explicit, authenticated authority.
+  - `AX-06` (Explicit Authority): Information authority and credibility remain explicit and independent of technical transport or persistence. Required attribution preserves the applicable source or actor authority without making every access evaluation durable evidence.
   - `AX-07` (Intrinsic Security): Security, authorization, and provenance are embedded within operations, not bolted on.
   - `AX-08` (Meaning over Machinery): Record semantic and business meaning, not transient technical machinery.
   - `AX-14` (Preserve Distinctions): Distinguish enduring clinical/business evidence from transient technical logs.
@@ -89,7 +92,7 @@ Healthcare integration requires undeniable accountability without overwhelming s
 - **Component Boundary Impact**: Governs how all logical components emit evidence, ensuring that audit trails capture governed business assertions rather than unmasked PHI or low-level machine noise (supporting Invariants 6 and 7).
 
 #### Downstream Direction (Domains 03–13)
-- Security Architecture (Domain 08) and Information Architecture (Domain 04) define the concrete audit and provenance schemas (Kleio evidence trails) ensuring non-PHI audit capture and cryptographic verification downstream.
+- Security Architecture (Domain 08) and Information Architecture (Domain 04) define the governed audit and provenance representations (with Kleio as established downstream evidence traceability), preserving PHI-safe capture and verifiable integrity according to applicable obligations. Strategy does not select a verification technology.
 
 ---
 
@@ -111,11 +114,11 @@ Complex healthcare integrations (e.g., closed-loop diagnostic ordering, multi-de
 - **Strategic Drivers & Goals**: Resilient Regional Integration, Asynchronous Clinical Decoupling, Bounded Workflow Recovery.
 
 #### Capability Realisation & Configuration
-- **Primary Capabilities**: Shapes `EC-03` (State & Lifecycle Governance), `EC-09` (Event & Subscription Management), and `EC-10` (Activity & Execution Coordination).
+- **Primary Capabilities**: Shapes `EC-03` (Managed State & Lifecycle), `EC-09` (Event & Subscription), and `EC-10` (Activity & Execution).
 - **Component Boundary Impact**: Grounds the responsibility of **Ponos** as the execution engine for governed units of work, while strictly enforcing Guardrail G4 (Ponos progresses execution, but does not acquire transport adapters or wire protocols).
 
 #### Downstream Direction (Domains 03–13)
-- Application Architecture (Domain 05) and Integration Architecture (Domain 06) implement durable task envelopes (Pragma), resilient messaging (Petasos), and explicit fan-out tracking extensions (enforcing Invariants 4 and 5).
+- Application Architecture (Domain 05) and Integration Architecture (Domain 06) realise governed work context, recoverable activity handoffs and explicit per-destination progression according to the applicable acceptance and delivery contracts (preserving Invariants 4 and 5). Established downstream constructs such as Pragma envelopes and Petasos messaging illustrate traceability; their APIs, queues, packaging and runtime mechanisms are not selected by this strategic responsibility.
 
 ---
 
@@ -138,7 +141,7 @@ Healthcare operations naturally center around authentic real-world entities: pat
 - **Strategic Drivers & Goals**: Holistic Patient-Centric Care, High Concurrency without Serialization, Real-Time Healthcare Coordination.
 
 #### Capability Realisation & Configuration
-- **Primary Capabilities**: Shapes `EC-01` (Managed Entity & Relationship), `EC-02` (Context Management), and `EC-10` (Activity & Execution Coordination).
+- **Primary Capabilities**: Shapes `EC-01` (Managed Entity & Relationship), `EC-02` (Context Management), and `EC-10` (Activity & Execution).
 - **Component Boundary Impact**: Validates the **Digital Twin** as an active management construct bridging the **Mneme ↔ Ponos** boundary, while asserting that the Twin is an architectural construct rather than an independent deployable platform component.
 
 #### Downstream Direction (Domains 03–13)
@@ -146,14 +149,14 @@ Healthcare operations naturally center around authentic real-world entities: pat
 
 ---
 
-### COA-06: Collaborative Cross-Cutting Capability Realisation
+### COA-06: Collaborative Reusable Capability Realisation
 
 #### Strategic Approach
-> **Realize cross-cutting platform capabilities (context, policy, provenance, assurance) collaboratively across participating components rather than through centralized, bottlenecked runtime services.**
+> **Realize bounded reusable platform capabilities (context, policy, provenance, EC-12 Operational Assurance) collaboratively across participating components rather than through centralized, bottlenecked runtime services.**
 
 Harmonia requires pervasive platform capabilities—such as security policy evaluation, contextual propagation, operational assurance, and provenance tracking—across all transactions. This course of action establishes that:
 - **Reusable Capability $\neq$ Centralised Service (Guardrail G1)**: The existence of a reusable enterprise capability does not imply that a single monolithic service must execute it centrally.
-- Cross-cutting capabilities define common contracts, schemas, and semantic rules, which are evaluated locally and collaboratively across all participating components.
+- Reusable capabilities define bounded responsibilities and common semantic rules. Participating components consume or enforce them through governed contracts without acquiring shared semantic ownership. **Distributed participation does not imply distributed responsibility. Cross-cutting concern does not imply cross-cutting responsibility.**
 - Centralized choke points and synchronous runtime bottlenecks are strictly avoided, ensuring horizontal scalability and fault isolation.
 
 #### Motivational Grounding & Traceability
@@ -164,11 +167,11 @@ Harmonia requires pervasive platform capabilities—such as security policy eval
 - **Strategic Drivers & Goals**: High Scalability, Fault Tolerance, Zero Bottleneck Architecture, Decentralised Resilience.
 
 #### Capability Realisation & Configuration
-- **Primary Capabilities**: Shapes `EC-02` (Context Management), `EC-06` (Policy & Control), `EC-07` (Provenance & Traceability), and `EC-12` (Operational Assurance).
+- **Primary Capabilities**: Shapes `EC-02` (Context Management), `EC-06` (Policy & Control), `EC-07` (Provenance & Traceability), and `EC-12` (Operational Assurance). Assurance here means the established EC-12 operational contribution; no independent Governed Assurance or EC-14 relationship is established.
 - **Component Boundary Impact**: Prevents components like **Themis** (Policy & Control) from becoming synchronous network choke points for every micro-operation; policy contracts are distributed and evaluated collaboratively.
 
 #### Downstream Direction (Domains 03–13)
-- Application Architecture (Domain 05) and Technology Architecture (Domain 07) must package cross-cutting capabilities as clean API contracts (`themis-api`, `petasos-api`) that can be embedded locally within subsystem runtimes.
+- Application Architecture (Domain 05) and Technology Architecture (Domain 07) realise reusable responsibilities through governed contracts while preserving bounded ownership, scalability and fault isolation. Existing `themis-api` and `petasos-api` packages are illustrative downstream traceability only; Strategy does not mandate API packaging, local embedding, frameworks or deployment choices.
 
 ---
 
@@ -178,12 +181,12 @@ The following matrix synthesises the strategic alignment between Domain 01 Motiv
 
 | Course of Action | Core Motivational Axioms | Key Strategic Drivers & Goals | Supported Enterprise Capabilities | Key Downstream Architectural Constraint |
 | :--- | :--- | :--- | :--- | :--- |
-| **COA-01: Boundary Membrane Sovereignty** | `AX-02`, `AX-03`, `AX-13`, `AX-14` | Interoperability Mandates, Vendor Independence | `EC-08`, `EC-13` | External standards (FHIR) govern boundary interaction, never internal domain/execution models. |
+| **COA-01: Boundary Membrane Sovereignty** | `AX-02`, `AX-03`, `AX-13`, `AX-14` | Interoperability Mandates, Vendor Independence | `EC-08`, `EC-13` | Standards representations may remain native; external contracts do not define Harmonia-private management, execution, governance or coordination semantics. |
 | **COA-02: Distinct Management & Preservation of State** | `AX-05`, `AX-09`, `AX-11`, `AX-14` | 24/7 Availability, Enduring Information Preservation | `EC-03`, `EC-04` | Mneme manages active access/state; Mnemosyne establishes authoritative durable state/versions and preserves/recovers them. No direct DB access by apps. |
-| **COA-03: Meaning-Centric Provenance & Traceability** | `AX-06`, `AX-07`, `AX-08`, `AX-14` | Clinical Governance, Legal Auditability | `EC-06`, `EC-07` | Business and security assertions captured as non-PHI evidence; transient mechanics treated as telemetry. |
+| **COA-03: Meaning-Centric Provenance & Traceability** | `AX-06`, `AX-07`, `AX-08`, `AX-14` | Clinical Governance, Legal Auditability | `EC-06`, `EC-07` | Required significant business and security assertions preserved as PHI-safe evidence; routine telemetry and operational facts do not automatically become durable evidence. |
 | **COA-04: Governed Asynchronous Activity Progression** | `AX-10`, `AX-15`, `AX-16` | Asynchronous Integration, Resilient Recovery | `EC-03`, `EC-09`, `EC-10` | Units of work track discrete state; execution progression is strictly decoupled from transport/connectivity. |
 | **COA-05: Entity-Centred Operational Coordination** | `AX-01`, `AX-11`, `AX-16` | Patient-Centric Care, High Horizontal Concurrency | `EC-01`, `EC-02`, `EC-10` | Digital Twins coordinate entity state/activity across Mneme/Ponos on demand; twin $\neq$ single FHIR resource. |
-| **COA-06: Collaborative Cross-Cutting Capability Realisation** | `AX-04`, `AX-07`, `AX-11` | Scalability, Zero Central Bottlenecks | `EC-02`, `EC-06`, `EC-07`, `EC-12` | Reusable capabilities implemented collaboratively via local contracts, preventing monolithic choke points. |
+| **COA-06: Collaborative Reusable Capability Realisation** | `AX-04`, `AX-07`, `AX-11` | Scalability, Zero Central Bottlenecks | `EC-02`, `EC-06`, `EC-07`, `EC-12` | Reusable capabilities implemented collaboratively via local contracts, preventing monolithic choke points. |
 
 ---
 

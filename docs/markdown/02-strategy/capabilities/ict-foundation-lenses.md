@@ -10,12 +10,12 @@ The ICT Foundation Capability Tier encompasses **18 cross-cutting technical enab
 In enterprise architecture, teams frequently confuse *what business functionality is required* with *what technical discipline is applied*. 
 
 In Harmonia Strategy:
-- **Enterprise Capabilities (EC-01 .. EC-13)** define the *reusable architectural functions* required across healthcare features (e.g., Activity & Execution, Context Management, Managed State).
+- **Enterprise Capabilities (EC-01 .. EC-14)** define the *reusable architectural functions* required across healthcare features (e.g., Activity & Execution, Context Management, Managed State).
 - **ICT Foundation Capabilities (01 .. 18)** function as **technical lenses or modifiers** applied when evaluating how those Enterprise Capabilities will be realized technologically.
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│ ENTERPRISE CAPABILITY TIER (EC-01 .. EC-13)                            │
+│ ENTERPRISE CAPABILITY TIER (EC-01 .. EC-14)                            │
 │ What reusable architectural functions are required                     │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ evaluated through
@@ -27,12 +27,14 @@ In Harmonia Strategy:
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ guides selection of
                                     ▼
-┌──────────────��─────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────────────┐
 │ TECHNOLOGY REALISATION (Domain 07 — Technology Architecture)           │
 │ Concrete software products, databases, message brokers, protocols      │
 │ (PostgreSQL, Infinispan, Artemis, Camel, Netty, Kubernetes, Spring)    │
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+The current catalogue includes EC-14 Service Guardian. No EC-14 relationship to an ICT lens is established by this generic catalogue range or the examples below.
 
 For example:
 - **EC-10 (Activity & Execution)** is evaluated through:
@@ -114,7 +116,7 @@ $$\text{\bf Question: } \text{\it "If the named product, protocol, programming l
 #### 03. Information & Data Services
 - **Focus**: Data modeling standards, relational/document/graph paradigms, schema validation, data serialization, and information lifecycle management.
 - **Enabling Question**: *How is information structured, serialized, validated, and queried across component boundaries?*
-- **Relationship to Strategy**: Shapes realization of `EC-04 Information Management` and `EC-13 Semantic Governance`.
+- **Relationship to Strategy**: Shapes realization of `EC-04 Information Management` and `EC-13 Semantic Governance & Conformance`.
 
 #### 04. Integration & Interoperability
 - **Focus**: Boundary protocol translation, message mapping, asynchronous messaging paradigms, enterprise integration patterns (EIP), and contract testing.
@@ -199,5 +201,5 @@ The 18 ICT Foundation lenses provide the technical criteria through which Strate
 - **Domain 05 (Application Architecture)**: Translates capabilities into software modules using Lenses 02, 05, and 08.
 - **Domain 06 (Integration Architecture)**: Designs boundary gateways and transformation pipelines using Lenses 04, 08, and 12.
 - **Domain 07 (Technology Architecture)**: Selects concrete products, databases, and deployment platforms using Lenses 09, 10, 11, and 12.
-- [Enterprise Capabilities (EC-01 .. EC-13)](enterprise-capabilities.md): Reusable capabilities evaluated through these lenses.
+- [Enterprise Capabilities (EC-01 .. EC-14)](enterprise-capabilities.md): Reusable capabilities evaluated through these lenses.
 - [Capability Tier Progression Model](../capability-maps/capability-tier-model.md): Detailed vertical derivation rules.

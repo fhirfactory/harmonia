@@ -24,7 +24,7 @@ Where Business Enabling capabilities are defined within authentic clinical, oper
                                     │ EC-01 .. EC-13 inform clustering of
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ STRATEGIC LOGICAL COMPONENTS (Pass B Responsibility Model)             │
+│ STRATEGIC LOGICAL RESPONSIBILITY MODEL                                 │
 │ Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris, Digital Twin           │
 └────────────────────────────────────────────────────────────────────────┘
 ```
@@ -53,13 +53,17 @@ Not every recurring function or algorithmic mechanism warrants promotion to a st
 ### 3. Reusable Capability $\neq$ Centralised Service
 > **An Enterprise Capability describes reusable architectural functionality; it does NOT imply a monolithic, centralized runtime service.**
 
-Some Enterprise Capabilities are inherently cross-cutting and collaborative:
-- **EC-02 Context Management**: Context must be established at ingress (Pylai), maintained during active access (Mneme), propagated across execution units (Ponos), and preserved in audit (Kleio). It cannot be isolated into a single "Context Service".
-- **EC-06 Policy & Control**: Policy evaluation must guard ingress boundaries, storage persistence interfaces, and presentation gateways alike.
-- **EC-07 Provenance & Traceability**: Attribution and audit evidence must be captured across every boundary hop and state transformation.
-- **EC-12 Operational Assurance**: Resilience, duplicate suppression, and concurrency governance must be enforced collaboratively across messaging, storage, and execution layers.
+Enterprise Capabilities represent bounded reusable responsibilities. Their realisation may require participation, consumption or enforcement across multiple architectural elements, but this does not imply shared semantic ownership or prohibit establishment of a responsibility centre.
 
-Artificially allocating these cross-cutting capabilities to a single component merely for diagrammatic neatness violates distributed resilience and sound architectural decomposition.
+**Distributed participation does not imply distributed responsibility. Cross-cutting concern does not imply cross-cutting responsibility.**
+
+Examples of participation in established reusable responsibilities include:
+- **EC-02 Context Management**: Context is established at ingress (Pylai), maintained during active access (Mneme), propagated across execution units (Ponos), and preserved in audit (Kleio) where required. These participation points do not require a monolithic Context Service or establish shared semantic ownership.
+- **EC-06 Policy & Control**: Policy evaluation guards ingress boundaries, persistence interfaces and presentation gateways while retaining bounded policy responsibility.
+- **EC-07 Provenance & Traceability**: Required attribution and meaningful evidence are preserved at significant boundaries and transformations; routine technical activity does not automatically require durable evidence.
+- **EC-12 Operational Assurance**: Resilience, duplicate suppression and concurrency integrity may require enforcement across messaging, storage and execution elements without distributing semantic ownership.
+
+Responsibility centres follow established architectural responsibility. No capability is allocated merely to complete a diagram, and distributed participation does not prohibit a responsibility centre.
 
 ### 4. Zero Technology Leakage
 Enterprise Capabilities are technology-neutral:
@@ -69,7 +73,7 @@ Enterprise Capabilities are technology-neutral:
 - They are free of specific software packages (HAPI FHIR, Apache Camel, Netty, Spring Boot, Vue 3).
 
 ### 5. Capabilities vs. Software Components
-An Enterprise Capability describes *what* functionality is provided. Subsystems (such as Pylai, Ponos, Mneme, Mnemosyne, Calliope, and Iris) represent *strategic logical component responsibility centres* that will be elaborated in Pass B. Software components are consumers, aggregators, or providers of capabilities; **a software component name is never a capability definition**.
+An Enterprise Capability describes *what* functionality is provided. Subsystems (such as Pylai, Ponos, Mneme, Mnemosyne, Calliope, and Iris) represent *strategic logical component responsibility centres* defined in the existing [Strategic Logical Component Responsibility Model](../strategic-views/logical-component-responsibilities.md). Software components are consumers, aggregators, or providers of capabilities; **a software component name is never a capability definition**.
 
 ---
 
@@ -112,7 +116,7 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
   - Propagating tamper-evident, attributable security context across asynchronous, multi-hop operational boundaries.
   - Ensuring context preservation during cross-protocol transformations across disparate healthcare exchange formats and protocols.
   - Detecting and rejecting requests where mandatory operational or clinical context is missing or inconsistent.
-- **Collaborative Nature**: Cross-cutting capability realized collaboratively across boundary gateways, task envelopes, execution workers, and storage facades.
+- **Collaborative Nature**: Bounded reusable context responsibility may be realised through participation across gateways, activity execution and information-access boundaries. Participation does not transfer semantic ownership.
 
 ### EC-03: Managed State & Lifecycle
 - **Architectural Scope**: Govern the current and historical state, effective temporal periods, state transition validations, and lifecycle progression of managed integration artifacts and entities.
@@ -151,13 +155,13 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
 - **Collaborative Nature**: Evaluated across boundary gateways, internal bus dispatch, storage interfaces, and presentation layers.
 
 ### EC-07: Provenance & Traceability
-- **Architectural Scope**: Preserve origin attribution, transformation history, execution checkpoints, tamper-evident audit evidence, and end-to-end traceability across the platform.
+- **Architectural Scope**: Preserve required origin attribution, meaningful transformation history, significant execution checkpoints, tamper-evident audit evidence and end-to-end traceability. Harmonia SHALL preserve provenance, audit and operational evidence where required by governing obligations, architectural significance, accountability, reconstruction, security or assurance needs. Routine technical activity SHALL NOT automatically require durable evidentiary recording.
 - **Functional Responsibilities**:
   - Recording attributable, verifiable origin metadata for information sources, authors, and timestamps.
-  - Tracking transformation history and mapping checkpoints as information crosses system seams.
+  - Tracking information-significant transformation history and required mapping checkpoints as information crosses system seams.
   - Capturing non-PHI operational and security audit trails for regulatory compliance (HIPAA, GDPR).
   - Supporting end-to-end transaction tracing across asynchronous processing pipelines.
-- **Collaborative Nature**: Cross-cutting obligation embedded into message envelopes, gateway receipts, and storage mutations.
+- **Collaborative Nature**: Participating elements preserve required provenance and audit context according to policy. Telemetry, operational facts, provenance, audit and assurance evidence remain distinct. Being evidence is contextual, not an intrinsic property of every recorded fact; preservation does not establish an assurance conclusion.
 
 ### EC-08: Interoperability & Exchange
 - **Architectural Scope**: Resolve destinations, transform schemas, route, transport, deliver, acknowledge, and coordinate standards-based information exchange across enterprise boundaries.
@@ -181,8 +185,8 @@ An Enterprise Capability describes *what* functionality is provided. Subsystems 
 - **Architectural Scope**: Define, instantiate, match, assign, dispatch, supervise, and progress coordinated operational and clinical activity units.
 - **Functional Responsibilities**:
   - Instantiating operational work items (Work Orders, To Dos, synthetic platform Tasks) in response to triggers.
-  - Matching and assigning work units to eligible workers, roles, or execution daemons based on policy rules.
-  - Dispatching work orders to worker endpoints, devices, or execution queues with delivery confirmation.
+  - Matching and assigning work units to eligible human or automated performers and roles based on policy rules.
+  - Dispatching work units to their assigned performers with acknowledgement according to the applicable interaction contract.
   - Supervising execution progress, tracking timeouts, managing escalations, and handling activity interruptions.
 - **Decoupling Note**: Free of worker threads, thread pools, execution daemons, or specific workflow runtime engines.
 
@@ -312,8 +316,7 @@ Enterprise Capabilities do not operate in isolation; they compose harmoniously t
 
 ## Downstream Progression
 
-Enterprise Capabilities represent what reusable functions the platform delivers. In downstream architectural passes:
-- **Authoring Pass B (Strategy Components & Resources)**: Evaluates how these capabilities cluster into the strategic logical component responsibility model (Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris) and candidate strategic resources.
+Enterprise Capabilities represent what reusable functions the platform delivers. The existing [Strategic Logical Component Responsibility Model](../strategic-views/logical-component-responsibilities.md) describes the established responsibility compositions, and the [Strategic Resources catalogue](../resources/strategic-resources.md) records resource adjudications. Downstream progression includes:
 - **Domains 05–07 (Application, Integration, Technology)**: Implements these capabilities through concrete software packages, integration protocols, and runtime technologies.
 - [ICT Foundation Lenses](ict-foundation-lenses.md): Cross-cutting technical enablement considerations guiding technology realization.
 - [Capability Tier Progression Model](../capability-maps/capability-tier-model.md): Detailed vertical derivation rules.
