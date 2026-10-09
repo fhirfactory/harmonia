@@ -1,6 +1,6 @@
 # Canonical Information Architecture Modelling Guardrails
 
-This document codifies the sixteen authoritative, repository-wide modelling guardrails for **Domain 04 — Information Architecture**. All domain models, information concepts, relationship structures, and subsequent technical designs must conform strictly to these rules.
+This document codifies the sixteen core, repository-wide modelling guardrails for **Domain 04 — Information Architecture**. All domain models, information concepts, relationship structures, and subsequent technical designs must conform strictly to these rules. The additional [Information Unit guardrails G1–G8](../metamodel/information-architecture-metamodel.md#10-information-unit-guardrails) apply to the governed Unit boundary; those identifiers are local to that model and do not renumber the core guardrails.
 
 ---
 
@@ -70,7 +70,7 @@ This document codifies the sixteen authoritative, repository-wide modelling guar
 ### Guardrail 10: Forward Authoritative Semantics
 > **Relationships SHALL be authored and validated in the natural forward direction (`Source.action(Target)`); inverse navigation is a derived downstream query concern.**
 >
-> Relationships must not define redundant, competing reverse links that risk dual-source divergence. Forward semantics preserve clear responsibility and authority.
+> Relationships must not define redundant, competing reverse links that risk dual-source divergence. Forward semantic direction does not establish the asserting authority. Authority and provenance remain attributable to the established governing responsibility/source, including an external authority where applicable; representation or coordination does not confer authority ([AX-06](../../governance/architectural-axioms.md#ax-06), [AX-18](../../governance/architectural-axioms.md#ax-18)).
 
 ---
 

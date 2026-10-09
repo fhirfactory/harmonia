@@ -93,3 +93,25 @@ An Information Assertion or Relationship may be qualified across several semanti
 4. **Evidentiary Basis / Reason**: The diagnostic test, clinical observation, legal certificate, or patient report providing the foundation for the assertion.
 5. **Qualifying Authority**: The credentialed supervisor or secondary sign-off authority validating the assertion.
 6. **Effective Context**: Clinical setting or situational bounds under which the assertion applies (e.g. *Post-Operative Recovery*, *Fasting State*).
+
+---
+
+## 6. Information Unit Management Boundary
+
+The [canonical Harmonia-managed information definition](../metamodel/information-architecture-metamodel.md#5-harmonia-managed-information)
+concerns explicit responsibility to maintain a governed representation and its
+management context over time. This acceptance remains distinct from originating
+information authority, domain authority, custody, persistence, transport,
+presentation and consumption. Externally originated information may be managed
+without transferring its originating authority to Harmonia; AX-18 applies.
+
+The [Information Unit](../metamodel/information-architecture-metamodel.md#6-information-unit)
+associates the Governed Representation with Management Context within a governed
+boundary. Its conceptual [Context concerns](../metamodel/information-architecture-metamodel.md#65-context)
+preserve Provenance versus Authority and authoritative Version versus Active
+Generation. A supplying source need not be the originating authority of every
+represented assertion/relationship. Recognising the Unit and the information
+within it is a [platform/framework obligation](../metamodel/information-architecture-metamodel.md#9-platform--framework-obligations),
+not a provenance schema, universal durable-evidence requirement or transfer of
+source responsibility. The wider evidence/retention and authority vocabulary
+questions remain for separate reconciliation.

@@ -79,6 +79,15 @@ graph TD
 
 An essential principle governing Domain 04 is the clear distinction between **owned/managed concepts** and **referenced/external/contextual concepts**:
 
+These classifications concern Information Concept responsibility and source
+authority. They are not an exclusive classification of
+[Harmonia-managed information](../metamodel/information-architecture-metamodel.md#5-harmonia-managed-information):
+Harmonia may accept explicit responsibility to maintain an externally originated
+representation and its Management Context without acquiring originating or
+domain authority. The [Information Unit](../metamodel/information-architecture-metamodel.md#6-information-unit)
+defines that governed boundary without changing family meanings, allocating
+Unit types to these families or approving candidate propositions.
+
 | Information Classification | Semantic Meaning | Architectural Ownership | Authority & Provenance |
 | :--- | :--- | :--- | :--- |
 | **Owned / Managed Information Concept** | Information for which a Harmonia capability holds direct creation, governance, state progression, and lifecycle responsibility. | Traced directly to an owning Domain 03 Information Responsibility (e.g., `Person Identity Record`, `Practitioner Registry & Role Bindings`, `Location & Care-Place Definitions`). | Harmonia manages the authoritative lifecycle and records the originating assertion provenance. |

@@ -12,6 +12,8 @@
 
 Sections 2–15 retain the approved decision-time dispositions and their historical stop boundaries. The separately authorised reconciliation is recorded in §16; statements about later reconciliation in those sections describe the decision-time state, not an additional approval requirement. No K1–K13 disposition is reopened.
 
+**Current disposition — 2026-10-09:** The historical AX-12 discrepancy and U13 AX-16 register uncertainty recorded below are superseded by the [single canonical axiom register](../../governance/architectural-axioms.md#ax-12) and its [AX-16 entry/approved interpretation](../../governance/architectural-axioms.md#ax-16). U9 is superseded only for the [established discharge preparation versus confirmed-exit distinction](../../03-business-architecture/processes/business-processes.md#413-discharge-progression-process): earlier preparation/publication is permitted; FEAT-HSO-29 dispatch requires confirmed physical exit. Detailed applicability/timing and unrelated To Do/Synthetic Task orderings remain unresolved. The [current G2 uncertainty treatment](package2-g2-block1-review.md#8-preserved-g1-uncertainty--upstream-findings) carries these dispositions. The decision-time investigation, quotations, verification and U1–U13 register below remain historical evidence; G1 closure and approved K1–K13 meanings are preserved.
+
 ## 1. Purpose and authority
 
 This record retains the approved G1 architectural interpretations of K1, K2, K3, K4, K5, K6, K7 and K8 as durable review context for subsequent Domain04 Package 2 derivation. The K1–K8 approval applies to those entries only; it does not approve G1 as a whole or resolve any other G1 issue. K2 retains explicitly unresolved semantics within its approved disposition. K4 retains explicit scope uncertainties within its approved disposition. K6 retains explicit semantic and responsibility/authority uncertainties within its approved disposition. K7 retains contextual acknowledgement semantics and explicitly unresolved incorporation semantics within its approved disposition. K8 retains the Business Role / contextual Referral participation boundary, an upstream typing reconciliation requirement and explicit eligibility, participation and authority uncertainties within its approved disposition.
@@ -2097,6 +2099,8 @@ The available evidence cannot distinguish an approved axiom missing from the cen
 This discrepancy does not materially prevent Package2 semantic derivation: the approved G1 responsibilities, semantic boundaries and explicit-uncertainty rule are independently established. No Package2 meaning, ownership or relationship is being inferred from the missing central entry. AX-16 uncertainty therefore does not block closure.
 
 ### 16.4 Preserved Uncertainty Register
+
+This is the closure-time register. Read U9 and U13 with the 2026-10-09 current disposition above; the historical rows do not reinstate superseded uncertainty.
 
 These entries record architectural knowledge, not newly created backlog tasks or accepted suggestions. Detailed decision-specific qualifications in §§2–15 remain controlling.
 

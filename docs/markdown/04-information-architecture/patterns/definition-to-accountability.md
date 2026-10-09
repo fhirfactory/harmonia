@@ -99,6 +99,8 @@ graph TD
 
 The Task / Work information family provides the canonical operational example of the pattern across human and automated activities:
 
+**Established responsibility boundary:** This illustration does not assign authority over underlying clinical work to Harmonia. The [Business clinical-work boundary](../../03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary) and [AX-18](../../governance/architectural-axioms.md#ax-18) apply: representing work/results and coordinating associated activity do not confer clinical-work determination, allocation, handover management, clinical decision authority, worklist ownership or clinical task ownership. Harmonia retains explicitly assigned information management, operational/workflow coordination, communication, provenance, control and activity execution. The exact interpretation of the generic Task/FulfillmentTask/TaskOutcome examples as represented information versus underlying work/result remains unresolved; the examples do not settle it or redefine the Business Work Order / To Do / synthetic Task distinction.
+
 ```text
 ActionableTask
     ↓ instantiated / bound

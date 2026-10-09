@@ -49,7 +49,7 @@ graph TD
 Harmonia establishes a clear distinction between what is **fundamental** to every relationship and what is an **available semantic characteristic**:
 
 1. **Fundamental Elements (Present in all Relationships)**:
-   - **Relationship Source**: The originating Information Concept.
+   - **Relationship Source**: The Information Concept in the source position of the forward relationship expression; this position does not identify the originating assertion authority.
    - **Relationship Target**: The destination Information Concept.
    - **Relationship Type**: The primary semantic nature of the association (e.g. *Contains*, *Delivers*, *Performs*, *Targets*, *Asserts*, *Directs*, *ParticipatesIn*, *MemberOf*).
 
@@ -107,7 +107,8 @@ graph LR
 ## 3. Forward Semantic Authoring & Traversal
 
 Domain 04 enforces **Forward Semantic Clarity**:
-- Relationships are modeled, authored, and validated in their natural authoritative forward direction (e.g. `Organisation.contains(OrganisationalUnit)`, `Practitioner.delivers(HealthcareService)`).
+- Relationships are modeled, authored, and validated in their natural forward semantic direction (e.g. `Organisation.contains(OrganisationalUnit)`, `Practitioner.delivers(HealthcareService)`).
+- Forward direction does not identify who is entitled to assert the relationship. Assertion authority and provenance follow the [established information responsibility and source](../../03-business-architecture/information-responsibility/information-responsibility.md#12-non-transfer-of-ownership-guardrail), which may be another participant or an external authority. [AX-06](../../governance/architectural-axioms.md#ax-06) and [AX-18](../../governance/architectural-axioms.md#ax-18) preclude acquiring that authority merely through representation or coordination.
 - Inverse navigability (e.g. finding the parent organisation of a unit, or finding all services delivered by a practitioner) is a **derived query and indexing concern** in Application and Integration architectures, not a distinct conceptual entity.
 - Bidirectional relationship definitions that duplicate authority or create dual-source inconsistencies are forbidden.
 

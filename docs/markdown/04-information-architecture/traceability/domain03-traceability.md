@@ -53,9 +53,10 @@ Service / Location / Provider Mapping Matrix (Information Responsibility)
     ↓ realised as
 OfferedHealthcareService (Definition)
 DeliverableHealthcareService (Contextual Binding)
-Service Provider / Healthcare Organisation (Entity)
-Healthcare Location (Entity)
 Service-Provider-Location Relationships & Qualified Containment
+    ↓ references participating entities; does not own their meaning
+Service Provider / Healthcare Organisation (Entity; responsibility retained by its established owner)
+Healthcare Location (Entity; Location Administration responsibility retained)
 ```
 
 ```mermaid
@@ -77,10 +78,12 @@ graph TD
 
     RESP_MAP -.->|"realised as"| OFFERED
     RESP_MAP -.->|"realised as"| DELIV
-    RESP_MAP -.->|"realised as"| ORG
-    RESP_MAP -.->|"realised as"| LOC
+    RESP_MAP -.->|"references mapped entity; responsibility retained"| ORG
+    RESP_MAP -.->|"references mapped entity; responsibility retained"| LOC
     RESP_MAP -.->|"realised as"| REL_MAP
 ```
+
+Under the [Business ownership matrix](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix), Health Service Administration owns the mapping associations; it does not own the mapped Provider, Location or Practitioner entities. The example references their participation without transferring their established information responsibility or originating authority. This clarification adds no Business relationship or replacement service-binding model.
 
 ### 2.2 Representative Example 2: Person Identity Administration
 

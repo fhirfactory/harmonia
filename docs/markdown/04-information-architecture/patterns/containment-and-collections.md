@@ -7,7 +7,7 @@ In healthcare integration, complex entities such as healthcare facilities, enter
 Harmonia models containment using the canonical **Information Relationship pattern** rather than inventing a separate structural or storage-specific pointer mechanism.
 
 ### The Canonical Containment Expression
-> **`Object.contains(Object)` is the authoritative semantic expression of containment.**
+> **`Object.contains(Object)` is the canonical forward semantic expression of containment; its direction does not establish assertion authority.**
 
 ```mermaid
 graph TD
@@ -16,7 +16,7 @@ graph TD
 ```
 
 ### 1.1 Forward Authoring Invariant
-- **Forward Authority**: The containing entity authoritatively asserts the containment relationship (`Container.contains(Contained)`).
+- **Forward Direction**: Containment is expressed as `Container.contains(Contained)`. The container's position does not make it the authoritative asserting source; authority and provenance remain attributable to the established governing responsibility/source under the [relationship direction boundary](information-relationships.md#3-forward-semantic-authoring--traversal).
 - **Inverse Derivation**: Navigating upward from child to container (`Child.parent()`) is an operational convenience and query projection derived downstream in Application and Integration architectures. Inverse pointers are never modeled as primary conceptual relationships.
 - **Qualified Containment**: The containment relationship may be qualified to denote physical containment, legal jurisdiction, administrative subordination, or clinical composition.
 
@@ -56,7 +56,7 @@ A common failure mode in domain modelling is conflating **Collection Membership*
 ```mermaid
 graph TD
     subgraph ContainmentModel ["Containment Semantics (Object.contains(Object))"]
-        LOC["Ward Location (Ward 4B)"] -->|"authoritatively contains<br/>(structural / physical composition)"| BED["Bed Location (Bed 12)"]
+        LOC["Ward Location (Ward 4B)"] -->|"contains<br/>(structural / physical composition)"| BED["Bed Location (Bed 12)"]
     end
 
     subgraph CollectionModel ["Collection Semantics (Collection.includes(Member))"]
