@@ -62,6 +62,10 @@ Business Architecture
     ↓
 Information Architecture
     ↓
+════════════════════════════════
+  DOMAIN04 SEMANTIC BASELINE
+════════════════════════════════
+    ↓
 Application Architecture
     ↓
 Integration Architecture
@@ -113,13 +117,42 @@ unestablished relationships SHALL remain explicit.
 
 Each stage requires bounded task authorisation and completion evidence against
 the applicable gates. Existing documentation does not establish completion of
-a future stage. This plan changes no architecture-domain status.
+a future stage. Current completion status is recorded in section 4; the
+sequence alone does not establish it.
 
 ## 4. Current Programme Position
 
 The authorised Domain 03 **Step 3 — Residual Semantic Adjudication and Capacity Management Pattern Review** is complete. The 2026-10-09 assessment establishes **semantic completion for the agreed R1.x/R2.x Business Architecture scope** against the Domain Completion Gate. The [Domain 03 metamodel](03-business-architecture/metamodel/business-architecture-metamodel.md#9-r1xr2x-semantic-sufficiency-boundary), [residual Service Delivery decisions](03-business-architecture/behaviours/03-service-delivery.md#residual-feature-sufficiency) and [HSO capacity responsibilities](03-business-architecture/behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary) record the authoritative outcomes; the [Domain 03 completion boundary](03-business-architecture/README.md#5-completion-boundary-and-retained-uncertainty) retains downstream, governance and deliberately unestablished matters. Completion requires semantic sufficiency, not graph density. No freeze/refreeze or final R1.x/R2.x programme baseline is declared.
 
-The current domain stage is **Domain 04 — Information Architecture Reconciliation**. The separately authorised [Step 1 assessment](../../.junie/reports/2026-10-09-domain04-information-architecture-reconciliation-step1.md), [Step 2 established responsibility/trace corrections](../../.junie/reports/2026-10-09-domain04-information-architecture-reconciliation-step2.md), [Step 3 Information Unit documentation/integration](../../.junie/reports/2026-10-09-domain04-information-unit-step3.md), [Step 4 Version / Active Generation semantics](../../.junie/reports/2026-10-09-domain04-version-active-generation-step4.md) and [Step 5 Active Generation establishment/failure boundary](../../.junie/reports/2026-10-09-domain04-active-generation-establishment-step5.md) are complete. The [canonical Domain04 metamodel](04-information-architecture/metamodel/information-architecture-metamodel.md#5-harmonia-managed-information) now establishes Harmonia-managed information, the conceptual Information Unit boundary, release-bound model and platform/framework obligations, together with the [Version / Active Generation distinction](04-information-architecture/metamodel/information-architecture-metamodel.md#651-version-and-active-generation) and its [successful establishment / operational failure boundary](04-information-architecture/metamodel/information-architecture-metamodel.md#656-establishment-and-semantic-indivisibility); detailed structures and remaining adjudications are deferred. The current Version / Active Generation discussion is closed at this semantic boundary; manifestation mechanics remain downstream. Semantic sufficiency remains **NO**. The next Information Architecture question requires separate bounded human adjudication; Domain04 completion and Domain05 are not authorised by this step. The proposed HSO-16 Strategy name correction remains a separately controlled follow-on task. Neither that correction nor the axiom migration was performed as part of the Domain03 reconciliation.
+**2026-10-10 — Domain04 Information Architecture completion recorded.**
+[Domain04 is semantically complete for the agreed Harmonia R1.x/R2.x scope](04-information-architecture/README.md#completion-status-and-semantic-baseline).
+Its authoritative information meaning is sufficient for downstream derivation
+without requiring downstream domains to invent Information Architecture
+semantics. The **Domain Completion Gate is SATISFIED** on the basis of the
+[residual semantic-gap assessment](../../.junie/reports/2026-10-10-domain04-residual-semantic-gap-assessment.md)
+and subsequent [search-semantics reconciliation / gate reassessment](../../.junie/reports/2026-10-10-domain04-search-semantics-reconciliation.md#6-domain-completion-gate-reassessment).
+The former sole Category A finding, **R01 — search-returned information
+management — is resolved**; no Category A Domain04 semantic blocker remains.
+
+Known retained uncertainties and explicit deferrals remain valid, as referenced
+in the [Domain04 baseline](04-information-architecture/README.md#completion-status-and-semantic-baseline).
+This is semantic completion for the agreed scope, not exhaustive modelling or
+immutability. Future evolution remains subject to normal architecture
+governance. No final R1.x/R2.x programme baseline is declared.
+
+**The Architecture Completion Programme may proceed to Domain05 — Application
+Architecture.** This is the next stage and requires a separately bounded task;
+no Domain05 reconciliation or derivation is undertaken by this completion action.
+Domain05 may determine how the established Information Architecture is realised
+and SHALL preserve its information meaning. Genuine contradictions or missing
+upstream semantic requirements SHALL be raised through architecture governance
+under AX-17 rather than silently resolved within downstream design.
+
+| Domain | Current programme status |
+|---|---|
+| Domain03 — Business Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-09 |
+| Domain04 — Information Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-10 |
+| Domain05 — Application Architecture | NEXT — not commenced by this task |
 
 ### Canonical Architectural Axioms Migration — Completed
 
@@ -153,6 +186,14 @@ The following records the programme position previously captured by this plan, r
 The finding register and individual adjudication decisions belong to the
 bounded Domain 02 cleanup task and its completion evidence. They are not
 reproduced or encoded here.
+
+#### Domain04 Position after Step 5 — Historical, 2026-10-09
+
+The following preserves the earlier Step 5 programme record unchanged. Its
+semantic-sufficiency NO and task-authorisation limits applied at that boundary;
+the current Domain04 baseline and Domain05 transition are recorded in section 4.
+
+The current domain stage is **Domain 04 — Information Architecture Reconciliation**. The separately authorised [Step 1 assessment](../../.junie/reports/2026-10-09-domain04-information-architecture-reconciliation-step1.md), [Step 2 established responsibility/trace corrections](../../.junie/reports/2026-10-09-domain04-information-architecture-reconciliation-step2.md), [Step 3 Information Unit documentation/integration](../../.junie/reports/2026-10-09-domain04-information-unit-step3.md), [Step 4 Version / Active Generation semantics](../../.junie/reports/2026-10-09-domain04-version-active-generation-step4.md) and [Step 5 Active Generation establishment/failure boundary](../../.junie/reports/2026-10-09-domain04-active-generation-establishment-step5.md) are complete. The [canonical Domain04 metamodel](04-information-architecture/metamodel/information-architecture-metamodel.md#5-harmonia-managed-information) now establishes Harmonia-managed information, the conceptual Information Unit boundary, release-bound model and platform/framework obligations, together with the [Version / Active Generation distinction](04-information-architecture/metamodel/information-architecture-metamodel.md#651-version-and-active-generation) and its [successful establishment / operational failure boundary](04-information-architecture/metamodel/information-architecture-metamodel.md#656-establishment-and-semantic-indivisibility); detailed structures and remaining adjudications are deferred. The current Version / Active Generation discussion is closed at this semantic boundary; manifestation mechanics remain downstream. Semantic sufficiency remains **NO**. The next Information Architecture question requires separate bounded human adjudication; Domain04 completion and Domain05 are not authorised by this step. The proposed HSO-16 Strategy name correction remains a separately controlled follow-on task. Neither that correction nor the axiom migration was performed as part of the Domain03 reconciliation.
 
 ## 5. Canonical Architecture Corpus
 

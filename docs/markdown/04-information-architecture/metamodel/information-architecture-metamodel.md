@@ -479,14 +479,17 @@ below does not determine their realisation:
   and relationships to snapshots, lifecycle state, Praxis progression or
   entity state.
 
-The distinction also does not determine whether retrieval creates a Generation,
-whether returned Units or result sets have Generations, whether search results
-become Harmonia-managed, or whether search creates Versions. The
-[search-management question](#11-downstream-derivation-and-retained-questions)
-remains unresolved. The existing generic Task/work/result meanings and their
-relationship to Work Order, To Do and synthetic Task also remain unresolved;
-Version/Active Generation semantics do not adjudicate them. Assurance and
-capacity information questions are unchanged.
+The distinction does not determine whether retrieval manifests a Generation
+or how returned Units or result sets are manifested. The separately adjudicated
+[search semantics](../patterns/search-results.md) establish a managed metadata
+Search Result Set referencing the Information Unit Versions comprising a
+managed search result; search alone creates neither copies nor new Versions
+of those returned Units. External search acquisition belongs to the governed
+Ergo activity that intentionally performs it. These decisions do not change
+Version / Active Generation semantics. The separately established
+[bounded Task / Work model](../information-families/task-work.md) and its
+retained questions also remain unchanged, as do Assurance and capacity
+information questions.
 
 #### 6.5.5 Version / Active Generation Guardrails
 
@@ -727,17 +730,29 @@ Integration Architecture, Technology Architecture and implementation design.
 Those derivations SHALL respect the semantic boundary and release governance
 defined here rather than invent missing Information Architecture.
 
-The complete managed-state model, search-result atomicity, Episode responsibility,
+The complete managed-state model, Episode responsibility,
 Observation/Finding derivation, assurance/evidence and capacity information
 structures, Digital Twin information structures and residual candidate-family
 approvals remain outside this model's established decisions.
 
-In particular, future search reconciliation must determine:
+### 11.1 Adjudicated Search Management Boundary
 
-> **For information returned through search, under what circumstances does Harmonia accept management responsibility and establish that information within a supported Information Unit?**
+The 2026-10-10 [two-case search adjudication](../patterns/search-results.md)
+resolves the former generic search-management question:
 
-Whether each returned resource, a result set, neither or both forms become
-Information Units remains unresolved. A search result's encoding, projection,
-cache treatment or implementation boundary SHALL NOT decide that question.
-[AX-17](../../governance/architectural-axioms.md#ax-17) preserves these absent
-decisions; this model authorises no continuation into their adjudication.
+- **Harmonia-managed search** produces a managed metadata-based **Search Result
+  Set**, governed within its own Information Unit boundary. Membership
+  references the Information Unit Versions comprising that result, without
+  copying their content, creating new Versions of them or another authority.
+- **External search** is intentionally performed within an **Ergo activity**.
+  Returned information is acquired and persisted within that activity's governed
+  context and applicable Information Unit boundary; no additional generic
+  management-acceptance transition is required because the origin is external.
+
+Search metadata categories and `0..*` Version-reference membership establish
+information meaning, not a complete schema. API/result representation,
+reference encoding, storage/cache and manifestation mechanics remain downstream.
+Snapshot/export and detailed Audit / Assurance remain separate concerns.
+Result encoding, projection or cache treatment SHALL NOT redefine this boundary.
+[AX-17](../../governance/architectural-axioms.md#ax-17) preserves genuinely
+unestablished details without retaining the resolved generic acceptance question.

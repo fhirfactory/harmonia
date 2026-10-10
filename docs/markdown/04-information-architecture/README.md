@@ -1,5 +1,63 @@
 # Domain 04 — Information Architecture
 
+## Completion Status and Semantic Baseline
+
+**Baseline date: 2026-10-10. Domain Completion Gate: SATISFIED.**
+
+**Domain04 — Information Architecture is semantically complete for the agreed
+Harmonia R1.x/R2.x scope.** The Domain04 architecture provides sufficient
+authoritative information meaning for downstream architectural derivation
+without requiring downstream domains to invent Information Architecture
+semantics. Known retained uncertainties and explicit deferrals remain governed
+and do not prevent this baseline. Future changes to Domain04 remain subject to
+normal architecture governance.
+
+Completion establishes a semantic baseline rather than immutability. It does
+not require exhaustive modelling of every concept or relationship, final
+metadata schemas or cardinalities, determination of implementation mechanisms,
+physical retirement of all legacy documentation, or answers to all future
+architectural questions.
+
+The completion evidence comprises:
+
+- [Domain04 semantic reconciliation](../../../.junie/reports/2026-10-09-domain04-information-architecture-reconciliation-step2.md)
+  and the established [managed-state and history assessment](../../../.junie/reports/2026-10-10-domain04-residual-semantic-gap-assessment.md#managed-state-and-history).
+- [Task information reconciliation](../../../.junie/reports/2026-10-10-domain04-task-information-reconciliation.md),
+  [TaskOutcome refinement](../../../.junie/reports/2026-10-10-domain04-taskoutcome-refinement.md)
+  and the canonical [observable-information/domain-meaning boundary](guardrails/observable-information-and-domain-meaning.md).
+- The [residual semantic-gap assessment](../../../.junie/reports/2026-10-10-domain04-residual-semantic-gap-assessment.md),
+  followed by the [search-semantics reconciliation and completion report](../../../.junie/reports/2026-10-10-domain04-search-semantics-reconciliation.md),
+  including its canonical documentation assessment, Domain Completion Gate
+  reassessment and repository validation.
+
+The former sole Category A finding **R01 — search-returned information
+management — is resolved**, as recorded in the canonical
+[search result semantics](patterns/search-results.md#5-resolution-and-retained-boundaries)
+and the [finding closure evidence](../../../.junie/reports/2026-10-10-domain04-search-semantics-reconciliation.md#4-previous-finding-and-retained-deferrals).
+No Category A Domain04 semantic blocker remains. The
+[gate reassessment](../../../.junie/reports/2026-10-10-domain04-search-semantics-reconciliation.md#6-domain-completion-gate-reassessment)
+records PASS for agreed-scope semantic sufficiency, truthful upstream
+traceability and required knowledge available canonically, and PASS WITH
+EXPLICIT DEFERRAL for contradictions/retained uncertainty and legacy knowledge
+treatment.
+
+The existing [Task / Work reservations](information-families/task-work.md#5-explicitly-unresolved-architecture),
+[metamodel downstream/deferred questions](metamodel/information-architecture-metamodel.md#11-downstream-derivation-and-retained-questions)
+and [search-related retained boundaries](patterns/search-results.md#5-resolution-and-retained-boundaries)
+remain valid. Their established scope and standing are preserved by the
+[completion evidence's retained-deferral record](../../../.junie/reports/2026-10-10-domain04-search-semantics-reconciliation.md#4-previous-finding-and-retained-deferrals);
+this declaration does not adjudicate them or convert candidates into approved
+architecture.
+
+**Domain05 — Application Architecture is the next programme stage**, as
+recorded in the [Architecture Completion Plan](../architecture-completion-plan.md#4-current-programme-position).
+Domain05 may determine how Harmonia realises this Information Architecture. It
+SHALL NOT silently redefine, replace or infer alternative information meaning
+for application convenience. A genuine contradiction or missing upstream
+semantic requirement SHALL be raised explicitly through architecture governance
+under [AX-17](../governance/architectural-axioms.md#ax-17). Recording this
+transition does not begin Domain05 architecture work.
+
 ## Overview & Pedagogical Guide
 
 Domain 04 — Information Architecture defines the canonical information models, semantic structures, and conceptual relationships required by the Harmonia Health Integration Environment (HIE). It bridges the business semantics established in **[Domain 03 (Business Architecture)](../03-business-architecture/README.md)** with downstream technical architectures (Application Architecture Domain 05, Integration Architecture Domain 06, and physical storage implementations).
@@ -102,7 +160,8 @@ graph TD
 7. **Authority Preservation in Assemblies**: Assemblies and Views project and coordinate information without acquiring originating authority over constituent data.
 8. **Bounded Task Semantics**: `ActionableTaskArchetype` defines reusable work; `ActionableTask` identifies particular work; `FulfillmentTask` represents an undertaking (`0..*` per work instance) with execution state/output. `TaskOutcome` is the governed resolution of the ActionableTask under its explicit outcome policy, referencing participating undertakings and containing Task Completion Metadata and resulting Task.Output(s). ExecutionConcurrency, OutcomeConcurrency.Mode and Outcome.OutputRules.Mode remain orthogonal; recursive TaskOutcome containment is excluded. Remaining detailed questions and ReportedTask remain unresolved in the [bounded Task model](information-families/task-work.md).
 9. **Observable Information ≠ Intrinsic Domain Comprehension**: Harmonia governs its own information/execution semantics without intrinsically inferring the meaning of all encapsulated domain content. Developer-defined Ergo logic may intentionally interpret content or invoke optional runtime AI within its governed execution boundary.
-8. **Information Unit Boundary**: Identity, Metadata, Content and Context are conceptual partitions. Unit Structure, Content Structure and Content Format remain distinct; supported Unit structures and semantics are explicitly bound within each architectural release. Persistence, security, provenance and transport must recognise both the Unit and its represented information. Detailed structures and search-result management remain unresolved; see the [canonical Unit model](metamodel/information-architecture-metamodel.md#6-information-unit).
+10. **Information Unit Boundary**: Identity, Metadata, Content and Context are conceptual partitions. Unit Structure, Content Structure and Content Format remain distinct; supported Unit structures and semantics are explicitly bound within each architectural release. Persistence, security, provenance and transport must recognise both the Unit and its represented information. Detailed structures remain downstream/deferred; see the [canonical Unit model](metamodel/information-architecture-metamodel.md#6-information-unit).
+11. **Two Search Cases**: Harmonia-managed search produces a managed metadata **Search Result Set** referencing the Information Unit Versions comprising the result, without duplicating their content or creating new Versions of them. External search is intentionally invoked within a governed Ergo activity; returned information is acquired and persisted within that activity's context, without a separate generic management-acceptance transition. Audit / Assurance information remains distinct; see [search result semantics](patterns/search-results.md).
 
 ---
 
@@ -118,7 +177,8 @@ docs/markdown/04-information-architecture/
 ├── patterns/
 │   ├── information-relationships.md             # Reusable relationship pattern, role separation
 │   ├── containment-and-collections.md           # Qualified containment, recursion, collections vs containment
-│   └── definition-to-accountability.md          # 5-stage pattern, Healthcare Service & Task/Work reference models
+│   ├── definition-to-accountability.md          # 5-stage pattern, Healthcare Service & Task/Work reference models
+│   └── search-results.md                       # Managed Version-reference result sets and external Ergo search
 ├── governance/
 │   ├── authority-custody-provenance.md          # Assertion, responsibility, authority, custody, provenance
 │   └── information-lifecycle.md                 # Concept-specific lifecycles, transition governance
@@ -147,6 +207,7 @@ docs/markdown/04-information-architecture/
    - **[Information Relationships](patterns/information-relationships.md)**: The canonical relationship structure, fundamental elements, available characteristics, and strict separation between Relationship Roles and Business Roles.
    - **[Containment and Collections](patterns/containment-and-collections.md)**: Qualified forward recursive containment (`Object.contains(Object)`), entity recursion boundaries, and distinct collection membership semantics.
    - **[Definition to Accountability](patterns/definition-to-accountability.md)**: The 5-stage semantic progression, illustrated via *Healthcare Service* (`OfferedHealthcareService` to `AssuredHealthcareService` with `Order` as an associated direction mechanism) and the bounded *Task / Work* model (archetype, work instance, undertaking and governed ActionableTask resolution), with ReportedTask / Accountability unresolved.
+   - **[Search Result Semantics](patterns/search-results.md)**: The managed metadata Search Result Set and its Version-reference membership, governed external search acquisition within Ergo, and distinct snapshot/export and Audit / Assurance meanings.
 3. **Information Governance & Lifecycles**:
    - **[Authority, Custody & Provenance](governance/authority-custody-provenance.md)**: Definitions of `Assertion`, granular authority at assertion/relationship level, custody, and provenance models.
    - **[Information Lifecycle](governance/information-lifecycle.md)**: Concept-specific lifecycle principles and transition provenance.
@@ -161,4 +222,4 @@ docs/markdown/04-information-architecture/
    - **[Healthcare Location / Care Place](information-families/healthcare-location.md)**
    - **[Healthcare Service](information-families/healthcare-service.md)**
    - **[Device](information-families/device.md)**
-   - **[Task / Work — Bounded Information Model](information-families/task-work.md)**: The four adjudicated Task concepts, orthogonal execution/participation/output controls, governed ActionableTask resolution and retained Accountability uncertainty. This reconciliation does not complete Domain04 or the wider Task / Work family.
+   - **[Task / Work — Bounded Information Model](information-families/task-work.md)**: The four adjudicated Task concepts, orthogonal execution/participation/output controls, governed ActionableTask resolution and retained Accountability uncertainty. That bounded reconciliation did not itself declare completion of Domain04 or the wider Task / Work family.
