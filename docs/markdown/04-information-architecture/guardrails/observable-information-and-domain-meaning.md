@@ -53,8 +53,13 @@ content item it carries.
 For the [bounded Task model](../information-families/task-work.md), an
 `ActionableTaskArchetype` can establish content expectations without specifying
 the content's structural representation or requiring domain comprehension.
-`TaskOutcome` can encapsulate semantically opaque content while its established
-Task information relationships remain governed.
+The domain content of `Task.Output(s)` contained / represented by `TaskOutcome`
+may remain semantically opaque while the governed ActionableTask resolution
+and its undertaking references remain explicit. The ActionableTask's
+`Outcome.OutputRules.Mode = Derived` applies explicitly defined rules to
+participating outputs without requiring Harmonia to infer their domain
+meaning. This information semantic prescribes no derivation implementation
+mechanism and does not make runtime AI intrinsic to Harmonia.
 
 ## 3. Governed Ergo Logic Boundary
 

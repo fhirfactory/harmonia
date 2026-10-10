@@ -141,11 +141,13 @@ information responsibilities. Work Order, To Do and Synthetic Task retain
 their distinct Business meanings and progression authority.
 
 The authorised Task information concepts distinguish archetype, particular
-work, undertaking and outcome information without assuming ownership of
-business meaning or clinical outcome. This responsibility basis allocates no
-unestablished definition-authoring/outcome-authority owner or specialised
-archetype/undertaking/outcome subclasses; ReportedTask and detailed TaskOutcome
-questions remain unresolved.
+work, undertaking and governed ActionableTask resolution without assuming
+ownership of business meaning or clinical outcome. This responsibility basis
+allocates no unestablished definition-authoring/outcome-authority owner or specialised
+archetype/undertaking/outcome subclasses. ActionableTask governs its orthogonal
+execution-concurrency, outcome-participation and output-rule controls; that
+information policy does not transfer originating domain authority.
+ReportedTask and remaining detailed TaskOutcome questions remain unresolved.
 
 ---
 

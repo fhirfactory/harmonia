@@ -36,8 +36,13 @@ graph TD
 ```
 
 The [bounded Task / Work model](../information-families/task-work.md) separates
-the archetype, work instance, undertaking and outcome information. Completion
-of an undertaking does not inherently satisfy its parent ActionableTask.
+the archetype, work instance, undertaking and governed ActionableTask
+resolution. An undertaking has its own execution state and may produce
+output; it does not independently own TaskOutcome. Completion alone does not
+inherently satisfy its parent: the ActionableTask's explicit outcome policy
+governs participation and resulting outputs. ExecutionConcurrency,
+OutcomeConcurrency.Mode and Outcome.OutputRules.Mode remain orthogonal and
+SHALL NOT be collapsed into a single lifecycle, state or concurrency mechanism.
 This lifecycle guidance does not adjudicate TaskOutcome lifecycle/identity or
 the unresolved ReportedTask meaning.
 

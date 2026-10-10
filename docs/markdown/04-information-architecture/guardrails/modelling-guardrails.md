@@ -65,11 +65,12 @@ This document codifies the sixteen core, repository-wide modelling guardrails fo
 >
 > A patient belonging to a *Diabetic Cohort Collection* is not "contained" by the cohort; removing the member does not alter the patient's identity or existence. Conversely, a physical bed is structurally contained within a ward. Furthermore, Person-oriented concepts SHALL NOT use recursive containment merely to represent familial, social, care, representation or authority relationships. Those semantics SHALL use appropriate Information Relationships or Collections.
 
-The authorised statement that TaskOutcome may contain other TaskOutcomes does
-not yet decide whether that containment means composition, aggregation,
-reference or another relationship. This guardrail SHALL NOT be used to settle
-that [reserved question](../information-families/task-work.md#5-explicitly-unresolved-architecture)
-by inference.
+The [Task / Work model](../information-families/task-work.md#24-taskoutcome--governed-actionabletask-resolution)
+excludes recursive TaskOutcome containment. Its single governed resolution
+references participating FulfillmentTask undertakings and contains Task
+Completion Metadata and contains / represents Task.Output(s). General
+containment guidance SHALL NOT reintroduce outcome aggregation hierarchies or
+infer detailed metadata/output structures from these conceptual relationships.
 
 ---
 
@@ -90,6 +91,12 @@ information as distinct meanings. Stage separation does not adjudicate
 reserved TaskOutcome identity/lifecycle/cardinality or require a ReportedTask
 Accountability concept; those matters remain
 [explicitly unresolved](../information-families/task-work.md#5-explicitly-unresolved-architecture).
+
+ActionableTask's ExecutionConcurrency, OutcomeConcurrency.Mode and
+Outcome.OutputRules.Mode SHALL remain orthogonal: permitted concurrent
+execution, participation in outcome resolution and output handling are
+separate concerns. They SHALL NOT be collapsed into one lifecycle, state or
+concurrency mechanism.
 
 ---
 

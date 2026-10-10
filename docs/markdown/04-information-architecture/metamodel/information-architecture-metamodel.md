@@ -107,10 +107,17 @@ These categories are conceptual patterns rather than an inheritance tree. A conc
 The [bounded Task / Work model](../information-families/task-work.md)
 distinguishes `ActionableTaskArchetype` (definition), `ActionableTask`
 (identifiable work instance), `FulfillmentTask` (identifiable undertaking) and
-`TaskOutcome` (outcome information). These are not lifecycle states or implied
+`TaskOutcome` (governed resolution of an ActionableTask according to its
+explicit outcome policy). FulfillmentTask has execution state and may produce
+output; it does not independently own TaskOutcome. TaskOutcome references
+participating undertakings, contains Task Completion Metadata and contains /
+represents the resulting Task.Output(s), without recursive outcome containment.
+ActionableTask's execution concurrency, outcome participation and output-rule
+controls remain orthogonal. These are not lifecycle states or implied
 implementation subclasses. General metamodel characteristics below do not
-settle the expressly deferred TaskOutcome identity/cardinality/lifecycle
-questions or the unresolved ReportedTask meaning.
+settle the expressly deferred TaskOutcome identity/further-cardinality/lifecycle
+questions, detailed metadata/output structures or the unresolved ReportedTask
+meaning.
 
 ---
 

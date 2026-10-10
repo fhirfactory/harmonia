@@ -104,37 +104,48 @@ graph TD
 
 The [bounded Task / Work information model](../information-families/task-work.md)
 provides the operational example across human and automated work. Its
-authorised distinction is definition → work instance → undertaking → outcome
-information; the Accountability intersection remains unresolved.
+authorised distinctions are definition, work instance, undertaking and
+governed resolution of the work instance. Undertaking outputs contribute
+according to the ActionableTask's explicit outcome policy; the Accountability
+intersection remains unresolved.
 
-**Established responsibility boundary:** This illustration does not assign authority over underlying clinical work to Harmonia. The [Business clinical-work boundary](../../03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary) and [AX-18](../../governance/architectural-axioms.md#ax-18) apply: representing work/results and coordinating associated activity do not confer clinical-work determination, allocation, handover management, clinical decision authority, worklist ownership or clinical task ownership. Harmonia retains explicitly assigned information management, operational/workflow coordination, communication, provenance, control and activity execution. The exact interpretation of the generic Task/FulfillmentTask/TaskOutcome examples as represented information versus underlying work/result remains unresolved; the examples do not settle it or redefine the Business Work Order / To Do / synthetic Task distinction.
+**Established responsibility boundary:** This illustration does not assign authority over underlying clinical work to Harmonia. The [Business clinical-work boundary](../../03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary) and [AX-18](../../governance/architectural-axioms.md#ax-18) apply: representing work/results and coordinating associated activity do not confer clinical-work determination, allocation, handover management, clinical decision authority, worklist ownership or clinical task ownership. Harmonia retains explicitly assigned information management, operational/workflow coordination, communication, provenance, control and activity execution. The Task information meanings established by the bounded model do not become the underlying work/result or redefine the Business Work Order / To Do / synthetic Task distinction.
 
 ```text
 ActionableTaskArchetype                Definition
     ↓ instantiated as
 ActionableTask                        Contextualisation / work instance
-    ↓ may be undertaken through
+    ↓ governs undertakings and outcome policy
 FulfillmentTask [0..*]                 Fulfilment / undertaking
-    ↓ may produce / establish
-TaskOutcome                           Outcome information
+    ↓ participating state / output contributes under that policy
+TaskOutcome                           Outcome / governed ActionableTask resolution
+    ├ references participating FulfillmentTask [0..*]
+    ├ contains Task Completion Metadata
+    └ contains / represents Task.Output(s)
 
 Accountability / ReportedTask          Unresolved; no relationship settled here
 ```
 
-Additionally, a `TaskOutcome` may be associated with `ActionableTask`, and may
-contain / encapsulate other `TaskOutcomes` (`0..*`). The
+TaskOutcome belongs to and resolves the ActionableTask according to its
+explicit outcome policy; a FulfillmentTask does not independently own it.
+ExecutionConcurrency, OutcomeConcurrency.Mode (FirstToFinish,
+AssignedToFinish, Aggregate) and Outcome.OutputRules.Mode (Direct, Collection,
+Derived) respectively govern permitted execution concurrency, participating
+undertakings and output handling. They remain orthogonal. Multiple results
+are represented through participating-undertaking references, without
+recursive TaskOutcome containment. The
 [conceptual relationship diagram](../information-families/task-work.md#3-established-conceptual-relationships)
-records these agreed relationships without further cardinalities or
-composition semantics.
+and [policy definitions](../information-families/task-work.md#221-actionabletaskexecutionconcurrency)
+record the bounded information semantics without prescribing implementation.
 
 ### 3.1 Task Concepts & Activity Classifications
 
 | Information Concept | Pattern Stage | Governed Business Semantics | Key Architectural Demarcations |
 | :--- | :--- | :--- | :--- |
 | **`ActionableTaskArchetype`** | **Definition** | Reusable definition of a kind of actionable work, including applicable meaning, constraints and expectations. | Not an instance of work; content expectations do not require structural definition or Platform domain comprehension. |
-| **`ActionableTask`** | **Contextualisation / work instance** | Identifiable particular thing-to-be-done, instantiated from / governed by an applicable archetype. | Neither definition nor undertaking. |
-| **`FulfillmentTask`** | **Fulfilment** | Identifiable undertaking of an ActionableTask, carrying the execution information needed to represent doing / attempting the work. | Zero or more per ActionableTask; concurrency where work semantics permit or require. Completion of one undertaking does not inherently satisfy its parent. |
-| **`TaskOutcome`** | **Outcome** | Information produced or established as an outcome of work. | May associate with a work instance or undertaking and encapsulate other outcomes; content may be opaque. Identity, detailed composition/cardinality and lifecycle remain reserved. |
+| **`ActionableTask`** | **Contextualisation / work instance** | Identifiable particular thing-to-be-done, instantiated from / governed by an applicable archetype; explicitly governs execution concurrency, outcome participation and output rules. | Neither definition nor undertaking; the three controls remain orthogonal. |
+| **`FulfillmentTask`** | **Fulfilment** | Identifiable undertaking of an ActionableTask, carrying its own execution state/information and potentially producing output. | Zero or more per ActionableTask; concurrent execution according to ExecutionConcurrency. It does not independently own TaskOutcome; completion alone does not inherently satisfy its parent. |
+| **`TaskOutcome`** | **Outcome** | Governed resolution of an ActionableTask according to that ActionableTask's explicitly defined outcome policy. | References participating undertakings, contains Task Completion Metadata and contains / represents resulting Task.Output(s). Output domain content may be opaque; recursive TaskOutcome containment is excluded. Identity, further cardinalities, detailed structures and lifecycle remain reserved. |
 | **`ReportedTask`** | **Existing Accountability intersection — unresolved** | Necessity and semantics await separate Assurance / Accountability adjudication. | This task does not reaffirm the earlier immutable accountable-report interpretation or its relationships. |
 
 ### 3.2 Harmonia Activity Classifications

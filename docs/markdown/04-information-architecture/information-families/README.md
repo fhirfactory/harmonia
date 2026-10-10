@@ -36,12 +36,19 @@ The [G2 Block 1 review](../reviews/package2-g2-block1-review.md) records cross-f
 
 ## Bounded Task / Work Reconciliation
 
-The authorised 2026-10-10 [Task / Work model](task-work.md) establishes
-`ActionableTaskArchetype` → `ActionableTask` → `FulfillmentTask` → `TaskOutcome`,
-including zero/multiple/concurrent undertakings where work semantics permit,
-ActionableTask-level outcomes and possible outcome encapsulation. It preserves
-Domain03 Work Order / To Do / Synthetic Task as Business classifications.
-Detailed TaskOutcome questions and ReportedTask remain explicitly unresolved.
+The authorised 2026-10-10 reconciliation and subsequent bounded refinement of
+the [Task / Work model](task-work.md) distinguish `ActionableTaskArchetype`,
+`ActionableTask`, `FulfillmentTask` and `TaskOutcome`. TaskOutcome is the
+governed resolution of an ActionableTask under its explicit outcome policy;
+undertakings have execution state/output and do not independently own it.
+ActionableTask explicitly governs ExecutionConcurrency, OutcomeConcurrency.Mode
+(FirstToFinish, AssignedToFinish, Aggregate) and Outcome.OutputRules.Mode
+(Direct, Collection, Derived) as orthogonal concerns. TaskOutcome references
+participating undertakings, contains Task Completion Metadata and contains /
+represents Task.Output(s); recursive TaskOutcome containment is excluded.
+Domain03 Work Order / To Do / Synthetic Task remain Business classifications.
+Remaining identity, lifecycle, detailed metadata/output and other reserved
+questions, together with ReportedTask, remain explicitly unresolved.
 This is neither a complete Task family nor Domain04 completion or baseline.
 
 The accompanying [observable-information boundary](../guardrails/observable-information-and-domain-meaning.md)
