@@ -31,6 +31,18 @@ Petasos provides an abstraction layer over enterprise messaging brokers, isolati
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — shared persistent messaging and handoff](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Persistent handoff without information ownership](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+
+```text
+---------------------------------------------------------
+```
+
 ## 2. Standard Message Envelope (`PetasosMessage`)
 
 All events across Petasos are encapsulated in an immutable, strongly typed envelope:
@@ -53,6 +65,11 @@ public class PetasosMessage {
     private String duplicateDetectionId;   // Artemis _AMQ_DUPL_ID token
 }
 ```
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

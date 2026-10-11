@@ -44,9 +44,10 @@ The authorised Domain05 approach is:
 Initial reconstruction (A1, recorded here as Step 1) is complete. Step A remains
 open: architectural review/adjudication (A2) and bounded iterative correction
 (A3) are in progress; acceptance as sufficiently faithful (A4) is pending.
-The Energeia / DigitalTwin / Dokimasia adjudication below corrects the candidate
-within that boundary. Capability mapping, Information Architecture
-coverage, upstream requirements gap analysis, excess-feature analysis, MVP
+The Energeia / DigitalTwin / Dokimasia and Pathway / Journey / Publish/Subscribe /
+handoff adjudications below correct the candidate within that boundary.
+Capability mapping, Information Architecture coverage, upstream requirements
+gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
 The [documentation gap register](gaps.md) records insufficiencies within the
 documented candidate, not unsupported upstream requirements. This initial
@@ -60,6 +61,7 @@ record does not declare the Domain Completion Gate satisfied.
 | [Component register](component-register.md) | Roles, features, significant internal constructs, information, persistence, collaborators and exclusions. |
 | [Candidate feature map](candidate-feature-map.md) | Documented solution features and allocations, including retained proposals and unclear owners. |
 | [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; competing persistence structures. |
+| [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated control, selection, handoff, execution, observation and assurance meanings; retained detailed uncertainty. |
 | [Internal middleware](middleware.md) | Internal messaging, recoverable handoff, dispatch, access and context collaboration, separated from external integration and products. |
 | [Documentation/component-feature gaps](gaps.md) | Evidence, incomplete meaning and possible adjudication for each gap. |
 | [Sources and reconciliation](sources.md) | Authority, legacy provenance, reviewed scope, disposition and section-specific supersession. |
@@ -212,3 +214,52 @@ these relationships from containment and collaboration. Domain04 Task meaning,
 outcome ownership and the Ergon information boundary remain unchanged.
 **Praxis requires separate architectural adjudication**; this correction supplies
 no definition-to-instance, workflow or composition model for it.
+
+<a id="pathway-journey-adjudication"></a>
+
+## Pathway / Journey / Publish/Subscribe / handoff candidate adjudication
+
+**U03–U05 — 2026-10-11:** the supplied Pragma boundary, Pathway/Journey and
+Mneme publication/subscription/handoff DesignNotes are incorporated into the
+[shared semantic view](pathways-journeys-and-handoff.md), subject to the axioms
+and Domain04 meaning. The duplicate Energeia attachment is byte-identical to
+U02. These are human-adjudicated Candidate Architecture inputs for this task;
+their working-note labels do not constitute whole-candidate acceptance.
+
+- **Defined control:** every Ergon exposes ingress/egress PathwayEndpoints.
+  PathwaySegment is inter-component; PathwayTraversal is intra-component and
+  preserves encapsulation. Route is ordered PathwaySegment [1..N]. Pathway
+  defines controlled endpoint interaction and available Routes. Only
+  **Praxis → Pathway [0..1]** is established; broader Praxis remains unresolved.
+- **Dynamic selection:** Publish/Subscribe is distinct from Pathway routing.
+  Mneme / Pragma Management owns Publishing, Subscription and Pattern semantic
+  management, eligibility, matching/selection and eligible consumer/destination
+  relationships. Publishing blocks provider egress on a matching filter;
+  Subscription selects available Pragma for a consumer on a matching Pattern.
+  Topic is governed classification/metadata, distinct from destination.
+- **Handoff and execution:** Petasos persistently manages reliable handoff
+  obligations. For Pragma processing it manages identity/reference and handoff
+  metadata while the managed payload remains through Mneme. Consumers resolve
+  information through Mneme; ActionableTask undertakings establish distinct
+  FulfillmentTasks. Ponos owns execution/progression and execution re-attempts;
+  Petasos owns handoff redelivery/recovery/dead-letter state. Petasos also
+  supports Communication/Notification Events and other messaging forms; no
+  universal reference-only format is established.
+- **Separate state:** managed Pragma state, handoff state, undertaking state and
+  runtime execution state are distinct. Delivery information in Pragma records
+  governed observations, without owning Petasos's operational obligation.
+- **Common observation:** Journey is the canonical governed representation of
+  observed progression for Pathway, Pub/Sub and mixed activity, potentially a
+  graph and with no Pathway required. Reporting, monitoring, analysis and
+  Dokimasia assurance can operate against it. Observed evidence remains distinct
+  from inferred interpretation and findings; observations are not automatically
+  permanent AuditEvents. Dokimasia terminal rules remain controlling.
+
+The Publish/Subscribe note partially settles fan-out: common Mneme-managed
+Pragma/payload, potentially multiple Petasos handoffs and distinct consumer
+FulfillmentTasks for ActionableTask undertakings. Detailed reference/copy/version,
+identity, targetDestination, processing/concurrency, lineage and Journey contracts
+remain unresolved ([CDG-37](gaps.md#pubsub-fanout)). Pattern language, definition
+lifecycles, handoff representation, Journey construction/management ownership,
+evidence/inference schema and technology remain unresolved. No Step B, MVP,
+implementation plan or final Solution Architecture baseline is established.

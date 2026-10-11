@@ -34,27 +34,31 @@ Harmonia Information System — candidate software solution
       Pragma Management — managed task/context/progression information [C28]
         PragmaFactory — creates/initialises Pragma; archetype embodiment [C08]
         Pragma — managed Application Data Object [C07]
+        Publishing — provider eligibility/filtering [C36]
+        Subscription — consumer selection [C37]
+        Pattern — governed evaluation/matching [C38]
       Active representations and working definitions (Data Objects)
     Mnemosyne — authoritative durable establishment/preservation [C12]
       Clinical/FHIR persistence responsibility slice
       Non-FHIR operational persistence responsibility slice
   Energeia — activity/execution architectural subsystem
     Ponos — reusable execution framework/component pattern [C04]
-      Ingress dispatch / sequence resolution / execution control
+      Governed execution / scheduling / progression / execution re-attempts
     Ergo — reusable activity pattern and platform-integration contract [C05]
     Ergon — bounded fine-grained task-completion software component [C23]
+      IngressEndpoint / EgressEndpoint — Application Interfaces [C29]
     Erga — meaningful Ergon collections, assembly, observation and libraries [C24]
     DigitalTwin — Ponos-specialised entity-coordination execution component [C19]
     Behaviour — Ergon-specialised DigitalTwin activity component [C25]
     Dokimasia — Ponos-specialised independent assurance execution component [C20]
     Dokimasia Ergon — Ergon-specialised bounded assurance activity [C26]
     AI Assurance Ergon — candidate Dokimasia Ergon specialisation [C27]
-    Praxis — workflow definition/composition/execution design area [C06]
-      Definition loader / seeder / composition / checkpoint support
-      Exact definition-to-instance model unresolved
-  Petasos — internal messaging and recoverable handoff [C10]
-    Producer/consumer/destination contracts
-    Opaque envelope, duplicate detection and transport observation support
+    Praxis — broader definition/composition/instance meaning unresolved [C06]
+      May have Pathway [0..1]; no broader containment inferred
+  Petasos — shared persistent/recoverable messaging and handoff [C10]
+    Persistent handoff obligations / destination mechanics / handoff metadata
+    Redelivery, recovery, dead-letter and handoff observations
+    Pragma identity/reference handoff; other message-form contracts remain open
   Pylai — standards-facing interoperability/publication membrane [C14]
     Inbound HL7 interaction responsibility slice
     Outbound HL7 publication/delivery-observation slice
@@ -168,6 +172,23 @@ reuse rule subject to its [two terminal constraints](component-register.md#dokim
 AI component existence/responsibility is established; detailed architecture is
 subject to [CDG-35 discovery](gaps.md#dokimasia-ai-discovery).
 
+## Control and observational constructs
+
+These navigation entries are deliberately separate from the structural tree:
+
+| Kind | Constructs and established relationships |
+| :--- | :--- |
+| Application Interfaces | PathwayEndpoint C29: each Ergon exposes IngressEndpoint and EgressEndpoint. |
+| Behavioural/flow abstraction | PathwayElement C30 specialises as inter-component PathwaySegment C31 and encapsulated intra-component PathwayTraversal C32. |
+| Routing/control | Route C33 = ordered PathwaySegment [1..N]; Pathway C34 controls endpoint interaction with available Route(s). Praxis may have Pathway [0..1]; its broader meaning remains unresolved. |
+| Observation / Application Data Object | Journey C35 represents governed observed progression across Pathway, Pub/Sub and mixed execution; management/construction owner unresolved. |
+| Contained logical responsibilities / definition objects | Publishing C36, Subscription C37 and Pattern C38 under Mneme Pragma Management; their names do not imply separate deployable components. |
+
+The [shared semantic diagrams](pathways-journeys-and-handoff.md) distinguish
+defined control, dynamic information selection, handoff, execution and common
+Journey observation/assurance. A graph-shaped Journey does not create a Pathway
+or redefine Route. No final Journey-to-PathwayElement schema is established.
+
 ## Collaboration map
 
 Arrows describe responsibilities crossing a seam, not containment, mandatory
@@ -187,12 +208,21 @@ flowchart LR
     Twin["DigitalTwin: specialised execution"] -->|uses governed entity context| Mneme
     Twin -->|executes| Behaviour["Behaviour: specialised Ergon"]
     Behaviour -->|uses / produces through governed management| Pragma
-    Praxis["Praxis: definition and composition"] -->|supplies sequence intent; model unresolved| Ponos
+    Praxis["Praxis: broader semantics unresolved"] -.->|may have zero or one| Pathway["Pathway: controlled interaction / Routes"]
     Ponos -->|executes / manages| Ergon["Ergon: conforms to Ergo"]
     Erga["Erga: assembly / concurrent observation / libraries"] -->|collects activity components| Ergon
     Ergon -->|uses / produces through governed management| Pragma
-    Ponos -->|durable work transfer| Petasos["Petasos: internal handoff"]
-    Petasos -->|delivers work| Ponos
+    Mneme -->|Publishing / Subscription / Pattern eligibility and selection| Petasos["Petasos: persistent handoff obligations"]
+    Petasos -->|Pragma identity/reference and handoff metadata| Consumer["Consumer"]
+    Consumer -->|resolves governed information| Mneme
+    Consumer -->|distinct undertaking for ActionableTask processing| Ponos
+    Pathway -->|defined control; detailed execution contract unresolved| Ponos
+    Mneme -->|selection observations| Journey["Journey: governed observed progression"]
+    Petasos -->|handoff observations| Journey
+    Ponos -->|execution observations| Journey
+    Ergon -->|activity observations| Journey
+    Journey --> Reporting["Reporting / monitoring / analysis"]
+    Journey -->|observed evidence for interpretation| Dokimasia
     Pylai["Pylai: standards membrane"] -->|internal information requests| Mneme
     Pylai -->|accepted work handoff| Petasos
     Petasos -->|publication request| Pylai
@@ -221,7 +251,7 @@ flowchart LR
 | DigitalTwin specialises Ponos and uses governed entity information | U02 and A02 Seams 2–3. Per-Twin queues are specialised responsibility; bounded resources service pending work. Detailed control/state contract remains unknown. |
 | Dokimasia specialises Ponos and executes assurance Ergon | U02 preserves A04 independence; reuse does not give the assured activity control of assurance determination. AI activity boundary is established; detailed architecture CDG-35 remains open. |
 | Components use Themis and meaningful evidence/reporting contracts | A01 AX-07–09; L08/L13 ADR-013/016; U02 Dokimasia terminal rules. No separate Dokimasia own-execution AuditEvent or recursive Dokimasia monitoring/assessment; governance and controlled observability remain. |
-| Ingress / execution / publication use Petasos handoffs | L13 ADR-014/017, L29/L30. Messaging is opaque; work acceptance, state commit, activity completion and external acknowledgement remain distinct. |
+| Ingress / execution / publication use Petasos handoffs | U05 corrects L13/L29/L30: persistent/recoverable handoff obligation; Pragma identity/reference resolves through Mneme, with broader messaging forms retained. Handoff acceptance, information commit, undertaking completion and external acknowledgement remain distinct. |
 | Agora coordinates with execution through Petasos | AGENTS Invariant 10; L12 §3. No direct Agora-to-Ponos dependency. A detailed information-summary/provider contract is not established. |
 | Pylai publishes governed information externally | A01 AX-02/13 and A02 Seams 4/G4. Projection is non-destructive and fail-closed; egress ends management of the emitted representation. Transport packaging does not transfer logical ownership. |
 
@@ -229,8 +259,10 @@ flowchart LR
 
 The [Task/Pragma candidate](README.md#task-decisions) preserves work versus
 undertaking even where both use Pragma. Ergon is behaviour and acquires no
-discrete Information Resource. Blueprint, composed behaviour and actual Praxis
-execution remain distinguishable where their relationship is unknown. Evidence
+discrete Information Resource. Historical blueprint, composed behaviour and
+actual Praxis execution descriptions remain distinguishable where their
+relationship is unknown. Praxis may have Pathway [0..1]; none of those
+descriptions supplies a broader adjudicated definition. Evidence
 does not itself constitute assurance; Dokimasia does not manage its operational
 subject. Information custody, active management, durable persistence and domain
 authority are not aliases. These limits apply to every source-derived feature

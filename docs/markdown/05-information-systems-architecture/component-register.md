@@ -102,11 +102,15 @@ under Mneme below.
   [U02](sources.md#u02) adjudicates this role; [A02](sources.md#a02) and
   [L02/L01/L23](sources.md#l02) retain responsibility context and historical detail.
 - **Features/contained constructs:** work ingress and dispatcher, workflow/sequence
-  resolution, activity invocation, execution concurrency/timeouts, retry and
-  dead-letter escalation, checkpoint coordination and administrative inspection.
+  resolution where governed control is established, activity invocation, execution
+  concurrency/timeouts, execution retry/re-attempts, checkpoint coordination and
+  administrative inspection. Subscription matching belongs to Mneme; handoff
+  redelivery/recovery and dead-letter semantics belong to Petasos.
   Consumer loops/thread pools are documented mechanisms, not logical children.
-- **Information:** consumes work/events and Pragma context; consults workflow
-  definitions; produces progression, failure and destination observations.
+- **Information:** executes consumer undertakings using governed information/context
+  resolved through Mneme; consults established control definitions and produces
+  execution/progression observations contributing to Journey. Petasos handoff
+  does not make an opaque payload into a Ponos-owned Pragma.
 - **Persistence:** coordinates recoverable handoff through Petasos and governed
   information change through Mneme/Mnemosyne. Does not establish durable state
   by completing an activity or writing a checkpoint to a cache.
@@ -116,7 +120,8 @@ under Mneme below.
   Pragma Management and Petasos. DigitalTwin C19 and Dokimasia C20 specialise/
   reuse this pattern; they are not children inside a Ponos runtime. Conceptual
   supertype language does not mandate literal implementation inheritance.
-  Does not own workflow definitions, concrete domain logic, broker lifecycle,
+  Does not own Pragma information management, Publishing/Subscription/Pattern
+  semantic selection, workflow definitions, concrete domain logic, broker lifecycle,
   external standards/transport or universal clinical-work determination.
 - **Standing:** specialisation relationships adjudicated for the candidate by U02;
   detailed model remains candidate. CDG-03/08/16–18 retain incomplete control
@@ -161,7 +166,9 @@ under Mneme below.
   merely because the component is an Ergon.** Activity is not information about it.
 - **Persistence/collaboration:** requests governed information use/change through
   Mneme; does not own Pragma management or durable state. Erga collects components;
-  Ponos executes them; Petasos transfers work. Praxis relationship detail remains open.
+  Ponos executes them; Petasos effects persistent handoff. Every Ergon exposes
+  IngressEndpoint and EgressEndpoint C29; traversal does not expose internal logic.
+  Praxis relationship detail remains open.
 - **Specialisations:** Behaviour C25, Dokimasia Ergon C26 and, through the latter,
   AI Assurance Ergon C27. They retain normal Ergo/Ergon facilities, constrained
   by the specialised role and Dokimasia's terminal rules where applicable.
@@ -205,7 +212,7 @@ under Mneme below.
 - **Information/persistence/collaboration:** operates on governed entity context
   and candidate Stimulus/Effector Pragma representations within DigitalTwin's
   entity-specific execution; Mneme manages information, Mnemosyne establishes
-  durable state and Petasos handles recoverable transport.
+  durable state and Petasos handles persistent/recoverable handoff.
 - **Standing/exclusions:** discrete candidate activity specialisation, not an
   independent activity framework parallel to Ergo/Ergon. DigitalTwin adds only
   genuinely Twin-specific behaviour instead of duplicating platform mechanisms;
@@ -255,24 +262,21 @@ under Mneme below.
 
 ### C06 — Praxis
 
-- **Role/responsibility:** documented workflow blueprint, composition and execution
-  design area. [L04/L18/L19](sources.md#l04) distinguish declarative metadata and
-  runtime routes; [A04](sources.md#a04) also uses Assurance Praxis for actual activity.
-- **Features/contained constructs:** definition loading/validation/seeding, ordered
-  steps, dependencies/conditions, subscriptions and trigger/gateway selection,
-  dynamic composition/reload and checkpoint support. TaskSequence,
-  PraxisDefinition and PraxisImplementation are documented support constructs.
-- **Information:** workflow definitions/configuration, activity references, topics
-  and subscriptions; actual-execution information is carried through Pragma.
-- **Persistence:** active definition caches and non-FHIR operations persistence
-  are described. Authoritative definition lifecycle/version and cache recovery
-  allocation are incomplete (CDG-06).
-- **Collaboration/exclusions:** supplies composition to Ponos/Erga, uses Mneme and
-  definition support. Legacy blueprint model excludes worker pools, payload logic,
-  live transaction state and broker sessions.
-- **Standing:** candidate with explicit CDG-01. DAG, ordered sequence, runtime
-  orchestrator and actual Praxis activity are not silently made aliases. Parent
-  hierarchy, composition identity and definition-to-instance semantics remain open.
+- **Adjudicated relationship:** Praxis may have **Pathway [0..1]** under
+  [U04](sources.md#u04). No broader Praxis semantics are established by this task.
+- **Historical candidate descriptions:** L04/L18/L19 describe blueprint loading,
+  seeding, ordering/dependencies/conditions, runtime routes, TaskSequence,
+  PraxisDefinition and PraxisImplementation; A04 uses Assurance Praxis for actual
+  assurance activity. These competing descriptions are retained as provenance,
+  not an accepted definition or composition/instance model.
+- **Information/persistence:** historical working definitions/caches and operations
+  persistence remain candidates with definition governance, version binding,
+  lifecycle and recovery unresolved (CDG-01/06). Publishing, Subscription and
+  Pattern semantics now belong with Mneme rather than this historical allocation.
+- **Exclusions/standing:** Praxis is not equated with Pathway, Route, a sequence
+  of Ergo/Ergon, a runtime engine or a Pub/Sub graph. Ponos execution, Mneme
+  information management and Petasos handoff remain distinct. A new Praxis
+  definition requires separate bounded adjudication.
 
 ## Information management, preservation and middleware
 
@@ -281,19 +285,23 @@ under Mneme below.
 ### C28 — Pragma Management
 
 - **Role/responsibility:** Mneme-associated information-management responsibility
-  area containing PragmaFactory C08 and Pragma C07. [U02](sources.md#u02).
+  area containing PragmaFactory C08, Pragma C07 and Publishing C36, Subscription
+  C37, Pattern C38 responsibilities. [U02/U03/U05](sources.md#u05).
   This is logical responsibility containment, not a required process/service.
 - **Features/information:** creation/initialisation through PragmaFactory and
   governed management of Pragma representations and common process-management,
   assurance, reporting and platform integration associated with that information.
-  Stimulus/Effector and candidate Dokimasia Pragma semantic roles reuse these
-  facilities instead of requiring specialist equivalents.
+  Publishing/Subscription definitions, Pattern semantics/evaluation, matching,
+  selection, information eligibility and eligible consumer/destination relationships
+  belong here. Stimulus/Effector and candidate Dokimasia Pragma semantic roles
+  reuse these facilities instead of requiring specialist equivalents.
 - **Persistence/collaboration:** active use/coordination through Mneme; authoritative
   durable establishment through Mnemosyne. Ponos executes, Petasos provides
   messaging/recoverable handoff and Ergon supplies bounded activity behaviour.
-- **Standing/exclusions:** candidate responsibility allocation established by U02;
+- **Standing/exclusions:** candidate responsibility allocations established by
+  U02/U03/U05;
   detailed management contracts and persistence structures remain unresolved.
-  Execution of, behaviour upon, or transport of managed information does not
+  Execution of, behaviour upon, or handoff of managed information does not
   confer information-management responsibility for that information.
 
 <a id="c07"></a>
@@ -306,7 +314,11 @@ under Mneme below.
   [U01/U02](sources.md#u02); [L05/L01/L19](sources.md#l05) retain carrier provenance.
 - **Features/contained constructs:** identity/correlation/causation, inputs/outputs
   or payload references, context, state/checkpoints, parent association and
-  destination-specific delivery observations.
+  governed observations concerning destination delivery. Operational handoff/
+  delivery obligation state belongs to Petasos; exact observation relationships
+  remain unresolved (CDG-18). Every Pragma contains or references a payload such
+  as an Information Unit; metadata/Container/Content distinctions are described
+  in the [semantic shape](pathways-journeys-and-handoff.md#pragma-and-topic).
 - **Information:** PragmaCheckpoint, ErgonPayload/references, execution metadata
   and work-related information. Both ActionableTask and FulfillmentTask have
   candidate Pragma representation with WorkOrder/ToDo/Stimulus/Effector forms;
@@ -360,7 +372,10 @@ under Mneme below.
   coordination, reconstruction/convergence; governed facades C11. Active resource,
   task, definition and telemetry cache groupings are historical structure candidates.
   Pragma Management C28 contains PragmaFactory and Pragma under U02; this
-  information-management responsibility remains distinct from activity execution.
+  information-management responsibility includes Publishing/Subscription/Pattern
+  semantics, eligibility and selection under U05. Mneme coordinates governed
+  information management, selection, publication, subscription and availability;
+  Ponos coordinates execution of the activities that consume that information.
 - **Information:** active representations of governed clinical/administrative/
   operational information; activity carriers and definition working sets where
   supported. Information is not intrinsically transient because accessed actively.
@@ -377,23 +392,31 @@ under Mneme below.
 
 ### C10 — Petasos
 
-- **Role/responsibility:** internal opaque messaging and durable transfer of work
-  between independently recoverable activities. [A01 AX-10](sources.md#a01),
-  [L13 ADR-014–017](sources.md#l13), [L29](sources.md#l29).
-- **Features/contained constructs:** producer/consumer/destination contracts,
-  framing/envelope handling, correlation, duplicate detection, durable acceptance,
-  consumption/rejection, redelivery/dead-letter handling, designated replay and
-  bounded backlog/transport metrics. Broker adapters are implementation support.
-- **Information:** PetasosMessage opaque binary/text payload plus message identity,
-  source/destination, schema/type, correlation/causation and context metadata.
-- **Persistence:** recoverable in-flight work at explicit transition points;
-  messaging journal/queue structures are documented mechanisms. Not the durable
-  repository for committed application information or permanent evidence.
-- **Collaboration/exclusions:** ingress → execution, execution → publication,
-  collaboration requests/events and evidence handoff where documented. Does not
-  parse clinical business content, own workflow rules or clinical persistence.
-- **Standing:** recoverability responsibility established; detailed handoff,
-  deduplication/replay/uncertain-effect contracts incomplete, CDG-16/17/19/34.
+- **Role/responsibility:** shared persistent/recoverable messaging and handoff
+  between Harmonia processing boundaries, without acquiring information/activity
+  semantics or information-management authority. [U05](sources.md#u05) corrects
+  historical work-payload language in L13/L29 while preserving AX-10 recoverability.
+- **Features:** persistent handoff obligations, bounded backlog, queue/destination
+  mechanics, identity/correlation and handoff metadata, delivery observation,
+  handoff redelivery/recovery/dead-letter semantics and designated replay support.
+  Duplicate/replay and uncertain-effect contracts remain CDG-16/17/19/34.
+- **Information:** for Pragma processing, identity/reference plus metadata needed
+  to resolve information through Mneme and effect/recover handoff; the managed
+  Pragma/Information Unit payload remains through Mneme. Exact handoff structure
+  and destination/channel naming remain unresolved. PetasosMessage/API and opaque
+  binary/text mechanisms do not establish payload ownership or semantic eligibility.
+- **Persistence:** persists the handoff obligation and necessary recovery state;
+  not the authoritative durable repository for referenced managed information,
+  which remains Mnemosyne's responsibility, or automatically permanent evidence.
+- **Collaboration/exclusions:** serves ingress, execution, publication, Agora and
+  other established messaging collaborations, including Communication Event and
+  Notification Event forms. Their detailed semantics remain open; Petasos is not
+  ActionableTask-only and no universal reference-only message format is imposed.
+  For ActionableTask handoff it offers the opportunity to undertake work; consumers
+  resolve through Mneme and establish distinct FulfillmentTasks before execution.
+  It does not own Publishing/Subscription/Pattern selection or Ponos execution.
+- **Standing:** responsibility adjudicated for the candidate; detailed handoff,
+  recovery, acknowledgement, event-form and fan-out contracts remain unresolved.
   Internal middleware belongs in Domain05; external protocols remain Domain06.
 
 <a id="c11"></a>
@@ -609,13 +632,16 @@ approval rules and durable UI state, are unknown.
 ### C20 — Dokimasia
 
 - **Role/features:** specialised Ponos-based execution component within Energeia
-  coordinating independent governed assurance activity over a subject.
+  coordinating independent governed assurance activity over a subject. Journey
+  C35 is the common observed-progression subject/substrate for Pathway and Pub/Sub
+  assurance under U04/U05; this does not limit all assurance subjects to Journey.
   [U02](sources.md#u02) settles the candidate specialisation relationship; actual
   Assurance Praxis evaluates available
   evidence against applicable basis and produces governed assurance information.
   [A04 §2](sources.md#a04), [L31](sources.md#l31).
 - **Information:** evidence/context/basis and assurance assessment/finding/outcome
-  areas are documented; detailed Data Objects, identity and persistence are
+  areas are documented. Journey observations remain distinct from inferred
+  interpretation and assurance findings; detailed Data Objects, identity and persistence are
   unallocated. Candidate vocabulary is not promoted into an Information Family.
 - **Activity/collaboration:** executes discrete Dokimasia Ergon C26 specialisations,
   including candidate AI Assurance Ergon C27. Reuses Ponos execution, Ergo/Ergon
@@ -700,3 +726,100 @@ neither a new repository nor detailed Pragma/outcome lifecycle semantics.
   Mneme or promoting tool-local state to truth (CDG-11/28).
 - **Standing:** candidate support features and implementation/navigation detail;
   exact APIs, packaging and runtime platform remain downstream concerns.
+
+## Interface, control, observational and contained logical constructs
+
+The following IDs are navigation aids. They classify adjudicated constructs;
+they do not manufacture independent components or deployment boundaries.
+[U04/U05](sources.md#u04) and the [shared semantic view](pathways-journeys-and-handoff.md)
+govern. Detailed control/definition contracts remain CDG-01/06/36 and Journey
+contracts remain CDG-38; no final physical representation is selected.
+
+<a id="c29"></a>
+
+### C29 — PathwayEndpoint
+
+Application Interface conceptually equivalent to ArchiMate ApplicationInterface.
+Every Ergon exposes IngressEndpoint and EgressEndpoint. These surfaces do not
+expose internal processing; endpoint identity and technical interfaces remain open.
+
+<a id="c30"></a>
+
+### C30 — PathwayElement
+
+Generic representation of information/activity flow between and across component
+boundaries, specialising at least as PathwaySegment and PathwayTraversal. It is a
+behavioural/flow abstraction, not an Application Component or a final Journey schema.
+
+<a id="c31"></a>
+
+### C31 — PathwaySegment
+
+Inter-component flow from Ergon A.EgressEndpoint to Ergon B.IngressEndpoint;
+conceptually comparable to ArchiMate ApplicationInteraction between ApplicationInterfaces.
+Segments provide the elements of Route's ordered routing/control sequence.
+
+<a id="c32"></a>
+
+### C32 — PathwayTraversal
+
+Intra-component passage from an Ergon's IngressEndpoint to its EgressEndpoint.
+It establishes component traversal while preserving internal business-logic
+encapsulation; it does not become a Route element merely for reporting continuity.
+
+<a id="c33"></a>
+
+### C33 — Route
+
+Routing/control construct: an ordered sequence of PathwaySegment [1..N].
+Route is not redefined as generic PathwayElement or an observed Journey graph.
+Representation and management/preservation contracts remain unresolved.
+
+<a id="c34"></a>
+
+### C34 — Pathway
+
+Defines controlled interaction between PathwayEndpoints and available Route(s).
+Praxis may have Pathway [0..1]; no broader Praxis model follows. Publish/Subscribe
+is a distinct progression mechanism and need not have a Pathway.
+
+<a id="c35"></a>
+
+### C35 — Journey
+
+First-class observational construct / candidate Application Data Object: governed
+observed progression reconstructed from available execution evidence, whether
+Pathway-controlled, Pub/Sub or mixed. It may be graph-shaped and have no Pathway.
+Primary reporting, monitoring, analysis and assurance subject; Dokimasia may
+interpret it under applicable basis without replacing observations with inference.
+Construction/management owner, lifecycle, persistence, evidence/causal schema and
+inferred-relationship representation remain unresolved ([CDG-38](gaps.md#journey-contracts)).
+Journey is neither an engine, AI narrative nor automatic permanent AuditEvent.
+
+<a id="c36"></a>
+
+### C36 — Publishing
+
+Contained Mneme Pragma Management semantic responsibility and governed provider
+definition: Pattern-based filtering can prevent egress Pragma being made available
+through publication when a Pattern matches. Governs provider eligibility, distinct
+from consumer interest. Definition lifecycle/persistence and evaluation detail remain open.
+
+<a id="c37"></a>
+
+### C37 — Subscription
+
+Contained Mneme Pragma Management semantic responsibility and governed consumer
+definition: requests available Pragma matching Pattern be made available/forwarded
+to the consumer input queue or equivalent destination. Mneme matches/selects;
+Petasos effects resulting handoff. Registration/lifecycle and detailed fan-out remain open.
+
+<a id="c38"></a>
+
+### C38 — Pattern
+
+Contained Mneme semantic evaluation responsibility / governed selection construct
+used by Publishing and Subscription. May evaluate established Pragma, Unit-level
+Container and Content metadata, Topic, source and other governed characteristics.
+Topic is classification/metadata rather than a destination. Final Pattern language,
+attributes/operators, precedence, query/index and technology remain unresolved.

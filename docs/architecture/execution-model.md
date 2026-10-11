@@ -76,12 +76,30 @@ graph TD
 
 Ponos bridges messaging queues into Apache Camel route execution pipelines using two specialized conduits:
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Persistent handoff and governed resolution](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+- [State and recovery responsibility separation](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#state-and-recovery)
+- [Retained continuation and representation contracts](../markdown/05-information-systems-architecture/gaps.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### 2.1 Petasos-to-Exchange Conduit (`PetasosQueueToExchangeConduit`)
 Consumes standard `PetasosMessage` envelopes from configured transport queues:
 1. Receives message via `petasos.receive(queue, handler)`.
 2. Converts `PetasosMessage` into canonical `Pragma` instance (`convertToPragma`), maintaining correlation and causation IDs.
 3. Forwards `Pragma` to `PragmaWorkflowDispatcher`.
 4. If workflow succeeds, invokes `context.acknowledge()`; if execution fails, invokes `context.reject()`.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### 2.2 Task Processor Route Builder (`TaskProcessorRouteBuilder`)
 Implements lightweight Camel JMS routes:
@@ -119,6 +137,19 @@ graph TD
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Persistent handoff and governed resolution](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+- [State and recovery responsibility separation](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#state-and-recovery)
+- [Retained continuation and representation contracts](../markdown/05-information-systems-architecture/gaps.md)
+
+```text
+---------------------------------------------------------
+```
+
 ## 4. Pragma Task State Machine & Checkpointing `[IMPLEMENTED]`
 
 The canonical `Pragma` advances through deterministic state transitions:
@@ -153,6 +184,11 @@ pragma.addCheckpoint(cp);
 ```
 - **Durability**: Checkpoints are written to Mneme (`task-cache`) and persisted asynchronously to Mnemosyne PostgreSQL via write-behind SPI.
 - **Granular Fan-Out Tracking (REC-002)**: Enables operational consoles (`iris-console`) to display real-time per-destination delivery progress for complex multi-cast workflows.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

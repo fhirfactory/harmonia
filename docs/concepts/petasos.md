@@ -1,6 +1,23 @@
 # Concept: Petasos `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — shared persistent messaging and handoff](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Persistent handoff without information ownership](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+
+```text
+---------------------------------------------------------
+```
+
 Petasos is Harmonia's high-availability messaging and event transport framework, providing guaranteed, fault-tolerant message delivery while isolating upper application tiers from underlying broker implementations.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -62,6 +79,18 @@ Petasos separates abstract message passing from physical broker connectivity acr
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — shared persistent messaging and handoff](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Persistent handoff without information ownership](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Petasos Owns
 - Pure transport interfaces (`Petasos`, `PetasosProducer`, `PetasosConsumer`, `PetasosDestination`).
 - Transport envelope models (`PetasosMessage`) and wire serialization.
@@ -69,6 +98,11 @@ Petasos separates abstract message passing from physical broker connectivity acr
 - ActiveMQ Artemis cluster configuration, connection pools, and failover parameters.
 - Dead-Letter Queue (DLQ) routing policies and redelivery limit enforcement.
 - Broker metrics collection (`PetasosMetrics`).
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Petasos Explicitly Does NOT Own (Anti-Responsibilities)
 ```text

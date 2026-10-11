@@ -1,6 +1,24 @@
 # Concept: Pragma `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pragma payload and Topic semantics](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pragma-and-topic)
+- [Separate information, handoff, undertaking and execution state](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#state-and-recovery)
+- [C07 — managed Pragma](../markdown/05-information-systems-architecture/component-register.md#c07)
+
+```text
+---------------------------------------------------------
+```
+
 A Pragma is Harmonia's canonical task execution state envelope, encapsulating the live runtime context, security assertions, correlation identifiers, and granular checkpoints of an ongoing clinical integration transaction.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -12,6 +30,19 @@ A Pragma is Harmonia's canonical task execution state envelope, encapsulating th
 - **Architectural Rationale**: In distributed message-driven systems, an event cannot merely be a bag of uncontextualized clinical data. It requires an authoritative, objective state envelope that records *what has been done*, *who authorized it*, *which checkpoints were passed*, and *what remains to be accomplished*. The Pragma is that authoritative record.
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pragma payload and Topic semantics](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pragma-and-topic)
+- [Separate information, handoff, undertaking and execution state](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#state-and-recovery)
+- [C07 — managed Pragma](../markdown/05-information-systems-architecture/component-register.md#c07)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
@@ -57,6 +88,11 @@ A Pragma is an immutable-friendly execution envelope that travels alongside the 
 |                                                                                       |
 +---------------------------------------------------------------------------------------+
 ```
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -121,9 +157,26 @@ Superseded by:
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pragma payload and Topic semantics](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pragma-and-topic)
+- [Separate information, handoff, undertaking and execution state](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#state-and-recovery)
+- [C07 — managed Pragma](../markdown/05-information-systems-architecture/component-register.md#c07)
+
+```text
+---------------------------------------------------------
+```
+
 ## 5. Architectural Invariant: Zero-PHI Context Safety `[IMPLEMENTED]`
 
 Under Harmonia's **Zero-PHI Logging Invariant**:
 - A `Pragma` contains only correlation UUIDs, security assertions, timestamps, and payload keys.
 - Clinical payload data (patient names, dates of birth, diagnoses) is stored in the backing cache or database, never embedded directly in the `Pragma` header fields.
 - When `Pragma` state is emitted in standard operational logs (`INFO`/`WARN`), zero PHI is leaked to monitoring consoles.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

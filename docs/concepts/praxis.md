@@ -1,6 +1,23 @@
 # Concept: Praxis `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C06 — Praxis retained uncertainty](../markdown/05-information-systems-architecture/component-register.md#c06)
+- [Pathway model and Praxis Pathway cardinality](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pathway-model)
+
+```text
+---------------------------------------------------------
+```
+
 Praxis is Harmonia's workflow orchestration and blueprint definition component within the Energeia subsystem, responsible for defining declarative execution DAGs, stage transitions, and pipeline dependencies for multi-step clinical processes.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -18,7 +35,24 @@ Praxis is Harmonia's workflow orchestration and blueprint definition component w
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C06 — Praxis retained uncertainty](../markdown/05-information-systems-architecture/component-register.md#c06)
+- [Pathway model and Praxis Pathway cardinality](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pathway-model)
+
+```text
+---------------------------------------------------------
+```
+
 Praxis specifies the structural blueprint of a clinical workflow as a Directed Acyclic Graph (DAG) of activities:
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ```
 +---------------------------------------------------------------------------------------+

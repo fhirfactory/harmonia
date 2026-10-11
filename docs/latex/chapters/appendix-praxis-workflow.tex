@@ -48,6 +48,15 @@ Workflow sequences are architected into two distinct layers:
     \item \textbf{Runtime Execution Layer (\texttt{PraxisImplementation} / \texttt{Praxis})}: Residing in the \texttt{energeia/praxis} engine (\texttt{net.fhirfactory.harmonia.praxis.sequence}), \texttt{PraxisImplementation} extends \texttt{PraxisDefinition} and acts as an Apache Camel \texttt{RouteBuilder}. It dynamically resolves concrete \texttt{@Dependent} \texttt{ErgonBase} activity beans from the CDI container, binds transactional \texttt{PraxisCheckpointManager} interceptors, and compiles the dynamic pipeline routing logic into the active \texttt{CamelContext}.
 \end{itemize}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md\#publication-and-selection}{Mneme publication and selection}
+  \item \href{../../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md\#pragma-and-topic}{Topic as governed classification metadata}
+  \item \href{../../markdown/05-information-systems-architecture/gaps.md}{Retained Pattern and fan-out contracts}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 \subsection{Topic Subscription Matching \& Hierarchical Routing}
 \label{subsec:praxis_topic_subscriptions}
 
@@ -70,6 +79,9 @@ A \texttt{TopicSubscription} defines matching rules with wildcard capabilities (
     \item \textbf{Wildcard Subscriptions}: Matches all elements under a model or domain (e.g., \texttt{HIE/HL7\_V2/ADT\_*/\allowbreak *}).
     \item \textbf{Priority Resolution}: When an incoming \texttt{Pragma} matches multiple registered Praxis sequences, the dispatcher routes the task based on explicit sequence priority weights or target gateway instance affinity.
 \end{itemize}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \subsection{Audit Checkpoint Lifecycle across Execution Boundaries}
 \label{subsec:praxis_checkpoint_lifecycle}
