@@ -1,6 +1,24 @@
 # Energeia Subproject Reference: Workflow & Task Processing `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Domain05 — corrected structural hierarchy](../markdown/05-information-systems-architecture/candidate-system-map.md#structural-hierarchy)
+- [Domain05 — distinct Energeia activity/execution responsibilities](../markdown/05-information-systems-architecture/component-register.md#activity-and-execution-responsibilities-within-energeia)
+- [C28 — Mneme Pragma Management](../markdown/05-information-systems-architecture/component-register.md#c28)
+
+```text
+---------------------------------------------------------
+```
+
 Energeia coordinates clinical integration activities and executes asynchronous workflow task sequences across the Harmonia platform. It comprises workers (**Ponos**), discrete activity units (**Erga**), workflow sequence blueprints (**Praxis**), and canonical task state envelopes (**Pragma**).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -102,12 +120,30 @@ energeia/
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Domain05 — distinct Energeia activity/execution responsibilities](../markdown/05-information-systems-architecture/component-register.md#activity-and-execution-responsibilities-within-energeia)
+- [C28 — Mneme Pragma Management](../markdown/05-information-systems-architecture/component-register.md#c28)
+- [C06 — Praxis remains separately unadjudicated](../markdown/05-information-systems-architecture/component-register.md#c06)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Energeia Owns
 - Task sequence blueprint definitions (`Praxis`, `TaskSequenceLoader`).
 - Discrete activity processors (`ErgonBase`, `AdtDistributionErgon`).
 - Asynchronous task processing WorkEngine runtime (`Ponos`).
 - Runtime task state execution and `PragmaCheckpoint` status management (REC-002).
 - Dynamic reload and cache synchronization CLI (`ponos-cli`).
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Energeia Explicitly Does NOT Own (Anti-Responsibilities)
 - Direct MLLP wire socket listening (owned by Pylai).

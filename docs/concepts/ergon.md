@@ -1,6 +1,23 @@
 # Concept: Ergon `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C23 — Ergon](../markdown/05-information-systems-architecture/component-register.md#c23)
+- [C24 — Erga](../markdown/05-information-systems-architecture/component-register.md#c24)
+
+```text
+---------------------------------------------------------
+```
+
 An Ergon (plural: *Erga*) is Harmonia's atomic, single-responsibility activity execution unit within the Energeia subsystem, responsible for executing discrete clinical transformations, validations, or routing decisions.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -44,10 +61,28 @@ An Ergon represents a pure functional activity step within a workflow pipeline. 
 +---------------------------------------------------------------------------------------+
 ```
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C23 — Ergon](../markdown/05-information-systems-architecture/component-register.md#c23)
+- [C24 — Erga](../markdown/05-information-systems-architecture/component-register.md#c24)
+- [CDG-05 — retained behavioural-contract uncertainty](../markdown/05-information-systems-architecture/gaps.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### Core Characteristics of an Ergon:
 1. **Idempotence**: Re-executing an Ergon with the same `Pragma` input produces identical outputs without duplicate clinical side effects.
 2. **Deterministic Checkpointing**: Prior to exiting, the Ergon records an updated `PragmaCheckpoint` detailing the step outcome, execution duration, and destination statuses.
 3. **Pure Composition**: Erga do not call other Erga directly; their sequence is orchestrated strictly by **Praxis** blueprints.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

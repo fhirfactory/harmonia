@@ -71,7 +71,9 @@ read together with the [feature](candidate-feature-map.md) and
   subcomponent hierarchy and evidence-access services are unknown.
 - **Information:** AuditEvents, provenance and links to significant transitions/
   original processing attempts; not every implementation checkpoint or policy
-  evaluation is durable evidence.
+  evaluation is durable evidence. Dokimasia's governed assurance record/result
+  is authoritative evidence of its assurance activity; no separate AuditEvent
+  for its own execution is generated ([terminal rules](#dokimasia-terminal-boundaries)).
 - **Persistence:** evidence permanence/immutability is documented; exact repository,
   schema and collaboration with Mnemosyne are incomplete. Historical FHIR and
   operations allocations compete (CDG-13/14).
@@ -81,15 +83,24 @@ read together with the [feature](candidate-feature-map.md) and
 - **Standing:** high-level RADS responsibility plus ADR candidate detail; not
   rejected because the legacy subproject inventory omits its name.
 
-## Activity, composition and task constructs
+## Activity and execution responsibilities within Energeia
+
+Energeia is the activity/execution architectural subsystem under
+[U02](sources.md#u02). Ponos, Ergo, Ergon and Erga are distinct responsibilities
+within it. Specialised execution/activity components belong to that family;
+specialisation does not mean runtime containment. No process, deployment unit
+or programming-language inheritance is prescribed. Praxis remains a separately
+unresolved composition design area; Pragma information management is recorded
+under Mneme below.
 
 <a id="c04"></a>
 
 ### C04 — Ponos
 
-- **Role/responsibility:** governed execution and observable progression of
-  operational activity; documented as WorkEngine/worker design within Energeia.
-  [A02](sources.md#a02), [L02/L01/L23](sources.md#l02).
+- **Role/responsibility:** reusable execution framework/component pattern within
+  Energeia for governed execution and observable activity progression.
+  [U02](sources.md#u02) adjudicates this role; [A02](sources.md#a02) and
+  [L02/L01/L23](sources.md#l02) retain responsibility context and historical detail.
 - **Features/contained constructs:** work ingress and dispatcher, workflow/sequence
   resolution, activity invocation, execution concurrency/timeouts, retry and
   dead-letter escalation, checkpoint coordination and administrative inspection.
@@ -99,38 +110,146 @@ read together with the [feature](candidate-feature-map.md) and
 - **Persistence:** coordinates recoverable handoff through Petasos and governed
   information change through Mneme/Mnemosyne. Does not establish durable state
   by completing an activity or writing a checkpoint to a cache.
-- **Collaboration/exclusions:** uses Praxis, Erga, Themis, Mneme and Petasos.
+- **Collaboration/exclusions:** tightly coupled to peer Ergo/Ergon responsibilities,
+  executing/managing bounded Ergon activity conforming to the Ergo contract;
+  does not structurally contain Ergo or Ergon. Uses Praxis, Erga, Themis, Mneme
+  Pragma Management and Petasos. DigitalTwin C19 and Dokimasia C20 specialise/
+  reuse this pattern; they are not children inside a Ponos runtime. Conceptual
+  supertype language does not mandate literal implementation inheritance.
   Does not own workflow definitions, concrete domain logic, broker lifecycle,
   external standards/transport or universal clinical-work determination.
-- **Standing:** established execution responsibility, candidate detailed model.
-  No Dokimasia execution allocation; CDG-03/08/16–18 retain incomplete control
+- **Standing:** specialisation relationships adjudicated for the candidate by U02;
+  detailed model remains candidate. CDG-03/08/16–18 retain incomplete control
   and continuation semantics. Numerical worker/retry defaults are not baselined.
 
 <a id="c05"></a>
 
-### C05 — Ergo / Ergon / Erga
+### C05 — Ergo
 
-- **Role/responsibility:** developer-defined activity behaviour in a governed
-  loading → logic → unloading boundary. Legacy material uses Ergo as the
-  activity-business-logic term and Ergon (plural Erga) for discrete activity units.
-  [A05/U01](sources.md#a05), [L03/L19](sources.md#l03).
-- **Features/contained constructs:** transformation/mapping, field validation,
-  identifier/reference checking, enrichment, order routing, result processing,
-  fan-out and per-resource registry change activities. `ErgonBase` is documented
-  contract support, not a separate logical activity owner.
-- **Information:** acts upon Pragma inputs, resource models and context; generates
-  resources, outputs, checkpoints and destination observations. **No discrete
-  Ergon Information Resource exists merely because the behaviour is an Ergon.**
-- **Persistence:** requests governed persistence of resulting information; no
-  independent raw database ownership or universal transaction boundary is established.
-- **Collaboration/exclusions:** composed using Praxis, executed with Ponos,
-  uses Calliope/Themis/Mneme/Petasos; not worker allocation, transport or durable
-  storage infrastructure. Optional AI can be intentionally invoked without
-  transferring authority or defining Ergon identity.
-- **Standing:** behavioural standing adjudicated by U01; detailed contracts remain
-  candidate. Atomic/pure/idempotent claims coexist with state-changing examples
-  and varied branch allocation, CDG-05. Names are retained without inferring equivalence
-  to a Task definition, undertaking, Information Unit or FHIR resource.
+- **Role/responsibility:** reusable conceptual activity pattern and
+  platform-integration contract for conforming Ergon, within Energeia.
+  [U02](sources.md#u02), preserving [A05](sources.md#a05).
+- **Features/contract:** Context Loading → defined logic → Context Unloading;
+  common process-management, Petasos adapters/platform integration, assurance
+  integration, logging/observability, reporting, checkpoint/platform integration
+  and other common activity facilities. Integration points are architectural
+  contracts, not selected APIs or technologies.
+- **Information/persistence:** governs the activity boundary around information
+  use/production; Mneme manages information and Mnemosyne establishes durable
+  state. No independent raw database or universal transaction boundary is assigned.
+- **Collaboration/exclusions:** tightly coupled to Ponos execution, realised/
+  reused by Ergon and its specialisations, using Calliope/Themis/Mneme/Petasos.
+  Ergo is not the execution framework, an Erga collection or a synonym for Ergon.
+- **Standing:** responsibility distinction adjudicated by U02; detailed contracts
+  remain candidate. C23/C24 now separately record Ergon and Erga; the prior C05
+  combined entry is not retained as a single component.
+
+<a id="c23"></a>
+
+### C23 — Ergon
+
+- **Role/responsibility:** a single well-defined software component encapsulating
+  a bounded fine-grained task-completion activity set within the Ergo contract,
+  executed/managed through Ponos. [U01/U02](sources.md#u02), [L03/L19](sources.md#l03).
+- **Features:** specialised transformation/mapping, validation, identifier/reference
+  checking, enrichment, routing, result processing, fan-out or registry-change
+  behaviour. Reuses C05 common facilities; `ErgonBase` is historical contract
+  support, not an architectural inheritance requirement.
+- **Information:** acts upon or generates Pragma, payload/resource information,
+  outputs, checkpoints and observations through governed contracts. **No discrete
+  Information Architecture representation or Ergon Information Resource exists
+  merely because the component is an Ergon.** Activity is not information about it.
+- **Persistence/collaboration:** requests governed information use/change through
+  Mneme; does not own Pragma management or durable state. Erga collects components;
+  Ponos executes them; Petasos transfers work. Praxis relationship detail remains open.
+- **Specialisations:** Behaviour C25, Dokimasia Ergon C26 and, through the latter,
+  AI Assurance Ergon C27. They retain normal Ergo/Ergon facilities, constrained
+  by the specialised role and Dokimasia's terminal rules where applicable.
+- **Standing/exclusions:** bounded behaviour established for the candidate;
+  competing atomic/pure/idempotent/branching claims remain CDG-05. An ordinary
+  Ergon may intentionally invoke an AI service internally as an implementation
+  choice without becoming AI Assurance Ergon or transferring authority.
+
+<a id="c24"></a>
+
+### C24 — Erga
+
+- **Role/responsibility:** meaningful collections of Ergon within Energeia,
+  distinct from the Ergo contract, an individual Ergon or the Ponos execution
+  framework. [U02](sources.md#u02).
+- **Features:** executable assembly/hubs; management, capture and observation of
+  multiple concurrent Ergon, including concurrent instances of the same type;
+  libraries of conceptually related Ergon with coherent change management,
+  testing, versioning and release constraints. This is more than an informal
+  plural or an arbitrary list of Ergon.
+- **Information/persistence:** assembly/library and concurrent activity information
+  are relevant concerns; detailed Data Objects, identity and lifecycle are not
+  established here. Collection does not confer information-management or durable
+  persistence responsibility for the information its activities use.
+- **Collaboration/exclusions:** collects Ergon conforming to Ergo and collaborates
+  with Ponos execution and common platform management/observation. Full Praxis
+  composition relationships remain for separate adjudication; no new engine,
+  deployment hub or collection-wide transaction boundary is prescribed.
+- **Standing:** distinct candidate responsibility adjudicated by U02; detailed
+  assembly/library contracts remain unfinalised.
+
+<a id="c25"></a>
+
+### C25 — Behaviour
+
+- **Role/features:** Ergon specialisation for DigitalTwin operation. It inherits/
+  reuses Context Loading and Context Unloading, process-management mechanisms,
+  Petasos/platform integration, assurance integration, logging/observability,
+  reporting, checkpoint/platform integration and other common Ergo/Ergon facilities.
+  [U02](sources.md#u02), [common specialisation principle](README.md#specialisation-principle).
+- **Information/persistence/collaboration:** operates on governed entity context
+  and candidate Stimulus/Effector Pragma representations within DigitalTwin's
+  entity-specific execution; Mneme manages information, Mnemosyne establishes
+  durable state and Petasos handles recoverable transport.
+- **Standing/exclusions:** discrete candidate activity specialisation, not an
+  independent activity framework parallel to Ergo/Ergon. DigitalTwin adds only
+  genuinely Twin-specific behaviour instead of duplicating platform mechanisms;
+  Behaviour acquires no standalone Information Resource merely by being activity.
+
+<a id="c26"></a>
+
+### C26 — Dokimasia Ergon
+
+- **Role/features:** discrete Ergon specialisation representing a bounded assurance
+  activity executed within a Dokimasia workflow. Reuses normal Ergo/Ergon
+  execution, Context Loading/Unloading, process-management, integration,
+  checkpoint, logging/observability and reporting contracts. [U02](sources.md#u02).
+- **Information/persistence/collaboration:** uses governed assurance input,
+  applicable basis and evidence, and may produce assurance information through
+  Mneme Pragma Management. No detailed schema, evidence-access API, storage or
+  additional Information Resource is inferred. Executed through Dokimasia's
+  specialised Ponos model.
+- **Standing/exclusions:** discrete candidate component responsibility established;
+  subject to [Dokimasia terminal constraints](#dokimasia-terminal-boundaries).
+  AI Assurance Ergon C27 specialises this component. Other potential assurance
+  classifications, including deterministic/human subclasses, require adjudication.
+
+<a id="c27"></a>
+
+### C27 — AI Assurance Ergon
+
+- **Role/features:** candidate Dokimasia Ergon specialisation where AI-based
+  processing is itself an explicit governed participant in Dokimasia workflow.
+  Its existence and discrete responsibility are established by [U02](sources.md#u02);
+  its detailed Information Systems architecture is not finalised.
+- **Distinction:** ordinary Ergon may call AI internally as an implementation
+  choice. AI Assurance Ergon makes that AI activity an explicit governed assurance
+  workflow activity. This allocates neither every use of AI to this component
+  nor a mandatory AI step to every Dokimasia workflow.
+- **Information/persistence/collaboration:** inherits C26/C23/C05 contracts and
+  common Pragma Management, process-management, platform integration and reporting.
+  AI invocation confers no originating domain or assurance-determination authority
+  on the service/model. Context, disclosure, results, provenance/evidence and
+  detailed workflow interactions require [CDG-35 discovery](gaps.md#dokimasia-ai-discovery).
+- **Standing/exclusions:** established component boundary with candidate detailed
+  design; no LLM, agent framework, SDK, model, provider or service technology
+  selected. Discovery precedes final implementation modelling. Inherits both
+  Dokimasia terminal rules; unresolved design does not invalidate its boundary.
 
 <a id="c06"></a>
 
@@ -155,20 +274,49 @@ read together with the [feature](candidate-feature-map.md) and
   orchestrator and actual Praxis activity are not silently made aliases. Parent
   hierarchy, composition identity and definition-to-instance semantics remain open.
 
+## Information management, preservation and middleware
+
+<a id="c28"></a>
+
+### C28 — Pragma Management
+
+- **Role/responsibility:** Mneme-associated information-management responsibility
+  area containing PragmaFactory C08 and Pragma C07. [U02](sources.md#u02).
+  This is logical responsibility containment, not a required process/service.
+- **Features/information:** creation/initialisation through PragmaFactory and
+  governed management of Pragma representations and common process-management,
+  assurance, reporting and platform integration associated with that information.
+  Stimulus/Effector and candidate Dokimasia Pragma semantic roles reuse these
+  facilities instead of requiring specialist equivalents.
+- **Persistence/collaboration:** active use/coordination through Mneme; authoritative
+  durable establishment through Mnemosyne. Ponos executes, Petasos provides
+  messaging/recoverable handoff and Ergon supplies bounded activity behaviour.
+- **Standing/exclusions:** candidate responsibility allocation established by U02;
+  detailed management contracts and persistence structures remain unresolved.
+  Execution of, behaviour upon, or transport of managed information does not
+  confer information-management responsibility for that information.
+
 <a id="c07"></a>
 
 ### C07 — Pragma
 
-- **Role/responsibility:** candidate task/context/progression carrier construct
-  associated with Energeia; model definitions also documented in Calliope.
-  [L05/L01/L19](sources.md#l05), [U01](sources.md#u01).
+- **Role/responsibility:** managed information / Application Data Object under
+  Mneme Pragma Management C28, used for task/context/progression representation.
+  It is not structurally in Energeia merely because execution operates on it.
+  [U01/U02](sources.md#u02); [L05/L01/L19](sources.md#l05) retain carrier provenance.
 - **Features/contained constructs:** identity/correlation/causation, inputs/outputs
   or payload references, context, state/checkpoints, parent association and
   destination-specific delivery observations.
 - **Information:** PragmaCheckpoint, ErgonPayload/references, execution metadata
   and work-related information. Both ActionableTask and FulfillmentTask have
   candidate Pragma representation with WorkOrder/ToDo/Stimulus/Effector forms;
-  work instance and undertaking remain distinct. Form detail is unknown.
+  work instance and undertaking remain distinct. Stimulus and Effector are
+  candidate Pragma specialisations; their schemas/lifecycles remain unknown.
+  Dokimasia also requires candidate Pragma specialisation semantics with assurance
+  request/input and assurance result/finding roles; names, schemas, cardinalities
+  and lifecycle models await adjudication (CDG-09). These specialisations reuse
+  common Pragma process-management, assurance, reporting and other management
+  facilities. They introduce no new Domain04 Information Concepts here.
 - **Persistence:** active cache and FHIR Task/non-FHIR operations representations
   appear in legacy design. Allocation, history, carrier variants and outcomes
   are unresolved (CDG-02/03/12/13); the envelope is not authoritative merely by existing.
@@ -184,20 +332,21 @@ read together with the [feature](candidate-feature-map.md) and
 
 ### C08 — PragmaFactory
 
-- **Role:** current candidate logical embodiment of ActionableTaskArchetype under
-  [U01](sources.md#u01). The meta-concept need not be a separately realised asset.
-- **Responsibilities/features:** detailed instantiation, selection, validation,
-  parameterisation and policy handling are **unknown**; the name alone establishes
-  no complete factory feature contract.
+- **Role:** candidate logical application embodiment associated with the
+  ActionableTaskArchetype meta-concept, within Mneme Pragma Management C28.
+  [U01/U02](sources.md#u02). The meta-concept is not itself an instantiated
+  Information Asset; the factory is not a new upstream Information Resource.
+- **Responsibilities/features:** creates/initialises appropriate Pragma
+  representations. Detailed instantiation/selection/validation, parameters and
+  policy contracts remain **unknown**; the basic responsibility does not finalise
+  a factory feature contract.
 - **Contained constructs/information/persistence:** subcomponents, realised
   definition Data Objects, inputs/outputs and persistence responsibility unknown.
-- **Collaborations/exclusions:** no consistent legacy contract or structural
-  allocation to Praxis/Ponos/Calliope was found. It must not be equated to a
+- **Collaborations/exclusions:** management allocation is established by U02;
+  detailed callers and contracts remain unresolved. It must not be equated to a
   TaskSequence seeder or PraxisDefinition by inference.
 - **Standing:** explicitly instructed candidate solution meaning, CDG-04; not
   invented from a matching class and not rejected for missing implementation.
-
-## Information management, preservation and middleware
 
 <a id="c09"></a>
 
@@ -210,6 +359,8 @@ read together with the [feature](candidate-feature-map.md) and
   availability, active context/relationship navigation, observation and concurrency
   coordination, reconstruction/convergence; governed facades C11. Active resource,
   task, definition and telemetry cache groupings are historical structure candidates.
+  Pragma Management C28 contains PragmaFactory and Pragma under U02; this
+  information-management responsibility remains distinct from activity execution.
 - **Information:** active representations of governed clinical/administrative/
   operational information; activity carriers and definition working sets where
   supported. Information is not intrinsically transient because accessed actively.
@@ -301,14 +452,16 @@ read together with the [feature](candidate-feature-map.md) and
   platform component. [L15/L18](sources.md#l15).
 - **Features/contained constructs:** synchronous read/search, request-for-change,
   per-resource validation/identifier uniqueness/reference checks, candidate automated
-  approval, durable commit and observable task progress. Seven per-resource Erga
-  and a registry change sequence are documented behavioural specialisations.
+  approval, durable commit and observable task progress. Seven per-resource Ergon
+  activities and a registry change sequence are documented behavioural specialisations;
+  Erga supplies the distinct collection/assembly/library responsibility.
 - **Information:** Practitioner, PractitionerRole, Organization, Location,
   HealthcareService, Endpoint and Group; change Pragma/input/output, errors and
   resulting versions. Endpoint and Group remain independently referenced resources.
 - **Persistence:** clinical/FHIR Mnemosyne slice; current-row versus history
   structures unclear. Iris is presentation-only; server-side governance remains
-  with Mnemosyne Clinical, Erga and Themis under AGENTS Invariant 3.
+  with Mnemosyne Clinical, Ergon activities within Erga, and Themis under
+  AGENTS Invariant 3.
 - **Collaboration/exclusions:** Pylai interaction, Themis, Petasos, Ponos/Praxis/Erga,
   Mneme/Mnemosyne and Iris Administration. Does not automatically own all provider,
   care-team or national-source facts, or imply an EMPI.
@@ -417,15 +570,21 @@ approval rules and durable UI state, are unknown.
   care-team source, projection providers and durable effect contract unresolved,
   CDG-19–23.
 
-## Cross-component constructs and support
+## Specialised execution components within Energeia
 
 <a id="c19"></a>
 
-### C19 — Digital Twin
+### C19 — DigitalTwin
 
-- **Role/features:** active entity-specific information/state/activity coordination
-  across Mneme/Ponos. Entity-related operational execution SHOULD use the entity's
-  Twin unless explicitly architecturally justified otherwise. [A02](sources.md#a02).
+- **Role/features:** specialised Ponos-based execution component for entity-specific
+  operational coordination within Energeia. [U02](sources.md#u02) establishes
+  specialisation/reuse, not containment by a Ponos runtime. The Digital Twin
+  responsibility in [A02](sources.md#a02) remains controlling: entity-related
+  execution SHOULD use the Twin unless explicitly justified otherwise.
+- **Twin-specific execution:** per-Twin queue pattern. Many Twins are compatible
+  with bounded execution resources; only Twins with pending work become active
+  and are serviced. No one-thread-per-Twin or permanently resident actor is implied.
+  Detailed scheduling, activation and coordination contracts remain CDG-07.
 - **Information:** uses context drawn from governed entity information and
   relationships; entity/resource/Twin identity are not aliases. Historical patient,
   practitioner, wardsperson, organisation, care-team, ward and bed examples are
@@ -433,32 +592,76 @@ approval rules and durable UI state, are unknown.
 - **Persistence/contained constructs:** internal coordination-state Data Objects,
   activation/deactivation and durability allocations are not sufficiently defined
   (CDG-07). A Twin is not inherently a permanent object, table or FHIR resource.
-- **Collaboration/exclusions:** obtains information via Mneme and coordinates
-  execution through Ponos. Not a second engine, unmanaged persistent actor, separate
+- **Collaboration/exclusions:** executes Behaviour C25, which specialises Ergon
+  and retains all common Ergo/Ergon facilities. Uses Mneme Pragma Management and
+  candidate Stimulus/Effector specialisations; Ponos supplies common execution,
+  Petasos supplies messaging/recoverable handoff. Follows the
+  [specialisation principle](README.md#specialisation-principle); adds genuinely
+  Twin-specific semantics instead of parallel platform mechanisms.
+  Not a second engine, unmanaged persistent actor, separate
   policy/search service or authority over originating clinical facts/clinical work.
-- **Standing:** established architectural construct, detailed solution realisation
-  candidate; no manufactured parent/child relationship with Dokimasia or Pragma.
+- **Standing:** candidate execution/activity specialisations adjudicated by U02;
+  information detail remains candidate. DigitalTwin and Dokimasia are sibling
+  Ponos specialisations; neither contains the other or manages Pragma by execution.
 
 <a id="c20"></a>
 
-### C20 — Dokimasia / Assurance Praxis
+### C20 — Dokimasia
 
-- **Role/features:** independent assurance framework coordinating its own governed
-  assurance activity over a subject; actual Assurance Praxis evaluates available
+- **Role/features:** specialised Ponos-based execution component within Energeia
+  coordinating independent governed assurance activity over a subject.
+  [U02](sources.md#u02) settles the candidate specialisation relationship; actual
+  Assurance Praxis evaluates available
   evidence against applicable basis and produces governed assurance information.
   [A04 §2](sources.md#a04), [L31](sources.md#l31).
 - **Information:** evidence/context/basis and assurance assessment/finding/outcome
   areas are documented; detailed Data Objects, identity and persistence are
   unallocated. Candidate vocabulary is not promoted into an Information Family.
-- **Contained constructs/persistence/collaboration:** detailed component composition,
-  evidence-access/control contract and execution relation to Ponos remain unresolved
-  (CDG-08/09). It is not placed inside Ponos or declared a new execution engine.
+- **Activity/collaboration:** executes discrete Dokimasia Ergon C26 specialisations,
+  including candidate AI Assurance Ergon C27. Reuses Ponos execution, Ergo/Ergon
+  activity, Mneme Pragma Management, process-management, platform integration,
+  reporting and observability. This is specialisation/reuse, not runtime containment
+  or a parallel assurance execution platform.
+- **Information/persistence:** corresponding Pragma specialisation semantics are
+  required; assurance request/input and assurance result/finding are candidate
+  roles whose names, schemas, cardinalities and lifecycle remain unresolved.
+  Evidence-access/control independence, detailed workflow composition and durable
+  structures remain CDG-08/09. Common framework reuse does not let the assured
+  activity determine, suppress, manufacture or alter its own assurance outcome.
 - **Exclusions:** evidence, workflow completion and operational status are not
   assurance; custody does not make Kleio the evaluator. Dokimasia does not manage
   operational subject escalation/remediation and is not an established Twin subtype.
-  Optional AI does not confer determination authority or introduce recursive assurance.
-- **Standing:** conceptual name/boundaries approved; application allocation remains
-  candidate and explicit. No upstream assurance responsibility is reopened.
+  AI invocation confers no authority on the model/service. Dokimasia can manage
+  its own assurance work while the subject retains its operational management.
+- **Standing:** conceptual independence remains established by A04; execution
+  and discrete activity responsibilities are adjudicated for the candidate by U02.
+  Detailed AI architecture requires CDG-35 discovery. No upstream responsibility
+  is reopened and full Praxis semantics remain separately unadjudicated.
+
+<a id="dokimasia-terminal-boundaries"></a>
+
+### Dokimasia terminal-boundary constraints
+
+These are architectural constraints on C20 and its specialised activity
+components, including C26/C27, rather than optional implementation suggestions.
+
+1. **No recursive Dokimasia:** a Dokimasia execution SHALL NOT itself be subject
+   to monitoring, assurance or assessment by another Dokimasia execution.
+   This is the terminal assurance boundary.
+2. **No separate AuditEvent:** a Dokimasia execution SHALL NOT generate a separate
+   AuditEvent for its own execution. The governed Dokimasia assurance record/result
+   provides authoritative evidence of that assurance activity.
+
+Dokimasia remains governed by established security context, Themis and normal
+execution-integrity contracts. Common reporting, controlled logging/observability
+and stewardship/management observation remain available; they do not create a
+second Dokimasia assessment. Inherited assurance/evidence integration respects
+these terminal constraints rather than recursively assuring the assurance activity
+or duplicating its evidence as an own-execution AuditEvent. Record representation,
+preservation and access contracts remain unresolved; the evidence rule establishes
+neither a new repository nor detailed Pragma/outcome lifecycle semantics.
+
+## Simulation and developer/operator support
 
 <a id="c21"></a>
 

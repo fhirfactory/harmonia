@@ -2,7 +2,7 @@
 
 # Candidate Logical Data, Information Responsibility and Persistence
 
-**Standing: reconstructed Harmonia Candidate Information Systems Architecture.**
+**Standing: reconstructed and Step-A-adjudicated Harmonia Candidate Information Systems Architecture.**
 [Scope](README.md) and [source dispositions](sources.md) apply. This view records
 data already coupled to documented solution features/components. It does not
 catalogue every Domain04 concept, test Information Architecture coverage, invent
@@ -30,29 +30,31 @@ not define the managed information's meaning or authority.
 | ID | Logical data / candidate application object | Information management / production / use | State and persistence responsibility | Evidence and unresolved allocation |
 | :--- | :--- | :--- | :--- | :--- |
 | D01 | Trigger/event: **ErgonEvent**, reason and correlation metadata | Calliope defines envelope/reason vocabulary; Pylai and activities produce/use events; Ponos consumes | Operational event/context; recoverable transfer through Petasos where designated, not an automatic permanent audit record | L06/L07/L23; envelope relations to Pragma/PetasosMessage not completely specified, CDG-02/16. |
-| D02 | Activity input/output: **ErgonPayload**, native resource/Bundle, raw HL7/JSON or references | Calliope contract support; Ergo/Ergon acts upon/generates; Pragma carries or references | Active use through Mneme; durable resulting managed information through Mnemosyne; binary custodian unknown | L06/L03/L19. Reference-only versus payload-bearing Pragma variants CDG-02/25. |
+| D02 | Activity input/output: **ErgonPayload**, native resource/Bundle, raw HL7/JSON or references | Calliope contract support; Ergon conforming to Ergo acts upon/generates; Pragma carries or references | Active use through Mneme; durable resulting managed information through Mnemosyne; binary custodian unknown | L06/L03/L19; U02 separates contract from activity component. Reference-only versus payload-bearing Pragma variants CDG-02/25. |
 | D03 | Security: **ThemisSecurityContext**, principal, role/authority/label, authorization request/decision, **ThemisAuditEvent** | Themis policy/contracts; trusted context supplied at governed boundaries; evidence produced according to policy | Context transient/operational by default; significant evidence preserved through Kleio; policy/identity store unspecified | A01 AX-07–09, L08/L14. Context serialization is not automatic resource persistence, CDG-13–15/30. |
 | D04 | Governed access/change: **ResourceKey**, **GovernedRead**, active token, expected/authoritative version, **WriteResult**, **PersistenceOperationEnvelope** | Mneme-facing read/change/coordination service contracts; Mnemosyne establishes commit; Themis governs | Observation token/active generation and durable version remain distinct; known commit/degraded convergence/unknown outcome remain distinct | A01 AX-05/14/15, L14. Carriers are not extra domain assets; exact generation/token/result mapping CDG-16/31. |
-| D05 | Work/progression: **Pragma**, checkpoint, parent/correlation association, payload/reference and task output | Pragma carrier used by Pylai, Ponos/Praxis/Erga and outbound observations; Calliope supplies model support | Active state described in Mneme; durable Task/non-FHIR history allocations differ; Pragma does not establish authority | L01/L05/L16/L19; CDG-02/03/10/12/13. U01 preserves distinct ActionableTask/FulfillmentTask use. |
+| D05 | Work/progression: **Pragma**, checkpoint, parent/correlation association, payload/reference and task output | **Mneme / Pragma Management C28 manages**; PragmaFactory creates/initialises representations. Pylai, Ponos, Ergon/Erga and outbound observations use/produce information; Calliope supplies model support | Mneme active management is distinct from Mnemosyne durable establishment; detailed Task/non-FHIR history allocations differ | U01/U02 correct placement; L01/L05/L16/L19 retain carrier evidence. Distinct ActionableTask/FulfillmentTask use preserved; CDG-02/03/10/12/13 remain. |
 | D06 | Definition/composition: **TaskSequence / PraxisDefinition**, activity ordering, subscriptions, triggers/gateway targets | Praxis definition/composition support; loaders/seeders distribute; Ponos resolves and executes | Active definition cache and operations persistence described; authority/lifecycle/history/version-binding unestablished | L04/L19/L23/L10. No automatic archetype asset or definition-to-instance equivalence, CDG-01/04/06. |
 | D07 | Routing/subscription: **Topic**, **TopicSubscription**, destination configuration / registry | Calliope definitions; Praxis matching; execution distribution and Pylai destination selection | Definition/configuration and operational routing state; authoritative configuration lifecycle/storage unspecified | L06/L19/L30. Logical routing intention is distinct from queue/host/port configuration, CDG-06/28. |
-| D08 | Directory: **Practitioner, PractitionerRole, Organization, Location, HealthcareService, Endpoint, Group** | Pylai interaction, registry Erga validation/change, Themis policy, Iris presentation; Mneme active access | Mnemosyne clinical/FHIR preservation; independently referenced Endpoint and Group; Group is not an IAM/security group | L15/L18. Candidate resource topology is not Domain04 coverage or universal authority; search/store/history CDG-11/12/21/33. |
-| D09 | Clinical exchange/content: **Patient, Encounter, Location, ServiceRequest, Observation, DiagnosticReport, Communication, Consent** and resource Bundles | Documented converter/Erga inputs/outputs; Pylai boundary; Iris context; Mneme access | Clinical/FHIR Mnemosyne slice described; exact supported inventories vary. Persisted assertion retains its own source authority | L03/L06/L09/L10/L18. No Master Patient or originating clinical-work authority inferred, CDG-20/29. |
+| D08 | Directory: **Practitioner, PractitionerRole, Organization, Location, HealthcareService, Endpoint, Group** | Pylai interaction, registry Ergon validation/change, Themis policy, Iris presentation; Mneme active access | Mnemosyne clinical/FHIR preservation; independently referenced Endpoint and Group; Group is not an IAM/security group | L15/L18. Candidate resource topology is not Domain04 coverage or universal authority; search/store/history CDG-11/12/21/33. |
+| D09 | Clinical exchange/content: **Patient, Encounter, Location, ServiceRequest, Observation, DiagnosticReport, Communication, Consent** and resource Bundles | Documented converter/Ergon inputs/outputs; Pylai boundary; Iris context; Mneme access | Clinical/FHIR Mnemosyne slice described; exact supported inventories vary. Persisted assertion retains its own source authority | L03/L06/L09/L10/L18. No Master Patient or originating clinical-work authority inferred, CDG-20/29. |
 | D10 | Destination progression: **destination status/checkpoint**, Task output delivery extensions, ACK/error/time observations | Distribution Ergon initiates; Petasos transfers; outbound Pylai records externally observed outcome; Iris displays | Active carrier plus durable Task/history intent; parent/completion/evidence persistence contract unclear | AGENTS REC-002, L03/L30/L28. Queue, delivery, durable commit and work resolution distinct, CDG-18/34. |
 | D11 | Work transfer: **PetasosMessage / destination**; message identity, type/schema, source, correlation/causation, opaque payload, durable marker | Petasos manages transfer/envelope; producer and consumer retain domain meaning | In-flight queue/journal recoverability at designated transitions; redelivery and dead-letter state; not permanent committed resource storage | L29/L13 ADR-014–017; CDG-16/17/19. Transport metadata need not become payload content. |
-| D12 | Evidence: **AuditEvent / Provenance**, significant transition/attempt references | Producers describe significant facts; Kleio preserves evidence; Themis evaluation and assurance use are separate | Append-only accepted evidence; detailed Kleio/Mnemosyne repository and FHIR/operations allocation unresolved | A01 AX-08/09, L13/L08/L15/L20; CDG-13/14. Diagnostic checkpoint persistence is not inherently evidence. |
+| D12 | Evidence: **AuditEvent / Provenance**, significant transition/attempt references; governed Dokimasia assurance record/result | Producers describe significant facts; Kleio preserves evidence; Themis evaluation and assurance use are separate. Dokimasia record/result provides authoritative evidence of its assurance activity | Append-only accepted evidence; detailed record representation, Kleio/Mnemosyne repository and FHIR/operations allocation unresolved | A01 AX-08/09, U02 terminal constraints, L13/L08/L15/L20; CDG-09/13/14. Dokimasia SHALL NOT generate a separate AuditEvent for its own execution. Diagnostics are not inherently evidence. |
 | D13 | Operational support: **OperationResourceEntity**, task/sequence metadata, module/queue/health/alert/trace observations | Component producers; Ponos/Praxis progression; Iris aggregator/providers present; Mneme active access | Non-FHIR Mnemosyne slice documented for selected records; transient metrics/diagnostics not all durable by default | L16/L21/L23. No single universal telemetry owner or retention policy established, CDG-13/27/28. |
 | D14 | Collaboration: **AgoraSpaceRequest**, collaboration event/result, identity/context mapping, transaction record and room/membership projections | Agora lifecycle/identity/reconciliation, Themis, Petasos; context-source contract incomplete | Mapping/transaction relational persistence and separate homeserver room/event state described; authority/storage allocation unresolved | L12/L20; CDG-19–23. Conversation and formal managed clinical information are distinct. |
 | D15 | Document/media: **DocumentReference** metadata and clinical binary attachment/payload | FHIR resource support/cache named; Ergon payload examples carry attachments | Mnemosyne FHIR metadata intent; payload/media persistence owner, structures, retrieval and lifecycle unknown | L10/L17/L19/L23. DocumentReference support alone does not establish a Media Server or blob architecture, CDG-25. |
 | D16 | Reference/terminology: **model/profile/value set/binding/concept map**, compiled enums; proposed expansion/validation results | Calliope semantic reference authority; runtime defined logic consumes; proposed services not allocated | Shared/compiled artefacts documented; runtime terminology/reference durability and version lifecycle unspecified | A02, L06/L17/L27, CDG-24. No technology or separate terminology component selected. |
-| D17 | Twin and assurance context, basis/evidence/assessment/finding/outcome candidate areas | Twin uses entity context and coordinates activity; Dokimasia coordinates independent assurance; evidence retains originating responsibility | Specific application Data Objects and persistence/control allocation unestablished; no Twin table or assurance family fabricated | A02/A04/L31, CDG-07–09. Behaviour/context resemblance supplies no inheritance or Information Resource. |
+| D17 | Twin coordination context and assurance context/basis/evidence/assessment/finding/outcome candidate areas | DigitalTwin uses governed entity information; Dokimasia coordinates independent assurance. Evidence retains originating responsibility; execution/assessment does not confer information-management authority | Detailed coordination-state, evidence-access/control and persistence contracts remain unresolved; no Twin table or assurance Information Family fabricated | A02/A04 and U02 establish responsibility/specialisation independently of resemblance. CDG-07–09 retain detail; AI participation requires CDG-35 discovery. |
+| D18 | **Stimulus / Effector** — candidate Pragma specialisations | Mneme / Pragma Management manages; DigitalTwin Behaviour uses/produces as specialised activity information | Reuse common Pragma process-management, assurance, reporting and management facilities; Mnemosyne durable establishment where applicable | U02. Specialisation is candidate Application Data Object reuse, not a new Domain04 Information Resource or schema/lifecycle decision. |
+| D19 | Dokimasia Pragma candidate semantic roles: **assurance request/input; assurance result/finding** | Mneme / Pragma Management manages; Dokimasia Ergon, including AI Assurance Ergon where selected, uses/produces within governed assurance workflow | Corresponding Pragma specialisation semantics required; reuse common management facilities. Detailed representation/preservation allocation unresolved | U02; CDG-09/35. Semantic roles are established as candidates; names, schemas, cardinalities and lifecycle models are not final. |
 
 ### Task and Pragma candidate meaning
 
-The following records [U01](sources.md#u01), preserving [A03](sources.md#a03):
+The following records [U01/U02](sources.md#u02), preserving [A03](sources.md#a03):
 
 ```text
-ActionableTaskArchetype (meta-concept)
+ActionableTaskArchetype (meta-concept; not an instantiated Information Asset)
   -- logically embodied by --> PragmaFactory (candidate)
 
 ActionableTask (work instance)       FulfillmentTask (undertaking)
@@ -69,16 +71,59 @@ factory inputs/outputs and concrete relationships to carrier state are unknown
 identity, necessity and meaning remain deferred; no accountable report object
 or automatic assurance output is created.
 
+### Pragma management and candidate specialisations
+
+Containment identifies logical management responsibility:
+
+```text
+Mneme
+  Pragma Management
+    PragmaFactory — creates/initialises appropriate Pragma representations
+    Pragma — managed Application Data Object
+```
+
+Specialisation/reuse is a separate relationship, directed here from candidate
+specialisation to base; it denotes no containment or mandatory implementation
+inheritance:
+
+```text
+Stimulus (candidate) -- specialises / reuses --> Pragma
+Effector (candidate) -- specialises / reuses --> Pragma
+Assurance request/input role (candidate) -- requires specialisation semantics --> Pragma
+Assurance result/finding role (candidate) -- requires specialisation semantics --> Pragma
+```
+
+Stimulus/Effector retain common Pragma process-management, assurance, reporting
+and other information-management facilities, instead of DigitalTwin-specific
+equivalents. Dokimasia follows the same reuse principle. No detailed schemas,
+required cardinalities, lifecycle/state models or final assurance-specialisation
+names follow from this view. WorkOrder/ToDo candidate forms remain recorded
+without newly deciding their specialisation structure.
+
+Execution of, behaviour upon, or transport of managed information does not
+confer information-management responsibility for that information. Mneme /
+Pragma Management manages; Ponos and its specialisations execute; Petasos
+provides messaging/recoverable handoff; Ergon and its specialisations provide
+bounded behaviour. The authoritative evidence standing of the governed Dokimasia
+record/result does not finalise its representation or confer authoritative
+durable-state establishment on execution; that remains Mnemosyne responsibility.
+
+Ordinary Ergon can invoke AI internally as an implementation choice. AI Assurance
+Ergon instead represents AI processing as an explicit governed assurance activity;
+the component's existence/responsibility is established while its inputs/results,
+disclosure, provenance and evidence representations remain for CDG-35 discovery.
+No additional upstream Information Resource is invented for either activity.
+
 ## Responsibility and state boundaries
 
 | Concern | Current governing meaning / reconstructed candidate intent | What remains incomplete in candidate documentation |
 | :--- | :--- | :--- |
 | Application-facing information use | Mneme owns managed access, active observation/coordination; activities/requesting applications use governed contracts | Legacy raw cache/direct storage paths conflict; complete service/data contracts not reconstructed from code. A01/A02, CDG-11/31. |
 | Durable establishment and recovery | Mnemosyne atomically establishes durable state/versions/management metadata; Mneme converges after commit | Cache write-behind cannot establish authority; structure/history/storage slices compete. A01, L13, CDG-10/12. |
-| Activity and entity progression | Ponos progresses activity; Twin coordinates entity activity against governed entity information | Specific coordination/control/activation Data Objects and persistence are unknown. A02, CDG-03/07. |
+| Activity and entity progression | Ponos provides reusable execution; DigitalTwin specialises it for entity activity, with per-Twin pending-work queues and bounded execution resources; Ergon/Behaviour supplies bounded activity | Detailed coordination/control/activation Data Objects and persistence remain unknown. A02/U02, CDG-03/07. |
 | Definitions and configuration | Praxis and Calliope provide documented definition/reference support | Runtime definition governance, release/version binding, recovery and persistence structures incompletely described. L04/L19, CDG-06/24. |
 | Information authority | Source assertion credibility/domain authority independent of storage or transport; Calliope governs authority semantics | Historical universal truth, clinical workflow and roster ownership claims conflict. A01 AX-06/18, CDG-20/21/29. |
-| Security/evidence/assurance | Operational context, evaluation, evidence production/preservation and independent assessment retain distinct responsibilities | Automatic security persistence/all-checkpoint audit and evidence-store allocations conflict; assurance execution remains open. A01/A04, CDG-08/09/13–15. |
+| Security/evidence/assurance | Dokimasia reuses Ponos/Ergo/Ergon/Pragma Management for independent governed assurance; no recursive Dokimasia assessment/monitoring and no separate own-execution AuditEvent; governed record/result is assurance-activity evidence | Detailed independence/evidence-access, assurance Pragma representation and evidence-store allocations remain unresolved. A01/A04/U02, CDG-08/09/13–15/35. Governance and controlled observability remain. |
 
 Known commit with degraded convergence is not a failed commit. An unknown commit
 effect remains unknown until established; availability failure or denial is not
