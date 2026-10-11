@@ -9,7 +9,19 @@
 \section{Overview \& Engineering Objectives}
 \label{sec:praxis_guide_overview}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#c39}{Energeia operational-management Software Component}
+  \item \href{../../markdown/05-information-systems-architecture/candidate-system-map.md\#specialisation-and-reuse}{Explicit architectural relationships}
+  \item \href{../../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md\#praxis-operational-context}{Praxis envelope, ownership and management services}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 Within the Harmonia Health Information Exchange (HIE) architecture, the \textbf{Energeia} subsystem governs all workflow orchestration, clinical transformation, data enrichment, and task execution. While individual tasks are encapsulated within discrete, modular \textbf{Ergon} activity modules (documented in Appendix~\ref{app:ergon_modules}), the deterministic composition, ordering, topic-based dispatch, dynamic Apache Camel route compilation, and end-to-end audit checkpointing of these activities are executed by \textbf{Praxis Workflow Sequences}.
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 
 This implementation guide provides an authoritative, production-grade technical manual for software engineers, integration developers, and platform architects charged with authoring, configuring, testing, and deploying Praxis workflow sequences. Specifically, this guide covers:
 \begin{enumerate}
@@ -37,7 +49,18 @@ This implementation guide provides an authoritative, production-grade technical 
     \label{fig:praxis_workflow_architecture}
 \end{figure}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md\#praxis-operational-context}{Praxis envelope, ownership and management services}
+  \item \href{../../markdown/05-information-systems-architecture/gaps.md}{Detailed Praxis contracts remain unresolved}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 The Harmonia workflow engine enforces a strict architectural separation of concerns between declarative workflow definition and runtime route execution. Figure~\ref{fig:praxis_workflow_architecture} illustrates the ArchiMate 3.2 processing and component topology of the Praxis workflow subsystem.
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 
 \subsection{Decoupling Definition from Runtime Execution}
 \label{subsec:praxis_decoupling}

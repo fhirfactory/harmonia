@@ -7,11 +7,33 @@
 \chapter{PostgreSQL \& HAPI FHIR R5 Persistence Architecture}
 \label{chap:postgresql_persistence}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/data-and-persistence.md\#persistence-responsibility-domains}{Mnemosyne persistence responsibility domains}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 The Mnemosyne subsystem (\texttt{hestia/mnemosyne-clinical} and \texttt{hestia/mnemosyne-operations}) provides long-term durable persistence, structured querying, and regulatory compliance storage for the Harmonia platform.
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 
 \section{Database Separation: Clinical vs Operations vs Collaboration}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/data-and-persistence.md\#persistence-responsibility-domains}{Mnemosyne persistence responsibility domains}
+  \item \href{../../markdown/05-information-systems-architecture/data-and-persistence.md\#cg-governance-space}{C\&G coherent governance space}
+  \item \href{../../markdown/05-information-systems-architecture/data-and-persistence.md\#oa-partitionability}{O\&A horizontal partitionability}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 Harmonia strictly separates clinical health records from operational telemetry, audit logs, and collaboration state by maintaining three independent PostgreSQL 16 database clusters (image \texttt{postgres:16-alpine}):
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 
 \subsection{1. Clinical Database (\texttt{postgres-1} \& \texttt{postgres-2})}
 \begin{itemize}

@@ -3,7 +3,7 @@
 # Candidate Pathway, Journey, Publish/Subscribe and Handoff Architecture
 
 **Standing: Domain05 Step A adjudicated Candidate Architecture, 2026-10-11.**
-[U03–U05](sources.md#u03) record the supplied human-adjudicated DesignNotes and
+[U03–U06](sources.md#u03) record the supplied human-adjudicated DesignNotes and
 explicit task decisions incorporated here. [Scope](README.md) applies: this
 correction does not accept the whole candidate, commence Step B or establish
 implementation design. Existing [Energeia specialisation](README.md#energeia-adjudication)
@@ -34,20 +34,58 @@ Ergon B.IngressEndpoint -- PathwayTraversal B --> Ergon B.EgressEndpoint
 
 Route = ordered PathwaySegment [1..N]
 Pathway = controlled endpoint interaction with available Route(s)
-Praxis -- may have --> Pathway [0..1]
+Praxis -- Aggregation --> Pathway [0..1]
 ```
 
 These are interface, behavioural and control constructs. Their names do not
 require independently deployed Application Components. The flow representation
 preserves Ergon encapsulation.
-The exact information representations, management/persistence allocations and
-control contracts are not selected here.
+The exact information representations and control contracts remain unresolved.
+Praxis application ownership and the semantic persistence domains are now
+established below and in [Data/Persistence](data-and-persistence.md#persistence-responsibility-domains).
 
-**Praxis remains unresolved beyond Pathway [0..1].** Praxis is not synonymous
-with Pathway, Route, a sequence of Ergo/Ergon, a runtime engine or a Pub/Sub
-graph. Historical blueprint/composition/execution descriptions remain evidence
-of the unresolved question in [CDG-01](gaps.md). This cardinality supplies no
-broader Praxis definition, composition or instance semantics.
+<a id="praxis-operational-context"></a>
+
+## Praxis: operational context and assurance basis
+
+**Praxis is the higher-order operational construct establishing the operational
+and assurance envelope within which Harmonia activity occurs.** The conversational
+description “super Pathway/Journey” identifies its higher-order context; it
+establishes neither a supertype nor an execution engine. Praxis defines expected
+or permitted operational context, including candidate externally visible interface
+information, overall Topic exclusions and potentially inclusions, operational
+configuration/constraints and assurance rules/expectations.
+
+**Energeia owns the Praxis application responsibility** and SHALL provide the
+candidate **Praxis Management Services** responsibility set:
+
+- definition and registration;
+- discovery and retrieval;
+- operational configuration and externally visible interface configuration;
+- Topic inclusion/exclusion policy;
+- Pathway relationship/aggregation management;
+- assurance-rule association and other Praxis-wide operational constraints.
+
+These responsibilities are not yet decomposed into separate Application Features,
+Application Services, internal constructs or subordinate Software Components.
+Topic inclusion's necessity, the interface model and assurance-rule attachment
+contract remain unresolved. Managing interface configuration does not transfer
+Pylai's external contract/publication responsibility to Energeia; Praxis Topic
+policy does not transfer Mneme's Publishing/Subscription/Pattern selection.
+
+| Architectural relationship | Established meaning and limit |
+| :--- | :--- |
+| Energeia → Praxis | Application ownership/management through Praxis Management Services. Mneme manages its governed information; Ponos uses it for execution; Dokimasia uses it as assurance basis. |
+| Praxis → Pathway | **Aggregation [0..1]**. Praxis may exist without a Pathway because activity may proceed through Publish/Subscribe. |
+| Praxis → Journey | Working **Aggregation** of relevant observed progression; exact cardinalities and association contracts remain unresolved. No Composition or shared lifecycle is inferred. |
+| Journey → contributing information/evidence | Semantic **Aggregation/reference** without transfer of originating ownership or indiscriminate duplication. |
+
+Praxis is not equivalent to Pathway, Route, a sequence of Ergo/Ergon, a runtime
+engine or a Pub/Sub graph. Historical blueprint/composition/execution descriptions
+are retained provenance, not competing current definitions. Detailed Praxis
+representation and lifecycle remain [CDG-01/06](gaps.md): versioning,
+activation/deactivation, replacement, retirement and treatment of in-flight
+activity following change are deliberately unestablished.
 
 <a id="publication-and-selection"></a>
 
@@ -55,7 +93,7 @@ broader Praxis definition, composition or instance semantics.
 
 Defined Pathways and Publish/Subscribe are two distinct information-progression
 mechanisms. Pub/Sub does not require a predefined end-to-end Route or Pathway.
-Mneme / Pragma Management owns the contained logical responsibilities for
+Mneme / Pragma Management owns the logically aggregated responsibilities for
 **Publishing C36**, **Subscription C37** and **Pattern C38**. No separate
 deployment boundary is implied by these names.
 
@@ -64,8 +102,8 @@ deployment boundary is implied by these names.
 | **Publishing** | Governed provider-side eligibility/filtering: a provider may prevent egress Pragma from being made available through publication when its Pattern matches. It answers “What may leave / be made available by this provider?” |
 | **Subscription** | Governed consumer-side selection: a consumer requests that available Pragma matching a Pattern be made available/forwarded to its input queue or equivalent destination. It answers “What does this consumer want to receive?” |
 | **Pattern** | Common governed evaluation of characteristics associated with Pragma metadata, Information Unit Container and Content metadata, Topic, source and other established metadata. Final language, supported attributes/operators, precedence, query syntax, indexing and algorithms remain unresolved. |
-| **Mneme** | Manages definitions, Pattern semantics/evaluation, matching, selection and information eligibility; determines eligible consumer/destination relationships. |
-| **Petasos** | Persistently manages and reliably effects the resulting handoff; destination mechanics do not confer semantic selection responsibility. |
+| **Mneme** | Manages definitions, Pattern semantics/evaluation, matching, selection and semantic eligibility; establishes eligible recipient/consumer relationships. |
+| **Petasos** | Establishes and manages the concrete persistent handoff obligation to the destination and reliably effects it; destination mechanics/state do not confer semantic selection responsibility. |
 | **Ponos** | Manages resulting execution and progression; subsequent execution does not confer Subscription matching responsibility. |
 
 ```mermaid
@@ -77,8 +115,8 @@ flowchart TD
     B -->|no| S["Subscription: consumer Pattern selection"]
     S --> M{"Pattern matches?"}
     M -->|no| N["No handoff for this Subscription"]
-    M -->|yes| D["Mneme determines eligible consumer / destination"]
-    D --> H["Petasos: persistent handoff obligation"]
+    M -->|yes| D["Mneme determines semantic eligibility / eligible consumer"]
+    D --> H["Petasos: concrete persistent handoff obligation to destination"]
     H --> Q["Consumer input queue / destination"]
 ```
 
@@ -135,10 +173,13 @@ establish those definitions.
 
 ## Persistent handoff without information ownership
 
-> **Mneme determines whether and where managed information should be made
-> available according to Publishing, Subscription and Pattern semantics;
-> Petasos is responsible for persistently managing and reliably effecting the
-> resulting handoff.**
+> **Mneme determines semantic eligibility and eligible recipient/consumer
+> relationships under Publishing, Subscription and Pattern semantics. Petasos
+> establishes and manages the concrete persistent handoff obligation to the
+> destination and reliably effects that handoff. Ponos manages execution.**
+
+Eligible consumer relationships express semantic selection. They do not assign
+queue binding, destination mechanics or concrete handoff state to Mneme.
 
 Petasos is a shared persistent/recoverable messaging and handoff subsystem.
 For Pragma-based processing, the governed Pragma and Information Unit payload
@@ -238,29 +279,50 @@ may exist without a corresponding Pathway and may be graph-shaped because
 observed progression can branch, fan out, converge or combine mechanisms.
 Pathway controls permitted progression; Journey represents observed progression.
 
+**Energeia owns Journey as an application responsibility** and SHALL provide
+candidate **Journey Management Services**. These manage the governed representation
+of observed progression and its semantic aggregation/references, supporting
+operational reporting/monitoring and assurance consumption. The detailed service
+and construction contracts remain unresolved. Mneme remains the governed
+information-management layer; Mnemosyne **Harmonia Operations & Assurance**
+provides durable persistence responsibility. Application ownership does not
+make Energeia a persistence owner or owner of all referenced information.
+
+Journey is expected to hold comparatively little discrete information while
+aggregating/referencing potentially substantial distributed activity/evidence.
+**Aggregate semantically; do not duplicate governed information indiscriminately.**
+Efficient Journey reconstruction/use is an architectural objective, not a graph
+schema, correlation/causal algorithm, retention period or shard-key decision.
+
 ```mermaid
 flowchart LR
-    Path["Pathway / Route: defined control"] --> Exec["Ponos / Ergon: execution"]
+    Praxis["Praxis: expected / permitted context and assurance rules"] -->|Aggregation: 0..1| Path["Pathway / Route: defined control"]
+    Path --> Exec["Ponos / Ergon: execution"]
     Pub["Publishing / Subscription: dynamic selection through Mneme"] --> Exec
     Exec -->|governed execution observations| Journey["Journey: observed progression"]
     Mneme["Mneme: selection observations"] --> Journey
     Petasos["Petasos: handoff observations"] --> Journey
-    Journey --> Reporting["Reporting / monitoring / analysis"]
-    Journey --> Assurance["Dokimasia: governed interpretation"]
-    Path -.->|normative context where applicable| Assurance
+    Twin["DigitalTwin and other governed contributors"] -->|operational observations / evidence references| Journey
+    Energeia["Energeia"] -->|application management: Journey Management Services| Journey
+    Energeia -->|application management: Praxis Management Services| Praxis
+    Praxis -.->|Aggregation: cardinality unresolved| Journey
+    Journey --> Reporting["Energeia: operational observation / monitoring / reporting"]
+    Journey -->|observed evidence subject| Assurance["Dokimasia: governed interpretation"]
+    Praxis -->|assurance basis; Pathway may contribute expectations| Assurance
     Assurance --> Finding["Assurance finding / result"]
 ```
 
-The arrows describe evidence contribution and use; they assign no Journey
-construction service, management owner, evidence repository, schema or retention
-contract. Journey construction and information-management ownership remain
-unresolved in [CDG-38](gaps.md#journey-contracts).
+Labelled arrows distinguish application management, Aggregation and evidence
+contribution/use. Detailed Journey representation/construction, reference/evidence
+schema, causal/correlation/reconstruction algorithms and lifecycle/retention remain
+[CDG-38](gaps.md#journey-contracts); Energeia ownership is resolved by U06.
 
 | Contributing responsibility | Examples of available governed observations |
 | :--- | :--- |
-| **Mneme** | Publishing permitted/blocked; Subscription matched; Pattern condition matched; consumer/destination selected. |
+| **Mneme** | Publishing permitted/blocked; Subscription matched; Pattern condition matched; eligible consumer selected. |
 | **Petasos** | Handoff established; destination identified; delivery attempted; delivery succeeded/failed or uncertain; redelivery/recovery observations. |
 | **Consumer / Ponos / Ergon** | Undertaking established; execution attempted/occurred; activity result; checkpoint and progression observations. |
+| **DigitalTwin / other components / assurance-evidence mechanisms** | Governed operational observations or references where appropriate, preserving originating responsibility and Dokimasia terminal rules. |
 
 These contributions can distinguish selection without handoff, handoff without
 observed execution, and execution with failure or unexpected results. An absent
@@ -268,13 +330,27 @@ observation does not prove non-occurrence. Available evidence bounds the Journey
 missing or uncertain evidence remains distinguishable from established fact.
 
 Reporting, monitoring, analysis and Dokimasia assurance SHALL be capable of
-operating against Journey. Journey is expected to be the fundamental assurance
-building block. Possible interpretation includes progression, branching and
-convergence, conformance to a governing Pathway/Route where one exists, missing
+operating against Journey. **Praxis is the assurance basis; Journey is the
+evidence subject.** A Pathway/Route may contribute normative expectations as part
+of the applicable Praxis; Pathway alone is not the general assurance basis.
+Possible interpretation includes progression, branching and
+convergence, conformance to applicable Praxis expectations, missing
 or unexpected activity, failure/incomplete progression, information exposure,
 policy/security anomalies, relationships between apparently separate activities
 and significance in context. These are possible uses, not mandatory algorithms.
-Without a Pathway, other applicable assurance bases may provide the expectations.
+Praxis provides the operational and assurance envelope even where activity uses
+Publish/Subscribe without a Pathway.
+
+```text
+Praxis: expected / permitted context       Journey: observed progression
+         assurance rules                           evidence
+                    \                               /
+                     +------------+----------------+
+                                  v
+                              Dokimasia
+                                  v
+                        Assurance Finding / Result
+```
 
 ```text
 What Harmonia observed --> Journey

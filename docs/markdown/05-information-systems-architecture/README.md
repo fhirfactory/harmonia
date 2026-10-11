@@ -45,7 +45,8 @@ Initial reconstruction (A1, recorded here as Step 1) is complete. Step A remains
 open: architectural review/adjudication (A2) and bounded iterative correction
 (A3) are in progress; acceptance as sufficiently faithful (A4) is pending.
 The Energeia / DigitalTwin / Dokimasia and Pathway / Journey / Publish/Subscribe /
-handoff adjudications below correct the candidate within that boundary.
+handoff and Energeia / Praxis / Journey / persistence adjudications below correct
+the candidate within that boundary.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -60,8 +61,8 @@ record does not declare the Domain Completion Gate satisfied.
 | [System map](candidate-system-map.md) | Responsibility-based software hierarchy; separate collaboration map; construct standing. |
 | [Component register](component-register.md) | Roles, features, significant internal constructs, information, persistence, collaborators and exclusions. |
 | [Candidate feature map](candidate-feature-map.md) | Documented solution features and allocations, including retained proposals and unclear owners. |
-| [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; competing persistence structures. |
-| [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated control, selection, handoff, execution, observation and assurance meanings; retained detailed uncertainty. |
+| [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; Clinical / C&G / O&A responsibility domains and retained historical structure variants. |
+| [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated Praxis/Journey ownership, control, selection, handoff, observation and assurance meanings; retained detailed uncertainty. |
 | [Internal middleware](middleware.md) | Internal messaging, recoverable handoff, dispatch, access and context collaboration, separated from external integration and products. |
 | [Documentation/component-feature gaps](gaps.md) | Evidence, incomplete meaning and possible adjudication for each gap. |
 | [Sources and reconciliation](sources.md) | Authority, legacy provenance, reviewed scope, disposition and section-specific supersession. |
@@ -125,8 +126,9 @@ solution meanings, recorded as **U01** for traceability:
   discrete Information Architecture representation merely by virtue of being
   an Ergon. Its information significance is expressed through the information
   resources it acts upon or generates.** No `Ergon` Information Resource is created.
-- Praxis definition/composition/instance questions remain open wherever source
-  meanings conflict. `ReportedTask` remains deferred under Domain04.
+- Detailed Praxis representation/lifecycle and historical definition-to-instance
+  equivalences remain open. U06 below establishes its higher-order operational
+  meaning and Energeia ownership. `ReportedTask` remains deferred under Domain04.
 
 These decisions extend the recorded candidate posture; they do not claim that
 legacy sources already specify them or complete Information Architecture
@@ -145,17 +147,19 @@ incorporated into these RADS views, subject to the axioms and established
 upstream semantics. This records adjudicated candidate responsibilities;
 it does not accept the whole Candidate Architecture or finalise detailed design.
 
-- **Energeia** is the activity/execution architectural subsystem. **Ponos** is
-  its reusable execution framework/component pattern; **Ergo** is the reusable
+- **Energeia** is now a discrete operational-management Software Component under
+  U06 below, refining U02's earlier activity/execution subsystem description.
+  **Ponos** is its associated reusable execution framework/component pattern;
+  **Ergo** is the reusable
   conceptual activity pattern and platform-integration contract; **Ergon** is
   a bounded fine-grained task-completion software component; **Erga** provides
   meaningful collections for executable assembly, concurrent activity management/
   observation and coherent libraries/change management. These are distinct.
   Ponos and Ergo/Ergon are tightly coupled peer responsibilities, with execution
   and contract reuse relationships rather than Ponos containing Ergo or Ergon.
-- **Mneme / Pragma Management** manages Pragma information, containing the
-  candidate logical application embodiment **PragmaFactory** and Application
-  Data Object **Pragma**. PragmaFactory creates/initialises appropriate Pragma
+- **Mneme / Pragma Management** manages Pragma information, with logical
+  Aggregation of the candidate application embodiment **PragmaFactory** and
+  management of Application Data Object **Pragma**. PragmaFactory creates/initialises appropriate Pragma
   representations associated with the ActionableTaskArchetype meta-concept.
   Execution of, behaviour upon, or transport of managed information does not
   confer information-management responsibility for that information. Ponos
@@ -212,8 +216,9 @@ Dokimasia's explicit terminal rules constrain common assurance/evidence hooks.
 The [system map](candidate-system-map.md#specialisation-and-reuse) distinguishes
 these relationships from containment and collaboration. Domain04 Task meaning,
 outcome ownership and the Ergon information boundary remain unchanged.
-**Praxis requires separate architectural adjudication**; this correction supplies
-no definition-to-instance, workflow or composition model for it.
+**U06 below establishes broader Praxis meaning and ownership**; detailed
+representation/lifecycle, historical definition-to-instance equivalences and
+relationships to execution/activity constructs remain unresolved.
 
 <a id="pathway-journey-adjudication"></a>
 
@@ -230,11 +235,13 @@ their working-note labels do not constitute whole-candidate acceptance.
   PathwaySegment is inter-component; PathwayTraversal is intra-component and
   preserves encapsulation. Route is ordered PathwaySegment [1..N]. Pathway
   defines controlled endpoint interaction and available Routes. Only
-  **Praxis → Pathway [0..1]** is established; broader Praxis remains unresolved.
+  **Praxis → Pathway [0..1]** was established by U04; U06 now records its
+  Aggregation and broader operational/assurance envelope.
 - **Dynamic selection:** Publish/Subscribe is distinct from Pathway routing.
   Mneme / Pragma Management owns Publishing, Subscription and Pattern semantic
-  management, eligibility, matching/selection and eligible consumer/destination
-  relationships. Publishing blocks provider egress on a matching filter;
+  management, eligibility, matching/selection and eligible recipient/consumer
+  relationships. Petasos owns concrete destination/handoff mechanics. Publishing
+  blocks provider egress on a matching filter;
   Subscription selects available Pragma for a consumer on a matching Pattern.
   Topic is governed classification/metadata, distinct from destination.
 - **Handoff and execution:** Petasos persistently manages reliable handoff
@@ -260,6 +267,73 @@ Pragma/payload, potentially multiple Petasos handoffs and distinct consumer
 FulfillmentTasks for ActionableTask undertakings. Detailed reference/copy/version,
 identity, targetDestination, processing/concurrency, lineage and Journey contracts
 remain unresolved ([CDG-37](gaps.md#pubsub-fanout)). Pattern language, definition
-lifecycles, handoff representation, Journey construction/management ownership,
-evidence/inference schema and technology remain unresolved. No Step B, MVP,
+lifecycles, handoff representation and Journey construction/evidence/inference
+contracts remain unresolved. U06 resolves Journey ownership to Energeia and
+establishes semantic persistence domains without selecting technology. No Step B,
+MVP,
 implementation plan or final Solution Architecture baseline is established.
+
+
+<a id="operational-management-adjudication"></a>
+
+## Energeia / Praxis / Journey / persistence candidate adjudication
+
+**U06 — 2026-10-11:** the supplied
+`DesignNote-Energeia-Operational-Management-and-Praxis-Responsibility.md`, §§1–15,
+and explicit bounded task decisions establish the following corrections. The task
+also adjudicates Journey ownership and the revised persistence domains, which
+extend the new note. Incorporated meaning is self-contained in RADS; the external
+note is provenance, not a continuing architecture dependency.
+
+- **Energeia C39** is a discrete Harmonia Software Component responsible for
+  Harmonia operational management. It owns **Praxis** and **Journey**, providing
+  candidate **Praxis Management Services F11** and **Journey Management Services
+  F38**. Detailed Feature/Service/internal-construct/subordinate-Component
+  decomposition remains unresolved. Existing execution/activity constructs stay
+  associated with Energeia; Specialisation/reuse remains unchanged.
+- **Praxis** establishes expected/permitted operational context and the assurance
+  envelope; **Journey** represents observed progression. Praxis aggregates
+  **Pathway [0..1]** and has a working Aggregation relationship to Journey, with
+  cardinalities unresolved. No Composition or common lifecycle is inferred.
+  Praxis can govern Publish/Subscribe activity without a Pathway.
+- **Praxis is the assurance basis; Journey is the evidence subject.** Applicable
+  Pathway expectations contribute through Praxis. Journey remains factual with
+  respect to available observations; deterministic/AI inference and conclusions
+  remain distinguishable. Dokimasia independence and terminal rules are retained.
+- **R1.x/R2.x: Observe → Monitor → Report.** Energeia observes Harmonia work and
+  progression without autonomous adaptation. External IT/Ops manages technical
+  infrastructure/platform operation. **R3 Adaptive Load and Resilience Service**
+  is a deferred direction only; no policy, algorithm or control architecture is
+  designed. Existing governed execution/recovery authority is not broadened by
+  observation.
+- **Mneme** determines semantic eligibility and eligible recipient/consumer
+  relationships; **Petasos** establishes/manages concrete persistent handoff
+  obligations to destinations; **Ponos** manages execution. Four distinct managed
+  information, handoff, undertaking and execution states remain preserved.
+- **Mnemosyne** has persistence responsibilities for **Clinical Information**,
+  **Harmonia Configuration & Governance (C&G)** and **Harmonia Operations &
+  Assurance (O&A)**. C&G is a coherent governance information space without
+  semantic sharding into divergent authority. O&A permits horizontal partitioning
+  while preserving identity, provenance, relationships and governed meaning.
+  Neither distinction selects physical topology, technology, schemas or shard keys.
+- Energeia application ownership, Mneme governed information management and
+  Mnemosyne durable persistence responsibility remain distinct. Journey aggregates
+  or references substantial information/evidence without indiscriminate duplication
+  or acquiring ownership of the referenced information.
+
+The [Praxis/Journey semantic view](pathways-journeys-and-handoff.md#praxis-operational-context),
+[Energeia register](component-register.md#c39) and
+[persistence domain guardrails](data-and-persistence.md#persistence-responsibility-domains)
+record these meanings. Praxis lifecycle/representation, Journey construction and
+reference contracts, Energeia decomposition, physical persistence/partitioning
+and existing detailed fan-out uncertainty remain explicit in [CDG](gaps.md).
+Potential upstream omissions require later bounded review; no Business Architecture
+or capability requirements are manufactured here.
+
+```text
+A1 — Candidate reconstruction                  COMPLETE
+A2 — Architectural review/adjudication         IN PROGRESS
+A3 — Candidate correction                      ITERATIVE
+A4 — Candidate acceptance                      PENDING
+Step B — Capability/Information traceability   NOT STARTED
+```

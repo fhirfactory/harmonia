@@ -57,5 +57,23 @@ Hestia is Harmonia's foundational data management subsystem, uniting low-latency
 
 ### 3.2 Operations Persistence (`mnemosyne-operations`)
 - **Framework**: Spring Boot 3.2.5 with Spring Data JPA.
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mnemosyne persistence responsibility domains](../markdown/05-information-systems-architecture/data-and-persistence.md#persistence-responsibility-domains)
+- [C&G coherent governance space](../markdown/05-information-systems-architecture/data-and-persistence.md#cg-governance-space)
+- [O&A horizontal partitionability](../markdown/05-information-systems-architecture/data-and-persistence.md#oa-partitionability)
+
+```text
+---------------------------------------------------------
+```
+
 - **Scope**: Non-FHIR operational entities, TaskSequence blueprints, module registration telemetry, and historical execution records.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 - **Database**: PostgreSQL 16 (`ops_node_1`, `ops_node_2`).

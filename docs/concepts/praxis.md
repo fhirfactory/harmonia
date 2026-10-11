@@ -29,7 +29,24 @@ Praxis is Harmonia's workflow orchestration and blueprint definition component w
   1. *Theoria* (θεωρία) — theoretical contemplation aimed at discovering truth.
   2. *Poiesis* (ποίησις) — production or fabrication aimed at creating an external artifact.
   3. *Praxis* (πρᾶξις) — practical, purposeful action guided by rational decision-making, where the action itself is directed toward a good or ethical end.
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Praxis envelope, ownership and management services](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#praxis-operational-context)
+- [Detailed Praxis contracts remain unresolved](../markdown/05-information-systems-architecture/gaps.md)
+
+```text
+---------------------------------------------------------
+```
+
 - **Architectural Rationale**: Healthcare integration is fundamentally *praxis*: it is not passive contemplation, nor is it the isolated production of widgets. It is deliberate, coordinated, and morally significant clinical action. Praxis defines how multiple discrete activities (*erga*) are composed into an orderly, coherent medical workflow that safely delivers patient information to clinicians.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

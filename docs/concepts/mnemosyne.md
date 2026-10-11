@@ -1,6 +1,24 @@
 # Concept: Mnemosyne `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mnemosyne persistence responsibility domains](../markdown/05-information-systems-architecture/data-and-persistence.md#persistence-responsibility-domains)
+- [C&G coherent governance space](../markdown/05-information-systems-architecture/data-and-persistence.md#cg-governance-space)
+- [O&A horizontal partitionability](../markdown/05-information-systems-architecture/data-and-persistence.md#oa-partitionability)
+
+```text
+---------------------------------------------------------
+```
+
 Mnemosyne is Harmonia's authoritative relational persistence subsystem within Hestia, responsible for permanent, ACID-compliant historical storage of clinical FHIR R5 resources and platform operational telemetry across dedicated PostgreSQL 16 databases.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -12,6 +30,19 @@ Mnemosyne is Harmonia's authoritative relational persistence subsystem within He
 - **Architectural Rationale**: Healthcare systems cannot rely on ephemeral caches for clinical records. A patient's medical history, diagnoses, lab results, and audit trails must be preserved faithfully across decades with strict relational integrity, ACID guarantees, and comprehensive auditability. Mnemosyne is the permanent, authoritative sanctuary for this clinical truth.
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mnemosyne persistence responsibility domains](../markdown/05-information-systems-architecture/data-and-persistence.md#persistence-responsibility-domains)
+- [C&G coherent governance space](../markdown/05-information-systems-architecture/data-and-persistence.md#cg-governance-space)
+- [O&A horizontal partitionability](../markdown/05-information-systems-architecture/data-and-persistence.md#oa-partitionability)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
@@ -43,6 +74,11 @@ Mnemosyne enforces a strict separation between clinical and operational storage 
 
 1. **Mnemosyne Clinical**: Provides a fully compliant FHIR R5 REST API powered by HAPI FHIR JPA. Exposes standard endpoints (`GET /fhir/r5/Patient/{id}`, `POST /fhir/r5/Observation`, etc.) backed by high-availability PostgreSQL clusters.
 2. **Mnemosyne Operations**: Tracks the lifecycle, execution duration, and audit checkpoints of all platform `TaskSequence` instances, ensuring full compliance with healthcare regulatory audit mandates without contaminating clinical tables.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 

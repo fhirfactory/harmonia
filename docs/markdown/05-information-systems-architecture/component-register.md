@@ -85,13 +85,62 @@ read together with the [feature](candidate-feature-map.md) and
 
 ## Activity and execution responsibilities within Energeia
 
-Energeia is the activity/execution architectural subsystem under
-[U02](sources.md#u02). Ponos, Ergo, Ergon and Erga are distinct responsibilities
-within it. Specialised execution/activity components belong to that family;
-specialisation does not mean runtime containment. No process, deployment unit
-or programming-language inheritance is prescribed. Praxis remains a separately
-unresolved composition design area; Pragma information management is recorded
-under Mneme below.
+Energeia is a **discrete Harmonia Software Component responsible for management
+of Harmonia's operational activity**, under [U06](sources.md#u06). Its direct
+Praxis/Journey management and operational observation/monitoring/reporting
+responsibilities justify that boundary. Ponos, Ergo, Ergon, Erga and specialised
+execution/activity constructs remain **associated** with Energeia. Their
+Specialisation, Realisation, Aggregation and execution relationships are explicit
+in the [system map](candidate-system-map.md#specialisation-and-reuse); no Composition,
+programming-language containment, process or deployment follows from association.
+Pragma information management remains with Mneme.
+
+<a id="c39"></a>
+
+### C39 — Energeia
+
+- **Role/responsibility:** discrete Software Component owning Harmonia operational
+  management: “Is Harmonia itself operating as expected?” It observes work-to-be-done,
+  work-being-done and work-done, outstanding ActionableTasks, FulfillmentTask
+  activity, Journey progression, stalled/incomplete activity, Praxis context,
+  abnormal behaviour and operational information for reporting/assurance.
+- **Candidate services/features:** **Praxis Management Services** (F11) and
+  **Journey Management Services** (F38), plus operational observation, monitoring
+  and reporting (F39). Detailed Feature/Service/internal-construct/subordinate-
+  Component decomposition remains unresolved (CDG-39); service-set names do not
+  manufacture independently deployable components.
+- **Information:** owns Praxis C06 and Journey C35 at the application level.
+  Mneme manages their governed information and retains ActionableTask,
+  FulfillmentTask and Pragma management. Observing operational significance does
+  not transfer management of that information or referenced clinical facts.
+- **Persistence:** Mnemosyne C&G provides Praxis/configuration durability;
+  Mnemosyne O&A provides Journey/operational-assurance durability, through Mneme
+  governed management. Energeia application ownership is distinct from durable
+  persistence responsibility; physical structures remain unresolved.
+- **Collaboration/relationships:** associated execution/activity responsibilities
+  retain U02 specialisation/reuse. Praxis aggregates Pathway [0..1] and has a
+  working Aggregation relationship to Journey with cardinalities unresolved.
+  Dokimasia uses Praxis as assurance basis and Journey as observed evidence
+  subject, preserving independence and terminal rules. Iris presents operational
+  views; presentation does not own Harmonia operational management.
+- **Release boundary:** for **R1.x/R2.x, Observe → Monitor → Report**. Energeia
+  SHALL NOT autonomously change execution, redistribute workload, modify Routes,
+  Pathways, Pub/Sub or Praxis, intervene in resilience or adjust capacity merely
+  from workload, failure, Journey, capacity, assurance or anomaly observations.
+  Existing explicitly governed execution/recovery behaviour retains its own
+  authority; observation grants no new adaptive authority.
+- **Separate management plane:** external IT/Ops manages infrastructure, network,
+  containers/Kubernetes, JVM/runtime, databases, technical health/capacity and
+  platform resilience. Energeia manages/observes Harmonia as Harmonia. This
+  distinction selects no deployment topology or infrastructure integration.
+- **Deferred direction:** **R3 Adaptive Load and Resilience Service** (F40):
+  Observe → Analyse → Decide → Adapt, with feedback to observation. R1.x/R2.x
+  observability should permit later capability without embedding it now.
+  Policy/control loops, algorithms, mechanisms, infrastructure integration and
+  AI decision architecture are deliberately undesigned (CDG-41).
+- **Standing:** U06 adjudicates these candidate responsibilities; whole-candidate
+  acceptance and Step B remain pending. Possible upstream omissions require
+  later review, without deriving Business Architecture or capability demand here.
 
 <a id="c04"></a>
 
@@ -262,21 +311,27 @@ under Mneme below.
 
 ### C06 — Praxis
 
-- **Adjudicated relationship:** Praxis may have **Pathway [0..1]** under
-  [U04](sources.md#u04). No broader Praxis semantics are established by this task.
-- **Historical candidate descriptions:** L04/L18/L19 describe blueprint loading,
-  seeding, ordering/dependencies/conditions, runtime routes, TaskSequence,
-  PraxisDefinition and PraxisImplementation; A04 uses Assurance Praxis for actual
-  assurance activity. These competing descriptions are retained as provenance,
-  not an accepted definition or composition/instance model.
-- **Information/persistence:** historical working definitions/caches and operations
-  persistence remain candidates with definition governance, version binding,
-  lifecycle and recovery unresolved (CDG-01/06). Publishing, Subscription and
-  Pattern semantics now belong with Mneme rather than this historical allocation.
-- **Exclusions/standing:** Praxis is not equated with Pathway, Route, a sequence
-  of Ergo/Ergon, a runtime engine or a Pub/Sub graph. Ponos execution, Mneme
-  information management and Petasos handoff remain distinct. A new Praxis
-  definition requires separate bounded adjudication.
+- **Role/ownership:** higher-order operational construct defining expected/permitted
+  context and the operational/assurance envelope. **Energeia C39 owns Praxis**
+  and provides **Praxis Management Services F11** under [U06](sources.md#u06).
+  It is not another execution engine or necessarily an independent component.
+- **Information/relationships:** candidate interface configuration, Topic exclusions
+  and potentially inclusions, operational constraints/configuration and assurance
+  rules. **Aggregation: Pathway [0..1]**; working **Aggregation: Journey** with
+  cardinalities unresolved. No Composition or shared lifecycle is inferred.
+  Praxis may exist without a Pathway for Publish/Subscribe activity.
+- **Management/persistence:** Mneme manages governed representations; Mnemosyne
+  **C&G** provides durable persistence responsibility. Ponos consumes Praxis for
+  execution and Dokimasia uses it as the primary normative assurance basis;
+  neither use nor persistence transfers application ownership.
+- **Retained detail:** schema, lifecycle/versioning, activation/deactivation,
+  replacement/retirement and in-flight effects remain CDG-01/06. Historical
+  TaskSequence/PraxisDefinition/PraxisImplementation and A04 actual-assurance-
+  activity descriptions do not establish equivalence or a definition-to-instance
+  model. U06 supersedes the earlier wholly unresolved broader-Praxis standing.
+- **Exclusions:** Praxis is not Pathway, Route, a sequence of Ergo/Ergon, a runtime
+  engine or a Pub/Sub graph. Mneme semantic selection, Petasos concrete persistent
+  handoff and Ponos execution remain distinct. No detailed Praxis schema is invented.
 
 ## Information management, preservation and middleware
 
@@ -285,15 +340,17 @@ under Mneme below.
 ### C28 — Pragma Management
 
 - **Role/responsibility:** Mneme-associated information-management responsibility
-  area containing PragmaFactory C08, Pragma C07 and Publishing C36, Subscription
-  C37, Pattern C38 responsibilities. [U02/U03/U05](sources.md#u05).
-  This is logical responsibility containment, not a required process/service.
+  area with logical Aggregation of PragmaFactory C08 and Publishing C36,
+  Subscription C37, Pattern C38 responsibilities, managing Pragma C07.
+  [U02/U03/U05](sources.md#u05). Aggregation/management identifies responsibility,
+  not Composition or a required process/service.
 - **Features/information:** creation/initialisation through PragmaFactory and
   governed management of Pragma representations and common process-management,
   assurance, reporting and platform integration associated with that information.
   Publishing/Subscription definitions, Pattern semantics/evaluation, matching,
-  selection, information eligibility and eligible consumer/destination relationships
-  belong here. Stimulus/Effector and candidate Dokimasia Pragma semantic roles
+  selection, semantic eligibility and eligible recipient/consumer relationships
+  belong here; concrete persistent destination/handoff mechanics remain Petasos.
+  Stimulus/Effector and candidate Dokimasia Pragma semantic roles
   reuse these facilities instead of requiring specialist equivalents.
 - **Persistence/collaboration:** active use/coordination through Mneme; authoritative
   durable establishment through Mnemosyne. Ponos executes, Petasos provides
@@ -329,9 +386,10 @@ under Mneme below.
   and lifecycle models await adjudication (CDG-09). These specialisations reuse
   common Pragma process-management, assurance, reporting and other management
   facilities. They introduce no new Domain04 Information Concepts here.
-- **Persistence:** active cache and FHIR Task/non-FHIR operations representations
-  appear in legacy design. Allocation, history, carrier variants and outcomes
-  are unresolved (CDG-02/03/12/13); the envelope is not authoritative merely by existing.
+- **Persistence:** relevant Pragma operational information is an O&A classification
+  candidate under U06. Legacy active-cache and FHIR Task/non-FHIR structure variants
+  do not settle detailed history, representation or outcome contracts
+  (CDG-02/03/12/13); the envelope is not authoritative merely by existing.
 - **Collaboration/exclusions:** created/consumed/updated at ingress and execution,
   observed through presentation and outbound status handling. Does not execute
   business logic, own pools/consumer loops, define workflow blueprints or convey
@@ -371,7 +429,7 @@ under Mneme below.
   availability, active context/relationship navigation, observation and concurrency
   coordination, reconstruction/convergence; governed facades C11. Active resource,
   task, definition and telemetry cache groupings are historical structure candidates.
-  Pragma Management C28 contains PragmaFactory and Pragma under U02; this
+  Pragma Management C28 logically aggregates PragmaFactory and manages Pragma; this
   information-management responsibility includes Publishing/Subscription/Pattern
   semantics, eligibility and selection under U05. Mneme coordinates governed
   information management, selection, publication, subscription and availability;
@@ -449,8 +507,9 @@ under Mneme below.
 - **Role/responsibility:** authoritative durable state/version establishment,
   management metadata, preservation, history and recovery. [A01 AX-05](sources.md#a01),
   [A02](sources.md#a02), [L09/L13/L16/L20](sources.md#l09).
-- **Features/contained constructs:** clinical/FHIR and non-FHIR operational
-  persistence slices, conditional commit/versioning, preservation/retrieval,
+- **Persistence responsibility domains:** **Clinical Information**, **Harmonia
+  Configuration & Governance (C&G)** and **Harmonia Operations & Assurance (O&A)**
+  under [U06](sources.md#u06); conditional commit/versioning, preservation/retrieval,
   indexing/search support and server-side registry integrity validation.
 - **Information:** managed resource representations, durable versions/metadata,
   operational definitions/state/history. Evidence, Pragma and collaboration store
@@ -458,6 +517,12 @@ under Mneme below.
 - **Persistence:** owns authoritative durable establishment. Hybrid relational-
   document rows, per-version composite-key structures and HAPI-native storage
   appear as competing descriptions; no physical schema is chosen here.
+  C&G SHALL present a single coherent governance space without semantic sharding
+  into independent/divergent authority; O&A SHALL permit horizontal partitioning
+  without changing identity, provenance, relationships or governed meaning.
+  These domains prescribe no service/database/schema topology or shard key;
+  clinical persistence is unchanged. [Domain guardrails](data-and-persistence.md#persistence-responsibility-domains)
+  and CDG-40 retain downstream physical design.
 - **Collaboration/exclusions:** supports Mneme access/recovery and governed changes;
   evidence preservation collaboration remains incomplete. Does not expose its
   persistence implementation as an application API, run workflows, become a Twin
@@ -612,9 +677,11 @@ approval rules and durable UI state, are unknown.
   relationships; entity/resource/Twin identity are not aliases. Historical patient,
   practitioner, wardsperson, organisation, care-team, ward and bed examples are
   illustrative archetypes, not an approved exhaustive component catalogue.
-- **Persistence/contained constructs:** internal coordination-state Data Objects,
-  activation/deactivation and durability allocations are not sufficiently defined
-  (CDG-07). A Twin is not inherently a permanent object, table or FHIR resource.
+- **Persistence/significant information:** definition/configuration is a C&G
+  classification candidate; operational state/activity is an O&A candidate under
+  U06. Detailed coordination-state Data Objects, activation/deactivation,
+  preservation and transient/durable qualification remain CDG-07. A Twin is not
+  inherently a permanent object, table or FHIR resource.
 - **Collaboration/exclusions:** executes Behaviour C25, which specialises Ergon
   and retains all common Ergo/Ergon facilities. Uses Mneme Pragma Management and
   candidate Stimulus/Effector specialisations; Ponos supplies common execution,
@@ -633,16 +700,21 @@ approval rules and durable UI state, are unknown.
 
 - **Role/features:** specialised Ponos-based execution component within Energeia
   coordinating independent governed assurance activity over a subject. Journey
-  C35 is the common observed-progression subject/substrate for Pathway and Pub/Sub
+  C35 is the common observed-progression evidence subject/substrate for Pathway
+  and Pub/Sub
   assurance under U04/U05; this does not limit all assurance subjects to Journey.
   [U02](sources.md#u02) settles the candidate specialisation relationship; actual
   Assurance Praxis evaluates available
   evidence against applicable basis and produces governed assurance information.
-  [A04 §2](sources.md#a04), [L31](sources.md#l31).
+  [A04 §2](sources.md#a04), [L31](sources.md#l31). **Praxis is the assurance basis;
+  Journey is the observed evidence subject** under U06. Pathway/Route expectations
+  contribute through applicable Praxis rather than constituting the general basis.
 - **Information:** evidence/context/basis and assurance assessment/finding/outcome
   areas are documented. Journey observations remain distinct from inferred
-  interpretation and assurance findings; detailed Data Objects, identity and persistence are
-  unallocated. Candidate vocabulary is not promoted into an Information Family.
+  interpretation and assurance findings. Dokimasia activity/findings/results are
+  O&A classification candidates under U06; detailed Data Objects, identity and
+  preservation remain unresolved. Candidate vocabulary is not promoted into an
+  Information Family.
 - **Activity/collaboration:** executes discrete Dokimasia Ergon C26 specialisations,
   including candidate AI Assurance Ergon C27. Reuses Ponos execution, Ergo/Ergon
   activity, Mneme Pragma Management, process-management, platform integration,
@@ -662,7 +734,7 @@ approval rules and durable UI state, are unknown.
 - **Standing:** conceptual independence remains established by A04; execution
   and discrete activity responsibilities are adjudicated for the candidate by U02.
   Detailed AI architecture requires CDG-35 discovery. No upstream responsibility
-  is reopened and full Praxis semantics remain separately unadjudicated.
+  is reopened; detailed Praxis/Journey and assurance contracts remain unresolved.
 
 <a id="dokimasia-terminal-boundaries"></a>
 
@@ -780,7 +852,8 @@ Representation and management/preservation contracts remain unresolved.
 ### C34 — Pathway
 
 Defines controlled interaction between PathwayEndpoints and available Route(s).
-Praxis may have Pathway [0..1]; no broader Praxis model follows. Publish/Subscribe
+Praxis **aggregates Pathway [0..1]** within its operational/assurance envelope.
+Publish/Subscribe
 is a distinct progression mechanism and need not have a Pathway.
 
 <a id="c35"></a>
@@ -792,8 +865,15 @@ observed progression reconstructed from available execution evidence, whether
 Pathway-controlled, Pub/Sub or mixed. It may be graph-shaped and have no Pathway.
 Primary reporting, monitoring, analysis and assurance subject; Dokimasia may
 interpret it under applicable basis without replacing observations with inference.
-Construction/management owner, lifecycle, persistence, evidence/causal schema and
-inferred-relationship representation remain unresolved ([CDG-38](gaps.md#journey-contracts)).
+**Energeia owns Journey and Journey Management Services F38** under U06. Mneme
+manages governed information; Mnemosyne **O&A** provides durable persistence
+responsibility. Journey aggregates/references observations/information from Mneme,
+Petasos, Ponos, Ergon, DigitalTwin and other components/evidence mechanisms where
+appropriate, retaining their ownership. Comparatively small discrete Journey
+information may describe substantial activity/evidence: aggregate semantically,
+without indiscriminate duplication. Detailed representation/construction, lifecycle,
+retention, graph/evidence/causal/correlation/reference schema and inference contracts
+remain unresolved ([CDG-38](gaps.md#journey-contracts)); Journey is not a shard key.
 Journey is neither an engine, AI narrative nor automatic permanent AuditEvent.
 
 <a id="c36"></a>
