@@ -983,6 +983,19 @@ At the protocol and API surface:
   determined by evaluating governed lifecycle attributes in authoritative
   persistence, not by the physical absence of a record.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Kleio authoritative Audit Capture](markdown/05-information-systems-architecture/component-register.md#c03)
+- [Immutable history and longitudinal evidence](markdown/05-information-systems-architecture/component-register.md#audit-history-and-evidence)
+- [Essential durable audit capture and independent-target scope](markdown/05-information-systems-architecture/component-register.md#auditability-and-availability)
+
+```text
+---------------------------------------------------------
+```
+
 #### Audit and Provenance
 
 In conformance with ADR-013 (Kleio Owns Audit Evidence and Provenance):
@@ -993,6 +1006,10 @@ In conformance with ADR-013 (Kleio Owns Audit Evidence and Provenance):
   and resulting state.
 - Because persisted entities remain permanently in Mnemosyne, audit trails and
   provenance graphs remain intact and verifiable throughout the system's life.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 #### Consequences
 

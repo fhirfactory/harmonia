@@ -40,54 +40,200 @@ read together with the [feature](candidate-feature-map.md) and
 
 ### C02 — Themis
 
-- **Role/responsibility:** policy evaluation and default-deny authorization for
-  governed operations. Trusted identity is established by authentication
-  boundaries; Themis evaluates permission. [A01](sources.md#a01), [L08/L13](sources.md#l08).
-- **Features/contained constructs:** policy contracts/evaluator, principal and
-  service-identity models, roles/authorities/security-label definitions, domain
-  policies and security-decision evidence production.
-- **Information:** authorization request/decision/reason, security context,
-  principal, roles/authorities and `ThemisAuditEvent`. Context is operational
-  information and does not automatically become persisted resource content.
-- **Persistence:** durable policy/identity administration storage is unknown.
-  Produces security-significant evidence according to policy; Kleio preserves
-  evidence, with durable storage support distinct from evaluation.
-- **Collaboration/exclusions:** participates at information, activity, collaboration
-  and publication boundaries. Does not own UI, transport, execution workers or
-  relational persistence merely by authorizing them.
-- **Standing:** high-level responsibility established; fixed four-gate variants
-  are historical designs, not an exhaustive Domain05 topology. CDG-13–15/30
-  retain evidence/context/enforcement differences.
+- **Role/responsibility:** **Themis owns and manages Harmonia's Authorisation
+  Model**, including administration, authoritative repository semantics, policy
+  reasoning and distributed enforcement. Authentication boundaries establish
+  trusted Identity; Themis determines authority under [AX-07](../governance/architectural-axioms.md#ax-07).
+  [U08](sources.md#u08) adjudicates this candidate architecture.
+- **PAP — Policy Administration Point:** administration and lifecycle management
+  of the Authorisation Model. Policy language, administration UI, approval
+  workflow, versioning mechanism and detailed governance process remain unresolved.
+- **PRP — Policy Repository Point:** authoritative repository semantics for the
+  Authorisation Model. Durable persistence may be delegated through **Themis PRP
+  → Mneme → Mnemosyne Harmonia Configuration & Governance**. This requires no
+  dedicated Themis physical database and transfers no model ownership to persistence.
+- **PDP — Policy Decision Point:** reasons over the Authorisation Model,
+  authenticated Identity and applicable context. It may produce an immediate
+  decision and/or reusable Criteria; its principal reusable product is **PEP-Context**.
+- **Governed actions:** **Can I ACCESS XYZ? Can I CHANGE ABC? Can I FORWARD DEF?**
+  ACCESS, CHANGE and FORWARD are distinct; they SHALL NOT collapse into CRUD.
+  FORWARD may depend on destination/context independently of ACCESS.
+  Unauthenticated or unauthorised operations default to **DENY**; unavailable
+  authoritative policy determination remains distinct from that decision.
+
+<a id="pep-context"></a>
+
+#### PEP-Context and distributed enforcement
+
+> **PEP-Context is the Themis-derived policy enforcement context established for
+> an authenticated Identity. It contains the Criteria applicable to that Identity
+> that a Themis Policy Enforcement Point requires to make local policy enforcement
+> decisions.**
+
+It is a contextual projection of the Authorisation Model. PEPs SHALL NOT receive
+the complete model merely because they need enforcement information.
+
+```text
+Policy                Authorisation Model managed by Themis
+Criteria              PDP-derived contextual expression within PEP-Context
+Enforcement Decision  local PEP determination for a particular proposed action
+```
+
+Enforcement occurs at the component capable of preventing the action. A PEP may
+be a Themis-provided library/framework element embedded within a host module.
+**The distributed PEP capability, implementation and enforcement semantics are
+Themis-owned/derived/built.** The host controls the actual operation; Themis
+supplies enforcement mechanism and semantics. Hosts SHALL NOT independently
+reinterpret the Authorisation Model in place of the Themis PEP. No separate
+central Policy Enforcement Software Component is created.
+
+PEP-Context and existing security-context contracts are operational context;
+they do not automatically become persisted resource content. Their detailed
+relationship, Criteria/schema and distribution mechanisms remain unresolved;
+PEP-Context is not silently equated with a historical class or transport carrier.
+
+<a id="themis-availability-and-delegation"></a>
+
+#### Availability and delegation
+
+An in-flight activity with a **valid PEP-Context sufficient for its required
+enforcement decisions** may continue during temporary PDP unavailability.
+PDP availability is required for a **new, renewed or replacement PEP-Context**.
+If the PDP cannot establish that required context, the activity SHALL NOT proceed
+beyond the point requiring it and must wait. **PDP unavailability is not policy
+denial**: policy permits, policy denies, and authoritative policy determination
+cannot presently be established remain distinct. This grants no unauthenticated
+or unauthorised action permission and weakens no required audit-capture boundary.
+Detailed validity, timeout/retry, revocation and renewal mechanisms are unresolved.
+
+A PEP-Context **MAY be delegatable**. A delegated context derives authority from
+an existing PEP-Context and establishes Criteria applicable to the authenticated
+Identity receiving delegated authority. Delegation SHALL remain within Themis
+policy architecture and preserve sufficient provenance to establish the source
+of delegated authority. Who may delegate, broadening/narrowing, depth, expiry,
+revocation, PDP interaction, approvals and implementation mechanisms are deferred
+to detailed implementation design and governance review.
+
+- **Collaboration/exclusions:** governed access, activity, publication and
+  collaboration hosts use Themis-owned PEP capability. Petasos hosts governed
+  FORWARD enforcement because it controls the queue operation. Praxis may supply
+  relevant context but is not the Authorisation Model; authorisation does not
+  establish Praxis conformance. Themis is neither Audit nor Assurance. Significant
+  policy/enforcement occurrences are reported through Kleio Audit Capture under
+  applicable policy; clients need not construct FHIR AuditEvent.
+- **Standing:** U08 resolves model ownership and distributed enforcement.
+  [CDG-42](gaps.md#themis-detailed-contracts) retains detailed design and the
+  note's audit-authorisation-exception conflict with AX-07; no bypass is adopted.
+  Historical fixed gate counts and automatic context persistence remain
+  CDG-15/30 provenance, without reopening established security boundaries.
 
 <a id="c03"></a>
 
 ### C03 — Kleio
 
-- **Role/responsibility:** preserves meaningful immutable audit evidence and
-  governed provenance. [A01 AX-08](sources.md#a01), [L13 ADR-013/016](sources.md#l13).
-- **Features/contained constructs:** acceptance/preservation of append-only
-  evidence concerning significant actions, information and authority transitions,
-  external dispatch and deliberate replay where policy requires it. Internal
-  subcomponent hierarchy and evidence-access services are unknown.
-- **Information:** AuditEvents, provenance and links to significant transitions/
-  original processing attempts; not every implementation checkpoint or policy
-  evaluation is durable evidence. Dokimasia's governed assurance record/result
-  is authoritative evidence of its assurance activity; no separate AuditEvent
-  for its own execution is generated ([terminal rules](#dokimasia-terminal-boundaries)).
-- **Persistence:** evidence permanence/immutability is documented; exact repository,
-  schema and collaboration with Mnemosyne are incomplete. Historical FHIR and
-  operations allocations compete (CDG-13/14).
-- **Collaboration/exclusions:** receives evidence from Themis, Pylai, execution,
-  Iris and other governed producers. Evidence custody does not allocate
-  independent assurance evaluation, work execution or subject management.
-- **Standing:** high-level RADS responsibility plus ADR candidate detail; not
-  rejected because the legacy subproject inventory omits its name.
+- **Role/responsibility:** **Harmonia's authoritative Audit Information Management
+  component.** Kleio owns authoritative Audit Capture, creation/management of
+  authoritative audit information, canonical FHIR **AuditEvent** representation,
+  preservation/retrieval of audit history, semantically significant user/system
+  audit activity and provision/preparation of historical audit context for
+  operational and assurance use. [U07](sources.md#u07), [AX-08](../governance/architectural-axioms.md#ax-08).
+- **Audit Capture:** clients report semantically significant auditable occurrences
+  and necessary context through a **Kleio-provided contract/library/API**.
+  **Clients SHALL NOT be required to construct FHIR AuditEvent resources.** Kleio
+  constructs and manages the authoritative representation; client API and mapping
+  details remain unresolved.
+- **Information:** FHIR AuditEvent is the authoritative audit-event representation,
+  without requiring every internal Kleio structure to be an AuditEvent. Indexes,
+  correlation structures and prepared historical context may support management.
+  **Authoritative audit evidence SHALL remain distinguishable from derived,
+  correlated, contextualised or prepared historical views.** Existing meaningful
+  provenance responsibilities remain; AuditEvent does not redefine all evidence.
+- **User activity:** semantically significant access/view, governed search,
+  create/change/delete, submit/approve/reject, disclosure/export, operational action
+  and relevant denied activity may require capture. These are examples, not a
+  universal event taxonomy; “delete” grants no physical managed-information DELETE.
+  Generic UI telemetry/clickstream is outside Kleio; UI security assurance and
+  governance remain **Somebody Else's Problem (SEP)**.
+- **Collaboration/exclusions:** **Audit is not Governance. Audit is not Assurance.**
+  Kleio may consume Journey information and Dokimasia outputs and provide
+  historical audit context back to Dokimasia, without evaluating assurance or
+  governing the subject. Dokimasia's governed record/result remains authoritative
+  evidence of its assurance activity; its [terminal rules](#dokimasia-terminal-boundaries)
+  prohibit a separate own-execution AuditEvent and recursive assurance. Consumption
+  of its outputs does not circumvent those rules.
+
+<a id="audit-history-and-evidence"></a>
+
+#### Immutable history and longitudinal evidence
+
+Authoritative AuditEvents are immutable. An existing AuditEvent SHALL NOT be
+corrected, amended, overwritten or silently replaced. Correction or qualification
+SHALL create a **new AuditEvent**, preserve the earlier event unchanged and refer
+back to it as appropriate. The earlier assertion remains part of historical record.
+
+Journey is the governed representation of observed Harmonia activity/progression;
+AuditEvent is the authoritative audit representation of a significant auditable
+occurrence. Journey is an important audit source, **not the audit boundary**.
+A Journey may relate to many AuditEvents; an AuditEvent may exist without Journey.
+**Journey participation SHALL NOT be a prerequisite for Audit Capture.**
+
+> **Reference by default; replicate only where necessary to preserve longitudinal
+> audit evidence.**
+
+Kleio SHALL NOT duplicate authoritative source information merely because it is
+audit-relevant. Where historical state can be reliably resolved longitudinally,
+Kleio references it with sufficient **identity, version, provenance and temporal
+detail**. Version identity alone is not assumed to supply all temporal detail.
+Only where the authoritative source cannot guarantee retrieval of the information
+as it existed at the audited point in time may Kleio clone/replicate the necessary
+source information within or in association with the authoritative AuditEvent to
+preserve required longitudinal evidence. Detailed FHIR attachment/reference
+mechanisms remain unresolved.
+
+<a id="auditability-and-availability"></a>
+
+#### Auditability and R1.x/R2.x availability
+
+> **Harmonia SHALL NOT perform an auditable activity unless the required audit
+> information can be authoritatively and durably captured.**
+>
+> **If Kleio cannot authoritatively capture required audit information, Harmonia
+> is DOWN.**
+
+Audit Capture is not best-effort and SHALL NOT be assumed reconstructable later
+from logs, Journey information or incidental operational state. Transaction,
+retry/failover and health/readiness mechanisms are deliberately unresolved.
+
+Kleio retains audit application ownership; Mneme provides governed management
+and Mnemosyne **Harmonia Operations & Assurance** establishes durable audit state.
+For R1.x/R2.x, multiple **independent authoritative audit persistence targets**
+through Mneme/Mnemosyne are permitted. At least **one configured target capable
+of durably establishing the required audit information** is sufficient for
+continued Harmonia operation. If none can establish it, Harmonia is unavailable
+and fails closed. Target count, selection and whether one/some/all receive an
+event are unresolved; targets SHALL NOT be called replicas without established
+replication semantics.
+
+> **For R1.x/R2.x, audit data harmonisation between independent Mnemosyne audit
+> persistence targets is outside Harmonia scope — Somebody Else's Problem (SEP).**
+
+R1.x/R2.x guarantees neither identical histories, complete copies of all
+AuditEvents, automatic convergence, reconciliation after disconnection nor unified
+cross-target longitudinal history. Different targets may expose different histories;
+an immutable AuditEvent remains authoritative without its target holding the whole
+corpus. No future harmonisation/convergence mechanism is selected.
+
+- **Standing:** U07 resolves responsibility, representation, immutability,
+  longitudinal evidence, availability and release scope; [CDG-43](gaps.md#kleio-detailed-contracts)
+  retains detailed capture/query/correlation/retention/processing and persistence
+  mechanisms. Historical FHIR/operational storage structures remain provenance,
+  without competing with the established O&A semantic alignment.
 
 ## Activity and execution responsibilities within Energeia
 
 Energeia is a **discrete Harmonia Software Component responsible for management
 of Harmonia's operational activity**, under [U06](sources.md#u06). Its direct
-Praxis/Journey management and operational observation/monitoring/reporting
+Praxis/Journey management and operational observation/reporting
 responsibilities justify that boundary. Ponos, Ergo, Ergon, Erga and specialised
 execution/activity constructs remain **associated** with Energeia. Their
 Specialisation, Realisation, Aggregation and execution relationships are explicit
@@ -105,7 +251,7 @@ Pragma information management remains with Mneme.
   activity, Journey progression, stalled/incomplete activity, Praxis context,
   abnormal behaviour and operational information for reporting/assurance.
 - **Candidate services/features:** **Praxis Management Services** (F11) and
-  **Journey Management Services** (F38), plus operational observation, monitoring
+  **Journey Management Services** (F38), plus operational observation
   and reporting (F39). Detailed Feature/Service/internal-construct/subordinate-
   Component decomposition remains unresolved (CDG-39); service-set names do not
   manufacture independently deployable components.
@@ -123,7 +269,7 @@ Pragma information management remains with Mneme.
   Dokimasia uses Praxis as assurance basis and Journey as observed evidence
   subject, preserving independence and terminal rules. Iris presents operational
   views; presentation does not own Harmonia operational management.
-- **Release boundary:** for **R1.x/R2.x, Observe → Monitor → Report**. Energeia
+- **Release boundary:** for **R1.x/R2.x, Observe → Report**. Energeia
   SHALL NOT autonomously change execution, redistribute workload, modify Routes,
   Pathways, Pub/Sub or Praxis, intervene in resilience or adjust capacity merely
   from workload, failure, Journey, capacity, assurance or anomaly observations.
@@ -450,32 +596,68 @@ Pragma information management remains with Mneme.
 
 ### C10 — Petasos
 
-- **Role/responsibility:** shared persistent/recoverable messaging and handoff
-  between Harmonia processing boundaries, without acquiring information/activity
-  semantics or information-management authority. [U05](sources.md#u05) corrects
-  historical work-payload language in L13/L29 while preserving AX-10 recoverability.
-- **Features:** persistent handoff obligations, bounded backlog, queue/destination
-  mechanics, identity/correlation and handoff metadata, delivery observation,
-  handoff redelivery/recovery/dead-letter semantics and designated replay support.
-  Duplicate/replay and uncertain-effect contracts remain CDG-16/17/19/34.
-- **Information:** for Pragma processing, identity/reference plus metadata needed
-  to resolve information through Mneme and effect/recover handoff; the managed
-  Pragma/Information Unit payload remains through Mneme. Exact handoff structure
-  and destination/channel naming remain unresolved. PetasosMessage/API and opaque
-  binary/text mechanisms do not establish payload ownership or semantic eligibility.
-- **Persistence:** persists the handoff obligation and necessary recovery state;
-  not the authoritative durable repository for referenced managed information,
-  which remains Mnemosyne's responsibility, or automatically permanent evidence.
-- **Collaboration/exclusions:** serves ingress, execution, publication, Agora and
-  other established messaging collaborations, including Communication Event and
-  Notification Event forms. Their detailed semantics remain open; Petasos is not
-  ActionableTask-only and no universal reference-only message format is imposed.
-  For ActionableTask handoff it offers the opportunity to undertake work; consumers
-  resolve through Mneme and establish distinct FulfillmentTasks before execution.
-  It does not own Publishing/Subscription/Pattern selection or Ponos execution.
-- **Standing:** responsibility adjudicated for the candidate; detailed handoff,
-  recovery, acknowledgement, event-form and fan-out contracts remain unresolved.
-  Internal middleware belongs in Domain05; external protocols remain Domain06.
+- **Role/responsibility:** **Harmonia's durable message/event queue-management
+  component**, a first-class shared messaging/event capability. Petasos manages
+  creation, operation and operational state/status of its durable queues.
+  [U09](sources.md#u09) extends the U05 handoff boundary, preserving AX-10.
+- **Purpose-defined queues:** purposes include inter-Ergon information flow,
+  defined communication/event sharing, notification/event sharing and other
+  architecturally established Harmonia event-sharing services. Queue purpose is
+  architecturally defined; queues are not arbitrary generic queues. Final taxonomy,
+  names, registration/configuration and topology remain unresolved.
+- **Features:** queue management and durable Parcel communication/event handling;
+  persistent handoff obligations, bounded backlog, destination mechanics and
+  handoff redelivery/recovery/dead-letter and designated replay responsibilities
+  remain. Detailed delivery/ordering/duplicate/replay/recovery contracts are not
+  newly selected; CDG-16/17/19/34/37/44 retain uncertainty.
+
+<a id="petasos-parcel"></a>
+
+#### PetasosParcel and information ownership
+
+Every Petasos queue carries the single common datatype **PetasosParcel**.
+It represents the queued Harmonia communication/event and is conceptually
+analogous to **FHIR Communication**, without established literal equivalence.
+No schema or mapping to historical PetasosMessage/ErgonEvent is inferred.
+
+```text
+PetasosParcel          pass-by-value; the queued communication/event
+Referenced Information predominantly pass-by-reference;
+                       remains managed by its authoritative component
+```
+
+**PetasosParcel is passed by value.** Petasos does not transport only references
+and does not duplicate all associated information into the Parcel. Petasos owns
+Parcel messaging/event semantics and queue operations; references confer no
+ownership of the referenced information.
+
+For the **ActionableTask handoff special case**, ActionableTask/Pragma and payload
+remain managed through Mneme. A Parcel may reference that ActionableTask and is
+itself queued by value. Petasos does not transport another consumer's
+FulfillmentTask; each consumer undertaking the ActionableTask establishes its own
+distinct FulfillmentTask. The established no-payload-copy rule for this case
+does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-handoff.md#persistent-handoff).
+
+- **Persistence:** durable queues/Parcels and handoff recovery state are Petasos
+  responsibility; referenced managed-information durable establishment remains
+  Mnemosyne. Queue persistence mechanisms are not selected and queues do not
+  become automatically permanent audit evidence.
+- **Operational observation:** Petasos owns queue operational state/status.
+  Energeia may **observe/report** relevant state, without acquiring queue management
+  or autonomous queue control. Detailed metrics/state structures remain unresolved.
+- **Themis collaboration:** for a governed FORWARD action, Petasos is the host/
+  enforcement location because it controls the queue operation. Applicable
+  enforcement SHALL use **Themis-owned PEP capability** and relevant **PEP-Context
+  Criteria**. Themis owns authorisation/enforcement semantics; Petasos owns the
+  operation. Detailed protocol remains unresolved.
+- **Other collaborations/exclusions:** serves Ergon, ingress, execution,
+  publication, Agora and architecturally established communication/notification
+  services. It is not subordinate to Ponos, ActionableTask-only, a reference
+  transport helper or merely a generic enterprise broker abstraction. Mneme owns
+  Publishing/Subscription/Pattern semantic selection; Ponos owns execution.
+- **Standing:** U09 resolves queue responsibility and common datatype/pass semantics;
+  [CDG-44](gaps.md#petasos-detailed-contracts) retains schema, queue and interaction
+  detail. Internal middleware remains Domain05; external protocols remain Domain06.
 
 <a id="c11"></a>
 
@@ -512,8 +694,9 @@ Pragma information management remains with Mneme.
   under [U06](sources.md#u06); conditional commit/versioning, preservation/retrieval,
   indexing/search support and server-side registry integrity validation.
 - **Information:** managed resource representations, durable versions/metadata,
-  operational definitions/state/history. Evidence, Pragma and collaboration store
-  allocations differ between sources; see persistence view and CDG-12/13/22.
+  operational definitions/state/history. Themis Authorisation Model aligns with
+  C&G; Kleio Audit Information aligns with O&A. Historical Pragma and collaboration
+  store allocations differ; see persistence view and CDG-12/13/22.
 - **Persistence:** owns authoritative durable establishment. Hybrid relational-
   document rows, per-version composite-key structures and HAPI-native storage
   appear as competing descriptions; no physical schema is chosen here.
@@ -524,7 +707,8 @@ Pragma information management remains with Mneme.
   clinical persistence is unchanged. [Domain guardrails](data-and-persistence.md#persistence-responsibility-domains)
   and CDG-40 retain downstream physical design.
 - **Collaboration/exclusions:** supports Mneme access/recovery and governed changes;
-  evidence preservation collaboration remains incomplete. Does not expose its
+  Kleio owns audit management with durability through Mneme/O&A; detailed
+  preservation mechanisms remain unresolved. Does not expose its
   persistence implementation as an application API, run workflows, become a Twin
   or acquire universal authority over clinical facts by storing them.
 - **Standing:** established responsibility, candidate persistence decomposition
@@ -863,7 +1047,7 @@ is a distinct progression mechanism and need not have a Pathway.
 First-class observational construct / candidate Application Data Object: governed
 observed progression reconstructed from available execution evidence, whether
 Pathway-controlled, Pub/Sub or mixed. It may be graph-shaped and have no Pathway.
-Primary reporting, monitoring, analysis and assurance subject; Dokimasia may
+Primary reporting, analysis and assurance subject; Dokimasia may
 interpret it under applicable basis without replacing observations with inference.
 **Energeia owns Journey and Journey Management Services F38** under U06. Mneme
 manages governed information; Mnemosyne **O&A** provides durable persistence

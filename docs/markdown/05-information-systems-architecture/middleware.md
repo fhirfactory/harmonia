@@ -8,7 +8,7 @@ from documented collaboration intent, principally [L13](sources.md#l13),
 [L29](sources.md#l29), [L01](sources.md#l01), [L14](sources.md#l14) and
 [L19](sources.md#l19). External integration contracts and runtime products remain
 separate architectural concerns.
-The [U02–U06 adjudications](sources.md#u02) distinguish execution/activity/information,
+The [U02–U09 adjudications](sources.md#u02) distinguish execution/activity/information,
 semantic selection, persistent handoff and Journey observation. Specialisations
 reuse common facilities; the [shared semantic view](pathways-journeys-and-handoff.md)
 records detailed boundaries and retained uncertainty.
@@ -17,15 +17,15 @@ records detailed boundaries and retained uncertainty.
 
 | ID | Internal responsibility / candidate allocation | Information and collaboration contract | Current standing / limits |
 | :--- | :--- | :--- | :--- |
-| M01 | **Petasos shared persistent/recoverable messaging and handoff** | Persistently manages handoff obligations without information ownership. For Pragma processing, identity/reference plus handoff metadata allows consumer resolution through Mneme; Communication/Notification Events and other forms retain their own semantics | U05, AX-10. Semantic eligibility/consumer selection belongs to Mneme. No universal reference-only format or ActionableTask-only restriction. Acceptance, commit, undertaking completion and external ACK distinct; CDG-16/19/34/37. |
+| M01 | **Petasos durable message/event queue management** | Creation, operation and operational status of purpose-defined queues for inter-Ergon flow and other architecturally established communication/notification/event sharing; every queue carries PetasosParcel by value, associated information predominantly by reference | U05/U09, AX-10. First-class shared capability; Mneme selects information and retains ActionableTask/Pragma management. Petasos Parcel reference supports own distinct consumer FulfillmentTask, not transported other-consumer undertaking. Queue state Petasos-owned; Energeia observes/reports. Detail CDG-16/19/34/37/44. |
 | M02 | **Recoverable backlog, redelivery, rejection, dead-letter and designated replay** | Durable backlog absorbs pressure; consumer acknowledgement/rejection and dead-letter observations support recovery. Deliberate replay starts a new linked attempt at a designated transition, preserving the original. | L13 ADR-015/017, L02/L29. Exact queue sizes/retry limits are implementation detail. Replay is not transport redelivery, arbitrary cache restart or redelivery of an established result, CDG-17. |
 | M03 | **Ponos governed execution ingress, dispatch and progression** | Consumer resolves Pragma/context through Mneme and establishes its distinct FulfillmentTask for ActionableTask undertaking; Ponos manages execution and execution retry/re-attempts | U02/U05. Ponos does not convert an opaque transport payload into information it manages, match Subscriptions or own handoff dead-letter recovery. Detailed continuation/acknowledgement CDG-01/03/16/17. |
 | M04 | **Ergo/Ergon activity contract and Erga Aggregation** | Context Loading/Unloading resolves/updates governed information through Mneme; bounded Ergon exposes ingress/egress interfaces; Erga aggregates assemblies/concurrent observations/libraries | U02/U04–U06. Associated Energeia responsibilities do not imply Composition. Energeia owns Praxis; Aggregation of Pathway [0..1] retained. Detailed activity/control contracts CDG-01/06. |
 | M05 | **Mneme-facing governed access, observation and change coordination** | Read/change services combine governed access, active coordination, authoritative conditional commit and guarded post-commit convergence. Context and semantically distinct outcomes travel with the operation. | L14; A01 AX-05/07/14/15 and A02. Facade is an application access contract, not another persistence owner or mandatory network boundary. Tokens/versions/errors require distinctions, CDG-11/16/31. |
 | M06 | **Governed definition/reference availability and Praxis management collaboration** | Energeia Praxis Management Services manage operational definition/configuration; Mneme manages governed representations and availability; Mnemosyne C&G supplies durability; Calliope reference definitions consumed locally | U06 extends L04/L19 historical loader/seeder descriptions without adopting reload/version algorithms. Publishing/Subscription/Pattern semantic management remains Mneme. Detailed definition/lifecycle contracts CDG-01/06/24/36. |
-| M07 | **Security/context and meaningful evidence participation** | Trusted context reaches enforcing boundaries; Themis evaluates; significant evidence is preserved according to policy, distinct from transient metrics/checkpoints. Specialisations reuse these common facilities with Dokimasia terminal constraints | A01 AX-07–09, U02, L08/L13/L14. Dokimasia governed record/result is authoritative assurance-activity evidence; no separate own-execution AuditEvent. Evidence-access/representation detail CDG-08/09/13–15/30; no new context wrapper or automatic transport persistence. |
+| M07 | **Themis distributed enforcement and Kleio Audit Capture** | Themis PAP/PRP/PDP manages/reasons over Authorisation Model; PEP-Context supplies Identity-specific Criteria to Themis-owned local PEP at action-controlling host. Significant client occurrences use Kleio contract; Kleio constructs immutable FHIR AuditEvent | U07/U08, AX-07–09/14. ACCESS/CHANGE/FORWARD distinct; context projection is not complete policy distribution. Valid sufficient context may continue during PDP loss; required new context must wait, unavailability is not denial. Required durable audit capture essential; no Journey prerequisite. Dokimasia terminal rules retained. Detail CDG-42/43. |
 | M08 | **Agora collaboration handoff** | Collaboration requests/events move through Petasos; Agora identity/lifecycle/membership/transaction handling governs collaboration protocol projection. | AGENTS Invariant 10; L12. No direct Agora-to-Ponos dependency or raw Matrix type leakage; summary sources/partial transaction effects unresolved, CDG-19/21–23. |
-| M09 | **Harmonia operational observation/monitoring/reporting and presentation mediation** | Energeia owns Harmonia operational management; Journey is common observed progression; Iris presents; component contributors retain their responsibilities; external IT/Ops manages technical platform | U06: R1.x/R2.x Observe → Monitor → Report; no autonomous adaptation. Journey, diagnostics, AuditEvent and findings distinct; detailed freshness/projection/reporting contracts CDG-28/38/39; terminal rules retained. |
+| M09 | **Harmonia operational observation/reporting and presentation mediation** | Energeia owns Harmonia operational management; Journey is common observed progression; Iris presents; component contributors retain their responsibilities; external IT/Ops manages technical platform | U06: R1.x/R2.x Observe → Report; no autonomous adaptation. Journey, diagnostics, AuditEvent and findings distinct; detailed freshness/projection/reporting contracts CDG-28/38/39; terminal rules retained. |
 | M10 | **Mneme Pragma Management collaboration** | PragmaFactory creates/initialises; Mneme manages Pragma/payload and Publishing/Subscription/Pattern semantic responsibilities; Ponos executes, Ergon behaves, Petasos effects persistent handoff | U02/U03/U05. Governed information state, handoff state, undertaking state and execution state remain distinct. Observation recording confers no delivery obligation ownership. Detail CDG-02/03/04/09/18/36/37. |
 | M11 | **DigitalTwin entity-specific pending-work coordination** | DigitalTwin specialises Ponos with the per-Twin queue pattern and executes Behaviour specialising Ergon; uses governed entity context and candidate Stimulus/Effector Pragma information | U02 preserves A02. Only Twins with pending work become active, serviced by bounded execution resources; no thread per Twin. Scheduling, ordering/recovery and control detail remain CDG-07, without queue product/API or topology selection. |
 | M12 | **Dokimasia independent assurance collaboration** | Ponos-specialised Dokimasia uses **Praxis as assurance basis and Journey as observed evidence subject**; executes Dokimasia Ergon / AI Assurance Ergon where selected; reuses common activity/information/platform contracts | U02/U06 preserve A04 independence and terminal rules: no recursive Dokimasia assessment or separate own-execution AuditEvent. Detailed independence/evidence access CDG-08/09; AI discovery CDG-35. |
@@ -33,7 +33,7 @@ records detailed boundaries and retained uncertainty.
 | M14 | **Pathway-controlled progression** | Ergon PathwayEndpoints, inter-component Segments, encapsulated Traversals, Route = ordered Segment [1..N], Pathway interaction with available Routes; Praxis aggregates Pathway [0..1] | U04/U06. Distinct from Pub/Sub; Journey observes both under Energeia application ownership. Detailed control/definition contracts CDG-01/06; no routing technology selected. |
 | M15 | **Journey management, evidence contribution and assurance use** | Energeia Journey Management Services aggregate/reference observations/information from Mneme, Petasos, Ponos/Ergon, DigitalTwin and other governed contributors; Mneme information management; Mnemosyne O&A durable responsibility | U06 resolves owner without owning all contributors or duplicating payloads. Journey evidence subject differs from Praxis assurance basis and Dokimasia inference/findings. Construction/reference/causal/correlation/retention contracts CDG-38; no schema/shard key or universal AuditEvents. |
 
-| M16 | **Application management versus durable persistence collaboration** | Energeia owns Praxis/Journey application semantics; Mneme governs managed access/use; Mnemosyne C&G/O&A establish authoritative durable state under their domain guardrails | U06. C&G coherent governance authority; O&A horizontal partitionability preserves identity/provenance/relationships/meaning. Three semantic domains create no databases, services, network boundaries or transport APIs; physical design CDG-40. |
+| M16 | **Application management versus durable persistence collaboration** | Energeia owns Praxis/Journey; Themis owns Authorisation Model/PRP semantics; Kleio owns Audit Information Management. Mneme provides governed management; Mnemosyne C&G/O&A supplies authoritative durable state | U06–U08. Themis PRP may use Mneme/C&G; Kleio uses Mneme/O&A with independent authoritative audit targets permitted and R1.x/R2.x harmonisation SEP. C&G coherent authority and O&A partitionability create no prescribed databases/services/topology. Physical design CDG-40; audit mechanisms CDG-43. |
 
 ## Documented collaboration examples
 
@@ -42,8 +42,9 @@ end-to-end algorithms or new external contracts.
 
 1. **ActionableTask Pub/Sub handoff:** provider egress presents managed Pragma
    through Mneme. Publishing may block availability; Subscription/Pattern
-   matching determines eligible consumers. Petasos persists resulting identity/
-   reference handoff obligations. Consumers resolve through Mneme and establish
+   matching determines eligible consumers. Petasos queues by-value PetasosParcels
+   carrying ActionableTask references and communication/handoff metadata for the
+   resulting persistent obligations. Consumers resolve through Mneme and establish
    distinct FulfillmentTasks when undertaking work; Ponos executes Ergon through
    Ergo's governed context boundary. Exact fan-out contracts remain CDG-37.
 2. **Pathway-controlled progression:** defined endpoint interaction and Route(s)
@@ -65,16 +66,37 @@ end-to-end algorithms or new external contracts.
    information commit and work resolution are distinct.
 5. **Other messaging / collaboration:** shared Petasos supports Communication/
    Notification Event forms alongside established Agora collaboration requests/
-   events. Exact client/event-form relationships remain unadjudicated; their
-   formats are not forced into the ActionableTask reference model. Partial publication,
+   events. All queues use the common by-value PetasosParcel datatype. Associated
+   information is predominantly by reference; event-purpose/schema relationships
+   remain unresolved without imposing the ActionableTask no-payload-copy rule. Partial publication,
    marker failure and uncertain effects remain CDG-19; no exactly-once contract
-   is inferred. Observation may contribute to Journey without compulsory audit.
+   is inferred. Observation may contribute to Journey without making every observation an
+   AuditEvent; required significant audit information must nevertheless be captured.
+
+## Local forwarding enforcement and essential audit capture
+
+Petasos controls its queue operation and therefore hosts enforcement when that
+operation is a governed **FORWARD**. Its applicable local decision SHALL use
+Themis-owned PEP capability and relevant PEP-Context Criteria. Destination/context
+may affect FORWARD independently of ACCESS. No Petasos/Themis protocol is selected.
+Queue status stays Petasos-owned while Energeia observes/reports it.
+
+Kleio's contract accepts client-reported significant occurrences and constructs
+authoritative FHIR AuditEvent; clients do not have to construct resources. Journey
+and Dokimasia outputs may be audit sources and Kleio may supply historical context
+to Dokimasia, preserving evidence/view distinctions and terminal rules. Journey
+participation is not required. **Harmonia SHALL NOT perform an auditable activity
+unless its required audit information can be authoritatively and durably captured.**
+If Kleio cannot capture it, Harmonia is DOWN. One configured independent audit
+target capable of establishing the required information suffices in R1.x/R2.x;
+none means fail closed. Capture cannot be deferred for reconstruction from logs/
+Journey. Transaction/retry/failover and target selection remain unresolved.
 
 ## Responsibility boundaries
 
 | Concern | Domain05 meaning | Separate downstream concern |
 | :--- | :--- | :--- |
-| Internal messaging / handoff | Persistent obligation, delivery/recovery state, reference resolution for Pragma processing and broader event-form semantics | Broker product/API, queue bindings, wire format, journal flush/failover machinery; no universal reference-only format. |
+| Internal messaging / handoff | Purpose-defined durable queues and operational status; common by-value PetasosParcel with predominantly referenced information; handoff/recovery and ActionableTask resolution through Mneme | Broker product/API, queue bindings/taxonomy, Parcel/wire schema, journal/failover and delivery mechanisms; no reference-only transport or generic broker-derived semantics. |
 | Internal activity collaboration | Execution/context/composition and continuing responsibility | Camel, direct/SEDA/JMS routes, threads, process/runtime topology. |
 | Specialised execution/activity collaboration | DigitalTwin/Dokimasia reuse Ponos; Behaviour/Dokimasia Ergon reuse Ergo/Ergon; Erga supports assembly/concurrent activity; terminal assurance rules constrain inherited hooks | Implementation inheritance, Twin scheduling/queue bindings and AI service/model/provider architecture; no choice made here. |
 | Managed information collaboration | Application-facing access, active coordination, durable establishment and truthful outcomes | Hot Rod, CAS/locking, HTTP/internal persistence transport, SQL/JPA and cache distribution. |

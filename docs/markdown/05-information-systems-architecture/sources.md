@@ -23,14 +23,14 @@ Source keys identify documentary evidence, not architectural authority rankings.
 | <a id="u04"></a>U04 | Supplied `DesignNote-Pathways-Journeys-and-Assurance-Representation.md` (2026-10-11), §§1–19, plus explicit bounded task decisions | [Pathway/Journey semantic view](pathways-journeys-and-handoff.md): endpoint/element/segment/traversal/route/pathway definitions, Praxis Pathway [0..1], distinct progression mechanisms, graph-shaped Journey and common reporting/assurance observation. Input-level owner deferrals are resolved by U06 for Journey; detailed schema/lifecycles remain open. Simplified legacy-like Topic topology in §9 is read with U05 classification semantics, not broker destinations. |
 | <a id="u05"></a>U05 | Supplied `DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md` (2026-10-11), §§1–25, plus explicit bounded task decisions | [Publication/selection](pathways-journeys-and-handoff.md#publication-and-selection), [persistent handoff](pathways-journeys-and-handoff.md#persistent-handoff), [state distinctions](pathways-journeys-and-handoff.md#state-and-recovery) and [fan-out boundary](pathways-journeys-and-handoff.md#fan-out-boundary) incorporated. Common managed Pragma/payload and distinct consumer FulfillmentTasks settled in principle; detailed reference/copy/version/lifecycle contracts unresolved. Petasos generality retained; technology possibilities in §22 are not adopted choices. |
 
-| <a id="u06"></a>U06 | Supplied `DesignNote-Energeia-Operational-Management-and-Praxis-Responsibility.md` (2026-10-11), §§1–15, **plus explicit current task adjudications** | [Incorporated operational-management decisions](README.md#operational-management-adjudication): discrete Energeia component; Praxis/Journey ownership and candidate Management Services; Praxis assurance basis/Journey evidence subject; two management planes; R1.x/R2.x observation/monitoring/reporting and deferred R3 direction; precise Mneme semantic eligibility versus Petasos concrete handoff; [Clinical/C&G/O&A persistence guardrails](data-and-persistence.md#persistence-responsibility-domains). Task instructions establish Journey ownership/persistence domains beyond note wording. Detailed lifecycle/representation/decomposition/physical designs remain explicit. |
+| <a id="u06"></a>U06 | Supplied `DesignNote-Energeia-Operational-Management-and-Praxis-Responsibility.md` (2026-10-11), §§1–15, **plus explicit current task adjudications** | [Incorporated operational-management decisions](README.md#operational-management-adjudication): discrete Energeia component; Praxis/Journey ownership and candidate Management Services; Praxis assurance basis/Journey evidence subject; two management planes; R1.x/R2.x observation/reporting (Observe → Report correction under U09/current task) and deferred R3 direction; precise Mneme semantic eligibility versus Petasos concrete handoff; [Clinical/C&G/O&A persistence guardrails](data-and-persistence.md#persistence-responsibility-domains). Task instructions establish Journey ownership/persistence domains beyond note wording. Detailed lifecycle/representation/decomposition/physical designs remain explicit. |
 
-The previous correction incorporated U02–U05; all four notes were reviewed again
-for this task, alongside the new U06 note. Duplicate note attachments do not
-establish additional decisions. All five supplied DesignNotes were read in full.
-The explicit task decisions extend U06 with Journey ownership and the three
+The U06 correction incorporated the earlier U02–U05 decisions; its review covered
+all four earlier notes alongside the then-new U06 note. Duplicate note attachments do not
+establish additional decisions. That correction read all five supplied DesignNotes in full.
+The U06 task decisions extend that note with Journey ownership and the three
 Mnemosyne persistence domains/scaling guardrails; these are not attributed to
-wording absent from the new note. U04/U05 label themselves working/conversational input;
+wording absent from that note. U04/U05 label themselves working/conversational input;
 the explicit task instruction makes them the primary human-adjudicated inputs
 for the matters they address, within existing axiom/Domain04 authority. Their
 decisions are faithfully incorporated into these RADS Candidate Architecture
@@ -43,6 +43,24 @@ migration is not performed. Their unestablished details remain explicit in
 CDG-01/03/06/16–19/36–38. DesignNotes and legacy/source descriptions are not
 implementation evidence. This is Step-A source reconciliation, not Step-B
 upstream capability or information traceability.
+
+## This Kleio / Themis / Petasos adjudication input
+
+| Key | Source and inspected scope | Incorporated candidate meaning |
+| :--- | :--- | :--- |
+| <a id="u07"></a>U07 | Supplied `DesignNote-Kleio-Audit-Information-Management-and-Resilient-Capture.md` (2026-10-11), §§1–17, read in full; explicit bounded task requirements | [Kleio C03](component-register.md#c03): authoritative Audit Information Management/Capture, client occurrence contract, immutable FHIR AuditEvent/new linked corrections, meaningful user activity, Journey independence, longitudinal reference/necessary replication, evidence versus prepared views, essential durable capture, independent O&A targets and R1.x/R2.x harmonisation SEP. Detail [CDG-43](gaps.md#kleio-detailed-contracts). |
+| <a id="u08"></a>U08 | Supplied `DesignNote-Themis-Authorisation-Model-and-Distributed-Policy-Enforcement.md` (2026-10-11), §§1–18, read in full; explicit bounded task requirements | [Themis C02](component-register.md#c02): Authorisation Model/PAP/PRP/PDP, distinct ACCESS/CHANGE/FORWARD, contextual PEP-Context Criteria, Themis-owned distributed local PEP, valid-context/PDP availability distinction, potential delegation/provenance and possible PRP durability through Mneme/C&G. §15 audit-authorisation exception retained as AX-07 conflict, not incorporated as bypass; detailed governance/design [CDG-42](gaps.md#themis-detailed-contracts). |
+| <a id="u09"></a>U09 | Supplied `DesignNote-Petasos-Durable-Message-Event-Queue-Management.md` (2026-10-11), §§1–16, read in full; explicit bounded task requirements | [Petasos C10](component-register.md#c10): durable purpose-defined queue creation/operation/status, common by-value PetasosParcel with predominantly referenced associated information, ActionableTask special case, local Themis-owned FORWARD enforcement and Petasos queue-state ownership. Energeia R1.x/R2.x **Observe → Report** corrects earlier U06 propagation. Detail [CDG-44](gaps.md#petasos-detailed-contracts). |
+
+The supplied files were accessible in Downloads; no copies were present in the
+repository. Their incorporated decisions and controlling task requirements are
+self-contained in [the orientation](README.md#kleio-themis-petasos-adjudication)
+and supporting views. Filenames are provenance, not an ongoing external authority
+dependency. All original note bytes remain unchanged. The explicit unresolved
+exception conflict and deferred mechanisms are preserved under AX-17; no source
+code, transport/carrier schema, upstream capability or Step-B mapping supplies
+missing decisions. The current correction preserves U01–U06 adjudications except
+the expressly corrected Energeia Monitor responsibility.
 
 ## Legacy reconstruction sources
 
@@ -62,7 +80,7 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l05"></a>L05 | [Pragma](../../concepts/pragma.md), full concept | **Partially incorporated:** context/state carrier; §3 anti-responsibilities previously superseded by C07. §3 “What Pragma Owns” now wrapped to Mneme Pragma Management C28/C07. Opening definition, §2 architectural definition and §5 context-safety claims now wrapped to the U05 semantic shape, state separation and retained representation uncertainty; §3 existing wrappers remain. Detailed authority/persistence contracts remain CDG-02/03/10/15/18/37. |
 | <a id="l06"></a>L06 | [Calliope canonical](../../concepts/calliope-canonical.md), full document | **Partially incorporated:** §2 event/payload/reason models and converter responsibilities superseded by C01/F01–F02/D01–D02/D08. Foundation dependency diagram retained as implementation support. |
 | <a id="l07"></a>L07 | [Calliope](../../concepts/calliope.md), full concept | **Supporting/corroborating:** vocabulary, converter catalogue and topic constants. Architectural responsibility is constrained by A01/A02; no separate migration of implementation catalogue. |
-| <a id="l08"></a>L08 | [Themis](../../concepts/themis.md), [security concept](../../concepts/themis-security.md), [decision audit](../../security/audit.md) | **Partially incorporated:** Themis §3 “What Themis Owns” superseded by C02/F03/D03. Fixed gate variants, automatic context-in-Task persistence and universal decision auditing remain conflicting, CDG-13–15/30. |
+| <a id="l08"></a>L08 | [Themis](../../concepts/themis.md), [security concept](../../concepts/themis-security.md), [decision audit](../../security/audit.md), [module reference](../../modules/themis.md) | **Partially incorporated:** existing positive ownership wrapper resolves to corrected C02; this correction wraps Themis opening/§2 fixed gates, security-concept opening/§1 fixed gates/§4 decision-audit claims, decision-audit §1 overview and module opening/positive ownership. U08 now establishes model management/local PEP; U07 establishes Kleio capture. Module/class/role/schema details remain historical support; automatic context persistence and detailed host/evidence/privacy relationships remain CDG-13/15/30/42/43. |
 | <a id="l09"></a>L09 | [Hestia](../../concepts/hestia.md), [Mneme](../../concepts/mneme.md), [Mnemosyne](../../concepts/mnemosyne.md), full concepts | **Partially incorporated and retained conflicts:** U06 supersedes Mnemosyne opening and §2 two-service Clinical/Operational definition with Clinical/C&G/O&A semantic responsibilities. Hestia grouping/active objects corroborate context; mixed write-behind/access/audit sections and implementation invariants/catalogues remain historical/supporting, not current authority. |
 | <a id="l10"></a>L10 | [Hestia persistence](../../concepts/hestia-persistence.md), full document | **Partially incorporated:** §3.2 Operations Scope bullet now wrapped to C&G/O&A semantic classification and scaling guardrails. Cache/product/provider catalogues remain support; mixed diagrams, direct access and write-behind model remain historical/conflicting, not adopted physical architecture. |
 | <a id="l11"></a>L11 | [Iris](../../concepts/iris.md), full concept | **Partially incorporated:** presentation decomposition/features; §4 “Provider Registry Decoupling” superseded by C16/F20. Raw-cache ownership/access statements retained as conflicting, CDG-11. |
@@ -83,7 +101,7 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l26"></a>L26 | [Overview](../../architecture/overview.md), [runtime architecture](../../architecture/runtime-architecture.md), [system inventory](../../architecture/system-inventory.md), [architecture at a glance](../../getting-started/architecture-at-a-glance.md), tier/flow/inventory sections | **Implementation/supporting and conflicting:** topology/catalogue navigation; mixed ACK, cache, direct-access and Ponos/Agora descriptions retained. No inferred module-count architecture. |
 | <a id="l27"></a>L27 | LaTeX [backlog](../../latex/chapters/appendix-backlog.tex), BL-CLIN-007/008 | **Retained proposal:** clinical viewer/authoring and terminology lookup, expansion and validation intent; owner and feature maturity unresolved, F18/F25/CDG-24. No implementation sequence imported. |
 | <a id="l28"></a>L28 | [Message lifecycle](../../message-lifecycle.md), ADT/ORM sequence sections | **Conflicting/unresolved:** candidate fan-out and order-routing collaborations corroborated; combined Mneme/Mnemosyne participant, acceptance and completion boundaries retained, CDG-10/16/18. |
-| <a id="l29"></a>L29 | [Petasos architecture](../../../petasos/docs/architecture.md), [root messaging architecture](../../architecture.md), overview; [Petasos concept](../../concepts/petasos.md) and [messaging concept](../../concepts/petasos-messaging.md), full concepts | **Partially incorporated:** Petasos concept §3 anti-responsibilities superseded by C10/M01; opening Petasos definition, §3 positive ownership list and messaging-concept §2 universal envelope now wrapped to persistent handoff, Mneme payload/semantic ownership and retained message-form detail. API/product inventories remain supporting machinery. Guarantee language, queue names, cluster topology and retention remain supporting/unresolved, CDG-16/19/27. |
+| <a id="l29"></a>L29 | [Petasos architecture](../../../petasos/docs/architecture.md), [root messaging architecture](../../architecture.md), overview; [Petasos concept](../../concepts/petasos.md), [messaging concept](../../concepts/petasos-messaging.md), [module reference](../../modules/petasos.md) | **Partially incorporated:** existing concept definition/ownership and messaging §2 wrappers resolve to updated C10/handoff. This correction wraps messaging opening/§1 generic-broker introduction, module opening/positive ownership and root messaging-architecture opening and Standard Message Envelope. U09 now establishes purpose-defined durable queues/common by-value Parcel; technology/module/schema/topology catalogues remain historical supporting detail. Exact historical carrier relationships/delivery guarantees remain CDG-16/19/27/44. |
 | <a id="l30"></a>L30 | [Pylai concept](../../concepts/pylai.md), [gateway concept](../../concepts/pylai-gateways.md), full concepts | **Conflicting/unresolved and corroborating:** ingress/egress/registry functional slices retained, transport ownership and direct store access constrained by A01/A02; REC-001/002 remain repository invariants. No new external contract selected, CDG-11/18/32/34. |
 | <a id="l31"></a>L31 | [Dokimasia orientation](../../modules/dokimasia.md), full document | Opening paragraph and Digital Twins/Execution, Runtime AI and Open Downstream Architecture sections now wrapped to C19/C20/C27, specialisation axes, Mneme Pragma Management, terminal rules and CDG-35. Canonical assurance-navigation section remains unchanged. Component boundaries established by U02; detailed AI architecture remains discovery, not mandatory AI use in every workflow. |
 
@@ -164,3 +182,30 @@ Domain04; no upstream model is changed. Possible omissions of operational-manage
 business demand are recorded for later review (CDG-39), without inventing required
 capabilities or commencing Step B. Unrelated legacy conflicts retain their earlier
 disposition; this is not a full legacy consolidation or candidate acceptance.
+
+## This Kleio / Themis / Petasos legacy supersession correction
+
+The targeted legacy wrappers preserve original sections unchanged and link
+specific RADS replacements. Existing wrappers remain byte-preserved and now
+resolve to the corrected responsibility views. **15 new wrappers across eight legacy files** cover:
+
+- **L08:** Themis concept opening and §2 Architectural Definition; security
+  concept opening, §1 fixed-gate model and §4 decision auditing; decision-audit
+  §1 Overview; Themis module-reference opening and positive ownership list.
+- **L29:** messaging-concept opening and §1 generic-broker introductory paragraph;
+  Petasos module-reference opening and §3 positive ownership list; root
+  messaging-architecture opening and Standard Message Envelope.
+- **L13:** ADR-020 Audit and Provenance subsection, replacing its assumed
+  permanent-source longitudinal-retrieval guarantee with Kleio's reference-by-default,
+  necessary-evidence-replication boundary while preserving original text and ADR role.
+
+No whole document is superseded. Detailed implementation catalogues, policy/role
+tables, example schemas, broker topology, historical guarantees, tutorials and
+unrelated conflict sections remain unchanged; the source register retains them
+as historical/supporting or unresolved material. Original content and earlier
+wrapper bytes are verified by removal of only this correction's wrappers.
+
+Domains01–04 remain unchanged. The new inputs correct only Domain05 Step A and
+its activity-status record; A1 COMPLETE, A2/A3 IN PROGRESS, A4 PENDING, Step B
+NOT STARTED. No candidate acceptance, capability/information coverage, MVP or
+implementation plan is established.

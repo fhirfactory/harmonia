@@ -3,7 +3,7 @@
 # Candidate Pathway, Journey, Publish/Subscribe and Handoff Architecture
 
 **Standing: Domain05 Step A adjudicated Candidate Architecture, 2026-10-11.**
-[U03–U06](sources.md#u03) record the supplied human-adjudicated DesignNotes and
+[U03–U09](sources.md#u03) record the supplied human-adjudicated DesignNotes and
 explicit task decisions incorporated here. [Scope](README.md) applies: this
 correction does not accept the whole candidate, commence Step B or establish
 implementation design. Existing [Energeia specialisation](README.md#energeia-adjudication)
@@ -181,37 +181,50 @@ establish those definitions.
 Eligible consumer relationships express semantic selection. They do not assign
 queue binding, destination mechanics or concrete handoff state to Mneme.
 
-Petasos is a shared persistent/recoverable messaging and handoff subsystem.
-For Pragma-based processing, the governed Pragma and Information Unit payload
-remain managed through Mneme. Petasos manages the identity/reference required
-to resolve that information and the metadata/state necessary for handoff and
-recovery. It does not transport the managed Information Unit payload in this
-pattern or acquire management authority over it.
+Petasos is Harmonia's durable message/event queue-management component.
+It creates, operates and owns the operational state/status of **purpose-defined
+queues** for inter-Ergon flow and other architecturally established communication,
+notification and event sharing. Every queue carries **PetasosParcel by value**;
+associated information is predominantly by reference to governed information
+managed elsewhere. Parcel is conceptually analogous to FHIR Communication;
+literal equivalence and detailed schema are not established.
 
-For ActionableTask processing the established conceptual collaboration is:
+For the ActionableTask handoff special case, governed ActionableTask/Pragma and
+Information Unit payload remain managed through Mneme. A by-value Parcel may
+carry references and communication/handoff metadata required for resolution and
+recovery. Petasos acquires no management authority over the referenced information
+and does not copy the managed ActionableTask payload in this pattern.
 
 ```text
 Mneme manages ActionableTask / Pragma and payload
-  --> selection / eligibility
+  --> semantic selection / eligibility
 Petasos persistently manages handoff obligation
-  --> identity/reference + handoff metadata
+  --> queues PetasosParcel by value, referring to ActionableTask
 Consumer resolves governed information through Mneme
-  --> creates / morphs its distinct FulfillmentTask undertaking
+  --> establishes its own distinct FulfillmentTask undertaking
 Ponos manages execution / progression
   --> Ergon supplies bounded behaviour within Ergo's contract
 ```
 
-**Petasos distributes the opportunity to undertake work, not the undertaking
-itself**, for this ActionableTask pattern. Context Loading/Unloading uses
-Mneme's governed information contracts; durable state establishment remains
-Mnemosyne's responsibility. Handoff acceptance, information commit, undertaking
+**Petasos distributes the opportunity to undertake work, not another consumer's
+FulfillmentTask**, in this pattern. Each consumer undertaking the ActionableTask
+establishes a distinct FulfillmentTask; no undertaking is transported on its behalf.
+Context Loading/Unloading uses Mneme contracts and Mnemosyne establishes durable
+managed-information state. Handoff acceptance, information commit, undertaking
 completion, work resolution and external acknowledgement remain distinct.
 
-Petasos also supports Communication Event, Notification Event and other
-established messaging/handoff forms. Their exact semantics remain unresolved;
-this task establishes neither an ActionableTask-only subsystem nor a universal
-reference-only message format. Producer/consumer/destination API terminology
-may describe machinery but cannot replace the information-management boundary.
+ActionableTask handoff is one Petasos use case. Communication/Notification Events
+and other established event-sharing purposes use the common PetasosParcel datatype
+without becoming ActionableTasks or losing their own semantics. The no-payload-copy
+rule above SHALL NOT be generalised to reference-only Petasos transport or to
+copying all referenced information into every Parcel. Final purpose taxonomy,
+names, Parcel schema and detailed delivery contracts remain [CDG-44](gaps.md#petasos-detailed-contracts).
+
+Petasos owns queue operational state/status; Energeia may observe/report it,
+without acquiring queue management or autonomous control. For governed FORWARD,
+Petasos hosts enforcement because it controls the operation, using **Themis-owned
+PEP capability and relevant PEP-Context Criteria**. Themis owns semantics; Petasos
+owns the queue operation. Detailed protocols/state metrics remain unresolved.
 
 <a id="state-and-recovery"></a>
 
@@ -220,7 +233,7 @@ may describe machinery but cannot replace the information-management boundary.
 | State / concern | Responsibility and boundary |
 | :--- | :--- |
 | **Pragma / managed-information state** | Governed information managed through Mneme; authoritative durable establishment/preservation through Mnemosyne. May record a governed observation concerning delivery without owning the handoff obligation. |
-| **Petasos handoff/delivery state** | Operational state of a particular persistent handoff obligation, including delivery attempt, redelivery/recovery and dead-letter handoff semantics. |
+| **Petasos queue/handoff/delivery state** | Queue operational state/status and operational state of a particular persistent handoff obligation, including delivery attempt, redelivery/recovery and dead-letter handoff semantics. |
 | **FulfillmentTask undertaking state** | Information representing a particular identifiable undertaking, distinct from ActionableTask and other undertakings. Consumer establishment and Mneme information management do not collapse into runtime execution state. |
 | **Ponos execution/progression state** | Runtime execution, scheduling/concurrency, execution failure and execution retry/re-attempt or activity progression semantics. |
 
@@ -246,7 +259,8 @@ the fan-out question:
 
 - A single Pragma may match multiple Subscriptions. The common managed Pragma
   and payload remain within Mneme; Petasos may manage multiple independent
-  handoff obligations/queue entries referring to it. Payload duplication is
+  handoff obligations/queue entries carrying PetasosParcels by value, referring
+  to it. Payload duplication is
   not inherently required.
 - For ActionableTask processing, each consumer that undertakes the work
   creates/morphs its **distinct FulfillmentTask**. Selection or handoff alone
@@ -268,7 +282,7 @@ outcome participation, output rules and TaskOutcome ownership remain unchanged.
 
 > **Journey is the governed representation of Harmonia's observed progression
 > of information and activity, reconstructed from available execution evidence
-> and forming the primary subject of reporting, monitoring, analysis and
+> and forming the primary subject of reporting, analysis and
 > assurance, irrespective of whether that progression arose through
 > Pathway-controlled routing, Publish/Subscribe processing, or a combination
 > of both.**
@@ -282,7 +296,7 @@ Pathway controls permitted progression; Journey represents observed progression.
 **Energeia owns Journey as an application responsibility** and SHALL provide
 candidate **Journey Management Services**. These manage the governed representation
 of observed progression and its semantic aggregation/references, supporting
-operational reporting/monitoring and assurance consumption. The detailed service
+operational reporting and assurance consumption. The detailed service
 and construction contracts remain unresolved. Mneme remains the governed
 information-management layer; Mnemosyne **Harmonia Operations & Assurance**
 provides durable persistence responsibility. Application ownership does not
@@ -306,7 +320,7 @@ flowchart LR
     Energeia["Energeia"] -->|application management: Journey Management Services| Journey
     Energeia -->|application management: Praxis Management Services| Praxis
     Praxis -.->|Aggregation: cardinality unresolved| Journey
-    Journey --> Reporting["Energeia: operational observation / monitoring / reporting"]
+    Journey --> Reporting["Energeia: operational observation / reporting"]
     Journey -->|observed evidence subject| Assurance["Dokimasia: governed interpretation"]
     Praxis -->|assurance basis; Pathway may contribute expectations| Assurance
     Assurance --> Finding["Assurance finding / result"]
@@ -329,7 +343,7 @@ observed execution, and execution with failure or unexpected results. An absent
 observation does not prove non-occurrence. Available evidence bounds the Journey;
 missing or uncertain evidence remains distinguishable from established fact.
 
-Reporting, monitoring, analysis and Dokimasia assurance SHALL be capable of
+Reporting, analysis and Dokimasia assurance SHALL be capable of
 operating against Journey. **Praxis is the assurance basis; Journey is the
 evidence subject.** A Pathway/Route may contribute normative expectations as part
 of the applicable Praxis; Pathway alone is not the general assurance basis.
@@ -368,3 +382,25 @@ Evidence contribution, operational observation, AuditEvent and assurance finding
 remain distinct; not every Journey observation becomes a permanent AuditEvent
 (AX-08/09). Dokimasia's [terminal constraints](component-register.md#dokimasia-terminal-boundaries)
 and operational independence remain intact.
+
+<a id="journey-and-audit"></a>
+
+## Journey and authoritative Audit Capture
+
+Journey represents governed observed activity/progression; AuditEvent represents
+an authoritative significant auditable occurrence. Journey is an important audit
+source, **not the audit boundary**. A Journey may relate to many AuditEvents and
+an AuditEvent may exist without Journey participation. **Journey participation
+SHALL NOT be a prerequisite for Audit Capture.**
+
+Kleio may consume Journey and Dokimasia outputs and provide historical audit
+context back to Dokimasia. Audit is neither Governance nor Assurance; derived/
+correlated/prepared historical views remain distinguishable from authoritative
+evidence. Dokimasia's terminal rules continue to prohibit a separate own-execution
+AuditEvent and recursive assurance; output consumption does not introduce either.
+
+Client components report significant occurrences through Kleio's contract;
+Kleio constructs immutable FHIR AuditEvent. Required authoritative durable audit
+capture is a precondition of Harmonia operation, independent of Journey availability
+or later reconstruction. [Kleio's history/availability rules](component-register.md#auditability-and-availability)
+and O&A independent-target/harmonisation-SEP release boundary apply.

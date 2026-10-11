@@ -46,7 +46,8 @@ open: architectural review/adjudication (A2) and bounded iterative correction
 (A3) are in progress; acceptance as sufficiently faithful (A4) is pending.
 The Energeia / DigitalTwin / Dokimasia and Pathway / Journey / Publish/Subscribe /
 handoff and Energeia / Praxis / Journey / persistence adjudications below correct
-the candidate within that boundary.
+the candidate within that boundary. The Kleio / Themis / Petasos adjudication
+below further corrects the candidate and R1.x/R2.x Observe → Report scope.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -245,19 +246,20 @@ their working-note labels do not constitute whole-candidate acceptance.
   Subscription selects available Pragma for a consumer on a matching Pattern.
   Topic is governed classification/metadata, distinct from destination.
 - **Handoff and execution:** Petasos persistently manages reliable handoff
-  obligations. For Pragma processing it manages identity/reference and handoff
-  metadata while the managed payload remains through Mneme. Consumers resolve
-  information through Mneme; ActionableTask undertakings establish distinct
-  FulfillmentTasks. Ponos owns execution/progression and execution re-attempts;
-  Petasos owns handoff redelivery/recovery/dead-letter state. Petasos also
-  supports Communication/Notification Events and other messaging forms; no
-  universal reference-only format is established.
+  obligations. For ActionableTask processing a by-value PetasosParcel carries
+  references and handoff metadata while ActionableTask/Pragma and payload remain
+  through Mneme. Consumers resolve information through Mneme; undertakings
+  establish distinct FulfillmentTasks. Ponos owns execution/progression and execution re-attempts;
+  Petasos owns handoff redelivery/recovery/dead-letter state. U09 below establishes
+  the common by-value PetasosParcel for every queue,
+  with associated information predominantly by reference. Communication/Notification
+  Events retain their distinct purposes; handoff is one Petasos use case.
 - **Separate state:** managed Pragma state, handoff state, undertaking state and
   runtime execution state are distinct. Delivery information in Pragma records
   governed observations, without owning Petasos's operational obligation.
 - **Common observation:** Journey is the canonical governed representation of
   observed progression for Pathway, Pub/Sub and mixed activity, potentially a
-  graph and with no Pathway required. Reporting, monitoring, analysis and
+  graph and with no Pathway required. Reporting, analysis and
   Dokimasia assurance can operate against it. Observed evidence remains distinct
   from inferred interpretation and findings; observations are not automatically
   permanent AuditEvents. Dokimasia terminal rules remain controlling.
@@ -300,7 +302,10 @@ note is provenance, not a continuing architecture dependency.
   Pathway expectations contribute through Praxis. Journey remains factual with
   respect to available observations; deterministic/AI inference and conclusions
   remain distinguishable. Dokimasia independence and terminal rules are retained.
-- **R1.x/R2.x: Observe → Monitor → Report.** Energeia observes Harmonia work and
+- **R1.x/R2.x: Observe → Report.** Energeia is limited to observation and
+  reporting; Monitor is not a separate adjudicated architectural responsibility.
+  Monitoring mechanisms may later be justified as implementation/feature detail.
+  Energeia observes Harmonia work and
   progression without autonomous adaptation. External IT/Ops manages technical
   infrastructure/platform operation. **R3 Adaptive Load and Resilience Service**
   is a deferred direction only; no policy, algorithm or control architecture is
@@ -333,7 +338,77 @@ or capability requirements are manufactured here.
 ```text
 A1 — Candidate reconstruction                  COMPLETE
 A2 — Architectural review/adjudication         IN PROGRESS
-A3 — Candidate correction                      ITERATIVE
+A3 — Candidate correction                      IN PROGRESS
 A4 — Candidate acceptance                      PENDING
 Step B — Capability/Information traceability   NOT STARTED
 ```
+
+<a id="kleio-themis-petasos-adjudication"></a>
+
+## Kleio / Themis / Petasos candidate adjudication
+
+**U07–U09 — 2026-10-11:** the three supplied Kleio, Themis and Petasos DesignNotes
+and explicit bounded task requirements are incorporated as self-contained RADS
+candidate meaning, under the axioms and Domains01–04. External notes record
+provenance; required architecture does not depend on access to them.
+
+- **[Kleio C03](component-register.md#c03)** owns authoritative Audit Information
+  Management and Audit Capture. Clients report significant occurrences through
+  Kleio's contract; Kleio constructs immutable FHIR AuditEvents. New linked events
+  qualify/correct earlier assertions without altering them. Audit is not Governance
+  or Assurance; significant user activity differs from UI telemetry. Journey is an
+  audit source, not the boundary; Journey participation is never a prerequisite.
+  Authoritative evidence remains distinct from prepared historical views.
+- **Longitudinal evidence:** reference authoritative source information by default
+  with sufficient identity/version/provenance/temporal detail; replicate only the
+  necessary evidence when its audited historical state cannot reliably be retrieved.
+  Kleio may consume Dokimasia outputs and supply historical audit context, preserving
+  Dokimasia terminal rules and independence.
+- **Auditability is essential:** Harmonia SHALL NOT perform auditable activity
+  without authoritative durable capture of required audit information. If Kleio
+  cannot capture it, **Harmonia is DOWN** and fails closed. R1.x/R2.x permits multiple
+  independent authoritative audit persistence targets through Mneme/Mnemosyne O&A;
+  one configured target able to establish the required audit information suffices.
+  Cross-target audit harmonisation is **SEP**: no identical/complete histories,
+  automatic convergence, reconnection reconciliation or unified history guarantee.
+- **[Themis C02](component-register.md#c02)** owns the Authorisation Model through
+  PAP administration, PRP authoritative repository semantics and PDP reasoning over
+  model, authenticated Identity and context. ACCESS, CHANGE and FORWARD are distinct.
+  PDP-derived **PEP-Context** projects applicable Criteria for authenticated Identity;
+  Policy, Criteria and local enforcement decision remain distinct. Distributed
+  Themis-owned PEP capability enforces at hosts controlling the operation; no central
+  enforcement component or independent host reinterpretation is introduced.
+- **Themis availability/delegation:** valid sufficient PEP-Context permits in-flight
+  local enforcement during temporary PDP loss; new/renewed/replacement context
+  requires PDP establishment and activity must wait at that boundary. Unavailability
+  is not denial. Context may be delegated within Themis with source provenance;
+  detailed delegation/validity mechanics remain deferred. PRP durability may use
+  Mneme/Mnemosyne C&G without transferring Authorisation Model ownership.
+- **[Petasos C10](component-register.md#c10)** owns creation, operation and status of
+  durable purpose-defined message/event queues. All carry **PetasosParcel by value**;
+  associated governed information is predominantly by reference. Communication
+  analogy does not establish literal FHIR equivalence. ActionableTask remains
+  Mneme-managed; its Parcel may reference it and each undertaking establishes its
+  own FulfillmentTask. Queue management stays with Petasos while Energeia observes/
+  reports. Petasos hosts governed FORWARD using Themis-owned PEP/Criteria.
+
+C&G remains one coherent governance information space; O&A remains horizontally
+partitionable without a prescribed key/topology. Independent audit targets do not
+establish a general O&A topology. APIs, schemas, policy language, transaction/
+retry/failover, queue technology and detailed protocols remain unresolved under
+[CDG-42–44](gaps.md#themis-detailed-contracts). The Themis note's proposed audit
+authorisation exception conflicts with AX-07 and is explicitly retained for
+adjudication; it is not adopted as an authorisation bypass.
+
+| Completion activity | Status |
+| :--- | :--- |
+| A1 — Candidate reconstruction/documentation | COMPLETE |
+| A2 — Architectural review/adjudication | IN PROGRESS |
+| A3 — Bounded correction/reconciliation | IN PROGRESS |
+| A4 — Candidate acceptance | PENDING |
+| Step B — Capability + Information traceability | NOT STARTED |
+
+These corrections accept neither the whole Candidate Architecture nor a
+traceability-proven Domain05 baseline. Previously adjudicated execution,
+specialisation, Praxis/Pathway, Journey, selection, state and assurance boundaries
+remain in force; R3 Adaptive Load and Resilience Service remains future direction.

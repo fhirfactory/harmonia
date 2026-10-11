@@ -1,12 +1,44 @@
 # Petasos Messaging and Transport Architecture
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Petasos durable purpose-defined queue management](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Common by-value PetasosParcel](../markdown/05-information-systems-architecture/component-register.md#petasos-parcel)
+
+```text
+---------------------------------------------------------
+```
+
 Petasos is Harmonia's resilient, high-availability asynchronous messaging and transport framework.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
 ## 1. Subsystem Architecture & Responsibilities
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Petasos durable purpose-defined queue management](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Common by-value PetasosParcel](../markdown/05-information-systems-architecture/component-register.md#petasos-parcel)
+
+```text
+---------------------------------------------------------
+```
+
 Petasos provides an abstraction layer over enterprise messaging brokers, isolating healthcare business logic from JMS/Artemis transport mechanics:
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ```
 [ Gateways (Pylai) / Workflows (Ponos) ]

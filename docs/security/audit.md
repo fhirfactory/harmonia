@@ -1,8 +1,24 @@
 # Themis Security Decision Auditing
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+- [Immutable history and longitudinal evidence](../markdown/05-information-systems-architecture/component-register.md#audit-history-and-evidence)
+
+```text
+---------------------------------------------------------
+```
+
 ## 1. Overview
 
 Every security-sensitive authorization decision rendered by Themis (both `ALLOW` and `DENY`) is recorded as a structured, non-PHI `ThemisAuditEvent` via `ThemisAuditService`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 

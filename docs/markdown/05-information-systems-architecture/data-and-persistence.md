@@ -31,7 +31,7 @@ not define the managed information's meaning or authority.
 | :--- | :--- | :--- | :--- | :--- |
 | D01 | Trigger/event: **ErgonEvent**, reason and correlation metadata | Calliope defines envelope/reason vocabulary; Pylai and activities produce/use events; Ponos consumes | Operational event/context; recoverable transfer through Petasos where designated, not an automatic permanent audit record | L06/L07/L23; envelope relations to Pragma/PetasosMessage not completely specified, CDG-02/16. |
 | D02 | Activity input/output: **ErgonPayload**, native resource/Bundle, raw HL7/JSON or references | Calliope contract support; Ergon conforming to Ergo acts upon/generates; Pragma carries or references | Active use through Mneme; durable resulting managed information through Mnemosyne; binary custodian unknown | L06/L03/L19; U02 separates contract from activity component. Reference-only versus payload-bearing Pragma variants CDG-02/25. |
-| D03 | Security: **ThemisSecurityContext**, principal, role/authority/label, authorization request/decision, **ThemisAuditEvent** | Themis policy/contracts; trusted context supplied at governed boundaries; evidence produced according to policy | Context transient/operational by default; significant evidence preserved through Kleio; policy/identity store unspecified | A01 AX-07–09, L08/L14. Context serialization is not automatic resource persistence, CDG-13–15/30. |
+| D03 | Authorisation Model; PEP-Context and Criteria; authenticated Identity/security context; policy/enforcement decisions | Themis owns model via PAP administration, PRP repository semantics and PDP reasoning; Themis-owned PEP makes local action decisions at host | PRP durability may use Mneme → Mnemosyne C&G; ownership remains Themis. Enforcement context is operational and not automatically persisted resource content; significant occurrences use Kleio | U08, AX-07/14. Policy ≠ Criteria ≠ Enforcement Decision; PEP-Context is a projection for authenticated Identity. No schema or equivalence to legacy ThemisSecurityContext/ThemisAuditEvent inferred. Validity/delegation/distribution detail CDG-42; historical context persistence CDG-15. |
 | D04 | Governed access/change: **ResourceKey**, **GovernedRead**, active token, expected/authoritative version, **WriteResult**, **PersistenceOperationEnvelope** | Mneme-facing read/change/coordination service contracts; Mnemosyne establishes commit; Themis governs | Observation token/active generation and durable version remain distinct; known commit/degraded convergence/unknown outcome remain distinct | A01 AX-05/14/15, L14. Carriers are not extra domain assets; exact generation/token/result mapping CDG-16/31. |
 | D05 | Work/progression: **Pragma**, checkpoint, parent/correlation association, payload/reference and task output | **Mneme / Pragma Management C28 manages**; PragmaFactory creates/initialises representations. Pylai, Ponos, Ergon/Erga and outbound observations use/produce information; Energeia observes operational significance | Mneme active management is distinct from Mnemosyne durable establishment; ActionableTask, FulfillmentTask and relevant Pragma operational information are **O&A classification candidates** | U01/U02/U06 preserve distinct work/undertaking and state responsibilities; classification does not persist every transient field or select Task/non-FHIR structures. CDG-02/03/10/12/13 remain. |
 | D06 | Praxis expected/permitted operational context and control configuration; historical TaskSequence / PraxisDefinition representations | **Energeia owns Praxis / Praxis Management Services**; Mneme manages governed information; Ponos uses context/control; Dokimasia uses Praxis assurance basis | Praxis and applicable control definitions are **C&G classification candidates**; detailed representation/lifecycle/version binding unresolved | U06 establishes higher-order envelope and working Aggregation: Praxis → Pathway [0..1], with Journey cardinalities unresolved. Historical schemas are provenance; CDG-01/06. |
@@ -39,8 +39,8 @@ not define the managed information's meaning or authority.
 | D08 | Directory: **Practitioner, PractitionerRole, Organization, Location, HealthcareService, Endpoint, Group** | Pylai interaction, registry Ergon validation/change, Themis policy, Iris presentation; Mneme active access | Mnemosyne clinical/FHIR preservation; independently referenced Endpoint and Group; Group is not an IAM/security group | L15/L18. Candidate resource topology is not Domain04 coverage or universal authority; search/store/history CDG-11/12/21/33. |
 | D09 | Clinical exchange/content: **Patient, Encounter, Location, ServiceRequest, Observation, DiagnosticReport, Communication, Consent** and resource Bundles | Documented converter/Ergon inputs/outputs; Pylai boundary; Iris context; Mneme access | Clinical/FHIR Mnemosyne slice described; exact supported inventories vary. Persisted assertion retains its own source authority | L03/L06/L09/L10/L18. No Master Patient or originating clinical-work authority inferred, CDG-20/29. |
 | D10 | Governed destination delivery observations; checkpoints / Task output information | Distribution activity and Petasos/Pylai contribute observations; Mneme manages recorded information; Iris/Journey use it | Petasos owns operational handoff/delivery obligation state. Governed observations in Pragma or Task do not own that obligation | U05 preserves REC-002; exact observation relationships, durable recording and parent progression remain CDG-18/34/38. No task resolution algorithm. |
-| D11 | Persistent handoff obligation, information identity/reference and handoff metadata; broader Petasos message forms | Petasos effects/recoverably manages handoff; Mneme manages referenced Pragma/Information Unit; consumer resolves governed information | Petasos handoff state/metadata persisted for reliable delivery/recovery; Mnemosyne establishes authoritative managed-information state separately | U05 corrects opaque work-payload ownership. Communication/Notification Events and other forms remain supported with unresolved contracts; no universal reference-only format. CDG-16/17/19/37. |
-| D12 | Evidence: **AuditEvent / Provenance**, significant transition/attempt references; governed Dokimasia assurance record/result | Producers describe significant facts; Kleio preserves evidence; Themis evaluation and assurance use are separate. Dokimasia record/result provides authoritative evidence of its assurance activity | Append-only accepted evidence; detailed record representation, Kleio/Mnemosyne repository and FHIR/operations allocation unresolved | A01 AX-08/09, U02 terminal constraints, L13/L08/L15/L20; CDG-09/13/14. Dokimasia SHALL NOT generate a separate AuditEvent for its own execution. Diagnostics are not inherently evidence. |
+| D11 | **PetasosParcel**; purpose-defined durable queue and handoff operational state | Petasos manages common queued communication/event datatype and queue creation/operation/status; referenced information remains with its authoritative component, including Mneme-managed ActionableTask/Pragma | Parcel passed by value; associated information predominantly by reference. Durable queue/handoff recovery belongs to Petasos; Mnemosyne separately establishes referenced managed-information state | U05/U09. Conceptual FHIR Communication analogy, no literal equivalence/schema. Consumers establish distinct FulfillmentTasks; no transported other-consumer undertaking. Event purposes remain distinct; detailed representation/delivery/state CDG-16/17/19/37/44. |
+| D12 | Authoritative FHIR **AuditEvent**; provenance/transition references; supporting indexes/correlation/prepared historical context; governed Dokimasia assurance record/result | Kleio owns authoritative Audit Capture/management/history; clients report occurrences, Kleio constructs AuditEvent; derived/prepared views remain distinguishable | Kleio → Mneme → Mnemosyne O&A. AuditEvents immutable: new linked event corrects/qualifies, earlier unchanged. Reference source history by default; replicate necessary evidence only when historical retrieval cannot be guaranteed | U07, AX-08/09 and U02 terminal rules. Journey participation not required; no separate Dokimasia own-execution AuditEvent. Required authoritative durable capture essential; one capable independent audit target suffices, cross-target harmonisation SEP. Mechanisms CDG-43. |
 | D13 | Operational support: **OperationResourceEntity**, task/sequence metadata, module/queue/health/alert/trace observations | Component producers; Ponos execution observations; Energeia Praxis/Journey operational management; Iris aggregator/providers present; Mneme active access | C&G classification for governed configuration; O&A for governed activity observations/state where persistence is required; historical non-FHIR structures remain variants; transient diagnostics not all durable | L16/L21/L23. Energeia operational-management ownership is resolved; technical telemetry sources, freshness, projection and retention remain detailed contracts CDG-13/27/28. |
 | D14 | Collaboration: **AgoraSpaceRequest**, collaboration event/result, identity/context mapping, transaction record and room/membership projections | Agora lifecycle/identity/reconciliation, Themis, Petasos; context-source contract incomplete | Mapping/transaction relational persistence and separate homeserver room/event state described; authority/storage allocation unresolved | L12/L20; CDG-19–23. Conversation and formal managed clinical information are distinct. |
 | D15 | Document/media: **DocumentReference** metadata and clinical binary attachment/payload | FHIR resource support/cache named; Ergon payload examples carry attachments | Mnemosyne FHIR metadata intent; payload/media persistence owner, structures, retrieval and lifecycle unknown | L10/L17/L19/L23. DocumentReference support alone does not establish a Media Server or blob architecture, CDG-25. |
@@ -148,7 +148,9 @@ Journey D21 is the common observational/assurance representation, owned at the
 application level by Energeia, managed as governed information through Mneme and
 durably supported by Mnemosyne O&A. Its detailed preservation/construction
 contracts remain unresolved. It does not replace TaskOutcome, ReportedTask,
-AuditEvent or underlying observed information.
+AuditEvent or underlying observed information. A Journey may relate to many
+AuditEvents; audit may occur without Journey. Journey is an audit source, not
+the Audit Capture boundary ([Kleio history](component-register.md#audit-history-and-evidence)).
 
 ## Responsibility and state boundaries
 
@@ -192,11 +194,13 @@ domain. Candidate classification does not manufacture persistent objects.
 | Domain | Semantic classification test | Characteristics and candidate examples |
 | :--- | :--- | :--- |
 | **Clinical Information** | Established clinical-information persistence responsibility | Existing clinical scope retained; no clinical structure/history/index design selected or changed. |
-| **Harmonia Configuration & Governance** | Does the information define how Harmonia is intended, permitted or governed to operate? | Relatively static, strongly governed: Praxis; Pathway/Route, Publishing/Subscription/Pattern definitions; assurance rules/expectations; DigitalTwin definitions/configuration; Ergon/Erga definitions/configuration where appropriate; other governed operational configuration. |
-| **Harmonia Operations & Assurance** | Does the information represent Harmonia actually operating, observing or assuring activity? | Highly transactional and potentially large: Journey; ActionableTask; FulfillmentTask; relevant Pragma operational information; DigitalTwin operational state/activity; execution/progression observations; handoff observations where governed persistence is required; Dokimasia activity and findings/results; other governed operational evidence/state. |
+| **Harmonia Configuration & Governance** | Does the information define how Harmonia is intended, permitted or governed to operate? | Relatively static, strongly governed: Praxis; Pathway/Route, Publishing/Subscription/Pattern definitions; assurance rules/expectations; DigitalTwin definitions/configuration; Ergon/Erga definitions/configuration where appropriate; the **Themis Authorisation Model**, with model ownership/repository semantics retained by Themis; other governed operational configuration. |
+| **Harmonia Operations & Assurance** | Does the information represent Harmonia actually operating, observing or assuring activity? | Highly transactional and potentially large: Journey; ActionableTask; FulfillmentTask; relevant Pragma operational information; DigitalTwin operational state/activity; execution/progression observations; handoff observations where governed persistence is required; Dokimasia activity and findings/results; **Kleio Audit Information**, with audit application ownership retained by Kleio; other governed operational evidence/state. |
 
-Each example is a classification candidate, not a decision that it is an
-independent persisted object. Ergon remains behaviour with no discrete Information
+Themis Authorisation Model → C&G and Kleio Audit Information → O&A are
+adjudicated alignments under U08/U07. Other examples retain their existing
+classification-candidate standing. No example, by itself, creates an independent
+persisted object. Ergon remains behaviour with no discrete Information
 Resource by virtue of being Ergon. Operational state remains ephemeral by default
 under AX-09; inclusion in O&A does not require all diagnostics, queue mechanics,
 runtime fields or observations to be persisted. Meaningful evidence follows
@@ -213,7 +217,7 @@ handoff observations may belong to O&A without transferring that obligation.
 | Publishing/Subscription/Pattern definition | Selection/matching observation |
 | Assurance rule | Assurance execution/finding/result |
 | DigitalTwin definition/configuration | DigitalTwin operational state/activity |
-| Operational policy | Observed operational behaviour |
+| Operational policy / Themis Authorisation Model | Observed operational behaviour / Kleio Audit Information |
 
 This recurring semantic split is an architectural classification pattern. It
 neither mandates a separate object for each entry nor duplicates the information
@@ -255,6 +259,27 @@ and its references to potentially substantial distributed activity/evidence.
 This objective establishes neither a physical schema nor a partitioning,
 correlation or evidence-reconstruction algorithm.
 
+### Audit persistence alignment and release boundary
+
+**Kleio Audit Information → Mneme → Mnemosyne Harmonia O&A** aligns audit
+information with operational/assurance persistence without making audit itself
+assurance. Authoritative AuditEvents remain immutable; supporting/prepared views
+remain distinguishable. The [longitudinal evidence rule](component-register.md#audit-history-and-evidence)
+references authoritative source history with identity/version/provenance/temporal
+detail, permitting necessary replication only when that historical state cannot
+be retrieved reliably.
+
+R1.x/R2.x permits **independent authoritative audit persistence targets** through
+Mneme/Mnemosyne. At least one configured target capable of durably establishing
+required audit information suffices for continued operation; none means Harmonia
+DOWN/fail closed. Active cache, logs or Journey cannot substitute for durable capture.
+Targets are not assumed replicas, identical/complete histories or a unified corpus.
+**Cross-target audit harmonisation is SEP for R1.x/R2.x**: no automatic convergence,
+reconnection reconciliation or unified longitudinal audit-history guarantee.
+No target count, selection, one/some/all write strategy or future reconciliation
+mechanism is prescribed. This is compatible with O&A partitionability and establishes
+no general O&A topology ([CDG-43](gaps.md#kleio-detailed-contracts)).
+
 ### Application ownership versus persistence responsibility
 
 ```text
@@ -267,6 +292,12 @@ Energeia owns Praxis Management Services     Energeia owns Journey Management Se
        Mnemosyne — Harmonia C&G                    Mnemosyne — Harmonia O&A
                   durable persistence responsibility
 ```
+
+Themis owns its Authorisation Model and PRP authoritative repository semantics;
+durable persistence may use **Themis PRP → Mneme → Mnemosyne C&G**, without a
+dedicated Themis database. Kleio owns Audit Information Management; durability
+uses **Kleio → Mneme → Mnemosyne O&A**. Neither delegation transfers application
+ownership to Mneme/Mnemosyne or changes C&G coherent governance authority.
 
 Application ownership does not confer persistence ownership. Persistence does
 not confer Praxis/Journey application semantics on Mnemosyne. Mneme remains
@@ -290,10 +321,10 @@ structures remains downstream ([CDG-40](gaps.md#persistence-realisation)).
 | **HAPI-native FHIR persistence/index structures** | Clinical persistence/index/history responsibility described through HAPI JPA by L09/L18; L17 explicitly avoids default `HFJ_RESOURCE`/index tables in favour of custom rows. | A01 §4 prefers engine capabilities where suitable but does not settle these candidate structure variants. Technology detail remains downstream; candidate history/index architecture is unresolved, CDG-12. |
 | **Non-FHIR operational current-row store** | `hie_operations_resources`: surrogate `id`, `(object_type, object_id)` uniqueness, version, full `data_json`, lifecycle/created/update fields. | L16 database-schema §2.2. Payload categories include telemetry/configuration; not all operational state merits durable retention. CDG-13/28. |
 | **Operational history/sequence variants** | Same named table described with `(resource_type, resource_id, resource_version)` key (L16 lifecycle), or `(operation_id, sequence_id)` (L20 register). `hie_task_sequences`, TaskSequenceEntity and PragmaAuditEntity also appear in L09. | Candidate durable definition/progression/history structures conflict or lack field/lifecycle contracts. CDG-06/12/13; no separate component inferred from an entity name. |
-| **Kleio evidence structures** | Immutable accepted audit/provenance; FHIR AuditEvent/Provenance in clinical store/cache versus operations audit/lineage rows/streams are variously described. | L13 ADR-013/016 preserve evidence intent. L08/L15/L16/L20 offer incomplete/incompatible storage allocations, CDG-13/14. No new audit database chosen. |
+| **Historical Kleio evidence structures** | Legacy FHIR AuditEvent/Provenance in clinical cache/store versus operational audit/lineage rows/streams are retained descriptions. | U07 now establishes Kleio authoritative audit management, immutable AuditEvent and O&A semantic durability through Mneme/Mnemosyne. Earlier allocation variants do not select current structures; supporting representations need not be AuditEvents. Detailed structure/query/retention CDG-13/43; no audit database or target topology chosen. |
 | **Agora mapping/transaction records** | `agora_resource_mappings`: Harmonia resource/identity to collaboration entity IDs, status/timestamps. `agora_as_transactions`: transaction ID and processing marker/timestamps. | L12 and L20 describe durable mappings/idempotency. Mnemosyne versus Agora Core JPA/Synapse database ownership unresolved, CDG-19/22. |
 | **Homeserver discourse/room/membership store** | Collaboration implementation preserves room/state/event/membership data, distinct from formal Harmonia-managed clinical representation. | L12/L20; retention/submission/evidence boundaries insufficiently described, CDG-22/23. Homeserver database does not originate clinical authority. |
-| **Petasos persistent handoff obligations / recovery records** | Identity/reference and metadata/state necessary to effect and recover handoff for Pragma processing; broader message-form contracts remain separate. | U05 corrects historical L13/L29 opaque-work-record language. Managed payload stays through Mneme; no universal reference-only format, journal schema or queue topology is selected. Recovery/duplicate/replay detail CDG-16/17/19/37. |
+| **Petasos durable queues / Parcels / handoff recovery records** | All purpose-defined queues carry PetasosParcel by value; associated information predominantly by reference. ActionableTask handoff may reference Mneme-managed Pragma/payload and maintains necessary obligation/recovery state. | U05/U09 correct historical L13/L29 work-payload language. No universal reference-only transport, literal FHIR equivalence, Parcel/journal schema or topology selected. Queue purpose/delivery/operational state detail CDG-16/17/19/37/44. |
 | **Mneme active working structures** | Resource-keyed active payloads, task/Pragma/checkpoint working state, sequence definitions, observation/coordination records and telemetry working sets. | A01 governs reconstructability/non-authority. Legacy cache names/distribution/TTL/dedup/store lists differ (L09/L10/L17/L19/L20), CDG-27/31. Cache product is not the persistence architecture. |
 | **Reference/terminology and binary/media structures** | Compiled semantic definitions and DocumentReference/resource payload metadata documented; service reference stores and binary durable objects not specified. | CDG-24/25. No inferred ValueSet database, object store, Media Server or attachment ownership from framework capability. |
 | **Simulation state** | Seeded fixtures and ephemeral simulator/scenario data outside production dependencies. | L22. Kept as support context, not a production persistence tier. |

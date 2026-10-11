@@ -1,8 +1,37 @@
 # Themis Policy Governance & Security Architecture
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 Themis is Harmonia's centralized security policy, authorization, and audit subsystem.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+
+```text
+---------------------------------------------------------
+```
 
 ## 1. Defence-in-Depth & Default-Deny Invariant
 
@@ -20,6 +49,10 @@ graph LR
 2. **Gate 2: Asynchronous Dispatch**: Validates `PragmaSecurityContext` before worker execution.
 3. **Gate 3: Activity Execution**: Evaluates domain-specific permissions for individual Ergon actions.
 4. **Gate 4: Relational Persistence**: Independent authorization gate at storage tier preventing repository bypass.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -59,8 +92,24 @@ This context is serialized into FHIR R5 `Task.extension` structures, allowing as
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+- [Meaningful evidence distinction](../markdown/05-information-systems-architecture/gaps.md#kleio-detailed-contracts)
+
+```text
+---------------------------------------------------------
+```
+
 ## 4. Zero-PHI Decision Auditing (`ThemisAuditService`)
 
 - Every authorization evaluation produces a structured `ThemisAuditEvent`.
 - **Zero-PHI Guarantee**: Audit logs record timestamps, principal IDs, requested actions, resource types, decision outcomes (`PERMIT`/`DENY`), and reason codes (`ThemisDecisionReason`).
 - Message payloads, patient medical history, clinical observations, and passwords/tokens are strictly excluded.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

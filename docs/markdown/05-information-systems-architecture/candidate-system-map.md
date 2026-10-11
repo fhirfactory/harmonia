@@ -24,10 +24,17 @@ Harmonia Information System — candidate software solution
     Canonical model / schema / terminology-binding support
     Event, payload, reason and topic definitions (Data Objects)
     HL7/FHIR converter support
-  Themis — policy and authorization [C02]
-    Policy evaluation and security contracts
-    Security-decision evidence production (not durable evidence ownership)
-  Kleio — meaningful audit and provenance evidence [C03]
+  Themis — Authorisation Model management and distributed enforcement [C02]
+    PAP — Authorisation Model administration/lifecycle
+    PRP — authoritative model repository semantics; durability through Mneme/C&G
+    PDP — reasoning over model, authenticated Identity and context
+    PEP-Context — contextual Criteria projection for authenticated Identity
+    Themis-owned PEP capability — embedded at hosts controlling governed actions
+  Kleio — authoritative Audit Information Management [C03]
+    Audit Capture — clients report occurrences; Kleio constructs FHIR AuditEvent
+    Immutable audit history — preservation/retrieval and longitudinal evidence
+    Historical context preparation/use — distinct from authoritative evidence
+    Durability through Mneme/Mnemosyne O&A; independent audit targets permitted
     Detailed internal decomposition unresolved
   Hestia — documented information-management/preservation grouping
     Mneme — governed active information access and coordination [C09]
@@ -46,7 +53,7 @@ Harmonia Information System — candidate software solution
   Energeia — discrete Software Component; Harmonia operational management [C39]
     Direct responsibility: Praxis Management Services [F11]
     Direct responsibility: Journey Management Services [F38]
-    Direct responsibility: operational observation / monitoring / reporting [F39]
+    Direct responsibility: operational observation / reporting [F39]
     R3 direction: Adaptive Load and Resilience Service — deferred [F40]
     Associated execution/activity constructs (Association; no Composition inferred):
       Ponos — reusable execution framework/component pattern [C04]
@@ -63,10 +70,12 @@ Harmonia Information System — candidate software solution
     Application ownership: Praxis — expected/permitted operational envelope [C06]
       Aggregation: Pathway [0..1]; Journey cardinalities unresolved
     Application ownership: Journey — governed observed progression [C35]
-  Petasos — shared persistent/recoverable messaging and handoff [C10]
-    Persistent handoff obligations / destination mechanics / handoff metadata
-    Redelivery, recovery, dead-letter and handoff observations
-    Pragma identity/reference handoff; other message-form contracts remain open
+  Petasos — durable message/event queue management [C10]
+    Creation / operation / operational status of purpose-defined queues
+    Common queue datatype: PetasosParcel — passed by value
+    Associated information predominantly by reference; originating owners retained
+    Persistent handoff / destination mechanics / redelivery / recovery / dead-letter
+    ActionableTask reference handoff is one use case; event purposes remain distinct
   Pylai — standards-facing interoperability/publication membrane [C14]
     Inbound HL7 interaction responsibility slice
     Outbound HL7 publication/delivery-observation slice
@@ -95,6 +104,13 @@ Clinical / C&G / O&A persistence responsibility domains follow U06; they
 establish no database or service topology. L09/L10's two-slice account is historical. Iris's presentation/mediation distinction
 is documented in [L11/L23](sources.md#l11). Agora's functional slices follow
 [L12](sources.md#l12), not a promotion of its four Maven modules.
+
+[U07–U09](README.md#kleio-themis-petasos-adjudication) refine Kleio, Themis and
+Petasos responsibilities. PAP/PRP/PDP denote Themis responsibilities, not selected
+services/processes; distributed PEP is Themis-owned capability hosted where the
+action can be prevented. Audit targets are independent authoritative persistence
+targets, not prescribed replicas or a general O&A topology. Kleio audit capture
+is essential for Harmonia operation and independent of Journey participation.
 
 The following do not have a supported structural parent in that tree:
 
@@ -223,17 +239,18 @@ flowchart LR
     Ponos -->|executes / manages| Ergon["Ergon: conforms to Ergo"]
     Erga["Erga: assembly / concurrent observation / libraries"] -->|collects activity components| Ergon
     Ergon -->|uses / produces through governed management| Pragma
-    Mneme -->|semantic eligibility and eligible consumer relationships| Petasos["Petasos: persistent handoff obligations"]
-    Petasos -->|Pragma identity/reference and handoff metadata| Consumer["Consumer"]
+    Mneme -->|semantic eligibility and eligible consumer relationships| Petasos["Petasos: durable purpose-defined queues / handoff"]
+    Petasos -->|PetasosParcel by value; ActionableTask reference| Consumer["Consumer"]
     Consumer -->|resolves governed information| Mneme
     Consumer -->|distinct undertaking for ActionableTask processing| Ponos
     Pathway -->|defined control; detailed execution contract unresolved| Ponos
     Mneme -->|selection observations| Journey["Journey: governed observed progression"]
     Petasos -->|handoff observations| Journey
+    Petasos -->|relevant queue-state observations; Petasos retains management| Reporting
     Ponos -->|execution observations| Journey
     Twin -->|operational observations / references| Journey
     Ergon -->|activity observations| Journey
-    Journey --> Reporting["Energeia: observation / monitoring / reporting; Iris presentation"]
+    Journey --> Reporting["Energeia: observation / reporting; Iris presentation"]
     Journey -->|observed evidence subject| Dokimasia
     Praxis -->|assurance basis| Dokimasia
     Pylai["Pylai: standards membrane"] -->|internal information requests| Mneme
@@ -242,12 +259,18 @@ flowchart LR
     Agora["Agora: collaboration"] -->|collaboration events| Petasos
     Petasos -->|collaboration requests| Agora
     Calliope["Calliope: semantic reference"] -->|definitions consumed locally| Ergon
-    Themis["Themis: policy"] -->|governs operations| Ponos
-    Themis -->|governs access| Mneme
-    Themis -->|governs collaboration| Agora
-    Ponos -->|meaningful evidence under policy and terminal constraints| Kleio["Kleio: evidence"]
-    Themis -->|security-significant evidence according to policy| Kleio
-    Dokimasia["Dokimasia: specialised independent assurance execution"] -.->|evidence access contract unresolved| Kleio
+    Themis["Themis: Authorisation Model / PDP"] -->|PEP-Context / Themis-owned local PEP| Ponos
+    Themis -->|PEP-Context / Themis-owned local PEP| Mneme
+    Themis -->|PEP-Context / Themis-owned local PEP| Agora
+    Themis -->|FORWARD Criteria / Themis-owned local PEP| Petasos
+    Themis -->|PRP governed model; durable C&G| Mneme
+    Ponos -->|significant occurrences; terminal constraints| Kleio["Kleio: authoritative Audit Information Management"]
+    Themis -->|significant occurrences under policy| Kleio
+    Iris -->|significant user occurrences; no Journey prerequisite| Kleio
+    Journey -->|audit source; not audit boundary| Kleio
+    Kleio -->|governed AuditEvent management; durable O&A| Mneme
+    Dokimasia["Dokimasia: specialised independent assurance execution"] -->|outputs may inform audit; no own-execution AuditEvent| Kleio
+    Kleio -->|historical audit context; detailed contract unresolved| Dokimasia
     Dokimasia -->|executes| DokErgon["Dokimasia Ergon"]
     Dokimasia -->|executes explicit AI activity where selected| AI["AI Assurance Ergon: candidate"]
     DokErgon -->|uses / produces through governed management| Pragma
@@ -263,8 +286,8 @@ flowchart LR
 | Mneme Pragma Management aggregates PragmaFactory and manages Pragma | U01/U02. Factory creates/initialises candidate representations associated with the meta-concept, not an instantiated archetype Information Asset. Detailed contracts/persistence remain unknown; no automatic Praxis equivalence. |
 | DigitalTwin specialises Ponos and uses governed entity information | U02 and A02 Seams 2–3. Per-Twin queues are specialised responsibility; bounded resources service pending work. Detailed control/state contract remains unknown. |
 | Dokimasia specialises Ponos and executes assurance Ergon | U02 preserves A04 independence; reuse does not give the assured activity control of assurance determination. AI activity boundary is established; detailed architecture CDG-35 remains open. |
-| Components use Themis and meaningful evidence/reporting contracts | A01 AX-07–09; L08/L13 ADR-013/016; U02 Dokimasia terminal rules. No separate Dokimasia own-execution AuditEvent or recursive Dokimasia monitoring/assessment; governance and controlled observability remain. |
-| Ingress / execution / publication use Petasos handoffs | U05 corrects L13/L29/L30: persistent/recoverable handoff obligation; Pragma identity/reference resolves through Mneme, with broader messaging forms retained. Handoff acceptance, information commit, undertaking completion and external acknowledgement remain distinct. |
+| Components use Themis PEP and Kleio Audit Capture | U07/U08, A01 AX-07–09. Themis-owned local PEP uses Identity-specific Criteria; valid sufficient context may support in-flight activity during PDP loss, while required new context must wait. Kleio constructs immutable AuditEvents from client occurrences, independent of Journey. Dokimasia terminal rules remain. Detailed contracts CDG-42/43. |
+| Ingress / execution / publication and event sharing use Petasos | U05/U09: purpose-defined durable queues carry PetasosParcel by value; associated information predominantly by reference. ActionableTask/Pragma remains through Mneme and each undertaking has its own FulfillmentTask. Queue status belongs to Petasos; Energeia observes/reports. Acceptance, commit, completion and external ACK remain distinct. |
 | Agora coordinates with execution through Petasos | AGENTS Invariant 10; L12 §3. No direct Agora-to-Ponos dependency. A detailed information-summary/provider contract is not established. |
 | Pylai publishes governed information externally | A01 AX-02/13 and A02 Seams 4/G4. Projection is non-destructive and fail-closed; egress ends management of the emitted representation. Transport packaging does not transfer logical ownership. |
 

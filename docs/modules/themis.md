@@ -1,6 +1,23 @@
 # Themis Subproject Reference: Policy & Authorization Governance `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 Themis is Harmonia's centralized default-deny authorization engine, policy evaluation framework, and non-PHI security auditing subsystem.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -74,12 +91,29 @@ themis/
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Themis Owns
 - The definition and evaluation of security policies, principals, roles, and authorities.
 - The default-deny policy evaluation engine (`DeterministicPolicyEvaluator`).
 - Built-in domain security policies for Provider Registry and platform services.
 - Controlled platform service identities (`HarmoniaServiceIdentities`).
 - Non-PHI security audit logging stream (`ThemisAuditService`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Themis Explicitly Does NOT Own (Anti-Responsibilities)
 - Network socket listening or TLS handshake termination (owned by Pylai / Ingress).
