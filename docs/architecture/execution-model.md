@@ -8,6 +8,20 @@ The wrapper preserves that original content. The other sections, including
 §6.2's assurance-specific material, remain reconciliation input or supporting
 detail and do not independently establish current architecture.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Domain05 — corrected structural hierarchy](../markdown/05-information-systems-architecture/candidate-system-map.md#structural-hierarchy)
+- [Domain05 — specialisation and reuse](../markdown/05-information-systems-architecture/candidate-system-map.md#specialisation-and-reuse)
+- [C28 — Mneme Pragma Management](../markdown/05-information-systems-architecture/component-register.md#c28)
+- [C06 — retained Praxis uncertainty](../markdown/05-information-systems-architecture/component-register.md#c06)
+
+```text
+---------------------------------------------------------
+```
+
 Energeia constitutes Harmonia's core workflow and task processing engine. It organizes processing into a deterministic, four-tier task execution hierarchy: **Praxis** (Workflow DAGs), **Pragma** (Canonical State Machines), **Ponos** (WorkEngine Daemons), and **Erga** (Single-Responsibility Activities).
 
 ---
@@ -50,6 +64,11 @@ graph TD
 | **Level 2** | *Pragma* (Thing Done / Fact) | Task Execution State Machine | `Pragma`, `PragmaCheckpoint`, `ErgonPayload` | Immutable history; zero unmasked PHI in envelope headers. |
 | **Level 3** | *Ponos* (Labor / Engine) | Worker Daemon & Conduits | `PetasosQueueToExchangeConduit`, `TaskProcessorRouteBuilder` | Consumes Petasos queues; enforces Themis authorization. |
 | **Level 4** | *Ergon* (Work / Unit) | Atomic Activity Step | `ErgonBase`, `AdtDistributionErgon`, `Adt2FhirMapper` | Single responsibility, idempotent, granular checkpoints. |
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -200,6 +219,20 @@ An AI agent/service may perform or assist with business logic on behalf of a gov
 ------- Legacy Content - Superseded ------- Finish ----
 ```
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C20 — Dokimasia](../markdown/05-information-systems-architecture/component-register.md#c20)
+- [C27 — AI Assurance Ergon](../markdown/05-information-systems-architecture/component-register.md#c27)
+- [Domain05 — Dokimasia terminal-boundary constraints](../markdown/05-information-systems-architecture/component-register.md#dokimasia-terminal-boundaries)
+- [CDG-35 — Dokimasia AI discovery](../markdown/05-information-systems-architecture/gaps.md#dokimasia-ai-discovery)
+
+```text
+---------------------------------------------------------
+```
+
 ### 6.2 Assurance Use and Authority Boundaries
 
 Health Service Assurance is expected to be a significant consumer of runtime AI because assurance involves criteria, patterns and expected behaviour, evidence, contextual interpretation, assessment and potentially complex reasoning. Evidence interpretation, pattern recognition, criteria evaluation and assistance with other governed assurance activities are possible examples, not mandatory implementation decisions.
@@ -213,3 +246,7 @@ The approved [non-recursion boundary](../markdown/03-business-architecture/behav
 > **Governed Assurance does not recursively assure its own execution. Assurance activity execution integrity is provided by the established activity execution framework.**
 
 Adding AI to an assurance Ergo introduces no Assurance of AI, Assurance of Assurance, Guardian-of-Guardian, recursive assurance workflow or requirement for another Service Guardian to oversee the invocation. Any future AI-specific governance, safety, provenance or control requirements must be derived separately if required. No such requirements or detailed AI execution model are established here.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

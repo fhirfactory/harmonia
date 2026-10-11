@@ -1,6 +1,23 @@
 # Concept: Ponos `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C04 — reusable Ponos execution framework/component pattern](../markdown/05-information-systems-architecture/component-register.md#c04)
+- [Domain05 — specialisation and reuse](../markdown/05-information-systems-architecture/candidate-system-map.md#specialisation-and-reuse)
+
+```text
+---------------------------------------------------------
+```
+
 Ponos is the high-concurrency background task execution worker daemon of the Energeia subsystem, responsible for consuming tasks from Petasos queues, evaluating Themis authorization, managing execution thread pools, and driving activity lifecycles.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

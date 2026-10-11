@@ -62,12 +62,29 @@ A Pragma is an immutable-friendly execution envelope that travels alongside the 
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C28 — Mneme Pragma Management](../markdown/05-information-systems-architecture/component-register.md#c28)
+- [C07 — managed Pragma Application Data Object](../markdown/05-information-systems-architecture/component-register.md#c07)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Pragma Owns
 - The definition and serialization of the execution state envelope (`Pragma`).
 - Checkpoint record representation (`PragmaCheckpoint`) and state transition rules.
 - Cryptographic and role security context encapsulation (`PragmaSecurityContext`).
 - Granular sub-destination delivery tracking metadata (REC-002).
 - Zero-PHI payload referencing (stores references, never raw unmasked clinical payloads in log streams).
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ```text
 ------- Legacy Content - Superseded ------- Start ------

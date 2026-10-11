@@ -1,6 +1,22 @@
 # Dokimasia — Assurance Framework Orientation
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C20 — Dokimasia](../markdown/05-information-systems-architecture/component-register.md#c20)
+
+```text
+---------------------------------------------------------
+```
+
 Dokimasia is Harmonia's independent assurance framework responsible for coordinating governed assurance activity over a subject in accordance with the authoritative assurance architecture. It provides an orientation for downstream realisation of Health Service Assurance; detailed solution architecture and responsibility allocation remain to be derived.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 This page is an orientation/navigation artefact. Motivation, Strategy, the approved Business Architecture and later approved architecture remain authoritative over it. Under [AX-17](../markdown/governance/architectural-axioms.md#ax-17), a conceptual framework is not an established Application Component, deployable module or implementation allocation.
 
@@ -15,11 +31,42 @@ The [approved Health Service Assurance Strategy](../markdown/02-strategy/capabil
 
 Dokimasia is associated with the downstream realisation of this architecture. This does not establish that Dokimasia owns or implements every Role, Function, Process, Service or Interaction. It may coordinate its own assurance activity without acquiring operational management of the subject being assured; the [approved conceptual finding](../markdown/04-information-architecture/reviews/dokimasia-assurance-architectural-finding.md) records that boundary. Current Strategy and Business Architecture govern the subsequently reconciled assurance semantics.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C20 — Dokimasia](../markdown/05-information-systems-architecture/component-register.md#c20)
+- [Domain05 — specialisation and reuse](../markdown/05-information-systems-architecture/candidate-system-map.md#specialisation-and-reuse)
+- [C19 — DigitalTwin](../markdown/05-information-systems-architecture/component-register.md#c19)
+
+```text
+---------------------------------------------------------
+```
+
 ## Digital Twins and Execution
 
 Dokimasia is associated with Harmonia's assurance / Digital Twin design space. The [general Digital Twin definition](../markdown/02-strategy/strategic-views/logical-component-responsibilities.md#component-7-digital-twin-entity-centred-operational-coordination-construct) remains independent of AI, assurance, Dokimasia and any particular implementation mechanism. The [approved finding](../markdown/04-information-architecture/reviews/dokimasia-assurance-architectural-finding.md#27-relationship-to-digital-twin) explicitly does not establish Dokimasia as a Digital Twin or subtype. Detailed Dokimasia/Digital-Twin allocation remains to be derived.
 
 [Praxis](../concepts/praxis.md), [Ergon / Ergo](../concepts/ergon.md) and [Ponos](../concepts/ponos.md) document general execution concepts. The [Dokimasia / Assurance Praxis / Ponos execution relationship](../markdown/04-information-architecture/reviews/dokimasia-assurance-architectural-finding.md#28-execution-relationship-with-ponos) remains architecturally unresolved; these links supply no execution allocation.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C27 — AI Assurance Ergon](../markdown/05-information-systems-architecture/component-register.md#c27)
+- [Domain05 — Dokimasia terminal-boundary constraints](../markdown/05-information-systems-architecture/component-register.md#dokimasia-terminal-boundaries)
+- [CDG-35 — Dokimasia AI discovery](../markdown/05-information-systems-architecture/gaps.md#dokimasia-ai-discovery)
+
+```text
+---------------------------------------------------------
+```
 
 ## Runtime AI
 
@@ -27,6 +74,29 @@ Dokimasia is expected to be a major consumer of Harmonia runtime AI because assu
 
 AI does not become Service Guardian or independently acquire assurance authority. Potential uses are examples, not prescriptions or approval of assessment/adjudication allocation. The [assurance non-recursion boundary](../markdown/03-business-architecture/behaviours/health-service-assurance.md#assurance-non-recursion-boundary) remains controlling; AI use introduces no recursive assurance obligation.
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C20 — Dokimasia](../markdown/05-information-systems-architecture/component-register.md#c20)
+- [C28 — Mneme Pragma Management](../markdown/05-information-systems-architecture/component-register.md#c28)
+- [CDG-35 — Dokimasia AI discovery](../markdown/05-information-systems-architecture/gaps.md#dokimasia-ai-discovery)
+- [Domain05 — candidate Data Objects and unresolved semantics](../markdown/05-information-systems-architecture/data-and-persistence.md#pragma-management-and-candidate-specialisations)
+
+```text
+---------------------------------------------------------
+```
+
 ## Open Downstream Architecture
 
 Detailed responsibility allocation, the Digital Twin relationship, execution independence and the AI execution model remain downstream architecture. Application components, APIs, information models, persistence, AI orchestration and deployment are not defined here. Any AI-specific governance, safety, provenance or controls require separate derivation if needed.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

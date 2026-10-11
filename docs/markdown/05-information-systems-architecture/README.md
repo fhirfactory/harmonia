@@ -17,8 +17,9 @@
 
 # Domain05 — Information Systems Layer Architecture
 
-**Standing: initial Harmonia Candidate Information Systems Architecture,
-2026-10-11.** This is the canonical RADS record of the reconstructed candidate,
+**Standing: Harmonia Candidate Information Systems Architecture, reconstructed
+and corrected through bounded Step-A adjudication, 2026-10-11.** This is the
+canonical RADS record of the candidate,
 not the final Solution Architecture baseline. Inclusion does not establish
 that a component or feature is required for R1.x/R2.x. Absence of upstream
 traceability at this stage does not invalidate a documented candidate.
@@ -40,7 +41,11 @@ The authorised Domain05 approach is:
 4. Identify excess candidate features/components and establish the MVP Candidate Architecture.
 5. Establish the implementation plan.
 
-Only Step 1 has been performed. Capability mapping, Information Architecture
+Initial reconstruction (A1, recorded here as Step 1) is complete. Step A remains
+open: architectural review/adjudication (A2) and bounded iterative correction
+(A3) are in progress; acceptance as sufficiently faithful (A4) is pending.
+The Energeia / DigitalTwin / Dokimasia adjudication below corrects the candidate
+within that boundary. Capability mapping, Information Architecture
 coverage, upstream requirements gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
 The [documentation gap register](gaps.md) records insufficiencies within the
@@ -106,12 +111,14 @@ The explicit 2026-10-11 task instruction establishes the following candidate
 solution meanings, recorded as **U01** for traceability:
 
 - `ActionableTaskArchetype` is an Information Architecture meta-concept, not
-  necessarily an individually realised Information Asset. Its current candidate
+  itself an instantiated Information Asset. Its current candidate
   logical embodiment is `PragmaFactory`; the factory's detailed contract is unknown.
 - Both `ActionableTask` and `FulfillmentTask` may be represented through `Pragma`,
   with `WorkOrder`, `ToDo`, `Stimulus` and `Effector` candidate forms. Sharing a
   representation preserves the distinct work-instance and undertaking meanings.
-  The forms are not four new Information Resources or an inheritance decision.
+  The forms are not four new Information Resources. U02 below establishes
+  candidate Stimulus/Effector specialisation at the application-object level;
+  it does not introduce Information Architecture subclasses.
 - **Ergon is an Application Architecture behavioural construct. It has no
   discrete Information Architecture representation merely by virtue of being
   an Ergon. Its information significance is expressed through the information
@@ -124,3 +131,84 @@ legacy sources already specify them or complete Information Architecture
 traceability. The [Domain04 Task model](../04-information-architecture/information-families/task-work.md)
 and [Dokimasia finding](../04-information-architecture/reviews/dokimasia-assurance-architectural-finding.md)
 remain controlling for their established meanings and deferrals.
+
+<a id="energeia-adjudication"></a>
+
+## Energeia / DigitalTwin / Dokimasia candidate adjudication
+
+**U02 — 2026-10-11:** the user-supplied
+`DesignNote-Energeia-DigitalTwin-Dokimasia-Specialisation.md`, §§2–14, is the
+primary adjudication input for this Step-A correction. Its decisions are
+incorporated into these RADS views, subject to the axioms and established
+upstream semantics. This records adjudicated candidate responsibilities;
+it does not accept the whole Candidate Architecture or finalise detailed design.
+
+- **Energeia** is the activity/execution architectural subsystem. **Ponos** is
+  its reusable execution framework/component pattern; **Ergo** is the reusable
+  conceptual activity pattern and platform-integration contract; **Ergon** is
+  a bounded fine-grained task-completion software component; **Erga** provides
+  meaningful collections for executable assembly, concurrent activity management/
+  observation and coherent libraries/change management. These are distinct.
+  Ponos and Ergo/Ergon are tightly coupled peer responsibilities, with execution
+  and contract reuse relationships rather than Ponos containing Ergo or Ergon.
+- **Mneme / Pragma Management** manages Pragma information, containing the
+  candidate logical application embodiment **PragmaFactory** and Application
+  Data Object **Pragma**. PragmaFactory creates/initialises appropriate Pragma
+  representations associated with the ActionableTaskArchetype meta-concept.
+  Execution of, behaviour upon, or transport of managed information does not
+  confer information-management responsibility for that information. Ponos
+  executes, Petasos provides messaging/recoverable handoff, and Ergon supplies
+  bounded activity behaviour; durable establishment remains with Mnemosyne.
+- **DigitalTwin** is a Ponos-specialised execution component for entity-specific
+  operational coordination, including the per-Twin queue pattern. Many Twins
+  are supported; only Twins with pending work become active and are serviced by
+  bounded execution resources. No thread per Twin is required. **Behaviour**
+  specialises Ergon. **Stimulus** and **Effector** are candidate Pragma
+  specialisations, with detailed information semantics unresolved.
+- **Dokimasia** is a Ponos-specialised execution component for independent
+  governed assurance activity. **Dokimasia Ergon** specialises Ergon for bounded
+  assurance activity; **AI Assurance Ergon** is a discrete candidate specialisation
+  of Dokimasia Ergon where AI processing is itself an explicit governed workflow
+  activity. Ordinary Ergon may instead invoke AI internally as an implementation
+  choice; not all Harmonia AI use is allocated to AI Assurance Ergon.
+- Dokimasia execution SHALL NOT be monitored, assured or assessed by another
+  Dokimasia execution and SHALL NOT generate a separate AuditEvent for its own
+  execution. Its governed assurance record/result provides authoritative evidence
+  of that assurance activity. Governance, execution integrity, reporting and
+  controlled observability remain required. The
+  [terminal-boundary rules](component-register.md#dokimasia-terminal-boundaries)
+  apply to its specialised activity components too.
+- Dokimasia requires corresponding candidate Pragma specialisation semantics:
+  assurance request/input and assurance result/finding are semantic roles whose
+  names, schemas, cardinalities and lifecycles remain unresolved. The existence
+  and discrete responsibility of AI-based Dokimasia componentry are established;
+  detailed Information Systems architecture requires
+  [discovery before implementation modelling is finalised](gaps.md#dokimasia-ai-discovery).
+  No AI technology/provider or additional assurance subclass is selected.
+
+<a id="specialisation-principle"></a>
+
+### Common specialisation principle
+
+> Specialised Harmonia execution constructs SHALL reuse the common platform
+> management, assurance, reporting and integration capabilities inherited through
+> their base architectural constructs. Specialisation introduces only those
+> behaviours and information semantics necessary for the specialised role.
+
+“Inherited” expresses architectural specialisation/reuse, not mandatory
+programming-language inheritance or runtime containment. DigitalTwin and
+Dokimasia reuse Ponos execution, Ergo/Ergon activity contracts, Mneme Pragma
+Management, process-management and platform integration. Behaviour reuses
+Context Loading and Context Unloading, process-management mechanisms,
+Petasos/platform integration, assurance integration, logging/observability,
+reporting, checkpoint/platform integration and other common Ergo/Ergon facilities.
+Stimulus/Effector reuse common Pragma process-management, assurance, reporting
+and management facilities. Neither specialisation establishes a parallel
+messaging, context, task/progression, reporting, assurance or persistence framework;
+Dokimasia's explicit terminal rules constrain common assurance/evidence hooks.
+
+The [system map](candidate-system-map.md#specialisation-and-reuse) distinguishes
+these relationships from containment and collaboration. Domain04 Task meaning,
+outcome ownership and the Ergon information boundary remain unchanged.
+**Praxis requires separate architectural adjudication**; this correction supplies
+no definition-to-instance, workflow or composition model for it.
