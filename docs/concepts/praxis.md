@@ -55,12 +55,28 @@ Praxis specifies the structural blueprint of a clinical workflow as a Directed A
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C06 — Praxis](../markdown/05-information-systems-architecture/component-register.md#c06)
+- [Candidate features F11–F12](../markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Praxis Owns
 - TaskSequence blueprint definitions, schemas, and step declarations.
 - Dynamic blueprint loader service (`TaskSequenceLoader`).
 - Startup cache seeding and validation (`TaskSequenceDefaultSeeder`).
 - Dependency ordering, condition evaluation, and execution step transition rules.
 - JSON/YAML schema definitions for clinical workflow blueprints.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Praxis Explicitly Does NOT Own (Anti-Responsibilities)
 - Worker thread management or execution concurrency (owned by Ponos).

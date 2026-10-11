@@ -85,10 +85,25 @@ Iris separates the presentation tier into a shared presentation foundation, a de
 - All data access must route exclusively through Hot Rod cache RPC or upstream REST APIs.
 - Continuously verified by `IrisDecouplingArchitectureTest`.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C16 — Iris Administration and backend separation](../markdown/05-information-systems-architecture/component-register.md#c16)
+
+```text
+---------------------------------------------------------
+```
+
 ### Provider Registry Decoupling `[IMPLEMENTED]`
 - `iris-administration` is strictly a presentation-tier consumer of FHIR REST endpoints (`/fhir/r5/Practitioner`, `/fhir/r5/Organization`).
 - It does not own backend persistence, master file validation, or change approval state machines.
 - Continuously verified by `ProviderRegistryArchitectureTest`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### Terminology Standardization `[IMPLEMENTED]`
 - The operations monitoring SPA is canonically named **`iris-console`**. Legacy references to `iris-monitor` in older drafts are deprecated.

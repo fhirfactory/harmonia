@@ -53,11 +53,27 @@ An Ergon represents a pure functional activity step within a workflow pipeline. 
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C05 — Ergo / Ergon / Erga](../markdown/05-information-systems-architecture/component-register.md#c05)
+- [Candidate features F07–F10](../markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### What an Ergon Owns
 - Discrete transformation logic between data models (e.g., HL7 v2 ADT to FHIR R5 `Patient`/`Encounter`).
 - Field-level validation rules and mandatory attribute checks.
 - Generating granular destination delivery sub-statuses during fan-out dispatch (REC-002).
 - Updating `Pragma` payload references and appending activity-specific audit metrics.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What an Ergon Explicitly Does NOT Own (Anti-Responsibilities)
 - Multi-step workflow sequencing or branch selection (owned by Praxis).

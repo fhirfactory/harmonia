@@ -69,11 +69,26 @@ A Pragma is an immutable-friendly execution envelope that travels alongside the 
 - Granular sub-destination delivery tracking metadata (REC-002).
 - Zero-PHI payload referencing (stores references, never raw unmasked clinical payloads in log streams).
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C07 — Pragma exclusions](../markdown/05-information-systems-architecture/component-register.md#c07)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Pragma Explicitly Does NOT Own (Anti-Responsibilities)
 - Executing business rules or running activity steps (owned by Erga).
 - Spawning worker threads or managing consumer loops (owned by Ponos).
 - Defining workflow blueprint DAGs (owned by Praxis).
 - Network socket wire transport (owned by Pylai / Petasos).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 

@@ -40,9 +40,24 @@ agora/
 $$\text{agora-service} \longrightarrow \text{agora-core} \longrightarrow \text{agora-matrix}$$
 $$\text{agora-core} \longrightarrow \text{agora-api} \longleftarrow \text{calliope}, \text{themis-api}, \text{petasos-api}$$
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C18 — Agora isolation and collaboration boundaries](../markdown/05-information-systems-architecture/component-register.md#c18)
+
+```text
+---------------------------------------------------------
+```
+
 - **Zero Ponos Dependency**: Direct dependency on Ponos (`net.fhirfactory.harmonia.energeia.ponos..`) is strictly prohibited. Agora coordinates with workflows exclusively via Petasos queues (`petasos.queue.agora.*`).
 - **Matrix DTO Encapsulation**: Matrix protocol JSON structures (Client-Server and Synapse Admin DTOs) are strictly quarantined within `agora-matrix` and never leak into `agora-core` public interfaces or downstream Harmonia components.
 - **Paradeigma Isolation**: Agora production code must never declare dependencies on or import Paradeigma simulation modules.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -127,9 +142,25 @@ When a patient encounter is initiated or requested via `AgoraSpaceRequest`:
      `PUT /_matrix/client/v3/rooms/{childRoomId}/state/m.space.parent/{spaceRoomId}`
      Payload: `{"canonical": true, "via": ["synapse"]}`.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C18 — Agora](../markdown/05-information-systems-architecture/component-register.md#c18)
+- [Candidate collaboration feature F22](../markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### 6.2 Practitioner Spaces & Group Collaboration
 - **Practitioner Space**: Personal collaboration space for an individual practitioner, housing child rooms partitioned by `PractitionerRole`.
 - **Group Collaboration Rooms**: Ad-hoc or ward-based rooms for clinical teams, registered under `RESOURCE_TYPE_GROUP`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### 6.3 Soft Archival Lifecycle (AGORA-ADR-008)
 Upon patient discharge or encounter completion:

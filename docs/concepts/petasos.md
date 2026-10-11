@@ -71,9 +71,25 @@ Petasos separates abstract message passing from physical broker connectivity acr
 - Broker metrics collection (`PetasosMetrics`).
 
 ### What Petasos Explicitly Does NOT Own (Anti-Responsibilities)
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — Petasos exclusions](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Internal messaging responsibility](../markdown/05-information-systems-architecture/middleware.md)
+
+```text
+---------------------------------------------------------
+```
+
 - Clinical payload parsing or validation (payloads are treated as opaque binary `byte[]` or strings).
 - Relational clinical persistence (owned by Mnemosyne).
 - Task sequence state transitions or workflow rules (owned by Energeia).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 - External network protocol listeners like MLLP (owned by Pylai).
 
 ---

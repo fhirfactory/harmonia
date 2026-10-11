@@ -24,6 +24,18 @@ Calliope sits at the foundation layer of Harmonia's module hierarchy:
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C01 — Calliope](../markdown/05-information-systems-architecture/component-register.md#c01)
+- [Candidate data D01–D02/D08](../markdown/05-information-systems-architecture/data-and-persistence.md)
+
+```text
+---------------------------------------------------------
+```
+
 ## 2. Core Information Models & Schemas
 
 ### 2.1 Event & Activity Envelopes
@@ -36,3 +48,7 @@ Calliope sits at the foundation layer of Harmonia's module hierarchy:
 - **`Mfn2FhirBundle`**: Maps Master File Notification (MFN) messages to FHIR R5 `Practitioner`, `PractitionerRole`, and `Organization` bundles.
 - **`Orm2FhirMapper`**: Maps Order Management (ORM) messages to FHIR R5 `ServiceRequest`.
 - **`Oru2FhirMapper`**: Maps Observation Result (ORU) messages to FHIR R5 `Observation` and `DiagnosticReport`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

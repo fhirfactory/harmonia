@@ -66,7 +66,7 @@ Information Architecture
   DOMAIN04 SEMANTIC BASELINE
 ════════════════════════════════
     ↓
-Application Architecture
+Information Systems Layer Architecture
     ↓
 Integration Architecture
     ↓
@@ -110,7 +110,7 @@ unestablished relationships SHALL remain explicit.
 1. **Domain 02 — Strategy Cleanup**
 2. **Domain 03 — Business Architecture Completion**
 3. **Domain 04 — Information Architecture Reconciliation**
-4. **Domain 05 — Application Architecture Completion**
+4. **Domain 05 — Information Systems Layer Architecture Completion**
 5. **External `/docs` Architectural Content Consolidation**
 6. **R1.x/R2.x Architecture Consistency and Traceability Review**
 7. **R1.x/R2.x Architecture Baseline**
@@ -121,6 +121,26 @@ a future stage. Current completion status is recorded in section 4; the
 sequence alone does not establish it.
 
 ## 4. Current Programme Position
+
+**2026-10-11 — Domain05 candidate reconstruction authorised.** Domain05 is now
+**Information Systems Layer Architecture**, approached as Solution Architecture
+within the established Domains01–04 context. The
+[initial Harmonia Candidate Information Systems Architecture](05-information-systems-architecture/README.md)
+reconstructs the already documented solution rather than re-deriving it from
+upstream architecture. Candidate inclusion is not approval of R1.x/R2.x necessity.
+
+The authorised Domain05 approach is: (1) document the Candidate Architecture;
+(2) map upstream capability/information architecture and establish traceability;
+(3) identify genuine architecture gaps; (4) identify excess candidate features
+and establish the MVP Candidate Architecture; (5) establish the implementation
+plan. This task performs **Step 1 only**. The initial record retains documentation
+and component-feature gaps, not upstream coverage findings. Steps 2–5 and the
+final Domain05 completion/baseline remain future separately authorised work.
+The earlier Application Architecture assessment and its Q01–Q05 recommendation
+are navigation evidence, not the current work sequence. General derivation and
+completion gates remain applicable to the eventual validated solution baseline.
+
+### Established upstream completion and earlier Domain05 transition
 
 The authorised Domain 03 **Step 3 — Residual Semantic Adjudication and Capacity Management Pattern Review** is complete. The 2026-10-09 assessment establishes **semantic completion for the agreed R1.x/R2.x Business Architecture scope** against the Domain Completion Gate. The [Domain 03 metamodel](03-business-architecture/metamodel/business-architecture-metamodel.md#9-r1xr2x-semantic-sufficiency-boundary), [residual Service Delivery decisions](03-business-architecture/behaviours/03-service-delivery.md#residual-feature-sufficiency) and [HSO capacity responsibilities](03-business-architecture/behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary) record the authoritative outcomes; the [Domain 03 completion boundary](03-business-architecture/README.md#5-completion-boundary-and-retained-uncertainty) retains downstream, governance and deliberately unestablished matters. Completion requires semantic sufficiency, not graph density. No freeze/refreeze or final R1.x/R2.x programme baseline is declared.
 
@@ -152,7 +172,7 @@ under AX-17 rather than silently resolved within downstream design.
 |---|---|
 | Domain03 — Business Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-09 |
 | Domain04 — Information Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-10 |
-| Domain05 — Application Architecture | NEXT — not commenced by this task |
+| Domain05 — Information Systems Layer Architecture | Initial Candidate Architecture reconstruction — Step 1; upstream mapping, validation against requirements, MVP and implementation planning remain future work |
 
 ### Canonical Architectural Axioms Migration — Completed
 

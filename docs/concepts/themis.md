@@ -58,6 +58,18 @@ Themis enforces a 4-gate security model spanning every tier of the platform:
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C02 — Themis](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [Candidate security data D03](../markdown/05-information-systems-architecture/data-and-persistence.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Themis Owns
 - Security principal representations (`ThemisPrincipal`) and service accounts (`HarmoniaServiceIdentities`).
 - Mnemonic role definitions (`HarmoniaRoleEnum`) and granular machine authorities (`HarmoniaAuthorityEnum`).
@@ -65,6 +77,10 @@ Themis enforces a 4-gate security model spanning every tier of the platform:
 - Deterministic default-deny policy evaluation engine (`ThemisService`, `ThemisPolicy`).
 - Built-in server-side domain policies (`ProviderRegistryReadPolicy`, `ProviderRegistrySubmitPolicy`, `SystemAdminPolicy`).
 - Non-PHI security audit event generation and dispatch (`ThemisAuditService`, `ThemisAuditEvent`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Themis Explicitly Does NOT Own (Anti-Responsibilities)
 - Direct network socket termination or MLLP wire framing (owned by Pylai).

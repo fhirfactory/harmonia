@@ -81,6 +81,18 @@ deterministic synthetic clinical scenarios. It is not a production
 clinical dependency and must remain isolated from production
 architecture.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C03 — Kleio](markdown/05-information-systems-architecture/component-register.md#c03)
+- [Candidate feature F15](markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### ADR-013 --- Kleio Owns Audit Evidence and Provenance
 
 Kleio is the Harmonia capability responsible for immutable audit
@@ -91,6 +103,22 @@ evidence is append-only and shall not be updated, replaced, patched,
 deleted, or resurrected through ordinary application persistence
 mechanisms.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — Petasos](markdown/05-information-systems-architecture/component-register.md#c10)
+- [Internal work handoff, recovery and replay](markdown/05-information-systems-architecture/middleware.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### ADR-014 --- Petasos Owns Durable Processing Transition Boundaries
 
 Petasos governs the durable transfer of work between independently
@@ -99,6 +127,22 @@ orchestration of those activities; Petasos establishes the durable
 boundary at which responsibility for work is transferred. ActiveMQ
 Artemis is an implementation mechanism used by Petasos and does not
 itself define Harmonia processing semantics.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — Petasos](markdown/05-information-systems-architecture/component-register.md#c10)
+- [Internal work handoff, recovery and replay](markdown/05-information-systems-architecture/middleware.md)
+
+```text
+---------------------------------------------------------
+```
 
 ### ADR-015 --- Replay Is Anchored to Explicit Durable Transitions
 
@@ -112,6 +156,22 @@ deterministic reprocessing, transport redelivery, and redelivery of an
 established result are distinct operations and shall not be treated as
 equivalent.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C03 — Kleio](markdown/05-information-systems-architecture/component-register.md#c03)
+- [Candidate feature F15](markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### ADR-016 --- Audit Is Anchored to Architecturally Significant Transitions
 
 Kleio AuditEvents are generated for architecturally significant actions
@@ -123,6 +183,22 @@ ordinary method execution are not independently audited merely because
 they occur. Audit, provenance, and replay remain distinct concepts but
 may share a durable Petasos transition as their architectural anchor.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — Petasos](markdown/05-information-systems-architecture/component-register.md#c10)
+- [Internal work handoff, recovery and replay](markdown/05-information-systems-architecture/middleware.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### ADR-017 --- Processing Pressure Is Expressed as Durable Backlog
 
 Where processing demand exceeds downstream capacity, Harmonia shall
@@ -132,6 +208,10 @@ threads, database connections, or volatile work state. Queue depth,
 oldest-transition age, processing rate, retry/replay count, dead-letter
 count, and backlog drain rate form part of the operational model for
 transition processing.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### ADR-018 --- Mnemosyne Defines the Authoritative Durable State Boundary
 

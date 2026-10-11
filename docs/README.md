@@ -22,6 +22,13 @@ Harmonia is a modular, high-performance, healthcare-grade integration and intero
 
 ## 1. Documentation Information Architecture `[IMPLEMENTED]`
 
+The [Harmonia Candidate Information Systems Architecture](markdown/05-information-systems-architecture/README.md)
+is the initial Domain05 solution reconstruction, with component, feature, data,
+middleware, persistence and documentation-gap views. It remains candidate;
+upstream coverage, MVP determination and implementation planning are future work.
+The legacy source sections incorporated by that task are individually wrapped;
+other material below retains its historical/supporting standing under repository governance.
+
 ```
 docs/
 ├── README.md                                 # Master documentation index & navigation (this file)

@@ -64,6 +64,17 @@ Paradeigma is organized across seven decoupled modules under `paradeigma/`:
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C21 — Simulation and production isolation](../markdown/05-information-systems-architecture/component-register.md#c21)
+
+```text
+---------------------------------------------------------
+```
+
 ## 3. Mandatory Architectural Invariant: Production Isolation `[IMPLEMENTED]`
 
 > **Invariant 1: Production Code $\rightarrow$ Paradeigma is STRICTLY FORBIDDEN.**
@@ -74,6 +85,10 @@ Harmonia enforces a strict one-way isolation boundary:
 3. **Forbidden**: No production Java class may import `net.fhirfactory.harmonia.paradeigma.*`.
 4. **Forbidden**: No production class may include simulation flags (e.g., `isSimulationMode`, `paradeigmaEnabled`).
 5. **Continuous Verification**: Enforced on every build via `ParadeigmaIsolationArchitectureTest`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 

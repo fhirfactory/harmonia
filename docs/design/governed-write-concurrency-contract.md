@@ -770,12 +770,28 @@ public sealed interface WriteResult<T> extends Serializable permits
 }
 ```
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C11 — Governed access/change outcome distinction](../markdown/05-information-systems-architecture/component-register.md#c11)
+- [Candidate data D04 and state boundaries](../markdown/05-information-systems-architecture/data-and-persistence.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### 10.2 Commit Success with Degraded Convergence (INV-04)
 If the database commit succeeds in Mnemosyne, durability has been achieved. If Mneme subsequently fails to converge (e.g., cache node crash, Hot Rod timeout, or CAS retry limit reached), the result is:
 - `commitOutcome()` = `AuthoritativeCommitOutcome.COMMITTED`
 - `convergenceStatus()` = `ConvergenceStatus.DEGRADED`
 - `isCommitted()` = `true`
 - The method **returns a `WriteResult.Committed<T>`** and does **not** throw an exception or report failure.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -935,6 +951,18 @@ public interface GovernedWriter {
 - **Correlation & Causation**: `ThemisSecurityContext` carries `correlationId` and `causationId` for distributed trace lineage and idempotent commit reconciliation.
 - **Audit Logging**: Operations dispatch non-PHI audit events to `ThemisAuditService` referencing correlation and causation identifiers.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C11 — Governed access/change carriers](../markdown/05-information-systems-architecture/component-register.md#c11)
+- [Middleware M05 — Governed collaboration](../markdown/05-information-systems-architecture/middleware.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### 14.2 Existing Workflow and Persistence Carriers
 
 `GovernedWriter` avoids introducing redundant wrapper classes:
@@ -943,6 +971,10 @@ public interface GovernedWriter {
 - For persistence-oriented callers, `PersistenceOperationEnvelope` supplies operation identity, expected version, and security context.
 - For asynchronous workflow callers, `Pragma` supplies correlation/causation IDs, source, originating/executing principals, and security context.
 - Workflow adapters pass `securityContext` directly into `GovernedWriter` without discarding provenance or creating parallel envelopes.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
