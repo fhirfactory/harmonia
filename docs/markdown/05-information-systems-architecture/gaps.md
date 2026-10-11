@@ -15,7 +15,7 @@ or establishing missing architectural meaning appears to require human
 adjudication; “Possibly” separates further documentary recovery from a decision.
 It is not a request to adjudicate during reconstruction.
 
-The [U02–U09 Step-A adjudications](sources.md#u02) partially resolve/reclassify
+The [U02–U11 Step-A adjudications](sources.md#u02) partially resolve/reclassify
 the affected entries below. Settled component boundaries and management/reuse
 relationships are separated from remaining detailed design. The primary note's
 earlier access issue was an input-access dependency, not an architectural gap.
@@ -48,11 +48,11 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-24 — feature / orphan feature / persistence** | Terminology/reference services and conditional authoring; C01/F25/D16 | A02 establishes semantic definitions/bindings; L17 uses compiled value sets and excludes standalone terminology server; L27 proposes lookup/search/expansion/validation before clinical authoring. | Reference publication/version/persistence and runtime service allocations are incomplete; existing bindings neither implement nor invalidate proposed service features. No product/feature scope chosen. | **Possibly**; documentary detail first, then missing architectural service/ownership decisions. |
 | **CDG-25 — persistence / relationship / Data Object** | Media/binary management; F31/D15 | L19 Ergon payload includes clinical binary attachments; L10/L17/L23 name DocumentReference support/cache. Broad discovery found no consistent Media Server or equivalent contract. | Payload/metadata support does not establish durable binary custodian, access/link integrity, content lifecycle, authorization, media structures or recovery. No blob product or server component invented. | **Possibly**; source recovery or explicit bounded architecture decision needed. |
 | **CDG-26 — contradiction / feature** | Clinical presentation versus diagnostic PHI boundary; C15–17/F26–27 | L11/L18/L23 describe clinical record/timeline views; L21 design-system safety wording limits presentation/diagnostic identifiers. AGENTS Invariant 7 governs non-clinical logs. | Reusable diagnostic control/logging rules and clinical presentation permissions are not consistently distinguished. No ban on authorised clinical display is inferred from zero-PHI diagnostics. | **Possibly** for view/projection contracts; established logging prohibition stays intact. |
-| **CDG-27 — partially resolved / working structures and retained variants** | Mneme information, Petasos obligations, Ponos execution and definition working sets | U05 separates state responsibilities and Topic from destination. L09/L10/L17/L19/L20 retain competing cache/dedup/TTL/write-behind catalogues. | **Semantic state/selection ownership resolved.** Working-set reconstructability, retention, concrete representation and coordination contracts remain incomplete beneath historical technology lists. No cache or queue topology is selected. | **Possibly** for representation/detail; no technology catalogue may override settled ownership. |
+| **CDG-27 — partially resolved / working structures and retained variants** | Mneme Context/Pragma, Petasos obligations, Ponos execution and definition working sets | U10 establishes Context/Pragma responsibility, four-service surface, temporal composed values and non-exhaustive expected sets; U05 state/selection boundaries retained. L09/L10/L17/L19/L20 cache catalogues remain historical. | **High-level working Context/Pragma meaning resolved.** Physical representation/distribution/reconstruction/retention and coordination remain CDG-45; no cache or queue topology/TTL/write-behind authority selected. | **Possibly** for detailed representation; technology catalogue cannot override settled semantics. |
 | **CDG-28 — partially resolved / operational reporting and tools** | Energeia, Journey, Iris/support; C39/C22/C35/F27/38/39 | U06 assigns Harmonia operational observation/reporting and Journey ownership to Energeia; Iris presents; external IT/Ops manages technical platform. | **Owner, two management planes and R1.x/R2.x Observe → Report boundary resolved.** Provider freshness/failure, observation/reporting detail, retention/projection/consumption and command authority remain detailed contracts CDG-38/39. Absence of observation is not non-occurrence. | **Yes/Possibly** for detail; no autonomous adaptation or UI-derived hierarchy. |
 | **CDG-29 — contradiction / feature / component** | Patient identity update versus EMPI/master-patient engine; F08 | L18 execution chapter explicitly reconciles MRNs to master patient IDs using an EMPI in Mneme; L13 ADR-007 and A01 AX-06/18 preserve source authority. Other Erga/converter sources describe identifiers/demographics without that authority. | Candidate identity correlation/referential checking and master identity determination are conflated; no consistent separate EMPI component/boundary is established. Do not invent one or silently remove the historical claim. | **Yes** for any proposed master-identity responsibility; source-authority guardrails remain settled. |
 | **CDG-30 — partially resolved / fixed gate catalogues** | Themis distributed PEP and participating hosts; C02/F03/M07 | U08 places enforcement at the component capable of preventing the action, with Themis-owned capability and PEP-Context Criteria; historical L08/L01 fixed gate/count variants remain provenance. | **Enforcement ownership/placement principle resolved**, including Petasos governed FORWARD. Exact participating-boundary contracts, caller/executor context relationships and legacy gate reconciliation remain unresolved CDG-42. Complete Authorisation Model is not distributed merely for local enforcement. | **Possibly** for detailed host contracts; default-deny remains, no central PEP or transport authentication invented. |
-| **CDG-31 — Data Object / relationship / feature** | Active observation/generation, result/absence and search-result contracts; C09/C11/F16/18 | L14 warm read uses entry metadata as token and older convergence algorithms; A01 AX-05 requires valid generation of successfully established state. L15 describes external resource searchset, not internal result management. | Existing candidate access contracts do not establish all token/generation/manifestation distinctions or internal search-result identity/retention/ownership. This is documentary insufficiency, not Domain04 coverage analysis. | **Possibly** for missing application contracts; no upstream semantics changed. |
+| **CDG-31 — partially resolved / observation and search-result contracts** | Mneme Context/access, Mnemosyne search; C09/C11/C12/F16/18/43 | U10/U11 establish four Mneme services, Context/resource version distinction and authoritative persistence search behind Adhoc Search. L14 token/convergence and L15 external searchset variants remain historical. | **Surface/search ownership and authoritative search space resolved.** Exact active-generation/token/Context mapping, internal search-result identity/retention and completeness/consistency contracts remain unresolved CDG-45/48. No cache-completeness inference or upstream coverage analysis. | **Possibly** for detail; no Domain04 semantics changed. |
 | **CDG-32 — contradiction / external-boundary dependency** | Registry status/async response projections; C13/C14/F20–21 | L15/L18 describe HTTP 202 and Task polling for writes, direct synchronous store search and OperationOutcome/status conversion; A01 AX-02/13 requires applicable standards contract and private-semantic isolation. | Candidate internal request/change/status responsibilities and externally permitted projections are insufficiently separated. Inclusion does not approve protocol details; Domain06 contract review remains future work. | **Yes** if contract conflicts persist; no external integration redesign here. |
 | **CDG-33 — orphan feature / component / Data Object** | Local Directory sync/enrichment and EndpointCapability; F30 | L24 §§5–9/13 proposes shared-component ingestion/synchronisation/enrichment and distinguishes endpoint from capability; detailed reconciliation/allocation remains expressly open there. | No coherent candidate component/service/state/persistence contract is established for those proposed features. Retained proposal is not an upstream requirement gap or permission to implement its waves. | **Possibly** after source reconciliation; explicit responsibility decisions may be necessary. |
 | **CDG-34 — middleware / relationship** | Ingress acceptance/cache/publish and external dispatch uncertainty; C10/C14/M01 | L30 REC-001 requires cache and publish before AA; L26 says “durably persisted and enqueued”; L13 ADR-018 allows durable work acceptance with reconstructable state, distinct from committed information. | Failure/partial handoff and required recoverable context are not consistently documented. Cache success alone is insufficient; upstream acceptance, internal commit and external delivery observation cannot be one state. | **Yes** for complete transition/effect contracts; REC-001 is preserved without production changes. |
@@ -60,13 +60,16 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-36 — established responsibility / detailed selection contracts** | Publishing/Subscription/Pattern/Topic; C36–38/F37/D07/22–25/M13 | U05 settles asymmetric provider filtering/consumer selection, multi-level Topic metadata and Mneme semantic management. | Definition lifecycles/registration/discovery, supported metadata, language/operators/precedence, evaluation/error/security/disclosure and durable representation remain unresolved. Technology/index/algorithm/loop controls are not selected. | **Yes** for missing detailed architectural contracts where needed; implementation guardrails do not automatically become upstream gaps. |
 | **CDG-37 — partially resolved / Pub/Sub fan-out** | Common Pragma, multiple Petasos obligations, consumer FulfillmentTasks; D05/11/F37 | U05 §§11–13/21 establishes common managed Pragma/payload and potential multiple reference handoffs; each consumer undertaking ActionableTask establishes a distinct FulfillmentTask. | **Principle partly settled; reference/copy/version and morph mechanics, Pragma identity, targetDestination, processing/concurrency/isolation, lineage, Journey correlation and assurance remain unresolved.** No copy-per-subscriber or shared mutable state inferred. | **Yes** for remaining identity/lifecycle contracts; established undertaking principle preserved. |
 | **CDG-38 — partially resolved / detailed Journey contracts** | Journey; C35/C39/D21/F38/M15 | U06 resolves Energeia ownership/Journey Management Services and Mnemosyne O&A responsibility; U04/U05 observation and graph possibility retained. | Detailed representation/construction, aggregation/reference schema, PathwayElement relationships, evidence/causal/correlation/reconstruction algorithms, inference distinction, lifecycle/retention and consumption remain unresolved. Ownership transfers no referenced-information authority; Journey is not a shard key. | **Yes** for detailed contracts; settled ownership/basis-subject distinction preserved. |
-
 | **CDG-39 — established responsibility / detailed Energeia decomposition** | Energeia C39, Praxis/Journey Management Services, operational observation/reporting; F11/38–39 | U06 establishes discrete component and direct application responsibilities. | Feature versus Service versus internal construct versus subordinate Component decomposition, precise observation/reporting contracts and remaining Praxis-to-activity relationships remain unresolved. Possible upstream omission of operational housekeeping demand has not been assessed; no requirement/capability or Business Architecture is derived. | **Yes/Possibly** for detailed reconciliation; possible upstream omission requires later bounded review, not an asserted coverage gap. |
-| **CDG-40 — established persistence direction / downstream physical design** | Mnemosyne Clinical/C&G/O&A; C12/F19/M16 | U06 establishes three semantic domains, coherent C&G authority and O&A horizontal partitionability preserving identity/provenance/relationships/meaning. | C&G physical persistence/topology, O&A physical partition/shard model and key, replication/consistency mechanisms deliberately unresolved. U07 independent audit targets imply no general O&A topology; audit harmonisation is R1.x/R2.x SEP. No multi-shard R1.x/R2.x requirement; Journey locality is an objective. | **Later design**, not missing high-level architecture or permission to select technology/keys now. |
+| **CDG-40 — established persistence direction / downstream physical design** | Mnemosyne Clinical/C&G/O&A; C12/F19/42/M16/18 | U06 domains/scaling guardrails retained; U11 establishes Mnemosyne shard management within semantic constraints, not independent semantic sharding permission. | Physical topology, shard model/key/routing, replication/consistency mechanisms remain unresolved; U07 independent audit targets imply no general O&A topology and cross-target harmonisation is SEP. No multi-shard requirement; Journey locality an objective. | **Later design**, without choosing technology/keys or reopening established semantic domains. |
 | **CDG-41 — deliberately deferred R3 direction** | Adaptive Load and Resilience Service; F40/C39 | U06 records future Observe → Analyse → Decide → Adapt direction, with feedback. | R3 policy/control architecture, adaptation/load/resilience algorithms/mechanisms, infrastructure integration and AI decision model deliberately deferred. R1.x/R2.x remains Observe → Report. | **Future bounded R3 work**, not an R1.x/R2.x gap or current design obligation. |
 | **CDG-42 — established Themis architecture / detailed contracts and retained conflict** | Themis PAP/PRP/PDP/PEP-Context/PEP; C02/F03/D03/M07 | U08 resolves Authorisation Model ownership, distinct governed actions, Criteria projection, Themis-owned local enforcement, sufficient valid-context availability and possible delegation with provenance. | Schema/language/PAP workflow/versioning, validity/renewal/invalidation/revocation, distribution, delegation rules/mechanisms, audit interaction and persistence remain detailed design. **Note §15's audit-persistence authorisation exception conflicts with AX-07; not adopted.** [Details](#themis-detailed-contracts). | **Yes** for the explicit exception conflict; later implementation design/governance for deferred mechanisms. |
 | **CDG-43 — established Kleio architecture / detailed capture and preservation** | Kleio Capture/AuditEvent/history; C03/F15/D12/M07/16 | U07 resolves authoritative audit management, immutable FHIR AuditEvent, Journey independence, longitudinal evidence, essential durable capture, independent targets and R1.x/R2.x harmonisation SEP. | API/library/mapping, evidence attachment, indexing/query/correlation/preparation, retention/legal hold, originating activity/capture transaction, target selection/write strategy, retry/failover/readiness and physical design unresolved. Harmonisation is excluded release scope, not a missing R1.x/R2.x guarantee. [Details](#kleio-detailed-contracts). | **Later bounded design**, without weakening settled essential capture or adding convergence. |
 | **CDG-44 — established Petasos architecture / detailed Parcel and queue contracts** | Purpose-defined queues / PetasosParcel / FORWARD; C10/F13/D11/M01 | U09 resolves queue creation/operation/status ownership, common by-value Parcel, predominantly referenced associated information, ActionableTask special case and Themis-owned local enforcement. | Taxonomy/names/purpose-registration, Parcel schema/reference/content and historical carrier relationships, topology/technology/persistence/partitioning/scaling, metrics/state, ordering/delivery/consumer coordination/recovery/dead-letter and Petasos/Themis/Kleio/Journey interactions unresolved. [Details](#petasos-detailed-contracts). | **Later bounded design**; no reference-only transport, FHIR equivalence, broker mechanism or new capability inferred. |
+| **CDG-45 — established Context/Pragma architecture / detailed contracts** | Mneme four services, Context/Pragma Output and Ergo boundary; C09/C11/C05/C23/F16–18/D26–28 | U10 establishes value Composition, temporal/version distinction, likely non-exhaustive resource set, supported Adhoc acquisition and Loader/Unloader versus Load/Save. | Physical Context/bucket/identity/version schema, Information Unit mapping, declaration/acquisition strategy, concurrency/conflict detection, API/query/result and Output routing/representation remain unresolved. New Content not mere Context mutation. [Detail](#context-and-pragma-contracts). | **Later bounded adjudication/design**; no fifth service, universal snapshot or algorithm inferred. |
+| **CDG-46 — established exceptional harmonisation / detailed work contracts** | Internal Mneme RHM C40/F41/M17 | U10 establishes exceptional-path design expectation of approximately 5% or less at worst, new governed Harmonisation Ergon work and reuse of Ponos via established contract. | Categories/detection, harmonisation algorithms/catalogue, narrow work-contract detail, repeated-harmonisation terminal/escalation and Ergo Library detail unresolved. No originating-Ergon resume or duplicate execution framework. [Detail](#harmonisation-contracts). | **Later bounded design**; percentages not SLA; no UI/forms design or Kleio cross-target harmonisation obligation. |
+| **CDG-47 — established Persistence Manager / detailed oversight** | Mnemosyne C12/F42/M18 | U11 establishes transaction/service oversight, shard management, authoritative reporting/logging, compartment validation/reapplication and Themis-owned PEP hosting. | Transaction/outcome/status/rollback/retry, service-health, compartment applicability source/representation/validation, PEP interaction and logging contracts unresolved. API success not automatically Harmonia outcome. [Detail](#persistence-management-contracts). | **Later bounded design**; semantic responsibility/AX-05 and AX-07 settled; audit-authorisation conflict CDG-42 retained. |
+| **CDG-48 — established Search / Research Metadata / detailed contracts** | Mnemosyne Search/Research Metadata, Mneme Adhoc Search; F43/44/D29/30/M19 | Explicit U11 task decisions establish authoritative persistence search, possible capability metadata and distinct AI-derived proximity-based metadata managed by Mnemosyne; derivation executes outside it. | Query/result/completeness/consistency, search metadata, deriving behavioural construct, provenance/confidence/Research Metadata schema unresolved. Source Content unchanged; no AI/provider/vector/embedding/proximity/index choice. [Detail](#search-research-contracts). | **Later bounded adjudication/design**; no assertion of unresolved detail, cache completeness or intrinsic Mnemosyne AI execution. |
 
 <a id="dokimasia-ai-discovery"></a>
 
@@ -117,7 +120,7 @@ assessment's Q01–Q05 may overlap these evidence-backed issues, but supplies
 neither authority nor a work sequence.
 
 Resolution and prioritisation of CDG issues require subsequent bounded work.
-U02–U09 correct only the affected Step-A candidate meanings recorded above.
+U02–U11 correct only the affected Step-A candidate meanings recorded above.
 Praxis's higher-order meaning and Energeia Praxis/Journey ownership are resolved;
 detailed lifecycle/representation and downstream designs remain unresolved.
 This register proposes no implementation plan, dependency schedule or automatic
@@ -141,7 +144,7 @@ TaskOutcome ownership remain authoritative and unchanged.
 
 [Journey's meaning and assurance role](pathways-journeys-and-handoff.md#journey-and-assurance)
 are adjudicated. **Energeia owns Journey and Journey Management Services** under
-U06; Mneme manages governed information and Mnemosyne O&A supplies durable
+U06; Mneme provides governed Context/Pragma access and Mnemosyne O&A supplies durable
 persistence responsibility. Detailed construction/representation, aggregation/
 reference schema, causal/correlation/evidence-reconstruction algorithms, lifecycle/
 retention and reporting/assurance consumption contracts remain unresolved.
@@ -246,3 +249,74 @@ remain; this correction supplies no new guarantees/algorithms. Petasos/Themis
 FORWARD, Petasos/Kleio audit and Journey correlation/reconstruction protocols remain
 downstream. Petasos retains queue operation, Themis retains PEP semantics and
 Energeia remains Observe → Report for R1.x/R2.x.
+
+<a id="context-and-pragma-contracts"></a>
+
+## CDG-45 — Context and Pragma detailed contracts
+
+[Context/Pragma architecture](context-and-persistence-management.md#mneme-responsibility)
+is adjudicated. Four principal exposed services, temporal loaded values with
+bucket Composition, Context/resource-version distinction, likely non-exhaustive
+expected sets, supported Adhoc acquisition, Loader/Unloader separation and new
+Content as Pragma Output are settled.
+
+Physical Context representation/bucket schema, identity/version/serialisation,
+Information Unit Management Context mapping, declaration/resource mapping,
+acquisition/caching/distribution/replication/prefetch/batching, concurrency/locking/
+MVCC/conflict detection, detailed access/search APIs/results, exact Output
+representation and downstream routing remain unresolved under AX-17. C11 historical
+supporting contracts are not automatically four-service API definitions or extra
+services. Working Context changes do not confer durable authority.
+
+<a id="harmonisation-contracts"></a>
+
+## CDG-46 — Resource Harmonisation detailed work and exception contracts
+
+[Internal harmonisation responsibility](context-and-persistence-management.md#resource-harmonisation)
+is established. Approximately 5% or less at worst is a design expectation, not
+an SLA; normal delivery remains efficient. Actual harmonisation is new governed
+Harmonisation Ergon work through the existing work/execution contract and common
+Ponos execution; the manager does not harmonise domains or embed Ponos.
+
+Condition categories/detection, algorithms, catalogue, exact narrow execution/
+work contract and terminal/escalation handling of pathological repeated
+harmonisation remain unresolved. Originating-Ergon resume/generic conflict
+resolution is prohibited. Ergo Library remains candidate reuse; structure is
+unresolved. No UI, Iris or reusable forms are designed. This does not change
+Kleio's cross-target audit harmonisation SEP for R1.x/R2.x.
+
+<a id="persistence-management-contracts"></a>
+
+## CDG-47 — Persistence oversight, compartments and authoritative outcomes
+
+[Mnemosyne Persistence Management](context-and-persistence-management.md#mnemosyne-responsibility)
+is adjudicated. Detailed transaction boundaries, rollback/retry/distributed
+transaction mechanisms, outcome/status schema, persistent-service capability/
+health metrics, shard routing/topology/replication, compartment representation/
+validation/reapplication, semantic compartment-applicability source, PEP
+interaction and persistence logging schema remain unresolved.
+
+Mnemosyne does not independently determine semantic compartment applicability or
+sharding safety, replace Themis enforcement semantics or manage infrastructure.
+Persistence API success alone cannot establish Harmonia's authoritative outcome;
+uncertainty remains AX-15. Existing AX-05/14 state/version/generation distinctions,
+Kleio audit boundaries and **CDG-42's unresolved Themis/AX-07 conflict** remain.
+No audit-authorisation exemption is introduced.
+
+<a id="search-research-contracts"></a>
+
+## CDG-48 — Search and Research Metadata detailed architecture
+
+[Search Management](context-and-persistence-management.md#search-management) and
+[Research Metadata Management](context-and-persistence-management.md#research-metadata)
+are first-class Mnemosyne responsibilities. Mneme exposes Adhoc Search;
+authoritative persistence is the search space. Search capability metadata may
+be managed; Research Metadata is distinct and usable by search.
+
+Detailed query/results, completeness/consistency, search capability metadata
+schema/lifecycle, Research Metadata schema, provenance, confidence and allocation
+of the appropriate deriving behavioural/execution construct remain unresolved.
+AI derivation stays outside Mnemosyne; authoritative source Content stays
+unchanged and derived metadata distinguishable. No AI framework/model/provider,
+vector/embedding mechanism, proximity algorithm or physical index is chosen.
+Step B information traceability and upstream model changes have not begun.

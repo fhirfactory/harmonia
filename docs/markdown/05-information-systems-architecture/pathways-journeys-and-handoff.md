@@ -131,9 +131,14 @@ EgressEndpoint does not itself end Harmonia management of the governed payload.
 Pylai's standards-facing external publication remains the separate AX-13
 boundary, with non-destructive fail-closed projection of an emitted representation.
 
-> **Mneme coordinates the governed management, selection, publication,
-> subscription and availability of information. It does not coordinate execution
-> of the activities that consume that information.**
+> **Mneme manages activity Context and Pragma, including governed semantic
+> selection, publication, subscription and availability. Execution of consuming
+> activities remains with Ponos.**
+
+Internal Resource Harmonisation Manager may cause **new governed work** through
+the established work/execution contract and common Ponos execution; it does not
+execute harmonisation or embed a second framework. This refines the information/
+execution seam without transferring handoff obligations from Petasos.
 
 <a id="pragma-and-topic"></a>
 
@@ -209,8 +214,12 @@ Ponos manages execution / progression
 **Petasos distributes the opportunity to undertake work, not another consumer's
 FulfillmentTask**, in this pattern. Each consumer undertaking the ActionableTask
 establishes a distinct FulfillmentTask; no undertaking is transported on its behalf.
-Context Loading/Unloading uses Mneme contracts and Mnemosyne establishes durable
-managed-information state. Handoff acceptance, information commit, undertaking
+The Ergo framework works with **Mneme Context Load** to materialise anticipated
+values before **Context Loader** exposes them to business logic. **Context Unloader**
+returns changed working values and new Content as **Pragma Output** across that
+boundary; **Mneme Context Save** manages subsequent consequences. The Unloader is
+not persistence. Bounded Adhoc Resource Access/Search remains supported; Mnemosyne
+establishes/reports durable state. [U10/U11 lifecycle](context-and-persistence-management.md#ergon-information-access). Handoff acceptance, information commit, undertaking
 completion, work resolution and external acknowledgement remain distinct.
 
 ActionableTask handoff is one Petasos use case. Communication/Notification Events
@@ -234,7 +243,7 @@ owns the queue operation. Detailed protocols/state metrics remain unresolved.
 | :--- | :--- |
 | **Pragma / managed-information state** | Governed information managed through Mneme; authoritative durable establishment/preservation through Mnemosyne. May record a governed observation concerning delivery without owning the handoff obligation. |
 | **Petasos queue/handoff/delivery state** | Queue operational state/status and operational state of a particular persistent handoff obligation, including delivery attempt, redelivery/recovery and dead-letter handoff semantics. |
-| **FulfillmentTask undertaking state** | Information representing a particular identifiable undertaking, distinct from ActionableTask and other undertakings. Consumer establishment and Mneme information management do not collapse into runtime execution state. |
+| **FulfillmentTask undertaking state** | Information representing a particular identifiable undertaking, distinct from ActionableTask and other undertakings. Consumer establishment and Mneme Context/Pragma management do not collapse into runtime execution state. |
 | **Ponos execution/progression state** | Runtime execution, scheduling/concurrency, execution failure and execution retry/re-attempt or activity progression semantics. |
 
 Pragma “destination-specific delivery observations” means governed information
@@ -297,8 +306,7 @@ Pathway controls permitted progression; Journey represents observed progression.
 candidate **Journey Management Services**. These manage the governed representation
 of observed progression and its semantic aggregation/references, supporting
 operational reporting and assurance consumption. The detailed service
-and construction contracts remain unresolved. Mneme remains the governed
-information-management layer; Mnemosyne **Harmonia Operations & Assurance**
+and construction contracts remain unresolved. Mneme remains the **Context and Pragma Manager**; Mnemosyne **Harmonia Operations & Assurance**
 provides durable persistence responsibility. Application ownership does not
 make Energeia a persistence owner or owner of all referenced information.
 
@@ -320,7 +328,7 @@ flowchart LR
     Energeia["Energeia"] -->|application management: Journey Management Services| Journey
     Energeia -->|application management: Praxis Management Services| Praxis
     Praxis -.->|Aggregation: cardinality unresolved| Journey
-    Journey --> Reporting["Energeia: operational observation / reporting"]
+    Journey --> Reporting["Energeia R1.x/R2.x: Observe → Report"]
     Journey -->|observed evidence subject| Assurance["Dokimasia: governed interpretation"]
     Praxis -->|assurance basis; Pathway may contribute expectations| Assurance
     Assurance --> Finding["Assurance finding / result"]

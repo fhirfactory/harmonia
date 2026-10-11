@@ -84,12 +84,30 @@ Mnemosyne enforces a strict separation between clinical and operational storage 
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mnemosyne Persistence Manager responsibilities](../markdown/05-information-systems-architecture/context-and-persistence-management.md#mnemosyne-responsibility)
+- [Mnemosyne Search Management](../markdown/05-information-systems-architecture/context-and-persistence-management.md#search-management)
+- [C12 — Mnemosyne](../markdown/05-information-systems-architecture/component-register.md#c12)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Mnemosyne Owns
 - Authoritative relational schema management and JPA entities (`hie_fhir_resources`, `hie_operations_resources`).
 - Relational database connections, HikariCP connection pooling, and transaction boundaries (`@Transactional`).
 - HAPI FHIR R5 JPA DAO layer, indexing engines, and search parameter resolvers (`ca.uhn.fhir.jpa..`).
 - Historical audit log retention and operational task lineage tables.
 - Database migration and schema versioning.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Mnemosyne Explicitly Does NOT Own (Anti-Responsibilities)
 - Ephemeral in-flight cache coordination (owned by Mneme).

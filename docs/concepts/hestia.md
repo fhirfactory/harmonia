@@ -1,6 +1,23 @@
 # Concept: Hestia `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Context/Pragma and Persistence Managers](../markdown/05-information-systems-architecture/context-and-persistence-management.md#mnemosyne-responsibility)
+- [Context lifecycle](../markdown/05-information-systems-architecture/context-and-persistence-management.md#ergon-information-access)
+
+```text
+---------------------------------------------------------
+```
+
 Hestia is Harmonia's foundational data and persistence subsystem, governing both high-speed ephemeral in-memory caching (**Mneme**) and durable, lifelong relational persistence (**Mnemosyne**).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -12,6 +29,19 @@ Hestia is Harmonia's foundational data and persistence subsystem, governing both
 - **Architectural Rationale**: Just as the hearth is the secure, enduring foundation around which the household revolves, Hestia is the foundation upon which all Harmonia state rests. Clinical workflows require both rapid, warm, immediate access to in-flight data and an unquenchable, durable sanctuary for historical patient records.
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Context/Pragma and Persistence Managers](../markdown/05-information-systems-architecture/context-and-persistence-management.md#mnemosyne-responsibility)
+- [Context lifecycle](../markdown/05-information-systems-architecture/context-and-persistence-management.md#ergon-information-access)
+- [Information/persistence state boundaries](../markdown/05-information-systems-architecture/data-and-persistence.md)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
@@ -42,6 +72,11 @@ Hestia defines a **Dual-State Persistence Architecture** that separates in-fligh
 1. **Mneme (Ephemeral In-Memory Grid)**: Provides sub-millisecond read/write access for active integration workflows, task checkpoints, and sliding-window deduplication caches.
 2. **Mnemosyne (Durable Relational Persistence)**: Provides ACID-compliant, lifelong storage for clinical FHIR R5 resources and operational audit trails.
 3. **Write-Behind Asynchrony**: In-memory updates in Mneme can be asynchronously offloaded to Mnemosyne via the custom Infinispan `NonBlockingStore` SPI, shielding low-latency ingress pipelines from relational database write spikes.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

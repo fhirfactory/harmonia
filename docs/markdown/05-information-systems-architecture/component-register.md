@@ -204,7 +204,7 @@ Audit Capture is not best-effort and SHALL NOT be assumed reconstructable later
 from logs, Journey information or incidental operational state. Transaction,
 retry/failover and health/readiness mechanisms are deliberately unresolved.
 
-Kleio retains audit application ownership; Mneme provides governed management
+Kleio retains audit application ownership; Mneme provides governed Context/Pragma access
 and Mnemosyne **Harmonia Operations & Assurance** establishes durable audit state.
 For R1.x/R2.x, multiple **independent authoritative audit persistence targets**
 through Mneme/Mnemosyne are permitted. At least **one configured target capable
@@ -329,13 +329,17 @@ Pragma information management remains with Mneme.
 - **Role/responsibility:** reusable conceptual activity pattern and
   platform-integration contract for conforming Ergon, within Energeia.
   [U02](sources.md#u02), preserving [A05](sources.md#a05).
-- **Features/contract:** Context Loading → defined logic → Context Unloading;
+- **Features/contract:** Ergo Definition declares the likely, non-exhaustive
+  resource set; framework collaboration with Mneme Context Load materialises it.
+  Ergo Context Loader exposes the already-loaded Context → defined logic →
+  Context Unloader returns results → Mneme Context Save. Loader/Unloader are
+  distinct from Mneme services; Unloader is not persistence. [U10 lifecycle](context-and-persistence-management.md#ergon-information-access);
   common process-management, Petasos adapters/platform integration, assurance
   integration, logging/observability, reporting, checkpoint/platform integration
   and other common activity facilities. Integration points are architectural
   contracts, not selected APIs or technologies.
 - **Information/persistence:** governs the activity boundary around information
-  use/production; Mneme manages information and Mnemosyne establishes durable
+  use/production; Mneme manages Context/Pragma and Mnemosyne establishes durable
   state. No independent raw database or universal transaction boundary is assigned.
 - **Collaboration/exclusions:** tightly coupled to Ponos execution, realised/
   reused by Ergon and its specialisations, using Calliope/Themis/Mneme/Petasos.
@@ -356,14 +360,19 @@ Pragma information management remains with Mneme.
   behaviour. Reuses C05 common facilities; `ErgonBase` is historical contract
   support, not an architectural inheritance requirement.
 - **Information:** acts upon or generates Pragma, payload/resource information,
-  outputs, checkpoints and observations through governed contracts. **No discrete
+  outputs, checkpoints and observations through governed contracts. It primarily
+  acts on loaded Context values, may change working values and may generate new
+  Content as **Pragma Output**, distinct from Context mutation. Bounded **Adhoc
+  Resource Access / Adhoc Search** remains permitted for emerging needs. **No discrete
   Information Architecture representation or Ergon Information Resource exists
   merely because the component is an Ergon.** Activity is not information about it.
 - **Persistence/collaboration:** requests governed information use/change through
   Mneme; does not own Pragma management or durable state. Erga collects components;
   Ponos executes them; Petasos effects persistent handoff. Every Ergon exposes
   IngressEndpoint and EgressEndpoint C29; traversal does not expose internal logic.
-  Praxis relationship detail remains open.
+  Praxis relationship detail remains open. The originating Ergon owns no persistence
+  mechanics, shard/database transactions or generic conflict resolution; exceptional
+  harmonisation is new governed work under U10.
 - **Specialisations:** Behaviour C25, Dokimasia Ergon C26 and, through the latter,
   AI Assurance Ergon C27. They retain normal Ergo/Ergon facilities, constrained
   by the specialised role and Dokimasia's terminal rules where applicable.
@@ -406,7 +415,7 @@ Pragma information management remains with Mneme.
   [U02](sources.md#u02), [common specialisation principle](README.md#specialisation-principle).
 - **Information/persistence/collaboration:** operates on governed entity context
   and candidate Stimulus/Effector Pragma representations within DigitalTwin's
-  entity-specific execution; Mneme manages information, Mnemosyne establishes
+  entity-specific execution; Mneme manages Context/Pragma, Mnemosyne establishes
   durable state and Petasos handles persistent/recoverable handoff.
 - **Standing/exclusions:** discrete candidate activity specialisation, not an
   independent activity framework parallel to Ergo/Ergon. DigitalTwin adds only
@@ -496,6 +505,9 @@ Pragma information management remains with Mneme.
   Publishing/Subscription definitions, Pattern semantics/evaluation, matching,
   selection, semantic eligibility and eligible recipient/consumer relationships
   belong here; concrete persistent destination/handoff mechanics remain Petasos.
+  Pragma expresses activity inputs/outputs; new Content is **Pragma Output**, distinct
+  from changed Context working values. Mneme manages its subsequent consequences
+  under [U10](context-and-persistence-management.md#pragma-output).
   Stimulus/Effector and candidate Dokimasia Pragma semantic roles
   reuse these facilities instead of requiring specialist equivalents.
 - **Persistence/collaboration:** active use/coordination through Mneme; authoritative
@@ -522,7 +534,8 @@ Pragma information management remains with Mneme.
   remain unresolved (CDG-18). Every Pragma contains or references a payload such
   as an Information Unit; metadata/Container/Content distinctions are described
   in the [semantic shape](pathways-journeys-and-handoff.md#pragma-and-topic).
-- **Information:** PragmaCheckpoint, ErgonPayload/references, execution metadata
+- **Information:** PragmaCheckpoint, ErgonPayload/references, **Pragma Outputs expressing new Content
+  separately from changed Context values**, execution metadata
   and work-related information. Both ActionableTask and FulfillmentTask have
   candidate Pragma representation with WorkOrder/ToDo/Stimulus/Effector forms;
   work instance and undertaking remain distinct. Stimulus and Effector are
@@ -568,29 +581,35 @@ Pragma information management remains with Mneme.
 
 ### C09 — Mneme
 
-- **Role/responsibility:** application-facing managed-information access and active
-  distributed representation, observation and coordination. [A01 AX-05/11](sources.md#a01),
-  [A02](sources.md#a02); [L09/L10/L13](sources.md#l09) supply historical detail.
-- **Features/contained constructs:** governed retrieval/use/change, distributed
-  availability, active context/relationship navigation, observation and concurrency
-  coordination, reconstruction/convergence; governed facades C11. Active resource,
-  task, definition and telemetry cache groupings are historical structure candidates.
-  Pragma Management C28 logically aggregates PragmaFactory and manages Pragma; this
-  information-management responsibility includes Publishing/Subscription/Pattern
-  semantics, eligibility and selection under U05. Mneme coordinates governed
-  information management, selection, publication, subscription and availability;
-  Ponos coordinates execution of the activities that consume that information.
-- **Information:** active representations of governed clinical/administrative/
-  operational information; activity carriers and definition working sets where
-  supported. Information is not intrinsically transient because accessed actively.
-- **Persistence:** reconstructable active state; Mnemosyne establishes durable state.
-  Cache retention or replication is not durable authority. The older general
-  write-behind acceptance model is inconsistent with A01 (CDG-10/27).
-- **Collaboration/exclusions:** provides access to Iris, activities, Twins and
-  Pylai; coordinates with Mnemosyne under Themis. Not workflow progression,
-  durable version authority, direct database exposure or a set of process-local caches.
-- **Standing:** established high-level responsibility; detailed Data Object,
-  access/search and cache contracts remain candidate, CDG-11/16/27/31.
+- **Role/responsibility:** **Harmonia's Context and Pragma Manager**. Mneme manages
+  the information context of activity through Pragma/Context, providing controlled,
+  concurrent and seamless access to existing values and management of new Content.
+  [U10](sources.md#u10) refines AX-05/11 active representation/coordination.
+- **Principal exposed services:** **Context Load, Context Save, Adhoc Resource
+  Access, Adhoc Search** — four services. [Lifecycle](context-and-persistence-management.md#ergon-information-access)
+  distinguishes Mneme materialisation/save from Ergo Loader/Unloader boundaries.
+  Likely resource sets are non-exhaustive; bounded runtime acquisition is supported.
+- **Internal responsibilities:** Pragma Management C28 retains PragmaFactory and
+  Publishing/Subscription/Pattern semantic eligibility/selection. Context management
+  composes authoritative resource values into a versioned temporal snapshot;
+  Resource Harmonisation Manager C40 manages exceptional delivery conditions.
+  C11 supporting contracts do not add exposed services.
+- **Information:** Context D26 is the working value environment; Pragma C07 is
+  the input/output envelope. Changed Context values and new Content expressed as
+  Pragma Output D28 remain distinct. Mneme manages their subsequent consequences.
+- **Persistence:** active state is reconstructable; Mnemosyne alone establishes
+  durable state and authoritatively reports persistence outcomes. Working changes,
+  cache retention/replication and output production confer no durable authority.
+  Context/resource versions and active generation remain distinct.
+- **Collaboration/exclusions:** Ergo framework anticipates/loads; Ergon primarily
+  acts on Context values and may acquire Adhoc information. Resource harmonisation
+  uses new governed Harmonisation Ergon work through common Ponos execution, not
+  originating-Ergon conflict resolution. Adhoc Search uses Mnemosyne Search Management.
+  Petasos retains handoff; Themis owns enforcement. Mneme is not a generic repository,
+  execution framework, durable version authority or raw database/cache access path.
+- **Standing:** U10 adjudicates Context/Pragma responsibility; detailed representation,
+  concurrency/access/Output and harmonisation contracts remain CDG-45/46; older
+  cache/write-behind and access variants remain CDG-10/11/16/27/31.
 
 <a id="c10"></a>
 
@@ -661,59 +680,71 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
 
 <a id="c11"></a>
 
-### C11 — Governed access and change services
+### C11 — Supporting governed access and change contracts
 
-- **Role/responsibility:** Mneme-facing developer/application access and change
-  contract support, not an additional information-authority owner.
-  [L14](sources.md#l14), constrained by [A01/A02](sources.md#a01).
-- **Features/contained constructs:** governed read/create/update, active observation
-  and coordination, authoritative precondition/commit, guarded convergence and
-  typed outcomes. GovernedReader/Writer, coordinator and persistence-port names
-  document contract intent; Java API placement is not hierarchy authority.
-- **Information:** ResourceKey, GovernedRead, active-state token, expected/
-  authoritative version, WriteResult and PersistenceOperationEnvelope; distinction
-  from managed payload/resource content is preserved.
-- **Persistence:** Mnemosyne commits; facade coordinates and reports established
-  commit separately from degraded convergence or uncertain outcome.
-- **Collaboration/exclusions:** Themis context, Mneme active use/coordination and
-  Mnemosyne durable port. No raw-cache/database alternative, physical DELETE or
-  automatic payload/context persistence; exact APIs/transport not selected.
-- **Standing:** documented candidate service contracts bounded by current RADS.
-  Older entry-token, convergence and absence formulations retained (CDG-16/31),
-  not asserted to realise all Domain04 manifestation or search semantics.
+- **Role/responsibility:** supporting Mneme contract intent retained from
+  [L14](sources.md#l14), constrained by AX-05/07/14/15 and [U10](sources.md#u10).
+  This is **not an additional exposed service set**; Mneme's principal surface is
+  Context Load, Context Save, Adhoc Resource Access and Adhoc Search.
+- **Features/information:** governed read/change, active observation/coordination,
+  authoritative preconditions/commit, guarded convergence and distinct outcomes;
+  ResourceKey, GovernedRead, active token, authoritative version, WriteResult and
+  PersistenceOperationEnvelope remain historical candidate contract descriptions.
+- **Persistence/collaboration:** Mnemosyne establishes/reports durable state;
+  Mneme coordinates active use and post-commit convergence. Known commit/degraded
+  convergence/uncertain outcome remain distinct. Themis governs applicable operations.
+- **Standing/exclusions:** precise relationship to the four services and Context
+  lifecycle remains unresolved, CDG-45/31. Historical signatures and algorithms
+  establish no extra API, raw-cache/database alternative, physical DELETE or
+  automatic security-context persistence.
 
 <a id="c12"></a>
 
 ### C12 — Mnemosyne
 
-- **Role/responsibility:** authoritative durable state/version establishment,
-  management metadata, preservation, history and recovery. [A01 AX-05](sources.md#a01),
-  [A02](sources.md#a02), [L09/L13/L16/L20](sources.md#l09).
-- **Persistence responsibility domains:** **Clinical Information**, **Harmonia
-  Configuration & Governance (C&G)** and **Harmonia Operations & Assurance (O&A)**
-  under [U06](sources.md#u06); conditional commit/versioning, preservation/retrieval,
-  indexing/search support and server-side registry integrity validation.
-- **Information:** managed resource representations, durable versions/metadata,
-  operational definitions/state/history. Themis Authorisation Model aligns with
-  C&G; Kleio Audit Information aligns with O&A. Historical Pragma and collaboration
-  store allocations differ; see persistence view and CDG-12/13/22.
-- **Persistence:** owns authoritative durable establishment. Hybrid relational-
-  document rows, per-version composite-key structures and HAPI-native storage
-  appear as competing descriptions; no physical schema is chosen here.
-  C&G SHALL present a single coherent governance space without semantic sharding
-  into independent/divergent authority; O&A SHALL permit horizontal partitioning
-  without changing identity, provenance, relationships or governed meaning.
-  These domains prescribe no service/database/schema topology or shard key;
-  clinical persistence is unchanged. [Domain guardrails](data-and-persistence.md#persistence-responsibility-domains)
-  and CDG-40 retain downstream physical design.
-- **Collaboration/exclusions:** supports Mneme access/recovery and governed changes;
-  Kleio owns audit management with durability through Mneme/O&A; detailed
-  preservation mechanisms remain unresolved. Does not expose its
-  persistence implementation as an application API, run workflows, become a Twin
-  or acquire universal authority over clinical facts by storing them.
-- **Standing:** established responsibility, candidate persistence decomposition
-  and structures. Database technology, replication topology and retention values
-  do not define information management or authority.
+- **Role/responsibility:** **Harmonia's Persistence Manager** under
+  [U11](sources.md#u11), establishing authoritative durable state/version and the
+  information/metadata required to sustain activity Context. Persistence conveys
+  no originating information/application ownership.
+- **First-class responsibilities:** transaction oversight; persistent-service
+  oversight/reporting; shard management; authoritative persistence reporting;
+  persistence logging; compartment validation/reapplication; hosting Themis-owned
+  PEP enforcement; **Search Management**; **Research Metadata Management**.
+  [The management view](context-and-persistence-management.md#mnemosyne-responsibility)
+  establishes each boundary. Underlying services may retain their own transactions;
+  Mnemosyne does not become infrastructure management.
+- **Information/outcomes:** durable representations/version/metadata, persistence
+  observations and outcomes, search capability metadata and distinct Research Metadata.
+  API/engine success is not automatically the authoritative Harmonia outcome;
+  uncertain effects remain explicit. Persistence logging is distinct from Kleio audit.
+- **Search:** Mneme exposes Adhoc Search; Mnemosyne performs underlying authoritative
+  managed-persistence search, without treating a transient cache as complete.
+  Persistence-domain/shard/service/search-index capability metadata may be managed.
+- **Research Metadata:** manages capture, persistence, management and search utilisation
+  of AI-derived meaning/relationships across content sets based on proximity. Source
+  Content remains unchanged and derived metadata distinguishable. Deriving AI
+  processing executes **outside Mnemosyne** through appropriate Harmonia behaviour/
+  execution. Detailed provenance/confidence/schema remain unresolved.
+- **Persistence domains:** Clinical Information, C&G and O&A retain U06 guardrails:
+  coherent C&G authority; O&A horizontal partitionability preserving identity,
+  provenance, relationships and meaning. Domains select no database/service topology
+  or shard key. Mnemosyne manages shards within semantic constraints, without
+  independently deciding sharding safety.
+- **Governance:** compartments are validated/reapplied without loss or weakening;
+  semantic applicability is not independently determined here. Themis owns PEP
+  semantics and Criteria; Mnemosyne controls/prevents the persistence operation.
+  The [AX-07 audit-authorisation conflict](gaps.md#themis-detailed-contracts) stays
+  unresolved, with no adopted exception.
+- **Existing registry support:** server-side Provider Registry durable integrity,
+  preservation/history and recovery responsibilities remain as described in C13
+  and the data view; this correction does not redesign their semantic validation.
+- **Collaboration/exclusions:** Mneme manages Context/Pragma information consequences;
+  Mnemosyne establishes/reports persistence. Energeia observes/reports persistence
+  operational state, without acquiring management. No application-facing raw storage,
+  AI derivation inside Mnemosyne, technology selection or workflow engine is established.
+- **Standing:** U11 and explicit task decisions settle responsibilities; detailed
+  oversight/transaction/compartment/outcome/search/Research Metadata contracts remain
+  CDG-47/48, alongside historical structures CDG-12/13/40.
 
 <a id="c13"></a>
 
@@ -1087,3 +1118,25 @@ used by Publishing and Subscription. May evaluate established Pragma, Unit-level
 Container and Content metadata, Topic, source and other governed characteristics.
 Topic is classification/metadata rather than a destination. Final Pattern language,
 attributes/operators, precedence, query/index and technology remain unresolved.
+
+<a id="c40"></a>
+
+### C40 — Resource Harmonisation Manager
+
+**Internal Mneme responsibility/capability, not a fifth exposed service or an
+independent execution framework.** [U10](sources.md#u10) establishes the
+[exceptional delivery path](context-and-persistence-management.md#resource-harmonisation).
+It identifies/manages conditions that cannot proceed normally and causes appropriate
+bounded Harmonisation Ergon work; it does not perform domain harmonisation itself.
+
+- **Expected use:** approximately 5% or less at worst of resource-delivery activity,
+  a design expectation, not a hard SLA. Normal handling remains efficient.
+- **Execution:** new governed work through the established Harmonia work/execution
+  contract reuses Ponos; no resumed originating Ergon, duplicate/embedded execution
+  framework or originating-Ergon generic conflict resolution.
+- **Information/reuse:** relevant condition/state/Context is preserved for governed
+  handling; a reusable Ergo Library remains a candidate reuse mechanism only.
+- **Unresolved:** categories, detection/concurrency/harmonisation algorithms,
+  Harmonisation Ergon catalogue, detailed work contracts and repeated-harmonisation
+  terminal/escalation handling (CDG-46). No UI/forms architecture is selected.
+  Kleio cross-target audit harmonisation remains R1.x/R2.x SEP.

@@ -22,7 +22,6 @@ Source keys identify documentary evidence, not architectural authority rankings.
 | <a id="u03"></a>U03 | Supplied `DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md` (2026-10-11), full note | Primary human-adjudicated input authorised by this task; preserves Mneme Pragma Management/PragmaFactory and non-transfer of information responsibility through execution/behaviour/handoff. Incorporated [U02 boundary](README.md#energeia-adjudication) retained. |
 | <a id="u04"></a>U04 | Supplied `DesignNote-Pathways-Journeys-and-Assurance-Representation.md` (2026-10-11), §§1–19, plus explicit bounded task decisions | [Pathway/Journey semantic view](pathways-journeys-and-handoff.md): endpoint/element/segment/traversal/route/pathway definitions, Praxis Pathway [0..1], distinct progression mechanisms, graph-shaped Journey and common reporting/assurance observation. Input-level owner deferrals are resolved by U06 for Journey; detailed schema/lifecycles remain open. Simplified legacy-like Topic topology in §9 is read with U05 classification semantics, not broker destinations. |
 | <a id="u05"></a>U05 | Supplied `DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md` (2026-10-11), §§1–25, plus explicit bounded task decisions | [Publication/selection](pathways-journeys-and-handoff.md#publication-and-selection), [persistent handoff](pathways-journeys-and-handoff.md#persistent-handoff), [state distinctions](pathways-journeys-and-handoff.md#state-and-recovery) and [fan-out boundary](pathways-journeys-and-handoff.md#fan-out-boundary) incorporated. Common managed Pragma/payload and distinct consumer FulfillmentTasks settled in principle; detailed reference/copy/version/lifecycle contracts unresolved. Petasos generality retained; technology possibilities in §22 are not adopted choices. |
-
 | <a id="u06"></a>U06 | Supplied `DesignNote-Energeia-Operational-Management-and-Praxis-Responsibility.md` (2026-10-11), §§1–15, **plus explicit current task adjudications** | [Incorporated operational-management decisions](README.md#operational-management-adjudication): discrete Energeia component; Praxis/Journey ownership and candidate Management Services; Praxis assurance basis/Journey evidence subject; two management planes; R1.x/R2.x observation/reporting (Observe → Report correction under U09/current task) and deferred R3 direction; precise Mneme semantic eligibility versus Petasos concrete handoff; [Clinical/C&G/O&A persistence guardrails](data-and-persistence.md#persistence-responsibility-domains). Task instructions establish Journey ownership/persistence domains beyond note wording. Detailed lifecycle/representation/decomposition/physical designs remain explicit. |
 
 The U06 correction incorporated the earlier U02–U05 decisions; its review covered
@@ -62,6 +61,27 @@ code, transport/carrier schema, upstream capability or Step-B mapping supplies
 missing decisions. The current correction preserves U01–U06 adjudications except
 the expressly corrected Energeia Monitor responsibility.
 
+## This Mneme / Mnemosyne adjudication input
+
+| Key | Source and inspected scope | Incorporated candidate meaning |
+| :--- | :--- | :--- |
+| <a id="u10"></a>U10 | Supplied `DesignNote-Mneme-Context-and-Pragma-Management.md` (2026-10-11), §§1–21, read in full; explicit bounded task decisions | [Canonical Context/Pragma view](context-and-persistence-management.md#mneme-responsibility): Context/Pragma Manager, four exposed services, temporal authoritative loaded values and bucket Composition, non-exhaustive likely set, supported Adhoc access, distinct Loader/Unloader versus Load/Save, new Content as Pragma Output, internal exceptional RHM/new Harmonisation Ergon work through common Ponos. Detail CDG-45/46 retained. |
+| <a id="u11"></a>U11 | Supplied `DesignNote-Mnemosyne-Persistence-Management-and-Authoritative-Persistence-Oversight.md` (2026-10-11), §§1–15, read in full; **explicit task decisions for first-class Search and Research Metadata Management** | [Persistence Manager](context-and-persistence-management.md#mnemosyne-responsibility): transaction/service oversight, shard management, authoritative reporting/logging, compartments and Themis-owned PEP. [Search](context-and-persistence-management.md#search-management) and [Research Metadata](context-and-persistence-management.md#research-metadata) elaboration is explicitly task-adjudicated, not attributed to absent note wording. AI derivation outside Mnemosyne, source Content unchanged, detail CDG-47/48. |
+
+The Mnemosyne note's generic Mneme information-management shorthand is interpreted
+with U10's more specific Context/Pragma adjudication. The persistence note does not
+itself elaborate Research Metadata; the explicit task supplies that authority.
+The notes' original bytes remain unchanged in Downloads; no external-note migration
+or rewriting is performed. Required incorporated meaning is self-contained in
+RADS, with no ongoing architectural dependency on access to the attachments.
+
+The explicit task confirms **Energeia R1.x/R2.x Observe → Report** and removes
+residual wording suggesting an intermediate architectural responsibility. The
+existing literal stale sequence was already absent at the task baseline; the
+README's residual allowance is corrected. R3 direction, legitimate Dokimasia
+monitoring restrictions and unaffected U01–U09 meanings remain. Themis/AX-07
+conflict remains unresolved; this is A2/A3 work, A4 pending, Step B not started.
+
 ## Legacy reconstruction sources
 
 “Incorporated” means the identified architectural meaning is now represented
@@ -81,7 +101,7 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l06"></a>L06 | [Calliope canonical](../../concepts/calliope-canonical.md), full document | **Partially incorporated:** §2 event/payload/reason models and converter responsibilities superseded by C01/F01–F02/D01–D02/D08. Foundation dependency diagram retained as implementation support. |
 | <a id="l07"></a>L07 | [Calliope](../../concepts/calliope.md), full concept | **Supporting/corroborating:** vocabulary, converter catalogue and topic constants. Architectural responsibility is constrained by A01/A02; no separate migration of implementation catalogue. |
 | <a id="l08"></a>L08 | [Themis](../../concepts/themis.md), [security concept](../../concepts/themis-security.md), [decision audit](../../security/audit.md), [module reference](../../modules/themis.md) | **Partially incorporated:** existing positive ownership wrapper resolves to corrected C02; this correction wraps Themis opening/§2 fixed gates, security-concept opening/§1 fixed gates/§4 decision-audit claims, decision-audit §1 overview and module opening/positive ownership. U08 now establishes model management/local PEP; U07 establishes Kleio capture. Module/class/role/schema details remain historical support; automatic context persistence and detailed host/evidence/privacy relationships remain CDG-13/15/30/42/43. |
-| <a id="l09"></a>L09 | [Hestia](../../concepts/hestia.md), [Mneme](../../concepts/mneme.md), [Mnemosyne](../../concepts/mnemosyne.md), full concepts | **Partially incorporated and retained conflicts:** U06 supersedes Mnemosyne opening and §2 two-service Clinical/Operational definition with Clinical/C&G/O&A semantic responsibilities. Hestia grouping/active objects corroborate context; mixed write-behind/access/audit sections and implementation invariants/catalogues remain historical/supporting, not current authority. |
+| <a id="l09"></a>L09 | [Hestia](../../concepts/hestia.md), [Mneme](../../concepts/mneme.md), [Mnemosyne](../../concepts/mnemosyne.md), full concepts | **Partially incorporated and retained conflicts:** U06 supersedes Mnemosyne opening and §2 two-service Clinical/Operational definition with Clinical/C&G/O&A semantic responsibilities. U10/U11 additionally supersede Mneme opening, §2 introductory architectural definition and §3 positive ownership list; Hestia opening and §2 dual-state architectural account; Mnemosyne §3 positive ownership list. Existing wrappers remain unchanged and resolve to updated RADS. Remaining metaphor, product/cache/write-behind/access/audit and implementation catalogues remain historical/supporting or retained conflicts, not current authority. |
 | <a id="l10"></a>L10 | [Hestia persistence](../../concepts/hestia-persistence.md), full document | **Partially incorporated:** §3.2 Operations Scope bullet now wrapped to C&G/O&A semantic classification and scaling guardrails. Cache/product/provider catalogues remain support; mixed diagrams, direct access and write-behind model remain historical/conflicting, not adopted physical architecture. |
 | <a id="l11"></a>L11 | [Iris](../../concepts/iris.md), full concept | **Partially incorporated:** presentation decomposition/features; §4 “Provider Registry Decoupling” superseded by C16/F20. Raw-cache ownership/access statements retained as conflicting, CDG-11. |
 | <a id="l12"></a>L12 | [Agora](../../concepts/agora.md), §§2–9 and diagrams | **Partially incorporated:** §3 isolation constraints and §6.2 Practitioner/Group spaces superseded by C18/F22. Room lifecycle, memberships, mappings and AS handoff recorded as candidate with CDG-19–23; universal clinical authority, care-team source and storage ownership remain conflicting. Product-specific ADR table retained as supporting/unresolved detail. |
@@ -209,3 +229,27 @@ Domains01–04 remain unchanged. The new inputs correct only Domain05 Step A and
 its activity-status record; A1 COMPLETE, A2/A3 IN PROGRESS, A4 PENDING, Step B
 NOT STARTED. No candidate acceptance, capability/information coverage, MVP or
 implementation plan is established.
+
+## This Mneme / Mnemosyne legacy supersession correction
+
+**Six new section-level wrappers across three legacy concept files**:
+
+| Source / affected section | Authoritative RADS replacement |
+| :--- | :--- |
+| L09 Mneme: opening definition; §2 introductory architectural-definition paragraph; §3 positive ownership heading/list | [Context/Pragma responsibility and four services](context-and-persistence-management.md#mneme-responsibility), [Context values](context-and-persistence-management.md#context-values), [C09](component-register.md#c09), [internal harmonisation](context-and-persistence-management.md#resource-harmonisation). |
+| L09 Hestia: opening definition; §2 dual-state architecture account including diagram and three explanatory items | [Mneme/Mnemosyne boundary](context-and-persistence-management.md#mnemosyne-responsibility), [Context lifecycle](context-and-persistence-management.md#ergon-information-access), [state boundaries](data-and-persistence.md). |
+| L09 Mnemosyne: §3 positive ownership heading/list | [Persistence Manager responsibilities](context-and-persistence-management.md#mnemosyne-responsibility), [Search](context-and-persistence-management.md#search-management), [C12](component-register.md#c12). |
+
+All original enclosed bytes and existing wrappers are preserved. Original files
+are recovered byte-for-byte by removing only the six newly inserted wrappers.
+No entire legacy document is superseded. Remaining historical technology,
+metaphor, diagrams, catalogues and detailed contracts are not broadly migrated or
+redesigned. Existing Pragma/Ergon wrappers link the corrected register; their
+original content and wrapper bytes remain unchanged. The supplied `themis.md`
+legacy source and the unresolved AX-07 conflict are unchanged.
+
+U10/U11 incorporated meaning is canonical; unresolved Context/concurrency,
+harmonisation, transaction/compartment/outcome and Search/Research Metadata detail
+remains explicit under AX-17. This records source reconciliation, not Step-B
+capability/information traceability, MVP or A4 acceptance. Domains01–04 and
+implementation/source/configuration remain outside this correction.

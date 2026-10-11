@@ -14,8 +14,9 @@ The following is a software responsibility map. “Grouping” identifies a
 documented solution grouping without assigning it additional semantic or
 operational authority. “Slice” denotes a documented responsibility area within
 a component, not an approved separate process or service. Indented entries
-express labelled responsibility relationships or domains, not
-Composition, programming-language containment or deployment. Leaves called
+express labelled responsibility relationships or domains; indentation alone
+does not establish Composition, programming-language containment or deployment.
+The explicit Composition of loaded Context values is separately established. Leaves called
 “construct” or “Data Object” are not all independently executable components.
 
 ```text
@@ -36,9 +37,13 @@ Harmonia Information System — candidate software solution
     Historical context preparation/use — distinct from authoritative evidence
     Durability through Mneme/Mnemosyne O&A; independent audit targets permitted
     Detailed internal decomposition unresolved
-  Hestia — documented information-management/preservation grouping
-    Mneme — governed active information access and coordination [C09]
-      Governed read/write and observation/coordination services [C11]
+  Hestia — documented Context/Pragma and persistence grouping
+    Mneme — Context and Pragma Manager [C09]
+      Principal exposed services: Context Load / Context Save
+      Principal exposed services: Adhoc Resource Access / Adhoc Search
+      Context — temporal loaded resource values; bucket Composition [D26]
+      Supporting governed access/change contracts; no extra services [C11]
+      Resource Harmonisation Manager — internal exceptional path [C40]
       Pragma Management — managed task/context/progression information [C28]
         PragmaFactory — creates/initialises Pragma; archetype embodiment [C08]
         Pragma — managed Application Data Object [C07]
@@ -46,7 +51,12 @@ Harmonia Information System — candidate software solution
         Subscription — consumer selection [C37]
         Pattern — governed evaluation/matching [C38]
       Active representations and working definitions (Data Objects)
-    Mnemosyne — authoritative durable establishment/preservation [C12]
+    Mnemosyne — Persistence Manager; authoritative establishment/reporting [C12]
+      Transaction oversight; persistent-service oversight and reporting
+      Shard management; authoritative persistence reporting; persistence logging
+      Compartment validation/reapplication; Themis-owned PEP hosting
+      Search Management — underlying authoritative persistence search
+      Research Metadata Management — AI derivation occurs outside Mnemosyne
       Clinical Information — persistence responsibility domain
       Harmonia Configuration & Governance — persistence responsibility domain
       Harmonia Operations & Assurance — persistence responsibility domain
@@ -213,6 +223,12 @@ defined control, dynamic information selection, handoff, execution and common
 Journey observation/assurance. A graph-shaped Journey does not create a Pathway
 or redefine Route. No final Journey-to-PathwayElement schema is established.
 
+The [Context lifecycle and management view](context-and-persistence-management.md)
+records Mneme's four services, Loader/Unloader boundary and new Content as Pragma
+Output. Search and Research Metadata are Mnemosyne responsibilities; AI derivation
+occurs through appropriate Harmonia execution outside Mnemosyne. These are logical
+responsibilities, not new deployment units.
+
 ## Collaboration map
 
 Arrows describe responsibilities crossing a seam, not containment, mandatory
@@ -223,10 +239,23 @@ to pass through one central runtime service.
 
 ```mermaid
 flowchart LR
-    Iris["Iris: contextual interaction"] -->|governed information access| Mneme["Mneme: active information"]
+    Iris["Iris: contextual interaction"] -->|governed information access| Mneme["Mneme: Context and Pragma Manager"]
     Iris -->|governed activity request| Ponos["Ponos: activity execution"]
-    Mneme -->|durable establishment and recovery| Mnemosyne["Mnemosyne: durable state"]
-    Ponos -->|requests governed information use and change| Mneme
+    Mneme -->|persistence requirements; recovery| Mnemosyne["Mnemosyne: Persistence Manager"]
+    Mnemosyne -->|authoritative persistence outcome| Mneme
+    Mneme -->|Adhoc Search requirement| Search["Mnemosyne: Search Management"]
+    Mnemosyne -->|responsibility| Search
+    Mnemosyne -->|responsibility| Research["Research Metadata Management"]
+    Research -->|distinct derived metadata usable by search| Search
+    Derivation["Appropriate Harmonia behavioural/execution construct: AI derivation"] -->|distinct Research Metadata; source Content unchanged| Research
+    Ponos -->|uses Ergo framework Context Load / Save collaboration| Mneme
+    Mneme -->|manages| Context["Context: temporal loaded values; bucket Composition"]
+    Ergon -->|primarily acts on loaded values; working changes| Context
+    Ergon -->|new Content expressed as Pragma Output| Pragma
+    Ergon -->|bounded Adhoc Resource Access / Adhoc Search| Mneme
+    Mneme -->|exceptional delivery conditions| RHM["Resource Harmonisation Manager: internal"]
+    RHM -->|new governed work through established work/execution contract| Ponos
+    Ponos -->|executes bounded new work| Harmonisation["Appropriate Harmonisation Ergon"]
     Mneme -->|provides Pragma information management| PM["Pragma Management"]
     PM -->|manages| Pragma["Pragma and payload information"]
     Twin["DigitalTwin: specialised execution"] -->|uses governed entity context| Mneme
@@ -250,7 +279,8 @@ flowchart LR
     Ponos -->|execution observations| Journey
     Twin -->|operational observations / references| Journey
     Ergon -->|activity observations| Journey
-    Journey --> Reporting["Energeia: observation / reporting; Iris presentation"]
+    Journey --> Reporting["Energeia R1.x/R2.x: Observe → Report; Iris presentation"]
+    Mnemosyne -->|persistence operational state; management retained| Reporting
     Journey -->|observed evidence subject| Dokimasia
     Praxis -->|assurance basis| Dokimasia
     Pylai["Pylai: standards membrane"] -->|internal information requests| Mneme
@@ -261,6 +291,7 @@ flowchart LR
     Calliope["Calliope: semantic reference"] -->|definitions consumed locally| Ergon
     Themis["Themis: Authorisation Model / PDP"] -->|PEP-Context / Themis-owned local PEP| Ponos
     Themis -->|PEP-Context / Themis-owned local PEP| Mneme
+    Themis -->|persistence Criteria / Themis-owned PEP| Mnemosyne
     Themis -->|PEP-Context / Themis-owned local PEP| Agora
     Themis -->|FORWARD Criteria / Themis-owned local PEP| Petasos
     Themis -->|PRP governed model; durable C&G| Mneme
@@ -281,7 +312,9 @@ flowchart LR
 
 | Relationship | Documentary basis and limit |
 | :--- | :--- |
-| Mneme persists through / recovers from Mnemosyne | A01 AX-05, A02 Seam 1; L13 ADR-018/019. Active state is reconstructable; cache acceptance is not durable establishment. |
+| Mneme Context/Pragma management uses Mnemosyne persistence/recovery/search | U10/U11 and AX-05. Loaded values/new Outputs do not establish durable state; Mnemosyne reports authoritative outcomes and performs authoritative persistence search. |
+| Mneme exceptional delivery uses common Ponos execution | U10: internal Resource Harmonisation Manager causes new governed Harmonisation Ergon work through the established contract; no resumed originating Ergon or duplicate execution framework. |
+| Context bucket composes loaded values | U10: **Composition**, not Aggregation; constituent values have authoritative state/version bases distinct from Context version. No universal distributed transaction snapshot. |
 | Ponos executes Ergon conforming to Ergo; Erga aggregates; Energeia owns Praxis/Journey | U02/U06. Execution, contract reuse, Aggregation and application management are distinct; detailed Praxis-to-activity relationships remain unresolved. |
 | Mneme Pragma Management aggregates PragmaFactory and manages Pragma | U01/U02. Factory creates/initialises candidate representations associated with the meta-concept, not an instantiated archetype Information Asset. Detailed contracts/persistence remain unknown; no automatic Praxis equivalence. |
 | DigitalTwin specialises Ponos and uses governed entity information | U02 and A02 Seams 2–3. Per-Twin queues are specialised responsibility; bounded resources service pending work. Detailed control/state contract remains unknown. |

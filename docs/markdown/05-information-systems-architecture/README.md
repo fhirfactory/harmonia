@@ -48,6 +48,9 @@ The Energeia / DigitalTwin / Dokimasia and Pathway / Journey / Publish/Subscribe
 handoff and Energeia / Praxis / Journey / persistence adjudications below correct
 the candidate within that boundary. The Kleio / Themis / Petasos adjudication
 below further corrects the candidate and R1.x/R2.x Observe → Report scope.
+The [Mneme / Mnemosyne correction](#mneme-mnemosyne-adjudication) incorporates
+Context/Pragma Management and Persistence/Search/Research Metadata Management.
+It retains the same A2/A3 boundary; **Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -62,6 +65,7 @@ record does not declare the Domain Completion Gate satisfied.
 | [System map](candidate-system-map.md) | Responsibility-based software hierarchy; separate collaboration map; construct standing. |
 | [Component register](component-register.md) | Roles, features, significant internal constructs, information, persistence, collaborators and exclusions. |
 | [Candidate feature map](candidate-feature-map.md) | Documented solution features and allocations, including retained proposals and unclear owners. |
+| [Context and persistence management](context-and-persistence-management.md) | Mneme services, value-based Context lifecycle, Pragma Output, exceptional harmonisation, Mnemosyne oversight, Search and Research Metadata. |
 | [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; Clinical / C&G / O&A responsibility domains and retained historical structure variants. |
 | [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated Praxis/Journey ownership, control, selection, handoff, observation and assurance meanings; retained detailed uncertainty. |
 | [Internal middleware](middleware.md) | Internal messaging, recoverable handoff, dispatch, access and context collaboration, separated from external integration and products. |
@@ -303,9 +307,8 @@ note is provenance, not a continuing architecture dependency.
   respect to available observations; deterministic/AI inference and conclusions
   remain distinguishable. Dokimasia independence and terminal rules are retained.
 - **R1.x/R2.x: Observe → Report.** Energeia is limited to observation and
-  reporting; Monitor is not a separate adjudicated architectural responsibility.
-  Monitoring mechanisms may later be justified as implementation/feature detail.
-  Energeia observes Harmonia work and
+  reporting. Evaluation, thresholding or stateful supervisory behaviour is not
+  established as an intermediate R1.x/R2.x responsibility. Energeia observes Harmonia work and
   progression without autonomous adaptation. External IT/Ops manages technical
   infrastructure/platform operation. **R3 Adaptive Load and Resilience Service**
   is a deferred direction only; no policy, algorithm or control architecture is
@@ -321,7 +324,7 @@ note is provenance, not a continuing architecture dependency.
   semantic sharding into divergent authority. O&A permits horizontal partitioning
   while preserving identity, provenance, relationships and governed meaning.
   Neither distinction selects physical topology, technology, schemas or shard keys.
-- Energeia application ownership, Mneme governed information management and
+- Energeia application ownership, Mneme Context/Pragma management and
   Mnemosyne durable persistence responsibility remain distinct. Journey aggregates
   or references substantial information/evidence without indiscriminate duplication
   or acquiring ownership of the referenced information.
@@ -399,6 +402,58 @@ retry/failover, queue technology and detailed protocols remain unresolved under
 [CDG-42–44](gaps.md#themis-detailed-contracts). The Themis note's proposed audit
 authorisation exception conflicts with AX-07 and is explicitly retained for
 adjudication; it is not adopted as an authorisation bypass.
+
+<a id="mneme-mnemosyne-adjudication"></a>
+
+## Mneme / Mnemosyne candidate adjudication
+
+**U10/U11 — 2026-10-11:** the supplied Context/Pragma and Persistence Management
+DesignNotes, together with explicit task decisions for Search/Research Metadata,
+are incorporated into the [canonical management view](context-and-persistence-management.md).
+These extend accepted candidate meanings within A2/A3; A4 acceptance is pending.
+
+- **Mneme is the Context and Pragma Manager.** It manages the information context
+  of Harmonia activity through Context and Pragma, providing controlled concurrent
+  access to existing values and management of newly produced Content. Its four
+  principal exposed services are **Context Load, Context Save, Adhoc Resource
+  Access and Adhoc Search**. Supporting/internal capabilities create no fifth service.
+- **Context is a versioned temporal load-snapshot of authoritative resource
+  values**, composed into its bucket by **Composition**. Context version and
+  constituent authoritative state/version are distinct; no globally transactionally
+  consistent distributed snapshot is implied. The Ergo definition declares the
+  **likely**, deliberately non-exhaustive resource set. Context Load is preferred;
+  bounded runtime Adhoc access/search remains supported and may be more expensive.
+- **Mneme Context Load/Save differ from Ergo Context Loader/Unloader.** Load
+  materialises values; Loader exposes the loaded Context to business logic;
+  Unloader returns bounded results across that boundary and does not persist.
+  The originating Ergon SHALL NOT own persistence mechanics, shard/database
+  transactions or generic conflict resolution.
+- **New Content is Pragma Output**, semantically distinct from changed working
+  Context values. Mneme manages both and their subsequent information consequences.
+- **Resource Harmonisation Manager is internal Mneme responsibility**, expected
+  for approximately **5% or less at worst**, not an SLA. It causes bounded
+  Harmonisation Ergon activity as **new governed work**, through the established
+  work/execution contract and common Ponos capability. It does not harmonise
+  domains itself, resume inside the originating Ergon or duplicate execution.
+- **Mnemosyne is the Persistence Manager**: transaction and persistent-service
+  oversight/reporting, shard management, authoritative persistence reporting,
+  persistence logging, compartment validation/reapplication and hosting Themis-owned
+  PEP enforcement. API success alone does not establish the Harmonia outcome.
+- **Search Management and Research Metadata Management are first-class Mnemosyne
+  responsibilities.** Mneme Adhoc Search uses underlying authoritative persistence
+  search, without assuming a complete transient cache. Mnemosyne may manage search
+  capability metadata. Research Metadata captures AI-derived meaning/relationships
+  based on proximity, remaining distinct from unchanged authoritative source
+  Content/metadata. AI derivation executes outside Mnemosyne through an appropriate
+  Harmonia behavioural/execution construct; provenance/confidence/schema remain open.
+- **Energeia R1.x/R2.x remains Observe → Report.** R3 adaptive direction is deferred.
+  Persistence management stays Mnemosyne's responsibility; all prior unaffected
+  adjudications, including Kleio's cross-target audit harmonisation SEP, remain.
+
+Detailed Context/concurrency/harmonisation, persistence/search and Research Metadata
+contracts remain [CDG-45–48](gaps.md#context-and-pragma-contracts) under AX-17. No
+technology, UI or AI implementation is selected. The Themis/AX-07 audit-authorisation
+conflict is retained unchanged; no exception is adopted.
 
 | Completion activity | Status |
 | :--- | :--- |
