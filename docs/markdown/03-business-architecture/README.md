@@ -57,9 +57,9 @@ graph TD
 ### Key Metamodel Principles
 - **Capability Decomposition**: CT1 / CT2 / CT3 / FT distinguish Capability Tiers and Feature type from derivation stages. A Feature inherits Capability semantics. Behaviour may anchor directly to its established owning Capability or Feature; affected tier, complete ancestry and structural Canonical IDs remain unresolved under approved K9.
 - **Function vs. Service**:
-  - A **Business Function** is behaviour delivered *within* its owning Capability or Feature boundary.
-  - A **Business Service** is behaviour *exposed outside* the owning boundary for consumption by other Capabilities or external participants. Ownership of the behaviour remains with the exposing Capability.
-- **Justified Business Processes**: Business Processes are modeled *only* where an activity instance materially progresses through state lifecycles and outcomes. Generic operational tasks (search, lookup, mapping, presentation) do not have processes.
+  - A **Business Function** effects a defined information/capability state transition within its owning responsibility; size and external exposure do not determine its type.
+  - A **Business Service** provides the client interface under a Service Contract and may use Functions and/or Processes. Ownership remains with the exposing Capability.
+- **Justified Business Processes**: Processes provide ordered Function decomposition of complex change and may be recursively required by Functions. Operation labels such as search or mapping do not categorically exclude decomposition. The [canonical semantics](metamodel/business-architecture-metamodel.md#3-function-and-service-semantics) govern; no mandatory Service → Process → Function hierarchy follows.
 - **Cross-Cutting Responsibility Rule**: *Cross-cutting concern does not imply cross-cutting responsibility*. Capabilities depend on Services delivered by other bounded Capabilities rather than co-owning those concerns.
 
 ---

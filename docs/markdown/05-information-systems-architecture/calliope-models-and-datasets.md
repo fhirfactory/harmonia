@@ -20,6 +20,14 @@ Nomenclature. It also owns authoritative review/governance of ontology sets for
 Harmonia use. That review does not make Harmonia the originating authority for
 externally governed ontologies.
 
+The B1 conceptual
+[`Metabolē.Context.ActivityContext` vocabulary](../04-information-architecture/patterns/metabole.md#3-context-and-activitycontext)
+is governed consistently with this shared definition/model/nomenclature
+responsibility. It classifies the broad activity, separately from a request action
+or authorisation permission. The initial examples are not an exhaustive enum;
+this establishes no physical Models/DataSets allocation. Runtime policy
+resolution, authorisation decisions and enforcement remain Themis responsibilities.
+
 ```text
 Calliope
   +-- Calliope-Models     design/build-time governed knowledge

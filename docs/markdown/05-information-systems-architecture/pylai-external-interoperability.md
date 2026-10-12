@@ -81,6 +81,15 @@ acknowledgement need not establish logical handover or authoritative Harmonia
 acceptance. Diadromí is neither an Ergon, Task/Pragma alias nor a durable queue.
 Its exact representation is unresolved.
 
+**Pylai.Diadromí realises
+[Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)**
+for transient information progression through Pylai interoperability activity.
+This is genuine architectural Realisation, not analogy, synonymy with Metabolē
+or inheritance from Pragma. Pylai retains responsibility; Diadromí's transient,
+non-recoverable lifecycle does not acquire Pragma persistence or Mneme management
+requirements. Conceptual ActivityContext does not replace a specific interaction
+action or grant authorisation.
+
 <a id="diadromi-recoverability"></a>
 
 ## Transience, loss and recoverability

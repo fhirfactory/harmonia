@@ -14,12 +14,16 @@ graph TD
         CT3 -.->|May specialise as| FT
     end
     OWNER -->|Delivers| FUNC["Business Function(s)"]
-    FUNC -->|Exposed outside owning boundary| SERV["Business Service(s)"]
+    OWNER -->|Provides to clients| SERV["Business Service(s)"]
+    SERV -->|May use directly| FUNC
+    SERV -->|May use| PROC
+    FUNC -->|May require| PROC
+    PROC -->|Chains| FUNC
     OWNER -->|Encompasses where progression is material| PROC["Business Process(es)"]
     OWNER -->|Establishes| INFO["Business Information Responsibility"]
 ```
 
-The diagram groups the permissible responsibility contexts; it does not require every branch to materialise every Capability Tier or a Feature before delivering behaviour.
+The diagram groups the permissible responsibility contexts; it does not require every branch to materialise every Capability Tier or a Feature before delivering behaviour. Service, Function and Process form a graph rather than a mandatory hierarchy.
 
 ### 1.1 Capability Decomposition and Terminology
 
@@ -71,9 +75,25 @@ A Capability or Feature establishes:
 
 Domain03 SHALL NOT establish a Feature identity that Strategy has not established. A Strategy Feature may be associated with Business behaviour only where that behaviour materially realises the semantic responsibility expressed by the Feature. Shared subject matter, terminology, information, Actor, Capability context or clinical purpose is insufficient. Where semantic realisation is not established, preserve the Feature, Function, Service and established owning Capability, and record **Feature association not established** without assigning a replacement Feature.
 
-Harmonia enforces strict semantic rules governing Functions and Services to prevent architectural ambiguity:
+The following are **Harmonia architecture definitions**, reconciled by the
+2026-10-13 B1 task decision. They apply across architectural views and need not
+conform to the exact semantics of ArchiMate or another modelling framework.
+Frameworks may represent them where useful but SHALL NOT redefine their Harmonia
+meaning. Domain03's owning Capability/Feature and exposure rules continue to
+qualify Business behaviour; they do not replace these definitions.
 
 ### 3.1 Business Function Rule
+
+> A **Function** is a mechanism that moves the state of information, or the state
+> of a capability concern as a whole, from one status to another. A Function may
+> operate over a small, medium or large concern. Its architectural meaning
+> derives from what it does to or within the capability, not from what it exposes
+> externally.
+
+A Function answers **what change is effected?** Function accountability concerns
+achievement of the defined state transition. Function size does not determine
+whether something is a Function.
+
 > **A Business Function represents behaviour delivered within the responsibility boundary of its owning Capability or Feature.**
 
 A Business Function describes *what* the capability does internally to discharge its architectural mandate. A Business Function may operate upon:
@@ -84,15 +104,26 @@ A Business Function describes *what* the capability does internally to discharge
 Therefore, **ownership of a Function does not imply ownership of every information item upon which that Function operates**.
 
 ### 3.2 Business Service Exposure Rule
+
+> A **Service** is a mechanism through which a client interacts with a capability
+> to request change, request information, or be informed of change. A Service
+> represents the interface between the capability and its client and operates
+> according to a Service Contract. A Service may use one or more Functions and/or
+> Processes to fulfil that contract.
+
+A Service answers **what can the client ask for, obtain, or be informed about?**
+Service accountability concerns fulfilment of the **Service Contract**. A Service
+may use Functions directly, Processes, or both; a Function need not be exposed
+through a Service.
+
 > **When Function behaviour is exposed for consumption outside the owning Capability or Feature responsibility boundary, that behaviour is exposed through a Business Service.**
 
 ```text
-Capability A (Owner)
-  └── Function X
-        └── exposed as Service X
-                  │
-                  ▼ [Consumed by]
-Capability B (Consumer)
+Capability A (Owner) ── provides ── Service X ── used by ── Capability B (Client)
+                                     │
+                              fulfilled using
+                                     │
+                             Function(s) and/or Process(es)
 ```
 
 ### 3.3 Ownership and Non-Equivalence Invariants
@@ -132,19 +163,41 @@ Harmonia terminology remains **Work Order = human doing**, **To Do = human revie
 
 ## 4. Business Process Semantics
 
-A Business Process represents progressing business behaviour encompassed within a Capability or Feature responsibility boundary.
+> A **Process** is an ordered chain of Functions used to realise a complex
+> change. A Process provides a convenient mechanism for decomposing, structuring
+> and managing change that would otherwise be difficult to understand or control
+> as a single Function. A Function may itself require one or more Processes where
+> the change for which that Function is responsible requires further decomposition.
+
+A Process answers **how is a complex change decomposed and coordinated?**
+Process accountability concerns progression and coordination of its constituent
+Functions. Function and Process may be recursively composed:
+
+```text
+Function
+   └── may require → Process
+                       ├── Function
+                       ├── Function
+                       └── Function
+                              └── may require → Process
+```
+
+A Business Process applies this meaning to progressing Business behaviour within
+an owning Capability or Feature responsibility boundary. There is no mandatory
+Service → Process → Function hierarchy.
 
 ### 4.1 Process Justification Rule
-> **Model a Business Process only where the business materially cares about the progression of an activity instance through meaningful states, dispositions, or outcomes.**
+> **Model a Business Process where ordered Function decomposition is material to
+> understanding, structuring or managing a complex Business change and its
+> progression.**
 
-Not all functions require a process. Generic operations such as:
-- Identifier resolution and search;
-- Data mapping and transformation;
-- Cryptographic or credential verification;
-- Terminology and code lookup;
-- UI presentation and rendering;
-
-do **not** constitute Business Processes. They are discrete Business Functions.
+Meaningful states, dispositions and outcomes may justify that decomposition.
+Not all Functions require a Process. Search, lookup, mapping, verification or
+presentation labels alone neither establish a Process nor exclude one where
+the bounded change requires decomposition. Primary Information traceability
+remains with the responsible Functions; Process-level aggregation does not
+replace it. Existing named Business Processes and responsibility boundaries are
+preserved; this rule creates no new catalogue entry.
 
 ### 4.2 Cross-Capability Process Guardrail
 If a proposed Business Process appears to span multiple Capability responsibility boundaries:

@@ -13,8 +13,12 @@ behaviour remains subject to review. “Proposal/unallocated” preserves intent
 without inventing a component owner. Feature IDs are local navigation keys.
 
 “Adjudicated candidate” records the bounded [U02–U17 review decisions](sources.md#u02) and [U18](sources.md#u18)
-within Step A, without accepting the whole candidate or establishing Step-B
-upstream realisation traceability. Common features below are reused by specialised
+within Step A; those corrections did not themselves establish whole-candidate
+acceptance or Step-B upstream traceability. The explicit B1 task now confirms
+**A4 — PASS**, accepting the candidate as the Step-B baseline. The
+[B1 method](traceability/step-b-method.md) governs later traceability; this
+feature map adds no B2 mappings or component allocations for the worked example.
+Common features below are reused by specialised
 components under the [specialisation principle](README.md#specialisation-principle).
 
 | ID | Candidate feature / behaviour | Documented allocation and collaboration | Significant information interaction | Standing, evidence and incomplete meaning |

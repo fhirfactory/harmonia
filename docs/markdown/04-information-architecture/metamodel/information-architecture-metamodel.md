@@ -318,6 +318,13 @@ these concerns.
 
 > **Context contains the management context through which Harmonia governs, understands and safely manages the represented information over time.**
 
+The complementary [Metabolē pattern](../patterns/metabole.md) defines bounded
+progression of one or more Information Units, with applicable Context,
+provenance/derivation and accumulated outputs. Its conceptual
+[ActivityContext](../patterns/metabole.md#3-context-and-activitycontext)
+classifies the broad activity; it neither replaces this Unit Management Context
+nor equates it with Mneme's loaded-value Context or Themis PEP-Context.
+
 The following are currently identified **conceptual management concerns**. They
 are not a final attribute list or schema, nor a mandatory populated field bundle.
 

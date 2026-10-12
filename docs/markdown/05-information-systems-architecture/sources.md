@@ -2,6 +2,33 @@
 
 # Candidate Architecture Sources and Reconciliation
 
+## B1 method and Metabolē adjudication input
+
+<a id="u20"></a>
+
+**U20 — 2026-10-13:** the explicit Domain05 B1 task supplies the newly adjudicated
+Metabolē construct, Pragma/Pylai.Diadromí architectural Realisation, initial
+ActivityContext vocabulary, Harmonia Service/Function/Process definitions,
+B1-R01–R12, graph and agreed six-Function Health Information Access example.
+It confirms **A4 — PASS**, accepting the current candidate as the Step-B baseline,
+and explicitly excludes B2 mapping and a B1 PASS declaration.
+
+Canonical incorporated meaning is held in the Domain04
+[Metabolē pattern](../04-information-architecture/patterns/metabole.md),
+Domain03 [Function/Service](../03-business-architecture/metamodel/business-architecture-metamodel.md#3-function-and-service-semantics)
+and [Process](../03-business-architecture/metamodel/business-architecture-metamodel.md#4-business-process-semantics)
+definitions, the [Step B method](traceability/step-b-method.md) and
+[worked example](traceability/health-information-access-worked-example.md).
+Pragma, Diadromí, Context, provenance and candidate navigation/register references
+are reconciled without changing application-management boundaries.
+The [B1 reconciliation record](reviews/b1-method-reconciliation.md) identifies
+conflicts, validation and retained detail. No legacy architectural content is
+imported or rewritten by U20; the supplied task decisions establish the change.
+
+Earlier source dispositions below retain their dated review scope. Statements
+that those earlier reconciliations did not accept A4 or commence Step B do not
+override U20's acceptance and bounded B1 scope.
+
 **Standing: reconstruction and bounded Step-A adjudication provenance for the
 Harmonia Candidate Information Systems Architecture.** [Orientation and scope](README.md)
 govern all uses of this register.

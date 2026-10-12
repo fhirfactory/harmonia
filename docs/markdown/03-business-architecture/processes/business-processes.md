@@ -10,18 +10,23 @@ Illustrations are not complete normative transition models. Their scoped applica
 
 Where Healthcare Service context is material to the activity's meaning, authority, coordination, progression or accountability, retain that context in the relevant activity/information responsibility. Location, Organisation, Practitioner or Role cannot substitute for it; no representation or implementation binding follows.
 
-In the Harmonia Business Architecture, a **Business Process** represents the governed progression of a healthcare activity instance through a defined lifecycle of meaningful states, dispositions, and operational outcomes within an owning Capability or Feature boundary.
+In the Harmonia Business Architecture, a **Business Process** applies the
+[canonical Process definition](../metamodel/business-architecture-metamodel.md#4-business-process-semantics):
+ordered Function decomposition of complex change within the owning Capability
+or Feature responsibility. Existing activity-instance states, dispositions and
+outcomes retain their established meaning; no new transition model is inferred.
 
 ### 1.1 Process Inclusion Rule
-> **Model a Business Process only where the business materially cares about the progression of an activity instance through meaningful states, dispositions, or outcomes.**
+> **Model a Business Process where ordered Function decomposition is material to
+> understanding, structuring or managing a complex Business change and its
+> progression.**
 
-Generic, stateless, or purely retrieval-oriented operations do **not** constitute Business Processes:
-- Search and query execution;
-- Data resolution and translation;
-- Format transformation and mapping;
-- Cryptographic verification and hash validation;
-- Terminology and code lookup;
-- User interface presentation and rendering.
+A Function may require further Processes recursively. Search, query, resolution,
+translation, mapping, verification, lookup and presentation do not automatically
+require a Process, but their labels do not exclude decomposition where justified.
+Service fulfilment may use Functions directly, Processes, or both. Function-level
+Information relationships remain primary; this reconciliation adds no named
+Process to the catalogue.
 
 <a id="12-the-16-canonical-r1-business-processes"></a>
 

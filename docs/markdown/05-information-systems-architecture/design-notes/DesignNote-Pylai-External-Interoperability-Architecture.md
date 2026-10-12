@@ -58,6 +58,15 @@ Pylai carries external identity into Harmonia. Pylai does **not** invent or dete
 
 A Diadromí is not a durable configuration object and is not the component performing protocol logic.
 
+**B1 reconciliation, 2026-10-13:** Pylai.Diadromí **realises**
+[Metabolē](../../04-information-architecture/patterns/metabole.md#2-architectural-realisation)
+for transient information progression through Pylai interoperability activity.
+This is architectural Realisation in the ArchiMate/TOGAF sense, not analogy,
+synonymy or inheritance from Pragma. Pylai responsibility and the
+[consolidated non-recoverability contract](../pylai-external-interoperability.md#diadromi-recoverability)
+remain intact. The concept introduces no common manager, persistence model or
+lifecycle with Pragma.
+
 > **Terma acts; Diadromí represents transient interaction state.**
 
 Events, alarms and performance metrics may be associated with a Diadromí. It represents a period partly outside Harmonia-controlled business logic where external interaction state may be observable without yet being certain.

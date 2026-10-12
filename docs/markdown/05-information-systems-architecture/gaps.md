@@ -158,8 +158,9 @@ compression, encryption, FHIR/DICOM representations, retrieval APIs, assembly
 algorithms, lifecycle/retention/versioning and external repository adapters.
 These are non-blocking detailed design matters, not unresolved Candidate
 Architecture responsibility questions. U16 closed CA-01–03; U17 closes the
-remaining CA-04/F31/D15 question. A4 acceptance remains Mark + ChatGPT's decision;
-Step B has not started.
+remaining CA-04/F31/D15 question. That review did not itself accept A4 or commence
+Step B. The [current standing](README.md) records the subsequent explicit
+A4 PASS and bounded B1 reconciliation; B2 mapping is not commenced.
 
 <a id="agora-omilia-contracts"></a>
 

@@ -60,6 +60,14 @@ transition does not begin Domain05 architecture work.
 
 ## Overview & Pedagogical Guide
 
+**2026-10-13 governed extension:** [Metabolē](patterns/metabole.md) is the
+canonical conceptual pattern for bounded Information Unit progression through
+change/activity, including ActivityContext and distinct architectural
+Realisations by Pragma and Pylai.Diadromí. This preserves the completed semantic
+baseline and existing management/evidence responsibilities. Domain05
+[B1](../05-information-systems-architecture/traceability/step-b-method.md)
+uses the pattern; B2 mapping is not begun and B1 PASS is not declared.
+
 Domain 04 — Information Architecture defines the canonical information models, semantic structures, and conceptual relationships required by the Harmonia Health Integration Environment (HIE). It bridges the business semantics established in **[Domain 03 (Business Architecture)](../03-business-architecture/README.md)** with downstream technical architectures (Application Architecture Domain 05, Integration Architecture Domain 06, and physical storage implementations).
 
 The primary purpose of Domain 04 is to answer the fundamental architectural question:
@@ -178,7 +186,8 @@ docs/markdown/04-information-architecture/
 │   ├── information-relationships.md             # Reusable relationship pattern, role separation
 │   ├── containment-and-collections.md           # Qualified containment, recursion, collections vs containment
 │   ├── definition-to-accountability.md          # 5-stage pattern, Healthcare Service & Task/Work reference models
-│   └── search-results.md                       # Managed Version-reference result sets and external Ergo search
+│   ├── search-results.md                       # Managed Version-reference result sets and external Ergo search
+│   └── metabole.md                             # Bounded information progression, ActivityContext and Realisation
 ├── governance/
 │   ├── authority-custody-provenance.md          # Assertion, responsibility, authority, custody, provenance
 │   └── information-lifecycle.md                 # Concept-specific lifecycles, transition governance

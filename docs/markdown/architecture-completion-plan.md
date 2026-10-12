@@ -297,7 +297,7 @@ activities are:
 | A1 — Reconstruct and document Candidate Architecture | COMPLETE |
 | A2 — Architectural review and adjudication | COMPLETE at Candidate responsibility level; [U17 assessment](05-information-systems-architecture/README.md#sylloge-adjudication), 2026-10-12 |
 | A3 — Correct/reconcile Candidate Architecture as required | COMPLETE WITH NON-BLOCKING DEFERRED ITEMS; U17 affected-view reconciliation |
-| A4 — Accept Candidate Architecture as sufficiently faithful | PENDING |
+| A4 — Accept Candidate Architecture as sufficiently faithful | **PASS** — explicit 2026-10-13 B1 task decision; accepted baseline for Step B |
 
 **Step A is complete when the reconstructed Candidate Architecture has been
 architecturally reviewed and is considered a sufficiently faithful representation
@@ -325,6 +325,15 @@ Information Systems Features, Components, Data Objects and responsibilities.
 Traceability SHALL work in both directions where useful, establishing which
 candidate elements realise established architectural demand. Relationships SHALL
 remain truthful under AX-17; no exhaustive or artificial mapping is required.
+
+The governing [B1 Capability + Information Traceability Method](05-information-systems-architecture/traceability/step-b-method.md)
+records B1-R01–R12, dual Business/Business Enabling Capability anchors, a graph
+of Service/Function/Process and typed Function/Information relationships, and
+preserved application responsibility. Its bounded
+[Health Information Access example](05-information-systems-architecture/traceability/health-information-access-worked-example.md)
+validates the method without allocating the Functions to components.
+**Current B1 reconciliation is returned for Mark/ChatGPT adjudication; B1 PASS is
+not declared. B2 capability mapping is not commenced.**
 
 #### Step C — Architecture Gap Analysis
 
@@ -375,6 +384,15 @@ waive subsequent Integration or Technology Architecture obligations.
 
 ## 4. Current Programme Position
 
+**2026-10-13 — A4 PASS; accepted Candidate Architecture baseline for Step B.**
+This standing is explicitly supplied by the B1 task decision. Current work is
+the [B1 method reconciliation](05-information-systems-architecture/traceability/step-b-method.md)
+for Mark/ChatGPT adjudication, without declaring B1 PASS or beginning B2.
+Steps C–E and the Domain Completion Gate remain uncompleted.
+
+The following 2026-10-11 reconstruction account is historical evidence; its
+then-pending A4 standing is superseded by the explicit acceptance above.
+
 **2026-10-11 — Domain05 Step A: initial Candidate Architecture reconstruction
 completed; architectural review/adjudication in progress.** The
 [Harmonia Candidate Information Systems Architecture](05-information-systems-architecture/README.md)
@@ -405,7 +423,7 @@ records execution evidence, not architectural authority or semantic approval.
 These remain evidence that A1 reconstruction/documentation is complete, not that
 the reconstructed architectural meaning has been accepted.
 
-**The current programme activity is architectural review/adjudication of the
+**At initial reconstruction the programme activity was architectural review/adjudication of the
 reconstructed Candidate Architecture**, followed formally by Step B only once
 it is accepted as sufficiently faithful to the intended Harmonia solution under
 the Step-A completion condition. No Step B upstream mapping/coverage,
@@ -426,7 +444,7 @@ analysis; the historical report remains unchanged.
 | Domains01–02 — Motivation / Strategy | Established upstream intent and capability context; earlier programme history retained below |
 | Domain03 — Business Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-09 |
 | Domain04 — Information Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-10 |
-| Domain05 — Information Systems Layer Architecture | Step A remains open — A1 COMPLETE; A2 COMPLETE at Candidate responsibility level; A3 COMPLETE WITH NON-BLOCKING DEFERRED ITEMS; [U17 assessment](05-information-systems-architecture/README.md#sylloge-adjudication), 2026-10-12: READY FOR A4 ADJUDICATION by Mark + ChatGPT, A4 acceptance PENDING; Step B capability + information traceability NOT STARTED; Steps B–E remain unperformed and the Domain Completion Gate is not yet satisfied |
+| Domain05 — Information Systems Layer Architecture | **A4 PASS**, accepted Step-B candidate baseline — explicit 2026-10-13 B1 task decision. A1/A2 complete; A3 complete with non-blocking deferrals retained. B1 method reconciled for Mark/ChatGPT adjudication; no B1 PASS declared; B2 mapping not commenced. Steps C–E and the Domain Completion Gate remain uncompleted. |
 
 ### Established upstream completion and earlier Domain05 transition
 

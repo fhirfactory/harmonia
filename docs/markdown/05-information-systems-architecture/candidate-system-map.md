@@ -8,6 +8,14 @@ does not prescribe deployment, map upstream capabilities or select an MVP.
 Components are detailed in the [register](component-register.md); source keys
 resolve through [Sources](sources.md).
 
+**Current baseline:** A4 — PASS; accepted for Step B. The
+[B1 traceability method](traceability/step-b-method.md) governs subsequent
+mapping; B2 is not commenced. Pragma C07 and Pylai.Diadromí C44 are distinct
+architectural realisations of
+[Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation).
+Metabolē is conceptual and is not added to this software hierarchy as a component
+or common manager.
+
 ## Structural hierarchy
 
 The following is a software responsibility map. “Grouping” identifies a

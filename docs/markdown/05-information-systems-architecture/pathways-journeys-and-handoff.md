@@ -218,6 +218,13 @@ execution seam without transferring handoff obligations from Petasos.
 
 ## Pragma payload and Topic semantics
 
+Pragma **realises
+[Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)**
+for governed information/activity progression. The following payload shape
+retains its application meaning; Realisation neither equates Pragma with the
+conceptual construct nor requires a shared representation/lifecycle with Diadromí.
+Mneme retains Pragma management.
+
 Every Pragma contains or references a payload such as an Information Unit.
 The working semantic shape relevant to Pattern evaluation is:
 

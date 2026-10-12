@@ -6,8 +6,9 @@
 through 2026-10-12.** [U10/U11](sources.md#u10) and [U18](sources.md#u18) record
 the DesignNotes and explicit task decisions. This view is self-contained architectural meaning;
 external notes are provenance. [Scope and completion status](README.md) apply:
-Step A remains OPEN, A4 PENDING and Step B NOT STARTED; the index records current
-A2/A3 standing.
+A4 is now PASS and the candidate is the accepted Step-B baseline under the
+[B1 decision](traceability/step-b-method.md#1-authority-baseline-and-scope).
+B1 method reconciliation is returned for adjudication; B2 mapping is not started.
 
 AX-05 preserves active use versus authoritative durable state; AX-11/12 govern
 efficient information access and insulation of business logic from plumbing.
@@ -177,6 +178,17 @@ join its normal queue without interrupting the current input.
 **Mneme manages Pragma.** Context is the value-based working environment;
 Pragma is the task/activity information envelope through which inputs and outputs
 are expressed. They are related and distinct.
+
+**Pragma realises [Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)**
+for governed Harmonia information/activity progression. This is architectural
+Realisation, not synonymy or inheritance from Diadromí. Mneme retains Pragma
+management; the conceptual construct introduces no common manager, persistence
+requirement or shared lifecycle with Pylai.Diadromí.
+
+The conceptual
+[ActivityContext](../04-information-architecture/patterns/metabole.md#3-context-and-activitycontext)
+classifies the broad activity and is distinct from request action, this loaded
+Context and Themis PEP-Context. Their detailed physical mapping remains deferred.
 
 An Ergon may read existing Context values, act upon/change working Context
 values, and generate **new Content**. New Content is expressed as **Pragma
@@ -356,7 +368,8 @@ Kleio's [mandatory capture authority](component-register.md#kleio-capture-author
 is intrinsic platform authority governed by Harmonia policy under AX-07. The
 audited Identity is evidence, not capture authority. Insufficient capture authority
 fails the governed operation closed; Mneme/Mnemosyne gain no equivalent authority.
-A2/A3 correction accepts neither the whole candidate nor A4 or Step B.
+Those A2/A3 corrections did not themselves establish A4 acceptance. Current A4
+acceptance and the bounded B1 scope are recorded in the [orientation](README.md).
 
 
 ## Calliope and Pylai use of established responsibilities

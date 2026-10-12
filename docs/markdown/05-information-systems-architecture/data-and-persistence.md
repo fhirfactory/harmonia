@@ -88,6 +88,13 @@ not the formal binary merely because a Room conveys it; Omilia remains operation
 
 ### Task and Pragma candidate meaning
 
+The B1 adjudication adds the architectural **Realisation** relationship:
+Pragma realises [Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)
+for governed information/activity progression. This does not make Metabolē
+another Application Data Object or manager, or finalise Pragma's physical
+representation, lifecycle or persistence. The Task representation relationships
+below retain their separate meaning.
+
 The following records [U01/U02](sources.md#u02), preserving [A03](sources.md#a03):
 
 ```text
@@ -201,6 +208,12 @@ PetasosParcel handoff. Neither Diadromí nor Controller has recoverable interact
 state. Retained audit/Journey/operational evidence does not resume the interaction.
 The Communication Information Unit schema and Domain04 mapping remain unresolved.
 No new Information Family or persistent execution object is inferred.
+
+Pylai.Diadromí separately **realises
+[Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)**
+for transient interoperability progression. This does not equate Diadromí with
+Pragma or transfer its management to Mneme; no common lifecycle, persistence
+or physical representation is implied.
 
 ## Responsibility and state boundaries
 

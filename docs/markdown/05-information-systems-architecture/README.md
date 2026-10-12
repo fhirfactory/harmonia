@@ -17,9 +17,9 @@
 
 # Domain05 — Information Systems Layer Architecture
 
-**Standing: Harmonia Candidate Information Systems Architecture, reconstructed
-and corrected through bounded Step-A adjudication, through 2026-10-12.** This is the
-canonical RADS record of the candidate,
+**Standing: A4 — PASS; the current Harmonia Candidate Information Systems
+Architecture is accepted as the baseline for Step B, by the explicit 2026-10-13
+B1 task decision.** This is the canonical RADS record of that accepted candidate,
 not the final Solution Architecture baseline. Inclusion does not establish
 that a component or feature is required for R1.x/R2.x. Absence of upstream
 traceability at this stage does not invalidate a documented candidate.
@@ -41,10 +41,23 @@ The authorised Domain05 approach is:
 4. Identify excess candidate features/components and establish the MVP Candidate Architecture.
 5. Establish the implementation plan.
 
+**Current activity: B1 — Capability + Information Traceability Method.**
+The [governing method](traceability/step-b-method.md), canonical Domain04
+[Metabolē pattern](../04-information-architecture/patterns/metabole.md) and
+[Health Information Retrieval Service example](traceability/health-information-access-worked-example.md)
+record the supplied decisions and are returned for Mark/ChatGPT adjudication.
+**B1 PASS is not declared; B2 capability mapping is not commenced.**
+Step A is complete at the sufficiently-faithful candidate acceptance boundary.
+Retained candidate deferrals remain explicit and upstream coverage is unproven.
+
+The following Step-A reconciliation history records the standing at each review;
+its A4-pending/Step-B-not-started statements do not supersede the current
+acceptance and B1 scope above.
+
 Initial reconstruction (A1, recorded here as Step 1) is complete. The
 [U17 assessment](#sylloge-adjudication) now records A2 COMPLETE and A3 COMPLETE
-WITH NON-BLOCKING DEFERRED ITEMS. Step A remains open: acceptance as sufficiently
-faithful (A4) is pending. Recommendation: **READY FOR A4 ADJUDICATION**.
+WITH NON-BLOCKING DEFERRED ITEMS. At that review Step A remained open and
+A4 acceptance was pending, with recommendation **READY FOR A4 ADJUDICATION**.
 The Energeia / DigitalTwin / Dokimasia and Pathway / Journey / Publish/Subscribe /
 handoff and Energeia / Praxis / Journey / persistence adjudications below correct
 the candidate within that boundary. The Kleio / Themis / Petasos adjudication
@@ -67,8 +80,7 @@ conflict. It does not reassess A4 readiness or change acceptance standing.
 The [U19 Digital Twin Behaviour reconciliation](#digital-twin-behaviour-adjudication)
 captures the agreed A4.7 execution decisions and closes that taxonomy wording
 conflict. It prepares documentation for Mark/ChatGPT review; **A4.7 is not declared
-PASS** and A4 acceptance remains pending.
-**Step B has NOT started**.
+PASS**; A4 acceptance and Step-B commencement were still pending at that review.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -80,6 +92,9 @@ record does not declare the Domain Completion Gate satisfied.
 
 | View | Contents |
 | :--- | :--- |
+| [Step B traceability method](traceability/step-b-method.md) | Canonical B1-R01–R12 rules, graph, semantic sources and restraint; B1 returned for adjudication, B2 not commenced. |
+| [Health Information Access worked example](traceability/health-information-access-worked-example.md) | Six Function-level requires/consumes/produces traces and additive Metabolē progression; no component allocation. |
+| [B1 reconciliation and validation record](reviews/b1-method-reconciliation.md) | Affected files, terminology conflicts, checks and retained questions for Mark/ChatGPT adjudication. |
 | [System map](candidate-system-map.md) | Responsibility-based software hierarchy; separate collaboration map; construct standing. |
 | [Component register](component-register.md) | Roles, features, significant internal constructs, information, persistence, collaborators and exclusions; [controlled nomenclature](component-register.md#authorisation-nomenclature) and [Identity/Themis model](component-register.md#c02). |
 | [Candidate feature map](candidate-feature-map.md) | Documented solution features and allocations, including retained proposals and unclear owners. |

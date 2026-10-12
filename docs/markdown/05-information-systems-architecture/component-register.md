@@ -11,6 +11,12 @@ Primary responsibility, feature allocation and information/persistence are
 read together with the [feature](candidate-feature-map.md) and
 [data](data-and-persistence.md) views.
 
+**Current baseline:** A4 — PASS; accepted for Step B. The
+[B1 method](traceability/step-b-method.md) governs subsequent traceability.
+Metabolē is a Domain04 conceptual construct, not another component/register row;
+the C07/C44 Realisation links below create no B2 allocations. Dated statements
+that earlier corrections did not accept A4 retain their historical scope.
+
 ## Semantic, policy and evidence responsibilities
 
 <a id="c01"></a>
@@ -595,8 +601,9 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   observability should permit later capability without embedding it now.
   Policy/control loops, algorithms, mechanisms, infrastructure integration and
   AI decision architecture are deliberately undesigned (CDG-41).
-- **Standing:** U06 adjudicates these candidate responsibilities; whole-candidate
-  acceptance and Step B remain pending. Possible upstream omissions require
+- **Standing:** U06 adjudicated these candidate responsibilities; it did not
+  itself establish whole-candidate acceptance or Step B. Current A4/B1 standing
+  is recorded in the [orientation](README.md). Possible upstream omissions require
   later review, without deriving Business Architecture or capability demand here.
 
 <a id="c04"></a>
@@ -887,6 +894,12 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
 <a id="c07"></a>
 
 ### C07 — Pragma
+
+- **Architectural Realisation:** Pragma realises
+  [Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)
+  for governed Harmonia information/activity progression. Mneme retains
+  management; this is not synonymy, a common runtime type or a shared
+  lifecycle/persistence contract with Pylai.Diadromí.
 
 - **Role/responsibility:** managed information / Application Data Object under
   Mneme Pragma Management C28, used for task/context/progression representation.
@@ -1679,6 +1692,11 @@ interaction/Diadromí; Terma has no durable application recovery.
 <a id="c44"></a>
 
 ### C44 — Pylai.Diadromí
+
+**Architectural Realisation:** Pylai.Diadromí realises
+[Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation)
+for transient Pylai interoperability progression. Pylai retains responsibility;
+no common manager, inheritance or shared persistence/lifecycle with Pragma follows.
 
 Transient carriage/interaction context between Terma and its Harmonia-side
 participant during an external interaction. May span segments, protocol exchanges,

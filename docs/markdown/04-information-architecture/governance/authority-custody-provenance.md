@@ -70,7 +70,16 @@ graph TD
 
 ## 4. Provenance & Lineage Framework
 
-Provenance captures the immutable audit and evidentiary chain for every governed concept, assertion, and relationship.
+Provenance describes where/how governed information arose, its derivation and
+its relationship to originating assertions, activities and requests. Provenance /
+derivation ≠ Audit Evidence ≠ Assurance Evidence. Kleio retains audit information
+responsibility and Dokimasia retains assurance responsibility; derivation does not
+transfer either responsibility or automatically make transient mechanics durable
+evidence (AX-08/09).
+
+The [Metabolē progression pattern](../patterns/metabole.md#5-provenance-evidence-and-architectural-consistency)
+applies this distinction to accumulated information without creating another
+evidence manager.
 
 ### 4.1 Provenance Scope
 Provenance attaches to:
