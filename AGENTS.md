@@ -231,8 +231,8 @@ build/dependency or deployment boundary and does not relax Invariant 10.
   **Energeia**      Task processing       Calliope, Themis, Activity execution
   (`energeia/`)     (Ponos), Ergon        Hestia, Petasos   handles `Pragma`
                     activity units                          envelopes and FHIR
-                    (Erga), Workflow                        `Task` lifecycle.
-                    orchestration                           
+                    (Erga), Pathway                         `Task` lifecycle.
+                    fulfilment management
                     (Praxis)                                
 
   **Pylai**         Interoperability      Calliope, Themis, Establishes
@@ -275,6 +275,15 @@ build/dependency or deployment boundary and does not relax Invariant 10.
                     simulators, scenario                    depend on or import
                     engine)                                 Paradeigma.
   -------------------------------------------------------------------------------
+
+Praxis defines Context, expected criteria and housekeeping for Pathway execution.
+It is neither an orchestrator nor a choreographer. Energeia owns/manages Praxis
+and Journey; Ponos owns governed execution. Energeia and Ponos are peer
+application components: Praxis supplies the semantic/operational execution
+envelope and does not structurally contain Ponos. The
+[Digital Twin Behaviour DesignNote](docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md)
+records the specialised one-Ergo Praxis pattern without changing module or
+dependency boundaries.
 
 ------------------------------------------------------------------------
 

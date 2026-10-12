@@ -3,8 +3,8 @@
 # Candidate Pathway, Journey, Publish/Subscribe and Handoff Architecture
 
 **Standing: Domain05 Step A adjudicated Candidate Architecture, through 2026-10-12.**
-[U03–U15](sources.md#u03) record the supplied human-adjudicated DesignNotes and
-explicit task decisions incorporated here. [Scope](README.md) applies: this
+[U03–U15](sources.md#u03) and [U18](sources.md#u18) record the human-adjudicated
+DesignNotes and explicit task decisions incorporated here. [Scope](README.md) applies: this
 correction does not accept the whole candidate, commence Step B or establish
 implementation design. Existing [Energeia specialisation](README.md#energeia-adjudication)
 and [Domain04 observability](../04-information-architecture/guardrails/observable-information-and-domain-meaning.md#2-observability-and-encapsulated-domain-meaning)
@@ -22,7 +22,7 @@ their conventions supply no missing architectural decision (AX-04/17).
 | **PathwaySegment C31** | Inter-component flow from Ergon A.EgressEndpoint to Ergon B.IngressEndpoint; conceptually comparable to an ArchiMate ApplicationInteraction between ApplicationInterfaces. |
 | **PathwayTraversal C32** | Intra-component passage from an Ergon's IngressEndpoint to its EgressEndpoint. It establishes that the component was traversed, without exposing its internal business logic. |
 | **Route C33** | Ordered sequence of **PathwaySegment [1..N]**, principally for routing/control. Traversal's observational usefulness does not redefine Route as generic PathwayElements. |
-| **Pathway C34** | Controlled interaction between PathwayEndpoints, identifying the Route or Routes available for that interaction. |
+| **Pathway C34** | Defines the conceptual sequence of Ergo through which execution progresses, expressed through controlled interaction between PathwayEndpoints and available Route(s). |
 
 ```text
 Ergon A.IngressEndpoint -- PathwayTraversal A --> Ergon A.EgressEndpoint
@@ -33,7 +33,7 @@ Ergon A.IngressEndpoint -- PathwayTraversal A --> Ergon A.EgressEndpoint
 Ergon B.IngressEndpoint -- PathwayTraversal B --> Ergon B.EgressEndpoint
 
 Route = ordered PathwaySegment [1..N]
-Pathway = controlled endpoint interaction with available Route(s)
+Pathway = conceptual Ergo sequence, expressed through endpoint interaction / Route(s)
 Praxis -- Aggregation --> Pathway [0..1]
 ```
 
@@ -56,6 +56,21 @@ or permitted operational context, including candidate externally visible interfa
 information, overall Topic exclusions and potentially inclusions, operational
 configuration/constraints and assurance rules/expectations.
 
+**Pathway defines the conceptual Ergo sequence; Praxis defines how that Pathway
+is fulfilled.** Praxis manages the definition of Context required by the Ergo
+framework, expected criteria/outcomes for Pathway segments, output-to-next-input
+continuation semantics and other Praxis-level fulfilment housekeeping. Ponos/Ergo
+performs governed execution, output processing and routing using those semantics;
+**Praxis is neither an orchestrator nor a choreographer**.
+
+The [U19 Digital Twin Behaviour pattern](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md)
+is a genuine one-Ergo Praxis: Digital Twin → Behaviour [1..*] → Praxis →
+Pathway → Ergo [exactly 1]. Required Context, criteria/outcomes, fulfilment and
+housekeeping still apply. This specialised realisation does not alter the general
+Praxis → Pathway Aggregation [0..1]. Energeia and Ponos are peer application
+components; Praxis's semantic/operational envelope does not structurally contain
+Ponos. Behaviour sequencing is not Pathway orchestration.
+
 **Energeia owns the Praxis application responsibility** and SHALL provide the
 candidate **Praxis Management Services** responsibility set:
 
@@ -64,6 +79,7 @@ candidate **Praxis Management Services** responsibility set:
 - operational configuration and externally visible interface configuration;
 - Topic inclusion/exclusion policy;
 - Pathway relationship/aggregation management;
+- applicable Context definitions, segment criteria/outcomes and continuation semantics;
 - assurance-rule association and other Praxis-wide operational constraints.
 
 These responsibilities are not yet decomposed into separate Application Features,
@@ -86,6 +102,35 @@ are retained provenance, not competing current definitions. Detailed Praxis
 representation and lifecycle remain [CDG-01/06](gaps.md): versioning,
 activation/deactivation, replacement, retirement and treatment of in-flight
 activity following change are deliberately unestablished.
+
+<a id="pathway-continuation"></a>
+
+## Ergon outputs and the Pathway-continuation role
+
+Ergon execution may produce one or more outputs; their processing may result in
+multiple Pragma. **Not every resulting Pragma advances the current Pathway.**
+The **Pathway-continuation Pragma** is the role identifying derived information
+required to continue fulfilment of the current Praxis along its Pathway. Praxis
+defines derivation semantics; the execution framework performs applicable output
+processing and routing. Mneme retains management of all resulting Pragma and
+Context; Petasos retains durable physical handoff where applicable.
+
+Other resulting Pragma remain independently available governed artefacts for
+Mneme Publish/Subscribe, another Praxis, other governed processing or no further
+processing. Production alone establishes neither continuation of the current
+Pathway nor a requirement to publish or consume each output.
+
+**Continuation is a Pragma role, not a new subtype.** Whether continuation always
+constructs a new Pragma, designates a resulting output Pragma, or uses another
+governed representation is explicitly deferred. The adjudication and conceptual
+branching example are in the [DesignNote](design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md);
+[CDG-53](gaps.md#continuation-representation) preserves the modelling decision.
+
+**R1.x/R2.x Context requirements remain concretely defined.** Existing likely
+resource declarations and bounded Adhoc access remain supported. R3.x may
+introduce criteria-driven dynamic Context determination and dynamically configured
+reusable/generic Ergo; that direction and its mechanisms remain deferred, with
+no AI-driven selection/configuration introduced here.
 
 <a id="publication-and-selection"></a>
 
@@ -120,6 +165,8 @@ and established execution retain durable messaging/recovery responsibilities.
 
 Defined Pathways and Publish/Subscribe are two distinct information-progression
 mechanisms. Pub/Sub does not require a predefined end-to-end Route or Pathway.
+Independent output-derived Pragma may enter this governed selection independently
+of the originating Praxis's [Pathway continuation](#pathway-continuation).
 Mneme / Pragma Management owns the logically aggregated responsibilities for
 **Publishing C36**, **Subscription C37** and **Pattern C38**. No separate
 deployment boundary is implied by these names.
@@ -273,6 +320,7 @@ owns the queue operation. Detailed protocols/state metrics remain unresolved.
 | **FulfillmentTask undertaking state** | Information representing a particular identifiable undertaking, distinct from ActionableTask and other undertakings. Consumer establishment and Mneme Context/Pragma management do not collapse into runtime execution state. |
 | **Pylai Diadromí interaction state** | Transient and non-recoverable; loss terminates the interaction and appropriate client retry creates a new Diadromí. Controller keeps no recoverable state. Retained observations/evidence do not restore it or prove earlier effects did not occur. |
 | **Ponos execution/progression state** | Runtime execution, scheduling/concurrency, execution failure and execution retry/re-attempt or activity progression semantics. |
+| **Digital Twin input/Behaviour progression** | U19: at most one input at a time; interested Behaviours execute sequentially with the applicable sequence stable for that input. Sequence changes apply to subsequent inputs. ContinueBehaviourOnFailure contains failure to the current execution, leaving the Behaviour active and other interested Behaviours and queue processing unaffected. StopBehaviourOnFailure stops the failing Behaviour immediately, lets remaining interested Behaviours complete the current input, then halts the Twin. StopDigitalTwinOnFailure terminates the failing Behaviour and halts the Twin immediately, preventing remaining current-input and subsequent queued processing. Stopped Twins retain queued inputs pending governed administrative resume; generic retry/redelivery does not automatically resume them. Stopped-Behaviour recovery remains deferred. |
 
 Pragma “destination-specific delivery observations” means governed information
 recording observations concerning delivery. **Operational ownership of the
@@ -304,6 +352,20 @@ the fan-out question:
   does not establish an undertaking. This preserves Domain04's
   [ActionableTask → FulfillmentTask [0..*] distinction](../04-information-architecture/information-families/task-work.md#23-fulfillmenttask--identifiable-undertaking).
 
+Semantic interest fan-out and execution concurrency are orthogonal. Multiple
+independent **Ergon types** interested in an ActionableTask each receive a separate
+FulfillmentTask. Separately, **ActionableTask.ExecutionConcurrency** may permit
+multiple instances of the **same Ergon type** to undertake it concurrently,
+each through its own FulfillmentTask. This does not change outcome participation
+or TaskOutcome ownership.
+
+Twin input interest matching analogously produces an identifiable
+**BehaviourStimulus / BehaviourEffector per interested Behaviour**, without
+establishing inheritance, identical information types or execution through
+ActionableTask/FulfillmentTask. Interested Behaviours execute sequentially within
+one Twin; concurrency is across independent Twins. Each loads its Praxis-defined
+Context fresh after the preceding Behaviour completes/saves. [U19](sources.md#u19).
+
 **Detailed fan-out identity/lifecycle semantics remain unresolved:** reference,
 copy and version binding; exact morph/derivation mechanics; Pragma identity for
 undertaking representations; targetDestination and per-consumer processing
@@ -317,9 +379,9 @@ outcome participation, output rules and TaskOutcome ownership remain unchanged.
 
 ## Journey: common observation and assurance subject
 
-> **Journey is the governed representation of Harmonia's observed progression
-> of information and activity, reconstructed from available execution evidence
-> and forming the primary subject of reporting, analysis and
+> **Journey is the governed representation of meaningful observed progression
+> of information and activity in fulfilment of a Praxis, reconstructed from
+> available execution evidence and forming the primary subject of reporting, analysis and
 > assurance, irrespective of whether that progression arose through
 > Pathway-controlled routing, Publish/Subscribe processing, or a combination
 > of both.**
@@ -329,6 +391,16 @@ Data Object, not an execution engine or merely a telemetry report. A Journey
 may exist without a corresponding Pathway and may be graph-shaped because
 observed progression can branch, fan out, converge or combine mechanisms.
 Pathway controls permitted progression; Journey represents observed progression.
+
+For a Praxis with a Pathway, Journey observes meaningful fulfilment against that
+Pathway. **Pathway-continuation Pragma lineage is an important observable thread;
+Journey lineage is not complete Pragma provenance.** Independently resulting
+Pragma may establish their own activity, Pub/Sub interactions, Praxes and Journeys.
+Common origin does not automatically include all that subsequent processing in
+the originating Journey. Mneme may manage richer Pragma relationships/provenance
+than that Journey represents. Journey remains neither a complete graph of information
+provenance, execution log, audit trail nor Petasos queue history. Detailed
+correlation remains open; graph-shaped observation does not imply complete provenance.
 
 **Energeia owns Journey as an application responsibility** and SHALL provide
 candidate **Journey Management Services**. These manage the governed representation
@@ -346,7 +418,7 @@ schema, correlation/causal algorithm, retention period or shard-key decision.
 
 ```mermaid
 flowchart LR
-    Praxis["Praxis: expected / permitted context and assurance rules"] -->|Aggregation: 0..1| Path["Pathway / Route: defined control"]
+    Praxis["Praxis: fulfilment / Context definitions / continuation semantics / assurance"] -->|Aggregation: 0..1| Path["Pathway / Route: conceptual Ergo sequence / defined control"]
     Path --> Exec["Ponos / Ergon: execution"]
     Pub["Publishing / Subscription: dynamic selection through Mneme"] --> Exec
     Exec -->|governed execution observations| Journey["Journey: observed progression"]

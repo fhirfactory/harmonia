@@ -3,10 +3,11 @@
 # Mneme Context and Pragma Management / Mnemosyne Persistence Management
 
 **Standing: Domain05 Step A — bounded A2/A3 adjudicated candidate correction,
-2026-10-11.** [U10/U11](sources.md#u10) record the two supplied DesignNotes and
-explicit task decisions. This view is self-contained architectural meaning;
+through 2026-10-12.** [U10/U11](sources.md#u10) and [U18](sources.md#u18) record
+the DesignNotes and explicit task decisions. This view is self-contained architectural meaning;
 external notes are provenance. [Scope and completion status](README.md) apply:
-Step A remains OPEN, A2/A3 IN PROGRESS, A4 PENDING and Step B NOT STARTED.
+Step A remains OPEN, A4 PENDING and Step B NOT STARTED; the index records current
+A2/A3 standing.
 
 AX-05 preserves active use versus authoritative durable state; AX-11/12 govern
 efficient information access and insulation of business logic from plumbing.
@@ -91,14 +92,17 @@ mechanisms and concurrency algorithms remain unresolved under AX-17.
 
 ## Expected resource set and the Ergon information boundary
 
+**Praxis manages the definition of Context required by the Ergo framework** for
+fulfilment of its Pathway. In R1.x/R2.x these requirements are concretely defined.
 During development/definition, an **Ergo identifies the resource set it is most
-likely to access**. The set is deliberately **not exhaustive**. The Ergo
-framework works with Mneme to efficiently load anticipated values before Ergon
+likely to access**, within the applicable Context definitions. The set is
+deliberately **not exhaustive**. The Ergo framework applies those definitions
+and works with Mneme to efficiently load anticipated values before Ergon
 Business Logic executes; preloading every conceivably accessible resource is
 not required.
 
 ```text
-Ergo Definition
+Praxis Context definitions / Ergo likely resource declaration
     ↓
 Expected / Likely Resource Set
     ↓
@@ -129,10 +133,42 @@ reasonably known boundaries, or dynamically emerging information requirements.
 Adhoc access may be materially more expensive than Context Load; it remains
 legitimate. External interactions retain Pylai's established boundary.
 
+Bounded Adhoc acquisition does not establish criteria-driven dynamic Context
+determination. That direction, together with dynamically configured reusable/
+generic Ergo, remains **deferred R3.x direction**; no mechanism or AI-driven
+selection/configuration is introduced by [U18](sources.md#u18).
+
 The originating Ergon SHALL NOT be responsible for persistence mechanics,
 database/shard selection, transactions, persistence tagging/indexing or generic
 conflict resolution. No exact loader/unloader API, acquisition/batching strategy,
 query language, locking/MVCC or Context concurrency algorithm is selected.
+
+<a id="twin-behaviour-context"></a>
+
+## Digital Twin Behaviour Context lifecycle
+
+[U19](sources.md#u19) specialises the normal lifecycle for
+[Digital Twin Behaviour execution](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md).
+Each Behaviour has its own Praxis-defined Context requirements, interpreted
+relative to the singular represented entity. Interested Behaviours execute
+sequentially, with **fresh Context Load → Execute → Context Save for each** on
+the normal path. Normal progression loads the next Behaviour's Context only
+after its predecessor has completed and saved its information consequences;
+failure progression follows the [three failure dispositions](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md#10-behaviour-failure-dispositions).
+Later Behaviours may therefore observe
+authoritative consequences established by earlier ones; there is no single
+immutable Context snapshot shared by all Behaviours for an input.
+
+Mneme retains Context materialisation/save and Pragma management; Mnemosyne alone
+establishes authoritative durable state. This ordering grants neither cache
+authority nor an automatic commit guarantee and does not replace exceptional
+harmonisation or AX-15 uncertainty handling. Detailed continuation when a
+Behaviour cannot establish its save outcome remains [open](gaps.md#digital-twin-execution-contracts).
+
+Behaviour outputs can enter normal governed processing. Twin-relative references
+may require resolution/dereferencing for the receiving context; sufficiently
+explicit outputs need no transformation. Same-Twin Stimulus/Effector outputs
+join its normal queue without interrupting the current input.
 
 <a id="pragma-output"></a>
 
@@ -157,8 +193,27 @@ Context + bounded business logic → Ergon → Pragma Output → new Content
 Changed Context values and newly generated Pragma Outputs SHALL remain
 semantically distinguishable. A working change or produced output does not
 itself establish authoritative durable state. Task/undertaking/outcome ownership
-and output rules remain unchanged. Exact Output representation, downstream
-routing and detailed Pragma/Information Unit mappings remain unresolved.
+and output rules remain unchanged.
+
+Ergon execution may produce one or more outputs, whose processing may result in
+multiple Pragma. **Only a Pragma playing the Pathway-continuation role identifies
+information for continuing the current Praxis along its Pathway**; other resulting
+Pragma are independently available for governed Pub/Sub, another Praxis, other
+processing or no further processing. Praxis defines continuation semantics;
+the execution framework performs applicable output processing and routing,
+without making Praxis an orchestrator/choreographer or transferring Mneme's
+information management. See the [shared semantic view](pathways-journeys-and-handoff.md#pathway-continuation)
+and [DesignNote](design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md).
+The continuation role creates no subtype. Whether a new Pragma is constructed,
+an output Pragma is designated, or another governed representation is used remains
+[explicitly deferred](gaps.md#continuation-representation). Exact Output
+representation, routing mechanisms and Pragma/Information Unit mappings remain open.
+
+Mneme may manage richer resulting Pragma relationships and provenance than the
+originating Praxis's Journey represents. Continuation lineage supports meaningful
+Journey progression without making Journey a complete provenance graph, execution
+log, audit trail or queue history; [Journey's boundary](pathways-journeys-and-handoff.md#journey-and-assurance)
+and Energeia ownership remain intact.
 
 <a id="resource-harmonisation"></a>
 

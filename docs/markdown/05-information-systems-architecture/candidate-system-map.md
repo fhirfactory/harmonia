@@ -58,6 +58,7 @@ Harmonia Information System — candidate software solution
       Pragma Management — managed task/context/progression information [C28]
         PragmaFactory — creates/initialises Pragma; archetype embodiment [C08]
         Pragma — managed Application Data Object [C07]
+          Pathway-continuation is a role; independent outputs need not continue current Praxis
         Publishing — provider eligibility/filtering [C36]
         Subscription — consumer selection [C37]
         Pattern — governed evaluation/matching [C38]
@@ -82,7 +83,7 @@ Harmonia Information System — candidate software solution
     Direct responsibility: Journey Management Services [F38]
     Direct responsibility: operational observation / reporting [F39]
     R3 direction: Adaptive Load and Resilience Service — deferred [F40]
-    Associated execution/activity constructs (Association; no Composition inferred):
+    Associated peer execution/activity constructs (Association; no Composition inferred):
       Ponos — reusable execution framework/component pattern [C04]
         Governed execution / scheduling / progression / execution re-attempts
       Ergo — reusable activity pattern and platform-integration contract [C05]
@@ -90,14 +91,18 @@ Harmonia Information System — candidate software solution
         IngressEndpoint / EgressEndpoint — Application Interfaces [C29]
       Erga — meaningful Ergon collections, assembly, observation and libraries [C24]
       DigitalTwin — Ponos-specialised entity-coordination execution component [C19]
-      Behaviour — Ergon-specialised DigitalTwin activity component [C25]
+      Behaviour [1..*] — Ergon-specialised DigitalTwin activity component [C25]
+        Each realised through Praxis / Pathway / exactly one Ergo
       Dokimasia — Ponos-specialised independent assurance execution component [C20]
       Dokimasia Ergon — Ergon-specialised bounded assurance activity [C26]
       AI Assurance Ergon — candidate Dokimasia Ergon specialisation [C27]
     Application ownership: Praxis — expected/permitted operational envelope [C06]
+      Defines Pathway fulfilment / Context requirements / segment criteria / continuation semantics
+      R1.x/R2.x Context concrete; R3.x dynamic Context / dynamically configured generic Ergo deferred
       Praxis.Horos / IngressHoros / EgressHoros — logical boundary [C46]
       Aggregation: Pathway [0..1]; Journey cardinalities unresolved
-    Application ownership: Journey — governed observed progression [C35]
+    Application ownership: Journey — meaningful observed Praxis progression [C35]
+      Continuation lineage is an observable thread, not complete Pragma provenance
   Petasos — durable message/event queue management [C10]
     Creation / operation / operational status of purpose-defined queues
     Common queue datatype: PetasosParcel — passed by value
@@ -132,7 +137,8 @@ Harmonia Information System — candidate software solution
       Application Services API: Agora requests operations and receives managed-Room activity
       Derived from Matrix Synapse; provenance, not architectural identity
     Harmonia.Omilia.Client — collaboration user experience; derived from Element [C48]
-      Matrix protocol to Server; Iris integration deferred
+      Matrix protocol to Server; human-experience integration deferred
+      No direct Iris-to-Agora/Omilia interaction
 ```
 
 **Identity.Authentication is external SEP**, integrated through OIDC/OAuth; it
@@ -148,6 +154,9 @@ responsibilities; their Specialisation/Realisation contracts are shown below.
 Praxis/Journey application management is direct Energeia responsibility.
 Ponos does not contain Ergo, Ergon, DigitalTwin or Dokimasia. Hestia grouping
 is described in [L09/L10/L23](sources.md#l09), not inferred from Maven parents.
+Energeia C39 and Ponos C04 are peer application components. The indented
+Association view does not place Ponos inside Energeia or Praxis; Praxis provides
+the semantic/operational execution envelope. [U19](sources.md#u19).
 Clinical / C&G / O&A persistence responsibility domains follow U06; they
 establish no database or service topology. L09/L10's two-slice account is historical. Iris's presentation/mediation distinction
 is documented in [L11/L23](sources.md#l11). Agora and Omilia responsibilities follow
@@ -242,12 +251,29 @@ relationship meanings are:
 | **Aggregation / collection / assembly** | Erga collates Ergon into executable assemblies/hubs, manages/observes concurrent activity instances and supports coherent libraries/change management; not merely an informal plural. |
 | **Execution** | Ponos executes/manages Ergon. DigitalTwin executes specialised Behaviour; Dokimasia executes its assurance Ergon, including explicit AI activity where selected. Execution does not confer information management. |
 | **Management** | Mneme / Pragma Management manages Pragma and its specialised representations; Mnemosyne establishes durable state. PragmaFactory creates/initialises representations associated with the archetype meta-concept. |
-| **Collaboration** | Tightly coupled Ponos and Ergo/Ergon responsibilities collaborate with Mneme, Petasos, Themis and platform evidence/reporting contracts; they are peers within Energeia. |
+| **Collaboration** | Energeia and Ponos are peer application components; Ponos and Ergo/Ergon collaborate with Mneme, Petasos, Themis and platform evidence/reporting contracts. Praxis is an execution envelope, not structural containment. |
 
-DigitalTwin owns the per-Twin queue pattern as a specialised responsibility;
-only Twins with pending work become active and are serviced by bounded execution
-resources. Many Twins do not require a thread per Twin. Behaviour and specialised
-Pragma retain common process-management, assurance, reporting and integration
+DigitalTwin owns its single Stimulus/Effector input-queue pattern as a specialised
+responsibility. **At most one input is processed at a time**, through sequential
+execution of interested Behaviours subject to failure disposition, each receiving
+its own BehaviourStimulus/BehaviourEffector and fresh Context after the preceding
+Behaviour's completion/save on the normal path.
+R1.x/R2.x developer configuration supplies sequencing policy through the framework
+API; absent that policy, order is unspecified. The applicable sequence remains
+stable throughout the current input; configuration changes apply to subsequent
+inputs. `ContinueBehaviourOnFailure` contains failure to the current execution,
+leaving the Behaviour active and other interested Behaviours and queue processing
+unaffected. `StopBehaviourOnFailure` stops the failing Behaviour immediately,
+allows remaining interested Behaviours to complete the current input, then halts
+the Twin. `StopDigitalTwinOnFailure` terminates the failing Behaviour and halts
+the Twin immediately; no remaining Behaviour processes the current input and no
+subsequent queued input is processed. Stopped Twins retain queued inputs pending
+governed administrative resume; stopped-Behaviour recovery remains deferred.
+Bounded execution resources service runnable
+pending work; concurrency is across independent Twins, without a thread per Twin.
+[U19](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md).
+Behaviour and specialised Pragma retain common process-management, assurance,
+reporting and integration
 instead of introducing DigitalTwin equivalents. Dokimasia follows the same
 reuse rule subject to its [two terminal constraints](component-register.md#dokimasia-terminal-boundaries).
 AI component existence/responsibility is established; detailed architecture is
@@ -262,14 +288,24 @@ These navigation entries are deliberately separate from the structural tree:
 | Application Interfaces | PathwayEndpoint C29: each Ergon exposes IngressEndpoint and EgressEndpoint. |
 | Behavioural/flow abstraction | PathwayElement C30 specialises as inter-component PathwaySegment C31 and encapsulated intra-component PathwayTraversal C32. |
 | Logical Praxis boundary | Praxis.Horos C46, specialised as IngressHoros/EgressHoros; external interaction through Terma/Diadromí does not create a technical Praxis endpoint. |
-| Routing/control | Route C33 = ordered PathwaySegment [1..N]; Pathway C34 controls endpoint interaction with available Route(s). Praxis aggregates Pathway [0..1] within its operational/assurance envelope. |
-| Observation / Application Data Object | Journey C35 represents governed observed progression across Pathway, Pub/Sub and mixed execution; Energeia owns Journey Management Services; detailed construction/reference contracts unresolved. |
+| Routing/control | Pathway C34 defines the conceptual Ergo sequence through endpoint interaction and available Route(s); Route C33 = ordered PathwaySegment [1..N]. Praxis defines fulfilment, Context requirements and continuation semantics, aggregating Pathway [0..1]; the execution framework performs processing/routing. |
+| Observation / Application Data Object | Journey C35 represents meaningful observed Praxis progression across Pathway, Pub/Sub and mixed execution. Continuation lineage supports Pathway observation without representing complete Pragma provenance. Energeia owns Journey Management Services; detailed construction/reference contracts unresolved. |
 | Aggregated logical responsibilities / definition objects | Publishing C36, Subscription C37 and Pattern C38 under Mneme Pragma Management; their names do not imply separate deployable components. |
 
 The [shared semantic diagrams](pathways-journeys-and-handoff.md) distinguish
 defined control, dynamic information selection, handoff, execution and common
 Journey observation/assurance. A graph-shaped Journey does not create a Pathway
 or redefine Route. No final Journey-to-PathwayElement schema is established.
+
+[U18 output/continuation semantics](pathways-journeys-and-handoff.md#pathway-continuation)
+distinguish independent output-derived Pragma from the Pragma role used to
+continue the current Praxis along its Pathway. Other outputs may enter governed
+Pub/Sub, another Praxis, other processing or no further processing. This adds
+no Pragma subtype or component; construction/designation/representation remains
+deferred. Praxis defines the semantics without orchestration/choreography;
+Ponos/Ergo executes, Mneme manages Context/Pragma and semantic selection, and
+Petasos owns applicable durable physical handoff. Mneme may manage richer
+relationships/provenance than the originating Journey.
 
 The [Context lifecycle and management view](context-and-persistence-management.md)
 records Mneme's four services, Loader/Unloader boundary and new Content as Pragma
@@ -310,7 +346,8 @@ flowchart LR
     Twin -->|executes| Behaviour["Behaviour: specialised Ergon"]
     Behaviour -->|uses / produces through governed management| Pragma
     Energeia["Energeia: Harmonia operational management"] -->|Praxis Management Services| Praxis["Praxis: expected / permitted operational envelope"]
-    Praxis -->|Aggregation: 0..1| Pathway["Pathway: controlled interaction / Routes"]
+    Praxis -->|Aggregation: 0..1| Pathway["Pathway: conceptual Ergo sequence / Routes"]
+    Praxis -->|Context definitions / continuation semantics; no orchestration| Ponos
     Energeia -->|Journey Management Services| Journey["Journey: governed observed progression"]
     Praxis -.->|Aggregation: cardinality unresolved| Journey
     Ponos -->|executes / manages| Ergon["Ergon: conforms to Ergo"]
@@ -385,7 +422,7 @@ flowchart LR
 | Context bucket composes loaded values | U10: **Composition**, not Aggregation; constituent values have authoritative state/version bases distinct from Context version. No universal distributed transaction snapshot. |
 | Ponos executes Ergon conforming to Ergo; Erga aggregates; Energeia owns Praxis/Journey | U02/U06. Execution, contract reuse, Aggregation and application management are distinct; detailed Praxis-to-activity relationships remain unresolved. |
 | Mneme Pragma Management aggregates PragmaFactory and manages Pragma | U01/U02. Factory creates/initialises candidate representations associated with the meta-concept, not an instantiated archetype Information Asset. Detailed contracts/persistence remain unknown; no automatic Praxis equivalence. |
-| DigitalTwin specialises Ponos and uses governed entity information | U02 and A02 Seams 2–3. Per-Twin queues are specialised responsibility; bounded resources service pending work. Detailed control/state contract remains unknown. |
+| DigitalTwin specialises Ponos and uses governed entity information | U02/U19 and A02 Seams 2–3. Single input queue, sequential Behaviour-specific processing with fresh Context, developer sequencing stable for each input and three escalating failure dispositions are established. Stopped Twins retain pending work for authorised administrative recovery. Detailed runtime/state/API and stopped-Behaviour recovery contracts remain CDG-07/54. |
 | Dokimasia specialises Ponos and executes assurance Ergon | U02 preserves A04 independence; reuse does not give the assured activity control of assurance determination. AI activity boundary is established; detailed architecture CDG-35 remains open. |
 | Components use Themis PEP and Kleio Audit Capture | U07/U08, A01 AX-07–09. Themis-owned local PEP uses Identity-specific Criteria; valid sufficient context may support in-flight activity during PDP loss, while required new context must wait. Kleio constructs immutable AuditEvents from client occurrences, independent of Journey. U15 distinguishes Kleio-specific intrinsic platform capture authority under security policy from the originating Identity recorded as evidence; insufficient capture authority fails closed. Dokimasia terminal rules remain. Detailed contracts CDG-42/43. |
 | Ingress / execution / publication and event sharing use Petasos | U05/U09: purpose-defined durable queues carry PetasosParcel by value; associated information predominantly by reference. ActionableTask/Pragma remains through Mneme and each undertaking has its own FulfillmentTask. Queue status belongs to Petasos; Energeia observes/reports. Acceptance, commit, completion and external ACK remain distinct. |

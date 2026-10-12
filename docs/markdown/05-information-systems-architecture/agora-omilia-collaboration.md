@@ -65,6 +65,17 @@ Workflow/execution collaboration continues through Petasos with **no direct
 Agora-to-Ponos dependency**. Matrix DTO encapsulation, Themis default-deny
 governance and zero-PHI Room aliases/names/topics remain repository constraints.
 Membership or receipt of a notification does not confer information-access rights.
+
+[U19](sources.md#u19) establishes the administrative interaction boundary:
+Administrator → Omilia → Agora → Administrative Function → specialised
+Administrative Ergon → governed subsystem operation. Stopped-Twin resumption
+uses this pattern, with normal authorisation, Context, execution and Kleio audit
+controls; Agora and Omilia do not directly resume or manipulate the Twin.
+The arrows describe semantic progression and retain Petasos execution handoff
+and Agora's no-direct-Ponos-dependency rule. Iris provides a separate path through
+Iris-BackEnd and does **not** directly interact with Agora or Omilia. Broader
+Administrative Function reconciliation is [deferred](gaps.md#administrative-function-finding).
+
 Identity mapping/provisioning is collaboration integration, not authentication
 authority. Existing isolation constraints are not relaxed; detailed security,
 privacy and external/federated interactions remain deferred.
@@ -226,8 +237,9 @@ established above:
   Pragma specialisations and rules defining meaningful interactions.
 - Free-text interpretation, including any NLP/AI or interaction-recognition design.
 - Audit-event catalogue, detailed logging and security/privacy mechanics.
-- Omilia.Server/Client modifications, Omilia.Client/Iris integration and detailed
-  external/federated Matrix interaction.
+- Omilia.Server/Client modifications, human-experience integration and detailed
+  external/federated Matrix interaction. This does not defer or permit direct
+  Iris-to-Agora/Omilia interaction; that boundary is established by U19.
 - Notification/escalation mechanics and optional Statistics/Tasks/Diagnostics
   projections/providers; no fixed four-room hierarchy is established.
 

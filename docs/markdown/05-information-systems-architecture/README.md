@@ -60,7 +60,15 @@ the retained Terma/Strategy, Calliope realisation and Kleio capture-authority
 conflicts. The [Agora / Omilia reconciliation](#agora-omilia-adjudication) now
 establishes collaboration control, operations, ownership and capture boundaries.
 The [Sylloge adjudication](#sylloge-adjudication) closes the remaining F31/D15
-Binary Content Management responsibility question. **Step B has NOT started**.
+Binary Content Management responsibility question. [U18 output/continuation
+reconciliation](#pragma-continuation-adjudication) records the subsequently
+adjudicated Pragma-role and Journey distinction and an explicit taxonomy wording
+conflict. It does not reassess A4 readiness or change acceptance standing.
+The [U19 Digital Twin Behaviour reconciliation](#digital-twin-behaviour-adjudication)
+captures the agreed A4.7 execution decisions and closes that taxonomy wording
+conflict. It prepares documentation for Mark/ChatGPT review; **A4.7 is not declared
+PASS** and A4 acceptance remains pending.
+**Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -78,6 +86,8 @@ record does not declare the Domain Completion Gate satisfied.
 | [Context and persistence management](context-and-persistence-management.md) | Mneme services, value-based Context lifecycle, Pragma Output, exceptional harmonisation, Mnemosyne oversight, Search and Research Metadata. |
 | [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; Clinical / C&G / O&A responsibility domains and retained historical structure variants. |
 | [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated Praxis/Journey ownership, control, selection, handoff, observation and assurance meanings; retained detailed uncertainty. |
+| [Pragma outputs and Pathway continuation DesignNote](design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md) | U18 adjudication, conceptual branching example, continuation as a role, Journey/provenance distinction and release/representation deferrals. |
+| [Digital Twin Behaviour and execution semantics DesignNote](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md) | U19/A4.7 agreed one-Ergo Behaviour Praxis, entity-relative inputs/outputs, single-input serialisation, fresh per-Behaviour Context, developer sequence policy, failure dispositions and governed administrative resume; detailed deferrals. |
 | [Calliope Models and DataSets](calliope-models-and-datasets.md) | Distinct build-time definitions and runtime governed content, developer support, security/assurance nomenclature and Themis reconciliation. |
 | [Pylai external interoperability and Praxis.Horos](pylai-external-interoperability.md) | Terma, transient non-recoverable Diadromí, Controller, Pathway/Broker/Server patterns, ingress acceptance and egress handover ordering. |
 | [Agora / Omilia collaboration](agora-omilia-collaboration.md) | Collaboration control versus operations, native record versus conduit, roster SEP, managed-Room capture, audit and media boundaries; deliberate deferrals. |
@@ -186,10 +196,12 @@ it does not accept the whole Candidate Architecture or finalise detailed design.
   bounded activity behaviour; durable establishment remains with Mnemosyne.
 - **DigitalTwin** is a Ponos-specialised execution component for entity-specific
   operational coordination, including the per-Twin queue pattern. Many Twins
-  are supported; only Twins with pending work become active and are serviced by
-  bounded execution resources. No thread per Twin is required. **Behaviour**
+  are supported; bounded resources service runnable pending work, while stopped
+  Twins retain queued inputs pending authorised resume (U19). No thread per Twin
+  is required. **Behaviour**
   specialises Ergon. **Stimulus** and **Effector** are candidate Pragma
-  specialisations, with detailed information semantics unresolved.
+  specialisations. [U19](#digital-twin-behaviour-adjudication) subsequently establishes
+  Behaviour-specific IU and execution semantics; detailed schemas remain unresolved.
 - **Dokimasia** is a Ponos-specialised execution component for independent
   governed assurance activity. **Dokimasia Ergon** specialises Ergon for bounded
   assurance activity; **AI Assurance Ergon** is a discrete candidate specialisation
@@ -741,3 +753,83 @@ itself prevents a sufficiently faithful candidate from being reviewed at A4.
 This assessment establishes readiness for architectural review, not A4 acceptance,
 whole-Domain05 completion, upstream coverage, MVP or implementation readiness.
 Stop here and return the Candidate Architecture to Mark + ChatGPT for A4 review.
+
+<a id="pragma-continuation-adjudication"></a>
+
+## Pragma outputs, Pathway continuation and Journey reconciliation
+
+**U18 — 2026-10-12:** the [DesignNote](design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md)
+records the explicit adjudication; the [shared semantic view](pathways-journeys-and-handoff.md#pathway-continuation)
+and [Context/Pragma view](context-and-persistence-management.md#pragma-output)
+incorporate its meaning. Pathway defines the conceptual Ergo sequence; Praxis
+defines fulfilment, manages applicable Context definitions and defines segment
+criteria/outcomes and continuation semantics. The execution framework performs
+output processing/routing; Praxis neither orchestrates nor choreographs.
+
+Ergon outputs may yield multiple Pragma. The **Pathway-continuation role**
+identifies information for continuing the current Praxis; other resulting Pragma
+remain independently available for governed use or no further processing.
+Continuation lineage supports meaningful Journey progression; **Journey lineage
+is not complete Pragma provenance**. Energeia management, Ponos/Ergo execution,
+Mneme Context/Pragma and semantic Pub/Sub, Petasos handoff and Mnemosyne/Kleio
+boundaries remain intact. Pub/Sub-only Journeys remain valid.
+
+Context requirements remain concrete in R1.x/R2.x. R3.x dynamic Context and
+dynamically configured reusable/generic Ergo remain deferred, without a designed
+mechanism or current AI-driven selection/configuration. [CDG-53](gaps.md#continuation-representation)
+retains construction/designation/representation; no Pragma subtype is introduced.
+[U18 source reconciliation](sources.md#u18) reported the AGENTS.md §2
+“Workflow orchestration (Praxis)” wording conflict; U19 below now closes it. This bounded
+correction neither accepts A4 nor advances Step B or implementation.
+
+<a id="digital-twin-behaviour-adjudication"></a>
+
+## Digital Twin Behaviour and execution semantics — A4.7 reconciliation
+
+**U19 — 2026-10-12:** the
+[DesignNote](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md)
+captures the agreed A4.7 decisions. Digital Twin → Behaviour [1..*] → Praxis →
+Pathway → **Ergo [exactly 1]** retains genuine Praxis Context, criteria/outcomes,
+fulfilment and housekeeping. Praxis is neither orchestrator nor choreographer;
+the explicitly authorised AGENTS §2 correction now says Pathway fulfilment
+management. Energeia and Ponos remain peer application components, with Praxis
+as semantic/operational envelope rather than structural containment.
+
+One Twin queue contains Stimulus and Effector. Interest matching creates
+**BehaviourStimulus / BehaviourEffector per interested Behaviour**, analogous
+in meaning to Ergon interest/FulfillmentTask without establishing type inheritance
+or a shared implementation. Interested Behaviours process each input
+**sequentially**, subject to the failure dispositions below, each loading fresh
+Praxis-defined Context after its predecessor completes/saves on the normal path.
+Interest fan-out differs from same-Ergon-type instance
+ExecutionConcurrency. Concurrency is across independent Twins.
+
+R1.x/R2.x developer configuration supplies sequencing policy through the framework
+API; absent it, order is unspecified. The applicable Behaviour sequence remains
+stable throughout the current input; configuration changes apply to subsequently
+processed inputs. Outputs enter normal governed processing, resolving Twin-relative
+references only where required; same-Twin inputs requeue without interruption.
+`ContinueBehaviourOnFailure` contains failure to the current Behaviour execution;
+the Behaviour remains active, other interested Behaviours continue normally and
+normal queue processing continues. `StopBehaviourOnFailure` stops the failing
+Behaviour immediately, permits remaining interested Behaviours to complete the
+current input, then halts the Twin. `StopDigitalTwinOnFailure` terminates the
+failing Behaviour and halts the Twin immediately; no remaining Behaviour processes
+the current input and no subsequent queued input is processed.
+A stopped Twin retains its queue pending authorised human-initiated Administrative
+Function → specialised Administrative Ergon → governed Twin resume. Iris/Iris-BackEnd
+and Omilia/Agora convey intent through separate paths; neither directly resumes
+the Twin and Iris has no direct Agora/Omilia interaction.
+
+Affected system, component, feature, data, Context, Pathway/handoff, middleware and
+collaboration views are reconciled. [U19 provenance](sources.md#u19) records the
+review and corrected contradictions. [CDG-54](gaps.md#digital-twin-execution-contracts)
+retains detailed runtime/IU/API/reference-resolution and future sequencing/failure
+questions, including uncertain-save handling and recovery of a stopped Behaviour.
+[CDG-55](gaps.md#administrative-function-finding) flags broader administration
+reconciliation without designing a catalogue or recovery console.
+
+**Documentation readiness: ready for Mark/ChatGPT A4.7 architectural adjudication.**
+This recommendation is limited to capture/reconciliation of the supplied decisions;
+it declares **no A4.7 PASS**, candidate acceptance, Step-B commencement or
+implementation readiness. Existing detailed deferrals remain explicit.

@@ -15,7 +15,7 @@ or establishing missing architectural meaning appears to require human
 adjudication; “Possibly” separates further documentary recovery from a decision.
 It is not a request to adjudicate during reconstruction.
 
-The [U02–U17 Step-A adjudications](sources.md#u02) resolve/reclassify
+The [U02–U17 Step-A adjudications](sources.md#u02) and [U18](sources.md#u18) resolve/reclassify
 the affected entries below. Settled component boundaries and management/reuse
 relationships are separated from remaining detailed design. The primary note's
 earlier access issue was an input-access dependency, not an architectural gap.
@@ -28,7 +28,7 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-04 — partially resolved / factory contract** | Pragma Management / PragmaFactory; C28/C08/F34 | U01/U02 establish archetype-associated logical embodiment, Mneme Pragma Management allocation and creation/initialisation of appropriate Pragma representations. The archetype meta-concept is not itself an instantiated Information Asset | **Placement and basic responsibility resolved for the candidate.** Detailed parameters, selection/validation/policy contracts, definition Data Objects, callers and persistence remain unknown. No seeder/Praxis equivalence inferred | **Yes** for remaining detailed contracts; **no** re-adjudication of settled placement required. |
 | **CDG-05 — partially resolved / behavioural contract contradiction** | Distinct Ergo/Ergon/Erga; converter/branch allocation; C01/C05/C23/C24/F02/07–10 | U02 separates conceptual activity contract, bounded component and meaningful collections. L03/L15/L18/L19 retain competing purity, atomicity, idempotence, state-changing and branch descriptions | **Construct distinction and common-platform reuse resolved for the candidate.** Scope of atomicity/side effects/idempotence, branch ownership and converter-support versus executed behaviour remain incomplete. No Ergon Information Resource is created | **Yes** for remaining behavioural/composition contracts; framework/class details cannot settle them. |
 | **CDG-06 — partially resolved / definition lifecycle and control contracts** | Praxis, Pathway/Route, Publishing/Subscription/Pattern; D06/20/22–24 | U06 allocates Praxis Management Services to Energeia and semantic persistence to C&G; Mneme retains governed information management and Pub/Sub semantic definitions. | **Ownership and persistence domain direction resolved.** Detailed lifecycle/activation/version binding, reconstruction, control and in-flight effects of reload remain unresolved. Historical Ponos/Praxis topic matching is not semantic selection authority. | **Yes/Possibly** for detailed contracts; no topology, consistency or reload algorithm selected. |
-| **CDG-07 — partially resolved / coordination detail** | DigitalTwin / Behaviour / specialised Pragma; C19/C25/F32/D17–18/M11 | U02 establishes Ponos-specialised DigitalTwin, Ergon-specialised Behaviour, per-Twin queue responsibility and candidate Stimulus/Effector Pragma specialisations, preserving A02 entity boundary | **Component/reuse boundary resolved for the candidate.** Only Twins with pending work become active under bounded resources; no thread per Twin. Detailed scheduling/activation/deactivation, continuing responsibility, state/persistence and Stimulus/Effector schemas/lifecycles remain unspecified | **Yes** for detail; settled specialisation and entity boundary are not reopened. |
+| **CDG-07 — execution semantics established / detailed coordination contracts** | DigitalTwin / Behaviour / specialised Pragma; C19/C25/F32/D17–18/M11 | U02 establishes specialisation/reuse; U19 establishes one-Ergo Behaviour Praxis, Twin-relative inputs, single queue, serial Behaviour processing, fresh Context, developer sequencing API with stable per-input sequence, open outputs and three escalating failure dispositions/admin resume | Detailed scheduling/activation/deactivation, continuing responsibility, state/persistence, IU schemas/identity/lifecycle, registration/API, uncertain-save handling and stopped-Behaviour recovery remain [CDG-54](#digital-twin-execution-contracts). No thread per Twin or intra-Twin concurrency. | **Later bounded design/adjudication** for detail; agreed execution semantics and A02 entity boundary are not reopened. |
 | **CDG-08 — partially resolved / independence and assurance consumption** | Dokimasia/Praxis/Journey; C20/C26/C35/F33/38 | U02 settles reuse/terminal rules; U06 establishes Praxis assurance basis and Journey observed evidence subject, preserving A04 independence. | **Execution/activity boundaries, terminal rules and basis/subject roles resolved.** Independent control/evidence access, detailed consumption and assurance workflow contracts remain open. Journey cannot become inferred fact; detailed Praxis CDG-01. | **Yes** for remaining contracts; no recursive assurance or parallel platform inferred. |
 | **CDG-09 — partially resolved / assurance information and evidence contracts** | Dokimasia Pragma and Journey interpretation; D12/17/19/21 | U02 establishes candidate assurance Pragma roles and terminal evidence constraint. U04 separates governed Journey observations, reasoned interpretation and findings/results. | **Assurance roles and observation/interpretation distinction resolved.** Names, schemas, lifecycles, representation/preservation and detailed evidence access remain unresolved; Journey does not manufacture an assurance Information Family or TaskOutcome identity. CDG-35/38 retain AI/evidence detail. | **Yes** for remaining contracts, preserving upstream deferrals. |
 | **CDG-10 — contradiction / persistence** | Mneme cache/write-behind as “durability”; C09/C12/F17/D05 | L09/L10/L01/L16/L19 treat cache checkpointing/replication as durability or completion before async persistence. A01 AX-05 and L13 ADR-018 reject that acceptance authority. | Source-described recovery/continuation features lack a conforming durable boundary. The controlling state responsibility is settled; the candidate cache/write-behind story remains historically inconsistent. | **Possibly** for remaining solution contracts; **no** adjudication needed to decide whether cache is durable authority. |
@@ -58,8 +58,8 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-34 — partially resolved / acceptance and transient/durable transition** | Pylai Diadromí → ingress Ergo → Petasos.Queue[TermaName] | U14 requires authoritative Pragma/Task persistence before durable Harmonia acceptance; intermediate protocol ACK may precede it. Queue is Praxis.PathwaySegment; Petasos owns durable Parcel handoff/recovery, Diadromí is non-recoverable. | **Acceptance condition, lifecycle ordering and ownership distinction resolved.** Exact protocol acknowledgement, persistence/queue coordination, partial/uncertain effects and safe retry contracts remain CDG-50/16/19. REC-001 remains a minimum failure guard, not sufficient proof from cache/queue success. | **Yes** for detailed transition/effect contracts; no transaction/duplicate/retry algorithm selected. |
 | **CDG-35 — established component / detailed architecture discovery** | AI Assurance Ergon; C27/F35/D17/19/M12 | U02 §§9/12 establishes discrete AI-based Dokimasia activity componentry as a candidate Dokimasia Ergon specialisation | **Component existence and discrete responsibility established; detailed Information Systems architecture unresolved.** Discovery below precedes final implementation modelling. This is not evidence that the boundary is unjustified, an upstream coverage gap or permission to select technology now | **Yes** for detailed architecture after discovery; settled existence/responsibility is preserved. |
 | **CDG-36 — established responsibility / detailed selection contracts** | Publishing/Subscription/Pattern/Topic; C36–38/F37/D07/22–25/M13 | U05 settles asymmetric provider filtering/consumer selection, multi-level Topic metadata and Mneme semantic management. | Definition lifecycles/registration/discovery, supported metadata, language/operators/precedence, evaluation/error/security/disclosure and durable representation remain unresolved. Technology/index/algorithm/loop controls are not selected. | **Yes** for missing detailed architectural contracts where needed; implementation guardrails do not automatically become upstream gaps. |
-| **CDG-37 — partially resolved / Pub/Sub fan-out** | Common Pragma, multiple Petasos obligations, consumer FulfillmentTasks; D05/11/F37 | U05 §§11–13/21 establishes common managed Pragma/payload and potential multiple reference handoffs; each consumer undertaking ActionableTask establishes a distinct FulfillmentTask. | **Principle partly settled; reference/copy/version and morph mechanics, Pragma identity, targetDestination, processing/concurrency/isolation, lineage, Journey correlation and assurance remain unresolved.** No copy-per-subscriber or shared mutable state inferred. | **Yes** for remaining identity/lifecycle contracts; established undertaking principle preserved. |
-| **CDG-38 — partially resolved / detailed Journey contracts** | Journey; C35/C39/D21/F38/M15 | U06 resolves Energeia ownership/Journey Management Services and Mnemosyne O&A responsibility; U04/U05 observation and graph possibility retained. | Detailed representation/construction, aggregation/reference schema, PathwayElement relationships, evidence/causal/correlation/reconstruction algorithms, inference distinction, lifecycle/retention and consumption remain unresolved. Ownership transfers no referenced-information authority; Journey is not a shard key. | **Yes** for detailed contracts; settled ownership/basis-subject distinction preserved. |
+| **CDG-37 — partially resolved / Pub/Sub fan-out** | Common Pragma, multiple Petasos obligations, consumer FulfillmentTasks; D05/11/F37 | U05 establishes common managed Pragma/payload and distinct consumer undertakings. U19 distinguishes interest fan-out across Ergon types from same-type instance execution concurrency; Twin interest fan-out remains serial within each Twin. | Reference/copy/version and morph mechanics, Pragma identity, targetDestination, mutable-state isolation, lineage, Journey correlation and assurance remain unresolved. No copy-per-subscriber or shared mutable state inferred. | **Yes** for remaining contracts; established undertaking, concurrency and Twin serialisation principles preserved. |
+| **CDG-38 — partially resolved / detailed Journey contracts** | Journey; C35/C39/D21/F38/M15 | U06 resolves Energeia ownership/Journey Management Services and Mnemosyne O&A responsibility; U04/U05 observation and graph possibility retained. U18 establishes continuation lineage as an observable thread, distinct from complete Pragma provenance. | Detailed representation/construction, aggregation/reference schema, PathwayElement relationships, evidence/causal/correlation/reconstruction algorithms, inference distinction, lifecycle/retention and consumption remain unresolved. Ownership transfers no referenced-information authority; Journey is not a shard key or full provenance graph. | **Yes** for detailed contracts; settled ownership/basis-subject and progression/provenance distinctions preserved. |
 | **CDG-39 — established responsibility / detailed Energeia decomposition** | Energeia C39, Praxis/Journey Management Services, operational observation/reporting; F11/38–39 | U06 establishes discrete component and direct application responsibilities. | Feature versus Service versus internal construct versus subordinate Component decomposition, precise observation/reporting contracts and remaining Praxis-to-activity relationships remain unresolved. Possible upstream omission of operational housekeeping demand has not been assessed; no requirement/capability or Business Architecture is derived. | **Yes/Possibly** for detailed reconciliation; possible upstream omission requires later bounded review, not an asserted coverage gap. |
 | **CDG-40 — established persistence direction / downstream physical design** | Mnemosyne Clinical/C&G/O&A; C12/F19/42/M16/18 | U06 domains/scaling guardrails retained; U11 establishes Mnemosyne shard management within semantic constraints, not independent semantic sharding permission. | Physical topology, shard model/key/routing, replication/consistency mechanisms remain unresolved; U07 independent audit targets imply no general O&A topology and cross-target harmonisation is SEP. No multi-shard requirement; Journey locality an objective. | **Later design**, without choosing technology/keys or reopening established semantic domains. |
 | **CDG-41 — deliberately deferred R3 direction** | Adaptive Load and Resilience Service; F40/C39 | U06 records future Observe → Analyse → Decide → Adapt direction, with feedback. | R3 policy/control architecture, adaptation/load/resilience algorithms/mechanisms, infrastructure integration and AI decision model deliberately deferred. R1.x/R2.x remains Observe → Report. | **Future bounded R3 work**, not an R1.x/R2.x gap or current design obligation. |
@@ -74,6 +74,9 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-50 — Pylai/Horos detailed contracts** | Terma / Diadromí / Controller / three interaction patterns / Horos | U14 settles responsibilities, non-recoverability, ingress persistence condition and egress return before unloading. | Schema, token, API, protocol/ACK, runtime handover and representation detail remain deliberately deferred; broader Controller use is not a requirement. | **Yes/Possibly** for remaining architecture versus implementation detail; settled patterns not reopened. |
 | **CDG-51 — Strategy/Terma communication-mechanics conflict — CLOSED** | Strategy G4 / Pylai profile / Terma | U15 reconciles Strategy: Terma owns the external communication stack; applicable Harmonia execution owns application meaning, subject to explicitly defined interaction patterns. | Active-interaction communication retry only; loss/termination permits no resumption, later client retry creates new interaction/Diadromí. Petasos and execution retain durable recovery. Detail CDG-50. | **CLOSED by U15, 2026-10-12.** |
 | **CDG-52 — established Agora/Omilia architecture / deliberate detailed deferrals** | Agora C18; Omilia.Server C47 / Omilia.Client C48; F22–24/46/D14/M08 | U16 settles control/operations, roster SEP, native ownership/conduit behaviour, bidirectional managed Rooms, capture/derivation and Kleio audit boundary. | Taxonomy/lifecycle, membership derivation, API, persistence/media mechanics/retention, interaction/Pragma/Communication representations, interpretation, audit catalogue, security/privacy, modifications and Client/Iris integration remain explicit [deferrals](#agora-omilia-contracts). | **Non-blocking design/discovery**; U17 separately closes CDG-25's formal Binary Content Management responsibility without assigning it to Agora/Omilia. |
+| **CDG-53 — continuation role established / representation deferred** | Output-derived Pragma; Praxis continuation semantics; C06/07/23/D28 | U18 establishes independent outputs versus Pathway-continuation as a Pragma role; Praxis defines semantics and the execution framework processes/routes. | Whether to construct a new Pragma, designate a resulting output Pragma or use another governed representation is explicitly deferred. [Detail](#continuation-representation). | **Later bounded modelling**; no new subtype or physical mechanism is selected. |
+| **CDG-54 — Digital Twin detailed execution contracts / deliberate deferrals** | C19/C25/F32/D18/M11; U19 | Single-input serialisation, per-Behaviour IUs/fresh Context, developer sequencing stable for each input, open outputs, three escalating failure dispositions and authorised resume established. | Runtime/threading, IU/API/registration and reference-resolution mechanisms, sequence-update implementation, uncertain-save handling and stopped-Behaviour recovery remain [open](#digital-twin-execution-contracts); richer sequencing, AI and future dispositions deferred. | **Later bounded design/adjudication**; no A4.7 PASS inferred. |
+| **CDG-55 — broader Administrative Function finding / reconciliation follow-up** | Administrative Functions and specialised Administrative Ergon; Iris/Iris-BackEnd, Omilia/Agora | U19 establishes administration as governed execution, with authorised Twin resume as the bounded example. | Detailed catalogue and broader operational/processing/configuration/governance reconciliation remain [future work](#administrative-function-finding). No presentation/backend/collaboration backdoor. | **Subsequent Domain05 reconciliation**, not a complete administration architecture in this task. |
 
 <a id="dokimasia-ai-discovery"></a>
 
@@ -124,7 +127,7 @@ assessment's Q01–Q05 may overlap these evidence-backed issues, but supplies
 neither authority nor a work sequence.
 
 Resolution and prioritisation of CDG issues require subsequent bounded work.
-U02–U17 correct only the affected Step-A candidate meanings recorded above.
+U02–U18 correct only the affected Step-A candidate meanings recorded above.
 Praxis's higher-order meaning and Energeia Praxis/Journey ownership are resolved;
 detailed lifecycle/representation and downstream designs remain unresolved.
 This register proposes no implementation plan, dependency schedule or automatic
@@ -177,8 +180,9 @@ component ownership. Deliberately deferred matters are:
   capture provenance and definitions of meaningful interactions.
 - Free-text interpretation, NLP/AI and recognition/UI mechanisms.
 - Detailed logging, audit-event catalogue and security/privacy mechanics.
-- Omilia.Server/Client modifications, Client/Iris integration and detailed
-  external/federated interaction; existing isolation constraints are not relaxed.
+- Omilia.Server/Client modifications, human-experience integration and detailed
+  external/federated interaction. U19 fixes the no-direct-Iris-to-Agora/Omilia
+  boundary; it is not a deferred choice. Existing isolation constraints remain.
 - Notification/escalation details and optional Statistics/Tasks/Diagnostics
   projections/providers, without fixed Room cardinality.
 
@@ -199,6 +203,10 @@ undertakings do not establish copies, shared mutable processing state, reference
 version binding, targetDestination population, lineage/causation or Journey
 reconstruction. Domain04 concurrency, outcome participation/output controls and
 TaskOutcome ownership remain authoritative and unchanged.
+U19 explicitly distinguishes interest fan-out across Ergon types from concurrent
+instances of the same type under ActionableTask.ExecutionConcurrency. Its analogous
+Twin Behaviour fan-out remains sequential within each Twin; those principles are
+settled rather than part of the unresolved mechanisms above.
 
 <a id="journey-contracts"></a>
 
@@ -214,6 +222,12 @@ Contributors retain information ownership; small discrete Journey information
 references substantial activity/evidence without indiscriminate duplication.
 Observed versus inferred relationships remain distinguishable. Efficient Journey
 reconstruction/use is an objective, not a schema or shard-key decision.
+
+U18 establishes that Pathway-continuation Pragma lineage supports meaningful
+Praxis/Pathway progression, not complete Pragma provenance. Independent outputs
+may establish other activity/Praxes/Journeys, while Mneme manages richer governed
+relationships. This resolves the scope distinction without selecting a causal
+model or making Journey an execution log, audit trail or queue history.
 
 
 <a id="persistence-realisation"></a>
@@ -366,11 +380,18 @@ bucket Composition, Context/resource-version distinction, likely non-exhaustive
 expected sets, supported Adhoc acquisition, Loader/Unloader separation and new
 Content as Pragma Output are settled.
 
+U18 additionally settles Praxis management of concrete R1.x/R2.x Context
+definitions and the independent-output/continuation-role distinction. Praxis
+defines continuation semantics; the execution framework performs processing and
+routing. [CDG-53](#continuation-representation) retains the representation choice;
+R3.x dynamic Context and dynamically configured reusable/generic Ergo remain
+deferred direction, without a mechanism or AI-driven selection/configuration.
+
 Physical Context representation/bucket schema, identity/version/serialisation,
 Information Unit Management Context mapping, declaration/resource mapping,
 acquisition/caching/distribution/replication/prefetch/batching, concurrency/locking/
 MVCC/conflict detection, detailed access/search APIs/results, exact Output
-representation and downstream routing remain unresolved under AX-17. C11 historical
+representation and downstream routing mechanisms remain unresolved under AX-17. C11 historical
 supporting contracts are not automatically four-service API definitions or extra
 services. Working Context changes do not confer durable authority.
 
@@ -490,3 +511,85 @@ Termination/loss permits no resumption; later client retry creates both anew.
 Petasos and established execution retain durable messaging/recovery. No application
 interpretation, durable recovery or generic infrastructure ownership is assigned
 to Terma. Detailed protocol and handover deferrals remain CDG-50.
+
+<a id="continuation-representation"></a>
+
+## CDG-53 — Pathway-continuation Pragma representation deferred
+
+[U18](sources.md#u18) and the
+[DesignNote](design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md#4-continuation-is-a-role-representation-is-deferred)
+establish **continuation as a role played by a Pragma**, with independent resulting
+Pragma available for other governed use or no further processing. Detailed
+modelling must determine whether continuation always constructs a new Pragma,
+designates a resulting output Pragma, or uses another governed representation.
+No subtype, new identity, designation field, copy/version rule, persistence
+mechanism or routing algorithm is implied. Detailed Praxis lifecycle, output,
+fan-out and Journey contracts remain CDG-01/06/37/38/45.
+
+U18 reported the AGENTS.md §2 **“Workflow orchestration (Praxis)”** wording
+conflict. **U19 closes that wording conflict** through the explicitly authorised
+Pathway fulfilment management correction; Context, expected criteria and
+housekeeping remain Praxis responsibilities. This does not settle the deferred
+continuation representation or make Praxis an orchestrator/choreographer.
+
+<a id="digital-twin-execution-contracts"></a>
+
+## CDG-54 — Digital Twin execution contracts and deliberate deferrals
+
+[U19](sources.md#u19) and the
+[DesignNote](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md)
+settle the one-Ergo Behaviour Praxis, Twin-relative frame, single input queue,
+Behaviour-specific IUs, sequential input processing, fresh Context,
+developer sequence policy, open outputs and failure/admin-resume semantics.
+`ContinueBehaviourOnFailure` contains failure to the current execution, leaving
+the Behaviour active and other interested Behaviours and queue processing
+unaffected. `StopBehaviourOnFailure` stops the failing Behaviour immediately,
+allows remaining interested Behaviours to complete the current input, then halts
+the Twin. `StopDigitalTwinOnFailure` terminates the failing Behaviour and halts
+the Twin immediately, preventing remaining current-input and subsequent queued
+processing. The applicable Behaviour sequence remains stable throughout an input;
+configuration changes apply to subsequently processed inputs.
+CDG-07 no longer treats those decisions as unspecified scheduling/recovery.
+
+Intentionally deferred: richer R3.x sequencing/priority, dynamic/Criteria-driven
+ordering, AI-assisted selection/configuration, additional future failure
+dispositions, detailed administration/recovery operations beyond authorised
+resume, including whether/how a Behaviour stopped by `StopBehaviourOnFailure` is
+reset, resumed, replaced or otherwise recovered; Twin-relative reference-resolution
+implementation; and runtime/threading for cross-Twin concurrency. No priority
+metadata, dependency graph, Before/After ordering or adaptive machinery is
+introduced in R1.x/R2.x.
+
+Detailed open questions retained under AX-17 concern IU representation/identity/
+lifecycle, interest registration/API contracts and sequence-update implementation
+within the settled stable-current-input guardrail. Handling of Context Save,
+exceptional harmonisation or an authoritative outcome that cannot be established
+normally also remains open. Fresh per-Behaviour loading, normal progression after
+predecessor completion/save and AX-15 uncertainty remain binding; no default
+failure disposition or uncertain-save continuation algorithm is inferred.
+These are detailed contract questions, not an invitation to redesign the agreed
+serialisation model or add failure policies.
+
+<a id="administrative-function-finding"></a>
+
+## CDG-55 — Broader Administrative Function reconciliation
+
+> **Administrative Functions are first-class governed Harmonia functions
+> implemented through specialised Ergon. They are not privileged shortcuts
+> through presentation, collaboration or backend components into the internals
+> of Harmonia subsystems.**
+
+> **Administration is not an exception to the Harmonia execution architecture;
+> it is governed work performed through that architecture.**
+
+U19 captures authorised stopped-Twin resumption through Iris/Iris-BackEnd or
+Omilia/Agora → Administrative Function → Administrative Ergon → governed Twin
+operation. Iris has no direct Agora/Omilia interaction. Normal Themis
+authorisation, Mneme Context management, Ponos execution, Petasos handoff and
+Kleio audit boundaries remain. Queued inputs remain pending; no automatic resume,
+retry/replay/skip or recovery-console semantics is established.
+
+The principle potentially applies beyond Twins to operational, processing,
+configuration and governance administration. A detailed function/Ergon catalogue
+and broader Domain05 reconciliation require a subsequent bounded task; this
+finding does not establish a complete administration architecture.

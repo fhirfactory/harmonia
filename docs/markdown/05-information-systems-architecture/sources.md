@@ -229,6 +229,165 @@ contradictory Strategy/axiom statement was established. The current Domain05
 registers and closure statements are reconciled by U17; required Sylloge knowledge
 does not remain solely in conversation or legacy material.
 
+<a id="u18"></a>
+
+## Pragma outputs and Pathway-continuation adjudication input
+
+**U18 — 2026-10-12:** explicit human architectural decision supplied with this
+task, recorded in the repository-held
+[DesignNote — Pragma Outputs and Pathway Continuation](design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md).
+The note follows the existing DesignNote title, status, numbered-section and
+explicit-deferral conventions; its location makes the decision self-contained
+within RADS rather than dependent on an external working note.
+
+The adjudication distinguishes the conceptual Ergo sequence defined by Pathway
+from Praxis fulfilment semantics: concrete applicable Context definitions,
+segment criteria/outcomes, output-to-next-input continuation and housekeeping.
+Ergon execution outputs may yield multiple Pragma; independent resulting Pragma
+do not implicitly continue the originating Pathway. Continuation is a Pragma
+role, with construction/designation/other governed representation explicitly
+deferred. Praxis defines semantics; the execution framework processes/routes.
+Journey's meaningful observed Praxis/Pathway progression has continuation lineage
+as an important thread, without becoming complete Pragma provenance. Mneme may
+manage richer relationships; independent outputs can establish other activity,
+Pub/Sub, Praxes and Journeys. Established Pub/Sub-only Journey meaning remains.
+R3.x dynamic Context and dynamically configured reusable/generic Ergo remain
+deferred direction; R1.x/R2.x concrete Context and no current AI-driven
+selection/configuration are preserved.
+
+### Reviewed scope and reconciliation
+
+The bounded Domain05 review covered Praxis, Pathway, Journey, Pragma, Ergo/Ergon
+outputs, Pub/Sub and routing/handoff in the system, component, feature, Context/
+persistence, data, middleware and shared semantic views, plus the index, source
+and gap registers. The shared view and Context/Pragma lifecycle now express the
+decision directly; supporting views provide short consistent descriptions.
+Calliope, Agora/Omilia, Sylloge and Pylai views were also reviewed. Their output,
+capture and interaction descriptions do not require every produced Pragma to
+continue the current Pathway, so no incidental changes are made there.
+
+Prior U10 Context wording assigned the likely resource declaration to an Ergo
+without stating Praxis's definition responsibility; U18 makes those complementary
+roles explicit. Prior U04/U06 Journey wording allowed graph-shaped Pathway/Pub/Sub
+observation but did not bound it against complete output provenance; U18 adds
+that boundary while preserving Pathway [0..1] and Pub/Sub-only progression.
+These are reconciled omissions, not a new output subtype or execution mechanism.
+No reviewed Domain05 statement explicitly required every resulting Pragma to
+advance the current Pathway. CDG-45's previously unspecified output routing is
+now bounded by the adjudicated semantics; detailed mechanisms remain open.
+
+### Wording conflict reported at U18; subsequently resolved by U19
+
+Repository [AGENTS.md §2](../../../AGENTS.md#2-system-taxonomy--module-hierarchy)
+previously labelled the Energeia responsibility **“Workflow orchestration
+(Praxis)”**. U18 reported its conflict with the explicit no-orchestration/
+choreography decision without changing governance wording. U19 below explicitly
+authorises and records the AGENTS §2 correction to **Pathway fulfilment management**,
+including Context, expected criteria and housekeeping. The note and Domain05 assign processing/routing to the
+execution framework. The axiom review found no conflict with AX-04/05/07–09/
+12/14–18; semantic, execution, information, handoff and evidence responsibilities
+remain distinct. Existing superseded legacy Praxis engine/blueprint descriptions
+retain their historical standing and are not incorporated anew or rewritten.
+
+The [representation deferral](gaps.md#continuation-representation) and existing
+Praxis, output, fan-out and Journey contracts remain explicit. No new component,
+service, Pragma type, persistence mechanism, technology, R3.x mechanism or
+Domain04 TaskOutcome/output-rule decision is introduced. A4 acceptance, Step B
+and implementation remain outside this task; no fresh readiness assessment is made.
+
+<a id="u19"></a>
+
+## Digital Twin Behaviour and execution semantics — A4.7 input
+
+**U19 — 2026-10-12:** explicit user-supplied agreed A4.7 architectural decisions,
+recorded in the repository-held
+[DesignNote — Digital Twin Behaviour and Execution Semantics](design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md).
+This is the task's architectural authority; earlier implementation, historical
+reports and the linked Pylai working note supply no missing Twin semantics.
+The Pylai note was inspected for neighbouring DesignNote conventions and existing
+boundary meaning, without importing an additional execution mechanism.
+
+The decision establishes Behaviour [1..*], each realised through Praxis →
+Pathway → exactly one Ergo; a singular represented-entity reference frame;
+one Stimulus/Effector queue; per-interest BehaviourStimulus/BehaviourEffector;
+serial input processing subject to failure disposition; fresh Context after each
+predecessor's completion/save on the normal path; developer-owned R1.x/R2.x
+sequencing through the framework API, with the applicable sequence stable for each
+input and configuration changes applying to subsequent inputs; open governed
+outputs with reference resolution only where required; and three escalating
+failure dispositions. `ContinueBehaviourOnFailure` contains failure to the current
+Behaviour execution, leaving the Behaviour active and other interested Behaviours
+and normal queue processing unaffected. `StopBehaviourOnFailure` stops the failing
+Behaviour immediately, lets remaining interested Behaviours complete the current
+input, then halts the Twin. `StopDigitalTwinOnFailure` terminates the failing
+Behaviour and halts the Twin immediately; no remaining Behaviour processes the
+current input and no subsequent queued input is processed.
+Stopped Twins retain pending inputs for authorised Administrative Function/
+Administrative Ergon resume. Administration is governed work, without subsystem
+backdoors. Iris/Iris-BackEnd and Omilia/Agora are separate human-interaction paths.
+
+### Reviewed scope and reconciliation
+
+The review covered every Domain05 Candidate Architecture Markdown file, including
+DigitalTwin, Behaviour, Ponos, Praxis, Pathway, Context, Stimulus/Effector,
+concurrency, failure/recovery, Iris/backend and Agora/Omilia descriptions.
+System, component, feature, data, Context, middleware and shared execution views
+now carry the agreed semantics. The index and gap register link the full note.
+Calliope, Sylloge and Pylai required no unrelated rewrite. The existing Pragma
+DesignNote's unresolved-taxonomy statement and Agora DesignNote's deferred-Iris-
+boundary wording are narrowly reconciled; their other supplied content is retained.
+
+Corrections resolve these inconsistencies or overbroad omissions:
+
+- Generic pending-work activation wording now distinguishes runnable work from
+  stopped-Twin queues that remain pending; generic execution concurrency/retry
+  is explicitly constrained by Twin serialisation and administrative resume.
+- CDG-07 and M11 no longer describe all Twin ordering/recovery semantics as
+  unspecified; only detailed runtime/state/representation contracts remain open.
+- The load-snapshot description is explicitly per Behaviour; no input-wide
+  immutable Context is shared. Later loads follow earlier completion/save.
+- Behaviour's Ergon specialisation now includes its genuine one-Ergo Praxis,
+  without changing general Praxis Aggregation or requiring multi-step complexity.
+- Normal Ergon interest fan-out and same-type instance ExecutionConcurrency are
+  distinguished; semantic analogy establishes no Twin/task type inheritance.
+- Energeia/Ponos Association wording explicitly preserves peer application
+  components and the non-containing Praxis envelope.
+- Iris/backend and Omilia/Agora administrative wording now conveys intent into
+  specialised Ergon execution, with no direct Iris/Agora/Omilia integration or
+  direct Twin resumption. Broad integration deferrals cannot override this boundary.
+- **AGENTS.md §2** is explicitly reconciled to Praxis Pathway fulfilment management,
+  closing the U18 wording conflict. Module/dependency boundaries remain unchanged.
+
+The **final A4.7 corrective reconciliation — 2026-10-12** uses the explicit
+user-supplied final failure dispositions and sequence-stability guardrail. It
+supersedes the earlier two-disposition, subsequent-input-only interpretation and
+unconditional completion by every interested Behaviour. The DesignNote's
+serialisation text, failure table and execution diagram, and the directly affected
+Domain05 summaries and gap records now distinguish immediate Behaviour stop,
+completion of the remaining current-input processing before Twin halt, and
+immediate Twin halt. Sequence stability is settled; its API implementation
+remains deferred. No broader Twin architecture is reopened.
+
+AX-04/05/06/07–12/14–18 consistency is recorded in the note. All pre-existing
+uncommitted edits/DesignNotes are preserved as the starting worktree; no legacy
+content outside RADS is incorporated or rewritten by this task. The AGENTS
+change is an explicitly requested governance correction, not legacy migration.
+
+### Remaining questions, deferrals and review boundary
+
+[CDG-54](gaps.md#digital-twin-execution-contracts) preserves runtime/API/IU/reference
+resolution and sequencing/recovery implementation deferrals, including handling
+of uncertain save/authoritative outcomes. Detailed treatment of a Behaviour
+stopped by `StopBehaviourOnFailure`, including whether/how it is reset, resumed,
+replaced or otherwise recovered, remains deferred to Administrative Function/
+recovery design.
+[CDG-55](gaps.md#administrative-function-finding) flags broader administration
+reconciliation without designing a catalogue or recovery console. No failure
+disposition beyond the final three, AI selection, richer R3.x mechanism or
+runtime/thread model is introduced. Documentation is prepared for
+**Mark/ChatGPT A4.7 adjudication**;
+this records no A4.7 PASS, candidate acceptance, Step-B work or implementation.
+
 ## This Agora/Omilia legacy reconciliation
 
 U16 adds **47 bounded section wrappers in 18 legacy files**. Original prose,

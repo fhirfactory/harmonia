@@ -8,10 +8,30 @@ from documented collaboration intent, principally [L13](sources.md#l13),
 [L29](sources.md#l29), [L01](sources.md#l01), [L14](sources.md#l14) and
 [L19](sources.md#l19). External integration contracts and runtime products remain
 separate architectural concerns.
-The [U02–U16 adjudications](sources.md#u02) distinguish execution/activity/information,
+The [U02–U16 adjudications](sources.md#u02) and [U18](sources.md#u18) distinguish execution/activity/information,
 semantic selection, persistent handoff and Journey observation. Specialisations
 reuse common facilities; the [shared semantic view](pathways-journeys-and-handoff.md)
 records detailed boundaries and retained uncertainty.
+
+Pathway defines the conceptual Ergo sequence; Praxis defines fulfilment,
+applicable concrete R1.x/R2.x Context requirements and continuation semantics.
+Ponos/Ergo applies those semantics in output processing/routing, without assigning
+orchestration/choreography to Praxis. Multiple output-derived Pragma do not all
+continue the current Pathway: the [continuation role](pathways-journeys-and-handoff.md#pathway-continuation)
+is distinct from independent governed outputs. Mneme retains management/semantic
+Pub/Sub and Petasos retains durable physical handoff where applicable. Journey
+observes meaningful progression, not complete Pragma provenance or queue history.
+Continuation representation remains deferred, as do R3.x dynamic Context and
+dynamically configured reusable/generic Ergo mechanisms.
+
+[U19](sources.md#u19) establishes Twin input/Behaviour serialisation and fresh
+Context independently of ordinary interest fan-out or same-Ergon-type execution
+concurrency. Administrative intent through Iris/Iris-BackEnd or Omilia/Agora
+reaches an Administrative Function implemented by specialised Ergon, subject to
+normal Themis, Context, execution and Kleio controls. No channel directly resumes
+a Twin; Iris has no direct Agora/Omilia interaction. These are semantic paths,
+retaining established Petasos handoff and Agora isolation. The broader
+administrative finding remains [CDG-55](gaps.md#administrative-function-finding).
 
 ## Middleware responsibilities
 
@@ -27,7 +47,7 @@ records detailed boundaries and retained uncertainty.
 | M08 | **Agora control / Omilia operations / governed capture** | Omilia.Server exposes Application Services API for Agora operation requests and dialogue/activity from all managed Rooms; Omilia.Client uses Matrix protocol. Agora captures defined interactions; Petasos mediates wider execution collaboration | U16; Agora owns native collaboration, originating owners retain conveyed information, original dialogue ownership survives capture. Roster SEP supplies applicable Shift Start/End only. No direct Ponos dependency/DTO leakage. Dialogue/logs differ from Kleio audit. Partial effects CDG-19; API/storage/representation detail CDG-21–23/52. |
 | M09 | **Harmonia operational observation/reporting and presentation mediation** | Energeia owns Harmonia operational management; Journey is common observed progression; Iris presents; component contributors retain their responsibilities; external IT/Ops manages technical platform | U06: R1.x/R2.x Observe → Report; no autonomous adaptation. Journey, diagnostics, AuditEvent and findings distinct; detailed freshness/projection/reporting contracts CDG-28/38/39; terminal rules retained. |
 | M10 | **Mneme Pragma Management and new Content collaboration** | Factory initialises; Pragma expresses inputs/outputs; Ergon changes Context values and produces new Content as Pragma Output; Mneme manages resulting consequences and retained Pub/Sub semantics | U10 extends U02/U03/U05. Outputs and changed Context values distinct; Ponos executes, Petasos hands off; recording observations does not own handoff obligations. Output detail CDG-45, existing state/fan-out CDG-03/18/37. |
-| M11 | **DigitalTwin entity-specific pending-work coordination** | DigitalTwin specialises Ponos with the per-Twin queue pattern and executes Behaviour specialising Ergon; uses governed entity context and candidate Stimulus/Effector Pragma information | U02 preserves A02. Only Twins with pending work become active, serviced by bounded execution resources; no thread per Twin. Scheduling, ordering/recovery and control detail remain CDG-07, without queue product/API or topology selection. |
+| M11 | **DigitalTwin entity-relative serial input processing** | Single Stimulus/Effector queue; interest matching creates BehaviourStimulus/BehaviourEffector per interested Behaviour; sequential one-Ergo Behaviour Praxes with fresh Mneme Context Load/Save on the normal path; same-Twin outputs requeue without interruption | U02/U19 preserve A02. Developer sequencing policy uses framework API; no policy means unspecified order. Applicable sequence stable for each input; changes apply to subsequent inputs. ContinueBehaviourOnFailure contains failure to the current execution, leaving the Behaviour active and other interested Behaviours and queue processing unaffected. StopBehaviourOnFailure stops the failing Behaviour immediately, lets remaining interested Behaviours complete the current input, then halts the Twin. StopDigitalTwinOnFailure terminates the failing Behaviour and halts the Twin immediately, preventing remaining current-input and subsequent queued processing. Pending queue requires governed administrative resume; stopped-Behaviour recovery deferred. Bounded concurrency across independent Twins, no thread per Twin. Runtime/schema/API detail CDG-07/54. |
 | M12 | **Dokimasia independent assurance collaboration** | Ponos-specialised Dokimasia uses **Praxis as assurance basis and Journey as observed evidence subject**; executes Dokimasia Ergon / AI Assurance Ergon where selected; reuses common activity/information/platform contracts | U02/U06 preserve A04 independence and terminal rules: no recursive Dokimasia assessment or separate own-execution AuditEvent. Detailed independence/evidence access CDG-08/09; AI discovery CDG-35. |
 | M13 | **Mneme Publishing / Subscription / Pattern selection** | Provider Pattern filtering governs semantic eligibility; consumer Pattern matching selects available Pragma and eligible recipient/consumer relationships; Petasos establishes/manages concrete persistent handoff to destination | U05/U06. Mneme manages Context/Pragma availability/selection; Petasos owns queue/destination mechanics/state; Ponos executes. Topic remains classification; Pattern/lifecycle CDG-36, fan-out detail CDG-37. |
 | M14 | **Pathway-controlled progression** | Ergon PathwayEndpoints, inter-component Segments, encapsulated Traversals, Route = ordered Segment [1..N], Pathway interaction with available Routes; Praxis aggregates Pathway [0..1] | U04/U06. Distinct from Pub/Sub; Journey observes both under Energeia application ownership. Detailed control/definition contracts CDG-01/06; no routing technology selected. |
