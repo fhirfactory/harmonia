@@ -28,7 +28,9 @@ Harmonia uses classical Greek naming metaphors to describe its architectural com
 | **Themis** | *Θέμις* (divine law, custom) | Titaness of divine order, justice, and the unwritten cosmic law. | Default-deny policy evaluation engine, role-to-authority mappings, and non-PHI security audit logging. | Policy Decision Point (PDP) / ABAC/RBAC Engine | `[IMPLEMENTED]` |
 | **------- Legacy Content - Superseded ------- Finish ----** | | | | | |
 | **Iris** | *Ἶρις* (rainbow messenger) | Goddess of the rainbow and swift winged messenger connecting sea, sky, and mortals. | Presentation tier delivering the WildFly BEFE REST gateway and three decoupled Vue 3 web SPAs. | Presentation Layer / Web Consoles & BFF | `[IMPLEMENTED]` |
+| **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Agora and Omilia architectural identity](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations).  |  |  |  |  |
 | **Agora** | *ἀγορά* (assembly, marketplace) | Ancient Greek public gathering place for debate, civic assembly, and commerce. | Collaboration gateway projecting clinical events into Matrix Synapse Spaces, rooms, and care team chats. | Collaboration Gateway / Chat Ops Integration | `[IMPLEMENTED]` |
+| **------- Legacy Content - Superseded ------- Finish ----** |  |  |  |  |  |
 | **Paradeigma**| *παράδειγμα* (pattern, model) | A model, archetype, or pattern used to demonstrate a principle or test a hypothesis. | Synthetic clinical simulation framework generating personas, encounters, and multi-system scenarios. | Synthetic Testbed / Digital Twin / Simulator | `[IMPLEMENTED]` |
 
 ---
@@ -49,7 +51,9 @@ Harmonia uses classical Greek naming metaphors to describe its architectural com
 | **RIS / PACS** | Radiology Information System / Picture Archiving | Systems managing medical imaging orders, examinations, and DICOM metadata. |
 | **Hot Rod** | Infinispan Hot Rod Protocol | High-performance, binary, topology-aware client-server protocol used to communicate with Mneme cache clusters. |
 | **JPA** | Jakarta Persistence API | Standard Java ORM framework utilized by Mnemosyne to manage relational persistence in PostgreSQL. |
+| **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Bidirectional Application Services API](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#application-services-api).  |  |
 | **AS** | Application Service (Matrix) | Privileged integration service connecting Harmonia's Agora subsystem to the Matrix Synapse homeserver. |
+| **------- Legacy Content - Superseded ------- Finish ----** |  |  |
 | **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress), [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement). | |
 | **REC-001** | Ingress Dual-Write Safety | Architecture rule: gateways must guarantee Petasos queue acceptance before returning an `AA` acknowledgment over MLLP. |
 | **------- Legacy Content - Superseded ------- Finish ----** | | |

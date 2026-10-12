@@ -51,6 +51,11 @@ Harmonia strictly separates clinical health records from operational telemetry, 
     \item \textbf{Stored Entities}: Non-clinical \texttt{Task} histories, \texttt{AuditEvent} logs, \texttt{Provenance} lineage, and system configuration records.
 \end{itemize}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#information-ownership}{Agora ownership versus deferred storage allocation}.
+\par\noindent ---------------------------------------------------------
+
 \subsection{3. Collaboration Database (\texttt{postgres-synapse})}
 \begin{itemize}
     \item \textbf{Internal Service Port}: 5436 (mapped to 5432 in pod)
@@ -58,6 +63,9 @@ Harmonia strictly separates clinical health records from operational telemetry, 
     \item \textbf{Owning Services}: Matrix Synapse Homeserver and Agora Core JPA
     \item \textbf{Stored Entities}: Agora resource ID mappings (\nolinkurl{agora_resource_mappings}), Application Service transactions (\nolinkurl{agora_as_transactions}), and Synapse rooms, state events, and membership rosters.
 \end{itemize}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \section{JPA Server Deployment Architecture}
 

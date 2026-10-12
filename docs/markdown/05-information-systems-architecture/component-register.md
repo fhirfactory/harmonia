@@ -249,17 +249,18 @@ graph TD
     Capacity -->|"authorisation context"| PDP["Themis: resolve governed Criteria / assignments / policy state"]
     PDP --> Criteria["Identity-specific precomputed PEP-Criteria through PEP-Context"]
     Criteria --> PEP["Constrained local Themis PEP"]
-    Capacity -.->|"operational responsibility context"| Responsibility["Future Agora / Synapse: responsibility, escalation, approval, notification; mechanics deferred"]
+    Capacity -.->|"operational responsibility context"| Responsibility["Agora: membership intent; detailed context use deferred"]
 ```
 
 Themis answers **“May this Identity perform this action on this information?”**
-Future Agora/Synapse capability concerns **“Is this Practitioner currently
+Future Agora collaboration detail concerns **“Is this Practitioner currently
 responsible for receiving/responding to this operational activity?”** These are
 separate responsibilities even where they consume the same PractitionerCapacity.
 Receipt of an escalation or approval notification grants no information access.
 Following it into Iris or another application surface requires normal Themis PEP
-enforcement using current valid PEP-Criteria. No Agora/Synapse membership,
-escalation or approval-routing mechanics are designed here.
+enforcement using current valid PEP-Criteria. U16 establishes
+[Agora control and Omilia operations](agora-omilia-collaboration.md#membership-and-roster);
+detailed membership, escalation and approval-routing mechanics remain deferred.
 
 <a id="pep-context"></a>
 
@@ -1177,30 +1178,70 @@ approval rules and durable UI state, are unknown.
 
 ### C18 — Agora
 
-- **Role/responsibility:** governed collaboration capability with external protocol
-  structures encapsulated; Matrix supplies collaboration, not Harmonia architecture.
-  [L12](sources.md#l12), AGENTS Invariant 10 and [A01 AX-18](sources.md#a01).
-- **Features/contained constructs:** identity provisioning/mapping, patient/
-  practitioner/group collaboration spaces, room creation/archive, membership
-  reconciliation, transaction ingress/deduplication and event/request handoff.
-  Statistics/Tasks/Discussion/Diagnostics rooms are documented candidate projections,
-  not required room cardinality or independent software components.
-- **Information:** AgoraSpaceRequest, collaboration events/reconciliation results,
-  Harmonia-to-collaboration identity/context mappings and transaction records.
-  Membership/discourse/projection information differs from formal clinical records.
-- **Persistence:** mapping/transaction tables plus homeserver event/membership
-  storage documented; ownership, Mnemosyne collaboration and clinical submission
-  path remain unclear (CDG-19/22/23). Historical retention value is not selected.
-- **Collaboration/exclusions:** Themis guards room actions; workflow collaboration
-  uses Petasos with no direct Ponos dependency. No unmasked PHI in room metadata,
-  raw Matrix DTO leakage, clinical-work authority or universal source-of-truth claim.
-  [PractitionerCapacity](#practitioner-capacity) may supply future operational
-  responsibility context; notification/membership does not confer information
-  access. Identity mapping/provisioning here is collaboration integration, not
-  ownership of the external Identity Provider. U12 designs no Agora/Synapse mechanics.
-- **Standing:** candidate collaboration design with governing isolation constraints;
-  care-team source, projection providers and durable effect contract unresolved,
-  CDG-19–23.
+- **Role/responsibility:** **Harmonia.Agora**, collaboration control and semantics;
+  native Teams/Slack-like collaboration. **Agora controls; Omilia operates.**
+  [U16 canonical view](agora-omilia-collaboration.md#control-and-operations)
+  replaces the earlier projection-only account.
+- **Features:** controls designated managed Room/Space lifecycle and membership
+  intent and Harmonia publication; listens to dialogue/activity in **all** managed
+  Rooms/Spaces through Omilia.Server's Application Services API. Defined meaningful
+  interactions may be captured as Communication Information Units and/or Pragma
+  for governed Harmonia processing. Not every message becomes work.
+- **Information:** owns/manages native collaboration record/state: dialogue/actions,
+  Room/Space and membership state, references/activity and native collaboration
+  media. Information merely conveyed through Agora retains its originating owner.
+  Capture derives new governed information/activity; original dialogue remains Agora's.
+- **Membership:** Agora controls intent; Omilia.Server performs membership
+  operations. Roster Management is SEP; only applicable Shift Start/End periods
+  are required for R1.x/R2.x operational context. No roster/workforce authority or
+  inference that PractitionerCapacity/Provider Registry is a roster.
+- **Persistence/audit:** application ownership is established, not a storage
+  allocation. AX-05 remains controlling; collaboration persistence/media mechanics,
+  mapping/transaction structures and retention are deferred. Dialogue retention
+  and logging are distinct from audit; applicable occurrences go to Kleio, which
+  retains authoritative Audit Information Management and existing capture rules.
+- **Collaborations/exclusions:** Omilia.Server performs underlying operations;
+  Agora acquires no ownership of those mechanics. Petasos mediates execution
+  collaboration, with no direct Ponos dependency. AGENTS Invariant 10 preserves
+  Themis default-deny, Matrix DTO encapsulation and zero-PHI Room metadata;
+  diagnostic logging remains zero-PHI. Membership/notification confers no access
+  grant, clinical-work authority or originating-information ownership.
+- **Standing:** U16 adjudicated candidate; exact taxonomy, membership derivation,
+  API, representations, persistence, security/privacy and Omilia.Client/Iris
+  integration remain [deferred](agora-omilia-collaboration.md#deferred-collaboration-design).
+  Partial transaction effects remain CDG-19; non-collaboration binary application
+  custody remains CDG-25. Historical class/table names are implementation evidence.
+
+### Omilia — Harmonia collaboration subsystem
+
+The following responsibilities are distinct from Agora control. Upstream lineage
+records provenance, not architectural identity, Maven allocation or deployment.
+
+<a id="c47"></a>
+
+### C47 — Harmonia.Omilia.Server
+
+- **Role/responsibility:** owns/performs underlying Room/Space, user, membership,
+  dialogue/message, collaboration-event and applicable collaboration-media
+  operations. Exposes the **Application Services API** for Agora operation requests
+  and dialogue/activity delivery from Agora-managed Rooms/Spaces.
+- **Boundary:** operational worker, not owner of Harmonia collaboration semantics,
+  membership intent or originating clinical/operational information. Agora owns
+  native collaboration information; AX-05 durable-state responsibility remains.
+- **Provenance/standing:** derived from Matrix Synapse; U16 adjudicated candidate.
+  API technology, modifications and persistence mechanics are deferred, not
+  inferred from historical Synapse deployment/configuration.
+
+<a id="c48"></a>
+
+### C48 — Harmonia.Omilia.Client
+
+- **Role/responsibility:** Harmonia collaboration client providing the associated
+  collaboration user experience; communicates with Omilia.Server using Matrix
+  protocol. Presentation does not confer information or collaboration-control
+  authority.
+- **Provenance/standing:** derived from Element; U16 adjudicated candidate.
+  Detailed modifications and Omilia.Client/Iris integration remain deferred.
 
 ## Specialised execution components within Energeia
 

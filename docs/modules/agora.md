@@ -1,6 +1,23 @@
 # Agora Subproject Reference: Matrix & Synapse Collaboration Gateway `[IMPLEMENTED]`
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora and Omilia responsibility boundary](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
+
 Agora is Harmonia's collaboration integration framework, establishing an authoritative, governed architectural bridge between Harmonia's clinical event stream and the Matrix Synapse collaboration ecosystem.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -66,7 +83,24 @@ agora/
 - **Key Classes & Interfaces**:
   - `AgoraCollaborationLifecycleService`: Orchestrates the creation of hierarchical **Patient Spaces** with four standard child rooms (`Statistics`, `Tasks`, `Discussion`, `Diagnostics`).
   - `AgoraIdentityService`: Manages provisioning and lookup of local Matrix users (`@_harmonia_p_<uuid>:synapse`) for practitioners and patients.
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Membership intent and roster SEP](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#membership-and-roster)
+
+```text
+---------------------------------------------------------
+```
+
   - `AgoraMembershipReconciliationService`: Scheduled engine comparing live Matrix room members against authoritative care teams in Mnemosyne/Themis, executing corrective invites or kicks.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
   - `AgoraPetasosEventProducer` / `AgoraPetasosEventConsumer`: Handles asynchronous queue interaction via Petasos without direct coupling to Ponos.
   - `AgoraMappingRepository` & `AgoraMappingEntity`: JPA persistence tracking mappings between Harmonia entity UUIDs and Matrix room IDs (`agora_resource_mappings`).
   - `AgoraTransactionRepository` & `AgoraTransactionEntity`: JPA persistence ensuring deduplication and idempotency for inbound AS transactions (`agora_as_transactions`).
@@ -88,6 +122,18 @@ agora/
 - **Runtime Dependencies**: `agora-core`, Spring Boot Starter Web, Spring Boot Starter Actuator, Spring Boot Starter Data JPA, PostgreSQL JDBC Driver (`org.postgresql:postgresql:42.7.3`).
 
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora native ownership and deferred persistence](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#information-ownership)
+
+```text
+---------------------------------------------------------
+```
 
 ## 3. Relational Database Persistence Schemas `[IMPLEMENTED]`
 
@@ -123,6 +169,11 @@ Guarantees idempotent processing of incoming homeserver push transactions (AGORA
 
 - **Indexes**: `idx_agora_txn_received` on `received_at`, `idx_agora_txn_status` on `status`.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
 
 ## 4. Mandatory Architectural Invariants `[IMPLEMENTED]`
@@ -131,7 +182,24 @@ Guarantees idempotent processing of incoming homeserver push transactions (AGORA
 2. **Matrix DTO Encapsulation**: Matrix protocol structures (Client-Server and Synapse Admin DTOs) must be encapsulated in `agora-matrix`. Raw Matrix types must never leak into other Harmonia modules.
 3. **Themis Default-Deny Authorization**: Every room creation, invite, join, or kick operation must be gated by Themis policy evaluation (`themisAuthorizer.evaluate(...)`).
 4. **Zero-PHI Room Metadata**: Room aliases, Space names, and topics must never include patient names, DOB, MRN, or clinical details (use opaque UUIDs).
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Native record ownership and capture without transfer](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#managed-room-capture)
+
+```text
+---------------------------------------------------------
+```
+
 5. **Non-Authoritative Projection**: Matrix metadata is strictly subordinate to Harmonia/Mnemosyne; clinical data must be saved to FHIR storage.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 6. **Verified by ArchUnit**: Continuously validated by `AgoraIsolationArchitectureTest`.
 
 ---

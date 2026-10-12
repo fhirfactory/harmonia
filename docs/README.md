@@ -177,7 +177,9 @@ docs/
 | **Energeia** | `energeia/` | 4 modules | Ponos WorkEngine, Erga task activities, Praxis task sequences | WildFly 31 (Jakarta EE 10), Apache Camel 4.4 | `[IMPLEMENTED]` |
 | **Pylai** | `pylai/` | 5 modules | External protocol gateways (Inbound/Outbound MLLP, FHIR REST) | Netty, Apache Camel 4.4, Jakarta EE 10 / Spring Boot | `[IMPLEMENTED]` |
 | **Iris** | `iris/` | 4 modules | Presentation tier (BEFE gateway, Clinical, Console, Admin SPAs) | WildFly 31, Vue 3, Vite, TypeScript, Pinia, Nginx | `[IMPLEMENTED]` |
+| **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Agora and Omilia architectural identity](markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations).  |  |  |  |  |
 | **Agora** | `agora/` | 4 modules | Matrix Synapse collaboration gateway & Patient Spaces | Spring Boot 3.2.5, Matrix CS/AS REST, PostgreSQL 16 | `[IMPLEMENTED]` |
+| **------- Legacy Content - Superseded ------- Finish ----** |  |  |  |  |  |
 | **Paradeigma**| `paradeigma/`| 7 modules | Synthetic clinical simulation (EMR, LMS, PAS, RIS-PAC) | Java 21, Camel, Netty, HAPI HL7v2 / FHIR R5, ArchUnit | `[IMPLEMENTED]` |
 
 **Total**: 9 subprojects, 37 leaf modules.

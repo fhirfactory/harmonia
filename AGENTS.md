@@ -175,6 +175,18 @@ POM dependency, process or deployment boundary; physical allocation remains
 downstream. The canonical [Calliope boundary](docs/markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-realisation)
 records the adjudicated architecture.
 
+Agora's collaboration responsibility is broader than its historical Matrix
+projection/module description: **Agora controls; Omilia operates.** Agora owns
+Harmonia collaboration semantics, managed Room/Space intent and native
+collaboration information. Harmonia.Omilia.Server performs collaboration
+operations; Harmonia.Omilia.Client provides the collaboration client. Synapse
+and Element are upstream provenance. Roster Management is SEP; conveyed source
+information retains its owner, defined interaction capture derives new governed
+information/activity, and Kleio retains audit authority. The canonical
+[Agora/Omilia boundary](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md)
+records the adjudication and deliberate deferrals. This establishes no new
+build/dependency or deployment boundary and does not relax Invariant 10.
+
   -------------------------------------------------------------------------------
   Subproject        Domain /              Allowed           Invariants &
                     Responsibility        Dependencies      Constraints
@@ -250,12 +262,12 @@ records the adjudicated architecture.
                                                             an alternative
                                                             persistence path.
 
-  **Agora**         Matrix/Synapse        Calliope, Themis  Zero Ponos
-  (`agora/`)        collaboration         API, Petasos API, dependencies; Matrix
-                    projection, AS        Mnemosyne         DTO encapsulation;
-                    transaction           Operations        Themis default-deny
-                    ingestion, room/space                   governance; zero-PHI
-                    lifecycle                               metadata.
+  **Agora**         Collaboration        Calliope, Themis  Zero Ponos
+  (`agora/`)        control and native   API, Petasos API, dependencies; Matrix
+                    collaboration        Mnemosyne         DTO encapsulation;
+                    information;         Operations        Themis default-deny
+                    managed Room/Space                     governance; zero-PHI
+                    intent                                 metadata.
 
   **Paradeigma**    Synthetic clinical    Production APIs   **Leaf / Simulation
   (`paradeigma/`)   simulation (EMR, LMS, (MLLP, FHIR REST, Only**. Production
@@ -641,4 +653,3 @@ Material changes to the sequence or milestone intent MUST be explicit and
 reviewed before subsequent implementation proceeds. Junie MUST NOT rewrite
 historical milestone intent merely to make later implementation appear to have
 followed the plan.
-

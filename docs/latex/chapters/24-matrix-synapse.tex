@@ -7,7 +7,15 @@
 \chapter{Matrix Synapse Homeserver \& Collaboration Middleware}
 \label{chap:matrix_synapse_middleware}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#control-and-operations}{Omilia identity and upstream provenance}.
+\par\noindent ---------------------------------------------------------
+
 The Agora collaboration gateway interfaces directly with Matrix Synapse 1.120.0 (packaged using container image \nolinkurl{matrixdotorg/synapse:v1.120.0}). Synapse serves as Harmonia's internal collaboration homeserver, delivering standardized Matrix Client-Server v3, Administration v2, and Application Service (AS) push protocols.
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \section{Homeserver Clustered Topology \& Network Architecture}
 
@@ -48,6 +56,11 @@ namespaces:
     \item \textbf{Service Identity}: System events (such as room invitations and state updates) are enacted using the privileged bot identity \nolinkurl{@_harmonia_bot:synapse}.
 \end{enumerate}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#control-and-operations}{Managed Room control and deferred taxonomy}.
+\par\noindent ---------------------------------------------------------
+
 \section{Spaces Hierarchy \& Zero-PHI Metadata Invariant}
 
 Agora manages a strict two-level room hierarchy within Synapse:
@@ -64,11 +77,22 @@ Agora manages a strict two-level room hierarchy within Synapse:
 
 In strict adherence to AGORA-ADR-005, room aliases and names are constructed exclusively using synthetic identifiers and opaque UUIDs (e.g. \nolinkurl{#encounter_9b1deb4d3b7d4b89:synapse}). Patient names, national identifiers, and medical record numbers are prohibited from room metadata.
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#managed-room-capture}{Capture without record transfer and deferred retention}.
+\par\noindent ---------------------------------------------------------
+
 \section{Ephemeral Retention \& Database Archival}
 
 In accordance with AGORA-ADR-004:
 \begin{principlebox}{Ephemeral Matrix Retention Invariant}
 Synapse enforces an automated 90-day retention cleanup policy on all room history. Matrix is treated as a transient collaboration surface; all clinical decisions, care orders, and trajectory summaries must be committed to Mnemosyne FHIR storage before retention purge.
 \end{principlebox}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \newpage

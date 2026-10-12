@@ -68,6 +68,11 @@ Cross-cutting shared libraries and policy engines.
     \item \textbf{Themis}: Default-deny Attribute- and Role-Based Access Control (ABAC/RBAC) security engine, 4-gate enforcement interceptors, and non-PHI audit event logging.
 \end{itemize}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#control-and-operations}{Agora collaboration control and Omilia subsystem}.
+\par\noindent ---------------------------------------------------------
+
 \subsection{Collaboration Services (\texttt{Agora})}
 Clinical collaboration subsystem bridging Harmonia clinical events into Matrix Synapse.
 \begin{itemize}
@@ -76,6 +81,9 @@ Clinical collaboration subsystem bridging Harmonia clinical events into Matrix S
     \item \textbf{agora-core}: Lifecycle coordination, deterministic identity provisioning, care team reconciliation, and Themis default-deny policy evaluation.
     \item \textbf{agora-service}: Spring Boot 3.2.5 microservice exposing the Matrix Application Service transaction endpoint on Port 8092 (management on Port 9992).
 \end{itemize}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \subsection{Synthetic Clinical Simulation (\texttt{Paradeigma})}
 Isolated synthetic simulation subsystem providing deterministic hospital actor emulators (PAS, EMR, LMS, RIS-PAC) and scenario drivers for integration and resilience testing. Production modules maintain strict zero-dependency isolation from Paradeigma.

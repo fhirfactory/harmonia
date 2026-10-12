@@ -150,9 +150,67 @@ Existing section-level legacy wrappers already reference these canonical
 sections; original legacy content and wrapper bytes remain unchanged. Required
 meaning is self-contained in RADS without retrieving external working notes.
 
-The subsequent A2/A3 assessment is read-only: newly discovered substantive issues
-are recorded for Mark + ChatGPT, not repaired. A4 remains pending; Step B has not
-started. The completion report is execution evidence, not architecture authority.
+The U15 A2/A3 assessment was read-only: newly discovered substantive issues were
+recorded for Mark + ChatGPT, not repaired. U16 below subsequently reconciles the
+supplied collaboration adjudication. A4 remains pending; Step B has not started.
+Completion reports are execution evidence, not architecture authority.
+
+<a id="u16"></a>
+
+## Agora controlled collaboration and Omilia adjudication input
+
+**U16 — 2026-10-12:** supplied
+`DesignNote-Agora-Controlled-Collaboration-and-Omilia-Realisation.md`, §§1–17,
+read in full from Downloads, plus explicit task adjudications. The user designates
+this as the current adjudicated Candidate Architecture input. Its working-note
+status/location alone supplies no RADS authority; incorporation here is authorised
+by this bounded task and constrained by the Architectural Axioms.
+
+The [canonical Agora/Omilia view](agora-omilia-collaboration.md) incorporates Agora
+control/native information ownership, Omilia.Server operations/Application Services
+API, Omilia.Client identity and Synapse/Element provenance, roster SEP with only
+applicable Shift Start/End periods for R1.x/R2.x, source-owner retention through
+conduit publication, managed-Room capture/derivation and dialogue/logging/Kleio audit
+separation. CDG-21–23 responsibility questions are closed; detailed deferrals are
+CDG-52. CDG-25 is narrowed: native media ownership is settled, but the F31/D15
+non-collaboration clinical-binary application custodian remains unassigned.
+
+Earlier Candidate statements are corrected, rather than retained as competing
+current architecture. Synapse database/JPA allocations and generic
+clinical-submission-before-discourse-purge claims remain historical evidence.
+Bounded legacy sections now have supersession wrappers pointing to this canonical
+meaning; their original bodies remain unchanged. Required incorporated knowledge
+is self-contained in RADS; no copy or alteration of the external DesignNote is
+needed. No A4 acceptance, Step-B traceability, new capability, implementation,
+runtime/deployment or Iris design is authorised.
+
+## This Agora/Omilia legacy reconciliation
+
+U16 adds **47 bounded section wrappers in 18 legacy files**. Original prose,
+tables, diagrams, code and existing wrappers are preserved unchanged; no entire
+document is superseded. The replacement is the responsibility meaning in
+[Agora/Omilia](agora-omilia-collaboration.md), not an invented physical design.
+
+| Legacy material | Bounded replacement / retained supporting information |
+| :--- | :--- |
+| [Agora concept](../../concepts/agora.md) | Opening/rationale, §2 authority/retention, §4 ADR table, §5 identity operations, §6 intro/diagram/6.1 and §6.3 lifecycle, §7 security/audit account, §8 roster reconciliation and §9 AS ingestion. Existing §3 isolation and §6.2 wrappers retained. Taxonomy/retention/API mechanisms remain historical, not selected requirements. |
+| [Agora module reference](../../modules/agora.md) | Opening, §2.3 roster-service bullet, §3 persistence schemas and §4 projection/clinical-submission invariant. Other module/class/dependency/configuration/test catalogues retained as implementation information. |
+| [Synapse middleware](../../middleware/matrix-synapse.md) | Opening, topology diagram, §2 configuration/retention, §4 capability table and §5 API catalogue. Workload inventory, registration/configuration and verification examples retain historical implementation use; they do not specify the deferred API/storage design. |
+| [Agora publication chapter](../../latex/chapters/05a-collaboration-agora.tex), [Synapse publication chapter](../../latex/chapters/24-matrix-synapse.tex) | Format-equivalent opening, ADR, projection/taxonomy, roster, API and retention wrappers. Module/runtime/registration catalogues outside those sections remain supporting history. |
+| [Persistence chapter](../../latex/chapters/10-postgresql-persistence.tex), [persistence register](../../latex/chapters/appendix-i-persistence-register.tex) | Collaboration-database subsection, collaboration row and two mapping/transaction-definition items wrapped to application ownership versus deferred storage. Unrelated original persistence structures remain unchanged. |
+| [Root overview](../../../README.md), [documentation overview](../../README.md), [introduction](../../getting-started/introduction.md), [architecture at a glance](../../getting-started/architecture-at-a-glance.md), [inventory](../../architecture/system-inventory.md), [LaTeX taxonomy](../../latex/chapters/02-conceptual-taxonomy.tex) | Agora entries and bounded collaboration descriptions superseded. Mixed diagrams explicitly restrict supersession to the Agora subgraph/edge; inventory wrapper restricts it to collaboration identity/ownership. Other architecture and physical inventory are not adjudicated. |
+| [Terminology](../../getting-started/terminology.md), [LaTeX glossary](../../latex/chapters/appendix-a-glossary.tex), [middleware matrix](../../latex/chapters/appendix-d-middleware-matrix.tex) | Agora/AS rows and Synapse capability description superseded by Harmonia.Omilia identity, control/operations and explicit detailed deferrals. |
+| [Iris design-system account](../../architecture/iris-design-system.md), [Iris publication appendix](../../latex/chapters/appendix-iris-user-interfaces.tex) | Only the Synapse-under-Agora architectural-ownership implication is superseded. Iris UI design and Omilia.Client/Iris integration are not resolved by those display hierarchies or this task. |
+
+Search also covered other legacy architecture, middleware, module, deployment,
+configuration, security, Provider Registry, LaTeX and historical execution
+references. Runtime inventories/configuration and prior reports/plans remain
+supporting or historical evidence; no Omilia implementation/topology is inferred.
+The restricted/self-hosted/non-federated position of legacy ADR-011 and its LaTeX
+copies is compatible with retained isolation constraints; no new federation
+decision or change to those restrictions is made. Binary payload/DocumentReference
+references retain their unresolved CDG-25 disposition rather than being migrated
+into a fabricated media architecture. The external DesignNote remains unchanged.
 
 ## Legacy reconstruction sources
 
@@ -176,7 +234,7 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l09"></a>L09 | [Hestia](../../concepts/hestia.md), [Mneme](../../concepts/mneme.md), [Mnemosyne](../../concepts/mnemosyne.md), full concepts | **Partially incorporated and retained conflicts:** U06 supersedes Mnemosyne opening and §2 two-service Clinical/Operational definition with Clinical/C&G/O&A semantic responsibilities. U10/U11 additionally supersede Mneme opening, §2 introductory architectural definition and §3 positive ownership list; Hestia opening and §2 dual-state architectural account; Mnemosyne §3 positive ownership list. Existing wrappers remain unchanged and resolve to updated RADS. Remaining metaphor, product/cache/write-behind/access/audit and implementation catalogues remain historical/supporting or retained conflicts, not current authority. |
 | <a id="l10"></a>L10 | [Hestia persistence](../../concepts/hestia-persistence.md), full document | **Partially incorporated:** §3.2 Operations Scope bullet now wrapped to C&G/O&A semantic classification and scaling guardrails. Cache/product/provider catalogues remain support; mixed diagrams, direct access and write-behind model remain historical/conflicting, not adopted physical architecture. |
 | <a id="l11"></a>L11 | [Iris](../../concepts/iris.md), full concept | **Partially incorporated:** presentation decomposition/features; §4 “Provider Registry Decoupling” superseded by C16/F20. Raw-cache ownership/access statements retained as conflicting, CDG-11. |
-| <a id="l12"></a>L12 | [Agora](../../concepts/agora.md), §§2–9 and diagrams | **Partially incorporated:** §3 isolation constraints and §6.2 Practitioner/Group spaces superseded by C18/F22. Room lifecycle, memberships, mappings and AS handoff recorded as candidate with CDG-19–23; universal clinical authority, care-team source and storage ownership remain conflicting. Product-specific ADR table retained as supporting/unresolved detail. |
+| <a id="l12"></a>L12 | [Agora concept](../../concepts/agora.md), opening/§§1–9 and diagrams; [module reference](../../modules/agora.md); [Synapse middleware](../../middleware/matrix-synapse.md) | **U16 reconciliation:** bounded control/projection, roster, custody, API and capture accounts superseded by [Agora/Omilia](agora-omilia-collaboration.md), C18/C47/C48 and CDG-52. Prior §3 isolation and §6.2 wrappers remain. Product-specific ADR/retention, fixed Room taxonomy, direct persistence and API catalogues remain unchanged inside section wrappers, not selected current designs. Commands/configuration/module catalogues retain implementation-support use. No whole document superseded; partial effects remain CDG-19. |
 | <a id="l13"></a>L13 | [Architecture decisions](../../architecture-decisions.md), ADR-001–020, focused decisions/responsibility/failure/lifecycle sections | **Partially incorporated:** ADR-013–017 architectural descriptions superseded by C03/C10/F13–F15/M01–M02. Accepted ADR-018–020 constrain state/lifecycle in their governance role; product choices, detailed protocols and historical reasoning remain supporting material. No decision is rescinded. |
 | <a id="l14"></a>L14 | [Governed write contract](../../design/governed-write-concurrency-contract.md), §§1–4, read semantics, invariants/results/version/uncertainty/context/service boundaries | **Partially incorporated:** §§10.2 and 14.2 superseded by C11/D04/M05. Exact Java signatures, CAS and reconciliation algorithms retained as implementation detail; old token/absence/convergence formulations remain CDG-16/31 input. |
 | <a id="l15"></a>L15 | Provider Registry [architecture](../../provider-registry/architecture.md), [resource model](../../provider-registry/resource-model.md), [change processing](../../provider-registry/change-processing.md), [persistence](../../provider-registry/persistence.md), [search](../../provider-registry/search.md), [audit/provenance](../../provider-registry/audit-provenance.md) | **Partially incorporated:** resource-model §3 Endpoint/Group meanings superseded by D08/C13; architectural-object and feature descriptions recorded with direct-persistence, lifecycle and evidence contradictions retained. No universal external async/FHIR contract approval, CDG-03/11–14/32. |
@@ -184,7 +242,7 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l17"></a>L17 | Middleware [overview](../../middleware/overview.md), [HAPI FHIR](../../middleware/hapi-fhir.md), [Infinispan](../../middleware/infinispan.md), stack/tables and used/avoided sections | **Implementation/supporting detail and conflicts:** products explain historical mechanisms, not logical components. Schema, cache, indexing and terminology differences retained, CDG-12/24/27. |
 | <a id="l18"></a>L18 | LaTeX [application layer](../../latex/chapters/03-application-layer.tex), full chapter; [Energeia chapter](../../latex/chapters/06-workflow-energeia.tex), full chapter | **Partially incorporated:** Energeia chapter opening engine/Pragma-ownership paragraph and Praxis sequence-engine definition now wrapped to C39 and the Praxis envelope. Activity catalogues, dynamic-route mechanisms, EMPI/direct-access and broad clinical-work claims remain historical/supporting or unresolved CDG-01/11/20/29. No tutorial/code migration or publication-derived authority. |
 | <a id="l19"></a>L19 | LaTeX [Praxis appendix](../../latex/chapters/appendix-praxis-workflow.tex), overview/paradigm/topic/checkpoint/dual-cache sections; [Ergon appendix](../../latex/chapters/appendix-ergon-module.tex), overview/contract/carrier sections | **Retained supporting detail and unresolved:** declarative versus runtime design, topics, loading/processing/unloading mechanisms and binary-bearing payload examples captured as evidence in CDG-01/02/05/06/25. Overview opening allocation and Praxis Paradigm component-topology paragraph now additionally wrapped to C39/Praxis envelope and detailed uncertainty. Topic Subscription Matching subsection previously wrapped to Mneme Publishing/Subscription/Pattern, Topic semantics and CDG-36/37. Its tuple/wildcard/priority algorithm is preserved as historical detail, not selected. Other code/tutorial/deployment examples remain supporting material, not current architecture proof. |
-| <a id="l20"></a>L20 | LaTeX [data chapter](../../latex/chapters/04-data-architecture.tex), carrier/checkpoint passages; [persistence chapter](../../latex/chapters/10-postgresql-persistence.tex) and [persistence register](../../latex/chapters/appendix-i-persistence-register.tex), full persistence sections | **Partially incorporated:** persistence chapter opening two-module description and Database Separation lead-in now wrapped to three semantic domains and their scaling guardrails. Physical cluster/schema descriptions, collaboration storage, competing keys/history/evidence/cache detail remain historical/supporting or unresolved CDG-12/13/22/27/40; all original content unchanged. |
+| <a id="l20"></a>L20 | LaTeX [data chapter](../../latex/chapters/04-data-architecture.tex), carrier/checkpoint passages; [persistence chapter](../../latex/chapters/10-postgresql-persistence.tex) and [persistence register](../../latex/chapters/appendix-i-persistence-register.tex), full persistence sections | **Partially incorporated:** existing semantic-domain wrappers retained. U16 additionally wraps collaboration-database ownership and the collaboration register row/table-definition items to Agora application ownership versus Omilia operations and deferred persistence. Physical allocations, keys/history/evidence/cache detail remain historical/supporting or unresolved CDG-12/13/19/27/40/52; all original content unchanged. |
 | <a id="l21"></a>L21 | [Iris console](../../architecture/iris-operations-console.md), perspectives/aggregation/data models/gap sections; [design system](../../architecture/iris-design-system.md), component catalogue and subsystem-view rules | **Supporting detail/retained for reconciliation:** diagnostic features, providers and shared presentation constructs; operational UI taxonomy is not the software hierarchy. Telemetry origin/lifecycle gaps retained, CDG-26/28. |
 | <a id="l22"></a>L22 | [Paradeigma concept](../../concepts/paradeigma.md), decomposition/isolation; [simulation architecture](../../paradeigma/architecture.md), components/interfaces/journey | **Partially incorporated:** concept §3 production isolation superseded by C21/F29. Simulator/scenario/test roles corroborate the support boundary; external wire interfaces/deployment remain supporting material. Simulator “twins” do not define the Digital Twin construct. |
 | <a id="l23"></a>L23 | Module references [Energeia](../../modules/energeia.md), [Hestia](../../modules/hestia.md), [Iris](../../modules/iris.md), responsibility and leaf-module sections; [operations CLI](../../../hestia/mnemosyne-operations-cli/README.md), overview | Existing Energeia opening/ownership wrappers now resolve to U06 discrete operational management and U02 activity/information boundaries; detailed Praxis uncertainty remains. Hestia opening two-domain description newly wrapped to Clinical/C&G/O&A responsibilities. Module/class inventories and other sources remain **implementation/supporting detail**, not hierarchy authority. Direct storage CLI access remains CDG-11/28 input. |

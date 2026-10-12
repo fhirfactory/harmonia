@@ -7,11 +7,19 @@
 \chapter{Collaboration \& Matrix Integration (\texttt{Agora})}
 \label{chap:collaboration_agora}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#control-and-operations}{Agora control and Omilia operations}.
+\par\noindent ---------------------------------------------------------
+
 The Agora subsystem establishes an authoritative, governed architectural boundary between the Harmonia Health Integration Environment and the Matrix Synapse collaboration ecosystem. Acting primarily as a Matrix Application Service (AS), Agora projects authorized clinical collaboration contexts into Matrix Spaces and Rooms, ingests room interactions, and translates them into canonical Harmonia message envelopes over the Petasos messaging backbone.
 
 \begin{principlebox}{Matrix as a Capability, Not Architecture}
 Agora makes Matrix a Harmonia collaboration capability; it does \textbf{not} make Matrix the Harmonia architecture. Harmonia remains authoritative for all healthcare information, FHIR resources, Provider Registry state, identity relationships, security policies, and clinical workflows. Matrix provides authorized collaboration and communication surfaces only.
 \end{principlebox}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \section{Subsystem Decomposition \& Layering}
 
@@ -27,6 +35,11 @@ To guarantee strict architectural separation and prevent Matrix protocol leaks i
 \begin{archinote}
 In accordance with Invariant 8, direct dependencies from Agora to Ponos (\nolinkurl{net.fhirfactory.harmonia.energeia.ponos..}) are strictly forbidden. Agora coordinates with clinical workflows exclusively via asynchronous Petasos messaging queues.
 \end{archinote}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#deferred-collaboration-design}{Adjudicated responsibilities and detailed deferrals}.
+\par\noindent ---------------------------------------------------------
 
 \section{Key Architectural Decisions (ADRs)}
 
@@ -53,6 +66,14 @@ The design of Agora is governed by eight platform Architecture Decision Records:
 \end{tabularx}
 \end{table}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#control-and-operations}{Managed Room control and deferred taxonomy}.
+\par\noindent ---------------------------------------------------------
+
 \section{Collaboration Projections \& Room Lifecycles}
 
 Agora manages structured collaboration spaces projected from authoritative Harmonia contexts:
@@ -73,13 +94,29 @@ In addition to Patient Spaces, Agora provisions:
     \item \textbf{Group Collaboration Rooms}: Multidisciplinary care team coordination surfaces.
 \end{itemize}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 \section{Security Governance \& Reconciliation}
 
 \subsection{Themis Default-Deny Authorization}
 Every collaboration request---including Space creation, room provisioning, user invitation, join approval, and participant kick---is evaluated against Themis. If \nolinkurl{ThemisDecision.isAllowed()} is false, the action is rejected immediately, and a sanitized, non-PHI security audit event is emitted.
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#membership-and-roster}{Agora membership intent and roster SEP}.
+\par\noindent ---------------------------------------------------------
+
 \subsection{Membership Drift Reconciliation}
 Care team membership is authoritatively governed in Harmonia's Provider Registry. The \nolinkurl{AgoraMembershipReconciliationService} periodically compares the authoritative roster against active room members retrieved via \nolinkurl{GET /_matrix/client/v3/rooms/{roomId}/members}. Any unauthorized participant is ejected via \nolinkurl{POST /kick}, and newly authorized practitioners are issued invites via \nolinkurl{POST /invite}.
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#application-services-api}{Bidirectional API and defined interaction capture}.
+\par\noindent ---------------------------------------------------------
 
 \section{Application Service Endpoint \& Petasos Integration}
 
@@ -98,5 +135,8 @@ Upon receiving a transaction, Agora executes the following pipeline:
 \end{enumerate}
 
 For outbound notifications, \nolinkurl{AgoraPetasosEventConsumer} listens on \nolinkurl{petasos.queue.agora.outbound}, resolves the target Matrix room ID from Mnemosyne, and dispatches the formatted message via \nolinkurl{MatrixClientAdapter.sendMessage()}.
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \newpage

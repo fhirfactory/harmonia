@@ -102,7 +102,24 @@ Harmonia organizes its capabilities into five distinct architectural tiers, supp
 ### Cross-Cutting Subsystems:
 - **Themis** `[IMPLEMENTED]`: Default-deny authorization engine and non-PHI security audit logging.
 - **Calliope** `[IMPLEMENTED]`: Canonical domain schemas, HL7 v2-to-FHIR R5 converters, and event envelope structures.
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora control and native collaboration](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
+
 - **Agora** `[IMPLEMENTED]`: Matrix Synapse collaboration gateway, mapping patient encounters into secure Matrix Spaces and rooms.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 - **Paradeigma** `[IMPLEMENTED]`: Isolated synthetic clinical simulation framework for testing, validation, and resilience verification.
 
 ---

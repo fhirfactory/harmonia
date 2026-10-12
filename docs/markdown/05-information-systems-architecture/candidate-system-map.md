@@ -115,11 +115,18 @@ Harmonia Information System — candidate software solution
     Human interaction for Themis administration, review and approval; no model ownership
     Backend-for-frontend mediation [C17]
     Shared presentation/design-system support
-  Agora — governed collaboration [C18]
-    Identity and collaboration-context mapping
-    Space/room lifecycle and membership reconciliation
-    Collaboration event/transaction ingress and messaging handoff
-    Protocol adapter encapsulation (implementation support)
+  Agora — Harmonia collaboration control and native collaboration [C18]
+    Managed Room/Space lifecycle intent; membership intent; Harmonia publication
+    Owns native dialogue/actions, collaboration state/references and native media
+    Listens to all managed Rooms; captures defined interactions into governed processing
+    Conduit for other Harmonia information; no ownership transfer
+    Roster Management SEP: applicable Shift Start/End context only
+  Omilia — Harmonia collaboration subsystem; Agora controls, Omilia operates
+    Harmonia.Omilia.Server — Room/Space, user, membership, dialogue/event/media operations [C47]
+      Application Services API: Agora requests operations and receives managed-Room activity
+      Derived from Matrix Synapse; provenance, not architectural identity
+    Harmonia.Omilia.Client — collaboration user experience; derived from Element [C48]
+      Matrix protocol to Server; Iris integration deferred
 ```
 
 **Identity.Authentication is external SEP**, integrated through OIDC/OAuth; it
@@ -137,8 +144,9 @@ Ponos does not contain Ergo, Ergon, DigitalTwin or Dokimasia. Hestia grouping
 is described in [L09/L10/L23](sources.md#l09), not inferred from Maven parents.
 Clinical / C&G / O&A persistence responsibility domains follow U06; they
 establish no database or service topology. L09/L10's two-slice account is historical. Iris's presentation/mediation distinction
-is documented in [L11/L23](sources.md#l11). Agora's functional slices follow
-[L12](sources.md#l12), not a promotion of its four Maven modules.
+is documented in [L11/L23](sources.md#l11). Agora and Omilia responsibilities follow
+[U16](sources.md#u16); historical [L12](sources.md#l12) module/API slices remain
+implementation provenance, not the complete collaboration architecture.
 
 [U07–U09](README.md#kleio-themis-petasos-adjudication) refine Kleio, Themis and
 Petasos responsibilities. PAP/PRP/PDP denote Themis responsibilities, not selected
@@ -155,7 +163,7 @@ The following do not have a supported structural parent in that tree:
 | :--- | :--- |
 | **Provider Registry [C13]** | Documented cross-component application collaboration spanning Pylai, Themis, Petasos, Ponos/Praxis/Erga, Mneme/Mnemosyne and Iris; not automatically a new enclosing subsystem. [L15](sources.md#l15). |
 | **Operator/developer support [C22]** | Documented CLI, activity/sequence authoring, shared design support and telemetry contracts. Tools retain association with their target components; no invented common platform subsystem. [L19/L21/L23](sources.md#l19). |
-| **Media Server / detailed clinical terminology services** | Media custodian and detailed lookup/expansion/mapping service allocation remain unresolved. Calliope-DataSets runtime governed-content management is now established by U13; it does not settle every proposed clinical terminology service. [CDG-24/25/49](gaps.md#calliope-contracts). |
+| **Non-collaboration binary custody / detailed clinical terminology services** | U16 assigns native collaboration media to Agora and preserves ownership of referenced objects. The F31/D15 formally managed clinical-binary application custodian remains unassigned, [CDG-25](gaps.md#binary-custody-question); no Media Server is implied. U13 establishes DataSets content management without settling every proposed terminology service, CDG-24/49. |
 
 **Paradeigma [C21]** is associated simulation/verification support, outside the
 production collaboration hierarchy. Its documented PAS, EMR, LMS, RIS-PAC,
@@ -316,8 +324,13 @@ flowchart LR
     Pylai -->|"Server READ / SEARCH through transient Diadromí-Controller"| Mneme
     Pylai -->|"ingress Ergo.Egress to Queue TermaName; durable Parcel handoff"| Petasos
     Petasos -->|"governed work may require external communication"| Pylai
-    Agora["Agora: collaboration"] -->|collaboration events| Petasos
-    Petasos -->|collaboration requests| Agora
+    Agora["Agora: collaboration control / native record"] -->|"defined captured interactions / collaboration events"| Petasos
+    Petasos -->|"collaboration requests; originating information ownership retained"| Agora
+    Agora -->|"Application Services API: operations requested"| OmiliaServer["Harmonia.Omilia.Server: collaboration operations"]
+    OmiliaServer -->|"Application Services API: all managed-Room dialogue / activity"| Agora
+    OmiliaClient["Harmonia.Omilia.Client"] <-->|"Matrix protocol"| OmiliaServer
+    Roster["Roster Management: SEP"] -->|"R1.x/R2.x applicable Shift Start / End context"| Agora
+    Agora -->|"audit-worthy occurrences; dialogue / logs are not AuditEvent"| Kleio
     Calliope["Calliope-Models: build-time definitions / structural contracts"] -->|definitions consumed locally| Ergon
     DataSets["Calliope-DataSets: governed runtime content"] -->|"established Context / Pragma access and persistence"| Mneme
     DataSets -->|"existing execution where dataset governance requires workflow"| Ponos
@@ -360,7 +373,7 @@ flowchart LR
 | Dokimasia specialises Ponos and executes assurance Ergon | U02 preserves A04 independence; reuse does not give the assured activity control of assurance determination. AI activity boundary is established; detailed architecture CDG-35 remains open. |
 | Components use Themis PEP and Kleio Audit Capture | U07/U08, A01 AX-07–09. Themis-owned local PEP uses Identity-specific Criteria; valid sufficient context may support in-flight activity during PDP loss, while required new context must wait. Kleio constructs immutable AuditEvents from client occurrences, independent of Journey. U15 distinguishes Kleio-specific intrinsic platform capture authority under security policy from the originating Identity recorded as evidence; insufficient capture authority fails closed. Dokimasia terminal rules remain. Detailed contracts CDG-42/43. |
 | Ingress / execution / publication and event sharing use Petasos | U05/U09: purpose-defined durable queues carry PetasosParcel by value; associated information predominantly by reference. ActionableTask/Pragma remains through Mneme and each undertaking has its own FulfillmentTask. Queue status belongs to Petasos; Energeia observes/reports. Acceptance, commit, completion and external ACK remain distinct. |
-| Agora coordinates with execution through Petasos | AGENTS Invariant 10; L12 §3. No direct Agora-to-Ponos dependency. A detailed information-summary/provider contract is not established. |
+| Agora controls; Omilia operates; execution collaboration uses Petasos | U16 and AGENTS Invariant 10. Agora owns native collaboration and captures defined interactions without transferring the original record; source information conveyed through Rooms retains its owner. Omilia.Server exposes the bidirectional Application Services API; Omilia.Client is the collaboration client. Roster SEP supplies applicable Shift Start/End context only. No direct Agora-to-Ponos dependency; APIs/storage/representation detail deferred. [Canonical view](agora-omilia-collaboration.md). |
 | Pylai manages external interoperability | U14: Terma acts, Diadromí carries transient interaction; Pathway/Broker/Server have distinct execution/access patterns. Horos is the logical Praxis boundary, with egress return before unloading. AX-02/13 projection remains non-destructive/fail-closed. Identity, audit and assurance stay separate. U15 resolves CDG-51: Terma owns communication mechanics and active-interaction retry, with application meaning in applicable execution and no durable Terma/Diadromí recovery. |
 
 The [Calliope view](calliope-models-and-datasets.md) separates build-time definitions

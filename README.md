@@ -24,7 +24,9 @@ Harmonia adopts naming conventions rooted in Greek mythology and classical termi
 | **`Pragma`** | **Task Instance / State** | *Pragma* (πρᾶγμα) — That which has been done, an act, deed, concrete affair, or instance of action. | Concrete Task instance and runtime execution state wrapper used across workflow orchestration and pipeline tracking. |
 | **`Pylai`** | **Interface / Gateway Services** | *Pylai* (Πύλαι, pl. of *Pyle* / πύλη) — Greek word for "gates", "gateways", or portals of entry and exit. | The boundary through which Harmonia communicates with external systems (`pylai`), including MLLP inbound gateway (`pylai-mllp-in`), MLLP outbound gateway (`pylai-mllp-out`), FHIR Provider Registry gateway (`pylai-fhir-provider-registry`), shared utilities (`pylai-mllp-base`), and MLLP synthetic test CLI (`pylai-mllp-cli`). |
 | **`Iris`** | **User Interface / Presentation Services** | *Iris* (Ἶρις) — Goddess of the rainbow and divine messenger connecting heaven to humanity; symbol of visual representation and presentation. | Presentation tier (`iris`) comprising the WildFly Backend-For-Frontend gateway (`iris-befe`), Clinical UI (`iris-clinical`), Operations Console (`iris-console`), and Provider Registry Administration UI (`iris-administration`). |
+| **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Agora and Omilia responsibility boundary](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations).  |  |  |
 | **`Agora`** | **Collaboration & Matrix Gateway** | *Agora* (Ἀγορά) — The ancient Greek central public gathering space for assembly, civic discourse, and collaboration. | Real-time clinical collaboration projection subsystem (`agora`) interfacing with Matrix/Synapse via Application Service (AS) protocol, managing dynamic room and space lifecycles, and enforcing Themis default-deny security. |
+| **------- Legacy Content - Superseded ------- Finish ----** |  |  |  |
 | **`Paradeigma`** | **Synthetic Clinical Simulation Exemplar** | *Paradeigma* (Παράδειγμα) — The Greek term for pattern, archetype, exemplar, or illustrative model. | Comprehensive synthetic clinical simulation and testing subsystem (`paradeigma`) providing EMR, PAS, LMS, and RIS-PAC simulators, scenario generation engines, and automated multi-tier architecture verification. |
 
 ---
@@ -32,6 +34,20 @@ Harmonia adopts naming conventions rooted in Greek mythology and classical termi
 ## Architecture Overview
 
 The system is organized into a cohesive 5-tier architecture across coordinated subsystems:
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora and Omilia collaboration boundary](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+Supersession applies only to the Agora Collaboration Tier subgraph; the other diagram content is unchanged and is not adjudicated here.
+
+```text
+---------------------------------------------------------
+```
 
 ```mermaid
 graph TD
@@ -103,6 +119,11 @@ graph TD
   end
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ### Supported FHIR R5 Resources
 The platform delivers full CRUD, search, and validation lifecycle support for core FHIR R5 resources:
 1. `Person`
@@ -167,11 +188,30 @@ The repository enforces strict separation of concerns across 9 core subprojects:
   - **`iris-console`**: Single Page Application built with Vue 3, Vite, TypeScript, and Pinia dedicated to system topology monitoring, ActiveMQ Artemis messaging queues, distributed cache grid, and TaskSequence workflow management.
   - **`iris-administration`**: Single Page Application built with Vue 3, Vite, TypeScript, and Pinia for Provider Registry administration and practitioner governance.
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora and Omilia logical responsibility](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+Legacy module/package details remain implementation information; this wrapper supersedes their use as the complete collaboration architecture.
+
+```text
+---------------------------------------------------------
+```
+
 - **`Agora` (`agora`)**: Collaboration & Matrix Gateway Subsystem
   - **`agora-api`**: Contracts, interfaces, and DTOs for Matrix/Synapse collaboration projections, event encapsulation, and room/space lifecycles.
   - **`agora-matrix`**: Encapsulated Matrix protocol DTOs (Client-Server API, Synapse Admin API, Application Service transactions) preventing Matrix protocol structures from leaking into the wider platform.
   - **`agora-core`**: Core collaboration services, projection orchestration, room/space state machines, and Themis default-deny policy governance.
   - **`agora-service`**: Standalone collaboration gateway service handling Matrix Application Service (AS) transaction ingestion and Petasos event bridging.
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 
 - **`Paradeigma` (`paradeigma`)**: Synthetic Clinical Simulation Exemplar
   - **`paradeigma-common`**: Shared clinical simulation data models, generators, synthetic HL7 v2 message builders, and scenario helpers.

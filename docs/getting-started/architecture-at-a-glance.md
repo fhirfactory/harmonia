@@ -6,6 +6,20 @@ Harmonia delivers an enterprise Health Integration Environment (HIE) structured 
 
 ## 1. End-to-End System Architecture `[IMPLEMENTED]`
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora and Omilia responsibility map](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+Supersession applies only to the Agora collaboration subgraph and collaboration edge. Other tier/flow content is preserved without adjudication.
+
+```text
+---------------------------------------------------------
+```
+
 ```mermaid
 flowchart TD
     subgraph External["External Clinical Ecosystem"]
@@ -83,6 +97,11 @@ flowchart TD
     PONOS -.->|Collaboration Events| AGORA
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
 
 ## 2. Walkthrough of the 5 Core Tiers `[IMPLEMENTED]`
@@ -141,8 +160,25 @@ Unauthenticated or unauthorized actions default strictly to `DENY`. Security aud
 ### Calliope (Canonical Models & Conversions) `[IMPLEMENTED]`
 Calliope is Harmonia's shared schema and translation foundation. It defines canonical data structures (`ErgonEvent`, `ErgonPayload`, `ErgonReasonEnum`), topic definitions (`HarmoniaTopics`), and bi-directional converters between HL7 v2.x and FHIR R5 structures. It has zero dependencies on higher layers.
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Collaboration control and Omilia operations](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
+
 ### Agora (Collaboration Gateway & Matrix Synapse) `[IMPLEMENTED]`
 Agora acts as a Matrix Application Service (AS), bridging Harmonia clinical triggers into Matrix Synapse collaboration rooms. It provisions hierarchical **Patient Spaces** with four standard child rooms (`Statistics`, `Tasks`, `Discussion`, `Diagnostics`), enforces Themis authorization on all room operations, and maintains zero PHI in room metadata.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### Paradeigma (Synthetic Simulation Framework) `[IMPLEMENTED]`
 Paradeigma simulates complete external hospital ecosystems (EMR, LMS, PAS, RIS-PACS) to drive end-to-end integration scenarios and failure recovery tests. Under **Invariant 1**, production code must never depend on or import Paradeigma.

@@ -25,7 +25,9 @@ Harmonia provisions three decoupled PostgreSQL 16 database clusters:
 \nolinkurl{postgres-ops-1} & 5434 & \nolinkurl{ops_node_1} & \nolinkurl{mnemosyne-operations} & Workflow state \& audit lineage (\nolinkurl{hie_operations_resources}). \\
 \nolinkurl{postgres-ops-2} & 5435 & \nolinkurl{ops_node_2} & \nolinkurl{mnemosyne-operations} & Workflow state \& audit secondary replica store. \\
 \addlinespace
+\multicolumn{5}{p{0.94\textwidth}}{\scriptsize\textbf{------- Legacy Content - Superseded ------- Start ------} Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#information-ownership}{Collaboration ownership and deferred persistence}. } \\
 \nolinkurl{postgres-synapse} & 5436 & \nolinkurl{synapse_db} & Synapse / Agora & Matrix state, \nolinkurl{agora_resource_mappings}, \nolinkurl{agora_as_transactions}. \\
+\multicolumn{5}{p{0.94\textwidth}}{\scriptsize\textbf{------- Legacy Content - Superseded ------- Finish ----}} \\
 \bottomrule
 \end{tabularx}
 \caption{Harmonia Relational Database Register}
@@ -36,8 +38,16 @@ Harmonia provisions three decoupled PostgreSQL 16 database clusters:
 \begin{enumerate}
     \item \textbf{\nolinkurl{hie_fhir_resources}}: Primary key \nolinkurl{(resource_type, resource_id, version_id)}. Stores raw JSON resource payload, optimistic lock version, last-updated timestamp, and JSONB search indexes.
     \item \textbf{\nolinkurl{hie_operations_resources}}: Primary key \nolinkurl{(operation_id, sequence_id)}. Stores \nolinkurl{Pragma} state envelopes, task checkpoint progressions, and execution latencies.
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by: \href{../../markdown/05-information-systems-architecture/agora-omilia-collaboration.md\#information-ownership}{Deferred collaboration mapping and transaction structures}.
+\par\noindent ---------------------------------------------------------
+
     \item \textbf{\nolinkurl{agora_resource_mappings}}: Primary key UUID \nolinkurl{id}. Maps Harmonia resource references to Matrix room/space IDs with \nolinkurl{status} and timestamp columns.
     \item \textbf{\nolinkurl{agora_as_transactions}}: Primary key \nolinkurl{transaction_id}. Enforces AS push transaction idempotency with receive/process timestamps.
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 \end{enumerate}
 
 \section{Distributed Cache Grid Register (Infinispan 15.0.3)}

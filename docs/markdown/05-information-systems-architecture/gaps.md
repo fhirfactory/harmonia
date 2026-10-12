@@ -15,7 +15,7 @@ or establishing missing architectural meaning appears to require human
 adjudication; “Possibly” separates further documentary recovery from a decision.
 It is not a request to adjudicate during reconstruction.
 
-The [U02–U15 Step-A adjudications](sources.md#u02) resolve/reclassify
+The [U02–U16 Step-A adjudications](sources.md#u02) resolve/reclassify
 the affected entries below. Settled component boundaries and management/reuse
 relationships are separated from remaining detailed design. The primary note's
 earlier access issue was an input-access dependency, not an architectural gap.
@@ -42,11 +42,11 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-18 — partially resolved / destination observation and parent progression** | Petasos handoff state versus Pragma/Task observations; F10/D10/Journey | U05 gives Petasos operational handoff/delivery obligation ownership; governed information may record observations. L03/L30/L28 and REC-002 establish destination granularity, with competing completion descriptions. | **Operational ownership versus observation distinction resolved.** Exact Petasos-to-Pragma/Task relationships, combination of observations, parent completion, partial/unknown delivery and outcome resolution remain unresolved. No state mirror or TaskOutcome algorithm inferred; dynamic fan-out CDG-37. | **Yes** for representation/progression detail; REC-002 is preserved. |
 | **CDG-19 — partially resolved / duplicates and uncertain effects** | Petasos handoff duplicate recovery; consumer execution and Agora partial transactions | U05 allocates persistent handoff recovery to Petasos, separate from Ponos execution. L29 sliding windows and L12 transaction publish/marker sequence do not establish effect idempotence. | **Handoff versus execution responsibility resolved.** Partial publication, lost responses, marker failure, retention-window expiry and duplicate/reference/undertaking identity remain unresolved. Transport duplicate detection is not business-effect idempotence. | **Yes/Possibly** after further contract review; no exactly-once architecture inferred. |
 | **CDG-20 — contradiction / component** | Agora/Harmonia universal clinical authority and workflow claims; C18 | L12 §2 calls Harmonia single source of truth for clinical workflows/information; L18/L26 use broad clinical-process language. A01 AX-06/18 and L13 ADR-007 preserve external/source authority. | Candidate projection/information processing is conflated with clinical-work management or originating fact authority. Broad claims are retained as historical contradictions, not adopted responsibilities. | **No** to reopen established authority boundary; **possibly** to clarify bounded candidate behaviours. |
-| **CDG-21 — relationship / Data Object** | Care-team roster source for Agora membership; F22/D14 | L12 §8 says Provider Registry in Mnemosyne authoritatively governs care-team membership; L15 registry scope/resource model supplies directory references/Group, not a complete roster ownership contract. | Directory representation and collaborative membership do not establish the authoritative roster/source service, context, freshness or governing membership decision. | **Yes** if further documentation does not establish that relationship; no new upstream owner inferred. |
-| **CDG-22 — contradiction / persistence** | Agora mappings/transactions versus homeserver stores; C18/D14 | L12 §§4/5 allocates durable mappings to Mnemosyne; §3 describes Agora Core JPA; L20 persistence chapter/register lists Synapse and Agora as store owners. | Information management, authoritative persistence port and independent discourse storage are not consistently separated. Direct JPA/module placement cannot settle ownership. | **Yes** unless these are documented distinct variants; no database/platform allocation made. |
-| **CDG-23 — orphan feature / relationship** | Statistics/Tasks/Diagnostics projections and clinical submission; F22/F24 | L12 §§2/6 describes summaries, workflow notifications and committing clinical decisions/outputs before discourse purge. No consistent providing-component/submission contract is supplied in that source. | Projection producers, permitted disclosure, formal-record handoff and authority/retention responsibility are insufficiently defined. Room names do not establish content services or clinical-work authority. | **Possibly** after recovering feature/producer contracts; adjudication for absent responsibility boundaries. |
+| **CDG-21 — membership responsibility RESOLVED / detailed derivation deferred** | Agora-managed membership intent; F22/D14 | U16: Roster Management SEP supplies applicable Shift Start/End periods only for R1.x/R2.x operational context. Agora controls membership intent; Omilia.Server performs operations. Provider Registry/Group and PractitionerCapacity are not roster authority. | Former roster-source/Room-control blocker resolved. Exact membership rules, context freshness and Capacity/Shift use remain deferred CDG-52; roster capability does not own Room membership. | **Responsibility CLOSED by U16**; detailed derivation is non-blocking design/discovery. |
+| **CDG-22 — collaboration custody RESOLVED / persistence mechanics deferred** | Agora native record/state versus Omilia.Server operations; C18/C47/D14 | U16 assigns native collaboration information/state to Agora and underlying operations to Omilia.Server; conveyed source information retains its originating owner. AX-05 remains controlling. | Legacy Core JPA/Mnemosyne/homeserver allocations are historical structures, not competing current information owners. Exact collaboration persistence/storage, mapping/transaction mechanisms and retention remain deferred CDG-19/52. | **Application-custody responsibility CLOSED by U16**; no independent authoritative store or direct-JPA path selected. |
+| **CDG-23 — capture responsibility RESOLVED / representations and projections deferred** | Managed-Room capture/derivation; F22/F24 | U16 replaces generic clinical-submission-before-purge with defined interactions captured as applicable Communication Information Units and/or Pragma into established governed processing. Original Agora record remains Agora's; conveyed information retains its originating owner. | Not every message becomes work/clinical content; capture creates new governed information/activity, not ownership transfer. Exact representations, interaction definitions, provenance, retention and optional projection/provider contracts remain CDG-52. | **Responsibility CLOSED by U16**; detailed design/discovery remains non-blocking. |
 | **CDG-24 — partially resolved / DataSets and detailed terminology services** | Calliope C01/C41/C42/F25/45/D16 | U13 establishes Models versus runtime DataSets, nomenclature and ontology review for Harmonia use, with established Mneme/Mnemosyne persistence. L27 proposed terminology lookup/expansion/validation and clinical authoring remain distinct. | **Runtime content-management owner and persistence boundary resolved.** Exact ontology scope, lifecycle/version/history, development representation and proposed clinical service allocation remain CDG-49; no standalone product/API inferred. | **Yes/Possibly** for deferred details/service allocation; no reopening of the two-submodule distinction. |
-| **CDG-25 — persistence / relationship / Data Object** | Media/binary management; F31/D15 | L19 Ergon payload includes clinical binary attachments; L10/L17/L23 name DocumentReference support/cache. Broad discovery found no consistent Media Server or equivalent contract. | Payload/metadata support does not establish durable binary custodian, access/link integrity, content lifecycle, authorization, media structures or recovery. No blob product or server component invented. | **Possibly**; source recovery or explicit bounded architecture decision needed. |
+| **CDG-25 — partially resolved / remaining binary application-custody responsibility** | Native collaboration media versus formally managed clinical binary content; F31/D14/D15 | U16 assigns native collaboration information/media to Agora; Omilia.Server performs applicable media operations. A Room reference/presentation does not transfer ownership of a formal binary. L19/L10/L17/L23 still leave the F31/D15 clinical-binary application custodian unassigned. | Collaboration ownership is resolved. The remaining question is who manages formally managed clinical binary content outside native collaboration, or whether that candidate behaviour is explicitly deferred/outside scope. AX-05 durability and DocumentReference support do not by themselves name that application responsibility. Storage/retrieval/link/lifecycle mechanics remain deferred, not additional blockers. | **A2 responsibility question remains**; [precise boundary](#binary-custody-question). No Media Server, object store or detailed persistence architecture inferred. |
 | **CDG-26 — contradiction / feature** | Clinical presentation versus diagnostic PHI boundary; C15–17/F26–27 | L11/L18/L23 describe clinical record/timeline views; L21 design-system safety wording limits presentation/diagnostic identifiers. AGENTS Invariant 7 governs non-clinical logs. | Reusable diagnostic control/logging rules and clinical presentation permissions are not consistently distinguished. No ban on authorised clinical display is inferred from zero-PHI diagnostics. | **Possibly** for view/projection contracts; established logging prohibition stays intact. |
 | **CDG-27 — partially resolved / working structures and retained variants** | Mneme Context/Pragma, Petasos obligations, Ponos execution and definition working sets | U10 establishes Context/Pragma responsibility, four-service surface, temporal composed values and non-exhaustive expected sets; U05 state/selection boundaries retained. L09/L10/L17/L19/L20 cache catalogues remain historical. | **High-level working Context/Pragma meaning resolved.** Physical representation/distribution/reconstruction/retention and coordination remain CDG-45; no cache or queue topology/TTL/write-behind authority selected. | **Possibly** for detailed representation; technology catalogue cannot override settled semantics. |
 | **CDG-28 — partially resolved / operational reporting and tools** | Energeia, Journey, Iris/support; C39/C22/C35/F27/38/39 | U06 assigns Harmonia operational observation/reporting and Journey ownership to Energeia; Iris presents; external IT/Ops manages technical platform. | **Owner, two management planes and R1.x/R2.x Observe → Report boundary resolved.** Provider freshness/failure, observation/reporting detail, retention/projection/consumption and command authority remain detailed contracts CDG-38/39. Absence of observation is not non-occurrence. | **Yes/Possibly** for detail; no autonomous adaptation or UI-derived hierarchy. |
@@ -73,6 +73,7 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-49 — Calliope detailed contracts / realisation conflict closed** | Models library dependency / DataSets runtime management and authoritative content access | U13/U15 establish complementary build-time representation and runtime authority; repository AGENTS §2 and Strategy Component 5 / Seam 5 reconciled. | Exact ontology/lifecycle/version/history/representation/workflow/UI/API/packaging contracts remain deferred; Models library semantics and Mneme/Mnemosyne persistence remain. [Details](#calliope-contracts). | **Realisation conflict CLOSED by U15**; remaining detailed design/discovery preserved. |
 | **CDG-50 — Pylai/Horos detailed contracts** | Terma / Diadromí / Controller / three interaction patterns / Horos | U14 settles responsibilities, non-recoverability, ingress persistence condition and egress return before unloading. | Schema, token, API, protocol/ACK, runtime handover and representation detail remain deliberately deferred; broader Controller use is not a requirement. | **Yes/Possibly** for remaining architecture versus implementation detail; settled patterns not reopened. |
 | **CDG-51 — Strategy/Terma communication-mechanics conflict — CLOSED** | Strategy G4 / Pylai profile / Terma | U15 reconciles Strategy: Terma owns the external communication stack; applicable Harmonia execution owns application meaning, subject to explicitly defined interaction patterns. | Active-interaction communication retry only; loss/termination permits no resumption, later client retry creates new interaction/Diadromí. Petasos and execution retain durable recovery. Detail CDG-50. | **CLOSED by U15, 2026-10-12.** |
+| **CDG-52 — established Agora/Omilia architecture / deliberate detailed deferrals** | Agora C18; Omilia.Server C47 / Omilia.Client C48; F22–24/46/D14/M08 | U16 settles control/operations, roster SEP, native ownership/conduit behaviour, bidirectional managed Rooms, capture/derivation and Kleio audit boundary. | Taxonomy/lifecycle, membership derivation, API, persistence/media mechanics/retention, interaction/Pragma/Communication representations, interpretation, audit catalogue, security/privacy, modifications and Client/Iris integration remain explicit [deferrals](#agora-omilia-contracts). | **Non-blocking design/discovery**; separately retained CDG-25 application-custody question is not closed by these deferrals. |
 
 <a id="dokimasia-ai-discovery"></a>
 
@@ -123,11 +124,65 @@ assessment's Q01–Q05 may overlap these evidence-backed issues, but supplies
 neither authority nor a work sequence.
 
 Resolution and prioritisation of CDG issues require subsequent bounded work.
-U02–U12 correct only the affected Step-A candidate meanings recorded above.
+U02–U16 correct only the affected Step-A candidate meanings recorded above.
 Praxis's higher-order meaning and Energeia Praxis/Journey ownership are resolved;
 detailed lifecycle/representation and downstream designs remain unresolved.
 This register proposes no implementation plan, dependency schedule or automatic
 “next issue”; Domain05's separately authorised traceability phase remains future.
+
+<a id="binary-custody-question"></a>
+
+## CDG-25 — Remaining non-collaboration binary responsibility question
+
+**U16 reassessment:** native Agora media is collaboration information; linked or
+presented formal binaries retain their originating information ownership. The
+remaining A2 question is narrowly: **which application responsibility manages the
+candidate F31/D15 formally managed clinical binary content outside native
+collaboration, or is that behaviour explicitly deferred/outside the candidate
+scope?** Existing F31/D15 still records clinical binary handling with no assigned
+application custodian; the DesignNote assigns no such non-collaboration owner.
+
+This concerns the responsibility for the referenced content, not ownership of
+Agora's reference/activity. Mnemosyne's durable-state responsibility under AX-05
+does not by itself assign that application role; external origin alone does not
+specify whether Harmonia manages a binary or only references it. Neither a new
+component nor a separate binary service is required by this question. An existing
+responsibility or an explicit bounded scope disposition could resolve it.
+
+Physical storage, schema, protocol, access/link mechanics, retention and media
+persistence are deferred design, not extra A2 blockers. They must not be invented
+to close the responsibility question. All collaboration-specific CA-01–03
+responsibility blockers from the previous assessment are resolved by U16; CA-04
+is narrowed to this non-collaboration question.
+
+<a id="agora-omilia-contracts"></a>
+
+## CDG-52 — Agora/Omilia detailed contracts and discovery
+
+[The canonical collaboration view](agora-omilia-collaboration.md) settles control,
+operations, application ownership, roster SEP, conduit behaviour, capture/derivation
+and authoritative audit responsibility. CDG-21–23 no longer describe unresolved
+component ownership. Deliberately deferred matters are:
+
+- Room/Space taxonomy, creation criteria and detailed lifecycle.
+- Membership rules/derivation, context freshness, PractitionerCapacity and Shift
+  Start/End use; no workforce-management or roster authority.
+- Application Services API contract/technology and upstream Matrix mapping.
+- Agora collaboration persistence/storage and mapping/transaction allocation;
+  binary/media persistence, access/link mechanics and dialogue/media retention.
+- Communication Information Unit representation, exact Pragma specialisations,
+  capture provenance and definitions of meaningful interactions.
+- Free-text interpretation, NLP/AI and recognition/UI mechanisms.
+- Detailed logging, audit-event catalogue and security/privacy mechanics.
+- Omilia.Server/Client modifications, Client/Iris integration and detailed
+  external/federated interaction; existing isolation constraints are not relaxed.
+- Notification/escalation details and optional Statistics/Tasks/Diagnostics
+  projections/providers, without fixed Room cardinality.
+
+These are non-blocking for Step-A responsibility coherence. Partial/uncertain
+transaction effects remain CDG-19 under AX-15; no exactly-once guarantee is inferred.
+Dialogue/logging do not become AuditEvent and Kleio's architecture is unchanged.
+The separately unassigned F31/D15 binary application custodian remains CDG-25.
 
 <a id="pubsub-fanout"></a>
 
@@ -214,7 +269,7 @@ The following remain explicitly unresolved after consolidation:
 6. Effective Information.Compartment / Information.Classification derivation ownership and precedence; Themis is not assumed to own all semantic derivation.
 7. Detailed PractitionerCapacity selection UI.
 8. Exact PractitionerCapacity ↔ FHIR PractitionerRole mapping; no mapping to a Domain04 Role Binding is inferred either.
-9. Agora/Synapse membership, operational responsibility, escalation, approval-routing and notification mechanics.
+9. Agora/Omilia detailed membership, operational responsibility, escalation, approval-routing and notification mechanics; U16 establishes control/operations ownership, not these mechanisms.
 10. Detailed PAP management Praxes/Erga, approval rules, UI and versioning mechanisms.
 11. Detailed Identity / PEP-Criteria forwarding lifecycle and representation.
 12. PEP-Criteria caching, refresh and distribution mechanics beyond established valid-context availability constraints.

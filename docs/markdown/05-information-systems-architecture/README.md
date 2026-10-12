@@ -56,7 +56,9 @@ The [Calliope / Pylai / Praxis.Horos consolidation](#calliope-pylai-horos-adjudi
 incorporates the supplied adjudications with explicit deferrals.
 The [three subsequent boundary adjudications](#boundary-reconciliation) resolve
 the retained Terma/Strategy, Calliope realisation and Kleio capture-authority
-conflicts. The same A2/A3 boundary applies; **Step B has NOT started**.
+conflicts. The [Agora / Omilia reconciliation](#agora-omilia-adjudication) now
+establishes collaboration control, operations, ownership and capture boundaries.
+The same A2/A3 boundary applies; **Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -76,6 +78,7 @@ record does not declare the Domain Completion Gate satisfied.
 | [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated Praxis/Journey ownership, control, selection, handoff, observation and assurance meanings; retained detailed uncertainty. |
 | [Calliope Models and DataSets](calliope-models-and-datasets.md) | Distinct build-time definitions and runtime governed content, developer support, security/assurance nomenclature and Themis reconciliation. |
 | [Pylai external interoperability and Praxis.Horos](pylai-external-interoperability.md) | Terma, transient non-recoverable Diadromí, Controller, Pathway/Broker/Server patterns, ingress acceptance and egress handover ordering. |
+| [Agora / Omilia collaboration](agora-omilia-collaboration.md) | Collaboration control versus operations, native record versus conduit, roster SEP, managed-Room capture, audit and media boundaries; deliberate deferrals. |
 | [Internal middleware](middleware.md) | Internal messaging, recoverable handoff, dispatch, access and context collaboration, separated from external integration and products. |
 | [Documentation/component-feature gaps](gaps.md) | Evidence, incomplete meaning and possible adjudication for each gap. |
 | [Sources and reconciliation](sources.md) | Authority, legacy provenance, reviewed scope, disposition and section-specific supersession. |
@@ -441,7 +444,7 @@ definitions; this consolidation does not create a parallel Identity authority.
 - **PractitionerCapacity is selected operating context, not authority:** one is
   active for the applicable practitioner session/operational or roster context.
   It differs from Practitioner, FHIR PractitionerRole and AuthorisationRole.
-  Operational responsibility, including future Agora/Synapse notification use,
+  Operational responsibility, including future Agora notification use through Omilia,
   remains distinct from Themis authorisation. Receiving a notification grants
   no information access; following it requires normal PEP enforcement.
 - **PEP-Criteria is precomputed and Identity-specific:** Themis resolves governed
@@ -633,8 +636,9 @@ Canonical detail: [Terma and Diadromí](pylai-external-interoperability.md#terma
 [Kleio capture authority](component-register.md#kleio-capture-authority) and
 [U15 provenance](sources.md#u15). Deliberate detailed-design/discovery deferrals
 remain. Reconciliation authorises no software, deployment or dependency changes.
-The subsequent closure assessment records new substantive issues without changing
-their architecture. A4 remains pending for Mark + ChatGPT; Step B is not started.
+The U15 closure assessment recorded four responsibility questions without
+changing their architecture. U16 below subsequently reconciles the supplied
+Agora/Omilia adjudication and reassesses those questions. A4 remains pending for Mark + ChatGPT; Step B is not started.
 
 ### Boundary terminology
 
@@ -647,3 +651,45 @@ their architecture. A4 remains pending for Mark + ChatGPT; Step B is not started
 | Identity-derived authority | Authority granted to a human/system Identity and resolved/enforced through Themis. |
 | Kleio intrinsic platform authority | Policy-governed authority specifically for Kleio mandatory authoritative audit capture; not inferred for other activities/components. |
 | Subject of audit evidence | Originating/acting Identity recorded in evidence; distinct from the authority performing mandatory capture. |
+
+
+<a id="agora-omilia-adjudication"></a>
+
+## Agora / Omilia collaboration reconciliation and closure assessment
+
+**U16 — 2026-10-12:** the supplied Agora/Omilia DesignNote and explicit task
+adjudications are incorporated into the [canonical collaboration view](agora-omilia-collaboration.md).
+**Agora controls; Omilia operates.** Agora owns native collaboration and managed
+Room/Space lifecycle/membership/publication intent. Omilia.Server, derived from
+Matrix Synapse, performs operations and exposes the bidirectional Application
+Services API; Omilia.Client, derived from Element, provides the collaboration
+client. Harmonia.Omilia is their architectural identity.
+
+Roster Management is SEP; R1.x/R2.x needs only applicable Shift Start/End periods
+as operational context. Agora controls membership intent without becoming roster
+authority. Source clinical/operational/workflow information merely conveyed through
+Agora retains its originating owner. Defined managed-Room interactions may be
+captured/derived as new Communication Information Units and/or Pragma for governed
+processing; the original Agora record remains Agora's. Not every message becomes
+work or clinical record content. Dialogue retention, logging and Kleio authoritative
+audit remain distinct. AX-05 and existing security/isolation rules remain unchanged.
+
+The fresh Step-A assessment closes the former roster, Agora record-custody and
+generic formal-record handoff blockers. It settles Agora-native media ownership
+and the non-transfer of referenced binary ownership. **One specific A2 question
+remains:** the application custodian for the candidate F31/D15 formally managed
+clinical binary content outside native collaboration, or its explicit deferred-scope
+disposition. [CDG-25](gaps.md#binary-custody-question) preserves it; no binary store
+or new component is inferred. Detailed collaboration matters remain
+[non-blocking deferrals](gaps.md#agora-omilia-contracts).
+
+| Activity | Assessment at the U16 snapshot |
+| :--- | :--- |
+| A1 — Candidate reconstruction/documentation | **COMPLETE** |
+| A2 — Architectural review/adjudication | **INCOMPLETE** — F31/D15 binary application-custody question only |
+| A3 — Candidate correction/reconciliation | **COMPLETE WITH NON-BLOCKING DEFERRED ITEMS** — supplied adjudications reconciled; remaining A2 decision may require a further bounded correction |
+| A4 readiness | **NOT READY FOR A4 ADJUDICATION** — recommendation; A4 remains pending for Mark + ChatGPT |
+| Step B — Capability + Information traceability | **NOT STARTED** |
+
+This assessment does not declare Step A, Domain05 or A4 complete. It does not
+assess upstream coverage or turn detailed deferred design into additional blockers.
