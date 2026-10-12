@@ -53,8 +53,10 @@ Context/Pragma Management and Persistence/Search/Research Metadata Management.
 The [Identity consolidation](#identity-candidate-adjudication) reconciles
 externally provided authentication with Themis-owned authorisation semantics.
 The [Calliope / Pylai / Praxis.Horos consolidation](#calliope-pylai-horos-adjudication)
-incorporates the remaining supplied adjudications with explicit deferrals and
-retained conflicts. It retains the same A2/A3 boundary; **Step B has NOT started**.
+incorporates the supplied adjudications with explicit deferrals.
+The [three subsequent boundary adjudications](#boundary-reconciliation) resolve
+the retained Terma/Strategy, Calliope realisation and Kleio capture-authority
+conflicts. The same A2/A3 boundary applies; **Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -406,9 +408,9 @@ C&G remains one coherent governance information space; O&A remains horizontally
 partitionable without a prescribed key/topology. Independent audit targets do not
 establish a general O&A topology. APIs, schemas, transaction/
 retry/failover, queue technology and detailed protocols remain unresolved under
-[CDG-42–44](gaps.md#themis-detailed-contracts). The Themis note's proposed audit
-authorisation exception conflicts with AX-07 and is explicitly retained for
-adjudication; it is not adopted as an authorisation bypass.
+[CDG-42–44](gaps.md#themis-detailed-contracts). U15 subsequently resolves the
+former Themis-note audit-authorisation conflict through Kleio-specific governed
+intrinsic platform capture authority under AX-07.
 
 <a id="identity-candidate-adjudication"></a>
 
@@ -465,8 +467,8 @@ PAP Praxes/Erga, forwarding lifecycle and caching/refresh/distribution. No
 jCasbin/OPA/Cedar dependency, general-purpose IAM framework or detailed Iris
 design is introduced. Identity is sufficiently captured for Candidate Architecture
 review; A4 and whole-domain acceptance remain pending, and Step B has not started.
-The [Kleio audit-persistence exception versus AX-07](gaps.md#themis-detailed-contracts)
-remains unresolved; U12 supplies no bypass or subsequent adjudication of it.
+U12 did not resolve mandatory Kleio capture authority. The subsequent
+[U15 adjudication](#boundary-reconciliation) now resolves it under AX-07.
 
 <a id="mneme-mnemosyne-adjudication"></a>
 
@@ -517,8 +519,8 @@ These extend accepted candidate meanings within A2/A3; A4 acceptance is pending.
 
 Detailed Context/concurrency/harmonisation, persistence/search and Research Metadata
 contracts remain [CDG-45–48](gaps.md#context-and-pragma-contracts) under AX-17. No
-technology, UI or AI implementation is selected. The Themis/AX-07 audit-authorisation
-conflict is retained unchanged; no exception is adopted.
+technology, UI or AI implementation is selected. U15 subsequently resolves
+Kleio mandatory capture authority under AX-07; no policy exception is established.
 
 | Completion activity | Status |
 | :--- | :--- |
@@ -581,13 +583,67 @@ meaning is self-contained in RADS; external note location confers no authority.
 - Pylai carries identity; Themis establishes Harmonia authority and enforcement.
   Meaningful transactions are auditable through Kleio; Journey may record
   applicable business progression/interoperability failure; Dokimasia may use
-  evidence. Journey, Audit and Assurance remain distinct. The Kleio
-  audit-authorisation conflict is retained with no bypass.
+  evidence. Journey, Audit and Assurance remain distinct. U15 subsequently
+  resolves the Kleio mandatory capture-authority question under AX-07.
 
-[CDG-49/50/51](gaps.md#calliope-contracts) preserves detailed ontology, DataSet,
-representation, UI/workflow, protocol, token, API, Horos/handover and realisation
-questions. Strategy's transport exclusions conflict with the Terma allocation;
-the repository Calliope pure-library rules also require explicit realisation
-reconciliation. Neither is silently overridden. These bounded components are now
-represented sufficiently faithfully **for Candidate Architecture review**, with
-those issues visible. This is not whole-Domain05 acceptance or Step-B authority.
+[CDG-49/50](gaps.md#calliope-contracts) preserves detailed ontology, DataSet,
+representation, UI/workflow, protocol, token, API and Horos/handover questions.
+U15 below resolves the former Strategy/Terma and Calliope realisation conflicts.
+These bounded components are represented for Candidate Architecture review;
+this establishes neither whole-Domain05 acceptance nor Step-B authority.
+
+<a id="boundary-reconciliation"></a>
+
+## Terma, Calliope and Kleio boundary reconciliation
+
+**U15 — 2026-10-12:** three explicit adjudications close the corresponding
+retained conflicts and reconcile the existing candidate views:
+
+- **Terma manages the communication stack; applicable execution manages
+  application meaning.** Terma establishes, conducts and completes external
+  communication, including connections/sessions, framing and communication-local
+  retry. Application interpretation/processing remains with the applicable
+  Harmonia execution framework, principally Praxis/Ergo/Ergon, except where an
+  explicitly defined pattern provides otherwise. Retry requires the same active
+  interaction and Diadromí; termination/loss permits no resumption. A later client
+  retry creates both anew. Terma/Diadromí supplies no durable application recovery;
+  Petasos and established execution retain durable messaging/recovery. Strategy
+  G4, Component 4 and summary now express this distinction; CDG-51 is closed.
+- **Calliope-Models is a development/build-time model and library dependency;
+  Calliope-DataSets manages mutable governed runtime content and authoritative
+  access.** Build-time representation supports type-safe development and normal
+  IDE/AI assistance; current governed membership/content uses DataSets where
+  runtime resolution is required. These responsibilities are complementary.
+  Models' library/dependency semantics remain; DataSets uses Mneme/Mnemosyne and
+  does not make Calliope a persistence manager. Strategy Component 5 / Seam 5 and
+  AGENTS §2 are reconciled; CDG-49's realisation conflict is closed, its detailed
+  deferrals preserved.
+- **Kleio mandatory authoritative capture uses intrinsic platform authority
+  associated with its audit responsibility, governed by Harmonia security policy.**
+  The audited Identity remains evidence, not the authority persisting the
+  mandatory AuditEvent; its PEP-Criteria is not borrowed. Themis retains policy
+  evaluation. Required capture fails the governed operation closed if Kleio
+  cannot sufficiently exercise that authority. AX-07 incorporates this specific
+  clarification and CDG-42's audit-authorisation conflict is closed. Authority is
+  not generalised to other components or other Kleio activities. Any proposed
+  equivalent authority requires separate architecture adjudication.
+
+Canonical detail: [Terma and Diadromí](pylai-external-interoperability.md#terma-and-diadromi),
+[Calliope realisation](calliope-models-and-datasets.md#calliope-realisation),
+[Kleio capture authority](component-register.md#kleio-capture-authority) and
+[U15 provenance](sources.md#u15). Deliberate detailed-design/discovery deferrals
+remain. Reconciliation authorises no software, deployment or dependency changes.
+The subsequent closure assessment records new substantive issues without changing
+their architecture. A4 remains pending for Mark + ChatGPT; Step B is not started.
+
+### Boundary terminology
+
+| Term | Meaning in this adjudication |
+| :--- | :--- |
+| Communication-local retry | Terma retry during the same active external interaction and Diadromí; no resumption after termination/loss. |
+| Durable messaging/recovery | Established Petasos and execution responsibilities; not supplied by Terma/Diadromí. |
+| Models library dependency | Development/build-time structural contracts and representations supplied by Calliope-Models. |
+| Runtime dataset authority | Calliope-DataSets authority over current governed mutable content/membership; persistence remains Mneme/Mnemosyne. |
+| Identity-derived authority | Authority granted to a human/system Identity and resolved/enforced through Themis. |
+| Kleio intrinsic platform authority | Policy-governed authority specifically for Kleio mandatory authoritative audit capture; not inferred for other activities/components. |
+| Subject of audit evidence | Originating/acting Identity recorded in evidence; distinct from the authority performing mandatory capture. |

@@ -37,7 +37,9 @@ read together with the [feature](candidate-feature-map.md) and
   Themis decides/enforces, Dokimasia assures and Kleio audits.
 - **Standing:** U13 settles the two responsibilities, not their packaging, runtime
   ontology boundary or representation/workflow mechanisms (CDG-24/49). Existing
-  pure-library dependency constraints are not changed. General converter-support
+  pure-library dependency constraints apply to Models; U15 resolves the
+  [realisation boundary](calliope-models-and-datasets.md#calliope-realisation).
+  General converter-support
   versus activity allocation remains CDG-05; no terminology product is selected.
 
 <a id="authorisation-nomenclature"></a>
@@ -395,9 +397,9 @@ their conceptual models SHALL NOT redefine Harmonia semantics.
 - **Standing:** U12 consolidates the adjudicated Identity Candidate Architecture
   and refines U08's Criteria, policy-language deferral and delegation wording.
   It does not accept all Domain05 candidate material or begin Step B.
-  [CDG-42](gaps.md#themis-detailed-contracts) retains detailed design and the
-  U08 Themis note §15 audit-authorisation-exception conflict with AX-07;
-  no bypass is adopted.
+  [CDG-42](gaps.md#themis-detailed-contracts) retains detailed design.
+  U15 resolves the former U08 §15 conflict through Kleio-specific
+  [mandatory capture authority](#kleio-capture-authority), governed under AX-07.
   Historical fixed gate counts and automatic context persistence remain
   CDG-15/30 provenance, without reopening established security boundaries.
 
@@ -435,6 +437,37 @@ their conceptual models SHALL NOT redefine Harmonia semantics.
   evidence of its assurance activity; its [terminal rules](#dokimasia-terminal-boundaries)
   prohibit a separate own-execution AuditEvent and recursive assurance. Consumption
   of its outputs does not circumvent those rules.
+
+<a id="kleio-capture-authority"></a>
+
+#### Mandatory capture authority and the audited Identity
+
+> **Subject of audit evidence ≠ authority performing audit capture.**
+
+Kleio performs mandatory authoritative audit capture under **intrinsic platform
+authority** associated with its established architectural audit responsibility.
+The originating/acting Identity remains evidence recorded by Kleio; it is not
+the authority under which the mandatory AuditEvent is persisted. Kleio does not
+borrow that Identity's PEP-Criteria merely to record its activity, including
+activity denied to that Identity.
+
+Identity-derived authority granted to human/system Identities remains resolved
+and enforced through Themis. Kleio capture executes within established security
+context and remains governed by Harmonia security policy, with Themis retaining
+policy evaluation ownership. Mandatory capture is neither a security bypass nor
+a policy exception. [AX-07](../governance/architectural-axioms.md#kleio-mandatory-capture-authority)
+incorporates this adjudication.
+
+Where authoritative audit capture is required for a governed operation and
+Kleio cannot exercise that platform authority sufficiently to capture the
+required evidence, the governed operation **SHALL fail closed**. Durable target
+availability remains necessary; authority alone establishes no successful capture.
+
+This authority applies specifically to Kleio mandatory authoritative audit
+capture. It grants no equivalent authority to other components or other Kleio
+activities. Any proposed equivalent responsibility requires separate architecture
+adjudication; representation, policy/enforcement mechanics and transaction
+coordination remain [CDG-43](gaps.md#kleio-detailed-contracts).
 
 <a id="audit-history-and-evidence"></a>
 
@@ -1014,8 +1047,9 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
 - **Governance:** compartments are validated/reapplied without loss or weakening;
   semantic applicability is not independently determined here. Themis owns PEP
   semantics and Criteria; Mnemosyne controls/prevents the persistence operation.
-  The [AX-07 audit-authorisation conflict](gaps.md#themis-detailed-contracts) stays
-  unresolved, with no adopted exception.
+  Kleio mandatory AuditEvent persistence uses its
+  [governed intrinsic platform authority](#kleio-capture-authority), distinct
+  from the audited Identity; Mnemosyne gains no equivalent intrinsic authority.
 - **Existing registry support:** server-side Provider Registry durable integrity,
   preservation/history and recovery responsibilities remain as described in C13
   and the data view; this correction does not redesign their semantic validation.
@@ -1082,8 +1116,9 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
 - **Exclusions/standing:** no execution framework, persistence manager, authority
   inference, fabricated READ/SEARCH work or mandatory Controller for all interactions.
   AX-02/13 non-destructive fail-closed publication remains. Technology/handover
-  details and Strategy transport conflict remain CDG-32/34/50/51; Kleio's
-  audit-authorisation conflict stays CDG-42, with no bypass.
+  details remain CDG-32/34/50; CDG-51 records the resolved Strategy boundary.
+  Kleio mandatory capture uses its own governed platform authority, not the
+  external/acting Identity's grants; Pylai gains no such authority.
 
 <a id="c15"></a>
 
@@ -1445,7 +1480,8 @@ Distinct Calliope design/build-time submodule: Models, Metadata Types, Criteria
 Definitions, Topics, Filter Types/Elements, core element libraries and security/
 assurance nomenclature definitions. Design → Code → Build → Test → Release → Deploy.
 Provides structural access contracts and useful development representations of
-known runtime DataSets; those representations do not establish current membership.
+known runtime DataSets as normal library dependencies; those representations do
+not establish current membership. Models' pure-library dependency semantics remain.
 Definition ownership is not runtime operational ownership. [U13 lifecycle and authority](calliope-models-and-datasets.md#calliope-models).
 
 <a id="c42"></a>
@@ -1465,11 +1501,15 @@ physical realisation remain [deferred](calliope-models-and-datasets.md#calliope-
 
 Logical external interoperability interface/boundary; IngressTerma/EgressTerma
 describe information direction, not client/server or connection-initiation role.
-Terma acts: external sessions, protocols, listening/polling, segmentation,
-acknowledgements, API/RMI/file mechanics and identity carriage. Technical endpoints
+Terma acts: external connection/session handling, protocols, listening/polling,
+framing, segmentation/reassembly, protocol acknowledgements, API/RMI/file mechanics,
+communication-local retry and identity carriage. Technical endpoints
 may realise it. It supplies neither Harmonia authority nor semantic BusinessLogic
-and is not an Ergo. [U14 definition](pylai-external-interoperability.md#terma-and-diadromi);
-Strategy's contrary transport exclusions remain [CDG-51](gaps.md#pylai-strategy-conflict).
+and is not an Ergo. [U14/U15 definition](pylai-external-interoperability.md#terma-and-diadromi):
+the applicable execution framework owns application meaning, except where an
+explicit interaction pattern provides otherwise. Retry is limited to the active
+interaction/Diadromí; Terma has no durable application recovery.
+[CDG-51](gaps.md#pylai-strategy-conflict) records Strategy reconciliation.
 
 <a id="c44"></a>
 

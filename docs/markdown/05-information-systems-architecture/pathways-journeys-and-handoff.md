@@ -3,7 +3,7 @@
 # Candidate Pathway, Journey, Publish/Subscribe and Handoff Architecture
 
 **Standing: Domain05 Step A adjudicated Candidate Architecture, through 2026-10-12.**
-[U03–U14](sources.md#u03) record the supplied human-adjudicated DesignNotes and
+[U03–U15](sources.md#u03) record the supplied human-adjudicated DesignNotes and
 explicit task decisions incorporated here. [Scope](README.md) applies: this
 correction does not accept the whole candidate, commence Step B or establish
 implementation design. Existing [Energeia specialisation](README.md#energeia-adjudication)
@@ -108,9 +108,13 @@ record both orders without selecting runtime mechanics.
 
 Broker interaction from existing BusinessLogic and Server READ/SEARCH through
 Diadromí-Controller do not manufacture a Praxis/Pathway/work undertaking. Applicable
-Themis, Kleio, Dokimasia and Journey participation remains. A lost Diadromí cannot
-resume; any appropriate client retry creates a new interaction. Petasos queue
-recovery remains a separate durable responsibility.
+Themis, Kleio, Dokimasia and Journey participation remains. U15 distinguishes
+Terma's communication stack from application interpretation in the applicable
+execution framework, subject to the explicit patterns above. Communication-local
+retry requires the same active interaction and Diadromí. A lost/terminated
+Diadromí cannot resume; an appropriate client retry creates a new interaction
+and Diadromí. Terma/Diadromí provides no durable application recovery. Petasos
+and established execution retain durable messaging/recovery responsibilities.
 
 ## Dynamic information selection through Mneme
 
@@ -437,3 +441,9 @@ Kleio constructs immutable FHIR AuditEvent. Required authoritative durable audit
 capture is a precondition of Harmonia operation, independent of Journey availability
 or later reconstruction. [Kleio's history/availability rules](component-register.md#auditability-and-availability)
 and O&A independent-target/harmonisation-SEP release boundary apply.
+
+U15 establishes [Kleio-specific mandatory capture authority](component-register.md#kleio-capture-authority)
+under Harmonia security policy. The audited Identity remains evidence, not the
+authority persisting its mandatory AuditEvent; its PEP-Criteria is not borrowed.
+Insufficient capture authority fails the governed operation closed. This supplies
+no equivalent intrinsic authority to Journey, Energeia or other components.

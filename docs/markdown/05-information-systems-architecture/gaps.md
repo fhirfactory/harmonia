@@ -15,7 +15,7 @@ or establishing missing architectural meaning appears to require human
 adjudication; “Possibly” separates further documentary recovery from a decision.
 It is not a request to adjudicate during reconstruction.
 
-The [U02–U14 Step-A adjudications](sources.md#u02) partially resolve/reclassify
+The [U02–U15 Step-A adjudications](sources.md#u02) resolve/reclassify
 the affected entries below. Settled component boundaries and management/reuse
 relationships are separated from remaining detailed design. The primary note's
 earlier access issue was an input-access dependency, not an architectural gap.
@@ -63,16 +63,16 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-39 — established responsibility / detailed Energeia decomposition** | Energeia C39, Praxis/Journey Management Services, operational observation/reporting; F11/38–39 | U06 establishes discrete component and direct application responsibilities. | Feature versus Service versus internal construct versus subordinate Component decomposition, precise observation/reporting contracts and remaining Praxis-to-activity relationships remain unresolved. Possible upstream omission of operational housekeeping demand has not been assessed; no requirement/capability or Business Architecture is derived. | **Yes/Possibly** for detailed reconciliation; possible upstream omission requires later bounded review, not an asserted coverage gap. |
 | **CDG-40 — established persistence direction / downstream physical design** | Mnemosyne Clinical/C&G/O&A; C12/F19/42/M16/18 | U06 domains/scaling guardrails retained; U11 establishes Mnemosyne shard management within semantic constraints, not independent semantic sharding permission. | Physical topology, shard model/key/routing, replication/consistency mechanisms remain unresolved; U07 independent audit targets imply no general O&A topology and cross-target harmonisation is SEP. No multi-shard requirement; Journey locality an objective. | **Later design**, without choosing technology/keys or reopening established semantic domains. |
 | **CDG-41 — deliberately deferred R3 direction** | Adaptive Load and Resilience Service; F40/C39 | U06 records future Observe → Analyse → Decide → Adapt direction, with feedback. | R3 policy/control architecture, adaptation/load/resilience algorithms/mechanisms, infrastructure integration and AI decision model deliberately deferred. R1.x/R2.x remains Observe → Report. | **Future bounded R3 work**, not an R1.x/R2.x gap or current design obligation. |
-| **CDG-42 — established Identity/Themis architecture / detailed contracts and retained conflict** | Authentication SEP; Calliope nomenclature; Themis model/PAP/PRP/PDP/PEP-Criteria/PEP-Context/PEP; C01/C02/F01/F03/D03/M07 | U12 refines U08 with conjunctive Criterion/additive UNION semantics, nested collections, AuthorisationRole, PractitionerCapacity, distinct temporal validity/revocation, deterministic precomputed enforcement, untagged-information control, FORWARD provenance and Ergo/Praxis/Iris administration. | [Explicit deferred items](#identity-deferred-design) cover release contents, expressions/representations, invalidation, attribute derivation, Capacity mapping/UI, PAP work, forwarding and caching/distribution. No general policy language remains open. **U08 note §15 audit-persistence exception conflicts with AX-07; not adopted.** [Details](#themis-detailed-contracts). | **Mark + ChatGPT adjudication** for the exception conflict; later bounded design/discovery for mechanisms; no reopening of settled Identity semantics. |
+| **CDG-42 — established Identity/Themis architecture / detailed contracts; audit conflict closed** | Authentication SEP; Calliope nomenclature; Themis model/PAP/PRP/PDP/PEP-Criteria/PEP-Context/PEP; C01/C02/F01/F03/D03/M07 | U12 establishes the bounded Identity model, authorisation and administration semantics. U15 resolves the former U08 §15 audit-authorisation conflict through Kleio-specific intrinsic platform capture authority under AX-07. | [Explicit deferred items](#identity-deferred-design) remain: release contents, expressions/representations, invalidation, effective-attribute derivation, Capacity mapping/UI, PAP work, forwarding and caching/distribution. No generic intrinsic-authority mechanism is introduced. [Details](#themis-detailed-contracts). | **Conflict CLOSED by U15**; later bounded design/discovery for retained mechanisms. |
 | **CDG-43 — established Kleio architecture / detailed capture and preservation** | Kleio Capture/AuditEvent/history; C03/F15/D12/M07/16 | U07 resolves authoritative audit management, immutable FHIR AuditEvent, Journey independence, longitudinal evidence, essential durable capture, independent targets and R1.x/R2.x harmonisation SEP. | API/library/mapping, evidence attachment, indexing/query/correlation/preparation, retention/legal hold, originating activity/capture transaction, target selection/write strategy, retry/failover/readiness and physical design unresolved. Harmonisation is excluded release scope, not a missing R1.x/R2.x guarantee. [Details](#kleio-detailed-contracts). | **Later bounded design**, without weakening settled essential capture or adding convergence. |
 | **CDG-44 — established Petasos architecture / detailed Parcel and queue contracts** | Purpose-defined queues / PetasosParcel / FORWARD; C10/F13/D11/M01 | U09 resolves queue creation/operation/status ownership, common by-value Parcel, predominantly referenced associated information, ActionableTask special case and Themis-owned local enforcement. | Taxonomy/names/purpose-registration, Parcel schema/reference/content and historical carrier relationships, topology/technology/persistence/partitioning/scaling, metrics/state, ordering/delivery/consumer coordination/recovery/dead-letter and Petasos/Themis/Kleio/Journey interactions unresolved. [Details](#petasos-detailed-contracts). | **Later bounded design**; no reference-only transport, FHIR equivalence, broker mechanism or new capability inferred. |
 | **CDG-45 — established Context/Pragma architecture / detailed contracts** | Mneme four services, Context/Pragma Output and Ergo boundary; C09/C11/C05/C23/F16–18/D26–28 | U10 establishes value Composition, temporal/version distinction, likely non-exhaustive resource set, supported Adhoc acquisition and Loader/Unloader versus Load/Save. | Physical Context/bucket/identity/version schema, Information Unit mapping, declaration/acquisition strategy, concurrency/conflict detection, API/query/result and Output routing/representation remain unresolved. New Content not mere Context mutation. [Detail](#context-and-pragma-contracts). | **Later bounded adjudication/design**; no fifth service, universal snapshot or algorithm inferred. |
 | **CDG-46 — established exceptional harmonisation / detailed work contracts** | Internal Mneme RHM C40/F41/M17 | U10 establishes exceptional-path design expectation of approximately 5% or less at worst, new governed Harmonisation Ergon work and reuse of Ponos via established contract. | Categories/detection, harmonisation algorithms/catalogue, narrow work-contract detail, repeated-harmonisation terminal/escalation and Ergo Library detail unresolved. No originating-Ergon resume or duplicate execution framework. [Detail](#harmonisation-contracts). | **Later bounded design**; percentages not SLA; no UI/forms design or Kleio cross-target harmonisation obligation. |
-| **CDG-47 — established Persistence Manager / detailed oversight** | Mnemosyne C12/F42/M18 | U11 establishes transaction/service oversight, shard management, authoritative reporting/logging, compartment validation/reapplication and Themis-owned PEP hosting. | Transaction/outcome/status/rollback/retry, service-health, compartment applicability source/representation/validation, PEP interaction and logging contracts unresolved. API success not automatically Harmonia outcome. [Detail](#persistence-management-contracts). | **Later bounded design**; semantic responsibility/AX-05 and AX-07 settled; audit-authorisation conflict CDG-42 retained. |
+| **CDG-47 — established Persistence Manager / detailed oversight** | Mnemosyne C12/F42/M18 | U11 establishes transaction/service oversight, shard management, authoritative reporting/logging, compartment validation/reapplication and Themis-owned PEP hosting. | Transaction/outcome/status/rollback/retry, service-health, compartment applicability source/representation/validation, PEP interaction and logging contracts unresolved. API success not automatically Harmonia outcome. [Detail](#persistence-management-contracts). | **Later bounded design**; AX-05/07 retained, with U15 Kleio-specific governed capture authority and no equivalent grant to persistence components. |
 | **CDG-48 — established Search / Research Metadata / detailed contracts** | Mnemosyne Search/Research Metadata, Mneme Adhoc Search; F43/44/D29/30/M19 | Explicit U11 task decisions establish authoritative persistence search, possible capability metadata and distinct AI-derived proximity-based metadata managed by Mnemosyne; derivation executes outside it. | Query/result/completeness/consistency, search metadata, deriving behavioural construct, provenance/confidence/Research Metadata schema unresolved. Source Content unchanged; no AI/provider/vector/embedding/proximity/index choice. [Detail](#search-research-contracts). | **Later bounded adjudication/design**; no assertion of unresolved detail, cache completeness or intrinsic Mnemosyne AI execution. |
-| **CDG-49 — Calliope detailed contracts / realisation tension** | Models/DataSets and governed nomenclature | U13 establishes distinct lifecycles, runtime authority, developer support and persistence boundaries. AGENTS §2 still characterises repository Calliope as pure domain models without higher-layer dependencies; Strategy Seam 5 uses design-only mediation language. | Runtime collaboration must not be mistaken for static dependency permission. Logical candidate recorded; mapping to repository constraints and exact ontology/lifecycle/representation/workflow contracts remains explicit below. | **Yes** for material unresolved boundary/rule reconciliation; implementation mechanisms remain downstream. |
+| **CDG-49 — Calliope detailed contracts / realisation conflict closed** | Models library dependency / DataSets runtime management and authoritative content access | U13/U15 establish complementary build-time representation and runtime authority; repository AGENTS §2 and Strategy Component 5 / Seam 5 reconciled. | Exact ontology/lifecycle/version/history/representation/workflow/UI/API/packaging contracts remain deferred; Models library semantics and Mneme/Mnemosyne persistence remain. [Details](#calliope-contracts). | **Realisation conflict CLOSED by U15**; remaining detailed design/discovery preserved. |
 | **CDG-50 — Pylai/Horos detailed contracts** | Terma / Diadromí / Controller / three interaction patterns / Horos | U14 settles responsibilities, non-recoverability, ingress persistence condition and egress return before unloading. | Schema, token, API, protocol/ACK, runtime handover and representation detail remain deliberately deferred; broader Controller use is not a requirement. | **Yes/Possibly** for remaining architecture versus implementation detail; settled patterns not reopened. |
-| **CDG-51 — retained Strategy transport conflict** | Strategy G4 / Pylai profile versus U14 Terma | Strategy excludes connection/session/framing/retry mechanics; adjudicated Candidate Terma owns external communication mechanics. | Cannot silently equate external communication responsibility with generic network substrate or amend upstream exclusions through downstream documentation. Both statements retained for explicit review. | **Yes — Mark + ChatGPT.** Candidate fidelity is reviewable without claiming cross-layer conflict closure. |
+| **CDG-51 — Strategy/Terma communication-mechanics conflict — CLOSED** | Strategy G4 / Pylai profile / Terma | U15 reconciles Strategy: Terma owns the external communication stack; applicable Harmonia execution owns application meaning, subject to explicitly defined interaction patterns. | Active-interaction communication retry only; loss/termination permits no resumption, later client retry creates new interaction/Diadromí. Petasos and execution retain durable recovery. Detail CDG-50. | **CLOSED by U15, 2026-10-12.** |
 
 <a id="dokimasia-ai-discovery"></a>
 
@@ -182,7 +182,7 @@ infrastructure-integration or AI decision architecture is specified by this task
 
 <a id="themis-detailed-contracts"></a>
 
-## CDG-42 — Themis detailed contracts and audit-authorisation conflict
+## CDG-42 — Themis detailed contracts
 
 U08 and [U12](sources.md#u12) settle the Authorisation Model, PAP/PRP/PDP,
 PEP-Context, precomputed Identity-specific PEP-Criteria and Themis-owned
@@ -240,20 +240,19 @@ review, not a proven coverage failure or the start of Step-B mapping. Any
 required extension or conflict needs Mark + ChatGPT architectural adjudication;
 the existing Business meanings and U12's Candidate semantics remain explicit.
 
-### Retained audit-authorisation conflict
+<a id="retained-audit-authorisation-conflict"></a>
 
-**Retained conflict:** supplied Themis DesignNote §15 calls Kleio's authoritative
-audit-persistence stream an exception to obtaining Themis authorisation before
-governed information actions. [AX-07](../governance/architectural-axioms.md#ax-07)
-requires every governed operation to execute within established security context
-and under Harmonia policy. The controlling task requirements do not adjudicate
-this exemption. It is therefore **not adopted as an authorisation bypass**.
-How essential audit capture remains available, including recording denied activity,
-while preserving AX-07 requires explicit bounded adjudication before detailed
-interaction design. Required capture and default-deny remain in force; no policy
-or enforcement exception is silently manufactured. Domains01–04 and axioms are
-unchanged. This is architectural uncertainty under AX-17, distinct from PDP
-unavailability or a policy denial.
+### Resolved mandatory audit-capture authority
+
+**CLOSED by U15, 2026-10-12.** The former U08 §15 conflict is resolved through
+[Kleio-specific intrinsic platform authority](component-register.md#kleio-capture-authority)
+under [AX-07](../governance/architectural-axioms.md#kleio-mandatory-capture-authority).
+Mandatory capture remains governed by security policy; the originating/acting
+Identity is evidence, not the authority persisting the mandatory AuditEvent.
+Kleio does not borrow that Identity's PEP-Criteria. Insufficient capture authority
+fails the governed operation closed. This establishes neither a policy exception
+nor equivalent authority elsewhere. CDG-42's detailed Themis deferrals remain;
+capture mechanisms remain CDG-43.
 
 <a id="kleio-detailed-contracts"></a>
 
@@ -348,8 +347,8 @@ Mnemosyne does not independently determine semantic compartment applicability or
 sharding safety, replace Themis enforcement semantics or manage infrastructure.
 Persistence API success alone cannot establish Harmonia's authoritative outcome;
 uncertainty remains AX-15. Existing AX-05/14 state/version/generation distinctions,
-Kleio audit boundaries and **CDG-42's unresolved Themis/AX-07 conflict** remain.
-No audit-authorisation exemption is introduced.
+Kleio audit boundaries and its [governed mandatory capture authority](component-register.md#kleio-capture-authority)
+remain. No equivalent intrinsic authority is granted to Mnemosyne.
 
 <a id="search-research-contracts"></a>
 
@@ -372,7 +371,7 @@ Step B information traceability and upstream model changes have not begun.
 
 <a id="calliope-contracts"></a>
 
-## CDG-49 — Calliope detailed contracts and repository realisation
+## CDG-49 — Calliope detailed contracts; realisation boundary resolved
 
 [U13 Calliope](calliope-models-and-datasets.md) settles Models/DataSets, definition
 versus operational ownership, runtime content authority, development support and
@@ -382,22 +381,17 @@ dates/history, historical Context versus later dataset versions, detailed workfl
 human UI, runtime APIs, code generation/IDE/AI mechanisms, packaging, caching,
 persistence structures or final nomenclature/release inventories.
 
-**Retained realisation tension:** repository AGENTS §2 describes Calliope as pure
-domain models with zero dependencies on higher layers. U13 describes a runtime
-DataSets management responsibility collaborating with Mneme/Mnemosyne and existing
-Ponos/Ergo/Praxis. Separating logical runtime collaboration from static Models
-dependency avoids inventing a dependency cycle, but does not itself adjudicate
-physical allocation or a rule change. Existing repository dependency constraints
-remain in force. Mark + ChatGPT must adjudicate any necessary boundary/rule
-clarification before implementation; no new module/POM is authorised here.
+**Realisation conflict CLOSED by U15, 2026-10-12.**
+[Models' library dependencies and DataSets' runtime management](calliope-models-and-datasets.md#calliope-realisation)
+are complementary. Repository AGENTS §2 and Strategy Component 5 / Seam 5 now
+express that distinction. Pure-library constraints apply to Models; DataSets
+uses established Mneme/Mnemosyne responsibilities without becoming a persistence
+manager or changing Models' dependency semantics. Calliope is not a mandatory
+mediator for every transaction; required current membership/content resolution
+remains DataSets authority. No new module/POM or physical allocation is authorised.
 
-Strategy Component 5 / Seam 5 says Calliope does not synchronously mediate runtime
-transactions. U13 preserves that Calliope is not a mandatory mediator for every
-transaction, while establishing runtime content authority. If Strategy's blanket
-wording is intended to prohibit any runtime DataSets participation, that conflicts
-with U13 and requires explicit clarification; it is not silently read as permission
-to substitute compiled content for current membership. Domain03 Clinical Knowledge
-Services / Information Design Governance remain upstream meanings; no wholesale
+All detailed deferrals above remain. Domain03 Clinical Knowledge Services /
+Information Design Governance retain their upstream meanings; no wholesale
 service allocation or Step-B coverage claim follows.
 
 <a id="pylai-contracts"></a>
@@ -423,22 +417,17 @@ matters; current task adjudications settle only the explicitly specified additio
 
 <a id="pylai-strategy-conflict"></a>
 
-## CDG-51 — Strategy and Terma communication-mechanics conflict
+## CDG-51 — Strategy and Terma communication-mechanics conflict — CLOSED
 
-**Existing statement:** [Strategy G4 and Component 4](../02-strategy/strategic-views/logical-component-responsibilities.md#guardrail-g4-execution-standards-interaction-and-transport-remain-distinct-responsibilities)
-assign physical conveyance downstream and explicitly exclude Pylai ownership of
-TCP sockets, TLS handshakes, HTTP connection management, MLLP framing, connection
-pools and transport retries. **Adjudicated Candidate position:** U14 assigns Terma
-external communication mechanics including listening/polling, sessions, protocols,
-segmentation/reassembly and acknowledgements, irrespective of technology.
-
-Both preserve execution versus interoperability and technology-independent
-responsibility, but the specific ownership exclusions overlap the new Terma scope.
-No subsequent authoritative reconciliation was found. The task supplies the
-Candidate model; it does not unambiguously adjudicate that Strategy text. The
-existing Strategy remains authoritative and unchanged under AX-17. Mark + ChatGPT
-must clarify external communication behaviour versus generic substrate allocation
-and any required Strategy amendment. No generic network management, deployment
-boundary or transport implementation is chosen to manufacture consistency.
-The Candidate is faithfully documented for review with this conflict visible;
-conflict-free cross-layer acceptance is not claimed.
+**CLOSED by U15, 2026-10-12.**
+[Strategy G4 and Component 4](../02-strategy/strategic-views/logical-component-responsibilities.md#guardrail-g4-execution-standards-interaction-and-transport-remain-distinct-responsibilities)
+now distinguish Terma's external communication stack from application meaning
+owned by the applicable execution framework, principally Praxis/Ergo/Ergon,
+except where an explicitly defined interaction pattern provides otherwise.
+Connection/session handling, framing and communication-local retry belong to
+Terma; underlying engines supply machinery and external IT/Ops retains generic
+network management. Retry remains within an active interaction and Diadromí.
+Termination/loss permits no resumption; later client retry creates both anew.
+Petasos and established execution retain durable messaging/recovery. No application
+interpretation, durable recovery or generic infrastructure ownership is assigned
+to Terma. Detailed protocol and handover deferrals remain CDG-50.

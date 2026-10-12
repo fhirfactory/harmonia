@@ -22,7 +22,7 @@ The explicit Composition of loaded Context values is separately established. Lea
 ```text
 Harmonia Information System — candidate software solution
   Calliope — governed models, datasets and shared security/assurance nomenclature [C01]
-    Calliope-Models — design/build-time definitions and libraries [C41]
+    Calliope-Models — development/build-time model and library dependencies [C41]
       Models / Metadata Types / Criteria Definitions / Topics
       Filter Types / Filter Elements / Core Harmonia Element Libraries
       Security and Assurance nomenclature definitions
@@ -42,7 +42,8 @@ Harmonia Information System — candidate software solution
     PEP-Context — operational enforcement context supplying PEP-Criteria
     Themis-owned PEP library — constrained deterministic enforcement at action-controlling hosts
   Kleio — authoritative Audit Information Management [C03]
-    Audit Capture — clients report occurrences; Kleio constructs FHIR AuditEvent
+    Audit Capture — Kleio-specific governed intrinsic platform authority; Identity is evidence
+    Clients report occurrences; Kleio constructs FHIR AuditEvent
     Immutable audit history — preservation/retrieval and longitudinal evidence
     Historical context preparation/use — distinct from authoritative evidence
     Durability through Mneme/Mnemosyne O&A; independent audit targets permitted
@@ -98,7 +99,8 @@ Harmonia Information System — candidate software solution
     Persistent handoff / destination mechanics / redelivery / recovery / dead-letter
     ActionableTask reference handoff is one use case; event purposes remain distinct
   Pylai — External Interoperability Service; all external communication styles [C14]
-    Terma / IngressTerma / EgressTerma — logical external interface; communication mechanics [C43]
+    Terma / IngressTerma / EgressTerma — external communication stack; no application meaning [C43]
+    Communication retry only within active interaction/Diadromí; no durable application recovery
     Diadromí — transient, non-recoverable carriage / interaction context [C44]
     Diadromí-Controller — Server READ/SEARCH progression / governance; no recoverable state [C45]
     Interaction patterns (not deployment units):
@@ -144,6 +146,8 @@ services/processes; distributed PEP is Themis-owned capability hosted where the
 action can be prevented. Audit targets are independent authoritative persistence
 targets, not prescribed replicas or a general O&A topology. Kleio audit capture
 is essential for Harmonia operation and independent of Journey participation.
+[U15](sources.md#u15) establishes Kleio-specific intrinsic platform capture authority
+under security policy; the audited Identity is evidence, not that authority.
 
 The following do not have a supported structural parent in that tree:
 
@@ -325,7 +329,7 @@ flowchart LR
     Pylai -->|"applicable business progression / interoperability failure observations"| Journey
     Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Ponos
     Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Mneme
-    Themis -->|"persistence PEP-Criteria / local Themis PEP"| Mnemosyne
+    Themis -->|"security policy / hosted enforcement; authority applicable to operation"| Mnemosyne
     Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Agora
     Themis -->|"FORWARD PEP-Criteria / local Themis PEP"| Petasos
     Themis -->|PRP governed model; durable C&G| Mneme
@@ -333,7 +337,8 @@ flowchart LR
     Themis -->|significant occurrences under policy| Kleio
     Iris -->|significant user occurrences; no Journey prerequisite| Kleio
     Journey -->|audit source; not audit boundary| Kleio
-    Kleio -->|governed AuditEvent management; durable O&A| Mneme
+    Kleio -->|mandatory capture under Kleio platform authority; durable O&A| Mneme
+    Themis -->|Harmonia security policy governs mandatory capture| Kleio
     Dokimasia["Dokimasia: specialised independent assurance execution"] -->|outputs may inform audit; no own-execution AuditEvent| Kleio
     Kleio -->|historical audit context; detailed contract unresolved| Dokimasia
     Dokimasia -->|executes| DokErgon["Dokimasia Ergon"]
@@ -353,10 +358,10 @@ flowchart LR
 | Mneme Pragma Management aggregates PragmaFactory and manages Pragma | U01/U02. Factory creates/initialises candidate representations associated with the meta-concept, not an instantiated archetype Information Asset. Detailed contracts/persistence remain unknown; no automatic Praxis equivalence. |
 | DigitalTwin specialises Ponos and uses governed entity information | U02 and A02 Seams 2–3. Per-Twin queues are specialised responsibility; bounded resources service pending work. Detailed control/state contract remains unknown. |
 | Dokimasia specialises Ponos and executes assurance Ergon | U02 preserves A04 independence; reuse does not give the assured activity control of assurance determination. AI activity boundary is established; detailed architecture CDG-35 remains open. |
-| Components use Themis PEP and Kleio Audit Capture | U07/U08, A01 AX-07–09. Themis-owned local PEP uses Identity-specific Criteria; valid sufficient context may support in-flight activity during PDP loss, while required new context must wait. Kleio constructs immutable AuditEvents from client occurrences, independent of Journey. Dokimasia terminal rules remain. Detailed contracts CDG-42/43. |
+| Components use Themis PEP and Kleio Audit Capture | U07/U08, A01 AX-07–09. Themis-owned local PEP uses Identity-specific Criteria; valid sufficient context may support in-flight activity during PDP loss, while required new context must wait. Kleio constructs immutable AuditEvents from client occurrences, independent of Journey. U15 distinguishes Kleio-specific intrinsic platform capture authority under security policy from the originating Identity recorded as evidence; insufficient capture authority fails closed. Dokimasia terminal rules remain. Detailed contracts CDG-42/43. |
 | Ingress / execution / publication and event sharing use Petasos | U05/U09: purpose-defined durable queues carry PetasosParcel by value; associated information predominantly by reference. ActionableTask/Pragma remains through Mneme and each undertaking has its own FulfillmentTask. Queue status belongs to Petasos; Energeia observes/reports. Acceptance, commit, completion and external ACK remain distinct. |
 | Agora coordinates with execution through Petasos | AGENTS Invariant 10; L12 §3. No direct Agora-to-Ponos dependency. A detailed information-summary/provider contract is not established. |
-| Pylai manages external interoperability | U14: Terma acts, Diadromí carries transient interaction; Pathway/Broker/Server have distinct execution/access patterns. Horos is the logical Praxis boundary, with egress return before unloading. AX-02/13 projection remains non-destructive/fail-closed. Identity, audit and assurance stay separate; Strategy transport tension remains CDG-51. |
+| Pylai manages external interoperability | U14: Terma acts, Diadromí carries transient interaction; Pathway/Broker/Server have distinct execution/access patterns. Horos is the logical Praxis boundary, with egress return before unloading. AX-02/13 projection remains non-destructive/fail-closed. Identity, audit and assurance stay separate. U15 resolves CDG-51: Terma owns communication mechanics and active-interaction retry, with application meaning in applicable execution and no durable Terma/Diadromí recovery. |
 
 The [Calliope view](calliope-models-and-datasets.md) separates build-time definitions
 from current governed runtime content. The [Pylai/Horos view](pylai-external-interoperability.md)

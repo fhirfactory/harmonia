@@ -164,6 +164,17 @@ deletion or migration of existing legacy material.
 Harmonia enforces strict separation of concerns across its 9 core
 subprojects:
 
+The Calliope row's pure-model/library dependency constraints apply to
+**Calliope-Models**, the development/build-time library responsibility.
+**Calliope-DataSets** is the complementary runtime responsibility for mutable
+governed dataset management and authoritative content access through established
+Mneme/Mnemosyne responsibilities. It does not change Models' library/dependency
+semantics or make Calliope a persistence manager. Build-time representation and
+runtime authority are complementary. This distinction establishes no new module,
+POM dependency, process or deployment boundary; physical allocation remains
+downstream. The canonical [Calliope boundary](docs/markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-realisation)
+records the adjudicated architecture.
+
   -------------------------------------------------------------------------------
   Subproject        Domain /              Allowed           Invariants &
                     Responsibility        Dependencies      Constraints

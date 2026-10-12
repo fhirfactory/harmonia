@@ -217,7 +217,7 @@ Mnemosyne is Harmonia's **Persistence Manager**, with first-class responsibiliti
 | **Authoritative persistence reporting** | Establish and report Harmonia's authoritative persistence outcome, preserving confirmed, degraded and indeterminate distinctions. |
 | **Persistence logging** | Provide persistence-management operational logging; this does not replace Kleio Audit Capture or automatically become AuditEvent. Zero-PHI diagnostic controls apply. |
 | **Compartment validation/reapplication** | Validate and reapply applicable compartments at the persistence boundary; persistence SHALL NOT strip, weaken or lose classification. Mnemosyne does not independently determine semantic applicability. |
-| **Themis-owned PEP hosting** | Prevent governed persistence operations through Themis-owned enforcement and applicable PEP-Criteria through PEP-Context; Themis owns the model, reasoning, Criteria and enforcement semantics. |
+| **Themis-owned PEP hosting** | Prevent governed persistence operations through Themis-owned enforcement; Identity-derived operations use applicable PEP-Criteria through PEP-Context. Mandatory Kleio capture uses its specifically adjudicated governed platform authority. Themis retains policy/enforcement semantics; capture-authority representation/mechanisms remain deferred. |
 | **Search Management** | Perform underlying authoritative managed-persistence search and manage supporting Harmonia-level persistence search metadata. |
 | **Research Metadata Management** | Manage capture, persistence, management and search utilisation of distinct AI-derived Research Metadata; derivation executes outside Mnemosyne. |
 
@@ -297,9 +297,11 @@ Kleio essential capture/immutable history and cross-target harmonisation SEP,
 Themis distributed enforcement/default-deny, Petasos queues/Parcel/handoff,
 Energeia Praxis/Journey ownership, DigitalTwin/Dokimasia specialisations and
 terminal rules, and Pathway/control/observed-evidence distinctions are preserved.
-The existing [Themis audit-authorisation proposal versus AX-07 conflict](gaps.md#themis-detailed-contracts)
-remains unresolved. No audit-authorisation exception is introduced or AX-07
-weakened. A2/A3 correction accepts neither the whole candidate nor A4 or Step B.
+Kleio's [mandatory capture authority](component-register.md#kleio-capture-authority)
+is intrinsic platform authority governed by Harmonia policy under AX-07. The
+audited Identity is evidence, not capture authority. Insufficient capture authority
+fails the governed operation closed; Mneme/Mnemosyne gain no equivalent authority.
+A2/A3 correction accepts neither the whole candidate nor A4 or Step B.
 
 
 ## Calliope and Pylai use of established responsibilities

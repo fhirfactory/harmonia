@@ -45,14 +45,14 @@ Subsystems encapsulate distinct architectural purposes. The adoption of an exter
 Under [AX-05](../../governance/architectural-axioms.md#ax-05), operational activity progression, active information/state management, and authoritative durable state establishment are distinct responsibilities. Digital Twins coordinate information/state and activity across the Mneme/Ponos seam; they do not assume Mnemosyne's durable-state authority.
 
 ### Guardrail G4: Execution, Standards Interaction and Transport Remain Distinct Responsibilities
-> **Execution determines that an external interaction is required; standards-facing capability determines the required external representation and interaction semantics; transport and connectivity capabilities determine how that interaction is physically conveyed.**
+> **Pylai.Terma manages the communication stack; the applicable Harmonia execution framework manages the application meaning.**
 
 These responsibilities must not be collapsed merely because a particular software library or packaging combines them together:
-- **Ponos**: Determines *that* an external interaction is required to progress an activity.
-- **Pylai**: Determines *what* the standards-conformant external interaction means and validates its conformance.
-- **Downstream Transport / Connectivity**: Determines *how* the interaction is physically conveyed over network protocols.
+- **Applicable Harmonia execution framework, principally Praxis/Ergo/Ergon**: Interprets and processes the communicated information's Harmonia application meaning, except where an explicitly defined interaction pattern provides otherwise.
+- **Pylai**: Governs the standards-conformant external representation and interaction contract. **Terma** owns the communication mechanics needed to establish, conduct and complete that external interaction, including connections/sessions, listening/polling, transport/protocol interaction, framing, segmentation/reassembly, protocol acknowledgements, API/RMI/file interaction, interaction-local retry and external identity carriage.
+- **Underlying transport/connectivity technology and external IT/Ops**: Supply the machinery and manage the generic network/infrastructure substrate. Their implementation role does not remove Terma's external communication responsibility.
 
-Ponos must not acquire bespoke transport machinery or wire protocols merely to progress activity. Pylai must not become a generic transport layer merely because it governs the standards-facing contract.
+Ponos must not acquire bespoke transport machinery or wire protocols merely to progress activity. Pylai does not own Harmonia application/business interpretation or generic network management. Terma may retry communication within the same active interaction and Diadromí; loss or termination ends it without resumption. A later client retry creates a new interaction and Diadromí. Durable messaging/recovery remains with Petasos and the established execution architecture. The [Domain05 interaction patterns](../../05-information-systems-architecture/pylai-external-interoperability.md#pylai-patterns) define the applicable execution/access paths.
 
 ---
 
@@ -170,20 +170,20 @@ Pylai establishes Harmonia's sovereign boundary membrane (`AX-02`), governing th
 #### Architectural Scope & Clarification
 - Pylai is responsible for the meaning and behaviour of the standards-facing contract (e.g., FHIR resource structures, profiles, search parameters, RESTful interactions, operations, Bundles, OperationOutcome, and conformance statements).
 - It validates inbound payloads against external normative standards and constructs outbound standards-conformant representations in a fail-closed manner.
-- **Architectural Clarification**: Pylai is **not**, at Strategy level, defined as owning transport machinery or network connectivity. It does not own TCP sockets, TLS handshakes, HTTP connection management, MLLP framing bytes, connection pools, network routing, or transport retries. While implementations may package standards-handling and transport listeners together, that packaging does not transfer architectural responsibility (Guardrails G2 and G4).
+- **Architectural Clarification**: Terma owns external communication mechanics, including connection/session handling, framing and interaction-local communication retry. Underlying technology may supply sockets, TLS, HTTP connections, MLLP framing and connection pooling. Generic network routing/infrastructure management remains external IT/Ops responsibility. Neither technology packaging nor Terma's communication responsibility transfers Harmonia application meaning to Pylai (Guardrails G2 and G4).
 
 #### Anti-Responsibilities (What Pylai Does NOT Own)
 - Does not progress internal business activities or workflows (owned by Ponos).
 - Does not alter internal managed state destructively (owned by Mneme).
 - Does not own internal canonical domain models (owned by Calliope).
-- Does not own generic transport adapters, connection pooling, or physical message routing.
+- Does not own generic network/infrastructure management, internal durable message recovery or Harmonia application interpretation/processing. Communication-local retry ends with the active interaction; no Terma/Diadromí durable recovery is established.
 
 #### 6-Point Boundary Test Evaluation
 - **Responsibility**: PASS. Singular focus on standards-conformant boundary representation and interaction semantics.
-- **Cohesion**: PASS. Standards profiles, boundary validation, and interaction semantics change together with external standards.
+- **Cohesion**: PASS. Standards profiles, boundary validation, external interaction contracts and communication mechanics form the external interoperability responsibility.
 - **Authority**: PASS. Authoritative for external standards conformance and boundary contract behaviour.
 - **Dependency**: PASS. Consumes `EC-06`, `EC-07`, `EC-08` (standards-facing facets), and `EC-13`.
-- **Exclusion**: PASS. Excludes internal workflow progression, internal state governance, and transport machinery.
+- **Exclusion**: PASS. Excludes Harmonia application semantics, internal workflow progression, internal state governance, durable messaging/recovery and generic infrastructure management.
 - **Substitutability**: PASS. Boundary survives replacing web servers, serialization libraries, or API gateway software.
 - **Overall Result**: **PASS as a Strategic Logical Component.**
 
@@ -194,14 +194,14 @@ Pylai establishes Harmonia's sovereign boundary membrane (`AX-02`), governing th
 #### Strategic Architectural Responsibility
 > **Calliope governs the semantic definitions, canonical data models, terminology bindings, and conformance rules by which Harmonia information has meaning.**
 
-Calliope acts as the design-time and reference-time semantic authority for Harmonia. It establishes the canonical vocabulary, data structures, and transformation rules that ensure clinical meaning is preserved across the integration fabric (`AX-04`, `AX-08`).
+Calliope governs semantic definitions and governed dataset content. **Calliope-Models** supplies development/build-time model and library dependencies; **Calliope-DataSets** supplies runtime management and authoritative access to mutable governed datasets. It establishes canonical vocabulary, data structures and transformation rules that preserve clinical meaning (`AX-04`, `AX-08`). Build-time representation and runtime authority are complementary responsibilities.
 
 #### Architectural Scope & Clarification
 - Calliope defines canonical information models, manages terminology concept maps (e.g., SNOMED CT-AU and AMT bindings), and publishes conformance specifications.
-- **Architectural Clarification**: Calliope does **not** need to synchronously mediate every runtime transaction. Canonical models and terminology rules may be compiled, distributed, and evaluated locally across participating components without creating runtime bottlenecks.
+- **Architectural Clarification**: Calliope does **not** need to synchronously mediate every runtime transaction. Models remains a normal library dependency supporting type-safe development and IDE/AI assistance. Runtime resolution of current governed content/membership belongs to DataSets where required; compiled knowledge does not establish current membership. DataSets uses established Mneme/Mnemosyne access/persistence and does not make Calliope a persistence manager. The [Domain05 realisation boundary](../../05-information-systems-architecture/calliope-models-and-datasets.md#calliope-realisation) preserves both responsibilities.
 
 #### Anti-Responsibilities (What Calliope Does NOT Own)
-- Does not synchronously mediate runtime transactions or integration message flows.
+- Does not act as a mandatory synchronous mediator for every runtime transaction or integration message flow; this does not exclude required DataSets content resolution.
 - Does not own durable clinical persistence (owned by Mnemosyne).
 - Does not execute operational tasks or workflow logic (owned by Ponos).
 - Does not manage external network endpoints or protocols (owned by Pylai / downstream transport).
@@ -209,9 +209,9 @@ Calliope acts as the design-time and reference-time semantic authority for Harmo
 #### 6-Point Boundary Test Evaluation
 - **Responsibility**: PASS. Singular focus on semantic governance, canonical modeling, and terminology rules.
 - **Cohesion**: PASS. Canonical schemas, terminology bindings, and semantic conformance rules naturally belong together.
-- **Authority**: PASS. Authoritative for canonical information structures and semantic definitions.
+- **Authority**: PASS. Models supplies canonical structures/definitions; DataSets governs current runtime dataset content/membership without acquiring persistence authority.
 - **Dependency**: PASS. Consumes `EC-01`, `EC-04`, `EC-13`.
-- **Exclusion**: PASS. Excludes runtime transaction mediation, database storage, and workflow execution.
+- **Exclusion**: PASS. Excludes universal runtime transaction mediation, persistence management and workflow execution.
 - **Substitutability**: PASS. Boundary survives replacing schema compilers, modeling tools, or terminology servers.
 - **Overall Result**: **PASS as a Strategic Logical Component.**
 
@@ -332,8 +332,8 @@ To prevent architectural drift, a Digital Twin must NEVER be modeled or implemen
 | **Mneme** | Governs and provides runtime management of Harmonia-managed information, relationships, context, and state. | Does not establish authoritative durable state/versions or provide durable preservation/recovery; does not own operational activity progression; does not govern external standards representation. | **PASS** (Logical Component) |
 | **Mnemosyne** | Establishes authoritative durable state/versions and provides durable preservation and recovery of Harmonia-managed information and state. | Does not govern application-facing runtime management; does not own operational activity progression; does not govern external standards representation. | **PASS** (Logical Component) |
 | **Ponos** | Executes and progresses Harmonia-managed operational activity within governed context. | Does not own external transport/connectivity machinery; does not govern durable preservation; does not own semantic definitions. | **PASS** (Logical Component) |
-| **Pylai** | Governs standards-conformant external representation and interaction semantics across the boundary. | Does not progress internal operational activities; does not alter internal managed state destructively; does not own transport/connectivity machinery. | **PASS** (Logical Component) |
-| **Calliope** | Governs semantic definitions, canonical data models, terminology bindings, and conformance rules. | Does not synchronously mediate runtime transactions; does not own durable clinical persistence; does not execute operational tasks. | **PASS** (Logical Component) |
+| **Pylai** | Governs standards-conformant external representation/contracts; Terma manages communication mechanics. | Does not own application interpretation, internal activity progression, durable messaging/recovery or generic network management; does not alter internal managed state destructively. | **PASS** (Logical Component) |
+| **Calliope** | Models supplies build-time definitions/library dependencies; DataSets manages current governed runtime content. | Does not universally mediate runtime transactions, manage persistence or execute operational tasks. | **PASS** (Logical Component) |
 | **Iris** | Provides contextual human interaction with Harmonia-managed information and activity while remaining non-authoritative. | Does not own clinical identity or authority; does not access databases directly; does not execute autonomous workflows. | **PASS** (Logical Component) |
 | **Digital Twin** | Active management construct coordinating information, state, and activity for a specific real-world entity. | Is NOT an independent deployable platform component; is not a persistent database record; is not a general workflow engine; is not a single FHIR resource. | **PASS as Construct**<br/>**FAIL as Component** |
 
@@ -393,11 +393,11 @@ Harmonia defines six critical cross-component seams where architectural responsi
 - **Seam Rule**: This seam represents the transition between **external standards meaning** and **Harmonia-governed meaning/state**. It is not a statement about network packets or wire bytes. Pylai validates inbound payloads against external profiles and translates them into internal requests; Mneme provides governed information for Pylai to project outward without destructive modification (`AX-02`, `AX-13`).
 
 ### Seam 5: Calliope ↔ Runtime Components
-- **Architectural Boundary**: Semantic design authority vs. operational runtime execution.
+- **Architectural Boundary**: Build-time structural/library dependency and runtime governed-content authority versus operational execution and persistence management.
 - **Responsibility Split**:
-  - **Calliope**: Governs canonical definitions, data models, terminology concept bindings, and conformance rules.
+  - **Calliope**: Models governs canonical definitions, data models and structural contracts as library dependencies; DataSets manages mutable governed content and authoritative membership access.
   - **Runtime Components (Pylai, Mneme, Ponos)**: Consume published semantic definitions and execute runtime validation.
-- **Seam Rule**: Calliope is the design authority; it does not synchronously mediate runtime transactions. Schemas and terminology mappings are published and distributed for local evaluation across components.
+- **Seam Rule**: Models' build-time representation supports local evaluation without changing its library semantics. DataSets supplies current runtime content/membership where resolution is required through established Mneme/Mnemosyne responsibilities. Calliope is neither a mandatory mediator for every transaction nor a persistence manager. Build-time representation and runtime authority are complementary.
 
 ### Seam 6: Iris ↔ Mneme / Ponos
 - **Architectural Boundary**: Decoupled presentation vs. governed application-facing information access and operational execution.
@@ -523,7 +523,7 @@ graph TD
     end
 
     subgraph Semantics ["Semantic Authority"]
-        Calliope["<b>Calliope</b><br/>Semantic Authority & Conformance<br/><i>Canonical schemas, terminology bindings, conformance governance</i>"]
+        Calliope["<b>Calliope</b><br/>Semantic Authority & Conformance<br/><i>Models: build-time libraries; DataSets: governed runtime content</i>"]
     end
 
     subgraph Presentation ["Human Experience"]
@@ -559,7 +559,7 @@ graph TD
 
 The Strategic Logical Component Responsibility Model articulates a clean, robust architecture for Harmonia:
 1. **Pylai** governs the external standards-facing boundary membrane.
-2. **Calliope** establishes authoritative semantic definitions without runtime transaction bottlenecks.
+2. **Calliope-Models** supplies build-time library definitions; **Calliope-DataSets** governs runtime content/membership without universal transaction mediation or persistence management.
 3. **Mneme** governs runtime management of information, context, and state.
 4. **Mnemosyne** establishes authoritative durable state and authoritative version progression and provides durable preservation and recovery without exposing direct persistence paths.
 5. **Ponos** progresses operational units of work and workflows without acquiring transport machinery.

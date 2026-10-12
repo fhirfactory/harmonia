@@ -32,10 +32,9 @@ persistence, governance and concurrency metadata are not automatically exportabl
 Egress terminates management of the emitted representation (AX-02/13); retained
 provenance does not extend control over the external copy.
 
-The [Strategy transport-allocation conflict](gaps.md#pylai-strategy-conflict) is
-explicitly retained. The Candidate Terma responsibilities below are the adjudicated
-model for review; they do not silently amend Strategy's contrary exclusions or
-allocate generic network/infrastructure ownership to Pylai.
+The [Strategy/Terma reconciliation](gaps.md#pylai-strategy-conflict) distinguishes
+external communication mechanics from Harmonia application meaning and generic
+network/infrastructure management.
 
 <a id="terma-and-diadromi"></a>
 
@@ -43,10 +42,28 @@ allocate generic network/infrastructure ownership to Pylai.
 
 **Pylai.Terma** is the logical external interoperability interface/boundary.
 `Pylai.IngressTerma` and `Pylai.EgressTerma` specialise it where useful. Terma owns
-external communication mechanics: listening, polling, sessions, protocol handling,
-segmentation/reassembly, acknowledgements, API/RMI/file interaction and external
-identity carriage. One Terma may use one or more technical endpoints/connectors;
+external communication mechanics: connection/session handling, listening, polling,
+transport/protocol interaction, framing, segmentation/reassembly, protocol
+acknowledgements, API/RMI/file interaction, interaction-local communication retry
+and external identity carriage. One Terma may use one or more technical endpoints/connectors;
 it is not reducible to a socket, URL, Camel endpoint or deployed adapter.
+
+> **Pylai.Terma manages the communication stack; the applicable Harmonia
+> execution framework manages the application meaning.**
+
+Terma owns the mechanics necessary to establish, conduct and complete an external
+communication interaction. It does not own the Harmonia application semantics
+of the information communicated. Application interpretation and processing use
+the applicable Harmonia execution framework, principally Praxis/Ergo/Ergon,
+except where an explicitly defined interaction pattern provides otherwise.
+The [Server READ/SEARCH pattern](#pylai-server-controller) is such a defined
+pattern; it grants Terma no application/business interpretation responsibility.
+
+```text
+External System → Pylai.Terma → Pylai.Diadromí → Praxis / Ergo / Ergon
+                  communication mechanics       application interpretation,
+                                                transformation / processing
+```
 
 Ingress/Egress describe **information direction**, irrespective of client/server
 role, who opened the connection or push/pull behaviour. An IngressTerma may poll;
@@ -75,13 +92,21 @@ Its exact representation is unresolved.
 > a new interaction and therefore a new Diadromí.**
 
 ```text
+active external interaction → active Diadromí → communication retry
+                              ↑__________________________|
+                              same active interaction
+
 failed / lost Diadromí → interaction terminates
+                       → NO RESUMPTION
 appropriate client retry → NEW interaction → NEW Diadromí
 ```
 
 Transient state may exist for the active communication's lifetime. Active protocol
-retries differ from resuming a lost interaction. Neither Diadromí nor its Controller
-is a recoverable execution object, Ponos substitute or Petasos recovery mechanism.
+retries differ from resuming a lost interaction. Terma may retry communication
+only while that interaction and its Diadromí remain active. Terma, Diadromí and
+its Controller provide no durable application recovery. Petasos and the established
+Harmonia execution architecture retain their durable messaging/recovery
+responsibilities; no lost Diadromí is resumed through them.
 Audit, Journey and operational evidence about the failed interaction may remain:
 **not recoverable does not mean not observable**.
 
@@ -327,9 +352,10 @@ remain in force, independent of Journey participation.
 
 Communication failures supply operational evidence and may be relevant to
 Dokimasia. Pylai is neither the audit repository/policy manager nor the assurance
-engine. **Audit is separate; audits are not governance.** The existing
-[Kleio audit-authorisation conflict](gaps.md#themis-detailed-contracts) remains
-explicitly unresolved; no audit persistence bypass is introduced.
+engine. **Audit is separate; audits are not governance.** Kleio performs mandatory
+capture under [its governed intrinsic platform authority](component-register.md#kleio-capture-authority).
+The external/acting Identity remains audit evidence, not the authority persisting
+that evidence. This establishes no equivalent platform authority for Pylai.
 
 | Construct | Meaning at this boundary |
 | :--- | :--- |
@@ -357,6 +383,7 @@ ACK/persistence/handover behaviour (including segmented interactions and RMI),
 detailed PylaiServer APIs, token/claim carriage, Journey/assurance observations,
 operational telemetry, Horos representation and detailed runtime handover mechanics
 remain unresolved. Possible broader Controller use stays an implementation
-consideration. [CDG-50/51](gaps.md#pylai-contracts) retains these deferrals and the
-Strategy conflict. No Java structure, Camel route, topology, protocol, persistence
+consideration. [CDG-50](gaps.md#pylai-contracts) retains these deferrals;
+[CDG-51](gaps.md#pylai-strategy-conflict) records the resolved Strategy boundary.
+No Java structure, Camel route, topology, protocol, persistence
 schema, PEP-Criteria representation or complete endpoint/API design is selected.

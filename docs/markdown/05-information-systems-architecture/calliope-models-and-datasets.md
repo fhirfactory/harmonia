@@ -29,9 +29,44 @@ Calliope
 These are distinct logical submodules with different lifecycles and dependency
 characteristics. They SHALL NOT be collapsed into one undifferentiated metadata
 repository. Their names establish no Maven artefacts, processes, databases or
-deployment boundaries. The existing repository pure-library rules and the broader
-runtime responsibility require the explicit [realisation reconciliation](gaps.md#calliope-contracts);
-this candidate authorises no dependency-rule change.
+deployment boundaries. The [realisation boundary](#calliope-realisation) separates
+Models' library dependencies from DataSets' runtime collaboration.
+
+<a id="calliope-realisation"></a>
+
+### Library dependency and runtime management
+
+> **Calliope-Models provides development/build-time library dependencies.
+> Calliope-DataSets provides runtime management and authoritative access to
+> mutable governed datasets.**
+
+The existence of DataSets does not alter Models' library/dependency semantics
+and does not make Calliope a persistence manager. Repository pure-library and
+zero-higher-layer-dependency constraints apply to Models; they do not restrict
+all logical Calliope responsibilities to libraries. DataSets collaborates through
+established Mneme/Mnemosyne access and persistence. No new static dependency or
+physical allocation is inferred from that runtime collaboration.
+
+```text
+Calliope
+  +-- Calliope-Models
+  |     design / code / build-time model and library dependency
+  `-- Calliope-DataSets
+        runtime governed dataset management / authoritative content access
+          ↓
+        Mneme / Mnemosyne access and persistence
+
+Concept / structural contract       → Calliope-Models
+Current governed membership/content → Calliope-DataSets
+```
+
+> **Build-time representation and runtime authority are complementary, not
+> competing, responsibilities.**
+
+Strategy's library/local-evaluation statements concern Models. Calliope is not
+a mandatory mediator of every runtime transaction; current governed content may
+require DataSets runtime resolution. Packaging, APIs and other mechanisms remain
+[deferred](gaps.md#calliope-contracts).
 
 <a id="calliope-models"></a>
 
@@ -172,8 +207,9 @@ Themis owns their authorisation-policy association, role/Criteria resolution and
 enforcement. Membership alone grants no authority. U12's Criterion conjunction,
 additive UNION grants, temporal/revocation and local PEP semantics remain intact.
 Calliope does not acquire policy decisions, assurance assessment or Audit Capture.
-The [Kleio audit-authorisation conflict](gaps.md#themis-detailed-contracts) remains
-unresolved; nomenclature consolidation supplies no exemption.
+Kleio's [mandatory capture authority](component-register.md#kleio-capture-authority)
+is governed intrinsic platform authority, separate from the originating
+Identity's authorisation and from nomenclature ownership.
 
 <a id="calliope-deferred"></a>
 

@@ -8,7 +8,7 @@ from documented collaboration intent, principally [L13](sources.md#l13),
 [L29](sources.md#l29), [L01](sources.md#l01), [L14](sources.md#l14) and
 [L19](sources.md#l19). External integration contracts and runtime products remain
 separate architectural concerns.
-The [U02–U14 adjudications](sources.md#u02) distinguish execution/activity/information,
+The [U02–U15 adjudications](sources.md#u02) distinguish execution/activity/information,
 semantic selection, persistent handoff and Journey observation. Specialisations
 reuse common facilities; the [shared semantic view](pathways-journeys-and-handoff.md)
 records detailed boundaries and retained uncertainty.
@@ -81,7 +81,9 @@ end-to-end algorithms or new external contracts.
 
 [Pylai/Horos](pylai-external-interoperability.md) is the canonical external
 interaction view. Diadromí and Controller keep only transient active interaction
-state; loss terminates it and appropriate client retry starts a new Diadromí.
+state. Terma may retry communication while the interaction and Diadromí remain
+active; loss/termination permits no resumption and appropriate client retry starts
+a new interaction and Diadromí. Terma provides no durable application recovery.
 Petasos alone owns queue/handoff recovery and dead-letter state. EgressHoros
 returns communication state/outcome before Ergo.ContextUnloader completes;
 PylaiBroker interacts from existing BusinessLogic without new work constructs.
@@ -126,7 +128,12 @@ unless its required audit information can be authoritatively and durably capture
 If Kleio cannot capture it, Harmonia is DOWN. One configured independent audit
 target capable of establishing the required information suffices in R1.x/R2.x;
 none means fail closed. Capture cannot be deferred for reconstruction from logs/
-Journey. Transaction/retry/failover and target selection remain unresolved.
+Journey. Mandatory capture uses [Kleio-specific intrinsic platform authority](component-register.md#kleio-capture-authority),
+within established security context and Harmonia policy under AX-07. Originating
+Identity is audit evidence, not capture authority; its PEP-Criteria is not borrowed.
+Insufficient capture authority fails the governed operation closed. This is no
+policy exception and grants no equivalent authority to messaging, execution or
+persistence components. Transaction/retry/failover and target selection remain unresolved.
 
 ## Responsibility boundaries
 
@@ -136,13 +143,13 @@ Journey. Transaction/retry/failover and target selection remain unresolved.
 | Internal activity collaboration | Execution/context/composition and continuing responsibility | Camel, direct/SEDA/JMS routes, threads, process/runtime topology. |
 | Specialised execution/activity collaboration | DigitalTwin/Dokimasia reuse Ponos; Behaviour/Dokimasia Ergon reuse Ergo/Ergon; Erga supports assembly/concurrent activity; terminal assurance rules constrain inherited hooks | Implementation inheritance, Twin scheduling/queue bindings and AI service/model/provider architecture; no choice made here. |
 | Managed information collaboration | Application-facing access, active coordination, durable establishment and truthful outcomes | Hot Rod, CAS/locking, HTTP/internal persistence transport, SQL/JPA and cache distribution. |
-| External interaction | Pylai Terma communication mechanics; transient non-recoverable Diadromí; Pathway/Broker/Server patterns with local Themis enforcement, Kleio capture and applicable Journey/assurance | Domain06 detailed external contracts; connector/protocol implementation and Domain07 substrate. Strategy exclusion tension is explicit CDG-51, not silently resolved by this allocation. |
+| External interaction | Pylai Terma communication mechanics; transient non-recoverable Diadromí; Pathway/Broker/Server patterns with local Themis enforcement, Kleio capture and applicable Journey/assurance | Domain06 detailed external contracts; connector/protocol implementation and Domain07 substrate. U15 reconciles Strategy: Terma owns communication mechanics; application meaning remains with the applicable execution framework, subject to explicitly defined interaction patterns. |
 | Matrix collaboration | Agora governs collaboration context and protocol encapsulation, using internal handoff | Matrix Client-Server/Admin/Application Service transports and homeserver deployment. |
 
 The middleware product inventory in L17 is a technology/support catalogue. It
 does not mean that all internal middleware belongs in Domain06 or that each
 runtime library/product becomes an Information Systems component. Pylai's broader
 External Interoperability Service responsibility includes Terma mechanics without
-transferring generic network infrastructure ownership to it; CDG-51 retains the
-contrary Strategy exclusions. Database/access and evidence/assurance seams remain separate;
+transferring generic network infrastructure ownership to it; CDG-51 records the
+resolved Strategy boundary. Database/access and evidence/assurance seams remain separate;
 technology availability cannot silently weaken those responsibilities.

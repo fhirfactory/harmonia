@@ -48,15 +48,15 @@ upstream capability or information traceability.
 | Key | Source and inspected scope | Incorporated candidate meaning |
 | :--- | :--- | :--- |
 | <a id="u07"></a>U07 | Supplied `DesignNote-Kleio-Audit-Information-Management-and-Resilient-Capture.md` (2026-10-11), §§1–17, read in full; explicit bounded task requirements | [Kleio C03](component-register.md#c03): authoritative Audit Information Management/Capture, client occurrence contract, immutable FHIR AuditEvent/new linked corrections, meaningful user activity, Journey independence, longitudinal reference/necessary replication, evidence versus prepared views, essential durable capture, independent O&A targets and R1.x/R2.x harmonisation SEP. Detail [CDG-43](gaps.md#kleio-detailed-contracts). |
-| <a id="u08"></a>U08 | Supplied `DesignNote-Themis-Authorisation-Model-and-Distributed-Policy-Enforcement.md` (2026-10-11), §§1–18, read in full; explicit bounded task requirements | [Themis C02](component-register.md#c02): Authorisation Model/PAP/PRP/PDP, distinct ACCESS/CHANGE/FORWARD, contextual PEP-Context Criteria, Themis-owned distributed local PEP, valid-context/PDP availability distinction, potential delegation/provenance and possible PRP durability through Mneme/C&G. §15 audit-authorisation exception retained as AX-07 conflict, not incorporated as bypass; detailed governance/design [CDG-42](gaps.md#themis-detailed-contracts). |
+| <a id="u08"></a>U08 | Supplied `DesignNote-Themis-Authorisation-Model-and-Distributed-Policy-Enforcement.md` (2026-10-11), §§1–18, read in full; explicit bounded task requirements | [Themis C02](component-register.md#c02): Authorisation Model/PAP/PRP/PDP, distinct ACCESS/CHANGE/FORWARD, contextual PEP-Context Criteria, Themis-owned distributed local PEP, valid-context/PDP availability distinction, potential delegation/provenance and possible PRP durability through Mneme/C&G. §15 was retained as an AX-07 conflict at U08; U15 now resolves mandatory capture through Kleio-specific governed platform authority; detailed governance/design [CDG-42](gaps.md#themis-detailed-contracts). |
 | <a id="u09"></a>U09 | Supplied `DesignNote-Petasos-Durable-Message-Event-Queue-Management.md` (2026-10-11), §§1–16, read in full; explicit bounded task requirements | [Petasos C10](component-register.md#c10): durable purpose-defined queue creation/operation/status, common by-value PetasosParcel with predominantly referenced associated information, ActionableTask special case, local Themis-owned FORWARD enforcement and Petasos queue-state ownership. Energeia R1.x/R2.x **Observe → Report** corrects earlier U06 propagation. Detail [CDG-44](gaps.md#petasos-detailed-contracts). |
 
 The supplied files were accessible in Downloads; no copies were present in the
 repository. Their incorporated decisions and controlling task requirements are
 self-contained in [the orientation](README.md#kleio-themis-petasos-adjudication)
 and supporting views. Filenames are provenance, not an ongoing external authority
-dependency. All original note bytes remain unchanged. The explicit unresolved
-exception conflict and deferred mechanisms are preserved under AX-17; no source
+dependency. All original note bytes remain unchanged. The then-retained conflict is now resolved by U15; deferred mechanisms remain
+explicit under AX-17; no source
 code, transport/carrier schema, upstream capability or Step-B mapping supplies
 missing decisions. The current correction preserves U01–U06 adjudications except
 the expressly corrected Energeia Monitor responsibility.
@@ -79,21 +79,21 @@ The explicit task confirms **Energeia R1.x/R2.x Observe → Report** and removes
 residual wording suggesting an intermediate architectural responsibility. The
 existing literal stale sequence was already absent at the task baseline; the
 README's residual allowance is corrected. R3 direction, legitimate Dokimasia
-monitoring restrictions and unaffected U01–U09 meanings remain. Themis/AX-07
-conflict remains unresolved; this is A2/A3 work, A4 pending, Step B not started.
+monitoring restrictions and unaffected U01–U09 meanings remain. U15 subsequently resolves the Themis/AX-07
+audit-capture authority conflict; this is A2/A3 work, A4 pending, Step B not started.
 
 ## This Identity candidate consolidation input
 
 | Key | Source and inspected scope | Incorporated candidate meaning |
 | :--- | :--- | :--- |
-| <a id="u12"></a>U12 | Supplied `DesignNote-Identity-Authentication-and-Authorisation-Architecture.md`, §§1–18, read in full from Downloads; explicit consolidation task decisions, 2026-10-12 | [Identity consolidation](README.md#identity-candidate-adjudication), [Calliope nomenclature](component-register.md#authorisation-nomenclature) and [Themis C02](component-register.md#c02): authentication SEP/external OIDC IdP, Keycloak + PostgreSQL development/test/POC default; release-bounded ValueSets; Criterion conjunction/additive UNION, nested collections, AuthorisationRole and direct/role assignments; temporal validity versus revocation; precomputed Identity-specific PEP-Criteria and constrained PEP; untagged-information control; PractitionerCapacity and responsibility boundary; forwarding provenance; Ergo/Praxis/Iris administration. [Detailed deferrals](gaps.md#identity-deferred-design) and the U08 audit/AX-07 conflict remain explicit. |
+| <a id="u12"></a>U12 | Supplied `DesignNote-Identity-Authentication-and-Authorisation-Architecture.md`, §§1–18, read in full from Downloads; explicit consolidation task decisions, 2026-10-12 | [Identity consolidation](README.md#identity-candidate-adjudication), [Calliope nomenclature](component-register.md#authorisation-nomenclature) and [Themis C02](component-register.md#c02): authentication SEP/external OIDC IdP, Keycloak + PostgreSQL development/test/POC default; release-bounded ValueSets; Criterion conjunction/additive UNION, nested collections, AuthorisationRole and direct/role assignments; temporal validity versus revocation; precomputed Identity-specific PEP-Criteria and constrained PEP; untagged-information control; PractitionerCapacity and responsibility boundary; forwarding provenance; Ergo/Praxis/Iris administration. [Detailed deferrals](gaps.md#identity-deferred-design) remain explicit; U15 subsequently resolves the U08 audit/AX-07 conflict. |
 
 The working note explicitly does not supersede RADS by itself. The current task
 authorises incorporation of its adjudicated Candidate Architecture into the
 existing RADS views, subject to the axioms. U12 unambiguously refines U08's open
 Criteria/policy-language and delegation descriptions; it does not adjudicate
-the Kleio audit-authorisation exception. No subsequent explicit decision resolving
-that conflict was found in the relevant RADS material reviewed.
+the Kleio audit-authorisation question. U15 subsequently resolves that question
+through policy-governed intrinsic Kleio capture authority.
 
 The note was supplied outside the repository and remains unchanged there; no
 repository copy is assumed or added. Its filename records provenance, not an
@@ -111,7 +111,7 @@ responsibilities are not silently translated into new policy semantics.
 | Key | Working adjudication source and inspected scope | Incorporated Candidate meaning |
 | :--- | :--- | :--- |
 | <a id="u13"></a>U13 | `DesignNote-Calliope-Model-DataSet-and-Nomenclature-Management.md`, full note read from `/home/hunterm/Downloads/`; explicit task decisions, 2026-10-12 | [Calliope Models/DataSets](calliope-models-and-datasets.md): foundational definitions/libraries and distinct mutable governed content; build-time support versus runtime authority; structural bootstrap guardrail; ontology review and shared Security/Assurance Nomenclature; U12 ValueSets versus Themis policy ownership; established access/persistence/workflow reuse; detailed deferrals CDG-49. |
-| <a id="u14"></a>U14 | `DesignNote-Pylai-External-Interoperability-Architecture.md` (2026-10-11), full note read from `/home/hunterm/Downloads/`; **additional explicit current task adjudications**, 2026-10-12 | [Pylai/Horos](pylai-external-interoperability.md): broad External Interoperability Service, information direction, Terma mechanics, transient Diadromí, ingress Context/mapping/acceptance/queue boundary. Explicit task adds precise Diadromí definition/non-recoverability, Pathway/Broker/Server patterns, limited Controller and specialised EgressHoros handover out/back before unloading. Identity, Mneme/Mnemosyne, Ponos/Petasos, Kleio/Dokimasia and Journey boundaries remain distinct; CDG-50/51 preserves detail/conflict. |
+| <a id="u14"></a>U14 | `DesignNote-Pylai-External-Interoperability-Architecture.md` (2026-10-11), full note read from `/home/hunterm/Downloads/`; **additional explicit current task adjudications**, 2026-10-12 | [Pylai/Horos](pylai-external-interoperability.md): broad External Interoperability Service, information direction, Terma mechanics, transient Diadromí, ingress Context/mapping/acceptance/queue boundary. Explicit task adds precise Diadromí definition/non-recoverability, Pathway/Broker/Server patterns, limited Controller and specialised EgressHoros handover out/back before unloading. Identity, Mneme/Mnemosyne, Ponos/Petasos, Kleio/Dokimasia and Journey boundaries remain distinct; CDG-50 preserves detail; U15 subsequently closes CDG-51. |
 
 The notes are working adjudication records, not canonical authority by location or
 status. The explicit task authorises incorporation of their adjudicated meanings
@@ -124,15 +124,35 @@ No absent note wording is used to attribute the task's later decisions to it.
 Original files remain unchanged outside the repository; required Candidate meaning
 is now readable in RADS without external access.
 
-The review retained two cross-layer issues rather than manufacturing consistency:
-Strategy G4/Component 4 excludes mechanics now assigned to Terma (**CDG-51**), and
-the broad logical Calliope-DataSets collaboration must be reconciled with existing
-repository pure-library rules (**CDG-49**). Strategy's design-only Calliope mediation
-wording also requires clarification if intended to exclude runtime content
-participation. No Domains01–04, axioms, repository rules or implementation were
-changed. The previous Kleio audit-authorisation conflict remains **CDG-42**, with
-no later authoritative resolution found. This is A2/A3 consolidation for review,
-not A4 acceptance, Step-B mapping or a convergence/runtime implementation step.
+U13/U14 initially retained Strategy/Terma mechanics (CDG-51), Calliope
+realisation/Strategy mediation (CDG-49) and the earlier Kleio/AX-07 capture-authority
+conflict (CDG-42). U15 below supplies the subsequent explicit adjudications;
+those specific conflicts are closed. The detailed design deferrals remain.
+
+<a id="u15"></a>
+
+## Three boundary adjudications and closure-assessment scope
+
+**U15 — explicit user adjudications, 2026-10-12.** These decisions reconcile
+only the three previously retained issues; they do not accept all Domain05.
+
+| Adjudicated matter | Canonical incorporation and disposition |
+| :--- | :--- |
+| Strategy / Pylai.Terma | [Terma communication stack and application-meaning boundary](pylai-external-interoperability.md#terma-and-diadromi), [active retry versus no resumption](pylai-external-interoperability.md#diadromi-recoverability), Strategy G4 / Component 4 / summary. CDG-51 closed; CDG-50 detail retained. |
+| Calliope realisation | [Models library dependency versus DataSets runtime authority](calliope-models-and-datasets.md#calliope-realisation), Strategy Component 5 / Seam 5 and repository AGENTS §2. CDG-49 realisation/mediation conflict closed; all detailed deferrals retained. |
+| Kleio mandatory audit capture | [Capture authority](component-register.md#kleio-capture-authority) and [AX-07 clarification](../governance/architectural-axioms.md#kleio-mandatory-capture-authority). CDG-42 audit-authorisation conflict closed. Originating Identity remains evidence; capture uses Kleio-specific intrinsic platform authority under policy and fails closed when insufficient. Themis deferrals and CDG-43 capture mechanisms retained. |
+
+The intrinsic-authority decision is confined to Kleio mandatory authoritative
+capture. It supplies no generic component mechanism or authority elsewhere.
+Any equivalent proposal is a separate architecture question. Maps, registers,
+data/middleware/lifecycle views and terminology express the same boundaries.
+Existing section-level legacy wrappers already reference these canonical
+sections; original legacy content and wrapper bytes remain unchanged. Required
+meaning is self-contained in RADS without retrieving external working notes.
+
+The subsequent A2/A3 assessment is read-only: newly discovered substantive issues
+are recorded for Mark + ChatGPT, not repaired. A4 remains pending; Step B has not
+started. The completion report is execution evidence, not architecture authority.
 
 ## Legacy reconstruction sources
 
@@ -174,7 +194,7 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l27"></a>L27 | LaTeX [backlog](../../latex/chapters/appendix-backlog.tex), BL-CLIN-007/008 | **Retained proposal:** clinical viewer/authoring and terminology lookup, expansion and validation intent; owner and feature maturity unresolved, F18/F25/CDG-24. No implementation sequence imported. |
 | <a id="l28"></a>L28 | [Message lifecycle](../../message-lifecycle.md), ADT/ORM sequence sections | **Conflicting/unresolved:** candidate fan-out and order-routing collaborations corroborated; combined Mneme/Mnemosyne participant, acceptance and completion boundaries retained, CDG-10/16/18. |
 | <a id="l29"></a>L29 | [Petasos architecture](../../../petasos/docs/architecture.md), [root messaging architecture](../../architecture.md), overview; [Petasos concept](../../concepts/petasos.md), [messaging concept](../../concepts/petasos-messaging.md), [module reference](../../modules/petasos.md) | **Partially incorporated:** existing concept definition/ownership and messaging §2 wrappers resolve to updated C10/handoff. This correction wraps messaging opening/§1 generic-broker introduction, module opening/positive ownership and root messaging-architecture opening and Standard Message Envelope. U09 now establishes purpose-defined durable queues/common by-value Parcel; technology/module/schema/topology catalogues remain historical supporting detail. Exact historical carrier relationships/delivery guarantees remain CDG-16/19/27/44. |
-| <a id="l30"></a>L30 | [Pylai concept](../../concepts/pylai.md), [gateway concept](../../concepts/pylai-gateways.md), full concepts | U14 supersedes gateway-only definitions, positive ownership, ingress acceptance diagrams/guarantees and outbound observation accounts with broader Pylai/Horos patterns. REC-001/002 retained; protocol/Task outcome details remain CDG-18/32/34/50. Original text/diagrams unchanged within section wrappers. Strategy transport conflict remains CDG-51. |
+| <a id="l30"></a>L30 | [Pylai concept](../../concepts/pylai.md), [gateway concept](../../concepts/pylai-gateways.md), full concepts | U14 supersedes gateway-only definitions, positive ownership, ingress acceptance diagrams/guarantees and outbound observation accounts with broader Pylai/Horos patterns. REC-001/002 retained; protocol/Task outcome details remain CDG-18/32/34/50. Original text/diagrams unchanged within section wrappers. U15 closes Strategy transport conflict CDG-51; protocol detail remains deferred. |
 | <a id="l31"></a>L31 | [Dokimasia orientation](../../modules/dokimasia.md), full document | Opening paragraph and Digital Twins/Execution, Runtime AI and Open Downstream Architecture sections now wrapped to C19/C20/C27, specialisation axes, Mneme Pragma Management, terminal rules and CDG-35. Canonical assurance-navigation section remains unchanged. Component boundaries established by U02; detailed AI architecture remains discovery, not mandatory AI use in every workflow. |
 
 ## This Calliope / Pylai legacy reconciliation
@@ -187,7 +207,7 @@ implementation information, not new Candidate authority.
 
 | Legacy source and affected content | Canonical replacement / disposition |
 | :--- | :--- |
-| L06/L07 Calliope concept, canonical concept and module reference | [Models/DataSets and definitions](calliope-models-and-datasets.md#calliope-responsibility), [repository realisation tension](gaps.md#calliope-contracts). Concept opening/rationale/§2/positive ownership/§4; canonical opening/§1; module opening/single-library paragraph/positive ownership. |
+| L06/L07 Calliope concept, canonical concept and module reference | [Models/DataSets and definitions](calliope-models-and-datasets.md#calliope-responsibility), [resolved realisation boundary and deferred contracts](gaps.md#calliope-contracts). Concept opening/rationale/§2/positive ownership/§4; canonical opening/§1; module opening/single-library paragraph/positive ownership. |
 | L30 Pylai concept and gateways concept | [Pylai service/patterns](pylai-external-interoperability.md#pylai-patterns), [ingress and acceptance](pylai-external-interoperability.md#pylai-pathway-ingress), [egress](pylai-external-interoperability.md#praxis-egress-horos), [governance](pylai-external-interoperability.md#pylai-governance). Concept opening/rationale/§2/positive ownership/REC-001/REC-002; gateway opening/§1 summary+diagram/§2/§3. |
 | [Pylai module reference](../../modules/pylai.md) | Opening, §1 architecture tree, ingress guarantee, interceptor authority account and positive ownership linked to Pylai service, acceptance, Server and Identity boundaries. Technical class/module/dependency inventory otherwise retained. |
 | [Pylai integration guide](../../integration/pylai.md) | Opening, §1 decomposition, §2.2 cache/queue acceptance sequence, §3.2 delivery-state bullet and §4.1/4.2 direct-read/change paths linked to current service/lifecycle/access boundaries. Technical Camel route snippets and configuration retained. |

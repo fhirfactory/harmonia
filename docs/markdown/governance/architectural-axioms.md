@@ -374,6 +374,32 @@ become persistent information content.
 Security-significant events MAY become durable audit evidence according
 to policy.
 
+<a id="kleio-mandatory-capture-authority"></a>
+
+#### Kleio mandatory authoritative audit capture
+
+Kleio SHALL perform mandatory authoritative audit capture under intrinsic
+platform authority associated with its established audit responsibility.
+That capture SHALL execute within an established security context and remain
+subject to Harmonia security policy; Themis retains policy evaluation ownership.
+This is governed platform authority, not a security bypass or policy exception.
+
+The Identity associated with the audited activity SHALL remain audit evidence.
+It is not the authority under which the mandatory AuditEvent is persisted.
+Kleio SHALL NOT borrow the originating Identity's PEP-Criteria merely to persist
+evidence of that Identity's activity. Identity-derived authorisation resolved
+and enforced through Themis remains distinct from Kleio's capture authority.
+
+Where authoritative audit capture is required for a governed operation and
+Kleio cannot exercise that platform authority sufficiently to capture the
+required evidence, the governed operation SHALL fail closed.
+
+This authority is established specifically for Kleio mandatory authoritative
+audit capture. It SHALL NOT be inferred for other Kleio activities or generalised
+to other Harmonia components. Any proposed equivalent authority elsewhere is
+a separate architecture question under AX-17. Detailed authority representation
+and enforcement mechanisms remain deferred.
+
 **This does not mean:**
 
 - Every security decision belongs in a FHIR resource.
