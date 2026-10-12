@@ -172,8 +172,9 @@ API, Omilia.Client identity and Synapse/Element provenance, roster SEP with only
 applicable Shift Start/End periods for R1.x/R2.x, source-owner retention through
 conduit publication, managed-Room capture/derivation and dialogue/logging/Kleio audit
 separation. CDG-21–23 responsibility questions are closed; detailed deferrals are
-CDG-52. CDG-25 is narrowed: native media ownership is settled, but the F31/D15
-non-collaboration clinical-binary application custodian remains unassigned.
+CDG-52. At the U16 snapshot CDG-25 was narrowed: native media ownership was
+settled, but the F31/D15 non-collaboration binary application responsibility was
+unassigned. [U17](#u17) below now resolves that remaining responsibility.
 
 Earlier Candidate statements are corrected, rather than retained as competing
 current architecture. Synapse database/JPA allocations and generic
@@ -183,6 +184,50 @@ meaning; their original bodies remain unchanged. Required incorporated knowledge
 is self-contained in RADS; no copy or alteration of the external DesignNote is
 needed. No A4 acceptance, Step-B traceability, new capability, implementation,
 runtime/deployment or Iris design is authorised.
+
+<a id="u17"></a>
+
+## Sylloge Binary Content Management adjudication input
+
+**U17 — 2026-10-12:** explicit user architectural adjudication introducing
+**Harmonia.Sylloge** and authorising only affected Candidate Architecture
+reconciliation and a fresh A2/A3/A4-readiness assessment. The adjudication is
+incorporated in the self-contained
+[canonical Sylloge view](sylloge-binary-content-management.md).
+
+Sylloge owns governed binary-content metadata, Information Unit associations,
+location/resolution, retrieval, on-demand assembly and custody knowledge. C49,
+F31 and D15 allocate that application responsibility, closing CDG-25/CA-04.
+Physical custody may remain external; no universal copying into Harmonia is
+required. Mnemosyne remains Persistence Manager and may supply applicable
+services; Mneme remains Context and Pragma Manager. Agora owns native
+collaboration media and formal-binary collaboration references/activity; Omilia
+remains operational. Logical information, binary payload, application ownership,
+physical custody and durable-state establishment remain distinct.
+
+The adjudication does not select storage, representations, retrieval/assembly
+contracts, lifecycle/versioning or adapters; the canonical view preserves every
+explicit deferral. It authorises no upstream mapping, A4 acceptance, Step B,
+production implementation, module/POM or deployment allocation.
+
+### Directly affected legacy review
+
+The bounded search covered clinical binary/payloads, media custody/repositories,
+Agora media ownership, DocumentReference and F31/D15 across legacy Markdown/LaTeX,
+module documentation and historical execution material. Ergon binary-bearing
+payload examples, FHIR metadata/resource catalogues and cache/persistence listings
+describe compatible carriers or mechanisms without assigning Binary Content
+Management to a competing owner. Homeserver media volumes concern native
+collaboration operations. Existing U16 wrappers remain applicable and unchanged.
+No additional legacy architectural meaning is adopted and **no new wrapper is
+required**. Historical closure reports retain their dated conclusions.
+
+Strategy's strategic component profiles, the axiom responsibility summary and
+repository subproject taxonomy are not exhaustive application-subsystem
+inventories; none assigns the formal binary responsibility elsewhere. No directly
+contradictory Strategy/axiom statement was established. The current Domain05
+registers and closure statements are reconciled by U17; required Sylloge knowledge
+does not remain solely in conversation or legacy material.
 
 ## This Agora/Omilia legacy reconciliation
 
@@ -209,8 +254,9 @@ supporting or historical evidence; no Omilia implementation/topology is inferred
 The restricted/self-hosted/non-federated position of legacy ADR-011 and its LaTeX
 copies is compatible with retained isolation constraints; no new federation
 decision or change to those restrictions is made. Binary payload/DocumentReference
-references retain their unresolved CDG-25 disposition rather than being migrated
-into a fabricated media architecture. The external DesignNote remains unchanged.
+references were retained as supporting evidence at U16; U17 now establishes
+Sylloge responsibility without adopting their representation/storage detail.
+The external DesignNote remains unchanged.
 
 ## Legacy reconstruction sources
 

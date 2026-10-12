@@ -71,6 +71,12 @@ Harmonia Information System — candidate software solution
       Clinical Information — persistence responsibility domain
       Harmonia Configuration & Governance — persistence responsibility domain
       Harmonia Operations & Assurance — persistence responsibility domain
+  Sylloge — Binary Content Management subsystem [C49]
+    Binary-content metadata and Information Unit associations [F31/D15]
+    Location / resolution; retrieval; on-demand assembly from one or more payloads
+    Knowledge of Harmonia-managed versus externally managed content
+    Physical custody may remain external; no mandatory copying into Harmonia
+    Applicable Harmonia persistence services remain Mnemosyne responsibility
   Energeia — discrete Software Component; Harmonia operational management [C39]
     Direct responsibility: Praxis Management Services [F11]
     Direct responsibility: Journey Management Services [F38]
@@ -148,6 +154,12 @@ is documented in [L11/L23](sources.md#l11). Agora and Omilia responsibilities fo
 [U16](sources.md#u16); historical [L12](sources.md#l12) module/API slices remain
 implementation provenance, not the complete collaboration architecture.
 
+[U17 Sylloge](sylloge-binary-content-management.md) establishes Binary Content
+Management independently of Mneme Context/Pragma Management and Mnemosyne
+Persistence Management. Information Unit association, payload, physical custody
+and application responsibility remain distinct. This logical subsystem allocation
+selects no module, process, deployment or storage boundary.
+
 [U07–U09](README.md#kleio-themis-petasos-adjudication) refine Kleio, Themis and
 Petasos responsibilities. PAP/PRP/PDP denote Themis responsibilities, not selected
 services/processes; distributed PEP is Themis-owned capability hosted where the
@@ -163,7 +175,7 @@ The following do not have a supported structural parent in that tree:
 | :--- | :--- |
 | **Provider Registry [C13]** | Documented cross-component application collaboration spanning Pylai, Themis, Petasos, Ponos/Praxis/Erga, Mneme/Mnemosyne and Iris; not automatically a new enclosing subsystem. [L15](sources.md#l15). |
 | **Operator/developer support [C22]** | Documented CLI, activity/sequence authoring, shared design support and telemetry contracts. Tools retain association with their target components; no invented common platform subsystem. [L19/L21/L23](sources.md#l19). |
-| **Non-collaboration binary custody / detailed clinical terminology services** | U16 assigns native collaboration media to Agora and preserves ownership of referenced objects. The F31/D15 formally managed clinical-binary application custodian remains unassigned, [CDG-25](gaps.md#binary-custody-question); no Media Server is implied. U13 establishes DataSets content management without settling every proposed terminology service, CDG-24/49. |
+| **Detailed clinical terminology services** | U13 establishes DataSets content management without settling every proposed terminology service, CDG-24/49. Sylloge's separately established F31/D15 responsibility is in the hierarchy above. |
 
 **Paradeigma [C21]** is associated simulation/verification support, outside the
 production collaboration hierarchy. Its documented PAS, EMR, LMS, RIS-PAC,
@@ -331,6 +343,10 @@ flowchart LR
     OmiliaClient["Harmonia.Omilia.Client"] <-->|"Matrix protocol"| OmiliaServer
     Roster["Roster Management: SEP"] -->|"R1.x/R2.x applicable Shift Start / End context"| Agora
     Agora -->|"audit-worthy occurrences; dialogue / logs are not AuditEvent"| Kleio
+    IU["Information Unit"] -->|"binary-content association / reference"| Sylloge["Sylloge: Binary Content Management"]
+    Mneme -->|"may obtain / resolve binary content; detailed contract deferred"| Sylloge
+    Sylloge -->|"where Harmonia persistence required; through established Mneme access boundary"| Mnemosyne
+    Agora -->|"reference to formally managed binary; collaboration record retained"| Sylloge
     Calliope["Calliope-Models: build-time definitions / structural contracts"] -->|definitions consumed locally| Ergon
     DataSets["Calliope-DataSets: governed runtime content"] -->|"established Context / Pragma access and persistence"| Mneme
     DataSets -->|"existing execution where dataset governance requires workflow"| Ponos
@@ -396,3 +412,5 @@ does not itself constitute assurance; Dokimasia does not manage its operational
 subject. Information custody, active management, durable persistence and domain
 authority are not aliases. These limits apply to every source-derived feature
 and relationship, with unresolved cases recorded in [CDG](gaps.md).
+Sylloge management does not require physical custody of every payload; native
+Agora media and formal binary content retain their separate application owners.

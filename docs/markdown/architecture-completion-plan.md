@@ -295,8 +295,8 @@ activities are:
 | Step-A activity | Current status |
 |---|---|
 | A1 — Reconstruct and document Candidate Architecture | COMPLETE |
-| A2 — Architectural review and adjudication | IN PROGRESS |
-| A3 — Correct/reconcile Candidate Architecture as required | IN PROGRESS; performed iteratively with A2 |
+| A2 — Architectural review and adjudication | COMPLETE at Candidate responsibility level; [U17 assessment](05-information-systems-architecture/README.md#sylloge-adjudication), 2026-10-12 |
+| A3 — Correct/reconcile Candidate Architecture as required | COMPLETE WITH NON-BLOCKING DEFERRED ITEMS; U17 affected-view reconciliation |
 | A4 — Accept Candidate Architecture as sufficiently faithful | PENDING |
 
 **Step A is complete when the reconstructed Candidate Architecture has been
@@ -426,7 +426,7 @@ analysis; the historical report remains unchanged.
 | Domains01–02 — Motivation / Strategy | Established upstream intent and capability context; earlier programme history retained below |
 | Domain03 — Business Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-09 |
 | Domain04 — Information Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-10 |
-| Domain05 — Information Systems Layer Architecture | Step A remains open — A1 reconstruction/documentation complete (2026-10-11); A2 architectural review/adjudication and A3 bounded correction/reconciliation in progress; A4 candidate acceptance pending; Step B capability + information traceability NOT STARTED and follows acceptance; Steps B–E remain unperformed and the Domain Completion Gate is not yet satisfied |
+| Domain05 — Information Systems Layer Architecture | Step A remains open — A1 COMPLETE; A2 COMPLETE at Candidate responsibility level; A3 COMPLETE WITH NON-BLOCKING DEFERRED ITEMS; [U17 assessment](05-information-systems-architecture/README.md#sylloge-adjudication), 2026-10-12: READY FOR A4 ADJUDICATION by Mark + ChatGPT, A4 acceptance PENDING; Step B capability + information traceability NOT STARTED; Steps B–E remain unperformed and the Domain Completion Gate is not yet satisfied |
 
 ### Established upstream completion and earlier Domain05 transition
 

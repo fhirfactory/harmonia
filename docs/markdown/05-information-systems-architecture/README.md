@@ -41,9 +41,10 @@ The authorised Domain05 approach is:
 4. Identify excess candidate features/components and establish the MVP Candidate Architecture.
 5. Establish the implementation plan.
 
-Initial reconstruction (A1, recorded here as Step 1) is complete. Step A remains
-open: architectural review/adjudication (A2) and bounded iterative correction
-(A3) are in progress; acceptance as sufficiently faithful (A4) is pending.
+Initial reconstruction (A1, recorded here as Step 1) is complete. The
+[U17 assessment](#sylloge-adjudication) now records A2 COMPLETE and A3 COMPLETE
+WITH NON-BLOCKING DEFERRED ITEMS. Step A remains open: acceptance as sufficiently
+faithful (A4) is pending. Recommendation: **READY FOR A4 ADJUDICATION**.
 The Energeia / DigitalTwin / Dokimasia and Pathway / Journey / Publish/Subscribe /
 handoff and Energeia / Praxis / Journey / persistence adjudications below correct
 the candidate within that boundary. The Kleio / Themis / Petasos adjudication
@@ -58,7 +59,8 @@ The [three subsequent boundary adjudications](#boundary-reconciliation) resolve
 the retained Terma/Strategy, Calliope realisation and Kleio capture-authority
 conflicts. The [Agora / Omilia reconciliation](#agora-omilia-adjudication) now
 establishes collaboration control, operations, ownership and capture boundaries.
-The same A2/A3 boundary applies; **Step B has NOT started**.
+The [Sylloge adjudication](#sylloge-adjudication) closes the remaining F31/D15
+Binary Content Management responsibility question. **Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -79,6 +81,7 @@ record does not declare the Domain Completion Gate satisfied.
 | [Calliope Models and DataSets](calliope-models-and-datasets.md) | Distinct build-time definitions and runtime governed content, developer support, security/assurance nomenclature and Themis reconciliation. |
 | [Pylai external interoperability and Praxis.Horos](pylai-external-interoperability.md) | Terma, transient non-recoverable Diadromí, Controller, Pathway/Broker/Server patterns, ingress acceptance and egress handover ordering. |
 | [Agora / Omilia collaboration](agora-omilia-collaboration.md) | Collaboration control versus operations, native record versus conduit, roster SEP, managed-Room capture, audit and media boundaries; deliberate deferrals. |
+| [Sylloge Binary Content Management](sylloge-binary-content-management.md) | Formally managed binary-content responsibility, Information Unit associations, resolution/retrieval/assembly and custody knowledge; distinct from persistence and native collaboration media. |
 | [Internal middleware](middleware.md) | Internal messaging, recoverable handoff, dispatch, access and context collaboration, separated from external integration and products. |
 | [Documentation/component-feature gaps](gaps.md) | Evidence, incomplete meaning and possible adjudication for each gap. |
 | [Sources and reconciliation](sources.md) | Authority, legacy provenance, reviewed scope, disposition and section-specific supersession. |
@@ -674,13 +677,13 @@ processing; the original Agora record remains Agora's. Not every message becomes
 work or clinical record content. Dialogue retention, logging and Kleio authoritative
 audit remain distinct. AX-05 and existing security/isolation rules remain unchanged.
 
-The fresh Step-A assessment closes the former roster, Agora record-custody and
+The U16 Step-A assessment closed the former roster, Agora record-custody and
 generic formal-record handoff blockers. It settles Agora-native media ownership
-and the non-transfer of referenced binary ownership. **One specific A2 question
-remains:** the application custodian for the candidate F31/D15 formally managed
+and the non-transfer of referenced binary ownership. **At that snapshot one A2
+question remained:** the application custodian for the candidate F31/D15 formally managed
 clinical binary content outside native collaboration, or its explicit deferred-scope
-disposition. [CDG-25](gaps.md#binary-custody-question) preserves it; no binary store
-or new component is inferred. Detailed collaboration matters remain
+disposition. U17 below now closes [CDG-25](gaps.md#binary-custody-question) through
+the explicit Sylloge allocation. Detailed collaboration matters remain
 [non-blocking deferrals](gaps.md#agora-omilia-contracts).
 
 | Activity | Assessment at the U16 snapshot |
@@ -693,3 +696,48 @@ or new component is inferred. Detailed collaboration matters remain
 
 This assessment does not declare Step A, Domain05 or A4 complete. It does not
 assess upstream coverage or turn detailed deferred design into additional blockers.
+
+<a id="sylloge-adjudication"></a>
+
+## Sylloge reconciliation and repeated closure assessment
+
+**U17 — 2026-10-12:** the explicit architectural adjudication introduces
+[Harmonia.Sylloge](sylloge-binary-content-management.md) as the **Binary Content
+Management subsystem**. It owns governed binary-content metadata, Information
+Unit associations, location/resolution knowledge, retrieval, on-demand assembly
+from one or more payloads and knowledge of Harmonia versus external management.
+The system/component views include **C49**; **F31/D15** now allocate this
+application responsibility. [CDG-25](gaps.md#binary-custody-question) is closed at
+responsibility level. The preceding U16 assessment is a historical snapshot,
+superseded for current readiness by this assessment.
+
+Sylloge management does not imply physical custody or mandatory copying of every
+payload into Harmonia. Mnemosyne remains Persistence Manager and may supply
+applicable persistence services; Mneme remains Context and Pragma Manager.
+Agora retains native collaboration media and the collaboration record/reference
+concerning formal binaries. Sylloge retains Binary Content Management; Omilia
+acquires no such responsibility. Logical information, payload, application owner,
+physical custodian and persistence provider remain distinct.
+
+The repeated assessment compares current system, component, feature, information,
+middleware, source-disposition and CDG-01–52 responsibility boundaries against the
+[Step-A sufficiency criterion](../architecture-completion-plan.md#33-domain05-five-stage-completion-method).
+U16 already resolved CA-01–03; U17 resolves the remaining CA-04 responsibility
+rather than removing binary content from the candidate. No further concrete
+unresolved Candidate Architecture responsibility question was established.
+Detailed Sylloge [deferrals](sylloge-binary-content-management.md#sylloge-deferred-design),
+other detailed contracts, historical contradictions, explicitly unselected
+proposals and future traceability questions remain distinguishable; none by
+itself prevents a sufficiently faithful candidate from being reviewed at A4.
+
+| Activity | Revised U17 assessment |
+| :--- | :--- |
+| A1 — Candidate reconstruction/documentation | **COMPLETE** — the adjudicated responsibility and its limits are self-contained in RADS. |
+| A2 — Architectural review/adjudication | **COMPLETE** at Candidate responsibility level — the final F31/D15 question is resolved by Sylloge; no further concrete responsibility blocker established. |
+| A3 — Candidate correction/reconciliation | **COMPLETE WITH NON-BLOCKING DEFERRED ITEMS** — affected views agree; detailed storage, representation, interaction and lifecycle design remains deferred. |
+| A4 readiness | **READY FOR A4 ADJUDICATION** — recommendation for Mark + ChatGPT; A4 acceptance remains **PENDING**, not complete. |
+| Step B — Capability + Information traceability | **NOT STARTED**. |
+
+This assessment establishes readiness for architectural review, not A4 acceptance,
+whole-Domain05 completion, upstream coverage, MVP or implementation readiness.
+Stop here and return the Candidate Architecture to Mark + ChatGPT for A4 review.

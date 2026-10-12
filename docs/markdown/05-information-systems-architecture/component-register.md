@@ -1062,6 +1062,32 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   oversight/transaction/compartment/outcome/search/Research Metadata contracts remain
   CDG-47/48, alongside historical structures CDG-12/13/40.
 
+<a id="c49"></a>
+
+### C49 — Harmonia.Sylloge
+
+- **Role/responsibility:** **Binary Content Management subsystem** responsible
+  for governed association, resolution, retrieval and assembly of binary content
+  associated with Harmonia-managed information. [U17 canonical view](sylloge-binary-content-management.md#sylloge-responsibility).
+- **Feature/information:** F31/D15; binary-content metadata, Information Unit
+  associations, location/resolution knowledge, retrieval, on-demand assembly from
+  one or more payloads and knowledge of Harmonia-managed versus externally
+  managed content. Logical information and binary payload remain distinct.
+- **Custody/persistence:** physical custody may remain external; management does
+  not require copying every payload into Harmonia. Where applicable, Mnemosyne
+  provides Harmonia persistence services without acquiring Binary Content
+  Management. Sylloge is not a generic persistence manager.
+- **Collaborations/exclusions:** Mneme remains Context and Pragma Manager with its
+  established service boundary; applicable processing components may obtain/resolve
+  content through Sylloge. Agora retains native collaboration media and the
+  record/reference/activity concerning formal binary content; Sylloge retains
+  that content's Binary Content Management. Omilia acquires no such responsibility.
+  Source information/domain authority and external physical custody are preserved.
+- **Standing:** U17 adjudicated Candidate Architecture; former A2 responsibility
+  question CDG-25 closed. [Storage, representations, APIs, algorithms and lifecycle
+  mechanisms](sylloge-binary-content-management.md#sylloge-deferred-design) remain
+  non-blocking later design. No module, dependency or deployment allocation.
+
 <a id="c13"></a>
 
 ### C13 — Provider Registry solution collaboration
@@ -1209,8 +1235,9 @@ approval rules and durable UI state, are unknown.
 - **Standing:** U16 adjudicated candidate; exact taxonomy, membership derivation,
   API, representations, persistence, security/privacy and Omilia.Client/Iris
   integration remain [deferred](agora-omilia-collaboration.md#deferred-collaboration-design).
-  Partial transaction effects remain CDG-19; non-collaboration binary application
-  custody remains CDG-25. Historical class/table names are implementation evidence.
+  Partial transaction effects remain CDG-19. [Sylloge C49](#c49) owns F31/D15
+  Binary Content Management under U17; Agora retains collaboration references.
+  Historical class/table names are implementation evidence.
 
 ### Omilia — Harmonia collaboration subsystem
 

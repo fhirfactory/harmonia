@@ -198,12 +198,16 @@ operational or other formally managed binary linked, referenced or presented in 
 Room remains with its originating information responsibility. Agora may own the
 collaboration reference/activity without owning the referenced object.
 
-This settles collaboration ownership. It does **not** allocate the previously
-unassigned application custodian for formally managed clinical binary content in
-F31/D15 outside native collaboration. [CDG-25](gaps.md#binary-custody-question)
-retains that specific responsibility question, separately from deferred
-binary/media persistence mechanics. No Media Server, object store, schema,
-protocol or retention value is invented to close it.
+[U17](sources.md#u17) allocates F31/D15 **Binary Content Management** to
+[Harmonia.Sylloge](sylloge-binary-content-management.md#agora-and-omilia-boundary).
+For formally managed clinical/operational binaries, Sylloge manages association,
+resolution, retrieval, assembly and custody knowledge. Agora retains the
+collaboration record/reference when it presents, links to, discusses, notifies
+about or captures activity concerning that content. None of those actions makes
+Agora its custodian; Omilia acquires no Binary Content Management responsibility.
+Sylloge management does not require physical custody: a payload may remain with
+an external authoritative/source system. [CDG-25](gaps.md#binary-custody-question)
+now retains deferred detailed design with the application responsibility closed.
 
 <a id="deferred-collaboration-design"></a>
 
@@ -228,5 +232,5 @@ established above:
   projections/providers; no fixed four-room hierarchy is established.
 
 These details SHALL NOT be supplied by analogy with Matrix, Synapse, Element,
-Teams or Slack. [CDG-19/21–23/25/52](gaps.md#agora-omilia-contracts) retains their
-disposition and the separate non-collaboration binary responsibility question.
+Teams or Slack. [CDG-19/21–23/52](gaps.md#agora-omilia-contracts) retains their
+disposition; Sylloge's separate detailed deferrals remain CDG-25.
