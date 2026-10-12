@@ -23,14 +23,19 @@ The explicit Composition of loaded Context values is separately established. Lea
 Harmonia Information System — candidate software solution
   Calliope — semantic definitions, shared models and conversion support [C01]
     Canonical model / schema / terminology-binding support
+    Release-bounded authorisation ValueSets: Function.Name / Function.Scope
+    Release-bounded Information.Compartments / Information.Classification
     Event, payload, reason and topic definitions (Data Objects)
     HL7/FHIR converter support
   Themis — Authorisation Model management and distributed enforcement [C02]
-    PAP — Authorisation Model administration/lifecycle
+    PAP — model administration/lifecycle; governed management through Ergo/Praxis
     PRP — authoritative model repository semantics; durability through Mneme/C&G
-    PDP — reasoning over model, authenticated Identity and context
-    PEP-Context — contextual Criteria projection for authenticated Identity
-    Themis-owned PEP capability — embedded at hosts controlling governed actions
+    Criterion — applicable dimensions AND; grants across Criteria UNION
+    Nested Criteria collections / AuthorisationRoles / direct and role assignments
+    PDP — resolution/compilation over model, Identity, temporal and applicable Capacity context
+    PEP-Criteria — precomputed Identity-specific permitted combinations
+    PEP-Context — operational enforcement context supplying PEP-Criteria
+    Themis-owned PEP library — constrained deterministic enforcement at action-controlling hosts
   Kleio — authoritative Audit Information Management [C03]
     Audit Capture — clients report occurrences; Kleio constructs FHIR AuditEvent
     Immutable audit history — preservation/retrieval and longitudinal evidence
@@ -94,6 +99,7 @@ Harmonia Information System — candidate software solution
     Clinical viewer [C16]
     Operations console [C16]
     Administration / provider self-service views [C16]
+    Human interaction for Themis administration, review and approval; no model ownership
     Backend-for-frontend mediation [C17]
     Shared presentation/design-system support
   Agora — governed collaboration [C18]
@@ -102,6 +108,12 @@ Harmonia Information System — candidate software solution
     Collaboration event/transaction ingress and messaging handoff
     Protocol adapter encapsulation (implementation support)
 ```
+
+**Identity.Authentication is external SEP**, integrated through OIDC/OAuth; it
+is not another Harmonia-owned subsystem in this tree. Keycloak + PostgreSQL is
+the default FOSS development/test/POC IdP and remains replaceable without
+Keycloak-specific architectural dependencies. Authentication grants no Harmonia
+authority. [U12](sources.md#u12), [Identity/Themis definitions](component-register.md#c02).
 
 Energeia's discrete responsibility follows [U06](sources.md#u06), extending
 [U02](sources.md#u02) without changing its execution/activity specialisations or
@@ -289,11 +301,13 @@ flowchart LR
     Agora["Agora: collaboration"] -->|collaboration events| Petasos
     Petasos -->|collaboration requests| Agora
     Calliope["Calliope: semantic reference"] -->|definitions consumed locally| Ergon
-    Themis["Themis: Authorisation Model / PDP"] -->|PEP-Context / Themis-owned local PEP| Ponos
-    Themis -->|PEP-Context / Themis-owned local PEP| Mneme
-    Themis -->|persistence Criteria / Themis-owned PEP| Mnemosyne
-    Themis -->|PEP-Context / Themis-owned local PEP| Agora
-    Themis -->|FORWARD Criteria / Themis-owned local PEP| Petasos
+    IdP["External OIDC/OAuth IdP: Authentication SEP"] -->|"trusted Identity; no Harmonia authority"| Themis["Themis: governed model / PDP compilation"]
+    Calliope -->|"controlled authorisation nomenclature"| Themis
+    Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Ponos
+    Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Mneme
+    Themis -->|"persistence PEP-Criteria / local Themis PEP"| Mnemosyne
+    Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Agora
+    Themis -->|"FORWARD PEP-Criteria / local Themis PEP"| Petasos
     Themis -->|PRP governed model; durable C&G| Mneme
     Ponos -->|significant occurrences; terminal constraints| Kleio["Kleio: authoritative Audit Information Management"]
     Themis -->|significant occurrences under policy| Kleio

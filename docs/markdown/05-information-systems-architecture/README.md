@@ -18,7 +18,7 @@
 # Domain05 — Information Systems Layer Architecture
 
 **Standing: Harmonia Candidate Information Systems Architecture, reconstructed
-and corrected through bounded Step-A adjudication, 2026-10-11.** This is the
+and corrected through bounded Step-A adjudication, through 2026-10-12.** This is the
 canonical RADS record of the candidate,
 not the final Solution Architecture baseline. Inclusion does not establish
 that a component or feature is required for R1.x/R2.x. Absence of upstream
@@ -50,6 +50,8 @@ the candidate within that boundary. The Kleio / Themis / Petasos adjudication
 below further corrects the candidate and R1.x/R2.x Observe → Report scope.
 The [Mneme / Mnemosyne correction](#mneme-mnemosyne-adjudication) incorporates
 Context/Pragma Management and Persistence/Search/Research Metadata Management.
+The [Identity consolidation](#identity-candidate-adjudication) reconciles
+externally provided authentication with Themis-owned authorisation semantics.
 It retains the same A2/A3 boundary; **Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
@@ -63,7 +65,7 @@ record does not declare the Domain Completion Gate satisfied.
 | View | Contents |
 | :--- | :--- |
 | [System map](candidate-system-map.md) | Responsibility-based software hierarchy; separate collaboration map; construct standing. |
-| [Component register](component-register.md) | Roles, features, significant internal constructs, information, persistence, collaborators and exclusions. |
+| [Component register](component-register.md) | Roles, features, significant internal constructs, information, persistence, collaborators and exclusions; [controlled nomenclature](component-register.md#authorisation-nomenclature) and [Identity/Themis model](component-register.md#c02). |
 | [Candidate feature map](candidate-feature-map.md) | Documented solution features and allocations, including retained proposals and unclear owners. |
 | [Context and persistence management](context-and-persistence-management.md) | Mneme services, value-based Context lifecycle, Pragma Output, exceptional harmonisation, Mnemosyne oversight, Search and Research Metadata. |
 | [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; Clinical / C&G / O&A responsibility domains and retained historical structure variants. |
@@ -377,15 +379,16 @@ provenance; required architecture does not depend on access to them.
 - **[Themis C02](component-register.md#c02)** owns the Authorisation Model through
   PAP administration, PRP authoritative repository semantics and PDP reasoning over
   model, authenticated Identity and context. ACCESS, CHANGE and FORWARD are distinct.
-  PDP-derived **PEP-Context** projects applicable Criteria for authenticated Identity;
+  PDP-derived **PEP-Context** supplies precomputed Identity-specific **PEP-Criteria**;
   Policy, Criteria and local enforcement decision remain distinct. Distributed
   Themis-owned PEP capability enforces at hosts controlling the operation; no central
   enforcement component or independent host reinterpretation is introduced.
 - **Themis availability/delegation:** valid sufficient PEP-Context permits in-flight
   local enforcement during temporary PDP loss; new/renewed/replacement context
   requires PDP establishment and activity must wait at that boundary. Unavailability
-  is not denial. Context may be delegated within Themis with source provenance;
-  detailed delegation/validity mechanics remain deferred. PRP durability may use
+  is not denial. U12 refines delegation as Identity / PEP-Criteria forwarding,
+  subject to FORWARD authority and originating/acting Identity provenance;
+  detailed forwarding/validity mechanics remain deferred. PRP durability may use
   Mneme/Mnemosyne C&G without transferring Authorisation Model ownership.
 - **[Petasos C10](component-register.md#c10)** owns creation, operation and status of
   durable purpose-defined message/event queues. All carry **PetasosParcel by value**;
@@ -397,11 +400,69 @@ provenance; required architecture does not depend on access to them.
 
 C&G remains one coherent governance information space; O&A remains horizontally
 partitionable without a prescribed key/topology. Independent audit targets do not
-establish a general O&A topology. APIs, schemas, policy language, transaction/
+establish a general O&A topology. APIs, schemas, transaction/
 retry/failover, queue technology and detailed protocols remain unresolved under
 [CDG-42–44](gaps.md#themis-detailed-contracts). The Themis note's proposed audit
 authorisation exception conflicts with AX-07 and is explicitly retained for
 adjudication; it is not adopted as an authorisation bypass.
+
+<a id="identity-candidate-adjudication"></a>
+
+## Identity.Authentication / Identity.Authorisation candidate consolidation
+
+**U12 — 2026-10-12:** the supplied Identity DesignNote, read in full outside the
+repository, and explicit task adjudications are reconciled into the existing
+[Calliope](component-register.md#authorisation-nomenclature) and
+[Themis](component-register.md#c02) entries. These are the canonical detailed
+definitions; this consolidation does not create a parallel Identity authority.
+
+- **Authentication is SEP:** an external OIDC/OAuth IdP establishes WHO an
+  Individual or System is. Keycloak + PostgreSQL SHALL be the default FOSS IdP
+  for development/test/POC; it is replaceable and introduces no Keycloak-specific
+  architectural dependency. Harmonia owns no identity, credential, password or
+  MFA framework. Authentication grants no Harmonia authority.
+- **Calliope defines/governs controlled nomenclature; Themis owns policy
+  association, resolution and enforcement.** Release-bounded Function.Name,
+  Function.Scope, Information.Compartments and Information.Classification
+  ValueSets constrain governed combinations. ACCESS/CHANGE/FORWARD remain distinct
+  existing concepts, not an exhaustive final action ValueSet.
+- **Within a Criterion, applicable dimensions are conjunctive; between Criteria,
+  grants are additive / UNION.** Nested collections and AuthorisationRoles
+  preserve this UNION, as do direct and AuthorisationRole-derived Identity grants.
+  No matching effective Criterion means DENY; no explicit negative/DENY Criteria
+  or arbitrary Boolean policy language is introduced. The same model serves
+  human and system Identities. Temporal validity differs from revocation.
+- **PractitionerCapacity is selected operating context, not authority:** one is
+  active for the applicable practitioner session/operational or roster context.
+  It differs from Practitioner, FHIR PractitionerRole and AuthorisationRole.
+  Operational responsibility, including future Agora/Synapse notification use,
+  remains distinct from Themis authorisation. Receiving a notification grants
+  no information access; following it requires normal PEP enforcement.
+- **PEP-Criteria is precomputed and Identity-specific:** Themis resolves governed
+  grants/context/policy state and retains derivation provenance. Local PEPs
+  enforce deterministically and do not interpret a general-purpose policy language.
+  Existing sufficient valid context may support local/in-flight enforcement
+  during PDP loss; required new/renewed/replacement context must wait.
+  Unavailability is not DENY. Forwarding requires FORWARD authority and preserves
+  originating and receiving/acting Identity provenance.
+- **Untagged information remains governed:** required effective Compartment and
+  Classification values use deterministic governed derivation; inability to
+  establish required attributes fails closed. Decision-time derivation differs
+  from persistent metadata change. Themis is not assumed to own all derivation.
+- **Administration is governed work:** Themis owns PAP/PRP/PDP, the model and PEP
+  framework; Ergo/Praxis supplies management/review/approval activity; Iris supplies
+  human interaction. Calliope defines security/assurance nomenclature, Themis
+  decides/enforces, Dokimasia assures and Kleio audits.
+
+The [deferred-design register](gaps.md#identity-deferred-design) preserves exact
+representations, temporal expressions, revocation/invalidation, effective-attribute
+ownership/precedence, PractitionerCapacity mapping/UI, Agora/Synapse mechanics,
+PAP Praxes/Erga, forwarding lifecycle and caching/refresh/distribution. No
+jCasbin/OPA/Cedar dependency, general-purpose IAM framework or detailed Iris
+design is introduced. Identity is sufficiently captured for Candidate Architecture
+review; A4 and whole-domain acceptance remain pending, and Step B has not started.
+The [Kleio audit-persistence exception versus AX-07](gaps.md#themis-detailed-contracts)
+remains unresolved; U12 supplies no bypass or subsequent adjudication of it.
 
 <a id="mneme-mnemosyne-adjudication"></a>
 

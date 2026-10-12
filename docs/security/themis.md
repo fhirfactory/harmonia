@@ -1,5 +1,18 @@
 # Themis: Policy & Authorisation Service
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [Identity.Authentication SEP](../markdown/05-information-systems-architecture/component-register.md#identity-authentication)
+- [Kleio Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 ## 1. Subsystem Overview
 
 **Themis** is the Harmonia subsystem responsible for deterministic policy evaluation, role-to-authority mapping, data security label validation, and decision auditing.
@@ -10,6 +23,11 @@ Themis answers the question:
 Themis is decoupled from authentication:
 - **Authentication** answers: *"Who are you?"* (handled upstream at Pylai / IDP).
 - **Themis** answers: *"Are you permitted to do this?"*
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -59,6 +77,18 @@ public record ThemisAuthorizationDecision(
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Conjunctive Criterion and additive UNION grants](../markdown/05-information-systems-architecture/component-register.md#authorisation-criteria)
+- [Precomputed PEP-Criteria and constrained local PEP](../markdown/05-information-systems-architecture/component-register.md#pep-context)
+
+```text
+---------------------------------------------------------
+```
+
 ## 4. Deterministic Predicate Pipeline
 
 The evaluation pipeline follows an unambiguous, deterministic sequence:
@@ -76,3 +106,7 @@ graph LR
 1. **Explicit Denials First**: If any applicable policy evaluates to `DENY` or explicit deny is active, evaluation immediately terminates with `DENY`.
 2. **Policy Rule Matching**: Registered policies sorted by order are evaluated against target domain, resource type, action, and required authorities.
 3. **Default Deny Fallback**: If no policy explicitly grants `ALLOW`, Themis fails closed to `DENY` with reason `POLICY_NOT_FOUND` or `AUTHORITY_MISSING`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

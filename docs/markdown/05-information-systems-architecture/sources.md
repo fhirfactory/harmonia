@@ -82,6 +82,30 @@ README's residual allowance is corrected. R3 direction, legitimate Dokimasia
 monitoring restrictions and unaffected U01–U09 meanings remain. Themis/AX-07
 conflict remains unresolved; this is A2/A3 work, A4 pending, Step B not started.
 
+## This Identity candidate consolidation input
+
+| Key | Source and inspected scope | Incorporated candidate meaning |
+| :--- | :--- | :--- |
+| <a id="u12"></a>U12 | Supplied `DesignNote-Identity-Authentication-and-Authorisation-Architecture.md`, §§1–18, read in full from Downloads; explicit consolidation task decisions, 2026-10-12 | [Identity consolidation](README.md#identity-candidate-adjudication), [Calliope nomenclature](component-register.md#authorisation-nomenclature) and [Themis C02](component-register.md#c02): authentication SEP/external OIDC IdP, Keycloak + PostgreSQL development/test/POC default; release-bounded ValueSets; Criterion conjunction/additive UNION, nested collections, AuthorisationRole and direct/role assignments; temporal validity versus revocation; precomputed Identity-specific PEP-Criteria and constrained PEP; untagged-information control; PractitionerCapacity and responsibility boundary; forwarding provenance; Ergo/Praxis/Iris administration. [Detailed deferrals](gaps.md#identity-deferred-design) and the U08 audit/AX-07 conflict remain explicit. |
+
+The working note explicitly does not supersede RADS by itself. The current task
+authorises incorporation of its adjudicated Candidate Architecture into the
+existing RADS views, subject to the axioms. U12 unambiguously refines U08's open
+Criteria/policy-language and delegation descriptions; it does not adjudicate
+the Kleio audit-authorisation exception. No subsequent explicit decision resolving
+that conflict was found in the relevant RADS material reviewed.
+
+The note was supplied outside the repository and remains unchanged there; no
+repository copy is assumed or added. Its filename records provenance, not an
+ongoing external architecture dependency. Required meanings are self-contained
+in RADS. Domains01–04 and the axioms remain unchanged; Practitioner and Business
+Role meanings, professional assertions and Information Unit/containment boundaries
+were reviewed to avoid inferred mappings. This is A2/A3 reconciliation, not A4
+acceptance, upstream traceability, implementation or a runtime-programme step.
+The [Business security realisation boundary](gaps.md#upstream-business-security-realisation-boundary)
+is retained explicitly: Domain03's purpose/relationship/consent/break-glass
+responsibilities are not silently translated into new policy semantics.
+
 ## Legacy reconstruction sources
 
 “Incorporated” means the identified architectural meaning is now represented
@@ -124,6 +148,27 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l29"></a>L29 | [Petasos architecture](../../../petasos/docs/architecture.md), [root messaging architecture](../../architecture.md), overview; [Petasos concept](../../concepts/petasos.md), [messaging concept](../../concepts/petasos-messaging.md), [module reference](../../modules/petasos.md) | **Partially incorporated:** existing concept definition/ownership and messaging §2 wrappers resolve to updated C10/handoff. This correction wraps messaging opening/§1 generic-broker introduction, module opening/positive ownership and root messaging-architecture opening and Standard Message Envelope. U09 now establishes purpose-defined durable queues/common by-value Parcel; technology/module/schema/topology catalogues remain historical supporting detail. Exact historical carrier relationships/delivery guarantees remain CDG-16/19/27/44. |
 | <a id="l30"></a>L30 | [Pylai concept](../../concepts/pylai.md), [gateway concept](../../concepts/pylai-gateways.md), full concepts | **Conflicting/unresolved and corroborating:** ingress/egress/registry functional slices retained, transport ownership and direct store access constrained by A01/A02; REC-001/002 remain repository invariants. No new external contract selected, CDG-11/18/32/34. |
 | <a id="l31"></a>L31 | [Dokimasia orientation](../../modules/dokimasia.md), full document | Opening paragraph and Digital Twins/Execution, Runtime AI and Open Downstream Architecture sections now wrapped to C19/C20/C27, specialisation axes, Mneme Pragma Management, terminal rules and CDG-35. Canonical assurance-navigation section remains unchanged. Component boundaries established by U02; detailed AI architecture remains discovery, not mandatory AI use in every workflow. |
+
+## This Identity legacy reconciliation
+
+Existing L08 wrappers remain unchanged. Additional section-level supersession
+preserves original text while linking to the U12 canonical definitions:
+
+| Legacy source / affected content | RADS replacement / disposition |
+| :--- | :--- |
+| [Themis security service](../../security/themis.md), §1 overview and §4 explicit-deny predicate pipeline | [C02 model and deterministic enforcement](component-register.md#c02), [Criterion/UNION semantics](component-register.md#authorisation-criteria); §2–3 module/code contracts retained as historical implementation detail. |
+| L08 [security concept](../../concepts/themis-security.md), §2 role/authority table and §3 persisted context account | [AuthorisationRole/assignments](component-register.md#criteria-collections-and-authorisationroles), [operational PEP-Context](component-register.md#pep-context); exact legacy enums/carrier mappings not adopted. |
+| L08 [Themis concept](../../concepts/themis.md), built-in policy portfolio; [module reference](../../modules/themis.md), built-in portfolio within §2.2 | [Governed permitted combinations](component-register.md#authorisation-criteria); historical wildcard/blanket-admin claims establish no bypass. Module/class inventories remain supporting detail. |
+| L06 [Calliope concept](../../concepts/calliope.md), security-policy/identity anti-responsibility bullet | [Nomenclature ownership](component-register.md#authorisation-nomenclature), [authentication SEP](component-register.md#identity-authentication) and [Themis](component-register.md#c02); other semantic-library detail retained. |
+| [Terminology guide](../../getting-started/terminology.md), Themis row; [LaTeX glossary](../../latex/chapters/appendix-a-glossary.tex), Themis row | [Identity/role terminology](component-register.md#identity-terminology), [Themis](component-register.md#c02) and [Kleio](component-register.md#c03); unrelated glossary entries unchanged. |
+| [LaTeX Themis chapter](../../latex/chapters/21-themis-security.tex), opening paragraph, pipeline figure and four-gate section; L18 [application chapter](../../latex/chapters/03-application-layer.tex), Themis opening paragraph and multi-tier figure | [Authentication SEP](component-register.md#identity-authentication), [nomenclature](component-register.md#authorisation-nomenclature), [PEP-Criteria/local enforcement](component-register.md#pep-context), [Kleio](component-register.md#c03). Both included diagram sources remain unchanged historical content inside the publication-section wrappers; the canonical system-map diagram is updated. |
+
+The supplied [Dokimasia orientation](../../modules/dokimasia.md) was reviewed;
+its existing wrappers, independent assurance and terminal boundaries remain
+unchanged. No Audit/Governance/Assurance/Authorisation merger is introduced.
+Original legacy bodies, diagrams and earlier wrapper bytes are preserved; only
+the listed affected sections/rows are newly wrapped. This is not whole-document
+supersession or migration of implementation catalogues into RADS.
 
 ## Discovery limits and preservation
 

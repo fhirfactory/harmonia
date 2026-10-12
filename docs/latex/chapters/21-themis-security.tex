@@ -7,6 +7,15 @@
 \chapter[Themis Policy Evaluation \& Security Boundaries]{Themis Policy Evaluation \&\\Security Boundaries}
 \label{chap:themis_security}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#identity-authentication}{External authentication SEP}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#pep-context}{Themis precomputed Criteria and distributed enforcement}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#c03}{Kleio Audit Capture}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 The Themis security subsystem (\texttt{themis/themis-core} and \texttt{themis/themis-api}) provides centralized Attribute- and Role-Based Access Control (ABAC/RBAC) across all Harmonia ingress interfaces, queue dispatchers, and persistence layers.
 
 \begin{figure}[htbp]
@@ -18,11 +27,22 @@ The Themis security subsystem (\texttt{themis/themis-core} and \texttt{themis/th
     \label{fig:themis_security_pipeline}
 \end{figure}
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 \section{Default-Deny Policy Invariant}
 
 \begin{principlebox}{Default-Deny Security Enforcement}
 In accordance with Invariant 6, all integration endpoints, task processors, and persistence operations default to \texttt{ThemisDecision.DENY}. Access is granted if and only if an explicit Themis policy rule evaluates to \texttt{PERMIT} for the authenticated security context.
 \end{principlebox}
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#pep-context}{Themis-owned constrained local PEP}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#authorisation-criteria}{Governed Criterion and UNION semantics}
+\end{itemize}
+\noindent ---------------------------------------------------------
 
 \section{The 4-Gate Defence-in-Depth Pipeline}
 
@@ -33,5 +53,8 @@ Security enforcement is applied at four successive gates:
     \item \textbf{Gate 3 --- Activity Execution}: Individual Ergon activities evaluate payload-specific security labels and user scopes.
     \item \textbf{Gate 4 --- Storage Compartment Enforcement}: Mnemosyne JPA mutators verify that the write operation complies with resource compartment and tenancy rules.
 \end{enumerate}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \newpage

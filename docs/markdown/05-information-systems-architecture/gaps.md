@@ -15,7 +15,7 @@ or establishing missing architectural meaning appears to require human
 adjudication; “Possibly” separates further documentary recovery from a decision.
 It is not a request to adjudicate during reconstruction.
 
-The [U02–U11 Step-A adjudications](sources.md#u02) partially resolve/reclassify
+The [U02–U12 Step-A adjudications](sources.md#u02) partially resolve/reclassify
 the affected entries below. Settled component boundaries and management/reuse
 relationships are separated from remaining detailed design. The primary note's
 earlier access issue was an input-access dependency, not an architectural gap.
@@ -36,7 +36,7 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-12 — contradiction / historical persistence structures** | Clinical/operational structure variants, history/indexing/search; C12/F18–19 | L16/L20 use incompatible keys/history models; L09/L18 versus L17 differ on HAPI-native structures. U06 replaces two-domain semantic classification with Clinical/C&G/O&A. | Historical-version preservation/index/retrieval structures remain unresolved. **Semantic persistence domains and scaling guardrails are established**, without reconciling physical structures or changing clinical architecture; downstream implementation CDG-40. | **Yes** for unresolved architecture contracts where needed; no schema/product selection here. |
 | **CDG-13 — partially resolved / historical evidence-persistence variants** | Kleio, Themis, Mnemosyne; C02/C03/C12/D03/12–13 | U07 establishes Kleio authoritative Audit Information Management, immutable FHIR AuditEvent and Mneme/O&A durability; U08 establishes Themis model/PRP ownership with possible Mneme/C&G durability. L08/L09/L16/L20 retain competing historical allocations. | **Application ownership and semantic persistence alignment resolved.** Supporting/prepared views differ from authoritative evidence. Historical FHIR/operations structures, privacy boundaries and concrete preservation mechanisms remain unresolved CDG-40/43; no schema/database selected. Dokimasia evidence role and terminal rules remain. | **Yes/Possibly** for detailed contracts and retained historical variants; settled ownership/alignment not reopened. |
 | **CDG-14 — partially resolved / observation versus authoritative audit** | Checkpoints / Journey / AuditEvent / findings; F06/15/38/M07/15 | U07 establishes Kleio Capture independently of Journey: Journey may relate to many AuditEvents; AuditEvent may exist without Journey. AX-08/09 rejects indiscriminate audit and U02 preserves terminal rules. | **Journey is an audit source, not audit boundary; no Journey prerequisite and no universal observation-to-AuditEvent rule.** Required significant audit capture is authoritative/durable and essential, without later reconstruction assumptions. Detailed policies, retention and source/evidence relationships remain CDG-38/43. | **Possibly** for detailed policies; settled evidence distinctions and Dokimasia terminal rules not reopened. |
-| **CDG-15 — contradiction / Data Object / persistence** | Security context, FHIR Task extensions and external projection; D03/05 | L08 security concept §3 and L18 serialize caller context/authorities into Task extensions. A01 AX-07/13 and L14 reuse canonical operational context without automatic content persistence. | Transport/context versus durable resource content and fail-closed external projection are not consistently described. A serialized carrier does not establish persistable authority or permission to export context. | **Possibly** for transport/retention contracts; governing prohibition already established. |
+| **CDG-15 — retained historical contradiction / context representation** | Security context, FHIR Task extensions and external projection; D03/05 | L08 security concept §3 and L18 serialize caller context/authorities into Task extensions. AX-07/13, U08/U12 and L14 distinguish operational context from persisted content. L08 §3 is now explicitly superseded. | Automatic context persistence is rejected; a serialised carrier establishes neither persistable authority nor permission to export context. Detailed transport/retention and historical L18 relationships remain unresolved under CDG-42. | **Possibly** for remaining transport/retention contracts; no automatic persistence or external projection permission. |
 | **CDG-16 — partially resolved / handoff and execution continuation** | Mneme selection → Petasos obligation → consumer undertaking → Ponos; M01/03/10/13 | U05 establishes persistent identity/reference handoff for Pragma with payload through Mneme and distinct state responsibilities. L01/L02 ACK/reject and L29 guarantees remain historical incomplete contracts. | **Responsibility boundary resolved.** Acceptance/ACK timing, uncertain effects, safe execution continuation, reference availability/version binding and recovery evidence remain unresolved. Technical ACK/exception does not establish commit, undertaking completion or work resolution. | **Yes** for missing continuation/recovery contracts; no safe retry algorithm invented. |
 | **CDG-17 — partially resolved / execution retry, redelivery and replay** | Ponos execution re-attempt; Petasos redelivery/recovery/dead-letter; F05/14/M02 | U05 separates execution/progression from handoff recovery; L13 ADR-015 restricts deliberate replay to designated durable transitions, while L19 tool examples mix cached/DLQ re-drive and replay. | **Ownership/conceptual distinction resolved.** Retry qualification, duplicate/redelivery/replay identity, new-attempt linkage, permitted anchors and uncertain-effect reconciliation remain unresolved. No automatic exactly-once or safe re-execution contract. | **Yes/Possibly** for detailed contracts/tool semantics; not the settled responsibility distinction. |
 | **CDG-18 — partially resolved / destination observation and parent progression** | Petasos handoff state versus Pragma/Task observations; F10/D10/Journey | U05 gives Petasos operational handoff/delivery obligation ownership; governed information may record observations. L03/L30/L28 and REC-002 establish destination granularity, with competing completion descriptions. | **Operational ownership versus observation distinction resolved.** Exact Petasos-to-Pragma/Task relationships, combination of observations, parent completion, partial/unknown delivery and outcome resolution remain unresolved. No state mirror or TaskOutcome algorithm inferred; dynamic fan-out CDG-37. | **Yes** for representation/progression detail; REC-002 is preserved. |
@@ -51,7 +51,7 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-27 — partially resolved / working structures and retained variants** | Mneme Context/Pragma, Petasos obligations, Ponos execution and definition working sets | U10 establishes Context/Pragma responsibility, four-service surface, temporal composed values and non-exhaustive expected sets; U05 state/selection boundaries retained. L09/L10/L17/L19/L20 cache catalogues remain historical. | **High-level working Context/Pragma meaning resolved.** Physical representation/distribution/reconstruction/retention and coordination remain CDG-45; no cache or queue topology/TTL/write-behind authority selected. | **Possibly** for detailed representation; technology catalogue cannot override settled semantics. |
 | **CDG-28 — partially resolved / operational reporting and tools** | Energeia, Journey, Iris/support; C39/C22/C35/F27/38/39 | U06 assigns Harmonia operational observation/reporting and Journey ownership to Energeia; Iris presents; external IT/Ops manages technical platform. | **Owner, two management planes and R1.x/R2.x Observe → Report boundary resolved.** Provider freshness/failure, observation/reporting detail, retention/projection/consumption and command authority remain detailed contracts CDG-38/39. Absence of observation is not non-occurrence. | **Yes/Possibly** for detail; no autonomous adaptation or UI-derived hierarchy. |
 | **CDG-29 — contradiction / feature / component** | Patient identity update versus EMPI/master-patient engine; F08 | L18 execution chapter explicitly reconciles MRNs to master patient IDs using an EMPI in Mneme; L13 ADR-007 and A01 AX-06/18 preserve source authority. Other Erga/converter sources describe identifiers/demographics without that authority. | Candidate identity correlation/referential checking and master identity determination are conflated; no consistent separate EMPI component/boundary is established. Do not invent one or silently remove the historical claim. | **Yes** for any proposed master-identity responsibility; source-authority guardrails remain settled. |
-| **CDG-30 — partially resolved / fixed gate catalogues** | Themis distributed PEP and participating hosts; C02/F03/M07 | U08 places enforcement at the component capable of preventing the action, with Themis-owned capability and PEP-Context Criteria; historical L08/L01 fixed gate/count variants remain provenance. | **Enforcement ownership/placement principle resolved**, including Petasos governed FORWARD. Exact participating-boundary contracts, caller/executor context relationships and legacy gate reconciliation remain unresolved CDG-42. Complete Authorisation Model is not distributed merely for local enforcement. | **Possibly** for detailed host contracts; default-deny remains, no central PEP or transport authentication invented. |
+| **CDG-30 — partially resolved / fixed gate catalogues** | Themis distributed PEP and participating hosts; C02/F03/M07 | U08 places enforcement at the component capable of preventing the action, with Themis-owned capability and PEP-Criteria through PEP-Context; historical L08/L01 fixed gate/count variants remain provenance. | **Enforcement ownership/placement principle resolved**, including Petasos governed FORWARD. Exact participating-boundary contracts, caller/executor context relationships and legacy gate reconciliation remain unresolved CDG-42. Complete Authorisation Model is not distributed merely for local enforcement. | **Possibly** for detailed host contracts; default-deny remains, no central PEP or transport authentication invented. |
 | **CDG-31 — partially resolved / observation and search-result contracts** | Mneme Context/access, Mnemosyne search; C09/C11/C12/F16/18/43 | U10/U11 establish four Mneme services, Context/resource version distinction and authoritative persistence search behind Adhoc Search. L14 token/convergence and L15 external searchset variants remain historical. | **Surface/search ownership and authoritative search space resolved.** Exact active-generation/token/Context mapping, internal search-result identity/retention and completeness/consistency contracts remain unresolved CDG-45/48. No cache-completeness inference or upstream coverage analysis. | **Possibly** for detail; no Domain04 semantics changed. |
 | **CDG-32 — contradiction / external-boundary dependency** | Registry status/async response projections; C13/C14/F20–21 | L15/L18 describe HTTP 202 and Task polling for writes, direct synchronous store search and OperationOutcome/status conversion; A01 AX-02/13 requires applicable standards contract and private-semantic isolation. | Candidate internal request/change/status responsibilities and externally permitted projections are insufficiently separated. Inclusion does not approve protocol details; Domain06 contract review remains future work. | **Yes** if contract conflicts persist; no external integration redesign here. |
 | **CDG-33 — orphan feature / component / Data Object** | Local Directory sync/enrichment and EndpointCapability; F30 | L24 §§5–9/13 proposes shared-component ingestion/synchronisation/enrichment and distinguishes endpoint from capability; detailed reconciliation/allocation remains expressly open there. | No coherent candidate component/service/state/persistence contract is established for those proposed features. Retained proposal is not an upstream requirement gap or permission to implement its waves. | **Possibly** after source reconciliation; explicit responsibility decisions may be necessary. |
@@ -63,7 +63,7 @@ earlier access issue was an input-access dependency, not an architectural gap.
 | **CDG-39 — established responsibility / detailed Energeia decomposition** | Energeia C39, Praxis/Journey Management Services, operational observation/reporting; F11/38–39 | U06 establishes discrete component and direct application responsibilities. | Feature versus Service versus internal construct versus subordinate Component decomposition, precise observation/reporting contracts and remaining Praxis-to-activity relationships remain unresolved. Possible upstream omission of operational housekeeping demand has not been assessed; no requirement/capability or Business Architecture is derived. | **Yes/Possibly** for detailed reconciliation; possible upstream omission requires later bounded review, not an asserted coverage gap. |
 | **CDG-40 — established persistence direction / downstream physical design** | Mnemosyne Clinical/C&G/O&A; C12/F19/42/M16/18 | U06 domains/scaling guardrails retained; U11 establishes Mnemosyne shard management within semantic constraints, not independent semantic sharding permission. | Physical topology, shard model/key/routing, replication/consistency mechanisms remain unresolved; U07 independent audit targets imply no general O&A topology and cross-target harmonisation is SEP. No multi-shard requirement; Journey locality an objective. | **Later design**, without choosing technology/keys or reopening established semantic domains. |
 | **CDG-41 — deliberately deferred R3 direction** | Adaptive Load and Resilience Service; F40/C39 | U06 records future Observe → Analyse → Decide → Adapt direction, with feedback. | R3 policy/control architecture, adaptation/load/resilience algorithms/mechanisms, infrastructure integration and AI decision model deliberately deferred. R1.x/R2.x remains Observe → Report. | **Future bounded R3 work**, not an R1.x/R2.x gap or current design obligation. |
-| **CDG-42 — established Themis architecture / detailed contracts and retained conflict** | Themis PAP/PRP/PDP/PEP-Context/PEP; C02/F03/D03/M07 | U08 resolves Authorisation Model ownership, distinct governed actions, Criteria projection, Themis-owned local enforcement, sufficient valid-context availability and possible delegation with provenance. | Schema/language/PAP workflow/versioning, validity/renewal/invalidation/revocation, distribution, delegation rules/mechanisms, audit interaction and persistence remain detailed design. **Note §15's audit-persistence authorisation exception conflicts with AX-07; not adopted.** [Details](#themis-detailed-contracts). | **Yes** for the explicit exception conflict; later implementation design/governance for deferred mechanisms. |
+| **CDG-42 — established Identity/Themis architecture / detailed contracts and retained conflict** | Authentication SEP; Calliope nomenclature; Themis model/PAP/PRP/PDP/PEP-Criteria/PEP-Context/PEP; C01/C02/F01/F03/D03/M07 | U12 refines U08 with conjunctive Criterion/additive UNION semantics, nested collections, AuthorisationRole, PractitionerCapacity, distinct temporal validity/revocation, deterministic precomputed enforcement, untagged-information control, FORWARD provenance and Ergo/Praxis/Iris administration. | [Explicit deferred items](#identity-deferred-design) cover release contents, expressions/representations, invalidation, attribute derivation, Capacity mapping/UI, PAP work, forwarding and caching/distribution. No general policy language remains open. **U08 note §15 audit-persistence exception conflicts with AX-07; not adopted.** [Details](#themis-detailed-contracts). | **Mark + ChatGPT adjudication** for the exception conflict; later bounded design/discovery for mechanisms; no reopening of settled Identity semantics. |
 | **CDG-43 — established Kleio architecture / detailed capture and preservation** | Kleio Capture/AuditEvent/history; C03/F15/D12/M07/16 | U07 resolves authoritative audit management, immutable FHIR AuditEvent, Journey independence, longitudinal evidence, essential durable capture, independent targets and R1.x/R2.x harmonisation SEP. | API/library/mapping, evidence attachment, indexing/query/correlation/preparation, retention/legal hold, originating activity/capture transaction, target selection/write strategy, retry/failover/readiness and physical design unresolved. Harmonisation is excluded release scope, not a missing R1.x/R2.x guarantee. [Details](#kleio-detailed-contracts). | **Later bounded design**, without weakening settled essential capture or adding convergence. |
 | **CDG-44 — established Petasos architecture / detailed Parcel and queue contracts** | Purpose-defined queues / PetasosParcel / FORWARD; C10/F13/D11/M01 | U09 resolves queue creation/operation/status ownership, common by-value Parcel, predominantly referenced associated information, ActionableTask special case and Themis-owned local enforcement. | Taxonomy/names/purpose-registration, Parcel schema/reference/content and historical carrier relationships, topology/technology/persistence/partitioning/scaling, metrics/state, ordering/delivery/consumer coordination/recovery/dead-letter and Petasos/Themis/Kleio/Journey interactions unresolved. [Details](#petasos-detailed-contracts). | **Later bounded design**; no reference-only transport, FHIR equivalence, broker mechanism or new capability inferred. |
 | **CDG-45 — established Context/Pragma architecture / detailed contracts** | Mneme four services, Context/Pragma Output and Ergo boundary; C09/C11/C05/C23/F16–18/D26–28 | U10 establishes value Composition, temporal/version distinction, likely non-exhaustive resource set, supported Adhoc acquisition and Loader/Unloader versus Load/Save. | Physical Context/bucket/identity/version schema, Information Unit mapping, declaration/acquisition strategy, concurrency/conflict detection, API/query/result and Output routing/representation remain unresolved. New Content not mere Context mutation. [Detail](#context-and-pragma-contracts). | **Later bounded adjudication/design**; no fifth service, universal snapshot or algorithm inferred. |
@@ -120,7 +120,7 @@ assessment's Q01–Q05 may overlap these evidence-backed issues, but supplies
 neither authority nor a work sequence.
 
 Resolution and prioritisation of CDG issues require subsequent bounded work.
-U02–U11 correct only the affected Step-A candidate meanings recorded above.
+U02–U12 correct only the affected Step-A candidate meanings recorded above.
 Praxis's higher-order meaning and Energeia Praxis/Journey ownership are resolved;
 detailed lifecycle/representation and downstream designs remain unresolved.
 This register proposes no implementation plan, dependency schedule or automatic
@@ -181,18 +181,63 @@ infrastructure-integration or AI decision architecture is specified by this task
 
 ## CDG-42 — Themis detailed contracts and audit-authorisation conflict
 
-The Authorisation Model, PAP/PRP/PDP, PEP-Context and Themis-owned distributed
-enforcement meanings are settled in [C02](component-register.md#c02). Missing
-schemas, policy language, PAP UI/workflow/approval/versioning, context validity/
-revocation/renewal, distribution/caching, decision algorithm, policy-change
-propagation, persistence and timeout/retry/user-notification mechanisms remain
-explicitly downstream. No equivalence to a historical security carrier or
-Information Unit is established.
+U08 and [U12](sources.md#u12) settle the Authorisation Model, PAP/PRP/PDP,
+PEP-Context, precomputed Identity-specific PEP-Criteria and Themis-owned
+distributed enforcement in [C02](component-register.md#c02). U12 replaces the
+earlier open-ended policy-language deferral with constrained governed Criterion
+conjunction and additive UNION semantics, with no explicit negative/DENY Criteria.
+It also settles authentication SEP, Calliope nomenclature, AuthorisationRole,
+PractitionerCapacity, temporal validity versus revocation, governed
+Ergo/Praxis/Iris administration and fail-closed handling of untagged information.
+These meanings are not gaps requiring reinvention at implementation time.
 
-Delegation is permitted as an architectural possibility with source provenance,
-not a chosen mechanism. Who may delegate, broadening/narrowing, depth, expiry,
-revocation, PDP involvement and approval rules are deferred to detailed
-implementation design and governance review. They SHALL NOT be supplied by inference.
+U12 refines delegation to **Identity / PEP-Criteria pass-off (forwarding)**,
+subject to FORWARD authority and provenance for originating and receiving/acting
+Identities. It establishes no separate delegation subsystem or identity
+impersonation. Lifecycle/representation, PDP involvement and detailed governance
+remain deferred; they SHALL NOT be supplied by inference.
+
+<a id="identity-deferred-design"></a>
+
+### Identity deferred design / discovery
+
+The following remain explicitly unresolved after consolidation:
+
+1. Complete release-specific contents of all four controlled authorisation ValueSets.
+2. Exact temporal expression model for Criterion, assignments and applicable context.
+3. Revocation propagation and PEP-Context / PEP-Criteria invalidation mechanisms.
+4. Exact Criteria collection implementation name/representation; nesting semantics are settled.
+5. Exact PEP-Criteria wire/data representation and security-context carrier relationships.
+6. Effective Information.Compartment / Information.Classification derivation ownership and precedence; Themis is not assumed to own all semantic derivation.
+7. Detailed PractitionerCapacity selection UI.
+8. Exact PractitionerCapacity ↔ FHIR PractitionerRole mapping; no mapping to a Domain04 Role Binding is inferred either.
+9. Agora/Synapse membership, operational responsibility, escalation, approval-routing and notification mechanics.
+10. Detailed PAP management Praxes/Erga, approval rules, UI and versioning mechanisms.
+11. Detailed Identity / PEP-Criteria forwarding lifecycle and representation.
+12. PEP-Criteria caching, refresh and distribution mechanics beyond established valid-context availability constraints.
+
+Detailed host/decision implementation, policy-change propagation, persistence
+realisation and timeout/retry/user-notification contracts also remain downstream.
+No general-purpose policy language, new repository topology, historical carrier
+equivalence or Information Unit equivalence is supplied by these deferrals.
+They do not prevent review of the sufficiently adjudicated Identity Candidate
+Architecture or constitute whole-Domain05 acceptance.
+
+### Upstream business-security realisation boundary
+
+[Domain03 Health Information Control §2.5](../03-business-architecture/behaviours/05-intrinsic-enablement.md#25-health-information-control)
+names user role, organisation, patient relationship, purpose of use, break-glass
+overrides and consent constraints in its access-control responsibilities. U12
+establishes the bounded Candidate Architecture model; it does not establish
+the detailed realisation of each of those Business responsibilities within it.
+No new Criterion dimension, negative grant, arbitrary Boolean expression,
+break-glass bypass or mapping through PractitionerCapacity is inferred here.
+This is an unestablished cross-layer relationship discovered during constraint
+review, not a proven coverage failure or the start of Step-B mapping. Any
+required extension or conflict needs Mark + ChatGPT architectural adjudication;
+the existing Business meanings and U12's Candidate semantics remain explicit.
+
+### Retained audit-authorisation conflict
 
 **Retained conflict:** supplied Themis DesignNote §15 calls Kleio's authoritative
 audit-persistence stream an exception to obtaining Themis authorisation before

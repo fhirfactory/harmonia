@@ -56,12 +56,29 @@ graph LR
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope controlled nomenclature](../markdown/05-information-systems-architecture/component-register.md#authorisation-nomenclature)
+- [AuthorisationRole and Identity assignments](../markdown/05-information-systems-architecture/component-register.md#criteria-collections-and-authorisationroles)
+
+```text
+---------------------------------------------------------
+```
+
 ## 2. Role and Authority Decoupling
 
 Themis cleanly decouples human/service mnemonic roles from granular machine authorities:
 
 | Mnemonic Role (`HarmoniaRoleEnum`) | Role Name | Associated Granular Authorities (`HarmoniaAuthorityEnum`) |
-| :--- | :--- | :--- |
+| :
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+--- | :--- | :--- |
 | `PRV_RDR` | Provider Reader | `PRV_READ`, `PRV_SEARCH` |
 | `PRV_SUB` | Provider Submitter | `PRV_READ`, `PRV_SUBMIT` |
 | `PRV_PROC` | Provider Processor | `PRV_READ`, `PRV_PROCESS`, `PRV_TRANSFORM` |
@@ -72,6 +89,17 @@ Themis cleanly decouples human/service mnemonic roles from granular machine auth
 | `SYS_ADM` | Platform Admin | Full platform privileges (`*`) |
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Operational PEP-Context and precomputed PEP-Criteria](../markdown/05-information-systems-architecture/component-register.md#pep-context)
+
+```text
+---------------------------------------------------------
+```
 
 ## 3. Pragma Security Context Propagation
 
@@ -89,6 +117,11 @@ public class PragmaSecurityContext {
 ```
 
 This context is serialized into FHIR R5 `Task.extension` structures, allowing asynchronous workers to reconstruct and verify caller authorization without shared session state.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 

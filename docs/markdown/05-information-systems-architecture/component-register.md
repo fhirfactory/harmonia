@@ -23,6 +23,8 @@ read together with the [feature](candidate-feature-map.md) and
 - **Features/contained constructs:** canonical event/payload/reason definitions,
   topic constants, schemas and HL7 ADT/MFN/ORM/ORU-to-FHIR converters. Published
   model/profile/binding/concept-map material supports local runtime consumption.
+  Controlled security/assurance nomenclature is defined/governed here; Themis
+  decides/enforces, Dokimasia assures and Kleio audits.
 - **Information:** defines contracts for `ErgonEvent`, `ErgonPayload`, reasons,
   topics and resource mappings; definition authority does not confer authority
   over originating clinical assertions. Terminology/reference object persistence
@@ -36,46 +38,241 @@ read together with the [feature](candidate-feature-map.md) and
   features remain candidate. Converter library versus invoked activity allocation
   is incomplete, CDG-05; this register does not select a terminology product.
 
+<a id="authorisation-nomenclature"></a>
+
+#### Controlled authorisation nomenclature
+
+[U12](sources.md#u12) establishes these **release-bounded ValueSets**:
+
+| ValueSet | Architectural shorthand / meaning |
+| :--- | :--- |
+| `Application.Function.AuthorisationPoint.Names` | **Function.Name**: architecturally significant application AuthorisationPoints at which enforcement is meaningful. An AuthorisationPoint identifies a governed function; it is not itself a permission. |
+| `Application.Function.AllowedAction.Names` | **Function.Scope**: the bounded set of actions applicable at AuthorisationPoints. Existing concepts include **ACCESS**, **CHANGE** and **FORWARD**; these are not asserted to be the complete final ValueSet. |
+| `Information.Compartments` | Governed information compartments; an applicable dimension is expressed as **Information.Compartment**. |
+| `Information.Classification` | Governed information classifications. |
+
+`Application.Function.AuthorisationPoint.Names` SHALL be comprehensive enough
+to satisfy business security requirements for the release while constrained
+enough to avoid unnecessary management, development and support burden.
+Complete release-specific contents remain [deferred](gaps.md#identity-deferred-design).
+
+**Calliope defines/governs the nomenclature. Themis owns policy association,
+resolution and enforcement.** ValueSet membership alone grants no authority
+and does not establish every Cartesian combination as meaningful or permitted.
+
 <a id="c02"></a>
 
 ### C02 — Themis
 
 - **Role/responsibility:** **Themis owns and manages Harmonia's Authorisation
-  Model**, including administration, authoritative repository semantics, policy
-  reasoning and distributed enforcement. Authentication boundaries establish
-  trusted Identity; Themis determines authority under [AX-07](../governance/architectural-axioms.md#ax-07).
-  [U08](sources.md#u08) adjudicates this candidate architecture.
+  Model**, including PAP, PRP, PDP, Criteria/collections, AuthorisationRoles,
+  Identity assignments, role/group resolution, Criteria compilation and the
+  distributed PEP framework. Themis consumes trusted authenticated Identity;
+  it does not authenticate that Identity. [U12](sources.md#u12) refines
+  [U08](sources.md#u08) within [AX-07](../governance/architectural-axioms.md#ax-07).
 - **PAP — Policy Administration Point:** administration and lifecycle management
-  of the Authorisation Model. Policy language, administration UI, approval
-  workflow, versioning mechanism and detailed governance process remain unresolved.
+  of the Themis-owned model. Management/review/approval activity uses
+  [Ergo/Praxis and Iris](#authorisation-administration); detailed Praxes/Erga,
+  UI and versioning mechanisms remain deferred. No general-purpose policy
+  language is implied by policy administration.
 - **PRP — Policy Repository Point:** authoritative repository semantics for the
   Authorisation Model. Durable persistence may be delegated through **Themis PRP
   → Mneme → Mnemosyne Harmonia Configuration & Governance**. This requires no
   dedicated Themis physical database and transfers no model ownership to persistence.
-- **PDP — Policy Decision Point:** reasons over the Authorisation Model,
-  authenticated Identity and applicable context. It may produce an immediate
-  decision and/or reusable Criteria; its principal reusable product is **PEP-Context**.
+- **PDP — Policy Decision Point:** resolves authoritative policy, authenticated
+  Identity and applicable context into precomputed Identity-specific
+  **PEP-Criteria**, supplied through **PEP-Context** for local enforcement.
+  An immediate decision remains possible; it uses the same governed semantics.
 - **Governed actions:** **Can I ACCESS XYZ? Can I CHANGE ABC? Can I FORWARD DEF?**
   ACCESS, CHANGE and FORWARD are distinct; they SHALL NOT collapse into CRUD.
   FORWARD may depend on destination/context independently of ACCESS.
   Unauthenticated or unauthorised operations default to **DENY**; unavailable
   authoritative policy determination remains distinct from that decision.
 
+<a id="identity-authentication"></a>
+
+#### Identity.Authentication — separately provided trusted Identity
+
+**Identity.Authentication establishes WHO an Individual or System is. It is a
+Separately Provided Capability (SEP).** The primary pattern is standards-based
+OIDC/OAuth integration with an externally managed Identity Provider (IdP).
+Harmonia does not own or provide an identity-management, credential-management,
+password-management or MFA framework.
+
+> **Keycloak + PostgreSQL SHALL provide the default FOSS Identity Provider for
+> development, test and POC environments.**
+
+Keycloak remains an external, replaceable implementation component. Harmonia's
+Identity.Authentication architecture SHALL NOT acquire Keycloak-specific
+dependencies. This target does not prescribe a production IdP or an internal
+Harmonia credential store. Authentication establishes trusted Identity only;
+it SHALL NOT determine Harmonia Function permissions, Function.Scope or PEP-Criteria.
+
+**Identity.Authorisation** establishes what that authenticated Identity may do
+within Harmonia and is Themis-owned. The same authorisation model applies to
+human and system Identities; differing allowable assignments do not establish
+separate architectures.
+
+<a id="identity-terminology"></a>
+
+#### Identity and role terminology
+
+| Term | Candidate meaning and boundary |
+| :--- | :--- |
+| **Identity** | The authenticated Individual or System consumed by Themis. This use does not redefine Information Unit Identity or the Domain04 professional identifier assertions. |
+| **Practitioner** | The individual practitioner, retaining the [Domain04 workforce-entity meaning](../04-information-architecture/information-families/practitioner.md#31-practitioner); registration status is a separate assertion. |
+| **FHIR PractitionerRole** | The formal practitioner role/service relationship represented through FHIR. |
+| **PractitionerCapacity** | The selected operational capacity in which a Practitioner is currently acting within Harmonia; it does not itself confer authority. |
+| **AuthorisationRole** | A named, governed, assignable collection of additive Themis Criteria and/or Criteria collections. It is distinct from PractitionerCapacity, FHIR PractitionerRole and a Domain03 Business Role. |
+| **Criterion / Criteria** | One governed permitted combination / multiple such combinations in the Themis Authorisation Model. |
+| **PEP-Criteria** | The precomputed, Identity-specific set of permitted combinations derived by Themis for constrained local enforcement. |
+| **PEP-Context** | The Themis-derived operational enforcement context for an authenticated Identity, through which applicable PEP-Criteria is supplied. It is distinct from the general Mneme working Context. |
+
+The [Domain04 Practitioner Role Binding](../04-information-architecture/information-families/practitioner.md#36-practitioner-role-binding)
+and [Domain03 Business Roles](../03-business-architecture/actors-roles/roles.md)
+retain their meanings. Neither lexical similarity nor FHIR convention establishes
+their mapping to PractitionerCapacity or AuthorisationRole.
+
+<a id="authorisation-criteria"></a>
+
+#### Criterion conjunction and additive grants
+
+A Criterion represents a **governed permitted combination** across applicable
+dimensions, using [Calliope-controlled nomenclature](#authorisation-nomenclature):
+
+```text
+Criterion =
+    Information.Compartment
+    AND Information.Classification
+    AND Function.Name
+    AND Function.Scope
+    AND applicable Temporal constraints
+```
+
+The four principal dimensions describe **what** is authorised; applicable
+temporal constraints describe **when**. Within an individual Criterion,
+applicable dimensions are **conjunctive**. Between Criteria, grants are
+**additive / UNION**: each Criterion independently contributes its permitted
+combination. Only explicitly governed combinations have authorisation meaning.
+Absence of a matching effective Criterion results in **DENY**.
+
+**Explicit negative/DENY Criteria are not part of this Candidate Architecture.**
+Neither arbitrary Boolean policy expressions, deny-overrides semantics nor a
+general-purpose policy language is introduced by this model.
+
+<a id="criteria-collections-and-authorisationroles"></a>
+
+#### Criteria containment, AuthorisationRoles and Identity assignments
+
+Criteria support containment, collection and nesting for management and reuse:
+
+```text
+CriteriaCollection                 (conceptual label; final name unresolved)
+  ├── Criterion
+  ├── Criterion
+  └── CriteriaCollection
+       ├── Criterion
+       └── Criterion
+```
+
+Flattening nested collections produces the same additive set of effective
+Criteria. Nesting creates no arbitrary Boolean semantics and requires no Role
+hierarchy. The exact implementation name/class hierarchy and representation
+remain deferred; this diagram establishes no lifecycle/ownership semantics
+beyond the stated management/reuse requirement.
+
+An **AuthorisationRole** is named, governed and assignable and contains Criteria
+and/or Criteria collections. Its contents are additive:
+
+```text
+EffectiveCriteria(AuthorisationRole)
+    = UNION(all contained Criteria)
+
+IdentityEffectiveCriteria =
+    DirectCriteria
+    UNION AuthorisationRole1.Criteria
+    UNION AuthorisationRole2.Criteria
+    UNION ...
+```
+
+An Identity may have directly assigned Criteria, one or more AuthorisationRoles,
+or both. This applies to human and system Identities. The UNION is of applicable
+grants, subject to governed assignments, temporal validity, revocation and
+applicable operational context; it does not remove a Criterion's conjunctions
+or require every contained Criterion to match simultaneously.
+
+<a id="temporal-validity-and-revocation"></a>
+
+#### Predetermined temporal validity and explicit revocation
+
+**Temporal validity** establishes predetermined applicability/validity bounds.
+Temporal constraints may apply to a Criterion, a direct Criterion assignment,
+an AuthorisationRole assignment and applicable operational context such as
+PractitionerCapacity. The exact temporal expression model remains deferred.
+
+**Revocation** withdraws an otherwise valid authorisation. It SHALL NOT be
+modelled merely as temporal expiry. Both concepts are required. Propagation of
+revocation and invalidation of already-issued PEP-Criteria/PEP-Context remain
+unresolved; no mechanism or continued validity after revocation is inferred.
+
+<a id="practitioner-capacity"></a>
+
+#### PractitionerCapacity and operational responsibility
+
+For a Practitioner, the available PractitionerCapacity set is constrained by
+the practitioner's governed profile and applicable operational context. The
+Practitioner selects **one active PractitionerCapacity** for the applicable
+session/operational or roster context. It supplies operational context used by
+Themis when deriving effective authorisation; **it does not itself confer authority**.
+Selection UI and the exact PractitionerCapacity ↔ FHIR PractitionerRole mapping
+remain deferred.
+
+> **Authentication establishes who the Individual is. PractitionerCapacity
+> establishes the capacity in which a Practitioner is currently acting. Themis
+> establishes what that Identity, acting in that capacity, may do.**
+
+```mermaid
+graph TD
+    Auth["Authenticated Practitioner"] --> Eligible["Eligible PractitionerCapacity set"]
+    Profile["Governed practitioner profile"] --> Eligible
+    Context["Applicable operational / roster context"] --> Eligible
+    Eligible -->|"Practitioner selects ONE"| Capacity["Active PractitionerCapacity: context, no authority by itself"]
+    Capacity -->|"authorisation context"| PDP["Themis: resolve governed Criteria / assignments / policy state"]
+    PDP --> Criteria["Identity-specific precomputed PEP-Criteria through PEP-Context"]
+    Criteria --> PEP["Constrained local Themis PEP"]
+    Capacity -.->|"operational responsibility context"| Responsibility["Future Agora / Synapse: responsibility, escalation, approval, notification; mechanics deferred"]
+```
+
+Themis answers **“May this Identity perform this action on this information?”**
+Future Agora/Synapse capability concerns **“Is this Practitioner currently
+responsible for receiving/responding to this operational activity?”** These are
+separate responsibilities even where they consume the same PractitionerCapacity.
+Receipt of an escalation or approval notification grants no information access.
+Following it into Iris or another application surface requires normal Themis PEP
+enforcement using current valid PEP-Criteria. No Agora/Synapse membership,
+escalation or approval-routing mechanics are designed here.
+
 <a id="pep-context"></a>
 
 #### PEP-Context and distributed enforcement
 
 > **PEP-Context is the Themis-derived policy enforcement context established for
-> an authenticated Identity. It contains the Criteria applicable to that Identity
-> that a Themis Policy Enforcement Point requires to make local policy enforcement
-> decisions.**
+> an authenticated Identity. It supplies the precomputed PEP-Criteria applicable
+> to that Identity that a Themis Policy Enforcement Point requires for local
+> enforcement decisions.**
 
-It is a contextual projection of the Authorisation Model. PEPs SHALL NOT receive
-the complete model merely because they need enforcement information.
+**PEP-Criteria is a precomputed, Identity-specific set of permitted combinations**,
+not a general-purpose executable policy language distributed to PEPs. Themis
+resolves direct Criteria, AuthorisationRole-derived Criteria, nested collections,
+applicable temporal constraints, PractitionerCapacity context where applicable
+and authoritative policy state. PEPs SHALL NOT receive the complete model merely
+because they need enforcement information.
 
 ```text
 Policy                Authorisation Model managed by Themis
-Criteria              PDP-derived contextual expression within PEP-Context
+Criteria              governed permitted combinations in the Authorisation Model
+PEP-Criteria          precomputed Identity-specific permitted combinations
+PEP-Context           operational context supplying applicable PEP-Criteria
 Enforcement Decision  local PEP determination for a particular proposed action
 ```
 
@@ -87,10 +284,42 @@ supplies enforcement mechanism and semantics. Hosts SHALL NOT independently
 reinterpret the Authorisation Model in place of the Themis PEP. No separate
 central Policy Enforcement Software Component is created.
 
+A local PEP SHALL perform deliberately **constrained, deterministic enforcement**
+against authenticated Identity context, effective Information.Compartment and
+Information.Classification, Function.Name, Function.Scope, applicable temporal
+state and the Identity's valid PEP-Criteria. It SHALL NOT become a general-purpose
+policy interpreter.
+
+Themis SHALL retain sufficient provenance to explain effective PEP-Criteria
+derivation: authoritative Criteria, collections, direct/AuthorisationRole
+assignments and applicable policy state. Runtime PEP-Criteria need not carry
+the full derivation history; stable references may support it. No final wire/data
+structure, cache, refresh or distribution mechanism is prescribed.
+
 PEP-Context and existing security-context contracts are operational context;
 they do not automatically become persisted resource content. Their detailed
-relationship, Criteria/schema and distribution mechanisms remain unresolved;
+relationship, schema and distribution mechanisms remain unresolved;
 PEP-Context is not silently equated with a historical class or transport carrier.
+
+<a id="effective-information-security-attributes"></a>
+
+#### Untagged information and effective security attributes
+
+> **Absence of explicit information security metadata does not imply absence
+> of security control. Untagged information is not unrestricted information.**
+
+Where required Information.Compartment and/or Information.Classification
+attributes are absent, effective values SHALL be established through governed,
+deterministic rules. If required effective attributes cannot be established,
+enforcement SHALL fail closed.
+
+Deriving effective attributes for an authorisation decision is distinct from
+persistently assigning/changing security metadata on an Information Unit.
+Themis enforces the resulting attributes; it is not assumed to own all semantic
+derivation rules. Exact derivation ownership and precedence, including possible
+context/containment relationships, remain [deferred](gaps.md#identity-deferred-design).
+Mnemosyne's established compartment validation/reapplication responsibility does
+not settle those semantic rules.
 
 <a id="themis-availability-and-delegation"></a>
 
@@ -106,13 +335,44 @@ cannot presently be established remain distinct. This grants no unauthenticated
 or unauthorised action permission and weakens no required audit-capture boundary.
 Detailed validity, timeout/retry, revocation and renewal mechanisms are unresolved.
 
-A PEP-Context **MAY be delegatable**. A delegated context derives authority from
-an existing PEP-Context and establishes Criteria applicable to the authenticated
-Identity receiving delegated authority. Delegation SHALL remain within Themis
-policy architecture and preserve sufficient provenance to establish the source
-of delegated authority. Who may delegate, broadening/narrowing, depth, expiry,
-revocation, PDP interaction, approvals and implementation mechanisms are deferred
-to detailed implementation design and governance review.
+At this stage delegation is **Identity / PEP-Criteria pass-off (forwarding)**,
+subject to applicable **FORWARD** authority. Provenance SHALL preserve both the
+originating Identity and receiving/acting Identity; the receiver does not become
+the originator. No separate general-purpose delegation subsystem is introduced.
+Detailed forwarding lifecycle/representation, PDP interaction and governance
+mechanisms remain deferred; forwarding establishes no unrestricted impersonation
+or authority-broadening rule.
+
+<a id="authorisation-administration"></a>
+
+#### Governed authorisation administration and target allocation
+
+Authorisation administration is governed Harmonia work. Criteria creation/change,
+collection management, AuthorisationRole management, direct Identity Criteria
+assignment, AuthorisationRole assignment, temporal changes and revocation SHALL
+be subject to appropriate governed management/review/approval processes through
+**Ergo/Praxis**, with **Iris** providing human interaction. Detailed PAP management
+Praxes/Erga and approval rules remain deferred; this does not make every change
+require an identical approval sequence.
+
+| Responsibility | Candidate target |
+| :--- | :--- |
+| Identity authentication | Keycloak / external OIDC IdP; SEP, Keycloak + PostgreSQL default for development/test/POC |
+| Controlled authorisation nomenclature | Calliope |
+| Authorisation model, Criteria/collections, AuthorisationRoles and Identity assignments | Themis-owned |
+| Role/group resolution | Themis-owned; no separate human/system authorisation architecture |
+| Criteria compilation | Themis-owned |
+| Policy repository | Themis PRP, persisted through Harmonia via Mneme / Mnemosyne C&G |
+| Policy administration | Themis PAP |
+| Governed management / review / approval workflows | Ergo/Praxis |
+| Administration UI | Iris; no authorisation-model ownership or detailed reusable-form design |
+| Runtime enforcement | Themis PEP library at action-controlling hosts |
+| Untagged information handling | Governed effective-attribute resolution; exact ownership/precedence deferred |
+
+Harmonia owns its authorisation semantics. **jCasbin, OPA, Cedar or another
+general-purpose policy framework is not an architectural dependency.** FOSS
+implementations may later supply implementation references where appropriate;
+their conceptual models SHALL NOT redefine Harmonia semantics.
 
 - **Collaboration/exclusions:** governed access, activity, publication and
   collaboration hosts use Themis-owned PEP capability. Petasos hosts governed
@@ -121,9 +381,16 @@ to detailed implementation design and governance review.
   establish Praxis conformance. Themis is neither Audit nor Assurance. Significant
   policy/enforcement occurrences are reported through Kleio Audit Capture under
   applicable policy; clients need not construct FHIR AuditEvent.
-- **Standing:** U08 resolves model ownership and distributed enforcement.
+  **Calliope defines security/assurance nomenclature; Themis decides/enforces;
+  Dokimasia assures; Kleio audits.** Governance, Authorisation, Assurance and Audit
+  remain distinct responsibilities; Praxis conformance and assurance findings
+  are not authorisation grants. Dokimasia terminal constraints remain unchanged.
+- **Standing:** U12 consolidates the adjudicated Identity Candidate Architecture
+  and refines U08's Criteria, policy-language deferral and delegation wording.
+  It does not accept all Domain05 candidate material or begin Step B.
   [CDG-42](gaps.md#themis-detailed-contracts) retains detailed design and the
-  note's audit-authorisation-exception conflict with AX-07; no bypass is adopted.
+  U08 Themis note §15 audit-authorisation-exception conflict with AX-07;
+  no bypass is adopted.
   Historical fixed gate counts and automatic context persistence remain
   CDG-15/30 provenance, without reopening established security boundaries.
 
@@ -666,8 +933,7 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   or autonomous queue control. Detailed metrics/state structures remain unresolved.
 - **Themis collaboration:** for a governed FORWARD action, Petasos is the host/
   enforcement location because it controls the queue operation. Applicable
-  enforcement SHALL use **Themis-owned PEP capability** and relevant **PEP-Context
-  Criteria**. Themis owns authorisation/enforcement semantics; Petasos owns the
+  enforcement SHALL use **Themis-owned PEP capability** and relevant **PEP-Criteria through PEP-Context**. Themis owns authorisation/enforcement semantics; Petasos owns the
   operation. Detailed protocol remains unresolved.
 - **Other collaborations/exclusions:** serves Ergon, ingress, execution,
   publication, Agora and architecturally established communication/notification
@@ -824,7 +1090,7 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
 | :--- | :--- | :--- |
 | **Iris Clinical** | Patient lookup, multiple workspaces, longitudinal timeline, encounters, medications/results and source/provenance context; viewer first, selective authoring conditional. | Governed read/presentation through mediation; no clinical record storage. L11/L18/L23 and L13 ADR-008; proposed authoring/terminology prerequisites L27 remain CDG-24. |
 | **Iris Console** | Health/dependency/instance views, queues/backlog, interfaces, worker/sequence/Pragma/checkpoint inspection, correlation event trace and alerts. | Transient telemetry/diagnostic views; evidence is separate. Aggregator/provider support documented; origin, lifecycle and completeness vary (L21, CDG-26/28). UI perspectives are not a component taxonomy. |
-| **Iris Administration** | Directory search/detail, self-service profile/credential proposals, departmental change-review/work queue, data-quality and security-policy inspection. | Client of governed registry interactions; no authoritative validation state machine, referential rules or database. L11/L18/L23; backend ownership preserved. |
+| **Iris Administration** | Directory search/detail, governed practitioner-profile/professional-credential proposals, departmental change-review/work queue, data-quality and security-policy inspection; human interaction for Themis administration/review/approval. | Client of governed interactions; no authoritative validation state machine, referential rules, database or authorisation-model ownership. Professional credentials are distinct from IdP-managed login credentials. L11/L18/L23 and U12; authentication remains SEP, management/approval uses Ergo/Praxis; detailed forms/UI deferred. |
 
 These applications contain views and shared presentation controls; individual
 Vue components are implementation detail. They collaborate with C17 and governed
@@ -869,6 +1135,10 @@ approval rules and durable UI state, are unknown.
 - **Collaboration/exclusions:** Themis guards room actions; workflow collaboration
   uses Petasos with no direct Ponos dependency. No unmasked PHI in room metadata,
   raw Matrix DTO leakage, clinical-work authority or universal source-of-truth claim.
+  [PractitionerCapacity](#practitioner-capacity) may supply future operational
+  responsibility context; notification/membership does not confer information
+  access. Identity mapping/provisioning here is collaboration integration, not
+  ownership of the external Identity Provider. U12 designs no Agora/Synapse mechanics.
 - **Standing:** candidate collaboration design with governing isolation constraints;
   care-team source, projection providers and durable effect contract unresolved,
   CDG-19–23.

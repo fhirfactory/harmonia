@@ -217,7 +217,7 @@ Mnemosyne is Harmonia's **Persistence Manager**, with first-class responsibiliti
 | **Authoritative persistence reporting** | Establish and report Harmonia's authoritative persistence outcome, preserving confirmed, degraded and indeterminate distinctions. |
 | **Persistence logging** | Provide persistence-management operational logging; this does not replace Kleio Audit Capture or automatically become AuditEvent. Zero-PHI diagnostic controls apply. |
 | **Compartment validation/reapplication** | Validate and reapply applicable compartments at the persistence boundary; persistence SHALL NOT strip, weaken or lose classification. Mnemosyne does not independently determine semantic applicability. |
-| **Themis-owned PEP hosting** | Prevent governed persistence operations through Themis-owned enforcement and applicable PEP-Context Criteria; Themis owns the model, reasoning, Criteria and enforcement semantics. |
+| **Themis-owned PEP hosting** | Prevent governed persistence operations through Themis-owned enforcement and applicable PEP-Criteria through PEP-Context; Themis owns the model, reasoning, Criteria and enforcement semantics. |
 | **Search Management** | Perform underlying authoritative managed-persistence search and manage supporting Harmonia-level persistence search metadata. |
 | **Research Metadata Management** | Manage capture, persistence, management and search utilisation of distinct AI-derived Research Metadata; derivation executes outside Mnemosyne. |
 

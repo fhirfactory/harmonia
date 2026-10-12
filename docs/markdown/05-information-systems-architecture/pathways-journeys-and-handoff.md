@@ -232,7 +232,7 @@ names, Parcel schema and detailed delivery contracts remain [CDG-44](gaps.md#pet
 Petasos owns queue operational state/status; Energeia may observe/report it,
 without acquiring queue management or autonomous control. For governed FORWARD,
 Petasos hosts enforcement because it controls the operation, using **Themis-owned
-PEP capability and relevant PEP-Context Criteria**. Themis owns semantics; Petasos
+PEP capability and relevant PEP-Criteria through PEP-Context**. Themis owns semantics; Petasos
 owns the queue operation. Detailed protocols/state metrics remain unresolved.
 
 <a id="state-and-recovery"></a>

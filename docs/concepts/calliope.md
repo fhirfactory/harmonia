@@ -55,7 +55,24 @@ Calliope serves as the foundational data contract library at the base of the Har
 
 ### What Calliope Explicitly Does NOT Own (Anti-Responsibilities)
 - Network sockets, MLLP framing, or HTTP endpoints (owned by Pylai).
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope nomenclature versus Themis semantics](../markdown/05-information-systems-architecture/component-register.md#authorisation-nomenclature)
+- [Externally provided authentication](../markdown/05-information-systems-architecture/component-register.md#identity-authentication)
+
+```text
+---------------------------------------------------------
+```
+
 - Security policy evaluation or identity assertions (owned by Themis).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 - Cache grid clustering or database connections (owned by Hestia).
 - Task sequence orchestration or worker loops (owned by Energeia).
 - Message broker connections (owned by Petasos).

@@ -86,6 +86,15 @@ Key architectural components and capabilities include:
 \section{Policy \& Authorisation Subsystem: \texttt{Themis}}
 \label{sec:themis_subsystem}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#c02}{Themis model and local enforcement}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#authorisation-nomenclature}{Calliope controlled nomenclature}
+  \item \href{../../markdown/05-information-systems-architecture/component-register.md\#c03}{Kleio Audit Capture}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 \texttt{Themis} is Harmonia's centralized policy and authorization engine, delivering deterministic default-deny policy evaluation, role-to-authority mapping, data security labeling, immutable caller context propagation, and non-PHI decision auditing.
 
 \begin{figure}[htbp]
@@ -96,6 +105,9 @@ Key architectural components and capabilities include:
     \caption{ArchiMate Themis Policy \& Multi-Tier Defence-in-Depth Security Architecture}
     \label{fig:themis_security}
 \end{figure}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \subsection{\texttt{themis-api} (Domain Contracts \& Security Models)}
 Provides framework-independent, lightweight domain models and interfaces decoupled from Spring, Artemis, or WildFly:
