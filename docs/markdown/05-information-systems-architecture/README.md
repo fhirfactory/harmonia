@@ -52,7 +52,9 @@ The [Mneme / Mnemosyne correction](#mneme-mnemosyne-adjudication) incorporates
 Context/Pragma Management and Persistence/Search/Research Metadata Management.
 The [Identity consolidation](#identity-candidate-adjudication) reconciles
 externally provided authentication with Themis-owned authorisation semantics.
-It retains the same A2/A3 boundary; **Step B has NOT started**.
+The [Calliope / Pylai / Praxis.Horos consolidation](#calliope-pylai-horos-adjudication)
+incorporates the remaining supplied adjudications with explicit deferrals and
+retained conflicts. It retains the same A2/A3 boundary; **Step B has NOT started**.
 Capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
@@ -70,6 +72,8 @@ record does not declare the Domain Completion Gate satisfied.
 | [Context and persistence management](context-and-persistence-management.md) | Mneme services, value-based Context lifecycle, Pragma Output, exceptional harmonisation, Mnemosyne oversight, Search and Research Metadata. |
 | [Data and persistence](data-and-persistence.md) | Coupled logical/application Data Objects; information-management and persistence responsibilities; Clinical / C&G / O&A responsibility domains and retained historical structure variants. |
 | [Pathway, Journey and handoff](pathways-journeys-and-handoff.md) | Adjudicated Praxis/Journey ownership, control, selection, handoff, observation and assurance meanings; retained detailed uncertainty. |
+| [Calliope Models and DataSets](calliope-models-and-datasets.md) | Distinct build-time definitions and runtime governed content, developer support, security/assurance nomenclature and Themis reconciliation. |
+| [Pylai external interoperability and Praxis.Horos](pylai-external-interoperability.md) | Terma, transient non-recoverable Diadromí, Controller, Pathway/Broker/Server patterns, ingress acceptance and egress handover ordering. |
 | [Internal middleware](middleware.md) | Internal messaging, recoverable handoff, dispatch, access and context collaboration, separated from external integration and products. |
 | [Documentation/component-feature gaps](gaps.md) | Evidence, incomplete meaning and possible adjudication for each gap. |
 | [Sources and reconciliation](sources.md) | Authority, legacy provenance, reviewed scope, disposition and section-specific supersession. |
@@ -528,3 +532,62 @@ These corrections accept neither the whole Candidate Architecture nor a
 traceability-proven Domain05 baseline. Previously adjudicated execution,
 specialisation, Praxis/Pathway, Journey, selection, state and assurance boundaries
 remain in force; R3 Adaptive Load and Resilience Service remains future direction.
+
+
+<a id="calliope-pylai-horos-adjudication"></a>
+
+## Calliope / Pylai / Praxis.Horos candidate consolidation
+
+**U13/U14 — 2026-10-12:** supplied Calliope and Pylai working DesignNotes, together
+with explicit current task adjudications, are consolidated into the
+[Calliope](calliope-models-and-datasets.md) and
+[Pylai/Horos](pylai-external-interoperability.md) views. The Pylai note predates
+Broker/Server/Controller, non-recoverability and specialised EgressHoros decisions;
+these additions derive from the explicit task, not absent note wording. Required
+meaning is self-contained in RADS; external note location confers no authority.
+
+- **Calliope-Models** governs Models, Metadata Types, Criteria Definitions,
+  Topics, Filter Types/Elements, core Harmonia element libraries and security/
+  assurance definitions through Design → Code → Build → Test → Release → Deploy.
+  **Calliope-DataSets** manages mutable governed ValueSets, CodeSets, Structured
+  Metadata and applicable ontology content; Mneme/Mnemosyne retains access and
+  persistence and existing Ponos/Ergo/Praxis may support governed workflow.
+- Definition ownership is not runtime operational ownership. Development
+  representations support normal type-safe human/IDE/AI-assisted programming;
+  current validity/membership uses runtime authority. Models/build contracts
+  establish DataSet access structures; DataSets do not bootstrap them.
+- Calliope governs shared Security and Assurance Nomenclature, including the
+  U12 four release-bounded authorisation ValueSets. Themis owns policy
+  association/resolution/enforcement; Dokimasia assures; Kleio audits. U12
+  Identity semantics and all detailed release-content deferrals remain intact.
+- **Pylai is the External Interoperability Service**, independent of communication
+  style, protocol or technology. Terma acts at the logical external boundary;
+  Diadromí carries/represents transient interaction. Neither Diadromí nor its
+  Controller is recoverable: lost interaction ends; appropriate client retry
+  starts a new Diadromí, preserving any uncertainty about earlier effects.
+- **PylaiPathway** connects external interaction to governed Praxis/Ergo activity;
+  ingress initial ContextLoader establishes Task.input/Context without semantic
+  mapping, paired BusinessLogic produces Task.output, and Ergo.Egress feeds
+  Petasos.Queue[TermaName] as Praxis.PathwaySegment. Durable Harmonia acceptance
+  requires authoritative Pragma/Task persistence, distinct from protocol ACK.
+- **Praxis.Horos / IngressHoros / EgressHoros** name logical Praxis boundaries.
+  EgressHoros hands out to Pylai and back with communication state/outcome before
+  Ergo.ContextUnloader completes. Genuine technical endpoints, FHIR Endpoint
+  and established Ergon PathwayEndpoint interfaces retain their meanings.
+- **PylaiBroker** serves already executing BusinessLogic without fabricating
+  work/Praxis/Pathway. **PylaiServer** changes use Pathway; READ/SEARCH uses
+  Diadromí-Controller and Mneme's existing Adhoc services without invented
+  ActionableTasks/Praxes/Erga. Controller is not mandatory for all Diadromí.
+- Pylai carries identity; Themis establishes Harmonia authority and enforcement.
+  Meaningful transactions are auditable through Kleio; Journey may record
+  applicable business progression/interoperability failure; Dokimasia may use
+  evidence. Journey, Audit and Assurance remain distinct. The Kleio
+  audit-authorisation conflict is retained with no bypass.
+
+[CDG-49/50/51](gaps.md#calliope-contracts) preserves detailed ontology, DataSet,
+representation, UI/workflow, protocol, token, API, Horos/handover and realisation
+questions. Strategy's transport exclusions conflict with the Terma allocation;
+the repository Calliope pure-library rules also require explicit realisation
+reconciliation. Neither is silently overridden. These bounded components are now
+represented sufficiently faithfully **for Candidate Architecture review**, with
+those issues visible. This is not whole-Domain05 acceptance or Step-B authority.

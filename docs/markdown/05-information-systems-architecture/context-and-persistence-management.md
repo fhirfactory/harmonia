@@ -116,7 +116,7 @@ Mneme Context Save
 | Boundary | Responsibility |
 | :--- | :--- |
 | **Mneme Context Load** | Locate/acquire, map, establish authoritative state/version basis, apply controls and compose values to materialise the managed Context. |
-| **Ergo Context Loader** | Expose the **already-loaded Context** to Ergon Business Logic. It does not perform Mneme's resource acquisition. |
+| **Ergo Context Loader** | Ordinarily exposes the **already-loaded Context** to Ergon Business Logic, without taking over Mneme resource acquisition. U14's [special Pylai ingress](pylai-external-interoperability.md#pylai-pathway-ingress) instead establishes initial Context/Task.input from Communication Information through established Mneme/persistence responsibilities; it performs no semantic mapping. |
 | **Ergon Business Logic** | Perform bounded activity, primarily reading and acting upon values within its Context, with governed Adhoc acquisition where required. |
 | **Context Unloader** | Bring resulting bounded processing back across the business-logic boundary, preserving resulting Context state and Pragma Outputs. It is **not a persistence mechanism**. |
 | **Mneme Context Save** | Resume Mneme management of resulting Context state and the subsequent information consequences of Pragma Outputs; determine appropriate normal or exceptional handling. |
@@ -300,3 +300,24 @@ terminal rules, and Pathway/control/observed-evidence distinctions are preserved
 The existing [Themis audit-authorisation proposal versus AX-07 conflict](gaps.md#themis-detailed-contracts)
 remains unresolved. No audit-authorisation exception is introduced or AX-07
 weakened. A2/A3 correction accepts neither the whole candidate nor A4 or Step B.
+
+
+## Calliope and Pylai use of established responsibilities
+
+[Calliope-DataSets](calliope-models-and-datasets.md#calliope-datasets) owns governed
+mutable content and uses established Mneme/Mnemosyne access/persistence; this
+adds no persistence manager or Mneme service. Models/build definitions supply
+structural contracts independently of runtime DataSet availability.
+
+[PylaiServer READ/SEARCH](pylai-external-interoperability.md#pylai-server-controller)
+uses Diadromí-Controller → Mneme Adhoc Resource Access / Adhoc Search → Mnemosyne
+as needed. Mneme remains the Context and Pragma Manager with four exposed services,
+not a generic Information Manager or external interoperability service. No
+ActionableTask/Praxis/Ergon is fabricated for this read-oriented pattern.
+
+[PylaiPathway ingress](pylai-external-interoperability.md#pylai-pathway-ingress)
+establishes initial Task.input/Context through a specialised Ergo ContextLoader;
+semantic mapping remains in BusinessLogic. EgressHoros returns communication
+state/outcome before ContextUnloader completes. Neither Loader/Unloader nor Pylai
+establishes durable truth. Protocol success, engine success and authoritative
+Harmonia persistence outcome remain distinct, including uncertainty.

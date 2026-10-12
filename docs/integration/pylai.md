@@ -1,8 +1,35 @@
 # Pylai Perimeter Protocol Gateway Integration `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+
+```text
+---------------------------------------------------------
+```
+
 Pylai constitutes Harmonia's perimeter gateway tier, terminating external protocols (HL7 v2.x MLLP and FHIR R5 REST) and isolating internal messaging, workflow, and persistence subsystems from raw network interactions.
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+
+```text
+---------------------------------------------------------
+```
 
 ## 1. Pylai Architectural Architecture `[IMPLEMENTED]`
 
@@ -15,6 +42,11 @@ Pylai is partitioned into five specialized leaf modules:
 | `pylai-mllp-out` | `pylai-mllp-out` | WAR | Outbound Camel MLLP sender consuming from Petasos queues and transmitting to external destination sockets. |
 | `pylai-fhir-registry` | `pylai-fhir-registry` | JAR | FHIR R5 REST gateway exposing synchronous read/search and asynchronous change request pipelines. |
 | `pylai-mllp-cli` | `pylai-mllp-cli` | JAR | Operational command-line utility for synthetic MLLP message generation and diagnostic pinging. |
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -36,6 +68,18 @@ Complementary routes exist for other message families:
 - `IncomingMfnMessageMllpRouteBuilder` (`hl7-mllp-mfn-receiver`) for Master File Notifications.
 - `IncomingOrmMessageMllpRouteBuilder` (`hl7-mllp-orm-receiver`) for Clinical Orders.
 - `IncomingOruMessageMllpRouteBuilder` (`hl7-mllp-oru-receiver`) for Observational Results.
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+
+```text
+---------------------------------------------------------
+```
 
 ### 2.2 Ingestion & Dual-Write Safety Lifecycle (REC-001)
 The core ingestion sequence in `IncomingAdtMessageProcessor` enforces atomic downstream acceptance before emitting an `AA` acknowledgment:
@@ -65,6 +109,11 @@ sequenceDiagram
     end
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
 
 ## 3. Outbound MLLP Camel Pipeline (`pylai-mllp-out`) `[IMPLEMENTED]`
@@ -87,7 +136,25 @@ from("direct:mllp-outbound-send")
 - **Exception Handling**: Catches `MllpException` and general network timeouts.
 - **Redelivery**: Configured with a maximum of 2 redeliveries and an exponential backoff multiplier of 2.0 (500 ms initial delay).
 - **Acknowledgment Extraction**: `Hl7AckProcessor` parses MSA-1 (`AA`, `AE`, `AR`) and validates MSA-2 against the outbound message control ID.
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [EgressHoros return before Context unloading](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#praxis-egress-horos)
+- [Deferred protocol and outcome contracts](../markdown/05-information-systems-architecture/gaps.md#pylai-contracts)
+- [Identity carriage, Themis enforcement and separate evidence responsibilities](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-governance)
+
+```text
+---------------------------------------------------------
+```
+
 - **Delivery State Tracking (REC-002)**: Updates `Task.output` in Mnemosyne with structured delivery metadata (`http://example.org/hie/destination-delivery-status`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -95,15 +162,50 @@ from("direct:mllp-outbound-send")
 
 `FhirRestGatewayController` provides an HTTP/REST boundary compliant with FHIR R5:
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Server READ/SEARCH and governed change](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-server-controller)
+- [Identity carriage, Themis enforcement and separate evidence responsibilities](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-governance)
+
+```text
+---------------------------------------------------------
+```
+
 ### 4.1 Synchronous Read & Search Path
 - **Endpoints**: `GET /fhir/r5/{resourceType}/{id}`, `GET /fhir/r5/{resourceType}?name=...`
 - **Security**: Evaluates `FhirSecurityInterceptor` with Themis default-deny rules before invocation.
 - **Execution**: Direct delegated read from `FhirStorageService` backed by PostgreSQL 16.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Server READ/SEARCH and governed change](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-server-controller)
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+
+```text
+---------------------------------------------------------
+```
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ### 4.2 Asynchronous Governed Change Path
 - **Endpoints**: `POST /fhir/r5/{resourceType}`, `PUT /fhir/r5/{resourceType}/{id}`
 - **Response**: Synchronous `HTTP 202 Accepted` returning a `Task` status URL in the `Location` header.
 - **Workflow Submission**: `ChangeRequestSubmissionService` packages the mutation into a canonical `ProviderRegistryChangePragma`, persists it to Mneme, and dispatches a message to `harmonia.provider.registry.change.request`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

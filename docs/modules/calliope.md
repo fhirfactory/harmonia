@@ -1,12 +1,46 @@
 # Calliope Subproject Reference: Canonical Schemas & Models `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope Models / DataSets](../markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-responsibility)
+- [Deferred contracts and repository-rule reconciliation](../markdown/05-information-systems-architecture/gaps.md#calliope-contracts)
+
+```text
+---------------------------------------------------------
+```
+
 Calliope is Harmonia's foundational canonical data modeling, schema definition, and PHI-safe logging library. It establishes the shared vocabulary, type systems, and event structures across all Harmonia subsystems.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
 ## 1. Subproject Architecture & Overview `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope Models / DataSets](../markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-responsibility)
+- [Deferred contracts and repository-rule reconciliation](../markdown/05-information-systems-architecture/gaps.md#calliope-contracts)
+
+```text
+---------------------------------------------------------
+```
+
 Calliope is packaged as a single foundation library that sits at the base of the Harmonia dependency hierarchy.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### Subproject Maven Coordinates `[CONFIGURED]`
 - **GroupId**: `net.fhirfactory.harmonia`
@@ -62,12 +96,29 @@ Calliope is packaged as a single foundation library that sits at the base of the
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope Models / DataSets](../markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-responsibility)
+- [Deferred contracts and repository-rule reconciliation](../markdown/05-information-systems-architecture/gaps.md#calliope-contracts)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Calliope Owns
 - Canonical event envelope definitions (`ErgonEvent`, `ErgonPayload`, `ErgonReasonEnum`).
 - Pragma execution context contracts and checkpoint representations.
 - Global role, authority, and security tag enumerations.
 - PHI-safe logger contracts and factory implementations (`PhiLogger`).
 - Topic and queue addressing models.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Calliope Explicitly Does NOT Own (Anti-Responsibilities)
 - Network sockets, MLLP framing, or HTTP endpoints (owned by Pylai).

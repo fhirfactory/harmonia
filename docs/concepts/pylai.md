@@ -1,6 +1,22 @@
 # Concept: Pylai `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+
+```text
+---------------------------------------------------------
+```
+
 Pylai is Harmonia's protocol gateway subsystem, managing the external network boundary, protocol adapters, wire framing, and message translation between external hospital protocols (HL7 v2.x MLLP, FHIR R5 REST) and internal canonical task streams.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -9,9 +25,40 @@ Pylai is Harmonia's protocol gateway subsystem, managing the external network bo
 - **Greek Term**: *Πύλαι* (Pylai, plural of *πύλη*)
 - **Etymology**: Ancient Greek noun referring to the great gates of a city, fortress, or mountain pass (e.g., *Thermopylae* — the Hot Gates).
 - **Mythological & Historical Context**: In the Greek world, the *pylai* were the vital checkpoints where visitors, merchants, and messengers entered a polis. The gates were heavily guarded; sentinels verified the traveler's identity, collected duties, and ensured that hostile forces or pestilence were barred from the civic interior.
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+- [Identity carriage, Themis enforcement and separate evidence responsibilities](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-governance)
+
+```text
+---------------------------------------------------------
+```
+
 - **Architectural Rationale**: Pylai guards the perimeter of the Harmonia cluster. It is the sole entry and exit point for external clinical systems. Like the ancient gatekeepers, Pylai enforces perimeter security (via Themis), strips away external framing, verifies payload integrity, and ensures that no message passes into the internal messaging backbone without proper registration and guaranteed delivery acceptance.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+- [Server READ/SEARCH and governed change](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-server-controller)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
@@ -50,9 +97,27 @@ Pylai comprises three primary functional gateways:
 2. **Outbound MLLP Gateway (`pylai-mllp-out`)**: Consumes dispatch events from dedicated per-destination Petasos queues (`petasos.queue.mllp.outbound.<endpoint-id>`), establishes outbound MLLP connections to downstream hospital systems, transmits messages, and awaits synchronous remote acknowledgments.
 3. **FHIR REST Registry Gateway (`pylai-fhir-registry`)**: Exposes RESTful endpoints for Provider Registry master entities, evaluating Themis authorization before querying or mutating clinical storage.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+
+```text
+---------------------------------------------------------
+```
 
 ### What Pylai Owns
 - TCP socket binding, connection lifecycle, and Netty channel management on MLLP port `2575`.
@@ -64,6 +129,11 @@ Pylai comprises three primary functional gateways:
 - Ingress REST API endpoints for Provider Registry search and lifecycle operations (`pylai-fhir-registry`; see ADR-020).
 - Synthetic HL7 v2 CLI load generation and testing tool (`pylai-mllp-cli`).
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ### What Pylai Explicitly Does NOT Own (Anti-Responsibilities)
 - Durable relational database schema management or direct SQL queries (owned by Mnemosyne).
 - Long-running multi-stage workflow sequence orchestration (owned by Energeia).
@@ -74,11 +144,46 @@ Pylai comprises three primary functional gateways:
 
 ## 4. Key Architectural Guarantees `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+
+```text
+---------------------------------------------------------
+```
+
 ### Ingress Dual-Write Safety (REC-001) `[IMPLEMENTED]`
 Pylai guarantees that no HL7 `AA` (Application Accept) acknowledgment is returned to an external sender until the message has been successfully accepted by the downstream Petasos queue and Mneme cache. If publishing fails (e.g., broker disconnect), Pylai catches the exception, rolls back ephemeral state, and returns an `AE` (Application Error) NACK, instructing the sender to retry.
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Identity carriage, Themis enforcement and separate evidence responsibilities](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-governance)
+- [EgressHoros return before Context unloading](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#praxis-egress-horos)
+- [Deferred protocol and outcome contracts](../markdown/05-information-systems-architecture/gaps.md#pylai-contracts)
+
+```text
+---------------------------------------------------------
+```
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ### Destination Fan-Out Telemetry (REC-002) `[IMPLEMENTED]`
 When messages are fanned out to multiple outbound systems, `pylai-mllp-out` reports granular per-destination delivery status (`SENT`, `ACKED`, `FAILED`, `TIMEOUT`) into `Task.output` extensions, ensuring full end-to-end auditability.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

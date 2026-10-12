@@ -2,8 +2,8 @@
 
 # Candidate Pathway, Journey, Publish/Subscribe and Handoff Architecture
 
-**Standing: Domain05 Step A adjudicated Candidate Architecture, 2026-10-11.**
-[U03–U09](sources.md#u03) record the supplied human-adjudicated DesignNotes and
+**Standing: Domain05 Step A adjudicated Candidate Architecture, through 2026-10-12.**
+[U03–U14](sources.md#u03) record the supplied human-adjudicated DesignNotes and
 explicit task decisions incorporated here. [Scope](README.md) applies: this
 correction does not accept the whole candidate, commence Step B or establish
 implementation design. Existing [Energeia specialisation](README.md#energeia-adjudication)
@@ -88,6 +88,29 @@ activation/deactivation, replacement, retirement and treatment of in-flight
 activity following change are deliberately unestablished.
 
 <a id="publication-and-selection"></a>
+
+## Praxis.Horos and external interaction
+
+[U14 Pylai/Horos](pylai-external-interoperability.md#praxis-horos) introduces
+Praxis.Horos, Praxis.IngressHoros and Praxis.EgressHoros for logical Praxis
+boundaries, superseding Praxis “Endpoint” in that meaning only. U04's Ergon
+PathwayEndpoint / IngressEndpoint / EgressEndpoint Application Interfaces retain
+their meaning; technical/network/Camel endpoints and FHIR Endpoint are unchanged.
+Horos is not another technical endpoint or a universal rename of those interfaces.
+
+PylaiPathway ingress uses Terma → transient Diadromí → IngressHoros → Ergo.Ingress,
+with special initial Context establishment, semantic processing by BusinessLogic
+and Ergo.Egress → Petasos.Queue[TermaName] as Praxis.PathwaySegment. Durable
+acceptance waits for authoritative Pragma/Task persistence; protocol ACK may
+represent only progress. EgressHoros hands out after BusinessLogicCapturer and
+back before ContextUnloader completes. [Canonical lifecycle diagrams](pylai-external-interoperability.md#pylai-pathway-ingress)
+record both orders without selecting runtime mechanics.
+
+Broker interaction from existing BusinessLogic and Server READ/SEARCH through
+Diadromí-Controller do not manufacture a Praxis/Pathway/work undertaking. Applicable
+Themis, Kleio, Dokimasia and Journey participation remains. A lost Diadromí cannot
+resume; any appropriate client retry creates a new interaction. Petasos queue
+recovery remains a separate durable responsibility.
 
 ## Dynamic information selection through Mneme
 
@@ -244,6 +267,7 @@ owns the queue operation. Detailed protocols/state metrics remain unresolved.
 | **Pragma / managed-information state** | Governed information managed through Mneme; authoritative durable establishment/preservation through Mnemosyne. May record a governed observation concerning delivery without owning the handoff obligation. |
 | **Petasos queue/handoff/delivery state** | Queue operational state/status and operational state of a particular persistent handoff obligation, including delivery attempt, redelivery/recovery and dead-letter handoff semantics. |
 | **FulfillmentTask undertaking state** | Information representing a particular identifiable undertaking, distinct from ActionableTask and other undertakings. Consumer establishment and Mneme Context/Pragma management do not collapse into runtime execution state. |
+| **Pylai Diadromí interaction state** | Transient and non-recoverable; loss terminates the interaction and appropriate client retry creates a new Diadromí. Controller keeps no recoverable state. Retained observations/evidence do not restore it or prove earlier effects did not occur. |
 | **Ponos execution/progression state** | Runtime execution, scheduling/concurrency, execution failure and execution retry/re-attempt or activity progression semantics. |
 
 Pragma “destination-specific delivery observations” means governed information
@@ -344,6 +368,7 @@ schema, causal/correlation/reconstruction algorithms and lifecycle/retention rem
 | **Mneme** | Publishing permitted/blocked; Subscription matched; Pattern condition matched; eligible consumer selected. |
 | **Petasos** | Handoff established; destination identified; delivery attempted; delivery succeeded/failed or uncertain; redelivery/recovery observations. |
 | **Consumer / Ponos / Ergon** | Undertaking established; execution attempted/occurred; activity result; checkpoint and progression observations. |
+| **Pylai** | Applicable successful logical business interaction or technology/interoperability failure within the governed Journey; no universal Journey, fabricated Praxis or per-network-event AuditEvent requirement. |
 | **DigitalTwin / other components / assurance-evidence mechanisms** | Governed operational observations or references where appropriate, preserving originating responsibility and Dokimasia terminal rules. |
 
 These contributions can distinguish selection without handoff, handoff without

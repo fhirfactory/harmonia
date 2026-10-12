@@ -21,12 +21,17 @@ The explicit Composition of loaded Context values is separately established. Lea
 
 ```text
 Harmonia Information System — candidate software solution
-  Calliope — semantic definitions, shared models and conversion support [C01]
-    Canonical model / schema / terminology-binding support
-    Release-bounded authorisation ValueSets: Function.Name / Function.Scope
-    Release-bounded Information.Compartments / Information.Classification
-    Event, payload, reason and topic definitions (Data Objects)
-    HL7/FHIR converter support
+  Calliope — governed models, datasets and shared security/assurance nomenclature [C01]
+    Calliope-Models — design/build-time definitions and libraries [C41]
+      Models / Metadata Types / Criteria Definitions / Topics
+      Filter Types / Filter Elements / Core Harmonia Element Libraries
+      Security and Assurance nomenclature definitions
+      Development representations of known runtime datasets; no runtime membership authority
+    Calliope-DataSets — runtime mutable governed content management [C42]
+      ValueSets / CodeSets / Structured Metadata / applicable ontology content
+      Release-bounded Function.Name / Function.Scope / Information.Compartments / Information.Classification
+      Authoritative ontology-set review for Harmonia use; detailed boundary deferred
+      Established Mneme/Mnemosyne persistence; existing Ponos/Ergo/Praxis where workflow required
   Themis — Authorisation Model management and distributed enforcement [C02]
     PAP — model administration/lifecycle; governed management through Ergo/Praxis
     PRP — authoritative model repository semantics; durability through Mneme/C&G
@@ -83,6 +88,7 @@ Harmonia Information System — candidate software solution
       Dokimasia Ergon — Ergon-specialised bounded assurance activity [C26]
       AI Assurance Ergon — candidate Dokimasia Ergon specialisation [C27]
     Application ownership: Praxis — expected/permitted operational envelope [C06]
+      Praxis.Horos / IngressHoros / EgressHoros — logical boundary [C46]
       Aggregation: Pathway [0..1]; Journey cardinalities unresolved
     Application ownership: Journey — governed observed progression [C35]
   Petasos — durable message/event queue management [C10]
@@ -91,10 +97,15 @@ Harmonia Information System — candidate software solution
     Associated information predominantly by reference; originating owners retained
     Persistent handoff / destination mechanics / redelivery / recovery / dead-letter
     ActionableTask reference handoff is one use case; event purposes remain distinct
-  Pylai — standards-facing interoperability/publication membrane [C14]
-    Inbound HL7 interaction responsibility slice
-    Outbound HL7 publication/delivery-observation slice
-    FHIR registry interaction responsibility slice
+  Pylai — External Interoperability Service; all external communication styles [C14]
+    Terma / IngressTerma / EgressTerma — logical external interface; communication mechanics [C43]
+    Diadromí — transient, non-recoverable carriage / interaction context [C44]
+    Diadromí-Controller — Server READ/SEARCH progression / governance; no recoverable state [C45]
+    Interaction patterns (not deployment units):
+      PylaiPathway — external interaction ↔ governed Praxis/Ergo work
+      PylaiBroker — executing Ergo.BusinessLogic ↔ external communication
+      PylaiServer — changes through Pathway; READ/SEARCH through Controller
+    HL7 / FHIR / API / RMI / file / polling mechanisms; technical realisation deferred
   Iris — contextual human interaction [C15]
     Clinical viewer [C16]
     Operations console [C16]
@@ -140,7 +151,7 @@ The following do not have a supported structural parent in that tree:
 | :--- | :--- |
 | **Provider Registry [C13]** | Documented cross-component application collaboration spanning Pylai, Themis, Petasos, Ponos/Praxis/Erga, Mneme/Mnemosyne and Iris; not automatically a new enclosing subsystem. [L15](sources.md#l15). |
 | **Operator/developer support [C22]** | Documented CLI, activity/sequence authoring, shared design support and telemetry contracts. Tools retain association with their target components; no invented common platform subsystem. [L19/L21/L23](sources.md#l19). |
-| **Media Server / runtime terminology service** | No sufficiently defined component boundary found. DocumentReference and binary payloads, compiled bindings and proposed terminology services are retained in the data/features views; named server allocation remains unknown. [L17/L19/L27](sources.md#l17). |
+| **Media Server / detailed clinical terminology services** | Media custodian and detailed lookup/expansion/mapping service allocation remain unresolved. Calliope-DataSets runtime governed-content management is now established by U13; it does not settle every proposed clinical terminology service. [CDG-24/25/49](gaps.md#calliope-contracts). |
 
 **Paradeigma [C21]** is associated simulation/verification support, outside the
 production collaboration hierarchy. Its documented PAS, EMR, LMS, RIS-PAC,
@@ -226,6 +237,7 @@ These navigation entries are deliberately separate from the structural tree:
 | :--- | :--- |
 | Application Interfaces | PathwayEndpoint C29: each Ergon exposes IngressEndpoint and EgressEndpoint. |
 | Behavioural/flow abstraction | PathwayElement C30 specialises as inter-component PathwaySegment C31 and encapsulated intra-component PathwayTraversal C32. |
+| Logical Praxis boundary | Praxis.Horos C46, specialised as IngressHoros/EgressHoros; external interaction through Terma/Diadromí does not create a technical Praxis endpoint. |
 | Routing/control | Route C33 = ordered PathwaySegment [1..N]; Pathway C34 controls endpoint interaction with available Route(s). Praxis aggregates Pathway [0..1] within its operational/assurance envelope. |
 | Observation / Application Data Object | Journey C35 represents governed observed progression across Pathway, Pub/Sub and mixed execution; Energeia owns Journey Management Services; detailed construction/reference contracts unresolved. |
 | Aggregated logical responsibilities / definition objects | Publishing C36, Subscription C37 and Pattern C38 under Mneme Pragma Management; their names do not imply separate deployable components. |
@@ -295,14 +307,22 @@ flowchart LR
     Mnemosyne -->|persistence operational state; management retained| Reporting
     Journey -->|observed evidence subject| Dokimasia
     Praxis -->|assurance basis| Dokimasia
-    Pylai["Pylai: standards membrane"] -->|internal information requests| Mneme
-    Pylai -->|accepted work handoff| Petasos
-    Petasos -->|publication request| Pylai
+    Pylai["Pylai: External Interoperability Service"] -->|"Pathway: Praxis.Horos / governed Ergo work"| Ergon
+    Ergon -->|"Broker: external interaction from executing BusinessLogic"| Pylai
+    Pylai -->|"Server READ / SEARCH through transient Diadromí-Controller"| Mneme
+    Pylai -->|"ingress Ergo.Egress to Queue TermaName; durable Parcel handoff"| Petasos
+    Petasos -->|"governed work may require external communication"| Pylai
     Agora["Agora: collaboration"] -->|collaboration events| Petasos
     Petasos -->|collaboration requests| Agora
-    Calliope["Calliope: semantic reference"] -->|definitions consumed locally| Ergon
+    Calliope["Calliope-Models: build-time definitions / structural contracts"] -->|definitions consumed locally| Ergon
+    DataSets["Calliope-DataSets: governed runtime content"] -->|"established Context / Pragma access and persistence"| Mneme
+    DataSets -->|"existing execution where dataset governance requires workflow"| Ponos
     IdP["External OIDC/OAuth IdP: Authentication SEP"] -->|"trusted Identity; no Harmonia authority"| Themis["Themis: governed model / PDP compilation"]
-    Calliope -->|"controlled authorisation nomenclature"| Themis
+    Calliope -->|"nomenclature definitions; no policy decisions"| Themis
+    DataSets -->|"controlled authorisation vocabularies; no grants by membership"| Themis
+    Themis -->|"trusted Identity interpretation / local Themis PEP"| Pylai
+    Pylai -->|"significant transaction occurrence; Kleio constructs AuditEvent"| Kleio
+    Pylai -->|"applicable business progression / interoperability failure observations"| Journey
     Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Ponos
     Themis -->|"PEP-Criteria through PEP-Context / local Themis PEP"| Mneme
     Themis -->|"persistence PEP-Criteria / local Themis PEP"| Mnemosyne
@@ -336,7 +356,13 @@ flowchart LR
 | Components use Themis PEP and Kleio Audit Capture | U07/U08, A01 AX-07–09. Themis-owned local PEP uses Identity-specific Criteria; valid sufficient context may support in-flight activity during PDP loss, while required new context must wait. Kleio constructs immutable AuditEvents from client occurrences, independent of Journey. Dokimasia terminal rules remain. Detailed contracts CDG-42/43. |
 | Ingress / execution / publication and event sharing use Petasos | U05/U09: purpose-defined durable queues carry PetasosParcel by value; associated information predominantly by reference. ActionableTask/Pragma remains through Mneme and each undertaking has its own FulfillmentTask. Queue status belongs to Petasos; Energeia observes/reports. Acceptance, commit, completion and external ACK remain distinct. |
 | Agora coordinates with execution through Petasos | AGENTS Invariant 10; L12 §3. No direct Agora-to-Ponos dependency. A detailed information-summary/provider contract is not established. |
-| Pylai publishes governed information externally | A01 AX-02/13 and A02 Seams 4/G4. Projection is non-destructive and fail-closed; egress ends management of the emitted representation. Transport packaging does not transfer logical ownership. |
+| Pylai manages external interoperability | U14: Terma acts, Diadromí carries transient interaction; Pathway/Broker/Server have distinct execution/access patterns. Horos is the logical Praxis boundary, with egress return before unloading. AX-02/13 projection remains non-destructive/fail-closed. Identity, audit and assurance stay separate; Strategy transport tension remains CDG-51. |
+
+The [Calliope view](calliope-models-and-datasets.md) separates build-time definitions
+from current governed runtime content. The [Pylai/Horos view](pylai-external-interoperability.md)
+provides the ingress, egress handover and Server READ/SEARCH diagrams. Diadromí is
+transient/non-recoverable; Petasos recovery and Mnemosyne durable state remain distinct.
+Controller participation is limited to the established pattern, not every interaction.
 
 ## Preserved model boundaries
 

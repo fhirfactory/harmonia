@@ -1,10 +1,38 @@
 # Pylai Protocol Gateways Architecture
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+
+```text
+---------------------------------------------------------
+```
+
 Pylai represents the external boundary and protocol adaptation tier for the Harmonia platform.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
 ## 1. Subsystem Overview
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+- [Server READ/SEARCH and governed change](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-server-controller)
+
+```text
+---------------------------------------------------------
+```
 
 Pylai translates external clinical messaging protocols (HL7 v2.x MLLP and FHIR R5 REST) into canonical Harmonia events and tasks:
 
@@ -15,6 +43,11 @@ Pylai translates external clinical messaging protocols (HL7 v2.x MLLP and FHIR R
   └── External FHIR REST Clients ──► pylai-fhir-reg  (:8080) ──► Mnemosyne Clinical
 ```
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ### Module Breakdown
 - **`pylai-mllp-base`**: Core MLLP framing utilities, destination registries (`MllpDestinationRegistry`), Petasos event producers, and FHIR resource construction helpers.
 - **`pylai-mllp-in`**: Spring Boot / Netty / Apache Camel MLLP server on port `2575` ingesting HL7 v2.4/v2.5 ADT, MFN, ORM, and ORU messages.
@@ -23,6 +56,18 @@ Pylai translates external clinical messaging protocols (HL7 v2.x MLLP and FHIR R
 - **`pylai-mllp-cli`**: CLI diagnostic utility for generating and transmitting synthetic HL7 v2 MLLP trigger events.
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Inbound Gateway Pipeline & Ingress Dual-Write Handling (REC-001)
 
@@ -42,10 +87,32 @@ graph TD
 
 - **Guaranteed Durability Before ACK**: As remediated in REC-001, `IncomingAdtMessageProcessor` propagates Petasos publish exceptions to ensure an `AE` NACK is sent if the queue write fails, preventing silent message loss.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [EgressHoros return before Context unloading](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#praxis-egress-horos)
+- [Deferred protocol and outcome contracts](../markdown/05-information-systems-architecture/gaps.md#pylai-contracts)
+- [Identity carriage, Themis enforcement and separate evidence responsibilities](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-governance)
+
+```text
+---------------------------------------------------------
+```
 
 ## 3. Outbound Gateway Pipeline & Granular Fan-Out Delivery (REC-002)
 
 - **Dedicated Per-Destination Queues**: Prevents head-of-line blocking if one downstream system is offline.
 - **Synchronous Remote ACK Validation**: Awaits remote MLLP ACK (`AA`, `AE`, `AR`) before completing egress task.
 - **Destination Delivery Status Tracking**: Populates `Task.output` with structured `http://example.org/hie/destination-delivery-status` extensions capturing `destinationId`, `status`, `ackCode`, `timestamp`, and `errorMessage`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

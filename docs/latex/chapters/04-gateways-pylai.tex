@@ -7,7 +7,17 @@
 \chapter{External Gateways (\texttt{Pylai})}
 \label{chap:gateways_pylai}
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#pylai-responsibility}{Pylai External Interoperability Service}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 The Gateway and Interface layer (\texttt{Pylai}) serves as the boundary interface of Harmonia, terminating external protocols, enforcing security screening, isolating network failures, and providing bidirectional translation between external healthcare wire formats and internal event buses.
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \section{MLLP Inbound Ingress Gateway (\texttt{pylai-mllp-in})}
 
@@ -30,6 +40,14 @@ MLLP provides minimal framing over stream-oriented TCP sockets:
 
 In standard Kubernetes deployment, \texttt{pylai-mllp-in} listens on Port 2575 (exposed via NodePort 30575).
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#pylai-pathway-ingress}{Ingress Context and semantic processing}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#acceptance-and-acknowledgement}{Protocol progress versus authoritative acceptance}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 \subsection{Ingress Dual-Write Safety (REC-001)}
 In accordance with architectural invariant REC-001, inbound gateways must guarantee end-to-end downstream message acceptance before returning an \texttt{AA} (Application Accept) ACK to the upstream sender:
 \begin{enumerate}
@@ -38,6 +56,9 @@ In accordance with architectural invariant REC-001, inbound gateways must guaran
     \item If downstream publishing succeeds, the gateway returns an HL7 \texttt{AA} ACK.
     \item If downstream publishing or cache write fails, the exception is caught, and the gateway immediately returns an HL7 \texttt{AE} (Application Error) or \texttt{AR} (Application Reject) NACK frame, prompting the upstream hospital system to retain and retry the message.
 \end{enumerate}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \section{MLLP Outbound Egress Dispatcher (\texttt{pylai-mllp-out})}
 
@@ -59,6 +80,15 @@ To prevent head-of-line blocking when an external hospital endpoint experiences 
 \end{equation*}
 Each queue is consumed by a dedicated outbound worker instance, guaranteeing that a stalled destination does not delay traffic intended for healthy external systems.
 
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#praxis-egress-horos}{EgressHoros return before Context unloading}
+  \item \href{../../markdown/05-information-systems-architecture/gaps.md\#pylai-contracts}{Deferred protocol and outcome contracts}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#pylai-governance}{Identity carriage, Themis enforcement and separate evidence responsibilities}
+\end{itemize}
+\noindent ---------------------------------------------------------
+
 \subsection{Synchronous ACK / NACK Evaluation \& Fan-Out Tracking (REC-002)}
 When an outbound frame is transmitted over TCP, the dispatcher awaits the remote system's acknowledgment frame:
 \begin{itemize}
@@ -68,12 +98,27 @@ When an outbound frame is transmitted over TCP, the dispatcher awaits the remote
 \end{itemize}
 In multi-destination fan-out scenarios (REC-002), individual destination delivery checkpoints (\nolinkurl{destinationId}, \nolinkurl{status}, \nolinkurl{ackCode}, \nolinkurl{timestamp}) are recorded into the parent Task's output extensions.
 
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
+
 \section{FHIR Provider Registry Gateway (\texttt{pylai-fhir-registry})}
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Start ------}
+\par\noindent Superseded by:
+\begin{itemize}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#pylai-server-controller}{Server READ/SEARCH and governed change}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#pylai-pathway-ingress}{Ingress Context and semantic processing}
+  \item \href{../../markdown/05-information-systems-architecture/pylai-external-interoperability.md\#acceptance-and-acknowledgement}{Protocol progress versus authoritative acceptance}
+\end{itemize}
+\noindent ---------------------------------------------------------
 
 The \texttt{pylai-fhir-registry} gateway is a Spring Boot REST microservice exposing HL7 FHIR Release 5 Provider Directory endpoints:
 \begin{itemize}
     \item \textbf{Synchronous Read/Search (\texttt{GET})}: Direct, sub-50ms read queries against \texttt{mnemosyne-clinical} PostgreSQL JPA storage for \nolinkurl{/Practitioner}, \nolinkurl{/PractitionerRole}, \nolinkurl{/Organization}, \nolinkurl{/Location}, \nolinkurl{/HealthcareService}, \nolinkurl{/Endpoint}, and \nolinkurl{/Group}.
     \item \textbf{Governed Asynchronous Writes (\texttt{POST}/\texttt{PUT})}: Enforces the governed change model. Submissions return \texttt{HTTP 202 Accepted} with \nolinkurl{Location: /Task/{id}} and enqueue a \nolinkurl{ProviderRegistryChangePragma} onto Petasos for validation and approval.
 \end{itemize}
+
+
+\par\noindent\textbf{------- Legacy Content - Superseded ------- Finish ----}
 
 \newpage

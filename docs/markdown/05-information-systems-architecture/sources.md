@@ -106,6 +106,34 @@ The [Business security realisation boundary](gaps.md#upstream-business-security-
 is retained explicitly: Domain03's purpose/relationship/consent/break-glass
 responsibilities are not silently translated into new policy semantics.
 
+## This Calliope / Pylai / Praxis.Horos consolidation input
+
+| Key | Working adjudication source and inspected scope | Incorporated Candidate meaning |
+| :--- | :--- | :--- |
+| <a id="u13"></a>U13 | `DesignNote-Calliope-Model-DataSet-and-Nomenclature-Management.md`, full note read from `/home/hunterm/Downloads/`; explicit task decisions, 2026-10-12 | [Calliope Models/DataSets](calliope-models-and-datasets.md): foundational definitions/libraries and distinct mutable governed content; build-time support versus runtime authority; structural bootstrap guardrail; ontology review and shared Security/Assurance Nomenclature; U12 ValueSets versus Themis policy ownership; established access/persistence/workflow reuse; detailed deferrals CDG-49. |
+| <a id="u14"></a>U14 | `DesignNote-Pylai-External-Interoperability-Architecture.md` (2026-10-11), full note read from `/home/hunterm/Downloads/`; **additional explicit current task adjudications**, 2026-10-12 | [Pylai/Horos](pylai-external-interoperability.md): broad External Interoperability Service, information direction, Terma mechanics, transient Diadromí, ingress Context/mapping/acceptance/queue boundary. Explicit task adds precise Diadromí definition/non-recoverability, Pathway/Broker/Server patterns, limited Controller and specialised EgressHoros handover out/back before unloading. Identity, Mneme/Mnemosyne, Ponos/Petasos, Kleio/Dokimasia and Journey boundaries remain distinct; CDG-50/51 preserves detail/conflict. |
+
+The notes are working adjudication records, not canonical authority by location or
+status. The explicit task authorises incorporation of their adjudicated meanings
+subject to existing repository authority. The older Pylai note's remaining-nuance
+warning is not a declaration of completion: current task decisions settle the
+specified additions, while its remaining unestablished detail stays deferred.
+In particular its generic Terma/BusinessLogic pairing is read in the Pathway
+specialisation, not as a requirement to manufacture work for Server READ/SEARCH.
+No absent note wording is used to attribute the task's later decisions to it.
+Original files remain unchanged outside the repository; required Candidate meaning
+is now readable in RADS without external access.
+
+The review retained two cross-layer issues rather than manufacturing consistency:
+Strategy G4/Component 4 excludes mechanics now assigned to Terma (**CDG-51**), and
+the broad logical Calliope-DataSets collaboration must be reconciled with existing
+repository pure-library rules (**CDG-49**). Strategy's design-only Calliope mediation
+wording also requires clarification if intended to exclude runtime content
+participation. No Domains01–04, axioms, repository rules or implementation were
+changed. The previous Kleio audit-authorisation conflict remains **CDG-42**, with
+no later authoritative resolution found. This is A2/A3 consolidation for review,
+not A4 acceptance, Step-B mapping or a convergence/runtime implementation step.
+
 ## Legacy reconstruction sources
 
 “Incorporated” means the identified architectural meaning is now represented
@@ -122,8 +150,8 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l03"></a>L03 | [Ergon](../../concepts/ergon.md), full concept | **Partially incorporated:** transformation, validation, fan-out and payload/checkpoint behaviour; §3 “What an Ergon Owns” previously superseded by the activity register/F07–F10. Opening definition and §2 Core Characteristics now wrapped to C23/C24 and CDG-05, preserving original content while distinguishing Ergon from meaningful Erga collections. Pure/atomic/idempotent/composition detail remains unresolved, not silently adjudicated. |
 | <a id="l04"></a>L04 | [Praxis](../../concepts/praxis.md), full concept | **Partially incorporated:** blueprint loading/seeding, ordering/conditions and schemas; §3 “What Praxis Owns” superseded by C06/F11–F12. Opening definition and §2 DAG assertion now wrapped to C06, Pathway [0..1] and CDG-01. U06 now establishes the higher-order envelope and Energeia ownership; historical blueprint/runtime/actual activity equivalences remain unresolved. §1 Architectural Rationale newly wrapped to the Praxis envelope/ownership and detailed-contract boundary. |
 | <a id="l05"></a>L05 | [Pragma](../../concepts/pragma.md), full concept | **Partially incorporated:** context/state carrier; §3 anti-responsibilities previously superseded by C07. §3 “What Pragma Owns” now wrapped to Mneme Pragma Management C28/C07. Opening definition, §2 architectural definition and §5 context-safety claims now wrapped to the U05 semantic shape, state separation and retained representation uncertainty; §3 existing wrappers remain. Detailed authority/persistence contracts remain CDG-02/03/10/15/18/37. |
-| <a id="l06"></a>L06 | [Calliope canonical](../../concepts/calliope-canonical.md), full document | **Partially incorporated:** §2 event/payload/reason models and converter responsibilities superseded by C01/F01–F02/D01–D02/D08. Foundation dependency diagram retained as implementation support. |
-| <a id="l07"></a>L07 | [Calliope](../../concepts/calliope.md), full concept | **Supporting/corroborating:** vocabulary, converter catalogue and topic constants. Architectural responsibility is constrained by A01/A02; no separate migration of implementation catalogue. |
+| <a id="l06"></a>L06 | [Calliope canonical](../../concepts/calliope-canonical.md), full document | §2 existing model/converter wrapper retained; U13 additionally wraps opening and §1 foundation-only architectural account to Models/DataSets and CDG-49. Original library diagram/invariant text remains historical; repository dependency rules are not changed. |
+| <a id="l07"></a>L07 | [Calliope concept](../../concepts/calliope.md), full concept; [module reference](../../modules/calliope.md), full document | U13 wraps foundation-only opening, architectural rationale/definition, positive ownership and concept pure-isolation section; module opening, single-library architecture paragraph and positive ownership. Existing U12 wrapper unchanged. Class/converter/package/dependency catalogues retained as implementation support, not the whole logical Calliope architecture. |
 | <a id="l08"></a>L08 | [Themis](../../concepts/themis.md), [security concept](../../concepts/themis-security.md), [decision audit](../../security/audit.md), [module reference](../../modules/themis.md) | **Partially incorporated:** existing positive ownership wrapper resolves to corrected C02; this correction wraps Themis opening/§2 fixed gates, security-concept opening/§1 fixed gates/§4 decision-audit claims, decision-audit §1 overview and module opening/positive ownership. U08 now establishes model management/local PEP; U07 establishes Kleio capture. Module/class/role/schema details remain historical support; automatic context persistence and detailed host/evidence/privacy relationships remain CDG-13/15/30/42/43. |
 | <a id="l09"></a>L09 | [Hestia](../../concepts/hestia.md), [Mneme](../../concepts/mneme.md), [Mnemosyne](../../concepts/mnemosyne.md), full concepts | **Partially incorporated and retained conflicts:** U06 supersedes Mnemosyne opening and §2 two-service Clinical/Operational definition with Clinical/C&G/O&A semantic responsibilities. U10/U11 additionally supersede Mneme opening, §2 introductory architectural definition and §3 positive ownership list; Hestia opening and §2 dual-state architectural account; Mnemosyne §3 positive ownership list. Existing wrappers remain unchanged and resolve to updated RADS. Remaining metaphor, product/cache/write-behind/access/audit and implementation catalogues remain historical/supporting or retained conflicts, not current authority. |
 | <a id="l10"></a>L10 | [Hestia persistence](../../concepts/hestia-persistence.md), full document | **Partially incorporated:** §3.2 Operations Scope bullet now wrapped to C&G/O&A semantic classification and scaling guardrails. Cache/product/provider catalogues remain support; mixed diagrams, direct access and write-behind model remain historical/conflicting, not adopted physical architecture. |
@@ -146,8 +174,38 @@ no supersession. No entire legacy document is retired by this task.
 | <a id="l27"></a>L27 | LaTeX [backlog](../../latex/chapters/appendix-backlog.tex), BL-CLIN-007/008 | **Retained proposal:** clinical viewer/authoring and terminology lookup, expansion and validation intent; owner and feature maturity unresolved, F18/F25/CDG-24. No implementation sequence imported. |
 | <a id="l28"></a>L28 | [Message lifecycle](../../message-lifecycle.md), ADT/ORM sequence sections | **Conflicting/unresolved:** candidate fan-out and order-routing collaborations corroborated; combined Mneme/Mnemosyne participant, acceptance and completion boundaries retained, CDG-10/16/18. |
 | <a id="l29"></a>L29 | [Petasos architecture](../../../petasos/docs/architecture.md), [root messaging architecture](../../architecture.md), overview; [Petasos concept](../../concepts/petasos.md), [messaging concept](../../concepts/petasos-messaging.md), [module reference](../../modules/petasos.md) | **Partially incorporated:** existing concept definition/ownership and messaging §2 wrappers resolve to updated C10/handoff. This correction wraps messaging opening/§1 generic-broker introduction, module opening/positive ownership and root messaging-architecture opening and Standard Message Envelope. U09 now establishes purpose-defined durable queues/common by-value Parcel; technology/module/schema/topology catalogues remain historical supporting detail. Exact historical carrier relationships/delivery guarantees remain CDG-16/19/27/44. |
-| <a id="l30"></a>L30 | [Pylai concept](../../concepts/pylai.md), [gateway concept](../../concepts/pylai-gateways.md), full concepts | **Conflicting/unresolved and corroborating:** ingress/egress/registry functional slices retained, transport ownership and direct store access constrained by A01/A02; REC-001/002 remain repository invariants. No new external contract selected, CDG-11/18/32/34. |
+| <a id="l30"></a>L30 | [Pylai concept](../../concepts/pylai.md), [gateway concept](../../concepts/pylai-gateways.md), full concepts | U14 supersedes gateway-only definitions, positive ownership, ingress acceptance diagrams/guarantees and outbound observation accounts with broader Pylai/Horos patterns. REC-001/002 retained; protocol/Task outcome details remain CDG-18/32/34/50. Original text/diagrams unchanged within section wrappers. Strategy transport conflict remains CDG-51. |
 | <a id="l31"></a>L31 | [Dokimasia orientation](../../modules/dokimasia.md), full document | Opening paragraph and Digital Twins/Execution, Runtime AI and Open Downstream Architecture sections now wrapped to C19/C20/C27, specialisation axes, Mneme Pragma Management, terminal rules and CDG-35. Canonical assurance-navigation section remains unchanged. Component boundaries established by U02; detailed AI architecture remains discovery, not mandatory AI use in every workflow. |
+
+## This Calliope / Pylai legacy reconciliation
+
+**41 section wrappers across ten legacy files** preserve all original text,
+including existing wrappers, code, diagrams and genuine technical endpoint names.
+No entire legacy document is retired. Replacements are bounded to the affected
+architectural statements; supporting catalogues/configuration remain historical
+implementation information, not new Candidate authority.
+
+| Legacy source and affected content | Canonical replacement / disposition |
+| :--- | :--- |
+| L06/L07 Calliope concept, canonical concept and module reference | [Models/DataSets and definitions](calliope-models-and-datasets.md#calliope-responsibility), [repository realisation tension](gaps.md#calliope-contracts). Concept opening/rationale/§2/positive ownership/§4; canonical opening/§1; module opening/single-library paragraph/positive ownership. |
+| L30 Pylai concept and gateways concept | [Pylai service/patterns](pylai-external-interoperability.md#pylai-patterns), [ingress and acceptance](pylai-external-interoperability.md#pylai-pathway-ingress), [egress](pylai-external-interoperability.md#praxis-egress-horos), [governance](pylai-external-interoperability.md#pylai-governance). Concept opening/rationale/§2/positive ownership/REC-001/REC-002; gateway opening/§1 summary+diagram/§2/§3. |
+| [Pylai module reference](../../modules/pylai.md) | Opening, §1 architecture tree, ingress guarantee, interceptor authority account and positive ownership linked to Pylai service, acceptance, Server and Identity boundaries. Technical class/module/dependency inventory otherwise retained. |
+| [Pylai integration guide](../../integration/pylai.md) | Opening, §1 decomposition, §2.2 cache/queue acceptance sequence, §3.2 delivery-state bullet and §4.1/4.2 direct-read/change paths linked to current service/lifecycle/access boundaries. Technical Camel route snippets and configuration retained. |
+| [Pylai security guide](../../security/pylai-security.md) | §1 claim-to-authority derivation, §2 action/public-access table and §3 asynchronous sequence individually superseded by Identity carriage/Themis authority, Server pattern and durable acceptance. No public bypass or automatic context persistence adopted. |
+| [Legacy terminology](../../getting-started/terminology.md) | Only Calliope, Pylai and REC-001 rows wrapped to current definitions; no broad glossary rewrite. |
+| [LaTeX Pylai chapter](../../latex/chapters/04-gateways-pylai.tex) | Opening, REC-001 subsection, ACK/Task-state subsection and FHIR direct-read/change description wrapped using format-equivalent RADS references. Unresolved Task outcome/ACK contracts stay explicit; diagrams/code text is not rewritten. |
+
+A targeted terminology search found no prior `Praxis.Endpoint` or logical Praxis
+Endpoint occurrence in the inspected canonical/legacy prose requiring literal
+replacement. Existing PathwayEndpoint references are Ergon Application Interfaces;
+FHIR Endpoint, Camel endpoint and network endpoint uses remain valid. Horos is
+introduced explicitly without a blind Endpoint rename. The supplied Dokimasia
+orientation was reviewed; its existing section wrappers and canonical assurance
+navigation already preserve the relevant boundary and were left unchanged.
+
+Removal of only these inserted wrapper bytes reproduces each pre-task legacy file
+exactly. The external DesignNotes also retain their original hashes. The task
+report records validation and reviewed scope; it supplies no architectural authority.
 
 ## This Identity legacy reconciliation
 

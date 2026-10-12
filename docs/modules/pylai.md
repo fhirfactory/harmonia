@@ -1,8 +1,36 @@
 # Pylai Subproject Reference: External Protocol Gateways `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+
+```text
+---------------------------------------------------------
+```
+
 Pylai manages external protocol boundary adapters for HL7 v2.x MLLP and FHIR R5 REST interactions, terminating external network connections and translating wire formats into canonical Harmonia tasks.
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+- [Server READ/SEARCH and governed change](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-server-controller)
+
+```text
+---------------------------------------------------------
+```
 
 ## 1. Subproject Architecture & Leaf Modules `[IMPLEMENTED]`
 
@@ -13,6 +41,11 @@ pylai/
 ├── pylai-mllp-out/        # Outbound MLLP dispatcher service (Netty / Camel / Dedicated Egress Queues)
 ├── pylai-fhir-registry/   # FHIR REST gateway service for direct clinical & provider registry access
 └── pylai-mllp-cli/        # CLI tool for generating and sending synthetic HL7 v2 MLLP trigger events
+```
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
 ```
 
 ### Subproject Maven Coordinates `[CONFIGURED]`
@@ -52,7 +85,24 @@ pylai/
   - `IncomingMfnMessageMllpRouteBuilder`: Route handling Master File Notifications (MFN).
   - `IncomingOrmMessageMllpRouteBuilder`: Route handling Pharmacy/Lab Orders (ORM).
   - `IncomingOruMessageMllpRouteBuilder`: Route handling Observation Results (ORU).
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+
+```text
+---------------------------------------------------------
+```
+
   - **Ingress Dual-Write Safety (REC-001)**: Processors guarantee downstream Petasos queue acceptance and Mneme cache registration before generating synchronous `AA` (Application Accept) acknowledgments. If downstream publishing throws an exception, an `AE` (Application Error) NACK is emitted.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 - **Runtime Dependencies**: `pylai-mllp-base`, `petasos-artemis`, Apache Camel Netty (`4.4.2`), Spring Boot Starter Web (`3.2.5`) / WildFly 31.
 
 ### 2.3 `pylai-mllp-out` `[IMPLEMENTED]`
@@ -79,7 +129,23 @@ pylai/
   - `net.fhirfactory.harmonia.pylai.fhir.service`
 - **Key Classes & Endpoints**:
   - `FhirRestGatewayController`: REST gateway exposing standard FHIR R5 endpoints on port 8080 (`/fhir/r5/*`).
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Identity carriage, Themis enforcement and separate evidence responsibilities](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-governance)
+
+```text
+---------------------------------------------------------
+```
+
   - `FhirSecurityInterceptor`: Evaluates incoming bearer tokens and TLS certificates against Themis policies (`ProviderRegistryReadPolicy`, `ProviderRegistrySubmitPolicy`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
   - `ChangeRequestSubmissionService`: Translates mutation requests (`POST`/`PUT`/`DELETE`) into asynchronous `ProviderRegistryChangePragma` envelopes for governed workflow approval.
   - `CapabilityStatementProvider`: Emits the platform `CapabilityStatement` metadata resource.
 - **Runtime Dependencies**: `calliope`, `themis-core`, Spring Boot Starter Web (`3.2.5`), HAPI FHIR Structures R5 (`7.2.0`).
@@ -100,6 +166,20 @@ pylai/
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Pylai External Interoperability Service](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-responsibility)
+- [Ingress Context and semantic processing](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-pathway-ingress)
+- [Protocol progress versus authoritative acceptance](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#acceptance-and-acknowledgement)
+- [Server READ/SEARCH and governed change](../markdown/05-information-systems-architecture/pylai-external-interoperability.md#pylai-server-controller)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Pylai Owns
 - Inbound TCP socket listening and MLLP framing over port `2575` (`pylai-mllp-in`).
 - HL7 v2 trigger event parsing and conversion into FHIR `Communication` and `Task`/`Pragma` models.
@@ -107,6 +187,11 @@ pylai/
 - Outbound MLLP transmission and synchronous remote ACK validation (`pylai-mllp-out`).
 - Dedicated per-destination Petasos egress queue consumption (`petasos.queue.mllp.outbound.<endpoint-id>`).
 - Direct FHIR REST API gateway routing (`pylai-fhir-registry`).
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Pylai Explicitly Does NOT Own (Anti-Responsibilities)
 - Authoritative relational database schemas or direct JPA tables (owned by Mnemosyne).

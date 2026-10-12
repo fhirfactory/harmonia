@@ -8,7 +8,7 @@ from documented collaboration intent, principally [L13](sources.md#l13),
 [L29](sources.md#l29), [L01](sources.md#l01), [L14](sources.md#l14) and
 [L19](sources.md#l19). External integration contracts and runtime products remain
 separate architectural concerns.
-The [U02–U11 adjudications](sources.md#u02) distinguish execution/activity/information,
+The [U02–U14 adjudications](sources.md#u02) distinguish execution/activity/information,
 semantic selection, persistent handoff and Journey observation. Specialisations
 reuse common facilities; the [shared semantic view](pathways-journeys-and-handoff.md)
 records detailed boundaries and retained uncertainty.
@@ -22,7 +22,7 @@ records detailed boundaries and retained uncertainty.
 | M03 | **Ponos governed execution ingress, dispatch and progression** | Consumer resolves Pragma/context through Mneme and establishes its distinct FulfillmentTask for ActionableTask undertaking; Ponos manages execution and execution retry/re-attempts | U02/U05. Ponos does not convert an opaque transport payload into information it manages, match Subscriptions or own handoff dead-letter recovery. Detailed continuation/acknowledgement CDG-01/03/16/17. |
 | M04 | **Ergo/Ergon Context Loader/Unloader and Erga Aggregation** | Ergo declares likely non-exhaustive set; Mneme Context Load materialises; Ergo Loader exposes values; bounded logic acts/produces Pragma Output; Unloader returns results; Mneme Context Save manages consequences | U10 refines U02/U04–U06; Loader/Unloader differ from Mneme services and Unloader is not persistence. Bounded Adhoc acquisition supported; Erga collection and Praxis Pathway Aggregation unchanged. Detail CDG-45/01/06. |
 | M05 | **Mneme Context/Pragma-facing four-service surface and supporting coordination** | Context Load, Context Save, Adhoc Resource Access, Adhoc Search; controlled concurrent active use, Mnemosyne authoritative persistence outcomes and post-commit convergence | U10/U11 and AX-05/07/11/12/14/15. C11 facade/carrier intent is supporting, not extra exposed services/network boundary; Context/resource versions and active generation distinct. Detail CDG-31/45/47/48. |
-| M06 | **Governed definition/reference availability and Praxis management collaboration** | Energeia Praxis Management Services manage operational definition/configuration; Mneme manages governed representations and availability; Mnemosyne C&G supplies durability; Calliope reference definitions consumed locally | U06 extends L04/L19 historical loader/seeder descriptions without adopting reload/version algorithms. Publishing/Subscription/Pattern semantic management remains Mneme. Detailed definition/lifecycle contracts CDG-01/06/24/36. |
+| M06 | **Governed definitions and runtime DataSet collaboration** | Energeia manages Praxis; Mneme manages governed runtime representations/selection; Calliope-Models supplies build-time structures/definitions and Calliope-DataSets manages mutable governed content through established access/persistence | U06/U13. Static structural dependency differs from runtime operational collaboration; no self-bootstrapping contracts, mandatory universal mediator or new workflow engine. Detail CDG-24/49. |
 | M07 | **Themis constrained distributed enforcement and Kleio Audit Capture** | External OIDC/OAuth authentication establishes trusted Identity (SEP). Themis resolves authoritative Criteria/collections/direct and AuthorisationRole assignments, temporal constraints and applicable PractitionerCapacity into precomputed Identity-specific PEP-Criteria through PEP-Context; local Themis PEP enforces at action-controlling host. Kleio constructs immutable AuditEvent from significant client occurrences | U07/U08/U12, AX-04/07–09/14. Conjunctive Criterion, additive UNION grants, no negative Criteria or general-purpose interpreter. Valid sufficient context may continue during PDP loss; required new context waits, unavailability is not DENY. Untagged information governed/fail-closed. Required durable audit capture and Dokimasia terminal rules retained; CDG-42/43. |
 | M08 | **Agora collaboration handoff** | Collaboration requests/events move through Petasos; Agora identity/lifecycle/membership/transaction handling governs collaboration protocol projection. | AGENTS Invariant 10; L12. No direct Agora-to-Ponos dependency or raw Matrix type leakage; summary sources/partial transaction effects unresolved, CDG-19/21–23. |
 | M09 | **Harmonia operational observation/reporting and presentation mediation** | Energeia owns Harmonia operational management; Journey is common observed progression; Iris presents; component contributors retain their responsibilities; external IT/Ops manages technical platform | U06: R1.x/R2.x Observe → Report; no autonomous adaptation. Journey, diagnostics, AuditEvent and findings distinct; detailed freshness/projection/reporting contracts CDG-28/38/39; terminal rules retained. |
@@ -55,12 +55,14 @@ end-to-end algorithms or new external contracts.
    available observations of execution, just as for Pub/Sub or mixed progression.
    Praxis supplies the operational/assurance envelope; detailed control contracts
    remain CDG-01/06.
-3. **Inbound acceptance / Registry change:** Pylai captures governed information
-   and requests appropriate handoff. Pragma-based processing resolves information
-   through Mneme; governed change uses Mnemosyne durable establishment, distinct
-   from Petasos acceptance. REC-001 remains: downstream publish/cache failure
-   must not yield AA. Exact acceptance, recovery, external status and historical
-   direct-store conflicts remain CDG-11/16/32/34.
+3. **Inbound acceptance / Server interaction:** PylaiPathway passes Communication
+   Information through IngressHoros/Ergo.Ingress to specialised initial Context
+   establishment; developer BusinessLogic maps Task.input to Task.output. Ergo.Egress
+   feeds Queue[TermaName], the Praxis.PathwaySegment. Durable Harmonia acceptance
+   awaits authoritative Pragma/Task persistence; protocol ACK, cache and queue
+   success differ. Server READ/SEARCH instead uses Diadromí-Controller and existing
+   Mneme Adhoc services, without fabricated work. [U14 patterns](pylai-external-interoperability.md#pylai-patterns);
+   detailed transition/protocol/uncertain-effect contracts remain CDG-32/34/50.
 4. **Destination observations:** Petasos owns operational handoff obligations;
    Pylai contributes external delivery outcomes. Governed Task/Pragma information
    and Journey may represent observations with REC-002 granularity. Exact parent
@@ -74,6 +76,16 @@ end-to-end algorithms or new external contracts.
    marker failure and uncertain effects remain CDG-19; no exactly-once contract
    is inferred. Observation may contribute to Journey without making every observation an
    AuditEvent; required significant audit information must nevertheless be captured.
+
+## External interaction versus durable internal collaboration
+
+[Pylai/Horos](pylai-external-interoperability.md) is the canonical external
+interaction view. Diadromí and Controller keep only transient active interaction
+state; loss terminates it and appropriate client retry starts a new Diadromí.
+Petasos alone owns queue/handoff recovery and dead-letter state. EgressHoros
+returns communication state/outcome before Ergo.ContextUnloader completes;
+PylaiBroker interacts from existing BusinessLogic without new work constructs.
+No universal Controller or additional Mneme service is implied.
 
 ## Context lifecycle and persistence collaboration
 
@@ -124,12 +136,13 @@ Journey. Transaction/retry/failover and target selection remain unresolved.
 | Internal activity collaboration | Execution/context/composition and continuing responsibility | Camel, direct/SEDA/JMS routes, threads, process/runtime topology. |
 | Specialised execution/activity collaboration | DigitalTwin/Dokimasia reuse Ponos; Behaviour/Dokimasia Ergon reuse Ergo/Ergon; Erga supports assembly/concurrent activity; terminal assurance rules constrain inherited hooks | Implementation inheritance, Twin scheduling/queue bindings and AI service/model/provider architecture; no choice made here. |
 | Managed information collaboration | Application-facing access, active coordination, durable establishment and truthful outcomes | Hot Rod, CAS/locking, HTTP/internal persistence transport, SQL/JPA and cache distribution. |
-| External interaction | Execution requests an interaction; Pylai governs representation/conformance and non-destructive publication | Domain06 external/cross-boundary interfaces, standards interaction details and Domain07 connectivity/runtime realisation. |
+| External interaction | Pylai Terma communication mechanics; transient non-recoverable Diadromí; Pathway/Broker/Server patterns with local Themis enforcement, Kleio capture and applicable Journey/assurance | Domain06 detailed external contracts; connector/protocol implementation and Domain07 substrate. Strategy exclusion tension is explicit CDG-51, not silently resolved by this allocation. |
 | Matrix collaboration | Agora governs collaboration context and protocol encapsulation, using internal handoff | Matrix Client-Server/Admin/Application Service transports and homeserver deployment. |
 
 The middleware product inventory in L17 is a technology/support catalogue. It
 does not mean that all internal middleware belongs in Domain06 or that each
-runtime library/product becomes an Information Systems component. Pylai's
-standards-facing boundary is preserved without transferring all generic transport
-machinery to it. Database/access and evidence/assurance seams remain separate;
+runtime library/product becomes an Information Systems component. Pylai's broader
+External Interoperability Service responsibility includes Terma mechanics without
+transferring generic network infrastructure ownership to it; CDG-51 retains the
+contrary Strategy exclusions. Database/access and evidence/assurance seams remain separate;
 technology availability cannot silently weaken those responsibilities.
