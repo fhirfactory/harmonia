@@ -3,16 +3,18 @@
 # B1 Worked Example — Health Information Access
 
 **Method validation example, 2026-10-13 — for Mark/ChatGPT adjudication.
-No B1 PASS, B2 capability mapping or component allocation is established.**
+This example establishes no B1 PASS or component allocation. The separate
+[B2.1 record](b2-1-individual-care-delivery-health-information-access.md)
+records the approved capability relationships; B2.2 is not commenced.**
 
 ## 1. Bounded Service and request
 
 This example applies the [Step B method](step-b-method.md) within the established
 [Health Information Access responsibility](../../03-business-architecture/behaviours/05-intrinsic-enablement.md#23-health-information-access).
 It validates the method rather than mapping all enterprise Business Capabilities
-to this enabling capability. The Business Capability anchor for each later
-operational use remains to be traced in B2; no consumer, ancestry, identifier or
-catalogue replacement is invented here.
+to this enabling capability. B2.1 establishes only Individual Care Delivery and
+its six L2 anchors; other operational uses remain untraced here. No additional
+consumer, ancestry, identifier or catalogue replacement is invented here.
 
 > **Health Information Retrieval Service** — enables a client to request health
 > information applicable to an identified subject, purpose and context.
@@ -190,7 +192,7 @@ scoped/filtered result. Shared carriage does not broaden those relationships.
 
 | Method concern | What the example demonstrates |
 | :--- | :--- |
-| Dual anchor / no layer skipping (R01–02) | Established enabling responsibility and an explicit later Business Capability trace; no fabricated enterprise anchor or direct component shortcut. |
+| Dual anchor / no layer skipping (R01–02) | Established enabling responsibility; the separate B2.1 record supplies the agreed Individual Care Delivery anchors without a direct component shortcut. |
 | Information semantics (R03, R10) | Each Function distinguishes requires, consumes and produces; action/content carriage does not imply equal use. |
 | Behaviour and accountability (R04–08) | One client Service Contract and six bounded transitions; ordered fulfilment does not impose a mandatory Process or equate Functions with Services. |
 | Additive progression (R09) | Originating request, Context and preceding information remain available under applicable constraints. |

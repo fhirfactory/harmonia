@@ -2,8 +2,9 @@
 
 # Domain05 Step B — Capability + Information Traceability Method
 
-**B1 reconciliation, 2026-10-13 — returned for Mark/ChatGPT adjudication;
-B1 PASS is not declared. B2 capability mapping is not commenced.**
+**Current standing, 2026-10-13 — B2.1: PASS; B2.2 is not commenced.**
+The B1 reconciliation was returned for Mark/ChatGPT adjudication; this bounded
+B2.1 reconciliation does not separately declare B1 PASS.
 
 ## 1. Authority, baseline and scope
 
@@ -17,8 +18,11 @@ and [gap register](../gaps.md) remain explicit.
 This document is the canonical Step B traceability method. It records the
 supplied adjudicated B1 rules and validates their use with the bounded
 [Health Information Access example](health-information-access-worked-example.md).
-It does not perform B2, allocate every example Function to software, invent
-Capability ancestry/identifiers, or establish exhaustive coverage.
+The separately recorded [B2.1 PASS](b2-1-individual-care-delivery-health-information-access.md)
+establishes only Individual Care Delivery and its six agreed L2 capabilities
+`enabled-by Health Information Access`. The method does not allocate every
+example Function to software, invent Capability ancestry/identifiers or
+establish exhaustive coverage. B2.2 remains outside this reconciliation.
 
 The [Completion Plan](../../architecture-completion-plan.md#33-domain05-five-stage-completion-method),
 [Architectural Axioms](../../governance/architectural-axioms.md) and repository
@@ -210,6 +214,45 @@ relationship. Record unresolved relationships explicitly under AX-17. A derived
 component summary must remain navigable back to this reasoning. These recording
 requirements establish a method, not a B2 mapping or a new identifier scheme.
 
+<a id="capability-enablement-semantics"></a>
+
+### Capability-enablement semantics
+
+`enabled-by` expresses a **material capability-enablement relationship**. It
+does not transfer Business Capability accountability to the Business Enabling
+Capability. It does not mean every runtime exercise of the Business Capability
+must invoke the Business Enabling Capability. Capability traceability SHALL NOT
+be treated as a mandatory runtime dependency model.
+
+For B2.1, Health Information Access enables governed access to relevant health
+and care information; it does not interpret, judge, plan, authorise or perform
+clinical care. Information access does not itself confer authority to act on
+that information. The [B2.1 record](b2-1-individual-care-delivery-health-information-access.md)
+holds the approved L1 and six L2 relationships and their rationales.
+
+The canonical Domain02 rules govern capability/context distinction:
+
+- [B2-R05 — Capability Is Independent of Care Delivery Context](../../02-strategy/capabilities/business-capabilities.md#b2-r05).
+- [B2-R06 — Context Independence Test](../../02-strategy/capabilities/business-capabilities.md#b2-r06).
+
+<a id="b2-r07"></a>
+
+### B2-R07 — Health Information Access Scope
+
+Health Information Access enables governed access to information concerning an
+individual's health, clinical state, care intent, care delivery and health
+outcomes. It does not represent general-purpose access to operational,
+workforce, financial, corporate or service-resource information merely because
+such information may be relevant to healthcare activity.
+
+| Information concern | Capability boundary |
+| :--- | :--- |
+| Individual clinical / health / care information | Health Information Access |
+| Operational / workforce / financial / corporate / service-resource information | Appropriate other enabling capability |
+
+This scope rule preserves the conceptual distinction without resolving every
+edge case or assigning additional enabling-capability relationships.
+
 ## 5. Application responsibility restraint
 
 The [worked example](health-information-access-worked-example.md) validates
@@ -228,5 +271,6 @@ candidate. Existing responsibilities remain:
 | External interoperability | Pylai |
 
 The six example Functions are not six components or six new Services.
-Metabolē establishes no common manager. Existing detailed deferrals remain;
-this reconciliation returns B1 documentation for adjudication and stops before B2.
+Metabolē establishes no common manager. Existing detailed deferrals remain.
+B2.1 records capability enablement only; it adds no application allocation and
+does not commence B2.2.

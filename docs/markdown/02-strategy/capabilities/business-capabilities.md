@@ -25,6 +25,46 @@ The 18 L1 Business Capabilities are governed by five foundational quality rules:
 | **CM-R04** | **No Junk Drawers** | Every capability has a cohesive, singular focus. Catch-all categories ("General Administration", "Miscellaneous Services") are strictly prohibited. |
 | **CM-R05** | **Global Name Uniqueness** | Every capability name across all tiers and levels is globally unique within the Harmonia architecture. |
 
+### Capability decomposition and educational documentation
+
+Capability decomposition SHALL be driven by architectural distinction, not by the
+need to provide explanatory detail. Where further decomposition provides no
+materially distinct business ability, illustrative activities, scenarios and
+examples SHOULD be used instead.
+
+Capability explanations may use **Definition → State Change → Boundary →
+Illustrative Activities → Example Care Contexts → Explicit Exclusions**. These
+explanatory elements do not establish subordinate capabilities. Examples SHALL
+NOT be represented as subordinate capabilities unless a later architectural
+analysis demonstrates a materially distinct business ability and architectural
+consequence. Individual Care Delivery requires no L3 decomposition at present;
+L3 capabilities SHALL NOT be invented for educational completeness.
+
+<a id="b2-r05"></a>
+
+### B2-R05 — Capability Is Independent of Care Delivery Context
+
+A Business Capability describes what the healthcare enterprise must be capable
+of doing. Care setting, delivery mode, temporal pattern and organisational
+arrangement describe the context in which the capability is exercised and SHALL
+NOT, by themselves, define separate Business Capabilities.
+
+<a id="b2-r06"></a>
+
+### B2-R06 — Context Independence Test
+
+If changing care setting, delivery mode or temporal context does not materially
+change the business ability exercised, the activity SHALL remain part of the
+same Business Capability. A separate capability is justified only where a
+materially distinct business ability exists.
+
+Accordingly, **Acute, Planned/Scheduled and Longitudinal Care SHALL NOT be used
+as the L2 decomposition of Individual Care Delivery**. Inpatient, ambulatory,
+community, home, virtual, emergency, elective and similar descriptions do not
+become Individual Care Delivery capabilities merely because they identify
+recognisable care contexts. Context examples below illustrate this rule; they
+are not a formal taxonomy of care contexts.
+
 ---
 
 ## Harmonia Relevance Taxonomy
@@ -94,9 +134,173 @@ These regions are natural contextual groupings of Business Capabilities. They ar
 ### Region 1: Care & Health Delivery
 
 #### 01. Individual Care Delivery
+
 - **Classification**: **Harmonia-Relevant**
-- **Operational Scope**: The direct clinical assessment, diagnosis, treatment planning, intervention, monitoring, and ongoing care provided to an individual patient across acute, ambulatory, community, and home care settings.
+- **Operational Scope**: Individual health assessment, clinical determination, individual care planning, clinical intervention, individual health monitoring and individual care review, independent of care setting, delivery mode, temporal pattern or organisational arrangement.
 - **Harmonia Enabling Role**: Harmonia provides clinical notification dispatch, point-of-care longitudinal health record assembly, and reliable transmission of clinical orders and results, ensuring treating clinicians possess complete, accurate patient context.
+
+The agreed L2 decomposition is the following six Business Capabilities. Their
+state changes distinguish business abilities; the list does not prescribe an
+execution sequence or a runtime dependency model. **L3 decomposition is not
+currently required.** History taking, examination, diagnosis, prescribing,
+medication administration, surgery, therapy and counselling may illustrate these
+abilities without becoming additional capability levels.
+
+| L2 label | Business Capability |
+| :--- | :--- |
+| 01.01 | [Individual Health Assessment](#individual-health-assessment) |
+| 01.02 | [Clinical Determination](#clinical-determination) |
+| 01.03 | [Individual Care Planning](#individual-care-planning) |
+| 01.04 | [Clinical Intervention](#clinical-intervention) |
+| 01.05 | [Individual Health Monitoring](#individual-health-monitoring) |
+| 01.06 | [Individual Care Review](#individual-care-review) |
+
+<a id="individual-health-assessment"></a>
+
+##### 01.01 Individual Health Assessment
+
+**Definition:** The capability to establish an understanding of an individual's
+current health state through the collection, consideration and evaluation of
+relevant clinical, health and contextual information.
+
+**State Change:** `Health information → Assessed health state / findings`
+
+**Boundary:** Assessment establishes the assessed health state or findings.
+Existing records can contribute, while direct examination, observation,
+history-taking or measurement may establish information independently of Health
+Information Access.
+
+**Illustrative Activities:** History taking, physical examination, consideration
+of available clinical records and measurement of current observations.
+
+**Example Care Contexts:** An emergency presentation, a scheduled consultation
+or a home visit may exercise the same assessment ability.
+
+**Explicit Exclusions:** Establishing clinical conclusions, selecting the care
+response and performing an intervention are not the assessment itself.
+
+<a id="clinical-determination"></a>
+
+##### 01.02 Clinical Determination
+
+**Definition:** The capability to interpret assessed health information and
+establish clinically meaningful conclusions about an individual's health state,
+condition, risk or prognosis.
+
+**State Change:** `Assessed findings → Clinically interpreted understanding`
+
+**Boundary:** Clinical Determination interprets findings and establishes their
+clinical meaning, including the clinical significance of change identified by
+monitoring.
+
+**Illustrative Activities:** Diagnosis, clinical risk interpretation and
+prognostic judgement.
+
+**Example Care Contexts:** Interpretation during acute care or a longitudinal
+follow-up consultation remains the same business ability.
+
+**Explicit Exclusions:** Clinical Determination does not include establishing
+care needs or selecting the response to the determination.
+
+<a id="individual-care-planning"></a>
+
+##### 01.03 Individual Care Planning
+
+**Definition:** The capability to establish the intended clinical response to an
+individual's assessed and clinically interpreted health state, including the
+objectives, interventions and monitoring required to progress their care.
+
+**State Change:** `Clinically interpreted understanding → Intended course of care`
+
+**Boundary:** Planning establishes what is intended to happen. It does not imply
+that the planned care has occurred.
+
+**Illustrative Activities:** Establishing care objectives, selecting intended
+therapy, prescribing as an expression of clinical intent and planning monitoring.
+
+**Example Care Contexts:** An intended course of care may be established during
+an inpatient encounter, an ambulatory consultation or a virtual consultation.
+
+**Explicit Exclusions:** Performing planned care is Clinical Intervention.
+Ordering, requesting, scheduling and allocating care do not themselves establish
+that an intervention has occurred. Operational service/resource availability
+information is not Health Information Access merely because it informs planning.
+
+<a id="clinical-intervention"></a>
+
+##### 01.04 Clinical Intervention
+
+**Definition:** The capability to perform clinical actions intended to alter,
+maintain or otherwise manage an individual's health state in accordance with an
+established care intent.
+
+**State Change:** `Intended care → Care action performed`
+
+**Boundary:** Clinical Intervention establishes that a care action was performed.
+An intervention need not produce a successful clinical outcome. Access to an
+intended intervention does not confer authority to perform it.
+
+**Illustrative Activities:** Medication administration, surgery, therapy and
+counselling when performed as clinical actions under an established care intent.
+
+**Example Care Contexts:** An intervention may be performed in inpatient,
+community or home care, or through a suitable virtual delivery mode.
+
+**Explicit Exclusions:** Ordering, requesting, scheduling or allocating an
+intervention is not itself the Clinical Intervention; selecting the intended
+response belongs to planning.
+
+<a id="individual-health-monitoring"></a>
+
+##### 01.05 Individual Health Monitoring
+
+**Definition:** The capability to observe and evaluate an individual's health
+state over time in order to identify clinically meaningful change, stability or
+deviation from an expected state or trajectory.
+
+**State Change:** `Observed health states over time → Change / stability / deviation identified`
+
+**Boundary:** Monitoring establishes change, stability or deviation.
+Interpretation of the clinical significance of that change remains Clinical
+Determination.
+
+**Illustrative Activities:** Comparing serial observations with a baseline or
+expected trajectory and identifying a trend or deviation.
+
+**Example Care Contexts:** Serial inpatient observations and longitudinal home
+monitoring exercise the same ability across different time patterns and settings.
+
+**Explicit Exclusions:** Clinical interpretation of an identified change and
+selection of the care response are not monitoring. Evaluating care effectiveness
+against its objectives belongs to Individual Care Review.
+
+<a id="individual-care-review"></a>
+
+##### 01.06 Individual Care Review
+
+**Definition:** The capability to evaluate the progress and effectiveness of an
+individual's care against its intended objectives and establish the continuing
+appropriateness of the current care intent.
+
+**State Change:** `Care progress / outcomes → Effectiveness and continuing appropriateness established`
+
+**Boundary:** Care Review evaluates the care itself against its intent and
+objectives; it is not simply another name for reassessment.
+
+**Illustrative Activities:** Reviewing response to delivered therapy against care
+objectives and evaluating whether the current care intent remains appropriate.
+
+**Example Care Contexts:** Review during an admission, a scheduled follow-up or
+longitudinal care retains the same evaluation purpose.
+
+**Explicit Exclusions:** Reassessment alone does not establish care effectiveness.
+Establishing a revised intended course of care belongs to Individual Care Planning.
+
+The approved [B2.1 trace](../../05-information-systems-architecture/traceability/b2-1-individual-care-delivery-health-information-access.md)
+records Individual Care Delivery and each of these six L2 capabilities as
+`enabled-by Health Information Access`. Enablement preserves clinical
+accountability and does not require every runtime exercise to invoke the enabling
+capability. No other capability mapping is established here.
 
 #### 02. Care Access & Coordination
 - **Classification**: **Harmonia-Relevant**

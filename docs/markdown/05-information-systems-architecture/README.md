@@ -41,18 +41,23 @@ The authorised Domain05 approach is:
 4. Identify excess candidate features/components and establish the MVP Candidate Architecture.
 5. Establish the implementation plan.
 
-**Current activity: B1 — Capability + Information Traceability Method.**
+**Current result: B2.1 — Individual Care Delivery ↔ Health Information Access: PASS.**
+The [B2.1 trace](traceability/b2-1-individual-care-delivery-health-information-access.md)
+records the approved L1 and six L2 capability-enablement relationships and their
+rationales. B2.2 is not commenced; no other capability mapping or application
+allocation is established by this reconciliation.
 The [governing method](traceability/step-b-method.md), canonical Domain04
 [Metabolē pattern](../04-information-architecture/patterns/metabole.md) and
 [Health Information Retrieval Service example](traceability/health-information-access-worked-example.md)
-record the supplied decisions and are returned for Mark/ChatGPT adjudication.
-**B1 PASS is not declared; B2 capability mapping is not commenced.**
+retain the B1 decisions and method demonstration. The earlier B1 reconciliation
+was returned for Mark/ChatGPT adjudication; this task does not separately declare
+B1 PASS.
 Step A is complete at the sufficiently-faithful candidate acceptance boundary.
 Retained candidate deferrals remain explicit and upstream coverage is unproven.
 
 The following Step-A reconciliation history records the standing at each review;
 its A4-pending/Step-B-not-started statements do not supersede the current
-acceptance and B1 scope above.
+acceptance and bounded B2.1 result above.
 
 Initial reconstruction (A1, recorded here as Step 1) is complete. The
 [U17 assessment](#sylloge-adjudication) now records A2 COMPLETE and A3 COMPLETE
@@ -81,7 +86,7 @@ The [U19 Digital Twin Behaviour reconciliation](#digital-twin-behaviour-adjudica
 captures the agreed A4.7 execution decisions and closes that taxonomy wording
 conflict. It prepares documentation for Mark/ChatGPT review; **A4.7 is not declared
 PASS**; A4 acceptance and Step-B commencement were still pending at that review.
-Capability mapping, Information Architecture coverage, upstream requirements
+Remaining capability mapping, Information Architecture coverage, upstream requirements
 gap analysis, excess-feature analysis, MVP
 determination, final baselining and implementation planning remain future work.
 The [documentation gap register](gaps.md) records insufficiencies within the
@@ -92,7 +97,8 @@ record does not declare the Domain Completion Gate satisfied.
 
 | View | Contents |
 | :--- | :--- |
-| [Step B traceability method](traceability/step-b-method.md) | Canonical B1-R01–R12 rules, graph, semantic sources and restraint; B1 returned for adjudication, B2 not commenced. |
+| [Step B traceability method](traceability/step-b-method.md) | Canonical B1-R01–R12 rules, graph, enablement semantics, B2-R05/R06 references and B2-R07 scope. |
+| [B2.1 — Individual Care Delivery ↔ Health Information Access](traceability/b2-1-individual-care-delivery-health-information-access.md) | PASS for L1 and six L2 relationships; no L3 or application allocation; B2.2 not commenced. |
 | [Health Information Access worked example](traceability/health-information-access-worked-example.md) | Six Function-level requires/consumes/produces traces and additive Metabolē progression; no component allocation. |
 | [B1 reconciliation and validation record](reviews/b1-method-reconciliation.md) | Affected files, terminology conflicts, checks and retained questions for Mark/ChatGPT adjudication. |
 | [System map](candidate-system-map.md) | Responsibility-based software hierarchy; separate collaboration map; construct standing. |

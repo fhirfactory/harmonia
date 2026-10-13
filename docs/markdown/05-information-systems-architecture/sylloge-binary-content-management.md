@@ -6,7 +6,8 @@
 [U17](sources.md#u17) records the explicit architectural adjudication resolving
 F31/D15 and CDG-25. [Scope and authority](README.md) apply. That review did not
 itself establish A4 acceptance or commence Step B. The explicit 2026-10-13 B1
-task now confirms A4 PASS; B1 is returned for adjudication and B2 is not commenced.
+task confirms A4 PASS. The [current standing](README.md) additionally records
+the bounded B2.1 PASS; B2.2 is not commenced. This adds no Sylloge mapping.
 
 <a id="sylloge-responsibility"></a>
 

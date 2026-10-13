@@ -2,6 +2,26 @@
 
 # Candidate Architecture Sources and Reconciliation
 
+## B2.1 Individual Care Delivery and Health Information Access adjudication input
+
+<a id="u21"></a>
+
+**U21 — 2026-10-13:** the explicit B2.1 reconciliation task supplies the agreed
+six L2 Individual Care Delivery definitions, essential state changes and
+boundaries; the decision not to require L3; architectural-distinction-led
+decomposition and educational examples; B2-R05/R06 context independence;
+B2-R07 Health Information Access scope; and preserved `enabled-by` semantics.
+It establishes **B2.1 — PASS** for the L1 and six L2 relationships with Health
+Information Access and their supplied rationales. It explicitly excludes B2.2,
+other capability mappings and new architectural decisions.
+
+Canonical meaning is held in the [Domain02 Business Capability catalogue](../02-strategy/capabilities/business-capabilities.md#01-individual-care-delivery),
+the [Step B method](traceability/step-b-method.md#capability-enablement-semantics)
+and the [B2.1 trace](traceability/b2-1-individual-care-delivery-health-information-access.md).
+This input reconciles the earlier B2-not-started status; it does not separately
+declare B1 PASS, allocate clinical accountability to enablement, or establish
+runtime dependencies. Earlier review/source records retain their dated scope.
+
 ## B1 method and Metabolē adjudication input
 
 <a id="u20"></a>
@@ -27,10 +47,10 @@ imported or rewritten by U20; the supplied task decisions establish the change.
 
 Earlier source dispositions below retain their dated review scope. Statements
 that those earlier reconciliations did not accept A4 or commence Step B do not
-override U20's acceptance and bounded B1 scope.
+override U20's acceptance or U21's bounded B2.1 result.
 
-**Standing: reconstruction and bounded Step-A adjudication provenance for the
-Harmonia Candidate Information Systems Architecture.** [Orientation and scope](README.md)
+**Standing: candidate reconstruction/adjudication and bounded Step B decision
+provenance.** [Orientation and scope](README.md)
 govern all uses of this register.
 Source keys identify documentary evidence, not architectural authority rankings.
 

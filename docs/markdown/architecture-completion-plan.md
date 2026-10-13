@@ -332,8 +332,12 @@ of Service/Function/Process and typed Function/Information relationships, and
 preserved application responsibility. Its bounded
 [Health Information Access example](05-information-systems-architecture/traceability/health-information-access-worked-example.md)
 validates the method without allocating the Functions to components.
-**Current B1 reconciliation is returned for Mark/ChatGPT adjudication; B1 PASS is
-not declared. B2 capability mapping is not commenced.**
+The [B2.1 trace](05-information-systems-architecture/traceability/b2-1-individual-care-delivery-health-information-access.md)
+records **Individual Care Delivery ↔ Health Information Access: PASS** at L1
+and across its six agreed L2 capabilities. Capability enablement does not transfer
+clinical accountability or establish mandatory runtime dependencies. **B2.2 is
+not commenced.** This bounded reconciliation does not separately declare B1 PASS,
+establish other capability mappings or allocate application realisation.
 
 #### Step C — Architecture Gap Analysis
 
@@ -385,9 +389,11 @@ waive subsequent Integration or Technology Architecture obligations.
 ## 4. Current Programme Position
 
 **2026-10-13 — A4 PASS; accepted Candidate Architecture baseline for Step B.**
-This standing is explicitly supplied by the B1 task decision. Current work is
-the [B1 method reconciliation](05-information-systems-architecture/traceability/step-b-method.md)
-for Mark/ChatGPT adjudication, without declaring B1 PASS or beginning B2.
+This acceptance standing is explicitly supplied by the B1 task decision. The
+subsequent [B2.1 reconciliation](05-information-systems-architecture/traceability/b2-1-individual-care-delivery-health-information-access.md)
+records **Individual Care Delivery ↔ Health Information Access: PASS**, including
+its six L2 relationships. **B2.2 is not commenced.** The earlier B1 reconciliation
+record retains its review scope; no independent B1 PASS declaration is added.
 Steps C–E and the Domain Completion Gate remain uncompleted.
 
 The following 2026-10-11 reconstruction account is historical evidence; its
@@ -444,7 +450,7 @@ analysis; the historical report remains unchanged.
 | Domains01–02 — Motivation / Strategy | Established upstream intent and capability context; earlier programme history retained below |
 | Domain03 — Business Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-09 |
 | Domain04 — Information Architecture | Semantically complete for the agreed R1.x/R2.x scope — 2026-10-10 |
-| Domain05 — Information Systems Layer Architecture | **A4 PASS**, accepted Step-B candidate baseline — explicit 2026-10-13 B1 task decision. A1/A2 complete; A3 complete with non-blocking deferrals retained. B1 method reconciled for Mark/ChatGPT adjudication; no B1 PASS declared; B2 mapping not commenced. Steps C–E and the Domain Completion Gate remain uncompleted. |
+| Domain05 — Information Systems Layer Architecture | **A4 PASS**, accepted Step-B candidate baseline — explicit 2026-10-13 B1 task decision. A1/A2 complete; A3 complete with non-blocking deferrals retained. **B2.1 PASS** — Individual Care Delivery and six L2 capabilities enabled-by Health Information Access. B2.2 not commenced; no independent B1 PASS declaration added. Steps C–E and the Domain Completion Gate remain uncompleted. |
 
 ### Established upstream completion and earlier Domain05 transition
 

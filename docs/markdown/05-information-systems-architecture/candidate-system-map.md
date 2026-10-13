@@ -10,7 +10,9 @@ resolve through [Sources](sources.md).
 
 **Current baseline:** A4 — PASS; accepted for Step B. The
 [B1 traceability method](traceability/step-b-method.md) governs subsequent
-mapping; B2 is not commenced. Pragma C07 and Pylai.Diadromí C44 are distinct
+mapping. [B2.1](traceability/b2-1-individual-care-delivery-health-information-access.md)
+records capability enablement as PASS without software allocation; B2.2 is not
+commenced. Pragma C07 and Pylai.Diadromí C44 are distinct
 architectural realisations of
 [Metabolē](../04-information-architecture/patterns/metabole.md#2-architectural-realisation).
 Metabolē is conceptual and is not added to this software hierarchy as a component

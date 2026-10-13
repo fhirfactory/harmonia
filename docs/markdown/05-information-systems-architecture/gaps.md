@@ -160,7 +160,8 @@ These are non-blocking detailed design matters, not unresolved Candidate
 Architecture responsibility questions. U16 closed CA-01–03; U17 closes the
 remaining CA-04/F31/D15 question. That review did not itself accept A4 or commence
 Step B. The [current standing](README.md) records the subsequent explicit
-A4 PASS and bounded B1 reconciliation; B2 mapping is not commenced.
+A4 PASS and the bounded B2.1 PASS; B2.2 is not commenced. No Sylloge
+capability mapping follows from B2.1.
 
 <a id="agora-omilia-contracts"></a>
 

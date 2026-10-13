@@ -59,6 +59,12 @@ Business Capabilities represent what the healthcare enterprise must be capable o
 - **Quality Rules**: Governed by rules CM-R01 through CM-R05 (Coverage, Orthogonality, Semantic Clarity, No Junk Drawers, Global Name Uniqueness).
 - **Documentation**: [Business Capabilities](business-capabilities.md).
 
+Individual Care Delivery has the [six agreed L2 capabilities](business-capabilities.md#01-individual-care-delivery).
+Its [decomposition and context rules](business-capabilities.md#capability-decomposition-and-educational-documentation)
+require architectural distinction rather than explanatory detail; L3 decomposition
+is not currently required. Care contexts and illustrative activities do not
+establish additional capability levels.
+
 The approved reconciliation appends 17 Health Service Governance and 18 Health Service Assurance, clarifies 06's operational quality/safety/improvement boundary, and renames 14 Health Service Direction & Stewardship. Existing unrelated semantics are preserved. Relevance classification for 17–18 and enabling derivation for 17 remain unresolved. The separately approved [Health Service Assurance derivation](../capability-maps/health-service-assurance-derivation.md) establishes only the specified BC-18 enabling and collaborative EC relationships; the aggregate progression diagram does not establish additional relationships.
 
 ### 2. Business Enabling Capability Tier
