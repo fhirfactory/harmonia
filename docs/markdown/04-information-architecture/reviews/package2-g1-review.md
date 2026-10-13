@@ -1338,7 +1338,20 @@ Examples such as `CT1-01.FN-01`, `CT1-01.CT2-02.PR-01` and `CT1-01.CT2-02.CT3-03
 
 ### 10.2 Ancestry and Behavioural Anchoring
 
+<!-- Historical decision wording — superseded for Feature ancestry — start -->
+
+> **2026-10-13 supersession:** The lower-tier-omission allowance in the historical
+> wording below is superseded for Feature framing by the
+> [fixed-decomposition decision](../../02-strategy/reviews/fixed-capability-decomposition-decision.md)
+> and [current metamodel §1.1](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology).
+> Every fully reconciled Feature requires CT1 → CT2 → CT3 ancestry and an
+> immediate CT3 frame. Direct Function / Service / Process anchoring and the
+> prohibition on fabricated elements remain valid. The original decision text
+> is retained unchanged as historical evidence.
+
 Not every branch must materialise every possible lower Capability Tier or a Feature. Functions, Services and Processes MAY be anchored directly at any Capability Tier or Feature establishing responsibility for that behaviour. Missing CT2, CT3 or FT elements SHALL NOT be manufactured to provide behavioural anchoring.
+
+<!-- Historical decision wording — superseded for Feature ancestry — finish -->
 
 Where a lower Capability Tier is materialised, its established higher-tier Capability ancestry SHALL be represented in its Canonical ID. `CT1-01.CT3-02` SHALL NOT be generated merely because CT2 ancestry has not been identified. Required but unresolved ancestry SHALL leave the Canonical ID unresolved.
 
@@ -1467,6 +1480,17 @@ The minimum later reconciliation SHALL distinguish:
 Approval of this disposition and authorisation to perform source reconciliation remain separate. This persistence task changes only this durable G1 review record; frozen Domain01–03, Domain04 Foundation and Package 1 sources remain unchanged.
 
 ### 11.8 Closure and stop boundary
+
+**2026-10-13 reconciliation:** The
+[fixed-decomposition decision](../../02-strategy/reviews/fixed-capability-decomposition-decision.md)
+changes the target metamodel, not K9's approved evidence, closure or unresolved
+catalogue status. Complete CT1 → CT2 → CT3 ancestry is now required for a fully
+reconciled Feature. Existing Features remain valid evidence requiring ancestry
+reconciliation where their CT3 frame is unestablished. Legacy labels, document
+structure, contextual views, local Feature IDs and partial ownership SHALL NOT
+establish missing tiers, complete Canonical IDs or new ancestors. K9's permission
+to derive from established responsibility remains; it does not declare that
+responsibility structurally reconciled. The original closure text follows unchanged.
 
 K9 is RESOLVED on the approved interpretation above. Unresolved Capability Tier, ancestry, root status, decomposition-entry identity and structural Canonical ID information remain explicit architectural uncertainties; they do not reopen K9 or require completion of the full Business Enabling Capability hierarchy before downstream derivation from established responsibility.
 

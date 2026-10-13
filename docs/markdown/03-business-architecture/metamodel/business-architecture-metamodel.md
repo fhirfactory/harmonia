@@ -7,11 +7,9 @@ The Harmonia Business Architecture metamodel defines the structural and behaviou
 ```mermaid
 graph TD
     subgraph OWNER["Owning Capability or Feature responsibility context"]
-        CT1["CT1 Capability"] -->|May decompose into| CT2["CT2 Capability"]
-        CT2 -->|May decompose into| CT3["CT3 Capability"]
-        CT1 -.->|May specialise as| FT["FT Feature<br/>(Capability Specialisation)"]
-        CT2 -.->|May specialise as| FT
-        CT3 -.->|May specialise as| FT
+        CT1["CT1 Capability"] -->|Capability decomposition| CT2["CT2 Capability"]
+        CT2 -->|Capability decomposition| CT3["CT3 Capability"]
+        CT3 -->|Frames every Feature| FT["FT Feature<br/>(Capability Specialisation)"]
     end
     OWNER -->|Delivers| FUNC["Business Function(s)"]
     OWNER -->|Provides to clients| SERV["Business Service(s)"]
@@ -23,7 +21,7 @@ graph TD
     OWNER -->|Establishes| INFO["Business Information Responsibility"]
 ```
 
-The diagram groups the permissible responsibility contexts; it does not require every branch to materialise every Capability Tier or a Feature before delivering behaviour. Service, Function and Process form a graph rather than a mandatory hierarchy.
+The diagram establishes the fixed Capability decomposition and the permissible behavioural responsibility contexts. Every fully reconciled Feature requires complete CT1 → CT2 → CT3 ancestry. Functions, Services and Processes may still anchor directly at their established owning Capability or Feature; they do not require an intervening Feature. Service, Function and Process form a graph rather than a mandatory hierarchy.
 
 ### 1.1 Capability Decomposition and Terminology
 
@@ -34,22 +32,32 @@ The following terminology SHALL be used canonically:
 | **Layer / Architectural Layer** | Architectural layering within the TOGAF / ArchiMate architecture model. |
 | **Capability Tier** | Hierarchical decomposition within a Capability Model. |
 | **Derivation / Derivation Progression** | Progression between different architectural constructs or models. A Derivation Stage is a stage in that progression. |
-| **CT1** | Capability Tier 1. |
-| **CT2** | Capability Tier 2. |
-| **CT3** | Capability Tier 3. |
-| **FT** | Feature. |
+| **CT1** | Capability Tier 1: establishes the broad Capability frame within Harmonia's architectural scope. |
+| **CT2** | Capability Tier 2: decomposes the CT1 frame into constituent Capabilities. |
+| **CT3** | Capability Tier 3: establishes the finest Capability frame required by Harmonia and provides the Capability context within which Features are defined. |
+| **FT** | Feature: expresses required system-enabled behaviour within its owning CT3 Capability context. |
 
 `Layer ≠ Capability Tier ≠ Derivation Stage`. `L1`, `L2` and `L3` are deprecated as canonical capability classifications.
 
-Capability decomposition MAY proceed as follows:
+Harmonia SHALL use the fixed three-tier Capability decomposition:
 
 $$\text{CT1 Capability} \longrightarrow \text{CT2 Capability} \longrightarrow \text{CT3 Capability} \longrightarrow \text{FT Feature}$$
 
-Not every branch is required to materialise every possible lower tier. A Feature remains a finer-grained specialisation of Capability and inherits Capability semantics; FT SHALL NOT be classified as CT3. Intermediate Capabilities or Features SHALL NOT be invented to complete a hierarchy or to anchor behaviour.
+Every Feature SHALL be framed by a CT3 Capability. Every CT3 Capability SHALL have a CT2 parent; every CT2 Capability SHALL have a CT1 parent. Capability tiers SHALL NOT be skipped. Complete CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature; direct CT1 → FT and CT2 → FT framing SHALL NOT be used in the reconciled target model.
 
-Where a lower Capability Tier is materialised, its established higher-tier Capability ancestry SHALL be represented in its Canonical ID. An unidentified ancestor SHALL NOT be treated as permission to omit that tier. Required but unresolved ancestry SHALL leave the Canonical ID unresolved, as specified in §8.
+> **A Feature cannot compensate for incomplete Capability decomposition. If Harmonia requires a Feature, the CT3 Capability that frames that Feature must first be identified. Failure to identify a meaningful CT3 indicates incomplete upstream Capability modelling, not permission to skip the tier.**
+
+Complete decomposition is a modelling obligation, not authority to fabricate architectural elements. CT3 Capabilities SHALL NOT be manufactured merely to satisfy structural symmetry. Where an existing branch contains a Feature without an established CT3 frame or complete ancestry, the Feature, its established responsibility and local identifier SHALL be preserved, and its Capability ancestry/decomposition SHALL be recorded as requiring reconciliation under AX-17. It SHALL NOT be presented as fully reconciled or silently reattached to an invented owner. Established partial relationships remain valid evidence until separately adjudicated.
+
+A Feature remains a finer-grained **Capability Specialisation** and inherits Capability semantics. This retained semantic classification does not make FT another Capability Tier or permit arbitrary-depth Feature framing. CT1 → CT2 and CT2 → CT3 denote Capability decomposition; CT3 provides the mandatory frame for Feature behaviour.
+
+CT3 is Harmonia's intentional Capability decomposition boundary. Harmonia's Capability Model is bounded to the level required to derive and govern Harmonia; it does not attempt to model the complete Enterprise Architecture of a hospital, health service provider, health department or other healthcare enterprise. Harmonia SHALL NOT define CT4, CT5 or deeper Capability tiers. Further detail is not authority to extend the Capability hierarchy.
+
+Established higher-tier ancestry SHALL be represented in a lower-tier Capability's Canonical ID. Every Feature's complete structural Canonical ID SHALL include its CT1, CT2 and CT3 ancestry. An unidentified ancestor SHALL NOT permit omission of that tier; required but unresolved ancestry SHALL leave the Canonical ID unresolved, as specified in §8.
 
 The five-stage [Domain02 derivation progression](../../02-strategy/capability-maps/capability-tier-model.md) SHALL NOT be reinterpreted as CT1 / CT2 / CT3 / FT. Enablement, derivation and contextual-view membership do not, by themselves, establish a Capability Tier assignment.
+
+The [approved fixed-decomposition decision record](../../02-strategy/reviews/fixed-capability-decomposition-decision.md) records the rationale and superseded permissive position. It changes the target metamodel, not the reconciliation status, tier allocation or identity of existing catalogue elements. K9's uncertainty and evidence rules remain controlling.
 
 ### 1.2 Hierarchy Naming & Uniqueness Rules
 1. **Global Uniqueness**: Capability names across CT1, CT2 and CT3 are globally unique across the entire Harmonia architecture.
@@ -322,11 +330,13 @@ The general form is `<architectural-context>.<element-identifier>`. A root CT1 C
 ```text
 canonical-id =
     capability-path
-  | capability-path "." feature-token
+  | feature-path
   | capability-path "." behaviour-token
-  | capability-path "." feature-token "." behaviour-token
+  | feature-path "." behaviour-token
 
 capability-path = ct1-token [ "." ct2-token [ "." ct3-token ] ]
+ct3-path = ct1-token "." ct2-token "." ct3-token
+feature-path = ct3-path "." feature-token
 
 ct1-token = "CT1-" <approved-local-code>
 ct2-token = "CT2-" <approved-local-code>
@@ -356,6 +366,8 @@ CT1-01.CT2-02.CT3-03.FEAT-EM-01.FN-01
 ```
 
 Every ancestor prefix in a current Canonical ID SHALL identify the corresponding current Capability or Feature in the established responsibility ancestry. `CT1-01.CT3-02` SHALL NOT be generated merely because CT2 ancestry has not been identified. Unresolved ancestry SHALL remain unresolved rather than being omitted or manufactured.
+
+The shorter `capability-path` forms identify CT1 or CT2 Capabilities and permit direct behavioural anchoring; they SHALL NOT frame a Feature token. A Feature, or behaviour anchored beneath it, requires `feature-path` with complete CT1 → CT2 → CT3 ancestry. These are grammar rules only and allocate no identifier to an existing element.
 
 The common identity properties apply to other governed Business Architecture element types, but this decision does not establish their token vocabularies or structural contexts. Those SHALL NOT be inferred from this grammar. The Qualified Architectural Reference Grammar in §7 remains distinct and unchanged.
 
@@ -418,6 +430,8 @@ This decision implements no validators, schemas or classes. Generation intent do
 Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation from an otherwise established owning Capability or Feature and its relevant responsibility. Downstream traceability SHALL reference that element without manufacturing structural ancestry. Document structure, catalogue grouping, numbering, indentation and decomposition presentation SHALL NOT by themselves establish Architectural Element identity.
 
 `Client Administration → Person Identity → Identifier Resolution [FT / FEAT-EM-01]` is an established partial responsibility chain and SHALL be preserved. Its full structural Canonical ID remains unresolved until actual Capability Tier ancestry and identifier allocation are architecturally established. The former incorrect L3 example SHALL NOT supply that ancestry.
+
+The fixed model in §1.1 does not retrospectively validate legacy L1 / L2 / L3 assignments or convert a known owner into CT3. Existing Features with incomplete ancestry remain valid architectural evidence requiring Capability decomposition reconciliation; downstream derivation from their established responsibility does not declare them structurally reconciled. Missing CT3 frames SHALL be separately established before subsequent Feature definition, without using catalogue presentation to manufacture them.
 
 These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and [AX-17 architectural authority and explicit uncertainty](../../governance/architectural-axioms.md#ax-17). They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.
 

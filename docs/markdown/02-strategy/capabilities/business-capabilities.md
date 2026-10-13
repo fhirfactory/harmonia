@@ -1,8 +1,8 @@
-# Canonical Business Capability Model (18 L1 Capabilities)
+# Canonical Business Capability Model (18 Catalogued Capabilities)
 
 ## Overview & Purpose
 
-The Business Capability Tier represents **what the healthcare enterprise must be capable of doing** to fulfill its clinical mission, provide health services to the population, govern quality and safety, and sustain healthcare operations.
+The Business Capability model represents **what the healthcare enterprise must be capable of doing** to fulfill its clinical mission, provide health services to the population, govern quality and safety, and sustain healthcare operations.
 
 A Business Capability is:
 - **Independent of Technology**: It exists regardless of whether it is supported by pen-and-paper, legacy systems, modern electronic health records, or integration middleware.
@@ -11,11 +11,13 @@ A Business Capability is:
 
 The Business Capability model does **not** describe Harmonia's software architecture. Instead, it defines the healthcare business landscape. By establishing this landscape, Harmonia can explicitly articulate where it provides core platform enablement, where it connects or routes operational information, and where it remains purely adjacent or reference.
 
+The [fixed Capability metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology) governs **CT1 → CT2 → CT3 → FT**. CT3 is the intentional decomposition boundary required to derive and govern Harmonia; CT4, CT5 and deeper tiers are outside its scope. The healthcare landscape and CM-R01 coverage rule below provide reference context, not exhaustive Enterprise Architecture for a hospital, provider, health department or other healthcare enterprise. Retained L1/L2 catalogue labels are legacy presentation, deprecated as canonical classifications; they SHALL NOT mechanically establish CT1/CT2/CT3 assignments, ancestry or Canonical IDs.
+
 ---
 
 ## Capability Modeling Quality Rules
 
-The 18 L1 Business Capabilities are governed by five foundational quality rules:
+The 18 catalogued Business Capabilities are governed by five foundational quality rules:
 
 | Rule ID | Rule Name | Description & Architectural Intent |
 | :--- | :--- | :--- |
@@ -37,8 +39,14 @@ Illustrative Activities → Example Care Contexts → Explicit Exclusions**. The
 explanatory elements do not establish subordinate capabilities. Examples SHALL
 NOT be represented as subordinate capabilities unless a later architectural
 analysis demonstrates a materially distinct business ability and architectural
-consequence. Individual Care Delivery requires no L3 decomposition at present;
-L3 capabilities SHALL NOT be invented for educational completeness.
+consequence. Individual Care Delivery's CT3 decomposition has not yet been
+architecturally established. Where Features are subsequently required beneath
+its established branches, meaningful CT3 Capability frames SHALL first be
+established with complete CT1 → CT2 ancestry. A Feature cannot compensate for
+incomplete upstream Capability modelling. This modelling obligation SHALL NOT
+authorise invented CT3 Capabilities for educational or structural completeness;
+care contexts and illustrative clinical activities do not automatically become
+CT3 Capabilities. This task performs no CT3 decomposition or tier allocation.
 
 <a id="b2-r05"></a>
 
@@ -85,9 +93,9 @@ Harmonia provides core integration, identity resolution, semantic transformation
 
 ---
 
-## The 18 L1 Business Capabilities
+## The 18 Business Capabilities
 
-The 18 L1 Business Capabilities are organized into five natural operational regions:
+The 18 Business Capabilities, retaining their legacy L1 catalogue labels, are organized into five natural operational regions:
 
 1. **Care & Health Delivery** (Capabilities 01–08)
 2. **Health Information & Digital Health** (Capabilities 09–12)
@@ -139,14 +147,18 @@ These regions are natural contextual groupings of Business Capabilities. They ar
 - **Operational Scope**: Individual health assessment, clinical determination, individual care planning, clinical intervention, individual health monitoring and individual care review, independent of care setting, delivery mode, temporal pattern or organisational arrangement.
 - **Harmonia Enabling Role**: Harmonia provides clinical notification dispatch, point-of-care longitudinal health record assembly, and reliable transmission of clinical orders and results, ensuring treating clinicians possess complete, accurate patient context.
 
-The agreed L2 decomposition is the following six Business Capabilities. Their
+The established decomposition is the following six child Business Capabilities,
+retaining their legacy L2 display labels. Their
 state changes distinguish business abilities; the list does not prescribe an
-execution sequence or a runtime dependency model. **L3 decomposition is not
-currently required.** History taking, examination, diagnosis, prescribing,
+execution sequence or a runtime dependency model. **CT3 decomposition has not
+yet been architecturally established.** Required Features must first have
+meaningful CT3 frames established; none are created or allocated here. History
+taking, examination, diagnosis, prescribing,
 medication administration, surgery, therapy and counselling may illustrate these
-abilities without becoming additional capability levels.
+abilities without automatically becoming CT3 Capabilities. The six established
+children remain valid; their labels and numbering do not allocate canonical tiers.
 
-| L2 label | Business Capability |
+| Legacy L2 display label | Business Capability |
 | :--- | :--- |
 | 01.01 | [Individual Health Assessment](#individual-health-assessment) |
 | 01.02 | [Clinical Determination](#clinical-determination) |

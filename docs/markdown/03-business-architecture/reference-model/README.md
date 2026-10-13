@@ -66,6 +66,18 @@ preserved, including their definitions and L2 display labels. No CT3 detail or
 care-setting Capability is created. This conservative capture leaves the
 deprecated labels/current CT reconciliation visible for subsequent adjudication.
 
+The [approved fixed-decomposition decision](../../02-strategy/reviews/fixed-capability-decomposition-decision.md)
+requires **CT1 → CT2 → CT3 → FT** for a fully reconciled Feature: CT3 is the
+mandatory immediate Capability frame, with CT2 and CT1 ancestry. No Feature may
+compensate for missing decomposition, and no tier may be skipped. The capture's
+existing `owner` and partial-parent assertions preserve established responsibility
+evidence; they do not assert that an owner is CT3 or that the Feature is
+structurally reconciled. All 137 Features' required Capability frames/complete
+ancestry remain unresolved pending separate architectural reconciliation. The
+69 unresolved enabling descriptions remain unresolved descriptions, not newly
+established Capabilities. The JSON capture, schema, local IDs and existing
+relationships are unchanged by this metamodel/documentation decision.
+
 ## Responsibility, contextual views and behaviour
 
 The five Business Enabling views and five natural Business regions are `views`
@@ -143,6 +155,18 @@ a misspelled reference is still invalid. Source drift means the capture evidence
 requires reconciliation, not that the architecture itself has been rejected.
 Unknown CT1 Feature-name scope is reported unresolved rather than given an
 invented root. JSON Schema validation alone cannot perform the graph checks.
+
+**Enforcement and source-reconciliation limits:** the existing tool and schema
+predate the fixed-decomposition decision. Their permissive Feature path handling
+still accepts Features directly under resolved CT1 or CT2; the validator test
+`test_complete_typed_ancestry_and_direct_behaviour_anchoring` explicitly exercises
+that former permission. A representation PASS therefore does not establish
+conformance to the new mandatory CT3 Feature frame. Updating that enforcement
+requires separate tooling work; it does not authorise allocating tiers to the
+capture. Documentation changes also invalidate stored source fingerprints and
+may invalidate line/text/anchor locators. Resulting source-drift diagnostics
+record a capture-reconciliation need, not a semantic failure of the new rule.
+The capture SHALL NOT be mechanically refreshed to conceal these consequences.
 
 `impact` follows recorded ownership, partial parents and confirmed dependants to
 show a conservative impact set, returning unresolved mentions separately. It is

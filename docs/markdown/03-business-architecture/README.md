@@ -55,7 +55,7 @@ graph TD
 ```
 
 ### Key Metamodel Principles
-- **Capability Decomposition**: CT1 / CT2 / CT3 / FT distinguish Capability Tiers and Feature type from derivation stages. A Feature inherits Capability semantics. Behaviour may anchor directly to its established owning Capability or Feature; affected tier, complete ancestry and structural Canonical IDs remain unresolved under approved K9.
+- **Capability Decomposition**: The [fixed model](metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology) is CT1 → CT2 → CT3 → FT. Every fully reconciled Feature requires a CT3 frame with CT2 and CT1 ancestry; tiers SHALL NOT be skipped or fabricated. CT3 is Harmonia's intentional Capability boundary; no CT4 or deeper tier is defined. A Feature inherits Capability semantics, and FT remains distinct from CT3 and derivation stage 3. Functions, Services and Processes may anchor directly to their established owning Capability or Feature; affected tiers, complete ancestry and structural Canonical IDs remain unresolved under approved K9.
 - **Function vs. Service**:
   - A **Business Function** effects a defined information/capability state transition within its owning responsibility; size and external exposure do not determine its type.
   - A **Business Service** provides the client interface under a Service Contract and may use Functions and/or Processes. Ownership remains with the exposing Capability.

@@ -56,32 +56,45 @@ ArchiMate 3.2 provides a single generic `Capability` element. In complex healthc
 Harmonia relates distinct capability constructs through the following **derivation progression**:
 
 ```text
-BUSINESS CAPABILITY TIER
+STAGE 1: BUSINESS CAPABILITY
 What the healthcare enterprise must be capable of doing
 (Independent of any IT system or automation)
              │
              ▼
-BUSINESS ENABLING CAPABILITY TIER
+STAGE 2: BUSINESS ENABLING CAPABILITY
 What systems must enable or provide in support of the enterprise
 (Structured across 5 authentic healthcare operating contexts)
              │
              ▼
-FEATURE LEVEL
+STAGE 3: FEATURE (FT)
 The smallest useful statement of required system-enabled behaviour
 (Atomic, testable, technology-neutral)
              │
              ▼
-ENTERPRISE CAPABILITY TIER (EC-01 .. EC-14)
+STAGE 4: ENTERPRISE CAPABILITY (EC-01 .. EC-14)
 Reusable platform functionality derived across features
 (Free of middleware, concurrency plumbing, or database specifics)
              │
              ▼
-ICT FOUNDATION CAPABILITY LENSES
+STAGE 5: ICT FOUNDATION CAPABILITY LENSES
 Cross-cutting technical enablement considerations
 (Framed through the 18 ICT Foundation capabilities)
 ```
 
 This progression relates different architectural constructs; it does not establish CT1 / CT2 / CT3 ancestry for the affected Business Enabling Capabilities. Capability Tier, complete ancestry and structural Canonical IDs remain unresolved where not established by architecture. This derivation progression is a Harmonia architectural modeling convention. It respects ArchiMate 3.2 semantics while providing the necessary vertical traceability required for clinical safety and software engineering.
+
+The separate [fixed Capability decomposition](capability-maps/capability-tier-model.md)
+is **CT1 → CT2 → CT3 → FT**, governed by the
+[Business metamodel](../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology).
+Every fully reconciled Feature requires a CT3 frame and complete CT2/CT1
+ancestry; Features cannot compensate for missing decomposition. CT3 is
+Harmonia's intentional Capability boundary; CT4, CT5 and deeper tiers are
+outside its scope. `Layer ≠ Capability Tier ≠ Derivation Stage`. Legacy
+L1/L2/L3 labels remain deprecated as canonical classifications and supply no
+CT assignments. Existing unresolved ancestry remains unresolved; no missing
+Capability may be invented for structural symmetry. The
+[decision record](reviews/fixed-capability-decomposition-decision.md) explains
+the rationale and retained K9 boundaries.
 
 The approved [Health Service Assurance Strategy derivation](capability-maps/health-service-assurance-derivation.md) explicitly establishes **REQ-FND-005 → BC-18 Health Service Assurance → Assurance Design, Assurance Criteria Management and Governed Assurance → collaborative Enterprise Capability realisation, including EC-14 Service Guardian**. No intermediate Features, Capability Tier ancestry or strategic logical component allocation are inferred from the generic progression.
 

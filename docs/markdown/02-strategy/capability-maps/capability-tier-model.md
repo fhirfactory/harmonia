@@ -12,7 +12,22 @@ Canonical terminology SHALL distinguish:
 
 `Layer ≠ Capability Tier ≠ Derivation Stage`.
 
-Capability decomposition uses `CT1` (Capability Tier 1), `CT2` (Capability Tier 2), `CT3` (Capability Tier 3) and `FT` (Feature). `L1`, `L2` and `L3` are deprecated as canonical capability classifications. Decomposition MAY proceed `CT1 → CT2 → CT3 → FT` without requiring every branch to materialise every possible lower tier. Established higher-tier ancestry SHALL be represented when a lower Capability Tier is materialised; missing ancestry SHALL remain unresolved rather than being invented or skipped.
+Capability decomposition SHALL use the fixed model `CT1 → CT2 → CT3 → FT`: `CT1` means Capability Tier 1, `CT2` Capability Tier 2, `CT3` Capability Tier 3 and `FT` Feature. `L1`, `L2` and `L3` remain deprecated as canonical capability classifications.
+
+| Tier / type | Architectural role |
+| :--- | :--- |
+| **CT1** | Establishes the broad Capability frame within Harmonia's architectural scope. |
+| **CT2** | Decomposes the CT1 frame into constituent Capabilities. |
+| **CT3** | Establishes the finest Capability frame required by Harmonia and the Capability context within which Features are defined. |
+| **FT** | Expresses required system-enabled behaviour within its owning CT3 Capability context. |
+
+Every Feature SHALL be framed by CT3; every CT3 SHALL have a CT2 parent; every CT2 SHALL have a CT1 parent. Capability tiers SHALL NOT be skipped. Complete CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature. CT1 → CT2 and CT2 → CT3 are Capability decomposition relationships.
+
+> **A Feature cannot compensate for incomplete Capability decomposition. If Harmonia requires a Feature, the CT3 Capability that frames that Feature must first be identified. Failure to identify a meaningful CT3 indicates incomplete upstream Capability modelling, not permission to skip the tier.**
+
+This modelling obligation SHALL NOT authorise manufactured CT3 Capabilities for structural symmetry. Existing Features without established CT3 frames SHALL be preserved with their established responsibilities and local IDs; their Capability ancestry/decomposition requires reconciliation. Missing ancestry SHALL remain explicitly unresolved, rather than being omitted, invented or treated as direct CT1/CT2 Feature framing in the target model.
+
+CT3 is the intentional Capability decomposition boundary. Harmonia models the level required to derive and govern Harmonia, rather than the complete Enterprise Architecture of a hospital, health service provider, health department or other healthcare enterprise. CT4, CT5 and deeper Capability tiers are outside that scope and SHALL NOT be defined. The [approved decision record](../reviews/fixed-capability-decomposition-decision.md) records the rationale and supersession; the [Domain03 metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology) governs the fixed hierarchy.
 
 The [Domain03 Business Architecture metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#8-architectural-element-identity-and-canonical-identification) governs typed Canonical IDs, identity, aliases and behavioural anchoring. The five-stage derivation progression below SHALL NOT be reinterpreted as CT1 / CT2 / CT3 / FT or used to assign Capability Tiers or identifier codes to existing elements. [Approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing) establishes that affected legacy owner assignments are insufficiently evidenced; they SHALL NOT be mechanically translated to CT1 / CT2 / CT3. Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved where not established.
 
@@ -103,13 +118,13 @@ Natural regions are contextual groupings, not capability tiers, organisational s
 The approved [Assurance Design, Assurance Criteria Management and Governed Assurance](../capabilities/business-enabling-capabilities.md#health-service-assurance-approved-business-enabling-capabilities) additionally support BC-18. Their contextual-view placement, relevance classification, Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved. Their direct Strategy derivation does not create intermediate Features, a sixth view or inferred hierarchy.
 
 ### Stage 3: Feature (FT)
-- **Definition**: The **smallest useful statement of required system-enabled behaviour** within its owning Business Enabling Capability context. FT is a Feature classification; derivation stage 3 SHALL NOT classify it as CT3.
+- **Definition**: The **smallest useful statement of required system-enabled behaviour** within its owning CT3 Business Enabling Capability context. Existing owners whose tier/ancestry is unresolved remain established responsibility evidence requiring reconciliation. FT is a Feature classification; derivation stage 3 SHALL NOT classify it as CT3.
 - **Criteria**:
   - *Independently understandable*: Conveys a self-contained operational meaning.
   - *Testable in principle*: Allows clear verification that the behavior occurred or was enabled.
   - *Technology-independent*: Contains no product names, protocols, or storage mechanisms.
   - *Component-independent*: Does not prescribe which software module executes it.
-- **Scope Demarcation**: Formally authored for Harmonia-Relevant and Harmonia-Core capabilities in the established catalogue. Reference and Adjacent capabilities are intentionally not decomposed into features. This scope statement establishes no new Capability Tier assignment or mandatory intermediate hierarchy.
+- **Scope Demarcation**: Formally authored for Harmonia-Relevant and Harmonia-Core capabilities in the established catalogue. Reference and Adjacent capabilities are intentionally not decomposed into features. This scope statement allocates no Capability Tier to existing elements and does not waive the fixed ancestry required for a fully reconciled Feature.
 
 ### Stage 4: Enterprise Capability (EC-01 .. EC-14)
 - **Definition**: Reusable architectural functionality derived from recurring system-enabled features across multiple healthcare domains.
