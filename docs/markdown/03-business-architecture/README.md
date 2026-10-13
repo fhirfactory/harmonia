@@ -66,6 +66,12 @@ graph TD
 
 ## 3. Pedagogical Reading Path & Navigation
 
+The [Business Architecture reference candidate model](reference-model/README.md)
+captures the current Strategy/Business elements for machine navigation, validation,
+contextual diagrams and change-impact queries. It preserves unresolved tier,
+ancestry, catalogue-entry identity and Canonical ID allocation; inclusion does not
+approve a decomposition or replace the authoritative metamodel and catalogues.
+
 Domain 03 is organised into structured sections designed to guide enterprise architects, domain modelers, clinical informaticians, and system engineers:
 
 ```text
