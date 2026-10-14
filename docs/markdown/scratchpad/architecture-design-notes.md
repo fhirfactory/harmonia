@@ -307,16 +307,32 @@ distinction is necessary to explain, derive, constrain, or govern
 Harmonia responsibilities, or where sufficient adjacent business context
 is required to make those responsibilities intelligible.
 
-**Working test:**
+**Harmonia relevance principle — 2026-10-14 refinement:**
 
-> Would distinguishing these business abilities cause Harmonia to
-> behave, govern, represent, exchange, secure, coordinate, or trace
-> something materially differently?
+> **A Business Capability may be Harmonia-relevant because its exercise
+> establishes the context in which information is created, required,
+> interpreted, related, exchanged or presented, even where Harmonia does
+> not perform, coordinate or own the underlying business process.**
 
-If yes, further Capability distinction may be justified.
+**Decomposition test:**
 
-If no, additional decomposition is probably unnecessary explanatory
-enterprise detail.
+> **Does distinguishing these business activities materially change what
+> information Harmonia needs to understand, when that information is
+> required, its meaning or relationships, or how it should be presented?**
+
+If yes, the distinction may legitimately matter to Harmonia and further
+Capability distinction may be justified.
+
+If no, additional decomposition may be unnecessary explanatory
+enterprise detail. Acknowledging materially different business activities
+does not require modelling each as a separate Capability where the
+distinction does not materially affect Harmonia's architectural
+responsibilities.
+
+Informational relevance does not establish that Harmonia performs,
+supports execution of, coordinates or owns the underlying business
+process. The distinction preserves the information-centred purpose of
+AX-01, meaningful semantics under AX-14 and domain authority under AX-18.
 
 **Boundary:**
 
@@ -701,11 +717,14 @@ Business Capability decomposition, identified while reviewing:
 
 `Individual Care Delivery → Clinical Intervention`
 
-The candidate decomposition currently proposes:
+The previous candidate decomposition proposed:
 
 - Therapy & Counselling Intervention
 - Medication Intervention
 - Procedural Intervention
+
+The 2026-10-14 post-reconciliation adjudication supersedes that candidate
+with the deliberate R1/R2 stopping point recorded below.
 
 **Working Decision:**
 
@@ -742,26 +761,30 @@ Therefore, for a Capability `X`, either:
 1. retain `X` without subordinate decomposition where further distinction is unnecessary for the Harmonia architecture; or
 2. if `X` is decomposed, identify the materially meaningful peer capabilities independently of which peers Harmonia happens to support.
 
-**Application to Clinical Intervention:**
+**Application to Clinical Intervention — Resolved R1/R2 Stopping Point:**
 
-The current candidate:
+**Clinical Intervention remains CT2 and is intentionally not decomposed
+into CT3 capabilities for R1/R2.**
 
-```text
-Clinical Intervention
-  Therapy & Counselling Intervention
-  Medication Intervention
-  Procedural Intervention
-```
+The previous Therapy & Counselling Intervention, Medication Intervention
+and Procedural Intervention candidate CT3s are not established beneath
+Clinical Intervention. They SHALL NOT be retained as a provisional R1/R2
+taxonomy awaiting completion.
 
-is **not yet accepted as the final CT3 decomposition**.
+> **Clinical Intervention represents the clinical activity context within
+> which information may be created, required, interpreted or presented.
+> Harmonia requires awareness of that context but does not require a
+> taxonomy of intervention types in order to fulfil its R1/R2
+> responsibilities.**
 
-`Medication Intervention` and `Procedural Intervention` appear to represent meaningful intervention classes.
+> **Acknowledging that materially different business activities exist
+> does not require Harmonia to model each as a separate Capability where
+> those distinctions do not materially affect Harmonia's architectural
+> responsibilities.**
 
-However, `Therapy & Counselling Intervention` may be an artificial aggregation of otherwise distinct intervention classes and may function as a residual category for interventions that are neither medication nor procedural.
-
-The appropriate intervention taxonomy therefore requires further architectural examination.
-
-Potential intervention classes MUST NOT be created merely from examples or implementation concerns. They should be identified according to meaningful business distinctions between forms of clinical intervention.
+This applies the relevance and decomposition test in **DN-BC-001**. It
+does not establish Harmonia responsibility to perform, support execution
+of, coordinate or own the underlying clinical intervention.
 
 **Interpretive Warning:**
 
@@ -778,11 +801,12 @@ A Capability may legitimately exist in the Business Architecture to make the bus
 
 Conversely, absence of Harmonia implementation interest is not sufficient reason to omit a materially distinct peer once that part of the Business Capability model has been decomposed.
 
-**Open Issue:**
+**Disposition:**
 
-Determine the coherent CT3 intervention taxonomy beneath **Clinical Intervention**.
-
-The current three-child candidate remains provisional until that taxonomy has been examined and adjudicated.
+The previous provisional taxonomy question is resolved by this deliberate
+modelling stopping point. Clinical Intervention decomposition is not an
+unresolved R1/R2 issue. Further decomposition would require a subsequent
+requirement and explicit architectural adjudication.
 
 ------------------------------------------------------------------------
 
@@ -1239,7 +1263,11 @@ Medication & Pharmacy Services and medication-related Clinical Intervention are 
 
 **Medication & Pharmacy Services** concerns pharmacy-service responsibilities such as medication dispensing, provision, advice and dose-administration-aid provision.
 
-**Medication Intervention** concerns medication as an intervention applied in the care of the Individual.
+**Medication-related activity within Clinical Intervention** concerns
+medication as an intervention applied in the care of the Individual.
+
+This describes clinical activity context; **Medication Intervention** is
+not established as a separate R1/R2 CT3 Capability under **DN-BC-010**.
 
 The same medication information may therefore participate in multiple business contexts without collapsing those Business Capabilities into one another.
 
@@ -1559,10 +1587,16 @@ Clinical Technology Management
   Clinical Device Utilisation Support
   Clinical Device Integration Provision
   Clinical Device Data Integration
+  Clinical Device Maintenance Management
   Clinical Device Lifecycle Management
 ```
 
 These are distinct business abilities and SHALL NOT be interpreted as mandatory sequential lifecycle stages.
+
+**Clinical Device Maintenance Management is an established eighth CT3
+under Clinical Technology Management.** Its inclusion corrects the
+previous membership/count discrepancy in this note; it is not a new
+candidate or unresolved issue.
 
 ---
 
@@ -1701,7 +1735,7 @@ Accordingly:
 
 ### Clinical Device Maintenance Management
 
-Owns the ability to manage the **maintenance, testing, calibration, inspection, fault remediation and repair activities necessary to maintain or restore a Clinical Device to an acceptable operational condition**.
+Owns the ability to manage the **servicing, maintenance, testing, calibration, inspection, fault remediation and repair activities necessary to maintain or restore a Clinical Device to an acceptable operational condition**.
 
 It may consume externally provided device-monitoring information, fault information, utilisation information or other evidence indicating that maintenance attention is required.
 
@@ -1722,7 +1756,7 @@ It does **not** own:
 
 ### Clinical Device Lifecycle Management
 
-Owns the ability to manage the **Clinical Device through its overall managed lifecycle**, including its progression between applicable lifecycle states and decisions concerning its continuing place within the clinical technology estate.
+Owns the ability to manage the **broader organisational lifecycle and lifecycle state of the Clinical Device**, including its progression between applicable lifecycle states and decisions concerning its continuing place within the clinical technology estate.
 
 This includes lifecycle concerns such as introduction into service, continued service, lifecycle review, replacement, withdrawal, decommissioning and retirement.
 
@@ -1749,13 +1783,19 @@ The following three responsibilities SHALL remain distinct:
 
 > **Clinical Device Monitoring** provides evidence about device state, condition or performance.
 
-> **Clinical Device Maintenance Management** manages activity intended to maintain or restore acceptable device condition.
+> **Clinical Device Maintenance Management** manages servicing,
+> inspection, testing, calibration, repair and other maintenance activity
+> necessary to keep a Clinical Device appropriately operational.
 
-> **Clinical Device Lifecycle Management** governs the device's progression through and disposition within its overall managed lifecycle.
+> **Clinical Device Lifecycle Management** manages the broader
+> organisational lifecycle and lifecycle state of the Clinical Device.
 
 Accordingly:
 
 > **Device monitored ≠ device maintained ≠ device lifecycle managed.**
+
+> **Maintenance is activity performed during the lifecycle; it is not
+> the lifecycle itself.**
 
 Monitoring remains externally provided enabling capability under this decision.
 
@@ -1802,7 +1842,7 @@ These distinctions are expected to be material when Features, Functions, Service
 
 ## Modelling Guardrail
 
-The seven CT3 Capabilities represent distinct business abilities within Clinical Technology Management.
+The eight CT3 Capabilities represent distinct business abilities within Clinical Technology Management.
 
 They SHALL NOT be interpreted as a mandatory device lifecycle, workflow or implementation architecture.
 
@@ -6014,14 +6054,45 @@ but the agreed name is **Digital Communication Channel**. Participant
 scope is expressed through its definition rather than parentheses in the
 capability name.
 
+## Working Decision — Established CT2 Set
+
+The 2026-10-14 post-reconciliation adjudication establishes **Domain
+Health Information Services** as the third CT2 beneath **Connected Health
+Services**:
+
+```text
+Connected Health Services
+  Health Information Exchange
+  Digital Communication Channel
+  Domain Health Information Services
+```
+
 ## Health Information Exchange Boundary
 
-**Health Information Exchange** concerns the organisational ability to
-exchange health information appropriately between participating parties,
-systems and services.
+> **Health Information Exchange (BC)** describes the organisational
+> ability to exchange health information appropriately between
+> participating parties, organisations, systems and services.
 
 It is not synonymous with a particular interoperability platform, FHIR
 server, interface engine, protocol or implementation.
+
+## Working Decision — BC/BEC Exchange Name Collision Resolved
+
+The Business Capability name remains **Health Information Exchange**.
+Rename the existing Business Enabling Capability currently named
+**Health Information Exchange** to **HIE Integration Services**.
+
+> **HIE Integration Services (BEC)** describes reusable Harmonia-provided
+> system-enabled integration capabilities supporting the mechanisms
+> through which Health Information Exchange can be realised.
+
+This resolves the **CM-R05 global Capability-name collision** as a working
+decision and preserves the organisational/system-enabled distinction in
+**DN-BC-023**.
+
+The rename SHALL NOT imply a one-to-one Business Capability ↔ Business
+Enabling Capability relationship. This note establishes no new or altered
+BC↔BEC traceability, BEC ancestry or Feature framing.
 
 ## Digital Communication Channel Boundary
 
@@ -6047,10 +6118,82 @@ Business Enabling Capability reconciliation, particularly against the
 existing **Presentation** enabling capability. This note does not resolve
 that concern.
 
-## Working Decision — Programme Spelling
+## Working Decision — Domain Health Information Services
 
-Correct **Health Information Sharing Program Management** to **Health
-Information Sharing Programme Management**.
+**Domain Health Information Services** is the organisational capability
+to deliver externally visible health information services organised
+around a recognised health-information domain or business purpose.
+
+The defining characteristic is **external organisational service
+visibility**. This CT2 is not a grouping for internal
+information-management capabilities or reusable technical/enabling
+services.
+
+The established CT3 set is:
+
+```text
+Domain Health Information Services
+  Provider Directory Services
+  Enterprise Master Patient Index Services
+  Immunisation Register Services
+  Longitudinal Health Record Services
+```
+
+These four CT3s are established because they represent externally visible
+services Harmonia is expected to support the organisation in delivering.
+
+## Domain-Service Capability Boundary and Admission Test
+
+> **A Domain Health Information Service CT3 represents the complete
+> business capability required to provide a recognised externally visible
+> domain-specific health information service. It defines the business
+> problem domain, not an application, product or implementation boundary.**
+
+Each CT3 represents the complete business capability/problem domain
+necessary to provide that recognised service. It does not define a
+component boundary or require that a single application or product
+realise the capability.
+
+> **A CT3 belongs beneath Domain Health Information Services where the
+> organisation delivers the capability as an identifiable externally
+> visible health information service, rather than merely exercising it
+> internally or using it to enable another service.**
+
+Internal use of provider, patient-identity, immunisation or longitudinal
+record information alone does not satisfy this admission test. Nor does
+the existence of a reusable enabling service establish a Business
+Capability beneath this CT2.
+
+## Future Candidate Only — Collaboration Services
+
+**Collaboration Services** remains a potential future CT3 beneath
+**Domain Health Information Services**. It is **not established** and is
+excluded from the established hierarchy above.
+
+Future establishment requires collaboration to become an identifiable
+externally visible service deliberately delivered by the organisation.
+
+This candidate Business Capability SHALL NOT be confused with the
+existing reusable **Clinical Collaboration** or **General Collaboration**
+Business Enabling Capabilities. Their existence does not satisfy the
+external organisational service-visibility condition or establish this
+candidate or any BC↔BEC mapping.
+
+## Disposition — Superseded Programme-Management Candidate
+
+The previous candidate **Health Information Sharing Programme
+Management**, earlier corrected from **Health Information Sharing
+Program Management**, is **superseded for the current Business Capability
+model by Domain Health Information Services**.
+
+It SHALL NOT be retained as an unresolved CT3 candidate or resurrected
+during later reconciliation merely because it appeared in the earlier
+candidate decomposition.
+
+This disposition does not prohibit the concept of a business programme
+concerned with information sharing. It establishes that such programme
+management is not presently required as a distinct R1/R2 Business
+Capability in this branch.
 
 ------------------------------------------------------------------------
 
@@ -6686,6 +6829,27 @@ resolve **OI-BC-002**.
 
 Current reconciliation of Health Service Governance.
 
+## Working Decision — Harmonia Relevance
+
+**Health Service Governance — Harmonia-Relevant.**
+
+The 2026-10-14 post-reconciliation adjudication resolves the previously
+unestablished **BC-17 relevance classification** as a working decision.
+
+> **Health Service Governance is not performed by Harmonia, but its
+> outputs materially constrain and govern Harmonia-enabled activity.**
+
+> Harmonia may represent, apply, evaluate against, trace and provide
+> evidence concerning governance obligations, authorities and
+> constraints; doing so does not confer authority on Harmonia to
+> establish those obligations, authorities or constraints.
+
+This applies **DN-BC-001** and
+[AX-18 — Integration and Coordination Do Not Confer Domain Authority](../governance/architectural-axioms.md#ax-18).
+The organisational governance responsibilities below remain distinct
+from Harmonia's use of their outputs. Relevance does not establish new
+BC↔BEC traceability or allocate governance authority to Harmonia.
+
 ## Working Decision — Current Structure
 
 ```text
@@ -6848,16 +7012,135 @@ Governed Assurance enabling responsibilities.
 
 ------------------------------------------------------------------------
 
+# DN-BC-038 — Clinical Determination — CT3 Decomposition and Information Context
+
+## Context
+
+`Individual Care Delivery → Clinical Determination`
+
+2026-10-14 adjudication following the R1/R2 Business Capability
+reconciliation.
+
+## Working Decision — Established CT3 Set
+
+```text
+Clinical Determination
+  Clinical Finding Interpretation
+  Diagnosis & Problem Determination
+  Health Risk & Prognostic Determination
+```
+
+This resolves the previously unestablished CT3 decomposition beneath
+Clinical Determination.
+
+## Informational Relevance and Clinical Authority Boundary
+
+**Harmonia does not make these clinical determinations.**
+
+The distinction is architecturally material because exercise of these
+capabilities establishes different clinical information contexts that
+Harmonia may need to understand, relate, exchange, govern or present.
+Information-context relevance is sufficient under **DN-BC-001**; it does
+not require Harmonia to perform, support execution of, coordinate or own
+the underlying clinical determination process.
+
+The patient-level Clinical Determination boundary remains distinct from
+diagnostic-service **Diagnostic Interpretation** in **DN-BC-014** and from
+the monitored health-state views in **DN-BC-011**. Reusable clinical
+knowledge in **DN-BC-022** remains distinct from a determination concerning
+the Individual.
+
+Information handling does not confer clinical determination authority on
+Harmonia, consistent with **AX-18**. The decomposition establishes no
+mandatory workflow, application boundary, implementation allocation or
+BC↔BEC traceability.
+
+------------------------------------------------------------------------
+
+# DN-BC-039 — Individual Care Planning — CT3 Decomposition and Information Context
+
+## Context
+
+`Individual Care Delivery → Individual Care Planning`
+
+2026-10-14 adjudication following the R1/R2 Business Capability
+reconciliation.
+
+## Working Decision — Established CT3 Set
+
+```text
+Individual Care Planning
+  Care Goal Definition
+  Care Response Planning
+```
+
+This resolves the previously unestablished CT3 decomposition beneath
+Individual Care Planning.
+
+## Goal and Response Boundaries
+
+**Care Goal Definition** establishes the intended clinical/care outcome
+context.
+
+**Care Response Planning** establishes the intended response/action
+context.
+
+The intended outcome and the response intended to pursue that outcome
+are materially different information contexts. Their distinction is
+therefore relevant to what Harmonia may need to understand, relate,
+exchange, govern or present under **DN-BC-001**.
+
+## Clinical Authority and Modelling Boundary
+
+**Harmonia does not establish clinical goals or determine the appropriate
+care response.**
+
+Representing or using information concerning goals and planned responses
+does not confer authority over the underlying clinical planning activity
+on Harmonia, consistent with **AX-18**. Informational relevance does not
+establish Harmonia responsibility to perform, support execution of,
+coordinate or own that process.
+
+The distinction in **DN-BC-012** remains: identifying that care should be
+reconsidered does not itself establish replacement goals or responses.
+These CT3s describe organisational abilities and information contexts;
+they establish no mandatory planning sequence, application boundary,
+implementation allocation or BC↔BEC traceability.
+
+------------------------------------------------------------------------
+
 # Open Adjudication Queue
 
-The v0.2 Business Capability pass has now been substantially adjudicated
-as approved **working decisions**, captured through **DN-BC-037**.
-This is not canonical promotion: the scratchpad remains non-authoritative
-working architectural memory.
+The v0.2 Business Capability pass and the subsequent 2026-10-14 R1/R2
+adjudications are captured as approved **working decisions**, through
+**DN-BC-039**. This is not canonical promotion: the scratchpad remains
+non-authoritative working architectural memory.
 
-**OI-BC-001** and **OI-BC-002** remain unresolved. Outstanding open issues,
-provisional candidates and parked matters in earlier notes are not closed
-by this housekeeping update; they require their own explicit adjudication.
+## Post-Reconciliation Dispositions — 2026-10-14
+
+| Matter | Working disposition | Design Note |
+|---|---|---|
+| Clinical Device Maintenance Management membership | Resolved: established eighth CT3 under Clinical Technology Management; membership and count corrected. | DN-BC-015 |
+| Health Information Exchange BC/BEC name collision | Resolved: BC remains Health Information Exchange; BEC renamed HIE Integration Services. No BC↔BEC mapping established. | DN-BC-023, DN-BC-027 |
+| BC-17 Health Service Governance relevance | Resolved: Harmonia-Relevant; governance outputs constrain activity without conferring originating governance authority on Harmonia. | DN-BC-036 |
+| Business Capability relevance principle | Refined: information context can establish relevance without Harmonia performing, coordinating or owning the business process. | DN-BC-001 |
+| Clinical Determination decomposition | Resolved: three CT3s established with the clinical authority boundary preserved. | DN-BC-038 |
+| Individual Care Planning decomposition | Resolved: Care Goal Definition and Care Response Planning established with the clinical authority boundary preserved. | DN-BC-039 |
+| Clinical Intervention decomposition | Resolved: deliberate R1/R2 stopping point at CT2; the previous three-child candidate is not established or retained as an unresolved taxonomy. | DN-BC-010, DN-BC-013 |
+| Domain Health Information Services | Established as the third Connected Health Services CT2, with Provider Directory Services, Enterprise Master Patient Index Services, Immunisation Register Services and Longitudinal Health Record Services as its four current CT3s. | DN-BC-027 |
+| Health Information Sharing Programme Management | Superseded for the current model by Domain Health Information Services; not retained as an unresolved R1/R2 CT3 candidate. | DN-BC-027 |
+| Collaboration Services | Future candidate only, conditional on deliberate delivery as an identifiable externally visible organisational service; excluded from the established CT3 set. | DN-BC-027 |
+
+**OI-BC-001 — Medication Compounding and Preparation** and **OI-BC-002 —
+Health Service Operational Readiness Placement** remain unresolved and
+unchanged. Other open issues, candidates and parked matters in earlier
+notes remain in their recorded standing unless explicitly addressed
+above. In particular, the future Identity Assurance enabling-capability
+name in **DN-BC-023**, general UI/presentation enablement in **DN-BC-027**
+and the canonical Health Service Assurance reconciliation consideration
+in **DN-BC-037** are not resolved by this capture.
+
+## Future Reconciliation Sequence
 
 The next major activity is the following reconciliation sequence:
 
@@ -6865,7 +7148,8 @@ The next major activity is the following reconciliation sequence:
     canonical Markdown, preserving the definitions, boundaries,
     interpretive warnings and unresolved issues. Reconcile differences
     with existing canonical scope and check global Capability-name
-    uniqueness as part of that work.
+    uniqueness as part of that work, applying the resolved Exchange
+    naming decision above.
 2.  Reconcile the Business Capability representation in RADS only after
     canonical documentation is coherent.
 3.  Then construct/reconcile the Business Enabling Capability
@@ -6879,7 +7163,9 @@ The next major activity is the following reconciliation sequence:
 
 This queue records future work. It does not authorise canonical edits,
 RADS JSON/schema changes, enabling-capability ancestry, Feature
-ownership/framing, Canonical IDs or Domain05 traceability in this capture.
+ownership/framing, new or altered BC↔BEC mappings, Canonical IDs, local
+Capability codes, source-fingerprint refreshes, validator/schema changes
+or Domain05 traceability in this capture. Domain05 B2.2 remains parked.
 
 ------------------------------------------------------------------------
 

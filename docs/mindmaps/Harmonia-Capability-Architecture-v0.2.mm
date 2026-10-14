@@ -13,7 +13,7 @@
       </html>
 </richcontent>
 <hook NAME="MapStyle">
-    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false" show_note_icons="true" show_icon_for_attributes="true"/>
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" show_note_icons="true" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -99,7 +99,7 @@
 </node>
 <node TEXT="BUSINESS CAPABILITY MODEL &#x2014; CURRENT WORKING HIERARCHY" POSITION="right" ID="ID_1567650250" CREATED="1791928030716" MODIFIED="1791928030716">
 <attribute NAME="ElementType" VALUE="View"/>
-<node TEXT="[CT1] Individual Care Delivery" ID="ID_924479880" CREATED="1791928030716" MODIFIED="1791928030716">
+<node TEXT="[CT1] Individual Care Delivery" FOLDED="true" ID="ID_924479880" CREATED="1791928030716" MODIFIED="1791928030716">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Individual Health Assessment" ID="ID_358816868" CREATED="1791928030716" MODIFIED="1791928030716">
@@ -223,7 +223,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Care Access &amp; Coordination" ID="ID_161246609" CREATED="1791928030723" MODIFIED="1791928030723">
+<node TEXT="[CT1] Care Access &amp; Coordination" FOLDED="true" ID="ID_161246609" CREATED="1791928030723" MODIFIED="1791928030723">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Care Access Management" ID="ID_927323648" CREATED="1791928030723" MODIFIED="1791928030723">
@@ -315,7 +315,7 @@
           </html>
 </richcontent>
 </node>
-<node TEXT="[CT1] Diagnostic, Therapeutic &amp; Clinical Support Services" ID="ID_1033614299" CREATED="1791928030728" MODIFIED="1791928030728">
+<node TEXT="[CT1] Diagnostic, Therapeutic &amp; Clinical Support Services" FOLDED="true" ID="ID_1033614299" CREATED="1791928030728" MODIFIED="1791928030728">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Medication &amp; Pharmacy Services" ID="ID_1492159243" CREATED="1791928030728" MODIFIED="1791928030728">
@@ -383,7 +383,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Health Products &amp; Clinical Technology" ID="ID_1227381498" CREATED="1791928030732" MODIFIED="1791928030732">
+<node TEXT="[CT1] Health Products &amp; Clinical Technology" FOLDED="true" ID="ID_1227381498" CREATED="1791928030732" MODIFIED="1791928030732">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2?] Health Product Management" ID="ID_806735095" CREATED="1791928030732" MODIFIED="1791928030732">
@@ -435,7 +435,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Clinical Quality, Safety &amp; Improvement" ID="ID_523297118" CREATED="1791928030734" MODIFIED="1791928030734">
+<node TEXT="[CT1] Clinical Quality, Safety &amp; Improvement" FOLDED="true" ID="ID_523297118" CREATED="1791928030734" MODIFIED="1791928030734">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Clinical Safety Management" ID="ID_402934670" CREATED="1791928030734" MODIFIED="1791928030734">
@@ -475,7 +475,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Community Health &amp; Wellbeing" ID="ID_107268722" CREATED="1791928030735" MODIFIED="1791928030735">
+<node TEXT="[CT1] Community Health &amp; Wellbeing" FOLDED="true" ID="ID_107268722" CREATED="1791928030735" MODIFIED="1791928030735">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Preventative Health" ID="ID_1042830730" CREATED="1791928030735" MODIFIED="1791928030735">
@@ -507,7 +507,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Population Health &amp; Health-System Planning" ID="ID_954716166" CREATED="1791928030736" MODIFIED="1791928030736">
+<node TEXT="[CT1] Population Health &amp; Health-System Planning" FOLDED="true" ID="ID_954716166" CREATED="1791928030736" MODIFIED="1791928030736">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Population Health Surveillance" ID="ID_144741055" CREATED="1791928030737" MODIFIED="1791928030737">
@@ -554,7 +554,7 @@
 <node TEXT="[CT1] Health Information &amp; Knowledge Management" ID="ID_1967262789" CREATED="1791928030738" MODIFIED="1791928030738">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
-<node TEXT="[CT2] Health Information Management" ID="ID_1235303236" CREATED="1791928030738" MODIFIED="1791928030738">
+<node TEXT="[CT2] Health Information Management" FOLDED="true" ID="ID_1235303236" CREATED="1791928030738" MODIFIED="1791928030738">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT3] Health Information Data Management" ID="ID_1876828588" CREATED="1791928030738" MODIFIED="1791928030738">
@@ -586,7 +586,7 @@
 <attribute NAME="Status" VALUE="Established"/>
 </node>
 </node>
-<node TEXT="[CT2] Clinical Knowledge Management" ID="ID_242444581" CREATED="1791928030739" MODIFIED="1791928030739">
+<node TEXT="[CT2] Clinical Knowledge Management" FOLDED="true" ID="ID_242444581" CREATED="1791928030739" MODIFIED="1791928030739">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT3] Clinical Knowledge Context Identification" ID="ID_860331517" CREATED="1791928030739" MODIFIED="1791928030739">
@@ -618,7 +618,7 @@
 <node TEXT="[CT1] Standards, Semantics &amp; Reference Governance" ID="ID_380639671" CREATED="1791928030740" MODIFIED="1791928030740">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
-<node TEXT="[CT2] Health Information Standards Governance" ID="ID_1346834053" CREATED="1791928030740" MODIFIED="1791928030740">
+<node TEXT="[CT2] Health Information Standards Governance" FOLDED="true" ID="ID_1346834053" CREATED="1791928030740" MODIFIED="1791928030740">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Candidate"/>
 <richcontent TYPE="NOTE">
@@ -883,7 +883,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Health Research &amp; Innovation" ID="ID_896721775" CREATED="1791928030743" MODIFIED="1791928030743">
+<node TEXT="[CT1] Health Research &amp; Innovation" FOLDED="true" ID="ID_896721775" CREATED="1791928030743" MODIFIED="1791928030743">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Research Information Support" ID="ID_720811552" CREATED="1791928030743" MODIFIED="1791928030743">
@@ -919,7 +919,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Health Service Direction &amp; Stewardship" ID="ID_1314781868" CREATED="1791928030744" MODIFIED="1791928030744">
+<node TEXT="[CT1] Health Service Direction &amp; Stewardship" FOLDED="true" ID="ID_1314781868" CREATED="1791928030744" MODIFIED="1791928030744">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Health Service Modelling" ID="ID_25335403" CREATED="1791928030743" MODIFIED="1791930132988">
@@ -991,7 +991,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="[CT1] Workforce &amp; Organisational Capability" ID="ID_434030765" CREATED="1791928030744" MODIFIED="1791928030744">
+<node TEXT="[CT1] Workforce &amp; Organisational Capability" FOLDED="true" ID="ID_434030765" CREATED="1791928030744" MODIFIED="1791928030744">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Health Workforce Management" ID="ID_1131646271" CREATED="1791928030744" MODIFIED="1791928030744">
@@ -1043,7 +1043,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Corporate Resources &amp; Enterprise Services" ID="ID_1348343900" CREATED="1791928030745" MODIFIED="1791928030745">
+<node TEXT="[CT1] Corporate Resources &amp; Enterprise Services" FOLDED="true" ID="ID_1348343900" CREATED="1791928030745" MODIFIED="1791928030745">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Financial &amp; Commercial Services" ID="ID_695975814" CREATED="1791928030745" MODIFIED="1791928030745">
@@ -1099,7 +1099,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Health Service Governance" ID="ID_516088076" CREATED="1791928030746" MODIFIED="1791928030746">
+<node TEXT="[CT1] Health Service Governance" FOLDED="true" ID="ID_516088076" CREATED="1791928030746" MODIFIED="1791928030746">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Governance Framework Management" ID="ID_663053628" CREATED="1791928030746" MODIFIED="1791928030746">
@@ -1143,7 +1143,7 @@
 </node>
 </node>
 </node>
-<node TEXT="[CT1] Health Service Assurance" ID="ID_1908754796" CREATED="1791928030746" MODIFIED="1791928030746">
+<node TEXT="[CT1] Health Service Assurance" FOLDED="true" ID="ID_1908754796" CREATED="1791928030746" MODIFIED="1791928030746">
 <attribute NAME="ElementType" VALUE="Capability"/>
 <attribute NAME="Status" VALUE="Established"/>
 <node TEXT="[CT2] Health Service Assurance Specification" ID="ID_788485239" CREATED="1791928030746" MODIFIED="1791928030746">
@@ -1192,7 +1192,7 @@
 <attribute NAME="Status" VALUE="UNRESOLVED"/>
 </node>
 </node>
-<node TEXT="RADS BEHAVIOUR CATALOGUE &#x2014; ESTABLISHED LOWER-LEVEL ELEMENTS" POSITION="right" ID="ID_240656573" CREATED="1791928030749" MODIFIED="1791928030749">
+<node TEXT="RADS BEHAVIOUR CATALOGUE &#x2014; ESTABLISHED LOWER-LEVEL ELEMENTS" FOLDED="true" POSITION="right" ID="ID_240656573" CREATED="1791928030749" MODIFIED="1791928030749">
 <attribute NAME="ElementType" VALUE="View"/>
 <richcontent TYPE="NOTE">
 
@@ -3618,7 +3618,7 @@
 </node>
 </node>
 </node>
-<node TEXT="UNRESOLVED / RECONCILIATION QUEUE" POSITION="right" ID="ID_513448487" CREATED="1791928030796" MODIFIED="1791928030796">
+<node TEXT="UNRESOLVED / RECONCILIATION QUEUE" FOLDED="true" POSITION="right" ID="ID_513448487" CREATED="1791928030796" MODIFIED="1791928030796">
 <attribute NAME="ElementType" VALUE="View"/>
 <attribute NAME="Status" VALUE="UNRESOLVED"/>
 <node TEXT="Complete CT1/CT2/CT3 ancestry and Canonical IDs are not yet reconciled into RADS." ID="ID_1736978330" CREATED="1791928030796" MODIFIED="1791928030796">
