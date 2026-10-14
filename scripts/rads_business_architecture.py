@@ -20,7 +20,9 @@ DEFAULT_MODEL = MODEL_DIR / 'business-architecture.json'
 SCHEMA_PATH = MODEL_DIR / 'business-architecture.schema.json'
 TOKEN_CODE = r'[^.\s]+'
 CAPABILITY_PATH = rf'CT1-{TOKEN_CODE}(?:\.CT2-{TOKEN_CODE}(?:\.CT3-{TOKEN_CODE})?)?'
-CANONICAL = re.compile(rf'{CAPABILITY_PATH}(?:\.FEAT-{TOKEN_CODE})?(?:\.(?:FN|SV|PR)-{TOKEN_CODE})?\Z')
+CT3_PATH = rf'CT1-{TOKEN_CODE}\.CT2-{TOKEN_CODE}\.CT3-{TOKEN_CODE}'
+CANONICAL = re.compile(
+    rf'(?:{CAPABILITY_PATH}|{CT3_PATH}\.FEAT-{TOKEN_CODE})(?:\.(?:FN|SV|PR)-{TOKEN_CODE})?\Z')
 LOCAL_PREFIX = {'feature': 'FEAT', 'function': 'FN', 'service': 'SV', 'process': 'PR'}
 RELATION_TYPES = {
     'capability_decomposition': ({'capability'}, {'capability'}),
@@ -136,7 +138,7 @@ def validate(model, root=ROOT, check_sources=True):
     if model['authority'] not in model['sources']:
         errors.append('unresolved authority source reference')
     identifiers = {}
-    capability_names = set()
+    capability_names = {}
     uncertainty = []
 
     def error(record, message):
@@ -172,8 +174,15 @@ def validate(model, root=ROOT, check_sources=True):
             error(e, f'unresolved catalogue context reference {context}')
         if kind == 'capability':
             if e['name'] in capability_names:
-                error(e, 'duplicate Capability canonical name')
-            capability_names.add(e['name'])
+                prior = capability_names[e['name']]
+                # A captured source conflict remains a conflict, not a uniqueness
+                # waiver or a BC/BEC identity merger. Both records must explicitly
+                # preserve it; an unreported duplicate is still INVALID.
+                if not (e.get('category') != prior.get('category')
+                        and 'name_uniqueness' in e['unresolved']
+                        and 'name_uniqueness' in prior['unresolved']):
+                    error(e, 'duplicate Capability canonical name')
+            capability_names[e['name']] = e
             if 'category' not in e:
                 error(e, 'Capability category is required')
             if 'tier' not in e:
@@ -194,6 +203,11 @@ def validate(model, root=ROOT, check_sources=True):
                 error(e, 'owning responsibility context is not established')
             if kind == 'feature' and tier != 'FT':
                 error(e, 'Feature must retain FT type')
+            if kind == 'feature' and owner and owner.get('category') != 'business_enabling':
+                error(e, 'Harmonia Feature owner must be Business Enabling, not Business Capability')
+            if kind == 'feature' and e['ancestry_status'] == 'established':
+                if not owner or owner.get('tier') != 'CT3' or owner['ancestry_status'] != 'established':
+                    error(e, 'complete Feature ancestry requires an immediate Business Enabling CT3 frame')
             if kind != 'feature' and 'tier' in e:
                 error(e, 'behaviour is not a Capability Tier')
             if 'category' in e or e.get('capability_parent'):
@@ -201,7 +215,11 @@ def validate(model, root=ROOT, check_sources=True):
         parent = elements.get(e.get('capability_parent'))
         if e.get('capability_parent') and (not parent or parent['type'] != 'capability'):
             error(e, 'invalid Capability parent; views/contexts cannot be ancestors')
+        if parent and kind == 'capability' and parent.get('category') != e.get('category'):
+            error(e, 'Capability decomposition cannot cross Business/Business Enabling categories')
         if e['ancestry_status'] == 'established' and kind == 'capability':
+            if tier is None:
+                error(e, 'complete Capability ancestry requires an established tier')
             expected = {'CT2': 'CT1', 'CT3': 'CT2'}.get(tier)
             if expected and (not parent or parent.get('tier') != expected or parent['ancestry_status'] != 'established'):
                 error(e, 'missing established higher-tier ancestor')
@@ -236,6 +254,14 @@ def validate(model, root=ROOT, check_sources=True):
                 error(e, 'ID Alias terminal token contradicts Element Type/Tier')
 
     by_id = {e['canonical_id']: e for e in model['elements'] if e['canonical_id']}
+    for e in model['elements']:
+        if e['type'] == 'capability' and 'name_uniqueness' in e['unresolved']:
+            peers = [p for p in model['elements'] if p['key'] != e['key']
+                     and p['type'] == 'capability' and p['name'] == e['name']
+                     and p.get('category') != e.get('category')
+                     and 'name_uniqueness' in p['unresolved']]
+            if len(peers) != 1:
+                error(e, 'name conflict must reference an actual explicitly unresolved cross-category collision')
     feature_names = set()
     for e in model['elements']:
         seen = {e['key']}

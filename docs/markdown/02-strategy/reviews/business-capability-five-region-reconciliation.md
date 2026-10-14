@@ -1,5 +1,16 @@
 # Domain02 Strategy — Five-Region Business Capability Reconciliation
 
+> **Current authority — 2026-10-14:** This historical decision record is preserved.
+> The [canonical R1/R2 Business Capability catalogue](../capabilities/business-capabilities.md)
+> now governs reconciled BC definitions, relevance, explicit CT1/CT2/CT3 parents
+> and unresolved matters. The [clarified metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology)
+> applies mandatory CT3 Feature framing to **Business Enabling Capabilities**;
+> BC decomposition does not terminate in Harmonia Features. Historical claims
+> that BC tiers/CT3s remain wholly unallocated or classifications are unchanged
+> describe the earlier decision boundary, not the current catalogue. BEC ancestry,
+> existing Feature responsibility and unallocated Canonical IDs remain unresolved.
+
+
 **Date:** 2026-10-08. **Decision status:** Human architectural decision already approved; this record documents its bounded reconciliation. It does not request or confer a new architectural approval.
 
 The normative Business Capability definitions belong in the [canonical Business Capability model](../capabilities/business-capabilities.md). This review record distinguishes the approved decision, its direct documentary consequences, preserved semantics and unresolved downstream consequences. It is not authority over that model, the central axioms, accepted ADRs or requirements. The [completion report](../../../../.junie/reports/2026-10-08-domain02-business-capability-reconciliation.md) records execution and verification only.

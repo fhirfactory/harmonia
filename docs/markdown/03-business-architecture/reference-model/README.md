@@ -3,7 +3,8 @@
 # Business Architecture reference candidate model
 
 This is a machine-readable **reference candidate capture** of the Strategy and
-Business Architecture documented on `Harmonia-GovernedAccess`, 2026-10-13. It
+Business Architecture documented on `Harmonia-GovernedAccess`, with the Business
+Capability side reconciled on 2026-10-14. It
 supports navigation, validation, contextual diagrams and change-impact queries.
 Inclusion supplies no architectural approval or missing decomposition decision.
 The [Business Architecture Metamodel](../metamodel/business-architecture-metamodel.md),
@@ -29,7 +30,7 @@ distinctions; they introduce no new approval process.
 
 | Collection/property | Meaning |
 | :--- | :--- |
-| `elements` | Independently established Capabilities, Features, Functions, Services and Processes. `category` distinguishes Business from Business Enabling Capabilities; it is not a tier. |
+| `elements` | Independently established elements and explicitly identified candidate BC concerns with unresolved placement. `status` distinguishes them. `category` distinguishes Business from Business Enabling Capabilities; it is not a tier. |
 | `key` | A stable internal record reference, such as `capability:person-identity`. It is neither an allocated Canonical ID nor an ID Alias. Preserve it across renames/relocations. |
 | `name`, `type`, `status` | Current documented architectural name, semantic type and standing of the captured element assertion. |
 | `tier` | `CT1`, `CT2`, `CT3` for a Capability when independently established; `FT` for a Feature. Explicit `null` on a Capability means unresolved. Behaviour carries no tier. |
@@ -47,27 +48,31 @@ distinctions; they introduce no new approval process.
 | `summary` | A bounded source description when available. It does not replace source definitions, qualifications, authority boundaries or illustrative/non-normative distinctions. Absence does not authorise an inferred definition. |
 
 An element's existence, numerical Capability Tier and complete Canonical ID are
-independent assertions. The capture currently contains **24 Business
-Capabilities** (18 catalogue entries and the six Individual Care Delivery
-children), **76 established Business Enabling Capability contexts**, **137 FT
+independent assertions. The capture currently contains **190 established Business
+Capabilities** (**18 CT1**, **39 CT2**, **133 CT3**) and **three candidate BC concerns
+with unresolved tier/placement**: Health Service Operational Readiness, Clinical
+Device Maintenance Management and Health Information Sharing Programme Management.
+The [canonical BC catalogue](../../02-strategy/capabilities/business-capabilities.md)
+governs their distinctions and the preserved uncertainties. It also contains
+**76 established Business Enabling Capability contexts**, **137 FT
 Features**, **147 Functions**, **133 Services** and **19 Processes**. Seventy-three
 named enabling decomposition contexts are preserved separately: four link to
 independently established Capabilities and **69 have unresolved standalone
 Architectural Element identity**. Counting those 69 as approved Capabilities
 would contradict [K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing).
 
-No complete structural Canonical ID or CT1/CT2/CT3 allocation is asserted in this
-capture. All 137 local Feature identifiers and their FT classification remain
-established. The Business catalogue's explicit L1/L2 statements are retained as
-`documented_tier_label`, distinct from allocated `tier`; the approved catalogue
-presentation does not supply CT ancestry/root allocation. The six **agreed
-Capability decomposition** relationships from Individual Care Delivery are
-preserved, including their definitions and L2 display labels. No CT3 detail or
-care-setting Capability is created. This conservative capture leaves the
-deprecated labels/current CT reconciliation visible for subsequent adjudication.
+No complete structural Canonical ID or new local code is allocated. BC tiers,
+root standing and parents come from **explicit canonical assertions**, independently
+of ordinals, nesting and indentation. The six Individual Care Delivery CT2
+identities retain their record keys and definitions; their adjudicated assessment,
+monitoring and review CT3s are now captured. The other three clinical CT2s retain
+their unestablished/provisional CT3 detail. The three candidate concerns have no
+parent or region assigned, and no compounding/preparation Capability is created.
+All 137 Feature names, local identifiers, FT classification and ownership remain
+unchanged. All BEC tiers and complete ancestry remain unresolved.
 
 The [approved fixed-decomposition decision](../../02-strategy/reviews/fixed-capability-decomposition-decision.md)
-requires **CT1 → CT2 → CT3 → FT** for a fully reconciled Feature: CT3 is the
+as clarified by the metamodel requires **BEC CT1 → CT2 → CT3 → FT** for a fully reconciled Feature: Business Enabling CT3 is the
 mandatory immediate Capability frame, with CT2 and CT1 ancestry. No Feature may
 compensate for missing decomposition, and no tier may be skipped. The capture's
 existing `owner` and partial-parent assertions preserve established responsibility
@@ -75,8 +80,27 @@ evidence; they do not assert that an owner is CT3 or that the Feature is
 structurally reconciled. All 137 Features' required Capability frames/complete
 ancestry remain unresolved pending separate architectural reconciliation. The
 69 unresolved enabling descriptions remain unresolved descriptions, not newly
-established Capabilities. The JSON capture, schema, local IDs and existing
-relationships are unchanged by this metamodel/documentation decision.
+established Capabilities. BCs do not decompose into Harmonia Features and no new
+BC↔BEC support edge is established. Existing B2.1 and assurance support assertions
+are retained without extension to the new descendants. BC decomposition adds
+**166 established parent relationships** to the six previously captured BC parent
+relationships, for **172**. The representation schema already supports these
+distinct assertions and requires no change.
+
+**Health Information Exchange** now identifies both an adjudicated BC CT2 and an
+existing BEC. The records retain separate keys, categories and meanings with
+explicit `name_uniqueness` uncertainty. This is a reported conflict with global
+name uniqueness and the BC/BEC naming boundary, not an identity merger, alias,
+support mapping or approved uniqueness exception. Bare-name lookup is ambiguous;
+use a record key. The naming point requires adjudication in the later BEC phase.
+The defined Maintenance concern omitted from DN-BC-015's seven-child set remains
+candidate/unplaced. Neither unresolved point is declared reconciled.
+
+Canonical BC evidence/context/consumption relationships are preserved in Markdown.
+The current governed relationship vocabulary does not encode those precise
+semantics; `semantic_relationship_representation` records that unresolved capture
+dimension rather than substituting a structural, runtime or Service edge. No new
+relationship type or downstream behavioural element is invented.
 
 ## Responsibility, contextual views and behaviour
 
@@ -156,17 +180,23 @@ requires reconciliation, not that the architecture itself has been rejected.
 Unknown CT1 Feature-name scope is reported unresolved rather than given an
 invented root. JSON Schema validation alone cannot perform the graph checks.
 
-**Enforcement and source-reconciliation limits:** the existing tool and schema
-predate the fixed-decomposition decision. Their permissive Feature path handling
-still accepts Features directly under resolved CT1 or CT2; the validator test
-`test_complete_typed_ancestry_and_direct_behaviour_anchoring` explicitly exercises
-that former permission. A representation PASS therefore does not establish
-conformance to the new mandatory CT3 Feature frame. Updating that enforcement
-requires separate tooling work; it does not authorise allocating tiers to the
-capture. Documentation changes also invalidate stored source fingerprints and
-may invalidate line/text/anchor locators. Resulting source-drift diagnostics
-record a capture-reconciliation need, not a semantic failure of the new rule.
-The capture SHALL NOT be mechanically refreshed to conceal these consequences.
+**Enforcement and source-reconciliation limits:** the validator now rejects
+complete CT1→Feature and CT2→Feature paths, including behaviour beneath those
+invalid paths, and checks the immediate established BEC CT3 owner even before
+IDs are allocated. Capability decomposition cannot cross BC/BEC categories.
+Direct Function/Service/Process anchoring remains valid at any established
+Capability tier. Historical BEC responsibility with unresolved Feature ancestry
+remains valid evidence; PASS does not frame the 137 Features or complete BEC
+reconciliation. An explicitly reported cross-category name collision remains
+unresolved only when both records preserve the conflict; unreported duplicate
+names still fail. PASS with uncertainty does not establish CM-R05 conformance.
+
+Sources were reconciled semantically before fingerprints and locators were
+updated. Incoming drift from the prior fixed-decomposition clarification was
+reviewed as well: unchanged evidence assertions/owners remain intact while their
+positions move. K9's supersession and B2.1's unchanged bounded support do not
+allocate BEC ancestry or extend traceability. Later source drift still requires
+semantic reconciliation and SHALL NOT be concealed by mechanical hash refresh.
 
 `impact` follows recorded ownership, partial parents and confirmed dependants to
 show a conservative impact set, returning unresolved mentions separately. It is

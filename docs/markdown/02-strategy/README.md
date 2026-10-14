@@ -84,9 +84,9 @@ Cross-cutting technical enablement considerations
 This progression relates different architectural constructs; it does not establish CT1 / CT2 / CT3 ancestry for the affected Business Enabling Capabilities. Capability Tier, complete ancestry and structural Canonical IDs remain unresolved where not established by architecture. This derivation progression is a Harmonia architectural modeling convention. It respects ArchiMate 3.2 semantics while providing the necessary vertical traceability required for clinical safety and software engineering.
 
 The separate [fixed Capability decomposition](capability-maps/capability-tier-model.md)
-is **CT1 → CT2 → CT3 → FT**, governed by the
+is **CT1 → CT2 → CT3** for Business Capabilities and **CT1 → CT2 → CT3 → FT** for Business Enabling Capabilities, governed by the
 [Business metamodel](../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology).
-Every fully reconciled Feature requires a CT3 frame and complete CT2/CT1
+Every fully reconciled Harmonia Feature requires a Business Enabling CT3 frame and complete CT2/CT1
 ancestry; Features cannot compensate for missing decomposition. CT3 is
 Harmonia's intentional Capability boundary; CT4, CT5 and deeper tiers are
 outside its scope. `Layer ≠ Capability Tier ≠ Derivation Stage`. Legacy
@@ -113,7 +113,7 @@ WHAT VALUE DOES HARMONIA CREATE?
        ▼  VS-01 through VS-04 Normative Healthcare Value Transformations
 WHAT MUST THE ENTERPRISE DO?
        │  [Domain 02: Business Capabilities]
-       ▼  18 L1 Business Capabilities across 5 Natural Regions
+       ▼  18 CT1 Business Capability domains across 5 Natural Regions
 WHAT MUST SYSTEMS ENABLE?
        │  [Domain 02: Business Enabling Capabilities]
        ▼  5 Contextual Views: Entity, Admin, Delivery, Operations, Intrinsic
@@ -137,7 +137,7 @@ HOW ARE THOSE RESPONSIBILITIES REALISED?
           Business, Information, Application, Integration, Technology
 ```
 
-The five natural Business Capability regions are Care & Health Delivery, Health Information & Digital Health, Research & Innovation, Health Service Management, and Governance & Assurance. They are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from the five Business Enabling contextual views. Relevance classification for 17–18, enabling derivation for 17 and relationships beyond the approved BC-18 assurance derivation remain unresolved. The reading path establishes no additional relationships or allocation of EC-14 to the displayed logical components.
+The five natural Business Capability regions are Care & Health Delivery, Health Information & Digital Health, Research & Innovation, Health Service Management, and Governance & Assurance. They are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from the five Business Enabling contextual views. BC-17 relevance classification/enabling derivation and relationships beyond the previously approved support traces remain unresolved. The canonical BC catalogue now establishes its explicit CT1/CT2/CT3 hierarchy and reconciled classifications; BC-18 is Harmonia-Relevant. BC decomposition does not terminate in Harmonia Features. The reading path establishes no additional relationships or allocation of EC-14 to the displayed logical components.
 
 ---
 
@@ -171,7 +171,7 @@ Domain 02: Strategy  ───────────────────�
 To preserve architectural clarity, Domain 02 enforces strict boundary rules:
 
 ### What Belongs in Domain 02
-- The 18 canonical L1 Business Capabilities across five natural operational regions, with existing Harmonia relevance classifications for 01–16; classification for 17–18 and enabling derivation for 17 remain unresolved, while BC-18 has the approved bounded assurance derivation.
+- The 18 canonical CT1 Business Capability domains across five natural operational regions, with explicit adjudicated CT2/CT3 branches, semantic-sufficiency stopping points and reconciled relevance classifications; BC-17 classification/enablement remain unresolved, while BC-18 is Harmonia-Relevant with its previously approved bounded assurance derivation.
 - The Business Enabling Capability model across five authentic healthcare operating contexts (Entity Management, Service Administration, Service Delivery, Health Service Operations, Intrinsic / Shared Enablement).
 - Atomic Features within established Harmonia-Relevant and Harmonia-Core Capability contexts.
 - The 14 technology-neutral Enterprise Capabilities (EC-01 through EC-14), preserving the existing thirteen semantics and distinguishing EC-12 Operational Assurance from EC-14 Service Guardian.
@@ -205,7 +205,7 @@ The documentation for Domain 02 is organized as follows:
    - [Strategic Logical Component Responsibilities](strategic-views/logical-component-responsibilities.md): Responsibility model for six strategic logical components and the Digital Twin coordination construct, 6-point boundary tests, 6 critical seam validations, capability compositions, and Strategic Responsibility View.
 2. **Capability Model & Catalogues**
    - [Capability Framework Index](capabilities/index.md): Multi-tier capability progression framework and directory guide.
-   - [Business Capabilities](capabilities/business-capabilities.md): Complete catalogue of the 18 L1 Business Capabilities across five natural regions, with quality rules, established Harmonia relevance classifications and explicit unresolved downstream matters for 17–18.
+   - [Business Capabilities](capabilities/business-capabilities.md): Complete catalogue of the 18 CT1 Business Capability domains across five natural regions, with quality rules, established Harmonia relevance classifications and explicit unresolved BC issues and downstream dimensions.
    - [Five-Region Business Capability Reconciliation](reviews/business-capability-five-region-reconciliation.md): Bounded record of the approved human decision, direct documentary corrections and deferred downstream consequences; the catalogue remains the normative model.
    - [Business Enabling Capabilities](capabilities/business-enabling-capabilities.md): Established R1.x/R2.x capability and Feature baseline across five contextual views, plus the approved assurance capabilities with no artificial Feature decomposition.
    - [Enterprise Capabilities](capabilities/enterprise-capabilities.md): Technology-neutral specifications for EC-01 through EC-14 and multi-capability derivation methodology; no EC-14 component allocation.

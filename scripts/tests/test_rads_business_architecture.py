@@ -37,7 +37,7 @@ def syntax_fixture():
         if kind in ('feature', 'capability'):
             e['tier'] = tier
         if kind == 'capability':
-            e['category'] = 'business'
+            e['category'] = 'business_enabling'
         if owner:
             e['owner'] = owner
         if parent:
@@ -58,20 +58,55 @@ class ValidatorTests(unittest.TestCase):
 
     def test_complete_typed_ancestry_and_direct_behaviour_anchoring(self):
         self.assertEqual([], self.errors())
-        # A Feature may specialise CT1 or CT2 without materialising lower tiers.
-        feature, function = self.model['elements'][3:5]
-        for parent, prefix in [('root', 'CT1-TEST'), ('child', 'CT1-TEST.CT2-TEST')]:
-            with self.subTest(parent=parent):
-                feature['owner'] = parent
-                feature['canonical_id'] = prefix + '.FEAT-TEST'
-                function['canonical_id'] = feature['canonical_id'] + '.FN-TEST'
-                self.assertEqual([], self.errors())
         # A Function may instead be owned directly at CT1, CT2 or CT3.
+        function = self.model['elements'][4]
         for owner in self.model['elements'][:3]:
             with self.subTest(tier=owner['tier']):
                 function['owner'] = owner['key']
                 function['canonical_id'] = owner['canonical_id'] + '.FN-TEST'
                 self.assertEqual([], self.errors())
+
+    def test_complete_feature_ancestry_rejects_ct1_and_ct2_frames(self):
+        for parent, prefix in [('root', 'CT1-TEST'), ('child', 'CT1-TEST.CT2-TEST')]:
+            with self.subTest(parent=parent):
+                self.model = syntax_fixture()
+                feature, function = self.model['elements'][3:5]
+                feature.update(owner=parent, canonical_id=prefix + '.FEAT-TEST')
+                function['canonical_id'] = feature['canonical_id'] + '.FN-TEST'
+                self.assert_invalid('immediate Business Enabling CT3 frame')
+                self.assert_invalid('token grammar')
+                # Complete tier/parent assertions still require CT3 even before
+                # identifiers are allocated.
+                feature.update(canonical_id=None, unresolved=['canonical_id', 'code_allocation'])
+                function.update(canonical_id=None, unresolved=['canonical_id', 'code_allocation'])
+                self.assert_invalid('immediate Business Enabling CT3 frame')
+
+    def test_business_ct3_cannot_frame_harmonia_feature(self):
+        for e in self.model['elements'][:3]:
+            e['category'] = 'business'
+        self.assert_invalid('Harmonia Feature owner must be Business Enabling')
+
+    def test_business_capability_hierarchy_does_not_require_features(self):
+        self.model['elements'] = self.model['elements'][:3] + self.model['elements'][5:]
+        for e in self.model['elements'][:3]:
+            e['category'] = 'business'
+        self.assertEqual([], self.errors())
+
+    def test_historical_bec_feature_with_partial_ancestry_remains_unresolved(self):
+        for owner in ('root', 'child', 'leaf'):
+            with self.subTest(owner=owner):
+                self.model = syntax_fixture()
+                self.model['elements'] = self.model['elements'][:4]
+                feature = self.model['elements'][3]
+                feature.update(owner=owner, canonical_id=None, ancestry_status='unresolved',
+                               unresolved=['ancestry', 'canonical_id', 'code_allocation'])
+                errors, uncertainty = rads.validate(self.model, check_sources=False)
+                self.assertEqual([], errors)
+                self.assertIn({'key': 'feature', 'reason': 'ancestry'}, uncertainty)
+
+    def test_capability_parent_cannot_cross_bc_bec_category(self):
+        self.model['elements'][0]['category'] = 'business'
+        self.assert_invalid('decomposition cannot cross')
 
     def test_duplicate_canonical_id(self):
         other = copy.deepcopy(self.model['elements'][-1])
@@ -189,9 +224,22 @@ class ValidatorTests(unittest.TestCase):
         self.model['elements'][1]['name'] = 'root'
         self.assert_invalid('duplicate Capability canonical name')
 
+    def test_explicit_cross_category_name_conflict_is_preserved_as_unresolved(self):
+        other = copy.deepcopy(self.model['elements'][0])
+        other.update(key='business-root', category='business', canonical_id=None,
+                     unresolved=['canonical_id', 'code_allocation', 'name_uniqueness'])
+        self.model['elements'].append(other)
+        self.assert_invalid('duplicate Capability canonical name')
+        self.model['elements'][0]['unresolved'].append('name_uniqueness')
+        errors, uncertainty = rads.validate(self.model, check_sources=False)
+        self.assertEqual([], errors)
+        self.assertEqual(2, sum(r.get('reason') == 'name_uniqueness' for r in uncertainty))
+        other['name'] = 'different-name'
+        self.assert_invalid('actual explicitly unresolved cross-category collision')
+
     def test_feature_name_uniqueness_at_established_root(self):
         feature = copy.deepcopy(self.model['elements'][3])
-        feature.update(key='second-feature', canonical_id='CT1-TEST.FEAT-SECOND', owner='root')
+        feature.update(key='second-feature', canonical_id='CT1-TEST.CT2-TEST.CT3-TEST.FEAT-SECOND', owner='leaf')
         self.model['elements'].append(feature)
         self.assert_invalid('duplicate Feature name within established CT1')
 
@@ -206,14 +254,16 @@ class CaptureReconciliationTests(unittest.TestCase):
         self.assertEqual([], errors)
         self.assertTrue(unresolved)
 
-    def test_current_capture_inventory_without_speculative_ids_or_tiers(self):
+    def test_current_capture_inventory_establishes_only_evidenced_bc_tiers(self):
         elements = self.model['elements']
-        self.assertEqual({'capability': 100, 'feature': 137, 'function': 147, 'service': 133, 'process': 19},
+        self.assertEqual({'capability': 269, 'feature': 137, 'function': 147, 'service': 133, 'process': 19},
                          dict(Counter(e['type'] for e in elements)))
-        self.assertEqual({'business': 24, 'business_enabling': 76},
+        self.assertEqual({'business': 193, 'business_enabling': 76},
                          dict(Counter(e['category'] for e in elements if e['type'] == 'capability')))
         self.assertTrue(all(e['canonical_id'] is None for e in elements))
-        self.assertTrue(all(e.get('tier') is None for e in elements if e['type'] == 'capability'))
+        self.assertEqual({'CT1': 18, 'CT2': 39, 'CT3': 133},
+                         dict(Counter(e['tier'] for e in elements if e.get('category') == 'business' and e['status'] == 'established')))
+        self.assertTrue(all(e.get('tier') is None for e in elements if e.get('category') == 'business_enabling'))
         self.assertEqual(69, sum(c['element_status'] == 'unresolved' for c in self.model['catalogue_contexts']))
 
     def test_all_137_feature_spellings_and_identifiers_are_retained(self):
@@ -229,15 +279,36 @@ class CaptureReconciliationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             rads.resolve(self.model, 'FEAT-EM01')
 
-    def test_individual_care_has_exactly_six_documented_children_and_no_ct3(self):
+    def test_individual_care_has_six_ct2s_and_only_adjudicated_ct3s(self):
         parent = rads.resolve(self.model, 'Individual Care Delivery')
         children = [rads.resolve(self.model, r['to']) for r in self.model['relationships']
                     if r['type'] == 'capability_decomposition' and r['from'] == parent['key']]
         self.assertEqual(['Individual Health Assessment', 'Clinical Determination', 'Individual Care Planning',
                           'Clinical Intervention', 'Individual Health Monitoring', 'Individual Care Review'],
                          [e['name'] for e in children])
-        self.assertTrue(all(e['documented_tier_label'] == 'L2' and e['tier'] is None for e in children))
-        self.assertFalse(any(e.get('tier') == 'CT3' for e in self.model['elements']))
+        self.assertEqual('CT1', parent['tier'])
+        self.assertTrue(all(e['tier'] == 'CT2' and e['ancestry_status'] == 'established' for e in children))
+        leaves = [e for e in self.model['elements'] if e.get('capability_parent') in {c['key'] for c in children}]
+        self.assertEqual(7, len(leaves))
+        self.assertTrue(all(e['tier'] == 'CT3' for e in leaves))
+        self.assertFalse(any(e['name'] == 'Therapy & Counselling Intervention' for e in self.model['elements']))
+
+    def test_open_bc_issues_have_no_manufactured_ancestry(self):
+        readiness = rads.resolve(self.model, 'Health Service Operational Readiness')
+        self.assertEqual('candidate', readiness['status'])
+        self.assertIsNone(readiness['tier'])
+        self.assertNotIn('capability_parent', readiness)
+        self.assertEqual('unresolved', readiness['ancestry_status'])
+        self.assertFalse(any('Compounding' in e['name'] for e in self.model['elements']))
+        self.assertIn('medication_compounding', rads.resolve(self.model, 'Medication & Pharmacy Services')['unresolved'])
+
+    def test_exchange_collision_is_not_a_bc_bec_mapping_or_alias(self):
+        with self.assertRaisesRegex(ValueError, 'resolves to 2 elements'):
+            rads.resolve(self.model, 'Health Information Exchange')
+        exchange = [e for e in self.model['elements'] if e['name'] == 'Health Information Exchange']
+        self.assertEqual({'business', 'business_enabling'}, {e['category'] for e in exchange})
+        self.assertTrue(all('name_uniqueness' in e['unresolved'] for e in exchange))
+        self.assertFalse(any(r['type'] == 'enabled_by' and r['from'] in {e['key'] for e in exchange} for r in self.model['relationships']))
 
     def test_client_person_feature_partial_chain_does_not_allocate_complete_ancestry(self):
         person = rads.resolve(self.model, 'Person Identity')

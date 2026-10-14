@@ -116,12 +116,16 @@ appropriateness of the care intent.
 ## 4. Preserved boundaries
 
 The [Domain02 decomposition and context rules](../../02-strategy/capabilities/business-capabilities.md#capability-decomposition-and-educational-documentation)
-apply: the six established children remain valid, while CT3 decomposition has
-not yet been architecturally established. Under the
+apply: the six established children are now explicitly reconciled as BC CT2s.
+The current catalogue establishes the stated assessment, monitoring and review
+CT3s; the other branches retain their recorded uncertainty/stopping points.
+Under the
 [fixed Capability model](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology),
-subsequently required Features must first have meaningful CT3 frames established;
-none may be invented for structural completeness. Retained L1/L2 display labels
-do not allocate CT tiers. Examples are not subordinate Capabilities, and care
+subsequently required Harmonia Features must first have meaningful **Business
+Enabling CT3** frames established. BC decomposition does not terminate in Features
+and this B2.1 support trace establishes no ancestry or new CT3 enablement edge.
+None may be invented for structural completeness. Retained L1/L2 display labels
+alone do not allocate CT tiers. Examples are not subordinate Capabilities, and care
 setting, delivery mode, temporal pattern and organisational
 arrangement do not themselves define different business abilities. Acute,
 Planned/Scheduled and Longitudinal Care are not the ICD L2 decomposition.

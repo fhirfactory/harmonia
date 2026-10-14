@@ -1,5 +1,16 @@
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
+> **Current authority — 2026-10-14:** This historical decision record is preserved.
+> The [canonical R1/R2 Business Capability catalogue](../capabilities/business-capabilities.md)
+> now governs reconciled BC definitions, relevance, explicit CT1/CT2/CT3 parents
+> and unresolved matters. The [clarified metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology)
+> applies mandatory CT3 Feature framing to **Business Enabling Capabilities**;
+> BC decomposition does not terminate in Harmonia Features. Historical claims
+> that BC tiers/CT3s remain wholly unallocated or classifications are unchanged
+> describe the earlier decision boundary, not the current catalogue. BEC ancestry,
+> existing Feature responsibility and unallocated Canonical IDs remain unresolved.
+
+
 # Fixed Capability Decomposition — Governed Metamodel Decision
 
 **Date:** 2026-10-13. **Decision status:** Approved human architectural decision,

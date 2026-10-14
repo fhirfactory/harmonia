@@ -4,7 +4,7 @@
 
 The Harmonia Capability Framework establishes the canonical capability model for the Harmonia Health Integration Environment (HIE). In complex regional health ecosystems, an undifferentiated, single-tier capability model is insufficient: it inevitably blurs clinical business practice with system enablement, atomic software behavior, and reusable platform engineering.
 
-The canonical Capability decomposition is **CT1 → CT2 → CT3 → FT**, governed by the [Business Architecture metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology). CT1 establishes the broad frame, CT2 its constituent Capabilities, CT3 the finest Capability frame required by Harmonia, and FT required system-enabled behaviour within CT3. Every Feature SHALL have a CT3 frame with CT2 and CT1 ancestry; Capability tiers SHALL NOT be skipped. CT3 is the intentional boundary for deriving and governing Harmonia, rather than exhaustive healthcare-enterprise architecture; CT4, CT5 and deeper tiers SHALL NOT be defined. A Feature cannot compensate for missing Capability decomposition, and meaningful CT3 frames SHALL NOT be manufactured for structural symmetry. Existing Features and unresolved ancestry remain preserved pending separate reconciliation.
+Business Capability decomposition is **CT1 → CT2 → CT3**. Business Enabling Capability decomposition is **CT1 → CT2 → CT3 → FT**; the mandatory CT3 Feature frame applies to the enabling hierarchy. BC↔BEC enablement/support is distinct from decomposition or implementation equivalence and establishes no individual mapping here. The fixed models are governed by the [Business Architecture metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology). CT1 establishes the broad frame, CT2 its constituent Capabilities, CT3 the finest Capability frame required by Harmonia, and FT required system-enabled behaviour within CT3. Every Harmonia Feature SHALL have a Business Enabling CT3 frame with same-category CT2 and CT1 ancestry; Business Capability CT3s do not own Harmonia Features; Capability tiers SHALL NOT be skipped. CT3 is the intentional boundary for deriving and governing Harmonia, rather than exhaustive healthcare-enterprise architecture; CT4, CT5 and deeper tiers SHALL NOT be defined. A Feature cannot compensate for missing Capability decomposition, and meaningful CT3 frames SHALL NOT be manufactured for structural symmetry. Existing Features and unresolved ancestry remain preserved pending separate reconciliation.
 
 `Layer ≠ Capability Tier ≠ Derivation Stage`. `L1`, `L2` and `L3` are deprecated as canonical classifications; retained catalogue labels do not allocate CT tiers or Canonical IDs. The [approved fixed-decomposition decision](../reviews/fixed-capability-decomposition-decision.md) records the supersession and reconciliation boundary.
 
@@ -59,20 +59,13 @@ Separately, Harmonia uses a **five-stage derivation progression**, bridging high
 
 ### 1. Business Capability
 Business Capabilities represent what the healthcare enterprise must be capable of doing to fulfill its healthcare mission. They exist entirely independently of IT systems, software products, or organizational structures.
-- **Scope**: 18 catalogued Business Capabilities with retained legacy L1 labels, organized across five natural regions: *Care & Health Delivery* (01–08), *Health Information & Digital Health* (09–12), *Research & Innovation* (13), *Health Service Management* (14–16), and *Governance & Assurance* (17–18). These contextual groupings are not capability tiers, organisational structures, application boundaries or ownership hierarchies; they are distinct from the five Business Enabling contextual views.
+- **Scope**: 18 explicitly established CT1 Business Capability domains with adjudicated CT2/CT3 branches and deliberate stopping points, organized across five natural regions: *Care & Health Delivery* (01–08), *Health Information & Digital Health* (09–12), *Research & Innovation* (13), *Health Service Management* (14–16), and *Governance & Assurance* (17–18). These contextual groupings are not capability tiers, organisational structures, application boundaries or ownership hierarchies; they are distinct from the five Business Enabling contextual views.
 - **Quality Rules**: Governed by rules CM-R01 through CM-R05 (Coverage, Orthogonality, Semantic Clarity, No Junk Drawers, Global Name Uniqueness).
 - **Documentation**: [Business Capabilities](business-capabilities.md).
 
-Individual Care Delivery has the [six agreed child Capabilities](business-capabilities.md#01-individual-care-delivery), retaining their legacy L2 display labels.
-Its [decomposition and context rules](business-capabilities.md#capability-decomposition-and-educational-documentation)
-require architectural distinction rather than explanatory detail. CT3 decomposition
-has not yet been architecturally established. Where Features are subsequently
-required beneath these branches, meaningful CT3 frames must first be established.
-Care contexts and illustrative activities do not automatically establish CT3
-Capabilities, and none SHALL be invented for structural completeness. The fixed
-model does not mechanically convert the retained L1/L2 labels into CT assignments.
+The [canonical R1/R2 BC catalogue](business-capabilities.md) establishes the eighteen CT1 roots and its explicit CT2/CT3 parents, including the six Individual Care Delivery CT2s. Clinical Determination, Individual Care Planning and the provisional Clinical Intervention taxonomy remain without an adjudicated CT3 set; missing detail is not completed for symmetry. Care contexts and explanatory activities do not themselves create Capabilities. OI-BC-001 remains undecided; OI-BC-002 retains semantic identity with unresolved ancestry.
 
-The approved reconciliation appends 17 Health Service Governance and 18 Health Service Assurance, clarifies 06's operational quality/safety/improvement boundary, and renames 14 Health Service Direction & Stewardship. Existing unrelated semantics are preserved. Relevance classification for 17–18 and enabling derivation for 17 remain unresolved. The separately approved [Health Service Assurance derivation](../capability-maps/health-service-assurance-derivation.md) establishes only the specified BC-18 enabling and collaborative EC relationships; the aggregate progression diagram does not establish additional relationships.
+The current BC catalogue supersedes the historical five-region review where definitions, classifications or tier standing have subsequently changed. BC-17 classification and enabling derivation remain unresolved; BC-18 is Harmonia-Relevant, preserving its previously approved independent-assurance support. This reconciliation performs no BEC hierarchy, Feature framing, new BC↔BEC mapping or Canonical ID allocation.
 
 ### 2. Business Enabling Capability
 Business Enabling Capabilities define what software and information systems must enable or provide to support the enterprise healthcare capabilities. They reflect authentic healthcare operating environments rather than integration software mechanics.
@@ -110,7 +103,7 @@ The 18 ICT Foundation Capabilities function as cross-cutting technical enablemen
 
 ## Harmonia Relevance Classification
 
-Established relevance assignments use the following unchanged taxonomy. Business Capabilities 01–16 retain their assignments; 17–18 have **unresolved** classification, and 17 has unresolved enabling derivation. BC-18's enabling role is established only within the approved Health Service Assurance derivation. Unresolved status is not a fifth relevance tier.
+The taxonomy is unchanged. Current BC classifications and their semantic rationale are recorded in the [reconciled catalogue](business-capabilities.md#classification-reconciliation-and-rationale); BC-17 classification/enablement remain unresolved. BC-18 is Harmonia-Relevant within the previously approved assurance derivation. Unresolved is a status, not a fifth relevance tier; BC classification does not reclassify BEC contexts or every BC descendant.
 
 | Relevance Tier | Definition & Architectural Meaning |
 | :--- | :--- |

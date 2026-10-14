@@ -12,16 +12,16 @@ Canonical terminology SHALL distinguish:
 
 `Layer ≠ Capability Tier ≠ Derivation Stage`.
 
-Capability decomposition SHALL use the fixed model `CT1 → CT2 → CT3 → FT`: `CT1` means Capability Tier 1, `CT2` Capability Tier 2, `CT3` Capability Tier 3 and `FT` Feature. `L1`, `L2` and `L3` remain deprecated as canonical capability classifications.
+Business Capability decomposition SHALL use `CT1 → CT2 → CT3`; Business Enabling Capability decomposition SHALL use `CT1 → CT2 → CT3 → FT`. BC↔BEC enabled-by/support is a separate relationship, not decomposition or implementation equivalence. In these fixed models: `CT1` means Capability Tier 1, `CT2` Capability Tier 2, `CT3` Capability Tier 3 and `FT` Feature. `L1`, `L2` and `L3` remain deprecated as canonical capability classifications.
 
 | Tier / type | Architectural role |
 | :--- | :--- |
 | **CT1** | Establishes the broad Capability frame within Harmonia's architectural scope. |
 | **CT2** | Decomposes the CT1 frame into constituent Capabilities. |
-| **CT3** | Establishes the finest Capability frame required by Harmonia and the Capability context within which Features are defined. |
-| **FT** | Expresses required system-enabled behaviour within its owning CT3 Capability context. |
+| **CT3** | Establishes the finest Capability frame required by Harmonia and within the Business Enabling hierarchy, the Capability context within which Harmonia Features are defined. |
+| **FT** | Expresses required system-enabled behaviour within its owning Business Enabling CT3 Capability context. |
 
-Every Feature SHALL be framed by CT3; every CT3 SHALL have a CT2 parent; every CT2 SHALL have a CT1 parent. Capability tiers SHALL NOT be skipped. Complete CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature. CT1 → CT2 and CT2 → CT3 are Capability decomposition relationships.
+Every Harmonia Feature SHALL be immediately framed by Business Enabling CT3; Business Capabilities do not decompose into Harmonia Features; every CT3 SHALL have a CT2 parent; every CT2 SHALL have a CT1 parent. Capability tiers SHALL NOT be skipped. Complete CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature. CT1 → CT2 and CT2 → CT3 are Capability decomposition relationships.
 
 > **A Feature cannot compensate for incomplete Capability decomposition. If Harmonia requires a Feature, the CT3 Capability that frames that Feature must first be identified. Failure to identify a meaningful CT3 indicates incomplete upstream Capability modelling, not permission to skip the tier.**
 
@@ -95,7 +95,7 @@ The framework progresses through five derivation stages relating different archi
 ### Stage 1: Business Capability
 - **Definition**: What the healthcare enterprise must be capable of doing to deliver healthcare services, govern operations, and ensure patient safety.
 - **Independence**: Exists independently of IT systems, software products, commercial organizational hierarchies, or automation.
-- **Structure**: 18 catalogued Business Capabilities grouped into five natural regions; this derivation-stage position does not assign Capability Tier or Canonical ID:
+- **Structure**: 18 CT1 Business Capability roots grouped into five natural regions, with the explicit CT2/CT3 assertions and deliberate stopping points in the canonical BC catalogue. Their tiers are established by that reconciliation, not derivation-stage position; Canonical IDs remain unallocated:
   - *Care & Health Delivery* (01–08)
   - *Health Information & Digital Health* (09–12)
   - *Research & Innovation* (13)
@@ -103,7 +103,7 @@ The framework progresses through five derivation stages relating different archi
   - *Governance & Assurance* (17–18)
 - **Harmonia Principle**: Harmonia provides core technical enablement for Health Information and Connected Health capabilities (09–12) and materially enables delivery and workforce capabilities (01, 02, 04, 06, 15) without asserting platform ownership over healthcare business practice.
 
-Natural regions are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from Business Enabling contextual views. The appended 17 Health Service Governance and 18 Health Service Assurance retain unresolved relevance classification; 17's enabling derivation remains unresolved. The [approved Health Service Assurance derivation](health-service-assurance-derivation.md) establishes only REQ-FND-005 → BC-18 → the three named Business Enabling Capabilities → collaborative Enterprise Capability realisation. Stage diagrams and existing examples do not establish additional relationships.
+Natural regions are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from Business Enabling contextual views. Health Service Governance (17) retains unresolved relevance classification/enabling derivation; Health Service Assurance (18) is Harmonia-Relevant under the reconciled BC catalogue, preserving its approved independent governed-assurance participation. The [approved Health Service Assurance derivation](health-service-assurance-derivation.md) establishes only REQ-FND-005 → BC-18 → the three named Business Enabling Capabilities → collaborative Enterprise Capability realisation. Stage diagrams and existing examples do not establish additional relationships.
 
 ### Stage 2: Business Enabling Capability
 - **Definition**: What software systems and information infrastructure must enable or provide to support the enterprise healthcare capabilities.

@@ -6,10 +6,17 @@ The Harmonia Business Architecture metamodel defines the structural and behaviou
 
 ```mermaid
 graph TD
-    subgraph OWNER["Owning Capability or Feature responsibility context"]
-        CT1["CT1 Capability"] -->|Capability decomposition| CT2["CT2 Capability"]
-        CT2 -->|Capability decomposition| CT3["CT3 Capability"]
-        CT3 -->|Frames every Feature| FT["FT Feature<br/>(Capability Specialisation)"]
+    subgraph OWNER["Owning Business / Business Enabling Capability or Feature responsibility context"]
+        subgraph BC["Business Capability"]
+            BC1["BC CT1"] -->|Decomposes| BC2["BC CT2"]
+            BC2 -->|Decomposes| BC3["BC CT3"]
+        end
+        subgraph BEC["Business Enabling Capability"]
+            CT1["BEC CT1"] -->|Capability decomposition| CT2["BEC CT2"]
+            CT2 -->|Capability decomposition| CT3["BEC CT3"]
+            CT3 -->|Frames every Harmonia Feature| FT["FT Feature<br/>(Capability Specialisation)"]
+        end
+        BC -.->|Enabled-by / supported-by where established| BEC
     end
     OWNER -->|Delivers| FUNC["Business Function(s)"]
     OWNER -->|Provides to clients| SERV["Business Service(s)"]
@@ -21,7 +28,7 @@ graph TD
     OWNER -->|Establishes| INFO["Business Information Responsibility"]
 ```
 
-The diagram establishes the fixed Capability decomposition and the permissible behavioural responsibility contexts. Every fully reconciled Feature requires complete CT1 → CT2 → CT3 ancestry. Functions, Services and Processes may still anchor directly at their established owning Capability or Feature; they do not require an intervening Feature. Service, Function and Process form a graph rather than a mandatory hierarchy.
+The diagram distinguishes two Capability hierarchies and preserves the permissible behavioural responsibility contexts. Business Capabilities describe organisational abilities; Business Enabling Capabilities describe reusable enabling abilities Harmonia provides or supports. Enablement/support is not decomposition or implementation equivalence, and the aggregate diagram establishes no individual BC↔BEC mapping. Business Capability decomposition does not terminate in Harmonia Features. Every fully reconciled Harmonia Feature requires complete **Business Enabling CT1 → CT2 → CT3** ancestry. Functions, Services and Processes may still anchor directly at their established owning Capability or Feature; they do not require an intervening Feature. Service, Function and Process form a graph rather than a mandatory hierarchy. A Function need not have either a Service or a Process.
 
 ### 1.1 Capability Decomposition and Terminology
 
@@ -34,22 +41,26 @@ The following terminology SHALL be used canonically:
 | **Derivation / Derivation Progression** | Progression between different architectural constructs or models. A Derivation Stage is a stage in that progression. |
 | **CT1** | Capability Tier 1: establishes the broad Capability frame within Harmonia's architectural scope. |
 | **CT2** | Capability Tier 2: decomposes the CT1 frame into constituent Capabilities. |
-| **CT3** | Capability Tier 3: establishes the finest Capability frame required by Harmonia and provides the Capability context within which Features are defined. |
-| **FT** | Feature: expresses required system-enabled behaviour within its owning CT3 Capability context. |
+| **CT3** | Capability Tier 3: establishes the finest Capability frame required by Harmonia. Within the Business Enabling hierarchy, CT3 provides the context within which Harmonia Features are defined. |
+| **FT** | Feature: expresses required system-enabled behaviour within its owning Business Enabling CT3 Capability context. |
 
 `Layer ≠ Capability Tier ≠ Derivation Stage`. `L1`, `L2` and `L3` are deprecated as canonical capability classifications.
 
 Harmonia SHALL use the fixed three-tier Capability decomposition:
 
-$$\text{CT1 Capability} \longrightarrow \text{CT2 Capability} \longrightarrow \text{CT3 Capability} \longrightarrow \text{FT Feature}$$
+```text
+Business Capability          CT1 → CT2 → CT3
+                                  enabled-by / supported-by
+Business Enabling Capability CT1 → CT2 → CT3 → FT Feature
+```
 
-Every Feature SHALL be framed by a CT3 Capability. Every CT3 Capability SHALL have a CT2 parent; every CT2 Capability SHALL have a CT1 parent. Capability tiers SHALL NOT be skipped. Complete CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature; direct CT1 → FT and CT2 → FT framing SHALL NOT be used in the reconciled target model.
+Every Harmonia Feature SHALL be immediately framed by a **Business Enabling CT3** Capability. Every established CT3 SHALL have a CT2 parent and every CT2 a CT1 parent within the same Capability category. Capability tiers SHALL NOT be skipped. Complete Business Enabling CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature; direct CT1 → FT and CT2 → FT framing SHALL NOT be used. Business Capability CT3s do not require or own Harmonia Features. An intentionally undecomposed BC branch does not indicate missing Feature framing.
 
 > **A Feature cannot compensate for incomplete Capability decomposition. If Harmonia requires a Feature, the CT3 Capability that frames that Feature must first be identified. Failure to identify a meaningful CT3 indicates incomplete upstream Capability modelling, not permission to skip the tier.**
 
 Complete decomposition is a modelling obligation, not authority to fabricate architectural elements. CT3 Capabilities SHALL NOT be manufactured merely to satisfy structural symmetry. Where an existing branch contains a Feature without an established CT3 frame or complete ancestry, the Feature, its established responsibility and local identifier SHALL be preserved, and its Capability ancestry/decomposition SHALL be recorded as requiring reconciliation under AX-17. It SHALL NOT be presented as fully reconciled or silently reattached to an invented owner. Established partial relationships remain valid evidence until separately adjudicated.
 
-A Feature remains a finer-grained **Capability Specialisation** and inherits Capability semantics. This retained semantic classification does not make FT another Capability Tier or permit arbitrary-depth Feature framing. CT1 → CT2 and CT2 → CT3 denote Capability decomposition; CT3 provides the mandatory frame for Feature behaviour.
+A Feature remains a finer-grained **Capability Specialisation** within Business Enabling responsibility and inherits Capability semantics. This retained classification does not make FT another Capability Tier, a Business Capability child or an arbitrary-depth frame. CT1 → CT2 and CT2 → CT3 denote same-category Capability decomposition; Business Enabling CT3 provides the mandatory Feature frame. BC↔BEC support relationships do not supply missing ancestry in either hierarchy.
 
 CT3 is Harmonia's intentional Capability decomposition boundary. Harmonia's Capability Model is bounded to the level required to derive and govern Harmonia; it does not attempt to model the complete Enterprise Architecture of a hospital, health service provider, health department or other healthcare enterprise. Harmonia SHALL NOT define CT4, CT5 or deeper Capability tiers. Further detail is not authority to extend the Capability hierarchy.
 
@@ -367,7 +378,7 @@ CT1-01.CT2-02.CT3-03.FEAT-EM-01.FN-01
 
 Every ancestor prefix in a current Canonical ID SHALL identify the corresponding current Capability or Feature in the established responsibility ancestry. `CT1-01.CT3-02` SHALL NOT be generated merely because CT2 ancestry has not been identified. Unresolved ancestry SHALL remain unresolved rather than being omitted or manufactured.
 
-The shorter `capability-path` forms identify CT1 or CT2 Capabilities and permit direct behavioural anchoring; they SHALL NOT frame a Feature token. A Feature, or behaviour anchored beneath it, requires `feature-path` with complete CT1 → CT2 → CT3 ancestry. These are grammar rules only and allocate no identifier to an existing element.
+The shorter `capability-path` forms identify CT1 or CT2 Capabilities and permit direct behavioural anchoring; they SHALL NOT frame a Feature token. A Feature, or behaviour anchored beneath it, requires `feature-path` with complete Business Enabling CT1 → CT2 → CT3 ancestry. A syntactically valid path under a Business Capability does not establish valid Harmonia Feature ownership. These are grammar rules only and allocate no identifier to an existing element.
 
 The common identity properties apply to other governed Business Architecture element types, but this decision does not establish their token vocabularies or structural contexts. Those SHALL NOT be inferred from this grammar. The Qualified Architectural Reference Grammar in §7 remains distinct and unchanged.
 
@@ -434,6 +445,8 @@ Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation f
 The fixed model in §1.1 does not retrospectively validate legacy L1 / L2 / L3 assignments or convert a known owner into CT3. Existing Features with incomplete ancestry remain valid architectural evidence requiring Capability decomposition reconciliation; downstream derivation from their established responsibility does not declare them structurally reconciled. Missing CT3 frames SHALL be separately established before subsequent Feature definition, without using catalogue presentation to manufacture them.
 
 These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and [AX-17 architectural authority and explicit uncertainty](../../governance/architectural-axioms.md#ax-17). They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.
+
+The subsequent [R1/R2 Business Capability reconciliation](../../02-strategy/capabilities/business-capabilities.md) explicitly establishes its stated BC tiers/parents independently of catalogue indentation. It does not resolve any affected historical BEC ancestry, convert any of the 69 enabling descriptions into Capabilities, frame the 137 Features or allocate Canonical IDs. K9 continues to govern all unestablished dimensions.
 
 ## 9. R1.x/R2.x Semantic Sufficiency Boundary
 

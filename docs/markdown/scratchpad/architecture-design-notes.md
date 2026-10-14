@@ -5817,29 +5817,1069 @@ and
 
 ------------------------------------------------------------------------
 
+# DN-BC-023 — Business Capability and Business Enabling Capability Distinction
+
+## Context
+
+Current Business Capability reconciliation: organisational abilities and
+the reusable system-enabled abilities through which Harmonia enables them.
+
+## Working Decision
+
+A **Business Capability** describes what the health enterprise or
+organisation must be capable of doing.
+
+A **Business Enabling Capability** describes a reusable system-enabled
+ability Harmonia provides to enable Business Capabilities.
+
+A Business Enabling Capability may concern the same conceptual subject
+as a Business Capability without being semantically equivalent to it.
+The relationship is enablement, not decomposition and not implementation
+equivalence.
+
+A Business Enabling Capability does not assume accountability for the
+underlying business activity merely because it represents, records or
+provides information used by that activity.
+
+## Naming Guardrail
+
+> Where a Business Capability and Business Enabling Capability concern
+> the same business concept, their names SHALL distinguish the
+> organisational ability from the system-enabled ability. A Business
+> Enabling Capability SHALL NOT reuse a Business Capability name where
+> doing so implies semantic equivalence or ownership of the underlying
+> business activity.
+
+## Identity Assurance Example
+
+The Business Capability **Identity Assurance** concerns the organisational
+activity of establishing sufficient confidence that a person is who
+they claim to be using appropriate supporting evidence and processes.
+
+A future Harmonia Business Enabling Capability may represent the
+established assurance or quality of an identity in computable form.
+That future Business Enabling Capability must therefore use a distinct
+name rather than also being called **Identity Assurance**.
+
+## Open Issue — Future Enabling Capability Name
+
+**Identity Assurance Representation** was discussed as a possible
+Business Enabling Capability name but has **not been formally
+established**. This note does not establish that name or the future
+Business Enabling Capability.
+
+------------------------------------------------------------------------
+
+# DN-BC-024 — Business Capability Interpretation Guardrail
+
+## Context
+
+Interpretation of Business Capability descriptions and examples during
+the current reconciliation.
+
+## Working Decision
+
+> Business Capabilities SHALL be interpreted as organisational abilities.
+> References to digital technologies, information systems,
+> infrastructure, physical mechanisms or other implementation mechanisms
+> within their descriptions or examples do not imply that the Business
+> Capability is itself a software or technology capability.
+
+Such examples illustrate how a Business Capability may be exercised or
+enabled; they do not redefine the organisational ability.
+
+This guardrail applies, for example, to **Digital Communication Channel**,
+**Health Information Exchange**, **Access Control Enforcement** and
+**Identity Assurance** without adding semantics to those capabilities.
+
+## Interpretive Test
+
+> If interpretation of a Business Capability requires identifying a
+> particular piece of software in order to explain what the capability
+> means, the interpretation should be treated as suspect and the intended
+> business ability re-examined.
+
+------------------------------------------------------------------------
+
+# DN-BC-025 — Health Information Standards Governance — Oversight and Impact Boundaries
+
+## Context
+
+Current reconciliation of Health Information Standards Governance.
+
+## Working Decision — Information Model Governance Rename
+
+Rename **Information Model Governance** to **Information Model Governance
+Oversight**.
+
+**Information Model Governance Oversight** oversees and evaluates the
+effectiveness, consistency and appropriate operation of the
+organisation's information-model governance activities.
+
+It does not perform the peer capabilities such as **Information Model
+Discovery**, **Information Model Adoption**, **Information Model
+Education** or **Information Model Compliance**.
+
+## Information Models and Standards — Impact Boundary
+
+For Information Models, impact assessment is intrinsic to **Information
+Model Adoption**.
+
+For Standards, impacts can extend beyond information-system
+implementation into clinical practice, work practices, permitted
+medications, operating procedures, governance obligations, reporting,
+safety, policy and other organisational concerns.
+
+Therefore **Standards Impact Identification** is legitimately a separate
+capability from **Standards Adoption**.
+
+## Interpretive Warning
+
+Conceptual sequences associated with these capabilities SHALL NOT be
+interpreted as mandatory workflows.
+
+------------------------------------------------------------------------
+
+# DN-BC-026 — Clinical Semantics Governance — Current CT3 Set and Semantic Boundaries
+
+## Context
+
+Current reconciliation of Clinical Semantics Governance.
+
+## Working Decision — Current CT3 Set
+
+- Terminology Governance
+- Terminology Utilisation Oversight
+- Terminology Localisation
+- Classification Governance
+- Classification Utilisation Oversight
+- Semantic Mapping Governance
+
+## Terminology Boundaries
+
+**Terminology Governance** manages the lifecycle and organisational
+standing of governed terminology/reference-set information, including
+acceptance, introduction, update, supersession/retirement, release
+handling and coordination with terminology authorities/providers.
+
+**Terminology Utilisation Oversight** oversees how terminology/reference
+sets are actually used by people, applications and systems throughout
+the organisation and identifies inappropriate, inconsistent or drifting
+semantic usage.
+
+**Terminology Localisation** supports controlled organisational responses
+where adopted terminology does not adequately meet legitimate local
+semantic requirements.
+
+**Classification Localisation** has not been established. It SHALL NOT
+be created merely for structural symmetry with Terminology Localisation.
+
+## Orthogonality Guardrail
+
+> Information context, information sensitivity and information meaning
+> are orthogonal concerns. Compartmentalisation, classification and
+> terminology SHALL therefore remain distinct architectural problem
+> domains even where implementations represent them through related
+> metadata or apply them concurrently.
+
+The conceptual distinctions are:
+
+- **Compartmentalisation** — how information relates to the business
+  context, client, practitioners, roles and other relevant contextual
+  relationships.
+- **Classification** — how exposure or mishandling of information could
+  materially affect the organisation, practitioner, client or other
+  relevant party.
+- **Terminology** — how the meaning of information/data is defined
+  consistently and unambiguously.
+
+The people, responsibilities and organisational processes associated
+with these domains may be different even at Business Architecture level.
+
+------------------------------------------------------------------------
+
+# DN-BC-027 — Connected Health Services — Naming and Communication Boundaries
+
+## Context
+
+Current reconciliation of Connected Health Services.
+
+## Working Decision — CT2 Renames
+
+- **Health Information Connectivity** → **Health Information Exchange**
+- **Digital Health Interaction** → **Digital Communication Channel**
+
+**Digital Communication Channel (Patient/Practitioner)** was considered,
+but the agreed name is **Digital Communication Channel**. Participant
+scope is expressed through its definition rather than parentheses in the
+capability name.
+
+## Health Information Exchange Boundary
+
+**Health Information Exchange** concerns the organisational ability to
+exchange health information appropriately between participating parties,
+systems and services.
+
+It is not synonymous with a particular interoperability platform, FHIR
+server, interface engine, protocol or implementation.
+
+## Digital Communication Channel Boundary
+
+**Digital Communication Channel** provides digitally mediated
+communication, notification and collaborative interaction between
+patients, practitioners and other participants in health-service
+delivery.
+
+It includes concerns such as participant collaboration and notifications
+associated with appointments, pharmacy queries, results and similar
+health-service interactions.
+
+> Digital Communication Channel SHALL NOT be treated as the general
+> capability for presenting Harmonia functionality through user
+> interfaces. A user interface through which a person exercises another
+> Business or Business Enabling Capability does not, by that fact alone,
+> constitute use of the Digital Communication Channel.
+
+## Open Issue — General UI/Presentation Enablement
+
+The general UI/presentation enabling concern remains **parked** for later
+Business Enabling Capability reconciliation, particularly against the
+existing **Presentation** enabling capability. This note does not resolve
+that concern.
+
+## Working Decision — Programme Spelling
+
+Correct **Health Information Sharing Program Management** to **Health
+Information Sharing Programme Management**.
+
+------------------------------------------------------------------------
+
+# DN-BC-028 — Digital Identity & Access Governance — Current CT3 Set and Business Boundaries
+
+## Context
+
+Current reconciliation of Digital Identity & Access Governance.
+
+## Working Decision — Current CT3 Set
+
+- Identity Assurance
+- Identity Modelling & Interoperability
+- Identity Qualification Control
+- Identity Identification & Authentication
+- Access Control Context Management
+- Access Control Assurance & Reporting
+- Access Control Collaboration
+- Access Control Enforcement
+
+## Identity Boundaries
+
+**Identity Assurance** is the organisational ability to establish
+sufficient confidence that a person is who they claim to be using
+appropriate supporting evidence and processes, such as passports, birth
+certificates, referees or other applicable identity evidence.
+
+It is not itself a software capability. The distinction from a future
+Business Enabling Capability representing established assurance is
+recorded in **DN-BC-023**.
+
+**Identity Identification & Authentication** concerns identifying an
+actor and authenticating the asserted identity.
+
+**Identity Qualification Control** determines whether the characteristics,
+provenance and assurance quality of the identity being presented are
+sufficient for the context in which it is to be used.
+
+Federation and Single Sign-On are relevant examples but are not
+equivalent concepts and do not themselves establish that an identity is
+of sufficient quality for every purpose.
+
+The shorthand distinction is:
+
+- **Identification & Authentication** — Who are you, and can the
+  asserted identity be authenticated?
+- **Identity Assurance** — How confident are we that this identity
+  corresponds to the claimed person/entity?
+- **Identity Qualification Control** — Is the identity presented of
+  sufficient quality for what is being attempted in this context?
+
+## Access Control Context Management
+
+**Access Control Context Management** is the organisational capability
+for determining what information, functions, activities or other things
+require control, under what circumstances, and how those control
+requirements should be modelled.
+
+It is not merely runtime assembly of attributes for an authorisation
+decision.
+
+## Access Control Enforcement
+
+**Access Control Enforcement** ensures that the different mechanisms and
+frameworks implementing access controls work coherently to impose the
+intended controls.
+
+Those mechanisms may be physical, procedural or digital, including
+locked doors, keyed cupboards, passwords, authorisation services and
+other mechanisms.
+
+These examples illustrate how the organisational capability may be
+exercised or enabled. It is not synonymous with a software authorisation
+engine.
+
+## Access Control Collaboration
+
+**Access Control Collaboration** coordinates access-control requirements
+and arrangements where protected information, functions, activities,
+resources or environments span independently managed control domains,
+authorities, organisations or parties.
+
+> Strong local control does not imply effective end-to-end control.
+
+Independent parties may retain control ownership while requiring
+collaboration so that one party's arrangements do not undermine the
+intended collective protection.
+
+## Access Control Assurance & Reporting
+
+**Access Control Assurance & Reporting** provides organisational assurance
+and evidence concerning whether access-control arrangements are
+appropriately established and operating.
+
+------------------------------------------------------------------------
+
+# DN-BC-029 — Health Information Protection — Current CT3 Set and Assurance Boundaries
+
+## Context
+
+Current reconciliation of Health Information Protection.
+
+## Working Decision — Current CT3 Set
+
+- Health Privacy Safeguard Management
+- Health Information Safeguarding
+- Health Information Access Monitoring
+- Health Information Compartment Assurance
+- Health Information Classification Assurance
+
+## Privacy and Safeguarding Boundaries
+
+**Health Privacy Safeguard Management** concerns the privacy consequences
+of supplying, exposing or otherwise using information concerning an
+individual or other relevant entity. It establishes organisational
+guidelines, guardrails and assurance processes around information sets
+whose exposure or use may adversely affect privacy.
+
+**Health Information Safeguarding** concerns whether the health-information
+estate and its operational environment are adequately protected and
+resilient.
+
+Relevant concerns may include storage safety, infrastructure access,
+backup, off-site storage, disaster recovery, operational practices,
+authorisation arrangements, access controls, testing and assurance.
+
+These examples illustrate how the organisational capability may be
+exercised or enabled; they do not make it a technology capability.
+
+> Privacy safeguarding concerns the consequences of information
+> exposure or use. Health Information Safeguarding concerns whether the
+> information and the environment in which it is held are adequately
+> protected against loss, compromise, inappropriate access, operational
+> failure and related threats.
+
+## Health Information Access Monitoring
+
+**Health Information Access Monitoring** is an organisational QA/oversight
+capability concerning the organisation's actual practices for accessing
+and handling health information.
+
+It may evaluate matters including:
+
+- application of access controls;
+- accessibility practices;
+- compartmentalisation;
+- classification;
+- physical and printed information handling; and
+- other relevant information-access and protection practices.
+
+It is not merely monitoring software access events.
+
+Health Information Access Monitoring may consume evidence supplied by
+enabling capabilities such as IT access monitoring, audit/event
+monitoring, physical/building access monitoring and other monitoring
+mechanisms.
+
+> The enabling capability observes and supplies evidence. The Business
+> Capability evaluates organisational practice using that evidence.
+
+Supplying monitoring evidence does not transfer business accountability
+for Health Information Access Monitoring to the enabling capability.
+
+## Compartment and Classification Assurance
+
+**Health Information Compartment Assurance** assures that
+compartmentalisation is being established and applied appropriately. It
+does not establish the underlying access decision.
+
+**Health Information Classification Assurance** assures that information
+classification is being established and applied appropriately according
+to the sensitivity and potential consequences of information exposure
+or mishandling.
+
+------------------------------------------------------------------------
+
+# DN-BC-030 — Digital Accountability & Trust — Attribution and Accountability Boundaries
+
+## Context
+
+Current reconciliation of Digital Accountability & Trust.
+
+## Working Decision — Current CT3 Set
+
+- Governed Activity Attribution
+- Security & Information-Use Accountability
+
+## Governed Activity Attribution
+
+**Governed Activity Attribution** is the organisational ability to
+establish and preserve the attributable relationship between:
+
+- who participated in an activity, including applicable person, role,
+  business unit, organisation or other accountable organisational
+  context;
+- what was done; and
+- the applicable authority, permission or constraint context governing
+  what those actors were permitted to do.
+
+The following distinction SHALL be preserved:
+
+> Actor identified ≠ activity attributed ≠ activity permitted.
+
+Attribution without applicable authority/constraint context may
+establish who did what but is insufficient to establish whether they
+were entitled to do it.
+
+Governed Activity Attribution is therefore richer than simple audit
+logging or provenance.
+
+## Security & Information-Use Accountability
+
+**Security & Information-Use Accountability** is the organisational
+ability to evaluate whether security-relevant activity and use of
+information were appropriate within applicable authority, policy,
+obligation and constraint context, and to establish accountability for
+that activity or use.
+
+The shorthand distinction is:
+
+- **Governed Activity Attribution** — Who did what, in what attributable
+  capacity, and what were they permitted to do?
+- **Security & Information-Use Accountability** — Given that attribution
+  and authority context, was what they actually did appropriate, and can
+  they be held to account?
+
+## Enablement Boundary
+
+Expected consumption of attribution and authority context by Service
+Governance, Service Assurance or other enabling capabilities SHALL NOT
+establish a structural Business Capability → Business Enabling Capability
+relationship. Those relationships remain for later explicit
+reconciliation.
+
+------------------------------------------------------------------------
+
+# DN-BC-031 — Health Research & Innovation — R1/R2 Bounded Decomposition
+
+## Context
+
+Current reconciliation of Health Research & Innovation for Harmonia
+R1/R2.
+
+## Working Decision — Current Structure
+
+```text
+Health Research & Innovation
+  Research Information Support
+    Governed Research Information Provision
+  Health Innovation
+    Health Innovation Evaluation
+```
+
+This structure is deliberately under-decomposed for R1/R2.
+
+## Research Information Support
+
+**Research Information Support** is presently limited to the
+research-information responsibility required by Harmonia: provision of
+existing health information for authorised research purposes.
+
+**Governed Research Information Provision** is the organisational ability
+to provide health information for an authorised research purpose subject
+to applicable governance, ethics, privacy, consent, security,
+information-use and other constraints.
+
+## R1/R2 Scope Boundary
+
+This decomposition SHALL NOT be interpreted as the complete enterprise
+research capability model.
+
+> The R1/R2 decomposition does not assert that governed information
+> provision is the only capability required to support health research.
+> It establishes only the research-information capability presently
+> required to frame Harmonia responsibilities. Additional
+> research-information capabilities may be introduced when a future
+> Harmonia requirement makes the distinction architecturally material.
+
+Research Assessment and Governance, Research/Trials Oversight and other
+research capabilities remain intentionally unmodelled unless later
+Harmonia requirements make them material. Their absence does not allocate
+their responsibilities to Governed Research Information Provision.
+
+## Health Innovation Evaluation
+
+**Health Innovation Evaluation** is the organisational ability to
+evaluate proposed or emerging health-service or clinical innovation for
+suitability, value, implications and potential adoption.
+
+------------------------------------------------------------------------
+
+# DN-BC-032 — Health Service Direction & Stewardship — Modelling and Alignment
+
+## Context
+
+Current reconciliation of Health Service Direction & Stewardship.
+
+## Working Decision — Current Structure
+
+```text
+Health Service Direction & Stewardship
+
+  Health Service Modelling
+    Health Service Need Identification
+    Health Service Capability Identification
+    Health Service Implementation Support
+    Health Service Continuous Improvement
+
+  Health Service Alignment
+    Health Service Co-Dependency Management
+    Health Service Resource Identification
+    Health Service Financial Management
+    Health Service Implementation Planning
+```
+
+## Health Service Modelling
+
+The semantic progression is:
+
+> Identification → Requirements to Fulfil → Support Fulfilment → Check
+> and Repeat
+
+This is a semantic relationship, not a mandatory sequential workflow.
+
+**Health Service Need Identification** establishes an unmet
+health-service need requiring response.
+
+**Health Service Capability Identification** establishes the lower-case
+abilities necessary for a service to satisfy that need, including
+applicable clinical, workforce, facility, technology, information and
+support abilities. “Capability” here is ordinary business meaning and
+MUST NOT be interpreted as Harmonia Capability-tier decomposition.
+
+**Health Service Implementation Support** supports establishment of the
+framed service, including applicable facility change, recruitment,
+training, equipment, technology, organisational preparation and
+programmes of work. It does not absorb HR, facilities, ICT, procurement
+or other responsible capabilities.
+
+**Health Service Continuous Improvement** evaluates the established
+service, identifies correction or improvement requirements, and may
+feed those requirements back into need/capability identification and
+implementation support.
+
+The boundary is:
+
+> Health Service Modelling establishes what service should exist and
+> what it needs to become viable.
+
+## Health Service Alignment
+
+**Health Service Alignment** concerns how a health service fits within
+and interacts with the wider service ecosystem.
+
+**Health Service Co-Dependency Management** identifies and manages
+bidirectional dependencies between a health service and other services:
+what this service requires from others and what other services require
+from it.
+
+**Health Service Resource Identification** identifies workforce,
+facilities, equipment, clinical technology, ICT, administration,
+supporting services and other resources required to support the service.
+It does not own those resources.
+
+**Health Service Financial Management** establishes how the service fits
+within applicable funding, financial and charging arrangements without
+absorbing enterprise finance/accounting responsibilities.
+
+**Health Service Implementation Planning** establishes and coordinates
+the surrounding organisational/service changes necessary to introduce
+or materially change the service.
+
+The shorthand distinction is:
+
+> Health Service Modelling: What service do we need, what must it be
+> capable of, and how do we establish/improve it?
+
+> Health Service Alignment: How does that service fit into, depend upon,
+> and affect the wider health-service environment?
+
+The Service Catalogue boundary SHALL remain explicit:
+
+> Health Service Alignment does not establish the authoritative service
+> catalogue. It ensures that a new or changed health service is coherently
+> positioned within the service environment represented by that catalogue.
+
+## Service Catalogue Derivation Rationale
+
+A major Harmonia relevance for these Business Capabilities is the
+expected semantic richness of the future **Service Catalogue Management
+Business Enabling Capability**.
+
+The Business Capabilities establish and govern facts concerning health
+services. A future Service Catalogue Management Business Enabling
+Capability may provide reusable system-enabled representation of
+applicable service facts.
+
+Derivation proceeds from the business abilities and facts toward their
+system-enabled representation. Expected Service Catalogue complexity
+is evidence of why these business concepts matter to Harmonia; it does
+not define the Business Capabilities or establish a one-to-one
+Business Capability ↔ Business Enabling Capability mapping.
+
+This note does not establish the Service Catalogue Management Business
+Enabling Capability structure or any Feature mapping.
+
+------------------------------------------------------------------------
+
+# DN-BC-033 — Health Workforce Management — Qualification, Engagement and Coverage
+
+## Context
+
+Current reconciliation of Health Workforce Management.
+
+## Working Decision — Current Structure
+
+```text
+Health Workforce Management
+  Practitioner Qualification Management
+  Practitioner Engagement & Privilege Management
+  Workforce Service Coverage Management
+```
+
+## Practitioner Qualification Management
+
+**Practitioner Qualification Management** extends beyond ordinary HR
+credential recording and concerns organisational governance of
+practitioner professional/clinical standing and qualifications,
+including applicable review, escalation, complaints, penalties/issues,
+suspension and revocation.
+
+## Practitioner Engagement & Privilege Management
+
+**Practitioner Engagement & Privilege Management** concerns the
+macro-level engagement and ongoing management of practitioners as
+participants in health-service delivery, including applicable
+roles/capacities, privileges and qualification context. It sits above
+ordinary HR employment administration.
+
+The following distinction SHALL be preserved:
+
+> Practitioner qualified ≠ practitioner engaged ≠ practitioner privileged
+> to undertake a particular activity.
+
+## Workforce Service Coverage Management
+
+**Workforce Service Coverage Management** is the whole-of-enterprise
+capability for observing whether required work/service obligations can
+be fulfilled by available workforce, identifying coverage gaps and
+risks, and managing/shuffling workforce coverage in response.
+
+It is not merely rostering.
+
+The distinction from care-demand deployment and particular operational
+work SHALL be preserved, retaining the boundaries in **DN-BC-005** and
+**DN-BC-009**:
+
+- **Workforce Service Coverage Management** — Can required enterprise
+  work be covered, where are the gaps/risks, and how should workforce
+  coverage be adjusted?
+- **Care Resource Deployment** — Given legitimately available resources,
+  which appropriate resource is deployed to this care requirement?
+- **Care Support Work Coordination** — What particular operational work
+  needs doing, who is to perform it, and how is its completion coordinated?
+
+------------------------------------------------------------------------
+
+# DN-BC-034 — Healthcare Organisation & Service Structure Management
+
+## Context
+
+Current reconciliation of Healthcare Organisation & Service Structure
+Management.
+
+## Working Decision — Current Structure
+
+```text
+Healthcare Organisation & Service Structure Management
+  Healthcare Organisation Identity & Structure Management
+  Healthcare Location Definition Management
+  Healthcare Service Offering Management
+```
+
+## Organisation and Location Boundaries
+
+**Healthcare Organisation Identity & Structure Management** establishes
+and manages the identity and structural relationships of organisations
+and organisational units participating in health-service delivery.
+
+**Healthcare Location Definition Management** establishes and manages
+recognised locations in which health services and related activity may
+occur, including applicable business characteristics and relationships.
+It is not Facilities Management.
+
+## Healthcare Service Offering Management
+
+**Healthcare Service Offering Management** establishes and manages
+identifiable health services offered by an organisation, including:
+
+- what service is offered;
+- by whom;
+- where;
+- when; and
+- under what applicable conditions or constraints the service is available.
+
+Temporal and conditional availability are material.
+
+For example, a walk-in service may be offered at one location from
+06:00–22:00 while another service/pathway provides coverage outside
+those hours.
+
+The following distinction SHALL be preserved:
+
+> Service exists ≠ service offered at this location ≠ service available
+> at this time/context.
+
+## Operational Readiness Boundary
+
+> Healthcare Service Offering Management establishes the circumstances
+> under which an identifiable health service is offered; it does not
+> itself establish that the resources necessary to deliver that offering
+> are presently operationally ready.
+
+**OI-BC-002 — Health Service Operational Readiness Placement** remains
+unresolved. This note does not establish its CT2 parent or canonical
+ancestry.
+
+## Distinction from Health Service Direction & Stewardship
+
+The distinction from **DN-BC-032** SHALL remain explicit:
+
+- **Health Service Modelling** establishes what service is needed and
+  what it must be capable of.
+- **Health Service Alignment** establishes how it fits within the wider
+  service ecosystem.
+- **Healthcare Service Offering Management** establishes/manages it as
+  an identifiable organisational service offering.
+
+------------------------------------------------------------------------
+
+# DN-BC-035 — Corporate Resources & Enterprise Services — Harmonia-Relevant Context
+
+## Context
+
+Current reconciliation of Corporate Resources & Enterprise Services for
+Harmonia R1/R2.
+
+## Working Decision — Current Structure
+
+```text
+Corporate Resources & Enterprise Services
+
+  Financial & Commercial Services
+    Clinical Activity Charging Information Provision
+
+  Corporate Support Services
+    Back-Office Services
+    Facilities Management
+    IT Infrastructure Management
+    Communications & Publicity
+    People Management
+    Operational Oversight
+```
+
+## Clinical Activity Charging Information Provision
+
+**Clinical Activity Charging Information Provision** is the
+organisational ability to identify and provide information about
+chargeable or cost-relevant clinical and health-service activity where
+such information is required for applicable financial, funding or
+charging purposes.
+
+This is deliberately narrow for R1/R2.
+
+Harmonia may need to capture/provide utilisation evidence such as
+referral forwarding, diagnostic requests, applicable
+referral/diagnostic/service type, quantities or other contextual usage
+information.
+
+The boundary SHALL be preserved:
+
+> Harmonia may provide evidence of relevant activity and utilisation;
+> it does not thereby become responsible for pricing, billing, claiming,
+> accounting or revenue management.
+
+Not every Harmonia-mediated activity is presumed chargeable.
+
+This note does not establish comprehensive Medicare,
+private-health-insurance, activity-based-funding, billing, claims or
+revenue-cycle architecture.
+
+## Corporate Support Services
+
+These are enterprise capabilities whose resources, availability, state
+or constraints may materially affect Harmonia-enabled service activity.
+They SHALL NOT be dismissed as merely irrelevant background capabilities.
+
+- **Back-Office Services** — administrative/support services upon which
+  health-service activity may depend.
+- **Facilities Management** — physical facilities and facility services
+  affecting delivery, including applicable location/resource/availability
+  context such as printers, service-delivery centres and facility state.
+- **IT Infrastructure Management** — operation and availability of
+  underlying technology infrastructure upon which Harmonia or
+  health-service activity may depend.
+- **Communications & Publicity** — organisational communication/distribution
+  arrangements that may affect how information is published, distributed,
+  forwarded or otherwise made available.
+- **People Management** — broader organisational management of people
+  upon whom services depend, distinct from the clinical/practitioner-specific
+  Health Workforce Management capabilities.
+- **Operational Oversight** — observation of broader operational
+  conditions where those conditions affect organisational ability to
+  perform work or deliver services.
+
+The Harmonia relevance boundary is:
+
+> Harmonia does not need to own a Business Capability for that capability
+> to be relevant to Harmonia. Harmonia may need to consume information
+> about the capability's resources, state, availability or constraints
+> in order to make or support an operational decision.
+
+These CT3s SHALL NOT be decomposed further for R1/R2 unless a later
+requirement makes such decomposition architecturally material. This
+working note does not change canonical relevance classifications or
+resolve **OI-BC-002**.
+
+------------------------------------------------------------------------
+
+# DN-BC-036 — Health Service Governance — Framework and Compliance
+
+## Context
+
+Current reconciliation of Health Service Governance.
+
+## Working Decision — Current Structure
+
+```text
+Health Service Governance
+
+  Governance Framework Management
+    Policy / Obligation Governance
+    Authority & Constraint Governance
+
+  Compliance Governance
+    Compliance Assessment Definition
+    Governance Reporting & Checkpoint Definition
+```
+
+The primary distinction is:
+
+> Governance Framework Management = establishing the WHAT.
+
+> Compliance Governance = making sure the WHAT is followed and reported on.
+
+## Governance Framework Management
+
+**Policy / Obligation Governance** is the organisational ability to
+identify, interpret, establish and maintain authoritative obligations
+arising from applicable legislation, regulation, policy, standards,
+guidelines, contractual requirements and other governing requirements.
+
+The obligation definitions are critical organisational accountability
+artefacts and must remain governed, attributable and traceable to their
+applicable sources/authority.
+
+**Authority & Constraint Governance** establishes and maintains who is
+authorised to make, approve or govern particular organisational decisions
+and artefacts, together with the constraints under which that authority
+may legitimately be exercised.
+
+This includes applicable engagement with regulators, standards bodies,
+compliance bodies and other external authorities to establish legitimate
+working parameters.
+
+The shorthand distinction is:
+
+- **Obligation** — What are we required to do or satisfy?
+- **Authority** — Who may decide or approve?
+- **Constraint** — Within what bounds may that authority be exercised?
+
+## Compliance Governance
+
+Rename the previous candidate **Compliance Obligation Definition** to
+**Compliance Assessment Definition**.
+
+**Compliance Assessment Definition** is the organisational ability to
+define how compliance with established obligations, authorities and
+constraints will be evaluated, including the evidence, measures,
+criteria, controls and assessment arrangements necessary to determine
+whether organisational activity sufficiently satisfies those requirements.
+
+The distinction SHALL be preserved:
+
+> Obligation definition establishes what must be satisfied; Compliance
+> Assessment Definition establishes what constitutes sufficient basis
+> for determining that it is being satisfied.
+
+**Governance Reporting & Checkpoint Definition** establishes where/how
+applicable compliance is checked and what governance/compliance
+information must be reported.
+
+Compliance Governance SHALL NOT be collapsed into Assurance.
+
+------------------------------------------------------------------------
+
+# DN-BC-037 — Health Service Assurance — Specification and Evaluation
+
+## Context
+
+Current reconciliation of Health Service Assurance at Business Capability
+level.
+
+## Working Decision — Current Structure
+
+```text
+Health Service Assurance
+
+  Health Service Assurance Specification
+    Assurance Approach Definition
+    Assurance Evaluation Criteria Governance
+
+  Assurance Evaluation
+    Assurance Evidence Assessment
+    Assurance Conclusion Determination
+```
+
+**Health Service Assurance** is the organisational ability to establish
+and maintain justified confidence that health services can be, and are
+being, delivered in accordance with applicable expectations, obligations,
+constraints and required levels of performance.
+
+The macro-level subject is the organisation's ability to deliver health
+services.
+
+## Health Service Assurance Specification
+
+**Assurance Approach Definition** establishes how service-delivery
+assurance will be undertaken, including applicable scope, evidence
+expectations, responsibilities, methods, degree of independence and
+timing/frequency.
+
+**Assurance Evaluation Criteria Governance** establishes and maintains
+the criteria against which sufficient assurance can be determined.
+
+Those criteria may draw upon any materially relevant concern, including
+workforce, facilities, clinical practice, information, technology,
+security, privacy, governance, dependencies and operational state.
+
+## Assurance Evaluation
+
+**Assurance Evidence Assessment** evaluates available evidence against
+the established assurance approach and criteria.
+
+**Assurance Conclusion Determination** establishes the assurance
+conclusion legitimately supported by that evidence, including applicable
+insufficiency, qualification or unresolved concerns.
+
+## Governance and Assurance Boundary
+
+The distinction from **DN-BC-036** SHALL remain explicit:
+
+> Health Service Governance establishes what the organisation must do
+> and how adherence will be determined and governed.
+
+> Health Service Assurance establishes whether sufficient evidence exists
+> to give justified confidence in the organisation's ability to deliver
+> its health services appropriately.
+
+## Modelling and Derivation Guardrails
+
+At Business Capability level, assurance SHALL NOT be split into separate
+security, information, process, technology or clinical assurance
+capability trees merely because those concerns may contribute evidence.
+Drawing criteria or evidence from those concerns does not create separate
+Business Assurance Capabilities.
+
+This structure SHALL NOT prematurely derive Business Enabling Capability
+or component ownership.
+
+## Canonical Reconciliation Consideration
+
+The existing [canonical Health Service Assurance definition](../02-strategy/capabilities/business-capabilities.md#18-health-service-assurance)
+defines independent evaluation of governed subjects, while this working
+definition frames justified confidence in the organisation's ability to
+deliver health services. That difference requires explicit reconciliation
+before promotion, including the canonical independence and Clinical
+Services Delivery Assurance boundaries.
+
+This note does not replace the canonical definition, vary
+[REQ-FND-005's independence requirement](../01-motivation/requirements-constraints/foundational-requirements.md#req-fnd-005-independent-assurance-of-governed-activity),
+transfer clinical-adequacy responsibility to Harmonia, or remap the
+existing approved Assurance Design, Assurance Criteria Management and
+Governed Assurance enabling responsibilities.
+
+------------------------------------------------------------------------
+
 # Open Adjudication Queue
 
-The Codex MVP Business Capability decomposition review remains a
-candidate recommendation. After Care Access & Coordination, material
-review areas still include:
+The v0.2 Business Capability pass has now been substantially adjudicated
+as approved **working decisions**, captured through **DN-BC-037**.
+This is not canonical promotion: the scratchpad remains non-authoritative
+working architectural memory.
 
-1.  Clinical decomposition and the proposed Therapy & Counselling
-    Intervention residual frame.
-2.  Care-plan coordination boundaries.
-3.  Medication/support boundaries.
-4.  Information rights, disclosure consent, discovery/retrieval, sharing
-    and exchange.
-5.  Communication, notification, collaboration and the existing
-    clinical-handover semantic conflict.
-6.  Device attribution versus readiness/deployment.
-7.  Governance, clinical quality/safety, and independent assurance.
-8.  Final scope/pruning and global Capability-name uniqueness.
-9.  Reconciliation of the approved Business Capability tree into
-    canonical Markdown and RADS.
-10. Business Enabling CT ancestry and Feature framing remain separate
-    work.
-11. Domain05 B2.2 remains parked until Capability/RADS reconciliation is
-    sufficiently complete.
+**OI-BC-001** and **OI-BC-002** remain unresolved. Outstanding open issues,
+provisional candidates and parked matters in earlier notes are not closed
+by this housekeeping update; they require their own explicit adjudication.
+
+The next major activity is the following reconciliation sequence:
+
+1.  Reconcile the approved working Business Capability decisions into
+    canonical Markdown, preserving the definitions, boundaries,
+    interpretive warnings and unresolved issues. Reconcile differences
+    with existing canonical scope and check global Capability-name
+    uniqueness as part of that work.
+2.  Reconcile the Business Capability representation in RADS only after
+    canonical documentation is coherent.
+3.  Then construct/reconcile the Business Enabling Capability
+    CT1 → CT2 → CT3 hierarchy.
+4.  Then frame the established Features beneath their owning Business
+    Enabling Capability CT3s.
+5.  Then establish Business Capability ↔ Business Enabling Capability
+    enablement relationships through explicit architectural reconciliation.
+6.  Domain05 B2.2 remains parked until that reconciliation is sufficiently
+    complete.
+
+This queue records future work. It does not authorise canonical edits,
+RADS JSON/schema changes, enabling-capability ancestry, Feature
+ownership/framing, Canonical IDs or Domain05 traceability in this capture.
 
 ------------------------------------------------------------------------
 
@@ -6012,13 +7052,45 @@ Conversely, Health Service Operational Readiness depends upon other capabilities
 
 **Healthcare Service Offering Management** answers principally:
 
-> **What Health Service does the organisation offer?**
+> **What identifiable Health Service does the organisation offer, by whom,
+> where, when, and under what applicable conditions or constraints?**
+
+As recorded in **DN-BC-034**, temporal and conditional availability are
+material to the offering:
+
+> **Service exists ≠ service offered at this location ≠ service available
+> at this time/context.**
 
 **Health Service Operational Readiness** answers principally:
 
 > **Can that Health Service Offering actually be delivered here under the applicable operational conditions?**
 
-The existence of a defined Health Service Offering therefore does not establish its operational readiness.
+The existence or applicable temporal/conditional availability of a defined
+Health Service Offering therefore does not establish that the resources
+necessary to deliver it are presently operationally ready.
+
+---
+
+## Relationship to Health Service Alignment and Corporate Support Services
+
+**Health Service Alignment**, as recorded in **DN-BC-032**, concerns how
+a health service fits within and interacts with the wider service
+ecosystem, including co-dependencies, required resources, financial
+arrangements and surrounding implementation changes. It coherently
+positions a new or changed service within the service environment
+represented by the catalogue; it does not establish the authoritative
+service catalogue or, by that positioning alone, present operational
+readiness.
+
+**Corporate Support Services**, as recorded in **DN-BC-035**, provide
+enterprise context whose resources, availability, state or constraints
+may materially affect service delivery. Health Service Operational
+Readiness may consume such context without owning those supporting
+capabilities or their resources.
+
+Neither service alignment nor relevance of corporate support establishes
+the CT2 parent of Health Service Operational Readiness. Its placement
+remains unresolved and SHALL NOT be inferred from these relationships.
 
 ---
 

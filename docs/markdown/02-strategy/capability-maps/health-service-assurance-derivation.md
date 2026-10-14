@@ -1,5 +1,14 @@
 # Health Service Assurance — Approved Strategy Derivation
 
+> **BC reconciliation — 2026-10-14:** The [current BC catalogue](../capabilities/business-capabilities.md#18-health-service-assurance)
+> establishes BC-18 as a CT1, its stated BC CT2/CT3 decomposition and
+> Harmonia-Relevant classification. Its macro-level confidence purpose preserves
+> REQ-FND-005's applicable independent governed-assurance requirement. This
+> qualifies the earlier unresolved BC-tier/relevance statements below; all existing
+> BEC/EC support assertions remain unchanged and are not redistributed among the
+> new BC descendants. BEC tiers, ancestry and identity allocations remain unresolved.
+
+
 ## Purpose and Architectural Authority
 
 This view records the approved Health Service Assurance derivation in Domain02 Strategy. It connects the existing Motivation requirement and Business Capability to three approved Business Enabling Capabilities and their collaborative Enterprise Capability realisation. Canonical definitions remain in the linked capability catalogues.

@@ -352,9 +352,9 @@ This Feature retains its finalised-report responsibility. Broader Domain03 Diagn
 
 Service Delivery encompasses systems enablement across genuine healthcare delivery settings and clinical care delivery contexts.
 
-These established Business Enabling contextual entries are not the L2
+These established Business Enabling contextual entries are not the CT2
 decomposition of [01 Individual Care Delivery](business-capabilities.md#01-individual-care-delivery).
-The Business Capability's six L2 abilities remain independent of these contexts
+The Business Capability's six CT2 abilities remain independent of these contexts
 under [B2-R05 and B2-R06](business-capabilities.md#b2-r05).
 
 ```text

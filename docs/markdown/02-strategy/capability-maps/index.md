@@ -9,7 +9,7 @@ In traditional enterprise architecture, teams often attempt to map capabilities 
 Harmonia documents **fixed Capability decomposition** separately from the
 **five-stage derivation progression** and representative derivation patterns.
 `Layer ≠ Capability Tier ≠ Derivation Stage`. The fixed model is
-**CT1 → CT2 → CT3 → FT**; its complete ancestry requirement does not allocate
+**BC CT1 → CT2 → CT3** and **BEC CT1 → CT2 → CT3 → FT**. Harmonia Features require BEC CT3 frames; BCs do not own them. The explicit BC tiers/parents are in the reconciled catalogue; the Feature ancestry requirement does not allocate
 tiers to existing unresolved elements. These models do not require exhaustive
 traceability matrices:
 
@@ -29,7 +29,7 @@ traceability matrices:
 ## Documents in this Section
 
 - [Strategic Value Streams](../strategic-views/strategic-value-streams.md): Normative R1.x/R2.x model defining the four principal value transformations (VS-01..VS-04), value transformation stages, and representative traceability.
-- [Capability Decomposition & Derivation Model](capability-tier-model.md): Fixed CT1 → CT2 → CT3 → FT decomposition, semantic tier roles and mandatory Feature ancestry, separately from the five-stage derivation progression; composition rules, representative derivations and rationale for omitting exhaustive $N \times M$ matrices.
+- [Capability Decomposition & Derivation Model](capability-tier-model.md): Distinct BC CT1 → CT2 → CT3 and BEC CT1 → CT2 → CT3 → FT decomposition, semantic tier roles and mandatory Feature ancestry, separately from the five-stage derivation progression; composition rules, representative derivations and rationale for omitting exhaustive $N \times M$ matrices.
 - [Fixed Capability Decomposition Decision](../reviews/fixed-capability-decomposition-decision.md): Approved target metamodel, rationale, bounded CT3 scope, supersession and preserved unresolved catalogue consequences.
 - [Health Service Assurance Derivation](health-service-assurance-derivation.md): Approved REQ-FND-005 → BC-18 → Assurance Design, Assurance Criteria Management and Governed Assurance → collaborative Enterprise Capability realisation, including EC-14 Service Guardian; bounded first-pass contribution matrix with no component or downstream solution allocation.
 - [Strategic Logical Component Responsibilities](../strategic-views/logical-component-responsibilities.md): Capability compositions describing six strategic logical components and the Digital Twin coordination construct and the canonical Strategic Responsibility View.
