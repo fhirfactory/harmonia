@@ -1,0 +1,202 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Domain04 Package 2 — G1 Architectural Review Record}\label{rad:k9}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/04-information-architecture/reviews/package2-g1-review.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:k9:1392}
+\subsection*{11. K9 — Capability Metamodel Typing}
+\phantomsection\label{rad:k9:1394}
+
+\textbf{Status: RESOLVED — APPROVED: CAPABILITY IDENTITIES AND RESPONSIBILITIES PRESERVED; CAPABILITY TIER /\allowbreak{} ANCESTRY UNRESOLVED}
+
+\phantomsection\label{rad:k9:1396}
+
+\textbf{Disposition:} Close K9 because the architectural investigation establishes what the current architecture does and does not determine. Preserve established architectural identities, responsibilities, behavioural ownership contexts and catalogued Feature classifications. Retain unresolved Capability Tiers, ancestry, root status and structural Canonical IDs explicitly. Completion of the full Business Enabling Capability hierarchy is not a prerequisite for Domain04 Package 2 derivation. Source reconciliation remains a later, separately authorised activity.
+
+\phantomsection\label{rad:k9:1398}
+
+The approved identification prerequisite in §10, the \hyperref[rad:tier-model]{Capability decomposition /\allowbreak{} derivation model} and the \hyperref[rad:metamodel:319]{Architectural Element Identification metamodel} remain controlling. This final disposition supersedes the prerequisite's incomplete-K9 position without changing its identification rules or retrospectively validating legacy classifications. Approved K1–K8, including K5, remain unchanged.
+
+\phantomsection\label{rad:k9:1400}
+\subsubsection*{11.1 Approved findings and explicit uncertainty}
+\phantomsection\label{rad:k9:1402}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Architectural dimension} & \textbf{Established finding} & \textbf{Unresolved boundary}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Architectural dimension} & \textbf{Established finding} & \textbf{Unresolved boundary}\\\hline\endhead
+\hline\endfoot
+Architectural identity & Business Enabling Capability identities are established for the majority of affected elements. & The architectural-element status of every named catalogue decomposition entry is not established.\\\hline
+Semantic responsibility & The relevant responsibilities of those established Capabilities are preserved. Named responsibility contexts for Functions, Services and Processes are substantially established. & Established responsibility does not prove numerical Capability Tier or complete structural ancestry.\\\hline
+Feature type & All explicitly catalogued Features are FT; existing Feature identifiers are preserved. \texttt{\seqsplit{Identifier Resolution}} is FT /\allowbreak{} \texttt{\seqsplit{FEAT-EM-01}}. & Unsupported Domain03 Feature headings remain governed by approved K5; presentation alone creates no Feature identity.\\\hline
+Capability Tier & CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 are the approved decomposition terminology. & No affected legacy L1 /\allowbreak{} L2 /\allowbreak{} L3 owner assignment is independently validated sufficiently to establish a CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 assignment.\\\hline
+Capability ancestry and root status & Selected explicit parent/\allowbreak{}responsibility relationships are established, including \texttt{\seqsplit{Client Administration → Person Identity}}. & Complete Capability ancestry and root status for the affected Business Enabling Capabilities remain unresolved. The explicit relationship does not establish either element's tier or Client Administration's root status.\\\hline
+Structural Canonical ID & The approved identification grammar and established Feature identifiers remain valid. & Complete structural Canonical IDs cannot yet be established where required tier, ancestry or identifier allocation is unresolved.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:k9:1411}
+
+The \hyperref[rad:enabling]{Business Enabling Capability catalogue}, Domain03 behaviour ownership, \hyperref[rad:processes]{Process ownership}, \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md}{Information Responsibility} and \hyperref[rad:dependencies]{cross-capability dependencies} establish the relevant identities and responsibility contexts within their evidenced boundaries. The explicit \texttt{\seqsplit{Person Identity}} parent relationship is stated in \hyperref[rad:processes:69]{Governed Person Identity Correction, §2.1}; its disputed L2 label does not establish the tier.
+
+\phantomsection\label{rad:k9:1413}
+
+The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/.junie/reports/2026-10-07-domain04-package2-evidence-baseline.md\#k9--capability-metamodel-typing}{historical K9 evidence baseline} remains evidence of the source assertions requiring reconciliation. Established owner identity, established responsibility and established Feature type SHALL remain distinct from unresolved Capability Tier, ancestry and structural identification. A typing defect SHALL NOT invalidate an otherwise established Capability identity or change its semantic responsibility.
+
+\phantomsection\label{rad:k9:1415}
+\subsubsection*{11.2 Legacy classification disposition}
+\phantomsection\label{rad:k9:1417}
+
+No affected legacy L1 /\allowbreak{} L2 /\allowbreak{} L3 assignment has been independently validated sufficiently to authorise mechanical translation to CT1 /\allowbreak{} CT2 /\allowbreak{} CT3. The investigation categories remain:
+
+\phantomsection\label{rad:k9:1419}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Existing assertion} & \textbf{Investigation category} & \textbf{Approved treatment}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Existing assertion} & \textbf{Investigation category} & \textbf{Approved treatment}\\\hline\endhead
+\hline\endfoot
+Affected legacy owner L1 /\allowbreak{} L2 assignments & C — unsupported /\allowbreak{} insufficiently evidenced & Preserve the established owning element and responsibility; retain its Capability Tier and complete ancestry as unresolved.\\\hline
+Former \texttt{\seqsplit{Identifier Resolution}} L3 example & D — established Feature incorrectly represented as a Capability Tier & Preserve FT /\allowbreak{} \texttt{\seqsplit{FEAT-EM-01}}; do not classify it as CT3 or use the former label to establish ancestry.\\\hline
+Former \texttt{\seqsplit{Closed-Loop Order Progression}} L3 and \texttt{\seqsplit{Diagnostic Orders}} L2 examples & C — unsupported /\allowbreak{} insufficiently evidenced & The former examples establish no validated Capability Tier or ancestry. Preserve independently evidenced Process responsibility without manufacturing a Capability identity or parent.\\\hline
+Unsupported Domain03 Feature headings & Approved K5 controls & Preserve valid Functions and Services in their evidenced owning context; create no Feature, Feature ID or alias to obtain traceability symmetry.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:k9:1426}
+
+No affected legacy assignment is established as category A — a semantically validated hierarchy requiring terminology migration alone. Unsupported hierarchy assertions SHALL NOT be treated as mere deprecated wording. \texttt{\seqsplit{L1 → CT1}}, \texttt{\seqsplit{L2 → CT2}} and \texttt{\seqsplit{L3 → CT3}} SHALL NOT be performed as a mechanical migration.
+
+\phantomsection\label{rad:k9:1428}
+\subsubsection*{11.3 Downstream derivation rule}
+\phantomsection\label{rad:k9:1430}
+
+\begin{quote}
+
+Unresolved Capability Tier or ancestry SHALL NOT prevent downstream architectural derivation where the owning Capability or Feature and its relevant responsibility are otherwise established. Downstream traceability SHALL reference the established architectural element and SHALL NOT manufacture unresolved structural ancestry.
+
+
+\end{quote}
+\phantomsection\label{rad:k9:1432}
+
+Domain04 Package 2 may therefore derive Information Concepts from established Business Architecture responsibility without waiting for complete CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 classification. This permission does not establish missing responsibility or architectural identity where those are themselves unresolved.
+
+\phantomsection\label{rad:k9:1434}
+
+Where a full structural Canonical ID cannot yet be established, traceability SHALL use the established architectural type, canonical name and existing identifier where one exists, while retaining the structural Canonical ID as unresolved. Placeholder structural IDs SHALL NOT be manufactured. An existing Feature identifier SHALL NOT be represented as proof of a complete structural Canonical ID.
+
+\phantomsection\label{rad:k9:1436}
+\subsubsection*{11.4 Architectural Element identity and catalogue presentation}
+\phantomsection\label{rad:k9:1438}
+
+\begin{quote}
+
+Document structure, catalogue grouping, numbering, indentation and decomposition presentation SHALL NOT by themselves establish Architectural Element identity. Canonical Architectural IDs SHALL be assigned only to governed Architectural Elements whose identity and architectural context are established.
+
+
+\end{quote}
+\phantomsection\label{rad:k9:1440}
+
+Named catalogue decomposition entries SHALL NOT automatically become CT2 or CT3 Capabilities because they appear beneath another Capability. Their architectural-element status may remain unresolved. Historical L1 /\allowbreak{} L2 /\allowbreak{} L3 labels and derivation-stage position likewise SHALL NOT serve as self-validating evidence of ancestry or tier.
+
+\phantomsection\label{rad:k9:1442}
+
+The five contextual views — Entity Management, Service Administration, Service Delivery, Health Service Operations and Intrinsic /\allowbreak{} Shared Enablement — remain organisational views. They SHALL NOT automatically become CT1 elements or identifier ancestors. Established Capability contexts beneath a view do not by themselves prove root CT1 status.
+
+\phantomsection\label{rad:k9:1444}
+\subsubsection*{11.5 Behavioural ownership and Feature preservation}
+\phantomsection\label{rad:k9:1446}
+
+Named responsibility contexts for affected Domain03 Functions, Services and Processes are substantially established even though their complete structural paths are not. Those behaviours may continue to trace to their established owning Capability or Feature without a complete structural Canonical ID. The identification prerequisite permits direct anchoring at an established Capability Tier or FT context; missing intermediate Capabilities or Features SHALL NOT be manufactured.
+
+\phantomsection\label{rad:k9:1448}
+
+All explicitly catalogued Features SHALL remain FT, and all established Feature identifiers SHALL be preserved. The control case is:
+
+\phantomsection\label{rad:k9:1450}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Identifier Resolution property} & \textbf{Approved finding}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Identifier Resolution property} & \textbf{Approved finding}\\\hline\endhead
+\hline\endfoot
+Type & FT\\\hline
+Existing Feature identifier & \texttt{\seqsplit{FEAT-EM-01}}\\\hline
+Owning context & Person Identity\\\hline
+Complete structural Canonical ID & Unresolved\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:k9:1457}
+
+The explicit \texttt{\seqsplit{Client Administration → Person Identity}} relationship and Identifier Resolution's owning context establish only a partial responsibility chain. They SHALL NOT supply missing Capability Tier ancestry or a complete structural Canonical ID.
+
+\phantomsection\label{rad:k9:1459}
+
+Approved K5 remains controlling for unsupported Feature headings, existing Feature IDs and canonical naming. Valid Functions and Services do not establish a new Feature merely through a heading or similarity to a broader Feature. No FN /\allowbreak{} SV /\allowbreak{} PR identifiers are allocated during K9 persistence.
+
+\phantomsection\label{rad:k9:1461}
+\subsubsection*{11.6 Clinical Qualification /\allowbreak{} Credential distinction}
+\phantomsection\label{rad:k9:1463}
+
+\texttt{\seqsplit{Clinical Qualification Management ≠ Credential Management}}.
+
+\phantomsection\label{rad:k9:1465}
+
+The approved rename \texttt{\seqsplit{Clinical Credential Management → Clinical Qualification Management}} preserves professional /\allowbreak{} clinical qualification and competency responsibility. Domain03 \texttt{\seqsplit{Credential Management}} retains its separately evidenced operational badge /\allowbreak{} physical-access responsibility. The elements SHALL NOT be merged or aliased. Neither element's Capability Tier or ancestry is established by the rename or by lexical similarity.
+
+\phantomsection\label{rad:k9:1467}
+
+The lexical similarity of Feature or behaviour names SHALL NOT establish semantic identity. In particular, the badge/\allowbreak{}access-context \texttt{\seqsplit{Operational Credential Check}} behaviour SHALL NOT be bound to \texttt{\seqsplit{FEAT-HSO-23}} solely by name. That catalogued Feature's qualification/\allowbreak{}competency responsibility remains distinct from the operational badge/\allowbreak{}access behaviour.
+
+\phantomsection\label{rad:k9:1469}
+\subsubsection*{11.7 Later, separately authorised G1 reconciliation}
+\phantomsection\label{rad:k9:1471}
+
+The minimum later reconciliation SHALL distinguish:
+
+\phantomsection\label{rad:k9:1473}
+
+\begin{itemize}
+
+\item
+\textbf{Terminology and unsupported hierarchy assertions:} remove or qualify unsupported numerical Capability Tier assertions in the affected sources; use approved terminology only where tier is independently established. Preserve established Capability identities and responsibilities; otherwise retain tier, root status and complete ancestry as unresolved.
+
+
+
+\item
+\textbf{Evidenced relationship:} preserve \texttt{\seqsplit{Client Administration → Person Identity}} without inventing tiers, intermediate parents or root status. Completion of the hierarchy may occur through later Business Architecture refinement and is not required to close K9.
+
+
+
+\item
+\textbf{Feature correction:} preserve catalogued FT identities and existing Feature IDs; correct the former Identifier Resolution Capability Tier representation; apply approved K5 to unsupported Feature headings without manufacturing Features or identifiers.
+
+
+
+\item
+\textbf{Canonical naming correction:} apply approved K5 naming corrections, including Service Delivery naming and Clinical Logistics Coordination, and the approved Clinical Qualification Management rename. Preserve the distinct operational Credential Management element and its responsibility.
+
+
+
+\item
+\textbf{Downstream traceability correction:} reconcile affected Package 1 traceability labels against established architectural types and owning responsibilities, retaining unresolved structural context explicitly. Preserve the separately approved K3/\allowbreak{}K6 constraints; do not change Function, Service, Process, Information Responsibility or dependency semantics to repair a type label.
+
+
+
+\item
+\textbf{Historical evidence and identification:} preserve the evidence baseline, including its historical quotations and fingerprints; allocate no speculative structural Canonical IDs. Catalogue presentation SHALL NOT create governed Architectural Elements or substitute for established context.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:k9:1480}
+
+Approval of this disposition and authorisation to perform source reconciliation remain separate. This persistence task changes only this durable G1 review record; frozen Domain01–03, Domain04 Foundation and Package 1 sources remain unchanged.
+
+\phantomsection\label{rad:k9:1482}
+\subsubsection*{11.8 Closure and stop boundary}
+\phantomsection\label{rad:k9:1484}
+
+\textbf{2026-10-13 reconciliation:} The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/reviews/fixed-capability-decomposition-decision.md}{fixed-decomposition decision} changes the target metamodel, not K9's approved evidence, closure or unresolved catalogue status. Complete CT1 → CT2 → CT3 ancestry is now required for a fully reconciled Feature. Existing Features remain valid evidence requiring ancestry reconciliation where their CT3 frame is unestablished. Legacy labels, document structure, contextual views, local Feature IDs and partial ownership SHALL NOT establish missing tiers, complete Canonical IDs or new ancestors. K9's permission to derive from established responsibility remains; it does not declare that responsibility structurally reconciled. The original closure text follows unchanged.
+
+\phantomsection\label{rad:k9:1495}
+
+K9 is RESOLVED on the approved interpretation above. Unresolved Capability Tier, ancestry, root status, decomposition-entry identity and structural Canonical ID information remain explicit architectural uncertainties; they do not reopen K9 or require completion of the full Business Enabling Capability hierarchy before downstream derivation from established responsibility.
+
+\phantomsection\label{rad:k9:1497}
+
+This disposition preserves AX-01/\allowbreak{}AX-04 business meaning, AX-14 semantic distinctions and AX-15 uncertainty. It neither changes the frozen Capability Model nor authorises missing identity, ancestry or identifier allocation to be invented. It preserves the approved identification prerequisite and K1–K8 unchanged, completes no G1 reconciliation, derives no Package 2 Information Concept and does not investigate K10 or approve G1 as a whole. Work stops after persistence of this approved K9 disposition and review of the resulting diff.

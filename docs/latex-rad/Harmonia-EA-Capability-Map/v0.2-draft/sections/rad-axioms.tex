@@ -1,0 +1,531 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Harmonia Architectural Axioms}\label{rad:axioms}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/governance/architectural-axioms.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:axioms:74}
+\subsubsection*{AX-01 --- Harmonia Is Health-Information Centric}
+\phantomsection\label{rad:axioms:76}
+\subsubsection*{Axiom}
+\phantomsection\label{rad:axioms:78}
+
+Harmonia is a distributed health-information management and interoperability framework.
+
+\phantomsection\label{rad:axioms:81}
+
+Its primary purpose is the ingestion, validation, transformation, governance, processing, persistence, distribution and exposure of health-related information.
+
+\phantomsection\label{rad:axioms:85}
+
+Harmonia SHALL support applicable health-information standards and models while retaining the ability to manage information according to Harmonia's own internal operational requirements.
+
+\phantomsection\label{rad:axioms:89}
+\subsubsection*{Rationale}
+\phantomsection\label{rad:axioms:91}
+
+Harmonia is not intended to become a generic distributed application framework to which healthcare happens to be attached.
+
+\phantomsection\label{rad:axioms:94}
+
+Its architecture exists to solve health-information problems: interoperability, information authority, provenance, security, terminology, workflow, persistence, distribution, resilience and longitudinal information management.
+
+\phantomsection\label{rad:axioms:99}
+\subsubsection*{Consequences}
+\phantomsection\label{rad:axioms:101}
+
+Health-information semantics take precedence over generic infrastructure convenience.
+
+\phantomsection\label{rad:axioms:104}
+
+Standards such as HL7 FHIR and HL7 v2 are first-class architectural concerns.
+
+\phantomsection\label{rad:axioms:107}
+
+Generic infrastructure capabilities SHOULD be used where useful, but SHALL NOT dictate Harmonia's health-information semantics.
+
+\phantomsection\label{rad:axioms:110}
+
+\textbf{This does not mean}
+
+\phantomsection\label{rad:axioms:112}
+
+\begin{itemize}
+
+\item
+Harmonia is a FHIR server.
+
+
+
+\item
+Harmonia is restricted to FHIR information.
+
+
+
+\item
+Every internal Harmonia object must correspond to a healthcare interoperability standard.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:axioms:116}
+
+
+
+\phantomsection\label{rad:axioms:204}
+\subsubsection*{AX-04 --- Harmonia Owns the Semantics; Engines Provide the Machinery}
+\phantomsection\label{rad:axioms:206}
+\subsubsection*{Axiom}
+\phantomsection\label{rad:axioms:208}
+
+Harmonia owns the architectural semantics governing information authority, security, lifecycle, concurrency, provenance, auditability, resilience and operational integrity.
+
+\phantomsection\label{rad:axioms:212}
+
+Harmonia SHALL preferentially use capabilities supplied by underlying technology engines where those capabilities satisfy Harmonia's architectural invariants rather than reproduce equivalent functionality.
+
+\phantomsection\label{rad:axioms:216}
+\subsubsection*{Rationale}
+\phantomsection\label{rad:axioms:218}
+
+Harmonia should own its meaning without unnecessarily owning commodity infrastructure machinery.
+
+\phantomsection\label{rad:axioms:221}
+\subsubsection*{Consequences}
+\phantomsection\label{rad:axioms:223}
+
+HAPI FHIR MAY provide FHIR persistence, indexing, versioning and search.
+
+\phantomsection\label{rad:axioms:225}
+
+Infinispan MAY provide distributed caching, entry metadata and atomic coordination primitives.
+
+\phantomsection\label{rad:axioms:228}
+
+ActiveMQ Artemis MAY provide durable messaging.
+
+\phantomsection\label{rad:axioms:230}
+
+PostgreSQL MAY provide transactional relational persistence.
+
+\phantomsection\label{rad:axioms:232}
+
+These technologies implement Harmonia capabilities. They do not define Harmonia's architectural semantics.
+
+\phantomsection\label{rad:axioms:235}
+\subsubsection*{Maxim}
+\phantomsection\label{rad:axioms:237}
+
+Use the machinery. Own the semantics.
+
+\phantomsection\label{rad:axioms:239}
+
+\textbf{This does not mean:}
+
+\phantomsection\label{rad:axioms:241}
+
+\begin{itemize}
+
+\item
+Harmonia should wrap every engine capability behind a bespoke implementation.
+
+
+
+\item
+An engine's native behaviour automatically satisfies a Harmonia invariant.
+
+
+
+\item
+Using HAPI FHIR makes Harmonia a HAPI FHIR application.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:axioms:245}
+
+
+
+\phantomsection\label{rad:axioms:668}
+\subsubsection*{AX-14 — Semantic Distinctions Are Preserved}
+\phantomsection\label{rad:axioms:669}
+\subsubsection*{Axiom}
+\phantomsection\label{rad:axioms:670}
+
+Harmonia SHALL preserve meaningful distinctions between states, outcomes and concepts throughout its internal processing and across subsystem boundaries.
+
+\phantomsection\label{rad:axioms:672}
+
+A distinction that is significant to information meaning, authority, security, concurrency, persistence, processing outcome or operational correctness SHALL NOT be collapsed merely because an underlying technology, transport, API or implementation abstraction does not represent that distinction directly.
+
+\phantomsection\label{rad:axioms:674}
+
+Where an external interface contract intentionally presents a simpler or different semantic model, Harmonia MAY project its internal semantics into that contract explicitly at the applicable boundary.
+
+\phantomsection\label{rad:axioms:676}
+\subsubsection*{Rationale}
+\phantomsection\label{rad:axioms:677}
+
+Loss of semantic distinction causes information about what Harmonia knows, what occurred and what may safely happen next to be lost.
+
+\phantomsection\label{rad:axioms:679}
+
+Two conditions may produce similar implementation behaviour while having materially different meanings. Resource absence, access denial, persistence failure and indeterminate outcome may all prevent information from being returned, but they do not describe the same state.
+
+\phantomsection\label{rad:axioms:681}
+
+Likewise, persistence version, active-state generation, interoperability version and information authority describe different properties even where an implementation happens to correlate them.
+
+\phantomsection\label{rad:axioms:683}
+
+Implementation convenience SHALL NOT redefine those meanings.
+
+\phantomsection\label{rad:axioms:685}
+\subsubsection*{Consequences}
+\phantomsection\label{rad:axioms:686}
+
+Semantically distinct outcomes SHALL remain distinguishable through Harmonia's internal contracts.
+
+\phantomsection\label{rad:axioms:688}
+
+Security denial SHALL NOT be represented as resource absence merely because both prevent access to information.
+
+\phantomsection\label{rad:axioms:690}
+
+A failure to establish authoritative state SHALL NOT be represented as authoritative absence.
+
+\phantomsection\label{rad:axioms:692}
+
+An indeterminate outcome SHALL NOT be represented as either success or failure unless subsequent processing establishes that outcome.
+
+\phantomsection\label{rad:axioms:694}
+
+ActiveStateToken, AuthoritativeVersion, externally meaningful version identifiers and standards-defined version metadata SHALL remain distinct where they represent different semantic domains.
+
+\phantomsection\label{rad:axioms:696}
+
+Where an underlying engine or protocol lacks a distinction required by Harmonia, Harmonia SHALL introduce an appropriate semantic representation rather than infer meaning from incidental implementation details such as exception classes, message text or correlated version values.
+
+\phantomsection\label{rad:axioms:698}
+
+Boundary projection MAY deliberately reduce or transform semantic distinctions where required by an external contract or policy, but such projection SHALL be explicit and SHALL NOT redefine Harmonia's internal semantics.
+
+\phantomsection\label{rad:axioms:700}
+\subsubsection*{Maxim}
+\phantomsection\label{rad:axioms:701}
+
+Preserve semantics internally; project deliberately at boundaries.
+
+\phantomsection\label{rad:axioms:703}
+
+This does not mean: Harmonia must expose every internal distinction externally. Similar outcomes can never share implementation machinery. Every semantic distinction requires a separate Java type. External standards or interface contracts may be ignored in favour of Harmonia's internal model.
+
+\phantomsection\label{rad:axioms:705}
+
+
+
+\phantomsection\label{rad:axioms:772}
+\subsubsection*{AX-17 — Architectural Authority and Explicit Uncertainty}
+\phantomsection\label{rad:axioms:774}
+\subsubsection*{Axiom}
+\phantomsection\label{rad:axioms:776}
+
+Documented architectural decisions, definitions, relationships, boundaries and constraints are authoritative and SHALL NOT be silently reinterpreted, replaced, bypassed or contradicted by downstream architecture or implementation.
+
+\phantomsection\label{rad:axioms:781}
+
+Where the architecture does not establish a fact, relationship, responsibility or decision, that absence SHALL be preserved explicitly rather than completed through inference, convention, structural convenience, lexical similarity or anticipated implementation.
+
+\phantomsection\label{rad:axioms:786}
+
+Unresolved architecture MAY be accompanied by clearly identified candidates, suggestions or recommendations, but these SHALL remain explicitly non-authoritative until explicitly accepted into the architecture.
+
+\phantomsection\label{rad:axioms:791}
+
+Where evidence indicates that authoritative architecture may be incorrect, incomplete or internally inconsistent, the conflict SHALL be raised explicitly for architectural review. The existing architecture remains authoritative until an approved architectural change is made. That approved change becomes the new authoritative architecture.
+
+\phantomsection\label{rad:axioms:797}
+\subsubsection*{Rationale}
+\phantomsection\label{rad:axioms:799}
+
+Downstream derivation must distinguish established architectural knowledge from gaps and proposed resolutions. A plausible relationship supplies no authority merely because it makes a model or implementation appear complete. Absence of an established relationship is architecturally meaningful information.
+
+\phantomsection\label{rad:axioms:805}
+
+Repeated architectural review during Domain04 Package2 G1 confirmed this need across different traceability relationships:
+
+\phantomsection\label{rad:axioms:808}
+
+\begin{itemize}
+
+\item
+K9: unresolved Capability hierarchy must not be completed through invented ancestry.
+
+
+
+\item
+K10: Behaviour /\allowbreak{} Process traceability must not be completed through invented stage equivalence.
+
+
+
+\item
+K11: Function /\allowbreak{} Service traceability must not be completed through unsupported Feature association.
+
+
+
+\item
+K12: cross-capability dependency traceability must not be completed through invented Service ownership or consumption.
+
+
+
+\item
+K13: downstream representation traceability must not be completed through anticipated FHIR, application or technology mappings.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:axioms:819}
+
+These examples justify an architecture-wide rule; its application does not depend on Domain04 or G1 terminology.
+
+\phantomsection\label{rad:axioms:822}
+\subsubsection*{Consequences}
+\phantomsection\label{rad:axioms:824}
+
+Human architects, human developers and AI development agents SHALL apply this axiom to architecture derivation, documentation generation and implementation.
+
+\phantomsection\label{rad:axioms:828}
+
+Architectural traceability SHALL represent established relationships and explicitly preserve unresolved or unestablished relationships. Completeness SHALL NOT be manufactured through:
+
+\phantomsection\label{rad:axioms:832}
+
+\begin{itemize}
+
+\item
+inferred hierarchy;
+
+
+
+\item
+structural convenience;
+
+
+
+\item
+lexical similarity;
+
+
+
+\item
+conventional modelling patterns;
+
+
+
+\item
+assumed equivalence;
+
+
+
+\item
+anticipated implementation;
+
+
+
+\item
+familiar standards;
+
+
+
+\item
+probable application design.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:axioms:841}
+
+Candidates, suggestions and recommendations SHALL be distinguishable from documented, approved architecture. A proposed resolution or apparently better alternative SHALL NOT acquire authority through downstream use.
+
+\phantomsection\label{rad:axioms:845}
+
+AI development agents SHOULD challenge architecture when evidence warrants architectural review. They SHALL NOT silently bypass it because they recognise a familiar destination.
+
+\phantomsection\label{rad:axioms:849}
+
+This axiom applies the authority and explicit-review obligations in \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#1-purpose}{Purpose}, \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#6-relationship-to-architecture-decisions}{Relationship to Architecture Decisions} and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#7-architectural-review-rule}{Architectural Review Rule} to downstream derivation and implementation.
+
+\phantomsection\label{rad:axioms:854}
+
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-14}{AX-14} preserves semantic distinctions; this axiom preserves the distinction between established, unresolved and proposed architecture. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-15}{AX-15} governs uncertainty about operational state, outcome or effect; this axiom governs uncertainty about the architecture itself. Neither form of uncertainty may be silently resolved by assumption.
+
+\phantomsection\label{rad:axioms:862}
+
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-02}{AX-02} and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-04}{AX-04} preserve Harmonia's internal semantics from external standards and engine assumptions. Familiar standards or technology patterns do not establish otherwise undocumented architectural relationships. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-06}{AX-06} governs the authority of managed information; architectural authority remains a distinct concern.
+
+\phantomsection\label{rad:axioms:870}
+\subsubsection*{Maxim}
+\phantomsection\label{rad:axioms:872}
+
+\textbf{Traceability must be truthful, not artificially complete.}
+
+\phantomsection\label{rad:axioms:874}
+
+
+
+\phantomsection\label{rad:axioms:876}
+\subsubsection*{AX-18 — Integration and Coordination Do Not Confer Domain Authority}
+\phantomsection\label{rad:axioms:878}
+\subsubsection*{Axiom}
+\phantomsection\label{rad:axioms:880}
+
+\begin{quote}
+
+Harmonia MAY integrate information concerning, and coordinate operational activity associated with, an externally governed domain activity without thereby acquiring authority to determine or manage that domain activity.
+
+
+Authority to determine or manage a domain activity SHALL remain with the responsible actor, system or governed capability unless that authority is explicitly assigned to Harmonia by the architecture.
+
+
+Harmonia's observation, processing, persistence, distribution, presentation or use of information concerning a domain activity SHALL NOT, by itself, establish authority over that activity.
+
+
+\end{quote}
+\phantomsection\label{rad:axioms:886}
+\subsubsection*{Rationale}
+\phantomsection\label{rad:axioms:888}
+
+Participation in a domain activity and authority over that activity are different architectural concerns. Information possession, observation, integration, coordination and processing do not, by themselves, confer domain authority. Authority requires explicit architectural assignment.
+
+\phantomsection\label{rad:axioms:893}
+
+This new human-approved axiom generalises an already-established class of architectural boundary. It is established at the 2026-10-09 migration boundary; it is not a claim that AX-01 through AX-17 always contained this axiom.
+
+\phantomsection\label{rad:axioms:898}
+\subsubsection*{Consequences and qualifications}
+\phantomsection\label{rad:axioms:900}
+
+AX-18 SHALL NOT be interpreted as preventing Harmonia from performing operational activity for which architecture has assigned Harmonia responsibility. Explicit architectural assignment may establish authority to determine or manage a domain activity.
+
+\phantomsection\label{rad:axioms:905}
+
+In particular, AX-18 does not mean:
+
+\phantomsection\label{rad:axioms:907}
+
+\begin{itemize}
+
+\item
+Harmonia cannot execute Praxis/\allowbreak{}Ergo activity;
+
+
+
+\item
+Harmonia cannot coordinate entity-specific operational activity through a Digital Twin;
+
+
+
+\item
+Harmonia cannot process or transform clinical information;
+
+
+
+\item
+Harmonia cannot perform workflow/\allowbreak{}activity coordination;
+
+
+
+\item
+Harmonia cannot manage responsibilities explicitly assigned to Harmonia;
+
+
+
+\item
+Harmonia cannot enforce policy, security, information governance or operational controls assigned to it.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:axioms:914}
+
+Participation, information, integration and coordination do not, by themselves, establish authority to determine or manage the underlying domain activity. Assigned Harmonia operational responsibility remains applicable.
+
+\phantomsection\label{rad:axioms:918}
+\subsubsection*{Examples and established specialisations (non-normative)}
+\phantomsection\label{rad:axioms:920}
+
+These examples explain the boundary; they do not expand the axiom or establish Application Components, Information Concepts, Services, Processes, AI allocation or implementation mechanisms.
+
+\phantomsection\label{rad:axioms:924}
+
+\begin{itemize}
+
+\item
+\textbf{Clinical work:} Harmonia may integrate and coordinate around clinical work without thereby acquiring authority to determine clinical work, manage clinical handover, own clinical worklists, allocate clinical work, make clinical decisions or become the EMR workflow authority. The detailed \hyperref[rad:metamodel:173]{Domain03 clinical-work integration boundary} remains the Business specialisation.
+
+
+
+\item
+\textbf{Digital Twins:} A Twin may coordinate operational activity associated with its real-world entity without thereby acquiring authority over originating clinical facts or domain decisions. The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md\#entity-specific-operational-coordination}{Strategy entity-specific coordination rule} remains controlling for that coordination.
+
+
+
+\item
+\textbf{Capacity:} Higher-order Service Capacity Management may consume context-specific capacity without acquiring the originating responsibility for Clinic, Ward, Theatre, ED, Outpatient or Mobile Service Capacity Management. The detailed \hyperref[rad:hso:18]{Business capacity responsibility boundary} remains in Business Architecture.
+
+
+
+\item
+\textbf{Assurance:} Observation, access to evidence or establishment of an assurance conclusion does not confer management authority over the activity being assured. Independent Assurance remains governed by \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-005-independent-assurance-of-governed-activity}{REQ-FND-005} and its established \hyperref[rad:assurance-strategy]{Strategy} and \hyperref[rad:assurance]{Business} derivation.
+
+
+
+\item
+\textbf{Presentation /\allowbreak{} UI:} Presentation or collection of information does not, by itself, confer originating information or domain-decision authority on the presenting component. The existing \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md\#component-6-iris-contextual-human-interaction}{Iris contextual human interaction responsibility} remains distinct.
+
+
+
+\item
+\textbf{AI:} Assistance with interpretation, pattern recognition, criteria evaluation or decision support does not, by itself, confer the authority of the governed actor, role or capability using that assistance. This example assigns no AI responsibility or capability.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:axioms:959}
+\subsubsection*{Related architectural authority}
+\phantomsection\label{rad:axioms:961}
+
+\begin{itemize}
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-06}{AX-06} governs information authority and credibility.
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-13}{AX-13} governs the Harmonia management boundary at ingress/\allowbreak{}egress.
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-14}{AX-14} preserves meaningful semantic distinctions.
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-16}{AX-16} governs coordinated operational activity/\allowbreak{}entity progression.
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-17}{AX-17} governs architectural authority and explicit uncertainty.
+
+
+
+\item
+AX-18 governs inference of domain authority from participation, information, integration or coordination.
+
+
+
+\end{itemize}

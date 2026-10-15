@@ -1,0 +1,1430 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Principal Business Processes}\label{rad:processes}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/processes/business-processes.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:processes:1}
+\section*{Principal Business Processes}
+\phantomsection\label{rad:processes:3}
+\subsection*{1. Process Demarcation \& Justification Rules}
+\phantomsection\label{rad:processes:5}
+
+The named owning Capabilities retain their established responsibilities. Affected Capability Tier, complete ancestry, root status and full structural Canonical IDs remain unresolved under approved G1 K9. The explicit \texttt{\seqsplit{Client Administration → Person Identity}} relationship remains a partial chain, not a tier allocation.
+
+\phantomsection\label{rad:processes:7}
+
+Processes may elaborate scoped progression without reproducing Behaviour stage lists. Established ownership, responsibility, authority boundaries and supported obligations remain controlling. Omitted Process checkpoints are not invalidated by a Behaviour summary; omitted Behaviour responsibilities are not removed by a Process. Stage-count equality is not required, and extra detail does not establish universal applicability.
+
+\phantomsection\label{rad:processes:9}
+
+Illustrations are not complete normative transition models. Their scoped applicability and visible uncertainty annotations retain independent Business meaning; detailed execution-state machinery remains downstream. For a materially significant managed outcome that available evidence cannot establish, preserve uncertainty rather than infer success or failure from an absent acknowledgement, response or observation. No universal additional Process state is prescribed.
+
+\phantomsection\label{rad:processes:11}
+
+Where Healthcare Service context is material to the activity's meaning, authority, coordination, progression or accountability, retain that context in the relevant activity/\allowbreak{}information responsibility. Location, Organisation, Practitioner or Role cannot substitute for it; no representation or implementation binding follows.
+
+\phantomsection\label{rad:processes:13}
+
+In the Harmonia Business Architecture, a \textbf{Business Process} applies the \hyperref[rad:metamodel:183]{canonical Process definition}: ordered Function decomposition of complex change within the owning Capability or Feature responsibility. Existing activity-instance states, dispositions and outcomes retain their established meaning; no new transition model is inferred.
+
+\phantomsection\label{rad:processes:19}
+\subsubsection*{1.1 Process Inclusion Rule}
+\phantomsection\label{rad:processes:20}
+
+\begin{quote}
+
+\textbf{Model a Business Process where ordered Function decomposition is material to understanding, structuring or managing a complex Business change and its progression.}
+
+
+\end{quote}
+\phantomsection\label{rad:processes:24}
+
+A Function may require further Processes recursively. Search, query, resolution, translation, mapping, verification, lookup and presentation do not automatically require a Process, but their labels do not exclude decomposition where justified. Service fulfilment may use Functions directly, Processes, or both. Function-level Information relationships remain primary; this reconciliation adds no named Process to the catalogue.
+
+\phantomsection\label{rad:processes:31}
+
+
+
+\phantomsection\label{rad:processes:33}
+\subsubsection*{1.2 Canonical Business Process Catalogue}
+\phantomsection\label{rad:processes:35}
+
+The sixteen pre-existing Business Processes remain in the current R1.x/\allowbreak{}R2.x baseline with the authorised identity/\allowbreak{}discharge reconciliations and explicit lifecycle qualifications. Three approved Health Service Assurance Processes extend this catalogue to \textbf{nineteen Business Processes}; their existing authority/\allowbreak{}progression boundaries are sufficient for this baseline while detailed lifecycle states and transitions remain unestablished.
+
+\phantomsection\label{rad:processes:37}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Principal Business Processes
+
+Entity \& Administrative Processes
+
+1. Governed Person Identity Correction
+
+2. Practitioner Verification
+
+Clinical Lifecycle \& Service Administration Processes
+
+3. Referral Progression
+
+4. Encounter Lifecycle
+
+5. Closed-Loop Order Progression
+
+6. Clinical Document Lifecycle
+
+Healthcare Facility \& Logistics Operations Processes
+
+7. Theatre Case Progression
+
+8. Clinic / Operational Queue Progression
+
+9. Bed Turnover
+
+10. Operational Work Progression
+
+11. Patient Transport
+
+12. Specimen Transport
+
+13. Discharge Progression
+
+Horizontal Workflow Coordination Processes
+
+14. Work Order Progression (Human Doing)
+
+15. To Do Progression (Human Reviewing / Deciding)
+
+16. Synthetic Task Progression (Automated System Work)
+
+Health Service Assurance Processes
+
+17. Assurance Process Design
+
+18. Assurance Process Execution
+
+19. Assurance Process Reporting / Communication
+\end{quote}
+\phantomsection\label{rad:processes:65}
+
+\par\smallskip
+\phantomsection\label{rad:processes:67}
+\subsection*{2. Entity \& Administrative Processes}
+\phantomsection\label{rad:processes:69}
+\subsubsection*{2.1 Governed Person Identity Correction Process}
+\phantomsection\label{rad:processes:70}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Person Identity}} (under \texttt{\seqsplit{Client Administration}})
+
+
+
+\item
+\textbf{Process Purpose}: Processes externally authoritative identity corrections and merge/\allowbreak{}unlink outcomes, applies their consequences to Harmonia-managed identity information and identifier associations, and communicates resulting changes with an audit history.
+
+
+
+\item
+\textbf{Authority boundary}: Person correction/\allowbreak{}merge decisions originate externally. Internal triage, evidence verification and approval concern applicability and governed processing of that authoritative outcome, not person matching, golden-record determination, master-person selection or originating merge adjudication.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Correction Requested → HIM Triage → Evidence Verified → Correction Approved → Merge/\allowbreak{}Unlink Executed → Change Broadcasted → Closed
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Correction Requested}}: Externally authoritative correction or merge/\allowbreak{}unlink outcome received for governed application.
+
+
+
+\item
+\texttt{\seqsplit{HIM Triage}}: Health Information Manager reviews the received decision/\allowbreak{}outcome and its applicability.
+
+
+
+\item
+\texttt{\seqsplit{Evidence Verified}}: Authoritative source decision and supporting provenance/\allowbreak{}documentation verified.
+
+
+
+\item
+\texttt{\seqsplit{Correction Approved}}: Governed application of the externally authoritative outcome approved; this does not originate a person-merge decision.
+
+
+
+\item
+\texttt{\seqsplit{Merge/Unlink Executed}}: External merge/\allowbreak{}unlink consequences applied to Harmonia's managed identifier associations and audit history.
+
+
+
+\item
+\texttt{\seqsplit{Change Broadcasted}}: Downstream clinical systems notified of merged or rectified identity.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:83}
+
+\par\smallskip
+\phantomsection\label{rad:processes:85}
+\subsubsection*{2.2 Practitioner Verification Process}
+\phantomsection\label{rad:processes:86}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Provider Administration}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the lifecycle of validating, certifying, and periodically re-verifying a healthcare practitioner's professional credentials, registration status, and clinical scope of practice.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Verification Initiated → Regulatory Registry Queried → Credentials Validated → Privileges Endorsed → Active Verified → Expired /\allowbreak{} Suspended
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Verification Initiated}}: New practitioner registration or periodic re-credentialing triggered.
+
+
+
+\item
+\texttt{\seqsplit{Regulatory Registry Queried}}: Real-time query executed against national registry (e.g., AHPRA).
+
+
+
+\item
+\texttt{\seqsplit{Credentials Validated}}: Primary qualifications, specialist endorsements, and sanctions checked.
+
+
+
+\item
+\texttt{\seqsplit{Privileges Endorsed}}: Health service medical administration endorses admitting/\allowbreak{}procedural scope.
+
+
+
+\item
+\texttt{\seqsplit{Active Verified}}: Practitioner verified for clinical ordering and electronic communication.
+
+
+
+\item
+\texttt{\seqsplit{Expired / Suspended}}: Verification lapses or regulatory sanction triggers privilege suspension.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:98}
+
+\par\smallskip
+\phantomsection\label{rad:processes:100}
+\subsection*{3. Clinical Lifecycle \& Service Administration Processes}
+\phantomsection\label{rad:processes:102}
+\subsubsection*{3.3 Referral Progression Process}
+\phantomsection\label{rad:processes:103}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Referral Administration}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the end-to-end operational progression of an incoming clinical referral from receipt through specialist clinical triage, booking, and final service acceptance.
+
+
+
+\item
+\textbf{Scope qualification}: This illustrates a specialist booking/\allowbreak{}attendance pathway; Referral does not universally require acceptance, scheduling, attendance or discharge, or establish delivery, responsibility actually assumed or Transfer of Care. Decline, rejection and redirection remain valid dispositions without invented transition paths. \texttt{\seqsplit{Accepted / Waitlisted}} is a local compound checkpoint, not universal equivalence between acceptance and waitlisting.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Submitted → Intake Validated → Clinically Triaged → Accepted /\allowbreak{} Waitlisted → Scheduled → Consultation Attended → Discharged /\allowbreak{} Rejected   (Illustrative specialist pathway; dispositions vary)
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Submitted}}: Electronic referral received from GP or external facility.
+
+
+
+\item
+\texttt{\seqsplit{Intake Validated}}: Administrative validation of patient details, mandatory fields, and tests.
+
+
+
+\item
+\texttt{\seqsplit{Clinically Triaged}}: Senior clinician assigns urgency category (e.g., Cat 1 urgent within 30 days).
+
+
+
+\item
+\texttt{\seqsplit{Accepted / Waitlisted}}: Referral accepted and placed onto the specialty waitlist.
+
+
+
+\item
+\texttt{\seqsplit{Scheduled}}: Outpatient appointment allocated and patient notified.
+
+
+
+\item
+\texttt{\seqsplit{Consultation Attended}}: Patient seen; initial specialist assessment completed.
+
+
+
+\item
+\texttt{\seqsplit{Discharged / Rejected}}: Referral completed and discharged back to primary care, or formally rejected with clinical rationale.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:117}
+
+\par\smallskip
+\phantomsection\label{rad:processes:119}
+\subsubsection*{3.4 Encounter Lifecycle Process}
+\phantomsection\label{rad:processes:120}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Episode \& Encounter Administration}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the clinical and administrative lifecycle of an acute, emergency, inpatient, or outpatient encounter between a patient and healthcare services.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Planned /\allowbreak{} Booked → Arrived → Triaged /\allowbreak{} Ingested → Active In-Progress → Discharged → Completed /\allowbreak{} Encoded   (Scoped illustration; ON\_LEAVE relationship unresolved)
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Planned / Booked}}: Elective admission or clinic appointment scheduled.
+
+
+
+\item
+\texttt{\seqsplit{Arrived}}: Patient presents at facility or emergency desk.
+
+
+
+\item
+\texttt{\seqsplit{Triaged / Ingested}}: Clinical triage category assigned; encounter record activated.
+
+
+
+\item
+\texttt{\seqsplit{Active In-Progress}}: Inpatient care, bedside monitoring, and clinical orders actively underway.
+
+
+
+\item
+\texttt{\seqsplit{Discharged}}: Patient clinically discharged; care-place vacated.
+
+
+
+\item
+\texttt{\seqsplit{Completed / Encoded}}: Clinical documentation finalized, ICD/\allowbreak{}DRG coding completed, and encounter legally closed.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Scope qualification}: These completion criteria retain their locally described applicability; they do not establish universal signing, legal closure or originating authority over clinical information. Finalisation, signing and legal qualification remain distinct. The relationship with Strategy \texttt{\seqsplit{ON\_LEAVE}}, including applicability and transitions, remains unresolved.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:133}
+
+\par\smallskip
+\phantomsection\label{rad:processes:135}
+\subsubsection*{3.5 Closed-Loop Order Progression Process}
+\phantomsection\label{rad:processes:136}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Order Administration}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the rigorous, closed-loop tracking of diagnostic pathology, radiology, and procedural orders from requisition to result correlation, preventing dropped or unfulfilled investigations.
+
+
+
+\item
+\textbf{Scope qualification}: These examples describe a diagnostic/\allowbreak{}procedural progression and do not exclude medication from the broader Order Administration responsibility. Specimen and result checkpoints are scoped. The signed requisition/\allowbreak{}report requirements remain within this illustrated scope; signing is not universally equivalent to finalisation or authority. Result consumption/\allowbreak{}binding does not define originating validity, authority, authorship or legal status.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Requisition Placed → Order Dispatched → Specimen Collected /\allowbreak{} Scheduled → In-Execution → Preliminary Result Bound → Final Result Bound → Closed /\allowbreak{} Verified   (Scoped diagnostic/\allowbreak{}procedural illustration)
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Requisition Placed}}: Electronic order created and signed by requesting clinician.
+
+
+
+\item
+\texttt{\seqsplit{Order Dispatched}}: Order routed and accepted by performing diagnostic service. This local compound checkpoint retains routing and recipient acceptance as distinct facts; dispatch alone establishes neither receipt nor acceptance. Behaviour \texttt{\seqsplit{Received}} is not equated with this checkpoint without evidence.
+
+
+
+\item
+\texttt{\seqsplit{Specimen Collected / Scheduled}}: Bio-specimen collected or imaging appointment booked.
+
+
+
+\item
+\texttt{\seqsplit{In-Execution}}: Laboratory analysis or diagnostic scanning underway.
+
+
+
+\item
+\texttt{\seqsplit{Preliminary Result Bound}}: Critical or interim observations published and linked to order.
+
+
+
+\item
+\texttt{\seqsplit{Final Result Bound}}: Authoritative diagnostic report signed and bound to order.
+
+
+
+\item
+\texttt{\seqsplit{Closed / Verified}}: Requesting clinician acknowledges result; order closed. This Order-closure checkpoint does not establish diagnostic-content verification, approval or clinical incorporation.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:150}
+
+\par\smallskip
+\phantomsection\label{rad:processes:152}
+\subsubsection*{3.6 Clinical Document Lifecycle Process}
+\phantomsection\label{rad:processes:153}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Record Administration}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the versioning, clinical sign-off, addenda, superseding, and legal status of clinical documents (discharge summaries, specialist letters, advance care directives).
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Draft → Preliminary → Final Signed → Amended /\allowbreak{} Addended → Superseded → Entered-in-Error   (Scoped illustration; no universal document lifecycle)
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Draft}}: Incomplete clinical document saved during consultation.
+
+
+
+\item
+\texttt{\seqsplit{Preliminary}}: Document authored pending senior registrar or consultant countersignature.
+
+
+
+\item
+\texttt{\seqsplit{Final Signed}}: Authoritative clinical document legally signed and published.
+
+
+
+\item
+\texttt{\seqsplit{Amended / Addended}}: Governed supplementary clinical addendum appended to signed document.
+
+
+
+\item
+\texttt{\seqsplit{Superseded}}: Entire document replaced by a newer revision; prior version retained for audit.
+
+
+
+\item
+\texttt{\seqsplit{Entered-in-Error}}: Document formally retracted due to wrong patient or invalid content; content struck through with retraction notice.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Scope qualification}: \texttt{\seqsplit{Final ≠ automatically Final Signed}}. The described signing/\allowbreak{}countersigning and legal qualifications remain local requirements, not a universal document lifecycle. Authorship, attestation, approval, authentication, verification, signature, finalisation, authority and legal qualification remain distinct. Amendment, supersession and entered-in-error are not mandatory stages for every document, and consumer processing does not establish originating authority or legal status.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:166}
+
+\par\smallskip
+\phantomsection\label{rad:processes:168}
+\subsection*{4. Healthcare Facility \& Logistics Operations Processes}
+\phantomsection\label{rad:processes:170}
+\subsubsection*{4.7 Theatre Case Progression Process}
+\phantomsection\label{rad:processes:171}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Theatre Operations}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the perioperative operational milestones of a surgical procedure within the operating theatre suite.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Case Called → In Anaesthetic Bay → Anaesthesia Commenced → Patient in Theatre → Knife-to-Skin → Procedure Finished → In PACU Recovery → Ward Handover Complete
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Case Called}}: Theatre team requests ward to send patient for surgery.
+
+
+
+\item
+\texttt{\seqsplit{In Anaesthetic Bay}}: Patient arrives in theatre holding and identity/\allowbreak{}consent verified.
+
+
+
+\item
+\texttt{\seqsplit{Anaesthesia Commenced}}: Anaesthetic induction underway.
+
+
+
+\item
+\texttt{\seqsplit{Patient in Theatre}}: Patient transferred onto operating table.
+
+
+
+\item
+\texttt{\seqsplit{Knife-to-Skin}}: Surgical incision initiated (operative start).
+
+
+
+\item
+\texttt{\seqsplit{Procedure Finished}}: Wound closure completed and dressings applied.
+
+
+
+\item
+\texttt{\seqsplit{In PACU Recovery}}: Patient monitored in post-anaesthesia care unit.
+
+
+
+\item
+\texttt{\seqsplit{Ward Handover Complete}}: Post-operative clinical handover to inpatient ward completed.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:185}
+
+\par\smallskip
+\phantomsection\label{rad:processes:187}
+\subsubsection*{4.8 Clinic /\allowbreak{} Operational Queue Progression Process}
+\phantomsection\label{rad:processes:188}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinic \& Practice Operations}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the movement and state tracking of outpatients through an ambulatory specialty clinic session.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Scheduled → Patient Arrived → Checked-In → Roomed /\allowbreak{} Pre-Consult → Consultation In-Progress → Consultation Concluded → Departed
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Scheduled}}: Appointment booked on session list.
+
+
+
+\item
+\texttt{\seqsplit{Patient Arrived}}: Patient enters waiting area.
+
+
+
+\item
+\texttt{\seqsplit{Checked-In}}: Reception verifies demographics and marks patient ready.
+
+
+
+\item
+\texttt{\seqsplit{Roomed / Pre-Consult}}: Nursing staff record baseline vitals and room patient.
+
+
+
+\item
+\texttt{\seqsplit{Consultation In-Progress}}: Clinician actively conducting consultation.
+
+
+
+\item
+\texttt{\seqsplit{Consultation Concluded}}: Clinical discussion finished; follow-up orders placed.
+
+
+
+\item
+\texttt{\seqsplit{Departed}}: Patient checks out and departs clinic facility.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:201}
+
+\par\smallskip
+\phantomsection\label{rad:processes:203}
+\subsubsection*{4.9 Bed Turnover Process}
+\phantomsection\label{rad:processes:204}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Bed \& Care-Place Management}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the rapid physical turnover, cleaning, sanitisation, and re-allocation of inpatient and emergency care-places.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Bed Vacated → Cleaning Dispatched → Sanitisation In-Progress → Terminal Cleaning Verified → Bed Ready /\allowbreak{} Available → Bed Allocated /\allowbreak{} Occupied
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Bed Vacated}}: Prior patient discharged or transferred.
+
+
+
+\item
+\texttt{\seqsplit{Cleaning Dispatched}}: Cleaning job allocated to environmental services team.
+
+
+
+\item
+\texttt{\seqsplit{Sanitisation In-Progress}}: Ward cleaning or isolation decontamination underway.
+
+
+
+\item
+\texttt{\seqsplit{Terminal Cleaning Verified}}: Ward coordinator or supervisor verifies care-place readiness.
+
+
+
+\item
+\texttt{\seqsplit{Bed Ready / Available}}: Bed marked available for incoming patient allocation.
+
+
+
+\item
+\texttt{\seqsplit{Bed Allocated / Occupied}}: Incoming patient allocated and physically placed in bed.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:216}
+
+\par\smallskip
+\phantomsection\label{rad:processes:218}
+\subsubsection*{4.10 Operational Work Progression Process}
+\phantomsection\label{rad:processes:219}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Work Allocation \& Dispatch}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the dispatch, assignment, execution, and completion of facility operational jobs (e.g., equipment moves, waste removal, linen supply).
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Work Requested → Queued in Dispatch → Assigned to Worker → Job Accepted → Work In-Progress → Work Completed /\allowbreak{} Aborted
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Work Requested}}: Facility support task submitted by clinical unit.
+
+
+
+\item
+\texttt{\seqsplit{Queued in Dispatch}}: Job prioritized in operational queue.
+
+
+
+\item
+\texttt{\seqsplit{Assigned to Worker}}: Job allocated to specific staff member or team.
+
+
+
+\item
+\texttt{\seqsplit{Job Accepted}}: Worker acknowledges dispatch on mobile device.
+
+
+
+\item
+\texttt{\seqsplit{Work In-Progress}}: Task actively being executed.
+
+
+
+\item
+\texttt{\seqsplit{Work Completed / Aborted}}: Job marked finished or formally cancelled with reason.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:231}
+
+\par\smallskip
+\phantomsection\label{rad:processes:233}
+\subsubsection*{4.11 Patient Transport Process}
+\phantomsection\label{rad:processes:234}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Patient Transport}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the physical portering and transport of patients between hospital departments, wards, diagnostic suites, and external facilities.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Transport Requested → Porter Dispatched → Patient Collected → In-Transit → Delivered at Destination → Clinical Handover Complete
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Transport Requested}}: Clinical unit books wheelchair, bed, or ambulance transport.
+
+
+
+\item
+\texttt{\seqsplit{Porter Dispatched}}: Wardsperson assigned and en route to pickup location.
+
+
+
+\item
+\texttt{\seqsplit{Patient Collected}}: Patient identity verified and transfer initiated.
+
+
+
+\item
+\texttt{\seqsplit{In-Transit}}: Patient actively moving through facility corridors or ambulance transit.
+
+
+
+\item
+\texttt{\seqsplit{Delivered at Destination}}: Patient arrives at target diagnostic suite or ward.
+
+
+
+\item
+\texttt{\seqsplit{Clinical Handover Complete}}: Safe custody and clinical briefing transferred to receiving staff.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:246}
+
+\par\smallskip
+\phantomsection\label{rad:processes:248}
+\subsubsection*{4.12 Specimen Transport Process}
+\phantomsection\label{rad:processes:249}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Logistics Coordination}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the physical courier chain-of-custody, transport, and delivery of pathology bio-specimens, blood products, and surgical biopsies.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Specimen Packaged → Courier Dispatched → Chain-of-Custody Signed → In-Transit (Monitored) → Lab Ingress Received → Specimen Accepted
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Specimen Packaged}}: Clinical unit packages bio-sample with barcode manifest.
+
+
+
+\item
+\texttt{\seqsplit{Courier Dispatched}}: Courier route assigned for pickup.
+
+
+
+\item
+\texttt{\seqsplit{Chain-of-Custody Signed}}: Courier scans barcode and accepts legal custody.
+
+
+
+\item
+\texttt{\seqsplit{In-Transit (Monitored)}}: Specimen in transit under temperature/\allowbreak{}time constraints.
+
+
+
+\item
+\texttt{\seqsplit{Lab Ingress Received}}: Central pathology specimen reception logs physical receipt.
+
+
+
+\item
+\texttt{\seqsplit{Specimen Accepted}}: Specimen integrity verified and passed to analytical track.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:261}
+
+\par\smallskip
+\phantomsection\label{rad:processes:263}
+\subsubsection*{4.13 Discharge Progression Process}
+\phantomsection\label{rad:processes:264}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Discharge Management}}
+
+
+
+\item
+\textbf{Process Purpose}: Governs the multidisciplinary coordination of patient discharge planning, pharmacy reconciliation, transport, and community handover.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Discharge Planning Initiated → Clinical Readiness Confirmed → Medications Reconciled → Transport \& Services Booked → Discharge Summary Signed → Physically Departed   (Illustrative preparation; publication, authorisation and exit distinct)
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Discharge Planning Initiated}}: Estimated Date of Discharge (EDD) set on admission.
+
+
+
+\item
+\texttt{\seqsplit{Clinical Readiness Confirmed}}: Attending medical team declares patient fit for discharge.
+
+
+
+\item
+\texttt{\seqsplit{Medications Reconciled}}: Hospital pharmacy reconciles and dispenses discharge medications.
+
+
+
+\item
+\texttt{\seqsplit{Transport \& Services Booked}}: Community nursing, home equipment, and patient transport booked.
+
+
+
+\item
+\texttt{\seqsplit{Discharge Summary Signed}}: Applicable signed summary is available/\allowbreak{}published and may be communicated before departure where the Business behaviour requires it; signing, finalisation, publication and discharge authorisation remain distinct.
+
+
+
+\item
+\texttt{\seqsplit{Physically Departed}}: Confirmed physical exit triggers departure notifications, updated bed-state communication and finalised-summary dispatch to external care providers under \texttt{\seqsplit{FEAT-HSO-29}}; care-place turnover follows its own responsibility.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Timing reconciliation}: Preparation, information availability/\allowbreak{}publication, applicable discharge authorisation and physical exit are distinct. Earlier preparation/\allowbreak{}communication is permitted; it does not realise a Feature triggered by confirmed exit. This illustrated local pathway establishes neither universal publication timing nor a universal discharge state machine, and adds no inferred publication event or authorisation state.
+
+
+
+\item
+\textbf{Preserved uncertainty}: Summary signing and finalisation are not universal equivalents. Detailed applicability, discharge-authority workflows and timing beyond the established preparation/\allowbreak{}confirmed-exit distinction remain unestablished.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:278}
+
+\par\smallskip
+\phantomsection\label{rad:processes:280}
+\subsection*{5. Horizontal Workflow Coordination Processes}
+\phantomsection\label{rad:processes:282}
+\subsubsection*{5.14 Work Order Progression Process}
+\phantomsection\label{rad:processes:283}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Workflow \& Activity Coordination}}
+
+
+
+\item
+\textbf{Activity Archetype}: \textbf{Human Doing} — physical or operational task executed by healthcare staff.
+
+
+
+\item
+\textbf{State Progression Lifecycle}: Created → Ready → Dispatched → Accepted → In-Progress → Completed /\allowbreak{} Failed /\allowbreak{} Cancelled
+
+
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Created}}: Work order instantiated with scope, target, and required skills.
+
+
+
+\item
+\texttt{\seqsplit{Ready}}: Preconditions satisfied; available for assignment.
+
+
+
+\item
+\texttt{\seqsplit{Dispatched}}: Sent to target individual or worker group queue.
+
+
+
+\item
+\texttt{\seqsplit{Accepted}}: Worker claims task.
+
+
+
+\item
+\texttt{\seqsplit{In-Progress}}: Execution underway.
+
+
+
+\item
+\texttt{\seqsplit{Completed}}: Task finished with recorded completion telemetry.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:295}
+
+\par\smallskip
+\phantomsection\label{rad:processes:297}
+\subsubsection*{5.15 To Do Progression Process}
+\phantomsection\label{rad:processes:298}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Workflow \& Activity Coordination}}
+
+
+
+\item
+\textbf{Activity Archetype}: \textbf{Human Reviewing /\allowbreak{} Updating /\allowbreak{} Deciding} — clinical review, document countersignature, or administrative authorization task.
+
+
+
+\item
+\textbf{State Progression Lifecycle}:
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:302}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph LR
+    I["Issued"] --> B["In-Inbox"]
+    B --> R["Opened / Under-Review"]
+    R --> A["Actioned / Decided"]
+    D["Dismissed / Delegated<br/>Disposition/position unresolved"]
+    NOTE["Illustrative progression, not a normative transition model.<br/>Relationship of dismissal/delegation to action/decision is unestablished."]
+    classDef note fill:#fff8dc,stroke:#8a6d3b,stroke-dasharray:5 5;
+    class NOTE,D note;
+\end{Verbatim}
+\phantomsection\label{rad:processes:312}
+
+\begin{itemize}
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Issued}}: To Do generated (e.g., review abnormal potassium result).
+
+
+
+\item
+\texttt{\seqsplit{In-Inbox}}: Displayed in practitioner's actionable task list.
+
+
+
+\item
+\texttt{\seqsplit{Opened / Under-Review}}: Clinician inspecting relevant clinical context.
+
+
+
+\item
+\texttt{\seqsplit{Actioned / Decided}}: Decision executed (e.g., signed off, order placed, acknowledged).
+
+
+
+\item
+\texttt{\seqsplit{Dismissed / Delegated}}: Task reassigned to registrar or dismissed with comment.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Preserved uncertainty}: Whether dismissal/\allowbreak{}delegation is an alternative disposition, a subsequent action or a scoped variant remains unresolved; its disconnected diagram node establishes no transition or position in the illustrative progression.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:320}
+
+\par\smallskip
+\phantomsection\label{rad:processes:322}
+\subsubsection*{5.16 Synthetic Task Progression Process}
+\phantomsection\label{rad:processes:323}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Workflow \& Activity Coordination}}
+
+
+
+\item
+\textbf{Activity Archetype}: \textbf{Non-Human Executable Work} — automated system workflows, batch syndications, or policy evaluation tasks.
+
+
+
+\item
+\textbf{State Progression Lifecycle}:
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:327}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph LR
+    D["Draft / Scheduled"] --> E["Executing"]
+    E --> W["Awaiting-Dependency"]
+    W --> C["Completed"]
+    F["Progression Stalled / Failed<br/>Outcome/position unresolved"]
+    NOTE["Illustrative progression, not a normative transition model.<br/>No Completed-to-Stalled/Failed transition is established."]
+    classDef note fill:#fff8dc,stroke:#8a6d3b,stroke-dasharray:5 5;
+    class NOTE,F note;
+\end{Verbatim}
+\phantomsection\label{rad:processes:337}
+
+\begin{itemize}
+
+\item
+\textbf{Key State Dispositions}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{Draft / Scheduled}}: Automated task instantiated and scheduled for processing.
+
+
+
+\item
+\texttt{\seqsplit{Executing}}: System actively processing task.
+
+
+
+\item
+\texttt{\seqsplit{Awaiting-Dependency}}: Paused awaiting asynchronous external reply or event.
+
+
+
+\item
+\texttt{\seqsplit{Completed}}: Automated execution succeeded and output artifact produced.
+
+
+
+\item
+\texttt{\seqsplit{Progression Stalled / Failed}}: Transient fault triggers scheduled recovery attempt; permanent failure records failure evidence.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Preserved uncertainty}: Whether stalled/\allowbreak{}failed is an alternative outcome, reopening/\allowbreak{}post-completion behaviour or a presentation defect remains unresolved. Its disconnected diagram node does not make success and failure equivalent or establish post-completion transitions.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:345}
+
+\par\smallskip
+\phantomsection\label{rad:processes:347}
+
+
+
+\phantomsection\label{rad:processes:349}
+\subsection*{6. Health Service Assurance Processes}
+\phantomsection\label{rad:processes:351}
+
+The approved human review decisions on 2026-10-08 establish exactly the following three assurance Processes, building on the \hyperref[rad:assurance-strategy]{assurance Strategy} and the two established assurance Roles and five Functions. \textbf{Element Type: Business Process (PR)} applies to each. Capability ownership below follows the established responsibility; \textbf{Feature association is not established} and \textbf{Canonical IDs remain unresolved} because Capability Tier, complete ancestry and local identifier allocation remain unestablished. Catalogue numbering is navigation, not identifier allocation.
+
+\phantomsection\label{rad:processes:353}
+
+
+
+\phantomsection\label{rad:processes:355}
+\subsubsection*{6.1 Assurance Process Design}
+\phantomsection\label{rad:processes:357}
+
+\begin{itemize}
+
+\item
+\textbf{Canonical Name}: \texttt{\seqsplit{Assurance Process Design}}.
+
+
+
+\item
+\textbf{Owning Capability}: \hyperref[rad:enabling:680]{Assurance Design}.
+
+
+
+\item
+\textbf{Process Purpose}: Establishes and maintains how satisfaction of a governed requirement, constraint or expected behaviour is to be assured.
+
+
+
+\item
+\textbf{Principal Performing Role}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-assurance-modeller}{Service Assurance Modeller}.
+
+
+
+\item
+\textbf{Participating Functions}: \hyperref[rad:assurance:71]{Design Service Assurance} and \hyperref[rad:assurance:84]{Manage Assurance Criteria}. Manage Assurance Criteria retains ownership within Assurance Criteria Management; its participation does not subsume that Capability's criteria lifecycle or transfer its information responsibility to Assurance Design.
+
+
+
+\item
+\textbf{Conceptual Output}: \hyperref[rad:assurance:150]{Assurance Definition}, retaining its conceptual Business Architecture output/\allowbreak{}boundary treatment.
+
+
+
+\item
+\textbf{Boundary}: Governance Authority establishes what is authoritative. Design does not grant Service Assurance Modeller approval authority. Detailed Assurance Definition lifecycle, approval/\allowbreak{}publication workflows, criteria lifecycle and information modelling remain unresolved. Participation of the two Functions does not establish a cross-capability lifecycle or a new exchange/\allowbreak{}Service between their owners.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:365}
+
+
+
+\phantomsection\label{rad:processes:367}
+\subsubsection*{6.2 Assurance Process Execution}
+\phantomsection\label{rad:processes:369}
+
+\begin{itemize}
+
+\item
+\textbf{Canonical Name}: \texttt{\seqsplit{Assurance Process Execution}}.
+
+
+
+\item
+\textbf{Owning Capability}: \hyperref[rad:enabling:694]{Governed Assurance}.
+
+
+
+\item
+\textbf{Process Purpose}: Performs defined assurance for an identifiable governed subject in accordance with an applicable Assurance Definition and establishes an Assurance Finding /\allowbreak{} Conclusion from applicable trustworthy evidence.
+
+
+
+\item
+\textbf{Principal Performing Role}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-guardian}{Service Guardian}.
+
+
+
+\item
+\textbf{Participating Functions}: \hyperref[rad:assurance:98]{Establish Assurance Context}, \hyperref[rad:assurance:108]{Assess Assurance Evidence} and \hyperref[rad:assurance:116]{Adjudicate Assurance Assessment}, all retaining Governed Assurance ownership.
+
+
+
+\item
+\textbf{Conceptual Basis and Output}: Applicable Assurance Definition plus identifiable governed subject; Assurance Finding /\allowbreak{} Conclusion established through adjudication where sufficient trustworthy evidence permits. Correct execution with insufficient evidence does not imply satisfaction or non-satisfaction or force a conclusion.
+
+
+
+\item
+\textbf{Boundary}: Function completion does not define Process lifecycle states. No Context Established, Evidence Assessed, Adjudicated or Concluded states are inferred. Detailed lifecycle states, transitions and initiation mechanics remain unresolved. Requesting this Process does not grant control of evidence assessment, adjudication or the resulting finding/\allowbreak{}conclusion.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:377}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph TD
+    DEF["Applicable Assurance Definition<br/>Conceptual basis"] -->|Assurance basis| EXEC["PR: Assurance Process Execution<br/>Owner: Governed Assurance"]
+    SUBJECT["Identifiable Governed Subject"] -->|Subject of assurance| EXEC
+    EXEC -->|Participating Function| CONTEXT["FN: Establish Assurance Context"]
+    EXEC -->|Participating Function| ASSESS["FN: Assess Assurance Evidence"]
+    EXEC -->|Participating Function| ADJ["FN: Adjudicate Assurance Assessment"]
+    EXEC -->|Establishes through adjudication| FINDING["Assurance Finding / Conclusion"]
+\end{Verbatim}
+\phantomsection\label{rad:processes:387}
+
+
+
+\phantomsection\label{rad:processes:389}
+\subsubsection*{6.3 Assurance Process Reporting /\allowbreak{} Communication}
+\phantomsection\label{rad:processes:391}
+
+\begin{itemize}
+
+\item
+\textbf{Canonical Name}: \texttt{\seqsplit{Assurance Process Reporting / Communication}}.
+
+
+
+\item
+\textbf{Owning Capability}: \hyperref[rad:enabling:694]{Governed Assurance}.
+
+
+
+\item
+\textbf{Process Purpose}: Communicates applicable established Assurance Findings and Conclusions to legitimate recipients according to their responsibilities, authority and information requirements, without altering the established assurance outcome or assuming responsibility for the recipient's subsequent action.
+
+
+
+\item
+\textbf{Starting Basis}: An already established Assurance Finding /\allowbreak{} Conclusion. This Process does not perform assessment or adjudication, alter or reinterpret the established outcome.
+
+
+
+\item
+\textbf{Communication Participation}: Service Guardian participates through \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/interactions.md\#service-assurance-outcome-communication}{Service Assurance Outcome Communication}, associated with \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\#communicate-service-assurance-outcome}{Communicate Service Assurance Outcome}. No additional Function is introduced to populate this Process.
+
+
+
+\item
+\textbf{Boundary}: Reporting /\allowbreak{} Communication is not limited to documentary report production; an appropriate Business Interaction may communicate the outcome without a report document. It assumes no operational response, remediation, escalation, policy/\allowbreak{}compliance response, process improvement, clinical management, clinical judgement or other recipient action. Detailed communication progression and completion semantics remain unresolved.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:processes:398}
+\subsubsection*{6.4 Process-Family Relationship and Preserved Boundaries}
+\phantomsection\label{rad:processes:400}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph TD
+    DESIGN["PR: Assurance Process Design<br/>Owner: Assurance Design"] -->|Conceptual output| DEF["Assurance Definition"]
+    DEF -->|Reusable assurance basis| EXEC["PR: Assurance Process Execution<br/>Owner: Governed Assurance"]
+    EXEC -->|Established through adjudication| FINDING["Assurance Finding / Conclusion"]
+    FINDING -->|Already established outcome| COMM["PR: Assurance Process Reporting / Communication<br/>Owner: Governed Assurance"]
+\end{Verbatim}
+\phantomsection\label{rad:processes:408}
+
+Both diagrams express semantic Business Architecture relationships, not lifecycle states, mandatory runtime topology, application orchestration, deployment sequence, component structure, message flow or a complete implementation workflow. An applicable Assurance Definition may be reused by multiple Execution instances; each assurance activity does not require a newly executed Design instance. Using the modelling output establishes a responsibility/\allowbreak{}information dependency, not a Modeller-to-Guardian Interaction or Collaboration.
+
+\phantomsection\label{rad:processes:410}
+
+\begin{quote}
+
+\textbf{Governed Assurance does not recursively assure its own execution. Assurance activity execution integrity is provided by the established activity execution framework.}
+
+
+\end{quote}
+\phantomsection\label{rad:processes:412}
+
+Managed progression of assurance activity does not make that execution another Service Assurance subject. No recursive assurance Process, Function, Service or conclusion is established; the activity execution framework reference allocates no solution component. System Steward's status observation is management/\allowbreak{}stewardship of progression, not assurance of assurance. See the \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\#assurance-non-recursion-boundary}{non-recursion boundary}.
+
+\phantomsection\label{rad:processes:414}
+
+The sixteen pre-existing Processes retain their owners, definitions and state models. Clinical review, sign-off, countersignature and clinical decisions remain with applicable clinical processes/\allowbreak{}authorities; To Do completion is not an independent assurance conclusion. Generic Work Order, To Do and Synthetic Task progression do not supply assurance lifecycle states or an assurance execution allocation.
+
+\phantomsection\label{rad:processes:416}
+
+Service Guardian may manage its own assurance progression without managing its subject. Neither assurance Role acquires the subject's progression, assignment, delegation, failure/\allowbreak{}recovery, operational escalation, remediation or improvement responsibility. Execution failure/\allowbreak{}indeterminate outcome remain distinct from correctly executed assurance with insufficient evidence. \hyperref[rad:assurance:214]{Remaining decisions} include lifecycle states/\allowbreak{}transitions, initiation mechanics, detailed information semantics and response mechanisms; the three Process names and purposes are resolved.

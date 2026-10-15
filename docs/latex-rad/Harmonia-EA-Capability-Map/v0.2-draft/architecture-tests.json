@@ -1,0 +1,103 @@
+{
+  "result": "PASS",
+  "command": "mvn test -pl paradeigma/paradeigma-test -am -Dtest=\"*ArchitectureTest\" -Dsurefire.failIfNoSpecifiedTests=false",
+  "command_timeout_seconds": 300,
+  "elapsed_seconds": 18.673,
+  "suites": [
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.962"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "1.391"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest",
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "1.064"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.202"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.457"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "1.406"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "4.431"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.105"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.002"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.956"
+    },
+    {
+      "name": "net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest",
+      "tests": "32",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "4.45"
+    }
+  ],
+  "totals": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "log_sha256": "36cebe3f7439e186b24dbf18876ec69b975f3c05d64af1aa8697208ddf923c1b"
+}

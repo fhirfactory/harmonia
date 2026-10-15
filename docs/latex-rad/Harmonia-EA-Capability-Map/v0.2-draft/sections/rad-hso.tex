@@ -1,0 +1,1283 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Health Service Operations — Capability-Scoped Behaviour}\label{rad:hso}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:hso:1}
+\section*{Health Service Operations — Capability-Scoped Behaviour}
+\phantomsection\label{rad:hso:3}
+\subsection*{1. Contextual Scope \& Architectural Intent}
+\phantomsection\label{rad:hso:5}
+
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under \hyperref[rad:k9:1392]{approved G1 K9}; document grouping and numbering do not establish architectural identity or hierarchy.
+
+\phantomsection\label{rad:hso:7}
+
+Health Service Operations governs the operational logistics, physical resource management, facility capacity, staff dispatch, and operational movement required to support healthcare delivery across clinical facilities.
+
+\phantomsection\label{rad:hso:9}
+\subsubsection*{Operational Logistics vs. Software Plumbing}
+\phantomsection\label{rad:hso:10}
+
+\begin{quote}
+
+\textbf{In Domain 03, "Operations" refers strictly to healthcare facility logistics (e.g., bed turnover, patient portering, theatre case scheduling, clinic queues, dispatch). It does not mean IT middleware monitoring, application deployment, or database administration.}
+
+
+\end{quote}
+\phantomsection\label{rad:hso:12}
+
+Where Healthcare Service context materially affects operational meaning, authority, coordination, progression or accountability, keep it identifiable with the activity and relevant information responsibility. Location, Organisation, Practitioner or Role does not imply that service context. This contextual obligation establishes no information representation, identifier or implementation binding.
+
+\phantomsection\label{rad:hso:14}
+
+The bounded coverage additions below derive from the \hyperref[rad:enabling:443]{established Strategy HSO Features}. They reuse existing compound behaviour where its meaning supports the relationship, or add the minimum directly required behaviour. Additional Functions do not mechanically create Services, Processes, Roles or structural IDs.
+
+\phantomsection\label{rad:hso:16}
+
+
+
+\phantomsection\label{rad:hso:18}
+\subsubsection*{Capacity Management Responsibility Boundary}
+\phantomsection\label{rad:hso:20}
+
+The 2026-10-09 human adjudication establishes \textbf{Capacity Management} as Business responsibility for understanding and managing available, committed and utilised capacity in six service-delivery operational contexts. Clinic/\allowbreak{}practice, ward, theatre, ED, outpatient and mobile service capacity retain their distinct Business meanings. This does not establish a common capacity model, information schema or lifecycle. Generalised service/\allowbreak{}location/\allowbreak{}patient/\allowbreak{}operational-state capture belongs to downstream derivation and is not a Domain03 Function.
+
+\phantomsection\label{rad:hso:22}
+
+Context-specific responsibility establishes/\allowbreak{}manages service capacity. Resource state contributes to it: an available bed alone does not mean a ward can accept another patient; staffing, demand, acuity and operational constraints may also matter. Service Capacity Management consumes/\allowbreak{}coordinates context-specific capacity; Work Allocation \& Dispatch and Discharge Management may consume capacity/\allowbreak{}availability or capacity/\allowbreak{}progression information without becoming its owners. These are Business responsibility relationships, not newly allocated Services or consumption contracts.
+
+\phantomsection\label{rad:hso:24}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{HSO context} & \textbf{Context-specific capacity responsibility}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{HSO context} & \textbf{Context-specific capacity responsibility}\\\hline\endhead
+\hline\endfoot
+Clinic \& Practice Operations & Yes — session/\allowbreak{}queue behaviour contributes; overall clinic/\allowbreak{}practice capacity is expressed separately in §2.1.\\\hline
+Ward Operations & Yes — existing operational coordination is reframed as ward capacity in §2.2.\\\hline
+Theatre Operations & Yes — case progression contributes; theatre capacity is expressed separately in §2.3.\\\hline
+Emergency Department Operations & Yes — existing departmental capacity behaviour is clarified in §2.4.\\\hline
+Outpatient Operations & Yes — existing session utilisation is reframed as outpatient capacity in §2.5.\\\hline
+Bed \& Care-Place Management & No — establishes resource state contributing to ward capacity.\\\hline
+Clinical Resource Management & No — establishes equipment state/\allowbreak{}availability; resource readiness is distinct from service capacity.\\\hline
+Service Capacity Management & No — consumes/\allowbreak{}coordinates context-specific capacity.\\\hline
+Mobile Staff Management & Yes — presence and visit progression contribute; mobile service capacity is expressed separately in §2.9.\\\hline
+On-Call Management & No — resolves coverage rather than establishing context-specific capacity.\\\hline
+Work Allocation \& Dispatch & No — may consume capacity/\allowbreak{}availability for operational work.\\\hline
+Credential Management & No — verifies operational access.\\\hline
+Patient Transport & No — coordinates transport requests/\allowbreak{}progression.\\\hline
+Clinical Logistics Coordination & No — coordinates logistics/\allowbreak{}custody.\\\hline
+Discharge Management & No — may consume capacity/\allowbreak{}progression for discharge coordination.\\\hline
+Clinical Qualification Management & No — verifies qualifications/\allowbreak{}competency for applicable dispatch.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:hso:43}
+
+\hyperref[rad:metamodel:173]{Clinical work integration} does not confer clinical-work management, clinical handover, clinical task determination, clinical allocation authority or EMR worklist ownership. Capacity and progression consumers retain the originating authority of clinical facts.
+
+\phantomsection\label{rad:hso:45}
+
+\par\smallskip
+\phantomsection\label{rad:hso:47}
+\subsection*{2. Facility Operational Units \& Queue Coordination}
+\phantomsection\label{rad:hso:49}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Health Service Operations Contexts
+
+1. Clinic \& Practice Operations
+
+2. Ward Operations
+
+3. Theatre Operations
+
+4. Emergency Department Operations
+
+5. Outpatient Operations
+
+6. Bed \& Care-Place Management
+
+7. Clinical Resource Management
+
+8. Service Capacity Management
+
+9. Mobile Staff Management
+
+10. On-Call Management
+
+11. Work Allocation \& Dispatch
+
+12. Credential Management
+
+13. Patient Transport
+
+14. Clinical Logistics Coordination
+
+15. Discharge Management
+
+16. Clinical Qualification Management
+\end{quote}
+\phantomsection\label{rad:hso:69}
+
+\par\smallskip
+\phantomsection\label{rad:hso:71}
+\subsubsection*{2.1 Clinic \& Practice Operations}
+\phantomsection\label{rad:hso:72}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinic \& Practice Operations}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped capacity behaviour}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Clinic \& Practice Capacity}} — Understands and manages available, committed and utilised clinic/\allowbreak{}practice capacity in relation to practitioner availability, sessions, rooms, appointments and patient demand.
+
+
+
+\item
+\emph{Responsibility boundary}: Operating-session tracking and individual queue progression contribute to this responsibility; neither alone expresses overall service capacity. Capacity coordination does not own source bookings, clinical decisions or practitioner rostering.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Clinic Session Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Track Clinic Operating Session}} — Ingests and tracks clinic operating-session start, delay and completion, distinct from an individual patient's queue progression.
+
+
+
+\item
+\emph{Derivation}: \texttt{\seqsplit{FEAT-HSO-01}} directly establishes this session-level behaviour; Manage Clinic Queue Progression and its Process concern individual patients and do not supply it.
+
+
+
+\item
+\emph{Capacity contribution}: Session start/\allowbreak{}delay/\allowbreak{}completion remains distinct observable Business behaviour contributing to clinic/\allowbreak{}practice capacity; it is not merged into capacity merely for structural neatness.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Operational Queue Progression}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Clinic Queue Progression}} — Tracks patient arrival, rooming, consultation in-progress, and check-out states.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinic Queue Telemetry Service}} — Discloses real-time clinic waiting times and queue states.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Clinic /\allowbreak{} Operational Queue Progression Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Clinic \& Practice Capacity, Clinic Session Progression, Clinic Queue State, Patient Waiting Time Metrics.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:87}
+
+\par\smallskip
+\phantomsection\label{rad:hso:89}
+\subsubsection*{2.2 Ward Operations}
+\phantomsection\label{rad:hso:90}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Ward Operations}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped capacity behaviour}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Ward Capacity}} — Coordinates available, committed and utilised ward capacity and its patient-flow implications, retaining acuity distribution, nurse-to-patient ratios and isolation cohorting alongside bed/\allowbreak{}care-place state, patient demand and operational constraints.
+
+
+
+\item
+\emph{Name Alias}: \texttt{\seqsplit{Coordinate Ward Operational State}} — the same established ward operational responsibility, clarified as Capacity Management; no new Function identity or identifier is allocated.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Ward Operational Summary Query}} — Discloses ward-level operational telemetry.
+
+
+
+\item
+\emph{Existing Feature contribution}: Ward Patient Flow Coordination concerns ward occupancy, care-place allocation and patient bed status. Those patient-flow responsibilities remain within ward operational coordination; they do not define the whole capacity responsibility.
+
+
+
+\item
+\emph{Capacity boundary}: Bed \& Care-Place Management contributes resource state. Ward capacity is assessed in its service context; an available bed alone does not establish capacity to accept a patient. Source staffing and clinical assertions retain their authority.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Clinical Handover Context Assembly}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Assemble Ward Handover Context}} — Collates current ward patient lists, active medical concerns and pending tasks for nursing shift handover.
+
+
+
+\item
+\emph{Derivation}: \texttt{\seqsplit{FEAT-HSO-04}} directly requires this assembly. Ward acuity/\allowbreak{}cohorting telemetry alone does not provide the stated handover content. Source clinical information retains its originating authority; assembly does not perform clinical review, manage clinical handover, determine pending clinical work or acquire clinical judgement.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Ward Capacity, Ward Shift Status Ledger, Acuity Balance Register, Ward Handover Context.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:103}
+
+\par\smallskip
+\phantomsection\label{rad:hso:105}
+\subsubsection*{2.3 Theatre Operations}
+\phantomsection\label{rad:hso:106}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Theatre Operations}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped capacity behaviour}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Theatre Capacity}} — Understands and manages available, committed and utilised theatre capacity in relation to theatre, team and equipment availability, scheduled cases and case progression.
+
+
+
+\item
+\emph{Responsibility boundary}: Case milestones and targeted resource notifications contribute; they do not by themselves establish available or committed theatre service capacity. Clinical case determination and originating team/\allowbreak{}equipment information remain separately governed.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Operating Theatre Case Progression}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Theatre Case Progression}} — Coordinates surgical case milestones: \emph{Case Called} → \emph{Patient in Anaesthetic Bay} → \emph{Anaesthesia Commenced} → \emph{Knife to Skin} → \emph{Procedure Finished} → \emph{In PACU/\allowbreak{}Recovery} → \emph{Ward Handover Complete}.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Theatre Case Progression Telemetry}} — Emits real-time surgical milestone updates.
+
+
+
+\item
+\emph{Additional Feature responsibility}: \texttt{\seqsplit{FEAT-HSO-06 — Perioperative Resource Notification}} is realised by dispatching progression-triggered alerts to portering, sterilisation and recovery teams within this same case-progression behaviour/\allowbreak{}exposure. Milestone observation alone does not establish notification; no new Function or Service is created.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Theatre Case Progression Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Theatre Capacity, Theatre Slate Register, Perioperative Milestone Log.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:118}
+
+\par\smallskip
+\phantomsection\label{rad:hso:120}
+\subsubsection*{2.4 Emergency Department Operations}
+\phantomsection\label{rad:hso:121}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Emergency Department Operations}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped capacity behaviour}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate ED Departmental Capacity}} — Understands and manages available, committed and utilised ED capacity in relation to care-place availability, demand, patient presence/\allowbreak{}progression, acuity and operational constraints; retains waiting room occupancy, resuscitation bay availability and time-to-triage metrics.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{ED Operational Status Query}} — Discloses facility ED occupancy and surge level.
+
+
+
+\item
+\emph{Existing Feature scope}: ED Length of Stay Tracking retains the existing wait/\allowbreak{}progression metrics context; capacity responsibility is broader than that Feature. This clarification does not assert a new whole-Feature realisation relationship.
+
+
+
+\item
+\emph{Additional Feature relationship}: \texttt{\seqsplit{FEAT-HSO-07 — ED Bed \& Bay Tracking}} is materially realised by this capacity-tracking behaviour for occupancy/\allowbreak{}status of emergency cubicles, resuscitation bays and short-stay beds. Those care-place states are explicit within the existing Function and its operational status exposure.
+
+
+
+\item
+\emph{Capacity boundary}: Existing departmental capacity responsibility is clarified, not duplicated. Care-place state contributes to service capacity; capacity coordination neither performs clinical triage nor establishes clinical acuity assertions.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: ED Capacity, ED Operational Dashboard Ledger, Resuscitation Bay Occupancy Matrix.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:131}
+
+\par\smallskip
+\phantomsection\label{rad:hso:133}
+\subsubsection*{2.5 Outpatient Operations}
+\phantomsection\label{rad:hso:134}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Outpatient Operations}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Outpatient Capacity}} — Understands and manages available, committed and utilised outpatient capacity through clinic/\allowbreak{}session, practitioner and room availability, appointment demand, patient arrival/\allowbreak{}waiting and operational progression. Retains specialty room allocation and clinician arrival tracking.
+
+
+
+\item
+\emph{Name Alias}: \texttt{\seqsplit{Coordinate Outpatient Session Utilisation}} — the existing responsibility reframed as outpatient Capacity Management; no new Function identity or identifier is allocated.
+
+
+
+\item
+\emph{Feature responsibility}: \texttt{\seqsplit{FEAT-HSO-09 — Outpatient Arrival Registration}} is realised within this capacity behaviour by ingesting patient check-in/\allowbreak{}arrival events and notifying treating clinicians. Patient arrival contributes demand/\allowbreak{}presence; it does not itself establish capacity. This bounded responsibility does not equate the whole capacity Function with the Feature or create a separate Arrival Registration Function.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Ambulatory Session Status Query}} — Exposes clinic room occupancy.
+
+
+
+\item
+\emph{Exposure qualification}: Query behaviour and Outpatient Operations ownership remain established; a meaningful outside consumer/\allowbreak{}mandate is not identified by the current description. That exposure relationship remains unestablished rather than populated with an inferred Actor, Role or Capability.
+
+
+
+\item
+\emph{Capacity boundary}: Operational coordination does not acquire authoritative booking/\allowbreak{}rostering or clinical-work management. Room-occupancy query remains narrower than the capacity responsibility; no enlarged exposure or new named Service is inferred.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Post-Clinic Order Coordination}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Capture Post-Clinic Follow-up Requirements}} — Captures follow-up booking and diagnostic-order requirements generated at clinic completion.
+
+
+
+\item
+\emph{Derivation}: \texttt{\seqsplit{FEAT-HSO-10}} directly establishes this capture responsibility. The Clinic queue Process's consultation-concluded checkpoint describes orders placed, not Outpatient Operations' capture of follow-up requirements. Capture does not authorise clinical orders, own authoritative bookings or establish a new Service dependency.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Outpatient Capacity, Outpatient Arrival/\allowbreak{}Waiting Demand, Outpatient Session Schedule, Room Allocation Register, Post-Clinic Follow-up Requirements.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:148}
+
+\par\smallskip
+\phantomsection\label{rad:hso:150}
+\subsubsection*{2.6 Bed \& Care-Place Management}
+\phantomsection\label{rad:hso:151}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Bed \& Care-Place Management}}
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Operational State vs. Definition}: While \emph{Location Administration} defines the physical care-place, \emph{Bed \& Care-Place Management} owns the real-time operational status (\emph{Available}, \emph{Occupied}, \emph{Reserved}, \emph{Blocked}, \emph{Dirty}, \emph{Cleaning In-Progress}, \emph{Maintenance Lock}).
+
+
+
+\item
+\textbf{Resource State vs. Capacity}: This state contributes to Ward Operations' capacity responsibility. Bed availability does not establish ward service capacity or authority to accept another patient.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Bed Availability Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Operational Bed State}} — Tracks real-time bed status and environmental locks.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Bed Availability Query}} — Discloses real-time bed availability across hospital directorates.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Bed State Progression}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Bed Turnover Progression}} — Coordinates cleaning, disinfection, and preparation: \emph{Vacated} → \emph{Cleaning Requested} → \emph{Cleaning In-Progress} → \emph{Inspected/\allowbreak{}Ready} → \emph{Occupied}.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Bed Turnover Lifecycle Service}} — Coordinates turnover requests with environmental services.
+
+
+
+\item
+\emph{Additional Feature responsibility}: \texttt{\seqsplit{FEAT-HSO-13 — Bed Readiness Notification}} requires the existing turnover behaviour/\allowbreak{}exposure to notify bed allocation managers and clinical units when a cleaned bed is ready. Readiness notification remains distinct from availability query and from physical placement; no new lifecycle state or Service is introduced.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Bed Turnover Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Operational Bed Status Registry, Care-Place Lock Register, Bed Turnover Milestone Log.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:166}
+
+\par\smallskip
+\phantomsection\label{rad:hso:168}
+\subsubsection*{2.7 Clinical Resource Management}
+\phantomsection\label{rad:hso:169}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Resource Management}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Mobile Clinical Equipment Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Track Mobile Clinical Asset Operational State}} — Manages the real-time location and operational readiness of mobile ventilators, infusion pumps, and telemetry transmitters.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinical Resource Availability Query}} — Exposes mobile equipment availability.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Mobile Clinical Asset Operational Ledger, Maintenance Readiness Matrix.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:176}
+
+\par\smallskip
+\phantomsection\label{rad:hso:178}
+\subsubsection*{2.8 Service Capacity Management}
+\phantomsection\label{rad:hso:179}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Service Capacity Management}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Operational Capacity Metric Aggregation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Aggregate Service Capacity Telemetry}} — Consumes and coordinates context-specific service-capacity information for broader situational awareness, alongside bed occupancy, ICU surge capacity and ventilator availability across regional hospitals.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Regional Health System Capacity Query}} — Provides executive operational situational awareness.
+
+
+
+\item
+\emph{Consumer boundary}: Aggregation does not establish the underlying context-specific capacity. Resource occupancy/\allowbreak{}readiness and service capacity remain distinguishable; exact additional provider contracts are unestablished.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Regional System Capacity Snapshot, Surge Level State.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:187}
+
+\par\smallskip
+\phantomsection\label{rad:hso:189}
+\subsubsection*{2.9 Mobile Staff Management}
+\phantomsection\label{rad:hso:190}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Mobile Staff Management}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped capacity behaviour}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Mobile Service Capacity}} — Understands and manages available, committed and utilised mobile-service capacity in relation to workforce availability, geography, time, workload and applicable service demand.
+
+
+
+\item
+\emph{Responsibility boundary}: Staff presence and externally established assignments/\allowbreak{}visit progression contribute to capacity; they do not alone express it. Capacity coordination does not determine clinical work, own the source workforce roster or allocate underlying clinical duties.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: \texttt{\seqsplit{FEAT-HSO-16 — Mobile Worker Task Dispatch}} retains its Strategy identity with the integration boundary below. Presence/\allowbreak{}zone tracking remains distinct from mobile work-management integration; no replacement association to presence is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Track Operational Staff Presence}} — Tracks active on-duty presence and physical zone assignment for porters, phlebotomists, and roving nurses.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Staff Presence Telemetry Query}} — Discloses on-duty staff availability by hospital zone.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Mobile Visit Status Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Receive Mobile Visit Progression}} — Ingests arrival, visit-progression and safety check-in milestones from roving staff.
+
+
+
+\item
+\emph{Derivation}: \texttt{\seqsplit{FEAT-HSO-17}} directly requires visit-specific milestone ingestion. It remains distinct from presence, capacity assessment and work-management integration. Received progression can inform mobile capacity without determining clinical work or clinical completion.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Mobile Worker Task Dispatch} (integration scope qualified in Strategy):
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Integrate Mobile Work Management}} — Exchanges externally established work/\allowbreak{}assignment, dispatch and operational progression/\allowbreak{}status information, with applicable worker/\allowbreak{}context information, between mobile work-management mechanisms and Harmonia operational coordination.
+
+
+
+\item
+\emph{Derivation and boundary}: The human adjudication of \texttt{\seqsplit{FEAT-HSO-16}} establishes integration with mobile work/\allowbreak{}task management. This responsibility is absent from presence observation and visit-specific milestone ingestion. It does not determine, allocate or manage the underlying clinical work, clinical handover or EMR worklists. Work Allocation \& Dispatch retains non-clinical operational Work Order responsibility.
+
+
+
+\item
+\emph{Terminology}: External “work/\allowbreak{}task” vocabulary does not make human work a Harmonia Task. Work Order means human doing; To Do means human review/\allowbreak{}update/\allowbreak{}approval; Task means synthetic task. The preferred Strategy name \texttt{\seqsplit{Mobile Work Task Management Integration}} remains a proposed naming correction pending human confirmation, not a new Feature or alias.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Mobile Service Capacity, Staff Operational Presence Register, Zone Allocation Matrix, Mobile Visit Progression, Exchanged Mobile Work-Management Information. Originating work/\allowbreak{}assignment authority remains with its external/\allowbreak{}business work-management source.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:208}
+
+\par\smallskip
+\phantomsection\label{rad:hso:210}
+\subsubsection*{2.10 On-Call Management}
+\phantomsection\label{rad:hso:211}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{On-Call Management}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Active On-Call Provider Resolution}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Resolve Active On-Call Coverage}} — Resolves primary, secondary, and tertiary on-call clinical specialists for emergency escalation.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{On-Call Specialist Lookup}} — Discloses active on-call contacts for switchboard and emergency teams.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: On-Call Roster Projection, Escalation Contact Matrix.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:218}
+
+\par\smallskip
+\phantomsection\label{rad:hso:220}
+\subsubsection*{2.11 Work Allocation \& Dispatch}
+\phantomsection\label{rad:hso:221}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Work Allocation \& Dispatch}}
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Ownership Guardrail}: Owns the dispatching, queuing, assignment, and operational progression of non-clinical work orders (e.g., patient transfers, cleaning, specimen pickups). It does \textbf{not} acquire ownership of Practitioners, Locations, Services, or Credentials.
+
+
+
+\item
+\textbf{Capacity Consumer}: May use context-specific capacity/\allowbreak{}availability in operational allocation; it neither establishes that capacity nor acquires clinical-work allocation authority through mobile integration.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Work Item Instantiation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Dispatch Operational Work Order}} — Allocates work requests to available wardspersons or support teams using applicable allocation policies, staff roles, credentials, location and skill, and delivers allocated work to the target worker, device or team queue.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Work Dispatch Service}} — Delivers allocated work and captures distinct technical and operational acknowledgements; acknowledgement alone does not establish completion.
+
+
+
+\item
+\emph{Additional Feature relationships}: \texttt{\seqsplit{FEAT-HSO-20 — Worker Matching \& Allocation}} is realised by the existing allocation behaviour; \texttt{\seqsplit{FEAT-HSO-21 — Work Dispatch Delivery}} by its dispatch exposure and acknowledgement capture. Applicable credential/\allowbreak{}privilege determinations remain separately governed; Role information is not itself privilege.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Work Progress Oversight \& Escalation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Operational Work Progression}} — Tracks execution states: \emph{Queued} → \emph{Assigned} → \emph{Accepted} → \emph{In-Progress} → \emph{Completed /\allowbreak{} Aborted}.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Operational Work Status Query}} — Discloses task progression to requesting wards.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Operational Work Progression Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Operational Work Dispatch Ledger, Job Progression Milestone Ledger.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:236}
+
+\par\smallskip
+\phantomsection\label{rad:hso:238}
+\subsubsection*{2.12 Credential Management}
+\phantomsection\label{rad:hso:239}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Credential Management}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped behaviour: Operational Credential Check} (Feature association not established):
+
+
+\begin{itemize}
+
+\item
+\emph{Distinction}: Operational badge/\allowbreak{}access \texttt{\seqsplit{Credential Management}} is distinct from Strategy \texttt{\seqsplit{Clinical Qualification Management}}. Lexical similarity does not bind this behaviour to qualification/\allowbreak{}competency Feature \texttt{\seqsplit{FEAT-HSO-23}}.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Verify Operational Access Credential}} — Verifies physical access badges, specialty ward entry authorizations, and restricted area permissions.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Operational Credential Checkpoint Service}} — Evaluates physical/\allowbreak{}operational access rights.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Operational Access Authorization Ledger, Badge Credential Binding Register.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:247}
+
+\par\smallskip
+\phantomsection\label{rad:hso:249}
+\subsubsection*{2.13 Patient Transport}
+\phantomsection\label{rad:hso:250}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Patient Transport}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Transport Dispatch \& Progress Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Patient Transport Progression}} — Coordinates intra-facility and inter-facility patient movements: \emph{Transport Requested} → \emph{Porter Dispatched} → \emph{Patient Collected} → \emph{In-Transit} → \emph{Delivered at Destination} → \emph{Handover Completed}.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Patient Transport Tracking Service}} — Provides real-time transit telemetry.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Patient Transport Process}.
+
+
+
+\item
+\emph{Additional Feature responsibility}: \texttt{\seqsplit{FEAT-HSO-24 — Transport Request Ingestion}} is directly supported by the request stage of this same Function/\allowbreak{}Process. It ingests internal portering and external ambulance/\allowbreak{}inter-hospital requests with clinical mobility requirements; request ingestion is distinct from dispatch, transit and arrival.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Patient Transport Request Master, Transit Milestone Log.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:259}
+
+\par\smallskip
+\phantomsection\label{rad:hso:261}
+
+
+
+\phantomsection\label{rad:hso:263}
+\subsubsection*{2.14 Clinical Logistics Coordination}
+\phantomsection\label{rad:hso:264}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Logistics Coordination}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Pathology Specimen Transport Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Specimen Transport Progression}} — Tracks the physical transit of pathology bio-specimens, blood products, and surgical trays: \emph{Collected} → \emph{Courier Picked Up} → \emph{In-Transit} → \emph{Laboratory Ingress Received}.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Specimen Transit Tracking Service}} — Exposes chain-of-custody tracking.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Specimen Transport Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Specimen Courier Manifest, Chain-of-Custody Tracking Register.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:272}
+
+\par\smallskip
+\phantomsection\label{rad:hso:274}
+\subsubsection*{2.15 Discharge Management}
+\phantomsection\label{rad:hso:275}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Discharge Management}}
+
+
+
+\item
+\textbf{Capacity/\allowbreak{}Progression Consumer}: May use applicable service capacity and patient progression in discharge coordination. It does not establish the consumed capacity or originating clinical clearances; clinical progression, operational readiness, discharge authorisation and physical departure remain distinct.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Discharge Readiness \& Coordination Oversight}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Manage Discharge Coordination Progression}} — Synchronises multi-agency discharge readiness (\textbf{illustrative preparation; publication, authorisation and confirmed exit are distinct}): \emph{Discharge Planning Initiated} → \emph{Medications Reconciled} → \emph{Transport Booked} → \emph{Discharge Summary Finalised} → \emph{Physically Departed}.
+
+
+
+\item
+\emph{Additional Feature relationship}: \texttt{\seqsplit{FEAT-HSO-27 — Discharge Milestone Tracking}} is realised by this existing Function/\allowbreak{}Process's clinical readiness, medications, transport/\allowbreak{}services and home-care confirmation milestones.
+
+
+
+\item
+\emph{Departure-triggered responsibility}: \texttt{\seqsplit{FEAT-HSO-29 — Discharge Notification Dispatch}} requires this behaviour to dispatch departure notifications, updated bed states and finalised discharge summaries to external care providers upon confirmed physical exit. Preparation/\allowbreak{}publication of applicable information may occur earlier; it does not satisfy this departure-triggered responsibility.
+
+
+
+\item
+\emph{Scope qualification}: Preparation, summary finalisation/\allowbreak{}signing, availability/\allowbreak{}publication, applicable discharge authorisation and confirmed physical departure remain distinct. The displayed preparation pathway is illustrative, not a universal state machine. Discharge readiness or available information does not establish discharge authorisation or departure.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Discharge Readiness Telemetry}} — Discloses discharge barrier checklists and planned departure times.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Discharge Progression Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Discharge Readiness Checklist Ledger, Estimated Date of Discharge (EDD) Register.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:287}
+
+\par\smallskip
+\phantomsection\label{rad:hso:289}
+
+
+
+\phantomsection\label{rad:hso:291}
+\subsubsection*{2.16 Clinical Qualification Management}
+\phantomsection\label{rad:hso:292}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Qualification Management}}.
+
+
+
+\item
+\textbf{Functions}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Operational Credential Check}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Verify Clinical Qualification for Work Dispatch}} — Validates that a practitioner possesses active clinical credentials and required competency certificates before dispatch of specialised work.
+
+
+
+\item
+\emph{Derivation}: \texttt{\seqsplit{FEAT-HSO-23}} belongs to Strategy Clinical Qualification Management. Provider Administration establishes professional qualification/\allowbreak{}registration and privilege information, but the dispatch-specific qualification/\allowbreak{}competency checkpoint was not expressed by that information management alone.
+
+
+
+\item
+\emph{Boundary}: This checkpoint does not originate qualifications, confer clinical privileges, manage clinical competency training or establish a provider Service dependency. Clinical Privilege and Operational Privilege remain distinct, and an activity may require both. Physical badge/\allowbreak{}access Credential Management in §2.12 remains independently owned and is not associated with this Feature.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Qualification/\allowbreak{}Competency Checkpoint Outcome and Applicable Work Context; source qualification and privilege information retains its established authority and ownership.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:hso:300}
+
+The section number is navigation only. No Capability Tier, ancestry, structural ID, new Role, Service or Process is allocated by this directly derived Function.

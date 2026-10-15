@@ -1,0 +1,1187 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Canonical Enterprise Capability Model (EC-01 .. EC-14)}\label{rad:enterprise}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/02-strategy/capabilities/enterprise-capabilities.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:enterprise:1}
+\section*{Canonical Enterprise Capability Model (EC-01 .. EC-14)}
+\phantomsection\label{rad:enterprise:3}
+\subsection*{Overview \& Purpose}
+\phantomsection\label{rad:enterprise:5}
+
+The Enterprise Capability Tier represents \textbf{reusable ICT architectural functionality} that recurs across multiple distinct healthcare business enabling capabilities and features.
+
+\phantomsection\label{rad:enterprise:7}
+
+Enterprise Capabilities answer the fundamental architectural question:
+
+\phantomsection\label{rad:enterprise:8}
+
+\begin{quote}
+
+\textbf{"How is this function delivered across our systems?"}
+
+
+\end{quote}
+\phantomsection\label{rad:enterprise:10}
+
+Where Business Enabling capabilities are defined within authentic clinical, operational, and administrative healthcare contexts (e.g., Ward Census, Medication Administration, Closed-Loop Orders), Enterprise Capabilities represent the \textbf{horizontal, domain-neutral capabilities} through which those healthcare features are delivered.
+
+\phantomsection\label{rad:enterprise:12}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+BUSINESS ENABLING FEATURES (Hundreds of domain-specific behaviours)
+
+Example: Patient Bed Turnover, Pathology Order, Practitioner Lookup
+
+derived across features by asking:
+
+"How is this function delivered?"
+
+▼
+
+ENTERPRISE CAPABILITY TIER (EC-01 .. EC-14)
+
+14 Reusable, Technology-Neutral Architectural Capabilities
+
+EC-01 .. EC-13 inform clustering of
+
+▼
+
+STRATEGIC LOGICAL RESPONSIBILITY MODEL
+
+Mneme, Mnemosyne, Ponos, Pylai, Calliope, Iris, Digital Twin
+\end{quote}
+\phantomsection\label{rad:enterprise:32}
+
+The component-clustering progression describes established EC-01 through EC-13 derivations only. EC-14 is added by the approved \hyperref[rad:assurance-strategy]{Health Service Assurance Strategy derivation}; no strategic logical or application component is allocated EC-14 by this diagram or catalogue.
+
+\phantomsection\label{rad:enterprise:34}
+
+\par\smallskip
+\phantomsection\label{rad:enterprise:36}
+\subsection*{Derivation Methodology \& Architectural Principles}
+\phantomsection\label{rad:enterprise:38}
+
+The established EC-01 through EC-13 were derived by systematically analyzing the system-enabled features across all five Business Enabling views. EC-14 Service Guardian is the approved addition derived from REQ-FND-005, BC-18 and the three assurance Business Enabling Capabilities. Their \hyperref[rad:assurance-strategy:54]{first-pass contribution model} records the explicitly approved relationships without inventing intermediate Features or component allocations. The derivation adheres to five strict architectural principles:
+
+\phantomsection\label{rad:enterprise:40}
+\subsubsection*{1. Vertical Recurrence Test}
+\phantomsection\label{rad:enterprise:41}
+
+A functional requirement qualifies as an Enterprise Capability only if it recurs vertically across multiple, diverse healthcare domains.
+
+\phantomsection\label{rad:enterprise:42}
+
+\begin{itemize}
+
+\item
+If a function appears only within laboratory orders, it remains domain-specific Business Enabling behaviour.
+
+
+
+\item
+If a function recurs across clinical document versioning, directory update proposals, and bed state turnover, it reflects an underlying Enterprise Capability (\textbf{EC-03 Managed State \& Lifecycle}).
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:45}
+\subsubsection*{2. Behavioural Properties vs. Top-Level Capabilities}
+\phantomsection\label{rad:enterprise:46}
+
+Not every recurring function or algorithmic mechanism warrants promotion to a standalone top-level Enterprise Capability:
+
+\phantomsection\label{rad:enterprise:47}
+
+\begin{itemize}
+
+\item
+\textbf{Correlation} is an intrinsic behavioural property appearing across multiple capabilities (e.g., entity correlation in EC-01, event correlation in EC-09, context correlation in EC-02), \textbf{not} a standalone \texttt{\seqsplit{CorrelationService}}.
+
+
+
+\item
+\textbf{Acknowledgement} is a reusable interaction pattern within exchange semantics (EC-08) and operational activity tracking (EC-10), \textbf{not} an independent capability.
+
+
+
+\item
+\textbf{Assignment and Dispatch} are core execution functions within \textbf{EC-10 Activity \& Execution}.
+
+
+
+\item
+\textbf{Indexing and Caching} are technical enabling mechanisms within \textbf{EC-04 Information Management} and \textbf{EC-05 Search \& Discovery}, not top-level architectural capabilities.
+
+
+
+\item
+\textbf{Retry and Circuit Breaking} are resilience properties within \textbf{EC-12 Operational Assurance}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:53}
+\subsubsection*{3. Reusable Capability ≠ Centralised Service}
+\phantomsection\label{rad:enterprise:54}
+
+\begin{quote}
+
+\textbf{An Enterprise Capability describes reusable architectural functionality; it does NOT imply a monolithic, centralized runtime service.}
+
+
+\end{quote}
+\phantomsection\label{rad:enterprise:56}
+
+Enterprise Capabilities represent bounded reusable responsibilities. Their realisation may require participation, consumption or enforcement across multiple architectural elements, but this does not imply shared semantic ownership or prohibit establishment of a responsibility centre.
+
+\phantomsection\label{rad:enterprise:58}
+
+\textbf{Distributed participation does not imply distributed responsibility. Cross-cutting concern does not imply cross-cutting responsibility.}
+
+\phantomsection\label{rad:enterprise:60}
+
+Examples of participation in established reusable responsibilities include:
+
+\phantomsection\label{rad:enterprise:61}
+
+\begin{itemize}
+
+\item
+\textbf{EC-02 Context Management}: Context is established at ingress (Pylai), maintained during active access (Mneme), propagated across execution units (Ponos), and preserved in audit (Kleio) where required. These participation points do not require a monolithic Context Service or establish shared semantic ownership.
+
+
+
+\item
+\textbf{EC-06 Policy \& Control}: Policy evaluation guards ingress boundaries, persistence interfaces and presentation gateways while retaining bounded policy responsibility.
+
+
+
+\item
+\textbf{EC-07 Provenance \& Traceability}: Required attribution and meaningful evidence are preserved at significant boundaries and transformations; routine technical activity does not automatically require durable evidence.
+
+
+
+\item
+\textbf{EC-12 Operational Assurance}: Resilience, duplicate suppression and concurrency integrity may require enforcement across messaging, storage and execution elements without distributing semantic ownership.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:66}
+
+Responsibility centres follow established architectural responsibility. No capability is allocated merely to complete a diagram, and distributed participation does not prohibit a responsibility centre.
+
+\phantomsection\label{rad:enterprise:68}
+\subsubsection*{4. Zero Technology Leakage}
+\phantomsection\label{rad:enterprise:69}
+
+Enterprise Capabilities are technology-neutral:
+
+\phantomsection\label{rad:enterprise:70}
+
+\begin{itemize}
+
+\item
+They are free of concurrency primitives (threads, worker thread pools, execution daemons).
+
+
+
+\item
+They are free of message broker constructs (topics, queues, partitions, JMS headers).
+
+
+
+\item
+They are free of storage technologies (PostgreSQL, Infinispan, JPA, DDL, table locks).
+
+
+
+\item
+They are free of specific software packages (HAPI FHIR, Apache Camel, Netty, Spring Boot, Vue 3).
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:75}
+\subsubsection*{5. Capabilities vs. Software Components}
+\phantomsection\label{rad:enterprise:76}
+
+An Enterprise Capability describes \emph{what} functionality is provided. Subsystems (such as Pylai, Ponos, Mneme, Mnemosyne, Calliope, and Iris) represent \emph{strategic logical component responsibility centres} defined in the existing \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md}{Strategic Logical Component Responsibility Model}. Software components are consumers, aggregators, or providers of capabilities; \textbf{a software component name is never a capability definition}.
+
+\phantomsection\label{rad:enterprise:78}
+
+\par\smallskip
+\phantomsection\label{rad:enterprise:80}
+\subsection*{The 14 Canonical Enterprise Capabilities}
+\phantomsection\label{rad:enterprise:82}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+EC-01  Managed Entity \& Relationship
+
+EC-02  Context Management
+
+EC-03  Managed State \& Lifecycle
+
+EC-04  Information Management
+
+EC-05  Search \& Discovery
+
+EC-06  Policy \& Control
+
+EC-07  Provenance \& Traceability
+
+EC-08  Interoperability \& Exchange
+
+EC-09  Event \& Subscription
+
+EC-10  Activity \& Execution
+
+EC-11  Interaction \& Experience
+
+EC-12  Operational Assurance
+
+EC-13  Semantic Governance \& Conformance
+
+EC-14  Service Guardian
+\end{quote}
+\phantomsection\label{rad:enterprise:101}
+
+\par\smallskip
+\phantomsection\label{rad:enterprise:103}
+\subsubsection*{EC-01: Managed Entity \& Relationship}
+\phantomsection\label{rad:enterprise:104}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Identify, classify, relate, and maintain the structural integrity of managed healthcare and administrative entities throughout the enterprise landscape.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Uniquely identifying core domain entities (Persons, Practitioners, Roles, Organisations, Locations, Services, Devices).
+
+
+
+\item
+Resolving and maintaining multi-authority identifier systems and aliases without destructive overwriting.
+
+
+
+\item
+Representing and traversing multi-dimensional relationships (affiliations, organizational hierarchies, physical location trees, care team memberships).
+
+
+
+\item
+Maintaining referential integrity across interconnected entity graphs.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Anti-Responsibilities}: Does not own physical database relational tables or foreign key constraints (Domain 04/\allowbreak{}07).
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:112}
+\subsubsection*{EC-02: Context Management}
+\phantomsection\label{rad:enterprise:113}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Establish, validate, propagate, and preserve the execution, clinical, security, and administrative context within which information and activities have meaning.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Binding the subject of care, encounter, ordering provider, and healthcare service context to in-flight messages and transactions.
+
+
+
+\item
+Propagating tamper-evident, attributable security context across asynchronous, multi-hop operational boundaries.
+
+
+
+\item
+Ensuring context preservation during cross-protocol transformations across disparate healthcare exchange formats and protocols.
+
+
+
+\item
+Detecting and rejecting requests where mandatory operational or clinical context is missing or inconsistent.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Collaborative Nature}: Bounded reusable context responsibility may be realised through participation across gateways, activity execution and information-access boundaries. Participation does not transfer semantic ownership.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:121}
+\subsubsection*{EC-03: Managed State \& Lifecycle}
+\phantomsection\label{rad:enterprise:122}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Govern the current and historical state, effective temporal periods, state transition validations, and lifecycle progression of managed integration artifacts and entities.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Defining and enforcing valid state transition state machines (e.g., \texttt{\seqsplit{REQUESTED}} → \texttt{\seqsplit{VALIDATED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{COMPLETED}}).
+
+
+
+\item
+Maintaining temporal validity intervals (effective start and end dates) for relationships, credentials, and states.
+
+
+
+\item
+Supporting non-destructive state progression, preserving historical state versions for longitudinal review.
+
+
+
+\item
+Rejecting illegal or out-of-order state transitions while accommodating idempotent replay.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Anti-Responsibilities}: Does not define thread-level mutexes or database transaction isolation levels.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:130}
+\subsubsection*{EC-04: Information Management}
+\phantomsection\label{rad:enterprise:131}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Validate, represent, persist, retrieve, version, and manage governed clinical, administrative, and operational information assets.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Validating inbound information structures against canonical information constraints.
+
+
+
+\item
+Providing authoritative durable persistence for historical health records and administrative registries.
+
+
+
+\item
+Managing active distributed working memory representations for low-latency retrieval.
+
+
+
+\item
+Governing document versioning, supersession, amendments, and retractions without data loss.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Architectural Principle}: Enforces the foundational separation between \emph{active distributed state access} and \emph{authoritative durable state preservation} (Axiom AX-05).
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:139}
+\subsubsection*{EC-05: Search \& Discovery}
+\phantomsection\label{rad:enterprise:140}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Index, search, resolve, filter, and discover information assets, entities, directory endpoints, and healthcare services across the enterprise.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Providing multi-criteria indexed search across complex entity graphs (e.g., find active cardiologists at Location X accepting new referrals).
+
+
+
+\item
+Resolving service and practitioner communication endpoints for addressed delivery.
+
+
+
+\item
+Supporting bounded, paginated clinical queries across longitudinal patient records.
+
+
+
+\item
+Applying dynamic security and consent filters to search results prior to egress.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Anti-Responsibilities}: Does not dictate specific search engine indexes, inverted index implementations, or SQL query syntaxes.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:148}
+\subsubsection*{EC-06: Policy \& Control}
+\phantomsection\label{rad:enterprise:149}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Evaluate and enforce security, consent, privacy, and regulatory policies including authority, access control, and information handling rules.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Executing impartial, default-deny policy evaluations for all integration transactions.
+
+
+
+\item
+Enforcing Role-Based and Attribute-Based Access Control (RBAC/\allowbreak{}ABAC) policies.
+
+
+
+\item
+Evaluating patient consent directives and privacy restrictions at boundary and query checkpoints.
+
+
+
+\item
+Enforcing statutory information disclosure boundaries (e.g., mental health, VIP records).
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Collaborative Nature}: Evaluated across boundary gateways, internal bus dispatch, storage interfaces, and presentation layers.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:157}
+\subsubsection*{EC-07: Provenance \& Traceability}
+\phantomsection\label{rad:enterprise:158}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Preserve required origin attribution, meaningful transformation history, significant execution checkpoints, tamper-evident audit evidence and end-to-end traceability. Harmonia SHALL preserve provenance, audit and operational evidence where required by governing obligations, architectural significance, accountability, reconstruction, security or assurance needs. Routine technical activity SHALL NOT automatically require durable evidentiary recording.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Recording attributable, verifiable origin metadata for information sources, authors, and timestamps.
+
+
+
+\item
+Tracking information-significant transformation history and required mapping checkpoints as information crosses system seams.
+
+
+
+\item
+Capturing non-PHI operational and security audit trails for regulatory compliance (HIPAA, GDPR).
+
+
+
+\item
+Supporting end-to-end transaction tracing across asynchronous processing pipelines.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Collaborative Nature}: Participating elements preserve required provenance and audit context according to policy. Telemetry, operational facts, provenance, audit and assurance evidence remain distinct. Being evidence is contextual, not an intrinsic property of every recorded fact; preservation does not establish an assurance conclusion.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:166}
+\subsubsection*{EC-08: Interoperability \& Exchange}
+\phantomsection\label{rad:enterprise:167}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Resolve destinations, transform schemas, route, transport, deliver, acknowledge, and coordinate standards-based information exchange across enterprise boundaries.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Providing multi-protocol boundary adaptation for healthcare standards (HL7 v2, FHIR REST, DICOM, secure messaging).
+
+
+
+\item
+Executing bidirectional structural and semantic transformations between legacy formats and canonical representations.
+
+
+
+\item
+Ensuring reliable addressed delivery and fan-out distribution to external clinical endpoints.
+
+
+
+\item
+Processing and distinguishing technical delivery acknowledgements from business acknowledgements.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Boundary Rule}: Egress terminates Harmonia management of the emitted representation (Axiom AX-13).
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:175}
+\subsubsection*{EC-09: Event \& Subscription}
+\phantomsection\label{rad:enterprise:176}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Publish, ingest, correlate, filter, and syndicate events and subscription-driven changes across the enterprise landscape.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Ingesting operational and clinical event triggers from external systems and internal state changes.
+
+
+
+\item
+Managing topic- and criteria-based event subscriptions for internal and external consumers.
+
+
+
+\item
+Evaluating dynamic subscription filters to match event payloads with interested subscriber criteria.
+
+
+
+\item
+Delivering asynchronous event notifications reliably to registered subscribers.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Decoupling Note}: Defined strictly in terms of event publishing, criteria matching, and notification delivery; entirely independent of broker topics, partitions, or queues.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:184}
+\subsubsection*{EC-10: Activity \& Execution}
+\phantomsection\label{rad:enterprise:185}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Define, instantiate, match, assign, dispatch, supervise, and progress coordinated operational and clinical activity units.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Instantiating operational work items (Work Orders, To Dos, synthetic platform Tasks) in response to triggers.
+
+
+
+\item
+Matching and assigning work units to eligible human or automated performers and roles based on policy rules.
+
+
+
+\item
+Dispatching work units to their assigned performers with acknowledgement according to the applicable interaction contract.
+
+
+
+\item
+Supervising execution progress, tracking timeouts, managing escalations, and handling activity interruptions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Decoupling Note}: Free of worker threads, thread pools, execution daemons, or specific workflow runtime engines.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:193}
+\subsubsection*{EC-11: Interaction \& Experience}
+\phantomsection\label{rad:enterprise:194}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Provide contextual interaction between human actors, Harmonia, and enterprise presentation services, including visualization, alerting, and collaboration integration.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Mediating presentation interactions via dedicated backend-for-frontend gateways decoupled from internal databases.
+
+
+
+\item
+Rendering clinical timelines, provider directory management interfaces, and operational console dashboards.
+
+
+
+\item
+Providing contextual notifications and alerts to human users across web and mobile channels.
+
+
+
+\item
+Projecting longitudinal record context into secure multidisciplinary collaboration spaces.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Boundary Note}: Does not absorb the healthcare semantics of Clinical Collaboration or medical documentation. Consumes established identity and security context; does not own authentication, consent, or clinical truth.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:202}
+\subsubsection*{EC-12: Operational Assurance}
+\phantomsection\label{rad:enterprise:203}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Ensure concurrency integrity, system resilience, duplicate detection, exception handling, automated recovery, and operational telemetry across platform operations.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Enforcing sliding-window duplicate message detection and idempotent suppression.
+
+
+
+\item
+Guaranteeing ingress dual-write safety (durable acceptance before emitting positive application ACK).
+
+
+
+\item
+Managing structured failure recovery, exception escalation, and dead-letter isolation.
+
+
+
+\item
+Emitting platform telemetry, operational health metrics, and queue processing metrics.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Collaborative Nature}: Realized collaboratively across boundary gateways, messaging infrastructure, execution workers, and storage layers.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:211}
+\subsubsection*{EC-12 /\allowbreak{} EC-14 Boundary}
+\phantomsection\label{rad:enterprise:213}
+
+EC-12 retains the established scope and responsibilities above. It may contribute directly to generic operational/\allowbreak{}processing assurance, limited to that contribution in the \hyperref[rad:assurance-strategy:54]{approved assurance matrix}. It does not own the general semantics of assurance disposition, assurance-specific criteria applicability, evidentiary association, assessment against assurance criteria, adjudication, or independent assurance findings and conclusions. Those distinguishing responsibilities are introduced through EC-14 Service Guardian. Operational health and business-level processing assurance remain distinct; EC-12 is not expanded to absorb EC-14.
+
+\phantomsection\label{rad:enterprise:215}
+\subsubsection*{EC-13: Semantic Governance \& Conformance}
+\phantomsection\label{rad:enterprise:216}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Govern canonical models, schemas, terminologies, value sets, mapping tables, constraint rules, and semantic conformance validation across the enterprise.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Defining and publishing canonical healthcare data models and profile structures.
+
+
+
+\item
+Governing clinical terminology mappings, value sets, and concept lookups (SNOMED CT, LOINC).
+
+
+
+\item
+Validating inbound and outbound message representations against published semantic rules.
+
+
+
+\item
+Governing semantic versioning, deprecation, and backward compatibility across schema revisions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Component Relationship}: Informs the Calliope strategic logical component, but Calliope is the responsibility centre, not the capability definition.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:224}
+\subsubsection*{EC-14: Service Guardian}
+\phantomsection\label{rad:enterprise:226}
+
+\begin{itemize}
+
+\item
+\textbf{Architectural Scope}: Service Guardian provides the reusable capability to independently establish whether governed service behaviour, state or outcomes remain within defined assurance expectations by associating applicable criteria and trustworthy evidence with a governed subject, assessing that evidence, adjudicating the assessment, and establishing reportable assurance findings and conclusions.
+
+
+
+\item
+\textbf{Functional Responsibilities}:
+
+
+\begin{itemize}
+
+\item
+Supplying assurance-specific semantics for assurance disposition and assurance criteria applicability.
+
+
+
+\item
+Associating a governed subject/\allowbreak{}context with applicable criteria and sufficient trustworthy evidence for a particular assurance purpose.
+
+
+
+\item
+Assessing evidence against applicable criteria and adjudicating assessed detail to establish reportable findings, exceptions and conclusions.
+
+
+
+\item
+Preserving assurance independence, temporal/\allowbreak{}version-specific evidence and criteria applicability, and explicit inability to establish a conclusion where evidence is insufficient.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Collaborative Nature}: Supplies the assurance-specific semantics required to bind existing reusable capabilities into governed assurance. It contributes directly to Assurance Design, Assurance Criteria Management and Governed Assurance; direct contribution is not sole realisation. The \hyperref[rad:assurance-strategy:54]{approved matrix} preserves the contributions of EC-01 through EC-13.
+
+
+
+\item
+\textbf{Anti-Responsibilities}: Does not own the underlying governed subject, authoritative governance requirements, or source information used as evidence. Does not perform, manage, remediate, assign, delegate or operationally escalate the subject activity. Does not replace System Operations or EC-12 Operational Assurance, and does not provide Clinical Services Delivery Assurance.
+
+
+
+\item
+\textbf{Allocation Boundary}: No strategic logical component, application component, runtime service or implementation construct is allocated EC-14. The catalogue defines a capability, not a software component or deployment boundary.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:236}
+\subsubsection*{Conceptual Behavioural Sequence}
+\phantomsection\label{rad:enterprise:238}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Define Good Behaviour
+
+↓
+
+Gather Evidence
+
+↓
+
+Assess Evidence against Good Behaviour
+
+↓
+
+Adjudicate Assessed Detail
+
+↓
+
+Report
+\end{quote}
+\phantomsection\label{rad:enterprise:250}
+
+This sequence explains the capability; it is not an implementation workflow specification or a derived Business Process. “Define Good Behaviour” identifies assurance expectations and criteria; it does not transfer ownership of governing requirements to Service Guardian. Source information ownership remains with its responsible capability; assurance owns its contextual evidentiary association.
+
+\phantomsection\label{rad:enterprise:252}
+
+The \hyperref[rad:enabling:674]{Business Enabling assurance principles} govern disposition, generic processing assurance, evidence/\allowbreak{}criteria temporality, assessment/\allowbreak{}adjudication, independence, failure/\allowbreak{}recovery and explicit evidence insufficiency. These semantics are not universally reducible to PASS /\allowbreak{} FAIL /\allowbreak{} UNKNOWN and do not imply an assurance information model or persistence mechanism.
+
+\phantomsection\label{rad:enterprise:254}
+
+\par\smallskip
+\phantomsection\label{rad:enterprise:256}
+\subsection*{Summary Matrix: Enterprise Capabilities}
+\phantomsection\label{rad:enterprise:258}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-8\tabcolsep-5\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{ID} & \textbf{Enterprise Capability Name} & \textbf{Architectural Focus \& Essence} & \textbf{Key Recurring Functions}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{ID} & \textbf{Enterprise Capability Name} & \textbf{Architectural Focus \& Essence} & \textbf{Key Recurring Functions}\\\hline\endhead
+\hline\endfoot
+\textbf{EC-01} & Managed Entity \& Relationship & Entity identification, graph relationships, referential integrity & Identity resolution, relationship navigation, alias linking\\\hline
+\textbf{EC-02} & Context Management & Establishing, validating, and propagating operational context & Context binding, multi-hop propagation, security tokens\\\hline
+\textbf{EC-03} & Managed State \& Lifecycle & State machines, temporal validity, lifecycle progression & State validation, effective periods, non-destructive updates\\\hline
+\textbf{EC-04} & Information Management & Validation, durable persistence, active distributed state & Schema validation, durable preservation and recovery, active access\\\hline
+\textbf{EC-05} & Search \& Discovery & Indexing, multi-criteria search, endpoint resolution & Indexed query, criteria filtering, endpoint discovery\\\hline
+\textbf{EC-06} & Policy \& Control & Impartial default-deny security, access control, consent & RBAC/\allowbreak{}ABAC evaluation, consent enforcement, VIP gating\\\hline
+\textbf{EC-07} & Provenance \& Traceability & Origin attribution, audit evidence, transformation history & Tamper-evident audit logging, source attribution, chain of custody\\\hline
+\textbf{EC-08} & Interoperability \& Exchange & Multi-protocol boundary exchange, transport, delivery & Protocol mediation, transformation, routing, delivery ACK\\\hline
+\textbf{EC-09} & Event \& Subscription & Event publishing, criteria filtering, notification dispatch & Subscription management, criteria matching, syndication\\\hline
+\textbf{EC-10} & Activity \& Execution & Work unit instantiation, assignment, dispatch, supervision & Matching, dispatching, progress tracking, escalation\\\hline
+\textbf{EC-11} & Interaction \& Experience & Decoupled presentation, user interaction, dashboards & BEFE mediation, clinical view rendering, alert display\\\hline
+\textbf{EC-12} & Operational Assurance & Resilience, concurrency integrity, duplicate suppression & Dual-write safety, deduplication, recovery, telemetry\\\hline
+\textbf{EC-13} & Semantic Governance \& Conformance & Canonical schemas, terminologies, conformance rules & Schema publishing, concept mapping, constraint checking\\\hline
+\textbf{EC-14} & Service Guardian & Independent governed assurance of service behaviour, state and outcomes & Assurance disposition, criteria applicability, evidentiary association, assessment, adjudication, findings and conclusions\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:enterprise:275}
+
+\par\smallskip
+\phantomsection\label{rad:enterprise:277}
+\subsection*{Multi-Capability Composition Dynamics}
+\phantomsection\label{rad:enterprise:279}
+
+Enterprise Capabilities do not operate in isolation; they compose harmoniously to deliver complex healthcare features. Below are three representative multi-capability compositions demonstrating this derivation logic:
+
+\phantomsection\label{rad:enterprise:281}
+\subsubsection*{Composition 1: Person Identifier Resolution}
+\phantomsection\label{rad:enterprise:282}
+
+\begin{itemize}
+
+\item
+\textbf{Healthcare Need}: Resolving multi-authority identifiers (MRN, national IHI, clinic client IDs) for an incoming patient transaction.
+
+
+
+\item
+\textbf{Composed Enterprise Capabilities}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{EC-01 Managed Entity \& Relationship}}: Resolves entity models and alias relationships.
+
+
+
+\item
+\texttt{\seqsplit{EC-05 Search \& Discovery}}: Searches existing identifier registers and resolves matches.
+
+
+
+\item
+\texttt{\seqsplit{EC-03 Managed State \& Lifecycle}}: Validates identifier active/\allowbreak{}superseded status.
+
+
+
+\item
+\texttt{\seqsplit{EC-07 Provenance \& Traceability}}: Records origin authority, timestamp, and audit trail.
+
+
+
+\item
+\texttt{\seqsplit{EC-06 Policy \& Control}}: Evaluates requesting system access permissions.
+
+
+
+\item
+\texttt{\seqsplit{EC-12 Operational Assurance}}: Guarantees deterministic matching under concurrent load.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:291}
+\subsubsection*{Composition 2: Closed-Loop Order Progression}
+\phantomsection\label{rad:enterprise:292}
+
+\begin{itemize}
+
+\item
+\textbf{Healthcare Need}: Ingesting a diagnostic order, routing to a laboratory, and tracking execution through to report outcome.
+
+
+
+\item
+\textbf{Composed Enterprise Capabilities}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{EC-02 Context Management}}: Binds clinical encounter, patient, and ordering provider context.
+
+
+
+\item
+\texttt{\seqsplit{EC-05 Search \& Discovery}}: Resolves target laboratory endpoint and service capability.
+
+
+
+\item
+\texttt{\seqsplit{EC-01 Managed Entity \& Relationship}}: Links order entity to patient, provider, and service.
+
+
+
+\item
+\texttt{\seqsplit{EC-08 Interoperability \& Exchange}}: Manages boundary protocol delivery and captures technical ACK.
+
+
+
+\item
+\texttt{\seqsplit{EC-03 Managed State \& Lifecycle}}: Enforces order state progression (\texttt{\seqsplit{PLACED}} → \texttt{\seqsplit{ACCEPTED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{COMPLETED}}).
+
+
+
+\item
+\texttt{\seqsplit{EC-10 Activity \& Execution}}: Instantiates activity units, monitors timeouts, and supervises fulfillment.
+
+
+
+\item
+\texttt{\seqsplit{EC-07 Provenance \& Traceability}}: Captures end-to-end chain of custody and delivery timestamps.
+
+
+
+\item
+\texttt{\seqsplit{EC-12 Operational Assurance}}: Enforces dual-write safety and duplicate suppression.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:303}
+\subsubsection*{Composition 3: Work Allocation \& Dispatch}
+\phantomsection\label{rad:enterprise:304}
+
+\begin{itemize}
+
+\item
+\textbf{Healthcare Need}: Coordinating operational facility tasks (e.g., patient transport, ward bed cleaning).
+
+
+
+\item
+\textbf{Composed Enterprise Capabilities}:
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{EC-02 Context Management}}: Binds patient, physical room/\allowbreak{}bed, and service context.
+
+
+
+\item
+\texttt{\seqsplit{EC-03 Managed State \& Lifecycle}}: Progresses work order state (\texttt{\seqsplit{CREATED}} → \texttt{\seqsplit{DISPATCHED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{DONE}}).
+
+
+
+\item
+\texttt{\seqsplit{EC-05 Search \& Discovery}}: Discovers available and credentialed staff matching task criteria.
+
+
+
+\item
+\texttt{\seqsplit{EC-01 Managed Entity \& Relationship}}: Links assigned worker, patient, location, and equipment.
+
+
+
+\item
+\texttt{\seqsplit{EC-10 Activity \& Execution}}: Executes allocation logic, worker dispatch, and escalation oversight.
+
+
+
+\item
+\texttt{\seqsplit{EC-08 Interoperability \& Exchange}}: Delivers work orders to mobile devices or external systems.
+
+
+
+\item
+\texttt{\seqsplit{EC-12 Operational Assurance}}: Prevents duplicate assignment and ensures resilient retry.
+
+
+
+\item
+\texttt{\seqsplit{EC-07 Provenance \& Traceability}}: Captures worker acceptance and task completion evidence.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:315}
+
+\par\smallskip
+\phantomsection\label{rad:enterprise:317}
+\subsection*{Downstream Progression}
+\phantomsection\label{rad:enterprise:319}
+
+Enterprise Capabilities represent what reusable functions the platform delivers. The existing \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md}{Strategic Logical Component Responsibility Model} describes the established responsibility compositions, and the \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/resources/strategic-resources.md}{Strategic Resources catalogue} records resource adjudications. Downstream progression includes:
+
+\phantomsection\label{rad:enterprise:320}
+
+\begin{itemize}
+
+\item
+\textbf{Domains 05–07 (Application, Integration, Technology)}: Implements these capabilities through concrete software packages, integration protocols, and runtime technologies.
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capabilities/ict-foundation-lenses.md}{ICT Foundation Lenses}: Cross-cutting technical enablement considerations guiding technology realization.
+
+
+
+\item
+\hyperref[rad:tier-model]{Capability Tier Progression Model}: Detailed vertical derivation rules.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enterprise:324}
+
+The established component derivations and examples for EC-01 through EC-13 remain unchanged. EC-14 and the three assurance Business Enabling Capabilities stop at the \hyperref[rad:assurance-strategy:88]{approved Strategy derivation boundary}: no allocation to Dokimasia, Ponos, Praxis, Pragma, Digital Twin, Mneme, Mnemosyne, Calliope, Iris, Pylai or any other logical/\allowbreak{}application construct is established. No downstream Business, Information or solution architecture is derived here.

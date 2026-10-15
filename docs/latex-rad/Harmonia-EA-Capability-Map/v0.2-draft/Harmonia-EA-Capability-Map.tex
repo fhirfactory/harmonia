@@ -1,0 +1,91 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+\documentclass[10pt,a4paper,oneside,headings=small]{scrreprt}
+\usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.87]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[table]{xcolor}
+\definecolor{Ink}{HTML}{19384C}
+\definecolor{TableHead}{HTML}{E6EDF2}
+\definecolor{Link}{HTML}{155B83}
+\usepackage{array,longtable,tabularx,seqsplit,needspace,enumitem,fvextra}
+\usepackage{makeidx}
+\makeindex
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ihead{Harmonia EA Capability Map}
+\ohead{Version 0.2-draft}
+\ifoot{Architectural reference catalogue · v0.2-draft}
+\ofoot{\pagemark}
+\usepackage[unicode,colorlinks,linkcolor=Link,urlcolor=Link,hyperindex=true,
+  pdftitle={Harmonia-EA-Capability-Map — Version 0.2-draft},
+  pdfauthor={Harmonia},bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em plus 0.15em minus 0.1em}
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{0.35em}
+\setlength{\LTpost}{0.5em}
+\renewcommand{\arraystretch}{1.15}
+\newlength{\TableWidth}
+\setlist{nosep,leftmargin=1.4em,topsep=0.3em}
+\setlistdepth{8}
+\renewlist{itemize}{itemize}{8}
+\renewlist{enumerate}{enumerate}{8}
+\setlist[itemize]{label=\textbullet}
+\setlist[enumerate]{label=\arabic*.}
+\setcounter{tocdepth}{1}
+\RedeclareSectionCommand[runin=false,beforeskip=1.4ex,afterskip=.6ex]{paragraph}
+\setcounter{secnumdepth}{3}
+\DeclareTOCStyleEntries[pagenumberwidth=3em]{tocline}{chapter,section,subsection,subsubsection}
+\DeclareTOCStyleEntry[numwidth=2.6em]{tocline}{chapter}
+\DeclareTOCStyleEntry[numwidth=3.5em]{tocline}{section}
+\DeclareTOCStyleEntry[numwidth=4.5em]{tocline}{subsection}
+\DeclareTOCStyleEntry[numwidth=5.5em]{tocline}{subsubsection}
+\DeclareTOCStyleEntry[pagenumberwidth=3em]{tocline}{part}
+\addtokomafont{disposition}{\color{Ink}}
+\tolerance=2000
+\emergencystretch=5em
+\raggedbottom
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\vspace*{24mm}
+{\Huge\bfseries\color{Ink} Harmonia\par}
+\vspace{8mm}
+{\LARGE Enterprise Architecture\par Capability Map\par}
+\vspace{12mm}
+{\Large Harmonia-EA-Capability-Map\par Version 0.2-draft\par}
+\vspace{12mm}
+{\large Proposed Complete Architecture\par}
+\vfill
+Step 2 Capability Architecture\par
+15 October 2026\par
+\texttt{Harmonia-GovernedAccess}\par
+\vspace{8mm}
+Frozen canonical semantics with explicitly proposed structure and enrichment.
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\input{sections/reading-guide.tex}
+\input{sections/business-capabilities.tex}
+\input{sections/business-enabling-capabilities.tex}
+\input{sections/enterprise-capabilities.tex}
+\input{sections/relationships.tex}
+\input{sections/catalogue-contexts.tex}
+\input{sections/identifiers.tex}
+\input{sections/reconciliation.tex}
+\input{sections/sources.tex}
+\part{Governed RAD semantic detail}
+\input{sections/rad-detail.tex}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index of architectural names}
+\renewcommand{\indexname}{Index of architectural names}
+\printindex
+\end{document}

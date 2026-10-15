@@ -1,0 +1,2880 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{v0.3 concept reconciliation}\label{model:reconciliation}
+All 942 primary concepts and 277 captured behaviour occurrences were inspected against the v0.1 substrate and current responsibility boundaries. The machine-readable reconciliation retains an individual disposition, exact source line, target identities and rationale for each. Old working IDs do not become aliases, and generated pattern repetition does not create Canonical responsibility.
+
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.8\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Disposition} & \textbf{Concept count}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Disposition} & \textbf{Concept count}\\\hline\endhead
+\hline\endfoot
+Retained Canonical & 340\\\hline
+Retained Proposed & 5\\\hline
+Reclassified scope & 1\\\hline
+Retained Candidate & 1\\\hline
+Reconciled to Canonical & 1\\\hline
+Not retained as a separate responsibility & 2\\\hline
+Reclassified participation & 1\\\hline
+Reclassified concern & 2\\\hline
+Reclassified enablement & 10\\\hline
+Reconciled concern & 1\\\hline
+Reclassified change concern & 1\\\hline
+Rejected implementation-shaped grouping & 1\\\hline
+Retained external/roadmap concern & 1\\\hline
+Reclassified integration concern & 1\\\hline
+Redesigned grouping & 5\\\hline
+Retained Canonical responsibility & 120\\\hline
+Subsumed concern; no distinct Feature delta & 316\\\hline
+Refined / repositioned & 15\\\hline
+Retained Proposed responsibility & 21\\\hline
+Removed non-element placeholder & 4\\\hline
+Integrated reusable responsibility & 25\\\hline
+Reclassified recurrence evidence & 68\\\hline
+\end{longtable}\endgroup
+\section{Business}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.38\TableWidth}|>{\raggedright\arraybackslash}p{0.22\TableWidth}|>{\raggedright\arraybackslash}p{0.4\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Prior concept / source line} & \textbf{Decision — Proposed} & \textbf{Current responsibility / reference}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Prior concept / source line} & \textbf{Decision — Proposed} & \textbf{Current responsibility / reference}\\\hline\endhead
+\hline\endfoot
+\texttt{\seqsplit{BC-E85E18F4}}
+
+Individual Care Delivery (line 65) & Retained Canonical & \nameref{cap:bc-individual-care-delivery}\\\hline
+\texttt{\seqsplit{BC-AA0D9B50}}
+
+Individual Health Assessment (line 82) & Retained Canonical & \nameref{cap:bc-individual-health-assessment}\\\hline
+\texttt{\seqsplit{BC-6956B3FA}}
+
+Health History Assessment (line 94) & Retained Canonical & \nameref{cap:bc-health-history-assessment}\\\hline
+\texttt{\seqsplit{BC-69CE36B4}}
+
+Clinical Examination (line 105) & Retained Canonical & \nameref{cap:bc-clinical-examination}\\\hline
+\texttt{\seqsplit{BC-3F88F485}}
+
+Health Status Measurement (line 116) & Retained Canonical & \nameref{cap:bc-health-status-measurement}\\\hline
+\texttt{\seqsplit{BC-201A989E}}
+
+Clinical Determination (line 127) & Retained Canonical & \nameref{cap:bc-clinical-determination}\\\hline
+\texttt{\seqsplit{BC-20CA91E6}}
+
+Clinical Finding Interpretation (line 139) & Retained Proposed & \nameref{cap:bc-clinical-finding-interpretation}\\\hline
+\texttt{\seqsplit{BC-A1AC4A2A}}
+
+Diagnosis \& Problem Determination (line 150) & Retained Proposed & \nameref{cap:bc-diagnosis-problem-determination}\\\hline
+\texttt{\seqsplit{BC-75E01B0D}}
+
+Health Risk \& Prognostic Determination (line 161) & Retained Proposed & \nameref{cap:bc-health-risk-prognostic-determination}\\\hline
+\texttt{\seqsplit{BC-F657B57A}}
+
+Individual Care Planning (line 172) & Retained Canonical & \nameref{cap:bc-individual-care-planning}\\\hline
+\texttt{\seqsplit{BC-E8BBA49D}}
+
+Care Goal Definition (line 183) & Retained Proposed & \nameref{cap:bc-care-goal-definition}\\\hline
+\texttt{\seqsplit{BC-3626AD34}}
+
+Care Response Planning (line 194) & Retained Proposed & \nameref{cap:bc-care-response-planning}\\\hline
+\texttt{\seqsplit{BC-3CBC77C1}}
+
+Clinical Intervention (line 205) & Retained Canonical & \nameref{cap:bc-clinical-intervention}\\\hline
+\texttt{\seqsplit{BC-DD466A23}}
+
+Individual Health Monitoring (line 217) & Retained Canonical & \nameref{cap:bc-individual-health-monitoring}\\\hline
+\texttt{\seqsplit{BC-7E2744D3}}
+
+Health State Monitoring (line 228) & Retained Canonical & \nameref{cap:bc-health-state-monitoring}\\\hline
+\texttt{\seqsplit{BC-02C5DBC7}}
+
+Care Response Monitoring (line 239) & Retained Canonical & \nameref{cap:bc-care-response-monitoring}\\\hline
+\texttt{\seqsplit{BC-391EC3B9}}
+
+Individual Care Review (line 250) & Retained Canonical & \nameref{cap:bc-individual-care-review}\\\hline
+\texttt{\seqsplit{BC-A52E0A33}}
+
+Care Appropriateness Review (line 261) & Retained Canonical & \nameref{cap:bc-care-appropriateness-review}\\\hline
+\texttt{\seqsplit{BC-31953E77}}
+
+Care Effectiveness Review (line 272) & Retained Canonical & \nameref{cap:bc-care-effectiveness-review}\\\hline
+\texttt{\seqsplit{BC-2C769A48}}
+
+Care Access \& Coordination (line 283) & Retained Canonical & \nameref{cap:bc-care-access-coordination}\\\hline
+\texttt{\seqsplit{BC-FA41A886}}
+
+Care Access Management (line 298) & Retained Canonical & \nameref{cap:bc-care-access-management}\\\hline
+\texttt{\seqsplit{BC-267F1D1B}}
+
+Care Intake Management (line 310) & Retained Canonical & \nameref{cap:bc-care-intake-management}\\\hline
+\texttt{\seqsplit{BC-EA6B7EB9}}
+
+Care Referral Management (line 321) & Retained Canonical & \nameref{cap:bc-care-referral-management}\\\hline
+\texttt{\seqsplit{BC-4F461126}}
+
+Care Eligibility Determination (line 332) & Retained Canonical & \nameref{cap:bc-care-eligibility-determination}\\\hline
+\texttt{\seqsplit{BC-FE20C7C9}}
+
+Care Scheduling \& Capacity Management (line 343) & Retained Canonical & \nameref{cap:bc-care-scheduling-capacity-management}\\\hline
+\texttt{\seqsplit{BC-9000E197}}
+
+Care Appointment Management (line 358) & Retained Canonical & \nameref{cap:bc-care-appointment-management}\\\hline
+\texttt{\seqsplit{BC-A1F26127}}
+
+Care-Place Allocation (line 369) & Retained Canonical & \nameref{cap:bc-care-place-allocation}\\\hline
+\texttt{\seqsplit{BC-3284993B}}
+
+Care-Place Readiness Management (line 380) & Retained Canonical & \nameref{cap:bc-care-place-readiness-management}\\\hline
+\texttt{\seqsplit{BC-B53CD721}}
+
+Care Resource Deployment (line 391) & Retained Canonical & \nameref{cap:bc-care-resource-deployment}\\\hline
+\texttt{\seqsplit{BC-E24E4ABE}}
+
+Operational Care Flow Coordination (line 402) & Retained Canonical & \nameref{cap:bc-operational-care-flow-coordination}\\\hline
+\texttt{\seqsplit{BC-C2D4C33E}}
+
+Operational Care Capacity Management (line 413) & Retained Canonical & \nameref{cap:bc-operational-care-capacity-management}\\\hline
+\texttt{\seqsplit{BC-59CFFB65}}
+
+Care Coordination \& Transition (line 424) & Retained Canonical & \nameref{cap:bc-care-coordination-transition}\\\hline
+\texttt{\seqsplit{BC-9C9BD5F2}}
+
+Care-Team Coordination (line 436) & Retained Canonical & \nameref{cap:bc-care-team-coordination}\\\hline
+\texttt{\seqsplit{BC-AA12612C}}
+
+Care Responsibility Transition (line 447) & Retained Canonical & \nameref{cap:bc-care-responsibility-transition}\\\hline
+\texttt{\seqsplit{BC-D9B48397}}
+
+Care Discharge Coordination (line 458) & Retained Canonical & \nameref{cap:bc-care-discharge-coordination}\\\hline
+\texttt{\seqsplit{BC-C313E0F4}}
+
+Care Support Logistics Management (line 469) & Retained Canonical & \nameref{cap:bc-care-support-logistics-management}\\\hline
+\texttt{\seqsplit{BC-CE1271E6}}
+
+Patient Movement Coordination (line 481) & Retained Canonical & \nameref{cap:bc-patient-movement-coordination}\\\hline
+\texttt{\seqsplit{BC-8924ED80}}
+
+Clinical Material Logistics Coordination (line 492) & Retained Canonical & \nameref{cap:bc-clinical-material-logistics-coordination}\\\hline
+\texttt{\seqsplit{BC-E0FD8D9D}}
+
+Care Support Work Coordination (line 503) & Retained Canonical & \nameref{cap:bc-care-support-work-coordination}\\\hline
+\texttt{\seqsplit{BC-3E1A6DCA}}
+
+Health Rights, Advocacy \& Participation (line 514) & Retained Canonical & \nameref{cap:bc-health-rights-advocacy-participation}\\\hline
+\texttt{\seqsplit{BC-C705C8AD}}
+
+Diagnostic, Therapeutic \& Clinical Support Services (line 526) & Retained Canonical & \nameref{cap:bc-diagnostic-therapeutic-clinical-support-services}\\\hline
+\texttt{\seqsplit{BC-E0BE8A8A}}
+
+Medication \& Pharmacy Services (line 539) & Retained Canonical & \nameref{cap:bc-medication-pharmacy-services}\\\hline
+\texttt{\seqsplit{BC-4DA49AEE}}
+
+Prescription Medication Dispensing (line 552) & Retained Canonical & \nameref{cap:bc-prescription-medication-dispensing}\\\hline
+\texttt{\seqsplit{BC-C67D1E73}}
+
+Non-Prescription Medication Provision (line 563) & Retained Canonical & \nameref{cap:bc-non-prescription-medication-provision}\\\hline
+\texttt{\seqsplit{BC-4E4274D4}}
+
+Medication Advice (line 574) & Retained Canonical & \nameref{cap:bc-medication-advice}\\\hline
+\texttt{\seqsplit{BC-F8E65CD9}}
+
+Medication Dose Administration Aid Provision (line 585) & Retained Canonical & \nameref{cap:bc-medication-dose-administration-aid-provision}\\\hline
+\texttt{\seqsplit{BC-7B292540}}
+
+Diagnostic Support Provision (line 598) & Retained Canonical & \nameref{cap:bc-diagnostic-support-provision}\\\hline
+\texttt{\seqsplit{BC-D7778EF0}}
+
+Diagnostic Service Appointment Management (line 614) & Retained Canonical & \nameref{cap:bc-diagnostic-service-appointment-management}\\\hline
+\texttt{\seqsplit{BC-20131F3B}}
+
+Diagnostic Service Delivery (line 625) & Retained Canonical & \nameref{cap:bc-diagnostic-service-delivery}\\\hline
+\texttt{\seqsplit{BC-D29EA624}}
+
+Diagnostic Specimen Management (line 636) & Retained Canonical & \nameref{cap:bc-diagnostic-specimen-management}\\\hline
+\texttt{\seqsplit{BC-47BE7761}}
+
+Diagnostic Data Management (line 647) & Retained Canonical & \nameref{cap:bc-diagnostic-data-management}\\\hline
+\texttt{\seqsplit{BC-30AB08BB}}
+
+Diagnostic Interpretation (line 658) & Retained Canonical & \nameref{cap:bc-diagnostic-interpretation}\\\hline
+\texttt{\seqsplit{BC-E3C0477C}}
+
+Diagnostic Report Management (line 669) & Retained Canonical & \nameref{cap:bc-diagnostic-report-management}\\\hline
+\texttt{\seqsplit{BC-E001550A}}
+
+Diagnostic Report Distribution (line 680) & Retained Canonical & \nameref{cap:bc-diagnostic-report-distribution}\\\hline
+\texttt{\seqsplit{BC-C82D3CC6}}
+
+Health Products \& Clinical Technology (line 691) & Retained Canonical & \nameref{cap:bc-health-products-clinical-technology}\\\hline
+\texttt{\seqsplit{BC-D7FFDEDC}}
+
+Health Product Management (line 704) & Reclassified scope & \nameref{cap:bec-health-product-administration}\\\hline
+\texttt{\seqsplit{BC-377FEB37}}
+
+Clinical Technology Management (line 714) & Retained Canonical & \nameref{cap:bc-clinical-technology-management}\\\hline
+\texttt{\seqsplit{BC-097846F2}}
+
+Clinical Device Inventory Management (line 731) & Retained Canonical & \nameref{cap:bc-clinical-device-inventory-management}\\\hline
+\texttt{\seqsplit{BC-E511B2DB}}
+
+Clinical Device Feature \& Release Management (line 742) & Retained Canonical & \nameref{cap:bc-clinical-device-feature-release-management}\\\hline
+\texttt{\seqsplit{BC-E2E1C257}}
+
+Clinical Device Loan \& Deployment Management (line 753) & Retained Canonical & \nameref{cap:bc-clinical-device-loan-deployment-management}\\\hline
+\texttt{\seqsplit{BC-BBE81736}}
+
+Clinical Device Utilisation Support (line 764) & Retained Canonical & \nameref{cap:bc-clinical-device-utilisation-support}\\\hline
+\texttt{\seqsplit{BC-33CA15F2}}
+
+Clinical Device Integration Provision (line 775) & Retained Canonical & \nameref{cap:bc-clinical-device-integration-provision}\\\hline
+\texttt{\seqsplit{BC-4F2A8587}}
+
+Clinical Device Data Integration (line 786) & Retained Canonical & \nameref{cap:bc-clinical-device-data-integration}\\\hline
+\texttt{\seqsplit{BC-6CB8AC63}}
+
+Clinical Device Maintenance Management (line 797) & Retained Candidate & \nameref{cap:bc-clinical-device-maintenance-management}\\\hline
+\texttt{\seqsplit{BC-1BFF3F5B}}
+
+Clinical Device Lifecycle Management (line 808) & Retained Canonical & \nameref{cap:bc-clinical-device-lifecycle-management}\\\hline
+\texttt{\seqsplit{BC-E95C383F}}
+
+Clinical Quality, Safety \& Improvement (line 821) & Retained Canonical & \nameref{cap:bc-clinical-quality-safety-improvement}\\\hline
+\texttt{\seqsplit{BC-5B2A0E55}}
+
+Clinical Safety Management (line 834) & Retained Canonical & \nameref{cap:bc-clinical-safety-management}\\\hline
+\texttt{\seqsplit{BC-7E3FBC64}}
+
+Clinical Risk Identification (line 846) & Retained Canonical & \nameref{cap:bc-clinical-risk-identification}\\\hline
+\texttt{\seqsplit{BC-5121C6F1}}
+
+Clinical Risk Mitigation Management (line 857) & Retained Canonical & \nameref{cap:bc-clinical-risk-mitigation-management}\\\hline
+\texttt{\seqsplit{BC-72DCF354}}
+
+Clinical Risk Response Management (line 868) & Retained Canonical & \nameref{cap:bc-clinical-risk-response-management}\\\hline
+\texttt{\seqsplit{BC-077229CB}}
+
+Clinical Quality Management (line 879) & Retained Canonical & \nameref{cap:bc-clinical-quality-management}\\\hline
+\texttt{\seqsplit{BC-807007A1}}
+
+Clinical Quality Criteria Management (line 892) & Retained Canonical & \nameref{cap:bc-clinical-quality-criteria-management}\\\hline
+\texttt{\seqsplit{BC-FC14D2E2}}
+
+Clinical Quality Evidence Management (line 903) & Retained Canonical & \nameref{cap:bc-clinical-quality-evidence-management}\\\hline
+\texttt{\seqsplit{BC-6884DABF}}
+
+Clinical Quality Review \& Assessment Management (line 914) & Retained Canonical & \nameref{cap:bc-clinical-quality-review-assessment-management}\\\hline
+\texttt{\seqsplit{BC-6EEB86B4}}
+
+Clinical Quality Reporting (line 925) & Retained Canonical & \nameref{cap:bc-clinical-quality-reporting}\\\hline
+\texttt{\seqsplit{BC-31C8DC2C}}
+
+Community Health \& Wellbeing (line 936) & Retained Canonical & \nameref{cap:bc-community-health-wellbeing}\\\hline
+\texttt{\seqsplit{BC-80DA636C}}
+
+Preventative Health (line 948) & Retained Canonical & \nameref{cap:bc-preventative-health}\\\hline
+\texttt{\seqsplit{BC-1FAD6263}}
+
+Preventative Health Problem Identification (line 963) & Retained Canonical & \nameref{cap:bc-preventative-health-problem-identification}\\\hline
+\texttt{\seqsplit{BC-B3BDD9A1}}
+
+Preventative Health Programme Management (line 974) & Retained Canonical & \nameref{cap:bc-preventative-health-programme-management}\\\hline
+\texttt{\seqsplit{BC-57B54EBE}}
+
+Preventative Health Education Services (line 985) & Retained Canonical & \nameref{cap:bc-preventative-health-education-services}\\\hline
+\texttt{\seqsplit{BC-5202AEF0}}
+
+Preventative Health Programme Monitoring (line 996) & Retained Canonical & \nameref{cap:bc-preventative-health-programme-monitoring}\\\hline
+\texttt{\seqsplit{BC-E55D2726}}
+
+Preventative Health Reporting (line 1007) & Retained Canonical & \nameref{cap:bc-preventative-health-reporting}\\\hline
+\texttt{\seqsplit{BC-1800BCD9}}
+
+Preventative Health Cohort Management (line 1018) & Retained Canonical & \nameref{cap:bc-preventative-health-cohort-management}\\\hline
+\texttt{\seqsplit{BC-28CCEE27}}
+
+Population Health \& Health-System Planning (line 1029) & Retained Canonical & \nameref{cap:bc-population-health-health-system-planning}\\\hline
+\texttt{\seqsplit{BC-A6F4CA49}}
+
+Population Health Surveillance (line 1042) & Retained Canonical & \nameref{cap:bc-population-health-surveillance}\\\hline
+\texttt{\seqsplit{BC-F1D5D26C}}
+
+Population Health Longitudinal Assessment (line 1056) & Retained Canonical & \nameref{cap:bc-population-health-longitudinal-assessment}\\\hline
+\texttt{\seqsplit{BC-AFC31F01}}
+
+Population Health Surveillance Management (line 1067) & Retained Canonical & \nameref{cap:bc-population-health-surveillance-management}\\\hline
+\texttt{\seqsplit{BC-BCA30D47}}
+
+Population Health Event Identification (line 1078) & Retained Canonical & \nameref{cap:bc-population-health-event-identification}\\\hline
+\texttt{\seqsplit{BC-5EAA6955}}
+
+Notifiable Health Event Management (line 1089) & Retained Canonical & \nameref{cap:bc-notifiable-health-event-management}\\\hline
+\texttt{\seqsplit{BC-D8C15299}}
+
+Population Health Reporting (line 1100) & Retained Canonical & \nameref{cap:bc-population-health-reporting}\\\hline
+\texttt{\seqsplit{BC-40B6A2C7}}
+
+Health-System Planning (line 1111) & Retained Canonical & \nameref{cap:bc-health-system-planning}\\\hline
+\texttt{\seqsplit{BC-770F60DC}}
+
+Health Service Demand Assessment (line 1123) & Retained Canonical & \nameref{cap:bc-health-service-demand-assessment}\\\hline
+\texttt{\seqsplit{BC-3742724C}}
+
+Health Service Capacity Planning (line 1134) & Retained Canonical & \nameref{cap:bc-health-service-capacity-planning}\\\hline
+\texttt{\seqsplit{BC-33A5DE96}}
+
+Health Service Distribution Planning (line 1145) & Retained Canonical & \nameref{cap:bc-health-service-distribution-planning}\\\hline
+\texttt{\seqsplit{BC-D37DBD07}}
+
+Health Information \& Knowledge Management (line 1156) & Retained Canonical & \nameref{cap:bc-health-information-knowledge-management}\\\hline
+\texttt{\seqsplit{BC-E21B0F21}}
+
+Health Information Management (line 1169) & Retained Canonical & \nameref{cap:bc-health-information-management}\\\hline
+\texttt{\seqsplit{BC-05A55E6B}}
+
+Health Information Data Management (line 1185) & Retained Canonical & \nameref{cap:bc-health-information-data-management}\\\hline
+\texttt{\seqsplit{BC-822903B0}}
+
+Health Information Structure Management (line 1196) & Retained Canonical & \nameref{cap:bc-health-information-structure-management}\\\hline
+\texttt{\seqsplit{BC-65531F2E}}
+
+Health Information Lifecycle Management (line 1207) & Retained Canonical & \nameref{cap:bc-health-information-lifecycle-management}\\\hline
+\texttt{\seqsplit{BC-2C668F82}}
+
+Health Information Catalogue and Index Management (line 1218) & Retained Canonical & \nameref{cap:bc-health-information-catalogue-and-index-management}\\\hline
+\texttt{\seqsplit{BC-AD69E2A8}}
+
+Health Information Compartmentalisation (line 1229) & Retained Canonical & \nameref{cap:bc-health-information-compartmentalisation}\\\hline
+\texttt{\seqsplit{BC-39F5CC28}}
+
+Health Information Data Correlation (line 1240) & Retained Canonical & \nameref{cap:bc-health-information-data-correlation}\\\hline
+\texttt{\seqsplit{BC-C6E88499}}
+
+Health Information Data Retrieval (line 1251) & Retained Canonical & \nameref{cap:bc-health-information-data-retrieval}\\\hline
+\texttt{\seqsplit{BC-55C02BD4}}
+
+Clinical Knowledge Management (line 1262) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-management}\\\hline
+\texttt{\seqsplit{BC-16799A80}}
+
+Clinical Knowledge Context Identification (line 1277) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-context-identification}\\\hline
+\texttt{\seqsplit{BC-D45CD0AA}}
+
+Clinical Knowledge Context Extraction (line 1288) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-context-extraction}\\\hline
+\texttt{\seqsplit{BC-385FCDAE}}
+
+Clinical Knowledge Information Formulation (line 1299) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-information-formulation}\\\hline
+\texttt{\seqsplit{BC-AD456750}}
+
+Clinical Knowledge Concept Association (line 1310) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-concept-association}\\\hline
+\texttt{\seqsplit{BC-88D82704}}
+
+Clinical Knowledge Review \& Approval Management (line 1321) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-review-approval-management}\\\hline
+\texttt{\seqsplit{BC-E57A9C37}}
+
+Clinical Knowledge Publication \& Sharing (line 1332) & Retained Canonical & \nameref{cap:bc-clinical-knowledge-publication-sharing}\\\hline
+\texttt{\seqsplit{BC-014363F4}}
+
+Standards, Semantics \& Reference Governance (line 1343) & Retained Canonical & \nameref{cap:bc-standards-semantics-reference-governance}\\\hline
+\texttt{\seqsplit{BC-C01C01B9}}
+
+Health Information Standards Governance (line 1356) & Retained Canonical & \nameref{cap:bc-health-information-standards-governance}\\\hline
+\texttt{\seqsplit{BC-C9D7E7C2}}
+
+Information Model Governance (line 1376) & Reconciled to Canonical & \nameref{cap:bc-information-model-governance-oversight}\\\hline
+\texttt{\seqsplit{BC-F55F16A6}}
+
+Information  Model Discovery (line 1387) & Retained Canonical & \nameref{cap:bc-information-model-discovery}\\\hline
+\texttt{\seqsplit{BC-B27B41ED}}
+
+Information Model Adoption (line 1398) & Retained Canonical & \nameref{cap:bc-information-model-adoption}\\\hline
+\texttt{\seqsplit{BC-C5E3E979}}
+
+Information Model Education (line 1409) & Retained Canonical & \nameref{cap:bc-information-model-education}\\\hline
+\texttt{\seqsplit{BC-FF2BF6BE}}
+
+Information Model Compliance (line 1420) & Retained Canonical & \nameref{cap:bc-information-model-compliance}\\\hline
+\texttt{\seqsplit{BC-4486449F}}
+
+Standards Discovery (line 1431) & Not retained as a separate responsibility & \nameref{cap:bc-health-information-standards-governance}\\\hline
+\texttt{\seqsplit{BC-98A00C71}}
+
+Standards Impact Identification (line 1442) & Retained Canonical & \nameref{cap:bc-standards-impact-identification}\\\hline
+\texttt{\seqsplit{BC-CB858814}}
+
+Standards Adoption (line 1453) & Retained Canonical & \nameref{cap:bc-standards-adoption}\\\hline
+\texttt{\seqsplit{BC-CB56B8BC}}
+
+Standards Education (line 1464) & Not retained as a separate responsibility & \nameref{cap:bc-health-information-standards-governance}\\\hline
+\texttt{\seqsplit{BC-BFC63CC1}}
+
+Standards Bodies Engagement (line 1475) & Reclassified participation & \nameref{cap:bc-health-information-standards-governance}\\\hline
+\texttt{\seqsplit{BC-E515BE41}}
+
+Standards Compliance (line 1486) & Reclassified concern & \nameref{cap:bc-health-information-standards-governance}\\\hline
+\texttt{\seqsplit{BC-F9F83F32}}
+
+Clinical Semantics Governance (line 1497) & Retained Canonical & \nameref{cap:bc-clinical-semantics-governance}\\\hline
+\texttt{\seqsplit{BC-9D2AC8A5}}
+
+Terminology Governance (line 1512) & Retained Canonical & \nameref{cap:bc-terminology-governance}\\\hline
+\texttt{\seqsplit{BC-9DBB18D4}}
+
+Classification Governance (line 1523) & Retained Canonical & \nameref{cap:bc-classification-governance}\\\hline
+\texttt{\seqsplit{BC-05135118}}
+
+Semantic Mapping Governance (line 1534) & Retained Canonical & \nameref{cap:bc-semantic-mapping-governance}\\\hline
+\texttt{\seqsplit{BC-18835F13}}
+
+Terminology Utilisation Oversight (line 1545) & Retained Canonical & \nameref{cap:bc-terminology-utilisation-oversight}\\\hline
+\texttt{\seqsplit{BC-D4198837}}
+
+Terminology Localisation (line 1556) & Retained Canonical & \nameref{cap:bc-terminology-localisation}\\\hline
+\texttt{\seqsplit{BC-A6FDE957}}
+
+Classification Utilisation Oversight (line 1567) & Retained Canonical & \nameref{cap:bc-classification-utilisation-oversight}\\\hline
+\texttt{\seqsplit{BC-D0174B04}}
+
+Connected Health Services (line 1578) & Retained Canonical & \nameref{cap:bc-connected-health-services}\\\hline
+\texttt{\seqsplit{BC-1A2C0473}}
+
+Health Information Exchange (line 1592) & Retained Canonical & \nameref{cap:bc-health-information-exchange}\\\hline
+\texttt{\seqsplit{BC-25F9B730}}
+
+Standards-Based Interoperability Exploration (line 1608) & Reclassified concern & \nameref{cap:bc-health-information-exchange}\\\hline
+\texttt{\seqsplit{BC-5CA9556E}}
+
+Standards-Based Interoperability Support (line 1619) & Reclassified enablement & \nameref{cap:bec-health-information-exchange}\\\hline
+\texttt{\seqsplit{BC-9D0C5F85}}
+
+Standards-Based Interoperability Publication (line 1630) & Reclassified enablement & \nameref{cap:bec-health-information-communication}\\\hline
+\texttt{\seqsplit{BC-EA4804CA}}
+
+Standards-Based Interoperability Client-Support (line 1641) & Reclassified enablement & \nameref{cap:bec-health-information-exchange}\\\hline
+\texttt{\seqsplit{BC-EAE75CE5}}
+
+Health Information Sharing Framework Oversight (line 1652) & Reconciled concern & \nameref{cap:bc-health-information-sharing-programme-management}\\\hline
+\texttt{\seqsplit{BC-F6DF2559}}
+
+Health Information Sharing Client-Support (line 1663) & Reclassified enablement & \nameref{cap:bec-health-information-exchange}\\\hline
+\texttt{\seqsplit{BC-93BAE720}}
+
+Health Information Sharing Release Management (line 1674) & Reclassified change concern & \nameref{cap:bc-health-information-sharing-programme-management}\\\hline
+\texttt{\seqsplit{BC-5FD7002B}}
+
+Digital Communication Channel (line 1685) & Retained Canonical & \nameref{cap:bc-digital-communication-channel}\\\hline
+\texttt{\seqsplit{BC-1FA8828A}}
+
+Clinical Message Conveyance (line 1697) & Reclassified enablement & \nameref{cap:bec-clinical-communication-administration}\\\hline
+\texttt{\seqsplit{BC-BAEB9E26}}
+
+Health Event Notification (line 1708) & Reclassified enablement & \nameref{cap:bec-health-information-exchange}; \nameref{cap:bec-population-health-notification-enablement}\\\hline
+\texttt{\seqsplit{BC-B4211FE9}}
+
+Health Service Collaboration (line 1719) & Reclassified enablement & \nameref{cap:bec-clinical-collaboration}; \nameref{cap:bec-general-collaboration}\\\hline
+\texttt{\seqsplit{BC-1079B553}}
+
+Domain Health Information Services (line 1730) & Rejected implementation-shaped grouping & \nameref{cap:bec-healthcare-entity-information-enablement}; \nameref{cap:bec-governed-health-information-enablement}\\\hline
+\texttt{\seqsplit{BC-34251AB8}}
+
+Provider Directory Services (line 1744) & Reclassified enablement & \nameref{cap:bec-provider-administration}; \nameref{feature:provider-directory-discovery-resolution}\\\hline
+\texttt{\seqsplit{BC-667FBAA5}}
+
+Enterprise Master Patient Index Services (line 1755) & Retained external/roadmap concern & \nameref{cap:bec-person-identity}\\\hline
+\texttt{\seqsplit{BC-E3F3D922}}
+
+Immunisation Register Services (line 1766) & Reclassified integration concern & \nameref{cap:bec-preventive-care}\\\hline
+\texttt{\seqsplit{BC-EDB9A9D1}}
+
+Longitudinal Health Record Services (line 1777) & Reclassified enablement & \nameref{cap:bec-patient-clinical-record}\\\hline
+\texttt{\seqsplit{BC-A60C3D92}}
+
+Collaboration Services (line 1788) & Reclassified enablement & \nameref{cap:bec-clinical-collaboration}; \nameref{cap:bec-general-collaboration}\\\hline
+\texttt{\seqsplit{BC-3525B6FE}}
+
+Security, Privacy \& Digital Trust (line 1799) & Retained Canonical & \nameref{cap:bc-security-privacy-digital-trust}\\\hline
+\texttt{\seqsplit{BC-0D570829}}
+
+Digital Identity \& Access Governance (line 1813) & Retained Canonical & \nameref{cap:bc-digital-identity-access-governance}\\\hline
+\texttt{\seqsplit{BC-51F3C14E}}
+
+Identity Assurance (line 1830) & Retained Canonical & \nameref{cap:bc-identity-assurance}\\\hline
+\texttt{\seqsplit{BC-E2872CBE}}
+
+Identity Modelling \& Interoperability (line 1841) & Retained Canonical & \nameref{cap:bc-identity-modelling-interoperability}\\\hline
+\texttt{\seqsplit{BC-D6F6BD86}}
+
+Identity Qualification Control (line 1852) & Retained Canonical & \nameref{cap:bc-identity-qualification-control}\\\hline
+\texttt{\seqsplit{BC-2C37A4F9}}
+
+Identity Identification \& Authentication (line 1863) & Retained Canonical & \nameref{cap:bc-identity-identification-authentication}\\\hline
+\texttt{\seqsplit{BC-92E77AA5}}
+
+Access Control Context Management (line 1874) & Retained Canonical & \nameref{cap:bc-access-control-context-management}\\\hline
+\texttt{\seqsplit{BC-0E134F87}}
+
+Access Control Assurance \& Reporting (line 1885) & Retained Canonical & \nameref{cap:bc-access-control-assurance-reporting}\\\hline
+\texttt{\seqsplit{BC-3A9DB312}}
+
+Access Control Collaboration (line 1896) & Retained Canonical & \nameref{cap:bc-access-control-collaboration}\\\hline
+\texttt{\seqsplit{BC-A78294CD}}
+
+Access Control Enforcement (line 1907) & Retained Canonical & \nameref{cap:bc-access-control-enforcement}\\\hline
+\texttt{\seqsplit{BC-448EE064}}
+
+Health Information Protection (line 1918) & Retained Canonical & \nameref{cap:bc-health-information-protection}\\\hline
+\texttt{\seqsplit{BC-F8DE8E42}}
+
+Health Privacy Safeguard Management (line 1932) & Retained Canonical & \nameref{cap:bc-health-privacy-safeguard-management}\\\hline
+\texttt{\seqsplit{BC-CBD883DA}}
+
+Health Information Safeguarding (line 1943) & Retained Canonical & \nameref{cap:bc-health-information-safeguarding}\\\hline
+\texttt{\seqsplit{BC-88AD2C7F}}
+
+Health Information Access Monitoring (line 1954) & Retained Canonical & \nameref{cap:bc-health-information-access-monitoring}\\\hline
+\texttt{\seqsplit{BC-69A112EB}}
+
+Health Information Compartment Assurance (line 1965) & Retained Canonical & \nameref{cap:bc-health-information-compartment-assurance}\\\hline
+\texttt{\seqsplit{BC-C163719D}}
+
+Health Information Classification Assurance (line 1976) & Retained Canonical & \nameref{cap:bc-health-information-classification-assurance}\\\hline
+\texttt{\seqsplit{BC-DB00A738}}
+
+Digital Accountability \& Trust (line 1987) & Retained Canonical & \nameref{cap:bc-digital-accountability-trust}\\\hline
+\texttt{\seqsplit{BC-B2FBA48B}}
+
+Governed Activity Attribution (line 1998) & Retained Canonical & \nameref{cap:bc-governed-activity-attribution}\\\hline
+\texttt{\seqsplit{BC-C26E8578}}
+
+Security \& Information-Use Accountability (line 2009) & Retained Canonical & \nameref{cap:bc-security-information-use-accountability}\\\hline
+\texttt{\seqsplit{BC-C5ED32F7}}
+
+Health Research \& Innovation (line 2020) & Retained Canonical & \nameref{cap:bc-health-research-innovation}\\\hline
+\texttt{\seqsplit{BC-5FD1C13A}}
+
+Research Information Support (line 2033) & Retained Canonical & \nameref{cap:bc-research-information-support}\\\hline
+\texttt{\seqsplit{BC-3C3F6346}}
+
+Governed Research Information Provision (line 2043) & Retained Canonical & \nameref{cap:bc-governed-research-information-provision}\\\hline
+\texttt{\seqsplit{BC-5B3EE7BD}}
+
+Health Innovation (line 2054) & Retained Canonical & \nameref{cap:bc-health-innovation}\\\hline
+\texttt{\seqsplit{BC-E804A440}}
+
+Health Innovation Evaluation (line 2064) & Retained Canonical & \nameref{cap:bc-health-innovation-evaluation}\\\hline
+\texttt{\seqsplit{BC-A7B13259}}
+
+Health Service Direction \& Stewardship (line 2075) & Retained Canonical & \nameref{cap:bc-health-service-direction-stewardship}\\\hline
+\texttt{\seqsplit{BC-25BC222B}}
+
+Health Service Modelling (line 2088) & Retained Canonical & \nameref{cap:bc-health-service-modelling}\\\hline
+\texttt{\seqsplit{BC-DF112315}}
+
+Health Service Need Identification (line 2101) & Retained Canonical & \nameref{cap:bc-health-service-need-identification}\\\hline
+\texttt{\seqsplit{BC-A7A90EE0}}
+
+Health Service Capability Identification (line 2112) & Retained Canonical & \nameref{cap:bc-health-service-capability-identification}\\\hline
+\texttt{\seqsplit{BC-EB94288C}}
+
+Health Service Implementation Support (line 2123) & Retained Canonical & \nameref{cap:bc-health-service-implementation-support}\\\hline
+\texttt{\seqsplit{BC-B1242610}}
+
+Health Service Continuous Improvement (line 2134) & Retained Canonical & \nameref{cap:bc-health-service-continuous-improvement}\\\hline
+\texttt{\seqsplit{BC-8229ABFD}}
+
+Health Service Alignment (line 2145) & Retained Canonical & \nameref{cap:bc-health-service-alignment}\\\hline
+\texttt{\seqsplit{BC-60910383}}
+
+Health Service Co-Dependency Management (line 2158) & Retained Canonical & \nameref{cap:bc-health-service-co-dependency-management}\\\hline
+\texttt{\seqsplit{BC-AC53A525}}
+
+Health Service Resource Identification (line 2169) & Retained Canonical & \nameref{cap:bc-health-service-resource-identification}\\\hline
+\texttt{\seqsplit{BC-93FDB4F7}}
+
+Health Service Financial Management (line 2180) & Retained Canonical & \nameref{cap:bc-health-service-financial-management}\\\hline
+\texttt{\seqsplit{BC-EF0176F3}}
+
+Health Service Implementation Planning (line 2191) & Retained Canonical & \nameref{cap:bc-health-service-implementation-planning}\\\hline
+\texttt{\seqsplit{BC-F02F310B}}
+
+Workforce \& Organisational Capability (line 2202) & Retained Canonical & \nameref{cap:bc-workforce-organisational-capability}\\\hline
+\texttt{\seqsplit{BC-B7DE9919}}
+
+Health Workforce Management (line 2215) & Retained Canonical & \nameref{cap:bc-health-workforce-management}\\\hline
+\texttt{\seqsplit{BC-875377CD}}
+
+Practitioner Qualification Management (line 2227) & Retained Canonical & \nameref{cap:bc-practitioner-qualification-management}\\\hline
+\texttt{\seqsplit{BC-93AF8CF1}}
+
+Practitioner Engagement \& Privilege Management (line 2238) & Retained Canonical & \nameref{cap:bc-practitioner-engagement-privilege-management}\\\hline
+\texttt{\seqsplit{BC-DB75D205}}
+
+Workforce Service Coverage Management (line 2249) & Retained Canonical & \nameref{cap:bc-workforce-service-coverage-management}\\\hline
+\texttt{\seqsplit{BC-DC260B97}}
+
+Healthcare Organisation \& Service Structure Management (line 2260) & Retained Canonical & \nameref{cap:bc-healthcare-organisation-service-structure-management}\\\hline
+\texttt{\seqsplit{BC-A170CFA2}}
+
+Healthcare Organisation Identity \& Structure Management (line 2272) & Retained Canonical & \nameref{cap:bc-healthcare-organisation-identity-structure-management}\\\hline
+\texttt{\seqsplit{BC-65079689}}
+
+Healthcare Location Definition Management (line 2283) & Retained Canonical & \nameref{cap:bc-healthcare-location-definition-management}\\\hline
+\texttt{\seqsplit{BC-40A6EEE3}}
+
+Healthcare Service Offering Management (line 2294) & Retained Canonical & \nameref{cap:bc-healthcare-service-offering-management}\\\hline
+\texttt{\seqsplit{BC-2A4887A2}}
+
+Corporate Resources \& Enterprise Services (line 2305) & Retained Canonical & \nameref{cap:bc-corporate-resources-enterprise-services}\\\hline
+\texttt{\seqsplit{BC-3618D6D1}}
+
+Financial \& Commercial Services (line 2318) & Retained Canonical & \nameref{cap:bc-financial-commercial-services}\\\hline
+\texttt{\seqsplit{BC-924A98C9}}
+
+Clinical Activity Charging Information Provision (line 2328) & Retained Canonical & \nameref{cap:bc-clinical-activity-charging-information-provision}\\\hline
+\texttt{\seqsplit{BC-F411AF90}}
+
+Corporate Support Services (line 2339) & Retained Canonical & \nameref{cap:bc-corporate-support-services}\\\hline
+\texttt{\seqsplit{BC-FA7FBBAD}}
+
+Back-Office Services (line 2354) & Retained Canonical & \nameref{cap:bc-back-office-services}\\\hline
+\texttt{\seqsplit{BC-C8C4C54F}}
+
+Facilities Management (line 2365) & Retained Canonical & \nameref{cap:bc-facilities-management}\\\hline
+\texttt{\seqsplit{BC-EDD1575C}}
+
+IT Infrastructure Management (line 2376) & Retained Canonical & \nameref{cap:bc-it-infrastructure-management}\\\hline
+\texttt{\seqsplit{BC-08AE4743}}
+
+Communications \& Publicity (line 2387) & Retained Canonical & \nameref{cap:bc-communications-publicity}\\\hline
+\texttt{\seqsplit{BC-4406E5B2}}
+
+People Management (line 2398) & Retained Canonical & \nameref{cap:bc-people-management}\\\hline
+\texttt{\seqsplit{BC-CF3A8B92}}
+
+Operational Oversight (line 2409) & Retained Canonical & \nameref{cap:bc-operational-oversight}\\\hline
+\texttt{\seqsplit{BC-1EF62F79}}
+
+Health Service Governance (line 2420) & Retained Canonical & \nameref{cap:bc-health-service-governance}\\\hline
+\texttt{\seqsplit{BC-5998319B}}
+
+Governance Framework Management (line 2433) & Retained Canonical & \nameref{cap:bc-governance-framework-management}\\\hline
+\texttt{\seqsplit{BC-C01FF756}}
+
+Policy / Obligation Governance (line 2444) & Retained Canonical & \nameref{cap:bc-policy-obligation-governance}\\\hline
+\texttt{\seqsplit{BC-B3AE7E9A}}
+
+Authority \& Constraint Governance (line 2455) & Retained Canonical & \nameref{cap:bc-authority-constraint-governance}\\\hline
+\texttt{\seqsplit{BC-15EBFFF4}}
+
+Compliance Governance (line 2466) & Retained Canonical & \nameref{cap:bc-compliance-governance}\\\hline
+\texttt{\seqsplit{BC-9BEBD16E}}
+
+Compliance Assessment Definition (line 2477) & Retained Canonical & \nameref{cap:bc-compliance-assessment-definition}\\\hline
+\texttt{\seqsplit{BC-351A6321}}
+
+Governance Reporting \& Checkpoint Definition (line 2488) & Retained Canonical & \nameref{cap:bc-governance-reporting-checkpoint-definition}\\\hline
+\texttt{\seqsplit{BC-62520466}}
+
+Health Service Assurance (line 2499) & Retained Canonical & \nameref{cap:bc-health-service-assurance}\\\hline
+\texttt{\seqsplit{BC-A0266334}}
+
+Health Service Assurance Specification (line 2512) & Retained Canonical & \nameref{cap:bc-health-service-assurance-specification}\\\hline
+\texttt{\seqsplit{BC-BA00F585}}
+
+Assurance Approach Definition (line 2523) & Retained Canonical & \nameref{cap:bc-assurance-approach-definition}\\\hline
+\texttt{\seqsplit{BC-28F181C3}}
+
+Assurance Evaluation Criteria Governance (line 2534) & Retained Canonical & \nameref{cap:bc-assurance-evaluation-criteria-governance}\\\hline
+\texttt{\seqsplit{BC-11ACE749}}
+
+Assurance Evaluation (line 2545) & Retained Canonical & \nameref{cap:bc-assurance-evaluation}\\\hline
+\texttt{\seqsplit{BC-EF506E30}}
+
+Assurance Evidence Assessment (line 2556) & Retained Canonical & \nameref{cap:bc-assurance-evidence-assessment}\\\hline
+\texttt{\seqsplit{BC-BC9E1E00}}
+
+Assurance Conclusion Determination (line 2567) & Retained Canonical & \nameref{cap:bc-assurance-conclusion-determination}\\\hline
+\end{longtable}\endgroup
+\section{Business Enabling}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.38\TableWidth}|>{\raggedright\arraybackslash}p{0.22\TableWidth}|>{\raggedright\arraybackslash}p{0.4\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Prior concept / source line} & \textbf{Decision — Proposed} & \textbf{Current responsibility / reference}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Prior concept / source line} & \textbf{Decision — Proposed} & \textbf{Current responsibility / reference}\\\hline\endhead
+\hline\endfoot
+\texttt{\seqsplit{BEC-F49A0D09}}
+
+Entity Information Enablement (line 2579) & Redesigned grouping & \nameref{cap:bec-healthcare-entity-information-enablement}\\\hline
+\texttt{\seqsplit{BEC-75CEC238}}
+
+Client Administration (line 2595) & Retained Canonical responsibility & \nameref{cap:bec-client-administration}\\\hline
+\texttt{\seqsplit{BEC-31E69256}}
+
+Person Identity (line 2608) & Retained Canonical responsibility & \nameref{cap:bec-person-identity}\\\hline
+\texttt{\seqsplit{BEC-1ACD822D}}
+
+Identifier Resolution (line 2628) & Retained Canonical & \nameref{feature:feat-em-01}\\\hline
+\texttt{\seqsplit{BEC-3E1D6BA5}}
+
+Cross-Authority Identifier Correlation (line 2641) & Retained Canonical & \nameref{feature:feat-em-02}\\\hline
+\texttt{\seqsplit{BEC-905C884B}}
+
+Identity Alias Association (line 2652) & Retained Canonical & \nameref{feature:feat-em-03}\\\hline
+\texttt{\seqsplit{BEC-F44A13C3}}
+
+Governed Identity Correction (line 2662) & Retained Canonical & \nameref{feature:feat-em-04}\\\hline
+\texttt{\seqsplit{BEC-60F846CB}}
+
+Identity Management (line 2674) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-person-identity}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-D5D59967}}
+
+Identity Correlation (line 2686) & Refined / repositioned & \nameref{feature:feat-em-02}\\\hline
+\texttt{\seqsplit{BEC-44123E71}}
+
+Identity Correction (line 2698) & Refined / repositioned & \nameref{feature:feat-em-04}\\\hline
+\texttt{\seqsplit{BEC-C7981054}}
+
+Relationship Management (line 2710) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-person-identity}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-07EB6044}}
+
+Identity Discovery (line 2722) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-person-identity}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-EDCE7C88}}
+
+Healthcare Subject (line 2735) & Retained Canonical responsibility & \nameref{cap:bec-healthcare-subject}\\\hline
+\texttt{\seqsplit{BEC-19B283F0}}
+
+Subject Context Binding (line 2750) & Retained Canonical & \nameref{feature:feat-em-05}\\\hline
+\texttt{\seqsplit{BEC-6B8C0FDF}}
+
+Demographic Context Governance (line 2761) & Retained Canonical & \nameref{feature:feat-em-06}\\\hline
+\texttt{\seqsplit{BEC-98ED0FC6}}
+
+Context Establishment (line 2772) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-subject}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-B3C6EFA0}}
+
+State Monitoring (line 2782) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-subject}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-7C07A1C7}}
+
+Exception Management (line 2792) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-subject}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-54EAE8CA}}
+
+Information Retrieval (line 2802) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-subject}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-2494865F}}
+
+Client Relationship (line 2813) & Retained Canonical responsibility & \nameref{cap:bec-client-relationship}\\\hline
+\texttt{\seqsplit{BEC-BD118344}}
+
+Next-of-Kin \& Guardian Association (line 2830) & Retained Canonical & \nameref{feature:feat-em-07}\\\hline
+\texttt{\seqsplit{BEC-6811FCDB}}
+
+Relationship Validity Tracking (line 2841) & Retained Canonical & \nameref{feature:feat-em-08}\\\hline
+\texttt{\seqsplit{BEC-CDB17807}}
+
+Context Establishment (line 2852) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-relationship}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-D61B3C3B}}
+
+State Monitoring (line 2862) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-relationship}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-4AACC1B3}}
+
+Exception Management (line 2872) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-relationship}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-C9ABFA6F}}
+
+Information Retrieval (line 2882) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-relationship}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-ADC0CF33}}
+
+Client Privacy (line 2893) & Retained Canonical responsibility & \nameref{cap:bec-client-privacy}\\\hline
+\texttt{\seqsplit{BEC-F41B7E86}}
+
+Consent Directive Evaluation (line 2911) & Retained Canonical & \nameref{feature:feat-em-09}\\\hline
+\texttt{\seqsplit{BEC-4D74B3D2}}
+
+Confidentiality Flag Enforcement (line 2922) & Retained Canonical & \nameref{feature:feat-em-10}\\\hline
+\texttt{\seqsplit{BEC-AA3166D7}}
+
+Criteria Management (line 2933) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-privacy}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-5A06BA3C}}
+
+Evidence Association (line 2943) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-privacy}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-EF1AF8F9}}
+
+Policy Evaluation (line 2953) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-privacy}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-7D40E369}}
+
+Decision Traceability (line 2963) & Refined / repositioned & \nameref{feature:mandatory-significant-activity-audit-capture}\\\hline
+\texttt{\seqsplit{BEC-FAF82B77}}
+
+Exception Reporting (line 2973) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-privacy}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-A4E759E2}}
+
+Provider Administration (line 2984) & Retained Canonical responsibility & \nameref{cap:bec-provider-administration}\\\hline
+\texttt{\seqsplit{BEC-5BB55046}}
+
+Practitioner (line 2997) & Retained Proposed responsibility & \nameref{cap:bec-practitioner}\\\hline
+\texttt{\seqsplit{BEC-95B0A32B}}
+
+National Practitioner Verification (line 3015) & Retained Canonical & \nameref{feature:feat-em-11}\\\hline
+\texttt{\seqsplit{BEC-7672710F}}
+
+Practitioner Profile Governance (line 3027) & Retained Canonical & \nameref{feature:feat-em-12}\\\hline
+\texttt{\seqsplit{BEC-A4CAE7D6}}
+
+Identity Management (line 3038) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-practitioner}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-C7BBD105}}
+
+Identity Correlation (line 3050) & Refined / repositioned & \nameref{feature:feat-em-02}\\\hline
+\texttt{\seqsplit{BEC-F9FA105B}}
+
+Qualification Association (line 3062) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-practitioner}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-028ABD17}}
+
+Professional Relationship Management (line 3074) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-practitioner}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-E9C766CB}}
+
+Practitioner Discovery (line 3086) & Refined / repositioned & \nameref{feature:provider-directory-discovery-resolution}\\\hline
+\texttt{\seqsplit{BEC-2DEC073A}}
+
+Practitioner Role (line 3099) & Retained Proposed responsibility & \nameref{cap:bec-practitioner-role}\\\hline
+\texttt{\seqsplit{BEC-116F8108}}
+
+Role \& Specialty Modeling (line 3117) & Retained Canonical & \nameref{feature:feat-em-13}\\\hline
+\texttt{\seqsplit{BEC-CBDE3B8C}}
+
+Electronic Endpoint Binding (line 3128) & Retained Canonical & \nameref{feature:feat-em-14}\\\hline
+\texttt{\seqsplit{BEC-7F9BCB4F}}
+
+Identity Management (line 3139) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-practitioner-role}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-314BE2D1}}
+
+Identity Correlation (line 3151) & Refined / repositioned & \nameref{feature:feat-em-02}\\\hline
+\texttt{\seqsplit{BEC-A4596B27}}
+
+Qualification Association (line 3163) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-practitioner-role}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-549D792B}}
+
+Professional Relationship Management (line 3175) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-practitioner-role}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-E24857D9}}
+
+Practitioner Discovery (line 3187) & Refined / repositioned & \nameref{feature:provider-directory-discovery-resolution}\\\hline
+\texttt{\seqsplit{BEC-C410CC51}}
+
+Provider Relationship (line 3200) & Retained Proposed responsibility & \nameref{cap:bec-provider-relationship}\\\hline
+\texttt{\seqsplit{BEC-F5495DD1}}
+
+Practitioner-Organisation Affiliation (line 3216) & Retained Canonical & \nameref{feature:feat-em-15}\\\hline
+\texttt{\seqsplit{BEC-0027885B}}
+
+Context Establishment (line 3227) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-relationship}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-2CF899D2}}
+
+State Monitoring (line 3237) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-relationship}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-9806E183}}
+
+Exception Management (line 3247) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-relationship}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-737E5A3F}}
+
+Information Retrieval (line 3257) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-relationship}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-F58DBA08}}
+
+Provider Engagement (line 3268) & Retained Proposed responsibility & \nameref{cap:bec-provider-engagement}\\\hline
+\texttt{\seqsplit{BEC-E0307698}}
+
+Clinical Privileging Record (line 3284) & Retained Canonical & \nameref{feature:feat-em-16}\\\hline
+\texttt{\seqsplit{BEC-0C362F3D}}
+
+Context Establishment (line 3295) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-engagement}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-141E9549}}
+
+State Monitoring (line 3305) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-engagement}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-788A21BF}}
+
+Exception Management (line 3315) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-engagement}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-167AF187}}
+
+Information Retrieval (line 3325) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-provider-engagement}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-1FF88A71}}
+
+Organisation Administration (line 3336) & Retained Canonical responsibility & \nameref{cap:bec-organisation-administration}\\\hline
+\texttt{\seqsplit{BEC-ACE86B9B}}
+
+Healthcare Organisation (line 3348) & Retained Proposed responsibility & \nameref{cap:bec-healthcare-organisation}\\\hline
+\texttt{\seqsplit{BEC-28102E35}}
+
+National Organisation Verification (line 3366) & Retained Canonical & \nameref{feature:feat-em-17}\\\hline
+\texttt{\seqsplit{BEC-DF977EAB}}
+
+Organisation Profile Management (line 3377) & Retained Canonical & \nameref{feature:feat-em-18}\\\hline
+\texttt{\seqsplit{BEC-157386A8}}
+
+Identity Management (line 3388) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-organisation}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-9262FB93}}
+
+Identity Correlation (line 3400) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-organisation}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-AD09D42A}}
+
+Organisational Relationship Management (line 3412) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-organisation}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-6B51A123}}
+
+Organisational Structure Management (line 3424) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-organisation}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-D6FB2614}}
+
+Organisation Discovery (line 3436) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-organisation}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-FA161A55}}
+
+Organisational Structure (line 3449) & Retained Proposed responsibility & \nameref{cap:bec-organisational-structure}\\\hline
+\texttt{\seqsplit{BEC-F5068C04}}
+
+Hierarchical Structure Navigation (line 3466) & Retained Canonical & \nameref{feature:feat-em-19}\\\hline
+\texttt{\seqsplit{BEC-48E4C563}}
+
+Identity Management (line 3477) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisational-structure}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-A50F5059}}
+
+Identity Correlation (line 3489) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisational-structure}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-676858F6}}
+
+Organisational Relationship Management (line 3501) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisational-structure}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-ACAB1168}}
+
+Organisational Structure Management (line 3513) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisational-structure}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-721B38D1}}
+
+Organisation Discovery (line 3525) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisational-structure}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-5C12BF05}}
+
+Organisation Contact (line 3538) & Retained Proposed responsibility & \nameref{cap:bec-organisation-contact}\\\hline
+\texttt{\seqsplit{BEC-D6FA9FDF}}
+
+Directory Contact Management (line 3555) & Retained Canonical & \nameref{feature:feat-em-20}\\\hline
+\texttt{\seqsplit{BEC-3FD95735}}
+
+Identity Management (line 3566) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisation-contact}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-737C2F3E}}
+
+Identity Correlation (line 3578) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisation-contact}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-EFB7F137}}
+
+Organisational Relationship Management (line 3590) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisation-contact}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-272EFC75}}
+
+Organisational Structure Management (line 3602) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisation-contact}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-73EF81CD}}
+
+Organisation Discovery (line 3614) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-organisation-contact}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-D4B0D057}}
+
+Location Administration (line 3627) & Retained Canonical responsibility & \nameref{cap:bec-location-administration}\\\hline
+\texttt{\seqsplit{BEC-7E83F611}}
+
+Healthcare Location (line 3639) & Retained Proposed responsibility & \nameref{cap:bec-healthcare-location}\\\hline
+\texttt{\seqsplit{BEC-885CE86B}}
+
+Location Geospatial \& Address Resolution (line 3655) & Retained Canonical & \nameref{feature:feat-em-21}\\\hline
+\texttt{\seqsplit{BEC-15887E90}}
+
+Location Identity Management (line 3666) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-location}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-C52417EE}}
+
+Location Hierarchy Management (line 3678) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-location}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-0538C23A}}
+
+Location Availability Management (line 3690) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-location}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-BE1B64CD}}
+
+Location Discovery (line 3702) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-location}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-A66483F0}}
+
+Location Structure (line 3715) & Retained Proposed responsibility & \nameref{cap:bec-location-structure}\\\hline
+\texttt{\seqsplit{BEC-C82C8D0A}}
+
+Physical Hierarchy Modeling (line 3731) & Retained Canonical & \nameref{feature:feat-em-22}\\\hline
+\texttt{\seqsplit{BEC-FC2DD94F}}
+
+Location Identity Management (line 3742) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-location-structure}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-6DCC28F3}}
+
+Location Hierarchy Management (line 3754) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-location-structure}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-310FF956}}
+
+Location Availability Management (line 3766) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-location-structure}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-4BCD6B9C}}
+
+Location Discovery (line 3778) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-location-structure}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-0C8D2717}}
+
+Care-Place Definition (line 3791) & Retained Proposed responsibility & \nameref{cap:bec-care-place-definition}\\\hline
+\texttt{\seqsplit{BEC-6322E089}}
+
+Atomic Care-Place Modeling (line 3807) & Retained Canonical & \nameref{feature:feat-em-23}\\\hline
+\texttt{\seqsplit{BEC-705CD00C}}
+
+Context Establishment (line 3818) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-care-place-definition}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-67DFF33A}}
+
+State Monitoring (line 3828) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-care-place-definition}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-E79AFE62}}
+
+Exception Management (line 3838) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-care-place-definition}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-4B7196D5}}
+
+Information Retrieval (line 3848) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-care-place-definition}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-B3668209}}
+
+Health Service Administration (line 3859) & Retained Canonical responsibility & \nameref{cap:bec-health-service-administration}\\\hline
+\texttt{\seqsplit{BEC-1864D570}}
+
+Healthcare Service Definition (line 3872) & Retained Proposed responsibility & \nameref{cap:bec-healthcare-service-definition}\\\hline
+\texttt{\seqsplit{BEC-5AF74389}}
+
+Service Catalogue Publishing (line 3888) & Retained Canonical & \nameref{feature:feat-em-24}\\\hline
+\texttt{\seqsplit{BEC-8CDB717F}}
+
+Service Definition Management (line 3899) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-service-definition}; \nameref{cap:ec-01}; \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{BEC-766061BE}}
+
+Service Eligibility Management (line 3911) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-service-definition}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-22CF71DF}}
+
+Service Availability Management (line 3923) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-service-definition}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-DEE34CB8}}
+
+Service Discovery (line 3935) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-healthcare-service-definition}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-CC9FD951}}
+
+Service Provision Relationship (line 3948) & Retained Proposed responsibility & \nameref{cap:bec-service-provision-relationship}\\\hline
+\texttt{\seqsplit{BEC-C68165B1}}
+
+Service-Location-Provider Binding (line 3964) & Retained Canonical & \nameref{feature:feat-em-25}\\\hline
+\texttt{\seqsplit{BEC-46B095FB}}
+
+Service Definition Management (line 3975) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-provision-relationship}; \nameref{cap:ec-01}; \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{BEC-99951D40}}
+
+Service Eligibility Management (line 3987) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-provision-relationship}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-F964694F}}
+
+Service Availability Management (line 3999) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-provision-relationship}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-7A743DDD}}
+
+Service Discovery (line 4011) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-provision-relationship}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-CF667CC1}}
+
+Service Availability Definition (line 4024) & Retained Proposed responsibility & \nameref{cap:bec-service-availability-definition}\\\hline
+\texttt{\seqsplit{BEC-A4ABC149}}
+
+Operating Schedule Specification (line 4040) & Retained Canonical & \nameref{feature:feat-em-26}\\\hline
+\texttt{\seqsplit{BEC-61F28669}}
+
+Service Definition Management (line 4051) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-availability-definition}; \nameref{cap:ec-01}; \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{BEC-0AA34D18}}
+
+Service Eligibility Management (line 4063) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-availability-definition}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-235C211D}}
+
+Service Availability Management (line 4075) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-availability-definition}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-B8A2142A}}
+
+Service Discovery (line 4087) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-availability-definition}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-8858C964}}
+
+Service Eligibility Definition (line 4100) & Retained Proposed responsibility & \nameref{cap:bec-service-eligibility-definition}\\\hline
+\texttt{\seqsplit{BEC-748B065D}}
+
+Eligibility \& Catchment Specification (line 4116) & Retained Canonical & \nameref{feature:feat-em-27}\\\hline
+\texttt{\seqsplit{BEC-271154E8}}
+
+Service Definition Management (line 4127) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-eligibility-definition}; \nameref{cap:ec-01}; \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{BEC-1F711951}}
+
+Service Eligibility Management (line 4139) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-eligibility-definition}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-FA68F289}}
+
+Service Availability Management (line 4151) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-eligibility-definition}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-9B1E4AC5}}
+
+Service Discovery (line 4163) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-eligibility-definition}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-60F2ADD5}}
+
+Health Product Administration (line 4176) & Retained Canonical responsibility & \nameref{cap:bec-health-product-administration}\\\hline
+\texttt{\seqsplit{BEC-1BE2ADD6}}
+
+Health Product Definition (line 4188) & Retained Proposed responsibility & \nameref{cap:bec-health-product-definition}\\\hline
+\texttt{\seqsplit{BEC-3700FBFB}}
+
+No established Feature decomposition (Adjacent / Reference context) (line 4204) & Removed non-element placeholder & Non-element placeholder\\\hline
+\texttt{\seqsplit{BEC-0EECBF8C}}
+
+Context Establishment (line 4214) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-product-definition}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-8F3D543E}}
+
+State Monitoring (line 4224) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-product-definition}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-6F386B2A}}
+
+Exception Management (line 4234) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-product-definition}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-F792B00B}}
+
+Information Retrieval (line 4244) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-product-definition}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-F3F076F6}}
+
+Product Formulary \& Catalogue (line 4255) & Retained Proposed responsibility & \nameref{cap:bec-product-formulary-catalogue}\\\hline
+\texttt{\seqsplit{BEC-4937CA4F}}
+
+No established Feature decomposition (Adjacent / Reference context) (line 4270) & Removed non-element placeholder & Non-element placeholder\\\hline
+\texttt{\seqsplit{BEC-D5CD867C}}
+
+Identity Resolution (line 4280) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-formulary-catalogue}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-A315E2F3}}
+
+Identity Correlation (line 4290) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-formulary-catalogue}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-3DBACC5A}}
+
+Relationship Management (line 4300) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-formulary-catalogue}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-5C469882}}
+
+Lifecycle Management (line 4310) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-formulary-catalogue}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-9B063E58}}
+
+Discovery (line 4320) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-formulary-catalogue}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-0ACE1412}}
+
+Product Batch \& Serial Tracking (line 4331) & Retained Proposed responsibility & \nameref{cap:bec-product-batch-serial-tracking}\\\hline
+\texttt{\seqsplit{BEC-4614D02A}}
+
+No established Feature decomposition (Adjacent / Reference context) (line 4345) & Removed non-element placeholder & Non-element placeholder\\\hline
+\texttt{\seqsplit{BEC-A2361427}}
+
+Context Establishment (line 4355) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-batch-serial-tracking}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-C2E441ED}}
+
+State Monitoring (line 4365) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-batch-serial-tracking}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-DB97A930}}
+
+Exception Management (line 4375) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-batch-serial-tracking}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-4C113522}}
+
+Information Retrieval (line 4385) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-product-batch-serial-tracking}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-39C0D38D}}
+
+Clinical Device Administration (line 4396) & Retained Canonical responsibility & \nameref{cap:bec-clinical-device-administration}\\\hline
+\texttt{\seqsplit{BEC-EF278D25}}
+
+Device Definition (line 4409) & Retained Proposed responsibility & \nameref{cap:bec-device-definition}\\\hline
+\texttt{\seqsplit{BEC-784E5062}}
+
+Device Type Specification (line 4425) & Retained Canonical & \nameref{feature:feat-em-28}\\\hline
+\texttt{\seqsplit{BEC-3117C7A3}}
+
+Device Identity Management (line 4436) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-definition}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-9F1FBF5C}}
+
+Device State Management (line 4448) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-definition}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-018C4C3F}}
+
+Device Relationship Management (line 4460) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-definition}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-624E75EE}}
+
+Device Provenance Tracking (line 4472) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-definition}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-B3DEDCD2}}
+
+Device Instance (line 4485) & Retained Proposed responsibility & \nameref{cap:bec-device-instance}\\\hline
+\texttt{\seqsplit{BEC-8FB4909A}}
+
+Device Serial Tracking (line 4501) & Retained Canonical & \nameref{feature:feat-em-29}\\\hline
+\texttt{\seqsplit{BEC-A111F20F}}
+
+Device Identity Management (line 4512) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-instance}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-8C9D3C83}}
+
+Device State Management (line 4524) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-instance}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-A8E9A77A}}
+
+Device Relationship Management (line 4536) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-instance}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-EB9AE886}}
+
+Device Provenance Tracking (line 4548) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-instance}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-868954A0}}
+
+Device Association (line 4561) & Retained Proposed responsibility & \nameref{cap:bec-device-association}\\\hline
+\texttt{\seqsplit{BEC-22B624C5}}
+
+Device-Patient/Location Assignment (line 4577) & Retained Canonical & \nameref{feature:feat-em-30}\\\hline
+\texttt{\seqsplit{BEC-DBE8DD8A}}
+
+Device Identity Management (line 4588) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-association}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-D81970AA}}
+
+Device State Management (line 4600) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-association}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-49A18E8C}}
+
+Device Relationship Management (line 4612) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-association}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-FC971E86}}
+
+Device Provenance Tracking (line 4624) & Refined / repositioned & \nameref{feature:device-association-lineage}\\\hline
+\texttt{\seqsplit{BEC-6548F58A}}
+
+Device Connectivity (line 4637) & Retained Proposed responsibility & \nameref{cap:bec-device-connectivity}\\\hline
+\texttt{\seqsplit{BEC-45355492}}
+
+Device Endpoint Registration (line 4653) & Retained Canonical & \nameref{feature:feat-em-31}\\\hline
+\texttt{\seqsplit{BEC-D0A68C93}}
+
+Device Identity Management (line 4664) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-connectivity}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-B24562CE}}
+
+Device State Management (line 4676) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-connectivity}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-14A1B631}}
+
+Device Relationship Management (line 4688) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-connectivity}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-41EDE6C0}}
+
+Device Provenance Tracking (line 4700) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-device-connectivity}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-FF45E08F}}
+
+Care Administration Enablement (line 4713) & Redesigned grouping & \nameref{cap:bec-care-administration-information-enablement}\\\hline
+\texttt{\seqsplit{BEC-DD7184DF}}
+
+Client-Centred Administration (line 4735) & Retained Canonical responsibility & \nameref{cap:bec-client-centred-administration}\\\hline
+\texttt{\seqsplit{BEC-25DB15BA}}
+
+Client Intake \& Demographic Update (line 4745) & Retained Canonical responsibility & \nameref{cap:bec-client-centred-administration}\\\hline
+\texttt{\seqsplit{BEC-4AB59D5A}}
+
+Demographic Update Ingestion (line 4762) & Retained Canonical & \nameref{feature:feat-sa-01}\\\hline
+\texttt{\seqsplit{BEC-BDCCD5ED}}
+
+Demographic Change Distribution (line 4773) & Retained Canonical & \nameref{feature:feat-sa-02}\\\hline
+\texttt{\seqsplit{BEC-163E98AD}}
+
+Context Establishment (line 4784) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-centred-administration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-80DFF5D9}}
+
+State Monitoring (line 4794) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-centred-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-F29D899B}}
+
+Exception Management (line 4804) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-centred-administration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D55A3518}}
+
+Information Retrieval (line 4814) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-client-centred-administration}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-C16B2202}}
+
+Referral Administration (line 4825) & Retained Canonical responsibility & \nameref{cap:bec-referral-administration}\\\hline
+\texttt{\seqsplit{BEC-CD3F820D}}
+
+Referral Intake \& Progression (line 4835) & Retained Canonical responsibility & \nameref{cap:bec-referral-administration}\\\hline
+\texttt{\seqsplit{BEC-8E9AD826}}
+
+Referral Document Ingestion (line 4853) & Retained Canonical & \nameref{feature:feat-sa-03}\\\hline
+\texttt{\seqsplit{BEC-2C8F0BD3}}
+
+Referral Supporting Information (line 4864) & Retained Canonical & \nameref{feature:feat-sa-04}\\\hline
+\texttt{\seqsplit{BEC-6E903B7F}}
+
+Referral Status \& Outcome Tracking (line 4875) & Retained Canonical & \nameref{feature:feat-sa-05}\\\hline
+\texttt{\seqsplit{BEC-7C40F1C9}}
+
+Referral Lifecycle Management (line 4887) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-referral-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-A551E3F4}}
+
+Referral Routing (line 4899) & Refined / repositioned & \nameref{feature:referral-destination-coordination}\\\hline
+\texttt{\seqsplit{BEC-C4E89E34}}
+
+Referral Status Tracking (line 4911) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-referral-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-57720BC2}}
+
+Referral Outcome Association (line 4923) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-referral-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-2ABE98E1}}
+
+Scheduling Administration (line 4936) & Retained Canonical responsibility & \nameref{cap:bec-scheduling-administration}\\\hline
+\texttt{\seqsplit{BEC-8FEF95D4}}
+
+Appointment \& Booking Administration (line 4946) & Retained Canonical responsibility & \nameref{cap:bec-scheduling-administration}\\\hline
+\texttt{\seqsplit{BEC-8C2F56E0}}
+
+Appointment Notification Ingestion (line 4963) & Retained Canonical & \nameref{feature:feat-sa-06}\\\hline
+\texttt{\seqsplit{BEC-4143272F}}
+
+Appointment Status Synchronization (line 4974) & Retained Canonical & \nameref{feature:feat-sa-07}\\\hline
+\texttt{\seqsplit{BEC-262653A0}}
+
+Appointment Lifecycle Management (line 4985) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-scheduling-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-D9D79FA0}}
+
+Participant Coordination (line 4997) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-scheduling-administration}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-425F9192}}
+
+Availability Validation (line 5009) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-scheduling-administration}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-4D29BEFF}}
+
+Appointment Exception Management (line 5021) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-scheduling-administration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-63E23D60}}
+
+Episode \& Encounter Administration (line 5034) & Retained Canonical responsibility & \nameref{cap:bec-episode-encounter-administration}\\\hline
+\texttt{\seqsplit{BEC-1C528FC1}}
+
+Encounter Lifecycle Management (line 5044) & Retained Canonical responsibility & \nameref{cap:bec-episode-encounter-administration}\\\hline
+\texttt{\seqsplit{BEC-0DC29356}}
+
+Encounter Context Creation (line 5062) & Retained Canonical & \nameref{feature:feat-sa-08}\\\hline
+\texttt{\seqsplit{BEC-5D8CA48C}}
+
+Encounter State Progression (line 5073) & Retained Canonical & \nameref{feature:feat-sa-09}\\\hline
+\texttt{\seqsplit{BEC-847FCFDB}}
+
+Encounter Bed/Location Association (line 5085) & Retained Canonical & \nameref{feature:feat-sa-10}\\\hline
+\texttt{\seqsplit{BEC-3EC99787}}
+
+Encounter Lifecycle Management (line 5096) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-episode-encounter-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-46431EC5}}
+
+Care Context Association (line 5108) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-episode-encounter-administration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-12EB85C6}}
+
+Participant Association (line 5120) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-episode-encounter-administration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-D42C14E5}}
+
+Encounter History Retrieval (line 5132) & Refined / repositioned & \nameref{feature:encounter-history-retrieval}\\\hline
+\texttt{\seqsplit{BEC-B6BE6E1D}}
+
+Order Administration (line 5145) & Retained Canonical responsibility & \nameref{cap:bec-order-administration}\\\hline
+\texttt{\seqsplit{BEC-5E9ECEA1}}
+
+Closed-Loop Order Progression (line 5155) & Retained Canonical responsibility & \nameref{cap:bec-order-administration}\\\hline
+\texttt{\seqsplit{BEC-D0729BFB}}
+
+Order Request Ingestion (line 5174) & Retained Canonical & \nameref{feature:feat-sa-11}\\\hline
+\texttt{\seqsplit{BEC-20BEDA79}}
+
+Order Destination Resolution \& Routing (line 5185) & Retained Canonical & \nameref{feature:feat-sa-12}\\\hline
+\texttt{\seqsplit{BEC-E57851C6}}
+
+Order Closed-Loop Progression Tracking (line 5196) & Retained Canonical & \nameref{feature:feat-sa-13}\\\hline
+\texttt{\seqsplit{BEC-84EFF3A3}}
+
+Order Cancellation \& Modification Coordination (line 5208) & Retained Canonical & \nameref{feature:feat-sa-14}\\\hline
+\texttt{\seqsplit{BEC-142E39C3}}
+
+Request Lifecycle Management (line 5219) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-order-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-977D6A7D}}
+
+Request Fulfilment Tracking (line 5231) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-order-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-81D316C2}}
+
+Request Status Correlation (line 5243) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-order-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-AA804BEF}}
+
+Request Exception Management (line 5255) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-order-administration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-B67A0E82}}
+
+Diagnostic Administration (line 5268) & Retained Canonical responsibility & \nameref{cap:bec-diagnostic-administration}\\\hline
+\texttt{\seqsplit{BEC-C0DD4810}}
+
+Diagnostic Workflow Management (line 5278) & Retained Canonical responsibility & \nameref{cap:bec-diagnostic-administration}\\\hline
+\texttt{\seqsplit{BEC-53E5C256}}
+
+Diagnostic Request Correlation (line 5295) & Retained Canonical & \nameref{feature:feat-sa-15}\\\hline
+\texttt{\seqsplit{BEC-4B72F961}}
+
+Diagnostic Report Ingestion \& Binding (line 5306) & Retained Canonical & \nameref{feature:feat-sa-16}\\\hline
+\texttt{\seqsplit{BEC-322A3126}}
+
+Diagnostic Report Distribution (line 5317) & Retained Canonical & \nameref{feature:feat-sa-17}\\\hline
+\texttt{\seqsplit{BEC-CAA7BA59}}
+
+Diagnostic Result Association (line 5328) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-67FF7EC6}}
+
+Diagnostic Status Tracking (line 5340) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-47552FD9}}
+
+Diagnostic Provenance Capture (line 5352) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-administration}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-B4278279}}
+
+Medication Administration (line 5365) & Retained Canonical responsibility & \nameref{cap:bec-medication-administration}\\\hline
+\texttt{\seqsplit{BEC-1EFAA849}}
+
+Medication Order \& Dispense Management (line 5375) & Retained Canonical responsibility & \nameref{cap:bec-medication-administration}\\\hline
+\texttt{\seqsplit{BEC-B26D4F17}}
+
+Medication Order Ingestion (line 5397) & Retained Canonical & \nameref{feature:feat-sa-18}\\\hline
+\texttt{\seqsplit{BEC-0DE47133}}
+
+Dispense Event Tracking (line 5408) & Retained Canonical & \nameref{feature:feat-sa-19}\\\hline
+\texttt{\seqsplit{BEC-D93D1C27}}
+
+Medication Administration Record (MAR) Ingestion (line 5419) & Retained Canonical & \nameref{feature:feat-sa-20}\\\hline
+\texttt{\seqsplit{BEC-AB5055A8}}
+
+Request Lifecycle Management (line 5430) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-E0ABA2EF}}
+
+Request Fulfilment Tracking (line 5442) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D9110CE8}}
+
+Request Status Correlation (line 5454) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-B0E3D03A}}
+
+Request Exception Management (line 5466) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-074E40CB}}
+
+Medication Identity Resolution (line 5478) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-AFA2A006}}
+
+Medication Safety Context Validation (line 5490) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-9E3BA088}}
+
+Medication Activity Tracking (line 5502) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-7D9A630B}}
+
+Medication Information Correlation (line 5514) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-3233022C}}
+
+Procedure Administration (line 5527) & Retained Canonical responsibility & \nameref{cap:bec-procedure-administration}\\\hline
+\texttt{\seqsplit{BEC-489D3945}}
+
+Procedure \& Surgical Administration (line 5537) & Retained Canonical responsibility & \nameref{cap:bec-procedure-administration}\\\hline
+\texttt{\seqsplit{BEC-F696528F}}
+
+Procedure Booking Ingestion (line 5552) & Retained Canonical & \nameref{feature:feat-sa-21}\\\hline
+\texttt{\seqsplit{BEC-75A8D392}}
+
+Procedural Documentation Ingestion (line 5563) & Retained Canonical & \nameref{feature:feat-sa-22}\\\hline
+\texttt{\seqsplit{BEC-5DBEFF67}}
+
+Context Establishment (line 5574) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-procedure-administration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-6100D197}}
+
+State Monitoring (line 5584) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-procedure-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-82E3935C}}
+
+Exception Management (line 5594) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-procedure-administration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-C925BA63}}
+
+Information Retrieval (line 5604) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-procedure-administration}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-BF6253DC}}
+
+Clinical Record Administration (line 5615) & Retained Canonical responsibility & \nameref{cap:bec-clinical-record-administration}\\\hline
+\texttt{\seqsplit{BEC-0CE70156}}
+
+Clinical Documentation Lifecycle (line 5625) & Retained Canonical responsibility & \nameref{cap:bec-clinical-record-administration}\\\hline
+\texttt{\seqsplit{BEC-096B53FA}}
+
+Clinical Document Ingestion (line 5641) & Retained Canonical & \nameref{feature:feat-sa-23}\\\hline
+\texttt{\seqsplit{BEC-A9A0C02B}}
+
+Document Versioning \& Supersession (line 5652) & Retained Canonical & \nameref{feature:feat-sa-24}\\\hline
+\texttt{\seqsplit{BEC-2963C113}}
+
+Document Metadata Indexing (line 5664) & Retained Canonical & \nameref{feature:feat-sa-25}\\\hline
+\texttt{\seqsplit{BEC-836351BA}}
+
+Context Establishment (line 5675) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-record-administration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-CF085C02}}
+
+State Monitoring (line 5685) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-record-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-A27F8453}}
+
+Exception Management (line 5695) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-record-administration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-FDC92A6D}}
+
+Information Retrieval (line 5705) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-record-administration}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-389062F6}}
+
+Care Plan Administration (line 5716) & Retained Canonical responsibility & \nameref{cap:bec-care-plan-administration}\\\hline
+\texttt{\seqsplit{BEC-E263E2D1}}
+
+Care Plan Coordination (line 5726) & Retained Canonical responsibility & \nameref{cap:bec-care-plan-administration}\\\hline
+\texttt{\seqsplit{BEC-E3837AB5}}
+
+Care Plan Ingestion \& Distribution (line 5741) & Retained Canonical & \nameref{feature:feat-sa-26}\\\hline
+\texttt{\seqsplit{BEC-D4E51095}}
+
+Care Goal Association (line 5752) & Refined / repositioned & \nameref{feature:care-goal-plan-progression-representation}\\\hline
+\texttt{\seqsplit{BEC-6CCF8E04}}
+
+Care Plan Lifecycle Tracking (line 5764) & Refined / repositioned & \nameref{feature:care-goal-plan-progression-representation}\\\hline
+\texttt{\seqsplit{BEC-065E070B}}
+
+Care Plan Context Retrieval (line 5776) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-care-plan-administration}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-0B71E5CB}}
+
+Clinical Communication Administration (line 5789) & Retained Canonical responsibility & \nameref{cap:bec-clinical-communication-administration}\\\hline
+\texttt{\seqsplit{BEC-6D84C2C1}}
+
+Secure Clinical Communication (line 5799) & Retained Canonical responsibility & \nameref{cap:bec-clinical-communication-administration}\\\hline
+\texttt{\seqsplit{BEC-C55CEDBD}}
+
+Clinical Communication Distribution (line 5816) & Retained Canonical & \nameref{feature:feat-sa-27}\\\hline
+\texttt{\seqsplit{BEC-357AFA04}}
+
+Delivery Acknowledgement Tracking (line 5827) & Retained Canonical & \nameref{feature:feat-sa-28}\\\hline
+\texttt{\seqsplit{BEC-4966229D}}
+
+Communication Audit Logging (line 5838) & Retained Canonical & \nameref{feature:feat-sa-29}\\\hline
+\texttt{\seqsplit{BEC-BEE7FF8B}}
+
+Communication Context Management (line 5849) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-communication-administration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-B1E25071}}
+
+Recipient Resolution (line 5861) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-communication-administration}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-206D85C4}}
+
+Communication Delivery Tracking (line 5873) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-communication-administration}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-09D4A645}}
+
+Funding \& Coverage Administration (line 5886) & Retained Canonical responsibility & \nameref{cap:bec-funding-coverage-administration}\\\hline
+\texttt{\seqsplit{BEC-47D10EB4}}
+
+Clinical Charging \& Claims Administration (line 5896) & Retained Canonical responsibility & \nameref{cap:bec-clinical-charging-claims-administration}\\\hline
+\texttt{\seqsplit{BEC-3A4524B6}}
+
+Clinical Service Context Enablement (line 5906) & Redesigned grouping & \nameref{cap:bec-care-context-integration-enablement}\\\hline
+\texttt{\seqsplit{BEC-AEAB9E52}}
+
+Clinical Assessment (line 5931) & Retained Canonical responsibility & \nameref{cap:bec-clinical-assessment}\\\hline
+\texttt{\seqsplit{BEC-14FD8EDD}}
+
+Primary Care (line 5941) & Retained Canonical responsibility & \nameref{cap:bec-primary-care}\\\hline
+\texttt{\seqsplit{BEC-2D7A6DDE}}
+
+Primary Care Coordination (line 5951) & Retained Canonical responsibility & \nameref{cap:bec-primary-care}\\\hline
+\texttt{\seqsplit{BEC-AB31E6BC}}
+
+General Practice Shared Record Ingestion (line 5968) & Retained Canonical & \nameref{feature:feat-sd-01}\\\hline
+\texttt{\seqsplit{BEC-E7F50E85}}
+
+Primary Care Notification Dispatch (line 5979) & Retained Canonical & \nameref{feature:feat-sd-02}\\\hline
+\texttt{\seqsplit{BEC-DB56036E}}
+
+Context Establishment (line 5990) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-primary-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-8A07FDB4}}
+
+Eligibility Validation (line 6000) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-primary-care}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-CA466B56}}
+
+Assignment \& Routing (line 6010) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-primary-care}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-A945B4F5}}
+
+State Tracking (line 6020) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-primary-care}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-2737B30C}}
+
+Exception Management (line 6030) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-primary-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-F6FC078E}}
+
+Outcome Reporting (line 6040) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-primary-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-4E6DB5F9}}
+
+Acute Care (line 6051) & Retained Canonical responsibility & \nameref{cap:bec-acute-care}\\\hline
+\texttt{\seqsplit{BEC-0FAC6B5A}}
+
+Acute Care Monitoring \& Event Coordination (line 6061) & Retained Canonical responsibility & \nameref{cap:bec-acute-care}\\\hline
+\texttt{\seqsplit{BEC-5DD077B5}}
+
+Acute Clinical State Event Capture (line 6078) & Retained Canonical & \nameref{feature:feat-sd-03}\\\hline
+\texttt{\seqsplit{BEC-870D4A16}}
+
+Acute Care Clinical Context Provision (line 6089) & Retained Canonical & \nameref{feature:feat-sd-04}\\\hline
+\texttt{\seqsplit{BEC-3FB23504}}
+
+Context Establishment (line 6100) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-acute-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-CA660CB0}}
+
+Eligibility Validation (line 6110) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-acute-care}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-CAAB941D}}
+
+Assignment \& Routing (line 6120) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-acute-care}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-DFC60092}}
+
+State Tracking (line 6130) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-acute-care}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-1298D75B}}
+
+Exception Management (line 6140) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-acute-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-8ED2F7E4}}
+
+Outcome Reporting (line 6150) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-acute-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-729DFC66}}
+
+Emergency Care (line 6161) & Retained Canonical responsibility & \nameref{cap:bec-emergency-care}\\\hline
+\texttt{\seqsplit{BEC-A9EBF8FE}}
+
+Emergency Care Progression (line 6171) & Retained Canonical responsibility & \nameref{cap:bec-emergency-care}\\\hline
+\texttt{\seqsplit{BEC-3E1EE6B4}}
+
+Emergency Department Arrival \& Triage Ingestion (line 6186) & Retained Canonical & \nameref{feature:feat-sd-05}\\\hline
+\texttt{\seqsplit{BEC-78F5EADB}}
+
+Emergency Care Cross-Facility Correlation (line 6197) & Retained Canonical & \nameref{feature:feat-sd-06}\\\hline
+\texttt{\seqsplit{BEC-ED681415}}
+
+Context Establishment (line 6208) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-ADC2AC77}}
+
+State Monitoring (line 6218) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-care}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-0EC08E00}}
+
+Exception Management (line 6228) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-1723857C}}
+
+Information Retrieval (line 6238) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-care}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-EBFE3FB1}}
+
+Inpatient Care (line 6249) & Retained Canonical responsibility & \nameref{cap:bec-inpatient-care}\\\hline
+\texttt{\seqsplit{BEC-17776772}}
+
+Multidisciplinary Inpatient Care Coordination (line 6259) & Retained Canonical responsibility & \nameref{cap:bec-inpatient-care}\\\hline
+\texttt{\seqsplit{BEC-6F99412C}}
+
+Inpatient Rounding Context Provision (line 6276) & Retained Canonical & \nameref{feature:feat-sd-07}\\\hline
+\texttt{\seqsplit{BEC-93C32399}}
+
+Inpatient Clinical Progression Tracking (line 6287) & Retained Canonical & \nameref{feature:feat-sd-08}\\\hline
+\texttt{\seqsplit{BEC-826FE486}}
+
+Subject Identity Correlation (line 6298) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-inpatient-care}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-941ACC0E}}
+
+Subject Relationship Management (line 6310) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-inpatient-care}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-152BD757}}
+
+Subject Context Management (line 6322) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-inpatient-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-C7242AB0}}
+
+Subject Information Discovery (line 6334) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-inpatient-care}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-69DD19FD}}
+
+Ambulatory Care (line 6347) & Retained Canonical responsibility & \nameref{cap:bec-ambulatory-care}\\\hline
+\texttt{\seqsplit{BEC-6C600AC1}}
+
+Surgical \& Procedural Care (line 6357) & Retained Canonical responsibility & \nameref{cap:bec-surgical-procedural-care}\\\hline
+\texttt{\seqsplit{BEC-27E670BB}}
+
+Diagnostic Services (line 6367) & Retained Canonical responsibility & \nameref{cap:bec-diagnostic-services}\\\hline
+\texttt{\seqsplit{BEC-BB867C0A}}
+
+Diagnostic Service Integration (line 6377) & Retained Canonical responsibility & \nameref{cap:bec-diagnostic-services}\\\hline
+\texttt{\seqsplit{BEC-E7A7A26F}}
+
+Laboratory \& Imaging Result Distribution (line 6398) & Retained Canonical & \nameref{feature:feat-sd-09}\\\hline
+\texttt{\seqsplit{BEC-821F8A39}}
+
+Diagnostic History Consolidation (line 6409) & Retained Canonical & \nameref{feature:feat-sd-10}\\\hline
+\texttt{\seqsplit{BEC-48D54B88}}
+
+Service Definition Management (line 6420) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-01}; \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{BEC-E8E1F920}}
+
+Service Eligibility Management (line 6432) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-870CAEA8}}
+
+Service Availability Management (line 6444) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-14C91D01}}
+
+Service Discovery (line 6456) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-BDA9D14E}}
+
+Diagnostic Request Correlation (line 6468) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-A299B6D0}}
+
+Diagnostic Result Association (line 6480) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D4C02A64}}
+
+Diagnostic Status Tracking (line 6492) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-FCD0D5E4}}
+
+Diagnostic Provenance Capture (line 6504) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-diagnostic-services}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-BFDB47CA}}
+
+Therapeutic Services (line 6517) & Retained Canonical responsibility & \nameref{cap:bec-therapeutic-services}\\\hline
+\texttt{\seqsplit{BEC-B48BC336}}
+
+Medication Therapy (line 6527) & Retained Canonical responsibility & \nameref{cap:bec-medication-therapy}\\\hline
+\texttt{\seqsplit{BEC-0789035C}}
+
+Medication Therapy Provision and Monitoring (line 6537) & Retained Canonical responsibility & \nameref{cap:bec-medication-therapy}\\\hline
+\texttt{\seqsplit{BEC-D1549684}}
+
+Medication History Reconciliation Ingestion (line 6554) & Retained Canonical & \nameref{feature:feat-sd-11}\\\hline
+\texttt{\seqsplit{BEC-95E0F2E9}}
+
+Medication Administration Tracking (line 6565) & Retained Canonical & \nameref{feature:feat-sd-12}\\\hline
+\texttt{\seqsplit{BEC-910194D7}}
+
+Medication Identity Resolution (line 6576) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-therapy}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-324D8BAD}}
+
+Medication Safety Context Validation (line 6588) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-therapy}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-0F34B38A}}
+
+Medication Activity Tracking (line 6600) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-therapy}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-B3D9C0F4}}
+
+Medication Information Correlation (line 6612) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-medication-therapy}; \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-13B74601}}
+
+Allied Health (line 6625) & Retained Canonical responsibility & \nameref{cap:bec-allied-health}\\\hline
+\texttt{\seqsplit{BEC-8C53E055}}
+
+Preventive Care (line 6635) & Retained Canonical responsibility & \nameref{cap:bec-preventive-care}\\\hline
+\texttt{\seqsplit{BEC-6ECB9608}}
+
+Screening and Immunisation Enablement (line 6645) & Retained Canonical responsibility & \nameref{cap:bec-preventive-care}\\\hline
+\texttt{\seqsplit{BEC-21483404}}
+
+Immunisation Event Submission (line 6662) & Retained Canonical & \nameref{feature:feat-sd-13}\\\hline
+\texttt{\seqsplit{BEC-B609C8F5}}
+
+Screening Recall Notification Distribution (line 6673) & Retained Canonical & \nameref{feature:feat-sd-14}\\\hline
+\texttt{\seqsplit{BEC-261578C2}}
+
+Context Establishment (line 6684) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-preventive-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-C577B7C8}}
+
+State Monitoring (line 6694) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-preventive-care}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-F9613D20}}
+
+Exception Management (line 6704) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-preventive-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-336AAF9D}}
+
+Information Retrieval (line 6714) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-preventive-care}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-A8289AED}}
+
+Rehabilitation (line 6725) & Retained Canonical responsibility & \nameref{cap:bec-rehabilitation}\\\hline
+\texttt{\seqsplit{BEC-CDB89B75}}
+
+Community Care (line 6735) & Retained Canonical responsibility & \nameref{cap:bec-community-care}\\\hline
+\texttt{\seqsplit{BEC-50748227}}
+
+Community Care Coordination (line 6745) & Retained Canonical responsibility & \nameref{cap:bec-community-care}\\\hline
+\texttt{\seqsplit{BEC-70EEF999}}
+
+Community Encounter Ingestion (line 6762) & Retained Canonical & \nameref{feature:feat-sd-15}\\\hline
+\texttt{\seqsplit{BEC-5CB15F94}}
+
+Community Care Plan Synchronization (line 6773) & Retained Canonical & \nameref{feature:feat-sd-16}\\\hline
+\texttt{\seqsplit{BEC-D96C0908}}
+
+Context Establishment (line 6784) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-community-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-A1012BD3}}
+
+Eligibility Validation (line 6794) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-community-care}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-5D53CB17}}
+
+Assignment \& Routing (line 6804) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-community-care}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-52C8768A}}
+
+State Tracking (line 6814) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-community-care}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-A79A3ED2}}
+
+Exception Management (line 6824) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-community-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-1725AA08}}
+
+Outcome Reporting (line 6834) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-community-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-9DDD1BD3}}
+
+Outreach Care (line 6845) & Retained Canonical responsibility & \nameref{cap:bec-outreach-care}\\\hline
+\texttt{\seqsplit{BEC-B8EB379A}}
+
+Outreach Care Continuity (line 6855) & Retained Canonical responsibility & \nameref{cap:bec-outreach-care}\\\hline
+\texttt{\seqsplit{BEC-6A90478E}}
+
+Outreach Visit Context Provision (line 6870) & Retained Canonical & \nameref{feature:feat-sd-17}\\\hline
+\texttt{\seqsplit{BEC-8BCC3746}}
+
+Outreach Encounter Outcome Ingestion (line 6880) & Retained Canonical & \nameref{feature:feat-sd-18}\\\hline
+\texttt{\seqsplit{BEC-89F15AEF}}
+
+Context Establishment (line 6891) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outreach-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-59BE4E9F}}
+
+State Monitoring (line 6901) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outreach-care}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-8F38AE8D}}
+
+Exception Management (line 6911) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outreach-care}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-607A7A67}}
+
+Information Retrieval (line 6921) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outreach-care}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-F9E9DD8E}}
+
+Remote \& Virtual Care (line 6932) & Retained Canonical responsibility & \nameref{cap:bec-remote-virtual-care}\\\hline
+\texttt{\seqsplit{BEC-68C27168}}
+
+Remote Patient Monitoring (line 6942) & Retained Canonical responsibility & \nameref{cap:bec-remote-virtual-care}\\\hline
+\texttt{\seqsplit{BEC-FAC2E484}}
+
+Remote Telemetry Ingestion (line 6959) & Retained Canonical & \nameref{feature:feat-sd-19}\\\hline
+\texttt{\seqsplit{BEC-D4A0665C}}
+
+Virtual Care Session Context Binding (line 6970) & Retained Canonical & \nameref{feature:feat-sd-20}\\\hline
+\texttt{\seqsplit{BEC-08D640DD}}
+
+Subject Identity Correlation (line 6981) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-remote-virtual-care}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-2A678BE0}}
+
+Subject Relationship Management (line 6993) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-remote-virtual-care}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-0B235F68}}
+
+Subject Context Management (line 7005) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-remote-virtual-care}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-6B015BE0}}
+
+Subject Information Discovery (line 7017) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-remote-virtual-care}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-4FA35177}}
+
+Health Service Operations Enablement (line 7030) & Redesigned grouping & \nameref{cap:bec-care-operations-coordination-enablement}\\\hline
+\texttt{\seqsplit{BEC-ED6D98E8}}
+
+Clinic \& Practice Operations (line 7059) & Retained Canonical responsibility & \nameref{cap:bec-clinic-practice-operations}\\\hline
+\texttt{\seqsplit{BEC-FD9982FA}}
+
+Session \& Queue Coordination (line 7069) & Retained Canonical responsibility & \nameref{cap:bec-clinic-practice-operations}\\\hline
+\texttt{\seqsplit{BEC-C271D00D}}
+
+Clinic Session Tracking (line 7086) & Retained Canonical & \nameref{feature:feat-hso-01}\\\hline
+\texttt{\seqsplit{BEC-1D3DC25A}}
+
+Operational Queue Progression (line 7096) & Retained Canonical & \nameref{feature:feat-hso-02}\\\hline
+\texttt{\seqsplit{BEC-F2DDA45C}}
+
+Context Establishment (line 7108) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinic-practice-operations}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-2E5F2477}}
+
+Eligibility Validation (line 7118) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinic-practice-operations}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-91E57A4C}}
+
+Assignment \& Routing (line 7128) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinic-practice-operations}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-28A55B14}}
+
+State Tracking (line 7138) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinic-practice-operations}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-334D43B0}}
+
+Exception Management (line 7148) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinic-practice-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-4734D5E1}}
+
+Outcome Reporting (line 7158) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinic-practice-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-25E1A896}}
+
+Ward Operations (line 7169) & Retained Canonical responsibility & \nameref{cap:bec-ward-operations}\\\hline
+\texttt{\seqsplit{BEC-CE9BB804}}
+
+Ward Logistics Coordination (line 7179) & Retained Canonical responsibility & \nameref{cap:bec-ward-operations}\\\hline
+\texttt{\seqsplit{BEC-9408FFFA}}
+
+Ward Patient Flow Coordination (line 7196) & Retained Canonical & \nameref{feature:feat-hso-03}\\\hline
+\texttt{\seqsplit{BEC-06C10C04}}
+
+Clinical Handover Context Assembly (line 7206) & Retained Canonical & \nameref{feature:feat-hso-04}\\\hline
+\texttt{\seqsplit{BEC-0029BF2B}}
+
+Context Establishment (line 7216) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-ward-operations}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-616FFDC2}}
+
+Eligibility Validation (line 7226) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-ward-operations}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-0DA17C6A}}
+
+Assignment \& Routing (line 7236) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-ward-operations}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-E6E33D5A}}
+
+State Tracking (line 7246) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-ward-operations}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-E8384DB4}}
+
+Exception Management (line 7256) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-ward-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-4864C81B}}
+
+Outcome Reporting (line 7266) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-ward-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-389897E6}}
+
+Theatre Operations (line 7277) & Retained Canonical responsibility & \nameref{cap:bec-theatre-operations}\\\hline
+\texttt{\seqsplit{BEC-D248D868}}
+
+Perioperative Logistics (line 7287) & Retained Canonical responsibility & \nameref{cap:bec-theatre-operations}\\\hline
+\texttt{\seqsplit{BEC-98713ABB}}
+
+Operating Theatre Case Progression (line 7302) & Retained Canonical & \nameref{feature:feat-hso-05}\\\hline
+\texttt{\seqsplit{BEC-B1E9630D}}
+
+Perioperative Resource Notification (line 7314) & Retained Canonical & \nameref{feature:feat-hso-06}\\\hline
+\texttt{\seqsplit{BEC-63DA723B}}
+
+Context Establishment (line 7325) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-theatre-operations}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-9F573A4C}}
+
+State Monitoring (line 7335) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-theatre-operations}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-1233B732}}
+
+Exception Management (line 7345) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-theatre-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-792B9999}}
+
+Information Retrieval (line 7355) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-theatre-operations}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-78F79EDB}}
+
+Emergency Department Operations (line 7366) & Retained Canonical responsibility & \nameref{cap:bec-emergency-department-operations}\\\hline
+\texttt{\seqsplit{BEC-469419AB}}
+
+ED Operational Coordination (line 7376) & Retained Canonical responsibility & \nameref{cap:bec-emergency-department-operations}\\\hline
+\texttt{\seqsplit{BEC-2C9F0B1A}}
+
+ED Bed \& Bay Tracking (line 7393) & Retained Canonical & \nameref{feature:feat-hso-07}\\\hline
+\texttt{\seqsplit{BEC-A7E6EDD2}}
+
+ED Length of Stay Tracking (line 7403) & Retained Canonical & \nameref{feature:feat-hso-08}\\\hline
+\texttt{\seqsplit{BEC-4CFE53A4}}
+
+Context Establishment (line 7413) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-department-operations}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-67497215}}
+
+Eligibility Validation (line 7423) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-department-operations}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-A2B49B7C}}
+
+Assignment \& Routing (line 7433) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-department-operations}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-704E04EA}}
+
+State Tracking (line 7443) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-department-operations}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-BCE98F58}}
+
+Exception Management (line 7453) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-department-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-5E9192CC}}
+
+Outcome Reporting (line 7463) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-emergency-department-operations}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-3EA18C92}}
+
+Outpatient Operations (line 7474) & Retained Canonical responsibility & \nameref{cap:bec-outpatient-operations}\\\hline
+\texttt{\seqsplit{BEC-07398864}}
+
+Outpatient Flow Enablement (line 7484) & Retained Canonical responsibility & \nameref{cap:bec-outpatient-operations}\\\hline
+\texttt{\seqsplit{BEC-4382A684}}
+
+Outpatient Arrival Registration (line 7501) & Retained Canonical & \nameref{feature:feat-hso-09}\\\hline
+\texttt{\seqsplit{BEC-53EB5F3C}}
+
+Post-Clinic Order Coordination (line 7511) & Retained Canonical & \nameref{feature:feat-hso-10}\\\hline
+\texttt{\seqsplit{BEC-0D49726E}}
+
+Subject Identity Correlation (line 7521) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outpatient-operations}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-FCB21DFC}}
+
+Subject Relationship Management (line 7533) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outpatient-operations}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-CD0D5A3A}}
+
+Subject Context Management (line 7545) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outpatient-operations}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-17DAEA1C}}
+
+Subject Information Discovery (line 7557) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-outpatient-operations}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-DBA54D09}}
+
+Bed \& Care-Place Management (line 7570) & Retained Canonical responsibility & \nameref{cap:bec-bed-care-place-management}\\\hline
+\texttt{\seqsplit{BEC-9F88F277}}
+
+Bed State \& Turnover Management (line 7580) & Retained Canonical responsibility & \nameref{cap:bec-bed-care-place-management}\\\hline
+\texttt{\seqsplit{BEC-1A021F75}}
+
+Bed Availability Tracking (line 7596) & Retained Canonical & \nameref{feature:feat-hso-11}\\\hline
+\texttt{\seqsplit{BEC-ABDDBA4A}}
+
+Bed State Progression (line 7607) & Retained Canonical & \nameref{feature:feat-hso-12}\\\hline
+\texttt{\seqsplit{BEC-CB31C6E4}}
+
+Bed Readiness Notification (line 7619) & Retained Canonical & \nameref{feature:feat-hso-13}\\\hline
+\texttt{\seqsplit{BEC-21F00612}}
+
+Context Establishment (line 7630) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-bed-care-place-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-25AAE44B}}
+
+State Monitoring (line 7640) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-bed-care-place-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-49BB68FA}}
+
+Exception Management (line 7650) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-bed-care-place-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-BE0DEFDF}}
+
+Information Retrieval (line 7660) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-bed-care-place-management}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-07A2FD29}}
+
+Clinical Resource Management (line 7671) & Retained Canonical responsibility & \nameref{cap:bec-clinical-resource-management}\\\hline
+\texttt{\seqsplit{BEC-556B4A3F}}
+
+Specialized Equipment Coordination (line 7681) & Retained Canonical responsibility & \nameref{cap:bec-clinical-resource-management}\\\hline
+\texttt{\seqsplit{BEC-5B685445}}
+
+Mobile Clinical Equipment Tracking (line 7697) & Retained Canonical & \nameref{feature:feat-hso-14}\\\hline
+\texttt{\seqsplit{BEC-E7E5A452}}
+
+Context Establishment (line 7708) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-resource-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-AA245FF0}}
+
+Eligibility Validation (line 7718) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-resource-management}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-A870EB50}}
+
+Assignment \& Routing (line 7728) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-resource-management}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-F1B486E3}}
+
+State Tracking (line 7738) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-resource-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-99E2FA68}}
+
+Exception Management (line 7748) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-resource-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-4D2A47AC}}
+
+Outcome Reporting (line 7758) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-resource-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-DB7874AF}}
+
+Service Capacity Management (line 7769) & Retained Canonical responsibility & \nameref{cap:bec-service-capacity-management}\\\hline
+\texttt{\seqsplit{BEC-D90FAB4C}}
+
+Facility Demand \& Capacity Telemetry (line 7779) & Retained Canonical responsibility & \nameref{cap:bec-service-capacity-management}\\\hline
+\texttt{\seqsplit{BEC-A5CDE7AA}}
+
+Operational Capacity Metric Aggregation (line 7793) & Retained Canonical & \nameref{feature:feat-hso-15}\\\hline
+\texttt{\seqsplit{BEC-3559F81B}}
+
+Context Establishment (line 7804) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-capacity-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-F78FC8D3}}
+
+State Monitoring (line 7814) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-capacity-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-0203E495}}
+
+Exception Management (line 7824) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-capacity-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-A2BE39BF}}
+
+Information Retrieval (line 7834) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-service-capacity-management}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-20C1E1B7}}
+
+Clinical Workforce Management (line 7845) & Retained Canonical responsibility & \nameref{cap:bec-clinical-workforce-management}\\\hline
+\texttt{\seqsplit{BEC-F8C1B2DF}}
+
+Clinical Rostering (line 7855) & Retained Canonical responsibility & \nameref{cap:bec-clinical-rostering}\\\hline
+\texttt{\seqsplit{BEC-71740710}}
+
+Mobile Staff Management (line 7865) & Retained Canonical responsibility & \nameref{cap:bec-mobile-staff-management}\\\hline
+\texttt{\seqsplit{BEC-EC43C4CB}}
+
+Mobile Worker Dispatch \& Safety (line 7875) & Retained Canonical responsibility & \nameref{cap:bec-mobile-staff-management}\\\hline
+\texttt{\seqsplit{BEC-D243C132}}
+
+Mobile Worker Task Dispatch (line 7892) & Retained Canonical & \nameref{feature:feat-hso-16}\\\hline
+\texttt{\seqsplit{BEC-CAFF9E49}}
+
+Mobile Visit Status Tracking (line 7903) & Retained Canonical & \nameref{feature:feat-hso-17}\\\hline
+\texttt{\seqsplit{BEC-02254531}}
+
+Context Establishment (line 7913) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-mobile-staff-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-04274FDD}}
+
+Eligibility Validation (line 7923) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-mobile-staff-management}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-BFBF8974}}
+
+Assignment \& Routing (line 7933) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-mobile-staff-management}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-E87B589F}}
+
+State Tracking (line 7943) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-mobile-staff-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-7FD6C955}}
+
+Exception Management (line 7953) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-mobile-staff-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D56786A8}}
+
+Outcome Reporting (line 7963) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-mobile-staff-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-AA196190}}
+
+On-Call Management (line 7974) & Retained Canonical responsibility & \nameref{cap:bec-on-call-management}\\\hline
+\texttt{\seqsplit{BEC-4BE71CB3}}
+
+On-Call Directory Resolution (line 7984) & Retained Canonical responsibility & \nameref{cap:bec-on-call-management}\\\hline
+\texttt{\seqsplit{BEC-722ABA6E}}
+
+Active On-Call Provider Resolution (line 7998) & Retained Canonical & \nameref{feature:feat-hso-18}\\\hline
+\texttt{\seqsplit{BEC-4CFA3E90}}
+
+Context Establishment (line 8009) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-on-call-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-703E878F}}
+
+State Monitoring (line 8019) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-on-call-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-E452ABBD}}
+
+Exception Management (line 8029) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-on-call-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-783C1ED2}}
+
+Information Retrieval (line 8039) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-on-call-management}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-4A72D708}}
+
+Work Allocation \& Dispatch (line 8050) & Retained Canonical responsibility & \nameref{cap:bec-work-allocation-dispatch}\\\hline
+\texttt{\seqsplit{BEC-09C6941C}}
+
+Operational Work Assignment \& Supervision (line 8060) & Retained Canonical responsibility & \nameref{cap:bec-work-allocation-dispatch}\\\hline
+\texttt{\seqsplit{BEC-02438774}}
+
+Work Item Instantiation (line 8079) & Retained Canonical & \nameref{feature:feat-hso-19}\\\hline
+\texttt{\seqsplit{BEC-2A278A2C}}
+
+Worker Matching \& Allocation (line 8090) & Retained Canonical & \nameref{feature:feat-hso-20}\\\hline
+\texttt{\seqsplit{BEC-11BC936A}}
+
+Work Dispatch Delivery (line 8100) & Retained Canonical & \nameref{feature:feat-hso-21}\\\hline
+\texttt{\seqsplit{BEC-4D7128D9}}
+
+Work Progress Oversight \& Escalation (line 8110) & Retained Canonical & \nameref{feature:feat-hso-22}\\\hline
+\texttt{\seqsplit{BEC-59CF5F93}}
+
+Context Establishment (line 8122) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-work-allocation-dispatch}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-7B45C0B7}}
+
+Eligibility Validation (line 8132) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-work-allocation-dispatch}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-AD553DA5}}
+
+Assignment \& Routing (line 8142) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-work-allocation-dispatch}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D5AEDF90}}
+
+State Tracking (line 8152) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-work-allocation-dispatch}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-C536BD61}}
+
+Exception Management (line 8162) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-work-allocation-dispatch}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-A3268ADD}}
+
+Outcome Reporting (line 8172) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-work-allocation-dispatch}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-06CF5B6D}}
+
+Clinical Training \& Education (line 8183) & Retained Canonical responsibility & \nameref{cap:bec-clinical-training-education}\\\hline
+\texttt{\seqsplit{BEC-DE805931}}
+
+Clinical Competency Management (line 8193) & Retained Canonical responsibility & \nameref{cap:bec-clinical-competency-management}\\\hline
+\texttt{\seqsplit{BEC-9C5388A1}}
+
+Clinical Credential Management (line 8203) & Retained Canonical responsibility & \nameref{cap:bec-clinical-qualification-management}\\\hline
+\texttt{\seqsplit{BEC-E3152A69}}
+
+Credential Verification Checkpoint (line 8213) & Retained Canonical responsibility & \nameref{cap:bec-clinical-qualification-management}\\\hline
+\texttt{\seqsplit{BEC-5CD4669F}}
+
+Operational Credential Check (line 8227) & Retained Canonical & \nameref{feature:feat-hso-23}\\\hline
+\texttt{\seqsplit{BEC-D3D46BF9}}
+
+Context Establishment (line 8237) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-qualification-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-E9331A31}}
+
+State Monitoring (line 8247) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-qualification-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-9736C9DB}}
+
+Exception Management (line 8257) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-qualification-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-3DE5AC43}}
+
+Information Retrieval (line 8267) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-qualification-management}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-D401771A}}
+
+Clinical Supervision (line 8278) & Retained Canonical responsibility & \nameref{cap:bec-clinical-supervision}\\\hline
+\texttt{\seqsplit{BEC-55FBCC7C}}
+
+Patient Transport (line 8288) & Retained Canonical responsibility & \nameref{cap:bec-patient-transport}\\\hline
+\texttt{\seqsplit{BEC-854FF619}}
+
+Patient Transfer Coordination (line 8298) & Retained Canonical responsibility & \nameref{cap:bec-patient-transport}\\\hline
+\texttt{\seqsplit{BEC-EC853A0F}}
+
+Transport Request Ingestion (line 8315) & Retained Canonical & \nameref{feature:feat-hso-24}\\\hline
+\texttt{\seqsplit{BEC-58DCCBDB}}
+
+Transport Dispatch \& Progress Tracking (line 8326) & Retained Canonical & \nameref{feature:feat-hso-25}\\\hline
+\texttt{\seqsplit{BEC-05915061}}
+
+Subject Identity Correlation (line 8338) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-transport}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-F93AE731}}
+
+Subject Relationship Management (line 8350) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-transport}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-CBF19A4E}}
+
+Subject Context Management (line 8362) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-transport}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-A0E56E8C}}
+
+Subject Information Discovery (line 8374) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-transport}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-BB578270}}
+
+Clinical Logistics Coordination (line 8387) & Retained Canonical responsibility & \nameref{cap:bec-clinical-logistics-coordination}\\\hline
+\texttt{\seqsplit{BEC-999FB8AB}}
+
+Specimen \& Supply Courier Tracking (line 8397) & Retained Canonical responsibility & \nameref{cap:bec-clinical-logistics-coordination}\\\hline
+\texttt{\seqsplit{BEC-0BDCFA64}}
+
+Pathology Specimen Transport Tracking (line 8412) & Retained Canonical & \nameref{feature:feat-hso-26}\\\hline
+\texttt{\seqsplit{BEC-900A97F0}}
+
+Specimen Identity Management (line 8424) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-logistics-coordination}; \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{BEC-9950BA59}}
+
+Specimen Custody Tracking (line 8436) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-logistics-coordination}; \nameref{cap:ec-01}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-E08C24F3}}
+
+Specimen Relationship Management (line 8448) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-logistics-coordination}; \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{BEC-3C941BB0}}
+
+Discharge Management (line 8461) & Retained Canonical responsibility & \nameref{cap:bec-discharge-management}\\\hline
+\texttt{\seqsplit{BEC-3414F1EB}}
+
+Discharge Progression \& Coordination (line 8471) & Retained Canonical responsibility & \nameref{cap:bec-discharge-management}\\\hline
+\texttt{\seqsplit{BEC-B778D440}}
+
+Discharge Milestone Tracking (line 8489) & Retained Canonical & \nameref{feature:feat-hso-27}\\\hline
+\texttt{\seqsplit{BEC-F3326F02}}
+
+Discharge Readiness \& Coordination Oversight (line 8500) & Retained Canonical & \nameref{feature:feat-hso-28}\\\hline
+\texttt{\seqsplit{BEC-8B11D01C}}
+
+Discharge Notification Dispatch (line 8512) & Retained Canonical & \nameref{feature:feat-hso-29}\\\hline
+\texttt{\seqsplit{BEC-377B8814}}
+
+Context Establishment (line 8523) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-discharge-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-54362543}}
+
+Eligibility Validation (line 8533) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-discharge-management}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-92074CE1}}
+
+Assignment \& Routing (line 8543) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-discharge-management}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D2873E18}}
+
+State Tracking (line 8553) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-discharge-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-AF97D3B7}}
+
+Exception Management (line 8563) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-discharge-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D56CF336}}
+
+Outcome Reporting (line 8573) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-discharge-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-03705603}}
+
+Shared Information and Coordination Enablement (line 8584) & Redesigned grouping & \nameref{cap:bec-governed-health-information-enablement}; \nameref{cap:bec-human-collaboration-work-enablement}; \nameref{cap:bec-independent-service-assurance-enablement}\\\hline
+\texttt{\seqsplit{BEC-97605881}}
+
+Patient Clinical Record (line 8605) & Retained Canonical responsibility & \nameref{cap:bec-patient-clinical-record}\\\hline
+\texttt{\seqsplit{BEC-15AB949F}}
+
+Longitudinal Clinical Record Governance (line 8615) & Retained Canonical responsibility & \nameref{cap:bec-patient-clinical-record}\\\hline
+\texttt{\seqsplit{BEC-B5EBE9A9}}
+
+Longitudinal Health Record (LHR) Assembly (line 8633) & Retained Canonical & \nameref{feature:feat-ise-01}\\\hline
+\texttt{\seqsplit{BEC-81C53E17}}
+
+Active Clinical Record Access (line 8644) & Retained Canonical & \nameref{feature:feat-ise-02}\\\hline
+\texttt{\seqsplit{BEC-A048190C}}
+
+Durable Clinical Record Preservation (line 8655) & Retained Canonical & \nameref{feature:feat-ise-03}\\\hline
+\texttt{\seqsplit{BEC-9F1C5969}}
+
+Record Context Association (line 8666) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-clinical-record}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-3149DD0E}}
+
+Record Provenance Management (line 8678) & Refined / repositioned & \nameref{feature:information-transformation-lineage}\\\hline
+\texttt{\seqsplit{BEC-67C43D3D}}
+
+Record Lifecycle Management (line 8690) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-clinical-record}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-F9431119}}
+
+Record Discovery (line 8702) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-patient-clinical-record}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-14BBAAFD}}
+
+HIE Integration Services (line 8715) & Retained Canonical responsibility & \nameref{cap:bec-health-information-exchange}\\\hline
+\texttt{\seqsplit{BEC-0FADE98F}}
+
+Multi-Model Information Exchange (line 8725) & Retained Canonical responsibility & \nameref{cap:bec-health-information-exchange}\\\hline
+\texttt{\seqsplit{BEC-A4404077}}
+
+Direct Submission Ingestion \& Delivery (line 8743) & Retained Canonical & \nameref{feature:feat-ise-04}\\\hline
+\texttt{\seqsplit{BEC-3110386A}}
+
+Clinical Record Retrieval Mediation (line 8754) & Retained Canonical & \nameref{feature:feat-ise-05}\\\hline
+\texttt{\seqsplit{BEC-E1974228}}
+
+Addressed Clinical Distribution (line 8765) & Retained Canonical & \nameref{feature:feat-ise-06}\\\hline
+\texttt{\seqsplit{BEC-05FAD383}}
+
+Event-Driven Syndication (line 8776) & Retained Canonical & \nameref{feature:feat-ise-07}\\\hline
+\texttt{\seqsplit{BEC-E86070E3}}
+
+Information Validation (line 8787) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-exchange}; \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-9924A266}}
+
+Information Correlation (line 8797) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-exchange}; \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-C048B88A}}
+
+Information Retrieval (line 8807) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-exchange}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-F497FE5F}}
+
+Information Provenance (line 8817) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-exchange}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-90EED6CF}}
+
+Information Lifecycle Management (line 8827) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-exchange}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-0EE16B9D}}
+
+Health Information Access (line 8838) & Retained Canonical responsibility & \nameref{cap:bec-health-information-access}\\\hline
+\texttt{\seqsplit{BEC-73452901}}
+
+Governed Query \& Search (line 8848) & Retained Canonical responsibility & \nameref{cap:bec-health-information-access}\\\hline
+\texttt{\seqsplit{BEC-AB8EDD15}}
+
+Federated Clinical Query (line 8863) & Retained Canonical & \nameref{feature:feat-ise-08}\\\hline
+\texttt{\seqsplit{BEC-4601C816}}
+
+Access-Controlled Information Filtering (line 8874) & Retained Canonical & \nameref{feature:feat-ise-09}\\\hline
+\texttt{\seqsplit{BEC-72A9140C}}
+
+Context Establishment (line 8885) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-access}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-474C9605}}
+
+State Monitoring (line 8895) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-access}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-5604785C}}
+
+Exception Management (line 8905) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-access}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-C138A5D7}}
+
+Information Retrieval (line 8915) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-access}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-4553B47B}}
+
+Health Information Communication (line 8926) & Retained Canonical responsibility & \nameref{cap:bec-health-information-communication}\\\hline
+\texttt{\seqsplit{BEC-763876A9}}
+
+Boundary Protocol Mediation (line 8936) & Retained Canonical responsibility & \nameref{cap:bec-health-information-communication}\\\hline
+\texttt{\seqsplit{BEC-0DFE1C63}}
+
+Standards-Based Boundary Exchange (line 8950) & Retained Canonical & \nameref{feature:feat-ise-10}\\\hline
+\texttt{\seqsplit{BEC-8EDC75DD}}
+
+Context Establishment (line 8961) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-communication}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-C8A17F6A}}
+
+State Monitoring (line 8971) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-communication}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-6F511B71}}
+
+Exception Management (line 8981) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-communication}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-2EBB9F24}}
+
+Information Retrieval (line 8991) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-communication}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-203E2D62}}
+
+Health Information Control (line 9002) & Retained Canonical responsibility & \nameref{cap:bec-health-information-control}\\\hline
+\texttt{\seqsplit{BEC-18459CCD}}
+
+Policy \& Security Governance (line 9012) & Retained Canonical responsibility & \nameref{cap:bec-health-information-control}\\\hline
+\texttt{\seqsplit{BEC-E140C81D}}
+
+Health Information Access \& Consent Control (line 9029) & Retained Canonical & \nameref{feature:feat-ise-11}\\\hline
+\texttt{\seqsplit{BEC-CA2EF6F6}}
+
+Security Context Propagation (line 9040) & Retained Canonical & \nameref{feature:feat-ise-12}\\\hline
+\texttt{\seqsplit{BEC-0BBA26D3}}
+
+Non-PHI Compliance Auditing (line 9051) & Retained Canonical & \nameref{feature:feat-ise-13}\\\hline
+\texttt{\seqsplit{BEC-9EB61778}}
+
+Criteria Management (line 9062) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-control}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-E3405F10}}
+
+Evidence Association (line 9072) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-control}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-5BAB5EA0}}
+
+Policy Evaluation (line 9082) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-control}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-1D2CA7D5}}
+
+Decision Traceability (line 9092) & Refined / repositioned & \nameref{feature:mandatory-significant-activity-audit-capture}\\\hline
+\texttt{\seqsplit{BEC-CB8F5161}}
+
+Exception Reporting (line 9102) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-health-information-control}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-B622BACF}}
+
+Clinical Knowledge Services (line 9113) & Retained Canonical responsibility & \nameref{cap:bec-clinical-knowledge-services}\\\hline
+\texttt{\seqsplit{BEC-43B6CE64}}
+
+Terminology \& Reference Mapping (line 9123) & Retained Canonical responsibility & \nameref{cap:bec-clinical-knowledge-services}\\\hline
+\texttt{\seqsplit{BEC-B0351502}}
+
+Clinical Concept Resolution (line 9139) & Retained Canonical & \nameref{feature:feat-ise-14}\\\hline
+\texttt{\seqsplit{BEC-DC869393}}
+
+Bidirectional Terminology Mapping (line 9150) & Retained Canonical & \nameref{feature:feat-ise-15}\\\hline
+\texttt{\seqsplit{BEC-77A76C7C}}
+
+Information Validation (line 9161) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-knowledge-services}; \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-CBEC5F4E}}
+
+Information Correlation (line 9171) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-knowledge-services}; \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-E5775112}}
+
+Information Retrieval (line 9181) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-knowledge-services}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-A5D9596D}}
+
+Information Provenance (line 9191) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-knowledge-services}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-760AE591}}
+
+Information Lifecycle Management (line 9201) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-knowledge-services}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-4CDE0BAB}}
+
+Clinical Collaboration (line 9212) & Retained Canonical responsibility & \nameref{cap:bec-clinical-collaboration}\\\hline
+\texttt{\seqsplit{BEC-0C37BAFF}}
+
+LHR-Aware Multidisciplinary Collaboration (line 9222) & Retained Canonical responsibility & \nameref{cap:bec-clinical-collaboration}\\\hline
+\texttt{\seqsplit{BEC-84D2C1DF}}
+
+Care-Team Clinical Collaboration Coordination (line 9238) & Retained Canonical & \nameref{feature:feat-ise-16}\\\hline
+\texttt{\seqsplit{BEC-0B2CF342}}
+
+In-Conversation LHR Query Resolution (line 9249) & Retained Canonical & \nameref{feature:feat-ise-17}\\\hline
+\texttt{\seqsplit{BEC-24657506}}
+
+Zero-PHI Collaboration Metadata Governance (line 9260) & Retained Canonical & \nameref{feature:feat-ise-18}\\\hline
+\texttt{\seqsplit{BEC-3F3E28AF}}
+
+Context Establishment (line 9271) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-collaboration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-911087B0}}
+
+State Monitoring (line 9281) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-collaboration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-2DF10AA6}}
+
+Exception Management (line 9291) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-collaboration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-0CD2C755}}
+
+Information Retrieval (line 9301) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-clinical-collaboration}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-E1807E93}}
+
+General Collaboration (line 9312) & Retained Canonical responsibility & \nameref{cap:bec-general-collaboration}\\\hline
+\texttt{\seqsplit{BEC-2D46A392}}
+
+Operational Messaging (line 9322) & Retained Canonical responsibility & \nameref{cap:bec-general-collaboration}\\\hline
+\texttt{\seqsplit{BEC-1631787F}}
+
+Operational Team Chat Enablement (line 9336) & Retained Canonical & \nameref{feature:feat-ise-19}\\\hline
+\texttt{\seqsplit{BEC-074F43D0}}
+
+Context Establishment (line 9347) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-general-collaboration}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-D75B5D46}}
+
+State Monitoring (line 9357) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-general-collaboration}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-5368E298}}
+
+Exception Management (line 9367) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-general-collaboration}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-7D688C5A}}
+
+Information Retrieval (line 9377) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-general-collaboration}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-0C4A6874}}
+
+Workflow \& Activity Coordination (line 9388) & Retained Canonical responsibility & \nameref{cap:bec-workflow-activity-coordination}\\\hline
+\texttt{\seqsplit{BEC-A3E2C598}}
+
+Multi-Work-Unit Orchestration (line 9398) & Retained Canonical responsibility & \nameref{cap:bec-workflow-activity-coordination}\\\hline
+\texttt{\seqsplit{BEC-36C99CCB}}
+
+Work Order Progression (line 9417) & Retained Canonical & \nameref{feature:feat-ise-20}\\\hline
+\texttt{\seqsplit{BEC-4306DDD8}}
+
+To Do Decision \& Approval Coordination (line 9429) & Retained Canonical & \nameref{feature:feat-ise-21}\\\hline
+\texttt{\seqsplit{BEC-782CD2A4}}
+
+Synthetic Task Orchestration (line 9441) & Retained Canonical & \nameref{feature:feat-ise-22}\\\hline
+\texttt{\seqsplit{BEC-76B22B19}}
+
+Workflow Timeout \& Escalation Oversight (line 9453) & Retained Canonical & \nameref{feature:feat-ise-23}\\\hline
+\texttt{\seqsplit{BEC-A1649A9C}}
+
+Context Establishment (line 9464) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-workflow-activity-coordination}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-2078C8D9}}
+
+Eligibility Validation (line 9474) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-workflow-activity-coordination}; \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-9FFA6F7F}}
+
+Assignment \& Routing (line 9484) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-workflow-activity-coordination}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-D25D58D7}}
+
+State Tracking (line 9494) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-workflow-activity-coordination}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-642BD633}}
+
+Exception Management (line 9504) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-workflow-activity-coordination}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-6B53749D}}
+
+Outcome Reporting (line 9514) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-workflow-activity-coordination}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-78F5DB56}}
+
+Calendar Management (line 9525) & Retained Canonical responsibility & \nameref{cap:bec-calendar-management}\\\hline
+\texttt{\seqsplit{BEC-8CD7EA17}}
+
+Operational \& Clinical Calendar Sync (line 9535) & Retained Canonical responsibility & \nameref{cap:bec-calendar-management}\\\hline
+\texttt{\seqsplit{BEC-79108DF3}}
+
+Schedule Projection Integration (line 9550) & Retained Canonical & \nameref{feature:feat-ise-24}\\\hline
+\texttt{\seqsplit{BEC-45628C87}}
+
+Temporal Event Correlation (line 9561) & Retained Canonical & \nameref{feature:feat-ise-25}\\\hline
+\texttt{\seqsplit{BEC-9F5E17D1}}
+
+Context Establishment (line 9572) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-calendar-management}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-922D6FFF}}
+
+State Monitoring (line 9582) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-calendar-management}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-76D61F9A}}
+
+Exception Management (line 9592) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-calendar-management}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-1022E17A}}
+
+Information Retrieval (line 9602) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-calendar-management}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-6AA02A96}}
+
+Presentation Services (line 9613) & Retained Canonical responsibility & \nameref{cap:bec-presentation-services}\\\hline
+\texttt{\seqsplit{BEC-2DCF9553}}
+
+Decoupled Human Interaction \& Dashboards (line 9623) & Retained Canonical responsibility & \nameref{cap:bec-presentation-services}\\\hline
+\texttt{\seqsplit{BEC-06AB86FA}}
+
+Longitudinal Clinical \& Operational Presentation (line 9637) & Retained Canonical & \nameref{feature:feat-ise-26}\\\hline
+\texttt{\seqsplit{BEC-53CDA4E5}}
+
+Context Establishment (line 9648) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-presentation-services}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-7CB4FD80}}
+
+State Monitoring (line 9658) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-presentation-services}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{BEC-D8AF8AC4}}
+
+Exception Management (line 9668) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-presentation-services}; \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{BEC-DA832DCE}}
+
+Information Retrieval (line 9678) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-presentation-services}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-233904DA}}
+
+Information Design Governance (line 9689) & Retained Canonical responsibility & \nameref{cap:bec-information-design-governance}\\\hline
+\texttt{\seqsplit{BEC-453A5B71}}
+
+Canonical Semantics \& Schema Governance (line 9699) & Retained Canonical responsibility & \nameref{cap:bec-information-design-governance}\\\hline
+\texttt{\seqsplit{BEC-D57B8126}}
+
+Information Standards \& Semantic Governance (line 9715) & Retained Canonical & \nameref{feature:feat-ise-27}\\\hline
+\texttt{\seqsplit{BEC-D881E00E}}
+
+Semantic Conformance Verification (line 9726) & Retained Canonical & \nameref{feature:feat-ise-28}\\\hline
+\texttt{\seqsplit{BEC-74F7B6A8}}
+
+Information Validation (line 9737) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-information-design-governance}; \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-3B311E84}}
+
+Information Correlation (line 9747) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-information-design-governance}; \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{BEC-E7F9D13F}}
+
+Information Retrieval (line 9757) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-information-design-governance}; \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{BEC-E383206B}}
+
+Information Provenance (line 9767) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-information-design-governance}; \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{BEC-915C9E8F}}
+
+Information Lifecycle Management (line 9777) & Subsumed concern; no distinct Feature delta & \nameref{cap:bec-information-design-governance}; \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\end{longtable}\endgroup
+\section{Enterprise}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.38\TableWidth}|>{\raggedright\arraybackslash}p{0.22\TableWidth}|>{\raggedright\arraybackslash}p{0.4\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Prior concept / source line} & \textbf{Decision — Proposed} & \textbf{Current responsibility / reference}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Prior concept / source line} & \textbf{Decision — Proposed} & \textbf{Current responsibility / reference}\\\hline\endhead
+\hline\endfoot
+\texttt{\seqsplit{EC-BBAD8E2C}}
+
+Entity and Identity (line 9792) & Integrated reusable responsibility & \nameref{cap:ec-governed-information-operations}\\\hline
+\texttt{\seqsplit{EC-C0A97A83}}
+
+Identity and Correlation (line 9803) & Integrated reusable responsibility & \nameref{cap:ec-01}\\\hline
+\texttt{\seqsplit{EC-461B8F05}}
+
+Identity and Correlation Enablement (line 9813) & Integrated reusable responsibility & \nameref{cap:ec-01}\\\hline
+\texttt{\seqsplit{EC-1A42AFEF}}
+
+Identity Correlation (line 9832) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-00688388}}
+
+Identity Management (line 9840) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-13BDD6AE}}
+
+Device Identity Management (line 9848) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-157BAA94}}
+
+Subject Identity Correlation (line 9856) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-47108AAC}}
+
+Information Correlation (line 9864) & Reclassified recurrence evidence & \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-EA771B95}}
+
+Diagnostic Request Correlation (line 9872) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-039334FA}}
+
+Location Identity Management (line 9880) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-5FC97327}}
+
+Medication Identity Resolution (line 9888) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-D444A2C1}}
+
+Medication Information Correlation (line 9896) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-D418A306}}
+
+Request Status Correlation (line 9904) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-BAC316E4}}
+
+Relationship and Structure (line 9913) & Integrated reusable responsibility & \nameref{cap:ec-01}\\\hline
+\texttt{\seqsplit{EC-F50F53E6}}
+
+Relationship and Structure Enablement (line 9923) & Integrated reusable responsibility & \nameref{cap:ec-01}\\\hline
+\texttt{\seqsplit{EC-81917406}}
+
+Device Relationship Management (line 9942) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-20119D58}}
+
+Subject Relationship Management (line 9950) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-0B8C4EDC}}
+
+Organisational Relationship Management (line 9958) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-49166B2A}}
+
+Organisational Structure Management (line 9966) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-7A2DF974}}
+
+Diagnostic Result Association (line 9974) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-279FE89F}}
+
+Evidence Association (line 9982) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-A179D91B}}
+
+Location Hierarchy Management (line 9990) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-366AFC9B}}
+
+Professional Relationship Management (line 9998) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-E2F0CB40}}
+
+Qualification Association (line 10006) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-F160E33E}}
+
+Relationship Management (line 10014) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-47C59623}}
+
+Information and Semantics (line 10023) & Integrated reusable responsibility & \nameref{cap:ec-governed-information-operations}\\\hline
+\texttt{\seqsplit{EC-260111DC}}
+
+Information Lifecycle (line 10035) & Integrated reusable responsibility & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-AE5E9793}}
+
+Information Lifecycle Enablement (line 10045) & Integrated reusable responsibility & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-54C1BCAB}}
+
+Information Retrieval (line 10062) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-9788F116}}
+
+Subject Information Discovery (line 10070) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-BFA64AAF}}
+
+Information Correlation (line 10078) & Reclassified recurrence evidence & \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-A3A099AC}}
+
+Information Lifecycle Management (line 10086) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-10E4EA11}}
+
+Information Provenance (line 10094) & Reclassified recurrence evidence & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-23381315}}
+
+Information Validation (line 10102) & Reclassified recurrence evidence & \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-53DFF234}}
+
+Medication Information Correlation (line 10110) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-720E493E}}
+
+Request Lifecycle Management (line 10118) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-2A3844C6}}
+
+Discovery and Retrieval (line 10127) & Integrated reusable responsibility & \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-299D0172}}
+
+Discovery and Retrieval Enablement (line 10137) & Integrated reusable responsibility & \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-F2753584}}
+
+Information Retrieval (line 10153) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-82149096}}
+
+Service Discovery (line 10161) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-13D8A141}}
+
+Subject Information Discovery (line 10169) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-50A2C171}}
+
+Organisation Discovery (line 10177) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-009A4A5A}}
+
+Location Discovery (line 10185) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-09A3798F}}
+
+Medication Identity Resolution (line 10193) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-26353D17}}
+
+Practitioner Discovery (line 10201) & Reclassified recurrence evidence & \nameref{cap:ec-05}; \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-89E071D0}}
+
+Semantic Conformance (line 10210) & Integrated reusable responsibility & \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{EC-47BECE6F}}
+
+Semantic Conformance Enablement (line 10220) & Integrated reusable responsibility & \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{EC-63E0E334}}
+
+Eligibility Validation (line 10233) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-A86D200D}}
+
+Information Validation (line 10241) & Reclassified recurrence evidence & \nameref{cap:ec-13}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-93E36E5B}}
+
+Medication Safety Context Validation (line 10249) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-DB69DAF0}}
+
+Qualification Association (line 10257) & Reclassified recurrence evidence & \nameref{cap:ec-01}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-B80F9118}}
+
+Context, Activity and Exchange (line 10266) & Integrated reusable responsibility & \nameref{cap:ec-coordinated-activity-interaction}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-ADB90088}}
+
+Context and State (line 10277) & Integrated reusable responsibility & \nameref{cap:ec-02}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-6F46C125}}
+
+Context and State Enablement (line 10287) & Integrated reusable responsibility & \nameref{cap:ec-02}; \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-C3C11291}}
+
+Context Establishment (line 10307) & Reclassified recurrence evidence & \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-CC8047E5}}
+
+State Monitoring (line 10315) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-D122BC94}}
+
+State Tracking (line 10323) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-FF26979C}}
+
+Service Availability Management (line 10331) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-6DCE8859}}
+
+Device State Management (line 10339) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-1900212B}}
+
+Subject Context Management (line 10347) & Reclassified recurrence evidence & \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-53072EDD}}
+
+No Established Feature Decomposition (Adjacent / Reference Context) (line 10355) & Removed non-element placeholder & Non-element placeholder\\\hline
+\texttt{\seqsplit{EC-7D34D652}}
+
+Diagnostic Status Tracking (line 10363) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-582FEC53}}
+
+Location Availability Management (line 10371) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-2739EBA1}}
+
+Medication Safety Context Validation (line 10379) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-DB0E7812}}
+
+Request Status Correlation (line 10387) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-8C0E52A8}}
+
+Activity Coordination (line 10396) & Integrated reusable responsibility & \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-D05CE29D}}
+
+Activity Coordination Enablement (line 10406) & Integrated reusable responsibility & \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-5EE5F09E}}
+
+Assignment \& Routing (line 10421) & Reclassified recurrence evidence & \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-E762705E}}
+
+State Tracking (line 10429) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-7F4BEB56}}
+
+Device Provenance Tracking (line 10437) & Reclassified recurrence evidence & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-95E97505}}
+
+Diagnostic Status Tracking (line 10445) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-67A2E372}}
+
+Medication Activity Tracking (line 10453) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-A191A2BC}}
+
+Request Fulfilment Tracking (line 10461) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-08}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-8B8BC538}}
+
+Governance, Trust and Assurance (line 10470) & Integrated reusable responsibility & \nameref{cap:ec-trust-accountability-assurance}\\\hline
+\texttt{\seqsplit{EC-D9AF0B6F}}
+
+Governed Control (line 10482) & Integrated reusable responsibility & \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-E37E56AC}}
+
+Governed Control Enablement (line 10492) & Integrated reusable responsibility & \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-5948BFA2}}
+
+Eligibility Validation (line 10504) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-D98B7AAE}}
+
+Service Eligibility Management (line 10512) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-840C09A8}}
+
+Policy Evaluation (line 10520) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-DF0619B8}}
+
+Provenance and Accountability (line 10529) & Integrated reusable responsibility & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-3987B790}}
+
+Provenance and Accountability Enablement (line 10539) & Integrated reusable responsibility & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-E41C93C7}}
+
+Device Provenance Tracking (line 10553) & Reclassified recurrence evidence & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-313E85AB}}
+
+Information Provenance (line 10561) & Reclassified recurrence evidence & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-829F0BF7}}
+
+Decision Traceability (line 10569) & Refined / repositioned & \nameref{feature:mandatory-significant-activity-audit-capture}\\\hline
+\texttt{\seqsplit{EC-E9AA136D}}
+
+Diagnostic Provenance Capture (line 10577) & Reclassified recurrence evidence & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-7233F33E}}
+
+Evidence Association (line 10585) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-74BB4AD4}}
+
+Assurance and Resilience (line 10594) & Integrated reusable responsibility & \nameref{cap:ec-12}; \nameref{cap:ec-14}\\\hline
+\texttt{\seqsplit{EC-B0D5A003}}
+
+Assurance and Resilience Enablement (line 10604) & Integrated reusable responsibility & \nameref{cap:ec-12}; \nameref{cap:ec-14}\\\hline
+\texttt{\seqsplit{EC-50BE2841}}
+
+Exception Management (line 10619) & Reclassified recurrence evidence & \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-0F5671F1}}
+
+State Monitoring (line 10627) & Reclassified recurrence evidence & \nameref{cap:ec-03}; \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-09035A01}}
+
+Outcome Reporting (line 10635) & Reclassified recurrence evidence & \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-20985EE7}}
+
+Exception Reporting (line 10643) & Reclassified recurrence evidence & \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-34E6439F}}
+
+Medication Safety Context Validation (line 10651) & Reclassified recurrence evidence & \nameref{cap:ec-06}; \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-85D9E54B}}
+
+Request Exception Management (line 10659) & Reclassified recurrence evidence & \nameref{cap:ec-12}; \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-1F33C0E8}}
+
+Existing Enterprise Capabilities -- Retained for Reconciliation (line 10668) & Integrated reusable responsibility & \nameref{cap:ec-governed-information-operations}; \nameref{cap:ec-coordinated-activity-interaction}; \nameref{cap:ec-trust-accountability-assurance}\\\hline
+\texttt{\seqsplit{EC-3BFF62CA}}
+
+EC-01 Managed Entity \& Relationship (line 10689) & Retained Canonical & \nameref{cap:ec-01}\\\hline
+\texttt{\seqsplit{EC-5DE7A127}}
+
+EC-02 Context Management (line 10701) & Retained Canonical & \nameref{cap:ec-02}\\\hline
+\texttt{\seqsplit{EC-D9B04B9B}}
+
+EC-03 Managed State \& Lifecycle (line 10713) & Retained Canonical & \nameref{cap:ec-03}\\\hline
+\texttt{\seqsplit{EC-BDDA8FD7}}
+
+EC-04 Information Management (line 10725) & Retained Canonical & \nameref{cap:ec-04}\\\hline
+\texttt{\seqsplit{EC-C8C13214}}
+
+EC-05 Search \& Discovery (line 10737) & Retained Canonical & \nameref{cap:ec-05}\\\hline
+\texttt{\seqsplit{EC-22EFEBD8}}
+
+EC-06 Policy \& Control (line 10749) & Retained Canonical & \nameref{cap:ec-06}\\\hline
+\texttt{\seqsplit{EC-23C71F1A}}
+
+EC-07 Provenance \& Traceability (line 10761) & Retained Canonical & \nameref{cap:ec-07}\\\hline
+\texttt{\seqsplit{EC-CE98D4FC}}
+
+EC-08 Interoperability \& Exchange (line 10773) & Retained Canonical & \nameref{cap:ec-08}\\\hline
+\texttt{\seqsplit{EC-B5BCE57C}}
+
+EC-09 Event \& Subscription (line 10785) & Retained Canonical & \nameref{cap:ec-09}\\\hline
+\texttt{\seqsplit{EC-29FC1D73}}
+
+EC-10 Activity \& Execution (line 10797) & Retained Canonical & \nameref{cap:ec-10}\\\hline
+\texttt{\seqsplit{EC-850DDBAA}}
+
+EC-11 Interaction \& Experience (line 10809) & Retained Canonical & \nameref{cap:ec-11}\\\hline
+\texttt{\seqsplit{EC-E822F3AE}}
+
+EC-12 Operational Assurance (line 10821) & Retained Canonical & \nameref{cap:ec-12}\\\hline
+\texttt{\seqsplit{EC-E7D5C47D}}
+
+EC-13 Semantic Governance \& Conformance (line 10833) & Retained Canonical & \nameref{cap:ec-13}\\\hline
+\texttt{\seqsplit{EC-18C84D64}}
+
+EC-14 Service Guardian (line 10845) & Retained Canonical & \nameref{cap:ec-14}\\\hline
+\end{longtable}\endgroup

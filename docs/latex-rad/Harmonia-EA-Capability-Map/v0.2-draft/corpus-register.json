@@ -1,0 +1,587 @@
+[
+  {
+    "path": "docs/markdown/01-motivation/README.md",
+    "sha256": "48017d61e7c11b438fd418d1e8ae547a4199e096273e0c7355299a69f1333cd8",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/drivers-assessments/assessments.md",
+    "sha256": "038713e13714b8e306578f5f55cdcd3ee3f4663ed74359c5754d4a851184b19e",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/drivers-assessments/drivers.md",
+    "sha256": "49617cdde51b4dc0d97924ec56b081e1e32784d5b59bb0e6e7c45ec3408ec025",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/goals-outcomes/business-outcomes.md",
+    "sha256": "f1e29ecf0f8f48047edbd980a2b7876e99d21d67b40451e043ee7ee3f2c3b562",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/goals-outcomes/strategic-goals.md",
+    "sha256": "52a10df1eba7c6ed81dd797f66288481da3268e344574183f08378ea012556a8",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/orientation-view.md",
+    "sha256": "d51b08a35c0d248dc9b7cd260e89bda6ea8fc7234e3fdf335ecd9b4db141247b",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/principles/architectural-axioms.md",
+    "sha256": "a1b50be8574dc032147a71b4176c770c4a2a3f7d63bb5b7111435748bfa77fd2",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/principles/reclassified-principles.md",
+    "sha256": "eeb1a268f017faee4066b4195f1d0a151e021cb2c08bbed4d04556569c4165e7",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/requirements-constraints/external-constraints.md",
+    "sha256": "49d58a4d09298428402edda60491ebd835ab2af33aa7c101045bce9ef07ba907",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
+    "sha256": "dc361c38927e1d90710d451f9af9203add2456f20553176a69dd055985e2ef7f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+    "sha256": "ffae8388c7953e8dc77862de03866eddb067795881e2698c4b6da0835b179fc2",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/reviews/independent-assurance-reconciliation.md",
+    "sha256": "7f4c530156985532a1e6426891b330cae709568cd50eacf0478af6b32d40f276",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/stakeholders/enterprise-stakeholders.md",
+    "sha256": "04283275d49dd9e8cb6e96c13a7b7a86ceec165fd341ce2f3e36a4beda4d4d25",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/01-motivation/stakeholders/external-authorities.md",
+    "sha256": "d89dd970d9833fa5fc593abb2301e79e7f3af9fecacbc39f4b8c2d8a153aead6",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/README.md",
+    "sha256": "962c0f5f3bba0449e08b3632072e26003d07046c10e7bfb90ca90f913f9a1bc2",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+    "sha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+    "sha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+    "sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capabilities/ict-foundation-lenses.md",
+    "sha256": "4e403ed83f4421687b7f794783d21e07b651d2db50d63246b1c39e2b26949bd9",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capabilities/index.md",
+    "sha256": "1121f427162ebda0d2dbebeb0d5907ce982dfcc3a0aac5f85cab98c9722351ca",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capability-maps/capability-tier-model.md",
+    "sha256": "186d9f1c6b10ce462db3214a423602f4ae9b69ce872d23b150dc68225c8b098a",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capability-maps/health-service-assurance-derivation.md",
+    "sha256": "76bfe725b77fdc65409acf073cc516c193b49c1371fe758f4dae02192deda6d6",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/capability-maps/index.md",
+    "sha256": "e740ea9caa80bc8bcbe7dfc7973c3008a1e50388908de415678383b17550f8c6",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/courses-of-action/index.md",
+    "sha256": "24a8df5164864b81f7a3fa18763767aac4654045eace187cb605df17ad8cb950",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
+    "sha256": "dfc56c3a6de3284ecabc273032d9d8a3dabd9d41e01b29776e142a3aa0fd79f0",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/resources/index.md",
+    "sha256": "a638b0f16a03613f19c604c95b0f1a4e503d16c462cecfbc19b82f5c80328a5e",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/resources/strategic-resources.md",
+    "sha256": "99d4d512319d2f31e3724700f60de2f9bc595f21265d12471c970989150dad77",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/reviews/ax05-state-responsibility-reconciliation.md",
+    "sha256": "01481b48ab72b398e2a045101b47b1b2f95967e3c7d8ceee4ad9177b0a0e96f9",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/reviews/business-capability-five-region-reconciliation.md",
+    "sha256": "a46cfdb769cd27dc55a38a7ebf165a267f322ad6590910862d11e68de2b00e5d",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/reviews/fixed-capability-decomposition-decision.md",
+    "sha256": "3e2e0545d22b6bdcd6a397e63048f7d5ba7896fca8c11b89863e9d0328a49d6a",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/strategic-views/index.md",
+    "sha256": "85b5185502c9b6f5ca50e7890091ec7dfbaf4da46b5a955382fcec195ad589ff",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md",
+    "sha256": "88679d22e32fe1883b2ef882dfe0ee897ce1c101a4b36ae1d5a2614ab035c944",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/02-strategy/strategic-views/strategic-value-streams.md",
+    "sha256": "e35fc8a438c8b236e269e9aa8b071be492691b0c6446855e16e09f28c058e14a",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/README.md",
+    "sha256": "8f38e40c40ca9124f3ad5c8bb700a4b7478f44710b8d3c94fdf75889d8628070",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/actors-roles/actors.md",
+    "sha256": "67bb617bb5a0c717a16862575003d8e96c66e2113bc2da5aeec7b6b30ed1e365",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/actors-roles/roles.md",
+    "sha256": "b9485c7b870badf8a8a4a6568b97721065ebbe4a9fb7057f578bad400f181c53",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/01-entity-management.md",
+    "sha256": "15903e877addfbbc5fdc256377f48d52b7d7ac18c7b4f040baa8e8361666c69e",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/02-service-administration.md",
+    "sha256": "7a26c3ad1d0581f6b5321b6089b99299e891256d5a739d5c074de306d9321878",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/03-service-delivery.md",
+    "sha256": "9da2e94a389c6d075f13ddf5aaa1d1e0c54477fc973fb9763c93a6e95e5a86c9",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md",
+    "sha256": "9de0e4725c772f96dc1a37ed9f668876cd7c3eca8aff56ae7f1865f39d54035d",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+    "sha256": "80c699f9a5903c280c8a05fc87062b24a1c6ea2dea8843a92c5b53281d37ac8a",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/health-service-assurance.md",
+    "sha256": "fa976de7417f4979c95f3d44cd2cbed979407744053918cc903e0d1059e4c5bb",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/behaviours/index.md",
+    "sha256": "e672f554709a8ec2b3d9e7f053d9eb06d5ff21ece31fe8ef4c2c6210af8758be",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/collaborations-interactions/collaborations.md",
+    "sha256": "d09f596259120814a00a1c1f567a5eb4626bbd3cf7b8e0e8a19c5bdf8b93324f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/collaborations-interactions/interactions.md",
+    "sha256": "a1c77a1577e379345ed0b31e432d86939670a5b752d5886b1fb4fc95696e0de7",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+    "sha256": "d536a30ec60c603107797acf7e2fcd803a91e8cf24bfafa342c58258c2110b39",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+    "sha256": "2a51b1d1160337a181109c01225e8c8a2b464a7401af0d779c70664f4383a500",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+    "sha256": "3b0906eb6d51aea98e17b3f6b31250e68c2aa7320a1989f2386449909ce8f19a",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/processes/business-processes.md",
+    "sha256": "d7fd20fa50c3f41eb8a1d23b83ee6057eeb2f3225157f8677bdfdb3b478e23c2",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/03-business-architecture/reference-model/README.md",
+    "sha256": "d78734031b7589f17394dde8405b0f23b4b842b2210b1b7dbb6718afb3299d09",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/README.md",
+    "sha256": "9570e52eb6ab03654de91333104752462ec7c68cf626ab8dc6299f8dcac861c9",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/assemblies-views/assemblies-and-views.md",
+    "sha256": "fff12df26e371344a251f8d79107203995893e8affb98c4fe935917d8b086126",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/governance/authority-custody-provenance.md",
+    "sha256": "38e35b499cf60bb20698bb722febcc8e0d42a96fc39382a5243b4e21da010556",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/governance/information-lifecycle.md",
+    "sha256": "b91f8be41247a11d833d0ccf9d6e0d53e72a7ceef02e20f01e54c4e0b3fbf29b",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/guardrails/modelling-guardrails.md",
+    "sha256": "41905c955e611780bbbd3627b8f0203c24a3f5796a265079bf689ef64b79c73a",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/guardrails/observable-information-and-domain-meaning.md",
+    "sha256": "13f18cb20d24592ce2394b4d0d26ed51479e55af4bd04383deb2adb639a5cae7",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/README.md",
+    "sha256": "e738ec28847c9b52a73725e89eabebb16b2bb798663af688026d29f190b4f577",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/appointment-scheduling.md",
+    "sha256": "d35dd97cad595ba05230873c47ded0851fc7a03091aded0a6e0bd3b00bd5d743",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/device.md",
+    "sha256": "5c1646a522d91cdc32610c4b29b81159643b7bb439b4e318428798c4e686adc2",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/episode-encounter.md",
+    "sha256": "b369d65ae7e2ba7f37bda2683ed879080f64532543c1b08f61d283768b4371d5",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/healthcare-location.md",
+    "sha256": "53d37ab3061f507341b02042b59cbfbff23875db258efb8ef3467bc3c2c9d605",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/healthcare-service.md",
+    "sha256": "ea164a82844b8589b11eef33e75957293239aea5362d1ffcb404e1031736cabd",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/order.md",
+    "sha256": "e4db4f5158972f55af48f12a1e9be048437c95600b343823bb4bc9530b258a81",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/organisation.md",
+    "sha256": "682648f0da0081bcfc7d4b76f0690598476720bdcde1531d50fe917cc39ef24f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/person-healthcare-subject.md",
+    "sha256": "2b38456bb9c260cdc4f9113563cf3ba06e80c6ac2db8ead89a7200dc3af1fb39",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/practitioner.md",
+    "sha256": "86df0038ecefcebd6bac4cb7cf58cdc015fa4c5033ad5468ad7511c693d88f47",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/referral.md",
+    "sha256": "250e1d66fb517147632c7f6d1177000cb96c51def1a9299b7333593720433fa7",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/information-families/task-work.md",
+    "sha256": "db2047ac5a673b00d908241eb0094e32c9856ed75e2be5b43939a5f940d0cc77",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md",
+    "sha256": "2eadaa3191cea51d9aade7acd99d8a8ee0a2cf114d847a3e87790476d531563f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/patterns/containment-and-collections.md",
+    "sha256": "d97364cf3889d7e3c54860e8fea9803f93493998623b09c9dc28e8e7ec95bede",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/patterns/definition-to-accountability.md",
+    "sha256": "a4ea759457bcdc2d75821c3149f1dc6fa7f4254a8c4a3e8c0de9e7cbc6f6d1b3",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/patterns/information-relationships.md",
+    "sha256": "5071f45f26a1b588eada99449de61bbcac381addfa40f5f669961f5d73c61b65",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/patterns/metabole.md",
+    "sha256": "a37bd64841d0d54542592f0f160a199de10c616b22360b0d88ed0e815cb9f676",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/patterns/search-results.md",
+    "sha256": "a48f1ff1df015c17c6736860441ab9e026ace4667c39102c904bfe01c0d5c2d8",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/reviews/dokimasia-assurance-architectural-finding.md",
+    "sha256": "0f2a39bf9a8bc690a9d2192a57d1b03f396ec249732867d06b854c3b3f35333c",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/reviews/dokimasia-r1-motivation-traceability-ax05-investigation.md",
+    "sha256": "8c3ee826298f299887cb4e3c16c4c9bfeccac263027c777f1d02a96dc2f5d887",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/reviews/package2-g1-review.md",
+    "sha256": "d5fde989273d26aa0823c66f50b7dd28e1eeaca180ed097b535c044c4a2d4b38",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md",
+    "sha256": "fdde6724cadd31a13ec5da19ee855ea3043245536b5079c519f8a3b27b98108f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/04-information-architecture/traceability/domain03-traceability.md",
+    "sha256": "221fa30288570fa58c554c40236a91be92d07aaf1348ecd123e3e0bbe649af08",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/README.md",
+    "sha256": "ea4f256f57fbe0d5ca0667c3b45608ce98d23ea56b7f0eb168742ed509d8c8d9",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md",
+    "sha256": "49ee8d088dc0a75dd3dc7f85051f438d8cfe147ccaeaba20f24db38d9819348b",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/calliope-models-and-datasets.md",
+    "sha256": "fe3cb785c610a0ea1360b0de6b0bd54c156f7dd2bf7e5ef4dc13561305408e87",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+    "sha256": "0585ca8887145ca21832bf1fcbf0f1829d1201251c7d7f68055b116bdf4afaab",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/candidate-system-map.md",
+    "sha256": "b03ee4798ea1d4dbc1af67eec36fbdca6b74640e768a06c7d10850bbd485aea1",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/component-register.md",
+    "sha256": "7f493dae1db3e77fe0342f7c21501763a4af2b4de9c59871a109626eaaad5aa0",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/context-and-persistence-management.md",
+    "sha256": "4d2f4cd1890ad51e74fb87e75749ee6edb233b8e2e4fd28d9f00c852e21dd986",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/data-and-persistence.md",
+    "sha256": "8f1b4222a8e1303001235366a17de7555e56141711d5599c6851a7d865cb2dcd",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Agora-Controlled-Collaboration-and-Omilia-Realisation.md",
+    "sha256": "e111bd19156b160fe666bb3031ea5315e7d42e7752ff7e1337a511f9719673fa",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Calliope-Model-DataSet-and-Nomenclature-Management.md",
+    "sha256": "8c7e835d3cc457ac8f0e755f74b171716e947ea5b9e7a689a853bf572378adeb",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Digital-Twin-Behaviour-and-Execution-Semantics.md",
+    "sha256": "0a99f554246a94877b72c63b2b53d5c39b5b84e1b63404aabf18efab73ddfa4d",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Energeia-DigitalTwin-Dokimasia-Specialisation.md",
+    "sha256": "3447f29389d698fe7a14025f4fb80c473891fc355e593cbcada3e5be2d2c5c01",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Energeia-Operational-Management-and-Praxis-Responsibility.md",
+    "sha256": "3a87876d1c510877c18bff26467b5cf92f446087ba006698006580abf1c14c30",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Identity-Authentication-and-Authorisation-Architecture.md",
+    "sha256": "22cb431cda966d7670104379d6211f8a7e08c5166a1982fba9876636748ec623",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Kleio-Audit-Information-Management-and-Resilient-Capture.md",
+    "sha256": "0726432d82356eaa9a461c2e20f178a1172468d98d953508c1a0e19178843f82",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Kleio-Audit-Information-Management.md",
+    "sha256": "423367e57e5e453e854826b7f46d14c4ba6159c68284f763bb18956b0c720a4b",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+    "sha256": "c5a2123aed81690d2eb13b6f51641db24041691474991d1e976ffe6f9cd9996f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+    "sha256": "6b594bafb17aa5fbfaead3f33064ddfd9a350a6f08a5332ec0dabe38af9091f6",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mnemosyne-Persistence-Management-and-Authoritative-Persistence-Oversight.md",
+    "sha256": "c3f11e6363eea7c0120ac0d3bca1a08e1bde416608269529d7319982a07f3b50",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pathways-Journeys-and-Assurance-Representation.md",
+    "sha256": "d9a183290c3334fb7209e6841f351d790f54aa01979baf1c63f3f81a08d598e9",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Petasos-Durable-Message-Event-Queue-Management.md",
+    "sha256": "e988799d8335314f26ecee6073230dfeed155049d2e376944dd77a58523480b8",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+    "sha256": "895247a2c7e31c5149aafbecd520cbab8635411aec9a41dc0c78fe20ca55ea90",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Outputs-and-Pathway-Continuation.md",
+    "sha256": "34aeaecd40a3e76469096d07ac67976e255e206a190c410b033b95369c95cfb3",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pylai-External-Interoperability-Architecture.md",
+    "sha256": "df49b5f2f5b26e2625a220ac35a58390dd9e94fe64ba485ef4de51c0e2a182cc",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Themis-Authorisation-Model-and-Distributed-Policy-Enforcement.md",
+    "sha256": "5c757503d988e6de441cc4c9d4c434d5ca09acd009662a042eee0131aa229934",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/gaps.md",
+    "sha256": "988534e6295d3b2437b49756c36fabb15d315885248b85a84e34a23a0dec66d4",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/middleware.md",
+    "sha256": "7ee1a4ab1c24abcb052daa5f0392270a8dc4997dd4083db8fea19736bc363213",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md",
+    "sha256": "a397dee9209f308b7a6a9615ce0a46780faa6acc4724c0e537cf9e08894ab69c",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/pylai-external-interoperability.md",
+    "sha256": "7d8efac8456b8659b1d57b4657e3372c0f6cb161f9b97dc0c5dc48bba1fc7836",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/reviews/b1-method-reconciliation.md",
+    "sha256": "6e7c940097c1dfd0b71e139c079a578cc8f95285b419d2f02b101cbf965d2696",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/sources.md",
+    "sha256": "f9cc7af3ab31f4cde0fa196198475d977f2f1b69d758dd33499ff70e9ceff176",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/sylloge-binary-content-management.md",
+    "sha256": "1716f02c2fc2545e9735e5e300de0d279958361030f6991e6183a82513d2244f",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/traceability/b2-1-individual-care-delivery-health-information-access.md",
+    "sha256": "1e3b59e0b5d1168e75244528540f1c64084391f72551ba9fd375a70a83016ab1",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/traceability/health-information-access-worked-example.md",
+    "sha256": "8f9ed6d63ef80b121d374b980e873cb5cf9cafe2742dc4735e4a497d5d00f003",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/05-information-systems-architecture/traceability/step-b-method.md",
+    "sha256": "1561acdaca15a32bac1e3b4e7b3c052b07dc61f877793f8e1344c040f6b0d60e",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/governance/README.md",
+    "sha256": "6bf8bc915d3b591ee406f17f11bc4f7cabdd6cbe264f94cf5f5a61066319fa74",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/governance/architectural-axioms.md",
+    "sha256": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+    "role": "Current architectural corpus; source standing and unresolved matters remain applicable"
+  },
+  {
+    "path": "docs/markdown/scratchpad/capability-reference-candidate/Harmonia-Capability-Reference-Candidate-v0.3.tex",
+    "sha256": "82df3717855f1fc7572cd40bf60d81d23fc36c7567d304f3eb0b137ac8800d6f",
+    "role": "Explicitly authorised prior reasoning, reconciled concept by concept; not architectural authority"
+  }
+]

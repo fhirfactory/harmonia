@@ -1,0 +1,72 @@
+{
+  "result": "PASS",
+  "purpose": "In-memory fault injection proves material architecture/identity guards reject invalid data; the committed model is not mutated.",
+  "rejected_invalid_models": 13,
+  "probes": [
+    {
+      "probe": "missing_reference_id",
+      "result": "REJECTED",
+      "reason": "Missing reference_id"
+    },
+    {
+      "probe": "duplicate_reference_id",
+      "result": "REJECTED",
+      "reason": "Duplicate reference_id"
+    },
+    {
+      "probe": "missing_structural_id",
+      "result": "REJECTED",
+      "reason": "Missing canonical_id"
+    },
+    {
+      "probe": "duplicate_structural_id",
+      "result": "REJECTED",
+      "reason": "Duplicate canonical_id"
+    },
+    {
+      "probe": "alias_current_id_collision",
+      "result": "REJECTED",
+      "reason": "ID alias collision or reuse"
+    },
+    {
+      "probe": "duplicate_historical_alias",
+      "result": "REJECTED",
+      "reason": "ID alias collision or reuse"
+    },
+    {
+      "probe": "baseline_reference_change",
+      "result": "REJECTED",
+      "reason": "Unfrozen allocation"
+    },
+    {
+      "probe": "baseline_label_change",
+      "result": "REJECTED",
+      "reason": "Frozen identity allocation changed"
+    },
+    {
+      "probe": "canonical_definition_change",
+      "result": "REJECTED",
+      "reason": "Definition changed"
+    },
+    {
+      "probe": "new_element_promotion",
+      "result": "REJECTED",
+      "reason": "New responsibility promoted"
+    },
+    {
+      "probe": "proposed_placement_promotion",
+      "result": "REJECTED",
+      "reason": "Proposal promoted"
+    },
+    {
+      "probe": "proposed_relationship_promotion",
+      "result": "REJECTED",
+      "reason": "Unjustified relationship promotion"
+    },
+    {
+      "probe": "feature_without_ct3_frame",
+      "result": "REJECTED",
+      "reason": "Feature lacks BEC CT3 frame"
+    }
+  ]
+}

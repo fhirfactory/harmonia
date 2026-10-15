@@ -1,0 +1,2005 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Canonical Business Capability Model (18 CT1 Domains)}\label{rad:business}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/02-strategy/capabilities/business-capabilities.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:business:1}
+\section*{Canonical Business Capability Model (18 CT1 Domains)}
+\phantomsection\label{rad:business:3}
+\subsection*{Overview \& Purpose}
+\phantomsection\label{rad:business:5}
+
+Business Capabilities describe \textbf{what the health enterprise/\allowbreak{}business must be capable of doing}. They are organisational abilities independent of technology, products, departments, professions or automation. This catalogue is the canonical R1/\allowbreak{}R2 reconciliation of the adjudicated Business Capability decisions recorded in DN-BC-001 through DN-BC-037. The scratchpad retains working reasoning only; the definitions, explicit tier/\allowbreak{}parent assertions and boundaries here govern the reconciled model. Provisional and unresolved matters are not promoted as approved hierarchy.
+
+\phantomsection\label{rad:business:14}
+
+Business Enabling Capabilities describe \textbf{reusable enabling abilities Harmonia provides or supports}. The two hierarchies are distinct:
+
+\phantomsection\label{rad:business:17}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Business Capability:          CT1 → CT2 → CT3
+
+enabled-by / supported-by
+
+Business Enabling Capability: CT1 → CT2 → CT3 → Feature
+\end{quote}
+\phantomsection\label{rad:business:23}
+
+The relationship is enablement/\allowbreak{}support, never decomposition or implementation equivalence. \textbf{Business Capabilities do not decompose into Harmonia Features.} Features are ultimately framed by Business Enabling CT3s. This catalogue establishes no new BC↔BEC mapping and does not reframe existing Features. Previously approved B2.1 and assurance support relationships retain their bounded authority without being extended to the new BC descendants.
+
+\phantomsection\label{rad:business:30}
+
+Technology-sounding names such as Health Information Exchange, Digital Communication Channel, Identity Assurance and Access Control Enforcement describe organisational abilities. Physical, procedural and digital mechanisms illustrate exercise/\allowbreak{}enablement, not software-component identities. An interpretation requiring a particular software product to explain a BC is suspect. Where BC and BEC concern the same subject, their names must distinguish organisational ability from system enablement where reuse would imply equivalence or ownership. The existing Exchange name collision is explicitly unresolved below.
+
+\phantomsection\label{rad:business:39}
+\subsection*{R1/\allowbreak{}R2 Scope and Decomposition Rules}
+\phantomsection\label{rad:business:41}
+
+\begin{quote}
+
+Capability decomposition SHALL be sufficient to establish Harmonia's architectural context and derivation requirements. It SHALL NOT pursue exhaustive decomposition of healthcare-enterprise capabilities where additional detail does not materially affect Harmonia responsibility, information semantics, interoperability, security, workflow enablement, traceability or another Harmonia architectural concern.
+
+
+\end{quote}
+\phantomsection\label{rad:business:43}
+
+\begin{quote}
+
+Scope may determine decomposition depth. Scope must not distort decomposition semantics.
+
+
+\end{quote}
+\phantomsection\label{rad:business:45}
+
+The stopping test asks whether distinguishing another ability would materially change how Harmonia behaves, governs, represents, exchanges, secures, coordinates or traces something. Once a branch is decomposed, its materially distinct peers must be coherent from the business perspective, independently of Harmonia's implementation interest. This does not require identical depth, a Feature for every peer or a complete healthcare-enterprise taxonomy. An undecomposed CT1/\allowbreak{}CT2 does not authorise a skipped tier or an invented CT3.
+
+\phantomsection\label{rad:business:53}
+
+The \hyperref[rad:metamodel:33]{metamodel} governs tier meaning. Explicit CT1/\allowbreak{}CT2/\allowbreak{}CT3 and parent statements below establish the stated BC hierarchy; display ordinals, indentation and regional membership alone do not. CT4 and deeper tiers are outside scope. No ordinal is an allocated local code or Canonical ID. BEC tiers/\allowbreak{}ancestry remain separately unresolved under K9. Absent decomposition does not deny real-world abilities or assign them to an existing node.
+
+\phantomsection\label{rad:business:61}
+\subsection*{Capability Modelling Quality Rules}
+\phantomsection\label{rad:business:63}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Rule} & \textbf{Requirement}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Rule} & \textbf{Requirement}\\\hline\endhead
+\hline\endfoot
+CM-R01 Coverage & Preserve the eighteen broad enterprise domains and five regions; decomposition is bounded by R1/\allowbreak{}R2 semantic sufficiency rather than exhaustive enterprise detail.\\\hline
+CM-R02 Orthogonality & Preserve distinct responsibilities, outcomes and authority even where capabilities share evidence, context or implementation machinery.\\\hline
+CM-R03 Semantic Clarity & Use clear business meanings; examples do not redefine capabilities as technology.\\\hline
+CM-R04 No Junk Drawers & Keep cohesive purposes; do not use residual categories to hide materially distinct abilities.\\\hline
+CM-R05 Global Name Uniqueness & Capability names are globally unique across the architecture. The unresolved BC/\allowbreak{}BEC Exchange collision is reported; neither identity is merged or renamed here.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:71}
+\subsubsection*{Capability decomposition and educational documentation}
+\phantomsection\label{rad:business:73}
+
+Decomposition follows architectural distinction, not explanatory detail. Definition, state change, boundary, illustrative activities, care contexts and exclusions explain capabilities without establishing more children. History-taking, diagnosis, prescribing, medication administration, surgery, therapy and counselling are examples unless an explicit adjudication establishes a Capability identity.
+
+\phantomsection\label{rad:business:79}
+
+
+
+\phantomsection\label{rad:business:81}
+\subsubsection*{B2-R05 — Capability Is Independent of Care Delivery Context}
+\phantomsection\label{rad:business:83}
+
+Setting, delivery mode, temporal pattern and organisational arrangement do not by themselves establish separate Business Capabilities.
+
+\phantomsection\label{rad:business:86}
+
+
+
+\phantomsection\label{rad:business:88}
+\subsubsection*{B2-R06 — Context Independence Test}
+\phantomsection\label{rad:business:90}
+
+If changing setting, mode or time context does not materially change the business ability, it remains the same Capability. Acute, Planned/\allowbreak{}Scheduled and Longitudinal Care are not Individual Care Delivery's CT2 decomposition. Inpatient, ambulatory, community, home, virtual, emergency and elective remain illustrative contexts.
+
+\phantomsection\label{rad:business:95}
+\subsection*{Harmonia Relevance Taxonomy}
+\phantomsection\label{rad:business:97}
+
+
+
+\phantomsection\label{rad:business:99}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Classification} & \textbf{Meaning}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Classification} & \textbf{Meaning}\\\hline\endhead
+\hline\endfoot
+Reference & Enterprise context without material effect on Harmonia responsibilities or processing obligations.\\\hline
+Adjacent & Harmonia consumes, represents or supplies contextual information without material participation in execution or coordination.\\\hline
+Harmonia-Relevant & Harmonia materially enables, connects, routes, coordinates or supplies information used in performing the capability.\\\hline
+Harmonia-Core & Harmonia provides substantive direct platform responsibility for the capability within its assigned boundary.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:106}
+
+An established classification has exactly one of these values. Unresolved is a status, not a fifth value. CT1 relevance describes material participation across its bounded scope; it does not classify every descendant identically or confer enterprise-domain authority. Descendant relevance remains unallocated unless explicitly established. Contextual resource/\allowbreak{}state consumption alone warrants neither Core nor automatic Relevant classification. AX-18 preserves originating and domain authority. A Harmonia-Core enabling responsibility may support a Harmonia-Relevant BC without Harmonia owning that business activity.
+
+\phantomsection\label{rad:business:115}
+\subsection*{The 18 CT1 Business Capability Domains}
+\phantomsection\label{rad:business:117}
+
+Five natural regions group the eighteen CT1s. Regions are contextual views, not capability ancestors, organisational boundaries or application ownership. They are distinct from the five BEC contextual views. All eighteen named catalogue domains below are explicitly \textbf{CT1 roots}; each branch statement explicitly establishes its CT2 parent and each table its CT3 parent.
+
+\phantomsection\label{rad:business:123}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-8\tabcolsep-5\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Catalogue ordinal} & \textbf{CT1 Business Capability} & \textbf{Region} & \textbf{Relevance}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Catalogue ordinal} & \textbf{CT1 Business Capability} & \textbf{Region} & \textbf{Relevance}\\\hline\endhead
+\hline\endfoot
+01 & Individual Care Delivery & Care \& Health Delivery & Harmonia-Relevant\\\hline
+02 & Care Access \& Coordination & Care \& Health Delivery & Harmonia-Relevant\\\hline
+03 & Health Rights, Advocacy \& Participation & Care \& Health Delivery & Adjacent\\\hline
+04 & Diagnostic, Therapeutic \& Clinical Support Services & Care \& Health Delivery & Harmonia-Relevant\\\hline
+05 & Health Products \& Clinical Technology & Care \& Health Delivery & Harmonia-Relevant\\\hline
+06 & Clinical Quality, Safety \& Improvement & Care \& Health Delivery & Harmonia-Relevant\\\hline
+07 & Community Health \& Wellbeing & Care \& Health Delivery & Harmonia-Relevant\\\hline
+08 & Population Health \& Health-System Planning & Care \& Health Delivery & Harmonia-Relevant\\\hline
+09 & Health Information \& Knowledge Management & Health Information \& Digital Health & Harmonia-Core\\\hline
+10 & Standards, Semantics \& Reference Governance & Health Information \& Digital Health & Harmonia-Core\\\hline
+11 & Connected Health Services & Health Information \& Digital Health & Harmonia-Core\\\hline
+12 & Security, Privacy \& Digital Trust & Health Information \& Digital Health & Harmonia-Core\\\hline
+13 & Health Research \& Innovation & Research \& Innovation & Harmonia-Relevant\\\hline
+14 & Health Service Direction \& Stewardship & Health Service Management & Harmonia-Relevant\\\hline
+15 & Workforce \& Organisational Capability & Health Service Management & Harmonia-Relevant\\\hline
+16 & Corporate Resources \& Enterprise Services & Health Service Management & Harmonia-Relevant\\\hline
+17 & Health Service Governance & Governance \& Assurance & Unresolved\\\hline
+18 & Health Service Assurance & Governance \& Assurance & Harmonia-Relevant\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:144}
+
+\par\smallskip
+\phantomsection\label{rad:business:146}
+\subsubsection*{Region 1: Care \& Health Delivery}
+\phantomsection\label{rad:business:148}
+\subsubsection*{01. Individual Care Delivery}
+\phantomsection\label{rad:business:150}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:152}
+
+\textbf{Definition:} Assess, clinically determine, plan, intervene, monitor and review individual care independently of setting, mode, time pattern or organisational arrangement.
+
+\phantomsection\label{rad:business:154}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:156}
+
+The six CT2s are Individual Health Assessment, Clinical Determination, Individual Care Planning, Clinical Intervention, Individual Health Monitoring and Individual Care Review. Their semantic state changes do not prescribe execution order.
+
+\phantomsection\label{rad:business:158}
+
+
+
+\phantomsection\label{rad:business:160}
+\subsubsection*{01.01 Individual Health Assessment}
+\phantomsection\label{rad:business:162}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:164}
+
+\textbf{Definition:} The capability to establish an understanding of an individual's current health state through the collection, consideration and evaluation of relevant clinical, health and contextual information.
+
+\phantomsection\label{rad:business:168}
+
+\textbf{State Change:} \texttt{\seqsplit{Health information → Assessed health state / findings}}
+
+\phantomsection\label{rad:business:170}
+
+\textbf{Boundary:} Assessment establishes the assessed health state or findings. Existing records can contribute, while direct examination, observation, history-taking or measurement may establish information independently of Health Information Access.
+
+\phantomsection\label{rad:business:175}
+
+\textbf{Illustrative Activities:} History taking, physical examination, consideration of available clinical records and measurement of current observations.
+
+\phantomsection\label{rad:business:178}
+
+\textbf{Example Care Contexts:} An emergency presentation, a scheduled consultation or a home visit may exercise the same assessment ability.
+
+\phantomsection\label{rad:business:181}
+
+\textbf{Explicit Exclusions:} Establishing clinical conclusions, selecting the care response and performing an intervention are not the assessment itself.
+
+\phantomsection\label{rad:business:184}
+
+
+
+\phantomsection\label{rad:business:186}
+\subsubsection*{01.02 Clinical Determination}
+\phantomsection\label{rad:business:188}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:190}
+
+\textbf{Definition:} The capability to interpret assessed health information and establish clinically meaningful conclusions about an individual's health state, condition, risk or prognosis.
+
+\phantomsection\label{rad:business:194}
+
+\textbf{State Change:} \texttt{\seqsplit{Assessed findings → Clinically interpreted understanding}}
+
+\phantomsection\label{rad:business:196}
+
+\textbf{Boundary:} Clinical Determination interprets findings and establishes their clinical meaning, including the clinical significance of change identified by monitoring.
+
+\phantomsection\label{rad:business:200}
+
+\textbf{Illustrative Activities:} Diagnosis, clinical risk interpretation and prognostic judgement.
+
+\phantomsection\label{rad:business:203}
+
+\textbf{Example Care Contexts:} Interpretation during acute care or a longitudinal follow-up consultation remains the same business ability.
+
+\phantomsection\label{rad:business:206}
+
+\textbf{Explicit Exclusions:} Clinical Determination does not include establishing care needs or selecting the response to the determination.
+
+\phantomsection\label{rad:business:209}
+
+
+
+\phantomsection\label{rad:business:211}
+\subsubsection*{01.03 Individual Care Planning}
+\phantomsection\label{rad:business:213}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:215}
+
+\textbf{Definition:} The capability to establish the intended clinical response to an individual's assessed and clinically interpreted health state, including the objectives, interventions and monitoring required to progress their care.
+
+\phantomsection\label{rad:business:219}
+
+\textbf{State Change:} \texttt{\seqsplit{Clinically interpreted understanding → Intended course of care}}
+
+\phantomsection\label{rad:business:221}
+
+\textbf{Boundary:} Planning establishes what is intended to happen. It does not imply that the planned care has occurred.
+
+\phantomsection\label{rad:business:224}
+
+\textbf{Illustrative Activities:} Establishing care objectives, selecting intended therapy, prescribing as an expression of clinical intent and planning monitoring.
+
+\phantomsection\label{rad:business:227}
+
+\textbf{Example Care Contexts:} An intended course of care may be established during an inpatient encounter, an ambulatory consultation or a virtual consultation.
+
+\phantomsection\label{rad:business:230}
+
+\textbf{Explicit Exclusions:} Performing planned care is Clinical Intervention. Ordering, requesting, scheduling and allocating care do not themselves establish that an intervention has occurred. Operational service/\allowbreak{}resource availability information is not Health Information Access merely because it informs planning.
+
+\phantomsection\label{rad:business:235}
+
+
+
+\phantomsection\label{rad:business:237}
+\subsubsection*{01.04 Clinical Intervention}
+\phantomsection\label{rad:business:239}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:241}
+
+\textbf{Definition:} The capability to perform clinical actions intended to alter, maintain or otherwise manage an individual's health state in accordance with an established care intent.
+
+\phantomsection\label{rad:business:245}
+
+\textbf{State Change:} \texttt{\seqsplit{Intended care → Care action performed}}
+
+\phantomsection\label{rad:business:247}
+
+\textbf{Boundary:} Clinical Intervention establishes that a care action was performed. An intervention need not produce a successful clinical outcome. Access to an intended intervention does not confer authority to perform it.
+
+\phantomsection\label{rad:business:251}
+
+\textbf{Illustrative Activities:} Medication administration, surgery, therapy and counselling when performed as clinical actions under an established care intent.
+
+\phantomsection\label{rad:business:254}
+
+\textbf{Example Care Contexts:} An intervention may be performed in inpatient, community or home care, or through a suitable virtual delivery mode.
+
+\phantomsection\label{rad:business:257}
+
+\textbf{Explicit Exclusions:} Ordering, requesting, scheduling or allocating an intervention is not itself the Clinical Intervention; selecting the intended response belongs to planning.
+
+\phantomsection\label{rad:business:261}
+
+
+
+\phantomsection\label{rad:business:263}
+\subsubsection*{01.05 Individual Health Monitoring}
+\phantomsection\label{rad:business:265}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:267}
+
+\textbf{Definition:} The capability to observe and evaluate an individual's health state over time in order to identify clinically meaningful change, stability or deviation from an expected state or trajectory.
+
+\phantomsection\label{rad:business:271}
+
+\textbf{State Change:} \texttt{\seqsplit{Observed health states over time → Change / stability / deviation identified}}
+
+\phantomsection\label{rad:business:273}
+
+\textbf{Boundary:} Monitoring establishes change, stability or deviation. Interpretation of the clinical significance of that change remains Clinical Determination.
+
+\phantomsection\label{rad:business:277}
+
+\textbf{Illustrative Activities:} Comparing serial observations with a baseline or expected trajectory and identifying a trend or deviation.
+
+\phantomsection\label{rad:business:280}
+
+\textbf{Example Care Contexts:} Serial inpatient observations and longitudinal home monitoring exercise the same ability across different time patterns and settings.
+
+\phantomsection\label{rad:business:283}
+
+\textbf{Explicit Exclusions:} Clinical interpretation of an identified change and selection of the care response are not monitoring. Evaluating care effectiveness against its objectives belongs to Individual Care Review.
+
+\phantomsection\label{rad:business:287}
+
+
+
+\phantomsection\label{rad:business:289}
+\subsubsection*{01.06 Individual Care Review}
+\phantomsection\label{rad:business:291}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:293}
+
+\textbf{Definition:} The capability to evaluate the progress and effectiveness of an individual's care against its intended objectives and establish the continuing appropriateness of the current care intent.
+
+\phantomsection\label{rad:business:297}
+
+\textbf{State Change:} \texttt{\seqsplit{Care progress / outcomes → Effectiveness and continuing appropriateness established}}
+
+\phantomsection\label{rad:business:299}
+
+\textbf{Boundary:} Care Review evaluates the care itself against its intent and objectives; it is not simply another name for reassessment.
+
+\phantomsection\label{rad:business:302}
+
+\textbf{Illustrative Activities:} Reviewing response to delivered therapy against care objectives and evaluating whether the current care intent remains appropriate.
+
+\phantomsection\label{rad:business:305}
+
+\textbf{Example Care Contexts:} Review during an admission, a scheduled follow-up or longitudinal care retains the same evaluation purpose.
+
+\phantomsection\label{rad:business:308}
+
+\textbf{Explicit Exclusions:} Reassessment alone does not establish care effectiveness. Establishing a revised intended course of care belongs to Individual Care Planning.
+
+\phantomsection\label{rad:business:312}
+
+Clinical Determination and Individual Care Planning have no adjudicated CT3 set in the supplied decisions. Clinical Intervention’s Therapy \& Counselling Intervention /\allowbreak{} Medication Intervention /\allowbreak{} Procedural Intervention candidate remains provisional under DN-BC-010; it is not promoted as a final taxonomy. Examples cannot close these gaps.
+
+\phantomsection\label{rad:business:314}
+
+The previously approved \hyperref[rad:b2-1]{B2.1 support trace} is preserved without extending it to CT3s or establishing runtime dependencies.
+
+\phantomsection\label{rad:business:316}
+\subsubsection*{CT2 — Individual Health Assessment}
+\phantomsection\label{rad:business:318}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:320}
+
+\textbf{Definition:} Establish an understanding of an individual’s current health state.
+
+\phantomsection\label{rad:business:322}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Individual Health Assessment; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:324}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health History Assessment & Establish relevant health knowledge from the individual’s history and applicable historical/\allowbreak{}contextual information.\\\hline
+Clinical Examination & Establish health findings through clinical examination.\\\hline
+Health Status Measurement & Establish individual health observations or measurements.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:330}
+
+\textbf{Boundary:} The decomposition distinguishes means of establishing knowledge. Functional, nutritional, cognitive, mental-health and similar labels are assessment domains, not automatically peer abilities. Risk interpretation belongs to Clinical Determination. Care setting, profession, specialty and information type do not define the decomposition.
+
+\phantomsection\label{rad:business:332}
+\subsubsection*{CT2 — Individual Health Monitoring}
+\phantomsection\label{rad:business:334}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:336}
+
+\textbf{Definition:} Observe health over time to identify change, stability or deviation.
+
+\phantomsection\label{rad:business:338}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Individual Health Monitoring; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:340}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health State Monitoring & Establish an aggregate, temporally situated view of the individual’s health from applicable monitored data.\\\hline
+Care Response Monitoring & Scope that health-state view to a particular problem/\allowbreak{}condition and the treatment applied to it.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:345}
+
+\textbf{Boundary:} Care Response Monitoring consumes health-state services provided through Health State Monitoring without independently recreating the aggregate view. This semantic consumption establishes no named Service, interface or runtime invocation. Measurement supplies observations; monitoring establishes a view; Clinical Determination interprets its clinical significance. Deterioration, improvement and stability are possible monitored states, not established peer CT3s.
+
+\phantomsection\label{rad:business:347}
+\subsubsection*{CT2 — Individual Care Review}
+\phantomsection\label{rad:business:349}
+
+\textbf{Tier and ancestry:} CT2; parent Individual Care Delivery (CT1).
+
+\phantomsection\label{rad:business:351}
+
+\textbf{Definition:} Evaluate care against intent and objectives.
+
+\phantomsection\label{rad:business:353}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Individual Care Review; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:355}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Care Appropriateness Review & Evaluate whether the current intended care remains suitable in the individual’s current context.\\\hline
+Care Effectiveness Review & Evaluate whether delivered care is achieving or has achieved its intended goals and outcomes.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:360}
+
+\textbf{Boundary:} An effectiveness finding may inform appropriateness without replacing it. Care may be appropriate yet ineffective, or effective yet no longer appropriate to continue. Monitoring the response is distinct from judging effectiveness; identifying a need to reconsider care does not establish the replacement plan. Replanning belongs to Individual Care Planning.
+
+\phantomsection\label{rad:business:362}
+\subsubsection*{02. Care Access \& Coordination}
+\phantomsection\label{rad:business:364}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:366}
+
+\textbf{Definition:} Managing patient intake, referral triage, appointment scheduling, multidisciplinary care team coordination, cross-facility patient transfers, and care continuity across organisational boundaries.
+
+\phantomsection\label{rad:business:368}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:370}
+\subsubsection*{CT2 — Care Access Management}
+\phantomsection\label{rad:business:372}
+
+\textbf{Tier and ancestry:} CT2; parent Care Access \& Coordination (CT1).
+
+\phantomsection\label{rad:business:374}
+
+\textbf{Definition:} Establish and manage access to applicable care.
+
+\phantomsection\label{rad:business:376}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Care Access Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:378}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Care Intake Management & Establish and manage the intake context through which an individual seeks or enters care.\\\hline
+Care Referral Management & Manage a request for another participant/\allowbreak{}service to assess, manage or assume applicable care responsibility.\\\hline
+Care Eligibility Determination & Determine whether applicable eligibility conditions for care access are satisfied.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:384}
+
+\textbf{Boundary:} Intake, referral and eligibility are distinct abilities. Referral submission or receipt does not establish acceptance, care delivery or responsibility actually assumed; eligibility does not itself allocate or deliver care.
+
+\phantomsection\label{rad:business:386}
+\subsubsection*{CT2 — Care Scheduling \& Capacity Management}
+\phantomsection\label{rad:business:388}
+
+\textbf{Tier and ancestry:} CT2; parent Care Access \& Coordination (CT1).
+
+\phantomsection\label{rad:business:390}
+
+\textbf{Definition:} Manage scheduled opportunities, care places, usable operational capacity and care-demand resourcing.
+
+\phantomsection\label{rad:business:392}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Care Scheduling \& Capacity Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:394}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Care Appointment Management & Establish and manage a scheduled opportunity for care.\\\hline
+Care-Place Allocation & Allocate an applicable care place to a care requirement.\\\hline
+Care-Place Readiness Management & Establish and manage whether a particular care place is ready for allocation or use.\\\hline
+Care Resource Deployment & Apply legitimately available and appropriately authorised resources to a current or planned operational care requirement, particularly using roster/\allowbreak{}on-call and service-coverage context.\\\hline
+Operational Care Flow Coordination & Coordinate operational care flow and its progression within the care-delivery environment.\\\hline
+Operational Care Capacity Management & Understand and manage the service’s usable capacity to accommodate care in its current operational context.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:403}
+
+\textbf{Boundary:} Available staff, equipment or an unoccupied bed does not establish usable service capacity. Available for service coverage ≠ deployed to a care requirement ≠ assigned operational work. Care Resource Deployment consumes availability, role, qualification, engagement and privilege context without changing authoritative rosters, qualifications, employment or privilege records. It establishes no Harmonia authority over clinical work, enterprise assets or hospital-wide logistics. Operational capacity is distinct from strategic/\allowbreak{}tactical capacity planning and from collective service readiness (OI-BC-002).
+
+\phantomsection\label{rad:business:405}
+\subsubsection*{CT2 — Care Coordination \& Transition}
+\phantomsection\label{rad:business:407}
+
+\textbf{Tier and ancestry:} CT2; parent Care Access \& Coordination (CT1).
+
+\phantomsection\label{rad:business:409}
+
+\textbf{Definition:} Coordinate care participation, actual responsibility transition and discharge.
+
+\phantomsection\label{rad:business:411}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Care Coordination \& Transition; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:413}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Care-Team Coordination & Coordinate participating care-team context and collaboration around care.\\\hline
+Care Responsibility Transition & Establish and coordinate who has actually assumed applicable care responsibility.\\\hline
+Care Discharge Coordination & Coordinate applicable discharge requirements and progression.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:419}
+
+\textbf{Boundary:} Patient moved ≠ care responsibility transferred. Arrival, referral submission, message receipt, discharge readiness or physical departure does not itself establish acceptance of responsibility. Information assembly for clinical handover does not confer clinical-handover management authority on Harmonia.
+
+\phantomsection\label{rad:business:421}
+\subsubsection*{CT2 — Care Support Logistics Management}
+\phantomsection\label{rad:business:423}
+
+\textbf{Tier and ancestry:} CT2; parent Care Access \& Coordination (CT1).
+
+\phantomsection\label{rad:business:425}
+
+\textbf{Definition:} Coordinate bounded operational support needed for care access and fulfilment.
+
+\phantomsection\label{rad:business:427}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Care Support Logistics Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:429}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Patient Movement Coordination & Coordinate physical patient transit and applicable mobility constraints.\\\hline
+Clinical Material Logistics Coordination & Coordinate clinically relevant material movement, custody, availability or disposition needed for care or diagnostic fulfilment.\\\hline
+Care Support Work Coordination & Coordinate authorised operational support work: what needs doing, who performs it and how progression, completion or escalation is coordinated.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:435}
+
+\textbf{Boundary:} These abilities do not establish a general hospital logistics, supply-chain, ERP, facilities or workforce-management architecture. Support work coordination does not determine clinical work; assignment/\allowbreak{}dispatch does not establish availability, qualification, privilege or clinical authority.
+
+\phantomsection\label{rad:business:437}
+\subsubsection*{03. Health Rights, Advocacy \& Participation}
+\phantomsection\label{rad:business:439}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:441}
+
+\textbf{Definition:} Protecting patient rights, facilitating informed consent, managing advance care directives, supporting patient advocacy, and enabling consumer participation in health decisions.
+
+\phantomsection\label{rad:business:443}
+
+\textbf{Classification:} Adjacent.
+
+\phantomsection\label{rad:business:445}
+
+No CT2/\allowbreak{}CT3 set is established by this reconciliation. Consent and record-access evidence can support rights without assigning advocacy or participation management to Harmonia.
+
+\phantomsection\label{rad:business:447}
+\subsubsection*{04. Diagnostic, Therapeutic \& Clinical Support Services}
+\phantomsection\label{rad:business:449}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:451}
+
+\textbf{Definition:} The specialised clinical services that support direct patient care, including pathology and laboratory testing, diagnostic imaging (radiology), pharmacy and medication dispensing, and allied health therapies.
+
+\phantomsection\label{rad:business:453}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:455}
+
+The following diagnostic and pharmacy branches are established. Other therapeutic/\allowbreak{}support scope remains enterprise context; no further subordinate identity is manufactured.
+
+\phantomsection\label{rad:business:457}
+\subsubsection*{CT2 — Diagnostic Support Provision}
+\phantomsection\label{rad:business:459}
+
+\textbf{Tier and ancestry:} CT2; parent Diagnostic, Therapeutic \& Clinical Support Services (CT1).
+
+\phantomsection\label{rad:business:461}
+
+\textbf{Definition:} Provide diagnostic services and manage their evidence, interpretation and governed reporting.
+
+\phantomsection\label{rad:business:463}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Diagnostic Support Provision; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:465}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Diagnostic Service Appointment Management & Manage the diagnostic-service-specific scheduled opportunity, including preparation, modality, urgency, duration and other service-specific constraints.\\\hline
+Diagnostic Service Delivery & Perform the diagnostic activity that obtains or produces diagnostic evidence.\\\hline
+Diagnostic Specimen Management & Maintain a specimen’s identity, integrity, suitability, custody and applicable lifecycle context.\\\hline
+Diagnostic Data Management & Manage acquired or produced diagnostic evidence as information, including identity, association, integrity, organisation, availability and lifecycle.\\\hline
+Diagnostic Interpretation & Establish what diagnostic evidence demonstrates within the diagnostic service’s professional scope.\\\hline
+Diagnostic Report Management & Establish and govern the authoritative expression of diagnostic findings, including applicable creation, review, amendment, verification, finalisation and authorisation/\allowbreak{}signing.\\\hline
+Diagnostic Report Distribution & Provide an established report to applicable authorised recipients or consuming contexts under applicable access, privacy, security and communication controls.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:475}
+
+\textbf{Boundary:} Scheduling ≠ performance ≠ evidence management ≠ interpretation ≠ governed report ≠ distribution. Specimen and data responsibilities remain distinct. Diagnostic interpretation does not establish patient-level Clinical Determination from the total clinical context. Generic appointments are distinct from diagnostic-specific constraints. Diagnostic Order Management is not established here as a subordinate capability. Signing/\allowbreak{}finalisation are report behaviours, not additional CT3s. Services may exercise a subset, concurrently or iteratively; no mandatory diagnostic workflow is established.
+
+\phantomsection\label{rad:business:477}
+\subsubsection*{CT2 — Medication \& Pharmacy Services}
+\phantomsection\label{rad:business:479}
+
+\textbf{Tier and ancestry:} CT2; parent Diagnostic, Therapeutic \& Clinical Support Services (CT1).
+
+\phantomsection\label{rad:business:481}
+
+\textbf{Definition:} Provide professional medication/\allowbreak{}pharmacy services under applicable controls.
+
+\phantomsection\label{rad:business:483}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Medication \& Pharmacy Services; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:485}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Prescription Medication Dispensing & Professionally prepare and provide medication according to an applicable authorised prescription/\allowbreak{}order and dispensing requirements.\\\hline
+Non-Prescription Medication Provision & Provide medication not requiring an applicable prescription, subject to professional, regulatory and safety controls.\\\hline
+Medication Advice & Provide professional medication-specific advice about appropriate use, precautions, interactions, administration, adherence or safe handling.\\\hline
+Medication Dose Administration Aid Provision & Prepare and provide organised medication doses supporting administration according to an already established regimen.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:492}
+
+\textbf{Boundary:} Medication prescribed ≠ dispensed ≠ provided ≠ administered. Advice does not establish diagnosis, prescribing or authority to alter treatment. Dose aid provision does not establish the regimen; commercial packaging examples do not define the capability. These are pharmacy responsibilities, distinct from clinical intervention, and do not prescribe a medication sequence. Medication Advice’s detailed scope remains subject to refinement. OI-BC-001 remains unresolved; compounding/\allowbreak{}preparation is neither established, rejected nor silently subsumed.
+
+\phantomsection\label{rad:business:494}
+\subsubsection*{05. Health Products \& Clinical Technology}
+\phantomsection\label{rad:business:496}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:498}
+
+\textbf{Definition:} Manage health products and clinical technology in the care environment, with distinct device inventory, functional/\allowbreak{}release, deployment, utilisation, integration and lifecycle responsibilities. Product procurement and supply context is retained without inferring further Health Product Management decomposition.
+
+\phantomsection\label{rad:business:500}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:502}
+\subsubsection*{CT2 — Clinical Technology Management}
+\phantomsection\label{rad:business:504}
+
+\textbf{Tier and ancestry:} CT2; parent Health Products \& Clinical Technology (CT1).
+
+\phantomsection\label{rad:business:506}
+
+\textbf{Definition:} Manage clinical technology as a coherent business concern rather than only the device information Harmonia happens to use.
+
+\phantomsection\label{rad:business:508}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Clinical Technology Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:510}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Clinical Device Inventory Management & Establish what devices exist and their managed asset identity, specification, ownership/\allowbreak{}custody and inventory context.\\\hline
+Clinical Device Feature \& Release Management & Manage functional/\allowbreak{}release state, including applicable software, firmware, configuration and enabled device characteristics.\\\hline
+Clinical Device Loan \& Deployment Management & Manage device loan, issue, assignment, placement, return and deployment.\\\hline
+Clinical Device Utilisation Support & Enable and support otherwise appropriately authorised users to use the particular device safely and effectively.\\\hline
+Clinical Device Integration Provision & Establish and maintain the device’s capability and configuration to participate in applicable information exchanges.\\\hline
+Clinical Device Data Integration & Acquire, exchange or convey device data through established integration capability.\\\hline
+Clinical Device Lifecycle Management & Govern introduction, continued service, review, replacement, withdrawal, decommissioning and retirement within the overall device estate.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:520}
+
+\textbf{Boundary:} Inventory ≠ release state ≠ deployment ≠ user enablement ≠ use in care. Professional qualification/\allowbreak{}privilege does not establish device-specific enablement. Integration provisioned ≠ data integrated; neither confers clinical interpretation or downstream information authority. Device monitoring remains externally provided enablement, with provider unestablished. Monitoring, maintenance and lifecycle disposition have distinct meanings. The Maintenance membership discrepancy is preserved under Unresolved Business Capability matters; no eighth CT3 is inferred.
+
+\phantomsection\label{rad:business:522}
+\subsubsection*{06. Clinical Quality, Safety \& Improvement}
+\phantomsection\label{rad:business:524}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:526}
+
+\textbf{Definition:} Operational clinical quality, safety and improvement: monitoring clinical outcomes; identifying quality and safety concerns; adverse event and incident management, reporting and response; infection control; operational quality and safety monitoring; continuous quality improvement; and coordination of operational responses to identified concerns.
+
+\phantomsection\label{rad:business:528}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:530}
+\subsubsection*{CT2 — Clinical Safety Management}
+\phantomsection\label{rad:business:532}
+
+\textbf{Tier and ancestry:} CT2; parent Clinical Quality, Safety \& Improvement (CT1).
+
+\phantomsection\label{rad:business:534}
+
+\textbf{Definition:} Manage the clinical-risk distinctions materially required for R1/\allowbreak{}R2.
+
+\phantomsection\label{rad:business:536}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Clinical Safety Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:538}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Clinical Risk Identification & Recognise and characterise a clinical safety risk from applicable evidence.\\\hline
+Clinical Risk Mitigation Management & Manage prospective/\allowbreak{}preventative measures reducing identified risk likelihood, exposure or consequence.\\\hline
+Clinical Risk Response Management & Manage active response, containment and remediation where risk has materialised, is emerging or requires active intervention.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:544}
+
+\textbf{Boundary:} Monitoring supplies evidence but does not itself identify/\allowbreak{}characterise clinical risk. Monitoring providers remain unestablished. Mitigation/\allowbreak{}response may require action by other capabilities without acquiring those capabilities’ ownership. Response is not a generic enterprise incident-management container. The three CT3s are deliberately non-exhaustive specialist context; identified, mitigated and actively responded-to states are distinct, not a mandatory sequence.
+
+\phantomsection\label{rad:business:546}
+\subsubsection*{CT2 — Clinical Quality Management}
+\phantomsection\label{rad:business:548}
+
+\textbf{Tier and ancestry:} CT2; parent Clinical Quality, Safety \& Improvement (CT1).
+
+\phantomsection\label{rad:business:550}
+
+\textbf{Definition:} Manage the clinical-quality distinctions materially required for R1/\allowbreak{}R2.
+
+\phantomsection\label{rad:business:552}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Clinical Quality Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:554}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Clinical Quality Criteria Management & Establish and manage measures, indicators, expectations and criteria against which clinical quality is considered.\\\hline
+Clinical Quality Evidence Management & Manage the body of applicable evidence used for clinical-quality consideration without owning its originating activity.\\\hline
+Clinical Quality Review \& Assessment Management & Review evidence against applicable criteria and establish a clinical-quality assessment, finding or conclusion.\\\hline
+Clinical Quality Reporting & Communicate established clinical-quality measures, assessments, findings and conclusions to authorised consumers.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:561}
+
+\textbf{Boundary:} Criteria ≠ evidence ≠ assessment ≠ reporting ≠ subsequent improvement. Observation alone is not quality judgement and reporting does not originate the reported conclusion. Clinical Quality Performance Monitoring is not established as a separate CT3; the provider of monitoring evidence remains unestablished. Continuous Improvement is not a subordinate CT3 here; generic placement remains unestablished. Health Service Continuous Improvement has the separately established service-wide purpose under 14. The four CT3s do not exhaust specialist Clinical Quality.
+
+\phantomsection\label{rad:business:563}
+\subsubsection*{07. Community Health \& Wellbeing}
+\phantomsection\label{rad:business:565}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:567}
+
+\textbf{Definition:} Support community health and wellbeing, including the bounded preventative-health abilities required for R1/\allowbreak{}R2. Wider environmental health, outreach and social determinants remain enterprise context without inferred additional decomposition.
+
+\phantomsection\label{rad:business:569}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:571}
+\subsubsection*{CT2 — Preventative Health}
+\phantomsection\label{rad:business:573}
+
+\textbf{Tier and ancestry:} CT2; parent Community Health \& Wellbeing (CT1).
+
+\phantomsection\label{rad:business:575}
+
+\textbf{Definition:} Address preventative-health needs through organised activity with sufficient R1/\allowbreak{}R2 distinctions.
+
+\phantomsection\label{rad:business:577}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Preventative Health; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:579}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Preventative Health Problem Identification & Identify and characterise a preventative-health problem warranting organised attention.\\\hline
+Preventative Health Programme Management & Establish and manage an organised response to a preventative-health need/\allowbreak{}objective without absorbing its delivery capabilities.\\\hline
+Preventative Health Education Services & Provide education intended to prevent adverse health outcomes and influence preventative knowledge or behaviour.\\\hline
+Preventative Health Programme Monitoring & Observe programme operation, reach, participation, coverage, progress and applicable performance.\\\hline
+Preventative Health Reporting & Report established preventative-health problems, programmes, cohorts, activity, performance and outcomes.\\\hline
+Preventative Health Cohort Management & Establish and manage the target population, inclusion/\allowbreak{}exclusion criteria, membership, stratification and applicable entry/\allowbreak{}exit context.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:588}
+
+\textbf{Boundary:} Screening and immunisation are programme types, not automatically separate CT3s. Population at risk ≠ defined cohort ≠ individual clinical problem. Programme management does not own clinical intervention, appointments or other delivery abilities. Education is purpose-specific rather than generic communication. Programme monitoring is distinct from population-health assessment, individual monitoring and assurance/\allowbreak{}review conclusions. This is deliberate specialist under-decomposition; unmodelled responsibilities are not assigned to existing CT3s.
+
+\phantomsection\label{rad:business:590}
+\subsubsection*{08. Population Health \& Health-System Planning}
+\phantomsection\label{rad:business:592}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:594}
+
+\textbf{Definition:} Understand population health through assessment/\allowbreak{}surveillance and applicable event/\allowbreak{}notification management; assess health-service demand and plan required capacity and its distribution.
+
+\phantomsection\label{rad:business:596}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:598}
+\subsubsection*{CT2 — Population Health Surveillance}
+\phantomsection\label{rad:business:600}
+
+\textbf{Tier and ancestry:} CT2; parent Population Health \& Health-System Planning (CT1).
+
+\phantomsection\label{rad:business:602}
+
+\textbf{Definition:} Understand population-health state and manage organised surveillance, significant events and applicable notification.
+
+\phantomsection\label{rad:business:604}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Population Health Surveillance; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:606}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Population Health Longitudinal Assessment & Establish population-health state, patterns and change over time from applicable evidence.\\\hline
+Population Health Surveillance Management & Establish and manage surveillance purposes, populations, concerns and regimes.\\\hline
+Population Health Event Identification & Identify and characterise significant population-health events/\allowbreak{}patterns from applicable evidence.\\\hline
+Notifiable Health Event Management & Manage formal notification applicability, required information, recipient, status, submission, correction/\allowbreak{}supplementation and applicable follow-up.\\\hline
+Population Health Reporting & Communicate established population-health assessments, surveillance, events, trends and findings.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:614}
+
+\textbf{Boundary:} Population state ≠ individual state; observed change ≠ identified event ≠ notifiability ≠ obligation discharged. Notification management neither defines the obligation nor owns operational response, and is distinct from general reporting. Surveillance may provide evidence for preventative problems/\allowbreak{}cohorts, demand planning, clinical quality or safety without establishing those outcomes. Population assessment differs from preventative-programme performance. Individual observations may contribute population evidence without becoming population conclusions. Epidemiology, outbreak response and public-health scope are deliberately not exhaustively modelled.
+
+\phantomsection\label{rad:business:616}
+\subsubsection*{CT2 — Health-System Planning}
+\phantomsection\label{rad:business:618}
+
+\textbf{Tier and ancestry:} CT2; parent Population Health \& Health-System Planning (CT1).
+
+\phantomsection\label{rad:business:620}
+
+\textbf{Definition:} Assess health-service demand and plan the capacity and footprint required to meet it.
+
+\phantomsection\label{rad:business:622}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health-System Planning; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:624}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health Service Demand Assessment & Assess current/\allowbreak{}expected health-service demand across a population, geography, service domain or health-system context.\\\hline
+Health Service Capacity Planning & Determine required strategic/\allowbreak{}tactical capacity to address assessed demand.\\\hline
+Health Service Distribution Planning & Determine the distribution of planned capacity across a geographical, organisational, site or service-network footprint.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:630}
+
+\textbf{Boundary:} Population-health evidence does not predetermine a demand conclusion. Individual care demand differs from health-system demand; required capacity differs from established or operationally usable capacity. Planning owns neither underlying resources nor operational allocation/\allowbreak{}deployment. Planned footprint differs from managed locations and identifiable offerings. Detailed commissioning, funding, capital, infrastructure and workforce planning remain intentionally unmodelled.
+
+\phantomsection\label{rad:business:632}
+
+\par\smallskip
+\phantomsection\label{rad:business:634}
+\subsubsection*{Region 2: Health Information \& Digital Health}
+\phantomsection\label{rad:business:636}
+\subsubsection*{09. Health Information \& Knowledge Management}
+\phantomsection\label{rad:business:638}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:640}
+
+\textbf{Definition:} Manage governed health-information content, structures, lifecycle, catalogues, compartments, correlation and retrieval, alongside reusable clinical knowledge and its governed standing.
+
+\phantomsection\label{rad:business:642}
+
+\textbf{Classification:} Harmonia-Core.
+
+\phantomsection\label{rad:business:644}
+\subsubsection*{CT2 — Health Information Management}
+\phantomsection\label{rad:business:646}
+
+\textbf{Tier and ancestry:} CT2; parent Health Information \& Knowledge Management (CT1).
+
+\phantomsection\label{rad:business:648}
+
+\textbf{Definition:} Manage health information as governed, semantically meaningful content.
+
+\phantomsection\label{rad:business:650}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Information Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:652}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health Information Data Management & Manage actual health-information content within applicable governed structures.\\\hline
+Health Information Structure Management & Manage structures, element/\allowbreak{}reference definitions, constraints and semantic bindings giving content unambiguous meaning.\\\hline
+Health Information Lifecycle Management & Govern state, amendment, correction, supersession, currency, retention and disposition while preserving provenance and historical meaning.\\\hline
+Health Information Catalogue and Index Management & Manage descriptive catalogues/\allowbreak{}indexes through which information existence and location can be established.\\\hline
+Health Information Compartmentalisation & Manage contextual association, partitioning and bounded information groupings.\\\hline
+Health Information Data Correlation & Establish meaningful relationships between independently managed information items/\allowbreak{}sets.\\\hline
+Health Information Data Retrieval & Obtain identified information under an applicable authorised request/\allowbreak{}context.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:662}
+
+\textbf{Boundary:} Semantic authority ≠ semantic binding ≠ content; a persisted value is not self-describing health information. Structure/\allowbreak{}binding management does not govern the referenced terminology/\allowbreak{}value set. Catalogue existence/\allowbreak{}location ≠ retrieval ≠ communication ≠ presentation; discoverability does not authorise access. Compartment membership may inform but does not determine authorisation. Correlation establishes neither clinical interpretation nor entity identity. Current state and immutable historical operational truth remain distinct; managing information does not originate its facts. Structures are not equated with FHIR resources, physical schemas or storage mechanisms.
+
+\phantomsection\label{rad:business:664}
+\subsubsection*{CT2 — Clinical Knowledge Management}
+\phantomsection\label{rad:business:666}
+
+\textbf{Tier and ancestry:} CT2; parent Health Information \& Knowledge Management (CT1).
+
+\phantomsection\label{rad:business:668}
+
+\textbf{Definition:} Identify, extract, formulate, associate, govern and share reusable clinical knowledge.
+
+\phantomsection\label{rad:business:670}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Clinical Knowledge Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:672}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Clinical Knowledge Context Identification & Identify sources/\allowbreak{}contexts potentially containing reusable clinical knowledge.\\\hline
+Clinical Knowledge Context Extraction & Extract relevant material while preserving its source/\allowbreak{}context relationship.\\\hline
+Clinical Knowledge Information Formulation & Formulate explicit reusable knowledge, including applicability, qualifications, rationale and evidence relationships.\\\hline
+Clinical Knowledge Concept Association & Associate knowledge with applicable governed clinical concepts without acquiring concept authority.\\\hline
+Clinical Knowledge Review \& Approval Management & Manage review, endorsement, approval/\allowbreak{}rejection, conditions and applicable history for intended governed use.\\\hline
+Clinical Knowledge Publication \& Sharing & Make approved knowledge available to applicable authorised consumers and use contexts.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:681}
+
+\textbf{Boundary:} Source identified ≠ extracted material ≠ formulated knowledge ≠ reviewed/\allowbreak{}approved knowledge ≠ publication ≠ individual application. Reusable knowledge differs from source health information and individual clinical facts. Formulation is distinct from Health Information Structure Management and does not establish approval. Concept association does not redefine terminology or semantic authority. Publication establishes neither individual applicability nor a clinical conclusion/\allowbreak{}decision. Clinical knowledge and source provenance/\allowbreak{}authority remain distinguishable; no mandatory knowledge workflow is prescribed.
+
+\phantomsection\label{rad:business:683}
+\subsubsection*{10. Standards, Semantics \& Reference Governance}
+\phantomsection\label{rad:business:685}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:687}
+
+\textbf{Definition:} Govern organisational adoption, oversight and appropriate use of health-information models, standards, terminology, classifications and semantic mappings.
+
+\phantomsection\label{rad:business:689}
+
+\textbf{Classification:} Harmonia-Core.
+
+\phantomsection\label{rad:business:691}
+\subsubsection*{CT2 — Health Information Standards Governance}
+\phantomsection\label{rad:business:693}
+
+\textbf{Tier and ancestry:} CT2; parent Standards, Semantics \& Reference Governance (CT1).
+
+\phantomsection\label{rad:business:695}
+
+\textbf{Definition:} Govern organisational adoption and use of health-information models and applicable standards.
+
+\phantomsection\label{rad:business:697}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Information Standards Governance; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:699}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Information Model Discovery & Identify information models relevant to the organisation’s health-information needs.\\\hline
+Information Model Adoption & Adopt applicable information models, including intrinsic assessment of adoption impacts.\\\hline
+Information Model Education & Support organisational understanding and appropriate use of adopted information models.\\\hline
+Information Model Compliance & Address organisational conformity to applicable information-model requirements.\\\hline
+Information Model Governance Oversight & Oversee and evaluate effectiveness, consistency and appropriate operation of information-model governance.\\\hline
+Standards Adoption & Adopt applicable standards within the organisation.\\\hline
+Standards Impact Identification & Identify standards impacts across clinical/\allowbreak{}work practice, permitted medications, procedures, policy, safety, obligations and reporting as applicable.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:709}
+
+\textbf{Boundary:} Oversight does not perform its discovery, adoption, education or compliance peers. Model-adoption impact is intrinsic to adoption; standards impacts can extend beyond information-system implementation and warrant their distinct established identity. These are the peers explicitly named in DN-BC-025; no additional standards peer is inferred to fill out a conventional taxonomy. Conceptual progression does not establish a workflow.
+
+\phantomsection\label{rad:business:711}
+\subsubsection*{CT2 — Clinical Semantics Governance}
+\phantomsection\label{rad:business:713}
+
+\textbf{Tier and ancestry:} CT2; parent Standards, Semantics \& Reference Governance (CT1).
+
+\phantomsection\label{rad:business:715}
+
+\textbf{Definition:} Govern clinical meaning and appropriate organisational use of semantic artefacts.
+
+\phantomsection\label{rad:business:717}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Clinical Semantics Governance; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:719}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Terminology Governance & Manage governed terminology/\allowbreak{}reference-set lifecycle and standing, including acceptance, release, update, supersession/\allowbreak{}retirement and authority/\allowbreak{}provider coordination.\\\hline
+Terminology Utilisation Oversight & Oversee actual terminology/\allowbreak{}reference-set use and identify inappropriate, inconsistent or drifting usage.\\\hline
+Terminology Localisation & Manage controlled local responses where adopted terminology does not meet legitimate organisational semantic requirements.\\\hline
+Classification Governance & Govern applicable classification definitions and their organisational standing.\\\hline
+Classification Utilisation Oversight & Oversee appropriate organisational application of classifications.\\\hline
+Semantic Mapping Governance & Govern mappings between applicable semantic artefacts without collapsing their source meanings or authorities.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:728}
+
+\textbf{Boundary:} Compartmentalisation concerns business/\allowbreak{}context relationships; classification concerns sensitivity and consequences of exposure/\allowbreak{}mishandling; terminology concerns consistent meaning. They are orthogonal even where metadata/\allowbreak{}mechanisms are shared. Classification Localisation is not established and SHALL NOT be invented for symmetry. Governance differs from structure binding and knowledge-to-concept association.
+
+\phantomsection\label{rad:business:730}
+\subsubsection*{11. Connected Health Services}
+\phantomsection\label{rad:business:732}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:734}
+
+\textbf{Definition:} Exchange health information appropriately and provide digitally mediated communication, notifications and collaborative interaction between health-service participants.
+
+\phantomsection\label{rad:business:736}
+
+\textbf{Classification:} Harmonia-Core.
+
+\phantomsection\label{rad:business:738}
+\subsubsection*{CT2 — Health Information Exchange}
+\phantomsection\label{rad:business:740}
+
+\textbf{Tier and ancestry:} CT2; parent Connected Health Services (CT1).
+
+\phantomsection\label{rad:business:742}
+
+\textbf{Definition:} Exchange health information appropriately between participating parties, systems and services.
+
+\phantomsection\label{rad:business:744}
+
+No CT3 decomposition is established here.
+
+\phantomsection\label{rad:business:746}
+
+\textbf{Boundary:} This organisational ability is not a FHIR server, interface engine, protocol or interoperability product. The established rename from Health Information Connectivity does not allocate additional CT3s. Health Information Sharing Programme Management is a named working capability in DN-BC-027 whose precise tier/\allowbreak{}parent is not supplied there; it is retained separately as unresolved. The collision with the existing BEC name remains for explicit adjudication; no BEC identity is merged or renamed.
+
+\phantomsection\label{rad:business:748}
+\subsubsection*{CT2 — Digital Communication Channel}
+\phantomsection\label{rad:business:750}
+
+\textbf{Tier and ancestry:} CT2; parent Connected Health Services (CT1).
+
+\phantomsection\label{rad:business:752}
+
+\textbf{Definition:} Provide digitally mediated communication, notification and collaborative interaction between patients, practitioners and other health-service participants.
+
+\phantomsection\label{rad:business:754}
+
+No CT3 decomposition is established here.
+
+\phantomsection\label{rad:business:756}
+
+\textbf{Boundary:} Appointment notifications, pharmacy queries, results and collaboration illustrate participant communication. This is not the general UI/\allowbreak{}presentation capability: exercising another capability through a UI does not itself exercise this communication ability. General presentation enablement remains parked for BEC reconciliation. No CT3 set is established by DN-BC-027.
+
+\phantomsection\label{rad:business:758}
+\subsubsection*{12. Security, Privacy \& Digital Trust}
+\phantomsection\label{rad:business:760}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:762}
+
+\textbf{Definition:} Establish adequate identity confidence, coherent access controls, privacy/\allowbreak{}protection safeguards, governed activity attribution and accountability for security-relevant activity and information use.
+
+\phantomsection\label{rad:business:764}
+
+\textbf{Classification:} Harmonia-Core.
+
+\phantomsection\label{rad:business:766}
+\subsubsection*{CT2 — Digital Identity \& Access Governance}
+\phantomsection\label{rad:business:768}
+
+\textbf{Tier and ancestry:} CT2; parent Security, Privacy \& Digital Trust (CT1).
+
+\phantomsection\label{rad:business:770}
+
+\textbf{Definition:} Govern sufficient identity confidence and coherent access controls across the organisation.
+
+\phantomsection\label{rad:business:772}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Digital Identity \& Access Governance; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:774}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Identity Assurance & Establish sufficient confidence that a person is who they claim to be through appropriate evidence and processes.\\\hline
+Identity Modelling \& Interoperability & Establish identity models and interoperability arrangements appropriate to organisational identity use.\\\hline
+Identity Qualification Control & Determine whether presented identity characteristics, provenance and assurance quality are sufficient for its intended context.\\\hline
+Identity Identification \& Authentication & Identify an actor and authenticate the asserted identity.\\\hline
+Access Control Context Management & Determine what information, functions, activities or other concerns require control, under what circumstances and how requirements are modelled.\\\hline
+Access Control Assurance \& Reporting & Establish organisational assurance/\allowbreak{}evidence of whether access-control arrangements are appropriately established and operating.\\\hline
+Access Control Collaboration & Coordinate arrangements across independently controlled domains/\allowbreak{}parties while retaining their control ownership.\\\hline
+Access Control Enforcement & Ensure physical, procedural and digital control mechanisms coherently impose intended controls.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:785}
+
+\textbf{Boundary:} Who are you? ≠ confidence in the claimed identity ≠ identity quality sufficient here. Federation and Single Sign-On are examples, not equivalent concepts or universal identity-quality guarantees. Context management is not merely runtime attribute assembly; enforcement is not a software authorisation engine. Strong local control does not imply end-to-end control. Identity Assurance is an organisational ability; the possible future BEC name Identity Assurance Representation remains unestablished.
+
+\phantomsection\label{rad:business:787}
+\subsubsection*{CT2 — Health Information Protection}
+\phantomsection\label{rad:business:789}
+
+\textbf{Tier and ancestry:} CT2; parent Security, Privacy \& Digital Trust (CT1).
+
+\phantomsection\label{rad:business:791}
+
+\textbf{Definition:} Govern privacy consequences and adequate protection of the information estate and its environment.
+
+\phantomsection\label{rad:business:793}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Information Protection; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:795}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health Privacy Safeguard Management & Establish organisational safeguards and assurance processes concerning privacy consequences of information supply, exposure or use.\\\hline
+Health Information Safeguarding & Ensure information and its operational environment are protected and resilient against loss, compromise, inappropriate access or operational failure.\\\hline
+Health Information Access Monitoring & Evaluate actual organisational access/\allowbreak{}handling practice, including controls, accessibility, compartments, classification and physical/\allowbreak{}printed handling.\\\hline
+Health Information Compartment Assurance & Assure appropriate establishment and application of compartmentalisation without establishing access decisions.\\\hline
+Health Information Classification Assurance & Assure appropriate classification according to sensitivity and potential consequences of exposure/\allowbreak{}mishandling.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:803}
+
+\textbf{Boundary:} Privacy consequences differ from estate/\allowbreak{}environment protection. Storage, backups, disaster recovery, physical controls and testing illustrate organisational safeguards rather than define software components. Access Monitoring evaluates practice using IT, audit, physical-access or other evidence; it is not merely observation of software access events. Evidence supply does not transfer business accountability. These subject-specific protection abilities are not separate macro-level Health Service Assurance trees.
+
+\phantomsection\label{rad:business:805}
+\subsubsection*{CT2 — Digital Accountability \& Trust}
+\phantomsection\label{rad:business:807}
+
+\textbf{Tier and ancestry:} CT2; parent Security, Privacy \& Digital Trust (CT1).
+
+\phantomsection\label{rad:business:809}
+
+\textbf{Definition:} Establish governed attribution and accountability for activity and information use.
+
+\phantomsection\label{rad:business:811}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Digital Accountability \& Trust; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:813}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Governed Activity Attribution & Preserve who participated, what was done, the attributable person/\allowbreak{}role/\allowbreak{}unit/\allowbreak{}organisation capacity and applicable permission/\allowbreak{}authority/\allowbreak{}constraint context.\\\hline
+Security \& Information-Use Accountability & Evaluate whether attributed security-relevant activity/\allowbreak{}information use was appropriate within policy, obligation and authority constraints, and establish accountability.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:818}
+
+\textbf{Boundary:} Actor identified ≠ activity attributed ≠ activity permitted. Attribution without permission/\allowbreak{}constraint context cannot establish entitlement and is richer than simple audit logging or provenance. Accountability evaluates appropriateness rather than merely recording participation. Expected consumption by governance/\allowbreak{}assurance or other enablement establishes no structural BC↔BEC relationship.
+
+\phantomsection\label{rad:business:820}
+
+\par\smallskip
+\phantomsection\label{rad:business:822}
+\subsubsection*{Region 3: Research \& Innovation}
+\phantomsection\label{rad:business:824}
+\subsubsection*{13. Health Research \& Innovation}
+\phantomsection\label{rad:business:826}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:828}
+
+\textbf{Definition:} Provide existing health information for authorised research under applicable constraints and evaluate health innovation; deliberately under-decomposed for R1/\allowbreak{}R2.
+
+\phantomsection\label{rad:business:830}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:832}
+\subsubsection*{CT2 — Research Information Support}
+\phantomsection\label{rad:business:834}
+
+\textbf{Tier and ancestry:} CT2; parent Health Research \& Innovation (CT1).
+
+\phantomsection\label{rad:business:836}
+
+\textbf{Definition:} Provide the existing health information needed for authorised research within the deliberately bounded R1/\allowbreak{}R2 responsibility.
+
+\phantomsection\label{rad:business:838}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Research Information Support; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:840}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Governed Research Information Provision & Provide existing health information for an authorised research purpose under applicable ethics, governance, privacy, consent, security and information-use constraints.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:844}
+
+\textbf{Boundary:} This is deliberate under-decomposition, not a claim that information provision exhausts research support. Research Assessment and Governance, Research/\allowbreak{}Trials Oversight, clinical-trial management, genomic analysis and other specialist research abilities are intentionally unmodelled unless Harmonia requirements make them material. Their absence does not assign them to information provision.
+
+\phantomsection\label{rad:business:846}
+\subsubsection*{CT2 — Health Innovation}
+\phantomsection\label{rad:business:848}
+
+\textbf{Tier and ancestry:} CT2; parent Health Research \& Innovation (CT1).
+
+\phantomsection\label{rad:business:850}
+
+\textbf{Definition:} Consider health-service and clinical innovation within the R1/\allowbreak{}R2 business context.
+
+\phantomsection\label{rad:business:852}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Innovation; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:854}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health Innovation Evaluation & Evaluate proposed/\allowbreak{}emerging innovation for suitability, value, implications and potential adoption.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:858}
+
+\textbf{Boundary:} Evaluation does not establish adoption or the clinical/\allowbreak{}operational authority to implement innovation. The single CT3 is deliberately sufficient, not an exhaustive innovation lifecycle.
+
+\phantomsection\label{rad:business:860}
+
+\par\smallskip
+\phantomsection\label{rad:business:862}
+\subsubsection*{Region 4: Health Service Management}
+\phantomsection\label{rad:business:864}
+\subsubsection*{14. Health Service Direction \& Stewardship}
+\phantomsection\label{rad:business:866}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:868}
+
+\textbf{Definition:} Model needed health services and their viability requirements, support establishment/\allowbreak{}improvement and align services with the wider ecosystem of dependencies, resources, financial arrangements and organisational change.
+
+\phantomsection\label{rad:business:870}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:872}
+\subsubsection*{CT2 — Health Service Modelling}
+\phantomsection\label{rad:business:874}
+
+\textbf{Tier and ancestry:} CT2; parent Health Service Direction \& Stewardship (CT1).
+
+\phantomsection\label{rad:business:876}
+
+\textbf{Definition:} Establish what service should exist and what it needs to become viable.
+
+\phantomsection\label{rad:business:878}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Service Modelling; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:880}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health Service Need Identification & Establish an unmet health-service need requiring response.\\\hline
+Health Service Capability Identification & Identify the ordinary business abilities needed to satisfy the service need across clinical, workforce, facility, technology, information and support concerns.\\\hline
+Health Service Implementation Support & Support establishment of the framed service through applicable organisational preparation and programmes of work.\\\hline
+Health Service Continuous Improvement & Evaluate the established service and identify correction/\allowbreak{}improvement needs that may feed back into modelling and implementation support.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:887}
+
+\textbf{Boundary:} Capability Identification uses ordinary business meaning; it is not Harmonia CT-tier allocation. Implementation support may require recruitment, training, facility, equipment or technology change without absorbing HR, facilities, ICT or procurement responsibility. Identification, fulfilment requirements, support and review describe semantic relationships, not a prescribed workflow.
+
+\phantomsection\label{rad:business:889}
+\subsubsection*{CT2 — Health Service Alignment}
+\phantomsection\label{rad:business:891}
+
+\textbf{Tier and ancestry:} CT2; parent Health Service Direction \& Stewardship (CT1).
+
+\phantomsection\label{rad:business:893}
+
+\textbf{Definition:} Position the service coherently in its wider health-service ecosystem.
+
+\phantomsection\label{rad:business:895}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Service Alignment; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:897}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Health Service Co-Dependency Management & Identify and manage what the service needs from others and what others need from it.\\\hline
+Health Service Resource Identification & Identify required workforce, facilities, equipment, clinical technology, ICT, administration and support resources without owning them.\\\hline
+Health Service Financial Management & Establish the service’s fit within funding, financial and charging arrangements without absorbing enterprise finance/\allowbreak{}accounting.\\\hline
+Health Service Implementation Planning & Establish and coordinate surrounding organisational/\allowbreak{}service changes needed to introduce or materially change the service.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:904}
+
+\textbf{Boundary:} Alignment does not establish the authoritative service catalogue; it positions the service within the environment represented by that catalogue. Modelling determines what service is needed; alignment determines how it fits; Offering Management establishes the identifiable offering. Expected future Service Catalogue richness explains architectural relevance, but establishes neither a BEC identity/\allowbreak{}hierarchy nor a BC↔BEC mapping. Alignment does not resolve operational-readiness ancestry.
+
+\phantomsection\label{rad:business:906}
+\subsubsection*{15. Workforce \& Organisational Capability}
+\phantomsection\label{rad:business:908}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:910}
+
+\textbf{Definition:} Govern practitioner qualification, engagement/\allowbreak{}privilege and enterprise service coverage, together with organisation identity/\allowbreak{}structure, recognised locations and identifiable healthcare service offerings.
+
+\phantomsection\label{rad:business:912}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:914}
+
+Workforce \& Organisational Capability remains the established CT1. Health Workforce Management and Healthcare Organisation \& Service Structure Management are its distinct CT2 frames; directories represent their facts without replacing business governance of those facts.
+
+\phantomsection\label{rad:business:916}
+\subsubsection*{CT2 — Health Workforce Management}
+\phantomsection\label{rad:business:918}
+
+\textbf{Tier and ancestry:} CT2; parent Workforce \& Organisational Capability (CT1).
+
+\phantomsection\label{rad:business:920}
+
+\textbf{Definition:} Govern practitioners’ professional standing, engagement/\allowbreak{}privilege and whole-enterprise service coverage.
+
+\phantomsection\label{rad:business:922}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Workforce Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:924}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Practitioner Qualification Management & Govern professional/\allowbreak{}clinical standing and qualifications, including applicable review, escalation, complaints, penalties/\allowbreak{}issues, suspension and revocation.\\\hline
+Practitioner Engagement \& Privilege Management & Manage practitioners as service participants, their roles/\allowbreak{}capacities, applicable privileges and qualification context above ordinary HR employment administration.\\\hline
+Workforce Service Coverage Management & Observe whether required enterprise work/\allowbreak{}service obligations can be fulfilled, identify coverage gaps/\allowbreak{}risks and adjust coverage in response.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:930}
+
+\textbf{Boundary:} Qualified ≠ engaged ≠ privileged for a particular activity. Coverage is broader than rostering; it asks whether required work can be covered and how coverage should change. Care Resource Deployment applies available resources to a particular care requirement; Care Support Work Coordination progresses particular support work. Neither consumption of qualification/\allowbreak{}coverage information nor directory representation transfers the underlying workforce authority to Harmonia.
+
+\phantomsection\label{rad:business:932}
+\subsubsection*{CT2 — Healthcare Organisation \& Service Structure Management}
+\phantomsection\label{rad:business:934}
+
+\textbf{Tier and ancestry:} CT2; parent Workforce \& Organisational Capability (CT1).
+
+\phantomsection\label{rad:business:936}
+
+\textbf{Definition:} Manage organisational identity/\allowbreak{}structure, recognised locations and identifiable organisational service offerings.
+
+\phantomsection\label{rad:business:938}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Healthcare Organisation \& Service Structure Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:940}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Healthcare Organisation Identity \& Structure Management & Establish and manage identity and structural relationships of participating organisations and organisational units.\\\hline
+Healthcare Location Definition Management & Establish and manage recognised locations and their applicable business characteristics and relationships.\\\hline
+Healthcare Service Offering Management & Establish/\allowbreak{}manage what identifiable service is offered, by whom, where, when and under which availability conditions/\allowbreak{}constraints.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:946}
+
+\textbf{Boundary:} Location definition is distinct from Facilities Management. Service exists ≠ offered here ≠ available at this time/\allowbreak{}context. Temporal/\allowbreak{}conditional availability is material: a walk-in offering may operate 06:00–22:00 while another pathway covers other hours. Offering availability does not establish collective operational readiness; OI-BC-002 remains unplaced. Organisation, location and practitioner associations do not substitute for material Healthcare Service context.
+
+\phantomsection\label{rad:business:948}
+\subsubsection*{16. Corporate Resources \& Enterprise Services}
+\phantomsection\label{rad:business:950}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:952}
+
+\textbf{Definition:} Provide the bounded clinical-activity charging information and enterprise support context required for R1/\allowbreak{}R2, without assigning enterprise finance, HR, facilities or ICT operating authority to Harmonia.
+
+\phantomsection\label{rad:business:954}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:956}
+\subsubsection*{CT2 — Financial \& Commercial Services}
+\phantomsection\label{rad:business:958}
+
+\textbf{Tier and ancestry:} CT2; parent Corporate Resources \& Enterprise Services (CT1).
+
+\phantomsection\label{rad:business:960}
+
+\textbf{Definition:} Provide the financial/\allowbreak{}commercial business context materially required for R1/\allowbreak{}R2.
+
+\phantomsection\label{rad:business:962}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Financial \& Commercial Services; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:964}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Clinical Activity Charging Information Provision & Identify and provide information about chargeable or cost-relevant clinical/\allowbreak{}health-service activity where required for applicable funding, financial or charging purposes.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:968}
+
+\textbf{Boundary:} The single CT3 is deliberately narrow. Referral forwarding, diagnostic requests, service types, quantities and utilisation context can supply evidence; not every mediated activity is chargeable. Evidence provision does not confer pricing, billing, claims, accounting or revenue-management responsibility. Comprehensive Medicare, insurance, activity-based funding and revenue-cycle architecture is not established.
+
+\phantomsection\label{rad:business:970}
+\subsubsection*{CT2 — Corporate Support Services}
+\phantomsection\label{rad:business:972}
+
+\textbf{Tier and ancestry:} CT2; parent Corporate Resources \& Enterprise Services (CT1).
+
+\phantomsection\label{rad:business:974}
+
+\textbf{Definition:} Provide enterprise support whose resources, availability, state or constraints may materially affect service activity.
+
+\phantomsection\label{rad:business:976}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Corporate Support Services; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:978}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Back-Office Services & Provide administrative/\allowbreak{}support services on which health-service activity depends.\\\hline
+Facilities Management & Manage physical facilities/\allowbreak{}services and applicable resource, location, availability and facility-state context.\\\hline
+IT Infrastructure Management & Operate/\allowbreak{}manage underlying technology infrastructure and its availability.\\\hline
+Communications \& Publicity & Manage organisational communication/\allowbreak{}publication arrangements relevant to information availability/\allowbreak{}distribution.\\\hline
+People Management & Manage people across the organisation, distinct from practitioner-specific Health Workforce Management.\\\hline
+Operational Oversight & Observe broader operational conditions affecting the organisation’s ability to work or deliver services.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:987}
+
+\textbf{Boundary:} These are relevant enterprise abilities even where Harmonia only consumes their state/\allowbreak{}resource/\allowbreak{}constraint context; contextual consumption alone does not make them Harmonia-Core. They are not decomposed further for R1/\allowbreak{}R2 absent a material requirement. Consumption transfers neither resource ownership nor corporate operating authority and does not resolve OI-BC-002.
+
+\phantomsection\label{rad:business:989}
+
+\par\smallskip
+\phantomsection\label{rad:business:991}
+\subsubsection*{Region 5: Governance \& Assurance}
+\phantomsection\label{rad:business:993}
+\subsubsection*{17. Health Service Governance}
+\phantomsection\label{rad:business:995}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:997}
+
+\textbf{Definition:} Establish and maintain the obligations, authorities, constraints, policies and governance framework under which health-service activity must operate, and define how adherence will be assessed, checked and reported.
+
+\phantomsection\label{rad:business:999}
+
+\textbf{Classification:} Unresolved.
+
+\phantomsection\label{rad:business:1001}
+
+Health Service Governance establishes what the organisation must do and how adherence will be determined and governed. It does not determine operational means or acquire progression/\allowbreak{}management of governed work. Enabling derivation remains unestablished; consumption of its requirements alone does not settle its relevance classification.
+
+\phantomsection\label{rad:business:1003}
+\subsubsection*{CT2 — Governance Framework Management}
+\phantomsection\label{rad:business:1005}
+
+\textbf{Tier and ancestry:} CT2; parent Health Service Governance (CT1).
+
+\phantomsection\label{rad:business:1007}
+
+\textbf{Definition:} Establish the authoritative WHAT and legitimate working parameters.
+
+\phantomsection\label{rad:business:1009}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Governance Framework Management; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:1011}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Policy /\allowbreak{} Obligation Governance & Identify, interpret, establish and maintain authoritative legislative, regulatory, policy, standards, guideline, contractual and other obligations, attributable and traceable to source authority.\\\hline
+Authority \& Constraint Governance & Establish who may make, approve or govern organisational decisions/\allowbreak{}artefacts and the bounds within which authority may be exercised.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1016}
+
+\textbf{Boundary:} Obligation = what must be satisfied; authority = who may decide/\allowbreak{}approve; constraint = within what bounds. Engagement with regulators, standards/\allowbreak{}compliance bodies or other authorities can establish legitimate parameters without transferring their authority.
+
+\phantomsection\label{rad:business:1018}
+\subsubsection*{CT2 — Compliance Governance}
+\phantomsection\label{rad:business:1020}
+
+\textbf{Tier and ancestry:} CT2; parent Health Service Governance (CT1).
+
+\phantomsection\label{rad:business:1022}
+
+\textbf{Definition:} Define how adherence to the authoritative WHAT will be determined, checked and reported.
+
+\phantomsection\label{rad:business:1024}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Compliance Governance; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:1026}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Compliance Assessment Definition & Define the evidence, measures, criteria, controls and assessment arrangements sufficient to evaluate compliance with established obligations, authorities and constraints.\\\hline
+Governance Reporting \& Checkpoint Definition & Establish where/\allowbreak{}how adherence is checked and what governance/\allowbreak{}compliance information must be reported.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1031}
+
+\textbf{Boundary:} Obligation definition establishes what must be satisfied; assessment definition establishes the basis for determining satisfaction. This replaces the candidate Compliance Obligation Definition wording. Compliance Governance does not itself perform assurance or assume operational management.
+
+\phantomsection\label{rad:business:1033}
+\subsubsection*{18. Health Service Assurance}
+\phantomsection\label{rad:business:1035}
+
+\textbf{Tier and ancestry:} CT1 root.
+
+\phantomsection\label{rad:business:1037}
+
+\textbf{Definition:} Establish and maintain justified confidence that health services can be, and are being, delivered in accordance with applicable expectations, obligations, constraints and required levels of performance.
+
+\phantomsection\label{rad:business:1039}
+
+\textbf{Classification:} Harmonia-Relevant.
+
+\phantomsection\label{rad:business:1041}
+
+Health Service Assurance establishes whether sufficient evidence exists to give justified confidence in the organisation’s ability to deliver its health services appropriately. Its macro-level subject is that ability. Security, information, technology, process, clinical and other concerns may contribute criteria/\allowbreak{}evidence without becoming separate Business Assurance Capability trees. The independently governed evaluation already established in the canonical architecture is a required assurance approach where REQ-FND-005 applies; the reconciliation below preserves its requirements.
+
+\phantomsection\label{rad:business:1043}
+\subsubsection*{CT2 — Health Service Assurance Specification}
+\phantomsection\label{rad:business:1045}
+
+\textbf{Tier and ancestry:} CT2; parent Health Service Assurance (CT1).
+
+\phantomsection\label{rad:business:1047}
+
+\textbf{Definition:} Specify how macro-level service-delivery assurance will be undertaken and what sufficiently supports confidence.
+
+\phantomsection\label{rad:business:1049}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Health Service Assurance Specification; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:1051}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Assurance Approach Definition & Define scope, evidence expectations, responsibilities, methods, applicable degree of independence and timing/\allowbreak{}frequency for service-delivery assurance.\\\hline
+Assurance Evaluation Criteria Governance & Establish and maintain criteria against which sufficient assurance can be determined.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1056}
+
+\textbf{Boundary:} Criteria may draw on workforce, facilities, clinical practice, information, technology, security, privacy, governance, dependencies and operational state. These contributing concerns do not create separate Business Assurance trees. An assurance approach SHALL preserve every applicable higher-level independence requirement; it cannot designate self-attestation as sufficient where REQ-FND-005 requires independent governed assurance.
+
+\phantomsection\label{rad:business:1058}
+\subsubsection*{CT2 — Assurance Evaluation}
+\phantomsection\label{rad:business:1060}
+
+\textbf{Tier and ancestry:} CT2; parent Health Service Assurance (CT1).
+
+\phantomsection\label{rad:business:1062}
+
+\textbf{Definition:} Determine what justified confidence the applicable evidence supports.
+
+\phantomsection\label{rad:business:1064}
+
+\textbf{Decomposition assertion:} Each named child in this table is a CT3 Business Capability whose immediate CT2 parent is Assurance Evaluation; that CT2 has the CT1 parent stated above.
+
+\phantomsection\label{rad:business:1066}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT3 Business Capability} & \textbf{Definition}\\\hline\endhead
+\hline\endfoot
+Assurance Evidence Assessment & Evaluate available evidence against the established assurance approach and criteria.\\\hline
+Assurance Conclusion Determination & Establish the legitimately supported conclusion, including insufficiency, qualification and unresolved concerns where applicable.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1071}
+
+\textbf{Boundary:} Evidence assessment ≠ conclusion determination ≠ operational response. Insufficient evidence establishes neither assurance nor non-assurance. Assurance manages its own evaluation, not its subject. These BC responsibilities do not remap existing Assurance Design, Assurance Criteria Management or Governed Assurance BEC ownership.
+
+\phantomsection\label{rad:business:1073}
+\subsection*{Assurance Independence Reconciliation}
+\phantomsection\label{rad:business:1075}
+
+Independence is a required property of applicable assurance approaches/\allowbreak{}evaluations, rather than the exhaustive definition of the macro-level Business Capability. This does \textbf{not} make Harmonia's already-required independent governed assurance optional. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-005-independent-assurance-of-governed-activity}{REQ-FND-005} requires it for activities, information and outcomes \textbf{for which assurance is required}. Its applicability is bounded; it neither defines every enterprise assurance approach nor requires assurance of every activity.
+
+\phantomsection\label{rad:business:1083}
+
+The \hyperref[rad:assurance-strategy]{approved Strategy derivation} and \hyperref[rad:assurance]{Business assurance responsibilities} implement that obligation through independently governed progression and conclusion authority. Assurance Approach Definition may determine applicable methods, responsibilities and degree of independence but SHALL NOT weaken those requirements. The subject may contribute evidence; it shall not solely determine, suppress, manufacture or retrospectively alter its assurance outcome. Evidence dependency is distinct from control dependency. No external assessor or physical separation is implied.
+
+\phantomsection\label{rad:business:1093}
+
+The broader organisational capability concerns justified confidence in service delivery. Harmonia's assigned participation remains assurance of explicitly required facts/\allowbreak{}behaviour; it does not acquire clinical-adequacy assurance or management of the service. Thus the old independent-evaluation definition is preserved as the established governed-assurance obligation within the broader capability, rather than discarded or universalised to all enterprise evaluations. Operational uncertainty under AX-15/\allowbreak{}REQ-FND-004 remains distinct from evidence insufficiency under REQ-FND-005.
+
+\phantomsection\label{rad:business:1102}
+\subsubsection*{Clinical Services Delivery Assurance Boundary}
+\phantomsection\label{rad:business:1104}
+
+Health Service Assurance SHALL NOT be represented as Clinical Services Delivery Assurance. The enterprise scope's reference to independent clinical audit/\allowbreak{}evaluation does not make Harmonia responsible for assuring clinical judgement, professional practice, clinical adequacy of care, or delivery of clinical services by healthcare practitioners or healthcare organisations.
+
+\phantomsection\label{rad:business:1106}
+
+Information concerning clinical service delivery MAY be the subject of governed assurance where an explicit applicable requirement establishes that assurance concern. This does not transfer responsibility for Clinical Services Delivery Assurance to Harmonia. \hyperref[rad:business:522]{Capability 06 — Clinical Quality, Safety \& Improvement} retains its established clinical quality/\allowbreak{}safety responsibilities.
+
+\phantomsection\label{rad:business:1108}
+
+\begin{quote}
+
+\textbf{Harmonia may assure facts and behaviour concerning clinical activity where explicitly required; it does not thereby assure the clinical adequacy of care.}
+
+
+\end{quote}
+\phantomsection\label{rad:business:1110}
+\subsubsection*{Meaning of Independent}
+\phantomsection\label{rad:business:1112}
+
+Independent Assurance requires an independently governed assurance activity/\allowbreak{}workflow whose progression and assurance conclusion are not controlled by the activity or mechanism responsible for performing or managing the subject being assured.
+
+\phantomsection\label{rad:business:1114}
+
+Independence does not inherently require an external auditor, a different organisation, department, human actor, application, deployment, database or Kubernetes cluster, or physical infrastructure separation. This is a responsibility and authority boundary consistent with REQ-FND-005, not an Application or Technology Architecture decision about physical execution separation.
+
+\phantomsection\label{rad:business:1116}
+
+\begin{quote}
+
+\textbf{Evidence dependency does not compromise assurance independence; control dependency does.}
+
+
+\end{quote}
+\phantomsection\label{rad:business:1118}
+
+The subject being assured may supply evidence. It shall not thereby be solely responsible for determining, suppressing, manufacturing or retrospectively altering its assurance conclusion.
+
+\phantomsection\label{rad:business:1120}
+\subsubsection*{Assurance /\allowbreak{} Operational Management Boundary}
+\phantomsection\label{rad:business:1122}
+
+Health Service Assurance does not thereby assume operational management of its subject, assignment, delegation, reassignment, operational escalation, operational remediation, workflow progression, Incident Management or Incident Response. Findings, exceptions and conclusions may inform or initiate appropriate operational activity; responsibility for that activity remains with its operational capability.
+
+\phantomsection\label{rad:business:1124}
+
+\begin{quote}
+
+\textbf{Assurance is the QA service, not the Job Foreman.}
+
+
+\end{quote}
+\phantomsection\label{rad:business:1126}
+
+An assurance activity may manage its own internal assurance workflow without thereby assuming management of the subject being assured.
+
+\phantomsection\label{rad:business:1128}
+
+\par\smallskip
+\phantomsection\label{rad:business:1130}
+\subsection*{Governance, Management, Monitoring and Assurance Boundaries}
+\phantomsection\label{rad:business:1132}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Concern} & \textbf{Purpose and responsibility} & \textbf{Boundary}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Concern} & \textbf{Purpose and responsibility} & \textbf{Boundary}\\\hline\endhead
+\hline\endfoot
+\textbf{Governance} & Establishes what must be done or must be true; applicable obligations, constraints and authority; reporting required to demonstrate compliance; and checkpoints required to determine whether obligations and constraints are satisfied. & Establishes the normative operating envelope without determining operational means.\\\hline
+\textbf{Management} & Establishes and coordinates what must be done operationally and how it will be performed within constraints; operational-state monitoring, activity progression, progress reporting, assignment/\allowbreak{}reassignment, escalation necessary for completion, response and remediation. & Owns progression of the managed activity. Being governed does not relocate activity management to Region 5.\\\hline
+\textbf{Management Monitoring} & Observation and assessment of the current state of an activity for the purpose of determining progress, completion, fulfilment or impediments, so that the containing management or workflow activity can determine what should happen next. & May cause or inform progression, pause, retry, escalation, reassignment, response or completion. Observation alone is not Independent Assurance.\\\hline
+\textbf{Independent Assurance} & Evaluation of a governed subject against applicable obligations, constraints, controls, performance expectations, quality criteria or compliance checkpoints, using sufficient trustworthy evidence to establish an assurance conclusion. & Independently governs its evaluation and conclusion; does not progress or manage its subject.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1139}
+
+\begin{quote}
+
+\textbf{Management Monitoring evaluates activity state in order to progress or manage the activity. Independent Assurance evaluates a governed subject against governing criteria in order to establish an assurance conclusion.}
+
+
+\end{quote}
+\phantomsection\label{rad:business:1141}
+\subsubsection*{Evidence Distinctions}
+\phantomsection\label{rad:business:1143}
+
+Evidence production does not itself perform assurance. Security, privacy, clinical, operational and information-management capabilities may produce trustworthy evidence used by Health Service Assurance without becoming assurance capabilities.
+
+\phantomsection\label{rad:business:1145}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Provenance ≠ Assurance
+
+Audit information / AuditEvent ≠ Assurance
+
+Operational monitoring ≠ Assurance
+
+Workflow progression ≠ Assurance
+
+Business Outcome ≠ Assurance Outcome
+
+Workflow completion ≠ Assurance
+
+Incident ≠ Assurance Finding
+
+Incident Response ≠ Assurance
+
+Risk ≠ Assurance Finding
+
+Risk ≠ Assurance Outcome
+\end{quote}
+\phantomsection\label{rad:business:1158}
+\subsubsection*{Subject-Specific Governance}
+\phantomsection\label{rad:business:1160}
+
+\begin{quote}
+
+\textbf{Subject-specific governance remains with the capability responsible for that subject where governance is intrinsic to managing the subject itself.}
+
+
+\end{quote}
+\phantomsection\label{rad:business:1162}
+
+Health Products \& Clinical Technology (05), Standards, Semantics \& Reference Governance (10), Security, Privacy \& Digital Trust (12), and Workforce \& Organisational Capability (15) retain their existing governance semantics and regional placement. Capability 12's compliance auditing and audit-record production do not, merely by that wording, establish independent assurance. Region 5 concerns governance and independent assurance as primary responsibilities.
+
+\phantomsection\label{rad:business:1164}
+
+\par\smallskip
+\phantomsection\label{rad:business:1167}
+\subsection*{Classification Reconciliation and Rationale}
+\phantomsection\label{rad:business:1169}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{CT1} & \textbf{Previous → reconciled classification} & \textbf{Semantic rationale}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{CT1} & \textbf{Previous → reconciled classification} & \textbf{Semantic rationale}\\\hline\endhead
+\hline\endfoot
+05 Health Products \& Clinical Technology & Reference → Harmonia-Relevant & Device integration provision/\allowbreak{}data integration and service-relevant device context materially affect information exchange and care enablement. Supply-chain and maintenance authority remain external.\\\hline
+07 Community Health \& Wellbeing & Reference → Harmonia-Relevant & The established preventative programme/\allowbreak{}cohort distinctions materially frame information, notification and care enablement. Wider public-health enterprise activity is not assigned to Harmonia.\\\hline
+08 Population Health \& Health-System Planning & Adjacent → Harmonia-Relevant & Formal notification and governed population information materially support required health activity; planning remains externally governed and is not Core through context consumption.\\\hline
+13 Health Research \& Innovation & Adjacent → Harmonia-Relevant & Governed provision of existing information for an authorised research purpose is material support, not passive context or ownership of trials/\allowbreak{}research. Innovation evaluation does not acquire a separate platform assignment.\\\hline
+14 Health Service Direction \& Stewardship & Reference → Harmonia-Relevant & Service needs, viability, dependencies and alignment facts materially frame Harmonia’s service information and derivation requirements. This does not assign executive/\allowbreak{}service-management authority or establish a future BEC.\\\hline
+15 Workforce \& Organisational Capability & Harmonia-Relevant retained & Professional standing, privilege, coverage and organisational/\allowbreak{}service-offering facts materially constrain care enablement. Directory support does not make workforce/\allowbreak{}service governance Core.\\\hline
+16 Corporate Resources \& Enterprise Services & Reference → Harmonia-Relevant & Required clinical activity/\allowbreak{}utilisation evidence is material financial/\allowbreak{}charging support. Corporate support context also matters, but contextual consumption alone does not classify every support CT3 Relevant or Core.\\\hline
+17 Health Service Governance & Unresolved retained & The normative and compliance-definition responsibilities are established, but material platform participation/\allowbreak{}enablement is not yet sufficiently assigned to distinguish Adjacent from Relevant/\allowbreak{}Core.\\\hline
+18 Health Service Assurance & Unresolved → Harmonia-Relevant & Already-approved independent governed assurance materially supports service confidence. Harmonia does not own macro-level clinical/\allowbreak{}service delivery assurance, so the whole BC is not classified Core.\\\hline
+01–04, 06, 09–12 & Established assignments retained & Their material enabling/\allowbreak{}direct platform responsibilities remain established; organisational definitions do not turn clinical judgement, consent authority or enterprise decisions into software responsibilities. Core is bounded to assigned platform activity.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1182}
+\subsection*{Unresolved Business Capability Matters}
+\phantomsection\label{rad:business:1184}
+\subsubsection*{OI-BC-001 — Medication Compounding and Preparation}
+\phantomsection\label{rad:business:1186}
+
+\textbf{Unresolved.} Whether compounding/\allowbreak{}specialised preparation warrants a distinct CT3 beneath Medication \& Pharmacy Services is neither established nor rejected. Absence does not mean subsumption by Prescription Medication Dispensing, irrelevance, exclusion or representation by another Capability. Adjudication must preserve peer completeness and the R1/\allowbreak{}R2 materiality test.
+
+\phantomsection\label{rad:business:1192}
+\subsubsection*{OI-BC-002 — Health Service Operational Readiness Placement}
+\phantomsection\label{rad:business:1194}
+
+The identified semantic concern asks: \textbf{Can this Health Service Offering actually be delivered from this operational context?} It establishes collective readiness from workforce, administration, spaces, equipment/\allowbreak{}devices, materials, utilities, ICT/\allowbreak{}communications and other dependencies without owning them. Ongoing site/\allowbreak{}service readiness and readiness for a session are presently exercises of the same concern; session-level exercise does not establish another Capability.
+
+\phantomsection\label{rad:business:1201}
+
+Its provisional name/\allowbreak{}identified identity and boundary are retained, but \textbf{CT2 parent, CT1 ancestry and canonical placement remain unresolved}. No complete CT1→CT2→CT3 path is asserted. Offering defined/\allowbreak{}temporally available ≠ collectively ready; individual resource ready ≠ service ready; care-place readiness ≠ service readiness; readiness oversight ≠ clinical execution or supporting-resource ownership. It SHALL NOT be placed beneath Health Service Alignment, Healthcare Service Offering Management, Care Scheduling \& Capacity Management, Corporate Support Services, Health Product Management or another convenient parent without explicit adjudication.
+
+\phantomsection\label{rad:business:1211}
+\subsubsection*{Other Preserved Uncertainties and Canonical Conflicts}
+\phantomsection\label{rad:business:1213}
+
+\begin{itemize}
+
+\item
+Clinical Determination and Individual Care Planning have no established CT3 set in the supplied decisions. Clinical Intervention’s three-child candidate remains provisional; DN-BC-010’s taxonomy question is not closed by the queue.
+
+
+
+\item
+DN-BC-015 defines \textbf{Clinical Device Maintenance Management} as maintaining or restoring acceptable device condition through maintenance, testing, calibration, inspection, fault remediation and repair, distinct from monitoring and overall lifecycle disposition. Its Working Decision and closing guardrail nevertheless specify seven CT3s omitting Maintenance. Its semantics are preserved, but its inclusion/\allowbreak{}tier/\allowbreak{}ancestry requires adjudication; no eighth child is manufactured.
+
+
+
+\item
+\textbf{Health Information Sharing Programme Management} is named by DN-BC-027’s spelling correction, but that note supplies no precise tier/\allowbreak{}parent assertion. Its name is retained without constructing ancestry or an additional definition.
+
+
+
+\item
+\textbf{Health Information Exchange} is the approved BC CT2 name and an existing BEC name. Their identities/\allowbreak{}meanings remain distinct. This conflicts with CM-R05 and the BC/\allowbreak{}BEC naming guardrail; neither a BEC rename nor an identity merger is authorised here. The naming point remains stopped pending adjudication.
+
+
+
+\item
+Generic Continuous Improvement placement, external device/\allowbreak{}safety/\allowbreak{}quality monitoring providers, the possible Identity Assurance Representation BEC name and general UI/\allowbreak{}presentation enablement remain unestablished/\allowbreak{}parked. No standards or other peer is added merely for symmetry. Other undecomposed enterprise scope remains explicitly unmodelled.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:business:1235}
+\subsection*{Semantic Relationships and Downstream Boundary}
+\phantomsection\label{rad:business:1237}
+
+
+
+\phantomsection\label{rad:business:1239}
+
+Business capabilities may provide evidence, context, identified events or established information to other business capabilities while retaining their own outcomes and source authority. Unless explicitly required otherwise, such provision is contextual rather than a universal dependency. \textbf{Information consumed ≠ ownership transferred; context supplied ≠ target outcome established.} These relationships are not decomposition, workflow order, runtime invocation, Service identity or application dependency. Any RADS relationship must preserve the exact meaning; where no governed type fits, preserve it as unresolved rather than substitute a stronger convenient type.
+
+\phantomsection\label{rad:business:1249}
+\subsubsection*{Established BC Evidence and Context Relationships}
+\phantomsection\label{rad:business:1251}
+
+The following relationships preserve the adjudicated business meaning. They do not require every source instance to produce an input for every target instance, or make one capability perform another. A conditional relationship remains conditional. No named Business Service or machine-readable relationship type is allocated by this table.
+
+\phantomsection\label{rad:business:1257}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Source} & \textbf{Recipient} & \textbf{Established meaning}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Source} & \textbf{Recipient} & \textbf{Established meaning}\\\hline\endhead
+\hline\endfoot
+Population Health Surveillance Management & Population Health Longitudinal Assessment; Population Health Event Identification & Supplies the population, concern and purpose of managed surveillance.\\\hline
+Population Health Longitudinal Assessment & Population Health Event Identification & Supplies trends/\allowbreak{}change evidence that may support recognition of a significant event.\\\hline
+Population Health Event Identification & Notifiable Health Event Management & Supplies an identified event for consideration under applicable notification obligations.\\\hline
+Population Health Longitudinal Assessment; Population Health Surveillance Management; Population Health Event Identification; Notifiable Health Event Management & Population Health Reporting & Supply their established assessments, surveillance state, events and notification information for reporting.\\\hline
+Population Health Longitudinal Assessment; Population Health Event Identification & Preventative Health Problem Identification & Supply population-health evidence/\allowbreak{}identified concerns without determining the preventative response.\\\hline
+Population Health Longitudinal Assessment & Preventative Health Cohort Management & Supplies population characteristics relevant to cohort definition, stratification or review.\\\hline
+Population Health Event Identification & Preventative Health Cohort Management & May supply event context for identifying the population requiring preventative attention.\\\hline
+Individual Care Delivery & Population Health Surveillance & Individual information may contribute population evidence without becoming a population conclusion.\\\hline
+Population Health Surveillance & Individual Care Delivery & Population findings may inform individual care without establishing an Individual Clinical Determination.\\\hline
+Population Health Surveillance & Clinical Quality Management; Clinical Safety Management & May supply evidence relevant to their distinct assessments or risk identification; their information may also contribute population evidence.\\\hline
+Population Health Longitudinal Assessment; Population Health Event Identification & Health Service Demand Assessment & Supply population state/\allowbreak{}change or identified-event evidence relevant to expected service demand.\\\hline
+Health Service Demand Assessment & Health Service Capacity Planning & Supplies assessed demand evidence relevant to required capacity.\\\hline
+Health Service Capacity Planning & Health Service Distribution Planning & Supplies planned-capacity requirements relevant to the service footprint.\\\hline
+Operational Care Capacity Management & Health Service Demand Assessment; Health Service Capacity Planning & May supply operational pressure/\allowbreak{}utilisation and capacity experience as planning evidence.\\\hline
+Health Service Distribution Planning & Healthcare Service Offering Management & May supply planned-footprint context for identifiable offerings.\\\hline
+Standards, Semantics \& Reference Governance & Health Information Structure Management & Supplies governed semantic artefacts for reference/\allowbreak{}binding while retaining their authority.\\\hline
+Health Information Structure Management & Health Information Data Management & Supplies the structure, references, constraints and bindings through which content is meaningful.\\\hline
+Health Information Data Management & Health Information Lifecycle Management; Health Information Catalogue and Index Management; Health Information Compartmentalisation; Health Information Data Correlation & Supplies the managed information subject/\allowbreak{}content for these distinct responsibilities.\\\hline
+Health Information Catalogue and Index Management & Health Information Data Retrieval & Supplies existence, discovery and location context.\\\hline
+Health Information Compartmentalisation & Health Information Data Retrieval & Supplies applicable compartment scope/\allowbreak{}context without making an access decision.\\\hline
+Health Information Data Correlation & Health Information Data Retrieval & May supply relationships relevant to identifying related requested information.\\\hline
+Health Information Structure Management; Health Information Lifecycle Management & Health Information Data Retrieval & Supply interpretation and applicable current/\allowbreak{}historical/\allowbreak{}lifecycle context.\\\hline
+Clinical Knowledge Context Identification & Clinical Knowledge Context Extraction & Supplies the identified source/\allowbreak{}context for extraction.\\\hline
+Clinical Knowledge Context Extraction & Clinical Knowledge Information Formulation & Supplies relevant extracted material for formulation.\\\hline
+Clinical Knowledge Information Formulation & Clinical Knowledge Concept Association; Clinical Knowledge Review \& Approval Management & Supplies formulated knowledge for association and governed review.\\\hline
+Standards, Semantics \& Reference Governance & Clinical Knowledge Concept Association & Supplies governed concepts/\allowbreak{}artefacts without transferring semantic authority.\\\hline
+Clinical Knowledge Concept Association & Clinical Knowledge Review \& Approval Management & Supplies semantic-association context relevant to review.\\\hline
+Clinical Knowledge Review \& Approval Management & Clinical Knowledge Publication \& Sharing & Supplies knowledge whose applicable approval standing is established.\\\hline
+Clinical Knowledge Publication \& Sharing & Individual Care Delivery & Supplies reusable knowledge; the individual-care capability establishes its clinical application/\allowbreak{}conclusion.\\\hline
+Health Information Management & Clinical Knowledge Context Identification & May supply source information containing potential reusable knowledge.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1290}
+\subsubsection*{Material Traceability Requirements}
+\phantomsection\label{rad:business:1292}
+
+Later derivation SHALL preserve established CT3 identity and the distinction between the Business purpose it supports and its owning BEC CT3 Feature frame. It SHALL NOT attach a Harmonia Feature directly to a BC CT3. Where the following contexts are material, traceability must preserve them without prescribing an Information Concept, representation, interface or implementation:
+
+\phantomsection\label{rad:business:1298}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Concern} & \textbf{Context/\allowbreak{}evidence to preserve}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Concern} & \textbf{Context/\allowbreak{}evidence to preserve}\\\hline\endhead
+\hline\endfoot
+Clinical risk & Evidence potentially indicating risk, the characterised risk, mitigation, active response and resulting state remain distinct.\\\hline
+Clinical quality & Underlying criterion authority; evidence source and purpose; criteria/\allowbreak{}evidence supporting an assessment; assessment authority distinct from its report and subsequent improvement.\\\hline
+Preventative health & Evidence supporting problem identification; target cohort; membership reasoning, inclusions/\allowbreak{}exclusions and applicable entry/\allowbreak{}exit or stratification. Programme type does not create another BC.\\\hline
+Population health & Population/\allowbreak{}cohort/\allowbreak{}geographical and temporal scope; evidence supporting assessment/\allowbreak{}event identification; notification obligation, recipient/\allowbreak{}authority, status and supporting event evidence.\\\hline
+Health-system planning & Demand basis, assumptions and scope; capacity requirements and distribution context; planned capacity distinguishable from operational evidence.\\\hline
+Health information & Applicable structures/\allowbreak{}reference targets/\allowbreak{}bindings and semantic authority; lifecycle state/\allowbreak{}history; catalogue versus content; compartment versus access decision; correlations and source provenance; retrieved information context.\\\hline
+Clinical knowledge & Source/\allowbreak{}extraction provenance and supporting formulation material; concept authority; review/\allowbreak{}approval state, conditions and history; publication preserving standing and limits; individual use distinct from general knowledge authority.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:business:1308}
+
+Later traceability must preserve source provenance, applicable context, temporal standing and these distinct business outcomes. Criteria do not replace governing requirements; reported representations do not originate the facts/\allowbreak{}conclusions they present. Programme-specific implementation does not establish another BC. Implementation reuse does not collapse BC peers or reverse-derive their meaning.
+
+\phantomsection\label{rad:business:1314}
+
+The separately approved \hyperref[rad:assurance-strategy]{assurance support derivation} and \hyperref[rad:b2-1]{B2.1 trace} remain intact, with no extension to the newly reconciled CT3s. This reconciliation establishes no BEC ancestry, no framing of the 137 Features, no new BC↔BEC mapping, no allocation of Canonical IDs/\allowbreak{}local codes and no Domain05 B2.2 work. The 69 unresolved enabling descriptions remain unresolved. Those are subsequent phases.
+
+\phantomsection\label{rad:business:1321}
+
+\begin{itemize}
+
+\item
+\hyperref[rad:enabling]{Business Enabling Capabilities}
+
+
+
+\item
+\hyperref[rad:tier-model]{Capability decomposition and derivation model}
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/reviews/business-capability-five-region-reconciliation.md}{Historical five-region reconciliation}
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/reference-model/README.md}{Business Architecture reference candidate}
+
+
+
+\end{itemize}
