@@ -4,9 +4,11 @@
 
 This is the definitive LaTeX representation of the **current governed RAD
 capability architecture**, at the source baseline recorded in `manifest.json`.
-It answers what the RAD contains, including its uncertainty. It establishes no
-new decomposition, capability, Feature, behavioural relationship or architectural
-adjudication. The Markdown RAD remains architectural authority.
+It explains what the RAD contains, including its uncertainty, through an authored
+reference catalogue and exact governed semantic detail. It establishes no new
+decomposition, capability, Feature, behavioural relationship or adjudication.
+This authorised v0.1 completion allocates structural identifiers where sufficient
+context is established. The Markdown RAD remains architectural authority.
 
 ## Authority and scope
 
@@ -67,12 +69,34 @@ their targets publication authority. Governed Markdown was not modified.
 - `source-coverage.json` — line ranges and hashes of every transcribed source
   block; selected scope has no unrepresented nonblank source lines.
 - `validation.json` — machine-readable checks and architecture counts.
+- `catalogue/*.md` — reviewable authored overviews, intent and boundary prose,
+  distinct from governed definitions and source transcription. These files are
+  fingerprinted separately in the manifest; they are not new RAD authority.
+- `identity-baseline.json` — frozen pre-enrichment identities, structural
+  dimensions, relationships/source fingerprints and all 2,418 existing labels.
+- `review-exceptions.json`, `sections/review-exceptions.tex` — complete
+  element lists for structural-ID exceptions and material description limits.
 - `tools/render.py`, `tools/check.py`, `Makefile` — bounded regeneration,
   compilation and verification. Generated `.tex` files are committed so the
   publication also compiles without Python.
 
-Rich source prose is linked directly from element metadata, not replaced by a
-generated generic definition. Source equations wrap as equivalent textual
+Each of the 283 Capability records (including three Candidates) has a substantive
+**Capability Overview**, separate from its governed definition. Intent, boundary
+and relevance prose explain the actual responsibility where evidence supports it;
+contained/owned-element tables provide navigable scope. All 137 Features have
+specific authored overviews. Functions and Services retain their actual semantic
+descriptions and source qualifications; significant behaviours and all nineteen
+Processes also have authored overviews. Complete local Process descriptions are
+available in their catalogue entries, rather than only in the source appendix.
+
+Canonical is the status of an element, not a claim that every explanatory
+sentence was already present in the RAD. Authored prose synthesises definitions,
+actual ancestry/ownership, evidenced behaviour and metamodel boundaries for
+review. It does not establish new relationships, clinical authority, classifications
+or implementation allocation. The earlier candidate LaTeX remains excluded.
+
+Rich source prose is linked directly from element metadata and preserved alongside
+the explanation. Source equations wrap as equivalent textual
 operator sequences. Source diagram notation remains textual; box/tree glyphs
 are removed from source listings. No graphical containment pictographs are
 introduced. Source presentation never establishes hierarchy.
@@ -101,7 +125,8 @@ semantic-name-token = initial name lowercased, each non-[a-z0-9] run → "-",
 These tokens depend on neither tier nor hierarchy. Initial allocation found no
 collisions. Future additions require an explicit reviewed manifest entry; if a
 token collides, choose and record a meaningful disambiguator, never an ordinal
-or random suffix. The renderer **does not allocate or update identifiers**.
+or random suffix. The renderer **does not allocate or update identifiers**; it
+validates the frozen allocations against their policy and actual governed ancestry.
 
 Label prefixes are `cap:bc-`, `cap:bec-`, `cap:ec-`, `feature:`, `function:`,
 `service:` and `process:`. Feature labels retain their lowercased full local token;
@@ -114,10 +139,32 @@ architectural Canonical IDs or aliases.
 **Reference Id and structural Canonical ID are different fields.** The metamodel
 requires a contextual structural ID to change when responsibility context changes,
 retaining the old ID as an alias. A publication Reference Id and LaTeX label remain
-stable. All unallocated structural Canonical IDs remain `null`; v0.1 allocates none,
-including where BC tiers are known but approved local codes are not allocated.
-This distinction implements the requested stability without changing §8 of the
-metamodel or manufacturing unresolved ancestry.
+stable.
+
+The authorised v0.1 allocation establishes **190 BC structural IDs** under
+metamodel §8. Initial approved local codes are the frozen `HCM-BC-` semantic
+tokens uppercased, excluding that publication prefix. Components carry their
+actual `CT1-`, `CT2-` or `CT3-` type and are joined with dots in the established
+responsibility path. For example:
+
+```text
+CT1-HEALTH-RESEARCH-INNOVATION.CT2-HEALTH-INNOVATION.CT3-HEALTH-INNOVATION-EVALUATION
+```
+
+The publication Reference Id is an allocation seed only: it was not previously
+a Canonical ID. Neither source display ordinals nor inferred ancestors are used.
+Local codes are frozen on allocation and survive ordinary name changes; structural
+relocation requires a new path and a retained direct ID alias under §8.4. Canonical
+IDs and aliases occupy one unique, non-reusable namespace. The existing governed
+**EC-01–EC-14** identifiers also populate the separate Canonical ID field; no CT
+path applies to them. The 204 current IDs are unique and every BC ancestor prefix
+resolves to its actual ancestor. Allocations are recorded in manifest metadata
+and displayed in the identifier register.
+
+**515 structural IDs remain `null`**: all 512 canonical BEC/Feature/behaviour
+records require unresolved BEC tier ancestry, and three Candidate concerns lack
+approved placement. All are named in `review-exceptions.json`. None is given an
+incomplete path or a fabricated owner to obtain an ID. This preserves §8 and K9.
 
 ## Status semantics and counts
 
@@ -188,6 +235,14 @@ deterministic generated output, source-block coverage, resolved compiled labels,
 index completeness, PDF destinations, and zero undefined references, overfull
 boxes or missing glyphs. Representative PDF pages were visually inspected.
 
+Completion checks also require substantive Capability/Feature overviews, typed
+headings, exact preservation of Reference IDs and existing labels, structural-ID
+uniqueness and complete typed paths, explicit null IDs where ancestry is missing,
+and a complete exception list. The sharing-programme Candidate has an overview
+explaining its limitation, but cannot receive a full semantic account because
+only its working name/spelling is established. That limitation is reported
+separately from an absent overview. Existing semantic conflicts remain visible.
+
 Source drift causes a hard stop: review the changed architectural assertions
 before updating the manifest/evidence. Do not refresh fingerprints mechanically.
 Reuse v0.1 identities; a later architectural reconciliation needs its own authority.
@@ -198,6 +253,8 @@ Repository-required architecture verification from the repository root:
 timeout --signal=TERM --kill-after=15s 480s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false
 ```
 
-The completion report is
+The initial baseline report is
 `.junie/reports/2026-10-15-harmonia-ea-capability-map-v0.1.md`.
+The reference-catalogue completion report is
+`.junie/reports/2026-10-15-harmonia-ea-capability-map-v0.1-reference-completion.md`.
 Version 0.2 work has not commenced.

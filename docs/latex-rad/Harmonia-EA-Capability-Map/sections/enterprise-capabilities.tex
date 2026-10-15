@@ -4,7 +4,7 @@
 These are the fourteen governed reusable architectural capabilities. Functional responsibility bullets are descriptive responsibilities, not additional named Function or Service identities. No CT decomposition or additional Enterprise peers are inferred.
 
 \Needspace{10\baselineskip}
-\section{Managed Entity \& Relationship}\label{cap:ec-01}
+\section{Enterprise Capability: Managed Entity \& Relationship}\label{cap:ec-01}
 \index{Managed Entity \& Relationship}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -13,38 +13,44 @@ These are the fourteen governed reusable architectural capabilities. Functional 
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-01}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-01}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:103]{enterprise:103} (p.\,\pageref{rad:enterprise:103}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+This reusable capability keeps managed healthcare entities identifiable and their relationships structurally intelligible. It supplies common identity, alias and relationship behaviour recurring in persons, practitioners, organisations, locations and devices. Reuse concerns those architectural responsibilities, allowing the healthcare-specific meaning of each entity to remain with its governing context.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Identify, classify, relate, and maintain the structural integrity of managed healthcare and administrative entities throughout the enterprise landscape.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Uniquely identifying core domain entities (Persons, Practitioners, Roles, Organisations, Locations, Services, Devices).
 
 
 
-\item 
+\item
 Resolving and maintaining multi-authority identifier systems and aliases without destructive overwriting.
 
 
 
-\item 
+\item
 Representing and traversing multi-dimensional relationships (affiliations, organizational hierarchies, physical location trees, care team memberships).
 
 
 
-\item 
+\item
 Maintaining referential integrity across interconnected entity graphs.
 
 
@@ -52,14 +58,18 @@ Maintaining referential integrity across interconnected entity graphs.
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Anti-Responsibilities}: Does not own physical database relational tables or foreign key constraints (Domain 04/\allowbreak{}07).
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Relationship integrity is not a physical database design. Correlating entities does not establish originating clinical identity authority or a new standalone Correlation capability.
+
 \Needspace{10\baselineskip}
-\section{Context Management}\label{cap:ec-02}
+\section{Enterprise Capability: Context Management}\label{cap:ec-02}
 \index{Context Management}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -68,38 +78,44 @@ Maintaining referential integrity across interconnected entity graphs.
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-02}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-02}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:112]{enterprise:112} (p.\,\pageref{rad:enterprise:112}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Context Management preserves the circumstances in which information and activity have meaning as they cross processing boundaries. Subject, encounter, provider, service and security context must remain attributable and consistent rather than be reconstructed from convenient local assumptions. Its reuse is especially significant in multi-hop activity where a syntactically valid message can otherwise lose the context required for legitimate interpretation.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Establish, validate, propagate, and preserve the execution, clinical, security, and administrative context within which information and activities have meaning.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Binding the subject of care, encounter, ordering provider, and healthcare service context to in-flight messages and transactions.
 
 
 
-\item 
+\item
 Propagating tamper-evident, attributable security context across asynchronous, multi-hop operational boundaries.
 
 
 
-\item 
+\item
 Ensuring context preservation during cross-protocol transformations across disparate healthcare exchange formats and protocols.
 
 
 
-\item 
+\item
 Detecting and rejecting requests where mandatory operational or clinical context is missing or inconsistent.
 
 
@@ -107,14 +123,18 @@ Detecting and rejecting requests where mandatory operational or clinical context
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Collaborative Nature}: Bounded reusable context responsibility may be realised through participation across gateways, activity execution and information-access boundaries. Participation does not transfer semantic ownership.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Context participation does not transfer semantic ownership. Generic context management and assurance-specific context semantics contribute together without allocating a new central Context Service.
+
 \Needspace{10\baselineskip}
-\section{Managed State \& Lifecycle}\label{cap:ec-03}
+\section{Enterprise Capability: Managed State \& Lifecycle}\label{cap:ec-03}
 \index{Managed State \& Lifecycle}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -123,38 +143,44 @@ Detecting and rejecting requests where mandatory operational or clinical context
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-03}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-03}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:121]{enterprise:121} (p.\,\pageref{rad:enterprise:121}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Managed State \& Lifecycle provides reusable responsibility for valid progression, temporal applicability and non-destructive change. A directory relationship, clinical document and operational work item have different business states, yet all need an intelligible distinction between current standing, historical state and invalid transitions. The capability captures that recurrence without replacing each subject's lifecycle meaning.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Govern the current and historical state, effective temporal periods, state transition validations, and lifecycle progression of managed integration artifacts and entities.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Defining and enforcing valid state transition state machines (e.g., \texttt{\seqsplit{REQUESTED}} → \texttt{\seqsplit{VALIDATED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{COMPLETED}}).
 
 
 
-\item 
+\item
 Maintaining temporal validity intervals (effective start and end dates) for relationships, credentials, and states.
 
 
 
-\item 
+\item
 Supporting non-destructive state progression, preserving historical state versions for longitudinal review.
 
 
 
-\item 
+\item
 Rejecting illegal or out-of-order state transitions while accommodating idempotent replay.
 
 
@@ -162,14 +188,18 @@ Rejecting illegal or out-of-order state transitions while accommodating idempote
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Anti-Responsibilities}: Does not define thread-level mutexes or database transaction isolation levels.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Business lifecycle integrity does not prescribe locks, database isolation or worker implementation, and illustrative state names do not define every subject's transitions.
+
 \Needspace{10\baselineskip}
-\section{Information Management}\label{cap:ec-04}
+\section{Enterprise Capability: Information Management}\label{cap:ec-04}
 \index{Information Management}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -178,38 +208,44 @@ Rejecting illegal or out-of-order state transitions while accommodating idempote
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-04}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-04}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:130]{enterprise:130} (p.\,\pageref{rad:enterprise:130}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Information Management provides the recurring ability to represent and maintain governed information through validation, preservation, retrieval and versioned change. It accommodates both responsive active use and authoritative durable preservation while keeping those responsibilities separate. This distinction allows availability and working state to support care without turning a cache into durable truth.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Validate, represent, persist, retrieve, version, and manage governed clinical, administrative, and operational information assets.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Validating inbound information structures against canonical information constraints.
 
 
 
-\item 
+\item
 Providing authoritative durable persistence for historical health records and administrative registries.
 
 
 
-\item 
+\item
 Managing active distributed working memory representations for low-latency retrieval.
 
 
 
-\item 
+\item
 Governing document versioning, supersession, amendments, and retractions without data loss.
 
 
@@ -217,14 +253,18 @@ Governing document versioning, supersession, amendments, and retractions without
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Architectural Principle}: Enforces the foundational separation between \emph{active distributed state access} and \emph{authoritative durable state preservation} (Axiom AX-05).
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Engine capabilities provide machinery under Harmonia semantics. Persistence success does not establish information authority or make the platform the originator of the represented facts.
+
 \Needspace{10\baselineskip}
-\section{Search \& Discovery}\label{cap:ec-05}
+\section{Enterprise Capability: Search \& Discovery}\label{cap:ec-05}
 \index{Search \& Discovery}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -233,38 +273,44 @@ Governing document versioning, supersession, amendments, and retractions without
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-05}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-05}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:139]{enterprise:139} (p.\,\pageref{rad:enterprise:139}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Search \& Discovery makes information, entities and service endpoints findable through governed criteria and bounded queries. It addresses the recurring need to locate relevant material or a destination before it can be used. Security-qualified results preserve the distinction between knowing that something exists and being entitled to obtain or disclose it.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Index, search, resolve, filter, and discover information assets, entities, directory endpoints, and healthcare services across the enterprise.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Providing multi-criteria indexed search across complex entity graphs (e.g., find active cardiologists at Location X accepting new referrals).
 
 
 
-\item 
+\item
 Resolving service and practitioner communication endpoints for addressed delivery.
 
 
 
-\item 
+\item
 Supporting bounded, paginated clinical queries across longitudinal patient records.
 
 
 
-\item 
+\item
 Applying dynamic security and consent filters to search results prior to egress.
 
 
@@ -272,14 +318,18 @@ Applying dynamic security and consent filters to search results prior to egress.
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Anti-Responsibilities}: Does not dictate specific search engine indexes, inverted index implementations, or SQL query syntaxes.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Discovery does not decide policy or prescribe a search engine, index format or query language.
+
 \Needspace{10\baselineskip}
-\section{Policy \& Control}\label{cap:ec-06}
+\section{Enterprise Capability: Policy \& Control}\label{cap:ec-06}
 \index{Policy \& Control}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -288,38 +338,44 @@ Applying dynamic security and consent filters to search results prior to egress.
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-06}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-06}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:148]{enterprise:148} (p.\,\pageref{rad:enterprise:148}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Policy \& Control supplies the reusable evaluation and enforcement of authority, consent, privacy and handling constraints. Its purpose is consistent governed action across ingress, information access, execution and presentation boundaries. Default-deny evaluation preserves the need for established authority rather than treating a caller's intent or a technically valid request as permission.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Evaluate and enforce security, consent, privacy, and regulatory policies including authority, access control, and information handling rules.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Executing impartial, default-deny policy evaluations for all integration transactions.
 
 
 
-\item 
+\item
 Enforcing Role-Based and Attribute-Based Access Control (RBAC/\allowbreak{}ABAC) policies.
 
 
 
-\item 
+\item
 Evaluating patient consent directives and privacy restrictions at boundary and query checkpoints.
 
 
 
-\item 
+\item
 Enforcing statutory information disclosure boundaries (e.g., mental health, VIP records).
 
 
@@ -327,14 +383,18 @@ Enforcing statutory information disclosure boundaries (e.g., mental health, VIP 
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Collaborative Nature}: Evaluated across boundary gateways, internal bus dispatch, storage interfaces, and presentation layers.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Participation at multiple enforcement points does not distribute policy ownership or turn operational security context into persistent clinical content.
+
 \Needspace{10\baselineskip}
-\section{Provenance \& Traceability}\label{cap:ec-07}
+\section{Enterprise Capability: Provenance \& Traceability}\label{cap:ec-07}
 \index{Provenance \& Traceability}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -343,38 +403,44 @@ Enforcing statutory information disclosure boundaries (e.g., mental health, VIP 
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-07}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-07}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:157]{enterprise:157} (p.\,\pageref{rad:enterprise:157}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Provenance \& Traceability preserves the meaningful attribution and history needed to explain information and significant activity. It connects source, transformation and required checkpoints without making every internal mechanism permanent evidence. Its recurring contribution supports accountability, reconstruction and assurance use while retaining the context that makes a recorded fact evidentially relevant.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Preserve required origin attribution, meaningful transformation history, significant execution checkpoints, tamper-evident audit evidence and end-to-end traceability. Harmonia SHALL preserve provenance, audit and operational evidence where required by governing obligations, architectural significance, accountability, reconstruction, security or assurance needs. Routine technical activity SHALL NOT automatically require durable evidentiary recording.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Recording attributable, verifiable origin metadata for information sources, authors, and timestamps.
 
 
 
-\item 
+\item
 Tracking information-significant transformation history and required mapping checkpoints as information crosses system seams.
 
 
 
-\item 
+\item
 Capturing non-PHI operational and security audit trails for regulatory compliance (HIPAA, GDPR).
 
 
 
-\item 
+\item
 Supporting end-to-end transaction tracing across asynchronous processing pipelines.
 
 
@@ -382,14 +448,18 @@ Supporting end-to-end transaction tracing across asynchronous processing pipelin
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Collaborative Nature}: Participating elements preserve required provenance and audit context according to policy. Telemetry, operational facts, provenance, audit and assurance evidence remain distinct. Being evidence is contextual, not an intrinsic property of every recorded fact; preservation does not establish an assurance conclusion.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Telemetry, provenance, audit and assurance evidence remain distinct. Recording evidence neither establishes an assurance conclusion nor automatically requires retention of routine technical activity.
+
 \Needspace{10\baselineskip}
-\section{Interoperability \& Exchange}\label{cap:ec-08}
+\section{Enterprise Capability: Interoperability \& Exchange}\label{cap:ec-08}
 \index{Interoperability \& Exchange}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -398,38 +468,44 @@ Supporting end-to-end transaction tracing across asynchronous processing pipelin
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-08}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-08}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:166]{enterprise:166} (p.\,\pageref{rad:enterprise:166}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Interoperability \& Exchange moves information across participating boundaries through destination resolution, transformation, delivery and acknowledgements. It preserves the difference between technical transmission and the recipient's business response so that an exchange can be understood under its actual contract. Standards govern the external representation while internal management semantics remain private.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Resolve destinations, transform schemas, route, transport, deliver, acknowledge, and coordinate standards-based information exchange across enterprise boundaries.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Providing multi-protocol boundary adaptation for healthcare standards (HL7 v2, FHIR REST, DICOM, secure messaging).
 
 
 
-\item 
+\item
 Executing bidirectional structural and semantic transformations between legacy formats and canonical representations.
 
 
 
-\item 
+\item
 Ensuring reliable addressed delivery and fan-out distribution to external clinical endpoints.
 
 
 
-\item 
+\item
 Processing and distinguishing technical delivery acknowledgements from business acknowledgements.
 
 
@@ -437,14 +513,18 @@ Processing and distinguishing technical delivery acknowledgements from business 
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Boundary Rule}: Egress terminates Harmonia management of the emitted representation (Axiom AX-13).
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Egress ends Harmonia management of the emitted representation. Retained delivery evidence does not extend control over an external recipient or transfer payload authority.
+
 \Needspace{10\baselineskip}
-\section{Event \& Subscription}\label{cap:ec-09}
+\section{Enterprise Capability: Event \& Subscription}\label{cap:ec-09}
 \index{Event \& Subscription}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -453,38 +533,44 @@ Processing and distinguishing technical delivery acknowledgements from business 
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-09}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-09}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:175]{enterprise:175} (p.\,\pageref{rad:enterprise:175}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Event \& Subscription connects significant changes with participants whose registered interests match them. It makes event ingestion, correlation, interest criteria and notification reusable across clinical and operational contexts. The architectural meaning is the relationship between a change and an interested consumer, rather than the broker constructs used to carry it.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Publish, ingest, correlate, filter, and syndicate events and subscription-driven changes across the enterprise landscape.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Ingesting operational and clinical event triggers from external systems and internal state changes.
 
 
 
-\item 
+\item
 Managing topic- and criteria-based event subscriptions for internal and external consumers.
 
 
 
-\item 
+\item
 Evaluating dynamic subscription filters to match event payloads with interested subscriber criteria.
 
 
 
-\item 
+\item
 Delivering asynchronous event notifications reliably to registered subscribers.
 
 
@@ -492,14 +578,18 @@ Delivering asynchronous event notifications reliably to registered subscribers.
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Decoupling Note}: Defined strictly in terms of event publishing, criteria matching, and notification delivery; entirely independent of broker topics, partitions, or queues.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Receiving a notification does not determine the consumer's business response; topics and queues do not define the capability.
+
 \Needspace{10\baselineskip}
-\section{Activity \& Execution}\label{cap:ec-10}
+\section{Enterprise Capability: Activity \& Execution}\label{cap:ec-10}
 \index{Activity \& Execution}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -508,38 +598,44 @@ Delivering asynchronous event notifications reliably to registered subscribers.
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-10}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-10}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:184]{enterprise:184} (p.\,\pageref{rad:enterprise:184}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Activity \& Execution provides reusable instantiation, matching, dispatch and supervision for governed activity units. Human Work Orders, human decision To Dos and automated Synthetic Tasks retain different performer and authority semantics while sharing a need for accountable progression. This reuse supports operational coordination without making a runtime engine the definition of the work.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Define, instantiate, match, assign, dispatch, supervise, and progress coordinated operational and clinical activity units.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Instantiating operational work items (Work Orders, To Dos, synthetic platform Tasks) in response to triggers.
 
 
 
-\item 
+\item
 Matching and assigning work units to eligible human or automated performers and roles based on policy rules.
 
 
 
-\item 
+\item
 Dispatching work units to their assigned performers with acknowledgement according to the applicable interaction contract.
 
 
 
-\item 
+\item
 Supervising execution progress, tracking timeouts, managing escalations, and handling activity interruptions.
 
 
@@ -547,14 +643,18 @@ Supervising execution progress, tracking timeouts, managing escalations, and han
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Decoupling Note}: Free of worker threads, thread pools, execution daemons, or specific workflow runtime engines.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Coordination does not confer clinical work allocation or judgement. The capability specifies neither worker threads nor a particular execution engine.
+
 \Needspace{10\baselineskip}
-\section{Interaction \& Experience}\label{cap:ec-11}
+\section{Enterprise Capability: Interaction \& Experience}\label{cap:ec-11}
 \index{Interaction \& Experience}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -563,38 +663,44 @@ Supervising execution progress, tracking timeouts, managing escalations, and han
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-11}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-11}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:193]{enterprise:193} (p.\,\pageref{rad:enterprise:193}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Interaction \& Experience makes contextual information and governed actions available to human participants through presentation and collaboration integration. Clinical timelines, directory administration and operational dashboards have different purposes, but share a need to retain established identity, security and information context. The recurring responsibility is usable interaction within those boundaries.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Provide contextual interaction between human actors, Harmonia, and enterprise presentation services, including visualization, alerting, and collaboration integration.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Mediating presentation interactions via dedicated backend-for-frontend gateways decoupled from internal databases.
 
 
 
-\item 
+\item
 Rendering clinical timelines, provider directory management interfaces, and operational console dashboards.
 
 
 
-\item 
+\item
 Providing contextual notifications and alerts to human users across web and mobile channels.
 
 
 
-\item 
+\item
 Projecting longitudinal record context into secure multidisciplinary collaboration spaces.
 
 
@@ -602,14 +708,18 @@ Projecting longitudinal record context into secure multidisciplinary collaborati
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Boundary Note}: Does not absorb the healthcare semantics of Clinical Collaboration or medical documentation. Consumes established identity and security context; does not own authentication, consent, or clinical truth.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Presentation does not own consent, authentication or clinical truth, and collaboration projection does not absorb clinical documentation semantics.
+
 \Needspace{10\baselineskip}
-\section{Operational Assurance}\label{cap:ec-12}
+\section{Enterprise Capability: Operational Assurance}\label{cap:ec-12}
 \index{Operational Assurance}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -618,38 +728,44 @@ Projecting longitudinal record context into secure multidisciplinary collaborati
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-12}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-12}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:202]{enterprise:202} (p.\,\pageref{rad:enterprise:202}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Operational Assurance preserves processing integrity under concurrency, duplicate delivery and failure. It brings together resilience, durable ingress acceptance, recovery and operational telemetry so that technical degradation does not silently weaken the managed operation's semantics. Its contribution is collaborative across operational boundaries while remaining a bounded architectural responsibility.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Ensure concurrency integrity, system resilience, duplicate detection, exception handling, automated recovery, and operational telemetry across platform operations.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Enforcing sliding-window duplicate message detection and idempotent suppression.
 
 
 
-\item 
+\item
 Guaranteeing ingress dual-write safety (durable acceptance before emitting positive application ACK).
 
 
 
-\item 
+\item
 Managing structured failure recovery, exception escalation, and dead-letter isolation.
 
 
 
-\item 
+\item
 Emitting platform telemetry, operational health metrics, and queue processing metrics.
 
 
@@ -657,7 +773,7 @@ Emitting platform telemetry, operational health metrics, and queue processing me
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Collaborative Nature}: Realized collaboratively across boundary gateways, messaging infrastructure, execution workers, and storage layers.
 
 
@@ -667,8 +783,12 @@ Emitting platform telemetry, operational health metrics, and queue processing me
 
 EC-12 retains the established scope and responsibilities above. It may contribute directly to generic operational/\allowbreak{}processing assurance, limited to that contribution in the \hyperref[rad:assurance-strategy:54]{approved assurance matrix}. It does not own the general semantics of assurance disposition, assurance-specific criteria applicability, evidentiary association, assessment against assurance criteria, adjudication, or independent assurance findings and conclusions. Those distinguishing responsibilities are introduced through EC-14 Service Guardian. Operational health and business-level processing assurance remain distinct; EC-12 is not expanded to absorb EC-14.
 
+\subsubsection*{Boundary}
+
+Operational health is distinct from independent assessment of a governed subject. Assurance-specific criteria applicability, adjudication and conclusions belong to the established EC-14 contribution.
+
 \Needspace{10\baselineskip}
-\section{Semantic Governance \& Conformance}\label{cap:ec-13}
+\section{Enterprise Capability: Semantic Governance \& Conformance}\label{cap:ec-13}
 \index{Semantic Governance \& Conformance}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -677,38 +797,44 @@ EC-12 retains the established scope and responsibilities above. It may contribut
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-13}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-13}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:215]{enterprise:215} (p.\,\pageref{rad:enterprise:215}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+This capability makes canonical information models, terminology bindings, mappings and conformance rules governable across enterprise use. It addresses both what representations mean and whether they respect the published rules, keeping version and compatibility concerns explicit. A conformant representation can therefore be distinguished from one that merely uses a supported transport or parser.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Govern canonical models, schemas, terminologies, value sets, mapping tables, constraint rules, and semantic conformance validation across the enterprise.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Defining and publishing canonical healthcare data models and profile structures.
 
 
 
-\item 
+\item
 Governing clinical terminology mappings, value sets, and concept lookups (SNOMED CT, LOINC).
 
 
 
-\item 
+\item
 Validating inbound and outbound message representations against published semantic rules.
 
 
 
-\item 
+\item
 Governing semantic versioning, deprecation, and backward compatibility across schema revisions.
 
 
@@ -716,14 +842,18 @@ Governing semantic versioning, deprecation, and backward compatibility across sc
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Component Relationship}: Informs the Calliope strategic logical component, but Calliope is the responsibility centre, not the capability definition.
 
 
 
 \end{itemize}
+\subsubsection*{Boundary}
+
+Conformance does not establish clinical truth, information authority or disclosure permission. Calliope is an established responsibility centre, not the definition of the capability.
+
 \Needspace{10\baselineskip}
-\section{Service Guardian}\label{cap:ec-14}
+\section{Enterprise Capability: Service Guardian}\label{cap:ec-14}
 \index{Service Guardian}
 \begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.47\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|}
@@ -732,38 +862,47 @@ Governing semantic versioning, deprecation, and backward compatibility across sc
 \hline\endfoot
 Reference Id & \texttt{\seqsplit{EC-14}} & Stable publication identity.\\\hline
 Architectural Status & Canonical & Established by RAD.\\\hline
+Structural Canonical ID & \texttt{\seqsplit{EC-14}} & Existing governed EC identifier; no CT path applies.\\\hline
 Source & \hyperref[rad:enterprise:224]{enterprise:224} (p.\,\pageref{rad:enterprise:224}) & Linked RAD detail; exact locators in manifest.\\\hline
 \end{longtable}\endgroup
+\subsubsection*{Capability Overview}
+
+Service Guardian supplies the reusable assurance semantics that bind a governed subject to applicable criteria and trustworthy evidence, support assessment and adjudication, and establish reportable findings. Its contribution distinguishes explicit evidence insufficiency from a conclusion about the subject. Existing Enterprise Capabilities contribute collaboratively; EC-14 does not duplicate all their information, policy or execution responsibilities.
+
+
+Independence concerns control of evaluation and conclusion. A subject may supply evidence but cannot solely determine, suppress or retrospectively change its own assurance outcome.
+
+\subsubsection*{Governed Description and Qualifications}
 
 \begin{itemize}
 
-\item 
+\item
 \textbf{Architectural Scope}: Service Guardian provides the reusable capability to independently establish whether governed service behaviour, state or outcomes remain within defined assurance expectations by associating applicable criteria and trustworthy evidence with a governed subject, assessing that evidence, adjudicating the assessment, and establishing reportable assurance findings and conclusions.
 
 
 
-\item 
+\item
 \textbf{Functional Responsibilities}:
 
 
 \begin{itemize}
 
-\item 
+\item
 Supplying assurance-specific semantics for assurance disposition and assurance criteria applicability.
 
 
 
-\item 
+\item
 Associating a governed subject/\allowbreak{}context with applicable criteria and sufficient trustworthy evidence for a particular assurance purpose.
 
 
 
-\item 
+\item
 Assessing evidence against applicable criteria and adjudicating assessed detail to establish reportable findings, exceptions and conclusions.
 
 
 
-\item 
+\item
 Preserving assurance independence, temporal/\allowbreak{}version-specific evidence and criteria applicability, and explicit inability to establish a conclusion where evidence is insufficient.
 
 
@@ -771,17 +910,17 @@ Preserving assurance independence, temporal/\allowbreak{}version-specific eviden
 \end{itemize}
 
 
-\item 
+\item
 \textbf{Collaborative Nature}: Supplies the assurance-specific semantics required to bind existing reusable capabilities into governed assurance. It contributes directly to Assurance Design, Assurance Criteria Management and Governed Assurance; direct contribution is not sole realisation. The \hyperref[rad:assurance-strategy:54]{approved matrix} preserves the contributions of EC-01 through EC-13.
 
 
 
-\item 
+\item
 \textbf{Anti-Responsibilities}: Does not own the underlying governed subject, authoritative governance requirements, or source information used as evidence. Does not perform, manage, remediate, assign, delegate or operationally escalate the subject activity. Does not replace System Operations or EC-12 Operational Assurance, and does not provide Clinical Services Delivery Assurance.
 
 
 
-\item 
+\item
 \textbf{Allocation Boundary}: No strategic logical component, application component, runtime service or implementation construct is allocated EC-14. The catalogue defines a capability, not a software component or deployment boundary.
 
 
@@ -817,3 +956,6 @@ The \hyperref[rad:enabling:674]{Business Enabling assurance principles} govern d
 
 
 \par\smallskip
+\subsubsection*{Boundary}
+
+The capability does not manage or remediate the subject, replace operational assurance, or assure clinical adequacy. No application component, runtime service or deployment boundary is allocated, and the explanatory sequence is not a derived Business Process.

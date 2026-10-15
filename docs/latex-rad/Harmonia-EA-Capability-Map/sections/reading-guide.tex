@@ -2,8 +2,8 @@
 \chapter{Authority, identity and use}\label{guide}
 
 This publication answers: ``What capability architecture does the governed RAD currently contain?''
-Version 0.1 represents the current governed Markdown architecture without extending,
-completing or reconciling it. The Markdown RAD remains architectural authority;
+Version 0.1 represents the current governed Markdown architecture without extending
+its decomposition or adjudicating its unresolved relationships. The Markdown RAD remains architectural authority;
 this publication is its definitive LaTeX representation at the recorded baseline.
 The Architectural Axioms remain the highest design authority.
 
@@ -33,6 +33,21 @@ fourteen governed entries and their actual descriptive responsibilities; no addi
 Enterprise decomposition is introduced.
 
 Each element has a stable label, metadata and a link to exact RAD source detail.
+Every Capability has an authored Capability Overview; Features have authored
+overviews and behavioural entries preserve their particular governed descriptions
+and qualifications. Significant behavioural entries also have authored explanation.
+These explanations synthesise the element's definition, established context and
+boundaries. They are interpretation for architectural review, not independent
+decisions, new architectural elements or a claim that every explanatory sentence
+was present verbatim in the RAD. A Canonical element can have newly authored prose.
+RAD-only architectural scope does not restrict explanation to source transcription.
+
+The reviewable authored Markdown is held under \texttt{catalogue/}, with separate
+fingerprints in the manifest. It is not added to the eighteen governed RAD sources.
+Definitions and exact governed semantic detail remain distinguishable from those
+overviews. Reference links and containing/owned-element tables navigate the actual
+architecture rather than inferring containment from heading depth.
+
 The semantic-detail part preserves the source definitions, boundaries, state-change
 statements, illustrative activities, examples, exclusions, notes, classifications,
 relationship tables and unresolved matters. Its source headings and retained diagram
@@ -46,7 +61,22 @@ Markdown line, not a new architectural identifier.
 Existing Feature identifiers (for example \texttt{FEAT-EM-01}) and Enterprise
 identifiers (\texttt{EC-01} through \texttt{EC-14}) are preserved exactly.
 Catalogue ordinals, BC-18-style source shorthand and CT syntax examples are not
-allocated structural Canonical IDs. No structural Canonical ID is allocated here.
+allocated structural Canonical IDs merely by their occurrence in source prose.
+This authorised v0.1 allocation establishes Structural Canonical IDs for all 190
+canonical Business Capabilities with complete, explicit ancestry. Existing
+\texttt{EC-01} through \texttt{EC-14} identifiers are retained for Enterprise
+Capabilities, to which no CT path applies.
+
+For a Business Capability, the approved local code is its initial frozen
+\texttt{HCM-BC-} semantic token in uppercase, excluding that publication prefix.
+Each path component is typed \texttt{CT1-}, \texttt{CT2-} or \texttt{CT3-}; the full
+identifier concatenates the established ancestors and current element with dots.
+For example, Health Innovation Evaluation is identified by
+\texttt{\seqsplit{CT1-HEALTH-RESEARCH-INNOVATION.CT2-HEALTH-INNOVATION.CT3-HEALTH-INNOVATION-EVALUATION}}.
+The Reference Id supplied a deterministic initial allocation seed, not an existing
+Canonical ID or a display ordinal. Local codes are frozen after allocation and do
+not change merely because a name changes. Every ancestor prefix resolves to the
+corresponding current Capability. No local code is inferred from catalogue order.
 
 For elements without an allocated identifier, the frozen Reference Id uses
 \texttt{HCM-}\emph{type}\texttt{-}\emph{semantic-name-token}. Type tokens are
@@ -62,7 +92,12 @@ The Reference Id is a definitive publication identity, distinct from the metamod
 contextual structural Canonical ID. The metamodel requires a structural ID to change
 when responsibility context changes, retaining the former value as an alias.
 Keeping these two fields separate satisfies both that rule and publication identity
-stability. Unallocated or ancestry-dependent structural IDs remain unresolved.
+stability. After an authorised structural relocation, the current structural path
+must change and the former path must be retained as a direct, globally unique,
+non-reusable ID alias. A name change alone does not change either identity.
+Ancestry-dependent structural IDs remain unresolved: all 512 canonical
+BEC/Feature/behaviour records require unresolved BEC tiers, and three Candidate
+concerns lack approved placement. Publication IDs remain usable independently.
 
 Stable LaTeX label namespaces are \texttt{cap:bc-}, \texttt{cap:bec-},
 \texttt{cap:ec-}, \texttt{feature:}, \texttt{function:}, \texttt{service:}
@@ -111,6 +146,12 @@ standing supplies no architectural approval. Counts and identifiers are checked
 against the actual Markdown inventories and explicit parent assertions.
 
 \section{Preserved issues requiring later architectural review}
+
+\hyperref[model:exceptions]{The exception register} summarises material description
+constraints. \texttt{review-exceptions.json} lists every unallocated structural ID
+and every identified material semantic limitation by frozen identity. No overview
+is absent, but the sharing-programme concern lacks enough governed scope for a
+full description and is explicitly recorded as constrained.
 
 The full source qualifications remain controlling. In particular:
 \begin{itemize}

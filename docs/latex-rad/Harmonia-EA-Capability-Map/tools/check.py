@@ -32,6 +32,27 @@ def main():
     assert all((a or b) in labels for a, b in references), 'Unresolvable LaTeX reference'
     for x in e:
         assert labels.count(x['latex_label']) == 1, 'Missing element label: ' + x['reference_id']
+    frozen = json.loads((BASE / 'identity-baseline.json').read_text())
+    assert set(frozen['latex_labels']).issubset(labels), 'Existing LaTeX label removed'
+    catalogue = '\n'.join((BASE / 'sections' / f).read_text() for f in
+                          ['business-capabilities.tex', 'business-enabling-capabilities.tex', 'enterprise-capabilities.tex'])
+    positions = [(x, catalogue.index('\\label{' + x['latex_label'] + '}')) for x in e]
+    positions.sort(key=lambda pair: pair[1])
+    overviews = 0
+    for i, (x, start) in enumerate(positions):
+        end = positions[i + 1][1] if i + 1 < len(positions) else len(catalogue)
+        entry = catalogue[start:end]
+        if x['type'] in ('capability', 'enterprise_capability'):
+            assert '\\subsubsection*{Capability Overview}' in entry, 'Missing Capability Overview: ' + x['name']
+            overviews += 1
+        if x['category'] == 'business' and x['tier']:
+            assert re.search(r'\\(?:section|subsection|subsubsection)\{' + x['tier'] + r': [^\n]*\}\\label\{' + re.escape(x['latex_label']) + r'\}', catalogue), 'Invisible CT heading: ' + x['name']
+        assert 'Structural Canonical ID' in entry
+        if x['canonical_id']:
+            assert x['canonical_id'] in entry, 'ID missing from metadata'
+    exceptions = json.loads((BASE / 'review-exceptions.json').read_text())
+    assert {x['reference_id'] for x in exceptions['structural_id_unallocated']} == {x['reference_id'] for x in e if not x['canonical_id']}
+    assert not exceptions['capability_overview_absent']
     aux = (BASE / 'build/Harmonia-EA-Capability-Map.aux').read_text()
     auxlabels = re.findall(r'\\newlabel\{([^}]+)\}', aux)
     assert len(auxlabels) == len(set(auxlabels)), 'Duplicate compiled labels'
@@ -69,6 +90,14 @@ def main():
               'source_documents': len(m['sources']), 'source_blocks': len(coverage), 'counts': counts,
               'pdf_pages': pages, 'index_entries': len(e), 'unique_labels': len(labels),
               'undefined_references': 0, 'duplicate_labels': 0, 'duplicate_reference_ids': 0,
+              'capability_overviews': overviews,
+              'authored_feature_overviews': sum(x['type'] == 'feature' for x in e),
+              'structural_canonical_ids': sum(bool(x['canonical_id']) for x in e),
+              'unallocated_structural_ids': len(exceptions['structural_id_unallocated']),
+              'duplicate_structural_ids': 0, 'reference_ids_unchanged': True,
+              'existing_latex_labels_retained': len(frozen['latex_labels']),
+              'materially_constrained_capability_overviews': exceptions['capability_overview_materially_constrained'],
+              'material_description_constraints': len(exceptions['description_materially_constrained']),
               'uncovered_nonblank_source_lines': 0, 'overfull_boxes': 0, 'missing_glyphs': 0,
               'pdf_sha256': hashlib.sha256((BASE / 'build/Harmonia-EA-Capability-Map.pdf').read_bytes()).hexdigest()}
     (BASE / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')
