@@ -44,3 +44,10 @@ The [RAD → ArchiMate model mapping](rad-archimate-model-mapping.md),
 [incremental publication plan](rad-archimate-publication-plan.md) govern the
 common model's progressive publication. Their unresolved findings and candidate
 mapping decisions remain explicit; installation does not authorise later slices.
+
+The [Governed Architecture Identity model](architecture-identity/model.md),
+[identity inventory and collision report](architecture-identity/inventory.md)
+and [common identity register contract](architecture-identity/registry.schema.json)
+establish the cross-domain identity mechanism for review before allocation.
+The register is deliberately empty; existing semantic locks and unresolved
+crosswalks remain intact. See the [identity release report](architecture-identity/release-report.md).

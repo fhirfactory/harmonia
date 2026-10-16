@@ -87,7 +87,8 @@ def inventory(repository, documentation_map, release_file=None):
                 'rad-archimate-source-inventory.json'}
     sources = [{'path': str(p.relative_to(repository)), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
                 'content_role': 'candidate/scratchpad navigation; not current architecture authority' if 'scratchpad' in p.parts else 'assertion-level standing must be preserved'}
-               for p in sorted(rad.rglob('*')) if p.is_file() and p.name not in excluded]
+               for p in sorted(rad.rglob('*')) if p.is_file() and p.name not in excluded
+               and not ('architecture-identity' in p.parts and p.name not in {'model.md', 'registry.json', 'registry.schema.json'})]
     capture = json.loads((rad / '03-business-architecture/reference-model/business-architecture.json').read_text())
     types = {'capability': 'Capability', 'feature': 'Capability', 'function': 'BusinessFunction',
              'service': 'BusinessService', 'process': 'BusinessProcess'}

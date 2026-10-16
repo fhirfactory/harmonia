@@ -1,9 +1,9 @@
 {
   "purpose": "Bounded reconciliation/navigation inventory; not governed semantic identity allocation or an Exchange generator input",
-  "repository_head": "6f1d0961b9b8720f18a628d54671d3a83e20eebb",
+  "repository_head": "8afd7f21ef372e8bb87592770c6eecc9c5fcbbfe",
   "architecture_release": {
-    "version": "1.0.1",
-    "previous_version": "1.0.0"
+    "version": "1.0.2",
+    "previous_version": "1.0.1"
   },
   "source_files": [
     {
@@ -243,7 +243,7 @@
     },
     {
       "path": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
-      "sha256": "3b0906eb6d51aea98e17b3f6b31250e68c2aa7320a1989f2386449909ce8f19a",
+      "sha256": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
       "content_role": "assertion-level standing must be preserved"
     },
     {
@@ -258,7 +258,7 @@
     },
     {
       "path": "docs/markdown/03-business-architecture/reference-model/business-architecture.json",
-      "sha256": "e7f3c8f52e58ad944434167dcb54d623d95d7f80c8c82813153b8566aa939dee",
+      "sha256": "ed876954fb05cba520e160c5dfe3a0b22e45b88d08453ab937ee48a2e6d64dcd",
       "content_role": "assertion-level standing must be preserved"
     },
     {
@@ -593,12 +593,27 @@
     },
     {
       "path": "docs/markdown/governance/README.md",
-      "sha256": "ace0d227f5bac44771ff0230ea673bf64ffa7381d6118086a70effa7de2b9e09",
+      "sha256": "1f679e981573a500b1bbe1e33780aad923b82078d2441a494c39df37b13a7533",
       "content_role": "assertion-level standing must be preserved"
     },
     {
       "path": "docs/markdown/governance/architectural-axioms.md",
       "sha256": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+      "content_role": "assertion-level standing must be preserved"
+    },
+    {
+      "path": "docs/markdown/governance/architecture-identity/model.md",
+      "sha256": "43f961e35eefee3846cb511a0dcd5cadc3ca21c1a6f1a3fe57b6374d3d3fc5a0",
+      "content_role": "assertion-level standing must be preserved"
+    },
+    {
+      "path": "docs/markdown/governance/architecture-identity/registry.json",
+      "sha256": "260c93357c4a2705382ad8087661f8b1c52195c41327336f4864c5956eaac85d",
+      "content_role": "assertion-level standing must be preserved"
+    },
+    {
+      "path": "docs/markdown/governance/architecture-identity/registry.schema.json",
+      "sha256": "10fb9bb0068b9008f428611c7179bfdea3ced0b419403e19a498afe7560d0b6a",
       "content_role": "assertion-level standing must be preserved"
     },
     {
@@ -643,7 +658,7 @@
     },
     "metamodel": {
       "path": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
-      "sha256": "3b0906eb6d51aea98e17b3f6b31250e68c2aa7320a1989f2386449909ce8f19a"
+      "sha256": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f"
     },
     "k9": {
       "path": "docs/markdown/04-information-architecture/reviews/package2-g1-review.md",
@@ -46181,7 +46196,7 @@
     }
   ],
   "summary": {
-    "source_files": 125,
+    "source_files": 128,
     "business_elements": 705,
     "business_types": {
       "capability": 269,

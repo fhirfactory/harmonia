@@ -41,12 +41,21 @@ Existing governed identifiers and retained aliases must be preserved verbatim. C
 
 - Preserve all 228 Capability XML identifiers and all 189 Composition identifiers in the proven Exchange baseline. Preserve its labels, properties, hierarchy, model identifier and existing Views. These identifiers are established publication identities, not evidence of a repository crosswalk.
 - Exact EC-01–EC-14 Reference IDs resolve to the authoritative Enterprise catalogue. Labels validate source drift; they are not mapping authority. The other 214 baseline elements have no demonstrated RAD identity crosswalk and must remain unresolved.
-- Domain03 §8 governs typed structural Canonical IDs, direct ID aliases, relocation, non-reuse and Feature ancestry. An approved relocation changes a Canonical ID while the semantic model object retains its identity through an explicit identity-register transition. A deterministic XML ID must not be recomputed from the new path and create a second element.
-- For future constructs with allocated, unambiguous governed IDs, a single reviewed identity register must bind the source identity to the XML identifier. On first allocation, the register may use UUIDv5 over a fixed publication namespace plus the governed identity namespace and ID. Before that first semantic allocation, approve and lock the namespace in the publication implementation; this profile allocates no IDs or second release scheme.
+- Domain03 §8 continues to govern typed structural Canonical IDs, direct ID aliases, relocation, non-reuse and Feature ancestry. The [Governed Architecture Identity model](architecture-identity/model.md) distinguishes those responsibility-context identifiers from a persistent Canonical Architecture ID. An approved relocation changes the structural path while the lifetime handle and semantic model object persist. The capture's `canonical_id` field keeps its existing meaning; no UUID is placed there.
+- The [common identity register](architecture-identity/registry.json) and its [schema](architecture-identity/registry.schema.json) define exact binding, provenance and lifecycle rules. It is intentionally empty pending review: this release adopts/allocates no identities. Existing EC/AX/REQ-FND/CST-EXT/COA/SR/VS definition IDs are retained native identities, not renamed from labels. Future allocation is recommended to use opaque persistent UUIDv4 URNs after explicit authorisation.
+- Existing ArchiMate semantic IDs remain locked. For a future approved identity without an existing binding, the identity model pins UUIDv5 namespace/key derivation independent of type, tier, label, document and View. Bind that result once and validate it against accepted history. Never recompute an existing locked UUID from an EC ID or structural path. Collisions block dependent publication; generators do not salt or retry identity.
 - Existing stable navigation keys may locate evidence but must not become Canonical IDs or implicit aliases. Missing canonical identity does not invalidate established architecture; it prevents automatic semantic allocation until an explicit publication crosswalk is authorised.
 - Name changes, another View, changed coordinates, section movement and release increments never create a new semantic object. Aliases resolve directly to the current object and cannot be reused for another identity.
 
 Relationship identity must use an established relationship ID where available. Future allocations require a reviewed assertion/crosswalk key, relationship type, endpoint identities and distinct assertion discriminator where material; no label-based keys. Repeated evidence of one relationship must not create duplicate edges. Changes of meaning or endpoints require review and explicit identity history.
+
+Canonical Architecture ID, Domain03 structural Canonical ID, Source/Capture ID,
+Navigation/Register ID, ArchiMate Semantic ID, ArchiMate Visual ID and Implementation
+ID retain their separate roles under the identity model. C/F/D/M/CDG navigation,
+local FEAT tokens and HCM/LaTeX locks are not automatic canonical crosswalks.
+CM-R05 remains mandatory; unique IDs do not waive Capability name uniqueness.
+See the [identity inventory and collision report](architecture-identity/inventory.md)
+for coverage, unresolved cases and proposed migration candidates before allocation.
 
 Visual object identity is separate: retain the existing capability publisher's UUIDv5 namespace and model/View/semantic-object keys. Visual connections additionally use their visual endpoints. Generated visual IDs never substitute for semantic element/relationship IDs. Every capability node uses `elementRef`; every connection uses `relationshipRef` and View-local visual source/target IDs.
 

@@ -27,4 +27,4 @@ test:
 	timeout --signal=TERM --kill-after=5s 60s $(PYTHON) -m unittest discover -s tests -v
 
 report:
-	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/report_publication.py --release-file "$(RELEASE_FILE)"
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" report --check

@@ -1,0 +1,159 @@
+{
+  "architecture_release": {
+    "version": "1.0.2",
+    "previous_version": "1.0.1"
+  },
+  "status": "PASS",
+  "canonical_allocations": 0,
+  "canonical_migrations": 0,
+  "semantic_identity_changes": 0,
+  "xml_sha256": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+  "files_changed": [
+    "architecture-release.json",
+    "docs/archimate/capability-architecture/Makefile",
+    "docs/archimate/capability-architecture/README.md",
+    "docs/archimate/capability-architecture/tools/assess_rad.py",
+    "docs/archimate/capability-architecture/validation.json",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+    "docs/markdown/03-business-architecture/reference-model/business-architecture.json",
+    "docs/markdown/governance/README.md",
+    "docs/markdown/governance/architecture-identity/inventory.json",
+    "docs/markdown/governance/architecture-identity/inventory.md",
+    "docs/markdown/governance/architecture-identity/model.md",
+    "docs/markdown/governance/architecture-identity/registry.json",
+    "docs/markdown/governance/architecture-identity/registry.schema.json",
+    "docs/markdown/governance/architecture-identity/release-report.md",
+    "docs/markdown/governance/architecture-identity/verification.json",
+    "docs/markdown/governance/rad-archimate-model-mapping.md",
+    "docs/markdown/governance/rad-archimate-source-inventory.json",
+    "scripts/architecture_identity.py",
+    "scripts/tests/test_architecture_identity.py"
+  ],
+  "checks": [
+    {
+      "name": "Identity inventory and registry/schema/history checks",
+      "status": "PASS",
+      "result": "13 identity regression tests included below; empty register, deterministic inventory, exact EC crosswalk and original semantic lock verified",
+      "command": [
+        "python3",
+        "scripts/architecture_identity.py",
+        "validate"
+      ]
+    },
+    {
+      "name": "Complete root script suite",
+      "status": "PASS",
+      "result": "56 tests; includes 13 identity tests and existing release/Business validation tests",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "60s",
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ]
+    },
+    {
+      "name": "Complete publication suite",
+      "status": "PASS",
+      "result": "40 tests; exact Documentation, original identities, Views, references, deterministic generation and portability",
+      "command": [
+        "make",
+        "-C",
+        "docs/archimate/capability-architecture",
+        "generate",
+        "inventory",
+        "test",
+        "check"
+      ]
+    },
+    {
+      "name": "Required architecture suite",
+      "status": "PASS",
+      "result": "90 tests; 0 failures, errors or skips",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "300s",
+        "mvn",
+        "test",
+        "-pl",
+        "paradeigma/paradeigma-test",
+        "-am",
+        "-Dtest=*ArchitectureTest",
+        "-Dsurefire.failIfNoSpecifiedTests=false"
+      ]
+    },
+    {
+      "name": "Archi 5.9 bundled Open Exchange XSD",
+      "status": "PASS",
+      "result": "Serialized publication XML valid against local Model/View/Diagram schemas; offline resolution"
+    },
+    {
+      "name": "RAD Business capture validation",
+      "status": "PASS",
+      "result": "0 invalid; exactly 2,467 unresolved dimensions/relationships retained",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "60s",
+        "python3",
+        "scripts/rads_business_architecture.py",
+        "validate"
+      ]
+    },
+    {
+      "name": "Identity and publication preservation",
+      "status": "PASS",
+      "result": "0 allocations/migrations; XML bytes, 228 capabilities, 189 relationships, all Views and 14 Documentation fields unchanged from committed 1.0.1; baseline and legacy locks unchanged"
+    },
+    {
+      "name": "Source finding preservation",
+      "status": "PASS",
+      "result": "All source assessment architectural assertions unchanged; Business capture differs only in the reviewed metamodel source fingerprint"
+    },
+    {
+      "name": "Markdown local file targets",
+      "status": "PASS",
+      "result": "All added/changed document targets resolve"
+    }
+  ],
+  "verified_files_sha256": {
+    "architecture-release.json": "611a67876e9b7b384e88d423e041b65535b583b8ddb9fe5ca007532e89b1b5fc",
+    "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+    "docs/archimate/capability-architecture/Makefile": "00cedda42568b0b54929c2e836952a12b739ef95155748235110a4c5b8343d04",
+    "docs/archimate/capability-architecture/README.md": "025a401ae8c4f5b3b43df7338670e9b01a2ab1af16eb45a45d25f2dea75f163e",
+    "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+    "docs/archimate/capability-architecture/baseline/semantic-lock.json": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+    "docs/archimate/capability-architecture/documentation-map.json": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+    "docs/archimate/capability-architecture/documentation-publication-report.md": "4ba697daff9fc35e2ad3a6bc259d6b4dc04aabce83be8ebe04b38a90ded23f3e",
+    "docs/archimate/capability-architecture/release-verification.json": "6e6322f5696d8ef9d6d7c83aa801aef4b5ef027ef999a06cf062907ff3e8e7f1",
+    "docs/archimate/capability-architecture/tools/assess_rad.py": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513",
+    "docs/archimate/capability-architecture/tools/generate_views.py": "a82708730a67d063c5504f544e60d5eca73c84267992a79b5f16c6a1e8338797",
+    "docs/archimate/capability-architecture/validation.json": "a51199a7e3a0fbfe8cb59754e64d64dec1044f798e4861637f9c45824c5c2f93",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/identity-lock.json": "519f1e748aac1223e8120cbfb80ece439188d88596081e736cd6d716596526a4",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-identity-history.json": "bf4e1e6b49f2fe02deabe5a59d4dadd639fb46c06be28870bd99535715596635",
+    "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+    "docs/markdown/03-business-architecture/reference-model/business-architecture.json": "ed876954fb05cba520e160c5dfe3a0b22e45b88d08453ab937ee48a2e6d64dcd",
+    "docs/markdown/governance/README.md": "1f679e981573a500b1bbe1e33780aad923b82078d2441a494c39df37b13a7533",
+    "docs/markdown/governance/architectural-axioms.md": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+    "docs/markdown/governance/architecture-identity/inventory.json": "80acb67da9034b9eec15cf32bca98317ce8e080b2024fe95f24291a2a35b2720",
+    "docs/markdown/governance/architecture-identity/inventory.md": "d085eae6639c8afe5d434b56c9e7791604931394ff184ecf773ebb479edf7f0b",
+    "docs/markdown/governance/architecture-identity/model.md": "43f961e35eefee3846cb511a0dcd5cadc3ca21c1a6f1a3fe57b6374d3d3fc5a0",
+    "docs/markdown/governance/architecture-identity/registry.json": "260c93357c4a2705382ad8087661f8b1c52195c41327336f4864c5956eaac85d",
+    "docs/markdown/governance/architecture-identity/registry.schema.json": "10fb9bb0068b9008f428611c7179bfdea3ced0b419403e19a498afe7560d0b6a",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "60972304c106f57e9b77c66b838da75ced29483ebb6bd6ec8b0cc88239efde25",
+    "docs/markdown/governance/rad-archimate-source-inventory.json": "0799b008c1376d5f86f4d45a0277644f8024b17157c7b408cfd3fbae0eda543e",
+    "pom.xml": "dbeb6bf07a25c7e0539dd18cca10fc343706b7fd773ac1611337f80f1e9f7f00",
+    "scripts/architecture_identity.py": "c12192edcba488bd8dcb3cfd8bdd1af7f7c94fa848118f179a4bd6b1a46a23bf",
+    "scripts/tests/test_architecture_identity.py": "b43a5a656c671162c49609c14fa8c52db9d742b1812a0e1f21a460acb79419c2"
+  }
+}

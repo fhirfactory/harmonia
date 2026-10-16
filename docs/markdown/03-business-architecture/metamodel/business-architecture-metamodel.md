@@ -448,6 +448,18 @@ These rules preserve AX-01/AX-04 business meaning, AX-14 distinctions, AX-15 unc
 
 The subsequent [R1/R2 Business Capability reconciliation](../../02-strategy/capabilities/business-capabilities.md) explicitly establishes its stated BC tiers/parents independently of catalogue indentation. It does not resolve any affected historical BEC ancestry, convert any of the 69 enabling descriptions into Capabilities, frame the 137 Features or allocate Canonical IDs. K9 continues to govern all unestablished dimensions.
 
+### 8.7 Persistent cross-domain identity and structural identification
+
+The cross-domain [Governed Architecture Identity model](../../governance/architecture-identity/model.md)
+adds a persistent **Canonical Architecture ID** for the construct's lifetime.
+The **Canonical ID** below remains the governed **structural** responsibility-context
+identifier, including its typed grammar, relocation rules and historical aliases.
+The existing capture field `canonical_id` retains that structural meaning; it is
+not repurposed for a lifetime UUID. A persistent handle neither changes this
+grammar nor supplies missing tiers, ancestry or local codes. Review and explicit
+allocation/adoption are required before populating the common identity register.
+No Business identifier is allocated or migrated by this clarification.
+
 ## 9. R1.x/R2.x Semantic Sufficiency Boundary
 
 The human architectural adjudication of 2026-10-09 establishes semantic sufficiency rather than graph density. Domain03 must express the Business behaviour required by Strategy without mirroring Strategy's structure. Complete identifier allocation is not a prerequisite for semantic completeness; deterministic corrections preserve established identities, while unresolved ancestry, tiers and code allocations remain explicit.

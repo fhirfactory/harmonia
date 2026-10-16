@@ -62,8 +62,8 @@
   "output_sha256": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
   "baseline_protected_content_sha256": "f7f3e0723066b7cdd2bc582b82f53eb65f5ec3731b4b3b68e2c063d3ff597db4",
   "architecture_release": {
-    "version": "1.0.1",
-    "previous_version": "1.0.0"
+    "version": "1.0.2",
+    "previous_version": "1.0.1"
   },
   "documentation": {
     "enriched_elements": 14,

@@ -40,10 +40,12 @@ the regression/rejection tests. `check` validates the published XML, compares it
 byte for byte with fresh generation, and checks the saved validation report
 without writing files. Commands have bounded execution times.
 
-`report` renders the release report from the current authority and pinned
-`release-verification.json` evidence. It refuses changed verified files or stale
-release metadata; rerun affected checks and refresh verification evidence before
-claiming a new PASS. `make all` is publication validation; the complete release
+`report` checks the current [identity release report](../../markdown/governance/architecture-identity/release-report.md)
+against the root authority and its pinned verification evidence. The earlier
+`documentation-publication-report.md` / `release-verification.json` and their
+renderer are retained as the historical 1.0.1 change report. They are not regenerated
+under a later release number. Refresh current release evidence after affected
+checks before claiming a new PASS. `make all` is publication validation; the complete release
 also requires the root script tests, RAD validator and AGENTS.md ArchUnit command
 recorded in the report. Reports do not substitute for those checks.
 
@@ -136,6 +138,9 @@ assessment and report tooling through `scripts/architecture_release.py`. See the
 [release policy](../../markdown/governance/architecture-release-policy.md). Generation
 never bumps the release or changes Maven. A portable copy needs the shared script
 in the same repository layout, an explicit `--release-file`, and its governed source.
-The generated [release report](documentation-publication-report.md) lists changed
-files, exact enrichment, unresolved findings and verification results. Stop at this
-slice; inspect the enriched publication in Archi before further RAD conversion.
+The [Documentation release report](documentation-publication-report.md) records
+the 1.0.1 enrichment. The owner has confirmed its Archi visual verification.
+The [current identity model and inventory](../../markdown/governance/architecture-identity/model.md)
+define the next review boundary. Identity release work preserves the publication
+bytes and refreshes only release/assessment evidence. No further semantic slice
+is authorised by establishing an identity mechanism.
