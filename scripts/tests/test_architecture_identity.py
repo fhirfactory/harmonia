@@ -178,7 +178,10 @@ class ArchitectureIdentityTests(unittest.TestCase):
         self.assertEqual(0, data["summary"]["allocated_in_this_release"])
         self.assertEqual(53, data["summary"]["native_governed_definitions"])
         self.assertEqual(14, data["summary"]["safe_existing_crosswalks"])
-        self.assertEqual(14, data["summary"]["adopted_in_this_release"])
+        adopted = {key for event in identity.read_json(identity.DIRECTORY / "registry.json")["events"]
+                   if event["kind"] == "adopt" and event["authority"]["release"] == identity.load_release()["version"]
+                   for key in event["identities"]}
+        self.assertEqual(len(adopted), data["summary"]["adopted_in_this_release"])
         self.assertEqual(14, data["summary"]["registry_records"])
         self.assertEqual(214, data["summary"]["unresolved_exchange_capabilities"])
         self.assertEqual(22, data["summary"]["unresolved_business_assertions"])
@@ -191,10 +194,11 @@ class GovernedAdoptionTests(unittest.TestCase):
     def setUp(self):
         self.data = identity.read_json(identity.DIRECTORY / "registry.json")
         self.xml = identity.ROOT / "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml"
+        self.historical = identity.replay_adoption_publication()
 
     def test_complete_chain_preserves_previous_publication_and_release(self):
         before, release = self.xml.read_bytes(), identity.load_release()
-        proof = identity.verify_adoption(self.data)
+        proof = identity.verify_adoption(self.data, published=self.historical)
         self.assertEqual(14, proof["identities_adopted"])
         self.assertEqual(0, proof["new_identities_allocated"])
         self.assertEqual({0}, set(proof["changes"].values()))
@@ -212,14 +216,14 @@ class GovernedAdoptionTests(unittest.TestCase):
         self.data["records"].pop()
         self.data["events"][0]["identities"].pop()
         with self.assertRaisesRegex(ValueError, "exactly EC-01 through EC-14"):
-            identity.verify_adoption(self.data)
+            identity.verify_adoption(self.data, published=self.historical)
         extra = record("AX-01", "Harmonia Is Health-Information Centric", "Motivation")
         extra["origin"] = "retained"
         self.data = identity.read_json(identity.DIRECTORY / "registry.json")
         self.data["records"].append(extra)
         self.data["events"].append(event("adopt", "AX-01"))
         with self.assertRaisesRegex(ValueError, "exactly EC-01 through EC-14"):
-            identity.verify_adoption(self.data)
+            identity.verify_adoption(self.data, published=self.historical)
 
     def test_rejects_reallocated_ec_and_changed_or_missing_semantic_binding(self):
         for mode in ("missing", "derived", "other"):
@@ -231,7 +235,7 @@ class GovernedAdoptionTests(unittest.TestCase):
             else:
                 data["records"][0]["archimate"] = data["records"][1]["archimate"]
             with self.subTest(mode=mode), self.assertRaises(ValueError):
-                identity.verify_adoption(data)
+                identity.verify_adoption(data, published=self.historical)
 
     def test_rejects_name_status_alias_or_scoped_source_drift(self):
         for field, value in (("name", "Invented name"), ("status", "deprecated"),
@@ -239,29 +243,29 @@ class GovernedAdoptionTests(unittest.TestCase):
             data = copy.deepcopy(self.data)
             data["records"][0][field] = value
             with self.subTest(field=field), self.assertRaises(ValueError):
-                identity.verify_adoption(data)
+                identity.verify_adoption(data, published=self.historical)
 
     def test_rejects_wrong_definition_even_with_a_valid_document_fingerprint(self):
         self.data["records"][0]["provenance"] = self.data["records"][1]["provenance"]
         self.assertEqual([], identity.validate_registry(self.data))
         with self.assertRaisesRegex(ValueError, "Exact governed definition/adoption provenance"):
-            identity.verify_adoption(self.data)
+            identity.verify_adoption(self.data, published=self.historical)
 
     def test_current_provenance_must_be_valid_even_after_history_accepts_it(self):
         self.data["records"][0]["provenance"][0]["source_sha256"] = "0" * 64
         self.assertEqual([], identity.validate_registry(self.data, copy.deepcopy(self.data)))
         with self.assertRaisesRegex(ValueError, "fingerprint mismatch"):
-            identity.verify_adoption(self.data)
+            identity.verify_adoption(self.data, published=self.historical)
 
     def test_rejects_wrong_or_extra_governance_event(self):
         self.data["events"].append(event("bind", "EC-01"))
         with self.assertRaisesRegex(ValueError, "Only the authorised"):
-            identity.verify_adoption(self.data)
+            identity.verify_adoption(self.data, published=self.historical)
 
     def test_rejects_semantic_visual_documentation_and_endpoint_changes(self):
         g = identity.views
         for mutation in ("semantic", "visual", "documentation", "endpoint"):
-            root = g.ET.fromstring(self.xml.read_bytes())
+            root = g.ET.fromstring(self.historical)
             if mutation == "semantic":
                 root.find("a:elements/a:element/a:name", g.N).text = "Altered capability"
             elif mutation == "visual":
@@ -277,3 +281,12 @@ class GovernedAdoptionTests(unittest.TestCase):
                 relation.set("source", relation.get("target"))
             with self.subTest(mutation=mutation), self.assertRaises(ValueError):
                 identity.verify_adoption(self.data, published=g.serialize(root))
+
+    def test_current_bindings_survive_navigation_but_reject_semantic_drift(self):
+        proof = identity.verify_bindings(self.data)
+        self.assertEqual(14, proof["retained_identities"])
+        self.assertEqual(14, len(proof["identity_chain"]))
+        changed = identity.views.ET.fromstring(self.xml.read_bytes())
+        changed.find("a:elements/a:element/a:name", identity.views.N).text = "Changed construct"
+        with self.assertRaisesRegex(ValueError, "Current semantic model"):
+            identity.verify_bindings(self.data, published=identity.views.serialize(changed))

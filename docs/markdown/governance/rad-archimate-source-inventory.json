@@ -1,9 +1,9 @@
 {
   "purpose": "Bounded reconciliation/navigation inventory; not governed semantic identity allocation or an Exchange generator input",
-  "repository_head": "a3bc5aa7f38beacf66bb161f7164273cad91b8c4",
+  "repository_head": "053f17a7f3ccfa31bf18fc7d611c480a467884c3",
   "architecture_release": {
-    "version": "1.0.3",
-    "previous_version": "1.0.2"
+    "version": "1.0.4",
+    "previous_version": "1.0.3"
   },
   "source_files": [
     {
@@ -593,7 +593,12 @@
     },
     {
       "path": "docs/markdown/governance/README.md",
-      "sha256": "d44cabe39858673dddda56a798a8b416fa9c5179989aa60294c3ffafaa41ebb9",
+      "sha256": "e330fd517cd6044bcf382ba78743e77c26a45b6e0a174bf486f62a40ec27e0e1",
+      "content_role": "assertion-level standing must be preserved"
+    },
+    {
+      "path": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "sha256": "8d4258bff973818b3f53bf3f4e76c5ed35f07fd07799cacbe945944ce79d5547",
       "content_role": "assertion-level standing must be preserved"
     },
     {
@@ -46196,7 +46201,7 @@
     }
   ],
   "summary": {
-    "source_files": 128,
+    "source_files": 129,
     "business_elements": 705,
     "business_types": {
       "capability": 269,

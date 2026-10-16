@@ -325,6 +325,11 @@ def verify_adoption(data, root=ROOT, published=None):
     schema.assertValid(views.ET.fromstring(raw))
     assessment = assess_rad.inventory(root, manifest)
     assertions = {k: v for k, v in assessment.items() if k not in ("architecture_release", "repository_head", "source_files")}
+    navigation_baseline = base / "baseline/navigation-baseline-1.0.3.json"
+    if navigation_baseline.exists():
+        # New governance documents change the file census, not source assertions.
+        # Preserve the accepted census only for this historical digest comparison.
+        assertions["summary"] = dict(assertions["summary"], source_files=read_json(navigation_baseline)["source_file_count"])
     views.require(views.digest(assertions) == prior["rad_assertions_sha256"], "RAD assertions or unresolved findings changed")
     census = inventory(root)
     views.require(views.digest(census["collisions"]) == prior["identity_collisions_sha256"],
@@ -350,6 +355,44 @@ def verify_adoption(data, root=ROOT, published=None):
                     "same_visual_identities_views_and_references", "same_14_governed_documentation_sections",
                     "byte_identical_to_release_1_0_2", "deterministic_generation", "archi_5_9_xsd",
                     "source_assertions_f46_and_other_findings_preserved", "rad_validation_2467_unresolved")})
+
+
+def replay_adoption_publication(root=ROOT):
+    """Replay the frozen 1.0.3 presentation without reading current navigation."""
+    root = Path(root)
+    base = root / "docs/archimate/capability-architecture"
+    baseline, _ = baseline_crosswalk(root)
+    return documentation.publish(baseline, views.load_schema(base / "schemas/archimate3_Diagram.xsd"),
+        read_json(base / "baseline/semantic-lock.json"), base / "documentation-map.json",
+        root / "architecture-release.json")[0]
+
+
+def verify_bindings(data, root=ROOT, published=None):
+    """Validate existing adopted identities against the current semantic model.
+
+    Presentation changes belong to the independent navigation validator. The
+    strict 1.0.3 adoption replay still checks its original byte/visual continuity.
+    """
+    import publish_navigation as navigation
+    root = Path(root)
+    base = root / "docs/archimate/capability-architecture"
+    historical = replay_adoption_publication(root)
+    proof = verify_adoption(data, root, published=historical)
+    raw = (base / "Harmonia-Capability-Architecture.xml").read_bytes() if published is None else published
+    current = views.ET.fromstring(raw)
+    views.validate_identifiers(current)
+    views.require(navigation.architecture_snapshot(current) == navigation.architecture_snapshot(views.ET.fromstring(historical)),
+                  "Current semantic model or governed Documentation drifted from the adopted constructs")
+    prior = read_json(base / "baseline/navigation-baseline-1.0.3.json")
+    registry = root / "docs/markdown/governance/architecture-identity/registry.json"
+    registry_hash = hashlib.sha256(registry.read_bytes()).hexdigest()
+    views.require(registry_hash == prior["files_sha256"][str(registry.relative_to(root))],
+                  "Release 1.0.4 must preserve the adopted identity register byte for byte")
+    return dict(status="PASS", architecture_release=load_release(root / "architecture-release.json"),
+                retained_identities=14, registry_sha256=registry_hash,
+                architecture_content_sha256=navigation.architecture_snapshot(current),
+                identity_chain=proof["identity_chain"],
+                note="Current semantic binding validation; navigation/Views are validated separately; no adoption or allocation performed")
 
 
 def inventory(root=ROOT):
@@ -572,9 +615,11 @@ The token index also exposes scoped rule/decision/review IDs (e.g. DN-BC, CM-R,
 B1/B2, K, CDG and candidate requirement keys) as documentary evidence, without
 mechanically publishing them as Motivation or Migration elements.
 
-The [adoption decision](adoption-1.0.3.md) bounds this release to the 14 existing
-EC identities. Their admission and publication continuity are checked against the
-frozen [1.0.2 evidence](adoption-baseline-1.0.2.json). The classifications above
+The [adoption decision](adoption-1.0.3.md) bounded Release 1.0.3 to the 14 existing
+EC identities. Its historical admission/publication proof remains frozen against
+the [1.0.2 evidence](adoption-baseline-1.0.2.json). Current binding checks compare
+those same identities and definitions with the present semantic model, independently
+of authorised navigation/View changes. The classifications above
 describe the source evidence; safe crosswalks do not authorise additional adoption.
 Stop for human review. The 214 baseline crosswalks require separately authorised
 batches before expanding publication. No bulk allocation or additional domain
@@ -706,7 +751,7 @@ No legacy reconciliation or domain completion is claimed.
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("inventory", "validate", "adoption", "report"))
+    parser.add_argument("action", choices=("inventory", "validate", "adoption", "bindings", "report"))
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--registry", type=Path, default=DIRECTORY / "registry.json")
     parser.add_argument("--previous-registry", type=Path)
@@ -720,6 +765,23 @@ def main():
                 raise ValueError("; ".join(errors))
             print(json.dumps(dict(status="PASS", architecture_release=load_release(), registry_records=len(data["records"]),
                                   note="Validation does not authorise allocation or publish semantics"), indent=2))
+        elif args.action == "bindings":
+            result = verify_bindings(read_json(args.registry))
+            path = DIRECTORY / "bindings-validation.json"
+            value = json.dumps(result, indent=2) + "\n"
+            if args.check:
+                if path.read_text() != value:
+                    raise ValueError("Stale current identity binding verification")
+            else:
+                path.write_text(value)
+            print(json.dumps({k: v for k, v in result.items() if k != "identity_chain"}, indent=2))
+        elif args.action == "adoption" and version_parts(load_release()["version"]) > (1, 0, 3):
+            saved = read_json(DIRECTORY / "adoption-validation.json")
+            result = verify_adoption(read_json(args.registry), published=replay_adoption_publication())
+            result["architecture_release"] = saved["architecture_release"]
+            if result != saved:
+                raise ValueError("Historical 1.0.3 adoption replay differs from frozen verification")
+            print("PASS: historical Release 1.0.3 adoption replay (no files written); use bindings for current publication")
         elif args.action == "adoption":
             result = verify_adoption(read_json(args.registry))
             path = DIRECTORY / "adoption-validation.json"
@@ -731,6 +793,9 @@ def main():
                 path.write_text(value)
             print(json.dumps({k: v for k, v in result.items() if k != "identity_chain"}, indent=2))
         elif args.action == "report":
+            if version_parts(load_release()["version"]) > (1, 0, 3):
+                import report_navigation
+                return report_navigation.main(["--check"] if args.check else [])
             data = read_json(DIRECTORY / "inventory.json")
             value = release_report(data, read_json(DIRECTORY / "verification.json"))
             path = DIRECTORY / "release-report.md"

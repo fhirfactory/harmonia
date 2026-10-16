@@ -2,6 +2,44 @@
 
 # Harmonia Capability Architecture — Exchange publication
 
+Release **1.0.4** applies the governed
+[Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md).
+Import [Harmonia-Capability-Architecture.xml](Harmonia-Capability-Architecture.xml)
+using Archi's **Open Exchange XML** import. It preserves all 228 capabilities,
+189 Composition relationships, existing semantic IDs, 14 EC identity bindings
+and their Documentation. Only navigation and additional Views change.
+
+Inspect these model-tree paths:
+
+```text
+Strategy / Business Capabilities / <CT1> / <CT2> / <CT3>
+Strategy / Business Enabling Capabilities / <CT1> / <CT2> / <CT3>
+Strategy / Enterprise Capabilities
+Relations / Capabilities / <category> / <source capability ancestry>
+Views / Capabilities / Harmonia Capability Landscape
+Views / Capabilities / Business Capabilities / Business Capability Model
+Views / Capabilities / Business Capabilities / <CT1> / <CT2> / <CT3>
+Views / Capabilities / Business Enabling Capabilities / <same progressive pattern>
+Views / Capabilities / Enterprise Capabilities / Enterprise Capability Model
+```
+
+Each BC/BEC folder contains its same-named semantic element and child folders.
+Each corresponding View folder contains an Overview of that context and its
+immediate children. Leaves have a single-element overview. The 214 new detail
+Views contain at most 22 nodes each. All five original diagrams are retained
+unchanged, giving **219 total Views**, with no replacements. The BC/BEC category
+overviews still show CT1 + CT2 + CT3. EC remains an independent flat catalogue.
+Folder ancestry creates no architectural relationship.
+
+The [current release report](navigation-release-report.md) lists exact inspection
+examples, validation results and the pending human review. Historical presentation
+instructions below are preserved explicitly; the governed convention supersedes
+those sections only.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: [Harmonia Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md#canonical-model-tree-homes)
+---------------------------------------------------------
+
 Import [Harmonia-Capability-Architecture.xml](Harmonia-Capability-Architecture.xml)
 into Archi using **Open Exchange XML** import. The four generated Views are under:
 
@@ -26,7 +64,52 @@ It does not read, compose, reconcile or modify the repository JSON/LaTeX model,
 its identity lock or RADS. The Documentation overlay reads only the explicit governed Enterprise source in its manifest. The Exchange baseline is the explicitly authorised
 input for this bounded publication task; it does not supersede RADS.
 
+------- Legacy Content - Superseded ------- Finish ----
+
 ## Generate and validate
+
+Requirements: Python 3.9+ and `lxml` (`requirements.txt`). From this directory:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 make all
+```
+
+`generate` runs `tools/publish_navigation.py`: replay the unchanged original
+publishers and locks, then project checked navigation and detail Views.
+`inventory` refreshes assessment evidence. `adoption` replays the historical
+1.0.3 proof without rewriting it; `bindings` proves the 14 bindings against the
+current semantic model. `test` runs all publication regression/rejection tests.
+`check` performs read-only regeneration and identity/source checks. `report`
+checks the current report against pinned verification evidence. Commands are
+bounded and generation never increments the release.
+
+For configurable publication from any working directory:
+
+```bash
+python3 tools/publish_navigation.py \
+  --baseline baseline/Harmonia-Capability-Architecture-v2.1a.xml \
+  --lock baseline/semantic-lock.json \
+  --navigation-lock baseline/navigation-baseline-1.0.3.json \
+  --schema schemas/archimate3_Diagram.xsd \
+  --documentation-map documentation-map.json \
+  --release-file ../../../architecture-release.json \
+  --output Harmonia-Capability-Architecture.xml \
+  --report validation.json
+```
+
+Add `--check` for read-only verification. Make accepts the existing input/output
+variables shown below. Refresh the separate
+[navigation release verification](navigation-release-verification.json) after
+running affected required suites, then render with `tools/report_navigation.py`.
+The renderer rejects stale hashes, failed or missing required checks. `make all`
+does not run Maven or the root script suite; the release report records those
+separate checks. Earlier release reports and adoption evidence remain historical.
+The original lower-level publisher is preserved for historical replay; using it
+alone does not produce the current navigation publication.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: [Harmonia Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md#determinism-and-verification)
+---------------------------------------------------------
 
 Requirements: Python 3.9+ and `lxml` (`requirements.txt`). From this directory:
 
@@ -75,6 +158,8 @@ Add `--check` for read-only verification. Make also accepts `BASELINE`, `SCHEMA`
 Ordinary generation never creates or updates a semantic lock. A changed semantic
 baseline requires a separately authorised task; the current lock rejects it.
 
+------- Legacy Content - Superseded ------- Finish ----
+
 ## Input and schema provenance
 
 `baseline/Harmonia-Capability-Architecture-v2.1a.xml` is a byte-identical copy of
@@ -95,6 +180,16 @@ model ID, stable View key and referenced semantic IDs. Connections include their
 View-local node IDs in the identity key and reference the original relationship.
 Neither coordinates nor labels allocate identities.
 
+The retained landscape and overview layouts are unchanged. New detail diagrams
+show a highlighted context above a four-column grid of immediate children, with
+12-point inherited labels and only existing direct Composition edges. Drill down
+through the matching folders under Views. See the governed convention and
+[current validation](validation.json); visual acceptance remains pending in Archi.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: [Harmonia Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md#progressive-views)
+---------------------------------------------------------
+
 The landscape uses four-column grids in Business, Business Enabling and Enterprise
 bands, top to bottom. Detailed hierarchies run left to right, with alphabetically
 ordered siblings stacked vertically and each parent centred against its subtree.
@@ -111,6 +206,8 @@ See [the generation report](view-generation-report.md) and
 [machine-readable validation](validation.json) for counts, checks and unresolved
 presentation/source-governance issues. Visual inspection in Archi is the next
 review gate; CT1 drill-downs, Features and other architecture Views are out of scope.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ## Exact-ID Documentation projection
 
@@ -148,8 +245,20 @@ in the same repository layout, an explicit `--release-file`, and its governed so
 The [Documentation release report](documentation-publication-report.md) records
 the 1.0.1 enrichment. The owner has confirmed its Archi visual verification.
 The [identity model](../../markdown/governance/architecture-identity/model.md) and
+[1.0.3 adoption decision](../../markdown/governance/architecture-identity/adoption-1.0.3.md)
+continue to govern the same 14 EC bindings. Current
+[binding validation](../../markdown/governance/architecture-identity/bindings-validation.json)
+proves their continuity independently of presentation changes. No additional
+semantic publication or identity allocation is authorised by this release.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: [Harmonia Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md#determinism-and-verification)
+---------------------------------------------------------
+
+The [identity model](../../markdown/governance/architecture-identity/model.md) and
 [Release 1.0.3 adoption decision](../../markdown/governance/architecture-identity/adoption-1.0.3.md)
 govern the first 14 EC register bindings. Their native identities and existing
 semantic UUIDs are retained. Publication bytes and properties remain unchanged;
 the adoption proof is in the register and verification evidence. Stop for human
 review after these adoptions. No further semantic slice is authorised.
+------- Legacy Content - Superseded ------- Finish ----

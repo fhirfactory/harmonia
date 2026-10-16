@@ -1,7 +1,7 @@
 {
   "architecture_release": {
-    "version": "1.0.3",
-    "previous_version": "1.0.2"
+    "version": "1.0.4",
+    "previous_version": "1.0.3"
   },
   "purpose": "Identity evidence inventory; no allocation or semantic-generation authority; populations overlap",
   "records": [
@@ -42801,7 +42801,11 @@
     },
     {
       "path": "docs/markdown/governance/README.md",
-      "sha256": "d44cabe39858673dddda56a798a8b416fa9c5179989aa60294c3ffafaa41ebb9"
+      "sha256": "e330fd517cd6044bcf382ba78743e77c26a45b6e0a174bf486f62a40ec27e0e1"
+    },
+    {
+      "path": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "sha256": "8d4258bff973818b3f53bf3f4e76c5ed35f07fd07799cacbe945944ce79d5547"
     },
     {
       "path": "docs/markdown/governance/architectural-axioms.md",
@@ -42821,11 +42825,11 @@
     },
     {
       "path": "docs/markdown/governance/rad-archimate-model-mapping.md",
-      "sha256": "d695d46a9f3c192c064cac6ec30694f817d006afd423a96d6e9860c409c16962"
+      "sha256": "3122a5355834a391b0a2e682a80bd174a2af66cdf82fe02a984ec187cfb0bf72"
     },
     {
       "path": "docs/markdown/governance/rad-archimate-publication-plan.md",
-      "sha256": "295de54d3e7ec02236d0e12996c77b31d628018f71354b285196843141e79534"
+      "sha256": "178fdb951149f634ee28f2bd44ed065b5cd0b14d07a35d9f2efc9e31f66f0176"
     },
     {
       "path": "docs/markdown/scratchpad/architecture-design-notes.md",
@@ -45269,6 +45273,11 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 15,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/architectural-axioms.md",
           "source_line": 204,
           "standing": "assertion-specific; inspect source"
@@ -46011,7 +46020,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 21,
+          "source_line": 35,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -48035,6 +48044,11 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 15,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/architectural-axioms.md",
           "source_line": 668,
           "standing": "assertion-specific; inspect source"
@@ -49228,6 +49242,11 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 15,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/architectural-axioms.md",
           "source_line": 25,
           "standing": "assertion-specific; inspect source"
@@ -49706,7 +49725,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 27,
+          "source_line": 41,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -57671,7 +57690,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 22,
+          "source_line": 36,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -59226,6 +59245,31 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 60,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 93,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 106,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 117,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 125,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/rad-archimate-coverage-assessment.md",
           "source_line": 42,
           "standing": "assertion-specific; inspect source"
@@ -59252,7 +59296,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 23,
+          "source_line": 37,
           "standing": "assertion-specific; inspect source"
         },
         {
@@ -60408,6 +60452,56 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 61,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 62,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 94,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 95,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 106,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 117,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 119,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 120,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 121,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 125,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/rad-archimate-coverage-assessment.md",
           "source_line": 42,
           "standing": "assertion-specific; inspect source"
@@ -60444,7 +60538,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 23,
+          "source_line": 37,
           "standing": "assertion-specific; inspect source"
         },
         {
@@ -61600,6 +61694,51 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 63,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 64,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 96,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 106,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 117,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 121,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 122,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 123,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 125,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/rad-archimate-coverage-assessment.md",
           "source_line": 42,
           "standing": "assertion-specific; inspect source"
@@ -61631,7 +61770,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 23,
+          "source_line": 37,
           "standing": "assertion-specific; inspect source"
         },
         {
@@ -64765,6 +64904,11 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 68,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/rad-archimate-coverage-assessment.md",
           "source_line": 62,
           "standing": "assertion-specific; inspect source"
@@ -66447,7 +66591,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 19,
+          "source_line": 33,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -66983,6 +67127,11 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 69,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/rad-archimate-coverage-assessment.md",
           "source_line": 62,
           "standing": "assertion-specific; inspect source"
@@ -67024,7 +67173,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 22,
+          "source_line": 36,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -68385,6 +68534,11 @@
           "standing": "assertion-specific; inspect source"
         },
         {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+          "source_line": 189,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
           "source_document": "docs/markdown/governance/rad-archimate-coverage-assessment.md",
           "source_line": 54,
           "standing": "assertion-specific; inspect source"
@@ -68411,7 +68565,12 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 20,
+          "source_line": 24,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
+          "source_line": 34,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -71582,7 +71741,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 25,
+          "source_line": 39,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -72925,6 +73084,11 @@
         },
         {
           "source_document": "docs/markdown/05-information-systems-architecture/traceability/step-b-method.md",
+          "source_line": 1,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
           "source_line": 1,
           "standing": "assertion-specific; inspect source"
         },
@@ -83230,7 +83394,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-model-mapping.md",
-          "source_line": 139,
+          "source_line": 148,
           "standing": "assertion-specific; inspect source"
         },
         {
@@ -84434,7 +84598,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-model-mapping.md",
-          "source_line": 139,
+          "source_line": 148,
           "standing": "assertion-specific; inspect source"
         },
         {
@@ -85296,7 +85460,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 21,
+          "source_line": 35,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -86910,7 +87074,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 22,
+          "source_line": 36,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -91541,7 +91705,7 @@
         },
         {
           "source_document": "docs/markdown/governance/rad-archimate-publication-plan.md",
-          "source_line": 22,
+          "source_line": 36,
           "standing": "assertion-specific; inspect source"
         }
       ],
@@ -92030,7 +92194,7 @@
     "safe_existing_crosswalks": 14,
     "unresolved_exchange_capabilities": 214,
     "allocated_in_this_release": 0,
-    "adopted_in_this_release": 14,
+    "adopted_in_this_release": 0,
     "registry_records": 14,
     "existing_structural_canonical_ids": 0,
     "unresolved_business_assertions": 22,

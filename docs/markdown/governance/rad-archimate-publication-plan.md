@@ -12,6 +12,20 @@ Every slice must (1) apply the governed release increment, (2) retain identity/h
 
 If a slice encounters an unestablished identity or semantic relation, stop that dependent portion and report the evidence. Other independent authorised work may proceed. Do not silently promote candidates, infer architecture to meet a slice quota, or declare final RAD coverage from file/heading counts.
 
+## Authorised navigation slice — Release 1.0.4
+
+The architecture owner separately authorises the
+[Archi Navigation & View Convention](archi-navigation-and-view-convention.md)
+and its application to the existing capability publication. This bounded slice
+changes folders and adds context/immediate-child Views; it adds no semantic
+architecture and does not execute the proposed identity/source-governance or
+later domain slices below. The original five Views, 228 elements, 189 relations
+and the 14 EC bindings from 1.0.3 remain intact. The 214 unresolved crosswalks,
+F46 and all other findings remain unresolved. The
+[release report](../../archimate/capability-architecture/navigation-release-report.md)
+records validation and the exact model-tree/View paths for human inspection.
+Stop at that inspection gate before another publication slice.
+
 ## Reviewable slices
 
 | Slice | Coherent addition and source gates | Shared-model Views | Coverage report and visual review focus |

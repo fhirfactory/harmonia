@@ -101,6 +101,15 @@ A graph browser should eventually traverse incoming and outgoing semantic relati
 
 ## 7. View profile
 
+The explicitly authorised Release 1.0.4 applies the
+[Harmonia Archi Navigation & View Convention](archi-navigation-and-view-convention.md)
+to this existing capability publication. It changes model-tree organisations,
+moves existing View navigation entries and adds context/immediate-child Views.
+All semantic records, 14 EC bindings, Documentation and original View contents
+remain unchanged. The original semantic lock remains immutable; navigation is
+validated separately from semantic architecture. This bounded presentation
+change authorises no additional RAD constructs or identity reconciliation.
+
 Views are disposable deterministic projections of the shared model, never architectural sources. Preserve the four capability Views and original import diagnostic. Retain their semantic/visual IDs. New Views need a bounded question, selected semantic identities, standing filter, relationship subset and deterministic layout. Each source/target visual node must represent the semantic relationship's actual endpoints. Do not add semantic relationships for geometry.
 
 | Expected View | Intended question / boundary |

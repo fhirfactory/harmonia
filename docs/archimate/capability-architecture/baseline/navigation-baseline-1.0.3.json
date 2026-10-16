@@ -1,0 +1,50 @@
+{
+  "architecture_release": {
+    "version": "1.0.3",
+    "previous_version": "1.0.2"
+  },
+  "repository_commit": "053f17a7f3ccfa31bf18fc7d611c480a467884c3",
+  "files_sha256": {
+    "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+    "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+    "docs/archimate/capability-architecture/baseline/semantic-lock.json": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+    "docs/archimate/capability-architecture/documentation-map.json": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+    "docs/archimate/capability-architecture/tools/generate_views.py": "a82708730a67d063c5504f544e60d5eca73c84267992a79b5f16c6a1e8338797",
+    "docs/archimate/capability-architecture/tools/publish_documentation.py": "fec75663ea320796af4b4c72e90a004fc4a2afb58be60f01371f30c25742d463",
+    "docs/markdown/governance/architecture-identity/registry.json": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
+    "docs/markdown/governance/architecture-identity/registry.schema.json": "10fb9bb0068b9008f428611c7179bfdea3ced0b419403e19a498afe7560d0b6a",
+    "docs/markdown/governance/architecture-identity/adoption-1.0.3.md": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+    "docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json": "7a9a8b247d54f5a30304b763a60e3622e8197adf85a1bf53678b9af72f43c7b4",
+    "docs/markdown/governance/architecture-identity/adoption-validation.json": "237c7fcc0ffdd109b85bb976a256b1c6f6a75bf1b5f4323e7a8f0670d94499c8",
+    "docs/markdown/governance/architecture-identity/release-report.md": "086593d3c91404e02999e28ae2c8a21a47276d823a1578423fe06979b34036d3",
+    "docs/markdown/governance/architecture-identity/verification.json": "55a686e6414ebc0b1183a96d11035a2c29c3122ebfaeb5e165a36230e7b0d9f0",
+    "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+    "docs/markdown/03-business-architecture/reference-model/business-architecture.json": "ed876954fb05cba520e160c5dfe3a0b22e45b88d08453ab937ee48a2e6d64dcd"
+  },
+  "architecture_content_sha256": "b71284a557278201f2301d464da92bcc322d0ed8553aa387d9f61842205072b6",
+  "views": {
+    "id-ef8af9b152505720b37914080c957a1c": {
+      "name": "Archi Import Test - Individual Health Assessment",
+      "sha256": "c19e86cda329d1303fc57a4f938be28ff4e0d5d91df33c749214f838b998e2ea"
+    },
+    "id-a4bbb7df8ab95f8ebcadd44f43ecc9ce": {
+      "name": "Harmonia Capability Landscape",
+      "sha256": "1b1adc773d929837694f9f896e73b7662bffab32538b9a093a7c8aa60768991c"
+    },
+    "id-030f98270e13527db62632fd9c31df86": {
+      "name": "Business Capability Model",
+      "sha256": "4ea7184e222cafefd3e144baa534bf3cedae4a08e9706e311a159a0792e60293"
+    },
+    "id-b531027008a75f34a4d8401ac0d22568": {
+      "name": "Business Enabling Capability Model",
+      "sha256": "2deef2e40ac572aeb1aea596d479494d7d7c2815485cc84bf4f04fe53841bc9b"
+    },
+    "id-2cf3bc990f115e36987f676ae6ea8656": {
+      "name": "Enterprise Capability Model",
+      "sha256": "c120d85c3b4109c4e44fed3fd193a2f0847b387620c2fbcdef53e742ff4799c4"
+    }
+  },
+  "rad_assertions_sha256": "7653404bd59f01c22ef8f56b97622a50e7c611f89c72fe191eb59cec23f47811",
+  "identity_collisions_sha256": "76b2b9d63e4ebc11e43afbe9d13012916090138632bc68707bffc423e5089bc5",
+  "source_file_count": 128
+}

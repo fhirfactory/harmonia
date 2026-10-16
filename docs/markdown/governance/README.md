@@ -53,3 +53,9 @@ The register adopts only the 14 proven EC identities under the
 [Release 1.0.3 decision](architecture-identity/adoption-1.0.3.md); existing semantic
 locks and unresolved crosswalks remain intact. See the
 [identity release report](architecture-identity/release-report.md).
+
+The [Harmonia Archi Navigation & View Convention](archi-navigation-and-view-convention.md)
+governs canonical element/relationship homes, independent subject hierarchies and
+progressive Views. The [Release 1.0.4 report](../../archimate/capability-architecture/navigation-release-report.md)
+records its navigation-only application to existing capabilities and the human
+Archi inspection gate. The 1.0.3 identity report above remains historical.

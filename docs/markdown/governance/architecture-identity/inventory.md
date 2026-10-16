@@ -2,8 +2,8 @@
 
 # Architecture identity inventory and collision report
 
-Release 1.0.3 (previous 1.0.2); values read from
-the root release authority. **14 existing identities adopted;
+Release 1.0.4 (previous 1.0.3); values read from
+the root release authority. **0 existing identities adopted;
 0 new identities allocated in this release.**
 This is an evidence inventory, not an architecture model.
 
@@ -105,9 +105,11 @@ The token index also exposes scoped rule/decision/review IDs (e.g. DN-BC, CM-R,
 B1/B2, K, CDG and candidate requirement keys) as documentary evidence, without
 mechanically publishing them as Motivation or Migration elements.
 
-The [adoption decision](adoption-1.0.3.md) bounds this release to the 14 existing
-EC identities. Their admission and publication continuity are checked against the
-frozen [1.0.2 evidence](adoption-baseline-1.0.2.json). The classifications above
+The [adoption decision](adoption-1.0.3.md) bounded Release 1.0.3 to the 14 existing
+EC identities. Its historical admission/publication proof remains frozen against
+the [1.0.2 evidence](adoption-baseline-1.0.2.json). Current binding checks compare
+those same identities and definitions with the present semantic model, independently
+of authorised navigation/View changes. The classifications above
 describe the source evidence; safe crosswalks do not authorise additional adoption.
 Stop for human review. The 214 baseline crosswalks require separately authorised
 batches before expanding publication. No bulk allocation or additional domain

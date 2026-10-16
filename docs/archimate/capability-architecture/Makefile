@@ -10,11 +10,11 @@ RELEASE_FILE ?= $(REPOSITORY)/architecture-release.json
 INVENTORY ?= ../../markdown/governance/rad-archimate-source-inventory.json
 .NOTPARALLEL:
 
-.PHONY: all generate inventory adoption check test report
-all: generate inventory adoption test check report
+.PHONY: all generate inventory adoption bindings check test report
+all: generate inventory adoption bindings test check report
 
 generate:
-	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/publish_documentation.py --baseline "$(BASELINE)" --schema "$(SCHEMA)" --output "$(OUTPUT)" --report "$(REPORT)" --documentation-map "$(DOCUMENTATION_MAP)" --release-file "$(RELEASE_FILE)"
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/publish_navigation.py --baseline "$(BASELINE)" --schema "$(SCHEMA)" --output "$(OUTPUT)" --report "$(REPORT)" --documentation-map "$(DOCUMENTATION_MAP)" --release-file "$(RELEASE_FILE)"
 
 inventory:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/assess_rad.py --repository "$(REPOSITORY)" --documentation-map "$(DOCUMENTATION_MAP)" --output "$(INVENTORY)" --release-file "$(RELEASE_FILE)"
@@ -23,15 +23,19 @@ inventory:
 adoption:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" adoption
 
+bindings:
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" bindings
+
 check:
-	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/publish_documentation.py --baseline "$(BASELINE)" --schema "$(SCHEMA)" --output "$(OUTPUT)" --report "$(REPORT)" --documentation-map "$(DOCUMENTATION_MAP)" --release-file "$(RELEASE_FILE)" --check
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/publish_navigation.py --baseline "$(BASELINE)" --schema "$(SCHEMA)" --output "$(OUTPUT)" --report "$(REPORT)" --documentation-map "$(DOCUMENTATION_MAP)" --release-file "$(RELEASE_FILE)" --check
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/assess_rad.py --repository "$(REPOSITORY)" --documentation-map "$(DOCUMENTATION_MAP)" --output "$(INVENTORY)" --release-file "$(RELEASE_FILE)" --check
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" inventory --check
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" validate
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" adoption --check
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" bindings --check
 
 test:
 	timeout --signal=TERM --kill-after=5s 60s $(PYTHON) -m unittest discover -s tests -v
 
 report:
-	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" report --check
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/report_navigation.py --check
