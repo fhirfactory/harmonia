@@ -1,0 +1,159 @@
+{
+  "result": "PASS",
+  "comparison": "Pre-change workspace snapshot versus regenerated 0.2-draft",
+  "elements": 862,
+  "relationships": 948,
+  "all_model_fields_byte_identical": true,
+  "protected_artifacts": {
+    "model.json": {
+      "before_sha256": "01aba70aa486c802768aeac85d48c087f9c72dc030f5f3367a93c634836e5bc8",
+      "after_sha256": "01aba70aa486c802768aeac85d48c087f9c72dc030f5f3367a93c634836e5bc8"
+    },
+    "validator-probes.json": {
+      "before_sha256": "509006e2c1226b1de890766dfc0daa79ebd959c707a908ec53915fad7f2ce24c",
+      "after_sha256": "509006e2c1226b1de890766dfc0daa79ebd959c707a908ec53915fad7f2ce24c"
+    },
+    "semantic-baseline.json": {
+      "before_sha256": "d9a0c95832fda9e254b5152ad2df81e0e85207cd73ecd3426d125b6056df9a23",
+      "after_sha256": "d9a0c95832fda9e254b5152ad2df81e0e85207cd73ecd3426d125b6056df9a23"
+    },
+    "v0.1-fingerprints.json": {
+      "before_sha256": "2b3dc10bb58b4bcd94af384d8c52992cbb297e07c6e333964f316d7c2e6622c9",
+      "after_sha256": "2b3dc10bb58b4bcd94af384d8c52992cbb297e07c6e333964f316d7c2e6622c9"
+    },
+    "corpus-register.json": {
+      "before_sha256": "b5942662c300847fbc4d1e54ce6dc0f3fdb2c80c4819aa2f895cc5449540c800",
+      "after_sha256": "b5942662c300847fbc4d1e54ce6dc0f3fdb2c80c4819aa2f895cc5449540c800"
+    },
+    "source-coverage.json": {
+      "before_sha256": "9ae28e1fe3d5ce20ecdd055f51957c7570eb0b65f932e0f098c80035083d9bb6",
+      "after_sha256": "9ae28e1fe3d5ce20ecdd055f51957c7570eb0b65f932e0f098c80035083d9bb6"
+    },
+    "derivation-provenance.json": {
+      "before_sha256": "3c143d8af921874798747a3aa16ca92f26c65d5133c11cda85c9aca60bdf5c72",
+      "after_sha256": "3c143d8af921874798747a3aa16ca92f26c65d5133c11cda85c9aca60bdf5c72"
+    },
+    "identity-lock.json": {
+      "before_sha256": "50c2b8388dfdb8a1a237ed1fa8e9365e0d6b35ba9ed0e34b78e46e04454a2046",
+      "after_sha256": "50c2b8388dfdb8a1a237ed1fa8e9365e0d6b35ba9ed0e34b78e46e04454a2046"
+    },
+    "change-ledger.json": {
+      "before_sha256": "1593214e3e5d1b34534dc34592b484484ec441f8861d12da10212d51a681ca0d",
+      "after_sha256": "1593214e3e5d1b34534dc34592b484484ec441f8861d12da10212d51a681ca0d"
+    },
+    "v0.3-reconciliation.json": {
+      "before_sha256": "495411ab4b56ce08b2f86d1fbc07c15213720031de8bd81ec0b33e63068ee21a",
+      "after_sha256": "495411ab4b56ce08b2f86d1fbc07c15213720031de8bd81ec0b33e63068ee21a"
+    },
+    "catalogue/proposals.md": {
+      "before_sha256": "a3acf1a5b9cd5011c84c64b89b52a563e94b9aa78455fea3b91b79dd6f0316b3",
+      "after_sha256": "a3acf1a5b9cd5011c84c64b89b52a563e94b9aa78455fea3b91b79dd6f0316b3"
+    },
+    "catalogue/review-focus.md": {
+      "before_sha256": "3a59de9924413d02565b7fc95277c20e920b6b5556c57ac9a3ddbc3f96bc8643",
+      "after_sha256": "3a59de9924413d02565b7fc95277c20e920b6b5556c57ac9a3ddbc3f96bc8643"
+    }
+  },
+  "all_2681_latex_labels_unchanged": true,
+  "sorted_label_set_sha256": "3fd821ef1ca052251429b0cb6f2c9ac4a5c1de5e44293ccff1058b32d6976240",
+  "all_section_text_unchanged_except_heading_mechanics_and_layer_titles": true,
+  "comparison_normalization": [
+    "Map heading commands and cataloguefield wrappers to a common heading marker",
+    "Allow only the three requested architectural Part title changes",
+    "Ignore phantomsection anchors, Needspace hints and whitespace"
+  ],
+  "normalized_section_sha256": {
+    "business-capabilities.tex": "5115d623fd732f22b495bcb18a4a1c59bc9ee323850059af0eb37896c8cfb5ca",
+    "business-enabling-capabilities.tex": "1e431ecfe651bbbe28868d6eddf583842b7d7177d1cd716376655d359221f3ce",
+    "catalogue-contexts.tex": "7789ec659e0a5716b773576dd5877a05b339d7ad168a77fb457e07ead75dce7b",
+    "enterprise-capabilities.tex": "1a80701e68f484a113c14e01c381e9642670d0ce7f667b736eee33ec74cd6eb5",
+    "identifiers.tex": "a9b2d9c16128306cb8115f2c87c2d328bcd7a5a50c52d1e9862582ee77161d4b",
+    "rad-assurance-strategy.tex": "bee7cf0b11355990b45d954353df50dd72f7f411edc432db8c030ffdd3951858",
+    "rad-assurance.tex": "f1c6312eaac0122bc0154afa9291fe72a28c8fdba0aed3279b203821b72c4d99",
+    "rad-axioms.tex": "13f1f8be1b1c64ec22e7c3c8ed985f737e92009be55dedd897b2c00c1171e44f",
+    "rad-b2-1.tex": "9f6413d9c9b698bf31fc7e625e09eb3384434cb4c439f0d6c429575835584937",
+    "rad-business.tex": "4eb9a6d4abe8d48cbed6b5b5c6ecbc8c092d65148014e3cce47786ba737f32c2",
+    "rad-dependencies.tex": "88d763ad07e92bd0d0a83c13d6caef91bc4a41026cddf1815a059366af7a89ec",
+    "rad-detail.tex": "8b0d696342b328149203d12cf6272da1a93c4e8b6694fb4a0035daa41a8e7673",
+    "rad-em.tex": "701149b338d6a2d1bb90f2aefe9a1ae7569e6f8c2833113ed350d6e0c6c34758",
+    "rad-enabling.tex": "7c104611d69f3994a7310fcfd61ee2e12865f07b0d512285393c16d4af9e174f",
+    "rad-enterprise.tex": "729d736c0a0dad88928d511185f95be76d588ff6986ade4f6272d6c2fa52c44c",
+    "rad-hso.tex": "4a2724dd306e5617f10178f50af6f315c4d0bde2ef7d95d218d7dfd2fee064e1",
+    "rad-ise.tex": "bd0029e07e13a710786f5c26b15fdab35863ba10095101af94e32fbab0841ff7",
+    "rad-k9.tex": "9cde3f27c1f798d98e5dae9b8b275f2eb8ae5b75c81286fbd7aabc9da4e4c6b1",
+    "rad-metamodel.tex": "6bdc21620e1758634017be1d034c4957939cbc3e4c6b70453a9e8a2260030bbf",
+    "rad-processes.tex": "fdc54842d6a3d9b0a3dbfdb1b8904cf938560a40a14bdd27e8106520d660f43c",
+    "rad-sa.tex": "f64146809a4ec1e2c5145554f32dd3246af1068839a77068f675dde95927ba53",
+    "rad-sd.tex": "d2d49a2ff15624517aa8918dc0100be050db3b4d39b487c72c69efc39767c75a",
+    "rad-tier-model.tex": "ede3630132c3c499dadb2a2a7366927a7e5dfba29abcbee7f3596898dfb6b345",
+    "rad-traceability.tex": "8005eb74b5ea8eed671a949aa2d36cde360404b5358f51f38db8894ce75d8228",
+    "reading-guide.tex": "5f5f46e4c25b15d62c7d923820013724e21cca6f8c5e8b2767d54ecde23bb386",
+    "reconciliation.tex": "b827559ad96aaa7b5c795d37d4cf877162d3a6817f039f450919579627074543",
+    "relationships.tex": "b1e432f321b4654ca7f79cd6a6c38deb4af65bf0f5fc35bf3ef9b756162b05de",
+    "sources.tex": "7db7f56450fc2df6095365264a8fb40af0328b26c57cd8ae9abdbe62c857ae5c"
+  },
+  "master_body_unchanged_except_supporting_part_divisions": true,
+  "original_pdf_sha256": "d2d435356091cba69392fa6c332cf6248354b173fc38051584bbbb30d367caea",
+  "original_pdf_pages": 1139,
+  "visual_review": {
+    "result": "PASS",
+    "pages": [
+      [
+        "toc",
+        2
+      ],
+      [
+        "business_part",
+        25
+      ],
+      [
+        "enabling_part",
+        222
+      ],
+      [
+        "enterprise_part",
+        762
+      ],
+      [
+        "Healthcare Entity Information Enablement",
+        223
+      ],
+      [
+        "Client Administration",
+        224
+      ],
+      [
+        "Referral Administration",
+        337
+      ],
+      [
+        "Operational Assurance",
+        799
+      ],
+      [
+        "feature: Identifier Resolution",
+        227
+      ],
+      [
+        "function: Resolve Person Identifier",
+        230
+      ],
+      [
+        "service: Person Identifier Resolution",
+        230
+      ],
+      [
+        "process: Governed Person Identity Correction Process",
+        234
+      ]
+    ],
+    "additional_pdf_pages": [
+      24,
+      221,
+      761,
+      338,
+      779
+    ],
+    "observations": "Contents, Part divisions, multi-line headings, deep field numbers and tables remain legible, with no material layout regressions."
+  }
+}

@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 # Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
 """Architecture/identity/publication checks, preserving uncertainty as data."""
+import argparse
 import collections
 import hashlib
-import importlib.util
 import json
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-BASE=Path(__file__).resolve().parents[1]
-V01=BASE.parent
-ROOT=V01.parents[2]
+from baseline import BASE, V01, ROOT, frozen_file, load_v01
+from navigation import validate_source, validate_pdf
 
 
 def read(name):return json.loads((BASE/name).read_text())
@@ -140,6 +139,7 @@ def validate_model(m):
 
 def included_tex(path,seen=None):
     seen=seen or set();path=path.resolve()
+    assert path.is_relative_to(BASE),'LaTeX source outside the publication tree'
     assert path not in seen,'Duplicate/cyclic input'
     seen.add(path);text=path.read_text();chunks=[text]
     for inc in re.findall(r'\\input\{([^}]+)\}',text):
@@ -148,14 +148,18 @@ def included_tex(path,seen=None):
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--model-only',action='store_true')
+    parser.add_argument('--build-dir',type=Path,default=BASE/'build',
+                        help='Directory containing ordinary LaTeX outputs (default: build/)')
+    args=parser.parse_args()
     m=read('model.json');e,aliases,baseline=validate_model(m)
     for path,sha in read('v0.1-fingerprints.json').items():
-        assert digest(V01/path)==sha,'Frozen v0.1 file changed: '+path
+        assert digest(frozen_file(path))==sha,'Frozen v0.1 file changed: '+path
     for source in read('corpus-register.json'):
         assert digest(ROOT/source['path'])==source['sha256'],'Corpus evidence drift: '+source['path']
     # Reuse all source fingerprint, exact-citation, source-line and coverage checks.
-    spec=importlib.util.spec_from_file_location('v01_check_support',V01/'tools/render.py')
-    old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)
+    old=load_v01()
     old.validate()
     assert read('source-coverage.json')==json.loads((V01/'source-coverage.json').read_text()),'Frozen source coverage changed'
     for x in e.values():
@@ -196,18 +200,21 @@ def main():
             'current_display_capability_names_unique':True,
             'governed_bc_bec_exchange_name_conflict':'Preserved; proposed display rename only',
             'limitations':'Structural/naming/support decisions remain Proposed. Existing Candidate concerns and source contradictions remain explicit.'}
-    if '--model-only' not in sys.argv:
-        log=(BASE/'build/Harmonia-EA-Capability-Map.log').read_text()
+    report['publication_navigation']=validate_source(e,tex)
+    if not args.model_only:
+        output=args.build_dir.resolve()/'Harmonia-EA-Capability-Map'
+        log=output.with_suffix('.log').read_text()
         for pattern in (r'undefined references',r'Reference .* undefined',r'multiply defined',r'Overfull \\[hv]box',r'Missing character:',r'Label\(s\) may have changed',r'already defined'):
             assert not re.search(pattern,log,re.I),'LaTeX problem: '+pattern
-        ilg=(BASE/'build/Harmonia-EA-Capability-Map.ilg').read_text()
+        ilg=output.with_suffix('.ilg').read_text()
         assert f'{len(e)} entries accepted, 0 rejected' in ilg and '0 warnings' in ilg,'Index rejected/incomplete'
-        idx=(BASE/'build/Harmonia-EA-Capability-Map.idx').read_text()
+        idx=output.with_suffix('.idx').read_text()
         assert len(re.findall(r'\\indexentry',idx))==len(e),'Built index incomplete'
-        pdf=BASE/'build/Harmonia-EA-Capability-Map.pdf'
+        pdf=output.with_suffix('.pdf')
         info=subprocess.check_output(['pdfinfo',str(pdf)],text=True,timeout=10)
         report.update(pdf_pages=int(re.search(r'Pages:\s+(\d+)',info)[1]),pdf_sha256=digest(pdf),
                       overfull_boxes=0,missing_glyphs=0,index_entries=len(e),pdf_build='PASS')
+        report['publication_navigation'].update(validate_pdf(e,tex,pdf))
         (BASE/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
     else:
         report['pdf_build']='Not assessed by --model-only'

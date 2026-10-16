@@ -84,26 +84,78 @@ be reassigned. v0.3 working IDs are provenance locators, never identity aliases.
 | `architecture-tests.json` | Repository architecture-suite result and test counts. |
 | `validator-probes.json` | Thirteen in-memory invalid-model probes, all rejected by the structural/status/identity guards. |
 
-## Reproduction and checking
+## A. Regenerate from architecture
 
-Requirements are the same as v0.1: Python 3 with `markdown-it-py`, XeLaTeX,
-`latexmk`, `makeindex`, DejaVu Sans fonts and Poppler tools. The immutable parent
-provides the proven Markdown transcriber and validator; no baseline regeneration
-is performed. Generated `.tex` is committed and can be compiled directly.
+Run generation inside the repository when the architectural source changes.
+It requires Python 3 with `markdown-it-py`, the architectural corpus, model inputs
+and the frozen v0.1 transcriber. No baseline regeneration is performed.
 
 ```bash
 cd docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft
-make all
+make compose render
 ```
 
-`make model-check` checks the model and generated sources without compiling a PDF.
-`make pdf check` compiles and verifies the committed publication. PDF compilation
-has a 300-second command limit; subsidiary validators have bounded execution.
-The checker verifies preserved identities/definitions/relationships and source
-fingerprints, complete typed ancestry, Feature framing, alias non-reuse, unique
-current names, proposal provenance/status, cross references, index coverage and
-clean LaTeX output. Source uncertainty and source-status contradictions are
-represented; they are not suppressed to obtain PASS.
+This produces the editable `Harmonia-EA-Capability-Map.tex` master, all included
+files in `sections/`, and `.latexmkrc`. Generation owns those files; rerunning it
+**overwrites edits to the generated LaTeX**. Maintain enduring tooling changes in
+`templates/` and `tools/render.py`.
+
+`make model-check` verifies the architecture and generated source without building
+a PDF. `make all` remains an optional convenience for generation, compilation and
+repository validation together. Those checks require Poppler and MuPDF's `mutool`
+in addition to the generation and TeX requirements. They retain source uncertainty
+and verify semantic preservation, identities, status, provenance, references,
+index coverage, numbering and the actual PDF outline.
+See the [publication navigation report](publication-navigation-report.md).
+
+## B. Compile existing LaTeX
+
+The generated source tree is a standalone LaTeX project. Compilation requires a
+TeX installation with pdfLaTeX, latexmk, makeindex, KOMA-Script, the DejaVu TeX
+fonts, and the standard packages named in the master. TeX Live's recommended,
+extra and extra-fonts collections provide these dependencies. No Python, Maven,
+Makefile, model JSON, architectural Markdown, generator, or repository parent
+directory is needed.
+
+```bash
+cd docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft
+latexmk -pdf -interaction=nonstopmode -halt-on-error Harmonia-EA-Capability-Map.tex
+```
+
+The PDF is written beside the master. latexmk runs pdfLaTeX, makeindex and the
+necessary further LaTeX passes using ordinary dependencies. `.latexmkrc` contains
+only standard latexmk settings; it performs no content generation. The master
+and its 28 included TeX files are the complete publication source; the remaining
+repository tooling and model files may be omitted when copying it elsewhere.
+
+Open **`Harmonia-EA-Capability-Map.tex`** as the master in Kile, TeXstudio,
+TeXworks or LaTeX Workshop. The normal **PDFLaTeX** tool works. For a complete
+multi-pass build including the name index, use the editor's standard latexmk
+tool, or run makeindex and repeat PDFLaTeX until references and contents settle.
+Subsidiary files include conventional `% !TeX root` hints; the master also works
+without editor-specific metadata. Edit prose directly in a `sections/*.tex` file
+and compile again to see the change. Compilation never invokes the generator.
+
+XeLaTeX is also supported, retaining the publication's original OpenType font
+setup. It additionally requires installed DejaVu Sans and DejaVu Sans Mono fonts:
+
+```bash
+latexmk -xelatex -interaction=nonstopmode -halt-on-error Harmonia-EA-Capability-Map.tex
+```
+
+Clean auxiliary files while retaining the PDF and all generated sources:
+
+```bash
+latexmk -c Harmonia-EA-Capability-Map.tex
+```
+
+Use `latexmk -C Harmonia-EA-Capability-Map.tex` to remove the PDF as well. When
+switching engines, clean first. The Makefile's optional `make pdf` target uses
+the same conventional pdfLaTeX build with its outputs under `build/`; clean that
+location with `latexmk -c -outdir=build Harmonia-EA-Capability-Map.tex`.
+
+Standalone build, portability and editability results are recorded in the
+[standalone publication report](standalone-publication-report.md).
 
 ## Downstream use
 

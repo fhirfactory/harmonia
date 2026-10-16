@@ -46,8 +46,36 @@
   "current_display_capability_names_unique": true,
   "governed_bc_bec_exchange_name_conflict": "Preserved; proposed display rename only",
   "limitations": "Structural/naming/support decisions remain Proposed. Existing Candidate concerns and source contradictions remain explicit.",
-  "pdf_pages": 1139,
-  "pdf_sha256": "d2d435356091cba69392fa6c332cf6248354b173fc38051584bbbb30d367caea",
+  "publication_navigation": {
+    "numbered_architectural_entries": 862,
+    "numbered_catalogue_fields": 3277,
+    "catalogue_fields_by_heading_level": {
+      "section": 181,
+      "subsection": 491,
+      "subsubsection": 1275,
+      "paragraph": 1330
+    },
+    "pdf_outline_matches_all_element_ancestry": true,
+    "architectural_parts_top_level": true,
+    "parts_and_all_elements_in_contents": true,
+    "pdf_outline_entries": 916,
+    "numbered_pdf_catalogue_headings_verified": {
+      "Capability Overview": 365,
+      "Feature Overview": 178,
+      "Function Overview": 22,
+      "Service Overview": 10,
+      "Process Overview": 20,
+      "Definition / governed semantic detail": 647,
+      "Intent": 146,
+      "Boundary": 358,
+      "Harmonia Architectural Relevance": 81,
+      "Scope / Contained Elements": 183,
+      "Relationships / Architectural Relevance": 588,
+      "Derivation Provenance": 143
+    }
+  },
+  "pdf_pages": 1224,
+  "pdf_sha256": "e42b29215b9963f2f5a11fcffeece7e26421ceb229f5d525645bfdadd8ec7552",
   "overfull_boxes": 0,
   "missing_glyphs": 0,
   "index_entries": 862,

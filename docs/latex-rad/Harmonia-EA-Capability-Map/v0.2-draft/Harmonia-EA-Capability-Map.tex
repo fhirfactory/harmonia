@@ -1,16 +1,60 @@
 % Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+% !TeX program = pdflatex
+% Compile this master directly; latexmk -pdf also runs makeindex and reruns.
 \documentclass[10pt,a4paper,oneside,headings=small]{scrreprt}
 \usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{DejaVuSans}
+  \usepackage[scaled=0.87]{DejaVuSansMono}
+  \usepackage{textcomp,amssymb,accsupp}
+  % Preserve the source's Unicode symbols with conventional pdfLaTeX fonts.
+  \DeclareTextCommandDefault{\textleftrightarrow}{\ensuremath{\leftrightarrow}}
+  \DeclareTextCommandDefault{\textneq}{\BeginAccSupp{method=hex,unicode,ActualText=2260}\ensuremath{\neq}\EndAccSupp{}}
+  \DeclareTextCommandDefault{\textDOWNarrow}{\ensuremath{\blacktriangledown}}
+  \DeclareUnicodeCharacter{2192}{\textrightarrow}
+  \DeclareUnicodeCharacter{2193}{\textdownarrow}
+  \DeclareUnicodeCharacter{2194}{\textleftrightarrow}
+  \DeclareUnicodeCharacter{2260}{\textneq}
+  \DeclareUnicodeCharacter{25BC}{\textDOWNarrow}
+\else
 \usepackage{fontspec}
 \setmainfont{DejaVu Sans}
 \setsansfont{DejaVu Sans}
 \setmonofont{DejaVu Sans Mono}[Scale=0.87]
+\fi
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[table]{xcolor}
 \definecolor{Ink}{HTML}{19384C}
 \definecolor{TableHead}{HTML}{E6EDF2}
 \definecolor{Link}{HTML}{155B83}
 \usepackage{array,longtable,tabularx,seqsplit,needspace,enumitem,fvextra}
+\ifPDFTeX
+  % seqsplit's byte scanner splits UTF-8 characters under pdfTeX. Map complete
+  % text characters instead, preserving Unicode in editable code/identifier text.
+  \newcommand{\HarmoniaSequenceHasUnicode}[1]{\pdfmatch{[^ -\string~]}{\detokenize{#1}}}
+  \ExplSyntaxOn
+  \cs_new_eq:NN \__harmonia_ascii_seqsplit:n \seqsplit
+  \bool_new:N \l__harmonia_split_started_bool
+  \RenewDocumentCommand{\seqsplit}{m}{
+    \int_compare:nNnTF {\HarmoniaSequenceHasUnicode{#1}} = {0}
+    {\__harmonia_ascii_seqsplit:n {#1}}
+    {
+    \group_begin:
+    \bool_set_false:N \l__harmonia_split_started_bool
+    \text_map_inline:nn {#1}{
+      \bool_if:NT \l__harmonia_split_started_bool {\seqinsert}
+      ##1
+      \bool_set_true:N \l__harmonia_split_started_bool
+    }
+    \group_end:
+    }
+  }
+  \ExplSyntaxOff
+\fi
 \usepackage{makeidx}
 \makeindex
 \usepackage{scrlayer-scrpage}
@@ -36,15 +80,28 @@
 \renewlist{enumerate}{enumerate}{8}
 \setlist[itemize]{label=\textbullet}
 \setlist[enumerate]{label=\arabic*.}
-\setcounter{tocdepth}{1}
-\RedeclareSectionCommand[runin=false,beforeskip=1.4ex,afterskip=.6ex]{paragraph}
-\setcounter{secnumdepth}{3}
-\DeclareTOCStyleEntries[pagenumberwidth=3em]{tocline}{chapter,section,subsection,subsubsection}
+% Architectural entries appear in the contents and outline at their actual depth.
+% Catalogue fields retain contextual numbering without thousands of outline rows.
+\setcounter{tocdepth}{4}
+\hypersetup{bookmarksdepth=5}
+\bookmarksetup{open,openlevel=0}
+\RedeclareSectionCommands[runin=false,beforeskip=1.4ex,afterskip=.6ex]{paragraph,subparagraph}
+\setcounter{secnumdepth}{5}
+\newcommand{\cataloguefield}[2]{%
+  \begingroup
+  \renewcommand{\addcontentsline}[3]{}%
+  \csname #1\endcsname{#2}%
+  \endgroup
+}
+\DeclareTOCStyleEntries[pagenumberwidth=4em,dynnumwidth]{tocline}{chapter,section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntries[dynindent]{tocline}{section,subsection,subsubsection,paragraph,subparagraph}
 \DeclareTOCStyleEntry[numwidth=2.6em]{tocline}{chapter}
 \DeclareTOCStyleEntry[numwidth=3.5em]{tocline}{section}
 \DeclareTOCStyleEntry[numwidth=4.5em]{tocline}{subsection}
 \DeclareTOCStyleEntry[numwidth=5.5em]{tocline}{subsubsection}
-\DeclareTOCStyleEntry[pagenumberwidth=3em]{tocline}{part}
+\DeclareTOCStyleEntry[numwidth=6.5em]{tocline}{paragraph}
+\DeclareTOCStyleEntry[numwidth=7.5em]{tocline}{subparagraph}
+\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{part}
 \addtokomafont{disposition}{\color{Ink}}
 \tolerance=2000
 \emergencystretch=5em
@@ -72,10 +129,12 @@ Frozen canonical semantics with explicitly proposed structure and enrichment.
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
+\part{Publication guide}
 \input{sections/reading-guide.tex}
 \input{sections/business-capabilities.tex}
 \input{sections/business-enabling-capabilities.tex}
 \input{sections/enterprise-capabilities.tex}
+\part{Architecture registers and provenance}
 \input{sections/relationships.tex}
 \input{sections/catalogue-contexts.tex}
 \input{sections/identifiers.tex}

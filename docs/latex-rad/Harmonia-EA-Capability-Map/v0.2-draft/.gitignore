@@ -1,3 +1,16 @@
 build/
 __pycache__/
 *.pyc
+/Harmonia-EA-Capability-Map.aux
+/Harmonia-EA-Capability-Map.dvi
+/Harmonia-EA-Capability-Map.fdb_latexmk
+/Harmonia-EA-Capability-Map.fls
+/Harmonia-EA-Capability-Map.idx
+/Harmonia-EA-Capability-Map.ilg
+/Harmonia-EA-Capability-Map.ind
+/Harmonia-EA-Capability-Map.log
+/Harmonia-EA-Capability-Map.out
+/Harmonia-EA-Capability-Map.ps
+/Harmonia-EA-Capability-Map.synctex.gz
+/Harmonia-EA-Capability-Map.toc
+/Harmonia-EA-Capability-Map.xdv

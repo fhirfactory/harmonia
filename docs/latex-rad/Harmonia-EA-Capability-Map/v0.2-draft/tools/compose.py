@@ -9,18 +9,14 @@ All new assertions are Proposed. Run --check to compare the committed model.
 import collections
 import copy
 import hashlib
-import importlib.util
 import json
 import re
 import sys
 from pathlib import Path
 
-BASE = Path(__file__).resolve().parents[1]
-V01 = BASE.parent
-ROOT = V01.parents[2]
-spec = importlib.util.spec_from_file_location('v01', V01 / 'tools/render.py')
-v01 = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(v01)
+from baseline import BASE, V01, ROOT, frozen_file, load_v01
+
+v01 = load_v01()
 ORIGINAL = copy.deepcopy(v01.M)
 M = copy.deepcopy(ORIGINAL)
 M.update(version='0.2-draft', standing='Proposed Complete Architecture; review artefact, not RADS adjudication')
@@ -969,6 +965,12 @@ if __name__ == '__main__':
     save('semantic-baseline.json', semantic)
     frozen_files = {str(p.relative_to(V01)):hashlib.sha256(p.read_bytes()).hexdigest() for p in V01.rglob('*')
                     if p.is_file() and not any(x in p.relative_to(V01).parts for x in ('v0.2-draft','build','__pycache__'))}
+    frozen_files['.gitignore']=hashlib.sha256(frozen_file('.gitignore').read_bytes()).hexdigest()
+    # Preserve the frozen register's order, independent of filesystem traversal.
+    if (BASE/'v0.1-fingerprints.json').exists():
+        frozen=json.loads((BASE/'v0.1-fingerprints.json').read_text())
+        assert frozen_files==frozen,'Frozen v0.1 files changed'
+        frozen_files={name:frozen_files[name] for name in frozen}
     save('v0.1-fingerprints.json', frozen_files)
     changes = []
     original_by_key = {e['key']:e for e in ORIGINAL['elements']}

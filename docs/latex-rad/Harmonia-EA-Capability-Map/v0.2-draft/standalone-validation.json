@@ -1,0 +1,104 @@
+{
+  "result": "PASS",
+  "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error Harmonia-EA-Capability-Map.tex",
+  "in_place_clean_build": {
+    "result": "PASS",
+    "elapsed_seconds": 58
+  },
+  "external_clean_build": {
+    "result": "PASS",
+    "path": "/tmp/harmonia-standalone-final-g89ei2di",
+    "elapsed_seconds": 58,
+    "source_only_copy_files": 30,
+    "generator_scripts_present": false,
+    "model_json_present": false,
+    "makefile_present": false
+  },
+  "xelatex_clean_external_build": "PASS; rendered text identical to the accepted XeLaTeX PDF",
+  "compilation_executables": [
+    "makeindex",
+    "pdflatex"
+  ],
+  "compiler_input_audit": {
+    "local_inputs": 32,
+    "installed_tex_or_font_inputs": 153,
+    "outside_publication_nonstandard_inputs": [],
+    "architecture_or_generator_inputs": []
+  },
+  "editability": {
+    "result": "PASS",
+    "file": "sections/reading-guide.tex",
+    "changed_sentence_verified_in_pdf": true,
+    "generator_invoked": false,
+    "test_edit_reverted_byte_for_byte": true,
+    "restored_pdf_matches_repository_pdf_text": true
+  },
+  "preservation": {
+    "all_protected_artifact_sha256": {
+      "model.json": "01aba70aa486c802768aeac85d48c087f9c72dc030f5f3367a93c634836e5bc8",
+      "validator-probes.json": "509006e2c1226b1de890766dfc0daa79ebd959c707a908ec53915fad7f2ce24c",
+      "semantic-baseline.json": "d9a0c95832fda9e254b5152ad2df81e0e85207cd73ecd3426d125b6056df9a23",
+      "v0.1-fingerprints.json": "2b3dc10bb58b4bcd94af384d8c52992cbb297e07c6e333964f316d7c2e6622c9",
+      "corpus-register.json": "b5942662c300847fbc4d1e54ce6dc0f3fdb2c80c4819aa2f895cc5449540c800",
+      "source-coverage.json": "9ae28e1fe3d5ce20ecdd055f51957c7570eb0b65f932e0f098c80035083d9bb6",
+      "derivation-provenance.json": "3c143d8af921874798747a3aa16ca92f26c65d5133c11cda85c9aca60bdf5c72",
+      "identity-lock.json": "50c2b8388dfdb8a1a237ed1fa8e9365e0d6b35ba9ed0e34b78e46e04454a2046",
+      "publication-preservation.json": "65847a6f0edef9bc52e281fa5ea4251dabc493fbcf050b92cde9040ce2beddfb",
+      "change-ledger.json": "1593214e3e5d1b34534dc34592b484484ec441f8861d12da10212d51a681ca0d",
+      "v0.3-reconciliation.json": "495411ab4b56ce08b2f86d1fbc07c15213720031de8bd81ec0b33e63068ee21a",
+      "catalogue/proposals.md": "a3acf1a5b9cd5011c84c64b89b52a563e94b9aa78455fea3b91b79dd6f0316b3",
+      "catalogue/review-focus.md": "3a59de9924413d02565b7fc95277c20e920b6b5556c57ac9a3ddbc3f96bc8643"
+    },
+    "all_architectural_data_byte_identical": true,
+    "all_28_section_bodies_byte_identical": true,
+    "master_document_body_byte_identical": true,
+    "all_2681_label_numbers_unchanged": true,
+    "all_916_bookmarks_identical_to_accepted_pdf": true,
+    "pdftex_mathematical_unicode_text_preserved": true
+  },
+  "navigation": {
+    "pdf_outline_matches_all_element_ancestry": true,
+    "architectural_parts_top_level": true,
+    "parts_and_all_elements_in_contents": true,
+    "pdf_outline_entries": 916,
+    "numbered_pdf_catalogue_headings_verified": {
+      "Capability Overview": 365,
+      "Feature Overview": 178,
+      "Function Overview": 22,
+      "Service Overview": 10,
+      "Process Overview": 20,
+      "Definition / governed semantic detail": 647,
+      "Intent": 146,
+      "Boundary": 358,
+      "Harmonia Architectural Relevance": 81,
+      "Scope / Contained Elements": 183,
+      "Relationships / Architectural Relevance": 588,
+      "Derivation Provenance": 143
+    }
+  },
+  "semantic_baseline_validation": "PASS",
+  "architecture_tests": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pdf_pages": 1224,
+  "pdf_sha256": "744d7b221c68e7325745de59562c39bdc22d7e566c64b5f08468769bf7c49602",
+  "index_entries": 862,
+  "latex_warnings": 0,
+  "duplicate_labels": 0,
+  "undefined_references": 0,
+  "missing_glyphs": 0,
+  "overfull_boxes": 0,
+  "visual_review": {
+    "result": "PASS",
+    "representative_physical_pdf_pages": [
+      2,
+      24,
+      338,
+      405
+    ],
+    "material_layout_regressions": false
+  }
+}

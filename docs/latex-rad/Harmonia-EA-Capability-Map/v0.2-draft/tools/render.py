@@ -2,18 +2,16 @@
 # Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
 """Render the committed Step 2 model; never allocate identities or alter v0.1."""
 import collections
+import functools
 import hashlib
-import importlib.util
 import json
 import re
 import sys
 from pathlib import Path
 
-BASE=Path(__file__).resolve().parents[1]
-V01=BASE.parent
-ROOT=V01.parents[2]
-spec=importlib.util.spec_from_file_location('v01_render',V01/'tools/render.py')
-v01=importlib.util.module_from_spec(spec);spec.loader.exec_module(v01)
+from baseline import BASE, load_v01
+
+v01=load_v01()
 M=json.loads((BASE/'model.json').read_text())
 E={e['key']:e for e in M['elements']}
 R=M['relationships']
@@ -22,6 +20,7 @@ CORPUS=json.loads((BASE/'corpus-register.json').read_text())
 esc=v01.esc
 table=v01.table
 ref=v01.ref
+HEADINGS=('chapter','section','subsection','subsubsection','paragraph','subparagraph')
 
 
 def code(s):
@@ -60,8 +59,12 @@ def title(e):
     return e['type'].title()+': '+e['name']
 
 
-def field(heading, text):
-    return '\\paragraph*{'+esc(heading)+'}\n'+text+'\n'
+def field(heading, text, depth):
+    # Fields are children of their entry, independently of architectural identity.
+    # Nested governed headings get one further level without changing their text.
+    text=re.sub(r'\\(?:section|subsection|subsubsection|paragraph|subparagraph)\*?\{',
+                lambda _: '\\cataloguefield{'+HEADINGS[depth+1]+'}{',text)
+    return '\\cataloguefield{'+HEADINGS[depth]+'}{'+esc(heading)+'}\n'+text+'\n'
 
 
 def metadata(e):
@@ -92,7 +95,7 @@ def metadata(e):
     return table(['Property','Value','Meaning'],rows,[.20,.48,.32])
 
 
-def explanatory(e):
+def explanatory(e,field):
     baseline=e.get('baseline_description',{})
     overview=e.get('overview') or e.get('proposal_overview') or baseline.get('Capability Overview') or baseline.get('Feature Overview') or baseline.get('Process Overview') or baseline.get('Function Overview') or baseline.get('Service Overview')
     # Some canonical behaviour has only exact governed description; that description
@@ -143,14 +146,14 @@ def explanatory(e):
     return ''.join(out)
 
 
-def scope(e):
+def scope(e,field):
     children=[x for x in E.values() if x.get('parent_key')==e['key'] or x.get('owner_key')==e['key']]
     if not children:return ''
     return field('Scope / Contained Elements',table(['Element / page','Type / tier','Element / placement status'],
         [[ref(c,True),esc(c['type'].replace('_',' '))+' '+(c['tier'] or ''),c['architectural_status']+' / '+c['placement_status']] for c in children],[.52,.20,.28]))
 
 
-def local_relationships(e):
+def local_relationships(e,field):
     rels=[r for r in R if r['type'] not in ('capability_decomposition','responsibility_parent') and (r['from']==e['key'] or r['to']==e['key'])]
     if not rels:return ''
     # The relationship register holds evidence/rationale once; local entries retain
@@ -164,18 +167,17 @@ def local_relationships(e):
 
 
 def entry(e,depth):
-    cmd=['section','subsection','subsubsection','paragraph'][min(depth,3)]
-    star='*' if depth>=3 else ''
-    out=['\\Needspace{8\\baselineskip}\n\\'+cmd+star+'{'+esc(title(e))+'}\n\\phantomsection\\label{'+e['latex_label']+'}\n',
-         '\\index{'+esc(e['name'].replace('!',' ').replace('@',' '))+'}\n',metadata(e),explanatory(e),scope(e)]
+    field_for_entry=functools.partial(field,depth=depth+1)
+    out=[('\\Needspace{8\\baselineskip}\n' if depth else '')+'\\'+HEADINGS[depth]+'{'+esc(title(e))+'}\n\\label{'+e['latex_label']+'}\n',
+         '\\index{'+esc(e['name'].replace('!',' ').replace('@',' '))+'}\n',metadata(e),explanatory(e,field_for_entry),scope(e,field_for_entry)]
     if e.get('ordered_function_chain'):
-        out.append(field('Proposed Ordered Function Chain',r' $\rightarrow$ '.join(ref(E[k],True) for k in e['ordered_function_chain'])))
-    out.append(local_relationships(e))
+        out.append(field_for_entry('Proposed Ordered Function Chain',r' $\rightarrow$ '.join(ref(E[k],True) for k in e['ordered_function_chain'])))
+    out.append(local_relationships(e,field_for_entry))
     return ''.join(out)
 
 
 def hierarchy(category,heading,label):
-    out=['\\chapter{'+heading+'}\\label{'+label+'}\n']
+    out=['\\part{'+heading+'}\\label{'+label+'}\n']
     if category=='business':
         out.append('The established 190-node BC hierarchy is retained. Six Proposed CT3 refinements and one Proposed preparedness CT2 are additive. The three existing Candidate concerns retain Candidate status and receive Proposed placement. Clinical and enterprise authority remain separate from Harmonia information support.\n\n')
     elif category=='business_enabling':
@@ -190,9 +192,7 @@ def hierarchy(category,heading,label):
             if c.get('parent_key')==e['key']:walk(c,depth+1)
         for c in E.values():
             if c.get('owner_key')==e['key']:
-                out.append(entry(c,3))
-                for b in E.values():
-                    if b.get('owner_key')==c['key']:out.append(entry(b,3))
+                walk(c,depth+1)
     for root in roots:walk(root,0)
     return ''.join(out)
 
@@ -290,6 +290,8 @@ def emit(path,text):
     p=BASE/path
     if path.endswith('.tex'):
         text='% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later\n% Generated from the explicit 0.2-draft model; all assertion status is retained.\n'+text
+        if path.startswith('sections/'):
+            text='% !TeX root = ../Harmonia-EA-Capability-Map.tex\n'+text
     text='\n'.join(l.rstrip() for l in text.splitlines()).rstrip()+'\n'
     if '--check' in sys.argv:assert p.read_text()==text,'Generated publication drift: '+path
     else:p.write_text(text)
@@ -297,11 +299,13 @@ def emit(path,text):
 
 def main():
     v01.source_sections()
+    emit('Harmonia-EA-Capability-Map.tex',(BASE/'templates/publication.tex').read_text().split('\n',1)[1])
+    emit('.latexmkrc',(BASE/'templates/latexmkrc').read_text())
     emit('sections/reading-guide.tex',guide())
     for category,heading,label,file in [
-        ('business','Business Capabilities','model:bc','business-capabilities'),
-        ('business_enabling','Business Enabling Capabilities','model:bec','business-enabling-capabilities'),
-        ('enterprise','Enterprise Capabilities','model:ec','enterprise-capabilities')]:
+        ('business','Business Capability Architecture','model:bc','business-capabilities'),
+        ('business_enabling','Business Enabling Capability Architecture','model:bec','business-enabling-capabilities'),
+        ('enterprise','Enterprise Capability Architecture','model:ec','enterprise-capabilities')]:
         emit('sections/'+file+'.tex',hierarchy(category,heading,label))
     emit('sections/relationships.tex',relationships())
     emit('sections/catalogue-contexts.tex',views())

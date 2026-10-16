@@ -16,7 +16,7 @@ model-check:
 
 pdf:
 	mkdir -p build
-	timeout --signal=TERM --kill-after=10s 300s latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build $(NAME).tex > build/latexmk.txt 2>&1
+	timeout --signal=TERM --kill-after=10s 300s latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build $(NAME).tex > build/latexmk.txt 2>&1
 
 check:
 	python3 tools/check.py
