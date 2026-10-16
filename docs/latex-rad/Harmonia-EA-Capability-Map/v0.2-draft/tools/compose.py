@@ -933,6 +933,13 @@ M['catalogue_context_resolutions'] = [{'context': k, 'element': v, 'assertion_st
  'rationale':'Separate CT3 identity for materially distinct entity responsibilities; otherwise the contextual description is encompassed by the existing canonical CT3 responsibility.'} for k,v in CONTEXT_MAP.items()]
 M['sources'] = copy.deepcopy(ORIGINAL['sources'])
 
+# The Stage-2 composition above is retained as reproducible reconciliation
+# evidence. Apply only the explicitly human-reviewed BEC migration to its result.
+from reviewed_bec import apply_review
+apply_review(M)
+E = {e['key']: e for e in M['elements']}
+R = M['relationships']
+
 
 def save(name, value):
     text = json.dumps(value, indent=2, ensure_ascii=False) + '\n'
@@ -954,12 +961,25 @@ if __name__ == '__main__':
                'role':'Current architectural corpus; source standing and unresolved matters remain applicable'} for p in sorted(used)]
     corpus.append({'path':V03PATH, 'sha256':hashlib.sha256((ROOT/V03PATH).read_bytes()).hexdigest(),
                    'role':'Explicitly authorised prior reasoning, reconciled concept by concept; not architectural authority'})
+    review_input = 'docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json'
+    corpus.append({'path':review_input, 'sha256':hashlib.sha256((ROOT/review_input).read_bytes()).hexdigest(),
+                   'role':'Explicit human-reviewed task input; reviewed candidate, not RADS acceptance'})
     save('corpus-register.json', corpus)
     save('model.json', M)
+    save('bec-reconciliation-ledger.json', M['reviewed_bec_reconciliation'])
     lock = {e['reference_id']: {k:e[k] for k in ('key','latex_label','local_id','canonical_id','id_aliases')} for e in E.values()}
     # Existing locks cannot be silently reallocated by running composition.
     if (BASE/'identity-lock.json').exists():
-        assert json.loads((BASE/'identity-lock.json').read_text()) == lock, 'Identity allocation changed; explicit alias-preserving model maintenance required'
+        previous_lock = json.loads((BASE/'identity-lock.json').read_text())
+        if '--accept-reviewed-identities' in sys.argv:
+            assert set(previous_lock) <= set(lock), 'Reviewed migration lost an allocated identity'
+            for rid, previous in previous_lock.items():
+                current = lock[rid]
+                assert all(current[k] == previous[k] for k in ('key','latex_label','local_id')), 'Stable identity changed'
+                assert set(previous['id_aliases']) <= set(current['id_aliases']), 'Historical alias lost'
+                assert previous['canonical_id'] == current['canonical_id'] or previous['canonical_id'] in current['id_aliases'], 'Previous structural ID lost'
+        else:
+            assert previous_lock == lock, 'Identity allocation changed; explicit alias-preserving model maintenance required'
     save('identity-lock.json', lock)
     semantic = {e['reference_id']:{k:e[k] for k in ('key','latex_label','canonical_name','architectural_status','sources','governed_definition_latex','baseline_placement')} for e in M['elements'] if e['baseline_version']}
     save('semantic-baseline.json', semantic)

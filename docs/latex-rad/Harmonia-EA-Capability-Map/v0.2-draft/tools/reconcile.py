@@ -30,8 +30,12 @@ def name(text):
 
 def lookup(value, category=None, typ=None):
     matches = [e for e in E.values() if
-               any(normal(value)==normal(n or '') for n in [e['name'],e.get('canonical_name'),e['reference_id']])
+               any(normal(value)==normal(n or '') for n in [e['name'],e.get('canonical_name'),e['reference_id']]+e.get('name_aliases',[]))
                and (not category or e['category']==category) and (not typ or e['type']==typ)]
+    # Preserve prior Stage-2 derivation meaning when a reviewed homonym has a
+    # different responsibility. Its pending/historical disposition is explicit.
+    predecessors = [e for e in matches if not e['key'].startswith('reviewed:')]
+    if predecessors: matches = predecessors
     return matches[0]['key'] if len(matches)==1 else None
 
 
@@ -67,11 +71,11 @@ BC_REVIEW = {
 }
 
 OLD_ROOTS = {
- 'Entity Information Enablement':['Healthcare Entity Information Enablement'],
- 'Care Administration Enablement':['Care Administration Information Enablement'],
- 'Clinical Service Context Enablement':['Care Context Integration Enablement'],
- 'Health Service Operations Enablement':['Care Operations Coordination Enablement'],
- 'Shared Information and Coordination Enablement':['Governed Health Information Enablement','Human Collaboration & Work Enablement','Independent Service Assurance Enablement']
+ 'Entity Information Enablement':['Entity Information Enablement'],
+ 'Care Administration Enablement':['Care Administration Enablement'],
+ 'Clinical Service Context Enablement':['Clinical Service Dependency Management'],
+ 'Health Service Operations Enablement':['Health Service Operations Enablement'],
+ 'Shared Information and Coordination Enablement':['Shared Information & Coordination Enablement','Health Informatics Management','Independent Assurance Enablement']
 }
 OLD_RENAMES = {'HIE Integration Services':'Health Information Exchange Enablement', 'Clinical Credential Management':'Clinical Qualification Management'}
 CONTEXT = {}
@@ -161,12 +165,21 @@ def reconcile(item):
         return decision,resolved,reason
     if kind=='business_enabling' and item['construct']!='Feature':
         if title in OLD_ROOTS:
-            return 'Redesigned grouping',[key(t,'business_enabling') for t in OLD_ROOTS[title]],'The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.'
+            targets=[key(t,'business_enabling') for t in OLD_ROOTS[title]]
+            if title=='Clinical Service Context Enablement':
+                targets += [r['key'] for r in MODEL['reviewed_bec_reconciliation']['service_context_relocations']]
+            return 'Reconciled to human-reviewed hierarchy',targets,'The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.'
         title=OLD_RENAMES.get(title,title)
         match=lookup(title,'business_enabling') or CONTEXT.get(normal(title))
         assert match,('Unreviewed BEC capability',title)
+        element=E[match]
+        if element['record_state']=='pending_adjudication':
+            return 'HUMAN ADJUDICATION REQUIRED',[match],element['adjudication_note']
+        if element['record_state']=='superseded':
+            decision=next(r for r in MODEL['reviewed_bec_reconciliation']['decisions'] if r['reference_id']==element['reference_id'])
+            return 'Reconciled predecessor — '+decision['classification'],decision['targets'],decision.get('reason') or 'Predecessor semantics are explicitly distributed to the reviewed successors; the original identity and exact pre-review assertions remain in history.'
         return ('Retained Canonical responsibility' if E[match]['architectural_status']=='Canonical' else 'Retained Proposed responsibility',
-                [match], 'Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.')
+                [match], 'The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.')
     if kind=='enterprise' and item['construct']!='Feature':
         ec=re.match(r'EC-\d+',title)
         if ec:
@@ -198,6 +211,8 @@ def reconcile(item):
 
 
 def main():
+    previous=json.loads((BASE/'pre-review-v0.3-reconciliation.json').read_text())
+    previous_by_id={r['candidate_reference_id']:r for r in previous['primary_concepts']}
     pattern=re.compile(r'\\(chapter|section|subsection|subsubsection)\{((?:\\.|[^{}])*)\}\\label\{([^}]+)\}')
     matches=list(pattern.finditer(TEXT)); chain={}; records=[]
     for i,m in enumerate(matches):
@@ -215,6 +230,8 @@ def main():
         disposition,targets,rationale=reconcile(record)
         record.pop('body')
         record.update(disposition=disposition,targets=targets,rationale=rationale,decision_status='Proposed review disposition')
+        record['previous_decision_locator']={'file':'pre-review-v0.3-reconciliation.json','candidate_reference_id':record['candidate_reference_id']}
+        assert record['candidate_reference_id'] in previous_by_id
         records.append(record)
     # Captured behaviour identities were never independent candidate definitions;
     # reconcile exact type/name to the canonical record, not adjacent table order.
@@ -235,6 +252,9 @@ def main():
             'primary_concepts':records,'captured_behaviour_occurrences':behaviours,
             'summary':dict(collections.Counter(r['disposition'] for r in records)),
             'unreviewed':0,'candidate_identifiers_are_aliases':False}
+    report['previous_reconciliation']={'file':'pre-review-v0.3-reconciliation.json',
+        'sha256':hashlib.sha256((BASE/'pre-review-v0.3-reconciliation.json').read_bytes()).hexdigest(),
+        'role':'Exact original Stage-2 derivation/reconciliation history retained unchanged'}
     text=json.dumps(report,indent=2,ensure_ascii=False)+'\n';p=BASE/'v0.3-reconciliation.json'
     if '--check' in sys.argv:assert p.read_text()==text,'v0.3 reconciliation drift'
     else:p.write_text(text)

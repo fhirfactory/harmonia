@@ -33,3 +33,14 @@ rules for human and AI documentation work throughout the repository.
 
 The [Architecture Completion Plan](../architecture-completion-plan.md) records
 the wider canonical-corpus programme and its outstanding consolidation work.
+
+The [RAD / Architecture release policy](architecture-release-policy.md) defines
+patch increments for every accepted repository change and the single root
+[machine-readable release authority](../../../architecture-release.json).
+
+The [RAD → ArchiMate model mapping](rad-archimate-model-mapping.md),
+[mapping catalogue](rad-archimate-mapping-catalogue.md),
+[coverage assessment](rad-archimate-coverage-assessment.md) and
+[incremental publication plan](rad-archimate-publication-plan.md) govern the
+common model's progressive publication. Their unresolved findings and candidate
+mapping decisions remain explicit; installation does not authorise later slices.

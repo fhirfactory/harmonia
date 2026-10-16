@@ -1,170 +1,133 @@
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
-# Harmonia EA Capability Map — Version 0.2-draft
+# Harmonia EA Capability Map — v0.2-draft
 
-**Proposed Complete Architecture — Step 2.** The [PDF](Harmonia-EA-Capability-Map.pdf)
-is the review publication. Start with the
-[prioritised architectural decision report](../../../../.junie/reports/2026-10-15-harmonia-ea-capability-map-v0.2-draft-review.md).
+This publication incorporates the **16 October 2026 human-reviewed candidate BEC
+hierarchy**. Start with the [PDF](Harmonia-EA-Capability-Map.pdf) and the
+[complete reconciliation report](../../../../.junie/reports/2026-10-16-bec-human-adjudicated-reconciliation.md).
+The reviewed candidate and its structural relationships remain Proposed; this
+publication does not amend RADS or declare a domain complete.
 
-This version preserves the accepted [v0.1](../README.md) semantic substrate and
-constructs an explicit proposed architecture over it. It is not final v0.2, does
-not adjudicate the governed RADS, and does not declare an architecture domain
-complete. No governed Markdown or frozen v0.1 file is modified.
+## Reconciliation result
 
-## Architectural result
+- The current BEC tree contains **7 CT1, 76 CT2 and 95 CT3** responsibilities.
+  The exact reviewed input has 162 nodes; six retained administrative descriptions
+  and ten relocated service-context responsibilities supply the sixteen additional
+  meaningful CT3 frames. No CT3 is manufactured for dependency service contexts,
+  undecomposed informatics purposes or deliberately empty scoped branches.
+- All **862 pre-review identities** and **719 v0.1 elements** survive, with stable
+  Reference IDs and LaTeX labels. Canonical definitions, sources and semantic
+  standing remain preserved. The 416 structural-ID changes retain previous IDs as
+  direct aliases; there are 432 unique historical aliases in the reserved namespace.
+- The model contains 946 records: 845 current elements, 32 superseded records and
+  69 records explicitly pending human adjudication. History and pending semantics
+  are published outside the current BEC tree. Every current Feature has a meaningful
+  CT3 ancestor; 21 original Features retain unresolved frames rather than acquiring
+  a false semantic parent.
+- All eleven explicit **Not Addressed in R1.x / R2.x** annotations are visible and
+  inherited through their stated branches. They are release scope, independent of
+  Canonical / Proposed / Candidate status.
+- Client Privacy Guardrail Management retains Canonical consent responsibility
+  and FEAT-EM-09. Health Information Control references/respects that responsibility
+  without duplicating consent ownership.
+- Genuine conflicts are marked **HUMAN ADJUDICATION REQUIRED**. These include
+  Canonical subject assurance versus assurance-service review; physical badges
+  versus clinical service credentials; technical boundary communication versus
+  patient communication; internal execution versus the external work bridge;
+  unallocated compatible Stage-2 responsibilities; general security Feature
+  framing; and mixed specimen/materiel Canonical wording. The existing unique
+  BEC display name **Health Information Exchange Enablement** is retained while
+  recording the reviewed wording and the unresolved CM-R05 collision with the BC.
+- All 228 BC/EC complete element records are unchanged. Their architecture was not
+  independently redesigned. Original relationship assertions and statuses survive;
+  currentness and explicit Proposed reference repairs are recorded separately.
 
-- Seven proposed BEC CT1s, 28 CT2s and 102 CT3s provide complete placement of all
-  existing responsibilities and 178 Features. The five historical views remain
-  contextual navigation. Most non-entity responsibilities themselves become CT3s;
-  additional tiers are not manufactured from their old contextual descriptions.
-- Three proposed Enterprise CT1s contain the fourteen Canonical EC responsibilities
-  and the new Proposed Information Authority Qualification CT2. Ten selected CT3s
-  distinguish materially different reusable abilities beneath EC-04, EC-06, EC-07
-  and EC-10. Other EC branches intentionally stop at CT2.
-- All 719 v0.1 identities survive: 716 Canonical and three Candidate. There are
-  143 Proposed additions: 68 BC/BEC Capabilities, fourteen Enterprise Capabilities,
-  41 Features, thirteen Functions, six Services and one Process.
-- All 862 elements have stable Reference IDs, LaTeX labels and structural IDs.
-  The 190 established BC structural paths are retained. EC-01–EC-14 remain stable
-  Reference IDs and become direct historical structural-ID aliases. Newly
-  completed or changed structural assertions are explicitly Proposed.
-- The 462 baseline relationships are retained unchanged, including 22 unresolved
-  associations. There are 448 new Proposed relationships and 38 exactly captured
-  established assurance contributions. Four explicit No Material Role constraints
-  remain constraints. Enablement does not imply decomposition, implementation
-  equivalence, runtime dependency, inherited edges or transfer of domain authority.
-- All 942 v0.3 primary concepts and 277 captured behavioural occurrences have
-  individual reconciliation decisions. Useful deltas are retained/refined; generic
-  pattern replication, non-element placeholders, software-shaped BC groupings and
-  the parallel Enterprise coexistence branch are not mechanically copied.
+## Publication and verification
 
-## Identity, semantic preservation and assertion status
+The **1,531-page PDF** has 1,007 outline entries, 946 indexed records and 4,101
+numbered technical catalogue fields. All 2,681 previous labels survive; the source
+contains 2,768 unique labels. Validation found zero undefined references, duplicate
+labels, missing glyphs or overfull boxes. The required 90 ArchUnit tests, 40 existing
+RADS validator tests, 17 reviewed-decision tests and 13 invalid-model probes pass.
+Passing validation retains the explicitly unresolved architectural semantics.
 
-`model.json` is the current machine-readable proposal for downstream derivation.
-`architectural_status`, `placement_status`, `structural_id_status` and `name_status`
-are separate. A Canonical element is never demoted because its ancestry is Proposed.
-The three existing Candidate concerns remain Candidate despite receiving Proposed
-placement and explicitly Proposed semantic elaboration.
+The generated master and thirty included TeX files are first-class editable source.
+Business Capability, Business Enabling Capability and Enterprise Capability remain
+separate Parts; CT1 / CT2 / CT3 use chapter / section / subsection. Features use
+subsubsection; existing technical numbering remains enabled. Publication numbering
+is navigation, never architectural identity.
 
-For every baseline element, `canonical_name`, `sources`,
-`governed_definition_latex`, `baseline_description`, `baseline_unresolved` and
-`baseline_placement` preserve the semantic anchor. Broader established ownership
-is recorded separately from a proposed narrower Feature frame. Functions,
-Services and Processes remain directly Capability-owned where established;
-realisation/exposure/progression form a typed graph.
+### Compile the existing editable LaTeX
 
-The proposed BEC display rename **Health Information Exchange Enablement** makes
-current capability names unique without rewriting the established name or meaning
-of either the BC or BEC. Its name status remains Proposed, and the old name is
-searchable. The RAD naming conflict is not claimed resolved by adjudication.
-
-New local codes use stable category-qualified semantic tokens. The typed structural
-grammar follows metamodel §8. Its application to EC hierarchy is an explicitly
-Proposed extension. Allocation is frozen in `identity-lock.json`; composition
-fails on changes to an existing allocation. A future relocation must retain every
-old structural ID as a direct alias to the same stable identity. No used ID may
-be reassigned. v0.3 working IDs are provenance locators, never identity aliases.
-
-## Files
-
-| File | Purpose |
-| --- | --- |
-| `Harmonia-EA-Capability-Map.tex`, `sections/` | Standalone generated LaTeX source; sans-serif book, metadata, definitions, overviews, scope tables, typed links and name index. |
-| `model.json` | All current responsibilities, explicit placements, definitions, provenance and typed assertion-status graph. |
-| `identity-lock.json` | Frozen current allocation and direct alias namespace. |
-| `semantic-baseline.json`, `v0.1-fingerprints.json` | Immutable semantic snapshot and checksums protecting the independent parent publication. |
-| `change-ledger.json` | Per-element additions, renames, reframing, ID allocations and new relationships. |
-| `v0.3-reconciliation.json` | Every prior concept and behavioural occurrence with locator, disposition, target and semantic reason. |
-| `derivation-provenance.json` | Reverse lookup from current Reference ID to v0.3 derivation decisions. |
-| `corpus-register.json` | Fingerprinted current architectural corpus, with source standing retained. |
-| `source-coverage.json` | The complete, unchanged v0.1 source-transcription coverage. |
-| `catalogue/proposals.md` | Reviewable definitions, overviews and boundaries for every new proposal. |
-| `catalogue/review-focus.md` | Prioritised decisions and preserved tensions, also printed in the book. |
-| `validation.json` | Full model, source, identity, reference, index and PDF verification. |
-| `architecture-tests.json` | Repository architecture-suite result and test counts. |
-| `validator-probes.json` | Thirteen in-memory invalid-model probes, all rejected by the structural/status/identity guards. |
-
-## A. Regenerate from architecture
-
-Run generation inside the repository when the architectural source changes.
-It requires Python 3 with `markdown-it-py`, the architectural corpus, model inputs
-and the frozen v0.1 transcriber. No baseline regeneration is performed.
+Open **Harmonia-EA-Capability-Map.tex** as the master in Kile or another conventional
+LaTeX editor, or run from this directory:
 
 ```bash
-cd docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft
-make compose render
-```
-
-This produces the editable `Harmonia-EA-Capability-Map.tex` master, all included
-files in `sections/`, and `.latexmkrc`. Generation owns those files; rerunning it
-**overwrites edits to the generated LaTeX**. Maintain enduring tooling changes in
-`templates/` and `tools/render.py`.
-
-`make model-check` verifies the architecture and generated source without building
-a PDF. `make all` remains an optional convenience for generation, compilation and
-repository validation together. Those checks require Poppler and MuPDF's `mutool`
-in addition to the generation and TeX requirements. They retain source uncertainty
-and verify semantic preservation, identities, status, provenance, references,
-index coverage, numbering and the actual PDF outline.
-See the [publication navigation report](publication-navigation-report.md).
-
-## B. Compile existing LaTeX
-
-The generated source tree is a standalone LaTeX project. Compilation requires a
-TeX installation with pdfLaTeX, latexmk, makeindex, KOMA-Script, the DejaVu TeX
-fonts, and the standard packages named in the master. TeX Live's recommended,
-extra and extra-fonts collections provide these dependencies. No Python, Maven,
-Makefile, model JSON, architectural Markdown, generator, or repository parent
-directory is needed.
-
-```bash
-cd docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft
 latexmk -pdf -interaction=nonstopmode -halt-on-error Harmonia-EA-Capability-Map.tex
 ```
 
-The PDF is written beside the master. latexmk runs pdfLaTeX, makeindex and the
-necessary further LaTeX passes using ordinary dependencies. `.latexmkrc` contains
-only standard latexmk settings; it performs no content generation. The master
-and its 28 included TeX files are the complete publication source; the remaining
-repository tooling and model files may be omitted when copying it elsewhere.
+Normal PDFLaTeX also works; latexmk runs makeindex and the necessary reference and
+contents passes. Requirements are a conventional TeX installation with pdfLaTeX,
+latexmk, makeindex, KOMA-Script, the DejaVu TeX fonts and the packages named in the
+master. TeX Live recommended/extra/extra-fonts collections supply these dependencies.
 
-Open **`Harmonia-EA-Capability-Map.tex`** as the master in Kile, TeXstudio,
-TeXworks or LaTeX Workshop. The normal **PDFLaTeX** tool works. For a complete
-multi-pass build including the name index, use the editor's standard latexmk
-tool, or run makeindex and repeat PDFLaTeX until references and contents settle.
-Subsidiary files include conventional `% !TeX root` hints; the master also works
-without editor-specific metadata. Edit prose directly in a `sections/*.tex` file
-and compile again to see the change. Compilation never invokes the generator.
+**No Python, model JSON, Markdown, Maven, Makefile, generator or repository parent
+is required to compile the generated source.** A clean external copy containing
+only the 32 source/config files compiled and produced identical rendered text.
+`.latexmkrc` has no generation hook. Subsidiary files retain conventional editor
+root hints and the Kile project is preserved. The Kile GUI was not driven.
 
-XeLaTeX is also supported, retaining the publication's original OpenType font
-setup. It additionally requires installed DejaVu Sans and DejaVu Sans Mono fonts:
-
-```bash
-latexmk -xelatex -interaction=nonstopmode -halt-on-error Harmonia-EA-Capability-Map.tex
-```
-
-Clean auxiliary files while retaining the PDF and all generated sources:
+Direct edits to `sections/*.tex` compile normally. Optional later regeneration
+overwrites generated TeX. XeLaTeX support is retained in the template; it additionally
+requires installed DejaVu Sans / DejaVu Sans Mono OpenType fonts and was not rerun
+for this reconciliation.
 
 ```bash
 latexmk -c Harmonia-EA-Capability-Map.tex
 ```
 
-Use `latexmk -C Harmonia-EA-Capability-Map.tex` to remove the PDF as well. When
-switching engines, clean first. The Makefile's optional `make pdf` target uses
-the same conventional pdfLaTeX build with its outputs under `build/`; clean that
-location with `latexmk -c -outdir=build Harmonia-EA-Capability-Map.tex`.
+This removes auxiliary files while retaining the PDF and sources. Use `-C` to remove
+the PDF too. Clean before switching engines.
 
-Standalone build, portability and editability results are recorded in the
-[standalone publication report](standalone-publication-report.md).
+### Optional repository regeneration and validation
 
-## Downstream use
+```bash
+make compose render
+make model-check semantic-tests
+make pdf check
+```
 
-Treat the current architecture as the working hypothesis for the Application
-Component Map while retaining its Proposed assertions. Derive cohesive logical
-responsibility centres from the model. Existing components provide evidence, not
-a required target layout. Reuse is not centralisation; participation does not
-distribute responsibility; information support grants no business authority.
+Generation requires Python 3, `markdown-it-py`, the governed evidence, the frozen
+v0.1 transcriber and the explicit reviewed inputs. PDF validation additionally
+requires Poppler and MuPDF `mutool`. `make pdf` uses the conventional source project
+with outputs under `build/`; it has a 300-second bound. The full optional `make all`
+performs composition, rendering, compilation and validation. After verified results
+are available, `python3 tools/report.py` regenerates the required task report.
 
-The proposed publication remains outside RADS by task design. Any later acceptance
-and incorporation into Domains02–05 requires explicit architectural reconciliation;
-neither this book nor its generated model silently changes governed Markdown.
+Do not reallocate identities by ordinary composition. The explicit migration switch
+is guarded to retain existing keys, Reference IDs, labels, local tokens and aliases;
+it is reserved for reviewed identity maintenance.
+
+## Model, history and evidence
+
+| Artefact | Role |
+| --- | --- |
+| `reviewed-bec-hierarchy.json` | Exact bounded human-reviewed hierarchy and explicit release-scope input. |
+| `tools/reviewed_bec.py` | Explicit identity-preserving semantic migration over reproducible original Stage-2 composition. |
+| `model.json` | Current and preserved records, typed relationships, separate assertion statuses and relationship currentness. |
+| `bec-reconciliation-ledger.json` | All 137 predecessor dispositions, new reviewed allocations, predecessor distributions, relocations, Feature changes, structural-ID changes and conflicts. |
+| `identity-lock.json`, `pre-review-identity-lock.json`, `reviewed-identity-history.json` | Current allocations and reserved pre-review / reconciliation history. |
+| `pre-review-publication-labels.json` | All 2,681 original publication labels protected by validation. |
+| `semantic-baseline.json`, `v0.1-fingerprints.json`, `source-coverage.json` | Unchanged Canonical semantic and source evidence. |
+| `v0.3-reconciliation.json`, `pre-review-v0.3-reconciliation.json`, `derivation-provenance.json` | Current decisions, exact previous decisions and reverse provenance; candidate working IDs are not aliases. |
+| `pre-review-publication-evidence.json` | Verbatim original verification reports and README, retained as historical evidence. |
+| `catalogue/proposals.md` | Current/protected Proposed definitions with explicit reconciliation standing. |
+| `catalogue/review-focus.md` | Original Stage-2 review focus, retained as history; it does not override the human-reviewed input. |
+| `validation.json`, `model-validation.json`, `reconciliation-tests.json`, `validator-probes.json`, `architecture-tests.json` | Current model, semantic, rejection-probe and architecture results. |
+| `standalone-validation.json`, `publication-preservation.json` | Source-only portability, identity preservation and BC/EC preservation evidence. |
+
+See the [standalone report](standalone-publication-report.md),
+[navigation report](publication-navigation-report.md), and the complete
+[human reconciliation report](../../../../.junie/reports/2026-10-16-bec-human-adjudicated-reconciliation.md).
+All genuine remaining conflicts require human judgement; current structural
+assertions do not silently promote their semantic standing.

@@ -1,7 +1,7 @@
 # Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
 NAME := Harmonia-EA-Capability-Map
 .NOTPARALLEL:
-.PHONY: all compose render pdf check model-check
+.PHONY: all compose render pdf check model-check semantic-tests
 all: compose render pdf check
 
 compose:
@@ -13,6 +13,10 @@ render:
 
 model-check:
 	python3 tools/check.py --model-only
+
+semantic-tests:
+	python3 tools/probes.py
+	python3 -m unittest discover -s tools -p 'test_*.py' -v
 
 pdf:
 	mkdir -p build

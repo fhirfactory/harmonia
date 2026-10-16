@@ -583,5 +583,10 @@
     "path": "docs/markdown/scratchpad/capability-reference-candidate/Harmonia-Capability-Reference-Candidate-v0.3.tex",
     "sha256": "82df3717855f1fc7572cd40bf60d81d23fc36c7567d304f3eb0b137ac8800d6f",
     "role": "Explicitly authorised prior reasoning, reconciled concept by concept; not architectural authority"
+  },
+  {
+    "path": "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json",
+    "sha256": "208c6cbae846386e664067f1ac4798bd194209eb2098d54af98ed88dd294cc94",
+    "role": "Explicit human-reviewed task input; reviewed candidate, not RADS acceptance"
   }
 ]

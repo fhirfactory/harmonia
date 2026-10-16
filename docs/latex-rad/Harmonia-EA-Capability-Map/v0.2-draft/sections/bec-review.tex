@@ -1,0 +1,493 @@
+% !TeX root = ../Harmonia-EA-Capability-Map.tex
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Human-reviewed BEC reconciliation}\label{model:bec-review}
+The explicit human-reviewed candidate governs this bounded reconciliation. It does not accept this publication into RADS. AX-14 preserves semantic distinctions; AX-17 retains unadjudicated responsibility placement; AX-18 prevents information administration from conferring authority over clinical or enterprise activity. BC and EC architecture have not been independently redesigned.
+
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.8\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Primary disposition} & \textbf{Predecessor count}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Primary disposition} & \textbf{Predecessor count}\\\hline\endhead
+\hline\endfoot
+renamed & 27\\\hline
+retained unchanged & 7\\\hline
+consolidated & 14\\\hline
+retained but outside R1.x/R2.x & 9\\\hline
+relocated & 46\\\hline
+decomposed & 2\\\hline
+superseded by reviewed capability & 21\\\hline
+genuine unresolved conflict requiring human adjudication & 11\\\hline
+\end{longtable}\endgroup
+\section{Release scope annotations}
+The following annotation is independent of architectural status. Inherited scope applies to the entire stated branch. Existing compatible decomposition is retained only where useful; an empty branch does not require invented CT3 abilities.
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.6\TableWidth}|>{\raggedright\arraybackslash}p{0.4\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Capability} & \textbf{Release scope}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Capability} & \textbf{Release scope}\\\hline\endhead
+\hline\endfoot
+\nameref{cap:bec-client-centred-administration} (p.\,\pageref{cap:bec-client-centred-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-episode-encounter-administration} (p.\,\pageref{cap:bec-episode-encounter-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-diagnostic-administration} (p.\,\pageref{cap:bec-diagnostic-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-medication-administration} (p.\,\pageref{cap:bec-medication-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-procedure-administration} (p.\,\pageref{cap:bec-procedure-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-clinical-communication-administration} (p.\,\pageref{cap:bec-clinical-communication-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-funding-coverage-administration} (p.\,\pageref{cap:bec-funding-coverage-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-clinical-charging-claims-administration} (p.\,\pageref{cap:bec-clinical-charging-claims-administration}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-clinical-training-education} (p.\,\pageref{cap:bec-clinical-training-education}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-reviewed-clinical-service-dependency-management} (p.\,\pageref{cap:bec-reviewed-clinical-service-dependency-management}) & Not Addressed in R1.x / R2.x\\\hline
+\nameref{cap:bec-reviewed-service-establishment-support} (p.\,\pageref{cap:bec-reviewed-service-establishment-support}) & Not Addressed in R1.x / R2.x\\\hline
+\end{longtable}\endgroup
+\section{Relocated service-context responsibilities}
+These surviving responsibilities concern care information or coordination rather than operational prerequisites. They have not been converted into dependency-management abilities.
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.45\TableWidth}|>{\raggedright\arraybackslash}p{0.3\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Predecessor} & \textbf{Surviving responsibility} & \textbf{Reviewed parent}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Predecessor} & \textbf{Surviving responsibility} & \textbf{Reviewed parent}\\\hline\endhead
+\hline\endfoot
+Primary Care & \nameref{cap:bec-primary-care} (p.\,\pageref{cap:bec-primary-care}) & Patient Clinical Record\\\hline
+Acute Care & \nameref{cap:bec-acute-care} (p.\,\pageref{cap:bec-acute-care}) & Episode \& Encounter Administration\\\hline
+Emergency Care & \nameref{cap:bec-emergency-care} (p.\,\pageref{cap:bec-emergency-care}) & Emergency Department Operations\\\hline
+Inpatient Care & \nameref{cap:bec-inpatient-care} (p.\,\pageref{cap:bec-inpatient-care}) & Ward Operations\\\hline
+Diagnostic Services & \nameref{cap:bec-diagnostic-services} (p.\,\pageref{cap:bec-diagnostic-services}) & Diagnostic Administration\\\hline
+Medication Therapy & \nameref{cap:bec-medication-therapy} (p.\,\pageref{cap:bec-medication-therapy}) & Medication Administration\\\hline
+Preventive Care & \nameref{cap:bec-preventive-care} (p.\,\pageref{cap:bec-preventive-care}) & Client-Centred Administration\\\hline
+Community Care & \nameref{cap:bec-community-care} (p.\,\pageref{cap:bec-community-care}) & Care Plan Administration\\\hline
+Outreach Care & \nameref{cap:bec-outreach-care} (p.\,\pageref{cap:bec-outreach-care}) & Care Plan Administration\\\hline
+Remote \& Virtual Care & \nameref{cap:bec-remote-virtual-care} (p.\,\pageref{cap:bec-remote-virtual-care}) & Patient Clinical Record\\\hline
+\end{longtable}\endgroup
+\section{Consent and unresolved conflicts}
+Preserved; restriction/filter/disclosure references the existing client-associated responsibility. No duplicate consent capability introduced. \nameref{cap:bec-client-privacy}.
+
+
+HUMAN ADJUDICATION REQUIRED: reviewed name Health Information Exchange duplicates the Canonical BC name under CM-R05. The existing BEC display qualification is retained; reviewed\_name records the exact task wording. Identities and BC/\allowbreak{}BEC semantics remain distinct.
+
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-credential-management} (p.\,\pageref{cap:bec-credential-management}). Canonical operational badges/physical-access credentials are distinct from reviewed clinical-service credential definitions.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-health-information-communication} (p.\,\pageref{cap:bec-health-information-communication}). Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-workflow-activity-coordination} (p.\,\pageref{cap:bec-workflow-activity-coordination}). Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-governed-assurance} (p.\,\pageref{cap:bec-governed-assurance}). Canonical assurance against a governed subject is not independent review of the assurance service itself.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-independent-assurance-evaluation-enablement} (p.\,\pageref{cap:bec-independent-assurance-evaluation-enablement}). The previous grouping frames Canonical subject-assurance execution; it cannot be equated with review of the assurance service itself.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-information-authority-representation} (p.\,\pageref{cap:bec-information-authority-representation}). Source credibility and authority standing require an explicit home; information-asset tags alone do not establish that responsibility.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-significant-activity-audit-capture} (p.\,\pageref{cap:bec-significant-activity-audit-capture}). The reviewed hierarchy does not allocate general mandatory authoritative audit capture; disclosure or provenance alone is not an equivalent responsibility.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-governance-requirement-publication-support} (p.\,\pageref{cap:bec-governance-requirement-publication-support}). Requirement publication/authority is not assurance-service review or information-model design; the reviewed hierarchy does not allocate a home.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-entity-specific-operational-coordination} (p.\,\pageref{cap:bec-entity-specific-operational-coordination}). Internal entity-relative progression is not the reviewed external work bridge; a current BEC destination has not been adjudicated.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-governed-operational-activity-design} (p.\,\pageref{cap:bec-governed-operational-activity-design}). Internal execution-envelope design is distinct from governance of work across an external execution boundary.
+\par\textbf{HUMAN ADJUDICATION REQUIRED:} \nameref{cap:bec-service-offering-readiness-coordination} (p.\,\pageref{cap:bec-service-offering-readiness-coordination}). Dependency evidence material retained at the out-of-scope CT1. A proposed determination of collective go/no-go readiness is not inherited as authority by dependency tracking.
+\section{Complete predecessor ledger}
+Identity-level decisions, predecessor identities, semantic distributions, every changed structural ID and direct alias, and Feature/behaviour ancestry changes are retained in bec-reconciliation-ledger.json and the task report. The historical entries preserve their exact pre-review records.
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.38\TableWidth}|>{\raggedright\arraybackslash}p{0.3\TableWidth}|>{\raggedright\arraybackslash}p{0.32\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Predecessor identity} & \textbf{Disposition} & \textbf{Current / retained entry}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Predecessor identity} & \textbf{Disposition} & \textbf{Current / retained entry}\\\hline\endhead
+\hline\endfoot
+\texttt{\seqsplit{HCM-BEC-healthcare-entity-information-enablement}}
+
+Healthcare Entity Information Enablement & renamed & \nameref{cap:bec-healthcare-entity-information-enablement} (p.\,\pageref{cap:bec-healthcare-entity-information-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-client-administration}}
+
+Client Administration & retained unchanged & \nameref{cap:bec-client-administration} (p.\,\pageref{cap:bec-client-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-person-identity}}
+
+Person Identity & renamed & \nameref{cap:bec-person-identity} (p.\,\pageref{cap:bec-person-identity})\\\hline
+\texttt{\seqsplit{HCM-BEC-healthcare-subject}}
+
+Healthcare Subject & renamed & \nameref{cap:bec-healthcare-subject} (p.\,\pageref{cap:bec-healthcare-subject})\\\hline
+\texttt{\seqsplit{HCM-BEC-client-relationship}}
+
+Client Relationship & renamed & \nameref{cap:bec-client-relationship} (p.\,\pageref{cap:bec-client-relationship})\\\hline
+\texttt{\seqsplit{HCM-BEC-client-privacy}}
+
+Client Privacy & renamed & \nameref{cap:bec-client-privacy} (p.\,\pageref{cap:bec-client-privacy})\\\hline
+\texttt{\seqsplit{HCM-BEC-provider-administration}}
+
+Provider Administration & retained unchanged & \nameref{cap:bec-provider-administration} (p.\,\pageref{cap:bec-provider-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-practitioner}}
+
+Practitioner & renamed & \nameref{cap:bec-practitioner} (p.\,\pageref{cap:bec-practitioner})\\\hline
+\texttt{\seqsplit{HCM-BEC-practitioner-role}}
+
+Practitioner Role & consolidated & \nameref{cap:bec-practitioner-role} (p.\,\pageref{cap:bec-practitioner-role})\\\hline
+\texttt{\seqsplit{HCM-BEC-organisation-administration}}
+
+Organisation Administration & retained unchanged & \nameref{cap:bec-organisation-administration} (p.\,\pageref{cap:bec-organisation-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-healthcare-organisation}}
+
+Healthcare Organisation & consolidated & \nameref{cap:bec-healthcare-organisation} (p.\,\pageref{cap:bec-healthcare-organisation})\\\hline
+\texttt{\seqsplit{HCM-BEC-location-administration}}
+
+Location Administration & retained unchanged & \nameref{cap:bec-location-administration} (p.\,\pageref{cap:bec-location-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-healthcare-location}}
+
+Healthcare Location & consolidated & \nameref{cap:bec-healthcare-location} (p.\,\pageref{cap:bec-healthcare-location})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-place-definition}}
+
+Care-Place Definition & renamed & \nameref{cap:bec-care-place-definition} (p.\,\pageref{cap:bec-care-place-definition})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-service-administration}}
+
+Health Service Administration & retained unchanged & \nameref{cap:bec-health-service-administration} (p.\,\pageref{cap:bec-health-service-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-healthcare-service-definition}}
+
+Healthcare Service Definition & consolidated & \nameref{cap:bec-healthcare-service-definition} (p.\,\pageref{cap:bec-healthcare-service-definition})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-product-administration}}
+
+Health Product Administration & renamed & \nameref{cap:bec-health-product-administration} (p.\,\pageref{cap:bec-health-product-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-product-definition}}
+
+Health Product Definition & renamed & \nameref{cap:bec-health-product-definition} (p.\,\pageref{cap:bec-health-product-definition})\\\hline
+\texttt{\seqsplit{HCM-BEC-product-formulary-catalogue}}
+
+Product Formulary \& Catalogue & renamed & \nameref{cap:bec-product-formulary-catalogue} (p.\,\pageref{cap:bec-product-formulary-catalogue})\\\hline
+\texttt{\seqsplit{HCM-BEC-product-batch-serial-tracking}}
+
+Product Batch \& Serial Tracking & renamed & \nameref{cap:bec-product-batch-serial-tracking} (p.\,\pageref{cap:bec-product-batch-serial-tracking})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-device-administration}}
+
+Clinical Device Administration & retained unchanged & \nameref{cap:bec-clinical-device-administration} (p.\,\pageref{cap:bec-clinical-device-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-device-definition}}
+
+Device Definition & consolidated & \nameref{cap:bec-device-definition} (p.\,\pageref{cap:bec-device-definition})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-administration-information-enablement}}
+
+Care Administration Information Enablement & renamed & \nameref{cap:bec-care-administration-information-enablement} (p.\,\pageref{cap:bec-care-administration-information-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-client-centred-administration}}
+
+Client-Centred Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-client-centred-administration} (p.\,\pageref{cap:bec-client-centred-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-referral-administration}}
+
+Referral Administration & relocated & \nameref{cap:bec-referral-administration} (p.\,\pageref{cap:bec-referral-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-scheduling-administration}}
+
+Scheduling Administration & relocated & \nameref{cap:bec-scheduling-administration} (p.\,\pageref{cap:bec-scheduling-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-episode-encounter-administration}}
+
+Episode \& Encounter Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-episode-encounter-administration} (p.\,\pageref{cap:bec-episode-encounter-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-order-administration}}
+
+Order Administration & relocated & \nameref{cap:bec-order-administration} (p.\,\pageref{cap:bec-order-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-diagnostic-administration}}
+
+Diagnostic Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-diagnostic-administration} (p.\,\pageref{cap:bec-diagnostic-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-medication-administration}}
+
+Medication Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-medication-administration} (p.\,\pageref{cap:bec-medication-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-procedure-administration}}
+
+Procedure Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-procedure-administration} (p.\,\pageref{cap:bec-procedure-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-record-administration}}
+
+Clinical Record Administration & relocated & \nameref{cap:bec-clinical-record-administration} (p.\,\pageref{cap:bec-clinical-record-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-plan-administration}}
+
+Care Plan Administration & relocated & \nameref{cap:bec-care-plan-administration} (p.\,\pageref{cap:bec-care-plan-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-communication-administration}}
+
+Clinical Communication Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-clinical-communication-administration} (p.\,\pageref{cap:bec-clinical-communication-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-funding-coverage-administration}}
+
+Funding \& Coverage Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-funding-coverage-administration} (p.\,\pageref{cap:bec-funding-coverage-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-charging-claims-administration}}
+
+Clinical Charging \& Claims Administration & retained but outside R1.x/R2.x & \nameref{cap:bec-clinical-charging-claims-administration} (p.\,\pageref{cap:bec-clinical-charging-claims-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-assessment}}
+
+Clinical Assessment & relocated & \nameref{cap:bec-clinical-assessment} (p.\,\pageref{cap:bec-clinical-assessment})\\\hline
+\texttt{\seqsplit{HCM-BEC-ambulatory-care}}
+
+Ambulatory Care & relocated & \nameref{cap:bec-ambulatory-care} (p.\,\pageref{cap:bec-ambulatory-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-surgical-procedural-care}}
+
+Surgical \& Procedural Care & relocated & \nameref{cap:bec-surgical-procedural-care} (p.\,\pageref{cap:bec-surgical-procedural-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-therapeutic-services}}
+
+Therapeutic Services & relocated & \nameref{cap:bec-therapeutic-services} (p.\,\pageref{cap:bec-therapeutic-services})\\\hline
+\texttt{\seqsplit{HCM-BEC-allied-health}}
+
+Allied Health & relocated & \nameref{cap:bec-allied-health} (p.\,\pageref{cap:bec-allied-health})\\\hline
+\texttt{\seqsplit{HCM-BEC-rehabilitation}}
+
+Rehabilitation & relocated & \nameref{cap:bec-rehabilitation} (p.\,\pageref{cap:bec-rehabilitation})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-operations-coordination-enablement}}
+
+Care Operations Coordination Enablement & renamed & \nameref{cap:bec-care-operations-coordination-enablement} (p.\,\pageref{cap:bec-care-operations-coordination-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinic-practice-operations}}
+
+Clinic \& Practice Operations & relocated & \nameref{cap:bec-clinic-practice-operations} (p.\,\pageref{cap:bec-clinic-practice-operations})\\\hline
+\texttt{\seqsplit{HCM-BEC-ward-operations}}
+
+Ward Operations & relocated & \nameref{cap:bec-ward-operations} (p.\,\pageref{cap:bec-ward-operations})\\\hline
+\texttt{\seqsplit{HCM-BEC-theatre-operations}}
+
+Theatre Operations & relocated & \nameref{cap:bec-theatre-operations} (p.\,\pageref{cap:bec-theatre-operations})\\\hline
+\texttt{\seqsplit{HCM-BEC-emergency-department-operations}}
+
+Emergency Department Operations & relocated & \nameref{cap:bec-emergency-department-operations} (p.\,\pageref{cap:bec-emergency-department-operations})\\\hline
+\texttt{\seqsplit{HCM-BEC-outpatient-operations}}
+
+Outpatient Operations & relocated & \nameref{cap:bec-outpatient-operations} (p.\,\pageref{cap:bec-outpatient-operations})\\\hline
+\texttt{\seqsplit{HCM-BEC-bed-care-place-management}}
+
+Bed \& Care-Place Management & relocated & \nameref{cap:bec-bed-care-place-management} (p.\,\pageref{cap:bec-bed-care-place-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-service-capacity-management}}
+
+Service Capacity Management & relocated & \nameref{cap:bec-service-capacity-management} (p.\,\pageref{cap:bec-service-capacity-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-workforce-management}}
+
+Clinical Workforce Management & renamed & \nameref{cap:bec-clinical-workforce-management} (p.\,\pageref{cap:bec-clinical-workforce-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-rostering}}
+
+Clinical Rostering & relocated & \nameref{cap:bec-clinical-rostering} (p.\,\pageref{cap:bec-clinical-rostering})\\\hline
+\texttt{\seqsplit{HCM-BEC-mobile-staff-management}}
+
+Mobile Staff Management & relocated & \nameref{cap:bec-mobile-staff-management} (p.\,\pageref{cap:bec-mobile-staff-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-on-call-management}}
+
+On-Call Management & relocated & \nameref{cap:bec-on-call-management} (p.\,\pageref{cap:bec-on-call-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-work-allocation-dispatch}}
+
+Work Allocation \& Dispatch & relocated & \nameref{cap:bec-work-allocation-dispatch} (p.\,\pageref{cap:bec-work-allocation-dispatch})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-training-education}}
+
+Clinical Training \& Education & retained but outside R1.x/R2.x & \nameref{cap:bec-clinical-training-education} (p.\,\pageref{cap:bec-clinical-training-education})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-competency-management}}
+
+Clinical Competency Management & renamed & \nameref{cap:bec-clinical-competency-management} (p.\,\pageref{cap:bec-clinical-competency-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-qualification-management}}
+
+Clinical Qualification Management & renamed & \nameref{cap:bec-clinical-qualification-management} (p.\,\pageref{cap:bec-clinical-qualification-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-supervision}}
+
+Clinical Supervision & relocated & \nameref{cap:bec-clinical-supervision} (p.\,\pageref{cap:bec-clinical-supervision})\\\hline
+\texttt{\seqsplit{HCM-BEC-patient-transport}}
+
+Patient Transport & relocated & \nameref{cap:bec-patient-transport} (p.\,\pageref{cap:bec-patient-transport})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-logistics-coordination}}
+
+Clinical Logistics Coordination & relocated & \nameref{cap:bec-clinical-logistics-coordination} (p.\,\pageref{cap:bec-clinical-logistics-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-discharge-management}}
+
+Discharge Management & relocated & \nameref{cap:bec-discharge-management} (p.\,\pageref{cap:bec-discharge-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-governed-health-information-enablement}}
+
+Governed Health Information Enablement & renamed & \nameref{cap:bec-governed-health-information-enablement} (p.\,\pageref{cap:bec-governed-health-information-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-patient-clinical-record}}
+
+Patient Clinical Record & relocated & \nameref{cap:bec-patient-clinical-record} (p.\,\pageref{cap:bec-patient-clinical-record})\\\hline
+\texttt{\seqsplit{HCM-BEC-associated-clinical-binary-content-enablement}}
+
+Associated Clinical Binary Content Enablement & renamed & \nameref{cap:bec-associated-clinical-binary-content-enablement} (p.\,\pageref{cap:bec-associated-clinical-binary-content-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-information-exchange}}
+
+Health Information Exchange Enablement & renamed & \nameref{cap:bec-health-information-exchange} (p.\,\pageref{cap:bec-health-information-exchange})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-information-access}}
+
+Health Information Access & relocated & \nameref{cap:bec-health-information-access} (p.\,\pageref{cap:bec-health-information-access})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-information-control}}
+
+Health Information Control & relocated & \nameref{cap:bec-health-information-control} (p.\,\pageref{cap:bec-health-information-control})\\\hline
+\texttt{\seqsplit{HCM-BEC-information-lineage-stewardship}}
+
+Information Lineage Stewardship & renamed & \nameref{cap:bec-information-lineage-stewardship} (p.\,\pageref{cap:bec-information-lineage-stewardship})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-knowledge-services}}
+
+Clinical Knowledge Services & relocated & \nameref{cap:bec-clinical-knowledge-services} (p.\,\pageref{cap:bec-clinical-knowledge-services})\\\hline
+\texttt{\seqsplit{HCM-BEC-governed-reference-dataset-administration}}
+
+Governed Reference Dataset Administration & relocated & \nameref{cap:bec-governed-reference-dataset-administration} (p.\,\pageref{cap:bec-governed-reference-dataset-administration})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-collaboration}}
+
+Clinical Collaboration & relocated & \nameref{cap:bec-clinical-collaboration} (p.\,\pageref{cap:bec-clinical-collaboration})\\\hline
+\texttt{\seqsplit{HCM-BEC-general-collaboration}}
+
+General Collaboration & relocated & \nameref{cap:bec-general-collaboration} (p.\,\pageref{cap:bec-general-collaboration})\\\hline
+\texttt{\seqsplit{HCM-BEC-calendar-management}}
+
+Calendar Management & relocated & \nameref{cap:bec-calendar-management} (p.\,\pageref{cap:bec-calendar-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-presentation-services}}
+
+Presentation Services & relocated & \nameref{cap:bec-presentation-services} (p.\,\pageref{cap:bec-presentation-services})\\\hline
+\texttt{\seqsplit{HCM-BEC-information-design-governance}}
+
+Information Design Governance & relocated & \nameref{cap:bec-information-design-governance} (p.\,\pageref{cap:bec-information-design-governance})\\\hline
+\texttt{\seqsplit{HCM-BEC-secondary-health-information-use-enablement}}
+
+Secondary Health Information Use Enablement & renamed & \nameref{cap:bec-secondary-health-information-use-enablement} (p.\,\pageref{cap:bec-secondary-health-information-use-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-authorised-research-information-provision}}
+
+Authorised Research Information Provision & renamed & \nameref{cap:bec-authorised-research-information-provision} (p.\,\pageref{cap:bec-authorised-research-information-provision})\\\hline
+\texttt{\seqsplit{HCM-BEC-population-health-notification-enablement}}
+
+Population Health Notification Enablement & renamed & \nameref{cap:bec-population-health-notification-enablement} (p.\,\pageref{cap:bec-population-health-notification-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-service-planning-information-provision}}
+
+Service Planning Information Provision & renamed & \nameref{cap:bec-service-planning-information-provision} (p.\,\pageref{cap:bec-service-planning-information-provision})\\\hline
+\texttt{\seqsplit{HCM-BEC-independent-service-assurance-enablement}}
+
+Independent Service Assurance Enablement & renamed & \nameref{cap:bec-independent-service-assurance-enablement} (p.\,\pageref{cap:bec-independent-service-assurance-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-assurance-specification-enablement}}
+
+Assurance Specification Enablement & renamed & \nameref{cap:bec-assurance-specification-enablement} (p.\,\pageref{cap:bec-assurance-specification-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-assurance-design}}
+
+Assurance Design & retained unchanged & \nameref{cap:bec-assurance-design} (p.\,\pageref{cap:bec-assurance-design})\\\hline
+\texttt{\seqsplit{HCM-BEC-assurance-criteria-management}}
+
+Assurance Criteria Management & renamed & \nameref{cap:bec-assurance-criteria-management} (p.\,\pageref{cap:bec-assurance-criteria-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-provider-relationship}}
+
+Provider Relationship & consolidated & \nameref{cap:bec-provider-relationship} (p.\,\pageref{cap:bec-provider-relationship})\\\hline
+\texttt{\seqsplit{HCM-BEC-provider-engagement}}
+
+Provider Engagement & decomposed & \nameref{cap:bec-provider-engagement} (p.\,\pageref{cap:bec-provider-engagement})\\\hline
+\texttt{\seqsplit{HCM-BEC-organisational-structure}}
+
+Organisational Structure & consolidated & \nameref{cap:bec-organisational-structure} (p.\,\pageref{cap:bec-organisational-structure})\\\hline
+\texttt{\seqsplit{HCM-BEC-organisation-contact}}
+
+Organisation Contact & consolidated & \nameref{cap:bec-organisation-contact} (p.\,\pageref{cap:bec-organisation-contact})\\\hline
+\texttt{\seqsplit{HCM-BEC-location-structure}}
+
+Location Structure & consolidated & \nameref{cap:bec-location-structure} (p.\,\pageref{cap:bec-location-structure})\\\hline
+\texttt{\seqsplit{HCM-BEC-service-provision-relationship}}
+
+Service Provision Relationship & consolidated & \nameref{cap:bec-service-provision-relationship} (p.\,\pageref{cap:bec-service-provision-relationship})\\\hline
+\texttt{\seqsplit{HCM-BEC-service-availability-definition}}
+
+Service Availability Definition & consolidated & \nameref{cap:bec-service-availability-definition} (p.\,\pageref{cap:bec-service-availability-definition})\\\hline
+\texttt{\seqsplit{HCM-BEC-service-eligibility-definition}}
+
+Service Eligibility Definition & consolidated & \nameref{cap:bec-service-eligibility-definition} (p.\,\pageref{cap:bec-service-eligibility-definition})\\\hline
+\texttt{\seqsplit{HCM-BEC-device-instance}}
+
+Device Instance & consolidated & \nameref{cap:bec-device-instance} (p.\,\pageref{cap:bec-device-instance})\\\hline
+\texttt{\seqsplit{HCM-BEC-device-association}}
+
+Device Association & decomposed & \nameref{cap:bec-device-association} (p.\,\pageref{cap:bec-device-association})\\\hline
+\texttt{\seqsplit{HCM-BEC-device-connectivity}}
+
+Device Connectivity & consolidated & \nameref{cap:bec-device-connectivity} (p.\,\pageref{cap:bec-device-connectivity})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-resource-management}}
+
+Clinical Resource Management & superseded by reviewed capability & \nameref{cap:bec-clinical-resource-management} (p.\,\pageref{cap:bec-clinical-resource-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-primary-care}}
+
+Primary Care & relocated & \nameref{cap:bec-primary-care} (p.\,\pageref{cap:bec-primary-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-acute-care}}
+
+Acute Care & relocated & \nameref{cap:bec-acute-care} (p.\,\pageref{cap:bec-acute-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-emergency-care}}
+
+Emergency Care & relocated & \nameref{cap:bec-emergency-care} (p.\,\pageref{cap:bec-emergency-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-inpatient-care}}
+
+Inpatient Care & relocated & \nameref{cap:bec-inpatient-care} (p.\,\pageref{cap:bec-inpatient-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-diagnostic-services}}
+
+Diagnostic Services & relocated & \nameref{cap:bec-diagnostic-services} (p.\,\pageref{cap:bec-diagnostic-services})\\\hline
+\texttt{\seqsplit{HCM-BEC-medication-therapy}}
+
+Medication Therapy & relocated & \nameref{cap:bec-medication-therapy} (p.\,\pageref{cap:bec-medication-therapy})\\\hline
+\texttt{\seqsplit{HCM-BEC-preventive-care}}
+
+Preventive Care & relocated & \nameref{cap:bec-preventive-care} (p.\,\pageref{cap:bec-preventive-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-community-care}}
+
+Community Care & relocated & \nameref{cap:bec-community-care} (p.\,\pageref{cap:bec-community-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-outreach-care}}
+
+Outreach Care & relocated & \nameref{cap:bec-outreach-care} (p.\,\pageref{cap:bec-outreach-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-remote-virtual-care}}
+
+Remote \& Virtual Care & relocated & \nameref{cap:bec-remote-virtual-care} (p.\,\pageref{cap:bec-remote-virtual-care})\\\hline
+\texttt{\seqsplit{HCM-BEC-credential-management}}
+
+Credential Management & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-credential-management} (p.\,\pageref{cap:bec-credential-management})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-information-communication}}
+
+Health Information Communication & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-health-information-communication} (p.\,\pageref{cap:bec-health-information-communication})\\\hline
+\texttt{\seqsplit{HCM-BEC-workflow-activity-coordination}}
+
+Workflow \& Activity Coordination & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-workflow-activity-coordination} (p.\,\pageref{cap:bec-workflow-activity-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-governed-assurance}}
+
+Governed Assurance & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-governed-assurance} (p.\,\pageref{cap:bec-governed-assurance})\\\hline
+\texttt{\seqsplit{HCM-BEC-independent-assurance-evaluation-enablement}}
+
+Independent Assurance Evaluation Enablement & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-independent-assurance-evaluation-enablement} (p.\,\pageref{cap:bec-independent-assurance-evaluation-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-information-authority-representation}}
+
+Information Authority Representation & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-information-authority-representation} (p.\,\pageref{cap:bec-information-authority-representation})\\\hline
+\texttt{\seqsplit{HCM-BEC-significant-activity-audit-capture}}
+
+Significant Activity Audit Capture & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-significant-activity-audit-capture} (p.\,\pageref{cap:bec-significant-activity-audit-capture})\\\hline
+\texttt{\seqsplit{HCM-BEC-governance-requirement-publication-support}}
+
+Governance Requirement Publication Support & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-governance-requirement-publication-support} (p.\,\pageref{cap:bec-governance-requirement-publication-support})\\\hline
+\texttt{\seqsplit{HCM-BEC-entity-specific-operational-coordination}}
+
+Entity-Specific Operational Coordination & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-entity-specific-operational-coordination} (p.\,\pageref{cap:bec-entity-specific-operational-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-governed-operational-activity-design}}
+
+Governed Operational Activity Design & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-governed-operational-activity-design} (p.\,\pageref{cap:bec-governed-operational-activity-design})\\\hline
+\texttt{\seqsplit{HCM-BEC-service-offering-readiness-coordination}}
+
+Service Offering Readiness Coordination & genuine unresolved conflict requiring human adjudication & \nameref{cap:bec-service-offering-readiness-coordination} (p.\,\pageref{cap:bec-service-offering-readiness-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-context-integration-enablement}}
+
+Care Context Integration Enablement & superseded by reviewed capability & \nameref{cap:bec-care-context-integration-enablement} (p.\,\pageref{cap:bec-care-context-integration-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-human-collaboration-work-enablement}}
+
+Human Collaboration \& Work Enablement & superseded by reviewed capability & \nameref{cap:bec-human-collaboration-work-enablement} (p.\,\pageref{cap:bec-human-collaboration-work-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-access-transaction-enablement}}
+
+Care Access Transaction Enablement & superseded by reviewed capability & \nameref{cap:bec-care-access-transaction-enablement} (p.\,\pageref{cap:bec-care-access-transaction-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-fulfilment-administration-enablement}}
+
+Care Fulfilment Administration Enablement & superseded by reviewed capability & \nameref{cap:bec-care-fulfilment-administration-enablement} (p.\,\pageref{cap:bec-care-fulfilment-administration-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-documentation-communication-enablement}}
+
+Care Documentation \& Communication Enablement & superseded by reviewed capability & \nameref{cap:bec-care-documentation-communication-enablement} (p.\,\pageref{cap:bec-care-documentation-communication-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-financial-information-enablement}}
+
+Care Financial Information Enablement & superseded by reviewed capability & \nameref{cap:bec-care-financial-information-enablement} (p.\,\pageref{cap:bec-care-financial-information-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-longitudinal-community-care-integration}}
+
+Longitudinal \& Community Care Integration & superseded by reviewed capability & \nameref{cap:bec-longitudinal-community-care-integration} (p.\,\pageref{cap:bec-longitudinal-community-care-integration})\\\hline
+\texttt{\seqsplit{HCM-BEC-facility-episodic-care-integration}}
+
+Facility \& Episodic Care Integration & superseded by reviewed capability & \nameref{cap:bec-facility-episodic-care-integration} (p.\,\pageref{cap:bec-facility-episodic-care-integration})\\\hline
+\texttt{\seqsplit{HCM-BEC-specialist-clinical-context-integration}}
+
+Specialist Clinical Context Integration & superseded by reviewed capability & \nameref{cap:bec-specialist-clinical-context-integration} (p.\,\pageref{cap:bec-specialist-clinical-context-integration})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-setting-operations-enablement}}
+
+Care Setting Operations Enablement & superseded by reviewed capability & \nameref{cap:bec-care-setting-operations-enablement} (p.\,\pageref{cap:bec-care-setting-operations-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-resource-capacity-coordination}}
+
+Care Resource \& Capacity Coordination & superseded by reviewed capability & \nameref{cap:bec-care-resource-capacity-coordination} (p.\,\pageref{cap:bec-care-resource-capacity-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-operational-workforce-coordination}}
+
+Operational Workforce Coordination & superseded by reviewed capability & \nameref{cap:bec-operational-workforce-coordination} (p.\,\pageref{cap:bec-operational-workforce-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-workforce-qualification-development-enablement}}
+
+Workforce Qualification \& Development Enablement & superseded by reviewed capability & \nameref{cap:bec-workforce-qualification-development-enablement} (p.\,\pageref{cap:bec-workforce-qualification-development-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-care-movement-transition-coordination}}
+
+Care Movement \& Transition Coordination & superseded by reviewed capability & \nameref{cap:bec-care-movement-transition-coordination} (p.\,\pageref{cap:bec-care-movement-transition-coordination})\\\hline
+\texttt{\seqsplit{HCM-BEC-clinical-information-stewardship-enablement}}
+
+Clinical Information Stewardship Enablement & superseded by reviewed capability & \nameref{cap:bec-clinical-information-stewardship-enablement} (p.\,\pageref{cap:bec-clinical-information-stewardship-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-health-information-connectivity-enablement}}
+
+Health Information Connectivity Enablement & superseded by reviewed capability & \nameref{cap:bec-health-information-connectivity-enablement} (p.\,\pageref{cap:bec-health-information-connectivity-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-semantic-reference-knowledge-enablement}}
+
+Semantic \& Reference Knowledge Enablement & superseded by reviewed capability & \nameref{cap:bec-semantic-reference-knowledge-enablement} (p.\,\pageref{cap:bec-semantic-reference-knowledge-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-information-protection-accountability-enablement}}
+
+Information Protection \& Accountability Enablement & superseded by reviewed capability & \nameref{cap:bec-information-protection-accountability-enablement} (p.\,\pageref{cap:bec-information-protection-accountability-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-collaborative-interaction-enablement}}
+
+Collaborative Interaction Enablement & superseded by reviewed capability & \nameref{cap:bec-collaborative-interaction-enablement} (p.\,\pageref{cap:bec-collaborative-interaction-enablement})\\\hline
+\texttt{\seqsplit{HCM-BEC-operational-activity-temporal-enablement}}
+
+Operational Activity \& Temporal Enablement & superseded by reviewed capability & \nameref{cap:bec-operational-activity-temporal-enablement} (p.\,\pageref{cap:bec-operational-activity-temporal-enablement})\\\hline
+\end{longtable}\endgroup

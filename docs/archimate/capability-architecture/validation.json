@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "semantic_elements": 228,
+  "semantic_relationships": 189,
+  "protected_content_sha256": "e6633b73fadb42573731f3c1cef65551cb3dfef6ddacac9f4e2d0e75f5cc7fcd",
+  "checks": {
+    "semantic_identity_and_content_lock": "PASS",
+    "global_identifier_uniqueness": "PASS",
+    "element_references": "PASS",
+    "relationship_references": "PASS",
+    "view_local_connection_endpoints": "PASS",
+    "semantic_endpoint_agreement": "PASS",
+    "generated_view_coverage": "PASS",
+    "views_organisation": "PASS",
+    "visual_identity_derivation": "PASS",
+    "node_dimensions_and_no_overlap": "PASS",
+    "xml_schema": "PASS",
+    "existing_view_preservation": "PASS",
+    "existing_view_navigation_preservation": "PASS",
+    "repeated_generation_and_idempotence": "PASS",
+    "original_baseline_lock_after_removing_only_authorised_documentation": "PASS",
+    "exact_unique_reference_id_matches": "PASS",
+    "governed_source_and_description_hashes": "PASS",
+    "no_unmatched_capability_documentation": "PASS",
+    "documentation_xml_schema": "PASS"
+  },
+  "generated_views": [
+    {
+      "name": "Harmonia Capability Landscape",
+      "identifier": "id-a4bbb7df8ab95f8ebcadd44f43ecc9ce",
+      "nodes": 39,
+      "connections": 0,
+      "width": 1520,
+      "height": 1396
+    },
+    {
+      "name": "Business Capability Model",
+      "identifier": "id-030f98270e13527db62632fd9c31df86",
+      "nodes": 52,
+      "connections": 34,
+      "width": 1140,
+      "height": 5120
+    },
+    {
+      "name": "Business Enabling Capability Model",
+      "identifier": "id-b531027008a75f34a4d8401ac0d22568",
+      "nodes": 162,
+      "connections": 155,
+      "width": 1140,
+      "height": 12540
+    },
+    {
+      "name": "Enterprise Capability Model",
+      "identifier": "id-2cf3bc990f115e36987f676ae6ea8656",
+      "nodes": 14,
+      "connections": 0,
+      "width": 1520,
+      "height": 500
+    }
+  ],
+  "retained_views": 1,
+  "output_sha256": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+  "baseline_protected_content_sha256": "f7f3e0723066b7cdd2bc582b82f53eb65f5ec3731b4b3b68e2c063d3ff597db4",
+  "architecture_release": {
+    "version": "1.0.1",
+    "previous_version": "1.0.0"
+  },
+  "documentation": {
+    "enriched_elements": 14,
+    "unresolved_elements": 214,
+    "reference_ids": [
+      "EC-01",
+      "EC-02",
+      "EC-03",
+      "EC-04",
+      "EC-05",
+      "EC-06",
+      "EC-07",
+      "EC-08",
+      "EC-09",
+      "EC-10",
+      "EC-11",
+      "EC-12",
+      "EC-13",
+      "EC-14"
+    ],
+    "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+    "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+    "mapping_sha256": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+    "format": "verbatim Markdown section body; all qualifications retained"
+  }
+}

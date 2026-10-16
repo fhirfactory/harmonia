@@ -26,7 +26,7 @@ def validate_source(elements,tex):
     entries=re.findall(r'\\(chapter|section|subsection|subsubsection|paragraph|subparagraph)\{([^\n]*)\}\n\\label\{([^}]+)\}',tex)
     published={label:(level,title) for level,title,label in entries}
     for element in elements.values():
-        depth=len(ancestors(element,elements))
+        depth=len(ancestors(element,elements)) if element['record_state']=='current' else 1
         assert published[element['latex_label']][0]==LEVELS[depth], 'Heading does not follow actual ownership: '+element['reference_id']
     for label,title in LAYERS.values():
         assert '\\part{'+title+'}\\label{'+label+'}' in tex,'Missing architectural Part'
@@ -34,6 +34,8 @@ def validate_source(elements,tex):
     fields=collections.Counter(re.findall(r'\\cataloguefield\{([^}]+)\}\{',tex))
     assert fields['paragraph']>0,'Feature/behaviour fields lack paragraph numbering'
     return {'numbered_architectural_entries':len(elements),'numbered_catalogue_fields':sum(fields.values()),
+            'current_architectural_entries':sum(x['record_state']=='current' for x in elements.values()),
+            'historical_or_pending_records':sum(x['record_state']!='current' for x in elements.values()),
             'catalogue_fields_by_heading_level':dict(fields)}
 
 
@@ -80,10 +82,11 @@ def validate_pdf(elements,tex,pdf):
         assert outline[destination]['title'].endswith(title),'Architectural Part title lost'
         assert re.search(r'\\contentsline \{part\}.*\{'+re.escape(destination)+r'\}',toc),'Part missing from contents'
     for element in elements.values():
-        chain=ancestors(element,elements)
+        current=element['record_state']=='current'
+        chain=ancestors(element,elements) if current else [None]
         number,_,_,destination,*_=aux[element['latex_label']]
         assert re.fullmatch(r'\d+(?:\.\d+){'+str(len(chain))+r'}',number),'Missing/contextless publication number'
-        expected_parent=chain[-1]['latex_label'] if chain else LAYERS[element['category']][0]
+        expected_parent=(chain[-1]['latex_label'] if chain else LAYERS[element['category']][0]) if current else 'model:retained'
         assert outline[destination]['parent']==aux[expected_parent][3],'PDF outline changes ownership: '+element['reference_id']
         assert destination in toc_destinations,'Architectural entry missing from contents'
         prefix=element['tier']+': ' if element['type'] in ('capability','enterprise_capability') else element['type'].title()+': '

@@ -44,6 +44,12 @@ def validate_model(m):
             assert x['placement_status']=='Proposed' and x['structural_id_status']=='Proposed','Proposal promoted'
             assert x.get('provenance',{}).get('derivation') and x['provenance']['evidence'],'Missing derivation provenance'
             assert all(len(x.get(k,''))>30 for k in ('definition','overview','boundary')),'Skeletal proposed element'
+        assert x['record_state'] in ('current','superseded','pending_adjudication')
+        if x['record_state']!='current':
+            assert x.get('pre_review_record'),'Non-current responsibility lost its exact previous record'
+            if x['record_state']=='pending_adjudication':
+                assert 'HUMAN ADJUDICATION REQUIRED' in x.get('adjudication_note',''),'Hidden architectural uncertainty'
+            continue
         if x.get('parent_key'):
             parent=e[x['parent_key']]
             assert parent['category']==x['category'],'Cross-category decomposition'
@@ -71,13 +77,13 @@ def validate_model(m):
         assert x['canonical_id']==expected,'Structural context/type grammar mismatch: '+x['reference_id']
         parts=x['canonical_id'].split('.')
         assert all('.'.join(parts[:i]) in ids for i in range(1,len(parts))),'Orphan structural prefix'
-    caps=[x for x in elements if x['type'] in ('capability','enterprise_capability')]
+    caps=[x for x in elements if x['record_state']=='current' and x['type'] in ('capability','enterprise_capability')]
     names=[x['name'].casefold() for x in caps]
     assert len(names)==len(set(names)),'Current capability name collision'
     # Feature names are unique within their CT1 responsibility frame.
     feature_names=[]
     for x in elements:
-        if x['type']=='feature':feature_names.append((x['canonical_id'].split('.')[0],x['name'].casefold()))
+        if x['type']=='feature' and x['record_state']=='current':feature_names.append((x['canonical_id'].split('.')[0],x['name'].casefold()))
     assert len(feature_names)==len(set(feature_names)),'Feature naming collision'
     baseline=json.loads((V01/'manifest.json').read_text())
     baseline_e={x['key']:x for x in baseline['elements']}
@@ -102,7 +108,9 @@ def validate_model(m):
             while p.get('owner_key') or p.get('parent_key'):
                 p=e[p.get('owner_key') or p['parent_key']];owners.append(p['key'])
                 assert len(owners)<10,'Cyclic context'
-            assert old['owner_key'] in owners,'New frame escapes established responsibility'
+            if old['owner_key'] not in owners:
+                relocation=current.get('reviewed_responsibility_relocation',{})
+                assert relocation.get('previous_owner') in e and relocation.get('current_frame')==current['owner_key'] and relocation.get('status')=='Proposed','New frame escapes established responsibility without explicit reviewed reconciliation'
     for x in elements:
         if x['key'] not in baseline_e:assert x['architectural_status']=='Proposed','New responsibility promoted'
     for r in baseline['relationships']:
@@ -116,7 +124,7 @@ def validate_model(m):
                 assert r['contribution']!='No Material Role'
                 row=r['sources'][0]['text'];ec=e[r['to']]['reference_id']
                 cols=[p.strip() for p in row.strip('|').split('|')]
-                index=['Assurance Design','Assurance Criteria Management','Governed Assurance'].index(e[r['from']]['name'])+1
+                index=['Assurance Design','Assurance Criteria Management','Governed Assurance'].index(e[r['from']].get('canonical_name') or e[r['from']]['name'])+1
                 assert ec in cols[0] and cols[index]==r['contribution'],'Incorrect approved matrix import'
             else:assert r['status']=='Proposed' and r.get('provenance'),'Unmarked new relationship'
         if r['type']=='enterprise_enabled_by':
@@ -134,7 +142,69 @@ def validate_model(m):
         if x['type']=='process' and x['architectural_status']=='Proposed':
             assert len(x.get('ordered_function_chain',[]))>=2
             assert all(e[k]['type']=='function' for k in x['ordered_function_chain'])
+    validate_review(m,e)
     return e,historical,baseline
+
+
+def validate_review(m,e):
+    """Semantic guards for the human decisions, including deliberately empty tiers."""
+    review=m['reviewed_bec_reconciliation']
+    spec=read('reviewed-bec-hierarchy.json')
+    by_name={x['reviewed_name']:x for x in e.values() if x.get('reviewed_name')}
+    assert set(by_name)=={n['name'] for n in spec['nodes']},'Reviewed hierarchy coverage changed'
+    for node in spec['nodes']:
+        x=by_name[node['name']]
+        assert x['record_state']=='current' and x['tier']==node['tier'],'Reviewed capability not current / wrong tier'
+        assert x.get('parent_key')==(by_name[node['parent']]['key'] if node['parent'] else None),'Reviewed capability parent changed'
+        assert x.get('release_scope')==node.get('release_scope'),'Explicit release scope lost or invented'
+        assert x['placement_status']=='Proposed','Reviewed structure incorrectly promoted'
+    scope='Not Addressed in R1.x / R2.x'
+    dependency=by_name['Clinical Service Dependency Management']
+    assert dependency['release_scope']==scope
+    contexts=[x for x in e.values() if x.get('parent_key')==dependency['key'] and x['record_state']=='current']
+    assert len(contexts)==16 and all(x['tier']=='CT2' for x in contexts)
+    assert not any(x['record_state']=='current' and x.get('parent_key') in {c['key'] for c in contexts} for x in e.values()),'Artificial dependency-context CT3'
+    for name in ['Funding & Coverage Administration','Clinical Charging & Claims Administration','Service Establishment Support','Clinical Training & Education','Research Information Curation','Population Health Information Reporting','Service Planning Data Management']:
+        assert not any(x['record_state']=='current' and x.get('parent_key')==by_name[name]['key'] for x in e.values()),'Artificial CT3 decomposition: '+name
+    for relocation in review['service_context_relocations']:
+        x=e[relocation['key']]
+        assert x['name']==relocation['name'] and x['parent_key']==by_name[relocation['parent']]['key'],'Service-enabling responsibility lost / mislocated'
+        assert x['parent_key']!=dependency['key']
+    assert e['capability:clinical-resource-management']['record_state']=='superseded','Obsolete resource capability retained'
+    predecessor=read('pre-review-identity-lock.json')
+    for rid,lock in predecessor.items():
+        x=next(t for t in e.values() if t['reference_id']==rid)
+        assert x['latex_label']==lock['latex_label'] and x['key']==lock['key'],'Stage-2 identity/label lost'
+        assert set(lock['id_aliases'])<=set(x['id_aliases']),'Stage-2 historical alias lost'
+        assert lock['canonical_id']==x['canonical_id'] or lock['canonical_id'] in x['id_aliases'],'Stage-2 structural history lost'
+    expected={x['reference_id'] for x in e.values() if x.get('pre_review_record',{}).get('category')=='business_enabling'}
+    assert {d['reference_id'] for d in review['decisions']}==expected,'Incomplete affected-BEC ledger'
+    for d in review['decisions']:
+        assert d['classification'] in ('retained unchanged','renamed','consolidated','decomposed','relocated','superseded by reviewed capability','retained but outside R1.x/R2.x','genuine unresolved conflict requiring human adjudication')
+        assert all(k in e for k in d['targets'])
+        if d['classification'] in ('consolidated','decomposed','superseded by reviewed capability'):assert d['targets'],'Missing explicit successors'
+        if d['classification']=='decomposed':assert d.get('semantic_distribution'),'Lost decomposition semantics'
+    consent=by_name['Client Privacy Guardrail Management']
+    assert next(x for x in e.values() if x['reference_id']=='FEAT-EM-09')['owner_key']==consent['key'],'Canonical client consent ownership changed'
+    for name in ['Health Information Control','Patient Health Information Restriction Management','Patient Health Information Filter Management','Patient Health Information Disclosure Management']:
+        assert by_name[name]['respects_consent_responsibility']==consent['key'],'Consent duplicated or not respected'
+    assert not any('consent' in x['name'].casefold() and x['type']=='capability' and x.get('parent_key')==by_name['Health Information Control']['key'] for x in e.values()),'Invented consent capability'
+    assert 'service itself' in by_name['Assurance Service Evaluation']['definition'],'Assurance-service review confused with subject assurance'
+    assert e['capability:governed-assurance']['record_state']=='pending_adjudication','Canonical subject assurance hidden or equated to service review'
+    for rid in ('HCM-FN-manage-specimen-transport-progression','HCM-PR-specimen-transport-process'):
+        x=next(x for x in e.values() if x['reference_id']==rid)
+        assert x['record_state']=='pending_adjudication','Mixed specimen/materiel responsibility silently narrowed or republished'
+        assert x['governed_definition_latex']==x['pre_review_record']['governed_definition_latex'],'Mixed Canonical logistics semantics changed'
+    assert review['bc_ec_preservation']['exact_element_records_unchanged'] and not review['bc_ec_independent_redesign']
+    bc_ec=[{k:v for k,v in x.items() if k!='record_state'} for x in e.values() if x['category'] in ('business','enterprise')]
+    assert hashlib.sha256(json.dumps(bc_ec,sort_keys=True).encode()).hexdigest()==review['bc_ec_preservation']['sha256'],'BC/EC complete element records changed'
+    assert len(m['relationship_currentness'])==len(m['relationships'])
+    for record,r in zip(m['relationship_currentness'],m['relationships']):
+        assert record['assertion_status']==r['status']
+        if record['record_state']=='current':
+            assert all(e[r[k]]['record_state']=='current' for k in ('from','to'))
+            if r['type'] in ('capability_decomposition','responsibility_parent'):
+                assert (e[r['to']].get('parent_key') or e[r['to']].get('owner_key'))==r['from'],'Stale decomposition asserted as current'
 
 
 def included_tex(path,seen=None):
@@ -179,6 +249,8 @@ def main():
     assert {x['latex_label'] for x in e.values()}<=set(labels),'Element label not published'
     previous_labels=set(json.loads((V01/'identity-baseline.json').read_text())['latex_labels'])
     assert previous_labels<=set(labels),'Existing v0.1 label lost'
+    pre_review_labels=set(read('pre-review-publication-labels.json'))
+    assert pre_review_labels<=set(labels),'Existing v0.2 publication label lost'
     targets=re.findall(r'\\(?:ref|nameref|pageref)\{([^}]+)\}',tex)+re.findall(r'\\hyperref\[([^]]+)\]',tex)
     assert set(targets)<=set(labels),'Undefined cross references: '+str(set(targets)-set(labels))
     assert len(re.findall(r'\\index\{',tex))==len(e),'Incomplete name index source coverage'
@@ -187,19 +259,26 @@ def main():
     report={'result':'PASS','version':'0.2-draft','elements':len(e),
             'statuses':dict(collections.Counter(x['architectural_status'] for x in e.values())),
             'counts':dict(model_counts),'new_elements':sum(x['baseline_version'] is None for x in e.values()),
+            'current_counts':dict(collections.Counter((x['category'] or x['type'])+'_'+(x['tier'] or '') for x in e.values() if x['record_state']=='current')),
             'relationships':len(m['relationships']),'proposed_relationships':sum(r['status']=='Proposed' for r in m['relationships']),
             'preserved_baseline_elements':719,'preserved_baseline_relationships':len(baseline['relationships']),
             'canonical_definitions_preserved':True,'baseline_files_unchanged':True,
             'allocated_structural_ids':len(e),'unique_historical_aliases':len(aliases),
             'unplaced_capabilities':0,'features_without_bec_ct3':0,'unmarked_proposals':0,
+            'feature_frame_assessment':'All current Features have CT3 frames; unresolved original Features are explicitly preserved outside the current tree.',
+            'pending_feature_frames':sum(x['type']=='feature' and x['record_state']=='pending_adjudication' for x in e.values()),
+            'reconciliation_record_states':dict(collections.Counter(x['record_state'] for x in e.values())),
             'unresolved_baseline_relationships_preserved':sum(r['status']=='unresolved' for r in baseline['relationships']),
             'v0.3_primary_concepts_reviewed':942,'v0.3_behaviour_occurrences_reviewed':277,
             'unique_latex_labels':len(labels),'undefined_references':0,'duplicate_reference_ids':0,
             'duplicate_structural_ids':0,'name_index_source_entries':len(e),
             'preserved_existing_latex_labels':len(previous_labels),
+            'preserved_pre_review_latex_labels':len(pre_review_labels),
             'current_display_capability_names_unique':True,
             'governed_bc_bec_exchange_name_conflict':'Preserved; proposed display rename only',
-            'limitations':'Structural/naming/support decisions remain Proposed. Existing Candidate concerns and source contradictions remain explicit.'}
+            'limitations':'Structural/naming/support decisions remain Proposed. HUMAN ADJUDICATION REQUIRED responsibilities remain outside the current hierarchy with exact semantics, identities and owned material preserved.',
+            'reviewed_bec_hierarchy':'PASS: complete reviewed candidate represented with explicit CM-R05 display-name qualification',
+            'bc_ec_exact_records_unchanged':m['reviewed_bec_reconciliation']['bc_ec_preservation']}
     report['publication_navigation']=validate_source(e,tex)
     if not args.model_only:
         output=args.build_dir.resolve()/'Harmonia-EA-Capability-Map'

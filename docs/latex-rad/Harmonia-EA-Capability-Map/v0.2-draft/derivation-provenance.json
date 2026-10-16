@@ -506,7 +506,7 @@
       "candidate_reference_id": "BEC-60F2ADD5",
       "line": 4176,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1226,49 +1226,7 @@
       "candidate_reference_id": "BEC-14BBAAFD",
       "line": 8715,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-0FADE98F",
-      "line": 8725,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-E86070E3",
-      "line": 8787,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Semantic validation, terminology mapping and information correlation remain distinct governed behaviours. Their recurrence supports conformance/context contributions, not automatic replication of a generic Feature under every information capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-9924A266",
-      "line": 8797,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Semantic validation, terminology mapping and information correlation remain distinct governed behaviours. Their recurrence supports conformance/context contributions, not automatic replication of a generic Feature under every information capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-C048B88A",
-      "line": 8807,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-F497FE5F",
-      "line": 8817,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Meaningful attribution is retained through lineage/audit participation under its actual owner; diagnostic origin and source authority are not transferred to an exchange or terminology capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-90EED6CF",
-      "line": 8827,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1283,15 +1241,15 @@
     {
       "candidate_reference_id": "BEC-4553B47B",
       "line": 8926,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "HUMAN ADJUDICATION REQUIRED",
+      "rationale": "HUMAN ADJUDICATION REQUIRED: Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-763876A9",
       "line": 8936,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "HUMAN ADJUDICATION REQUIRED",
+      "rationale": "HUMAN ADJUDICATION REQUIRED: Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -1360,35 +1318,7 @@
       "candidate_reference_id": "BEC-0B71E5CB",
       "line": 5789,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-6D84C2C1",
-      "line": 5799,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-BEE7FF8B",
-      "line": 5849,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-B1E25071",
-      "line": 5861,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Coordination uses verified participant context and the assigned routing/dispatch contract. It does not establish clinical work allocation, practitioner privilege or a central dispatch authority from shared vocabulary. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-206D85C4",
-      "line": 5873,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Correlation/progression is retained in the appropriate referral, order, report, medication or communication responsibility. Technical ACK, disposition, fulfilment and outcome retain distinct meanings; the generic candidate is not a new universal status Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1420,42 +1350,7 @@
       "candidate_reference_id": "BEC-4CDE0BAB",
       "line": 9212,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-0C37BAFF",
-      "line": 9222,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-3F3E28AF",
-      "line": 9271,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-911087B0",
-      "line": 9281,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-2DF10AA6",
-      "line": 9291,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-0CD2C755",
-      "line": 9301,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1478,42 +1373,7 @@
       "candidate_reference_id": "BEC-E1807E93",
       "line": 9312,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-2D46A392",
-      "line": 9322,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-074F43D0",
-      "line": 9347,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-D75B5D46",
-      "line": 9357,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-5368E298",
-      "line": 9367,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-7D688C5A",
-      "line": 9377,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1528,8 +1388,8 @@
     {
       "candidate_reference_id": "BEC-F49A0D09",
       "line": 2579,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1544,8 +1404,8 @@
     {
       "candidate_reference_id": "BEC-03705603",
       "line": 8584,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1561,7 +1421,7 @@
       "candidate_reference_id": "BEC-A4E759E2",
       "line": 2984,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -1600,7 +1460,7 @@
       "candidate_reference_id": "BEC-31E69256",
       "line": 2608,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -1634,17 +1494,24 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
       "candidate_reference_id": "BEC-8C53E055",
       "line": 6635,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-6ECB9608",
       "line": 6645,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -1688,35 +1555,7 @@
       "candidate_reference_id": "BEC-97605881",
       "line": 8605,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-15AB949F",
-      "line": 8615,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-9F1C5969",
-      "line": 8666,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-67C43D3D",
-      "line": 8690,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-F9431119",
-      "line": 8702,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -2337,7 +2176,7 @@
       "candidate_reference_id": "BEC-75CEC238",
       "line": 2595,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -5071,7 +4910,7 @@
       "candidate_reference_id": "BEC-EDCE7C88",
       "line": 2735,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7353,7 +7192,7 @@
       "candidate_reference_id": "BEC-2494865F",
       "line": 2813,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7408,7 +7247,7 @@
       "candidate_reference_id": "BEC-ADC0CF33",
       "line": 2893,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7486,7 +7325,7 @@
       "candidate_reference_id": "BEC-5BB55046",
       "line": 2997,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7534,7 +7373,7 @@
       "candidate_reference_id": "BEC-2DEC073A",
       "line": 3099,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7557,32 +7396,12 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "The useful qualified relationship/structure concern is retained in its placed capability and existing explicit Features. Repeating the generic label under every entity kind would obscure distinct associations and approval mandates. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-13": [
-    {
-      "candidate_reference_id": "BEC-116F8108",
-      "line": 3117,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-14": [
-    {
-      "candidate_reference_id": "BEC-CBDE3B8C",
-      "line": 3128,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-provider-relationship": [
+    },
     {
       "candidate_reference_id": "BEC-C410CC51",
       "line": 3200,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7612,6 +7431,31 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-F58DBA08",
+      "line": 3268,
+      "disposition": "Reconciled predecessor — decomposed",
+      "rationale": "Predecessor semantics are explicitly distributed to the reviewed successors; the original identity and exact pre-review assertions remain in history.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-EM-13": [
+    {
+      "candidate_reference_id": "BEC-116F8108",
+      "line": 3117,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-EM-14": [
+    {
+      "candidate_reference_id": "BEC-CBDE3B8C",
+      "line": 3128,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
   "FEAT-EM-15": [
@@ -7623,12 +7467,12 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-provider-engagement": [
+  "HCM-BEC-reviewed-provider-clinical-qualification-tracking": [
     {
       "candidate_reference_id": "BEC-F58DBA08",
       "line": 3268,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — decomposed",
+      "rationale": "Predecessor semantics are explicitly distributed to the reviewed successors; the original identity and exact pre-review assertions remain in history.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7658,6 +7502,41 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-E3152A69",
+      "line": 8213,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-D3D46BF9",
+      "line": 8237,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-E9331A31",
+      "line": 8247,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-9736C9DB",
+      "line": 8257,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-3DE5AC43",
+      "line": 8267,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
   "FEAT-EM-16": [
@@ -7674,7 +7553,7 @@
       "candidate_reference_id": "BEC-1FF88A71",
       "line": 3336,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -7683,7 +7562,7 @@
       "candidate_reference_id": "BEC-ACE86B9B",
       "line": 3348,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7720,32 +7599,12 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-17": [
-    {
-      "candidate_reference_id": "BEC-28102E35",
-      "line": 3366,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-18": [
-    {
-      "candidate_reference_id": "BEC-DF977EAB",
-      "line": 3377,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-organisational-structure": [
+    },
     {
       "candidate_reference_id": "BEC-FA161A55",
       "line": 3449,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7782,23 +7641,12 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-19": [
-    {
-      "candidate_reference_id": "BEC-F5068C04",
-      "line": 3466,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-organisation-contact": [
+    },
     {
       "candidate_reference_id": "BEC-5C12BF05",
       "line": 3538,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7837,6 +7685,33 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "FEAT-EM-17": [
+    {
+      "candidate_reference_id": "BEC-28102E35",
+      "line": 3366,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-EM-18": [
+    {
+      "candidate_reference_id": "BEC-DF977EAB",
+      "line": 3377,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-EM-19": [
+    {
+      "candidate_reference_id": "BEC-F5068C04",
+      "line": 3466,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-EM-20": [
     {
       "candidate_reference_id": "BEC-D6FA9FDF",
@@ -7851,7 +7726,7 @@
       "candidate_reference_id": "BEC-D4B0D057",
       "line": 3627,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -7860,7 +7735,7 @@
       "candidate_reference_id": "BEC-7E83F611",
       "line": 3639,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7890,23 +7765,12 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-21": [
-    {
-      "candidate_reference_id": "BEC-885CE86B",
-      "line": 3655,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-location-structure": [
+    },
     {
       "candidate_reference_id": "BEC-A66483F0",
       "line": 3715,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7938,6 +7802,15 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "FEAT-EM-21": [
+    {
+      "candidate_reference_id": "BEC-885CE86B",
+      "line": 3655,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-EM-22": [
     {
       "candidate_reference_id": "BEC-C82C8D0A",
@@ -7952,7 +7825,7 @@
       "candidate_reference_id": "BEC-0C8D2717",
       "line": 3791,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -7998,7 +7871,7 @@
       "candidate_reference_id": "BEC-B3668209",
       "line": 3859,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -8007,7 +7880,7 @@
       "candidate_reference_id": "BEC-1864D570",
       "line": 3872,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8034,6 +7907,111 @@
     {
       "candidate_reference_id": "BEC-DEE34CB8",
       "line": 3935,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-CC9FD951",
+      "line": 3948,
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-46B095FB",
+      "line": 3975,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Definition management belongs to service-definition responsibility; it is not reproduced beneath service mapping, availability, eligibility and diagnostic execution contexts. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-99951D40",
+      "line": 3987,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-F964694F",
+      "line": 3999,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-7A743DDD",
+      "line": 4011,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-CF667CC1",
+      "line": 4024,
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-61F28669",
+      "line": 4051,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Definition management belongs to service-definition responsibility; it is not reproduced beneath service mapping, availability, eligibility and diagnostic execution contexts. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-0AA34D18",
+      "line": 4063,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-235C211D",
+      "line": 4075,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-B8A2142A",
+      "line": 4087,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-8858C964",
+      "line": 4100,
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-271154E8",
+      "line": 4127,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Definition management belongs to service-definition responsibility; it is not reproduced beneath service mapping, availability, eligibility and diagnostic execution contexts. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-1F711951",
+      "line": 4139,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-FA68F289",
+      "line": 4151,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-9B1E4AC5",
+      "line": 4163,
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
@@ -8176,43 +8154,6 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-service-provision-relationship": [
-    {
-      "candidate_reference_id": "BEC-CC9FD951",
-      "line": 3948,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-46B095FB",
-      "line": 3975,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Definition management belongs to service-definition responsibility; it is not reproduced beneath service mapping, availability, eligibility and diagnostic execution contexts. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-99951D40",
-      "line": 3987,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-F964694F",
-      "line": 3999,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-7A743DDD",
-      "line": 4011,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "FEAT-EM-25": [
     {
       "candidate_reference_id": "BEC-C68165B1",
@@ -8222,86 +8163,12 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-service-availability-definition": [
-    {
-      "candidate_reference_id": "BEC-CF667CC1",
-      "line": 4024,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-61F28669",
-      "line": 4051,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Definition management belongs to service-definition responsibility; it is not reproduced beneath service mapping, availability, eligibility and diagnostic execution contexts. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-0AA34D18",
-      "line": 4063,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-235C211D",
-      "line": 4075,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-B8A2142A",
-      "line": 4087,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "FEAT-EM-26": [
     {
       "candidate_reference_id": "BEC-A4ABC149",
       "line": 4040,
       "disposition": "Retained Canonical",
       "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-service-eligibility-definition": [
-    {
-      "candidate_reference_id": "BEC-8858C964",
-      "line": 4100,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-271154E8",
-      "line": 4127,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Definition management belongs to service-definition responsibility; it is not reproduced beneath service mapping, availability, eligibility and diagnostic execution contexts. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-1F711951",
-      "line": 4139,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-FA68F289",
-      "line": 4151,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-9B1E4AC5",
-      "line": 4163,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -8319,7 +8186,7 @@
       "candidate_reference_id": "BEC-1BE2ADD6",
       "line": 4188,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8356,7 +8223,7 @@
       "candidate_reference_id": "BEC-F3F076F6",
       "line": 4255,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8400,7 +8267,7 @@
       "candidate_reference_id": "BEC-0ACE1412",
       "line": 4331,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8437,7 +8304,7 @@
       "candidate_reference_id": "BEC-39C0D38D",
       "line": 4396,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -8446,7 +8313,7 @@
       "candidate_reference_id": "BEC-EF278D25",
       "line": 4409,
       "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8473,6 +8340,41 @@
     {
       "candidate_reference_id": "BEC-624E75EE",
       "line": 4472,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Meaningful attribution is retained through lineage/audit participation under its actual owner; diagnostic origin and source authority are not transferred to an exchange or terminology capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-B3DEDCD2",
+      "line": 4485,
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Predecessor information semantics incorporated without retaining a noun-based peer capability.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-A111F20F",
+      "line": 4512,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Identity/identifier behaviour must remain scoped to the actual subject and source authority. Generic identity wording does not establish a second identity owner or master reconciliation engine. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-8C9D3C83",
+      "line": 4524,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-A8E9A77A",
+      "line": 4536,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The useful qualified relationship/structure concern is retained in its placed capability and existing explicit Features. Repeating the generic label under every entity kind would obscure distinct associations and approval mandates. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-EB9AE886",
+      "line": 4548,
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "Meaningful attribution is retained through lineage/audit participation under its actual owner; diagnostic origin and source authority are not transferred to an exchange or terminology capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
@@ -8608,43 +8510,6 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-device-instance": [
-    {
-      "candidate_reference_id": "BEC-B3DEDCD2",
-      "line": 4485,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-A111F20F",
-      "line": 4512,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Identity/identifier behaviour must remain scoped to the actual subject and source authority. Generic identity wording does not establish a second identity owner or master reconciliation engine. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-8C9D3C83",
-      "line": 4524,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-A8E9A77A",
-      "line": 4536,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The useful qualified relationship/structure concern is retained in its placed capability and existing explicit Features. Repeating the generic label under every entity kind would obscure distinct associations and approval mandates. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-EB9AE886",
-      "line": 4548,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Meaningful attribution is retained through lineage/audit participation under its actual owner; diagnostic origin and source authority are not transferred to an exchange or terminology capability. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "FEAT-EM-29": [
     {
       "candidate_reference_id": "BEC-8FB4909A",
@@ -8654,12 +8519,12 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-device-association": [
+  "HCM-BEC-reviewed-device-utilisation-administration": [
     {
       "candidate_reference_id": "BEC-868954A0",
       "line": 4561,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — decomposed",
+      "rationale": "Predecessor semantics are explicitly distributed to the reviewed successors; the original identity and exact pre-review assertions remain in history.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8682,32 +8547,77 @@
       "disposition": "Subsumed concern; no distinct Feature delta",
       "rationale": "The useful qualified relationship/structure concern is retained in its placed capability and existing explicit Features. Repeating the generic label under every entity kind would obscure distinct associations and approval mandates. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-EM-30": [
+    },
     {
-      "candidate_reference_id": "BEC-22B624C5",
-      "line": 4577,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "candidate_reference_id": "BEC-07A2FD29",
+      "line": 7671,
+      "disposition": "Reconciled predecessor — superseded by reviewed capability",
+      "rationale": "Equipment location/allocation survives under device utilisation; service dependency tracking belongs to the reviewed dependency CT1. No independent generic resource manager is retained.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-556B4A3F",
+      "line": 7681,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-E7E5A452",
+      "line": 7708,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-AA245FF0",
+      "line": 7718,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-A870EB50",
+      "line": 7728,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Coordination uses verified participant context and the assigned routing/dispatch contract. It does not establish clinical work allocation, practitioner privilege or a central dispatch authority from shared vocabulary. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-F1B486E3",
+      "line": 7738,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-99E2FA68",
+      "line": 7748,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-4D2A47AC",
+      "line": 7758,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-FT-device-association-lineage": [
+  "HCM-BEC-reviewed-device-oa-m-metadata-management": [
     {
-      "candidate_reference_id": "BEC-FC971E86",
-      "line": 4624,
-      "disposition": "Refined / repositioned",
-      "rationale": "Retain the useful semantic delta under a specific identified Feature and boundary; this is derivation provenance rather than an old-ID alias or automatic equivalence.",
+      "candidate_reference_id": "BEC-868954A0",
+      "line": 4561,
+      "disposition": "Reconciled predecessor — decomposed",
+      "rationale": "Predecessor semantics are explicitly distributed to the reviewed successors; the original identity and exact pre-review assertions remain in history.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-device-connectivity": [
+    },
     {
       "candidate_reference_id": "BEC-6548F58A",
       "line": 4637,
-      "disposition": "Retained Proposed responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Reconciled predecessor — consolidated",
+      "rationale": "Existing endpoint registrations and connectivity bindings are retained as operational/administrative metadata. Connectivity compliance is a separately reviewed new ability; registration is not evidence of compliance.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8739,6 +8649,24 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "FEAT-EM-30": [
+    {
+      "candidate_reference_id": "BEC-22B624C5",
+      "line": 4577,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-FT-device-association-lineage": [
+    {
+      "candidate_reference_id": "BEC-FC971E86",
+      "line": 4624,
+      "disposition": "Refined / repositioned",
+      "rationale": "Retain the useful semantic delta under a specific identified Feature and boundary; this is derivation provenance rather than an old-ID alias or automatic equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-EM-31": [
     {
       "candidate_reference_id": "BEC-45355492",
@@ -8752,8 +8680,8 @@
     {
       "candidate_reference_id": "BEC-FF45E08F",
       "line": 4713,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -8762,14 +8690,16 @@
       "candidate_reference_id": "BEC-DD7184DF",
       "line": 4735,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-client-intake-demographic-update": [
     {
       "candidate_reference_id": "BEC-25DB15BA",
       "line": 4745,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -8824,14 +8754,16 @@
       "candidate_reference_id": "BEC-C16B2202",
       "line": 4825,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-referral-intake-progression": [
     {
       "candidate_reference_id": "BEC-CD3F820D",
       "line": 4835,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9186,14 +9118,16 @@
       "candidate_reference_id": "BEC-2ABE98E1",
       "line": 4936,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-appointment-booking-administration": [
     {
       "candidate_reference_id": "BEC-8FEF95D4",
       "line": 4946,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9248,14 +9182,16 @@
       "candidate_reference_id": "BEC-63E23D60",
       "line": 5034,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-encounter-lifecycle-management": [
     {
       "candidate_reference_id": "BEC-1C528FC1",
       "line": 5044,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9321,14 +9257,16 @@
       "candidate_reference_id": "BEC-B6BE6E1D",
       "line": 5145,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-closed-loop-order-progression": [
     {
       "candidate_reference_id": "BEC-5E9ECEA1",
       "line": 5155,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9401,14 +9339,16 @@
       "candidate_reference_id": "BEC-B67A0E82",
       "line": 5268,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-diagnostic-workflow-management": [
     {
       "candidate_reference_id": "BEC-C0DD4810",
       "line": 5278,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9465,14 +9405,16 @@
       "candidate_reference_id": "BEC-B4278279",
       "line": 5365,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-medication-order-dispense-management": [
     {
       "candidate_reference_id": "BEC-1EFAA849",
       "line": 5375,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9564,14 +9506,16 @@
       "candidate_reference_id": "BEC-3233022C",
       "line": 5527,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-procedure-surgical-administration": [
     {
       "candidate_reference_id": "BEC-489D3945",
       "line": 5537,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9626,14 +9570,16 @@
       "candidate_reference_id": "BEC-BF6253DC",
       "line": 5615,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-clinical-documentation-lifecycle-administration": [
     {
       "candidate_reference_id": "BEC-0CE70156",
       "line": 5625,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9697,14 +9643,16 @@
       "candidate_reference_id": "BEC-389062F6",
       "line": 5716,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-care-plan-lifecycle-coordination": [
     {
       "candidate_reference_id": "BEC-E263E2D1",
       "line": 5726,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9740,6 +9688,36 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "HCM-BEC-reviewed-secure-clinical-communication": [
+    {
+      "candidate_reference_id": "BEC-6D84C2C1",
+      "line": 5799,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-BEE7FF8B",
+      "line": 5849,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-B1E25071",
+      "line": 5861,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Coordination uses verified participant context and the assigned routing/dispatch contract. It does not establish clinical work allocation, practitioner privilege or a central dispatch authority from shared vocabulary. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-206D85C4",
+      "line": 5873,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Correlation/progression is retained in the appropriate referral, order, report, medication or communication responsibility. Technical ACK, disposition, fulfilment and outcome retain distinct meanings; the generic candidate is not a new universal status Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-SA-27": [
     {
       "candidate_reference_id": "BEC-C55CEDBD",
@@ -9772,7 +9750,7 @@
       "candidate_reference_id": "BEC-09D4A645",
       "line": 5886,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -9781,41 +9759,46 @@
       "candidate_reference_id": "BEC-47D10EB4",
       "line": 5896,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-care-context-integration-enablement": [
+  "HCM-BEC-reviewed-clinical-service-dependency-management": [
     {
       "candidate_reference_id": "BEC-3A4524B6",
       "line": 5906,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-clinical-assessment": [
+    },
     {
-      "candidate_reference_id": "BEC-AEAB9E52",
-      "line": 5931,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "candidate_reference_id": "BEC-07A2FD29",
+      "line": 7671,
+      "disposition": "Reconciled predecessor — superseded by reviewed capability",
+      "rationale": "Equipment location/allocation survives under device utilisation; service dependency tracking belongs to the reviewed dependency CT1. No independent generic resource manager is retained.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
   "HCM-BEC-primary-care": [
     {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
       "candidate_reference_id": "BEC-14FD8EDD",
       "line": 5941,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-2D7A6DDE",
       "line": 5951,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9861,37 +9844,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-01": [
-    {
-      "candidate_reference_id": "BEC-AB31E6BC",
-      "line": 5968,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-02": [
-    {
-      "candidate_reference_id": "BEC-E7F50E85",
-      "line": 5979,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-acute-care": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-4E6DB5F9",
       "line": 6051,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-0FAC6B5A",
       "line": 6061,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9937,37 +9909,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-03": [
-    {
-      "candidate_reference_id": "BEC-5DD077B5",
-      "line": 6078,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-04": [
-    {
-      "candidate_reference_id": "BEC-870D4A16",
-      "line": 6089,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-emergency-care": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-729DFC66",
       "line": 6161,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-A9EBF8FE",
       "line": 6171,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -9999,37 +9960,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-05": [
-    {
-      "candidate_reference_id": "BEC-3E1EE6B4",
-      "line": 6186,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-06": [
-    {
-      "candidate_reference_id": "BEC-78F5EADB",
-      "line": 6197,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-inpatient-care": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-EBFE3FB1",
       "line": 6249,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-17776772",
       "line": 6259,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10061,55 +10011,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-07": [
-    {
-      "candidate_reference_id": "BEC-6F99412C",
-      "line": 6276,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-08": [
-    {
-      "candidate_reference_id": "BEC-93C32399",
-      "line": 6287,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-ambulatory-care": [
-    {
-      "candidate_reference_id": "BEC-69DD19FD",
-      "line": 6347,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-surgical-procedural-care": [
-    {
-      "candidate_reference_id": "BEC-6C600AC1",
-      "line": 6357,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-diagnostic-services": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-27E670BB",
       "line": 6367,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-BB867C0A",
       "line": 6377,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10169,46 +10090,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-09": [
-    {
-      "candidate_reference_id": "BEC-E7A7A26F",
-      "line": 6398,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-10": [
-    {
-      "candidate_reference_id": "BEC-821F8A39",
-      "line": 6409,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-therapeutic-services": [
-    {
-      "candidate_reference_id": "BEC-BFDB47CA",
-      "line": 6517,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-medication-therapy": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-B48BC336",
       "line": 6527,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-0789035C",
       "line": 6537,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10240,73 +10141,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-11": [
-    {
-      "candidate_reference_id": "BEC-D1549684",
-      "line": 6554,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-12": [
-    {
-      "candidate_reference_id": "BEC-95E0F2E9",
-      "line": 6565,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-allied-health": [
-    {
-      "candidate_reference_id": "BEC-13B74601",
-      "line": 6625,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-13": [
-    {
-      "candidate_reference_id": "BEC-21483404",
-      "line": 6662,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-14": [
-    {
-      "candidate_reference_id": "BEC-B609C8F5",
-      "line": 6673,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "HCM-BEC-rehabilitation": [
-    {
-      "candidate_reference_id": "BEC-A8289AED",
-      "line": 6725,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-community-care": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-CDB89B75",
       "line": 6735,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-50748227",
       "line": 6745,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10352,37 +10206,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-15": [
-    {
-      "candidate_reference_id": "BEC-70EEF999",
-      "line": 6762,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-16": [
-    {
-      "candidate_reference_id": "BEC-5CB15F94",
-      "line": 6773,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-outreach-care": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-9DDD1BD3",
       "line": 6845,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-B8EB379A",
       "line": 6855,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10414,37 +10257,26 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "FEAT-SD-17": [
-    {
-      "candidate_reference_id": "BEC-6A90478E",
-      "line": 6870,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
-  "FEAT-SD-18": [
-    {
-      "candidate_reference_id": "BEC-8BCC3746",
-      "line": 6880,
-      "disposition": "Retained Canonical",
-      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "HCM-BEC-remote-virtual-care": [
+    {
+      "candidate_reference_id": "BEC-3A4524B6",
+      "line": 5906,
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
     {
       "candidate_reference_id": "BEC-F9E9DD8E",
       "line": 6932,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-68C27168",
       "line": 6942,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10476,6 +10308,222 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "HCM-BEC-clinical-assessment": [
+    {
+      "candidate_reference_id": "BEC-AEAB9E52",
+      "line": 5931,
+      "disposition": "Retained Canonical responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-01": [
+    {
+      "candidate_reference_id": "BEC-AB31E6BC",
+      "line": 5968,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-02": [
+    {
+      "candidate_reference_id": "BEC-E7F50E85",
+      "line": 5979,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-03": [
+    {
+      "candidate_reference_id": "BEC-5DD077B5",
+      "line": 6078,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-04": [
+    {
+      "candidate_reference_id": "BEC-870D4A16",
+      "line": 6089,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-05": [
+    {
+      "candidate_reference_id": "BEC-3E1EE6B4",
+      "line": 6186,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-06": [
+    {
+      "candidate_reference_id": "BEC-78F5EADB",
+      "line": 6197,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-07": [
+    {
+      "candidate_reference_id": "BEC-6F99412C",
+      "line": 6276,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-08": [
+    {
+      "candidate_reference_id": "BEC-93C32399",
+      "line": 6287,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-ambulatory-care": [
+    {
+      "candidate_reference_id": "BEC-69DD19FD",
+      "line": 6347,
+      "disposition": "Retained Canonical responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-surgical-procedural-care": [
+    {
+      "candidate_reference_id": "BEC-6C600AC1",
+      "line": 6357,
+      "disposition": "Retained Canonical responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-09": [
+    {
+      "candidate_reference_id": "BEC-E7A7A26F",
+      "line": 6398,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-10": [
+    {
+      "candidate_reference_id": "BEC-821F8A39",
+      "line": 6409,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-therapeutic-services": [
+    {
+      "candidate_reference_id": "BEC-BFDB47CA",
+      "line": 6517,
+      "disposition": "Retained Canonical responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-11": [
+    {
+      "candidate_reference_id": "BEC-D1549684",
+      "line": 6554,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-12": [
+    {
+      "candidate_reference_id": "BEC-95E0F2E9",
+      "line": 6565,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-allied-health": [
+    {
+      "candidate_reference_id": "BEC-13B74601",
+      "line": 6625,
+      "disposition": "Retained Canonical responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-13": [
+    {
+      "candidate_reference_id": "BEC-21483404",
+      "line": 6662,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-14": [
+    {
+      "candidate_reference_id": "BEC-B609C8F5",
+      "line": 6673,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-rehabilitation": [
+    {
+      "candidate_reference_id": "BEC-A8289AED",
+      "line": 6725,
+      "disposition": "Retained Canonical responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-15": [
+    {
+      "candidate_reference_id": "BEC-70EEF999",
+      "line": 6762,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-16": [
+    {
+      "candidate_reference_id": "BEC-5CB15F94",
+      "line": 6773,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-17": [
+    {
+      "candidate_reference_id": "BEC-6A90478E",
+      "line": 6870,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "FEAT-SD-18": [
+    {
+      "candidate_reference_id": "BEC-8BCC3746",
+      "line": 6880,
+      "disposition": "Retained Canonical",
+      "rationale": "Use the stable v0.1 Feature Reference ID, label and governed definition; old candidate parentage is not authority.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-SD-19": [
     {
       "candidate_reference_id": "BEC-FAC2E484",
@@ -10498,8 +10546,8 @@
     {
       "candidate_reference_id": "BEC-4FA35177",
       "line": 7030,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -10508,14 +10556,16 @@
       "candidate_reference_id": "BEC-ED6D98E8",
       "line": 7059,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-session-queue-coordination": [
     {
       "candidate_reference_id": "BEC-FD9982FA",
       "line": 7069,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10584,14 +10634,16 @@
       "candidate_reference_id": "BEC-25E1A896",
       "line": 7169,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-ward-logistics-coordination": [
     {
       "candidate_reference_id": "BEC-CE9BB804",
       "line": 7179,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10660,14 +10712,16 @@
       "candidate_reference_id": "BEC-389897E6",
       "line": 7277,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-perioperative-logistics-coordination": [
     {
       "candidate_reference_id": "BEC-D248D868",
       "line": 7287,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10722,14 +10776,16 @@
       "candidate_reference_id": "BEC-78F79EDB",
       "line": 7366,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-emergency-department-operational-coordination": [
     {
       "candidate_reference_id": "BEC-469419AB",
       "line": 7376,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10798,14 +10854,16 @@
       "candidate_reference_id": "BEC-3EA18C92",
       "line": 7474,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-outpatient-flow-coordination": [
     {
       "candidate_reference_id": "BEC-07398864",
       "line": 7484,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10860,14 +10918,16 @@
       "candidate_reference_id": "BEC-DBA54D09",
       "line": 7570,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-bed-care-place-state-administration": [
     {
       "candidate_reference_id": "BEC-9F88F277",
       "line": 7580,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -10926,64 +10986,6 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-clinical-resource-management": [
-    {
-      "candidate_reference_id": "BEC-07A2FD29",
-      "line": 7671,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-556B4A3F",
-      "line": 7681,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-E7E5A452",
-      "line": 7708,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-AA245FF0",
-      "line": 7718,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Policy, eligibility, qualification and assurance evidence are different concerns. Their useful participation is retained without copying one generic policy Feature into every clinical setting or granting clinical safety/acceptance decisions to Harmonia. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-A870EB50",
-      "line": 7728,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Coordination uses verified participant context and the assigned routing/dispatch contract. It does not establish clinical work allocation, practitioner privilege or a central dispatch authority from shared vocabulary. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-F1B486E3",
-      "line": 7738,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-99E2FA68",
-      "line": 7748,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-4D2A47AC",
-      "line": 7758,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    }
-  ],
   "FEAT-HSO-14": [
     {
       "candidate_reference_id": "BEC-5B685445",
@@ -10998,14 +11000,16 @@
       "candidate_reference_id": "BEC-DB7874AF",
       "line": 7769,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-service-demand-capacity-coordination": [
     {
       "candidate_reference_id": "BEC-D90FAB4C",
       "line": 7779,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11051,7 +11055,7 @@
       "candidate_reference_id": "BEC-20C1E1B7",
       "line": 7845,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11060,7 +11064,7 @@
       "candidate_reference_id": "BEC-F8C1B2DF",
       "line": 7855,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11069,14 +11073,16 @@
       "candidate_reference_id": "BEC-71740710",
       "line": 7865,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-mobile-worker-dispatch-safety-coordination": [
     {
       "candidate_reference_id": "BEC-EC43C4CB",
       "line": 7875,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11145,14 +11151,16 @@
       "candidate_reference_id": "BEC-AA196190",
       "line": 7974,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-on-call-availability-contact-resolution": [
     {
       "candidate_reference_id": "BEC-4BE71CB3",
       "line": 7984,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11198,14 +11206,16 @@
       "candidate_reference_id": "BEC-4A72D708",
       "line": 8050,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-operational-work-assignment-dispatch-coordination": [
     {
       "candidate_reference_id": "BEC-09C6941C",
       "line": 8060,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11292,7 +11302,7 @@
       "candidate_reference_id": "BEC-06CF5B6D",
       "line": 8183,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11301,7 +11311,7 @@
       "candidate_reference_id": "BEC-DE805931",
       "line": 8193,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11310,42 +11320,7 @@
       "candidate_reference_id": "BEC-9C5388A1",
       "line": 8203,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-E3152A69",
-      "line": 8213,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-D3D46BF9",
-      "line": 8237,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-E9331A31",
-      "line": 8247,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-9736C9DB",
-      "line": 8257,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
-      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
-    {
-      "candidate_reference_id": "BEC-3DE5AC43",
-      "line": 8267,
-      "disposition": "Subsumed concern; no distinct Feature delta",
-      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11363,7 +11338,7 @@
       "candidate_reference_id": "BEC-D401771A",
       "line": 8278,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11372,14 +11347,16 @@
       "candidate_reference_id": "BEC-55FBCC7C",
       "line": 8288,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-patient-transfer-coordination": [
     {
       "candidate_reference_id": "BEC-854FF619",
       "line": 8298,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11434,14 +11411,16 @@
       "candidate_reference_id": "BEC-BB578270",
       "line": 8387,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-specimen-movement-traceability": [
     {
       "candidate_reference_id": "BEC-999FB8AB",
       "line": 8397,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11480,14 +11459,16 @@
       "candidate_reference_id": "BEC-3C941BB0",
       "line": 8461,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-discharge-progression-coordination": [
     {
       "candidate_reference_id": "BEC-3414F1EB",
       "line": 8471,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11560,12 +11541,12 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
-  "HCM-BEC-human-collaboration-work-enablement": [
+  "HCM-BEC-secondary-health-information-use-enablement": [
     {
       "candidate_reference_id": "BEC-03705603",
       "line": 8584,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11573,8 +11554,38 @@
     {
       "candidate_reference_id": "BEC-03705603",
       "line": 8584,
-      "disposition": "Redesigned grouping",
-      "rationale": "The useful broad concern is retained, but the five historical views do not determine the proposed seven-root hierarchy. Shared information, work and assurance are separated by responsibility.",
+      "disposition": "Reconciled to human-reviewed hierarchy",
+      "rationale": "The explicit reviewed candidate replaces the former grouping. Dependency tracking is distinct from surviving care-information and coordination responsibilities, which are separately relocated. This is a bounded reconciliation, not a fresh hierarchy synthesis.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-reviewed-longitudinal-clinical-record-administration": [
+    {
+      "candidate_reference_id": "BEC-15AB949F",
+      "line": 8615,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-9F1C5969",
+      "line": 8666,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-67C43D3D",
+      "line": 8690,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-F9431119",
+      "line": 8702,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11611,6 +11622,50 @@
       "line": 8678,
       "disposition": "Refined / repositioned",
       "rationale": "Retain the useful semantic delta under a specific identified Feature and boundary; this is derivation provenance rather than an old-ID alias or automatic equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
+  "HCM-BEC-reviewed-hie-implementation-management": [
+    {
+      "candidate_reference_id": "BEC-0FADE98F",
+      "line": 8725,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-E86070E3",
+      "line": 8787,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Semantic validation, terminology mapping and information correlation remain distinct governed behaviours. Their recurrence supports conformance/context contributions, not automatic replication of a generic Feature under every information capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-9924A266",
+      "line": 8797,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Semantic validation, terminology mapping and information correlation remain distinct governed behaviours. Their recurrence supports conformance/context contributions, not automatic replication of a generic Feature under every information capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-C048B88A",
+      "line": 8807,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-F497FE5F",
+      "line": 8817,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Meaningful attribution is retained through lineage/audit participation under its actual owner; diagnostic origin and source authority are not transferred to an exchange or terminology capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-90EED6CF",
+      "line": 8827,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
@@ -11655,14 +11710,16 @@
       "candidate_reference_id": "BEC-0EE16B9D",
       "line": 8838,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-governed-health-information-retrieval": [
     {
       "candidate_reference_id": "BEC-73452901",
       "line": 8848,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11726,14 +11783,14 @@
       "candidate_reference_id": "BEC-203E2D62",
       "line": 9002,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-18459CCD",
       "line": 9012,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11797,14 +11854,16 @@
       "candidate_reference_id": "BEC-B622BACF",
       "line": 9113,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-governed-reference-dataset-administration": [
     {
       "candidate_reference_id": "BEC-43B6CE64",
       "line": 9123,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11861,6 +11920,43 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "HCM-BEC-reviewed-clinical-context-collaboration": [
+    {
+      "candidate_reference_id": "BEC-0C37BAFF",
+      "line": 9222,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-3F3E28AF",
+      "line": 9271,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-911087B0",
+      "line": 9281,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-2DF10AA6",
+      "line": 9291,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-0CD2C755",
+      "line": 9301,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-ISE-16": [
     {
       "candidate_reference_id": "BEC-84D2C1DF",
@@ -11888,6 +11984,43 @@
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     }
   ],
+  "HCM-BEC-reviewed-operational-collaboration": [
+    {
+      "candidate_reference_id": "BEC-2D46A392",
+      "line": 9322,
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-074F43D0",
+      "line": 9347,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Context is retained in the actual qualified participant, transaction or activity responsibility. The old generic description provides no independent semantic delta warranting another local Feature. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-D75B5D46",
+      "line": 9357,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "The capability and its explicit lifecycle Features retain state/temporal meaning. Reuse of state machinery does not make all subjects share one lifecycle or grant operational capacity authority to a directory description. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-5368E298",
+      "line": 9367,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Exception/outcome handling is retained in the applicable transaction or work contract. The old generic label did not describe a separate capability-specific state change; uncertain effects remain explicit and do not become success, failure or clinical outcome by default. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    },
+    {
+      "candidate_reference_id": "BEC-7D688C5A",
+      "line": 9377,
+      "disposition": "Subsumed concern; no distinct Feature delta",
+      "rationale": "Discovery/retrieval is retained as a reusable contribution and locally exposed behaviour where evidenced. A shared retrieval word does not justify another domain-specific Feature in each neighbouring capability. Target capability/reuse participation is not a claim of Feature equivalence.",
+      "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
+    }
+  ],
   "FEAT-ISE-19": [
     {
       "candidate_reference_id": "BEC-1631787F",
@@ -11901,15 +12034,15 @@
     {
       "candidate_reference_id": "BEC-0C4A6874",
       "line": 9388,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "HUMAN ADJUDICATION REQUIRED",
+      "rationale": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
       "candidate_reference_id": "BEC-A3E2C598",
       "line": 9398,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "HUMAN ADJUDICATION REQUIRED",
+      "rationale": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -11996,14 +12129,16 @@
       "candidate_reference_id": "BEC-78F5DB56",
       "line": 9525,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-operational-clinical-calendar-coordination": [
     {
       "candidate_reference_id": "BEC-8CD7EA17",
       "line": 9535,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -12058,14 +12193,16 @@
       "candidate_reference_id": "BEC-6AA02A96",
       "line": 9613,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-contextual-information-presentation": [
     {
       "candidate_reference_id": "BEC-2DCF9553",
       "line": 9623,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {
@@ -12111,14 +12248,16 @@
       "candidate_reference_id": "BEC-233904DA",
       "line": 9689,
       "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
-    },
+    }
+  ],
+  "HCM-BEC-reviewed-enterprise-canonical-reusable-model-design": [
     {
       "candidate_reference_id": "BEC-453A5B71",
       "line": 9699,
-      "disposition": "Retained Canonical responsibility",
-      "rationale": "Use the current explicit responsibility and best CT placement. A contextual description does not require an extra tier when the canonical capability itself is the CT3 frame.",
+      "disposition": "Retained Proposed responsibility",
+      "rationale": "The responsibility survives under its explicit reviewed placement or retained meaningful CT3 frame. Original identity and semantics are preserved; reviewed structural relationships remain Proposed.",
       "role": "Derivation/reconciliation provenance; not an identity alias or automatic equivalence"
     },
     {

@@ -1,6 +1,6 @@
 {
   "result": "PASS",
-  "purpose": "In-memory fault injection proves material architecture/identity guards reject invalid data; the committed model is not mutated.",
+  "purpose": "In-memory fault injection proves the original material architecture/identity guards still reject invalid models after reconciliation. No committed model is mutated.",
   "rejected_invalid_models": 13,
   "probes": [
     {

@@ -1,35 +1,32 @@
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
-# Publication navigation and numbering
+# Navigation after human-reviewed BEC reconciliation
 
-The generator now gives Business Capability Architecture, Business Enabling
-Capability Architecture and Enterprise Capability Architecture distinct LaTeX
-Parts. The guide, registers/provenance and governed source detail occupy separate
-supporting Parts. CT1/CT2/CT3 map to chapter/section/subsection; Features and
-behaviours follow their existing ownership, retaining typed headings.
+**PASS.** Business Capability Architecture, Business Enabling Capability Architecture
+and Enterprise Capability Architecture remain distinct top-level LaTeX Parts.
+CT1 / CT2 / CT3 map to chapter / section / subsection. Current Features appear as
+subsubsections and behaviour follows its actual responsibility ownership.
+Superseded and pending records appear in a separate chapter of the registers,
+without asserting another current BEC hierarchy.
 
-All 862 architectural entries and 3,277 catalogue headings are numbered, with
-paragraph/subparagraph numbering enabled. For example, Referral Administration
-is `21.8.8`, its Capability Overview is `21.8.8.1`, and Referral Document Ingestion's
-Feature Overview is `21.8.8.7.1`. These are publication locations; architectural
-identifiers and labels remain unchanged. The contents and PDF outline expose all
-862 elements under their actual ancestry. Numbered catalogue fields stay outside
-the outline, which contains 916 entries.
+The PDF has 1,007 outline entries. All 946 indexed records are numbered and present
+in the outline/contents; 845 are current architectural entries and 101 are preserved
+historical or unresolved records. The validator compares every current entry's
+actual PDF parent against the model and every preserved entry against the separate
+register. The 4,101 detailed catalogue fields retain contextual numbering down to
+the existing technical depths. Their numbering is navigation, not architectural
+identity. All 2,681 pre-review LaTeX labels are preserved; 2,768 labels are unique
+in the reconciled source tree.
 
-Validation: **PASS**. Complete regeneration produces the
-[1,224-page PDF](Harmonia-EA-Capability-Map.pdf). The model, identities, statuses,
-all 948 relationships, definitions, explanatory prose and provenance are unchanged;
-all 2,681 LaTeX labels are preserved. Before/after fingerprints and normalized
-publication-text comparisons are recorded in
-[publication-preservation.json](publication-preservation.json).
+The publication contains 1,531 pages. The final build has no undefined references,
+duplicate labels, missing glyphs or overfull boxes. Source-only conventional
+compilation produces identical rendered text and verified navigation. BC and EC
+full element records are unchanged; only the reviewed BEC hierarchy, compatible
+relocations and explicit history differ.
 
-Semantic-baseline, source-fingerprint, regeneration and navigation checks pass;
-all 90 repository architecture tests pass. The final LaTeX build has no warnings,
-duplicate labels, undefined references, missing glyphs or overfull boxes.
-Representative contents, Part, capability, Feature and behaviour pages were
-visually inspected with no material layout regressions. Detailed results are in
-[validation.json](validation.json) and [architecture-tests.json](architecture-tests.json).
-
-Changes reside in the renderer and publication template. Version-path adapters
-restore regeneration after the earlier v0.1 directory relocation while preserving
-every frozen v0.1 file and fingerprint. No architectural remediation was performed.
+See [validation.json](validation.json),
+[publication-preservation.json](publication-preservation.json),
+[standalone-validation.json](standalone-validation.json) and the
+[reconciliation report](../../../../.junie/reports/2026-10-16-bec-human-adjudicated-reconciliation.md).
+Prior navigation evidence is preserved verbatim in
+[pre-review-publication-evidence.json](pre-review-publication-evidence.json).

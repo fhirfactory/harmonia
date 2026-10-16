@@ -1,17 +1,19 @@
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
-# Step 2 proposed architecture catalogue
+# Proposed architecture catalogue after human-reviewed BEC reconciliation
 
-Generated from the explicit authored proposals in tools/compose.py; status is Proposed throughout.
+Generated from tools/compose.py and the bounded tools/reviewed_bec.py reconciliation. Architectural status remains Proposed. Record standing distinguishes current architecture from preserved superseded and unresolved material.
 
-## HCM-BEC-healthcare-entity-information-enablement — Healthcare Entity Information Enablement
+## HCM-BEC-healthcare-entity-information-enablement — Entity Information Enablement
 
 **Type / tier:** capability / CT1
 
-**Definition:** Maintain the identity, descriptive structure and qualified relationships of the participants, places, services, products and devices referenced in healthcare activity.
+**Reconciliation standing:** current
 
-A care transaction needs to identify its subject, provider, service and place before it can be interpreted safely. This frame brings together those relatively enduring descriptions while keeping each kind of entity and relationship accountable within its own boundary.
+**Definition:** Administer identifying, descriptive and qualified relationship information concerning healthcare participants, organisations, locations, services, materiel and devices.
 
-**Intent:** Make the participant, place and service references in a care concern consistently interpretable across organisational boundaries.
+Administer identifying, descriptive and qualified relationship information concerning healthcare participants, organisations, locations, services, materiel and devices.
+
+**Intent:** Administer identifying, descriptive and qualified relationship information concerning healthcare participants, organisations, locations, services, materiel and devices.
 
 **Boundary:** Registry information does not establish clinical privilege, service readiness, occupancy or originating national identity authority.
 
@@ -19,15 +21,19 @@ A care transaction needs to identify its subject, provider, service and place be
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-care-administration-information-enablement — Care Administration Information Enablement
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-care-administration-information-enablement — Care Administration Enablement
 
 **Type / tier:** capability / CT1
 
-**Definition:** Receive, correlate and communicate the administrative requests, episodes, fulfilment records and documents through which care is arranged and recorded.
+**Reconciliation standing:** current
 
-Referrals, bookings, encounters, orders and clinical documents have different progression and acknowledgement meanings. Their common ability is to make care administration intelligible across organisations without making those transactions interchangeable.
+**Definition:** Administer the information and progression of care access, requests, encounters, records and plans across responsible care systems.
 
-**Intent:** Keep the requested, accepted, performed and recorded aspects of care administration distinguishable as information crosses systems.
+Administer the information and progression of care access, requests, encounters, records and plans across responsible care systems.
+
+**Intent:** Administer the information and progression of care access, requests, encounters, records and plans across responsible care systems.
 
 **Boundary:** Information administration does not perform the clinical act, own host booking engines or infer Transfer of Care from referral acceptance.
 
@@ -35,9 +41,13 @@ Referrals, bookings, encounters, orders and clinical documents have different pr
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-care-context-integration-enablement — Care Context Integration Enablement
 
 **Type / tier:** capability / CT1
+
+**Reconciliation standing:** superseded
 
 **Definition:** Compose governed information and coordination behaviour for materially different care settings, continuity arrangements and specialist clinical purposes.
 
@@ -47,19 +57,23 @@ Emergency presentation, inpatient rounds and outreach visits need different cont
 
 **Boundary:** Setting, care mode and specialty are overlapping contextual dimensions. These children are integration responsibilities, not a mutually exclusive taxonomy of patients or clinical care.
 
-**Current structural identity:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-care-operations-coordination-enablement — Care Operations Coordination Enablement
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-care-operations-coordination-enablement — Health Service Operations Enablement
 
 **Type / tier:** capability / CT1
 
-**Definition:** Represent and coordinate care-setting flow, operational resources, workforce participation, movement and service-delivery preparedness.
+**Reconciliation standing:** current
 
-Operational coordination connects available resources with actual care-setting constraints and observable work progression. Bed state, local capacity, aggregate capacity, transport and discharge remain separate abilities even when they exchange the same milestones.
+**Definition:** Enable health-service operations through information about flow, care-places, capacity, workforce capability, operational work, logistics and discharge progression.
 
-**Intent:** Make operational constraints and progression visible enough to coordinate the care-delivery responsibilities actually assigned to Harmonia.
+Enable health-service operations through information about flow, care-places, capacity, workforce capability, operational work, logistics and discharge progression.
+
+**Intent:** Enable health-service operations through information about flow, care-places, capacity, workforce capability, operational work, logistics and discharge progression.
 
 **Boundary:** Coordination owns only explicitly assigned operational activity. It does not originate clinical clearance, determine clinical work or take workforce and resource governance from their sources.
 
@@ -67,15 +81,19 @@ Operational coordination connects available resources with actual care-setting c
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-governed-health-information-enablement — Governed Health Information Enablement
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-governed-health-information-enablement — Shared Information & Coordination Enablement
 
 **Type / tier:** capability / CT1
 
-**Definition:** Preserve, find, exchange, qualify and protect health information and the governed definitions needed to interpret it.
+**Reconciliation standing:** current
 
-This frame makes a managed record usable over time and across authorised purposes. It separates clinical synthesis, binary-content association, external exchange, semantic definitions, privacy and evidence so that none becomes an undifferentiated information utility.
+**Definition:** Enable governed shared health-information use, exchange, stewardship, knowledge, collaboration, external work coordination, calendars, presentation and information design.
 
-**Intent:** Keep managed health information usable and attributable across time, boundaries and authorised purposes.
+Enable governed shared health-information use, exchange, stewardship, knowledge, collaboration, external work coordination, calendars, presentation and information design.
+
+**Intent:** Enable governed shared health-information use, exchange, stewardship, knowledge, collaboration, external work coordination, calendars, presentation and information design.
 
 **Boundary:** Preservation, custody, discoverability and presentation do not confer originating fact authority. Clinical documentation administration and clinical-context use retain their own responsibilities.
 
@@ -83,9 +101,13 @@ This frame makes a managed record usable over time and across authorised purpose
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-human-collaboration-work-enablement — Human Collaboration & Work Enablement
 
 **Type / tier:** capability / CT1
+
+**Reconciliation standing:** superseded
 
 **Definition:** Enable contextual human interaction, collaboration and the definition and progression of governed operational activity.
 
@@ -95,19 +117,23 @@ People discuss information, inspect it, make authorised decisions and undertake 
 
 **Boundary:** Conversation is not a clinical record, presentation is not authority, and generic work coordination does not determine clinical work or own its outcome.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-independent-service-assurance-enablement — Independent Service Assurance Enablement
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-independent-service-assurance-enablement — Independent Assurance Enablement
 
 **Type / tier:** capability / CT1
 
-**Definition:** Specify how governed service behaviour is assured and independently establish what applicable evidence demonstrates.
+**Reconciliation standing:** current
 
-The frame separates design and criteria stewardship from the evaluation activity that produces findings. It preserves the established three assurance capabilities and five Functions without turning observation or operational health into an assurance conclusion.
+**Definition:** Enable assurance specification and independent review of the assurance service while preserving the distinct Canonical responsibility for assurance against a governed subject.
 
-**Intent:** Establish justified confidence in governed service behaviour without giving the subject control of its own assurance conclusion.
+Enable assurance specification and independent review of the assurance service while preserving the distinct Canonical responsibility for assurance against a governed subject.
+
+**Intent:** Enable assurance specification and independent review of the assurance service while preserving the distinct Canonical responsibility for assurance against a governed subject.
 
 **Boundary:** Assurance cannot manage, remediate or approve its subject merely because it observes it. Clinical adequacy, financial governance and source-information authority remain outside this mandate.
 
@@ -115,15 +141,19 @@ The frame separates design and criteria stewardship from the evaluation activity
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-practitioner — Practitioner
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-practitioner — Practitioner Profile Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Identifying and verifying individual healthcare professionals.
+**Reconciliation standing:** current
 
-Practitioner identity and professional profile information let care participants be recognised across organisations. Registration and profile standing remain attributed to the issuing authority, while discovery makes that described person usable in care integration.
+**Definition:** Administer practitioner identity, professional profile and supplied registration information with its issuing-authority attribution.
 
-**Intent:** Allow a described healthcare professional to be reliably recognised and found across participating systems.
+Administer practitioner identity, professional profile and supplied registration information with its issuing-authority attribution.
+
+**Intent:** Administer practitioner identity, professional profile and supplied registration information with its issuing-authority attribution.
 
 **Boundary:** Professional registration and profile representation do not grant clinical or operational privilege.
 
@@ -131,15 +161,19 @@ Practitioner identity and professional profile information let care participants
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-practitioner-role — Practitioner Role
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-practitioner-role — Practitioner Role Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Modeling the formal role, specialty, and operational capacity of a practitioner at a given organisation or location.
+**Reconciliation standing:** current
 
-The same practitioner may act in different specialties, organisations and operational capacities. Role-specific associations and communication endpoints make that participation intelligible without converting a directory role into permission or professional privilege.
+**Definition:** Administer practitioner roles, specialties, organisational affiliations, operational capacities and recognised role endpoints.
 
-**Intent:** Make the capacity and organisational context of a practitioner interaction explicit.
+Administer practitioner roles, specialties, organisational affiliations, operational capacities and recognised role endpoints.
+
+**Intent:** Administer practitioner roles, specialties, organisational affiliations, operational capacities and recognised role endpoints.
 
 **Boundary:** Role, specialty, capacity and endpoint information supply context; they do not constitute a privilege determination.
 
@@ -147,9 +181,13 @@ The same practitioner may act in different specialties, organisations and operat
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-provider-relationship — Provider Relationship
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Managing organizational affiliations and multidisciplinary team relationships.
 
@@ -159,13 +197,17 @@ Effective affiliations explain which practitioner or team participates with whic
 
 **Boundary:** Affiliation records do not transfer the participating organisations or practitioner identities to this capability.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-PROVIDER-ADMINISTRATION.CT3-BEC-PROVIDER-RELATIONSHIP
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-PROVIDER-ADMINISTRATION.CT3-BEC-PROVIDER-RELATIONSHIP
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-provider-engagement — Provider Engagement
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Capturing terms of service and clinical privilege agreements.
 
@@ -175,19 +217,23 @@ Engagement information represents the terms and externally granted practice priv
 
 **Boundary:** Records externally granted service terms and privileges; it does not independently grant those privileges.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-PROVIDER-ADMINISTRATION.CT3-BEC-PROVIDER-ENGAGEMENT
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-PROVIDER-ADMINISTRATION.CT3-BEC-PROVIDER-ENGAGEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-healthcare-organisation — Healthcare Organisation
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-healthcare-organisation — Healthcare Organisation Profile Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Authoritative identification and profiling of legal and operational healthcare entities.
+**Reconciliation standing:** current
 
-An identifiable legal or operational healthcare organisation needs verified identifiers, a profile and published standing. This description anchors service and affiliation relationships without managing the organisation itself.
+**Definition:** Administer identifying, descriptive, structural, location, contact, registered/legal and recognised endpoint information needed to represent and interact with a healthcare organisation.
 
-**Intent:** Give service and affiliation references a verified organisational identity anchor.
+Administer identifying, descriptive, structural, location, contact, registered/legal and recognised endpoint information needed to represent and interact with a healthcare organisation.
+
+**Intent:** Administer identifying, descriptive, structural, location, contact, registered/legal and recognised endpoint information needed to represent and interact with a healthcare organisation.
 
 **Boundary:** Maintains verified legal and operational identity information without corporate management authority.
 
@@ -195,9 +241,13 @@ An identifiable legal or operational healthcare organisation needs verified iden
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-organisational-structure — Organisational Structure
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Managing parent-child hierarchies, departments, and corporate relationships.
 
@@ -207,13 +257,17 @@ Departments, divisions and regional networks need qualified structural relations
 
 **Boundary:** Structural relationships do not acquire ownership of every related organisation or service.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-ORGANISATION-ADMINISTRATION.CT3-BEC-ORGANISATIONAL-STRUCTURE
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-ORGANISATION-ADMINISTRATION.CT3-BEC-ORGANISATIONAL-STRUCTURE
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-organisation-contact — Organisation Contact
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Maintaining verified administrative and clinical communication channels.
 
@@ -223,19 +277,23 @@ Verified facility contact channels make an organisation reachable for appropriat
 
 **Boundary:** Contact validity is distinct from clinical recipient eligibility and policy permission.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-ORGANISATION-ADMINISTRATION.CT3-BEC-ORGANISATION-CONTACT
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-ORGANISATION-ADMINISTRATION.CT3-BEC-ORGANISATION-CONTACT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-healthcare-location — Healthcare Location
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-healthcare-location — Healthcare Location Profile Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Identifying and profiling geographic locations, physical campuses, and health facilities.
+**Reconciliation standing:** current
 
-Addresses, geospatial context and facility identity establish which physical place an information or activity concern refers to. Describing a location remains separate from deciding what services can operate there now.
+**Definition:** Administer the identity, address, geospatial description and physical containment relationships of healthcare locations.
 
-**Intent:** Identify the physical place relevant to care information and operational activity.
+Administer the identity, address, geospatial description and physical containment relationships of healthcare locations.
+
+**Intent:** Administer the identity, address, geospatial description and physical containment relationships of healthcare locations.
 
 **Boundary:** Location description does not establish occupancy, cleanliness, service capacity or service readiness.
 
@@ -243,9 +301,13 @@ Addresses, geospatial context and facility identity establish which physical pla
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-location-structure — Location Structure
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Modeling the physical architecture of healthcare campuses.
 
@@ -255,19 +317,23 @@ Campus, building, floor, ward and room relationships explain physical containmen
 
 **Boundary:** Physical containment differs from organisational structure and operational responsibility.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-LOCATION-ADMINISTRATION.CT3-BEC-LOCATION-STRUCTURE
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-LOCATION-ADMINISTRATION.CT3-BEC-LOCATION-STRUCTURE
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-care-place-definition — Care-Place Definition
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-care-place-definition — Care-Place Definition Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Modeling the atomic care delivery places (beds, bays, treatment chairs, surgical tables).
+**Reconciliation standing:** current
 
-A particular bed, bay, treatment chair or procedural place has stable physical characteristics relevant to care. Those descriptive capabilities remain separate from occupancy, cleaning state and suitability for a current patient.
+**Definition:** Administer the stable description, characteristics and physical location of a bed, bay, chair or other care-place.
 
-**Intent:** Describe the stable characteristics that distinguish one care place from another.
+Administer the stable description, characteristics and physical location of a bed, bay, chair or other care-place.
+
+**Intent:** Administer the stable description, characteristics and physical location of a bed, bay, chair or other care-place.
 
 **Boundary:** Describes a place and its capabilities; operational bed state and readiness remain separately managed.
 
@@ -275,25 +341,33 @@ A particular bed, bay, treatment chair or procedural place has stable physical c
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-healthcare-service-definition — Healthcare Service Definition
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-healthcare-service-definition — Healthcare Service Profile Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Specifying clinical and administrative health services offered to the public or clinical referrers.
+**Reconciliation standing:** current
 
-An offered service has an identifiable clinical or administrative purpose, specialty and published intake description. That definition is distinct from the provider/location binding through which the service can be delivered.
+**Definition:** Administer service definitions, provision relationships, defined availability and eligibility information describing offered healthcare services.
 
-**Intent:** Make the purpose and published offering of a healthcare service recognisable independently of its current delivery arrangement.
+Administer service definitions, provision relationships, defined availability and eligibility information describing offered healthcare services.
 
-**Boundary:** Defines what is offered; offering existence does not establish current availability or collective readiness.
+**Intent:** Administer service definitions, provision relationships, defined availability and eligibility information describing offered healthcare services.
+
+**Boundary:** Defined availability is not dynamic operational capacity, collective readiness or authority to accept clinical care.
 
 **Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-HEALTHCARE-SERVICE-DEFINITION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-service-provision-relationship — Service Provision Relationship
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Binding health services to specific organizations, locations, and practitioner roles.
 
@@ -303,13 +377,17 @@ Service provision joins a named offering to the organisations, places and practi
 
 **Boundary:** Owns mapping associations, retaining the owners of each participating entity.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-SERVICE-PROVISION-RELATIONSHIP
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-SERVICE-PROVISION-RELATIONSHIP
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-service-availability-definition — Service Availability Definition
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Modeling regular operating hours, exceptional closures, and emergency availability.
 
@@ -319,13 +397,17 @@ Regular hours, on-call windows and exceptional closures describe when an offerin
 
 **Boundary:** Represents operating windows and exceptions; it does not establish staffing, capacity or readiness.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-SERVICE-AVAILABILITY-DEFINITION
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-SERVICE-AVAILABILITY-DEFINITION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-service-eligibility-definition — Service Eligibility Definition
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Capturing referral criteria, catchment boundaries, and clinical eligibility.
 
@@ -335,19 +417,23 @@ Published catchment, referral and clinical eligibility conditions explain the in
 
 **Boundary:** Represents governed eligibility criteria; it does not make clinical acceptance or triage decisions.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-SERVICE-ELIGIBILITY-DEFINITION
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-SERVICE-ADMINISTRATION.CT3-BEC-SERVICE-ELIGIBILITY-DEFINITION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-health-product-definition — Health Product Definition
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-health-product-definition — Health Materiel Profile Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Classification of pharmaceutical and consumable products.
+**Reconciliation standing:** current
 
-Medication, blood-product, implant and consumable descriptions provide reference context for care information. Product identity and classification are retained without turning this reference responsibility into procurement or prescribing.
+**Definition:** Administer identifying and descriptive information about health materiel referenced in healthcare information and activity.
 
-**Intent:** Provide interpretable product context for health information without acquiring product-management authority.
+Administer identifying and descriptive information about health materiel referenced in healthcare information and activity.
+
+**Intent:** Administer identifying and descriptive information about health materiel referenced in healthcare information and activity.
 
 **Boundary:** Reference representation is distinct from procurement, manufacturing and prescribing.
 
@@ -355,15 +441,19 @@ Medication, blood-product, implant and consumable descriptions provide reference
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-product-formulary-catalogue — Product Formulary & Catalogue
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-product-formulary-catalogue — Health Materiel Catalogue & Formulary Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Management of approved facility medication formularies.
+**Reconciliation standing:** current
 
-An approved facility formulary or product catalogue provides a qualified set of products relevant to local care. Representing its membership and source standing remains distinct from deciding formulary approval and from generic terminology governance.
+**Definition:** Administer health-materiel catalogue and externally approved formulary information, preserving approval and version standing.
 
-**Intent:** Preserve the applicable approved product set and the source of its standing.
+Administer health-materiel catalogue and externally approved formulary information, preserving approval and version standing.
+
+**Intent:** Administer health-materiel catalogue and externally approved formulary information, preserving approval and version standing.
 
 **Boundary:** Represents externally approved formularies; it does not acquire formulary approval or dispensing authority.
 
@@ -371,31 +461,39 @@ An approved facility formulary or product catalogue provides a qualified set of 
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-product-batch-serial-tracking — Product Batch & Serial Tracking
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-product-batch-serial-tracking — Health Materiel Traceability Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Supply chain batch and lot management.
+**Reconciliation standing:** current
 
-Batch, lot and serial references make a product instance or supply-chain association traceable when care information needs it. This reference scope does not run inventory, recall operations or the supply chain.
+**Definition:** Administer batch/lot, serial, supplier, manufacturer, receipt/delivery and relevant movement/provenance information concerning health materiel.
 
-**Intent:** Allow material product references in care information to be traced to their batch or instance context.
+Administer batch/lot, serial, supplier, manufacturer, receipt/delivery and relevant movement/provenance information concerning health materiel.
 
-**Boundary:** Retains product trace context without running stock control or supply-chain operations.
+**Intent:** Administer batch/lot, serial, supplier, manufacturer, receipt/delivery and relevant movement/provenance information concerning health materiel.
+
+**Boundary:** Materiel traceability does not make Harmonia a procurement, stock-control or supply-chain manager; specimen movement remains Clinical Logistics Coordination.
 
 **Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-PRODUCT-ADMINISTRATION.CT3-BEC-PRODUCT-BATCH-SERIAL-TRACKING
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-device-definition — Device Definition
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-device-definition — Clinical Device Profile Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Specifying medical equipment types, models, and regulatory classifications.
+**Reconciliation standing:** current
 
-A device type has a model, regulatory description and stated capabilities used to interpret equipment context. This type-level responsibility differs from identifying the actual physical instance that produced information.
+**Definition:** Administer device type, instance, identifying and descriptive information needed to recognise clinical equipment and its stated capabilities.
 
-**Intent:** Make the stated type and capability of a device understandable before its instance is used as an information source.
+Administer device type, instance, identifying and descriptive information needed to recognise clinical equipment and its stated capabilities.
+
+**Intent:** Administer device type, instance, identifying and descriptive information needed to recognise clinical equipment and its stated capabilities.
 
 **Boundary:** Describes device types and capabilities without taking regulatory approval or clinical-use authority.
 
@@ -403,9 +501,13 @@ A device type has a model, regulatory description and stated capabilities used t
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-device-instance — Device Instance
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Tracking physical device hardware instances and serial numbers.
 
@@ -415,13 +517,17 @@ An identifiable physical device carries UDI and serial context through its use. 
 
 **Boundary:** Identifies physical hardware; serial tracking is distinct from maintenance and live observation content.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-INSTANCE
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-INSTANCE
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-device-association — Device Association
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Associating clinical devices with patients, beds, or rooms.
 
@@ -431,13 +537,17 @@ A device can be associated with different patients and care places at different 
 
 **Boundary:** Represents qualified device-to-subject/place association without owning those subjects or observations.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-ASSOCIATION
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-ASSOCIATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-device-connectivity — Device Connectivity
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** superseded
 
 **Definition:** Registering communication protocols and network endpoints for medical devices.
 
@@ -447,13 +557,17 @@ A device communication binding identifies the protocol and endpoint through whic
 
 **Boundary:** Represents communication bindings; it does not acquire authentication credential issuance or telemetry interpretation.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-CONNECTIVITY
+**Last allocated structural identity — historical:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-CONNECTIVITY
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-access-transaction-enablement — Care Access Transaction Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Coordinate the intake, care-request disposition and appointment information through which a person accesses care.
 
@@ -463,13 +577,17 @@ Coordinate the intake, care-request disposition and appointment information thro
 
 **Boundary:** A referral requests care responsibility; an appointment concerns a booking. Neither establishes care delivery or host booking authority.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-ACCESS-TRANSACTION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-ACCESS-TRANSACTION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-fulfilment-administration-enablement — Care Fulfilment Administration Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Maintain distinguishable care-episode, bounded fulfilment and delivered-activity information across performing systems.
 
@@ -479,13 +597,17 @@ Maintain distinguishable care-episode, bounded fulfilment and delivered-activity
 
 **Boundary:** Encounter progression, order outcome, diagnostic interpretation, medication events and procedure documentation retain different source authorities.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FULFILMENT-ADMINISTRATION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FULFILMENT-ADMINISTRATION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-documentation-communication-enablement — Care Documentation & Communication Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Administer the lifecycle, shared-plan context and directed communication of care documentation.
 
@@ -495,13 +617,17 @@ Administer the lifecycle, shared-plan context and directed communication of care
 
 **Boundary:** This frame does not absorb longitudinal synthesis, collaboration discourse, originating clinical decisions or generic transport.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-DOCUMENTATION-COMMUNICATION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-DOCUMENTATION-COMMUNICATION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-financial-information-enablement — Care Financial Information Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Represent coverage context and convey care-activity evidence to responsible funding and charging systems.
 
@@ -511,13 +637,17 @@ Represent coverage context and convey care-activity evidence to responsible fund
 
 **Boundary:** Adjacent information participation does not provide financial governance, coverage adjudication or a billing platform.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FINANCIAL-INFORMATION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FINANCIAL-INFORMATION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-longitudinal-community-care-integration — Longitudinal & Community Care Integration
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Support continuity, remote participation and preventive follow-up through appropriately assembled and exchanged care context.
 
@@ -527,13 +657,17 @@ Support continuity, remote participation and preventive follow-up through approp
 
 **Boundary:** Longitudinal purpose does not make these care contexts exclusive. Outreach location and remote mode remain distinct from source clinical responsibility.
 
-**Current structural identity:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT.CT2-BEC-LONGITUDINAL-COMMUNITY-CARE-INTEGRATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT.CT2-BEC-LONGITUDINAL-COMMUNITY-CARE-INTEGRATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-facility-episodic-care-integration — Facility & Episodic Care Integration
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Provide the context assemblies and boundary integration needed for facility presentations and bounded care episodes.
 
@@ -543,13 +677,17 @@ Provide the context assemblies and boundary integration needed for facility pres
 
 **Boundary:** Acute, emergency and inpatient perspectives overlap; each capability owns its named integration purpose rather than a population or clinical workflow.
 
-**Current structural identity:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT.CT2-BEC-FACILITY-EPISODIC-CARE-INTEGRATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT.CT2-BEC-FACILITY-EPISODIC-CARE-INTEGRATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-specialist-clinical-context-integration — Specialist Clinical Context Integration
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Integrate specialist assessment, investigation and therapeutic information with longitudinal and episode context.
 
@@ -559,13 +697,17 @@ Integrate specialist assessment, investigation and therapeutic information with 
 
 **Boundary:** A clinical specialty is evidence for integration purpose, not authority to invent a specialist engine, clinical decision or duplicated general capture function.
 
-**Current structural identity:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT.CT2-BEC-SPECIALIST-CLINICAL-CONTEXT-INTEGRATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-CONTEXT-INTEGRATION-ENABLEMENT.CT2-BEC-SPECIALIST-CLINICAL-CONTEXT-INTEGRATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-setting-operations-enablement — Care Setting Operations Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Coordinate the local flow, session state and capacity semantics of a care-delivery setting.
 
@@ -575,13 +717,17 @@ Coordinate the local flow, session state and capacity semantics of a care-delive
 
 **Boundary:** Local capacity is established here; aggregate telemetry, bed state and equipment state cannot substitute for it.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-resource-capacity-coordination — Care Resource & Capacity Coordination
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Relate operational care-place and equipment state to the coordinated view of service demand and capacity.
 
@@ -591,13 +737,17 @@ Relate operational care-place and equipment state to the coordinated view of ser
 
 **Boundary:** Bed/equipment availability is a contribution to capacity, not its definition. Higher-order capacity consumes local capacity without taking its ownership.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-operational-workforce-coordination — Operational Workforce Coordination
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Make workforce availability, coverage and eligible operational work participation usable in coordination.
 
@@ -607,13 +757,17 @@ Make workforce availability, coverage and eligible operational work participatio
 
 **Boundary:** Source rosters remain separately authoritative; operational dispatch does not acquire clinical-work allocation authority.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OPERATIONAL-WORKFORCE-COORDINATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OPERATIONAL-WORKFORCE-COORDINATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-workforce-qualification-development-enablement — Workforce Qualification & Development Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Represent learning, competence, professional-standing checks and separately governed operational access qualifications.
 
@@ -623,13 +777,17 @@ Represent learning, competence, professional-standing checks and separately gove
 
 **Boundary:** Clinical qualifications and physical badges remain distinct CT3 responsibilities. Representation or checking does not grant privilege or become an authentication provider.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WORKFORCE-QUALIFICATION-DEVELOPMENT-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WORKFORCE-QUALIFICATION-DEVELOPMENT-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-care-movement-transition-coordination — Care Movement & Transition Coordination
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Coordinate movement of people/materials and operational departure readiness across care boundaries.
 
@@ -639,13 +797,17 @@ Coordinate movement of people/materials and operational departure readiness acro
 
 **Boundary:** Physical movement, clinical handover, discharge clinical authorisation and care-responsibility transition remain distinct.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-MOVEMENT-TRANSITION-COORDINATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-MOVEMENT-TRANSITION-COORDINATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-clinical-information-stewardship-enablement — Clinical Information Stewardship Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Maintain governed longitudinal synthesis and the associations needed to use its constituent clinical information safely.
 
@@ -655,13 +817,17 @@ Maintain governed longitudinal synthesis and the associations needed to use its 
 
 **Boundary:** The synthesis preserves what Harmonia received or managed without becoming the originator of the clinical facts.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-health-information-connectivity-enablement — Health Information Connectivity Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Make governed health information discoverable and exchangeable under explicit internal and external contracts.
 
@@ -671,13 +837,17 @@ Make governed health information discoverable and exchangeable under explicit in
 
 **Boundary:** Query execution, transaction coordination and boundary protocol mediation are separate responsibilities; none transfers content ownership.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-CONNECTIVITY-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-CONNECTIVITY-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-semantic-reference-knowledge-enablement — Semantic & Reference Knowledge Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Govern the definitions, terminology and reference content that make healthcare information consistently interpretable.
 
@@ -687,13 +857,17 @@ Govern the definitions, terminology and reference content that make healthcare i
 
 **Boundary:** Definition semantics, mutable approved content and runtime policy decisions retain distinct ownership.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-information-protection-accountability-enablement — Information Protection & Accountability Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Apply information-use policy and preserve the accountability context needed for governed health-information activity.
 
@@ -703,29 +877,37 @@ Apply information-use policy and preserve the accountability context needed for 
 
 **Boundary:** Patient directives remain with Client Privacy; runtime authorisation does not become external authentication or clinical authority.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-secondary-health-information-use-enablement — Secondary Health Information Use Enablement
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
-**Type / tier:** capability / CT2
+## HCM-BEC-secondary-health-information-use-enablement — Health Informatics Management
 
-**Definition:** Provide existing health information for authorised research, required population notification and service planning purposes.
+**Type / tier:** capability / CT1
 
-Provide existing health information for authorised research, required population notification and service planning purposes. Its constituent abilities distinguish .
+**Reconciliation standing:** current
 
-**Intent:** Preserve the particular authorised purpose and obligation when clinical information is used beyond individual care delivery.
+**Definition:** Establish and govern semantically meaningful health-information assets suitable for downstream research, population-health reporting and service planning in an adjacent analytical environment.
 
-**Boundary:** Each purpose has different release criteria. This grouping does not originate research approval, public-health decisions or planning authority.
+Establish and govern semantically meaningful health-information assets suitable for downstream research, population-health reporting and service planning in an adjacent analytical environment.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT
+**Intent:** Establish and govern semantically meaningful health-information assets suitable for downstream research, population-health reporting and service planning in an adjacent analytical environment.
+
+**Boundary:** Harmonia is adjacent to a Big Data/analytical environment. It establishes governed assets and reporting inputs; it does not become that analytical platform.
+
+**Current structural identity:** CT1-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
 ## HCM-BEC-collaborative-interaction-enablement — Collaborative Interaction Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Support contextual discussion and human interaction with governed information and activity.
 
@@ -735,13 +917,17 @@ Support contextual discussion and human interaction with governed information an
 
 **Boundary:** Collaboration control, collaboration operations and general presentation remain distinct; a discussion or screen is not a new clinical fact.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-COLLABORATIVE-INTERACTION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-COLLABORATIVE-INTERACTION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-operational-activity-temporal-enablement — Operational Activity & Temporal Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** superseded
 
 **Definition:** Progress governed operational work in identifiable activity and temporal contexts.
 
@@ -751,19 +937,23 @@ Progress governed operational work in identifiable activity and temporal context
 
 **Boundary:** Work Order is human doing, To Do is human review/update/approval and Task is synthetic work. Projection does not own authoritative bookings or rosters.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-assurance-specification-enablement — Assurance Specification Enablement
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-assurance-specification-enablement — Assurance Specification
 
 **Type / tier:** capability / CT2
 
+**Reconciliation standing:** current
+
 **Definition:** Model how satisfaction will be assured and maintain applicable, temporally qualified criteria.
 
-Model how satisfaction will be assured and maintain applicable, temporally qualified criteria. Its constituent abilities distinguish Assurance Design; Assurance Criteria Management.
+Model how satisfaction will be assured and maintain applicable, temporally qualified criteria.
 
-**Intent:** Make the intended basis of assurance explicit before evidence is assessed.
+**Intent:** Model how satisfaction will be assured and maintain applicable, temporally qualified criteria.
 
 **Boundary:** Modelling and criteria stewardship do not approve governing requirements or perform independent conclusion-making.
 
@@ -771,9 +961,13 @@ Model how satisfaction will be assured and maintain applicable, temporally quali
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
 ## HCM-BEC-independent-assurance-evaluation-enablement — Independent Assurance Evaluation Enablement
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Associate trustworthy evidence, assess it and adjudicate independently reportable findings about governed service behaviour.
 
@@ -783,29 +977,37 @@ Associate trustworthy evidence, assess it and adjudicate independently reportabl
 
 **Boundary:** The subject can supply evidence but cannot control its conclusion. Evidence insufficiency remains distinct from execution uncertainty and clinical judgement.
 
-**Current structural identity:** CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-INDEPENDENT-ASSURANCE-EVALUATION-ENABLEMENT
+**Last allocated structural identity — historical:** CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-INDEPENDENT-ASSURANCE-EVALUATION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-associated-clinical-binary-content-enablement — Associated Clinical Binary Content Enablement
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-associated-clinical-binary-content-enablement — Linked Information Curation
 
 **Type / tier:** capability / CT3
 
-**Definition:** Associate, resolve, retrieve and assemble binary content needed to use managed clinical or operational information.
+**Reconciliation standing:** current
 
-Logical information may refer to one or several payloads held internally or by an external custodian. This capability keeps association and custody knowledge explicit so that content can be obtained under the governing information contract.
+**Definition:** Curate associations to information and binary content needed to interpret and use a clinical record, retaining custody and source-authority distinctions.
 
-**Intent:** Obtain the content needed to use a managed information item without assuming where every payload is physically held.
+Curate associations to information and binary content needed to interpret and use a clinical record, retaining custody and source-authority distinctions.
+
+**Intent:** Curate associations to information and binary content needed to interpret and use a clinical record, retaining custody and source-authority distinctions.
 
 **Boundary:** Association is not physical custody. Persistence authority, source clinical meaning and external repository authority remain separate.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
 ## HCM-BEC-information-authority-representation — Information Authority Representation
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Represent the source, credibility and qualified authority standing of competing health-information assertions.
 
@@ -815,29 +1017,37 @@ A persisted assertion may be authoritative, informational or anecdotal. This abi
 
 **Boundary:** Classification does not originate clinical facts or universally adjudicate conflicts. Policy determines how qualified assertions are used.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-INFORMATION-AUTHORITY-REPRESENTATION
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-INFORMATION-AUTHORITY-REPRESENTATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-governed-reference-dataset-administration — Governed Reference Dataset Administration
 
 **Type / tier:** capability / CT3
 
-**Definition:** Manage the approved runtime content and revision standing of healthcare reference datasets.
+**Reconciliation standing:** current
 
-Value-set membership, mapping content and governed nomenclature may change independently of the structural definition that gives them meaning. Updates need identifiable review and effective standing without redefining model libraries as mutable data.
+**Definition:** Administer approved runtime reference-dataset content and revisions separately from the reusable models defining its meaning.
 
-**Intent:** Make approved reference-content change usable during operation without changing the meaning of its structural definition.
+Administer approved runtime reference-dataset content and revisions separately from the reusable models defining its meaning.
+
+**Intent:** Administer approved runtime reference-dataset content and revisions separately from the reusable models defining its meaning.
 
 **Boundary:** Does not own external ontology authority, execute authorisation policy or establish durable truth independently of the normal persistence boundary.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-KNOWLEDGE-SERVICES.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
 ## HCM-BEC-significant-activity-audit-capture — Significant Activity Audit Capture
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Capture required security- and information-significant activity as governed, attributable audit evidence.
 
@@ -847,77 +1057,97 @@ Mandatory evidence capture has its own policy-governed platform authority and mu
 
 **Boundary:** The specific intrinsic authority for mandatory audit capture is not generalised to other activities. Capture is not an assurance finding and cannot expose unmasked PHI in diagnostic logs.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-information-lineage-stewardship — Information Lineage Stewardship
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
+## HCM-BEC-information-lineage-stewardship — Data Provenance Capture
 
 **Type / tier:** capability / CT3
 
-**Definition:** Maintain source attribution and meaningful transformation lineage for health information managed across care boundaries.
+**Reconciliation standing:** current
 
-Recipients need to know which assertions were received, transformed or superseded and why. This ability preserves those meaningful relationships without making every retry or active-state reconstruction permanent provenance.
+**Definition:** Capture meaningful source attribution and transformation lineage for governed information content without transferring originating authority.
 
-**Intent:** Allow a reader to explain the meaningful source and transformation history of a managed assertion.
+Capture meaningful source attribution and transformation lineage for governed information content without transferring originating authority.
+
+**Intent:** Capture meaningful source attribution and transformation lineage for governed information content without transferring originating authority.
 
 **Boundary:** Lineage does not grant originating authority, decide clinical correctness or replace activity audit and independent assurance.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-INFORMATION-LINEAGE-STEWARDSHIP
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-LINEAGE-STEWARDSHIP
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-authorised-research-information-provision — Authorised Research Information Provision
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
-**Type / tier:** capability / CT3
+## HCM-BEC-authorised-research-information-provision — Research Information Curation
 
-**Definition:** Assemble and release existing health information for an explicitly authorised research purpose under applicable use constraints.
+**Type / tier:** capability / CT2
 
-Research support must retain the purpose, applicable approvals and release qualification of supplied information. It reuses governed retrieval and privacy controls rather than claiming a clinical-trial or research-governance platform.
+**Reconciliation standing:** current
 
-**Intent:** Supply the permitted existing information for a particular authorised research use.
+**Definition:** Establish and curate governed data assets suitable for explicitly authorised research use, retaining source attribution and applicable release constraints.
+
+Establish and curate governed data assets suitable for explicitly authorised research use, retaining source attribution and applicable release constraints.
+
+**Intent:** Establish and curate governed data assets suitable for explicitly authorised research use, retaining source attribution and applicable release constraints.
 
 **Boundary:** Does not grant ethics approval, recruit trial participants, manage trials or become the authority for derived research conclusions.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION
+**Current structural identity:** CT1-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT2-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-population-health-notification-enablement — Population Health Notification Enablement
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
-**Type / tier:** capability / CT3
+## HCM-BEC-population-health-notification-enablement — Population Health Information Reporting
 
-**Definition:** Prepare, convey and track required population-health notifications from applicable governed source information.
+**Type / tier:** capability / CT2
 
-A reportable event and the obligation to notify are different from sending a message. This capability preserves the established obligation and observes the notification outcome under its contract without deciding public-health response.
+**Reconciliation standing:** current
 
-**Intent:** Keep the applicable notification duty and the observed communication disposition traceable to each other.
+**Definition:** Establish and provide governed information assets and reporting inputs for population-health purposes, including applicable notification obligations.
+
+Establish and provide governed information assets and reporting inputs for population-health purposes, including applicable notification obligations.
+
+**Intent:** Establish and provide governed information assets and reporting inputs for population-health purposes, including applicable notification obligations.
 
 **Boundary:** Does not determine population-health findings, create statutory obligations or equate transport delivery with discharge of notification duty.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-POPULATION-HEALTH-NOTIFICATION-ENABLEMENT
+**Current structural identity:** CT1-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT2-BEC-POPULATION-HEALTH-NOTIFICATION-ENABLEMENT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
-## HCM-BEC-service-planning-information-provision — Service Planning Information Provision
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
-**Type / tier:** capability / CT3
+## HCM-BEC-service-planning-information-provision — Service Planning Data Management
 
-**Definition:** Supply qualified demand, utilisation and capacity evidence to responsible health-service planning activities.
+**Type / tier:** capability / CT2
 
-Planners need comparable time- and service-qualified observations from multiple operating settings. This ability prepares those projections while leaving the interpretation of required future capacity and distribution with the planning authority.
+**Reconciliation standing:** current
 
-**Intent:** Give planners qualified observed evidence without predetermining the planning judgement.
+**Definition:** Establish and maintain governed information assets suitable for health-service planning, modelling and analysis.
+
+Establish and maintain governed information assets suitable for health-service planning, modelling and analysis.
+
+**Intent:** Establish and maintain governed information assets suitable for health-service planning, modelling and analysis.
 
 **Boundary:** Observed utilisation, operational capacity and planned capacity are distinct; information provision does not commission services or allocate resources.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-SERVICE-PLANNING-INFORMATION-PROVISION
+**Current structural identity:** CT1-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT2-BEC-SERVICE-PLANNING-INFORMATION-PROVISION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
 
 ## HCM-BEC-governance-requirement-publication-support — Governance Requirement Publication Support
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Represent and publish versioned governing requirements for use by authorised operational and assurance consumers.
 
@@ -927,13 +1157,17 @@ Consumers need an identifiable statement of which rule applies and who establish
 
 **Boundary:** Governance approval remains externally mandated; operational policy, assurance criteria and requirement authority are not interchangeable.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-GOVERNANCE-REQUIREMENT-PUBLICATION-SUPPORT
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-GOVERNANCE-REQUIREMENT-PUBLICATION-SUPPORT
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-entity-specific-operational-coordination — Entity-Specific Operational Coordination
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Coordinate governed operational progression relative to one represented entity, including interested behaviour participation and controlled recovery.
 
@@ -943,13 +1177,17 @@ Activity concerning the same patient, practitioner or bed needs a coherent entit
 
 **Boundary:** Entity coordination does not own all entity information, determine clinical work or become the source of clinical decisions. No Twin component allocation follows from this proposal.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-governed-operational-activity-design — Governed Operational Activity Design
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Define the information context, expected outcomes, continuation conditions and housekeeping of governed operational activity.
 
@@ -959,13 +1197,17 @@ An activity needs a fulfilment definition even when only one bounded execution u
 
 **Boundary:** An activity definition is neither an orchestrator nor a choreographer. It does not choose clinical care or dynamically invent execution logic.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BEC-service-offering-readiness-coordination — Service Offering Readiness Coordination
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Assemble the dependency evidence needed to determine and communicate whether a defined service offering is operationally ready in a particular context.
 
@@ -975,13 +1217,17 @@ Collective readiness depends on suitable workforce, spaces, equipment, materials
 
 **Boundary:** Contributing capabilities retain source readiness and resource management. Clinical go/no-go decisions and service governance are not granted by this information-based coordination.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
+
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
 
 ## HCM-BC-clinical-finding-interpretation — Clinical Finding Interpretation
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Interpret observed clinical findings and their significance for the individual care concern.
 
@@ -995,9 +1241,13 @@ Interpret observed clinical findings and their significance for the individual c
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-BC-diagnosis-problem-determination — Diagnosis & Problem Determination
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Establish and qualify the clinical problems or diagnoses applicable to an individual.
 
@@ -1011,9 +1261,13 @@ Establish and qualify the clinical problems or diagnoses applicable to an indivi
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-BC-health-risk-prognostic-determination — Health Risk & Prognostic Determination
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Establish clinically meaningful risk and expected-course judgements for an individual.
 
@@ -1027,9 +1281,13 @@ Establish clinically meaningful risk and expected-course judgements for an indiv
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-BC-care-goal-definition — Care Goal Definition
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Establish the intended outcomes and priorities against which an individual care response is planned.
 
@@ -1043,9 +1301,13 @@ Establish the intended outcomes and priorities against which an individual care 
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-BC-care-response-planning — Care Response Planning
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Determine the intended clinical response and its sequencing in relation to agreed care goals.
 
@@ -1059,9 +1321,13 @@ Determine the intended clinical response and its sequencing in relation to agree
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-BC-medication-compounding-preparation — Medication Compounding & Preparation
 
 **Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Prepare or compound a clinically required medication formulation under the applicable professional and product-governance mandate.
 
@@ -1075,9 +1341,13 @@ Prepare or compound a clinically required medication formulation under the appli
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-BC-service-delivery-preparedness-management — Service Delivery Preparedness Management
 
 **Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
 
 **Definition:** Establish whether service offerings can be delivered in their intended operating contexts through the combined standing of their dependencies.
 
@@ -1091,9 +1361,13 @@ Preparedness asks whether the service as a whole can operate, distinct from sche
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-governed-information-operations — Governed Information Operations
 
 **Type / tier:** enterprise_capability / CT1
+
+**Reconciliation standing:** current
 
 **Definition:** Maintain identifiable, meaningful, context-qualified and retrievable information through valid state progression.
 
@@ -1107,9 +1381,13 @@ Entity integrity, context, lifecycle, information maintenance, discovery and sem
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-coordinated-activity-interaction — Coordinated Activity & Interaction
 
 **Type / tier:** enterprise_capability / CT1
+
+**Reconciliation standing:** current
 
 **Definition:** Enable governed interaction, event participation, boundary exchange and accountable activity progression.
 
@@ -1123,9 +1401,13 @@ Requests, events, work and human interaction are related ways to cause or observ
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-trust-accountability-assurance — Trust, Accountability & Assurance
 
 **Type / tier:** enterprise_capability / CT1
+
+**Reconciliation standing:** current
 
 **Definition:** Make governed activity permissible, attributable, operationally dependable and independently assessable.
 
@@ -1139,9 +1421,13 @@ Policy, evidence, resilience and independent assurance contribute to confidence 
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-active-information-availability — Active Information Availability
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Maintain responsive, reconstructable active information and coordinate its safe use.
 
@@ -1155,9 +1441,13 @@ Active representation, observation and convergence support availability while pr
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-authoritative-durable-state-establishment — Authoritative Durable State Establishment
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Atomically establish durable managed state and its authoritative version progression.
 
@@ -1171,9 +1461,13 @@ Durable acceptance gives managed information an explicit committed state from wh
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-binary-content-association-resolution — Binary Content Association & Resolution
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Maintain content associations and custody knowledge sufficient for governed payload resolution, retrieval and assembly.
 
@@ -1187,9 +1481,13 @@ Document attachments, diagnostic media and operational artefacts share a need to
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-operation-policy-resolution — Operation Policy Resolution
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Resolve effective, temporally applicable permission criteria for an established identity and governed operation.
 
@@ -1203,9 +1501,13 @@ Permission depends on controlled criteria, role assignments, action and informat
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-operation-bound-policy-enforcement — Operation-Bound Policy Enforcement
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Enforce resolved policy constraints at the boundary where a governed action is attempted.
 
@@ -1219,9 +1521,13 @@ Distributed participants apply the applicable effective authorisation and fail c
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-information-attribution-lineage — Information Attribution & Lineage
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Preserve source attribution and significant transformation relationships for managed information.
 
@@ -1235,9 +1541,13 @@ Lineage explains how an assertion reached its present form without turning every
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-governed-activity-audit-evidence — Governed Activity Audit Evidence
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Capture required significant activity and decision evidence under its applicable governed capture authority.
 
@@ -1251,9 +1561,13 @@ Denied actions and successful mutations may both require trustworthy evidence; t
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-operational-fulfilment-definition — Operational Fulfilment Definition
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Define the context requirements, expected outcomes and housekeeping of an operational undertaking.
 
@@ -1267,9 +1581,13 @@ The semantic execution envelope applies to one-step and multi-step activity and 
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-governed-activity-execution-control — Governed Activity Execution Control
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Instantiate, dispatch, supervise and progress authorised operational undertakings with explicit outcome standing.
 
@@ -1283,9 +1601,13 @@ Reusable execution control respects work-unit archetype, participation and uncer
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-entity-relative-operational-progression — Entity-Relative Operational Progression
 
 **Type / tier:** enterprise_capability / CT3
+
+**Reconciliation standing:** current
 
 **Definition:** Coordinate serial, entity-relative operational inputs and their interested behaviours.
 
@@ -1299,9 +1621,13 @@ Patient, practitioner and bed concerns recur across different business contexts;
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-EC-information-authority-qualification — Information Authority Qualification
 
 **Type / tier:** enterprise_capability / CT2
+
+**Reconciliation standing:** current
 
 **Definition:** Represent and qualify the source-authority and credibility standing of information independently of transport, persistence and concurrency.
 
@@ -1315,9 +1641,13 @@ Identity correlation, clinical-history synthesis, reference-content use and assu
 
 **Provenance:** Inferred from bounded responsibilities and their semantic decomposition
 
+**Reviewed reconciliation:** Inferred from bounded responsibilities and their semantic decomposition
+
 ## HCM-FT-identity-source-correction-lineage — Identity Source & Correction Lineage
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Retain source-attributed identity assertions and externally decided correction history.
 
@@ -1331,9 +1661,13 @@ Identifier correlations can change when an upstream authority corrects a relatio
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
 ## HCM-FT-provider-directory-discovery-resolution — Provider Directory Discovery & Resolution
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Expose qualified practitioner discovery using identifiers, profile criteria and effective standing.
 
@@ -1347,9 +1681,13 @@ Routing and care participation need to find a described provider matching stated
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
 ## HCM-FT-device-association-lineage — Device Association Lineage
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Preserve the attributed history and effective basis of device-to-subject/place associations.
 
@@ -1359,13 +1697,17 @@ A telemetry record needs to be interpreted against the association applicable wh
 
 **Boundary:** Association history does not interpret physiological observations or prove clinical correctness.
 
-**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-ASSOCIATION.FEAT-STEP2-DEVICE-ASSOCIATION-LINEAGE
+**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-UTILISATION-ADMINISTRATION.FEAT-STEP2-DEVICE-ASSOCIATION-LINEAGE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-referral-destination-coordination — Referral Destination Coordination
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Coordinate qualified referral destination resolution and convey the request under its applicable disposition contract.
 
@@ -1375,13 +1717,17 @@ Referral intake and status capture leave a distinct routing responsibility: find
 
 **Boundary:** Does not make clinical triage decisions or infer Transfer of Care from acceptance.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-ACCESS-TRANSACTION-ENABLEMENT.CT3-BEC-REFERRAL-ADMINISTRATION.FEAT-STEP2-REFERRAL-DESTINATION-COORDINATION
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-REFERRAL-ADMINISTRATION.CT3-BEC-REFERRAL-INTAKE-PROGRESSION.FEAT-STEP2-REFERRAL-DESTINATION-COORDINATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-encounter-history-retrieval — Encounter History Retrieval
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Expose qualified episode, movement and encounter-history context.
 
@@ -1391,13 +1737,17 @@ Consumers need to interpret prior care-place and episode relationships, not just
 
 **Boundary:** A historical view does not retrospectively alter clinical events or acquire longitudinal-record ownership.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FULFILMENT-ADMINISTRATION-ENABLEMENT.CT3-BEC-EPISODE-ENCOUNTER-ADMINISTRATION.FEAT-STEP2-ENCOUNTER-HISTORY-RETRIEVAL
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-EPISODE-ENCOUNTER-ADMINISTRATION.CT3-BEC-ENCOUNTER-LIFECYCLE-MANAGEMENT.FEAT-STEP2-ENCOUNTER-HISTORY-RETRIEVAL
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-order-outcome-association — Order Outcome Association
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Associate an externally established outcome with the applicable bounded order and its progression.
 
@@ -1407,13 +1757,17 @@ Execution completion and returned outcome are different checkpoints. This Featur
 
 **Boundary:** Does not interpret diagnostic findings or declare fulfilment from transport delivery alone.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FULFILMENT-ADMINISTRATION-ENABLEMENT.CT3-BEC-ORDER-ADMINISTRATION.FEAT-STEP2-ORDER-OUTCOME-ASSOCIATION
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-ORDER-ADMINISTRATION.CT3-BEC-CLOSED-LOOP-ORDER-PROGRESSION.FEAT-STEP2-ORDER-OUTCOME-ASSOCIATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-diagnostic-preliminary-corrected-report-handling — Diagnostic Preliminary & Corrected Report Handling
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Receive, qualify and distribute preliminary, corrected and addendum diagnostic information with its relationship to prior reports.
 
@@ -1423,13 +1777,17 @@ The finalised-report Feature remains unchanged. The broader documented diagnosti
 
 **Boundary:** Does not originate diagnostic interpretation or silently overwrite a previously received report.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-FULFILMENT-ADMINISTRATION-ENABLEMENT.CT3-BEC-DIAGNOSTIC-ADMINISTRATION.FEAT-STEP2-DIAGNOSTIC-PRELIMINARY-CORRECTED-REPORT-HANDLING
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-DIAGNOSTIC-ADMINISTRATION.CT3-BEC-DIAGNOSTIC-WORKFLOW-MANAGEMENT.FEAT-STEP2-DIAGNOSTIC-PRELIMINARY-CORRECTED-REPORT-HANDLING
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-care-goal-plan-progression-representation — Care Goal & Plan Progression Representation
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent externally agreed care goals, participants and plan changes with their effective standing.
 
@@ -1439,13 +1797,17 @@ Plan ingestion/distribution is complemented by the ability to distinguish the ap
 
 **Boundary:** Representing a goal does not choose treatment, determine clinical completion or grant plan approval authority.
 
-**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-DOCUMENTATION-COMMUNICATION-ENABLEMENT.CT3-BEC-CARE-PLAN-ADMINISTRATION.FEAT-STEP2-CARE-GOAL-PLAN-PROGRESSION-REPRESENTATION
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-PLAN-ADMINISTRATION.CT3-BEC-CARE-PLAN-LIFECYCLE-COORDINATION.FEAT-STEP2-CARE-GOAL-PLAN-PROGRESSION-REPRESENTATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-clinical-information-historical-reconstruction — Clinical Information Historical Reconstruction
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Reconstruct what information Harmonia received, knew or managed at a relevant historical basis.
 
@@ -1455,13 +1817,17 @@ Current state and historical operational truth answer different questions. Recon
 
 **Boundary:** Does not infer that historical information was clinically true or that a present source state applied in the past.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-PATIENT-CLINICAL-RECORD.FEAT-STEP2-CLINICAL-INFORMATION-HISTORICAL-RECONSTRUCTION
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-LONGITUDINAL-CLINICAL-RECORD-ADMINISTRATION.FEAT-STEP2-CLINICAL-INFORMATION-HISTORICAL-RECONSTRUCTION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-binary-content-resolution-assembly — Binary Content Resolution & Assembly
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Resolve governed payload associations and retrieve or assemble the content required by a requesting information context.
 
@@ -1471,13 +1837,17 @@ A logical clinical item may reference externally held or multipart payloads. The
 
 **Boundary:** No assumption of local copying, shared storage, universal content retention or originating clinical authority.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.FEAT-STEP2-BINARY-CONTENT-RESOLUTION-ASSEMBLY
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.FEAT-STEP2-BINARY-CONTENT-RESOLUTION-ASSEMBLY
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-information-authority-source-standing-representation — Information Authority & Source Standing Representation
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Attach and preserve qualified source-authority and credibility standing for managed assertions.
 
@@ -1487,13 +1857,17 @@ The user of an assertion needs to distinguish authoritative, informational and a
 
 **Boundary:** Authority classification is not a clinical truth judgement or a universal rule for choosing competing assertions.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-INFORMATION-AUTHORITY-REPRESENTATION.FEAT-STEP2-INFORMATION-AUTHORITY-SOURCE-STANDING-REPRESENTATION
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-INFORMATION-AUTHORITY-REPRESENTATION.FEAT-STEP2-INFORMATION-AUTHORITY-SOURCE-STANDING-REPRESENTATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-governed-dataset-content-revision — Governed Dataset Content Revision
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Review, accept and expose authorised changes to mutable reference content with effective revision standing.
 
@@ -1503,13 +1877,17 @@ A model definition can remain stable while approved terminology membership or ma
 
 **Boundary:** Does not invent an approval authority or bypass normal durable establishment.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION.FEAT-STEP2-GOVERNED-DATASET-CONTENT-REVISION
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-KNOWLEDGE-SERVICES.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION.FEAT-STEP2-GOVERNED-DATASET-CONTENT-REVISION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-mandatory-significant-activity-audit-capture — Mandatory Significant Activity Audit Capture
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Capture required significant activity evidence using the specifically governed authoritative audit-capture boundary.
 
@@ -1519,13 +1897,17 @@ The actor whose action is recorded need not be entitled to persist the audit. Re
 
 **Boundary:** Specific audit authority is not borrowed from the audited identity or generalised to other operations.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE.FEAT-STEP2-MANDATORY-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE.FEAT-STEP2-MANDATORY-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-information-transformation-lineage — Information Transformation Lineage
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Record meaningful source-to-derived information relationships and transformation attribution.
 
@@ -1535,13 +1917,17 @@ A consumer should be able to explain which source assertions contributed to a ma
 
 **Boundary:** Routine cache reconstruction, retries and diagnostics do not automatically become permanent lineage.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-INFORMATION-LINEAGE-STEWARDSHIP.FEAT-STEP2-INFORMATION-TRANSFORMATION-LINEAGE
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-LINEAGE-STEWARDSHIP.FEAT-STEP2-INFORMATION-TRANSFORMATION-LINEAGE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-trusted-identity-context-intake — Trusted Identity Context Intake
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Accept and qualify externally authenticated identity context for Harmonia-governed operations.
 
@@ -1551,13 +1937,17 @@ The boundary between WHO and WHAT remains explicit: an external identity asserti
 
 **Boundary:** Harmonia does not become an authentication or credential-issuance provider.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-HEALTH-INFORMATION-CONTROL.FEAT-STEP2-TRUSTED-IDENTITY-CONTEXT-INTAKE
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-HEALTH-INFORMATION-CONTROL.FEAT-STEP2-TRUSTED-IDENTITY-CONTEXT-INTAKE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-governed-policy-assignment-revocation — Governed Policy Assignment & Revocation
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Manage approved permission criteria and identity/role assignments, including temporal applicability and revocation.
 
@@ -1567,13 +1957,17 @@ An assignment becoming inapplicable by expiry differs from an explicit revocatio
 
 **Boundary:** Management does not grant unconstrained administrative authority or derive permission from resource tags.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-HEALTH-INFORMATION-CONTROL.FEAT-STEP2-GOVERNED-POLICY-ASSIGNMENT-REVOCATION
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-HEALTH-INFORMATION-CONTROL.FEAT-STEP2-GOVERNED-POLICY-ASSIGNMENT-REVOCATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-operation-bound-authorisation-enforcement — Operation-Bound Authorisation Enforcement
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Apply effective policy at the governed action boundary and reject actions lacking sufficient authority.
 
@@ -1583,13 +1977,17 @@ Consistent enforcement is required across mutation, access, execution and admini
 
 **Boundary:** Consumes trusted identity and criteria; it does not authenticate or establish clinical privilege from directory roles.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-HEALTH-INFORMATION-CONTROL.FEAT-STEP2-OPERATION-BOUND-AUTHORISATION-ENFORCEMENT
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-HEALTH-INFORMATION-CONTROL.FEAT-STEP2-OPERATION-BOUND-AUTHORISATION-ENFORCEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-information-definition-schema-governance — Information Definition & Schema Governance
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Govern structural definitions, data dictionaries and constraint meaning.
 
@@ -1599,13 +1997,17 @@ Existing definition-governance behaviour needs a distinct Feature frame from gen
 
 **Boundary:** Governed definitions do not own runtime instances or their clinical facts.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-INFORMATION-DESIGN-GOVERNANCE.FEAT-STEP2-INFORMATION-DEFINITION-SCHEMA-GOVERNANCE
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-CANONICAL-REUSABLE-MODEL-DESIGN.FEAT-STEP2-INFORMATION-DEFINITION-SCHEMA-GOVERNANCE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-terminology-binding-governance — Terminology Binding Governance
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Govern how information definitions are bound to applicable terminology and value sets.
 
@@ -1615,13 +2017,17 @@ Binding a data element to a vocabulary is distinct from resolving a patient code
 
 **Boundary:** Definition of a binding does not take external ontology authority or execute policy.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-INFORMATION-DESIGN-GOVERNANCE.FEAT-STEP2-TERMINOLOGY-BINDING-GOVERNANCE
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-CANONICAL-REUSABLE-MODEL-DESIGN.FEAT-STEP2-TERMINOLOGY-BINDING-GOVERNANCE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-exchange-profile-governance — Exchange Profile Governance
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Govern the semantic and conformance constraints of an interoperability profile.
 
@@ -1631,13 +2037,17 @@ An external contract must state which representations and extensions are permitt
 
 **Boundary:** Profile governance does not transmit messages or publish internal operational metadata.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-INFORMATION-DESIGN-GOVERNANCE.FEAT-STEP2-EXCHANGE-PROFILE-GOVERNANCE
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-CANONICAL-REUSABLE-MODEL-DESIGN.FEAT-STEP2-EXCHANGE-PROFILE-GOVERNANCE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-entity-relative-activity-coordination — Entity-Relative Activity Coordination
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Sequence applicable behaviours for an identifiable entity input while preserving its operational reference frame.
 
@@ -1647,13 +2057,17 @@ Interest matching can select multiple behaviours while the entity progresses one
 
 **Boundary:** Fan-out is not concurrent execution; clinical decisions and originating information remain with their owners.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.FEAT-STEP2-ENTITY-RELATIVE-ACTIVITY-COORDINATION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.FEAT-STEP2-ENTITY-RELATIVE-ACTIVITY-COORDINATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-entity-behaviour-failure-recovery-governance — Entity Behaviour Failure & Recovery Governance
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Apply explicit behaviour-failure dispositions and controlled, authorised resumption for entity-relative processing.
 
@@ -1663,13 +2077,17 @@ Failure may stop a behaviour, an input or the entity progression and may leave e
 
 **Boundary:** Recovery cannot silently declare no effects, bypass governance or resume a halted entity automatically.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.FEAT-STEP2-ENTITY-BEHAVIOUR-FAILURE-RECOVERY-GOVERNANCE
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.FEAT-STEP2-ENTITY-BEHAVIOUR-FAILURE-RECOVERY-GOVERNANCE
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-operational-activity-context-definition — Operational Activity Context Definition
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Define the anticipated information context and expected fulfilment basis of an operational undertaking.
 
@@ -1679,13 +2097,17 @@ Even a one-unit activity needs a declared information and outcome frame. The def
 
 **Boundary:** No dynamically invented resource set or orchestration engine is implied.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN.FEAT-STEP2-OPERATIONAL-ACTIVITY-CONTEXT-DEFINITION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN.FEAT-STEP2-OPERATIONAL-ACTIVITY-CONTEXT-DEFINITION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-activity-outcome-continuation-rules — Activity Outcome & Continuation Rules
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Define how output roles, expected outcomes and continuation conditions are interpreted for an undertaking.
 
@@ -1695,13 +2117,17 @@ An output may contribute to completion, subsequent activity or retained evidence
 
 **Boundary:** Completion policy is not business outcome truth; uncertain effects remain explicit.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN.FEAT-STEP2-ACTIVITY-OUTCOME-CONTINUATION-RULES
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN.FEAT-STEP2-ACTIVITY-OUTCOME-CONTINUATION-RULES
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-uncertain-activity-outcome-reconciliation — Uncertain Activity Outcome Reconciliation
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Reconcile indeterminate activity effects through authoritative observation before establishing a safe next disposition.
 
@@ -1711,13 +2137,17 @@ A timeout or absent response leaves a materially significant outcome unknown. Re
 
 **Boundary:** Execution uncertainty differs from insufficient assurance evidence; a retry does not prove the earlier attempt had no effect.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FEAT-STEP2-UNCERTAIN-ACTIVITY-OUTCOME-RECONCILIATION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FEAT-STEP2-UNCERTAIN-ACTIVITY-OUTCOME-RECONCILIATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-controlled-administrative-recovery — Controlled Administrative Recovery
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Perform authorised recovery as identifiable governed activity through normal execution and evidence boundaries.
 
@@ -1727,13 +2157,17 @@ Operators may need to resume, reconcile or repair an operational concern. That i
 
 **Boundary:** Administrative interaction grants no raw cache/database or subsystem-internal bypass.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FEAT-STEP2-CONTROLLED-ADMINISTRATIVE-RECOVERY
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FEAT-STEP2-CONTROLLED-ADMINISTRATIVE-RECOVERY
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-service-readiness-dependency-assessment — Service Readiness Dependency Assessment
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Associate time- and context-qualified dependency evidence to establish a bounded readiness view for an offering.
 
@@ -1743,13 +2177,17 @@ An offering may be in operating hours but not deliverable because staffing, equi
 
 **Boundary:** Readiness evidence does not originate clinical clearance or transfer resource management.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION.FEAT-STEP2-SERVICE-READINESS-DEPENDENCY-ASSESSMENT
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION.FEAT-STEP2-SERVICE-READINESS-DEPENDENCY-ASSESSMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-authorised-research-release-assembly — Authorised Research Release Assembly
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Assemble and qualify the existing information allowed by a particular authorised research purpose.
 
@@ -1759,13 +2197,17 @@ The release carries purpose and applicable privacy/consent/use constraints; the 
 
 **Boundary:** No ethics approval, de-identification guarantee or clinical-trial management is inferred.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION.FEAT-STEP2-AUTHORISED-RESEARCH-RELEASE-ASSEMBLY
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-PRODUCT-ADMINISTRATION.FEAT-STEP2-AUTHORISED-RESEARCH-RELEASE-ASSEMBLY
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-population-notification-obligation-tracking — Population Notification Obligation Tracking
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Track the relation between an applicable notification obligation, the supplied source evidence and observed notification disposition.
 
@@ -1775,13 +2217,17 @@ Sending a required notification and discharging the governing obligation are dif
 
 **Boundary:** Does not define notifiability, author statutory rules or own public-health response.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-POPULATION-HEALTH-NOTIFICATION-ENABLEMENT.FEAT-STEP2-POPULATION-NOTIFICATION-OBLIGATION-TRACKING
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-PRODUCT-ADMINISTRATION.FEAT-STEP2-POPULATION-NOTIFICATION-OBLIGATION-TRACKING
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-demand-capacity-planning-projection — Demand & Capacity Planning Projection
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Project qualified observed demand, capacity and utilisation for authorised planning consumers.
 
@@ -1791,13 +2237,17 @@ Comparisons need service, temporal and context qualifiers so that planned future
 
 **Boundary:** Projection does not establish a planning conclusion or allocate services and staff.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-SERVICE-PLANNING-INFORMATION-PROVISION.FEAT-STEP2-DEMAND-CAPACITY-PLANNING-PROJECTION
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-PRODUCT-ADMINISTRATION.FEAT-STEP2-DEMAND-CAPACITY-PLANNING-PROJECTION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-governance-requirement-version-publication — Governance Requirement Version Publication
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Publish attributable versions and applicability of externally approved governing requirements.
 
@@ -1807,13 +2257,17 @@ Operational and assurance consumers need to identify the governing basis they us
 
 **Boundary:** Publication does not confer requirement approval, authorisation policy or assurance-criteria authority.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-GOVERNANCE-REQUIREMENT-PUBLICATION-SUPPORT.FEAT-STEP2-GOVERNANCE-REQUIREMENT-VERSION-PUBLICATION
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-GOVERNANCE-REQUIREMENT-PUBLICATION-SUPPORT.FEAT-STEP2-GOVERNANCE-REQUIREMENT-VERSION-PUBLICATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-collaboration-interaction-capture-qualification — Collaboration Interaction Capture Qualification
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Qualify when a defined collaboration interaction creates a new governed information or activity consequence.
 
@@ -1823,13 +2277,17 @@ A message may convey existing information or an explicit interaction may derive 
 
 **Boundary:** Conversation presence, display or read receipt does not itself make a clinical decision, approval or final record.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-COLLABORATIVE-INTERACTION-ENABLEMENT.CT3-BEC-CLINICAL-COLLABORATION.FEAT-STEP2-COLLABORATION-INTERACTION-CAPTURE-QUALIFICATION
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-COLLABORATION.CT3-BEC-CLINICAL-CONTEXT-COLLABORATION.FEAT-STEP2-COLLABORATION-INTERACTION-CAPTURE-QUALIFICATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-assurance-disposition-design-modelling — Assurance Disposition & Design Modelling
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Model how satisfaction of an applicable governed concern will be independently established.
 
@@ -1843,9 +2301,13 @@ This proposal provides a Feature frame for the established design responsibility
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
 ## HCM-FT-temporal-assurance-criteria-stewardship — Temporal Assurance Criteria Stewardship
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Manage identifiable assurance criteria and their relevant temporal and version applicability.
 
@@ -1859,9 +2321,13 @@ Evidence must be evaluated against the criteria applicable to its purpose and ti
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
 ## HCM-FT-independent-evidence-assessment-adjudication — Independent Evidence Assessment & Adjudication
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Independently establish assurance context, assess evidence and adjudicate findings under applicable criteria.
 
@@ -1871,13 +2337,17 @@ The Feature unifies the review frame while retaining the three distinct canonica
 
 **Boundary:** No new assurance Function or clinical-adequacy mandate is introduced; insufficient evidence establishes neither satisfaction nor non-satisfaction.
 
-**Current structural identity:** CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-INDEPENDENT-ASSURANCE-EVALUATION-ENABLEMENT.CT3-BEC-GOVERNED-ASSURANCE.FEAT-STEP2-INDEPENDENT-EVIDENCE-ASSESSMENT-ADJUDICATION
+**Last allocated structural identity — historical:** CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-INDEPENDENT-ASSURANCE-EVALUATION-ENABLEMENT.CT3-BEC-GOVERNED-ASSURANCE.FEAT-STEP2-INDEPENDENT-EVIDENCE-ASSESSMENT-ADJUDICATION
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-clinic-session-capacity-management — Clinic Session Capacity Management
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent available, committed and utilised session capacity under clinic-specific constraints.
 
@@ -1887,13 +2357,17 @@ Clinic capacity depends on session staffing and service mix as well as places; q
 
 **Boundary:** Local responsibility retains its capacity meaning; Service Capacity Management consumes it without acquiring ownership or imposing one common capacity model.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT.CT3-BEC-CLINIC-PRACTICE-OPERATIONS.FEAT-STEP2-CLINIC-SESSION-CAPACITY-MANAGEMENT
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINIC-PRACTICE-OPERATIONS.CT3-BEC-SESSION-QUEUE-COORDINATION.FEAT-STEP2-CLINIC-SESSION-CAPACITY-MANAGEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-ward-care-capacity-management — Ward Care Capacity Management
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent ward care capacity in relation to staffing, care-place suitability and patient dependency.
 
@@ -1903,13 +2377,17 @@ A clean bed can remain unusable when staffing or patient needs constrain the war
 
 **Boundary:** Local responsibility retains its capacity meaning; Service Capacity Management consumes it without acquiring ownership or imposing one common capacity model.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT.CT3-BEC-WARD-OPERATIONS.FEAT-STEP2-WARD-CARE-CAPACITY-MANAGEMENT
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WARD-OPERATIONS.CT3-BEC-WARD-LOGISTICS-COORDINATION.FEAT-STEP2-WARD-CARE-CAPACITY-MANAGEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-theatre-session-capacity-management — Theatre Session Capacity Management
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent available and committed procedural-session capacity with its resource dependencies.
 
@@ -1919,13 +2397,17 @@ Theatre capacity involves session time, team capability, equipment and recovery 
 
 **Boundary:** Local responsibility retains its capacity meaning; Service Capacity Management consumes it without acquiring ownership or imposing one common capacity model.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT.CT3-BEC-THEATRE-OPERATIONS.FEAT-STEP2-THEATRE-SESSION-CAPACITY-MANAGEMENT
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-THEATRE-OPERATIONS.CT3-BEC-PERIOPERATIVE-LOGISTICS-COORDINATION.FEAT-STEP2-THEATRE-SESSION-CAPACITY-MANAGEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-emergency-treatment-capacity-management — Emergency Treatment Capacity Management
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent current emergency treatment capacity under space, staffing and acuity constraints.
 
@@ -1935,13 +2417,17 @@ Bay state and length of stay contribute evidence but do not alone establish the 
 
 **Boundary:** Local responsibility retains its capacity meaning; Service Capacity Management consumes it without acquiring ownership or imposing one common capacity model.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT.CT3-BEC-EMERGENCY-DEPARTMENT-OPERATIONS.FEAT-STEP2-EMERGENCY-TREATMENT-CAPACITY-MANAGEMENT
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-EMERGENCY-DEPARTMENT-OPERATIONS.CT3-BEC-EMERGENCY-DEPARTMENT-OPERATIONAL-COORDINATION.FEAT-STEP2-EMERGENCY-TREATMENT-CAPACITY-MANAGEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-outpatient-appointment-capacity-management — Outpatient Appointment Capacity Management
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent usable outpatient session capacity from booking, staffing and local flow information.
 
@@ -1951,13 +2437,17 @@ The projection distinguishes scheduled slots from currently usable care capacity
 
 **Boundary:** Local responsibility retains its capacity meaning; Service Capacity Management consumes it without acquiring ownership or imposing one common capacity model.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-SETTING-OPERATIONS-ENABLEMENT.CT3-BEC-OUTPATIENT-OPERATIONS.FEAT-STEP2-OUTPATIENT-APPOINTMENT-CAPACITY-MANAGEMENT
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OUTPATIENT-OPERATIONS.CT3-BEC-OUTPATIENT-FLOW-COORDINATION.FEAT-STEP2-OUTPATIENT-APPOINTMENT-CAPACITY-MANAGEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FT-mobile-service-capacity-management — Mobile Service Capacity Management
 
 **Type / tier:** feature / FT
+
+**Reconciliation standing:** current
 
 **Definition:** Represent mobile service capacity with travel, coverage, work commitment and availability context.
 
@@ -1967,13 +2457,17 @@ Mobile availability cannot be interpreted as a simple on-duty count because dist
 
 **Boundary:** Local responsibility retains its capacity meaning; Service Capacity Management consumes it without acquiring ownership or imposing one common capacity model.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OPERATIONAL-WORKFORCE-COORDINATION.CT3-BEC-MOBILE-STAFF-MANAGEMENT.FEAT-STEP2-MOBILE-SERVICE-CAPACITY-MANAGEMENT
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-MOBILE-STAFF-MANAGEMENT.CT3-BEC-MOBILE-WORKER-DISPATCH-SAFETY-COORDINATION.FEAT-STEP2-MOBILE-SERVICE-CAPACITY-MANAGEMENT
 
 **Provenance:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
+
+**Reviewed reconciliation:** Inferred from capability-specific behaviour, v0.3 inspection and current architectural evidence
 
 ## HCM-FN-resolve-associated-binary-content — Resolve Associated Binary Content
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Resolve logical content associations to an authorised, custody-qualified retrieval basis.
 
@@ -1983,13 +2477,17 @@ Changes an unresolved content request into an identified retrieval basis or an e
 
 **Boundary:** Does not assert payload existence, copy all content or establish clinical meaning.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.FN-RESOLVE-ASSOCIATED-BINARY-CONTENT
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.FN-RESOLVE-ASSOCIATED-BINARY-CONTENT
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-assemble-associated-binary-content — Assemble Associated Binary Content
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Retrieve and assemble the requested logical content from its permitted constituent payloads.
 
@@ -1999,13 +2497,17 @@ Moves a qualified retrieval request to an assembled result or explicit unavailab
 
 **Boundary:** No storage topology or universal local custody is selected.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.FN-ASSEMBLE-ASSOCIATED-BINARY-CONTENT
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.FN-ASSEMBLE-ASSOCIATED-BINARY-CONTENT
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-SV-associated-binary-content-retrieval — Associated Binary Content Retrieval
 
 **Type / tier:** service / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Allow information-consuming capabilities to request resolution and retrieval of associated content.
 
@@ -2015,13 +2517,17 @@ The client contract returns authorised content or explicit incomplete/unavailabl
 
 **Boundary:** The client acquires neither physical repository access nor originating clinical authority.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.SV-ASSOCIATED-BINARY-CONTENT-RETRIEVAL
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-ASSOCIATED-CLINICAL-BINARY-CONTENT-ENABLEMENT.SV-ASSOCIATED-BINARY-CONTENT-RETRIEVAL
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-qualify-information-authority-standing — Qualify Information Authority Standing
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Associate source and credibility qualifications with an information assertion under applicable governed semantics.
 
@@ -2031,13 +2537,17 @@ Moves an unqualified received assertion to explicitly attributed authority stand
 
 **Boundary:** Does not adjudicate all competing claims or originate clinical truth.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-INFORMATION-AUTHORITY-REPRESENTATION.FN-QUALIFY-INFORMATION-AUTHORITY-STANDING
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-INFORMATION-STEWARDSHIP-ENABLEMENT.CT3-BEC-INFORMATION-AUTHORITY-REPRESENTATION.FN-QUALIFY-INFORMATION-AUTHORITY-STANDING
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-accept-governed-dataset-revision — Accept Governed Dataset Revision
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Apply an explicitly authorised content revision and its effective standing through governed information-state progression.
 
@@ -2047,13 +2557,17 @@ Moves a reviewed change to the applicable approved content revision, retaining a
 
 **Boundary:** The Function does not invent who approves or become a persistence manager.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION.FN-ACCEPT-GOVERNED-DATASET-REVISION
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-KNOWLEDGE-SERVICES.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION.FN-ACCEPT-GOVERNED-DATASET-REVISION
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-SV-governed-reference-dataset-content-query — Governed Reference Dataset Content Query
 
 **Type / tier:** service / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Provide authorised consumers with approved content at an identified revision and applicability basis.
 
@@ -2063,13 +2577,17 @@ Consumers can resolve the membership or mapping content they actually used witho
 
 **Boundary:** Does not grant unrestricted dataset mutation or external terminology authority.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SEMANTIC-REFERENCE-KNOWLEDGE-ENABLEMENT.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION.SV-GOVERNED-REFERENCE-DATASET-CONTENT-QUERY
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-KNOWLEDGE-SERVICES.CT3-BEC-GOVERNED-REFERENCE-DATASET-ADMINISTRATION.SV-GOVERNED-REFERENCE-DATASET-CONTENT-QUERY
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-capture-required-significant-audit-evidence — Capture Required Significant Audit Evidence
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Establish required significant activity evidence under the governed authoritative audit-capture responsibility.
 
@@ -2079,13 +2597,17 @@ Moves an auditable fact to confirmed captured standing or an explicit capture fa
 
 **Boundary:** Specific capture authority is not borrowed from the originating identity and is not generalised.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE.FN-CAPTURE-REQUIRED-SIGNIFICANT-AUDIT-EVIDENCE
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE.FN-CAPTURE-REQUIRED-SIGNIFICANT-AUDIT-EVIDENCE
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-SV-mandatory-audit-evidence-capture — Mandatory Audit Evidence Capture
 
 **Type / tier:** service / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Allow governed-operation boundaries to require authoritative capture of significant activity evidence.
 
@@ -2095,13 +2617,17 @@ The client contract distinguishes confirmed capture from inability to capture, a
 
 **Boundary:** The exposed boundary does not permit callers to assign themselves audit platform authority.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE.SV-MANDATORY-AUDIT-EVIDENCE-CAPTURE
+**Last allocated structural identity — historical:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-SIGNIFICANT-ACTIVITY-AUDIT-CAPTURE.SV-MANDATORY-AUDIT-EVIDENCE-CAPTURE
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-record-significant-information-lineage — Record Significant Information Lineage
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Associate a managed assertion with its attributed sources and information-significant transformation.
 
@@ -2111,13 +2637,17 @@ Changes an unexplained derived representation into an attributable relationship 
 
 **Boundary:** Routine retries, cache mechanics and debug traces are excluded unless information-significant.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-PROTECTION-ACCOUNTABILITY-ENABLEMENT.CT3-BEC-INFORMATION-LINEAGE-STEWARDSHIP.FN-RECORD-SIGNIFICANT-INFORMATION-LINEAGE
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-LINEAGE-STEWARDSHIP.FN-RECORD-SIGNIFICANT-INFORMATION-LINEAGE
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-coordinate-entity-relative-input — Coordinate Entity-Relative Input
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Select interested behaviours and progress one entity-relative input with explicit participation and effect standing.
 
@@ -2127,13 +2657,17 @@ Moves an accepted input through the applicable stable behaviour sequence using f
 
 **Boundary:** No concurrent intra-entity progression or implicit clinical authority is introduced.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.FN-COORDINATE-ENTITY-RELATIVE-INPUT
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.FN-COORDINATE-ENTITY-RELATIVE-INPUT
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-SV-entity-operational-input-submission — Entity Operational Input Submission
 
 **Type / tier:** service / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Allow authorised domain coordinators to submit an entity-relative stimulus or requested operational effect.
 
@@ -2143,13 +2677,17 @@ Acceptance concerns the stated handoff contract; the caller observes completion/
 
 **Boundary:** Input acceptance does not establish successful completion or authority over source clinical facts.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.SV-ENTITY-OPERATIONAL-INPUT-SUBMISSION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-ENTITY-SPECIFIC-OPERATIONAL-COORDINATION.SV-ENTITY-OPERATIONAL-INPUT-SUBMISSION
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-maintain-operational-fulfilment-definition — Maintain Operational Fulfilment Definition
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Establish and revise the declared context needs, expected outcome basis and housekeeping of an operational undertaking.
 
@@ -2159,13 +2697,17 @@ Changes governed activity design while preserving the applicability of the defin
 
 **Boundary:** A definition revision is not a command to run work or a dynamic clinical workflow generator.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN.FN-MAINTAIN-OPERATIONAL-FULFILMENT-DEFINITION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-GOVERNED-OPERATIONAL-ACTIVITY-DESIGN.FN-MAINTAIN-OPERATIONAL-FULFILMENT-DEFINITION
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-reconcile-indeterminate-activity-effects — Reconcile Indeterminate Activity Effects
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Inspect authoritative observations to establish, qualify or retain uncertainty about a previously indeterminate activity effect.
 
@@ -2175,13 +2717,17 @@ Moves an uncertainty concern to a justified disposition while preserving the pos
 
 **Boundary:** Missing evidence does not establish absence of effect and cannot automatically justify a repeat mutation.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FN-RECONCILE-INDETERMINATE-ACTIVITY-EFFECTS
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FN-RECONCILE-INDETERMINATE-ACTIVITY-EFFECTS
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-establish-activity-effect-observation-basis — Establish Activity Effect Observation Basis
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Associate the applicable handoff contract and authoritative observations with an indeterminate operational undertaking.
 
@@ -2191,13 +2737,17 @@ Changes an unqualified uncertainty concern into a time- and attempt-specific obs
 
 **Boundary:** Source observations retain their authority; this is an operational observation basis rather than an independent assurance assessment.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FN-ESTABLISH-ACTIVITY-EFFECT-OBSERVATION-BASIS
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FN-ESTABLISH-ACTIVITY-EFFECT-OBSERVATION-BASIS
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-determine-reconciled-activity-continuation — Determine Reconciled Activity Continuation
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Establish the permitted operational continuation from reconciled effect standing and applicable authorisation.
 
@@ -2207,13 +2757,17 @@ Moves a reconciled undertaking to justified continuation, authorised retry or ex
 
 **Boundary:** Does not confer clinical decision authority or infer absence of effects from silence; policy evaluation remains separately owned.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FN-DETERMINE-RECONCILED-ACTIVITY-CONTINUATION
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.FN-DETERMINE-RECONCILED-ACTIVITY-CONTINUATION
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-PR-indeterminate-activity-outcome-reconciliation-process — Indeterminate Activity Outcome Reconciliation Process
 
 **Type / tier:** process / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Order the observation, effect qualification and authorised disposition of a materially indeterminate operational outcome.
 
@@ -2223,13 +2777,17 @@ First inspect the governing handoff and available authoritative state; then reco
 
 **Boundary:** Not a universal lifecycle or automatic retry loop. A safe disposition may remain unresolved.
 
-**Current structural identity:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.PR-INDETERMINATE-ACTIVITY-OUTCOME-RECONCILIATION-PROCESS
+**Last allocated structural identity — historical:** CT1-BEC-HUMAN-COLLABORATION-WORK-ENABLEMENT.CT2-BEC-OPERATIONAL-ACTIVITY-TEMPORAL-ENABLEMENT.CT3-BEC-WORKFLOW-ACTIVITY-COORDINATION.PR-INDETERMINATE-ACTIVITY-OUTCOME-RECONCILIATION-PROCESS
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-assess-service-offering-readiness — Assess Service Offering Readiness
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Evaluate applicable dependency evidence to establish a context- and time-qualified service readiness view.
 
@@ -2239,13 +2797,17 @@ Combines qualified dependency standing without converting missing evidence into 
 
 **Boundary:** Resource ownership and clinical clearance remain external to this coordination.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION.FN-ASSESS-SERVICE-OFFERING-READINESS
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION.FN-ASSESS-SERVICE-OFFERING-READINESS
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-SV-service-offering-readiness-query — Service Offering Readiness Query
 
 **Type / tier:** service / behaviour
+
+**Reconciliation standing:** pending adjudication
 
 **Definition:** Expose the qualified readiness view of a defined offering and operating context to operational planning consumers.
 
@@ -2255,13 +2817,17 @@ The response identifies relevant evidence basis and insufficiency rather than an
 
 **Boundary:** A readiness answer grants no resource allocation or clinical go/no-go authority.
 
-**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION.SV-SERVICE-OFFERING-READINESS-QUERY
+**Last allocated structural identity — historical:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CARE-RESOURCE-CAPACITY-COORDINATION.CT3-BEC-SERVICE-OFFERING-READINESS-COORDINATION.SV-SERVICE-OFFERING-READINESS-QUERY
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-FN-assemble-purpose-qualified-research-release — Assemble Purpose-Qualified Research Release
 
 **Type / tier:** function / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Construct a release containing only existing information permitted for the explicitly authorised research purpose.
 
@@ -2271,13 +2837,17 @@ Moves a qualified request to a bounded release with source attribution and appli
 
 **Boundary:** Does not author ethics approvals, promise de-identification or acquire ownership of research conclusions.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION.FN-ASSEMBLE-PURPOSE-QUALIFIED-RESEARCH-RELEASE
+**Current structural identity:** CT1-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT2-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION.FN-ASSEMBLE-PURPOSE-QUALIFIED-RESEARCH-RELEASE
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
 
 ## HCM-SV-authorised-research-information-export — Authorised Research Information Export
 
 **Type / tier:** service / behaviour
+
+**Reconciliation standing:** current
 
 **Definition:** Provide an approved research consumer with purpose-qualified existing health information under its release contract.
 
@@ -2287,6 +2857,1688 @@ The service exposes the permitted release and its applicable use basis rather th
 
 **Boundary:** No new research-governance mandate or universal release format is allocated.
 
-**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT3-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION.SV-AUTHORISED-RESEARCH-INFORMATION-EXPORT
+**Current structural identity:** CT1-BEC-SECONDARY-HEALTH-INFORMATION-USE-ENABLEMENT.CT2-BEC-AUTHORISED-RESEARCH-INFORMATION-PROVISION.SV-AUTHORISED-RESEARCH-INFORMATION-EXPORT
 
 **Provenance:** Strongly implied bounded information/work responsibility
+
+**Reviewed reconciliation:** Strongly implied bounded information/work responsibility
+
+## HCM-BEC-reviewed-vendor-liaison — Vendor Liaison
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Maintain the information and liaison arrangements needed to interact with vendors supporting healthcare provision.
+
+Maintain the information and liaison arrangements needed to interact with vendors supporting healthcare provision. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Maintain the information and liaison arrangements needed to interact with vendors supporting healthcare provision.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-PROVIDER-ADMINISTRATION.CT3-BEC-VENDOR-LIAISON
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-device-utilisation-administration — Device Utilisation Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer qualified device-to-subject/place allocation, location, utilisation and operational readiness information, including the time at which an association applies.
+
+Administer qualified device-to-subject/place allocation, location, utilisation and operational readiness information, including the time at which an association applies. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer qualified device-to-subject/place allocation, location, utilisation and operational readiness information, including the time at which an association applies.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-UTILISATION-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-device-oa-m-metadata-management — Device OA&M Metadata Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage operational and administrative metadata needed to understand how a clinical device is connected, monitored and administered.
+
+Manage operational and administrative metadata needed to understand how a clinical device is connected, monitored and administered. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage operational and administrative metadata needed to understand how a clinical device is connected, monitored and administered.
+
+**Boundary:** Connectivity, monitoring and administration metadata do not perform device maintenance, interpret clinical telemetry or determine conformance.
+
+**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-OA-M-METADATA-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-device-connectivity-compliance-management — Device Connectivity Compliance Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage information about whether device connectivity satisfies applicable standards, policies and integration constraints.
+
+Manage information about whether device connectivity satisfies applicable standards, policies and integration constraints. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage information about whether device connectivity satisfies applicable standards, policies and integration constraints.
+
+**Boundary:** Endpoint registration alone does not establish compliance; conformity concerns applicable standards, policies and integration constraints.
+
+**Current structural identity:** CT1-BEC-HEALTHCARE-ENTITY-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-DEVICE-ADMINISTRATION.CT3-BEC-DEVICE-CONNECTIVITY-COMPLIANCE-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-referral-intake-progression — Referral Intake & Progression
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Receive and correlate referral requests, supporting information, destinations, disposition and progression through responsible care systems.
+
+Receive and correlate referral requests, supporting information, destinations, disposition and progression through responsible care systems. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Receive and correlate referral requests, supporting information, destinations, disposition and progression through responsible care systems.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-REFERRAL-ADMINISTRATION.CT3-BEC-REFERRAL-INTAKE-PROGRESSION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-appointment-booking-administration — Appointment & Booking Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer externally supplied appointment and booking information and communicate changes in their scheduling status.
+
+Administer externally supplied appointment and booking information and communicate changes in their scheduling status. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer externally supplied appointment and booking information and communicate changes in their scheduling status.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-SCHEDULING-ADMINISTRATION.CT3-BEC-APPOINTMENT-BOOKING-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-closed-loop-order-progression — Closed-Loop Order Progression
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the traceable progression of an order from request through destination, delivery, acknowledgement, fulfilment and outcome association.
+
+Administer the traceable progression of an order from request through destination, delivery, acknowledgement, fulfilment and outcome association. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the traceable progression of an order from request through destination, delivery, acknowledgement, fulfilment and outcome association.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-ORDER-ADMINISTRATION.CT3-BEC-CLOSED-LOOP-ORDER-PROGRESSION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-documentation-lifecycle-administration — Clinical Documentation Lifecycle Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer ingestion, indexing, versioning, supersession and governed availability of clinical documentation.
+
+Administer ingestion, indexing, versioning, supersession and governed availability of clinical documentation. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer ingestion, indexing, versioning, supersession and governed availability of clinical documentation.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-RECORD-ADMINISTRATION.CT3-BEC-CLINICAL-DOCUMENTATION-LIFECYCLE-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-care-plan-lifecycle-coordination — Care Plan Lifecycle & Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer received care plans, goals, revisions and cross-participant coordination while retaining clinical planning authority at its source.
+
+Administer received care plans, goals, revisions and cross-participant coordination while retaining clinical planning authority at its source. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer received care plans, goals, revisions and cross-participant coordination while retaining clinical planning authority at its source.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CARE-PLAN-ADMINISTRATION.CT3-BEC-CARE-PLAN-LIFECYCLE-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-service-dependency-management — Clinical Service Dependency Management
+
+**Type / tier:** capability / CT1
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track operational and infrastructure dependencies necessary for clinical services to function, including care-place and environmental readiness, devices, materiel, forms, workstations, connectivity, infrastructure and basic working materials.
+
+Identify and track operational and infrastructure dependencies necessary for clinical services to function, including care-place and environmental readiness, devices, materiel, forms, workstations, connectivity, infrastructure and basic working materials. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track operational and infrastructure dependencies necessary for clinical services to function, including care-place and environmental readiness, devices, materiel, forms, workstations, connectivity, infrastructure and basic working materials.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-primary-care — Primary Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for primary care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for primary care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for primary care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-PRIMARY-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-acute-care — Acute Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for acute care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for acute care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for acute care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-ACUTE-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-emergency-care — Emergency Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for emergency care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for emergency care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for emergency care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-EMERGENCY-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-inpatient-care — Inpatient Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for inpatient care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for inpatient care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for inpatient care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-INPATIENT-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-diagnostic-services — Diagnostic Services
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for diagnostic services services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for diagnostic services services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for diagnostic services services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-DIAGNOSTIC-SERVICES
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-medication-therapy — Medication Therapy
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for medication therapy services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for medication therapy services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for medication therapy services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-MEDICATION-THERAPY
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-preventive-care — Preventive Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for preventive care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for preventive care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for preventive care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-PREVENTIVE-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-community-care — Community Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for community care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for community care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for community care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-COMMUNITY-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-outreach-care — Outreach Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for outreach care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for outreach care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for outreach care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-OUTREACH-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-remote-virtual-care — Remote & Virtual Care
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Identify and track the operational and infrastructure dependencies necessary for remote & virtual care services to function, retaining each dependency provider's responsibility.
+
+Identify and track the operational and infrastructure dependencies necessary for remote & virtual care services to function, retaining each dependency provider's responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Identify and track the operational and infrastructure dependencies necessary for remote & virtual care services to function, retaining each dependency provider's responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CLINICAL-SERVICE-DEPENDENCY-MANAGEMENT.CT2-BEC-REMOTE-VIRTUAL-CARE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-session-queue-coordination — Session & Queue Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate clinic/practice session state, operational queue progression and context-specific session capacity information.
+
+Coordinate clinic/practice session state, operational queue progression and context-specific session capacity information. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate clinic/practice session state, operational queue progression and context-specific session capacity information.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINIC-PRACTICE-OPERATIONS.CT3-BEC-SESSION-QUEUE-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-ward-logistics-coordination — Ward Logistics Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate ward patient flow, handover context and ward-specific operational logistics and capacity information.
+
+Coordinate ward patient flow, handover context and ward-specific operational logistics and capacity information. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate ward patient flow, handover context and ward-specific operational logistics and capacity information.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WARD-OPERATIONS.CT3-BEC-WARD-LOGISTICS-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-perioperative-logistics-coordination — Perioperative Logistics Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate theatre case progression information and notifications to supporting perioperative operational teams.
+
+Coordinate theatre case progression information and notifications to supporting perioperative operational teams. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate theatre case progression information and notifications to supporting perioperative operational teams.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-THEATRE-OPERATIONS.CT3-BEC-PERIOPERATIVE-LOGISTICS-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-emergency-department-operational-coordination — Emergency Department Operational Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate emergency-department bed/bay occupancy, operational waits, length-of-stay milestones and local capacity information.
+
+Coordinate emergency-department bed/bay occupancy, operational waits, length-of-stay milestones and local capacity information. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate emergency-department bed/bay occupancy, operational waits, length-of-stay milestones and local capacity information.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-EMERGENCY-DEPARTMENT-OPERATIONS.CT3-BEC-EMERGENCY-DEPARTMENT-OPERATIONAL-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-outpatient-flow-coordination — Outpatient Flow Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate outpatient arrival, clinic flow, follow-up requirements and context-specific outpatient capacity information.
+
+Coordinate outpatient arrival, clinic flow, follow-up requirements and context-specific outpatient capacity information. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate outpatient arrival, clinic flow, follow-up requirements and context-specific outpatient capacity information.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OUTPATIENT-OPERATIONS.CT3-BEC-OUTPATIENT-FLOW-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-bed-care-place-state-administration — Bed & Care-Place State Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the current operational occupancy, reservation, blocking and readiness states of beds and other care-places.
+
+Administer the current operational occupancy, reservation, blocking and readiness states of beds and other care-places. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the current operational occupancy, reservation, blocking and readiness states of beds and other care-places.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-BED-CARE-PLACE-MANAGEMENT.CT3-BEC-BED-CARE-PLACE-STATE-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-bed-care-place-turnover-coordination — Bed & Care-Place Turnover Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate the operational transition of a released care-place through cleaning, preparation and readiness notifications.
+
+Coordinate the operational transition of a released care-place through cleaning, preparation and readiness notifications. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate the operational transition of a released care-place through cleaning, preparation and readiness notifications.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-BED-CARE-PLACE-MANAGEMENT.CT3-BEC-BED-CARE-PLACE-TURNOVER-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-service-demand-capacity-coordination — Service Demand & Capacity Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate demand and capacity information across services while retaining the originating responsibilities of context-specific capacity providers.
+
+Coordinate demand and capacity information across services while retaining the originating responsibilities of context-specific capacity providers. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate demand and capacity information across services while retaining the originating responsibilities of context-specific capacity providers.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-SERVICE-CAPACITY-MANAGEMENT.CT3-BEC-SERVICE-DEMAND-CAPACITY-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-service-establishment-support — Service Establishment Support
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Support the information needed to establish a health service in its intended operating context.
+
+Support the information needed to establish a health service in its intended operating context. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Support the information needed to establish a health service in its intended operating context.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-SERVICE-ESTABLISHMENT-SUPPORT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-roster-capture-communication — Clinical Roster Capture & Communication
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Capture and communicate supplied clinical roster information, its effective periods and subsequent coverage changes.
+
+Capture and communicate supplied clinical roster information, its effective periods and subsequent coverage changes. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Capture and communicate supplied clinical roster information, its effective periods and subsequent coverage changes.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINICAL-ROSTERING.CT3-BEC-CLINICAL-ROSTER-CAPTURE-COMMUNICATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-mobile-worker-dispatch-safety-coordination — Mobile Worker Dispatch & Safety Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Exchange externally established mobile work assignments, visit progression and safety check-in information with qualified worker context.
+
+Exchange externally established mobile work assignments, visit progression and safety check-in information with qualified worker context. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Exchange externally established mobile work assignments, visit progression and safety check-in information with qualified worker context.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-MOBILE-STAFF-MANAGEMENT.CT3-BEC-MOBILE-WORKER-DISPATCH-SAFETY-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-on-call-availability-contact-resolution — On-Call Availability & Contact Resolution
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Resolve currently available on-call providers and their contact paths for the applicable specialty, service and time.
+
+Resolve currently available on-call providers and their contact paths for the applicable specialty, service and time. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Resolve currently available on-call providers and their contact paths for the applicable specialty, service and time.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-ON-CALL-MANAGEMENT.CT3-BEC-ON-CALL-AVAILABILITY-CONTACT-RESOLUTION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-operational-work-assignment-dispatch-coordination — Operational Work Assignment & Dispatch Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate qualified operational work assignment, dispatch, acknowledgement, progression and escalation within assigned authority.
+
+Coordinate qualified operational work assignment, dispatch, acknowledgement, progression and escalation within assigned authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate qualified operational work assignment, dispatch, acknowledgement, progression and escalation within assigned authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WORK-ALLOCATION-DISPATCH.CT3-BEC-OPERATIONAL-WORK-ASSIGNMENT-DISPATCH-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-organisation-clinical-certification-compliance-support — Organisation Clinical Certification & Compliance Support
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer supplied organisation clinical certification and conformance evidence for use in service qualification and participation.
+
+Administer supplied organisation clinical certification and conformance evidence for use in service qualification and participation. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer supplied organisation clinical certification and conformance evidence for use in service qualification and participation.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINICAL-QUALIFICATION-MANAGEMENT.CT3-BEC-ORGANISATION-CLINICAL-CERTIFICATION-COMPLIANCE-SUPPORT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-provider-clinical-qualification-tracking — Provider Clinical Qualification Tracking
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Track supplied provider clinical qualifications, competency certificates and privilege evidence with effective dates and issuing-authority standing.
+
+Track supplied provider clinical qualifications, competency certificates and privilege evidence with effective dates and issuing-authority standing. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Track supplied provider clinical qualifications, competency certificates and privilege evidence with effective dates and issuing-authority standing.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINICAL-QUALIFICATION-MANAGEMENT.CT3-BEC-PROVIDER-CLINICAL-QUALIFICATION-TRACKING
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-credential-management — Credential Management
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Administer definitions of clinical-service credentials and their required applicability without granting professional privilege or managing physical badges.
+
+Administer definitions of clinical-service credentials and their required applicability without granting professional privilege or managing physical badges. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer definitions of clinical-service credentials and their required applicability without granting professional privilege or managing physical badges.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CREDENTIAL-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-service-credential-definition-management — Clinical Service Credential Definition Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage the definitions of credentials required for participation in a clinical service, distinct from physical badges and authentication credentials.
+
+Manage the definitions of credentials required for participation in a clinical service, distinct from physical badges and authentication credentials. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage the definitions of credentials required for participation in a clinical service, distinct from physical badges and authentication credentials.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CREDENTIAL-MANAGEMENT.CT3-BEC-CLINICAL-SERVICE-CREDENTIAL-DEFINITION-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-escalation-path-management — Clinical Escalation Path Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage clinical escalation paths and their applicability, contacts and progression conditions for use by responsible clinical participants.
+
+Manage clinical escalation paths and their applicability, contacts and progression conditions for use by responsible clinical participants. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage clinical escalation paths and their applicability, contacts and progression conditions for use by responsible clinical participants.
+
+**Boundary:** Harmonia manages the escalation path; responsible clinical participants perform supervision and retain clinical judgement.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINICAL-SUPERVISION.CT3-BEC-CLINICAL-ESCALATION-PATH-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-transfer-coordination — Patient Transfer Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate patient transport requests, dispatch and observed departure, transit and arrival milestones.
+
+Coordinate patient transport requests, dispatch and observed departure, transit and arrival milestones. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate patient transport requests, dispatch and observed departure, transit and arrival milestones.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-PATIENT-TRANSPORT.CT3-BEC-PATIENT-TRANSFER-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-specimen-metadata-management — Specimen Metadata Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage the identifying, descriptive, custody and relevant handling information needed to interpret a transported specimen.
+
+Manage the identifying, descriptive, custody and relevant handling information needed to interpret a transported specimen. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage the identifying, descriptive, custody and relevant handling information needed to interpret a transported specimen.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINICAL-LOGISTICS-COORDINATION.CT3-BEC-SPECIMEN-METADATA-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-specimen-movement-traceability — Specimen Movement Traceability
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Maintain attributable pickup, custody, transport-condition and delivery traceability for clinical specimens.
+
+Maintain attributable pickup, custody, transport-condition and delivery traceability for clinical specimens. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Maintain attributable pickup, custody, transport-condition and delivery traceability for clinical specimens.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-CLINICAL-LOGISTICS-COORDINATION.CT3-BEC-SPECIMEN-MOVEMENT-TRACEABILITY
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-discharge-progression-coordination — Discharge Progression & Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate externally established discharge milestones, multidisciplinary readiness information and departure notifications.
+
+Coordinate externally established discharge milestones, multidisciplinary readiness information and departure notifications. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate externally established discharge milestones, multidisciplinary readiness information and departure notifications.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-DISCHARGE-MANAGEMENT.CT3-BEC-DISCHARGE-PROGRESSION-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-longitudinal-clinical-record-administration — Longitudinal Clinical Record Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer longitudinal record assembly, active clinical summaries and durable received/managed history with source attribution and supersession.
+
+Administer longitudinal record assembly, active clinical summaries and durable received/managed history with source attribution and supersession. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer longitudinal record assembly, active clinical summaries and durable received/managed history with source attribution and supersession.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PATIENT-CLINICAL-RECORD.CT3-BEC-LONGITUDINAL-CLINICAL-RECORD-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-hie-requirement-management — HIE Requirement Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage the identified information-exchange requirements, interaction contracts and participant obligations applicable to a health-information exchange.
+
+Manage the identified information-exchange requirements, interaction contracts and participant obligations applicable to a health-information exchange. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage the identified information-exchange requirements, interaction contracts and participant obligations applicable to a health-information exchange.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-EXCHANGE-ENABLEMENT.CT3-BEC-HIE-REQUIREMENT-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-hie-implementation-management — HIE Implementation Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage implementation information and progression for established exchange requirements, including submission, retrieval, distribution and syndication interactions.
+
+Manage implementation information and progression for established exchange requirements, including submission, retrieval, distribution and syndication interactions. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage implementation information and progression for established exchange requirements, including submission, retrieval, distribution and syndication interactions.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-EXCHANGE-ENABLEMENT.CT3-BEC-HIE-IMPLEMENTATION-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-hie-endpoint-state-management — HIE Endpoint State Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage recognised exchange endpoint registrations, operational standing and contract-qualified availability information.
+
+Manage recognised exchange endpoint registrations, operational standing and contract-qualified availability information. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage recognised exchange endpoint registrations, operational standing and contract-qualified availability information.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-EXCHANGE-ENABLEMENT.CT3-BEC-HIE-ENDPOINT-STATE-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-governed-health-information-retrieval — Governed Health Information Retrieval
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Retrieve and search health information and apply access-qualified result filtering under established access and consent determinations.
+
+Retrieve and search health information and apply access-qualified result filtering under established access and consent determinations. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Retrieve and search health information and apply access-qualified result filtering under established access and consent determinations.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-ACCESS.CT3-BEC-GOVERNED-HEALTH-INFORMATION-RETRIEVAL
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-health-information-communication — Health Information Communication
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Enable patient notifications, patient task communication, patient self-service and access to a patient health library under applicable information-use controls.
+
+Enable patient notifications, patient task communication, patient self-service and access to a patient health library under applicable information-use controls. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Enable patient notifications, patient task communication, patient self-service and access to a patient health library under applicable information-use controls.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-COMMUNICATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-notification-services — Patient Notification Services
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Enable governed patient notifications concerning health information and applicable care or operational events.
+
+Enable governed patient notifications concerning health information and applicable care or operational events. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Enable governed patient notifications concerning health information and applicable care or operational events.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-COMMUNICATION.CT3-BEC-PATIENT-NOTIFICATION-SERVICES
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-task-communication-services — Patient Task Communication Services
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Communicate patient-facing work requests and their reported progression under the applicable work and disclosure contracts.
+
+Communicate patient-facing work requests and their reported progression under the applicable work and disclosure contracts. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Communicate patient-facing work requests and their reported progression under the applicable work and disclosure contracts.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-COMMUNICATION.CT3-BEC-PATIENT-TASK-COMMUNICATION-SERVICES
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-self-service — Patient Self-Service
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Enable patients to undertake permitted information-access and administrative self-service interactions.
+
+Enable patients to undertake permitted information-access and administrative self-service interactions. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Enable patients to undertake permitted information-access and administrative self-service interactions.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-COMMUNICATION.CT3-BEC-PATIENT-SELF-SERVICE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-health-library-access — Patient Health Library Access
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Enable authorised patient access to appropriately governed health knowledge and library information.
+
+Enable authorised patient access to appropriately governed health knowledge and library information. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Enable authorised patient access to appropriately governed health knowledge and library information.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-COMMUNICATION.CT3-BEC-PATIENT-HEALTH-LIBRARY-ACCESS
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-health-information-restriction-management — Patient Health Information Restriction Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage application of patient health-information restrictions using the client-associated privacy and consent responsibilities retained by Client Privacy Guardrail Management.
+
+Manage application of patient health-information restrictions using the client-associated privacy and consent responsibilities retained by Client Privacy Guardrail Management. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage application of patient health-information restrictions using the client-associated privacy and consent responsibilities retained by Client Privacy Guardrail Management.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority. Client consent directives remain owned by Client Privacy Guardrail Management (FEAT-EM-09); this capability references and respects those determinations without defining a second consent owner.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-CONTROL.CT3-BEC-PATIENT-HEALTH-INFORMATION-RESTRICTION-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-health-information-filter-management — Patient Health Information Filter Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage patient health-information filtering rules and qualified projections while respecting established client privacy and consent determinations.
+
+Manage patient health-information filtering rules and qualified projections while respecting established client privacy and consent determinations. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage patient health-information filtering rules and qualified projections while respecting established client privacy and consent determinations.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority. Client consent directives remain owned by Client Privacy Guardrail Management (FEAT-EM-09); this capability references and respects those determinations without defining a second consent owner.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-CONTROL.CT3-BEC-PATIENT-HEALTH-INFORMATION-FILTER-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-patient-health-information-disclosure-management — Patient Health Information Disclosure Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage permitted patient health-information disclosure and its applicable recipient, purpose and restriction conditions.
+
+Manage permitted patient health-information disclosure and its applicable recipient, purpose and restriction conditions. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage permitted patient health-information disclosure and its applicable recipient, purpose and restriction conditions.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority. Client consent directives remain owned by Client Privacy Guardrail Management (FEAT-EM-09); this capability references and respects those determinations without defining a second consent owner.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-HEALTH-INFORMATION-CONTROL.CT3-BEC-PATIENT-HEALTH-INFORMATION-DISCLOSURE-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-information-asset-stewardship-management — Information Asset Stewardship Management
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Manage definitions and tags that make governed information assets recognisable and interpretable for their permitted uses.
+
+Manage definitions and tags that make governed information assets recognisable and interpretable for their permitted uses. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage definitions and tags that make governed information assets recognisable and interpretable for their permitted uses.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-ASSET-STEWARDSHIP-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-information-asset-definition — Information Asset Definition
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Define the identifying, semantic and governed-use characteristics of an information asset.
+
+Define the identifying, semantic and governed-use characteristics of an information asset. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Define the identifying, semantic and governed-use characteristics of an information asset.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-ASSET-STEWARDSHIP-MANAGEMENT.CT3-BEC-INFORMATION-ASSET-DEFINITION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-information-asset-tag-management — Information Asset Tag Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage attributable tags describing information assets without treating caller-controlled tags as security authority.
+
+Manage attributable tags describing information assets without treating caller-controlled tags as security authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage attributable tags describing information assets without treating caller-controlled tags as security authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-ASSET-STEWARDSHIP-MANAGEMENT.CT3-BEC-INFORMATION-ASSET-TAG-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-information-content-maintainer-management — Information Content Maintainer Management
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Administer information-content maintainer participation, source provenance and governed information products.
+
+Administer information-content maintainer participation, source provenance and governed information products. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer information-content maintainer participation, source provenance and governed information products.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-data-scientist-administration — Data Scientist Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer profiles and qualified participation information for data scientists maintaining governed information content.
+
+Administer profiles and qualified participation information for data scientists maintaining governed information content. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer profiles and qualified participation information for data scientists maintaining governed information content.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-DATA-SCIENTIST-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-information-product-administration — Information Product Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer identifiable governed information products, their purpose, content standing and qualified release/use context.
+
+Administer identifiable governed information products, their purpose, content standing and qualified release/use context. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer identifiable governed information products, their purpose, content standing and qualified release/use context.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-CONTENT-MAINTAINER-MANAGEMENT.CT3-BEC-INFORMATION-PRODUCT-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-knowledge-request-administration — Clinical Knowledge Request Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer clinical knowledge requests and their qualified resolution to applicable governed knowledge or reference content.
+
+Administer clinical knowledge requests and their qualified resolution to applicable governed knowledge or reference content. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer clinical knowledge requests and their qualified resolution to applicable governed knowledge or reference content.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-KNOWLEDGE-SERVICES.CT3-BEC-CLINICAL-KNOWLEDGE-REQUEST-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-knowledge-artefact-distribution-management — Clinical Knowledge Artefact Distribution Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage distribution of governed clinical knowledge artefacts to intended consumers under their applicable use contracts.
+
+Manage distribution of governed clinical knowledge artefacts to intended consumers under their applicable use contracts. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage distribution of governed clinical knowledge artefacts to intended consumers under their applicable use contracts.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-KNOWLEDGE-SERVICES.CT3-BEC-CLINICAL-KNOWLEDGE-ARTEFACT-DISTRIBUTION-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-clinical-context-collaboration — Clinical Context Collaboration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Enable governed multidisciplinary collaboration with clinical context while preserving the distinction between discourse and authored clinical records.
+
+Enable governed multidisciplinary collaboration with clinical context while preserving the distinction between discourse and authored clinical records. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Enable governed multidisciplinary collaboration with clinical context while preserving the distinction between discourse and authored clinical records.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-COLLABORATION.CT3-BEC-CLINICAL-CONTEXT-COLLABORATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-operational-collaboration — Operational Collaboration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Enable operational team discussion and collaboration without promoting conversational content to clinical record authority.
+
+Enable operational team discussion and collaboration without promoting conversational content to clinical record authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Enable operational team discussion and collaboration without promoting conversational content to clinical record authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-GENERAL-COLLABORATION.CT3-BEC-OPERATIONAL-COLLABORATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-workflow-activity-coordination — Workflow & Activity Coordination
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate tasks entering or leaving the Harmonia execution boundary and work undertaken by other systems, with responsibility/destination routing, external status/traceability and governance of the completion bridge.
+
+Coordinate tasks entering or leaving the Harmonia execution boundary and work undertaken by other systems, with responsibility/destination routing, external status/traceability and governance of the completion bridge. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate tasks entering or leaving the Harmonia execution boundary and work undertaken by other systems, with responsibility/destination routing, external status/traceability and governance of the completion bridge.
+
+**Boundary:** External means outside Harmonia execution, potentially inside the same health organisation. Work coordination includes completion responsibilities and traceability; it is not generic interoperability or message routing.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-WORKFLOW-ACTIVITY-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-external-task-coordination — External Task Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate work entering or leaving the Harmonia execution boundary with the system or actor responsible for undertaking and completing that work.
+
+Coordinate work entering or leaving the Harmonia execution boundary with the system or actor responsible for undertaking and completing that work. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate work entering or leaving the Harmonia execution boundary with the system or actor responsible for undertaking and completing that work.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-WORKFLOW-ACTIVITY-COORDINATION.CT3-BEC-EXTERNAL-TASK-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-external-task-status-traceability-management — External Task Status & Traceability Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage the observable status and attributable traceability of work as it progresses through systems outside the Harmonia execution boundary.
+
+Manage the observable status and attributable traceability of work as it progresses through systems outside the Harmonia execution boundary. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage the observable status and attributable traceability of work as it progresses through systems outside the Harmonia execution boundary.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-WORKFLOW-ACTIVITY-COORDINATION.CT3-BEC-EXTERNAL-TASK-STATUS-TRACEABILITY-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-activity-routing-management — Activity Routing Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage responsibility and destination routing for activity crossing the Harmonia execution boundary, respecting the intended work and completion responsibility.
+
+Manage responsibility and destination routing for activity crossing the Harmonia execution boundary, respecting the intended work and completion responsibility. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage responsibility and destination routing for activity crossing the Harmonia execution boundary, respecting the intended work and completion responsibility.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-WORKFLOW-ACTIVITY-COORDINATION.CT3-BEC-ACTIVITY-ROUTING-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-work-boundary-governance — Work Boundary Governance
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Govern boundary conditions and completion responsibilities of the bridge between Harmonia and another system undertaking work.
+
+Govern boundary conditions and completion responsibilities of the bridge between Harmonia and another system undertaking work. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Govern boundary conditions and completion responsibilities of the bridge between Harmonia and another system undertaking work.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-WORKFLOW-ACTIVITY-COORDINATION.CT3-BEC-WORK-BOUNDARY-GOVERNANCE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-operational-clinical-calendar-coordination — Operational & Clinical Calendar Coordination
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Coordinate projections of operational and clinical calendars and correlate temporal events without taking ownership of source bookings or rosters.
+
+Coordinate projections of operational and clinical calendars and correlate temporal events without taking ownership of source bookings or rosters. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Coordinate projections of operational and clinical calendars and correlate temporal events without taking ownership of source bookings or rosters.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-CALENDAR-MANAGEMENT.CT3-BEC-OPERATIONAL-CLINICAL-CALENDAR-COORDINATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-contextual-information-presentation — Contextual Information Presentation
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Present governed longitudinal clinical and operational information in its applicable human interaction context.
+
+Present governed longitudinal clinical and operational information in its applicable human interaction context. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Present governed longitudinal clinical and operational information in its applicable human interaction context.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-PRESENTATION-SERVICES.CT3-BEC-CONTEXTUAL-INFORMATION-PRESENTATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-enterprise-canonical-reusable-model-design — Enterprise Canonical/Reusable Model Design
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Design canonical and reusable enterprise information models and semantic bindings under applicable information-design governance.
+
+Design canonical and reusable enterprise information models and semantic bindings under applicable information-design governance. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Design canonical and reusable enterprise information models and semantic bindings under applicable information-design governance.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-CANONICAL-REUSABLE-MODEL-DESIGN
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-enterprise-canonical-reusable-model-library-management — Enterprise Canonical/Reusable Model Library Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Manage the identifiable library of canonical and reusable enterprise model definitions and their governed revisions.
+
+Manage the identifiable library of canonical and reusable enterprise model definitions and their governed revisions. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Manage the identifiable library of canonical and reusable enterprise model definitions and their governed revisions.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-CANONICAL-REUSABLE-MODEL-LIBRARY-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-enterprise-canonical-reusable-model-utilisation-support — Enterprise Canonical/Reusable Model Utilisation Support
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Support correct utilisation and conformance of canonical and reusable models across their intended consumers.
+
+Support correct utilisation and conformance of canonical and reusable models across their intended consumers. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Support correct utilisation and conformance of canonical and reusable models across their intended consumers.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-CANONICAL-REUSABLE-MODEL-UTILISATION-SUPPORT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-enterprise-reference-data-stewardship — Enterprise Reference Data Stewardship
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Steward enterprise reference-data definitions, bindings and applicable governance independently of mutable runtime dataset administration.
+
+Steward enterprise reference-data definitions, bindings and applicable governance independently of mutable runtime dataset administration. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Steward enterprise reference-data definitions, bindings and applicable governance independently of mutable runtime dataset administration.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-GOVERNED-HEALTH-INFORMATION-ENABLEMENT.CT2-BEC-INFORMATION-DESIGN-GOVERNANCE.CT3-BEC-ENTERPRISE-REFERENCE-DATA-STEWARDSHIP
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-assurance-service-review — Assurance Service Review
+
+**Type / tier:** capability / CT2
+
+**Reconciliation standing:** current
+
+**Definition:** Independently review the operation, effectiveness, appropriateness and conformance of the assurance service itself.
+
+Independently review the operation, effectiveness, appropriateness and conformance of the assurance service itself. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Independently review the operation, effectiveness, appropriateness and conformance of the assurance service itself.
+
+**Boundary:** Reviews the assurance service itself. Canonical evidence association, subject assessment, adjudication, findings and conclusions are retained separately pending adjudication.
+
+**Current structural identity:** CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-ASSURANCE-SERVICE-REVIEW
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-assurance-service-evaluation — Assurance Service Evaluation
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Evaluate the operation, effectiveness, appropriateness and conformance of the assurance service itself through independent review.
+
+Evaluate the operation, effectiveness, appropriateness and conformance of the assurance service itself through independent review. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Evaluate the operation, effectiveness, appropriateness and conformance of the assurance service itself through independent review.
+
+**Boundary:** Evaluation concerns operation, effectiveness, appropriateness and conformance of the assurance service; it is not execution of assurance against a subject.
+
+**Current structural identity:** CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-ASSURANCE-SERVICE-REVIEW.CT3-BEC-ASSURANCE-SERVICE-EVALUATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-client-intake-demographic-update — Client Intake & Demographic Update
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the established client intake & demographic update information and coordination responsibility while preserving its source authority.
+
+Administer the established client intake & demographic update information and coordination responsibility while preserving its source authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the established client intake & demographic update information and coordination responsibility while preserving its source authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CLIENT-CENTRED-ADMINISTRATION.CT3-BEC-CLIENT-INTAKE-DEMOGRAPHIC-UPDATE
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-encounter-lifecycle-management — Encounter Lifecycle Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the established encounter lifecycle management information and coordination responsibility while preserving its source authority.
+
+Administer the established encounter lifecycle management information and coordination responsibility while preserving its source authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the established encounter lifecycle management information and coordination responsibility while preserving its source authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-EPISODE-ENCOUNTER-ADMINISTRATION.CT3-BEC-ENCOUNTER-LIFECYCLE-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-diagnostic-workflow-management — Diagnostic Workflow Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the established diagnostic workflow management information and coordination responsibility while preserving its source authority.
+
+Administer the established diagnostic workflow management information and coordination responsibility while preserving its source authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the established diagnostic workflow management information and coordination responsibility while preserving its source authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-DIAGNOSTIC-ADMINISTRATION.CT3-BEC-DIAGNOSTIC-WORKFLOW-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-medication-order-dispense-management — Medication Order & Dispense Management
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the established medication order & dispense management information and coordination responsibility while preserving its source authority.
+
+Administer the established medication order & dispense management information and coordination responsibility while preserving its source authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the established medication order & dispense management information and coordination responsibility while preserving its source authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-MEDICATION-ADMINISTRATION.CT3-BEC-MEDICATION-ORDER-DISPENSE-MANAGEMENT
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-procedure-surgical-administration — Procedure & Surgical Administration
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the established procedure & surgical administration information and coordination responsibility while preserving its source authority.
+
+Administer the established procedure & surgical administration information and coordination responsibility while preserving its source authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the established procedure & surgical administration information and coordination responsibility while preserving its source authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-PROCEDURE-ADMINISTRATION.CT3-BEC-PROCEDURE-SURGICAL-ADMINISTRATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+## HCM-BEC-reviewed-secure-clinical-communication — Secure Clinical Communication
+
+**Type / tier:** capability / CT3
+
+**Reconciliation standing:** current
+
+**Definition:** Administer the established secure clinical communication information and coordination responsibility while preserving its source authority.
+
+Administer the established secure clinical communication information and coordination responsibility while preserving its source authority. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.
+
+**Intent:** Administer the established secure clinical communication information and coordination responsibility while preserving its source authority.
+
+**Boundary:** Information administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.
+
+**Current structural identity:** CT1-BEC-CARE-ADMINISTRATION-INFORMATION-ENABLEMENT.CT2-BEC-CLINICAL-COMMUNICATION-ADMINISTRATION.CT3-BEC-SECURE-CLINICAL-COMMUNICATION
+
+**Provenance:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
+
+**Reviewed reconciliation:** Reconciliation against the explicit human-reviewed BEC candidate hierarchy
