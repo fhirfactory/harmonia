@@ -1,0 +1,259 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from fingerprinted RAD Markdown and frozen publication identities.
+\chapter{Health Service Assurance — Approved Strategy Derivation}\label{rad:assurance-strategy}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/02-strategy/capability-maps/health-service-assurance-derivation.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\textbf{Source qualification:} The opening 2026-10-14 reconciliation qualifies the older unresolved BC-18 tier/relevance statements later in this source. Later approved Domain03 assurance behaviour is reproduced separately; earlier Strategy stop boundaries retain their own scope.
+
+\phantomsection\label{rad:assurance-strategy:1}
+\section*{Health Service Assurance — Approved Strategy Derivation}
+\phantomsection\label{rad:assurance-strategy:3}
+
+\begin{quote}
+
+\textbf{BC reconciliation — 2026-10-14:} The \hyperref[rad:business:1033]{current BC catalogue} establishes BC-18 as a CT1, its stated BC CT2/\allowbreak{}CT3 decomposition and Harmonia-Relevant classification. Its macro-level confidence purpose preserves REQ-FND-005's applicable independent governed-assurance requirement. This qualifies the earlier unresolved BC-tier/\allowbreak{}relevance statements below; all existing BEC/\allowbreak{}EC support assertions remain unchanged and are not redistributed among the new BC descendants. BEC tiers, ancestry and identity allocations remain unresolved.
+
+
+\end{quote}
+\phantomsection\label{rad:assurance-strategy:12}
+\subsection*{Purpose and Architectural Authority}
+\phantomsection\label{rad:assurance-strategy:14}
+
+This view records the approved Health Service Assurance derivation in Domain02 Strategy. It connects the existing Motivation requirement and Business Capability to three approved Business Enabling Capabilities and their collaborative Enterprise Capability realisation. Canonical definitions remain in the linked capability catalogues.
+
+\phantomsection\label{rad:assurance-strategy:16}
+
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-17}{AX-17 — Architectural Authority and Explicit Uncertainty} governs truthful traceability: only the relationships explicitly approved here are established. Missing relationships remain unresolved. The requested Strategy reconciliation is approved architectural input; it does not complete later architecture domains.
+
+\phantomsection\label{rad:assurance-strategy:18}
+
+The materially relevant axioms also include:
+
+\phantomsection\label{rad:assurance-strategy:20}
+
+\begin{itemize}
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-14}{AX-14 — Semantic Distinctions Are Preserved}: assurance is distinct from monitoring, evidence production, operational management, clinical adequacy, assessment and adjudication.
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-06}{AX-06 — Information Authority Is Explicit}, \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-07}{AX-07 — Security Is Intrinsic to Managed Operations} and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-08}{AX-08 — Evidence Records Meaning, Not Machinery}: trustworthy evidence and governed assurance preserve their existing authority, security and meaningful-evidence constraints without transferring source-information ownership.
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-09}{AX-09 — Transient Operational State Is Ephemeral by Default}: contextual evidence association does not automatically make all observations or operational diagnostics durable evidence.
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-10}{AX-10 — Distribution, Load and Failure Are Normal Operating Conditions} and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-15}{AX-15 — Uncertainty Is Preserved Until Resolved}: expected failure/\allowbreak{}recovery remains the subject activity's responsibility, and operational uncertainty remains distinct from insufficient assurance evidence.
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-05}{AX-05 — Active State and Authoritative Durable State Are Distinct}: temporal/\allowbreak{}version-specific evidence does not alter the approved state-responsibility separation or derive a persistence/\allowbreak{}active-state implementation.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance-strategy:26}
+\subsection*{Motivation to Strategy Traceability}
+\phantomsection\label{rad:assurance-strategy:28}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph TD
+    REQ["REQ-FND-005<br/>Independent Assurance of Governed Activity"] --> BC["BC-18<br/>Health Service Assurance"]
+    BC --> AD["Business Enabling Capability<br/>Assurance Design"]
+    BC --> ACM["Business Enabling Capability<br/>Assurance Criteria Management"]
+    BC --> GA["Business Enabling Capability<br/>Governed Assurance"]
+    AD --> COL["Collaborative Enterprise Capability realisation<br/>Approved contribution matrix"]
+    ACM --> COL
+    GA --> COL
+    COL --> EXIST["Applicable existing EC-01 through EC-13<br/>Direct or Supporting as explicitly approved"]
+    COL --> SG["EC-14<br/>Service Guardian"]
+\end{Verbatim}
+\phantomsection\label{rad:assurance-strategy:41}
+
+The final branches identify contributions to collaborative realisation, not ownership, execution order or component allocation. The matrix below distinguishes the contribution to each Business Enabling Capability; the aggregate diagram does not assert every existing EC contributes to each capability.
+
+\phantomsection\label{rad:assurance-strategy:43}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Established relationship} & \textbf{Authoritative Strategy reference} & \textbf{Boundary}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Established relationship} & \textbf{Authoritative Strategy reference} & \textbf{Boundary}\\\hline\endhead
+\hline\endfoot
+REQ-FND-005 → BC-18 & \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-005-independent-assurance-of-governed-activity}{Approved requirement}; \hyperref[rad:business:1033]{Health Service Assurance} & Independent conclusion authority and explicit evidence insufficiency; no clinical-adequacy responsibility transfer.\\\hline
+BC-18 → Assurance Design & \hyperref[rad:enabling:680]{Assurance Design} & Defines how satisfaction is assured, not application design.\\\hline
+BC-18 → Assurance Criteria Management & \hyperref[rad:enabling:686]{Assurance Criteria Management} & Manages criteria without replacing governing requirements.\\\hline
+BC-18 → Governed Assurance & \hyperref[rad:enabling:694]{Governed Assurance} & Independently evaluates and concludes without managing the subject.\\\hline
+Three Business Enabling Capabilities → collaborative EC realisation & \hyperref[rad:assurance-strategy:54]{Contribution matrix}; \hyperref[rad:enterprise]{Enterprise catalogue} & Direct does not mean sole realisation; no extra relationships implied.\\\hline
+EC-14 → assurance-specific contribution & \hyperref[rad:enterprise:224]{Service Guardian} & Reusable assurance semantics, distinct from EC-12; component allocation remains unresolved.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:assurance-strategy:52}
+
+BC-18 refers to the existing Business Capability catalogue entry \textbf{18 Health Service Assurance}. This reference does not assign a new Capability Tier or structural Canonical ID. The three Business Enabling capability names identify the approved responsibilities without inventing CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 ancestry or new Feature identifiers.
+
+\phantomsection\label{rad:assurance-strategy:54}
+\subsection*{Collaborative Enterprise Capability Contribution Matrix}
+\phantomsection\label{rad:assurance-strategy:56}
+
+This is the approved \textbf{first-pass contribution model}. Existing canonical EC names are preserved. \textbf{Direct} identifies a direct contribution, not sole realisation or ownership. \textbf{Supporting} identifies a supporting contribution. \textbf{No Material Role} records the approved absence of a material contribution in this model; it is not an invitation to invent a relationship.
+
+\phantomsection\label{rad:assurance-strategy:58}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-8\tabcolsep-5\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|>{\raggedright\arraybackslash}p{0.25\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Enterprise Capability} & \textbf{Assurance Design} & \textbf{Assurance Criteria Management} & \textbf{Governed Assurance}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Enterprise Capability} & \textbf{Assurance Design} & \textbf{Assurance Criteria Management} & \textbf{Governed Assurance}\\\hline\endhead
+\hline\endfoot
+\hyperref[rad:enterprise:103]{EC-01 Managed Entity \& Relationship} & Supporting & No Material Role & Supporting\\\hline
+\hyperref[rad:enterprise:112]{EC-02 Context Management} & Supporting & Supporting & Direct\\\hline
+\hyperref[rad:enterprise:121]{EC-03 Managed State \& Lifecycle} & Supporting & Direct & Direct\\\hline
+\hyperref[rad:enterprise:130]{EC-04 Information Management} & Direct & Direct & Direct\\\hline
+\hyperref[rad:enterprise:139]{EC-05 Search \& Discovery} & Supporting & Supporting & Supporting\\\hline
+\hyperref[rad:enterprise:148]{EC-06 Policy \& Control} & Direct & Direct & Supporting\\\hline
+\hyperref[rad:enterprise:157]{EC-07 Provenance \& Traceability} & Supporting & Supporting & Direct\\\hline
+\hyperref[rad:enterprise:166]{EC-08 Interoperability \& Exchange} & No Material Role & Supporting & Supporting\\\hline
+\hyperref[rad:enterprise:175]{EC-09 Event \& Subscription} & Supporting & No Material Role & Direct\\\hline
+\hyperref[rad:enterprise:184]{EC-10 Activity \& Execution} & Supporting & No Material Role & Direct\\\hline
+\hyperref[rad:enterprise:193]{EC-11 Interaction \& Experience} & Supporting & Supporting & Supporting\\\hline
+\hyperref[rad:enterprise:202]{EC-12 Operational Assurance} & Supporting & Supporting & Direct, limited to generic operational/\allowbreak{}processing assurance contribution\\\hline
+\hyperref[rad:enterprise:215]{EC-13 Semantic Governance \& Conformance} & Supporting & Direct & Supporting\\\hline
+\hyperref[rad:enterprise:224]{EC-14 Service Guardian} & Direct & Direct & Direct\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:assurance-strategy:75}
+
+The three Business Enabling Capabilities are collaboratively realised. EC-14 contributes the assurance-specific semantics not truthfully represented by EC-01 through EC-13. Their contributions do not transfer source-information ownership, governing-requirement authority or subject-activity management to assurance. In particular, EC-10's direct contribution does not make Governed Assurance responsible for managing the subject activity, and it does not establish a relationship to an execution component.
+
+\phantomsection\label{rad:assurance-strategy:77}
+
+This bounded, approved matrix is not an exhaustive Business Capability-to-Business Enabling or Feature-to-Enterprise mapping. It is consistent with the \hyperref[rad:tier-model:256]{existing representative-derivation convention} and does not manufacture missing traceability.
+
+\phantomsection\label{rad:assurance-strategy:79}
+\subsection*{Preserved Semantic Boundaries}
+\phantomsection\label{rad:assurance-strategy:81}
+
+\begin{itemize}
+
+\item 
+\textbf{EC-12 /\allowbreak{} EC-14}: \hyperref[rad:enterprise:202]{EC-12's established operational responsibilities} remain intact. Its direct Governed Assurance contribution is limited to generic operational/\allowbreak{}processing assurance. \hyperref[rad:enterprise:224]{EC-14} supplies assurance disposition, criteria applicability, evidentiary association, assessment, adjudication and independent findings/\allowbreak{}conclusions; EC-12 is not expanded to absorb them.
+
+
+
+\item 
+\textbf{Clinical assurance}: \hyperref[rad:business:1102]{Health Service Assurance is distinct from Clinical Services Delivery Assurance}. Explicitly required assurance of facts or behaviour concerning clinical activity does not make Harmonia responsible for clinical judgement, professional practice or clinical adequacy of care. Capability 06 retains its established responsibility.
+
+
+
+\item 
+\textbf{Evidence and time}: \hyperref[rad:enabling:728]{Source-information ownership and contextual evidence association} remain distinct. Evidence and criteria may each be temporal/\allowbreak{}version-specific without deriving storage, replication or persistence mechanisms.
+
+
+
+\item 
+\textbf{Assurance and operations}: \hyperref[rad:enabling:716]{Generic processing assurance} evaluates business behaviour, including expected failure/\allowbreak{}recovery; the subject activity manages its own behaviour. Operational Health ≠ Processing Assurance.
+
+
+
+\item 
+\textbf{Assessment and conclusion}: \hyperref[rad:enabling:742]{Assessment, adjudication and explicit insufficiency} preserve quantitative, qualitative, compound, temporal and confidence-bearing meaning. Insufficient evidence establishes neither satisfaction nor non-satisfaction.
+
+
+
+\item 
+\textbf{Independence}: \hyperref[rad:enabling:753]{Assurance independence} concerns control of progression and conclusion, not physical separation. Evidence dependency does not compromise assurance independence; control dependency does.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance-strategy:88}
+\subsection*{Unresolved Relationships and Downstream Boundary}
+\phantomsection\label{rad:assurance-strategy:90}
+
+This approved derivation establishes only REQ-FND-005 → BC-18 → the three named Business Enabling Capabilities → the first-pass collaborative EC contribution model, including EC-14. The five-region/\allowbreak{}eighteen Business Capability model, BC-17 Health Service Governance, capabilities 06 and 14, the existing thirteen EC semantics and approved AX-05 reconciliation remain intact.
+
+\phantomsection\label{rad:assurance-strategy:92}
+
+The following remain deliberately unresolved or unestablished:
+
+\phantomsection\label{rad:assurance-strategy:94}
+
+\begin{itemize}
+
+\item 
+Relevance classification for BC-17/\allowbreak{}BC-18; BC-17 enabling derivation; relationships beyond the approved BC-18 derivation.
+
+
+
+\item 
+Contextual-view placement, relevance classification, Capability Tier, complete ancestry, root status and structural Canonical IDs for the three assurance Business Enabling Capabilities; additional Feature decomposition.
+
+
+
+\item 
+Courses of Action, Strategic Resources, Value Stream/\allowbreak{}stage relationships and additional capability contributions not explicitly approved here.
+
+
+
+\item 
+Downstream Business Functions, Services, Processes, actors, roles, assurance Information Concepts, outcome taxonomies, criterion catalogues and applicability/\allowbreak{}confidence models beyond the approved Strategy semantics.
+
+
+
+\item 
+Strategic logical component, application component, execution, persistence, protocol, deployment and implementation allocation for EC-14 and the three assurance Business Enabling Capabilities.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance-strategy:100}
+
+No relationship to Dokimasia, Ponos, Praxis, Pragma, Digital Twin, Mneme, Mnemosyne, Calliope, Iris, Pylai or another implementation construct is derived. Existing Dokimasia material is not reconciled or modified. Domain03 Business Architecture and Domain04 Information Architecture are unchanged. Existing or future suggestions cannot establish an allocation through lexical similarity, familiar implementation or the conceptual behavioural sequence of Service Guardian.
+
+\phantomsection\label{rad:assurance-strategy:102}
+\subsection*{Navigation}
+\phantomsection\label{rad:assurance-strategy:104}
+
+\begin{itemize}
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/README.md}{Domain02 Strategy}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capabilities/index.md}{Capability Framework}
+
+
+
+\item 
+\hyperref[rad:business]{Business Capability Catalogue}
+
+
+
+\item 
+\hyperref[rad:enabling:674]{Business Enabling Capability Catalogue and Assurance Principles}
+
+
+
+\item 
+\hyperref[rad:enterprise]{Enterprise Capability Catalogue}
+
+
+
+\item 
+\hyperref[rad:tier-model]{Capability Derivation Progression}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capability-maps/index.md}{Capability Maps Index}
+
+
+
+\end{itemize}

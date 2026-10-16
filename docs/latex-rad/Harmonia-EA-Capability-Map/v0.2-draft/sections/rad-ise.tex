@@ -1,0 +1,1208 @@
+% !TeX root = ../Harmonia-EA-Capability-Map.tex
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Intrinsic / Shared Enablement — Capability-Scoped Behaviour}\label{rad:ise}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:ise:1}
+\section*{Intrinsic /\allowbreak{} Shared Enablement — Capability-Scoped Behaviour}
+\phantomsection\label{rad:ise:3}
+\subsection*{1. Contextual Scope \& Architectural Intent}
+\phantomsection\label{rad:ise:5}
+
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under \hyperref[rad:k9:1392]{approved G1 K9}; document grouping and numbering do not establish architectural identity or hierarchy.
+
+\phantomsection\label{rad:ise:7}
+
+Intrinsic and Shared Enablement encompasses the horizontal platform capabilities that provide foundational security, longitudinal clinical record assembly, information exchange, workflow orchestration, collaborative spaces, and semantic governance across all healthcare contexts.
+
+\phantomsection\label{rad:ise:9}
+\subsubsection*{The Cross-Cutting Boundary Guardrail}
+\phantomsection\label{rad:ise:10}
+
+\begin{quote}
+
+\textbf{These capabilities are bounded architectural responsibilities whose services are widely consumed across the HIE. Delivering a shared service (such as security enforcement, message exchange, workflow coordination, or UI presentation) does not grant ownership of the clinical payloads, business activities, or decisions being processed.}
+
+
+\end{quote}
+\phantomsection\label{rad:ise:12}
+
+\par\smallskip
+\phantomsection\label{rad:ise:14}
+\subsection*{2. Intrinsic Enablement Capabilities}
+\phantomsection\label{rad:ise:16}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Intrinsic / Shared Enablement Capabilities
+
+1. Patient Clinical Record
+
+2. Health Information Exchange (HIE)
+
+3. Health Information Access
+
+4. Health Information Communication
+
+5. Health Information Control
+
+6. Clinical Knowledge Services
+
+7. Clinical Collaboration
+
+8. General Collaboration
+
+9. Workflow \& Activity Coordination
+
+10. Calendar Management
+
+11. Presentation Services
+
+12. Information Design Governance
+\end{quote}
+\phantomsection\label{rad:ise:32}
+
+\par\smallskip
+\phantomsection\label{rad:ise:34}
+\subsubsection*{2.1 Patient Clinical Record}
+\phantomsection\label{rad:ise:35}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Patient Clinical Record}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Governs the canonical, longitudinal, cross-institutional health record for every patient across the healthcare region.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Longitudinal Health Record (LHR) Assembly}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Assemble Longitudinal Clinical Record}} — Synthesises clinical documents, encounters, diagnostic reports, and medication histories across disparate source systems into a unified chronological clinical view.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Longitudinal Clinical Record Query}} — Discloses the comprehensive clinical timeline to authorised clinicians.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Active Clinical Record Access}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Active Clinical Record}} — Maintains active problem lists, current medication regimens, allergies, and open clinical alerts for active care coordination.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Active Problem \& Allergy Summary Query}} — Exposes immediate active clinical summaries.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Durable Clinical Record Preservation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Preserve Durable Clinical Record}} — Preserves the governed longitudinal representation and durable, immutable, append-only history of what Harmonia received, knew, asserted or managed, with provenance and versioning. Corrections/\allowbreak{}supersession establish changed knowledge without retrospectively altering that history or acquiring originating clinical authority.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Historical Clinical Record Access}} — Provides governed historical record retrieval for authorised clinical and legal review; preservation does not itself establish legal qualification or originating authority.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Governed Longitudinal Health Record (LHR), Canonical Clinical Timeline, Active Problem List, Immutable Historical Record Store.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:49}
+
+\par\smallskip
+\phantomsection\label{rad:ise:51}
+\subsubsection*{2.2 Health Information Exchange (HIE)}
+\phantomsection\label{rad:ise:52}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Health Information Exchange}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Manages the ingestion, transformation, routing, addressed distribution, and publish-subscribe syndication of health information across organizational and jurisdictional boundaries.
+
+
+
+\item
+\textbf{Ownership Invariant}: Health Information Exchange owns \textbf{exchange transaction state, delivery receipts, and routing policies}. It does \textbf{not} acquire ownership of the business information transported.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Direct Submission Ingestion \& Delivery}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Receive Information Submission}} — Validates and ingests standards-compliant clinical messages from external health providers.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{HIE Submission Gateway Service}} — Ingress endpoint for regional data contributions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Clinical Record Retrieval Mediation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Mediate Information Retrieval}} — Federates queries across participating hospital and diagnostic node repositories.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Federated Health Information Query}} — Resolves distributed record queries.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Addressed Clinical Distribution}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Distribute Addressed Information}} — Directs point-to-point clinical documents to specific recipient practitioner endpoints.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Addressed Document Delivery Service}} — Securely delivers documents to designated recipient mailboxes.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Event-Driven Syndication}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Syndicate Information Change}} — Broadcasts event notifications and record updates to subscribed regional care network systems.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinical Event Syndication Stream}} — Emits publish-subscribe clinical event feeds.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Exchange Transaction Ledger, Route Resolution Map, Subscription \& Syndication Matrix.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:70}
+
+\par\smallskip
+\phantomsection\label{rad:ise:72}
+\subsubsection*{2.3 Health Information Access}
+\phantomsection\label{rad:ise:73}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Health Information Access}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Provides high-performance search, retrieval, and access-qualified filtering of clinical information across the longitudinal record.
+
+
+
+\item
+\textbf{Ownership Invariant}: Consumes access control and consent determinations from \emph{Health Information Control}. Search behaviour does \textbf{not} own security policy.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Federated Clinical Query}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Search Health Information}} — Executes structured semantic searches across diagnostic reports, clinical notes, and medication histories.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinical Information Search Service}} — Discloses search capabilities to clinical user interfaces.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: \texttt{\seqsplit{FEAT-ISE-09 — Access-Controlled Information Filtering}} requires access-controlled disclosure/\allowbreak{}filtering; retrieval of discrete information alone does not materially realise that responsibility. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Retrieve Health Information}} — Fetches discrete clinical observations and original attachments.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinical Resource Retrieval Service}} — Delivers structured clinical information to requesting applications.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped behaviour: Access-Qualified Result Filtering} (Feature identity not established):
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Apply Access-Qualified Result Filtering}} — Redacts or masks search results and clinical content based on the caller's verified security context and patient consent directives.
+
+
+
+\item
+\emph{Exposed Service}: \emph{(Embedded within Search and Retrieval Services)}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Query Execution Context, Filtered Result Projection State.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:89}
+
+\par\smallskip
+\phantomsection\label{rad:ise:91}
+\subsubsection*{2.4 Health Information Communication}
+\phantomsection\label{rad:ise:92}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Health Information Communication}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Encapsulates standards-based health information communication to mediate technical transmission between participating parties.
+
+
+
+\item
+\textbf{Ownership Invariant}: Does \textbf{not} own every business interaction communicated through it; provides protocol adaptation and secure transport mediation.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Standards-Based Boundary Exchange}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Mediate Standards-Based Health Information Communication}} — Handles standards-based communication mediation, transaction coordination, and technical error handling.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Standards Communication Gateway Service}} — Protocol interface for external client integrations.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Transport Protocol Binding Map, Network Session State.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:101}
+
+\par\smallskip
+\phantomsection\label{rad:ise:103}
+\subsubsection*{2.5 Health Information Control}
+\phantomsection\label{rad:ise:104}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Health Information Control}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Enforces enterprise default-deny authorization, ABAC/\allowbreak{}RBAC policy evaluation, consent restriction enforcement, immutable security context propagation, and non-repudiation audit logging.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Health Information Access \& Consent Control}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Evaluate Information Access Authority}} — Evaluates user role, organisation, patient relationship, purpose of use, and break-glass overrides against default-deny policies.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Policy Evaluation \& Authorisation Service}} — Evaluates access requests across the platform.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: \texttt{\seqsplit{FEAT-ISE-12 — Security Context Propagation}} propagates attributable security context; evaluating consent constraints does not materially realise that responsibility. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Evaluate Consent Constraint}} — Cross-references access requests against client consent directives and sensitive health category restrictions.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Consent Enforcement Service}} — Returns masking and redaction instructions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped behaviour: Security Context Binding} (Feature identity not established):
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Propagate Security Context}} — Generates and binds canonical, immutable security contexts to all intra-platform transactions.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Security Context Validation Service}} — Verifies transaction security credentials.
+
+
+
+\item
+\emph{Exposure qualification}: Validation is the declared Service behaviour. Its juxtaposition with Propagate Security Context does not establish a one-to-one Function/\allowbreak{}Service relationship; the precise internal mapping remains unestablished.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Non-PHI Compliance Auditing}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Record Security-Significant Activity}} — Records tamper-evident audit evidence (who, what, when, why, patient MRN, policy outcome) without logging unmasked PHI.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Security Audit Ingress}} — Ingests audit events across all capabilities.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Authorisation Policy Ruleset, Security Context Tokens, Tamper-Evident Security Audit Trail.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:123}
+
+\par\smallskip
+\phantomsection\label{rad:ise:125}
+\subsubsection*{2.6 Clinical Knowledge Services}
+\phantomsection\label{rad:ise:126}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Knowledge Services}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Resolves canonical medical ontologies (SNOMED-CT, LOINC, ICD-10, AMT) and executes cross-terminology concept mappings.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Clinical Concept Resolution}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Resolve Clinical Concept}} — Validates concept identifiers and retrieves preferred clinical rubrics and hierarchy paths.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Terminology Concept Resolution Service}} — Exposes concept validation lookups.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Bidirectional Terminology Mapping}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Map Clinical Concept}} — Translates local lab codes and legacy terms to canonical SNOMED/\allowbreak{}LOINC codes using governed translation maps.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Terminology Mapping Service}} — Translates codes across terminology systems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Canonical Clinical Ontologies, Semantic Value Sets, Cross-Terminology Mapping Tables.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:137}
+
+\par\smallskip
+\phantomsection\label{rad:ise:139}
+\subsubsection*{2.7 Clinical Collaboration}
+\phantomsection\label{rad:ise:140}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Collaboration}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Governs real-time multidisciplinary clinical collaboration channels, patient care-team virtual workspaces, and secure clinical discussions.
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Discourse vs. Record Guardrail}: Real-time collaborative discussion and messaging in team channels do \textbf{not} automatically constitute authoritative clinical health records or observations. Authoritative entries require explicit formal document submission.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Care-Team Clinical Collaboration Coordination}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate Care-Team Collaboration}} — Manages care-team communication spaces, participant memberships, and clinical handovers.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinical Collaboration Space Service}} — Manages team collaboration spaces and discussions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: In-Conversation LHR Query Resolution}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Resolve LHR Query within Collaboration}} — Contextually projects active patient summaries directly into collaborative clinical discussion channels.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Collaboration Clinical Summary Resolution}} — Embeds clinical summaries in collaboration feeds.
+
+
+
+\item
+\emph{Established ownership}: \texttt{\seqsplit{Clinical Collaboration → In-Conversation LHR Query Resolution [FEAT-ISE-17] → Resolve LHR Query within Collaboration → Collaboration Clinical Summary Resolution}}.
+
+
+
+\item
+\emph{Unresolved dependency}: The precise source Service/\allowbreak{}provider, direct versus mediated retrieval, formal consuming Capability/\allowbreak{}Function for the exposed Service and intended referent of the withdrawn dependency row remain unestablished. Information ownership, Function ownership, Service ownership, consumption, information use and presentation are distinct; no substitute dependency is implied.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Zero-PHI Collaboration Metadata Governance}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Collaboration Metadata}} — Enforces privacy policies, participant access gates, and zero-PHI space metadata rules.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Collaboration Space Governance Service}} — Governs space lifecycles and membership.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Collaboration Space Metadata, Care-Team Channel Ledger, Discussion Thread Index.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:158}
+
+\par\smallskip
+\phantomsection\label{rad:ise:160}
+\subsubsection*{2.8 General Collaboration}
+\phantomsection\label{rad:ise:161}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{General Collaboration}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Operational Team Chat Enablement}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate Operational Collaboration}} — Provides communication spaces for facility logistics, disaster management teams, and administrative committees.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Operational Collaboration Service}} — Provides non-clinical operational messaging channels.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Operational Channel Index, Non-Clinical Messaging Log.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:168}
+
+\par\smallskip
+\phantomsection\label{rad:ise:170}
+\subsubsection*{2.9 Workflow \& Activity Coordination}
+\phantomsection\label{rad:ise:171}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Workflow \& Activity Coordination}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Coordinates execution state, task dispatch, timers, deadlines, and escalations across three distinct activity archetypes:
+
+
+\begin{enumerate}
+
+\item
+\textbf{Work Order}: Assigned physical/\allowbreak{}human operational tasks (\emph{human doing} — e.g., transport a patient, clean a bay).
+
+
+
+\item
+\textbf{To Do}: Assigned clinical review or administrative decision tasks (\emph{human reviewing/\allowbreak{}updating/\allowbreak{}deciding} — e.g., review abnormal lab result, countersign discharge summary).
+
+
+
+\item
+\textbf{Synthetic Task}: Automated system-executable activities (\emph{non-human executable work} — e.g., generate summary, syndicate batch, evaluate rules).
+
+
+
+\end{enumerate}
+
+
+\item
+\textbf{Ownership Invariant}: Workflow \& Activity Coordination owns \textbf{generic activity coordination semantics and timers}. It does \textbf{not} acquire ownership of the business meaning or clinical outcome of the activity.
+
+
+
+\item
+\textbf{Clinical-work boundary}: Coordination supports externally established work requirements and authorised human review/\allowbreak{}update/\allowbreak{}approval. It does not determine clinical tasks, manage clinical handover or own EMR clinical worklists. The \hyperref[rad:metamodel:173]{clinical-work integration rule} preserves clinical authority and the three work-unit meanings; Task remains synthetic work.
+
+
+
+\item
+\textbf{Outcome uncertainty}: For materially significant managed activity outcomes, missing acknowledgement, response or observation does not establish success or failure. Preserve uncertainty pending authoritative observation/\allowbreak{}reconciliation. This is a Business obligation, not a universal new lifecycle state; assurance evidence insufficiency remains distinct from execution uncertainty.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Work Order Progression}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate Work Order}} — Coordinates operational task lifecycles and dispatches.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Work Order Coordination Service}} — Manages operational work progression.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Work Order Progression Process}.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: To Do Decision \& Approval Coordination}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate To Do}} — Coordinates human review/\allowbreak{}update/\allowbreak{}approval items, reminders and sign-off queues within Harmonia's operational responsibility; clinical requirements and decisions remain with accountable clinical authority.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{To Do Management Service}} — Provides To Do inbox and sign-off coordination without acquiring underlying clinical-work management.
+
+
+
+\item
+\emph{Governed Process}: \textbf{To Do Progression Process}.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Synthetic Task Orchestration}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate Synthetic Task}} — Orchestrates automated system workflows and operational progression.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Synthetic Task Execution Service}} — Coordinates automated tasks.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Synthetic Task Progression Process}.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Workflow Timeout \& Escalation Oversight}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Supervise Activity Timeout / Escalation}} — Monitors SLAs and triggers escalations when clinical or operational deadlines elapse.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Activity Escalation Telemetry}} — Discloses SLA breaches.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Generic Activity Instance Registry, Task State Progression Graph, SLA Deadline \& Timer Ledger.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:197}
+
+\par\smallskip
+\phantomsection\label{rad:ise:199}
+\subsubsection*{2.10 Calendar Management}
+\phantomsection\label{rad:ise:200}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Calendar Management}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Projects unified chronological timelines across appointments, on-call rosters, and scheduled operational events.
+
+
+
+\item
+\textbf{Ownership Invariant}: Does \textbf{not} acquire authoritative ownership of rosters or appointment bookings (which remain owned by source scheduling and workforce systems).
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Schedule Projection Integration}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Project Operational Schedule}} — Aggregates and overlays multidisciplinary schedules onto a unified temporal view.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Unified Calendar Projection Query}} — Discloses consolidated temporal schedules.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Temporal Event Correlation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Correlate Activity with Temporal Context}} — Associates clinical events with shift boundaries and appointment slots.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Temporal Context Resolution}} — Resolves operational shifts.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Projected Unified Timeline, Temporal Correlation Index.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:212}
+
+\par\smallskip
+\phantomsection\label{rad:ise:214}
+\subsubsection*{2.11 Presentation Services}
+\phantomsection\label{rad:ise:215}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Presentation Services}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Delivers user-facing portals, clinical dashboards, administrative consoles, and mobile views.
+
+
+
+\item
+\textbf{Ownership Invariant}: Presentation owns \textbf{rendering, user interaction, and layout concerns}. It does \textbf{not} own the underlying clinical or operational information being rendered.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Longitudinal Clinical \& Operational Presentation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Present Contextual Health and Operational Information}} — Composes clinical summaries, work queues, and patient records into responsive role-based user interfaces.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Contextual Presentation Service}} — Delivers contextual health and operational information for presentation.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: UI View Configuration, User Preference Profile, Presentation Layout Specification.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:ise:224}
+
+\par\smallskip
+\phantomsection\label{rad:ise:226}
+\subsubsection*{2.12 Information Design Governance}
+\phantomsection\label{rad:ise:227}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Information Design Governance}}
+
+
+
+\item
+\textbf{Architectural Mandate}: Governs the enterprise canonical information model, data definitions, constraint schemas, terminology bindings, and exchange profiles.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Information Standards \& Semantic Governance}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Information Semantics}} — Authors and validates canonical data concepts and entity relationships.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Semantic Model Definition Service}} — Discloses canonical model definitions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped behaviour: Information Definition \& Schema Governance} (Feature identity not established):
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Information Definition}} — Maintains governed data element dictionaries, data types, and structural rules.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Information Dictionary Query}} — Provides data dictionary specifications.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped behaviour: Terminology Binding Governance} (Feature identity not established):
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Terminology Binding}} — Binds canonical data elements to authoritative terminology value sets.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Terminology Binding Specification Lookup}} — Discloses value set bindings.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped behaviour: Exchange Profile Governance} (Feature identity not established):
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Exchange Profile}} — Defines standards-based interchange profiles and message constraints.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Exchange Profile Specification Query}} — Discloses interoperability schemas.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Semantic Conformance Verification}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Verify Semantic Conformance}} — Validates candidate messages against canonical governance schemas.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Semantic Conformance Verification Service}} — Validates representations for compliance.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Enterprise Canonical Semantic Model, Governed Data Dictionary, Terminology Binding Matrix, Exchange Profile Catalogue, Semantic Conformance Ruleset.
+
+
+
+\end{itemize}

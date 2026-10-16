@@ -1,0 +1,45 @@
+{
+  "path": "/tmp/harmonia-reviewed-bec-standalone-ffixrdng",
+  "exit_code": 0,
+  "elapsed_seconds": 54.423,
+  "result": "PASS",
+  "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error Harmonia-EA-Capability-Map.tex",
+  "source_only_copy_files": 32,
+  "included_tex_files": 30,
+  "generator_scripts_present": false,
+  "model_json_present": false,
+  "makefile_present": false,
+  "rendered_text_identical_to_publication": true,
+  "rendered_text_sha256": "bba5190b78226542cc0475187971589df9ba9a7b7e2f14de907e24b41c09da5d",
+  "outside_publication_nonstandard_inputs": [],
+  "compilation_executables": [
+    "pdflatex",
+    "makeindex"
+  ],
+  "navigation": {
+    "pdf_outline_matches_all_element_ancestry": true,
+    "architectural_parts_top_level": true,
+    "parts_and_all_elements_in_contents": true,
+    "pdf_outline_entries": 1007,
+    "numbered_pdf_catalogue_headings_verified": {
+      "Capability Overview": 449,
+      "Feature Overview": 178,
+      "Function Overview": 22,
+      "Service Overview": 10,
+      "Process Overview": 20,
+      "Definition / governed semantic detail": 641,
+      "Intent": 200,
+      "Boundary": 456,
+      "Harmonia Architectural Relevance": 30,
+      "Scope / Contained Elements": 187,
+      "Relationships / Architectural Relevance": 525,
+      "Derivation Provenance": 227
+    }
+  },
+  "overfull_boxes": 0,
+  "missing_glyphs": 0,
+  "editor_master": "Harmonia-EA-Capability-Map.tex",
+  "kile_configuration_preserved": true,
+  "editor_gui_test": "Not invoked; the conventional master compile and unchanged Kile project settings were verified.",
+  "xelatex": "Supported by unchanged engine-selection template; not rerun for this BEC reconciliation."
+}

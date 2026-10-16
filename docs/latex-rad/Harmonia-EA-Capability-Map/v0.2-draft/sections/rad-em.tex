@@ -1,0 +1,1036 @@
+% !TeX root = ../Harmonia-EA-Capability-Map.tex
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Entity Management — Capability-Scoped Behaviour}\label{rad:em}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/behaviours/01-entity-management.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:em:1}
+\section*{Entity Management — Capability-Scoped Behaviour}
+\phantomsection\label{rad:em:3}
+\subsection*{1. Contextual Scope \& Architectural Intent}
+\phantomsection\label{rad:em:5}
+
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under \hyperref[rad:k9:1392]{approved G1 K9}; document grouping and numbering do not establish architectural identity or hierarchy.
+
+\phantomsection\label{rad:em:7}
+
+Entity Management establishes the canonical master data governance, identity correlation, and structural definitions for all core business entities participating in healthcare delivery: Clients/\allowbreak{}Patients, Healthcare Practitioners, Healthcare Organisations, Locations, Health Services, and Clinical Devices.
+
+\phantomsection\label{rad:em:9}
+
+\par\smallskip
+\phantomsection\label{rad:em:11}
+\subsection*{2. Client Administration}
+\phantomsection\label{rad:em:13}
+
+Client Administration governs the identity, demographic context, relationship associations, and privacy directives of persons receiving care.
+
+\phantomsection\label{rad:em:15}
+\subsubsection*{2.1 Person Identity}
+\phantomsection\label{rad:em:16}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Person Identity}} (under \texttt{\seqsplit{Client Administration}})
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Identifier Resolution}: Asks for authoritative detail and verification regarding a specific person identifier within a single domain namespace.
+
+
+
+\item
+\textbf{Identifier Correlation}: Ingests and maintains cross-authority associations between identifier namespaces where the governing relationship is established by authoritative information.
+
+
+
+\item
+\textbf{Identity Alias}: Contextual, legal, or alternative identity expressions (e.g., preferred names, maiden names, emergency aliases) by which a person is known. It is conceptually distinct from cross-domain correlation.
+
+
+
+\item
+\textbf{R1.x/\allowbreak{}R2.x authority boundary}: Harmonia ingests and maintains authoritative identifiers, aliases and identity relationships, processes externally authoritative corrections/\allowbreak{}merge outcomes and propagates managed-state consequences. It does not originate probabilistic matching, golden-record determination, authoritative master-person selection or person-merge decisions. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-003-subject-referential-integrity}{REQ-FND-003} and the \hyperref[rad:enabling:59]{Strategy scope statement} govern this boundary.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Identifier Resolution}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Resolve Person Identifier}} — Validates and retrieves the authoritative demographic record bound to a specific identifier.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Person Identifier Resolution}} — Exposed to Service Administration and Service Delivery to disambiguate client identities.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Cross-Authority Identifier Correlation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Correlate Person Identifiers}} — Correlates local identifiers (e.g., Hospital MRN, National IHI, Pathology ID) using relationships established by authoritative information, retaining their source and namespace.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Person Identifier Correlation}} — Exposed across the HIE to establish patient cross-reference mappings.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Identity Alias Association}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Person Identity Aliases}} — Records and qualifies alias names, titles, and emergency aliases for a governed person identity.
+
+
+
+\item
+\emph{Exposed Service}: \emph{(Internal Function — accessed via Person Identifier Resolution)}.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Governed Identity Correction}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Apply Governed Person Identity Correction}} — Processes externally authoritative corrections and merge/\allowbreak{}unlink outcomes, updates governed identity associations and propagates resulting managed-state consequences with audit history. Harmonia does not adjudicate the originating person-merge decision.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Person Identity Correction}} — Exposed to authorized HIM/\allowbreak{}Medical Records administrators.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Governed Person Identity Correction Process}.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Person Identity Record, Identifier Namespace Bindings, Cross-Authority Correlation Graph, Identity Aliases, Identity Merge/\allowbreak{}Split Audit Log.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:38}
+
+\par\smallskip
+\phantomsection\label{rad:em:40}
+\subsubsection*{2.2 Healthcare Subject}
+\phantomsection\label{rad:em:41}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Healthcare Subject}}.
+
+
+
+\item
+\textbf{Owner derivation}: Strategy Healthcare Subject owns Subject Context Binding and Demographic Context Governance; the Functions below discharge those same responsibilities. “Healthcare Subject Context” describes information/\allowbreak{}behaviour context, not another Capability or alias.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Subject Context Binding}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Establish Healthcare Subject Context}} — Binds demographic, cultural, and communication requirements to a patient record.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Healthcare Subject Context Resolution}} — Provides comprehensive demographic, language, and indigenous status context to clinical applications.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Demographic Context Governance}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Subject Demographic Context}} — Applies validation rules to address changes, date of birth verification, and death notifications.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Demographic Change Distribution}} — Emits governed subject demographic updates to subscribed clinical systems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Healthcare Subject Profile, Demographic History, Communication Preferences.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:52}
+
+\par\smallskip
+\phantomsection\label{rad:em:54}
+\subsubsection*{2.3 Client Relationship}
+\phantomsection\label{rad:em:55}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Client Relationship}}.
+
+
+
+\item
+\textbf{Owner derivation}: Strategy Client Relationship owns Next-of-Kin \& Guardian Association and Relationship Validity Tracking. Support-network wording describes those responsibilities without establishing a separate Capability, alias or specialisation.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Next-of-Kin \& Guardian Association}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Client Relationships}} — Records links between patients and carers, next of kin, nominated representatives, and legal guardians.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Client Relationship Query}} — Discloses verified support network members and contact details to clinical teams.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Relationship Validity Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Client Relationship Validity}} — Verifies power-of-attorney documents, guardianship orders, and proxy validity periods.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Representative Authority Verification}} — Confirms legal decision-making authority for substitute consent.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Client Relationship Record, Representative Legal Mandate, Carer Contact Directory.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:66}
+
+\par\smallskip
+\phantomsection\label{rad:em:68}
+\subsubsection*{2.4 Client Privacy}
+\phantomsection\label{rad:em:69}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Client Privacy}}.
+
+
+
+\item
+\textbf{Owner derivation}: Strategy Client Privacy owns Consent Directive Evaluation and Confidentiality Flag Enforcement. Consent-directive wording describes that responsibility without creating a separate Capability.
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Consent Directive Evaluation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Evaluate Client Consent}} — Evaluates patient opt-in, opt-out, and general information sharing preferences against proposed exchanges.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Consent Decision Service}} — Provides real-time consent evaluation decisions to Health Information Control.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Confidentiality Flag Enforcement}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Evaluate Client Confidentiality Restrictions}} — Evaluates sensitive record flags (e.g., VIP masking, restricted department exclusions).
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Confidentiality Restriction Evaluation}} — Enforces record-level masking directives across the HIE.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Client Consent Directive, Record Masking Rule, Disclosure Restriction Register.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:80}
+
+\par\smallskip
+\phantomsection\label{rad:em:82}
+\subsection*{3. Provider Administration}
+\phantomsection\label{rad:em:84}
+
+Provider Administration governs individual healthcare practitioners, their professional qualifications, clinical roles, electronic communication endpoints, and organizational affiliations.
+
+\phantomsection\label{rad:em:86}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Provider Administration}}
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Practitioner ≠ Service Provider}: A \emph{Practitioner} is an individual professional. A \emph{Service Provider} is an organisation or facility offering health services. A Practitioner may act in the \emph{Service Provider} role in private practice.
+
+
+
+\item
+\textbf{Role and privilege}: Practitioner Role Resolution supplies role/\allowbreak{}capacity information; it does not establish Clinical Privilege or Operational Privilege. Clinical Privilege Verification retains its clinical scope. An activity may require both distinct privilege determinations; neither follows from Role information alone.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: National Practitioner Verification}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Verify Practitioner Registration}} — Validates national registration, specialty endorsements, and disciplinary sanctions against regulatory registries (e.g., AHPRA).
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Practitioner Verification Service}} — Discloses verified registration and status to credentialing and clinical systems.
+
+
+
+\item
+\emph{Governed Process}: \textbf{Practitioner Verification Process}.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Practitioner Profile Governance}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Practitioner Profile}} — Maintains official names, professional identifiers (e.g., HPI-I, Prescriber Number), and clinical qualifications.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Practitioner Directory Query}} — Provides provider directory lookups across the healthcare network.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Role \& Specialty Modeling}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Practitioner Roles}} — Assigns and maintains clinical roles (e.g., Specialist Physician, Registrar, General Practitioner) fulfilled by a practitioner.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Practitioner Role Resolution}} — Resolves the specific clinical capacities of a practitioner.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Electronic Endpoint Binding}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Bind Practitioner Electronic Endpoints}} — Associates secure messaging addresses, direct communication endpoints, and notification preferences to practitioner roles.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Practitioner Endpoint Lookup}} — Provides secure message routing destinations for clinical communication.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Practitioner-Organisation Affiliation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Practitioner Affiliations}} — Tracks employment, admitting rights, and consulting appointments at specific healthcare facilities.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Practitioner Affiliation Resolution}} — Discloses organizational ties and practice locations.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Clinical Privileging Record}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Clinical Privileges}} — Records approved clinical scopes of practice, procedural authorizations, and prescribing privileges.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Clinical Privilege Verification}} — Verifies procedural and prescribing authority for clinical ordering systems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Practitioner Master Record, Professional Registration Status, Practitioner Role Bindings, Electronic Communication Endpoints, Scope of Practice Privileges.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:112}
+
+\par\smallskip
+\phantomsection\label{rad:em:114}
+\subsection*{4. Organisation Administration}
+\phantomsection\label{rad:em:116}
+
+Organisation Administration maintains the authoritative registry of healthcare organisations, networks, directorates, and administrative subdivisions.
+
+\phantomsection\label{rad:em:118}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Organisation Administration}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: National Organisation Verification}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Verify Healthcare Organisation}} — Validates enterprise legal identity, national facility identifiers (e.g., HPI-O), and accreditation status.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Organisation Verification Service}} — Provides verified organisation credentials to external and internal partners.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Organisation Profile Management}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Govern Organisation Profile}} — Maintains official trading names, enterprise registration numbers, and governing bodies.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Organisation Directory Query}} — Discloses healthcare organisation profiles across the region.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Hierarchical Structure Navigation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Organisational Structure}} — Models parent-subsidiary relationships, clinical directorates, departments, and operational divisions.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Organisational Hierarchy Resolution}} — Resolves department nesting and reporting hierarchies.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Directory Contact Management}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Organisation Contacts}} — Manages administrative, clinical, and emergency contact details for facilities.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Organisation Contact Lookup}} — Provides official operational contact details.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Healthcare Organisation Registry, National Facility Identifier Bindings, Department Hierarchy Graph, Organisation Contact Directory.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:134}
+
+\par\smallskip
+\phantomsection\label{rad:em:136}
+\subsection*{5. Location Administration}
+\phantomsection\label{rad:em:138}
+
+Location Administration defines the physical, functional, and geospatial structure of healthcare environments, including sites, buildings, floors, wards, rooms, bays, and bed care-places.
+
+\phantomsection\label{rad:em:140}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Location Administration}}
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Definition vs. Operational State}: \emph{Location Administration} defines what a physical location or care-place \textbf{IS} (its static attributes, type, capacity, hierarchy). \emph{Health Service Operations} owns what is \textbf{operationally happening} to that care-place (occupancy, cleaning status, isolation locks, turnover).
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Location Geospatial \& Address Resolution}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Healthcare Location}} — Records physical sites, campuses, outpatient clinics, and community health centres.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Location Directory Query}} — Exposes location profiles and geospatial addresses.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Physical Hierarchy Modeling}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Physical Location Hierarchy}} — Models the nested structural containment tree: \texttt{\seqsplit{Campus}} → \texttt{\seqsplit{Building}} → \texttt{\seqsplit{Floor}} → \texttt{\seqsplit{Ward/Suite}} → \texttt{\seqsplit{Room/Bay}} → \texttt{\seqsplit{Bed Care-Place}}.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Location Hierarchy Resolution}} — Discloses physical containment and navigation paths for clinical facilities.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Atomic Care-Place Modeling}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Care-Place Definition}} — Defines static bed bays, treatment chairs, surgical tables, and emergency resuscitation cubicles, including equipment capabilities and oxygen/\allowbreak{}telemetry infrastructure.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Care-Place Specification Lookup}} — Discloses care-place physical capabilities to Bed \& Care-Place Management.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Location Master Registry, Physical Facility Hierarchy Tree, Care-Place Structural Definitions.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:155}
+
+\par\smallskip
+\phantomsection\label{rad:em:157}
+\subsection*{6. Health Service Administration}
+\phantomsection\label{rad:em:159}
+
+Health Service Administration governs the catalogue of clinical services offered across the healthcare network and resolves the critical multi-dimensional mapping between Services, Providers, Locations, and Practitioners.
+
+\phantomsection\label{rad:em:161}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Health Service Administration}}
+
+
+
+\item
+\textbf{Key Architectural Semantics}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Service /\allowbreak{} Location /\allowbreak{} Provider Map}: This capability models the multi-way relationship: Healthcare Service ↔ Service Provider ↔ Healthcare Location ↔ Practitioner Role
+
+
+
+\item
+\textbf{Ownership Invariant}: The mapping capability owns the \textbf{relationships and association rules}. It does \textbf{not} acquire ownership of the Service, Provider, Location, or Practitioner entities being mapped.
+
+
+
+\item
+\textbf{Consumer Resolution Scenarios}: Enables clinical and administrative consumers to unambiguously resolve:
+
+
+\begin{enumerate}
+
+\item
+\emph{Who provides Service X?}
+
+
+
+\item
+\emph{Where does Provider Y provide Service X?}
+
+
+
+\item
+\emph{What Services are delivered at Location Z?}
+
+
+
+\item
+\emph{Where can Service X be obtained?}
+
+
+
+\item
+\emph{Which Practitioner Roles participate in Service X?}
+
+
+
+\end{enumerate}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Service Catalogue Publishing}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Healthcare Service Definition}} — Defines clinical service offerings (e.g., Cardiology Outpatient Clinic, MRI Imaging, Acute Stroke Care), specialty classifications, and clinical scope.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Healthcare Service Directory Query}} — Exposes published clinical service offerings.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Service-Location-Provider Binding}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Service / Location / Provider Map}} — Binds health service definitions to delivering organisations, physical clinic locations, and participating practitioner roles.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Service Provision Resolution}} — Exposes multi-dimensional resolution queries answering who, where, and when healthcare services are delivered.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Operating Schedule Specification}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Service Availability}} — Governs regular operating hours, emergency intake availability, and seasonal clinic schedules.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Service Availability Query}} — Discloses operational intake hours and open status.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Eligibility \& Catchment Specification}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Service Eligibility Rules}} — Configures catchment criteria, age thresholds, referral requirements, and clinical indications for service access.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Service Eligibility Evaluation}} — Evaluates referral eligibility for intake coordinators.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Healthcare Service Catalogue, Service /\allowbreak{} Location /\allowbreak{} Provider Mapping Matrix, Service Availability Schedules, Service Eligibility Rule Sets.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:em:187}
+
+\par\smallskip
+\phantomsection\label{rad:em:189}
+\subsection*{7. Clinical Device Administration}
+\phantomsection\label{rad:em:191}
+
+Clinical Device Administration governs the master definition, instance identification, and electronic communication endpoints of medical equipment and point-of-care appliances.
+
+\phantomsection\label{rad:em:193}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Clinical Device Administration}}
+
+
+
+\item
+\textbf{Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Device Type Specification}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Device Definition}} — Models medical device models, manufacturers, regulatory classifications (e.g., TGA/\allowbreak{}FDA classes), and calibration specifications.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Device Definition Query}} — Discloses approved medical device models and technical parameters.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Device Serial Tracking}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Device Instance Identity}} — Tracks physical serial numbers, Unique Device Identifiers (UDI), asset tags, and firmware versions.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Device Instance Resolution}} — Resolves physical device instances from scanned barcodes or UDIs.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Device-Patient/\allowbreak{}Location Assignment}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Device Association}} — Records active associations between clinical devices, patient encounters, and specific care-places (e.g., Bed 4 Vital Signs Monitor).
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Device Association Query}} — Discloses active device-to-patient and device-to-location bindings.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Device Endpoint Registration}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Maintain Device Communication Endpoints}} — Manages network telemetry addresses, gateway ports, and protocol bindings for medical devices.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Device Endpoint Resolution}} — Exposes network addresses for telemetry routing.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Information Responsibility}: Medical Device Type Registry, Physical Device Instance Directory, Device Association Ledger, Device Communication Endpoint Map.
+
+
+
+\end{itemize}

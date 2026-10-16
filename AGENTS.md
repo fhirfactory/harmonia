@@ -159,6 +159,16 @@ does not imply deletion of that information. This preservation rule governs
 future reconciliation work; it does not authorise retrospective rewriting,
 deletion or migration of existing legacy material.
 
+### 1.3 RAD / Architecture Release Governance
+
+Every accepted repository change MUST apply the patch increment defined in
+[the governed release policy](docs/markdown/governance/architecture-release-policy.md).
+The root `architecture-release.json` is the single current-release authority.
+Publication/report tooling reads it; generation does not increment it. Minor or
+major increments require an explicit governance decision. Maven software versions
+and branch names remain independent. Include the increment in the same accepted
+change set, regardless of author or tool.
+
 ## 2. System Taxonomy & Module Hierarchy
 
 Harmonia enforces strict separation of concerns across its 9 core

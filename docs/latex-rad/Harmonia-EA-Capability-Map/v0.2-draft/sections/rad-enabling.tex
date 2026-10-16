@@ -1,0 +1,2828 @@
+% !TeX root = ../Harmonia-EA-Capability-Map.tex
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Canonical Business Enabling Capability Model \& Features}\label{rad:enabling}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:enabling:1}
+\section*{Canonical Business Enabling Capability Model \& Features}
+\phantomsection\label{rad:enabling:3}
+\subsection*{Overview \& Architecture}
+\phantomsection\label{rad:enabling:5}
+
+The Business Enabling Capability model defines \textbf{what systems and information infrastructure must enable or provide in support of the healthcare enterprise}.
+
+\phantomsection\label{rad:enabling:7}
+
+Where Business Capabilities define the high-level healthcare landscape (what the enterprise does), Business Enabling Capabilities specify the functional abilities systems must deliver to make healthcare delivery, administration, and operations possible.
+
+\phantomsection\label{rad:enabling:9}
+\subsubsection*{Architectural Principles Governing this Model}
+\phantomsection\label{rad:enabling:10}
+
+\begin{enumerate}
+
+\item
+\textbf{Authentic Healthcare Operating Contexts}: Capabilities are grouped into five authentic healthcare contextual views. They reflect genuine healthcare operating environments (e.g., Ward Operations, Order Administration, Patient Clinical Record), \textbf{not} low-level integration engine plumbing or middleware mechanics.
+
+
+
+\item
+\textbf{Independence from Commercial Product Boundaries}: Capabilities are defined independently of commercial software product boundaries (such as PAS, EMR, LIS, RIS, HRMS, or FMIS). A commercial product may implement multiple capabilities, drawing "dotted lines" around parts of the model; the capability model remains orthogonal to vendor packaging.
+
+
+
+\item
+\textbf{Atomic Feature Decomposition}: Within established Harmonia-Relevant and Harmonia-Core Capability contexts, system behaviour is decomposed into atomic \textbf{Features}—the smallest useful, testable, technology-neutral statements of system-enabled behaviour. Reference and Adjacent capabilities are intentionally not decomposed into features.
+
+
+
+\item
+\textbf{Technology Neutrality}: No capability or feature is defined in terms of specific software products (HAPI FHIR, Infinispan, PostgreSQL, ActiveMQ Artemis, Camel, Netty, Vue, Spring) or runtime plumbing (threads, queues, ports, DDL).
+
+
+
+\item
+\textbf{Architectural Scope Sufficiency}: The Business Enabling Feature catalogue provides the established R1.x/\allowbreak{}R2.x Feature baseline for the capabilities and contextual views presently decomposed. Completeness SHALL NOT be interpreted as requiring artificial Feature decomposition of capabilities for which no Feature-level decomposition has been architecturally established. Roadmap items (such as authoritative master-patient EMPI reconciliation) are explicitly demarcated as uncommitted Harmonia 3.x candidates.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:enabling:16}
+
+Under \hyperref[rad:k9:1392]{approved G1 K9}, the five views, catalogue numbering, indentation and decomposition presentation do not establish Architectural Element identity, CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 assignment, ancestry or root status. The 137 established Features retain their FT type, names and identifiers. Affected complete Capability ancestry and structural Canonical IDs remain unresolved. Derivation may proceed from established ownership and responsibility without inventing intermediate elements.
+
+\phantomsection\label{rad:enabling:18}
+
+The \hyperref[rad:metamodel:33]{fixed Capability decomposition} requires \textbf{CT1 → CT2 → CT3 → FT} for every fully reconciled Feature. Every Feature SHALL be framed by CT3 with CT2 and CT1 parents; tiers SHALL NOT be skipped. A Feature cannot compensate for incomplete upstream Capability modelling. Existing Features without established CT3 frames remain valid evidence with Capability ancestry/\allowbreak{}decomposition requiring separate reconciliation; their current placement does not establish direct CT1/\allowbreak{}CT2 → FT permission. Neither the 69 unresolved enabling catalogue descriptions nor any other presentation entry becomes a CT3 Capability through this obligation. No Capability, tier assignment, Feature, local ID or complete Canonical ID is created or changed here.
+
+\phantomsection\label{rad:enabling:20}
+
+The approved \hyperref[rad:assurance-strategy]{Health Service Assurance derivation} additionally establishes \textbf{Assurance Design}, \textbf{Assurance Criteria Management} and \textbf{Governed Assurance} as Business Enabling Capabilities supporting BC-18. Their definitions and assurance principles are recorded \hyperref[rad:enabling:674]{below}. Their contextual-view placement, relevance classification, Capability Tier, complete ancestry and structural Canonical IDs remain unresolved; they are not assigned through document position or lexical similarity. No additional Feature catalogue is derived.
+
+\phantomsection\label{rad:enabling:22}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:24}
+\subsection*{The Five Contextual Views}
+\phantomsection\label{rad:enabling:26}
+
+The Business Enabling capabilities are structured across five contextual views:
+
+\phantomsection\label{rad:enabling:28}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+1. ENTITY MANAGEMENT
+
+Governance and administration of healthcare entities throughout
+
+their lifecycle: Clients, Providers, Organisations, Locations,
+
+Services, Products, and Devices.
+
+2. SERVICE ADMINISTRATION
+
+Administrative, logistical, and financial progression of care:
+
+Client Intake, Referrals, Encounters, Orders, Diagnostics,
+
+Care Plans, Clinical Messaging, and Billing Extraction.
+
+3. SERVICE DELIVERY
+
+Systems enablement across clinical delivery settings: Primary Care,
+
+Acute Inpatient, Emergency, Surgical, Diagnostic, Medication,
+
+Allied Health, Community, and Remote/Virtual Care.
+
+4. HEALTH SERVICE OPERATIONS
+
+Facility logistics, bed and care-place management, capacity,
+
+clinical resource coordination, work allocation and dispatch,
+
+patient transport, and discharge progression.
+
+5. INTRINSIC / SHARED ENABLEMENT
+
+Reusable system capabilities: Longitudinal Clinical Record,
+
+Health Information Exchange, Information Access, Policy \& Security
+
+Control, Collaboration, Workflow Coordination, and Presentation.
+\end{quote}
+\phantomsection\label{rad:enabling:57}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:59}
+\subsection*{Architectural Scope Statement (Harmonia 1.x/\allowbreak{}2.x vs. 3.x Roadmap)}
+\phantomsection\label{rad:enabling:61}
+
+\begin{quote}
+
+The Business Enabling Feature catalogue provides the established R1.x/\allowbreak{}R2.x Feature baseline for the capabilities and contextual views presently decomposed. Completeness SHALL NOT be interpreted as requiring artificial Feature decomposition of capabilities for which no Feature-level decomposition has been architecturally established.
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:63}
+
+\begin{itemize}
+
+\item
+\textbf{Established Coverage}: The model records established capability responsibilities and the 137-Feature baseline. BC-17 enablement and the assurance capabilities' unestablished contextual-view, tier, ancestry and Feature relationships remain explicit gaps; structural symmetry is not a completion requirement.
+
+
+
+\item
+\textbf{Sufficient Does Not Mean Frozen Forever}: Additional capabilities and features may be introduced where future Harmonia scope requires them.
+
+
+
+\item
+\textbf{Roadmap Demarcation — Patient Identity}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Harmonia 1.x/\allowbreak{}2.x Scope}: Includes cross-system identifier resolution, identifier correlation, identity alias association, identity provenance, identity federation across regional nodes, and governed administrative correction.
+
+
+
+\item
+\textbf{Harmonia 3.x Roadmap Candidate}: Authoritative master-patient identity reconciliation, probabilistic matching algorithms, and Enterprise Master Person Index (EMPI) merge/\allowbreak{}unmerge engines remain an uncommitted Harmonia 3.x candidate. Harmonia 1.x/\allowbreak{}2.x relies on authoritative upstream PAS/\allowbreak{}MPI feeds rather than acting as the master clinical EMPI authority.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:69}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:71}
+\section*{View 1: Entity Management}
+\phantomsection\label{rad:enabling:73}
+
+Entity Management encompasses systems enablement for identifying, governing, and managing core healthcare entities throughout their operational lifecycles.
+
+\phantomsection\label{rad:enabling:75}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+1. Client Administration
+
+1.1 Person Identity [Harmonia-Core]
+
+1.2 Healthcare Subject [Harmonia-Core]
+
+1.3 Client Relationship [Harmonia-Relevant]
+
+1.4 Client Privacy [Harmonia-Core]
+
+2. Provider Administration
+
+2.1 Practitioner [Harmonia-Core]
+
+2.2 Practitioner Role [Harmonia-Core]
+
+2.3 Provider Relationship [Harmonia-Relevant]
+
+2.4 Provider Engagement [Harmonia-Relevant]
+
+3. Organisation Administration
+
+3.1 Healthcare Organisation [Harmonia-Core]
+
+3.2 Organisational Structure [Harmonia-Core]
+
+3.3 Organisation Contact [Harmonia-Relevant]
+
+4. Location Administration
+
+4.1 Healthcare Location [Harmonia-Core]
+
+4.2 Location Structure [Harmonia-Core]
+
+4.3 Care-Place Definition [Harmonia-Core]
+
+5. Health Service Administration
+
+5.1 Healthcare Service Definition [Harmonia-Core]
+
+5.2 Service Provision Relationship [Harmonia-Core]
+
+5.3 Service Availability Definition [Harmonia-Core]
+
+5.4 Service Eligibility Definition [Harmonia-Relevant]
+
+6. Health Product Administration
+
+6.1 Health Product Definition [Adjacent]
+
+6.2 Product Formulary \& Catalogue [Adjacent]
+
+6.3 Product Batch \& Serial Tracking [Reference]
+
+7. Clinical Device Administration
+
+7.1 Device Definition [Harmonia-Relevant]
+
+7.2 Device Instance [Harmonia-Relevant]
+
+7.3 Device Association [Harmonia-Relevant]
+
+7.4 Device Connectivity [Harmonia-Relevant]
+\end{quote}
+\phantomsection\label{rad:enabling:110}
+\subsubsection*{Detailed Capability \& Feature Catalogue: Entity Management}
+\phantomsection\label{rad:enabling:112}
+\subsubsection*{1. Client Administration}
+\phantomsection\label{rad:enabling:113}
+
+Governs the representation, identification, and demographic context of individuals receiving care.
+
+\phantomsection\label{rad:enabling:115}
+
+\begin{itemize}
+
+\item
+\textbf{1.1 Person Identity} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Resolving, maintaining, and correlating identities and identifiers assigned to an individual across different authorities.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-01}}: \textbf{Identifier Resolution}: Ingest and resolve external identifiers against registered issuing authorities and namespace systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-02}}: \textbf{Cross-Authority Identifier Correlation}: Correlate disparate local identifiers (e.g., hospital MRN, clinic client ID, national IHI) belonging to the same individual.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-03}}: \textbf{Identity Alias Association}: Maintain explicit associations between active identifiers and historical or demographic aliases without destructive overwriting.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-04}}: \textbf{Governed Identity Correction}: Apply administrative identity updates, linked-record corrections, and split/\allowbreak{}merge notifications propagated from authoritative sources.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{1.2 Healthcare Subject} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Managing the core healthcare subject context bound to clinical records and operational activities.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-05}}: \textbf{Subject Context Binding}: Bind authenticated person identity to clinical encounters, orders, and observations as the enduring subject of care with verifiable association.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-06}}: \textbf{Demographic Context Governance}: Manage essential demographic attributes (date of birth, sex, vital status) with full provenance and timestamping.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{1.3 Client Relationship} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Representing relationships between the client and carers, guardians, or contacts.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-07}}: \textbf{Next-of-Kin \& Guardian Association}: Associate nominated emergency contacts, legal guardians, and care agents with the client record.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-08}}: \textbf{Relationship Validity Tracking}: Maintain effective date intervals and authority scopes for nominated client relationships.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{1.4 Client Privacy} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Enforcing client-level privacy preferences, consent directives, and confidentiality markers.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-09}}: \textbf{Consent Directive Evaluation}: Evaluate client consent directives against requested information disclosure and exchange actions.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-10}}: \textbf{Confidentiality Flag Enforcement}: Enforce restricted access flags (e.g., VIP, sensitive diagnosis, restricted record) across query and presentation interfaces.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:137}
+\subsubsection*{2. Provider Administration}
+\phantomsection\label{rad:enabling:138}
+
+Governs healthcare practitioners, their professional qualifications, operational roles, and organisational engagements.
+
+\phantomsection\label{rad:enabling:140}
+
+\begin{itemize}
+
+\item
+\textbf{2.1 Practitioner} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Identifying and verifying individual healthcare professionals.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-11}}: \textbf{National Practitioner Verification}: Ingest, validate, and verify national practitioner identifiers (e.g., HPI-I) and professional registration status.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-12}}: \textbf{Practitioner Profile Governance}: Maintain core professional demographic details, qualifications, and active practice status.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{2.2 Practitioner Role} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Modeling the formal role, specialty, and operational capacity of a practitioner at a given organisation or location.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-13}}: \textbf{Role \& Specialty Modeling}: Define and associate clinical specialties, practice roles, and service capacities for a practitioner.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-14}}: \textbf{Electronic Endpoint Binding}: Associate validated communication endpoints (secure messaging addresses, direct routing queues) with specific practitioner roles.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{2.3 Provider Relationship} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Managing organizational affiliations and multidisciplinary team relationships.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-15}}: \textbf{Practitioner-Organisation Affiliation}: Maintain temporal affiliations between practitioners and healthcare organizations.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{2.4 Provider Engagement} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Capturing terms of service and clinical privilege agreements.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-16}}: \textbf{Clinical Privileging Record}: Track active clinical admitting and practice privileges within healthcare facilities.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:158}
+\subsubsection*{3. Organisation Administration}
+\phantomsection\label{rad:enabling:159}
+
+Governs healthcare delivery organizations, facilities, and network structures.
+
+\phantomsection\label{rad:enabling:161}
+
+\begin{itemize}
+
+\item
+\textbf{3.1 Healthcare Organisation} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Authoritative identification and profiling of legal and operational healthcare entities.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-17}}: \textbf{National Organisation Verification}: Validate national organization identifiers (e.g., HPI-O) and legal entity classifications.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-18}}: \textbf{Organisation Profile Management}: Govern directory profiles, operational status, and published service descriptions.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{3.2 Organisational Structure} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Managing parent-child hierarchies, departments, and corporate relationships.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-19}}: \textbf{Hierarchical Structure Navigation}: Model, traverse, and resolve nested departmental, divisional, and regional healthcare networks.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{3.3 Organisation Contact} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Maintaining verified administrative and clinical communication channels.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-20}}: \textbf{Directory Contact Management}: Manage verified phone, email, and administrative contact channels for healthcare facilities.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:174}
+\subsubsection*{4. Location Administration}
+\phantomsection\label{rad:enabling:175}
+
+Governs the physical spaces, facilities, and care environments where healthcare is delivered.
+
+\phantomsection\label{rad:enabling:177}
+
+\begin{itemize}
+
+\item
+\textbf{4.1 Healthcare Location} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Identifying and profiling geographic locations, physical campuses, and health facilities.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-21}}: \textbf{Location Geospatial \& Address Resolution}: Validate physical addresses, geospatial coordinates, and location operational status.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{4.2 Location Structure} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Modeling the physical architecture of healthcare campuses.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-22}}: \textbf{Physical Hierarchy Modeling}: Represent campus, building, wing, floor, and ward architectural relationships.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{4.3 Care-Place Definition} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Modeling the atomic care delivery places (beds, bays, treatment chairs, surgical tables).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-23}}: \textbf{Atomic Care-Place Modeling}: Define specific beds, care-bays, and examination rooms with their physical capabilities (e.g., telemetry-capable, negative-pressure).
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:189}
+\subsubsection*{5. Health Service Administration}
+\phantomsection\label{rad:enabling:190}
+
+Governs the healthcare services offered by providers and organizations.
+
+\phantomsection\label{rad:enabling:192}
+
+\begin{itemize}
+
+\item
+\textbf{5.1 Healthcare Service Definition} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Specifying clinical and administrative health services offered to the public or clinical referrers.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-24}}: \textbf{Service Catalogue Publishing}: Publish structured healthcare service definitions, clinical specialties, and intake criteria to regional directories.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{5.2 Service Provision Relationship} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Binding health services to specific organizations, locations, and practitioner roles.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-25}}: \textbf{Service-Location-Provider Binding}: Correlate which organization provides a named health service at which physical location with which practitioner roles.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{5.3 Service Availability Definition} (\texttt{\seqsplit{Harmonia-Core}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Modeling regular operating hours, exceptional closures, and emergency availability.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-26}}: \textbf{Operating Schedule Specification}: Define temporal availability, clinic operating hours, and on-call service windows.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{5.4 Service Eligibility Definition} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Capturing referral criteria, catchment boundaries, and clinical eligibility.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-27}}: \textbf{Eligibility \& Catchment Specification}: Define clinical referral thresholds and geographic catchment boundaries.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:208}
+\subsubsection*{6. Health Product Administration}
+\phantomsection\label{rad:enabling:209}
+
+Governs medications, blood products, implants, and consumable health goods.
+
+\phantomsection\label{rad:enabling:210}
+
+\begin{itemize}
+
+\item
+\textbf{6.1 Health Product Definition} (\texttt{\seqsplit{Adjacent}}): Classification of pharmaceutical and consumable products.
+
+
+
+\item
+\textbf{6.2 Product Formulary \& Catalogue} (\texttt{\seqsplit{Adjacent}}): Management of approved facility medication formularies.
+
+
+
+\item
+\textbf{6.3 Product Batch \& Serial Tracking} (\texttt{\seqsplit{Reference}}): Supply chain batch and lot management. \emph{(No features decomposed for Reference/\allowbreak{}Adjacent capabilities).}
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:215}
+\subsubsection*{7. Clinical Device Administration}
+\phantomsection\label{rad:enabling:216}
+
+Governs medical equipment, patient monitors, diagnostic instruments, and telehealth devices.
+
+\phantomsection\label{rad:enabling:218}
+
+\begin{itemize}
+
+\item
+\textbf{7.1 Device Definition} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Specifying medical equipment types, models, and regulatory classifications.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-28}}: \textbf{Device Type Specification}: Catalog medical device models, regulatory approvals, and capabilities.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{7.2 Device Instance} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Tracking physical device hardware instances and serial numbers.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-29}}: \textbf{Device Serial Tracking}: Ingest and maintain unique device identifier (UDI) records and serial numbers.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{7.3 Device Association} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Associating clinical devices with patients, beds, or rooms.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-30}}: \textbf{Device-Patient/\allowbreak{}Location Assignment}: Track dynamic association between a telemetry monitor, patient, and physical bed.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{7.4 Device Connectivity} (\texttt{\seqsplit{Harmonia-Relevant}})
+
+
+\begin{itemize}
+
+\item
+\emph{Definition}: Registering communication protocols and network endpoints for medical devices.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-EM-31}}: \textbf{Device Endpoint Registration}: Register communication interfaces and security credentials for diagnostic telemetry feeds.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:234}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:236}
+\section*{View 2: Service Administration}
+\phantomsection\label{rad:enabling:238}
+
+Service Administration encompasses systems enablement for the operational, administrative, logistical, and financial progression of care.
+
+\phantomsection\label{rad:enabling:240}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+1. Client-Centred Administration [Harmonia-Relevant]
+
+2. Referral Administration [Harmonia-Relevant]
+
+3. Scheduling Administration [Harmonia-Relevant]
+
+4. Episode \& Encounter Administration [Harmonia-Core]
+
+5. Order Administration [Harmonia-Core]
+
+6. Diagnostic Administration [Harmonia-Core]
+
+7. Medication Administration [Harmonia-Relevant]
+
+8. Procedure Administration [Harmonia-Relevant]
+
+9. Clinical Record Administration [Harmonia-Core]
+
+10. Care Plan Administration [Harmonia-Relevant]
+
+11. Clinical Communication Administration [Harmonia-Core]
+
+12. Funding \& Coverage Administration [Adjacent]
+
+13. Clinical Charging \& Claims Administration [Adjacent]
+\end{quote}
+\phantomsection\label{rad:enabling:256}
+\subsubsection*{Critical Domain Distinctions: Service Administration}
+\phantomsection\label{rad:enabling:258}
+\subsubsection*{Distinction: Referral vs. Order}
+\phantomsection\label{rad:enabling:259}
+
+\begin{itemize}
+
+\item
+\textbf{Referral Administration}: A \textbf{Referral} formally requests another care participant or service provider to assess, manage or assume some degree of clinical care responsibility. Referral intent, disposition, responsibility actually assumed and Transfer of Care are distinct. Referral may lead to shared or assumed responsibility or transfer of ongoing care, but does not itself establish acceptance, delivery, assumption or Transfer of Care, or universally require an Appointment, Encounter or Order.
+
+
+
+\item
+\textbf{Order Administration}: An \textbf{Order} requests a defined, bounded \textbf{fulfilment activity} (e.g., execute a diagnostic test, dispense a medication, perform a procedure) and strictly supports a \textbf{closed-loop progression} returning an outcome to the requester.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:262}
+\subsubsection*{Distinction: Technical ACK vs. Business ACK}
+\phantomsection\label{rad:enabling:263}
+
+\begin{itemize}
+
+\item
+\textbf{Technical Delivery Acknowledgement}: A technical acknowledgement establishes only the acceptance state defined by the applicable interaction contract. It SHALL NOT be interpreted as durable acceptance, committed business state, successful processing or successful business disposition unless that meaning is explicitly established by the governing contract. HTTP 200 does not universally establish successful business disposition, and HTTP 202 does not universally establish durable queue acceptance; either may have stronger meaning under an explicit contract.
+
+
+
+\item
+\textbf{Business Acknowledgement}: A clinical/\allowbreak{}operational message generated by the receiving application or clinical staff confirming that the order or referral has been reviewed, accepted for execution, scheduled, or rejected.  Technical Delivery Acknowledgement ≠  Business Acknowledgement
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:267}
+
+Acknowledgement of a handoff is not, by itself, evidence of eventual downstream business outcome. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-001-durable-ingress-acceptance-boundary}{REQ-FND-001} continues to require the applicable durable acceptance boundary before Harmonia positively acknowledges ingress acceptance.
+
+\phantomsection\label{rad:enabling:269}
+
+Business acknowledgement is contextual and may communicate acceptance, rejection or another explicit disposition; it does not establish a universal reviewed → accepted → scheduled progression or transfer originating authority.
+
+\phantomsection\label{rad:enabling:271}
+\subsubsection*{Order Closed-Loop Progression Semantics}
+\phantomsection\label{rad:enabling:272}
+
+All order-related capabilities must support the end-to-end closed loop: Destination → Route → Deliver → Acknowledge → Progress → Complete → Outcome
+
+\phantomsection\label{rad:enabling:275}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:277}
+\subsubsection*{Detailed Capability \& Feature Catalogue: Service Administration}
+\phantomsection\label{rad:enabling:279}
+\subsubsection*{1. Client-Centred Administration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:280}
+
+\begin{itemize}
+
+\item
+\textbf{1.1 Client Intake \& Demographic Update}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-01}}: \textbf{Demographic Update Ingestion}: Ingest and validate patient admission and registration updates from external PAS systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-02}}: \textbf{Demographic Change Distribution}: Fan out verified client demographic updates to downstream clinical subsystems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:284}
+\subsubsection*{2. Referral Administration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:285}
+
+\begin{itemize}
+
+\item
+\textbf{2.1 Referral Intake \& Progression}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-03}}: \textbf{Referral Document Ingestion}: Ingest structured clinical referral messages across integration boundaries.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-04}}: \textbf{Referral Supporting Information}: Collate and associate supporting clinical documentation, diagnostic history, and patient context with referral requests.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-05}}: \textbf{Referral Status \& Outcome Tracking}: Track referral operational progression and communicate referral outcomes (acceptance, decline, or redirection) to referring providers.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:290}
+\subsubsection*{3. Scheduling Administration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:291}
+
+\begin{itemize}
+
+\item
+\textbf{3.1 Appointment \& Booking Administration}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-06}}: \textbf{Appointment Notification Ingestion}: Ingest scheduled appointment events from departmental scheduling systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-07}}: \textbf{Appointment Status Synchronization}: Propagate booking cancellations, reschedules, and attendances across care coordination systems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:295}
+\subsubsection*{4. Episode \& Encounter Administration (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:296}
+
+\begin{itemize}
+
+\item
+\textbf{4.1 Encounter Lifecycle Management}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-08}}: \textbf{Encounter Context Creation}: Create and maintain authoritative encounter tracking contexts for hospital admissions, outpatient visits, and community contacts.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-09}}: \textbf{Encounter State Progression}: Track encounter status transitions (\texttt{\seqsplit{PLANNED}} → \texttt{\seqsplit{ARRIVED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{ON\_LEAVE}} → \texttt{\seqsplit{DISCHARGED}}).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-10}}: \textbf{Encounter Bed/\allowbreak{}Location Association}: Dynamically maintain the association between an encounter, care team, and physical bed or ward location.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:301}
+\subsubsection*{5. Order Administration (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:302}
+
+\begin{itemize}
+
+\item
+\textbf{5.1 Closed-Loop Order Progression}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-11}}: \textbf{Order Request Ingestion}: Ingest clinical diagnostic, medication, and procedure order requests with validated ordering clinician context.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-12}}: \textbf{Order Destination Resolution \& Routing}: Resolve fulfillment endpoints and reliably route orders to performing service systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-13}}: \textbf{Order Closed-Loop Progression Tracking}: Track order progression across destination determination, routing, delivery, receipt acknowledgement (distinguishing technical delivery acknowledgement from business acknowledgement), execution progress, completion, and outcome association.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-14}}: \textbf{Order Cancellation \& Modification Coordination}: Coordinate order cancellation and amendment requests, ensuring synchronization with performing systems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:308}
+\subsubsection*{6. Diagnostic Administration (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:309}
+
+\begin{itemize}
+
+\item
+\textbf{6.1 Diagnostic Workflow Management}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-15}}: \textbf{Diagnostic Request Correlation}: Correlate diagnostic test orders with collected clinical specimens and patient encounters.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-16}}: \textbf{Diagnostic Report Ingestion \& Binding}: Ingest finalized laboratory and radiology reports, verifying content integrity and binding them to the parent order.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-17}}: \textbf{Diagnostic Report Distribution}: Distribute finalized laboratory, pathology, and imaging reports to ordering clinicians and designated care teams.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:314}
+
+This Feature retains its finalised-report responsibility. Broader Domain03 Diagnostic Administration behaviour may also handle preliminary, corrected and addendum/\allowbreak{}correction information without redefining this narrower Feature.
+
+\phantomsection\label{rad:enabling:316}
+\subsubsection*{7. Medication Administration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:317}
+
+\begin{itemize}
+
+\item
+\textbf{7.1 Medication Order \& Dispense Management}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-18}}: \textbf{Medication Order Ingestion}: Ingest inpatient and discharge prescription orders.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-19}}: \textbf{Dispense Event Tracking}: Ingest medication dispense verification records from pharmacy management systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-20}}: \textbf{Medication Administration Record (MAR) Ingestion}: Ingest point-of-care medication administration events.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:322}
+\subsubsection*{8. Procedure Administration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:323}
+
+\begin{itemize}
+
+\item
+\textbf{8.1 Procedure \& Surgical Administration}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-21}}: \textbf{Procedure Booking Ingestion}: Ingest scheduled surgical case bookings and procedural requests.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-22}}: \textbf{Procedural Documentation Ingestion}: Ingest operative reports, anesthesia records, and post-procedure summaries.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:327}
+\subsubsection*{9. Clinical Record Administration (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:328}
+
+\begin{itemize}
+
+\item
+\textbf{9.1 Clinical Documentation Lifecycle}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-23}}: \textbf{Clinical Document Ingestion}: Ingest structured and unstructured clinical documents (discharge summaries, consult notes, letters).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-24}}: \textbf{Document Versioning \& Supersession}: Manage document classification, author attribution, amendment attribution, versioning, and supersession or withdrawal without destructive data loss.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-25}}: \textbf{Document Metadata Indexing}: Index clinical document metadata (author, specialty, encounter, date, confidentiality) for rapid discovery.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:333}
+\subsubsection*{10. Care Plan Administration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:334}
+
+\begin{itemize}
+
+\item
+\textbf{10.1 Care Plan Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-26}}: \textbf{Care Plan Ingestion \& Distribution}: Ingest multidisciplinary care plans and syndicate updates to authorized care team members.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:337}
+\subsubsection*{11. Clinical Communication Administration (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:338}
+
+\begin{itemize}
+
+\item
+\textbf{11.1 Secure Clinical Communication}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SA-27}}: \textbf{Clinical Communication Distribution}: Distribute secure clinical communications between verified healthcare providers and designated care team endpoints.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-28}}: \textbf{Delivery Acknowledgement Tracking}: Correlate recipient delivery and read receipts with outbound clinical communications, distinguishing transport delivery from recipient acknowledgement. Receipt/\allowbreak{}read evidence does not by itself establish business acceptance, clinical review, incorporation, approval, finality or originating authority.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SA-29}}: \textbf{Communication Audit Logging}: Maintain an enduring, non-PHI, tamper-evident log of all clinical communication transactions.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:343}
+\subsubsection*{12. Funding \& Coverage Administration (\texttt{\seqsplit{Adjacent}})}
+\phantomsection\label{rad:enabling:344}
+
+\begin{itemize}
+
+\item
+Ingestion of patient insurance coverage and eligibility flags. \emph{(No features decomposed)}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:346}
+\subsubsection*{13. Clinical Charging \& Claims Administration (\texttt{\seqsplit{Adjacent}})}
+\phantomsection\label{rad:enabling:347}
+
+\begin{itemize}
+
+\item
+Export of clinical activity summaries and charging records to billing systems. \emph{(No features decomposed)}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:349}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:351}
+\section*{View 3: Service Delivery}
+\phantomsection\label{rad:enabling:353}
+
+Service Delivery encompasses systems enablement across genuine healthcare delivery settings and clinical care delivery contexts.
+
+\phantomsection\label{rad:enabling:355}
+
+These established Business Enabling contextual entries are not the CT2 decomposition of \hyperref[rad:business:148]{01 Individual Care Delivery}. The Business Capability's six CT2 abilities remain independent of these contexts under \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capabilities/business-capabilities.md\#b2-r05}{B2-R05 and B2-R06}.
+
+\phantomsection\label{rad:enabling:360}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+1. Clinical Assessment [Adjacent]
+
+2. Primary Care [Harmonia-Relevant]
+
+3. Acute Care [Harmonia-Relevant]
+
+4. Emergency Care [Harmonia-Relevant]
+
+5. Inpatient Care [Harmonia-Relevant]
+
+6. Ambulatory Care [Adjacent]
+
+7. Surgical \& Procedural Care [Adjacent]
+
+8. Diagnostic Services [Harmonia-Relevant]
+
+9. Therapeutic Services [Adjacent]
+
+10. Medication Therapy [Harmonia-Relevant]
+
+11. Allied Health [Adjacent]
+
+12. Preventive Care [Harmonia-Relevant]
+
+13. Rehabilitation [Adjacent]
+
+14. Community Care [Harmonia-Relevant]
+
+15. Outreach Care [Harmonia-Relevant]
+
+16. Remote \& Virtual Care [Harmonia-Relevant]
+\end{quote}
+\phantomsection\label{rad:enabling:379}
+\subsubsection*{Architectural Principles: Service Delivery}
+\phantomsection\label{rad:enabling:380}
+
+\begin{enumerate}
+
+\item
+\textbf{Heterogeneous Axes Preserved}: The 16 Service Delivery capabilities represent heterogeneous clinical settings (acute, emergency, primary), modalities (virtual, outreach), and specialties (diagnostic, therapeutic). They are deliberately preserved as authentic healthcare contexts rather than normalized into artificial abstractions.
+
+
+
+\item
+\textbf{Zero Harmonia-Core in Service Delivery}: No Service Delivery capability is classified as \texttt{\seqsplit{Harmonia-Core}}. Harmonia provides integration, transport, state management, and notification; \textbf{Harmonia does not practice medicine or deliver clinical therapy}.
+
+
+
+\item
+\textbf{Canonical Enabling Pattern for Relevant Features}: Provide Context → Receive Clinical State/\allowbreak{}Outcome → Correlate → Preserve Provenance → Make Available → Enable Next Activity
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:enabling:385}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:387}
+\subsubsection*{Detailed Capability \& Feature Catalogue: Service Delivery}
+\phantomsection\label{rad:enabling:389}
+\subsubsection*{2. Primary Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:390}
+
+\begin{itemize}
+
+\item
+\textbf{2.1 Primary Care Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-01}}: \textbf{General Practice Shared Record Ingestion}: Ingest shared health summaries, encounter notes, and immunization records from primary care practice management systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-02}}: \textbf{Primary Care Notification Dispatch}: Dispatch emergency department arrival, acute admission, and discharge notifications to the patient's registered general practitioner.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:394}
+\subsubsection*{3. Acute Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:395}
+
+\begin{itemize}
+
+\item
+\textbf{3.1 Acute Care Monitoring \& Event Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-03}}: \textbf{Acute Clinical State Event Capture}: Ingest clinical deterioration notifications and acute clinical status updates.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-04}}: \textbf{Acute Care Clinical Context Provision}: Provide consolidated longitudinal history and active medication lists to acute care clinicians at point of triage.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:399}
+\subsubsection*{4. Emergency Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:400}
+
+\begin{itemize}
+
+\item
+\textbf{4.1 Emergency Care Progression}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-05}}: \textbf{Emergency Department Arrival \& Triage Ingestion}: Ingest emergency presentation, triage category, and chief complaint records.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-06}}: \textbf{Emergency Care Cross-Facility Correlation}: Correlate incoming emergency presentations with recent regional admissions, prior discharge summaries, and known allergy profiles.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:404}
+\subsubsection*{5. Inpatient Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:405}
+
+\begin{itemize}
+
+\item
+\textbf{5.1 Multidisciplinary Inpatient Care Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-07}}: \textbf{Inpatient Rounding Context Provision}: Aggregate diagnostic results, current medication administration records, and nursing notes for multidisciplinary inpatient rounds.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-08}}: \textbf{Inpatient Clinical Progression Tracking}: Capture inpatient clinical milestone completions (e.g., medical stability achieved, allied health clearance).
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:409}
+\subsubsection*{8. Diagnostic Services (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:410}
+
+\begin{itemize}
+
+\item
+\textbf{8.1 Diagnostic Service Integration}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-09}}: \textbf{Laboratory \& Imaging Result Distribution}: Reliably distribute structured diagnostic reports (pathology, radiology) to ordering clinicians and designated secondary recipients.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-10}}: \textbf{Diagnostic History Consolidation}: Consolidate historical diagnostic trends (e.g., cumulative laboratory results) across multiple regional providers into an integrated view.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:414}
+\subsubsection*{10. Medication Therapy (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:415}
+
+\begin{itemize}
+
+\item
+\textbf{10.1 Medication Therapy Provision and Monitoring}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-11}}: \textbf{Medication History Reconciliation Ingestion}: Ingest reconciled medication histories compiled during clinical transitions of care.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-12}}: \textbf{Medication Administration Tracking}: Distribute medication therapy orders, dispensing updates, and administration records across clinical care boundaries.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:419}
+\subsubsection*{12. Preventive Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:420}
+
+\begin{itemize}
+
+\item
+\textbf{12.1 Screening and Immunisation Enablement}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-13}}: \textbf{Immunisation Event Submission}: Ingest point-of-care immunisation administration records and syndicate to national immunization registers.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-14}}: \textbf{Screening Recall Notification Distribution}: Distribute clinical screening reminders and recall notices to designated healthcare providers.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:424}
+\subsubsection*{14. Community Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:425}
+
+\begin{itemize}
+
+\item
+\textbf{14.1 Community Care Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-15}}: \textbf{Community Encounter Ingestion}: Ingest home visit notes, community nursing observations, and social support assessments.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-16}}: \textbf{Community Care Plan Synchronization}: Synchronize community care plan updates between hospital outreach teams and community health organizations.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:429}
+\subsubsection*{15. Outreach Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:430}
+
+\begin{itemize}
+
+\item
+\textbf{15.1 Outreach Care Continuity}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-17}}: \textbf{Outreach Visit Context Provision}: Package and deliver portable clinical summaries and offline-capable care summaries for remote outreach clinics.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-18}}: \textbf{Outreach Encounter Outcome Ingestion}: Ingest and reconcile clinical documentation gathered during rural and remote outreach visits.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:434}
+\subsubsection*{16. Remote \& Virtual Care (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:435}
+
+\begin{itemize}
+
+\item
+\textbf{16.1 Remote Patient Monitoring}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-SD-19}}: \textbf{Remote Telemetry Ingestion}: Ingest home patient monitoring data, biometric telemetry, and patient-reported outcome measures (PROMs).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-SD-20}}: \textbf{Virtual Care Session Context Binding}: Associate synchronous virtual/\allowbreak{}telehealth consultations with the longitudinal health record and active care episode.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:439}
+
+\emph{(Capabilities 1 Clinical Assessment, 6 Ambulatory Care, 7 Surgical \& Procedural Care, 9 Therapeutic Services, 11 Allied Health, and 13 Rehabilitation remain Adjacent or Reference and are not decomposed into atomic features).}
+
+\phantomsection\label{rad:enabling:441}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:443}
+\section*{View 4: Health Service Operations}
+\phantomsection\label{rad:enabling:445}
+
+Health Service Operations encompasses systems enablement for the operational management, logistics, capacity, and resource coordination of healthcare facilities and services.
+
+\phantomsection\label{rad:enabling:447}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+1. Clinic \& Practice Operations [Harmonia-Relevant]
+
+2. Ward Operations [Harmonia-Relevant]
+
+3. Theatre Operations [Harmonia-Relevant]
+
+4. Emergency Department Operations [Harmonia-Relevant]
+
+5. Outpatient Operations [Harmonia-Relevant]
+
+6. Bed \& Care-Place Management [Harmonia-Core]
+
+7. Clinical Resource Management [Harmonia-Relevant]
+
+8. Service Capacity Management [Harmonia-Relevant]
+
+9. Clinical Workforce Management [Adjacent]
+
+10. Clinical Rostering [Adjacent]
+
+11. Mobile Staff Management [Harmonia-Relevant]
+
+12. On-Call Management [Harmonia-Relevant]
+
+13. Work Allocation \& Dispatch [Harmonia-Core]
+
+14. Clinical Training \& Education [Reference]
+
+15. Clinical Competency Management [Reference]
+
+16. Clinical Qualification Management [Harmonia-Relevant]
+
+17. Clinical Supervision [Reference]
+
+18. Patient Transport [Harmonia-Core]
+
+19. Clinical Logistics Coordination [Harmonia-Relevant]
+
+20. Discharge Management [Harmonia-Core]
+\end{quote}
+\phantomsection\label{rad:enabling:470}
+\subsubsection*{Architectural Principles: Health Service Operations}
+\phantomsection\label{rad:enabling:471}
+
+\begin{enumerate}
+
+\item
+\textbf{Facility Logistics, Not IT Machinery}: Health Service Operations reflects real-world health facility logistics and coordination (wards, beds, staff allocation, patient transfer); it must \textbf{never} be redefined or reinterpreted as protocol mediation, message queuing, deduplication, or integration software machinery.
+
+
+
+\item
+\textbf{Healthcare Service Context Rule}:
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:enabling:473}
+
+\begin{quote}
+
+\textbf{Where operational activity occurs in the context of a Healthcare Service, that service context must be explicitly associated with the activity and state rather than inferred solely from practitioner, organisation, or location.}
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:474}
+
+\begin{enumerate}
+
+\item
+\textbf{General Operational Progression Pattern}: Event → Entity Context → Required Activity → Assignment → Dispatch → ACK → Progress → Outcome → Entity State Change → Next Activity
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:enabling:477}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:479}
+\subsubsection*{Detailed Capability \& Feature Catalogue: Health Service Operations}
+\phantomsection\label{rad:enabling:481}
+\subsubsection*{1. Clinic \& Practice Operations (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:482}
+
+\begin{itemize}
+
+\item
+\textbf{1.1 Session \& Queue Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-01}}: \textbf{Clinic Session Tracking}: Ingest and track clinic operating session start, delay, and completion states.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-02}}: \textbf{Operational Queue Progression}: Track client queue progression through reception, waiting area, consultation, and billing.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:486}
+\subsubsection*{2. Ward Operations (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:487}
+
+\begin{itemize}
+
+\item
+\textbf{2.1 Ward Logistics Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-03}}: \textbf{Ward Patient Flow Coordination}: Coordinate inpatient ward occupancy, care-place allocation, and patient bed status across care facilities.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-04}}: \textbf{Clinical Handover Context Assembly}: Collate current ward patient lists, active medical concerns, and pending tasks for nursing shift handovers.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:491}
+\subsubsection*{3. Theatre Operations (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:492}
+
+\begin{itemize}
+
+\item
+\textbf{3.1 Perioperative Logistics}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-05}}: \textbf{Operating Theatre Case Progression}: Track surgical case state transitions (\texttt{\seqsplit{CALLED}} → \texttt{\seqsplit{IN\_THEATRE}} → \texttt{\seqsplit{ANAESTHETISED}} → \texttt{\seqsplit{INCISION}} → \texttt{\seqsplit{CLOSED}} → \texttt{\seqsplit{RECOVERY}}).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-06}}: \textbf{Perioperative Resource Notification}: Dispatch alerts to portering, sterilization, and recovery teams based on surgical case progression milestones.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:496}
+\subsubsection*{4. Emergency Department Operations (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:497}
+
+\begin{itemize}
+
+\item
+\textbf{4.1 ED Operational Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-07}}: \textbf{ED Bed \& Bay Tracking}: Track occupancy and status of emergency cubicles, resuscitation bays, and short-stay beds.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-08}}: \textbf{ED Length of Stay Tracking}: Monitor operational wait times and length-of-stay milestones, generating operational escalation notifications.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:501}
+\subsubsection*{5. Outpatient Operations (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:502}
+
+\begin{itemize}
+
+\item
+\textbf{5.1 Outpatient Flow Enablement}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-09}}: \textbf{Outpatient Arrival Registration}: Ingest self-service check-in and clinic arrival events, notifying treating clinicians.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-10}}: \textbf{Post-Clinic Order Coordination}: Capture follow-up booking and diagnostic order requirements generated at clinic completion.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:506}
+\subsubsection*{6. Bed \& Care-Place Management (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:507}
+
+\begin{itemize}
+
+\item
+\textbf{6.1 Bed State \& Turnover Management}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-11}}: \textbf{Bed Availability Tracking}: Maintain operational status of all registered beds and care-places (\texttt{\seqsplit{VACANT}}, \texttt{\seqsplit{OCCUPIED}}, \texttt{\seqsplit{BLOCKED}}, \texttt{\seqsplit{RESERVED}}, \texttt{\seqsplit{DIRTY}}, \texttt{\seqsplit{CLEANING}}, \texttt{\seqsplit{CLEAN}}).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-12}}: \textbf{Bed State Progression}: Progress bed states in response to clinical and environmental events (e.g., patient discharge automatically transitions bed to \texttt{\seqsplit{DIRTY}}).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-13}}: \textbf{Bed Readiness Notification}: Notify bed allocation managers and clinical units when a cleaned bed achieves \texttt{\seqsplit{READY}} status.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:512}
+\subsubsection*{7. Clinical Resource Management (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:513}
+
+\begin{itemize}
+
+\item
+\textbf{7.1 Specialized Equipment Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-14}}: \textbf{Mobile Clinical Equipment Tracking}: Track physical location and allocation status of shared clinical equipment (infusion pumps, ventilators, mobile telemetry).
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:516}
+\subsubsection*{8. Service Capacity Management (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:517}
+
+\begin{itemize}
+
+\item
+\textbf{8.1 Facility Demand \& Capacity Telemetry}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-15}}: \textbf{Operational Capacity Metric Aggregation}: Aggregate operational capacity telemetry (occupancy rates, wait times, diversion status) across facilities.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:520}
+\subsubsection*{11. Mobile Staff Management (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:521}
+
+\begin{itemize}
+
+\item
+\textbf{11.1 Mobile Worker Dispatch \& Safety}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-16}}: \textbf{Mobile Worker Task Dispatch}: Dispatch community care tasks and urgent visits to roving clinicians' mobile devices.
+
+
+\begin{itemize}
+
+\item
+\textbf{Architectural scope qualification (2026-10-09 human adjudication)}: Dispatch here concerns integration with external/\allowbreak{}business mobile work-management mechanisms: exchanging externally established assignment, dispatch and operational progression/\allowbreak{}status information with applicable worker/\allowbreak{}context information. Harmonia does not thereby determine or manage clinical work, clinical handover, clinical allocation or EMR worklists. External “work/\allowbreak{}task” vocabulary does not redefine Harmonia synthetic Task. The Feature name/\allowbreak{}identifier are retained; the proposed name \texttt{\seqsplit{Mobile Work Task Management Integration}} requires separate human confirmation. See the \hyperref[rad:metamodel:173]{Business integration boundary}.
+
+
+
+\end{itemize}
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-17}}: \textbf{Mobile Visit Status Tracking}: Ingest arrival, visit progression, and safety check-in milestones from roving staff.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:526}
+\subsubsection*{12. On-Call Management (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:527}
+
+\begin{itemize}
+
+\item
+\textbf{12.1 On-Call Directory Resolution}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-18}}: \textbf{Active On-Call Provider Resolution}: Resolve currently active on-call specialists, registrars, and operational managers for a given specialty and hospital at any point in time.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:530}
+\subsubsection*{13. Work Allocation \& Dispatch (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:531}
+
+\begin{itemize}
+
+\item
+\textbf{13.1 Operational Work Assignment \& Supervision}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-19}}: \textbf{Work Item Instantiation}: Instantiate operational units of work from clinical triggers (e.g., bed cleaning required, specimen transport required).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-20}}: \textbf{Worker Matching \& Allocation}: Match work items against available staff roles, credentials, and locations based on allocation policies.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-21}}: \textbf{Work Dispatch Delivery}: Deliver work orders to target workers, devices, or team queues with technical and operational acknowledgement capture.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-22}}: \textbf{Work Progress Oversight \& Escalation}: Monitor work progression against time-to-completion thresholds, escalating stalled or unacknowledged tasks.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:537}
+
+
+
+\phantomsection\label{rad:enabling:539}
+\subsubsection*{16. Clinical Qualification Management (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:540}
+
+\begin{itemize}
+
+\item
+\textbf{16.1 Credential Verification Checkpoint}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-23}}: \textbf{Operational Credential Check}: Validate that a practitioner possesses active credentials and required competency certs prior to dispatching specialized work.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:543}
+\subsubsection*{18. Patient Transport (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:544}
+
+\begin{itemize}
+
+\item
+\textbf{18.1 Patient Transfer Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-24}}: \textbf{Transport Request Ingestion}: Ingest internal (portering) and external (ambulance, inter-hospital) patient transfer requests with clinical mobility requirements.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-25}}: \textbf{Transport Dispatch \& Progress Tracking}: Dispatch transport orders, tracking departure, transit, and destination arrival checkpoints.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:548}
+\subsubsection*{19. Clinical Logistics Coordination (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:549}
+
+\begin{itemize}
+
+\item
+\textbf{19.1 Specimen \& Supply Courier Tracking}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-26}}: \textbf{Pathology Specimen Transport Tracking}: Track pickup, custody chain, transport conditions, and laboratory delivery of clinical specimens.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:552}
+\subsubsection*{20. Discharge Management (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:553}
+
+\begin{itemize}
+
+\item
+\textbf{20.1 Discharge Progression \& Coordination}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-HSO-27}}: \textbf{Discharge Milestone Tracking}: Track clinical criteria-led discharge milestones (medications dispensed, transportation arranged, home care confirmed).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-28}}: \textbf{Discharge Readiness \& Coordination Oversight}: Track and aggregate multidisciplinary discharge milestones, home care confirmations, and transit readiness across care teams.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-HSO-29}}: \textbf{Discharge Notification Dispatch}: Dispatch departure notifications, updated bed states, and finalized discharge summaries to external care providers upon physical patient exit.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:558}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:560}
+\section*{View 5: Intrinsic /\allowbreak{} Shared Enablement}
+\phantomsection\label{rad:enabling:562}
+
+Intrinsic /\allowbreak{} Shared Enablement encompasses the horizontal, platform-wide system capabilities required to support all healthcare operating contexts.
+
+\phantomsection\label{rad:enabling:564}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+1. Patient Clinical Record [Harmonia-Core]
+
+2. Health Information Exchange [Harmonia-Core]
+
+3. Health Information Access [Harmonia-Core]
+
+4. Health Information Communication [Harmonia-Core]
+
+5. Health Information Control [Harmonia-Core]
+
+6. Clinical Knowledge Services [Harmonia-Relevant]
+
+7. Clinical Collaboration [Harmonia-Core]
+
+8. General Collaboration [Harmonia-Relevant]
+
+9. Workflow \& Activity Coordination [Harmonia-Core]
+
+10. Calendar Management [Harmonia-Core]
+
+11. Presentation Services [Harmonia-Core]
+
+12. Information Design Governance [Harmonia-Core]
+\end{quote}
+\phantomsection\label{rad:enabling:579}
+\subsubsection*{Critical Domain Distinctions: Intrinsic /\allowbreak{} Shared Enablement}
+\phantomsection\label{rad:enabling:581}
+\subsubsection*{Health Information Exchange: Four Interaction Models}
+\phantomsection\label{rad:enabling:582}
+
+\begin{enumerate}
+
+\item
+\textbf{Submission}: \emph{"I send this to you."} (Point-to-point push of an authored artifact).
+
+
+
+\item
+\textbf{Retrieval}: \emph{"I ask for this."} (Synchronous or asynchronous pull of specific records).
+
+
+
+\item
+\textbf{Distribution}: \emph{"I deliberately send this to identified recipients."} (Addressed fan-out delivery to designated systems or clinical actors).
+
+
+
+\item
+\textbf{Syndication}: \emph{"I publish information/\allowbreak{}change and subscribers receive matching interests."} (Publish-subscribe topic/\allowbreak{}criteria distribution).
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:enabling:587}
+\subsubsection*{Workflow \& Activity Coordination: Three Work Units}
+\phantomsection\label{rad:enabling:588}
+
+\begin{enumerate}
+
+\item
+\textbf{Work Order}: A unit of work where a \textbf{human is doing something} physical or operational (e.g., clean bed 4B, transfer patient to X-ray, draw blood sample).
+
+
+
+\item
+\textbf{To Do}: A unit of work where a \textbf{human is reviewing, updating, or deciding}, including clinical approvals, sign-offs, and triage reviews.
+
+
+
+\item
+\textbf{Task}: A unit of \textbf{non-human executable work} (internally a synthetic task) executed by platform automation, daemons, or services. \emph{Execution Semantics}: Workflow Management provides the coordination and state engine through which these three activity types progress.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:enabling:593}
+\subsubsection*{Clinical Collaboration Context}
+\phantomsection\label{rad:enabling:594}
+
+Clinical Collaboration is \textbf{Harmonia-Core} because Harmonia provides \textbf{Longitudinal Health Record (LHR)-aware collaboration spaces}. Clinicians can converse within secure multidisciplinary team rooms and query patient context directly (e.g., \emph{"What were Fred's last three HbA1c results?"}). \emph{Important Boundary}: A clinical statement made within a collaboration chat does \textbf{not} automatically become an authoritative clinical Observation or medical record entry. It remains collaborative discourse unless formally authored into a clinical document.
+
+\phantomsection\label{rad:enabling:597}
+\subsubsection*{Presentation Services Decoupling}
+\phantomsection\label{rad:enabling:598}
+
+Presentation Services consumes established identity, security, and clinical context. Presentation does \textbf{not} own:
+
+\phantomsection\label{rad:enabling:599}
+
+\begin{itemize}
+
+\item
+Authentication or credential storage.
+
+
+
+\item
+Identity lifecycle or EMPI reconciliation.
+
+
+
+\item
+Consent decisions or access-policy evaluation.
+
+
+
+\item
+Authoritative clinical state preservation.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:604}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:606}
+\subsubsection*{Detailed Capability \& Feature Catalogue: Intrinsic /\allowbreak{} Shared Enablement}
+\phantomsection\label{rad:enabling:608}
+\subsubsection*{1. Patient Clinical Record (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:609}
+
+\begin{itemize}
+
+\item
+\textbf{1.1 Longitudinal Clinical Record Governance}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-01}}: \textbf{Longitudinal Health Record (LHR) Assembly}: Assemble disparate encounters, diagnostic reports, medications, and clinical documents into a unified, vendor-neutral longitudinal timeline.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-02}}: \textbf{Active Clinical Record Access}: Provide low-latency, active distributed access to consolidated patient clinical summaries.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-03}}: \textbf{Durable Clinical Record Preservation}: Durably maintain governed, vendor-neutral longitudinal clinical representation and preservation with verifiable integrity controls.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:614}
+\subsubsection*{2. Health Information Exchange (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:615}
+
+\begin{itemize}
+
+\item
+\textbf{2.1 Multi-Model Information Exchange}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-04}}: \textbf{Direct Submission Ingestion \& Delivery}: Support push submissions of clinical documents and messages across boundaries.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-05}}: \textbf{Clinical Record Retrieval Mediation}: Mediate query-based retrieval requests across external and internal repositories.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-06}}: \textbf{Addressed Clinical Distribution}: Fan out clinical events and diagnostic reports to designated external and internal recipients with per-destination delivery tracking.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-07}}: \textbf{Event-Driven Syndication}: Publish clinical and directory change events to subscribed systems matching interest filters.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:621}
+\subsubsection*{3. Health Information Access (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:622}
+
+\begin{itemize}
+
+\item
+\textbf{3.1 Governed Query \& Search}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-08}}: \textbf{Federated Clinical Query}: Execute bounded, indexed queries across distributed clinical resources and directory graphs.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-09}}: \textbf{Access-Controlled Information Filtering}: Filter search results dynamically according to requesting user authorizations and patient consent directives.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:626}
+\subsubsection*{4. Health Information Communication (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:627}
+
+\begin{itemize}
+
+\item
+\textbf{4.1 Boundary Protocol Mediation}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-10}}: \textbf{Standards-Based Boundary Exchange}: Provide standards-conformant boundary exchange for healthcare messaging and resource representations.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:630}
+\subsubsection*{5. Health Information Control (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:631}
+
+\begin{itemize}
+
+\item
+\textbf{5.1 Policy \& Security Governance}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-11}}: \textbf{Health Information Access \& Consent Control}: Evaluate patient consent preferences, practitioner authority boundaries, and access control policies for managed clinical records.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-12}}: \textbf{Security Context Propagation}: Propagate tamper-evident, attributable security context across asynchronous processing boundaries.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-13}}: \textbf{Non-PHI Compliance Auditing}: Generate tamper-evident, verifiable audit records of security-significant events without emitting unmasked PHI.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:636}
+\subsubsection*{6. Clinical Knowledge Services (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:637}
+
+\begin{itemize}
+
+\item
+\textbf{6.1 Terminology \& Reference Mapping}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-14}}: \textbf{Clinical Concept Resolution}: Resolve local clinical codes against standard terminologies (SNOMED CT, LOINC, ICD-10).
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-15}}: \textbf{Bidirectional Terminology Mapping}: Translate between legacy local code systems and canonical national healthcare profiles.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:641}
+\subsubsection*{7. Clinical Collaboration (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:642}
+
+\begin{itemize}
+
+\item
+\textbf{7.1 LHR-Aware Multidisciplinary Collaboration}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-16}}: \textbf{Care-Team Clinical Collaboration Coordination}: Coordinate secure multidisciplinary clinical communication and consultation exchange bound to patient encounters or clinical topics.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-17}}: \textbf{In-Conversation LHR Query Resolution}: Resolve clinical data queries within an authorized collaboration context, presenting verified clinical summaries directly to care team members.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-18}}: \textbf{Zero-PHI Collaboration Metadata Governance}: Ensure collaboration channel titles, topics, and aliases use opaque identifiers free of patient names, MRNs, or sensitive details.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:647}
+\subsubsection*{8. General Collaboration (\texttt{\seqsplit{Harmonia-Relevant}})}
+\phantomsection\label{rad:enabling:648}
+
+\begin{itemize}
+
+\item
+\textbf{8.1 Operational Messaging}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-19}}: \textbf{Operational Team Chat Enablement}: Provide secure instant messaging channels for departmental, administrative, and facility support staff.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:651}
+\subsubsection*{9. Workflow \& Activity Coordination (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:652}
+
+\begin{itemize}
+
+\item
+\textbf{9.1 Multi-Work-Unit Orchestration}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-20}}: \textbf{Work Order Progression}: Manage execution states and dispatch of human operational work orders.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-21}}: \textbf{To Do Decision \& Approval Coordination}: Coordinate human clinical review items, sign-offs, and approval workflows.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-22}}: \textbf{Synthetic Task Orchestration}: Execute non-human, automated platform activity units and sequence orchestration.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-23}}: \textbf{Workflow Timeout \& Escalation Oversight}: Supervise operational deadlines, executing automated timeout notifications and supervisory escalations.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:658}
+\subsubsection*{10. Calendar Management (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:659}
+
+\begin{itemize}
+
+\item
+\textbf{10.1 Operational \& Clinical Calendar Sync}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-24}}: \textbf{Schedule Projection Integration}: Project clinician rosters, on-call schedules, and facility operating calendars into operational views.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-25}}: \textbf{Temporal Event Correlation}: Correlate incoming clinical events with scheduled appointments and operational calendar milestones.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:663}
+\subsubsection*{11. Presentation Services (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:664}
+
+\begin{itemize}
+
+\item
+\textbf{11.1 Decoupled Human Interaction \& Dashboards}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-26}}: \textbf{Longitudinal Clinical \& Operational Presentation}: Deliver contextual clinical timelines, directory administration views, and operational management dashboards.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:667}
+\subsubsection*{12. Information Design Governance (\texttt{\seqsplit{Harmonia-Core}})}
+\phantomsection\label{rad:enabling:668}
+
+\begin{itemize}
+
+\item
+\textbf{12.1 Canonical Semantics \& Schema Governance}
+
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{FEAT-ISE-27}}: \textbf{Information Standards \& Semantic Governance}: Govern canonical clinical data definitions, terminology bindings, and exchange profiles across regional systems.
+
+
+
+\item
+\texttt{\seqsplit{FEAT-ISE-28}}: \textbf{Semantic Conformance Verification}: Verify inbound and outbound representations against published semantic rules and conformance constraints.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:672}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:674}
+\subsection*{Health Service Assurance: Approved Business Enabling Capabilities}
+\phantomsection\label{rad:enabling:676}
+
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-005-independent-assurance-of-governed-activity}{REQ-FND-005 — Independent Assurance of Governed Activity} motivates \hyperref[rad:business:1033]{BC-18 — Health Service Assurance}. BC-18 requires the three Business Enabling Capabilities defined here. They are collaboratively realised by the approved contributions of existing Enterprise Capabilities and \hyperref[rad:enterprise:224]{EC-14 — Service Guardian}, as recorded in the \hyperref[rad:assurance-strategy:54]{contribution matrix}.
+
+\phantomsection\label{rad:enabling:678}
+
+These are Strategy capabilities and semantic boundaries. Their presentation does not create a sixth contextual view, allocate them to an existing view, establish CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 ancestry, or derive Business Functions, Services, Processes, Features or assurance Information Concepts.
+
+\phantomsection\label{rad:enabling:680}
+\subsubsection*{Assurance Design}
+\phantomsection\label{rad:enabling:682}
+
+\begin{itemize}
+
+\item
+\textbf{Definition}: The capability to determine and define how satisfaction of a governed requirement, constraint or expected behaviour will be assured, including its assurance disposition, applicable criteria, required evidence and evaluation expectations.
+
+
+
+\item
+\textbf{Fundamental Question}: \textbf{How will satisfaction of this requirement, constraint or expected behaviour be assured?}
+
+
+
+\item
+\textbf{Boundary}: Assurance Design is a peer concern to Behaviour Design and Failure/\allowbreak{}Recovery Design when implementing governed behaviour. This relationship establishes design concerns, not additional capability entries, application design or implementation specifications.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:686}
+\subsubsection*{Assurance Criteria Management}
+\phantomsection\label{rad:enabling:688}
+
+\begin{itemize}
+
+\item
+\textbf{Definition}: The capability to establish and manage reusable, governed and temporally identifiable assurance criteria through which subjects may be evaluated.
+
+
+
+\item
+\textbf{Scope}: Criteria may express governance rule boundaries, quality constraints, performance expectations, compliance criteria, temporal criteria, evidence requirements or completeness expectations. These are examples, not an exhaustive taxonomy.
+
+
+
+\item
+\textbf{Boundary}: Criteria management does not own or replace the authoritative governance requirement from which a criterion may derive. Not every assurance criterion is required to derive from formal Governance. Criteria may have their own lifecycle, version and temporal applicability.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:692}
+
+\begin{quote}
+
+\textbf{Assurance Criteria may operationalise a governing requirement for evaluation, but SHALL NOT silently alter, weaken, strengthen or replace the authoritative requirement from which they derive.}
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:694}
+\subsubsection*{Governed Assurance}
+\phantomsection\label{rad:enabling:696}
+
+\begin{itemize}
+
+\item
+\textbf{Definition}: The capability to independently evaluate a governed subject against applicable assurance criteria through the assembly and evaluation of sufficient trustworthy evidence, establishing explicit findings, exceptions and assurance conclusions.
+
+
+
+\item
+\textbf{Fundamental Question}: \textbf{What can we independently establish about this subject against these criteria from the available trustworthy evidence?}
+
+
+
+\item
+\textbf{Assurance Semantics}: Establishing the subject/\allowbreak{}context of assurance, applicable assurance criteria, evidentiary association, assessment, adjudication, findings, exceptions and conclusions.
+
+
+
+\item
+\textbf{Boundary}: Governed Assurance does not manage, remediate, assign, delegate, escalate operationally or complete the subject activity. It may manage its own assurance activity; findings may inform operational response without transferring responsibility for that response.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:701}
+\subsubsection*{Assurance Disposition}
+\phantomsection\label{rad:enabling:703}
+
+Every implemented behaviour has an assurance aspect. Every governed obligation, functional requirement, non-functional requirement or other defined implementation requirement SHALL have an explicit assurance disposition identifying how its satisfaction is assured.
+
+\phantomsection\label{rad:enabling:705}
+
+The approved disposition concepts are:
+
+\phantomsection\label{rad:enabling:707}
+
+\begin{itemize}
+
+\item
+\textbf{Generic Assurance sufficient}
+
+
+
+\item
+\textbf{Existing Specific Assurance applies}
+
+
+
+\item
+\textbf{Existing Assurance must be extended}
+
+
+
+\item
+\textbf{New Specific Assurance required}
+
+
+
+\item
+\textbf{Not Assurable}
+
+
+
+\item
+\textbf{Not Worth Assuring}
+
+
+
+\end{itemize}
+\phantomsection\label{rad:enabling:714}
+
+These are architectural semantics, not an information model or software enumeration. \textbf{Not Assurable} does not mean the requirement is not required. \textbf{Not Worth Assuring} does not mean the requirement is optional or unimportant. Both are explicit governed assurance decisions, not absence of assurance configuration. An explicit disposition does not require specific assurance of every individual activity, information item or outcome; REQ-FND-005 applies where assurance is required.
+
+\phantomsection\label{rad:enabling:716}
+\subsubsection*{Generic Processing Assurance and System Operations}
+\phantomsection\label{rad:enabling:718}
+
+Harmonia-managed workflow behaviour SHALL be subject to applicable generic processing assurance. This concerns business-level processing behaviour above and beyond System Operations. Potential concerns include progression, completion, timeliness, expected processing pathway, failure behaviour, recovery behaviour, outcome, and aggregate or pattern behaviour. This is not a final exhaustive criteria catalogue.
+
+\phantomsection\label{rad:enabling:720}
+
+System Operations asks whether the technical machinery is operating. Generic processing assurance asks whether governed business behaviour is operating within expected boundaries.
+
+\phantomsection\label{rad:enabling:722}
+
+\begin{quote}
+
+\textbf{Operational Health ≠ Processing Assurance.}
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:724}
+
+Failure and recovery are part of the expected behavioural space of the activity being executed. The activity/\allowbreak{}Praxis remains responsible for handling its own expected failure and recovery behaviour. Assurance independently establishes whether normal, failure and recovery behaviour remain within applicable expectations. This responsibility boundary does not allocate assurance execution to Praxis or another solution construct.
+
+\phantomsection\label{rad:enabling:726}
+
+\hyperref[rad:enterprise:202]{EC-12 Operational Assurance} retains its established resilience, concurrency, exception/\allowbreak{}recovery and telemetry responsibilities and may contribute directly to generic operational/\allowbreak{}processing assurance. \hyperref[rad:enterprise:224]{EC-14 Service Guardian} supplies the distinguishing assurance-specific semantics; neither replaces System Operations or the other Enterprise Capability.
+
+\phantomsection\label{rad:enabling:728}
+\subsubsection*{Assurance Evidence Assembly and Information Ownership}
+\phantomsection\label{rad:enabling:730}
+
+Assurance Evidence Assembly is the evidence-assembly concern within Governed Assurance; this statement does not establish a fourth Business Enabling Capability or a downstream Function, Service or Information Concept.
+
+\phantomsection\label{rad:enabling:732}
+
+Underlying information used as assurance evidence remains owned and managed by the capability responsible for that information. Assurance owns the contextual association that particular information constitutes evidence for a particular assurance purpose. Being evidence is contextual, not an intrinsic universal property of source information.
+
+\phantomsection\label{rad:enabling:734}
+
+Evidence may be associated through reference, linkage, aggregation, representation, mirroring or derivation. These possibilities do not prescribe technical storage or replication. An association may identify a particular version, state or temporal context of the underlying information.
+
+\phantomsection\label{rad:enabling:736}
+
+\begin{quote}
+
+\textbf{Evidence inclusion may be temporally and version-specific. Association of information as assurance evidence SHALL be capable of distinguishing the particular information state relevant to the assurance activity from the information's current state.}
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:738}
+\subsubsection*{Temporally Appropriate Evidence and Criteria}
+\phantomsection\label{rad:enabling:740}
+
+Applicable assurance criteria may themselves be versioned and temporally applicable. A conclusion may depend both on the information state relevant to the evidence and on the criterion state applicable to the subject at the relevant time. Assurance evaluates temporally appropriate evidence against temporally appropriate criteria. No persistence, active-state, replication or retention mechanism is derived here.
+
+\phantomsection\label{rad:enabling:742}
+\subsubsection*{Assessment, Adjudication and Explicit Insufficiency}
+\phantomsection\label{rad:enabling:744}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Concern} & \textbf{Fundamental question} & \textbf{Semantic boundary}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Concern} & \textbf{Fundamental question} & \textbf{Semantic boundary}\\\hline\endhead
+\hline\endfoot
+\textbf{Assessment} & What does this evidence demonstrate with respect to the applicable criterion? & May supply quantitative, qualitative, compound, temporal or confidence-bearing information.\\\hline
+\textbf{Adjudication} & What assurance finding or conclusion follows from that assessment? & Establishes the finding or conclusion from assessed detail; it is distinct from assessment and operational response.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:enabling:749}
+
+Assurance SHALL NOT be reduced universally to PASS /\allowbreak{} FAIL /\allowbreak{} UNKNOWN. Insufficient evidence is not equivalent to either satisfaction or non-satisfaction. Under REQ-FND-005, where available evidence cannot establish the required assurance conclusion with sufficient confidence, that inability and evidence insufficiency SHALL remain explicit.
+
+\phantomsection\label{rad:enabling:751}
+
+An assurance activity may execute correctly while lacking sufficient evidence to establish a conclusion about its subject. This is distinct from an indeterminate execution outcome or execution failure. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-004-explicit-indeterminate-outcome}{REQ-FND-004} and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-15}{AX-15} continue to govern uncertainty about operational state, effect or outcome, including the assurance activity's own execution where applicable.
+
+\phantomsection\label{rad:enabling:753}
+\subsubsection*{Assurance Independence}
+\phantomsection\label{rad:enabling:755}
+
+Independent Assurance is performed through an independently governed activity whose progression and assurance conclusion are not controlled by the activity or mechanism responsible for performing or managing the subject being assured.
+
+\phantomsection\label{rad:enabling:757}
+
+Independence does not require a different organisation, person, application, Kubernetes cluster or database, an external auditor, or physical separation. The subject activity may supply evidence but SHALL NOT solely determine, suppress, manufacture or retrospectively alter its own assurance conclusion.
+
+\phantomsection\label{rad:enabling:759}
+
+\begin{quote}
+
+\textbf{Evidence dependency does not compromise assurance independence; control dependency does.}
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:761}
+
+Assurance may manage its own assurance activity without assuming management of the subject activity. No technical or organisational separation is prescribed by this boundary.
+
+\phantomsection\label{rad:enabling:763}
+\subsubsection*{Clinical Services Delivery Assurance Boundary}
+\phantomsection\label{rad:enabling:765}
+
+Health Service Assurance SHALL NOT be represented as Clinical Services Delivery Assurance. Harmonia does not thereby assume responsibility for assuring clinical judgement, professional practice, clinical adequacy of care, or delivery of clinical services by healthcare practitioners or healthcare organisations.
+
+\phantomsection\label{rad:enabling:767}
+
+Information concerning clinical service delivery MAY be the subject of governed assurance where an explicit applicable requirement establishes that concern. This does not transfer responsibility for Clinical Services Delivery Assurance to Harmonia. \hyperref[rad:business:522]{Capability 06 — Clinical Quality, Safety \& Improvement} retains its established clinical quality/\allowbreak{}safety responsibilities.
+
+\phantomsection\label{rad:enabling:769}
+
+\begin{quote}
+
+\textbf{Harmonia may assure facts and behaviour concerning clinical activity where explicitly required; it does not thereby assure the clinical adequacy of care.}
+
+
+\end{quote}
+\phantomsection\label{rad:enabling:771}
+\subsubsection*{Strategy Derivation Boundary}
+\phantomsection\label{rad:enabling:773}
+
+The \hyperref[rad:assurance-strategy:88]{approved derivation view} stops at collaborative Enterprise Capability realisation. No strategic logical or application component is allocated these capabilities or EC-14. No Dokimasia, Ponos, Praxis, Pragma, Digital Twin, Mneme, Mnemosyne, Calliope, Iris, Pylai or other implementation relationship is established. Business Architecture, Information Architecture and solution derivation remain subsequent activities.
+
+\phantomsection\label{rad:enabling:775}
+
+\par\smallskip
+\phantomsection\label{rad:enabling:777}
+\subsection*{Downstream Progression}
+\phantomsection\label{rad:enabling:779}
+
+The Business Enabling Capability catalogue and its atomic Features establish what systems must enable for the healthcare enterprise. These features serve as the empirical basis for deriving the reusable, technology-neutral platform capabilities:
+
+\phantomsection\label{rad:enabling:780}
+
+\begin{itemize}
+
+\item
+\hyperref[rad:enterprise]{Enterprise Capabilities (EC-01 .. EC-14)}: The established EC-01 through EC-13 and approved EC-14 Service Guardian; the Health Service Assurance contribution model is established without adding Feature or component allocations.
+
+
+
+\item
+\hyperref[rad:assurance-strategy]{Health Service Assurance Derivation}: REQ-FND-005 → BC-18 → the three approved Business Enabling Capabilities → collaborative Enterprise Capability realisation.
+
+
+
+\item
+\hyperref[rad:tier-model]{Capability Tier Progression Model}: Detailed vertical derivation rules and representative composition examples.
+
+
+
+\item
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capabilities/ict-foundation-lenses.md}{ICT Foundation Lenses}: Technical enablement considerations guiding technology realization.
+
+
+
+\end{itemize}

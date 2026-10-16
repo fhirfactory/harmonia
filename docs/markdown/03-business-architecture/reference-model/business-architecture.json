@@ -17,7 +17,7 @@
     },
     "metamodel": {
       "path": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
-      "sha256": "3b0906eb6d51aea98e17b3f6b31250e68c2aa7320a1989f2386449909ce8f19a"
+      "sha256": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f"
     },
     "k9": {
       "path": "docs/markdown/04-information-architecture/reviews/package2-g1-review.md",

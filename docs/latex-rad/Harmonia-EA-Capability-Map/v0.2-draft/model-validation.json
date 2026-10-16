@@ -1,0 +1,91 @@
+{
+  "result": "PASS",
+  "version": "0.2-draft",
+  "elements": 946,
+  "statuses": {
+    "Canonical": 716,
+    "Candidate": 3,
+    "Proposed": 227
+  },
+  "counts": {
+    "business_CT1": 18,
+    "business_CT2": 40,
+    "business_CT3": 142,
+    "business_enabling_CT2": 95,
+    "business_enabling_CT3": 117,
+    "feature_FT": 178,
+    "function_": 160,
+    "service_": 139,
+    "process_": 20,
+    "enterprise_CT2": 15,
+    "business_enabling_CT1": 9,
+    "enterprise_CT1": 3,
+    "enterprise_CT3": 10
+  },
+  "new_elements": 227,
+  "current_counts": {
+    "business_CT1": 18,
+    "business_CT2": 40,
+    "business_CT3": 142,
+    "business_enabling_CT2": 76,
+    "business_enabling_CT3": 95,
+    "feature_FT": 157,
+    "function_": 142,
+    "service_": 127,
+    "process_": 13,
+    "enterprise_CT2": 15,
+    "business_enabling_CT1": 7,
+    "enterprise_CT1": 3,
+    "enterprise_CT3": 10
+  },
+  "relationships": 1096,
+  "proposed_relationships": 596,
+  "preserved_baseline_elements": 719,
+  "preserved_baseline_relationships": 462,
+  "canonical_definitions_preserved": true,
+  "baseline_files_unchanged": true,
+  "allocated_structural_ids": 946,
+  "unique_historical_aliases": 432,
+  "unplaced_capabilities": 0,
+  "features_without_bec_ct3": 0,
+  "unmarked_proposals": 0,
+  "feature_frame_assessment": "All current Features have CT3 frames; unresolved original Features are explicitly preserved outside the current tree.",
+  "pending_feature_frames": 21,
+  "reconciliation_record_states": {
+    "current": 845,
+    "superseded": 32,
+    "pending_adjudication": 69
+  },
+  "unresolved_baseline_relationships_preserved": 22,
+  "v0.3_primary_concepts_reviewed": 942,
+  "v0.3_behaviour_occurrences_reviewed": 277,
+  "unique_latex_labels": 2768,
+  "undefined_references": 0,
+  "duplicate_reference_ids": 0,
+  "duplicate_structural_ids": 0,
+  "name_index_source_entries": 946,
+  "preserved_existing_latex_labels": 2418,
+  "preserved_pre_review_latex_labels": 2681,
+  "current_display_capability_names_unique": true,
+  "governed_bc_bec_exchange_name_conflict": "Preserved; proposed display rename only",
+  "limitations": "Structural/naming/support decisions remain Proposed. HUMAN ADJUDICATION REQUIRED responsibilities remain outside the current hierarchy with exact semantics, identities and owned material preserved.",
+  "reviewed_bec_hierarchy": "PASS: complete reviewed candidate represented with explicit CM-R05 display-name qualification",
+  "bc_ec_exact_records_unchanged": {
+    "elements": 228,
+    "exact_element_records_unchanged": true,
+    "sha256": "58d8f3ad9edc95e739962bd2ee8ca79ed4f7ec209838f7fbf9c487d015cdd2fd"
+  },
+  "publication_navigation": {
+    "numbered_architectural_entries": 946,
+    "numbered_catalogue_fields": 4101,
+    "current_architectural_entries": 845,
+    "historical_or_pending_records": 101,
+    "catalogue_fields_by_heading_level": {
+      "section": 187,
+      "subsection": 1464,
+      "subsubsection": 1625,
+      "paragraph": 825
+    }
+  },
+  "pdf_build": "Not assessed by --model-only"
+}

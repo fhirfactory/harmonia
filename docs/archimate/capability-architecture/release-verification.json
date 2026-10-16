@@ -1,0 +1,120 @@
+{
+  "architecture_release": {
+    "version": "1.0.1",
+    "previous_version": "1.0.0"
+  },
+  "status": "PASS",
+  "semantic_identity_changes": 0,
+  "documentation_enrichment_count": 14,
+  "retained_unresolved_rad_dimensions": 2467,
+  "checks": [
+    {
+      "name": "Publication regression/rejection suite",
+      "status": "PASS",
+      "result": "40 tests; 28 View, 10 Documentation and 2 metadata tests",
+      "command": [
+        "make",
+        "-C",
+        "docs/archimate/capability-architecture/",
+        "generate",
+        "inventory",
+        "test",
+        "check"
+      ]
+    },
+    {
+      "name": "Root script tests (release and Business capture)",
+      "status": "PASS",
+      "result": "43 tests; includes 3 release-governance tests",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "60s",
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ]
+    },
+    {
+      "name": "Required repository architecture suite",
+      "status": "PASS",
+      "result": "90 tests; 0 failures, errors or skips",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "300s",
+        "mvn",
+        "test",
+        "-pl",
+        "paradeigma/paradeigma-test",
+        "-am",
+        "-Dtest=*ArchitectureTest",
+        "-Dsurefire.failIfNoSpecifiedTests=false"
+      ]
+    },
+    {
+      "name": "RAD Business capture validation",
+      "status": "PASS",
+      "result": "0 invalid; 2,467 unresolved dimensions/relationships retained",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "60s",
+        "python3",
+        "scripts/rads_business_architecture.py",
+        "validate"
+      ]
+    },
+    {
+      "name": "Deterministic XML/report and source-inventory regeneration",
+      "status": "PASS",
+      "result": "Read-only make check; current release and source fingerprints agree"
+    },
+    {
+      "name": "Baseline, lock, source semantics and unrelated working tree preservation",
+      "status": "PASS",
+      "result": "Fixture/lock/Maven unchanged; 123 original architectural source files unchanged; governance README navigation only; all assessment records unchanged; unrelated dirty paths untouched"
+    },
+    {
+      "name": "Local Markdown file links",
+      "status": "PASS",
+      "result": "All local file targets resolve"
+    }
+  ],
+  "verified_files_sha256": {
+    "AGENTS.md": "df693d4b012f8b94e595641f0e04494a683e6382e771b5398d730ecaee685411",
+    "architecture-release.json": "c955abdcadcd6a5488aaf530de3557672da40376a24ccc12e39a4e20ae0bd968",
+    "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+    "docs/archimate/capability-architecture/Makefile": "e219c353eaec3d3fc0a75f12938ccbce724f885f40deca5259af3af94a1da320",
+    "docs/archimate/capability-architecture/README.md": "e555dceeec8b6ce097adadf6811230e7605f31eadf6d9bf5c91bf62aa10e5cfe",
+    "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+    "docs/archimate/capability-architecture/baseline/semantic-lock.json": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+    "docs/archimate/capability-architecture/documentation-map.json": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+    "docs/archimate/capability-architecture/tests/test_documentation.py": "2b2384fa01501404d7ff1b3518205424237db80927c6f2fdf32f3b15e928c2a1",
+    "docs/archimate/capability-architecture/tests/test_publication_metadata.py": "44a91b6cad15325435697d0de9117a177a6ece297d9621d4fffd88d622d1cd24",
+    "docs/archimate/capability-architecture/tests/test_views.py": "04c9063e3a96ab9b2d7511e8ab201fc0ac448fdb0e45ebffa382e97867124d17",
+    "docs/archimate/capability-architecture/tools/assess_rad.py": "ceed1ead5ef72ec66e0ad5a4729ce2bc6548887f18d7e7ed88ab9cb3927a39d0",
+    "docs/archimate/capability-architecture/tools/generate_views.py": "a82708730a67d063c5504f544e60d5eca73c84267992a79b5f16c6a1e8338797",
+    "docs/archimate/capability-architecture/tools/publish_documentation.py": "fec75663ea320796af4b4c72e90a004fc4a2afb58be60f01371f30c25742d463",
+    "docs/archimate/capability-architecture/tools/report_publication.py": "0049c0739040d7f521d653773e048c5e9d6f97d705f32b486385ef0d8d1e32d7",
+    "docs/archimate/capability-architecture/validation.json": "b492f3f9b261d2689a327675535ee20340b4bd81b7213f6dc75058c92bef7a18",
+    "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+    "docs/markdown/governance/README.md": "ace0d227f5bac44771ff0230ea673bf64ffa7381d6118086a70effa7de2b9e09",
+    "docs/markdown/governance/architecture-release-policy.md": "904b333e0d44c6366b21139365a25c3862fd35f473682316db7ad76b102ac406",
+    "docs/markdown/governance/rad-archimate-coverage-assessment.md": "793c2ad323a90e446a0c3f551eb0047858feb8653ee54cc6ddd099dcff5c29be",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "eac88ed8eaec0a589659f509e6124d12b6c5c270e28d12f860f830dc5555d467",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "03bce9da17023233ba89d9c686d3840659b05abf7aef9f07bc1cb2fcbfc902e0",
+    "docs/markdown/governance/rad-archimate-publication-plan.md": "295de54d3e7ec02236d0e12996c77b31d628018f71354b285196843141e79534",
+    "docs/markdown/governance/rad-archimate-source-inventory.json": "63ed3eb628ed31e731e7d1218b113e6a71063251af705913bb4bad65e3a82745",
+    "pom.xml": "dbeb6bf07a25c7e0539dd18cca10fc343706b7fd773ac1611337f80f1e9f7f00",
+    "scripts/architecture_release.py": "c3537adbbde52382e3b6ed680b94f697cd54890a3bae2d5fe313f394616a9aec",
+    "scripts/tests/test_architecture_release.py": "19142fb65428b68c4e34f333c045f2824cadd4a6d012c5bcb851426a6ebac54b"
+  }
+}

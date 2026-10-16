@@ -1,0 +1,1007 @@
+% !TeX root = ../Harmonia-EA-Capability-Map.tex
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Service Delivery — Capability-Scoped Behaviour}\label{rad:sd}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/behaviours/03-service-delivery.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:sd:1}
+\section*{Service Delivery — Capability-Scoped Behaviour}
+\phantomsection\label{rad:sd:3}
+\subsection*{1. Contextual Scope \& Architectural Intent}
+\phantomsection\label{rad:sd:5}
+
+The named owning Capabilities and established Features retain their responsibilities. Affected Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved under \hyperref[rad:k9:1392]{approved G1 K9}; document grouping and numbering do not establish architectural identity or hierarchy.
+
+\phantomsection\label{rad:sd:7}
+
+Service Delivery represents the clinical operating contexts in which direct patient care is delivered across primary, acute, emergency, inpatient, diagnostic, and virtual settings.
+
+\phantomsection\label{rad:sd:9}
+\subsubsection*{The Fundamental Care Enablement Principle}
+\phantomsection\label{rad:sd:10}
+
+\begin{quote}
+
+\textbf{Harmonia enables, informs, and coordinates healthcare delivery across care boundaries; it does not practice medicine, prescribe pharmaceuticals, make autonomous clinical decisions, or replace clinician judgment.}
+
+
+\end{quote}
+\phantomsection\label{rad:sd:12}
+
+Service Delivery capabilities within Harmonia define \textbf{integration enablement and clinical context correlation behaviour}. They reuse and consume core capabilities (\emph{Patient Clinical Record, Health Information Exchange, Health Information Control, Episode \& Encounter Administration, Clinical Record Administration}) rather than duplicating their responsibilities.
+
+\phantomsection\label{rad:sd:14}
+
+
+
+\phantomsection\label{rad:sd:16}
+\subsubsection*{Residual Feature Sufficiency}
+\phantomsection\label{rad:sd:18}
+
+The 2026-10-09 human adjudications apply the \hyperref[rad:metamodel:167]{Business composition and clinical-work boundaries}. General clinical-information capture, processing, preservation and distribution are expressed by \hyperref[rad:ise:34]{Patient Clinical Record and Health Information Exchange}, with applicable \hyperref[rad:sa]{Service Administration} responsibility. A clinical setting does not establish specialised capture or clinical-work ownership.
+
+\phantomsection\label{rad:sd:20}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Strategy Feature} & \textbf{Adjudicated Business expression and boundary}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Strategy Feature} & \textbf{Adjudicated Business expression and boundary}\\\hline\endhead
+\hline\endfoot
+\texttt{\seqsplit{FEAT-SD-03 — Acute Clinical State Event Capture}} & Acute deterioration/\allowbreak{}status information is managed through general clinical-information responsibilities. No Acute-specific capture Function is required. The Strategy Feature's acute-specific framing is over-specialised if interpreted as a separate Harmonia responsibility; its existing name/\allowbreak{}definition are retained for bounded Strategy review, not silently redefined. Alert routing below remains distinct from capture.\\\hline
+\texttt{\seqsplit{FEAT-SD-08 — Inpatient Clinical Progression Tracking}} & Relevant milestone information uses the same general responsibilities. Operational consequences may inform patient flow, capacity or discharge coordination; those consumers do not establish the originating clinical fact. An allied-health clearance may affect discharge readiness without becoming an operationally authored clearance. No Inpatient-specific clinical-tracking Function or EMR workflow is required. Dossier assembly below remains distinct.\\\hline
+\texttt{\seqsplit{FEAT-SD-14 — Screening Recall Notification Distribution}} & Recall is a domain-specific composition of clinical-information management, Calendar Management, Workflow \& Activity Coordination and information communication/\allowbreak{}distribution, with applicable entity coordination. Configured workflow/\allowbreak{}Praxis may realise it without a screening-specific recall Function. Eligibility projection alone remains distinct from distribution. Exact workflow and provider contracts are downstream, not established by this sufficiency decision.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:sd:26}
+
+These are composition-level sufficiency decisions, not replacement Feature associations to the Functions below. The same reusable responsibilities can support follow-up, vaccination, diagnostic or review reminders without a new Business Function for each clinical purpose. Population/\allowbreak{}cohort identification may precede individual activity. Once activity concerns a specific managed patient, the \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md\#entity-specific-operational-coordination}{entity-specific Digital Twin coordination rule} applies; it establishes no Domain03 Twin Actor, Process or execution mechanism.
+
+\phantomsection\label{rad:sd:28}
+
+\par\smallskip
+\phantomsection\label{rad:sd:30}
+\subsection*{2. Clinical Care Enablement Contexts}
+\phantomsection\label{rad:sd:32}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Service Delivery Contexts
+
+Primary Care
+
+Acute Care
+
+Emergency Care
+
+Inpatient Care
+
+Diagnostic Services
+
+Medication Therapy
+
+Preventive Care
+
+Community Care
+
+Outreach Care
+
+Remote \& Virtual Care
+\end{quote}
+\phantomsection\label{rad:sd:46}
+
+\par\smallskip
+\phantomsection\label{rad:sd:48}
+
+
+
+\phantomsection\label{rad:sd:50}
+\subsubsection*{2.1 Primary Care}
+\phantomsection\label{rad:sd:51}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Primary Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: General practice clinics, community medical centres, and family medicine practices providing longitudinal whole-person care.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: General Practice Shared Record Ingestion}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Correlate Primary Care Consultation Context}} — Binds GP consultation notes, vital signs, and encounter episodes to the regional Longitudinal Health Record (LHR).
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Primary Care Summary Ingress}} — Ingests GP event summaries into the HIE.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: Strategy \texttt{\seqsplit{FEAT-SD-02 — Primary Care Notification Dispatch}} remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Coordinate Multi-Agency Chronic Care Plan}} — Enables GPs to track multi-provider disease management milestones (e.g., Diabetes or Cardiovascular Care Plans).
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Chronic Care Timeline Query}} — Exposes aggregated multidisciplinary care timelines.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Service consumption}: \texttt{\seqsplit{Person Identifier Resolution}}; \texttt{\seqsplit{Longitudinal Clinical Record Query}} from Patient Clinical Record, already established in the \hyperref[rad:dependencies:46]{consumption matrix}.
+
+
+
+\item
+\textbf{Capability dependency}: \texttt{\seqsplit{Care Plan Administration}}.
+
+
+
+\item
+\textbf{Unresolved reference}: “Referral Submission” — an exact Service identity/\allowbreak{}consuming relationship is not established here; the abbreviated wording is not an alias.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:66}
+
+\par\smallskip
+\phantomsection\label{rad:sd:68}
+
+
+
+\phantomsection\label{rad:sd:70}
+\subsubsection*{2.2 Acute Care}
+\phantomsection\label{rad:sd:71}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Acute Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Hospital specialty wards, surgical suites, and intensive care units managing severe, urgent, or post-operative conditions.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Acute Care Clinical Context Provision}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Assemble Acute Clinical Baseline}} — Rapidly aggregates previous discharge summaries, active medications, allergies, and diagnostic alerts upon acute hospital presentation.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Acute Admission Dossier Query}} — Delivers a high-priority clinical briefing to admitting teams.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: \texttt{\seqsplit{FEAT-SD-03 — Acute Clinical State Event Capture}} is adjudicated sufficient through general clinical-information responsibilities above. Routing a critical-result alert remains distinct from capture; no specialised capture Function or replacement association is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Route Acute Critical Result Alert}} — Immediately directs urgent lab/\allowbreak{}radiology alerts (e.g., critical troponin, intracranial bleed) to active acute attending clinicians.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Acute Clinical Alert Dispatch}} — Dispatches urgent interruptive alerts to on-duty ward teams.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Service consumption}: \texttt{\seqsplit{Encounter Context Resolution}}.
+
+
+
+\item
+\textbf{Capability dependency}: \texttt{\seqsplit{Health Information Control}}; break-glass access describes the required governed context, not an independently allocated Service.
+
+
+
+\item
+\textbf{Unresolved reference}: “Diagnostic Result Delivery” — intended exact Service/\allowbreak{}relationship remains unestablished; no alias or replacement edge is inferred.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:86}
+
+\par\smallskip
+\phantomsection\label{rad:sd:88}
+
+
+
+\phantomsection\label{rad:sd:90}
+\subsubsection*{2.3 Emergency Care}
+\phantomsection\label{rad:sd:91}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Emergency Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Emergency Departments (ED), trauma centres, and urgent care clinics operating under time-critical, high-acuity constraints.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Emergency Department Arrival \& Triage Ingestion}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Bind ED Triage Assessment}} — Captures ATS (Australasian Triage Scale) category, presenting complaint, and ambulance paramedic handover data.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{ED Triage Stream Ingress}} — Ingests emergency triage presentations.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Emergency Care Cross-Facility Correlation}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Provide Emergency LHR Summary}} — Delivers rapid, override-capable access to Advance Care Directives, allergy records, and recent hospital admissions.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Emergency Fast-Path LHR Query}} — Provides low-latency emergency record summaries.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Service consumption}: \texttt{\seqsplit{Person Identifier Resolution}}. “Fast-Match” does not establish a separate Service or probabilistic/\allowbreak{}master-person matching behaviour.
+
+
+
+\item
+\textbf{Capability dependency}: \texttt{\seqsplit{Client Privacy}} for its established consent/\allowbreak{}privacy responsibility; “Break-Glass Override” does not allocate override authority or another element.
+
+
+
+\item
+\textbf{Unresolved relationship to an established Feature}: \texttt{\seqsplit{FEAT-SA-09 — Encounter State Progression}}. A precise Service-consumption relationship is not established by naming that Feature.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:105}
+
+\par\smallskip
+\phantomsection\label{rad:sd:107}
+
+
+
+\phantomsection\label{rad:sd:109}
+\subsubsection*{2.4 Inpatient Care}
+\phantomsection\label{rad:sd:110}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Inpatient Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Inpatient hospital wards, rehabilitation units, and sub-acute facilities managing multi-day hospital stays.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Inpatient Rounding Context Provision}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Consolidate Inpatient Clinical Round Feed}} — Aggregates daily vital signs, overnight pathology, allied health notes, and medication administration records.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Ward Round Clinical Briefing Query}} — Discloses consolidated 24-hour clinical briefing views.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: \texttt{\seqsplit{FEAT-SD-08 — Inpatient Clinical Progression Tracking}} is adjudicated sufficient through general clinical-information responsibilities above. Discharge-dossier assembly/\allowbreak{}publication remains distinct; no separate clinical-tracking Function or replacement association is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Assemble Inpatient Discharge Dossier}} — Synthesises inpatient diagnoses, procedural summaries, reconciled discharge medications, and follow-up instructions into a canonical discharge summary package.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Discharge Dossier Packaging Service}} — Emits canonical discharge summaries to GPs and community providers.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability dependency}: \texttt{\seqsplit{Discharge Management}}.
+
+
+
+\item
+\textbf{Unresolved references /\allowbreak{} relationships}: “Encounter Care-Place Movement,” “Clinical Document Lifecycle,” “Medication Administration Event Ingestion.” Their intended element types and exact consumption/\allowbreak{}participation relationships are not established by these descriptions; no Function, Process or Service equivalence is inferred.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:124}
+
+\par\smallskip
+\phantomsection\label{rad:sd:126}
+
+
+
+\phantomsection\label{rad:sd:128}
+\subsubsection*{2.5 Diagnostic Services}
+\phantomsection\label{rad:sd:129}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Diagnostic Services}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Clinical pathology laboratories, diagnostic imaging networks (radiology/\allowbreak{}MRI/\allowbreak{}CT), nuclear medicine, and clinical neurophysiology departments.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: Strategy \texttt{\seqsplit{FEAT-SD-09 — Laboratory \& Imaging Result Distribution}} remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Receive Diagnostic Requisition Feed}} — Normalises order requisitions from across the health network into modality worklists.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Modality Worklist Distribution}} — Supplies order worklists to diagnostic laboratory/\allowbreak{}imaging systems.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: Strategy \texttt{\seqsplit{FEAT-SD-10 — Diagnostic History Consolidation}} remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Publish Governed Diagnostic Report}} — Normalises and distributes structured diagnostic observations, reference ranges, and diagnostic image study links into the LHR.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Diagnostic Publication Service}} — Publishes verified diagnostic reports across the enterprise.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability dependencies}: \texttt{\seqsplit{Order Administration}} for closed-loop order context; \texttt{\seqsplit{Information Design Governance}} for governed terminology bindings. These contextual purposes establish neither an additional Feature nor a precise Service-consumption edge.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:142}
+
+\par\smallskip
+\phantomsection\label{rad:sd:144}
+
+
+
+\phantomsection\label{rad:sd:146}
+\subsubsection*{2.6 Medication Therapy}
+\phantomsection\label{rad:sd:147}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Medication Therapy}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Hospital pharmacies, clinical pharmacotherapy review panels, community dispensing networks, and outpatient infusion suites.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Medication History Reconciliation Ingestion}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Project Longitudinal Medication History}} — Aggregates community dispensing, hospital e-MAR administrations, and specialist prescriptions into a unified chronological medication profile.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Longitudinal Medication History Query}} — Discloses full medication timelines for medication reconciliation.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: Strategy \texttt{\seqsplit{FEAT-SD-12 — Medication Administration Tracking}} remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Correlate Adverse Reaction \& Allergy Profile}} — Binds confirmed substance allergies, adverse drug reactions, and severity grades to the patient identity.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Allergy \& Adverse Reaction Query}} — Exposes active allergy profiles to clinical decision support systems.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability dependencies}: \texttt{\seqsplit{Medication Administration}}, \texttt{\seqsplit{Patient Clinical Record}}, \texttt{\seqsplit{Health Information Control}}; no specific Service is allocated by this contextual list.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:159}
+
+\par\smallskip
+\phantomsection\label{rad:sd:161}
+
+
+
+\phantomsection\label{rad:sd:163}
+\subsubsection*{2.7 Preventive Care}
+\phantomsection\label{rad:sd:164}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Preventive Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Public health screening programmes (breast/\allowbreak{}bowel/\allowbreak{}cervical), national immunisation registries, and health promotion initiatives.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Immunisation Event Submission}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Syndicate Immunisation Record}} — Records vaccine encounters and syndicates records to national immunisation registers (e.g., AIR).
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Immunisation History Query}} — Discloses complete vaccination history.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: \texttt{\seqsplit{FEAT-SD-14 — Screening Recall Notification Distribution}} is adjudicated sufficient through reusable composition/\allowbreak{}workflow above. Projecting/\allowbreak{}querying eligibility dates remains distinct from distribution; no dedicated recall Function or replacement association is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Project Screening Eligibility Timeline}} — Tracks age-based and risk-based screening schedules across primary care.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Preventive Screening Status Query}} — Discloses screening due dates to primary care providers.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability dependency}: \texttt{\seqsplit{Health Information Exchange}} for syndication.
+
+
+
+\item
+\textbf{Unresolved reference}: “Healthcare Subject Demographic Context” — exact element/\allowbreak{}relationship remains unestablished; descriptive context does not create a Capability alias or Service.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:178}
+
+\par\smallskip
+\phantomsection\label{rad:sd:180}
+
+
+
+\phantomsection\label{rad:sd:182}
+\subsubsection*{2.8 Community Care}
+\phantomsection\label{rad:sd:183}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Community Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: District nursing, home-based palliative care, community mental health teams, and allied health community outreach.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Community Encounter Ingestion}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Synchronize Community Visit Record}} — Ingests clinical notes, wound assessments, and vital signs recorded in community and home settings.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Community Care Encounter Ingress}} — Ingests community care documentation.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability-scoped Functions /\allowbreak{} Services}:
+
+
+\begin{itemize}
+
+\item
+\emph{Feature association not established}: Strategy \texttt{\seqsplit{FEAT-SD-16 — Community Care Plan Synchronization}} remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.
+
+
+
+\item
+\emph{Function}: \texttt{\seqsplit{Bind Community Support Network Context}} — Links community nursing teams with local non-clinical social care and home care packages.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Community Care Team Query}} — Exposes community provider contact rosters.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability dependencies}: \texttt{\seqsplit{Client Relationship}}, \texttt{\seqsplit{Episode \& Encounter Administration}}.
+
+
+
+\item
+\textbf{Collaboration reference with unresolved involvement}: \texttt{\seqsplit{Care-Team Collaboration}} is an established Collaboration; precise participation/\allowbreak{}involvement is not allocated by the former “Consumes” wording.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:197}
+
+\par\smallskip
+\phantomsection\label{rad:sd:199}
+
+
+
+\phantomsection\label{rad:sd:201}
+\subsubsection*{2.9 Outreach Care}
+\phantomsection\label{rad:sd:202}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Outreach Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Mobile specialist clinics, rural and remote fly-in fly-out (FIFO) clinical teams, and school health screening programmes.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Outreach Visit Context Provision}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Provide Outreach Visit Context}} — Packages and delivers portable clinical summaries and offline-capable care summaries for remote outreach clinics.
+
+
+
+\item
+\emph{Derivation}: \texttt{\seqsplit{FEAT-SD-17}} in \hyperref[rad:enabling:429]{Strategy's Outreach Care Continuity} establishes this preparation/\allowbreak{}provision responsibility. Outcome reconciliation below does not supply pre-visit context. This Function remains owned by Outreach Care, uses governed source information without acquiring its originating authority and establishes no copying, storage or offline implementation mechanism.
+
+
+
+\item
+\emph{Exposure boundary}: Remote outreach clinics are the established recipients. No separate named Service, Process, Role allocation or structural ID is introduced merely to mirror the Function.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Outreach Encounter Outcome Ingestion}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Reconcile Outreach Clinical Batch}} — Reconciles and merges clinical documentation recorded during disconnected remote clinic operations.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Outreach Batch Reconciliation Service}} — Reconciles batch clinical encounters upon network reconnection.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Typed architectural dependencies}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Capability dependencies}: \texttt{\seqsplit{Health Information Exchange}}, \texttt{\seqsplit{Clinical Record Administration}}.
+
+
+
+\item
+\textbf{Established Service with unresolved consumption applicability}: \texttt{\seqsplit{Person Identity Correction}} retains Person Identity ownership; how Outreach Care requires that Service is not established here. It cannot authorise originating person-merge decisions.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:sd:216}
+
+\par\smallskip
+\phantomsection\label{rad:sd:218}
+
+
+
+\phantomsection\label{rad:sd:220}
+\subsubsection*{2.10 Remote \& Virtual Care}
+\phantomsection\label{rad:sd:221}
+
+\begin{itemize}
+
+\item
+\textbf{Owning Capability}: \texttt{\seqsplit{Remote \& Virtual Care}}
+
+
+
+\item
+\textbf{Clinical Operating Context}: Telehealth consultations, virtual hospital-in-the-home (vHIT), remote patient monitoring (RPM), and asynchronous specialist e-consults.
+
+
+
+\item
+\textbf{Enabling Functions \& Exposed Services}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Feature: Virtual Care Session Context Binding}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Correlate Virtual Care Consultation Context}} — Binds video consultation metadata, remote practitioner identity, and shared digital whiteboard artifacts to the encounter.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Virtual Encounter Context Resolution}} — Binds virtual session identifiers to patient encounters.
+
+
+
+\end{itemize}
+
+
+\item
+\textbf{Feature: Remote Telemetry Ingestion}:
+
+
+\begin{itemize}
+
+\item
+\emph{Function}: \texttt{\seqsplit{Ingest Remote Patient Telemetry}} — Ingests continuous or periodic physiological measurements (e.g., blood pressure, pulse oximetry, continuous glucose) from home monitoring devices.
+
+
+
+\item
+\emph{Exposed Service}: \texttt{\seqsplit{Remote Telemetry Ingress}} — Ingests remote patient data streams into the LHR.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+
+
+\item
+\textbf{Capability dependencies}: \texttt{\seqsplit{Clinical Device Administration}}, \texttt{\seqsplit{Patient Clinical Record}}, \texttt{\seqsplit{Clinical Communication Administration}}; no specific Service is allocated by this contextual list.
+
+
+
+\end{itemize}

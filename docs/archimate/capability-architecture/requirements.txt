@@ -1,0 +1,2 @@
+# XML Schema validation; generation and tests use the same offline validator.
+lxml>=4.9,<7

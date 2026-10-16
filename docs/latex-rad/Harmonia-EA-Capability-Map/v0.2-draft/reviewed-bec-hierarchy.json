@@ -1,0 +1,828 @@
+{
+  "authority": "User-provided human-adjudicated reviewed candidate BEC hierarchy, 2026-10-16; bounded reconciliation input, not RADS acceptance.",
+  "placement_status": "Proposed unless separately established by Canonical architectural evidence.",
+  "scope_annotation": "Not Addressed in R1.x / R2.x",
+  "nodes": [
+    {
+      "name": "Entity Information Enablement",
+      "tier": "CT1",
+      "parent": null
+    },
+    {
+      "name": "Client Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Person Identity Administration",
+      "tier": "CT3",
+      "parent": "Client Administration"
+    },
+    {
+      "name": "Healthcare Subject Profile Administration",
+      "tier": "CT3",
+      "parent": "Client Administration"
+    },
+    {
+      "name": "Client Relationship Administration",
+      "tier": "CT3",
+      "parent": "Client Administration"
+    },
+    {
+      "name": "Client Privacy Guardrail Management",
+      "tier": "CT3",
+      "parent": "Client Administration"
+    },
+    {
+      "name": "Provider Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Practitioner Profile Administration",
+      "tier": "CT3",
+      "parent": "Provider Administration"
+    },
+    {
+      "name": "Practitioner Role Administration",
+      "tier": "CT3",
+      "parent": "Provider Administration"
+    },
+    {
+      "name": "Vendor Liaison",
+      "tier": "CT3",
+      "parent": "Provider Administration"
+    },
+    {
+      "name": "Organisation Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Healthcare Organisation Profile Administration",
+      "tier": "CT3",
+      "parent": "Organisation Administration"
+    },
+    {
+      "name": "Location Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Healthcare Location Profile Administration",
+      "tier": "CT3",
+      "parent": "Location Administration"
+    },
+    {
+      "name": "Care-Place Definition Administration",
+      "tier": "CT3",
+      "parent": "Location Administration"
+    },
+    {
+      "name": "Health Service Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Healthcare Service Profile Administration",
+      "tier": "CT3",
+      "parent": "Health Service Administration"
+    },
+    {
+      "name": "Health Materiel Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Health Materiel Profile Administration",
+      "tier": "CT3",
+      "parent": "Health Materiel Administration"
+    },
+    {
+      "name": "Health Materiel Catalogue & Formulary Administration",
+      "tier": "CT3",
+      "parent": "Health Materiel Administration"
+    },
+    {
+      "name": "Health Materiel Traceability Administration",
+      "tier": "CT3",
+      "parent": "Health Materiel Administration"
+    },
+    {
+      "name": "Clinical Device Administration",
+      "tier": "CT2",
+      "parent": "Entity Information Enablement"
+    },
+    {
+      "name": "Clinical Device Profile Administration",
+      "tier": "CT3",
+      "parent": "Clinical Device Administration"
+    },
+    {
+      "name": "Device Utilisation Administration",
+      "tier": "CT3",
+      "parent": "Clinical Device Administration"
+    },
+    {
+      "name": "Device OA&M Metadata Management",
+      "tier": "CT3",
+      "parent": "Clinical Device Administration"
+    },
+    {
+      "name": "Device Connectivity Compliance Management",
+      "tier": "CT3",
+      "parent": "Clinical Device Administration"
+    },
+    {
+      "name": "Care Administration Enablement",
+      "tier": "CT1",
+      "parent": null
+    },
+    {
+      "name": "Client-Centred Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Referral Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement"
+    },
+    {
+      "name": "Referral Intake & Progression",
+      "tier": "CT3",
+      "parent": "Referral Administration"
+    },
+    {
+      "name": "Scheduling Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement"
+    },
+    {
+      "name": "Appointment & Booking Administration",
+      "tier": "CT3",
+      "parent": "Scheduling Administration"
+    },
+    {
+      "name": "Episode & Encounter Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Order Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement"
+    },
+    {
+      "name": "Closed-Loop Order Progression",
+      "tier": "CT3",
+      "parent": "Order Administration"
+    },
+    {
+      "name": "Diagnostic Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Medication Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Procedure Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Clinical Record Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement"
+    },
+    {
+      "name": "Clinical Documentation Lifecycle Administration",
+      "tier": "CT3",
+      "parent": "Clinical Record Administration"
+    },
+    {
+      "name": "Care Plan Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement"
+    },
+    {
+      "name": "Care Plan Lifecycle & Coordination",
+      "tier": "CT3",
+      "parent": "Care Plan Administration"
+    },
+    {
+      "name": "Clinical Communication Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Funding & Coverage Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Clinical Charging & Claims Administration",
+      "tier": "CT2",
+      "parent": "Care Administration Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Clinical Service Dependency Management",
+      "tier": "CT1",
+      "parent": null,
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Clinical Assessment",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Primary Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Acute Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Emergency Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Inpatient Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Ambulatory Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Surgical & Procedural Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Diagnostic Services",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Therapeutic Services",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Medication Therapy",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Allied Health",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Preventive Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Rehabilitation",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Community Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Outreach Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Remote & Virtual Care",
+      "tier": "CT2",
+      "parent": "Clinical Service Dependency Management"
+    },
+    {
+      "name": "Health Service Operations Enablement",
+      "tier": "CT1",
+      "parent": null
+    },
+    {
+      "name": "Clinic & Practice Operations",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Session & Queue Coordination",
+      "tier": "CT3",
+      "parent": "Clinic & Practice Operations"
+    },
+    {
+      "name": "Ward Operations",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Ward Logistics Coordination",
+      "tier": "CT3",
+      "parent": "Ward Operations"
+    },
+    {
+      "name": "Theatre Operations",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Perioperative Logistics Coordination",
+      "tier": "CT3",
+      "parent": "Theatre Operations"
+    },
+    {
+      "name": "Emergency Department Operations",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Emergency Department Operational Coordination",
+      "tier": "CT3",
+      "parent": "Emergency Department Operations"
+    },
+    {
+      "name": "Outpatient Operations",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Outpatient Flow Coordination",
+      "tier": "CT3",
+      "parent": "Outpatient Operations"
+    },
+    {
+      "name": "Bed & Care-Place Management",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Bed & Care-Place State Administration",
+      "tier": "CT3",
+      "parent": "Bed & Care-Place Management"
+    },
+    {
+      "name": "Bed & Care-Place Turnover Coordination",
+      "tier": "CT3",
+      "parent": "Bed & Care-Place Management"
+    },
+    {
+      "name": "Service Capacity Management",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Service Demand & Capacity Coordination",
+      "tier": "CT3",
+      "parent": "Service Capacity Management"
+    },
+    {
+      "name": "Service Establishment Support",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Clinical Workforce Capability Monitoring",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Clinical Rostering",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Clinical Roster Capture & Communication",
+      "tier": "CT3",
+      "parent": "Clinical Rostering"
+    },
+    {
+      "name": "Mobile Staff Management",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Mobile Worker Dispatch & Safety Coordination",
+      "tier": "CT3",
+      "parent": "Mobile Staff Management"
+    },
+    {
+      "name": "On-Call Management",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "On-Call Availability & Contact Resolution",
+      "tier": "CT3",
+      "parent": "On-Call Management"
+    },
+    {
+      "name": "Work Allocation & Dispatch",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Operational Work Assignment & Dispatch Coordination",
+      "tier": "CT3",
+      "parent": "Work Allocation & Dispatch"
+    },
+    {
+      "name": "Clinical Training & Education",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement",
+      "release_scope": "Not Addressed in R1.x / R2.x"
+    },
+    {
+      "name": "Clinical Competency Administration",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Clinical Qualification Administration",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Organisation Clinical Certification & Compliance Support",
+      "tier": "CT3",
+      "parent": "Clinical Qualification Administration"
+    },
+    {
+      "name": "Provider Clinical Qualification Tracking",
+      "tier": "CT3",
+      "parent": "Clinical Qualification Administration"
+    },
+    {
+      "name": "Credential Management",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Clinical Service Credential Definition Management",
+      "tier": "CT3",
+      "parent": "Credential Management"
+    },
+    {
+      "name": "Clinical Supervision",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Clinical Escalation Path Management",
+      "tier": "CT3",
+      "parent": "Clinical Supervision"
+    },
+    {
+      "name": "Patient Transport",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Patient Transfer Coordination",
+      "tier": "CT3",
+      "parent": "Patient Transport"
+    },
+    {
+      "name": "Clinical Logistics Coordination",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Specimen Metadata Management",
+      "tier": "CT3",
+      "parent": "Clinical Logistics Coordination"
+    },
+    {
+      "name": "Specimen Movement Traceability",
+      "tier": "CT3",
+      "parent": "Clinical Logistics Coordination"
+    },
+    {
+      "name": "Discharge Management",
+      "tier": "CT2",
+      "parent": "Health Service Operations Enablement"
+    },
+    {
+      "name": "Discharge Progression & Coordination",
+      "tier": "CT3",
+      "parent": "Discharge Management"
+    },
+    {
+      "name": "Shared Information & Coordination Enablement",
+      "tier": "CT1",
+      "parent": null
+    },
+    {
+      "name": "Patient Clinical Record",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Longitudinal Clinical Record Administration",
+      "tier": "CT3",
+      "parent": "Patient Clinical Record"
+    },
+    {
+      "name": "Linked Information Curation",
+      "tier": "CT3",
+      "parent": "Patient Clinical Record"
+    },
+    {
+      "name": "Health Information Exchange",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "HIE Requirement Management",
+      "tier": "CT3",
+      "parent": "Health Information Exchange"
+    },
+    {
+      "name": "HIE Implementation Management",
+      "tier": "CT3",
+      "parent": "Health Information Exchange"
+    },
+    {
+      "name": "HIE Endpoint State Management",
+      "tier": "CT3",
+      "parent": "Health Information Exchange"
+    },
+    {
+      "name": "Health Information Access",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Governed Health Information Retrieval",
+      "tier": "CT3",
+      "parent": "Health Information Access"
+    },
+    {
+      "name": "Health Information Communication",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Patient Notification Services",
+      "tier": "CT3",
+      "parent": "Health Information Communication"
+    },
+    {
+      "name": "Patient Task Communication Services",
+      "tier": "CT3",
+      "parent": "Health Information Communication"
+    },
+    {
+      "name": "Patient Self-Service",
+      "tier": "CT3",
+      "parent": "Health Information Communication"
+    },
+    {
+      "name": "Patient Health Library Access",
+      "tier": "CT3",
+      "parent": "Health Information Communication"
+    },
+    {
+      "name": "Health Information Control",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Patient Health Information Restriction Management",
+      "tier": "CT3",
+      "parent": "Health Information Control"
+    },
+    {
+      "name": "Patient Health Information Filter Management",
+      "tier": "CT3",
+      "parent": "Health Information Control"
+    },
+    {
+      "name": "Patient Health Information Disclosure Management",
+      "tier": "CT3",
+      "parent": "Health Information Control"
+    },
+    {
+      "name": "Information Asset Stewardship Management",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Information Asset Definition",
+      "tier": "CT3",
+      "parent": "Information Asset Stewardship Management"
+    },
+    {
+      "name": "Information Asset Tag Management",
+      "tier": "CT3",
+      "parent": "Information Asset Stewardship Management"
+    },
+    {
+      "name": "Information Content Maintainer Management",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Data Scientist Administration",
+      "tier": "CT3",
+      "parent": "Information Content Maintainer Management"
+    },
+    {
+      "name": "Data Provenance Capture",
+      "tier": "CT3",
+      "parent": "Information Content Maintainer Management"
+    },
+    {
+      "name": "Information Product Administration",
+      "tier": "CT3",
+      "parent": "Information Content Maintainer Management"
+    },
+    {
+      "name": "Clinical Knowledge Services",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Clinical Knowledge Request Administration",
+      "tier": "CT3",
+      "parent": "Clinical Knowledge Services"
+    },
+    {
+      "name": "Clinical Knowledge Artefact Distribution Management",
+      "tier": "CT3",
+      "parent": "Clinical Knowledge Services"
+    },
+    {
+      "name": "Governed Reference Dataset Administration",
+      "tier": "CT3",
+      "parent": "Clinical Knowledge Services"
+    },
+    {
+      "name": "Clinical Collaboration",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Clinical Context Collaboration",
+      "tier": "CT3",
+      "parent": "Clinical Collaboration"
+    },
+    {
+      "name": "General Collaboration",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Operational Collaboration",
+      "tier": "CT3",
+      "parent": "General Collaboration"
+    },
+    {
+      "name": "Workflow & Activity Coordination",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "External Task Coordination",
+      "tier": "CT3",
+      "parent": "Workflow & Activity Coordination"
+    },
+    {
+      "name": "External Task Status & Traceability Management",
+      "tier": "CT3",
+      "parent": "Workflow & Activity Coordination"
+    },
+    {
+      "name": "Activity Routing Management",
+      "tier": "CT3",
+      "parent": "Workflow & Activity Coordination"
+    },
+    {
+      "name": "Work Boundary Governance",
+      "tier": "CT3",
+      "parent": "Workflow & Activity Coordination"
+    },
+    {
+      "name": "Calendar Management",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Operational & Clinical Calendar Coordination",
+      "tier": "CT3",
+      "parent": "Calendar Management"
+    },
+    {
+      "name": "Presentation Services",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Contextual Information Presentation",
+      "tier": "CT3",
+      "parent": "Presentation Services"
+    },
+    {
+      "name": "Information Design Governance",
+      "tier": "CT2",
+      "parent": "Shared Information & Coordination Enablement"
+    },
+    {
+      "name": "Enterprise Canonical/Reusable Model Design",
+      "tier": "CT3",
+      "parent": "Information Design Governance"
+    },
+    {
+      "name": "Enterprise Canonical/Reusable Model Library Management",
+      "tier": "CT3",
+      "parent": "Information Design Governance"
+    },
+    {
+      "name": "Enterprise Canonical/Reusable Model Utilisation Support",
+      "tier": "CT3",
+      "parent": "Information Design Governance"
+    },
+    {
+      "name": "Enterprise Reference Data Stewardship",
+      "tier": "CT3",
+      "parent": "Information Design Governance"
+    },
+    {
+      "name": "Health Informatics Management",
+      "tier": "CT1",
+      "parent": null
+    },
+    {
+      "name": "Research Information Curation",
+      "tier": "CT2",
+      "parent": "Health Informatics Management"
+    },
+    {
+      "name": "Population Health Information Reporting",
+      "tier": "CT2",
+      "parent": "Health Informatics Management"
+    },
+    {
+      "name": "Service Planning Data Management",
+      "tier": "CT2",
+      "parent": "Health Informatics Management"
+    },
+    {
+      "name": "Independent Assurance Enablement",
+      "tier": "CT1",
+      "parent": null
+    },
+    {
+      "name": "Assurance Specification",
+      "tier": "CT2",
+      "parent": "Independent Assurance Enablement"
+    },
+    {
+      "name": "Assurance Design",
+      "tier": "CT3",
+      "parent": "Assurance Specification"
+    },
+    {
+      "name": "Assurance Criteria Administration",
+      "tier": "CT3",
+      "parent": "Assurance Specification"
+    },
+    {
+      "name": "Assurance Service Review",
+      "tier": "CT2",
+      "parent": "Independent Assurance Enablement"
+    },
+    {
+      "name": "Assurance Service Evaluation",
+      "tier": "CT3",
+      "parent": "Assurance Service Review"
+    }
+  ]
+}

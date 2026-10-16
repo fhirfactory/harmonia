@@ -1,0 +1,121 @@
+{
+  "model_identifier": "id-80b065eaa4c550eba09c0dbd41b1d631",
+  "source_document": "../../markdown/02-strategy/capabilities/enterprise-capabilities.md",
+  "rad_source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+  "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+  "identity_evidence": "Existing exact Reference IDs EC-01 through EC-14; reference-id-reconciliation-report.md. Names only check drift.",
+  "matches": [
+    {
+      "reference_id": "EC-01",
+      "element_identifier": "id-d53727d908365757a293b0896b2c769b",
+      "exchange_name": "EC-01 Managed Entity & Relationship",
+      "source_name": "Managed Entity & Relationship",
+      "source_section": "### EC-01: Managed Entity & Relationship",
+      "documentation_sha256": "e532daaba81a66f9c68840bcf6ae5911dbdb3c0badfc59bafd489d057ca28c70"
+    },
+    {
+      "reference_id": "EC-02",
+      "element_identifier": "id-06e038737c5355edbc0591e08c594ab0",
+      "exchange_name": "EC-02 Context Management",
+      "source_name": "Context Management",
+      "source_section": "### EC-02: Context Management",
+      "documentation_sha256": "d18d8c00466cfa13b96e0529088c1d82bc0981e6ca59ca62ada961475e874138"
+    },
+    {
+      "reference_id": "EC-03",
+      "element_identifier": "id-5891936941f65d20afad86b0697879c7",
+      "exchange_name": "EC-03 Managed State & Lifecycle",
+      "source_name": "Managed State & Lifecycle",
+      "source_section": "### EC-03: Managed State & Lifecycle",
+      "documentation_sha256": "c4d2d330aec4c7961be2798501e9b1d712014a4222f14dfe8ca1c29b7db3970f"
+    },
+    {
+      "reference_id": "EC-04",
+      "element_identifier": "id-9e79bc474aed516c8c6752ab81b63d6b",
+      "exchange_name": "EC-04 Information Management",
+      "source_name": "Information Management",
+      "source_section": "### EC-04: Information Management",
+      "documentation_sha256": "5495eedd83771c79f0589d326f37ee568bb63d8b5f7b9db1de5b2615b10ce21b"
+    },
+    {
+      "reference_id": "EC-05",
+      "element_identifier": "id-e11f02764fe55ff29c0782db21198040",
+      "exchange_name": "EC-05 Search & Discovery",
+      "source_name": "Search & Discovery",
+      "source_section": "### EC-05: Search & Discovery",
+      "documentation_sha256": "dfc8214a256cbabc10e86b1a9344ca785b9ba1af2c4c2800387faa43799fc1e5"
+    },
+    {
+      "reference_id": "EC-06",
+      "element_identifier": "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+      "exchange_name": "EC-06 Policy & Control",
+      "source_name": "Policy & Control",
+      "source_section": "### EC-06: Policy & Control",
+      "documentation_sha256": "017903e08b68afe4ec460c81b2d40e5d37b830b1aed7af6d8dab6acc06adc39f"
+    },
+    {
+      "reference_id": "EC-07",
+      "element_identifier": "id-d71457435a085e749ffb1e1a3b551228",
+      "exchange_name": "EC-07 Provenance & Traceability",
+      "source_name": "Provenance & Traceability",
+      "source_section": "### EC-07: Provenance & Traceability",
+      "documentation_sha256": "1965533351937ef83910e4804717c3f5182d1431eacce6a565f59525329cf3fb"
+    },
+    {
+      "reference_id": "EC-08",
+      "element_identifier": "id-dbd66e69788450649e184966aa724797",
+      "exchange_name": "EC-08 Interoperability & Exchange",
+      "source_name": "Interoperability & Exchange",
+      "source_section": "### EC-08: Interoperability & Exchange",
+      "documentation_sha256": "36d61ff22672540acd78e2dd4ff273290a5a8429b6071b1565dd91eca5dbb194"
+    },
+    {
+      "reference_id": "EC-09",
+      "element_identifier": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+      "exchange_name": "EC-09 Event & Subscription",
+      "source_name": "Event & Subscription",
+      "source_section": "### EC-09: Event & Subscription",
+      "documentation_sha256": "4d7f192df28010c206d845e1b058b4323610b74d4f9a96517d78f7a095958033"
+    },
+    {
+      "reference_id": "EC-10",
+      "element_identifier": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+      "exchange_name": "EC-10 Activity & Execution",
+      "source_name": "Activity & Execution",
+      "source_section": "### EC-10: Activity & Execution",
+      "documentation_sha256": "655b8477581c8f2b6b82b1d3ec1734df1fe04d3734d7da933948a8dce080e6e7"
+    },
+    {
+      "reference_id": "EC-11",
+      "element_identifier": "id-82cd1f6a3e2352639e22c542f5cb3a9d",
+      "exchange_name": "EC-11 Interaction & Experience",
+      "source_name": "Interaction & Experience",
+      "source_section": "### EC-11: Interaction & Experience",
+      "documentation_sha256": "73f6ed7415396f89906f7de262a4f417b36338c7c6b7b029c15d519c7fdd8954"
+    },
+    {
+      "reference_id": "EC-12",
+      "element_identifier": "id-9bbd142f818e50d39a3d0429f74b72b4",
+      "exchange_name": "EC-12 Operational Assurance",
+      "source_name": "Operational Assurance",
+      "source_section": "### EC-12: Operational Assurance",
+      "documentation_sha256": "1e79e6cf1adfc0103527a1f7a0c108393fe2962b324911b9ea921e68466e5c6d"
+    },
+    {
+      "reference_id": "EC-13",
+      "element_identifier": "id-7d6f635ffb6f5c6181bde1d07b859662",
+      "exchange_name": "EC-13 Semantic Governance & Conformance",
+      "source_name": "Semantic Governance & Conformance",
+      "source_section": "### EC-13: Semantic Governance & Conformance",
+      "documentation_sha256": "2b8f973c0dd62e5f1d35654742cf8d425064cf507129aefc4f997b656b0273fb"
+    },
+    {
+      "reference_id": "EC-14",
+      "element_identifier": "id-4dbf578f52bd5b3b9301b9807ce60f30",
+      "exchange_name": "EC-14 Service Guardian",
+      "source_name": "Service Guardian",
+      "source_section": "### EC-14: Service Guardian",
+      "documentation_sha256": "5f00ef8a5fd23b0234d61cf3f3c057bea4be7c0bdcbf714f33a156e41be5004d"
+    }
+  ]
+}
