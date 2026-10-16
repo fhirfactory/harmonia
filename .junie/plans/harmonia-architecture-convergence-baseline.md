@@ -29,7 +29,7 @@ All findings, components, and capabilities across the platform are evaluated and
 - Auditing and remediating known architectural gaps (e.g. REC-001 dual-write ingress, REC-002 fan-out sub-status, Petasos API encapsulation, Iris-administration vs Provider Registry decoupling).
 - Creation and expansion of repository `../../AGENTS-old.md` and module-level architecture rules.
 - Automated ArchUnit test suite additions for architectural boundary enforcement.
-- Complete reconstruction of repository Markdown (`docs/`) and formal LaTeX publication (`docs/latex/`).
+- Complete reconstruction of repository Markdown (`docs/`) and formal LaTeX publication (`../../docs/latex-legacy`).
 
 #### Out of Scope
 - Unreviewed architectural redesign or arbitrary refactoring during Phase 1.
@@ -220,8 +220,8 @@ graph TD
 | **HARM-CON-003** | Iris-Administration Role | `CONFORMANT` | `iris-administration` is a Vue SPA client, not Provider Registry engine. | `iris-administration` contains Vue 3 frontend components making REST API calls to gateway. | `iris/iris-administration/src/api/providerRegistryClient.ts` | Ensure no backend business logic or DB drivers are ever introduced into Iris. | `iris-administration`, `mnemosyne-clinical` |
 | **HARM-DEF-001** | Dual-Write Ingress Window (REC-001) | `IMPLEMENTATION DEFECT` | Inbound gateways must guarantee message persistence before sending `AA` ACK. | Inbound MLLP processor returns `AA` even if downstream Petasos publish throws an exception. | `IncomingAdtMessageProcessor.java`, `docs/persistence-recovery-gaps.md` | Catch Petasos send failure and return HL7 `AE` (Application Error) NACK to trigger upstream retry. | `pylai-mllp-in` |
 | **HARM-DEF-002** | Destination Fan-Out State (REC-002) | `IMPLEMENTATION DEFECT` | Parent Task in Mnemosyne tracks granular delivery status for each outbound fan-out destination. | Only macro workflow status is tracked; destination-level delivery status requires querying individual Provenance records. | `AdtDistributionErgon.java`, `OutboundStateLifecycleManager.java` | Extend `Pragma`/Task outputs with structured destination delivery checkpoints. | `energeia-erga`, `pylai-mllp-out` |
-| **HARM-DOC-001** | Iris Submodule Terminology | `DOCUMENTATION DEFECT` | Presentation modules documented as `iris-clinical`, `iris-console`, `iris-administration`, `iris-befe`. | Some legacy LaTeX sections and notes refer to `iris-monitor` instead of `iris-console`. | `iris/pom.xml` (`iris-console`), `docs/latex/chapters/03-application-layer.tex` | Standardize documentation on `iris-console` across all Markdown and LaTeX chapters. | `docs/`, `docs/latex/` |
-| **HARM-DOC-002** | LaTeX Reference Completeness | `DOCUMENTATION DEFECT` | LaTeX specification must provide complete 8-part reference manual with registers. | Existing LaTeX is version 0.5.0 with partial appendixes and missing comprehensive registers. | `docs/latex/main.tex` | Restructure and expand LaTeX document to complete publication-ready reference. | `docs/latex/` |
+| **HARM-DOC-001** | Iris Submodule Terminology | `DOCUMENTATION DEFECT` | Presentation modules documented as `iris-clinical`, `iris-console`, `iris-administration`, `iris-befe`. | Some legacy LaTeX sections and notes refer to `iris-monitor` instead of `iris-console`. | `iris/pom.xml` (`iris-console`), `../../docs/latex-legacy` | Standardize documentation on `iris-console` across all Markdown and LaTeX chapters. | `docs/`, `../../docs/latex-legacy` |
+| **HARM-DOC-002** | LaTeX Reference Completeness | `DOCUMENTATION DEFECT` | LaTeX specification must provide complete 8-part reference manual with registers. | Existing LaTeX is version 0.5.0 with partial appendixes and missing comprehensive registers. | `../../docs/latex-legacy` | Restructure and expand LaTeX document to complete publication-ready reference. | `../../docs/latex-legacy` |
 | **HARM-DEC-001** | Distributed Task Lease (REC-003) | `ARCHITECTURE DECISION REQUIRED` | Worker failure detection should use distributed lease locks in Infinispan or rely on Artemis consumer session timeout. | Currently relies solely on unacknowledged JMS consumer session timeouts. | `docs/persistence-recovery-gaps.md` | Review whether to add active Infinispan distributed lease locks or maintain JMS session timeouts. | `energeia-ponos`, `hestia-mneme` |
 | **HARM-DEC-002** | Automated Startup DB Recovery Scan (REC-004) | `ARCHITECTURE DECISION REQUIRED` | Cold start should either actively scan DB for orphaned non-terminal tasks or rely on persistent Artemis journal replay. | Ponos currently relies solely on Artemis journal message persistence. | `docs/persistence-recovery-gaps.md` | Review whether to add a scheduled startup reconciliation scanner in Ponos. | `energeia-ponos`, `mnemosyne-clinical` |
 
@@ -274,7 +274,7 @@ docs/
 
 ---
 
-### Expanded LaTeX Architecture Reference Book (`docs/latex/`)
+### Expanded LaTeX Architecture Reference Book (`../../docs/latex-legacy`)
 The formal LaTeX publication (`main.tex`) will be restructured into 8 major Parts and 9 Appendices:
 
 - **PART I: Foundations and Concepts**
@@ -361,7 +361,7 @@ graph TD
    - `kustomize build deployment/kubernetes/environments/microk8s`: Verifies Kubernetes YAML syntax, resource references, and patch validity.
    - Ansible playbook syntax check across `prepare-microk8s.yml`, `deploy-harmonia.yml`, and `undeploy-harmonia.yml`.
 4. **LaTeX Compilation**:
-   - Compile `docs/latex/main.tex` via `latexmk -pdf` / `make`.
+   - Compile `../../docs/latex-legacy` via `latexmk -pdf` / `make`.
    - Ensure zero fatal compilation errors, resolved citations/cross-references, and clean formatting.
 
 ---
@@ -430,7 +430,7 @@ Construct the durable Harmonia System Inventory and author a completely synchron
 ### ✓ Step 4: Reconstruct and Expand LaTeX Architecture, Implementation, and Deployment Reference
 Substantially restructure and expand the formal LaTeX architecture publication into the comprehensive Harmonia Architecture, Implementation, and Deployment Reference.
 
-- Reorganize `docs/latex/main.tex` and chapter structure into Parts I through VIII (Foundations & Concepts, Platform Capabilities & Modules, Middleware Architecture, Runtime Architecture, Configuration Architecture, Normal Deployment Architecture, Paradeigma Simulation Architecture, Security/Logging/Operations) plus comprehensive Appendices (System Inventory, Configuration Register, Port Register, Container Register, Kubernetes Register, Middleware Matrix, Dependency Matrix, Deployment Checklists).
+- Reorganize `../../docs/latex-legacy` and chapter structure into Parts I through VIII (Foundations & Concepts, Platform Capabilities & Modules, Middleware Architecture, Runtime Architecture, Configuration Architecture, Normal Deployment Architecture, Paradeigma Simulation Architecture, Security/Logging/Operations) plus comprehensive Appendices (System Inventory, Configuration Register, Port Register, Container Register, Kubernetes Register, Middleware Matrix, Dependency Matrix, Deployment Checklists).
 - Update and author high-quality TikZ architectural diagrams for conceptual layers, 5-tier deployment topology, Petasos/Artemis HA & clustering, Mneme distributed caching, Mnemosyne JPA persistence, Themis authorization pipeline, Iris UI federation, and Paradeigma scenario simulation.
 - Reconcile all LaTeX tables, property references, queue names, cache configurations, container tags, and port definitions with actual codebase evidence.
 - Build and compile the full LaTeX document (`make` / `latexmk`), eliminating syntax errors, missing citations, broken references, table overflow, and unreadable diagrams to produce the publication-grade PDF.

@@ -85,23 +85,23 @@ to the repository root and linked in the source inventory:
 | L11–L14 | `docs/concepts/iris.md`, `agora.md`; `docs/architecture-decisions.md` ADR-001–020; `docs/design/governed-write-concurrency-contract.md`. |
 | L15 | `docs/provider-registry/architecture.md`, `resource-model.md`, `change-processing.md`, `persistence.md`, `search.md`, `audit-provenance.md`. |
 | L16–L17 | `docs/persistence-architecture.md`, `database-schema.md`, `architecture/persistence-lifecycle.md`; `docs/middleware/overview.md`, `hapi-fhir.md`, `infinispan.md`. |
-| L18–L20 | `docs/latex/chapters/03-application-layer.tex`, `06-workflow-energeia.tex`, `appendix-praxis-workflow.tex`, `appendix-ergon-module.tex`, `04-data-architecture.tex`, `10-postgresql-persistence.tex`, `appendix-i-persistence-register.tex`. |
+| L18–L20 | `../../docs/latex-legacy`, `06-workflow-energeia.tex`, `appendix-praxis-workflow.tex`, `appendix-ergon-module.tex`, `04-data-architecture.tex`, `10-postgresql-persistence.tex`, `appendix-i-persistence-register.tex`. |
 | L21 | `docs/architecture/iris-operations-console.md`, `iris-design-system.md`. |
 | L22–L23 | `docs/concepts/paradeigma.md`; `docs/paradeigma/architecture.md`; `docs/modules/energeia.md`, `hestia.md`, `iris.md`; `hestia/mnemosyne-operations-cli/README.md`. |
 | L24 | `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`, extracted paragraphs, especially §§5–9/13. |
-| L25 | `docs/latex/diagrams/fig-app-overview-5tier.tex`, `fig-praxis-workflow-architecture.tex`, `fig-ergon-module-architecture.tex`, `fig-hestia-data-grid.tex`, `fig-iris-architecture.tex`, `fig-petasos-messaging.tex`, `fig-pragma-state-flow.tex`. |
-| L26–L28 | `docs/architecture/overview.md`, `runtime-architecture.md`, `system-inventory.md`; `docs/getting-started/architecture-at-a-glance.md`; `docs/latex/chapters/appendix-backlog.tex` BL-CLIN-007/008; `docs/message-lifecycle.md`. |
+| L25 | `../../docs/latex-legacy`, `fig-praxis-workflow-architecture.tex`, `fig-ergon-module-architecture.tex`, `fig-hestia-data-grid.tex`, `fig-iris-architecture.tex`, `fig-petasos-messaging.tex`, `fig-pragma-state-flow.tex`. |
+| L26–L28 | `docs/architecture/overview.md`, `runtime-architecture.md`, `system-inventory.md`; `docs/getting-started/architecture-at-a-glance.md`; `../../docs/latex-legacy` BL-CLIN-007/008; `docs/message-lifecycle.md`. |
 | L29–L31 | `petasos/docs/architecture.md`; `docs/architecture.md`; `docs/concepts/petasos.md`, `petasos-messaging.md`, `pylai.md`, `pylai-gateways.md`; `docs/modules/dokimasia.md`. |
 
 Broad discovery also searched documentary filenames and text for components,
 relationships, state, media/binary, terminology and persistence. DOCX and
 `docs/libreoffice/harmonia-architecture-specification.odt` text was extracted
-read-only. The ODT was supporting publication material. `docs/latex/main.pdf`
+read-only. The ODT was supporting publication material. `../../docs/latex-legacy`
 was discovered; editable LaTeX was used rather than independently interpreting
 the PDF as authority. A final targeted media/terminology search also inspected
 matching passages in `docs/middleware/postgresql.md`,
 `docs/architecture/convergence-report.md` and
-`docs/latex/chapters/appendix-requirements.tex`; these supplied no new component
+`../../docs/latex-legacy`; these supplied no new component
 allocation or upstream requirement evaluation.
 
 The [previous assessment](2026-10-10-domain05-application-architecture-assessment.md),

@@ -5,7 +5,7 @@ sessionId: session-260916-122018-702a
 # Requirements
 
 ### Overview & Goals
-The objective of this initiative is to provide comprehensive, detailed, and authoritative documentation for the **Harmonia Security Framework (Themis)** across all project documentation assets (Markdown documentation in `docs/security/`, subsystem guides in `docs/provider-registry/`, platform overview in `docs/architecture.md` and `README.md`, and formal LaTeX architectural documentation in `docs/latex/`).
+The objective of this initiative is to provide comprehensive, detailed, and authoritative documentation for the **Harmonia Security Framework (Themis)** across all project documentation assets (Markdown documentation in `docs/security/`, subsystem guides in `docs/provider-registry/`, platform overview in `docs/architecture.md` and `README.md`, and formal LaTeX architectural documentation in `../../docs/latex-legacy`).
 
 The updated documentation will provide clear technical specifications for the platform's **defence-in-depth** architecture, **default-deny** policy model, role-to-authority mappings, data security labeling, immutable caller context propagation, multi-tier boundary enforcement, audit logging, and failure recovery.
 
@@ -20,7 +20,7 @@ The updated documentation will provide clear technical specifications for the pl
 - **Subsystem & Platform Cross-Reference Updates**:
   - Update `docs/provider-registry/security.md` to align with Themis architecture and deprecate obsolete pre-Themis role descriptions.
   - Update `docs/architecture.md` and `README.md` with security indices, component descriptions, and architectural diagrams.
-- **Formal LaTeX Architectural Chapters (`docs/latex/`)**:
+- **Formal LaTeX Architectural Chapters (`../../docs/latex-legacy`)**:
   - Update LaTeX architectural chapters (`03-application-layer.tex`, `05-technology-layer.tex`) and diagrams to document Themis, defence-in-depth boundaries, and security context propagation.
 
 #### Out of Scope
@@ -53,7 +53,7 @@ The updated documentation will provide clear technical specifications for the pl
   - `docs/security/`: Contains initial topic-specific markdown files (`themis.md`, `architecture.md`, `audit.md`, etc.), which require expansion, complete tables, unified terminology, and comprehensive flow diagrams.
   - `docs/provider-registry/security.md`: Contains older legacy permission strings (e.g. `Practitioner.read`, `ROLE_ADMIN`) that do not reflect the implemented Themis role/authority model and persistence gates.
   - `docs/architecture.md` & `README.md`: Contain high-level architecture overviews but need comprehensive cross-references to the security framework documentation suite.
-  - `docs/latex/`: Contains the formal platform specification book; mentions basic security aspects in Application Layer (chapter 3) and Data Architecture (chapter 4), but needs detailed treatment of Themis policy evaluation and defence-in-depth boundaries.
+  - `../../docs/latex-legacy`: Contains the formal platform specification book; mentions basic security aspects in Application Layer (chapter 3) and Data Architecture (chapter 4), but needs detailed treatment of Themis policy evaluation and defence-in-depth boundaries.
 
 ### Key Decisions
 1. **Centralized & Modular Security Documentation**:
@@ -125,7 +125,7 @@ graph TD
    - `docs/provider-registry/security.md`: Updated to reference Themis roles, authorities, and defence-in-depth validation.
    - `docs/architecture.md`: Updated with security overview, boundary enforcement index, and links to `docs/security/`.
    - `README.md`: Updated with Themis subsystem details, role catalogue summary, and documentation index.
-3. **LaTeX Documentation (`docs/latex/`)**:
+3. **LaTeX Documentation (`../../docs/latex-legacy`)**:
    - `chapters/03-application-layer.tex`: Enhanced with Themis subsystem section, security boundary sequence, and policy engine architecture.
    - `chapters/05-technology-layer.tex`: Updated with security governance, identity management, and audit trail specifications.
 
@@ -144,11 +144,11 @@ Documentation changes will be validated through thorough structural reviews, cro
 - **Scenario 1: End-to-End Boundary Traceability**
   - Verify that every boundary checkpoint described in `docs/security/architecture.md` (Pylai $\rightarrow$ Pragma $\rightarrow$ Petasos $\rightarrow$ Ponos $\rightarrow$ Ergon $\rightarrow$ Mnemosyne) has a dedicated detailed specification file with matching component names, actions, and authorities.
 - **Scenario 2: Vocabulary & Enum Consistency**
-  - Verify that all role codes (`PRV_RDR`, `PRV_SUB`, `PRV_PROC`, `PRV_APR`, `PRV_ADM`, `AUD_RDR`, `SYS_INT`, `SYS_ADM`), authorities (`provider.read`, `provider.change.submit`, etc.), and labels (`PROVIDER_REGISTRY`, `INTERNAL`, `AUDIT`, etc.) match exactly across `docs/security/`, `docs/provider-registry/`, `README.md`, and `docs/latex/`.
+  - Verify that all role codes (`PRV_RDR`, `PRV_SUB`, `PRV_PROC`, `PRV_APR`, `PRV_ADM`, `AUD_RDR`, `SYS_INT`, `SYS_ADM`), authorities (`provider.read`, `provider.change.submit`, etc.), and labels (`PROVIDER_REGISTRY`, `INTERNAL`, `AUDIT`, etc.) match exactly across `docs/security/`, `docs/provider-registry/`, `README.md`, and `../../docs/latex-legacy`.
 - **Scenario 3: Provider Registry Alignment**
   - Ensure `docs/provider-registry/security.md` no longer contains legacy permission strings (`Practitioner.read`, `ROLE_ADMIN`) and correctly references Themis policies and persistence gates.
 - **Scenario 4: LaTeX Build Verification**
-  - Execute LaTeX compilation in `docs/latex/` to confirm that `main.pdf` compiles cleanly with zero broken references, missing citations, or formatting errors.
+  - Execute LaTeX compilation in `../../docs/latex-legacy` to confirm that `main.pdf` compiles cleanly with zero broken references, missing citations, or formatting errors.
 
 ### Edge Cases & Integrity Verification
 - **Link Integrity**: Check all internal relative links between `docs/security/*.md`, `docs/architecture.md`, `docs/provider-registry/*.md`, and `README.md`.
@@ -175,6 +175,6 @@ All platform-level and subsystem documentation files accurately incorporate and 
 ### ✓ Step 3: Update LaTeX architectural documentation and compile verification
 The formal LaTeX architectural publication includes a dedicated, comprehensive security chapter and updated application diagrams.
 
-- Update `docs/latex/chapters/03-application-layer.tex` and `05-technology-layer.tex` to detail Themis security architecture, policy evaluation flow, and boundary enforcement.
+- Update `../../docs/latex-legacy` and `05-technology-layer.tex` to detail Themis security architecture, policy evaluation flow, and boundary enforcement.
 - Add or update LaTeX diagrams illustrating the defence-in-depth authorization flow and security context propagation.
 - Validate the LaTeX documentation structure and ensure clean compilation of `main.pdf` via Makefile/latexmk.

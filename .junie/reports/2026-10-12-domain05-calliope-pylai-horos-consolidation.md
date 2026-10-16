@@ -230,7 +230,7 @@ PEP-Criteria representation and all previously recorded Identity deferrals remai
 | `docs/integration/pylai.md` | Opening, §1, §2.2, §3.2 delivery bullet, §4.1 and §4.2 | 6 |
 | `docs/security/pylai-security.md` | §1, §2 and §3 independently | 3 |
 | `docs/getting-started/terminology.md` | Only Calliope, Pylai and REC-001 rows | 3 |
-| `docs/latex/chapters/04-gateways-pylai.tex` | Opening, REC-001, ACK/Task-state and FHIR direct-read/change description | 4 |
+| `../../docs/latex-legacy` | Opening, REC-001, ACK/Task-state and FHIR direct-read/change description | 4 |
 
 All 41 wrappers provide specific RADS replacement references. Original content,
 including earlier wrappers, code, diagrams, genuine endpoint names and configuration,

@@ -93,7 +93,7 @@ section-level supersession wrappers were added across six files:
 | [Petasos messaging](../../docs/concepts/petasos-messaging.md) | §2 universal message-envelope account | Pragma reference handoff versus unresolved broader message forms. |
 | [Praxis concept](../../docs/concepts/praxis.md) | Opening definition; §2 DAG definition assertion | C06 unresolved broader meaning and established Pathway [0..1]. |
 | [Execution model](../../docs/architecture/execution-model.md) | §2.1 envelope conversion/ACK coupling; §4 combined Pragma state/checkpointing | Governed Mneme resolution and separate information/handoff/undertaking/execution state with retained continuation details. |
-| [LaTeX Praxis appendix](../../docs/latex/chapters/appendix-praxis-workflow.tex) | Topic Subscription Matching subsection | Mneme semantic selection, classification Topic and unresolved Pattern/fan-out contracts. |
+| [LaTeX Praxis appendix](../../docs/latex-legacy/chapters/appendix-praxis-workflow.tex) | Topic Subscription Matching subsection | Mneme semantic selection, classification Topic and unresolved Pattern/fan-out contracts. |
 
 Every enclosed original section and all earlier wrappers remain unchanged.
 Removing only this task's wrappers restores all six files byte-for-byte.

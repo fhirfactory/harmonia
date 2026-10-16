@@ -107,21 +107,21 @@ No whole legacy document was superseded.
 | [Agora concept](../../docs/concepts/agora.md) | Opening, architectural rationale, §2, §4, §5, §6 intro/figure/6.1, §6.3, §7, §8 and §9. Existing §3/6.2 wrappers retained. | 10 |
 | [Agora module reference](../../docs/modules/agora.md) | Opening, §2.3 reconciliation-service bullet, §3 schemas and §4 projection/clinical-save invariant. | 4 |
 | [Synapse middleware](../../docs/middleware/matrix-synapse.md) | Opening, topology figure, §2 configuration/retention, §4 capability table and §5 API catalogue. | 5 |
-| [Agora LaTeX chapter](../../docs/latex/chapters/05a-collaboration-agora.tex) | Opening, ADR section, projections/lifecycle, membership-reconciliation subsection and AS/Petasos section. | 5 |
-| [Synapse LaTeX chapter](../../docs/latex/chapters/24-matrix-synapse.tex) | Opening, Space hierarchy and retention/archival sections. | 3 |
-| [Persistence chapter](../../docs/latex/chapters/10-postgresql-persistence.tex) | Collaboration-database subsection only. | 1 |
-| [Persistence register](../../docs/latex/chapters/appendix-i-persistence-register.tex) | Collaboration database row and paired Agora table-definition items. | 2 |
+| [Agora LaTeX chapter](../../docs/latex-legacy/chapters/05a-collaboration-agora.tex) | Opening, ADR section, projections/lifecycle, membership-reconciliation subsection and AS/Petasos section. | 5 |
+| [Synapse LaTeX chapter](../../docs/latex-legacy/chapters/24-matrix-synapse.tex) | Opening, Space hierarchy and retention/archival sections. | 3 |
+| [Persistence chapter](../../docs/latex-legacy/chapters/10-postgresql-persistence.tex) | Collaboration-database subsection only. | 1 |
+| [Persistence register](../../docs/latex-legacy/chapters/appendix-i-persistence-register.tex) | Collaboration database row and paired Agora table-definition items. | 2 |
 | [Terminology](../../docs/getting-started/terminology.md) | Agora and AS rows. | 2 |
-| [LaTeX glossary](../../docs/latex/chapters/appendix-a-glossary.tex) | Agora and AS rows. | 2 |
+| [LaTeX glossary](../../docs/latex-legacy/chapters/appendix-a-glossary.tex) | Agora and AS rows. | 2 |
 | [Architecture at a glance](../../docs/getting-started/architecture-at-a-glance.md) | Agora subsection and diagram wrapper explicitly limited to Agora subgraph/collaboration edge. | 2 |
 | [Introduction](../../docs/getting-started/introduction.md) | Agora bullet. | 1 |
 | [Root README](../../README.md) | Agora taxonomy row, Agora module group and diagram wrapper explicitly limited to Agora Collaboration Tier. | 3 |
 | [Documentation README](../../docs/README.md) | Agora inventory row. | 1 |
 | [System inventory](../../docs/architecture/system-inventory.md) | Three collaboration traceability rows; only identity/ownership classification superseded. Runtime values retained as historical evidence. | 1 |
-| [LaTeX taxonomy](../../docs/latex/chapters/02-conceptual-taxonomy.tex) | Agora collaboration subsection. | 1 |
-| [LaTeX middleware matrix](../../docs/latex/chapters/appendix-d-middleware-matrix.tex) | Synapse summary row and Synapse capability subsection. | 2 |
+| [LaTeX taxonomy](../../docs/latex-legacy/chapters/02-conceptual-taxonomy.tex) | Agora collaboration subsection. | 1 |
+| [LaTeX middleware matrix](../../docs/latex-legacy/chapters/appendix-d-middleware-matrix.tex) | Synapse summary row and Synapse capability subsection. | 2 |
 | [Iris design-system account](../../docs/architecture/iris-design-system.md) | Synapse-under-Agora ownership implication in one bullet only. | 1 |
-| [Iris LaTeX appendix](../../docs/latex/chapters/appendix-iris-user-interfaces.tex) | Synapse-under-Agora ownership implication within middleware-subordination item only. | 1 |
+| [Iris LaTeX appendix](../../docs/latex-legacy/chapters/appendix-iris-user-interfaces.tex) | Synapse-under-Agora ownership implication within middleware-subordination item only. | 1 |
 
 Other runtime/module/configuration catalogues and registration/verification
 examples remain historical implementation support. Legacy ADR-011's restricted,

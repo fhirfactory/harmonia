@@ -81,7 +81,7 @@ Rather than introducing generic `is_deleted` flags or archive tables, Harmonia r
 - `verificationStatus` / `clinicalStatus`
 
 ### Targeted Documentation Files
-1. `docs/latex/chapters/appendix-decisions.tex`: Contains full LaTeX text for ADR-020 matching ADR-018/ADR-019 styling and cross-references.
+1. `../../docs/latex-legacy`: Contains full LaTeX text for ADR-020 matching ADR-018/ADR-019 styling and cross-references.
 2. `docs/architecture-decisions.md`: Contains Markdown counterpart of ADR-020 ensuring exact semantic synchronization.
 3. `hestia/mneme-cluster/docs/mneme-concurrency-and-information-integrity.md`: Incorporates Section 3.4 referencing ADR-020, distinguishing cache eviction from resource deletion.
 
@@ -112,7 +112,7 @@ All occurrences of `DELETE`, `CRUD`, and related terms across repository documen
 ### ✓ Step 1: Align and finalize LaTeX architecture decision documentation
 The LaTeX architecture decision appendix accurately defines ADR-020 and aligns Task 08 roadmap references.
 
-- Review and verify `docs/latex/chapters/appendix-decisions.tex` to ensure ADR-020 adheres strictly to the formatting, styling, and structural conventions of ADR-018 and ADR-019.
+- Review and verify `../../docs/latex-legacy` to ensure ADR-020 adheres strictly to the formatting, styling, and structural conventions of ADR-018 and ADR-019.
 - Ensure the four key concepts (Resource Lifecycle Transition, Mneme Eviction, Archival, Purge/Disposal) and Task 08 consequences (CREATE/UPDATE write semantics only) are captured normatively.
 - Verify that earlier roadmap references in ADR-018 correctly cite ADR-020 without implying a physical DELETE path for Task 08.
 

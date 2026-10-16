@@ -5,13 +5,13 @@ sessionId: session-260913-200046-802v
 # Requirements
 
 ### Overview & Goals
-The goal is to create a comprehensive, production-grade, modular LaTeX and TikZ documentation package for the entire **Harmonia** Health Information Exchange (HIE) platform located in `docs/latex/`. The documentation will be structured strictly around **ArchiMate 3.2** concepts, layers, and visual modeling terminology.
+The goal is to create a comprehensive, production-grade, modular LaTeX and TikZ documentation package for the entire **Harmonia** Health Information Exchange (HIE) platform located in `../../docs/latex-legacy`. The documentation will be structured strictly around **ArchiMate 3.2** concepts, layers, and visual modeling terminology.
 
 This provides an authoritative, publication-ready architectural specification for architects, engineers, healthcare interoperability specialists, and operations teams, complete with modular chapter files and high-fidelity TikZ vector architecture diagrams.
 
 ### Scope
 #### In Scope
-- **Directory Structure**: Create a dedicated `docs/latex/` directory with organized subdirectories (`chapters/`, `diagrams/`, `styles/`).
+- **Directory Structure**: Create a dedicated `../../docs/latex-legacy` directory with organized subdirectories (`chapters/`, `diagrams/`, `styles/`).
 - **ArchiMate TikZ Styling Package**: Create a standalone TikZ style package (`harmonia-archimate.sty`) defining standard ArchiMate element shapes, color palettes across all layers, stereotyped badges, and formal relationship connectors (Composition, Aggregation, Assignment, Realization, Serving, Access, Flow, Triggering, Association).
 - **Comprehensive Document Modules**:
   1. *Executive Summary & ArchiMate Foundation*: Architecture framework overview, Greek domain terminology, viewpoint catalog, and notation legend.
@@ -49,7 +49,7 @@ This provides an authoritative, publication-ready architectural specification fo
 
 ### Current Implementation & Context
 - The repository documentation currently consists of Markdown files (`README.md`, `energeia/README.md`, `petasos/README.md`, `docs/architecture.md`, `docs/high-availability.md`, `docs/failure-scenarios.md`).
-- There is currently no `docs/latex/` directory or LaTeX/TikZ architectural model files.
+- There is currently no `../../docs/latex-legacy` directory or LaTeX/TikZ architectural model files.
 - The platform is composed of 6 main subsystems spanning 26 Maven modules and 2 Vue 3 frontend SPAs.
 
 ### Key Decisions
@@ -186,7 +186,7 @@ Verification will ensure that the complete LaTeX file-set compiles cleanly into 
 # Delivery Plan
 
 ### ✓ Step 1: Directory Structure, Build Automation & LaTeX/TikZ Style Packages
-- Create directory structure under `docs/latex/` (`chapters/`, `diagrams/`, `styles/`).
+- Create directory structure under `../../docs/latex-legacy` (`chapters/`, `diagrams/`, `styles/`).
 - Author `styles/harmonia-archimate.sty` defining standard ArchiMate 3.2 color palettes, node shapes, stereotype badges, and relationship connectors.
 - Author `styles/harmonia-doc.sty` defining document geometry, modern typography, listings, headers, footers, and hyperref styling.
 - Author `Makefile` and `README.md` providing build automation and instructions.

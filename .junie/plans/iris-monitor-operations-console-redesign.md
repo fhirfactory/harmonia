@@ -432,7 +432,7 @@ src/
   - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/server/OperationsServerManager.java`: Add routing and HTTP handlers for the complete `/api/operations/*` suite.
   - `iris/iris-console/src/router/index.ts`: Update routes for direct perspective paths.
   - `iris/iris-console/src/App.vue`: Incorporate `GlobalOperationsHeader` and persistent top nav.
-  - `docs/latex/chapters/07-presentation-iris.tex` & `docs/latex/chapters/appendix-iris-user-interfaces.tex`: Document the redesigned 5-perspective Operations Console.
+  - `../../docs/latex-legacy` & `../../docs/latex-legacy`: Document the redesigned 5-perspective Operations Console.
 - **Created**:
   - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/model/operations/*`: Normalized operational DTOs.
   - `iris/iris-befe/src/main/java/net/fhirfactory/harmonia/befe/provider/*`: `SubsystemHealthProvider`, concrete providers, and `KubernetesInstanceProvider`.
@@ -485,7 +485,7 @@ Verification follows a layered testing approach combining backend unit/integrati
   - `ThemisSecurityEnforcementTest`: Operations APIs evaluate Themis security contracts.
 
 ### LaTeX Build Verification
-- Compile the master architecture reference via `make pdf` in `docs/latex/` to ensure all updated chapters, figures, and registers compile without errors.
+- Compile the master architecture reference via `make pdf` in `../../docs/latex-legacy` to ensure all updated chapters, figures, and registers compile without errors.
 
 # Documentation & Gaps
 
@@ -592,4 +592,4 @@ Deterministic operational scenarios validate all console states in Paradeigma, d
 - Implement `IrisOperationsScenario` in `paradeigma/paradeigma-scenarios` providing deterministic test scenarios (all healthy, Petasos degraded, DLQ growth, failed Pragma, active critical alert) consuming only public Operations REST APIs.
 - Execute ArchUnit architecture tests (`ParadeigmaIsolationArchitectureTest`, `IrisDecouplingArchitectureTest`) verifying zero production-to-Paradeigma imports and zero JPA/database dependencies in Iris.
 - Document the normalized operational model, data source mappings, `MONITOR-GAP`, and `MONITOR-ADR` registers in Markdown (`docs/architecture/iris-operations-console.md`).
-- Update the LaTeX technical reference (`docs/latex/chapters/07-presentation-iris.tex`, `docs/latex/chapters/appendix-iris-user-interfaces.tex`, and diagrams) and verify PDF compilation using `make pdf`.
+- Update the LaTeX technical reference (`../../docs/latex-legacy`, `../../docs/latex-legacy`, and diagrams) and verify PDF compilation using `make pdf`.

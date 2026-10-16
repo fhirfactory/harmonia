@@ -17,7 +17,7 @@ This plan establishes an **agent-level continuation of the interrupted, reposito
   - Configure bounded test execution timeouts in `pom.xml` (`forkedProcessTimeoutInSeconds`, `forkedProcessExitTimeoutInSeconds`) to prevent future hangs.
   - Execute staged verification: isolated test $\rightarrow$ affected module (`petasos-test`) $\rightarrow$ full serial repository build (`mvn test`) $\rightarrow$ architecture test suite (`*ArchitectureTest`).
   - Validate Kubernetes deployment manifests (`kubectl kustomize`) and Ansible playbooks (`ansible-playbook --syntax-check`).
-  - Verify and recompile the formal LaTeX reference manual (`docs/latex/main.pdf`).
+  - Verify and recompile the formal LaTeX reference manual (`../../docs/latex-legacy`).
   - Produce the authoritative 25-point Harmonia Final Convergence Report.
 
 - **Out of Scope**:
@@ -36,7 +36,7 @@ This plan establishes an **agent-level continuation of the interrupted, reposito
 3. **Staged Build Strategy**: Verify tests strictly in stages: affected test $\rightarrow$ affected module $\rightarrow$ serial `mvn test` (omitting `-T 1C`). Parallel `-T 1C` results, if evaluated, must be documented as an engineering finding.
 4. **Authoritative System Inventories**: Maintain traceability across Concept $\rightarrow$ Capability $\rightarrow$ Module $\rightarrow$ Artifact $\rightarrow$ Container $\rightarrow$ Workload $\rightarrow$ Service $\rightarrow$ Port $\rightarrow$ Configuration $\rightarrow$ Middleware $\rightarrow$ Persistence.
 5. **Capability-Level Middleware Documentation**: Document exact capabilities used vs avoided for ActiveMQ Artemis, Infinispan, PostgreSQL, HAPI FHIR, and WildFly.
-6. **Publication-Ready LaTeX Reference**: Compile the 8-Part, 23-Chapter, 9-Appendix LaTeX specification cleanly into `docs/latex/main.pdf` with zero fatal errors or broken references.
+6. **Publication-Ready LaTeX Reference**: Compile the 8-Part, 23-Chapter, 9-Appendix LaTeX specification cleanly into `../../docs/latex-legacy` with zero fatal errors or broken references.
 7. **25-Point Acceptance Audit**: Complete the final acceptance questionnaire verifying zero production dependencies on Paradeigma, zero Provider Registry logic in Iris, complete inventories, and passing tests.
 
 ### Non-Functional Requirements
@@ -67,10 +67,10 @@ Inspection of the Git working tree, commit history, and test reports demonstrate
 3. **Markdown Engineering Documentation (`docs/`)**:
    - Authored complete modular hierarchy: `architecture/` (overview, persistence lifecycle, failure recovery, system inventory, port register), `concepts/` (Calliope, Themis, Hestia, Petasos, Energeia, Pylai), `modules/` (all 8 subprojects), `middleware/` (Artemis, Infinispan, PostgreSQL, WildFly), `configuration/` (configuration register, environment matrix), `deployment/` (Kubernetes workloads, MicroK8s guide, Ansible orchestration), `paradeigma/` (simulation framework, isolation invariants, deployment guide), `operations/` (health/readiness, PHI sanitization, verification runbook), and `../../AGENTS-old.md`.
 
-4. **Formal LaTeX Reference Manual (`docs/latex/`)**:
+4. **Formal LaTeX Reference Manual (`../../docs/latex-legacy`)**:
    - Reconstructed `main.tex` into 8 Parts, 23 Chapters, and 9 Appendices matching the required specification.
    - Authored TikZ vector diagrams across all layers.
-   - **Verification Result**: Compiles cleanly via `latexmk` into `docs/latex/main.pdf` (902 KB).
+   - **Verification Result**: Compiles cleanly via `latexmk` into `../../docs/latex-legacy` (902 KB).
 
 5. **Deployment Manifests & Automation**:
    - Validated `kubectl kustomize deployment/kubernetes/environments/microk8s` (passes cleanly).
@@ -171,8 +171,8 @@ NEXT DIAGNOSTIC/REMEDIATION ACTION:
 | **Architecture Guardrails** | `COMPLETE` | 7 invariants established in root `../../AGENTS-old.md` and `docs/AGENTS.md`. |
 | **Architecture Tests** | `COMPLETE` | 6 ArchUnit test classes, 17 rules in `paradeigma-test`, 100% passing. |
 | **Markdown Documentation** | `COMPLETE` | 24 modular engineering references across all subdirectories in `docs/`. |
-| **LaTeX Documentation** | `COMPLETE` | 8 Parts, 23 Chapters, 9 Appendices in `docs/latex/`, compiles cleanly to PDF. |
-| **Diagrams** | `COMPLETE` | ArchiMate 3.2 TikZ vector diagrams in `docs/latex/diagrams/`. |
+| **LaTeX Documentation** | `COMPLETE` | 8 Parts, 23 Chapters, 9 Appendices in `../../docs/latex-legacy`, compiles cleanly to PDF. |
+| **Diagrams** | `COMPLETE` | ArchiMate 3.2 TikZ vector diagrams in `../../docs/latex-legacy`. |
 | **Final Build / Verification** | `REQUIRES REVIEW` | Hang diagnosed; requires Petasos failover remediation and serial `mvn test`. |
 
 ---
@@ -298,7 +298,7 @@ Verification follows a strict staged sequence to isolate failures, eliminate han
 
 6. **Formal LaTeX Reference Manual Compilation**:
    - `make -C docs/latex pdf` completes with exit code 0.
-   - Generated `docs/latex/main.pdf` contains all 8 Parts, 23 Chapters, 9 Appendices, and vector TikZ diagrams.
+   - Generated `../../docs/latex-legacy` contains all 8 Parts, 23 Chapters, 9 Appendices, and vector TikZ diagrams.
    - Zero fatal errors, undefined citations, or broken references.
 
 ### Parallel Build Safety Evaluation (`-T 1C`)
@@ -344,7 +344,7 @@ The entire Harmonia repository builds and passes all unit, integration, and Arch
 ### ✓ Step 3: Cross-check and synchronize system inventories and configuration registers
 All 10 system registers and architecture matrices in Markdown and LaTeX are cross-checked and verified against actual codebase evidence.
 
-- Cross-check the System Inventory (`docs/architecture/system-inventory.md` and `docs/latex/chapters/appendix-a-system-inventory.tex`) ensuring complete traceability across:
+- Cross-check the System Inventory (`docs/architecture/system-inventory.md` and `../../docs/latex-legacy`) ensuring complete traceability across:
   - Concept $\rightarrow$ Capability $\rightarrow$ Module $\rightarrow$ Maven Artifact $\rightarrow$ Container Image $\rightarrow$ Kubernetes Workload $\rightarrow$ Service $\rightarrow$ Port/Protocol $\rightarrow$ Configuration $\rightarrow$ Middleware $\rightarrow$ Persistence.
 - Verify the Configuration Register (`docs/configuration/configuration-register.md` and `appendix-b-config-register.tex`) against actual Spring Boot `application.yml`, Jakarta configuration classes, and environment variables across all 41 modules.
 - Verify the Port and Protocol Register (`docs/architecture/port-protocol-register.md` and `appendix-c-port-register.tex`) against actual Netty listeners, WildFly undertow ports, Camel MLLP endpoints, and Kubernetes service definitions.
@@ -357,11 +357,11 @@ All 10 system registers and architecture matrices in Markdown and LaTeX are cros
 ### ✓ Step 4: Recompile and validate formal LaTeX reference manual
 The formal 8-part, 23-chapter LaTeX reference document compiles cleanly into an error-free, publication-grade PDF reference book.
 
-- Review all 23 LaTeX chapters and 9 appendices under `docs/latex/chapters/` for complete ArchiMate 3.2 consistency, accurate subproject terminology (`iris-console` instead of `iris-monitor`), and clean table formatting.
-- Verify all TikZ vector diagrams in `docs/latex/diagrams/` (5-tier deployment, conceptual layers, Petasos HA clustering, Mneme data grid, Mnemosyne JPA persistence, Themis authorization pipeline, Iris federation, Paradeigma simulation).
+- Review all 23 LaTeX chapters and 9 appendices under `../../docs/latex-legacy` for complete ArchiMate 3.2 consistency, accurate subproject terminology (`iris-console` instead of `iris-monitor`), and clean table formatting.
+- Verify all TikZ vector diagrams in `../../docs/latex-legacy` (5-tier deployment, conceptual layers, Petasos HA clustering, Mneme data grid, Mnemosyne JPA persistence, Themis authorization pipeline, Iris federation, Paradeigma simulation).
 - Compile the complete LaTeX document using `make -C docs/latex pdf` (or `latexmk -pdf -interaction=nonstopmode main.tex`).
 - Verify compilation log for zero fatal errors, zero undefined citations, zero broken cross-references, and zero unhandled table overflows.
-- Verify the resulting PDF `docs/latex/main.pdf` for visual readability, correct page numbering, table of contents, list of figures, and list of tables.
+- Verify the resulting PDF `../../docs/latex-legacy` for visual readability, correct page numbering, table of contents, list of figures, and list of tables.
 - Output checkpoint summary: `CHECKPOINT 6 — LaTeX reconstruction complete`.
 
 ### ✓ Step 5: Final acceptance audit and convergence findings report
@@ -382,9 +382,9 @@ The 25-point Harmonia final acceptance audit is executed, git working tree statu
   - Port/protocol register complete: `YES`.
   - Serial full Maven test: `PASS`.
   - Architecture tests: `PASS` (17 tests).
-  - LaTeX build: `PASS` (`docs/latex/main.pdf`).
+  - LaTeX build: `PASS` (`../../docs/latex-legacy`).
 - Stage and prepare Git working tree changes:
-  - Add unstaged modifications (`.idea/modules.xml`, `docs/latex/main.tex`).
+  - Add unstaged modifications (`.idea/modules.xml`, `../../docs/latex-legacy`).
   - Stage remediated Petasos test harness fixes and Surefire configuration.
   - Preserve all generated Markdown and LaTeX artifacts.
 - Produce the final Harmonia Convergence Report detailing:

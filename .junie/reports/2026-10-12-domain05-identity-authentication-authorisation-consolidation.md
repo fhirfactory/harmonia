@@ -53,8 +53,8 @@ Review scope was relevant sections and search hits unless stated otherwise.
 | Information | `docs/markdown/04-information-architecture/information-families/practitioner.md`, full family; `metamodel/information-architecture-metamodel.md`, managed Information Unit, conceptual partition and state distinctions; `patterns/containment-and-collections.md`, containment/membership distinctions; `governance/authority-custody-provenance.md`, responsibility/authority/custody/consumption. |
 | Current Domain05 | All ten files listed in the next table: relevant Identity/Themis/Calliope, Iris, Agora, Ergo/Praxis, Kleio, Dokimasia, PEP/PRP, persistence and gap/source sections. |
 | Legacy Themis | `docs/concepts/themis.md`; `docs/concepts/themis-security.md`; `docs/modules/themis.md`; `docs/security/themis.md`, full documents and existing wrappers. |
-| Other legacy orientation | `docs/modules/dokimasia.md`, supplied attachment read in full; `docs/concepts/calliope.md` and `docs/modules/calliope.md`, ownership/security nomenclature; `docs/getting-started/terminology.md`; `docs/latex/chapters/appendix-a-glossary.tex`, Themis row. |
-| Legacy publication / diagrams | `docs/latex/chapters/21-themis-security.tex`, full chapter; Themis section in `docs/latex/chapters/03-application-layer.tex`; `docs/latex/diagrams/fig-themis-security.tex` and `fig-themis-security-pipeline.tex`, relevant declarations and inclusion points. |
+| Other legacy orientation | `docs/modules/dokimasia.md`, supplied attachment read in full; `docs/concepts/calliope.md` and `docs/modules/calliope.md`, ownership/security nomenclature; `docs/getting-started/terminology.md`; `../../docs/latex-legacy`, Themis row. |
+| Legacy publication / diagrams | `../../docs/latex-legacy`, full chapter; Themis section in `../../docs/latex-legacy`; `../../docs/latex-legacy` and `fig-themis-security-pipeline.tex`, relevant declarations and inclusion points. |
 | Working source / navigation | Supplied Identity DesignNote, §§1–18 in full. Existing `.junie/reports/2026-10-11-domain05-kleio-themis-petasos-adjudication.md` was consulted only for report convention/navigation, not authority. |
 
 ## Files changed
@@ -184,9 +184,9 @@ Twelve new wrappers across nine files implement AGENTS.md §1.2:
 | [Themis module](../../docs/modules/themis.md) | Built-in Policy Portfolio list within §2.2, including blanket-admin claim. |
 | [Calliope concept](../../docs/concepts/calliope.md) | Security evaluation/identity-assertion anti-responsibility bullet only. |
 | [Terminology](../../docs/getting-started/terminology.md) | Themis row only, with table-compatible visible boundaries/replacement links. |
-| [LaTeX glossary](../../docs/latex/chapters/appendix-a-glossary.tex) | Themis row only, with table-compatible visible boundaries/replacement links. |
-| [LaTeX security chapter](../../docs/latex/chapters/21-themis-security.tex) | Opening paragraph/pipeline figure; four-gate section. Default-deny section unchanged. |
-| [LaTeX application chapter](../../docs/latex/chapters/03-application-layer.tex) | Themis opening paragraph/multi-tier figure; detailed module descriptions unchanged. |
+| [LaTeX glossary](../../docs/latex-legacy/chapters/appendix-a-glossary.tex) | Themis row only, with table-compatible visible boundaries/replacement links. |
+| [LaTeX security chapter](../../docs/latex-legacy/chapters/21-themis-security.tex) | Opening paragraph/pipeline figure; four-gate section. Default-deny section unchanged. |
+| [LaTeX application chapter](../../docs/latex-legacy/chapters/03-application-layer.tex) | Themis opening paragraph/multi-tier figure; detailed module descriptions unchanged. |
 
 Removing only the newly inserted wrappers restores every affected legacy file
 byte-for-byte to its original clean-worktree/HEAD content, including all prior

@@ -11,11 +11,11 @@ By providing thorough, code-grounded architectural documentation, interface cont
 
 ### Scope
 - **In Scope**:
-  - Authoring `docs/latex/chapters/appendix-iris-user-interfaces.tex` (Appendix G) covering all Iris presentation submodules.
-  - Creating `docs/latex/diagrams/fig-iris-architecture.tex` (ArchiMate 3.2 TikZ diagram of the Iris 3-UI + BEFE ecosystem).
-  - Updating `docs/latex/main.tex` to register the new appendix.
-  - Updating `docs/latex/chapters/00-frontmatter.tex` (Executive Summary) to summarize Appendix G.
-  - Updating `docs/latex/chapters/03-application-layer.tex` to cross-reference Appendix G.
+  - Authoring `../../docs/latex-legacy` (Appendix G) covering all Iris presentation submodules.
+  - Creating `../../docs/latex-legacy` (ArchiMate 3.2 TikZ diagram of the Iris 3-UI + BEFE ecosystem).
+  - Updating `../../docs/latex-legacy` to register the new appendix.
+  - Updating `../../docs/latex-legacy` (Executive Summary) to summarize Appendix G.
+  - Updating `../../docs/latex-legacy` to cross-reference Appendix G.
   - Verifying end-to-end LaTeX compilation via the project's `Makefile`.
 - **Out of Scope**:
   - Modifying existing Vue 3 frontend source code or Java/WildFly backend source code in `iris/`.
@@ -55,11 +55,11 @@ The Harmonia repository contains four Maven modules under `iris/`:
 3. `iris-console`: Vue 3 + TypeScript SPA (Port 3001) for systems engineers to inspect ActiveMQ Artemis queues, Infinispan cache clusters, and dynamic Praxis workflow sequences.
 4. `iris-administration`: Vue 3 + TypeScript SPA (Port 3002) implementing a dual-portal interface: a Provider Self-Service portal for profile/role change requests and an Administrator portal for work queue triage, directory CRUD, and referential data quality audits.
 
-Existing appendices in `docs/latex/chapters/` cover Paradeigma (App A), MLLP Services (App B), Ergon Modules (App C), Praxis Workflow (App D), Provider Registry (App E), and PHI-Aware Logging (App F). The presentation layer is briefly outlined in Chapter 3, but lacks a dedicated, in-depth architectural and operational manual.
+Existing appendices in `../../docs/latex-legacy` cover Paradeigma (App A), MLLP Services (App B), Ergon Modules (App C), Praxis Workflow (App D), Provider Registry (App E), and PHI-Aware Logging (App F). The presentation layer is briefly outlined in Chapter 3, but lacks a dedicated, in-depth architectural and operational manual.
 
 ### Key Decisions
-1. **Dedicated Appendix Identifier & Placement**: Create Appendix G in `docs/latex/chapters/appendix-iris-user-interfaces.tex` labeled `\chapter{Iris Presentation Tier and User Interfaces Specification \& Guide}` with label `\label{app:iris_interfaces}`.
-2. **ArchiMate 3.2 Diagram**: Author a dedicated TikZ diagram (`docs/latex/diagrams/fig-iris-architecture.tex`) modeling all three SPAs, the dual-port BEFE gateway, the Themis security boundary, and data-grid/relational storage paths.
+1. **Dedicated Appendix Identifier & Placement**: Create Appendix G in `../../docs/latex-legacy` labeled `\chapter{Iris Presentation Tier and User Interfaces Specification \& Guide}` with label `\label{app:iris_interfaces}`.
+2. **ArchiMate 3.2 Diagram**: Author a dedicated TikZ diagram (`../../docs/latex-legacy`) modeling all three SPAs, the dual-port BEFE gateway, the Themis security boundary, and data-grid/relational storage paths.
 3. **Code-Grounded Content**: Embed concrete TypeScript interfaces, Pinia store excerpts, JSON payloads (FHIR R5 and Operations DTOs), and step-by-step workflow interactions.
 4. **Governed Change Alignment**: Emphasize how `iris-administration` interacts with the asynchronous `ProviderRegistryChangePragma` pipeline and Themis authorization model.
 
@@ -125,11 +125,11 @@ graph TD
   - Example 3: Practitioner submitting a workplace address change request and administrator approving it via work queue.
 
 ### Affected Files
-1. `docs/latex/chapters/appendix-iris-user-interfaces.tex` (New file)
-2. `docs/latex/diagrams/fig-iris-architecture.tex` (New file)
-3. `docs/latex/main.tex` (Add `\input{chapters/appendix-iris-user-interfaces.tex}`)
-4. `docs/latex/chapters/00-frontmatter.tex` (Add Appendix G entry to Executive Summary)
-5. `docs/latex/chapters/03-application-layer.tex` (Update Section 3.1 with Appendix G references)
+1. `../../docs/latex-legacy` (New file)
+2. `../../docs/latex-legacy` (New file)
+3. `../../docs/latex-legacy` (Add `\input{chapters/appendix-iris-user-interfaces.tex}`)
+4. `../../docs/latex-legacy` (Add Appendix G entry to Executive Summary)
+5. `../../docs/latex-legacy` (Update Section 3.1 with Appendix G references)
 
 # Testing
 
@@ -138,7 +138,7 @@ Verification of the LaTeX documentation update will be executed automatically us
 
 ### Key Scenarios
 1. **Compilation Cleanliness**:
-   - Execute `make pdf` inside `docs/latex/` to ensure zero compilation errors, missing file warnings, or unresolved cross-references (`\ref{app:iris_interfaces}`, `\ref{fig:iris_architecture}`, etc.).
+   - Execute `make pdf` inside `../../docs/latex-legacy` to ensure zero compilation errors, missing file warnings, or unresolved cross-references (`\ref{app:iris_interfaces}`, `\ref{fig:iris_architecture}`, etc.).
 2. **Structural & Visual Formatting**:
    - Verify that all tables use proper `tabularx` column specifications and fit within standard A4 margins without horizontal overflow.
    - Verify that TikZ code in `fig-iris-architecture.tex` compiles without syntax issues and respects the `harmonia-archimate` layer color schema.
@@ -159,10 +159,10 @@ Create the ArchiMate 3.2 TikZ component and interaction diagram visualizing the 
 - Define nodes for all three frontend SPAs: `iris-clinical` (Port 3000), `iris-console` (Port 3001), and `iris-administration` (Port 3002).
 - Model the dual-port Jakarta EE Backend-For-Frontend gateway (`iris-befe`) isolating Clinical FHIR API (Port 8080) and Operations Management HTTP server (Port 8090).
 - Diagram the serving and data access relationships connecting BEFE to `Mneme` Infinispan cache grid, `Mnemosyne` PostgreSQL persistence, and `Themis` security policy evaluation.
-- Save the diagram in `docs/latex/diagrams/fig-iris-architecture.tex` following the existing styling palette in `harmonia-archimate.sty`.
+- Save the diagram in `../../docs/latex-legacy` following the existing styling palette in `harmonia-archimate.sty`.
 
 ### ✓ Step 2: Author comprehensive Iris User Interfaces specification and guide appendix
-Draft the complete, production-grade technical specification and functional user guide for all Iris user interfaces and the BEFE gateway in `docs/latex/chapters/appendix-iris-user-interfaces.tex`.
+Draft the complete, production-grade technical specification and functional user guide for all Iris user interfaces and the BEFE gateway in `../../docs/latex-legacy`.
 
 - Author Section G.1: Architectural Overview, Design Principles, and Multi-Portal Topology.
 - Author Section G.2: `iris-befe` Dual-Port Gateway Specification (JAX-RS Port 8080 clinical endpoints, custom java.net socket Port 8090 operations server, HotRod cache integration, and CORS filters).
@@ -175,7 +175,7 @@ Draft the complete, production-grade technical specification and functional user
 ### ✓ Step 3: Integrate Appendix G into master LaTeX document, update frontmatter, and verify compilation
 Wire the new Appendix G into the master LaTeX document hierarchy, update cross-references across core chapters, and verify flawless PDF compilation.
 
-- Update `docs/latex/main.tex` to include `\input{chapters/appendix-iris-user-interfaces.tex}` under the Appendices section.
-- Update `docs/latex/chapters/00-frontmatter.tex` to document Appendix G in the Executive Summary system feature index.
-- Update `docs/latex/chapters/03-application-layer.tex` Section 3.1 with explicit cross-references to Appendix G (`\ref{app:iris_interfaces}`).
+- Update `../../docs/latex-legacy` to include `\input{chapters/appendix-iris-user-interfaces.tex}` under the Appendices section.
+- Update `../../docs/latex-legacy` to document Appendix G in the Executive Summary system feature index.
+- Update `../../docs/latex-legacy` Section 3.1 with explicit cross-references to Appendix G (`\ref{app:iris_interfaces}`).
 - Execute LaTeX compilation via `make pdf` or `pdflatex` to verify clean compilation with zero undefined references, balanced tables, and proper page numbering.

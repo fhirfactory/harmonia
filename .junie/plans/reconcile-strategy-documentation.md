@@ -24,7 +24,7 @@ This is an analytical update confined strictly to the reconciliation report. No 
   - Updating Section 12 (Open Issues) to remove resolved contradictions and retain only genuine unresolved architectural items.
 - **Out of Scope**:
   - Authoring or modifying any files under `docs/markdown/02-strategy/` (Authoring Pass A will be undertaken in subsequent bounded tasks).
-  - Modifying LaTeX publications (`docs/latex/`) or generating ODT/PDF documents.
+  - Modifying LaTeX publications (`../../docs/latex-legacy`) or generating ODT/PDF documents.
   - Creating exhaustive NxM capability mapping matrices.
   - Designing Harmonia 3.x EMPI algorithms or capabilities.
 

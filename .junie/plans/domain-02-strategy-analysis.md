@@ -48,7 +48,7 @@ Canonical Strategy Model (future authoring task)
 
 #### In Scope
 - Comprehensive analysis of existing Strategy material across the repository:
-  - LaTeX sources: `docs/latex/chapters/01-motivation-strategy.tex`, `01-motivation-strategy-old.tex`, `01-foundations.tex`, `02-conceptual-taxonomy.tex`, `02-business-layer.tex`, `styles/harmonia-archimate.sty`, and `diagrams/fig-motivation-map.tex`.
+  - LaTeX sources: `../../docs/latex-legacy`, `01-motivation-strategy-old.tex`, `01-foundations.tex`, `02-conceptual-taxonomy.tex`, `02-business-layer.tex`, `styles/harmonia-archimate.sty`, and `diagrams/fig-motivation-map.tex`.
   - Markdown sources: `docs/concepts/` (all 16 subsystem concept documents), `docs/architecture/` (overview, runtime-architecture, execution-model), and `docs/markdown/01-motivation/` (authoritative baseline).
   - Strategic Brief: `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`.
 - Discovery and extraction of:
@@ -184,7 +184,7 @@ Canonical Strategy Model (future authoring task)
 
 The Harmonia repository contains substantial material addressing Strategy concerns, but this material is currently fragmented across multiple formats, historical drafts, and mixed abstraction layers:
 
-1. **Master LaTeX Specification (`docs/latex/`)**:
+1. **Master LaTeX Specification (`../../docs/latex-legacy`)**:
    - `chapters/01-motivation-strategy.tex` & `chapters/01-foundations.tex`: Historically combined Motivation and Strategy into a single chapter. Table 1.1 (`tab:strategic_capabilities`) defines "Harmonia Strategic Capabilities and Subsystem Realization", but conflates capabilities with owning subsystems (e.g. "Clinical Gateway Interfaces -> Pylai", "In-Memory Cache Grid -> Hestia Mneme", "High-Availability Messaging -> Petasos", "Modular Task Execution -> Energeia").
    - `diagrams/fig-motivation-map.tex`: ArchiMate diagram mixing principles, requirements, and subsystem capabilities (e.g. `cap_ingest: Gateway Ingestion (Pylai)`, `cap_msg: Clustered Messaging (Petasos)`, `cap_workflow: Modular Workflows (Ponos)`).
    - `styles/harmonia-archimate.sty`: Defines ArchiMate 3.2 styling for `archi-capability` and `archi-valuestream` (`#FDF4E3` fill, `#B58428` draw), but lacks styles for `archi-resource` and `archi-courseofaction`.
@@ -391,7 +391,7 @@ Because this task is strictly an architectural discovery, reconciliation, and cl
 ### Key Validation Scenarios
 
 1. **Evidentiary Corpus Coverage Verification**:
-   - Verify that `docs/latex/chapters/01-motivation-strategy.tex`, `docs/latex/chapters/01-foundations.tex`, `docs/latex/chapters/02-conceptual-taxonomy.tex`, `docs/latex/chapters/02-business-layer.tex`, `docs/latex/styles/harmonia-archimate.sty`, `docs/latex/diagrams/fig-motivation-map.tex`, `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`, and all 16 `docs/concepts/` documents are represented in the analysis.
+   - Verify that `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`, and all 16 `docs/concepts/` documents are represented in the analysis.
    - Confirm that the Local Directory position brief requirements (`HARM-STR-001`, `HARM-LDS-001..012`) are reconciled against the platform's multi-purpose vision.
 
 2. **ArchiMate 3.2 Strategy Layer Conformity & Concept Origin**:
@@ -423,7 +423,7 @@ Because this task is strictly an architectural discovery, reconciliation, and cl
 ### ✓ Step 1: Multi-Source Repository Discovery and Corpus Inventory
 A comprehensive inventory of all Strategy-relevant text, models, diagrams, and historical specifications across the repository is established.
 
-- Inspect LaTeX sources: analyze `docs/latex/chapters/01-motivation-strategy.tex`, `01-motivation-strategy-old.tex`, `01-foundations.tex`, `02-conceptual-taxonomy.tex`, `02-business-layer.tex`, `styles/harmonia-archimate.sty`, and `diagrams/fig-motivation-map.tex`.
+- Inspect LaTeX sources: analyze `../../docs/latex-legacy`, `01-motivation-strategy-old.tex`, `01-foundations.tex`, `02-conceptual-taxonomy.tex`, `02-business-layer.tex`, `styles/harmonia-archimate.sty`, and `diagrams/fig-motivation-map.tex`.
 - Inspect Markdown sources: analyze `docs/concepts/` (all 16 subsystem concept documents), `docs/architecture/` (overview, runtime-architecture, execution-model), and `docs/markdown/01-motivation/` (authoritative baseline).
 - Inspect Strategic Brief: analyze `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx` for enterprise local directory position, broader multi-purpose vision, strategic requirements (`HARM-STR-001`, `HARM-LDS-001..012`), and guardrails.
 - Extract all statements, definitions, and model elements describing capabilities, resources, courses of action, value streams, and component operational roles into an organized evidentiary corpus.

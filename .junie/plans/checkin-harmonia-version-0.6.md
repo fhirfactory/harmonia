@@ -31,7 +31,7 @@ The objective of this task is to parse the Harmonia Health Integration Environme
 ### Functional Requirements
 1. **Accurate `.gitignore` Pattern Matching**:
    - `iris/iris-befe/frontend/node_modules/` and `iris/iris-befe/frontend/dist/` must be ignored.
-   - LaTeX compilation artifacts in `docs/latex/` must be ignored.
+   - LaTeX compilation artifacts in `../../docs/latex-legacy` must be ignored.
    - `test-summary.txt` must be ignored.
 2. **Comprehensive Staging**:
    - All newly created valid source assets (`broker.xml`, `docker-entrypoint.sh`, `application.properties`, `.spec.ts`, `.vue`, `package-lock.json`) must be staged.
@@ -64,7 +64,7 @@ The repository is currently on branch `version-0.6`. Parsing the repository stat
 3. **Untracked Ephemeral / Build Artifacts**:
    - `iris/iris-befe/frontend/dist/` (build output)
    - `iris/iris-befe/frontend/node_modules/` (npm dependencies)
-   - `docs/latex/main.aux`, `main.fdb_latexmk`, `main.fls`, `main.lof`, `main.lot`, `main.out`, `main.pdf`, `main.synctex.gz` (LaTeX compilation output)
+   - `../../docs/latex-legacy`, `main.fdb_latexmk`, `main.fls`, `main.lof`, `main.lot`, `main.out`, `main.pdf`, `main.synctex.gz` (LaTeX compilation output)
    - `test-summary.txt` (local test log)
 
 4. **Untracked Legitimate Source Files to Track**:
@@ -120,7 +120,7 @@ test-summary.txt
 | Category | Path / Pattern | Action |
 | :--- | :--- | :--- |
 | **Ignore** | `iris/iris-befe/frontend/node_modules/`, `dist/` | Add to `.gitignore` |
-| **Ignore** | `docs/latex/main.*` (except `.tex` source files) | Add to `.gitignore` |
+| **Ignore** | `../../docs/latex-legacy` (except `.tex` source files) | Add to `.gitignore` |
 | **Ignore** | `test-summary.txt` | Add to `.gitignore` |
 | **Include** | `petasos/deployment/artemis/standalone/*` | Stage and commit |
 | **Include** | `energeia/ponos/src/main/resources/application.properties` | Stage and commit |
@@ -149,7 +149,7 @@ Verification confirms that all source files are tracked, all build/ephemeral art
 All ephemeral build outputs, LaTeX compilation artifacts, and temporary test summaries are ignored by Git.
 
 - Update `.gitignore` to include `iris/iris-befe/frontend/node_modules/`, `iris/iris-befe/frontend/dist/`, and `iris/iris-befe/frontend/node/` (or glob patterns `**/node_modules/`, `**/dist/`, `**/node/`).
-- Add LaTeX build artifact patterns (`docs/latex/*.aux`, `docs/latex/*.fdb_latexmk`, `docs/latex/*.fls`, `docs/latex/*.lof`, `docs/latex/*.lot`, `docs/latex/*.out`, `docs/latex/*.synctex.gz`, `docs/latex/*.pdf`, and `docs/latex/*.toc`).
+- Add LaTeX build artifact patterns (`../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, `../../docs/latex-legacy`, and `../../docs/latex-legacy`).
 - Add test summary file pattern `test-summary.txt` to `.gitignore`.
 - Verify that `git status` no longer reports LaTeX artifacts or frontend dependency trees as untracked files.
 

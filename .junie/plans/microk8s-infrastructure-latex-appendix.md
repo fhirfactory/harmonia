@@ -36,7 +36,7 @@ The goal is to maximize operational efficiency, platform reliability, and deploy
   - Non-destructive teardown vs. destructive persistent data purging.
   - Rollout verification loops and failure diagnostics.
 - **Visual Architecture Model**:
-  - Dedicated ArchiMate 3.2 TikZ diagram (`docs/latex/diagrams/fig-microk8s-infrastructure.tex`) and master LaTeX document integration (`docs/latex/main.tex`).
+  - Dedicated ArchiMate 3.2 TikZ diagram (`../../docs/latex-legacy`) and master LaTeX document integration (`../../docs/latex-legacy`).
 
 #### Out of Scope
 - Modifying underlying Java application code or business logic.
@@ -50,7 +50,7 @@ The goal is to maximize operational efficiency, platform reliability, and deploy
 - **As a Systems Auditor**, I want transparent documentation of secret handling and data retention policies so that I can verify compliance with data privacy mandates and prevent accidental loss of clinical records.
 
 ### Functional Requirements
-- **FR-01 (Master Document Integration)**: The appendix must be integrated into `docs/latex/main.tex` under the appendices section and compile seamlessly into the master document.
+- **FR-01 (Master Document Integration)**: The appendix must be integrated into `../../docs/latex-legacy` under the appendices section and compile seamlessly into the master document.
 - **FR-02 (Infrastructure Sizing & Host Prerequisites)**: Provide unambiguous hardware sizing tables, kernel sysctl settings, and network firewall matrices.
 - **FR-03 (MicroK8s Component Blueprint)**: Detail the purpose, configuration parameters, and verification steps for all four core MicroK8s add-ons (`dns`, `ingress`, `hostpath-storage`, `metrics-server`).
 - **FR-04 (Middleconfiguration & Declarative Manifests)**: Describe Kustomize base and overlay structures, NetworkPolicy boundaries, and container probe timing.
@@ -66,31 +66,31 @@ The goal is to maximize operational efficiency, platform reliability, and deploy
 # Technical Design
 
 ### Current Implementation
-The Harmonia documentation suite located under `docs/latex/` contains chapters covering motivation, business layer, application layer, data architecture, technology layer, and physical deployment (`06-deployment-ha.tex`), along with appendices A through G covering Paradeigma, MLLP services, Ergon modules, Praxis workflows, Provider Registry, PHI logging, and Iris user interfaces.
+The Harmonia documentation suite located under `../../docs/latex-legacy` contains chapters covering motivation, business layer, application layer, data architecture, technology layer, and physical deployment (`06-deployment-ha.tex`), along with appendices A through G covering Paradeigma, MLLP services, Ergon modules, Praxis workflows, Provider Registry, PHI logging, and Iris user interfaces.
 The project contains an automated MicroK8s and Kubernetes deployment framework in `deployment/` (including `deployment/kubernetes/base/`, `deployment/kubernetes/environments/microk8s/`, and `deployment/ansible/`), as well as a markdown reference guide in `docs/deployment-microk8s.md`.
 However, there is currently no dedicated LaTeX appendix that formally integrates the full platform infrastructure requirements, MicroK8s add-on architecture, declarative middleconfiguration, and middleware runtime specifications into the authoritative ArchiMate reference manual.
 
 ### Key Decisions
-1. **Appendix Placement & Title**: Position the new chapter as Appendix H (`\chapter{Platform Infrastructure, MicroK8s \& Middleware Configuration Specification}`, `\label{app:infrastructure_configuration}`) immediately following Appendix G in `docs/latex/main.tex`.
-2. **Dedicated ArchiMate Diagram**: Create `docs/latex/diagrams/fig-microk8s-infrastructure.tex` utilizing TikZ and `harmonia-archimate.sty` deployment nodes to represent the physical host, MicroK8s runtime boundary, CoreDNS / HostPath / Ingress add-ons, and the 5-tier containerized deployment topology.
+1. **Appendix Placement & Title**: Position the new chapter as Appendix H (`\chapter{Platform Infrastructure, MicroK8s \& Middleware Configuration Specification}`, `\label{app:infrastructure_configuration}`) immediately following Appendix G in `../../docs/latex-legacy`.
+2. **Dedicated ArchiMate Diagram**: Create `../../docs/latex-legacy` utilizing TikZ and `harmonia-archimate.sty` deployment nodes to represent the physical host, MicroK8s runtime boundary, CoreDNS / HostPath / Ingress add-ons, and the 5-tier containerized deployment topology.
 3. **Structured Parameter Matrices**: Format all system parameters, environment variables, port mappings, volume paths, probe timeouts, and resource requests into structured `tabularx` and `longtable` matrices for optimal engineering utility and reference clarity.
 4. **Declarative Middleconfiguration Model**: Frame the middleconfiguration around the Kustomize Base + Overlay architecture, highlighting how declarative manifests decouple application runtime containers from platform-specific infrastructure variations.
 
 ### Proposed Changes
 #### 1. Master LaTeX Document Update
-- Update `docs/latex/main.tex` to include:
+- Update `../../docs/latex-legacy` to include:
   ```latex
   \input{chapters/appendix-infrastructure-configuration.tex}
   ```
 
-#### 2. ArchiMate Infrastructure Diagram (`docs/latex/diagrams/fig-microk8s-infrastructure.tex`)
+#### 2. ArchiMate Infrastructure Diagram (`../../docs/latex-legacy`)
 - TikZ diagram depicting:
   - **Host Tier**: Ubuntu 22.04/24.04 LTS OS, Linux Kernel, Host Networking.
   - **Platform Tier**: MicroK8s Snap Runtime (`1.28/stable` / `1.30/stable`), Add-ons (CoreDNS, Nginx Ingress, Hostpath Storage Provisioner, Metrics Server).
   - **Namespace Tier**: `harmonia` namespace and NetworkPolicy envelope.
   - **Workload Tier**: 5-Tier containerized microservices and stateful StatefulSets with isolated PVC mounts.
 
-#### 3. Infrastructure & Middleware Appendix (`docs/latex/chapters/appendix-infrastructure-configuration.tex`)
+#### 3. Infrastructure & Middleware Appendix (`../../docs/latex-legacy`)
 The chapter will be structured into six comprehensive sections:
 1. **Overview & Infrastructure Strategy**: Architectural separation of concerns (Application $\rightarrow$ OCI Container $\rightarrow$ Kustomize Base $\rightarrow$ Environment Overlay $\rightarrow$ Ansible Orchestration), single-node resilience semantics vs. multi-node clustering.
 2. **Platform & Host Infrastructure Requirements**: Sizing matrices (vCPU, RAM, NVMe/SSD, IOPS), Linux kernel network parameters (`net.bridge.bridge-nf-call-iptables=1`, `net.ipv4.ip_forward=1`), firewall rules and port exposure matrices.
@@ -177,9 +177,9 @@ graph TD
 ### ✓ Step 1: Create ArchiMate diagram and master LaTeX document bindings
 The master LaTeX document binds the new appendix and includes a dedicated ArchiMate 3.2 TikZ physical infrastructure diagram.
 
-- Create `docs/latex/diagrams/fig-microk8s-infrastructure.tex` illustrating Ubuntu host OS, MicroK8s runtime, CNI/Storage/Ingress add-ons, Kubernetes namespace boundaries, and 5-tier Harmonia workload topology using `harmonia-archimate.sty` nodes and relationships.
-- Update `docs/latex/main.tex` to register `\input{chapters/appendix-infrastructure-configuration.tex}` in the master document appendices section.
-- Create initial template for `docs/latex/chapters/appendix-infrastructure-configuration.tex` with standard chapter headers, metadata labels, and overview introductory sections.
+- Create `../../docs/latex-legacy` illustrating Ubuntu host OS, MicroK8s runtime, CNI/Storage/Ingress add-ons, Kubernetes namespace boundaries, and 5-tier Harmonia workload topology using `harmonia-archimate.sty` nodes and relationships.
+- Update `../../docs/latex-legacy` to register `\input{chapters/appendix-infrastructure-configuration.tex}` in the master document appendices section.
+- Create initial template for `../../docs/latex-legacy` with standard chapter headers, metadata labels, and overview introductory sections.
 
 ### ✓ Step 2: Document host platform prerequisites and MicroK8s component architecture
 The appendix includes exhaustive host operating system specifications, sizing matrices, sysctl tuning, and MicroK8s core add-on configurations.

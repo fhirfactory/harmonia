@@ -5,7 +5,7 @@ sessionId: session-260915-133021-f9ln
 # Requirements
 
 ### Overview & Goals
-The Harmonia platform has expanded its gateway capabilities within the **Pylai Gateway Tier** to include a dedicated, resilient, multi-instance **MLLP Outbound Gateway Subsystem** (`pylai-mllp-out`). The primary objective of this task is to update the platform documentation across both the root `README.md` and the publication-grade ArchiMate 3.2 LaTeX specification (`docs/latex/`) so that the documentation accurately and comprehensively reflects the complete solution, architecture, container topology, port mappings, and data flow.
+The Harmonia platform has expanded its gateway capabilities within the **Pylai Gateway Tier** to include a dedicated, resilient, multi-instance **MLLP Outbound Gateway Subsystem** (`pylai-mllp-out`). The primary objective of this task is to update the platform documentation across both the root `README.md` and the publication-grade ArchiMate 3.2 LaTeX specification (`../../docs/latex-legacy`) so that the documentation accurately and comprehensively reflects the complete solution, architecture, container topology, port mappings, and data flow.
 
 ### Scope
 #### In Scope
@@ -15,7 +15,7 @@ The Harmonia platform has expanded its gateway capabilities within the **Pylai G
   - Update submodule catalog to document `pylai-mllp-out` (WildFly Jakarta EE 10, Apache Camel MLLP client, ACK/NACK validation, independent queues, REST APIs).
   - Update Docker Compose service inventory, running container list, and port allocation table (including `mllp-outbound-his` on `8087` and `mllp-outbound-lis` on `8088`).
   - Add local execution guidance for `pylai-mllp-out`.
-- **LaTeX / ArchiMate 3.2 Documentation Updates (`docs/latex/`)**:
+- **LaTeX / ArchiMate 3.2 Documentation Updates (`../../docs/latex-legacy`)**:
   - `00-frontmatter.tex`: Update Executive Summary and Classical Nomenclature matrix.
   - `01-motivation-strategy.tex`: Update strategic capabilities and end-to-end value stream flow.
   - `02-business-layer.tex`: Add clinical outbound dispatch service and business process workflow.
@@ -47,7 +47,7 @@ The repository contains the implementation of the `pylai-mllp-out` module and as
 - `pylai/pylai-mllp-out`: Jakarta EE 10 / WildFly WAR containing Camel MLLP producer routes (`OutboundMllpRouteBuilder`), `OutboundMllpProcessor`, `Hl7AckProcessor`, `OutboundTaskQueueConsumer`, `MllpOutboundConfig`, and `OutboundMllpResource`.
 - `pylai/pylai-mllp-base`: Outbound domain models (`OutboundMllpRequest`, `OutboundMllpResponse`), `MllpDestinationConfig`, and `MllpDestinationRegistry`.
 - `docker-compose.yml`: Deploys 16+ services including two outbound gateway instances (`mllp-outbound-his` on port `8087`, `mllp-outbound-lis` on port `8088`) consuming from dedicated Petasos queues (`petasos.queue.mllp.outbound.his`, `petasos.queue.mllp.outbound.lis`).
-- Existing `README.md` and `docs/latex/` specifications partially document the inbound gateway but lack complete details on the outbound MLLP gateway, multi-instance egress, updated Docker Compose service list, and port allocations.
+- Existing `README.md` and `../../docs/latex-legacy` specifications partially document the inbound gateway but lack complete details on the outbound MLLP gateway, multi-instance egress, updated Docker Compose service list, and port allocations.
 
 ### Key Decisions
 1. **Unified Dual Ingress & Egress Documentation for Pylai**:
@@ -106,23 +106,23 @@ graph TD
 ### Components & Affected Files
 - **`README.md`**:
   - Submodules, System Nomenclature, Architecture Diagram, Service Table, Port Mapping, Local Run commands.
-- **`docs/latex/chapters/00-frontmatter.tex`**:
+- **`../../docs/latex-legacy`**:
   - Executive summary and classical nomenclature matrix.
-- **`docs/latex/chapters/01-motivation-strategy.tex`**:
+- **`../../docs/latex-legacy`**:
   - Strategic capabilities and value stream flow.
-- **`docs/latex/chapters/02-business-layer.tex`**:
+- **`../../docs/latex-legacy`**:
   - Outbound business services and dispatch process lifecycle.
-- **`docs/latex/chapters/03-application-layer.tex`**:
+- **`../../docs/latex-legacy`**:
   - Detailed `pylai-mllp-out` architecture, Camel routes, queue consumption, and REST endpoints.
-- **`docs/latex/chapters/04-data-architecture.tex`**:
+- **`../../docs/latex-legacy`**:
   - Outbound data contracts and FHIR resource audit mapping.
-- **`docs/latex/chapters/05-technology-layer.tex`**:
+- **`../../docs/latex-legacy`**:
   - System software runtimes and master port allocation table (`8087`, `8088`).
-- **`docs/latex/chapters/06-deployment-ha.tex`**:
+- **`../../docs/latex-legacy`**:
   - Docker Compose topology and fault isolation mechanics.
-- **`docs/latex/diagrams/fig-app-overview-5tier.tex`**:
+- **`../../docs/latex-legacy`**:
   - TikZ vector graphic update for 5-tier landscape.
-- **`docs/latex/diagrams/fig-technology-nodes.tex`**:
+- **`../../docs/latex-legacy`**:
   - TikZ vector graphic update for technology nodes and ports.
 
 ### Risks & Mitigations
@@ -141,7 +141,7 @@ Verification will ensure all documentation is syntactically valid, consistent ac
    - Verify all sections in `README.md` (Nomenclature, Submodules, Architecture, Docker Compose, Local Running, Port Mappings) are complete and accurate.
    - Verify all Mermaid diagrams render valid syntax.
 2. **LaTeX Documentation Build Verification**:
-   - Run `latexmk -pdf main.tex` or `pdflatex main.tex` within `docs/latex/` to verify zero LaTeX compilation errors or undefined references.
+   - Run `latexmk -pdf main.tex` or `pdflatex main.tex` within `../../docs/latex-legacy` to verify zero LaTeX compilation errors or undefined references.
    - Verify that all TikZ diagrams compile cleanly without syntax errors or boundary clipping.
 3. **Port & Configuration Consistency Check**:
    - Cross-verify ports (`2575`, `3000`, `3001`, `5432-5435`, `61616-61619`, `8080-8086`, `8087`, `8088`, `8090`, `11222-11223`) across `README.md`, `docker-compose.yml`, `05-technology-layer.tex`, and `fig-technology-nodes.tex`.
@@ -159,46 +159,46 @@ Update the root `README.md` to accurately document the 5-tier architecture inclu
 - Add local development instructions for running `pylai-mllp-out`.
 
 ### ✓ Step 2: Update LaTeX Frontmatter, Motivation, and Business Architecture Chapters
-Update executive summary, strategic capabilities, and clinical business process chapters in `docs/latex/chapters/`.
+Update executive summary, strategic capabilities, and clinical business process chapters in `../../docs/latex-legacy`.
 
-- Update `docs/latex/chapters/00-frontmatter.tex`:
+- Update `../../docs/latex-legacy`:
   - Revise Executive Summary to define `Pylai` as high-throughput bidirectional MLLP and REST ingress/egress gateways.
   - Update Table `tab:system_nomenclature` to reflect `Pylai`'s egress capabilities and `pylai-mllp-out`.
-- Update `docs/latex/chapters/01-motivation-strategy.tex`:
+- Update `../../docs/latex-legacy`:
   - Update Table `tab:strategic_capabilities` to include outbound MLLP egress and external destination dispatch under `Pylai`.
   - Update the Strategic Value Stream formula and description to include outbound dispatch.
-- Update `docs/latex/chapters/02-business-layer.tex`:
+- Update `../../docs/latex-legacy`:
   - Add Clinical Outbound Notification & Egress Service to the Clinical Business Services section.
   - Add business process workflow describing the end-to-end outbound MLLP dispatch and ACK validation lifecycle.
 
 ### ✓ Step 3: Update LaTeX Application and Data Architecture Chapters
-Update application and data architecture chapters in `docs/latex/chapters/` to comprehensively document `pylai-mllp-out` and outbound data structures.
+Update application and data architecture chapters in `../../docs/latex-legacy` to comprehensively document `pylai-mllp-out` and outbound data structures.
 
-- Update `docs/latex/chapters/03-application-layer.tex`:
+- Update `../../docs/latex-legacy`:
   - Enhance Section "Interface & Gateway Tier: `Pylai` Subsystem" with a dedicated detailed subsection for `pylai-mllp-out`.
   - Document multi-instance egress architecture, independent Petasos queues per destination (e.g., `petasos.queue.mllp.outbound.<endpoint-id>`), Camel MLLP producer routes (`direct:mllp-outbound-send`), `OutboundMllpProcessor`, `Hl7AckProcessor`, and REST dispatch endpoints (`/api/mllp/outbound/send`, `/api/mllp/outbound/adt/send`, `/api/mllp/outbound/mfn/send`).
   - Document the dynamic `MllpDestinationRegistry` and destination matching via `Topic` metadata.
   - Document Mneme cache state tracking generating FHIR `Communication`, `Task` (`Pragma`), and `Provenance` resources.
-- Update `docs/latex/chapters/04-data-architecture.tex`:
+- Update `../../docs/latex-legacy`:
   - Document the canonical outbound models (`OutboundMllpRequest`, `OutboundMllpResponse`, `MllpDestinationConfig`).
   - Update Table `tab:fhir_resources` to explain how `Communication`, `Task`, and `Provenance` track outbound transmissions and ACK/NACK responses.
 
 ### ✓ Step 4: Update LaTeX Infrastructure Chapters and TikZ Diagrams
 Update infrastructure, deployment, and TikZ vector diagrams to reflect the outbound gateway nodes, ports, and data flow.
 
-- Update `docs/latex/chapters/05-technology-layer.tex`:
+- Update `../../docs/latex-legacy`:
   - Update System Software Runtimes to include `pylai-mllp-out` under WildFly Jakarta EE 10 / Java 21 runtimes.
   - Update Table `tab:port_allocation` to include ports `8087` (`pylai-mllp-out-his`) and `8088` (`pylai-mllp-out-lis`).
-- Update `docs/latex/chapters/06-deployment-ha.tex`:
+- Update `../../docs/latex-legacy`:
   - Update the Docker Compose Multi-Container Deployment section to include the outbound MLLP gateway instances (`mllp-outbound-his`, `mllp-outbound-lis`).
   - Document fault domain isolation provided by independent Petasos queues per egress destination.
-- Update TikZ Vector Diagrams in `docs/latex/diagrams/`:
-  - `docs/latex/diagrams/fig-app-overview-5tier.tex`: Add Pylai Outbound Gateway component with flow from Petasos/Ponos and connection to Mneme cache.
-  - `docs/latex/diagrams/fig-technology-nodes.tex`: Add Pylai Outbound Gateway node with ports `8087`/`8088` and communication paths.
+- Update TikZ Vector Diagrams in `../../docs/latex-legacy`:
+  - `../../docs/latex-legacy`: Add Pylai Outbound Gateway component with flow from Petasos/Ponos and connection to Mneme cache.
+  - `../../docs/latex-legacy`: Add Pylai Outbound Gateway node with ports `8087`/`8088` and communication paths.
 
 ### ✓ Step 5: Verify LaTeX Documentation Build and Documentation Consistency
 Validate the compilation of LaTeX documentation and verify Markdown rendering consistency across documentation files.
 
-- Verify LaTeX documentation builds cleanly via `docs/latex/Makefile` or direct compilation (`pdflatex` / `latexmk`).
+- Verify LaTeX documentation builds cleanly via `../../docs/latex-legacy` or direct compilation (`pdflatex` / `latexmk`).
 - Verify that all cross-references, tables, labels, and TikZ diagrams render properly without LaTeX errors or missing references.
-- Verify Markdown formatting and links in `README.md` and `docs/latex/README.md`.
+- Verify Markdown formatting and links in `README.md` and `../../docs/latex-legacy`.

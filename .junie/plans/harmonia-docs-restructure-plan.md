@@ -44,8 +44,8 @@ Harmonia enforces a strict documentation authority model: **one authoritative do
 #### 2.1 Canonical Markdown Source (`docs/markdown/`)
 `docs/markdown/` contains the **canonical and authoritative architectural and reference content** of the Harmonia repository. All architectural axioms, requirements, domain models, decisions, contracts, and deployment runbooks must ultimately reside in Markdown. It serves as the primary authoring format for developers, architects, and autonomous agents.
 
-#### 2.2 LaTeX Publication Pipeline (`docs/latex/`)
-`docs/latex/` is a formal publication representation of the canonical Markdown content. Its singular purpose is to compile a publication-grade, navigable, single-volume reference book (PDF) utilizing custom styling packages (`harmonia-doc.sty`, `harmonia-archimate.sty`), embedded vector diagrams (TikZ), and formal cross-referencing. LaTeX contains document composition, typographic layout, and indexing machinery, but must never become an uncoordinated, independent source of architectural truth. There must ultimately exist a strict 1:1 content relationship between Markdown chapters and LaTeX modules.
+#### 2.2 LaTeX Publication Pipeline (`../../docs/latex-legacy`)
+`../../docs/latex-legacy` is a formal publication representation of the canonical Markdown content. Its singular purpose is to compile a publication-grade, navigable, single-volume reference book (PDF) utilizing custom styling packages (`harmonia-doc.sty`, `harmonia-archimate.sty`), embedded vector diagrams (TikZ), and formal cross-referencing. LaTeX contains document composition, typographic layout, and indexing machinery, but must never become an uncoordinated, independent source of architectural truth. There must ultimately exist a strict 1:1 content relationship between Markdown chapters and LaTeX modules.
 
 #### 2.3 OpenDocument Text Pipeline (`docs/odt/`)
 `docs/odt/` produces a single coherent, navigable OpenDocument Text (`.odt`) representation of the same canonical Markdown content, generated via automated scripts (`docs/odt/scripts/generate_odt.py`). ODT contains formatting templates and OASIS OpenDocument XML serializers, maintaining identical 1:1 content fidelity with Markdown.
@@ -151,7 +151,7 @@ Each major numbered domain in `docs/markdown/` will feature an authoritative `RE
 ### 6. Functional & Non-Functional Requirements
 
 #### Functional Requirements
-1. **Tri-Format Segregation**: Root `./docs` must cleanly separate into `docs/markdown/`, `docs/latex/`, and `docs/odt/`.
+1. **Tri-Format Segregation**: Root `./docs` must cleanly separate into `docs/markdown/`, `../../docs/latex-legacy`, and `docs/odt/`.
 2. **Canonical Taxonomy Conformance**: Markdown documentation must adhere to the 14-tier architectural progression (01-motivation through 13-governance-decisions plus 99-reference).
 3. **Exhaustive Mapping**: All 150 identified Markdown documents must have a deterministic mapping in the migration matrix.
 4. **Bidirectional Reconciliation**: The migration process must cross-reference and enrich Markdown documents with authoritative content from corresponding LaTeX chapters.
@@ -169,7 +169,7 @@ Each major numbered domain in `docs/markdown/` will feature an authoritative `RE
 
 The `./docs` directory currently contains:
 - **150 Markdown (`.md`) documents** across 17 subdirectories and the root folder.
-- **1 Formal LaTeX suite** in `docs/latex/` containing 58 chapter files (`.tex`), 25 TikZ diagram sources (`.tex`), 4 PNG images, 2 style packages (`.sty`), a `Makefile`, and `main.tex`.
+- **1 Formal LaTeX suite** in `../../docs/latex-legacy` containing 58 chapter files (`.tex`), 25 TikZ diagram sources (`.tex`), 4 PNG images, 2 style packages (`.sty`), a `Makefile`, and `main.tex`.
 - **1 OpenDocument Text archive** in `docs/libreoffice/` (`harmonia-architecture-specification.odt`) supported by an automated generation script (`scripts/generate_odt.py`), templates, and diagram assets.
 - **1 Microsoft Word Strategy Document** (`docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`) capturing the strategic vision and LDS alignment.
 
@@ -189,7 +189,7 @@ The `./docs` directory currently contains:
 | `docs/getting-started/`| 5 | Introductory guides, build instructions, terminology, and quickstarts. | Pragmatic developer onboarding, currently disconnected from TOGAF categorization. |
 | `docs/implementation/`| 1 | Master convergence and runtime integration plan. | Critical authority document referenced by `AGENTS.md`. |
 | `docs/integration/` | 8 | Protocol adapters (HL7, FHIR, MLLP), correlation, and error handling. | Well-scoped integration domain, but mixes protocol details with generic overviews. |
-| `docs/latex/` | 1 (.md) | Authoritative publication-quality book source in LaTeX/TikZ. | Format-specific container; contains supporting `README.md`. |
+| `../../docs/latex-legacy` | 1 (.md) | Authoritative publication-quality book source in LaTeX/TikZ. | Format-specific container; contains supporting `README.md`. |
 | `docs/libreoffice/` | 1 (.md) | OpenDocument (.odt) specification generator and templates. | Misnamed folder (tool name rather than standard format `odt/`). |
 | `docs/middleware/` | 8 | Specifications of underlying infrastructure (Artemis, Infinispan, PostgreSQL, WildFly, Matrix). | Technology Architecture tier; solid content, minor casing inconsistency (`activeMQ-artemis.md`). |
 | `docs/modules/` | 9 | Subsystem specifications for each of the 9 core Maven modules. | Parallel to `docs/concepts/`; creates confusion over where module details live. |
@@ -203,13 +203,13 @@ The `./docs` directory currently contains:
 
 ### Non-Markdown Documentation Assets
 
-1. **LaTeX Documentation Suite (`docs/latex/`)**:
-   - `docs/latex/main.tex`: Master LaTeX document orchestrating 7 Parts and 67 Chapters.
-   - `docs/latex/chapters/*.tex` (58 files): Detailed technical chapters spanning conceptual taxonomy, application layers, infrastructure, and appendices.
-   - `docs/latex/diagrams/*.tex` (25 files): Native TikZ vector diagrams utilizing ArchiMate 3.2 color palettes.
-   - `docs/latex/images/*.png` (4 images): High-resolution architectural and entity relationship diagrams.
-   - `docs/latex/styles/*.sty` (`harmonia-archimate.sty`, `harmonia-doc.sty`): Custom formatting macros and ArchiMate color definitions.
-   - `docs/latex/Makefile`: Automated PDF build harness (`pdflatex` / `latexmk`).
+1. **LaTeX Documentation Suite (`../../docs/latex-legacy`)**:
+   - `../../docs/latex-legacy`: Master LaTeX document orchestrating 7 Parts and 67 Chapters.
+   - `../../docs/latex-legacy` (58 files): Detailed technical chapters spanning conceptual taxonomy, application layers, infrastructure, and appendices.
+   - `../../docs/latex-legacy` (25 files): Native TikZ vector diagrams utilizing ArchiMate 3.2 color palettes.
+   - `../../docs/latex-legacy` (4 images): High-resolution architectural and entity relationship diagrams.
+   - `../../docs/latex-legacy` (`harmonia-archimate.sty`, `harmonia-doc.sty`): Custom formatting macros and ArchiMate color definitions.
+   - `../../docs/latex-legacy`: Automated PDF build harness (`pdflatex` / `latexmk`).
 2. **OpenDocument Text Suite (`docs/libreoffice/`)**:
    - `docs/libreoffice/harmonia-architecture-specification.odt`: Complete 160+ page compiled ODT architecture specification.
    - `docs/libreoffice/scripts/generate_odt.py`: 879-line Python compiler that parses LaTeX sources into canonical OASIS OpenDocument Format 1.3 XML.
@@ -334,7 +334,7 @@ The `./docs` directory currently contains:
 | 79 | `docs/integration/` | `overview.md` | Gateway and interoperability overview | Integration Architecture | Gateway architecture overview. |
 | 80 | `docs/integration/` | `pylai.md` | Pylai protocol gateway design | Integration Architecture | Pylai boundary contracts. |
 | 81 | `docs/integration/` | `rest.md` | Internal microservice REST APIs | Integration Architecture | Inter-service REST specifications. |
-| 82 | `docs/latex/` | `README.md` | LaTeX build guide and style documentation | Reference / Supporting | Instructions for compiling LaTeX/TikZ. |
+| 82 | `../../docs/latex-legacy` | `README.md` | LaTeX build guide and style documentation | Reference / Supporting | Instructions for compiling LaTeX/TikZ. |
 | 83 | `docs/libreoffice/` | `README.md` | LibreOffice ODT generator documentation | Reference / Supporting | Instructions for compiling ODT via Python. |
 | 84 | `docs/middleware/` | `activeMQ-artemis.md` | ActiveMQ Artemis messaging engine | Technology Architecture | Mixed-case filename; broker configuration. |
 | 85 | `docs/middleware/` | `hapi-fhir.md` | HAPI FHIR JPA persistence engine | Technology Architecture | HAPI FHIR server architecture. |
@@ -735,7 +735,7 @@ The following matrix maps every existing Markdown file to its proposed target pa
 | 79 | `docs/integration/overview.md` | `docs/markdown/06-integration-architecture/overview.md` | Integration Architecture | Gateway and integration tier overview. | No | Integration tier summary. |
 | 80 | `docs/integration/pylai.md` | `docs/markdown/06-integration-architecture/pylai-gateway-architecture.md`| Integration Architecture | Pylai boundary and membrane specifications. | Yes | Disambiguate from module guide. |
 | 81 | `docs/integration/rest.md` | `docs/markdown/06-integration-architecture/protocols/internal-rest.md` | Integration Architecture | Internal microservice REST APIs. | Yes | Differentiate from external FHIR REST. |
-| 82 | `docs/latex/README.md` | `docs/latex/README.md` | Reference / Supporting | LaTeX build guide remains in `latex/` tree. | No | Excluded from `markdown/` hierarchy. |
+| 82 | `../../docs/latex-legacy` | `../../docs/latex-legacy` | Reference / Supporting | LaTeX build guide remains in `latex/` tree. | No | Excluded from `markdown/` hierarchy. |
 | 83 | `docs/libreoffice/README.md` | `docs/odt/README.md` | Reference / Supporting | ODT generator guide relocated to `odt/` tree. | No | Updated for `docs/odt/` path. |
 | 84 | `docs/middleware/activeMQ-artemis.md`| `docs/markdown/07-technology-architecture/middleware/activemq-artemis.md`| Technology Architecture | ActiveMQ Artemis messaging engine specs. | Yes | Normalize filename casing to lowercase. |
 | 85 | `docs/middleware/hapi-fhir.md` | `docs/markdown/07-technology-architecture/middleware/hapi-fhir.md` | Technology Architecture | HAPI FHIR JPA server specifications. | No | Middleware specification. |
@@ -813,7 +813,7 @@ The following matrix maps every existing Markdown file to its proposed target pa
 | :--- | :--- | :--- | :--- |
 | `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx` | `docs/markdown/01-motivation-strategy/harmonia-strategy-local-directory.md` | Markdown (`.md`) | Convert content to Markdown under Motivation/Strategy; retain original DOCX in `docs/odt/` or an archive store for historical provenance. |
 | `docs/libreoffice/` (All assets) | `docs/odt/` | OpenDocument (`.odt`) | Rename directory `docs/libreoffice/` to `docs/odt/`; update `generate_odt.py` script constants (`LIBREOFFICE_DIR` -> `ODT_DIR`). |
-| `docs/latex/` (All assets) | `docs/latex/` | LaTeX (`.tex`) | Retain top-level location; maintain clean format separation alongside `docs/markdown/` and `docs/odt/`. |
+| `../../docs/latex-legacy` (All assets) | `../../docs/latex-legacy` | LaTeX (`.tex`) | Retain top-level location; maintain clean format separation alongside `docs/markdown/` and `docs/odt/`. |
 
 # Issues & Risk Assessment
 
@@ -896,7 +896,7 @@ During our systematic inventory and content inspection of `./docs`, the followin
 | :--- | :--- | :--- | :--- |
 | **`AGENTS.md` (Root)** | Lines 34, 418, 422, 447 | Hardcoded paths to `docs/architectural-axioms.md` and `docs/implementation/harmonia-convergence-runtime-integration-plan.md`. | Update paths to `docs/markdown/02-principles-governance/architectural-axioms.md` and `docs/markdown/11-implementation-migration/harmonia-convergence-runtime-integration-plan.md`. |
 | **`README.md` (Root)** | Lines 427–440 | 11 direct markdown hyperlinks to legacy documentation paths. | Update all hyperlinks to point to their corresponding targets in `docs/markdown/`. |
-| **Python Generator Script** | `docs/libreoffice/scripts/generate_odt.py` | Lines 20–25 hardcode directory names `docs/latex` and `docs/libreoffice`. | Rename `LIBREOFFICE_DIR` variable to `ODT_DIR` and update paths to reflect `docs/odt/`. |
+| **Python Generator Script** | `docs/libreoffice/scripts/generate_odt.py` | Lines 20–25 hardcode directory names `../../docs/latex-legacy` and `docs/libreoffice`. | Rename `LIBREOFFICE_DIR` variable to `ODT_DIR` and update paths to reflect `docs/odt/`. |
 | **Internal Markdown Links** | 14 files across `docs/` | Relative links (e.g. `[Persistence Architecture](persistence-architecture.md)`) will break when files move into nested subdirectories. | Execute an automated link rewriting pass adjusting relative paths based on the migration matrix. |
 | **Maven & ArchUnit Tests** | Java test suites | Verified: Zero ArchUnit or unit tests reference `docs/` paths. | No Java code impact. Pure documentation refactor. |
 
@@ -915,7 +915,7 @@ During our systematic inventory and content inspection of `./docs`, the followin
 # Delivery Steps
 
 ###   Step 1: Establish Target Directory Structure and Format Separation
-Target directories `docs/markdown/`, `docs/latex/`, and `docs/odt/` exist with supporting non-Markdown formats relocated cleanly.
+Target directories `docs/markdown/`, `../../docs/latex-legacy`, and `docs/odt/` exist with supporting non-Markdown formats relocated cleanly.
 - Create the target directory skeleton under `docs/markdown/` covering all 11 architectural domains (01-motivation through 11-implementation).
 - Standardize the ODT documentation directory by moving `docs/libreoffice/` to `docs/odt/`.
 - Convert `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx` into Markdown in `docs/markdown/01-motivation-strategy/` and archive the binary DOCX into `docs/odt/` or a dedicated binary archive.

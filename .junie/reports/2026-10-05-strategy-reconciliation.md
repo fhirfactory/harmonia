@@ -40,10 +40,10 @@ The repository contains extensive strategy-relevant artifacts scattered across L
 
 | Artifact Path | Apparent Purpose | Architectural Concepts Contained | Relevance & Utility | Recommended Disposition |
 | :--- | :--- | :--- | :--- | :--- |
-| `docs/latex/chapters/01-motivation-strategy.tex` | Master LaTeX Motivation & Strategy Chapter | 7 component-coupled capabilities, 6 strategic goals, 6 principles, strategic value stream equation | High value for goals and value stream; superseded regarding component capabilities and write-behind caching | Retain for LaTeX publication; reframe capabilities as functional and update workflows to reflect REC-001 |
-| `docs/latex/chapters/01-foundations.tex` | Platform foundations & HIE context | Healthcare interoperability drivers, 5 core principles, value stream flow | High value for regional health context; duplicates `01-motivation-strategy.tex` principles | Retain as LaTeX publication narrative; align principles with canonical Axioms |
-| `docs/latex/chapters/02-conceptual-taxonomy.tex` | Subsystem layering & domain taxonomy | Component boundaries for Iris, Pylai, Petasos, Energeia, Mneme, Mnemosyne, Calliope, Themis, Agora, Paradeigma | High value; provides clear domain responsibilities and anti-responsibilities | Retain for conceptual architecture; relocate port numbers and package specifics to Domains 05–07 |
-| `docs/latex/chapters/02-business-layer.tex` | Business actors, services, and clinical workflows | 7 business actors, 6 clinical services, 3 five-stage workflows, 6 core business objects | High value for business architecture; contains legacy immediate MLLP ACK and EMPI merge assertions | Retain for Domain 03 Business Layer; reframe workflow stages to match REC-001 dual-write safety |
+| `../../docs/latex-legacy` | Master LaTeX Motivation & Strategy Chapter | 7 component-coupled capabilities, 6 strategic goals, 6 principles, strategic value stream equation | High value for goals and value stream; superseded regarding component capabilities and write-behind caching | Retain for LaTeX publication; reframe capabilities as functional and update workflows to reflect REC-001 |
+| `../../docs/latex-legacy` | Platform foundations & HIE context | Healthcare interoperability drivers, 5 core principles, value stream flow | High value for regional health context; duplicates `01-motivation-strategy.tex` principles | Retain as LaTeX publication narrative; align principles with canonical Axioms |
+| `../../docs/latex-legacy` | Subsystem layering & domain taxonomy | Component boundaries for Iris, Pylai, Petasos, Energeia, Mneme, Mnemosyne, Calliope, Themis, Agora, Paradeigma | High value; provides clear domain responsibilities and anti-responsibilities | Retain for conceptual architecture; relocate port numbers and package specifics to Domains 05–07 |
+| `../../docs/latex-legacy` | Business actors, services, and clinical workflows | 7 business actors, 6 clinical services, 3 five-stage workflows, 6 core business objects | High value for business architecture; contains legacy immediate MLLP ACK and EMPI merge assertions | Retain for Domain 03 Business Layer; reframe workflow stages to match REC-001 dual-write safety |
 | `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx` | Strategic Position Paper (24 Sept 2026) | Local Directory Solution (LDS) scope demarcation (`HARM-STR-001`, `HARM-LDS-001..012`), platform core boundary | Authoritative strategic guidance establishing LDS as a Domain 11 Solution Pack on a generalized HIE core | Reference directly in Strategy Courses of Action (`courses-of-action/lds-solution-strategy.md`) |
 | `docs/markdown/01-motivation/` (13 files) | Canonical frozen Motivation baseline | Stakeholders, Drivers, Assessments, Goals, Outcomes, Axioms (`AX-01`..`AX-16`), Requirements, Constraints | Canonical architectural authority anchoring Strategy | Maintain as frozen Domain 01 baseline; establish direct traceability from Strategy |
 | `docs/concepts/mneme.md` | Mneme Subsystem Concept | Working memory metaphor, Infinispan grid topology, active caches, anti-responsibilities | High conceptual value; contains legacy `mneme-persistence` write-behind cache store adapter | Reframe in Strategy as runtime state access; relocate Infinispan config and SPI details to Domain 07 |
@@ -61,7 +61,7 @@ The repository contains extensive strategy-relevant artifacts scattered across L
 
 ### 3. Existing LaTeX / Alternate Source Material
 
-A comparative analysis of the LaTeX sources (`docs/latex/chapters/`) against existing Markdown documentation reveals substantial material that must not be lost:
+A comparative analysis of the LaTeX sources (`../../docs/latex-legacy`) against existing Markdown documentation reveals substantial material that must not be lost:
 
 1. **Historical Runtime Event Flow (Candidate Evidence, Not Canonical Value Stream)**:
    - `01-motivation-strategy.tex` (lines 160–174) and `01-foundations.tex` (lines 70–78) articulate an explicit 5-stage clinical event message flow:
@@ -423,6 +423,6 @@ Following the formal resolution of contradictions CONTR-01 through CONTR-05 duri
 
 In accordance with the Zero-Modification Constraint:
 - No files within `docs/markdown/02-strategy/` or elsewhere in `docs/` were created, modified, renamed, moved, or deleted.
-- No LaTeX source files (`docs/latex/`) were altered or compiled into ODT/PDF.
+- No LaTeX source files (`../../docs/latex-legacy`) were altered or compiled into ODT/PDF.
 - The only artifact produced is this canonical reconciliation report at `.junie/reports/2026-10-05-strategy-reconciliation.md`.
 - Repository invariance was verified against `git status` prior to task completion.

@@ -1,7 +1,23 @@
 \documentclass[9pt,a4paper,openany]{book}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+% -------------------------------------------------------------------------
+% Typography
+% -------------------------------------------------------------------------
+
 \usepackage{lmodern}
+
+% Use sans-serif as the document default
+\renewcommand{\familydefault}{\sfdefault}
+
+% Paragraphs: no first-line indentation, with vertical separation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+
+\usepackage{tabularx}
+\renewcommand{\arraystretch}{1.1}
+
 \usepackage[margin=25mm]{geometry}
 \usepackage{longtable,booktabs,array,hyperref,xcolor,makeidx}
 \usepackage{tikz}
@@ -33,13 +49,22 @@
 \end{center}\smallskip
 }
 \newcommand{\featuretable}[1]{%
-\begin{longtable}{@{}p{.14\linewidth}p{.15\linewidth}p{.30\linewidth}p{.32\linewidth}@{}}
-\toprule Type & ID & Name & Description / Notes\\\midrule\endhead
-#1
-\bottomrule\end{longtable}}
+  {
+  \small
+  \begin{longtable}{@{}|p{.14\linewidth}|p{.15\linewidth}|p{.30\linewidth}|p{.32\linewidth}|@{}}
+    \toprule Type & ID & Name & Description / Notes\\\midrule\endhead
+    #1
+    \bottomrule
+  \end{longtable}
+  }
+}
 \title{Harmonia\\Capability Architecture Reference Book\\\large Full-Candidate Working Draft, Version 0.3}
 \author{Architecture Review Working Copy}
 \date{14 October 2026}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
 \begin{document}
 \frontmatter\maketitle\tableofcontents
 \mainmatter
@@ -58,7 +83,9 @@ This is a deliberately inclusive, reviewable candidate reference architecture, n
 \item Source-established content, inferred descriptions, and generated candidates are distinguished. Review annotations identify uncertainty and possible overreach.
 \item Legacy documentation is excluded. Current governed Markdown, the working capability map, the RADS behaviour catalogue represented there, current scratchpad reasoning and FHIR R5 conceptual references are the intended evidence classes.
 \end{itemize}
+
 \paragraph{Review convention.} Treat each proposed Feature as an invitation to keep, rename, move, merge or delete it. Do not promote a candidate into governed architecture merely because it appears in this book.
+
 \paragraph{Source limitation.} This generation uses the current v0.4 working mind-map as the complete machine-readable hierarchy and Feature-to-Function/Service/Process association source. The repository catalogue and Design Note sources were inspected for scope, but not all free-form RADS and scratchpad paragraphs have been transcribed verbatim. Consequently, generated explanatory prose is labelled candidate interpretation; absence of a note here does not imply absence from the RADS. Reconcile with governed sources before approving the full candidate.
 
 \part{Business Capabilities}
@@ -2593,50 +2620,165 @@ Intent. Entity Information Enablement is a candidate enabling capability within 
 Boundary. This capability supports the business activity and does not inherit the authority or accountability of the Business Capability it enables. Its child Features are review candidates until ancestry and semantics are adjudicated.
 
 \section{CT2 - Client Administration}\label{cap:bec-75cec238}
-\cappictograph{CT2 - Client Administration}{%
-\capchild{Person Identity}\hfill
-\capchild{Healthcare Subject}\hfill
-\capchild{Client Relationship}\par\smallskip
-\capchild{Client Privacy}
-}
+\vspace{-0.5em}
+  \begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabularx}{1\textwidth}{|l|l|X|}
+      \hline
+      \multicolumn{3}{c}{\textbf{Capability Metadata}} \\
+      \hline
+      \textbf{Name} & \textbf{Value} & \textbf{Comment and/or Description} \\
+      \hline
+      \textbf{Reference Id} & BEC-75CEC238 & \\
+      \hline
+      \textbf{Status} & Candidate &  \\
+      \hline
+      \textbf{Ancestry} &  &  \\
+      \hline
+      \textbf{Source} &  & \\
+      \hline
+      \textbf{Enabled By} & & \\
+      \hline
+      \textbf{Supports} & & \\
+      \hline
+      \textbf{Derived From} & & \\
+      \hline
+      \textbf{Reviewed Status} &  & \\
+      \hline
+    \end{tabularx}
+  \end{table}
 
-\noindent\textbf{Reference ID:} \texttt{BEC-75CEC238}\quad \textbf{Status:} Candidate ancestry\par
-Intent. Client Administration is a candidate enabling capability within Entity Information Enablement. It frames the reusable system-supported behaviours needed to support this healthcare context without prescribing a product, interface, technology or deployment boundary.
+    \begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabularx}{1\textwidth}{|l|l|X|}
+      \hline
+      \multicolumn{3}{c}{\textbf{Contained Capabilities}} \\
+      \hline
+      \textbf{Feature Name} & \textbf{Capability Id} & \textbf{Comment} \\
+      \hline
+      Person Identity & cap:bec-31e69256 (at \ref{cap:bec-31e69256}) & \\
+      \hline
+      Healthcare Subject & cap:bec-edce7c88 (at \ref{cap:bec-edce7c88}) &  \\
+      \hline
+      Client Relationship & cap:bec-2494865f (at \ref{cap:bec-2494865f}) &  \\
+      \hline
+      Client Privacy & cap:bec-adc0cf33 (at \ref{cap:bec-adc0cf33})  & \\
+      \hline
+    \end{tabularx}
+  \end{table}
 
-Boundary. This capability supports the business activity and does not inherit the authority or accountability of the Business Capability it enables. Its child Features are review candidates until ancestry and semantics are adjudicated.
+
+\textbf{Intent:} Client Administration is a candidate enabling capability within Entity Information Enablement. It frames the reusable system-supported behaviours needed to support this healthcare context without prescribing a product, interface, technology or deployment boundary.
+
+\textbf{Boundary:} This capability supports the business activity and does not inherit the authority or accountability of the Business Capability it enables. Its child Features are review candidates until ancestry and semantics are adjudicated.
 
 \subsection{CT3 - Person Identity}\label{cap:bec-31e69256}
-\cappictograph{CT3 - Person Identity}{%
-\capchild{Identifier Resolution}\hfill
-\capchild{Cross-Authority Identifier Correlation}\hfill
-\capchild{Identity Alias Association}\par\smallskip
-\capchild{Governed Identity Correction}\hfill
-\capchild{Identity Management}\hfill
-\capchild{Identity Correlation}\par\smallskip
-\capchild{Identity Correction}\hfill
-\capchild{Relationship Management}\hfill
-\capchild{Identity Discovery}
-}
+\vspace{-0.5em}
+  \begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabularx}{1\textwidth}{|l|l|X|}
+      \hline
+      \multicolumn{3}{c}{\textbf{Capability Metadata}} \\
+      \hline
+      \textbf{Name} & \textbf{Value} & \textbf{Description} \\
+      \hline
+      \textbf{Reference Id} & BEC-31E69256 & \\
+      \hline
+      \textbf{Status} & Canonical &  \\
+      \hline
+      \textbf{Ancestry} &  &  \\
+      \hline
+      \textbf{Source} &  & \\
+      \hline
+      \textbf{Enabled By} & & \\
+      \hline
+      \textbf{Supports} & & \\
+      \hline
+      \textbf{Derived From} & & \\
+      \hline
+      \textbf{Reviewed Status} & Reviewed & \\
+      \hline
+    \end{tabularx}
+  \end{table}
 
-\noindent\textbf{Reference ID:} \texttt{BEC-31E69256}\quad \textbf{Status:} Candidate ancestry\par
-Intent. Person Identity is a candidate enabling capability within Client Administration. It frames the reusable system-supported behaviours needed to support this healthcare context without prescribing a product, interface, technology or deployment boundary.
+  \begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabularx}{1\textwidth}{|l|l|X|}
+      \hline
+      \multicolumn{3}{c}{\textbf{Contained Features}} \\
+      \hline
+      \textbf{Feature Name} & \textbf{Feature Id} & \textbf{Comment} \\
+      \hline
+      Identifier Resolution & cap:bec-1acd822d (at \ref{cap:bec-1acd822d}) & \\
+      \hline
+      Governed Identity Correciton & cap:bec-f44a13c3 (at \ref{cap:bec-f44a13c3}) &  \\
+      \hline
+      Identity Correction & cap:bec-f44a13c3 (at \ref{cap:bec-44123e71}) &  \\
+      \hline
+      Cross-Authority Identifier Correlation & \ref{cap:bec-3e1d6ba5}  & \\
+      \hline
+      Identity Management & cap:bec-60f846cb (at \ref{cap:bec-60f846cb})  & \\
+      \hline
+      Relationship Management & cap:bec-60f846cb (at \ref{cap:bec-60f846cb}) & \\
+      \hline
+      Identity Alias Association & cap:bec-905c884b (at \ref{cap:bec-905c884b}) & \\
+      \hline
+      Identity Correlation & cap:bec-d5d59967 (at \ref{cap:bec-d5d59967}) & \\
+      \hline
+      Identity Discovery & cap:bec-07eb6044 (at \ref{cap:bec-07eb6044}) & \\
+      \hline
+    \end{tabularx}
+  \end{table}
 
-Boundary. This capability supports the business activity and does not inherit the authority or accountability of the Business Capability it enables. Its child Features are review candidates until ancestry and semantics are adjudicated.
+\textbf{Intent:} Person Identity is a candidate enabling capability within Client Administration. It frames the reusable system-supported behaviours needed to support this healthcare context without prescribing a product, interface, technology or deployment boundary.
 
-FHIR R5 conceptual analogues considered (not implementation mappings): Person, Patient, RelatedPerson.
+\textbf{Boundary:} This capability supports the business activity and does not inherit the authority or accountability of the Business Capability it enables. Its child Features are review candidates until ancestry and semantics are adjudicated.
+
+\textbf{Note:} FHIR R5 conceptual analogues considered (not implementation mappings): Person, Patient, RelatedPerson.
+
+\reviewcomment{None.}
 
 \subsubsection{Feature - Identifier Resolution}\label{cap:bec-1acd822d}
-\noindent\textbf{Reference ID:} \texttt{BEC-1ACD822D}\quad \textbf{Status: Candidate} Existing Feature; candidate CT3 placement\par
-\noindent\textit{Source: FEAT-EM-01}\par
-Intent. Identifier Resolution provides a distinct enabling behaviour in the context of Person Identity. This is an existing named Feature; its placement under the candidate CT3 remains subject to review.
+\vspace{-1em}
+  \begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabularx}{1\textwidth}{|l|l|X|}
+      \hline
+      \textbf{Metadata Name} & \textbf{Medadata Value} & \textbf{Description} \\
+      \hline
+      \textbf{Reference Id} & \texttt{BEC-1ACD822D} & \\
+      \hline
+      \textbf{Status} & Canonical &  \\
+      \hline
+      \textbf{Ancestry} & Existing Feature & Candidate CT3 placement \\
+      \hline
+      \textbf{Source} & FEAT-EM-01 & \\
+      \hline
+      \textbf{Enabled By} & \ref{cap:ec-461b8f05} & \\
+      \hline
+      \textbf{Supports} & & \\
+      \hline
+      \textbf{Derived From} & & \\
+      \hline
+      \textbf{Reviewed Status} & Reviewed & \\
+      \hline
+    \end{tabularx}
+  \end{table}
 
-\noindent\textbf{Feature boundary.} This behaviour is scoped to Person Identity; an identically named Feature elsewhere may carry different business meaning.\par
+
+\textbf{Intent:} Identifier Resolution provides a distinct enabling behaviour in the context of Person Identity. This is an existing named Feature; its placement under the candidate CT3 remains subject to review.
+
+\textbf{Feature boundary:} This behaviour is scoped to Person Identity; an identically named Feature elsewhere may carry different business meaning.\par
+
 \featuretable{
 Function & \texttt{FN-D225B2B0} & Resolve Person Identifier & Catalogue \\
 Service & \texttt{SV-63F14B3F} & Person Identifier Resolution & Linked to preceding Function in source \\
 }
-\enabledby{\ref{cap:ec-461b8f05}}
-\reviewstatus{MH-Approved}
 \reviewcomment{None.}
 \subsubsection{Feature - Cross-Authority Identifier Correlation}\label{cap:bec-3e1d6ba5}
 \noindent\textbf{Reference ID:} \texttt{BEC-3E1D6BA5}\quad \textbf{Status:} Existing Feature; candidate CT3 placement\par

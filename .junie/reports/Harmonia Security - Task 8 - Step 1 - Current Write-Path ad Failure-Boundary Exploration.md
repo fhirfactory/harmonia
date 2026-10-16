@@ -5,7 +5,7 @@ Pause for plan review before starting the goal: No
 EXPLORATION
 
 **Task description**  
-Map the current production clinical FHIR CREATE/UPDATE write path and the likely code/report locations for this exploration-only task. Identify concrete entry points, downstream services/providers/stores, and likely bypass/concurrency/version/audit/delete artifacts. Include precise file paths and line numbers for the most relevant classes/methods so later analysis can avoid re-searching. Also note whether the attached `docs/latex/chapters/appendix-decisions.tex` appears relevant contextually. Focus on production code; tests only if they directly evidence current behavior.
+Map the current production clinical FHIR CREATE/UPDATE write path and the likely code/report locations for this exploration-only task. Identify concrete entry points, downstream services/providers/stores, and likely bypass/concurrency/version/audit/delete artifacts. Include precise file paths and line numbers for the most relevant classes/methods so later analysis can avoid re-searching. Also note whether the attached `../../docs/latex-legacy` appears relevant contextually. Focus on production code; tests only if they directly evidence current behavior.
 
 **Constraints**  
 Read-only exploration only. Do not modify code or run broad builds. Prefer static tracing; run only narrow, existing commands if essential.
@@ -335,7 +335,7 @@ No production clinical caller was found directly using `replaceWithVersion`, `ge
 
 **CONCLUSION:** Source identity and security context are preserved in the Pylai Pragma, but propagation into the actual FHIR entity/audit/provenance record is not observed. The BEFE context is used for request authorization but is not passed into cache persistence.
 
-**13. Relevance of `docs/latex/chapters/appendix-decisions.tex`**
+**13. Relevance of `../../docs/latex-legacy`**
 
 **OBSERVED:** This file is directly relevant as contextual architecture evidence, not as current implementation evidence.
 
@@ -838,5 +838,5 @@ Boundary Milestones in Write Path:
 - Validation was performed by static tracing of production code and targeted repository evidence only; no production code or tests were modified.
 - Existing laboratory evidence for lost-update behavior was incorporated from `hestia/mneme-cluster/src/test/.../MnemeConcurrencyAndVersionScenarioTest.java:78-177, 267-359`.
   **Notes**
-- The attached file content block was empty, but `docs/latex/chapters/appendix-decisions.tex` was treated as contextual ADR support; it informs interpretation but was not used as proof of current implementation behavior.
+- The attached file content block was empty, but `../../docs/latex-legacy` was treated as contextual ADR support; it informs interpretation but was not used as proof of current implementation behavior.
 

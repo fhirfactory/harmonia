@@ -5,7 +5,7 @@ sessionId: session-260916-101055-9jia
 # Requirements
 
 ### Overview & Goals
-The goal is to create a complete, publication-grade, highly navigable **LibreOffice OpenDocument Text (`.odt`)** version of the entire **Harmonia Health Information Exchange (HIE)** architectural specification currently authored in LaTeX (`docs/latex/`).
+The goal is to create a complete, publication-grade, highly navigable **LibreOffice OpenDocument Text (`.odt`)** version of the entire **Harmonia Health Information Exchange (HIE)** architectural specification currently authored in LaTeX (`../../docs/latex-legacy`).
 
 The LibreOffice edition will serve as an accessible, easily editable, and navigable companion document for stakeholders, healthcare enterprise architects, system integrators, and developers who prefer desktop office suites (LibreOffice Writer, OpenOffice, Microsoft Word) over LaTeX toolchains.
 
@@ -34,7 +34,7 @@ The LibreOffice edition will serve as an accessible, easily editable, and naviga
 - **Build & Packaging Tooling**: Python-based zero-external-dependency script to generate or update the `.odt` package, alongside `Makefile` and `README.md`.
 
 #### Out of Scope
-- Modifying the existing LaTeX documentation in `docs/latex/` (LaTeX remains the vector LaTeX source).
+- Modifying the existing LaTeX documentation in `../../docs/latex-legacy` (LaTeX remains the vector LaTeX source).
 - Modifying platform source code or runtime configurations.
 
 ### User Stories
@@ -60,7 +60,7 @@ The LibreOffice edition will serve as an accessible, easily editable, and naviga
 ### Current Implementation & Context
 - The repository documentation currently comprises:
   - Markdown guides in `docs/` (`architecture.md`, `database-schema.md`, `high-availability.md`, `failure-recovery.md`, `message-lifecycle.md`, `persistence-architecture.md`).
-  - Production-grade LaTeX/TikZ architectural documentation in `docs/latex/` containing 7 chapters, 5 appendices, and 15 TikZ diagrams.
+  - Production-grade LaTeX/TikZ architectural documentation in `../../docs/latex-legacy` containing 7 chapters, 5 appendices, and 15 TikZ diagrams.
 - There is currently no LibreOffice (`.odt`) edition in the repository.
 
 ### Key Decisions

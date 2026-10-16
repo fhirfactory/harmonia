@@ -13,7 +13,7 @@ By eliminating tribal knowledge and replacing fragmented notes with mathematical
 - **In Scope**:
   - Full-fidelity architectural specification across all 9 subprojects: `calliope`, `themis`, `hestia`, `petasos`, `energeia`, `pylai`, `iris`, `agora`, and `paradeigma`.
   - Comprehensive Markdown Information Architecture under `docs/` organized into 10 structured sections (`getting-started/`, `architecture/`, `concepts/`, `modules/`, `middleware/`, `integration/`, `configuration/`, `deployment/`, `paradeigma/`, `development/`, `operations/`, `reference/`).
-  - Formal publication-grade LaTeX Technical Reference under `docs/latex/` restructured across 9 Parts, expanded chapters, 12 Appendices, and custom TikZ vector diagrams styled to ArchiMate 3.2 standards.
+  - Formal publication-grade LaTeX Technical Reference under `../../docs/latex-legacy` restructured across 9 Parts, expanded chapters, 12 Appendices, and custom TikZ vector diagrams styled to ArchiMate 3.2 standards.
   - Strict classification of every documented feature into `[IMPLEMENTED]`, `[CONFIGURED]`, `[DESIGNED/PLANNED]`, and `[EXAMPLE/REFERENCE]` states.
   - Granular middleware capability profiling for ActiveMQ Artemis 2.33.0, Infinispan 15.0.3, PostgreSQL 16, HAPI FHIR R5 JPA, Matrix Synapse 1.120.0, and WildFly 31.
   - Complete dual-dimension configuration register separating Infrastructure Configuration from Application Configuration.
@@ -54,7 +54,7 @@ By eliminating tribal knowledge and replacing fragmented notes with mathematical
 7. **Agora & Matrix Synapse Integration**: Full documentation of Agora’s role as a Matrix Application Service (AS), identity mapping, hierarchical Patient Space creation (Statistics, Tasks, Discussion, Diagnostics child rooms), Synapse Admin API usage, and the 8 Agora ADRs.
 8. **Paradeigma First-Class Simulation & Isolation**: Comprehensive specifications of synthetic personas, clinical scenario runners, fault injection, and the strict compile-time, package, and runtime isolation invariants enforced via ArchUnit tests.
 9. **Zero-PHI Diagnostic Logging**: Clear articulation of the logging hierarchy, demonstrating that `INFO`, `WARN`, and `ERROR` log streams are strictly free of PHI, while `DEBUG` and `TRACE` emit clinical context exclusively through the gated `PhiLogger` API to isolated destinations.
-10. **Dual-Layer Documentation Parity**: Both the Markdown documentation in `docs/` and the formal LaTeX reference in `docs/latex/` must describe the exact same reconciled architectural baseline without contradictions.
+10. **Dual-Layer Documentation Parity**: Both the Markdown documentation in `docs/` and the formal LaTeX reference in `../../docs/latex-legacy` must describe the exact same reconciled architectural baseline without contradictions.
 
 ### Non-Functional Requirements
 - **Empirical Grounding**: Every documented class name, configuration key, port number, queue name, and cache identifier must match the codebase exactly.
@@ -80,7 +80,7 @@ Harmonia is an enterprise-grade Health Integration Environment engineered for hi
 1. **Empirical Factuality over Aspiration**: To maximize real-world utility and prevent engineering errors, every documented component will be verified against existing code and tagged with `[IMPLEMENTED]`, `[CONFIGURED]`, `[DESIGNED/PLANNED]`, or `[EXAMPLE/REFERENCE]`.
 2. **Dual-Layer Documentation Parity**: Maintain two synchronized forms of documentation:
    - **Repository Markdown (`docs/`)**: Highly accessible, browsable developer and operator reference.
-   - **Formal LaTeX Publication (`docs/latex/`)**: Exhaustive, publication-quality technical reference formatted with ArchiMate 3.2 TikZ diagrams.
+   - **Formal LaTeX Publication (`../../docs/latex-legacy`)**: Exhaustive, publication-quality technical reference formatted with ArchiMate 3.2 TikZ diagrams.
 3. **Dual-Dimension Configuration Discipline**: Strictly isolate Infrastructure parameters (Kubernetes resource limits, volume mounts, probes, replica counts) from Application/Code parameters (Spring Boot properties, Jakarta annotations, cache TTLs, broker URLs).
 4. **Architectural Grounding of Agora**: Position Agora as a collaboration adapter that projects authoritative Harmonia context into Matrix, explicitly stating that Matrix metadata is subordinate to Mnemosyne FHIR storage.
 5. **Strict Isolation of Paradeigma**: Rigorously document and verify the one-way dependency boundary: Paradeigma may invoke public Harmonia APIs (MLLP, FHIR REST), but production modules must never import or depend on Paradeigma.
@@ -228,7 +228,7 @@ docs/
     └── glossary.md
 ```
 
-### Formal LaTeX Master Architecture (`docs/latex/main.tex`)
+### Formal LaTeX Master Architecture (`../../docs/latex-legacy`)
 The formal technical reference will be structured into 9 Parts and 12 Appendices:
 - **PART I — FOUNDATIONS**: Chapters 1–6 (Motivation, Vision, Principles, Terminology, Architecture at a Glance, Capability Model).
 - **PART II — PLATFORM ARCHITECTURE**: Chapters 7–16 (Subsystem chapters: Hestia, Pylai, Petasos, Energeia, Calliope, Themis, Iris, Agora, Provider Registry, Paradeigma).
@@ -302,7 +302,7 @@ Verification of the documentation program must be executed with rigorous enginee
    - Verify that all production modules (`calliope`, `themis`, `hestia`, `petasos`, `energeia`, `pylai`, `iris`, `agora`) maintain zero dependencies on `paradeigma`.
    - Confirm that ArchUnit architecture tests in `paradeigma/paradeigma-test` validate the isolation boundary.
 5. **LaTeX Automated Compilation & Visual Quality**:
-   - Execute full compilation via `latexmk -pdf -interaction=nonstopmode main.tex` in `docs/latex/`.
+   - Execute full compilation via `latexmk -pdf -interaction=nonstopmode main.tex` in `../../docs/latex-legacy`.
    - Ensure zero fatal compilation errors, zero missing citations, and zero broken cross-references (no `??` markers in output PDF).
    - Ensure all TikZ diagrams fit within standard A4 margins with clean ArchiMate 3.2 styling.
 6. **Markdown Link & Navigation Integrity**:
@@ -368,7 +368,7 @@ Complete architectural, operational, and isolation documentation for the Agora c
 ### ✓ Step 5: Expand Formal LaTeX Technical Publication and Verify Cross-Repository Accuracy
 The master LaTeX publication is comprehensively expanded into 9 formal parts and 12 appendices with vector TikZ diagrams, passing clean automated compilation.
 
-- Restructure `docs/latex/main.tex` into the formal 9-part publication structure: Part I (Foundations), Part II (Platform Architecture), Part III (Information & Integration), Part IV (Middleware), Part V (Runtime Architecture), Part VI (Normal Deployment), Part VII (Paradeigma), Part VIII (Development), and Part IX (Operations).
+- Restructure `../../docs/latex-legacy` into the formal 9-part publication structure: Part I (Foundations), Part II (Platform Architecture), Part III (Information & Integration), Part IV (Middleware), Part V (Runtime Architecture), Part VI (Normal Deployment), Part VII (Paradeigma), Part VIII (Development), and Part IX (Operations).
 - Author and expand all technical chapters across Parts I through IX, embedding the 12 formal reference registers in Appendices A through L (Glossary, System Inventory, Module Register, Middleware Matrix, Config Register, Port Register, Image Register, K8s Register, Persistence Register, Dependency Matrix, Normal Checklist, Paradeigma Checklist).
 - Render standardized vector TikZ architecture diagrams for all 25 core concepts, workflows, deployment topologies, and sequence interactions using ArchiMate 3.2 styling rules.
 - Integrate the Agora collaboration gateway chapter (`05a-collaboration-agora.tex`), Synapse middleware chapter, and expanded Provider Registry specification.

@@ -7,7 +7,7 @@ Discover, extract, compare, and reconcile existing repository evidence relevant 
 
 ### Task Activity
 Execute an exhaustive multi-source analysis across the Harmonia repository covering:
-- LaTeX source specifications (`docs/latex/chapters/01-motivation-strategy.tex`, `01-motivation-strategy-old.tex`, `01-foundations.tex`, `02-conceptual-taxonomy.tex`, `02-business-layer.tex`, `styles/harmonia-archimate.sty`, and `diagrams/fig-motivation-map.tex`).
+- LaTeX source specifications (`../../docs/latex-legacy`, `01-motivation-strategy-old.tex`, `01-foundations.tex`, `02-conceptual-taxonomy.tex`, `02-business-layer.tex`, `styles/harmonia-archimate.sty`, and `diagrams/fig-motivation-map.tex`).
 - Markdown architectural baselines (`docs/concepts/` [all 22 files], `docs/architecture/` [10 files], and `docs/markdown/01-motivation/` [canonical 13-file model]).
 - Strategic architectural position brief (`docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`).
 - Extraction and classification of candidate capabilities (decoupled from named software components and categorized by evidence derivation type).
@@ -34,12 +34,12 @@ It explicitly avoids stating:
 
 ### Sources Reviewed
 1. **Master LaTeX Specification**:
-   - `docs/latex/chapters/01-motivation-strategy.tex` & `01-motivation-strategy-old.tex`: Historical merged Motivation and Strategy chapters, Table 1.1 (`tab:strategic_capabilities`), strategic value stream equations.
-   - `docs/latex/chapters/01-foundations.tex`: Platform motivation, HIE context, and foundational principles.
-   - `docs/latex/chapters/02-conceptual-taxonomy.tex`: Conceptual subsystem domains, boundaries, and operational layers.
-   - `docs/latex/chapters/02-business-layer.tex`: Business actors, clinical business services, and detailed 5-stage clinical processes.
-   - `docs/latex/styles/harmonia-archimate.sty`: ArchiMate 3.2 TikZ styling definitions, colors, and node shapes (`archi-capability`, `archi-valuestream`).
-   - `docs/latex/diagrams/fig-motivation-map.tex`: Historical motivation ArchiMate diagram mixing principles, requirements, and component-named capabilities.
+   - `../../docs/latex-legacy` & `01-motivation-strategy-old.tex`: Historical merged Motivation and Strategy chapters, Table 1.1 (`tab:strategic_capabilities`), strategic value stream equations.
+   - `../../docs/latex-legacy`: Platform motivation, HIE context, and foundational principles.
+   - `../../docs/latex-legacy`: Conceptual subsystem domains, boundaries, and operational layers.
+   - `../../docs/latex-legacy`: Business actors, clinical business services, and detailed 5-stage clinical processes.
+   - `../../docs/latex-legacy`: ArchiMate 3.2 TikZ styling definitions, colors, and node shapes (`archi-capability`, `archi-valuestream`).
+   - `../../docs/latex-legacy`: Historical motivation ArchiMate diagram mixing principles, requirements, and component-named capabilities.
 2. **Strategic Position Brief**:
    - `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`: Definitive architectural position brief (24 September 2026) establishing the relationship between the enterprise Local Directory capability (aligned to Australian LDS direction) and the broader multi-purpose platform vision (`HARM-STR-001`, `HARM-LDS-001..012`).
 3. **Canonical Motivation Baseline**:
@@ -133,13 +133,13 @@ The analysis encompassed the complete repository corpus across LaTeX, DOCX, and 
 
 | Source Identifier | Document Path / Location | Architectural Scope & Description | Relevance to Strategy Layer |
 | :--- | :--- | :--- | :--- |
-| **LATEX-01** | `docs/latex/chapters/01-motivation-strategy.tex` | Master specification chapter combining Motivation & Strategy. Defines Table 1.1 (`tab:strategic_capabilities`) and value stream equations. | Primary historical source for capabilities, value streams, and subsystem realization mappings. |
-| **LATEX-01-OLD**| `docs/latex/chapters/01-motivation-strategy-old.tex` | Preceding draft of merged Chapter 1. | Baseline for historical evolution and supersession tracking. |
-| **LATEX-FND** | `docs/latex/chapters/01-foundations.tex` | Foundations chapter defining HIE context, stakeholders, drivers, principles, and strategic value streams. | Primary historical source for 5-stage clinical process value stream and foundational principles. |
-| **LATEX-TAX** | `docs/latex/chapters/02-conceptual-taxonomy.tex` | Taxonomy chapter defining subsystem boundaries (`Iris`, `Pylai`, `Petasos`, `Energeia`, `Hestia`, `Calliope`, `Themis`, `Agora`, `Paradeigma`). | Baseline for extracting strategic intent from named subsystem definitions. |
-| **LATEX-BIZ** | `docs/latex/chapters/02-business-layer.tex` | Business layer specification defining business actors, roles, clinical services, and detailed 5-stage clinical workflows. | Evidence for clinical value stream flow, business services, and business objects. |
-| **LATEX-STY** | `docs/latex/styles/harmonia-archimate.sty` | ArchiMate 3.2 TikZ styling package. Defines node geometry, colors, and line semantics. | Defines visual modeling baseline for `archi-capability` and `archi-valuestream`. Lacks resource/course-of-action styles. |
-| **LATEX-MAP** | `docs/latex/diagrams/fig-motivation-map.tex` | ArchiMate diagram mixing principles, requirements, and component-named capabilities. | Visual evidence of legacy conflation between capabilities and named components. |
+| **LATEX-01** | `../../docs/latex-legacy` | Master specification chapter combining Motivation & Strategy. Defines Table 1.1 (`tab:strategic_capabilities`) and value stream equations. | Primary historical source for capabilities, value streams, and subsystem realization mappings. |
+| **LATEX-01-OLD**| `../../docs/latex-legacy` | Preceding draft of merged Chapter 1. | Baseline for historical evolution and supersession tracking. |
+| **LATEX-FND** | `../../docs/latex-legacy` | Foundations chapter defining HIE context, stakeholders, drivers, principles, and strategic value streams. | Primary historical source for 5-stage clinical process value stream and foundational principles. |
+| **LATEX-TAX** | `../../docs/latex-legacy` | Taxonomy chapter defining subsystem boundaries (`Iris`, `Pylai`, `Petasos`, `Energeia`, `Hestia`, `Calliope`, `Themis`, `Agora`, `Paradeigma`). | Baseline for extracting strategic intent from named subsystem definitions. |
+| **LATEX-BIZ** | `../../docs/latex-legacy` | Business layer specification defining business actors, roles, clinical services, and detailed 5-stage clinical workflows. | Evidence for clinical value stream flow, business services, and business objects. |
+| **LATEX-STY** | `../../docs/latex-legacy` | ArchiMate 3.2 TikZ styling package. Defines node geometry, colors, and line semantics. | Defines visual modeling baseline for `archi-capability` and `archi-valuestream`. Lacks resource/course-of-action styles. |
+| **LATEX-MAP** | `../../docs/latex-legacy` | ArchiMate diagram mixing principles, requirements, and component-named capabilities. | Visual evidence of legacy conflation between capabilities and named components. |
 | **DOCX-STRAT** | `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx` | Strategic Architecture Position Paper (24 Sept 2026). Authored by Mark Hunter. | Authoritative position on enterprise Local Directory capability, multi-purpose scope (`HARM-STR-001`), and requirements (`HARM-LDS-001..012`). |
 | **MD-MOTIV** | `docs/markdown/01-motivation/` (13 files) | Canonical, frozen Domain 01 baseline: stakeholders, drivers, assessments, goals, outcomes, axioms, requirements, constraints. | Authoritative Motivation anchor; mandatory nomenclature reference. |
 | **MD-CONCEPTS**| `docs/concepts/*.md` (22 files) | Subsystem concept specifications detailing etymology, definitions, ownership boundaries, and invariants. | Source for subsystem strategic intent and anti-responsibilities. |
@@ -173,7 +173,7 @@ Evidence Derivation Categories:
   - *Foundational Requirement*: `REQ-FND-001 (Durable Ingress Acceptance Boundary)`
   - *Outcome*: `Outcome 2: Continuous and Resilient Regional Health Information Exchange`
 - **Supporting Source Material**:
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Section 1.5, Table 1.1 ("Clinical Gateway Interfaces -> Pylai").
+  - `../../docs/latex-legacy`, Section 1.5, Table 1.1 ("Clinical Gateway Interfaces -> Pylai").
   - `docs/concepts/pylai.md` & `pylai-gateways.md` (Boundary protocol interface, MLLP framing, REST gateways).
   - `AGENTS.md`, Section 2 (Pylai responsibilities) and Section 3 (Invariant 4 & 9).
 - **Potential Downstream Realisation**: Domain 06 (Integration Architecture) — protocol drivers, boundary validation behavior, non-destructive projection contracts, and socket/connection lifecycle management.
@@ -192,8 +192,8 @@ Evidence Derivation Categories:
   - *Outcome*: `Outcome 1: Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information`
 - **Supporting Source Material**:
   - `docs/Harmonia_Strategy_Local_Directory_and_Broader_Role.docx`, Sections 1–8.
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Table 1.1 ("FHIR Provider Registry").
-  - `docs/latex/chapters/02-business-layer.tex`, Section 2.3 ("FHIR R5 Provider Directory Management Service").
+  - `../../docs/latex-legacy`, Table 1.1 ("FHIR Provider Registry").
+  - `../../docs/latex-legacy`, Section 2.3 ("FHIR R5 Provider Directory Management Service").
 - **Potential Downstream Realisation**: Domain 04 (Information Architecture — directory models) and Domain 11 (Solution Pack: Provider Directory — synchronization adapters, administrative review).
 - **Evidence Derivation Category**: `Explicitly Defined in Source` (strongly articulated in the 24 Sept 2026 Strategic Brief).
 - **Classification Confidence**: `High`
@@ -210,7 +210,7 @@ Evidence Derivation Categories:
   - *Foundational Requirement*: `REQ-FND-001`
   - *Outcome*: `Outcome 1: Reduced Clinical Risk` & `Outcome 2: Continuous Regional Exchange`
 - **Supporting Source Material**:
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Table 1.1 ("Clinical FHIR Information Service").
+  - `../../docs/latex-legacy`, Table 1.1 ("Clinical FHIR Information Service").
   - `docs/concepts/mnemosyne.md` & `hestia-persistence.md` (authoritative durable state, non-destructive progression).
   - `docs/markdown/01-motivation/goals-outcomes/strategic-goals.md`, Goal 5.
 - **Potential Downstream Realisation**: Domain 04 (Information Architecture — longitudinal clinical schemas, versioning semantics) and Domain 07 (Technology Architecture — relational persistence backends).
@@ -229,7 +229,7 @@ Evidence Derivation Categories:
   - *Axioms*: `AX-10 (Failure as Normal Condition)`, `AX-15 (Uncertainty Is Preserved Until Resolved)`
   - *Outcome*: `Outcome 2: Continuous and Resilient Regional Health Information Exchange`
 - **Supporting Source Material**:
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Table 1.1 ("High-Availability Messaging -> Petasos").
+  - `../../docs/latex-legacy`, Table 1.1 ("High-Availability Messaging -> Petasos").
   - `docs/concepts/petasos.md` & `petasos-messaging.md` (pure Java transport abstraction, Artemis isolation).
   - `AGENTS.md`, Section 3 (Invariant 2: Petasos API Abstraction).
 - **Potential Downstream Realisation**: Domain 07 (Technology Architecture — messaging broker topology, clustering) and Domain 06 (Integration Architecture — queue/topic routing patterns).
@@ -248,7 +248,7 @@ Evidence Derivation Categories:
   - *Foundational Requirement*: `REQ-FND-002 (Observable Activity Progression)` & `REQ-FND-004 (Indeterminate State & Controlled Recovery)`
   - *Outcome*: `Outcome 2: Continuous and Resilient Regional Health Information Exchange`
 - **Supporting Source Material**:
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Table 1.1 ("Modular Task Execution -> Energeia").
+  - `../../docs/latex-legacy`, Table 1.1 ("Modular Task Execution -> Energeia").
   - `docs/concepts/energeia.md`, `ponos.md`, `ergon.md`, `praxis.md`, `pragma.md`.
   - `AGENTS.md`, Section 3 (Invariant 5: Destination Fan-Out State Tracking).
 - **Potential Downstream Realisation**: Domain 05 (Application Architecture — activity unit execution models, state machine tracking, fan-out sub-task coordination).
@@ -265,8 +265,8 @@ Evidence Derivation Categories:
   - *Axioms*: `AX-05 (Active Coordination ≠ Authoritative State)`, `AX-11 (Responsive & Resilient Access)`
   - *Outcome*: `Outcome 2: Continuous and Resilient Regional Health Information Exchange`
 - **Supporting Source Material**:
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Table 1.1 ("In-Memory Cache Grid -> Hestia Mneme").
-  - `docs/latex/chapters/01-foundations.tex`, Section 1.3 (Goal 3: Sub-Millisecond Cache Response).
+  - `../../docs/latex-legacy`, Table 1.1 ("In-Memory Cache Grid -> Hestia Mneme").
+  - `../../docs/latex-legacy`, Section 1.3 (Goal 3: Sub-Millisecond Cache Response).
   - `docs/concepts/mneme.md` (active, reconstructable, non-authoritative distributed cache).
   - `AGENTS.md`, Section 3 (Invariant 8: Mneme / Mnemosyne State Separation).
 - **Potential Downstream Realisation**: Domain 07 (Technology Architecture — distributed caching topologies) and Domain 05 (Application Architecture — active state query contracts).
@@ -282,7 +282,7 @@ Evidence Derivation Categories:
   - *Outcome*: `Outcome 1: Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information`
   - *Axioms*: `AX-01 (Health-Information Centricity)`, `AX-06 (Explicit Information Authority)`
 - **Supporting Source Material**:
-  - `docs/latex/chapters/01-motivation-strategy.tex`, Table 1.1 ("Longitudinal Clinical Record Presentation -> Iris-Clinical").
+  - `../../docs/latex-legacy`, Table 1.1 ("Longitudinal Clinical Record Presentation -> Iris-Clinical").
   - `docs/concepts/iris.md` (presentation services, decoupled clinical and administrative web applications).
   - `AGENTS.md`, Section 3 (Invariant 3: Iris Presentation Decoupling).
 - **Potential Downstream Realisation**: Domain 05 (Application Architecture: Presentation Tier — Vue 3 SPAs, Backend-For-Frontend gateway, user session management).
@@ -335,7 +335,7 @@ Evidence Derivation Categories:
   - *Outcome*: `Outcome 2: Continuous Regional Exchange`
 - **Supporting Source Material**:
   - `docs/concepts/agora.md` (collaboration projection, Matrix Synapse integration).
-  - `docs/latex/chapters/02-conceptual-taxonomy.tex`, Section 2.7 (Collaboration Services).
+  - `../../docs/latex-legacy`, Section 2.7 (Collaboration Services).
   - `AGENTS.md`, Section 3 (Invariant 10: Agora Collaboration & Matrix Isolation).
 - **Potential Downstream Realisation**: Domain 05 (Application Architecture — collaboration service adapters, Matrix DTO encapsulation).
 - **Evidence Derivation Category**: `Derived from Component Responsibilities` / `Weakly Supported` in core motivation.
@@ -352,7 +352,7 @@ Evidence Derivation Categories:
   - *Guardrails*: `AGENTS.md` Invariant 1 (Paradeigma Production Isolation).
 - **Supporting Source Material**:
   - `docs/concepts/paradeigma.md` (synthetic clinical simulation, actor emulators).
-  - `docs/latex/chapters/02-conceptual-taxonomy.tex`, Section 2.8.
+  - `../../docs/latex-legacy`, Section 2.8.
   - `AGENTS.md`, Section 3 (Invariant 1).
 - **Potential Downstream Realisation**: Domain 10 (Verification & Simulation Architecture — synthetic profile generators, isolated test harnesses).
 - **Evidence Derivation Category**: `Derived from Component Responsibilities` (abstracted from `Paradeigma`).
@@ -410,7 +410,7 @@ The repository reveals several strategic architectural approaches that Harmonia 
 #### Candidate Approach 1: Boundary Membrane Sovereignty
 - **Description**: Terminate external messaging protocols at dedicated boundary gateways, converting external wire formats into internal canonical representations upon ingress and projecting internally managed representations into standards upon egress, ensuring that external protocols never dictate internal runtime semantics.
 - **7-Question Evaluation**:
-  1. *Source Evidence*: `docs/latex/chapters/01-motivation-strategy.tex`, `pylai.md`, `AX-02`, `AX-13`, `AGENTS.md` Invariant 9.
+  1. *Source Evidence*: `../../docs/latex-legacy`, `pylai.md`, `AX-02`, `AX-13`, `AGENTS.md` Invariant 9.
   2. *Genuinely Selected Approach*: Yes. Harmonia deliberately chooses a membrane architecture over end-to-end pass-through or generic point-to-point bridging.
   3. *Principle vs. Approach*: `AX-02` ("Standards at the boundary; Harmonia within") and `AX-13` ("Publication Terminates Management") are governing Principles. Deploying an isolating membrane adapter layer that enforces this boundary is the strategic Course of Action.
   4. *Requirement or Guardrail*: Implements `REQ-FND-001` and Invariant 9.
@@ -621,7 +621,7 @@ Material identified across the repository that is historical, superseded, or con
 | **Component Names Labeled as Capabilities** | `01-motivation-strategy.tex`, Table 1.1; `fig-motivation-map.tex` | Equating software components (`Pylai`, `Petasos`, `Mneme`, `Energeia`) with capabilities violates ArchiMate 3.2. | **Rewrite & Decouple**: Decouple capabilities from component names in Domain 02; map components as downstream realisations in Domain 05. | No (Standard ArchiMate compliance) |
 | **Write-Behind Caching as Exclusive Persistence Model** | `01-foundations.tex`, Section 1.4; `01-motivation-strategy.tex` | Historical drafts assert workflow pipelines write exclusively to cache, which asynchronously writes to disk. `AX-05` and recent convergence establish that Mneme is ephemeral/reconstructable, and Mnemosyne alone holds authoritative truth. | **Potentially Superseded — Requires Human Review**: Document that write-behind as the sole persistence mechanism is questioned; human architect must decide whether it is fully superseded or retained as an optional optimization. | **YES (Critical Architectural Decision)** |
 | **LDS as Whole-of-Harmonia Scope** | Early project drafts & preliminary scopes | Conflating the Local Directory Solution with the entire platform scope conflicts with the multi-purpose vision. | **Reclassify & Bound**: Superseded by Strategic Position Brief (24 Sept 2026); classify LDS as a Domain 11 Solution Pack running on core platform capabilities (`HARM-STR-001`). | No (Established by approved position brief) |
-| **ArchiMate Motivation Map (Old Diagram)** | `docs/latex/diagrams/fig-motivation-map.tex` | Mixes principles, requirements, and component-named capabilities in a legacy layout that contradicts canonical Domain 01. | **Retire from Strategy**: Retire from canonical Domain 02; replace with clean ArchiMate 3.2 Strategy views when authoring occurs. | No (Historical LaTeX artifact) |
+| **ArchiMate Motivation Map (Old Diagram)** | `../../docs/latex-legacy` | Mixes principles, requirements, and component-named capabilities in a legacy layout that contradicts canonical Domain 01. | **Retire from Strategy**: Retire from canonical Domain 02; replace with clean ArchiMate 3.2 Strategy views when authoring occurs. | No (Historical LaTeX artifact) |
 | **Direct DB Calls from Presentation Tier** | Historical concept notes | Early notes blurred whether Iris could directly query PostgreSQL for speed. `AGENTS.md` Invariant 3 strictly forbids Iris from depending on JPA/PostgreSQL. | **Superseded**: Formally superseded by `AGENTS.md` Invariant 3 and `IrisDecouplingArchitectureTest`. | No (Enforced by automated ArchUnit tests) |
 
 ---

@@ -58,7 +58,7 @@ Architecture Domains
 - **Authoring Pass B**: Strategic Resources, Courses of Action, and the detailed Strategic Logical Component responsibility model remain strictly deferred.
 - **Authoring Pass C**: The strategic Clinical Value Stream and motivation traceability matrices remain strictly deferred.
 - **New Capabilities or Taxonomy Redesign**: No new Business Capabilities, Enabling Capabilities, or Enterprise Capabilities may be invented.
-- **Downstream Artifacts**: No modifications to LaTeX source files (`docs/latex/`), ODT documents, or production code.
+- **Downstream Artifacts**: No modifications to LaTeX source files (`../../docs/latex-legacy`), ODT documents, or production code.
 
 ---
 

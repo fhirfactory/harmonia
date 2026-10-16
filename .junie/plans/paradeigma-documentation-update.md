@@ -5,13 +5,13 @@ sessionId: session-260916-142045-147e
 # Requirements
 
 ### Overview & Goals
-The objective of this task is to provide complete, publication-grade documentation for the `Paradeigma` simulation and testbed subsystem across both the LaTeX architecture specification (`docs/latex/`) and the LibreOffice OpenDocument Text specification (`docs/libreoffice/`). 
+The objective of this task is to provide complete, publication-grade documentation for the `Paradeigma` simulation and testbed subsystem across both the LaTeX architecture specification (`../../docs/latex-legacy`) and the LibreOffice OpenDocument Text specification (`docs/libreoffice/`). 
 
 With the recent introduction of HL7 FHIR R5 Provider Registry simulation capabilities and Themis security/authorization fixtures, the documentation must be updated to give developers and systems integrators clear, practical instructions for configuring, executing, and verifying all simulator modules, deterministic data generators, security actors, and test scenarios.
 
 ### Scope
 - **In Scope**:
-  - Updating `docs/latex/chapters/appendix-paradeigma.tex` with comprehensive sections covering:
+  - Updating `../../docs/latex-legacy` with comprehensive sections covering:
     - Dedicated FHIR R5 Provider Registry synthetic generators and topological graph builders (`SyntheticProviderRegistryGenerator`).
     - Standardized Australian digital health identifiers (HPI-I, HPI-O, AHPRA, SNOMED CT).
     - Themis security actors catalog (`ParadeigmaSecurityActors`), security contexts (`SecurityScenarioContext`), and negative testing authorization failure seams.
@@ -40,13 +40,13 @@ With the recent introduction of HL7 FHIR R5 Provider Registry simulation capabil
 # Technical Design
 
 ### Current Implementation
-- `docs/latex/chapters/appendix-paradeigma.tex` documents the original 4 hospital MLLP simulators (`PAS`, `EMR`, `LMS`, `RIS-PACS`), 9-step Patient Journey, and `FailureSimulator` fault injection, but lacks documentation for the new Provider Registry generators, Themis security simulation actors, PHI log testing probes, and unified configuration/execution guides.
-- `docs/latex/main.tex` includes chapters 1--6 and appendices A--F (`appendix-paradeigma`, `appendix-mllp-services`, `appendix-ergon-module`, `appendix-praxis-workflow`, `appendix-provider-registry`, `appendix-phi-logging`).
+- `../../docs/latex-legacy` documents the original 4 hospital MLLP simulators (`PAS`, `EMR`, `LMS`, `RIS-PACS`), 9-step Patient Journey, and `FailureSimulator` fault injection, but lacks documentation for the new Provider Registry generators, Themis security simulation actors, PHI log testing probes, and unified configuration/execution guides.
+- `../../docs/latex-legacy` includes chapters 1--6 and appendices A--F (`appendix-paradeigma`, `appendix-mllp-services`, `appendix-ergon-module`, `appendix-praxis-workflow`, `appendix-provider-registry`, `appendix-phi-logging`).
 - `docs/libreoffice/scripts/generate_odt.py` converts LaTeX chapters to `harmonia-architecture-specification.odt`. Its `chapter_files` list currently omits `appendix-phi-logging.tex`.
 
 ### Proposed Changes
 
-#### 1. LaTeX Documentation Updates (`docs/latex/chapters/appendix-paradeigma.tex`)
+#### 1. LaTeX Documentation Updates (`../../docs/latex-legacy`)
 - **Section: Provider Registry Simulation & Synthetic Generators**:
   - Document `PractitionerGenerator`, `PractitionerRoleGenerator`, `OrganizationGenerator`, `LocationGenerator`, `HealthcareServiceGenerator`, `EndpointGenerator`, and `GroupGenerator`.
   - Detail Australian digital health identifiers (HPI-I: `800361...`, HPI-O: `800362...`, AHPRA, SNOMED CT).
@@ -74,7 +74,7 @@ With the recent introduction of HL7 FHIR R5 Provider Registry simulation capabil
 - Verify table and listing parser compatibility for the expanded `appendix-paradeigma.tex` content.
 
 ### File Structure Modifications
-- `docs/latex/chapters/appendix-paradeigma.tex`: Enhanced with Provider Registry, Security, Logging, Configuration, and Execution sections.
+- `../../docs/latex-legacy`: Enhanced with Provider Registry, Security, Logging, Configuration, and Execution sections.
 - `docs/libreoffice/scripts/generate_odt.py`: Updated chapter inclusions.
 - `docs/libreoffice/harmonia-architecture-specification.odt`: Regenerated and validated binary output.
 
@@ -85,8 +85,8 @@ The changes will be validated by executing the automated document build pipeline
 
 ### Key Scenarios
 1. **LaTeX Document Compilation**:
-   - Execute `make clean` followed by `make pdf` (or Docker-based compilation if local TeX Live is unavailable) in `docs/latex/`.
-   - Verify that compilation completes without errors and produces `docs/latex/main.pdf`.
+   - Execute `make clean` followed by `make pdf` (or Docker-based compilation if local TeX Live is unavailable) in `../../docs/latex-legacy`.
+   - Verify that compilation completes without errors and produces `../../docs/latex-legacy`.
    - Confirm table of contents, list of figures, list of tables, and cross-references resolve properly.
 
 2. **LibreOffice ODT Generation & Validation**:
@@ -104,7 +104,7 @@ The changes will be validated by executing the automated document build pipeline
 # Delivery Steps
 
 ### ✓ Step 1: Document Provider Registry, Security, and PHI Logging Subsystems in LaTeX
-Expand `docs/latex/chapters/appendix-paradeigma.tex` to thoroughly document the provider registry synthetic generators, Themis security fixtures, and PHI logging test probes.
+Expand `../../docs/latex-legacy` to thoroughly document the provider registry synthetic generators, Themis security fixtures, and PHI logging test probes.
 
 - Add documentation for the 7 FHIR R5 generators (`PractitionerGenerator`, `PractitionerRoleGenerator`, `OrganizationGenerator`, `LocationGenerator`, `HealthcareServiceGenerator`, `EndpointGenerator`, `GroupGenerator`) and `SyntheticProviderRegistryGenerator` graph topologies.
 - Detail Australian digital health identifier rules (HPI-I, HPI-O, AHPRA, SNOMED CT) and seed determinism.
@@ -112,7 +112,7 @@ Expand `docs/latex/chapters/appendix-paradeigma.tex` to thoroughly document the 
 - Detail `PhiLogTestProbe`, dual-gate logging validation, `SecretLeakageAssertion`, and include a multi-capability worked code listing.
 
 ### ✓ Step 2: Add Configuration Matrix and Step-by-Step Execution Instructions in LaTeX
-Add comprehensive configuration parameters and step-by-step execution guides to `docs/latex/chapters/appendix-paradeigma.tex`.
+Add comprehensive configuration parameters and step-by-step execution guides to `../../docs/latex-legacy`.
 
 - Add a structured Configuration Reference table detailing simulator properties, port allocations, Themis policy flags, and PHI logging switches (`harmonia.logging.phi-enabled`).
 - Add step-by-step CLI execution instructions for Maven builds (`mvn clean install`, `mvn test`), individual Spring Boot microservices, and Docker Compose orchestration (`docker-compose-paradeigma.yml`).
@@ -125,4 +125,4 @@ Synchronize the LibreOffice generator script and regenerate the master OpenDocum
 - Update `docs/libreoffice/scripts/generate_odt.py` to include `appendix-phi-logging.tex` in the chapter compilation sequence alongside the updated `appendix-paradeigma.tex`.
 - Verify the parser compatibility for all newly added LaTeX environments (tables, code listings, callout boxes).
 - Execute `make build` and `make validate` in `docs/libreoffice/` to generate and validate `harmonia-architecture-specification.odt`.
-- Validate LaTeX compilation via `docs/latex/Makefile` (`make pdf` / `make clean`).
+- Validate LaTeX compilation via `../../docs/latex-legacy` (`make pdf` / `make clean`).

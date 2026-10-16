@@ -155,7 +155,7 @@ In strict adherence to the Authoring Pass A boundaries:
 - **Strategic Logical Component Responsibility Model**: Detailed component boundary specifications and capability-to-component mappings remain deferred to **Pass B**.
 - **Strategic Clinical Value Stream**: Formulation of the canonical Clinical Value Stream remains deferred to **Pass C**.
 - **Motivation Traceability & Downstream Handoffs**: Traceability matrices to Domain 01 and handoff contracts to Domains 03–13 remain deferred to **Pass C**.
-- **Legacy Publications & Code**: Zero modifications were made to LaTeX sources (`docs/latex/`), ODT documents, or production code.
+- **Legacy Publications & Code**: Zero modifications were made to LaTeX sources (`../../docs/latex-legacy`), ODT documents, or production code.
 
 ---
 

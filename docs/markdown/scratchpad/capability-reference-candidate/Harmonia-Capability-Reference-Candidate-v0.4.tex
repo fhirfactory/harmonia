@@ -9,27 +9,24 @@
 \makeindex
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
-\newcommand{\reviewstatus}[1]{\par\smallskip\noindent\fcolorbox{gray}{gray!8}{\parbox{0.92\linewidth}{\textbf{Review:} #1}}\par\smallskip}
 \newcommand{\reviewcomment}[1]{\par\smallskip\noindent\fcolorbox{gray}{gray!8}{\parbox{0.92\linewidth}{\textbf{Review Comment:} #1}}
-\par\smallskip}
-\newcommand{\enabledby}[1]{\par\smallskip\noindent\fcolorbox{gray}{gray!8}{\parbox{0.92\linewidth}{\textbf{EnabledBy:} #1}}
-\par\smallskip}
-\newcommand{\supports}[1]{\par\smallskip\noindent\fcolorbox{gray}{gray!8}{\parbox{0.92\linewidth}{\textbf{Supports:} #1}}
-\par\smallskip}
-\newcommand{\derivedfrom}[1]{\par\smallskip\noindent\fcolorbox{gray}{gray!8}{\parbox{0.92\linewidth}{\textbf{DerivedFrom:} #1}}
 \par\smallskip}
 
 \newcommand{\featuretable}[1]{%
-{%
-\small
-\begin{longtable}{@{}p{.14\linewidth}|p{.15\linewidth}|p{.30\linewidth}|p{.32\linewidth}@{}}
-\toprule Type & ID & Name & Description / Notes\\\midrule\endhead
-#1
-\bottomrule\end{longtable}
-}%
+  {%
+  \small
+  \begin{longtable}{@{}p{.14\linewidth}|p{.15\linewidth}|p{.30\linewidth}|p{.32\linewidth}@{}}
+  \toprule Type & ID & Name & Description / Notes\\\midrule\endhead
+  #1
+  \bottomrule\end{longtable}
+  }%
+}
 \title{Harmonia\\Capability Architecture Reference Book\\\large Full-Candidate Working Draft, Version 0.4}
 \author{Architecture Review Working Copy}
 \date{15 October 2026}
+
+\renewcommand{\parindent}{0em}
+
 \begin{document}
 \frontmatter\maketitle\tableofcontents
 \mainmatter
@@ -58,7 +55,7 @@ This is a deliberately inclusive, reviewable candidate reference architecture, n
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Individual Health Assessment}\label{cap:bc-aa0d9b50}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -946,7 +943,7 @@ Unresolved / stopping-point note: [STOPPING POINT] CT3 taxonomy intentionally no
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Care Access Management}\label{cap:bc-fa41a886}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -1888,7 +1885,7 @@ Unresolved / stopping-point note: [STOPPING POINT] CT3 taxonomy intentionally no
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \chapter{CT1 - Diagnostic, Therapeutic \& Clinical Support Services}\label{cap:bc-c705c8ad}
 \noindent\textbf{Reference ID:} \texttt{BC-C705C8AD}\quad \textbf{Status:} Established working hierarchy\par
 \noindent\textit{Source: Canonical Business Capability model / working map}\par
@@ -1896,7 +1893,7 @@ Unresolved / stopping-point note: [STOPPING POINT] CT3 taxonomy intentionally no
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Medication \& Pharmacy Services}\label{cap:bc-e0be8a8a}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -2548,7 +2545,7 @@ Unresolved / stopping-point note: [OI] Medication Compounding and Preparation
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Product Management}\label{cap:bc-d7ffdedc}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -3052,7 +3049,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Clinical Safety Management}\label{cap:bc-5b2a0e55}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -3502,7 +3499,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Preventative Health}\label{cap:bc-80da636c}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -3856,7 +3853,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Population Health Surveillance}\label{cap:bc-a6f4ca49}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -4356,7 +4353,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Information Management}\label{cap:bc-e21b0f21}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -5106,7 +5103,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Information Standards Governance}\label{cap:bc-c01c01b9}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -6056,7 +6053,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Information Exchange}\label{cap:bc-1a2c0473}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -6952,7 +6949,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Digital Identity \& Access Governance}\label{cap:bc-0d570829}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -7848,7 +7845,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Research Information Support}\label{cap:bc-5fd1c13a}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -8048,7 +8045,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Service Modelling}\label{cap:bc-25bc222b}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -8548,7 +8545,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Workforce Management}\label{cap:bc-b7de9919}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -8948,7 +8945,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Financial \& Commercial Services}\label{cap:bc-3618d6d1}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -9398,7 +9395,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Governance Framework Management}\label{cap:bc-5998319b}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -9698,7 +9695,7 @@ Unresolved CT2 framing: [CT2?] Health Product Management
 
 \textbf{Boundary:} Harmonia relevance may arise because this activity establishes the context in which information is created, needed, interpreted, related, exchanged or presented. Responsibility for the underlying business decision or care activity remains with the appropriate actor or organisation.
 
-\reviewstatus{Check scope and information relevance; no business authority transfers to Harmonia.}
+\reviewcomment{Check scope and information relevance; no business authority transfers to Harmonia.}
 \section{CT2 - Health Service Assurance Specification}\label{cap:bc-a0266334}
 \vspace{-0.5em}
 \begin{table}[htbp]
@@ -10004,7 +10001,6 @@ Boundary. This capability supports the business activity and does not inherit th
   \centering
   \footnotesize
   \begin{tabularx}{1\textwidth}{|l|l|X|}
-    \hline
     \multicolumn{3}{c}{\textbf{Capability Metadata}} \\
     \hline
     \textbf{Name} & \textbf{Value} & \textbf{Comment and/or Description} \\
@@ -10032,7 +10028,6 @@ Boundary. This capability supports the business activity and does not inherit th
   \centering
   \footnotesize
   \begin{tabularx}{1\textwidth}{|l|l|X|}
-    \hline
     \multicolumn{3}{c}{\textbf{Contained Capabilities}} \\
     \hline
     \textbf{Capability Name} & \textbf{Capability Id} & \textbf{Comment} \\
@@ -10125,7 +10120,9 @@ FHIR R5 conceptual analogues considered (not implementation mappings): Person, P
   \footnotesize
   \begin{tabularx}{1\textwidth}{|l|l|X|}
     \hline
-    \textbf{Metadata Name} & \textbf{Metadata Value} & \textbf{Description} \\
+    \multicolumn{3}{c}{\textbf{Capability Metadata}} \\
+    \hline
+    \textbf{Name} & \textbf{Value} & \textbf{Comment and/or Description} \\
     \hline
     \textbf{Reference Id} & \texttt{BEC-1ACD822D} & \\
     \hline
@@ -10135,7 +10132,7 @@ FHIR R5 conceptual analogues considered (not implementation mappings): Person, P
     \hline
     \textbf{Source} & FEAT-EM-01 & \\
     \hline
-    \textbf{Enabled By} & \ref{cap:ec-461b8f05 & \\
+    \textbf{Enabled By} & \ref{cap:ec-461b8f05} & \\
     \hline
     \textbf{Supports} &  & \\
     \hline
@@ -10149,11 +10146,12 @@ FHIR R5 conceptual analogues considered (not implementation mappings): Person, P
 Intent. Identifier Resolution provides a distinct enabling behaviour in the context of Person Identity. This is an existing named Feature; its placement under the candidate CT3 remains subject to review.
 
 \noindent\textbf{Feature boundary.} This behaviour is scoped to Person Identity; an identically named Feature elsewhere may carry different business meaning.\par
+
 \featuretable{
 Function & \texttt{FN-D225B2B0} & Resolve Person Identifier & Catalogue \\
 Service & \texttt{SV-63F14B3F} & Person Identifier Resolution & Linked to preceding Function in source \\
 }
-}
+
 \reviewcomment{None.}
 \subsubsection{Feature - Cross-Authority Identifier Correlation}\label{cap:bec-3e1d6ba5}
 \vspace{-1em}
@@ -39784,4 +39782,6 @@ Explicit exclusion: legacy-documentation and superseded legacy narratives were n
 \chapter{CT1 - Generation Summary}
 BEC CT3 candidates inspected: 73. Existing BEC Feature occurrences retained: 137. Additional candidate BEC Features proposed: 333. Distinct Feature display names: 222. Reference ID entries: 942.
 
-\backmatter\printindex\end{document}
+\backmatter
+\printindex
+\end{document}

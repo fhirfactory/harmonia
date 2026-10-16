@@ -215,7 +215,7 @@ All 16 Business Capability relevance classifications and all Business Enabling L
    - Verified that all intra-domain and cross-document relative Markdown links across all 8 files in `docs/markdown/02-strategy/` resolve cleanly.
 5. **Invariance & Scope Boundary Check**:
    - `git status` confirmed zero modifications outside `docs/markdown/02-strategy/` and `.junie/reports/`.
-   - LaTeX source (`docs/latex/`) and production Java code remain completely untouched.
+   - LaTeX source (`../../docs/latex-legacy`) and production Java code remain completely untouched.
    - Strategic Resources, Courses of Action, the Strategic Logical Component model, and the Clinical Value Stream remain strictly deferred.
 
 ---

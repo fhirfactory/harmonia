@@ -1,0 +1,98 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces ArchiMate 3.2 Visual Modeling Notation, Layer Color Palette, and Relationship Types}}{ii}{figure.caption.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces ArchiMate Motivation and Strategy Architecture View for Harmonia HIE}}{2}{figure.caption.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces ArchiMate Motivation and Strategy Architecture View for Harmonia HIE}}{7}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Harmonia Conceptual Layering Stack and Subsystem Interactions}}{10}{figure.caption.11}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ArchiMate Business and Clinical Architecture View for Harmonia HIE}}{13}{figure.caption.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces ArchiMate 5-Tier Application Component Landscape for Harmonia HIE}}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces ArchiMate Themis Policy \& Multi-Tier Defence-in-Depth Security Architecture}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces ArchiMate Petasos Messaging Subsystem \& Clustered Transport Architecture}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces ArchiMate Energeia Workflow Engine \& Sequential Erga Pipeline View}}{23}{figure.caption.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces ArchiMate Component Flow for MLLP Ingress Service Processing Pipeline}}{25}{figure.caption.18}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces ArchiMate Component Flow for MLLP Egress Dispatch Pipeline}}{26}{figure.caption.19}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Petasos Messaging Framework and Artemis Cluster Architecture}}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces ActiveMQ Artemis HA Replication Pairs and Symmetric Cluster Mesh}}{29}{figure.caption.21}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Energeia Workflow Architecture: Ponos WorkEngine, Praxis Sequences \& Ergon Activities}}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Ergon Modular Activity Architecture and Checkpoint Lifecycle}}{34}{figure.caption.24}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Praxis Dynamic Route Synthesis and Multi-Stage Pipeline Execution}}{34}{figure.caption.25}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Iris Presentation Tier and BEFE Gateway Architecture}}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Iris UI Federation, Hot Rod Caching \& REST Endpoint Integration}}{39}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces ArchiMate 3.2 Component and Interaction View for the Iris Presentation Tier and BEFE Gateway}}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Iris Operations Console Shell and Global Navigation Layout}}{45}{figure.caption.32}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces FHIR R5 Provider Registry Entity Relationship and Referential Dependency Graph}}{55}{figure.caption.36}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Provider Registry Change Request State Progression}}{57}{figure.caption.38}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Canonical \texttt {Pragma} State Machine and Lifecycle Progression}}{63}{figure.caption.42}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces ArchiMate Pragma Task State Machine and 5-Phase Checkpoint Lifecycle}}{68}{figure.caption.45}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15.1}{\ignorespaces ArchiMate 3.2 Component Flow for the MLLP Ingress Service Processing Pipeline}}{71}{figure.caption.48}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces ArchiMate 3.2 Component Flow for the MLLP Egress Multi-Instance Dispatch Pipeline}}{77}{figure.caption.51}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {16.1}{\ignorespaces ArchiMate Technology Infrastructure, System Software \& Communication Paths}}{88}{figure.caption.54}%
+\contentsline {figure}{\numberline {16.2}{\ignorespaces ArchiMate Hestia In-Memory Data Grid \& Write-Behind Persistence SPI Architecture}}{89}{figure.caption.55}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {17.1}{\ignorespaces ActiveMQ Artemis 2.33.0 4-Broker Clustered HA Messaging Topology and Journal Replication}}{92}{figure.caption.57}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {18.1}{\ignorespaces Infinispan 15.0.3 Distributed Cache Grid Topology and Hot Rod Integration}}{94}{figure.caption.58}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {22.1}{\ignorespaces MicroK8s 5-Tier Deployment Topology and Add-on Integration}}{102}{figure.caption.60}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {24.1}{\ignorespaces ArchiMate Physical Deployment \& Multi-Broker ActiveMQ Artemis HA Architecture}}{105}{figure.caption.61}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {25.1}{\ignorespaces Themis 4-Gate Defence-in-Depth Authorization Pipeline and PDP Evaluation}}{108}{figure.caption.63}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {26.1}{\ignorespaces Dual-Gate PHI-Aware Logging Architecture and Isolated Logback Routing}}{110}{figure.caption.64}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {32.1}{\ignorespaces ArchiMate 3.2 Physical Infrastructure, MicroK8s Add-ons, and 5-Tier Workload Deployment Topology}}{119}{figure.caption.66}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {33.1}{\ignorespaces Paradeigma Simulation Architecture: Generators, Personas \& Scenario Engine}}{131}{figure.caption.73}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {34.1}{\ignorespaces Normal Production vs Paradeigma Simulation Deployment Isolation Boundary}}{133}{figure.caption.74}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {35.1}{\ignorespaces ArchiMate 3.2 Component Landscape for the Paradeigma Simulation Subsystem}}{136}{figure.caption.76}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {37.1}{\ignorespaces ArchiMate 3.2 Processing Topology and Component Interaction View for an Ergon Activity Module}}{155}{figure.caption.87}%
+\contentsline {figure}{\numberline {37.2}{\ignorespaces Docker Compose Topology for the Ponos Task Processor Container}}{163}{figure.caption.89}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {38.1}{\ignorespaces ArchiMate 3.2 Praxis Workflow Sequence Architecture and Dynamic Route Synthesis Topology}}{166}{figure.caption.91}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {40.1}{\ignorespaces ArchiMate 3.2 View: PHI-Aware Logging Security Architecture and Appender Isolation}}{180}{figure.caption.97}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
