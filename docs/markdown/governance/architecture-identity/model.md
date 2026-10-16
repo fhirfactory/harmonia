@@ -14,16 +14,22 @@ AX-17, govern this model. Engine identity cannot redefine architecture; source,
 navigation, implementation and architectural identity remain distinct; absent
 identity and relationships remain unresolved. This release defines identity
 governance and validation, without changing architectural responsibilities.
-The [release authority](../../../../architecture-release.json) was incremented
-using the established mechanism from 1.0.1 to 1.0.2. Maven is independent.
+The model was established in Release 1.0.2. The
+[release authority](../../../../architecture-release.json) records the current
+release; Maven is independent.
 
 The [inventory and collision report](inventory.md) was produced before allocation.
-It is evidence for review, not a new semantic catalogue. **This release allocates
-and migrates zero construct identities.** [registry.json](registry.json) deliberately
-starts empty; its namespace is a publication algorithm constant, not a construct
+It is evidence for review, not a new semantic catalogue. **Release 1.0.2 allocated
+and migrated zero construct identities.** [registry.json](registry.json) started
+empty; its namespace is a publication algorithm constant, not a construct
 identity. No additional RAD domain, semantic element, relationship or View is
 published. The owner confirms Release 1.0.1 was committed and visually verified,
 including Documentation on the 14 EC elements. Those results are retained.
+
+Release 1.0.3 exercises this unchanged policy through the explicitly authorised
+[14-EC adoption decision](adoption-1.0.3.md). Only EC-01–EC-14 are now registered,
+with their retained native identities and existing locked semantic bindings;
+no new identities are allocated. This does not authorise any further migration.
 
 ## Identity roles
 
@@ -57,8 +63,9 @@ not an allocation of an ArchiMate type or a new domain metamodel.
 
 Existing EC-01–EC-14, AX-01–AX-18, REQ-FND, CST-EXT, COA, SR and VS definition IDs
 already identify governed definitions. Preserve their spelling and meaning. They
-are retained native identities, not renamed to UUIDs. Exact adoption into the
-common register is a later reviewed migration. Candidate requirement IDs in a
+are retained native identities, not renamed to UUIDs. Adoption into the common
+register requires an explicit reviewed decision; the 14 EC adoptions are recorded
+in [Release 1.0.3](adoption-1.0.3.md). Candidate requirement IDs in a
 navigation table, ordinals such as BC-01, local FEAT tokens, C keys, HCM/LaTeX
 publication IDs and XML UUIDs are not assumed to be such retained identities.
 
@@ -119,7 +126,8 @@ does not independently approve an architectural identity decision.
    validation, then update sources/capture/publication bindings as explicitly
    authorised. Capture field meanings and existing names/IDs must not silently
    change. Preserve provenance and prove continuity against the prior accepted
-   register and existing semantic lock. This release performs none of these moves.
+   register and existing semantic lock. Release 1.0.2 performed none of these moves;
+   Release 1.0.3 adopts only the exact EC register bindings and preserves XML bytes.
 
 ## Coverage across architectural constructs
 
@@ -212,5 +220,6 @@ grammar, CM-R05 and publication reference/XSD checks remain separate required ga
 
 Review syntax and coexistence with Domain03 structural identification, the
 inventory, unresolved cases and lifecycle rules before authorising migration.
-Start with the 14 exact EC adoptions if approved. No bulk allocation, naming
-adjudication, F46 repair or additional-domain publication occurs in this release.
+The 14 exact EC adoptions were authorised for Release 1.0.3 and stop for human
+review after validation. No bulk allocation, naming adjudication, F46 repair or
+additional-domain publication is authorised by that decision.

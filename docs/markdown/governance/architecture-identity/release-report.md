@@ -1,35 +1,47 @@
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
-# Governed Architecture Identity — Release 1.0.2
+# First governed identity adoption — Release 1.0.3
 
-Prepared for review: **1.0.1 → 1.0.2**, incremented
-with `scripts/architecture_release.py bump --expect 1.0.1`.
+Prepared for review: **1.0.2 → 1.0.3**, incremented
+with `scripts/architecture_release.py bump --expect 1.0.2`.
 The [root authority](../../../../architecture-release.json) remains the sole current
 release value. Maven is unchanged. No commit or new GUI verification is claimed.
 The owner confirmed the committed Release 1.0.1 publication was visually verified
 and the 14 exact EC Documentation fields display correctly in Archi.
 
-## Delivered model and inventory
+## Adopted identity chain and release counts
 
-The [identity model](model.md) defines lifetime identity, structural/source/
-navigation/semantic/visual/implementation distinctions, lifecycle, provenance and
-migration gates across all domains. It recommends opaque UUIDv4 URNs for future
-allocations, while retaining genuine existing native IDs exactly. Domain03's
-typed structural grammar and capture field meanings remain intact. CM-R05 is
-preserved independently of ID uniqueness. The RAD → ArchiMate mapping is updated.
+The [adoption decision](adoption-1.0.3.md) records the owner's bounded authorisation.
+The [register](registry.json) adopts only EC-01–EC-14, retaining their governed
+native IDs as persistent Architecture Identities, exact authoritative definition
+provenance, qualified source locators, active lifecycle status and existing locked
+semantic UUIDs. No historical aliases were needed. No IDs are rederived from EC
+strings, and the XML gains no properties. The [1.0.2 identity model](model.md),
+schema and immutable publication lock retain their meaning.
 
-The [inventory and collision report](inventory.md) provides coverage by construct
-and all six requested classifications; [inventory.json](inventory.json) includes
-per-record evidence, reasons, source fingerprints and observed ID token occurrences.
-There are **53 native governed definition
-IDs**, **14 safe exact EC adoption candidates**,
-and **214 unresolved baseline capability
-crosswalks**. Populations overlap; counts are not a total architecture census.
+[adoption-validation.json](adoption-validation.json) proves each chain:
+governed RAD definition → retained Architecture Identity → common register →
+locked deterministic semantic binding → existing published element, with its
+unchanged governed Documentation and View references. The
+[frozen 1.0.2 snapshot](adoption-baseline-1.0.2.json) retains pre-adoption evidence
+from commit `a3bc5aa7f38beacf66bb161f7164273cad91b8c4`; validation does not rely on a moving HEAD
+to establish publication continuity after commit.
 
-The empty common [registry](registry.json), [schema](registry.schema.json), validator
-and synthetic regression fixtures establish enforceable identity/history rules.
-**0 identities allocated, 0 migrated; 0 semantic identity changes.** The namespace
-constant is not a construct allocation. No additional RAD domain or View is published.
+| Measure | Expected | Observed |
+| --- | ---: | ---: |
+| Identities adopted | 14 | 14 |
+| New identities allocated | 0 | 0 |
+| Semantic identity changes | 0 | 0 |
+| Visual identity changes | 0 | 0 |
+| Capability semantic changes | 0 | 0 |
+| Capability hierarchy changes | 0 | 0 |
+| Relationship changes / endpoint changes | 0 / 0 | 0 / 0 |
+| Documentation changes | 0 | 0 |
+| Unresolved Capability identities remaining | 214 | 214 |
+
+The [inventory](inventory.md) still identifies 53 native governed definition IDs;
+only the 14 authorised EC bindings are registered. Populations overlap and are
+not a total architecture census.
 
 ## Collisions, uncertainty and retained findings
 
@@ -53,20 +65,24 @@ tokens are not counted as identity collisions.
 
 | Check | Result |
 | --- | --- |
-| Identity inventory and registry/schema/history checks | PASS — 13 identity regression tests included below; empty register, deterministic inventory, exact EC crosswalk and original semantic lock verified |
-| Complete root script suite | PASS — 56 tests; includes 13 identity tests and existing release/Business validation tests |
-| Complete publication suite | PASS — 40 tests; exact Documentation, original identities, Views, references, deterministic generation and portability |
+| Identity register schema, history and bounded adoption | PASS — Exactly 14 retained EC identities; one governed definition and one existing semantic element each; no identity/alias collisions; 21 identity regression tests included in the root suite |
+| Complete root script suite | PASS — 64 tests; 0 failures or errors, including identity, release governance and Business validation |
+| Complete publication suite and regeneration | PASS — 41 tests; 0 failures or errors; deterministic generation, original IDs, Views, exact Documentation and portability |
 | Required architecture suite | PASS — 90 tests; 0 failures, errors or skips |
-| Archi 5.9 bundled Open Exchange XSD | PASS — Serialized publication XML valid against local Model/View/Diagram schemas; offline resolution |
+| Archi 5.9 bundled Open Exchange XSD | PASS — Serialized XML valid against local Model/View/Diagram schemas; offline resolution |
 | RAD Business capture validation | PASS — 0 invalid; exactly 2,467 unresolved dimensions/relationships retained |
-| Identity and publication preservation | PASS — 0 allocations/migrations; XML bytes, 228 capabilities, 189 relationships, all Views and 14 Documentation fields unchanged from committed 1.0.1; baseline and legacy locks unchanged |
-| Source finding preservation | PASS — All source assessment architectural assertions unchanged; Business capture differs only in the reviewed metamodel source fingerprint |
-| Markdown local file targets | PASS — All added/changed document targets resolve |
+| Full identity chain and publication continuity | PASS — 14 adoptions, 0 allocations; semantic IDs, visual IDs, capability content/hierarchy, relationships/endpoints and Documentation all unchanged; byte-identical XML; repeated deterministic generation |
+| Frozen pre-adoption evidence | PASS — All preservation fingerprints and the empty prior register independently match committed Release 1.0.2 at a3bc5aa7f38beacf66bb161f7164273cad91b8c4 |
+| Source provenance and unresolved finding preservation | PASS — Current definition/decision hashes verified independently of accepted history; RAD assertion and collision digests unchanged; F46, 214 capability crosswalks, incomplete IDs, C navigation keys, unresolved assertions and Domain05 deferrals retained |
+| Release governance | PASS — Explicit 1.0.2 to 1.0.3 patch increment; generation does not increment it; no Maven POM/version changes |
+| Markdown local file targets and diff whitespace | PASS — All changed/added Markdown file targets resolve; git diff --check passes |
 
 The original 228 capabilities, 189 Composition relationships, four generated Views,
 retained import diagnostic and 14 Documentation fields are byte-identical to the
-committed publication. Its SHA-256 is `91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a`. Only release/
-assessment evidence is refreshed. The 1.0.1 Documentation report and verification
+committed Release 1.0.2 publication. Its SHA-256 is `91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a`.
+The generated artefact is
+[Harmonia-Capability-Architecture.xml](../../../archimate/capability-architecture/Harmonia-Capability-Architecture.xml).
+The 1.0.1 Documentation report and verification
 snapshot remain historical; this report records the identity release's results.
 No additional Archi import is required to establish byte preservation; no new
 visual inspection is claimed. Later semantic changes still require Archi review.
@@ -76,16 +92,16 @@ visual inspection is claimed. Later semantic changes still require Archi review.
 - `architecture-release.json`
 - `docs/archimate/capability-architecture/Makefile`
 - `docs/archimate/capability-architecture/README.md`
-- `docs/archimate/capability-architecture/tools/assess_rad.py`
+- `docs/archimate/capability-architecture/tests/test_publication_metadata.py`
 - `docs/archimate/capability-architecture/validation.json`
-- `docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md`
-- `docs/markdown/03-business-architecture/reference-model/business-architecture.json`
 - `docs/markdown/governance/README.md`
+- `docs/markdown/governance/architecture-identity/adoption-1.0.3.md`
+- `docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json`
+- `docs/markdown/governance/architecture-identity/adoption-validation.json`
 - `docs/markdown/governance/architecture-identity/inventory.json`
 - `docs/markdown/governance/architecture-identity/inventory.md`
 - `docs/markdown/governance/architecture-identity/model.md`
 - `docs/markdown/governance/architecture-identity/registry.json`
-- `docs/markdown/governance/architecture-identity/registry.schema.json`
 - `docs/markdown/governance/architecture-identity/release-report.md`
 - `docs/markdown/governance/architecture-identity/verification.json`
 - `docs/markdown/governance/rad-archimate-model-mapping.md`
@@ -93,18 +109,25 @@ visual inspection is claimed. Later semantic changes still require Archi review.
 - `scripts/architecture_identity.py`
 - `scripts/tests/test_architecture_identity.py`
 
-Source content outside the listed governance/metamodel clarification and tooling
-changes remains intact. The immutable baseline fixture/semantic lock and legacy
+Authoritative Capability definitions and all source architectural assertions
+remain intact. The immutable baseline fixture/semantic lock and legacy
 publication locks are unchanged. [verification.json](verification.json) pins the
 verified files and results. Commands are bounded; the validator reports missing
 history/authority as failures rather than inventing identities.
 
-## Recommended next slice and stop
+## Unexpected findings and review stop
 
-Review this model and inventory first. If approved, adopt only EC-01–EC-14 into the
-common register with their exact governed IDs, authoritative source fingerprints,
-explicit adoption decisions and already locked semantic UUIDs. This would establish
-registry continuity without allocating new capabilities or publishing another domain.
-Then review the 214 unmapped baseline identities in separate bounded batches.
-Do not bulk-allocate the Business capture or repair F46 as a generator operation.
-This release stops before migration, allocation and additional-domain publication.
+No unexpected architectural or publication finding was established. All pre-existing
+findings above remain explicit. This release stops after the 14 adoptions,
+regeneration and validation for human review. The remaining 214 Capabilities,
+F46 adjudication, Domain03 identity migration, opaque allocation, further domains
+and additional semantic constructs require separate authorisation.
+
+## Canonical Documentation Assessment
+
+The existing Exchange baseline, semantic lock and Documentation manifest outside
+RADS supply the already reviewed publication-binding evidence referenced by the
+governed mapping and identity model. No new architectural knowledge was imported
+from legacy documentation. The authoritative Strategy EC definitions stay in
+RADS; this task records only their authorised identity adoption and continuity.
+No legacy reconciliation or domain completion is claimed.

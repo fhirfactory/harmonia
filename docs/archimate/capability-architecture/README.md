@@ -40,6 +40,13 @@ the regression/rejection tests. `check` validates the published XML, compares it
 byte for byte with fresh generation, and checks the saved validation report
 without writing files. Commands have bounded execution times.
 
+`adoption` refreshes the bounded Release 1.0.3 identity-chain verification;
+`check` also checks that evidence, the identity inventory and the common register.
+These release gates need the repository's governed RAD sources and scripts.
+They prove the 14 retained EC bindings against frozen Release 1.0.2 evidence,
+including unchanged XML bytes, semantic/visual IDs, relationships, Documentation,
+source provenance and unresolved findings. They do not allocate identities.
+
 `report` checks the current [identity release report](../../markdown/governance/architecture-identity/release-report.md)
 against the root authority and its pinned verification evidence. The earlier
 `documentation-publication-report.md` / `release-verification.json` and their
@@ -140,7 +147,9 @@ never bumps the release or changes Maven. A portable copy needs the shared scrip
 in the same repository layout, an explicit `--release-file`, and its governed source.
 The [Documentation release report](documentation-publication-report.md) records
 the 1.0.1 enrichment. The owner has confirmed its Archi visual verification.
-The [current identity model and inventory](../../markdown/governance/architecture-identity/model.md)
-define the next review boundary. Identity release work preserves the publication
-bytes and refreshes only release/assessment evidence. No further semantic slice
-is authorised by establishing an identity mechanism.
+The [identity model](../../markdown/governance/architecture-identity/model.md) and
+[Release 1.0.3 adoption decision](../../markdown/governance/architecture-identity/adoption-1.0.3.md)
+govern the first 14 EC register bindings. Their native identities and existing
+semantic UUIDs are retained. Publication bytes and properties remain unchanged;
+the adoption proof is in the register and verification evidence. Stop for human
+review after these adoptions. No further semantic slice is authorised.

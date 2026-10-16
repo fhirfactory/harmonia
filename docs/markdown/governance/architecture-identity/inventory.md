@@ -2,9 +2,10 @@
 
 # Architecture identity inventory and collision report
 
-Release 1.0.2 (previous 1.0.1); values read from
-the root release authority. Produced before any canonical allocation. **0 identities
-allocated or migrated.** This is an evidence inventory, not an architecture model.
+Release 1.0.3 (previous 1.0.2); values read from
+the root release authority. **14 existing identities adopted;
+0 new identities allocated in this release.**
+This is an evidence inventory, not an architecture model.
 
 The [machine inventory](inventory.json) contains every inspected record, source
 locator, classification, reason and collision evidence. Its populations overlap:
@@ -73,8 +74,10 @@ counts into an architectural element total. Source/JSON pointers are audit locat
   Exchange is used for separate BC/BEC responsibilities. Both keys/meanings remain;
   namespace qualification cannot waive the naming rule. Name equality never proves
   identity. The existing RAD validator retains its explicit uncertainty.
-- The 14 EC Reference-ID/Exchange UUID crosswalks are safe deterministic *adoption
-  candidates*, not new allocations. Other native AX/REQ-FND/CST-EXT/COA/SR/VS IDs
+- The 14 EC Reference-ID/Exchange UUID crosswalks are the proven adoption population;
+  [Release 1.0.3](adoption-1.0.3.md) adopts them into the common register with their
+  exact native IDs and locked semantic bindings. They are not new allocations.
+  Other native AX/REQ-FND/CST-EXT/COA/SR/VS IDs
   already govern their definitions; publication mappings still need individual review.
 - 214 baseline Capabilities and all 189 baseline Composition assertion crosswalks
   remain unresolved. Semantic XML IDs are locked and retained, not promoted to RAD IDs.
@@ -102,9 +105,10 @@ The token index also exposes scoped rule/decision/review IDs (e.g. DN-BC, CM-R,
 B1/B2, K, CDG and candidate requirement keys) as documentary evidence, without
 mechanically publishing them as Motivation or Migration elements.
 
-Review the [identity model](model.md) and this inventory before migration. The next
-recommended slice is explicit adoption of the 14 existing EC identities into the
-registry with their exact locked semantic bindings and source provenance, followed
-by visual continuity checks. It should allocate no new capabilities. Reconcile the
-214 baseline crosswalks in separate approved batches before expanding capability
-publication. No bulk allocation or additional domain publication is authorised here.
+The [adoption decision](adoption-1.0.3.md) bounds this release to the 14 existing
+EC identities. Their admission and publication continuity are checked against the
+frozen [1.0.2 evidence](adoption-baseline-1.0.2.json). The classifications above
+describe the source evidence; safe crosswalks do not authorise additional adoption.
+Stop for human review. The 214 baseline crosswalks require separately authorised
+batches before expanding publication. No bulk allocation or additional domain
+publication is authorised here.

@@ -1,9 +1,9 @@
 {
   "purpose": "Bounded reconciliation/navigation inventory; not governed semantic identity allocation or an Exchange generator input",
-  "repository_head": "8afd7f21ef372e8bb87592770c6eecc9c5fcbbfe",
+  "repository_head": "a3bc5aa7f38beacf66bb161f7164273cad91b8c4",
   "architecture_release": {
-    "version": "1.0.2",
-    "previous_version": "1.0.1"
+    "version": "1.0.3",
+    "previous_version": "1.0.2"
   },
   "source_files": [
     {
@@ -593,7 +593,7 @@
     },
     {
       "path": "docs/markdown/governance/README.md",
-      "sha256": "1f679e981573a500b1bbe1e33780aad923b82078d2441a494c39df37b13a7533",
+      "sha256": "d44cabe39858673dddda56a798a8b416fa9c5179989aa60294c3ffafaa41ebb9",
       "content_role": "assertion-level standing must be preserved"
     },
     {
@@ -603,12 +603,12 @@
     },
     {
       "path": "docs/markdown/governance/architecture-identity/model.md",
-      "sha256": "43f961e35eefee3846cb511a0dcd5cadc3ca21c1a6f1a3fe57b6374d3d3fc5a0",
+      "sha256": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
       "content_role": "assertion-level standing must be preserved"
     },
     {
       "path": "docs/markdown/governance/architecture-identity/registry.json",
-      "sha256": "260c93357c4a2705382ad8087661f8b1c52195c41327336f4864c5956eaac85d",
+      "sha256": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
       "content_role": "assertion-level standing must be preserved"
     },
     {

@@ -1,7 +1,7 @@
 {
   "architecture_release": {
-    "version": "1.0.2",
-    "previous_version": "1.0.1"
+    "version": "1.0.3",
+    "previous_version": "1.0.2"
   },
   "purpose": "Identity evidence inventory; no allocation or semantic-generation authority; populations overlap",
   "records": [
@@ -21528,7 +21528,7 @@
       "source_capture_id": "AX-01",
       "name": "Harmonia Is Health-Information Centric",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-01",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 74
@@ -21539,7 +21539,7 @@
       "source_capture_id": "AX-02",
       "name": "Standards at the Boundary; Harmonia Within the Boundary",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-02",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 118
@@ -21550,7 +21550,7 @@
       "source_capture_id": "AX-03",
       "name": "Native Standards Models Remain Native",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-03",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 161
@@ -21561,7 +21561,7 @@
       "source_capture_id": "AX-04",
       "name": "Harmonia Owns the Semantics; Engines Provide the Machinery",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-04",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 204
@@ -21572,7 +21572,7 @@
       "source_capture_id": "AX-05",
       "name": "Active State and Authoritative Durable State Are Distinct",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-05",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 247
@@ -21583,7 +21583,7 @@
       "source_capture_id": "AX-06",
       "name": "Information Authority Is Explicit",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-06",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 303
@@ -21594,7 +21594,7 @@
       "source_capture_id": "AX-07",
       "name": "Security Is Intrinsic to Managed Operations",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-07",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 348
@@ -21605,7 +21605,7 @@
       "source_capture_id": "AX-08",
       "name": "Evidence Records Meaning, Not Machinery",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-08",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 411
@@ -21616,7 +21616,7 @@
       "source_capture_id": "AX-09",
       "name": "Transient Operational State Is Ephemeral by Default",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-09",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 446
@@ -21627,7 +21627,7 @@
       "source_capture_id": "AX-10",
       "name": "Distribution, Load and Failure Are Normal Operating Conditions",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-10",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 490
@@ -21638,7 +21638,7 @@
       "source_capture_id": "AX-11",
       "name": "Managed Information Access Is Highly Available and Responsive",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-11",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 527
@@ -21649,7 +21649,7 @@
       "source_capture_id": "AX-12",
       "name": "Hide Plumbing, Not Information",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-12",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 567
@@ -21660,7 +21660,7 @@
       "source_capture_id": "AX-13",
       "name": "Harmonia Management Has an Explicit Boundary",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-13",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 613
@@ -21671,7 +21671,7 @@
       "source_capture_id": "AX-14",
       "name": "Semantic Distinctions Are Preserved",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-14",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 668
@@ -21682,7 +21682,7 @@
       "source_capture_id": "AX-15",
       "name": "Uncertainty Is Preserved Until Resolved",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-15",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 707
@@ -21693,7 +21693,7 @@
       "source_capture_id": "AX-16",
       "name": "Operational Activity & Entity State Progress Together",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-16",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 742
@@ -21704,7 +21704,7 @@
       "source_capture_id": "AX-17",
       "name": "Architectural Authority and Explicit Uncertainty",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-17",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 772
@@ -21715,7 +21715,7 @@
       "source_capture_id": "AX-18",
       "name": "Integration and Coordination Do Not Confer Domain Authority",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "AX-18",
       "source_document": "docs/markdown/governance/architectural-axioms.md",
       "source_line": 876
@@ -21726,7 +21726,7 @@
       "source_capture_id": "EC-01",
       "name": "Managed Entity & Relationship",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-01",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 103
@@ -21737,7 +21737,7 @@
       "source_capture_id": "EC-02",
       "name": "Context Management",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-02",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 112
@@ -21748,7 +21748,7 @@
       "source_capture_id": "EC-03",
       "name": "Managed State & Lifecycle",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-03",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 121
@@ -21759,7 +21759,7 @@
       "source_capture_id": "EC-04",
       "name": "Information Management",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-04",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 130
@@ -21770,7 +21770,7 @@
       "source_capture_id": "EC-05",
       "name": "Search & Discovery",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-05",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 139
@@ -21781,7 +21781,7 @@
       "source_capture_id": "EC-06",
       "name": "Policy & Control",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-06",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 148
@@ -21792,7 +21792,7 @@
       "source_capture_id": "EC-07",
       "name": "Provenance & Traceability",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-07",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 157
@@ -21803,7 +21803,7 @@
       "source_capture_id": "EC-08",
       "name": "Interoperability & Exchange",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-08",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 166
@@ -21814,7 +21814,7 @@
       "source_capture_id": "EC-09",
       "name": "Event & Subscription",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-09",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 175
@@ -21825,7 +21825,7 @@
       "source_capture_id": "EC-10",
       "name": "Activity & Execution",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-10",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 184
@@ -21836,7 +21836,7 @@
       "source_capture_id": "EC-11",
       "name": "Interaction & Experience",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-11",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 193
@@ -21847,7 +21847,7 @@
       "source_capture_id": "EC-12",
       "name": "Operational Assurance",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-12",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 202
@@ -21858,7 +21858,7 @@
       "source_capture_id": "EC-13",
       "name": "Semantic Governance & Conformance",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-13",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 215
@@ -21869,7 +21869,7 @@
       "source_capture_id": "EC-14",
       "name": "Service Guardian",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "EC-14",
       "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
       "source_line": 224
@@ -21880,7 +21880,7 @@
       "source_capture_id": "REQ-FND-001",
       "name": "Durable Ingress Acceptance Boundary",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "REQ-FND-001",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
       "source_line": 11
@@ -21891,7 +21891,7 @@
       "source_capture_id": "REQ-FND-002",
       "name": "Operational Activity Progression State",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "REQ-FND-002",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
       "source_line": 34
@@ -21902,7 +21902,7 @@
       "source_capture_id": "REQ-FND-003",
       "name": "Subject Referential Integrity",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "REQ-FND-003",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
       "source_line": 54
@@ -21913,7 +21913,7 @@
       "source_capture_id": "REQ-FND-004",
       "name": "Explicit Indeterminate Outcome",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "REQ-FND-004",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
       "source_line": 76
@@ -21924,7 +21924,7 @@
       "source_capture_id": "REQ-FND-005",
       "name": "Independent Assurance of Governed Activity",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "REQ-FND-005",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
       "source_line": 96
@@ -21935,7 +21935,7 @@
       "source_capture_id": "CST-EXT-001",
       "name": "Applicable Health-Information Privacy and Data-Protection Obligations",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "CST-EXT-001",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/external-constraints.md",
       "source_line": 11
@@ -21946,7 +21946,7 @@
       "source_capture_id": "CST-EXT-002",
       "name": "Applicable National / Jurisdictional Healthcare Identifier Obligations",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "CST-EXT-002",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/external-constraints.md",
       "source_line": 33
@@ -21957,7 +21957,7 @@
       "source_capture_id": "CST-EXT-003",
       "name": "Mandated External Interoperability Contracts",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "CST-EXT-003",
       "source_document": "docs/markdown/01-motivation/requirements-constraints/external-constraints.md",
       "source_line": 57
@@ -21968,7 +21968,7 @@
       "source_capture_id": "COA-01",
       "name": "Boundary Membrane Sovereignty",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "COA-01",
       "source_document": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
       "source_line": 15
@@ -21979,7 +21979,7 @@
       "source_capture_id": "COA-02",
       "name": "Distinct Management and Durable Preservation of Information and State",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "COA-02",
       "source_document": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
       "source_line": 43
@@ -21990,7 +21990,7 @@
       "source_capture_id": "COA-03",
       "name": "Meaning-Centric Provenance and Traceability",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "COA-03",
       "source_document": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
       "source_line": 71
@@ -22001,7 +22001,7 @@
       "source_capture_id": "COA-04",
       "name": "Governed Asynchronous Activity Progression",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "COA-04",
       "source_document": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
       "source_line": 99
@@ -22012,7 +22012,7 @@
       "source_capture_id": "COA-05",
       "name": "Entity-Centred Operational Coordination",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "COA-05",
       "source_document": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
       "source_line": 125
@@ -22023,7 +22023,7 @@
       "source_capture_id": "COA-06",
       "name": "Collaborative Reusable Capability Realisation",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "COA-06",
       "source_document": "docs/markdown/02-strategy/courses-of-action/strategic-courses-of-action.md",
       "source_line": 152
@@ -22034,7 +22034,7 @@
       "source_capture_id": "SR-01",
       "name": "Healthcare Interoperability Standards and Specifications",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "SR-01",
       "source_document": "docs/markdown/02-strategy/resources/strategic-resources.md",
       "source_line": 40
@@ -22045,7 +22045,7 @@
       "source_capture_id": "SR-02",
       "name": "Australian National Healthcare Directory & Identifier Specifications",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "SR-02",
       "source_document": "docs/markdown/02-strategy/resources/strategic-resources.md",
       "source_line": 62
@@ -22056,7 +22056,7 @@
       "source_capture_id": "SR-03",
       "name": "National Clinical Terminology Assets (SNOMED CT-AU / AMT)",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "SR-03",
       "source_document": "docs/markdown/02-strategy/resources/strategic-resources.md",
       "source_line": 86
@@ -22067,7 +22067,7 @@
       "source_capture_id": "VS-01",
       "name": "Multi-Source Clinical Information → Coherent Clinical Picture",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "VS-01",
       "source_document": "docs/markdown/02-strategy/strategic-views/strategic-value-streams.md",
       "source_line": 58
@@ -22078,7 +22078,7 @@
       "source_capture_id": "VS-02",
       "name": "Unqualified Information → Governed, Consumable Information",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "VS-02",
       "source_document": "docs/markdown/02-strategy/strategic-views/strategic-value-streams.md",
       "source_line": 109
@@ -22089,7 +22089,7 @@
       "source_capture_id": "VS-03",
       "name": "Operational Need → Coordinated Activity → Resolved Outcome",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "VS-03",
       "source_document": "docs/markdown/02-strategy/strategic-views/strategic-value-streams.md",
       "source_line": 164
@@ -22100,7 +22100,7 @@
       "source_capture_id": "VS-04",
       "name": "Distributed Clinical Knowledge → Informed Clinical Collaboration",
       "classification": "identity already governed",
-      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication are separate future gates.",
+      "reason": "Existing exact definition ID retained verbatim; registry adoption and publication require separate explicit decisions.",
       "existing_governed_id": "VS-04",
       "source_document": "docs/markdown/02-strategy/strategic-views/strategic-value-streams.md",
       "source_line": 221
@@ -42801,7 +42801,7 @@
     },
     {
       "path": "docs/markdown/governance/README.md",
-      "sha256": "1f679e981573a500b1bbe1e33780aad923b82078d2441a494c39df37b13a7533"
+      "sha256": "d44cabe39858673dddda56a798a8b416fa9c5179989aa60294c3ffafaa41ebb9"
     },
     {
       "path": "docs/markdown/governance/architectural-axioms.md",
@@ -42821,7 +42821,7 @@
     },
     {
       "path": "docs/markdown/governance/rad-archimate-model-mapping.md",
-      "sha256": "60972304c106f57e9b77c66b838da75ced29483ebb6bd6ec8b0cc88239efde25"
+      "sha256": "d695d46a9f3c192c064cac6ec30694f817d006afd423a96d6e9860c409c16962"
     },
     {
       "path": "docs/markdown/governance/rad-archimate-publication-plan.md",
@@ -64778,6 +64778,11 @@
           "source_document": "docs/markdown/governance/rad-archimate-model-mapping.md",
           "source_line": 43,
           "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/rad-archimate-model-mapping.md",
+          "source_line": 45,
+          "standing": "assertion-specific; inspect source"
         }
       ],
       "role": "navigation evidence only; definition/reference distinction requires source review"
@@ -67000,6 +67005,11 @@
         {
           "source_document": "docs/markdown/governance/rad-archimate-model-mapping.md",
           "source_line": 43,
+          "standing": "assertion-specific; inspect source"
+        },
+        {
+          "source_document": "docs/markdown/governance/rad-archimate-model-mapping.md",
+          "source_line": 45,
           "standing": "assertion-specific; inspect source"
         },
         {
@@ -92020,7 +92030,8 @@
     "safe_existing_crosswalks": 14,
     "unresolved_exchange_capabilities": 214,
     "allocated_in_this_release": 0,
-    "registry_records": 0,
+    "adopted_in_this_release": 14,
+    "registry_records": 14,
     "existing_structural_canonical_ids": 0,
     "unresolved_business_assertions": 22,
     "technology_platform": "No accepted first-class identity catalogue in inspected RADS; count unestablished",

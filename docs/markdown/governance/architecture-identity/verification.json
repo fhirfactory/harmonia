@@ -1,27 +1,232 @@
 {
   "architecture_release": {
-    "version": "1.0.2",
-    "previous_version": "1.0.1"
+    "version": "1.0.3",
+    "previous_version": "1.0.2"
   },
   "status": "PASS",
-  "canonical_allocations": 0,
-  "canonical_migrations": 0,
+  "identities_adopted": 14,
+  "new_identities_allocated": 0,
   "semantic_identity_changes": 0,
+  "visual_identity_changes": 0,
+  "capability_semantic_changes": 0,
+  "relationship_changes": 0,
+  "documentation_changes": 0,
+  "unresolved_capability_identities": 214,
   "xml_sha256": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+  "unexpected_findings": [],
+  "adoption": {
+    "status": "PASS",
+    "architecture_release": {
+      "version": "1.0.3",
+      "previous_version": "1.0.2"
+    },
+    "previous_publication_release": "1.0.2",
+    "baseline_commit": "a3bc5aa7f38beacf66bb161f7164273cad91b8c4",
+    "identities_adopted": 14,
+    "new_identities_allocated": 0,
+    "changes": {
+      "semantic_identity": 0,
+      "visual_identity": 0,
+      "capability_semantics": 0,
+      "capability_hierarchy": 0,
+      "relationships": 0,
+      "relationship_endpoints": 0,
+      "documentation": 0
+    },
+    "unresolved_capability_identities": 214,
+    "unresolved_rad_dimensions_relationships": 2467,
+    "semantic_elements": 228,
+    "composition_relationships": 189,
+    "generated_views": 4,
+    "retained_views": 1,
+    "xml_sha256": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+    "identity_chain": [
+      {
+        "canonical_architecture_id": "EC-01",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-01: Managed Entity & Relationship",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-d53727d908365757a293b0896b2c769b",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "e532daaba81a66f9c68840bcf6ae5911dbdb3c0badfc59bafd489d057ca28c70"
+      },
+      {
+        "canonical_architecture_id": "EC-02",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-02: Context Management",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-06e038737c5355edbc0591e08c594ab0",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "d18d8c00466cfa13b96e0529088c1d82bc0981e6ca59ca62ada961475e874138"
+      },
+      {
+        "canonical_architecture_id": "EC-03",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-03: Managed State & Lifecycle",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-5891936941f65d20afad86b0697879c7",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "c4d2d330aec4c7961be2798501e9b1d712014a4222f14dfe8ca1c29b7db3970f"
+      },
+      {
+        "canonical_architecture_id": "EC-04",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-04: Information Management",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-9e79bc474aed516c8c6752ab81b63d6b",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "5495eedd83771c79f0589d326f37ee568bb63d8b5f7b9db1de5b2615b10ce21b"
+      },
+      {
+        "canonical_architecture_id": "EC-05",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-05: Search & Discovery",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-e11f02764fe55ff29c0782db21198040",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "dfc8214a256cbabc10e86b1a9344ca785b9ba1af2c4c2800387faa43799fc1e5"
+      },
+      {
+        "canonical_architecture_id": "EC-06",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-06: Policy & Control",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "017903e08b68afe4ec460c81b2d40e5d37b830b1aed7af6d8dab6acc06adc39f"
+      },
+      {
+        "canonical_architecture_id": "EC-07",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-07: Provenance & Traceability",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-d71457435a085e749ffb1e1a3b551228",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "1965533351937ef83910e4804717c3f5182d1431eacce6a565f59525329cf3fb"
+      },
+      {
+        "canonical_architecture_id": "EC-08",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-08: Interoperability & Exchange",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-dbd66e69788450649e184966aa724797",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "36d61ff22672540acd78e2dd4ff273290a5a8429b6071b1565dd91eca5dbb194"
+      },
+      {
+        "canonical_architecture_id": "EC-09",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-09: Event & Subscription",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "4d7f192df28010c206d845e1b058b4323610b74d4f9a96517d78f7a095958033"
+      },
+      {
+        "canonical_architecture_id": "EC-10",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-10: Activity & Execution",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "655b8477581c8f2b6b82b1d3ec1734df1fe04d3734d7da933948a8dce080e6e7"
+      },
+      {
+        "canonical_architecture_id": "EC-11",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-11: Interaction & Experience",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-82cd1f6a3e2352639e22c542f5cb3a9d",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "73f6ed7415396f89906f7de262a4f417b36338c7c6b7b029c15d519c7fdd8954"
+      },
+      {
+        "canonical_architecture_id": "EC-12",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-12: Operational Assurance",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-9bbd142f818e50d39a3d0429f74b72b4",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "1e79e6cf1adfc0103527a1f7a0c108393fe2962b324911b9ea921e68466e5c6d"
+      },
+      {
+        "canonical_architecture_id": "EC-13",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-13: Semantic Governance & Conformance",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-7d6f635ffb6f5c6181bde1d07b859662",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "2b8f973c0dd62e5f1d35654742cf8d425064cf507129aefc4f997b656b0273fb"
+      },
+      {
+        "canonical_architecture_id": "EC-14",
+        "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+        "source_section": "### EC-14: Service Guardian",
+        "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+        "release": "1.0.3",
+        "semantic_id": "id-4dbf578f52bd5b3b9301b9807ce60f30",
+        "binding_mode": "locked",
+        "status": "active",
+        "documentation_sha256": "5f00ef8a5fd23b0234d61cf3f3c057bea4be7c0bdcbf714f33a156e41be5004d"
+      }
+    ],
+    "checks": {
+      "registry_schema_history_and_identity_alias_uniqueness": "PASS",
+      "exactly_14_retained_ec_adoptions_no_allocations": "PASS",
+      "one_governed_definition_per_identity": "PASS",
+      "one_existing_semantic_element_per_identity": "PASS",
+      "exact_source_and_decision_provenance_hashes": "PASS",
+      "native_names_lifecycle_and_source_identifiers": "PASS",
+      "original_semantic_lock_and_relationship_endpoints": "PASS",
+      "same_visual_identities_views_and_references": "PASS",
+      "same_14_governed_documentation_sections": "PASS",
+      "byte_identical_to_release_1_0_2": "PASS",
+      "deterministic_generation": "PASS",
+      "archi_5_9_xsd": "PASS",
+      "source_assertions_f46_and_other_findings_preserved": "PASS",
+      "rad_validation_2467_unresolved": "PASS"
+    }
+  },
   "files_changed": [
     "architecture-release.json",
     "docs/archimate/capability-architecture/Makefile",
     "docs/archimate/capability-architecture/README.md",
-    "docs/archimate/capability-architecture/tools/assess_rad.py",
+    "docs/archimate/capability-architecture/tests/test_publication_metadata.py",
     "docs/archimate/capability-architecture/validation.json",
-    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
-    "docs/markdown/03-business-architecture/reference-model/business-architecture.json",
     "docs/markdown/governance/README.md",
+    "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+    "docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json",
+    "docs/markdown/governance/architecture-identity/adoption-validation.json",
     "docs/markdown/governance/architecture-identity/inventory.json",
     "docs/markdown/governance/architecture-identity/inventory.md",
     "docs/markdown/governance/architecture-identity/model.md",
     "docs/markdown/governance/architecture-identity/registry.json",
-    "docs/markdown/governance/architecture-identity/registry.schema.json",
     "docs/markdown/governance/architecture-identity/release-report.md",
     "docs/markdown/governance/architecture-identity/verification.json",
     "docs/markdown/governance/rad-archimate-model-mapping.md",
@@ -31,9 +236,9 @@
   ],
   "checks": [
     {
-      "name": "Identity inventory and registry/schema/history checks",
+      "name": "Identity register schema, history and bounded adoption",
       "status": "PASS",
-      "result": "13 identity regression tests included below; empty register, deterministic inventory, exact EC crosswalk and original semantic lock verified",
+      "result": "Exactly 14 retained EC identities; one governed definition and one existing semantic element each; no identity/alias collisions; 21 identity regression tests included in the root suite",
       "command": [
         "python3",
         "scripts/architecture_identity.py",
@@ -43,7 +248,7 @@
     {
       "name": "Complete root script suite",
       "status": "PASS",
-      "result": "56 tests; includes 13 identity tests and existing release/Business validation tests",
+      "result": "64 tests; 0 failures or errors, including identity, release governance and Business validation",
       "command": [
         "timeout",
         "--signal=TERM",
@@ -59,15 +264,16 @@
       ]
     },
     {
-      "name": "Complete publication suite",
+      "name": "Complete publication suite and regeneration",
       "status": "PASS",
-      "result": "40 tests; exact Documentation, original identities, Views, references, deterministic generation and portability",
+      "result": "41 tests; 0 failures or errors; deterministic generation, original IDs, Views, exact Documentation and portability",
       "command": [
         "make",
         "-C",
         "docs/archimate/capability-architecture",
         "generate",
         "inventory",
+        "adoption",
         "test",
         "check"
       ]
@@ -93,7 +299,7 @@
     {
       "name": "Archi 5.9 bundled Open Exchange XSD",
       "status": "PASS",
-      "result": "Serialized publication XML valid against local Model/View/Diagram schemas; offline resolution"
+      "result": "Serialized XML valid against local Model/View/Diagram schemas; offline resolution"
     },
     {
       "name": "RAD Business capture validation",
@@ -110,50 +316,75 @@
       ]
     },
     {
-      "name": "Identity and publication preservation",
+      "name": "Full identity chain and publication continuity",
       "status": "PASS",
-      "result": "0 allocations/migrations; XML bytes, 228 capabilities, 189 relationships, all Views and 14 Documentation fields unchanged from committed 1.0.1; baseline and legacy locks unchanged"
+      "result": "14 adoptions, 0 allocations; semantic IDs, visual IDs, capability content/hierarchy, relationships/endpoints and Documentation all unchanged; byte-identical XML; repeated deterministic generation",
+      "command": [
+        "python3",
+        "scripts/architecture_identity.py",
+        "adoption",
+        "--check"
+      ]
     },
     {
-      "name": "Source finding preservation",
+      "name": "Frozen pre-adoption evidence",
       "status": "PASS",
-      "result": "All source assessment architectural assertions unchanged; Business capture differs only in the reviewed metamodel source fingerprint"
+      "result": "All preservation fingerprints and the empty prior register independently match committed Release 1.0.2 at a3bc5aa7f38beacf66bb161f7164273cad91b8c4"
     },
     {
-      "name": "Markdown local file targets",
+      "name": "Source provenance and unresolved finding preservation",
       "status": "PASS",
-      "result": "All added/changed document targets resolve"
+      "result": "Current definition/decision hashes verified independently of accepted history; RAD assertion and collision digests unchanged; F46, 214 capability crosswalks, incomplete IDs, C navigation keys, unresolved assertions and Domain05 deferrals retained"
+    },
+    {
+      "name": "Release governance",
+      "status": "PASS",
+      "result": "Explicit 1.0.2 to 1.0.3 patch increment; generation does not increment it; no Maven POM/version changes"
+    },
+    {
+      "name": "Markdown local file targets and diff whitespace",
+      "status": "PASS",
+      "result": "All changed/added Markdown file targets resolve; git diff --check passes"
     }
   ],
   "verified_files_sha256": {
-    "architecture-release.json": "611a67876e9b7b384e88d423e041b65535b583b8ddb9fe5ca007532e89b1b5fc",
+    "architecture-release.json": "4e971e382bf447ba067bc30801e7b9295860b8bd044a4620323c30fec859eacf",
     "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
-    "docs/archimate/capability-architecture/Makefile": "00cedda42568b0b54929c2e836952a12b739ef95155748235110a4c5b8343d04",
-    "docs/archimate/capability-architecture/README.md": "025a401ae8c4f5b3b43df7338670e9b01a2ab1af16eb45a45d25f2dea75f163e",
+    "docs/archimate/capability-architecture/Makefile": "3d02fb88808fdc3f75abbf82eeb433392ee1509ead5095108969e399f0d1bc51",
+    "docs/archimate/capability-architecture/README.md": "0854628a98c847df20e061cda8a35b975ea6fba2953d80778bb34c60d34b511d",
     "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
     "docs/archimate/capability-architecture/baseline/semantic-lock.json": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
     "docs/archimate/capability-architecture/documentation-map.json": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
     "docs/archimate/capability-architecture/documentation-publication-report.md": "4ba697daff9fc35e2ad3a6bc259d6b4dc04aabce83be8ebe04b38a90ded23f3e",
     "docs/archimate/capability-architecture/release-verification.json": "6e6322f5696d8ef9d6d7c83aa801aef4b5ef027ef999a06cf062907ff3e8e7f1",
+    "docs/archimate/capability-architecture/schemas/archimate3_Diagram.xsd": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+    "docs/archimate/capability-architecture/schemas/archimate3_Model.xsd": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794",
+    "docs/archimate/capability-architecture/schemas/archimate3_View.xsd": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+    "docs/archimate/capability-architecture/schemas/provenance.json": "a7c6dd56c408aebf6b764095933ca3c56b7f893d7f56843a2538437bef2d3a33",
+    "docs/archimate/capability-architecture/tests/test_publication_metadata.py": "3d37a4c33b0f1368513f93e7359a7fe671ced4001694d676119645d32101bc4c",
     "docs/archimate/capability-architecture/tools/assess_rad.py": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513",
     "docs/archimate/capability-architecture/tools/generate_views.py": "a82708730a67d063c5504f544e60d5eca73c84267992a79b5f16c6a1e8338797",
-    "docs/archimate/capability-architecture/validation.json": "a51199a7e3a0fbfe8cb59754e64d64dec1044f798e4861637f9c45824c5c2f93",
+    "docs/archimate/capability-architecture/tools/publish_documentation.py": "fec75663ea320796af4b4c72e90a004fc4a2afb58be60f01371f30c25742d463",
+    "docs/archimate/capability-architecture/validation.json": "4775c9aefea4b5acb27f342921b96de9b7540c2959c43b7d83ebb86542eaecee",
     "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/identity-lock.json": "519f1e748aac1223e8120cbfb80ece439188d88596081e736cd6d716596526a4",
     "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-identity-history.json": "bf4e1e6b49f2fe02deabe5a59d4dadd639fb46c06be28870bd99535715596635",
     "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
-    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
     "docs/markdown/03-business-architecture/reference-model/business-architecture.json": "ed876954fb05cba520e160c5dfe3a0b22e45b88d08453ab937ee48a2e6d64dcd",
-    "docs/markdown/governance/README.md": "1f679e981573a500b1bbe1e33780aad923b82078d2441a494c39df37b13a7533",
+    "docs/markdown/04-information-architecture/traceability/domain03-traceability.md": "221fa30288570fa58c554c40236a91be92d07aaf1348ecd123e3e0bbe649af08",
+    "docs/markdown/governance/README.md": "d44cabe39858673dddda56a798a8b416fa9c5179989aa60294c3ffafaa41ebb9",
     "docs/markdown/governance/architectural-axioms.md": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
-    "docs/markdown/governance/architecture-identity/inventory.json": "80acb67da9034b9eec15cf32bca98317ce8e080b2024fe95f24291a2a35b2720",
-    "docs/markdown/governance/architecture-identity/inventory.md": "d085eae6639c8afe5d434b56c9e7791604931394ff184ecf773ebb479edf7f0b",
-    "docs/markdown/governance/architecture-identity/model.md": "43f961e35eefee3846cb511a0dcd5cadc3ca21c1a6f1a3fe57b6374d3d3fc5a0",
-    "docs/markdown/governance/architecture-identity/registry.json": "260c93357c4a2705382ad8087661f8b1c52195c41327336f4864c5956eaac85d",
+    "docs/markdown/governance/architecture-identity/adoption-1.0.3.md": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+    "docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json": "7a9a8b247d54f5a30304b763a60e3622e8197adf85a1bf53678b9af72f43c7b4",
+    "docs/markdown/governance/architecture-identity/adoption-validation.json": "237c7fcc0ffdd109b85bb976a256b1c6f6a75bf1b5f4323e7a8f0670d94499c8",
+    "docs/markdown/governance/architecture-identity/inventory.json": "2263c9f5d43e2b99f634b85db0e7ac56725bcc66fe89a6bbd39273fdba6f675d",
+    "docs/markdown/governance/architecture-identity/inventory.md": "b230994388ad066acf1adc7e92624b958932225be3ce3aaa013a1a0b87b22b73",
+    "docs/markdown/governance/architecture-identity/model.md": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
+    "docs/markdown/governance/architecture-identity/registry.json": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
     "docs/markdown/governance/architecture-identity/registry.schema.json": "10fb9bb0068b9008f428611c7179bfdea3ced0b419403e19a498afe7560d0b6a",
-    "docs/markdown/governance/rad-archimate-model-mapping.md": "60972304c106f57e9b77c66b838da75ced29483ebb6bd6ec8b0cc88239efde25",
-    "docs/markdown/governance/rad-archimate-source-inventory.json": "0799b008c1376d5f86f4d45a0277644f8024b17157c7b408cfd3fbae0eda543e",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "d695d46a9f3c192c064cac6ec30694f817d006afd423a96d6e9860c409c16962",
+    "docs/markdown/governance/rad-archimate-source-inventory.json": "d507215018e21960379e99a3a8f16028084c93844f4820eba67d73e2cccfa9d8",
     "pom.xml": "dbeb6bf07a25c7e0539dd18cca10fc343706b7fd773ac1611337f80f1e9f7f00",
-    "scripts/architecture_identity.py": "c12192edcba488bd8dcb3cfd8bdd1af7f7c94fa848118f179a4bd6b1a46a23bf",
-    "scripts/tests/test_architecture_identity.py": "b43a5a656c671162c49609c14fa8c52db9d742b1812a0e1f21a460acb79419c2"
+    "scripts/architecture_identity.py": "392068522b9d0bfac4cc4a2a9b5dbdbf3215240455a3d7833441543dfcdf19ce",
+    "scripts/tests/test_architecture_identity.py": "42eb86aeb93a955b9f22fcc6fdd0bd3d5d01ef265fa927382000c33b49375e4a"
   }
 }

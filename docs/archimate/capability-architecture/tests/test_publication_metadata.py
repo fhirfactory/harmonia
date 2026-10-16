@@ -11,9 +11,22 @@ BASE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BASE / "tools"))
 import assess_rad as a
 import report_publication as r
+import architecture_identity as identity
 
 
 class PublicationMetadataTests(unittest.TestCase):
+    def test_governed_registry_binds_the_same_deterministic_publication(self):
+        base, manifest = identity.baseline_crosswalk(identity.ROOT)
+        lock = identity.read_json(BASE / "baseline/semantic-lock.json")
+        schema = identity.views.load_schema(BASE / "schemas/archimate3_Diagram.xsd")
+        xml, report = identity.documentation.publish(base, schema, lock)
+        registry = identity.read_json(identity.DIRECTORY / "registry.json")
+        proof = identity.verify_adoption(registry, published=xml)
+        self.assertEqual(report["output_sha256"], proof["xml_sha256"])
+        self.assertEqual({m["reference_id"]: m["element_identifier"] for m in manifest["matches"]},
+                         {c["canonical_architecture_id"]: c["semantic_id"] for c in proof["identity_chain"]})
+        self.assertEqual({0}, set(proof["changes"].values()))
+
     def test_assessment_uses_explicit_release_and_retains_unresolved_assertions(self):
         with tempfile.TemporaryDirectory() as tmp:
             release = Path(tmp) / "release.json"
