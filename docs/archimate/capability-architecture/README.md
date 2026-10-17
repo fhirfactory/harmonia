@@ -2,6 +2,97 @@
 
 # Harmonia Capability Architecture — Exchange publication
 
+## Current synchronised baseline
+
+Open [synchronised-baseline/Harmonia-Architecture-Baseline.xml](synchronised-baseline/Harmonia-Architecture-Baseline.xml)
+in **Archi 5.10.0**, the supported human architecture workbench for Release 1.0.6,
+using Open Exchange import. Start with the
+[inspection guide](synchronised-baseline/archi-inspection-guide.md) and
+[canonical Markdown baseline](../../markdown/governance/baseline/README.md).
+`make all` generates and validates this baseline and its textual projection.
+The native resource categories, numbered View domains and independent projections follow the
+[current convention](../../markdown/governance/archi-navigation-and-view-convention.md#synchronised-baseline-convention--2026-10-17).
+
+Capability contexts provide immediate-child landscape Views. Business resources,
+Feature-specific Views and deterministic Business layouts share the same governed
+Feature association index. Shared behaviour retains its single Capability resource
+home when no preferred Feature home is established; diagrams retain all recorded
+associations through separate appearances of the same semantic element. See the
+completion report for the explicit shared and unresolved cases.
+
+The complete generated set is **14 files**: 12 core outputs plus the report and
+inspection guide. `make baseline-independent` regenerates and compares all 14
+byte-for-byte in independent processes. `make all` includes that check. Historical
+stage reports and preservation proofs are audit evidence, not generated outputs.
+
+The `recovery-v0.2` model and report are immutable historical recovery evidence.
+`make recovery-check` replays the pinned snapshot with its explicit 1.0.5 release
+fixture, independently of the current release. Its earlier report's repository-wide
+fingerprints describe the historical checkout; rerunning that report against later
+live sources is not a current-baseline gate. `legacy-all` remains the earlier
+publication workflow and must be replayed with its historical release fixtures.
+
+## Authority and collaboration lifecycle
+
+**Markdown RAD — author and govern.** The canonical [Markdown RAD](../../markdown/)
+is the governed Harmonia source repository for architecture, design, motivation,
+implementation, decisions, governance, traceability and rationale.
+**ArchiMate — visualise, navigate, review and propose change.** The model is a
+governed architectural projection and human architecture workbench. Open Exchange
+XML is its interchange representation.
+**LaTeX RAD — render and publish.** LaTeX is a downstream documentation/report
+publication.
+
+The normal ArchiMate collaboration lifecycle is:
+
+1. Generate an ArchiMate Open Exchange representation from the governed Markdown
+   RAD and associated governed projection metadata.
+2. Import it into Archi for navigation, review and architectural editing.
+3. Export the reviewed/edited model from Archi.
+4. Analyse that export as architecture change input.
+5. Reconcile accepted architectural changes into the appropriate Markdown RAD
+   sources and accepted presentation changes into governed projection metadata.
+6. Validate the resulting architecture.
+7. Increment the architecture release for the accepted change set.
+8. Generate the next ArchiMate representation from the updated governed repository.
+
+An Archi export is change input, not a replacement architecture repository.
+Archi-specific presentation state, such as accepted View layout, coordinates,
+bendpoints or navigation information, may be retained as subordinate governed
+projection metadata where it has no appropriate Markdown RAD representation.
+Presentation metadata establishes no architectural identity or relationship.
+
+The LaTeX publication direction is strictly:
+
+```text
+Markdown RAD -> LaTeX RAD -> publication output
+```
+
+LaTeX/PDF output is not an architectural authoring source and has no normal
+reverse-reconciliation path. Historical recovery from earlier LaTeX material is a
+bounded recovery/migration activity only.
+
+The current corrections complete the already prepared, uncommitted **1.0.6**
+candidate within the same accepted change set. They require no further increment.
+Generation always reads the prepared release state and never increments it.
+Resource navigation uses native category labels without numeric prefixes. View
+navigation retains its accepted global numbering. Classified folders expose
+`[CT1] -> [CT2] -> [CT3] -> [Feature]` wherever exact governed ancestry exists,
+in both Strategy and Business context projections. Semantic Names and existing
+View IDs remain unchanged. Final inspection corrections add deterministic
+landscapes and improve Feature-centred Business presentation; empty context
+folders assert no relationships.
+
+The bundled Archi 5.9 Open Exchange XSDs remain the validation schema for this
+format; using Archi 5.10.0 does not change the Exchange namespace or schema.
+
+## Historical recovery workflow
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: [current baseline workflow](#current-synchronised-baseline), [baseline authority](../../markdown/governance/baseline/README.md).
+Only the active workflow/entry point is superseded; the source recovery and its historical results are preserved.
+---------------------------------------------------------
+
 **1.0.5A recovery for inspection:** import
 [Harmonia-Architecture-1.0.5A.xml](recovery-v0.2/Harmonia-Architecture-1.0.5A.xml).
 Read the [recovery report](recovery-v0.2/1.0.5A-recovery-report.md) and
@@ -14,6 +105,11 @@ names their earlier pipeline and requires its corresponding release fixtures.
 The recovery preserves its established navigation conventions while keeping
 unbound old objects in explicit reference branches. No 1.0.5B overlay or commit
 has been performed.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+
+## Historical 1.0.4 publication
 
 Release **1.0.4** applies the governed
 [Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md).

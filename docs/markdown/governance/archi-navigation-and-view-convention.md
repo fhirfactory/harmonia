@@ -44,6 +44,186 @@ view membership or relationships to make a navigation tree look complete.
 
 ## Canonical model-tree homes
 
+### Synchronised baseline convention — 2026-10-17
+
+The architecture owner's baseline-synchronisation task establishes the following
+current navigation. The later sections' 1.0.4 examples remain reference-publication
+conventions. They do not constrain the recovered baseline to the old population.
+No navigation change authorises additional architecture or changes element identity.
+
+Archi **5.10.0** is the supported human architecture workbench for the current
+uncommitted **1.0.6** candidate. Its native resource categories are the primary
+resource organisation. Exchange category markers use the exact native labels
+`Motivation`, `Strategy`, `Business` and `Application`; the importer consumes
+these markers rather than creating a redundant folder below each native root.
+Resource folders use human-readable labels without global layer numbering.
+There is no demonstrated sibling-order requirement requiring resource prefixes.
+
+```text
+Motivation/
+Strategy/
+  Business Layer/
+    Business Capabilities/                 <governed BC hierarchy>
+    Business Enabling Capabilities/         <governed BEC hierarchy>
+  Application Layer/
+    Enterprise Capabilities/               <governed EC hierarchy>
+    Application Capabilities/               <no invented population>
+  Unreconciled 1.0.4 Reference/
+Business/
+  Business Capabilities/                    <BC context through finest governed level>
+  Business Enabling Capabilities/           <BEC context through Feature where governed>
+Application/
+  Information Map/
+  Enterprise Capabilities/
+  Application Map/
+  Middleware Map/
+Relations/                                  <unnumbered source-resource paths>
+Views/
+  0-Motivation/
+  1-Strategy/
+    Capabilities/
+      1-Business Capabilities/
+      2-Business Enabling Capabilities/
+      3-Enterprise Capabilities/
+    Unreconciled 1.0.4 Reference/
+  2-BusinessLayer/
+    1-Business Capabilities/
+    2-Business Enabling Capabilities/
+  3-ApplicationLayer/
+    1-InformationMap/
+    2-Enterprise Capabilities/
+    3-ApplicationMap/
+    4-MiddlewareMap/
+  4-TechnologyLayer/
+  5-Implementation/
+```
+
+The View tree retains its accepted global numbering because Views share one
+navigation namespace. Preserve its existing numbered immediate sibling categories
+as shown above. This ordering does not apply below native resource roots or in
+mirrored Relations paths. Numbering supplies no architecture code or relationship.
+
+Capability contexts display `[CT1]`, `[CT2]` and `[CT3]` from exact governed
+classification. Features display `[Feature]` as the next first-class decomposition
+level where complete governed CT3 framing exists. The same context is exposed in
+Strategy resources, Business resources, Strategy Views and Business Views:
+
+```text
+[CT1] Entity Information Enablement
+  [CT2] Provider Administration
+    [CT3] Practitioner Role Administration
+      [Feature] Electronic Endpoint Binding
+```
+
+Folders carry these display labels; semantic architectural Names, IDs, types and
+existing diagram identities remain unchanged. A classified leaf folder may contain
+the existing semantic reference under its unmodified Name. That single context
+folder is retained to expose classification without renaming architecture. There
+is no intermediate `Features (framing only)` folder. Business context folders do
+not retype Features or duplicate their Strategy semantic homes. Empty context
+folders remain legitimate navigation even where no Business behaviour or View is
+associated. Final human import/rendering acceptance remains separate from Exchange
+structure validation.
+
+Use the exact governed ancestry, independently for BC and BEC, and terminate at
+the finest recorded level. Missing tiers are never invented. A current Feature
+without complete current CT1 -> CT2 -> CT3 ancestry is retained in an explicitly
+`Unresolved Feature Ancestry` context, preserving its responsibility evidence and
+standing. Proposed placement remains Proposed. The current governed baseline has
+157 current Features, all in BEC with complete recorded ancestry; no BC Features
+exist. This projection rule creates no BC Features or amendment to the metamodel.
+Other pending, superseded, identity and ancestry uncertainties remain explicit.
+
+### Final human-inspection projection correction — same 1.0.6 candidate
+
+Business resource homes use the exact current `realises_feature`,
+`associated_feature` and `contributes_feature` assertion endpoints where the
+assertion is not unresolved. Proposed assertions retain Proposed standing.
+An explicit `governed_process` assertion provides the Process navigation path
+through that Function's recorded Feature context. This is a documentary path,
+not a new Process/Feature semantic relationship. No traversal through shared
+ownership, `uses_function` or `participating_function` supplies a Feature home.
+
+A single recorded Feature association supplies the Business resource context.
+Multiple recorded Feature associations do not establish a preferred canonical
+home: retain the existing Capability home and report the shared cases. This
+single-home navigation constraint does not remove any association: shared
+behaviour has separate visual appearances beneath each associated Feature in
+Business diagrams, all referring to the same semantic element. Unresolved
+associations and behaviour without an association stay at their established
+Capability context. Their absence is not silently repaired.
+
+A realisation View belongs beneath the exact Feature endpoint of its recorded
+assertion, including separately qualified historical contexts. A Capability-wide
+Behaviour View remains at that Capability. No generic CT3 Feature Realisations
+bucket remains. Strategy continues to contain only capability/Feature framing.
+
+Each applicable capability View context has an immediate-child landscape as its
+first serialized View reference. Landscape View Names use the local `0-`
+prefix because Archi 5.10.0 sorts Views by display Name rather than Exchange
+item order. This demonstrated View-only ordering requirement introduces no
+resource prefix or semantic element rename. Taxonomy roots show only CT1; CT1 shows context
+and CT2; CT2 shows context and CT3; CT3 shows context and Features where governed.
+Reuse existing immediate-child Views and IDs; allocate missing landscape View IDs
+from stable context identity and projection role. Terminal anchor Views remain.
+No generic Landscapes folder or invented Business Capability Features are used.
+Validation checks both serialized order and the landscape Name sorting first.
+The installed Archi 5.10.0 tree comparator confirms name sorting; native GUI
+rendering remains a final human inspection item.
+
+Business diagrams use deterministic Feature columns beneath the Capability
+context. Associated Functions, Processes and Services appear within their
+Feature's column; unassociated behaviour appears in a separate lower band.
+Paging includes missing governed association endpoints. Shared behaviour may
+have multiple visual nodes, with deterministic appearance IDs and one semantic
+ID. Draw only existing native relationships; do not add edges for contextual
+paths, folder containment, placement or inferred Function/Process/Service chains.
+
+Information, application-component and middleware projections remain independent.
+Capability elements exist once in Strategy; other layers mirror context through
+folders. Relations follow their source's actual resource home. Navigation nesting
+never creates semantic relationships. Folder identity keys retain stable source
+identity and projection role; changed Feature scaffolding is navigation only.
+
+Keep progressive context/immediate-child Views and deliberate leaf/anchor Views.
+Place Motivation subject Views directly under `0-Motivation` unless several Views
+warrant a real substructure. Empty top-level locations and clearly labelled
+documentation-only coverage Views expose representation boundaries without
+inventing semantics. Preserve all existing semantic, relationship, View, node and
+connection identities when reorganising. Folder/reference presentation identities
+may be reprojected; semantic context folder keys use stable source identity and
+projection role, excluding mutable labels and ancestry.
+
+Documentation starts with the concise source-justified definition, followed by
+existing Overview, Intent, Boundary, Responsibility or equivalent explanation
+where reconciled evidence establishes continued current applicability. Preserve
+that text verbatim; historical provenance alone does not imply historical meaning.
+Use Markdown emphasis for explanatory labels. Genuinely historical narrative or
+material with uncertain applicability follows a Markdown `---` rule and `## History`.
+Omit the separator when no history exists. Predecessor names, superseded wording,
+relocation and reconciliation explanations belong in History when useful as
+narrative. Uncertain source explanation remains historical with its provenance
+and standing preserved under AX-17. The baseline's exact-key, field-level
+[classification manifest](baseline/documentation-classification.json) records text
+hashes and applicability evidence; it authorises no semantic rewriting.
+
+Existing source-era Properties remain intact and version-qualified; current-baseline
+Properties are separately qualified. Identity, status, currentness, tier, source,
+provenance and review state belong in Properties. Do not dump those fields into
+historical prose. A historical element's source definition remains readable first;
+its Properties and View context make its historical standing explicit.
+
+Markdown RAD authors and governs; ArchiMate visualises, navigates, supports review
+and proposes change; LaTeX RAD renders and publishes. An Archi export is change
+input for governed reconciliation, not a replacement architecture repository.
+Accepted Archi presentation state may be subordinate governed projection metadata.
+Publication flows strictly `Markdown RAD -> LaTeX RAD -> publication output`;
+there is no normal reverse-authoring path. See the
+[documented collaboration lifecycle](../../archimate/capability-architecture/README.md#authority-and-collaboration-lifecycle).
+
+[The synchronised baseline](baseline/README.md) supplies the current textual
+projection, exact correspondence, unresolved items and coverage boundaries.
+
 Use the subject's established decomposition, preserving its standing and
 qualifications. A decomposing subject has a same-named folder containing its own
 element reference followed by its children's folders. Apply the same pattern to

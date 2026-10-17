@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "before": {
+    "elements": 1165,
+    "relationships": 823,
+    "views": 984,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 5
+    }
+  },
+  "after": {
+    "elements": 1299,
+    "relationships": 852,
+    "views": 1012,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 25,
+      "Driver": 10,
+      "Assessment": 5,
+      "Goal": 9,
+      "Outcome": 3,
+      "Requirement": 74,
+      "Constraint": 3,
+      "Stakeholder": 10
+    }
+  },
+  "deterministic_regeneration": "PASS",
+  "sha256": "6152ac25113c24c4d95eb892b53c8fbcfb212ff5172630425fba789035a938a6"
+}

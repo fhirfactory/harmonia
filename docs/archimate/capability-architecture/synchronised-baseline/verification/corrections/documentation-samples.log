@@ -1,0 +1,71 @@
+business-capability:care-access-management id-3ffe8db4705855b587349b8bf949f469 Care Access Management
+Establish and manage access to applicable care.
+
+Care Access Management establishes the circumstances in which an individual seeks or enters care. Intake creates the access context, referral requests another participant's involvement, and eligibility determines whether applicable access conditions are met. These are separate contributions to access: a person can be eligible without having a booking, and a received referral can remain undecided.
+
+**Intent**
+
+Make entry requirements and referral disposition intelligible without implying that care has already been accepted or delivered.
+
+**Boundary**
+
+Eligibility does not allocate care, and referral receipt does not establish an assumption of clinical responsibility.
+
+capability:individual-care-delivery id-2b13c6665f7b530fb21b07fd3e80e4ce Individual Care Delivery
+Assess, clinically determine, plan, intervene, monitor and review individual care independently of setting, mode, time pattern or organisational arrangement.
+
+Individual Care Delivery is the organisation's ability to understand an individual's health and act on that understanding through purposeful care. Its six constituent abilities distinguish establishing findings, interpreting their clinical meaning, choosing a response, performing care, observing change and evaluating care against its objectives. These distinctions describe responsibilities and outcomes rather than a compulsory sequence: a consultation or continuing episode may revisit several of them.
+
+The same ability can be exercised in a hospital, a general practice, a home or a virtual consultation. Setting and time pattern affect the circumstances of care without changing the responsibility represented by this capability.
+
+**Intent**
+
+Support clinically meaningful care whose intent, performance, observed effects and continuing appropriateness can be distinguished.
+
+**Boundary**
+
+Care access, appointments and operational coordination enable care but do not establish that it has been performed. Clinical judgement and the authority to deliver care remain with the responsible participants; possession or coordination of their information does not transfer that authority to Harmonia.
+
+**Harmonia Architectural Relevance**
+
+Harmonia supplies and connects information used in individual care. The approved Health Information Access support trace is bounded: records can inform care, but direct assessment can establish findings independently, and access to a proposed intervention does not authorise its performance.
+
+capability:person-identity id-29e0bf94882559a7b6ed9d092303a560 Person Identity Administration
+Resolving, maintaining, and correlating identities and identifiers assigned to an individual across different authorities.
+
+Definition — reviewed candidate
+
+Resolve, maintain and correlate identities and identifiers assigned to a person across issuing authorities, retaining source-qualified correction history.
+
+**Overview**
+
+Resolve, maintain and correlate identities and identifiers assigned to a person across issuing authorities, retaining source-qualified correction history.
+
+**Intent**
+
+Resolve, maintain and correlate identities and identifiers assigned to a person across issuing authorities, retaining source-qualified correction history.
+
+**Boundary**
+
+Information administration does not confer authority over the represented person, organisation, service, place, device or clinical activity.
+
+---
+
+## History
+
+### Capability Overview — predecessor explanation
+
+Person Identity resolves and correlates the identities and identifiers assigned to one individual by different authorities. It enables an incoming local identifier to be understood in its issuing namespace and related to other known identifiers without destructively replacing their history. Resolution, cross-authority correlation, alias association and governed correction preserve different aspects of that responsibility.
+
+### Intent — predecessor explanation
+
+Support reliable association of care information with the intended individual across participating systems.
+
+### Boundary — predecessor explanation
+
+Harmonia relies on authoritative upstream PAS/MPI information for R1/R2. Correlation and correction notifications do not establish an autonomous master-patient reconciliation engine.
+
+### Harmonia Architectural Relevance — predecessor explanation
+
+Identity association is a direct platform concern because clinical records, orders and operational activity need an enduring subject context. Its Core standing does not imply originating master identity authority.
+

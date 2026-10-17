@@ -1,0 +1,2390 @@
+{
+  "authority": "Exact capture keys and explicit reviewed source decisions; no name-based identity reconciliation",
+  "earlier_capture_records": 705,
+  "exact_key_continuities": 705,
+  "deterministically_reconciled_names": [
+    {
+      "key": "capability:health-product-administration",
+      "before": "Health Product Administration",
+      "after": "Health Materiel Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:person-identity",
+      "before": "Person Identity",
+      "after": "Person Identity Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:healthcare-subject",
+      "before": "Healthcare Subject",
+      "after": "Healthcare Subject Profile Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:client-relationship",
+      "before": "Client Relationship",
+      "after": "Client Relationship Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:client-privacy",
+      "before": "Client Privacy",
+      "after": "Client Privacy Guardrail Management",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:primary-care",
+      "before": "Primary Care",
+      "after": "Primary Care Coordination",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:acute-care",
+      "before": "Acute Care",
+      "after": "Acute Care Monitoring & Event Coordination",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:emergency-care",
+      "before": "Emergency Care",
+      "after": "Emergency Care Progression",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:inpatient-care",
+      "before": "Inpatient Care",
+      "after": "Multidisciplinary Inpatient Care Coordination",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:diagnostic-services",
+      "before": "Diagnostic Services",
+      "after": "Diagnostic Service Integration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:medication-therapy",
+      "before": "Medication Therapy",
+      "after": "Medication Therapy Provision and Monitoring",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:preventive-care",
+      "before": "Preventive Care",
+      "after": "Screening and Immunisation Enablement",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:community-care",
+      "before": "Community Care",
+      "after": "Community Care Coordination",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:outreach-care",
+      "before": "Outreach Care",
+      "after": "Outreach Care Continuity",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:remote--virtual-care",
+      "before": "Remote & Virtual Care",
+      "after": "Remote Patient Monitoring",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:clinical-workforce-management",
+      "before": "Clinical Workforce Management",
+      "after": "Clinical Workforce Capability Monitoring",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:clinical-competency-management",
+      "before": "Clinical Competency Management",
+      "after": "Clinical Competency Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:clinical-qualification-management",
+      "before": "Clinical Qualification Management",
+      "after": "Clinical Qualification Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:health-information-exchange",
+      "before": "Health Information Exchange",
+      "after": "Health Information Exchange Enablement",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    },
+    {
+      "key": "capability:assurance-criteria-management",
+      "before": "Assurance Criteria Management",
+      "after": "Assurance Criteria Administration",
+      "currentness": "current",
+      "source": "architecture.json / reviewed_bec_reconciliation / decisions"
+    }
+  ],
+  "human_adjudication_preserved": [
+    {
+      "key": "capability:health-information-communication",
+      "reference_id": "HCM-BEC-health-information-communication",
+      "name": "Health Information Communication",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication."
+    },
+    {
+      "key": "capability:workflow--activity-coordination",
+      "reference_id": "HCM-BEC-workflow-activity-coordination",
+      "name": "Workflow & Activity Coordination",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "feature:standards-based-boundary-exchange",
+      "reference_id": "FEAT-ISE-10",
+      "name": "Standards-Based Boundary Exchange",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication."
+    },
+    {
+      "key": "feature:security-context-propagation",
+      "reference_id": "FEAT-ISE-12",
+      "name": "Security Context Propagation",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: general platform security/evidence Feature has no adjudicated patient-specific CT3 frame; established Health Information Control responsibility is preserved."
+    },
+    {
+      "key": "feature:non-phi-compliance-auditing",
+      "reference_id": "FEAT-ISE-13",
+      "name": "Non-PHI Compliance Auditing",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: general platform security/evidence Feature has no adjudicated patient-specific CT3 frame; established Health Information Control responsibility is preserved."
+    },
+    {
+      "key": "feature:work-order-progression",
+      "reference_id": "FEAT-ISE-20",
+      "name": "Work Order Progression",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "feature:to-do-decision--approval-coordination",
+      "reference_id": "FEAT-ISE-21",
+      "name": "To Do Decision & Approval Coordination",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "feature:synthetic-task-orchestration",
+      "reference_id": "FEAT-ISE-22",
+      "name": "Synthetic Task Orchestration",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "feature:workflow-timeout--escalation-oversight",
+      "reference_id": "FEAT-ISE-23",
+      "name": "Workflow Timeout & Escalation Oversight",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "capability:governed-assurance",
+      "reference_id": "HCM-BEC-governed-assurance",
+      "name": "Governed Assurance",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "capability:credential-management",
+      "reference_id": "HCM-BEC-credential-management",
+      "name": "Credential Management",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical operational badges/physical-access credentials are distinct from reviewed clinical-service credential definitions."
+    },
+    {
+      "key": "function:verify-operational-access-credential",
+      "reference_id": "HCM-FN-verify-operational-access-credential",
+      "name": "Verify Operational Access Credential",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical operational badges/physical-access credentials are distinct from reviewed clinical-service credential definitions."
+    },
+    {
+      "key": "service:operational-credential-checkpoint-service",
+      "reference_id": "HCM-SV-operational-credential-checkpoint-service",
+      "name": "Operational Credential Checkpoint Service",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical operational badges/physical-access credentials are distinct from reviewed clinical-service credential definitions."
+    },
+    {
+      "key": "function:manage-specimen-transport-progression",
+      "reference_id": "HCM-FN-manage-specimen-transport-progression",
+      "name": "Manage Specimen Transport Progression",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The Canonical Function includes pathology bio-specimens, blood products and surgical trays. Surgical-tray/materiel movement is excluded from reviewed Clinical Logistics Coordination; a specimen/materiel semantic split requires human judgement."
+    },
+    {
+      "key": "function:mediate-standards-based-health-information-communication",
+      "reference_id": "HCM-FN-mediate-standards-based-health-information-communication",
+      "name": "Mediate Standards-Based Health Information Communication",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication."
+    },
+    {
+      "key": "service:standards-communication-gateway-service",
+      "reference_id": "HCM-SV-standards-communication-gateway-service",
+      "name": "Standards Communication Gateway Service",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical boundary protocol mediation and technical transmission are distinct from reviewed patient-facing communication."
+    },
+    {
+      "key": "function:coordinate-work-order",
+      "reference_id": "HCM-FN-coordinate-work-order",
+      "name": "Coordinate Work Order",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "service:work-order-coordination-service",
+      "reference_id": "HCM-SV-work-order-coordination-service",
+      "name": "Work Order Coordination Service",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "function:coordinate-to-do",
+      "reference_id": "HCM-FN-coordinate-to-do",
+      "name": "Coordinate To Do",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "service:to-do-management-service",
+      "reference_id": "HCM-SV-to-do-management-service",
+      "name": "To Do Management Service",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "function:coordinate-synthetic-task",
+      "reference_id": "HCM-FN-coordinate-synthetic-task",
+      "name": "Coordinate Synthetic Task",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "service:synthetic-task-execution-service",
+      "reference_id": "HCM-SV-synthetic-task-execution-service",
+      "name": "Synthetic Task Execution Service",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "function:supervise-activity-timeout--escalation",
+      "reference_id": "HCM-FN-supervise-activity-timeout-escalation",
+      "name": "Supervise Activity Timeout / Escalation",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "service:activity-escalation-telemetry",
+      "reference_id": "HCM-SV-activity-escalation-telemetry",
+      "name": "Activity Escalation Telemetry",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "function:establish-assurance-context",
+      "reference_id": "HCM-FN-establish-assurance-context",
+      "name": "Establish Assurance Context",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "function:assess-assurance-evidence",
+      "reference_id": "HCM-FN-assess-assurance-evidence",
+      "name": "Assess Assurance Evidence",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "function:adjudicate-assurance-assessment",
+      "reference_id": "HCM-FN-adjudicate-assurance-assessment",
+      "name": "Adjudicate Assurance Assessment",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "service:request-service-assurance",
+      "reference_id": "HCM-SV-request-service-assurance",
+      "name": "Request Service Assurance",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "service:request-service-assurance-status",
+      "reference_id": "HCM-SV-request-service-assurance-status",
+      "name": "Request Service Assurance Status",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "service:communicate-service-assurance-outcome",
+      "reference_id": "HCM-SV-communicate-service-assurance-outcome",
+      "name": "Communicate Service Assurance Outcome",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "process:specimen-transport-process",
+      "reference_id": "HCM-PR-specimen-transport-process",
+      "name": "Specimen Transport Process",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The Canonical Process includes blood products as well as bio-specimens and surgical biopsies. Whether the blood-product wording denotes diagnostic specimens or transported health materiel is unadjudicated; the original Process is preserved without narrowing it."
+    },
+    {
+      "key": "process:work-order-progression-process",
+      "reference_id": "HCM-PR-work-order-progression-process",
+      "name": "Work Order Progression Process",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "process:to-do-progression-process",
+      "reference_id": "HCM-PR-to-do-progression-process",
+      "name": "To Do Progression Process",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "process:synthetic-task-progression-process",
+      "reference_id": "HCM-PR-synthetic-task-progression-process",
+      "name": "Synthetic Task Progression Process",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "process:assurance-process-execution",
+      "reference_id": "HCM-PR-assurance-process-execution",
+      "name": "Assurance Process Execution",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "process:assurance-process-reporting--communication",
+      "reference_id": "HCM-PR-assurance-process-reporting-communication",
+      "name": "Assurance Process Reporting / Communication",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "proposal:bec-independent-assurance-evaluation-enablement",
+      "reference_id": "HCM-BEC-independent-assurance-evaluation-enablement",
+      "name": "Independent Assurance Evaluation Enablement",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The previous grouping frames Canonical subject-assurance execution; it cannot be equated with review of the assurance service itself."
+    },
+    {
+      "key": "proposal:bec-information-authority-representation",
+      "reference_id": "HCM-BEC-information-authority-representation",
+      "name": "Information Authority Representation",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Source credibility and authority standing require an explicit home; information-asset tags alone do not establish that responsibility."
+    },
+    {
+      "key": "proposal:bec-significant-activity-audit-capture",
+      "reference_id": "HCM-BEC-significant-activity-audit-capture",
+      "name": "Significant Activity Audit Capture",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The reviewed hierarchy does not allocate general mandatory authoritative audit capture; disclosure or provenance alone is not an equivalent responsibility."
+    },
+    {
+      "key": "proposal:bec-governance-requirement-publication-support",
+      "reference_id": "HCM-BEC-governance-requirement-publication-support",
+      "name": "Governance Requirement Publication Support",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Requirement publication/authority is not assurance-service review or information-model design; the reviewed hierarchy does not allocate a home."
+    },
+    {
+      "key": "proposal:bec-entity-specific-operational-coordination",
+      "reference_id": "HCM-BEC-entity-specific-operational-coordination",
+      "name": "Entity-Specific Operational Coordination",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal entity-relative progression is not the reviewed external work bridge; a current BEC destination has not been adjudicated."
+    },
+    {
+      "key": "proposal:bec-governed-operational-activity-design",
+      "reference_id": "HCM-BEC-governed-operational-activity-design",
+      "name": "Governed Operational Activity Design",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal execution-envelope design is distinct from governance of work across an external execution boundary."
+    },
+    {
+      "key": "proposal:bec-service-offering-readiness-coordination",
+      "reference_id": "HCM-BEC-service-offering-readiness-coordination",
+      "name": "Service Offering Readiness Coordination",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: source proposal determines collective readiness; reviewed scope establishes dependency tracking only. Evidence may be reused, but determination authority is not silently transferred."
+    },
+    {
+      "key": "proposal:feature-information-authority-source-standing-representation",
+      "reference_id": "HCM-FT-information-authority-source-standing-representation",
+      "name": "Information Authority & Source Standing Representation",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Source credibility and authority standing require an explicit home; information-asset tags alone do not establish that responsibility."
+    },
+    {
+      "key": "proposal:feature-mandatory-significant-activity-audit-capture",
+      "reference_id": "HCM-FT-mandatory-significant-activity-audit-capture",
+      "name": "Mandatory Significant Activity Audit Capture",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The reviewed hierarchy does not allocate general mandatory authoritative audit capture; disclosure or provenance alone is not an equivalent responsibility."
+    },
+    {
+      "key": "proposal:feature-trusted-identity-context-intake",
+      "reference_id": "HCM-FT-trusted-identity-context-intake",
+      "name": "Trusted Identity Context Intake",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: general platform security/evidence Feature has no adjudicated patient-specific CT3 frame; established Health Information Control responsibility is preserved."
+    },
+    {
+      "key": "proposal:feature-governed-policy-assignment-revocation",
+      "reference_id": "HCM-FT-governed-policy-assignment-revocation",
+      "name": "Governed Policy Assignment & Revocation",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: general platform security/evidence Feature has no adjudicated patient-specific CT3 frame; established Health Information Control responsibility is preserved."
+    },
+    {
+      "key": "proposal:feature-operation-bound-authorisation-enforcement",
+      "reference_id": "HCM-FT-operation-bound-authorisation-enforcement",
+      "name": "Operation-Bound Authorisation Enforcement",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: general platform security/evidence Feature has no adjudicated patient-specific CT3 frame; established Health Information Control responsibility is preserved."
+    },
+    {
+      "key": "proposal:feature-entity-relative-activity-coordination",
+      "reference_id": "HCM-FT-entity-relative-activity-coordination",
+      "name": "Entity-Relative Activity Coordination",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal entity-relative progression is not the reviewed external work bridge; a current BEC destination has not been adjudicated."
+    },
+    {
+      "key": "proposal:feature-entity-behaviour-failure-recovery-governance",
+      "reference_id": "HCM-FT-entity-behaviour-failure-recovery-governance",
+      "name": "Entity Behaviour Failure & Recovery Governance",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal entity-relative progression is not the reviewed external work bridge; a current BEC destination has not been adjudicated."
+    },
+    {
+      "key": "proposal:feature-operational-activity-context-definition",
+      "reference_id": "HCM-FT-operational-activity-context-definition",
+      "name": "Operational Activity Context Definition",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal execution-envelope design is distinct from governance of work across an external execution boundary."
+    },
+    {
+      "key": "proposal:feature-activity-outcome-continuation-rules",
+      "reference_id": "HCM-FT-activity-outcome-continuation-rules",
+      "name": "Activity Outcome & Continuation Rules",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal execution-envelope design is distinct from governance of work across an external execution boundary."
+    },
+    {
+      "key": "proposal:feature-uncertain-activity-outcome-reconciliation",
+      "reference_id": "HCM-FT-uncertain-activity-outcome-reconciliation",
+      "name": "Uncertain Activity Outcome Reconciliation",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "proposal:feature-controlled-administrative-recovery",
+      "reference_id": "HCM-FT-controlled-administrative-recovery",
+      "name": "Controlled Administrative Recovery",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "proposal:feature-service-readiness-dependency-assessment",
+      "reference_id": "HCM-FT-service-readiness-dependency-assessment",
+      "name": "Service Readiness Dependency Assessment",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: source proposal determines collective readiness; reviewed scope establishes dependency tracking only. Evidence may be reused, but determination authority is not silently transferred."
+    },
+    {
+      "key": "proposal:feature-governance-requirement-version-publication",
+      "reference_id": "HCM-FT-governance-requirement-version-publication",
+      "name": "Governance Requirement Version Publication",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Requirement publication/authority is not assurance-service review or information-model design; the reviewed hierarchy does not allocate a home."
+    },
+    {
+      "key": "proposal:feature-independent-evidence-assessment-adjudication",
+      "reference_id": "HCM-FT-independent-evidence-assessment-adjudication",
+      "name": "Independent Evidence Assessment & Adjudication",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical assurance against a governed subject is not independent review of the assurance service itself."
+    },
+    {
+      "key": "proposal:function-qualify-information-authority-standing",
+      "reference_id": "HCM-FN-qualify-information-authority-standing",
+      "name": "Qualify Information Authority Standing",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Source credibility and authority standing require an explicit home; information-asset tags alone do not establish that responsibility."
+    },
+    {
+      "key": "proposal:function-capture-required-significant-audit-evidence",
+      "reference_id": "HCM-FN-capture-required-significant-audit-evidence",
+      "name": "Capture Required Significant Audit Evidence",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The reviewed hierarchy does not allocate general mandatory authoritative audit capture; disclosure or provenance alone is not an equivalent responsibility."
+    },
+    {
+      "key": "proposal:service-mandatory-audit-evidence-capture",
+      "reference_id": "HCM-SV-mandatory-audit-evidence-capture",
+      "name": "Mandatory Audit Evidence Capture",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: The reviewed hierarchy does not allocate general mandatory authoritative audit capture; disclosure or provenance alone is not an equivalent responsibility."
+    },
+    {
+      "key": "proposal:function-coordinate-entity-relative-input",
+      "reference_id": "HCM-FN-coordinate-entity-relative-input",
+      "name": "Coordinate Entity-Relative Input",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal entity-relative progression is not the reviewed external work bridge; a current BEC destination has not been adjudicated."
+    },
+    {
+      "key": "proposal:service-entity-operational-input-submission",
+      "reference_id": "HCM-SV-entity-operational-input-submission",
+      "name": "Entity Operational Input Submission",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal entity-relative progression is not the reviewed external work bridge; a current BEC destination has not been adjudicated."
+    },
+    {
+      "key": "proposal:function-maintain-operational-fulfilment-definition",
+      "reference_id": "HCM-FN-maintain-operational-fulfilment-definition",
+      "name": "Maintain Operational Fulfilment Definition",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Internal execution-envelope design is distinct from governance of work across an external execution boundary."
+    },
+    {
+      "key": "proposal:function-reconcile-indeterminate-activity-effects",
+      "reference_id": "HCM-FN-reconcile-indeterminate-activity-effects",
+      "name": "Reconcile Indeterminate Activity Effects",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "proposal:function-establish-activity-effect-observation-basis",
+      "reference_id": "HCM-FN-establish-activity-effect-observation-basis",
+      "name": "Establish Activity Effect Observation Basis",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "proposal:function-determine-reconciled-activity-continuation",
+      "reference_id": "HCM-FN-determine-reconciled-activity-continuation",
+      "name": "Determine Reconciled Activity Continuation",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "proposal:process-indeterminate-activity-outcome-reconciliation-process",
+      "reference_id": "HCM-PR-indeterminate-activity-outcome-reconciliation-process",
+      "name": "Indeterminate Activity Outcome Reconciliation Process",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: Canonical internal Work Order, To Do and synthetic Task progression is broader than the reviewed external execution-boundary bridge."
+    },
+    {
+      "key": "proposal:function-assess-service-offering-readiness",
+      "reference_id": "HCM-FN-assess-service-offering-readiness",
+      "name": "Assess Service Offering Readiness",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: source proposal determines collective readiness; reviewed scope establishes dependency tracking only. Evidence may be reused, but determination authority is not silently transferred."
+    },
+    {
+      "key": "proposal:service-service-offering-readiness-query",
+      "reference_id": "HCM-SV-service-offering-readiness-query",
+      "name": "Service Offering Readiness Query",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "note": "HUMAN ADJUDICATION REQUIRED: source proposal determines collective readiness; reviewed scope establishes dependency tracking only. Evidence may be reused, but determination authority is not silently transferred."
+    }
+  ],
+  "definition_gaps": [
+    {
+      "key": "business-capability:health-service-operational-readiness",
+      "name": "Health Service Operational Readiness"
+    },
+    {
+      "key": "business-capability:clinical-device-maintenance-management",
+      "name": "Clinical Device Maintenance Management"
+    },
+    {
+      "key": "business-capability:health-information-sharing-programme-management",
+      "name": "Health Information Sharing Programme Management"
+    },
+    {
+      "key": "capability:primary-care",
+      "name": "Primary Care Coordination"
+    },
+    {
+      "key": "capability:acute-care",
+      "name": "Acute Care Monitoring & Event Coordination"
+    },
+    {
+      "key": "capability:emergency-care",
+      "name": "Emergency Care Progression"
+    },
+    {
+      "key": "capability:inpatient-care",
+      "name": "Multidisciplinary Inpatient Care Coordination"
+    },
+    {
+      "key": "capability:diagnostic-services",
+      "name": "Diagnostic Service Integration"
+    },
+    {
+      "key": "capability:medication-therapy",
+      "name": "Medication Therapy Provision and Monitoring"
+    },
+    {
+      "key": "capability:preventive-care",
+      "name": "Screening and Immunisation Enablement"
+    },
+    {
+      "key": "capability:community-care",
+      "name": "Community Care Coordination"
+    },
+    {
+      "key": "capability:outreach-care",
+      "name": "Outreach Care Continuity"
+    },
+    {
+      "key": "capability:remote--virtual-care",
+      "name": "Remote Patient Monitoring"
+    },
+    {
+      "key": "capability:clinical-resource-management",
+      "name": "Clinical Resource Management"
+    },
+    {
+      "key": "capability:health-information-communication",
+      "name": "Health Information Communication"
+    },
+    {
+      "key": "capability:workflow--activity-coordination",
+      "name": "Workflow & Activity Coordination"
+    },
+    {
+      "key": "capability:credential-management",
+      "name": "Credential Management"
+    }
+  ],
+  "unresolved_dimensions": [
+    {
+      "key": "capability:individual-health-assessment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:clinical-determination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:individual-care-planning",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:clinical-intervention",
+      "dimensions": [
+        "relevance",
+        "intervention_taxonomy"
+      ]
+    },
+    {
+      "key": "capability:individual-health-monitoring",
+      "dimensions": [
+        "relevance",
+        "semantic_relationship_representation"
+      ]
+    },
+    {
+      "key": "capability:individual-care-review",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:health-service-governance",
+      "dimensions": [
+        "relevance",
+        "enablement"
+      ]
+    },
+    {
+      "key": "business-capability:health-history-assessment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-examination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-status-measurement",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-state-monitoring",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-response-monitoring",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-appropriateness-review",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-effectiveness-review",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-access-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-intake-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-referral-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-eligibility-determination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-scheduling--capacity-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-appointment-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-place-allocation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-place-readiness-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-resource-deployment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:operational-care-flow-coordination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:operational-care-capacity-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-coordination--transition",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-team-coordination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-responsibility-transition",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-discharge-coordination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-support-logistics-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:patient-movement-coordination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-material-logistics-coordination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:care-support-work-coordination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-support-provision",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-service-appointment-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-service-delivery",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-specimen-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-data-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-interpretation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-report-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:diagnostic-report-distribution",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:medication--pharmacy-services",
+      "dimensions": [
+        "relevance",
+        "medication_compounding"
+      ]
+    },
+    {
+      "key": "business-capability:prescription-medication-dispensing",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:non-prescription-medication-provision",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:medication-advice",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:medication-dose-administration-aid-provision",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-technology-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-inventory-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-feature--release-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-loan--deployment-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-utilisation-support",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-integration-provision",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-data-integration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-lifecycle-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-safety-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-risk-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-risk-mitigation-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-risk-response-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-quality-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-quality-criteria-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-quality-evidence-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-quality-review--assessment-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-quality-reporting",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health-problem-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health-programme-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health-education-services",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health-programme-monitoring",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health-reporting",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:preventative-health-cohort-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:population-health-surveillance",
+      "dimensions": [
+        "relevance",
+        "semantic_relationship_representation"
+      ]
+    },
+    {
+      "key": "business-capability:population-health-longitudinal-assessment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:population-health-surveillance-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:population-health-event-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:notifiable-health-event-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:population-health-reporting",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-system-planning",
+      "dimensions": [
+        "relevance",
+        "semantic_relationship_representation"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-demand-assessment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-capacity-planning",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-distribution-planning",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-management",
+      "dimensions": [
+        "relevance",
+        "semantic_relationship_representation"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-data-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-structure-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-lifecycle-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-catalogue-and-index-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-compartmentalisation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-data-correlation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-data-retrieval",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-management",
+      "dimensions": [
+        "relevance",
+        "semantic_relationship_representation"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-context-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-context-extraction",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-information-formulation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-concept-association",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-review--approval-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-knowledge-publication--sharing",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-standards-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:information-model-discovery",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:information-model-adoption",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:information-model-education",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:information-model-compliance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:information-model-governance-oversight",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:standards-adoption",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:standards-impact-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-semantics-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:terminology-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:terminology-utilisation-oversight",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:terminology-localisation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:classification-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:classification-utilisation-oversight",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:semantic-mapping-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-exchange",
+      "dimensions": [
+        "relevance",
+        "name_uniqueness"
+      ]
+    },
+    {
+      "key": "business-capability:digital-communication-channel",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:digital-identity--access-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:identity-assurance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:identity-modelling--interoperability",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:identity-qualification-control",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:identity-identification--authentication",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:access-control-context-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:access-control-assurance--reporting",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:access-control-collaboration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:access-control-enforcement",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-protection",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-privacy-safeguard-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-safeguarding",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-access-monitoring",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-compartment-assurance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-classification-assurance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:digital-accountability--trust",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:governed-activity-attribution",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:security--information-use-accountability",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:research-information-support",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:governed-research-information-provision",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-innovation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-innovation-evaluation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-modelling",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-need-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-capability-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-implementation-support",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-continuous-improvement",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-alignment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-co-dependency-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-resource-identification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-financial-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-implementation-planning",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-workforce-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:practitioner-qualification-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:practitioner-engagement--privilege-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:workforce-service-coverage-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:healthcare-organisation--service-structure-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:healthcare-organisation-identity--structure-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:healthcare-location-definition-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:healthcare-service-offering-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:financial--commercial-services",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-activity-charging-information-provision",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:corporate-support-services",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:back-office-services",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:facilities-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:it-infrastructure-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:communications--publicity",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:people-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:operational-oversight",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:governance-framework-management",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:policy--obligation-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:authority--constraint-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:compliance-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:compliance-assessment-definition",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:governance-reporting--checkpoint-definition",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-assurance-specification",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:assurance-approach-definition",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:assurance-evaluation-criteria-governance",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:assurance-evaluation",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:assurance-evidence-assessment",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:assurance-conclusion-determination",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "business-capability:health-service-operational-readiness",
+      "dimensions": [
+        "identified_readiness_placement"
+      ]
+    },
+    {
+      "key": "business-capability:clinical-device-maintenance-management",
+      "dimensions": [
+        "maintenance_membership"
+      ]
+    },
+    {
+      "key": "business-capability:health-information-sharing-programme-management",
+      "dimensions": [
+        "sharing_programme_placement"
+      ]
+    },
+    {
+      "key": "capability:client-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:provider-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:organisation-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:location-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:health-service-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:health-product-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:clinical-device-administration",
+      "dimensions": [
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:health-information-exchange",
+      "dimensions": [
+        "name_uniqueness"
+      ]
+    },
+    {
+      "key": "capability:assurance-design",
+      "dimensions": [
+        "feature_decomposition",
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:assurance-criteria-management",
+      "dimensions": [
+        "feature_decomposition",
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:governed-assurance",
+      "dimensions": [
+        "feature_decomposition",
+        "relevance"
+      ]
+    },
+    {
+      "key": "capability:credential-management",
+      "dimensions": [
+        "strategy_catalogue_correspondence",
+        "relevance"
+      ]
+    },
+    {
+      "key": "function:associate-order-outcome",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:order-outcome-notification",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:associate-care-plan-context",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:care-plan-context-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:distribute-care-plan-change",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:care-plan-change-notification",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:coordinate-multi-agency-chronic-care-plan",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:chronic-care-timeline-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:route-acute-critical-result-alert",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:acute-clinical-alert-dispatch",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:assemble-inpatient-discharge-dossier",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:discharge-dossier-packaging-service",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:receive-diagnostic-requisition-feed",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:modality-worklist-distribution",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:publish-governed-diagnostic-report",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:diagnostic-publication-service",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:correlate-adverse-reaction--allergy-profile",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:allergy--adverse-reaction-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:project-screening-eligibility-timeline",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:preventive-screening-status-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:bind-community-support-network-context",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:community-care-team-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:manage-clinic--practice-capacity",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:ward-operational-summary-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:manage-theatre-capacity",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:ed-operational-status-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:ambulatory-session-status-query",
+      "dimensions": [
+        "feature_association",
+        "exposure_consumer"
+      ]
+    },
+    {
+      "key": "function:manage-mobile-service-capacity",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:track-operational-staff-presence",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:staff-presence-telemetry-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:verify-operational-access-credential",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:operational-credential-checkpoint-service",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:retrieve-health-information",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:clinical-resource-retrieval-service",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:apply-access-qualified-result-filtering",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:evaluate-consent-constraint",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:consent-enforcement-service",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:propagate-security-context",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:security-context-validation-service",
+      "dimensions": [
+        "feature_association",
+        "function_mapping"
+      ]
+    },
+    {
+      "key": "function:coordinate-care-team-collaboration",
+      "dimensions": [
+        "semantic_boundary_conflict"
+      ]
+    },
+    {
+      "key": "function:govern-information-definition",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:information-dictionary-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:govern-terminology-binding",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:terminology-binding-specification-lookup",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:govern-exchange-profile",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "service:exchange-profile-specification-query",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "function:design-service-assurance",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "function:manage-assurance-criteria",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "function:establish-assurance-context",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "function:assess-assurance-evidence",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "function:adjudicate-assurance-assessment",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "service:request-service-assurance",
+      "dimensions": [
+        "feature_association",
+        "contextual_view",
+        "function_mapping"
+      ]
+    },
+    {
+      "key": "service:request-service-assurance-status",
+      "dimensions": [
+        "feature_association",
+        "contextual_view",
+        "function_mapping"
+      ]
+    },
+    {
+      "key": "service:communicate-service-assurance-outcome",
+      "dimensions": [
+        "feature_association",
+        "contextual_view",
+        "function_mapping"
+      ]
+    },
+    {
+      "key": "process:governed-person-identity-correction-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:practitioner-verification-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:referral-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:encounter-lifecycle-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:closed-loop-order-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:clinical-document-lifecycle-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:theatre-case-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:clinic--operational-queue-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:bed-turnover-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:operational-work-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:patient-transport-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:specimen-transport-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:discharge-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:work-order-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:to-do-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:synthetic-task-progression-process",
+      "dimensions": [
+        "feature_association"
+      ]
+    },
+    {
+      "key": "process:assurance-process-design",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "process:assurance-process-execution",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    },
+    {
+      "key": "process:assurance-process-reporting--communication",
+      "dimensions": [
+        "feature_association",
+        "contextual_view"
+      ]
+    }
+  ],
+  "historical_motivation_mapping_limits": [
+    {
+      "source": "docs/latex-legacy/diagrams/fig-motivation-map.tex",
+      "reason": "Five remaining diagram edges touch historical Strategy Capability projections with no proven baseline crosswalk. Retained as source evidence, not current or newly allocated Strategy semantics."
+    },
+    {
+      "source": "docs/latex-legacy/chapters/01-motivation-strategy.tex",
+      "reason": "Narrative predecessor Motivation definitions are retained in a source-evidence View. Lexical similarity does not establish identity equivalence to the typed diagram or current Domain01 concepts."
+    },
+    {
+      "source": "docs/latex-legacy/chapters/01-motivation-strategy.tex",
+      "reason": "Six Driver and six Goal definitions and the At-Least-Once / Write-Behind Principle boxes apparently overlap diagram objects, but a safe semantic identity crosswalk is not established. No duplicate semantic allocation or name-based merge. Full narrative remains in Historical Source Evidence; human review of correspondence is required."
+    }
+  ],
+  "other_preserved_review_items": [
+    "214 unproven 1.0.4 crosswalks; no label-based equivalence",
+    "CM-R05 Exchange naming qualification/conflict remains in snapshot name history and source notes; display rename is not closure",
+    "Client consent / FEAT-EM-09 ownership history retained",
+    "F46 and Domain05 C/F/D/M identity/type ambiguities remain in current RADS",
+    "462 source relationship assertions retain their exact metadata-only findings",
+    "Current Application/Information/Middleware/Technology semantic publication is future expansion, not absent RADS architecture"
+  ]
+}

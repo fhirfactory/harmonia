@@ -1,0 +1,30 @@
+Command: timeout --signal=TERM --kill-after=5s 30s python3 /tmp/harmonia-106-projection-compare.py
+PASS byte-for-byte: docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml
+PASS byte-for-byte: docs/archimate/capability-architecture/synchronised-baseline/validation.json
+PASS byte-for-byte: docs/markdown/governance/baseline/business-capabilities.md
+PASS byte-for-byte: docs/markdown/governance/baseline/business-enabling-capabilities.md
+PASS byte-for-byte: docs/markdown/governance/baseline/features.md
+PASS byte-for-byte: docs/markdown/governance/baseline/functions.md
+PASS byte-for-byte: docs/markdown/governance/baseline/services.md
+PASS byte-for-byte: docs/markdown/governance/baseline/processes.md
+PASS byte-for-byte: docs/markdown/governance/baseline/enterprise-capabilities.md
+PASS byte-for-byte: docs/markdown/governance/baseline/relationships.md
+PASS byte-for-byte: docs/markdown/governance/baseline/motivation.md
+PASS byte-for-byte: docs/markdown/governance/baseline/discrepancies.json
+PASS: all 12 baseline model/validation/Markdown outputs independently reproduced byte-for-byte
+
+Exit status: 0
+
+Read-only verification procedure used:
+
+from pathlib import Path
+import sys,json
+sys.path.insert(0,'docs/archimate/capability-architecture/tools')
+import synchronise_baseline as s
+v=s.read(s.DEST/'validation.json')
+files=[s.DEST/'Harmonia-Architecture-Baseline.xml',s.DEST/'validation.json',*[s.ROOT/p for p in v['markdown_sha256']]]
+for p in files:
+ other=Path('/tmp/harmonia-106-projection-reproduction')/p.relative_to(s.ROOT)
+ assert p.read_bytes()==other.read_bytes(),str(p)
+ print('PASS byte-for-byte:',p.relative_to(s.ROOT))
+print('PASS: all',len(files),'baseline model/validation/Markdown outputs independently reproduced byte-for-byte')

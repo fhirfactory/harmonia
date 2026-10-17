@@ -1,0 +1,8 @@
+Command: timeout --signal=TERM --kill-after=5s 60s python3 scripts/rads_business_architecture.py validate
+{
+  "result": "PASS",
+  "invalid": 0,
+  "unresolved_by_architectural_decision": 2467
+}
+
+Exit status: 0

@@ -10,8 +10,20 @@ RELEASE_FILE ?= $(REPOSITORY)/architecture-release.json
 INVENTORY ?= ../../markdown/governance/rad-archimate-source-inventory.json
 .NOTPARALLEL:
 
-.PHONY: all recovery-all recovery recovery-check recovery-report legacy-all generate inventory adoption bindings check test report
-all: recovery-all
+.PHONY: all baseline baseline-check baseline-report baseline-independent recovery-all recovery recovery-check recovery-report legacy-all generate inventory adoption bindings check test report
+all: baseline test baseline-check baseline-report baseline-independent
+
+baseline:
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) tools/synchronise_baseline.py
+
+baseline-check:
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) tools/synchronise_baseline.py --check
+
+baseline-report:
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/report_baseline.py --check
+
+baseline-independent:
+	timeout --signal=TERM --kill-after=5s 120s $(PYTHON) tools/verify_baseline_outputs.py
 
 recovery-all: recovery test recovery-check recovery-report
 

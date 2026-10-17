@@ -124,6 +124,36 @@ def anchors(text):
     return explicit
 
 
+def source_era_text(path, expected_sha256, root=ROOT):
+    """Read pinned evidence through exact, separately governed presentation notes.
+
+    The older capture and its line locators remain immutable. Only insertions
+    whose complete annotated and original hashes are proved may be removed in
+    memory. A changed definition or unrecorded notice still fails source drift.
+    Current baseline generation reads its own canonical inputs directly.
+    """
+    root, path = Path(root).resolve(), Path(path).resolve()
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() == expected_sha256:
+        return raw.decode()
+    overlays = root / 'docs/markdown/governance/baseline/source-presentation-overlays.json'
+    if not overlays.exists():
+        return raw.decode()
+    relative = str(path.relative_to(root))
+    record = load_json(overlays).get('files', {}).get(relative)
+    if not record or record['original_sha256'] != expected_sha256 or record['annotated_sha256'] != hashlib.sha256(raw).hexdigest():
+        return raw.decode()
+    lines = raw.decode().splitlines(keepends=True)
+    for insertion in reversed(record['insertions']):
+        start = insertion['line'] - 1
+        added = insertion['text'].splitlines(keepends=True)
+        if lines[start:start + len(added)] != added:
+            return raw.decode()
+        del lines[start:start + len(added)]
+    original = ''.join(lines)
+    return original if hashlib.sha256(original.encode()).hexdigest() == expected_sha256 else raw.decode()
+
+
 def validate(model, root=ROOT, check_sources=True):
     """Return INVALID errors separately from permitted architectural uncertainty."""
     errors = schema_errors(model, load_json(SCHEMA_PATH))
@@ -340,7 +370,7 @@ def validate(model, root=ROOT, check_sources=True):
             if not path.is_relative_to((root / 'docs/markdown').resolve()) or not path.is_file():
                 errors.append(f'{source}: invalid or missing RADS source path')
                 continue
-            data = path.read_bytes()
+            data = source_era_text(path, record['sha256'], root).encode()
             if hashlib.sha256(data).hexdigest() != record['sha256']:
                 errors.append(f'{source}: source drift; reconcile the capture before updating its fingerprint')
             source_texts[source] = data.decode()

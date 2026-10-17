@@ -1,3 +1,5 @@
+> **Synchronised baseline:** [current BEC records](../../governance/baseline/business-enabling-capabilities.md) and [Features](../../governance/baseline/features.md) carry the reviewed names, CT hierarchy, independent placement standing and lifecycle state. The original five contextual views and explanatory catalogue below are preserved source narrative. Earlier blanket statements that all BEC tiers/ancestry remain unresolved describe the earlier capture; they do not override the later qualified records. [Exact-key continuity and human review](../../governance/baseline/README.md) govern; no proposal is promoted by inclusion.
+
 # Canonical Business Enabling Capability Model & Features
 
 ## Overview & Architecture
@@ -13,11 +15,35 @@ Where Business Capabilities define the high-level healthcare landscape (what the
 4. **Technology Neutrality**: No capability or feature is defined in terms of specific software products (HAPI FHIR, Infinispan, PostgreSQL, ActiveMQ Artemis, Camel, Netty, Vue, Spring) or runtime plumbing (threads, queues, ports, DDL).
 5. **Architectural Scope Sufficiency**: The Business Enabling Feature catalogue provides the established R1.x/R2.x Feature baseline for the capabilities and contextual views presently decomposed. Completeness SHALL NOT be interpreted as requiring artificial Feature decomposition of capabilities for which no Feature-level decomposition has been architecturally established. Roadmap items (such as authoritative master-patient EMPI reconciliation) are explicitly demarcated as uncommitted Harmonia 3.x candidates.
 
+------- Source-era Assertion - Superseded in Reconciled Baseline ------- Start ------
+Superseded for exact recovered record names, tier/placement and lifecycle assertions by:
+[BEC baseline](../../governance/baseline/business-enabling-capabilities.md), [Feature baseline](../../governance/baseline/features.md), [baseline authority and preserved uncertainty](../../governance/baseline/README.md).
+The original statement and its metamodel rules are preserved; no Proposed placement is promoted.
+---------------------------------------------------------
+
 Under [approved G1 K9](../../04-information-architecture/reviews/package2-g1-review.md#11-k9--capability-metamodel-typing), the five views, catalogue numbering, indentation and decomposition presentation do not establish Architectural Element identity, CT1 / CT2 / CT3 assignment, ancestry or root status. The 137 established Features retain their FT type, names and identifiers. Affected complete Capability ancestry and structural Canonical IDs remain unresolved. Derivation may proceed from established ownership and responsibility without inventing intermediate elements.
+
+------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----
+
+------- Source-era Assertion - Superseded in Reconciled Baseline ------- Start ------
+Superseded for exact recovered record names, tier/placement and lifecycle assertions by:
+[BEC baseline](../../governance/baseline/business-enabling-capabilities.md), [Feature baseline](../../governance/baseline/features.md), [baseline authority and preserved uncertainty](../../governance/baseline/README.md).
+The original statement and its metamodel rules are preserved; no Proposed placement is promoted.
+---------------------------------------------------------
 
 The [fixed Capability decomposition](../../03-business-architecture/metamodel/business-architecture-metamodel.md#11-capability-decomposition-and-terminology) requires **CT1 → CT2 → CT3 → FT** for every fully reconciled Feature. Every Feature SHALL be framed by CT3 with CT2 and CT1 parents; tiers SHALL NOT be skipped. A Feature cannot compensate for incomplete upstream Capability modelling. Existing Features without established CT3 frames remain valid evidence with Capability ancestry/decomposition requiring separate reconciliation; their current placement does not establish direct CT1/CT2 → FT permission. Neither the 69 unresolved enabling catalogue descriptions nor any other presentation entry becomes a CT3 Capability through this obligation. No Capability, tier assignment, Feature, local ID or complete Canonical ID is created or changed here.
 
+------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----
+
+------- Source-era Assertion - Superseded in Reconciled Baseline ------- Start ------
+Superseded for exact recovered record names, tier/placement and lifecycle assertions by:
+[BEC baseline](../../governance/baseline/business-enabling-capabilities.md), [Feature baseline](../../governance/baseline/features.md), [baseline authority and preserved uncertainty](../../governance/baseline/README.md).
+The original statement and its metamodel rules are preserved; no Proposed placement is promoted.
+---------------------------------------------------------
+
 The approved [Health Service Assurance derivation](../capability-maps/health-service-assurance-derivation.md) additionally establishes **Assurance Design**, **Assurance Criteria Management** and **Governed Assurance** as Business Enabling Capabilities supporting BC-18. Their definitions and assurance principles are recorded [below](#health-service-assurance-approved-business-enabling-capabilities). Their contextual-view placement, relevance classification, Capability Tier, complete ancestry and structural Canonical IDs remain unresolved; they are not assigned through document position or lexical similarity. No additional Feature catalogue is derived.
+
+------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----
 
 ---
 

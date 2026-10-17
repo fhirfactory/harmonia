@@ -1,3 +1,5 @@
+> **Synchronised baseline:** [current BC records and qualified placements](../../governance/baseline/business-capabilities.md) preserve the recovered/reconciled baseline, including Proposed preparedness placement and the three Candidate concerns. The source catalogue below remains useful explanatory architecture. Read earlier unplaced/undecomposed assertions in their source-era scope; the baseline records distinguish Proposed placement from approved placement. [Authority, continuity and unresolved-state rules](../../governance/baseline/README.md).
+
 # Canonical Business Capability Model (18 CT1 Domains)
 
 ## Overview & Purpose

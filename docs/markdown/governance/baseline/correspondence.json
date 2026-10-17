@@ -1,0 +1,38 @@
+{
+  "authority": "Explicit 2026-10-17 baseline synchronisation task: recovered/reconciled 1.0.5A plus current RADS; inclusion preserves all original governance states.",
+  "starting_commit": "227895b66bc203446581a0483097bff1603e9966",
+  "starting_branch": "Harmonia-GovernedAccess",
+  "starting_release": "1.0.5",
+  "snapshot_model": "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model.json",
+  "recovery_model": "docs/archimate/capability-architecture/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml",
+  "recovery_crosswalk": "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json",
+  "pinned_inputs": {
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "docs/archimate/capability-architecture/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1",
+    "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266",
+    "docs/archimate/capability-architecture/recovery-v0.2/source-manifest.json": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9",
+    "docs/archimate/capability-architecture/recovery-v0.2/recovery-findings.json": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73",
+    "docs/latex-legacy/diagrams/fig-motivation-map.tex": "d266192d028acff5c3df2863f4a9b7ea0d9facc3345bc770ff29af2ad0506411",
+    "docs/latex-legacy/chapters/01-motivation-strategy.tex": "2e91186ed1ed0c8160733f80af9509fbb17364567e3a7628822257c24c876540",
+    "docs/latex-legacy/chapters/01-motivation-strategy-old.tex": "24756f498ea2a32cfea8211268d65f234af82e270a3c9be408bd34da0d0a127f",
+    "docs/latex-legacy/chapters/appendix-requirements.tex": "12e660dd7c3569cb1f7ace57efca1de961d7ea06a4118e0337148633fd252ccc",
+    "docs/archimate/capability-architecture/recovery-v0.2/architecture-release.json": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222"
+  },
+  "motivation_capture_sha256": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+  "current_authority_sha256": {
+    "AGENTS.md": "df693d4b012f8b94e595641f0e04494a683e6382e771b5398d730ecaee685411",
+    "docs/AGENTS.md": "659dd0511a9142e0514f15577383b1bc9d781cb9080c929d9d2541ded9bfeddf",
+    "docs/markdown/governance/architectural-axioms.md": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+    "docs/markdown/governance/architecture-release-policy.md": "904b333e0d44c6366b21139365a25c3862fd35f473682316db7ad76b102ac406",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "3122a5355834a391b0a2e682a80bd174a2af66cdf82fe02a984ec187cfb0bf72",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "eac88ed8eaec0a589659f509e6124d12b6c5c270e28d12f860f830dc5555d467",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": "b87f4d7c8f8af6c6d31082062223857405f6f2f3f021f1aa411c594b95bf8394",
+    "docs/markdown/governance/architecture-identity/model.md": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+    "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md": "2eadaa3191cea51d9aade7acd99d8a8ee0a2cf114d847a3e87790476d531563f",
+    "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md": "ffae8388c7953e8dc77862de03866eddb067795881e2698c4b6da0835b179fc2",
+    "docs/markdown/01-motivation/principles/reclassified-principles.md": "eeb1a268f017faee4066b4195f1d0a151e021cb2c08bbed4d04556569c4165e7",
+    "docs/markdown/governance/baseline/README.md": "8f745d9383d5d823ab646ea1373fa78c5858520f6068c0bfd248929a7ab74796",
+    "docs/markdown/governance/baseline/documentation-classification.json": "60ef83b36301cda9c44655e6985fd2bffe2d89d978c2eff8116db9c1307bf909"
+  }
+}

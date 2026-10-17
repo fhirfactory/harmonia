@@ -1,0 +1,41 @@
+{
+  "purpose": "Source-era evidence validation only: remove exact non-semantic scope notices and wrappers in memory. Original text, capture and adoption fingerprints remain unchanged. Current baseline generation does not use this normalisation.",
+  "files": {
+    "docs/markdown/02-strategy/capabilities/business-capabilities.md": {
+      "original_sha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0",
+      "annotated_sha256": "43f8bcbe2cb3dd80a1d5d0be9c7c24d16cd46969c111981ea65fde72494e2628",
+      "insertions": [
+        {
+          "line": 1,
+          "text": "> **Synchronised baseline:** [current BC records and qualified placements](../../governance/baseline/business-capabilities.md) preserve the recovered/reconciled baseline, including Proposed preparedness placement and the three Candidate concerns. The source catalogue below remains useful explanatory architecture. Read earlier unplaced/undecomposed assertions in their source-era scope; the baseline records distinguish Proposed placement from approved placement. [Authority, continuity and unresolved-state rules](../../governance/baseline/README.md).\n\n"
+        }
+      ]
+    },
+    "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md": {
+      "original_sha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49",
+      "annotated_sha256": "d6a443df021a5bdd6c2cbc0e38e90ac9d2e2066d166430dd93c7af75a7a7f7ba",
+      "insertions": [
+        {
+          "line": 1,
+          "text": "> **Synchronised baseline:** [current BEC records](../../governance/baseline/business-enabling-capabilities.md) and [Features](../../governance/baseline/features.md) carry the reviewed names, CT hierarchy, independent placement standing and lifecycle state. The original five contextual views and explanatory catalogue below are preserved source narrative. Earlier blanket statements that all BEC tiers/ancestry remain unresolved describe the earlier capture; they do not override the later qualified records. [Exact-key continuity and human review](../../governance/baseline/README.md) govern; no proposal is promoted by inclusion.\n\n"
+        },
+        {
+          "line": 18,
+          "text": "------- Source-era Assertion - Superseded in Reconciled Baseline ------- Start ------\nSuperseded for exact recovered record names, tier/placement and lifecycle assertions by:\n[BEC baseline](../../governance/baseline/business-enabling-capabilities.md), [Feature baseline](../../governance/baseline/features.md), [baseline authority and preserved uncertainty](../../governance/baseline/README.md).\nThe original statement and its metamodel rules are preserved; no Proposed placement is promoted.\n---------------------------------------------------------\n\n"
+        },
+        {
+          "line": 25,
+          "text": "\n------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----\n\n------- Source-era Assertion - Superseded in Reconciled Baseline ------- Start ------\nSuperseded for exact recovered record names, tier/placement and lifecycle assertions by:\n[BEC baseline](../../governance/baseline/business-enabling-capabilities.md), [Feature baseline](../../governance/baseline/features.md), [baseline authority and preserved uncertainty](../../governance/baseline/README.md).\nThe original statement and its metamodel rules are preserved; no Proposed placement is promoted.\n---------------------------------------------------------\n"
+        },
+        {
+          "line": 36,
+          "text": "------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----\n\n------- Source-era Assertion - Superseded in Reconciled Baseline ------- Start ------\nSuperseded for exact recovered record names, tier/placement and lifecycle assertions by:\n[BEC baseline](../../governance/baseline/business-enabling-capabilities.md), [Feature baseline](../../governance/baseline/features.md), [baseline authority and preserved uncertainty](../../governance/baseline/README.md).\nThe original statement and its metamodel rules are preserved; no Proposed placement is promoted.\n---------------------------------------------------------\n\n"
+        },
+        {
+          "line": 45,
+          "text": "\n------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----\n"
+        }
+      ]
+    }
+  }
+}

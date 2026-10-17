@@ -1,3 +1,5 @@
+> **Baseline navigation:** The [synchronised governed baseline](../../governance/baseline/README.md) carries the recovered/reconciled current records and their independent governance states. Earlier capture counts, source-era names and unresolved assertions below remain historical capture evidence; they do not override those qualified records.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Business Architecture reference candidate model

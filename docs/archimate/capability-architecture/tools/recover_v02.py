@@ -24,6 +24,7 @@ ROOT = BASE.parents[2]
 DEST = BASE / "recovery-v0.2"
 MANIFEST = DEST / "source-manifest.json"
 OUTPUT = DEST / "Harmonia-Architecture-1.0.5A.xml"
+RELEASE = DEST / "architecture-release.json"
 TYPES = {"capability": "Capability", "enterprise_capability": "Capability",
          "feature": "Capability", "function": "BusinessFunction",
          "service": "BusinessService", "process": "BusinessProcess"}
@@ -732,7 +733,9 @@ def publish(manifest_path=MANIFEST):
         {"name": e["name"], "status": e["architectural_status"], "identifier": recovery.ids[e["key"]],
          "children": [{"name": c["name"], "status": c["architectural_status"], "placement_status": c["placement_status"]}
                       for c in model["elements"] if c["parent_key"] == e["key"]]} for e in children]}
-    report = {"status": "PASS", "task": "1.0.5A", "architecture_release": load_release(), "counts": counts,
+    # Historical replay must not silently adopt a later live release. The
+    # current baseline publisher reads the repository's live release instead.
+    report = {"status": "PASS", "task": "1.0.5A", "architecture_release": load_release(RELEASE), "counts": counts,
               "snapshot_records": len(model["elements"]), "retained_elements": 228, "retained_relationships": 189,
               "retained_views": 219, "retained_bindings": 14, "persistent_identities_allocated": 0,
               "new_representation_elements": len(model["elements"])-14+len(recovery.principles),

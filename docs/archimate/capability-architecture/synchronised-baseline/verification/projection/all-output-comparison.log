@@ -1,0 +1,15 @@
+PASS byte-for-byte: docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml
+PASS byte-for-byte: docs/archimate/capability-architecture/synchronised-baseline/validation.json
+PASS byte-for-byte: docs/markdown/governance/baseline/business-capabilities.md
+PASS byte-for-byte: docs/markdown/governance/baseline/business-enabling-capabilities.md
+PASS byte-for-byte: docs/markdown/governance/baseline/features.md
+PASS byte-for-byte: docs/markdown/governance/baseline/functions.md
+PASS byte-for-byte: docs/markdown/governance/baseline/services.md
+PASS byte-for-byte: docs/markdown/governance/baseline/processes.md
+PASS byte-for-byte: docs/markdown/governance/baseline/enterprise-capabilities.md
+PASS byte-for-byte: docs/markdown/governance/baseline/relationships.md
+PASS byte-for-byte: docs/markdown/governance/baseline/motivation.md
+PASS byte-for-byte: docs/markdown/governance/baseline/discrepancies.json
+PASS byte-for-byte: docs/archimate/capability-architecture/synchronised-baseline/2026-10-17-archimate-markdown-baseline-synchronisation.md
+PASS byte-for-byte: docs/archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md
+PASS: all 14 generated baseline outputs independently reproduced byte-for-byte, including completion report and inspection guide

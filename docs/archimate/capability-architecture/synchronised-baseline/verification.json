@@ -1,0 +1,1636 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.6",
+    "previous_version": "1.0.5"
+  },
+  "authoritative_inputs_inspected": [
+    "AGENTS.md",
+    "docs/AGENTS.md",
+    "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml",
+    "docs/archimate/capability-architecture/Makefile",
+    "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml",
+    "docs/archimate/capability-architecture/baseline/navigation-baseline-1.0.3.json",
+    "docs/archimate/capability-architecture/baseline/semantic-lock.json",
+    "docs/archimate/capability-architecture/documentation-map.json",
+    "docs/archimate/capability-architecture/recovery-v0.2/1.0.5A-recovery-report.md",
+    "docs/archimate/capability-architecture/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml",
+    "docs/archimate/capability-architecture/recovery-v0.2/archi-inspection-guide.md",
+    "docs/archimate/capability-architecture/recovery-v0.2/architecture-release.json",
+    "docs/archimate/capability-architecture/recovery-v0.2/recovery-findings.json",
+    "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json",
+    "docs/archimate/capability-architecture/recovery-v0.2/source-manifest.json",
+    "docs/archimate/capability-architecture/tools/generate_views.py",
+    "docs/archimate/capability-architecture/tools/publish_documentation.py",
+    "docs/archimate/capability-architecture/tools/publish_navigation.py",
+    "docs/archimate/capability-architecture/tools/recover_v02.py",
+    "docs/latex-legacy/chapters/01-motivation-strategy-old.tex",
+    "docs/latex-legacy/chapters/01-motivation-strategy.tex",
+    "docs/latex-legacy/chapters/appendix-requirements.tex",
+    "docs/latex-legacy/diagrams/fig-motivation-map.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Harmonia-EA-Capability-Map.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Makefile",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/README.md",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/architecture-tests.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/bec-reconciliation-ledger.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/catalogue/proposals.md",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/catalogue/review-focus.md",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/change-ledger.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/corpus-register.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/derivation-provenance.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/identity-lock.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model-validation.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-identity-lock.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-publication-evidence.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-publication-labels.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-v0.3-reconciliation.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/publication-preservation.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reconciliation-tests.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-identity-history.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/bec-review.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/business-capabilities.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/business-enabling-capabilities.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/catalogue-contexts.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/enterprise-capabilities.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/identifiers.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/preserved-responsibilities.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-assurance-strategy.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-assurance.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-axioms.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-b2-1.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-business.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-dependencies.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-detail.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-em.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-enabling.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-enterprise.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-hso.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-ise.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-k9.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-metamodel.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-processes.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-sa.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-sd.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-tier-model.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-traceability.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/reading-guide.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/reconciliation.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/relationships.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/sources.tex",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/semantic-baseline.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/source-coverage.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/standalone-validation.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/baseline.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/compose.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/navigation.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/probes.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/reconcile.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/render.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/report.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/reviewed_bec.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/test_reviewed_bec.py",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/v0.1-fingerprints.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/v0.3-reconciliation.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/validation.json",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/validator-probes.json",
+    "docs/markdown/01-motivation/drivers-assessments/assessments.md",
+    "docs/markdown/01-motivation/drivers-assessments/drivers.md",
+    "docs/markdown/01-motivation/goals-outcomes/business-outcomes.md",
+    "docs/markdown/01-motivation/goals-outcomes/strategic-goals.md",
+    "docs/markdown/01-motivation/principles/reclassified-principles.md",
+    "docs/markdown/01-motivation/requirements-constraints/external-constraints.md",
+    "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md",
+    "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+    "docs/markdown/01-motivation/stakeholders/enterprise-stakeholders.md",
+    "docs/markdown/02-strategy/capability-maps/capability-tier-model.md",
+    "docs/markdown/02-strategy/reviews/fixed-capability-decomposition-decision.md",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+    "docs/markdown/03-business-architecture/reference-model/README.md",
+    "docs/markdown/03-business-architecture/reference-model/business-architecture.json",
+    "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md",
+    "docs/markdown/05-information-systems-architecture/component-register.md",
+    "docs/markdown/05-information-systems-architecture/data-and-persistence.md",
+    "docs/markdown/05-information-systems-architecture/middleware.md",
+    "docs/markdown/architecture-completion-plan.md",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md",
+    "docs/markdown/governance/architectural-axioms.md",
+    "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+    "docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json",
+    "docs/markdown/governance/architecture-identity/inventory.md",
+    "docs/markdown/governance/architecture-identity/model.md",
+    "docs/markdown/governance/architecture-identity/registry.json",
+    "docs/markdown/governance/architecture-identity/registry.schema.json",
+    "docs/markdown/governance/architecture-release-policy.md",
+    "docs/markdown/governance/baseline/README.md",
+    "docs/markdown/governance/baseline/documentation-classification.json",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md",
+    "docs/markdown/governance/rad-archimate-model-mapping.md",
+    "docs/markdown/governance/rad-archimate-publication-plan.md",
+    "scripts/architecture_identity.py",
+    "scripts/architecture_release.py",
+    "scripts/rads_business_architecture.py"
+  ],
+  "files_changed": [
+    "architecture-release.json",
+    "docs/archimate/capability-architecture/Makefile",
+    "docs/archimate/capability-architecture/README.md",
+    "docs/archimate/capability-architecture/recovery-v0.2/architecture-release.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+    "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml",
+    "docs/archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md",
+    "docs/archimate/capability-architecture/synchronised-baseline/corrections-preservation.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/documentation-correction-verification.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/human-inspection-start-preservation.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/initial-synchronisation-report.md",
+    "docs/archimate/capability-architecture/synchronised-baseline/initial-synchronisation-verification.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-synchronisation-report.md",
+    "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-verification.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/projection-start-preservation.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/validation.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification.json",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/.gitignore",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/architecture.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/baseline_contract.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/bindings.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/architecture.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/baseline-tests.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/bindings.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/diff.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/documentation-samples.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/generation.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/generation_check.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/identity.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/independent_regeneration.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/preservation.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/publication.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/rad.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/readme-lifecycle.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/recovery_replay.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/regeneration_comparison.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/release.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/report.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/scripts.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/snapshot.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/snapshot_tests.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/diff.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/generation_xsd.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/identity.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/independent_regeneration.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/ (final verification logs)",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/publication.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/rad.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/recovery_replay.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/regeneration_comparison.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/release.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/scripts.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/snapshot.log",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/snapshot_tests.log",
+    "docs/archimate/capability-architecture/tests/test_baseline.py",
+    "docs/archimate/capability-architecture/tools/feature_projection.py",
+    "docs/archimate/capability-architecture/tools/recover_v02.py",
+    "docs/archimate/capability-architecture/tools/report_baseline.py",
+    "docs/archimate/capability-architecture/tools/synchronise_baseline.py",
+    "docs/archimate/capability-architecture/tools/verify_baseline_outputs.py",
+    "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+    "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+    "docs/markdown/02-strategy/capabilities/index.md",
+    "docs/markdown/03-business-architecture/README.md",
+    "docs/markdown/03-business-architecture/reference-model/README.md",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md",
+    "docs/markdown/governance/architecture-identity/bindings-validation.json",
+    "docs/markdown/governance/baseline/README.md",
+    "docs/markdown/governance/baseline/architecture.json",
+    "docs/markdown/governance/baseline/business-capabilities.md",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md",
+    "docs/markdown/governance/baseline/correspondence.json",
+    "docs/markdown/governance/baseline/coverage.md",
+    "docs/markdown/governance/baseline/discrepancies.json",
+    "docs/markdown/governance/baseline/documentation-classification.json",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md",
+    "docs/markdown/governance/baseline/features.md",
+    "docs/markdown/governance/baseline/functions.md",
+    "docs/markdown/governance/baseline/motivation.json",
+    "docs/markdown/governance/baseline/motivation.md",
+    "docs/markdown/governance/baseline/processes.md",
+    "docs/markdown/governance/baseline/relationships.md",
+    "docs/markdown/governance/baseline/services.md",
+    "docs/markdown/governance/baseline/source-presentation-overlays.json",
+    "scripts/rads_business_architecture.py",
+    "scripts/tests/test_rads_source_presentation.py"
+  ],
+  "regeneration_result": "PASS: deterministic generation and complete independent reproduction of 14 generated outputs (12 core plus report and guide).",
+  "view_domain_counts_after": {
+    "1-Strategy": 772,
+    "2-BusinessLayer": 395,
+    "0-Motivation": 25,
+    "3-ApplicationLayer": 4
+  },
+  "property_count_before": 20943,
+  "property_count_after": 23706,
+  "element_documentation_before": 951,
+  "element_documentation_after": 1085,
+  "element_history_sections": 112,
+  "checks": {
+    "generation": {
+      "command": "timeout --signal=TERM --kill-after=5s 90s python3 docs/archimate/capability-architecture/tools/synchronise_baseline.py",
+      "exit_code": 0,
+      "log": "verification/human-inspection/generation.log",
+      "status": "PASS",
+      "log_sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb",
+      "result": "XSD, exact preservation, ancestry, four-projection Feature reachability, association navigation, landscape coverage, layout and deterministic regeneration PASS"
+    },
+    "publication": {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 -m unittest discover -s docs/archimate/capability-architecture/tests -v",
+      "exit_code": 0,
+      "log": "verification/human-inspection/publication.log",
+      "status": "PASS",
+      "log_sha256": "37185904a09e1139d52930cc70d35426881d16cdd772752642c5db48ddfb3151",
+      "result": "102 publication tests PASS, including 31 baseline continuity/rejection tests and Feature/landscape/layout regressions"
+    },
+    "scripts": {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 -m unittest discover -s scripts/tests -v",
+      "exit_code": 0,
+      "log": "verification/human-inspection/scripts.log",
+      "status": "PASS",
+      "log_sha256": "e5f6d309b3ad02f1f9f024c7a6d347d2528458a3e6d90d40192b5557efb96531",
+      "result": "68 repository script/unit tests PASS"
+    },
+    "architecture": {
+      "command": "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 timeout --signal=TERM --kill-after=5s 180s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "exit_code": 0,
+      "log": "verification/human-inspection/architecture.log",
+      "status": "PASS",
+      "log_sha256": "09d03a6303c5585ebd07e1d6af162f9efafe62742ecc0124fb026915017b3973",
+      "result": "90 architecture tests PASS, zero failures/errors/skips; BUILD SUCCESS"
+    },
+    "rad": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 scripts/rads_business_architecture.py validate",
+      "exit_code": 0,
+      "log": "verification/human-inspection/rad.log",
+      "status": "PASS",
+      "log_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "result": "RAD validation PASS; 2,467 unresolved source-era findings preserved"
+    },
+    "identity": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 scripts/architecture_identity.py validate",
+      "exit_code": 0,
+      "log": "verification/human-inspection/identity.log",
+      "status": "PASS",
+      "log_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "result": "Identity registry validation PASS; no new allocations"
+    },
+    "bindings": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 scripts/architecture_identity.py bindings --check",
+      "exit_code": 0,
+      "log": "verification/human-inspection/bindings.log",
+      "status": "PASS",
+      "log_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "result": "Exact representation bindings/crosswalk validation PASS"
+    },
+    "release": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 scripts/architecture_release.py check",
+      "exit_code": 0,
+      "log": "verification/human-inspection/release.log",
+      "status": "PASS",
+      "log_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "result": "Release check PASS; 1.0.6 unchanged"
+    },
+    "recovery": {
+      "command": "timeout --signal=TERM --kill-after=5s 90s python3 docs/archimate/capability-architecture/tools/recover_v02.py --check",
+      "exit_code": 0,
+      "log": "verification/human-inspection/recovery.log",
+      "status": "PASS",
+      "log_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "result": "Immutable 1.0.5A recovery replay PASS, byte-for-byte"
+    },
+    "snapshot_tests": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 -m unittest discover -s docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools -p 'test_*.py' -v",
+      "exit_code": 0,
+      "log": "verification/human-inspection/snapshot_tests.log",
+      "status": "PASS",
+      "log_sha256": "6129339624c8c855421e08ea03996821441bb61f23a0076be76686ec0f421b08",
+      "result": "17 immutable source snapshot tests PASS"
+    },
+    "snapshot": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/snapshot-check.py",
+      "exit_code": 0,
+      "log": "verification/human-inspection/snapshot.log",
+      "status": "PASS",
+      "log_sha256": "925b65b351b793021a63f45b57f5286923653e6e15b1d2b9e7bbcbed4c128765",
+      "result": "Read-only frozen capability/identity/ancestry/source navigation checks PASS"
+    },
+    "audit": {
+      "command": "timeout --signal=TERM --kill-after=5s 60s python3 docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/starting-candidate-audit.py",
+      "exit_code": 0,
+      "log": "verification/human-inspection/audit.log",
+      "status": "PASS",
+      "log_sha256": "dcbfd49a0229629fba0bffd15d35ae5e2f282a93008819a233a95db59c8d20df",
+      "result": "Direct starting-candidate audit PASS; unchanged semantics, Documentation, Properties, all 1,012 View IDs and release; 247 authorised View presentation changes, 765 unchanged existing Views"
+    },
+    "archi_sort": {
+      "command": "javap -classpath /usr/vm/devel/Tools/Archi/plugins/com.archimatetool.editor_5.10.0.202608252016/com.archimatetool.editor.jar -c -p 'com.archimatetool.editor.views.tree.TreeModelViewer$1'",
+      "exit_code": 0,
+      "log": "verification/human-inspection/archi_sort.log",
+      "status": "PASS",
+      "log_sha256": "b35e8155fdb4cf63e0c8a547faaef722968737f0987f9b28ba2db0cfef753bed",
+      "result": "Installed Archi 5.10.0 comparator inspection confirms display-name sorting; local View-only 0- landscape prefix is mechanically validated, without claiming GUI acceptance"
+    },
+    "check": {
+      "command": "timeout --signal=TERM --kill-after=5s 90s python3 docs/archimate/capability-architecture/tools/synchronise_baseline.py --check",
+      "exit_code": 0,
+      "log": "verification/human-inspection/check.log",
+      "status": "PASS",
+      "log_sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb",
+      "result": "Read-only generated baseline divergence check PASS"
+    },
+    "final_workflow": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 timeout --signal=TERM --kill-after=5s 180s make -C docs/archimate/capability-architecture baseline-check baseline-report baseline-independent",
+      "exit_code": 0,
+      "status": "PASS",
+      "result": "Generated baseline and report checks PASS; all 14 complete outputs independently regenerate byte-for-byte; release unchanged",
+      "log": "verification/human-inspection/final-workflow.log",
+      "log_sha256": "a995fb6c5d300c754c680b59c062ad75e486c0bd2a9166959b718175cd192dff"
+    }
+  },
+  "files_generated": [
+    "docs/archimate/capability-architecture/synchronised-baseline/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+    "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml",
+    "docs/archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md",
+    "docs/archimate/capability-architecture/synchronised-baseline/validation.json",
+    "docs/markdown/governance/baseline/business-capabilities.md",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md",
+    "docs/markdown/governance/baseline/discrepancies.json",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md",
+    "docs/markdown/governance/baseline/features.md",
+    "docs/markdown/governance/baseline/functions.md",
+    "docs/markdown/governance/baseline/motivation.md",
+    "docs/markdown/governance/baseline/processes.md",
+    "docs/markdown/governance/baseline/relationships.md",
+    "docs/markdown/governance/baseline/services.md"
+  ],
+  "human_inspection_correction": {
+    "files_changed": [
+      "docs/archimate/capability-architecture/Makefile",
+      "docs/archimate/capability-architecture/README.md",
+      "docs/archimate/capability-architecture/tools/synchronise_baseline.py",
+      "docs/archimate/capability-architecture/tools/feature_projection.py",
+      "docs/archimate/capability-architecture/tools/report_baseline.py",
+      "docs/archimate/capability-architecture/tools/verify_baseline_outputs.py",
+      "docs/archimate/capability-architecture/tests/test_baseline.py",
+      "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml",
+      "docs/archimate/capability-architecture/synchronised-baseline/validation.json",
+      "docs/archimate/capability-architecture/synchronised-baseline/verification.json",
+      "docs/archimate/capability-architecture/synchronised-baseline/human-inspection-start-preservation.json",
+      "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-synchronisation-report.md",
+      "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-verification.json",
+      "docs/archimate/capability-architecture/synchronised-baseline/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+      "docs/archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md",
+      "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/",
+      "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "docs/markdown/governance/baseline/correspondence.json"
+    ],
+    "starting_model_sha256": "8dc2a377f080c7083811c0849bce66166b740f8c8321bb009eb3a8da3d78eb0b",
+    "generated_output_count": 14,
+    "previous_view_count": 1012,
+    "new_landscape_views": 184,
+    "final_view_count": 1196,
+    "shared_resource_exceptions": 13,
+    "unresolved_feature_assertions": 20,
+    "gui_acceptance": "Pending Mark in Archi 5.10.0; no new native GUI import claimed",
+    "projection": {
+      "features_with_behaviour_associations": 137,
+      "grouped_by_feature": {
+        "function": 118,
+        "service": 101,
+        "process": 8
+      },
+      "shared_behaviour_retained_at_capability": [
+        {
+          "key": "service:practitioner-directory-query",
+          "features": [
+            "feature:practitioner-profile-governance",
+            "proposal:feature-provider-directory-discovery-resolution"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Entity Information Enablement",
+            "[CT2] Provider Administration",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:manage-ward-capacity",
+          "features": [
+            "feature:ward-patient-flow-coordination",
+            "proposal:feature-ward-care-capacity-management"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Ward Operations",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:manage-theatre-case-progression",
+          "features": [
+            "feature:operating-theatre-case-progression",
+            "feature:perioperative-resource-notification"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Theatre Operations",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:coordinate-ed-departmental-capacity",
+          "features": [
+            "feature:ed-bed--bay-tracking",
+            "proposal:feature-emergency-treatment-capacity-management"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Emergency Department Operations",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:manage-outpatient-capacity",
+          "features": [
+            "feature:outpatient-arrival-registration",
+            "proposal:feature-outpatient-appointment-capacity-management"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Outpatient Operations",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:manage-bed-turnover-progression",
+          "features": [
+            "feature:bed-readiness-notification",
+            "feature:bed-state-progression"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Bed & Care-Place Management",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:dispatch-operational-work-order",
+          "features": [
+            "feature:work-dispatch-delivery",
+            "feature:work-item-instantiation",
+            "feature:worker-matching--allocation"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Work Allocation & Dispatch",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:manage-patient-transport-progression",
+          "features": [
+            "feature:transport-dispatch--progress-tracking",
+            "feature:transport-request-ingestion"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Patient Transport",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:manage-discharge-coordination-progression",
+          "features": [
+            "feature:discharge-milestone-tracking",
+            "feature:discharge-notification-dispatch",
+            "feature:discharge-readiness--coordination-oversight"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Discharge Management",
+            "Functions"
+          ]
+        },
+        {
+          "key": "process:theatre-case-progression-process",
+          "features": [
+            "feature:operating-theatre-case-progression",
+            "feature:perioperative-resource-notification"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Theatre Operations",
+            "Processes"
+          ]
+        },
+        {
+          "key": "process:bed-turnover-process",
+          "features": [
+            "feature:bed-readiness-notification",
+            "feature:bed-state-progression"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Bed & Care-Place Management",
+            "Processes"
+          ]
+        },
+        {
+          "key": "process:patient-transport-process",
+          "features": [
+            "feature:transport-dispatch--progress-tracking",
+            "feature:transport-request-ingestion"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Patient Transport",
+            "Processes"
+          ]
+        },
+        {
+          "key": "process:discharge-progression-process",
+          "features": [
+            "feature:discharge-milestone-tracking",
+            "feature:discharge-notification-dispatch",
+            "feature:discharge-readiness--coordination-oversight"
+          ],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Discharge Management",
+            "Processes"
+          ]
+        }
+      ],
+      "no_established_feature_association": [
+        {
+          "key": "service:order-outcome-notification",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Order Administration",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:associate-care-plan-context",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Care Plan Administration",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:care-plan-context-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Care Plan Administration",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:distribute-care-plan-change",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Care Plan Administration",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:care-plan-change-notification",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Care Plan Administration",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:coordinate-multi-agency-chronic-care-plan",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Patient Clinical Record",
+            "[CT3] Primary Care Coordination",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:chronic-care-timeline-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Patient Clinical Record",
+            "[CT3] Primary Care Coordination",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:route-acute-critical-result-alert",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Episode & Encounter Administration",
+            "[CT3] Acute Care Monitoring & Event Coordination",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:acute-clinical-alert-dispatch",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Episode & Encounter Administration",
+            "[CT3] Acute Care Monitoring & Event Coordination",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:assemble-inpatient-discharge-dossier",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Ward Operations",
+            "[CT3] Multidisciplinary Inpatient Care Coordination",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:discharge-dossier-packaging-service",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Ward Operations",
+            "[CT3] Multidisciplinary Inpatient Care Coordination",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:receive-diagnostic-requisition-feed",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Diagnostic Administration",
+            "[CT3] Diagnostic Service Integration",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:modality-worklist-distribution",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Diagnostic Administration",
+            "[CT3] Diagnostic Service Integration",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:publish-governed-diagnostic-report",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Diagnostic Administration",
+            "[CT3] Diagnostic Service Integration",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:diagnostic-publication-service",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Diagnostic Administration",
+            "[CT3] Diagnostic Service Integration",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:correlate-adverse-reaction--allergy-profile",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Medication Administration",
+            "[CT3] Medication Therapy Provision and Monitoring",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:allergy--adverse-reaction-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Medication Administration",
+            "[CT3] Medication Therapy Provision and Monitoring",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:project-screening-eligibility-timeline",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Client-Centred Administration",
+            "[CT3] Screening and Immunisation Enablement",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:preventive-screening-status-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Client-Centred Administration",
+            "[CT3] Screening and Immunisation Enablement",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:bind-community-support-network-context",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Care Plan Administration",
+            "[CT3] Community Care Coordination",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:community-care-team-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Care Plan Administration",
+            "[CT3] Community Care Coordination",
+            "Services"
+          ]
+        },
+        {
+          "key": "service:ward-operational-summary-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Ward Operations",
+            "Services"
+          ]
+        },
+        {
+          "key": "service:ed-operational-status-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Emergency Department Operations",
+            "Services"
+          ]
+        },
+        {
+          "key": "service:ambulatory-session-status-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Outpatient Operations",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:track-operational-staff-presence",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Mobile Staff Management",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:staff-presence-telemetry-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Mobile Staff Management",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:retrieve-health-information",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Access",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:clinical-resource-retrieval-service",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Access",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:apply-access-qualified-result-filtering",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Access",
+            "Functions"
+          ]
+        },
+        {
+          "key": "function:evaluate-consent-constraint",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Control",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:consent-enforcement-service",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Control",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:propagate-security-context",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Control",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:security-context-validation-service",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Control",
+            "Services"
+          ]
+        },
+        {
+          "key": "function:record-security-significant-activity",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Control",
+            "Functions"
+          ]
+        },
+        {
+          "key": "service:security-audit-ingress",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Control",
+            "Services"
+          ]
+        },
+        {
+          "key": "service:information-dictionary-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Information Design Governance",
+            "Services"
+          ]
+        },
+        {
+          "key": "service:terminology-binding-specification-lookup",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Information Design Governance",
+            "Services"
+          ]
+        },
+        {
+          "key": "service:exchange-profile-specification-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Information Design Governance",
+            "Services"
+          ]
+        },
+        {
+          "key": "process:assurance-process-design",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Independent Assurance Enablement",
+            "[CT2] Assurance Specification",
+            "[CT3] Assurance Design",
+            "Processes"
+          ]
+        },
+        {
+          "key": "proposal:service-associated-binary-content-retrieval",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Patient Clinical Record",
+            "[CT3] Linked Information Curation",
+            "Services"
+          ]
+        },
+        {
+          "key": "proposal:service-governed-reference-dataset-content-query",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Clinical Knowledge Services",
+            "[CT3] Governed Reference Dataset Administration",
+            "Services"
+          ]
+        },
+        {
+          "key": "proposal:service-authorised-research-information-export",
+          "features": [],
+          "home": [
+            "Business",
+            "Business Enabling Capabilities",
+            "[CT1] Health Informatics Management",
+            "[CT2] Research Information Curation",
+            "Services"
+          ]
+        }
+      ],
+      "unresolved_feature_assertions": [
+        {
+          "source_index": 246,
+          "type": "realises_feature",
+          "from": "function:coordinate-multi-agency-chronic-care-plan",
+          "to": "feature:primary-care-notification-dispatch",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 58,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-02 — Primary Care Notification Dispatch` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "21-primary-care"
+            }
+          ]
+        },
+        {
+          "source_index": 247,
+          "type": "associated_feature",
+          "from": "service:chronic-care-timeline-query",
+          "to": "feature:primary-care-notification-dispatch",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 58,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-02 — Primary Care Notification Dispatch` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "21-primary-care"
+            }
+          ]
+        },
+        {
+          "source_index": 248,
+          "type": "realises_feature",
+          "from": "function:route-acute-critical-result-alert",
+          "to": "feature:acute-clinical-state-event-capture",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 78,
+              "text": "    - *Feature association not established*: `FEAT-SD-03 — Acute Clinical State Event Capture` is adjudicated sufficient through general clinical-information responsibilities above. Routing a critical-result alert remains distinct from capture; no specialised capture Function or replacement association is assigned.",
+              "anchor": "22-acute-care"
+            }
+          ]
+        },
+        {
+          "source_index": 249,
+          "type": "associated_feature",
+          "from": "service:acute-clinical-alert-dispatch",
+          "to": "feature:acute-clinical-state-event-capture",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 78,
+              "text": "    - *Feature association not established*: `FEAT-SD-03 — Acute Clinical State Event Capture` is adjudicated sufficient through general clinical-information responsibilities above. Routing a critical-result alert remains distinct from capture; no specialised capture Function or replacement association is assigned.",
+              "anchor": "22-acute-care"
+            }
+          ]
+        },
+        {
+          "source_index": 250,
+          "type": "realises_feature",
+          "from": "function:assemble-inpatient-discharge-dossier",
+          "to": "feature:inpatient-clinical-progression-tracking",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 117,
+              "text": "    - *Feature association not established*: `FEAT-SD-08 — Inpatient Clinical Progression Tracking` is adjudicated sufficient through general clinical-information responsibilities above. Discharge-dossier assembly/publication remains distinct; no separate clinical-tracking Function or replacement association is assigned.",
+              "anchor": "24-inpatient-care"
+            }
+          ]
+        },
+        {
+          "source_index": 251,
+          "type": "associated_feature",
+          "from": "service:discharge-dossier-packaging-service",
+          "to": "feature:inpatient-clinical-progression-tracking",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 117,
+              "text": "    - *Feature association not established*: `FEAT-SD-08 — Inpatient Clinical Progression Tracking` is adjudicated sufficient through general clinical-information responsibilities above. Discharge-dossier assembly/publication remains distinct; no separate clinical-tracking Function or replacement association is assigned.",
+              "anchor": "24-inpatient-care"
+            }
+          ]
+        },
+        {
+          "source_index": 252,
+          "type": "realises_feature",
+          "from": "function:receive-diagnostic-requisition-feed",
+          "to": "feature:laboratory--imaging-result-distribution",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 133,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-09 — Laboratory & Imaging Result Distribution` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "25-diagnostic-services"
+            }
+          ]
+        },
+        {
+          "source_index": 253,
+          "type": "associated_feature",
+          "from": "service:modality-worklist-distribution",
+          "to": "feature:laboratory--imaging-result-distribution",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 133,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-09 — Laboratory & Imaging Result Distribution` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "25-diagnostic-services"
+            }
+          ]
+        },
+        {
+          "source_index": 254,
+          "type": "realises_feature",
+          "from": "function:publish-governed-diagnostic-report",
+          "to": "feature:diagnostic-history-consolidation",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 137,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-10 — Diagnostic History Consolidation` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "25-diagnostic-services"
+            }
+          ]
+        },
+        {
+          "source_index": 255,
+          "type": "associated_feature",
+          "from": "service:diagnostic-publication-service",
+          "to": "feature:diagnostic-history-consolidation",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 137,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-10 — Diagnostic History Consolidation` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "25-diagnostic-services"
+            }
+          ]
+        },
+        {
+          "source_index": 256,
+          "type": "realises_feature",
+          "from": "function:correlate-adverse-reaction--allergy-profile",
+          "to": "feature:medication-administration-tracking",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 154,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-12 — Medication Administration Tracking` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "26-medication-therapy"
+            }
+          ]
+        },
+        {
+          "source_index": 257,
+          "type": "associated_feature",
+          "from": "service:allergy--adverse-reaction-query",
+          "to": "feature:medication-administration-tracking",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 154,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-12 — Medication Administration Tracking` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "26-medication-therapy"
+            }
+          ]
+        },
+        {
+          "source_index": 258,
+          "type": "realises_feature",
+          "from": "function:project-screening-eligibility-timeline",
+          "to": "feature:screening-recall-notification-distribution",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 171,
+              "text": "    - *Feature association not established*: `FEAT-SD-14 — Screening Recall Notification Distribution` is adjudicated sufficient through reusable composition/workflow above. Projecting/querying eligibility dates remains distinct from distribution; no dedicated recall Function or replacement association is assigned.",
+              "anchor": "27-preventive-care"
+            }
+          ]
+        },
+        {
+          "source_index": 259,
+          "type": "associated_feature",
+          "from": "service:preventive-screening-status-query",
+          "to": "feature:screening-recall-notification-distribution",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 171,
+              "text": "    - *Feature association not established*: `FEAT-SD-14 — Screening Recall Notification Distribution` is adjudicated sufficient through reusable composition/workflow above. Projecting/querying eligibility dates remains distinct from distribution; no dedicated recall Function or replacement association is assigned.",
+              "anchor": "27-preventive-care"
+            }
+          ]
+        },
+        {
+          "source_index": 260,
+          "type": "realises_feature",
+          "from": "function:bind-community-support-network-context",
+          "to": "feature:community-care-plan-synchronization",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 190,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-16 — Community Care Plan Synchronization` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "28-community-care"
+            }
+          ]
+        },
+        {
+          "source_index": 261,
+          "type": "associated_feature",
+          "from": "service:community-care-team-query",
+          "to": "feature:community-care-plan-synchronization",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "sd",
+              "line": 190,
+              "text": "    - *Feature association not established*: Strategy `FEAT-SD-16 — Community Care Plan Synchronization` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+              "anchor": "28-community-care"
+            }
+          ]
+        },
+        {
+          "source_index": 262,
+          "type": "realises_feature",
+          "from": "function:track-operational-staff-presence",
+          "to": "feature:mobile-worker-task-dispatch",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "hso",
+              "line": 196,
+              "text": "    - *Feature association not established*: `FEAT-HSO-16 — Mobile Worker Task Dispatch` retains its Strategy identity with the integration boundary below. Presence/zone tracking remains distinct from mobile work-management integration; no replacement association to presence is assigned.",
+              "anchor": "29-mobile-staff-management"
+            }
+          ]
+        },
+        {
+          "source_index": 263,
+          "type": "associated_feature",
+          "from": "service:staff-presence-telemetry-query",
+          "to": "feature:mobile-worker-task-dispatch",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "hso",
+              "line": 196,
+              "text": "    - *Feature association not established*: `FEAT-HSO-16 — Mobile Worker Task Dispatch` retains its Strategy identity with the integration boundary below. Presence/zone tracking remains distinct from mobile work-management integration; no replacement association to presence is assigned.",
+              "anchor": "29-mobile-staff-management"
+            }
+          ]
+        },
+        {
+          "source_index": 264,
+          "type": "realises_feature",
+          "from": "function:retrieve-health-information",
+          "to": "feature:access-controlled-information-filtering",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "ise",
+              "line": 81,
+              "text": "    - *Feature association not established*: `FEAT-ISE-09 — Access-Controlled Information Filtering` requires access-controlled disclosure/filtering; retrieval of discrete information alone does not materially realise that responsibility. No replacement Feature is assigned.",
+              "anchor": "23-health-information-access"
+            }
+          ]
+        },
+        {
+          "source_index": 265,
+          "type": "associated_feature",
+          "from": "service:clinical-resource-retrieval-service",
+          "to": "feature:access-controlled-information-filtering",
+          "status": "unresolved",
+          "reason": "Feature association is explicitly not established; this is not an approved edge.",
+          "sources": [
+            {
+              "source": "ise",
+              "line": 81,
+              "text": "    - *Feature association not established*: `FEAT-ISE-09 — Access-Controlled Information Filtering` requires access-controlled disclosure/filtering; retrieval of discrete information alone does not materially realise that responsibility. No replacement Feature is assigned.",
+              "anchor": "23-health-information-access"
+            }
+          ]
+        }
+      ],
+      "realisation_views_in_feature_context": 153,
+      "landscapes_by_taxonomy_and_child_level": {
+        "business": {
+          "CT1": 2,
+          "CT2": 34,
+          "CT3": 76
+        },
+        "business_enabling": {
+          "CT1": 2,
+          "CT3": 102,
+          "Feature": 132,
+          "CT2": 14
+        },
+        "enterprise": {
+          "CT1": 1,
+          "CT3": 4,
+          "CT2": 3
+        }
+      },
+      "new_landscape_views": 184,
+      "reused_landscape_views": 186,
+      "business_views_with_feature_layout": 61
+    }
+  },
+  "files_sha256": {
+    "AGENTS.md": "df693d4b012f8b94e595641f0e04494a683e6382e771b5398d730ecaee685411",
+    "architecture-release.json": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+    "docs/AGENTS.md": "659dd0511a9142e0514f15577383b1bc9d781cb9080c929d9d2541ded9bfeddf",
+    "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml": "98c1074c8ead4c55708dc85b327a98e077feb8e59ff58cec9c2852a1332e9e75",
+    "docs/archimate/capability-architecture/Makefile": "dd9d22288ffe0c45fbc3186077ca23f9744e4939445bb106b2f188cea24164eb",
+    "docs/archimate/capability-architecture/README.md": "e19d7cf3b0b53c0456bfe198bc541c7863eecd38b1c68a93dcb045d6430df3c2",
+    "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+    "docs/archimate/capability-architecture/baseline/navigation-baseline-1.0.3.json": "d8d77628c3ad80e9309a4ad53438e67e322154a15f06bb7edbb038a41a73e374",
+    "docs/archimate/capability-architecture/baseline/semantic-lock.json": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+    "docs/archimate/capability-architecture/documentation-map.json": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+    "docs/archimate/capability-architecture/recovery-v0.2/1.0.5A-recovery-report.md": "61ec9349d290b3b15415600e126af17f2d10ff0c23e59ab7034b3960638da210",
+    "docs/archimate/capability-architecture/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1",
+    "docs/archimate/capability-architecture/recovery-v0.2/archi-inspection-guide.md": "cdc2d6a9be60f563321306d7023e3f3a16e17fc3b33dd271d1ebc87c532635db",
+    "docs/archimate/capability-architecture/recovery-v0.2/architecture-release.json": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+    "docs/archimate/capability-architecture/recovery-v0.2/recovery-findings.json": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73",
+    "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266",
+    "docs/archimate/capability-architecture/recovery-v0.2/source-manifest.json": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9",
+    "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+    "docs/archimate/capability-architecture/synchronised-baseline/corrections-preservation.json": "42d1b3487b122fe867c5ba17831184c4d14e1d183aa6acd6f1e6e1e911a70363",
+    "docs/archimate/capability-architecture/synchronised-baseline/documentation-correction-verification.json": "ae7e7919a9947ff4e39e57ca00516e2f69717debdfe518412247958f2bf65223",
+    "docs/archimate/capability-architecture/synchronised-baseline/human-inspection-start-preservation.json": "c71f7ac07f9d8e4dcf63f9e0df887c4ec95bdc11020722ac158cee3ada2a3969",
+    "docs/archimate/capability-architecture/synchronised-baseline/initial-synchronisation-report.md": "07a687d2085850239ec3d561a53f617873d7eac34adac47aace1db591c28e5f6",
+    "docs/archimate/capability-architecture/synchronised-baseline/initial-synchronisation-verification.json": "ce20d8a18caeebf91d73c41b1e3cbac46478aa0c38dfb77ef42207248333f1f8",
+    "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-synchronisation-report.md": "99aa93bdab1e23dfd291a7bdcb049f261b35778220471c9f9a22285911adca65",
+    "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-verification.json": "2ade750a06fc264172cb4d70285686631d1811dc4b39d03926759d8816f143e8",
+    "docs/archimate/capability-architecture/synchronised-baseline/projection-start-preservation.json": "e7d8aa6f7d268a1eea3c96e11275d493dc6a3b618964682ac902478df216ed2c",
+    "docs/archimate/capability-architecture/synchronised-baseline/validation.json": "90570c7ad557a9eebe63448e8ffb7c6dbb49f157698aca39078bcec00ef327ba",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/architecture.log": "8b8d93a0e5075f3d1bd3321b1efebb987266f7e3eb09d9435d4a3a7f44672f7b",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/baseline-tests.log": "58de9d06118b76a1e30a115653c625a35654f908733c697e1c3d6322bd085920",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/bindings.log": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/diff.log": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/documentation-samples.log": "e7fa076cc9f9c6f081ce17d1ab5512901ba068effcc6ea1bbab8e8f750a4794b",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/generation.log": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/generation_check.log": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/identity.log": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/independent_regeneration.log": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/preservation.log": "066dcf180f0116a804f3f7d4236615fdd963711b1f1783be316b7f797bfdf463",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/publication.log": "8b4ebcab794e1cf5841d26560685cede6703d887cb028bd2d8848406f08672cb",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/rad.log": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/readme-lifecycle.log": "29bf6389ddf707f9fd5cc7bea018c2f72866fc9bc948309b7c6f5283e7ae27b7",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/recovery_replay.log": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/regeneration_comparison.log": "6030c5d7a7fef0306eb6e74c8960e44deed73ae0e4edd05fa172ff1f14870318",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/release.log": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/report.log": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/scripts.log": "f4cf03ad45eea71e2dde5b5b1cc0e975cda98903d356f2757519c8a016ccce04",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/snapshot.log": "77a94b4166c2fdce232f9d93b0741580142188402f80b4039d4e0af85f712ee1",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/snapshot_tests.log": "32ecf936b54f423ea534e089a20692be552c3e088c8de13be78e50c2f74a6aa1",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/snapshot-check.py": "6e097e14622ac960662f64ae111594e192e8cbde981504bdadb699b0259230c8",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/starting-candidate-audit.py": "0f0e3e5f5aef58d54709424ec1f2a9a46652a2fd9b6b54f5d25c027a81245104",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/all-output-comparison.log": "2135af2cd6df9d8cb21e2c0ff5c6e1e18119778665901b27f2f8866f110880ca",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/archi-cli-display.log": "b115f1b1dee57d5f200164210b78edaf8f4d0d64160118ba68ea6c6d80c3481f",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/archi-cli-no-display.log": "d8359519ea841082aeb7ea8f24dfb143d351b8c08d120638114271d05574d84b",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/architecture.log": "6fe677b54c1db29b187fcbd6fb2745d3acc491cbab33fd9fc9978e588b7b2fab",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/bindings.log": "5e49d1e87729e8b98ee6b421978c8401bcca00b44c3fc978faca6b7cc851da46",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/diff.log": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/generation_check.log": "dd0117f47b6487f66bd55fe5404db972f133c98030df9e56f4c5ae03bbbb7ff5",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/generation_xsd.log": "6419096f353847ee6fc83274e62a90c215b0a329150b2cbd91b992c030a0130c",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/identity.log": "b622201b5cd44b7db5cf80fd8070ed07c946fdbb8b69246af1e033985e95bfdd",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/independent_regeneration.log": "935a15391425ff204f504c2a88173e1f18ba64f92409d1e38717f1168512d597",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/preservation.log": "567d6da879938da2754da02588a492faa602a4af591861b75de9ec2f37fa22c2",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/publication.log": "864528482453d75f71a4aca9615d6a71df0d72be8901a1d1505946603ed63dba",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/rad.log": "4e135cd8f0c10ff5c0c61d503934b8f5174cd970dc35d88780c622daae5a6f49",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/recovery_replay.log": "7e9a401470c05e6b8ac9ea3aba3b440e102ebfce5bfe9c1de8f29cbff93c5656",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/regeneration_comparison.log": "66965916df0630bf5467ccd0cb3e0c4f8bdf4d0343076dbea2b541fc07c50e55",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/release.log": "2ed54370d48f30e4854e297846641eafc9a8900882211d6b597b152f90861f70",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/report-check.log": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/report-independent.log": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/scripts.log": "44723e61ab31403ebe86bb1eee1f0a13640abe5e3e79ea3a10d0d43fdbd262ea",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/snapshot.log": "2e2ebfbf15f90b56512acaee54d8e6023b9acfe5cc3fd33cba12763c1c77c28e",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/snapshot_tests.log": "49e07b1c406f77ca0c6019b4562e0fc3780d2fa0442a2c9ed625855b858254c2",
+    "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/structural_audit.log": "02043c3e969bea1c9784599d965b533552fd263162430fbb48f532ed422a0eba",
+    "docs/archimate/capability-architecture/tests/test_baseline.py": "4aa6dea4585415aaadb77d3dcc576a1a54fcb693f14968be0652dda1ee552a45",
+    "docs/archimate/capability-architecture/tools/feature_projection.py": "062dd6dd5e9677f7811edb4ca834514e576c25cfa0175f8477ebbea36b0844d7",
+    "docs/archimate/capability-architecture/tools/generate_views.py": "a82708730a67d063c5504f544e60d5eca73c84267992a79b5f16c6a1e8338797",
+    "docs/archimate/capability-architecture/tools/publish_documentation.py": "fec75663ea320796af4b4c72e90a004fc4a2afb58be60f01371f30c25742d463",
+    "docs/archimate/capability-architecture/tools/publish_navigation.py": "8060f6d2fce8c17361d43156626d03d29004e00c30b776a691f313f07048a494",
+    "docs/archimate/capability-architecture/tools/recover_v02.py": "e64ebb1e3399b99a1e7ea153e5034864e2a8da95e131826b210877202d6531bd",
+    "docs/archimate/capability-architecture/tools/report_baseline.py": "58824af188d387d32903570853df906419ddab4b71287ee6647ea0bc75e46fe9",
+    "docs/archimate/capability-architecture/tools/synchronise_baseline.py": "f46a6099f74c82794a74d5ed7c8920047ce1e13f2d7adfeb893771b4efb3a7bd",
+    "docs/archimate/capability-architecture/tools/verify_baseline_outputs.py": "27ce8b8da5dcd12d5e73d0f574734b0551ef3f78249a0967a18b0451e02f5ee0",
+    "docs/latex-legacy/chapters/01-motivation-strategy-old.tex": "24756f498ea2a32cfea8211268d65f234af82e270a3c9be408bd34da0d0a127f",
+    "docs/latex-legacy/chapters/01-motivation-strategy.tex": "2e91186ed1ed0c8160733f80af9509fbb17364567e3a7628822257c24c876540",
+    "docs/latex-legacy/chapters/appendix-requirements.tex": "12e660dd7c3569cb1f7ace57efca1de961d7ea06a4118e0337148633fd252ccc",
+    "docs/latex-legacy/diagrams/fig-motivation-map.tex": "d266192d028acff5c3df2863f4a9b7ea0d9facc3345bc770ff29af2ad0506411",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Harmonia-EA-Capability-Map.tex": "bd3216a7f881c24a36a9a7ea61c8174194c4392369cdcfd9932fcbad4bcee74c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Makefile": "68b22e16c477cb509b663e9bc95fa6a1250de6b9d9bb468ab3191a3fe9a93bdf",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/README.md": "5038c3d01298ceca6a475e356360a83a437401ec67847bb044989a501a871f30",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/architecture-tests.json": "c427007f3aa49451137536a176bc9663851f1a388bb1a1d5def3bc9c9aae1f73",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/bec-reconciliation-ledger.json": "fd710b8c5b306ae75832e6666c44cdddb8cc2be5325bda5dfa0e4ba881e2ea56",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/catalogue/proposals.md": "733a4edb61297ccdd2e2f169109c719de6f64b2ff234a5ff85772acf2c51a521",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/catalogue/review-focus.md": "3a59de9924413d02565b7fc95277c20e920b6b5556c57ac9a3ddbc3f96bc8643",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/change-ledger.json": "49024316140e9897f0488e5fd0e9b40ddac585f53cd15f57b67b0b0054cd859d",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/corpus-register.json": "d8ce86e115f71c37e591eb4a7a52e1caf028673d32d2f7cabcd6faa957de24d6",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/derivation-provenance.json": "c21a42ffbb96d06c2d6574abffb3aea27872bb347afd54750adf205fb5a1c139",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/identity-lock.json": "519f1e748aac1223e8120cbfb80ece439188d88596081e736cd6d716596526a4",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model-validation.json": "83e1c8fd56d61512f4d66ddd601ec803c2a8d1e9688e62ef27427265f85b4908",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-identity-lock.json": "50c2b8388dfdb8a1a237ed1fa8e9365e0d6b35ba9ed0e34b78e46e04454a2046",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-publication-evidence.json": "67abfd4dfcf3f248a3e5d5393c5219cbae2e20972569ba3ea388e6b80a229eb9",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-publication-labels.json": "a9ab93295564232ae5cc0402feec202e8e608b69420b51093c874e2ffab565a2",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-v0.3-reconciliation.json": "495411ab4b56ce08b2f86d1fbc07c15213720031de8bd81ec0b33e63068ee21a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/publication-preservation.json": "b0da788293f0116f88087b89060ffb980f6ab5fb19b72234027f62290f9a4574",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reconciliation-tests.json": "e45e0900e3a0d00f44c2ae39dc57f3cec0b744fe2ed0e2260d4141e04e850c07",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json": "208c6cbae846386e664067f1ac4798bd194209eb2098d54af98ed88dd294cc94",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-identity-history.json": "bf4e1e6b49f2fe02deabe5a59d4dadd639fb46c06be28870bd99535715596635",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/bec-review.tex": "847583d7e0a628e555b44e67fa3416fd2ddae37ceba03fa44c639610d1e48faf",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/business-capabilities.tex": "793669630875e4d101f4f23ec3b375e2081463b8a511f1a1f53d8dfa3f450ed7",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/business-enabling-capabilities.tex": "0b40236ec0b46f6f6f5c80fd17c78ed8d4bb921362b90e1d107d25a94658000a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/catalogue-contexts.tex": "f1b06276619091b5fe084a2d98db4bd20e1b6499411044f599c8ac77293f7f1c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/enterprise-capabilities.tex": "54d70681a0d70c92f3c42e5524ede9bb15c75a89cdb89635f2bc9b9998fa0859",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/identifiers.tex": "3ef4ca10ba977a966821ff0828e1ce2a8806c5bf0d4b131d8d1035c055b900ee",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/preserved-responsibilities.tex": "f13c981e10adcfa71af307e83b51d68ef07af3fa9e70922bfd55f5338b1cabf6",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-assurance-strategy.tex": "62780999832352f97278aa4b8d8baa514bda61e1b655dc35420dfd60a93d4753",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-assurance.tex": "d9fabc44dade694ab4b42341e2d19e63524e27435dd16a070bb619c6fd51602a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-axioms.tex": "96c3fe0b75c41cd309e109da3f767a2625fdc2f46409c0bb21ce5d11119ab59a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-b2-1.tex": "fe714504735eccf4a2922681e1d142d3aa5a5767996a94a5a46bee8ec8ec795c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-business.tex": "191e2655044924c452edfb16b5f8e4d3f1f8c5db51c00dadd58d8576cea40e92",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-dependencies.tex": "56f170a392e26cbd81be4bc06062b16ba98860d35faa8ae2632dd592133b7da5",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-detail.tex": "d42f0366a56ea3e97b0c20c1bf56fdb3b2cecd66571f71330766594e5131ea86",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-em.tex": "fff3ff612e48cea8c2c656fd846afacaaaca0455ff2eae8414a4e00faa64ddb7",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-enabling.tex": "5ef8d563c41798f0b62c34d36f6f42410eadf80e6dc0aba6f369f90d7856ec92",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-enterprise.tex": "2bf4d9dd9bc2970384f2901f9a9d2d5818b62e053a0f0c1e3c5aff91fc70cac1",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-hso.tex": "f025defbd23a55fc985568fb09be8b13f384059b61146a9a7886a9bbbdf0a262",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-ise.tex": "c227e1835a98deeb55b2bf6d619e220d72fa0d7799d1c29faf905c2343ae5825",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-k9.tex": "dc3704757f1d5d66c1293c778e37a05d995ffe642e763b99a2218e73c8ba599c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-metamodel.tex": "1e53b70ce93fdaf3655cbdfeba92271b9bab65cafdf95ce6afd18941e3765471",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-processes.tex": "6b6b9c176ecab2b11d954f3752a2c91184aaee0df9fca4bfbddf6294462241f3",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-sa.tex": "b7f111f07dd99a9ba36a4c4bb72f7f9b1b0404b7ab7e60cd3f45ec67430962ed",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-sd.tex": "9c69bd922619e3c0e5bef75d2c75ffe1b2be9dc562a1ea5df09476b209b7d9cd",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-tier-model.tex": "f49bf5d838a6bf2eda2e7dd2c58d598c8710b94f53ebd0b217a7da31bea83fe8",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-traceability.tex": "0bed4f923d6e109c1f5d293bea86f37781b308c5826d6b40f232420dcdde02f5",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/reading-guide.tex": "a48492cf303d099d40579565cd12339df1ac2282a8b702988cfce7f430c10823",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/reconciliation.tex": "112fdf384e1506c6721439ffd1c5d454cb6a324b7213776ff4bd032914467298",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/relationships.tex": "41989793078a5fe18ea9e76643a9dcef0985f38b6b68bfe745923ca777c9ebca",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/sources.tex": "f0e4cf5b1e9e83e9716dc5d0d98a1cc0a259cfa29e10a67a2fc49a1abd492319",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/semantic-baseline.json": "d9a0c95832fda9e254b5152ad2df81e0e85207cd73ecd3426d125b6056df9a23",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/source-coverage.json": "9ae28e1fe3d5ce20ecdd055f51957c7570eb0b65f932e0f098c80035083d9bb6",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/standalone-validation.json": "ffc26c695620b5af6dc47f5cc2b82cdeced6975a720bd8a010ff8b180289710e",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/baseline.py": "c09e74ddbda8bb8f1168a70aa822a05b5f7baca98a9e7e9fe4e92cfb7d24484b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py": "c681808b8459f6818de1dfadce95fe209d8391f9a9244eb640f24bcca4f9cf5b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/compose.py": "52583566fe5b3f259f76c727c82a49ae7156a26a51b97645658d2de911fc9f2d",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/navigation.py": "68b8f1bb988d88a3d64796d7557c247572708c10040801522309de4eb14e77a5",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/probes.py": "5e455c909f324599b4fd00305f143e6dab5daeb61d29203f66ded65e89154fae",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/reconcile.py": "62bfb38654b120180ed35dd50b45dab1187f8f92137ab32fbe11115d89f30c29",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/render.py": "3b523121aaee55c729e09378df1ec5eb195f4cf27aab923c17dd451221dac349",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/report.py": "6fb3034aac25abacd27eaca5d1d8d39575b1c9aec6fdef65deabbf1c75e35ffb",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/reviewed_bec.py": "2285438ae8cfdbc71407d0faebe41d6ddeb19195a14feb67355bac41e6d1218d",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/test_reviewed_bec.py": "dfb3460f5423dc69b77f8defcaffd2fc4c105a68b2baa048c9f7eb1be8153fdc",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/v0.1-fingerprints.json": "2b3dc10bb58b4bcd94af384d8c52992cbb297e07c6e333964f316d7c2e6622c9",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/v0.3-reconciliation.json": "b15892ec9b9c930c92c20ec78cc655f09c42a712ed8560f96690c9e05eb396ab",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/validation.json": "166a8df4ea7c27f7e5cfe68ae85471991d0cd04b73c294bc5f4fa6b40304400b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/validator-probes.json": "8faf73f616be101a650079433b479a9dc8415f0f8643235c29072f78a54c2b2b",
+    "docs/markdown/01-motivation/drivers-assessments/assessments.md": "038713e13714b8e306578f5f55cdcd3ee3f4663ed74359c5754d4a851184b19e",
+    "docs/markdown/01-motivation/drivers-assessments/drivers.md": "49617cdde51b4dc0d97924ec56b081e1e32784d5b59bb0e6e7c45ec3408ec025",
+    "docs/markdown/01-motivation/goals-outcomes/business-outcomes.md": "f1e29ecf0f8f48047edbd980a2b7876e99d21d67b40451e043ee7ee3f2c3b562",
+    "docs/markdown/01-motivation/goals-outcomes/strategic-goals.md": "52a10df1eba7c6ed81dd797f66288481da3268e344574183f08378ea012556a8",
+    "docs/markdown/01-motivation/principles/reclassified-principles.md": "eeb1a268f017faee4066b4195f1d0a151e021cb2c08bbed4d04556569c4165e7",
+    "docs/markdown/01-motivation/requirements-constraints/external-constraints.md": "49d58a4d09298428402edda60491ebd835ab2af33aa7c101045bce9ef07ba907",
+    "docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md": "dc361c38927e1d90710d451f9af9203add2456f20553176a69dd055985e2ef7f",
+    "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md": "ffae8388c7953e8dc77862de03866eddb067795881e2698c4b6da0835b179fc2",
+    "docs/markdown/01-motivation/stakeholders/enterprise-stakeholders.md": "04283275d49dd9e8cb6e96c13a7b7a86ceec165fd341ce2f3e36a4beda4d4d25",
+    "docs/markdown/02-strategy/capabilities/business-capabilities.md": "43f8bcbe2cb3dd80a1d5d0be9c7c24d16cd46969c111981ea65fde72494e2628",
+    "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md": "d6a443df021a5bdd6c2cbc0e38e90ac9d2e2066d166430dd93c7af75a7a7f7ba",
+    "docs/markdown/02-strategy/capabilities/index.md": "97e0312eefc83eb66916f2497c07148356c58fc166cf5ec0b372d85a216cf57a",
+    "docs/markdown/03-business-architecture/README.md": "eae9228ea6fdd3b4393050a4fce92d5460ce3ec7ad604a7595be1924503295c2",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+    "docs/markdown/03-business-architecture/reference-model/README.md": "fc3166eb5ac85d114c109c75558a46c429300d0253b01a23a6b4334d5abfae82",
+    "docs/markdown/03-business-architecture/reference-model/business-architecture.json": "ed876954fb05cba520e160c5dfe3a0b22e45b88d08453ab937ee48a2e6d64dcd",
+    "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md": "2eadaa3191cea51d9aade7acd99d8a8ee0a2cf114d847a3e87790476d531563f",
+    "docs/markdown/05-information-systems-architecture/component-register.md": "7f493dae1db3e77fe0342f7c21501763a4af2b4de9c59871a109626eaaad5aa0",
+    "docs/markdown/05-information-systems-architecture/data-and-persistence.md": "8f1b4222a8e1303001235366a17de7555e56141711d5599c6851a7d865cb2dcd",
+    "docs/markdown/05-information-systems-architecture/middleware.md": "7ee1a4ab1c24abcb052daa5f0392270a8dc4997dd4083db8fea19736bc363213",
+    "docs/markdown/architecture-completion-plan.md": "dbdeafec13c1b8f10c5eaa46943a8bb7b6e5761d60024df854f5a3ba61c3a73a",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": "b87f4d7c8f8af6c6d31082062223857405f6f2f3f021f1aa411c594b95bf8394",
+    "docs/markdown/governance/architectural-axioms.md": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+    "docs/markdown/governance/architecture-identity/adoption-1.0.3.md": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+    "docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json": "7a9a8b247d54f5a30304b763a60e3622e8197adf85a1bf53678b9af72f43c7b4",
+    "docs/markdown/governance/architecture-identity/bindings-validation.json": "330d7267e048e61ce8e664d4a105ed1923551a387d7ef8dca941db931dc13ba0",
+    "docs/markdown/governance/architecture-identity/inventory.md": "c010871a4074d949e938335faf1ff2c6d82da5028885392593b4420d86720e2b",
+    "docs/markdown/governance/architecture-identity/model.md": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
+    "docs/markdown/governance/architecture-identity/registry.json": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
+    "docs/markdown/governance/architecture-identity/registry.schema.json": "10fb9bb0068b9008f428611c7179bfdea3ced0b419403e19a498afe7560d0b6a",
+    "docs/markdown/governance/architecture-release-policy.md": "904b333e0d44c6366b21139365a25c3862fd35f473682316db7ad76b102ac406",
+    "docs/markdown/governance/baseline/README.md": "8f745d9383d5d823ab646ea1373fa78c5858520f6068c0bfd248929a7ab74796",
+    "docs/markdown/governance/baseline/architecture.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "docs/markdown/governance/baseline/business-capabilities.md": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194",
+    "docs/markdown/governance/baseline/correspondence.json": "7f68ecdf2acaaeb7805b8c10d9023fa968c94276ee3d33298d31ecafbfb4487d",
+    "docs/markdown/governance/baseline/coverage.md": "b5a9d8bcb09a051745be4623487cfb4db9154a346376ece136a05df233e851fc",
+    "docs/markdown/governance/baseline/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+    "docs/markdown/governance/baseline/documentation-classification.json": "60ef83b36301cda9c44655e6985fd2bffe2d89d978c2eff8116db9c1307bf909",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b",
+    "docs/markdown/governance/baseline/features.md": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274",
+    "docs/markdown/governance/baseline/functions.md": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97",
+    "docs/markdown/governance/baseline/motivation.json": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+    "docs/markdown/governance/baseline/motivation.md": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809",
+    "docs/markdown/governance/baseline/processes.md": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f",
+    "docs/markdown/governance/baseline/relationships.md": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+    "docs/markdown/governance/baseline/services.md": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12",
+    "docs/markdown/governance/baseline/source-presentation-overlays.json": "a117274364c0ea3028bf64f9a2320068312ebf0c5dc37e3fe997bf94bb35ae68",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "eac88ed8eaec0a589659f509e6124d12b6c5c270e28d12f860f830dc5555d467",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "3122a5355834a391b0a2e682a80bd174a2af66cdf82fe02a984ec187cfb0bf72",
+    "docs/markdown/governance/rad-archimate-publication-plan.md": "178fdb951149f634ee28f2bd44ed065b5cd0b14d07a35d9f2efc9e31f66f0176",
+    "scripts/architecture_identity.py": "58d9291a937106f7ce79d0ea52069a6affe089208cd6e01fc6eb7286359482f4",
+    "scripts/architecture_release.py": "c3537adbbde52382e3b6ed680b94f697cd54890a3bae2d5fe313f394616a9aec",
+    "scripts/rads_business_architecture.py": "0be877d4c362f2f77dc9a89b37e74804dcca5a77e8b1fc2fdb54929c0d66d5f1",
+    "scripts/tests/test_rads_source_presentation.py": "eb7ff005e0e56035d6405f0e8bae9f92100b31ba1391cb591ad9b1f013c3877f"
+  }
+}
