@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Unmodified v0.2 validate_model, validate_review and included-TeX validate_source; no current RAD regeneration",
+  "records": 946,
+  "source_navigation": {
+    "numbered_architectural_entries": 946,
+    "numbered_catalogue_fields": 4101,
+    "current_architectural_entries": 845,
+    "historical_or_pending_records": 101,
+    "catalogue_fields_by_heading_level": {
+      "section": 187,
+      "subsection": 1464,
+      "subsubsection": 1625,
+      "paragraph": 825
+    }
+  }
+}

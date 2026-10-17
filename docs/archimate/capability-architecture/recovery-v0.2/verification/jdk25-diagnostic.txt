@@ -1,0 +1,7 @@
+Diagnostic only. The final Java 21 run is the relied-on architecture evidence.
+java.lang.IllegalArgumentException: Unsupported class file major version 69
+java.lang.IllegalArgumentException: Unsupported class file major version 69
+java.lang.IllegalArgumentException: Unsupported class file major version 69
+[INFO] Tests run: 90, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  27.599 s

@@ -2,6 +2,19 @@
 
 # Harmonia Capability Architecture — Exchange publication
 
+**1.0.5A recovery for inspection:** import
+[Harmonia-Architecture-1.0.5A.xml](recovery-v0.2/Harmonia-Architecture-1.0.5A.xml).
+Read the [recovery report](recovery-v0.2/1.0.5A-recovery-report.md) and
+[Archi inspection guide](recovery-v0.2/archi-inspection-guide.md).
+From this directory, `PYTHONDONTWRITEBYTECODE=1 make all` now generates, tests
+and checks that separate frozen-v0.2 recovery. It does not refresh RADS, recompose
+LaTeX, alter identity registers or overwrite the original 1.0.4 XML below.
+The original publication commands and reports remain historical; `legacy-all`
+names their earlier pipeline and requires its corresponding release fixtures.
+The recovery preserves its established navigation conventions while keeping
+unbound old objects in explicit reference branches. No 1.0.5B overlay or commit
+has been performed.
+
 Release **1.0.4** applies the governed
 [Archi Navigation & View Convention](../../markdown/governance/archi-navigation-and-view-convention.md).
 Import [Harmonia-Capability-Architecture.xml](Harmonia-Capability-Architecture.xml)

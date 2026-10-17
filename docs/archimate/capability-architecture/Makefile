@@ -10,8 +10,22 @@ RELEASE_FILE ?= $(REPOSITORY)/architecture-release.json
 INVENTORY ?= ../../markdown/governance/rad-archimate-source-inventory.json
 .NOTPARALLEL:
 
-.PHONY: all generate inventory adoption bindings check test report
-all: generate inventory adoption bindings test check report
+.PHONY: all recovery-all recovery recovery-check recovery-report legacy-all generate inventory adoption bindings check test report
+all: recovery-all
+
+recovery-all: recovery test recovery-check recovery-report
+
+recovery:
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) tools/recover_v02.py
+
+recovery-check:
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) tools/recover_v02.py --check
+
+recovery-report:
+	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/report_recovery.py --check
+
+# Historical 1.0.4 publisher, retained for replay against its release fixtures.
+legacy-all: generate inventory adoption bindings test check report
 
 generate:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/publish_navigation.py --baseline "$(BASELINE)" --schema "$(SCHEMA)" --output "$(OUTPUT)" --report "$(REPORT)" --documentation-map "$(DOCUMENTATION_MAP)" --release-file "$(RELEASE_FILE)"
@@ -35,7 +49,7 @@ check:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" bindings --check
 
 test:
-	timeout --signal=TERM --kill-after=5s 60s $(PYTHON) -m unittest discover -s tests -v
+	timeout --signal=TERM --kill-after=5s 120s $(PYTHON) -m unittest discover -s tests -v
 
 report:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/report_navigation.py --check

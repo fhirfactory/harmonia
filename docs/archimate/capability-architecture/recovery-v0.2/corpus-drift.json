@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "checked_entries": 118,
+  "changed_or_missing_entries": 4,
+  "drift": [
+    {
+      "path": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+      "snapshot_sha256": "3b0906eb6d51aea98e17b3f6b31250e68c2aa7320a1989f2386449909ce8f19a",
+      "current_sha256": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+      "disposition": "Excluded as a live semantic source; frozen model and included TeX used. Drift does not by itself date each changed assertion."
+    },
+    {
+      "path": "docs/markdown/05-information-systems-architecture/sources.md",
+      "snapshot_sha256": "f9cc7af3ab31f4cde0fa196198475d977f2f1b69d758dd33499ff70e9ceff176",
+      "current_sha256": "e067fc91ca7f139a547cdfa0095c3823d62b090339dcc16424cc125d66991c45",
+      "disposition": "Excluded as a live semantic source; frozen model and included TeX used. Drift does not by itself date each changed assertion."
+    },
+    {
+      "path": "docs/markdown/governance/README.md",
+      "snapshot_sha256": "6bf8bc915d3b591ee406f17f11bc4f7cabdd6cbe264f94cf5f5a61066319fa74",
+      "current_sha256": "e330fd517cd6044bcf382ba78743e77c26a45b6e0a174bf486f62a40ec27e0e1",
+      "disposition": "Excluded as a live semantic source; frozen model and included TeX used. Drift does not by itself date each changed assertion."
+    },
+    {
+      "path": "docs/markdown/scratchpad/capability-reference-candidate/Harmonia-Capability-Reference-Candidate-v0.3.tex",
+      "snapshot_sha256": "82df3717855f1fc7572cd40bf60d81d23fc36c7567d304f3eb0b137ac8800d6f",
+      "current_sha256": "f91ac56cb8a21808ea3eacef5d6f0900ec9e2b67445839418580ba517f1d6230",
+      "disposition": "Excluded as a live semantic source; frozen model and included TeX used. Drift does not by itself date each changed assertion."
+    }
+  ],
+  "standing": "Diagnostic evidence; not an architectural adjudication or a post-snapshot overlay."
+}

@@ -206,6 +206,9 @@ class NavigationTests(unittest.TestCase):
         release = n.load_release()
         inventory = json.loads((BASE.parents[2] / "docs/markdown/governance/rad-archimate-source-inventory.json").read_text())
         bindings = json.loads((BASE.parents[2] / "docs/markdown/governance/architecture-identity/bindings-validation.json").read_text())
+        # These saved records are historical release fixtures. Exercise the
+        # renderer using one consistent fixture release after later increments.
+        inventory["architecture_release"] = bindings["architecture_release"] = release
         verification = dict(architecture_release=release, status="PASS", checks=[
             dict(key=key, name=key, status="PASS", result="test fixture") for key in sorted(r.REQUIRED_CHECKS)])
         report = r.render(release, self.report, inventory, bindings, verification, self.previous)
