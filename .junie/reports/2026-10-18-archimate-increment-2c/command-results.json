@@ -1,0 +1,51 @@
+[
+  {
+    "key": "architecture-tests",
+    "command": "timeout --signal=TERM --kill-after=5s 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/architecture-tests.log"
+  },
+  {
+    "key": "release-identity-tests",
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B -m unittest discover -s scripts/tests -p 'test_architecture_*.py' -v",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/release-identity-tests.log"
+  },
+  {
+    "key": "release-check",
+    "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B scripts/architecture_release.py check",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/release-check.log"
+  },
+  {
+    "key": "rads-validation",
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B scripts/rads_business_architecture.py validate",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/rads-validation.log"
+  },
+  {
+    "key": "metadata-validation",
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/metadata-validation.log"
+  },
+  {
+    "key": "independent-generation",
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B docs/archimate/framework/tools/synchronise_baseline.py --output-directory /tmp/harmonia-increment-2c-1.0.11",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/independent-generation.log"
+  },
+  {
+    "key": "documentation-preservation-validation",
+    "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B .junie/reports/2026-10-18-archimate-increment-2c/validate-increment.py",
+    "exit_code": 0,
+    "result": "PASS",
+    "log": ".junie/reports/2026-10-18-archimate-increment-2c/documentation-preservation-validation.log"
+  }
+]

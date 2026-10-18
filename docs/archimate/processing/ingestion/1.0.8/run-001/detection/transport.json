@@ -1,0 +1,447 @@
+{
+  "control_path": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml",
+  "control_sha256": "38e49fa348d015aba6b19e21b4f96dc00fddf3c4d7671b3e352b4c07748917ea",
+  "retained_element_records_exact_against_control": 1299,
+  "retained_relationship_records_exact_against_control": 852,
+  "evidence_property_changes_against_baseline": {
+    "v0.2 / Snapshot Record JSON": 615,
+    "v0.2 / Deferred Relationship Assertions": 291,
+    "v0.2 / Source Locators": 409,
+    "v0.2 / Derivation Provenance": 85,
+    "v0.2 / Source Assertion JSON": 269
+  },
+  "property_definitions": [
+    {
+      "key": "Architectural Status",
+      "baseline_id": "prop-status",
+      "incoming_id": "propid-26",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"prop-status\" type=\"string\">\n\n\n      <name xml:lang=\"en\">Architectural Status</name>\n\n\n    </propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-26\" type=\"string\">\n      <name>Architectural Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Architectural Status",
+      "baseline_id": "baseline-architectural-status",
+      "incoming_id": "propid-44",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-architectural-status\" type=\"string\"><name xml:lang=\"en\">Baseline / Architectural Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-44\" type=\"string\">\n      <name>Baseline / Architectural Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Architecture Identity Status",
+      "baseline_id": "baseline-architecture-identity-status",
+      "incoming_id": "propid-48",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-architecture-identity-status\" type=\"string\"><name xml:lang=\"en\">Baseline / Architecture Identity Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-48\" type=\"string\">\n      <name>Baseline / Architecture Identity Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Architecture Release",
+      "baseline_id": "baseline-architecture-release",
+      "incoming_id": "propid-60",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-architecture-release\" type=\"string\"><name xml:lang=\"en\">Baseline / Architecture Release</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-60\" type=\"string\">\n      <name>Baseline / Architecture Release</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Canonical Textual Projection",
+      "baseline_id": "baseline-canonical-textual-projection",
+      "incoming_id": "propid-61",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-canonical-textual-projection\" type=\"string\"><name xml:lang=\"en\">Baseline / Canonical Textual Projection</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-61\" type=\"string\">\n      <name>Baseline / Canonical Textual Projection</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Governance State",
+      "baseline_id": "baseline-governance-state",
+      "incoming_id": "propid-41",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-governance-state\" type=\"string\"><name xml:lang=\"en\">Baseline / Governance State</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-41\" type=\"string\">\n      <name>Baseline / Governance State</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Native Definition ID",
+      "baseline_id": "baseline-native-definition-id",
+      "incoming_id": "propid-43",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-native-definition-id\" type=\"string\"><name xml:lang=\"en\">Baseline / Native Definition ID</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-43\" type=\"string\">\n      <name>Baseline / Native Definition ID</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Record State",
+      "baseline_id": "baseline-record-state",
+      "incoming_id": "propid-40",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-record-state\" type=\"string\"><name xml:lang=\"en\">Baseline / Record State</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-40\" type=\"string\">\n      <name>Baseline / Record State</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Review State",
+      "baseline_id": "baseline-review-state",
+      "incoming_id": "propid-50",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-review-state\" type=\"string\"><name xml:lang=\"en\">Baseline / Review State</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-50\" type=\"string\">\n      <name>Baseline / Review State</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Source Assertion",
+      "baseline_id": "baseline-source-assertion",
+      "incoming_id": "propid-59",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-source-assertion\" type=\"string\"><name xml:lang=\"en\">Baseline / Source Assertion</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-59\" type=\"string\">\n      <name>Baseline / Source Assertion</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Source Path",
+      "baseline_id": "baseline-source-path",
+      "incoming_id": "propid-45",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-source-path\" type=\"string\"><name xml:lang=\"en\">Baseline / Source Path</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-45\" type=\"string\">\n      <name>Baseline / Source Path</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Source Predicate",
+      "baseline_id": "baseline-source-predicate",
+      "incoming_id": "propid-58",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-source-predicate\" type=\"string\"><name xml:lang=\"en\">Baseline / Source Predicate</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-58\" type=\"string\">\n      <name>Baseline / Source Predicate</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Source Projection Key",
+      "baseline_id": "baseline-source-projection-key",
+      "incoming_id": "propid-49",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-source-projection-key\" type=\"string\"><name xml:lang=\"en\">Baseline / Source Projection Key</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-49\" type=\"string\">\n      <name>Baseline / Source Projection Key</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Source SHA256",
+      "baseline_id": "baseline-source-sha256",
+      "incoming_id": "propid-47",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-source-sha256\" type=\"string\"><name xml:lang=\"en\">Baseline / Source SHA256</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-47\" type=\"string\">\n      <name>Baseline / Source SHA256</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Source Section",
+      "baseline_id": "baseline-source-section",
+      "incoming_id": "propid-46",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-source-section\" type=\"string\"><name xml:lang=\"en\">Baseline / Source Section</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-46\" type=\"string\">\n      <name>Baseline / Source Section</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Baseline / Textual Baseline Reference",
+      "baseline_id": "baseline-textual-baseline-reference",
+      "incoming_id": "propid-17",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"baseline-textual-baseline-reference\" type=\"string\"><name xml:lang=\"en\">Baseline / Textual Baseline Reference</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-17\" type=\"string\">\n      <name>Baseline / Textual Baseline Reference</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Capability Tier",
+      "baseline_id": "prop-tier",
+      "incoming_id": "propid-24",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"prop-tier\" type=\"string\">\n\n\n      <name xml:lang=\"en\">Capability Tier</name>\n\n\n    </propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-24\" type=\"string\">\n      <name>Capability Tier</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Harmonia Architecture Layer",
+      "baseline_id": "prop-layer",
+      "incoming_id": "propid-23",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"prop-layer\" type=\"string\">\n\n\n      <name xml:lang=\"en\">Harmonia Architecture Layer</name>\n\n\n    </propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-23\" type=\"string\">\n      <name>Harmonia Architecture Layer</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Reference ID",
+      "baseline_id": "prop-reference-id",
+      "incoming_id": "propid-25",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"prop-reference-id\" type=\"string\">\n\n\n      <name xml:lang=\"en\">Reference ID</name>\n\n\n    </propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-25\" type=\"string\">\n      <name>Reference ID</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "Release Scope",
+      "baseline_id": "prop-scope",
+      "incoming_id": "propid-42",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"prop-scope\" type=\"string\">\n\n\n      <name xml:lang=\"en\">Release Scope</name>\n\n\n    </propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-42\" type=\"string\">\n      <name>Release Scope</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "archimateType",
+      "baseline_id": "governed-archimate-type",
+      "incoming_id": "propid-22",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"governed-archimate-type\" type=\"string\"><name xml:lang=\"en\">archimateType</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-22\" type=\"string\">\n      <name>archimateType</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "canonicalId",
+      "baseline_id": "governed-canonical-id",
+      "incoming_id": "propid-18",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"governed-canonical-id\" type=\"string\"><name xml:lang=\"en\">canonicalId</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-18\" type=\"string\">\n      <name>canonicalId</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "canonicalName",
+      "baseline_id": "governed-canonical-name",
+      "incoming_id": "propid-21",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"governed-canonical-name\" type=\"string\"><name xml:lang=\"en\">canonicalName</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-21\" type=\"string\">\n      <name>canonicalName</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "displayName",
+      "baseline_id": "governed-display-name",
+      "incoming_id": "propid-19",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"governed-display-name\" type=\"string\"><name xml:lang=\"en\">displayName</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-19\" type=\"string\">\n      <name>displayName</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "friendlyName",
+      "baseline_id": "governed-friendly-name",
+      "incoming_id": "propid-20",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"governed-friendly-name\" type=\"string\"><name xml:lang=\"en\">friendlyName</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-20\" type=\"string\">\n      <name>friendlyName</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "harmoniaType",
+      "baseline_id": "governed-harmonia-type",
+      "incoming_id": "propid-34",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"governed-harmonia-type\" type=\"string\"><name xml:lang=\"en\">harmoniaType</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-34\" type=\"string\">\n      <name>harmoniaType</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Adjudication Note",
+      "baseline_id": "recovery-adjudication-note",
+      "incoming_id": "propid-32",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-adjudication-note\" type=\"string\"><name xml:lang=\"en\">v0.2 / Adjudication Note</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-32\" type=\"string\">\n      <name>v0.2 / Adjudication Note</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Architectural Status",
+      "baseline_id": "recovery-architectural-status",
+      "incoming_id": "propid-6",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-architectural-status\" type=\"string\"><name xml:lang=\"en\">v0.2 / Architectural Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-6\" type=\"string\">\n      <name>v0.2 / Architectural Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Architecture Identity Status",
+      "baseline_id": "recovery-architecture-identity-status",
+      "incoming_id": "propid-12",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-architecture-identity-status\" type=\"string\"><name xml:lang=\"en\">v0.2 / Architecture Identity Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-12\" type=\"string\">\n      <name>v0.2 / Architecture Identity Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Assertion Status",
+      "baseline_id": "recovery-assertion-status",
+      "incoming_id": "propid-54",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-assertion-status\" type=\"string\"><name xml:lang=\"en\">v0.2 / Assertion Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-54\" type=\"string\">\n      <name>v0.2 / Assertion Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Canonical Architecture ID",
+      "baseline_id": "recovery-canonical-architecture-id",
+      "incoming_id": "propid-29",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-canonical-architecture-id\" type=\"string\"><name xml:lang=\"en\">v0.2 / Canonical Architecture ID</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-29\" type=\"string\">\n      <name>v0.2 / Canonical Architecture ID</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Canonical Name",
+      "baseline_id": "recovery-canonical-name",
+      "incoming_id": "propid-28",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-canonical-name\" type=\"string\"><name xml:lang=\"en\">v0.2 / Canonical Name</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-28\" type=\"string\">\n      <name>v0.2 / Canonical Name</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Capability Tier",
+      "baseline_id": "recovery-capability-tier",
+      "incoming_id": "propid-5",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-capability-tier\" type=\"string\"><name xml:lang=\"en\">v0.2 / Capability Tier</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-5\" type=\"string\">\n      <name>v0.2 / Capability Tier</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Construct Type",
+      "baseline_id": "recovery-construct-type",
+      "incoming_id": "propid-4",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-construct-type\" type=\"string\"><name xml:lang=\"en\">v0.2 / Construct Type</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-4\" type=\"string\">\n      <name>v0.2 / Construct Type</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Deferred Relationship Assertions",
+      "baseline_id": "recovery-deferred-relationship-assertions",
+      "incoming_id": "propid-16",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-deferred-relationship-assertions\" type=\"string\"><name xml:lang=\"en\">v0.2 / Deferred Relationship Assertions</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-16\" type=\"string\">\n      <name>v0.2 / Deferred Relationship Assertions</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Derivation Provenance",
+      "baseline_id": "recovery-derivation-provenance",
+      "incoming_id": "propid-13",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-derivation-provenance\" type=\"string\"><name xml:lang=\"en\">v0.2 / Derivation Provenance</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-13\" type=\"string\">\n      <name>v0.2 / Derivation Provenance</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Historical ID Aliases",
+      "baseline_id": "recovery-historical-id-aliases",
+      "incoming_id": "propid-27",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-historical-id-aliases\" type=\"string\"><name xml:lang=\"en\">v0.2 / Historical ID Aliases</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-27\" type=\"string\">\n      <name>v0.2 / Historical ID Aliases</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Inherited Release Scope",
+      "baseline_id": "recovery-inherited-release-scope",
+      "incoming_id": "propid-37",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-inherited-release-scope\" type=\"string\"><name xml:lang=\"en\">v0.2 / Inherited Release Scope</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-37\" type=\"string\">\n      <name>v0.2 / Inherited Release Scope</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / LaTeX Label",
+      "baseline_id": "recovery-latex-label",
+      "incoming_id": "propid-3",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-latex-label\" type=\"string\"><name xml:lang=\"en\">v0.2 / LaTeX Label</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-3\" type=\"string\">\n      <name>v0.2 / LaTeX Label</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Name Aliases",
+      "baseline_id": "recovery-name-aliases",
+      "incoming_id": "propid-36",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-name-aliases\" type=\"string\"><name xml:lang=\"en\">v0.2 / Name Aliases</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-36\" type=\"string\">\n      <name>v0.2 / Name Aliases</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Name Status",
+      "baseline_id": "recovery-name-status",
+      "incoming_id": "propid-11",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-name-status\" type=\"string\"><name xml:lang=\"en\">v0.2 / Name Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-11\" type=\"string\">\n      <name>v0.2 / Name Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Native Definition ID",
+      "baseline_id": "recovery-native-definition-id",
+      "incoming_id": "propid-51",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-native-definition-id\" type=\"string\"><name xml:lang=\"en\">v0.2 / Native Definition ID</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-51\" type=\"string\">\n      <name>v0.2 / Native Definition ID</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Placement Status",
+      "baseline_id": "recovery-placement-status",
+      "incoming_id": "propid-8",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-placement-status\" type=\"string\"><name xml:lang=\"en\">v0.2 / Placement Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-8\" type=\"string\">\n      <name>v0.2 / Placement Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Record State",
+      "baseline_id": "recovery-record-state",
+      "incoming_id": "propid-7",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-record-state\" type=\"string\"><name xml:lang=\"en\">v0.2 / Record State</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-7\" type=\"string\">\n      <name>v0.2 / Record State</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Release Scope",
+      "baseline_id": "recovery-release-scope",
+      "incoming_id": "propid-39",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-release-scope\" type=\"string\"><name xml:lang=\"en\">v0.2 / Release Scope</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-39\" type=\"string\">\n      <name>v0.2 / Release Scope</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Release Scope Source",
+      "baseline_id": "recovery-release-scope-source",
+      "incoming_id": "propid-38",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-release-scope-source\" type=\"string\"><name xml:lang=\"en\">v0.2 / Release Scope Source</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-38\" type=\"string\">\n      <name>v0.2 / Release Scope Source</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Reviewed Name",
+      "baseline_id": "recovery-reviewed-name",
+      "incoming_id": "propid-35",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-reviewed-name\" type=\"string\"><name xml:lang=\"en\">v0.2 / Reviewed Name</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-35\" type=\"string\">\n      <name>v0.2 / Reviewed Name</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Snapshot Pointer",
+      "baseline_id": "recovery-snapshot-pointer",
+      "incoming_id": "propid-57",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-snapshot-pointer\" type=\"string\"><name xml:lang=\"en\">v0.2 / Snapshot Pointer</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-57\" type=\"string\">\n      <name>v0.2 / Snapshot Pointer</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Snapshot Record JSON",
+      "baseline_id": "recovery-snapshot-record-json",
+      "incoming_id": "propid-14",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-snapshot-record-json\" type=\"string\"><name xml:lang=\"en\">v0.2 / Snapshot Record JSON</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-14\" type=\"string\">\n      <name>v0.2 / Snapshot Record JSON</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Snapshot Reference ID",
+      "baseline_id": "recovery-snapshot-reference-id",
+      "incoming_id": "propid-2",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-snapshot-reference-id\" type=\"string\"><name xml:lang=\"en\">v0.2 / Snapshot Reference ID</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-2\" type=\"string\">\n      <name>v0.2 / Snapshot Reference ID</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Assertion JSON",
+      "baseline_id": "recovery-source-assertion-json",
+      "incoming_id": "propid-56",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-assertion-json\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Assertion JSON</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-56\" type=\"string\">\n      <name>v0.2 / Source Assertion JSON</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Capture Key",
+      "baseline_id": "recovery-source-capture-key",
+      "incoming_id": "propid-1",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-capture-key\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Capture Key</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-1\" type=\"string\">\n      <name>v0.2 / Source Capture Key</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Locators",
+      "baseline_id": "recovery-source-locators",
+      "incoming_id": "propid-30",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-locators\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Locators</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-30\" type=\"string\">\n      <name>v0.2 / Source Locators</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Owner Reference",
+      "baseline_id": "recovery-source-owner-reference",
+      "incoming_id": "propid-33",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-owner-reference\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Owner Reference</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-33\" type=\"string\">\n      <name>v0.2 / Source Owner Reference</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Parent Reference",
+      "baseline_id": "recovery-source-parent-reference",
+      "incoming_id": "propid-15",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-parent-reference\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Parent Reference</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-15\" type=\"string\">\n      <name>v0.2 / Source Parent Reference</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Path",
+      "baseline_id": "recovery-source-path",
+      "incoming_id": "propid-52",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-path\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Path</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-52\" type=\"string\">\n      <name>v0.2 / Source Path</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source Predicate",
+      "baseline_id": "recovery-source-predicate",
+      "incoming_id": "propid-55",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-predicate\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source Predicate</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-55\" type=\"string\">\n      <name>v0.2 / Source Predicate</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Source SHA256",
+      "baseline_id": "recovery-source-sha256",
+      "incoming_id": "propid-53",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-source-sha256\" type=\"string\"><name xml:lang=\"en\">v0.2 / Source SHA256</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-53\" type=\"string\">\n      <name>v0.2 / Source SHA256</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Structural Canonical ID",
+      "baseline_id": "recovery-structural-canonical-id",
+      "incoming_id": "propid-10",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-structural-canonical-id\" type=\"string\"><name xml:lang=\"en\">v0.2 / Structural Canonical ID</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-10\" type=\"string\">\n      <name>v0.2 / Structural Canonical ID</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Structural ID Status",
+      "baseline_id": "recovery-structural-id-status",
+      "incoming_id": "propid-9",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-structural-id-status\" type=\"string\"><name xml:lang=\"en\">v0.2 / Structural ID Status</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-9\" type=\"string\">\n      <name>v0.2 / Structural ID Status</name>\n    </propertyDefinition>"
+    },
+    {
+      "key": "v0.2 / Unresolved Dimensions",
+      "baseline_id": "recovery-unresolved-dimensions",
+      "incoming_id": "propid-31",
+      "baseline_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"recovery-unresolved-dimensions\" type=\"string\"><name xml:lang=\"en\">v0.2 / Unresolved Dimensions</name></propertyDefinition>",
+      "incoming_xml": "<propertyDefinition xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"propid-31\" type=\"string\">\n      <name>v0.2 / Unresolved Dimensions</name>\n    </propertyDefinition>"
+    }
+  ],
+  "property_definitions_exact_against_control": true,
+  "original_organisation_item_ids": 7096,
+  "incoming_organisation_item_ids": 0,
+  "model_properties_match_baseline": true,
+  "note": "Control is transport evidence only; P remains semantic baseline. No comparator equivalence is added."
+}

@@ -1,0 +1,8 @@
+{
+  "result": "INVALID",
+  "errors": [
+    "metamodel: source drift; reconcile the capture before updating its fingerprint",
+    "metamodel:397: evidence locator mismatch",
+    "metamodel:175: evidence locator mismatch"
+  ]
+}

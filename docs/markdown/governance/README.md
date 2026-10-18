@@ -47,7 +47,11 @@ mapping decisions remain explicit; installation does not authorise later slices.
 
 The [ArchiMate Ingestion Change Review contract](archimate-ingestion-change-review.md)
 governs independently adjudicable incoming changes, Solution Architect decisions,
-executable reconciliation instructions and retained processing evidence. Its
+executable reconciliation instructions and retained processing evidence.
+Disposition records the Solution Architect's call to action; separate
+[Outcome and Outcome Reason](archimate-ingestion-change-review.md#outcome-and-outcome-reason)
+record the resulting CR state and why, including resolution without reconciliation.
+Its
 [governed template](templates/archimate-ingestion-change-review-template.md)
 supports review preparation; it accepts no incoming architecture. Reconciliation
 machinery and the blind-test proposals remain outside this documentation increment.
@@ -56,9 +60,19 @@ The [Increment 2B ingestion/publication semantics](archimate-ingestion-publicati
 govern native Name/displayName equality, authorised qualifiers, semantic naming
 context, machine metadata, relationship recognition/reuse, source-based homes,
 accepted authored Views and the deterministic 1–20-child Containment View.
-CT3/Feature Composition, general Realization/context inference and presentation
-beyond 20 children remain explicitly unresolved. This contract implements no
-reconciliation or layout engine and accepts no blind-test proposal.
+The [Business metamodel Composition rule](../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy), accepted by the Solution
+Architect on 2026-10-19, establishes what an accepted BEC CT3 → Feature Composition
+means; it accepts no submitted instance. General Realization/context inference and
+presentation beyond 20 children remain explicitly unresolved. This contract
+implements no reconciliation or layout engine and accepts no blind-test proposal.
+
+The [Increment 2C Architecture Authoring Praxis](architecture-authoring-praxis.md)
+governs the serial published-baseline, authoring, submission, review,
+reconciliation, validation and publication lifecycle. Submission closes an
+Authoring Iteration; further governed authoring starts from the next applicable
+publication. [Working on the Harmonia architecture](../../archimate/README.md)
+is the practical entry point for architects. The Praxis changes no 2A disposition
+or 2B semantic rule and introduces no branching, merge or reconciliation engine.
 
 The [Governed Architecture Identity model](architecture-identity/model.md),
 [identity inventory and collision report](architecture-identity/inventory.md)

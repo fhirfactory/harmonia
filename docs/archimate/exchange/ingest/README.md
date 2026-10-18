@@ -2,6 +2,11 @@
 
 # Incoming Archi exports
 
+Begin with [Working on the Harmonia architecture](../../README.md). The governed
+[2C Praxis](../../../markdown/governance/architecture-authoring-praxis.md#submit-once-and-close-the-iteration)
+defines deliberate Submission and closure of its Authoring Iteration; the
+landing area is not a continuing authoring workspace.
+
 This is the landing area for incoming Archi/Open Exchange exports intended for
 future analysis and reconciliation. An artefact appearing here is not automatically
 authoritative architecture. It is change/reconciliation input and may contain

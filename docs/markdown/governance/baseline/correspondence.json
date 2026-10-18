@@ -24,21 +24,31 @@
     "docs/AGENTS.md": "659dd0511a9142e0514f15577383b1bc9d781cb9080c929d9d2541ded9bfeddf",
     "docs/markdown/governance/architectural-axioms.md": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
     "docs/markdown/governance/architecture-release-policy.md": "904b333e0d44c6366b21139365a25c3862fd35f473682316db7ad76b102ac406",
-    "docs/markdown/governance/rad-archimate-model-mapping.md": "5e854029d4242000e00855032889c1fdca9b96c21ae335b500fd7dd66c951986",
-    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "779a9f069961c5f46d644603f243f895519ef71e84b4234539b1dee7719b4ad4",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "4424d6c46ec546bfb784c6c901b24023c13c7a8f96765d09158ee68f8587b859",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "86bf2d2ee78935f44f2c5959182725b020ff1fe1b76daa28dac2c395aa19a1c0",
     "docs/markdown/governance/archi-navigation-and-view-convention.md": "f882e9ced3e3fd70d68e2299fecb4cae88ca50e4e4069388a47b76ba4e02577d",
     "docs/markdown/governance/architecture-identity/model.md": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
-    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "b9b1d541db20390103e100280be523ecf810b7fc0827f74fb02e3aa2f47e33f6",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "0b1485d6b284af99071887874d9c4c0b57b8226214db9f716f7d6f1cc620274a",
     "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md": "2eadaa3191cea51d9aade7acd99d8a8ee0a2cf114d847a3e87790476d531563f",
     "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md": "ffae8388c7953e8dc77862de03866eddb067795881e2698c4b6da0835b179fc2",
     "docs/markdown/01-motivation/principles/reclassified-principles.md": "eeb1a268f017faee4066b4195f1d0a151e021cb2c08bbed4d04556569c4165e7",
-    "docs/markdown/governance/baseline/README.md": "c2f62542ca3b0cdad8bb2991343dfe744e6f6ee083ef72d2b47864aafda203b6",
+    "docs/markdown/governance/baseline/README.md": "02d86a9da44953b54c39f28239e3bc6f20c635221cde5092e51c986c67777ac6",
     "docs/markdown/governance/baseline/documentation-classification.json": "60ef83b36301cda9c44655e6985fd2bffe2d89d978c2eff8116db9c1307bf909",
     "docs/markdown/governance/canonical-identity-and-naming.md": "1b3fb89ada3cf23c008025d9c225b1a162941a531b0467207f3cc51bcff5bf7a",
-    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "a8cea150cc76aab3b6d3371ea34229398266e603784706d478c444fabf45ec98"
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "4bddb7eadc4b5fea74e3d432381571b492a1edfe293921c0b93ba01e110c30c8",
+    "docs/markdown/governance/architecture-authoring-praxis.md": "3872a5ff3c0c49ab3929ea0d111edea2008b438ae568d1c1bae7c795581777dc"
   },
   "canonical_identity_establishment": {
     "source_history": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7",
     "manifest_sha256": "03eb9b10fb9da2e58ef1efe46e224fff39cbc9cf9bda00ad5c42aea31882fa19"
+  },
+  "historical_authority_sources": {
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": {
+      "original_sha256": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+      "snapshot": "docs/markdown/governance/baseline/source-history/business-architecture-metamodel-321cdfa5.md.gz",
+      "snapshot_sha256": "302320e731644e1011ac169a393d8b361e71cea66e88e14e1cec31d6a9df4e06",
+      "recorded_on": "2026-10-19",
+      "reason": "The frozen candidate capture retains source-era metamodel fingerprints/locators. The accepted CT3/Feature Composition metamodel decision changes live authority. This snapshot validates historical evidence only, not current architecture; the current_authority_sha256 pin must independently match the live source."
+    }
   }
 }

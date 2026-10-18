@@ -1,28 +1,34 @@
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
-| ID | Brief Description | Status |
-| --- | --- | --- |
-| [CR-001](#cr-001--example-proposal-awaiting-adjudication) | Example proposal awaiting adjudication | On-Hold |
-| [CR-002](#cr-002--example-approved-bounded-change) | Example approved bounded change | Accept |
-| [CR-003](#cr-003--example-declined-proposal) | Example declined proposal | Reject |
-| [CR-004](#cr-004--example-change-requiring-human-resolution) | Example change requiring human resolution | Manual Intervention |
+| ID | Brief Description | Disposition | Outcome |
+| --- | --- | --- | --- |
+| [CR-001](#cr-001--example-proposal-awaiting-adjudication) | Example proposal awaiting adjudication | On-Hold | Unresolved |
+| [CR-002](#cr-002--example-approved-bounded-change) | Example approved bounded change | Accept | Unresolved |
+| [CR-003](#cr-003--example-declined-proposal) | Example declined proposal | Reject | Resolved |
+| [CR-004](#cr-004--example-change-requiring-human-resolution) | Example change requiring human resolution | Manual Intervention | Unresolved |
+| [CR-005](#cr-005--example-finding-resolved-by-governing-decision) | Example finding resolved by governing decision | On-Hold | Resolved |
 
 # ArchiMate Ingestion Change Review — template and worked form
 
-**EXAMPLE ONLY.** These generic entries demonstrate all four dispositions and
+**EXAMPLE ONLY.** These generic entries demonstrate all four Dispositions and independent Outcomes; they
 establish no Harmonia architecture or executable authority. When instantiating,
 replace examples/placeholders with actual evidence, remove unused examples, and
-initialise **every newly generated CR to On-Hold**, with **Not authorised** and
-**Not yet processed**. Only recorded Solution Architect adjudication may change
-disposition. No placeholder-bearing instruction is executable.
+initialise **every newly generated CR to Disposition On-Hold and Outcome
+Unresolved**, with a descriptive/evidence-referencing **Outcome Reason**,
+**Not authorised** and **Not yet processed**. Only an explicit recorded Solution
+Architect instruction may revise a previously issued Disposition; retain its audit
+history. A later Outcome does not rewrite the call to action. No placeholder-bearing instruction is executable.
 
 Follow the [governed contract](../archimate-ingestion-change-review.md).
 Keep the linked summary as the first visible content, with one phrase of at most
 80 characters per description. Allocate stable review-local `CR-nnn` IDs; keep
-anchors stable and summary/detail Status values synchronised. These IDs are not
+anchors stable and summary/detail Disposition and Outcome values synchronised. These IDs are not
 Canonical IDs. Detailed CRs may be arbitrarily long. Omit meaningless empty
-subsections while keeping evidence, proposal, questions, decision, instruction
-and outcome distinguishable.
+subsections while keeping evidence, proposal, questions, Disposition, Solution
+Architect Decision/rationale/authority/adjudicator/date, Outcome, Outcome Reason,
+Authorised Reconciliation Instruction and processing record distinguishable.
+Disposition is a call to action; Outcome records what happened to the CR. Use only
+Unresolved/Resolved for Outcome; no Disposition determines it automatically.
 
 ## Review basis
 
@@ -52,7 +58,11 @@ any subsequent split/correction with the original IDs and history retained.
 
 ## CR-001 — Example proposal awaiting adjudication
 
-**Status:** On-Hold
+**Disposition:** On-Hold
+
+**Outcome:** Unresolved
+
+**Outcome Reason:** The bounded architectural question below awaits Solution Architect authority; no evidence yet establishes resolution.
 
 ### Proposed Architectural Change
 
@@ -71,8 +81,9 @@ unavailable evidence explicitly. Do not rewrite this observation after a decisio
 
 Question: `<what existing authority does not establish>`.
 
-**Solution Architect Decision:** No final disposition. Adjudicator/date and
-rationale: not yet recorded. Applicable authority: `<reference or identified gap>`.
+**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection
+or manual-resolution adjudication recorded. Adjudicator/date and rationale for
+further adjudication: not yet recorded. Applicable authority: `<reference or identified gap>`.
 
 ### Related Change Requests
 
@@ -82,7 +93,7 @@ record the actual dependency rather than assuming acceptance establishes that st
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while status is On-Hold.
+Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
 
 ### Reconciliation / Processing Record
 
@@ -92,7 +103,11 @@ Not yet processed.
 
 ## CR-002 — Example approved bounded change
 
-**Status:** Accept
+**Disposition:** Accept
+
+**Outcome:** Unresolved
+
+**Outcome Reason:** The recorded Accept instruction authorises only the bounded operation below; the required resulting state and validation are not yet evidenced.
 
 **Example of the completed form after adjudication; not an actual decision.**
 
@@ -164,7 +179,11 @@ When processed, retain the actual entry and evidence for each attempt:
 
 ## CR-003 — Example declined proposal
 
-**Status:** Reject
+**Disposition:** Reject
+
+**Outcome:** Resolved
+
+**Outcome Reason:** In this worked case the recorded rejection decision below resolves the bounded proposal, with no further required handling outstanding. Reference its rationale/authority and closure evidence; Reject alone does not manufacture this Outcome.
 
 ### Proposed Architectural Change
 
@@ -197,7 +216,11 @@ as successful reconciliation or silently execute dependent changes.
 
 ## CR-004 — Example change requiring human resolution
 
-**Status:** Manual Intervention
+**Disposition:** Manual Intervention
+
+**Outcome:** Unresolved
+
+**Outcome Reason:** The instructed human-controlled resolution and its completion/validation evidence are outstanding.
 
 ### Proposed Architectural Change
 
@@ -237,3 +260,54 @@ actually done, the instruction/decision revision, before/after evidence, validat
 and remaining uncertainty. Link retained `reconciliation/` and `validation/`
 evidence. Evidence of the required governed state may unblock dependent CRs;
 the Manual Intervention disposition does not itself authorise automation.
+
+
+<a id="cr-005--example-finding-resolved-by-governing-decision"></a>
+
+## CR-005 — Example finding resolved by governing decision
+
+**Disposition:** On-Hold
+
+**Outcome:** Resolved
+
+**Outcome Reason:** Resolved by Governing Decision `<exact RADS authority/anchor,
+release/date and applicability>`; the general rule answers the original bounded
+interpretation question without acceptance or reconciliation of a related instance.
+
+### Proposed Architectural Change
+
+**Candidate Architectural Interpretation:** `<original proposed interpretation>`.
+This was a valid finding exposing missing architecture, retained without rewriting
+it to resemble a later decision.
+
+### Detected Evidence
+
+**Observed Evidence:** `<original immutable observation, input hash and locator>`.
+
+### Architectural Questions / Adjudication
+
+Original question: `<meaning unresolved when detected>`.
+
+**Solution Architect Decision:** The original On-Hold call to action remains
+recorded with `<original adjudicator/date/rationale, or explicit default basis>`.
+Subsequent governing decision: `<exact authority, adjudicator/date and rationale>`.
+Record the Outcome update actor/date in the review revision evidence. The common
+question is answered by that rule; no separate instance interpretation decision
+is needed. Do not infer acceptance of any related proposal.
+
+### Related Change Requests
+
+`<related instance CR and required governed state if later reconciliation is
+independently authorised>`. This is not a prerequisite for resolution of the
+interpretation question. A Resolved Outcome does not supply a governed endpoint
+or relationship for another CR.
+
+### Authorised Reconciliation Instruction
+
+Not authorised
+
+### Reconciliation / Processing Record
+
+Not yet processed. The finding is resolved by architecture authority without
+reconciliation; no execution is claimed. Retain the prior unresolved Outcome,
+issued Disposition and evidence in review history.

@@ -1,0 +1,31 @@
+{
+  "purpose": "Final decision/revision evidence and changed-authority hashes; excludes this manifest itself. Start preservation separately pins all original bytes.",
+  "sha256": {
+    ".junie/reports/2026-10-19-ct3-feature-composition-decision.md": "dfed3a1430fd199316501fc35a07d55b43d34b5659968b7c58dc69713e6e5b2b",
+    "architecture-release.json": "048d5883587bd633728e7bd30f9739c41abc81549e9cf88261f9f055116c110b",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md": "1bfe21ca76c2363a8ba4a7e3de21f683b143e8aa6ca7741e26983817c1442b7d",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/change-review.md": "338fbeed8228aa76a85aac72df44e80de320549c3290ec5bf84402c4446ec761",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/manifest.json": "11ec5f4392f806eaffc6b2fb640e1c471aa90e3f3c869258b7c69c147465e957",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-002.json": "f115f958ec51400aecaf2601a6f65338a1ad844a8f0b338980cf1f3fa72f0306",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/architecture-tests.log.gz": "196a4473cec988652d7d83224e7aadd4b3aff07881de20d04273ccff0d4377f9",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/command-results.json": "25dd493bd74a96a77b046b8ddc419a4dbe490a3ea68c6f854301ad217d1ef51f",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/governance-tests-initial.log.gz": "d3895a9a24d5e9ad6338a075f068033abc816faf549935893895cac4389ddbd6",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/governance-tests.log.gz": "dae1fcb0d049c4c4c55833143cac6e1ce4ae4fbed4b1a84e3207ff17018fa1fa",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/rads-validation-initial.json": "85a635eddb05b32957f79e369d51d31643be0bd92e80c4e6070163ab81b41207",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/rads-validation.log.gz": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/start-preservation.json": "17d8f184bd65e80ef69d8f03319ad82988358c3e68550a5472ccd85bf6457d1f",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validate-revision.py": "3cd37326cb08103906f272854071d097507e8c928fbc0b07e4e0b34e0cb197b7",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validation-results.json": "d87835b99200373b36087862fb678e02124f9cf919f429aa1ef2afd2a8094f4b",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "0b1485d6b284af99071887874d9c4c0b57b8226214db9f716f7d6f1cc620274a",
+    "docs/markdown/governance/README.md": "1928a0cb55cc514d6c5fb452e63589d18be5c293b4ae92389735002da0e1a58c",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "b6f2b6a0224cd9e3445df7ca68d7c47f4c00f2e6bc2c8d107836599b35048041",
+    "docs/markdown/governance/baseline/README.md": "02d86a9da44953b54c39f28239e3bc6f20c635221cde5092e51c986c67777ac6",
+    "docs/markdown/governance/baseline/correspondence.json": "f5f23e865af952314b26a41d687c251858055d0aefe9e3742fd29c589172d968",
+    "docs/markdown/governance/baseline/source-history/business-architecture-metamodel-321cdfa5.md.gz": "302320e731644e1011ac169a393d8b361e71cea66e88e14e1cec31d6a9df4e06",
+    "docs/markdown/governance/rad-archimate-coverage-assessment.md": "5f6c8795b6dbd46058549f3ea68ad09df65d7d054a862e57b4e3677111f43cdd",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "86bf2d2ee78935f44f2c5959182725b020ff1fe1b76daa28dac2c395aa19a1c0",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "4424d6c46ec546bfb784c6c901b24023c13c7a8f96765d09158ee68f8587b859",
+    "scripts/rads_business_architecture.py": "a547ae2336fd1bdd2f27b3a1ee16148f3e928acbefa2449c70b94dc0e4513f54",
+    "scripts/tests/test_rads_source_presentation.py": "496899d9dee65fc8d4877926d3ae34c13da107bcf360afd04f162a08aa9ed549"
+  }
+}

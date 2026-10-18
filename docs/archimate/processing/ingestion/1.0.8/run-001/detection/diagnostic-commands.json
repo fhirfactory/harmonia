@@ -1,0 +1,26 @@
+[
+  {
+    "name": "baseline",
+    "timeout_seconds": 60,
+    "exit_code": 2,
+    "outcome": "DIFFERENCES",
+    "output": "baseline-diagnostic.json.gz",
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B docs/archimate/framework/tools/diagnose_roundtrip.py compare --published docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml --incoming docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml --output /tmp/harmonia-first-governed-baseline.json"
+  },
+  {
+    "name": "transport-control",
+    "timeout_seconds": 60,
+    "exit_code": 2,
+    "outcome": "DIFFERENCES",
+    "output": "transport-control-diagnostic.json.gz",
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B docs/archimate/framework/tools/diagnose_roundtrip.py compare --published .junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml --incoming docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml --output /tmp/harmonia-first-governed-transport-control.json"
+  },
+  {
+    "name": "identity",
+    "timeout_seconds": 60,
+    "exit_code": 0,
+    "outcome": "PASS (audit execution)",
+    "output": "identity-diagnostic.json.gz",
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B docs/archimate/framework/tools/diagnose_roundtrip.py diagnose --model docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml --previous docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml --baseline-context --output /tmp/harmonia-first-governed-identity.json"
+  }
+]

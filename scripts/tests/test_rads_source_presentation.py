@@ -50,3 +50,65 @@ class SourcePresentationTests(unittest.TestCase):
             data['files']['docs/markdown/source.md']['annotated_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
             overlay.write_text(json.dumps(data))
             self.assertNotEqual(original, r.source_era_text(path, expected, root))
+
+
+class HistoricalAuthorityTests(unittest.TestCase):
+    def fixture(self, directory):
+        import gzip
+        root = Path(directory)
+        source = root / 'docs/markdown/source.md'
+        source.parent.mkdir(parents=True)
+        source.write_text('Accepted current metamodel rule\n')
+        original = b'Source-era definition\n'
+        expected = hashlib.sha256(original).hexdigest()
+        archive = root / 'docs/markdown/governance/baseline/source-history/source.md.gz'
+        archive.parent.mkdir(parents=True)
+        archive.write_bytes(gzip.compress(original, mtime=0))
+        manifest = archive.parent.parent / 'correspondence.json'
+        relative = str(source.relative_to(root))
+        data = {
+            'current_authority_sha256': {relative: hashlib.sha256(source.read_bytes()).hexdigest()},
+            'historical_authority_sources': {relative: {
+                'original_sha256': expected,
+                'snapshot': str(archive.relative_to(root)),
+                'snapshot_sha256': hashlib.sha256(archive.read_bytes()).hexdigest()}}}
+        manifest.write_text(json.dumps(data))
+        return root, source, archive, manifest, data, original.decode(), expected
+
+    def test_exact_archive_validates_frozen_source_without_changing_live_authority(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, source, archive, manifest, data, original, expected = self.fixture(directory)
+            self.assertEqual(original, r.source_era_text(source, expected, root))
+            self.assertEqual('Accepted current metamodel rule\n', source.read_text())
+
+    def test_unrecorded_live_source_or_archive_drift_is_not_hidden(self):
+        for target in ('live', 'archive'):
+            with self.subTest(target=target), tempfile.TemporaryDirectory() as directory:
+                root, source, archive, manifest, data, original, expected = self.fixture(directory)
+                path = source if target == 'live' else archive
+                path.write_bytes(b'Unrecorded mutation\n')
+                self.assertNotEqual(original, r.source_era_text(source, expected, root))
+
+    def test_archive_pin_cannot_replace_the_expected_original(self):
+        import gzip
+        with tempfile.TemporaryDirectory() as directory:
+            root, source, archive, manifest, data, original, expected = self.fixture(directory)
+            archive.write_bytes(gzip.compress(b'Wrong historical definition\n', mtime=0))
+            entry = data['historical_authority_sources']['docs/markdown/source.md']
+            entry['snapshot_sha256'] = hashlib.sha256(archive.read_bytes()).hexdigest()
+            manifest.write_text(json.dumps(data))
+            self.assertNotEqual(original, r.source_era_text(source, expected, root))
+
+    def test_wrong_source_hash_or_archive_outside_history_is_rejected(self):
+        for mutation in ('hash', 'path'):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as directory:
+                root, source, archive, manifest, data, original, expected = self.fixture(directory)
+                entry = data['historical_authority_sources']['docs/markdown/source.md']
+                if mutation == 'hash':
+                    entry['original_sha256'] = '0' * 64
+                else:
+                    other = root / 'docs/markdown/unreviewed.md.gz'
+                    other.write_bytes(archive.read_bytes())
+                    entry['snapshot'] = str(other.relative_to(root))
+                manifest.write_text(json.dumps(data))
+                self.assertNotEqual(original, r.source_era_text(source, expected, root))

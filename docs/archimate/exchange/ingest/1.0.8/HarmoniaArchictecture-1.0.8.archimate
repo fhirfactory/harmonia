@@ -61780,6 +61780,7 @@ Clinical events—such as patient admissions, pathology test orders, critical la
     <element xsi:type="archimate:FlowRelationship" id="id-0849f31d6d7d4f7eb1e484d7437e5cd7" source="id-0088d61ccfcf4962b3aab8bc3b96021d" target="id-c645a859ac2c4447ad5ae850cf384bf3"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-37f6913198e2434db5309c1c8e36fbc0" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-bdf18b5e580b5b85a34357a3b21f36db"/>
     <element xsi:type="archimate:ServingRelationship" id="id-c53c42ba0a4f437f9cb76a4c1a701816" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-c645a859ac2c4447ad5ae850cf384bf3"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf" profiles="id-19cf52680aee4bb5a4a451d8901b7be9" source="id-c645a859ac2c4447ad5ae850cf384bf3" target="id-727a264026584f80bc3304ff8383dc92" directed="true"/>
   </folder>
   <folder name="Views" id="id-93c68ca03af8435790614b5484b029e1" type="diagrams">
     <folder name="0-Motivation" id="id-9c443ae3c94c4f8981f96bac2f273c5a">
@@ -155120,7 +155121,7 @@ Feature framing/ownership is metadata and navigation only. 214 old BC/BEC semant
                       <bendpoint startX="174" startY="141" endX="174" endY="-3"/>
                     </sourceConnection>
                   </child>
-                  <child xsi:type="archimate:DiagramObject" id="id-3fd6725d68f4476884cf44f9fbf09794" targetConnections="id-007507b4daa748ee8df77d2dbf8a496d id-f64ce7c8aac347b2856dbceba42237d6 id-b1f2f750233f4717b5bbedcf413e3c61" archimateElement="id-727a264026584f80bc3304ff8383dc92">
+                  <child xsi:type="archimate:DiagramObject" id="id-3fd6725d68f4476884cf44f9fbf09794" targetConnections="id-007507b4daa748ee8df77d2dbf8a496d id-f64ce7c8aac347b2856dbceba42237d6 id-b1f2f750233f4717b5bbedcf413e3c61 id-c045914e226d44dcb1667c1db75057ef" archimateElement="id-727a264026584f80bc3304ff8383dc92">
                     <bounds x="12" y="36" width="120" height="397"/>
                   </child>
                   <child xsi:type="archimate:DiagramObject" id="id-d0a1079102c14d26901ace75bd379281" archimateElement="id-0088d61ccfcf4962b3aab8bc3b96021d">
@@ -155134,6 +155135,9 @@ Feature framing/ownership is metadata and navigation only. 214 old BC/BEC semant
                   <child xsi:type="archimate:DiagramObject" id="id-a222a0f6a6804944b188e32ee5caa9a5" targetConnections="id-95c171f829a849a3ac544a931b4d6a5f id-851cf4ffa1eb436983a9e47a6f5157b5 id-e11b8af91143439bbb54ff0be650fb79" archimateElement="id-c645a859ac2c4447ad5ae850cf384bf3">
                     <bounds x="168" y="180" width="253" height="55"/>
                     <sourceConnection xsi:type="archimate:Connection" id="id-b1f2f750233f4717b5bbedcf413e3c61" source="id-a222a0f6a6804944b188e32ee5caa9a5" target="id-3fd6725d68f4476884cf44f9fbf09794" archimateRelationship="id-c0f84a8e4c8d496580a68cac4823c58c"/>
+                    <sourceConnection xsi:type="archimate:Connection" id="id-c045914e226d44dcb1667c1db75057ef" source="id-a222a0f6a6804944b188e32ee5caa9a5" target="id-3fd6725d68f4476884cf44f9fbf09794" archimateRelationship="id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf">
+                      <bendpoint startX="-138" startY="-15" endX="84" endY="-42"/>
+                    </sourceConnection>
                   </child>
                   <child xsi:type="archimate:DiagramObject" id="id-8e77730d5e7147bea761ee18da71358c" archimateElement="id-9bfedbfd5b404694a2224c039fa5d4c4">
                     <bounds x="636" y="180" width="253" height="55"/>
@@ -159085,4 +159089,5 @@ The recovery has no native Application-layer objects or approved publication cro
   <property key="Baseline / Architecture Release" value="1.0.8"/>
   <property key="Baseline / Canonical Textual Projection" value="docs/markdown/governance/baseline/README.md"/>
   <purpose>The Harmonia governed architecture baseline, represented in Markdown and ArchiMate. Currentness and governance standing are independent: Current does not mean Approved. Unreconciled 1.0.4 Reference is historical comparison evidence. Folders and numeric View prefixes are navigation only. Application/Technology coverage gaps remain explicit.</purpose>
+  <profile name="Home" id="id-19cf52680aee4bb5a4a451d8901b7be9" conceptType="AssociationRelationship"/>
 </archimate:model>

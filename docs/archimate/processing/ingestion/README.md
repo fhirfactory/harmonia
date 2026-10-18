@@ -2,6 +2,11 @@
 
 # Ingestion processing
 
+The [2C authoring Praxis](../../../markdown/governance/architecture-authoring-praxis.md#submit-once-and-close-the-iteration)
+governs when an authoring iteration becomes a Submission and closes. The run
+layout below governs evidence/process identity; it grants no permission to
+reopen a submitted iteration or create a competing descendant submission.
+
 This boundary is reserved for working state and evidence produced while analysing
 incoming Archi exports. The incoming files themselves belong in
 [exchange/ingest](../../exchange/ingest/README.md). No ingestion reconciliation
@@ -47,7 +52,11 @@ not move, repair or rewrite the original. A distinct incoming revision requires
 a new run with a link to its predecessor, rather than replacing observed evidence.
 Review/adjudication revisions for the same input stay in the same run, with prior
 decisions and instruction revisions recoverable through retained version history
-or explicit immutable revision copies. Do not overwrite unaudited history.
+or explicit immutable revision copies. Issued Dispositions remain audit records;
+record subsequent resolution through separate Outcome and Outcome Reason fields
+under [2A](../../../markdown/governance/archimate-ingestion-change-review.md#outcome-and-outcome-reason).
+Do not rewrite an instruction to make it resemble the eventual Outcome or
+overwrite unaudited history.
 
 - `detection/`: raw observations, comparisons, source/target evidence, transport
   controls and preserved inputs/provenance where needed.

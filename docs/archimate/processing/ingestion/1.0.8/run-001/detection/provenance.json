@@ -1,0 +1,59 @@
+{
+  "run": "1.0.8/run-001",
+  "head": "6bf6767ce7449560d2e34401ff260fd7ae3cfeef",
+  "current_governance_release": {
+    "version": "1.0.11",
+    "previous_version": "1.0.10"
+  },
+  "baseline_release_publication": "1.0.8",
+  "baseline_path": "docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml",
+  "baseline_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+  "submission_path": "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml",
+  "submission_sha256": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e",
+  "snapshot_path": "detection/submission.xml",
+  "snapshot_sha256": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e",
+  "iteration": "Closed by deliberate Submission authorised in this task; earlier exports are intermediate evidence, not separate submissions.",
+  "publication_evidence": {
+    "docs/archimate/exchange/publish/README.md": "023838835dcfc424328ab38ff44dcb6caa603d67a77f4cfe6a1cc39232cbe8b3",
+    "docs/archimate/processing/publishing/1.0.8/publication-1.0.8.md": "94f321deb73453fbf0b77a57f10dc82cdbd9598ff08407a63f6312b0204f6297",
+    "docs/archimate/processing/publishing/1.0.8/publication-comparison.json": "d96e253a0f6d967d25bd8df8dd3f476efe810eef2c83e1ac6c267234ad3c0ff7",
+    "docs/archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md": "999696549b5a1b779cc8fcb9d7042ac3e1a3b82d892c01481d8bfa3fa556f2b2",
+    "docs/archimate/processing/publishing/1.0.8/publication-validation-1.0.8.json": "e7739e1199db8bf83cb2de5688af5af4d31d53858610de14623825d8a7bf28c0"
+  },
+  "authority_pins": {
+    "AGENTS.md": "df693d4b012f8b94e595641f0e04494a683e6382e771b5398d730ecaee685411",
+    "docs/AGENTS.md": "659dd0511a9142e0514f15577383b1bc9d781cb9080c929d9d2541ded9bfeddf",
+    "architecture-release.json": "127ed5ed18deab2565763465c49f90f30aa1f1da964b97ab4422310a598b8c45",
+    "docs/markdown/governance/architectural-axioms.md": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+    "docs/markdown/governance/archimate-ingestion-change-review.md": "7d36d9f076489c25e8c0002dd75178932c9569767452998e48eac1deeddce018",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "a8cea150cc76aab3b6d3371ea34229398266e603784706d478c444fabf45ec98",
+    "docs/markdown/governance/architecture-authoring-praxis.md": "59176f0ded3483a150117b266977c31e243bc79e78477a7083876bde787c33ed",
+    "docs/markdown/governance/canonical-identity-and-naming.md": "1b3fb89ada3cf23c008025d9c225b1a162941a531b0467207f3cc51bcff5bf7a",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": "f882e9ced3e3fd70d68e2299fecb4cae88ca50e4e4069388a47b76ba4e02577d",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "5e854029d4242000e00855032889c1fdca9b96c21ae335b500fd7dd66c951986",
+    "docs/markdown/governance/architecture-release-policy.md": "904b333e0d44c6366b21139365a25c3862fd35f473682316db7ad76b102ac406",
+    "docs/markdown/governance/templates/archimate-ingestion-change-review-template.md": "baf1ec1ef0e2cf40c67b6f8fce4d63b7c1192addc1d4e20553befdeb1f2155d3"
+  },
+  "baseline_relationship": "Published index identifies 1.0.8 as applicable publication; publication report/inspection/comparison pin this exact artefact. Submission retains its model ID, 1.0.8 release Property, 1,299 original canonical owners and established element/relationship bindings. Task deliberately submits this closed blind-test iteration; reports support history only.",
+  "107_to_108_exact_byte_restoration": true,
+  "107_published_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+  "control_path": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml",
+  "control_sha256": "38e49fa348d015aba6b19e21b4f96dc00fddf3c4d7671b3e352b4c07748917ea",
+  "evidence_limits": [
+    "Native GUI edit sequence/operator attestation unknown.",
+    "Exact second intermediate XML unavailable in preserved historical analysis; not needed for P-to-final detection.",
+    "No whole-document lossless transport or visual paint-order equivalence claimed.",
+    "Publication report retains preparation-time acceptance condition; current publication index/inspection and this baseline-specific task establish applicable published package without inventing another GUI acceptance event."
+  ],
+  "tools": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "lxml": [
+      6,
+      0,
+      2,
+      0
+    ],
+    "query_sha256": "afa26c82a9fb6b65485eea752340b319a2440d332b477e5d6cff6b05d4cbe093",
+    "existing_reader_sha256": "b8e86a1d3ad3f91c10c94b729354adfc8d0e763268ba2db8c6d0391c25f9a4fb"
+  }
+}

@@ -1,0 +1,2729 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.11",
+    "previous_version": "1.0.10"
+  },
+  "before": {
+    "elements": 1165,
+    "relationships": 823,
+    "views": 984,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 5
+    }
+  },
+  "after": {
+    "elements": 1299,
+    "relationships": 852,
+    "views": 1196,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 25,
+      "Driver": 10,
+      "Assessment": 5,
+      "Goal": 9,
+      "Outcome": 3,
+      "Requirement": 74,
+      "Constraint": 3,
+      "Stakeholder": 10
+    }
+  },
+  "existing_semantic_ids_retained": 1165,
+  "semantic_ids_removed": 0,
+  "persistent_identities_allocated": 0,
+  "adopted_architecture_identities_preserved": 14,
+  "navigation_capability_duplicates_removed": 0,
+  "existing_capability_population_retained": 841,
+  "existing_views_retained_and_moved": 984,
+  "views_added": [
+    "id-9b2c6385858f57dcbca54a46acfe77ba",
+    "id-7d0bc19870225280ac6b0a268ce8a92b",
+    "id-f128ffc8fd9058a68e6f5d079fcc3f5f",
+    "id-f6e1044c6aa4545dba2ce4a9b97deb69",
+    "id-6ebcf64dcdfb5a6896d96d6d1cfd99f3",
+    "id-a643b8a4403d575cb9d772517e85803a",
+    "id-7ed5020e29125b83ac1d644b0ee5d45e",
+    "id-4e2932bdc3045215b3eedf1b07b1ec1f",
+    "id-2e771bce18cc5aca80e3c4ad72a01554",
+    "id-4afe4ce42e6e56b0867aca68bb355877",
+    "id-633aecdb63ab5281af2a383a2b11800d",
+    "id-a6fd22d1736d5453bec5194f87b61b80",
+    "id-5a0eb09317f250eb91bdd86ae38de5e1",
+    "id-7d5b329fbe065a8fb365108035b321a5",
+    "id-82ce69f4f6fd57cebca31d426cf1b981",
+    "id-ff9ddd8db14850698527fed50c0e3806",
+    "id-73abbf262b5b5e559fb3499ecc06256e",
+    "id-4b0890a132895677997a38f9e5c55026",
+    "id-7437060b72d956a3b91bf13792def398",
+    "id-a42b49b0d3e853e9b07b5ca04f905b6f",
+    "id-50fe76d4160d525181784de74a41cd93",
+    "id-834614032ae156ff8c6b6ccaae61d4aa",
+    "id-61a84b3979135950999d7a0ecb0e2d3e",
+    "id-a0f5c59bc3925a33b4f6b0599384f1d9",
+    "id-f04466cd677051cc98098438b8a4f980",
+    "id-0cfff133268956dd8905f4ae31b60de7",
+    "id-1b5c2bcf161451a7987795aa8379e001",
+    "id-db3303750b445e80ab98bb3a0befe5f2",
+    "id-e68e3dfb07a15285a58f568e76197435",
+    "id-7691582304675106aac3d3d7c766f49a",
+    "id-cef762b028f6513fa7fc3fbcca0bd703",
+    "id-8f0d3ae7e3a357cab860193b1059fe4d",
+    "id-888b570c44a45d7daa89c61be64e055e",
+    "id-2e9f57ef887452ccb3585ab357964207",
+    "id-3e867579268e5f0287d91d19e187fd02",
+    "id-df3662d827c0531c9d9f39f6e6b39de8",
+    "id-9abf0bfac8e45ee88381796701cf6ffd",
+    "id-47230567db255adfb56f0d0c4671f8d0",
+    "id-9cc7069ba53c5241b6229f6d8c321933",
+    "id-3d70857370865ba7ad927691cda2fd3d",
+    "id-3ea7ddd8c3b3571c9864347b91cfa3f3",
+    "id-95e3c11799c45b13a9eef860dc35d2e4",
+    "id-e45ef782f528529f843b06c4bd7e3145",
+    "id-490e929554915d0e934bfd96b7d904d7",
+    "id-0928cc0b526f528e91124cd0641c174f",
+    "id-2e2827825c525071874cbb973b75b26d",
+    "id-323ea7a0b47a5f0bac21a75aef7b5ce8",
+    "id-cfec818cf722563db288bd71f787b794",
+    "id-cdf0ba7052ea54639a140b7c04169817",
+    "id-b1155306273c54f9b019334e65801f86",
+    "id-e13d6a97e3f65537ab486c261bf57915",
+    "id-c45de87e61355dc09c28f890f6440aad",
+    "id-dc13f9fb5fda51f5bfbf86afbff20d49",
+    "id-29d6080979805579a33bcc0cb8ce9e77",
+    "id-0e62a174f45b576a91dd4a2d7fd687e0",
+    "id-bbeb1af5484e5e58a86400345e65b91c",
+    "id-6c320d7f06765b97b5ff7239e573378d",
+    "id-23a6595b45495b6f8a7dbcfb0cddc6ef",
+    "id-0b1dd65c9d3057368e28e13c44bf3c88",
+    "id-21ac487a2ee55f75a630d106c5f8bacb",
+    "id-9ad94dda1c9754acb644a09e69fd7e88",
+    "id-2f4837e8f04559939e5905b8f2386e15",
+    "id-ccd8f3cbf0db5470b5a36ab3fe85532c",
+    "id-7810657cdf1c5d91ba9147a2d783a988",
+    "id-5fbcdf68bdde50f1971099ab24401e80",
+    "id-9f7298c0c7df5fe087fcb4b2f4302179",
+    "id-45b05ce4af655d33b99f517c70c08408",
+    "id-98fe330cacec5b1f8f90730f51fec362",
+    "id-9adc375de2bd5b1194b895c43f1a1eac",
+    "id-59137c85487a523f9f82a25ed06bc103",
+    "id-3b328daaaae95eff9497c8c8e707fe78",
+    "id-5ff848846d1a5eb9bcf9f7fd36bf42f5",
+    "id-d5d9b4a2be9b575d889781088e3098d1",
+    "id-2f6da489978d549ba1c81bec98df6d59",
+    "id-bc5c088ccec85002bb3871e66b411a25",
+    "id-d6c0218e150a52b795db7e1d3eb5caf8",
+    "id-0298b6b0d1bd58e0874d0fa2dd9b2a03",
+    "id-1904eedf32e358da811be6dcada08fed",
+    "id-64a32ea34f685ef4866a67bf0d72c0b0",
+    "id-f1714cfcaae752ecb6a285b3cda7f35e",
+    "id-5ab895762ead5cc4b0dea839424bec47",
+    "id-372762c3e33756798e011899c5e30388",
+    "id-f55decb1854957d0931aa9df145627ad",
+    "id-d1787dc8b13f51d1b9fba8dc69a7e3ec",
+    "id-2cb5e984dcb75609a2a591af06386f9e",
+    "id-c315425743c35232bce8b2ab973d83a4",
+    "id-4a9e13d3e580502e80918f8ac666c2b7",
+    "id-beebe18611d95fd683147895b905ffc6",
+    "id-9a836c3f7b1b5f6d9bf1ba3ba63405c3",
+    "id-058717a66d935c268321b8d6c27d7db5",
+    "id-199ffa512c3953dabfdbcf66263bccc8",
+    "id-55015937136c594e9944df216b9d2b89",
+    "id-0db6cd38f7cf51f78f0fdc8f8d7bbcc4",
+    "id-afae23c0623351348379e373897b5c9f",
+    "id-e2a326c7d36751af9076a32dabe0e9cd",
+    "id-7d8e3b31283854f5af876a8f3a588bfa",
+    "id-deba54dc2d1f5ccda6ed6d51ff135a5c",
+    "id-80feb74563615b698ff91e9d47607cb0",
+    "id-622ae51979fe5f25b1b5059f7923cae9",
+    "id-9db5fc9bf9a257409333106032667879",
+    "id-e514dbe4e7475228bea70e6824b3604b",
+    "id-b9c56d70711152f69db28a944dd2745d",
+    "id-ee03fff51c625dd889d3644f3644c15c",
+    "id-2fb24b66f03c52a6b168d013be0aa415",
+    "id-8ceafab1f6205a37a0af6ab728cba9e8",
+    "id-635075ccebd453159fe9871829e35ede",
+    "id-e264c6945c5c5040ab7b046d198be3b3",
+    "id-37541f43ebb954afaa731d83883fa6d7",
+    "id-e46b75c71a9a5ad28751a4fd5c88c517",
+    "id-03d050d3ca595ba998058c7c369b2db0",
+    "id-d33b9e6689bd5afe823a7494a7d151ab",
+    "id-07b2d2646a81533ea2173f0619096716",
+    "id-5b6bb1dc9410598c9d908fecfdc04a6a",
+    "id-f7361523788b55cbb130f848ed3735d6",
+    "id-3042ca392bd15ffb9d228c0204b704ec",
+    "id-4a9586fe2006501486df3a18df8c02b2",
+    "id-df960bc6a8235d6d8f95eae3ebbce210",
+    "id-b572b8bbe32659c99fdf2dcc7958c4de",
+    "id-04f0c9782fcc5ba583c7d7e3db0d4822",
+    "id-144db84a94b6561eabd087191d2e2443",
+    "id-fd208e60a9f05c22a09e0814adc1f2e4",
+    "id-ada0a0520eca508fb1b031e9fd116b57",
+    "id-f802eafd35615d86867b25dae6964f8b",
+    "id-1d9a91c32c3552f9a4ad32fc55372acd",
+    "id-7c2ae9bf8be95ffca42ec7e481833de7",
+    "id-9461d26a1d93574c8695a125c108e059",
+    "id-8946e146535e596e83627380cf297dab",
+    "id-a379aca28e6a5437803d81cd7c2480b2",
+    "id-d14c1f05861152ef86ef65f3cd12954c",
+    "id-0e21d8c34e6c52e498498038fe51c05d",
+    "id-1a5acae4a325555fbe63dc712cbb3541",
+    "id-307ecf84a6865f1aa53c77d0a41b91b2",
+    "id-a87f828c4e845f899974b39f5660be56",
+    "id-24e70fffc1f257f9828da519db73dc7e",
+    "id-44b52c9f93175a5086c5cd06920f9cc1",
+    "id-061c0846632e5c469f09215210466580",
+    "id-fad41ce4f39e5febaaba2df1dcbafb4e",
+    "id-17f896b7e058520fa5c0300cb4fab049",
+    "id-cda09af94f7d53149f69bb48338c4e23",
+    "id-aa0385ff39815005a357d04032716279",
+    "id-20bd1e39fe0c58279c19195830f6a922",
+    "id-02bc6fc5350654aab5a487cb1153c091",
+    "id-cf7091f82b9a5d78967f18395a057ab7",
+    "id-41f7e0aa6f375429b459d72d7a8a1b0e",
+    "id-d4a33d9885b057ba865a4ff9ce3acbb3",
+    "id-e1d5a7b0719c5ecea50144e6481b0540",
+    "id-d5ccf1d7fe9d578fbae130df11725bbc",
+    "id-c8ec850977565a17869af357ee28d917",
+    "id-e7934c698cef5b8daa890a8529a20af4",
+    "id-2fe4e484c5a85b59ae5ded504b4a2fee",
+    "id-423c29208d88588593e47c660f97272b",
+    "id-e2cc64ef55955d7bba919ea98320a707",
+    "id-edc278ad91e658c5a542ff3cab3eb6e3",
+    "id-13ba322ce3aa58a68d3638da75cb8b28",
+    "id-26d978b1ebec5c10a05fb36a43663fdc",
+    "id-1d7bcc2831505b3ebe8d022c3ed0887e",
+    "id-dfb80d3edb575e6487fa1595dc3fb0b4",
+    "id-5c2fd515d556543292b4fda457448cdf",
+    "id-a5fc98533b7352eb8f53400413c79289",
+    "id-1d54fa806b2d51fca51b6588f9aa6bcc",
+    "id-36fdab83cc895c5b948ab58392a7e703",
+    "id-befa106160e153499d3f539a374461b0",
+    "id-48cd5612626359c3ba5665150876df3b",
+    "id-1c45bbbcf39f5ff5abc57014c705429d",
+    "id-62b1c2fe69ba533193c83f947e07b92c",
+    "id-09a3267503525005831b309b7b48f533",
+    "id-1cf70841c2cb58c1b1b1e64d09666139",
+    "id-3a0abce8dec45d40b163594d73cd8856",
+    "id-2ea015220b2e53efaf0a444eeed76d46",
+    "id-534a8b1ab8c05df888acaf488140905c",
+    "id-d8091e21f27c5f9584a73974d940ffee",
+    "id-1622c398b739544782f13026ee4fe1b0",
+    "id-1b4ccc9513ab5e81a6826b5724fc1ea9",
+    "id-f6a163f226815a81b824c6f77ad94d7f",
+    "id-689351317c675af49f973d6588eef208",
+    "id-2a8de783b141526f8fe2793f09508149",
+    "id-1e234ba4f84f5d54b27ef44595b76804",
+    "id-223a5e55c7975b2abfab22488fafebe1",
+    "id-f0b47bf3bd49587c9311d4b8ef2301e6",
+    "id-653a1dde2b06536a885209204b027bc7",
+    "id-51425d730ad45207b4e2fe3d1685a112",
+    "id-70334aaa9bd25072b6abebd322c58cb4",
+    "id-b67bf651c8b152b9872c39526520ea79",
+    "id-5f264cefa3ce5b899800cf42094696d2",
+    "id-eba517b63e195805aaf71bd8b293ef76",
+    "id-0e3eec3194fd544a986499816c8004e8",
+    "id-7843846eef6451459349c641c086241e",
+    "id-53242cefd8fc5c11ba29907ee29042f2",
+    "id-f1c027747e1f5076917e48e8fd5a267a",
+    "id-55ea30fdd5ad578e8a790ec80a3c5854",
+    "id-4eed4101f99259a882b718094b884068",
+    "id-ac8f084c480f5504be2df660f85199bd",
+    "id-8c36a64dabab5703aae1367bc107443c",
+    "id-342658293e795a91924e008423557626",
+    "id-c5dd49d4c9b15e009c8c410b0225322f",
+    "id-5622f13b12a15fb992f90565ba672897",
+    "id-fd6a01b164ff5d0f836ed0d679b80a30",
+    "id-57af2ae4a28d5a268f409948ec68da84",
+    "id-9b8e4fe7664a5953a0f900101647d24a",
+    "id-c2bc29b25d7754f2aed716c5a85a61e5",
+    "id-e5390b78a4ec578c83f4cbb88f2f5a4e",
+    "id-df4e66006a3a52e1a12c67a5a03cb0cb",
+    "id-70a96809a1965686a6b964048d52e6a5",
+    "id-822b5af0aaa05e74a2dedbd4e6a0313a",
+    "id-9603985b1ff9589e8fef6a6f986487a5",
+    "id-dbe149fbc1345d2fbbb9a3b9e5461308",
+    "id-5dab241dbbdc50458aa0fbf8c9272ec4",
+    "id-dcd7cb86dd625033a2c296a7df46d516",
+    "id-0ee56b1f8cdb582b9f872c9ca6224226",
+    "id-c279f32e2d995abeaebf6b796d39f80f",
+    "id-6e7b9d3745755a8dbbd08bf27dd0a186",
+    "id-9c179686610a5305b508a965cce612ae"
+  ],
+  "motivation_by_type_and_state": {
+    "Principle / current / Canonical": 18,
+    "Driver / current / Agreed": 7,
+    "Assessment / current / Agreed": 5,
+    "Goal / current / Agreed": 6,
+    "Outcome / current / Agreed": 3,
+    "Requirement / current / Accepted": 4,
+    "Requirement / current / APPROVED": 1,
+    "Constraint / current / Accepted": 3,
+    "Stakeholder / current / Agreed": 6,
+    "Stakeholder / historical_reference / Historical — current applicability unresolved": 4,
+    "Driver / historical_reference / Historical — current applicability unresolved": 3,
+    "Goal / historical_reference / Historical — current applicability unresolved": 3,
+    "Principle / historical_reference / Historical / Reclassified — Domain06": 1,
+    "Requirement / historical_reference / Historical / Reclassified — Domain04/06": 1,
+    "Requirement / historical_reference / Historical — current applicability unresolved": 1,
+    "Principle / historical_reference / Retired / Superseded": 1,
+    "Principle / historical_reference / Historical / Reclassified": 3,
+    "Principle / historical_reference / Historical — current applicability unresolved": 2,
+    "Requirement / historical_reference / Historical — current owning-domain standing not inferred": 67
+  },
+  "baseline_record_states": {
+    "current": 845,
+    "superseded": 32,
+    "pending_adjudication": 69
+  },
+  "baseline_record_statuses": {
+    "Canonical": 716,
+    "Candidate": 3,
+    "Proposed": 227
+  },
+  "source_assertions": 1096,
+  "native_source_assertions_retained": 634,
+  "unresolved_source_assertions_retained": 462,
+  "output_sha256": "3995bb93bd24717d287e4556d866436b3311be7c598bcdfab8f3772ba9805bcf",
+  "markdown_sha256": {
+    "docs/markdown/governance/baseline/business-capabilities.md": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1",
+    "docs/markdown/governance/baseline/features.md": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa",
+    "docs/markdown/governance/baseline/functions.md": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e",
+    "docs/markdown/governance/baseline/services.md": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59",
+    "docs/markdown/governance/baseline/processes.md": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d",
+    "docs/markdown/governance/baseline/relationships.md": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+    "docs/markdown/governance/baseline/motivation.md": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76",
+    "docs/markdown/governance/baseline/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa"
+  },
+  "resource_and_view_folder_count": 3749,
+  "capability_navigation": {
+    "business": {
+      "capability_tiers": {
+        "CT1": 18,
+        "CT2": 40,
+        "CT3": 142
+      },
+      "current_features": 0,
+      "established_ct3_ancestry": 0,
+      "complete_ancestry_reachable": 0,
+      "unresolved_ancestry": [],
+      "projections_checked": [
+        [
+          "Strategy",
+          "Business Layer",
+          "Business Capabilities"
+        ],
+        [
+          "Business",
+          "Business Capabilities"
+        ],
+        [
+          "Views",
+          "1-Strategy",
+          "Capabilities",
+          "1-Business Capabilities"
+        ],
+        [
+          "Views",
+          "2-BusinessLayer",
+          "1-Business Capabilities"
+        ]
+      ]
+    },
+    "business_enabling": {
+      "capability_tiers": {
+        "CT2": 76,
+        "CT3": 95,
+        "CT1": 7
+      },
+      "current_features": 157,
+      "established_ct3_ancestry": 157,
+      "complete_ancestry_reachable": 157,
+      "unresolved_ancestry": [],
+      "projections_checked": [
+        [
+          "Strategy",
+          "Business Layer",
+          "Business Enabling Capabilities"
+        ],
+        [
+          "Business",
+          "Business Enabling Capabilities"
+        ],
+        [
+          "Views",
+          "1-Strategy",
+          "Capabilities",
+          "2-Business Enabling Capabilities"
+        ],
+        [
+          "Views",
+          "2-BusinessLayer",
+          "2-Business Enabling Capabilities"
+        ]
+      ]
+    }
+  },
+  "starting_candidate_preservation": {
+    "elements": 1299,
+    "relationships": 852,
+    "views": 1012,
+    "property_definitions": 55
+  },
+  "human_inspection_projection": {
+    "features_with_behaviour_associations": 137,
+    "grouped_by_feature": {
+      "function": 118,
+      "service": 101,
+      "process": 8
+    },
+    "shared_behaviour_retained_at_capability": [
+      {
+        "key": "service:practitioner-directory-query",
+        "features": [
+          "feature:practitioner-profile-governance",
+          "proposal:feature-provider-directory-discovery-resolution"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Entity Information Enablement",
+          "[CT2] Provider Administration",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:manage-ward-capacity",
+        "features": [
+          "feature:ward-patient-flow-coordination",
+          "proposal:feature-ward-care-capacity-management"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Ward Operations",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:manage-theatre-case-progression",
+        "features": [
+          "feature:operating-theatre-case-progression",
+          "feature:perioperative-resource-notification"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Theatre Operations",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:coordinate-ed-departmental-capacity",
+        "features": [
+          "feature:ed-bed--bay-tracking",
+          "proposal:feature-emergency-treatment-capacity-management"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Emergency Department Operations",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:manage-outpatient-capacity",
+        "features": [
+          "feature:outpatient-arrival-registration",
+          "proposal:feature-outpatient-appointment-capacity-management"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Outpatient Operations",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:manage-bed-turnover-progression",
+        "features": [
+          "feature:bed-readiness-notification",
+          "feature:bed-state-progression"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Bed & Care-Place Management",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:dispatch-operational-work-order",
+        "features": [
+          "feature:work-dispatch-delivery",
+          "feature:work-item-instantiation",
+          "feature:worker-matching--allocation"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Work Allocation & Dispatch",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:manage-patient-transport-progression",
+        "features": [
+          "feature:transport-dispatch--progress-tracking",
+          "feature:transport-request-ingestion"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Patient Transport",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:manage-discharge-coordination-progression",
+        "features": [
+          "feature:discharge-milestone-tracking",
+          "feature:discharge-notification-dispatch",
+          "feature:discharge-readiness--coordination-oversight"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Discharge Management",
+          "Functions"
+        ]
+      },
+      {
+        "key": "process:theatre-case-progression-process",
+        "features": [
+          "feature:operating-theatre-case-progression",
+          "feature:perioperative-resource-notification"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Theatre Operations",
+          "Processes"
+        ]
+      },
+      {
+        "key": "process:bed-turnover-process",
+        "features": [
+          "feature:bed-readiness-notification",
+          "feature:bed-state-progression"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Bed & Care-Place Management",
+          "Processes"
+        ]
+      },
+      {
+        "key": "process:patient-transport-process",
+        "features": [
+          "feature:transport-dispatch--progress-tracking",
+          "feature:transport-request-ingestion"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Patient Transport",
+          "Processes"
+        ]
+      },
+      {
+        "key": "process:discharge-progression-process",
+        "features": [
+          "feature:discharge-milestone-tracking",
+          "feature:discharge-notification-dispatch",
+          "feature:discharge-readiness--coordination-oversight"
+        ],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Discharge Management",
+          "Processes"
+        ]
+      }
+    ],
+    "no_established_feature_association": [
+      {
+        "key": "service:order-outcome-notification",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Order Administration",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:associate-care-plan-context",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Care Plan Administration",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:care-plan-context-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Care Plan Administration",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:distribute-care-plan-change",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Care Plan Administration",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:care-plan-change-notification",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Care Plan Administration",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:coordinate-multi-agency-chronic-care-plan",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Patient Clinical Record",
+          "[CT3] Primary Care Coordination",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:chronic-care-timeline-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Patient Clinical Record",
+          "[CT3] Primary Care Coordination",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:route-acute-critical-result-alert",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Episode & Encounter Administration",
+          "[CT3] Acute Care Monitoring & Event Coordination",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:acute-clinical-alert-dispatch",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Episode & Encounter Administration",
+          "[CT3] Acute Care Monitoring & Event Coordination",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:assemble-inpatient-discharge-dossier",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Ward Operations",
+          "[CT3] Multidisciplinary Inpatient Care Coordination",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:discharge-dossier-packaging-service",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Ward Operations",
+          "[CT3] Multidisciplinary Inpatient Care Coordination",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:receive-diagnostic-requisition-feed",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Diagnostic Administration",
+          "[CT3] Diagnostic Service Integration",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:modality-worklist-distribution",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Diagnostic Administration",
+          "[CT3] Diagnostic Service Integration",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:publish-governed-diagnostic-report",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Diagnostic Administration",
+          "[CT3] Diagnostic Service Integration",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:diagnostic-publication-service",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Diagnostic Administration",
+          "[CT3] Diagnostic Service Integration",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:correlate-adverse-reaction--allergy-profile",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Medication Administration",
+          "[CT3] Medication Therapy Provision and Monitoring",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:allergy--adverse-reaction-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Medication Administration",
+          "[CT3] Medication Therapy Provision and Monitoring",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:project-screening-eligibility-timeline",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Client-Centred Administration",
+          "[CT3] Screening and Immunisation Enablement",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:preventive-screening-status-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Client-Centred Administration",
+          "[CT3] Screening and Immunisation Enablement",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:bind-community-support-network-context",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Care Plan Administration",
+          "[CT3] Community Care Coordination",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:community-care-team-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Care Administration Enablement",
+          "[CT2] Care Plan Administration",
+          "[CT3] Community Care Coordination",
+          "Services"
+        ]
+      },
+      {
+        "key": "service:ward-operational-summary-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Ward Operations",
+          "Services"
+        ]
+      },
+      {
+        "key": "service:ed-operational-status-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Emergency Department Operations",
+          "Services"
+        ]
+      },
+      {
+        "key": "service:ambulatory-session-status-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Outpatient Operations",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:track-operational-staff-presence",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Mobile Staff Management",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:staff-presence-telemetry-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Service Operations Enablement",
+          "[CT2] Mobile Staff Management",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:retrieve-health-information",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Access",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:clinical-resource-retrieval-service",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Access",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:apply-access-qualified-result-filtering",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Access",
+          "Functions"
+        ]
+      },
+      {
+        "key": "function:evaluate-consent-constraint",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Control",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:consent-enforcement-service",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Control",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:propagate-security-context",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Control",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:security-context-validation-service",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Control",
+          "Services"
+        ]
+      },
+      {
+        "key": "function:record-security-significant-activity",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Control",
+          "Functions"
+        ]
+      },
+      {
+        "key": "service:security-audit-ingress",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Control",
+          "Services"
+        ]
+      },
+      {
+        "key": "service:information-dictionary-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Information Design Governance",
+          "Services"
+        ]
+      },
+      {
+        "key": "service:terminology-binding-specification-lookup",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Information Design Governance",
+          "Services"
+        ]
+      },
+      {
+        "key": "service:exchange-profile-specification-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Information Design Governance",
+          "Services"
+        ]
+      },
+      {
+        "key": "process:assurance-process-design",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Independent Assurance Enablement",
+          "[CT2] Assurance Specification",
+          "[CT3] Assurance Design",
+          "Processes"
+        ]
+      },
+      {
+        "key": "proposal:service-associated-binary-content-retrieval",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Patient Clinical Record",
+          "[CT3] Linked Information Curation",
+          "Services"
+        ]
+      },
+      {
+        "key": "proposal:service-governed-reference-dataset-content-query",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Clinical Knowledge Services",
+          "[CT3] Governed Reference Dataset Administration",
+          "Services"
+        ]
+      },
+      {
+        "key": "proposal:service-authorised-research-information-export",
+        "features": [],
+        "home": [
+          "Business",
+          "Business Enabling Capabilities",
+          "[CT1] Health Informatics Management",
+          "[CT2] Research Information Curation",
+          "Services"
+        ]
+      }
+    ],
+    "unresolved_feature_assertions": [
+      {
+        "source_index": 246,
+        "type": "realises_feature",
+        "from": "function:coordinate-multi-agency-chronic-care-plan",
+        "to": "feature:primary-care-notification-dispatch",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 58,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-02 — Primary Care Notification Dispatch` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "21-primary-care"
+          }
+        ]
+      },
+      {
+        "source_index": 247,
+        "type": "associated_feature",
+        "from": "service:chronic-care-timeline-query",
+        "to": "feature:primary-care-notification-dispatch",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 58,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-02 — Primary Care Notification Dispatch` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "21-primary-care"
+          }
+        ]
+      },
+      {
+        "source_index": 248,
+        "type": "realises_feature",
+        "from": "function:route-acute-critical-result-alert",
+        "to": "feature:acute-clinical-state-event-capture",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 78,
+            "text": "    - *Feature association not established*: `FEAT-SD-03 — Acute Clinical State Event Capture` is adjudicated sufficient through general clinical-information responsibilities above. Routing a critical-result alert remains distinct from capture; no specialised capture Function or replacement association is assigned.",
+            "anchor": "22-acute-care"
+          }
+        ]
+      },
+      {
+        "source_index": 249,
+        "type": "associated_feature",
+        "from": "service:acute-clinical-alert-dispatch",
+        "to": "feature:acute-clinical-state-event-capture",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 78,
+            "text": "    - *Feature association not established*: `FEAT-SD-03 — Acute Clinical State Event Capture` is adjudicated sufficient through general clinical-information responsibilities above. Routing a critical-result alert remains distinct from capture; no specialised capture Function or replacement association is assigned.",
+            "anchor": "22-acute-care"
+          }
+        ]
+      },
+      {
+        "source_index": 250,
+        "type": "realises_feature",
+        "from": "function:assemble-inpatient-discharge-dossier",
+        "to": "feature:inpatient-clinical-progression-tracking",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 117,
+            "text": "    - *Feature association not established*: `FEAT-SD-08 — Inpatient Clinical Progression Tracking` is adjudicated sufficient through general clinical-information responsibilities above. Discharge-dossier assembly/publication remains distinct; no separate clinical-tracking Function or replacement association is assigned.",
+            "anchor": "24-inpatient-care"
+          }
+        ]
+      },
+      {
+        "source_index": 251,
+        "type": "associated_feature",
+        "from": "service:discharge-dossier-packaging-service",
+        "to": "feature:inpatient-clinical-progression-tracking",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 117,
+            "text": "    - *Feature association not established*: `FEAT-SD-08 — Inpatient Clinical Progression Tracking` is adjudicated sufficient through general clinical-information responsibilities above. Discharge-dossier assembly/publication remains distinct; no separate clinical-tracking Function or replacement association is assigned.",
+            "anchor": "24-inpatient-care"
+          }
+        ]
+      },
+      {
+        "source_index": 252,
+        "type": "realises_feature",
+        "from": "function:receive-diagnostic-requisition-feed",
+        "to": "feature:laboratory--imaging-result-distribution",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 133,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-09 — Laboratory & Imaging Result Distribution` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "25-diagnostic-services"
+          }
+        ]
+      },
+      {
+        "source_index": 253,
+        "type": "associated_feature",
+        "from": "service:modality-worklist-distribution",
+        "to": "feature:laboratory--imaging-result-distribution",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 133,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-09 — Laboratory & Imaging Result Distribution` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "25-diagnostic-services"
+          }
+        ]
+      },
+      {
+        "source_index": 254,
+        "type": "realises_feature",
+        "from": "function:publish-governed-diagnostic-report",
+        "to": "feature:diagnostic-history-consolidation",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 137,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-10 — Diagnostic History Consolidation` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "25-diagnostic-services"
+          }
+        ]
+      },
+      {
+        "source_index": 255,
+        "type": "associated_feature",
+        "from": "service:diagnostic-publication-service",
+        "to": "feature:diagnostic-history-consolidation",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 137,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-10 — Diagnostic History Consolidation` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "25-diagnostic-services"
+          }
+        ]
+      },
+      {
+        "source_index": 256,
+        "type": "realises_feature",
+        "from": "function:correlate-adverse-reaction--allergy-profile",
+        "to": "feature:medication-administration-tracking",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 154,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-12 — Medication Administration Tracking` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "26-medication-therapy"
+          }
+        ]
+      },
+      {
+        "source_index": 257,
+        "type": "associated_feature",
+        "from": "service:allergy--adverse-reaction-query",
+        "to": "feature:medication-administration-tracking",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 154,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-12 — Medication Administration Tracking` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "26-medication-therapy"
+          }
+        ]
+      },
+      {
+        "source_index": 258,
+        "type": "realises_feature",
+        "from": "function:project-screening-eligibility-timeline",
+        "to": "feature:screening-recall-notification-distribution",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 171,
+            "text": "    - *Feature association not established*: `FEAT-SD-14 — Screening Recall Notification Distribution` is adjudicated sufficient through reusable composition/workflow above. Projecting/querying eligibility dates remains distinct from distribution; no dedicated recall Function or replacement association is assigned.",
+            "anchor": "27-preventive-care"
+          }
+        ]
+      },
+      {
+        "source_index": 259,
+        "type": "associated_feature",
+        "from": "service:preventive-screening-status-query",
+        "to": "feature:screening-recall-notification-distribution",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 171,
+            "text": "    - *Feature association not established*: `FEAT-SD-14 — Screening Recall Notification Distribution` is adjudicated sufficient through reusable composition/workflow above. Projecting/querying eligibility dates remains distinct from distribution; no dedicated recall Function or replacement association is assigned.",
+            "anchor": "27-preventive-care"
+          }
+        ]
+      },
+      {
+        "source_index": 260,
+        "type": "realises_feature",
+        "from": "function:bind-community-support-network-context",
+        "to": "feature:community-care-plan-synchronization",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 190,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-16 — Community Care Plan Synchronization` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "28-community-care"
+          }
+        ]
+      },
+      {
+        "source_index": 261,
+        "type": "associated_feature",
+        "from": "service:community-care-team-query",
+        "to": "feature:community-care-plan-synchronization",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "sd",
+            "line": 190,
+            "text": "    - *Feature association not established*: Strategy `FEAT-SD-16 — Community Care Plan Synchronization` remains valid, but semantic evidence does not establish that the following Function or Service belongs to, realises, specialises or is equivalent to it. No replacement Feature is assigned.",
+            "anchor": "28-community-care"
+          }
+        ]
+      },
+      {
+        "source_index": 262,
+        "type": "realises_feature",
+        "from": "function:track-operational-staff-presence",
+        "to": "feature:mobile-worker-task-dispatch",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "hso",
+            "line": 196,
+            "text": "    - *Feature association not established*: `FEAT-HSO-16 — Mobile Worker Task Dispatch` retains its Strategy identity with the integration boundary below. Presence/zone tracking remains distinct from mobile work-management integration; no replacement association to presence is assigned.",
+            "anchor": "29-mobile-staff-management"
+          }
+        ]
+      },
+      {
+        "source_index": 263,
+        "type": "associated_feature",
+        "from": "service:staff-presence-telemetry-query",
+        "to": "feature:mobile-worker-task-dispatch",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "hso",
+            "line": 196,
+            "text": "    - *Feature association not established*: `FEAT-HSO-16 — Mobile Worker Task Dispatch` retains its Strategy identity with the integration boundary below. Presence/zone tracking remains distinct from mobile work-management integration; no replacement association to presence is assigned.",
+            "anchor": "29-mobile-staff-management"
+          }
+        ]
+      },
+      {
+        "source_index": 264,
+        "type": "realises_feature",
+        "from": "function:retrieve-health-information",
+        "to": "feature:access-controlled-information-filtering",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "ise",
+            "line": 81,
+            "text": "    - *Feature association not established*: `FEAT-ISE-09 — Access-Controlled Information Filtering` requires access-controlled disclosure/filtering; retrieval of discrete information alone does not materially realise that responsibility. No replacement Feature is assigned.",
+            "anchor": "23-health-information-access"
+          }
+        ]
+      },
+      {
+        "source_index": 265,
+        "type": "associated_feature",
+        "from": "service:clinical-resource-retrieval-service",
+        "to": "feature:access-controlled-information-filtering",
+        "status": "unresolved",
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "sources": [
+          {
+            "source": "ise",
+            "line": 81,
+            "text": "    - *Feature association not established*: `FEAT-ISE-09 — Access-Controlled Information Filtering` requires access-controlled disclosure/filtering; retrieval of discrete information alone does not materially realise that responsibility. No replacement Feature is assigned.",
+            "anchor": "23-health-information-access"
+          }
+        ]
+      }
+    ],
+    "realisation_views_in_feature_context": 153,
+    "landscapes_by_taxonomy_and_child_level": {
+      "business": {
+        "CT1": 2,
+        "CT2": 34,
+        "CT3": 76
+      },
+      "business_enabling": {
+        "CT1": 2,
+        "CT3": 102,
+        "Feature": 132,
+        "CT2": 14
+      },
+      "enterprise": {
+        "CT1": 1,
+        "CT3": 4,
+        "CT2": 3
+      }
+    },
+    "new_landscape_views": 184,
+    "reused_landscape_views": 186,
+    "business_views_with_feature_layout": 61
+  },
+  "human_workbench": {
+    "supported_version": "Archi 5.10.0",
+    "gui_acceptance": "Pending Solution Architect's final import and inspection",
+    "schema": "Existing bundled Open Exchange schema unchanged"
+  },
+  "documentation_classification": {
+    "entries_reclassified": 396,
+    "explanatory_fields_reclassified": 675,
+    "historical_fields_retained": 212,
+    "historical_entries_retained": 98,
+    "retained_historical_material": [
+      {
+        "key": "business-capability:health-service-operational-readiness",
+        "name": "Health Service Operational Readiness",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:health-service-operational-readiness",
+        "name": "Health Service Operational Readiness",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:clinical-device-maintenance-management",
+        "name": "Clinical Device Maintenance Management",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:clinical-device-maintenance-management",
+        "name": "Clinical Device Maintenance Management",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:health-information-sharing-programme-management",
+        "name": "Health Information Sharing Programme Management",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:health-information-sharing-programme-management",
+        "name": "Health Information Sharing Programme Management",
+        "field": "Additional Notes / Unresolved Matters",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:client-administration",
+        "name": "Client Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-administration",
+        "name": "Client Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:provider-administration",
+        "name": "Provider Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:provider-administration",
+        "name": "Provider Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:organisation-administration",
+        "name": "Organisation Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:location-administration",
+        "name": "Location Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-service-administration",
+        "name": "Health Service Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-product-administration",
+        "name": "Health Materiel Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-device-administration",
+        "name": "Clinical Device Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:healthcare-subject",
+        "name": "Healthcare Subject Profile Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:healthcare-subject",
+        "name": "Healthcare Subject Profile Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:healthcare-subject",
+        "name": "Healthcare Subject Profile Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-relationship",
+        "name": "Client Relationship Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-relationship",
+        "name": "Client Relationship Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-relationship",
+        "name": "Client Relationship Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-privacy",
+        "name": "Client Privacy Guardrail Management",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-privacy",
+        "name": "Client Privacy Guardrail Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-privacy",
+        "name": "Client Privacy Guardrail Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-centred-administration",
+        "name": "Client-Centred Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-centred-administration",
+        "name": "Client-Centred Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:referral-administration",
+        "name": "Referral Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:referral-administration",
+        "name": "Referral Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:scheduling-administration",
+        "name": "Scheduling Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:scheduling-administration",
+        "name": "Scheduling Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:episode--encounter-administration",
+        "name": "Episode & Encounter Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:episode--encounter-administration",
+        "name": "Episode & Encounter Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:order-administration",
+        "name": "Order Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:order-administration",
+        "name": "Order Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:order-administration",
+        "name": "Order Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:diagnostic-administration",
+        "name": "Diagnostic Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:diagnostic-administration",
+        "name": "Diagnostic Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:medication-administration",
+        "name": "Medication Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:medication-administration",
+        "name": "Medication Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:procedure-administration",
+        "name": "Procedure Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:procedure-administration",
+        "name": "Procedure Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-record-administration",
+        "name": "Clinical Record Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-record-administration",
+        "name": "Clinical Record Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:care-plan-administration",
+        "name": "Care Plan Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:care-plan-administration",
+        "name": "Care Plan Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-communication-administration",
+        "name": "Clinical Communication Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-communication-administration",
+        "name": "Clinical Communication Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:funding--coverage-administration",
+        "name": "Funding & Coverage Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:funding--coverage-administration",
+        "name": "Funding & Coverage Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-charging--claims-administration",
+        "name": "Clinical Charging & Claims Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-charging--claims-administration",
+        "name": "Clinical Charging & Claims Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-assessment",
+        "name": "Clinical Assessment",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-assessment",
+        "name": "Clinical Assessment",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-assessment",
+        "name": "Clinical Assessment",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:primary-care",
+        "name": "Primary Care Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:primary-care",
+        "name": "Primary Care Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:primary-care",
+        "name": "Primary Care Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:acute-care",
+        "name": "Acute Care Monitoring & Event Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:acute-care",
+        "name": "Acute Care Monitoring & Event Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:acute-care",
+        "name": "Acute Care Monitoring & Event Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:emergency-care",
+        "name": "Emergency Care Progression",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:emergency-care",
+        "name": "Emergency Care Progression",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:emergency-care",
+        "name": "Emergency Care Progression",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:inpatient-care",
+        "name": "Multidisciplinary Inpatient Care Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:inpatient-care",
+        "name": "Multidisciplinary Inpatient Care Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:inpatient-care",
+        "name": "Multidisciplinary Inpatient Care Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:ambulatory-care",
+        "name": "Ambulatory Care",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ambulatory-care",
+        "name": "Ambulatory Care",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ambulatory-care",
+        "name": "Ambulatory Care",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:surgical--procedural-care",
+        "name": "Surgical & Procedural Care",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:surgical--procedural-care",
+        "name": "Surgical & Procedural Care",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:surgical--procedural-care",
+        "name": "Surgical & Procedural Care",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:diagnostic-services",
+        "name": "Diagnostic Service Integration",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:diagnostic-services",
+        "name": "Diagnostic Service Integration",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:diagnostic-services",
+        "name": "Diagnostic Service Integration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:therapeutic-services",
+        "name": "Therapeutic Services",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:therapeutic-services",
+        "name": "Therapeutic Services",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:therapeutic-services",
+        "name": "Therapeutic Services",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:medication-therapy",
+        "name": "Medication Therapy Provision and Monitoring",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:medication-therapy",
+        "name": "Medication Therapy Provision and Monitoring",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:medication-therapy",
+        "name": "Medication Therapy Provision and Monitoring",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:allied-health",
+        "name": "Allied Health",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:allied-health",
+        "name": "Allied Health",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:allied-health",
+        "name": "Allied Health",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:preventive-care",
+        "name": "Screening and Immunisation Enablement",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:preventive-care",
+        "name": "Screening and Immunisation Enablement",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:preventive-care",
+        "name": "Screening and Immunisation Enablement",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:rehabilitation",
+        "name": "Rehabilitation",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:rehabilitation",
+        "name": "Rehabilitation",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:rehabilitation",
+        "name": "Rehabilitation",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:community-care",
+        "name": "Community Care Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:community-care",
+        "name": "Community Care Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:community-care",
+        "name": "Community Care Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:outreach-care",
+        "name": "Outreach Care Continuity",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:outreach-care",
+        "name": "Outreach Care Continuity",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:outreach-care",
+        "name": "Outreach Care Continuity",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:remote--virtual-care",
+        "name": "Remote Patient Monitoring",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:remote--virtual-care",
+        "name": "Remote Patient Monitoring",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:remote--virtual-care",
+        "name": "Remote Patient Monitoring",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:clinic--practice-operations",
+        "name": "Clinic & Practice Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinic--practice-operations",
+        "name": "Clinic & Practice Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ward-operations",
+        "name": "Ward Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ward-operations",
+        "name": "Ward Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:theatre-operations",
+        "name": "Theatre Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:theatre-operations",
+        "name": "Theatre Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:emergency-department-operations",
+        "name": "Emergency Department Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:emergency-department-operations",
+        "name": "Emergency Department Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:outpatient-operations",
+        "name": "Outpatient Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:outpatient-operations",
+        "name": "Outpatient Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:bed--care-place-management",
+        "name": "Bed & Care-Place Management",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:bed--care-place-management",
+        "name": "Bed & Care-Place Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:bed--care-place-management",
+        "name": "Bed & Care-Place Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-resource-management",
+        "name": "Clinical Resource Management",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:clinical-resource-management",
+        "name": "Clinical Resource Management",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:clinical-resource-management",
+        "name": "Clinical Resource Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:service-capacity-management",
+        "name": "Service Capacity Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:service-capacity-management",
+        "name": "Service Capacity Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-workforce-management",
+        "name": "Clinical Workforce Capability Monitoring",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-workforce-management",
+        "name": "Clinical Workforce Capability Monitoring",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-workforce-management",
+        "name": "Clinical Workforce Capability Monitoring",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-rostering",
+        "name": "Clinical Rostering",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-rostering",
+        "name": "Clinical Rostering",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:mobile-staff-management",
+        "name": "Mobile Staff Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:mobile-staff-management",
+        "name": "Mobile Staff Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:on-call-management",
+        "name": "On-Call Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:on-call-management",
+        "name": "On-Call Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:work-allocation--dispatch",
+        "name": "Work Allocation & Dispatch",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:work-allocation--dispatch",
+        "name": "Work Allocation & Dispatch",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:work-allocation--dispatch",
+        "name": "Work Allocation & Dispatch",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-training--education",
+        "name": "Clinical Training & Education",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-training--education",
+        "name": "Clinical Training & Education",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-competency-management",
+        "name": "Clinical Competency Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-competency-management",
+        "name": "Clinical Competency Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-competency-management",
+        "name": "Clinical Competency Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-qualification-management",
+        "name": "Clinical Qualification Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-qualification-management",
+        "name": "Clinical Qualification Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-qualification-management",
+        "name": "Clinical Qualification Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-supervision",
+        "name": "Clinical Supervision",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-supervision",
+        "name": "Clinical Supervision",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-supervision",
+        "name": "Clinical Supervision",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-transport",
+        "name": "Patient Transport",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-transport",
+        "name": "Patient Transport",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-logistics-coordination",
+        "name": "Clinical Logistics Coordination",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-logistics-coordination",
+        "name": "Clinical Logistics Coordination",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-logistics-coordination",
+        "name": "Clinical Logistics Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:discharge-management",
+        "name": "Discharge Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:discharge-management",
+        "name": "Discharge Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-clinical-record",
+        "name": "Patient Clinical Record",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-clinical-record",
+        "name": "Patient Clinical Record",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-clinical-record",
+        "name": "Patient Clinical Record",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-exchange",
+        "name": "Health Information Exchange Enablement",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-exchange",
+        "name": "Health Information Exchange Enablement",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-access",
+        "name": "Health Information Access",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-access",
+        "name": "Health Information Access",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-communication",
+        "name": "Health Information Communication",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:health-information-communication",
+        "name": "Health Information Communication",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:health-information-communication",
+        "name": "Health Information Communication",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:health-information-control",
+        "name": "Health Information Control",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-control",
+        "name": "Health Information Control",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-control",
+        "name": "Health Information Control",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-knowledge-services",
+        "name": "Clinical Knowledge Services",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-knowledge-services",
+        "name": "Clinical Knowledge Services",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-knowledge-services",
+        "name": "Clinical Knowledge Services",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-collaboration",
+        "name": "Clinical Collaboration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-collaboration",
+        "name": "Clinical Collaboration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:general-collaboration",
+        "name": "General Collaboration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:general-collaboration",
+        "name": "General Collaboration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Intent",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:calendar-management",
+        "name": "Calendar Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:calendar-management",
+        "name": "Calendar Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:presentation-services",
+        "name": "Presentation Services",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:presentation-services",
+        "name": "Presentation Services",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:information-design-governance",
+        "name": "Information Design Governance",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:information-design-governance",
+        "name": "Information Design Governance",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "feature:standards-based-boundary-exchange",
+        "name": "Standards-Based Boundary Exchange",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:security-context-propagation",
+        "name": "Security Context Propagation",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:non-phi-compliance-auditing",
+        "name": "Non-PHI Compliance Auditing",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:work-order-progression",
+        "name": "Work Order Progression",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:to-do-decision--approval-coordination",
+        "name": "To Do Decision & Approval Coordination",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:synthetic-task-orchestration",
+        "name": "Synthetic Task Orchestration",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:workflow-timeout--escalation-oversight",
+        "name": "Workflow Timeout & Escalation Oversight",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:assurance-design",
+        "name": "Assurance Design",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-design",
+        "name": "Assurance Design",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-design",
+        "name": "Assurance Design",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-criteria-management",
+        "name": "Assurance Criteria Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-criteria-management",
+        "name": "Assurance Criteria Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-criteria-management",
+        "name": "Assurance Criteria Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:governed-assurance",
+        "name": "Governed Assurance",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:governed-assurance",
+        "name": "Governed Assurance",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:governed-assurance",
+        "name": "Governed Assurance",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:credential-management",
+        "name": "Credential Management",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:credential-management",
+        "name": "Credential Management",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:credential-management",
+        "name": "Credential Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "function:establish-assurance-context",
+        "name": "Establish Assurance Context",
+        "field": "Function Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "function:assess-assurance-evidence",
+        "name": "Assess Assurance Evidence",
+        "field": "Function Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "function:adjudicate-assurance-assessment",
+        "name": "Adjudicate Assurance Assessment",
+        "field": "Function Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "service:request-service-assurance",
+        "name": "Request Service Assurance",
+        "field": "Service Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "service:request-service-assurance-status",
+        "name": "Request Service Assurance Status",
+        "field": "Service Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "service:communicate-service-assurance-outcome",
+        "name": "Communicate Service Assurance Outcome",
+        "field": "Service Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:specimen-transport-process",
+        "name": "Specimen Transport Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:work-order-progression-process",
+        "name": "Work Order Progression Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:to-do-progression-process",
+        "name": "To Do Progression Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:synthetic-task-progression-process",
+        "name": "Synthetic Task Progression Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:assurance-process-execution",
+        "name": "Assurance Process Execution",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:assurance-process-reporting--communication",
+        "name": "Assurance Process Reporting / Communication",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      }
+    ],
+    "manifest": "docs/markdown/governance/baseline/documentation-classification.json"
+  },
+  "checks": {
+    "bundled_open_exchange_xsd": "PASS",
+    "all_existing_semantic_and_visual_identities": "PASS",
+    "adopted_identity_bindings": "PASS",
+    "source_based_relationship_homes": "PASS",
+    "exactly_one_home": "PASS",
+    "no_capability_recreation": "PASS",
+    "view_endpoints": "PASS",
+    "resource_and_view_trees": "PASS",
+    "documentation_convention": "PASS",
+    "all_existing_structured_properties": "PASS",
+    "current_and_historical_standing": "PASS",
+    "unresolved_records_and_assertions": "PASS",
+    "markdown_archimate_exact_correspondence": "PASS",
+    "pinned_recovery_source_boundary": "PASS",
+    "capability_tier_classification": "PASS",
+    "business_feature_reachability": "PASS",
+    "business_enabling_feature_reachability": "PASS",
+    "no_invented_ancestry": "PASS",
+    "resource_view_numbering_separation": "PASS",
+    "starting_candidate_semantic_documentation_view_stability": "PASS",
+    "feature_centred_resource_navigation": "PASS",
+    "feature_centred_view_navigation": "PASS",
+    "immediate_child_landscapes_first": "PASS",
+    "feature_centred_diagram_layout": "PASS",
+    "no_false_feature_associations": "PASS",
+    "governed_identity_and_naming": "PASS",
+    "exact_semantic_and_presentation_preservation": "PASS",
+    "deterministic_regeneration": "PASS"
+  },
+  "governed_metadata": {
+    "total_elements": 1299,
+    "valid_canonicalId": 1299,
+    "missing_canonicalId": 0,
+    "malformed_canonicalId": 0,
+    "duplicate_canonicalId": 0,
+    "multiple_canonicalId_claims": 0
+  },
+  "canonical_identity_source": "Resource fields in governed RADS captures",
+  "roundtrip_status": "AWAITING REAL ARCHI 5.10 NO-EDIT EXPORT"
+}

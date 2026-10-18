@@ -102,16 +102,17 @@ Every review SHALL begin with this compact Markdown summary table as its first
 visible content, before review metadata and detailed CRs:
 
 ```markdown
-| ID | Brief Description | Status |
-| --- | --- | --- |
-| [CR-001](#cr-001--add-identifier-capture-feature) | Add Identifier Capture Feature | On-Hold |
-| [CR-002](#cr-002--add-identifier-verification-business-process) | Add Identifier Verification Business Process | On-Hold |
+| ID | Brief Description | Disposition | Outcome |
+| --- | --- | --- | --- |
+| [CR-001](#cr-001--add-identifier-capture-feature) | Add Identifier Capture Feature | On-Hold | Unresolved |
+| [CR-002](#cr-002--add-identifier-verification-business-process) | Add Identifier Verification Business Process | On-Hold | Unresolved |
 ```
 
 These rows illustrate format only and submit or accept no blind-test CRs. Each ID
 SHALL link to the corresponding detailed section in the same document. Explicit
 Markdown HTML anchors MAY keep links stable through description edits. The table
-is an index/dashboard, not the CR. Its Status SHALL match the detailed disposition.
+is an index/dashboard, not the CR. Its Disposition and Outcome SHALL match the
+corresponding separate fields in the detailed CR.
 
 The Brief Description SHALL be one concise phrase describing the architectural
 change, with a deterministic maximum of **80 characters**, including spaces.
@@ -131,28 +132,39 @@ demonstrates the standard structure. Each detailed CR SHALL distinguish:
 1. **Proposed Architectural Change:** the candidate meaning and bounded scope.
 2. **Detected Evidence:** actual observations, exact source locators and references
    to preserved evidence, including before/after records where available.
-3. **Architectural Questions / Adjudication:** unresolved questions and the separate
-   Solution Architect decision, rationale, authority reference and adjudicator/date.
-4. **Related Change Requests:** dependencies or other material connections.
-5. **Authorised Reconciliation Instruction:** precisely what execution is permitted.
-6. **Reconciliation / Processing Record:** what subsequently happened and its evidence.
+3. **Disposition:** the Solution Architect call to action, or explicit initial/default
+   On-Hold pending adjudication; it is distinct from the resulting state.
+4. **Architectural Questions / Adjudication:** questions and the separate Solution
+   Architect decision, rationale, authority reference and adjudicator/date.
+5. **Outcome and Outcome Reason:** resulting CR state and the evidence-referencing
+   explanation establishing it, independently of Disposition and processing.
+6. **Related Change Requests:** dependencies or other material connections.
+7. **Authorised Reconciliation Instruction:** precisely what execution is permitted.
+8. **Reconciliation / Processing Record:** what subsequently happened and its evidence.
 
 Use these headings where useful. Simple CRs need no meaningless empty subsections:
 state that existing authority resolves the question or that there are no related
-CRs inline where appropriate. All six distinctions SHALL remain ascertainable.
-New CRs SHALL start with `Status: On-Hold`, an instruction of **Not authorised**
-and a processing record of **Not yet processed**.
+CRs inline where appropriate. All eight distinctions SHALL remain ascertainable.
+New CRs SHALL start with `Disposition: On-Hold`, `Outcome: Unresolved`, an Outcome
+Reason stating the outstanding question/authority/evidence, an instruction of
+**Not authorised** and a processing record of **Not yet processed**. Initial/default
+On-Hold supplies no fabricated Solution Architect adjudicator or decision date.
 
 ## Solution Architect dispositions
 
-Exactly four architectural dispositions are supported:
+**Disposition is the Solution Architect's authorised call to action to the
+processing agent concerning the CR.** It records what the architect instructed,
+not the eventual lifecycle result. Exactly four Disposition values are governed:
 
-| Status | Meaning and execution consequence |
+| Disposition | Instruction and execution consequence |
 | --- | --- |
-| **Accept** | The architectural change is approved. Reconciliation is authorised only to the extent explicitly described by the CR and its resulting instruction, subject to its prerequisites and applicable governance. |
-| **Reject** | The proposed change is not accepted and SHALL NOT be reconciled. Preserve the submitted proposal, evidence and rejection decision. |
-| **On-Hold** | No final architectural disposition has been made. The CR SHALL NOT be reconciled. This is the default for every newly generated CR. |
-| **Manual Intervention** | A decision has been made that automated reconciliation SHALL NOT execute this CR; deliberate human-controlled resolution is required. This is neither an error nor On-Hold. |
+| **Accept** | Approve the bounded architectural change and permit reconciliation only to the extent explicitly described by the CR and its decision-linked Authorised Reconciliation Instruction, subject to prerequisites and applicable governance. It does not assert execution, validation or resolution. |
+| **Reject** | Do not reconcile the proposed change as accepted architecture. Preserve the proposal, evidence and decision. This instruction does not by itself establish the CR's Outcome. |
+| **On-Hold** | Do not progress the architectural proposal pending further authority/resolution; reconciliation is not authorised. This is the initial/default Disposition for every new CR and may also be explicitly issued by the Solution Architect. It can remain recorded after a subsequent governing decision resolves the question. |
+| **Manual Intervention** | Direct the case to deliberate human-controlled resolution; automated reconciliation SHALL NOT execute this CR. This is an instruction, not evidence that manual resolution has occurred. |
+
+Resolved, Superseded, Implemented and other lifecycle-result labels SHALL NOT be
+added to this Disposition enumeration.
 
 Only the Solution Architect adjudicates architectural disposition. An agent MAY
 produce the resulting instruction from an unambiguous recorded decision, but
@@ -160,13 +172,61 @@ SHALL NOT supply missing architectural meaning. The decision and resulting
 instruction SHALL together establish the exact authorised scope. Record the
 instruction revision and its decision reference; drafting alone adds no authority.
 If instruction generation requires another architectural decision, return that
-question for adjudication. Keep prior adjudication/instruction revisions available
-in retained history, with who changed them, when and why.
+question for adjudication. An issued Disposition is an adjudication/audit record.
+Subsequent governing decisions, execution, validation or failure SHALL NOT silently
+rewrite it. Only an explicit subsequent Solution Architect instruction may revise
+an issued Disposition; retain the earlier instruction and decision with who changed
+it, when and why. Record later resulting states through Outcome, Outcome Reason
+and processing evidence. Keep prior adjudication, instruction and Outcome revisions
+recoverable in the same run under the existing revision mechanism.
 
 Acceptance of an architectural instance SHALL NOT automatically establish a
 universal Harmonia metamodel, inference, naming, containment, reconciliation or
 publication rule. Such a general rule requires explicit architectural/governance
 adjudication in its own right.
+
+## Outcome and Outcome Reason
+
+**Outcome** records the resulting state of the CR after adjudication and any
+subsequent architectural or processing activity. It is independent of Disposition;
+no Disposition uniquely determines an Outcome. The minimum governed vocabulary is:
+
+| Outcome | Meaning |
+| --- | --- |
+| **Unresolved** | Available authority/evidence has not yet established resolution of the CR's bounded question/change. Pending decisions, incomplete required processing/validation and uncertain effects remain explicit here and in their evidence. |
+| **Resolved** | Referenced architectural authority or processing/validation evidence establishes resolution of the CR's bounded question/change. Resolution can occur without reconciliation, including resolution of an interpretation finding by a governing metamodel decision. |
+
+These are CR Outcomes, not execution-result codes. Existing PASS, FAIL, TIMEOUT,
+STALLED and UNRESOLVED command/verification results keep their existing meaning
+in processing records. They do not automatically assign a CR Outcome. No further
+Outcome values are required for this increment's evidenced lifecycle cases.
+
+**Outcome Reason** SHALL be recorded separately and explain why that Outcome is
+established or what remains unresolved. Reference the governing decision,
+architectural authority, processing evidence or validation evidence as applicable.
+It is descriptive, not a closed enumeration. Record the actor/date and basis for
+an Outcome update through the review revision/audit evidence; retain prior values
+and reasons. An agent may record a deterministically evidenced Outcome but SHALL
+NOT supply missing architectural meaning or invent a Solution Architect instruction.
+
+For example, a valid finding initially held because a metamodel rule was missing
+may retain `Disposition: On-Hold` while acquiring `Outcome: Resolved` and
+`Outcome Reason: Resolved by Governing Decision <authority reference>`. Its original
+call to action remains correct and auditable. Resolution does not accept a related
+submitted relationship or authorise its reconciliation. An Accept instruction may
+instead have Outcome Unresolved while its bounded execution or validation remains
+outstanding. Outcome SHALL NOT be collapsed into the Reconciliation / Processing
+Record or treated as reconciliation authority.
+
+**Solution Architect governance decision — 2026-10-19 (Australia/Sydney), release
+1.0.13:** this distinction resolves the record-handling gap exposed by CR-016–CR-021
+in [1.0.8/run-001](../../archimate/processing/ingestion/1.0.8/run-001/change-review.md#disposition-outcome-transition).
+Their common question was resolved by the separate
+[CT3 → Feature Composition rule](../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy)
+established in release 1.0.12. The four previously labelled Status values are now
+explicitly Dispositions; historical review/detection/template representations
+remain unchanged in retained history. This semantic transition does not change
+any issued call to action or adjudicate an unaccepted instance.
 
 ## Architectural questions and separate interpretations
 
@@ -203,7 +263,7 @@ instance, would not imply that all such Realizations establish logical context.
 
 ## Executable reconciliation instructions
 
-An accepted CR SHALL contain sufficient unambiguous reconciliation instruction
+A CR with Disposition Accept SHALL contain sufficient unambiguous reconciliation instruction
 and source/target evidence for an authorised execution agent (Codex, Junie or
 another authorised repository agent) to implement the approved architectural
 change without re-adjudicating its architectural meaning. The instruction SHALL
@@ -240,7 +300,7 @@ authorised by applicable governance or related accepted Change Requests.
 An actual instruction also needs the precise evidence/target references and
 validation criteria relevant to its instance. The example grants no authority.
 
-An execution agent processing an accepted CR SHALL NOT broaden, reinterpret or
+An execution agent processing a CR with Disposition Accept SHALL NOT broaden, reinterpret or
 improve the authorised architectural decision. Execution-time convenience confers
 no architectural authority. Before mutation, check the decision-linked instruction,
 evidence/baseline applicability and prerequisites. If ambiguity or changed target
@@ -252,7 +312,7 @@ partial execution under AX-15; do not report a presumed success or non-occurrenc
 
 ## Manual intervention and dependencies
 
-Manual Intervention deliberately requires **no automatically executable
+Disposition Manual Intervention deliberately requires **no automatically executable
 reconciliation instruction**. Instead record why automation is unauthorised or
 insufficient, the deliberate human-controlled action required to the extent
 known, and how completion can be evidenced and validated. Unknown details remain
@@ -267,9 +327,12 @@ state required. For example, adding a relationship may depend on successful
 reconciliation of the CR adding its source Business Process, and on an established
 target. Acceptance alone is not proof that either endpoint exists.
 
-An agent SHALL NOT execute a dependent CR if its required prerequisite is
-rejected, On-Hold, subject to unresolved Manual Intervention, unsuccessfully
-reconciled, or otherwise has not produced the required governed state and evidence.
+An agent SHALL NOT execute a dependent CR if the required proposal's Disposition
+is Reject or On-Hold, if required Manual Intervention remains incomplete, or if
+reconciliation has failed or otherwise not produced the required governed state
+and evidence. Outcome Resolved alone supplies neither that resulting state nor
+reconciliation authority; resolution of an interpretation question cannot stand in
+for the actual governed elements/relationships a dependent operation requires.
 Completed manual resolution can supply that state when evidenced and validated;
 it does not authorise automatic execution of the manual CR. Missing, contradictory
 or circular prerequisites SHALL be raised before dependent execution. This is a
@@ -300,10 +363,13 @@ edges, governed names or context from geometry, nesting, folders or labels.
 
 ## Processing record and audit evidence
 
-Architectural disposition SHALL remain separate from processing state. An
-accepted CR might await execution, reconcile successfully or unsuccessfully,
-await validation or be validated without changing its architectural disposition.
-This contract defines no complete processing-state vocabulary.
+Disposition, Outcome, Outcome Reason and processing state SHALL remain separate.
+A CR with Disposition Accept might await execution, reconcile successfully or
+unsuccessfully, await validation or be validated without changing that issued
+Disposition. Processing records say what occurred; Outcome and Outcome Reason
+say what ultimately happened to the bounded CR and why. The architect's instruction,
+actual processing, resulting CR state and its explanation SHALL all remain
+ascertainable. This contract defines no complete processing-state vocabulary.
 
 The Reconciliation / Processing Record SHALL be capable of retaining the exact
 instruction revision used, actor/date, automatic or manual handling, prerequisite
@@ -315,8 +381,9 @@ they do not extend authority. Subsequent corrections SHALL preserve prior eviden
 A future reviewer SHALL be able to establish what was submitted, detected and
 decomposed; the evidence/questions and independent decisions for each CR;
 dependencies; exact authorised reconciliation; automatic/manual handling; actual
-changes; and how the resulting state was validated. Rejected, On-Hold and manually
-handled CRs remain auditable. Release and publication gates remain separate from
+changes; how the resulting state was validated; and the distinct Outcome and
+Outcome Reason. CRs with Disposition Reject, On-Hold or Manual Intervention remain
+auditable, including after resolution without reconciliation. Release and publication gates remain separate from
 architectural acceptance and from validation success.
 
 ## Run placement and template

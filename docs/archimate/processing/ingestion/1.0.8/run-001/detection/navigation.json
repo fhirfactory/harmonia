@@ -1,0 +1,236 @@
+{
+  "added_folders": [
+    {
+      "path": [
+        "Business",
+        "Products"
+      ],
+      "count": 1
+    },
+    {
+      "path": [
+        "Strategy",
+        "Business Layer",
+        "Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identifier Capture"
+      ],
+      "count": 1
+    },
+    {
+      "path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identifier Capture"
+      ],
+      "count": 1
+    }
+  ],
+  "removed_folders": [],
+  "added_references": [
+    {
+      "path": [
+        "Business"
+      ],
+      "identifierRef": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business"
+      ],
+      "identifierRef": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business"
+      ],
+      "identifierRef": "id-c645a859ac2c4447ad5ae850cf384bf3",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business"
+      ],
+      "identifierRef": "id-fddda503b8f0438e995465cd93204326",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business",
+        "Products"
+      ],
+      "identifierRef": "id-234b080d0ea54d57bb0001a2cb861080",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business",
+        "Products"
+      ],
+      "identifierRef": "id-3c5ae26723224eb0a6e6a70d70fe2c83",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business",
+        "Products"
+      ],
+      "identifierRef": "id-bfdd958364d1466a914d474dce8baab9",
+      "count": 1
+    },
+    {
+      "path": [
+        "Business",
+        "Products"
+      ],
+      "identifierRef": "id-d84d8e1f988c4bc998b18834aabfcd74",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-0849f31d6d7d4f7eb1e484d7437e5cd7",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-36b2aa8ad58149fdb20d44c1c16dd64c",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-37f6913198e2434db5309c1c8e36fbc0",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-3c3d723683c147a4a902b4d35a2af018",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-69eb864f56df4d928f8abc3f7ab4e834",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-73ecd7a39407404ba8e2bb663efbdc19",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-bef77e2eb7de4691b4fbe9a0c84e8232",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-bff76286f8994d20aa1b8aef166acebd",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-c0f84a8e4c8d496580a68cac4823c58c",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-c53c42ba0a4f437f9cb76a4c1a701816",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-daf437bb32114daa8a6b9462cb9b4fb2",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-e84f2e9df66a48d795d604d75afc72cb",
+      "count": 1
+    },
+    {
+      "path": [
+        "Relations"
+      ],
+      "identifierRef": "id-f9b270950f0241108b68f1c3daa50019",
+      "count": 1
+    },
+    {
+      "path": [
+        "Strategy",
+        "Business Layer",
+        "Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identifier Capture"
+      ],
+      "identifierRef": "id-727a264026584f80bc3304ff8383dc92",
+      "count": 1
+    },
+    {
+      "path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identifier Capture"
+      ],
+      "identifierRef": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+      "count": 1
+    },
+    {
+      "path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identity Source & Correction Lineage"
+      ],
+      "identifierRef": "id-8fb2f8b1776f4ebf969e9b5b638e4ed3",
+      "count": 1
+    }
+  ],
+  "removed_references": [],
+  "counts": {
+    "baseline_folders": 3749,
+    "submission_folders": 3752,
+    "baseline_references": 3347,
+    "submission_references": 3371
+  },
+  "method": "Path/reference multisets; no reconstruction of stripped organisation identities or semantic containment from folders."
+}

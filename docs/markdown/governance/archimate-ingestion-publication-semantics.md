@@ -55,8 +55,11 @@ become independently adjudicable CRs; ambiguity and missing authority become
 questions/CRs under 2A. Deterministic recognition is not acceptance. After
 adjudication, accepted CRs and their decision-linked executable instructions
 supply reconciliation authority; this contract governs the resulting
-representation. Reject, On-Hold, Manual Intervention, dependencies and processing
-evidence retain exactly their [2A semantics](archimate-ingestion-change-review.md#solution-architect-dispositions).
+representation. Accept, Reject, On-Hold and Manual Intervention are
+[2A Dispositions/calls to action](archimate-ingestion-change-review.md#solution-architect-dispositions).
+[Outcome and Outcome Reason](archimate-ingestion-change-review.md#outcome-and-outcome-reason)
+are independent resulting-state evidence; resolution alone authorises no
+reconciliation. Dependencies and processing evidence retain their 2A semantics.
 
 ## Recognition, classification and published Names
 
@@ -118,10 +121,12 @@ Accepted valid Composition = explicit semantic containment
 
 Semantic hierarchy SHALL remain reconstructable without folders or Views.
 Governed naming MAY use explicit accepted containment as architectural context,
-following the existing naming derivation rules. A governed CT1 → CT2 → CT3
-Composition chain can supply context; its continuation to a Feature depends on
-the separately unresolved CT3/Feature native framing decision below. The example
-does not adjudicate that continuation.
+following the existing naming derivation rules. The governed Business Enabling
+CT1 → Composition → CT2 → Composition → CT3 → Composition → Feature hierarchy
+supplies semantic context under the [2026-10-19 metamodel rule](../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy). An accepted
+CT3 → Feature Composition establishes framing/semantic containment deterministically;
+recognition of its meaning does not accept any incoming relationship, resolve
+missing ancestry or promote standing.
 
 Naming context SHALL derive from authoritative semantic architecture, including
 other context explicitly established by existing governance or an accepted CR,
@@ -307,9 +312,15 @@ layout engine.
 
 ## Bounded unresolved architectural matters
 
+The common CT3 → Feature native framing question was **resolved by the Solution
+Architect on 2026-10-19** in the [Business metamodel rule](../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy), reflected in
+[mapping profile §5](rad-archimate-model-mapping.md#5-relationship-profile-and-direction).
+Accepted native Composition establishes CT3 framing/semantic containment; the
+blind-test relationship instances remain unadjudicated. This general rule does
+not resolve the following matters.
+
 | Matter | Current authority and required adjudication |
 | --- | --- |
-| CT3 → Feature framing as universal Composition | **Unresolved.** The mapping profile §5 explicitly retains BEC CT3 framing pending native-edge adjudication. Blind-test Composition from CT3 Person Identity Administration to Features such as Identifier Capture is evidence of a new proposal, not a baseline duplicate or universal rule. Surface through 2A; this contract accepts no instance or general profile. |
 | Realization → Feature as universal logical context/containment | **Unresolved.** Native Business Process/Business Service → Feature Realization does not automatically supply Harmonia logical containment/context. Additional intended meaning requires a separate question/CR under 2A. A future general rule requires its own metamodel/governance decision. |
 | Containment View with more than 20 direct children | **Unresolved.** No presentation strategy is established; no third column, splitting, pagination or alternative is authorised. |
 

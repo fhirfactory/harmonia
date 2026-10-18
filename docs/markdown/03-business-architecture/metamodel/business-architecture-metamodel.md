@@ -12,9 +12,9 @@ graph TD
             BC2 -->|Decomposes| BC3["BC CT3"]
         end
         subgraph BEC["Business Enabling Capability"]
-            CT1["BEC CT1"] -->|Capability decomposition| CT2["BEC CT2"]
-            CT2 -->|Capability decomposition| CT3["BEC CT3"]
-            CT3 -->|Frames every Harmonia Feature| FT["FT Feature<br/>(Capability Specialisation)"]
+            CT1["BEC CT1"] -->|Composition| CT2["BEC CT2"]
+            CT2 -->|Composition| CT3["BEC CT3"]
+            CT3 -->|Composition: frames and contains| FT["FT Feature<br/>(Capability Specialisation)"]
         end
         BC -.->|Enabled-by / supported-by where established| BEC
     end
@@ -69,6 +69,44 @@ Established higher-tier ancestry SHALL be represented in a lower-tier Capability
 The five-stage [Domain02 derivation progression](../../02-strategy/capability-maps/capability-tier-model.md) SHALL NOT be reinterpreted as CT1 / CT2 / CT3 / FT. Enablement, derivation and contextual-view membership do not, by themselves, establish a Capability Tier assignment.
 
 The [approved fixed-decomposition decision record](../../02-strategy/reviews/fixed-capability-decomposition-decision.md) records the rationale and superseded permissive position. It changes the target metamodel, not the reconciliation status, tier allocation or identity of existing catalogue elements. K9's uncertainty and evidence rules remain controlling.
+
+<a id="bec-composition-hierarchy"></a>
+
+#### Business Enabling Composition hierarchy
+
+**Solution Architect decision — 2026-10-19 (Australia/Sydney).** Within the
+Harmonia Business Enabling Capability hierarchy, an accepted native ArchiMate
+`Composition` relationship from a CT3 Capability to a Feature Capability is the
+canonical semantic representation that the Feature is framed by, and semantically
+contained within, that CT3. The governed semantic hierarchy is:
+
+```text
+CT1 → Composition → CT2 → Composition → CT3 → Composition → Feature
+```
+
+Each Composition runs from whole/source to part/target. A Harmonia Feature remains
+native ArchiMate `Capability`, with Harmonia classification `Feature`
+(`harmoniaType=Feature`); it is not CT4. Capability-specialisation meaning does not
+require a native `Specialization` edge in place of this Composition.
+
+Model-tree/folder nesting, View membership, View geometry or visual placement,
+naming proximity and navigation organisation SHALL NOT independently establish
+this semantic containment. They may project or navigate the governed architecture;
+they are not substitutes for the semantic Composition relationship.
+
+This decision governs **what an accepted CT3 → Feature Composition means**. It
+does not accept any particular submitted Composition, establish missing ancestors,
+promote existing architectural standing or authorise reconciliation/publication.
+Acceptance of an instance remains separately adjudicable under the
+[Change Review contract](../../governance/archimate-ingestion-change-review.md).
+Once accepted, its framing/containment meaning follows deterministically from this
+rule and needs no second instance-level interpretation decision. Existing
+incomplete ancestry and identity uncertainty remain explicit under §1.1 and §8.
+The decision arose from the common question exposed by CR-016–CR-021 in
+[1.0.8/run-001](../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md#shared-metamodel-decision);
+those review findings are traceability evidence, while this subsection establishes
+the durable metamodel authority. Realization-to-Feature logical context is outside
+this decision.
 
 ### 1.2 Hierarchy Naming & Uniqueness Rules
 1. **Global Uniqueness**: Capability names across CT1, CT2 and CT3 are globally unique across the entire Harmonia architecture.

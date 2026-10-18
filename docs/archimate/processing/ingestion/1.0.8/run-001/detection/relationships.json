@@ -1,0 +1,1205 @@
+{
+  "added": [
+    {
+      "xpath": "/*/*[5]/*[1]",
+      "physical_line": 95230,
+      "exchange_id": "id-73ecd7a39407404ba8e2bb663efbdc19",
+      "attributes": {
+        "identifier": "id-73ecd7a39407404ba8e2bb663efbdc19",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-d9272acdc675539cb441d2db9c5ad6e6",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-29e0bf94882559a7b6ed9d092303a560",
+        "native_name": "Person Identity Administration",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "harmoniaType": null,
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "target": {
+        "exchange_id": "id-d9272acdc675539cb441d2db9c5ad6e6",
+        "native_name": "Cross-Authority Identifier Correlation",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6d74d143c7454fa0bf30743ddf7ba094",
+        "harmoniaType": "Feature",
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "resolved_canonical_comparison_key": [
+        "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+        "6c3de7750ef1436cad6a9533731782b6",
+        "6d74d143c7454fa0bf30743ddf7ba094"
+      ],
+      "baseline_matches": [],
+      "duplicate_result": "No baseline duplicate against resolved governed endpoints",
+      "incoming_resolved_key_matches": [
+        "id-73ecd7a39407404ba8e2bb663efbdc19"
+      ],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[2]",
+      "physical_line": 95231,
+      "exchange_id": "id-36b2aa8ad58149fdb20d44c1c16dd64c",
+      "attributes": {
+        "identifier": "id-36b2aa8ad58149fdb20d44c1c16dd64c",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-6f0bfe5e814c5734a7c530f2b7515666",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-29e0bf94882559a7b6ed9d092303a560",
+        "native_name": "Person Identity Administration",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "harmoniaType": null,
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "target": {
+        "exchange_id": "id-6f0bfe5e814c5734a7c530f2b7515666",
+        "native_name": "Governed Identity Correction",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "f7ab7a24e8234129b2ab02e9abd4fba2",
+        "harmoniaType": "Feature",
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "resolved_canonical_comparison_key": [
+        "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+        "6c3de7750ef1436cad6a9533731782b6",
+        "f7ab7a24e8234129b2ab02e9abd4fba2"
+      ],
+      "baseline_matches": [],
+      "duplicate_result": "No baseline duplicate against resolved governed endpoints",
+      "incoming_resolved_key_matches": [
+        "id-36b2aa8ad58149fdb20d44c1c16dd64c"
+      ],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[3]",
+      "physical_line": 95232,
+      "exchange_id": "id-3c3d723683c147a4a902b4d35a2af018",
+      "attributes": {
+        "identifier": "id-3c3d723683c147a4a902b4d35a2af018",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-29e0bf94882559a7b6ed9d092303a560",
+        "native_name": "Person Identity Administration",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "harmoniaType": null,
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "target": {
+        "exchange_id": "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "native_name": "Identity Source & Correction Lineage",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "d72134e75001449a9e7ffae53f61458f",
+        "harmoniaType": "Feature",
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "resolved_canonical_comparison_key": [
+        "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+        "6c3de7750ef1436cad6a9533731782b6",
+        "d72134e75001449a9e7ffae53f61458f"
+      ],
+      "baseline_matches": [],
+      "duplicate_result": "No baseline duplicate against resolved governed endpoints",
+      "incoming_resolved_key_matches": [
+        "id-3c3d723683c147a4a902b4d35a2af018"
+      ],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[4]",
+      "physical_line": 95233,
+      "exchange_id": "id-daf437bb32114daa8a6b9462cb9b4fb2",
+      "attributes": {
+        "identifier": "id-daf437bb32114daa8a6b9462cb9b4fb2",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-f1e1928516765880955f638a7fec8c35",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-29e0bf94882559a7b6ed9d092303a560",
+        "native_name": "Person Identity Administration",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "harmoniaType": null,
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "target": {
+        "exchange_id": "id-f1e1928516765880955f638a7fec8c35",
+        "native_name": "Identifier Resolution",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "ae034169e1394ccdb3a2ce9651eaf305",
+        "harmoniaType": "Feature",
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "resolved_canonical_comparison_key": [
+        "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+        "6c3de7750ef1436cad6a9533731782b6",
+        "ae034169e1394ccdb3a2ce9651eaf305"
+      ],
+      "baseline_matches": [],
+      "duplicate_result": "No baseline duplicate against resolved governed endpoints",
+      "incoming_resolved_key_matches": [
+        "id-daf437bb32114daa8a6b9462cb9b4fb2"
+      ],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[5]",
+      "physical_line": 95234,
+      "exchange_id": "id-f9b270950f0241108b68f1c3daa50019",
+      "attributes": {
+        "identifier": "id-f9b270950f0241108b68f1c3daa50019",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-28d7815137a05a2aab6d1684011dbbde",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-29e0bf94882559a7b6ed9d092303a560",
+        "native_name": "Person Identity Administration",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "harmoniaType": null,
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "target": {
+        "exchange_id": "id-28d7815137a05a2aab6d1684011dbbde",
+        "native_name": "Identity Alias Association",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "97721dbd017e4c2daa73e1e87a8499b9",
+        "harmoniaType": "Feature",
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "resolved_canonical_comparison_key": [
+        "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+        "6c3de7750ef1436cad6a9533731782b6",
+        "97721dbd017e4c2daa73e1e87a8499b9"
+      ],
+      "baseline_matches": [],
+      "duplicate_result": "No baseline duplicate against resolved governed endpoints",
+      "incoming_resolved_key_matches": [
+        "id-f9b270950f0241108b68f1c3daa50019"
+      ],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[6]",
+      "physical_line": 95235,
+      "exchange_id": "id-bff76286f8994d20aa1b8aef166acebd",
+      "attributes": {
+        "identifier": "id-bff76286f8994d20aa1b8aef166acebd",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-727a264026584f80bc3304ff8383dc92",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Composition",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-29e0bf94882559a7b6ed9d092303a560",
+        "native_name": "Person Identity Administration",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "harmoniaType": null,
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Canonical",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "target": {
+        "exchange_id": "id-727a264026584f80bc3304ff8383dc92",
+        "native_name": "[Feature] Identifier Capture",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[7]",
+      "physical_line": 95236,
+      "exchange_id": "id-e84f2e9df66a48d795d604d75afc72cb",
+      "attributes": {
+        "identifier": "id-e84f2e9df66a48d795d604d75afc72cb",
+        "source": "id-fddda503b8f0438e995465cd93204326",
+        "target": "id-727a264026584f80bc3304ff8383dc92",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Realization"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Realization",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-fddda503b8f0438e995465cd93204326",
+        "native_name": "[Business Service] Identifier Create",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-727a264026584f80bc3304ff8383dc92",
+        "native_name": "[Feature] Identifier Capture",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[8]",
+      "physical_line": 95237,
+      "exchange_id": "id-69eb864f56df4d928f8abc3f7ab4e834",
+      "attributes": {
+        "identifier": "id-69eb864f56df4d928f8abc3f7ab4e834",
+        "source": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+        "target": "id-727a264026584f80bc3304ff8383dc92",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Realization"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Realization",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+        "native_name": "[Business Service] Identifier Update",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-727a264026584f80bc3304ff8383dc92",
+        "native_name": "[Feature] Identifier Capture",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[9]",
+      "physical_line": 95238,
+      "exchange_id": "id-c0f84a8e4c8d496580a68cac4823c58c",
+      "attributes": {
+        "identifier": "id-c0f84a8e4c8d496580a68cac4823c58c",
+        "source": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "target": "id-727a264026584f80bc3304ff8383dc92",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Realization"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Realization",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "native_name": "[Business Process] Identifier Verification",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessProcess",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-727a264026584f80bc3304ff8383dc92",
+        "native_name": "[Feature] Identifier Capture",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[10]",
+      "physical_line": 95239,
+      "exchange_id": "id-bef77e2eb7de4691b4fbe9a0c84e8232",
+      "attributes": {
+        "identifier": "id-bef77e2eb7de4691b4fbe9a0c84e8232",
+        "source": "id-fddda503b8f0438e995465cd93204326",
+        "target": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Flow"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Flow",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-fddda503b8f0438e995465cd93204326",
+        "native_name": "[Business Service] Identifier Create",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "native_name": "[Business Process] Identifier Verification",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessProcess",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[11]",
+      "physical_line": 95240,
+      "exchange_id": "id-0849f31d6d7d4f7eb1e484d7437e5cd7",
+      "attributes": {
+        "identifier": "id-0849f31d6d7d4f7eb1e484d7437e5cd7",
+        "source": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+        "target": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Flow"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Flow",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+        "native_name": "[Business Service] Identifier Update",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "native_name": "[Business Process] Identifier Verification",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessProcess",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[12]",
+      "physical_line": 95241,
+      "exchange_id": "id-37f6913198e2434db5309c1c8e36fbc0",
+      "attributes": {
+        "identifier": "id-37f6913198e2434db5309c1c8e36fbc0",
+        "source": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+        "target": "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Realization"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Realization",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+        "native_name": "[Business Service] Verify Identity Source",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "native_name": "Identity Source & Correction Lineage",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+        "canonicalId": "d72134e75001449a9e7ffae53f61458f",
+        "harmoniaType": "Feature",
+        "standing_properties": [
+          {
+            "key": "v0.2 / Architectural Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Placement Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Structural ID Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Name Status",
+            "values": [
+              {
+                "text": "Proposed",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          {
+            "key": "v0.2 / Architecture Identity Status",
+            "values": [
+              {
+                "text": "Unresolved — representation ID only",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ],
+        "resolution": "governed canonicalId"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    },
+    {
+      "xpath": "/*/*[5]/*[13]",
+      "physical_line": 95242,
+      "exchange_id": "id-c53c42ba0a4f437f9cb76a4c1a701816",
+      "attributes": {
+        "identifier": "id-c53c42ba0a4f437f9cb76a4c1a701816",
+        "source": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+        "target": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Serving"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Serving",
+      "name": [],
+      "documentation": [],
+      "properties": [],
+      "source": {
+        "exchange_id": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+        "native_name": "[Business Service] Verify Identity Source",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "target": {
+        "exchange_id": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "native_name": "[Business Process] Identifier Verification",
+        "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessProcess",
+        "canonicalId": null,
+        "harmoniaType": null,
+        "standing_properties": [],
+        "resolution": "submitted record only; governed architectural identity unresolved"
+      },
+      "resolved_canonical_comparison_key": null,
+      "baseline_matches": [],
+      "duplicate_result": "UNRESOLVED: new endpoint has no governed architectural identity",
+      "incoming_resolved_key_matches": [],
+      "baseline_discriminators_for_matches": {}
+    }
+  ],
+  "removed": [],
+  "retained_changes_beyond_control": [],
+  "duplicate_raw_exchange_triples": [],
+  "duplicate_resolved_canonical_triples": [],
+  "discriminator_rule": "Preserve existing relationship binding and all reviewed assertion/crosswalk Properties; tuple equality is a candidate test, not permission to merge distinct assertions."
+}

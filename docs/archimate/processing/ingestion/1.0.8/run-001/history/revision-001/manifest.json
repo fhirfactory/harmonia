@@ -1,0 +1,7 @@
+{
+  "review_revision": 1,
+  "original_path": "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md",
+  "sha256": "338fbeed8228aa76a85aac72df44e80de320549c3290ec5bf84402c4446ec761",
+  "retained_on": "2026-10-19 Australia/Sydney",
+  "reason": "Preserve complete preparation revision before recording the Solution Architect general metamodel decision. Relative links in this byte-identical copy resolve from original_path parent, not the history directory. Detection and revision-1 validation remain in their original locations unchanged."
+}

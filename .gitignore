@@ -72,3 +72,5 @@ dependency-reduced-pom.xml
 # PKI and local security artifacts
 .pki/
 **/.pki/
+
+*.bak

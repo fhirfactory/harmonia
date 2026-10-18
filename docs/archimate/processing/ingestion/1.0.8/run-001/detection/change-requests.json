@@ -1,0 +1,1007 @@
+[
+  {
+    "id": "CR-001",
+    "brief": "Add Identifier Capture Feature",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Feature] Identifier Capture`, proposed native `Capability` and recognised Harmonia classification `Feature`.",
+    "evidence": "**Observed Evidence:** [submission.xml:34747](detection/submission.xml#L34747) — `id-727a264026584f80bc3304ff8383dc92`; XPath `/*/*[4]/*[404]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Feature] Identifier Capture`. The record has only its Name: no Properties or Documentation. Recognition: Feature proposed classification recognised deterministically; native Capability retained. See [element observations](detection/elements.json) (`A1` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Feature] Identifier Capture` as a new Harmonia Feature with native type `Capability`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "The governed `[Feature]` + Capability rule recognises the proposed Feature classification deterministically. Does the Solution Architect accept this architectural instance? Its CT3 relationship/context is adjudicated separately; recognition supplies no identity or acceptance."
+    ],
+    "observations": [
+      "A1"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-002",
+    "brief": "Add Provider Registry - Satellite Product",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Product] Provider Registry - Satellite`, proposed native `Product`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:87210](detection/submission.xml#L87210) — `id-234b080d0ea54d57bb0001a2cb861080`; XPath `/*/*[4]/*[1166]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Product] Provider Registry - Satellite`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A2` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Product] Provider Registry - Satellite` as a new Harmonia Product with native type `Product`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference."
+    ],
+    "observations": [
+      "A2"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-003",
+    "brief": "Add Provider Registry - Central Product",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Product] Provider Registry - Central`, proposed native `Product`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:87213](detection/submission.xml#L87213) — `id-bfdd958364d1466a914d474dce8baab9`; XPath `/*/*[4]/*[1167]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Product] Provider Registry - Central`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A3` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Product] Provider Registry - Central` as a new Harmonia Product with native type `Product`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference."
+    ],
+    "observations": [
+      "A3"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-004",
+    "brief": "Add Practitioner Collaboration Service Product",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Product] Practitioner Collaboration Service`, proposed native `Product`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:87216](detection/submission.xml#L87216) — `id-3c5ae26723224eb0a6e6a70d70fe2c83`; XPath `/*/*[4]/*[1168]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Product] Practitioner Collaboration Service`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A4` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Product] Practitioner Collaboration Service` as a new Harmonia Product with native type `Product`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference."
+    ],
+    "observations": [
+      "A4"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-005",
+    "brief": "Add Health Information Exchange Service Product",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Product] Health Information Exchange Service`, proposed native `Product`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:87219](detection/submission.xml#L87219) — `id-d84d8e1f988c4bc998b18834aabfcd74`; XPath `/*/*[4]/*[1169]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Product] Health Information Exchange Service`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A5` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Product] Health Information Exchange Service` as a new Harmonia Product with native type `Product`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference."
+    ],
+    "observations": [
+      "A5"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-006",
+    "brief": "Add Identifier Create Business Service",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Business Service] Identifier Create`, proposed native `BusinessService`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:62338](detection/submission.xml#L62338) — `id-fddda503b8f0438e995465cd93204326`; XPath `/*/*[4]/*[843]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Business Service] Identifier Create`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A6` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Business Service] Identifier Create` as a new Harmonia Business Service with native type `BusinessService`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Business Service]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18."
+    ],
+    "observations": [
+      "A6"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-007",
+    "brief": "Add Identifier Update Business Service",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Business Service] Identifier Update`, proposed native `BusinessService`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:62341](detection/submission.xml#L62341) — `id-0088d61ccfcf4962b3aab8bc3b96021d`; XPath `/*/*[4]/*[844]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Business Service] Identifier Update`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A7` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Business Service] Identifier Update` as a new Harmonia Business Service with native type `BusinessService`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Business Service]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18."
+    ],
+    "observations": [
+      "A7"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-008",
+    "brief": "Add Identifier Verification Business Process",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Business Process] Identifier Verification`, proposed native `BusinessProcess`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:62344](detection/submission.xml#L62344) — `id-c645a859ac2c4447ad5ae850cf384bf3`; XPath `/*/*[4]/*[845]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Business Process] Identifier Verification`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A8` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Business Process] Identifier Verification` as a new Harmonia Business Process with native type `BusinessProcess`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Business Process]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18."
+    ],
+    "observations": [
+      "A8"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-009",
+    "brief": "Add Verify Identity Source Business Service",
+    "status": "On-Hold",
+    "proposal": "Add the single architectural instance `[Business Service] Verify Identity Source`, proposed native `BusinessService`. No additional Harmonia classification is inferred.",
+    "evidence": "**Observed Evidence:** [submission.xml:62347](detection/submission.xml#L62347) — `id-9bfedbfd5b404694a2224c039fa5d4c4`; XPath `/*/*[4]/*[846]`. New semantic element, absent from the 1.0.8 baseline. Native Name: `[Business Service] Verify Identity Source`. The record has only its Name: no Properties or Documentation. Recognition: Qualifier repeats native type; no additional Harmonia subtype recognised. See [element observations](detection/elements.json) (`A9` mapping in [inventory](detection/observations.md)). Absent canonical identity and derived metadata are evidence only, not a defect CR or allocation instruction.",
+    "questions": [
+      "Accept `[Business Service] Verify Identity Source` as a new Harmonia Business Service with native type `BusinessService`? Confirm whether it is a new architectural instance or identify an established governed binding if reuse was intended.",
+      "What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.",
+      "`[Business Service]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.",
+      "Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18."
+    ],
+    "observations": [
+      "A9"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-010",
+    "brief": "Add Composition to Cross-Authority Identifier Correlation",
+    "status": "On-Hold",
+    "proposal": "Add only the native Composition from `Person Identity Administration` to `Cross-Authority Identifier Correlation`, preserving whole/source → part/target direction. This CR reviews the explicit edge and its bounded whole/part meaning; the CT3-framing interpretation is separately adjudicable.",
+    "evidence": "**Observed Evidence:** [submission.xml:95230](detection/submission.xml#L95230) — `id-73ecd7a39407404ba8e2bb663efbdc19`; XPath `/*/*[5]/*[1]`. Source: `Person Identity Administration` (Capability, Exchange `id-29e0bf94882559a7b6ed9d092303a560`, existing canonicalId `6c3de7750ef1436cad6a9533731782b6`). Target: `Cross-Authority Identifier Correlation` (Capability, Exchange `id-d9272acdc675539cb441d2db9c5ad6e6`, existing canonicalId `6d74d143c7454fa0bf30743ddf7ba094`). No Name, Properties or Documentation. It has one `Relations` root reference and one V1 visual appearance. No baseline duplicate against resolved governed endpoints. See [relationship observations](detection/relationships.json); endpoint resolution is independent of folder placement.",
+    "questions": [
+      "Accept the submitted native Composition from `[CT3] Person Identity Administration` to `Cross-Authority Identifier Correlation` for this instance, with the stated endpoints and direction?",
+      "Confirm native endpoint legality, intended whole/part meaning and relationship standing. The unresolved CT3/Feature profile is not resolved by native legality or deliberate authorship.",
+      "The separate framing CR may receive a different disposition. No universal CT3 → Composition → Feature rule follows from this instance."
+    ],
+    "observations": [
+      "R1",
+      "V1"
+    ],
+    "dependencies": [],
+    "related": [
+      "CR-016",
+      "CR-033"
+    ],
+    "authority": "2B semantic containment and unresolved CT3/Feature matter; mapping §5; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-011",
+    "brief": "Add Composition to Governed Identity Correction",
+    "status": "On-Hold",
+    "proposal": "Add only the native Composition from `Person Identity Administration` to `Governed Identity Correction`, preserving whole/source → part/target direction. This CR reviews the explicit edge and its bounded whole/part meaning; the CT3-framing interpretation is separately adjudicable.",
+    "evidence": "**Observed Evidence:** [submission.xml:95231](detection/submission.xml#L95231) — `id-36b2aa8ad58149fdb20d44c1c16dd64c`; XPath `/*/*[5]/*[2]`. Source: `Person Identity Administration` (Capability, Exchange `id-29e0bf94882559a7b6ed9d092303a560`, existing canonicalId `6c3de7750ef1436cad6a9533731782b6`). Target: `Governed Identity Correction` (Capability, Exchange `id-6f0bfe5e814c5734a7c530f2b7515666`, existing canonicalId `f7ab7a24e8234129b2ab02e9abd4fba2`). No Name, Properties or Documentation. It has one `Relations` root reference and one V1 visual appearance. No baseline duplicate against resolved governed endpoints. See [relationship observations](detection/relationships.json); endpoint resolution is independent of folder placement.",
+    "questions": [
+      "Accept the submitted native Composition from `[CT3] Person Identity Administration` to `Governed Identity Correction` for this instance, with the stated endpoints and direction?",
+      "Confirm native endpoint legality, intended whole/part meaning and relationship standing. The unresolved CT3/Feature profile is not resolved by native legality or deliberate authorship.",
+      "The separate framing CR may receive a different disposition. No universal CT3 → Composition → Feature rule follows from this instance."
+    ],
+    "observations": [
+      "R2",
+      "V1"
+    ],
+    "dependencies": [],
+    "related": [
+      "CR-017",
+      "CR-033"
+    ],
+    "authority": "2B semantic containment and unresolved CT3/Feature matter; mapping §5; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-012",
+    "brief": "Add Composition to Identity Source & Correction Lineage",
+    "status": "On-Hold",
+    "proposal": "Add only the native Composition from `Person Identity Administration` to `Identity Source & Correction Lineage`, preserving whole/source → part/target direction. This CR reviews the explicit edge and its bounded whole/part meaning; the CT3-framing interpretation is separately adjudicable.",
+    "evidence": "**Observed Evidence:** [submission.xml:95232](detection/submission.xml#L95232) — `id-3c3d723683c147a4a902b4d35a2af018`; XPath `/*/*[5]/*[3]`. Source: `Person Identity Administration` (Capability, Exchange `id-29e0bf94882559a7b6ed9d092303a560`, existing canonicalId `6c3de7750ef1436cad6a9533731782b6`). Target: `Identity Source & Correction Lineage` (Capability, Exchange `id-bdf18b5e580b5b85a34357a3b21f36db`, existing canonicalId `d72134e75001449a9e7ffae53f61458f`). No Name, Properties or Documentation. It has one `Relations` root reference and one V1 visual appearance. No baseline duplicate against resolved governed endpoints. See [relationship observations](detection/relationships.json); endpoint resolution is independent of folder placement.",
+    "questions": [
+      "Accept the submitted native Composition from `[CT3] Person Identity Administration` to `Identity Source & Correction Lineage` for this instance, with the stated endpoints and direction?",
+      "Confirm native endpoint legality, intended whole/part meaning and relationship standing. The unresolved CT3/Feature profile is not resolved by native legality or deliberate authorship.",
+      "The separate framing CR may receive a different disposition. No universal CT3 → Composition → Feature rule follows from this instance."
+    ],
+    "observations": [
+      "R3",
+      "V1"
+    ],
+    "dependencies": [],
+    "related": [
+      "CR-018",
+      "CR-033"
+    ],
+    "authority": "2B semantic containment and unresolved CT3/Feature matter; mapping §5; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-013",
+    "brief": "Add Composition to Identifier Resolution",
+    "status": "On-Hold",
+    "proposal": "Add only the native Composition from `Person Identity Administration` to `Identifier Resolution`, preserving whole/source → part/target direction. This CR reviews the explicit edge and its bounded whole/part meaning; the CT3-framing interpretation is separately adjudicable.",
+    "evidence": "**Observed Evidence:** [submission.xml:95233](detection/submission.xml#L95233) — `id-daf437bb32114daa8a6b9462cb9b4fb2`; XPath `/*/*[5]/*[4]`. Source: `Person Identity Administration` (Capability, Exchange `id-29e0bf94882559a7b6ed9d092303a560`, existing canonicalId `6c3de7750ef1436cad6a9533731782b6`). Target: `Identifier Resolution` (Capability, Exchange `id-f1e1928516765880955f638a7fec8c35`, existing canonicalId `ae034169e1394ccdb3a2ce9651eaf305`). No Name, Properties or Documentation. It has one `Relations` root reference and one V1 visual appearance. No baseline duplicate against resolved governed endpoints. See [relationship observations](detection/relationships.json); endpoint resolution is independent of folder placement.",
+    "questions": [
+      "Accept the submitted native Composition from `[CT3] Person Identity Administration` to `Identifier Resolution` for this instance, with the stated endpoints and direction?",
+      "Confirm native endpoint legality, intended whole/part meaning and relationship standing. The unresolved CT3/Feature profile is not resolved by native legality or deliberate authorship.",
+      "The separate framing CR may receive a different disposition. No universal CT3 → Composition → Feature rule follows from this instance."
+    ],
+    "observations": [
+      "R4",
+      "V1"
+    ],
+    "dependencies": [],
+    "related": [
+      "CR-019",
+      "CR-033"
+    ],
+    "authority": "2B semantic containment and unresolved CT3/Feature matter; mapping §5; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-014",
+    "brief": "Add Composition to Identity Alias Association",
+    "status": "On-Hold",
+    "proposal": "Add only the native Composition from `Person Identity Administration` to `Identity Alias Association`, preserving whole/source → part/target direction. This CR reviews the explicit edge and its bounded whole/part meaning; the CT3-framing interpretation is separately adjudicable.",
+    "evidence": "**Observed Evidence:** [submission.xml:95234](detection/submission.xml#L95234) — `id-f9b270950f0241108b68f1c3daa50019`; XPath `/*/*[5]/*[5]`. Source: `Person Identity Administration` (Capability, Exchange `id-29e0bf94882559a7b6ed9d092303a560`, existing canonicalId `6c3de7750ef1436cad6a9533731782b6`). Target: `Identity Alias Association` (Capability, Exchange `id-28d7815137a05a2aab6d1684011dbbde`, existing canonicalId `97721dbd017e4c2daa73e1e87a8499b9`). No Name, Properties or Documentation. It has one `Relations` root reference and one V1 visual appearance. No baseline duplicate against resolved governed endpoints. See [relationship observations](detection/relationships.json); endpoint resolution is independent of folder placement.",
+    "questions": [
+      "Accept the submitted native Composition from `[CT3] Person Identity Administration` to `Identity Alias Association` for this instance, with the stated endpoints and direction?",
+      "Confirm native endpoint legality, intended whole/part meaning and relationship standing. The unresolved CT3/Feature profile is not resolved by native legality or deliberate authorship.",
+      "The separate framing CR may receive a different disposition. No universal CT3 → Composition → Feature rule follows from this instance."
+    ],
+    "observations": [
+      "R5",
+      "V1"
+    ],
+    "dependencies": [],
+    "related": [
+      "CR-020",
+      "CR-033"
+    ],
+    "authority": "2B semantic containment and unresolved CT3/Feature matter; mapping §5; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-015",
+    "brief": "Add Composition to Identifier Capture",
+    "status": "On-Hold",
+    "proposal": "Add only the native Composition from `Person Identity Administration` to `[Feature] Identifier Capture`, preserving whole/source → part/target direction. This CR reviews the explicit edge and its bounded whole/part meaning; the CT3-framing interpretation is separately adjudicable.",
+    "evidence": "**Observed Evidence:** [submission.xml:95235](detection/submission.xml#L95235) — `id-bff76286f8994d20aa1b8aef166acebd`; XPath `/*/*[5]/*[6]`. Source: `Person Identity Administration` (Capability, Exchange `id-29e0bf94882559a7b6ed9d092303a560`, existing canonicalId `6c3de7750ef1436cad6a9533731782b6`). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. It has one `Relations` root reference and one V1 visual appearance. UNRESOLVED: new endpoint has no governed architectural identity. See [relationship observations](detection/relationships.json); endpoint resolution is independent of folder placement.",
+    "questions": [
+      "Accept the submitted native Composition from `[CT3] Person Identity Administration` to `[Feature] Identifier Capture` for this instance, with the stated endpoints and direction?",
+      "Confirm native endpoint legality, intended whole/part meaning and relationship standing. The unresolved CT3/Feature profile is not resolved by native legality or deliberate authorship.",
+      "The separate framing CR may receive a different disposition. No universal CT3 → Composition → Feature rule follows from this instance."
+    ],
+    "observations": [
+      "R6",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-001",
+        "required_governed_state": "Identifier Capture exists as the resolved governed architectural endpoint for submitted A1, with its accepted native type/classification and evidenced reconciliation; identity has not been allocated here."
+      }
+    ],
+    "related": [
+      "CR-021",
+      "CR-033"
+    ],
+    "authority": "2B semantic containment and unresolved CT3/Feature matter; mapping §5; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-016",
+    "brief": "Interpret CT3 framing for Cross-Authority Identifier Correlation",
+    "status": "On-Hold",
+    "proposal": "For this instance only, determine whether the submitted Composition encodes CT3 framing/context of `Cross-Authority Identifier Correlation` by Person Identity Administration, and what bounded standing/context effect is authorised. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. This is a candidate Harmonia interpretation, not another semantic-edge addition or a universal profile decision.",
+    "evidence": "**Observed Evidence:** R1, [submission.xml:95230](detection/submission.xml#L95230) — `id-73ecd7a39407404ba8e2bb663efbdc19`; XPath `/*/*[5]/*[1]`. The XML contains a bare native Composition only; it contains no assertion that establishes a universal framing rule. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. See [framing evidence and RADS locators](detection/observations.md#existing-feature-context), [relationships](detection/relationships.json).",
+    "questions": [
+      "Does this Composition, if accepted and reconciled, encode the governed CT3 framing/context for `Cross-Authority Identifier Correlation` for this instance?",
+      "State the exact semantic/naming-context effect and standing. Existing Proposed placement and, for Lineage, Proposed architectural standing remain unchanged unless explicitly adjudicated; acceptance of an edge alone does not approve those matters.",
+      "If the native edge is accepted without this extra interpretation, identify any unresolved context that must remain blocked. No general metamodel rule is submitted or established here."
+    ],
+    "observations": [
+      "R1",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-010",
+        "required_governed_state": "The exact native R1 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+      }
+    ],
+    "related": [
+      "CR-033"
+    ],
+    "authority": "2B bounded unresolved CT3/Feature matter and existing parent_key/owner_key context; mapping §5; 2A; AX-17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-017",
+    "brief": "Interpret CT3 framing for Governed Identity Correction",
+    "status": "On-Hold",
+    "proposal": "For this instance only, determine whether the submitted Composition encodes CT3 framing/context of `Governed Identity Correction` by Person Identity Administration, and what bounded standing/context effect is authorised. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. This is a candidate Harmonia interpretation, not another semantic-edge addition or a universal profile decision.",
+    "evidence": "**Observed Evidence:** R2, [submission.xml:95231](detection/submission.xml#L95231) — `id-36b2aa8ad58149fdb20d44c1c16dd64c`; XPath `/*/*[5]/*[2]`. The XML contains a bare native Composition only; it contains no assertion that establishes a universal framing rule. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. See [framing evidence and RADS locators](detection/observations.md#existing-feature-context), [relationships](detection/relationships.json).",
+    "questions": [
+      "Does this Composition, if accepted and reconciled, encode the governed CT3 framing/context for `Governed Identity Correction` for this instance?",
+      "State the exact semantic/naming-context effect and standing. Existing Proposed placement and, for Lineage, Proposed architectural standing remain unchanged unless explicitly adjudicated; acceptance of an edge alone does not approve those matters.",
+      "If the native edge is accepted without this extra interpretation, identify any unresolved context that must remain blocked. No general metamodel rule is submitted or established here."
+    ],
+    "observations": [
+      "R2",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-011",
+        "required_governed_state": "The exact native R2 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+      }
+    ],
+    "related": [
+      "CR-033"
+    ],
+    "authority": "2B bounded unresolved CT3/Feature matter and existing parent_key/owner_key context; mapping §5; 2A; AX-17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-018",
+    "brief": "Interpret CT3 framing for Identity Source & Correction Lineage",
+    "status": "On-Hold",
+    "proposal": "For this instance only, determine whether the submitted Composition encodes CT3 framing/context of `Identity Source & Correction Lineage` by Person Identity Administration, and what bounded standing/context effect is authorised. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. This is a candidate Harmonia interpretation, not another semantic-edge addition or a universal profile decision.",
+    "evidence": "**Observed Evidence:** R3, [submission.xml:95232](detection/submission.xml#L95232) — `id-3c3d723683c147a4a902b4d35a2af018`; XPath `/*/*[5]/*[3]`. The XML contains a bare native Composition only; it contains no assertion that establishes a universal framing rule. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. See [framing evidence and RADS locators](detection/observations.md#existing-feature-context), [relationships](detection/relationships.json).",
+    "questions": [
+      "Does this Composition, if accepted and reconciled, encode the governed CT3 framing/context for `Identity Source & Correction Lineage` for this instance?",
+      "State the exact semantic/naming-context effect and standing. Existing Proposed placement and, for Lineage, Proposed architectural standing remain unchanged unless explicitly adjudicated; acceptance of an edge alone does not approve those matters.",
+      "If the native edge is accepted without this extra interpretation, identify any unresolved context that must remain blocked. No general metamodel rule is submitted or established here."
+    ],
+    "observations": [
+      "R3",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-012",
+        "required_governed_state": "The exact native R3 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+      }
+    ],
+    "related": [
+      "CR-033"
+    ],
+    "authority": "2B bounded unresolved CT3/Feature matter and existing parent_key/owner_key context; mapping §5; 2A; AX-17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-019",
+    "brief": "Interpret CT3 framing for Identifier Resolution",
+    "status": "On-Hold",
+    "proposal": "For this instance only, determine whether the submitted Composition encodes CT3 framing/context of `Identifier Resolution` by Person Identity Administration, and what bounded standing/context effect is authorised. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. This is a candidate Harmonia interpretation, not another semantic-edge addition or a universal profile decision.",
+    "evidence": "**Observed Evidence:** R4, [submission.xml:95233](detection/submission.xml#L95233) — `id-daf437bb32114daa8a6b9462cb9b4fb2`; XPath `/*/*[5]/*[4]`. The XML contains a bare native Composition only; it contains no assertion that establishes a universal framing rule. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. See [framing evidence and RADS locators](detection/observations.md#existing-feature-context), [relationships](detection/relationships.json).",
+    "questions": [
+      "Does this Composition, if accepted and reconciled, encode the governed CT3 framing/context for `Identifier Resolution` for this instance?",
+      "State the exact semantic/naming-context effect and standing. Existing Proposed placement and, for Lineage, Proposed architectural standing remain unchanged unless explicitly adjudicated; acceptance of an edge alone does not approve those matters.",
+      "If the native edge is accepted without this extra interpretation, identify any unresolved context that must remain blocked. No general metamodel rule is submitted or established here."
+    ],
+    "observations": [
+      "R4",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-013",
+        "required_governed_state": "The exact native R4 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+      }
+    ],
+    "related": [
+      "CR-033"
+    ],
+    "authority": "2B bounded unresolved CT3/Feature matter and existing parent_key/owner_key context; mapping §5; 2A; AX-17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-020",
+    "brief": "Interpret CT3 framing for Identity Alias Association",
+    "status": "On-Hold",
+    "proposal": "For this instance only, determine whether the submitted Composition encodes CT3 framing/context of `Identity Alias Association` by Person Identity Administration, and what bounded standing/context effect is authorised. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. This is a candidate Harmonia interpretation, not another semantic-edge addition or a universal profile decision.",
+    "evidence": "**Observed Evidence:** R5, [submission.xml:95234](detection/submission.xml#L95234) — `id-f9b270950f0241108b68f1c3daa50019`; XPath `/*/*[5]/*[5]`. The XML contains a bare native Composition only; it contains no assertion that establishes a universal framing rule. The current RADS Feature record already retains Person Identity Administration as source-qualified responsibility/framing context with **Proposed placement**. This CR does not recreate that context or promote its standing. See [framing evidence and RADS locators](detection/observations.md#existing-feature-context), [relationships](detection/relationships.json).",
+    "questions": [
+      "Does this Composition, if accepted and reconciled, encode the governed CT3 framing/context for `Identity Alias Association` for this instance?",
+      "State the exact semantic/naming-context effect and standing. Existing Proposed placement and, for Lineage, Proposed architectural standing remain unchanged unless explicitly adjudicated; acceptance of an edge alone does not approve those matters.",
+      "If the native edge is accepted without this extra interpretation, identify any unresolved context that must remain blocked. No general metamodel rule is submitted or established here."
+    ],
+    "observations": [
+      "R5",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-014",
+        "required_governed_state": "The exact native R5 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+      }
+    ],
+    "related": [
+      "CR-033"
+    ],
+    "authority": "2B bounded unresolved CT3/Feature matter and existing parent_key/owner_key context; mapping §5; 2A; AX-17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-021",
+    "brief": "Interpret CT3 framing for Identifier Capture",
+    "status": "On-Hold",
+    "proposal": "For this instance only, determine whether the submitted Composition encodes CT3 framing/context of `[Feature] Identifier Capture` by Person Identity Administration, and what bounded standing/context effect is authorised. There is no established source record for A1; its CT3 context is a candidate requiring explicit adjudication. This is a candidate Harmonia interpretation, not another semantic-edge addition or a universal profile decision.",
+    "evidence": "**Observed Evidence:** R6, [submission.xml:95235](detection/submission.xml#L95235) — `id-bff76286f8994d20aa1b8aef166acebd`; XPath `/*/*[5]/*[6]`. The XML contains a bare native Composition only; it contains no assertion that establishes a universal framing rule. There is no established source record for A1; its CT3 context is a candidate requiring explicit adjudication. See [framing evidence and RADS locators](detection/observations.md#existing-feature-context), [relationships](detection/relationships.json).",
+    "questions": [
+      "Does this Composition, if accepted and reconciled, encode the governed CT3 framing/context for `[Feature] Identifier Capture` for this instance?",
+      "State the exact semantic/naming-context effect and standing. Existing Proposed placement and, for Lineage, Proposed architectural standing remain unchanged unless explicitly adjudicated; acceptance of an edge alone does not approve those matters.",
+      "If the native edge is accepted without this extra interpretation, identify any unresolved context that must remain blocked. No general metamodel rule is submitted or established here."
+    ],
+    "observations": [
+      "R6",
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-015",
+        "required_governed_state": "The exact native R6 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+      }
+    ],
+    "related": [
+      "CR-033"
+    ],
+    "authority": "2B bounded unresolved CT3/Feature matter and existing parent_key/owner_key context; mapping §5; 2A; AX-17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-022",
+    "brief": "Add Identifier Create Realization",
+    "status": "On-Hold",
+    "proposal": "Add the explicit native Realization from `[Business Service] Identifier Create` to `[Feature] Identifier Capture`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.",
+    "evidence": "**Observed Evidence:** [submission.xml:95236](detection/submission.xml#L95236) — `id-e84f2e9df66a48d795d604d75afc72cb`; XPath `/*/*[5]/*[7]`. Source: `[Business Service] Identifier Create` (BusinessService, Exchange `id-fddda503b8f0438e995465cd93204326`, governed identity unresolved; submitted record only). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. See [relationship evidence](detection/relationships.json). ",
+    "questions": [
+      "Accept the submitted Realization from `[Business Service] Identifier Create` to `[Feature] Identifier Capture`?",
+      "Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question."
+    ],
+    "observations": [
+      "R7",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-006",
+        "required_governed_state": "`[Business Service] Identifier Create` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      },
+      {
+        "cr": "CR-001",
+        "required_governed_state": "`[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      }
+    ],
+    "related": [
+      "CR-023"
+    ],
+    "authority": "Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-023",
+    "brief": "Interpret Feature context for Identifier Create",
+    "status": "On-Hold",
+    "proposal": "For this instance only, consider treating R7 Realization as establishing Harmonia logical Feature context of `[Business Service] Identifier Create` in `[Feature] Identifier Capture`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.",
+    "evidence": "**Observed Evidence:** R7, [submission.xml:95236](detection/submission.xml#L95236) — `id-e84f2e9df66a48d795d604d75afc72cb`; XPath `/*/*[5]/*[7]`. Source: `[Business Service] Identifier Create` (BusinessService, Exchange `id-fddda503b8f0438e995465cd93204326`, governed identity unresolved; submitted record only). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). The View presents these endpoints but contains no independent semantic containment assertion. The native Realization and View placement do not themselves answer the Harmonia context question.",
+    "questions": [
+      "Does this Realization also establish Harmonia logical Feature context for `[Business Service] Identifier Create` in `[Feature] Identifier Capture`?",
+      "If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised."
+    ],
+    "observations": [
+      "R7",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-022",
+        "required_governed_state": "The native R7 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+      }
+    ],
+    "related": [
+      "CR-035"
+    ],
+    "authority": "2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-024",
+    "brief": "Add Identifier Update Realization",
+    "status": "On-Hold",
+    "proposal": "Add the explicit native Realization from `[Business Service] Identifier Update` to `[Feature] Identifier Capture`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.",
+    "evidence": "**Observed Evidence:** [submission.xml:95237](detection/submission.xml#L95237) — `id-69eb864f56df4d928f8abc3f7ab4e834`; XPath `/*/*[5]/*[8]`. Source: `[Business Service] Identifier Update` (BusinessService, Exchange `id-0088d61ccfcf4962b3aab8bc3b96021d`, governed identity unresolved; submitted record only). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. See [relationship evidence](detection/relationships.json). ",
+    "questions": [
+      "Accept the submitted Realization from `[Business Service] Identifier Update` to `[Feature] Identifier Capture`?",
+      "Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question."
+    ],
+    "observations": [
+      "R8",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-007",
+        "required_governed_state": "`[Business Service] Identifier Update` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      },
+      {
+        "cr": "CR-001",
+        "required_governed_state": "`[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      }
+    ],
+    "related": [
+      "CR-025"
+    ],
+    "authority": "Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-025",
+    "brief": "Interpret Feature context for Identifier Update",
+    "status": "On-Hold",
+    "proposal": "For this instance only, consider treating R8 Realization as establishing Harmonia logical Feature context of `[Business Service] Identifier Update` in `[Feature] Identifier Capture`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.",
+    "evidence": "**Observed Evidence:** R8, [submission.xml:95237](detection/submission.xml#L95237) — `id-69eb864f56df4d928f8abc3f7ab4e834`; XPath `/*/*[5]/*[8]`. Source: `[Business Service] Identifier Update` (BusinessService, Exchange `id-0088d61ccfcf4962b3aab8bc3b96021d`, governed identity unresolved; submitted record only). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). The View presents these endpoints but contains no independent semantic containment assertion. The native Realization and View placement do not themselves answer the Harmonia context question.",
+    "questions": [
+      "Does this Realization also establish Harmonia logical Feature context for `[Business Service] Identifier Update` in `[Feature] Identifier Capture`?",
+      "If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised."
+    ],
+    "observations": [
+      "R8",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-024",
+        "required_governed_state": "The native R8 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+      }
+    ],
+    "related": [
+      "CR-035"
+    ],
+    "authority": "2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-026",
+    "brief": "Add Identifier Verification Realization",
+    "status": "On-Hold",
+    "proposal": "Add the explicit native Realization from `[Business Process] Identifier Verification` to `[Feature] Identifier Capture`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.",
+    "evidence": "**Observed Evidence:** [submission.xml:95238](detection/submission.xml#L95238) — `id-c0f84a8e4c8d496580a68cac4823c58c`; XPath `/*/*[5]/*[9]`. Source: `[Business Process] Identifier Verification` (BusinessProcess, Exchange `id-c645a859ac2c4447ad5ae850cf384bf3`, governed identity unresolved; submitted record only). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. See [relationship evidence](detection/relationships.json). ",
+    "questions": [
+      "Accept the submitted Realization from `[Business Process] Identifier Verification` to `[Feature] Identifier Capture`?",
+      "Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question."
+    ],
+    "observations": [
+      "R9",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-008",
+        "required_governed_state": "`[Business Process] Identifier Verification` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      },
+      {
+        "cr": "CR-001",
+        "required_governed_state": "`[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      }
+    ],
+    "related": [
+      "CR-027"
+    ],
+    "authority": "Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-027",
+    "brief": "Interpret Feature context for Identifier Verification",
+    "status": "On-Hold",
+    "proposal": "For this instance only, consider treating R9 Realization as establishing Harmonia logical Feature context of `[Business Process] Identifier Verification` in `[Feature] Identifier Capture`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.",
+    "evidence": "**Observed Evidence:** R9, [submission.xml:95238](detection/submission.xml#L95238) — `id-c0f84a8e4c8d496580a68cac4823c58c`; XPath `/*/*[5]/*[9]`. Source: `[Business Process] Identifier Verification` (BusinessProcess, Exchange `id-c645a859ac2c4447ad5ae850cf384bf3`, governed identity unresolved; submitted record only). Target: `[Feature] Identifier Capture` (Capability, Exchange `id-727a264026584f80bc3304ff8383dc92`, governed identity unresolved; submitted record only). The View presents these endpoints but contains no independent semantic containment assertion. The native Realization and View placement do not themselves answer the Harmonia context question.",
+    "questions": [
+      "Does this Realization also establish Harmonia logical Feature context for `[Business Process] Identifier Verification` in `[Feature] Identifier Capture`?",
+      "If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised."
+    ],
+    "observations": [
+      "R9",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-026",
+        "required_governed_state": "The native R9 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+      }
+    ],
+    "related": [
+      "CR-035"
+    ],
+    "authority": "2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-028",
+    "brief": "Add Verify Identity Source Realization",
+    "status": "On-Hold",
+    "proposal": "Add the explicit native Realization from `[Business Service] Verify Identity Source` to `Identity Source & Correction Lineage`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.",
+    "evidence": "**Observed Evidence:** [submission.xml:95241](detection/submission.xml#L95241) — `id-37f6913198e2434db5309c1c8e36fbc0`; XPath `/*/*[5]/*[12]`. Source: `[Business Service] Verify Identity Source` (BusinessService, Exchange `id-9bfedbfd5b404694a2224c039fa5d4c4`, governed identity unresolved; submitted record only). Target: `Identity Source & Correction Lineage` (Capability, Exchange `id-bdf18b5e580b5b85a34357a3b21f36db`, existing canonicalId `d72134e75001449a9e7ffae53f61458f`). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. See [relationship evidence](detection/relationships.json). The target Lineage has existing Proposed architectural and placement standing, which this edge does not promote.",
+    "questions": [
+      "Accept the submitted Realization from `[Business Service] Verify Identity Source` to `Identity Source & Correction Lineage`?",
+      "Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question."
+    ],
+    "observations": [
+      "R12",
+      "V4"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-009",
+        "required_governed_state": "`[Business Service] Verify Identity Source` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+      }
+    ],
+    "related": [
+      "CR-029"
+    ],
+    "authority": "Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-029",
+    "brief": "Interpret Feature context for Verify Identity Source",
+    "status": "On-Hold",
+    "proposal": "For this instance only, consider treating R12 Realization as establishing Harmonia logical Feature context of `[Business Service] Verify Identity Source` in `Identity Source & Correction Lineage`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.",
+    "evidence": "**Observed Evidence:** R12, [submission.xml:95241](detection/submission.xml#L95241) — `id-37f6913198e2434db5309c1c8e36fbc0`; XPath `/*/*[5]/*[12]`. Source: `[Business Service] Verify Identity Source` (BusinessService, Exchange `id-9bfedbfd5b404694a2224c039fa5d4c4`, governed identity unresolved; submitted record only). Target: `Identity Source & Correction Lineage` (Capability, Exchange `id-bdf18b5e580b5b85a34357a3b21f36db`, existing canonicalId `d72134e75001449a9e7ffae53f61458f`). The View presents these endpoints but contains no independent semantic containment assertion. The native Realization and View placement do not themselves answer the Harmonia context question.",
+    "questions": [
+      "Does this Realization also establish Harmonia logical Feature context for `[Business Service] Verify Identity Source` in `Identity Source & Correction Lineage`?",
+      "If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised."
+    ],
+    "observations": [
+      "R12",
+      "V4"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-028",
+        "required_governed_state": "The native R12 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+      }
+    ],
+    "related": [
+      "CR-036"
+    ],
+    "authority": "2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-030",
+    "brief": "Add Identifier Create Flow to Identifier Verification",
+    "status": "On-Hold",
+    "proposal": "Add only native `Flow` from `[Business Service] Identifier Create` to `[Business Process] Identifier Verification` with the submitted direction and explicitly adjudicated bounded meaning.",
+    "evidence": "**Observed Evidence:** [submission.xml:95239](detection/submission.xml#L95239) — `id-bef77e2eb7de4691b4fbe9a0c84e8232`; XPath `/*/*[5]/*[10]`. Source: `[Business Service] Identifier Create` (BusinessService, Exchange `id-fddda503b8f0438e995465cd93204326`, governed identity unresolved; submitted record only). Target: `[Business Process] Identifier Verification` (BusinessProcess, Exchange `id-c645a859ac2c4447ad5ae850cf384bf3`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. One visual connection in V3; see [relationships](detection/relationships.json) and [Views](detection/views.json).",
+    "questions": [
+      "Accept this submitted Flow from `[Business Service] Identifier Create` to `[Business Process] Identifier Verification`?",
+      "What actual information/value transfer does this Flow assert, with what bounded direction and standing? A Flow is not automatically Triggering, execution order or orchestration."
+    ],
+    "observations": [
+      "R10",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-006",
+        "required_governed_state": "`[Business Service] Identifier Create` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+      },
+      {
+        "cr": "CR-008",
+        "required_governed_state": "`[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+      }
+    ],
+    "related": [
+      "CR-035"
+    ],
+    "authority": "Mapping §5 Flow/Serving direction and meaning; 2B; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-031",
+    "brief": "Add Identifier Update Flow to Identifier Verification",
+    "status": "On-Hold",
+    "proposal": "Add only native `Flow` from `[Business Service] Identifier Update` to `[Business Process] Identifier Verification` with the submitted direction and explicitly adjudicated bounded meaning.",
+    "evidence": "**Observed Evidence:** [submission.xml:95240](detection/submission.xml#L95240) — `id-0849f31d6d7d4f7eb1e484d7437e5cd7`; XPath `/*/*[5]/*[11]`. Source: `[Business Service] Identifier Update` (BusinessService, Exchange `id-0088d61ccfcf4962b3aab8bc3b96021d`, governed identity unresolved; submitted record only). Target: `[Business Process] Identifier Verification` (BusinessProcess, Exchange `id-c645a859ac2c4447ad5ae850cf384bf3`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. One visual connection in V3; see [relationships](detection/relationships.json) and [Views](detection/views.json).",
+    "questions": [
+      "Accept this submitted Flow from `[Business Service] Identifier Update` to `[Business Process] Identifier Verification`?",
+      "What actual information/value transfer does this Flow assert, with what bounded direction and standing? A Flow is not automatically Triggering, execution order or orchestration."
+    ],
+    "observations": [
+      "R11",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-007",
+        "required_governed_state": "`[Business Service] Identifier Update` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+      },
+      {
+        "cr": "CR-008",
+        "required_governed_state": "`[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+      }
+    ],
+    "related": [
+      "CR-035"
+    ],
+    "authority": "Mapping §5 Flow/Serving direction and meaning; 2B; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-032",
+    "brief": "Add Verify Identity Source Serving to Identifier Verification",
+    "status": "On-Hold",
+    "proposal": "Add only native `Serving` from `[Business Service] Verify Identity Source` to `[Business Process] Identifier Verification` with the submitted direction and explicitly adjudicated bounded meaning.",
+    "evidence": "**Observed Evidence:** [submission.xml:95242](detection/submission.xml#L95242) — `id-c53c42ba0a4f437f9cb76a4c1a701816`; XPath `/*/*[5]/*[13]`. Source: `[Business Service] Verify Identity Source` (BusinessService, Exchange `id-9bfedbfd5b404694a2224c039fa5d4c4`, governed identity unresolved; submitted record only). Target: `[Business Process] Identifier Verification` (BusinessProcess, Exchange `id-c645a859ac2c4447ad5ae850cf384bf3`, governed identity unresolved; submitted record only). No Name, Properties or Documentation. UNRESOLVED: new endpoint has no governed architectural identity. One visual connection in V3; see [relationships](detection/relationships.json) and [Views](detection/views.json).",
+    "questions": [
+      "Accept this submitted Serving from `[Business Service] Verify Identity Source` to `[Business Process] Identifier Verification`?",
+      "What service consumption does Serving assert? Confirm native legality, consuming behaviour and standing; this does not create ownership or domain authority."
+    ],
+    "observations": [
+      "R13",
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-009",
+        "required_governed_state": "`[Business Service] Verify Identity Source` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+      },
+      {
+        "cr": "CR-008",
+        "required_governed_state": "`[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+      }
+    ],
+    "related": [
+      "CR-035"
+    ],
+    "authority": "Mapping §5 Flow/Serving direction and meaning; 2B; 2A; AX-14/17/18.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-033",
+    "brief": "Revise Person Identity Administration Feature Landscape",
+    "status": "On-Hold",
+    "proposal": "Show Person Identity Administration and six Feature appearances with six explicit Composition connections, in the submitted left-source/right-Feature arrangement. This is one independently reviewable authored View delta; it accepts no element, semantic edge or additional logical interpretation.",
+    "evidence": "**Observed Evidence:** V1, [submission.xml:256740](detection/submission.xml#L256740) — `id-e2a326c7d36751af9076a32dabe0e9cd`; XPath `/*/*[8]/*/*[972]`. `modified` relative to the exact baseline; 6 → 7 nodes, 0 → 6 connections. See [complete per-View inventory](detection/observations.md#v1) and [exact visual records, before/after geometry/styles and references](detection/views.json). Every displayed connection references a separately proposed semantic edge; presentation acceptance cannot create it.",
+    "questions": [
+      "Accept this modified authored presentation of `0-Person Identity Administration — Feature Landscape` with the scope, membership and visual connections listed below and in the View evidence?",
+      "Confirm its bounded purpose, scope/standing filter, View home and submitted layout/readability for later authorised preservation. Geometry and folder placement establish no semantic containment.",
+      "The unchanged View Documentation says “Context and immediate governed children only. Standing remains in element Properties.” A1 has no standing Properties and Lineage remains Proposed. What precise scope/filter wording and standing presentation should the accepted View use?",
+      "Should the View communicate native Composition alone, or the additional instance CT3-framing interpretation? If it claims the latter, the applicable CR-016 through CR-021 resulting context states are additional prerequisites; record that choice and exact dependency revision before any instruction. The base dependency list below supplies presentation of native edges only."
+    ],
+    "observations": [
+      "V1"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-001",
+        "required_governed_state": "The governed element corresponding to submitted `id-727a264026584f80bc3304ff8383dc92` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-011",
+        "required_governed_state": "The exact submitted relationship `id-36b2aa8ad58149fdb20d44c1c16dd64c` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-012",
+        "required_governed_state": "The exact submitted relationship `id-3c3d723683c147a4a902b4d35a2af018` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-010",
+        "required_governed_state": "The exact submitted relationship `id-73ecd7a39407404ba8e2bb663efbdc19` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-015",
+        "required_governed_state": "The exact submitted relationship `id-bff76286f8994d20aa1b8aef166acebd` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-013",
+        "required_governed_state": "The exact submitted relationship `id-daf437bb32114daa8a6b9462cb9b4fb2` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-014",
+        "required_governed_state": "The exact submitted relationship `id-f9b270950f0241108b68f1c3daa50019` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      }
+    ],
+    "related": [
+      "CR-016",
+      "CR-017",
+      "CR-018",
+      "CR-019",
+      "CR-020",
+      "CR-021"
+    ],
+    "authority": "2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-034",
+    "brief": "Expose existing Compositions in Entity Information Enablement View",
+    "status": "On-Hold",
+    "proposal": "Expose seven already-governed Composition relationships from Entity Information Enablement to its CT2 appearances; preserve the existing eight nodes and geometry. This is one independently reviewable authored View delta; it accepts no element, semantic edge or additional logical interpretation.",
+    "evidence": "**Observed Evidence:** V2, [submission.xml:259158](detection/submission.xml#L259158) — `id-c8ec850977565a17869af357ee28d917`; XPath `/*/*[8]/*/*[1017]`. `modified` relative to the exact baseline; 8 → 8 nodes, 0 → 7 connections. See [complete per-View inventory](detection/observations.md#v2) and [exact visual records, before/after geometry/styles and references](detection/views.json). Every added connection resolves to an existing baseline relationship with unchanged identity, endpoints and assertion Properties. There is no new semantic edge for this CR.",
+    "questions": [
+      "Accept this modified authored presentation of `0-Entity Information Enablement — CT2 Landscape` with the scope, membership and visual connections listed below and in the View evidence?",
+      "Confirm its bounded purpose, scope/standing filter, View home and submitted layout/readability for later authorised preservation. Geometry and folder placement establish no semantic containment."
+    ],
+    "observations": [
+      "V2"
+    ],
+    "dependencies": [],
+    "related": [],
+    "authority": "2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-035",
+    "brief": "Add Identifier Capture Feature realisation View",
+    "status": "On-Hold",
+    "proposal": "Present Identifier Capture, Identifier Create, Identifier Update, Identifier Verification and Verify Identity Source with the six submitted Realization/Flow/Serving appearances. This is one independently reviewable authored View delta; it accepts no element, semantic edge or additional logical interpretation.",
+    "evidence": "**Observed Evidence:** V3, [submission.xml:256638](detection/submission.xml#L256638) — `id-216c4ab0757b45b3894e7e0c2594b9f9`; XPath `/*/*[8]/*/*[971]`. `added` relative to the exact baseline; 0 → 5 nodes, 0 → 6 connections. See [complete per-View inventory](detection/observations.md#v3) and [exact visual records, before/after geometry/styles and references](detection/views.json). Every displayed connection references a separately proposed semantic edge; presentation acceptance cannot create it.",
+    "questions": [
+      "Accept this added authored presentation of `Identifier Capture - Feature realisation` with the scope, membership and visual connections listed below and in the View evidence?",
+      "Confirm its bounded purpose, scope/standing filter, View home and submitted layout/readability for later authorised preservation. Geometry and folder placement establish no semantic containment.",
+      "There is no submitted Documentation or Properties for this new View. Confirm the proposed purpose above; its Feature-realisation Name is evidence of presentation intent, not proof of logical Feature containment.",
+      "Does the accepted View require the separately reviewed logical Feature-context interpretations? Its explicit native-edge presentation can stand without them. Record any stronger context claim and corresponding resulting-state prerequisites before authorisation."
+    ],
+    "observations": [
+      "V3"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-007",
+        "required_governed_state": "The governed element corresponding to submitted `id-0088d61ccfcf4962b3aab8bc3b96021d` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-001",
+        "required_governed_state": "The governed element corresponding to submitted `id-727a264026584f80bc3304ff8383dc92` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-009",
+        "required_governed_state": "The governed element corresponding to submitted `id-9bfedbfd5b404694a2224c039fa5d4c4` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-008",
+        "required_governed_state": "The governed element corresponding to submitted `id-c645a859ac2c4447ad5ae850cf384bf3` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-006",
+        "required_governed_state": "The governed element corresponding to submitted `id-fddda503b8f0438e995465cd93204326` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-031",
+        "required_governed_state": "The exact submitted relationship `id-0849f31d6d7d4f7eb1e484d7437e5cd7` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-024",
+        "required_governed_state": "The exact submitted relationship `id-69eb864f56df4d928f8abc3f7ab4e834` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-030",
+        "required_governed_state": "The exact submitted relationship `id-bef77e2eb7de4691b4fbe9a0c84e8232` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-026",
+        "required_governed_state": "The exact submitted relationship `id-c0f84a8e4c8d496580a68cac4823c58c` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-032",
+        "required_governed_state": "The exact submitted relationship `id-c53c42ba0a4f437f9cb76a4c1a701816` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      },
+      {
+        "cr": "CR-022",
+        "required_governed_state": "The exact submitted relationship `id-e84f2e9df66a48d795d604d75afc72cb` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      }
+    ],
+    "related": [
+      "CR-023",
+      "CR-025",
+      "CR-027",
+      "CR-029"
+    ],
+    "authority": "2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  },
+  {
+    "id": "CR-036",
+    "brief": "Add Identity Source and Correction Lineage realisation View",
+    "status": "On-Hold",
+    "proposal": "Present Verify Identity Source realizing Identity Source & Correction Lineage, with two element appearances and one Realization connection. This is one independently reviewable authored View delta; it accepts no element, semantic edge or additional logical interpretation.",
+    "evidence": "**Observed Evidence:** V4, [submission.xml:256609](detection/submission.xml#L256609) — `id-8fb2f8b1776f4ebf969e9b5b638e4ed3`; XPath `/*/*[8]/*/*[970]`. `added` relative to the exact baseline; 0 → 2 nodes, 0 → 1 connections. See [complete per-View inventory](detection/observations.md#v4) and [exact visual records, before/after geometry/styles and references](detection/views.json). Every displayed connection references a separately proposed semantic edge; presentation acceptance cannot create it.",
+    "questions": [
+      "Accept this added authored presentation of `Identity Source & Correction Lineage - Feature realisation` with the scope, membership and visual connections listed below and in the View evidence?",
+      "Confirm its bounded purpose, scope/standing filter, View home and submitted layout/readability for later authorised preservation. Geometry and folder placement establish no semantic containment.",
+      "There is no submitted Documentation or Properties for this new View. Confirm the proposed purpose above; its Feature-realisation Name is evidence of presentation intent, not proof of logical Feature containment.",
+      "Does the accepted View require the separately reviewed logical Feature-context interpretations? Its explicit native-edge presentation can stand without them. Record any stronger context claim and corresponding resulting-state prerequisites before authorisation."
+    ],
+    "observations": [
+      "V4"
+    ],
+    "dependencies": [
+      {
+        "cr": "CR-009",
+        "required_governed_state": "The governed element corresponding to submitted `id-9bfedbfd5b404694a2224c039fa5d4c4` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+      },
+      {
+        "cr": "CR-028",
+        "required_governed_state": "The exact submitted relationship `id-37f6913198e2434db5309c1c8e36fbc0` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+      }
+    ],
+    "related": [
+      "CR-029"
+    ],
+    "authority": "2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.",
+    "instruction": "Not authorised",
+    "processing": "Not yet processed"
+  }
+]

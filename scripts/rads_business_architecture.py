@@ -7,10 +7,12 @@ Markdown nesting. This tool generates views of the captured assertions only.
 """
 
 import argparse
+import gzip
 import hashlib
 import json
 import re
 import sys
+import zlib
 from collections import Counter
 from pathlib import Path
 
@@ -125,17 +127,38 @@ def anchors(text):
 
 
 def source_era_text(path, expected_sha256, root=ROOT):
-    """Read pinned evidence through exact, separately governed presentation notes.
+    """Read pinned source-era evidence through exact governed history.
 
-    The older capture and its line locators remain immutable. Only insertions
-    whose complete annotated and original hashes are proved may be removed in
-    memory. A changed definition or unrecorded notice still fails source drift.
-    Current baseline generation reads its own canonical inputs directly.
+    The older capture and its line locators remain immutable. Exact reviewed
+    presentation insertions may be removed in memory. Where live authority has
+    subsequently changed, governed correspondence may select an exact archived
+    source after proving both its hashes and the live authority pin. Neither path
+    reinterprets historical evidence as current architecture. Unrecorded source
+    or snapshot drift fails; current generation reads canonical inputs directly.
     """
     root, path = Path(root).resolve(), Path(path).resolve()
     raw = path.read_bytes()
     if hashlib.sha256(raw).hexdigest() == expected_sha256:
         return raw.decode()
+    correspondence = root / 'docs/markdown/governance/baseline/correspondence.json'
+    relative = str(path.relative_to(root))
+    if correspondence.is_file():
+        pins = load_json(correspondence)
+        record = pins.get('historical_authority_sources', {}).get(relative)
+        if (record and record['original_sha256'] == expected_sha256
+                and pins.get('current_authority_sha256', {}).get(relative)
+                == hashlib.sha256(raw).hexdigest()):
+            snapshot = (root / record['snapshot']).resolve()
+            boundary = root / 'docs/markdown/governance/baseline/source-history'
+            if snapshot.is_relative_to(boundary.resolve()) and snapshot.is_file():
+                packed = snapshot.read_bytes()
+                if hashlib.sha256(packed).hexdigest() == record['snapshot_sha256']:
+                    try:
+                        original = gzip.decompress(packed)
+                        if hashlib.sha256(original).hexdigest() == expected_sha256:
+                            return original.decode()
+                    except (OSError, EOFError, UnicodeError, zlib.error):
+                        pass
     overlays = root / 'docs/markdown/governance/baseline/source-presentation-overlays.json'
     if not overlays.exists():
         return raw.decode()

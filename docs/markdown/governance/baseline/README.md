@@ -80,8 +80,17 @@ original source fingerprints and line locators are validated through the exact,
 hash-proved presentation notices in
 [source-presentation-overlays.json](source-presentation-overlays.json). Only those
 insertions are removed in memory for that historical check; a changed definition
-or unrecorded notice still fails. Current baseline generation does not use this
-source-era normalisation.
+or unrecorded notice still fails. After the accepted 2026-10-19
+[CT3/Feature Composition decision](../../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy),
+the frozen candidate capture's original metamodel is retained as compressed,
+hash-pinned historical evidence under `source-history/`. The
+`historical_authority_sources` entry in [correspondence.json](correspondence.json)
+selects it only when the live source matches its separate current-authority pin
+and both the archive and decompressed original hashes match. This preserves the
+original locators without removing a semantic amendment as a presentation notice,
+refreshing the capture or treating old metamodel text as current authority.
+Unrecorded live-source or archive drift still fails. Current baseline generation
+does not use either source-era validation path.
 
 Future accepted architecture changes must deliberately update the relevant
 canonical assertions, reviewed correspondence and both projections. Do not refresh

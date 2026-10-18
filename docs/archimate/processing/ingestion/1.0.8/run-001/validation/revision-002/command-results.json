@@ -1,0 +1,54 @@
+[
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "elapsed_seconds": 28.459,
+    "tests": 90,
+    "log": "architecture-tests.log.gz"
+  },
+  {
+    "command": "python3 -B scripts/rads_business_architecture.py validate (initial invocation)",
+    "outcome": "FAIL",
+    "exit_code": 1,
+    "evidence": "rads-validation-initial.json",
+    "diagnosis": "Frozen source-era candidate capture still referenced the live metamodel path; new semantic rule invalidated exact source hashes/locators. Capture was preserved; historical validation now uses exact archived source, guarded by live-authority and archive hashes."
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B -m unittest scripts.tests.test_architecture_release scripts.tests.test_rads_business_architecture scripts.tests.test_rads_source_presentation scripts.tests.test_architecture_identity (initial invocation)",
+    "outcome": "FAIL",
+    "exit_code": 1,
+    "tests": 68,
+    "failures": 1,
+    "errors": 2,
+    "log": "governance-tests-initial.log.gz",
+    "diagnosis": "All three outcomes stemmed from the same source-era metamodel hash/locator drift; no production architecture defect established."
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B -m unittest scripts.tests.test_architecture_release scripts.tests.test_rads_business_architecture scripts.tests.test_rads_source_presentation scripts.tests.test_architecture_identity",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "tests": 72,
+    "log": "governance-tests.log.gz"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B scripts/rads_business_architecture.py validate",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "unresolved_dimensions": 2467,
+    "log": "rads-validation.log.gz"
+  },
+  {
+    "command": "python3 -B scripts/architecture_release.py check",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "log": "release-check.log"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validate-revision.py",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "checks": 723,
+    "evidence": "validation-results.json"
+  }
+]

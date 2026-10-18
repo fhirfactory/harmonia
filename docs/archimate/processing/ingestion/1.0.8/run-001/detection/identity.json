@@ -1,0 +1,111 @@
+{
+  "retained_metadata_mutations": [],
+  "canonical_owner_count": 1299,
+  "duplicate_canonical_claims": {},
+  "malformed_claims": [],
+  "additions": [
+    {
+      "exchange_id": "id-727a264026584f80bc3304ff8383dc92",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType",
+        "harmoniaType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-fddda503b8f0438e995465cd93204326",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-c645a859ac2c4447ad5ae850cf384bf3",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-234b080d0ea54d57bb0001a2cb861080",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-bfdd958364d1466a914d474dce8baab9",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-3c5ae26723224eb0a6e6a70d70fe2c83",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    },
+    {
+      "exchange_id": "id-d84d8e1f988c4bc998b18834aabfcd74",
+      "absent_applicable_machine_metadata": [
+        "canonicalId",
+        "displayName",
+        "friendlyName",
+        "canonicalName",
+        "archimateType"
+      ],
+      "treatment": "Authoring evidence only; no defect or allocation instruction"
+    }
+  ],
+  "allocation": "None; all proposed additions retain absent canonicalId",
+  "retained_name_displayName_discrepancies": 841,
+  "submitted_name_displayName_mutations": []
+}
