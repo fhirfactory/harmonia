@@ -62335,6 +62335,18 @@ Information administration and coordination preserve the authority of the respon
         </property>
       </properties>
     </element>
+    <element identifier="id-fddda503b8f0438e995465cd93204326" xsi:type="BusinessService">
+      <name xml:lang="en">[Business Service] Identifier Create</name>
+    </element>
+    <element identifier="id-0088d61ccfcf4962b3aab8bc3b96021d" xsi:type="BusinessService">
+      <name xml:lang="en">[Business Service] Identifier Update</name>
+    </element>
+    <element identifier="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="BusinessProcess">
+      <name xml:lang="en">[Business Process] Identifier Verification</name>
+    </element>
+    <element identifier="id-9bfedbfd5b404694a2224c039fa5d4c4" xsi:type="BusinessService">
+      <name xml:lang="en">[Business Service] Verify Identity Source</name>
+    </element>
     <element identifier="id-839281bb947054459ba35072f71c6885" xsi:type="BusinessFunction">
       <name xml:lang="en">Assess Service Offering Readiness</name>
       <documentation xml:lang="en">Evaluate applicable dependency evidence to establish a context- and time-qualified service readiness view.
@@ -95215,6 +95227,19 @@ Clinical events—such as patient admissions, pathology test orders, critical la
     </element>
   </elements>
   <relationships>
+    <relationship identifier="id-73ecd7a39407404ba8e2bb663efbdc19" source="id-29e0bf94882559a7b6ed9d092303a560" target="id-d9272acdc675539cb441d2db9c5ad6e6" xsi:type="Composition" />
+    <relationship identifier="id-36b2aa8ad58149fdb20d44c1c16dd64c" source="id-29e0bf94882559a7b6ed9d092303a560" target="id-6f0bfe5e814c5734a7c530f2b7515666" xsi:type="Composition" />
+    <relationship identifier="id-3c3d723683c147a4a902b4d35a2af018" source="id-29e0bf94882559a7b6ed9d092303a560" target="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Composition" />
+    <relationship identifier="id-daf437bb32114daa8a6b9462cb9b4fb2" source="id-29e0bf94882559a7b6ed9d092303a560" target="id-f1e1928516765880955f638a7fec8c35" xsi:type="Composition" />
+    <relationship identifier="id-f9b270950f0241108b68f1c3daa50019" source="id-29e0bf94882559a7b6ed9d092303a560" target="id-28d7815137a05a2aab6d1684011dbbde" xsi:type="Composition" />
+    <relationship identifier="id-bff76286f8994d20aa1b8aef166acebd" source="id-29e0bf94882559a7b6ed9d092303a560" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Composition" />
+    <relationship identifier="id-e84f2e9df66a48d795d604d75afc72cb" source="id-fddda503b8f0438e995465cd93204326" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Realization" />
+    <relationship identifier="id-69eb864f56df4d928f8abc3f7ab4e834" source="id-0088d61ccfcf4962b3aab8bc3b96021d" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Realization" />
+    <relationship identifier="id-c0f84a8e4c8d496580a68cac4823c58c" source="id-c645a859ac2c4447ad5ae850cf384bf3" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Realization" />
+    <relationship identifier="id-bef77e2eb7de4691b4fbe9a0c84e8232" source="id-fddda503b8f0438e995465cd93204326" target="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="Flow" />
+    <relationship identifier="id-0849f31d6d7d4f7eb1e484d7437e5cd7" source="id-0088d61ccfcf4962b3aab8bc3b96021d" target="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="Flow" />
+    <relationship identifier="id-37f6913198e2434db5309c1c8e36fbc0" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Realization" />
+    <relationship identifier="id-c53c42ba0a4f437f9cb76a4c1a701816" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="Serving" />
     <relationship identifier="id-8ef442d225e55f00b4eb94244a6b9d47" source="id-839281bb947054459ba35072f71c6885" target="id-eea28ef3bab358869d143da0c838865a" xsi:type="Realization">
       <documentation xml:lang="en">Snapshot predicate: realises_feature; assertion status: Proposed; currentness: preserved historical assertion.
 
@@ -129486,6 +129511,10 @@ Clinical events—such as patient admissions, pathology test orders, critical la
         <item identifierRef="id-3c5ae26723224eb0a6e6a70d70fe2c83" />
         <item identifierRef="id-d84d8e1f988c4bc998b18834aabfcd74" />
       </item>
+      <item identifierRef="id-fddda503b8f0438e995465cd93204326" />
+      <item identifierRef="id-0088d61ccfcf4962b3aab8bc3b96021d" />
+      <item identifierRef="id-c645a859ac2c4447ad5ae850cf384bf3" />
+      <item identifierRef="id-9bfedbfd5b404694a2224c039fa5d4c4" />
     </item>
     <item>
       <label xml:lang="en">Application</label>
@@ -132421,6 +132450,19 @@ Clinical events—such as patient admissions, pathology test orders, critical la
           </item>
         </item>
       </item>
+      <item identifierRef="id-73ecd7a39407404ba8e2bb663efbdc19" />
+      <item identifierRef="id-36b2aa8ad58149fdb20d44c1c16dd64c" />
+      <item identifierRef="id-3c3d723683c147a4a902b4d35a2af018" />
+      <item identifierRef="id-daf437bb32114daa8a6b9462cb9b4fb2" />
+      <item identifierRef="id-f9b270950f0241108b68f1c3daa50019" />
+      <item identifierRef="id-bff76286f8994d20aa1b8aef166acebd" />
+      <item identifierRef="id-e84f2e9df66a48d795d604d75afc72cb" />
+      <item identifierRef="id-69eb864f56df4d928f8abc3f7ab4e834" />
+      <item identifierRef="id-c0f84a8e4c8d496580a68cac4823c58c" />
+      <item identifierRef="id-bef77e2eb7de4691b4fbe9a0c84e8232" />
+      <item identifierRef="id-0849f31d6d7d4f7eb1e484d7437e5cd7" />
+      <item identifierRef="id-37f6913198e2434db5309c1c8e36fbc0" />
+      <item identifierRef="id-c53c42ba0a4f437f9cb76a4c1a701816" />
     </item>
     <item>
       <label xml:lang="en">Views</label>
@@ -136885,6 +136927,11 @@ Clinical events—such as patient admissions, pathology test orders, critical la
                 </item>
                 <item>
                   <label xml:lang="en">[Feature] Identity Source &amp; Correction Lineage</label>
+                  <item identifierRef="id-8fb2f8b1776f4ebf969e9b5b638e4ed3" />
+                </item>
+                <item>
+                  <label xml:lang="en">[Feature] Identifier Capture</label>
+                  <item identifierRef="id-216c4ab0757b45b3894e7e0c2594b9f9" />
                 </item>
                 <item identifierRef="id-e2a326c7d36751af9076a32dabe0e9cd" />
                 <item identifierRef="id-9cfe6f83b1c05716a52003e90a4ecd7d" />
@@ -256559,63 +256606,251 @@ Select this View in the model tree and open its Documentation. The frozen source
           </style>
         </connection>
       </view>
+      <view identifier="id-8fb2f8b1776f4ebf969e9b5b638e4ed3" xsi:type="Diagram">
+        <name xml:lang="en">Identity Source &amp; Correction Lineage - Feature realisation</name>
+        <node identifier="id-030fc162b19b41c8930dac9f9c901bf0" elementRef="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Element" x="12" y="24" w="240" h="409">
+          <style>
+            <fillColor r="245" g="222" b="170" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-5a05920f7422487c930faff16187327b" elementRef="id-9bfedbfd5b404694a2224c039fa5d4c4" xsi:type="Element" x="312" y="24" w="253" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <connection identifier="id-d4301bf1848e4e7e9a1d5267dfa3594e" relationshipRef="id-37f6913198e2434db5309c1c8e36fbc0" xsi:type="Relationship" source="id-5a05920f7422487c930faff16187327b" target="id-030fc162b19b41c8930dac9f9c901bf0">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+      </view>
+      <view identifier="id-216c4ab0757b45b3894e7e0c2594b9f9" xsi:type="Diagram">
+        <name xml:lang="en">Identifier Capture - Feature realisation</name>
+        <node identifier="id-4f78c588c80d42e0b4f52e765dc76ff2" elementRef="id-fddda503b8f0438e995465cd93204326" xsi:type="Element" x="168" y="36" w="253" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-3fd6725d68f4476884cf44f9fbf09794" elementRef="id-727a264026584f80bc3304ff8383dc92" xsi:type="Element" x="12" y="36" w="120" h="397">
+          <style>
+            <fillColor r="245" g="222" b="170" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-d0a1079102c14d26901ace75bd379281" elementRef="id-0088d61ccfcf4962b3aab8bc3b96021d" xsi:type="Element" x="168" y="108" w="253" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-a222a0f6a6804944b188e32ee5caa9a5" elementRef="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="Element" x="168" y="180" w="253" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-8e77730d5e7147bea761ee18da71358c" elementRef="id-9bfedbfd5b404694a2224c039fa5d4c4" xsi:type="Element" x="636" y="180" w="253" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <connection identifier="id-007507b4daa748ee8df77d2dbf8a496d" relationshipRef="id-e84f2e9df66a48d795d604d75afc72cb" xsi:type="Relationship" source="id-4f78c588c80d42e0b4f52e765dc76ff2" target="id-3fd6725d68f4476884cf44f9fbf09794">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-95c171f829a849a3ac544a931b4d6a5f" relationshipRef="id-bef77e2eb7de4691b4fbe9a0c84e8232" xsi:type="Relationship" source="id-4f78c588c80d42e0b4f52e765dc76ff2" target="id-a222a0f6a6804944b188e32ee5caa9a5">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="516" y="48" />
+          <bendpoint x="516" y="204" />
+          <bendpoint x="468" y="204" />
+        </connection>
+        <connection identifier="id-f64ce7c8aac347b2856dbceba42237d6" relationshipRef="id-69eb864f56df4d928f8abc3f7ab4e834" xsi:type="Relationship" source="id-d0a1079102c14d26901ace75bd379281" target="id-3fd6725d68f4476884cf44f9fbf09794">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-851cf4ffa1eb436983a9e47a6f5157b5" relationshipRef="id-0849f31d6d7d4f7eb1e484d7437e5cd7" xsi:type="Relationship" source="id-d0a1079102c14d26901ace75bd379281" target="id-a222a0f6a6804944b188e32ee5caa9a5">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="480" y="132" />
+          <bendpoint x="480" y="192" />
+        </connection>
+        <connection identifier="id-b1f2f750233f4717b5bbedcf413e3c61" relationshipRef="id-c0f84a8e4c8d496580a68cac4823c58c" xsi:type="Relationship" source="id-a222a0f6a6804944b188e32ee5caa9a5" target="id-3fd6725d68f4476884cf44f9fbf09794">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-e11b8af91143439bbb54ff0be650fb79" relationshipRef="id-c53c42ba0a4f437f9cb76a4c1a701816" xsi:type="Relationship" source="id-8e77730d5e7147bea761ee18da71358c" target="id-a222a0f6a6804944b188e32ee5caa9a5">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="528" y="216" />
+        </connection>
+      </view>
       <view identifier="id-e2a326c7d36751af9076a32dabe0e9cd" xsi:type="Diagram">
         <name xml:lang="en">0-Person Identity Administration — Feature Landscape</name>
         <documentation xml:lang="en">Context and immediate governed children only. Standing remains in element Properties. Navigation and proximity create no semantic relationships.</documentation>
-        <node identifier="id-a17cde2ab18f527f9103f8c50e32958f" elementRef="id-29e0bf94882559a7b6ed9d092303a560" xsi:type="Element" x="40" y="40" w="360" h="148">
+        <node identifier="id-a17cde2ab18f527f9103f8c50e32958f" elementRef="id-29e0bf94882559a7b6ed9d092303a560" xsi:type="Element" x="12" y="12" w="192" h="493">
           <style>
-            <fillColor r="255" g="255" b="181" a="100" />
+            <fillColor r="245" g="222" b="170" a="100" />
             <lineColor r="92" g="92" b="92" a="100" />
             <font name="Sans" size="12">
               <color r="0" g="0" b="0" />
             </font>
           </style>
         </node>
-        <node identifier="id-ce6796499a7e5e128aef2c2b31b44df9" elementRef="id-d9272acdc675539cb441d2db9c5ad6e6" xsi:type="Element" x="40" y="230" w="360" h="148">
+        <node identifier="id-ce6796499a7e5e128aef2c2b31b44df9" elementRef="id-d9272acdc675539cb441d2db9c5ad6e6" xsi:type="Element" x="241" y="348" w="240" h="73">
           <style>
-            <fillColor r="255" g="255" b="181" a="100" />
+            <fillColor r="245" g="222" b="170" a="100" />
             <lineColor r="92" g="92" b="92" a="100" />
-            <font name="Sans" size="12">
+            <font name="Sans" size="9">
               <color r="0" g="0" b="0" />
             </font>
           </style>
         </node>
-        <node identifier="id-af6828d7edce5c05b5819b597293a981" elementRef="id-6f0bfe5e814c5734a7c530f2b7515666" xsi:type="Element" x="450" y="230" w="360" h="148">
+        <node identifier="id-af6828d7edce5c05b5819b597293a981" elementRef="id-6f0bfe5e814c5734a7c530f2b7515666" xsi:type="Element" x="241" y="180" w="240" h="73">
           <style>
-            <fillColor r="255" g="255" b="181" a="100" />
+            <fillColor r="245" g="222" b="170" a="100" />
             <lineColor r="92" g="92" b="92" a="100" />
-            <font name="Sans" size="12">
+            <font name="Sans" size="9">
               <color r="0" g="0" b="0" />
             </font>
           </style>
         </node>
-        <node identifier="id-74781db5bf4e5fe38af2da1bf742f003" elementRef="id-f1e1928516765880955f638a7fec8c35" xsi:type="Element" x="860" y="230" w="360" h="148">
+        <node identifier="id-74781db5bf4e5fe38af2da1bf742f003" elementRef="id-f1e1928516765880955f638a7fec8c35" xsi:type="Element" x="241" y="96" w="240" h="76">
           <style>
-            <fillColor r="255" g="255" b="181" a="100" />
+            <fillColor r="245" g="222" b="170" a="100" />
             <lineColor r="92" g="92" b="92" a="100" />
-            <font name="Sans" size="12">
+            <font name="Sans" size="9">
               <color r="0" g="0" b="0" />
             </font>
           </style>
         </node>
-        <node identifier="id-8459b669dc085cabbcfca4ede19c444e" elementRef="id-28d7815137a05a2aab6d1684011dbbde" xsi:type="Element" x="1270" y="230" w="360" h="148">
+        <node identifier="id-8459b669dc085cabbcfca4ede19c444e" elementRef="id-28d7815137a05a2aab6d1684011dbbde" xsi:type="Element" x="241" y="429" w="240" h="76">
           <style>
-            <fillColor r="255" g="255" b="181" a="100" />
+            <fillColor r="245" g="222" b="170" a="100" />
             <lineColor r="92" g="92" b="92" a="100" />
-            <font name="Sans" size="12">
+            <font name="Sans" size="9">
               <color r="0" g="0" b="0" />
             </font>
           </style>
         </node>
-        <node identifier="id-0369c1bef15255da8cf693f89b7295e7" elementRef="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Element" x="40" y="420" w="360" h="148">
+        <node identifier="id-0369c1bef15255da8cf693f89b7295e7" elementRef="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Element" x="240" y="264" w="240" h="73">
           <style>
-            <fillColor r="255" g="222" b="150" a="100" />
+            <fillColor r="245" g="222" b="170" a="100" />
             <lineColor r="92" g="92" b="92" a="100" />
-            <font name="Sans" size="12">
+            <font name="Sans" size="9">
               <color r="0" g="0" b="0" />
             </font>
           </style>
         </node>
+        <node identifier="id-073fae7e65554293bed1a47ff6e535ee" elementRef="id-727a264026584f80bc3304ff8383dc92" xsi:type="Element" x="241" y="12" w="240" h="73">
+          <style>
+            <fillColor r="245" g="222" b="170" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <connection identifier="id-66c57297bd4f4d898a53fe3d4bcc6b13" relationshipRef="id-36b2aa8ad58149fdb20d44c1c16dd64c" xsi:type="Relationship" source="id-a17cde2ab18f527f9103f8c50e32958f" target="id-af6828d7edce5c05b5819b597293a981">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-3242d1af0d884c9ab36adbe7f0feb936" relationshipRef="id-3c3d723683c147a4a902b4d35a2af018" xsi:type="Relationship" source="id-a17cde2ab18f527f9103f8c50e32958f" target="id-0369c1bef15255da8cf693f89b7295e7">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-fa56f00e1759495d82b8c40c00792ab9" relationshipRef="id-daf437bb32114daa8a6b9462cb9b4fb2" xsi:type="Relationship" source="id-a17cde2ab18f527f9103f8c50e32958f" target="id-74781db5bf4e5fe38af2da1bf742f003">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-df01f77a7fa245d89bc3a6992ee3d829" relationshipRef="id-f9b270950f0241108b68f1c3daa50019" xsi:type="Relationship" source="id-a17cde2ab18f527f9103f8c50e32958f" target="id-8459b669dc085cabbcfca4ede19c444e">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-7239b62978b141519ddde72feb8b40fa" relationshipRef="id-bff76286f8994d20aa1b8aef166acebd" xsi:type="Relationship" source="id-a17cde2ab18f527f9103f8c50e32958f" target="id-073fae7e65554293bed1a47ff6e535ee">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-27509aa6cf6b40f6b3bdfd76f9ac949c" relationshipRef="id-73ecd7a39407404ba8e2bb663efbdc19" xsi:type="Relationship" source="id-a17cde2ab18f527f9103f8c50e32958f" target="id-ce6796499a7e5e128aef2c2b31b44df9">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
       </view>
       <view identifier="id-9cfe6f83b1c05716a52003e90a4ecd7d" xsi:type="Diagram">
         <name xml:lang="en">Person Identity Administration — Behaviour 1</name>
@@ -258995,6 +259230,62 @@ Select this View in the model tree and open its Documentation. The frozen source
             </font>
           </style>
         </node>
+        <connection identifier="id-62f38f2147d54605be108818ddb65a25" relationshipRef="id-f7deddb1eb2751aa96ba6a490b18003e" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-1ae6d706a2d85b9eac70a31e969c76d8">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-3709d706394f4695b9886cb76038762a" relationshipRef="id-be1babf8397d51b3878b271f8775d711" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-4b3c4cbc947a555b914c6a0bc31f4b93">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-39efc4286edf40609e42ded6b79737c6" relationshipRef="id-c099301d131c594580c840a6363997a3" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-5bfc1365cdde59799f741698323c415b">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-0d6cbbef60984cad9624700a2b53c2da" relationshipRef="id-c97120325e3e5a1b99a11eeec1e5c89e" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-a2eee58a65e25eb0b7dfaa0186c6d11c">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-6ec0b7e2d8964fe287b08e19e3af6cd7" relationshipRef="id-3fc7839fceda5f4193e58dd14415a0ab" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-92c2544bb75954fd8dfac150373bf8b5">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-587eff9341f64a99b0581ecc74030c17" relationshipRef="id-b297858a4ab352cb942b88df159109ed" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-82338ac3935152f0866281add52432b0">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-b45f6090065040c5b2cf8a39ac28a9dc" relationshipRef="id-05fb0b3f26d8545a8caf8fcb8a92b2e3" xsi:type="Relationship" source="id-84aa3ddd9d375b48981e4d7e4b8d2d7e" target="id-302c6b450f875419b7ea4ea3dee8d0d0">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
       </view>
       <view identifier="id-5cf520b210f1547a93961bf193292a6b" xsi:type="Diagram">
         <name xml:lang="en">Research Information Curation — Behaviour 1</name>

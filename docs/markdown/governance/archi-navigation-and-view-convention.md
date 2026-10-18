@@ -20,6 +20,16 @@ unresolved architecture. This convention is consistent with the
 [truthful traceability rule](../04-information-architecture/traceability/domain03-traceability.md#11-traceability-principles).
 Folder placement supplies no missing architecture.
 
+The later [Increment 2B ingestion/publication contract](archimate-ingestion-publication-semantics.md)
+adds submission recognition, accepted authored-View preservation and a distinct
+[deterministic Containment View](archimate-ingestion-publication-semantics.md#deterministic-containment-view)
+archetype for 1–20 direct Composition children. Its universal
+`Name == displayName` rule supersedes historical baseline instructions below to
+leave a different native Name unchanged in future governed results. Historical
+navigation/layout examples and artefacts remain intact; their migration is not
+authorised by 2B. Generated Views and accepted authored Views retain separate
+preservation obligations; deterministic publication does not discard the latter.
+
 ## Three independent structures
 
 | Structure | Meaning | Source of authority |

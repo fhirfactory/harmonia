@@ -1,0 +1,20 @@
+{
+  "reason": "Explicit Increment 2B governance adoption; reviewed naming/navigation amendments and new contract only. No semantic capture, historical source, recovery or identity-establishment pin changed.",
+  "changes": [
+    {
+      "document": "docs/markdown/governance/canonical-identity-and-naming.md",
+      "before_sha256": "ffdc174da7c13638c7c4f08cc06ce8b24e97df62fa9ae37344c4c7f8619b1cbb",
+      "after_sha256": "1b3fb89ada3cf23c008025d9c225b1a162941a531b0467207f3cc51bcff5bf7a"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "before_sha256": "e4e2d832a7416a2dc3481dece5e599785160be9bc0c739207688a8970748a558",
+      "after_sha256": "f882e9ced3e3fd70d68e2299fecb4cae88ca50e4e4069388a47b76ba4e02577d"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "before_sha256": null,
+      "after_sha256": "a8cea150cc76aab3b6d3371ea34229398266e603784706d478c444fabf45ec98"
+    }
+  ]
+}

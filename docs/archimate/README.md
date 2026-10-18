@@ -24,6 +24,12 @@ Publication: **Harmonia RAD → framework → processing/publishing → exchange
 The future return flow is **Archi → exchange/ingest → processing/ingestion →
 comparison/reconciliation → Harmonia RAD**. Increment 2 is not implemented here.
 
+The [governed Ingestion Change Review](../markdown/governance/archimate-ingestion-change-review.md)
+formalises the return flow's review/adjudication and executable reconciliation
+contract. Its [run layout](processing/ingestion/README.md#run-layout) retains the
+review and detection, reconciliation and validation evidence. Increment 2
+execution machinery remains future work; this contract approves no blind-test change.
+
 The governed [Markdown RAD](../markdown/) owns the architecture. Canonical identity
 and governed names belong to governed architectural resources and elements.
 The framework, processing files and exchange packages establish no competing

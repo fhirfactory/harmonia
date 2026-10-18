@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "generated_rads_outputs": {
+    "docs/markdown/governance/baseline/business-capabilities.md": {
+      "unchanged": true,
+      "sha256": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144"
+    },
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": {
+      "unchanged": true,
+      "sha256": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1"
+    },
+    "docs/markdown/governance/baseline/discrepancies.json": {
+      "unchanged": true,
+      "sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa"
+    },
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": {
+      "unchanged": true,
+      "sha256": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d"
+    },
+    "docs/markdown/governance/baseline/features.md": {
+      "unchanged": true,
+      "sha256": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa"
+    },
+    "docs/markdown/governance/baseline/functions.md": {
+      "unchanged": true,
+      "sha256": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e"
+    },
+    "docs/markdown/governance/baseline/motivation.md": {
+      "unchanged": true,
+      "sha256": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76"
+    },
+    "docs/markdown/governance/baseline/processes.md": {
+      "unchanged": true,
+      "sha256": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef"
+    },
+    "docs/markdown/governance/baseline/relationships.md": {
+      "unchanged": true,
+      "sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c"
+    },
+    "docs/markdown/governance/baseline/services.md": {
+      "unchanged": true,
+      "sha256": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59"
+    }
+  }
+}

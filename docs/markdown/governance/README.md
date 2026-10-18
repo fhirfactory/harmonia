@@ -45,6 +45,21 @@ The [RAD → ArchiMate model mapping](rad-archimate-model-mapping.md),
 common model's progressive publication. Their unresolved findings and candidate
 mapping decisions remain explicit; installation does not authorise later slices.
 
+The [ArchiMate Ingestion Change Review contract](archimate-ingestion-change-review.md)
+governs independently adjudicable incoming changes, Solution Architect decisions,
+executable reconciliation instructions and retained processing evidence. Its
+[governed template](templates/archimate-ingestion-change-review-template.md)
+supports review preparation; it accepts no incoming architecture. Reconciliation
+machinery and the blind-test proposals remain outside this documentation increment.
+
+The [Increment 2B ingestion/publication semantics](archimate-ingestion-publication-semantics.md)
+govern native Name/displayName equality, authorised qualifiers, semantic naming
+context, machine metadata, relationship recognition/reuse, source-based homes,
+accepted authored Views and the deterministic 1–20-child Containment View.
+CT3/Feature Composition, general Realization/context inference and presentation
+beyond 20 children remain explicitly unresolved. This contract implements no
+reconciliation or layout engine and accepts no blind-test proposal.
+
 The [Governed Architecture Identity model](architecture-identity/model.md),
 [identity inventory and collision report](architecture-identity/inventory.md)
 and [common identity register contract](architecture-identity/registry.schema.json)

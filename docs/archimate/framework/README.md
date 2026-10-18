@@ -45,6 +45,11 @@ restricted to `.junie/reports/` or `/tmp` by the existing Increment 1 protection
 The new `processing/ingestion/` boundary reserves future working state and evidence;
 this task adds no workflow or new comparator normalisation.
 
+The subsequently governed [Ingestion Change Review contract](../../markdown/governance/archimate-ingestion-change-review.md)
+and [run convention](../processing/ingestion/README.md#run-layout) define review
+records and executable authorisation. They add no comparator or reconciliation
+implementation and do not relax the Increment 1 diagnostic output restriction.
+
 `recovery-check` replays the pinned v0.2 snapshot with its 1.0.5 release fixture.
 Earlier report renderers and `legacy-all` are historical replay machinery; they
 require their corresponding historical release/verification fixtures and do not

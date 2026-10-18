@@ -26,7 +26,7 @@
     "docs/markdown/governance/architecture-release-policy.md": "904b333e0d44c6366b21139365a25c3862fd35f473682316db7ad76b102ac406",
     "docs/markdown/governance/rad-archimate-model-mapping.md": "5e854029d4242000e00855032889c1fdca9b96c21ae335b500fd7dd66c951986",
     "docs/markdown/governance/rad-archimate-mapping-catalogue.md": "779a9f069961c5f46d644603f243f895519ef71e84b4234539b1dee7719b4ad4",
-    "docs/markdown/governance/archi-navigation-and-view-convention.md": "e4e2d832a7416a2dc3481dece5e599785160be9bc0c739207688a8970748a558",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": "f882e9ced3e3fd70d68e2299fecb4cae88ca50e4e4069388a47b76ba4e02577d",
     "docs/markdown/governance/architecture-identity/model.md": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
     "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": "b9b1d541db20390103e100280be523ecf810b7fc0827f74fb02e3aa2f47e33f6",
     "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md": "2eadaa3191cea51d9aade7acd99d8a8ee0a2cf114d847a3e87790476d531563f",
@@ -34,7 +34,8 @@
     "docs/markdown/01-motivation/principles/reclassified-principles.md": "eeb1a268f017faee4066b4195f1d0a151e021cb2c08bbed4d04556569c4165e7",
     "docs/markdown/governance/baseline/README.md": "c2f62542ca3b0cdad8bb2991343dfe744e6f6ee083ef72d2b47864aafda203b6",
     "docs/markdown/governance/baseline/documentation-classification.json": "60ef83b36301cda9c44655e6985fd2bffe2d89d978c2eff8116db9c1307bf909",
-    "docs/markdown/governance/canonical-identity-and-naming.md": "ffdc174da7c13638c7c4f08cc06ce8b24e97df62fa9ae37344c4c7f8619b1cbb"
+    "docs/markdown/governance/canonical-identity-and-naming.md": "1b3fb89ada3cf23c008025d9c225b1a162941a531b0467207f3cc51bcff5bf7a",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "a8cea150cc76aab3b6d3371ea34229398266e603784706d478c444fabf45ec98"
   },
   "canonical_identity_establishment": {
     "source_history": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7",

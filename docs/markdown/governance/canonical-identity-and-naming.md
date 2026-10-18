@@ -47,9 +47,18 @@ Names are governed resource attributes; none establishes architectural identity.
 
 | Property | Meaning |
 | --- | --- |
-| `displayName` | Human-facing presentation name, with established formal qualification where applicable. Capability display names carry `[CT1]`, `[CT2]` or `[CT3]`; Features carry `[Feature]`. Existing native Names and diagram labels remain preserved separately. |
+| `displayName` | Human-facing presentation name, with established formal qualification where applicable. Capability display names carry `[CT1]`, `[CT2]` or `[CT3]`; Features carry `[Feature]`. Every governed element's native ArchiMate `Name` SHALL equal this value. |
 | `friendlyName` | Developer-friendly qualified name. Every component is whitespace-free UpperCamelCase/PascalCase and omits formal architectural type/tier qualifiers. Only genuine governed context supplies `.` qualification. |
 | `canonicalName` | The same PascalCase components and context, with formal governed type/tier qualification on each component. |
+
+The universal published-name invariant is `ArchiMate Name == displayName`;
+qualification applies only where governed. This supersedes the earlier provision
+for preserving a different native Name in the governed result. Historical Names,
+diagram labels and submitted evidence remain preserved as evidence; existing
+discrepancies require separately authorised migration, not silent repair.
+[Increment 2B](archimate-ingestion-publication-semantics.md#recognition-classification-and-published-names)
+governs authorised qualifier recognition, compatible native types and Change
+Review for unknown or ambiguous qualifiers.
 
 For example, the naming forms may be:
 
@@ -129,6 +138,15 @@ no allocation step. Existing source capture, ancestry, Property, schema, alias,
 binding, recovery and deterministic publication checks continue to apply. The
 architecture release policy governs the accepted patch transition; publication
 does not increment release authority. The accepted 1.0.6 publication remains intact.
+
+For newly authored Archi elements, absence of machine-governed metadata is not by
+itself an architectural defect. After acceptance and resolution of semantic
+inputs, authorised reconciliation may supply identity and naming metadata under
+this contract. This is distinct from the completed one-time establishment above
+and from loss or mutation of established metadata. Publication still allocates
+no identity. [Increment 2B](archimate-ingestion-publication-semantics.md#author-supplied-information-and-machine-governed-metadata)
+governs that boundary and semantic naming context, including elements without
+containment; unresolved inputs cannot be supplied from folders or Views.
 
 The established publication still requires a **real no-edit Archi 5.10 import and
 complete-model export**, followed by the Increment 1 comparator. Canonical ID
