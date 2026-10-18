@@ -1,0 +1,178 @@
+--- /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.7/canonical-identity-establishment.md
++++ /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.8/publication-1.0.8.md
+@@ -1,62 +1,50 @@
+ <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+ 
+-# Canonical identity establishment — Architecture Release 1.0.7
++# Workspace publication — Architecture Release 1.0.8
+ 
+-Resource-owned identity and governed names are established for **1299 elements**.
+-Starting release: **1.0.6**. Resulting release: **1.0.7**.
+-The [contract](../../../markdown/governance/canonical-identity-and-naming.md) governs the metadata.
+-The Solution Architect's real no-edit Archi 5.10 proof is **AWAITING ARCHI EXPORT**.
+-No architecture reconciliation or presentation replay has been implemented.
++The Solution Architect authorised the policy-defined 1.0.7 → 1.0.8 increment for
++workspace structure and tooling. Semantic, identity, relationship and presentation
++deltas are **NONE**. The exact XML byte difference is one model-level release value.
++All 1,299 elements, governed names, Properties, 852 relationships, 14 EC bindings,
++1,196 Views, 3,915 visual objects, 1,449 connections and 2,922 bendpoints are retained.
++The comparison restores that single release value in memory and requires exact
++document and byte equality. It excludes no architecture or presentation content
++and changes no transport comparator or fidelity classification.
+ 
+-| Measurement | Result |
+-| --- | ---: |
+-| Allocated once, UUIDv4 via Python `uuid.uuid4().hex` | 1299 |
+-| Valid UUID32 Canonical IDs | 1299 |
+-| Missing / malformed / duplicate / multiple claims | 0 / 0 / 0 / 0 |
+-| Persisted and validated display, friendly and canonical names | 1299 each |
++Release 1.0.7 XML SHA-256: `def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb`.
++Release 1.0.8 XML SHA-256: `504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a`.
+ 
+-The existing RADS `architecture.json` and `motivation.json` resources own literal IDs
+-and names, including retained historical resources. The source history is complete
+-resource evidence, not a separate identity register. Ordinary publication allocates
+-zero IDs and rejects missing, mutated, conflicting or drifted metadata.
+-Legacy short names, structural paths, name aliases and identifier aliases remain
+-in their original channels. All 14 EC bindings remain historical identifier aliases;
+-Exchange representation IDs remain distinct. Native Capability and Harmonia Feature
+-remain separate type concepts, independent of identity.
+-
+-Exact removal of only the new Properties and restoration of prior model-release
+-metadata produces the unchanged accepted architecture and presentation signature.
+-Element representations, relationships/endpoints, Views, nodes, connections,
+-Documentation, labels, geometry and styles are preserved. The accepted 1.0.6 XML,
+-verification, reports, recovery fixtures and Increment 1 evidence remain intact.
+-No unresolved historical crosswalk or Feature assertion was promoted to approval.
+-Across the retained populations, 213 display names and
+-209 friendly/canonical paths have repeated values. Their
+-separate instances keep distinct IDs and standing; names do not establish the
+-missing historical crosswalks. No artificial context was added to make them unique.
++The immutable 1.0.7 real Archi 5.10 proof remains the empirical Canonical
++Identity/Governed Naming acceptance evidence. No repeat Archi run is required
++solely for relocation; no new empirical run or whole-document fidelity is claimed.
++Its earlier preparation-time reports retain their original pending wording.
++Current generated validation retains that historical preparation status field;
++the completed empirical conclusion is in the preserved acceptance evidence.
+ 
+ | Check | Result | Evidence |
+ | --- | --- | --- |
+-| source | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/source-validation.json` |
+-| publication | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/publication.log.gz` |
+-| publication_tests | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/publication-tests.log.gz` |
+-| identity_release_tests | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/identity-release-tests.log.gz` |
+-| architecture_tests | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/established-architecture-tests.log.gz` |
+-| recovery | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/recovery.log.gz` |
+-| diagnostic | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/established-diagnostic.json` |
+-| preservation | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/final-preservation.json` |
+-| core_regeneration | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/core-regeneration.log.gz` |
+-| focused_identity_tests | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/focused-identity-tests.log.gz` |
+-| roundtrip_tests | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/roundtrip-tests.log.gz` |
+-| complete_regeneration | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/complete-regeneration.log.gz` |
+-| alias_validation | PASS | `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/alias-validation.json` |
++| publication_tests | PASS | `docs/archimate/processing/publishing/1.0.8/publication-tests-final-layout.log` |
++| identity_release_tests | PASS | `docs/archimate/processing/publishing/1.0.8/identity-release-tests-final-layout.log` |
++| architecture_tests | PASS | `docs/archimate/processing/publishing/1.0.8/architecture-tests-final-layout.log` |
++| baseline_107_reproduction | PASS | `docs/archimate/processing/publishing/1.0.8/release-1.0.7-independent-retry.log` |
++| relocated_107_generation | PASS | `docs/archimate/processing/publishing/1.0.8/final-layout-107-reproduction.log` |
++| preservation | PASS | `docs/archimate/processing/publishing/1.0.8/preservation.json` |
++| migration_comparison | PASS | `docs/archimate/processing/publishing/1.0.8/migration_comparison-final.log` |
++| source_identity | PASS | `docs/archimate/processing/publishing/1.0.8/source_identity-final.log` |
++| ec_bindings | PASS | `docs/archimate/processing/publishing/1.0.8/ec_bindings-final.log` |
++| identity_registry | PASS | `docs/archimate/processing/publishing/1.0.8/identity_registry-final.log` |
++| release | PASS | `docs/archimate/processing/publishing/1.0.8/release-final.log` |
++| historical_recovery | PASS | `docs/archimate/processing/publishing/1.0.8/historical_recovery-final.log` |
++| publication_check | PASS | `docs/archimate/processing/publishing/1.0.8/publication_check-final.log` |
+ 
+-Generated output set (14 files):
++The complete generated set is 14 files, reproduced independently byte-for-byte by
++`make baseline-independent`. That separate check compares the saved set to new
++process output; a generated report cannot certify its own byte comparison.
+ 
+-- `docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-1.0.7.xml`
+-- `docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-archi-guide.md`
+-- `docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-establishment.md`
+-- `docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-validation.json`
++- `docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml`
++- `docs/archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md`
++- `docs/archimate/processing/publishing/1.0.8/publication-1.0.8.md`
++- `docs/archimate/processing/publishing/1.0.8/publication-validation-1.0.8.json`
+ - `docs/markdown/governance/baseline/business-capabilities.md`
+ - `docs/markdown/governance/baseline/business-enabling-capabilities.md`
+ - `docs/markdown/governance/baseline/discrepancies.json`
+@@ -68,7 +56,14 @@
+ - `docs/markdown/governance/baseline/relationships.md`
+ - `docs/markdown/governance/baseline/services.md`
+ 
+-Publication SHA-256: `def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb`.
+-See the [current Archi handoff](canonical-identity-archi-guide.md) and
+-[complete establishment report](../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment.md).
+-Increment 2 remains gated by the actual no-edit export and comparator review.
++The [framework](../../../framework/README.md) operates on governed RADS resources
++and projection metadata. Publications live in `exchange/publish`; incoming exports
++belong in `exchange/ingest` and grant no automatic architectural authority.
++Historical locators and evidence retain their original bytes. The location map
++provides current navigation without rewriting historical meaning.
++
++See the [migration report](../../../../../.junie/reports/2026-10-18-archimate-workspace-restructure.md),
++[1.0.7 empirical acceptance](../../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment.md)
++and [inspection guide](archi-inspection-1.0.8.md).
++Increment 2 has not begun. Release 1.0.8 is eligible as its starting baseline only
++after successful migration validation and Solution Architect acceptance.
+--- /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.7/canonical-identity-archi-guide.md
++++ /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md
+@@ -1,39 +1,20 @@
+ <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+ 
+-# Solution Architect — Archi 5.10 no-edit identity transport proof
++# Solution Architect — Release 1.0.8 publication
+ 
+-Status: **AWAITING ARCHI EXPORT** for Architecture Release **1.0.7**.
++Import `docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml`
++using Open Exchange import in Archi 5.10.0 when needed.
++SHA-256: `504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a`.
+ 
+-1. In **Archi 5.10.0**, import the Open Exchange model
+-   `docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-1.0.7.xml`
+-   as a new model. Its SHA-256 must be `def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb`.
+-2. Make **NO edits**, including names, Properties, folders and Views.
+-3. Export the **complete model** in Open Exchange format, including all elements,
+-   relationships, Properties and Views, to:
+-   `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml`.
+-   Include organisation information, use English (`en`) import locale/export
+-   language, and retain the raw exported bytes.
+-4. Record the actual execution, Archi version and export profile as evidence.
+-   From the repository root run the existing Increment 1 comparator:
++This is the unchanged accepted 1.0.7 semantic and presentation architecture with
++the model-level release value updated to 1.0.8. Existing navigation and all View
++geometry, bendpoints and identities are preserved. No repeat no-edit Archi run is
++required solely for the workspace move. The preserved 1.0.7 empirical evidence
++establishes Canonical Identity and Governed Naming transport; characterised
++whole-document transport transformations and fidelity limitations remain.
+ 
+-```bash
+-python3 docs/archimate/capability-architecture/tools/diagnose_roundtrip.py compare \
+-  --published docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-1.0.7.xml \
+-  --incoming .junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml \
+-  --output .junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-fidelity.json
+-```
+-
+-Review `contract_properties`: all published owners must preserve exact values,
+-language, multiplicity and owning-element association for `canonicalId`,
+-`displayName`, `friendlyName`, `canonicalName` and applicable `harmoniaType`.
+-All element and relationship IDs, native types and relationship source/target
+-attributes must survive. Retained EC aliases must stay on the same elements.
+-The companion `archi-proof-manifest.json` pins the input and records this gate.
+-
+-Known evidence-text transformations, organisation identity/order loss, definition
+-language loss, View Documentation newline loss, style materialisation and connection
+-ordering may remain visible. Comparator exit code 2 reports differences requiring
+-review; it does not by itself reject the bounded identity/naming transport claim.
+-Do not broaden normalisation to hide differences or claim whole-model losslessness.
+-Self-comparison and automated regeneration do not prove a real Archi execution.
+-Do not proceed into Increment 2 until the Solution Architect has reviewed that proof.
++Use the [current framework commands](../../../framework/README.md) for diagnostics.
++Future exports land in `docs/archimate/exchange/ingest/`. They are change input,
++not replacement architectural authority. The Solution Architect must review and
++reconcile proposed changes before their acceptance into the Harmonia RAD.
++Increment 2 comparison/reconciliation and presentation replay remain future work.

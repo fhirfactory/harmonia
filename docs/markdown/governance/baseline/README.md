@@ -29,8 +29,8 @@ remains the only current-release authority.
 - [Motivation correspondence](motivation.md), with definitions linked to their maintained sources
 - [Coverage and representation boundaries](coverage.md)
 - [Discrepancies and human review](discrepancies.json)
-- [Current identity-establishment Archi guide](../../../archimate/capability-architecture/synchronised-baseline/canonical-identity-archi-guide.md)
-- [Historical 1.0.6 inspection guide](../../../archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md)
+- [Current publication inspection guide](../../../archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md)
+- [Historical 1.0.6 inspection guide](../../../archimate/processing/publishing/1.0.6/archi-inspection-guide.md)
 
 Each record's concise governed definition appears first, followed by verbatim
 explanation whose continued applicability is established by reconciled source
@@ -95,15 +95,15 @@ Accepted layouts, coordinates, bendpoints and navigation may remain projection
 metadata where Markdown has no appropriate representation. LaTeX publication is
 strictly `Markdown RAD -> LaTeX RAD -> publication output`, with no normal
 reverse-authoring path from LaTeX/PDF. Historical LaTeX recovery is bounded
-migration work. The [collaboration lifecycle](../../../archimate/capability-architecture/README.md#authority-and-collaboration-lifecycle)
+migration work. The [collaboration lifecycle](../../../archimate/README.md)
 documents the full review, reconciliation, validation and next-release sequence.
 
 From the repository root:
 
 ```bash
-python3 docs/archimate/capability-architecture/tools/synchronise_baseline.py
-python3 docs/archimate/capability-architecture/tools/synchronise_baseline.py --check
-make -C docs/archimate/capability-architecture all
+python3 docs/archimate/framework/tools/synchronise_baseline.py
+python3 docs/archimate/framework/tools/synchronise_baseline.py --check
+make -C docs/archimate/framework all
 ```
 
 Generation reads the current release and never increments it. The separate
@@ -118,4 +118,13 @@ evidence. Ordinary generation validates these fields and never allocates IDs.
 The separate one-time `tools/governed_metadata.py bootstrap --establish-for 1.0.7`
 operation has already executed; reruns refuse reallocation. The accepted 1.0.6 XML
 and reports remain historical artefacts. The current publication is
-`Harmonia-Architecture-1.0.7.xml`; its real no-edit Archi 5.10 proof is pending.
+`docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml`.
+The immutable 1.0.7 publication remains alongside it, with empirically accepted
+Canonical Identity/Governed Naming transport through Archi 5.10. See the
+[acceptance evidence](../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment.md).
+Release 1.0.8 changes workspace structure, tooling paths and release metadata only;
+its semantic and presentation architecture must remain identical to 1.0.7.
+The [workspace boundaries](../../../archimate/README.md) separate reusable framework, publishing/ingestion processing,
+published representations and incoming change inputs. Frozen locators remain
+verbatim and are resolved by an explicit historical-location map. Increment 2
+comparison/reconciliation is future work and is not implemented by this migration.

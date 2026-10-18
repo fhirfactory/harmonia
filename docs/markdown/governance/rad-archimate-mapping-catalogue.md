@@ -107,7 +107,7 @@ Sources are relative to `docs/markdown`; every linked section retains its actual
 | CDG/K9/K10 etc., checklists, tests and completion dashboards | None as architecture elements | No fabricated migration/support edges | V | Source gap/review documents | Coverage/review navigation | Documentation only — unresolved finding is not automatically native Gap/Assessment/Requirement |
 | Rejected runtime value streams, retired write-behind meanings, unsupported CT1/CT2→FT | None in current model | No current semantic edge | G | Explicit source rejections/supersession | Historical source navigation | Not represented — retain history; do not resurrect superseded meanings |
 | Scratchpad candidate publications, legacy docs and source implementation not reconciled into RADS | None as authority for current model | No inferred identity/edge | G | AGENTS and Completion Plan §5–6 | Source review | Not represented — navigation/discovery input until separately reviewed |
-| Generated diagrams, folders and visual grouping | Exchange View / organisation / visual objects | elementRef / relationshipRef, never semantic ownership | V | [publication tools](../../archimate/capability-architecture/README.md) | All specified projections | Derived but deterministic — projection of existing semantics, fixed separate visual IDs |
+| Generated diagrams, folders and visual grouping | Exchange View / organisation / visual objects | elementRef / relationshipRef, never semantic ownership | V | [publication tools](../../archimate/framework/README.md) | All specified projections | Derived but deterministic — projection of existing semantics, fixed separate visual IDs |
 
 ## Instance inventory and completeness boundary
 

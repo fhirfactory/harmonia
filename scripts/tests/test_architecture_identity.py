@@ -43,7 +43,7 @@ class ArchitectureIdentityTests(unittest.TestCase):
         self.assertTrue(any(fragment in e for e in errors), errors)
 
     def test_actual_registry_adopts_only_14_ecs_and_validation_does_not_publish(self):
-        path = identity.ROOT / "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml"
+        path = identity.ROOT / "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml"
         before = path.read_bytes()
         data = identity.read_json(identity.DIRECTORY / "registry.json")
         self.assertEqual({f"EC-{n:02d}" for n in range(1, 15)},
@@ -55,7 +55,7 @@ class ArchitectureIdentityTests(unittest.TestCase):
     def test_retained_ec_uses_exact_locked_uuid_instead_of_rederivation(self):
         r = record("EC-01")
         r["origin"] = "retained"
-        manifest = identity.read_json(identity.ROOT / "docs/archimate/capability-architecture/documentation-map.json")
+        manifest = identity.read_json(identity.ROOT / "docs/archimate/framework/documentation-map.json")
         exact = next(m["element_identifier"] for m in manifest["matches"] if m["reference_id"] == "EC-01")
         r["archimate"] = dict(mode="locked", semantic_id=exact)
         data = registry(r)
@@ -193,7 +193,7 @@ class ArchitectureIdentityTests(unittest.TestCase):
 class GovernedAdoptionTests(unittest.TestCase):
     def setUp(self):
         self.data = identity.read_json(identity.DIRECTORY / "registry.json")
-        self.xml = identity.ROOT / "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml"
+        self.xml = identity.ROOT / "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml"
         self.historical = identity.replay_adoption_publication()
 
     def test_complete_chain_preserves_previous_publication_and_release(self):

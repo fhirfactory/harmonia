@@ -1,0 +1,204 @@
+test_business_layout_rejects_flattening_and_overlap (test_baseline.BaselineTests.test_business_layout_rejects_flattening_and_overlap) ... ok
+test_candidate_pending_and_historical_states_are_not_promoted (test_baseline.BaselineTests.test_candidate_pending_and_historical_states_are_not_promoted) ... ok
+test_capability_classification_is_presentation_and_names_stay_governed (test_baseline.BaselineTests.test_capability_classification_is_presentation_and_names_stay_governed) ... ok
+test_current_axioms_reuse_all_five_existing_semantic_ids (test_baseline.BaselineTests.test_current_axioms_reuse_all_five_existing_semantic_ids) ... ok
+test_documentation_definition_overview_intent_boundary_and_history_order (test_baseline.BaselineTests.test_documentation_definition_overview_intent_boundary_and_history_order) ... ok
+test_documentation_manifest_cannot_promote_unresolved_or_changed_semantics (test_baseline.BaselineTests.test_documentation_manifest_cannot_promote_unresolved_or_changed_semantics) ... ok
+test_duplicate_capability_or_missing_semantic_element_is_invalid (test_baseline.BaselineTests.test_duplicate_capability_or_missing_semantic_element_is_invalid) ... ok
+test_earlier_capture_has_exact_key_continuity_and_human_review_notes_survive (test_baseline.BaselineTests.test_earlier_capture_has_exact_key_continuity_and_human_review_notes_survive) ... ok
+test_empty_domain_folders_and_numeric_view_order_are_enforced (test_baseline.BaselineTests.test_empty_domain_folders_and_numeric_view_order_are_enforced) ... ok
+test_every_capability_has_one_strategy_home_and_context_folders_are_only_navigation (test_baseline.BaselineTests.test_every_capability_has_one_strategy_home_and_context_folders_are_only_navigation) ... ok
+test_every_reclassified_field_remains_verbatim_and_status_is_independent (test_baseline.BaselineTests.test_every_reclassified_field_remains_verbatim_and_status_is_independent) ... ok
+test_existing_property_status_or_alias_loss_is_invalid (test_baseline.BaselineTests.test_existing_property_status_or_alias_loss_is_invalid) ... ok
+test_feature_reachability_checked_independently_in_all_four_projections (test_baseline.BaselineTests.test_feature_reachability_checked_independently_in_all_four_projections) ... ok
+test_global_resource_prefixes_and_starting_candidate_mutations_are_rejected (test_baseline.BaselineTests.test_global_resource_prefixes_and_starting_candidate_mutations_are_rejected) ... ok
+test_historical_recovery_release_is_pinned_independently_of_live_release (test_baseline.BaselineTests.test_historical_recovery_release_is_pinned_independently_of_live_release) ... ok
+test_human_first_definition_and_separator_are_enforced (test_baseline.BaselineTests.test_human_first_definition_and_separator_are_enforced) ... ok
+test_incomplete_feature_ancestry_stays_unresolved_without_inferred_ct3 (test_baseline.BaselineTests.test_incomplete_feature_ancestry_stays_unresolved_without_inferred_ct3) ... ok
+test_independent_generation_preserves_every_output_byte_and_does_not_bump_release (test_baseline.BaselineTests.test_independent_generation_preserves_every_output_byte_and_does_not_bump_release) ... ok
+test_landscape_display_order_survives_archi_name_sorting (test_baseline.BaselineTests.test_landscape_display_order_survives_archi_name_sorting) ... ok
+test_landscapes_have_only_direct_children_and_are_first_views (test_baseline.BaselineTests.test_landscapes_have_only_direct_children_and_are_first_views) ... ok
+test_markdown_and_archimate_share_exact_definitions_and_standing (test_baseline.BaselineTests.test_markdown_and_archimate_share_exact_definitions_and_standing) ... ok
+test_native_resource_categories_and_numbered_views_are_separate (test_baseline.BaselineTests.test_native_resource_categories_and_numbered_views_are_separate) ... ok
+test_navigation_numeric_order_is_validated_independently_of_folder_membership (test_baseline.BaselineTests.test_navigation_numeric_order_is_validated_independently_of_folder_membership) ... ok
+test_person_identity_feature_context_survives_all_three_projections (test_baseline.BaselineTests.test_person_identity_feature_context_survives_all_three_projections) ... ok
+test_pinned_recovery_and_current_motivation_sources_cannot_drift_silently (test_baseline.BaselineTests.test_pinned_recovery_and_current_motivation_sources_cannot_drift_silently) ... ok
+test_realisation_views_stay_with_their_exact_feature_subject (test_baseline.BaselineTests.test_realisation_views_stay_with_their_exact_feature_subject) ... ok
+test_resource_feature_association_cannot_be_flattened_or_invented (test_baseline.BaselineTests.test_resource_feature_association_cannot_be_flattened_or_invented) ... ok
+test_schema_all_semantic_ids_bindings_and_original_views_survive (test_baseline.BaselineTests.test_schema_all_semantic_ids_bindings_and_original_views_survive) ... ok
+test_shared_and_unresolved_assertions_do_not_select_a_preferred_feature (test_baseline.BaselineTests.test_shared_and_unresolved_assertions_do_not_select_a_preferred_feature) ... ok
+test_source_relationship_path_cannot_be_replaced_with_target_path (test_baseline.BaselineTests.test_source_relationship_path_cannot_be_replaced_with_target_path) ... ok
+test_visual_endpoints_must_match_actual_semantic_endpoints (test_baseline.BaselineTests.test_visual_endpoints_must_match_actual_semantic_endpoints) ... ok
+test_cli_portable_with_explicit_baseline_manifest_and_source (test_documentation.DocumentationPublicationTests.test_cli_portable_with_explicit_baseline_manifest_and_source) ... FAIL
+test_exactly_14_documented_and_214_unchanged_without_documentation (test_documentation.DocumentationPublicationTests.test_exactly_14_documented_and_214_unchanged_without_documentation) ... ok
+test_full_qualified_descriptions_are_retained (test_documentation.DocumentationPublicationTests.test_full_qualified_descriptions_are_retained) ... ok
+test_original_baseline_and_lock_survive_and_all_visuals_remain_identical (test_documentation.DocumentationPublicationTests.test_original_baseline_and_lock_survive_and_all_visuals_remain_identical) ... ok
+test_rejects_description_tampering_missing_or_extra_documentation (test_documentation.DocumentationPublicationTests.test_rejects_description_tampering_missing_or_extra_documentation) ... ok
+test_rejects_documentation_on_unmatched_capability (test_documentation.DocumentationPublicationTests.test_rejects_documentation_on_unmatched_capability) ... ok
+test_rejects_duplicate_reference_id (test_documentation.DocumentationPublicationTests.test_rejects_duplicate_reference_id) ... ok
+test_rejects_same_name_without_exact_reference (test_documentation.DocumentationPublicationTests.test_rejects_same_name_without_exact_reference) ... ok
+test_rejects_semantic_mutation_even_on_documented_element (test_documentation.DocumentationPublicationTests.test_rejects_semantic_mutation_even_on_documented_element) ... ok
+test_repeated_generation_and_reprojection_are_deterministic (test_documentation.DocumentationPublicationTests.test_repeated_generation_and_reprojection_are_deterministic) ... ok
+test_approved_numeric_spelling_is_resource_local (test_governed_metadata.EstablishedSourceTests.test_approved_numeric_spelling_is_resource_local) ... ok
+test_bootstrap_rerun_refuses_before_allocation (test_governed_metadata.EstablishedSourceTests.test_bootstrap_rerun_refuses_before_allocation) ... ok
+test_current_publication_has_one_source_owned_id_per_element (test_governed_metadata.EstablishedSourceTests.test_current_publication_has_one_source_owned_id_per_element) ... ok
+test_deleted_source_establishment_cannot_enable_legacy_fallback (test_governed_metadata.EstablishedSourceTests.test_deleted_source_establishment_cannot_enable_legacy_fallback) ... ok
+test_deleting_entire_metadata_block_cannot_bypass_publication_gate (test_governed_metadata.EstablishedSourceTests.test_deleting_entire_metadata_block_cannot_bypass_publication_gate) ... ok
+test_multiple_publication_claim_and_missing_property_rejected (test_governed_metadata.EstablishedSourceTests.test_multiple_publication_claim_and_missing_property_rejected) ... ok
+test_ordinary_publication_never_allocates (test_governed_metadata.EstablishedSourceTests.test_ordinary_publication_never_allocates) ... ok
+test_subsequent_release_transports_existing_ids_and_names_without_allocation (test_governed_metadata.EstablishedSourceTests.test_subsequent_release_transports_existing_ids_and_names_without_allocation) ... ok
+test_whole_architecture_and_presentation_survive_metadata_overlay (test_governed_metadata.EstablishedSourceTests.test_whole_architecture_and_presentation_survive_metadata_overlay) ... ok
+test_allocator_refuses_conflicts_before_any_allocation (test_governed_metadata.IdentityContractTests.test_allocator_refuses_conflicts_before_any_allocation) ... ok
+test_bootstrap_preserves_existing_and_allocates_only_absent (test_governed_metadata.IdentityContractTests.test_bootstrap_preserves_existing_and_allocates_only_absent) ... ok
+test_changed_identity_and_physical_resource_deletion (test_governed_metadata.IdentityContractTests.test_changed_identity_and_physical_resource_deletion) ... ok
+test_digit_leading_label_requires_a_governed_spelling (test_governed_metadata.IdentityContractTests.test_digit_leading_label_requires_a_governed_spelling) ... ok
+test_duplicate_identity (test_governed_metadata.IdentityContractTests.test_duplicate_identity) ... ok
+test_duplicate_json_claim_is_not_last_value_wins (test_governed_metadata.IdentityContractTests.test_duplicate_json_claim_is_not_last_value_wins) ... ok
+test_friendly_canonical_and_display_drift_fail_without_repair (test_governed_metadata.IdentityContractTests.test_friendly_canonical_and_display_drift_fail_without_repair) ... ok
+test_malformed_multiple_and_ec_substitution (test_governed_metadata.IdentityContractTests.test_malformed_multiple_and_ec_substitution) ... ok
+test_missing_and_deleted_id_after_establishment (test_governed_metadata.IdentityContractTests.test_missing_and_deleted_id_after_establishment) ... ok
+test_pascal_case_components_and_no_qualifiers_from_folders (test_governed_metadata.IdentityContractTests.test_pascal_case_components_and_no_qualifiers_from_folders) ... ok
+test_type_encoded_into_identity_is_rejected (test_governed_metadata.IdentityContractTests.test_type_encoded_into_identity_is_rejected) ... ok
+test_unadjudicated_digit_leading_name_stops_before_allocation (test_governed_metadata.IdentityContractTests.test_unadjudicated_digit_leading_name_stops_before_allocation) ... ok
+test_valid_identity_names_and_representation_separation (test_governed_metadata.IdentityContractTests.test_valid_identity_names_and_representation_separation) ... ok
+test_architecture_is_unchanged_and_independent_of_navigation (test_navigation.NavigationTests.test_architecture_is_unchanged_and_independent_of_navigation) ... ok
+test_duplicate_semantic_home_is_rejected_even_with_unique_xml_ids (test_navigation.NavigationTests.test_duplicate_semantic_home_is_rejected_even_with_unique_xml_ids) ... ok
+test_each_semantic_object_has_one_home_and_relationships_follow_source (test_navigation.NavigationTests.test_each_semantic_object_has_one_home_and_relationships_follow_source) ... ok
+test_enterprise_is_a_flat_orthogonal_catalogue_with_same_documentation (test_navigation.NavigationTests.test_enterprise_is_a_flat_orthogonal_catalogue_with_same_documentation) ... ok
+test_folder_relocation_changes_no_semantics_but_is_rejected_as_navigation (test_navigation.NavigationTests.test_folder_relocation_changes_no_semantics_but_is_rejected_as_navigation) ... ok
+test_grandchildren_cannot_leak_into_a_context_view (test_navigation.NavigationTests.test_grandchildren_cannot_leak_into_a_context_view) ... ok
+test_navigation_and_visual_ids_ignore_labels_coordinates_and_input_order (test_navigation.NavigationTests.test_navigation_and_visual_ids_ignore_labels_coordinates_and_input_order) ... ok
+test_nested_folder_cannot_authorise_an_extra_composition (test_navigation.NavigationTests.test_nested_folder_cannot_authorise_an_extra_composition) ... ok
+test_portable_cli_uses_explicit_governed_source_and_refuses_input_overwrite (test_navigation.NavigationTests.test_portable_cli_uses_explicit_governed_source_and_refuses_input_overwrite) ... FAIL
+test_regeneration_is_deterministic_and_does_not_bump_the_release (test_navigation.NavigationTests.test_regeneration_is_deterministic_and_does_not_bump_the_release) ... ok
+test_release_report_rejects_missing_failed_or_stale_verification (test_navigation.NavigationTests.test_release_report_rejects_missing_failed_or_stale_verification) ... ok
+test_release_report_rejects_unpinned_or_changed_verified_inputs (test_navigation.NavigationTests.test_release_report_rejects_unpinned_or_changed_verified_inputs) ... ok
+test_retained_views_are_identical_and_details_are_immediate_only (test_navigation.NavigationTests.test_retained_views_are_identical_and_details_are_immediate_only) ... ok
+test_semantic_identity_metadata_documentation_and_endpoints_remain_locked (test_navigation.NavigationTests.test_semantic_identity_metadata_documentation_and_endpoints_remain_locked) ... ok
+test_target_based_relationship_home_is_rejected (test_navigation.NavigationTests.test_target_based_relationship_home_is_rejected) ... ok
+test_view_misplacement_and_retained_view_replacement_are_rejected (test_navigation.NavigationTests.test_view_misplacement_and_retained_view_replacement_are_rejected) ... ok
+test_assessment_uses_explicit_release_and_retains_unresolved_assertions (test_publication_metadata.PublicationMetadataTests.test_assessment_uses_explicit_release_and_retains_unresolved_assertions) ... ok
+test_governed_registry_binds_the_same_deterministic_publication (test_publication_metadata.PublicationMetadataTests.test_governed_registry_binds_the_same_deterministic_publication) ... ok
+test_report_rejects_mismatched_release_and_failed_verification (test_publication_metadata.PublicationMetadataTests.test_report_rejects_mismatched_release_and_failed_verification) ... ERROR
+test_candidate_promotion_and_definition_loss_are_rejected (test_recovery.RecoveryTests.test_candidate_promotion_and_definition_loss_are_rejected) ... ok
+test_care_access_has_four_established_and_separate_proposed_ct2_and_deeper_children (test_recovery.RecoveryTests.test_care_access_has_four_established_and_separate_proposed_ct2_and_deeper_children) ... ok
+test_complete_record_type_and_status_coverage_without_name_merging (test_recovery.RecoveryTests.test_complete_record_type_and_status_coverage_without_name_merging) ... ok
+test_documentation_decoder_preserves_nested_text_and_links (test_recovery.RecoveryTests.test_documentation_decoder_preserves_nested_text_and_links) ... ok
+test_every_relationship_is_native_or_explicitly_accounted_for (test_recovery.RecoveryTests.test_every_relationship_is_native_or_explicitly_accounted_for) ... ok
+test_feature_framing_is_not_manufactured_composition (test_recovery.RecoveryTests.test_feature_framing_is_not_manufactured_composition) ... ok
+test_grandchild_leaking_into_context_view_is_rejected (test_recovery.RecoveryTests.test_grandchild_leaking_into_context_view_is_rejected) ... ok
+test_independent_regeneration_is_byte_identical (test_recovery.RecoveryTests.test_independent_regeneration_is_byte_identical) ... ok
+test_only_proven_ec_architecture_id_properties_and_no_new_registry_allocation (test_recovery.RecoveryTests.test_only_proven_ec_architecture_id_properties_and_no_new_registry_allocation) ... ok
+test_pinned_source_drift_or_post_snapshot_edits_are_rejected (test_recovery.RecoveryTests.test_pinned_source_drift_or_post_snapshot_edits_are_rejected) ... ok
+test_representation_and_context_folder_ids_survive_renames_and_relocation (test_recovery.RecoveryTests.test_representation_and_context_folder_ids_survive_renames_and_relocation) ... ok
+test_schema_references_navigation_and_retained_semantics (test_recovery.RecoveryTests.test_schema_references_navigation_and_retained_semantics) ... ok
+test_source_appendices_are_all_inspectable_and_corpus_register_is_not_semantic_input (test_recovery.RecoveryTests.test_source_appendices_are_all_inspectable_and_corpus_register_is_not_semantic_input) ... ok
+test_speculative_graph_edge_is_rejected_even_when_schema_valid (test_recovery.RecoveryTests.test_speculative_graph_edge_is_rejected_even_when_schema_valid) ... ok
+test_active_model_coverage_source_standing_and_frozen_ec_bindings (test_roundtrip.AcceptedBaselineDiagnosticTests.test_active_model_coverage_source_standing_and_frozen_ec_bindings) ... ok
+test_preserved_release_106_still_reports_its_original_identity_gap (test_roundtrip.AcceptedBaselineDiagnosticTests.test_preserved_release_106_still_reports_its_original_identity_gap) ... ok
+test_bendpoint_and_visual_order_not_treated_as_unordered (test_roundtrip.RoundtripTests.test_bendpoint_and_visual_order_not_treated_as_unordered) ... ok
+test_both_sources_are_hash_pinned_and_missing_exports_gate_proof (test_roundtrip.RoundtripTests.test_both_sources_are_hash_pinned_and_missing_exports_gate_proof) ... ok
+test_definition_type_loss_and_duplicate_keys_are_not_normalised (test_roundtrip.RoundtripTests.test_definition_type_loss_and_duplicate_keys_are_not_normalised) ... ok
+test_diagnostic_and_comparison_are_deterministic_and_read_only (test_roundtrip.RoundtripTests.test_diagnostic_and_comparison_are_deterministic_and_read_only) ... ok
+test_dtd_rejected_and_unresolved_property_ref_not_silently_accepted (test_roundtrip.RoundtripTests.test_dtd_rejected_and_unresolved_property_ref_not_silently_accepted) ... ok
+test_duplicate_and_multiple_claims_do_not_pass_uniqueness (test_roundtrip.RoundtripTests.test_duplicate_and_multiple_claims_do_not_pass_uniqueness) ... ok
+test_empty_leaf_whitespace_is_data_and_unrecognised_valid_metadata_is_compared (test_roundtrip.RoundtripTests.test_empty_leaf_whitespace_is_data_and_unrecognised_valid_metadata_is_compared) ... ok
+test_equivalent_files_do_not_authenticate_real_archi_execution (test_roundtrip.RoundtripTests.test_equivalent_files_do_not_authenticate_real_archi_execution) ... ok
+test_feature_is_native_capability_and_type_is_not_identity (test_roundtrip.RoundtripTests.test_feature_is_native_capability_and_type_is_not_identity) ... ok
+test_folder_item_identity_loss_retains_navigation_evidence (test_roundtrip.RoundtripTests.test_folder_item_identity_loss_retains_navigation_evidence) ... ok
+test_invalid_missing_or_duplicate_element_id_preserves_record_census (test_roundtrip.RoundtripTests.test_invalid_missing_or_duplicate_element_id_preserves_record_census) ... ok
+test_malformed_uuid32_case_whitespace_prefix_separators_length (test_roundtrip.RoundtripTests.test_malformed_uuid32_case_whitespace_prefix_separators_length) ... ok
+test_missing_canonical_id_and_ec_alias_are_distinct (test_roundtrip.RoundtripTests.test_missing_canonical_id_and_ec_alias_are_distinct) ... ok
+test_missing_real_export_is_explicit_gate (test_roundtrip.RoundtripTests.test_missing_real_export_is_explicit_gate) ... ok
+test_naming_roles_remain_independent_and_display_conflict_is_visible (test_roundtrip.RoundtripTests.test_naming_roles_remain_independent_and_display_conflict_is_visible) ... ok
+test_observed_mutation_and_possible_reuse_are_reported_without_inference (test_roundtrip.RoundtripTests.test_observed_mutation_and_possible_reuse_are_reported_without_inference) ... ok
+test_ordering_of_semantic_collections_and_properties_is_equivalent (test_roundtrip.RoundtripTests.test_ordering_of_semantic_collections_and_properties_is_equivalent) ... ok
+test_partial_export_or_missing_visual_identity_cannot_pass (test_roundtrip.RoundtripTests.test_partial_export_or_missing_visual_identity_cannot_pass) ... ok
+test_relationship_endpoints_and_documentation_are_compared (test_roundtrip.RoundtripTests.test_relationship_endpoints_and_documentation_are_compared) ... ok
+test_serialization_only_changes_and_namespace_prefixes_are_equivalent (test_roundtrip.RoundtripTests.test_serialization_only_changes_and_namespace_prefixes_are_equivalent) ... ok
+test_unexplained_presentation_and_unknown_metadata_remain_visible (test_roundtrip.RoundtripTests.test_unexplained_presentation_and_unknown_metadata_remain_visible) ... ok
+test_unique_property_definition_rekey_preserves_all_values_and_owners (test_roundtrip.RoundtripTests.test_unique_property_definition_rekey_preserves_all_values_and_owners) ... ok
+test_valid_uuid32_including_leading_zero_digit_and_alpha (test_roundtrip.RoundtripTests.test_valid_uuid32_including_leading_zero_digit_and_alpha) ... ok
+test_whitespace_language_and_missing_property_are_visible (test_roundtrip.RoundtripTests.test_whitespace_language_and_missing_property_are_visible) ... ok
+test_wrong_owner_association_is_not_hidden_by_rekey (test_roundtrip.RoundtripTests.test_wrong_owner_association_is_not_hidden_by_rekey) ... ok
+test_cli_refuses_overwriting_baseline (test_views.ViewPublicationTests.test_cli_refuses_overwriting_baseline) ... ok
+test_cli_runs_from_an_isolated_copy_without_downloads_or_repository_json (test_views.ViewPublicationTests.test_cli_runs_from_an_isolated_copy_without_downloads_or_repository_json) ... FAIL
+test_complete_publication_and_locked_semantic_identifiers (test_views.ViewPublicationTests.test_complete_publication_and_locked_semantic_identifiers) ... ok
+test_creation_of_views_organisation_when_absent (test_views.ViewPublicationTests.test_creation_of_views_organisation_when_absent) ... ok
+test_exact_view_coverage_and_no_invented_enterprise_hierarchy (test_views.ViewPublicationTests.test_exact_view_coverage_and_no_invented_enterprise_hierarchy) ... ok
+test_fixture_and_schema_provenance (test_views.ViewPublicationTests.test_fixture_and_schema_provenance) ... ok
+test_lock_detects_label_property_and_hierarchy_changes (test_views.ViewPublicationTests.test_lock_detects_label_property_and_hierarchy_changes) ... ok
+test_natural_view_groups_do_not_become_capabilities_or_nodes (test_views.ViewPublicationTests.test_natural_view_groups_do_not_become_capabilities_or_nodes) ... ok
+test_rejects_connection_to_node_in_another_view (test_views.ViewPublicationTests.test_rejects_connection_to_node_in_another_view) ... ok
+test_rejects_connection_with_semantic_id_as_source (test_views.ViewPublicationTests.test_rejects_connection_with_semantic_id_as_source) ... ok
+test_rejects_dangling_element_reference (test_views.ViewPublicationTests.test_rejects_dangling_element_reference) ... ok
+test_rejects_dangling_relationship_reference (test_views.ViewPublicationTests.test_rejects_dangling_relationship_reference) ... ok
+test_rejects_duplicate_identifiers_across_views (test_views.ViewPublicationTests.test_rejects_duplicate_identifiers_across_views) ... ok
+test_rejects_invalid_xml_geometry (test_views.ViewPublicationTests.test_rejects_invalid_xml_geometry) ... ok
+test_rejects_missing_capability_projection (test_views.ViewPublicationTests.test_rejects_missing_capability_projection) ... ok
+test_rejects_missing_relationship_projection (test_views.ViewPublicationTests.test_rejects_missing_relationship_projection) ... ok
+test_rejects_modified_retained_import_test_view (test_views.ViewPublicationTests.test_rejects_modified_retained_import_test_view) ... ok
+test_rejects_node_without_capability_reference (test_views.ViewPublicationTests.test_rejects_node_without_capability_reference) ... ok
+test_rejects_overlapping_nodes (test_views.ViewPublicationTests.test_rejects_overlapping_nodes) ... ok
+test_rejects_removed_retained_view_navigation (test_views.ViewPublicationTests.test_rejects_removed_retained_view_navigation) ... ok
+test_rejects_schema_valid_semantically_wrong_connection_endpoint (test_views.ViewPublicationTests.test_rejects_schema_valid_semantically_wrong_connection_endpoint) ... ok
+test_rejects_semantic_element_id_change (test_views.ViewPublicationTests.test_rejects_semantic_element_id_change) ... ok
+test_rejects_semantic_relationship_id_change (test_views.ViewPublicationTests.test_rejects_semantic_relationship_id_change) ... ok
+test_rejects_view_in_wrong_organisation_folder (test_views.ViewPublicationTests.test_rejects_view_in_wrong_organisation_folder) ... ok
+test_repeated_generation_and_republication_are_byte_identical (test_views.ViewPublicationTests.test_repeated_generation_and_republication_are_byte_identical) ... ok
+test_semantic_subtrees_survive_serialization_unchanged (test_views.ViewPublicationTests.test_semantic_subtrees_survive_serialization_unchanged) ... ok
+test_view_layout_and_ids_are_independent_of_input_record_order (test_views.ViewPublicationTests.test_view_layout_and_ids_are_independent_of_input_record_order) ... ok
+test_visual_ids_do_not_depend_on_label_or_coordinates (test_views.ViewPublicationTests.test_visual_ids_do_not_depend_on_label_or_coordinates) ... ok
+test_boundaries_and_pinned_historical_locators (test_workspace.WorkspaceTests.test_boundaries_and_pinned_historical_locators) ... ok
+test_incoming_filename_resolves_to_ingest_without_overriding_explicit_paths (test_workspace.WorkspaceTests.test_incoming_filename_resolves_to_ingest_without_overriding_explicit_paths) ... ok
+test_release_only_proof_rejects_semantic_identity_relationship_and_presentation_mutation (test_workspace.WorkspaceTests.test_release_only_proof_rejects_semantic_identity_relationship_and_presentation_mutation) ... ok
+
+======================================================================
+ERROR: test_report_rejects_mismatched_release_and_failed_verification (test_publication_metadata.PublicationMetadataTests.test_report_rejects_mismatched_release_and_failed_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework/tests/test_publication_metadata.py", line 48, in test_report_rejects_mismatched_release_and_failed_verification
+    publication = json.loads((BASE / "validation.json").read_text())
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework/validation.json'
+
+======================================================================
+FAIL: test_cli_portable_with_explicit_baseline_manifest_and_source (test_documentation.DocumentationPublicationTests.test_cli_portable_with_explicit_baseline_manifest_and_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework/tests/test_documentation.py", line 119, in test_cli_portable_with_explicit_baseline_manifest_and_source
+    self.assertEqual(0, run.returncode, run.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : FAIL: Error reading file '/tmp/tmp3aa02e5c/repository/docs/archimate/framework/baseline/Harmonia-Capability-Architecture-v2.1a.xml': failed to load "/tmp/tmp3aa02e5c/repository/docs/archimate/framework/baseline/Harmonia-Capability-Architecture-v2.1a.xml": No such file or directory
+
+
+======================================================================
+FAIL: test_portable_cli_uses_explicit_governed_source_and_refuses_input_overwrite (test_navigation.NavigationTests.test_portable_cli_uses_explicit_governed_source_and_refuses_input_overwrite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework/tests/test_navigation.py", line 196, in test_portable_cli_uses_explicit_governed_source_and_refuses_input_overwrite
+    self.assertEqual(0, run.returncode, run.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : FAIL: Error reading file '/tmp/tmp36ybbe1n/repository/docs/archimate/framework/baseline/Harmonia-Capability-Architecture-v2.1a.xml': failed to load "/tmp/tmp36ybbe1n/repository/docs/archimate/framework/baseline/Harmonia-Capability-Architecture-v2.1a.xml": No such file or directory
+
+
+======================================================================
+FAIL: test_cli_runs_from_an_isolated_copy_without_downloads_or_repository_json (test_views.ViewPublicationTests.test_cli_runs_from_an_isolated_copy_without_downloads_or_repository_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework/tests/test_views.py", line 226, in test_cli_runs_from_an_isolated_copy_without_downloads_or_repository_json
+    self.assertEqual(0, result.returncode, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : FAIL: [Errno 2] No such file or directory: '/tmp/tmpp9_v0dtl/exchange/publish/Harmonia-Capability-Architecture.xml'
+
+
+----------------------------------------------------------------------
+Ran 154 tests in 127.313s
+
+FAILED (failures=3, errors=1)

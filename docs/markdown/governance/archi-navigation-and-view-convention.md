@@ -225,7 +225,7 @@ input for governed reconciliation, not a replacement architecture repository.
 Accepted Archi presentation state may be subordinate governed projection metadata.
 Publication flows strictly `Markdown RAD -> LaTeX RAD -> publication output`;
 there is no normal reverse-authoring path. See the
-[documented collaboration lifecycle](../../archimate/capability-architecture/README.md#authority-and-collaboration-lifecycle).
+[documented collaboration lifecycle](../../archimate/README.md).
 
 [The synchronised baseline](baseline/README.md) supplies the current textual
 projection, exact correspondence, unresolved items and coverage boundaries.

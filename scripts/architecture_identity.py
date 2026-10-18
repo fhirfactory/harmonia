@@ -26,7 +26,8 @@ CLASSIFICATIONS = (
     "documentary/non-architectural and therefore does not require canonical architecture identity",
 )
 GOVERNED, SAFE, ALLOCATE, CONFLICT, ADJUDICATE, DOCUMENTARY = CLASSIFICATIONS
-sys.path.insert(0, str(ROOT / "docs/archimate/capability-architecture/tools"))
+sys.path.insert(0, str(ROOT / "docs/archimate/framework/tools"))
+from workspace_paths import historical_path
 import assess_rad
 import generate_views as views
 import publish_documentation as documentation
@@ -43,7 +44,7 @@ def semantic_id(canonical_id):
 
 
 def baseline_crosswalk(root):
-    base = Path(root) / "docs/archimate/capability-architecture"
+    base = Path(root) / "docs/archimate/framework"
     baseline = views.parse(base / "baseline/Harmonia-Capability-Architecture-v2.1a.xml")
     views.validate_lock(baseline, read_json(base / "baseline/semantic-lock.json"))
     manifest, _ = documentation.load_mapping(base / "documentation-map.json", baseline)
@@ -96,7 +97,7 @@ def validate_registry(data, previous=None, root=ROOT):
     natives = {r["identifier"]: r for r in native_records}
     if len(natives) != len(native_records):
         errors.append("ambiguous native definition identity collision")
-    published = views.parse(Path(root) / "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml")
+    published = views.parse(Path(root) / "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml")
     reserved_xml_ids = {e.get("identifier") for e in published.iter() if e.get("identifier")}
     _, manifest = baseline_crosswalk(root)
     locked_matches = {m["reference_id"]: m["element_identifier"] for m in manifest["matches"]}
@@ -257,7 +258,7 @@ def verify_adoption(data, root=ROOT, published=None):
     """
     root = Path(root)
     directory = root / DIRECTORY.relative_to(ROOT)
-    base = root / "docs/archimate/capability-architecture"
+    base = root / "docs/archimate/framework"
     prior = read_json(directory / "adoption-baseline-1.0.2.json")
     views.require(prior["architecture_release"] == {"version": "1.0.2", "previous_version": "1.0.1"}
                   and prior["previous_registry"]["records"] == []
@@ -274,7 +275,7 @@ def verify_adoption(data, root=ROOT, published=None):
                      source_sha256=hashlib.sha256(decision.read_bytes()).hexdigest(), release="1.0.3")
     views.require(data["events"] == [dict(kind="adopt", identities=list(expected), authority=authority)],
                   "Only the authorised 14-identity adoption event is permitted")
-    path = base / "Harmonia-Capability-Architecture.xml"
+    path = root / "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml"
     raw = path.read_bytes() if published is None else published
     result = views.ET.fromstring(raw)
     schema = views.load_schema(base / "schemas/archimate3_Diagram.xsd")
@@ -315,7 +316,7 @@ def verify_adoption(data, root=ROOT, published=None):
     views.require(views.digest(views.signature(result.find("a:views", views.N))) == prior["visual_content_sha256"],
                   "Visual identities, references or View content changed since 1.0.2")
     for relative, digest in prior["files_sha256"].items():
-        content = raw if root / relative == path else (root / relative).read_bytes()
+        content = raw if historical_path(root / relative, root) == path else historical_path(root / relative, root).read_bytes()
         views.require(hashlib.sha256(content).hexdigest() == digest, f"1.0.2 preservation fingerprint changed: {relative}")
     regenerated, _ = documentation.publish(baseline, schema, lock, base / "documentation-map.json",
                                            root / "architecture-release.json")
@@ -360,7 +361,7 @@ def verify_adoption(data, root=ROOT, published=None):
 def replay_adoption_publication(root=ROOT):
     """Replay the frozen 1.0.3 presentation without reading current navigation."""
     root = Path(root)
-    base = root / "docs/archimate/capability-architecture"
+    base = root / "docs/archimate/framework"
     baseline, _ = baseline_crosswalk(root)
     return documentation.publish(baseline, views.load_schema(base / "schemas/archimate3_Diagram.xsd"),
         read_json(base / "baseline/semantic-lock.json"), base / "documentation-map.json",
@@ -375,10 +376,10 @@ def verify_bindings(data, root=ROOT, published=None):
     """
     import publish_navigation as navigation
     root = Path(root)
-    base = root / "docs/archimate/capability-architecture"
+    base = root / "docs/archimate/framework"
     historical = replay_adoption_publication(root)
     proof = verify_adoption(data, root, published=historical)
-    raw = (base / "Harmonia-Capability-Architecture.xml").read_bytes() if published is None else published
+    raw = (root / "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml").read_bytes() if published is None else published
     current = views.ET.fromstring(raw)
     views.validate_identifiers(current)
     views.require(navigation.architecture_snapshot(current) == navigation.architecture_snapshot(views.ET.fromstring(historical)),
@@ -403,7 +404,7 @@ def inventory(root=ROOT):
 
     def add(population, kind, source_key, name, classification, reason, **extra):
         if "source_document" not in extra:
-            extra["source_document"] = ("docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml"
+            extra["source_document"] = ("docs/archimate/framework/baseline/Harmonia-Capability-Architecture-v2.1a.xml"
                                         if population == "Proven Exchange" else "docs/markdown/03-business-architecture/reference-model/business-architecture.json")
         records.append(dict(population=population, construct_type=kind, source_capture_id=source_key,
                             name=name, classification=classification, reason=reason, **extra))
@@ -714,7 +715,7 @@ The original 228 capabilities, 189 Composition relationships, four generated Vie
 retained import diagnostic and 14 Documentation fields are byte-identical to the
 committed Release 1.0.2 publication. Its SHA-256 is `{verification['xml_sha256']}`.
 The generated artefact is
-[Harmonia-Capability-Architecture.xml](../../../archimate/capability-architecture/Harmonia-Capability-Architecture.xml).
+[Harmonia-Capability-Architecture.xml](../../../archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml).
 The 1.0.1 Documentation report and verification
 snapshot remain historical; this report records the identity release's results.
 No additional Archi import is required to establish byte preservation; no new

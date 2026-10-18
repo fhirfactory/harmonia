@@ -1,0 +1,1834 @@
+{
+  "baseline_commit": "107cf351f0a784d8d43a9942e0443390ea98e74e",
+  "records": [
+    {
+      "source": "docs/archimate/capability-architecture/.gitignore",
+      "destination": "docs/archimate/framework/.gitignore",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+      "after_sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Finished historical exchange XML; bytes unchanged.",
+      "before_sha256": "98c1074c8ead4c55708dc85b327a98e077feb8e59ff58cec9c2852a1332e9e75",
+      "after_sha256": "98c1074c8ead4c55708dc85b327a98e077feb8e59ff58cec9c2852a1332e9e75",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/Makefile",
+      "destination": "docs/archimate/framework/Makefile",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "dd9d22288ffe0c45fbc3186077ca23f9744e4939445bb106b2f188cea24164eb",
+      "after_sha256": "a61339989d4002d9ee05210bf06962bd4b482d4c3d5fba673f8864a78f12e82d",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/README.md",
+      "destination": "docs/archimate/framework/historical-workspace-readme.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen mixed narrative; current instructions supplied separately.",
+      "before_sha256": "e19d7cf3b0b53c0456bfe198bc541c7863eecd38b1c68a93dcb045d6430df3c2",
+      "after_sha256": "e19d7cf3b0b53c0456bfe198bc541c7863eecd38b1c68a93dcb045d6430df3c2",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml",
+      "destination": "docs/archimate/framework/baseline/Harmonia-Capability-Architecture-v2.1a.xml",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+      "after_sha256": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/baseline/navigation-baseline-1.0.3.json",
+      "destination": "docs/archimate/framework/baseline/navigation-baseline-1.0.3.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "d8d77628c3ad80e9309a4ad53438e67e322154a15f06bb7edbb038a41a73e374",
+      "after_sha256": "d8d77628c3ad80e9309a4ad53438e67e322154a15f06bb7edbb038a41a73e374",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/baseline/semantic-lock.json",
+      "destination": "docs/archimate/framework/baseline/semantic-lock.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+      "after_sha256": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/documentation-map.json",
+      "destination": "docs/archimate/framework/documentation-map.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+      "after_sha256": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/documentation-publication-report.md",
+      "destination": "docs/archimate/processing/publishing/1.0.1/documentation-publication-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "4ba697daff9fc35e2ad3a6bc259d6b4dc04aabce83be8ebe04b38a90ded23f3e",
+      "after_sha256": "4ba697daff9fc35e2ad3a6bc259d6b4dc04aabce83be8ebe04b38a90ded23f3e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/navigation-release-report.md",
+      "destination": "docs/archimate/processing/publishing/1.0.4/navigation-release-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "3d55f630f64dbad1e1353be397af33b5d2e65c822bcf7e13eb39bce84358976d",
+      "after_sha256": "3d55f630f64dbad1e1353be397af33b5d2e65c822bcf7e13eb39bce84358976d",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/navigation-release-verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.4/navigation-release-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "50e12a6cbc4103815d81a9b7ec9a850a7fdf9632435b55d27892ab262603e471",
+      "after_sha256": "50e12a6cbc4103815d81a9b7ec9a850a7fdf9632435b55d27892ab262603e471",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/1.0.5A-recovery-report.md",
+      "destination": "docs/archimate/processing/publishing/1.0.5/1.0.5A-recovery-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "61ec9349d290b3b15415600e126af17f2d10ff0c23e59ab7034b3960638da210",
+      "after_sha256": "61ec9349d290b3b15415600e126af17f2d10ff0c23e59ab7034b3960638da210",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml",
+      "destination": "docs/archimate/processing/publishing/1.0.5/Harmonia-Architecture-1.0.5A.xml",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1",
+      "after_sha256": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/archi-inspection-guide.md",
+      "destination": "docs/archimate/processing/publishing/1.0.5/archi-inspection-guide.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "cdc2d6a9be60f563321306d7023e3f3a16e17fc3b33dd271d1ebc87c532635db",
+      "after_sha256": "cdc2d6a9be60f563321306d7023e3f3a16e17fc3b33dd271d1ebc87c532635db",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/architecture-release.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/architecture-release.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+      "after_sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/corpus-drift.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/corpus-drift.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "5edc8f65383381d8c35b12934526c2c9772666e7ffbcb34d1459e8ef2b08b58e",
+      "after_sha256": "5edc8f65383381d8c35b12934526c2c9772666e7ffbcb34d1459e8ef2b08b58e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/recovery-findings.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/recovery-findings.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73",
+      "after_sha256": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/representation-crosswalk.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266",
+      "after_sha256": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/source-manifest.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/source-manifest.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9",
+      "after_sha256": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/validation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e96640f7b2d9ebdbff7c4e4dc8d06ae34ef2d581f558b9241216dedb40101a6f",
+      "after_sha256": "e96640f7b2d9ebdbff7c4e4dc8d06ae34ef2d581f558b9241216dedb40101a6f",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/.gitignore",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/.gitignore",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "ce2da3813dec0794abe45d66ce62c33f3f3d4ae9856b71e0be6e49ce5bda37ad",
+      "after_sha256": "ce2da3813dec0794abe45d66ce62c33f3f3d4ae9856b71e0be6e49ce5bda37ad",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/architecture-tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/architecture-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e0370bd75d46af9c5f8ea70ba2da4781666501a4ceeb1e39293797b1e7c81915",
+      "after_sha256": "e0370bd75d46af9c5f8ea70ba2da4781666501a4ceeb1e39293797b1e7c81915",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/definition-concordance.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/definition-concordance.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "4c25d0a6243765c7b709d2d2a8b44b0175ca6a3bc7d5894523c6b5db0341cf10",
+      "after_sha256": "4c25d0a6243765c7b709d2d2a8b44b0175ca6a3bc7d5894523c6b5db0341cf10",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/diff.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/identity-validation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/identity-validation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "cb91c62e91ac9f7d264c8b86f1e464015766132b8a97a55965e8085e577d1733",
+      "after_sha256": "cb91c62e91ac9f7d264c8b86f1e464015766132b8a97a55965e8085e577d1733",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/initial-maven.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/initial-maven.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "75b786fe605b7b3d35eccb8e9d44340ce68b5aec8dcd7cada9e598b571281f4c",
+      "after_sha256": "75b786fe605b7b3d35eccb8e9d44340ce68b5aec8dcd7cada9e598b571281f4c",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/jdk25-diagnostic.txt",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/jdk25-diagnostic.txt",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "7b7e4159f7fca015e1463a577b167f7cf2ac04aa6e48fa606a72ffdba98796d1",
+      "after_sha256": "7b7e4159f7fca015e1463a577b167f7cf2ac04aa6e48fa606a72ffdba98796d1",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/legacy-v02-check.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/legacy-v02-check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "ff22c6319e5271c39d6ed802f892173f058ccfb68f7cb265b4a42c17c1b225eb",
+      "after_sha256": "ff22c6319e5271c39d6ed802f892173f058ccfb68f7cb265b4a42c17c1b225eb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/make-all.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/make-all.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "55412ba1e877338055013f22b0c7a55a32122b21513057cb41ef49ca72ecf99f",
+      "after_sha256": "55412ba1e877338055013f22b0c7a55a32122b21513057cb41ef49ca72ecf99f",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/publication-tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/publication-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "82da7f0bb62a92fac38ae7ba6d7434c910259aae0dc3742dfb84bfc9a3ea74ad",
+      "after_sha256": "82da7f0bb62a92fac38ae7ba6d7434c910259aae0dc3742dfb84bfc9a3ea74ad",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/rad-validation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/rad-validation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "after_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/regeneration.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "after_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/release.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+      "after_sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/script-tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/script-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "9250af2694563055ea8679ad3ef35432464de884b5aa98d185fb07dfda310d81",
+      "after_sha256": "9250af2694563055ea8679ad3ef35432464de884b5aa98d185fb07dfda310d81",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/snapshot-tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/snapshot-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "bb3f9b4784e0ce6356e39b2b70e01a4975ee52eb35e1c3b65af6a895c1cce36d",
+      "after_sha256": "bb3f9b4784e0ce6356e39b2b70e01a4975ee52eb35e1c3b65af6a895c1cce36d",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification/snapshot-validation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification/snapshot-validation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "4e2832ad352fbc0fa3c046aacee88c61412184c7b887b7e648e4798269e218e7",
+      "after_sha256": "4e2832ad352fbc0fa3c046aacee88c61412184c7b887b7e648e4798269e218e7",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/recovery-v0.2/verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.5/verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "748049f5da544af6d7336e0b88bae9968d3287379c224acf96d56c6e74dd56ab",
+      "after_sha256": "748049f5da544af6d7336e0b88bae9968d3287379c224acf96d56c6e74dd56ab",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/reference-id-reconciliation-report.md",
+      "destination": "docs/archimate/framework/baseline/reference-id-reconciliation-report.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "9258e1b05029ab3344b15d7252d2d13a4329bc193df3c97515f7ccbabd8348e9",
+      "after_sha256": "9258e1b05029ab3344b15d7252d2d13a4329bc193df3c97515f7ccbabd8348e9",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/release-verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.1/release-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "6e6322f5696d8ef9d6d7c83aa801aef4b5ef027ef999a06cf062907ff3e8e7f1",
+      "after_sha256": "6e6322f5696d8ef9d6d7c83aa801aef4b5ef027ef999a06cf062907ff3e8e7f1",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/requirements.txt",
+      "destination": "docs/archimate/framework/requirements.txt",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "40fd88a0d7b4cba79c17cddb4ea5f91cbc386fec1b79f1158ad2cf1a272b333e",
+      "after_sha256": "40fd88a0d7b4cba79c17cddb4ea5f91cbc386fec1b79f1158ad2cf1a272b333e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/roundtrip-increment-1.md",
+      "destination": "docs/archimate/framework/roundtrip-increment-1.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen mixed narrative; current instructions supplied separately.",
+      "before_sha256": "6b9ffeb784942508753b7afe83710e9c486d81528ebf82fad3fb37381c221db6",
+      "after_sha256": "6b9ffeb784942508753b7afe83710e9c486d81528ebf82fad3fb37381c221db6",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/LICENSE.txt",
+      "destination": "docs/archimate/framework/schemas/LICENSE.txt",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "1a97d3aa0651437d1383c76504b8a192d1f7178fd30d231af752e570f501cc2f",
+      "after_sha256": "1a97d3aa0651437d1383c76504b8a192d1f7178fd30d231af752e570f501cc2f",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/archimate3_Diagram.xsd",
+      "destination": "docs/archimate/framework/schemas/archimate3_Diagram.xsd",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+      "after_sha256": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/archimate3_Model.xsd",
+      "destination": "docs/archimate/framework/schemas/archimate3_Model.xsd",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794",
+      "after_sha256": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/archimate3_View.xsd",
+      "destination": "docs/archimate/framework/schemas/archimate3_View.xsd",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+      "after_sha256": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/dc.xsd",
+      "destination": "docs/archimate/framework/schemas/dc.xsd",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf",
+      "after_sha256": "9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/provenance.json",
+      "destination": "docs/archimate/framework/schemas/provenance.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "a7c6dd56c408aebf6b764095933ca3c56b7f893d7f56843a2538437bef2d3a33",
+      "after_sha256": "a7c6dd56c408aebf6b764095933ca3c56b7f893d7f56843a2538437bef2d3a33",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/schemas/xml.xsd",
+      "destination": "docs/archimate/framework/schemas/xml.xsd",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7",
+      "after_sha256": "f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+      "destination": "docs/archimate/processing/publishing/1.0.6/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "fdcf3180adf37c6de23020826f80be57d9d7650171b190a8228e51d60f48d462",
+      "after_sha256": "fdcf3180adf37c6de23020826f80be57d9d7650171b190a8228e51d60f48d462",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-1.0.7.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.7/Harmonia-Architecture-1.0.7.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Finished historical exchange XML; bytes unchanged.",
+      "before_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+      "after_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.6/Harmonia-Architecture-Baseline.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Finished historical exchange XML; bytes unchanged.",
+      "before_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+      "after_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md",
+      "destination": "docs/archimate/processing/publishing/1.0.6/archi-inspection-guide.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "63f3da5d2c121cbc01c0bbee2862e5fc8008ecda7b704935f5aea98a17b61f21",
+      "after_sha256": "63f3da5d2c121cbc01c0bbee2862e5fc8008ecda7b704935f5aea98a17b61f21",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-archi-guide.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/canonical-identity-archi-guide.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "22abb801814d58e8db27faad9e7f35488de49e70a522879b7a836796e3017e44",
+      "after_sha256": "22abb801814d58e8db27faad9e7f35488de49e70a522879b7a836796e3017e44",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-establishment.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/canonical-identity-establishment.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "67604653a6e125be5d9522fe6c690601d27c6460cd93829af2aab2adf07b8084",
+      "after_sha256": "67604653a6e125be5d9522fe6c690601d27c6460cd93829af2aab2adf07b8084",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-validation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/canonical-identity-validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "bbf62cfafa53501bb09d0efa1e9001672a45c886eb444c837afb06a7673fd707",
+      "after_sha256": "bbf62cfafa53501bb09d0efa1e9001672a45c886eb444c837afb06a7673fd707",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/canonical-identity-verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/canonical-identity-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "9a14878f92e9ecc01ba17f4aba0dc57dd108b726529a7ffb970e30bf09d1f2a3",
+      "after_sha256": "9a14878f92e9ecc01ba17f4aba0dc57dd108b726529a7ffb970e30bf09d1f2a3",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/corrections-preservation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/corrections-preservation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "42d1b3487b122fe867c5ba17831184c4d14e1d183aa6acd6f1e6e1e911a70363",
+      "after_sha256": "42d1b3487b122fe867c5ba17831184c4d14e1d183aa6acd6f1e6e1e911a70363",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/documentation-correction-verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/documentation-correction-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "ae7e7919a9947ff4e39e57ca00516e2f69717debdfe518412247958f2bf65223",
+      "after_sha256": "ae7e7919a9947ff4e39e57ca00516e2f69717debdfe518412247958f2bf65223",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/human-inspection-start-preservation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/human-inspection-start-preservation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "c71f7ac07f9d8e4dcf63f9e0df887c4ec95bdc11020722ac158cee3ada2a3969",
+      "after_sha256": "c71f7ac07f9d8e4dcf63f9e0df887c4ec95bdc11020722ac158cee3ada2a3969",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/architecture.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/architecture.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "after_sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/manifest.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/manifest.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "03eb9b10fb9da2e58ef1efe46e224fff39cbc9cf9bda00ad5c42aea31882fa19",
+      "after_sha256": "03eb9b10fb9da2e58ef1efe46e224fff39cbc9cf9bda00ad5c42aea31882fa19",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/motivation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/motivation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f",
+      "after_sha256": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/architecture-release.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/architecture-release.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "after_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/architecture.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/architecture.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+      "after_sha256": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/business-capabilities.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/business-capabilities.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e",
+      "after_sha256": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/business-enabling-capabilities.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/business-enabling-capabilities.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194",
+      "after_sha256": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/discrepancies.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/discrepancies.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+      "after_sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/enterprise-capabilities.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/enterprise-capabilities.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b",
+      "after_sha256": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/features.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/features.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274",
+      "after_sha256": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/functions.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/functions.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97",
+      "after_sha256": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/motivation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/motivation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+      "after_sha256": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/motivation.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/motivation.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809",
+      "after_sha256": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/processes.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/processes.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f",
+      "after_sha256": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/relationships.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/relationships.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+      "after_sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/identity-establishment-1.0.7/prior-release/services.md",
+      "destination": "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/services.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12",
+      "after_sha256": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/initial-synchronisation-report.md",
+      "destination": "docs/archimate/processing/publishing/1.0.6/initial-synchronisation-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "07a687d2085850239ec3d561a53f617873d7eac34adac47aace1db591c28e5f6",
+      "after_sha256": "07a687d2085850239ec3d561a53f617873d7eac34adac47aace1db591c28e5f6",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/initial-synchronisation-verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/initial-synchronisation-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "ce20d8a18caeebf91d73c41b1e3cbac46478aa0c38dfb77ef42207248333f1f8",
+      "after_sha256": "ce20d8a18caeebf91d73c41b1e3cbac46478aa0c38dfb77ef42207248333f1f8",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-synchronisation-report.md",
+      "destination": "docs/archimate/processing/publishing/1.0.6/pre-human-inspection-synchronisation-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "99aa93bdab1e23dfd291a7bdcb049f261b35778220471c9f9a22285911adca65",
+      "after_sha256": "99aa93bdab1e23dfd291a7bdcb049f261b35778220471c9f9a22285911adca65",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/pre-human-inspection-verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/pre-human-inspection-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "2ade750a06fc264172cb4d70285686631d1811dc4b39d03926759d8816f143e8",
+      "after_sha256": "2ade750a06fc264172cb4d70285686631d1811dc4b39d03926759d8816f143e8",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/projection-start-preservation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/projection-start-preservation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e7d8aa6f7d268a1eea3c96e11275d493dc6a3b618964682ac902478df216ed2c",
+      "after_sha256": "e7d8aa6f7d268a1eea3c96e11275d493dc6a3b618964682ac902478df216ed2c",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/validation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "90570c7ad557a9eebe63448e8ffb7c6dbb49f157698aca39078bcec00ef327ba",
+      "after_sha256": "90570c7ad557a9eebe63448e8ffb7c6dbb49f157698aca39078bcec00ef327ba",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/.gitignore",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/.gitignore",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "5d656827105f73e5cd20b9246271d3ca3098286bf65ea909f909a603e88e1553",
+      "after_sha256": "5d656827105f73e5cd20b9246271d3ca3098286bf65ea909f909a603e88e1553",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/architecture.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "7fd729aa8f4a0803ee6e290ac437043c3cfa97bc12fd43755f0019bd7dbd37ff",
+      "after_sha256": "7fd729aa8f4a0803ee6e290ac437043c3cfa97bc12fd43755f0019bd7dbd37ff",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/baseline_contract.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/baseline_contract.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "73f5f57203bcab003c718e4057ba551217d009d1c14e48b119056cf1182b70ef",
+      "after_sha256": "73f5f57203bcab003c718e4057ba551217d009d1c14e48b119056cf1182b70ef",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/bindings.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "after_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/architecture.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "8b8d93a0e5075f3d1bd3321b1efebb987266f7e3eb09d9435d4a3a7f44672f7b",
+      "after_sha256": "8b8d93a0e5075f3d1bd3321b1efebb987266f7e3eb09d9435d4a3a7f44672f7b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/baseline-tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/baseline-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "58de9d06118b76a1e30a115653c625a35654f908733c697e1c3d6322bd085920",
+      "after_sha256": "58de9d06118b76a1e30a115653c625a35654f908733c697e1c3d6322bd085920",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/bindings.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "after_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/diff.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+      "after_sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/documentation-samples.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/documentation-samples.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e7fa076cc9f9c6f081ce17d1ab5512901ba068effcc6ea1bbab8e8f750a4794b",
+      "after_sha256": "e7fa076cc9f9c6f081ce17d1ab5512901ba068effcc6ea1bbab8e8f750a4794b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/generation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/generation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+      "after_sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/generation_check.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/generation_check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+      "after_sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/identity.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "after_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/independent_regeneration.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/independent_regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+      "after_sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/preservation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/preservation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "066dcf180f0116a804f3f7d4236615fdd963711b1f1783be316b7f797bfdf463",
+      "after_sha256": "066dcf180f0116a804f3f7d4236615fdd963711b1f1783be316b7f797bfdf463",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/publication.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "8b4ebcab794e1cf5841d26560685cede6703d887cb028bd2d8848406f08672cb",
+      "after_sha256": "8b4ebcab794e1cf5841d26560685cede6703d887cb028bd2d8848406f08672cb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/rad.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "after_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/readme-lifecycle.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/readme-lifecycle.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "29bf6389ddf707f9fd5cc7bea018c2f72866fc9bc948309b7c6f5283e7ae27b7",
+      "after_sha256": "29bf6389ddf707f9fd5cc7bea018c2f72866fc9bc948309b7c6f5283e7ae27b7",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/recovery_replay.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/recovery_replay.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "after_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/regeneration_comparison.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/regeneration_comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "6030c5d7a7fef0306eb6e74c8960e44deed73ae0e4edd05fa172ff1f14870318",
+      "after_sha256": "6030c5d7a7fef0306eb6e74c8960e44deed73ae0e4edd05fa172ff1f14870318",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/release.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "after_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/report.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/report.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+      "after_sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/scripts.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "f4cf03ad45eea71e2dde5b5b1cc0e975cda98903d356f2757519c8a016ccce04",
+      "after_sha256": "f4cf03ad45eea71e2dde5b5b1cc0e975cda98903d356f2757519c8a016ccce04",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/snapshot.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "77a94b4166c2fdce232f9d93b0741580142188402f80b4039d4e0af85f712ee1",
+      "after_sha256": "77a94b4166c2fdce232f9d93b0741580142188402f80b4039d4e0af85f712ee1",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/corrections/snapshot_tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/corrections/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "32ecf936b54f423ea534e089a20692be552c3e088c8de13be78e50c2f74a6aa1",
+      "after_sha256": "32ecf936b54f423ea534e089a20692be552c3e088c8de13be78e50c2f74a6aa1",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/diff.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+      "after_sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/generation_xsd.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/generation_xsd.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb",
+      "after_sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/archi_sort.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/archi_sort.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "b35e8155fdb4cf63e0c8a547faaef722968737f0987f9b28ba2db0cfef753bed",
+      "after_sha256": "b35e8155fdb4cf63e0c8a547faaef722968737f0987f9b28ba2db0cfef753bed",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/architecture.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "09d03a6303c5585ebd07e1d6af162f9efafe62742ecc0124fb026915017b3973",
+      "after_sha256": "09d03a6303c5585ebd07e1d6af162f9efafe62742ecc0124fb026915017b3973",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/audit.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/audit.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "dcbfd49a0229629fba0bffd15d35ae5e2f282a93008819a233a95db59c8d20df",
+      "after_sha256": "dcbfd49a0229629fba0bffd15d35ae5e2f282a93008819a233a95db59c8d20df",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/bindings.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "after_sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/check.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb",
+      "after_sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/final-workflow.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/final-workflow.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "a995fb6c5d300c754c680b59c062ad75e486c0bd2a9166959b718175cd192dff",
+      "after_sha256": "a995fb6c5d300c754c680b59c062ad75e486c0bd2a9166959b718175cd192dff",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/generation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/generation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb",
+      "after_sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/identity.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "after_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/publication.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "37185904a09e1139d52930cc70d35426881d16cdd772752642c5db48ddfb3151",
+      "after_sha256": "37185904a09e1139d52930cc70d35426881d16cdd772752642c5db48ddfb3151",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/rad.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "after_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/recovery.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/recovery.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "after_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/release.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "after_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/scripts.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e5f6d309b3ad02f1f9f024c7a6d347d2528458a3e6d90d40192b5557efb96531",
+      "after_sha256": "e5f6d309b3ad02f1f9f024c7a6d347d2528458a3e6d90d40192b5557efb96531",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/snapshot-check.py",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/snapshot-check.py",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "6e097e14622ac960662f64ae111594e192e8cbde981504bdadb699b0259230c8",
+      "after_sha256": "6e097e14622ac960662f64ae111594e192e8cbde981504bdadb699b0259230c8",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/snapshot.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "925b65b351b793021a63f45b57f5286923653e6e15b1d2b9e7bbcbed4c128765",
+      "after_sha256": "925b65b351b793021a63f45b57f5286923653e6e15b1d2b9e7bbcbed4c128765",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/snapshot_tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "6129339624c8c855421e08ea03996821441bb61f23a0076be76686ec0f421b08",
+      "after_sha256": "6129339624c8c855421e08ea03996821441bb61f23a0076be76686ec0f421b08",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/human-inspection/starting-candidate-audit.py",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/starting-candidate-audit.py",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "0f0e3e5f5aef58d54709424ec1f2a9a46652a2fd9b6b54f5d25c027a81245104",
+      "after_sha256": "0f0e3e5f5aef58d54709424ec1f2a9a46652a2fd9b6b54f5d25c027a81245104",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/identity.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "after_sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/independent_regeneration.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/independent_regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb",
+      "after_sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/all-output-comparison.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/all-output-comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "2135af2cd6df9d8cb21e2c0ff5c6e1e18119778665901b27f2f8866f110880ca",
+      "after_sha256": "2135af2cd6df9d8cb21e2c0ff5c6e1e18119778665901b27f2f8866f110880ca",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/archi-cli-display.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/archi-cli-display.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "b115f1b1dee57d5f200164210b78edaf8f4d0d64160118ba68ea6c6d80c3481f",
+      "after_sha256": "b115f1b1dee57d5f200164210b78edaf8f4d0d64160118ba68ea6c6d80c3481f",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/archi-cli-no-display.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/archi-cli-no-display.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "d8359519ea841082aeb7ea8f24dfb143d351b8c08d120638114271d05574d84b",
+      "after_sha256": "d8359519ea841082aeb7ea8f24dfb143d351b8c08d120638114271d05574d84b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/architecture.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "6fe677b54c1db29b187fcbd6fb2745d3acc491cbab33fd9fc9978e588b7b2fab",
+      "after_sha256": "6fe677b54c1db29b187fcbd6fb2745d3acc491cbab33fd9fc9978e588b7b2fab",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/bindings.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "5e49d1e87729e8b98ee6b421978c8401bcca00b44c3fc978faca6b7cc851da46",
+      "after_sha256": "5e49d1e87729e8b98ee6b421978c8401bcca00b44c3fc978faca6b7cc851da46",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/diff.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+      "after_sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/generation_check.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/generation_check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "dd0117f47b6487f66bd55fe5404db972f133c98030df9e56f4c5ae03bbbb7ff5",
+      "after_sha256": "dd0117f47b6487f66bd55fe5404db972f133c98030df9e56f4c5ae03bbbb7ff5",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/generation_xsd.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/generation_xsd.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "6419096f353847ee6fc83274e62a90c215b0a329150b2cbd91b992c030a0130c",
+      "after_sha256": "6419096f353847ee6fc83274e62a90c215b0a329150b2cbd91b992c030a0130c",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/identity.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "b622201b5cd44b7db5cf80fd8070ed07c946fdbb8b69246af1e033985e95bfdd",
+      "after_sha256": "b622201b5cd44b7db5cf80fd8070ed07c946fdbb8b69246af1e033985e95bfdd",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/independent_regeneration.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/independent_regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "935a15391425ff204f504c2a88173e1f18ba64f92409d1e38717f1168512d597",
+      "after_sha256": "935a15391425ff204f504c2a88173e1f18ba64f92409d1e38717f1168512d597",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/preservation.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/preservation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "567d6da879938da2754da02588a492faa602a4af591861b75de9ec2f37fa22c2",
+      "after_sha256": "567d6da879938da2754da02588a492faa602a4af591861b75de9ec2f37fa22c2",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/publication.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "864528482453d75f71a4aca9615d6a71df0d72be8901a1d1505946603ed63dba",
+      "after_sha256": "864528482453d75f71a4aca9615d6a71df0d72be8901a1d1505946603ed63dba",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/rad.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "4e135cd8f0c10ff5c0c61d503934b8f5174cd970dc35d88780c622daae5a6f49",
+      "after_sha256": "4e135cd8f0c10ff5c0c61d503934b8f5174cd970dc35d88780c622daae5a6f49",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/recovery_replay.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/recovery_replay.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "7e9a401470c05e6b8ac9ea3aba3b440e102ebfce5bfe9c1de8f29cbff93c5656",
+      "after_sha256": "7e9a401470c05e6b8ac9ea3aba3b440e102ebfce5bfe9c1de8f29cbff93c5656",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/regeneration_comparison.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/regeneration_comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "66965916df0630bf5467ccd0cb3e0c4f8bdf4d0343076dbea2b541fc07c50e55",
+      "after_sha256": "66965916df0630bf5467ccd0cb3e0c4f8bdf4d0343076dbea2b541fc07c50e55",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/release.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "2ed54370d48f30e4854e297846641eafc9a8900882211d6b597b152f90861f70",
+      "after_sha256": "2ed54370d48f30e4854e297846641eafc9a8900882211d6b597b152f90861f70",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/report-check.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/report-check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+      "after_sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/report-independent.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/report-independent.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+      "after_sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/scripts.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "44723e61ab31403ebe86bb1eee1f0a13640abe5e3e79ea3a10d0d43fdbd262ea",
+      "after_sha256": "44723e61ab31403ebe86bb1eee1f0a13640abe5e3e79ea3a10d0d43fdbd262ea",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/snapshot.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "2e2ebfbf15f90b56512acaee54d8e6023b9acfe5cc3fd33cba12763c1c77c28e",
+      "after_sha256": "2e2ebfbf15f90b56512acaee54d8e6023b9acfe5cc3fd33cba12763c1c77c28e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/snapshot_tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "49e07b1c406f77ca0c6019b4562e0fc3780d2fa0442a2c9ed625855b858254c2",
+      "after_sha256": "49e07b1c406f77ca0c6019b4562e0fc3780d2fa0442a2c9ed625855b858254c2",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/projection/structural_audit.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/projection/structural_audit.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "02043c3e969bea1c9784599d965b533552fd263162430fbb48f532ed422a0eba",
+      "after_sha256": "02043c3e969bea1c9784599d965b533552fd263162430fbb48f532ed422a0eba",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/publication.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "f0374da109a0a6145b4d74f190b56b62b57e8c335acbda283ec9654b3b8551e3",
+      "after_sha256": "f0374da109a0a6145b4d74f190b56b62b57e8c335acbda283ec9654b3b8551e3",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/rad.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "after_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/recovery_replay.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/recovery_replay.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "after_sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/regeneration_comparison.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/regeneration_comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "427e9c68535ea6f9d82976b921d1ffcb945d22176f5f984efa00d47a5184144c",
+      "after_sha256": "427e9c68535ea6f9d82976b921d1ffcb945d22176f5f984efa00d47a5184144c",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/release.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "after_sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/scripts.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "4b70680eff16a3a5f6a0e45ad8c4bf3d449ce548b2e3a60ad7b701402537f2d5",
+      "after_sha256": "4b70680eff16a3a5f6a0e45ad8c4bf3d449ce548b2e3a60ad7b701402537f2d5",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/snapshot.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "f3c10ae2dae430f560da1911669d191747bc6f32b2d82e135f8e2a190e53b875",
+      "after_sha256": "f3c10ae2dae430f560da1911669d191747bc6f32b2d82e135f8e2a190e53b875",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification/snapshot_tests.log",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "037e807ec0a72a483203f391b5a8793fa94bc0f78420094215205bbd9a7c86c3",
+      "after_sha256": "037e807ec0a72a483203f391b5a8793fa94bc0f78420094215205bbd9a7c86c3",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/synchronised-baseline/verification.json",
+      "destination": "docs/archimate/processing/publishing/1.0.6/verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "0c03b069bc1032da40e5368ce4f61f033e85ec10db0276d45ee74b99d7d91b80",
+      "after_sha256": "0c03b069bc1032da40e5368ce4f61f033e85ec10db0276d45ee74b99d7d91b80",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/fixtures/roundtrip/future-contract.xml",
+      "destination": "docs/archimate/framework/tests/fixtures/roundtrip/future-contract.xml",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "0f0c0d4711ee8db12b2c6103958f88f4bde190802ced1793ead2052c73cc7cfb",
+      "after_sha256": "0f0c0d4711ee8db12b2c6103958f88f4bde190802ced1793ead2052c73cc7cfb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/fixtures/roundtrip/manifest.json",
+      "destination": "docs/archimate/framework/tests/fixtures/roundtrip/manifest.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "aed716d0461d5d67197c0a35b7f750fa5f4823660ae06045f1cb6c89f7c0194b",
+      "after_sha256": "aed716d0461d5d67197c0a35b7f750fa5f4823660ae06045f1cb6c89f7c0194b",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_baseline.py",
+      "destination": "docs/archimate/framework/tests/test_baseline.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "320bbb4c8078fd98d0b39393701d1e125b2f4e7e9d389bd404ab678f61f8ed25",
+      "after_sha256": "320bbb4c8078fd98d0b39393701d1e125b2f4e7e9d389bd404ab678f61f8ed25",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_documentation.py",
+      "destination": "docs/archimate/framework/tests/test_documentation.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "2b2384fa01501404d7ff1b3518205424237db80927c6f2fdf32f3b15e928c2a1",
+      "after_sha256": "a3fd0b3d4fb651c7a0a0c4acddb467216b37059e05f71457744d7fe93503befc",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_governed_metadata.py",
+      "destination": "docs/archimate/framework/tests/test_governed_metadata.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "165cd09fab52b1ce3695ad85054ce8ef6f8df38753d1aebc2de36637f29aea6a",
+      "after_sha256": "165cd09fab52b1ce3695ad85054ce8ef6f8df38753d1aebc2de36637f29aea6a",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_navigation.py",
+      "destination": "docs/archimate/framework/tests/test_navigation.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "fe02ed6cf2d42ccacfc8e5dd924c0016daa636024bf961f0d3135c6c5954e456",
+      "after_sha256": "46fcb660080dd632aa20ca673fde52ae351cbe5543518f1973c6b088093340a7",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_publication_metadata.py",
+      "destination": "docs/archimate/framework/tests/test_publication_metadata.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "3d37a4c33b0f1368513f93e7359a7fe671ced4001694d676119645d32101bc4c",
+      "after_sha256": "014b77b41119d63db1c97ae75cfbe8187268f380eb3fa0468514f77c193ab394",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_recovery.py",
+      "destination": "docs/archimate/framework/tests/test_recovery.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "ff0492050e652675808bb613fb16c778e25b898761ae0dc8155d9c2f2f1139bb",
+      "after_sha256": "ff0492050e652675808bb613fb16c778e25b898761ae0dc8155d9c2f2f1139bb",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_roundtrip.py",
+      "destination": "docs/archimate/framework/tests/test_roundtrip.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "714bfe91a1c95f3e68c82d7cee95c107770ef9dbb545a8bc897bd802542aa43e",
+      "after_sha256": "714bfe91a1c95f3e68c82d7cee95c107770ef9dbb545a8bc897bd802542aa43e",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/test_views.py",
+      "destination": "docs/archimate/framework/tests/test_views.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "04c9063e3a96ab9b2d7511e8ab201fc0ac448fdb0e45ebffa382e97867124d17",
+      "after_sha256": "9b82e5b70dd86235c1628b5e623ed0bc4ea55169fc4082aa62e757708d30ca82",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/assess_rad.py",
+      "destination": "docs/archimate/framework/tools/assess_rad.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513",
+      "after_sha256": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/diagnose_roundtrip.py",
+      "destination": "docs/archimate/framework/tools/diagnose_roundtrip.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "e7f769b7457ad8733792c642d7fa03fe668501d57d640b3a8ea80086e715e767",
+      "after_sha256": "b8e86a1d3ad3f91c10c94b729354adfc8d0e763268ba2db8c6d0391c25f9a4fb",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/feature_projection.py",
+      "destination": "docs/archimate/framework/tools/feature_projection.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "062dd6dd5e9677f7811edb4ca834514e576c25cfa0175f8477ebbea36b0844d7",
+      "after_sha256": "062dd6dd5e9677f7811edb4ca834514e576c25cfa0175f8477ebbea36b0844d7",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/generate_views.py",
+      "destination": "docs/archimate/framework/tools/generate_views.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "a82708730a67d063c5504f544e60d5eca73c84267992a79b5f16c6a1e8338797",
+      "after_sha256": "78980c637e1b1cfa991bc545865eda7a832eb9e3d40d76e62ca1d7e32865e3bc",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/governed_metadata.py",
+      "destination": "docs/archimate/framework/tools/governed_metadata.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "a85eef23a12d72eeab327e325c334d69f1a1e5b86e95d5b27161ada10f69de14",
+      "after_sha256": "26affc19ff6174b95e58cb3ed1110a9169a8dbb8c1928ce0c83575e921d3d5e8",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/publish_documentation.py",
+      "destination": "docs/archimate/framework/tools/publish_documentation.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "fec75663ea320796af4b4c72e90a004fc4a2afb58be60f01371f30c25742d463",
+      "after_sha256": "0e64d776c2ab359419b057e61a7ba3623b8546318225f9871fa503d9e3c6247c",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/publish_navigation.py",
+      "destination": "docs/archimate/framework/tools/publish_navigation.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "8060f6d2fce8c17361d43156626d03d29004e00c30b776a691f313f07048a494",
+      "after_sha256": "5d6e616639b0e68edea7b9c375ad882ddba57e9d042b5bdc063a18d24a32c8fa",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/recover_v02.py",
+      "destination": "docs/archimate/framework/tools/recover_v02.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "e64ebb1e3399b99a1e7ea153e5034864e2a8da95e131826b210877202d6531bd",
+      "after_sha256": "e4e44ec36d9751804f29a97db5b21ada8151c2af8a721762bf24393bc7909c1b",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/report_baseline.py",
+      "destination": "docs/archimate/framework/tools/report_baseline.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "7ccc32d8fa8f981cd1fb7a23e9207ce54601eb736a0c5733d376debaba0407d1",
+      "after_sha256": "ad0090871f57ddd51ea04babb817a87cd44ce83035bb27459688876954cf1ed6",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/report_navigation.py",
+      "destination": "docs/archimate/framework/tools/report_navigation.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "792d257a6223ef4f52ed3450deba700841414a35631cea7eaf676280e740bf97",
+      "after_sha256": "32acba602d208f6ccad2a375fb0e9eebfde2c26086a7dd732e6a62b3400c9030",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/report_publication.py",
+      "destination": "docs/archimate/framework/tools/report_publication.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "0049c0739040d7f521d653773e048c5e9d6f97d705f32b486385ef0d8d1e32d7",
+      "after_sha256": "0eb85717d4f424ef315d500193f93f0a189865423764155ba360c760c8c6af1d",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/report_recovery.py",
+      "destination": "docs/archimate/framework/tools/report_recovery.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "dbaaddd241461e1d33ee915e3ed958cf2f71c87151f1f42f341ed5d8732c9026",
+      "after_sha256": "d1e66bd8dd761e2ab87739607dc061765288ffc9e4e53bf078302c2645ffd6c1",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/synchronise_baseline.py",
+      "destination": "docs/archimate/framework/tools/synchronise_baseline.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "d524fc9f8b594f2c73467ca13132201b822bde49661f7680af0368b5db7bc322",
+      "after_sha256": "10e89e26fb0da650c50bdd672a2f6fda09c8fd4892913350fa0d19cd1f1816ff",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/verify_baseline_outputs.py",
+      "destination": "docs/archimate/framework/tools/verify_baseline_outputs.py",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "27ce8b8da5dcd12d5e73d0f574734b0551ef3f78249a0967a18b0451e02f5ee0",
+      "after_sha256": "10dd042a6d31c1e3eb7e3626f372c94cf3116fd368615605bb3d63f9f420659d",
+      "bytes_unchanged": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/validation.json",
+      "destination": "docs/archimate/processing/publishing/1.0.4/validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Release-specific publication processing evidence, retained under its original release; bytes unchanged.",
+      "before_sha256": "92f592ca3998ae7de2a37f14e0063b4603e8910abe88e448deb783f6a233f733",
+      "after_sha256": "92f592ca3998ae7de2a37f14e0063b4603e8910abe88e448deb783f6a233f733",
+      "bytes_unchanged": true
+    },
+    {
+      "source": "docs/archimate/capability-architecture/view-generation-report.md",
+      "destination": "docs/archimate/framework/baseline/view-generation-report.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Reusable machinery or framework baseline/support fixture.",
+      "before_sha256": "dd1e225b5b0ceae8f7484daa0cd3863670b92c02ebfebaa207932e5901c515d1",
+      "after_sha256": "dd1e225b5b0ceae8f7484daa0cd3863670b92c02ebfebaa207932e5901c515d1",
+      "bytes_unchanged": true
+    }
+  ],
+  "untracked_originals": [
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_baseline.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_baseline.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "b36717c8d7f13d1dedad0ccfb4f00b99881f76758d830fec9643338b6c2e9a8b",
+      "bytes": 50904,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_documentation.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_documentation.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "bfa005afbb9f3fe5df4b7febbf59f57c56ed3f9e1e5003aa4ad4e69da83671ad",
+      "bytes": 17947,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_governed_metadata.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_governed_metadata.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "5956689000009d64cdd7e65c16d75dd102bc2da06ebc6839679c6ad1b78d4790",
+      "bytes": 18008,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_navigation.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_navigation.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "9e94fc4ab005f091f35d05e91ed202f3a76d51dcfec4a112822a9e6af799e8c8",
+      "bytes": 32430,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_publication_metadata.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_publication_metadata.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "eedb53fb342bdc639eec9b8ad623fec0e817d3382787509421ab4ce43ca08120",
+      "bytes": 7575,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_recovery.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_recovery.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "a2dc119b5a6da2e9ec1f41983d769eeb523b923bafbff03692383a44ba38dfc7",
+      "bytes": 25527,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_roundtrip.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_roundtrip.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "524db64f7f55998864e9deabfd8a5db6aa89c2deb21a596ef40b4c000f6d6e49",
+      "bytes": 39651,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tests/__pycache__/test_views.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tests/__pycache__/test_views.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "fd4047476dfa5c100d7208e9b512ec04fc55e86d8c40bbdeac37aafb55e4c693",
+      "bytes": 28662,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/assess_rad.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/assess_rad.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "d09cb2177b630b9b57ac6458958c922618f66e5bf4de6989dee8872acde2ea49",
+      "bytes": 24977,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/diagnose_roundtrip.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/diagnose_roundtrip.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "456a77f26b2f38bc3a4760b65789c3b246d3337135949748457ff68beaf9b5f2",
+      "bytes": 54600,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/feature_projection.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/feature_projection.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "ffbff8ba33ac4d2278615802f024c6654057dbc1d32967ef7ffe82a5e63f1980",
+      "bytes": 37432,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/generate_views.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/generate_views.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "295d0a7e5b72b92366cc3a4791f69bbaac3897b3c5e336b35603fdf25680f79c",
+      "bytes": 42590,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/governed_metadata.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/governed_metadata.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "500d4a18c2dcac1f65d35b2b33af965008a2f370ef854114fbab06552fec1377",
+      "bytes": 42843,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/publish_documentation.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/publish_documentation.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "b3425f6fdc8d0c52ad5f3ca2ff5b1dde11ddda6ba6dd31662328e42db8d93a41",
+      "bytes": 15206,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/publish_navigation.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/publish_navigation.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "264f2ad614b7b547def1679b0ac5eb9702bf51f863f998c9029b56dae2a68fd2",
+      "bytes": 38235,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/recover_v02.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/recover_v02.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "ab36fd341e6987a5f0078d0e1d5cc8e5706593e7d30c66a830b470428dd5efe2",
+      "bytes": 88259,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/report_baseline.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/report_baseline.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "935b2b4dc4f70eb1d006c228ea62a596193650aea1b6d4f8884231e85170a466",
+      "bytes": 34751,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/report_navigation.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/report_navigation.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "1702a451e26a2a08f6d3c65115e8bb60bf94aa1571a8d7db8a0708d698c77ed2",
+      "bytes": 22719,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/report_publication.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/report_publication.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "eaec5887009da404ac994d868274193c0b93759247f646d469a0e35e2dbb7cbe",
+      "bytes": 16180,
+      "tracked": false
+    },
+    {
+      "source": "docs/archimate/capability-architecture/tools/__pycache__/synchronise_baseline.cpython-314.pyc",
+      "destination": "docs/archimate/framework/tools/__pycache__/synchronise_baseline.cpython-314.pyc",
+      "classification": "FRAMEWORK",
+      "rationale": "Machinery or governed support input; baseline XML is a pinned historical transport fixture. Ignored Python caches are incidental runtime files.",
+      "sha256": "88c180cce4dc61abf93cef6a99d915e0b31f6faa7f54299eabbc93661634bb96",
+      "bytes": 105310,
+      "tracked": false
+    }
+  ]
+}

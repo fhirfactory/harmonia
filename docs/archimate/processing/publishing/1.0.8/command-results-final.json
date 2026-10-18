@@ -1,0 +1,85 @@
+{
+  "source_identity": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/governed_metadata.py",
+      "validate"
+    ],
+    "returncode": 0,
+    "seconds": 1.569,
+    "log": "docs/archimate/processing/publishing/1.0.8/source_identity-final.log"
+  },
+  "ec_bindings": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "-c",
+      "import sys,json; sys.path.insert(0,'scripts'); import architecture_identity as i; print(json.dumps(i.verify_bindings(i.read_json(i.DIRECTORY/'registry.json')),indent=2))"
+    ],
+    "returncode": 0,
+    "seconds": 5.033,
+    "log": "docs/archimate/processing/publishing/1.0.8/ec_bindings-final.log"
+  },
+  "identity_registry": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/architecture_identity.py",
+      "validate"
+    ],
+    "returncode": 0,
+    "seconds": 0.201,
+    "log": "docs/archimate/processing/publishing/1.0.8/identity_registry-final.log"
+  },
+  "release": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/architecture_release.py",
+      "check"
+    ],
+    "returncode": 0,
+    "seconds": 0.065,
+    "log": "docs/archimate/processing/publishing/1.0.8/release-final.log"
+  },
+  "historical_recovery": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/recover_v02.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 5.752,
+    "log": "docs/archimate/processing/publishing/1.0.8/historical_recovery-final.log"
+  },
+  "migration_comparison": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/verify_workspace.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.812,
+    "log": "docs/archimate/processing/publishing/1.0.8/migration_comparison-final.log"
+  },
+  "publication_check": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/synchronise_baseline.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 21.471,
+    "log": "docs/archimate/processing/publishing/1.0.8/publication_check-final.log"
+  }
+}

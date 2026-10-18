@@ -1,0 +1,2 @@
+INVALID: [Errno 2] No such file or directory: '/tmp/harmonia-107-checkpoint-b7cyeu3z/.junie/reports/2026-10-18-archimate-roundtrip-increment-1/architecture.log'
+INVALID: Command '['/usr/bin/python3', '/tmp/harmonia-107-checkpoint-b7cyeu3z/docs/archimate/capability-architecture/tools/report_baseline.py', '--output-directory', '/tmp/harmonia-106-reproduction-rif3if08']' returned non-zero exit status 1.

@@ -1,0 +1,85 @@
+{
+  "source_identity": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/governed_metadata.py",
+      "validate"
+    ],
+    "returncode": 0,
+    "seconds": 1.638,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/source_identity.log"
+  },
+  "ec_bindings": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/architecture_identity.py",
+      "bindings"
+    ],
+    "returncode": 0,
+    "seconds": 4.806,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/ec_bindings.log"
+  },
+  "identity_registry": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/architecture_identity.py",
+      "validate"
+    ],
+    "returncode": 0,
+    "seconds": 0.204,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/identity_registry.log"
+  },
+  "release": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/architecture_release.py",
+      "check"
+    ],
+    "returncode": 0,
+    "seconds": 0.062,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/release.log"
+  },
+  "historical_recovery": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/recover_v02.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 5.983,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/historical_recovery.log"
+  },
+  "migration_comparison": {
+    "status": "PASS",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/verify_workspace.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.819,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/migration_comparison.log"
+  },
+  "publication_check": {
+    "status": "FAIL",
+    "command": [
+      "python3",
+      "-B",
+      "docs/archimate/framework/tools/synchronise_baseline.py",
+      "--check"
+    ],
+    "returncode": 1,
+    "seconds": 5.159,
+    "log": ".junie/reports/2026-10-18-archimate-workspace-restructure/publication_check.log"
+  }
+}

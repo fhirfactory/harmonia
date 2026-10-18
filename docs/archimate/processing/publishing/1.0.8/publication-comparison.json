@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "comparison": {
+    "status": "PASS",
+    "before_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+    "after_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+    "counts": {
+      "semantic_elements": 1299,
+      "relationships": 852,
+      "views": 1196,
+      "visual_objects": 3915,
+      "visual_connections": 1449,
+      "bendpoints": 2922
+    },
+    "exact_architecture_and_presentation_sha256": "61ad99a550253e3833018c1f94228232c1f385004f68f816c8bb38e7e883e2c1",
+    "architecture_semantic_delta": "NONE",
+    "architecture_identity_delta": "NONE",
+    "architecture_relationship_delta": "NONE",
+    "architecture_presentation_delta": "NONE",
+    "only_xml_difference": "One model-level baseline-architecture-release value: 1.0.7 \u2192 1.0.8"
+  },
+  "outputs": [
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/exchange/publish/1.0.7/Harmonia-Architecture-1.0.7.xml",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml",
+      "before_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+      "after_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+      "classification": "RELEASE METADATA ONLY",
+      "explanation": "Exactly one model-level baseline-architecture-release value: 1.0.7 \u2192 1.0.8. Restoring it reproduces the accepted byte stream exactly."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.7/canonical-identity-validation.json",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.8/publication-validation-1.0.8.json",
+      "before_sha256": "bbf62cfafa53501bb09d0efa1e9001672a45c886eb444c837afb06a7673fd707",
+      "after_sha256": "e7739e1199db8bf83cb2de5688af5af4d31d53858610de14623825d8a7bf28c0",
+      "classification": "RELEASE METADATA ONLY",
+      "explanation": "Exactly three changed JSON leaves: architecture_release.version, architecture_release.previous_version, output_sha256. The hash follows the explained XML release-value change."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/business-capabilities.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/business-capabilities.md",
+      "before_sha256": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144",
+      "after_sha256": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/business-enabling-capabilities.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/business-enabling-capabilities.md",
+      "before_sha256": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1",
+      "after_sha256": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/discrepancies.json",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/discrepancies.json",
+      "before_sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+      "after_sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/enterprise-capabilities.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/enterprise-capabilities.md",
+      "before_sha256": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d",
+      "after_sha256": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/features.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/features.md",
+      "before_sha256": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa",
+      "after_sha256": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/functions.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/functions.md",
+      "before_sha256": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e",
+      "after_sha256": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/motivation.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/motivation.md",
+      "before_sha256": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76",
+      "after_sha256": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/processes.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/processes.md",
+      "before_sha256": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef",
+      "after_sha256": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/relationships.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/relationships.md",
+      "before_sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+      "after_sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/services.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/baseline/services.md",
+      "before_sha256": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59",
+      "after_sha256": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59",
+      "classification": "BYTE-IDENTICAL",
+      "explanation": "Unchanged textual/JSON governed projection."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.7/canonical-identity-establishment.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.8/publication-1.0.8.md",
+      "before_sha256": "67604653a6e125be5d9522fe6c690601d27c6460cd93829af2aab2adf07b8084",
+      "after_sha256": "94f321deb73453fbf0b77a57f10dc82cdbd9598ff08407a63f6312b0204f6297",
+      "classification": "RELEASE-SPECIFIC SUPPORT DOCUMENTATION",
+      "explanation": "New 1.0.8 workspace/publication report or guide describes the policy release, final paths, exact preservation proof and current completed checks. Original 1.0.7 document remains frozen. Support documentation is processing evidence, outside the exchange package. Every changed line is retained in publication-support-documents.diff."
+    },
+    {
+      "before": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.7/canonical-identity-archi-guide.md",
+      "after": "/usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md",
+      "before_sha256": "22abb801814d58e8db27faad9e7f35488de49e70a522879b7a836796e3017e44",
+      "after_sha256": "999696549b5a1b779cc8fcb9d7042ac3e1a3b82d892c01481d8bfa3fa556f2b2",
+      "classification": "RELEASE-SPECIFIC SUPPORT DOCUMENTATION",
+      "explanation": "New 1.0.8 workspace/publication report or guide describes the policy release, final paths, exact preservation proof and current completed checks. Original 1.0.7 document remains frozen. Support documentation is processing evidence, outside the exchange package. Every changed line is retained in publication-support-documents.diff."
+    }
+  ]
+}

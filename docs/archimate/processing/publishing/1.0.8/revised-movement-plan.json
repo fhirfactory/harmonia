@@ -1,0 +1,1027 @@
+{
+  "reason": "Solution Architect clarified lean versioned exchange packages before further movement",
+  "records": [
+    {
+      "source": "docs/archimate/exchange/publish/Harmonia-Capability-Architecture.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.4/Harmonia-Capability-Architecture.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Historical actual capability exchange publication; preserve accepted XML bytes and filename.",
+      "sha256": "98c1074c8ead4c55708dc85b327a98e077feb8e59ff58cec9c2852a1332e9e75"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/documentation-publication-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/documentation-publication-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "4ba697daff9fc35e2ad3a6bc259d6b4dc04aabce83be8ebe04b38a90ded23f3e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/navigation-release-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/navigation-release-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "3d55f630f64dbad1e1353be397af33b5d2e65c822bcf7e13eb39bce84358976d"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/navigation-release-verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/navigation-release-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "50e12a6cbc4103815d81a9b7ec9a850a7fdf9632435b55d27892ab262603e471"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/1.0.5A-recovery-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/1.0.5A-recovery-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "61ec9349d290b3b15415600e126af17f2d10ff0c23e59ab7034b3960638da210"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml",
+      "destination": "docs/archimate/framework/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml",
+      "classification": "FRAMEWORK",
+      "rationale": "Immutable recovery fixtures, pinned sources, crosswalk/findings and expected outputs used by replay.",
+      "sha256": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/archi-inspection-guide.md",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/archi-inspection-guide.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "cdc2d6a9be60f563321306d7023e3f3a16e17fc3b33dd271d1ebc87c532635db"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/architecture-release.json",
+      "destination": "docs/archimate/framework/recovery-v0.2/architecture-release.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Immutable recovery fixtures, pinned sources, crosswalk/findings and expected outputs used by replay.",
+      "sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/corpus-drift.json",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/corpus-drift.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "5edc8f65383381d8c35b12934526c2c9772666e7ffbcb34d1459e8ef2b08b58e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/recovery-findings.json",
+      "destination": "docs/archimate/framework/recovery-v0.2/recovery-findings.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Immutable recovery fixtures, pinned sources, crosswalk/findings and expected outputs used by replay.",
+      "sha256": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/representation-crosswalk.json",
+      "destination": "docs/archimate/framework/recovery-v0.2/representation-crosswalk.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Immutable recovery fixtures, pinned sources, crosswalk/findings and expected outputs used by replay.",
+      "sha256": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/source-manifest.json",
+      "destination": "docs/archimate/framework/recovery-v0.2/source-manifest.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Immutable recovery fixtures, pinned sources, crosswalk/findings and expected outputs used by replay.",
+      "sha256": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/validation.json",
+      "destination": "docs/archimate/framework/recovery-v0.2/validation.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Immutable recovery fixtures, pinned sources, crosswalk/findings and expected outputs used by replay.",
+      "sha256": "e96640f7b2d9ebdbff7c4e4dc8d06ae34ef2d581f558b9241216dedb40101a6f"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/.gitignore",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/.gitignore",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "ce2da3813dec0794abe45d66ce62c33f3f3d4ae9856b71e0be6e49ce5bda37ad"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/architecture-tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/architecture-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "e0370bd75d46af9c5f8ea70ba2da4781666501a4ceeb1e39293797b1e7c81915"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/definition-concordance.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/definition-concordance.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "4c25d0a6243765c7b709d2d2a8b44b0175ca6a3bc7d5894523c6b5db0341cf10"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/diff.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/identity-validation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/identity-validation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "cb91c62e91ac9f7d264c8b86f1e464015766132b8a97a55965e8085e577d1733"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/initial-maven.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/initial-maven.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "75b786fe605b7b3d35eccb8e9d44340ce68b5aec8dcd7cada9e598b571281f4c"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/jdk25-diagnostic.txt",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/jdk25-diagnostic.txt",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "7b7e4159f7fca015e1463a577b167f7cf2ac04aa6e48fa606a72ffdba98796d1"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/legacy-v02-check.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/legacy-v02-check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "ff22c6319e5271c39d6ed802f892173f058ccfb68f7cb265b4a42c17c1b225eb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/make-all.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/make-all.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "55412ba1e877338055013f22b0c7a55a32122b21513057cb41ef49ca72ecf99f"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/publication-tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/publication-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "82da7f0bb62a92fac38ae7ba6d7434c910259aae0dc3742dfb84bfc9a3ea74ad"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/rad-validation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/rad-validation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/regeneration.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/release.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/script-tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/script-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "9250af2694563055ea8679ad3ef35432464de884b5aa98d185fb07dfda310d81"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/snapshot-tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/snapshot-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "bb3f9b4784e0ce6356e39b2b70e01a4975ee52eb35e1c3b65af6a895c1cce36d"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification/snapshot-validation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification/snapshot-validation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "4e2832ad352fbc0fa3c046aacee88c61412184c7b887b7e648e4798269e218e7"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/recovery-v0.2/verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-recovery-v0.2/verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Frozen recovery execution/inspection evidence, not a consumable exchange release.",
+      "sha256": "748049f5da544af6d7336e0b88bae9968d3287379c224acf96d56c6e74dd56ab"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/reference-id-reconciliation-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/reference-id-reconciliation-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "9258e1b05029ab3344b15d7252d2d13a4329bc193df3c97515f7ccbabd8348e9"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/release-verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/release-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "6e6322f5696d8ef9d6d7c83aa801aef4b5ef027ef999a06cf062907ff3e8e7f1"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/2026-10-17-archimate-markdown-baseline-synchronisation.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "fdcf3180adf37c6de23020826f80be57d9d7650171b190a8228e51d60f48d462"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/Harmonia-Architecture-1.0.7.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.7/Harmonia-Architecture-1.0.7.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Actual versioned Harmonia-to-Archi exchange package; XML only.",
+      "sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/Harmonia-Architecture-1.0.8.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Actual versioned Harmonia-to-Archi exchange package; XML only.",
+      "sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/Harmonia-Architecture-Baseline.xml",
+      "destination": "docs/archimate/exchange/publish/1.0.6/Harmonia-Architecture-Baseline.xml",
+      "classification": "PUBLISHED EXCHANGE ARTEFACT",
+      "rationale": "Actual versioned Harmonia-to-Archi exchange package; XML only.",
+      "sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/archi-inspection-guide.md",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/archi-inspection-guide.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "63f3da5d2c121cbc01c0bbee2862e5fc8008ecda7b704935f5aea98a17b61f21"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/architecture-release-1.0.7.json",
+      "destination": "docs/archimate/framework/baseline/architecture-release-1.0.7.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Pinned historical release fixture for reproduction.",
+      "sha256": "0a846e9c45386d6ba5732c85d404652b9506b5285a173d0ac2ee2763a9b9dd97"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/canonical-identity-archi-guide.md",
+      "destination": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/canonical-identity-archi-guide.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Original establishment report/guide/verification, kept beside existing empirical task evidence.",
+      "sha256": "22abb801814d58e8db27faad9e7f35488de49e70a522879b7a836796e3017e44"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/canonical-identity-establishment.md",
+      "destination": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/canonical-identity-establishment.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Original establishment report/guide/verification, kept beside existing empirical task evidence.",
+      "sha256": "67604653a6e125be5d9522fe6c690601d27c6460cd93829af2aab2adf07b8084"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/canonical-identity-validation.json",
+      "destination": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/canonical-identity-validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Original establishment report/guide/verification, kept beside existing empirical task evidence.",
+      "sha256": "bbf62cfafa53501bb09d0efa1e9001672a45c886eb444c837afb06a7673fd707"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/canonical-identity-verification.json",
+      "destination": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/canonical-identity-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Original establishment report/guide/verification, kept beside existing empirical task evidence.",
+      "sha256": "9a14878f92e9ecc01ba17f4aba0dc57dd108b726529a7ffb970e30bf09d1f2a3"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/corrections-preservation.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/corrections-preservation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "42d1b3487b122fe867c5ba17831184c4d14e1d183aa6acd6f1e6e1e911a70363"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/documentation-correction-verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/documentation-correction-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "ae7e7919a9947ff4e39e57ca00516e2f69717debdfe518412247958f2bf65223"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/human-inspection-start-preservation.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/human-inspection-start-preservation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "c71f7ac07f9d8e4dcf63f9e0df887c4ec95bdc11020722ac158cee3ada2a3969"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/architecture.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/architecture.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/manifest.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/manifest.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "03eb9b10fb9da2e58ef1efe46e224fff39cbc9cf9bda00ad5c42aea31882fa19"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/motivation.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/motivation.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/architecture-release.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/architecture-release.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/architecture.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/architecture.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/business-capabilities.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/business-capabilities.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/business-enabling-capabilities.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/business-enabling-capabilities.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/discrepancies.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/discrepancies.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/enterprise-capabilities.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/enterprise-capabilities.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/features.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/features.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/functions.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/functions.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/motivation.json",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/motivation.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/motivation.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/motivation.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/processes.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/processes.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/relationships.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/relationships.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/identity-establishment-1.0.7/prior-release/services.md",
+      "destination": "docs/archimate/framework/baseline/identity-establishment-1.0.7/prior-release/services.md",
+      "classification": "FRAMEWORK",
+      "rationale": "Complete immutable source-history input actively checked by identity validation.",
+      "sha256": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/initial-synchronisation-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/initial-synchronisation-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "07a687d2085850239ec3d561a53f617873d7eac34adac47aace1db591c28e5f6"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/initial-synchronisation-verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/initial-synchronisation-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "ce20d8a18caeebf91d73c41b1e3cbac46478aa0c38dfb77ef42207248333f1f8"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/pre-human-inspection-synchronisation-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/pre-human-inspection-synchronisation-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "99aa93bdab1e23dfd291a7bdcb049f261b35778220471c9f9a22285911adca65"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/pre-human-inspection-verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/pre-human-inspection-verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "2ade750a06fc264172cb4d70285686631d1811dc4b39d03926759d8816f143e8"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/projection-start-preservation.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/projection-start-preservation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "e7d8aa6f7d268a1eea3c96e11275d493dc6a3b618964682ac902478df216ed2c"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/publication-validation-1.0.8.json",
+      "destination": "docs/archimate/framework/publication-validation-1.0.8.json",
+      "classification": "FRAMEWORK",
+      "rationale": "Current generated validation/publication support, not exchange package.",
+      "sha256": "e7739e1199db8bf83cb2de5688af5af4d31d53858610de14623825d8a7bf28c0"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/validation.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "90570c7ad557a9eebe63448e8ffb7c6dbb49f157698aca39078bcec00ef327ba"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/.gitignore",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/.gitignore",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "5d656827105f73e5cd20b9246271d3ca3098286bf65ea909f909a603e88e1553"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/architecture.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "7fd729aa8f4a0803ee6e290ac437043c3cfa97bc12fd43755f0019bd7dbd37ff"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/baseline_contract.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/baseline_contract.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "73f5f57203bcab003c718e4057ba551217d009d1c14e48b119056cf1182b70ef"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/bindings.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/architecture.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "8b8d93a0e5075f3d1bd3321b1efebb987266f7e3eb09d9435d4a3a7f44672f7b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/baseline-tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/baseline-tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "58de9d06118b76a1e30a115653c625a35654f908733c697e1c3d6322bd085920"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/bindings.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/diff.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/documentation-samples.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/documentation-samples.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "e7fa076cc9f9c6f081ce17d1ab5512901ba068effcc6ea1bbab8e8f750a4794b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/generation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/generation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/generation_check.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/generation_check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/identity.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/independent_regeneration.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/independent_regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/preservation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/preservation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "066dcf180f0116a804f3f7d4236615fdd963711b1f1783be316b7f797bfdf463"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/publication.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "8b4ebcab794e1cf5841d26560685cede6703d887cb028bd2d8848406f08672cb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/rad.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/readme-lifecycle.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/readme-lifecycle.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "29bf6389ddf707f9fd5cc7bea018c2f72866fc9bc948309b7c6f5283e7ae27b7"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/recovery_replay.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/recovery_replay.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/regeneration_comparison.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/regeneration_comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "6030c5d7a7fef0306eb6e74c8960e44deed73ae0e4edd05fa172ff1f14870318"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/release.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/report.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/report.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/scripts.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "f4cf03ad45eea71e2dde5b5b1cc0e975cda98903d356f2757519c8a016ccce04"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/snapshot.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "77a94b4166c2fdce232f9d93b0741580142188402f80b4039d4e0af85f712ee1"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/corrections/snapshot_tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/corrections/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "32ecf936b54f423ea534e089a20692be552c3e088c8de13be78e50c2f74a6aa1"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/diff.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/generation_xsd.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/generation_xsd.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/archi_sort.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/archi_sort.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "b35e8155fdb4cf63e0c8a547faaef722968737f0987f9b28ba2db0cfef753bed"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/architecture.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "09d03a6303c5585ebd07e1d6af162f9efafe62742ecc0124fb026915017b3973"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/audit.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/audit.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "dcbfd49a0229629fba0bffd15d35ae5e2f282a93008819a233a95db59c8d20df"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/bindings.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/check.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/final-workflow.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/final-workflow.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "a995fb6c5d300c754c680b59c062ad75e486c0bd2a9166959b718175cd192dff"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/generation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/generation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/identity.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/publication.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "37185904a09e1139d52930cc70d35426881d16cdd772752642c5db48ddfb3151"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/rad.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/recovery.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/recovery.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/release.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/scripts.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "e5f6d309b3ad02f1f9f024c7a6d347d2528458a3e6d90d40192b5557efb96531"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/snapshot-check.py",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/snapshot-check.py",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "6e097e14622ac960662f64ae111594e192e8cbde981504bdadb699b0259230c8"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/snapshot.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "925b65b351b793021a63f45b57f5286923653e6e15b1d2b9e7bbcbed4c128765"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/snapshot_tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "6129339624c8c855421e08ea03996821441bb61f23a0076be76686ec0f421b08"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/human-inspection/starting-candidate-audit.py",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/human-inspection/starting-candidate-audit.py",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "0f0e3e5f5aef58d54709424ec1f2a9a46652a2fd9b6b54f5d25c027a81245104"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/identity.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/independent_regeneration.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/independent_regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/all-output-comparison.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/all-output-comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "2135af2cd6df9d8cb21e2c0ff5c6e1e18119778665901b27f2f8866f110880ca"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/archi-cli-display.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/archi-cli-display.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "b115f1b1dee57d5f200164210b78edaf8f4d0d64160118ba68ea6c6d80c3481f"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/archi-cli-no-display.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/archi-cli-no-display.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "d8359519ea841082aeb7ea8f24dfb143d351b8c08d120638114271d05574d84b"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/architecture.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/architecture.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "6fe677b54c1db29b187fcbd6fb2745d3acc491cbab33fd9fc9978e588b7b2fab"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/bindings.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/bindings.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "5e49d1e87729e8b98ee6b421978c8401bcca00b44c3fc978faca6b7cc851da46"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/diff.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/diff.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/generation_check.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/generation_check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "dd0117f47b6487f66bd55fe5404db972f133c98030df9e56f4c5ae03bbbb7ff5"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/generation_xsd.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/generation_xsd.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "6419096f353847ee6fc83274e62a90c215b0a329150b2cbd91b992c030a0130c"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/identity.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/identity.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "b622201b5cd44b7db5cf80fd8070ed07c946fdbb8b69246af1e033985e95bfdd"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/independent_regeneration.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/independent_regeneration.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "935a15391425ff204f504c2a88173e1f18ba64f92409d1e38717f1168512d597"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/preservation.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/preservation.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "567d6da879938da2754da02588a492faa602a4af591861b75de9ec2f37fa22c2"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/publication.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "864528482453d75f71a4aca9615d6a71df0d72be8901a1d1505946603ed63dba"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/rad.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "4e135cd8f0c10ff5c0c61d503934b8f5174cd970dc35d88780c622daae5a6f49"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/recovery_replay.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/recovery_replay.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "7e9a401470c05e6b8ac9ea3aba3b440e102ebfce5bfe9c1de8f29cbff93c5656"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/regeneration_comparison.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/regeneration_comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "66965916df0630bf5467ccd0cb3e0c4f8bdf4d0343076dbea2b541fc07c50e55"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/release.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "2ed54370d48f30e4854e297846641eafc9a8900882211d6b597b152f90861f70"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/report-check.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/report-check.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/report-independent.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/report-independent.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/scripts.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "44723e61ab31403ebe86bb1eee1f0a13640abe5e3e79ea3a10d0d43fdbd262ea"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/snapshot.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "2e2ebfbf15f90b56512acaee54d8e6023b9acfe5cc3fd33cba12763c1c77c28e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/snapshot_tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "49e07b1c406f77ca0c6019b4562e0fc3780d2fa0442a2c9ed625855b858254c2"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/projection/structural_audit.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/projection/structural_audit.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "02043c3e969bea1c9784599d965b533552fd263162430fbb48f532ed422a0eba"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/publication.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/publication.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "f0374da109a0a6145b4d74f190b56b62b57e8c335acbda283ec9654b3b8551e3"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/rad.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/rad.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/recovery_replay.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/recovery_replay.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/regeneration_comparison.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/regeneration_comparison.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "427e9c68535ea6f9d82976b921d1ffcb945d22176f5f984efa00d47a5184144c"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/release.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/release.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/scripts.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/scripts.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "4b70680eff16a3a5f6a0e45ad8c4bf3d449ce548b2e3a60ad7b701402537f2d5"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/snapshot.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/snapshot.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "f3c10ae2dae430f560da1911669d191747bc6f32b2d82e135f8e2a190e53b875"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification/snapshot_tests.log",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification/snapshot_tests.log",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "037e807ec0a72a483203f391b5a8793fa94bc0f78420094215205bbd9a7c86c3"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/synchronised-baseline/verification.json",
+      "destination": ".junie/reports/2026-10-17-archimate-markdown-baseline-synchronisation/verification.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical synchronisation execution evidence; dated task bundle follows existing .junie/reports convention.",
+      "sha256": "0c03b069bc1032da40e5368ce4f61f033e85ec10db0276d45ee74b99d7d91b80"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/validation.json",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/validation.json",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "92f592ca3998ae7de2a37f14e0063b4603e8910abe88e448deb783f6a233f733"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/view-generation-report.md",
+      "destination": ".junie/reports/2026-10-17-archimate-publication/view-generation-report.md",
+      "classification": "HISTORICAL / FROZEN EVIDENCE",
+      "rationale": "Historical publication assessment, reports and verification files.",
+      "sha256": "dd1e225b5b0ceae8f7484daa0cd3863670b92c02ebfebaa207932e5901c515d1"
+    }
+  ]
+}

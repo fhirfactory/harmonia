@@ -1,0 +1,2 @@
+# Keep this migration's bounded verification logs reviewable in the change set.
+!*.log

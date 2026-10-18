@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.8",
+    "previous_version": "1.0.7"
+  },
+  "retained_identities": 14,
+  "registry_sha256": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
+  "architecture_content_sha256": "b71284a557278201f2301d464da92bcc322d0ed8553aa387d9f61842205072b6",
+  "note": "Current semantic binding validation; navigation/Views are validated separately; no adoption or allocation performed"
+}
