@@ -1,0 +1,11 @@
+{
+  "allocated": 1299,
+  "uuidMechanism": "UUIDv4 via Python uuid.uuid4().hex; persisted once",
+  "status": "PASS",
+  "total_elements": 1299,
+  "valid_canonicalId": 1299,
+  "missing_canonicalId": 0,
+  "malformed_canonicalId": 0,
+  "duplicate_canonicalId": 0,
+  "multiple_canonicalId_claims": 0
+}

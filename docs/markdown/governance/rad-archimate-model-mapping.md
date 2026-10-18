@@ -35,6 +35,14 @@ The source must establish the construct's name, semantic kind and bounded respon
 
 ## 3. Mapping and identity rules
 
+The [Canonical Identity and Governed Naming Contract](canonical-identity-and-naming.md)
+governs resource-owned UUID32 `canonicalId` and the three persisted names from
+Release 1.0.7. It supersedes earlier EC-as-lifetime-ID and UUID-URN recommendations
+for this contract. The retained register below is frozen alias/binding evidence;
+legacy structural Canonical IDs are naming-path provenance. Exchange allocation
+and visual identity rules remain representation rules, separate from `canonicalId`.
+
+
 Use native ArchiMate concepts only where they preserve Harmonia meaning. The catalogue supplies the proposed type and relationship rules. Each mapping is Direct, Derived but deterministic, Property/metadata, Documentation only, Requires architectural adjudication, or Not represented. Every non-direct row explains the representation decision or the missing decision. Unsupported native types must not be approximated silently.
 
 Existing governed identifiers and retained aliases must be preserved verbatim. Canonical IDs, approved local IDs, documentary navigation keys and Exchange XML identifiers occupy different roles. In particular:

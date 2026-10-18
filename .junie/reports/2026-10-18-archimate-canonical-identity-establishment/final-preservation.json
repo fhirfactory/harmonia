@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "initial_pinned_files": 219,
+  "unchanged": 197,
+  "intentional_changes": {
+    "architecture-release.json": {
+      "before": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+      "after": "0a846e9c45386d6ba5732c85d404652b9506b5285a173d0ac2ee2763a9b9dd97"
+    },
+    "docs/archimate/capability-architecture/tests/test_baseline.py": {
+      "before": "4aa6dea4585415aaadb77d3dcc576a1a54fcb693f14968be0652dda1ee552a45",
+      "after": "320bbb4c8078fd98d0b39393701d1e125b2f4e7e9d389bd404ab678f61f8ed25"
+    },
+    "docs/archimate/capability-architecture/tests/test_roundtrip.py": {
+      "before": "0ed2df4fd073e6eae8e222068da8fdef9e01b3aea5e6e0da7a630acb513675d7",
+      "after": "714bfe91a1c95f3e68c82d7cee95c107770ef9dbb545a8bc897bd802542aa43e"
+    },
+    "docs/archimate/capability-architecture/tools/diagnose_roundtrip.py": {
+      "before": "df9e9bd5ee763eaaf3d170869dcc8163b59e51a321f87da9faff9e76ab697b66",
+      "after": "e7f769b7457ad8733792c642d7fa03fe668501d57d640b3a8ea80086e715e767"
+    },
+    "docs/archimate/capability-architecture/tools/report_baseline.py": {
+      "before": "58824af188d387d32903570853df906419ddab4b71287ee6647ea0bc75e46fe9",
+      "after": "7ccc32d8fa8f981cd1fb7a23e9207ce54601eb736a0c5733d376debaba0407d1"
+    },
+    "docs/archimate/capability-architecture/tools/synchronise_baseline.py": {
+      "before": "f46a6099f74c82794a74d5ed7c8920047ce1e13f2d7adfeb893771b4efb3a7bd",
+      "after": "d524fc9f8b594f2c73467ca13132201b822bde49661f7680af0368b5db7bc322"
+    },
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": {
+      "before": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+      "after": "b9b1d541db20390103e100280be523ecf810b7fc0827f74fb02e3aa2f47e33f6"
+    },
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": {
+      "before": "b87f4d7c8f8af6c6d31082062223857405f6f2f3f021f1aa411c594b95bf8394",
+      "after": "5e940ee1b601cd62653a2790d7f5ecc99fa4ae61a01acec4136c4b6b19206c81"
+    },
+    "docs/markdown/governance/baseline/README.md": {
+      "before": "8f745d9383d5d823ab646ea1373fa78c5858520f6068c0bfd248929a7ab74796",
+      "after": "19ab657b5cf2f136807c6aa6e3ca1058778994d6ed5a825d56dafe621c2864d7"
+    },
+    "docs/markdown/governance/baseline/architecture.json": {
+      "before": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+      "after": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b"
+    },
+    "docs/markdown/governance/baseline/business-capabilities.md": {
+      "before": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e",
+      "after": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144"
+    },
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": {
+      "before": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194",
+      "after": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1"
+    },
+    "docs/markdown/governance/baseline/correspondence.json": {
+      "before": "7f68ecdf2acaaeb7805b8c10d9023fa968c94276ee3d33298d31ecafbfb4487d",
+      "after": "072f1e91dbe6329341eaa764900586a1065395c9ed40f9700e4497d80e1c3c00"
+    },
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": {
+      "before": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b",
+      "after": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d"
+    },
+    "docs/markdown/governance/baseline/features.md": {
+      "before": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274",
+      "after": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa"
+    },
+    "docs/markdown/governance/baseline/functions.md": {
+      "before": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97",
+      "after": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e"
+    },
+    "docs/markdown/governance/baseline/motivation.json": {
+      "before": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+      "after": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+    },
+    "docs/markdown/governance/baseline/motivation.md": {
+      "before": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809",
+      "after": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76"
+    },
+    "docs/markdown/governance/baseline/processes.md": {
+      "before": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f",
+      "after": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef"
+    },
+    "docs/markdown/governance/baseline/services.md": {
+      "before": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12",
+      "after": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59"
+    },
+    "docs/markdown/governance/baseline/source-presentation-overlays.json": {
+      "before": "a117274364c0ea3028bf64f9a2320068312ebf0c5dc37e3fe997bf94bb35ae68",
+      "after": "5749f761c6cf7dc7e85342605939d983b496a1b2dac1f5ee5f26633ca4f239f6"
+    },
+    "docs/markdown/governance/rad-archimate-model-mapping.md": {
+      "before": "3122a5355834a391b0a2e682a80bd174a2af66cdf82fe02a984ec187cfb0bf72",
+      "after": "5e854029d4242000e00855032889c1fdca9b96c21ae335b500fd7dd66c951986"
+    }
+  },
+  "unexpected_changes": [],
+  "complete_prior_release_resource_and_catalogue_bytes": {
+    "architecture-release.json": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+    "docs/markdown/governance/baseline/functions.md": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97",
+    "docs/markdown/governance/baseline/relationships.md": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+    "docs/markdown/governance/baseline/features.md": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274",
+    "docs/markdown/governance/baseline/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194",
+    "docs/markdown/governance/baseline/services.md": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12",
+    "docs/markdown/governance/baseline/processes.md": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f",
+    "docs/markdown/governance/baseline/business-capabilities.md": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b",
+    "docs/markdown/governance/baseline/architecture.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "docs/markdown/governance/baseline/motivation.md": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809",
+    "docs/markdown/governance/baseline/motivation.json": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b"
+  },
+  "whole_model_signature_after_removing_only_new_properties_and_restoring_prior_release": "PASS",
+  "collections": {
+    "elements": {
+      "before": 1299,
+      "after": 1299,
+      "representation_identities_and_order": "PASS"
+    },
+    "relationships": {
+      "before": 852,
+      "after": 852,
+      "representation_identities_and_order": "PASS"
+    },
+    "views": {
+      "before": 1196,
+      "after": 1196,
+      "representation_identities_and_order": "PASS"
+    },
+    "visual_objects": {
+      "before": 3915,
+      "after": 3915,
+      "representation_identities_and_order": "PASS"
+    },
+    "visual_connections": {
+      "before": 1449,
+      "after": 1449,
+      "representation_identities_and_order": "PASS"
+    }
+  },
+  "relationship_types_endpoints_properties": "PASS",
+  "view_geometry_labels_styles_routing": "PASS",
+  "organisations": "PASS",
+  "accepted_106_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+  "current_publication_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+  "protected_recovery_and_increment_1_evidence": "PASS"
+}

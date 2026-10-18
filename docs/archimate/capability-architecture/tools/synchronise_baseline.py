@@ -21,6 +21,7 @@ import generate_views as g
 import publish_navigation as nav
 import feature_projection as fp
 from architecture_release import load_release
+import governed_metadata as metadata
 
 ROOT, BASE = r.ROOT, r.BASE
 RAD = ROOT / "docs/markdown/governance/baseline"
@@ -172,11 +173,11 @@ def load_inputs(manifest_path=MANIFEST):
                   f"Current baseline authority drift; reconcile explicitly: {relative}")
     # Verify the entire recovery boundary without refreshing or generating it.
     r.load_inputs()
-    source = read(RAD / "architecture.json")
+    source = metadata.semantic_capture(metadata.read(RAD / "architecture.json"))
     snapshot = read(ROOT / manifest["snapshot_model"])
     g.require(source == snapshot, "Canonical baseline capture differs from its reconciled source; review a new correspondence explicitly")
-    motivation = read(RAD / "motivation.json")
-    g.require(r.sha(RAD / "motivation.json") == manifest["motivation_capture_sha256"],
+    motivation = metadata.semantic_capture(metadata.read(RAD / "motivation.json"))
+    g.require(hashlib.sha256(metadata.historical_bytes(RAD / "motivation.json")).hexdigest() == manifest["motivation_capture_sha256"],
               "Motivation correspondence changed; review the source/type/status crosswalk explicitly")
     for e in motivation["elements"]:
         path = ROOT / e["source"]
@@ -204,7 +205,7 @@ class Baseline:
         self.mid = original.get("identifier")
         self.records = {e["key"]: e for e in source["elements"]}
         classification = read(RAD / "documentation-classification.json")
-        g.require(classification["source_sha256"] == r.sha(RAD / "architecture.json"), "Documentation classification source drift")
+        g.require(classification["source_sha256"] == hashlib.sha256(metadata.historical_bytes(RAD / "architecture.json")).hexdigest(), "Documentation classification source drift")
         self.documentation_classification = classification["entries"]
         g.require(set(self.documentation_classification) == {k for k, e in self.records.items() if e.get("baseline_description")},
                   "Missing/extra Documentation classification record")
@@ -372,7 +373,7 @@ class Baseline:
                           "Currentness and governance standing are independent: Current does not mean Approved. "
                           "Unreconciled 1.0.4 Reference is historical comparison evidence. "
                           "Folders and numeric View prefixes are navigation only. Application/Technology coverage gaps remain explicit.")
-        self.property(self.root, "Architecture Release", load_release()["version"])
+        self.property(self.root, "Architecture Release", metadata.release()["version"])
         self.property(self.root, "Canonical Textual Projection", "docs/markdown/governance/baseline/README.md")
         elements = {e.get("identifier"): e for e in self.root.findall("a:elements/a:element", g.N)}
         old_homes = nav.navigation_homes(self.original)
@@ -607,7 +608,8 @@ def validate_projection_preservation(root, b=None):
                             view.remove(item)
                 g.require(g.signature(actual) == g.signature(expected), "Business View metadata changed")
     for relative, expected in proof["protected_files"].items():
-        g.require(r.sha(ROOT / relative) == expected, "Projection changed protected source/recovery/identity/release: " + relative)
+        g.require(hashlib.sha256(metadata.historical_bytes(ROOT / relative)).hexdigest() == expected,
+                  "Projection changed protected source/recovery/identity/release: " + relative)
     return {name: entry["count"] for name, entry in proof["checks"].items()}
 
 
@@ -690,9 +692,12 @@ def validate_capability_navigation(b, root):
     return result
 
 
-def validate(b, root):
+def validate(b, root, *, legacy_replay=False):
     g.load_schema(BASE / "schemas/archimate3_Diagram.xsd").assertValid(root)
     g.validate_identifiers(root)
+    if metadata.active() and not legacy_replay:
+        metadata.validate_publication(b, root)
+        root = metadata.remove_properties(root)
     elements = {e.get("identifier"): e for e in root.findall("a:elements/a:element", g.N)}
     rels = {e.get("identifier"): e for e in root.findall("a:relationships/a:relationship", g.N)}
     views = {e.get("identifier"): e for e in root.findall("a:views/a:diagrams/a:view", g.N)}
@@ -866,7 +871,7 @@ def publish():
     b.build()
     data = g.serialize(b.root)
     # Validate a separate parse, never the same mutable object as expected.
-    result = validate(b, g.ET.fromstring(data))
+    result = validate(b, g.ET.fromstring(data), legacy_replay=True)
     md = markdown(b)
     md[RAD / "discrepancies.json"] = encoded(discrepancies(b))
     old_ids = {e.get("identifier") for e in b.original.findall("a:elements/a:element", g.N)}
@@ -876,7 +881,7 @@ def publish():
     historical = [{"key": key, "name": b.records[key]["name"], "field": title, "reason": entry["evidence"]}
                   for key, fields in b.documentation_classification.items()
                   for title, entry in fields.items() if entry["section"] == "historical"]
-    report = {"status": "PASS", "architecture_release": load_release(), "before": counts(b.original), "after": result,
+    report = {"status": "PASS", "architecture_release": metadata.release(), "before": counts(b.original), "after": result,
               "existing_semantic_ids_retained": len(old_ids), "semantic_ids_removed": 0, "persistent_identities_allocated": 0,
               "adopted_architecture_identities_preserved": 14, "navigation_capability_duplicates_removed": 0,
               "existing_capability_population_retained": sum(e.get(g.TYPE) == "Capability" for e in b.original.findall("a:elements/a:element", g.N)),
@@ -892,7 +897,7 @@ def publish():
               "capability_navigation": validate_capability_navigation(b, g.ET.fromstring(data)),
               "starting_candidate_preservation": validate_projection_preservation(g.ET.fromstring(data), b),
               "human_inspection_projection": fp.validate(b, g.ET.fromstring(data)),
-              "human_workbench": {"supported_version": "Archi 5.10.0", "gui_acceptance": "Pending Mark's final import and inspection", "schema": "Existing bundled Open Exchange schema unchanged"},
+              "human_workbench": {"supported_version": "Archi 5.10.0", "gui_acceptance": "Pending Solution Architect's final import and inspection", "schema": "Existing bundled Open Exchange schema unchanged"},
               "documentation_classification": {"entries_reclassified": sum(bool(fields) for fields in promoted.values()),
                   "explanatory_fields_reclassified": sum(map(len, promoted.values())),
                   "historical_fields_retained": len(historical), "historical_entries_retained": len({e["key"] for e in historical}),
@@ -907,6 +912,8 @@ def publish():
                           "feature_centred_resource_navigation", "feature_centred_view_navigation", "immediate_child_landscapes_first",
                           "feature_centred_diagram_layout", "no_false_feature_associations")}}
     outputs = {DEST / "Harmonia-Architecture-Baseline.xml": data, DEST / "validation.json": encoded(report), **md}
+    if metadata.active():
+        return metadata.overlay(outputs, b, report)
     return outputs, b, report
 
 
@@ -920,7 +927,7 @@ def main():
         again, _, _ = publish()
         g.require(outputs == again, "Non-deterministic baseline regeneration")
         report["checks"]["deterministic_regeneration"] = "PASS"
-        outputs[DEST / "validation.json"] = encoded(report)
+        outputs[metadata.validation_path()] = encoded(report)
         for path, content in outputs.items():
             if args.output_directory:
                 dest = args.output_directory.resolve()

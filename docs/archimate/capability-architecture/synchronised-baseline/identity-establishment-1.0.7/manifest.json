@@ -1,0 +1,24 @@
+{
+  "startingRelease": "1.0.6",
+  "establishedRelease": "1.0.7",
+  "accepted_publication_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+  "allocated": 1299,
+  "uuidMechanism": "UUIDv4 via Python uuid.uuid4().hex; persisted once",
+  "files_sha256": {
+    "prior-release/architecture.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "prior-release/motivation.json": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+    "prior-release/architecture-release.json": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+    "prior-release/business-capabilities.md": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e",
+    "prior-release/business-enabling-capabilities.md": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194",
+    "prior-release/features.md": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274",
+    "prior-release/functions.md": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97",
+    "prior-release/services.md": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12",
+    "prior-release/processes.md": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f",
+    "prior-release/enterprise-capabilities.md": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b",
+    "prior-release/relationships.md": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c",
+    "prior-release/motivation.md": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809",
+    "prior-release/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+    "architecture.json": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+    "motivation.json": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+  }
+}

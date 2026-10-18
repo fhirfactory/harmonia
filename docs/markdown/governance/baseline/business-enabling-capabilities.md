@@ -251,9 +251,13 @@ Information administration does not perform the clinical act, own host booking e
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-administration-information-enablement |
+| canonicalId | 28df27d55c514a37995145ab46945f78 |
+| displayName | [CT1] Care Administration Enablement |
+| friendlyName | CareAdministrationEnablement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement |
 | Snapshot publication reference | HCM-BEC-care-administration-information-enablement |
 | ArchiMate semantic ID | id-fe7b5e3e02bb53f59ab89c27a81e9e18 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -318,9 +322,13 @@ Timely propagation of multidisciplinary plan information materially supports con
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:care-plan-administration |
+| canonicalId | cf06eec5699f406fa30a00d2f76e3098 |
+| displayName | [CT2] Care Plan Administration |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration |
 | Snapshot publication reference | HCM-BEC-care-plan-administration |
 | ArchiMate semantic ID | id-8c082e2d6c605903834291c424722f75 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -366,9 +374,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-care-plan-lifecycle-coordination |
+| canonicalId | 4cb7db65392f4fab801d7794af4d4b29 |
+| displayName | [CT3] Care Plan Lifecycle & Coordination |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CarePlanLifecycleAndCoordination |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CarePlanLifecycleAndCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-care-plan-lifecycle-coordination |
 | ArchiMate semantic ID | id-ab0baa5289245368afb3d9943f0dee5c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -412,9 +424,13 @@ Cross-organisational encounter and care-plan information materially supports com
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:community-care |
+| canonicalId | 8c8c6266d9ed43e09dbe44fcdd669132 |
+| displayName | [CT3] Community Care Coordination |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CommunityCareCoordination |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CommunityCareCoordination |
 | Snapshot publication reference | HCM-BEC-community-care |
 | ArchiMate semantic ID | id-d835f657a75459268088115e97986dd1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -460,9 +476,13 @@ Context provision and outcome ingestion materially connect outreach activity to 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:outreach-care |
+| canonicalId | 8526d971b07f40de84ef05b0d192089c |
+| displayName | [CT3] Outreach Care Continuity |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.OutreachCareContinuity |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-OutreachCareContinuity |
 | Snapshot publication reference | HCM-BEC-outreach-care |
 | ArchiMate semantic ID | id-c5461090ddce50daa204e0c031c184aa |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -516,9 +536,13 @@ Demographic changes materially affect downstream association and continuity, so 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:client-centred-administration |
+| canonicalId | 8752b7a937754b2faa296300c6a48911 |
+| displayName | [CT2] Client-Centred Administration |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration |
 | Snapshot publication reference | HCM-BEC-client-centred-administration |
 | ArchiMate semantic ID | id-4759e7e551b45a3ab1b24088b8421b9f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -564,9 +588,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-client-intake-demographic-update |
+| canonicalId | f51f8d6b7556424987c76d9a7465c67c |
+| displayName | [CT3] Client Intake & Demographic Update |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ClientIntakeAndDemographicUpdate |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ClientIntakeAndDemographicUpdate |
 | Snapshot publication reference | HCM-BEC-reviewed-client-intake-demographic-update |
 | ArchiMate semantic ID | id-714b37e59d095316bb94389ebbc14e33 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -609,9 +637,13 @@ Register integration and recall distribution materially connect preventative act
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:preventive-care |
+| canonicalId | 3e9016eaebae4ed0b67a5cacba2652f5 |
+| displayName | [CT3] Screening and Immunisation Enablement |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ScreeningAndImmunisationEnablement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ScreeningAndImmunisationEnablement |
 | Snapshot publication reference | HCM-BEC-preventive-care |
 | ArchiMate semantic ID | id-2a555773d20b5eaaac720432d7e6f4ec |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -665,9 +697,13 @@ Its Adjacent standing reflects information supplied to financial systems while t
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-charging--claims-administration |
+| canonicalId | af78ab7c89454a608cd4d34ec7703331 |
+| displayName | [CT2] Clinical Charging & Claims Administration |
+| friendlyName | CareAdministrationEnablement.ClinicalChargingAndClaimsAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalChargingAndClaimsAdministration |
 | Snapshot publication reference | HCM-BEC-clinical-charging-claims-administration |
 | ArchiMate semantic ID | id-5463239c9ef65cef98c5274ab6e8f6db |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -722,9 +758,13 @@ Secure addressed communication and attributable transaction evidence are substan
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-communication-administration |
+| canonicalId | b38f2c2811724734b5887b6dbaaabbfc |
+| displayName | [CT2] Clinical Communication Administration |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration |
 | Snapshot publication reference | HCM-BEC-clinical-communication-administration |
 | ArchiMate semantic ID | id-69fe602fea3e5afc95441b03dd7c198a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -769,9 +809,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-secure-clinical-communication |
+| canonicalId | eddb86c7922145439b9dcf0259f4aed5 |
+| displayName | [CT3] Secure Clinical Communication |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.SecureClinicalCommunication |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.CT3-BEC-SecureClinicalCommunication |
 | Snapshot publication reference | HCM-BEC-reviewed-secure-clinical-communication |
 | ArchiMate semantic ID | id-b87005ff372252e1893fbd216a77d525 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -822,9 +866,13 @@ Non-destructive document lifecycle and governed discovery are direct platform in
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-record-administration |
+| canonicalId | ce9e7e7b22054cefb707a650d5be7219 |
+| displayName | [CT2] Clinical Record Administration |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration |
 | Snapshot publication reference | HCM-BEC-clinical-record-administration |
 | ArchiMate semantic ID | id-839d37ad5fcd510d924a18389bada633 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -868,9 +916,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-documentation-lifecycle-administration |
+| canonicalId | df683100067b47e785037c27cfd17a3c |
+| displayName | [CT3] Clinical Documentation Lifecycle Administration |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentationLifecycleAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.CT3-BEC-ClinicalDocumentationLifecycleAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-documentation-lifecycle-administration |
 | ArchiMate semantic ID | id-31701b65e27a544297e8b3807896433e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -922,9 +974,13 @@ Request, specimen and report correlation and governed distribution are substanti
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:diagnostic-administration |
+| canonicalId | 3cc720ba2e8b4d7a94bb349391d61895 |
+| displayName | [CT2] Diagnostic Administration |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration |
 | Snapshot publication reference | HCM-BEC-diagnostic-administration |
 | ArchiMate semantic ID | id-77908c3422545c70ba9ce082db020c0f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -974,9 +1030,13 @@ Governed report distribution and integrated history materially enable diagnostic
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:diagnostic-services |
+| canonicalId | 9ded2f3a28d24017bb921a0cdcf65a2b |
+| displayName | [CT3] Diagnostic Service Integration |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticServiceIntegration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticServiceIntegration |
 | Snapshot publication reference | HCM-BEC-diagnostic-services |
 | ArchiMate semantic ID | id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1018,9 +1078,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-diagnostic-workflow-management |
+| canonicalId | 270ed0e32b294458aa52cf57df7e55db |
+| displayName | [CT3] Diagnostic Workflow Management |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-diagnostic-workflow-management |
 | ArchiMate semantic ID | id-a0b4e1a965765006a8dc7b598f517bb3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1071,9 +1135,13 @@ Encounter context and tracked state are substantive platform responsibilities su
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:episode--encounter-administration |
+| canonicalId | 61d7067aee0540259b3daca4287d66d2 |
+| displayName | [CT2] Episode & Encounter Administration |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration |
 | Snapshot publication reference | HCM-BEC-episode-encounter-administration |
 | ArchiMate semantic ID | id-198c918e6b225485b2065dc763be8ce1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1123,9 +1191,13 @@ Harmonia materially supplies and correlates acute-care information while clinica
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:acute-care |
+| canonicalId | ee17b26b8c874cc3af50d07a787ce488 |
+| displayName | [CT3] Acute Care Monitoring & Event Coordination |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.AcuteCareMonitoringAndEventCoordination |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-AcuteCareMonitoringAndEventCoordination |
 | Snapshot publication reference | HCM-BEC-acute-care |
 | ArchiMate semantic ID | id-8c9e5a5c2384558db1e86af56d2c942b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1167,9 +1239,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-encounter-lifecycle-management |
+| canonicalId | 2ebf1bb20ab34755b41567c156cc5928 |
+| displayName | [CT3] Encounter Lifecycle Management |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-encounter-lifecycle-management |
 | ArchiMate semantic ID | id-db254db117db5f77926aa5add9ddb6bc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1220,9 +1296,13 @@ Harmonia consumes the administrative context; it does not acquire the payer's au
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:funding--coverage-administration |
+| canonicalId | 640432d413cf47928ea2b3d221f92313 |
+| displayName | [CT2] Funding & Coverage Administration |
+| friendlyName | CareAdministrationEnablement.FundingAndCoverageAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-FundingAndCoverageAdministration |
 | Snapshot publication reference | HCM-BEC-funding-coverage-administration |
 | ArchiMate semantic ID | id-c2df74422094583c85e83601696f971f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1277,9 +1357,13 @@ Connecting medication events materially supports continuity and interpretation w
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:medication-administration |
+| canonicalId | c907e2a95629435b9951941ad4e2ebe9 |
+| displayName | [CT2] Medication Administration |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration |
 | Snapshot publication reference | HCM-BEC-medication-administration |
 | ArchiMate semantic ID | id-b977d4fbbfbc5943bf2b03b300408b3a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1325,9 +1409,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-medication-order-dispense-management |
+| canonicalId | 9874098228764b62b1f640ea749b742d |
+| displayName | [CT3] Medication Order & Dispense Management |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationOrderAndDispenseManagement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationOrderAndDispenseManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-medication-order-dispense-management |
 | ArchiMate semantic ID | id-ea9da64cb51253f1aabacc59253b8db8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1370,9 +1458,13 @@ Cross-boundary medication information materially supports care continuity and in
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:medication-therapy |
+| canonicalId | d1821b4f6d5746f9a697dfe3b792a186 |
+| displayName | [CT3] Medication Therapy Provision and Monitoring |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationTherapyProvisionAndMonitoring |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationTherapyProvisionAndMonitoring |
 | Snapshot publication reference | HCM-BEC-medication-therapy |
 | ArchiMate semantic ID | id-f6b618c033b55400a9e26a6c1c5d9c16 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1430,9 +1522,13 @@ Reliable routing and closed-loop state are direct platform responsibilities. The
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:order-administration |
+| canonicalId | c3c5abd7987f4433a46cbfed8167914c |
+| displayName | [CT2] Order Administration |
+| friendlyName | CareAdministrationEnablement.OrderAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration |
 | Snapshot publication reference | HCM-BEC-order-administration |
 | ArchiMate semantic ID | id-35b56e00f8885f5f97147eca279b8ef6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1476,9 +1572,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-closed-loop-order-progression |
+| canonicalId | 2f79ebd7392c46ef92def6f25bc9c7ce |
+| displayName | [CT3] Closed-Loop Order Progression |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgression |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.CT3-BEC-ClosedLoopOrderProgression |
 | Snapshot publication reference | HCM-BEC-reviewed-closed-loop-order-progression |
 | ArchiMate semantic ID | id-5f410811dfd950f0a195ba1f600b15f0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1530,9 +1630,13 @@ Correlated bookings and procedural documents support cross-system care context w
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:procedure-administration |
+| canonicalId | 649dd7cc26094e539386a050086dfb91 |
+| displayName | [CT2] Procedure Administration |
+| friendlyName | CareAdministrationEnablement.ProcedureAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration |
 | Snapshot publication reference | HCM-BEC-procedure-administration |
 | ArchiMate semantic ID | id-4aa8850ccaab516b9d3854b9e82971eb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1577,9 +1681,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-procedure-surgical-administration |
+| canonicalId | 3c4a53dd8c8f468f83ca5d92397dd7e8 |
+| displayName | [CT3] Procedure & Surgical Administration |
+| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProcedureAndSurgicalAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.CT3-BEC-ProcedureAndSurgicalAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-procedure-surgical-administration |
 | ArchiMate semantic ID | id-afd1a07848325b678cdee592358efbb4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1630,9 +1738,13 @@ Harmonia materially connects the referral, supporting information and reported d
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:referral-administration |
+| canonicalId | ae0de25600ee416aa24d2a167b64f230 |
+| displayName | [CT2] Referral Administration |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration |
 | Snapshot publication reference | HCM-BEC-referral-administration |
 | ArchiMate semantic ID | id-5beae734749a57468bf09956473d2f40 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1676,9 +1788,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-referral-intake-progression |
+| canonicalId | d11bdb9464b2476894aa372ab9b929a7 |
+| displayName | [CT3] Referral Intake & Progression |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression |
 | Snapshot publication reference | HCM-BEC-reviewed-referral-intake-progression |
 | ArchiMate semantic ID | id-f7fc7616aa89520a84e2235872dc93ed |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1730,9 +1846,13 @@ Timely appointment changes materially support coordination across systems withou
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:scheduling-administration |
+| canonicalId | 35fb3744c900470f9895056246a13fb1 |
+| displayName | [CT2] Scheduling Administration |
+| friendlyName | CareAdministrationEnablement.SchedulingAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration |
 | Snapshot publication reference | HCM-BEC-scheduling-administration |
 | ArchiMate semantic ID | id-fa4797b3d84052ecbea381b52dfa8b3f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1776,9 +1896,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-appointment-booking-administration |
+| canonicalId | 7b3ba9bcac564dd4a7a08631581db2ca |
+| displayName | [CT3] Appointment & Booking Administration |
+| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentAndBookingAdministration |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.CT3-BEC-AppointmentAndBookingAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-appointment-booking-administration |
 | ArchiMate semantic ID | id-75679799ab975e8088f69be6f0f414f0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1818,9 +1942,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-service-dependency-management |
+| canonicalId | 232db9b8b47c450cb0aa9acaf539c09d |
+| displayName | [CT1] Clinical Service Dependency Management |
+| friendlyName | ClinicalServiceDependencyManagement |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-service-dependency-management |
 | ArchiMate semantic ID | id-7afbcec0122951079c2bb647251be323 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -1876,9 +2004,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-acute-care |
+| canonicalId | 9bb988c526404522b83aeed5069e0eb5 |
+| displayName | [CT2] Acute Care |
+| friendlyName | ClinicalServiceDependencyManagement.AcuteCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-AcuteCare |
 | Snapshot publication reference | HCM-BEC-reviewed-acute-care |
 | ArchiMate semantic ID | id-36aa4edb4b1557c7bb8fde88fa158486 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -1934,9 +2066,13 @@ The formal Adjacent position is retained rather than inherited from neighbouring
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:allied-health |
+| canonicalId | 63cd714a3e2a4354aa5383b189fea566 |
+| displayName | [CT2] Allied Health |
+| friendlyName | ClinicalServiceDependencyManagement.AlliedHealth |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-AlliedHealth |
 | Snapshot publication reference | HCM-BEC-allied-health |
 | ArchiMate semantic ID | id-38ea53c83c9a55cf920b5ce358b95c74 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1994,9 +2130,13 @@ Adjacent standing preserves contextual participation while clinical service deli
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:ambulatory-care |
+| canonicalId | f74d7c3a39c540c4b462576e8f09fc58 |
+| displayName | [CT2] Ambulatory Care |
+| friendlyName | ClinicalServiceDependencyManagement.AmbulatoryCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-AmbulatoryCare |
 | Snapshot publication reference | HCM-BEC-ambulatory-care |
 | ArchiMate semantic ID | id-b2fc16d589fe5693abaf68993d5e5701 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2054,9 +2194,13 @@ The Adjacent classification denotes contextual information participation rather 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-assessment |
+| canonicalId | a7d84c95e48c453797419813ca80a66c |
+| displayName | [CT2] Clinical Assessment |
+| friendlyName | ClinicalServiceDependencyManagement.ClinicalAssessment |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-ClinicalAssessment |
 | Snapshot publication reference | HCM-BEC-clinical-assessment |
 | ArchiMate semantic ID | id-95b79770d57e537bbfb65b05c9c21829 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2098,9 +2242,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-community-care |
+| canonicalId | 942aa78cad004ef99de6b3aae8ddd014 |
+| displayName | [CT2] Community Care |
+| friendlyName | ClinicalServiceDependencyManagement.CommunityCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-CommunityCare |
 | Snapshot publication reference | HCM-BEC-reviewed-community-care |
 | ArchiMate semantic ID | id-a12191bde58c547b954e263c5e49ba3e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2140,9 +2288,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-diagnostic-services |
+| canonicalId | b825ebab42f444d8b738b4c1f489f785 |
+| displayName | [CT2] Diagnostic Services |
+| friendlyName | ClinicalServiceDependencyManagement.DiagnosticServices |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-DiagnosticServices |
 | Snapshot publication reference | HCM-BEC-reviewed-diagnostic-services |
 | ArchiMate semantic ID | id-52c91baf111d50f7bd4b24fcc80ab1be |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2182,9 +2334,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-emergency-care |
+| canonicalId | aa088f0647ad4b78966fe28fa80af674 |
+| displayName | [CT2] Emergency Care |
+| friendlyName | ClinicalServiceDependencyManagement.EmergencyCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-EmergencyCare |
 | Snapshot publication reference | HCM-BEC-reviewed-emergency-care |
 | ArchiMate semantic ID | id-0bdbebb9b36f5b2b8d5816dbc27aeeb3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2224,9 +2380,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-inpatient-care |
+| canonicalId | b39fb49c01b545a5b51d3313531efb1b |
+| displayName | [CT2] Inpatient Care |
+| friendlyName | ClinicalServiceDependencyManagement.InpatientCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-InpatientCare |
 | Snapshot publication reference | HCM-BEC-reviewed-inpatient-care |
 | ArchiMate semantic ID | id-052abff4e30c5d5eaa4071331c4af500 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2266,9 +2426,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-medication-therapy |
+| canonicalId | bb04996164c94e0c827a020432f4e498 |
+| displayName | [CT2] Medication Therapy |
+| friendlyName | ClinicalServiceDependencyManagement.MedicationTherapy |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-MedicationTherapy |
 | Snapshot publication reference | HCM-BEC-reviewed-medication-therapy |
 | ArchiMate semantic ID | id-6c80b51346315f2fa3d9111d871deba1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2308,9 +2472,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-outreach-care |
+| canonicalId | b9ddbe2dd6a7485ba9cd3482215ea09e |
+| displayName | [CT2] Outreach Care |
+| friendlyName | ClinicalServiceDependencyManagement.OutreachCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-OutreachCare |
 | Snapshot publication reference | HCM-BEC-reviewed-outreach-care |
 | ArchiMate semantic ID | id-00c20496abf655fa974ae887a695102a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2350,9 +2518,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-preventive-care |
+| canonicalId | dfdc4f0273ba4910848b3b65c9ef6ab2 |
+| displayName | [CT2] Preventive Care |
+| friendlyName | ClinicalServiceDependencyManagement.PreventiveCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-PreventiveCare |
 | Snapshot publication reference | HCM-BEC-reviewed-preventive-care |
 | ArchiMate semantic ID | id-2bc56e5d43a356dda381e7a34377af89 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2392,9 +2564,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-primary-care |
+| canonicalId | d118673d77d74c8cb8cec24f03adddd8 |
+| displayName | [CT2] Primary Care |
+| friendlyName | ClinicalServiceDependencyManagement.PrimaryCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-PrimaryCare |
 | Snapshot publication reference | HCM-BEC-reviewed-primary-care |
 | ArchiMate semantic ID | id-351cfc95a8c85684a3ff908f6df282eb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2450,9 +2626,13 @@ Contextual participation is retained within the formal Adjacent classification.
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:rehabilitation |
+| canonicalId | 99ed51abcc5e4e8ba3b3d0161b17544a |
+| displayName | [CT2] Rehabilitation |
+| friendlyName | ClinicalServiceDependencyManagement.Rehabilitation |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-Rehabilitation |
 | Snapshot publication reference | HCM-BEC-rehabilitation |
 | ArchiMate semantic ID | id-c9ed027109de56548cba237529d5f6d8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2494,9 +2674,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-remote-virtual-care |
+| canonicalId | 30dff22d40b64da29ede7c41673db085 |
+| displayName | [CT2] Remote & Virtual Care |
+| friendlyName | ClinicalServiceDependencyManagement.RemoteAndVirtualCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-RemoteAndVirtualCare |
 | Snapshot publication reference | HCM-BEC-reviewed-remote-virtual-care |
 | ArchiMate semantic ID | id-3bc2433424425db093822bd2db4dd8c7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -2552,9 +2736,13 @@ The context is represented without assigning direct clinical delivery responsibi
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:surgical--procedural-care |
+| canonicalId | c9a26d1aa1014545b9ae759b663c807b |
+| displayName | [CT2] Surgical & Procedural Care |
+| friendlyName | ClinicalServiceDependencyManagement.SurgicalAndProceduralCare |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-SurgicalAndProceduralCare |
 | Snapshot publication reference | HCM-BEC-surgical-procedural-care |
 | ArchiMate semantic ID | id-1c66c2d5d4925e4cb8872aa25ea0071b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2612,9 +2800,13 @@ Adjacent standing preserves the contextual role while treatment remains the resp
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:therapeutic-services |
+| canonicalId | b512b6d326004cb7b91a627fe6dbd8be |
+| displayName | [CT2] Therapeutic Services |
+| friendlyName | ClinicalServiceDependencyManagement.TherapeuticServices |
+| canonicalName | CT1-BEC-ClinicalServiceDependencyManagement.CT2-BEC-TherapeuticServices |
 | Snapshot publication reference | HCM-BEC-therapeutic-services |
 | ArchiMate semantic ID | id-12eca4e940755bed847e500b41770a5c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2656,9 +2848,13 @@ Registry information does not establish clinical privilege, service readiness, o
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-healthcare-entity-information-enablement |
+| canonicalId | b5a92874f8ac4509a30af5253590edc1 |
+| displayName | [CT1] Entity Information Enablement |
+| friendlyName | EntityInformationEnablement |
+| canonicalName | CT1-BEC-EntityInformationEnablement |
 | Snapshot publication reference | HCM-BEC-healthcare-entity-information-enablement |
 | ArchiMate semantic ID | id-4726f9b8f6015e019238b5a8cc596c7c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -2717,9 +2913,13 @@ R1/R2 identifier correlation and administrative correction do not make Harmonia 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:client-administration |
+| canonicalId | f0885472cced4bccbcce1568bf0360dc |
+| displayName | [CT2] Client Administration |
+| friendlyName | EntityInformationEnablement.ClientAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration |
 | Snapshot publication reference | HCM-BEC-client-administration |
 | ArchiMate semantic ID | id-c67b67dba5cc512d94eac01eb1524775 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2786,9 +2986,13 @@ Consistent application of client restrictions across information pathways is a d
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:client-privacy |
+| canonicalId | 7577a6e1815243648dd5356c21cca151 |
+| displayName | [CT3] Client Privacy Guardrail Management |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement |
 | Snapshot publication reference | HCM-BEC-client-privacy |
 | ArchiMate semantic ID | id-12123907605b5a30a078af04daf3c730 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2850,9 +3054,13 @@ Temporal relationship information materially supports appropriate care communica
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:client-relationship |
+| canonicalId | d682c11d3eb04770b1f20be478fd475e |
+| displayName | [CT3] Client Relationship Administration |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration |
 | Snapshot publication reference | HCM-BEC-client-relationship |
 | ArchiMate semantic ID | id-db94873a0aac5928aed7bf23ed0bcbea |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2914,9 +3122,13 @@ Verifiable subject binding prevents otherwise valid information from being inter
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:healthcare-subject |
+| canonicalId | df214b5499694b768eb4a7a175a9d471 |
+| displayName | [CT3] Healthcare Subject Profile Administration |
+| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration |
 | Snapshot publication reference | HCM-BEC-healthcare-subject |
 | ArchiMate semantic ID | id-e4ada895b3705f13829792ac8ab2e274 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2982,9 +3194,13 @@ Identity association is a direct platform concern because clinical records, orde
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:person-identity |
+| canonicalId | 6c3de7750ef1436cad6a9533731782b6 |
+| displayName | [CT3] Person Identity Administration |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration |
 | Snapshot publication reference | HCM-BEC-person-identity |
 | ArchiMate semantic ID | id-29e0bf94882559a7b6ed9d092303a560 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3034,9 +3250,13 @@ Device registration is not maintenance, release management or clinical interpret
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-device-administration |
+| canonicalId | 31bcd6fda0d14cc8b992cdca39a3cbed |
+| displayName | [CT2] Clinical Device Administration |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration |
 | Snapshot publication reference | HCM-BEC-clinical-device-administration |
 | ArchiMate semantic ID | id-a6aaf19f1f225b67b1e3a19740d5f457 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3083,9 +3303,13 @@ Describes device types and capabilities without taking regulatory approval or cl
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-device-definition |
+| canonicalId | d0a1ba80c790476ea6042290eb7ea09e |
+| displayName | [CT3] Clinical Device Profile Administration |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.ClinicalDeviceProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-ClinicalDeviceProfileAdministration |
 | Snapshot publication reference | HCM-BEC-device-definition |
 | ArchiMate semantic ID | id-66b395be368b5464932a1d028bac18a4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3126,9 +3350,13 @@ Endpoint registration alone does not establish compliance; conformity concerns a
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-device-connectivity-compliance-management |
+| canonicalId | b16ab359030a4583868f3aac2221074e |
+| displayName | [CT3] Device Connectivity Compliance Management |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceConnectivityComplianceManagement |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceConnectivityComplianceManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-device-connectivity-compliance-management |
 | ArchiMate semantic ID | id-ec5e54de56ea59dbb41c9ab6477ffea5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3168,9 +3396,13 @@ Connectivity, monitoring and administration metadata do not perform device maint
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-device-oa-m-metadata-management |
+| canonicalId | 659bb194a7ef42ab9ba8a938adb5c179 |
+| displayName | [CT3] Device OA&M Metadata Management |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceOaAndMMetadataManagement |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceOaAndMMetadataManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-device-oa-m-metadata-management |
 | ArchiMate semantic ID | id-c7a85b3afdcf5eca8beba6058ebd91e7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3210,9 +3442,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-device-utilisation-administration |
+| canonicalId | 1a3732b5911c45b3aece38b2db2d0f15 |
+| displayName | [CT3] Device Utilisation Administration |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceUtilisationAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceUtilisationAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-device-utilisation-administration |
 | ArchiMate semantic ID | id-09b56d7aca615938baee8103ee9ffb15 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3260,9 +3496,13 @@ Product representation does not perform procurement, stock control, dispensing o
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-product-administration |
+| canonicalId | e7081070a9f8444f81c1d8fce37ef664 |
+| displayName | [CT2] Health Materiel Administration |
+| friendlyName | EntityInformationEnablement.HealthMaterielAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthMaterielAdministration |
 | Snapshot publication reference | HCM-BEC-health-product-administration |
 | ArchiMate semantic ID | id-c480beb83dfe55e599ff5dc56b4249bb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3309,9 +3549,13 @@ Represents externally approved formularies; it does not acquire formulary approv
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-product-formulary-catalogue |
+| canonicalId | 28b327760af94b8b986357469524d793 |
+| displayName | [CT3] Health Materiel Catalogue & Formulary Administration |
+| friendlyName | EntityInformationEnablement.HealthMaterielAdministration.HealthMaterielCatalogueAndFormularyAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthMaterielAdministration.CT3-BEC-HealthMaterielCatalogueAndFormularyAdministration |
 | Snapshot publication reference | HCM-BEC-product-formulary-catalogue |
 | ArchiMate semantic ID | id-ba55c7918aea5b8f9385ed78d5c72528 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3352,9 +3596,13 @@ Reference representation is distinct from procurement, manufacturing and prescri
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-health-product-definition |
+| canonicalId | 9626edae517d40d2bfae619860f18e20 |
+| displayName | [CT3] Health Materiel Profile Administration |
+| friendlyName | EntityInformationEnablement.HealthMaterielAdministration.HealthMaterielProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthMaterielAdministration.CT3-BEC-HealthMaterielProfileAdministration |
 | Snapshot publication reference | HCM-BEC-health-product-definition |
 | ArchiMate semantic ID | id-f7048c29ae50565bad9ad68e7f030af4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3395,9 +3643,13 @@ Materiel traceability does not make Harmonia a procurement, stock-control or sup
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-product-batch-serial-tracking |
+| canonicalId | 2d41ed0f00a94a4b90ffe87d6fd4e9fe |
+| displayName | [CT3] Health Materiel Traceability Administration |
+| friendlyName | EntityInformationEnablement.HealthMaterielAdministration.HealthMaterielTraceabilityAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthMaterielAdministration.CT3-BEC-HealthMaterielTraceabilityAdministration |
 | Snapshot publication reference | HCM-BEC-product-batch-serial-tracking |
 | ArchiMate semantic ID | id-c433d8bde03c55eb85e0864109861ff2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3446,9 +3698,13 @@ This capability owns the service mapping associations, not the mapped organisati
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-service-administration |
+| canonicalId | ba68a52913a0499d8377553bddfa74a4 |
+| displayName | [CT2] Health Service Administration |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration |
 | Snapshot publication reference | HCM-BEC-health-service-administration |
 | ArchiMate semantic ID | id-19d0a7d9080e5758915878db238ec2d8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3492,9 +3748,13 @@ Defined availability is not dynamic operational capacity, collective readiness o
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-healthcare-service-definition |
+| canonicalId | e75d5eb30936476ea7a9cbadfa43d5ef |
+| displayName | [CT3] Healthcare Service Profile Administration |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-HealthcareServiceProfileAdministration |
 | Snapshot publication reference | HCM-BEC-healthcare-service-definition |
 | ArchiMate semantic ID | id-9c7e5f6635095618a9fb1650dc184c64 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3543,9 +3803,13 @@ Defining a place does not establish occupancy, readiness, facilities maintenance
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:location-administration |
+| canonicalId | c410005667444f99a221483bf577fad2 |
+| displayName | [CT2] Location Administration |
+| friendlyName | EntityInformationEnablement.LocationAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration |
 | Snapshot publication reference | HCM-BEC-location-administration |
 | ArchiMate semantic ID | id-243b002011da54d5ac721e2a99d456ea |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3590,9 +3854,13 @@ Describes a place and its capabilities; operational bed state and readiness rema
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-place-definition |
+| canonicalId | 629b493c7d9844baa25c029a87ed04f6 |
+| displayName | [CT3] Care-Place Definition Administration |
+| friendlyName | EntityInformationEnablement.LocationAdministration.CarePlaceDefinitionAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-CarePlaceDefinitionAdministration |
 | Snapshot publication reference | HCM-BEC-care-place-definition |
 | ArchiMate semantic ID | id-6406fe2dfdf65a79980a8fbd6881f251 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3633,9 +3901,13 @@ Location description does not establish occupancy, cleanliness, service capacity
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-healthcare-location |
+| canonicalId | e579e54a08bb4f899a504aa998ba246b |
+| displayName | [CT3] Healthcare Location Profile Administration |
+| friendlyName | EntityInformationEnablement.LocationAdministration.HealthcareLocationProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-HealthcareLocationProfileAdministration |
 | Snapshot publication reference | HCM-BEC-healthcare-location |
 | ArchiMate semantic ID | id-bc2bc98a7a495b47bf11db08e9c29bae |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3684,9 +3956,13 @@ Representing organisational structure does not acquire corporate authority or ow
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:organisation-administration |
+| canonicalId | 14fbdc5ce3dd4c2092c5397dab3ed743 |
+| displayName | [CT2] Organisation Administration |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration |
 | Snapshot publication reference | HCM-BEC-organisation-administration |
 | ArchiMate semantic ID | id-97a226da4bae53e9bb0cb071c6dbf5c2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3730,9 +4006,13 @@ Maintains verified legal and operational identity information without corporate 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-healthcare-organisation |
+| canonicalId | f2de9e9394b849f2943355c7a2882a15 |
+| displayName | [CT3] Healthcare Organisation Profile Administration |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration |
 | Snapshot publication reference | HCM-BEC-healthcare-organisation |
 | ArchiMate semantic ID | id-4bd6510c5dc5510291b60560f6e68b71 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3785,9 +4065,13 @@ Practitioner Role Resolution establishes neither Clinical Privilege nor Operatio
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:provider-administration |
+| canonicalId | d6312f85968a4209bafff5ed009297a6 |
+| displayName | [CT2] Provider Administration |
+| friendlyName | EntityInformationEnablement.ProviderAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration |
 | Snapshot publication reference | HCM-BEC-provider-administration |
 | ArchiMate semantic ID | id-7b438cff4f2d5b6d928cd7ea538f67a4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3833,9 +4117,13 @@ Professional registration and profile representation do not grant clinical or op
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-practitioner |
+| canonicalId | 40759a835f7b456e9257c38b67b0a380 |
+| displayName | [CT3] Practitioner Profile Administration |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerProfileAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerProfileAdministration |
 | Snapshot publication reference | HCM-BEC-practitioner |
 | ArchiMate semantic ID | id-4c6e206c1684595b84981d627a110e53 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3876,9 +4164,13 @@ Role, specialty, capacity and endpoint information supply context; they do not c
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-practitioner-role |
+| canonicalId | 6651471e67ae46fb8d1c1241c8590be9 |
+| displayName | [CT3] Practitioner Role Administration |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerRoleAdministration |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerRoleAdministration |
 | Snapshot publication reference | HCM-BEC-practitioner-role |
 | ArchiMate semantic ID | id-394620b518475a49b9810a7f556b3313 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3919,9 +4211,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-vendor-liaison |
+| canonicalId | 66358bd6698e4050b12342522fbbb923 |
+| displayName | [CT3] Vendor Liaison |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.VendorLiaison |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-VendorLiaison |
 | Snapshot publication reference | HCM-BEC-reviewed-vendor-liaison |
 | ArchiMate semantic ID | id-f65c91b69f5a54cfae47b3572ae8bb4e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -3961,9 +4257,13 @@ Harmonia is adjacent to a Big Data/analytical environment. It establishes govern
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-secondary-health-information-use-enablement |
+| canonicalId | a790b5f2c5a1497fa6ec09d7824da32e |
+| displayName | [CT1] Health Informatics Management |
+| friendlyName | HealthInformaticsManagement |
+| canonicalName | CT1-BEC-HealthInformaticsManagement |
 | Snapshot publication reference | HCM-BEC-secondary-health-information-use-enablement |
 | ArchiMate semantic ID | id-dc7f84d80543529cab8e2ccc86a0428c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -4007,9 +4307,13 @@ Does not determine population-health findings, create statutory obligations or e
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-population-health-notification-enablement |
+| canonicalId | 2135b45eab034370b0063b20e821985d |
+| displayName | [CT2] Population Health Information Reporting |
+| friendlyName | HealthInformaticsManagement.PopulationHealthInformationReporting |
+| canonicalName | CT1-BEC-HealthInformaticsManagement.CT2-BEC-PopulationHealthInformationReporting |
 | Snapshot publication reference | HCM-BEC-population-health-notification-enablement |
 | ArchiMate semantic ID | id-1ba1dd139e615a7da6f08eef1caa56be |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -4051,9 +4355,13 @@ Does not grant ethics approval, recruit trial participants, manage trials or bec
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-authorised-research-information-provision |
+| canonicalId | 4f5b8cec90324c2989cdc30e80bc8cb9 |
+| displayName | [CT2] Research Information Curation |
+| friendlyName | HealthInformaticsManagement.ResearchInformationCuration |
+| canonicalName | CT1-BEC-HealthInformaticsManagement.CT2-BEC-ResearchInformationCuration |
 | Snapshot publication reference | HCM-BEC-authorised-research-information-provision |
 | ArchiMate semantic ID | id-2bb6a6fd2f5f55db940b8d0793706993 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -4095,9 +4403,13 @@ Observed utilisation, operational capacity and planned capacity are distinct; in
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-service-planning-information-provision |
+| canonicalId | 4873cd4b960d45d8b93560d5c8b98500 |
+| displayName | [CT2] Service Planning Data Management |
+| friendlyName | HealthInformaticsManagement.ServicePlanningDataManagement |
+| canonicalName | CT1-BEC-HealthInformaticsManagement.CT2-BEC-ServicePlanningDataManagement |
 | Snapshot publication reference | HCM-BEC-service-planning-information-provision |
 | ArchiMate semantic ID | id-95802b6c6b505351b4d3d57f8aed2753 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -4139,9 +4451,13 @@ Coordination owns only explicitly assigned operational activity. It does not ori
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-operations-coordination-enablement |
+| canonicalId | b13ee2c5a4ef4fd6be8a44795696dfc2 |
+| displayName | [CT1] Health Service Operations Enablement |
+| friendlyName | HealthServiceOperationsEnablement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement |
 | Snapshot publication reference | HCM-BEC-care-operations-coordination-enablement |
 | ArchiMate semantic ID | id-7d2f4319495b59248bd13f7b256a1c32 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -4218,9 +4534,13 @@ Governed place-state progression and operational notification are substantive as
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:bed--care-place-management |
+| canonicalId | f117ccec0bfa4f738e6ddb646b3534a2 |
+| displayName | [CT2] Bed & Care-Place Management |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement |
 | Snapshot publication reference | HCM-BEC-bed-care-place-management |
 | ArchiMate semantic ID | id-99e98c1485575f90883330359d72b921 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4265,9 +4585,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-bed-care-place-state-administration |
+| canonicalId | 26a9383d7bb146a19141558d232843de |
+| displayName | [CT3] Bed & Care-Place State Administration |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedAndCarePlaceStateAdministration |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.CT3-BEC-BedAndCarePlaceStateAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-bed-care-place-state-administration |
 | ArchiMate semantic ID | id-315b46c620d151868c9f84a0ed45ccd2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4307,9 +4631,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-bed-care-place-turnover-coordination |
+| canonicalId | 3c9464f9eae1415d8fa041bd1f3da4f2 |
+| displayName | [CT3] Bed & Care-Place Turnover Coordination |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedAndCarePlaceTurnoverCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.CT3-BEC-BedAndCarePlaceTurnoverCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-bed-care-place-turnover-coordination |
 | ArchiMate semantic ID | id-f498770b9a45551990afc0c14336212f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4361,9 +4689,13 @@ Session and flow information materially supports clinic coordination while the c
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinic--practice-operations |
+| canonicalId | 3dffe63e03124efab255204ee4e9a5d9 |
+| displayName | [CT2] Clinic & Practice Operations |
+| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations |
 | Snapshot publication reference | HCM-BEC-clinic-practice-operations |
 | ArchiMate semantic ID | id-c907d86a7e995d0f99f48365418f41f8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4407,9 +4739,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-session-queue-coordination |
+| canonicalId | 22981a95ca6e466582363706fde8fceb |
+| displayName | [CT3] Session & Queue Coordination |
+| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.SessionAndQueueCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.CT3-BEC-SessionAndQueueCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-session-queue-coordination |
 | ArchiMate semantic ID | id-5c2d8bf1b2ec5762b2be0bc402aa7ca1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4465,9 +4801,13 @@ The formal Reference classification remains separate from the relevance of opera
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-competency-management |
+| canonicalId | 8a99f4a6e5054d6c997bacec04805c01 |
+| displayName | [CT2] Clinical Competency Administration |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalCompetencyAdministration |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalCompetencyAdministration |
 | Snapshot publication reference | HCM-BEC-clinical-competency-management |
 | ArchiMate semantic ID | id-e9ea67f4568d5b698a547301aa89e4bd |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4526,9 +4866,13 @@ Custody and transport information materially support diagnostic continuity and a
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-logistics-coordination |
+| canonicalId | 0c27be11b4a44cb19e992309b8146a17 |
+| displayName | [CT2] Clinical Logistics Coordination |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination |
 | Snapshot publication reference | HCM-BEC-clinical-logistics-coordination |
 | ArchiMate semantic ID | id-143b994de5cd593897012a96963e43ca |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4573,9 +4917,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-specimen-metadata-management |
+| canonicalId | 738736425b7446fdae47b06c91c4f69c |
+| displayName | [CT3] Specimen Metadata Management |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination.SpecimenMetadataManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination.CT3-BEC-SpecimenMetadataManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-specimen-metadata-management |
 | ArchiMate semantic ID | id-e58d7bdb27f95fb396623167a677a5ba |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4615,9 +4963,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-specimen-movement-traceability |
+| canonicalId | bfa2e9a84ddd4287897573dc0d917a00 |
+| displayName | [CT3] Specimen Movement Traceability |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination.SpecimenMovementTraceability |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination.CT3-BEC-SpecimenMovementTraceability |
 | Snapshot publication reference | HCM-BEC-reviewed-specimen-movement-traceability |
 | ArchiMate semantic ID | id-8c4d5090fb7150469d8e4b10a7551dab |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4673,9 +5025,13 @@ Qualification context materially constrains legitimate dispatch without making H
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-qualification-management |
+| canonicalId | 0511a705d74a4f48a0ce92590ae764fa |
+| displayName | [CT2] Clinical Qualification Administration |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalQualificationAdministration |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalQualificationAdministration |
 | Snapshot publication reference | HCM-BEC-clinical-qualification-management |
 | ArchiMate semantic ID | id-c1ec3269b7655d079fee5f5b92fbd5e6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4721,9 +5077,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-organisation-clinical-certification-compliance-support |
+| canonicalId | 4de624e7bf49472f91e3e5c734ee8725 |
+| displayName | [CT3] Organisation Clinical Certification & Compliance Support |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalQualificationAdministration.OrganisationClinicalCertificationAndComplianceSupport |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalQualificationAdministration.CT3-BEC-OrganisationClinicalCertificationAndComplianceSupport |
 | Snapshot publication reference | HCM-BEC-reviewed-organisation-clinical-certification-compliance-support |
 | ArchiMate semantic ID | id-5ae6f84e6e865ab78d46b5a33357cb9d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4763,9 +5123,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-provider-clinical-qualification-tracking |
+| canonicalId | 8fd5c78eba3046fa9153fb4efb44e9c8 |
+| displayName | [CT3] Provider Clinical Qualification Tracking |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalQualificationAdministration.ProviderClinicalQualificationTracking |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalQualificationAdministration.CT3-BEC-ProviderClinicalQualificationTracking |
 | Snapshot publication reference | HCM-BEC-reviewed-provider-clinical-qualification-tracking |
 | ArchiMate semantic ID | id-7b77530f0c8a569498954dc0a5fcf798 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4817,9 +5181,13 @@ Roster information can inform operations while the formal Adjacent classificatio
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-rostering |
+| canonicalId | 192ca88a289544dcbf6adaf643f39969 |
+| displayName | [CT2] Clinical Rostering |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalRostering |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalRostering |
 | Snapshot publication reference | HCM-BEC-clinical-rostering |
 | ArchiMate semantic ID | id-cbe0d80e3f8c501781eb087d3f932b11 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4863,9 +5231,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-roster-capture-communication |
+| canonicalId | 8243cba81fb6449781d10823ae194237 |
+| displayName | [CT3] Clinical Roster Capture & Communication |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalRostering.ClinicalRosterCaptureAndCommunication |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalRostering.CT3-BEC-ClinicalRosterCaptureAndCommunication |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-roster-capture-communication |
 | ArchiMate semantic ID | id-50bd81c2c0425bbba29347b0aeb4025a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -4921,9 +5293,13 @@ Reference standing is preserved; no direct platform supervision responsibility i
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-supervision |
+| canonicalId | f697b1ac79b544749315f31819b17969 |
+| displayName | [CT2] Clinical Supervision |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalSupervision |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalSupervision |
 | Snapshot publication reference | HCM-BEC-clinical-supervision |
 | ArchiMate semantic ID | id-57136cee07f65bf98b7bfe63fba60fa4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4967,9 +5343,13 @@ Harmonia manages the escalation path; responsible clinical participants perform 
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-escalation-path-management |
+| canonicalId | cca86a32ba8c4dda84caeaa248e9f444 |
+| displayName | [CT3] Clinical Escalation Path Management |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalSupervision.ClinicalEscalationPathManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalSupervision.CT3-BEC-ClinicalEscalationPathManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-escalation-path-management |
 | ArchiMate semantic ID | id-e77accf68d2a5f63b25c3c257d97feec |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5021,9 +5401,13 @@ Reference standing retains enterprise context without a material assigned proces
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-training--education |
+| canonicalId | d016f35ffbc345d99d7281e968c14ddb |
+| displayName | [CT2] Clinical Training & Education |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalTrainingAndEducation |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalTrainingAndEducation |
 | Snapshot publication reference | HCM-BEC-clinical-training-education |
 | ArchiMate semantic ID | id-e4265b53f55553c2acc4f7322e9f1cf2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5082,9 +5466,13 @@ Adjacent standing reflects contextual participation rather than management of th
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-workforce-management |
+| canonicalId | 367b3e5643f44fa785f093db8bb9a6e8 |
+| displayName | [CT2] Clinical Workforce Capability Monitoring |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalWorkforceCapabilityMonitoring |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalWorkforceCapabilityMonitoring |
 | Snapshot publication reference | HCM-BEC-clinical-workforce-management |
 | ArchiMate semantic ID | id-54b2e4d160c052c18e147e5980c3a02d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5127,9 +5515,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-credential-management |
+| canonicalId | 21eed4fc8c924496b16c6ddaa32f3d01 |
+| displayName | [CT2] Credential Management |
+| friendlyName | HealthServiceOperationsEnablement.CredentialManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CredentialManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-credential-management |
 | ArchiMate semantic ID | id-ecc5bfe7e27b54dfb59023a05879f1b0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -5171,9 +5563,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-service-credential-definition-management |
+| canonicalId | 2e5c97f51e7e48d1b865ac416dd8099d |
+| displayName | [CT3] Clinical Service Credential Definition Management |
+| friendlyName | HealthServiceOperationsEnablement.CredentialManagement.ClinicalServiceCredentialDefinitionManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CredentialManagement.CT3-BEC-ClinicalServiceCredentialDefinitionManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-service-credential-definition-management |
 | ArchiMate semantic ID | id-69e67b8a2bb25dd99ec9fb966b9d5481 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5225,9 +5621,13 @@ Cross-team milestone coordination and departure notification are substantive ass
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:discharge-management |
+| canonicalId | ec5e8d6732764aa489c2dd7630fc8fef |
+| displayName | [CT2] Discharge Management |
+| friendlyName | HealthServiceOperationsEnablement.DischargeManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-DischargeManagement |
 | Snapshot publication reference | HCM-BEC-discharge-management |
 | ArchiMate semantic ID | id-481836991b9257c69af3d3dceb781a72 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5271,9 +5671,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-discharge-progression-coordination |
+| canonicalId | d6048993146b45639bab27860f94f34f |
+| displayName | [CT3] Discharge Progression & Coordination |
+| friendlyName | HealthServiceOperationsEnablement.DischargeManagement.DischargeProgressionAndCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-DischargeManagement.CT3-BEC-DischargeProgressionAndCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-discharge-progression-coordination |
 | ArchiMate semantic ID | id-a99640e4d2c05ac3be8b58e113e550dc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5325,9 +5729,13 @@ Care-place state and operational waiting information materially support coordina
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:emergency-department-operations |
+| canonicalId | 24a4b5815faa4d369bc756a6e97d3e9e |
+| displayName | [CT2] Emergency Department Operations |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations |
 | Snapshot publication reference | HCM-BEC-emergency-department-operations |
 | ArchiMate semantic ID | id-60e2aa8fae4d51b993b4022f9ed688ff |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5376,9 +5784,13 @@ Cross-facility context and current presentation information materially support e
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:emergency-care |
+| canonicalId | 7125e459a48946d0ba075b5ecc3571b4 |
+| displayName | [CT3] Emergency Care Progression |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression |
 | Snapshot publication reference | HCM-BEC-emergency-care |
 | ArchiMate semantic ID | id-036bd5a9fa1b5fca9c3245abf3016f44 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5420,9 +5832,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-emergency-department-operational-coordination |
+| canonicalId | 8f0b0f3d9e8d44a7827b0835870b4a4f |
+| displayName | [CT3] Emergency Department Operational Coordination |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyDepartmentOperationalCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyDepartmentOperationalCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-emergency-department-operational-coordination |
 | ArchiMate semantic ID | id-1b8e6ac4079f5e8dad95cae8bbb52aaf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5474,9 +5890,13 @@ Mobile assignment and progression exchanges materially connect roving activity t
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:mobile-staff-management |
+| canonicalId | 79a4a48fddf74c69acf7e16404d06ea5 |
+| displayName | [CT2] Mobile Staff Management |
+| friendlyName | HealthServiceOperationsEnablement.MobileStaffManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-MobileStaffManagement |
 | Snapshot publication reference | HCM-BEC-mobile-staff-management |
 | ArchiMate semantic ID | id-bfbdb4730780550e884dabf485f6cc6f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5520,9 +5940,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-mobile-worker-dispatch-safety-coordination |
+| canonicalId | d72164668dfe448bbebe74e9e1a75233 |
+| displayName | [CT3] Mobile Worker Dispatch & Safety Coordination |
+| friendlyName | HealthServiceOperationsEnablement.MobileStaffManagement.MobileWorkerDispatchAndSafetyCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-MobileStaffManagement.CT3-BEC-MobileWorkerDispatchAndSafetyCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-mobile-worker-dispatch-safety-coordination |
 | ArchiMate semantic ID | id-3fd840ab23015c128060f2b3dd4359b4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5574,9 +5998,13 @@ Current provider resolution materially enables appropriate contact and routing a
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:on-call-management |
+| canonicalId | b16cef8f2bfd4b92948ec75cbcfa7b9a |
+| displayName | [CT2] On-Call Management |
+| friendlyName | HealthServiceOperationsEnablement.OnCallManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OnCallManagement |
 | Snapshot publication reference | HCM-BEC-on-call-management |
 | ArchiMate semantic ID | id-d398ed8aeb1c5dc49a55367f1421d42c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5620,9 +6048,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-on-call-availability-contact-resolution |
+| canonicalId | 677a816c42414ea694791b4ee5a14285 |
+| displayName | [CT3] On-Call Availability & Contact Resolution |
+| friendlyName | HealthServiceOperationsEnablement.OnCallManagement.OnCallAvailabilityAndContactResolution |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OnCallManagement.CT3-BEC-OnCallAvailabilityAndContactResolution |
 | Snapshot publication reference | HCM-BEC-reviewed-on-call-availability-contact-resolution |
 | ArchiMate semantic ID | id-c3f38627d9395f77bf64711330c8f290 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5674,9 +6106,13 @@ Arrival and clinic-outcome information materially connect outpatient progression
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:outpatient-operations |
+| canonicalId | 21399d52b9624ddfbeb786f1d72e40c3 |
+| displayName | [CT2] Outpatient Operations |
+| friendlyName | HealthServiceOperationsEnablement.OutpatientOperations |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OutpatientOperations |
 | Snapshot publication reference | HCM-BEC-outpatient-operations |
 | ArchiMate semantic ID | id-f8932fe58ea154028a1a5dfa4887f491 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5720,9 +6156,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-outpatient-flow-coordination |
+| canonicalId | 799ea278af014168b9b534e5fdadc6d1 |
+| displayName | [CT3] Outpatient Flow Coordination |
+| friendlyName | HealthServiceOperationsEnablement.OutpatientOperations.OutpatientFlowCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OutpatientOperations.CT3-BEC-OutpatientFlowCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-outpatient-flow-coordination |
 | ArchiMate semantic ID | id-4595d9da485357d4b4d5ab830b5ad0a1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5774,9 +6214,13 @@ Transport request and dispatch progression are substantive assigned operational 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:patient-transport |
+| canonicalId | 6041d7c0cc5d4519aaea584bb4e6d365 |
+| displayName | [CT2] Patient Transport |
+| friendlyName | HealthServiceOperationsEnablement.PatientTransport |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-PatientTransport |
 | Snapshot publication reference | HCM-BEC-patient-transport |
 | ArchiMate semantic ID | id-97b7e74f9a4d5e95a1f89de6b3cfc393 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5820,9 +6264,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-transfer-coordination |
+| canonicalId | c7c7aa8e34df4568ae4b91cdde380a11 |
+| displayName | [CT3] Patient Transfer Coordination |
+| friendlyName | HealthServiceOperationsEnablement.PatientTransport.PatientTransferCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-PatientTransport.CT3-BEC-PatientTransferCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-transfer-coordination |
 | ArchiMate semantic ID | id-c67d028a12d457b1bff85ea82df63718 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5874,9 +6322,13 @@ Cross-service operational visibility materially supports coordination while sour
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:service-capacity-management |
+| canonicalId | d86105bf9c86445394088f65c895d37f |
+| displayName | [CT2] Service Capacity Management |
+| friendlyName | HealthServiceOperationsEnablement.ServiceCapacityManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ServiceCapacityManagement |
 | Snapshot publication reference | HCM-BEC-service-capacity-management |
 | ArchiMate semantic ID | id-2de1ef69d9675c59baa5c66e541e1df5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5920,9 +6372,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-service-demand-capacity-coordination |
+| canonicalId | 93b5548ce8d04fcd999b97536c1eebf9 |
+| displayName | [CT3] Service Demand & Capacity Coordination |
+| friendlyName | HealthServiceOperationsEnablement.ServiceCapacityManagement.ServiceDemandAndCapacityCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ServiceCapacityManagement.CT3-BEC-ServiceDemandAndCapacityCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-service-demand-capacity-coordination |
 | ArchiMate semantic ID | id-4125661f05bc5551a63787e0afe15491 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5962,9 +6418,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-service-establishment-support |
+| canonicalId | 20e67a41e7f44398b0f0cf3d379d8b9c |
+| displayName | [CT2] Service Establishment Support |
+| friendlyName | HealthServiceOperationsEnablement.ServiceEstablishmentSupport |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ServiceEstablishmentSupport |
 | Snapshot publication reference | HCM-BEC-reviewed-service-establishment-support |
 | ArchiMate semantic ID | id-1ae0ff5d6b3b54deb3f9a0832045bcf5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -6017,9 +6477,13 @@ Milestone-driven operational notifications materially connect supporting activit
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:theatre-operations |
+| canonicalId | 4bf7a8260e1444fdac44e97c3557b533 |
+| displayName | [CT2] Theatre Operations |
+| friendlyName | HealthServiceOperationsEnablement.TheatreOperations |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-TheatreOperations |
 | Snapshot publication reference | HCM-BEC-theatre-operations |
 | ArchiMate semantic ID | id-ee472a7091b85442911ccf12aac63a4d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6063,9 +6527,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-perioperative-logistics-coordination |
+| canonicalId | 6b7c08b60b5b48519bfe4b6f993dd6fb |
+| displayName | [CT3] Perioperative Logistics Coordination |
+| friendlyName | HealthServiceOperationsEnablement.TheatreOperations.PerioperativeLogisticsCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-TheatreOperations.CT3-BEC-PerioperativeLogisticsCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-perioperative-logistics-coordination |
 | ArchiMate semantic ID | id-0df9d488a0865c958bf5b6c3557b8976 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -6117,9 +6585,13 @@ Correlated ward state and contextual information materially support operational 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:ward-operations |
+| canonicalId | f996ecca728f4942a88b034aca818a99 |
+| displayName | [CT2] Ward Operations |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations |
 | Snapshot publication reference | HCM-BEC-ward-operations |
 | ArchiMate semantic ID | id-014da71d575756afa0db8502a0d1c904 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6168,9 +6640,13 @@ The platform materially supplies consolidated inpatient context; milestone track
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:inpatient-care |
+| canonicalId | c798e38e12e5428dbb8b3cabc977d430 |
+| displayName | [CT3] Multidisciplinary Inpatient Care Coordination |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations.MultidisciplinaryInpatientCareCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.CT3-BEC-MultidisciplinaryInpatientCareCoordination |
 | Snapshot publication reference | HCM-BEC-inpatient-care |
 | ArchiMate semantic ID | id-2fb39d490c105c5d985595cc71f06003 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6212,9 +6688,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-ward-logistics-coordination |
+| canonicalId | 3249647f7b9846c899f982ab339c81f9 |
+| displayName | [CT3] Ward Logistics Coordination |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations.WardLogisticsCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.CT3-BEC-WardLogisticsCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-ward-logistics-coordination |
 | ArchiMate semantic ID | id-5d528e4fcb5e5092a26ac5fba62d8fe9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -6270,9 +6750,13 @@ Governed operational work progression is a substantive platform responsibility s
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:work-allocation--dispatch |
+| canonicalId | 152a5252952c405994e9b171234efcb0 |
+| displayName | [CT2] Work Allocation & Dispatch |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch |
 | Snapshot publication reference | HCM-BEC-work-allocation-dispatch |
 | ArchiMate semantic ID | id-802e169720d253d1979cf0de2eb2004b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6316,9 +6800,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-operational-work-assignment-dispatch-coordination |
+| canonicalId | 3b58935cfa974176989c3c75d76a00fe |
+| displayName | [CT3] Operational Work Assignment & Dispatch Coordination |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkAssignmentAndDispatchCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-operational-work-assignment-dispatch-coordination |
 | ArchiMate semantic ID | id-b4d502174176517d89e42e4cd48e1fff |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -6358,9 +6846,13 @@ Assurance cannot manage, remediate or approve its subject merely because it obse
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-independent-service-assurance-enablement |
+| canonicalId | 616682b612d244429e656b040e002d56 |
+| displayName | [CT1] Independent Assurance Enablement |
+| friendlyName | IndependentAssuranceEnablement |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement |
 | Snapshot publication reference | HCM-BEC-independent-service-assurance-enablement |
 | ArchiMate semantic ID | id-7045e58c19235175b54f5d054232b883 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -6402,9 +6894,13 @@ Reviews the assurance service itself. Canonical evidence association, subject as
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-assurance-service-review |
+| canonicalId | b1a791458d644d4794895e4fa42ec83c |
+| displayName | [CT2] Assurance Service Review |
+| friendlyName | IndependentAssuranceEnablement.AssuranceServiceReview |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceServiceReview |
 | Snapshot publication reference | HCM-BEC-reviewed-assurance-service-review |
 | ArchiMate semantic ID | id-8a7d47abbe015a309139a0ee2c1250d4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -6446,9 +6942,13 @@ Evaluation concerns operation, effectiveness, appropriateness and conformance of
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-assurance-service-evaluation |
+| canonicalId | 039343518db542d48cde6afab84a3e1e |
+| displayName | [CT3] Assurance Service Evaluation |
+| friendlyName | IndependentAssuranceEnablement.AssuranceServiceReview.AssuranceServiceEvaluation |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceServiceReview.CT3-BEC-AssuranceServiceEvaluation |
 | Snapshot publication reference | HCM-BEC-reviewed-assurance-service-evaluation |
 | ArchiMate semantic ID | id-0bcc748a066653819c90f63952059b9a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -6488,9 +6988,13 @@ Modelling and criteria stewardship do not approve governing requirements or perf
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-assurance-specification-enablement |
+| canonicalId | b81775d89d774cf8ba61731d13c67a54 |
+| displayName | [CT2] Assurance Specification |
+| friendlyName | IndependentAssuranceEnablement.AssuranceSpecification |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification |
 | Snapshot publication reference | HCM-BEC-assurance-specification-enablement |
 | ArchiMate semantic ID | id-e18e1674a30c5c97a40ef75faea25663 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -6554,9 +7058,13 @@ Formal relevance remains Unresolved. Established assurance support explains the 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:assurance-criteria-management |
+| canonicalId | 1bfd71f24321428c8871b587d413f47e |
+| displayName | [CT3] Assurance Criteria Administration |
+| friendlyName | IndependentAssuranceEnablement.AssuranceSpecification.AssuranceCriteriaAdministration |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification.CT3-BEC-AssuranceCriteriaAdministration |
 | Snapshot publication reference | HCM-BEC-assurance-criteria-management |
 | ArchiMate semantic ID | id-5b9c494f5afb5f348c6e67afc7e022d5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6619,9 +7127,13 @@ Formal classification remains Unresolved. Its approved support to Health Service
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:assurance-design |
+| canonicalId | 71c8a612b88f4ecba049e94d506bd0c2 |
+| displayName | [CT3] Assurance Design |
+| friendlyName | IndependentAssuranceEnablement.AssuranceSpecification.AssuranceDesign |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification.CT3-BEC-AssuranceDesign |
 | Snapshot publication reference | HCM-BEC-assurance-design |
 | ArchiMate semantic ID | id-e5aa0bd0a82b5ee484397627845f3f1c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6663,9 +7175,13 @@ Preservation, custody, discoverability and presentation do not confer originatin
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-governed-health-information-enablement |
+| canonicalId | 0062fcacae1740988b6be2bda2aa1674 |
+| displayName | [CT1] Shared Information & Coordination Enablement |
+| friendlyName | SharedInformationAndCoordinationEnablement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement |
 | Snapshot publication reference | HCM-BEC-governed-health-information-enablement |
 | ArchiMate semantic ID | id-a5127b36f8a25c748c68426668173fcd |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -6731,9 +7247,13 @@ Consistent temporal projections and event correlation are direct platform coordi
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:calendar-management |
+| canonicalId | 7669036f7e6749219412fc64df5f7064 |
+| displayName | [CT2] Calendar Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement |
 | Snapshot publication reference | HCM-BEC-calendar-management |
 | ArchiMate semantic ID | id-6b7034b5239c505d858d651b8ee78832 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6777,9 +7297,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-operational-clinical-calendar-coordination |
+| canonicalId | f6d8f1310ba543f69e8b57bf05603db3 |
+| displayName | [CT3] Operational & Clinical Calendar Coordination |
+| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.OperationalAndClinicalCalendarCoordination |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.CT3-BEC-OperationalAndClinicalCalendarCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-operational-clinical-calendar-coordination |
 | ArchiMate semantic ID | id-d975937d894d521eaf2465cf00b08aaf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -6831,9 +7355,13 @@ LHR-aware collaboration and controlled contextual queries are substantive Core r
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-collaboration |
+| canonicalId | e6429225463a44d39f82e490e254e5d4 |
+| displayName | [CT2] Clinical Collaboration |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration |
 | Snapshot publication reference | HCM-BEC-clinical-collaboration |
 | ArchiMate semantic ID | id-0770a7338b0a53adb14971ace57fea7f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6877,9 +7405,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-context-collaboration |
+| canonicalId | f11617eed6ff4d6fa237644ec95b28b2 |
+| displayName | [CT3] Clinical Context Collaboration |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.ClinicalContextCollaboration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.CT3-BEC-ClinicalContextCollaboration |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-context-collaboration |
 | ArchiMate semantic ID | id-97b0afca9c9e513d8205eb624be06169 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -6935,9 +7467,13 @@ Concept resolution and mapping materially support meaningful information exchang
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-knowledge-services |
+| canonicalId | bbd2bd21859f40e39963bdbe7a851686 |
+| displayName | [CT2] Clinical Knowledge Services |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices |
 | Snapshot publication reference | HCM-BEC-clinical-knowledge-services |
 | ArchiMate semantic ID | id-c7f56c1dcc525ca8805682bc1d92907d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6983,9 +7519,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-knowledge-artefact-distribution-management |
+| canonicalId | cd29a9eb798949bc8bc81bb5d434cabf |
+| displayName | [CT3] Clinical Knowledge Artefact Distribution Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.ClinicalKnowledgeArtefactDistributionManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.CT3-BEC-ClinicalKnowledgeArtefactDistributionManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-knowledge-artefact-distribution-management |
 | ArchiMate semantic ID | id-048fd66ba8095ee3bb759b0c89bdf32f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7025,9 +7565,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-clinical-knowledge-request-administration |
+| canonicalId | 543c53483a2249d78044c6635b7b7c48 |
+| displayName | [CT3] Clinical Knowledge Request Administration |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.ClinicalKnowledgeRequestAdministration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.CT3-BEC-ClinicalKnowledgeRequestAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-clinical-knowledge-request-administration |
 | ArchiMate semantic ID | id-59010f4f41df5e509a40226be95a123b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7067,9 +7611,13 @@ Does not own external ontology authority, execute authorisation policy or establ
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-governed-reference-dataset-administration |
+| canonicalId | 682b8684ad9e49d5a5c348a148081607 |
+| displayName | [CT3] Governed Reference Dataset Administration |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.GovernedReferenceDatasetAdministration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.CT3-BEC-GovernedReferenceDatasetAdministration |
 | Snapshot publication reference | HCM-BEC-governed-reference-dataset-administration |
 | ArchiMate semantic ID | id-cc4edaeee1d3519185ee94a683e4a5e0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7122,9 +7670,13 @@ Operational messaging materially enables coordination while the participants' bu
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:general-collaboration |
+| canonicalId | 3bb740e6db284112b054905c0c6c80be |
+| displayName | [CT2] General Collaboration |
+| friendlyName | SharedInformationAndCoordinationEnablement.GeneralCollaboration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-GeneralCollaboration |
 | Snapshot publication reference | HCM-BEC-general-collaboration |
 | ArchiMate semantic ID | id-220d1f41d46b57fba6377fcd533fb94a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7168,9 +7720,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-operational-collaboration |
+| canonicalId | 631fdb8b47084008ac9b5de28b26972b |
+| displayName | [CT3] Operational Collaboration |
+| friendlyName | SharedInformationAndCoordinationEnablement.GeneralCollaboration.OperationalCollaboration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-GeneralCollaboration.CT3-BEC-OperationalCollaboration |
 | Snapshot publication reference | HCM-BEC-reviewed-operational-collaboration |
 | ArchiMate semantic ID | id-7a89497d659f50629cd7dd7105c0e411 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7222,9 +7778,13 @@ Responsive governed access is a direct platform responsibility. The approved sup
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-information-access |
+| canonicalId | cc253aea3c5f489da0502df74dde1669 |
+| displayName | [CT2] Health Information Access |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationAccess |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess |
 | Snapshot publication reference | HCM-BEC-health-information-access |
 | ArchiMate semantic ID | id-20ff65f6cd1d5932968574bc72bd7aa3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7268,9 +7828,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-governed-health-information-retrieval |
+| canonicalId | 76e74e46ca4d44a1a7bb116b358f231c |
+| displayName | [CT3] Governed Health Information Retrieval |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationAccess.GovernedHealthInformationRetrieval |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess.CT3-BEC-GovernedHealthInformationRetrieval |
 | Snapshot publication reference | HCM-BEC-reviewed-governed-health-information-retrieval |
 | ArchiMate semantic ID | id-2b06d69a6fe75ab79dc8d11abe5c780a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7310,9 +7874,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-health-information-communication |
+| canonicalId | 7925605bf60f4b288e826020409a09d9 |
+| displayName | [CT2] Health Information Communication |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationCommunication |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication |
 | Snapshot publication reference | HCM-BEC-reviewed-health-information-communication |
 | ArchiMate semantic ID | id-5004f4019d1059108356b6ee7cfcaa8e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -7357,9 +7925,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-health-library-access |
+| canonicalId | 808e5a3c3f6b496fa329962088f0bee0 |
+| displayName | [CT3] Patient Health Library Access |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationCommunication.PatientHealthLibraryAccess |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication.CT3-BEC-PatientHealthLibraryAccess |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-health-library-access |
 | ArchiMate semantic ID | id-cb1d28c1e8135785a123e050fa77210a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7399,9 +7971,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-notification-services |
+| canonicalId | 9d172cd511b742499c4e7c23f6630a35 |
+| displayName | [CT3] Patient Notification Services |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationCommunication.PatientNotificationServices |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication.CT3-BEC-PatientNotificationServices |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-notification-services |
 | ArchiMate semantic ID | id-ac3af58b121552608850d847992c8afa |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7441,9 +8017,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-self-service |
+| canonicalId | d4956cab8b2b46c396899949c9486a1c |
+| displayName | [CT3] Patient Self-Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationCommunication.PatientSelfService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication.CT3-BEC-PatientSelfService |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-self-service |
 | ArchiMate semantic ID | id-446513b2b23f594f80789cda9185d637 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7483,9 +8063,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-task-communication-services |
+| canonicalId | ba8ce1d54ace4bc9aa3521dd954f36cb |
+| displayName | [CT3] Patient Task Communication Services |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationCommunication.PatientTaskCommunicationServices |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication.CT3-BEC-PatientTaskCommunicationServices |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-task-communication-services |
 | ArchiMate semantic ID | id-6f0e40c416e15dfa8c70a216c1a2bb6f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7541,9 +8125,13 @@ Assigned policy enforcement and attributable context are substantive Core respon
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-information-control |
+| canonicalId | 44cc0e17ad534675bf26dce6e46a68ff |
+| displayName | [CT2] Health Information Control |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl |
 | Snapshot publication reference | HCM-BEC-health-information-control |
 | ArchiMate semantic ID | id-b9c636efc8a35c18bd0dce7db89caa88 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7589,9 +8177,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-health-information-disclosure-management |
+| canonicalId | 7f918639e23842e78fa92f1bf47c5a7b |
+| displayName | [CT3] Patient Health Information Disclosure Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.PatientHealthInformationDisclosureManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.CT3-BEC-PatientHealthInformationDisclosureManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-health-information-disclosure-management |
 | ArchiMate semantic ID | id-38a9a0f14b5659f4b88fab8c9ae53274 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7631,9 +8223,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-health-information-filter-management |
+| canonicalId | 62f673613c76494eba972cad3e4e8d0b |
+| displayName | [CT3] Patient Health Information Filter Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.PatientHealthInformationFilterManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.CT3-BEC-PatientHealthInformationFilterManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-health-information-filter-management |
 | ArchiMate semantic ID | id-1174f336b2b158229d94060f3b0f43ed |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7673,9 +8269,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-patient-health-information-restriction-management |
+| canonicalId | 262366990bda4ac4ace5429269cf6a98 |
+| displayName | [CT3] Patient Health Information Restriction Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.PatientHealthInformationRestrictionManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.CT3-BEC-PatientHealthInformationRestrictionManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-patient-health-information-restriction-management |
 | ArchiMate semantic ID | id-0c99a409fcad5e30b1c384f25976197f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7727,9 +8327,13 @@ Multi-party exchange and per-destination delivery tracking are substantive Core 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-information-exchange |
+| canonicalId | a61a15908ed544e6acf3e9cab63a0267 |
+| displayName | [CT2] Health Information Exchange Enablement |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement |
 | Snapshot publication reference | HCM-BEC-health-information-exchange |
 | ArchiMate semantic ID | id-0712aaf441dc5100a5ac79c4b7848477 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7777,9 +8381,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-hie-endpoint-state-management |
+| canonicalId | 1bec951a1c98450b8d4672c5c424f9bd |
+| displayName | [CT3] HIE Endpoint State Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieEndpointStateManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieEndpointStateManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-hie-endpoint-state-management |
 | ArchiMate semantic ID | id-6a1c86bc579e59e5854aafb3ace5c01f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7819,9 +8427,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-hie-implementation-management |
+| canonicalId | 8ce29be373e04252b7aa881b6a72f375 |
+| displayName | [CT3] HIE Implementation Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieImplementationManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieImplementationManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-hie-implementation-management |
 | ArchiMate semantic ID | id-390fb11c89e7528e96684afcec04539a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7861,9 +8473,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-hie-requirement-management |
+| canonicalId | 1c852a1799984feba50011172983c865 |
+| displayName | [CT3] HIE Requirement Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieRequirementManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieRequirementManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-hie-requirement-management |
 | ArchiMate semantic ID | id-7c8885a8c55552888e8b3cda35c06693 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7903,9 +8519,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-information-asset-stewardship-management |
+| canonicalId | 5bac15316d8d4f4db6e7a253f1acfbe3 |
+| displayName | [CT2] Information Asset Stewardship Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationAssetStewardshipManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationAssetStewardshipManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-information-asset-stewardship-management |
 | ArchiMate semantic ID | id-0e93a43b398a503d804b87204f939a09 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -7948,9 +8568,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-information-asset-definition |
+| canonicalId | 05c58b2ccfcc45e9a6c70d9a569c4f61 |
+| displayName | [CT3] Information Asset Definition |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationAssetStewardshipManagement.InformationAssetDefinition |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationAssetStewardshipManagement.CT3-BEC-InformationAssetDefinition |
 | Snapshot publication reference | HCM-BEC-reviewed-information-asset-definition |
 | ArchiMate semantic ID | id-d7356584bc845225b4e2870b336411ee |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -7990,9 +8614,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-information-asset-tag-management |
+| canonicalId | df27c3ba6e164e56af7bff4e1eb1954a |
+| displayName | [CT3] Information Asset Tag Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationAssetStewardshipManagement.InformationAssetTagManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationAssetStewardshipManagement.CT3-BEC-InformationAssetTagManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-information-asset-tag-management |
 | ArchiMate semantic ID | id-6630abffd8ac5e50b947a7179e1d976c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8032,9 +8660,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-information-content-maintainer-management |
+| canonicalId | b81a1ab42af24c2e9896b8f3f78d291a |
+| displayName | [CT2] Information Content Maintainer Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationContentMaintainerManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationContentMaintainerManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-information-content-maintainer-management |
 | ArchiMate semantic ID | id-f4e98809bf18585aac90aa1597b89bb0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -8078,9 +8710,13 @@ Lineage does not grant originating authority, decide clinical correctness or rep
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-information-lineage-stewardship |
+| canonicalId | 44a7937520a54945b06b5fd4a2bbd870 |
+| displayName | [CT3] Data Provenance Capture |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationContentMaintainerManagement.DataProvenanceCapture |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationContentMaintainerManagement.CT3-BEC-DataProvenanceCapture |
 | Snapshot publication reference | HCM-BEC-information-lineage-stewardship |
 | ArchiMate semantic ID | id-72018038e84c518c8bb24cb76c3b418e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8122,9 +8758,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-data-scientist-administration |
+| canonicalId | 3bb1a11fba234717bf40c9e6452f401a |
+| displayName | [CT3] Data Scientist Administration |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationContentMaintainerManagement.DataScientistAdministration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationContentMaintainerManagement.CT3-BEC-DataScientistAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-data-scientist-administration |
 | ArchiMate semantic ID | id-fe08dab2f85453af9f1ebec308bf64f6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8164,9 +8804,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-information-product-administration |
+| canonicalId | b5a6a31855834ea58870ebb6c51ed4b0 |
+| displayName | [CT3] Information Product Administration |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationContentMaintainerManagement.InformationProductAdministration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationContentMaintainerManagement.CT3-BEC-InformationProductAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-information-product-administration |
 | ArchiMate semantic ID | id-ed9226f42cd853c08bb48e6ce86cfd4b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8218,9 +8862,13 @@ Governed semantics and representation conformance are direct platform responsibi
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:information-design-governance |
+| canonicalId | f39ed9ebcc724857a4bf7a2b8e045c7a |
+| displayName | [CT2] Information Design Governance |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance |
 | Snapshot publication reference | HCM-BEC-information-design-governance |
 | ArchiMate semantic ID | id-7f29effdff4f526fb023f7c3f8d2d82e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -8267,9 +8915,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-enterprise-canonical-reusable-model-design |
+| canonicalId | 90e9cd401ddf4c7690c978d8dd131413 |
+| displayName | [CT3] Enterprise Canonical/Reusable Model Design |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.EnterpriseCanonicalReusableModelDesign |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.CT3-BEC-EnterpriseCanonicalReusableModelDesign |
 | Snapshot publication reference | HCM-BEC-reviewed-enterprise-canonical-reusable-model-design |
 | ArchiMate semantic ID | id-cd6d12693e255af7876c44caddfdbdb4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8309,9 +8961,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-enterprise-canonical-reusable-model-library-management |
+| canonicalId | 76943b4b68644c4dac1368fce8bb20d9 |
+| displayName | [CT3] Enterprise Canonical/Reusable Model Library Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.EnterpriseCanonicalReusableModelLibraryManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.CT3-BEC-EnterpriseCanonicalReusableModelLibraryManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-enterprise-canonical-reusable-model-library-management |
 | ArchiMate semantic ID | id-a3005df7ce87583ea31e0c4a7c3be749 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8351,9 +9007,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-enterprise-canonical-reusable-model-utilisation-support |
+| canonicalId | 5744cb9d86494064af87afb3cbf2cf97 |
+| displayName | [CT3] Enterprise Canonical/Reusable Model Utilisation Support |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.EnterpriseCanonicalReusableModelUtilisationSupport |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.CT3-BEC-EnterpriseCanonicalReusableModelUtilisationSupport |
 | Snapshot publication reference | HCM-BEC-reviewed-enterprise-canonical-reusable-model-utilisation-support |
 | ArchiMate semantic ID | id-bb43c048f11e5d069f844bdb8c3a1ed9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8393,9 +9053,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-enterprise-reference-data-stewardship |
+| canonicalId | 971d4b079ad24e89b70a8ed8dec0c8bf |
+| displayName | [CT3] Enterprise Reference Data Stewardship |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.EnterpriseReferenceDataStewardship |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.CT3-BEC-EnterpriseReferenceDataStewardship |
 | Snapshot publication reference | HCM-BEC-reviewed-enterprise-reference-data-stewardship |
 | ArchiMate semantic ID | id-8cbd1321a0c15306b7355745d2e22818 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8451,9 +9115,13 @@ Longitudinal assembly, active access and governed durable history are direct inf
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:patient-clinical-record |
+| canonicalId | 5478878e0e6e4d34a8d5023ac6ac2d54 |
+| displayName | [CT2] Patient Clinical Record |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord |
 | Snapshot publication reference | HCM-BEC-patient-clinical-record |
 | ArchiMate semantic ID | id-974025114007505b922d37dc6ba0a04f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -8500,9 +9168,13 @@ Association is not physical custody. Persistence authority, source clinical mean
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-associated-clinical-binary-content-enablement |
+| canonicalId | 5edb2a8b5ee54ddda8104d1fab323a94 |
+| displayName | [CT3] Linked Information Curation |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LinkedInformationCuration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-LinkedInformationCuration |
 | Snapshot publication reference | HCM-BEC-associated-clinical-binary-content-enablement |
 | ArchiMate semantic ID | id-baf9aba95d5c539bab7fc75f6861f176 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8544,9 +9216,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-longitudinal-clinical-record-administration |
+| canonicalId | 14748dc6117f4b6ba7c0fc554b76bd89 |
+| displayName | [CT3] Longitudinal Clinical Record Administration |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LongitudinalClinicalRecordAdministration |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-LongitudinalClinicalRecordAdministration |
 | Snapshot publication reference | HCM-BEC-reviewed-longitudinal-clinical-record-administration |
 | ArchiMate semantic ID | id-dbb8a6f722f756808d5022cbd06aec85 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8590,9 +9266,13 @@ These flows materially support continuity across primary and acute care without 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:primary-care |
+| canonicalId | f80e73ee91624ce5baa11ae15480fd35 |
+| displayName | [CT3] Primary Care Coordination |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.PrimaryCareCoordination |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-PrimaryCareCoordination |
 | Snapshot publication reference | HCM-BEC-primary-care |
 | ArchiMate semantic ID | id-b9ab7bb6c4865419928c0c1f13bf45b7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -8638,9 +9318,13 @@ Remote data and virtual-session context materially extend information continuity
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:remote--virtual-care |
+| canonicalId | 2d1addc7dd1d4821b71a11c692d35b27 |
+| displayName | [CT3] Remote Patient Monitoring |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring |
 | Snapshot publication reference | HCM-BEC-remote-virtual-care |
 | ArchiMate semantic ID | id-cb13e2de68e55d8c9204e770611aef37 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -8694,9 +9378,13 @@ Decoupled contextual interaction is a substantive Core responsibility that prese
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:presentation-services |
+| canonicalId | e9b6ba1917ba44cca7466444d0836c98 |
+| displayName | [CT2] Presentation Services |
+| friendlyName | SharedInformationAndCoordinationEnablement.PresentationServices |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PresentationServices |
 | Snapshot publication reference | HCM-BEC-presentation-services |
 | ArchiMate semantic ID | id-306525d358285c6cb525859aba8c7f7f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -8740,9 +9428,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-contextual-information-presentation |
+| canonicalId | 9f900c53ae56488cad69e53c2205e898 |
+| displayName | [CT3] Contextual Information Presentation |
+| friendlyName | SharedInformationAndCoordinationEnablement.PresentationServices.ContextualInformationPresentation |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PresentationServices.CT3-BEC-ContextualInformationPresentation |
 | Snapshot publication reference | HCM-BEC-reviewed-contextual-information-presentation |
 | ArchiMate semantic ID | id-dc26649d879b5c23813b59e7ada49e3d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8782,9 +9474,13 @@ External means outside Harmonia execution, potentially inside the same health or
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-workflow-activity-coordination |
+| canonicalId | c724f3d38bfa4567983a11ad22095d61 |
+| displayName | [CT2] Workflow & Activity Coordination |
+| friendlyName | SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-workflow-activity-coordination |
 | ArchiMate semantic ID | id-36d21ea7e98b5e1bbbddad25ba53cd4e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -8829,9 +9525,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-activity-routing-management |
+| canonicalId | 27411c143e6e41ffba1af139fbbcd7e2 |
+| displayName | [CT3] Activity Routing Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination.ActivityRoutingManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination.CT3-BEC-ActivityRoutingManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-activity-routing-management |
 | ArchiMate semantic ID | id-96e9160ac5bc532faed556f17a714f99 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8871,9 +9571,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-external-task-coordination |
+| canonicalId | ff3447c929724245a13ee864874b5561 |
+| displayName | [CT3] External Task Coordination |
+| friendlyName | SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination.ExternalTaskCoordination |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination.CT3-BEC-ExternalTaskCoordination |
 | Snapshot publication reference | HCM-BEC-reviewed-external-task-coordination |
 | ArchiMate semantic ID | id-b42f6b68fe5a51959a491c7439d1b6c0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8913,9 +9617,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-external-task-status-traceability-management |
+| canonicalId | b25bb04a8aa94dcfac105a646878ccfc |
+| displayName | [CT3] External Task Status & Traceability Management |
+| friendlyName | SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination.ExternalTaskStatusAndTraceabilityManagement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination.CT3-BEC-ExternalTaskStatusAndTraceabilityManagement |
 | Snapshot publication reference | HCM-BEC-reviewed-external-task-status-traceability-management |
 | ArchiMate semantic ID | id-44334b55ed7857dc9bea3f43ffb1d874 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8955,9 +9663,13 @@ Information administration and coordination preserve the authority of the respon
 | Field | Value |
 | --- | --- |
 | Source capture key | reviewed:bec-work-boundary-governance |
+| canonicalId | 35b66a0b38db4568849ecb842ffdcbf3 |
+| displayName | [CT3] Work Boundary Governance |
+| friendlyName | SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination.WorkBoundaryGovernance |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination.CT3-BEC-WorkBoundaryGovernance |
 | Snapshot publication reference | HCM-BEC-reviewed-work-boundary-governance |
 | ArchiMate semantic ID | id-eed78c1571b356ff9a9222054e7feeb4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -8997,9 +9709,13 @@ Contributing capabilities retain source readiness and resource management. Clini
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-service-offering-readiness-coordination |
+| canonicalId | 0caecaba5d3e4781b8671b12c13ee283 |
+| displayName | [CT3] Service Offering Readiness Coordination |
+| friendlyName | HealthServiceOperationsEnablement.CareResourceAndCapacityCoordination.ServiceOfferingReadinessCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CareResourceAndCapacityCoordination.CT3-BEC-ServiceOfferingReadinessCoordination |
 | Snapshot publication reference | HCM-BEC-service-offering-readiness-coordination |
 | ArchiMate semantic ID | id-f4b94cd1b3af514eb9e99ddfd82245ba |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9043,9 +9759,13 @@ Relevance remains Unresolved. Established operational behaviour provides context
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:credential-management |
+| canonicalId | 3a7a4d2d0ce8446b8a6293284fb16b83 |
+| displayName | [CT3] Credential Management |
+| friendlyName | HealthServiceOperationsEnablement.WorkforceQualificationAndDevelopmentEnablement.CredentialManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkforceQualificationAndDevelopmentEnablement.CT3-BEC-CredentialManagement |
 | Snapshot publication reference | HCM-BEC-credential-management |
 | ArchiMate semantic ID | id-7a05f7ea632d5ed6b2f2ff63e590988f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -9087,9 +9807,13 @@ Entity coordination does not own all entity information, determine clinical work
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-entity-specific-operational-coordination |
+| canonicalId | 9f0c1429b64f4f88982fbbda6eaec233 |
+| displayName | [CT3] Entity-Specific Operational Coordination |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.EntitySpecificOperationalCoordination |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-EntitySpecificOperationalCoordination |
 | Snapshot publication reference | HCM-BEC-entity-specific-operational-coordination |
 | ArchiMate semantic ID | id-90f67ae80f4e599eb3a922a46aa46139 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9129,9 +9853,13 @@ An activity definition is neither an orchestrator nor a choreographer. It does n
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-governed-operational-activity-design |
+| canonicalId | 3a96040821c14fe38830411dab4f8453 |
+| displayName | [CT3] Governed Operational Activity Design |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.GovernedOperationalActivityDesign |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-GovernedOperationalActivityDesign |
 | Snapshot publication reference | HCM-BEC-governed-operational-activity-design |
 | ArchiMate semantic ID | id-e285e2523d1f5fe488af1b4735d4a49b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9179,9 +9907,13 @@ Governed activity progression is a substantive Core responsibility; information 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:workflow--activity-coordination |
+| canonicalId | 94c683c7588f475e973b58cb226345db |
+| displayName | [CT3] Workflow & Activity Coordination |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination |
 | Snapshot publication reference | HCM-BEC-workflow-activity-coordination |
 | ArchiMate semantic ID | id-fe75271f0234500982b272bc2ac9a9b9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -9222,9 +9954,13 @@ The subject can supply evidence but cannot control its conclusion. Evidence insu
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-independent-assurance-evaluation-enablement |
+| canonicalId | 7fa5112efb724b90a17a03c7c19c516a |
+| displayName | [CT2] Independent Assurance Evaluation Enablement |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement |
 | Snapshot publication reference | HCM-BEC-independent-assurance-evaluation-enablement |
 | ArchiMate semantic ID | id-fe7ae69ddcf154af96952f3194f71c33 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9270,9 +10006,13 @@ Formal classification remains Unresolved. The approved independent-assurance res
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:governed-assurance |
+| canonicalId | da1a983d4dcf4d5bb772b8f69bc08426 |
+| displayName | [CT3] Governed Assurance |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement.GovernedAssurance |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement.CT3-BEC-GovernedAssurance |
 | Snapshot publication reference | HCM-BEC-governed-assurance |
 | ArchiMate semantic ID | id-14dccd7d85915b23b805d452c4bb35e2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -9314,9 +10054,13 @@ Classification does not originate clinical facts or universally adjudicate confl
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-information-authority-representation |
+| canonicalId | 8c850faafb334f97a81a0b4cd8fdb65f |
+| displayName | [CT3] Information Authority Representation |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalInformationStewardshipEnablement.InformationAuthorityRepresentation |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalInformationStewardshipEnablement.CT3-BEC-InformationAuthorityRepresentation |
 | Snapshot publication reference | HCM-BEC-information-authority-representation |
 | ArchiMate semantic ID | id-b78f67bb04765785bb46be9e9c5427d3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9360,9 +10104,13 @@ Standards-conformant communication boundaries are a direct interoperability resp
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-information-communication |
+| canonicalId | 9794b2aff43443b495a19aefe0efa67b |
+| displayName | [CT3] Health Information Communication |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationConnectivityEnablement.HealthInformationCommunication |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationConnectivityEnablement.CT3-BEC-HealthInformationCommunication |
 | Snapshot publication reference | HCM-BEC-health-information-communication |
 | ArchiMate semantic ID | id-09019f6c980e57d1a11691eb4bf9f8eb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -9403,9 +10151,13 @@ Governance approval remains externally mandated; operational policy, assurance c
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-governance-requirement-publication-support |
+| canonicalId | 7e780751d50e4ffe942f8443b7cb6567 |
+| displayName | [CT3] Governance Requirement Publication Support |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationProtectionAndAccountabilityEnablement.GovernanceRequirementPublicationSupport |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationProtectionAndAccountabilityEnablement.CT3-BEC-GovernanceRequirementPublicationSupport |
 | Snapshot publication reference | HCM-BEC-governance-requirement-publication-support |
 | ArchiMate semantic ID | id-43399be21121568aa6b26f5b0c8414c4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9445,9 +10197,13 @@ The specific intrinsic authority for mandatory audit capture is not generalised 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-significant-activity-audit-capture |
+| canonicalId | d903948169eb4785b0f03d916c842a8a |
+| displayName | [CT3] Significant Activity Audit Capture |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationProtectionAndAccountabilityEnablement.SignificantActivityAuditCapture |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationProtectionAndAccountabilityEnablement.CT3-BEC-SignificantActivityAuditCapture |
 | Snapshot publication reference | HCM-BEC-significant-activity-audit-capture |
 | ArchiMate semantic ID | id-24a125b569e45888bf313cd39d435fba |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9487,9 +10243,13 @@ A referral requests care responsibility; an appointment concerns a booking. Neit
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-access-transaction-enablement |
+| canonicalId | b65973b576154d3a96cf458bf33df53a |
+| displayName | [CT2] Care Access Transaction Enablement |
+| friendlyName | CareAdministrationEnablement.CareAccessTransactionEnablement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CareAccessTransactionEnablement |
 | Snapshot publication reference | HCM-BEC-care-access-transaction-enablement |
 | ArchiMate semantic ID | id-957fa549536c5a02b16c2b8d7fed3ad4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9528,9 +10288,13 @@ This frame does not absorb longitudinal synthesis, collaboration discourse, orig
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-documentation-communication-enablement |
+| canonicalId | 5ad2e381ec484d1d9062a65eee842fa7 |
+| displayName | [CT2] Care Documentation & Communication Enablement |
+| friendlyName | CareAdministrationEnablement.CareDocumentationAndCommunicationEnablement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CareDocumentationAndCommunicationEnablement |
 | Snapshot publication reference | HCM-BEC-care-documentation-communication-enablement |
 | ArchiMate semantic ID | id-ddefa589dee05b94ab470e11f3b0540c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9569,9 +10333,13 @@ Adjacent information participation does not provide financial governance, covera
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-financial-information-enablement |
+| canonicalId | 59a756b89c604e3e97ee5dede2d6ed89 |
+| displayName | [CT2] Care Financial Information Enablement |
+| friendlyName | CareAdministrationEnablement.CareFinancialInformationEnablement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CareFinancialInformationEnablement |
 | Snapshot publication reference | HCM-BEC-care-financial-information-enablement |
 | ArchiMate semantic ID | id-4ddd19075297571c9aeee1382d935a72 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9610,9 +10378,13 @@ Encounter progression, order outcome, diagnostic interpretation, medication even
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-fulfilment-administration-enablement |
+| canonicalId | 9f0f4379c1954524ba5e691d0c7d95ab |
+| displayName | [CT2] Care Fulfilment Administration Enablement |
+| friendlyName | CareAdministrationEnablement.CareFulfilmentAdministrationEnablement |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CareFulfilmentAdministrationEnablement |
 | Snapshot publication reference | HCM-BEC-care-fulfilment-administration-enablement |
 | ArchiMate semantic ID | id-0ac4ff89dcdc5e7c951d67f06c504dd8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9651,9 +10423,13 @@ Setting, care mode and specialty are overlapping contextual dimensions. These ch
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-context-integration-enablement |
+| canonicalId | a84a7e96e7874a4b87d18c53b1b5cf29 |
+| displayName | [CT1] Care Context Integration Enablement |
+| friendlyName | CareContextIntegrationEnablement |
+| canonicalName | CT1-BEC-CareContextIntegrationEnablement |
 | Snapshot publication reference | HCM-BEC-care-context-integration-enablement |
 | ArchiMate semantic ID | id-994a0770b7fd5726a603f696f3dc4d1c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -9690,9 +10466,13 @@ Acute, emergency and inpatient perspectives overlap; each capability owns its na
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-facility-episodic-care-integration |
+| canonicalId | c1eb24ed7e36417cb426288ff57512c0 |
+| displayName | [CT2] Facility & Episodic Care Integration |
+| friendlyName | CareContextIntegrationEnablement.FacilityAndEpisodicCareIntegration |
+| canonicalName | CT1-BEC-CareContextIntegrationEnablement.CT2-BEC-FacilityAndEpisodicCareIntegration |
 | Snapshot publication reference | HCM-BEC-facility-episodic-care-integration |
 | ArchiMate semantic ID | id-10e11a4f3fb85b80be5c8970415e8125 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9731,9 +10511,13 @@ Longitudinal purpose does not make these care contexts exclusive. Outreach locat
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-longitudinal-community-care-integration |
+| canonicalId | 8430d50adc504ecc959f15b7cbbcd095 |
+| displayName | [CT2] Longitudinal & Community Care Integration |
+| friendlyName | CareContextIntegrationEnablement.LongitudinalAndCommunityCareIntegration |
+| canonicalName | CT1-BEC-CareContextIntegrationEnablement.CT2-BEC-LongitudinalAndCommunityCareIntegration |
 | Snapshot publication reference | HCM-BEC-longitudinal-community-care-integration |
 | ArchiMate semantic ID | id-6a2eb8694bb1540b9d1f64051ee43dc3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9772,9 +10556,13 @@ A clinical specialty is evidence for integration purpose, not authority to inven
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-specialist-clinical-context-integration |
+| canonicalId | 062802a425d14530b0ce9434c5980d85 |
+| displayName | [CT2] Specialist Clinical Context Integration |
+| friendlyName | CareContextIntegrationEnablement.SpecialistClinicalContextIntegration |
+| canonicalName | CT1-BEC-CareContextIntegrationEnablement.CT2-BEC-SpecialistClinicalContextIntegration |
 | Snapshot publication reference | HCM-BEC-specialist-clinical-context-integration |
 | ArchiMate semantic ID | id-54d9ddfc96fc54b2bf9e1617c856f538 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -9813,9 +10601,13 @@ Represents qualified device-to-subject/place association without owning those su
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-device-association |
+| canonicalId | 902daf2ce9714876bbfee52eef1a7ab0 |
+| displayName | [CT3] Device Association |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceAssociation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceAssociation |
 | Snapshot publication reference | HCM-BEC-device-association |
 | ArchiMate semantic ID | id-1cfea61cbb7a5750b32bdf93debae923 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9854,9 +10646,13 @@ Represents communication bindings; it does not acquire authentication credential
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-device-connectivity |
+| canonicalId | 658d4b6770a943bcb5801fb7ca9b47be |
+| displayName | [CT3] Device Connectivity |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceConnectivity |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceConnectivity |
 | Snapshot publication reference | HCM-BEC-device-connectivity |
 | ArchiMate semantic ID | id-e0d0c691e440506bbcfd8980ffdbc1ea |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9895,9 +10691,13 @@ Identifies physical hardware; serial tracking is distinct from maintenance and l
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-device-instance |
+| canonicalId | dd860926038f41e082c56e38cbb5ab95 |
+| displayName | [CT3] Device Instance |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceInstance |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceInstance |
 | Snapshot publication reference | HCM-BEC-device-instance |
 | ArchiMate semantic ID | id-73a3caf14181524195989816b0e12246 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9936,9 +10736,13 @@ Represents operating windows and exceptions; it does not establish staffing, cap
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-service-availability-definition |
+| canonicalId | 9e5329a42f964199b4b0a87ab1cacc2e |
+| displayName | [CT3] Service Availability Definition |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceAvailabilityDefinition |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-ServiceAvailabilityDefinition |
 | Snapshot publication reference | HCM-BEC-service-availability-definition |
 | ArchiMate semantic ID | id-fe6ea1fbce775529bcc7e3f9a41c2305 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -9977,9 +10781,13 @@ Represents governed eligibility criteria; it does not make clinical acceptance o
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-service-eligibility-definition |
+| canonicalId | 8a3f29e5948141e2a3d0c72539759daf |
+| displayName | [CT3] Service Eligibility Definition |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceEligibilityDefinition |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-ServiceEligibilityDefinition |
 | Snapshot publication reference | HCM-BEC-service-eligibility-definition |
 | ArchiMate semantic ID | id-36a039fd097b5360a1ab9dcad34f9a97 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10018,9 +10826,13 @@ Owns mapping associations, retaining the owners of each participating entity.
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-service-provision-relationship |
+| canonicalId | 718ebe1fa8d44ad9a6632a5932277a8e |
+| displayName | [CT3] Service Provision Relationship |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceProvisionRelationship |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-ServiceProvisionRelationship |
 | Snapshot publication reference | HCM-BEC-service-provision-relationship |
 | ArchiMate semantic ID | id-3006d0eeedfd5899af44611e8fbda5b4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10059,9 +10871,13 @@ Physical containment differs from organisational structure and operational respo
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-location-structure |
+| canonicalId | 2436c87195334daf85ed4e2de4ec4bd5 |
+| displayName | [CT3] Location Structure |
+| friendlyName | EntityInformationEnablement.LocationAdministration.LocationStructure |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-LocationStructure |
 | Snapshot publication reference | HCM-BEC-location-structure |
 | ArchiMate semantic ID | id-8a82a7c44c7d573786cf4d00508d9941 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10100,9 +10916,13 @@ Contact validity is distinct from clinical recipient eligibility and policy perm
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-organisation-contact |
+| canonicalId | b7f5108880eb429bb407c87a37b0e23f |
+| displayName | [CT3] Organisation Contact |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationContact |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-OrganisationContact |
 | Snapshot publication reference | HCM-BEC-organisation-contact |
 | ArchiMate semantic ID | id-7d47194b90fa59628cd4b1a830f1b111 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10141,9 +10961,13 @@ Structural relationships do not acquire ownership of every related organisation 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-organisational-structure |
+| canonicalId | 19d211cf601c49e5a65665330d0c5c3d |
+| displayName | [CT3] Organisational Structure |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationalStructure |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-OrganisationalStructure |
 | Snapshot publication reference | HCM-BEC-organisational-structure |
 | ArchiMate semantic ID | id-975bd55fc43e538faf4920f7bace43f6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10182,9 +11006,13 @@ Records externally granted service terms and privileges; it does not independent
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-provider-engagement |
+| canonicalId | a0777dbd9b0c4528817e99a7f34aa444 |
+| displayName | [CT3] Provider Engagement |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.ProviderEngagement |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-ProviderEngagement |
 | Snapshot publication reference | HCM-BEC-provider-engagement |
 | ArchiMate semantic ID | id-30b102fdb0fd5f788ddf1812fe82689d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10223,9 +11051,13 @@ Affiliation records do not transfer the participating organisations or practitio
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-provider-relationship |
+| canonicalId | 3bb8a3d5b62a4b779442290fe8d5106c |
+| displayName | [CT3] Provider Relationship |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.ProviderRelationship |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-ProviderRelationship |
 | Snapshot publication reference | HCM-BEC-provider-relationship |
 | ArchiMate semantic ID | id-706567fdfba05959be6ac7247ad0480e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -10264,9 +11096,13 @@ Physical movement, clinical handover, discharge clinical authorisation and care-
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-movement-transition-coordination |
+| canonicalId | 59b9331fa3c04ef09bf963ad8a5d0d71 |
+| displayName | [CT2] Care Movement & Transition Coordination |
+| friendlyName | HealthServiceOperationsEnablement.CareMovementAndTransitionCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CareMovementAndTransitionCoordination |
 | Snapshot publication reference | HCM-BEC-care-movement-transition-coordination |
 | ArchiMate semantic ID | id-f460240046915af4a9f9a081c5593b1c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10305,9 +11141,13 @@ Bed/equipment availability is a contribution to capacity, not its definition. Hi
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-resource-capacity-coordination |
+| canonicalId | 96f71cb8fa6844d7aa7e9f16759a3a62 |
+| displayName | [CT2] Care Resource & Capacity Coordination |
+| friendlyName | HealthServiceOperationsEnablement.CareResourceAndCapacityCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CareResourceAndCapacityCoordination |
 | Snapshot publication reference | HCM-BEC-care-resource-capacity-coordination |
 | ArchiMate semantic ID | id-2f2df4a3cea854849a3a985fa2b47996 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10350,9 +11190,13 @@ Dynamic equipment context materially supports operational coordination across ca
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-resource-management |
+| canonicalId | a5faedcd97064c28b9e7e551e9106ea1 |
+| displayName | [CT3] Clinical Resource Management |
+| friendlyName | HealthServiceOperationsEnablement.CareResourceAndCapacityCoordination.ClinicalResourceManagement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CareResourceAndCapacityCoordination.CT3-BEC-ClinicalResourceManagement |
 | Snapshot publication reference | HCM-BEC-clinical-resource-management |
 | ArchiMate semantic ID | id-b44a1b08f3ee550381f617d0f5bed38d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -10392,9 +11236,13 @@ Local capacity is established here; aggregate telemetry, bed state and equipment
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-care-setting-operations-enablement |
+| canonicalId | a03741e6e98642bea44680d23fdcb434 |
+| displayName | [CT2] Care Setting Operations Enablement |
+| friendlyName | HealthServiceOperationsEnablement.CareSettingOperationsEnablement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CareSettingOperationsEnablement |
 | Snapshot publication reference | HCM-BEC-care-setting-operations-enablement |
 | ArchiMate semantic ID | id-0aca1a5cceb9581a85904af01a3591e3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10433,9 +11281,13 @@ Source rosters remain separately authoritative; operational dispatch does not ac
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-operational-workforce-coordination |
+| canonicalId | 66e72222f2064a23adbdb0311092918b |
+| displayName | [CT2] Operational Workforce Coordination |
+| friendlyName | HealthServiceOperationsEnablement.OperationalWorkforceCoordination |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OperationalWorkforceCoordination |
 | Snapshot publication reference | HCM-BEC-operational-workforce-coordination |
 | ArchiMate semantic ID | id-67d1729bf7565773bc62694f3cdc1957 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10474,9 +11326,13 @@ Clinical qualifications and physical badges remain distinct CT3 responsibilities
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-workforce-qualification-development-enablement |
+| canonicalId | d24a1f4c4f674c45a95c317998ff4186 |
+| displayName | [CT2] Workforce Qualification & Development Enablement |
+| friendlyName | HealthServiceOperationsEnablement.WorkforceQualificationAndDevelopmentEnablement |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkforceQualificationAndDevelopmentEnablement |
 | Snapshot publication reference | HCM-BEC-workforce-qualification-development-enablement |
 | ArchiMate semantic ID | id-0be98fb67d425ecab44e20c991d19a01 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10515,9 +11371,13 @@ Conversation is not a clinical record, presentation is not authority, and generi
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-human-collaboration-work-enablement |
+| canonicalId | c9347f73b21242c5b8cce41252b74da0 |
+| displayName | [CT1] Human Collaboration & Work Enablement |
+| friendlyName | HumanCollaborationAndWorkEnablement |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement |
 | Snapshot publication reference | HCM-BEC-human-collaboration-work-enablement |
 | ArchiMate semantic ID | id-0bac088d5c4358b99269265e43c4d89e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -10554,9 +11414,13 @@ Collaboration control, collaboration operations and general presentation remain 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-collaborative-interaction-enablement |
+| canonicalId | 6140b21c874241d092708e2411caceed |
+| displayName | [CT2] Collaborative Interaction Enablement |
+| friendlyName | HumanCollaborationAndWorkEnablement.CollaborativeInteractionEnablement |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-CollaborativeInteractionEnablement |
 | Snapshot publication reference | HCM-BEC-collaborative-interaction-enablement |
 | ArchiMate semantic ID | id-cbc054c958a05feda3487a42caa57375 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10595,9 +11459,13 @@ Work Order is human doing, To Do is human review/update/approval and Task is syn
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-operational-activity-temporal-enablement |
+| canonicalId | ca96b2b2ff434854995711e403e95f6f |
+| displayName | [CT2] Operational Activity & Temporal Enablement |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement |
 | Snapshot publication reference | HCM-BEC-operational-activity-temporal-enablement |
 | ArchiMate semantic ID | id-4e4a405d0abf537089c1bcabb41669d2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10636,9 +11504,13 @@ The synthesis preserves what Harmonia received or managed without becoming the o
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-clinical-information-stewardship-enablement |
+| canonicalId | 3811c758ff2140c39a801bf89f75098a |
+| displayName | [CT2] Clinical Information Stewardship Enablement |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalInformationStewardshipEnablement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalInformationStewardshipEnablement |
 | Snapshot publication reference | HCM-BEC-clinical-information-stewardship-enablement |
 | ArchiMate semantic ID | id-1b407e2fabba5fd2a45c73692a95d79b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10677,9 +11549,13 @@ Query execution, transaction coordination and boundary protocol mediation are se
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-health-information-connectivity-enablement |
+| canonicalId | 6a1030483dfc4ae6af6998b587129d1c |
+| displayName | [CT2] Health Information Connectivity Enablement |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationConnectivityEnablement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationConnectivityEnablement |
 | Snapshot publication reference | HCM-BEC-health-information-connectivity-enablement |
 | ArchiMate semantic ID | id-10a8917a66475db1b276741d0efd840f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10718,9 +11594,13 @@ Patient directives remain with Client Privacy; runtime authorisation does not be
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-information-protection-accountability-enablement |
+| canonicalId | e922cba7cf1d4ebeb9abf6472a3803ce |
+| displayName | [CT2] Information Protection & Accountability Enablement |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationProtectionAndAccountabilityEnablement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationProtectionAndAccountabilityEnablement |
 | Snapshot publication reference | HCM-BEC-information-protection-accountability-enablement |
 | ArchiMate semantic ID | id-c72a309296ec5da68e55dc8ba1f8fcb7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -10759,9 +11639,13 @@ Definition semantics, mutable approved content and runtime policy decisions reta
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bec-semantic-reference-knowledge-enablement |
+| canonicalId | 92a71292710c41b29775d19b98c197d6 |
+| displayName | [CT2] Semantic & Reference Knowledge Enablement |
+| friendlyName | SharedInformationAndCoordinationEnablement.SemanticAndReferenceKnowledgeEnablement |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-SemanticAndReferenceKnowledgeEnablement |
 | Snapshot publication reference | HCM-BEC-semantic-reference-knowledge-enablement |
 | ArchiMate semantic ID | id-bfc2580cd5a15519b21c0118c610d8ca |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |

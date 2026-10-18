@@ -232,9 +232,13 @@ Referrals, encounters, appointments, operational state and communication provide
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:care-access--coordination |
+| canonicalId | ed342cb8656b4f80b55ad519ecbd2d3a |
+| displayName | [CT1] Care Access & Coordination |
+| friendlyName | CareAccessAndCoordination |
+| canonicalName | CT1-CareAccessAndCoordination |
 | Snapshot publication reference | HCM-BC-care-access-coordination |
 | ArchiMate semantic ID | id-e978dad02c4156938c03ac4b2d34e0c0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -276,9 +280,13 @@ Eligibility does not allocate care, and referral receipt does not establish an a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-access-management |
+| canonicalId | acbcad8330e64b59be5e3ec4a100a544 |
+| displayName | [CT2] Care Access Management |
+| friendlyName | CareAccessAndCoordination.CareAccessManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareAccessManagement |
 | Snapshot publication reference | HCM-BC-care-access-management |
 | ArchiMate semantic ID | id-3ffe8db4705855b587349b8bf949f469 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -317,9 +325,13 @@ Eligibility alone does not reserve capacity, allocate a care place or deliver ca
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-eligibility-determination |
+| canonicalId | 0922a1141f82416ca9de12054c28a69a |
+| displayName | [CT3] Care Eligibility Determination |
+| friendlyName | CareAccessAndCoordination.CareAccessManagement.CareEligibilityDetermination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareAccessManagement.CT3-CareEligibilityDetermination |
 | Snapshot publication reference | HCM-BC-care-eligibility-determination |
 | ArchiMate semantic ID | id-8850d02455155526bb82a3317a3e7966 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -354,9 +366,13 @@ An intake record does not establish acceptance of a referral, care responsibilit
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-intake-management |
+| canonicalId | 1582467fff3b4dafa348aa100e9ca2de |
+| displayName | [CT3] Care Intake Management |
+| friendlyName | CareAccessAndCoordination.CareAccessManagement.CareIntakeManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareAccessManagement.CT3-CareIntakeManagement |
 | Snapshot publication reference | HCM-BC-care-intake-management |
 | ArchiMate semantic ID | id-2c9e89d0cee75ce3a1a2e6ff62449a74 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -391,9 +407,13 @@ Submission or receipt does not establish acceptance, an appointment, delivered c
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-referral-management |
+| canonicalId | ebdaa781bba542f8b744ef34a836a269 |
+| displayName | [CT3] Care Referral Management |
+| friendlyName | CareAccessAndCoordination.CareAccessManagement.CareReferralManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareAccessManagement.CT3-CareReferralManagement |
 | Snapshot publication reference | HCM-BC-care-referral-management |
 | ArchiMate semantic ID | id-53444359e5665b29817e1bf2198ed57a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -432,9 +452,13 @@ Harmonia may assemble handover information without managing clinical handover. A
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-coordination--transition |
+| canonicalId | 174a9b93d19c44828f20360e9d543925 |
+| displayName | [CT2] Care Coordination & Transition |
+| friendlyName | CareAccessAndCoordination.CareCoordinationAndTransition |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareCoordinationAndTransition |
 | Snapshot publication reference | HCM-BC-care-coordination-transition |
 | ArchiMate semantic ID | id-76f2314e316c589083817b8d38b9f3ea |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -473,9 +497,13 @@ Discharge readiness and departure are not themselves evidence that another parti
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-discharge-coordination |
+| canonicalId | 62e436db8ce44a98ba855de68ac6b876 |
+| displayName | [CT3] Care Discharge Coordination |
+| friendlyName | CareAccessAndCoordination.CareCoordinationAndTransition.CareDischargeCoordination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareCoordinationAndTransition.CT3-CareDischargeCoordination |
 | Snapshot publication reference | HCM-BC-care-discharge-coordination |
 | ArchiMate semantic ID | id-e4d13d2f89595e61a5190d63673c8051 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -510,9 +538,13 @@ Patient arrival, message receipt and departure do not by themselves demonstrate 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-responsibility-transition |
+| canonicalId | f8c9f7e2dcf14ceb9f228daaf9fed45e |
+| displayName | [CT3] Care Responsibility Transition |
+| friendlyName | CareAccessAndCoordination.CareCoordinationAndTransition.CareResponsibilityTransition |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareCoordinationAndTransition.CT3-CareResponsibilityTransition |
 | Snapshot publication reference | HCM-BC-care-responsibility-transition |
 | ArchiMate semantic ID | id-e18ec168543758bf92bf61b2a0edf5b2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -547,9 +579,13 @@ Harmonia's support for team information and collaboration does not confer manage
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-team-coordination |
+| canonicalId | bbd138aab70d4b06b43662fb3f5373db |
+| displayName | [CT3] Care-Team Coordination |
+| friendlyName | CareAccessAndCoordination.CareCoordinationAndTransition.CareTeamCoordination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareCoordinationAndTransition.CT3-CareTeamCoordination |
 | Snapshot publication reference | HCM-BC-care-team-coordination |
 | ArchiMate semantic ID | id-ab93bc6a6a505bad807ff053ff2c3cb3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -588,9 +624,13 @@ Deployment consumes roster, qualification and privilege context without changing
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-scheduling--capacity-management |
+| canonicalId | 61dd4b247df14546bf012587164bfe91 |
+| displayName | [CT2] Care Scheduling & Capacity Management |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement |
 | Snapshot publication reference | HCM-BC-care-scheduling-capacity-management |
 | ArchiMate semantic ID | id-d7535b3161b65b9090c0af102f90b0d5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -632,9 +672,13 @@ A booking does not establish attendance, intervention performance or satisfactio
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-appointment-management |
+| canonicalId | 14dc21b28938425498ff7b04e49efd30 |
+| displayName | [CT3] Care Appointment Management |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement.CareAppointmentManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement.CT3-CareAppointmentManagement |
 | Snapshot publication reference | HCM-BC-care-appointment-management |
 | ArchiMate semantic ID | id-ad4cadf7fe205a499f487d5aec98ba4f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -669,9 +713,13 @@ Deployment is neither roster authoring nor clinical work assignment and does not
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-resource-deployment |
+| canonicalId | 7854224c3b064116b0d48f01ce5537d8 |
+| displayName | [CT3] Care Resource Deployment |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement.CareResourceDeployment |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement.CT3-CareResourceDeployment |
 | Snapshot publication reference | HCM-BC-care-resource-deployment |
 | ArchiMate semantic ID | id-fb15438e5dad5d19af167c1e064ff34a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -706,9 +754,13 @@ Allocation does not establish clinical suitability beyond the applicable context
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-place-allocation |
+| canonicalId | f8a4df47bea742a0869802472136d55f |
+| displayName | [CT3] Care-Place Allocation |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement.CarePlaceAllocation |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement.CT3-CarePlaceAllocation |
 | Snapshot publication reference | HCM-BC-care-place-allocation |
 | ArchiMate semantic ID | id-b9cdfa1c4c27554f92b4165837b8a362 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -743,9 +795,13 @@ Readiness of one place does not establish collective readiness or usable capacit
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-place-readiness-management |
+| canonicalId | 4dd0f1b9f9334c5c80066a8974fdfb7a |
+| displayName | [CT3] Care-Place Readiness Management |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement.CarePlaceReadinessManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement.CT3-CarePlaceReadinessManagement |
 | Snapshot publication reference | HCM-BC-care-place-readiness-management |
 | ArchiMate semantic ID | id-040505098b205e8db531a93757549c7d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -780,9 +836,13 @@ Resource availability, strategic capacity requirements and collective service re
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:operational-care-capacity-management |
+| canonicalId | 3040519e1fec43699c14a3cafb2d945d |
+| displayName | [CT3] Operational Care Capacity Management |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement.OperationalCareCapacityManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement.CT3-OperationalCareCapacityManagement |
 | Snapshot publication reference | HCM-BC-operational-care-capacity-management |
 | ArchiMate semantic ID | id-34cfdfaefd4b52a9b58219b9a6227604 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -817,9 +877,13 @@ Coordinating flow does not transfer clinical work, workforce governance or gener
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:operational-care-flow-coordination |
+| canonicalId | d1dedb10ea694af5b88dbe1b6192f3ac |
+| displayName | [CT3] Operational Care Flow Coordination |
+| friendlyName | CareAccessAndCoordination.CareSchedulingAndCapacityManagement.OperationalCareFlowCoordination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSchedulingAndCapacityManagement.CT3-OperationalCareFlowCoordination |
 | Snapshot publication reference | HCM-BC-operational-care-flow-coordination |
 | ArchiMate semantic ID | id-ac1518843b8359b18ed7500763ad836d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -858,9 +922,13 @@ Assignment does not establish a worker's qualification or clinical authority. En
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-support-logistics-management |
+| canonicalId | 92be036674254f719cf4bb613120128a |
+| displayName | [CT2] Care Support Logistics Management |
+| friendlyName | CareAccessAndCoordination.CareSupportLogisticsManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSupportLogisticsManagement |
 | Snapshot publication reference | HCM-BC-care-support-logistics-management |
 | ArchiMate semantic ID | id-645223e49d535a3ab69d95f865826bf7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -899,9 +967,13 @@ Dispatch does not establish worker availability, qualification or privilege, and
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-support-work-coordination |
+| canonicalId | f9f5c69b0f0b472287cd4ac56ccff6f3 |
+| displayName | [CT3] Care Support Work Coordination |
+| friendlyName | CareAccessAndCoordination.CareSupportLogisticsManagement.CareSupportWorkCoordination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSupportLogisticsManagement.CT3-CareSupportWorkCoordination |
 | Snapshot publication reference | HCM-BC-care-support-work-coordination |
 | ArchiMate semantic ID | id-a895e887fe115faa9c303cf60916173a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -936,9 +1008,13 @@ Bounded clinical-material logistics does not establish a general procurement, su
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-material-logistics-coordination |
+| canonicalId | 4b66444de58a48a9a9433568bf3a60d3 |
+| displayName | [CT3] Clinical Material Logistics Coordination |
+| friendlyName | CareAccessAndCoordination.CareSupportLogisticsManagement.ClinicalMaterialLogisticsCoordination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSupportLogisticsManagement.CT3-ClinicalMaterialLogisticsCoordination |
 | Snapshot publication reference | HCM-BC-clinical-material-logistics-coordination |
 | ArchiMate semantic ID | id-5498ead3fc4852cb8d4e12c5010f3e9e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -973,9 +1049,13 @@ Transport progression does not establish clinical handover, destination acceptan
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:patient-movement-coordination |
+| canonicalId | f404b6647fe04a3390e57022bdef0843 |
+| displayName | [CT3] Patient Movement Coordination |
+| friendlyName | CareAccessAndCoordination.CareSupportLogisticsManagement.PatientMovementCoordination |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-CareSupportLogisticsManagement.CT3-PatientMovementCoordination |
 | Snapshot publication reference | HCM-BC-patient-movement-coordination |
 | ArchiMate semantic ID | id-b224448612cb5d62bbce730c2a84fb08 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1016,9 +1096,13 @@ Does not own the dependencies, their management or clinical execution.
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-service-delivery-preparedness-management |
+| canonicalId | 9665d894c4c9438999d8cc10afae695d |
+| displayName | [CT2] Service Delivery Preparedness Management |
+| friendlyName | CareAccessAndCoordination.ServiceDeliveryPreparednessManagement |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-ServiceDeliveryPreparednessManagement |
 | Snapshot publication reference | HCM-BC-service-delivery-preparedness-management |
 | ArchiMate semantic ID | id-5abfc42605a55d9da4808dc3b3688708 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -1071,9 +1155,13 @@ Tier, parent and CT1 ancestry remain unresolved. Site-level and session-level ex
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-operational-readiness |
+| canonicalId | cc91eb4017034939ab82b152bddf7b1c |
+| displayName | [CT3] Health Service Operational Readiness |
+| friendlyName | CareAccessAndCoordination.ServiceDeliveryPreparednessManagement.HealthServiceOperationalReadiness |
+| canonicalName | CT1-CareAccessAndCoordination.CT2-ServiceDeliveryPreparednessManagement.CT3-HealthServiceOperationalReadiness |
 | Snapshot publication reference | HCM-BC-health-service-operational-readiness |
 | ArchiMate semantic ID | id-7be68b9c793c522ebc7f5e772e91c6dc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Candidate |
@@ -1116,9 +1204,13 @@ Information about outcomes, risks, incidents and operational responses materiall
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-quality-safety--improvement |
+| canonicalId | 63837bf848774572a06b935af95581a2 |
+| displayName | [CT1] Clinical Quality, Safety & Improvement |
+| friendlyName | ClinicalQualitySafetyAndImprovement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement |
 | Snapshot publication reference | HCM-BC-clinical-quality-safety-improvement |
 | ArchiMate semantic ID | id-1966794a16a75e03a984971281f020e8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -1157,9 +1249,13 @@ Reporting does not originate the conclusion or perform subsequent improvement. N
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-quality-management |
+| canonicalId | 89761f2d38f846c39df1df0975964288 |
+| displayName | [CT2] Clinical Quality Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement |
 | Snapshot publication reference | HCM-BC-clinical-quality-management |
 | ArchiMate semantic ID | id-cf5dcdc3ef505f91906dbc1eb61a469c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1199,9 +1295,13 @@ Managing criteria does not originate the underlying evidence or establish a qual
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-quality-criteria-management |
+| canonicalId | 1f48527a9a7c4382a7f8a660ccb9f29f |
+| displayName | [CT3] Clinical Quality Criteria Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement.ClinicalQualityCriteriaManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement.CT3-ClinicalQualityCriteriaManagement |
 | Snapshot publication reference | HCM-BC-clinical-quality-criteria-management |
 | ArchiMate semantic ID | id-f913c25edca8547fa47e0a6382936f18 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1236,9 +1336,13 @@ Evidentiary use transfers neither source ownership nor authority to determine th
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-quality-evidence-management |
+| canonicalId | 1b0a1c6945ed4fadba045ff4753c104c |
+| displayName | [CT3] Clinical Quality Evidence Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement.ClinicalQualityEvidenceManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement.CT3-ClinicalQualityEvidenceManagement |
 | Snapshot publication reference | HCM-BC-clinical-quality-evidence-management |
 | ArchiMate semantic ID | id-2e79b5737c3b5cfdbc86b901d77cd21c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1273,9 +1377,13 @@ Communicating a quality concern does not perform the operational or clinical imp
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-quality-reporting |
+| canonicalId | 70f34839c23042d59469e6ef96944057 |
+| displayName | [CT3] Clinical Quality Reporting |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement.ClinicalQualityReporting |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement.CT3-ClinicalQualityReporting |
 | Snapshot publication reference | HCM-BC-clinical-quality-reporting |
 | ArchiMate semantic ID | id-c08e4d5e84485cfb920455ac3e20ed0c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1310,9 +1418,13 @@ An assessment is not a report of itself or the subsequent improvement action it 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-quality-review--assessment-management |
+| canonicalId | 8318c35b302b4dcaa0e795fbfdc93e3b |
+| displayName | [CT3] Clinical Quality Review & Assessment Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement.ClinicalQualityReviewAndAssessmentManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement.CT3-ClinicalQualityReviewAndAssessmentManagement |
 | Snapshot publication reference | HCM-BC-clinical-quality-review-assessment-management |
 | ArchiMate semantic ID | id-0d3beb2699a45eb081120d317f4a9a33 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1351,9 +1463,13 @@ Monitoring evidence is not automatically risk identification. Other capabilities
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-safety-management |
+| canonicalId | 28d1bf3e514e4c29837ebedaf9e4917b |
+| displayName | [CT2] Clinical Safety Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalSafetyManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalSafetyManagement |
 | Snapshot publication reference | HCM-BC-clinical-safety-management |
 | ArchiMate semantic ID | id-354b3f173afe530c8ff123c2a01b51fb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1392,9 +1508,13 @@ Evidence observation alone does not identify risk or establish a mitigation or r
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-risk-identification |
+| canonicalId | d54c19c6efaf42af82ad71a4142149d4 |
+| displayName | [CT3] Clinical Risk Identification |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalSafetyManagement.ClinicalRiskIdentification |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalSafetyManagement.CT3-ClinicalRiskIdentification |
 | Snapshot publication reference | HCM-BC-clinical-risk-identification |
 | ArchiMate semantic ID | id-f8ecf9800e2451508fc9c7a43d0bc920 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1429,9 +1549,13 @@ Mitigation differs from containing or remediating a concern that has materialise
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-risk-mitigation-management |
+| canonicalId | 2c232ade21ec45619c3ee4e928bd97ee |
+| displayName | [CT3] Clinical Risk Mitigation Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalSafetyManagement.ClinicalRiskMitigationManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalSafetyManagement.CT3-ClinicalRiskMitigationManagement |
 | Snapshot publication reference | HCM-BC-clinical-risk-mitigation-management |
 | ArchiMate semantic ID | id-e85728e190e25bb488c845e6e92016a4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1466,9 +1590,13 @@ It is not a general enterprise incident-management container and does not acquir
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-risk-response-management |
+| canonicalId | 5e36cb137e4e4782b2ddbf78cdf0da7b |
+| displayName | [CT3] Clinical Risk Response Management |
+| friendlyName | ClinicalQualitySafetyAndImprovement.ClinicalSafetyManagement.ClinicalRiskResponseManagement |
+| canonicalName | CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalSafetyManagement.CT3-ClinicalRiskResponseManagement |
 | Snapshot publication reference | HCM-BC-clinical-risk-response-management |
 | ArchiMate semantic ID | id-f4c49bf8522555c9aead252c0f829e25 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1511,9 +1639,13 @@ Programme and cohort distinctions materially shape the information, notification
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:community-health--wellbeing |
+| canonicalId | b326b4aaf02a41a986ed22d184cbc152 |
+| displayName | [CT1] Community Health & Wellbeing |
+| friendlyName | CommunityHealthAndWellbeing |
+| canonicalName | CT1-CommunityHealthAndWellbeing |
 | Snapshot publication reference | HCM-BC-community-health-wellbeing |
 | ArchiMate semantic ID | id-2456cb6acb345c4c9f2ce404c69e8a2e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -1551,9 +1683,13 @@ Programme performance differs from population-health assessment and individual c
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health |
+| canonicalId | 81be04a2d58548a4aea94f9aae90feb6 |
+| displayName | [CT2] Preventative Health |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth |
 | Snapshot publication reference | HCM-BC-preventative-health |
 | ArchiMate semantic ID | id-f383763eeeb6577bb01125fad97c5075 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1595,9 +1731,13 @@ A population at risk is not automatically a defined cohort, and cohort membershi
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health-cohort-management |
+| canonicalId | 97625bb28e5745d5994e1bffd4037188 |
+| displayName | [CT3] Preventative Health Cohort Management |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth.PreventativeHealthCohortManagement |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth.CT3-PreventativeHealthCohortManagement |
 | Snapshot publication reference | HCM-BC-preventative-health-cohort-management |
 | ArchiMate semantic ID | id-d328fb8f811d551699099f3f2a6e1f43 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1632,9 +1772,13 @@ Communicating educational material does not establish individual clinical assess
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health-education-services |
+| canonicalId | 7541d9b3b65d47d286dabdc093cb0eed |
+| displayName | [CT3] Preventative Health Education Services |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth.PreventativeHealthEducationServices |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth.CT3-PreventativeHealthEducationServices |
 | Snapshot publication reference | HCM-BC-preventative-health-education-services |
 | ArchiMate semantic ID | id-210f08cf0a7e50a4b6515b7c25be2bf5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1669,9 +1813,13 @@ Population evidence informs problem identification but does not by itself establ
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health-problem-identification |
+| canonicalId | c1567022671f433fa1eeb37a9d156d92 |
+| displayName | [CT3] Preventative Health Problem Identification |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth.PreventativeHealthProblemIdentification |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth.CT3-PreventativeHealthProblemIdentification |
 | Snapshot publication reference | HCM-BC-preventative-health-problem-identification |
 | ArchiMate semantic ID | id-f53321c902e4521ba2fd87e1b18260c1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1706,9 +1854,13 @@ Managing the programme does not acquire the clinical or operational authority of
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health-programme-management |
+| canonicalId | 563d36b179d34cb6913253d06e8d77f6 |
+| displayName | [CT3] Preventative Health Programme Management |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth.PreventativeHealthProgrammeManagement |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth.CT3-PreventativeHealthProgrammeManagement |
 | Snapshot publication reference | HCM-BC-preventative-health-programme-management |
 | ArchiMate semantic ID | id-6edcb625bec25de7b04c55e5f651ced8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1743,9 +1895,13 @@ Programme monitoring is distinct from individual health monitoring, population a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health-programme-monitoring |
+| canonicalId | 945b40ced8004e1cbf7c98c731d17daf |
+| displayName | [CT3] Preventative Health Programme Monitoring |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth.PreventativeHealthProgrammeMonitoring |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth.CT3-PreventativeHealthProgrammeMonitoring |
 | Snapshot publication reference | HCM-BC-preventative-health-programme-monitoring |
 | ArchiMate semantic ID | id-2353057b450154eda7dddfb4ea6b088f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1780,9 +1936,13 @@ Reporting does not originate the underlying problem, cohort or evaluation conclu
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:preventative-health-reporting |
+| canonicalId | d2ef01c4cab348df822e802ab084faae |
+| displayName | [CT3] Preventative Health Reporting |
+| friendlyName | CommunityHealthAndWellbeing.PreventativeHealth.PreventativeHealthReporting |
+| canonicalName | CT1-CommunityHealthAndWellbeing.CT2-PreventativeHealth.CT3-PreventativeHealthReporting |
 | Snapshot publication reference | HCM-BC-preventative-health-reporting |
 | ArchiMate semantic ID | id-a8aaef5643875dc0b4f7b5b85e1aed1a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -1825,9 +1985,13 @@ Information exchange and digitally mediated interaction are direct platform resp
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:connected-health-services |
+| canonicalId | 3ef397463e584737b367e93f0bf1d85d |
+| displayName | [CT1] Connected Health Services |
+| friendlyName | ConnectedHealthServices |
+| canonicalName | CT1-ConnectedHealthServices |
 | Snapshot publication reference | HCM-BC-connected-health-services |
 | ArchiMate semantic ID | id-72ef59102ac75c2dad5ed5631107f6cd |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -1862,9 +2026,13 @@ A presentation interface used to exercise another capability is not automaticall
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:digital-communication-channel |
+| canonicalId | f5defe141228490598115fe41db89bd7 |
+| displayName | [CT2] Digital Communication Channel |
+| friendlyName | ConnectedHealthServices.DigitalCommunicationChannel |
+| canonicalName | CT1-ConnectedHealthServices.CT2-DigitalCommunicationChannel |
 | Snapshot publication reference | HCM-BC-digital-communication-channel |
 | ArchiMate semantic ID | id-69970b9c42b256a0ae2eb697c3767796 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1899,9 +2067,13 @@ No CT3 decomposition is established. The identically named BEC is a distinct ena
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-exchange |
+| canonicalId | baad6b6117084311acbf5fc4044dfabf |
+| displayName | [CT2] Health Information Exchange |
+| friendlyName | ConnectedHealthServices.HealthInformationExchange |
+| canonicalName | CT1-ConnectedHealthServices.CT2-HealthInformationExchange |
 | Snapshot publication reference | HCM-BC-health-information-exchange |
 | ArchiMate semantic ID | id-2134969d36665649a7d61fcea20bc15f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1956,9 +2128,13 @@ Definition, tier and parent remain unresolved. This is an explicitly constrained
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-sharing-programme-management |
+| canonicalId | 6c5c2cb625414b149ac7f2ccb4b8a897 |
+| displayName | [CT3] Health Information Sharing Programme Management |
+| friendlyName | ConnectedHealthServices.HealthInformationExchange.HealthInformationSharingProgrammeManagement |
+| canonicalName | CT1-ConnectedHealthServices.CT2-HealthInformationExchange.CT3-HealthInformationSharingProgrammeManagement |
 | Snapshot publication reference | HCM-BC-health-information-sharing-programme-management |
 | ArchiMate semantic ID | id-b72487e00fef5855b909078e3b2ca3a0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Candidate |
@@ -2001,9 +2177,13 @@ Clinical activity evidence provides material financial support. Corporate constr
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:corporate-resources--enterprise-services |
+| canonicalId | b79628f156e14a8cbb82a0dea2fc57ff |
+| displayName | [CT1] Corporate Resources & Enterprise Services |
+| friendlyName | CorporateResourcesAndEnterpriseServices |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices |
 | Snapshot publication reference | HCM-BC-corporate-resources-enterprise-services |
 | ArchiMate semantic ID | id-ef8e56b261f959e6a7c3b299d43797d3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -2042,9 +2222,13 @@ No further R1/R2 decomposition is established. Context from these abilities does
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:corporate-support-services |
+| canonicalId | c8777bccbe304e36b7d9fbd955d67579 |
+| displayName | [CT2] Corporate Support Services |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices |
 | Snapshot publication reference | HCM-BC-corporate-support-services |
 | ArchiMate semantic ID | id-e7bf675c1f9f55e6a0c289210e0c2e81 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2086,9 +2270,13 @@ Consumption of support status does not transfer administrative operating authori
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:back-office-services |
+| canonicalId | 9f4d3705403647f4a1e25bc3dece035f |
+| displayName | [CT3] Back-Office Services |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices.BackOfficeServices |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices.CT3-BackOfficeServices |
 | Snapshot publication reference | HCM-BC-back-office-services |
 | ArchiMate semantic ID | id-44b93d25bc505fd7a63a17526ab77cf5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2123,9 +2311,13 @@ Organisational communication does not originate the clinical facts or governed c
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:communications--publicity |
+| canonicalId | 1fec53fb12444abcac41094dace1d3c2 |
+| displayName | [CT3] Communications & Publicity |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices.CommunicationsAndPublicity |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices.CT3-CommunicationsAndPublicity |
 | Snapshot publication reference | HCM-BC-communications-publicity |
 | ArchiMate semantic ID | id-ea854ef849a35f8dac4fd8c6810b020a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2160,9 +2352,13 @@ Harmonia's consumption of facility constraints does not make it the facilities o
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:facilities-management |
+| canonicalId | 9c82e623bd174409b90d24af6b58ebf0 |
+| displayName | [CT3] Facilities Management |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices.FacilitiesManagement |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices.CT3-FacilitiesManagement |
 | Snapshot publication reference | HCM-BC-facilities-management |
 | ArchiMate semantic ID | id-7528db1a70905b898c093d3ae7e47bcc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2197,9 +2393,13 @@ Infrastructure machinery does not define Harmonia's information semantics or acq
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:it-infrastructure-management |
+| canonicalId | 9a37413582314e0dbac006f82900858b |
+| displayName | [CT3] IT Infrastructure Management |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices.ItInfrastructureManagement |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices.CT3-ItInfrastructureManagement |
 | Snapshot publication reference | HCM-BC-it-infrastructure-management |
 | ArchiMate semantic ID | id-bf24089b93df5112a20cb5016d9190cc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2234,9 +2434,13 @@ Oversight does not resolve collective service-readiness placement or constitute 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:operational-oversight |
+| canonicalId | d6f39d94cd2e4bf2ab91ff58ba604ab0 |
+| displayName | [CT3] Operational Oversight |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices.OperationalOversight |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices.CT3-OperationalOversight |
 | Snapshot publication reference | HCM-BC-operational-oversight |
 | ArchiMate semantic ID | id-ac9ffa1aed395f0b8127666f1cec22a1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2271,9 +2475,13 @@ General people administration does not itself establish practitioner clinical qu
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:people-management |
+| canonicalId | df8b9d309b354efcb15991b3d75ed852 |
+| displayName | [CT3] People Management |
+| friendlyName | CorporateResourcesAndEnterpriseServices.CorporateSupportServices.PeopleManagement |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-CorporateSupportServices.CT3-PeopleManagement |
 | Snapshot publication reference | HCM-BC-people-management |
 | ArchiMate semantic ID | id-6b1554d6db2b5de4ad5ba2d0c8ca2852 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2312,9 +2520,13 @@ Not every exchanged request or activity is chargeable. Provision of evidence doe
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:financial--commercial-services |
+| canonicalId | 290b574a02634f559b35a28daad0dea8 |
+| displayName | [CT2] Financial & Commercial Services |
+| friendlyName | CorporateResourcesAndEnterpriseServices.FinancialAndCommercialServices |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-FinancialAndCommercialServices |
 | Snapshot publication reference | HCM-BC-financial-commercial-services |
 | ArchiMate semantic ID | id-d8bd52f72b215fa795b82e4319a9b5bb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2351,9 +2563,13 @@ Evidence provision does not perform pricing, billing, claims, accounting or reve
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-activity-charging-information-provision |
+| canonicalId | ce9655c00f044ca996c9d4a1222785f5 |
+| displayName | [CT3] Clinical Activity Charging Information Provision |
+| friendlyName | CorporateResourcesAndEnterpriseServices.FinancialAndCommercialServices.ClinicalActivityChargingInformationProvision |
+| canonicalName | CT1-CorporateResourcesAndEnterpriseServices.CT2-FinancialAndCommercialServices.CT3-ClinicalActivityChargingInformationProvision |
 | Snapshot publication reference | HCM-BC-clinical-activity-charging-information-provision |
 | ArchiMate semantic ID | id-634d1636ba465070bd42fa4ae01abfb1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2396,9 +2612,13 @@ Requests, specimen associations, reports and medication events require reliable 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:diagnostic-therapeutic--clinical-support-services |
+| canonicalId | 4d98c3503a9f4890a677f09b0c3b6f82 |
+| displayName | [CT1] Diagnostic, Therapeutic & Clinical Support Services |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices |
 | Snapshot publication reference | HCM-BC-diagnostic-therapeutic-clinical-support-services |
 | ArchiMate semantic ID | id-ccc1bb332db751828feb9f8b4a4ee49b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -2437,9 +2657,13 @@ Diagnostic interpretation is limited to the service's professional scope; patien
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-support-provision |
+| canonicalId | 827910cf74ae4061afbda52dde3da106 |
+| displayName | [CT2] Diagnostic Support Provision |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision |
 | Snapshot publication reference | HCM-BC-diagnostic-support-provision |
 | ArchiMate semantic ID | id-57698404473a5412bc6bb5f1e7f0230d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2482,9 +2706,13 @@ Managing diagnostic data neither interprets that data nor governs the authoritat
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-data-management |
+| canonicalId | aeb8e6d2225a4df38e61ae116850b32c |
+| displayName | [CT3] Diagnostic Data Management |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticDataManagement |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticDataManagement |
 | Snapshot publication reference | HCM-BC-diagnostic-data-management |
 | ArchiMate semantic ID | id-bd52520eecc15d55b22866aee1a3c819 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2519,9 +2747,13 @@ Patient-level Clinical Determination remains distinct, as do report authorisatio
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-interpretation |
+| canonicalId | 82ad867109f1438eb1b0916ed9cd820f |
+| displayName | [CT3] Diagnostic Interpretation |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticInterpretation |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticInterpretation |
 | Snapshot publication reference | HCM-BC-diagnostic-interpretation |
 | ArchiMate semantic ID | id-5db277707e1f50fab4fc4ce1c9dddaba |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2556,9 +2788,13 @@ Delivery does not establish clinical review, report authorisation or a patient-l
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-report-distribution |
+| canonicalId | c8fdba3d18e143acb2bd77ae828afd4b |
+| displayName | [CT3] Diagnostic Report Distribution |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticReportDistribution |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticReportDistribution |
 | Snapshot publication reference | HCM-BC-diagnostic-report-distribution |
 | ArchiMate semantic ID | id-d5b1d7f0358b5ce095b5a56df9c07714 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2593,9 +2829,13 @@ Signing is behaviour within this capability, not another CT3. Sending a report d
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-report-management |
+| canonicalId | 977ed170c34445ddb5095945f54f6907 |
+| displayName | [CT3] Diagnostic Report Management |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticReportManagement |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticReportManagement |
 | Snapshot publication reference | HCM-BC-diagnostic-report-management |
 | ArchiMate semantic ID | id-590de53fba7f53b18766b507fe3952df |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2630,9 +2870,13 @@ A diagnostic booking establishes neither evidence acquisition nor a report and i
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-service-appointment-management |
+| canonicalId | 5410a0275dfa4460ad49100fa5a2f2ec |
+| displayName | [CT3] Diagnostic Service Appointment Management |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticServiceAppointmentManagement |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticServiceAppointmentManagement |
 | Snapshot publication reference | HCM-BC-diagnostic-service-appointment-management |
 | ArchiMate semantic ID | id-7696a9fe8110555a86684f99345ad30f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2667,9 +2911,13 @@ Performance does not itself establish interpretation, report authorisation or re
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-service-delivery |
+| canonicalId | 7a1ae953164d456c93637f8e35b4940e |
+| displayName | [CT3] Diagnostic Service Delivery |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticServiceDelivery |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticServiceDelivery |
 | Snapshot publication reference | HCM-BC-diagnostic-service-delivery |
 | ArchiMate semantic ID | id-d798c8f902f45a40a16f1f6c5c50d79e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2704,9 +2952,13 @@ Specimen stewardship is separate from diagnostic-data management and interpretat
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:diagnostic-specimen-management |
+| canonicalId | 93ab99a055314129984a18ea85db5cc2 |
+| displayName | [CT3] Diagnostic Specimen Management |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticSpecimenManagement |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticSpecimenManagement |
 | Snapshot publication reference | HCM-BC-diagnostic-specimen-management |
 | ArchiMate semantic ID | id-2639d5cab85d50eea6e13b397f9255d6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2745,9 +2997,13 @@ Advice does not confer prescribing authority, and dose aids do not establish a r
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:medication--pharmacy-services |
+| canonicalId | ab2a4e6a7acc4868bc4e7b6c0d292cb4 |
+| displayName | [CT2] Medication & Pharmacy Services |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.MedicationAndPharmacyServices |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-MedicationAndPharmacyServices |
 | Snapshot publication reference | HCM-BC-medication-pharmacy-services |
 | ArchiMate semantic ID | id-231038e9a4565b83b18bb6e0f39e8d98 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -2788,9 +3044,13 @@ Advice does not confer authority to diagnose, prescribe or alter treatment; deta
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:medication-advice |
+| canonicalId | b867a2fde009437196a5fed682abf073 |
+| displayName | [CT3] Medication Advice |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.MedicationAndPharmacyServices.MedicationAdvice |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-MedicationAndPharmacyServices.CT3-MedicationAdvice |
 | Snapshot publication reference | HCM-BC-medication-advice |
 | ArchiMate semantic ID | id-e6f04439399a50f395bc63f6d32a4a20 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2831,9 +3091,13 @@ Preparation differs from dispensing and administration; this proposal assigns no
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-medication-compounding-preparation |
+| canonicalId | 07380933da66427c865ca8e64d414e59 |
+| displayName | [CT3] Medication Compounding & Preparation |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.MedicationAndPharmacyServices.MedicationCompoundingAndPreparation |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-MedicationAndPharmacyServices.CT3-MedicationCompoundingAndPreparation |
 | Snapshot publication reference | HCM-BC-medication-compounding-preparation |
 | ArchiMate semantic ID | id-b83111228d98546a97d1f6a1ad0387ad |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -2866,9 +3130,13 @@ Preparing a dose aid does not establish the regimen or demonstrate that a dose w
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:medication-dose-administration-aid-provision |
+| canonicalId | bd597608766b4d709703977c02cc5f07 |
+| displayName | [CT3] Medication Dose Administration Aid Provision |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.MedicationAndPharmacyServices.MedicationDoseAdministrationAidProvision |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-MedicationAndPharmacyServices.CT3-MedicationDoseAdministrationAidProvision |
 | Snapshot publication reference | HCM-BC-medication-dose-administration-aid-provision |
 | ArchiMate semantic ID | id-6c8a8c7d0d8f51f8982e57af660d1033 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2903,9 +3171,13 @@ Provision neither establishes diagnosis nor proves use or administration of the 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:non-prescription-medication-provision |
+| canonicalId | 7bbe4810fb974a8ab6d47b30d6475df3 |
+| displayName | [CT3] Non-Prescription Medication Provision |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.MedicationAndPharmacyServices.NonPrescriptionMedicationProvision |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-MedicationAndPharmacyServices.CT3-NonPrescriptionMedicationProvision |
 | Snapshot publication reference | HCM-BC-non-prescription-medication-provision |
 | ArchiMate semantic ID | id-64b219d99dbd55af98af1d87b7ee4f5e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2940,9 +3212,13 @@ Dispensing does not establish that medication was administered; unresolved speci
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:prescription-medication-dispensing |
+| canonicalId | fef5b79eea77438d9d453a7daef744fc |
+| displayName | [CT3] Prescription Medication Dispensing |
+| friendlyName | DiagnosticTherapeuticAndClinicalSupportServices.MedicationAndPharmacyServices.PrescriptionMedicationDispensing |
+| canonicalName | CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-MedicationAndPharmacyServices.CT3-PrescriptionMedicationDispensing |
 | Snapshot publication reference | HCM-BC-prescription-medication-dispensing |
 | ArchiMate semantic ID | id-710e6b63b34f5919a25a78c6591ce61b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -2985,9 +3261,13 @@ These are substantive information-management responsibilities within Harmonia's 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-information--knowledge-management |
+| canonicalId | cca5d5abec204b339eb5b9bd924ed64e |
+| displayName | [CT1] Health Information & Knowledge Management |
+| friendlyName | HealthInformationAndKnowledgeManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement |
 | Snapshot publication reference | HCM-BC-health-information-knowledge-management |
 | ArchiMate semantic ID | id-593d0a2ec7f6521383b23ef03ca092ef |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -3026,9 +3306,13 @@ Publication does not establish applicability to an individual or a clinical deci
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-management |
+| canonicalId | 76b375248aee49aeb5a5044176a688d8 |
+| displayName | [CT2] Clinical Knowledge Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-management |
 | ArchiMate semantic ID | id-146ce7bf9faa57199f6b2f05c6a2e63d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3070,9 +3354,13 @@ Associating knowledge with a terminology concept does not acquire terminology go
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-concept-association |
+| canonicalId | 3666bf40ec894f5aac3714dc76df392a |
+| displayName | [CT3] Clinical Knowledge Concept Association |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement.ClinicalKnowledgeConceptAssociation |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement.CT3-ClinicalKnowledgeConceptAssociation |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-concept-association |
 | ArchiMate semantic ID | id-92984a7de06f57be9eaf2713871c5e03 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3107,9 +3395,13 @@ Extraction does not establish approval or turn source information into an indivi
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-context-extraction |
+| canonicalId | 0911997eb4584172afd10b1d37946061 |
+| displayName | [CT3] Clinical Knowledge Context Extraction |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement.ClinicalKnowledgeContextExtraction |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement.CT3-ClinicalKnowledgeContextExtraction |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-context-extraction |
 | ArchiMate semantic ID | id-4c3010101ae95144ba9af9f010df539b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3144,9 +3436,13 @@ Identifying a source does not extract its material, establish reusable knowledge
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-context-identification |
+| canonicalId | a0facf9015514223a928e39fcbbb6bee |
+| displayName | [CT3] Clinical Knowledge Context Identification |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement.ClinicalKnowledgeContextIdentification |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement.CT3-ClinicalKnowledgeContextIdentification |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-context-identification |
 | ArchiMate semantic ID | id-7b82f2cc17bc5a69a36a16fc585f9159 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3181,9 +3477,13 @@ Formulation does not approve knowledge, govern terminology or define health-info
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-information-formulation |
+| canonicalId | 05421be130ff4020b119c314aca46573 |
+| displayName | [CT3] Clinical Knowledge Information Formulation |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement.ClinicalKnowledgeInformationFormulation |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement.CT3-ClinicalKnowledgeInformationFormulation |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-information-formulation |
 | ArchiMate semantic ID | id-820d3b4a4e6259608e1be64c809a8103 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3218,9 +3518,13 @@ Published knowledge is not a patient-specific conclusion, decision or instructio
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-publication--sharing |
+| canonicalId | 962a5e3048424ff7b2413e21a8e51f53 |
+| displayName | [CT3] Clinical Knowledge Publication & Sharing |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement.ClinicalKnowledgePublicationAndSharing |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement.CT3-ClinicalKnowledgePublicationAndSharing |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-publication-sharing |
 | ArchiMate semantic ID | id-8cd4e38728b558789c67536ab75f508e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3255,9 +3559,13 @@ Approval does not establish applicability to a particular individual or replace 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-knowledge-review--approval-management |
+| canonicalId | ee04d00077d548a7a0a2dffd424c3d78 |
+| displayName | [CT3] Clinical Knowledge Review & Approval Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.ClinicalKnowledgeManagement.ClinicalKnowledgeReviewAndApprovalManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-ClinicalKnowledgeManagement.CT3-ClinicalKnowledgeReviewAndApprovalManagement |
 | Snapshot publication reference | HCM-BC-clinical-knowledge-review-approval-management |
 | ArchiMate semantic ID | id-e92f6df14dcd51a0905d0c294b78beb1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3296,9 +3604,13 @@ Discoverability is not permission, compartment membership is not an access decis
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-management |
+| canonicalId | eb2984f0ca79420e83012f9e06a005fb |
+| displayName | [CT2] Health Information Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement |
 | Snapshot publication reference | HCM-BC-health-information-management |
 | ArchiMate semantic ID | id-5fc96b9106c85899953f0b0471689e42 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3341,9 +3653,13 @@ Discoverability does not authorise access, retrieve the content or communicate i
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-catalogue-and-index-management |
+| canonicalId | 4c834101307546d39a0ac36b07358faf |
+| displayName | [CT3] Health Information Catalogue and Index Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationCatalogueAndIndexManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationCatalogueAndIndexManagement |
 | Snapshot publication reference | HCM-BC-health-information-catalogue-and-index-management |
 | ArchiMate semantic ID | id-0499c33921ce517c8a82f4eb516adc6d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3378,9 +3694,13 @@ Compartment membership neither establishes permission nor replaces classificatio
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-compartmentalisation |
+| canonicalId | 660d78d6a34041939d1c290266d47f03 |
+| displayName | [CT3] Health Information Compartmentalisation |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationCompartmentalisation |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationCompartmentalisation |
 | Snapshot publication reference | HCM-BC-health-information-compartmentalisation |
 | ArchiMate semantic ID | id-8f7817d6ddd25778ae7d5d5effbbbd16 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3415,9 +3735,13 @@ Correlation does not establish person identity, clinical interpretation or owner
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-data-correlation |
+| canonicalId | 6c41e90a8cf24ed689d9d6a363c8d3fe |
+| displayName | [CT3] Health Information Data Correlation |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationDataCorrelation |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationDataCorrelation |
 | Snapshot publication reference | HCM-BC-health-information-data-correlation |
 | ArchiMate semantic ID | id-aeafb86f7bb65c15acebe5f0048c9ef8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3452,9 +3776,13 @@ Managing content does not originate its clinical facts or acquire the authority 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-data-management |
+| canonicalId | 9565887a92164432933ea97e95af2368 |
+| displayName | [CT3] Health Information Data Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationDataManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationDataManagement |
 | Snapshot publication reference | HCM-BC-health-information-data-management |
 | ArchiMate semantic ID | id-f83a006f0fc9592a8d5a9198c81aaae3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3489,9 +3817,13 @@ Retrieval does not itself grant permission, provide participant communication or
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-data-retrieval |
+| canonicalId | 082760fc4804489a81eaed3e4fd9daa9 |
+| displayName | [CT3] Health Information Data Retrieval |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationDataRetrieval |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationDataRetrieval |
 | Snapshot publication reference | HCM-BC-health-information-data-retrieval |
 | ArchiMate semantic ID | id-1619920904835b448ad96b47ac031fc8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3526,9 +3858,13 @@ Current authoritative state differs from historical truth; preserving either doe
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-lifecycle-management |
+| canonicalId | 874cd3b294184f928dbb7f656abd97f0 |
+| displayName | [CT3] Health Information Lifecycle Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationLifecycleManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationLifecycleManagement |
 | Snapshot publication reference | HCM-BC-health-information-lifecycle-management |
 | ArchiMate semantic ID | id-12f544f28418535f8054f8e1a398cd9c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3563,9 +3899,13 @@ Structure management is not terminology governance and does not prescribe FHIR r
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-structure-management |
+| canonicalId | c3b3e39dd141448e96b7dd7b4c4516f2 |
+| displayName | [CT3] Health Information Structure Management |
+| friendlyName | HealthInformationAndKnowledgeManagement.HealthInformationManagement.HealthInformationStructureManagement |
+| canonicalName | CT1-HealthInformationAndKnowledgeManagement.CT2-HealthInformationManagement.CT3-HealthInformationStructureManagement |
 | Snapshot publication reference | HCM-BC-health-information-structure-management |
 | ArchiMate semantic ID | id-772af14dd93455b2967714fa826da898 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3608,9 +3948,13 @@ Integration provision and device-data integration materially affect exchanged in
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-products--clinical-technology |
+| canonicalId | 54388e3202c2403089b5c476c78c4567 |
+| displayName | [CT1] Health Products & Clinical Technology |
+| friendlyName | HealthProductsAndClinicalTechnology |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology |
 | Snapshot publication reference | HCM-BC-health-products-clinical-technology |
 | ArchiMate semantic ID | id-06479aa74b3554608b6305af19064390 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -3648,9 +3992,13 @@ Provisioning integration does not demonstrate that data has flowed. Monitoring, 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-technology-management |
+| canonicalId | 6c91476a45eb4432b1f90b47a4c2ad35 |
+| displayName | [CT2] Clinical Technology Management |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement |
 | Snapshot publication reference | HCM-BC-clinical-technology-management |
 | ArchiMate semantic ID | id-63b57eb4fcb458f6a7e0a8394bdfb606 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -3694,9 +4042,13 @@ Data movement does not confer clinical meaning, originating authority or device-
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-data-integration |
+| canonicalId | 382a6fe3546f491f940cba1c1e5df5ef |
+| displayName | [CT3] Clinical Device Data Integration |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceDataIntegration |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceDataIntegration |
 | Snapshot publication reference | HCM-BC-clinical-device-data-integration |
 | ArchiMate semantic ID | id-36db1e018d39579e86ed2a2d638ffafc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3731,9 +4083,13 @@ Release state is distinct from maintenance condition, deployment and professiona
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-feature--release-management |
+| canonicalId | 23d87ead4cdc40b785b006ca80f6d7b1 |
+| displayName | [CT3] Clinical Device Feature & Release Management |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceFeatureAndReleaseManagement |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceFeatureAndReleaseManagement |
 | Snapshot publication reference | HCM-BC-clinical-device-feature-release-management |
 | ArchiMate semantic ID | id-64523cf9b3a850c0986ad84f59880fb8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3768,9 +4124,13 @@ Provisioning does not demonstrate data integration, clinical interpretation or d
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-integration-provision |
+| canonicalId | 7abab1d7d68f48cea565df752fad34c4 |
+| displayName | [CT3] Clinical Device Integration Provision |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceIntegrationProvision |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceIntegrationProvision |
 | Snapshot publication reference | HCM-BC-clinical-device-integration-provision |
 | ArchiMate semantic ID | id-2ce5b7402493530699b6bf9f6ea83d71 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3805,9 +4165,13 @@ Inventory presence does not establish readiness, functional release state or cur
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-inventory-management |
+| canonicalId | f8205d4cf8144f34b2da1139ff45c868 |
+| displayName | [CT3] Clinical Device Inventory Management |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceInventoryManagement |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceInventoryManagement |
 | Snapshot publication reference | HCM-BC-clinical-device-inventory-management |
 | ArchiMate semantic ID | id-9a98e5b1b7f05f67b2a43383e5e996da |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3842,9 +4206,13 @@ Lifecycle disposition differs from monitoring and restoring device condition; th
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-lifecycle-management |
+| canonicalId | 186667f5a3844d10a236af73bc91a0de |
+| displayName | [CT3] Clinical Device Lifecycle Management |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceLifecycleManagement |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceLifecycleManagement |
 | Snapshot publication reference | HCM-BC-clinical-device-lifecycle-management |
 | ArchiMate semantic ID | id-de61ba0f4b035f648ed61bfb9552a476 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3879,9 +4247,13 @@ Deployment is not device-specific user enablement, clinical use or evidence of c
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-loan--deployment-management |
+| canonicalId | 5ac802cf322d408f82c4a28cd24cb43b |
+| displayName | [CT3] Clinical Device Loan & Deployment Management |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceLoanAndDeploymentManagement |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceLoanAndDeploymentManagement |
 | Snapshot publication reference | HCM-BC-clinical-device-loan-deployment-management |
 | ArchiMate semantic ID | id-7218b8cce3dd59beafac830a7ffaba9f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -3934,9 +4306,13 @@ Membership, tier and ancestry require adjudication; this description does not es
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-maintenance-management |
+| canonicalId | 731ea36d36d8466d84196ccda2e61cf9 |
+| displayName | [CT3] Clinical Device Maintenance Management |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceMaintenanceManagement |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceMaintenanceManagement |
 | Snapshot publication reference | HCM-BC-clinical-device-maintenance-management |
 | ArchiMate semantic ID | id-0d84a2b521425bfbaed489694ff00323 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Candidate |
@@ -3971,9 +4347,13 @@ Professional qualification or privilege alone does not establish device-specific
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-device-utilisation-support |
+| canonicalId | 0100cdb80a0c41c5930b1ca66248adf9 |
+| displayName | [CT3] Clinical Device Utilisation Support |
+| friendlyName | HealthProductsAndClinicalTechnology.ClinicalTechnologyManagement.ClinicalDeviceUtilisationSupport |
+| canonicalName | CT1-HealthProductsAndClinicalTechnology.CT2-ClinicalTechnologyManagement.CT3-ClinicalDeviceUtilisationSupport |
 | Snapshot publication reference | HCM-BC-clinical-device-utilisation-support |
 | ArchiMate semantic ID | id-ac89b649b2045f1f9a228857bc828d26 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4016,9 +4396,13 @@ Governed provision of existing information materially enables authorised researc
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-research--innovation |
+| canonicalId | 582bf62145fd42118e5d57bb714841e8 |
+| displayName | [CT1] Health Research & Innovation |
+| friendlyName | HealthResearchAndInnovation |
+| canonicalName | CT1-HealthResearchAndInnovation |
 | Snapshot publication reference | HCM-BC-health-research-innovation |
 | ArchiMate semantic ID | id-aae6d53e02cf5c689376034a9078b6f9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -4057,9 +4441,13 @@ Evaluation does not establish an adoption decision, professional authority or an
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-innovation |
+| canonicalId | f263989e25c9469cac1bbad6491432f0 |
+| displayName | [CT2] Health Innovation |
+| friendlyName | HealthResearchAndInnovation.HealthInnovation |
+| canonicalName | CT1-HealthResearchAndInnovation.CT2-HealthInnovation |
 | Snapshot publication reference | HCM-BC-health-innovation |
 | ArchiMate semantic ID | id-3a606ade585a5938971ee858eec584a2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4100,9 +4488,13 @@ Evaluation does not establish adoption, authorise a clinical change or create an
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-innovation-evaluation |
+| canonicalId | adc555bcb54e4de290869c7deebd128c |
+| displayName | [CT3] Health Innovation Evaluation |
+| friendlyName | HealthResearchAndInnovation.HealthInnovation.HealthInnovationEvaluation |
+| canonicalName | CT1-HealthResearchAndInnovation.CT2-HealthInnovation.CT3-HealthInnovationEvaluation |
 | Snapshot publication reference | HCM-BC-health-innovation-evaluation |
 | ArchiMate semantic ID | id-777febeb138152a29372055b15957a23 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4141,9 +4533,13 @@ Research governance, trial oversight and specialist analysis remain unmodelled a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:research-information-support |
+| canonicalId | ef18f999eef3488ba584d263a551732b |
+| displayName | [CT2] Research Information Support |
+| friendlyName | HealthResearchAndInnovation.ResearchInformationSupport |
+| canonicalName | CT1-HealthResearchAndInnovation.CT2-ResearchInformationSupport |
 | Snapshot publication reference | HCM-BC-research-information-support |
 | ArchiMate semantic ID | id-50b36409f6b55504a198330f760ef888 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4180,9 +4576,13 @@ Availability is not research authorisation. Trials, genomic analysis and researc
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:governed-research-information-provision |
+| canonicalId | 6907401e6786470083c1d34a65aa225b |
+| displayName | [CT3] Governed Research Information Provision |
+| friendlyName | HealthResearchAndInnovation.ResearchInformationSupport.GovernedResearchInformationProvision |
+| canonicalName | CT1-HealthResearchAndInnovation.CT2-ResearchInformationSupport.CT3-GovernedResearchInformationProvision |
 | Snapshot publication reference | HCM-BC-governed-research-information-provision |
 | ArchiMate semantic ID | id-a9a4e74fe8bb55508e4a7b75ea333980 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4225,9 +4625,13 @@ The established Adjacent classification reflects the use and supply of consent a
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-rights-advocacy--participation |
+| canonicalId | 7ab5c82a500b45f39267883a6e78c482 |
+| displayName | [CT1] Health Rights, Advocacy & Participation |
+| friendlyName | HealthRightsAdvocacyAndParticipation |
+| canonicalName | CT1-HealthRightsAdvocacyAndParticipation |
 | Snapshot publication reference | HCM-BC-health-rights-advocacy-participation |
 | ArchiMate semantic ID | id-59fb57e93d695a5781569d5fb185fdc4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -4269,9 +4673,13 @@ Approved independent governed assurance materially supports service confidence. 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-service-assurance |
+| canonicalId | 14860102964c441681d41ec3da423fe0 |
+| displayName | [CT1] Health Service Assurance |
+| friendlyName | HealthServiceAssurance |
+| canonicalName | CT1-HealthServiceAssurance |
 | Snapshot publication reference | HCM-BC-health-service-assurance |
 | ArchiMate semantic ID | id-e96366b568cc5e83a427548b52fa57e7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -4310,9 +4718,13 @@ Insufficient evidence establishes neither assurance nor non-assurance. Operation
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:assurance-evaluation |
+| canonicalId | d1b20e0fb91e4bd1950ad57b84e2cafd |
+| displayName | [CT2] Assurance Evaluation |
+| friendlyName | HealthServiceAssurance.AssuranceEvaluation |
+| canonicalName | CT1-HealthServiceAssurance.CT2-AssuranceEvaluation |
 | Snapshot publication reference | HCM-BC-assurance-evaluation |
 | ArchiMate semantic ID | id-86f3196b695d595a9ce1480605378088 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4350,9 +4762,13 @@ Insufficiency proves neither assurance nor non-assurance, and the conclusion doe
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:assurance-conclusion-determination |
+| canonicalId | 10f538feae4042829fafeae472882128 |
+| displayName | [CT3] Assurance Conclusion Determination |
+| friendlyName | HealthServiceAssurance.AssuranceEvaluation.AssuranceConclusionDetermination |
+| canonicalName | CT1-HealthServiceAssurance.CT2-AssuranceEvaluation.CT3-AssuranceConclusionDetermination |
 | Snapshot publication reference | HCM-BC-assurance-conclusion-determination |
 | ArchiMate semantic ID | id-4a9821af9af35a649a2f169f370acbe9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4387,9 +4803,13 @@ Assessment is distinct from conclusion determination; unavailable or insufficien
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:assurance-evidence-assessment |
+| canonicalId | 1b295763b37f4622bd1bb80c6ea3741c |
+| displayName | [CT3] Assurance Evidence Assessment |
+| friendlyName | HealthServiceAssurance.AssuranceEvaluation.AssuranceEvidenceAssessment |
+| canonicalName | CT1-HealthServiceAssurance.CT2-AssuranceEvaluation.CT3-AssuranceEvidenceAssessment |
 | Snapshot publication reference | HCM-BC-assurance-evidence-assessment |
 | ArchiMate semantic ID | id-f7b1410300485ff3a1f03dc2cb35ce34 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4428,9 +4848,13 @@ An approach cannot waive a higher-level independence requirement. Contributing s
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-assurance-specification |
+| canonicalId | ec5c4d1219464433b2cee5c5a988fef7 |
+| displayName | [CT2] Health Service Assurance Specification |
+| friendlyName | HealthServiceAssurance.HealthServiceAssuranceSpecification |
+| canonicalName | CT1-HealthServiceAssurance.CT2-HealthServiceAssuranceSpecification |
 | Snapshot publication reference | HCM-BC-health-service-assurance-specification |
 | ArchiMate semantic ID | id-fe48e4fa8a025194ad49cc197a83d502 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4468,9 +4892,13 @@ Self-attestation cannot replace required independent governed assurance, and an 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:assurance-approach-definition |
+| canonicalId | d672f8831df54f2099927f820d0025f5 |
+| displayName | [CT3] Assurance Approach Definition |
+| friendlyName | HealthServiceAssurance.HealthServiceAssuranceSpecification.AssuranceApproachDefinition |
+| canonicalName | CT1-HealthServiceAssurance.CT2-HealthServiceAssuranceSpecification.CT3-AssuranceApproachDefinition |
 | Snapshot publication reference | HCM-BC-assurance-approach-definition |
 | ArchiMate semantic ID | id-a28516f387e951deb72e816ac780649e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4505,9 +4933,13 @@ Criteria governance is distinct from applying criteria to evidence and does not 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:assurance-evaluation-criteria-governance |
+| canonicalId | f3e32f2a2c9d47a89eaf124647161522 |
+| displayName | [CT3] Assurance Evaluation Criteria Governance |
+| friendlyName | HealthServiceAssurance.HealthServiceAssuranceSpecification.AssuranceEvaluationCriteriaGovernance |
+| canonicalName | CT1-HealthServiceAssurance.CT2-HealthServiceAssuranceSpecification.CT3-AssuranceEvaluationCriteriaGovernance |
 | Snapshot publication reference | HCM-BC-assurance-evaluation-criteria-governance |
 | ArchiMate semantic ID | id-55bc2c3a7c375e1baeb0284bd21b9724 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4550,9 +4982,13 @@ Service need, viability and alignment facts materially shape service information
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-service-direction--stewardship |
+| canonicalId | d51e7125bf9c4d2c9c59b60346b4d86f |
+| displayName | [CT1] Health Service Direction & Stewardship |
+| friendlyName | HealthServiceDirectionAndStewardship |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship |
 | Snapshot publication reference | HCM-BC-health-service-direction-stewardship |
 | ArchiMate semantic ID | id-e6f4c5945b5b560599bdc95bb2589fb1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -4591,9 +5027,13 @@ Alignment does not establish the service offering, own the required resources or
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-alignment |
+| canonicalId | d4fc5367352741a99bd334f7e8bf5856 |
+| displayName | [CT2] Health Service Alignment |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceAlignment |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceAlignment |
 | Snapshot publication reference | HCM-BC-health-service-alignment |
 | ArchiMate semantic ID | id-a72e1eab6d6551e0b387e09c0ce9897e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4633,9 +5073,13 @@ Recognising a dependency does not acquire the provider's responsibility or estab
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-co-dependency-management |
+| canonicalId | f031ee3ddc5e47c48d4308d4077b3967 |
+| displayName | [CT3] Health Service Co-Dependency Management |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceAlignment.HealthServiceCoDependencyManagement |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceAlignment.CT3-HealthServiceCoDependencyManagement |
 | Snapshot publication reference | HCM-BC-health-service-co-dependency-management |
 | ArchiMate semantic ID | id-0259bdd793d65f3186810f502b700ee6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4670,9 +5114,13 @@ Financial fit does not confer pricing, accounting, billing or enterprise revenue
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-financial-management |
+| canonicalId | 2fbf31e974574f288f087179e4023dc2 |
+| displayName | [CT3] Health Service Financial Management |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceAlignment.HealthServiceFinancialManagement |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceAlignment.CT3-HealthServiceFinancialManagement |
 | Snapshot publication reference | HCM-BC-health-service-financial-management |
 | ArchiMate semantic ID | id-d3b307ced1bb58bab5dc299f2bd63ffb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4707,9 +5155,13 @@ Planning does not perform all supporting changes or define the authoritative ser
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-implementation-planning |
+| canonicalId | 67bd795d91ce4dd49fdd481a3c451366 |
+| displayName | [CT3] Health Service Implementation Planning |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceAlignment.HealthServiceImplementationPlanning |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceAlignment.CT3-HealthServiceImplementationPlanning |
 | Snapshot publication reference | HCM-BC-health-service-implementation-planning |
 | ArchiMate semantic ID | id-a4cdf13bec0556e680f9abb2a60fe989 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4744,9 +5196,13 @@ Identifying resources does not operate them, assign them to care or establish co
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-resource-identification |
+| canonicalId | 7d46575486c847cd8fdbb665b3ed1090 |
+| displayName | [CT3] Health Service Resource Identification |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceAlignment.HealthServiceResourceIdentification |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceAlignment.CT3-HealthServiceResourceIdentification |
 | Snapshot publication reference | HCM-BC-health-service-resource-identification |
 | ArchiMate semantic ID | id-289650d19a325d8f90b7e7f66b54490f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4785,9 +5241,13 @@ Capability Identification uses ordinary business meaning; it does not allocate H
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-modelling |
+| canonicalId | 9a3e90db97b94d1888a2a5c5effb8999 |
+| displayName | [CT2] Health Service Modelling |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceModelling |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceModelling |
 | Snapshot publication reference | HCM-BC-health-service-modelling |
 | ArchiMate semantic ID | id-51689808d64b561a8041fe1b48bf3b01 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -4827,9 +5287,13 @@ The word capability here does not allocate Harmonia CT tiers or establish new ca
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-capability-identification |
+| canonicalId | 53f64a402905438aa87f9d16eff876da |
+| displayName | [CT3] Health Service Capability Identification |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceModelling.HealthServiceCapabilityIdentification |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceModelling.CT3-HealthServiceCapabilityIdentification |
 | Snapshot publication reference | HCM-BC-health-service-capability-identification |
 | ArchiMate semantic ID | id-f24b2bd3966552018ad898a63b48cc4c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4864,9 +5328,13 @@ It does not establish generic Continuous Improvement placement or transfer the a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-continuous-improvement |
+| canonicalId | b2b2b91b1a094ef1b13ce6870ff9716f |
+| displayName | [CT3] Health Service Continuous Improvement |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceModelling.HealthServiceContinuousImprovement |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceModelling.CT3-HealthServiceContinuousImprovement |
 | Snapshot publication reference | HCM-BC-health-service-continuous-improvement |
 | ArchiMate semantic ID | id-bc65f74c11945694ad12dc44fe736024 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4901,9 +5369,13 @@ It does not absorb HR, facilities, procurement or ICT responsibilities or establ
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-implementation-support |
+| canonicalId | f74f5944573b408d94fe8c88e33e128a |
+| displayName | [CT3] Health Service Implementation Support |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceModelling.HealthServiceImplementationSupport |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceModelling.CT3-HealthServiceImplementationSupport |
 | Snapshot publication reference | HCM-BC-health-service-implementation-support |
 | ArchiMate semantic ID | id-1a11f717fc015997ba1e963cbaac0b8a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4938,9 +5410,13 @@ Identifying need does not define an offering, approve funding or determine the s
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-need-identification |
+| canonicalId | 976c90e05d0e44b1b24c89bf61eac005 |
+| displayName | [CT3] Health Service Need Identification |
+| friendlyName | HealthServiceDirectionAndStewardship.HealthServiceModelling.HealthServiceNeedIdentification |
+| canonicalName | CT1-HealthServiceDirectionAndStewardship.CT2-HealthServiceModelling.CT3-HealthServiceNeedIdentification |
 | Snapshot publication reference | HCM-BC-health-service-need-identification |
 | ArchiMate semantic ID | id-10df1dc1dfd455a981b3e7c5ccafdf4d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -4983,9 +5459,13 @@ Formal relevance remains Unresolved. The requirements plainly constrain managed 
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:health-service-governance |
+| canonicalId | 209aada781e844e28202a2535a264c21 |
+| displayName | [CT1] Health Service Governance |
+| friendlyName | HealthServiceGovernance |
+| canonicalName | CT1-HealthServiceGovernance |
 | Snapshot publication reference | HCM-BC-health-service-governance |
 | ArchiMate semantic ID | id-74e288077f4356d281d9b4412c793e73 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -5025,9 +5505,13 @@ Defining assessment arrangements does not perform assurance or manage the govern
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:compliance-governance |
+| canonicalId | 02a52157967f4b498807cac70e3410e9 |
+| displayName | [CT2] Compliance Governance |
+| friendlyName | HealthServiceGovernance.ComplianceGovernance |
+| canonicalName | CT1-HealthServiceGovernance.CT2-ComplianceGovernance |
 | Snapshot publication reference | HCM-BC-compliance-governance |
 | ArchiMate semantic ID | id-31c38c7c37fd5b19bf446b9937406be5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5065,9 +5549,13 @@ Assessment definition does not replace the authoritative obligation, perform ass
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:compliance-assessment-definition |
+| canonicalId | 8a6db4bd0ed845dda125896c4e3ad3d0 |
+| displayName | [CT3] Compliance Assessment Definition |
+| friendlyName | HealthServiceGovernance.ComplianceGovernance.ComplianceAssessmentDefinition |
+| canonicalName | CT1-HealthServiceGovernance.CT2-ComplianceGovernance.CT3-ComplianceAssessmentDefinition |
 | Snapshot publication reference | HCM-BC-compliance-assessment-definition |
 | ArchiMate semantic ID | id-a461b1332b2f5a05b6a98cc88a36bdc9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5102,9 +5590,13 @@ Defining a checkpoint does not perform the check or take over progression of the
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:governance-reporting--checkpoint-definition |
+| canonicalId | 0ff9f332acdc435e98f4f527c74f60c9 |
+| displayName | [CT3] Governance Reporting & Checkpoint Definition |
+| friendlyName | HealthServiceGovernance.ComplianceGovernance.GovernanceReportingAndCheckpointDefinition |
+| canonicalName | CT1-HealthServiceGovernance.CT2-ComplianceGovernance.CT3-GovernanceReportingAndCheckpointDefinition |
 | Snapshot publication reference | HCM-BC-governance-reporting-checkpoint-definition |
 | ArchiMate semantic ID | id-b6943759e49f58deb5c3fcbcb440fd66 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5143,9 +5635,13 @@ Interpreting an external obligation or engaging with a regulator does not transf
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:governance-framework-management |
+| canonicalId | b39f53b3ffb441f388a89b45cc517deb |
+| displayName | [CT2] Governance Framework Management |
+| friendlyName | HealthServiceGovernance.GovernanceFrameworkManagement |
+| canonicalName | CT1-HealthServiceGovernance.CT2-GovernanceFrameworkManagement |
 | Snapshot publication reference | HCM-BC-governance-framework-management |
 | ArchiMate semantic ID | id-cb87b0ba8417587ebc94321210dbc9cf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5183,9 +5679,13 @@ Authority allocation does not itself perform an operational decision or a runtim
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:authority--constraint-governance |
+| canonicalId | ad7f41dc48a046b185f044f0a24517ca |
+| displayName | [CT3] Authority & Constraint Governance |
+| friendlyName | HealthServiceGovernance.GovernanceFrameworkManagement.AuthorityAndConstraintGovernance |
+| canonicalName | CT1-HealthServiceGovernance.CT2-GovernanceFrameworkManagement.CT3-AuthorityAndConstraintGovernance |
 | Snapshot publication reference | HCM-BC-authority-constraint-governance |
 | ArchiMate semantic ID | id-306f2ee359b85d3cbbf914f1d9920f5a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5220,9 +5720,13 @@ Interpreting obligations does not acquire the regulator's authority or determine
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:policy--obligation-governance |
+| canonicalId | 73c6e5b36bdf4bf0ad2b8b50c9b9a00b |
+| displayName | [CT3] Policy / Obligation Governance |
+| friendlyName | HealthServiceGovernance.GovernanceFrameworkManagement.PolicyObligationGovernance |
+| canonicalName | CT1-HealthServiceGovernance.CT2-GovernanceFrameworkManagement.CT3-PolicyObligationGovernance |
 | Snapshot publication reference | HCM-BC-policy-obligation-governance |
 | ArchiMate semantic ID | id-8d31da82f9965bebbef788d003e2e3d8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5267,9 +5771,13 @@ Harmonia supplies and connects information used in individual care. The approved
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:individual-care-delivery |
+| canonicalId | b964a11cde594318aa14ff935414158a |
+| displayName | [CT1] Individual Care Delivery |
+| friendlyName | IndividualCareDelivery |
+| canonicalName | CT1-IndividualCareDelivery |
 | Snapshot publication reference | HCM-BC-individual-care-delivery |
 | ArchiMate semantic ID | id-2b13c6665f7b530fb21b07fd3e80e4ce |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -5312,9 +5820,13 @@ Determining clinical meaning does not itself select the care response. No CT3 ta
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-determination |
+| canonicalId | 39219464b6304b59bd7c3de4e237066e |
+| displayName | [CT2] Clinical Determination |
+| friendlyName | IndividualCareDelivery.ClinicalDetermination |
+| canonicalName | CT1-IndividualCareDelivery.CT2-ClinicalDetermination |
 | Snapshot publication reference | HCM-BC-clinical-determination |
 | ArchiMate semantic ID | id-e028d7e513fc5729b370465da8bc4ae8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5359,9 +5871,13 @@ Does not itself establish a diagnosis, prescribe intervention or confer this cli
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-clinical-finding-interpretation |
+| canonicalId | deb78ba3b1514074a8ca5bc5da0673f5 |
+| displayName | [CT3] Clinical Finding Interpretation |
+| friendlyName | IndividualCareDelivery.ClinicalDetermination.ClinicalFindingInterpretation |
+| canonicalName | CT1-IndividualCareDelivery.CT2-ClinicalDetermination.CT3-ClinicalFindingInterpretation |
 | Snapshot publication reference | HCM-BC-clinical-finding-interpretation |
 | ArchiMate semantic ID | id-94f7aff6888a52d08db90e33e52c3fd3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5400,9 +5916,13 @@ Clinical determination remains with the mandated professional; a coded record is
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-diagnosis-problem-determination |
+| canonicalId | d965032637e64275b7a61c0413834590 |
+| displayName | [CT3] Diagnosis & Problem Determination |
+| friendlyName | IndividualCareDelivery.ClinicalDetermination.DiagnosisAndProblemDetermination |
+| canonicalName | CT1-IndividualCareDelivery.CT2-ClinicalDetermination.CT3-DiagnosisAndProblemDetermination |
 | Snapshot publication reference | HCM-BC-diagnosis-problem-determination |
 | ArchiMate semantic ID | id-0c22ff432234514c88760d28241e3a44 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5441,9 +5961,13 @@ Risk/prognostic judgement is distinct from operational urgency, source-informati
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-health-risk-prognostic-determination |
+| canonicalId | 5bba0ea969814b5fa7ad11b67ab40a0c |
+| displayName | [CT3] Health Risk & Prognostic Determination |
+| friendlyName | IndividualCareDelivery.ClinicalDetermination.HealthRiskAndPrognosticDetermination |
+| canonicalName | CT1-IndividualCareDelivery.CT2-ClinicalDetermination.CT3-HealthRiskAndPrognosticDetermination |
 | Snapshot publication reference | HCM-BC-health-risk-prognostic-determination |
 | ArchiMate semantic ID | id-246a682df0be5a21a11b800c51461501 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5480,9 +6004,13 @@ Orders and appointments express or arrange future activity; they are not evidenc
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:clinical-intervention |
+| canonicalId | 5359d1b0ff814a0e871384469f5ebcd7 |
+| displayName | [CT2] Clinical Intervention |
+| friendlyName | IndividualCareDelivery.ClinicalIntervention |
+| canonicalName | CT1-IndividualCareDelivery.CT2-ClinicalIntervention |
 | Snapshot publication reference | HCM-BC-clinical-intervention |
 | ArchiMate semantic ID | id-06c36cc9da8c5ad0b22ec96ff99f45aa |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5521,9 +6049,13 @@ Prescribing can express clinical intent without establishing dispensing or admin
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:individual-care-planning |
+| canonicalId | f036a9866459429a8fb5f5e10727b5e8 |
+| displayName | [CT2] Individual Care Planning |
+| friendlyName | IndividualCareDelivery.IndividualCarePlanning |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualCarePlanning |
 | Snapshot publication reference | HCM-BC-individual-care-planning |
 | ArchiMate semantic ID | id-e24ae17857c6529cb63c0c8d736ca5e7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5567,9 +6099,13 @@ Goal definition remains distinct from selecting an intervention and from recordi
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-care-goal-definition |
+| canonicalId | 609e1bef516b44bb976b5dbebe7f684b |
+| displayName | [CT3] Care Goal Definition |
+| friendlyName | IndividualCareDelivery.IndividualCarePlanning.CareGoalDefinition |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualCarePlanning.CT3-CareGoalDefinition |
 | Snapshot publication reference | HCM-BC-care-goal-definition |
 | ArchiMate semantic ID | id-c45b599ec97b544d8049f3bbc65859ca |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5608,9 +6144,13 @@ Planning is distinct from intervention delivery and from the operational definit
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:bc-care-response-planning |
+| canonicalId | 2636e43903e44a97ad5b8db32692ce8b |
+| displayName | [CT3] Care Response Planning |
+| friendlyName | IndividualCareDelivery.IndividualCarePlanning.CareResponsePlanning |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualCarePlanning.CT3-CareResponsePlanning |
 | Snapshot publication reference | HCM-BC-care-response-planning |
 | ArchiMate semantic ID | id-2d8ad28ce73e58448e5456abe7a8b9a0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -5647,9 +6187,13 @@ Recognising a need to change care does not establish the replacement plan. Monit
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:individual-care-review |
+| canonicalId | 625a93f132f242f5a8e2ae1dc19979fb |
+| displayName | [CT2] Individual Care Review |
+| friendlyName | IndividualCareDelivery.IndividualCareReview |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualCareReview |
 | Snapshot publication reference | HCM-BC-individual-care-review |
 | ArchiMate semantic ID | id-1e0db913564c55f59efd137db390e34f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5687,9 +6231,13 @@ An appropriateness judgement can identify a need to reconsider care; establishin
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-appropriateness-review |
+| canonicalId | 5eac5fb73e31416288d8c992805b33cb |
+| displayName | [CT3] Care Appropriateness Review |
+| friendlyName | IndividualCareDelivery.IndividualCareReview.CareAppropriatenessReview |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualCareReview.CT3-CareAppropriatenessReview |
 | Snapshot publication reference | HCM-BC-care-appropriateness-review |
 | ArchiMate semantic ID | id-dfa6322afd30598fb230e2d13f063d12 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5724,9 +6272,13 @@ Observed improvement is not automatically proof that the intended objectives hav
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-effectiveness-review |
+| canonicalId | 79cfeaefeb174a54ba43343d37f035c1 |
+| displayName | [CT3] Care Effectiveness Review |
+| friendlyName | IndividualCareDelivery.IndividualCareReview.CareEffectivenessReview |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualCareReview.CT3-CareEffectivenessReview |
 | Snapshot publication reference | HCM-BC-care-effectiveness-review |
 | ArchiMate semantic ID | id-ad157f6fab0a5a8f94826cbe973f4946 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5765,9 +6317,13 @@ Finding an abnormal measurement is distinguishable from deciding what it means c
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:individual-health-assessment |
+| canonicalId | 045f819bb3694d3c9db7f20886e2993f |
+| displayName | [CT2] Individual Health Assessment |
+| friendlyName | IndividualCareDelivery.IndividualHealthAssessment |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthAssessment |
 | Snapshot publication reference | HCM-BC-individual-health-assessment |
 | ArchiMate semantic ID | id-c205b4ba14735b29b4f23bd7531d8750 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5806,9 +6362,13 @@ An examination finding is not itself a diagnosis, care plan or performed treatme
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-examination |
+| canonicalId | 8855d4d9e2954e0ab66ab65a556fc61a |
+| displayName | [CT3] Clinical Examination |
+| friendlyName | IndividualCareDelivery.IndividualHealthAssessment.ClinicalExamination |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthAssessment.CT3-ClinicalExamination |
 | Snapshot publication reference | HCM-BC-clinical-examination |
 | ArchiMate semantic ID | id-abe9e3230f6d5577a13fca453e624a85 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5843,9 +6403,13 @@ Historical information does not become a current clinical conclusion merely beca
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-history-assessment |
+| canonicalId | 7ea7e3f74e2940a7934b588a1a038834 |
+| displayName | [CT3] Health History Assessment |
+| friendlyName | IndividualCareDelivery.IndividualHealthAssessment.HealthHistoryAssessment |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthAssessment.CT3-HealthHistoryAssessment |
 | Snapshot publication reference | HCM-BC-health-history-assessment |
 | ArchiMate semantic ID | id-b003aaadcd6059e6b6ee2c683437017a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5880,9 +6444,13 @@ Obtaining a value does not establish a temporal trend or the clinical significan
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-status-measurement |
+| canonicalId | a796bfb3335d44f6aeb9970628ed8554 |
+| displayName | [CT3] Health Status Measurement |
+| friendlyName | IndividualCareDelivery.IndividualHealthAssessment.HealthStatusMeasurement |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthAssessment.CT3-HealthStatusMeasurement |
 | Snapshot publication reference | HCM-BC-health-status-measurement |
 | ArchiMate semantic ID | id-697b75a82c515e48b6ba8de37109dc7f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5921,9 +6489,13 @@ Monitoring does not establish the clinical significance of a change or judge whe
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:individual-health-monitoring |
+| canonicalId | c7d0e498e1ad44138df940af2f91cd2d |
+| displayName | [CT2] Individual Health Monitoring |
+| friendlyName | IndividualCareDelivery.IndividualHealthMonitoring |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthMonitoring |
 | Snapshot publication reference | HCM-BC-individual-health-monitoring |
 | ArchiMate semantic ID | id-30d731a19ab6526386b64c335fe3f7fd |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -5961,9 +6533,13 @@ Identifying the response does not judge treatment effectiveness against objectiv
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:care-response-monitoring |
+| canonicalId | d6951c9357fa40a4943cde581d95d5b1 |
+| displayName | [CT3] Care Response Monitoring |
+| friendlyName | IndividualCareDelivery.IndividualHealthMonitoring.CareResponseMonitoring |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthMonitoring.CT3-CareResponseMonitoring |
 | Snapshot publication reference | HCM-BC-care-response-monitoring |
 | ArchiMate semantic ID | id-e24ada9f97a351f09911b66311963637 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -5998,9 +6574,13 @@ Aggregation is not clinical interpretation. Care Response Monitoring uses the es
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-state-monitoring |
+| canonicalId | d77f22909f8b47dba4cbd95982e576df |
+| displayName | [CT3] Health State Monitoring |
+| friendlyName | IndividualCareDelivery.IndividualHealthMonitoring.HealthStateMonitoring |
+| canonicalName | CT1-IndividualCareDelivery.CT2-IndividualHealthMonitoring.CT3-HealthStateMonitoring |
 | Snapshot publication reference | HCM-BC-health-state-monitoring |
 | ArchiMate semantic ID | id-7b61bd19dedf5e5aa7be430196c5573b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6043,9 +6623,13 @@ Governed population information and formal notifications materially support heal
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:population-health--health-system-planning |
+| canonicalId | c63b38b37e9b4e9b97dc87ed54604def |
+| displayName | [CT1] Population Health & Health-System Planning |
+| friendlyName | PopulationHealthAndHealthSystemPlanning |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning |
 | Snapshot publication reference | HCM-BC-population-health-health-system-planning |
 | ArchiMate semantic ID | id-3dc006e536ce50b3acdc8f625eccb36d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -6084,9 +6668,13 @@ Plans do not establish available resources or operational allocations. Detailed 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-system-planning |
+| canonicalId | 9ca4df07eceb4150a0190cc488270ce2 |
+| displayName | [CT2] Health-System Planning |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.HealthSystemPlanning |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-HealthSystemPlanning |
 | Snapshot publication reference | HCM-BC-health-system-planning |
 | ArchiMate semantic ID | id-b77562f343435bef95c6cadcd10e216c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6125,9 +6713,13 @@ Planned capacity is neither established resource availability nor the service's 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-capacity-planning |
+| canonicalId | c1d1db0e2c854077a41721615e86119d |
+| displayName | [CT3] Health Service Capacity Planning |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.HealthSystemPlanning.HealthServiceCapacityPlanning |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-HealthSystemPlanning.CT3-HealthServiceCapacityPlanning |
 | Snapshot publication reference | HCM-BC-health-service-capacity-planning |
 | ArchiMate semantic ID | id-d1b5e21ef6a250eebd417930385e18f9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6162,9 +6754,13 @@ System-level demand is distinct from a particular person's care requirement and 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-demand-assessment |
+| canonicalId | e56d354eafd94ff7a495fc2ca2b8a593 |
+| displayName | [CT3] Health Service Demand Assessment |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.HealthSystemPlanning.HealthServiceDemandAssessment |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-HealthSystemPlanning.CT3-HealthServiceDemandAssessment |
 | Snapshot publication reference | HCM-BC-health-service-demand-assessment |
 | ArchiMate semantic ID | id-3f079cb41bb05f1f82699c5e1feacfb7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6199,9 +6795,13 @@ A planned footprint does not establish recognised location records, identifiable
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-service-distribution-planning |
+| canonicalId | 4fc525fccbe142a58ee43dcc58b11c92 |
+| displayName | [CT3] Health Service Distribution Planning |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.HealthSystemPlanning.HealthServiceDistributionPlanning |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-HealthSystemPlanning.CT3-HealthServiceDistributionPlanning |
 | Snapshot publication reference | HCM-BC-health-service-distribution-planning |
 | ArchiMate semantic ID | id-f1cc8c768d9c5f1f87a6fb97c0e2a9b8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6240,9 +6840,13 @@ Notification management does not define the obligation or own the operational re
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:population-health-surveillance |
+| canonicalId | 83e568fa8af14d7791a7253765ea390f |
+| displayName | [CT2] Population Health Surveillance |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.PopulationHealthSurveillance |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-PopulationHealthSurveillance |
 | Snapshot publication reference | HCM-BC-population-health-surveillance |
 | ArchiMate semantic ID | id-e30b9d5e5fa9522681e1b22c1d6ebcab |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6283,9 +6887,13 @@ Notification management does not define the governing obligation or own the oper
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:notifiable-health-event-management |
+| canonicalId | e605436254ed4dad819f452448e054a1 |
+| displayName | [CT3] Notifiable Health Event Management |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.PopulationHealthSurveillance.NotifiableHealthEventManagement |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-PopulationHealthSurveillance.CT3-NotifiableHealthEventManagement |
 | Snapshot publication reference | HCM-BC-notifiable-health-event-management |
 | ArchiMate semantic ID | id-d43ba8c16bb956f2a856c80fed59e5c5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6320,9 +6928,13 @@ An identified event is not automatically notifiable, and notifiability does not 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:population-health-event-identification |
+| canonicalId | e084ba370bb545d0a4c28c37e2e8e850 |
+| displayName | [CT3] Population Health Event Identification |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.PopulationHealthSurveillance.PopulationHealthEventIdentification |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-PopulationHealthSurveillance.CT3-PopulationHealthEventIdentification |
 | Snapshot publication reference | HCM-BC-population-health-event-identification |
 | ArchiMate semantic ID | id-62f15df98fda5574a39e62b40dea0e22 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6357,9 +6969,13 @@ Population assessment is not preventative-programme performance, an individual h
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:population-health-longitudinal-assessment |
+| canonicalId | 4d52b8acda504329a595be27a736e63c |
+| displayName | [CT3] Population Health Longitudinal Assessment |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.PopulationHealthSurveillance.PopulationHealthLongitudinalAssessment |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-PopulationHealthSurveillance.CT3-PopulationHealthLongitudinalAssessment |
 | Snapshot publication reference | HCM-BC-population-health-longitudinal-assessment |
 | ArchiMate semantic ID | id-e9a47db12b015e619c1e4718be7fc8df |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6394,9 +7010,13 @@ General reporting is distinct from formal notification management and does not e
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:population-health-reporting |
+| canonicalId | 50b8b0884f8444c4b11d9e0f7a7754a3 |
+| displayName | [CT3] Population Health Reporting |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.PopulationHealthSurveillance.PopulationHealthReporting |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-PopulationHealthSurveillance.CT3-PopulationHealthReporting |
 | Snapshot publication reference | HCM-BC-population-health-reporting |
 | ArchiMate semantic ID | id-9c26415a3cfa59b9ae69b8d20d381651 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6431,9 +7051,13 @@ Managing surveillance neither identifies every significant event nor determines 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:population-health-surveillance-management |
+| canonicalId | f0791768ef494e619006ee0d89d0d9d8 |
+| displayName | [CT3] Population Health Surveillance Management |
+| friendlyName | PopulationHealthAndHealthSystemPlanning.PopulationHealthSurveillance.PopulationHealthSurveillanceManagement |
+| canonicalName | CT1-PopulationHealthAndHealthSystemPlanning.CT2-PopulationHealthSurveillance.CT3-PopulationHealthSurveillanceManagement |
 | Snapshot publication reference | HCM-BC-population-health-surveillance-management |
 | ArchiMate semantic ID | id-d3163fc8744d5fd7adaa99e77c9e8424 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6476,9 +7100,13 @@ Security and governance are intrinsic to Harmonia-managed operations. The Core c
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:security-privacy--digital-trust |
+| canonicalId | 71f0431fdfcd4f779e16d9e5ea609833 |
+| displayName | [CT1] Security, Privacy & Digital Trust |
+| friendlyName | SecurityPrivacyAndDigitalTrust |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust |
 | Snapshot publication reference | HCM-BC-security-privacy-digital-trust |
 | ArchiMate semantic ID | id-c0d03ba4c03c57d9bd03b36ec9a15f61 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -6518,9 +7146,13 @@ Authentication, attribution and authorisation must remain distinguishable. Expec
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:digital-accountability--trust |
+| canonicalId | 9a600233ae1f4f3289c09a0b08ce029d |
+| displayName | [CT2] Digital Accountability & Trust |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalAccountabilityAndTrust |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalAccountabilityAndTrust |
 | Snapshot publication reference | HCM-BC-digital-accountability-trust |
 | ArchiMate semantic ID | id-53b97ecf9a185c309bf2f6fadd74e527 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6558,9 +7190,13 @@ Attributing an action to a person or role does not establish that the action was
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:governed-activity-attribution |
+| canonicalId | 646b3fd80a8b4f269691db7942e0f809 |
+| displayName | [CT3] Governed Activity Attribution |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalAccountabilityAndTrust.GovernedActivityAttribution |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalAccountabilityAndTrust.CT3-GovernedActivityAttribution |
 | Snapshot publication reference | HCM-BC-governed-activity-attribution |
 | ArchiMate semantic ID | id-d065c2e07dad59eca48c9e60169c0b27 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6595,9 +7231,13 @@ An authenticated actor and a successful operation are not proof of legitimate in
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:security--information-use-accountability |
+| canonicalId | a33d0cc14c384bd48012def4ded54a67 |
+| displayName | [CT3] Security & Information-Use Accountability |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalAccountabilityAndTrust.SecurityAndInformationUseAccountability |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalAccountabilityAndTrust.CT3-SecurityAndInformationUseAccountability |
 | Snapshot publication reference | HCM-BC-security-information-use-accountability |
 | ArchiMate semantic ID | id-8e1cc85a4269529bb99d74f1f6ebe1cf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6636,9 +7276,13 @@ Federation or Single Sign-On does not guarantee identity quality. Enforcement sp
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:digital-identity--access-governance |
+| canonicalId | b9cb3666f9134ba29eb896e67eba7250 |
+| displayName | [CT2] Digital Identity & Access Governance |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance |
 | Snapshot publication reference | HCM-BC-digital-identity-access-governance |
 | ArchiMate semantic ID | id-3f3f1816206a57ceaccc2a3b8e6d126b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -6682,9 +7326,13 @@ Subject-specific access-control assurance does not create another macro-level He
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:access-control-assurance--reporting |
+| canonicalId | ba0bf23c2b5b4de1bdfbc5df90f57a2f |
+| displayName | [CT3] Access Control Assurance & Reporting |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.AccessControlAssuranceAndReporting |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-AccessControlAssuranceAndReporting |
 | Snapshot publication reference | HCM-BC-access-control-assurance-reporting |
 | ArchiMate semantic ID | id-de17cc6571dc50e688259ca76c68c889 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6719,9 +7367,13 @@ Coordination does not transfer the parties' control ownership or guarantee ident
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:access-control-collaboration |
+| canonicalId | c1a39b83d27a4a148f997c0a709e82ac |
+| displayName | [CT3] Access Control Collaboration |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.AccessControlCollaboration |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-AccessControlCollaboration |
 | Snapshot publication reference | HCM-BC-access-control-collaboration |
 | ArchiMate semantic ID | id-8cdf0ba785ed5e63b1330b61fb25a7c2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6756,9 +7408,13 @@ Defining control context does not itself enforce the controls or establish that 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:access-control-context-management |
+| canonicalId | a51f7a8045d24d0f982320025ba3a6ae |
+| displayName | [CT3] Access Control Context Management |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.AccessControlContextManagement |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-AccessControlContextManagement |
 | Snapshot publication reference | HCM-BC-access-control-context-management |
 | ArchiMate semantic ID | id-ee4c4efdc81e5e7e99fb2d2d72895339 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6793,9 +7449,13 @@ A local software authorisation result alone does not establish coherent end-to-e
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:access-control-enforcement |
+| canonicalId | b72a7b3fb7384870a9790b04d3c9e94a |
+| displayName | [CT3] Access Control Enforcement |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.AccessControlEnforcement |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-AccessControlEnforcement |
 | Snapshot publication reference | HCM-BC-access-control-enforcement |
 | ArchiMate semantic ID | id-03315366be1a58acbacd027ab32bf8bf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6830,9 +7490,13 @@ An assured identity is not automatically sufficient for every context or permitt
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:identity-assurance |
+| canonicalId | 56ccd6d3bf5b4ec980a333dfadf8d9fa |
+| displayName | [CT3] Identity Assurance |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.IdentityAssurance |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-IdentityAssurance |
 | Snapshot publication reference | HCM-BC-identity-assurance |
 | ArchiMate semantic ID | id-a5df034d251455f0aba1de9817628801 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6867,9 +7531,13 @@ Authentication neither establishes every required identity-quality condition nor
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:identity-identification--authentication |
+| canonicalId | ba4ad62548984d63ad75da3561566431 |
+| displayName | [CT3] Identity Identification & Authentication |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.IdentityIdentificationAndAuthentication |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-IdentityIdentificationAndAuthentication |
 | Snapshot publication reference | HCM-BC-identity-identification-authentication |
 | ArchiMate semantic ID | id-b85ddc19dd4f5d808a7c7c0343f7ad86 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6904,9 +7572,13 @@ Interoperability does not guarantee assurance quality or transfer each party's c
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:identity-modelling--interoperability |
+| canonicalId | c40a00b0fe56405d99b6bb6ede72e18e |
+| displayName | [CT3] Identity Modelling & Interoperability |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.IdentityModellingAndInteroperability |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-IdentityModellingAndInteroperability |
 | Snapshot publication reference | HCM-BC-identity-modelling-interoperability |
 | ArchiMate semantic ID | id-d58022670433565e85886b12893bd691 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6941,9 +7613,13 @@ Identity qualification does not establish practitioner clinical qualification or
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:identity-qualification-control |
+| canonicalId | 3d53064f2fb7475b8f49fb58ec8ad4a5 |
+| displayName | [CT3] Identity Qualification Control |
+| friendlyName | SecurityPrivacyAndDigitalTrust.DigitalIdentityAndAccessGovernance.IdentityQualificationControl |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-IdentityQualificationControl |
 | Snapshot publication reference | HCM-BC-identity-qualification-control |
 | ArchiMate semantic ID | id-c0a2dee48aae56eaaf4266358083da80 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -6982,9 +7658,13 @@ Compartment assurance does not decide access. Subject-specific protection assura
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-protection |
+| canonicalId | 4ae0de8fa16840d09ab2ef3f5545a5e7 |
+| displayName | [CT2] Health Information Protection |
+| friendlyName | SecurityPrivacyAndDigitalTrust.HealthInformationProtection |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-HealthInformationProtection |
 | Snapshot publication reference | HCM-BC-health-information-protection |
 | ArchiMate semantic ID | id-c9d1ebe2bd675841a70e6e3c1bb5a1d7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7025,9 +7705,13 @@ Evidence supply does not transfer business accountability, and observation is no
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-access-monitoring |
+| canonicalId | 01854c7311404bbf9f698fce4656b54d |
+| displayName | [CT3] Health Information Access Monitoring |
+| friendlyName | SecurityPrivacyAndDigitalTrust.HealthInformationProtection.HealthInformationAccessMonitoring |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-HealthInformationProtection.CT3-HealthInformationAccessMonitoring |
 | Snapshot publication reference | HCM-BC-health-information-access-monitoring |
 | ArchiMate semantic ID | id-08d64c8f005f5276b8bc96386f66dd19 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7062,9 +7746,13 @@ Classification assurance does not define compartment membership or grant permiss
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-classification-assurance |
+| canonicalId | 4a4a871081bf45829eab2a93c9d1c21f |
+| displayName | [CT3] Health Information Classification Assurance |
+| friendlyName | SecurityPrivacyAndDigitalTrust.HealthInformationProtection.HealthInformationClassificationAssurance |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-HealthInformationProtection.CT3-HealthInformationClassificationAssurance |
 | Snapshot publication reference | HCM-BC-health-information-classification-assurance |
 | ArchiMate semantic ID | id-98514bc9e1a85cc6a7cd787246610874 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7099,9 +7787,13 @@ Assuring compartmentalisation does not establish access decisions or sensitivity
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-compartment-assurance |
+| canonicalId | be47d201de1a45a88f48234d69deb2eb |
+| displayName | [CT3] Health Information Compartment Assurance |
+| friendlyName | SecurityPrivacyAndDigitalTrust.HealthInformationProtection.HealthInformationCompartmentAssurance |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-HealthInformationProtection.CT3-HealthInformationCompartmentAssurance |
 | Snapshot publication reference | HCM-BC-health-information-compartment-assurance |
 | ArchiMate semantic ID | id-58ef3273bf3d5fecbfe098646bcdff4a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7136,9 +7828,13 @@ Estate protection remains distinct from evaluating privacy consequences and from
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-safeguarding |
+| canonicalId | 6e89db75de5b4c4c9274f78c8d9e665a |
+| displayName | [CT3] Health Information Safeguarding |
+| friendlyName | SecurityPrivacyAndDigitalTrust.HealthInformationProtection.HealthInformationSafeguarding |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-HealthInformationProtection.CT3-HealthInformationSafeguarding |
 | Snapshot publication reference | HCM-BC-health-information-safeguarding |
 | ArchiMate semantic ID | id-c53bfdd40a525de3adf5de52aa2b4adc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7173,9 +7869,13 @@ Privacy safeguards do not replace broader estate resilience, access decisions or
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-privacy-safeguard-management |
+| canonicalId | 089cd8744ed6410388daeff463507fc1 |
+| displayName | [CT3] Health Privacy Safeguard Management |
+| friendlyName | SecurityPrivacyAndDigitalTrust.HealthInformationProtection.HealthPrivacySafeguardManagement |
+| canonicalName | CT1-SecurityPrivacyAndDigitalTrust.CT2-HealthInformationProtection.CT3-HealthPrivacySafeguardManagement |
 | Snapshot publication reference | HCM-BC-health-privacy-safeguard-management |
 | ArchiMate semantic ID | id-1068c50d6b1e5f39954ada6935bea433 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7218,9 +7918,13 @@ Semantic and conformance governance is a substantive platform responsibility. It
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:standards-semantics--reference-governance |
+| canonicalId | 5ffeb7401d314f06b05d79c3aff98242 |
+| displayName | [CT1] Standards, Semantics & Reference Governance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance |
 | Snapshot publication reference | HCM-BC-standards-semantics-reference-governance |
 | ArchiMate semantic ID | id-fda046325ae0544ea6b6f2ecc18643eb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -7259,9 +7963,13 @@ Compartmentalisation concerns contextual relationships rather than classificatio
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:clinical-semantics-governance |
+| canonicalId | 5cc8319e1dde4c818cc248a47233b67b |
+| displayName | [CT2] Clinical Semantics Governance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance |
 | Snapshot publication reference | HCM-BC-clinical-semantics-governance |
 | ArchiMate semantic ID | id-df9ca2c4f85051b982eb433a6dae6f4b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7303,9 +8011,13 @@ Classification is orthogonal to contextual compartment membership and does not b
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:classification-governance |
+| canonicalId | 4520ce37454e4de68580d75fdb08efe6 |
+| displayName | [CT3] Classification Governance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance.ClassificationGovernance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance.CT3-ClassificationGovernance |
 | Snapshot publication reference | HCM-BC-classification-governance |
 | ArchiMate semantic ID | id-941e7bf5a59d53f38732a2dcbab6f79e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7340,9 +8052,13 @@ Oversight neither creates classification definitions nor establishes a new local
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:classification-utilisation-oversight |
+| canonicalId | 1d7c50aa80464613864dd6efb3fb56cc |
+| displayName | [CT3] Classification Utilisation Oversight |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance.ClassificationUtilisationOversight |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance.CT3-ClassificationUtilisationOversight |
 | Snapshot publication reference | HCM-BC-classification-utilisation-oversight |
 | ArchiMate semantic ID | id-0d82b50617d05608ba73f130916a07c3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7377,9 +8093,13 @@ A mapping does not erase source distinctions or give a consuming system authorit
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:semantic-mapping-governance |
+| canonicalId | 17dc6ab9f4394049a5327415d19628f2 |
+| displayName | [CT3] Semantic Mapping Governance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance.SemanticMappingGovernance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance.CT3-SemanticMappingGovernance |
 | Snapshot publication reference | HCM-BC-semantic-mapping-governance |
 | ArchiMate semantic ID | id-570b32e283fd550887828703316f6fb9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7414,9 +8134,13 @@ Governing terminology differs from binding a structure to it or overseeing its a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:terminology-governance |
+| canonicalId | e926a47881fa482088859f59fa6fe7e4 |
+| displayName | [CT3] Terminology Governance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance.TerminologyGovernance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance.CT3-TerminologyGovernance |
 | Snapshot publication reference | HCM-BC-terminology-governance |
 | ArchiMate semantic ID | id-3eb94251dfaa56ca8f5d1988bec36b1c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7451,9 +8175,13 @@ The established localisation responsibility concerns terminology; no correspondi
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:terminology-localisation |
+| canonicalId | 3aa80e1d84ea4e009b149c4f9a23f0f8 |
+| displayName | [CT3] Terminology Localisation |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance.TerminologyLocalisation |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance.CT3-TerminologyLocalisation |
 | Snapshot publication reference | HCM-BC-terminology-localisation |
 | ArchiMate semantic ID | id-4ac46da5b1d157f5b20e48a42e1bed53 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7488,9 +8216,13 @@ Use oversight does not redefine terminology or automatically authorise a local s
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:terminology-utilisation-oversight |
+| canonicalId | 4ca436cd90b745daa290b067c57a0450 |
+| displayName | [CT3] Terminology Utilisation Oversight |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.ClinicalSemanticsGovernance.TerminologyUtilisationOversight |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-ClinicalSemanticsGovernance.CT3-TerminologyUtilisationOversight |
 | Snapshot publication reference | HCM-BC-terminology-utilisation-oversight |
 | ArchiMate semantic ID | id-b6de79dfa55b538c93287ca1a74034ac |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7529,9 +8261,13 @@ Oversight evaluates governance without performing every peer activity. Adoption 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-information-standards-governance |
+| canonicalId | b228039d8e764f9b98cb810b68af329d |
+| displayName | [CT2] Health Information Standards Governance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance |
 | Snapshot publication reference | HCM-BC-health-information-standards-governance |
 | ArchiMate semantic ID | id-1063c969a10f5c0fa332b192aae77a77 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7574,9 +8310,13 @@ Adoption does not perform every education, compliance or governance-oversight re
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:information-model-adoption |
+| canonicalId | 0c3ce0778d6342b6b100e1e30e777fbe |
+| displayName | [CT3] Information Model Adoption |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.InformationModelAdoption |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-InformationModelAdoption |
 | Snapshot publication reference | HCM-BC-information-model-adoption |
 | ArchiMate semantic ID | id-d80607019cdb5e819abe227279c0f20e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7611,9 +8351,13 @@ Conformity does not redefine the model or absorb governance oversight of the wid
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:information-model-compliance |
+| canonicalId | 160db14dbe5149db91223a93f6ee9102 |
+| displayName | [CT3] Information Model Compliance |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.InformationModelCompliance |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-InformationModelCompliance |
 | Snapshot publication reference | HCM-BC-information-model-compliance |
 | ArchiMate semantic ID | id-c0e0f14c28af58bd82aabe9069cff26c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7648,9 +8392,13 @@ Discovery does not adopt a model, establish compliance or grant it organisationa
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:information-model-discovery |
+| canonicalId | f33dc5b8ba9643329bb7b9431e1f9a6f |
+| displayName | [CT3] Information Model Discovery |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.InformationModelDiscovery |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-InformationModelDiscovery |
 | Snapshot publication reference | HCM-BC-information-model-discovery |
 | ArchiMate semantic ID | id-4d9ce431849e5c9ea87fc5e7798bba22 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7685,9 +8433,13 @@ Educational support neither changes the authoritative model nor establishes that
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:information-model-education |
+| canonicalId | 7dcb6427f9134fb7a4a63a5ec1d5c85b |
+| displayName | [CT3] Information Model Education |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.InformationModelEducation |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-InformationModelEducation |
 | Snapshot publication reference | HCM-BC-information-model-education |
 | ArchiMate semantic ID | id-9ecbd74dbb335bd494a718d1402fd973 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7722,9 +8474,13 @@ Oversight does not itself perform discovery, adoption, education or compliance a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:information-model-governance-oversight |
+| canonicalId | 1e71b707beab450f9cbfaf0bf88b6ec4 |
+| displayName | [CT3] Information Model Governance Oversight |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.InformationModelGovernanceOversight |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-InformationModelGovernanceOversight |
 | Snapshot publication reference | HCM-BC-information-model-governance-oversight |
 | ArchiMate semantic ID | id-3ecc7c53a2e95a11a3efe3ff59ff50e4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7759,9 +8515,13 @@ Adoption does not establish a complete standards lifecycle taxonomy or perform t
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:standards-adoption |
+| canonicalId | 0d59f956f5714d3985398f09aeb7c541 |
+| displayName | [CT3] Standards Adoption |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.StandardsAdoption |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-StandardsAdoption |
 | Snapshot publication reference | HCM-BC-standards-adoption |
 | ArchiMate semantic ID | id-edd55a066905575992dc0c06fd79de80 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7796,9 +8556,13 @@ Identifying an impact neither adopts the standard nor acquires the operational a
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:standards-impact-identification |
+| canonicalId | 6b9c96c7d9174e7fbfd11267673d42f3 |
+| displayName | [CT3] Standards Impact Identification |
+| friendlyName | StandardsSemanticsAndReferenceGovernance.HealthInformationStandardsGovernance.StandardsImpactIdentification |
+| canonicalName | CT1-StandardsSemanticsAndReferenceGovernance.CT2-HealthInformationStandardsGovernance.CT3-StandardsImpactIdentification |
 | Snapshot publication reference | HCM-BC-standards-impact-identification |
 | ArchiMate semantic ID | id-9e57b7abee445a809059938014ef98aa |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7841,9 +8605,13 @@ These facts materially constrain care enablement, routing and operational contex
 | Field | Value |
 | --- | --- |
 | Source capture key | capability:workforce--organisational-capability |
+| canonicalId | 631b43664bfb4c50ac8cf4958b2c347d |
+| displayName | [CT1] Workforce & Organisational Capability |
+| friendlyName | WorkforceAndOrganisationalCapability |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability |
 | Snapshot publication reference | HCM-BC-workforce-organisational-capability |
 | ArchiMate semantic ID | id-a689bff5b2065570ba3d6a9d18f2aaf5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT1 |
 | Architectural standing | Canonical |
@@ -7882,9 +8650,13 @@ Coverage is broader than rostering. Applying an available resource to a care req
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:health-workforce-management |
+| canonicalId | 7ec329cdc070472eb68966345d82031a |
+| displayName | [CT2] Health Workforce Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthWorkforceManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthWorkforceManagement |
 | Snapshot publication reference | HCM-BC-health-workforce-management |
 | ArchiMate semantic ID | id-1e1cfa1c48e35db38def767e986ea56e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -7923,9 +8695,13 @@ Representation or consumption of privilege information does not transfer the und
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:practitioner-engagement--privilege-management |
+| canonicalId | 36d5bf4c19d34172b72f4b77099ff235 |
+| displayName | [CT3] Practitioner Engagement & Privilege Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthWorkforceManagement.PractitionerEngagementAndPrivilegeManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthWorkforceManagement.CT3-PractitionerEngagementAndPrivilegeManagement |
 | Snapshot publication reference | HCM-BC-practitioner-engagement-privilege-management |
 | ArchiMate semantic ID | id-6939d843cca65044b94dbd9e33db979f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7960,9 +8736,13 @@ Qualification alone does not establish engagement, clinical privilege, device-sp
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:practitioner-qualification-management |
+| canonicalId | 279bab5de1b74c17a5ee2db5cae8d385 |
+| displayName | [CT3] Practitioner Qualification Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthWorkforceManagement.PractitionerQualificationManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthWorkforceManagement.CT3-PractitionerQualificationManagement |
 | Snapshot publication reference | HCM-BC-practitioner-qualification-management |
 | ArchiMate semantic ID | id-14aceb46b4575c24937a9500d6ea9492 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -7997,9 +8777,13 @@ Coverage management is not individual support-work progression or automatic auth
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:workforce-service-coverage-management |
+| canonicalId | cfb04e13895745619171a3e8f15d349c |
+| displayName | [CT3] Workforce Service Coverage Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthWorkforceManagement.WorkforceServiceCoverageManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthWorkforceManagement.CT3-WorkforceServiceCoverageManagement |
 | Snapshot publication reference | HCM-BC-workforce-service-coverage-management |
 | ArchiMate semantic ID | id-74d8c7e477725fdfbf88fada3bbf80d1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -8038,9 +8822,13 @@ Location definition is not facilities operation. Offering availability does not 
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:healthcare-organisation--service-structure-management |
+| canonicalId | de8c1b408c774e59899662495f4d6ced |
+| displayName | [CT2] Healthcare Organisation & Service Structure Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthcareOrganisationAndServiceStructureManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthcareOrganisationAndServiceStructureManagement |
 | Snapshot publication reference | HCM-BC-healthcare-organisation-service-structure-management |
 | ArchiMate semantic ID | id-3f8f2e7a1e035b48b5d384db99054cce |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -8079,9 +8867,13 @@ Location definition is not facilities operation, care-place readiness or service
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:healthcare-location-definition-management |
+| canonicalId | d77a5c8f1818465c98125acc4bc2ac81 |
+| displayName | [CT3] Healthcare Location Definition Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthcareOrganisationAndServiceStructureManagement.HealthcareLocationDefinitionManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthcareOrganisationAndServiceStructureManagement.CT3-HealthcareLocationDefinitionManagement |
 | Snapshot publication reference | HCM-BC-healthcare-location-definition-management |
 | ArchiMate semantic ID | id-c202cbbd5a9a5759bcd79a6c933da7a2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -8116,9 +8908,13 @@ Organisation identity does not substitute for location, practitioner or material
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:healthcare-organisation-identity--structure-management |
+| canonicalId | 4684348b4d144e61aa7dd203facfebdd |
+| displayName | [CT3] Healthcare Organisation Identity & Structure Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthcareOrganisationAndServiceStructureManagement.HealthcareOrganisationIdentityAndStructureManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthcareOrganisationAndServiceStructureManagement.CT3-HealthcareOrganisationIdentityAndStructureManagement |
 | Snapshot publication reference | HCM-BC-healthcare-organisation-identity-structure-management |
 | ArchiMate semantic ID | id-27d9f6f7925550e4974fd5cc00a6a523 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |
@@ -8153,9 +8949,13 @@ An available offering does not establish collective readiness to deliver it; org
 | Field | Value |
 | --- | --- |
 | Source capture key | business-capability:healthcare-service-offering-management |
+| canonicalId | 9fe177e4422b4853acb1dd0d0b74c4ba |
+| displayName | [CT3] Healthcare Service Offering Management |
+| friendlyName | WorkforceAndOrganisationalCapability.HealthcareOrganisationAndServiceStructureManagement.HealthcareServiceOfferingManagement |
+| canonicalName | CT1-WorkforceAndOrganisationalCapability.CT2-HealthcareOrganisationAndServiceStructureManagement.CT3-HealthcareServiceOfferingManagement |
 | Snapshot publication reference | HCM-BC-healthcare-service-offering-management |
 | ArchiMate semantic ID | id-02ef028b3b425b1c82aea9f84d2b6631 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | capability |
 | Tier/classification | CT3 |
 | Architectural standing | Canonical |

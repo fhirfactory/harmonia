@@ -58,9 +58,13 @@ Exchange is not execution, notification is not outcome, and interaction is not c
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-coordinated-activity-interaction |
+| canonicalId | 5187c3db390e444db3eb809c02a2f1c1 |
+| displayName | [CT1] Coordinated Activity & Interaction |
+| friendlyName | CoordinatedActivityAndInteraction |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction |
 | Snapshot publication reference | HCM-EC-coordinated-activity-interaction |
 | ArchiMate semantic ID | id-6d2882efaa7756e886bb64a9ca045885 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -102,9 +106,13 @@ Coordination does not confer clinical work allocation or judgement. The capabili
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-10 |
+| canonicalId | e5ff80e655084524a8dcee8e4ded788a |
+| displayName | [CT2] Activity & Execution |
+| friendlyName | CoordinatedActivityAndInteraction.ActivityAndExecution |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-ActivityAndExecution |
 | Snapshot publication reference | EC-10 |
 | ArchiMate semantic ID | id-49d4f69ebeeb5ea782a52172fb3e8a7b |
-| Architecture Identity | EC-10 |
+| Legacy identity evidence | EC-10 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -149,9 +157,13 @@ Interest fan-out is distinct from intra-entity concurrency; entity progression d
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-entity-relative-operational-progression |
+| canonicalId | 69c82474fb534152b151c92f706197d0 |
+| displayName | [CT3] Entity-Relative Operational Progression |
+| friendlyName | CoordinatedActivityAndInteraction.ActivityAndExecution.EntityRelativeOperationalProgression |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-ActivityAndExecution.CT3-EC-EntityRelativeOperationalProgression |
 | Snapshot publication reference | HCM-EC-entity-relative-operational-progression |
 | ArchiMate semantic ID | id-873bd8a6758955b996c204275d26ed4f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -190,9 +202,13 @@ Does not own underlying clinical-work meaning, clinical decisions or originator 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-governed-activity-execution-control |
+| canonicalId | 1e351cdfdc1045e384c3bd768eed8e80 |
+| displayName | [CT3] Governed Activity Execution Control |
+| friendlyName | CoordinatedActivityAndInteraction.ActivityAndExecution.GovernedActivityExecutionControl |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-ActivityAndExecution.CT3-EC-GovernedActivityExecutionControl |
 | Snapshot publication reference | HCM-EC-governed-activity-execution-control |
 | ArchiMate semantic ID | id-dfb644fa99745553bf0ff980faf30c6d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -231,9 +247,13 @@ A fulfilment definition does not execute, orchestrate or choreograph its activit
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-operational-fulfilment-definition |
+| canonicalId | 2b52c0de17b146da962f303e99f90a4a |
+| displayName | [CT3] Operational Fulfilment Definition |
+| friendlyName | CoordinatedActivityAndInteraction.ActivityAndExecution.OperationalFulfilmentDefinition |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-ActivityAndExecution.CT3-EC-OperationalFulfilmentDefinition |
 | Snapshot publication reference | HCM-EC-operational-fulfilment-definition |
 | ArchiMate semantic ID | id-d066b2ac060b5d0fa4429dde7b2c73c2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -272,9 +292,13 @@ Receiving a notification does not determine the consumer's business response; to
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-09 |
+| canonicalId | b768b129971e4bf5bccc03d33d2fcb4e |
+| displayName | [CT2] Event & Subscription |
+| friendlyName | CoordinatedActivityAndInteraction.EventAndSubscription |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-EventAndSubscription |
 | Snapshot publication reference | EC-09 |
 | ArchiMate semantic ID | id-770ebb3e3bdc5f2bbe77b2bfd55bd74d |
-| Architecture Identity | EC-09 |
+| Legacy identity evidence | EC-09 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -315,9 +339,13 @@ Presentation does not own consent, authentication or clinical truth, and collabo
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-11 |
+| canonicalId | 4ec9757b1c6947b4b70b0f1159b760d3 |
+| displayName | [CT2] Interaction & Experience |
+| friendlyName | CoordinatedActivityAndInteraction.InteractionAndExperience |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-InteractionAndExperience |
 | Snapshot publication reference | EC-11 |
 | ArchiMate semantic ID | id-82cd1f6a3e2352639e22c542f5cb3a9d |
-| Architecture Identity | EC-11 |
+| Legacy identity evidence | EC-11 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -358,9 +386,13 @@ Egress ends Harmonia management of the emitted representation. Retained delivery
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-08 |
+| canonicalId | 0f2e5222874949d8b0cce234941ecb20 |
+| displayName | [CT2] Interoperability & Exchange |
+| friendlyName | CoordinatedActivityAndInteraction.InteroperabilityAndExchange |
+| canonicalName | CT1-EC-CoordinatedActivityAndInteraction.CT2-EC-InteroperabilityAndExchange |
 | Snapshot publication reference | EC-08 |
 | ArchiMate semantic ID | id-dbd66e69788450649e184966aa724797 |
-| Architecture Identity | EC-08 |
+| Legacy identity evidence | EC-08 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -401,9 +433,13 @@ Information management and semantic governance do not grant originating domain a
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-governed-information-operations |
+| canonicalId | 15e57021490c4e738aee9009ff84a7c3 |
+| displayName | [CT1] Governed Information Operations |
+| friendlyName | GovernedInformationOperations |
+| canonicalName | CT1-EC-GovernedInformationOperations |
 | Snapshot publication reference | HCM-EC-governed-information-operations |
 | ArchiMate semantic ID | id-a0eebbba1ce35b2ea9bf499d3ea6b4c2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -447,9 +483,13 @@ Context participation does not transfer semantic ownership. Generic context mana
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-02 |
+| canonicalId | 3cfd3e56c23a4943bd1b476ec248ac49 |
+| displayName | [CT2] Context Management |
+| friendlyName | GovernedInformationOperations.ContextManagement |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-ContextManagement |
 | Snapshot publication reference | EC-02 |
 | ArchiMate semantic ID | id-06e038737c5355edbc0591e08c594ab0 |
-| Architecture Identity | EC-02 |
+| Legacy identity evidence | EC-02 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -490,9 +530,13 @@ Engine capabilities provide machinery under Harmonia semantics. Persistence succ
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-04 |
+| canonicalId | 43051efd406b4040bff8e794b7a631e0 |
+| displayName | [CT2] Information Management |
+| friendlyName | GovernedInformationOperations.InformationManagement |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-InformationManagement |
 | Snapshot publication reference | EC-04 |
 | ArchiMate semantic ID | id-9e79bc474aed516c8c6752ab81b63d6b |
-| Architecture Identity | EC-04 |
+| Legacy identity evidence | EC-04 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -537,9 +581,13 @@ An active generation is not an authoritative version; failure to converge does n
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-active-information-availability |
+| canonicalId | bb711f4d8fb74af2917869b9b05f7f84 |
+| displayName | [CT3] Active Information Availability |
+| friendlyName | GovernedInformationOperations.InformationManagement.ActiveInformationAvailability |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-InformationManagement.CT3-EC-ActiveInformationAvailability |
 | Snapshot publication reference | HCM-EC-active-information-availability |
 | ArchiMate semantic ID | id-50306e15812e5ba3aa26482f2c9c84ac |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -578,9 +626,13 @@ Commit is distinct from semantic source authority and from successful active con
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-authoritative-durable-state-establishment |
+| canonicalId | 0d5bd68ff50f410aaceed05377e1a4df |
+| displayName | [CT3] Authoritative Durable State Establishment |
+| friendlyName | GovernedInformationOperations.InformationManagement.AuthoritativeDurableStateEstablishment |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-InformationManagement.CT3-EC-AuthoritativeDurableStateEstablishment |
 | Snapshot publication reference | HCM-EC-authoritative-durable-state-establishment |
 | ArchiMate semantic ID | id-591ee54ab6145bf58e837667f64a4265 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -619,9 +671,13 @@ No universal binary custody, storage topology or persistence authority is implie
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-binary-content-association-resolution |
+| canonicalId | 5314959509dc4b558711ec169ddee5a0 |
+| displayName | [CT3] Binary Content Association & Resolution |
+| friendlyName | GovernedInformationOperations.InformationManagement.BinaryContentAssociationAndResolution |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-InformationManagement.CT3-EC-BinaryContentAssociationAndResolution |
 | Snapshot publication reference | HCM-EC-binary-content-association-resolution |
 | ArchiMate semantic ID | id-08ef90abe8f35705add6ae823077cc76 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -660,9 +716,13 @@ Relationship integrity is not a physical database design. Correlating entities d
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-01 |
+| canonicalId | 910634fb1621416c818a022ab0b5d3a1 |
+| displayName | [CT2] Managed Entity & Relationship |
+| friendlyName | GovernedInformationOperations.ManagedEntityAndRelationship |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-ManagedEntityAndRelationship |
 | Snapshot publication reference | EC-01 |
 | ArchiMate semantic ID | id-d53727d908365757a293b0896b2c769b |
-| Architecture Identity | EC-01 |
+| Legacy identity evidence | EC-01 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -703,9 +763,13 @@ Business lifecycle integrity does not prescribe locks, database isolation or wor
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-03 |
+| canonicalId | 6296abeee5074b9e80f21aea3a297e42 |
+| displayName | [CT2] Managed State & Lifecycle |
+| friendlyName | GovernedInformationOperations.ManagedStateAndLifecycle |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-ManagedStateAndLifecycle |
 | Snapshot publication reference | EC-03 |
 | ArchiMate semantic ID | id-5891936941f65d20afad86b0697879c7 |
-| Architecture Identity | EC-03 |
+| Legacy identity evidence | EC-03 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -746,9 +810,13 @@ Discovery does not decide policy or prescribe a search engine, index format or q
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-05 |
+| canonicalId | 6a45701634f04b43919d9152a61e5f2e |
+| displayName | [CT2] Search & Discovery |
+| friendlyName | GovernedInformationOperations.SearchAndDiscovery |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-SearchAndDiscovery |
 | Snapshot publication reference | EC-05 |
 | ArchiMate semantic ID | id-e11f02764fe55ff29c0782db21198040 |
-| Architecture Identity | EC-05 |
+| Legacy identity evidence | EC-05 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -789,9 +857,13 @@ Conformance does not establish clinical truth, information authority or disclosu
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-13 |
+| canonicalId | 9ee41437bd4c4bd18389f05c12108f97 |
+| displayName | [CT2] Semantic Governance & Conformance |
+| friendlyName | GovernedInformationOperations.SemanticGovernanceAndConformance |
+| canonicalName | CT1-EC-GovernedInformationOperations.CT2-EC-SemanticGovernanceAndConformance |
 | Snapshot publication reference | EC-13 |
 | ArchiMate semantic ID | id-7d6f635ffb6f5c6181bde1d07b859662 |
-| Architecture Identity | EC-13 |
+| Legacy identity evidence | EC-13 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -832,9 +904,13 @@ Cross-cutting participation does not distribute semantic ownership, mandate cent
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-trust-accountability-assurance |
+| canonicalId | 321de197612f49089d8b4a4cc1a2e003 |
+| displayName | [CT1] Trust, Accountability & Assurance |
+| friendlyName | TrustAccountabilityAndAssurance |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance |
 | Snapshot publication reference | HCM-EC-trust-accountability-assurance |
 | ArchiMate semantic ID | id-9c7d1cf0966a5d1bb0c17707051a793e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT1 |
 | Architectural standing | Proposed |
@@ -877,9 +953,13 @@ This is not independent service assurance, a universal conflict arbiter or clini
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-information-authority-qualification |
+| canonicalId | cbba9984dd404deabed41fdcc96088b1 |
+| displayName | [CT2] Information Authority Qualification |
+| friendlyName | TrustAccountabilityAndAssurance.InformationAuthorityQualification |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-InformationAuthorityQualification |
 | Snapshot publication reference | HCM-EC-information-authority-qualification |
 | ArchiMate semantic ID | id-e4ba93a12970559e916ecaabb0eb0bb3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Proposed |
@@ -922,9 +1002,13 @@ Operational health is distinct from independent assessment of a governed subject
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-12 |
+| canonicalId | 938cd44380ab431fa8dae13c702d83c1 |
+| displayName | [CT2] Operational Assurance |
+| friendlyName | TrustAccountabilityAndAssurance.OperationalAssurance |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-OperationalAssurance |
 | Snapshot publication reference | EC-12 |
 | ArchiMate semantic ID | id-9bbd142f818e50d39a3d0429f74b72b4 |
-| Architecture Identity | EC-12 |
+| Legacy identity evidence | EC-12 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -965,9 +1049,13 @@ Participation at multiple enforcement points does not distribute policy ownershi
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-06 |
+| canonicalId | 0c5d986cc948421a8bebcab3b74d108f |
+| displayName | [CT2] Policy & Control |
+| friendlyName | TrustAccountabilityAndAssurance.PolicyAndControl |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-PolicyAndControl |
 | Snapshot publication reference | EC-06 |
 | ArchiMate semantic ID | id-a6f6d30d8fce5ac78f60f7aefa71b28e |
-| Architecture Identity | EC-06 |
+| Legacy identity evidence | EC-06 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1011,9 +1099,13 @@ Does not authenticate identity or grant permission from caller-controlled tags o
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-operation-policy-resolution |
+| canonicalId | 7eca9fc4d2244b0facc83376e57ebbc4 |
+| displayName | [CT3] Operation Policy Resolution |
+| friendlyName | TrustAccountabilityAndAssurance.PolicyAndControl.OperationPolicyResolution |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-PolicyAndControl.CT3-EC-OperationPolicyResolution |
 | Snapshot publication reference | HCM-EC-operation-policy-resolution |
 | ArchiMate semantic ID | id-0331dca5104b504794a216037ed9bd40 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1052,9 +1144,13 @@ Enforcement participation does not distribute policy ownership or make security 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-operation-bound-policy-enforcement |
+| canonicalId | cb32b32c657445b3b9b27bebc069ace9 |
+| displayName | [CT3] Operation-Bound Policy Enforcement |
+| friendlyName | TrustAccountabilityAndAssurance.PolicyAndControl.OperationBoundPolicyEnforcement |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-PolicyAndControl.CT3-EC-OperationBoundPolicyEnforcement |
 | Snapshot publication reference | HCM-EC-operation-bound-policy-enforcement |
 | ArchiMate semantic ID | id-9c71dcd24d0154db8ee01ab204012f48 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1093,9 +1189,13 @@ Telemetry, provenance, audit and assurance evidence remain distinct. Recording e
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-07 |
+| canonicalId | 68a0755aa4e14a509ac5e6c0bbcff3e7 |
+| displayName | [CT2] Provenance & Traceability |
+| friendlyName | TrustAccountabilityAndAssurance.ProvenanceAndTraceability |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-ProvenanceAndTraceability |
 | Snapshot publication reference | EC-07 |
 | ArchiMate semantic ID | id-d71457435a085e749ffb1e1a3b551228 |
-| Architecture Identity | EC-07 |
+| Legacy identity evidence | EC-07 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |
@@ -1139,9 +1239,13 @@ Mandatory capture authority is specific to the established audit responsibility,
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-governed-activity-audit-evidence |
+| canonicalId | c8d93ddc5aa84960964b78345fff1b29 |
+| displayName | [CT3] Governed Activity Audit Evidence |
+| friendlyName | TrustAccountabilityAndAssurance.ProvenanceAndTraceability.GovernedActivityAuditEvidence |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-ProvenanceAndTraceability.CT3-EC-GovernedActivityAuditEvidence |
 | Snapshot publication reference | HCM-EC-governed-activity-audit-evidence |
 | ArchiMate semantic ID | id-606f9b0a3e6a51b5a9f6be7518853d78 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1180,9 +1284,13 @@ Does not infer clinical credibility from a successful transport or establish ind
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:ec-information-attribution-lineage |
+| canonicalId | 8bc66c9bc1024a68a1bfd010b4dd1b79 |
+| displayName | [CT3] Information Attribution & Lineage |
+| friendlyName | TrustAccountabilityAndAssurance.ProvenanceAndTraceability.InformationAttributionAndLineage |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-ProvenanceAndTraceability.CT3-EC-InformationAttributionAndLineage |
 | Snapshot publication reference | HCM-EC-information-attribution-lineage |
 | ArchiMate semantic ID | id-08b52c79a6275638bdaa2e33d701aaea |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | enterprise_capability |
 | Tier/classification | CT3 |
 | Architectural standing | Proposed |
@@ -1243,9 +1351,13 @@ The capability does not manage or remediate the subject, replace operational ass
 | Field | Value |
 | --- | --- |
 | Source capture key | enterprise:ec-14 |
+| canonicalId | d767f12f9b1c495883216ace464ee1c2 |
+| displayName | [CT2] Service Guardian |
+| friendlyName | TrustAccountabilityAndAssurance.ServiceGuardian |
+| canonicalName | CT1-EC-TrustAccountabilityAndAssurance.CT2-EC-ServiceGuardian |
 | Snapshot publication reference | EC-14 |
 | ArchiMate semantic ID | id-4dbf578f52bd5b3b9301b9807ce60f30 |
-| Architecture Identity | EC-14 |
+| Legacy identity evidence | EC-14 |
 | Construct | enterprise_capability |
 | Tier/classification | CT2 |
 | Architectural standing | Canonical |

@@ -36,6 +36,16 @@
           "text": "\n------- Source-era Assertion - Superseded in Reconciled Baseline ------- Finish ----\n"
         }
       ]
+    },
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md": {
+      "original_sha256": "321cdfa5aee6b178403dc5508c2e6e7ae7c40138aecf18a6d6b791063af0343f",
+      "annotated_sha256": "b9b1d541db20390103e100280be523ecf810b7fc0827f74fb02e3aa2f47e33f6",
+      "insertions": [
+        {
+          "line": 320,
+          "text": "\nFrom Release 1.0.7, the [Canonical Identity and Governed Naming Contract](../../governance/canonical-identity-and-naming.md)\nis authoritative for resource-owned `canonicalId`, `displayName`, `friendlyName`\nand `canonicalName`. In the retained structural grammar and relocation rules below,\n“Canonical ID” means the **legacy structural naming path**, corresponding to\n`canonicalName`, rather than the immutable UUID32 `canonicalId`. “Canonical Name”\nin that earlier terminology means the short governed naming source. Typed context\nand ancestry obligations remain; relocation changes qualified names while preserving\ninstance identity. Legacy paths and aliases retain their historical meaning.\n\n"
+        }
+      ]
     }
   }
 }

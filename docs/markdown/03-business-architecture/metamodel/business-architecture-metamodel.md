@@ -318,6 +318,16 @@ Qualified references resolve to canonical architectural identities. For compact 
 
 ## 8. Architectural Element Identity and Canonical Identification
 
+From Release 1.0.7, the [Canonical Identity and Governed Naming Contract](../../governance/canonical-identity-and-naming.md)
+is authoritative for resource-owned `canonicalId`, `displayName`, `friendlyName`
+and `canonicalName`. In the retained structural grammar and relocation rules below,
+“Canonical ID” means the **legacy structural naming path**, corresponding to
+`canonicalName`, rather than the immutable UUID32 `canonicalId`. “Canonical Name”
+in that earlier terminology means the short governed naming source. Typed context
+and ancestry obligations remain; relocation changes qualified names while preserving
+instance identity. Legacy paths and aliases retain their historical meaning.
+
+
 ### 8.1 Common Identity Properties
 
 Every governed Business Architecture element SHALL have the following identity properties:

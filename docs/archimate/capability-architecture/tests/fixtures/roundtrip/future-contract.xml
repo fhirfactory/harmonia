@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+<!-- NON-GOVERNED SYNTHETIC TRANSPORT TEST. These UUID strings are not allocations. -->
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="test-roundtrip-model" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="en">NON-GOVERNED Synthetic Future Contract</name>
+  <documentation xml:lang="en">Increment 1 transport fixture only. Not Harmonia architecture. Literal qualified test names do not establish a derivation grammar. Never merge this model into the accepted architecture.</documentation>
+  <elements>
+    <element identifier="test-capability" xsi:type="Capability">
+      <name xml:lang="en">[CT3] Synthetic Transport Capability</name>
+      <documentation xml:lang="en">Entirely synthetic test responsibility, unrelated to any governed element.</documentation>
+      <properties>
+        <property propertyDefinitionRef="test-p-id"><value xml:lang="en">00000000000040008000000000000001</value></property>
+        <property propertyDefinitionRef="test-p-display"><value xml:lang="en">[CT3] Synthetic Transport Capability</value></property>
+        <property propertyDefinitionRef="test-p-friendly"><value xml:lang="en">SyntheticRoot.SyntheticContext.SyntheticTransportCapability</value></property>
+        <property propertyDefinitionRef="test-p-canonical"><value xml:lang="en">CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY</value></property>
+        <property propertyDefinitionRef="test-p-native"><value xml:lang="en">Capability</value></property>
+      </properties>
+    </element>
+    <element identifier="test-feature" xsi:type="Capability">
+      <name xml:lang="en">[FT] Synthetic Transport Feature</name>
+      <documentation xml:lang="en">Uses the existing Feature as native Capability specialisation pattern. It asserts no new Harmonia semantic type.</documentation>
+      <properties>
+        <property propertyDefinitionRef="test-p-id"><value xml:lang="en">1234567890ab4def8123456789abcde0</value></property>
+        <property propertyDefinitionRef="test-p-display"><value xml:lang="en">[FT] Synthetic Transport Feature</value></property>
+        <property propertyDefinitionRef="test-p-friendly"><value xml:lang="en">SyntheticRoot.SyntheticContext.SyntheticTransportCapability.SyntheticTransportFeature</value></property>
+        <property propertyDefinitionRef="test-p-canonical"><value xml:lang="en">CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY.FEAT-SYNTHETIC-TRANSPORT</value></property>
+        <property propertyDefinitionRef="test-p-native"><value xml:lang="en">Capability</value></property>
+        <property propertyDefinitionRef="test-p-harmonia"><value xml:lang="en">Feature</value></property>
+        <property propertyDefinitionRef="test-p-legacy-type"><value xml:lang="en">feature</value></property>
+      </properties>
+    </element>
+    <element identifier="test-function" xsi:type="BusinessFunction">
+      <name xml:lang="en">Synthetic Transport Function</name>
+      <properties>
+        <property propertyDefinitionRef="test-p-id"><value xml:lang="en">abcdef0123454abc8def0123456789ab</value></property>
+        <property propertyDefinitionRef="test-p-display"><value xml:lang="en">Synthetic Transport Function</value></property>
+        <property propertyDefinitionRef="test-p-friendly"><value xml:lang="en">SyntheticRoot.SyntheticContext.SyntheticTransportCapability.SyntheticTransportFunction</value></property>
+        <property propertyDefinitionRef="test-p-canonical"><value xml:lang="en">CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY.FN-SYNTHETIC-TRANSPORT</value></property>
+        <property propertyDefinitionRef="test-p-native"><value xml:lang="en">BusinessFunction</value></property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="test-realization" xsi:type="Realization" source="test-function" target="test-feature">
+      <name xml:lang="en">Synthetic realization</name>
+      <documentation xml:lang="en">Relationship transport probe; no relationship canonical identity is allocated.</documentation>
+    </relationship>
+  </relationships>
+  <organizations>
+    <item identifier="test-strategy-folder"><label xml:lang="en">Strategy</label>
+      <item identifier="test-capability-reference" identifierRef="test-capability"/>
+      <item identifier="test-feature-reference" identifierRef="test-feature"/>
+    </item>
+    <item identifier="test-business-folder"><label xml:lang="en">Business</label><item identifier="test-function-reference" identifierRef="test-function"/></item>
+    <item identifier="test-relations-folder"><label xml:lang="en">Relations</label><item identifier="test-relation-reference" identifierRef="test-realization"/></item>
+    <item identifier="test-views-folder"><label xml:lang="en">Views</label><item identifier="test-view-reference" identifierRef="test-view"/></item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="test-p-id" type="string"><name>canonicalId</name></propertyDefinition>
+    <propertyDefinition identifier="test-p-display" type="string"><name>displayName</name></propertyDefinition>
+    <propertyDefinition identifier="test-p-friendly" type="string"><name>friendlyName</name></propertyDefinition>
+    <propertyDefinition identifier="test-p-canonical" type="string"><name>canonicalName</name></propertyDefinition>
+    <propertyDefinition identifier="test-p-native" type="string"><name>archimateType</name></propertyDefinition>
+    <propertyDefinition identifier="test-p-harmonia" type="string"><name>harmoniaType</name></propertyDefinition>
+    <propertyDefinition identifier="test-p-legacy-type" type="string"><name>v0.2 / Construct Type</name></propertyDefinition>
+  </propertyDefinitions>
+  <views><diagrams><view identifier="test-view" xsi:type="Diagram">
+    <name xml:lang="en">Synthetic Transport View</name>
+    <documentation xml:lang="en">Coordinates, dimensions, annotation, membership and ordered routing are transport evidence only.</documentation>
+    <node identifier="test-capability-node" xsi:type="Element" elementRef="test-capability" x="40" y="40" w="360" h="100"/>
+    <node identifier="test-feature-node" xsi:type="Element" elementRef="test-feature" x="480" y="40" w="360" h="100"/>
+    <node identifier="test-function-node" xsi:type="Element" elementRef="test-function" x="40" y="240" w="360" h="100"/>
+    <node identifier="test-label" xsi:type="Label" x="480" y="240" w="360" h="100"><label xml:lang="en">NON-GOVERNED TEST ONLY</label></node>
+    <connection identifier="test-connection" xsi:type="Relationship" relationshipRef="test-realization" source="test-function-node" target="test-feature-node">
+      <bendpoint x="440" y="290"/><bendpoint x="440" y="90"/>
+    </connection>
+  </view></diagrams></views>
+</model>

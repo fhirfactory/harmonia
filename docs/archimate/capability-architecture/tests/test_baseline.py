@@ -19,7 +19,7 @@ class BaselineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.outputs, cls.baseline, cls.report = s.publish()
-        cls.data = cls.outputs[s.DEST / "Harmonia-Architecture-Baseline.xml"]
+        cls.data = cls.outputs[s.metadata.model_path()]
 
     def root(self):
         return g.ET.fromstring(self.data)

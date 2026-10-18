@@ -71,9 +71,13 @@ This Process makes authorship and changing document standing intelligible throug
 | Field | Value |
 | --- | --- |
 | Source capture key | process:clinical-document-lifecycle-process |
+| canonicalId | eacdec16b96844b4963b8a960d1a8666 |
+| displayName | Clinical Document Lifecycle Process |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentLifecycleProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.PR-ClinicalDocumentLifecycleProcess |
 | Snapshot publication reference | HCM-PR-clinical-document-lifecycle-process |
 | ArchiMate semantic ID | id-f6f3ea4454445eb59d7272e9451f4df9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -133,9 +137,13 @@ The encounter lifecycle distinguishes the planned opportunity, presence, active 
 | Field | Value |
 | --- | --- |
 | Source capture key | process:encounter-lifecycle-process |
+| canonicalId | df49e2e8bb3748f3abbdd1c28ae1be8f |
+| displayName | Encounter Lifecycle Process |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.PR-EncounterLifecycleProcess |
 | Snapshot publication reference | HCM-PR-encounter-lifecycle-process |
 | ArchiMate semantic ID | id-0e94558f9afd57259e6017e0fea3ec07 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -198,9 +206,13 @@ Closed-loop progression preserves the connection between the requisition, perfor
 | Field | Value |
 | --- | --- |
 | Source capture key | process:closed-loop-order-progression-process |
+| canonicalId | e19a7c9594a4401e92450e4c31598982 |
+| displayName | Closed-Loop Order Progression Process |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgressionProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.PR-ClosedLoopOrderProgressionProcess |
 | Snapshot publication reference | HCM-PR-closed-loop-order-progression-process |
 | ArchiMate semantic ID | id-a5695708ce5d5c22a34782d8381612bb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -263,9 +275,13 @@ This Process illustrates one specialist pathway through validation, triage and b
 | Field | Value |
 | --- | --- |
 | Source capture key | process:referral-progression-process |
+| canonicalId | cfb714e9320647ffa1dffc80dddd01d9 |
+| displayName | Referral Progression Process |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralProgressionProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.PR-ReferralProgressionProcess |
 | Snapshot publication reference | HCM-PR-referral-progression-process |
 | ArchiMate semantic ID | id-c1a4b8f0f5275f89bec405d882a45d07 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -325,9 +341,13 @@ This Process governs the application of an externally authoritative correction r
 | Field | Value |
 | --- | --- |
 | Source capture key | process:governed-person-identity-correction-process |
+| canonicalId | 72f3c63da45d44868579a3bb15d1568c |
+| displayName | Governed Person Identity Correction Process |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.GovernedPersonIdentityCorrectionProcess |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.PR-GovernedPersonIdentityCorrectionProcess |
 | Snapshot publication reference | HCM-PR-governed-person-identity-correction-process |
 | ArchiMate semantic ID | id-46e16f772bab5982ae8fae3daa900739 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -383,9 +403,13 @@ Verification progresses from checking the recognised professional source to the 
 | Field | Value |
 | --- | --- |
 | Source capture key | process:practitioner-verification-process |
+| canonicalId | 32a3e1f948474d3aa77ca71bfa515f58 |
+| displayName | Practitioner Verification Process |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerVerificationProcess |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.PR-PractitionerVerificationProcess |
 | Snapshot publication reference | HCM-PR-practitioner-verification-process |
 | ArchiMate semantic ID | id-666fffcc85fc5efea1d96fc35483a865 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -441,9 +465,13 @@ Bed turnover connects the release of a care place with the operational work need
 | Field | Value |
 | --- | --- |
 | Source capture key | process:bed-turnover-process |
+| canonicalId | 69f74289926942f4baed4acf4c654a3b |
+| displayName | Bed Turnover Process |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedTurnoverProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.PR-BedTurnoverProcess |
 | Snapshot publication reference | HCM-PR-bed-turnover-process |
 | ArchiMate semantic ID | id-3e34095e9c8b5a16969eb265501e228b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -503,9 +531,13 @@ This Process follows an individual's operational passage through the clinic. Wai
 | Field | Value |
 | --- | --- |
 | Source capture key | process:clinic--operational-queue-progression-process |
+| canonicalId | 319d6956276a4cdeb43e350e1b01d078 |
+| displayName | Clinic / Operational Queue Progression Process |
+| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.ClinicOperationalQueueProgressionProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.PR-ClinicOperationalQueueProgressionProcess |
 | Snapshot publication reference | HCM-PR-clinic-operational-queue-progression-process |
 | ArchiMate semantic ID | id-6d1d76ff79ee5bc0856e025561f5dc85 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -568,9 +600,13 @@ Discharge progression coordinates the confirmations and practical requirements a
 | Field | Value |
 | --- | --- |
 | Source capture key | process:discharge-progression-process |
+| canonicalId | 7165955d9c454175a04b9ad00293f011 |
+| displayName | Discharge Progression Process |
+| friendlyName | HealthServiceOperationsEnablement.DischargeManagement.DischargeProgressionProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-DischargeManagement.PR-DischargeProgressionProcess |
 | Snapshot publication reference | HCM-PR-discharge-progression-process |
 | ArchiMate semantic ID | id-a3b050eb480a522ba73d4237437255e6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -627,9 +663,13 @@ Patient transport progression records the physical journey from a movement reque
 | Field | Value |
 | --- | --- |
 | Source capture key | process:patient-transport-process |
+| canonicalId | f2e58fd18cd94b0faaa364d3890a7c9e |
+| displayName | Patient Transport Process |
+| friendlyName | HealthServiceOperationsEnablement.PatientTransport.PatientTransportProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-PatientTransport.PR-PatientTransportProcess |
 | Snapshot publication reference | HCM-PR-patient-transport-process |
 | ArchiMate semantic ID | id-f072345cdf64534ea66938792b6141bc |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -692,9 +732,13 @@ Theatre case progression follows reported milestones of the surgical encounter s
 | Field | Value |
 | --- | --- |
 | Source capture key | process:theatre-case-progression-process |
+| canonicalId | 8ad97120b5b54a31a64a4522e6bc9fd1 |
+| displayName | Theatre Case Progression Process |
+| friendlyName | HealthServiceOperationsEnablement.TheatreOperations.TheatreCaseProgressionProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-TheatreOperations.PR-TheatreCaseProgressionProcess |
 | Snapshot publication reference | HCM-PR-theatre-case-progression-process |
 | ArchiMate semantic ID | id-938712df45315334bb92ff456431556b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -751,9 +795,13 @@ Operational work progression makes the path from a recognised support requiremen
 | Field | Value |
 | --- | --- |
 | Source capture key | process:operational-work-progression-process |
+| canonicalId | 5ebba522194b4de5a5b3963e855d712d |
+| displayName | Operational Work Progression Process |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkProgressionProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.PR-OperationalWorkProgressionProcess |
 | Snapshot publication reference | HCM-PR-operational-work-progression-process |
 | ArchiMate semantic ID | id-64bf723fe0985e75967cf435d0f49fe1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -801,9 +849,13 @@ Assurance design establishes a reusable basis for how satisfaction will be evalu
 | Field | Value |
 | --- | --- |
 | Source capture key | process:assurance-process-design |
+| canonicalId | aec3177dcdd84961814f2ba4f688ad33 |
+| displayName | Assurance Process Design |
+| friendlyName | IndependentAssuranceEnablement.AssuranceSpecification.AssuranceDesign.AssuranceProcessDesign |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification.CT3-BEC-AssuranceDesign.PR-AssuranceProcessDesign |
 | Snapshot publication reference | HCM-PR-assurance-process-design |
 | ArchiMate semantic ID | id-68c2c17a966b5a3587ae2e315c9dd7e3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -865,9 +917,13 @@ Specimen transport preserves the movement and custody account connecting collect
 | Field | Value |
 | --- | --- |
 | Source capture key | process:specimen-transport-process |
+| canonicalId | 11bb000294fc44a8af295f4682e2fe6c |
+| displayName | Specimen Transport Process |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination.SpecimenTransportProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination.PR-SpecimenTransportProcess |
 | Snapshot publication reference | HCM-PR-specimen-transport-process |
 | ArchiMate semantic ID | id-3e74a227467d5546b1222b8953f47396 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -903,9 +959,13 @@ Not a universal lifecycle or automatic retry loop. A safe disposition may remain
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:process-indeterminate-activity-outcome-reconciliation-process |
+| canonicalId | 96baf3721ce94397a11486184d3df7cf |
+| displayName | Indeterminate Activity Outcome Reconciliation Process |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.IndeterminateActivityOutcomeReconciliationProcess |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.PR-IndeterminateActivityOutcomeReconciliationProcess |
 | Snapshot publication reference | HCM-PR-indeterminate-activity-outcome-reconciliation-process |
 | ArchiMate semantic ID | id-4efafd6ac18d55da8bafd3658c00e18c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Proposed |
 | Name standing | Proposed |
@@ -979,9 +1039,13 @@ Synthetic Task progression concerns automated non-human execution, including wai
 | Field | Value |
 | --- | --- |
 | Source capture key | process:synthetic-task-progression-process |
+| canonicalId | 618acdb38fc74952ab360fdde4f7d865 |
+| displayName | Synthetic Task Progression Process |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.SyntheticTaskProgressionProcess |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.PR-SyntheticTaskProgressionProcess |
 | Snapshot publication reference | HCM-PR-synthetic-task-progression-process |
 | ArchiMate semantic ID | id-f9fa8fe0918f535893a879de3285ea40 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1057,9 +1121,13 @@ To Do progression coordinates a human review or decision item. Completion record
 | Field | Value |
 | --- | --- |
 | Source capture key | process:to-do-progression-process |
+| canonicalId | c5e4c3076b094c98a628179b91ae03d0 |
+| displayName | To Do Progression Process |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.ToDoProgressionProcess |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.PR-ToDoProgressionProcess |
 | Snapshot publication reference | HCM-PR-to-do-progression-process |
 | ArchiMate semantic ID | id-731a4a1d8d4c56c4a355c892d0c58311 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1122,9 +1190,13 @@ Work Order progression describes a human undertaking physical or operational act
 | Field | Value |
 | --- | --- |
 | Source capture key | process:work-order-progression-process |
+| canonicalId | 73fbbe4e027b4805809fad430e791eba |
+| displayName | Work Order Progression Process |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.WorkOrderProgressionProcess |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.PR-WorkOrderProgressionProcess |
 | Snapshot publication reference | HCM-PR-work-order-progression-process |
 | ArchiMate semantic ID | id-dfebbd3f1e345317a8ca625929b68676 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1190,9 +1262,13 @@ Assurance execution evaluates an identifiable subject under an applicable defini
 | Field | Value |
 | --- | --- |
 | Source capture key | process:assurance-process-execution |
+| canonicalId | 3c67e57403b041bb8ccdaf3980b6ff94 |
+| displayName | Assurance Process Execution |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement.GovernedAssurance.AssuranceProcessExecution |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement.CT3-BEC-GovernedAssurance.PR-AssuranceProcessExecution |
 | Snapshot publication reference | HCM-PR-assurance-process-execution |
 | ArchiMate semantic ID | id-63448f2658975592a4c956d874474037 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1243,9 +1319,13 @@ This Process starts from an established finding and communicates it to legitimat
 | Field | Value |
 | --- | --- |
 | Source capture key | process:assurance-process-reporting--communication |
+| canonicalId | 2fc0b626577b43feb050bcd91ac2b0a9 |
+| displayName | Assurance Process Reporting / Communication |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement.GovernedAssurance.AssuranceProcessReportingCommunication |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement.CT3-BEC-GovernedAssurance.PR-AssuranceProcessReportingCommunication |
 | Snapshot publication reference | HCM-PR-assurance-process-reporting-communication |
 | ArchiMate semantic ID | id-ddca479bd2b15e12819ea0037affb9fa |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | process |
 | Architectural standing | Canonical |
 | Name standing | Canonical |

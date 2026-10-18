@@ -10,6 +10,132 @@ import synchronise_baseline as s
 
 REPORT = s.DEST / '2026-10-17-archimate-markdown-baseline-synchronisation.md'
 GUIDE = s.DEST / 'archi-inspection-guide.md'
+if s.metadata.active():
+    REPORT = s.DEST / 'canonical-identity-establishment.md'
+    GUIDE = s.DEST / 'canonical-identity-archi-guide.md'
+
+
+def render_establishment():
+    """Validate current evidence separately from preserved 1.0.6 verification."""
+    evidence = s.read(s.DEST / 'canonical-identity-verification.json')
+    validation = s.read(s.metadata.validation_path())
+    outputs, b, fresh = s.publish()
+    root = s.g.parse(s.metadata.model_path())
+    s.validate(b, root)
+    s.g.require(validation['output_sha256'] == fresh['output_sha256'] == s.r.sha(s.metadata.model_path()), 'Stale established publication')
+    s.g.require(evidence['architecture_release'] == validation['architecture_release'] == s.load_release(), 'Stale establishment release evidence')
+    required = {'source', 'publication', 'publication_tests', 'identity_release_tests', 'architecture_tests',
+                'recovery', 'diagnostic', 'preservation', 'core_regeneration', 'focused_identity_tests', 'roundtrip_tests'}
+    s.g.require(required <= evidence['checks'].keys(), 'Required establishment checks missing')
+    s.g.require(evidence['status'] == 'PASS' and evidence['checks'] and
+                all(c['status'] == 'PASS' for c in evidence['checks'].values()) and
+                all(c == 'PASS' for c in validation['checks'].values()), 'Establishment verification incomplete')
+    for relative, digest in evidence['files_sha256'].items():
+        s.g.require(s.r.sha(s.ROOT / relative) == digest, 'Stale establishment verification: ' + relative)
+    for check in evidence['checks'].values():
+        s.g.require(s.r.sha(s.ROOT / check['log']) == check['log_sha256'], 'Establishment verification log changed')
+    for path, content in outputs.items():
+        if path != s.metadata.validation_path():
+            s.g.require(path.read_bytes() == content, 'Stale generated output: ' + str(path))
+    generated = sorted(str(p.relative_to(s.ROOT)) for p in [*outputs, REPORT, GUIDE])
+    stats = validation['governed_metadata']
+    index, _ = s.metadata.load(b)
+    repeated = {role: sum(n > 1 for n in collections.Counter(item['record'][role] for item in index.values()).values())
+                for role in ('displayName', 'friendlyName', 'canonicalName')}
+    manifest = s.read(s.metadata.archive() / 'manifest.json')
+    version = s.load_release()['version']
+    checks = '\n'.join('| ' + name + ' | ' + c['status'] + ' | `' + c['log'] + '` |' for name, c in evidence['checks'].items())
+    report = f'''<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+# Canonical identity establishment — Architecture Release {version}
+
+Resource-owned identity and governed names are established for **{stats['total_elements']} elements**.
+Starting release: **{manifest['startingRelease']}**. Resulting release: **{version}**.
+The [contract](../../../markdown/governance/canonical-identity-and-naming.md) governs the metadata.
+The Solution Architect's real no-edit Archi 5.10 proof is **AWAITING ARCHI EXPORT**.
+No architecture reconciliation or presentation replay has been implemented.
+
+| Measurement | Result |
+| --- | ---: |
+| Allocated once, UUIDv4 via Python `uuid.uuid4().hex` | {manifest['allocated']} |
+| Valid UUID32 Canonical IDs | {stats['valid_canonicalId']} |
+| Missing / malformed / duplicate / multiple claims | {stats['missing_canonicalId']} / {stats['malformed_canonicalId']} / {stats['duplicate_canonicalId']} / {stats['multiple_canonicalId_claims']} |
+| Persisted and validated display, friendly and canonical names | {stats['total_elements']} each |
+
+The existing RADS `architecture.json` and `motivation.json` resources own literal IDs
+and names, including retained historical resources. The source history is complete
+resource evidence, not a separate identity register. Ordinary publication allocates
+zero IDs and rejects missing, mutated, conflicting or drifted metadata.
+Legacy short names, structural paths, name aliases and identifier aliases remain
+in their original channels. All 14 EC bindings remain historical identifier aliases;
+Exchange representation IDs remain distinct. Native Capability and Harmonia Feature
+remain separate type concepts, independent of identity.
+
+Exact removal of only the new Properties and restoration of prior model-release
+metadata produces the unchanged accepted architecture and presentation signature.
+Element representations, relationships/endpoints, Views, nodes, connections,
+Documentation, labels, geometry and styles are preserved. The accepted 1.0.6 XML,
+verification, reports, recovery fixtures and Increment 1 evidence remain intact.
+No unresolved historical crosswalk or Feature assertion was promoted to approval.
+Across the retained populations, {repeated['displayName']} display names and
+{repeated['friendlyName']} friendly/canonical paths have repeated values. Their
+separate instances keep distinct IDs and standing; names do not establish the
+missing historical crosswalks. No artificial context was added to make them unique.
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+{checks}
+
+Generated output set ({len(generated)} files):
+
+{chr(10).join('- `' + x + '`' for x in generated)}
+
+Publication SHA-256: `{validation['output_sha256']}`.
+See the [current Archi handoff](canonical-identity-archi-guide.md) and
+[complete establishment report](../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment.md).
+Increment 2 remains gated by the actual no-edit export and comparator review.
+'''
+    guide = f'''<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+# Solution Architect — Archi 5.10 no-edit identity transport proof
+
+Status: **AWAITING ARCHI EXPORT** for Architecture Release **{version}**.
+
+1. In **Archi 5.10.0**, import the Open Exchange model
+   `docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-{version}.xml`
+   as a new model. Its SHA-256 must be `{validation['output_sha256']}`.
+2. Make **NO edits**, including names, Properties, folders and Views.
+3. Export the **complete model** in Open Exchange format, including all elements,
+   relationships, Properties and Views, to:
+   `.junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-{version}.xml`.
+   Include organisation information, use English (`en`) import locale/export
+   language, and retain the raw exported bytes.
+4. Record the actual execution, Archi version and export profile as evidence.
+   From the repository root run the existing Increment 1 comparator:
+
+```bash
+python3 docs/archimate/capability-architecture/tools/diagnose_roundtrip.py compare \\
+  --published docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-{version}.xml \\
+  --incoming .junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-{version}.xml \\
+  --output .junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-fidelity.json
+```
+
+Review `contract_properties`: all published owners must preserve exact values,
+language, multiplicity and owning-element association for `canonicalId`,
+`displayName`, `friendlyName`, `canonicalName` and applicable `harmoniaType`.
+All element and relationship IDs, native types and relationship source/target
+attributes must survive. Retained EC aliases must stay on the same elements.
+The companion `archi-proof-manifest.json` pins the input and records this gate.
+
+Known evidence-text transformations, organisation identity/order loss, definition
+language loss, View Documentation newline loss, style materialisation and connection
+ordering may remain visible. Comparator exit code 2 reports differences requiring
+review; it does not by itself reject the bounded identity/naming transport claim.
+Do not broaden normalisation to hide differences or claim whole-model losslessness.
+Self-comparison and automated regeneration do not prove a real Archi execution.
+Do not proceed into Increment 2 until the Solution Architect has reviewed that proof.
+'''
+    return {REPORT: report.encode(), GUIDE: guide.encode()}
 
 
 def validate_correction_preservation(b, root):
@@ -22,6 +148,8 @@ def validate_correction_preservation(b, root):
 
 
 def render():
+    if s.metadata.active():
+        return render_establishment()
     evidence = s.read(s.DEST / 'verification.json')
     validation = s.read(s.DEST / 'validation.json')
     outputs, b, fresh = s.publish()

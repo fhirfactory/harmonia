@@ -157,9 +157,13 @@ Emits care plan revision notices.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:care-plan-change-notification |
+| canonicalId | 08a8309372734287b2c22a06b95080a4 |
+| displayName | Care Plan Change Notification |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CarePlanChangeNotification |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.SV-CarePlanChangeNotification |
 | Snapshot publication reference | HCM-SV-care-plan-change-notification |
 | ArchiMate semantic ID | id-6a7c9e0a85145a73bbb7190f033214ae |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -186,9 +190,13 @@ Discloses active care plans to treating clinicians.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:care-plan-context-query |
+| canonicalId | 0bb4cceb0f1b4311930635d8b4c320e0 |
+| displayName | Care Plan Context Query |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CarePlanContextQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.SV-CarePlanContextQuery |
 | Snapshot publication reference | HCM-SV-care-plan-context-query |
 | ArchiMate semantic ID | id-24102c5e1b0459a69be0318db28a6dbd |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -215,9 +223,13 @@ Ingests shared care plans.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:care-plan-ingress |
+| canonicalId | 180d3f29c2324905ab19337a4dcbce7b |
+| displayName | Care Plan Ingress |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CarePlanIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.SV-CarePlanIngress |
 | Snapshot publication reference | HCM-SV-care-plan-ingress |
 | ArchiMate semantic ID | id-7204348a711e5529a7c4c794c4d66259 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -243,9 +255,13 @@ Ingests community care documentation.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:community-care-encounter-ingress |
+| canonicalId | 5806fe40300044b280a25fb86667e789 |
+| displayName | Community Care Encounter Ingress |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CommunityCareCoordination.CommunityCareEncounterIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CommunityCareCoordination.SV-CommunityCareEncounterIngress |
 | Snapshot publication reference | HCM-SV-community-care-encounter-ingress |
 | ArchiMate semantic ID | id-710fde4f099052a8845d80bae71b368c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -273,9 +289,13 @@ Feature association not established: Strategy FEAT-SD-16 — Community Care Plan
 | Field | Value |
 | --- | --- |
 | Source capture key | service:community-care-team-query |
+| canonicalId | 5292120098cc4b7e8280b22f46b60b95 |
+| displayName | Community Care Team Query |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CommunityCareCoordination.CommunityCareTeamQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CommunityCareCoordination.SV-CommunityCareTeamQuery |
 | Snapshot publication reference | HCM-SV-community-care-team-query |
 | ArchiMate semantic ID | id-0dd88fd817285933bfaade2bf83a66a7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -302,9 +322,13 @@ Reconciles batch clinical encounters upon network reconnection.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:outreach-batch-reconciliation-service |
+| canonicalId | 9488822da1764a1898303a9c656a6062 |
+| displayName | Outreach Batch Reconciliation Service |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.OutreachCareContinuity.OutreachBatchReconciliationService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-OutreachCareContinuity.SV-OutreachBatchReconciliationService |
 | Snapshot publication reference | HCM-SV-outreach-batch-reconciliation-service |
 | ArchiMate semantic ID | id-a960f9960e11585cb76cfbaa0a5c17ef |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -330,9 +354,13 @@ Exposed to departmental registration systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:demographic-intake-service |
+| canonicalId | b6d8aab087944a6e8cc246b85d32843e |
+| displayName | Demographic Intake Service |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.DemographicIntakeService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.SV-DemographicIntakeService |
 | Snapshot publication reference | HCM-SV-demographic-intake-service |
 | ArchiMate semantic ID | id-1155b1c2b46158a48866cbc349ab9bbd |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -358,9 +386,13 @@ Emits change notifications across the HIE.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:demographic-update-notification |
+| canonicalId | 10b54e9ef0ed47e491d18731c58247f5 |
+| displayName | Demographic Update Notification |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.DemographicUpdateNotification |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.SV-DemographicUpdateNotification |
 | Snapshot publication reference | HCM-SV-demographic-update-notification |
 | ArchiMate semantic ID | id-8ce353192d015105bfb22afd2a7b5ee8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -386,9 +418,13 @@ Discloses complete vaccination history.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:immunisation-history-query |
+| canonicalId | f2a0107d73664aa0be9d6695fc455d74 |
+| displayName | Immunisation History Query |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ScreeningAndImmunisationEnablement.ImmunisationHistoryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ScreeningAndImmunisationEnablement.SV-ImmunisationHistoryQuery |
 | Snapshot publication reference | HCM-SV-immunisation-history-query |
 | ArchiMate semantic ID | id-46418e01821352bc941375e34a88abee |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -416,9 +452,13 @@ Feature association not established: FEAT-SD-14 — Screening Recall Notificatio
 | Field | Value |
 | --- | --- |
 | Source capture key | service:preventive-screening-status-query |
+| canonicalId | bc679a6f23de44b79a452fb5ef10c5ee |
+| displayName | Preventive Screening Status Query |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ScreeningAndImmunisationEnablement.PreventiveScreeningStatusQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ScreeningAndImmunisationEnablement.SV-PreventiveScreeningStatusQuery |
 | Snapshot publication reference | HCM-SV-preventive-screening-status-query |
 | ArchiMate semantic ID | id-40cd7493d023511f90294cbfec8209e1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -445,9 +485,13 @@ Discloses transmission history for medico-legal verification.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:communication-audit-query |
+| canonicalId | 7c871898fd634a16902048da75586fd9 |
+| displayName | Communication Audit Query |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.CommunicationAuditQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.SV-CommunicationAuditQuery |
 | Snapshot publication reference | HCM-SV-communication-audit-query |
 | ArchiMate semantic ID | id-d5503c6d10b5545eb1c5d1d5ae381954 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -473,9 +517,13 @@ Discloses delivery confirmation to message senders.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:communication-delivery-status-query |
+| canonicalId | 1b3447db9891406b951f6a6ccf20763e |
+| displayName | Communication Delivery Status Query |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.CommunicationDeliveryStatusQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.SV-CommunicationDeliveryStatusQuery |
 | Snapshot publication reference | HCM-SV-communication-delivery-status-query |
 | ArchiMate semantic ID | id-621a40630d9256eda0126f58d382dace |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -501,9 +549,13 @@ Exposes message dispatch to clinical authors.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:secure-clinical-message-dispatch |
+| canonicalId | d28fb3b4123b4e569a95a823fd83f837 |
+| displayName | Secure Clinical Message Dispatch |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.SecureClinicalMessageDispatch |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.SV-SecureClinicalMessageDispatch |
 | Snapshot publication reference | HCM-SV-secure-clinical-message-dispatch |
 | ArchiMate semantic ID | id-bc33442399e1567093c059606f9a2888 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -529,9 +581,13 @@ Exposes document submission endpoints across the HIE.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-document-ingress |
+| canonicalId | 2a69a33c93954a868249270d919dabfd |
+| displayName | Clinical Document Ingress |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.SV-ClinicalDocumentIngress |
 | Snapshot publication reference | HCM-SV-clinical-document-ingress |
 | ArchiMate semantic ID | id-8371aafb47eb591f8182552dceb459ad |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -557,9 +613,13 @@ Allows authoring clinicians to publish addenda or corrections.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-document-lifecycle-service |
+| canonicalId | fbeffe86f67347e3b39ad4544b13cbe7 |
+| displayName | Clinical Document Lifecycle Service |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentLifecycleService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.SV-ClinicalDocumentLifecycleService |
 | Snapshot publication reference | HCM-SV-clinical-document-lifecycle-service |
 | ArchiMate semantic ID | id-184be279c5e85927a1ff5e81aa7939e6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -585,9 +645,13 @@ Discloses document registry metadata to clinical viewers.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:document-metadata-registry-query |
+| canonicalId | 63254ecfe5554eeeb63d0c9f1720388b |
+| displayName | Document Metadata Registry Query |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.DocumentMetadataRegistryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.SV-DocumentMetadataRegistryQuery |
 | Snapshot publication reference | HCM-SV-document-metadata-registry-query |
 | ArchiMate semantic ID | id-340b2f052af95bf097a047aa2e43fe15 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -613,9 +677,13 @@ Discloses correlated order/result linkages.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:diagnostic-correlation-resolution |
+| canonicalId | 15f3582e02ae47e1b7f9117573a8ddf7 |
+| displayName | Diagnostic Correlation Resolution |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticCorrelationResolution |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.SV-DiagnosticCorrelationResolution |
 | Snapshot publication reference | HCM-SV-diagnostic-correlation-resolution |
 | ArchiMate semantic ID | id-db40af8a466c5bb58974b3392b9fb7a0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -641,9 +709,13 @@ Ingests results from external LIS/RIS systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:diagnostic-report-ingress |
+| canonicalId | b151ad42b9194d9e84b1dd9beecdf6dd |
+| displayName | Diagnostic Report Ingress |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticReportIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.SV-DiagnosticReportIngress |
 | Snapshot publication reference | HCM-SV-diagnostic-report-ingress |
 | ArchiMate semantic ID | id-77ff0fef85f05d44b38dda24fc719a2b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -669,9 +741,13 @@ Emits secure result notifications.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:diagnostic-result-delivery-service |
+| canonicalId | 86a9d1868c8c45788791a9436794531c |
+| displayName | Diagnostic Result Delivery Service |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticResultDeliveryService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.SV-DiagnosticResultDeliveryService |
 | Snapshot publication reference | HCM-SV-diagnostic-result-delivery-service |
 | ArchiMate semantic ID | id-b1e74bef5b305c99902a16b70734e083 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -699,9 +775,13 @@ Feature association not established: Strategy FEAT-SD-10 — Diagnostic History 
 | Field | Value |
 | --- | --- |
 | Source capture key | service:diagnostic-publication-service |
+| canonicalId | 600ca5384b4643b0b35579a02c307dcf |
+| displayName | Diagnostic Publication Service |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticServiceIntegration.DiagnosticPublicationService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticServiceIntegration.SV-DiagnosticPublicationService |
 | Snapshot publication reference | HCM-SV-diagnostic-publication-service |
 | ArchiMate semantic ID | id-e7acb465794c55129d0681b967598e3f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -730,9 +810,13 @@ Feature association not established: Strategy FEAT-SD-09 — Laboratory & Imagin
 | Field | Value |
 | --- | --- |
 | Source capture key | service:modality-worklist-distribution |
+| canonicalId | e254b6a140c94b33a206e74db1aecfbb |
+| displayName | Modality Worklist Distribution |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticServiceIntegration.ModalityWorklistDistribution |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticServiceIntegration.SV-ModalityWorklistDistribution |
 | Snapshot publication reference | HCM-SV-modality-worklist-distribution |
 | ArchiMate semantic ID | id-b72a63ea9c385f0d89ff7adf103df933 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -759,9 +843,13 @@ Discloses active encounter details to clinical applications.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:encounter-context-resolution |
+| canonicalId | ca22b0a4e51b4f5eb6b528bc36fa5d9c |
+| displayName | Encounter Context Resolution |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterContextResolution |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.SV-EncounterContextResolution |
 | Snapshot publication reference | HCM-SV-encounter-context-resolution |
 | ArchiMate semantic ID | id-af5949583dca5647aa621461dafff79a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -787,9 +875,13 @@ Emits encounter transition events across the HIE.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:encounter-lifecycle-event-notification |
+| canonicalId | e9c6b81172984785a47d222ac0c28d45 |
+| displayName | Encounter Lifecycle Event Notification |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleEventNotification |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.SV-EncounterLifecycleEventNotification |
 | Snapshot publication reference | HCM-SV-encounter-lifecycle-event-notification |
 | ArchiMate semantic ID | id-a67e6110df1a5446a71a73624e836ef5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -815,9 +907,13 @@ Discloses patient location tracking history.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:encounter-location-history-query |
+| canonicalId | 5f0f9fec1d16458aaf914b0957793953 |
+| displayName | Encounter Location History Query |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLocationHistoryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.SV-EncounterLocationHistoryQuery |
 | Snapshot publication reference | HCM-SV-encounter-location-history-query |
 | ArchiMate semantic ID | id-055b7f7c7d2d53b8a927bf82eea4c6fe |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -843,9 +939,13 @@ Delivers a high-priority clinical briefing to admitting teams.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:acute-admission-dossier-query |
+| canonicalId | 7276d5e4d484440f9466ec24c183bdab |
+| displayName | Acute Admission Dossier Query |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.AcuteCareMonitoringAndEventCoordination.AcuteAdmissionDossierQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-AcuteCareMonitoringAndEventCoordination.SV-AcuteAdmissionDossierQuery |
 | Snapshot publication reference | HCM-SV-acute-admission-dossier-query |
 | ArchiMate semantic ID | id-fe1a8980c6655f9dae0c01cee4275643 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -873,9 +973,13 @@ Feature association not established: FEAT-SD-03 — Acute Clinical State Event C
 | Field | Value |
 | --- | --- |
 | Source capture key | service:acute-clinical-alert-dispatch |
+| canonicalId | 34d7f0bfff8f470bb97c00582f5e8a1d |
+| displayName | Acute Clinical Alert Dispatch |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.AcuteCareMonitoringAndEventCoordination.AcuteClinicalAlertDispatch |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-AcuteCareMonitoringAndEventCoordination.SV-AcuteClinicalAlertDispatch |
 | Snapshot publication reference | HCM-SV-acute-clinical-alert-dispatch |
 | ArchiMate semantic ID | id-565f762c339959fd95d94107b088d70b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -902,9 +1006,13 @@ Ingests pharmacy supply notifications.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:dispense-event-ingress |
+| canonicalId | b81512ca8e36434e9fa29493e645d31d |
+| displayName | Dispense Event Ingress |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.DispenseEventIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.SV-DispenseEventIngress |
 | Snapshot publication reference | HCM-SV-dispense-event-ingress |
 | ArchiMate semantic ID | id-ec47b3ad39be598bb63579c4668b8791 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -930,9 +1038,13 @@ Ingests administration records.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:medication-administration-ingress |
+| canonicalId | 8d224a68f01648d39096d39ebac893df |
+| displayName | Medication Administration Ingress |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationAdministrationIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.SV-MedicationAdministrationIngress |
 | Snapshot publication reference | HCM-SV-medication-administration-ingress |
 | ArchiMate semantic ID | id-9704a57532cf529d9ce347836ad499d6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -958,9 +1070,13 @@ Ingests prescription events.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:medication-order-ingress |
+| canonicalId | 3bcfd2c922aa429ba77618ac94982a56 |
+| displayName | Medication Order Ingress |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationOrderIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.SV-MedicationOrderIngress |
 | Snapshot publication reference | HCM-SV-medication-order-ingress |
 | ArchiMate semantic ID | id-1247fe9185585dbb9d73ff442fa680ca |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -988,9 +1104,13 @@ Feature association not established: Strategy FEAT-SD-12 — Medication Administ
 | Field | Value |
 | --- | --- |
 | Source capture key | service:allergy--adverse-reaction-query |
+| canonicalId | 7820fc4fb98c452aba29f35d8c7e74fb |
+| displayName | Allergy & Adverse Reaction Query |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationTherapyProvisionAndMonitoring.AllergyAndAdverseReactionQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationTherapyProvisionAndMonitoring.SV-AllergyAndAdverseReactionQuery |
 | Snapshot publication reference | HCM-SV-allergy-adverse-reaction-query |
 | ArchiMate semantic ID | id-6a7bff1805c5591b9425454e0f7e72c4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1017,9 +1137,13 @@ Discloses full medication timelines for medication reconciliation.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:longitudinal-medication-history-query |
+| canonicalId | 6a42771bbe5449ab87e8ece94519d03d |
+| displayName | Longitudinal Medication History Query |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationTherapyProvisionAndMonitoring.LongitudinalMedicationHistoryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationTherapyProvisionAndMonitoring.SV-LongitudinalMedicationHistoryQuery |
 | Snapshot publication reference | HCM-SV-longitudinal-medication-history-query |
 | ArchiMate semantic ID | id-96924697c45b59728088f510012581e0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1045,9 +1169,13 @@ Dispatches cancel directives to performing systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:order-cancellation-service |
+| canonicalId | 1c8467ef0b6047329bdb899a52c23efc |
+| displayName | Order Cancellation Service |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderCancellationService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderCancellationService |
 | Snapshot publication reference | HCM-SV-order-cancellation-service |
 | ArchiMate semantic ID | id-c37ea153f6ef51c19bf8773019d2a007 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1073,9 +1201,13 @@ Transmits orders to performing diagnostic systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:order-dispatch-service |
+| canonicalId | a8b0f7284a854fdfb43a9af446aa1270 |
+| displayName | Order Dispatch Service |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderDispatchService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderDispatchService |
 | Snapshot publication reference | HCM-SV-order-dispatch-service |
 | ArchiMate semantic ID | id-f87718cc106c516dbbcc270bc5de9c86 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1101,9 +1233,13 @@ Emits completion notices to ordering practitioners.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:order-outcome-notification |
+| canonicalId | 1d961373ab484e5f887ecf4c7b166130 |
+| displayName | Order Outcome Notification |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderOutcomeNotification |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderOutcomeNotification |
 | Snapshot publication reference | HCM-SV-order-outcome-notification |
 | ArchiMate semantic ID | id-127c0da9a72653bdb7c1b818d609a01a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1130,9 +1266,13 @@ Ingests electronic orders from clinical ordering systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:order-requisition-ingress |
+| canonicalId | ba824a1ec2c64d9598c409803bcf9d86 |
+| displayName | Order Requisition Ingress |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderRequisitionIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderRequisitionIngress |
 | Snapshot publication reference | HCM-SV-order-requisition-ingress |
 | ArchiMate semantic ID | id-f95f6dbb613c576f912e1d482728781d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1158,9 +1298,13 @@ Provides real-time order tracking to ordering clinicians.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:order-status--tracking-query |
+| canonicalId | a4c049391dd64cd7af83bb5b4c7af0c5 |
+| displayName | Order Status & Tracking Query |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderStatusAndTrackingQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderStatusAndTrackingQuery |
 | Snapshot publication reference | HCM-SV-order-status-tracking-query |
 | ArchiMate semantic ID | id-a58b3a12fe93507ca00859816aa57897 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1186,9 +1330,13 @@ Ingests procedural documentation, including surgical notes, into patient record 
 | Field | Value |
 | --- | --- |
 | Source capture key | service:procedural-documentation-ingress |
+| canonicalId | b58405366b7a43dc909ca3074503e11a |
+| displayName | Procedural Documentation Ingress |
+| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProceduralDocumentationIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.SV-ProceduralDocumentationIngress |
 | Snapshot publication reference | HCM-SV-procedural-documentation-ingress |
 | ArchiMate semantic ID | id-68a97fc4710358369321fe60512cdefe |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1214,9 +1362,13 @@ Receives surgical/procedural requests.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:procedure-booking-ingress |
+| canonicalId | 64c52e8e6f304dee8d86a5da96f927e3 |
+| displayName | Procedure Booking Ingress |
+| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProcedureBookingIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.SV-ProcedureBookingIngress |
 | Snapshot publication reference | HCM-SV-procedure-booking-ingress |
 | ArchiMate semantic ID | id-9c617080399e55658c15e36d94570e92 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1242,9 +1394,13 @@ Provides comprehensive referral dossiers to intake triage clinicians.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:referral-context-query |
+| canonicalId | d688ee73f68a4dda9380404e22b3539b |
+| displayName | Referral Context Query |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralContextQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.SV-ReferralContextQuery |
 | Snapshot publication reference | HCM-SV-referral-context-query |
 | ArchiMate semantic ID | id-b702aed53e625fd6865f1fc539fc9ce4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1270,9 +1426,13 @@ Exposes progression milestones to referrers and patients.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:referral-status--outcome-service |
+| canonicalId | dfd0481be6124da0a791db41a5e9c238 |
+| displayName | Referral Status & Outcome Service |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralStatusAndOutcomeService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.SV-ReferralStatusAndOutcomeService |
 | Snapshot publication reference | HCM-SV-referral-status-outcome-service |
 | ArchiMate semantic ID | id-1feb90e9446455a1821e4bd111f85068 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1298,9 +1458,13 @@ Exposed to external GP practices and referring health facilities.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:referral-submission-service |
+| canonicalId | 42b4e9da22764480a0bea7019927860c |
+| displayName | Referral Submission Service |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralSubmissionService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.SV-ReferralSubmissionService |
 | Snapshot publication reference | HCM-SV-referral-submission-service |
 | ArchiMate semantic ID | id-e34fc08fc40058048e901636f647f1ae |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1326,9 +1490,13 @@ Ingests booking events from departmental schedulers.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:appointment-notification-ingress |
+| canonicalId | 67045c71e2194f6ba19002edcea94ee0 |
+| displayName | Appointment Notification Ingress |
+| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentNotificationIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.SV-AppointmentNotificationIngress |
 | Snapshot publication reference | HCM-SV-appointment-notification-ingress |
 | ArchiMate semantic ID | id-291d3634ca38569baa9acd6e7152c4da |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1354,9 +1522,13 @@ Exposes consolidated patient appointment schedules across facilities.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:appointment-schedule-query |
+| canonicalId | 2a7eb5b22dc04256aa049c2fcf84e62c |
+| displayName | Appointment Schedule Query |
+| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentScheduleQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.SV-AppointmentScheduleQuery |
 | Snapshot publication reference | HCM-SV-appointment-schedule-query |
 | ArchiMate semantic ID | id-880cefbf9aa35e37858e5fcdc1e63937 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1382,9 +1554,13 @@ Enforces record-level masking directives across the HIE.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:confidentiality-restriction-evaluation |
+| canonicalId | 87cfcfb20b7a4570b502b4a9a53803ad |
+| displayName | Confidentiality Restriction Evaluation |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConfidentialityRestrictionEvaluation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.SV-ConfidentialityRestrictionEvaluation |
 | Snapshot publication reference | HCM-SV-confidentiality-restriction-evaluation |
 | ArchiMate semantic ID | id-3e985d75039e5955bcd36d42b4d100e3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1409,9 +1585,13 @@ Provides real-time consent evaluation decisions to Health Information Control.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:consent-decision-service |
+| canonicalId | e1bebefbdbef4a1981ec31341eb71dfd |
+| displayName | Consent Decision Service |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConsentDecisionService |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.SV-ConsentDecisionService |
 | Snapshot publication reference | HCM-SV-consent-decision-service |
 | ArchiMate semantic ID | id-f004e0762488533d95b1b0a829c9c89e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1436,9 +1616,13 @@ Discloses verified support network members and contact details to clinical teams
 | Field | Value |
 | --- | --- |
 | Source capture key | service:client-relationship-query |
+| canonicalId | 7b3eb2e91baa4e9c887927433979a8f6 |
+| displayName | Client Relationship Query |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration.ClientRelationshipQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration.SV-ClientRelationshipQuery |
 | Snapshot publication reference | HCM-SV-client-relationship-query |
 | ArchiMate semantic ID | id-056f074d8cbd53b4a23bca5e4c0eb70f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1463,9 +1647,13 @@ Confirms legal decision-making authority for substitute consent.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:representative-authority-verification |
+| canonicalId | 2d3205c785ba4db5af5868ebb6ab1495 |
+| displayName | Representative Authority Verification |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration.RepresentativeAuthorityVerification |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration.SV-RepresentativeAuthorityVerification |
 | Snapshot publication reference | HCM-SV-representative-authority-verification |
 | ArchiMate semantic ID | id-2d4621568a275be6a00cab409179d4b2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1490,9 +1678,13 @@ Emits governed subject demographic updates to subscribed clinical systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:demographic-change-distribution |
+| canonicalId | 2c4a8c1251294885922f8ccdc3d7b069 |
+| displayName | Demographic Change Distribution |
+| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration.DemographicChangeDistribution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration.SV-DemographicChangeDistribution |
 | Snapshot publication reference | HCM-SV-demographic-change-distribution |
 | ArchiMate semantic ID | id-0672fb8a0d7a5f029d80931b0d3d2c60 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1517,9 +1709,13 @@ Provides comprehensive demographic, language, and indigenous status context to c
 | Field | Value |
 | --- | --- |
 | Source capture key | service:healthcare-subject-context-resolution |
+| canonicalId | 99a739efc7be4d7b92d90181ecd69d15 |
+| displayName | Healthcare Subject Context Resolution |
+| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration.HealthcareSubjectContextResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration.SV-HealthcareSubjectContextResolution |
 | Snapshot publication reference | HCM-SV-healthcare-subject-context-resolution |
 | ArchiMate semantic ID | id-ad4ecd236c2254a6823f0666a21c023d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1544,9 +1740,13 @@ Exposed across the HIE to establish patient cross-reference mappings.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:person-identifier-correlation |
+| canonicalId | 71220901361e42f686faf7d852f57e45 |
+| displayName | Person Identifier Correlation |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.PersonIdentifierCorrelation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.SV-PersonIdentifierCorrelation |
 | Snapshot publication reference | HCM-SV-person-identifier-correlation |
 | ArchiMate semantic ID | id-9d1f5cf6bf6f5caaa534416611b5462b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1571,9 +1771,13 @@ Exposed to Service Administration and Service Delivery to disambiguate client id
 | Field | Value |
 | --- | --- |
 | Source capture key | service:person-identifier-resolution |
+| canonicalId | a533cf0d23364f398f2a71843cce98c4 |
+| displayName | Person Identifier Resolution |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.PersonIdentifierResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.SV-PersonIdentifierResolution |
 | Snapshot publication reference | HCM-SV-person-identifier-resolution |
 | ArchiMate semantic ID | id-16d54501047750f6b5ff556db2bffdfa |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1598,9 +1802,13 @@ Exposed to authorized HIM/Medical Records administrators.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:person-identity-correction |
+| canonicalId | dd5ed5ba58f94ecbbdac913c88d2b7b6 |
+| displayName | Person Identity Correction |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.PersonIdentityCorrection |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.SV-PersonIdentityCorrection |
 | Snapshot publication reference | HCM-SV-person-identity-correction |
 | ArchiMate semantic ID | id-a236d718153153808c072f1d8cae8c1f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1625,9 +1833,13 @@ Discloses active device-to-patient and device-to-location bindings.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:device-association-query |
+| canonicalId | 01637c40914945d68d261c2094b86904 |
+| displayName | Device Association Query |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceAssociationQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceAssociationQuery |
 | Snapshot publication reference | HCM-SV-device-association-query |
 | ArchiMate semantic ID | id-19f45f21d7555051ac3dfbb1ef38b693 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1652,9 +1864,13 @@ Discloses approved medical device models and technical parameters.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:device-definition-query |
+| canonicalId | 49325c789401465aa565fd7fa7109070 |
+| displayName | Device Definition Query |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceDefinitionQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceDefinitionQuery |
 | Snapshot publication reference | HCM-SV-device-definition-query |
 | ArchiMate semantic ID | id-2db79541f9215cdea6b465c592f650f9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1679,9 +1895,13 @@ Exposes network addresses for telemetry routing.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:device-endpoint-resolution |
+| canonicalId | 5806d6e030b543d0867a862d5b6d8fad |
+| displayName | Device Endpoint Resolution |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceEndpointResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceEndpointResolution |
 | Snapshot publication reference | HCM-SV-device-endpoint-resolution |
 | ArchiMate semantic ID | id-7f6b142b6d885045aa3ee74a806aca39 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1706,9 +1926,13 @@ Resolves physical device instances from scanned barcodes or UDIs.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:device-instance-resolution |
+| canonicalId | 14fb1e3f17dd40d88087a00c9707578d |
+| displayName | Device Instance Resolution |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceInstanceResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceInstanceResolution |
 | Snapshot publication reference | HCM-SV-device-instance-resolution |
 | ArchiMate semantic ID | id-31fc8f96cdca5b1f9393b3f80b0b044e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1733,9 +1957,13 @@ Exposes mobile equipment availability.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-resource-availability-query |
+| canonicalId | 0e5ed162a288425aad2833ed5e07ed64 |
+| displayName | Clinical Resource Availability Query |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceUtilisationAdministration.ClinicalResourceAvailabilityQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceUtilisationAdministration.SV-ClinicalResourceAvailabilityQuery |
 | Snapshot publication reference | HCM-SV-clinical-resource-availability-query |
 | ArchiMate semantic ID | id-b4b97dbcfd22595095666a0bf8b52c99 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1761,9 +1989,13 @@ Exposes published clinical service offerings.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:healthcare-service-directory-query |
+| canonicalId | c7bf105e1217441a9423706b1481d153 |
+| displayName | Healthcare Service Directory Query |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-HealthcareServiceDirectoryQuery |
 | Snapshot publication reference | HCM-SV-healthcare-service-directory-query |
 | ArchiMate semantic ID | id-3f0037ab838758889d1bf105ee42f651 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1788,9 +2020,13 @@ Discloses operational intake hours and open status.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:service-availability-query |
+| canonicalId | a3846cb2960a4000a5db9ef18942ee20 |
+| displayName | Service Availability Query |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceAvailabilityQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-ServiceAvailabilityQuery |
 | Snapshot publication reference | HCM-SV-service-availability-query |
 | ArchiMate semantic ID | id-fc36267c36615fb7b9d3b65db4231071 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1815,9 +2051,13 @@ Evaluates referral eligibility for intake coordinators.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:service-eligibility-evaluation |
+| canonicalId | 7e005ce374f347088ae854442fc3edef |
+| displayName | Service Eligibility Evaluation |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceEligibilityEvaluation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-ServiceEligibilityEvaluation |
 | Snapshot publication reference | HCM-SV-service-eligibility-evaluation |
 | ArchiMate semantic ID | id-c2f03bf3f778546b85c249ec02339058 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1842,9 +2082,13 @@ Exposes multi-dimensional resolution queries answering who, where, and when heal
 | Field | Value |
 | --- | --- |
 | Source capture key | service:service-provision-resolution |
+| canonicalId | e54866d88b1e442f8ea170f06f98028b |
+| displayName | Service Provision Resolution |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceProvisionResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-ServiceProvisionResolution |
 | Snapshot publication reference | HCM-SV-service-provision-resolution |
 | ArchiMate semantic ID | id-19fda295a5e351489a17e16f65373ed0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1869,9 +2113,13 @@ Discloses care-place physical capabilities to Bed & Care-Place Management.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:care-place-specification-lookup |
+| canonicalId | 43b011b0c233408eaf6e555ecbf05d9e |
+| displayName | Care-Place Specification Lookup |
+| friendlyName | EntityInformationEnablement.LocationAdministration.CarePlaceSpecificationLookup |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.SV-CarePlaceSpecificationLookup |
 | Snapshot publication reference | HCM-SV-care-place-specification-lookup |
 | ArchiMate semantic ID | id-97752cf214e65111be413129b58575ff |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1896,9 +2144,13 @@ Exposes location profiles and geospatial addresses.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:location-directory-query |
+| canonicalId | 5ef66362eb674794b335c435227b0c95 |
+| displayName | Location Directory Query |
+| friendlyName | EntityInformationEnablement.LocationAdministration.LocationDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.SV-LocationDirectoryQuery |
 | Snapshot publication reference | HCM-SV-location-directory-query |
 | ArchiMate semantic ID | id-a8afe8cb79b95984a1effcfe7840e3a0 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1923,9 +2175,13 @@ Discloses physical containment and navigation paths for clinical facilities.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:location-hierarchy-resolution |
+| canonicalId | 389af7aaa9d74ab8b42e55f0fa72ef99 |
+| displayName | Location Hierarchy Resolution |
+| friendlyName | EntityInformationEnablement.LocationAdministration.LocationHierarchyResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.SV-LocationHierarchyResolution |
 | Snapshot publication reference | HCM-SV-location-hierarchy-resolution |
 | ArchiMate semantic ID | id-d711eba24c665c33ad39db9023c6cb83 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1950,9 +2206,13 @@ Provides official operational contact details.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:organisation-contact-lookup |
+| canonicalId | 551f1e73fb73449a83f3155cb8158f30 |
+| displayName | Organisation Contact Lookup |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationContactLookup |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationContactLookup |
 | Snapshot publication reference | HCM-SV-organisation-contact-lookup |
 | ArchiMate semantic ID | id-aed999ba3cfb55309a710d4752bb144b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -1977,9 +2237,13 @@ Discloses healthcare organisation profiles across the region.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:organisation-directory-query |
+| canonicalId | c5acf1dc97874d0a8264f9a5c1b735fa |
+| displayName | Organisation Directory Query |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationDirectoryQuery |
 | Snapshot publication reference | HCM-SV-organisation-directory-query |
 | ArchiMate semantic ID | id-cc22b9345d5d5d55bc0bf2bf1127230f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2004,9 +2268,13 @@ Provides verified organisation credentials to external and internal partners.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:organisation-verification-service |
+| canonicalId | 223b2cbe762b40efb9f05bb5cdd66bcb |
+| displayName | Organisation Verification Service |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationVerificationService |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationVerificationService |
 | Snapshot publication reference | HCM-SV-organisation-verification-service |
 | ArchiMate semantic ID | id-975b6adcaec55a84b41eeff62e424af2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2031,9 +2299,13 @@ Resolves department nesting and reporting hierarchies.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:organisational-hierarchy-resolution |
+| canonicalId | c9187704dd7f49f69f9e674c16e9181b |
+| displayName | Organisational Hierarchy Resolution |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationalHierarchyResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationalHierarchyResolution |
 | Snapshot publication reference | HCM-SV-organisational-hierarchy-resolution |
 | ArchiMate semantic ID | id-6162511d477f5f7396daafea25feb438 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2058,9 +2330,13 @@ Verifies procedural and prescribing authority for clinical ordering systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-privilege-verification |
+| canonicalId | f6599b4283194577a977bfc86ea854c2 |
+| displayName | Clinical Privilege Verification |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.ClinicalPrivilegeVerification |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-ClinicalPrivilegeVerification |
 | Snapshot publication reference | HCM-SV-clinical-privilege-verification |
 | ArchiMate semantic ID | id-2d89fceee6cf5de3aedffbc5efccd66c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2085,9 +2361,13 @@ Discloses organizational ties and practice locations.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:practitioner-affiliation-resolution |
+| canonicalId | 65baca2a21f040d49be74fab1727f96d |
+| displayName | Practitioner Affiliation Resolution |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerAffiliationResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerAffiliationResolution |
 | Snapshot publication reference | HCM-SV-practitioner-affiliation-resolution |
 | ArchiMate semantic ID | id-daad446c0f7e5e3b87d846afb6c2671f |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2112,9 +2392,13 @@ Provides provider directory lookups across the healthcare network.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:practitioner-directory-query |
+| canonicalId | ed8e6a3d891340fe92fc3201abd15c46 |
+| displayName | Practitioner Directory Query |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerDirectoryQuery |
 | Snapshot publication reference | HCM-SV-practitioner-directory-query |
 | ArchiMate semantic ID | id-dd5327a07b345531bbf1436a950d151b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2139,9 +2423,13 @@ Provides secure message routing destinations for clinical communication.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:practitioner-endpoint-lookup |
+| canonicalId | 2efb21629acf41e9b4f5c59db00721d0 |
+| displayName | Practitioner Endpoint Lookup |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerEndpointLookup |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerEndpointLookup |
 | Snapshot publication reference | HCM-SV-practitioner-endpoint-lookup |
 | ArchiMate semantic ID | id-54e83e2d7c2d58f880e9171415f2d743 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2166,9 +2454,13 @@ Resolves the specific clinical capacities of a practitioner.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:practitioner-role-resolution |
+| canonicalId | c3e5c04e2a194b4a8d49b8776fce2c51 |
+| displayName | Practitioner Role Resolution |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerRoleResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerRoleResolution |
 | Snapshot publication reference | HCM-SV-practitioner-role-resolution |
 | ArchiMate semantic ID | id-8a0aa9ba949a5b8b8ad5be5dc83be377 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2193,9 +2485,13 @@ Discloses verified registration and status to credentialing and clinical systems
 | Field | Value |
 | --- | --- |
 | Source capture key | service:practitioner-verification-service |
+| canonicalId | adf039a87e9243a1b82612a4919f6f14 |
+| displayName | Practitioner Verification Service |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerVerificationService |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerVerificationService |
 | Snapshot publication reference | HCM-SV-practitioner-verification-service |
 | ArchiMate semantic ID | id-0a4f74f6f31f5e37b8837f3a50cc7277 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2228,9 +2524,13 @@ No new research-governance mandate or universal release format is allocated.
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:service-authorised-research-information-export |
+| canonicalId | 134e1ff0331040b3a8069c9dc5e331d4 |
+| displayName | Authorised Research Information Export |
+| friendlyName | HealthInformaticsManagement.ResearchInformationCuration.AuthorisedResearchInformationExport |
+| canonicalName | CT1-BEC-HealthInformaticsManagement.CT2-BEC-ResearchInformationCuration.SV-AuthorisedResearchInformationExport |
 | Snapshot publication reference | HCM-SV-authorised-research-information-export |
 | ArchiMate semantic ID | id-c4599a96d4515815b0f9e3f0bea1cb3a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Proposed |
 | Name standing | Proposed |
@@ -2255,9 +2555,13 @@ Discloses real-time bed availability across hospital directorates.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:bed-availability-query |
+| canonicalId | c51894eccd7b45019c2f084993f4cfc6 |
+| displayName | Bed Availability Query |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedAvailabilityQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.SV-BedAvailabilityQuery |
 | Snapshot publication reference | HCM-SV-bed-availability-query |
 | ArchiMate semantic ID | id-f7ff8ad70b355db3876f450936497684 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2285,9 +2589,13 @@ Additional Feature responsibility: FEAT-HSO-13 — Bed Readiness Notification re
 | Field | Value |
 | --- | --- |
 | Source capture key | service:bed-turnover-lifecycle-service |
+| canonicalId | f0ab3847b1bf41869a85b1a5ef217429 |
+| displayName | Bed Turnover Lifecycle Service |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedTurnoverLifecycleService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.SV-BedTurnoverLifecycleService |
 | Snapshot publication reference | HCM-SV-bed-turnover-lifecycle-service |
 | ArchiMate semantic ID | id-99d84888a1b35e738a2822b931fdb7cb |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2313,9 +2621,13 @@ Discloses real-time clinic waiting times and queue states.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinic-queue-telemetry-service |
+| canonicalId | c720457349e644179c98d13be59bd581 |
+| displayName | Clinic Queue Telemetry Service |
+| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.ClinicQueueTelemetryService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.SV-ClinicQueueTelemetryService |
 | Snapshot publication reference | HCM-SV-clinic-queue-telemetry-service |
 | ArchiMate semantic ID | id-af013a86ebb250d79556d64fbb65ce11 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2341,9 +2653,13 @@ Exposes chain-of-custody tracking.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:specimen-transit-tracking-service |
+| canonicalId | 100e740770bc4ab28cfe3c9af4b541cd |
+| displayName | Specimen Transit Tracking Service |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination.SpecimenTransitTrackingService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination.SV-SpecimenTransitTrackingService |
 | Snapshot publication reference | HCM-SV-specimen-transit-tracking-service |
 | ArchiMate semantic ID | id-658d398af45950afa8c57e1f8ebc9f91 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2369,9 +2685,13 @@ Discloses discharge barrier checklists and planned departure times.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:discharge-readiness-telemetry |
+| canonicalId | 03d01a9b024c4497badf3fe011a8dd20 |
+| displayName | Discharge Readiness Telemetry |
+| friendlyName | HealthServiceOperationsEnablement.DischargeManagement.DischargeReadinessTelemetry |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-DischargeManagement.SV-DischargeReadinessTelemetry |
 | Snapshot publication reference | HCM-SV-discharge-readiness-telemetry |
 | ArchiMate semantic ID | id-d42da85c238f5fcfabda0f3107f7e1e9 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2399,9 +2719,13 @@ Capacity boundary: Existing departmental capacity responsibility is clarified, n
 | Field | Value |
 | --- | --- |
 | Source capture key | service:ed-operational-status-query |
+| canonicalId | f07828653c06425f9effd92b1d9886c9 |
+| displayName | ED Operational Status Query |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EdOperationalStatusQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.SV-EdOperationalStatusQuery |
 | Snapshot publication reference | HCM-SV-ed-operational-status-query |
 | ArchiMate semantic ID | id-d688256eae67521fa1e6b33e4f1f2724 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2428,9 +2752,13 @@ Ingests emergency triage presentations.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:ed-triage-stream-ingress |
+| canonicalId | 677947e357b541f58f36e9b4e36157e8 |
+| displayName | ED Triage Stream Ingress |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression.EdTriageStreamIngress |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression.SV-EdTriageStreamIngress |
 | Snapshot publication reference | HCM-SV-ed-triage-stream-ingress |
 | ArchiMate semantic ID | id-0b4f72b08c0c5b5bb3f6cfdae114aa83 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2456,9 +2784,13 @@ Provides low-latency emergency record summaries.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:emergency-fast-path-lhr-query |
+| canonicalId | 0588ef78691143cdb2d884960811db1e |
+| displayName | Emergency Fast-Path LHR Query |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression.EmergencyFastPathLhrQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression.SV-EmergencyFastPathLhrQuery |
 | Snapshot publication reference | HCM-SV-emergency-fast-path-lhr-query |
 | ArchiMate semantic ID | id-5a59cea7c21854d995df5329d002535a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2486,9 +2818,13 @@ Feature association not established: FEAT-HSO-16 — Mobile Worker Task Dispatch
 | Field | Value |
 | --- | --- |
 | Source capture key | service:staff-presence-telemetry-query |
+| canonicalId | b3cd0d8e40f44b9fa2b64367237345fa |
+| displayName | Staff Presence Telemetry Query |
+| friendlyName | HealthServiceOperationsEnablement.MobileStaffManagement.StaffPresenceTelemetryQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-MobileStaffManagement.SV-StaffPresenceTelemetryQuery |
 | Snapshot publication reference | HCM-SV-staff-presence-telemetry-query |
 | ArchiMate semantic ID | id-a7e6a3c418a857bb9a66fed528ebdc85 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2515,9 +2851,13 @@ Discloses active on-call contacts for switchboard and emergency teams.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:on-call-specialist-lookup |
+| canonicalId | e0ba307dc51e47a395c1eac9fe728a98 |
+| displayName | On-Call Specialist Lookup |
+| friendlyName | HealthServiceOperationsEnablement.OnCallManagement.OnCallSpecialistLookup |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OnCallManagement.SV-OnCallSpecialistLookup |
 | Snapshot publication reference | HCM-SV-on-call-specialist-lookup |
 | ArchiMate semantic ID | id-2fea1124c0455826b976bde2dfe87067 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2547,9 +2887,13 @@ Capacity boundary: Operational coordination does not acquire authoritative booki
 | Field | Value |
 | --- | --- |
 | Source capture key | service:ambulatory-session-status-query |
+| canonicalId | a790a785f2e148d7a1c99655d53db4e9 |
+| displayName | Ambulatory Session Status Query |
+| friendlyName | HealthServiceOperationsEnablement.OutpatientOperations.AmbulatorySessionStatusQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OutpatientOperations.SV-AmbulatorySessionStatusQuery |
 | Snapshot publication reference | HCM-SV-ambulatory-session-status-query |
 | ArchiMate semantic ID | id-95b5cf1da0db5b56b0b5649c34a0a923 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2578,9 +2922,13 @@ Additional Feature responsibility: FEAT-HSO-24 — Transport Request Ingestion i
 | Field | Value |
 | --- | --- |
 | Source capture key | service:patient-transport-tracking-service |
+| canonicalId | 8d71168ac7da48e990757b2a0ae3670f |
+| displayName | Patient Transport Tracking Service |
+| friendlyName | HealthServiceOperationsEnablement.PatientTransport.PatientTransportTrackingService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-PatientTransport.SV-PatientTransportTrackingService |
 | Snapshot publication reference | HCM-SV-patient-transport-tracking-service |
 | ArchiMate semantic ID | id-386fe234615b58488262767a5f2f337e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2606,9 +2954,13 @@ Provides executive operational situational awareness.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:regional-health-system-capacity-query |
+| canonicalId | ecbb1944572d44dbba55aaf565559d13 |
+| displayName | Regional Health System Capacity Query |
+| friendlyName | HealthServiceOperationsEnablement.ServiceCapacityManagement.RegionalHealthSystemCapacityQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ServiceCapacityManagement.SV-RegionalHealthSystemCapacityQuery |
 | Snapshot publication reference | HCM-SV-regional-health-system-capacity-query |
 | ArchiMate semantic ID | id-f80ca2f4577658349ca52a2fb996c3d8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2636,9 +2988,13 @@ Additional Feature responsibility: FEAT-HSO-06 — Perioperative Resource Notifi
 | Field | Value |
 | --- | --- |
 | Source capture key | service:theatre-case-progression-telemetry |
+| canonicalId | 15fca4d52810448785ca3c70b899a294 |
+| displayName | Theatre Case Progression Telemetry |
+| friendlyName | HealthServiceOperationsEnablement.TheatreOperations.TheatreCaseProgressionTelemetry |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-TheatreOperations.SV-TheatreCaseProgressionTelemetry |
 | Snapshot publication reference | HCM-SV-theatre-case-progression-telemetry |
 | ArchiMate semantic ID | id-9f71162dc5935336b0dca5621625b94e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2666,9 +3022,13 @@ Capacity boundary: Bed & Care-Place Management contributes resource state. Ward 
 | Field | Value |
 | --- | --- |
 | Source capture key | service:ward-operational-summary-query |
+| canonicalId | 55a7f84dfb4142e2aa96c5253b4b6394 |
+| displayName | Ward Operational Summary Query |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations.WardOperationalSummaryQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.SV-WardOperationalSummaryQuery |
 | Snapshot publication reference | HCM-SV-ward-operational-summary-query |
 | ArchiMate semantic ID | id-55aff8b8a30455a99f9eb585ab782f10 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2697,9 +3057,13 @@ Feature association not established: FEAT-SD-08 — Inpatient Clinical Progressi
 | Field | Value |
 | --- | --- |
 | Source capture key | service:discharge-dossier-packaging-service |
+| canonicalId | 02a17f4f9b0a425299141261130a1768 |
+| displayName | Discharge Dossier Packaging Service |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations.MultidisciplinaryInpatientCareCoordination.DischargeDossierPackagingService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.CT3-BEC-MultidisciplinaryInpatientCareCoordination.SV-DischargeDossierPackagingService |
 | Snapshot publication reference | HCM-SV-discharge-dossier-packaging-service |
 | ArchiMate semantic ID | id-fe0a0983a3f657c686030a6cfb383e42 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2726,9 +3090,13 @@ Discloses consolidated 24-hour clinical briefing views.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:ward-round-clinical-briefing-query |
+| canonicalId | 2b0f17a8a2da4c0f92a5ad4a17ee526b |
+| displayName | Ward Round Clinical Briefing Query |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations.MultidisciplinaryInpatientCareCoordination.WardRoundClinicalBriefingQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.CT3-BEC-MultidisciplinaryInpatientCareCoordination.SV-WardRoundClinicalBriefingQuery |
 | Snapshot publication reference | HCM-SV-ward-round-clinical-briefing-query |
 | ArchiMate semantic ID | id-ea64cd1258995a3ebae6b21e311943fe |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2754,9 +3122,13 @@ Discloses task progression to requesting wards.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:operational-work-status-query |
+| canonicalId | 8659408923e641b99727ef218e2b8dfc |
+| displayName | Operational Work Status Query |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkStatusQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.SV-OperationalWorkStatusQuery |
 | Snapshot publication reference | HCM-SV-operational-work-status-query |
 | ArchiMate semantic ID | id-7f937c0dfc8f5705bbd78f302e5284bf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2782,9 +3154,13 @@ Delivers allocated work and captures distinct technical and operational acknowle
 | Field | Value |
 | --- | --- |
 | Source capture key | service:work-dispatch-service |
+| canonicalId | 7410926f15d3480eaa856d998d67d83f |
+| displayName | Work Dispatch Service |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.WorkDispatchService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.SV-WorkDispatchService |
 | Snapshot publication reference | HCM-SV-work-dispatch-service |
 | ArchiMate semantic ID | id-6bf9921ea3a15f76864aef3c2e8ce5df |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2810,9 +3186,13 @@ Resolves operational shifts.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:temporal-context-resolution |
+| canonicalId | 47f6491361794c2393cd3b64caec2d1a |
+| displayName | Temporal Context Resolution |
+| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.TemporalContextResolution |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.SV-TemporalContextResolution |
 | Snapshot publication reference | HCM-SV-temporal-context-resolution |
 | ArchiMate semantic ID | id-af526ad0c091540c8ee3b7afe9bf95d8 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2838,9 +3218,13 @@ Discloses consolidated temporal schedules.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:unified-calendar-projection-query |
+| canonicalId | c78bdb7ffc7d42fda450c024ca252322 |
+| displayName | Unified Calendar Projection Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.UnifiedCalendarProjectionQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.SV-UnifiedCalendarProjectionQuery |
 | Snapshot publication reference | HCM-SV-unified-calendar-projection-query |
 | ArchiMate semantic ID | id-54794fdfa3ba5b09aae8eeffe08110d5 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2866,9 +3250,13 @@ Manages team collaboration spaces and discussions.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-collaboration-space-service |
+| canonicalId | 17579c34d3014825a878a9ff121e30a2 |
+| displayName | Clinical Collaboration Space Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.ClinicalCollaborationSpaceService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.SV-ClinicalCollaborationSpaceService |
 | Snapshot publication reference | HCM-SV-clinical-collaboration-space-service |
 | ArchiMate semantic ID | id-18a2039b1b8f5d578679c60daaa0ee71 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2894,9 +3282,13 @@ Embeds clinical summaries in collaboration feeds.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:collaboration-clinical-summary-resolution |
+| canonicalId | 6a25de08f1b5461b86bd410ea21b80a6 |
+| displayName | Collaboration Clinical Summary Resolution |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.CollaborationClinicalSummaryResolution |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.SV-CollaborationClinicalSummaryResolution |
 | Snapshot publication reference | HCM-SV-collaboration-clinical-summary-resolution |
 | ArchiMate semantic ID | id-8a77a391a9b95912b0a494a96d90f67a |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2922,9 +3314,13 @@ Governs space lifecycles and membership.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:collaboration-space-governance-service |
+| canonicalId | f94eef008b214ed88ff92bc64640ccb0 |
+| displayName | Collaboration Space Governance Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.CollaborationSpaceGovernanceService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.SV-CollaborationSpaceGovernanceService |
 | Snapshot publication reference | HCM-SV-collaboration-space-governance-service |
 | ArchiMate semantic ID | id-66a6f7298e5e5a7eb602b505517bca41 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2950,9 +3346,13 @@ Exposes concept validation lookups.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:terminology-concept-resolution-service |
+| canonicalId | 3be22abcc49045c7a609bdf6428fe15a |
+| displayName | Terminology Concept Resolution Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.TerminologyConceptResolutionService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.SV-TerminologyConceptResolutionService |
 | Snapshot publication reference | HCM-SV-terminology-concept-resolution-service |
 | ArchiMate semantic ID | id-2391b2f33a8456ffb135b331e7e333e4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -2978,9 +3378,13 @@ Translates codes across terminology systems.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:terminology-mapping-service |
+| canonicalId | 27dfb51817344e17ab78aa6f33f959ba |
+| displayName | Terminology Mapping Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.TerminologyMappingService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.SV-TerminologyMappingService |
 | Snapshot publication reference | HCM-SV-terminology-mapping-service |
 | ArchiMate semantic ID | id-eda9bcdfca33599cbfb01af28065bf7d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3014,9 +3418,13 @@ Does not grant unrestricted dataset mutation or external terminology authority.
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:service-governed-reference-dataset-content-query |
+| canonicalId | 625ef1036a7442b2b8aed06f72b8afff |
+| displayName | Governed Reference Dataset Content Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.GovernedReferenceDatasetAdministration.GovernedReferenceDatasetContentQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.CT3-BEC-GovernedReferenceDatasetAdministration.SV-GovernedReferenceDatasetContentQuery |
 | Snapshot publication reference | HCM-SV-governed-reference-dataset-content-query |
 | ArchiMate semantic ID | id-8b2a95285ad65f61bae6d379425bf9e4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Proposed |
 | Name standing | Proposed |
@@ -3041,9 +3449,13 @@ Provides non-clinical operational messaging channels.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:operational-collaboration-service |
+| canonicalId | 4096602ad3084bc2a9ad9a06276cbcdc |
+| displayName | Operational Collaboration Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.GeneralCollaboration.OperationalCollaborationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-GeneralCollaboration.SV-OperationalCollaborationService |
 | Snapshot publication reference | HCM-SV-operational-collaboration-service |
 | ArchiMate semantic ID | id-ad83c410bf525d789704618d1ac8524b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3069,9 +3481,13 @@ Discloses search capabilities to clinical user interfaces.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-information-search-service |
+| canonicalId | ef87ad2b419443a9989849bf18dfb385 |
+| displayName | Clinical Information Search Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationAccess.ClinicalInformationSearchService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess.SV-ClinicalInformationSearchService |
 | Snapshot publication reference | HCM-SV-clinical-information-search-service |
 | ArchiMate semantic ID | id-0a0509d6bd365c709c58419485df29b4 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3099,9 +3515,13 @@ Feature association not established: FEAT-ISE-09 — Access-Controlled Informati
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-resource-retrieval-service |
+| canonicalId | 3cdde3bb6a204c46b08468e080f2545a |
+| displayName | Clinical Resource Retrieval Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationAccess.ClinicalResourceRetrievalService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess.SV-ClinicalResourceRetrievalService |
 | Snapshot publication reference | HCM-SV-clinical-resource-retrieval-service |
 | ArchiMate semantic ID | id-86038993ea475d81b675875e1a52ba56 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3130,9 +3550,13 @@ Feature association not established: FEAT-ISE-12 — Security Context Propagatio
 | Field | Value |
 | --- | --- |
 | Source capture key | service:consent-enforcement-service |
+| canonicalId | 67bf392d2dd6464292619e259cc37f8e |
+| displayName | Consent Enforcement Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.ConsentEnforcementService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.SV-ConsentEnforcementService |
 | Snapshot publication reference | HCM-SV-consent-enforcement-service |
 | ArchiMate semantic ID | id-c4d53a607101520e93a971e5eb5e64ad |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3159,9 +3583,13 @@ Evaluates access requests across the platform.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:policy-evaluation--authorisation-service |
+| canonicalId | a025ac002b6a461abaac07fcb87f411f |
+| displayName | Policy Evaluation & Authorisation Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.PolicyEvaluationAndAuthorisationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.SV-PolicyEvaluationAndAuthorisationService |
 | Snapshot publication reference | HCM-SV-policy-evaluation-authorisation-service |
 | ArchiMate semantic ID | id-0b6d1d05c1b5502b96828b0500ee415e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3187,9 +3615,13 @@ Ingests audit events across all capabilities.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:security-audit-ingress |
+| canonicalId | 43c4a2aa7b4548ec8fdc2844e3d666b6 |
+| displayName | Security Audit Ingress |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.SecurityAuditIngress |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.SV-SecurityAuditIngress |
 | Snapshot publication reference | HCM-SV-security-audit-ingress |
 | ArchiMate semantic ID | id-7d4e1b089b2b5d8781a1456f9dcca279 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3219,9 +3651,13 @@ This Service lets a client obtain validation of transaction security credentials
 | Field | Value |
 | --- | --- |
 | Source capture key | service:security-context-validation-service |
+| canonicalId | f1ff9e6542004a7584a385062cb0ed21 |
+| displayName | Security Context Validation Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.SecurityContextValidationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.SV-SecurityContextValidationService |
 | Snapshot publication reference | HCM-SV-security-context-validation-service |
 | ArchiMate semantic ID | id-7ec30e1d7cf4575283579d0a1ccf0523 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3248,9 +3684,13 @@ Securely delivers documents to designated recipient mailboxes.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:addressed-document-delivery-service |
+| canonicalId | 97080460bacf40ef8b6db2091cc3bb6e |
+| displayName | Addressed Document Delivery Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.AddressedDocumentDeliveryService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-AddressedDocumentDeliveryService |
 | Snapshot publication reference | HCM-SV-addressed-document-delivery-service |
 | ArchiMate semantic ID | id-05a3a9a9feb85494a9cc9834bb3e2008 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3276,9 +3716,13 @@ Emits publish-subscribe clinical event feeds.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:clinical-event-syndication-stream |
+| canonicalId | 337f39bb62d9491bb6e41c4af32b220c |
+| displayName | Clinical Event Syndication Stream |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.ClinicalEventSyndicationStream |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-ClinicalEventSyndicationStream |
 | Snapshot publication reference | HCM-SV-clinical-event-syndication-stream |
 | ArchiMate semantic ID | id-95e2411e0cd55f9388d1d3b6be0883d6 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3304,9 +3748,13 @@ Resolves distributed record queries.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:federated-health-information-query |
+| canonicalId | b4db5850f7114c968901966b4f6e36f5 |
+| displayName | Federated Health Information Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.FederatedHealthInformationQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-FederatedHealthInformationQuery |
 | Snapshot publication reference | HCM-SV-federated-health-information-query |
 | ArchiMate semantic ID | id-c285d5712fe255ccaaaeba2cdae324ae |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3332,9 +3780,13 @@ Ingress endpoint for regional data contributions.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:hie-submission-gateway-service |
+| canonicalId | 816c1013b609440fb772060396fd2dac |
+| displayName | HIE Submission Gateway Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieSubmissionGatewayService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-HieSubmissionGatewayService |
 | Snapshot publication reference | HCM-SV-hie-submission-gateway-service |
 | ArchiMate semantic ID | id-5d57cd297e41543b8a7af2c4c6489e12 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3360,9 +3812,13 @@ Discloses interoperability schemas.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:exchange-profile-specification-query |
+| canonicalId | 98bc4e8f57f5493ebeb88f8bfc8104a8 |
+| displayName | Exchange Profile Specification Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.ExchangeProfileSpecificationQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-ExchangeProfileSpecificationQuery |
 | Snapshot publication reference | HCM-SV-exchange-profile-specification-query |
 | ArchiMate semantic ID | id-3f95bae1b24b59deb585bef821ecb342 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3389,9 +3845,13 @@ Provides data dictionary specifications.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:information-dictionary-query |
+| canonicalId | ea491740e6cd40c69f65ad7d9d4f81fe |
+| displayName | Information Dictionary Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.InformationDictionaryQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-InformationDictionaryQuery |
 | Snapshot publication reference | HCM-SV-information-dictionary-query |
 | ArchiMate semantic ID | id-0bbe77717dab5aa1a7f19f191c7dfd89 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3418,9 +3878,13 @@ Validates representations for compliance.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:semantic-conformance-verification-service |
+| canonicalId | 3d492f97eb3f4d50a1c448477c61bf2b |
+| displayName | Semantic Conformance Verification Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.SemanticConformanceVerificationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-SemanticConformanceVerificationService |
 | Snapshot publication reference | HCM-SV-semantic-conformance-verification-service |
 | ArchiMate semantic ID | id-fe6d5a803b2c5bae86d1deaffa2e6bde |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3446,9 +3910,13 @@ Discloses canonical model definitions.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:semantic-model-definition-service |
+| canonicalId | 0f6b41152f294a87b84970c74ab5a014 |
+| displayName | Semantic Model Definition Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.SemanticModelDefinitionService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-SemanticModelDefinitionService |
 | Snapshot publication reference | HCM-SV-semantic-model-definition-service |
 | ArchiMate semantic ID | id-77725f994de4501ca9714c56538bb33d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3474,9 +3942,13 @@ Discloses value set bindings.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:terminology-binding-specification-lookup |
+| canonicalId | 1b9e7c961a054a6bbdb7876d08a82ef3 |
+| displayName | Terminology Binding Specification Lookup |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.TerminologyBindingSpecificationLookup |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-TerminologyBindingSpecificationLookup |
 | Snapshot publication reference | HCM-SV-terminology-binding-specification-lookup |
 | ArchiMate semantic ID | id-a93be27ecf9853ce80f153411351c669 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3503,9 +3975,13 @@ Exposes immediate active clinical summaries.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:active-problem--allergy-summary-query |
+| canonicalId | a382bc84c1d043849b8cd8ebe8a482c1 |
+| displayName | Active Problem & Allergy Summary Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.ActiveProblemAndAllergySummaryQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.SV-ActiveProblemAndAllergySummaryQuery |
 | Snapshot publication reference | HCM-SV-active-problem-allergy-summary-query |
 | ArchiMate semantic ID | id-b439a9589d195390b7f114ff47156a8b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3531,9 +4007,13 @@ Provides governed historical record retrieval for authorised clinical and legal 
 | Field | Value |
 | --- | --- |
 | Source capture key | service:historical-clinical-record-access |
+| canonicalId | be4938981b43403282694631b40f0bb2 |
+| displayName | Historical Clinical Record Access |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.HistoricalClinicalRecordAccess |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.SV-HistoricalClinicalRecordAccess |
 | Snapshot publication reference | HCM-SV-historical-clinical-record-access |
 | ArchiMate semantic ID | id-8a3a595aebf057fcb4ef2bfd02d0b50d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3559,9 +4039,13 @@ Discloses the comprehensive clinical timeline to authorised clinicians.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:longitudinal-clinical-record-query |
+| canonicalId | df10431b93bf47dfae2b8ec7b3e6552b |
+| displayName | Longitudinal Clinical Record Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LongitudinalClinicalRecordQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.SV-LongitudinalClinicalRecordQuery |
 | Snapshot publication reference | HCM-SV-longitudinal-clinical-record-query |
 | ArchiMate semantic ID | id-3bbfba99153650739023e87ba668f90c |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3595,9 +4079,13 @@ The client acquires neither physical repository access nor originating clinical 
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:service-associated-binary-content-retrieval |
+| canonicalId | f0e0c03e407e4534b9e422df103fc35f |
+| displayName | Associated Binary Content Retrieval |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LinkedInformationCuration.AssociatedBinaryContentRetrieval |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-LinkedInformationCuration.SV-AssociatedBinaryContentRetrieval |
 | Snapshot publication reference | HCM-SV-associated-binary-content-retrieval |
 | ArchiMate semantic ID | id-4a95ba1792425d52b3efcface99d5162 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Proposed |
 | Name standing | Proposed |
@@ -3624,9 +4112,13 @@ Feature association not established: Strategy FEAT-SD-02 — Primary Care Notifi
 | Field | Value |
 | --- | --- |
 | Source capture key | service:chronic-care-timeline-query |
+| canonicalId | 88243738a3c941efb369f5dd6da6252b |
+| displayName | Chronic Care Timeline Query |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.PrimaryCareCoordination.ChronicCareTimelineQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-PrimaryCareCoordination.SV-ChronicCareTimelineQuery |
 | Snapshot publication reference | HCM-SV-chronic-care-timeline-query |
 | ArchiMate semantic ID | id-6516283f9adc5425b17742bfd7edb4ef |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3653,9 +4145,13 @@ Ingests GP event summaries into the HIE.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:primary-care-summary-ingress |
+| canonicalId | 7f4ca66b911e48bc8bf859e239f5ba00 |
+| displayName | Primary Care Summary Ingress |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.PrimaryCareCoordination.PrimaryCareSummaryIngress |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-PrimaryCareCoordination.SV-PrimaryCareSummaryIngress |
 | Snapshot publication reference | HCM-SV-primary-care-summary-ingress |
 | ArchiMate semantic ID | id-c744982f402e5146b024bbae4114f07b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3681,9 +4177,13 @@ Ingests remote patient data streams into the LHR.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:remote-telemetry-ingress |
+| canonicalId | 89014429b6454ced82c26cbe777fa33a |
+| displayName | Remote Telemetry Ingress |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring.RemoteTelemetryIngress |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring.SV-RemoteTelemetryIngress |
 | Snapshot publication reference | HCM-SV-remote-telemetry-ingress |
 | ArchiMate semantic ID | id-d3aec82635285358868a1812552a97e1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3709,9 +4209,13 @@ Binds virtual session identifiers to patient encounters.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:virtual-encounter-context-resolution |
+| canonicalId | db1dfa6db11342128e82df186877c477 |
+| displayName | Virtual Encounter Context Resolution |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring.VirtualEncounterContextResolution |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring.SV-VirtualEncounterContextResolution |
 | Snapshot publication reference | HCM-SV-virtual-encounter-context-resolution |
 | ArchiMate semantic ID | id-374bb4912c525ac2956131577d7d14d2 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3737,9 +4241,13 @@ Delivers contextual health and operational information for presentation.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:contextual-presentation-service |
+| canonicalId | 905d44b44f434fa4974e09dcafac016a |
+| displayName | Contextual Presentation Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.PresentationServices.ContextualPresentationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PresentationServices.SV-ContextualPresentationService |
 | Snapshot publication reference | HCM-SV-contextual-presentation-service |
 | ArchiMate semantic ID | id-e021def7dcd95db0bda2eb7d9b6e369d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3773,9 +4281,13 @@ A readiness answer grants no resource allocation or clinical go/no-go authority.
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:service-service-offering-readiness-query |
+| canonicalId | 3b0bdc7bc18940208511f39e43d5357a |
+| displayName | Service Offering Readiness Query |
+| friendlyName | HealthServiceOperationsEnablement.CareResourceAndCapacityCoordination.ServiceOfferingReadinessCoordination.ServiceOfferingReadinessQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CareResourceAndCapacityCoordination.CT3-BEC-ServiceOfferingReadinessCoordination.SV-ServiceOfferingReadinessQuery |
 | Snapshot publication reference | HCM-SV-service-offering-readiness-query |
 | ArchiMate semantic ID | id-6faff100c7ba555aa7b35ea22d43829b |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Proposed |
 | Name standing | Proposed |
@@ -3800,9 +4312,13 @@ Evaluates physical/operational access rights.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:operational-credential-checkpoint-service |
+| canonicalId | 7ecc60e34e07491588b106b9075ab09a |
+| displayName | Operational Credential Checkpoint Service |
+| friendlyName | HealthServiceOperationsEnablement.WorkforceQualificationAndDevelopmentEnablement.CredentialManagement.OperationalCredentialCheckpointService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkforceQualificationAndDevelopmentEnablement.CT3-BEC-CredentialManagement.SV-OperationalCredentialCheckpointService |
 | Snapshot publication reference | HCM-SV-operational-credential-checkpoint-service |
 | ArchiMate semantic ID | id-5c94f522c90c54df8c5951669cf51373 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3837,9 +4353,13 @@ Input acceptance does not establish successful completion or authority over sour
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:service-entity-operational-input-submission |
+| canonicalId | 6a27b36b624444d4b09e68f286045d46 |
+| displayName | Entity Operational Input Submission |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.EntitySpecificOperationalCoordination.EntityOperationalInputSubmission |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-EntitySpecificOperationalCoordination.SV-EntityOperationalInputSubmission |
 | Snapshot publication reference | HCM-SV-entity-operational-input-submission |
 | ArchiMate semantic ID | id-cc4944fb648457dcb1b5288da72cda01 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Proposed |
 | Name standing | Proposed |
@@ -3864,9 +4384,13 @@ Discloses SLA breaches.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:activity-escalation-telemetry |
+| canonicalId | f6c353c9349d47daadd59e57821ad03b |
+| displayName | Activity Escalation Telemetry |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.ActivityEscalationTelemetry |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.SV-ActivityEscalationTelemetry |
 | Snapshot publication reference | HCM-SV-activity-escalation-telemetry |
 | ArchiMate semantic ID | id-ea70d9701c4151c09d62a0cf40fc5edf |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3892,9 +4416,13 @@ Coordinates automated tasks.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:synthetic-task-execution-service |
+| canonicalId | 57317da133ba4e29bde3997921f92e2e |
+| displayName | Synthetic Task Execution Service |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.SyntheticTaskExecutionService |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.SV-SyntheticTaskExecutionService |
 | Snapshot publication reference | HCM-SV-synthetic-task-execution-service |
 | ArchiMate semantic ID | id-6fa328ef53b75a4bbfc9020cd912901e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3920,9 +4448,13 @@ Provides To Do inbox and sign-off coordination without acquiring underlying clin
 | Field | Value |
 | --- | --- |
 | Source capture key | service:to-do-management-service |
+| canonicalId | 6bc69c5517024c43b1ab701aac5e39b7 |
+| displayName | To Do Management Service |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.ToDoManagementService |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.SV-ToDoManagementService |
 | Snapshot publication reference | HCM-SV-to-do-management-service |
 | ArchiMate semantic ID | id-2aaa8d3224cb58719606976d9dba95f7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -3948,9 +4480,13 @@ Manages operational work progression.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:work-order-coordination-service |
+| canonicalId | 8a1987ed11d44598b325359287e503f0 |
+| displayName | Work Order Coordination Service |
+| friendlyName | HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination.WorkOrderCoordinationService |
+| canonicalName | CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination.SV-WorkOrderCoordinationService |
 | Snapshot publication reference | HCM-SV-work-order-coordination-service |
 | ArchiMate semantic ID | id-e60fd5809f09594f9c91f7ff5faa9fb3 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -4000,9 +4536,13 @@ Outcome communication exposes already established findings to applicable authori
 | Field | Value |
 | --- | --- |
 | Source capture key | service:communicate-service-assurance-outcome |
+| canonicalId | 371b04d6bbf84b53a3c5667ae6df2809 |
+| displayName | Communicate Service Assurance Outcome |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement.GovernedAssurance.CommunicateServiceAssuranceOutcome |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement.CT3-BEC-GovernedAssurance.SV-CommunicateServiceAssuranceOutcome |
 | Snapshot publication reference | HCM-SV-communicate-service-assurance-outcome |
 | ArchiMate semantic ID | id-05ac1cbd590259caa07b664ca8bbe93d |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -4053,9 +4593,13 @@ This Service gives approved requesting roles a governed way to seek assurance wi
 | Field | Value |
 | --- | --- |
 | Source capture key | service:request-service-assurance |
+| canonicalId | a76c0be369744fcfb5eb91b90c9b59e7 |
+| displayName | Request Service Assurance |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement.GovernedAssurance.RequestServiceAssurance |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement.CT3-BEC-GovernedAssurance.SV-RequestServiceAssurance |
 | Snapshot publication reference | HCM-SV-request-service-assurance |
 | ArchiMate semantic ID | id-db26e0ecb3e959eebf8fb824616215e1 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -4107,9 +4651,13 @@ The status Service exposes progression of an identifiable assurance activity exc
 | Field | Value |
 | --- | --- |
 | Source capture key | service:request-service-assurance-status |
+| canonicalId | 60f8cbc814614f669f31d4e78734c6d6 |
+| displayName | Request Service Assurance Status |
+| friendlyName | IndependentAssuranceEnablement.IndependentAssuranceEvaluationEnablement.GovernedAssurance.RequestServiceAssuranceStatus |
+| canonicalName | CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-IndependentAssuranceEvaluationEnablement.CT3-BEC-GovernedAssurance.SV-RequestServiceAssuranceStatus |
 | Snapshot publication reference | HCM-SV-request-service-assurance-status |
 | ArchiMate semantic ID | id-e69514b725475221959dce4506cd68d7 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -4136,9 +4684,13 @@ Protocol interface for external client integrations.
 | Field | Value |
 | --- | --- |
 | Source capture key | service:standards-communication-gateway-service |
+| canonicalId | 80e239faf1bd476e973eb602b3730380 |
+| displayName | Standards Communication Gateway Service |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationConnectivityEnablement.HealthInformationCommunication.StandardsCommunicationGatewayService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationConnectivityEnablement.CT3-BEC-HealthInformationCommunication.SV-StandardsCommunicationGatewayService |
 | Snapshot publication reference | HCM-SV-standards-communication-gateway-service |
 | ArchiMate semantic ID | id-d550582636e05bfe86193036e9287801 |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Canonical |
 | Name standing | Canonical |
@@ -4172,9 +4724,13 @@ The exposed boundary does not permit callers to assign themselves audit platform
 | Field | Value |
 | --- | --- |
 | Source capture key | proposal:service-mandatory-audit-evidence-capture |
+| canonicalId | 6ab3f8628ba14f17bddbf6092cf56ba7 |
+| displayName | Mandatory Audit Evidence Capture |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationProtectionAndAccountabilityEnablement.SignificantActivityAuditCapture.MandatoryAuditEvidenceCapture |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationProtectionAndAccountabilityEnablement.CT3-BEC-SignificantActivityAuditCapture.SV-MandatoryAuditEvidenceCapture |
 | Snapshot publication reference | HCM-SV-mandatory-audit-evidence-capture |
 | ArchiMate semantic ID | id-94caf7d1a6c85f7a86c64db72c8cc84e |
-| Architecture Identity | Unresolved — no allocation |
+| Legacy identity evidence | No legacy allocation |
 | Construct | service |
 | Architectural standing | Proposed |
 | Name standing | Proposed |

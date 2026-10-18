@@ -6,7 +6,8 @@ This is the working baseline established by the explicitly authorised
 2026-10-17 Markdown / ArchiMate synchronisation. It incorporates the reconciled
 1.0.5A recovery alongside the current RADS architecture. Inclusion preserves
 each assertion's standing; it does not approve a proposal, resolve a conflict,
-allocate an Architecture Identity or declare a domain complete.
+declare a domain complete. Release 1.0.7 establishes resource-owned Canonical IDs
+and governed names under the [identity and naming contract](../canonical-identity-and-naming.md).
 
 The canonical Markdown RAD is the governed Harmonia source repository. ArchiMate
 is its governed architectural projection and human architecture workbench;
@@ -28,7 +29,8 @@ remains the only current-release authority.
 - [Motivation correspondence](motivation.md), with definitions linked to their maintained sources
 - [Coverage and representation boundaries](coverage.md)
 - [Discrepancies and human review](discrepancies.json)
-- [Archi inspection guide](../../../archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md)
+- [Current identity-establishment Archi guide](../../../archimate/capability-architecture/synchronised-baseline/canonical-identity-archi-guide.md)
+- [Historical 1.0.6 inspection guide](../../../archimate/capability-architecture/synchronised-baseline/archi-inspection-guide.md)
 
 Each record's concise governed definition appears first, followed by verbatim
 explanation whose continued applicability is established by reconciled source
@@ -72,7 +74,8 @@ or overview, and explicitly responsibility-preserving Feature relocation are
 current without changing their standing. Changed or uncertain semantic material,
 definition gaps and non-current records retain historical explanation pending
 review. These are presentation classifications, not new architectural decisions.
-The capture remains byte-identical to the adopted historical evidence. Its
+The semantic capture, excluding the explicitly established resource metadata and
+historical-reference resource extension, remains identical to the adopted evidence. Its
 original source fingerprints and line locators are validated through the exact,
 hash-proved presentation notices in
 [source-presentation-overlays.json](source-presentation-overlays.json). Only those
@@ -107,3 +110,12 @@ Generation reads the current release and never increments it. The separate
 historical recovery generator reads its explicit 1.0.5 release fixture. Its
 historical report retains the verification of the earlier repository state;
 that report is not a claim about current-source fingerprint equality.
+
+Canonical identity and the three governed names are literal fields of each resource
+in the existing JSON captures, including 214 explicitly historical-reference
+resources. Complete source snapshots preserve establishment and prior-release
+evidence. Ordinary generation validates these fields and never allocates IDs.
+The separate one-time `tools/governed_metadata.py bootstrap --establish-for 1.0.7`
+operation has already executed; reruns refuse reallocation. The accepted 1.0.6 XML
+and reports remain historical artefacts. The current publication is
+`Harmonia-Architecture-1.0.7.xml`; its real no-edit Archi 5.10 proof is pending.

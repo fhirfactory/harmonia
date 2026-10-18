@@ -44,6 +44,12 @@ view membership or relationships to make a navigation tree look complete.
 
 ## Canonical model-tree homes
 
+The [Canonical Identity and Governed Naming Contract](canonical-identity-and-naming.md)
+governs resource metadata. A canonical navigation home is a presentation location;
+folders and View placement create no `friendlyName` or `canonicalName` qualification
+and own no `canonicalId`. Existing navigation and presentation remain preserved.
+
+
 ### Synchronised baseline convention — 2026-10-17
 
 The architecture owner's baseline-synchronisation task establishes the following

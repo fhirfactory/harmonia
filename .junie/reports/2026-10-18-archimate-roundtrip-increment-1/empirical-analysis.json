@@ -1,0 +1,786 @@
+{
+  "execution_attestation": {
+    "archi_5_10_0_no_edit_full_model": true,
+    "note": "Operator declaration, not independent authentication; applies only to the reported input/output hashes",
+    "operator": "Mark"
+  },
+  "manifest_sha256": "aed716d0461d5d67197c0a35b7f750fa5f4823660ae06045f1cb6c89f7c0194b",
+  "probes": {
+    "future-contract": {
+      "contract_properties": {
+        "archimateType": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 3,
+          "published_owners": 3
+        },
+        "canonicalId": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 3,
+          "published_owners": 3
+        },
+        "canonicalName": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 3,
+          "published_owners": 3
+        },
+        "displayName": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 3,
+          "published_owners": 3
+        },
+        "friendlyName": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 3,
+          "published_owners": 3
+        },
+        "harmoniaType": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 1,
+          "published_owners": 1
+        }
+      },
+      "elements": {
+        "all_non_property_content_exact": true,
+        "property_instances_before_after": [
+          17,
+          17
+        ],
+        "retained_ids": 3
+      },
+      "incoming_sha256": "05883bf536101594044c7aaf4c3223e1a750fb5ed54714f3214c40bff8823499",
+      "input_issues": [
+        [],
+        []
+      ],
+      "organization": {
+        "empty_folder_count": 0,
+        "empty_folder_path_multisets_equal": true,
+        "exact_labelled_path_multisets_equal": true,
+        "exact_path_reference_multisets_equal": true,
+        "existing_navigation_homes_equal": true,
+        "folder_count": 4,
+        "items_before_after": [
+          9,
+          9
+        ],
+        "items_with_identifier_before_after": [
+          9,
+          0
+        ],
+        "reference_count": 5,
+        "root_labels_before_after": [
+          [
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Strategy"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Business"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Relations"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Views"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Strategy"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Business"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Relations"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Views"
+              }
+            ]
+          ]
+        ]
+      },
+      "presentation": {
+        "View_connection_order_source_grouping": [],
+        "View_documentation_final_LF_loss": [],
+        "lineColor_absent_to_100_alpha": 0,
+        "visual_identity_and_attributes_exact": true
+      },
+      "property_text": {
+        "all_changed_json_parse": true,
+        "all_changed_json_values_differ": true,
+        "all_changed_leaf_paths": {},
+        "changed_leaf_field_names": {},
+        "changed_string_leaves": 0,
+        "changes_by_key": {},
+        "internal_space_change_paths": {},
+        "leading_indentation_only_leaves": 0,
+        "non_string_or_structure_changes": 0,
+        "one_internal_space_example": [],
+        "source_evidence_text_leaves_all_indentation_only": 0
+      },
+      "published_sha256": "0f0c0d4711ee8db12b2c6103958f88f4bde190802ced1793ead2052c73cc7cfb",
+      "raw_classifications": {
+        "INFORMATION LOSS": 9,
+        "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+        "SEMANTIC DIFFERENCE": 0,
+        "SEMANTICALLY EQUIVALENT NORMALISATION": 8,
+        "UNEXPLAINED DIFFERENCE": 10
+      },
+      "raw_path_patterns": {
+        "INFORMATION LOSS": {
+          "organization item @identifier": 9
+        },
+        "SEMANTICALLY EQUIVALENT NORMALISATION": {
+          "Property definition identifier": 7,
+          "top keyed collection order": 1
+        },
+        "UNEXPLAINED DIFFERENCE": {
+          "visual child-order": 5,
+          "visual style subtree": 5
+        }
+      },
+      "relationships": {
+        "all_non_property_content_exact": true,
+        "property_instances_before_after": [
+          0,
+          0
+        ],
+        "retained_ids": 1
+      },
+      "representative_paths": [
+        {
+          "classification": "INFORMATION LOSS",
+          "path": "/model/organizations[1]/item[position=1]/@identifier",
+          "pattern": "organization item @identifier"
+        },
+        {
+          "classification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+          "path": "/model/propertyDefinitions[1]/propertyDefinition[key=archimateType]/@identifier",
+          "pattern": "Property definition identifier"
+        },
+        {
+          "classification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+          "path": "/model/propertyDefinitions[1]/child-order",
+          "pattern": "top keyed collection order"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/views[1]/diagrams[1]/view[id=test-view]/connection[id=test-connection]/child-order",
+          "pattern": "visual child-order"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/views[1]/diagrams[1]/view[id=test-view]/connection[id=test-connection]/style[1]",
+          "pattern": "visual style subtree"
+        }
+      ],
+      "view_identity_attributes_and_names_exact": 1
+    },
+    "release-1.0.6": {
+      "contract_properties": {
+        "archimateType": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 0,
+          "published_owners": 0
+        },
+        "canonicalId": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 0,
+          "published_owners": 0
+        },
+        "canonicalName": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 0,
+          "published_owners": 0
+        },
+        "displayName": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 0,
+          "published_owners": 0
+        },
+        "friendlyName": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 0,
+          "published_owners": 0
+        },
+        "harmoniaType": {
+          "changes": [],
+          "exact_value_language_multiplicity_owner_preserved": 0,
+          "published_owners": 0
+        }
+      },
+      "elements": {
+        "all_non_property_content_exact": true,
+        "property_instances_before_after": [
+          19658,
+          19658
+        ],
+        "retained_ids": 1299
+      },
+      "incoming_sha256": "1d38cdf8680d1e55868a741be3cfaafc05cc0ac54e40403afe03989748485ab3",
+      "input_issues": [
+        [],
+        []
+      ],
+      "organization": {
+        "empty_folder_count": 636,
+        "empty_folder_path_multisets_equal": true,
+        "exact_labelled_path_multisets_equal": true,
+        "exact_path_reference_multisets_equal": true,
+        "existing_navigation_homes_equal": true,
+        "folder_count": 3749,
+        "items_before_after": [
+          7096,
+          7096
+        ],
+        "items_with_identifier_before_after": [
+          7096,
+          0
+        ],
+        "reference_count": 3347,
+        "root_labels_before_after": [
+          [
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Application"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Business"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Motivation"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Relations"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Strategy"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Views"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Strategy"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Business"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Application"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Motivation"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Relations"
+              }
+            ],
+            [
+              {
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                },
+                "text": "Views"
+              }
+            ]
+          ]
+        ]
+      },
+      "presentation": {
+        "View_connection_order_source_grouping": [
+          {
+            "id": "id-030f98270e13527db62632fd9c31df86",
+            "name": "Business Capability Model"
+          },
+          {
+            "id": "id-b531027008a75f34a4d8401ac0d22568",
+            "name": "Business Enabling Capability Model"
+          },
+          {
+            "id": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+            "name": "Business Capability Model — v0.2"
+          },
+          {
+            "id": "id-c9fe9e148765581a9bfc760415aef3a8",
+            "name": "Business Enabling Capability Model — v0.2"
+          },
+          {
+            "id": "id-da94a5ac83e25ccc8c5cfae546ca7eaa",
+            "name": "Enterprise Capability Model — v0.2"
+          },
+          {
+            "id": "id-03440c23d9f65bf3ae73bba3ea003b98",
+            "name": "Bed & Care-Place Management — Behaviour 1"
+          },
+          {
+            "id": "id-7d63bb02e8c05423994896bf2700b686",
+            "name": "Clinic & Practice Operations — Behaviour 1"
+          },
+          {
+            "id": "id-83e6255fbb385e108af6ca5137f5369c",
+            "name": "Discharge Management — Behaviour 1"
+          },
+          {
+            "id": "id-74952585858152ee8d1cde85652b9cb7",
+            "name": "Information Design Governance — Behaviour 1"
+          },
+          {
+            "id": "id-8422e524df725069962b4b52479ed7c7",
+            "name": "Mobile Staff Management — Behaviour 1"
+          },
+          {
+            "id": "id-7bec5e8cfa7d5ebfb9a4fcc0de3ce589",
+            "name": "Outpatient Operations — Behaviour 1"
+          },
+          {
+            "id": "id-1d125fefcb1257e9b41842d0e50f58b6",
+            "name": "Theatre Operations — Behaviour 1"
+          },
+          {
+            "id": "id-500fd588dce655f9bd73619d47b359ad",
+            "name": "Ward Operations — Behaviour 1"
+          },
+          {
+            "id": "id-cfb5eefe9f265d5786a7350ca9844449",
+            "name": "Work Allocation & Dispatch — Behaviour 1"
+          },
+          {
+            "id": "id-7d5b329fbe065a8fb365108035b321a5",
+            "name": "Historical Motivation — legacy source assertions"
+          }
+        ],
+        "View_documentation_final_LF_loss": [
+          {
+            "id": "id-d0a0a07824235e10a4e1bca6812a22c7",
+            "name": "Source evidence — bec-review"
+          },
+          {
+            "id": "id-8bc8a07409fe561eb7713afcf1205985",
+            "name": "Source evidence — business-capabilities"
+          },
+          {
+            "id": "id-1aa3966292ff5cd298837a0048177137",
+            "name": "Source evidence — business-enabling-capabilities"
+          },
+          {
+            "id": "id-9d83dbaf639c54208a407714f1d240f3",
+            "name": "Source evidence — catalogue-contexts"
+          },
+          {
+            "id": "id-681d87471de25ac8a7930e1cc00bf1d8",
+            "name": "Source evidence — enterprise-capabilities"
+          },
+          {
+            "id": "id-2056f95fa9245931882067c126cb83c1",
+            "name": "Source evidence — identifiers"
+          },
+          {
+            "id": "id-c0c10cf8a936583cbee4ed93f4ef30b1",
+            "name": "Source evidence — preserved-responsibilities"
+          },
+          {
+            "id": "id-a1450ea2d7b657d7afea3d4c5ba918ee",
+            "name": "Source evidence — rad-assurance-strategy"
+          },
+          {
+            "id": "id-ef86a373353956389692ae57ec4dc4e4",
+            "name": "Source evidence — rad-assurance"
+          },
+          {
+            "id": "id-c7c88f2cd3165ece95ca3111f5dfaf3c",
+            "name": "Source evidence — rad-axioms"
+          },
+          {
+            "id": "id-a27c3798e5f95d609a3fb4b070554a50",
+            "name": "Source evidence — rad-b2-1"
+          },
+          {
+            "id": "id-661aaecfa2fe5dc8a61f4aef64d3f23f",
+            "name": "Source evidence — rad-business"
+          },
+          {
+            "id": "id-8a9f9981dec0545780db6ea6e59b8f3f",
+            "name": "Source evidence — rad-dependencies"
+          },
+          {
+            "id": "id-6b5917b8195759a3b2a919019f0c60fe",
+            "name": "Source evidence — rad-detail"
+          },
+          {
+            "id": "id-70f42f4ec1fe50fc9b53930508510625",
+            "name": "Source evidence — rad-em"
+          },
+          {
+            "id": "id-6abe502c604c5f5193d6d05a32ba8a5d",
+            "name": "Source evidence — rad-enabling"
+          },
+          {
+            "id": "id-168c83c5b1205395886fcd07a7e20ef8",
+            "name": "Source evidence — rad-enterprise"
+          },
+          {
+            "id": "id-73369d62b05856958a615a81858961e2",
+            "name": "Source evidence — rad-hso"
+          },
+          {
+            "id": "id-151468dabca35e30846cff199a211008",
+            "name": "Source evidence — rad-ise"
+          },
+          {
+            "id": "id-f4455095a2705628a3971c9c254f2e2b",
+            "name": "Source evidence — rad-k9"
+          },
+          {
+            "id": "id-8235739b70385a098eecc54bbf2e031e",
+            "name": "Source evidence — rad-metamodel"
+          },
+          {
+            "id": "id-01966458f4eb5322a76b5dc81c4d7d21",
+            "name": "Source evidence — rad-processes"
+          },
+          {
+            "id": "id-2c50fe83ac0d52d39712d404571c364d",
+            "name": "Source evidence — rad-sa"
+          },
+          {
+            "id": "id-cb6aa01af51e5505991e2b31587f5f82",
+            "name": "Source evidence — rad-sd"
+          },
+          {
+            "id": "id-7876add337795e32aad89fe7b98453e5",
+            "name": "Source evidence — rad-tier-model"
+          },
+          {
+            "id": "id-c82f1dedfa6f5fe68720871d07d13278",
+            "name": "Source evidence — rad-traceability"
+          },
+          {
+            "id": "id-4f547f2f949953d788d166e97ec2c9c7",
+            "name": "Source evidence — reading-guide"
+          },
+          {
+            "id": "id-12808a930fe65a2dae51b632a10dce9c",
+            "name": "Source evidence — reconciliation"
+          },
+          {
+            "id": "id-adb87863e646512993b2f972331e7fdf",
+            "name": "Source evidence — relationships"
+          },
+          {
+            "id": "id-02dc2c6e50c95f938493028d2c6ed9cf",
+            "name": "Source evidence — sources"
+          },
+          {
+            "id": "id-50fe76d4160d525181784de74a41cd93",
+            "name": "Source evidence — fig-motivation-map"
+          },
+          {
+            "id": "id-834614032ae156ff8c6b6ccaae61d4aa",
+            "name": "Source evidence — 01-motivation-strategy"
+          },
+          {
+            "id": "id-61a84b3979135950999d7a0ecb0e2d3e",
+            "name": "Source evidence — 01-motivation-strategy-old"
+          },
+          {
+            "id": "id-a0f5c59bc3925a33b4f6b0599384f1d9",
+            "name": "Source evidence — appendix-requirements"
+          }
+        ],
+        "lineColor_absent_to_100_alpha": 3910,
+        "visual_identity_and_attributes_exact": true
+      },
+      "preserved_legacy_properties": {
+        "v0.2 / Canonical Architecture ID": 14,
+        "v0.2 / Canonical Name": 719,
+        "v0.2 / Construct Type": 946,
+        "v0.2 / Structural Canonical ID": 946
+      },
+      "property_text": {
+        "all_changed_json_parse": true,
+        "all_changed_json_values_differ": true,
+        "all_changed_leaf_paths": {
+          "0/source_assertion/provenance/evidence/0/text": 4,
+          "0/source_assertion/sources/0/text": 283,
+          "0/text": 409,
+          "1/source_assertion/provenance/evidence/0/text": 2,
+          "1/source_assertion/sources/0/text": 11,
+          "1/text": 67,
+          "2/source_assertion/provenance/evidence/0/text": 1,
+          "2/text": 6,
+          "3/text": 1,
+          "4/source_assertion/provenance/evidence/0/text": 1,
+          "evidence/0/text": 84,
+          "evidence/1/text": 1,
+          "governed_definition_latex": 8,
+          "placement_provenance/evidence/0/text": 288,
+          "pre_review_record/governed_definition_latex": 3,
+          "pre_review_record/provenance/evidence/1/text": 1,
+          "pre_review_record/sources/0/text": 112,
+          "pre_review_record/sources/1/text": 3,
+          "provenance/evidence/0/text": 228,
+          "provenance/evidence/1/text": 1,
+          "review_provenance/evidence/0/text": 94,
+          "reviewed_responsibility_relocation/provenance/evidence/0/text": 112,
+          "sources/0/text": 534,
+          "sources/1/text": 67,
+          "sources/2/text": 6,
+          "sources/3/text": 1
+        },
+        "changed_leaf_field_names": {
+          "governed_definition_latex": 11,
+          "text": 2317
+        },
+        "changed_string_leaves": 2328,
+        "changes_by_key": {
+          "v0.2 / Deferred Relationship Assertions": 291,
+          "v0.2 / Derivation Provenance": 85,
+          "v0.2 / Snapshot Record JSON": 615,
+          "v0.2 / Source Assertion JSON": 269,
+          "v0.2 / Source Locators": 409
+        },
+        "internal_space_change_paths": {
+          "governed_definition_latex": 5
+        },
+        "leading_indentation_only_leaves": 2323,
+        "non_string_or_structure_changes": 0,
+        "one_internal_space_example": [
+          {
+            "after": "→ Completed /\\allowbreak{} Encoded (Scoped illustration; ON\\_LEAVE relationship unresolved)\n\n\n\n\\item",
+            "before": "→ Completed /\\allowbreak{} Encoded   (Scoped illustration; ON\\_LEAVE relationship unresolved)\n\n\n\n\\it",
+            "path": "governed_definition_latex"
+          }
+        ],
+        "source_evidence_text_leaves_all_indentation_only": 2317
+      },
+      "published_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+      "raw_classifications": {
+        "INFORMATION LOSS": 4263,
+        "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+        "SEMANTIC DIFFERENCE": 1669,
+        "SEMANTICALLY EQUIVALENT NORMALISATION": 59,
+        "UNEXPLAINED DIFFERENCE": 4688
+      },
+      "raw_path_patterns": {
+        "INFORMATION LOSS": {
+          "Property definition name xml:lang": 55,
+          "organization item @identifier": 3890,
+          "organization item @identifierRef": 25,
+          "organization item subtree": 268,
+          "organization label subtree": 25
+        },
+        "SEMANTIC DIFFERENCE": {
+          "Property value text": 1669
+        },
+        "SEMANTICALLY EQUIVALENT NORMALISATION": {
+          "Property definition identifier": 55,
+          "top keyed collection order": 4
+        },
+        "UNEXPLAINED DIFFERENCE": {
+          "View Documentation text": 34,
+          "View child-order": 15,
+          "node lineColor alpha": 3910,
+          "organization child-order": 117,
+          "organization item @identifierRef": 32,
+          "organization item subtree": 485,
+          "organization label subtree": 25,
+          "organization label text": 70
+        }
+      },
+      "relationship_types": {
+        "Association": 15,
+        "Composition": 670,
+        "Influence": 10,
+        "Realization": 157
+      },
+      "relationships": {
+        "all_non_property_content_exact": true,
+        "property_instances_before_after": [
+          3978,
+          3978
+        ],
+        "retained_ids": 852
+      },
+      "representative_paths": [
+        {
+          "classification": "INFORMATION LOSS",
+          "path": "/model/propertyDefinitions[1]/propertyDefinition[key=Architectural Status]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+          "pattern": "Property definition name xml:lang"
+        },
+        {
+          "classification": "INFORMATION LOSS",
+          "path": "/model/organizations[1]/item[position=1]/@identifier",
+          "pattern": "organization item @identifier"
+        },
+        {
+          "classification": "INFORMATION LOSS",
+          "path": "/model/organizations[1]/item[position=3]/item[position=2]/item[position=1]/@identifierRef",
+          "pattern": "organization item @identifierRef"
+        },
+        {
+          "classification": "INFORMATION LOSS",
+          "path": "/model/organizations[1]/item[position=1]/item[position=2]/item[position=3]",
+          "pattern": "organization item subtree"
+        },
+        {
+          "classification": "INFORMATION LOSS",
+          "path": "/model/organizations[1]/item[position=4]/item[position=1]/item[position=1]/label[1]",
+          "pattern": "organization label subtree"
+        },
+        {
+          "classification": "SEMANTIC DIFFERENCE",
+          "path": "/model/elements[1]/element[id=id-00c20496abf655fa974ae887a695102a]/properties[1]/property[key=v0.2 / Derivation Provenance]/value[1]/text()",
+          "pattern": "Property value text"
+        },
+        {
+          "classification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+          "path": "/model/propertyDefinitions[1]/propertyDefinition[key=Architectural Status]/@identifier",
+          "pattern": "Property definition identifier"
+        },
+        {
+          "classification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+          "path": "/model/elements[1]/child-order",
+          "pattern": "top keyed collection order"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/views[1]/diagrams[1]/view[id=id-01966458f4eb5322a76b5dc81c4d7d21]/documentation[1]/text()",
+          "pattern": "View Documentation text"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/views[1]/diagrams[1]/view[id=id-030f98270e13527db62632fd9c31df86]/child-order",
+          "pattern": "View child-order"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/views[1]/diagrams[1]/view[id=id-008b05f81e785b73b5a49cf211716d3b]/node[id=id-04c385e37d335d168b6f48cdb424a54d]/style[1]/lineColor[1]/@a",
+          "pattern": "node lineColor alpha"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/organizations[1]/item[position=1]/child-order",
+          "pattern": "organization child-order"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/organizations[1]/item[position=4]/item[position=1]/item[position=1]/@identifierRef",
+          "pattern": "organization item @identifierRef"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/organizations[1]/item[position=1]/item[position=1]/item[position=1]",
+          "pattern": "organization item subtree"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/organizations[1]/item[position=3]/item[position=2]/item[position=1]/label[1]",
+          "pattern": "organization label subtree"
+        },
+        {
+          "classification": "UNEXPLAINED DIFFERENCE",
+          "path": "/model/organizations[1]/item[position=1]/item[position=1]/label[1]/text()",
+          "pattern": "organization label text"
+        }
+      ],
+      "view_identity_attributes_and_names_exact": 1196
+    }
+  },
+  "purpose": "Empirical explanation only; no comparator or normalisation changes",
+  "raw_report_sha256": "f615bf51bc25cb616663e53ecae7ae3c5915bd58e0ecfd63d7a606d978bf6c2c"
+}
