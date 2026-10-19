@@ -110,6 +110,35 @@ class IdentityContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Cannot establish PascalCase'):
             m.component('24/7 Availability')
 
+    def test_product_uses_governed_vocabulary_and_existing_name_derivation(self):
+        record = dict(key='synthetic-product', type='product', name='Referral & Handoff Package')
+        self.assertEqual('PRODUCT', m.formal_qualifier(record))
+        self.assertEqual(dict(friendlyName='ReferralAndHandoffPackage',
+                              canonicalName='PRODUCT-ReferralAndHandoffPackage'),
+                         m.qualified_names([record]))
+        # Context is supplied explicitly, never discovered by a Product algorithm.
+        context = dict(key='synthetic-context', type='capability', tier='CT1',
+                       category='business', name='Care Coordination')
+        self.assertEqual(dict(friendlyName='CareCoordination.ReferralAndHandoffPackage',
+                              canonicalName='CT1-CareCoordination.PRODUCT-ReferralAndHandoffPackage'),
+                         m.qualified_names([context, record]))
+        self.assertNotIn('canonicalId', record)
+
+    def test_product_name_validation_rejects_drift_and_ungoverned_spelling(self):
+        record = dict(key='synthetic-product', type='product', name='24/7 Availability')
+        with self.assertRaisesRegex(ValueError, 'Cannot establish PascalCase'):
+            m.qualified_names([record])
+        record['name'] = 'Referral Package'
+        index = self.index()
+        expected = dict(displayName=record['name'], **m.qualified_names([record]))
+        item = index['representation-one']
+        item['expected'] = expected
+        item['record'].update(expected)
+        m.validate_records(index)
+        item['record']['canonicalName'] = 'PRD-ReferralPackage'
+        with self.assertRaisesRegex(ValueError, 'canonicalName drift'):
+            m.validate_records(index)
+
     def test_unadjudicated_digit_leading_name_stops_before_allocation(self):
         b = s.Baseline(*s.load_inputs())
         source, motivation = m.read(m.SOURCE), m.read(m.MOTIVATION)
@@ -127,7 +156,7 @@ class IdentityContractTests(unittest.TestCase):
 class EstablishedSourceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.outputs, cls.baseline, cls.report = s.publish()
+        cls.outputs, cls.baseline, cls.report = s.publish(reconciled=False)
 
     def test_current_publication_has_one_source_owned_id_per_element(self):
         root = m.g.ET.fromstring(self.outputs[m.model_path()])
@@ -164,7 +193,7 @@ class EstablishedSourceTests(unittest.TestCase):
 
     def test_ordinary_publication_never_allocates(self):
         with mock.patch.object(m, 'allocate_missing', side_effect=AssertionError('Reallocation')):
-            outputs, _, _ = s.publish()
+            outputs, _, _ = s.publish(reconciled=False)
         self.assertEqual(self.outputs, outputs)
 
     def test_subsequent_release_transports_existing_ids_and_names_without_allocation(self):
@@ -172,7 +201,7 @@ class EstablishedSourceTests(unittest.TestCase):
         major, minor, patch = version_parts(load_release()['version'])
         later = dict(version=f'{major}.{minor}.{patch + 1}', previous_version=load_release()['version'])
         with mock.patch('architecture_release.load_release', return_value=later), mock.patch.object(m, 'allocate_missing', side_effect=AssertionError('Reallocation')):
-            outputs, _, _ = s.publish()
+            outputs, _, _ = s.publish(reconciled=False)
             root = m.g.ET.fromstring(outputs[m.model_path()])
         before = m.g.ET.fromstring(self.outputs[m.model_path()])
         for old, new in zip(before.findall('a:elements/a:element', m.g.N), root.findall('a:elements/a:element', m.g.N)):

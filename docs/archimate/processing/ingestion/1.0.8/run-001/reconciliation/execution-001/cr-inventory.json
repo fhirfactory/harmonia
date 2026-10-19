@@ -1,0 +1,487 @@
+[
+  {
+    "run": "run-001",
+    "cr": "CR-001",
+    "description": "Add Identifier Capture Feature",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-002",
+    "description": "Add Provider Registry - Satellite Product",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-003",
+    "description": "Add Provider Registry - Central Product",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-004",
+    "description": "Add Practitioner Collaboration Service Product",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-005",
+    "description": "Add Health Information Exchange Service Product",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-006",
+    "description": "Add Identifier Create Business Service",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-007",
+    "description": "Add Identifier Update Business Service",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-008",
+    "description": "Add Identifier Verification Business Process",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-009",
+    "description": "Add Verify Identity Source Business Service",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-010",
+    "description": "Add Composition to Cross-Authority Identifier Correlation",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-011",
+    "description": "Add Composition to Governed Identity Correction",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-012",
+    "description": "Add Composition to Identity Source & Correction Lineage",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-013",
+    "description": "Add Composition to Identifier Resolution",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-014",
+    "description": "Add Composition to Identity Alias Association",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-015",
+    "description": "Add Composition to Identifier Capture",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-001](#cr-001): Identifier Capture exists as the resolved governed architectural endpoint for submitted A1, with its accepted native type/classification and evidenced reconciliation; identity has not been allocated here."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-016",
+    "description": "Interpret CT3 framing for Cross-Authority Identifier Correlation",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-010](#cr-010): The exact native R1 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-017",
+    "description": "Interpret CT3 framing for Governed Identity Correction",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-011](#cr-011): The exact native R2 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-018",
+    "description": "Interpret CT3 framing for Identity Source & Correction Lineage",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-012](#cr-012): The exact native R3 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-019",
+    "description": "Interpret CT3 framing for Identifier Resolution",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-013](#cr-013): The exact native R4 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-020",
+    "description": "Interpret CT3 framing for Identity Alias Association",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-014](#cr-014): The exact native R5 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-021",
+    "description": "Interpret CT3 framing for Identifier Capture",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-015](#cr-015): The exact native R6 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-022",
+    "description": "Add Identifier Create Realization",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-006](#cr-006): `[Business Service] Identifier Create` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing.",
+      "- Required resulting state from [CR-001](#cr-001): `[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-023",
+    "description": "Interpret Feature context for Identifier Create",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-022](#cr-022): The native R7 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-024",
+    "description": "Add Identifier Update Realization",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-007](#cr-007): `[Business Service] Identifier Update` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing.",
+      "- Required resulting state from [CR-001](#cr-001): `[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-025",
+    "description": "Interpret Feature context for Identifier Update",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-024](#cr-024): The native R8 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-026",
+    "description": "Add Identifier Verification Realization",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-008](#cr-008): `[Business Process] Identifier Verification` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing.",
+      "- Required resulting state from [CR-001](#cr-001): `[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-027",
+    "description": "Interpret Feature context for Identifier Verification",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-026](#cr-026): The native R9 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-028",
+    "description": "Add Verify Identity Source Realization",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-009](#cr-009): `[Business Service] Verify Identity Source` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-029",
+    "description": "Interpret Feature context for Verify Identity Source",
+    "disposition": "On-Hold",
+    "outcome": "Resolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-028](#cr-028): The native R12 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-030",
+    "description": "Add Identifier Create Flow to Identifier Verification",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-006](#cr-006): `[Business Service] Identifier Create` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing.",
+      "- Required resulting state from [CR-008](#cr-008): `[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-031",
+    "description": "Add Identifier Update Flow to Identifier Verification",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-007](#cr-007): `[Business Service] Identifier Update` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing.",
+      "- Required resulting state from [CR-008](#cr-008): `[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-032",
+    "description": "Add Verify Identity Source Serving to Identifier Verification",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-009](#cr-009): `[Business Service] Verify Identity Source` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing.",
+      "- Required resulting state from [CR-008](#cr-008): `[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-033",
+    "description": "Revise Person Identity Administration Feature Landscape",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-001](#cr-001): The governed element corresponding to submitted `id-727a264026584f80bc3304ff8383dc92` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-011](#cr-011): The exact submitted relationship `id-36b2aa8ad58149fdb20d44c1c16dd64c` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-012](#cr-012): The exact submitted relationship `id-3c3d723683c147a4a902b4d35a2af018` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-010](#cr-010): The exact submitted relationship `id-73ecd7a39407404ba8e2bb663efbdc19` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-015](#cr-015): The exact submitted relationship `id-bff76286f8994d20aa1b8aef166acebd` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-013](#cr-013): The exact submitted relationship `id-daf437bb32114daa8a6b9462cb9b4fb2` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-014](#cr-014): The exact submitted relationship `id-f9b270950f0241108b68f1c3daa50019` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-034",
+    "description": "Expose existing Compositions in Entity Information Enablement View",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-035",
+    "description": "Add Identifier Capture Feature realisation View",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-007](#cr-007): The governed element corresponding to submitted `id-0088d61ccfcf4962b3aab8bc3b96021d` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-001](#cr-001): The governed element corresponding to submitted `id-727a264026584f80bc3304ff8383dc92` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-009](#cr-009): The governed element corresponding to submitted `id-9bfedbfd5b404694a2224c039fa5d4c4` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-008](#cr-008): The governed element corresponding to submitted `id-c645a859ac2c4447ad5ae850cf384bf3` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-006](#cr-006): The governed element corresponding to submitted `id-fddda503b8f0438e995465cd93204326` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-031](#cr-031): The exact submitted relationship `id-0849f31d6d7d4f7eb1e484d7437e5cd7` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-024](#cr-024): The exact submitted relationship `id-69eb864f56df4d928f8abc3f7ab4e834` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-030](#cr-030): The exact submitted relationship `id-bef77e2eb7de4691b4fbe9a0c84e8232` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-026](#cr-026): The exact submitted relationship `id-c0f84a8e4c8d496580a68cac4823c58c` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-032](#cr-032): The exact submitted relationship `id-c53c42ba0a4f437f9cb76a4c1a701816` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge.",
+      "- Required resulting state from [CR-022](#cr-022): The exact submitted relationship `id-e84f2e9df66a48d795d604d75afc72cb` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-001",
+    "cr": "CR-036",
+    "description": "Add Identity Source and Correction Lineage realisation View",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [
+      "- Required resulting state from [CR-009](#cr-009): The governed element corresponding to submitted `id-9bfedbfd5b404694a2224c039fa5d4c4` exists with evidenced reconciled identity, native type/classification and standing for this View appearance.",
+      "- Required resulting state from [CR-028](#cr-028): The exact submitted relationship `id-37f6913198e2434db5309c1c8e36fbc0` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+    ],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-002",
+    "cr": "CR-001",
+    "description": "Preserve authored Home: [Business Process] Identifier Verification",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised pending governed endpoint resolution. Preserve the incoming relationship exactly as authored; do not manufacture or replace it."
+  },
+  {
+    "run": "run-002",
+    "cr": "CR-002",
+    "description": "Preserve authored Home: [Business Service] Identifier Update",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised pending governed endpoint resolution. Preserve the incoming relationship exactly as authored; do not manufacture or replace it."
+  },
+  {
+    "run": "run-002",
+    "cr": "CR-003",
+    "description": "Preserve authored Home: [Business Service] Identifier Create",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised pending governed endpoint resolution. Preserve the incoming relationship exactly as authored; do not manufacture or replace it."
+  },
+  {
+    "run": "run-002",
+    "cr": "CR-004",
+    "description": "Preserve authored Home: [Business Service] Verify Identity Source",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised pending governed endpoint resolution. Preserve the incoming relationship exactly as authored; do not manufacture or replace it."
+  },
+  {
+    "run": "run-002",
+    "cr": "CR-005",
+    "description": "Preserve added Home connections in CR-035 View",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  },
+  {
+    "run": "run-002",
+    "cr": "CR-006",
+    "description": "Preserve added Home connections in CR-036 View",
+    "disposition": "Accept",
+    "outcome": "Unresolved",
+    "recorded_detailed_disposition": "On-Hold",
+    "required_state_entries": [],
+    "instruction": "Not authorised"
+  }
+]

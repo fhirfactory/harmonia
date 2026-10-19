@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "checks": {
+    "evidence-integrity": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+        "integrity"
+      ],
+      "timeout_seconds": 30.0,
+      "elapsed_seconds": 1.167,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/evidence-integrity.log",
+      "log_sha256": "e095e00ea456f16863bc005cafd1c0432b7e0bd80758df7f0baaeee528a9630e"
+    },
+    "report-final-check": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/framework/tools/report_baseline.py",
+        "--check"
+      ],
+      "timeout_seconds": 60.0,
+      "elapsed_seconds": 25.568,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/report-final-check.log",
+      "log_sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+    }
+  },
+  "verification_sha256": "10b727ecb94f12714bc93b772221a3ca163cb159f865c4e673f4bb2b1ad59f93",
+  "reproduction_sha256": "b6e41cb6f05a396e1f47117df413e2d31e794053ea1d838f678b86dc57b324d7",
+  "published_sha256": "0f53e81f90a1d62974747e262218612dd70956c3eb65ebf3b2eb2b19af6ec529",
+  "release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "unsigned": true,
+  "information_architecture": "NOT COMMENCED"
+}

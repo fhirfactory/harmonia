@@ -73,8 +73,8 @@ This Process makes authorship and changing document standing intelligible throug
 | Source capture key | process:clinical-document-lifecycle-process |
 | canonicalId | eacdec16b96844b4963b8a960d1a8666 |
 | displayName | Clinical Document Lifecycle Process |
-| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentLifecycleProcess |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.PR-ClinicalDocumentLifecycleProcess |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentationLifecycleAdministration.DocumentVersioningAndSupersession.ClinicalDocumentLifecycleProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.CT3-BEC-ClinicalDocumentationLifecycleAdministration.FEAT-DocumentVersioningAndSupersession.PR-ClinicalDocumentLifecycleProcess |
 | Snapshot publication reference | HCM-PR-clinical-document-lifecycle-process |
 | ArchiMate semantic ID | id-f6f3ea4454445eb59d7272e9451f4df9 |
 | Legacy identity evidence | No legacy allocation |
@@ -139,8 +139,8 @@ The encounter lifecycle distinguishes the planned opportunity, presence, active 
 | Source capture key | process:encounter-lifecycle-process |
 | canonicalId | df49e2e8bb3748f3abbdd1c28ae1be8f |
 | displayName | Encounter Lifecycle Process |
-| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleProcess |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.PR-EncounterLifecycleProcess |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement.EncounterStateProgression.EncounterLifecycleProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement.FEAT-EncounterStateProgression.PR-EncounterLifecycleProcess |
 | Snapshot publication reference | HCM-PR-encounter-lifecycle-process |
 | ArchiMate semantic ID | id-0e94558f9afd57259e6017e0fea3ec07 |
 | Legacy identity evidence | No legacy allocation |
@@ -208,8 +208,8 @@ Closed-loop progression preserves the connection between the requisition, perfor
 | Source capture key | process:closed-loop-order-progression-process |
 | canonicalId | e19a7c9594a4401e92450e4c31598982 |
 | displayName | Closed-Loop Order Progression Process |
-| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgressionProcess |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.PR-ClosedLoopOrderProgressionProcess |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgression.OrderClosedLoopProgressionTracking.ClosedLoopOrderProgressionProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.CT3-BEC-ClosedLoopOrderProgression.FEAT-OrderClosedLoopProgressionTracking.PR-ClosedLoopOrderProgressionProcess |
 | Snapshot publication reference | HCM-PR-closed-loop-order-progression-process |
 | ArchiMate semantic ID | id-a5695708ce5d5c22a34782d8381612bb |
 | Legacy identity evidence | No legacy allocation |
@@ -277,8 +277,8 @@ This Process illustrates one specialist pathway through validation, triage and b
 | Source capture key | process:referral-progression-process |
 | canonicalId | cfb714e9320647ffa1dffc80dddd01d9 |
 | displayName | Referral Progression Process |
-| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralProgressionProcess |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.PR-ReferralProgressionProcess |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression.ReferralStatusAndOutcomeTracking.ReferralProgressionProcess |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression.FEAT-ReferralStatusAndOutcomeTracking.PR-ReferralProgressionProcess |
 | Snapshot publication reference | HCM-PR-referral-progression-process |
 | ArchiMate semantic ID | id-c1a4b8f0f5275f89bec405d882a45d07 |
 | Legacy identity evidence | No legacy allocation |
@@ -343,8 +343,8 @@ This Process governs the application of an externally authoritative correction r
 | Source capture key | process:governed-person-identity-correction-process |
 | canonicalId | 72f3c63da45d44868579a3bb15d1568c |
 | displayName | Governed Person Identity Correction Process |
-| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.GovernedPersonIdentityCorrectionProcess |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.PR-GovernedPersonIdentityCorrectionProcess |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.GovernedIdentityCorrection.GovernedPersonIdentityCorrectionProcess |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-GovernedIdentityCorrection.PR-GovernedPersonIdentityCorrectionProcess |
 | Snapshot publication reference | HCM-PR-governed-person-identity-correction-process |
 | ArchiMate semantic ID | id-46e16f772bab5982ae8fae3daa900739 |
 | Legacy identity evidence | No legacy allocation |
@@ -405,8 +405,8 @@ Verification progresses from checking the recognised professional source to the 
 | Source capture key | process:practitioner-verification-process |
 | canonicalId | 32a3e1f948474d3aa77ca71bfa515f58 |
 | displayName | Practitioner Verification Process |
-| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerVerificationProcess |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.PR-PractitionerVerificationProcess |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerProfileAdministration.NationalPractitionerVerification.PractitionerVerificationProcess |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerProfileAdministration.FEAT-NationalPractitionerVerification.PR-PractitionerVerificationProcess |
 | Snapshot publication reference | HCM-PR-practitioner-verification-process |
 | ArchiMate semantic ID | id-666fffcc85fc5efea1d96fc35483a865 |
 | Legacy identity evidence | No legacy allocation |
@@ -533,8 +533,8 @@ This Process follows an individual's operational passage through the clinic. Wai
 | Source capture key | process:clinic--operational-queue-progression-process |
 | canonicalId | 319d6956276a4cdeb43e350e1b01d078 |
 | displayName | Clinic / Operational Queue Progression Process |
-| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.ClinicOperationalQueueProgressionProcess |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.PR-ClinicOperationalQueueProgressionProcess |
+| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.SessionAndQueueCoordination.OperationalQueueProgression.ClinicOperationalQueueProgressionProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.CT3-BEC-SessionAndQueueCoordination.FEAT-OperationalQueueProgression.PR-ClinicOperationalQueueProgressionProcess |
 | Snapshot publication reference | HCM-PR-clinic-operational-queue-progression-process |
 | ArchiMate semantic ID | id-6d1d76ff79ee5bc0856e025561f5dc85 |
 | Legacy identity evidence | No legacy allocation |
@@ -797,8 +797,8 @@ Operational work progression makes the path from a recognised support requiremen
 | Source capture key | process:operational-work-progression-process |
 | canonicalId | 5ebba522194b4de5a5b3963e855d712d |
 | displayName | Operational Work Progression Process |
-| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkProgressionProcess |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.PR-OperationalWorkProgressionProcess |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkAssignmentAndDispatchCoordination.WorkProgressOversightAndEscalation.OperationalWorkProgressionProcess |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination.FEAT-WorkProgressOversightAndEscalation.PR-OperationalWorkProgressionProcess |
 | Snapshot publication reference | HCM-PR-operational-work-progression-process |
 | ArchiMate semantic ID | id-64bf723fe0985e75967cf435d0f49fe1 |
 | Legacy identity evidence | No legacy allocation |
@@ -1340,3 +1340,16 @@ This Process starts from an established finding and communicates it to legitimat
 Responsibility/framing context: [Governed Assurance](business-enabling-capabilities.md#hcm-bec-governed-assurance). This assertion retains Established placement standing.
 
 Exact source locators, provenance, name/identity history and deferred assertions are retained in [architecture.json](architecture.json) (record `process:assurance-process-reporting--communication`) and the element's version-qualified Properties.
+
+## [Business Process] Identifier Verification
+
+Accepted as submitted in CR-008 of [run-001](../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md). No additional definition, responsibility or standing is inferred. Machine-readable source: [accepted ingestion capture](accepted-ingestion-1.0.8.json).
+
+| Field | Value |
+| --- | --- |
+| representationId | id-c645a859ac2c4447ad5ae850cf384bf3 |
+| archimateType | BusinessProcess |
+| canonicalId | 6ea7f8afe17d4319ab6fa9691db4328d |
+| displayName | [Business Process] Identifier Verification |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentifierCapture.IdentifierVerification |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentifierCapture.PR-IdentifierVerification |

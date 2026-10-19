@@ -21,8 +21,9 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(w.ROOT / 'docs/archimate/exchange/publish', w.PUBLISH)
         self.assertEqual(w.ROOT / 'docs/archimate/exchange/ingest', w.INGEST)
         self.assertFalse((w.ROOT / 'docs/archimate/capability-architecture').exists())
-        self.assertEqual(w.PUBLISH / '1.0.8/Harmonia-Architecture-1.0.8.xml', s.metadata.model_path())
-        self.assertEqual(w.PUBLISHING / '1.0.8', s.metadata.validation_path().parent)
+        version = s.load_release()['version']
+        self.assertEqual(w.PUBLISH / version / f'Harmonia-Architecture-{version}.xml', s.metadata.model_path())
+        self.assertEqual(w.PUBLISHING / version, s.metadata.validation_path().parent)
         self.assertEqual(w.ROOT / 'docs/archimate/processing/publishing', w.PUBLISHING)
         self.assertEqual(w.ROOT / 'docs/archimate/processing/ingestion', w.INGESTION)
         self.assertTrue(w.INGESTION.is_dir())

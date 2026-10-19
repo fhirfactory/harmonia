@@ -1,0 +1,389 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "scope": "Semantic Containment selection and complete direct-child projection: 231 eligible, 112 additional; 111 Business hierarchy Views and one Strategy Feature landscape; all 61 Business Behaviour Views recalculated",
+  "published_sha256": "0f53e81f90a1d62974747e262218612dd70956c3eb65ebf3b2eb2b19af6ec529",
+  "test_counts": {
+    "framework": 206,
+    "presentation": 16,
+    "governance": 72,
+    "architecture": 90
+  },
+  "checks": {
+    "archimate_tests": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "docs/archimate/framework/tests",
+        "-v"
+      ],
+      "timeout_seconds": 360.0,
+      "elapsed_seconds": 268.943,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/framework.log",
+      "log_sha256": "277513c940f72c36738811d3efe054c27a5d83db895716e45dfe92183878e252"
+    },
+    "presentation_tests": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "docs/archimate/framework/tests",
+        "-p",
+        "test_view_presentation.py",
+        "-v"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 41.212,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/focused-final.log",
+      "log_sha256": "ebb089c37228dcca6d34fada8afdd40591600ca107c3afc7787b9f42735cfa2c"
+    },
+    "governance_tests": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 33.2,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/governance.log",
+      "log_sha256": "756496483a33673195dd20748888f6455af529da6d84e303105e226de5152c02"
+    },
+    "architecture_tests": {
+      "status": "PASS",
+      "command": [
+        "env",
+        "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64",
+        "mvn",
+        "-o",
+        "test",
+        "-pl",
+        "paradeigma/paradeigma-test",
+        "-am",
+        "-Dtest=*ArchitectureTest",
+        "-Dsurefire.failIfNoSpecifiedTests=false"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 30.854,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/architecture.log",
+      "log_sha256": "ee5a140ff6350a4e02e18974c48ce6da8165d13ca1d4062ce051e16cb2ed389e"
+    },
+    "publication": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/framework/tools/synchronise_baseline.py",
+        "--check"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 46.473,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/publication-check.log",
+      "log_sha256": "bff8736a28b2ef96bc0e206e03acdc766d6a55ef0175846fd18926882e81e923"
+    },
+    "identity": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/framework/tools/governed_metadata.py",
+        "validate"
+      ],
+      "timeout_seconds": 60.0,
+      "elapsed_seconds": 24.577,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/identity.log",
+      "log_sha256": "649834621af8de09b8315082d096d872802ae8842a67f149baa68f7c5898df80"
+    },
+    "identity_registry": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/architecture_identity.py",
+        "validate"
+      ],
+      "timeout_seconds": 30.0,
+      "elapsed_seconds": 0.214,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/identity-registry.log",
+      "log_sha256": "a69dfa57f730a8f39c0869583184c4eac3ce4c00b45c6fff22a3fea1d258a508"
+    },
+    "rads": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/rads_business_architecture.py",
+        "validate"
+      ],
+      "timeout_seconds": 30.0,
+      "elapsed_seconds": 1.367,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/rads.log",
+      "log_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+    },
+    "release": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/architecture_release.py",
+        "check"
+      ],
+      "timeout_seconds": 30.0,
+      "elapsed_seconds": 0.064,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/release.log",
+      "log_sha256": "dbff0c20aae7c5c8a1f79a7068ab4a46b22b986d002f2b8159e7742e06500c88"
+    },
+    "preservation": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+        "preservation"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 25.131,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/preservation.log",
+      "log_sha256": "398e5c9777a3ea9e9c609f0862490227f9e70654d0fc0e67993758b1ae3c97bb"
+    },
+    "serialization_roundtrip": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+        "serialization"
+      ],
+      "timeout_seconds": 60.0,
+      "elapsed_seconds": 4.477,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/serialization.log",
+      "log_sha256": "cfa8b926506c13b4246a2b2b87fdcebff4c876b36cef6c112728786837bc022c"
+    },
+    "archi_transport": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+        "transport"
+      ],
+      "timeout_seconds": 90.0,
+      "elapsed_seconds": 11.841,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/archi-transport.log",
+      "log_sha256": "2b7cba178475de198a88fe856aefd0d23cef72663dfe7aec12fd686228616b5c"
+    },
+    "archi_cli": {
+      "status": "PASS",
+      "command": [
+        "env",
+        "GDK_BACKEND=x11",
+        "DISPLAY=:0",
+        "/home/mhunter/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-nl",
+        "en",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-containment-archi/configuration",
+        "-data",
+        "/tmp/harmonia-containment-archi/workspace",
+        "-eclipse.keyring",
+        "/tmp/harmonia-containment-archi/secure-storage",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "--xmlexchange.import",
+        "/home/mhunter/Development/code/projects/github/harmonia/docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml",
+        "--saveModel",
+        "/tmp/harmonia-containment-archi/imported.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-containment-archi/no-edit-export.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ],
+      "timeout_seconds": 90.0,
+      "elapsed_seconds": 8.684,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/archi-cli-local.log",
+      "log_sha256": "2fd9ec148e0cdc4fe518e9aec2f983163e718ce28caeaed0ee688df5f337750e"
+    },
+    "history": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+        "history"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 40.268,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/history.log",
+      "log_sha256": "f42094971eb72126b6711edbf94080adbd0c46ee5089fe187b85ae707bef4b33"
+    },
+    "publication_regeneration": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/framework/tools/synchronise_baseline.py"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 46.876,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/publication-regenerate.log",
+      "log_sha256": "bff8736a28b2ef96bc0e206e03acdc766d6a55ef0175846fd18926882e81e923"
+    },
+    "report": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/framework/tools/report_baseline.py"
+      ],
+      "timeout_seconds": 90.0,
+      "elapsed_seconds": 25.482,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/report-generate.log",
+      "log_sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+    },
+    "reproduction": {
+      "status": "PASS",
+      "command": [
+        "python3",
+        "-B",
+        "docs/archimate/framework/tools/verify_baseline_outputs.py"
+      ],
+      "timeout_seconds": 150.0,
+      "elapsed_seconds": 94.898,
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/reproduction.log",
+      "log_sha256": "73f5284e9e7ae8ce7602b306590e74c9dc03c15ecc0fa6551af95eb8e53deb95"
+    }
+  },
+  "source_sha256": {
+    "docs/archimate/framework/tools/view_presentation.py": "fe0820beced0c320f7259e53d5a5a652c0e64276b272522815495502dc2ffe6e",
+    "docs/archimate/framework/tests/test_view_presentation.py": "1ce5530e2d3905b040dbfc6a1067f0d8c3cca6a81795bc3500ce7eaed6e51920",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "a0b1474b2dfa7574980bca7fecbf666d887668dc6ac178ec03a125d1955f14c5",
+    "docs/markdown/governance/baseline/correspondence.json": "c02fd0a8a6e96f51eb7ec0c1b13c8a7e4a601a6fc5f10f94345f855f01e896cc",
+    "architecture-release.json": "dbff0c20aae7c5c8a1f79a7068ab4a46b22b986d002f2b8159e7742e06500c88",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py": "345a10115c48f99c11c4ba2d44e288d220bf9f962e292ba2bffd9c923fd61ea9",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/run-check.py": "e8932bb71adb111bae5766cc5fd3188ab701110c71b04c0e07fac1e128394428"
+  },
+  "artifacts_sha256": {
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before.json": "b2763bf6bec27a6df4197a3cdedb3fa8d6835f0f3ae62d2e6e3372412300ba28",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/semantic-census-before.json": "135856c2fbe7326581c987bddb2a047488f319d15f34d4e2b0135a301af8d822",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/selection.json": "b162b610bab9bec1ec47a7801678c13bbbf8f2634c1fd680ac2059bbb3b90ceb",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/population-and-changes.json": "81cdedfa7e44edd895837e847fe96f0d2561d212668d325f1c751a0db312d70e",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/roundtrip/toolchain.json": "d2823c81dcf443abd22726b17c996bd817403d1ed08de74f849a2d003fc1c195",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/roundtrip/archi-transport-verification.json": "2b7cba178475de198a88fe856aefd0d23cef72663dfe7aec12fd686228616b5c",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/roundtrip/raw-comparator.json.gz": "02d2fcee9f1ce441418b0349b5d13c69457f0686d78ddcd7ebe49bdde8f0bb0b",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/roundtrip/Archi-imported.archimate.gz": "97105c8283b5090f98b428ad9f39f3ac9d86e4574c54a391914ace098344a660",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/roundtrip/Archi-no-edit-export.xml.gz": "950df6b2453b8c19d1633c20d72b23a18b5de7cafb2f744be196e6b5204269e1",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/README.md": "daa006a9a8b5ece9739127b745621c2c0c9dd66c70c34d971be72356c13af004",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/reproduction.json": "b6e41cb6f05a396e1f47117df413e2d31e794053ea1d838f678b86dc57b324d7"
+  },
+  "unsuccessful_attempts": [
+    {
+      "status": "FAIL",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "docs/archimate/framework/tests",
+        "-p",
+        "test_view_presentation.py",
+        "-v"
+      ],
+      "timeout_seconds": 120.0,
+      "elapsed_seconds": 0.165,
+      "exit_code": 1,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/focused.log",
+      "log_sha256": "e1c3ab0ba67cb563ebe0d573d9ecec953e7e6fb37b1310806795cf8c6294b567"
+    },
+    {
+      "status": "FAIL",
+      "command": [
+        "env",
+        "GDK_BACKEND=x11",
+        "DISPLAY=:0",
+        "/home/mhunter/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-nl",
+        "en",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-containment-archi/configuration",
+        "-data",
+        "/tmp/harmonia-containment-archi/workspace",
+        "-eclipse.keyring",
+        "/tmp/harmonia-containment-archi/secure-storage",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "--xmlexchange.import",
+        "/home/mhunter/Development/code/projects/github/harmonia/docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml",
+        "--saveModel",
+        "/tmp/harmonia-containment-archi/imported.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-containment-archi/no-edit-export.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ],
+      "timeout_seconds": 90.0,
+      "elapsed_seconds": 2.673,
+      "exit_code": 13,
+      "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/archi-cli.log",
+      "log_sha256": "8601d1608f0c8c923de44b9b67803963e01137d741e900557abe066cc6c2b755"
+    }
+  ],
+  "final_state": "AUTOMATED CHECKS PASS; UNSIGNED RAD-1.0.9; SOLUTION ARCHITECT RENDERING INSPECTION AND SIGN-OFF PENDING; INFORMATION ARCHITECTURE NOT COMMENCED",
+  "generated_output_reproduction": "15 of 15, byte-identical in independent processes",
+  "populations": {
+    "eligible_containment": 231,
+    "incremental_containment_changed": 112,
+    "additional_business_capabilities": 55,
+    "additional_business_enabling_capabilities": 56,
+    "strategy_person_identity_feature_children": 6,
+    "visual_nodes_added": 1,
+    "visual_composition_references_added": 331,
+    "business_views_processed": 61,
+    "business_routes_changed_on_regeneration": 29,
+    "business_routes_changed_incrementally": 0,
+    "protected_authored_unchanged": 4,
+    "oversized_unchanged": 3,
+    "historical_candidates_unchanged": 62
+  }
+}

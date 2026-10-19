@@ -1,0 +1,2598 @@
+{
+  "architecture-release.json": {
+    "bytes": 56,
+    "sha256": "dbff0c20aae7c5c8a1f79a7068ab4a46b22b986d002f2b8159e7742e06500c88"
+  },
+  "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchictecture-1.0.8.archimate": {
+    "bytes": 21345442,
+    "sha256": "f6d8c13f31c2a6620f790f758afc627276ff638bc25e85822e626110cf36b632"
+  },
+  "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchictecture-1.0.8.archimate.bak": {
+    "bytes": 21343413,
+    "sha256": "abe31aa012204cc51c7ae9baee2f51ec0a93c6946eec2bce5a93b05b144e83a6"
+  },
+  "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8-association-test.xml": {
+    "bytes": 21855833,
+    "sha256": "44c7a2659e0a77e2c80d0631a417a4b242e9903bd621a1ae743e1b61abf134e1"
+  },
+  "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml": {
+    "bytes": 21858672,
+    "sha256": "366bbcf305575b831ea7e8e72e1c2b19f9631518fda8f297a4f7c51a959a5556"
+  },
+  "docs/archimate/exchange/ingest/README.md": {
+    "bytes": 1572,
+    "sha256": "dd8b2f4a15092daa0d1786827bb0d304bff51d8050792699459841d0edc33078"
+  },
+  "docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml": {
+    "bytes": 20945973,
+    "sha256": "b9c63aef051f5424b937c7b01951cabd38389c4352610a8331a0d40e449dbf24",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml.gz"
+  },
+  "docs/archimate/framework/tests/test_baseline.py": {
+    "bytes": 23449,
+    "sha256": "f31d767d051bbc86d0131bd3abf3819e8e7c86413cd4188dc29d693dbe7b03ec"
+  },
+  "docs/archimate/framework/tests/test_documentation.py": {
+    "bytes": 8291,
+    "sha256": "a3fd0b3d4fb651c7a0a0c4acddb467216b37059e05f71457744d7fe93503befc"
+  },
+  "docs/archimate/framework/tests/test_governance_namespace.py": {
+    "bytes": 4077,
+    "sha256": "258ff1721ec0669d20a405d77127d187d107e96077ec2c473dc82a7f4ea25bf4"
+  },
+  "docs/archimate/framework/tests/test_governed_metadata.py": {
+    "bytes": 12696,
+    "sha256": "ac5b98886e584f1308e6e2c85ffc0234bd6a47c92dbbf55814124e9f22c6da8f"
+  },
+  "docs/archimate/framework/tests/test_home_context.py": {
+    "bytes": 7507,
+    "sha256": "be4c4103671583d5e25b4c2050c19474d5c9b34852118f1f23755e0c6a574b48"
+  },
+  "docs/archimate/framework/tests/test_home_relationships.py": {
+    "bytes": 8612,
+    "sha256": "1b4003ece1978189c36a70f6bbc654165601b34cd91a64b8c71d947d067b1ed7"
+  },
+  "docs/archimate/framework/tests/test_navigation.py": {
+    "bytes": 14370,
+    "sha256": "46fcb660080dd632aa20ca673fde52ae351cbe5543518f1973c6b088093340a7"
+  },
+  "docs/archimate/framework/tests/test_publication_metadata.py": {
+    "bytes": 3891,
+    "sha256": "014b77b41119d63db1c97ae75cfbe8187268f380eb3fa0468514f77c193ab394"
+  },
+  "docs/archimate/framework/tests/test_reconciled_ingestion.py": {
+    "bytes": 6197,
+    "sha256": "ab1621f6827d190108ab44cf7e51f3dd3eb79567b11b42254999df02a9b53108"
+  },
+  "docs/archimate/framework/tests/test_recovery.py": {
+    "bytes": 10658,
+    "sha256": "ff0492050e652675808bb613fb16c778e25b898761ae0dc8155d9c2f2f1139bb"
+  },
+  "docs/archimate/framework/tests/test_roundtrip.py": {
+    "bytes": 18396,
+    "sha256": "800710172f98b929becd47b13d4087525df7071735ed8e25d19828d38f93d437"
+  },
+  "docs/archimate/framework/tests/test_view_presentation.py": {
+    "bytes": 6437,
+    "sha256": "5f0fef3f78eb2cb9edbca06f699a94295e57ea31db4ddd45748aca620178de7b",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/archimate/framework/tests/test_view_presentation.py.gz"
+  },
+  "docs/archimate/framework/tests/test_views.py": {
+    "bytes": 12626,
+    "sha256": "9b82e5b70dd86235c1628b5e623ed0bc4ea55169fc4082aa62e757708d30ca82"
+  },
+  "docs/archimate/framework/tests/test_workspace.py": {
+    "bytes": 4309,
+    "sha256": "449cc3351fff49eec4ee204f2989591d929d5f64ed98ce0f30a07c3fb99c04b2"
+  },
+  "docs/archimate/framework/tools/analyse_home_submission.py": {
+    "bytes": 4200,
+    "sha256": "da3b9bdb0d78c3646204cd17fcb855cbc74862373e0b258acdfa8ac2ecd0f3f9"
+  },
+  "docs/archimate/framework/tools/assess_rad.py": {
+    "bytes": 21837,
+    "sha256": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513"
+  },
+  "docs/archimate/framework/tools/diagnose_roundtrip.py": {
+    "bytes": 35932,
+    "sha256": "c4cd64fc200c54519d08f5fd3b84a897129f7ed0c79b8edeeb8289118144bae1"
+  },
+  "docs/archimate/framework/tools/feature_projection.py": {
+    "bytes": 20093,
+    "sha256": "062dd6dd5e9677f7811edb4ca834514e576c25cfa0175f8477ebbea36b0844d7"
+  },
+  "docs/archimate/framework/tools/generate_views.py": {
+    "bytes": 24741,
+    "sha256": "78980c637e1b1cfa991bc545865eda7a832eb9e3d40d76e62ca1d7e32865e3bc"
+  },
+  "docs/archimate/framework/tools/governed_metadata.py": {
+    "bytes": 27195,
+    "sha256": "bda5b450f3d490a8f116f95a8d673498a3d6357f01843f9ce2d073737f36a59b"
+  },
+  "docs/archimate/framework/tools/home_context.py": {
+    "bytes": 18620,
+    "sha256": "d92c9bd919e2c6d6fbda148b5daa4dd5e2af7dea9f4892c4747ce2ccc6a786f7"
+  },
+  "docs/archimate/framework/tools/home_relationships.py": {
+    "bytes": 8350,
+    "sha256": "ca7656ea78865400b471cfdf2671be3c83bf95a2ba22a4f9b5cda7ea0b7d54d5"
+  },
+  "docs/archimate/framework/tools/publish_documentation.py": {
+    "bytes": 9016,
+    "sha256": "0e64d776c2ab359419b057e61a7ba3623b8546318225f9871fa503d9e3c6247c"
+  },
+  "docs/archimate/framework/tools/publish_navigation.py": {
+    "bytes": 22378,
+    "sha256": "5d6e616639b0e68edea7b9c375ad882ddba57e9d042b5bdc063a18d24a32c8fa"
+  },
+  "docs/archimate/framework/tools/reconcile_108.py": {
+    "bytes": 12800,
+    "sha256": "d131c99f54475e48d17c180ad10ac3edb83fc6201f27b148bc33ee6162e9f477"
+  },
+  "docs/archimate/framework/tools/recover_v02.py": {
+    "bytes": 56454,
+    "sha256": "e4e44ec36d9751804f29a97db5b21ada8151c2af8a721762bf24393bc7909c1b"
+  },
+  "docs/archimate/framework/tools/report_baseline.py": {
+    "bytes": 34594,
+    "sha256": "aaf91880f98ec0e45838b785c54a4792202fc0fb2a83f5f53e2ad9908dbf3d4f"
+  },
+  "docs/archimate/framework/tools/report_home.py": {
+    "bytes": 13395,
+    "sha256": "5dfc02bf3487049b6bc482200a034164af1b7246a50f2ce983c748ced0e0bad2"
+  },
+  "docs/archimate/framework/tools/report_navigation.py": {
+    "bytes": 16366,
+    "sha256": "32acba602d208f6ccad2a375fb0e9eebfde2c26086a7dd732e6a62b3400c9030"
+  },
+  "docs/archimate/framework/tools/report_publication.py": {
+    "bytes": 12528,
+    "sha256": "0eb85717d4f424ef315d500193f93f0a189865423764155ba360c760c8c6af1d"
+  },
+  "docs/archimate/framework/tools/report_reconciliation.py": {
+    "bytes": 11883,
+    "sha256": "2c55700cdb56a35331b2cdc31ab05158179ef91289f19cc37727d307a37f2849"
+  },
+  "docs/archimate/framework/tools/report_recovery.py": {
+    "bytes": 27381,
+    "sha256": "d1e66bd8dd761e2ab87739607dc061765288ffc9e4e53bf078302c2645ffd6c1"
+  },
+  "docs/archimate/framework/tools/report_workspace.py": {
+    "bytes": 6245,
+    "sha256": "f5545c55d2e600ef893ce0b800e1c2dd2a9b0c66b6bab70f20c027b66d48713c"
+  },
+  "docs/archimate/framework/tools/synchronise_baseline.py": {
+    "bytes": 66935,
+    "sha256": "391c8b9c14cdbb3d99937cb06fcc4d5602b6566a07fcfb028307d86967aaac94"
+  },
+  "docs/archimate/framework/tools/verify_baseline_outputs.py": {
+    "bytes": 1776,
+    "sha256": "b4129417627c27044c5139c002c333a03f9f2f348af41f81b75f6beabdee3d98"
+  },
+  "docs/archimate/framework/tools/verify_governance_evidence.py": {
+    "bytes": 6917,
+    "sha256": "64bd1f5356707dbddf6c6fc1190335efdc6de9158dde24af846d79ebc9c860a9"
+  },
+  "docs/archimate/framework/tools/verify_workspace.py": {
+    "bytes": 3194,
+    "sha256": "20f876f44a679bc73a99b97276bc2a1c0570359bb5334e49cfb81c853f35eecb"
+  },
+  "docs/archimate/framework/tools/view_presentation.py": {
+    "bytes": 25519,
+    "sha256": "5de9e8b7cc8b2ba36b04bd4273f21d4dbf0a62341596b8effe78979c8827f4c2",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/archimate/framework/tools/view_presentation.py.gz"
+  },
+  "docs/archimate/framework/tools/workspace_paths.py": {
+    "bytes": 2593,
+    "sha256": "ce47340713536fbdf0e6dca2fb0762be64eae80ccb4bd17b919fa9eef22a7010"
+  },
+  "docs/archimate/governance-tooling/1.0.14/README.md": {
+    "bytes": 2020,
+    "sha256": "83999af61966a04a75592c2203fe4fe9bad6755adae496402a5b378d9ea054be"
+  },
+  "docs/archimate/governance-tooling/1.0.14/exchange/Harmonia-Architecture-1.0.14.xml": {
+    "bytes": 20901636,
+    "sha256": "8be6fd16e617d96f7054572dbf896b2384647f16cc0c11b3039137610b9712be"
+  },
+  "docs/archimate/governance-tooling/1.0.14/manifest.json": {
+    "bytes": 4305,
+    "sha256": "68b9a3d587bf27ef1002d405f4a498c1bb8b5ef9f58ee52b5a7fff9fa325da63"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/archi-inspection-guide.md": {
+    "bytes": 1471,
+    "sha256": "3b6000344e9d4994278f6782d5df0633a6654ec523a9f74ef51df0bf82ad2af7"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/evidence-sha256.json": {
+    "bytes": 8011,
+    "sha256": "2c582e539542a36b67c37069958aea78655a035acb8307e42ad678bb260cc87a"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/home-normalisation.md": {
+    "bytes": 34034,
+    "sha256": "ebb05cbc28787fa7f77a310bb0fdb79bde7964192161ca1b980e7c5aa3034340"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/home-verification.json": {
+    "bytes": 10685,
+    "sha256": "40e6d4c81aa7e5b9138edbdb255b7876429a16eb272bc1c9f4a0ac1ba7e0fcae"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/independent-reproduction.json": {
+    "bytes": 2185,
+    "sha256": "345e75401dac0a7fc0242b5077e17e7a3771421866792db20b01b73d08d71419"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/projection-checks.json": {
+    "bytes": 961,
+    "sha256": "9fe591f435dab2efc60a834095f40471e79e6c4450e9a09f061c8095ba346c43"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/publication-validation-1.0.14.json": {
+    "bytes": 98564,
+    "sha256": "6a35b98c4d3faf13f4e6bf30404d1177a129f0de2a7814649683df50405c4645"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/report-check-final.log.gz": {
+    "bytes": 90,
+    "sha256": "a375a2257324302a80d41e7cc7df63a7c98fdfa1db432c54bc4a280220a0fb68"
+  },
+  "docs/archimate/governance-tooling/1.0.14/processing/reproduction.log.gz": {
+    "bytes": 107,
+    "sha256": "50157163c19d19221b6894fb1224f13b00c141161719d34b7a1fd174b3a585d4"
+  },
+  "docs/archimate/governance-tooling/README.md": {
+    "bytes": 1100,
+    "sha256": "d2e4deb78fc21bca4a91f123322289755eb7cfddeaf00d7a8edc2fa2df52be19"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/README.md": {
+    "bytes": 6436,
+    "sha256": "2ea7a651c78db8835dc029c3b0d080a4879f5b981378738e4bec82231ab6d615"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/affected-references-before.json": {
+    "bytes": 950,
+    "sha256": "19eacd9e61fdf2a6491329bdb378de1dd802c464da140b5b4f0e50e6010f0422"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/git-status-after.txt": {
+    "bytes": 3100,
+    "sha256": "f037e24ff70f8b46c1111231a05cc3e0fbad7f07cd8d619771a1b722edc674d5"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/git-status-before.txt": {
+    "bytes": 2852,
+    "sha256": "c695adc5078629372851330ff64bb6f6d3b4e51d42a1ad78c739ddd5039904b5"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/historical-link-resolution.json": {
+    "bytes": 39560,
+    "sha256": "0e45784415e4e2a264b9f966ea3b9d974b13cdea19264bd4f6c60133ab9b20fb"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/protected-before.json": {
+    "bytes": 26642,
+    "sha256": "3aa5c2fcf938b8fc73728bd66e83896ba326deee362094826a9e308fce72e0f8"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before.json": {
+    "bytes": 2557,
+    "sha256": "76389e0826de497f503d30e73b5f336bbe231318b5340a05e05fc1eefcc01bc5"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/README.md": {
+    "bytes": 10164,
+    "sha256": "1dbd33f8387aff356a3d8d7b7b7526f989911b71514f25c00b56e90accdf45ab"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/exchange/publish/README.md": {
+    "bytes": 2292,
+    "sha256": "46ce94917f2b9c6fd1be92be83a492c28483fb447e71958a533f864e6450a496"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/README.md": {
+    "bytes": 5314,
+    "sha256": "98e45f5780fe04c70061bc9e5a7f380561ac2ae54a5da5eccb2b1f68a71b1014"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/historical-locations.json": {
+    "bytes": 34047,
+    "sha256": "612f5490a15fe0194de74f2fa89605c4712a8290662504340a984416e1316c8e"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/tools/governed_metadata.py": {
+    "bytes": 26883,
+    "sha256": "b4e8d47def3e774a247fd9ee35077c8a7d0c87978825e1cd9f4df4d13b360e57"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/tools/report_baseline.py": {
+    "bytes": 35137,
+    "sha256": "7c62cbaada9a80d2ee10447001e06cd5744382833bda90e1947b8211aab6d2c8"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/tools/workspace_paths.py": {
+    "bytes": 1787,
+    "sha256": "3f65b95b6fc53dcaf99627359415e9368a7007ac96048bcb1394096e8f0e35f5"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/processing/README.md": {
+    "bytes": 857,
+    "sha256": "4be0f10eb8baf9d4c4286b63e8c2ae6de07efb24f04dcb6a952749babf647e2e"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reproduce-normalisation.py": {
+    "bytes": 1779,
+    "sha256": "4a655cdcbcc5cf02250eddd34acdf86ae1faa0544694c0e9c381e70d718d27c0"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/archimate-tests.log.gz": {
+    "bytes": 5201,
+    "sha256": "d7e8363bcd103cc3791e0e456fbe13a79633ccee588c9ed7e6fbf066eca4ff2d"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/architecture-tests.log.gz": {
+    "bytes": 3988,
+    "sha256": "7a34ee62760ae099d3f0af65bbb758c51137597e7c6ce9da6ab686d492421d37"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/governance-tests.log.gz": {
+    "bytes": 2240,
+    "sha256": "ca379b3ec5764276aeed456bfb6a4adfb67c674b935e865d71f99a2815d877a3"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/identity.log.gz": {
+    "bytes": 134,
+    "sha256": "ba96bb1651d8249a6f934956752980005099de7415352a659fcdc6cb1428fc4c"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/namespace-tests.log.gz": {
+    "bytes": 279,
+    "sha256": "8d4999024c3e524c9f615865d924b9cf9c94b6afb1d19d753260c7e4eb5837c7"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/normalisation-reproduction.log.gz": {
+    "bytes": 317,
+    "sha256": "1b2db85323909f883b8013c702311cf588c959367706a1b35f6648d0682d436b"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/preservation-final.log.gz": {
+    "bytes": 303,
+    "sha256": "209ff29bfe0ed4f34862842815bd5853497d03c21194512b5a00f62f293a09b5"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/publication-reproduction.log.gz": {
+    "bytes": 642,
+    "sha256": "3861dc556f83adb39a94104b370309ec591610630e89903ab7a2f9eeed18515a"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/release.log.gz": {
+    "bytes": 61,
+    "sha256": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3"
+  },
+  "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/verification.json": {
+    "bytes": 5385,
+    "sha256": "d560848c2dded981753d1bdb463b4234987675131a714de03a081a91b81a6bc2"
+  },
+  "docs/archimate/processing/README.md": {
+    "bytes": 1171,
+    "sha256": "f80e1590eb0abefd899847a7c89d8a5e22808a5fa8d78a316fc8e1407ac1881f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/blind-observation/analyse.py": {
+    "bytes": 15458,
+    "sha256": "022ce80a4dcc3d2e91878e5f0b89db9ffd03c8bab778f4344aa2eb0773476492"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/blind-observation/control-comparison.json.gz": {
+    "bytes": 56297,
+    "sha256": "5ab0beaadb19d38cc225a2cfee5de1e0ab3554e94fce3d29b48cfb6a45bf3f23"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/blind-observation/observations.json": {
+    "bytes": 401486,
+    "sha256": "9852c16890e69bf819fa431f29ef2e85819d06ed3e036f25f4b6b46801104462"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/blind-observation/transport-comparison.json.gz": {
+    "bytes": 2254499,
+    "sha256": "4e0ce123b853409c5fec90ca539bd7d9ead510326cc53d790381022cbc1d7acb"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md": {
+    "bytes": 202361,
+    "sha256": "41953ee0abe7471511f56d88df640726a2862f71ac828616ed538acc581ab863"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/baseline-diagnostic.json.gz": {
+    "bytes": 2264487,
+    "sha256": "907faddeb07cea46c48ac35347081bc4360da8bc279cf3d838577baf8f4ddd8c"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/change-requests.json": {
+    "bytes": 84409,
+    "sha256": "c1dbe136489bb7af9b25272eb393df725857548c1f10495df25103c98c2f65a4"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/decomposition.md": {
+    "bytes": 16437,
+    "sha256": "eae94ebcd0587fbf335032abf36df0c6d6eec8dd3289cb9908a0129be35a8443"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/detect.py": {
+    "bytes": 20022,
+    "sha256": "afa26c82a9fb6b65485eea752340b319a2440d332b477e5d6cff6b05d4cbe093"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/diagnostic-commands.json": {
+    "bytes": 1606,
+    "sha256": "3fe8732615b44c42327f6db6bfba8c6d8897ae8d59db3b3330f220572baa6d72"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/elements.json": {
+    "bytes": 8967,
+    "sha256": "b3c84f3e3ddbc30925fb5c5b9a9ff9da79927b992df9624f782142b657c77421"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/historical-evidence.md": {
+    "bytes": 3774,
+    "sha256": "55186b783f544ca95cb1ce9abe0774be4464c94134e6f1a9a38c160da5ecc090"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/identity-diagnostic.json.gz": {
+    "bytes": 232606,
+    "sha256": "25f8cb61fe603ce7ab34c1f919ee954ac47d680865f5e2193b891819b3680e61"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/identity.json": {
+    "bytes": 3311,
+    "sha256": "6af41af0021429a6dd9169c4276f384b5322cb69336ff2726763d1a41b917b60"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/navigation.json": {
+    "bytes": 5217,
+    "sha256": "89f61d6b6efe47b6e904bdb2c57eb4cf9aa498217bb0486b56ca47d2d333f6ff"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/observations.md": {
+    "bytes": 25127,
+    "sha256": "2e69c8a3c9c9cdc82de0aaada7a91d4433bf9321586c0c3431357dce94d56324"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/prepare-review.py": {
+    "bytes": 44197,
+    "sha256": "7d4f77b9d7d70cc0df780571b43d26ab96bacd326c3b3d8c27e1214deeb0b702"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/provenance.json": {
+    "bytes": 4711,
+    "sha256": "81bc786966e8faac80ec89cb31b9f304721627791a1632b0e4fb7c806bd079d3"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/relationships.json": {
+    "bytes": 41202,
+    "sha256": "63b3be0e62d2af27ecbff164a5b9e56b74576f6c00ecea9b98cfa536519a065f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/start-preservation.json": {
+    "bytes": 469323,
+    "sha256": "d115c042a9bf0f3453f5b58abff75b8e3077a437fa5c16930be2250f56b27806"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml": {
+    "bytes": 21854756,
+    "sha256": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/summary.json": {
+    "bytes": 2326,
+    "sha256": "8a15f021a2e1b8903a2f1a7d5e8569344cd455de8bd9080d05f553c18db7ec0d"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/transport-control-diagnostic.json.gz": {
+    "bytes": 148980,
+    "sha256": "cd26ffdfcf13c8ae1545903f732d49234b3d941a4aebd365f2b087ae5d8497dc"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/transport.json": {
+    "bytes": 43362,
+    "sha256": "a53926d3057bcdbc44a9b971545bceb9416c1718bee90c9fc8bc3129b9e59c15"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/detection/views.json": {
+    "bytes": 237112,
+    "sha256": "eefda2ca70c9e7d22255b4ff49a49156f144c0f9ce737409db201af155077154"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/change-review.md": {
+    "bytes": 104380,
+    "sha256": "338fbeed8228aa76a85aac72df44e80de320549c3290ec5bf84402c4446ec761"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/manifest.json": {
+    "bytes": 553,
+    "sha256": "11ec5f4392f806eaffc6b2fb640e1c471aa90e3f3c869258b7c69c147465e957"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/archimate-ingestion-change-review-template.md": {
+    "bytes": 10370,
+    "sha256": "baf1ec1ef0e2cf40c67b6f8fce4d63b7c1192addc1d4e20553befdeb1f2155d3"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/archimate-ingestion-change-review.md": {
+    "bytes": 20593,
+    "sha256": "7d36d9f076489c25e8c0002dd75178932c9569767452998e48eac1deeddce018"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/change-review.md": {
+    "bytes": 122913,
+    "sha256": "1bfe21ca76c2363a8ba4a7e3de21f683b143e8aa6ca7741e26983817c1442b7d"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/manifest.json": {
+    "bytes": 1311,
+    "sha256": "d8448a65ee51e1b98703ce7a27b02bc48a72204b2794d3765be5d4378aa26e0e"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-003/change-review.md": {
+    "bytes": 140746,
+    "sha256": "428e7e950bfa008cfccf6ebc17d2f62597384061be50639a8c6499e9bc768ffa"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-003/manifest.json": {
+    "bytes": 309,
+    "sha256": "722e66a508b90aa7b07536d1fcaaf8b5e69780913d9bf788cb11dbe42495798e"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/accepted-source.json": {
+    "bytes": 44089,
+    "sha256": "4f1a5b08882193e8c66d7e0ac815f4c23a6afb2b11ea420bae37f4b1b1dc4b37"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/archimate-tests.log.gz": {
+    "bytes": 4787,
+    "sha256": "bb8882e9ce703c4de8f82918238778380829e4e1fbc22f225ddc74309af45368"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/architecture-release-before.json": {
+    "bytes": 58,
+    "sha256": "8f878e37dc6b4ad53ef9e2cf5ac423269e638724a682b153e63dd4f40bb4c1b0"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/architecture-tests-java21.log.gz": {
+    "bytes": 3984,
+    "sha256": "bb59331e6cb28bc511de7cb1922f2cf19ecfa4eb3877d331341735646e4d5f07"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/architecture-tests-offline.log.gz": {
+    "bytes": 287481,
+    "sha256": "4584f64c82108ff7608a004c5082a52b86b37bffa293ed056de4f09b4b6fb36f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/architecture-tests.log.gz": {
+    "bytes": 3189,
+    "sha256": "67e9525d9e5114b5b505ab89b305a5b0ca0228b76342d2bed170976c0bfa1712"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/before.json": {
+    "bytes": 16393,
+    "sha256": "ca4ceabac49af5a7b258b4d2de433283cd2710ad9a65a3f4887996ae375fbcd6"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/canonical-identity-and-naming-before.md": {
+    "bytes": 10069,
+    "sha256": "1b3fb89ada3cf23c008025d9c225b1a162941a531b0467207f3cc51bcff5bf7a"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/change-review-before.md": {
+    "bytes": 151257,
+    "sha256": "33e076e4746e1838987cf8524cb80d228d0f3880e9f3d11fe209183f02d840b3"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/cr-inventory.json": {
+    "bytes": 24112,
+    "sha256": "110906a5b2637bdd488c555c4f52cf0f84d9cedc95a380ba198bf587e01eb42f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/execution-contract.md": {
+    "bytes": 6990,
+    "sha256": "5378d522910d449fb9d56915f90b5acac181a59cf7c0ff8331cee26874ea92bc"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/git-status-after.txt": {
+    "bytes": 2852,
+    "sha256": "c695adc5078629372851330ff64bb6f6d3b4e51d42a1ad78c739ddd5039904b5"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/git-status-before.txt": {
+    "bytes": 4001,
+    "sha256": "9500205a5fe284a1ccac8b3fef7dc8295972e14772f036a808fa8b454e39f1de"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/governance-tests.log.gz": {
+    "bytes": 2240,
+    "sha256": "d9e14f15e4ca54ddf34b53aff75d0029b025cca5a589af99af50ac47270c846f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/identity-registry.log.gz": {
+    "bytes": 169,
+    "sha256": "979bbef1348bc1943a450a551affd5cf37e48f0d79e2c7c8ba1e411f9eec21f8"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/identity.log.gz": {
+    "bytes": 134,
+    "sha256": "94bc6a9ced6bdd3b872ec367dd67c486301b024059122acf063f6c3cc767e657"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/manifest.json": {
+    "bytes": 414,
+    "sha256": "3139b8cf9e38af8256ae5f76ebcf2a0fc39912f796f90c75eed7c98e50a7ad69"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/publication-check.log.gz": {
+    "bytes": 350,
+    "sha256": "77a95af6e6b6c48ee2e0ae29912d34306658b6aaf4c372badcf41af70cd6f868"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/rads-validation.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/release-check.log.gz": {
+    "bytes": 62,
+    "sha256": "c79f3f3c30e8869b74e77e8f49b1ff2fbcad2202e7c39fa4e3b47fa87e0c4f13"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/reproduction.log.gz": {
+    "bytes": 263,
+    "sha256": "b99cca1f245a56435e95c593e81f3c43ad4c3253d6b3ebc12f05b8aec6938506"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/results.json": {
+    "bytes": 48534,
+    "sha256": "73bcf0f3055e354f5b260b8c9956b568667c15aee45c923dd61b15b3ae3ab421"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/verify-execution.py": {
+    "bytes": 4731,
+    "sha256": "ecad2339714993d00182833752722925d1b9c21f05b24f88ed7e5273119a746b"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-002.json": {
+    "bytes": 31364,
+    "sha256": "f115f958ec51400aecaf2601a6f65338a1ad844a8f0b338980cf1f3fa72f0306"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-003.json": {
+    "bytes": 33994,
+    "sha256": "4f0421f5a41bce0a7729ec2f8f7a133cc918dc179047453ab523377b36e0dac3"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-004.json": {
+    "bytes": 35299,
+    "sha256": "8f392b4e94184523ec7165af1e5b4c691c65d4361330d2ec95663ff514437a5d"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-005.json": {
+    "bytes": 4979,
+    "sha256": "e0ac3baf5263ed58d69511482ba99079785ced0ed7761f2617a11e8de268c7ed"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/architecture-tests.log.gz": {
+    "bytes": 3982,
+    "sha256": "4df6d406fa6efafbd8b8f48487f7d4ea4f554f3ed16e3fdbda64fcb7ba0db31c"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/command-results.json": {
+    "bytes": 2509,
+    "sha256": "bffa2b9e8ecd93ee3433c2a0ab5a37dbd5e954e5c2031d6f6231412940e712dc"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/detection-query.log.gz": {
+    "bytes": 552,
+    "sha256": "c44105d50c457dbb70cfbd5d37fb1861db7d4e23c41473904b45e0712739df1a"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/evidence-sha256.json": {
+    "bytes": 4191,
+    "sha256": "b2ef2a6d47635fe1b0e45a7b54c7df8e006bc60b0c63a406105d68e940847c14"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/preservation.json": {
+    "bytes": 2732,
+    "sha256": "e8912ec80f0d0bd3ce38818ff69851b007bb10579edf022ab80cc46a8512e885"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/review-validation.json": {
+    "bytes": 99882,
+    "sha256": "ff6648d34a64c4bd9e5e17d1fac8b511f24a7addd20675c73b0abdc0218e5bd8"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/architecture-tests.log.gz": {
+    "bytes": 3982,
+    "sha256": "196a4473cec988652d7d83224e7aadd4b3aff07881de20d04273ccff0d4377f9"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/command-results.json": {
+    "bytes": 2552,
+    "sha256": "25dd493bd74a96a77b046b8ddc419a4dbe490a3ea68c6f854301ad217d1ef51f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/evidence-sha256.json": {
+    "bytes": 4075,
+    "sha256": "ee0d9ea41446d5b9135aa5a9c9ee84b01356634a34435b9be36ce7922053cff3"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/governance-tests-initial.log.gz": {
+    "bytes": 867,
+    "sha256": "d3895a9a24d5e9ad6338a075f068033abc816faf549935893895cac4389ddbd6"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/governance-tests.log.gz": {
+    "bytes": 57,
+    "sha256": "dae1fcb0d049c4c4c55833143cac6e1ce4ae4fbed4b1a84e3207ff17018fa1fa"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/rads-validation-initial.json": {
+    "bytes": 226,
+    "sha256": "85a635eddb05b32957f79e369d51d31643be0bd92e80c4e6070163ab81b41207"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/rads-validation.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/release-check.log": {
+    "bytes": 58,
+    "sha256": "048d5883587bd633728e7bd30f9739c41abc81549e9cf88261f9f055116c110b"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/start-preservation.json": {
+    "bytes": 468219,
+    "sha256": "17d8f184bd65e80ef69d8f03319ad82988358c3e68550a5472ccd85bf6457d1f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validate-revision.py": {
+    "bytes": 14988,
+    "sha256": "3cd37326cb08103906f272854071d097507e8c928fbc0b07e4e0b34e0cb197b7"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validation-results.json": {
+    "bytes": 115889,
+    "sha256": "d87835b99200373b36087862fb678e02124f9cf919f429aa1ef2afd2a8094f4b"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/architecture-tests.log.gz": {
+    "bytes": 3992,
+    "sha256": "3f2b387de4b3cff35bdea6d1da0af788365e33b905fadb0932e834004777d4b9"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/command-results.json": {
+    "bytes": 1470,
+    "sha256": "a733a5141ffc18d0e91e3828edbf06d4604bae3a27b924601f461f4515312b13"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/evidence-sha256.json": {
+    "bytes": 3551,
+    "sha256": "21d5a4013f262d9cd3f7e37cb24cdde94b14cac0b629691525c9c010a02a8f9a"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/governance-tests.log.gz": {
+    "bytes": 57,
+    "sha256": "7ed50b512b5aefce64ec62ca5e727475b2f44405737734ede33c4217336507ff"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/rads-validation.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/release-check.log": {
+    "bytes": 58,
+    "sha256": "98e9862d8b67890564e8cfed9e0e954dfa8dbde2b924f5ed567a0fb5772a7996"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/start-preservation.json": {
+    "bytes": 471348,
+    "sha256": "56998a85a62b4364ccd6f51559e3f7695ef9a5014166106eb8743594f644537e"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/validate-revision.py": {
+    "bytes": 16944,
+    "sha256": "b1a8a8e9d6fe94e63c3944270221279634e1d43937dd85f41a3ef8d3e8f3d74a"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/validation-results.json": {
+    "bytes": 153080,
+    "sha256": "af007380abd5bc8cdc5511dc17b322256656e60b72127448d092e52ecc0e5fcd"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-001/validation/validate-review.py": {
+    "bytes": 11800,
+    "sha256": "b7d074ca6144e17b4756c36e9f85ab0337b78ecdcd3ee9b44ef975bba5854de2"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/change-review.md": {
+    "bytes": 27634,
+    "sha256": "8d49798989700f2b53fb0b8683cccac3d4c4124cd48af4f00c4a3036cfb5b36f"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/detection/change-requests.json": {
+    "bytes": 1318,
+    "sha256": "0245c2cd545fa25ea6b750a033d2b7cb3d4180f0eacd071d2c01405c55cadcf9"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/detection/explicit-homes.json": {
+    "bytes": 10942,
+    "sha256": "220245979bd9338e861ff0637479d4f334909125d5f6489103dc59fee0859d2a"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/detection/start-preservation.json": {
+    "bytes": 869,
+    "sha256": "b307c49597a0fe73473c977e06c25c65c2f6fec1f74f74a0d0ebd44ea97cff04"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/detection/submission.xml.gz": {
+    "bytes": 1867973,
+    "sha256": "c183d30c24b1efc4e74c5212e491ddbd05f5bd7c33b4c45150ffba247d41df52"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/reconciliation/execution-001/README.md": {
+    "bytes": 768,
+    "sha256": "328c877015971d06111b9407ac838992352987983bb5336c311fe48dfe9e59bd"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/reconciliation/execution-001/change-review-before.md": {
+    "bytes": 16980,
+    "sha256": "4f552b163313a5f3316b89453734ddd86ebc12132748466012f990bd4e7c49e5"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/reconciliation/execution-001/manifest.json": {
+    "bytes": 414,
+    "sha256": "1f86052f43c9ce46c93c8cd818b03a96598911fd1131d848c30fd4fe53561a82"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/reconciliation/execution-001/results.json": {
+    "bytes": 8925,
+    "sha256": "e6ba1ae91d94b2a6375533af041b586057aea2c34d4a702f5cbb398fd98c4ad0"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/review-revision-002.json": {
+    "bytes": 1799,
+    "sha256": "4fc7c98e546f209e8b841ec163dcc7527906096089ee0c45348764fdf7620573"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/architecture-tests.log.gz": {
+    "bytes": 3979,
+    "sha256": "e7bdce49414e358d7c59c1a1edc2f71b0728a56cd05d25e4cec46d755982ddf0"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/baseline-check.log.gz": {
+    "bytes": 350,
+    "sha256": "77a95af6e6b6c48ee2e0ae29912d34306658b6aaf4c372badcf41af70cd6f868"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/command-results.json": {
+    "bytes": 1921,
+    "sha256": "d4647f0150f193379ca8fa3429a629861df96d645a33ea417ffa7a920e789609"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/focused-tests.log.gz": {
+    "bytes": 492,
+    "sha256": "fb30fb3976749a2bc09663732e2f41dbd97889f31d4cc73681b36e352c7784d6"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/framework-tests-final.log.gz": {
+    "bytes": 4785,
+    "sha256": "b9c3cc76234022db325a2fe5bcc3910b5c404399fec9c00b2387fa5cba4c1ecc"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/framework-tests.log.gz": {
+    "bytes": 4996,
+    "sha256": "1ce4d0e13a3966f2a1e3bb4abe950c0f995d042247c3bad2798471e5df662752"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/governance-tests.log.gz": {
+    "bytes": 57,
+    "sha256": "e29a211973929ac6105f6ccc755b21993fe7b1749afed4e1a1c0803d402bb725"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/prior-test-attempts.json": {
+    "bytes": 499,
+    "sha256": "b9467074132a904c4128d53c98dc25da73e41cab9e830d94bb42eb25b2b6157b"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/rads-validation.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/release-check.log.gz": {
+    "bytes": 62,
+    "sha256": "c79f3f3c30e8869b74e77e8f49b1ff2fbcad2202e7c39fa4e3b47fa87e0c4f13"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/validate-home-change.py": {
+    "bytes": 7663,
+    "sha256": "e7c51999766d9820ceaa1fc9ab3bfa0e2b7f92812bc0ded4b802b9a11dd181c9"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-final.log.gz": {
+    "bytes": 429,
+    "sha256": "a2a5229b37c9fdde2eb532e78e18b02ff4da403c4593fadd653958360f22f6b4"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-results.json": {
+    "bytes": 25809,
+    "sha256": "bd7587cb6a42ed091040b3b55b08d0009c3222594bd462bbdecc1e28b2e32f5b"
+  },
+  "docs/archimate/processing/ingestion/1.0.8/run-002/validation/workspace-tests.log.gz": {
+    "bytes": 235,
+    "sha256": "d59c636ad756ba7518a8b57642e237be014f403e19482b7643ae4a7366d9197f"
+  },
+  "docs/archimate/processing/ingestion/README.md": {
+    "bytes": 4285,
+    "sha256": "353b29e23faaadb81a6f3475b03b0a3b9d5a98ec87a50e1f5663b5ae9f5f3dac"
+  },
+  "docs/archimate/processing/publishing/1.0.1/documentation-publication-report.md": {
+    "bytes": 11572,
+    "sha256": "4ba697daff9fc35e2ad3a6bc259d6b4dc04aabce83be8ebe04b38a90ded23f3e"
+  },
+  "docs/archimate/processing/publishing/1.0.1/release-verification.json": {
+    "bytes": 6017,
+    "sha256": "6e6322f5696d8ef9d6d7c83aa801aef4b5ef027ef999a06cf062907ff3e8e7f1"
+  },
+  "docs/archimate/processing/publishing/1.0.4/.gitignore": {
+    "bytes": 57,
+    "sha256": "b41295596839fd6f596a3c88c4f007e293b3c1847652c4f48c4a297f67bb58c3"
+  },
+  "docs/archimate/processing/publishing/1.0.4/navigation-release-report.md": {
+    "bytes": 11983,
+    "sha256": "3d55f630f64dbad1e1353be397af33b5d2e65c822bcf7e13eb39bce84358976d"
+  },
+  "docs/archimate/processing/publishing/1.0.4/navigation-release-verification.json": {
+    "bytes": 31291,
+    "sha256": "50e12a6cbc4103815d81a9b7ec9a850a7fdf9632435b55d27892ab262603e471"
+  },
+  "docs/archimate/processing/publishing/1.0.4/validation.json": {
+    "bytes": 221487,
+    "sha256": "92f592ca3998ae7de2a37f14e0063b4603e8910abe88e448deb783f6a233f733"
+  },
+  "docs/archimate/processing/publishing/1.0.5/.gitignore": {
+    "bytes": 57,
+    "sha256": "b41295596839fd6f596a3c88c4f007e293b3c1847652c4f48c4a297f67bb58c3"
+  },
+  "docs/archimate/processing/publishing/1.0.5/1.0.5A-recovery-report.md": {
+    "bytes": 28525,
+    "sha256": "61ec9349d290b3b15415600e126af17f2d10ff0c23e59ab7034b3960638da210"
+  },
+  "docs/archimate/processing/publishing/1.0.5/Harmonia-Architecture-1.0.5A.xml": {
+    "bytes": 19451850,
+    "sha256": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1"
+  },
+  "docs/archimate/processing/publishing/1.0.5/archi-inspection-guide.md": {
+    "bytes": 3941,
+    "sha256": "cdc2d6a9be60f563321306d7023e3f3a16e17fc3b33dd271d1ebc87c532635db"
+  },
+  "docs/archimate/processing/publishing/1.0.5/architecture-release.json": {
+    "bytes": 56,
+    "sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222"
+  },
+  "docs/archimate/processing/publishing/1.0.5/corpus-drift.json": {
+    "bytes": 1942,
+    "sha256": "5edc8f65383381d8c35b12934526c2c9772666e7ffbcb34d1459e8ef2b08b58e"
+  },
+  "docs/archimate/processing/publishing/1.0.5/recovery-findings.json": {
+    "bytes": 775735,
+    "sha256": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73"
+  },
+  "docs/archimate/processing/publishing/1.0.5/representation-crosswalk.json": {
+    "bytes": 1768539,
+    "sha256": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266"
+  },
+  "docs/archimate/processing/publishing/1.0.5/source-manifest.json": {
+    "bytes": 11957,
+    "sha256": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9"
+  },
+  "docs/archimate/processing/publishing/1.0.5/validation.json": {
+    "bytes": 5998,
+    "sha256": "e96640f7b2d9ebdbff7c4e4dc8d06ae34ef2d581f558b9241216dedb40101a6f"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification.json": {
+    "bytes": 26358,
+    "sha256": "748049f5da544af6d7336e0b88bae9968d3287379c224acf96d56c6e74dd56ab"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/.gitignore": {
+    "bytes": 162,
+    "sha256": "ce2da3813dec0794abe45d66ce62c33f3f3d4ae9856b71e0be6e49ce5bda37ad"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/architecture-tests.log": {
+    "bytes": 40723,
+    "sha256": "e0370bd75d46af9c5f8ea70ba2da4781666501a4ceeb1e39293797b1e7c81915"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/definition-concordance.log": {
+    "bytes": 219,
+    "sha256": "4c25d0a6243765c7b709d2d2a8b44b0175ca6a3bc7d5894523c6b5db0341cf10"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/diff.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/identity-validation.log": {
+    "bytes": 213,
+    "sha256": "cb91c62e91ac9f7d264c8b86f1e464015766132b8a97a55965e8085e577d1733"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/initial-maven.log": {
+    "bytes": 19504,
+    "sha256": "75b786fe605b7b3d35eccb8e9d44340ce68b5aec8dcd7cada9e598b571281f4c"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/jdk25-diagnostic.txt": {
+    "bytes": 414,
+    "sha256": "7b7e4159f7fca015e1463a577b167f7cf2ac04aa6e48fa606a72ffdba98796d1"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/legacy-v02-check.log": {
+    "bytes": 2004,
+    "sha256": "ff22c6319e5271c39d6ed802f892173f058ccfb68f7cb265b4a42c17c1b225eb"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/make-all.log": {
+    "bytes": 12643,
+    "sha256": "55412ba1e877338055013f22b0c7a55a32122b21513057cb41ef49ca72ecf99f"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/publication-tests.log": {
+    "bytes": 11384,
+    "sha256": "82da7f0bb62a92fac38ae7ba6d7434c910259aae0dc3742dfb84bfc9a3ea74ad"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/rad-validation.log": {
+    "bytes": 87,
+    "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/regeneration.log": {
+    "bytes": 446,
+    "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/release.log": {
+    "bytes": 56,
+    "sha256": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/script-tests.log": {
+    "bytes": 11486,
+    "sha256": "9250af2694563055ea8679ad3ef35432464de884b5aa98d185fb07dfda310d81"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/snapshot-tests.log": {
+    "bytes": 2731,
+    "sha256": "bb3f9b4784e0ce6356e39b2b70e01a4975ee52eb35e1c3b65af6a895c1cce36d"
+  },
+  "docs/archimate/processing/publishing/1.0.5/verification/snapshot-validation.log": {
+    "bytes": 510,
+    "sha256": "4e2832ad352fbc0fa3c046aacee88c61412184c7b887b7e648e4798269e218e7"
+  },
+  "docs/archimate/processing/publishing/1.0.6/.gitignore": {
+    "bytes": 57,
+    "sha256": "b41295596839fd6f596a3c88c4f007e293b3c1847652c4f48c4a297f67bb58c3"
+  },
+  "docs/archimate/processing/publishing/1.0.6/2026-10-17-archimate-markdown-baseline-synchronisation.md": {
+    "bytes": 32924,
+    "sha256": "fdcf3180adf37c6de23020826f80be57d9d7650171b190a8228e51d60f48d462"
+  },
+  "docs/archimate/processing/publishing/1.0.6/archi-inspection-guide.md": {
+    "bytes": 7784,
+    "sha256": "63f3da5d2c121cbc01c0bbee2862e5fc8008ecda7b704935f5aea98a17b61f21"
+  },
+  "docs/archimate/processing/publishing/1.0.6/corrections-preservation.json": {
+    "bytes": 21154,
+    "sha256": "42d1b3487b122fe867c5ba17831184c4d14e1d183aa6acd6f1e6e1e911a70363"
+  },
+  "docs/archimate/processing/publishing/1.0.6/documentation-correction-verification.json": {
+    "bytes": 63294,
+    "sha256": "ae7e7919a9947ff4e39e57ca00516e2f69717debdfe518412247958f2bf65223"
+  },
+  "docs/archimate/processing/publishing/1.0.6/human-inspection-start-preservation.json": {
+    "bytes": 132461,
+    "sha256": "c71f7ac07f9d8e4dcf63f9e0df887c4ec95bdc11020722ac158cee3ada2a3969"
+  },
+  "docs/archimate/processing/publishing/1.0.6/initial-synchronisation-report.md": {
+    "bytes": 38424,
+    "sha256": "07a687d2085850239ec3d561a53f617873d7eac34adac47aace1db591c28e5f6"
+  },
+  "docs/archimate/processing/publishing/1.0.6/initial-synchronisation-verification.json": {
+    "bytes": 46182,
+    "sha256": "ce20d8a18caeebf91d73c41b1e3cbac46478aa0c38dfb77ef42207248333f1f8"
+  },
+  "docs/archimate/processing/publishing/1.0.6/pre-human-inspection-synchronisation-report.md": {
+    "bytes": 66112,
+    "sha256": "99aa93bdab1e23dfd291a7bdcb049f261b35778220471c9f9a22285911adca65"
+  },
+  "docs/archimate/processing/publishing/1.0.6/pre-human-inspection-verification.json": {
+    "bytes": 75790,
+    "sha256": "2ade750a06fc264172cb4d70285686631d1811dc4b39d03926759d8816f143e8"
+  },
+  "docs/archimate/processing/publishing/1.0.6/projection-start-preservation.json": {
+    "bytes": 64066,
+    "sha256": "e7d8aa6f7d268a1eea3c96e11275d493dc6a3b618964682ac902478df216ed2c"
+  },
+  "docs/archimate/processing/publishing/1.0.6/validation.json": {
+    "bytes": 98082,
+    "sha256": "90570c7ad557a9eebe63448e8ffb7c6dbb49f157698aca39078bcec00ef327ba"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification.json": {
+    "bytes": 99281,
+    "sha256": "0c03b069bc1032da40e5368ce4f61f033e85ec10db0276d45ee74b99d7d91b80"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/.gitignore": {
+    "bytes": 153,
+    "sha256": "5d656827105f73e5cd20b9246271d3ca3098286bf65ea909f909a603e88e1553"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/architecture.log": {
+    "bytes": 54224,
+    "sha256": "7fd729aa8f4a0803ee6e290ac437043c3cfa97bc12fd43755f0019bd7dbd37ff"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/baseline_contract.log": {
+    "bytes": 2657,
+    "sha256": "73f5f57203bcab003c718e4057ba551217d009d1c14e48b119056cf1182b70ef"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/bindings.log": {
+    "bytes": 460,
+    "sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/architecture.log": {
+    "bytes": 54224,
+    "sha256": "8b8d93a0e5075f3d1bd3321b1efebb987266f7e3eb09d9435d4a3a7f44672f7b"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/baseline-tests.log": {
+    "bytes": 3586,
+    "sha256": "58de9d06118b76a1e30a115653c625a35654f908733c697e1c3d6322bd085920"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/bindings.log": {
+    "bytes": 460,
+    "sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/diff.log": {
+    "bytes": 23,
+    "sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/documentation-samples.log": {
+    "bytes": 4673,
+    "sha256": "e7fa076cc9f9c6f081ce17d1ab5512901ba068effcc6ea1bbab8e8f750a4794b"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/generation.log": {
+    "bytes": 797,
+    "sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/generation_check.log": {
+    "bytes": 797,
+    "sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/identity.log": {
+    "bytes": 213,
+    "sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/independent_regeneration.log": {
+    "bytes": 797,
+    "sha256": "732f348c032439cfe22ffbdcded0e66d361ad1d69632901f6eefc410bf6de32d"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/preservation.log": {
+    "bytes": 135,
+    "sha256": "066dcf180f0116a804f3f7d4236615fdd963711b1f1783be316b7f797bfdf463"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/publication.log": {
+    "bytes": 14870,
+    "sha256": "8b4ebcab794e1cf5841d26560685cede6703d887cb028bd2d8848406f08672cb"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/rad.log": {
+    "bytes": 87,
+    "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/readme-lifecycle.log": {
+    "bytes": 469,
+    "sha256": "29bf6389ddf707f9fd5cc7bea018c2f72866fc9bc948309b7c6f5283e7ae27b7"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/recovery_replay.log": {
+    "bytes": 446,
+    "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/regeneration_comparison.log": {
+    "bytes": 114,
+    "sha256": "6030c5d7a7fef0306eb6e74c8960e44deed73ae0e4edd05fa172ff1f14870318"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/release.log": {
+    "bytes": 56,
+    "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/report.log": {
+    "bytes": 54,
+    "sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/scripts.log": {
+    "bytes": 12061,
+    "sha256": "f4cf03ad45eea71e2dde5b5b1cc0e975cda98903d356f2757519c8a016ccce04"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/snapshot.log": {
+    "bytes": 401,
+    "sha256": "77a94b4166c2fdce232f9d93b0741580142188402f80b4039d4e0af85f712ee1"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/corrections/snapshot_tests.log": {
+    "bytes": 2731,
+    "sha256": "32ecf936b54f423ea534e089a20692be552c3e088c8de13be78e50c2f74a6aa1"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/diff.log": {
+    "bytes": 23,
+    "sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/generation_xsd.log": {
+    "bytes": 797,
+    "sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/archi_sort.log": {
+    "bytes": 6316,
+    "sha256": "b35e8155fdb4cf63e0c8a547faaef722968737f0987f9b28ba2db0cfef753bed"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/architecture.log": {
+    "bytes": 54224,
+    "sha256": "09d03a6303c5585ebd07e1d6af162f9efafe62742ecc0124fb026915017b3973"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/audit.log": {
+    "bytes": 376,
+    "sha256": "dcbfd49a0229629fba0bffd15d35ae5e2f282a93008819a233a95db59c8d20df"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/bindings.log": {
+    "bytes": 460,
+    "sha256": "47db4bb477ad82b1233c77186b7da073d914cc3ff276cf4a746ed297d788b760"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/check.log": {
+    "bytes": 797,
+    "sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/final-workflow.log": {
+    "bytes": 1443,
+    "sha256": "a995fb6c5d300c754c680b59c062ad75e486c0bd2a9166959b718175cd192dff"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/generation.log": {
+    "bytes": 797,
+    "sha256": "18ec0d6ac5559215bb15aacd8fcd7628268e547c2b2a66d0b9e126fe3a5d03cb"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/identity.log": {
+    "bytes": 213,
+    "sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/publication.log": {
+    "bytes": 16716,
+    "sha256": "37185904a09e1139d52930cc70d35426881d16cdd772752642c5db48ddfb3151"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/rad.log": {
+    "bytes": 87,
+    "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/recovery.log": {
+    "bytes": 446,
+    "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/release.log": {
+    "bytes": 56,
+    "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/scripts.log": {
+    "bytes": 12061,
+    "sha256": "e5f6d309b3ad02f1f9f024c7a6d347d2528458a3e6d90d40192b5557efb96531"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/snapshot-check.py": {
+    "bytes": 730,
+    "sha256": "6e097e14622ac960662f64ae111594e192e8cbde981504bdadb699b0259230c8"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/snapshot.log": {
+    "bytes": 424,
+    "sha256": "925b65b351b793021a63f45b57f5286923653e6e15b1d2b9e7bbcbed4c128765"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/snapshot_tests.log": {
+    "bytes": 2731,
+    "sha256": "6129339624c8c855421e08ea03996821441bb61f23a0076be76686ec0f421b08"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/human-inspection/starting-candidate-audit.py": {
+    "bytes": 1987,
+    "sha256": "0f0e3e5f5aef58d54709424ec1f2a9a46652a2fd9b6b54f5d25c027a81245104"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/identity.log": {
+    "bytes": 213,
+    "sha256": "63d4224b7bcbdf3d4a6cd9db2065aa045d0e8abae0a3b3d0e72c8d8230e4717b"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/independent_regeneration.log": {
+    "bytes": 797,
+    "sha256": "e503cba6cdd40f17a967dd6aeaa3dbaea964e697c17099f64afdd838242373eb"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/all-output-comparison.log": {
+    "bytes": 1314,
+    "sha256": "2135af2cd6df9d8cb21e2c0ff5c6e1e18119778665901b27f2f8866f110880ca"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/archi-cli-display.log": {
+    "bytes": 2962,
+    "sha256": "b115f1b1dee57d5f200164210b78edaf8f4d0d64160118ba68ea6c6d80c3481f"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/archi-cli-no-display.log": {
+    "bytes": 2962,
+    "sha256": "d8359519ea841082aeb7ea8f24dfb143d351b8c08d120638114271d05574d84b"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/architecture.log": {
+    "bytes": 54406,
+    "sha256": "6fe677b54c1db29b187fcbd6fb2745d3acc491cbab33fd9fc9978e588b7b2fab"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/bindings.log": {
+    "bytes": 585,
+    "sha256": "5e49d1e87729e8b98ee6b421978c8401bcca00b44c3fc978faca6b7cc851da46"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/diff.log": {
+    "bytes": 23,
+    "sha256": "1f5cd697735fa644861eb50a891f15398612e5b85bd3ce43c22bd6d105dba103"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/generation_check.log": {
+    "bytes": 949,
+    "sha256": "dd0117f47b6487f66bd55fe5404db972f133c98030df9e56f4c5ae03bbbb7ff5"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/generation_xsd.log": {
+    "bytes": 941,
+    "sha256": "6419096f353847ee6fc83274e62a90c215b0a329150b2cbd91b992c030a0130c"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/identity.log": {
+    "bytes": 330,
+    "sha256": "b622201b5cd44b7db5cf80fd8070ed07c946fdbb8b69246af1e033985e95bfdd"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/independent_regeneration.log": {
+    "bytes": 1002,
+    "sha256": "935a15391425ff204f504c2a88173e1f18ba64f92409d1e38717f1168512d597"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/preservation.log": {
+    "bytes": 184,
+    "sha256": "567d6da879938da2754da02588a492faa602a4af591861b75de9ec2f37fa22c2"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/publication.log": {
+    "bytes": 15728,
+    "sha256": "864528482453d75f71a4aca9615d6a71df0d72be8901a1d1505946603ed63dba"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/rad.log": {
+    "bytes": 209,
+    "sha256": "4e135cd8f0c10ff5c0c61d503934b8f5174cd970dc35d88780c622daae5a6f49"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/recovery_replay.log": {
+    "bytes": 589,
+    "sha256": "7e9a401470c05e6b8ac9ea3aba3b440e102ebfce5bfe9c1de8f29cbff93c5656"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/regeneration_comparison.log": {
+    "bytes": 1795,
+    "sha256": "66965916df0630bf5467ccd0cb3e0c4f8bdf4d0343076dbea2b541fc07c50e55"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/release.log": {
+    "bytes": 169,
+    "sha256": "2ed54370d48f30e4854e297846641eafc9a8900882211d6b597b152f90861f70"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/report-check.log": {
+    "bytes": 54,
+    "sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/report-independent.log": {
+    "bytes": 54,
+    "sha256": "9625cac8a2d05bda424838ee806f49ee1334f1e47344e0f87545638fe56144b0"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/scripts.log": {
+    "bytes": 12178,
+    "sha256": "44723e61ab31403ebe86bb1eee1f0a13640abe5e3e79ea3a10d0d43fdbd262ea"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/snapshot.log": {
+    "bytes": 1317,
+    "sha256": "2e2ebfbf15f90b56512acaee54d8e6023b9acfe5cc3fd33cba12763c1c77c28e"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/snapshot_tests.log": {
+    "bytes": 2907,
+    "sha256": "49e07b1c406f77ca0c6019b4562e0fc3780d2fa0442a2c9ed625855b858254c2"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/projection/structural_audit.log": {
+    "bytes": 7082,
+    "sha256": "02043c3e969bea1c9784599d965b533552fd263162430fbb48f532ed422a0eba"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/publication.log": {
+    "bytes": 13941,
+    "sha256": "f0374da109a0a6145b4d74f190b56b62b57e8c335acbda283ec9654b3b8551e3"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/rad.log": {
+    "bytes": 87,
+    "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/recovery_replay.log": {
+    "bytes": 446,
+    "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/regeneration_comparison.log": {
+    "bytes": 181,
+    "sha256": "427e9c68535ea6f9d82976b921d1ffcb945d22176f5f984efa00d47a5184144c"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/release.log": {
+    "bytes": 56,
+    "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/scripts.log": {
+    "bytes": 12061,
+    "sha256": "4b70680eff16a3a5f6a0e45ad8c4bf3d449ce548b2e3a60ad7b701402537f2d5"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/snapshot.log": {
+    "bytes": 132,
+    "sha256": "f3c10ae2dae430f560da1911669d191747bc6f32b2d82e135f8e2a190e53b875"
+  },
+  "docs/archimate/processing/publishing/1.0.6/verification/snapshot_tests.log": {
+    "bytes": 2731,
+    "sha256": "037e807ec0a72a483203f391b5a8793fa94bc0f78420094215205bbd9a7c86c3"
+  },
+  "docs/archimate/processing/publishing/1.0.7/architecture-release.json": {
+    "bytes": 56,
+    "sha256": "0a846e9c45386d6ba5732c85d404652b9506b5285a173d0ac2ee2763a9b9dd97"
+  },
+  "docs/archimate/processing/publishing/1.0.7/canonical-identity-archi-guide.md": {
+    "bytes": 2531,
+    "sha256": "22abb801814d58e8db27faad9e7f35488de49e70a522879b7a836796e3017e44"
+  },
+  "docs/archimate/processing/publishing/1.0.7/canonical-identity-establishment.md": {
+    "bytes": 5273,
+    "sha256": "67604653a6e125be5d9522fe6c690601d27c6460cd93829af2aab2adf07b8084"
+  },
+  "docs/archimate/processing/publishing/1.0.7/canonical-identity-validation.json": {
+    "bytes": 98561,
+    "sha256": "bbf62cfafa53501bb09d0efa1e9001672a45c886eb444c837afb06a7673fd707"
+  },
+  "docs/archimate/processing/publishing/1.0.7/canonical-identity-verification.json": {
+    "bytes": 45129,
+    "sha256": "9a14878f92e9ecc01ba17f4aba0dc57dd108b726529a7ffb970e30bf09d1f2a3"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/architecture.json": {
+    "bytes": 7260844,
+    "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/manifest.json": {
+    "bytes": 1872,
+    "sha256": "03eb9b10fb9da2e58ef1efe46e224fff39cbc9cf9bda00ad5c42aea31882fa19"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/motivation.json": {
+    "bytes": 286095,
+    "sha256": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/architecture-release.json": {
+    "bytes": 56,
+    "sha256": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/architecture.json": {
+    "bytes": 6723766,
+    "sha256": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/business-capabilities.md": {
+    "bytes": 471493,
+    "sha256": "31148be0dbd767e5c4d30d7b52c5af4a61ee018f1454028403bf453fa17c8b3e"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/business-enabling-capabilities.md": {
+    "bytes": 582836,
+    "sha256": "738c995f2f754f18703b6da3fe9c7c21fee5aadd8fb2f775afc06937a090c194"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/discrepancies.json": {
+    "bytes": 75414,
+    "sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/enterprise-capabilities.md": {
+    "bytes": 69972,
+    "sha256": "c9d9f9b8efa0984cd49197bfeb411a74c6ad3e16fb116ccb09a32eae6763835b"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/features.md": {
+    "bytes": 341198,
+    "sha256": "d2dff636c4bcaf535ee4dbfa0e53a1078a4b32d5f6f9bd21690d4c83ec567274"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/functions.md": {
+    "bytes": 285209,
+    "sha256": "01b073a3c61beb055173101fb9f7449a03a295befd1e811fbd693279643a7e97"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/motivation.json": {
+    "bytes": 251952,
+    "sha256": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/motivation.md": {
+    "bytes": 38719,
+    "sha256": "244d8461147a511ef0d8c914c80d8629fb1e675d2dbf96b51a2b6d50206e9809"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/processes.md": {
+    "bytes": 67636,
+    "sha256": "925ea9ba190c1be7a067071a23ef77693cd2565dac0cc9424b9b91cc74037e9f"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/relationships.md": {
+    "bytes": 322958,
+    "sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c"
+  },
+  "docs/archimate/processing/publishing/1.0.7/identity-establishment-1.0.7/prior-release/services.md": {
+    "bytes": 233392,
+    "sha256": "2daba59ca63632009749e30986dacc1b2c56a9215cf899854f859253ad88ba12"
+  },
+  "docs/archimate/processing/publishing/1.0.8/.gitignore": {
+    "bytes": 87,
+    "sha256": "bc47e157f93b1e55f06e3738f2c88160ff97fe55f6756353c82a9b4fa51ea1b6"
+  },
+  "docs/archimate/processing/publishing/1.0.8/accepted-source-destination-map.json": {
+    "bytes": 120812,
+    "sha256": "a8c1a246b7992cd348fdae7e251f1ebe67a8cab908a02d90441a5d1d8da2012d"
+  },
+  "docs/archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md": {
+    "bytes": 1224,
+    "sha256": "999696549b5a1b779cc8fcb9d7042ac3e1a3b82d892c01481d8bfa3fa556f2b2"
+  },
+  "docs/archimate/processing/publishing/1.0.8/architecture-tests-final-layout.log": {
+    "bytes": 54224,
+    "sha256": "59fd3e1c4a6dc4f9a40654b66ab29c1a47e4111d0b457fe3031c91e1a58aa66b"
+  },
+  "docs/archimate/processing/publishing/1.0.8/architecture-tests.log": {
+    "bytes": 54224,
+    "sha256": "57fc5312130b8568e6a215cff3db3c80c086f273d81e53a54d62906075c1d22e"
+  },
+  "docs/archimate/processing/publishing/1.0.8/audit-workspace.py": {
+    "bytes": 3242,
+    "sha256": "f22eae7b7f2985e37266cdca1139c80fb17c304f4089c8590597a16bbea57804"
+  },
+  "docs/archimate/processing/publishing/1.0.8/before-evidence.json": {
+    "bytes": 17762,
+    "sha256": "70950fd1072e8a682a25d56dbb52700a22b6fb415e6f4b1bbe71ed3e625502b9"
+  },
+  "docs/archimate/processing/publishing/1.0.8/command-results-final.json": {
+    "bytes": 2194,
+    "sha256": "682c9e4974ec527153a9289c8bb4d654f8be966e023848817bec4baf581c41b3"
+  },
+  "docs/archimate/processing/publishing/1.0.8/command-results.json": {
+    "bytes": 2125,
+    "sha256": "b4f55cc9625a0269a1a7d2ebc8b62285d1a1c2d9ce4299eda51203c954c021d6"
+  },
+  "docs/archimate/processing/publishing/1.0.8/compare-publications.py": {
+    "bytes": 3182,
+    "sha256": "cf9689247e7bd7d36c2ca812841e5fc475bbb966ba688498e62bd51617d781db"
+  },
+  "docs/archimate/processing/publishing/1.0.8/current-authority-pin-updates.json": {
+    "bytes": 1201,
+    "sha256": "6b4105bf29a78d3a1e53fc15a962847adc0a91b32d13ce1920baf2b98d54ce18"
+  },
+  "docs/archimate/processing/publishing/1.0.8/ec_bindings-final.log": {
+    "bytes": 8108,
+    "sha256": "7399479e26112bde0a20100a505f2aafd162b12e7f961f36f160eb4a36336407"
+  },
+  "docs/archimate/processing/publishing/1.0.8/ec_bindings.log": {
+    "bytes": 460,
+    "sha256": "bcd253305477f73508310bf003891e8b70cf91a3d9d2c73b95cb635e1d5a1e15"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-directory-tree.txt": {
+    "bytes": 20757,
+    "sha256": "e66277b9bddd19f8032fc03b353374223565897542c4295b17b14441445b11d6"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-layout-107-reproduction.json": {
+    "bytes": 2565,
+    "sha256": "34cbc43eca84b51d11381030c3b4c501cef458f4b0216d34652db39cce9e32f1"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-layout-107-reproduction.log": {
+    "bytes": 930,
+    "sha256": "6a2aaab7e870e0039cdb0fdcaf34e9ae83c665adf2c8be375e910417259f9b6a"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-layout-generation.log": {
+    "bytes": 797,
+    "sha256": "33ad69f8a3ab075001aabdb5c87b8f25dd61f5bb53efcb43d72b7298d0424747"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-layout-make-checks.log": {
+    "bytes": 1415,
+    "sha256": "1fd830fede512d49b156f654207141e81384df6d4b7f57580eace2d0131dfd2e"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-layout-preservation.log": {
+    "bytes": 161,
+    "sha256": "d7193659e9bc6b1d355e50d29cbf25c132511c15f6ac527686fd864a9e915baa"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-layout-report-generation.log": {
+    "bytes": 73,
+    "sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-movement-plan.json": {
+    "bytes": 76962,
+    "sha256": "0bbeefac652b10e66c5d032f0ff57e261861bb696c4ae954b5346da8fc28f250"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-retained-references.txt": {
+    "bytes": 5219454,
+    "sha256": "b3c0c6c479cdeb8deacf69774a825ea8d89005c89f991d38c7e4a014f130bb28"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-test-results.json": {
+    "bytes": 2863,
+    "sha256": "1f1a73114a069f1c79a3cfa1ba21fc83cb0a6ff5f30b5c18f4da0d6b3ccf8f4f"
+  },
+  "docs/archimate/processing/publishing/1.0.8/final-workspace-audit.json": {
+    "bytes": 563,
+    "sha256": "f5844d07253192d562af5783a8aa1cce31b9a1698a6679f113a27c2d20ce8e3b"
+  },
+  "docs/archimate/processing/publishing/1.0.8/historical-ignored-dependencies.json": {
+    "bytes": 2296,
+    "sha256": "d8ba3af9490145972ac83b6c632be71fe97fe771090d1f0024522136e0db2f2d"
+  },
+  "docs/archimate/processing/publishing/1.0.8/historical_recovery-final.log": {
+    "bytes": 446,
+    "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+  },
+  "docs/archimate/processing/publishing/1.0.8/historical_recovery.log": {
+    "bytes": 446,
+    "sha256": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc"
+  },
+  "docs/archimate/processing/publishing/1.0.8/identity-release-tests-final-layout.log": {
+    "bytes": 4622,
+    "sha256": "9b92879a2d34c9ae2ba67de4a29bcb17f325a449baa20170a0b85030e2fedc6a"
+  },
+  "docs/archimate/processing/publishing/1.0.8/identity-release-tests-final.log": {
+    "bytes": 4622,
+    "sha256": "cd118f6e8b47d2101051f5b76d28795765b62747e8b52e8d70c62ba51f0e8604"
+  },
+  "docs/archimate/processing/publishing/1.0.8/identity-release-tests.log": {
+    "bytes": 4622,
+    "sha256": "b3a021be06757a55f3ffaed1ccc8c911deeb2b37221869c3ead190e1ac521427"
+  },
+  "docs/archimate/processing/publishing/1.0.8/identity_registry-final.log": {
+    "bytes": 213,
+    "sha256": "7f11f1026399a2176f143f23b87be72610484f8735065d49111f01615696454c"
+  },
+  "docs/archimate/processing/publishing/1.0.8/identity_registry.log": {
+    "bytes": 213,
+    "sha256": "7f11f1026399a2176f143f23b87be72610484f8735065d49111f01615696454c"
+  },
+  "docs/archimate/processing/publishing/1.0.8/ignored-file-audit.json": {
+    "bytes": 70,
+    "sha256": "fb7b920c2826a12b688393d1044f6499bf3c9175eeba2665794bcb619257b771"
+  },
+  "docs/archimate/processing/publishing/1.0.8/migration-comparison.json": {
+    "bytes": 762,
+    "sha256": "54712160f9b8c5e5603a883a7bf02965c5bbf13b1ca7dce3beedf516872c688a"
+  },
+  "docs/archimate/processing/publishing/1.0.8/migration_comparison-final.log": {
+    "bytes": 762,
+    "sha256": "54712160f9b8c5e5603a883a7bf02965c5bbf13b1ca7dce3beedf516872c688a"
+  },
+  "docs/archimate/processing/publishing/1.0.8/migration_comparison.log": {
+    "bytes": 762,
+    "sha256": "54712160f9b8c5e5603a883a7bf02965c5bbf13b1ca7dce3beedf516872c688a"
+  },
+  "docs/archimate/processing/publishing/1.0.8/movement-plan.json": {
+    "bytes": 112787,
+    "sha256": "c7433bf3204bbfe795e9184f3fb11a040ae05fe7bdfae4e6ef2cf0e101b1360d"
+  },
+  "docs/archimate/processing/publishing/1.0.8/preflight-working-report.md": {
+    "bytes": 33971,
+    "sha256": "529109cfb9f4196a361dad411fd78e2cfe4a9237006cfebe396ff967f87ed162"
+  },
+  "docs/archimate/processing/publishing/1.0.8/preservation.json": {
+    "bytes": 20368,
+    "sha256": "2fdc0ca099f272e8f0674c392b0ac9166e84e75300d880dad12449e0a6aad471"
+  },
+  "docs/archimate/processing/publishing/1.0.8/processing-direction-movement-plan.json": {
+    "bytes": 62567,
+    "sha256": "3f26bd4bc17d41d3f0c64d452d5e2c69eb170c8beb6ff57255141fdb9c97946e"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-1.0.8.md": {
+    "bytes": 4784,
+    "sha256": "94f321deb73453fbf0b77a57f10dc82cdbd9598ff08407a63f6312b0204f6297"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-comparison.json": {
+    "bytes": 9350,
+    "sha256": "d96e253a0f6d967d25bd8df8dd3f476efe810eef2c83e1ac6c267234ad3c0ff7"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-support-documents.diff": {
+    "bytes": 13456,
+    "sha256": "49ffd35a835d05a8afe53285784341ea73edd7cad5577123c051b77ef1a19786"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-tests-accepted.log": {
+    "bytes": 25340,
+    "sha256": "c9ed2158121299a48973e8e6d41859564390d6bab3993f1cb08c07d2de6a1fd1"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-tests-final-layout.log": {
+    "bytes": 25340,
+    "sha256": "5fbf099ffffaef68055f0b6bf69577f286846d51a7dc0e4a229c8c144ae806d1"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-tests-final.log": {
+    "bytes": 27293,
+    "sha256": "eb8e2a61f4e3abb6a81f1f241379a298eacb54d32de7a681c4e023466d0217b0"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-tests.log": {
+    "bytes": 29386,
+    "sha256": "c997897893ae364a5c80263b22e7d69a6baa0ddce53e76503fe95ee3bffba823"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication-validation-1.0.8.json": {
+    "bytes": 98561,
+    "sha256": "e7739e1199db8bf83cb2de5688af5af4d31d53858610de14623825d8a7bf28c0"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication_check-final.log": {
+    "bytes": 797,
+    "sha256": "33ad69f8a3ab075001aabdb5c87b8f25dd61f5bb53efcb43d72b7298d0424747"
+  },
+  "docs/archimate/processing/publishing/1.0.8/publication_check.log": {
+    "bytes": 144,
+    "sha256": "88b298dbc13e2029f380d737ce4b6a98ebd651b793fb2ba2eb2f99d55e2791a4"
+  },
+  "docs/archimate/processing/publishing/1.0.8/reference-inventory.txt": {
+    "bytes": 3602777,
+    "sha256": "aef333b2edf5a577d6ea63b93d59c29ca87ed6a9ad88ffce0c9be2f66b3fbc54"
+  },
+  "docs/archimate/processing/publishing/1.0.8/reference-search-diagnostics.txt": {
+    "bytes": 105,
+    "sha256": "7bb58167b5706083e2ad9e62d7d978d770b3e55411530ddbf9ed05f1845e8a49"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release-1.0.7-independent-retry.log": {
+    "bytes": 99,
+    "sha256": "8c3a0fe2991a3ffdaddf3c294d49c6011114d0251507771efe8d6556d4850fc9"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release-1.0.7-independent.log": {
+    "bytes": 404,
+    "sha256": "a72623c0eadf6ade0a61d15b73383d38f7825d083330af7f917f9cd8b052177a"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release-1.0.7-relocated-comparison.json": {
+    "bytes": 2480,
+    "sha256": "576cd2da9eae85a388a2e3e58a82a87cd68eb104468375a2f4c2252b96a70450"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release-1.0.7-relocated-generation.log": {
+    "bytes": 797,
+    "sha256": "e60f57c6a150826f52e7902bad9de1ddb6471795f2c3205961899d32af9f3818"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release-1.0.8-generation.log": {
+    "bytes": 797,
+    "sha256": "33ad69f8a3ab075001aabdb5c87b8f25dd61f5bb53efcb43d72b7298d0424747"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release-final.log": {
+    "bytes": 56,
+    "sha256": "049ee74af7b407a4d56387c3039e9fe2256f7d4156389204aa19ffc5fca282ae"
+  },
+  "docs/archimate/processing/publishing/1.0.8/release.log": {
+    "bytes": 56,
+    "sha256": "049ee74af7b407a4d56387c3039e9fe2256f7d4156389204aa19ffc5fca282ae"
+  },
+  "docs/archimate/processing/publishing/1.0.8/reproduce-1.0.7.py": {
+    "bytes": 1483,
+    "sha256": "3bd579d35e6877a88f6867c28a28a1432956cf8fd5da8d48b79921732c36bafe"
+  },
+  "docs/archimate/processing/publishing/1.0.8/retained-reference-classification.json": {
+    "bytes": 4868774,
+    "sha256": "43aeba122a4de27c3cb80731435acca341492c43a610a85391d9938c8afe4e87"
+  },
+  "docs/archimate/processing/publishing/1.0.8/revised-movement-plan.json": {
+    "bytes": 73140,
+    "sha256": "4ac041a418b784ffacdb3bc74e6cf11128821ca7491917d2ac378a07b1f199c5"
+  },
+  "docs/archimate/processing/publishing/1.0.8/run-command-checks.py": {
+    "bytes": 1536,
+    "sha256": "dbc7cadb7318d6ea01cb4e95d6922126e4adcd38eb731cd0d32c7344d85c48ff"
+  },
+  "docs/archimate/processing/publishing/1.0.8/source_identity-final.log": {
+    "bytes": 202,
+    "sha256": "be0caba32497d167aae70adce75b018d685723c3c71d2cb2c36d8e1d575657c6"
+  },
+  "docs/archimate/processing/publishing/1.0.8/source_identity.log": {
+    "bytes": 202,
+    "sha256": "be0caba32497d167aae70adce75b018d685723c3c71d2cb2c36d8e1d575657c6"
+  },
+  "docs/archimate/processing/publishing/1.0.8/validation-metadata-differences.json": {
+    "bytes": 507,
+    "sha256": "cb569ad447929ef470a7cbc03c801339e89cb6148f75399185d93d81d1b81247"
+  },
+  "docs/archimate/processing/publishing/1.0.8/verify-preservation.py": {
+    "bytes": 4168,
+    "sha256": "313d00452dca78ad83d6fe7feceb7d2269589c981b5f30b00a767d46a19f4723"
+  },
+  "docs/archimate/processing/publishing/1.0.8/workspace-verification-1.0.8.json": {
+    "bytes": 15214,
+    "sha256": "7cf44b4f1b047c2fd9f8e60eb41ff29e8a4988ab7f0c013e46ceabf04db62093"
+  },
+  "docs/archimate/processing/publishing/1.0.9/archi-inspection-guide.md": {
+    "bytes": 2003,
+    "sha256": "6b747e9b07ce403d301b0f61e32658e2d6673eb6e2fbaebbbe3ebbcc33c00b1c",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/archimate/processing/publishing/1.0.9/archi-inspection-guide.md.gz"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/README.md": {
+    "bytes": 14666,
+    "sha256": "1a9392a2c2a4a765b4fde2c7abddbb5743270e2d853d01f68152d4491b879ddf"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before.json": {
+    "bytes": 32848,
+    "sha256": "30b1ff543b292d99afabcc5d67b93ac23cd30cd1925dff21d17a2b06ad8e7793"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml.gz": {
+    "bytes": 2050501,
+    "sha256": "8041d8eefb428fcdfc8d8a81c234656697af3fa0bba33300c718e24ba8130449"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/archimate/processing/publishing/1.0.9/archi-inspection-guide.md.gz": {
+    "bytes": 875,
+    "sha256": "d8da13f5f9fdb6fdc4fa2ab0d6a9f13edf2b2294e804cfb92052e6dd3e354905"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/archimate/processing/publishing/1.0.9/publication-validation-1.0.9.json.gz": {
+    "bytes": 13701,
+    "sha256": "184ce73c8cc5916f7dae024ef2bb20f441d80656e50875c6bca5b3a85cad9139"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/archimate/processing/publishing/1.0.9/reconciliation-publication.md.gz": {
+    "bytes": 3294,
+    "sha256": "e79ff3fd7f3997aba2b226b7d142277a05b1ae8bdadf699f7f94c7dff7f58b52"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/archi-navigation-and-view-convention.md.gz": {
+    "bytes": 8071,
+    "sha256": "51e9666cf17eaa438bf0104c7810d2363fd9a11c0a018b6a319e77891ea88935"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/architecture-modelling-strategy.md.gz": {
+    "bytes": 2688,
+    "sha256": "81ee3b3da8b61baff5c6e9fab7e9448cfc86fe3b6606bc0f8bfbd4949b8c218e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/architecture-release-policy.md.gz": {
+    "bytes": 1999,
+    "sha256": "9ecb5fdaee068a0d31b7cbc6f8603c16d742490033a4c8e6cea0c613e16689e7"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/baseline/correspondence.json.gz": {
+    "bytes": 2767,
+    "sha256": "78dbb56e5f9b62074ffb6d56cb38983b86f11e929e28bc9186afead3c754c05b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/baseline/functions.md.gz": {
+    "bytes": 46484,
+    "sha256": "2e8e35a6cba167b4e5b4551a0ec1cc69bca3a268ee18cacef447560d36f44f01"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/baseline/processes.md.gz": {
+    "bytes": 16008,
+    "sha256": "3bd44d84893159b67859f140c5bc0bab85b4c70c61df2fa3480a6e05ea1aac78"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/baseline/services.md.gz": {
+    "bytes": 34630,
+    "sha256": "ea07fcff5b4243c6ab2096b0a503a058859790ef4b0be08f148aae977a89d622"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/canonical-identity-and-naming.md.gz": {
+    "bytes": 4435,
+    "sha256": "2318a88b61f4577ef5d95ad29b111ccd1aed7027527fb6e6bf900535eacde081"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/before/docs/markdown/governance/rad-archimate-model-mapping.md.gz": {
+    "bytes": 9472,
+    "sha256": "433989e36e2b2b3dac3ba02909a785ce83029bc3c83d6d554c91d8c376bf61d0"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/final-checks.json": {
+    "bytes": 3141,
+    "sha256": "d68858306b68369d59693628a4c72b6e6ce5fd2385e65e2c8e1920d14297c2d0"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/population.json": {
+    "bytes": 435630,
+    "sha256": "302bd83647661e95ea4ebe4ee03ded186401481037a33261aaadec6f34ca45ba"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/reproduction.json": {
+    "bytes": 2473,
+    "sha256": "ba6b707812c9343d4fefbfc7ece4ae323dbb4288ca85317c17849c63c75032d2"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/Archi-imported.archimate.gz": {
+    "bytes": 1921814,
+    "sha256": "f416b6689aafa27af144ad2bb80338dbc6777c71270549b5d58e4e55889f74ea"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/Archi-no-edit-export.xml.gz": {
+    "bytes": 1883451,
+    "sha256": "ca01359ee21c3a113c38eb9d2ada6eeb28a1bd6f56c756c2a48ca51b7ecc3262"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/archi-cli-unsandboxed.log.gz": {
+    "bytes": 324,
+    "sha256": "46fdda6570825be18ad2770792725a8f52b38ba0d0340ea2f6625a765831c558"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/archi-cli.log.gz": {
+    "bytes": 1015,
+    "sha256": "9d3a7ca31b473b4887f2d8e890fd959dbf1081c2f511bbe3cbfb677d9a146c66"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/archi-transport-verification.json": {
+    "bytes": 2524,
+    "sha256": "2a66b7911f3c23125184caa6bceb37986a1f9e876a0a0ec6b216e099ba4807ed"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/raw-comparator.json.gz": {
+    "bytes": 2285529,
+    "sha256": "b1c557096a050d1097f803f6cf0813d2ef600c03d610a01f61968295945a2015"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/verify-transport.py": {
+    "bytes": 5450,
+    "sha256": "5424639888087ad98f876e059268d9d530dcc612da0e7a572837f2e76eb0e517"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/archimate-final.log.gz": {
+    "bytes": 5441,
+    "sha256": "ccb210e622d09fc2b757c3e52e31926784eeab8c20f820fdd18cd9e9ea7e1e2d"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/archimate-tests.log.gz": {
+    "bytes": 5767,
+    "sha256": "01ae8e1837106a6933c9c9bba93d44602941a27f7caa759d92b16711d6e45c28"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/architecture.log.gz": {
+    "bytes": 3978,
+    "sha256": "cce5a18bbacdfc6ecddde9eb627a7e6a8fbaa38f3c2c6595c73c901d485e2283"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/establish.log.gz": {
+    "bytes": 66,
+    "sha256": "18a3202cdf0a827771f7475b15554f964137e07c8ba9424132dd7bbceb15edb5"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/focused.log.gz": {
+    "bytes": 668,
+    "sha256": "89340fb6b39d7fec88ce1f7a9e34cc367e0b2fb4e741baca1457d4fd262a9664"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/generation.log.gz": {
+    "bytes": 367,
+    "sha256": "c59cec9a55f761f740e726dc8b9d49d59325202ae942d45a3a1bf3faa4abd4bd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/governance.log.gz": {
+    "bytes": 2239,
+    "sha256": "570be49f6fbf8acc006d8563ad3f00cf4e86d6540e61e53457984062c97ab31e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/history-complete.json.gz": {
+    "bytes": 518,
+    "sha256": "f975aae77114db7d01f34baee6c5fda8fd4b1f24043d1311a055375c3c4377e1"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/history-final.json.gz": {
+    "bytes": 489,
+    "sha256": "b3c94cfd402f4d43b2e7f44d2149e2e3e90c10ed2d3b9d10246b4084a8f3b296"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/history.json.gz": {
+    "bytes": 489,
+    "sha256": "b3c94cfd402f4d43b2e7f44d2149e2e3e90c10ed2d3b9d10246b4084a8f3b296"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/identity-registry.log.gz": {
+    "bytes": 169,
+    "sha256": "f094f2c6abd3d17fead043cf536f7e46320f79c5c8fbf2d3be96dec16346074b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/identity.log.gz": {
+    "bytes": 134,
+    "sha256": "ba96bb1651d8249a6f934956752980005099de7415352a659fcdc6cb1428fc4c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/population-final.json.gz": {
+    "bytes": 51050,
+    "sha256": "d7ee0c05b85feaba3cf8e73c870851511835f5ef8ff2066f24455ca7c2cfc6c9"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/publication-final.log.gz": {
+    "bytes": 367,
+    "sha256": "c59cec9a55f761f740e726dc8b9d49d59325202ae942d45a3a1bf3faa4abd4bd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/publication-metadata-final.log.gz": {
+    "bytes": 367,
+    "sha256": "c59cec9a55f761f740e726dc8b9d49d59325202ae942d45a3a1bf3faa4abd4bd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/publication.log.gz": {
+    "bytes": 367,
+    "sha256": "c59cec9a55f761f740e726dc8b9d49d59325202ae942d45a3a1bf3faa4abd4bd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/rads.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/recovery.log.gz": {
+    "bytes": 266,
+    "sha256": "a0b40592901ba04d3f4ce91e920c71344202e928d002da4d182aeb3c7a00bf6f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/release.log.gz": {
+    "bytes": 61,
+    "sha256": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/report-check.log.gz": {
+    "bytes": 90,
+    "sha256": "a375a2257324302a80d41e7cc7df63a7c98fdfa1db432c54bc4a280220a0fb68"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/report-generation.log.gz": {
+    "bytes": 90,
+    "sha256": "a375a2257324302a80d41e7cc7df63a7c98fdfa1db432c54bc4a280220a0fb68"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/reproduction.log.gz": {
+    "bytes": 107,
+    "sha256": "a1080b6ab97888cb8a11acc5f14c4fd68c89b82014fab9a983b6d544bae3e708"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/serialization.json.gz": {
+    "bytes": 1151,
+    "sha256": "90cfe8c678243f452ab0a71da9105a28d9e0e8cb13cca7ffb320e7a9d0a8671f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/source-diagnostic.json.gz": {
+    "bytes": 237705,
+    "sha256": "3b12527a106d80aff6db847a109beb7811b9dbd26abd4ff2036fcdaf398a2ac4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/source-diagnostic.log.gz": {
+    "bytes": 20,
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/transport-probe.log.gz": {
+    "bytes": 383,
+    "sha256": "5935b7e12121149b38723d7fad5f79120329851778b05556047a987936a25ab1"
+  },
+  "docs/archimate/processing/publishing/1.0.9/home-context-completion/verification.json": {
+    "bytes": 6000,
+    "sha256": "c13dacea4ec947e9086724c34e155793d10a66eadf0d4a92cde40fb8f7f71e64"
+  },
+  "docs/archimate/processing/publishing/1.0.9/publication-validation-1.0.9.json": {
+    "bytes": 100473,
+    "sha256": "3bf17c33cf3673ac73109c8b77631ecdb9b5df3d36ececb689e67181dbd81010",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/archimate/processing/publishing/1.0.9/publication-validation-1.0.9.json.gz"
+  },
+  "docs/archimate/processing/publishing/1.0.9/reconciliation-publication.md": {
+    "bytes": 2492,
+    "sha256": "43eeadf4afde8de479f723443c70b7f467083ab5ab68a3ca8ee74b1fb2ffea69",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/archimate/processing/publishing/1.0.9/reconciliation-publication.md.gz"
+  },
+  "docs/archimate/processing/publishing/1.0.9/reconciliation-verification.json": {
+    "bytes": 3882,
+    "sha256": "d122f5b2c13571dc6fcfb300eeaf966a140fba42ca56beeb4511a215b82ebbc4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/Archi-imported.archimate.gz": {
+    "bytes": 1919516,
+    "sha256": "a900de954f0401113bdc199719e219289e5f9b35cfbd52fecdc5f12b47a1481c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/Archi-no-edit-export.xml.gz": {
+    "bytes": 1880556,
+    "sha256": "472b17fc18e14f374f9eaa20694076bfd23fe6c81f88770f173f5cf364cb1b95"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/README.md": {
+    "bytes": 2664,
+    "sha256": "7743219f2d7949ca047032d6f23347e3bd577dd4ab3cd40bf7ea3cd8f55487ee"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/archi-cli-help.log": {
+    "bytes": 4744,
+    "sha256": "e4238b434304ac38da808353b76c5bdffa60d3f013d38acaed2463e0a0e4619d"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/archi-no-edit-roundtrip.log": {
+    "bytes": 3139,
+    "sha256": "d440789a3beabcd679fe60365c61d393442008996d8aebe21c96a76e4c4d9560"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/archi-transport-verification.json": {
+    "bytes": 2532,
+    "sha256": "c9a64466b2b7ac3194181035136e6f3ed0cec3c76a5a34e1f52764c5958fda6d"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/archi-unsandboxed-roundtrip.log": {
+    "bytes": 603,
+    "sha256": "06a625b8ede0b508571ff4a19d623db0cfe563eab79b8dd631564b9843a23df4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/archi-x11-roundtrip.log": {
+    "bytes": 3139,
+    "sha256": "23d277e1318c9d42f7f14ea4a6f94214d81ddbea23247dcacfb5f1d854d09df9"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/raw-comparator.json.gz": {
+    "bytes": 2285384,
+    "sha256": "5f12e194301383147d5672f66380f9adb14bac46491de7c674cb9beb39a4f7ed"
+  },
+  "docs/archimate/processing/publishing/1.0.9/roundtrip/verify-transport.py": {
+    "bytes": 5450,
+    "sha256": "5424639888087ad98f876e059268d9d530dcc612da0e7a572837f2e76eb0e517"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/archi-transport-probe.log.gz": {
+    "bytes": 388,
+    "sha256": "9caced670a484153bf14e88f20afb91fc4e0d5e34f5d2396eb3d436b5dcb07ff"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/architecture-tests-java21.log.gz": {
+    "bytes": 3984,
+    "sha256": "bb59331e6cb28bc511de7cb1922f2cf19ecfa4eb3877d331341735646e4d5f07"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/final-checks.json": {
+    "bytes": 1065,
+    "sha256": "993ba3293dd8a41a1d95b23400a63ac373a2fe37763bbf374320308c648fc0bc"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/product-naming-tests-updated-pin.log.gz": {
+    "bytes": 833,
+    "sha256": "30758c2b51564b1e48f7cff3524a6e329f013a54ea5768d90626b32710994887"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/product-naming-tests.log.gz": {
+    "bytes": 1047,
+    "sha256": "ab4b57387e37661792fd48b07068c0fe2216969b0628d2b6d4fbb6a83ea6a479"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-archimate-tests-final.log.gz": {
+    "bytes": 5077,
+    "sha256": "072d8a0de0b3cfd7b505ecc3dbe52b32a932a20bac1fb5db86be1116b51a29fe"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-archimate-tests.log.gz": {
+    "bytes": 5304,
+    "sha256": "fd7a89571fc5a45aac629243476ce4eec5a555233a76ed24ce041d4179fcba05"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-governance-tests.log.gz": {
+    "bytes": 2239,
+    "sha256": "b09890b5381250ee1d283adf1f153e20219c969d436254e1245226fafc965ae6"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-identity-registry.log.gz": {
+    "bytes": 169,
+    "sha256": "f094f2c6abd3d17fead043cf536f7e46320f79c5c8fbf2d3be96dec16346074b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-identity.log.gz": {
+    "bytes": 134,
+    "sha256": "ba96bb1651d8249a6f934956752980005099de7415352a659fcdc6cb1428fc4c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-independent-reproduction.log": {
+    "bytes": 99,
+    "sha256": "73f5284e9e7ae8ce7602b306590e74c9dc03c15ecc0fa6551af95eb8e53deb95"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-preservation-final.json.gz": {
+    "bytes": 486,
+    "sha256": "3b368cae670eb746ce37af35509ccd14bfd38cc29095ac17d39be16f9e38e373"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-preservation-recheck.json.gz": {
+    "bytes": 486,
+    "sha256": "3b368cae670eb746ce37af35509ccd14bfd38cc29095ac17d39be16f9e38e373"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-publication-check.log.gz": {
+    "bytes": 368,
+    "sha256": "6552b647efbf590c02bb56d66b385409124da1e644c01c3418c72b8a32f0209c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-rads-final.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-rads.log.gz": {
+    "bytes": 98,
+    "sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-recovery-check.log.gz": {
+    "bytes": 266,
+    "sha256": "a0b40592901ba04d3f4ce91e920c71344202e928d002da4d182aeb3c7a00bf6f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-release.log.gz": {
+    "bytes": 61,
+    "sha256": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-report-check.log": {
+    "bytes": 73,
+    "sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-report-generation.log": {
+    "bytes": 73,
+    "sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/rad109-roundtrip-tests.log.gz": {
+    "bytes": 1050,
+    "sha256": "6f34dd61a2a1255e2999af1cb90344f7b8c0ccc9ac236075f557abb1246601a4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/reproduction.json": {
+    "bytes": 2679,
+    "sha256": "339dcbe1f1233fd46f7e9030556687766f3c8d557701566be9034311ce17f43d"
+  },
+  "docs/archimate/processing/publishing/1.0.9/validation/serialization-diagnostic.json.gz": {
+    "bytes": 1150,
+    "sha256": "074ec8ef6ae0783b9e417486a514541f7129c1c9f4dd2d8d7cda8b83eeb88e19"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/README.md": {
+    "bytes": 11424,
+    "sha256": "771ab73c65d14972bb8adc8f9e4de41a1cfbc3dc3004b49616fb21d08a31857a"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before.json": {
+    "bytes": 110697,
+    "sha256": "8d75d8be02bbd451e3314b1b7880cf3a7bfbaee89a26b12ec5e22ebdd834f6fb"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml.gz": {
+    "bytes": 2056026,
+    "sha256": "7aec1dd5ce39dbc85a36a556720444782709e27bd5cf1e714740d326f3974340"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_baseline.py.gz": {
+    "bytes": 5925,
+    "sha256": "5872c98520b40f74de2998c5c2c0296eb312f09a9c6d09eac637487b0b474c75"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_documentation.py.gz": {
+    "bytes": 2440,
+    "sha256": "524aa442e5eb56173947041e34f2152f2d0f5fcd3d5df30206855b2ea602d01a"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_governance_namespace.py.gz": {
+    "bytes": 1361,
+    "sha256": "5f090db04835e495c75ff6b7940b4806228da38dd0412d5dd9c6742908fbe555"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_governed_metadata.py.gz": {
+    "bytes": 3327,
+    "sha256": "6fc29dc5ba47666f574cb76a3086b5d58f49b7f8f46613d683c66a2b4790aadd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_home_context.py.gz": {
+    "bytes": 2314,
+    "sha256": "6af2896b48d2a9112513eca4266ec2732405d168b3e64c06165f06300bbcb17f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_home_relationships.py.gz": {
+    "bytes": 2738,
+    "sha256": "4caed0affff8fdbb59048178cea0b8ee34653442006ff2a7aab79b4cff736fd9"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_navigation.py.gz": {
+    "bytes": 4058,
+    "sha256": "ccce1c1fc8ff0823e4f9835a5fc732e8560167c771878e1f0e0da21b5dadd631"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_publication_metadata.py.gz": {
+    "bytes": 1465,
+    "sha256": "1e6ce12896128709b074f55ab6cc52fc32ac7ea21a52a5c2d8f843aa0804dacd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_reconciled_ingestion.py.gz": {
+    "bytes": 2168,
+    "sha256": "306f8771e4e0d63e2b7c2d9ccde7f90c7d0a2187cde5b6d6c136e00c55d7af98"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_recovery.py.gz": {
+    "bytes": 3371,
+    "sha256": "1507804805c01306c5acb2606ecee83aa075a3fafd7bb28b69bf3b270b6b6889"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_roundtrip.py.gz": {
+    "bytes": 4792,
+    "sha256": "58879c5d891902fbf81a095d61437e65062652faee159e322c0018ad06ae7ba4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_views.py.gz": {
+    "bytes": 3302,
+    "sha256": "3355373ba85f37da29351a5f162147998ad4a9524913b90072c4a868882fced6"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tests/test_workspace.py.gz": {
+    "bytes": 1617,
+    "sha256": "8db40282263611f52ece2df7464f4296d9bb26f38fef179fe53a79ce385f4d06"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/analyse_home_submission.py.gz": {
+    "bytes": 1591,
+    "sha256": "d0254c5969689ec5b91b410ee5a6755ca972080b5d01ae3e197245622b2294fa"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/assess_rad.py.gz": {
+    "bytes": 6512,
+    "sha256": "d000d31cff3c014906e6f9b2a8e8afd9eabd874d15c2ab603de3a01ffd0a0e2f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/diagnose_roundtrip.py.gz": {
+    "bytes": 10500,
+    "sha256": "e2a25a443ccaaf49483b8c313d5be29707e8e753bdd146402a57ac4d8aae44d7"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/feature_projection.py.gz": {
+    "bytes": 5786,
+    "sha256": "afa948b194be8acdee4d8b19efe86701735f7feeac15e751aa348475934a6ae2"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/generate_views.py.gz": {
+    "bytes": 7364,
+    "sha256": "76d74444060a08e21c35c0d3bdd0edec4f094ef030c093fbf577493cedcc77ed"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/governed_metadata.py.gz": {
+    "bytes": 7731,
+    "sha256": "2cac15d76c2afa3705da56703b107770bb9689d8b5ead3fa3aff4fd1a291d34b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/home_context.py.gz": {
+    "bytes": 5175,
+    "sha256": "2ea42f677ea31018c015bffc7f373d0111c6687bdd9f559e540c29fff65e24ee"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/home_relationships.py.gz": {
+    "bytes": 2690,
+    "sha256": "838dc2043c7d100dba280c694e412994b788f498b46af48ff878d2e15e61261f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/publish_documentation.py.gz": {
+    "bytes": 3132,
+    "sha256": "8f39ccb2eb961ffbf3a97557bd5464ef288577b979eba5e86c5504141798f050"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/publish_navigation.py.gz": {
+    "bytes": 6390,
+    "sha256": "f73a51f8e91e4d43e217905949a6b623515b41fa0bfcf5af5b21f71b9a4680e8"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/reconcile_108.py.gz": {
+    "bytes": 4059,
+    "sha256": "bac6127395e7081c4a0fc04dfd58736726987f1cee1768332484c041eab513b3"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/recover_v02.py.gz": {
+    "bytes": 15652,
+    "sha256": "68ec21ac5408cad521a6c93ad5b46978064d1df4d946b048590f844c8bcfed15"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_baseline.py.gz": {
+    "bytes": 11474,
+    "sha256": "f554116fe24fb9fdfdde89faaf1e89d69114fb29a440a85dbc6dd629019a52db"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_home.py.gz": {
+    "bytes": 5007,
+    "sha256": "88db0c8fe1aececfe1653ee489f82759d598d9bbbdf7a7415e663688e272c362"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_navigation.py.gz": {
+    "bytes": 5891,
+    "sha256": "4d09bc656fc089d4085205e8493d2ac9965f4078087826192a98e4c3510e33b8"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_publication.py.gz": {
+    "bytes": 4867,
+    "sha256": "960abf060ca2fc2336f747e9534dd8e295026f4eaf3a26a5fe2437133bac00c4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_reconciliation.py.gz": {
+    "bytes": 4407,
+    "sha256": "2b27094c341a2650de86b78a7dc70102f35f86768d651c580bbf2d68fa668ebe"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_recovery.py.gz": {
+    "bytes": 10217,
+    "sha256": "57b810b131cc3392c53266769629d4c4b92edeb66a805e886176bb55813e9775"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/report_workspace.py.gz": {
+    "bytes": 2538,
+    "sha256": "86160dfabf440bcee4f77edcefccba52599ddf35d36bf5e2034fcdb50def5660"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/synchronise_baseline.py.gz": {
+    "bytes": 17587,
+    "sha256": "b73be5dc0c4fcf7110dff71b63c5cc914666bba121c1051b7a57ee268adb249b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/verify_baseline_outputs.py.gz": {
+    "bytes": 900,
+    "sha256": "aafc60ad3689f63511fff2af3ee090994ece921de03967831b0d59a3d1190750"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/verify_governance_evidence.py.gz": {
+    "bytes": 2610,
+    "sha256": "833eecbe26efa5a7f8188de76b63d1427e5876d408fb49e3f08a1720173fc242"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/verify_workspace.py.gz": {
+    "bytes": 1364,
+    "sha256": "406f20c25394cfcaa471991b988105cfd000952dee8aed705dfec10a1c67d768"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/framework/tools/workspace_paths.py.gz": {
+    "bytes": 1143,
+    "sha256": "7bfbb7a63864d8dfb9ac2085ed097ef051fbf7eb6077307aa01798cea5fa42d1"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/processing/publishing/1.0.9/archi-inspection-guide.md.gz": {
+    "bytes": 1044,
+    "sha256": "6d2e082b1ab79a3f00af14166bf9c0f836537e9e99aa9649bdd50c269eeb90b3"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/processing/publishing/1.0.9/publication-validation-1.0.9.json.gz": {
+    "bytes": 13834,
+    "sha256": "54a54ed37cf9d703903d1b96c1802654b461e74a4e6c52d571f392832a76f070"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/archimate/processing/publishing/1.0.9/reconciliation-publication.md.gz": {
+    "bytes": 3756,
+    "sha256": "33a01ab025a902ad02d49a86819e82ffc29a0f6237f6555e44ea45b9ad55f457"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/business-capabilities.md.gz": {
+    "bytes": 76449,
+    "sha256": "4b1dd2ea90afee8424c38b549df0389cb51eec480d3958b8b38077a5d2febe36"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/business-enabling-capabilities.md.gz": {
+    "bytes": 76420,
+    "sha256": "aeb5b9a33abdcc93c66250a4b282289b9f7cf24f03b1b9c888dadd04b60d6b92"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/discrepancies.json.gz": {
+    "bytes": 7869,
+    "sha256": "e5c2353126dd99f8960ffc35a31be293c08ba4eaa015714955a67701b795149c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/enterprise-capabilities.md.gz": {
+    "bytes": 15444,
+    "sha256": "b7f57f7e8ddabc3c74966e6ac6dc040d15cf6ab8239868889902705120f63a14"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/features.md.gz": {
+    "bytes": 59981,
+    "sha256": "2659441510da14c7754beeb0b915f1d3365c46bd2ad924492707312caf968d8e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/functions.md.gz": {
+    "bytes": 48661,
+    "sha256": "67c67f8c45a80f0f83d00ea9abd85cc4f6d2452afc72fe49fa2d2a054ade1548"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/motivation.md.gz": {
+    "bytes": 13035,
+    "sha256": "4325dacf2ceff34ff86c95cf828f4e8db2a0e2e9b9ccb6ff1fd56746378c3db1"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/processes.md.gz": {
+    "bytes": 16273,
+    "sha256": "05ebde244d4be938fc0510fa483e2c96bb4af34e32bf86f51652b1fc9daf7500"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/products.md.gz": {
+    "bytes": 734,
+    "sha256": "3da9489d5de60a70aa917bc86e4dd64cbb3727d4d285e90d6b648593ff190a36"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/relationships.md.gz": {
+    "bytes": 50724,
+    "sha256": "77514100e7a630e7c473040d1ffac29188b42811cc893ac216cfe223bd43756a"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/before/docs/markdown/governance/baseline/services.md.gz": {
+    "bytes": 36762,
+    "sha256": "772dcf6e6c4c8e72c2ee34618fde0943a586015fae7444e334c7a17fd81f2ecd"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/population-and-changes.json": {
+    "bytes": 171914,
+    "sha256": "fb2bbf70cf79f57d7ae9cd65e7e28107eb458b662b64c76c5b0c4e3a8ef40b86"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/reproduction.json": {
+    "bytes": 2513,
+    "sha256": "bb3cc625263b4d5cd05121f56af6f922a8f1ffce8496dd36457623f97349c4d2"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/roundtrip/Archi-imported.archimate.gz": {
+    "bytes": 1921121,
+    "sha256": "8415f9007848f6a942eb9e7a393fb62c9a5489783113cee67cd8daa384d6502c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/roundtrip/Archi-no-edit-export.xml.gz": {
+    "bytes": 1883705,
+    "sha256": "52fb5dc860617872716cbbd7129f7ed1b58392f692f59b72f3a2fd108c001284"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/roundtrip/archi-transport-verification.json": {
+    "bytes": 1102,
+    "sha256": "ab405b60f6666d83a9204f96d98777a15659a5b08badbbd6aa428cf26bd7aaa8"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/roundtrip/raw-comparator.json.gz": {
+    "bytes": 2282948,
+    "sha256": "3138ac229d459c4727796c9bc3c707b715349425b8ea0dabc552ba5b8d8a17d0"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/roundtrip/toolchain.json": {
+    "bytes": 3839,
+    "sha256": "d2823c81dcf443abd22726b17c996bd817403d1ed08de74f849a2d003fc1c195"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/run-check.py": {
+    "bytes": 1631,
+    "sha256": "e8932bb71adb111bae5766cc5fd3188ab701110c71b04c0e07fac1e128394428"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/selection.json": {
+    "bytes": 88511,
+    "sha256": "1a96c3804d870b360e841407221260423b99a0977585f8f3cee6490ff4987284"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-cli.json": {
+    "bytes": 1150,
+    "sha256": "38c4680ece704d6573bf66cd628098de00fd2a65cbbb070d52bba27a55aa3316"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-cli.log": {
+    "bytes": 615,
+    "sha256": "5b96e013d226c1223f39162285217ae6ef567d4da86d270949d5ca84d7009626"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-transport-final.json": {
+    "bytes": 452,
+    "sha256": "b8299db1c4c39dbd09a96bc98e2163b754887fb62eb724a84bc245c060ad800b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-transport-final.log": {
+    "bytes": 1102,
+    "sha256": "ab405b60f6666d83a9204f96d98777a15659a5b08badbbd6aa428cf26bd7aaa8"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-transport.json": {
+    "bytes": 445,
+    "sha256": "9d0fb528f8bd3164fe79e6313a923531c8b8061b57e894cf6d650e9c2b2528ee"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-transport.log": {
+    "bytes": 3586,
+    "sha256": "5288cad6ce16c487746b31f6d21f18d92c7c795ffb7b9ce540bb1c996ab4f0f2"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/architecture.json": {
+    "bytes": 544,
+    "sha256": "1b679942a424a2a8453ee06c4be5b3d0eae38f851527ce3504d6ee73ddc036b6"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/architecture.log": {
+    "bytes": 54224,
+    "sha256": "708c799caf696b91956cbebea2fa38cd026c15a73f44888719a21c73bdd1d49e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-closure.json": {
+    "bytes": 484,
+    "sha256": "d03c9b25e41759462da48eee199eabdf0bdee0f96dc4767e1693b301ab0d78b4"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-closure.log": {
+    "bytes": 1717,
+    "sha256": "a38ca685711376e766e587e363b7b711a98484912449aa93febd24b6ef5df40f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-final.json": {
+    "bytes": 482,
+    "sha256": "c11d8e6014609eaf7256110e0d0e76f1d4107b981372b74545d13738eaa2fb9c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-final.log": {
+    "bytes": 1717,
+    "sha256": "0a8620542441bf60d6e5ca7f37be71af7cdf50be1d7b914dab0c170c3a6e9234"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-release-final.json": {
+    "bytes": 490,
+    "sha256": "ce0b68703fee51ec11f274afc0ca3b4c2e96a820347cbd6dcd5c4ee1e6f1aa6d"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-release-final.log": {
+    "bytes": 1717,
+    "sha256": "96c66e5bbd2bfb73999f92a31d4dcc733a3e9a3e73b192d22d91874534000c2b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused.log": {
+    "bytes": 1541,
+    "sha256": "be7acb536f2db5e4bca4acd2a141ecfbc689fb050e56a28d2db4c95ce50a0674"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/framework.json": {
+    "bytes": 436,
+    "sha256": "923303d4a6524fb9734718eb3c5e0e9476ce0d5b66cfd0aea7f5bcc5008ca983"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/framework.log": {
+    "bytes": 33392,
+    "sha256": "1161e25948ea1f7c7600c072e07b2e241c676e05dc14b70781ba540b05ca8c41"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/generation.json": {
+    "bytes": 398,
+    "sha256": "a5a6cce9d18970dc34932cbd8482037a3319a987cae6b893e30b27bdd1539569"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/generation.log": {
+    "bytes": 818,
+    "sha256": "90087222bc5ef40e3609705756248edbc753b048d15130fe4d0ece6547088f27"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/governance.json": {
+    "bytes": 419,
+    "sha256": "94a52ab4c1c643c463bd43ecac39f4129d5888835d28056c2eaed16edf72d436"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/governance.log": {
+    "bytes": 12817,
+    "sha256": "c1c8ed7b0a964ed146914ed738705c32054bc9baccf3d54f853604f561a3fd16"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/history.json": {
+    "bytes": 436,
+    "sha256": "491856a72b7eb0c78825a6a706af00f4c751b0e52aea4a30ce4f99878304e5f3"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/history.log": {
+    "bytes": 2924,
+    "sha256": "3fc0d4391001ad8db9fb91a47337c30d91505fbc40d92267db989e42b4c595ee"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/identity-registry.json": {
+    "bytes": 397,
+    "sha256": "e6deba5f16de0e349d3cbd796af3ff85dc59c79b0332159749e2d00d69a300bc"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/identity-registry.log": {
+    "bytes": 213,
+    "sha256": "a69dfa57f730a8f39c0869583184c4eac3ce4c00b45c6fff22a3fea1d258a508"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/identity.json": {
+    "bytes": 408,
+    "sha256": "a3f0c1f1a939c182ae8e83f16d6574b2531d3943c7481dd60b06588b6b4ebbbe"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/identity.log": {
+    "bytes": 202,
+    "sha256": "649834621af8de09b8315082d096d872802ae8842a67f149baa68f7c5898df80"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/preservation-final.json": {
+    "bytes": 452,
+    "sha256": "ff3acec2575e9ad6c6b6acde106ce55eece2a104cd69eb316a11ce63712f9094"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/preservation-final.log": {
+    "bytes": 903,
+    "sha256": "ceeb88064bfc6653a2a90a2828f4b6b65eb4d0779970f535e81cb839f5095159"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/preservation.json": {
+    "bytes": 446,
+    "sha256": "cec7895c3cfc57a406a324c4005a90b5a11ddc1be51c9c5a322004fc4c8cd261"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/preservation.log": {
+    "bytes": 903,
+    "sha256": "ceeb88064bfc6653a2a90a2828f4b6b65eb4d0779970f535e81cb839f5095159"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/publication.json": {
+    "bytes": 414,
+    "sha256": "b90a4e485ce8b294d373e32627ae7f527709554f6ca4cd45d856c9ae4cd5cb2a"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/publication.log": {
+    "bytes": 818,
+    "sha256": "90087222bc5ef40e3609705756248edbc753b048d15130fe4d0ece6547088f27"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/rads.json": {
+    "bytes": 389,
+    "sha256": "42d7ce7422c460d68aa0f930bb81554a69ce5e289ff63a21e2550002c7c37bf8"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/rads.log": {
+    "bytes": 87,
+    "sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/release.json": {
+    "bytes": 383,
+    "sha256": "fa7d76217880c9bd8dcd3cd9db3052477ae63d64f036cfceb2961a29bf168469"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/release.log": {
+    "bytes": 56,
+    "sha256": "dbff0c20aae7c5c8a1f79a7068ab4a46b22b986d002f2b8159e7742e06500c88"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-check.json": {
+    "bytes": 408,
+    "sha256": "829e223bba3062f6e78797539310b3e6cac346f15aaf2e80c4498d2c95c4186b"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-check.log": {
+    "bytes": 73,
+    "sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation-003.json": {
+    "bytes": 403,
+    "sha256": "e14907b2d121c61facd7bed66693058d653b425f598602cc31056a2ced61165e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation-003.log": {
+    "bytes": 73,
+    "sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation-final.json": {
+    "bytes": 405,
+    "sha256": "805b29e1d9e21bc48dfa6bb34100d3bb3966c479fcfeec49125edef5b6f05dd0"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation-final.log": {
+    "bytes": 169,
+    "sha256": "16011bbfdd3906c5b47d2e87d5a9f6aebe948aafea02c96354cbe143b937b000"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation.json": {
+    "bytes": 398,
+    "sha256": "edf050fcd59fc70e5820dc3332edbdf6969e029a8cb257809c2154a215b0b36d"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation.log": {
+    "bytes": 46,
+    "sha256": "bca00fa76a88eae5011a1636ef547eda7a510f170b55fb3f3d8b689e70c6065c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/reproduction.json": {
+    "bytes": 403,
+    "sha256": "7a688f0e3fb6ec0451a01ff64b834d4b2b62cbfadfbc735c667ea1cb4c8be86f"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/reproduction.log": {
+    "bytes": 99,
+    "sha256": "73f5284e9e7ae8ce7602b306590e74c9dc03c15ecc0fa6551af95eb8e53deb95"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/selection-attempt-001.json": {
+    "bytes": 88511,
+    "sha256": "b2468d9fe3449e44ba19e99b0e87cf90291bf49710482b80ee551ecac801c0cc"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/serialization.json": {
+    "bytes": 447,
+    "sha256": "e5f4f7fc3679ddac79da8024e632ee6e6ef2b34d7da52f18e9747c1076d986a8"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/serialization.log": {
+    "bytes": 274,
+    "sha256": "cfa8b926506c13b4246a2b2b87fdcebff4c876b36cef6c112728786837bc022c"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/verification.json": {
+    "bytes": 15624,
+    "sha256": "f5c8c81054b49c54d28ba033f07a29a6a30bb01f67def4007a1984df98a96c00"
+  },
+  "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/verify.py": {
+    "bytes": 9555,
+    "sha256": "b6b8f366642192f80a4bbd21d735cd26ee0ab8cf059dba30249e6afede105f6a"
+  },
+  "docs/markdown/governance/README.md": {
+    "bytes": 6266,
+    "sha256": "b8c9054fe1acff86bab793a08746dc2420206e7ae637f5f8c882453b7c323fc5"
+  },
+  "docs/markdown/governance/archi-navigation-and-view-convention.md": {
+    "bytes": 24696,
+    "sha256": "740d433146bca5ee06e066f07b8649e7ca49c42490583b0017293b9a8e1280d8"
+  },
+  "docs/markdown/governance/archimate-ingestion-change-review.md": {
+    "bytes": 26251,
+    "sha256": "7ca7bf2b475cac01bfde42928044811d76f4d10f67ad20ce220fa937dcf52107"
+  },
+  "docs/markdown/governance/archimate-ingestion-publication-semantics.md": {
+    "bytes": 22297,
+    "sha256": "e6e56ac68d81dfec9e47b5f9e3484884e952013423682d0955dd2fffa6c8790d",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/markdown/governance/archimate-ingestion-publication-semantics.md.gz"
+  },
+  "docs/markdown/governance/architectural-axioms.md": {
+    "bytes": 43643,
+    "sha256": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2"
+  },
+  "docs/markdown/governance/architecture-authoring-praxis.md": {
+    "bytes": 18819,
+    "sha256": "3872a5ff3c0c49ab3929ea0d111edea2008b438ae568d1c1bae7c795581777dc"
+  },
+  "docs/markdown/governance/architecture-modelling-strategy.md": {
+    "bytes": 9317,
+    "sha256": "545cefc7219786eae9d9547638df7326108250b0b9c504ad344adea68f8e6151"
+  },
+  "docs/markdown/governance/architecture-release-policy.md": {
+    "bytes": 4894,
+    "sha256": "ea36483ff6a4f9bcedd7f3322bb07a2b82bf994a8d8c80154b5ebd3cb1199fa6"
+  },
+  "docs/markdown/governance/baseline/README.md": {
+    "bytes": 11084,
+    "sha256": "7039c08d57f5721ba73f6b8f85d53fcde8445cd98c6e3a6b95ba89a39198221b"
+  },
+  "docs/markdown/governance/baseline/accepted-ingestion-1.0.8.json": {
+    "bytes": 44089,
+    "sha256": "4f1a5b08882193e8c66d7e0ac815f4c23a6afb2b11ea420bae37f4b1b1dc4b37"
+  },
+  "docs/markdown/governance/baseline/architecture.json": {
+    "bytes": 7260844,
+    "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b"
+  },
+  "docs/markdown/governance/baseline/business-capabilities.md": {
+    "bytes": 534753,
+    "sha256": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144"
+  },
+  "docs/markdown/governance/baseline/business-enabling-capabilities.md": {
+    "bytes": 653046,
+    "sha256": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1"
+  },
+  "docs/markdown/governance/baseline/business-homes.json": {
+    "bytes": 602116,
+    "sha256": "268ac5793e70fd91ede6487b7a1da91075998915b18bc7b55a2df2e262b306e8"
+  },
+  "docs/markdown/governance/baseline/correspondence.json": {
+    "bytes": 6553,
+    "sha256": "fe8e692b799a93eeca5d23bfc5e4895db421396fde553c8f351d092d388293a7",
+    "snapshot": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/before/docs/markdown/governance/baseline/correspondence.json.gz"
+  },
+  "docs/markdown/governance/baseline/coverage.md": {
+    "bytes": 3370,
+    "sha256": "b5a9d8bcb09a051745be4623487cfb4db9154a346376ece136a05df233e851fc"
+  },
+  "docs/markdown/governance/baseline/discrepancies.json": {
+    "bytes": 75414,
+    "sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa"
+  },
+  "docs/markdown/governance/baseline/documentation-classification.json": {
+    "bytes": 209787,
+    "sha256": "60ef83b36301cda9c44655e6985fd2bffe2d89d978c2eff8116db9c1307bf909"
+  },
+  "docs/markdown/governance/baseline/enterprise-capabilities.md": {
+    "bytes": 77980,
+    "sha256": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d"
+  },
+  "docs/markdown/governance/baseline/features.md": {
+    "bytes": 417994,
+    "sha256": "9a845e3ded68fe4b2628c9c41ac53810ba36ef6cda213c39c5719763f16fe318"
+  },
+  "docs/markdown/governance/baseline/functions.md": {
+    "bytes": 356038,
+    "sha256": "4c5771a615d5d54a48ee330cbfd0c1ba65e99b6238fc1a011569da0257dd09d4"
+  },
+  "docs/markdown/governance/baseline/home-derived-metadata.json": {
+    "bytes": 321978,
+    "sha256": "83c3ca3853f8cc89117aed8f8a0fb8879c2177cd691de00bca68d9100a0c554f"
+  },
+  "docs/markdown/governance/baseline/motivation.json": {
+    "bytes": 286095,
+    "sha256": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+  },
+  "docs/markdown/governance/baseline/motivation.md": {
+    "bytes": 60072,
+    "sha256": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76"
+  },
+  "docs/markdown/governance/baseline/processes.md": {
+    "bytes": 76868,
+    "sha256": "c38c2c9f621a82590295a3d5ffb75bd92e63ae1b7b9687731475de8b4eb0e1d3"
+  },
+  "docs/markdown/governance/baseline/products.md": {
+    "bytes": 2725,
+    "sha256": "d7d057220cd60d212885fa068c3e3497646a1464dcbe8832b08f9b2e9a012c2e"
+  },
+  "docs/markdown/governance/baseline/relationships.md": {
+    "bytes": 366277,
+    "sha256": "91086a171b30590f0ff38ab25964b2dce39a7ab5e04ba8fbddfde0cefc07c0b4"
+  },
+  "docs/markdown/governance/baseline/services.md": {
+    "bytes": 297403,
+    "sha256": "6f0d9740079b1983b880f894e8c48c3b47931af4e6510d46f1916b316430d0a7"
+  },
+  "docs/markdown/governance/baseline/source-history/business-architecture-metamodel-321cdfa5.md.gz": {
+    "bytes": 13718,
+    "sha256": "302320e731644e1011ac169a393d8b361e71cea66e88e14e1cec31d6a9df4e06"
+  },
+  "docs/markdown/governance/baseline/source-presentation-overlays.json": {
+    "bytes": 5473,
+    "sha256": "5749f761c6cf7dc7e85342605939d983b496a1b2dac1f5ee5f26633ca4f239f6"
+  },
+  "docs/markdown/governance/canonical-identity-and-naming.md": {
+    "bytes": 11843,
+    "sha256": "7ac6b67b2c77da79d3938774f272d6111cd73a7ada6bdc6e907919b81e3eaa63"
+  },
+  "docs/markdown/governance/rad-archimate-coverage-assessment.md": {
+    "bytes": 18892,
+    "sha256": "5f6c8795b6dbd46058549f3ea68ad09df65d7d054a862e57b4e3677111f43cdd"
+  },
+  "docs/markdown/governance/rad-archimate-mapping-catalogue.md": {
+    "bytes": 74745,
+    "sha256": "86bf2d2ee78935f44f2c5959182725b020ff1fe1b76daa28dac2c395aa19a1c0"
+  },
+  "docs/markdown/governance/rad-archimate-model-mapping.md": {
+    "bytes": 25676,
+    "sha256": "0e7f06a893338c53f7e32ffde7bfd0722f2af7748a4e1916a87873376b3c74ec"
+  },
+  "docs/markdown/governance/rad-archimate-publication-plan.md": {
+    "bytes": 11335,
+    "sha256": "178fdb951149f634ee28f2bd44ed065b5cd0b14d07a35d9f2efc9e31f66f0176"
+  }
+}

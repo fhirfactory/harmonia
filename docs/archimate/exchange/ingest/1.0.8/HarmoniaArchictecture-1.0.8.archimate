@@ -61781,6 +61781,9 @@ Clinical events—such as patient admissions, pathology test orders, critical la
     <element xsi:type="archimate:RealizationRelationship" id="id-37f6913198e2434db5309c1c8e36fbc0" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-bdf18b5e580b5b85a34357a3b21f36db"/>
     <element xsi:type="archimate:ServingRelationship" id="id-c53c42ba0a4f437f9cb76a4c1a701816" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-c645a859ac2c4447ad5ae850cf384bf3"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf" profiles="id-19cf52680aee4bb5a4a451d8901b7be9" source="id-c645a859ac2c4447ad5ae850cf384bf3" target="id-727a264026584f80bc3304ff8383dc92" directed="true"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-a21144ee285f467982d13c39b49228dd" profiles="id-19cf52680aee4bb5a4a451d8901b7be9" source="id-0088d61ccfcf4962b3aab8bc3b96021d" target="id-727a264026584f80bc3304ff8383dc92" directed="true"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-3f9d4356f4b84ef7b45fe3435d27fde8" profiles="id-19cf52680aee4bb5a4a451d8901b7be9" source="id-fddda503b8f0438e995465cd93204326" target="id-727a264026584f80bc3304ff8383dc92" directed="true"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-d559bbf53430465e90f47c40593403a5" profiles="id-19cf52680aee4bb5a4a451d8901b7be9" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-bdf18b5e580b5b85a34357a3b21f36db" directed="true"/>
   </folder>
   <folder name="Views" id="id-93c68ca03af8435790614b5484b029e1" type="diagrams">
     <folder name="0-Motivation" id="id-9c443ae3c94c4f8981f96bac2f273c5a">
@@ -155101,12 +155104,15 @@ Feature framing/ownership is metadata and navigation only. 214 old BC/BEC semant
               </folder>
               <folder name="[Feature] Identity Source &amp; Correction Lineage" id="id-81281c8677a6484ab05089373e21812d">
                 <element xsi:type="archimate:ArchimateDiagramModel" name="Identity Source &amp; Correction Lineage - Feature realisation" id="id-8fb2f8b1776f4ebf969e9b5b638e4ed3">
-                  <child xsi:type="archimate:DiagramObject" id="id-030fc162b19b41c8930dac9f9c901bf0" targetConnections="id-d4301bf1848e4e7e9a1d5267dfa3594e" fontColor="#000000" lineColor="#5c5c5c" textPosition="1" archimateElement="id-bdf18b5e580b5b85a34357a3b21f36db">
+                  <child xsi:type="archimate:DiagramObject" id="id-030fc162b19b41c8930dac9f9c901bf0" targetConnections="id-d4301bf1848e4e7e9a1d5267dfa3594e id-95cad3e7136d4f4582fc2614888f218c" fontColor="#000000" lineColor="#5c5c5c" textPosition="1" archimateElement="id-bdf18b5e580b5b85a34357a3b21f36db">
                     <bounds x="12" y="24" width="240" height="409"/>
                   </child>
                   <child xsi:type="archimate:DiagramObject" id="id-5a05920f7422487c930faff16187327b" archimateElement="id-9bfedbfd5b404694a2224c039fa5d4c4">
                     <bounds x="312" y="24" width="253" height="55"/>
                     <sourceConnection xsi:type="archimate:Connection" id="id-d4301bf1848e4e7e9a1d5267dfa3594e" source="id-5a05920f7422487c930faff16187327b" target="id-030fc162b19b41c8930dac9f9c901bf0" archimateRelationship="id-37f6913198e2434db5309c1c8e36fbc0"/>
+                    <sourceConnection xsi:type="archimate:Connection" id="id-95cad3e7136d4f4582fc2614888f218c" source="id-5a05920f7422487c930faff16187327b" target="id-030fc162b19b41c8930dac9f9c901bf0" archimateRelationship="id-d559bbf53430465e90f47c40593403a5">
+                      <bendpoint startX="-138" startY="-15" endX="168" endY="-192"/>
+                    </sourceConnection>
                   </child>
                 </element>
               </folder>
@@ -155120,8 +155126,11 @@ Feature framing/ownership is metadata and navigation only. 214 old BC/BEC semant
                       <bendpoint startX="222" startY="141" endX="222" endY="-3"/>
                       <bendpoint startX="174" startY="141" endX="174" endY="-3"/>
                     </sourceConnection>
+                    <sourceConnection xsi:type="archimate:Connection" id="id-89e5971d1e2a40c38b37c9fa1f9e3508" source="id-4f78c588c80d42e0b4f52e765dc76ff2" target="id-3fd6725d68f4476884cf44f9fbf09794" archimateRelationship="id-3f9d4356f4b84ef7b45fe3435d27fde8">
+                      <bendpoint startX="-138" startY="-15" endX="84" endY="-186"/>
+                    </sourceConnection>
                   </child>
-                  <child xsi:type="archimate:DiagramObject" id="id-3fd6725d68f4476884cf44f9fbf09794" targetConnections="id-007507b4daa748ee8df77d2dbf8a496d id-f64ce7c8aac347b2856dbceba42237d6 id-b1f2f750233f4717b5bbedcf413e3c61 id-c045914e226d44dcb1667c1db75057ef" archimateElement="id-727a264026584f80bc3304ff8383dc92">
+                  <child xsi:type="archimate:DiagramObject" id="id-3fd6725d68f4476884cf44f9fbf09794" targetConnections="id-007507b4daa748ee8df77d2dbf8a496d id-f64ce7c8aac347b2856dbceba42237d6 id-b1f2f750233f4717b5bbedcf413e3c61 id-c045914e226d44dcb1667c1db75057ef id-21667f305c0f4951b72b720272467c86 id-89e5971d1e2a40c38b37c9fa1f9e3508" archimateElement="id-727a264026584f80bc3304ff8383dc92">
                     <bounds x="12" y="36" width="120" height="397"/>
                   </child>
                   <child xsi:type="archimate:DiagramObject" id="id-d0a1079102c14d26901ace75bd379281" archimateElement="id-0088d61ccfcf4962b3aab8bc3b96021d">
@@ -155130,6 +155139,9 @@ Feature framing/ownership is metadata and navigation only. 214 old BC/BEC semant
                     <sourceConnection xsi:type="archimate:Connection" id="id-851cf4ffa1eb436983a9e47a6f5157b5" source="id-d0a1079102c14d26901ace75bd379281" target="id-a222a0f6a6804944b188e32ee5caa9a5" archimateRelationship="id-0849f31d6d7d4f7eb1e484d7437e5cd7">
                       <bendpoint startX="186" startY="-3" endX="186" endY="-75"/>
                       <bendpoint startX="186" startY="57" endX="186" endY="-15"/>
+                    </sourceConnection>
+                    <sourceConnection xsi:type="archimate:Connection" id="id-21667f305c0f4951b72b720272467c86" source="id-d0a1079102c14d26901ace75bd379281" target="id-3fd6725d68f4476884cf44f9fbf09794" archimateRelationship="id-a21144ee285f467982d13c39b49228dd">
+                      <bendpoint startX="-138" startY="-15" endX="84" endY="-114"/>
                     </sourceConnection>
                   </child>
                   <child xsi:type="archimate:DiagramObject" id="id-a222a0f6a6804944b188e32ee5caa9a5" targetConnections="id-95c171f829a849a3ac544a931b4d6a5f id-851cf4ffa1eb436983a9e47a6f5157b5 id-e11b8af91143439bbb54ff0be650fb79" archimateElement="id-c645a859ac2c4447ad5ae850cf384bf3">

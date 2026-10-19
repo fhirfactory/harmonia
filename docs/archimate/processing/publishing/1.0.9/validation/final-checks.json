@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": {
+    "historical_recovery": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/recover_v02.py --check",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-recovery-check.log.gz",
+      "log_sha256": "a0b40592901ba04d3f4ce91e920c71344202e928d002da4d182aeb3c7a00bf6f"
+    },
+    "final_rads": {
+      "status": "PASS",
+      "command": "python3 -B scripts/rads_business_architecture.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-rads-final.log.gz",
+      "log_sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+    },
+    "final_preservation": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/verify-execution.py",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-preservation-recheck.json.gz",
+      "log_sha256": "3b368cae670eb746ce37af35509ccd14bfd38cc29095ac17d39be16f9e38e373"
+    }
+  }
+}

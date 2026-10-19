@@ -225,8 +225,8 @@ Ingests shared care plans.
 | Source capture key | service:care-plan-ingress |
 | canonicalId | 180d3f29c2324905ab19337a4dcbce7b |
 | displayName | Care Plan Ingress |
-| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CarePlanIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.SV-CarePlanIngress |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CarePlanLifecycleAndCoordination.CarePlanIngestionAndDistribution.CarePlanIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CarePlanLifecycleAndCoordination.FEAT-CarePlanIngestionAndDistribution.SV-CarePlanIngress |
 | Snapshot publication reference | HCM-SV-care-plan-ingress |
 | ArchiMate semantic ID | id-7204348a711e5529a7c4c794c4d66259 |
 | Legacy identity evidence | No legacy allocation |
@@ -257,8 +257,8 @@ Ingests community care documentation.
 | Source capture key | service:community-care-encounter-ingress |
 | canonicalId | 5806fe40300044b280a25fb86667e789 |
 | displayName | Community Care Encounter Ingress |
-| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CommunityCareCoordination.CommunityCareEncounterIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CommunityCareCoordination.SV-CommunityCareEncounterIngress |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.CommunityCareCoordination.CommunityEncounterIngestion.CommunityCareEncounterIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-CommunityCareCoordination.FEAT-CommunityEncounterIngestion.SV-CommunityCareEncounterIngress |
 | Snapshot publication reference | HCM-SV-community-care-encounter-ingress |
 | ArchiMate semantic ID | id-710fde4f099052a8845d80bae71b368c |
 | Legacy identity evidence | No legacy allocation |
@@ -324,8 +324,8 @@ Reconciles batch clinical encounters upon network reconnection.
 | Source capture key | service:outreach-batch-reconciliation-service |
 | canonicalId | 9488822da1764a1898303a9c656a6062 |
 | displayName | Outreach Batch Reconciliation Service |
-| friendlyName | CareAdministrationEnablement.CarePlanAdministration.OutreachCareContinuity.OutreachBatchReconciliationService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-OutreachCareContinuity.SV-OutreachBatchReconciliationService |
+| friendlyName | CareAdministrationEnablement.CarePlanAdministration.OutreachCareContinuity.OutreachEncounterOutcomeIngestion.OutreachBatchReconciliationService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-CarePlanAdministration.CT3-BEC-OutreachCareContinuity.FEAT-OutreachEncounterOutcomeIngestion.SV-OutreachBatchReconciliationService |
 | Snapshot publication reference | HCM-SV-outreach-batch-reconciliation-service |
 | ArchiMate semantic ID | id-a960f9960e11585cb76cfbaa0a5c17ef |
 | Legacy identity evidence | No legacy allocation |
@@ -356,8 +356,8 @@ Exposed to departmental registration systems.
 | Source capture key | service:demographic-intake-service |
 | canonicalId | b6d8aab087944a6e8cc246b85d32843e |
 | displayName | Demographic Intake Service |
-| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.DemographicIntakeService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.SV-DemographicIntakeService |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ClientIntakeAndDemographicUpdate.DemographicUpdateIngestion.DemographicIntakeService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ClientIntakeAndDemographicUpdate.FEAT-DemographicUpdateIngestion.SV-DemographicIntakeService |
 | Snapshot publication reference | HCM-SV-demographic-intake-service |
 | ArchiMate semantic ID | id-1155b1c2b46158a48866cbc349ab9bbd |
 | Legacy identity evidence | No legacy allocation |
@@ -388,8 +388,8 @@ Emits change notifications across the HIE.
 | Source capture key | service:demographic-update-notification |
 | canonicalId | 10b54e9ef0ed47e491d18731c58247f5 |
 | displayName | Demographic Update Notification |
-| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.DemographicUpdateNotification |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.SV-DemographicUpdateNotification |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ClientIntakeAndDemographicUpdate.DemographicChangeDistribution.DemographicUpdateNotification |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ClientIntakeAndDemographicUpdate.FEAT-DemographicChangeDistribution.SV-DemographicUpdateNotification |
 | Snapshot publication reference | HCM-SV-demographic-update-notification |
 | ArchiMate semantic ID | id-8ce353192d015105bfb22afd2a7b5ee8 |
 | Legacy identity evidence | No legacy allocation |
@@ -420,8 +420,8 @@ Discloses complete vaccination history.
 | Source capture key | service:immunisation-history-query |
 | canonicalId | f2a0107d73664aa0be9d6695fc455d74 |
 | displayName | Immunisation History Query |
-| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ScreeningAndImmunisationEnablement.ImmunisationHistoryQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ScreeningAndImmunisationEnablement.SV-ImmunisationHistoryQuery |
+| friendlyName | CareAdministrationEnablement.ClientCentredAdministration.ScreeningAndImmunisationEnablement.ImmunisationEventSubmission.ImmunisationHistoryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ScreeningAndImmunisationEnablement.FEAT-ImmunisationEventSubmission.SV-ImmunisationHistoryQuery |
 | Snapshot publication reference | HCM-SV-immunisation-history-query |
 | ArchiMate semantic ID | id-46418e01821352bc941375e34a88abee |
 | Legacy identity evidence | No legacy allocation |
@@ -487,8 +487,8 @@ Discloses transmission history for medico-legal verification.
 | Source capture key | service:communication-audit-query |
 | canonicalId | 7c871898fd634a16902048da75586fd9 |
 | displayName | Communication Audit Query |
-| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.CommunicationAuditQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.SV-CommunicationAuditQuery |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.SecureClinicalCommunication.CommunicationAuditLogging.CommunicationAuditQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.CT3-BEC-SecureClinicalCommunication.FEAT-CommunicationAuditLogging.SV-CommunicationAuditQuery |
 | Snapshot publication reference | HCM-SV-communication-audit-query |
 | ArchiMate semantic ID | id-d5503c6d10b5545eb1c5d1d5ae381954 |
 | Legacy identity evidence | No legacy allocation |
@@ -519,8 +519,8 @@ Discloses delivery confirmation to message senders.
 | Source capture key | service:communication-delivery-status-query |
 | canonicalId | 1b3447db9891406b951f6a6ccf20763e |
 | displayName | Communication Delivery Status Query |
-| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.CommunicationDeliveryStatusQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.SV-CommunicationDeliveryStatusQuery |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.SecureClinicalCommunication.DeliveryAcknowledgementTracking.CommunicationDeliveryStatusQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.CT3-BEC-SecureClinicalCommunication.FEAT-DeliveryAcknowledgementTracking.SV-CommunicationDeliveryStatusQuery |
 | Snapshot publication reference | HCM-SV-communication-delivery-status-query |
 | ArchiMate semantic ID | id-621a40630d9256eda0126f58d382dace |
 | Legacy identity evidence | No legacy allocation |
@@ -551,8 +551,8 @@ Exposes message dispatch to clinical authors.
 | Source capture key | service:secure-clinical-message-dispatch |
 | canonicalId | d28fb3b4123b4e569a95a823fd83f837 |
 | displayName | Secure Clinical Message Dispatch |
-| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.SecureClinicalMessageDispatch |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.SV-SecureClinicalMessageDispatch |
+| friendlyName | CareAdministrationEnablement.ClinicalCommunicationAdministration.SecureClinicalCommunication.ClinicalCommunicationDistribution.SecureClinicalMessageDispatch |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalCommunicationAdministration.CT3-BEC-SecureClinicalCommunication.FEAT-ClinicalCommunicationDistribution.SV-SecureClinicalMessageDispatch |
 | Snapshot publication reference | HCM-SV-secure-clinical-message-dispatch |
 | ArchiMate semantic ID | id-bc33442399e1567093c059606f9a2888 |
 | Legacy identity evidence | No legacy allocation |
@@ -583,8 +583,8 @@ Exposes document submission endpoints across the HIE.
 | Source capture key | service:clinical-document-ingress |
 | canonicalId | 2a69a33c93954a868249270d919dabfd |
 | displayName | Clinical Document Ingress |
-| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.SV-ClinicalDocumentIngress |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentationLifecycleAdministration.ClinicalDocumentIngestion.ClinicalDocumentIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.CT3-BEC-ClinicalDocumentationLifecycleAdministration.FEAT-ClinicalDocumentIngestion.SV-ClinicalDocumentIngress |
 | Snapshot publication reference | HCM-SV-clinical-document-ingress |
 | ArchiMate semantic ID | id-8371aafb47eb591f8182552dceb459ad |
 | Legacy identity evidence | No legacy allocation |
@@ -615,8 +615,8 @@ Allows authoring clinicians to publish addenda or corrections.
 | Source capture key | service:clinical-document-lifecycle-service |
 | canonicalId | fbeffe86f67347e3b39ad4544b13cbe7 |
 | displayName | Clinical Document Lifecycle Service |
-| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentLifecycleService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.SV-ClinicalDocumentLifecycleService |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentationLifecycleAdministration.DocumentVersioningAndSupersession.ClinicalDocumentLifecycleService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.CT3-BEC-ClinicalDocumentationLifecycleAdministration.FEAT-DocumentVersioningAndSupersession.SV-ClinicalDocumentLifecycleService |
 | Snapshot publication reference | HCM-SV-clinical-document-lifecycle-service |
 | ArchiMate semantic ID | id-184be279c5e85927a1ff5e81aa7939e6 |
 | Legacy identity evidence | No legacy allocation |
@@ -647,8 +647,8 @@ Discloses document registry metadata to clinical viewers.
 | Source capture key | service:document-metadata-registry-query |
 | canonicalId | 63254ecfe5554eeeb63d0c9f1720388b |
 | displayName | Document Metadata Registry Query |
-| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.DocumentMetadataRegistryQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.SV-DocumentMetadataRegistryQuery |
+| friendlyName | CareAdministrationEnablement.ClinicalRecordAdministration.ClinicalDocumentationLifecycleAdministration.DocumentMetadataIndexing.DocumentMetadataRegistryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClinicalRecordAdministration.CT3-BEC-ClinicalDocumentationLifecycleAdministration.FEAT-DocumentMetadataIndexing.SV-DocumentMetadataRegistryQuery |
 | Snapshot publication reference | HCM-SV-document-metadata-registry-query |
 | ArchiMate semantic ID | id-340b2f052af95bf097a047aa2e43fe15 |
 | Legacy identity evidence | No legacy allocation |
@@ -679,8 +679,8 @@ Discloses correlated order/result linkages.
 | Source capture key | service:diagnostic-correlation-resolution |
 | canonicalId | 15f3582e02ae47e1b7f9117573a8ddf7 |
 | displayName | Diagnostic Correlation Resolution |
-| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticCorrelationResolution |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.SV-DiagnosticCorrelationResolution |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement.DiagnosticRequestCorrelation.DiagnosticCorrelationResolution |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement.FEAT-DiagnosticRequestCorrelation.SV-DiagnosticCorrelationResolution |
 | Snapshot publication reference | HCM-SV-diagnostic-correlation-resolution |
 | ArchiMate semantic ID | id-db40af8a466c5bb58974b3392b9fb7a0 |
 | Legacy identity evidence | No legacy allocation |
@@ -711,8 +711,8 @@ Ingests results from external LIS/RIS systems.
 | Source capture key | service:diagnostic-report-ingress |
 | canonicalId | b151ad42b9194d9e84b1dd9beecdf6dd |
 | displayName | Diagnostic Report Ingress |
-| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticReportIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.SV-DiagnosticReportIngress |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement.DiagnosticReportIngestionAndBinding.DiagnosticReportIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement.FEAT-DiagnosticReportIngestionAndBinding.SV-DiagnosticReportIngress |
 | Snapshot publication reference | HCM-SV-diagnostic-report-ingress |
 | ArchiMate semantic ID | id-77ff0fef85f05d44b38dda24fc719a2b |
 | Legacy identity evidence | No legacy allocation |
@@ -743,8 +743,8 @@ Emits secure result notifications.
 | Source capture key | service:diagnostic-result-delivery-service |
 | canonicalId | 86a9d1868c8c45788791a9436794531c |
 | displayName | Diagnostic Result Delivery Service |
-| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticResultDeliveryService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.SV-DiagnosticResultDeliveryService |
+| friendlyName | CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement.DiagnosticReportDistribution.DiagnosticResultDeliveryService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement.FEAT-DiagnosticReportDistribution.SV-DiagnosticResultDeliveryService |
 | Snapshot publication reference | HCM-SV-diagnostic-result-delivery-service |
 | ArchiMate semantic ID | id-b1e74bef5b305c99902a16b70734e083 |
 | Legacy identity evidence | No legacy allocation |
@@ -845,8 +845,8 @@ Discloses active encounter details to clinical applications.
 | Source capture key | service:encounter-context-resolution |
 | canonicalId | ca22b0a4e51b4f5eb6b528bc36fa5d9c |
 | displayName | Encounter Context Resolution |
-| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterContextResolution |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.SV-EncounterContextResolution |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement.EncounterContextCreation.EncounterContextResolution |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement.FEAT-EncounterContextCreation.SV-EncounterContextResolution |
 | Snapshot publication reference | HCM-SV-encounter-context-resolution |
 | ArchiMate semantic ID | id-af5949583dca5647aa621461dafff79a |
 | Legacy identity evidence | No legacy allocation |
@@ -877,8 +877,8 @@ Emits encounter transition events across the HIE.
 | Source capture key | service:encounter-lifecycle-event-notification |
 | canonicalId | e9c6b81172984785a47d222ac0c28d45 |
 | displayName | Encounter Lifecycle Event Notification |
-| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleEventNotification |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.SV-EncounterLifecycleEventNotification |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement.EncounterStateProgression.EncounterLifecycleEventNotification |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement.FEAT-EncounterStateProgression.SV-EncounterLifecycleEventNotification |
 | Snapshot publication reference | HCM-SV-encounter-lifecycle-event-notification |
 | ArchiMate semantic ID | id-a67e6110df1a5446a71a73624e836ef5 |
 | Legacy identity evidence | No legacy allocation |
@@ -909,8 +909,8 @@ Discloses patient location tracking history.
 | Source capture key | service:encounter-location-history-query |
 | canonicalId | 5f0f9fec1d16458aaf914b0957793953 |
 | displayName | Encounter Location History Query |
-| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLocationHistoryQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.SV-EncounterLocationHistoryQuery |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement.EncounterBedLocationAssociation.EncounterLocationHistoryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement.FEAT-EncounterBedLocationAssociation.SV-EncounterLocationHistoryQuery |
 | Snapshot publication reference | HCM-SV-encounter-location-history-query |
 | ArchiMate semantic ID | id-055b7f7c7d2d53b8a927bf82eea4c6fe |
 | Legacy identity evidence | No legacy allocation |
@@ -941,8 +941,8 @@ Delivers a high-priority clinical briefing to admitting teams.
 | Source capture key | service:acute-admission-dossier-query |
 | canonicalId | 7276d5e4d484440f9466ec24c183bdab |
 | displayName | Acute Admission Dossier Query |
-| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.AcuteCareMonitoringAndEventCoordination.AcuteAdmissionDossierQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-AcuteCareMonitoringAndEventCoordination.SV-AcuteAdmissionDossierQuery |
+| friendlyName | CareAdministrationEnablement.EpisodeAndEncounterAdministration.AcuteCareMonitoringAndEventCoordination.AcuteCareClinicalContextProvision.AcuteAdmissionDossierQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-AcuteCareMonitoringAndEventCoordination.FEAT-AcuteCareClinicalContextProvision.SV-AcuteAdmissionDossierQuery |
 | Snapshot publication reference | HCM-SV-acute-admission-dossier-query |
 | ArchiMate semantic ID | id-fe1a8980c6655f9dae0c01cee4275643 |
 | Legacy identity evidence | No legacy allocation |
@@ -1008,8 +1008,8 @@ Ingests pharmacy supply notifications.
 | Source capture key | service:dispense-event-ingress |
 | canonicalId | b81512ca8e36434e9fa29493e645d31d |
 | displayName | Dispense Event Ingress |
-| friendlyName | CareAdministrationEnablement.MedicationAdministration.DispenseEventIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.SV-DispenseEventIngress |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationOrderAndDispenseManagement.DispenseEventTracking.DispenseEventIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationOrderAndDispenseManagement.FEAT-DispenseEventTracking.SV-DispenseEventIngress |
 | Snapshot publication reference | HCM-SV-dispense-event-ingress |
 | ArchiMate semantic ID | id-ec47b3ad39be598bb63579c4668b8791 |
 | Legacy identity evidence | No legacy allocation |
@@ -1040,8 +1040,8 @@ Ingests administration records.
 | Source capture key | service:medication-administration-ingress |
 | canonicalId | 8d224a68f01648d39096d39ebac893df |
 | displayName | Medication Administration Ingress |
-| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationAdministrationIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.SV-MedicationAdministrationIngress |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationOrderAndDispenseManagement.MedicationAdministrationRecordMarIngestion.MedicationAdministrationIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationOrderAndDispenseManagement.FEAT-MedicationAdministrationRecordMarIngestion.SV-MedicationAdministrationIngress |
 | Snapshot publication reference | HCM-SV-medication-administration-ingress |
 | ArchiMate semantic ID | id-9704a57532cf529d9ce347836ad499d6 |
 | Legacy identity evidence | No legacy allocation |
@@ -1072,8 +1072,8 @@ Ingests prescription events.
 | Source capture key | service:medication-order-ingress |
 | canonicalId | 3bcfd2c922aa429ba77618ac94982a56 |
 | displayName | Medication Order Ingress |
-| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationOrderIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.SV-MedicationOrderIngress |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationOrderAndDispenseManagement.MedicationOrderIngestion.MedicationOrderIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationOrderAndDispenseManagement.FEAT-MedicationOrderIngestion.SV-MedicationOrderIngress |
 | Snapshot publication reference | HCM-SV-medication-order-ingress |
 | ArchiMate semantic ID | id-1247fe9185585dbb9d73ff442fa680ca |
 | Legacy identity evidence | No legacy allocation |
@@ -1139,8 +1139,8 @@ Discloses full medication timelines for medication reconciliation.
 | Source capture key | service:longitudinal-medication-history-query |
 | canonicalId | 6a42771bbe5449ab87e8ece94519d03d |
 | displayName | Longitudinal Medication History Query |
-| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationTherapyProvisionAndMonitoring.LongitudinalMedicationHistoryQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationTherapyProvisionAndMonitoring.SV-LongitudinalMedicationHistoryQuery |
+| friendlyName | CareAdministrationEnablement.MedicationAdministration.MedicationTherapyProvisionAndMonitoring.MedicationHistoryReconciliationIngestion.LongitudinalMedicationHistoryQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-MedicationAdministration.CT3-BEC-MedicationTherapyProvisionAndMonitoring.FEAT-MedicationHistoryReconciliationIngestion.SV-LongitudinalMedicationHistoryQuery |
 | Snapshot publication reference | HCM-SV-longitudinal-medication-history-query |
 | ArchiMate semantic ID | id-96924697c45b59728088f510012581e0 |
 | Legacy identity evidence | No legacy allocation |
@@ -1171,8 +1171,8 @@ Dispatches cancel directives to performing systems.
 | Source capture key | service:order-cancellation-service |
 | canonicalId | 1c8467ef0b6047329bdb899a52c23efc |
 | displayName | Order Cancellation Service |
-| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderCancellationService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderCancellationService |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgression.OrderCancellationAndModificationCoordination.OrderCancellationService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.CT3-BEC-ClosedLoopOrderProgression.FEAT-OrderCancellationAndModificationCoordination.SV-OrderCancellationService |
 | Snapshot publication reference | HCM-SV-order-cancellation-service |
 | ArchiMate semantic ID | id-c37ea153f6ef51c19bf8773019d2a007 |
 | Legacy identity evidence | No legacy allocation |
@@ -1203,8 +1203,8 @@ Transmits orders to performing diagnostic systems.
 | Source capture key | service:order-dispatch-service |
 | canonicalId | a8b0f7284a854fdfb43a9af446aa1270 |
 | displayName | Order Dispatch Service |
-| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderDispatchService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderDispatchService |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgression.OrderDestinationResolutionAndRouting.OrderDispatchService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.CT3-BEC-ClosedLoopOrderProgression.FEAT-OrderDestinationResolutionAndRouting.SV-OrderDispatchService |
 | Snapshot publication reference | HCM-SV-order-dispatch-service |
 | ArchiMate semantic ID | id-f87718cc106c516dbbcc270bc5de9c86 |
 | Legacy identity evidence | No legacy allocation |
@@ -1268,8 +1268,8 @@ Ingests electronic orders from clinical ordering systems.
 | Source capture key | service:order-requisition-ingress |
 | canonicalId | ba824a1ec2c64d9598c409803bcf9d86 |
 | displayName | Order Requisition Ingress |
-| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderRequisitionIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderRequisitionIngress |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgression.OrderRequestIngestion.OrderRequisitionIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.CT3-BEC-ClosedLoopOrderProgression.FEAT-OrderRequestIngestion.SV-OrderRequisitionIngress |
 | Snapshot publication reference | HCM-SV-order-requisition-ingress |
 | ArchiMate semantic ID | id-f95f6dbb613c576f912e1d482728781d |
 | Legacy identity evidence | No legacy allocation |
@@ -1300,8 +1300,8 @@ Provides real-time order tracking to ordering clinicians.
 | Source capture key | service:order-status--tracking-query |
 | canonicalId | a4c049391dd64cd7af83bb5b4c7af0c5 |
 | displayName | Order Status & Tracking Query |
-| friendlyName | CareAdministrationEnablement.OrderAdministration.OrderStatusAndTrackingQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.SV-OrderStatusAndTrackingQuery |
+| friendlyName | CareAdministrationEnablement.OrderAdministration.ClosedLoopOrderProgression.OrderClosedLoopProgressionTracking.OrderStatusAndTrackingQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-OrderAdministration.CT3-BEC-ClosedLoopOrderProgression.FEAT-OrderClosedLoopProgressionTracking.SV-OrderStatusAndTrackingQuery |
 | Snapshot publication reference | HCM-SV-order-status-tracking-query |
 | ArchiMate semantic ID | id-a58b3a12fe93507ca00859816aa57897 |
 | Legacy identity evidence | No legacy allocation |
@@ -1332,8 +1332,8 @@ Ingests procedural documentation, including surgical notes, into patient record 
 | Source capture key | service:procedural-documentation-ingress |
 | canonicalId | b58405366b7a43dc909ca3074503e11a |
 | displayName | Procedural Documentation Ingress |
-| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProceduralDocumentationIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.SV-ProceduralDocumentationIngress |
+| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProcedureAndSurgicalAdministration.ProceduralDocumentationIngestion.ProceduralDocumentationIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.CT3-BEC-ProcedureAndSurgicalAdministration.FEAT-ProceduralDocumentationIngestion.SV-ProceduralDocumentationIngress |
 | Snapshot publication reference | HCM-SV-procedural-documentation-ingress |
 | ArchiMate semantic ID | id-68a97fc4710358369321fe60512cdefe |
 | Legacy identity evidence | No legacy allocation |
@@ -1364,8 +1364,8 @@ Receives surgical/procedural requests.
 | Source capture key | service:procedure-booking-ingress |
 | canonicalId | 64c52e8e6f304dee8d86a5da96f927e3 |
 | displayName | Procedure Booking Ingress |
-| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProcedureBookingIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.SV-ProcedureBookingIngress |
+| friendlyName | CareAdministrationEnablement.ProcedureAdministration.ProcedureAndSurgicalAdministration.ProcedureBookingIngestion.ProcedureBookingIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ProcedureAdministration.CT3-BEC-ProcedureAndSurgicalAdministration.FEAT-ProcedureBookingIngestion.SV-ProcedureBookingIngress |
 | Snapshot publication reference | HCM-SV-procedure-booking-ingress |
 | ArchiMate semantic ID | id-9c617080399e55658c15e36d94570e92 |
 | Legacy identity evidence | No legacy allocation |
@@ -1396,8 +1396,8 @@ Provides comprehensive referral dossiers to intake triage clinicians.
 | Source capture key | service:referral-context-query |
 | canonicalId | d688ee73f68a4dda9380404e22b3539b |
 | displayName | Referral Context Query |
-| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralContextQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.SV-ReferralContextQuery |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression.ReferralSupportingInformation.ReferralContextQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression.FEAT-ReferralSupportingInformation.SV-ReferralContextQuery |
 | Snapshot publication reference | HCM-SV-referral-context-query |
 | ArchiMate semantic ID | id-b702aed53e625fd6865f1fc539fc9ce4 |
 | Legacy identity evidence | No legacy allocation |
@@ -1428,8 +1428,8 @@ Exposes progression milestones to referrers and patients.
 | Source capture key | service:referral-status--outcome-service |
 | canonicalId | dfd0481be6124da0a791db41a5e9c238 |
 | displayName | Referral Status & Outcome Service |
-| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralStatusAndOutcomeService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.SV-ReferralStatusAndOutcomeService |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression.ReferralStatusAndOutcomeTracking.ReferralStatusAndOutcomeService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression.FEAT-ReferralStatusAndOutcomeTracking.SV-ReferralStatusAndOutcomeService |
 | Snapshot publication reference | HCM-SV-referral-status-outcome-service |
 | ArchiMate semantic ID | id-1feb90e9446455a1821e4bd111f85068 |
 | Legacy identity evidence | No legacy allocation |
@@ -1460,8 +1460,8 @@ Exposed to external GP practices and referring health facilities.
 | Source capture key | service:referral-submission-service |
 | canonicalId | 42b4e9da22764480a0bea7019927860c |
 | displayName | Referral Submission Service |
-| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralSubmissionService |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.SV-ReferralSubmissionService |
+| friendlyName | CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression.ReferralDocumentIngestion.ReferralSubmissionService |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression.FEAT-ReferralDocumentIngestion.SV-ReferralSubmissionService |
 | Snapshot publication reference | HCM-SV-referral-submission-service |
 | ArchiMate semantic ID | id-e34fc08fc40058048e901636f647f1ae |
 | Legacy identity evidence | No legacy allocation |
@@ -1492,8 +1492,8 @@ Ingests booking events from departmental schedulers.
 | Source capture key | service:appointment-notification-ingress |
 | canonicalId | 67045c71e2194f6ba19002edcea94ee0 |
 | displayName | Appointment Notification Ingress |
-| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentNotificationIngress |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.SV-AppointmentNotificationIngress |
+| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentAndBookingAdministration.AppointmentNotificationIngestion.AppointmentNotificationIngress |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.CT3-BEC-AppointmentAndBookingAdministration.FEAT-AppointmentNotificationIngestion.SV-AppointmentNotificationIngress |
 | Snapshot publication reference | HCM-SV-appointment-notification-ingress |
 | ArchiMate semantic ID | id-291d3634ca38569baa9acd6e7152c4da |
 | Legacy identity evidence | No legacy allocation |
@@ -1524,8 +1524,8 @@ Exposes consolidated patient appointment schedules across facilities.
 | Source capture key | service:appointment-schedule-query |
 | canonicalId | 2a7eb5b22dc04256aa049c2fcf84e62c |
 | displayName | Appointment Schedule Query |
-| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentScheduleQuery |
-| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.SV-AppointmentScheduleQuery |
+| friendlyName | CareAdministrationEnablement.SchedulingAdministration.AppointmentAndBookingAdministration.AppointmentStatusSynchronization.AppointmentScheduleQuery |
+| canonicalName | CT1-BEC-CareAdministrationEnablement.CT2-BEC-SchedulingAdministration.CT3-BEC-AppointmentAndBookingAdministration.FEAT-AppointmentStatusSynchronization.SV-AppointmentScheduleQuery |
 | Snapshot publication reference | HCM-SV-appointment-schedule-query |
 | ArchiMate semantic ID | id-880cefbf9aa35e37858e5fcdc1e63937 |
 | Legacy identity evidence | No legacy allocation |
@@ -1556,8 +1556,8 @@ Enforces record-level masking directives across the HIE.
 | Source capture key | service:confidentiality-restriction-evaluation |
 | canonicalId | 87cfcfb20b7a4570b502b4a9a53803ad |
 | displayName | Confidentiality Restriction Evaluation |
-| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConfidentialityRestrictionEvaluation |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.SV-ConfidentialityRestrictionEvaluation |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConfidentialityFlagEnforcement.ConfidentialityRestrictionEvaluation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.FEAT-ConfidentialityFlagEnforcement.SV-ConfidentialityRestrictionEvaluation |
 | Snapshot publication reference | HCM-SV-confidentiality-restriction-evaluation |
 | ArchiMate semantic ID | id-3e985d75039e5955bcd36d42b4d100e3 |
 | Legacy identity evidence | No legacy allocation |
@@ -1587,8 +1587,8 @@ Provides real-time consent evaluation decisions to Health Information Control.
 | Source capture key | service:consent-decision-service |
 | canonicalId | e1bebefbdbef4a1981ec31341eb71dfd |
 | displayName | Consent Decision Service |
-| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConsentDecisionService |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.SV-ConsentDecisionService |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConsentDirectiveEvaluation.ConsentDecisionService |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.FEAT-ConsentDirectiveEvaluation.SV-ConsentDecisionService |
 | Snapshot publication reference | HCM-SV-consent-decision-service |
 | ArchiMate semantic ID | id-f004e0762488533d95b1b0a829c9c89e |
 | Legacy identity evidence | No legacy allocation |
@@ -1618,8 +1618,8 @@ Discloses verified support network members and contact details to clinical teams
 | Source capture key | service:client-relationship-query |
 | canonicalId | 7b3eb2e91baa4e9c887927433979a8f6 |
 | displayName | Client Relationship Query |
-| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration.ClientRelationshipQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration.SV-ClientRelationshipQuery |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration.NextOfKinAndGuardianAssociation.ClientRelationshipQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration.FEAT-NextOfKinAndGuardianAssociation.SV-ClientRelationshipQuery |
 | Snapshot publication reference | HCM-SV-client-relationship-query |
 | ArchiMate semantic ID | id-056f074d8cbd53b4a23bca5e4c0eb70f |
 | Legacy identity evidence | No legacy allocation |
@@ -1649,8 +1649,8 @@ Confirms legal decision-making authority for substitute consent.
 | Source capture key | service:representative-authority-verification |
 | canonicalId | 2d3205c785ba4db5af5868ebb6ab1495 |
 | displayName | Representative Authority Verification |
-| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration.RepresentativeAuthorityVerification |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration.SV-RepresentativeAuthorityVerification |
+| friendlyName | EntityInformationEnablement.ClientAdministration.ClientRelationshipAdministration.RelationshipValidityTracking.RepresentativeAuthorityVerification |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientRelationshipAdministration.FEAT-RelationshipValidityTracking.SV-RepresentativeAuthorityVerification |
 | Snapshot publication reference | HCM-SV-representative-authority-verification |
 | ArchiMate semantic ID | id-2d4621568a275be6a00cab409179d4b2 |
 | Legacy identity evidence | No legacy allocation |
@@ -1680,8 +1680,8 @@ Emits governed subject demographic updates to subscribed clinical systems.
 | Source capture key | service:demographic-change-distribution |
 | canonicalId | 2c4a8c1251294885922f8ccdc3d7b069 |
 | displayName | Demographic Change Distribution |
-| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration.DemographicChangeDistribution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration.SV-DemographicChangeDistribution |
+| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration.DemographicContextGovernance.DemographicChangeDistribution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration.FEAT-DemographicContextGovernance.SV-DemographicChangeDistribution |
 | Snapshot publication reference | HCM-SV-demographic-change-distribution |
 | ArchiMate semantic ID | id-0672fb8a0d7a5f029d80931b0d3d2c60 |
 | Legacy identity evidence | No legacy allocation |
@@ -1711,8 +1711,8 @@ Provides comprehensive demographic, language, and indigenous status context to c
 | Source capture key | service:healthcare-subject-context-resolution |
 | canonicalId | 99a739efc7be4d7b92d90181ecd69d15 |
 | displayName | Healthcare Subject Context Resolution |
-| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration.HealthcareSubjectContextResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration.SV-HealthcareSubjectContextResolution |
+| friendlyName | EntityInformationEnablement.ClientAdministration.HealthcareSubjectProfileAdministration.SubjectContextBinding.HealthcareSubjectContextResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-HealthcareSubjectProfileAdministration.FEAT-SubjectContextBinding.SV-HealthcareSubjectContextResolution |
 | Snapshot publication reference | HCM-SV-healthcare-subject-context-resolution |
 | ArchiMate semantic ID | id-ad4ecd236c2254a6823f0666a21c023d |
 | Legacy identity evidence | No legacy allocation |
@@ -1742,8 +1742,8 @@ Exposed across the HIE to establish patient cross-reference mappings.
 | Source capture key | service:person-identifier-correlation |
 | canonicalId | 71220901361e42f686faf7d852f57e45 |
 | displayName | Person Identifier Correlation |
-| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.PersonIdentifierCorrelation |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.SV-PersonIdentifierCorrelation |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.CrossAuthorityIdentifierCorrelation.PersonIdentifierCorrelation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-CrossAuthorityIdentifierCorrelation.SV-PersonIdentifierCorrelation |
 | Snapshot publication reference | HCM-SV-person-identifier-correlation |
 | ArchiMate semantic ID | id-9d1f5cf6bf6f5caaa534416611b5462b |
 | Legacy identity evidence | No legacy allocation |
@@ -1773,8 +1773,8 @@ Exposed to Service Administration and Service Delivery to disambiguate client id
 | Source capture key | service:person-identifier-resolution |
 | canonicalId | a533cf0d23364f398f2a71843cce98c4 |
 | displayName | Person Identifier Resolution |
-| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.PersonIdentifierResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.SV-PersonIdentifierResolution |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentifierResolution.PersonIdentifierResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentifierResolution.SV-PersonIdentifierResolution |
 | Snapshot publication reference | HCM-SV-person-identifier-resolution |
 | ArchiMate semantic ID | id-16d54501047750f6b5ff556db2bffdfa |
 | Legacy identity evidence | No legacy allocation |
@@ -1804,8 +1804,8 @@ Exposed to authorized HIM/Medical Records administrators.
 | Source capture key | service:person-identity-correction |
 | canonicalId | dd5ed5ba58f94ecbbdac913c88d2b7b6 |
 | displayName | Person Identity Correction |
-| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.PersonIdentityCorrection |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.SV-PersonIdentityCorrection |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.GovernedIdentityCorrection.PersonIdentityCorrection |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-GovernedIdentityCorrection.SV-PersonIdentityCorrection |
 | Snapshot publication reference | HCM-SV-person-identity-correction |
 | ArchiMate semantic ID | id-a236d718153153808c072f1d8cae8c1f |
 | Legacy identity evidence | No legacy allocation |
@@ -1835,8 +1835,8 @@ Discloses active device-to-patient and device-to-location bindings.
 | Source capture key | service:device-association-query |
 | canonicalId | 01637c40914945d68d261c2094b86904 |
 | displayName | Device Association Query |
-| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceAssociationQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceAssociationQuery |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceUtilisationAdministration.DevicePatientLocationAssignment.DeviceAssociationQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceUtilisationAdministration.FEAT-DevicePatientLocationAssignment.SV-DeviceAssociationQuery |
 | Snapshot publication reference | HCM-SV-device-association-query |
 | ArchiMate semantic ID | id-19f45f21d7555051ac3dfbb1ef38b693 |
 | Legacy identity evidence | No legacy allocation |
@@ -1866,8 +1866,8 @@ Discloses approved medical device models and technical parameters.
 | Source capture key | service:device-definition-query |
 | canonicalId | 49325c789401465aa565fd7fa7109070 |
 | displayName | Device Definition Query |
-| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceDefinitionQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceDefinitionQuery |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.ClinicalDeviceProfileAdministration.DeviceTypeSpecification.DeviceDefinitionQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-ClinicalDeviceProfileAdministration.FEAT-DeviceTypeSpecification.SV-DeviceDefinitionQuery |
 | Snapshot publication reference | HCM-SV-device-definition-query |
 | ArchiMate semantic ID | id-2db79541f9215cdea6b465c592f650f9 |
 | Legacy identity evidence | No legacy allocation |
@@ -1897,8 +1897,8 @@ Exposes network addresses for telemetry routing.
 | Source capture key | service:device-endpoint-resolution |
 | canonicalId | 5806d6e030b543d0867a862d5b6d8fad |
 | displayName | Device Endpoint Resolution |
-| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceEndpointResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceEndpointResolution |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceOaAndMMetadataManagement.DeviceEndpointRegistration.DeviceEndpointResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceOaAndMMetadataManagement.FEAT-DeviceEndpointRegistration.SV-DeviceEndpointResolution |
 | Snapshot publication reference | HCM-SV-device-endpoint-resolution |
 | ArchiMate semantic ID | id-7f6b142b6d885045aa3ee74a806aca39 |
 | Legacy identity evidence | No legacy allocation |
@@ -1928,8 +1928,8 @@ Resolves physical device instances from scanned barcodes or UDIs.
 | Source capture key | service:device-instance-resolution |
 | canonicalId | 14fb1e3f17dd40d88087a00c9707578d |
 | displayName | Device Instance Resolution |
-| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceInstanceResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.SV-DeviceInstanceResolution |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.ClinicalDeviceProfileAdministration.DeviceSerialTracking.DeviceInstanceResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-ClinicalDeviceProfileAdministration.FEAT-DeviceSerialTracking.SV-DeviceInstanceResolution |
 | Snapshot publication reference | HCM-SV-device-instance-resolution |
 | ArchiMate semantic ID | id-31fc8f96cdca5b1f9393b3f80b0b044e |
 | Legacy identity evidence | No legacy allocation |
@@ -1959,8 +1959,8 @@ Exposes mobile equipment availability.
 | Source capture key | service:clinical-resource-availability-query |
 | canonicalId | 0e5ed162a288425aad2833ed5e07ed64 |
 | displayName | Clinical Resource Availability Query |
-| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceUtilisationAdministration.ClinicalResourceAvailabilityQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceUtilisationAdministration.SV-ClinicalResourceAvailabilityQuery |
+| friendlyName | EntityInformationEnablement.ClinicalDeviceAdministration.DeviceUtilisationAdministration.MobileClinicalEquipmentTracking.ClinicalResourceAvailabilityQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration.CT3-BEC-DeviceUtilisationAdministration.FEAT-MobileClinicalEquipmentTracking.SV-ClinicalResourceAvailabilityQuery |
 | Snapshot publication reference | HCM-SV-clinical-resource-availability-query |
 | ArchiMate semantic ID | id-b4b97dbcfd22595095666a0bf8b52c99 |
 | Legacy identity evidence | No legacy allocation |
@@ -1991,8 +1991,8 @@ Exposes published clinical service offerings.
 | Source capture key | service:healthcare-service-directory-query |
 | canonicalId | c7bf105e1217441a9423706b1481d153 |
 | displayName | Healthcare Service Directory Query |
-| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceDirectoryQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-HealthcareServiceDirectoryQuery |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceProfileAdministration.ServiceCataloguePublishing.HealthcareServiceDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-HealthcareServiceProfileAdministration.FEAT-ServiceCataloguePublishing.SV-HealthcareServiceDirectoryQuery |
 | Snapshot publication reference | HCM-SV-healthcare-service-directory-query |
 | ArchiMate semantic ID | id-3f0037ab838758889d1bf105ee42f651 |
 | Legacy identity evidence | No legacy allocation |
@@ -2022,8 +2022,8 @@ Discloses operational intake hours and open status.
 | Source capture key | service:service-availability-query |
 | canonicalId | a3846cb2960a4000a5db9ef18942ee20 |
 | displayName | Service Availability Query |
-| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceAvailabilityQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-ServiceAvailabilityQuery |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceProfileAdministration.OperatingScheduleSpecification.ServiceAvailabilityQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-HealthcareServiceProfileAdministration.FEAT-OperatingScheduleSpecification.SV-ServiceAvailabilityQuery |
 | Snapshot publication reference | HCM-SV-service-availability-query |
 | ArchiMate semantic ID | id-fc36267c36615fb7b9d3b65db4231071 |
 | Legacy identity evidence | No legacy allocation |
@@ -2053,8 +2053,8 @@ Evaluates referral eligibility for intake coordinators.
 | Source capture key | service:service-eligibility-evaluation |
 | canonicalId | 7e005ce374f347088ae854442fc3edef |
 | displayName | Service Eligibility Evaluation |
-| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceEligibilityEvaluation |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-ServiceEligibilityEvaluation |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceProfileAdministration.EligibilityAndCatchmentSpecification.ServiceEligibilityEvaluation |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-HealthcareServiceProfileAdministration.FEAT-EligibilityAndCatchmentSpecification.SV-ServiceEligibilityEvaluation |
 | Snapshot publication reference | HCM-SV-service-eligibility-evaluation |
 | ArchiMate semantic ID | id-c2f03bf3f778546b85c249ec02339058 |
 | Legacy identity evidence | No legacy allocation |
@@ -2084,8 +2084,8 @@ Exposes multi-dimensional resolution queries answering who, where, and when heal
 | Source capture key | service:service-provision-resolution |
 | canonicalId | e54866d88b1e442f8ea170f06f98028b |
 | displayName | Service Provision Resolution |
-| friendlyName | EntityInformationEnablement.HealthServiceAdministration.ServiceProvisionResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.SV-ServiceProvisionResolution |
+| friendlyName | EntityInformationEnablement.HealthServiceAdministration.HealthcareServiceProfileAdministration.ServiceLocationProviderBinding.ServiceProvisionResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-HealthServiceAdministration.CT3-BEC-HealthcareServiceProfileAdministration.FEAT-ServiceLocationProviderBinding.SV-ServiceProvisionResolution |
 | Snapshot publication reference | HCM-SV-service-provision-resolution |
 | ArchiMate semantic ID | id-19fda295a5e351489a17e16f65373ed0 |
 | Legacy identity evidence | No legacy allocation |
@@ -2115,8 +2115,8 @@ Discloses care-place physical capabilities to Bed & Care-Place Management.
 | Source capture key | service:care-place-specification-lookup |
 | canonicalId | 43b011b0c233408eaf6e555ecbf05d9e |
 | displayName | Care-Place Specification Lookup |
-| friendlyName | EntityInformationEnablement.LocationAdministration.CarePlaceSpecificationLookup |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.SV-CarePlaceSpecificationLookup |
+| friendlyName | EntityInformationEnablement.LocationAdministration.CarePlaceDefinitionAdministration.AtomicCarePlaceModeling.CarePlaceSpecificationLookup |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-CarePlaceDefinitionAdministration.FEAT-AtomicCarePlaceModeling.SV-CarePlaceSpecificationLookup |
 | Snapshot publication reference | HCM-SV-care-place-specification-lookup |
 | ArchiMate semantic ID | id-97752cf214e65111be413129b58575ff |
 | Legacy identity evidence | No legacy allocation |
@@ -2146,8 +2146,8 @@ Exposes location profiles and geospatial addresses.
 | Source capture key | service:location-directory-query |
 | canonicalId | 5ef66362eb674794b335c435227b0c95 |
 | displayName | Location Directory Query |
-| friendlyName | EntityInformationEnablement.LocationAdministration.LocationDirectoryQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.SV-LocationDirectoryQuery |
+| friendlyName | EntityInformationEnablement.LocationAdministration.HealthcareLocationProfileAdministration.LocationGeospatialAndAddressResolution.LocationDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-HealthcareLocationProfileAdministration.FEAT-LocationGeospatialAndAddressResolution.SV-LocationDirectoryQuery |
 | Snapshot publication reference | HCM-SV-location-directory-query |
 | ArchiMate semantic ID | id-a8afe8cb79b95984a1effcfe7840e3a0 |
 | Legacy identity evidence | No legacy allocation |
@@ -2177,8 +2177,8 @@ Discloses physical containment and navigation paths for clinical facilities.
 | Source capture key | service:location-hierarchy-resolution |
 | canonicalId | 389af7aaa9d74ab8b42e55f0fa72ef99 |
 | displayName | Location Hierarchy Resolution |
-| friendlyName | EntityInformationEnablement.LocationAdministration.LocationHierarchyResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.SV-LocationHierarchyResolution |
+| friendlyName | EntityInformationEnablement.LocationAdministration.HealthcareLocationProfileAdministration.PhysicalHierarchyModeling.LocationHierarchyResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-HealthcareLocationProfileAdministration.FEAT-PhysicalHierarchyModeling.SV-LocationHierarchyResolution |
 | Snapshot publication reference | HCM-SV-location-hierarchy-resolution |
 | ArchiMate semantic ID | id-d711eba24c665c33ad39db9023c6cb83 |
 | Legacy identity evidence | No legacy allocation |
@@ -2208,8 +2208,8 @@ Provides official operational contact details.
 | Source capture key | service:organisation-contact-lookup |
 | canonicalId | 551f1e73fb73449a83f3155cb8158f30 |
 | displayName | Organisation Contact Lookup |
-| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationContactLookup |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationContactLookup |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration.DirectoryContactManagement.OrganisationContactLookup |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration.FEAT-DirectoryContactManagement.SV-OrganisationContactLookup |
 | Snapshot publication reference | HCM-SV-organisation-contact-lookup |
 | ArchiMate semantic ID | id-aed999ba3cfb55309a710d4752bb144b |
 | Legacy identity evidence | No legacy allocation |
@@ -2239,8 +2239,8 @@ Discloses healthcare organisation profiles across the region.
 | Source capture key | service:organisation-directory-query |
 | canonicalId | c5acf1dc97874d0a8264f9a5c1b735fa |
 | displayName | Organisation Directory Query |
-| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationDirectoryQuery |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationDirectoryQuery |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration.OrganisationProfileManagement.OrganisationDirectoryQuery |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration.FEAT-OrganisationProfileManagement.SV-OrganisationDirectoryQuery |
 | Snapshot publication reference | HCM-SV-organisation-directory-query |
 | ArchiMate semantic ID | id-cc22b9345d5d5d55bc0bf2bf1127230f |
 | Legacy identity evidence | No legacy allocation |
@@ -2270,8 +2270,8 @@ Provides verified organisation credentials to external and internal partners.
 | Source capture key | service:organisation-verification-service |
 | canonicalId | 223b2cbe762b40efb9f05bb5cdd66bcb |
 | displayName | Organisation Verification Service |
-| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationVerificationService |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationVerificationService |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration.NationalOrganisationVerification.OrganisationVerificationService |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration.FEAT-NationalOrganisationVerification.SV-OrganisationVerificationService |
 | Snapshot publication reference | HCM-SV-organisation-verification-service |
 | ArchiMate semantic ID | id-975b6adcaec55a84b41eeff62e424af2 |
 | Legacy identity evidence | No legacy allocation |
@@ -2301,8 +2301,8 @@ Resolves department nesting and reporting hierarchies.
 | Source capture key | service:organisational-hierarchy-resolution |
 | canonicalId | c9187704dd7f49f69f9e674c16e9181b |
 | displayName | Organisational Hierarchy Resolution |
-| friendlyName | EntityInformationEnablement.OrganisationAdministration.OrganisationalHierarchyResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.SV-OrganisationalHierarchyResolution |
+| friendlyName | EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration.HierarchicalStructureNavigation.OrganisationalHierarchyResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration.FEAT-HierarchicalStructureNavigation.SV-OrganisationalHierarchyResolution |
 | Snapshot publication reference | HCM-SV-organisational-hierarchy-resolution |
 | ArchiMate semantic ID | id-6162511d477f5f7396daafea25feb438 |
 | Legacy identity evidence | No legacy allocation |
@@ -2332,8 +2332,8 @@ Verifies procedural and prescribing authority for clinical ordering systems.
 | Source capture key | service:clinical-privilege-verification |
 | canonicalId | f6599b4283194577a977bfc86ea854c2 |
 | displayName | Clinical Privilege Verification |
-| friendlyName | EntityInformationEnablement.ProviderAdministration.ClinicalPrivilegeVerification |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-ClinicalPrivilegeVerification |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalQualificationAdministration.ProviderClinicalQualificationTracking.ClinicalPrivilegingRecord.ClinicalPrivilegeVerification |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalQualificationAdministration.CT3-BEC-ProviderClinicalQualificationTracking.FEAT-ClinicalPrivilegingRecord.SV-ClinicalPrivilegeVerification |
 | Snapshot publication reference | HCM-SV-clinical-privilege-verification |
 | ArchiMate semantic ID | id-2d89fceee6cf5de3aedffbc5efccd66c |
 | Legacy identity evidence | No legacy allocation |
@@ -2363,8 +2363,8 @@ Discloses organizational ties and practice locations.
 | Source capture key | service:practitioner-affiliation-resolution |
 | canonicalId | 65baca2a21f040d49be74fab1727f96d |
 | displayName | Practitioner Affiliation Resolution |
-| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerAffiliationResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerAffiliationResolution |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerRoleAdministration.PractitionerOrganisationAffiliation.PractitionerAffiliationResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerRoleAdministration.FEAT-PractitionerOrganisationAffiliation.SV-PractitionerAffiliationResolution |
 | Snapshot publication reference | HCM-SV-practitioner-affiliation-resolution |
 | ArchiMate semantic ID | id-daad446c0f7e5e3b87d846afb6c2671f |
 | Legacy identity evidence | No legacy allocation |
@@ -2425,8 +2425,8 @@ Provides secure message routing destinations for clinical communication.
 | Source capture key | service:practitioner-endpoint-lookup |
 | canonicalId | 2efb21629acf41e9b4f5c59db00721d0 |
 | displayName | Practitioner Endpoint Lookup |
-| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerEndpointLookup |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerEndpointLookup |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerRoleAdministration.ElectronicEndpointBinding.PractitionerEndpointLookup |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerRoleAdministration.FEAT-ElectronicEndpointBinding.SV-PractitionerEndpointLookup |
 | Snapshot publication reference | HCM-SV-practitioner-endpoint-lookup |
 | ArchiMate semantic ID | id-54e83e2d7c2d58f880e9171415f2d743 |
 | Legacy identity evidence | No legacy allocation |
@@ -2456,8 +2456,8 @@ Resolves the specific clinical capacities of a practitioner.
 | Source capture key | service:practitioner-role-resolution |
 | canonicalId | c3e5c04e2a194b4a8d49b8776fce2c51 |
 | displayName | Practitioner Role Resolution |
-| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerRoleResolution |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerRoleResolution |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerRoleAdministration.RoleAndSpecialtyModeling.PractitionerRoleResolution |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerRoleAdministration.FEAT-RoleAndSpecialtyModeling.SV-PractitionerRoleResolution |
 | Snapshot publication reference | HCM-SV-practitioner-role-resolution |
 | ArchiMate semantic ID | id-8a0aa9ba949a5b8b8ad5be5dc83be377 |
 | Legacy identity evidence | No legacy allocation |
@@ -2487,8 +2487,8 @@ Discloses verified registration and status to credentialing and clinical systems
 | Source capture key | service:practitioner-verification-service |
 | canonicalId | adf039a87e9243a1b82612a4919f6f14 |
 | displayName | Practitioner Verification Service |
-| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerVerificationService |
-| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.SV-PractitionerVerificationService |
+| friendlyName | EntityInformationEnablement.ProviderAdministration.PractitionerProfileAdministration.NationalPractitionerVerification.PractitionerVerificationService |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ProviderAdministration.CT3-BEC-PractitionerProfileAdministration.FEAT-NationalPractitionerVerification.SV-PractitionerVerificationService |
 | Snapshot publication reference | HCM-SV-practitioner-verification-service |
 | ArchiMate semantic ID | id-0a4f74f6f31f5e37b8837f3a50cc7277 |
 | Legacy identity evidence | No legacy allocation |
@@ -2557,8 +2557,8 @@ Discloses real-time bed availability across hospital directorates.
 | Source capture key | service:bed-availability-query |
 | canonicalId | c51894eccd7b45019c2f084993f4cfc6 |
 | displayName | Bed Availability Query |
-| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedAvailabilityQuery |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.SV-BedAvailabilityQuery |
+| friendlyName | HealthServiceOperationsEnablement.BedAndCarePlaceManagement.BedAndCarePlaceStateAdministration.BedAvailabilityTracking.BedAvailabilityQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-BedAndCarePlaceManagement.CT3-BEC-BedAndCarePlaceStateAdministration.FEAT-BedAvailabilityTracking.SV-BedAvailabilityQuery |
 | Snapshot publication reference | HCM-SV-bed-availability-query |
 | ArchiMate semantic ID | id-f7ff8ad70b355db3876f450936497684 |
 | Legacy identity evidence | No legacy allocation |
@@ -2623,8 +2623,8 @@ Discloses real-time clinic waiting times and queue states.
 | Source capture key | service:clinic-queue-telemetry-service |
 | canonicalId | c720457349e644179c98d13be59bd581 |
 | displayName | Clinic Queue Telemetry Service |
-| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.ClinicQueueTelemetryService |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.SV-ClinicQueueTelemetryService |
+| friendlyName | HealthServiceOperationsEnablement.ClinicAndPracticeOperations.SessionAndQueueCoordination.OperationalQueueProgression.ClinicQueueTelemetryService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicAndPracticeOperations.CT3-BEC-SessionAndQueueCoordination.FEAT-OperationalQueueProgression.SV-ClinicQueueTelemetryService |
 | Snapshot publication reference | HCM-SV-clinic-queue-telemetry-service |
 | ArchiMate semantic ID | id-af013a86ebb250d79556d64fbb65ce11 |
 | Legacy identity evidence | No legacy allocation |
@@ -2655,8 +2655,8 @@ Exposes chain-of-custody tracking.
 | Source capture key | service:specimen-transit-tracking-service |
 | canonicalId | 100e740770bc4ab28cfe3c9af4b541cd |
 | displayName | Specimen Transit Tracking Service |
-| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination.SpecimenTransitTrackingService |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination.SV-SpecimenTransitTrackingService |
+| friendlyName | HealthServiceOperationsEnablement.ClinicalLogisticsCoordination.SpecimenMovementTraceability.PathologySpecimenTransportTracking.SpecimenTransitTrackingService |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalLogisticsCoordination.CT3-BEC-SpecimenMovementTraceability.FEAT-PathologySpecimenTransportTracking.SV-SpecimenTransitTrackingService |
 | Snapshot publication reference | HCM-SV-specimen-transit-tracking-service |
 | ArchiMate semantic ID | id-658d398af45950afa8c57e1f8ebc9f91 |
 | Legacy identity evidence | No legacy allocation |
@@ -2754,8 +2754,8 @@ Ingests emergency triage presentations.
 | Source capture key | service:ed-triage-stream-ingress |
 | canonicalId | 677947e357b541f58f36e9b4e36157e8 |
 | displayName | ED Triage Stream Ingress |
-| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression.EdTriageStreamIngress |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression.SV-EdTriageStreamIngress |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression.EmergencyDepartmentArrivalAndTriageIngestion.EdTriageStreamIngress |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression.FEAT-EmergencyDepartmentArrivalAndTriageIngestion.SV-EdTriageStreamIngress |
 | Snapshot publication reference | HCM-SV-ed-triage-stream-ingress |
 | ArchiMate semantic ID | id-0b4f72b08c0c5b5bb3f6cfdae114aa83 |
 | Legacy identity evidence | No legacy allocation |
@@ -2786,8 +2786,8 @@ Provides low-latency emergency record summaries.
 | Source capture key | service:emergency-fast-path-lhr-query |
 | canonicalId | 0588ef78691143cdb2d884960811db1e |
 | displayName | Emergency Fast-Path LHR Query |
-| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression.EmergencyFastPathLhrQuery |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression.SV-EmergencyFastPathLhrQuery |
+| friendlyName | HealthServiceOperationsEnablement.EmergencyDepartmentOperations.EmergencyCareProgression.EmergencyCareCrossFacilityCorrelation.EmergencyFastPathLhrQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-EmergencyDepartmentOperations.CT3-BEC-EmergencyCareProgression.FEAT-EmergencyCareCrossFacilityCorrelation.SV-EmergencyFastPathLhrQuery |
 | Snapshot publication reference | HCM-SV-emergency-fast-path-lhr-query |
 | ArchiMate semantic ID | id-5a59cea7c21854d995df5329d002535a |
 | Legacy identity evidence | No legacy allocation |
@@ -2853,8 +2853,8 @@ Discloses active on-call contacts for switchboard and emergency teams.
 | Source capture key | service:on-call-specialist-lookup |
 | canonicalId | e0ba307dc51e47a395c1eac9fe728a98 |
 | displayName | On-Call Specialist Lookup |
-| friendlyName | HealthServiceOperationsEnablement.OnCallManagement.OnCallSpecialistLookup |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OnCallManagement.SV-OnCallSpecialistLookup |
+| friendlyName | HealthServiceOperationsEnablement.OnCallManagement.OnCallAvailabilityAndContactResolution.ActiveOnCallProviderResolution.OnCallSpecialistLookup |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OnCallManagement.CT3-BEC-OnCallAvailabilityAndContactResolution.FEAT-ActiveOnCallProviderResolution.SV-OnCallSpecialistLookup |
 | Snapshot publication reference | HCM-SV-on-call-specialist-lookup |
 | ArchiMate semantic ID | id-2fea1124c0455826b976bde2dfe87067 |
 | Legacy identity evidence | No legacy allocation |
@@ -2956,8 +2956,8 @@ Provides executive operational situational awareness.
 | Source capture key | service:regional-health-system-capacity-query |
 | canonicalId | ecbb1944572d44dbba55aaf565559d13 |
 | displayName | Regional Health System Capacity Query |
-| friendlyName | HealthServiceOperationsEnablement.ServiceCapacityManagement.RegionalHealthSystemCapacityQuery |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ServiceCapacityManagement.SV-RegionalHealthSystemCapacityQuery |
+| friendlyName | HealthServiceOperationsEnablement.ServiceCapacityManagement.ServiceDemandAndCapacityCoordination.OperationalCapacityMetricAggregation.RegionalHealthSystemCapacityQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ServiceCapacityManagement.CT3-BEC-ServiceDemandAndCapacityCoordination.FEAT-OperationalCapacityMetricAggregation.SV-RegionalHealthSystemCapacityQuery |
 | Snapshot publication reference | HCM-SV-regional-health-system-capacity-query |
 | ArchiMate semantic ID | id-f80ca2f4577658349ca52a2fb996c3d8 |
 | Legacy identity evidence | No legacy allocation |
@@ -3092,8 +3092,8 @@ Discloses consolidated 24-hour clinical briefing views.
 | Source capture key | service:ward-round-clinical-briefing-query |
 | canonicalId | 2b0f17a8a2da4c0f92a5ad4a17ee526b |
 | displayName | Ward Round Clinical Briefing Query |
-| friendlyName | HealthServiceOperationsEnablement.WardOperations.MultidisciplinaryInpatientCareCoordination.WardRoundClinicalBriefingQuery |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.CT3-BEC-MultidisciplinaryInpatientCareCoordination.SV-WardRoundClinicalBriefingQuery |
+| friendlyName | HealthServiceOperationsEnablement.WardOperations.MultidisciplinaryInpatientCareCoordination.InpatientRoundingContextProvision.WardRoundClinicalBriefingQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WardOperations.CT3-BEC-MultidisciplinaryInpatientCareCoordination.FEAT-InpatientRoundingContextProvision.SV-WardRoundClinicalBriefingQuery |
 | Snapshot publication reference | HCM-SV-ward-round-clinical-briefing-query |
 | ArchiMate semantic ID | id-ea64cd1258995a3ebae6b21e311943fe |
 | Legacy identity evidence | No legacy allocation |
@@ -3124,8 +3124,8 @@ Discloses task progression to requesting wards.
 | Source capture key | service:operational-work-status-query |
 | canonicalId | 8659408923e641b99727ef218e2b8dfc |
 | displayName | Operational Work Status Query |
-| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkStatusQuery |
-| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.SV-OperationalWorkStatusQuery |
+| friendlyName | HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkAssignmentAndDispatchCoordination.WorkProgressOversightAndEscalation.OperationalWorkStatusQuery |
+| canonicalName | CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination.FEAT-WorkProgressOversightAndEscalation.SV-OperationalWorkStatusQuery |
 | Snapshot publication reference | HCM-SV-operational-work-status-query |
 | ArchiMate semantic ID | id-7f937c0dfc8f5705bbd78f302e5284bf |
 | Legacy identity evidence | No legacy allocation |
@@ -3188,8 +3188,8 @@ Resolves operational shifts.
 | Source capture key | service:temporal-context-resolution |
 | canonicalId | 47f6491361794c2393cd3b64caec2d1a |
 | displayName | Temporal Context Resolution |
-| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.TemporalContextResolution |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.SV-TemporalContextResolution |
+| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.OperationalAndClinicalCalendarCoordination.TemporalEventCorrelation.TemporalContextResolution |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.CT3-BEC-OperationalAndClinicalCalendarCoordination.FEAT-TemporalEventCorrelation.SV-TemporalContextResolution |
 | Snapshot publication reference | HCM-SV-temporal-context-resolution |
 | ArchiMate semantic ID | id-af526ad0c091540c8ee3b7afe9bf95d8 |
 | Legacy identity evidence | No legacy allocation |
@@ -3220,8 +3220,8 @@ Discloses consolidated temporal schedules.
 | Source capture key | service:unified-calendar-projection-query |
 | canonicalId | c78bdb7ffc7d42fda450c024ca252322 |
 | displayName | Unified Calendar Projection Query |
-| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.UnifiedCalendarProjectionQuery |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.SV-UnifiedCalendarProjectionQuery |
+| friendlyName | SharedInformationAndCoordinationEnablement.CalendarManagement.OperationalAndClinicalCalendarCoordination.ScheduleProjectionIntegration.UnifiedCalendarProjectionQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-CalendarManagement.CT3-BEC-OperationalAndClinicalCalendarCoordination.FEAT-ScheduleProjectionIntegration.SV-UnifiedCalendarProjectionQuery |
 | Snapshot publication reference | HCM-SV-unified-calendar-projection-query |
 | ArchiMate semantic ID | id-54794fdfa3ba5b09aae8eeffe08110d5 |
 | Legacy identity evidence | No legacy allocation |
@@ -3252,8 +3252,8 @@ Manages team collaboration spaces and discussions.
 | Source capture key | service:clinical-collaboration-space-service |
 | canonicalId | 17579c34d3014825a878a9ff121e30a2 |
 | displayName | Clinical Collaboration Space Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.ClinicalCollaborationSpaceService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.SV-ClinicalCollaborationSpaceService |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.ClinicalContextCollaboration.CareTeamClinicalCollaborationCoordination.ClinicalCollaborationSpaceService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.CT3-BEC-ClinicalContextCollaboration.FEAT-CareTeamClinicalCollaborationCoordination.SV-ClinicalCollaborationSpaceService |
 | Snapshot publication reference | HCM-SV-clinical-collaboration-space-service |
 | ArchiMate semantic ID | id-18a2039b1b8f5d578679c60daaa0ee71 |
 | Legacy identity evidence | No legacy allocation |
@@ -3284,8 +3284,8 @@ Embeds clinical summaries in collaboration feeds.
 | Source capture key | service:collaboration-clinical-summary-resolution |
 | canonicalId | 6a25de08f1b5461b86bd410ea21b80a6 |
 | displayName | Collaboration Clinical Summary Resolution |
-| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.CollaborationClinicalSummaryResolution |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.SV-CollaborationClinicalSummaryResolution |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.ClinicalContextCollaboration.InConversationLhrQueryResolution.CollaborationClinicalSummaryResolution |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.CT3-BEC-ClinicalContextCollaboration.FEAT-InConversationLhrQueryResolution.SV-CollaborationClinicalSummaryResolution |
 | Snapshot publication reference | HCM-SV-collaboration-clinical-summary-resolution |
 | ArchiMate semantic ID | id-8a77a391a9b95912b0a494a96d90f67a |
 | Legacy identity evidence | No legacy allocation |
@@ -3316,8 +3316,8 @@ Governs space lifecycles and membership.
 | Source capture key | service:collaboration-space-governance-service |
 | canonicalId | f94eef008b214ed88ff92bc64640ccb0 |
 | displayName | Collaboration Space Governance Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.CollaborationSpaceGovernanceService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.SV-CollaborationSpaceGovernanceService |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalCollaboration.ClinicalContextCollaboration.ZeroPhiCollaborationMetadataGovernance.CollaborationSpaceGovernanceService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalCollaboration.CT3-BEC-ClinicalContextCollaboration.FEAT-ZeroPhiCollaborationMetadataGovernance.SV-CollaborationSpaceGovernanceService |
 | Snapshot publication reference | HCM-SV-collaboration-space-governance-service |
 | ArchiMate semantic ID | id-66a6f7298e5e5a7eb602b505517bca41 |
 | Legacy identity evidence | No legacy allocation |
@@ -3348,8 +3348,8 @@ Exposes concept validation lookups.
 | Source capture key | service:terminology-concept-resolution-service |
 | canonicalId | 3be22abcc49045c7a609bdf6428fe15a |
 | displayName | Terminology Concept Resolution Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.TerminologyConceptResolutionService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.SV-TerminologyConceptResolutionService |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.ClinicalKnowledgeRequestAdministration.ClinicalConceptResolution.TerminologyConceptResolutionService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.CT3-BEC-ClinicalKnowledgeRequestAdministration.FEAT-ClinicalConceptResolution.SV-TerminologyConceptResolutionService |
 | Snapshot publication reference | HCM-SV-terminology-concept-resolution-service |
 | ArchiMate semantic ID | id-2391b2f33a8456ffb135b331e7e333e4 |
 | Legacy identity evidence | No legacy allocation |
@@ -3380,8 +3380,8 @@ Translates codes across terminology systems.
 | Source capture key | service:terminology-mapping-service |
 | canonicalId | 27dfb51817344e17ab78aa6f33f959ba |
 | displayName | Terminology Mapping Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.TerminologyMappingService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.SV-TerminologyMappingService |
+| friendlyName | SharedInformationAndCoordinationEnablement.ClinicalKnowledgeServices.ClinicalKnowledgeRequestAdministration.BidirectionalTerminologyMapping.TerminologyMappingService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-ClinicalKnowledgeServices.CT3-BEC-ClinicalKnowledgeRequestAdministration.FEAT-BidirectionalTerminologyMapping.SV-TerminologyMappingService |
 | Snapshot publication reference | HCM-SV-terminology-mapping-service |
 | ArchiMate semantic ID | id-eda9bcdfca33599cbfb01af28065bf7d |
 | Legacy identity evidence | No legacy allocation |
@@ -3451,8 +3451,8 @@ Provides non-clinical operational messaging channels.
 | Source capture key | service:operational-collaboration-service |
 | canonicalId | 4096602ad3084bc2a9ad9a06276cbcdc |
 | displayName | Operational Collaboration Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.GeneralCollaboration.OperationalCollaborationService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-GeneralCollaboration.SV-OperationalCollaborationService |
+| friendlyName | SharedInformationAndCoordinationEnablement.GeneralCollaboration.OperationalCollaboration.OperationalTeamChatEnablement.OperationalCollaborationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-GeneralCollaboration.CT3-BEC-OperationalCollaboration.FEAT-OperationalTeamChatEnablement.SV-OperationalCollaborationService |
 | Snapshot publication reference | HCM-SV-operational-collaboration-service |
 | ArchiMate semantic ID | id-ad83c410bf525d789704618d1ac8524b |
 | Legacy identity evidence | No legacy allocation |
@@ -3483,8 +3483,8 @@ Discloses search capabilities to clinical user interfaces.
 | Source capture key | service:clinical-information-search-service |
 | canonicalId | ef87ad2b419443a9989849bf18dfb385 |
 | displayName | Clinical Information Search Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationAccess.ClinicalInformationSearchService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess.SV-ClinicalInformationSearchService |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationAccess.GovernedHealthInformationRetrieval.FederatedClinicalQuery.ClinicalInformationSearchService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess.CT3-BEC-GovernedHealthInformationRetrieval.FEAT-FederatedClinicalQuery.SV-ClinicalInformationSearchService |
 | Snapshot publication reference | HCM-SV-clinical-information-search-service |
 | ArchiMate semantic ID | id-0a0509d6bd365c709c58419485df29b4 |
 | Legacy identity evidence | No legacy allocation |
@@ -3585,8 +3585,8 @@ Evaluates access requests across the platform.
 | Source capture key | service:policy-evaluation--authorisation-service |
 | canonicalId | a025ac002b6a461abaac07fcb87f411f |
 | displayName | Policy Evaluation & Authorisation Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.PolicyEvaluationAndAuthorisationService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.SV-PolicyEvaluationAndAuthorisationService |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationControl.PatientHealthInformationRestrictionManagement.HealthInformationAccessAndConsentControl.PolicyEvaluationAndAuthorisationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationControl.CT3-BEC-PatientHealthInformationRestrictionManagement.FEAT-HealthInformationAccessAndConsentControl.SV-PolicyEvaluationAndAuthorisationService |
 | Snapshot publication reference | HCM-SV-policy-evaluation-authorisation-service |
 | ArchiMate semantic ID | id-0b6d1d05c1b5502b96828b0500ee415e |
 | Legacy identity evidence | No legacy allocation |
@@ -3686,8 +3686,8 @@ Securely delivers documents to designated recipient mailboxes.
 | Source capture key | service:addressed-document-delivery-service |
 | canonicalId | 97080460bacf40ef8b6db2091cc3bb6e |
 | displayName | Addressed Document Delivery Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.AddressedDocumentDeliveryService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-AddressedDocumentDeliveryService |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieImplementationManagement.AddressedClinicalDistribution.AddressedDocumentDeliveryService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieImplementationManagement.FEAT-AddressedClinicalDistribution.SV-AddressedDocumentDeliveryService |
 | Snapshot publication reference | HCM-SV-addressed-document-delivery-service |
 | ArchiMate semantic ID | id-05a3a9a9feb85494a9cc9834bb3e2008 |
 | Legacy identity evidence | No legacy allocation |
@@ -3718,8 +3718,8 @@ Emits publish-subscribe clinical event feeds.
 | Source capture key | service:clinical-event-syndication-stream |
 | canonicalId | 337f39bb62d9491bb6e41c4af32b220c |
 | displayName | Clinical Event Syndication Stream |
-| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.ClinicalEventSyndicationStream |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-ClinicalEventSyndicationStream |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieImplementationManagement.EventDrivenSyndication.ClinicalEventSyndicationStream |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieImplementationManagement.FEAT-EventDrivenSyndication.SV-ClinicalEventSyndicationStream |
 | Snapshot publication reference | HCM-SV-clinical-event-syndication-stream |
 | ArchiMate semantic ID | id-95e2411e0cd55f9388d1d3b6be0883d6 |
 | Legacy identity evidence | No legacy allocation |
@@ -3750,8 +3750,8 @@ Resolves distributed record queries.
 | Source capture key | service:federated-health-information-query |
 | canonicalId | b4db5850f7114c968901966b4f6e36f5 |
 | displayName | Federated Health Information Query |
-| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.FederatedHealthInformationQuery |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-FederatedHealthInformationQuery |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieImplementationManagement.ClinicalRecordRetrievalMediation.FederatedHealthInformationQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieImplementationManagement.FEAT-ClinicalRecordRetrievalMediation.SV-FederatedHealthInformationQuery |
 | Snapshot publication reference | HCM-SV-federated-health-information-query |
 | ArchiMate semantic ID | id-c285d5712fe255ccaaaeba2cdae324ae |
 | Legacy identity evidence | No legacy allocation |
@@ -3782,8 +3782,8 @@ Ingress endpoint for regional data contributions.
 | Source capture key | service:hie-submission-gateway-service |
 | canonicalId | 816c1013b609440fb772060396fd2dac |
 | displayName | HIE Submission Gateway Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieSubmissionGatewayService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.SV-HieSubmissionGatewayService |
+| friendlyName | SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement.HieImplementationManagement.DirectSubmissionIngestionAndDelivery.HieSubmissionGatewayService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement.CT3-BEC-HieImplementationManagement.FEAT-DirectSubmissionIngestionAndDelivery.SV-HieSubmissionGatewayService |
 | Snapshot publication reference | HCM-SV-hie-submission-gateway-service |
 | ArchiMate semantic ID | id-5d57cd297e41543b8a7af2c4c6489e12 |
 | Legacy identity evidence | No legacy allocation |
@@ -3880,8 +3880,8 @@ Validates representations for compliance.
 | Source capture key | service:semantic-conformance-verification-service |
 | canonicalId | 3d492f97eb3f4d50a1c448477c61bf2b |
 | displayName | Semantic Conformance Verification Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.SemanticConformanceVerificationService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-SemanticConformanceVerificationService |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.EnterpriseCanonicalReusableModelUtilisationSupport.SemanticConformanceVerification.SemanticConformanceVerificationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.CT3-BEC-EnterpriseCanonicalReusableModelUtilisationSupport.FEAT-SemanticConformanceVerification.SV-SemanticConformanceVerificationService |
 | Snapshot publication reference | HCM-SV-semantic-conformance-verification-service |
 | ArchiMate semantic ID | id-fe6d5a803b2c5bae86d1deaffa2e6bde |
 | Legacy identity evidence | No legacy allocation |
@@ -3912,8 +3912,8 @@ Discloses canonical model definitions.
 | Source capture key | service:semantic-model-definition-service |
 | canonicalId | 0f6b41152f294a87b84970c74ab5a014 |
 | displayName | Semantic Model Definition Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.SemanticModelDefinitionService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.SV-SemanticModelDefinitionService |
+| friendlyName | SharedInformationAndCoordinationEnablement.InformationDesignGovernance.EnterpriseCanonicalReusableModelDesign.InformationStandardsAndSemanticGovernance.SemanticModelDefinitionService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationDesignGovernance.CT3-BEC-EnterpriseCanonicalReusableModelDesign.FEAT-InformationStandardsAndSemanticGovernance.SV-SemanticModelDefinitionService |
 | Snapshot publication reference | HCM-SV-semantic-model-definition-service |
 | ArchiMate semantic ID | id-77725f994de4501ca9714c56538bb33d |
 | Legacy identity evidence | No legacy allocation |
@@ -3977,8 +3977,8 @@ Exposes immediate active clinical summaries.
 | Source capture key | service:active-problem--allergy-summary-query |
 | canonicalId | a382bc84c1d043849b8cd8ebe8a482c1 |
 | displayName | Active Problem & Allergy Summary Query |
-| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.ActiveProblemAndAllergySummaryQuery |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.SV-ActiveProblemAndAllergySummaryQuery |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LongitudinalClinicalRecordAdministration.ActiveClinicalRecordAccess.ActiveProblemAndAllergySummaryQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-LongitudinalClinicalRecordAdministration.FEAT-ActiveClinicalRecordAccess.SV-ActiveProblemAndAllergySummaryQuery |
 | Snapshot publication reference | HCM-SV-active-problem-allergy-summary-query |
 | ArchiMate semantic ID | id-b439a9589d195390b7f114ff47156a8b |
 | Legacy identity evidence | No legacy allocation |
@@ -4009,8 +4009,8 @@ Provides governed historical record retrieval for authorised clinical and legal 
 | Source capture key | service:historical-clinical-record-access |
 | canonicalId | be4938981b43403282694631b40f0bb2 |
 | displayName | Historical Clinical Record Access |
-| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.HistoricalClinicalRecordAccess |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.SV-HistoricalClinicalRecordAccess |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LongitudinalClinicalRecordAdministration.DurableClinicalRecordPreservation.HistoricalClinicalRecordAccess |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-LongitudinalClinicalRecordAdministration.FEAT-DurableClinicalRecordPreservation.SV-HistoricalClinicalRecordAccess |
 | Snapshot publication reference | HCM-SV-historical-clinical-record-access |
 | ArchiMate semantic ID | id-8a3a595aebf057fcb4ef2bfd02d0b50d |
 | Legacy identity evidence | No legacy allocation |
@@ -4041,8 +4041,8 @@ Discloses the comprehensive clinical timeline to authorised clinicians.
 | Source capture key | service:longitudinal-clinical-record-query |
 | canonicalId | df10431b93bf47dfae2b8ec7b3e6552b |
 | displayName | Longitudinal Clinical Record Query |
-| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LongitudinalClinicalRecordQuery |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.SV-LongitudinalClinicalRecordQuery |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.LongitudinalClinicalRecordAdministration.LongitudinalHealthRecordLhrAssembly.LongitudinalClinicalRecordQuery |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-LongitudinalClinicalRecordAdministration.FEAT-LongitudinalHealthRecordLhrAssembly.SV-LongitudinalClinicalRecordQuery |
 | Snapshot publication reference | HCM-SV-longitudinal-clinical-record-query |
 | ArchiMate semantic ID | id-3bbfba99153650739023e87ba668f90c |
 | Legacy identity evidence | No legacy allocation |
@@ -4147,8 +4147,8 @@ Ingests GP event summaries into the HIE.
 | Source capture key | service:primary-care-summary-ingress |
 | canonicalId | 7f4ca66b911e48bc8bf859e239f5ba00 |
 | displayName | Primary Care Summary Ingress |
-| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.PrimaryCareCoordination.PrimaryCareSummaryIngress |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-PrimaryCareCoordination.SV-PrimaryCareSummaryIngress |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.PrimaryCareCoordination.GeneralPracticeSharedRecordIngestion.PrimaryCareSummaryIngress |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-PrimaryCareCoordination.FEAT-GeneralPracticeSharedRecordIngestion.SV-PrimaryCareSummaryIngress |
 | Snapshot publication reference | HCM-SV-primary-care-summary-ingress |
 | ArchiMate semantic ID | id-c744982f402e5146b024bbae4114f07b |
 | Legacy identity evidence | No legacy allocation |
@@ -4179,8 +4179,8 @@ Ingests remote patient data streams into the LHR.
 | Source capture key | service:remote-telemetry-ingress |
 | canonicalId | 89014429b6454ced82c26cbe777fa33a |
 | displayName | Remote Telemetry Ingress |
-| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring.RemoteTelemetryIngress |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring.SV-RemoteTelemetryIngress |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring.RemoteTelemetryIngestion.RemoteTelemetryIngress |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring.FEAT-RemoteTelemetryIngestion.SV-RemoteTelemetryIngress |
 | Snapshot publication reference | HCM-SV-remote-telemetry-ingress |
 | ArchiMate semantic ID | id-d3aec82635285358868a1812552a97e1 |
 | Legacy identity evidence | No legacy allocation |
@@ -4211,8 +4211,8 @@ Binds virtual session identifiers to patient encounters.
 | Source capture key | service:virtual-encounter-context-resolution |
 | canonicalId | db1dfa6db11342128e82df186877c477 |
 | displayName | Virtual Encounter Context Resolution |
-| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring.VirtualEncounterContextResolution |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring.SV-VirtualEncounterContextResolution |
+| friendlyName | SharedInformationAndCoordinationEnablement.PatientClinicalRecord.RemotePatientMonitoring.VirtualCareSessionContextBinding.VirtualEncounterContextResolution |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PatientClinicalRecord.CT3-BEC-RemotePatientMonitoring.FEAT-VirtualCareSessionContextBinding.SV-VirtualEncounterContextResolution |
 | Snapshot publication reference | HCM-SV-virtual-encounter-context-resolution |
 | ArchiMate semantic ID | id-374bb4912c525ac2956131577d7d14d2 |
 | Legacy identity evidence | No legacy allocation |
@@ -4243,8 +4243,8 @@ Delivers contextual health and operational information for presentation.
 | Source capture key | service:contextual-presentation-service |
 | canonicalId | 905d44b44f434fa4974e09dcafac016a |
 | displayName | Contextual Presentation Service |
-| friendlyName | SharedInformationAndCoordinationEnablement.PresentationServices.ContextualPresentationService |
-| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PresentationServices.SV-ContextualPresentationService |
+| friendlyName | SharedInformationAndCoordinationEnablement.PresentationServices.ContextualInformationPresentation.LongitudinalClinicalAndOperationalPresentation.ContextualPresentationService |
+| canonicalName | CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-PresentationServices.CT3-BEC-ContextualInformationPresentation.FEAT-LongitudinalClinicalAndOperationalPresentation.SV-ContextualPresentationService |
 | Snapshot publication reference | HCM-SV-contextual-presentation-service |
 | ArchiMate semantic ID | id-e021def7dcd95db0bda2eb7d9b6e369d |
 | Legacy identity evidence | No legacy allocation |
@@ -4743,3 +4743,42 @@ The exposed boundary does not permit callers to assign themselves audit platform
 Responsibility/framing context: [Significant Activity Audit Capture](business-enabling-capabilities.md#hcm-bec-significant-activity-audit-capture). This assertion retains Proposed placement standing.
 
 Exact source locators, provenance, name/identity history and deferred assertions are retained in [architecture.json](architecture.json) (record `proposal:service-mandatory-audit-evidence-capture`) and the element's version-qualified Properties.
+
+## [Business Service] Identifier Create
+
+Accepted as submitted in CR-006 of [run-001](../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md). No additional definition, responsibility or standing is inferred. Machine-readable source: [accepted ingestion capture](accepted-ingestion-1.0.8.json).
+
+| Field | Value |
+| --- | --- |
+| representationId | id-fddda503b8f0438e995465cd93204326 |
+| archimateType | BusinessService |
+| canonicalId | 063b7a6b4ad549428a7566a4ce2c5de5 |
+| displayName | [Business Service] Identifier Create |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentifierCapture.IdentifierCreate |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentifierCapture.SV-IdentifierCreate |
+
+## [Business Service] Identifier Update
+
+Accepted as submitted in CR-007 of [run-001](../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md). No additional definition, responsibility or standing is inferred. Machine-readable source: [accepted ingestion capture](accepted-ingestion-1.0.8.json).
+
+| Field | Value |
+| --- | --- |
+| representationId | id-0088d61ccfcf4962b3aab8bc3b96021d |
+| archimateType | BusinessService |
+| canonicalId | 281155a0820942b884a13fa08d2e0b04 |
+| displayName | [Business Service] Identifier Update |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentifierCapture.IdentifierUpdate |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentifierCapture.SV-IdentifierUpdate |
+
+## [Business Service] Verify Identity Source
+
+Accepted as submitted in CR-009 of [run-001](../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md). No additional definition, responsibility or standing is inferred. Machine-readable source: [accepted ingestion capture](accepted-ingestion-1.0.8.json).
+
+| Field | Value |
+| --- | --- |
+| representationId | id-9bfedbfd5b404694a2224c039fa5d4c4 |
+| archimateType | BusinessService |
+| canonicalId | b95f652107f4420b86cc10fb893c9b01 |
+| displayName | [Business Service] Verify Identity Source |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentitySourceAndCorrectionLineage.VerifyIdentitySource |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentitySourceAndCorrectionLineage.SV-VerifyIdentitySource |

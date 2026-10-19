@@ -26,6 +26,7 @@ remains the only current-release authority.
 - [Features](features.md)
 - [Functions](functions.md), [Services](services.md), [Processes](processes.md)
 - [Relationship assertions](relationships.md)
+- [Explicit Home strategy](../architecture-modelling-strategy.md) and fixed [Business Home migration register](business-homes.json)
 - [Motivation correspondence](motivation.md), with definitions linked to their maintained sources
 - [Coverage and representation boundaries](coverage.md)
 - [Discrepancies and human review](discrepancies.json)
@@ -44,11 +45,28 @@ and Pending Adjudication records remain available without becoming current facts
 The recovered catalogue supplies 946 source records: 845 current, 69 pending
 adjudication and 32 superseded. Semantic standing is independently 716 Canonical,
 227 Proposed and three Candidate. All 1,096 relationship assertions survive:
-634 native edges and 462 metadata/findings. Framing, responsibility and enablement
+634 native source edges and 462 metadata/findings. Release 1.0.14 adds 208
+explicit directed Association «Home» assertions from the separate fixed migration
+register; it leaves all 1,096 original assertions unchanged. Of 319 existing
+Business behaviours, 93 lack deterministic Home evidence and 18 have competing
+plausible Feature contexts; none receives a guessed Home. Framing, responsibility and enablement
 must not silently become Composition. The 214 unbound 1.0.4 objects remain a
 separate historical reference population, not a competing current catalogue.
 
 ## Source correspondence and maintenance
+
+### Authorised 1.0.8 ingestion — RAD-1.0.9
+
+The [accepted ingestion capture](accepted-ingestion-1.0.8.json) extends the existing
+resource captures with the nine accepted elements, 17 explicit relationships and
+four authorised View presentations from run-001/run-002. It owns the new persisted
+Canonical IDs and derived names. [Products](products.md) retains the four native
+Products without inferring additional responsibility or hierarchy. Existing
+captures, identities and unrelated Views remain preserved. Source history and
+the [execution audit](../../../archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/)
+retain the original adjudicated reviews, Product naming stop and resolving decision.
+The 93 unestablished and 18 ambiguous baseline Home cases remain unresolved and
+non-blocking; Home has no inferred naming or navigation consequences.
 
 [architecture.json](architecture.json) preserves the reconciled structured
 records, definitions, assertions, status, aliases and provenance exactly. It is
@@ -137,3 +155,10 @@ The [workspace boundaries](../../../archimate/README.md) separate reusable frame
 published representations and incoming change inputs. Frozen locators remain
 verbatim and are resolved by an explicit historical-location map. Increment 2
 comparison/reconciliation is future work and is not implemented by this migration.
+
+The accepted [explicit Home decision](../architecture-modelling-strategy.md) is
+maintained separately from the frozen source-era capture. `business-homes.json`
+is the reviewed one-time migration result and its exact evidence, not an
+inference engine or a new naming/navigation rule. Source-era unresolved Feature
+association fields remain historical capture evidence; Home does not assert
+Realization, ownership or containment.

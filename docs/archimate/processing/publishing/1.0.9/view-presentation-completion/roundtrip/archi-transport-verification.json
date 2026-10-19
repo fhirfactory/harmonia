@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Actual Archi 5.10 no-edit transport of the corrected RAD-1.0.9 candidate",
+  "operator": "Codex, installed Archi CLI; no human rendering attestation",
+  "published_sha256": "b9c63aef051f5424b937c7b01951cabd38389c4352610a8331a0d40e449dbf24",
+  "exported_sha256": "6e5fb85f3b4a3d10d7c14514a33b0aea9c7e2a9154814385426522e9e0860a8a",
+  "elements": 1308,
+  "relationships": 1077,
+  "views": 1198,
+  "objects": {
+    "node": 3923,
+    "connection": 1473
+  },
+  "all_identity_naming_properties": "EXACT",
+  "native_semantic_content": "EXACT",
+  "home_assertions": 212,
+  "all_view_geometry_and_connections": "EXACT",
+  "protected_authored_views": "EXACT",
+  "navigation_homes": "EXACT",
+  "raw_comparator_status": "DIFFERENCES",
+  "raw_classifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 65,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 4288,
+    "SEMANTIC DIFFERENCE": 1669,
+    "UNEXPLAINED DIFFERENCE": 4681
+  },
+  "unchanged_historical_semantic_text_findings": 1669,
+  "human_rendering": "PENDING SOLUTION ARCHITECT INSPECTION"
+}

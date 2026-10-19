@@ -109,6 +109,17 @@ the durable metamodel authority. Realization-to-Feature logical context is outsi
 this decision.
 
 ### 1.2 Hierarchy Naming & Uniqueness Rules
+
+The [Architecture Modelling Strategy](../../governance/architecture-modelling-strategy.md#explicit-architectural-home)
+governs explicit logical Home through directed Association specialised as
+`Home`. Business behaviour → Feature Home is distinct from what that behaviour
+realises and from Capability/Feature ownership. Realization alone establishes
+no Home, logical containment, parentage, ownership, naming context or navigation
+context. The one-time existing-baseline normalisation preserves these
+distinctions and all native relationships. This adds no requirement for every
+Business behaviour to have a Feature Home and changes no established
+Capability-scoped responsibility.
+
 1. **Global Uniqueness**: Capability names across CT1, CT2 and CT3 are globally unique across the entire Harmonia architecture.
 2. **Feature Scoping**: Feature names must be unique within their owning CT1 Capability hierarchy. An unresolved CT1 ancestor SHALL be recorded as unresolved rather than assigned speculatively.
 3. **No Disconnected Elements**: Business Functions, Business Services, and Business Processes must **never** be modelled as free-standing global catalogues disconnected from an owning Capability or Feature context.

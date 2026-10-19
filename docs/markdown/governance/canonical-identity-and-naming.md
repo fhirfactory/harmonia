@@ -88,7 +88,15 @@ invent that spelling. The Solution Architect explicitly established
 provenance. This lexical operation supplies no architectural ancestry.
 
 The existing Capability/Feature/behaviour capture's `parent_key` and `owner_key`
-establish qualified context, preserving each assertion's standing. The existing
+establish qualified context, preserving each assertion's standing, except where
+the explicitly governed [Home precedence](architecture-modelling-strategy.md#home-derived-naming-and-navigation)
+applies. A Business Function, Process or Service with one established explicit
+Home to a Feature SHALL use the Home's recorded semantic ancestry, the Home
+Feature, and the local element for both qualified names. Home overrides any
+differing responsibility context for naming only; it does not change responsibility.
+Both names use the existing lexical derivation below, with formal qualifiers only
+in `canonicalName`. `displayName` and `canonicalId` remain unchanged. Missing or
+ambiguous Home leaves the existing context untouched. The existing
 formal vocabulary supplies `CT1`/`CT2`/`CT3`, the existing `BEC`/`EC` category
 qualification where applicable, and `FEAT`, `FN`, `SV`, `PR` terminal qualification.
 Business Capability tokens retain the existing unadorned `CTn` tier qualification.
@@ -103,9 +111,26 @@ components. Proposed context remains Proposed; naming does not approve placement
 `friendlyName` and `canonicalName` SHALL be persisted in the resource source and
 validated against deterministic derivation from its governed naming inputs and
 context. A mismatch fails validation; validation does not repair or overwrite it.
+Current Home-derived resource fields and their prior-name provenance are persisted
+in [resource amendments](baseline/home-derived-metadata.json), while the original
+captures and reconciliation history remain unchanged. A mismatch with explicit
+Home derivation fails validation; responsibility cannot override Home.
 Renames must preserve useful historical naming through the existing name-alias and
 source-provenance mechanisms. Identifier aliases and name aliases remain distinct.
 Existing name uniqueness rules and unresolved findings remain applicable.
+
+### Native Product canonical-name vocabulary
+
+**Solution Architect decision — 2026-10-19, authorised 1.0.8 reconciliation toward
+RAD-1.0.9:** native ArchiMate `Product` is an authorised canonical-name element
+class and SHALL use the formal type qualifier `PRODUCT`. All other canonical-name
+derivation rules above apply unchanged, including lexical spelling and qualification
+only by genuine governed context. This decision establishes no Product-specific
+naming algorithm, identity mechanism, hierarchy rule or architectural interpretation.
+Product retains native type `Product`; no additional Harmonia subtype is introduced.
+
+This resolves the Product-vocabulary execution stop affecting run-001 CR-002–005.
+The stop and subsequent decision are retained in the ingestion reconciliation audit.
 
 ## Legacy fields and types
 

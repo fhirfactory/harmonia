@@ -79,6 +79,17 @@ Where established and applicable, future structured properties may carry existin
 
 ## 5. Relationship profile and direction
 
+The accepted [Architecture Modelling Strategy](architecture-modelling-strategy.md)
+governs semantic compatibility of specialisations and explicit architectural
+Home. Home is a directed native Association, specialised as `Home`, from an
+element to its logical architectural home. It is independent of Realization,
+structural containment and ownership. The accepted
+[Home-derived naming/navigation decision](architecture-modelling-strategy.md#home-derived-naming-and-navigation)
+makes an applicable explicit Home authoritative for those projections while
+preserving the independent responsibility assertions. No relationship Name
+is required to encode the specialisation. Publication SHALL replay explicit
+reviewed Home assertions only; neither native edges nor presentation infer it.
+
 Every relationship needs source evidence, typed endpoints, bounded meaning, direction, standing and identity. Validate both native ArchiMate legality and RAD meaning; XSD validation alone cannot establish either. The following are translation rules, not authority for new instances.
 
 | RAD assertion | Proposed representation and direction | Boundary |

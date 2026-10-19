@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "command": "timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/framework/tools/verify_baseline_outputs.py",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "result": "All 15 generated outputs reproduce byte-for-byte in independent processes; release unchanged.",
+  "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-independent-reproduction.log",
+  "log_sha256": "73f5284e9e7ae8ce7602b306590e74c9dc03c15ecc0fa6551af95eb8e53deb95",
+  "generated_output_sha256": {
+    "docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml": "9f120d6fc36d7e659f3799b0af5f7c1d4544b6591abd31e45ccb7393fb0162af",
+    "docs/archimate/processing/publishing/1.0.9/archi-inspection-guide.md": "cf278132a88d26d48523a27aea91a4faa1ce9a2c818c72bc30c763aa6c6c0749",
+    "docs/archimate/processing/publishing/1.0.9/publication-validation-1.0.9.json": "9875044120a2d8e709fce57a6dbed825d15cd1dbe594e26b7507383cab701f8b",
+    "docs/archimate/processing/publishing/1.0.9/reconciliation-publication.md": "bd26f97bcbc0c2b2f24a48e16f296f5f3793d23cf6d1a564e7b1b6fae5961efa",
+    "docs/markdown/governance/baseline/business-capabilities.md": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1",
+    "docs/markdown/governance/baseline/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d",
+    "docs/markdown/governance/baseline/features.md": "9a845e3ded68fe4b2628c9c41ac53810ba36ef6cda213c39c5719763f16fe318",
+    "docs/markdown/governance/baseline/functions.md": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e",
+    "docs/markdown/governance/baseline/motivation.md": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76",
+    "docs/markdown/governance/baseline/processes.md": "97c77be1ce3b40f7a685ad6819e8d487c5b8774c07d9c06b7378494ab2d43210",
+    "docs/markdown/governance/baseline/products.md": "d7d057220cd60d212885fa068c3e3497646a1464dcbe8832b08f9b2e9a012c2e",
+    "docs/markdown/governance/baseline/relationships.md": "91086a171b30590f0ff38ab25964b2dce39a7ab5e04ba8fbddfde0cefc07c0b4",
+    "docs/markdown/governance/baseline/services.md": "4febd6171196dd3ee018efe555cbe86d7964b011cc4680a570c4cd0d6cd45ac9"
+  },
+  "note": "This evidence is separate from the reproduced report and guide; neither report hashes nor consumes this file."
+}

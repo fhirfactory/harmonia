@@ -1,0 +1,42 @@
+[
+  {
+    "original_path": "docs/archimate/README.md",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/README.md",
+    "sha256": "1dbd33f8387aff356a3d8d7b7b7526f989911b71514f25c00b56e90accdf45ab"
+  },
+  {
+    "original_path": "docs/archimate/exchange/publish/README.md",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/exchange/publish/README.md",
+    "sha256": "46ce94917f2b9c6fd1be92be83a492c28483fb447e71958a533f864e6450a496"
+  },
+  {
+    "original_path": "docs/archimate/framework/README.md",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/README.md",
+    "sha256": "98e45f5780fe04c70061bc9e5a7f380561ac2ae54a5da5eccb2b1f68a71b1014"
+  },
+  {
+    "original_path": "docs/archimate/framework/historical-locations.json",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/historical-locations.json",
+    "sha256": "612f5490a15fe0194de74f2fa89605c4712a8290662504340a984416e1316c8e"
+  },
+  {
+    "original_path": "docs/archimate/framework/tools/governed_metadata.py",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/tools/governed_metadata.py",
+    "sha256": "b4e8d47def3e774a247fd9ee35077c8a7d0c87978825e1cd9f4df4d13b360e57"
+  },
+  {
+    "original_path": "docs/archimate/framework/tools/report_baseline.py",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/tools/report_baseline.py",
+    "sha256": "7c62cbaada9a80d2ee10447001e06cd5744382833bda90e1947b8211aab6d2c8"
+  },
+  {
+    "original_path": "docs/archimate/framework/tools/workspace_paths.py",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/framework/tools/workspace_paths.py",
+    "sha256": "3f65b95b6fc53dcaf99627359415e9368a7007ac96048bcb1394096e8f0e35f5"
+  },
+  {
+    "original_path": "docs/archimate/processing/README.md",
+    "snapshot": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reference-consumers-before/docs/archimate/processing/README.md",
+    "sha256": "4be0f10eb8baf9d4c4286b63e8c2ae6de07efb24f04dcb6a952749babf647e2e"
+  }
+]

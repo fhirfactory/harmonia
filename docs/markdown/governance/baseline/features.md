@@ -6641,3 +6641,16 @@ Specific audit authority is not borrowed from the audited identity or generalise
 Responsibility/framing context: [Significant Activity Audit Capture](business-enabling-capabilities.md#hcm-bec-significant-activity-audit-capture). This assertion retains Proposed placement standing.
 
 Exact source locators, provenance, name/identity history and deferred assertions are retained in [architecture.json](architecture.json) (record `proposal:feature-mandatory-significant-activity-audit-capture`) and the element's version-qualified Properties.
+
+## [Feature] Identifier Capture
+
+Accepted as submitted in CR-001 of [run-001](../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md). No additional definition, responsibility or standing is inferred. Machine-readable source: [accepted ingestion capture](accepted-ingestion-1.0.8.json).
+
+| Field | Value |
+| --- | --- |
+| representationId | id-727a264026584f80bc3304ff8383dc92 |
+| archimateType | Capability |
+| canonicalId | 3cae3c4810974c5f8ee5a4c942f38b07 |
+| displayName | [Feature] Identifier Capture |
+| friendlyName | EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentifierCapture |
+| canonicalName | CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentifierCapture |

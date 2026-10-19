@@ -18,7 +18,7 @@ import recover_v02 as recovery
 class BaselineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.outputs, cls.baseline, cls.report = s.publish()
+        cls.outputs, cls.baseline, cls.report = s.publish(reconciled=False)
         cls.data = cls.outputs[s.metadata.model_path()]
 
     def root(self):
@@ -270,7 +270,7 @@ class BaselineTests(unittest.TestCase):
 
     def test_independent_generation_preserves_every_output_byte_and_does_not_bump_release(self):
         before = (s.ROOT / "architecture-release.json").read_bytes()
-        again, _, _ = s.publish()
+        again, _, _ = s.publish(reconciled=False)
         self.assertEqual(self.outputs, again)
         self.assertEqual(before, (s.ROOT / "architecture-release.json").read_bytes())
 

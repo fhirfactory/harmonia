@@ -95240,6 +95240,34 @@ Clinical events—such as patient admissions, pathology test orders, critical la
     <relationship identifier="id-0849f31d6d7d4f7eb1e484d7437e5cd7" source="id-0088d61ccfcf4962b3aab8bc3b96021d" target="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="Flow" />
     <relationship identifier="id-37f6913198e2434db5309c1c8e36fbc0" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Realization" />
     <relationship identifier="id-c53c42ba0a4f437f9cb76a4c1a701816" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-c645a859ac2c4447ad5ae850cf384bf3" xsi:type="Serving" />
+    <relationship identifier="id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf" source="id-c645a859ac2c4447ad5ae850cf384bf3" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Association" isDirected="true">
+      <properties>
+        <property propertyDefinitionRef="specialization">
+          <value xml:lang="en">Home</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-a21144ee285f467982d13c39b49228dd" source="id-0088d61ccfcf4962b3aab8bc3b96021d" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Association" isDirected="true">
+      <properties>
+        <property propertyDefinitionRef="specialization">
+          <value xml:lang="en">Home</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-3f9d4356f4b84ef7b45fe3435d27fde8" source="id-fddda503b8f0438e995465cd93204326" target="id-727a264026584f80bc3304ff8383dc92" xsi:type="Association" isDirected="true">
+      <properties>
+        <property propertyDefinitionRef="specialization">
+          <value xml:lang="en">Home</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-d559bbf53430465e90f47c40593403a5" source="id-9bfedbfd5b404694a2224c039fa5d4c4" target="id-bdf18b5e580b5b85a34357a3b21f36db" xsi:type="Association" isDirected="true">
+      <properties>
+        <property propertyDefinitionRef="specialization">
+          <value xml:lang="en">Home</value>
+        </property>
+      </properties>
+    </relationship>
     <relationship identifier="id-8ef442d225e55f00b4eb94244a6b9d47" source="id-839281bb947054459ba35072f71c6885" target="id-eea28ef3bab358869d143da0c838865a" xsi:type="Realization">
       <documentation xml:lang="en">Snapshot predicate: realises_feature; assertion status: Proposed; currentness: preserved historical assertion.
 
@@ -132463,6 +132491,10 @@ Clinical events—such as patient admissions, pathology test orders, critical la
       <item identifierRef="id-0849f31d6d7d4f7eb1e484d7437e5cd7" />
       <item identifierRef="id-37f6913198e2434db5309c1c8e36fbc0" />
       <item identifierRef="id-c53c42ba0a4f437f9cb76a4c1a701816" />
+      <item identifierRef="id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf" />
+      <item identifierRef="id-a21144ee285f467982d13c39b49228dd" />
+      <item identifierRef="id-3f9d4356f4b84ef7b45fe3435d27fde8" />
+      <item identifierRef="id-d559bbf53430465e90f47c40593403a5" />
     </item>
     <item>
       <label xml:lang="en">Views</label>
@@ -137920,6 +137952,9 @@ Clinical events—such as patient admissions, pathology test orders, critical la
     </propertyDefinition>
     <propertyDefinition identifier="propid-42" type="string">
       <name>Release Scope</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="specialization" type="string">
+      <name>Specialization</name>
     </propertyDefinition>
     <propertyDefinition identifier="propid-22" type="string">
       <name>archimateType</name>
@@ -256634,6 +256669,15 @@ Select this View in the model tree and open its Documentation. The frozen source
             </font>
           </style>
         </connection>
+        <connection identifier="id-95cad3e7136d4f4582fc2614888f218c" relationshipRef="id-d559bbf53430465e90f47c40593403a5" xsi:type="Relationship" source="id-5a05920f7422487c930faff16187327b" target="id-030fc162b19b41c8930dac9f9c901bf0">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="300" y="36" />
+        </connection>
       </view>
       <view identifier="id-216c4ab0757b45b3894e7e0c2594b9f9" xsi:type="Diagram">
         <name xml:lang="en">Identifier Capture - Feature realisation</name>
@@ -256701,6 +256745,15 @@ Select this View in the model tree and open its Documentation. The frozen source
           <bendpoint x="516" y="204" />
           <bendpoint x="468" y="204" />
         </connection>
+        <connection identifier="id-89e5971d1e2a40c38b37c9fa1f9e3508" relationshipRef="id-3f9d4356f4b84ef7b45fe3435d27fde8" xsi:type="Relationship" source="id-4f78c588c80d42e0b4f52e765dc76ff2" target="id-3fd6725d68f4476884cf44f9fbf09794">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="156" y="48" />
+        </connection>
         <connection identifier="id-f64ce7c8aac347b2856dbceba42237d6" relationshipRef="id-69eb864f56df4d928f8abc3f7ab4e834" xsi:type="Relationship" source="id-d0a1079102c14d26901ace75bd379281" target="id-3fd6725d68f4476884cf44f9fbf09794">
           <style>
             <lineColor r="0" g="0" b="0" />
@@ -256719,6 +256772,15 @@ Select this View in the model tree and open its Documentation. The frozen source
           <bendpoint x="480" y="132" />
           <bendpoint x="480" y="192" />
         </connection>
+        <connection identifier="id-21667f305c0f4951b72b720272467c86" relationshipRef="id-a21144ee285f467982d13c39b49228dd" xsi:type="Relationship" source="id-d0a1079102c14d26901ace75bd379281" target="id-3fd6725d68f4476884cf44f9fbf09794">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="156" y="120" />
+        </connection>
         <connection identifier="id-b1f2f750233f4717b5bbedcf413e3c61" relationshipRef="id-c0f84a8e4c8d496580a68cac4823c58c" xsi:type="Relationship" source="id-a222a0f6a6804944b188e32ee5caa9a5" target="id-3fd6725d68f4476884cf44f9fbf09794">
           <style>
             <lineColor r="0" g="0" b="0" />
@@ -256726,6 +256788,15 @@ Select this View in the model tree and open its Documentation. The frozen source
               <color r="0" g="0" b="0" />
             </font>
           </style>
+        </connection>
+        <connection identifier="id-c045914e226d44dcb1667c1db75057ef" relationshipRef="id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf" xsi:type="Relationship" source="id-a222a0f6a6804944b188e32ee5caa9a5" target="id-3fd6725d68f4476884cf44f9fbf09794">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="156" y="192" />
         </connection>
         <connection identifier="id-e11b8af91143439bbb54ff0be650fb79" relationshipRef="id-c53c42ba0a4f437f9cb76a4c1a701816" xsi:type="Relationship" source="id-8e77730d5e7147bea761ee18da71358c" target="id-a222a0f6a6804944b188e32ee5caa9a5">
           <style>

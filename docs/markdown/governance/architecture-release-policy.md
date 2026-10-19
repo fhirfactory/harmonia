@@ -30,6 +30,22 @@ independent and SHALL NOT determine or change this release value.
 
 ## Mechanism and repository convention
 
+### Explicit RAD-1.0.9 reconciliation decision — 2026-10-19
+
+The Solution Architect explicitly establishes the authorised 1.0.8 reconciliation
+as **RAD-1.0.9**, with architecture baseline **1.0.8** as its predecessor. The
+intervening governance/tooling sequence, recorded through 1.0.14, remains preserved
+historical evidence and does not determine this RAD version. For this accepted
+change set the root authority records `version=1.0.9`, `previous_version=1.0.8`.
+Publication reads that authority; it must not derive the RAD number from the
+governance/tooling evidence sequence. The normal patch mechanism continues from
+the explicitly established RAD authority. No second release allocator is introduced.
+
+The Solution Architect's Home-derived naming/navigation decision completes this
+currently unsigned RAD-1.0.9 candidate within the same accepted change set.
+Regeneration and validation retain `version=1.0.9`, `previous_version=1.0.8`;
+they SHALL NOT advance this completion to RAD-1.0.10. Final sign-off remains pending.
+
 A small root JSON file follows existing repository JSON conventions without
 coupling architectural governance to Maven. The standard-library Python helper
 under [scripts/](../../../scripts/architecture_release.py) follows the repository's

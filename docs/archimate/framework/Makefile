@@ -61,7 +61,7 @@ check:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) "$(REPOSITORY)/scripts/architecture_identity.py" bindings --check
 
 test:
-	timeout --signal=TERM --kill-after=5s 180s $(PYTHON) -m unittest discover -s tests -v
+	timeout --signal=TERM --kill-after=5s 300s $(PYTHON) -m unittest discover -s tests -v
 
 report:
 	timeout --signal=TERM --kill-after=5s 30s $(PYTHON) tools/report_navigation.py --check

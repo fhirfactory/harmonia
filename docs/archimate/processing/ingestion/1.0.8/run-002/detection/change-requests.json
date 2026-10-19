@@ -1,0 +1,44 @@
+{
+  "review_run": "1.0.8/run-002",
+  "predecessor": "1.0.8/run-001",
+  "governance_release": "1.0.14",
+  "scope": "Updated explicit authored Home and View appearances only; original proposal evidence retained in predecessor.",
+  "crs": [
+    {
+      "id": "CR-001",
+      "description": "Preserve authored Home: [Business Process] Identifier Verification",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved"
+    },
+    {
+      "id": "CR-002",
+      "description": "Preserve authored Home: [Business Service] Identifier Update",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved"
+    },
+    {
+      "id": "CR-003",
+      "description": "Preserve authored Home: [Business Service] Identifier Create",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved"
+    },
+    {
+      "id": "CR-004",
+      "description": "Preserve authored Home: [Business Service] Verify Identity Source",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved"
+    },
+    {
+      "id": "CR-005",
+      "description": "Preserve added Home connections in CR-035 View",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved"
+    },
+    {
+      "id": "CR-006",
+      "description": "Preserve added Home connections in CR-036 View",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved"
+    }
+  ]
+}

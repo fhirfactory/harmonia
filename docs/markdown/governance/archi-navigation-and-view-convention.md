@@ -32,6 +32,12 @@ preservation obligations; deterministic publication does not discard the latter.
 
 ## Three independent structures
 
+The [explicit Home modelling decision](architecture-modelling-strategy.md#explicit-architectural-home)
+distinguishes logical architectural Home from the **navigation home** terminology
+used below. A single model-tree location is a presentation rule, not mandatory
+architectural Home cardinality. Folder and View placement establish no Home;
+the Home decision establishes no automatic folder or View placement rule.
+
 | Structure | Meaning | Source of authority |
 | --- | --- | --- |
 | Semantic architecture | Elements and typed relationships, including actual decomposition | Governed definitions, assertions and exact publication bindings |
@@ -271,6 +277,28 @@ from [Release 1.0.3](architecture-identity/adoption-1.0.3.md) are unchanged.
 
 An ArchiMate layer may contain several independent subject navigation structures.
 Sharing a layer does not imply sharing a decomposition or a navigation parent.
+
+## Explicit Home projection
+
+**Solution Architect decision — 2026-10-19, unsigned RAD-1.0.9 completion.**
+For the applicable Business Functions, Processes and Services with one established
+explicit Home to a Feature, principal navigation SHALL use that Feature's governed
+semantic ancestry and the existing Business context projection above, followed by
+the existing `Functions`, `Processes` or `Services` leaf. This is the same Home
+context used by both [qualified names](canonical-identity-and-naming.md).
+Explicit Home takes precedence over responsibility-derived placement while
+responsibility retains its independent meaning and standing.
+
+Architecture → explicit Home → navigation is the only direction of authority.
+Folder placement supplies no Home, Composition, ownership, responsibility or
+Realization assertion. Reuse existing context folders and stable identity-based
+folder conventions; retain one principal reference per element. Relationship
+references follow their source's resulting location under the existing Relations
+projection. No View presentation change follows from this decision.
+
+The [modelling decision](architecture-modelling-strategy.md#home-derived-naming-and-navigation)
+defines applicability and stop conditions. The 93 unestablished and 18 ambiguous
+Home cases retain their existing names and locations pending adjudication.
 
 ## Relationship homes follow the source
 

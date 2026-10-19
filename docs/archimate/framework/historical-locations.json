@@ -184,7 +184,17 @@
     "docs/archimate/capability-architecture/tools/synchronise_baseline.py": "docs/archimate/framework/tools/synchronise_baseline.py",
     "docs/archimate/capability-architecture/tools/verify_baseline_outputs.py": "docs/archimate/framework/tools/verify_baseline_outputs.py",
     "docs/archimate/capability-architecture/validation.json": "docs/archimate/processing/publishing/1.0.4/validation.json",
-    "docs/archimate/capability-architecture/view-generation-report.md": "docs/archimate/framework/baseline/view-generation-report.md"
+    "docs/archimate/capability-architecture/view-generation-report.md": "docs/archimate/framework/baseline/view-generation-report.md",
+    "docs/archimate/exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml": "docs/archimate/governance-tooling/1.0.14/exchange/Harmonia-Architecture-1.0.14.xml",
+    "docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md": "docs/archimate/governance-tooling/1.0.14/processing/archi-inspection-guide.md",
+    "docs/archimate/processing/publishing/1.0.14/evidence-sha256.json": "docs/archimate/governance-tooling/1.0.14/processing/evidence-sha256.json",
+    "docs/archimate/processing/publishing/1.0.14/home-normalisation.md": "docs/archimate/governance-tooling/1.0.14/processing/home-normalisation.md",
+    "docs/archimate/processing/publishing/1.0.14/home-verification.json": "docs/archimate/governance-tooling/1.0.14/processing/home-verification.json",
+    "docs/archimate/processing/publishing/1.0.14/independent-reproduction.json": "docs/archimate/governance-tooling/1.0.14/processing/independent-reproduction.json",
+    "docs/archimate/processing/publishing/1.0.14/projection-checks.json": "docs/archimate/governance-tooling/1.0.14/processing/projection-checks.json",
+    "docs/archimate/processing/publishing/1.0.14/publication-validation-1.0.14.json": "docs/archimate/governance-tooling/1.0.14/processing/publication-validation-1.0.14.json",
+    "docs/archimate/processing/publishing/1.0.14/report-check-final.log.gz": "docs/archimate/governance-tooling/1.0.14/processing/report-check-final.log.gz",
+    "docs/archimate/processing/publishing/1.0.14/reproduction.log.gz": "docs/archimate/governance-tooling/1.0.14/processing/reproduction.log.gz"
   },
   "directories": {
     "docs/archimate/capability-architecture/baseline": "docs/archimate/framework/baseline",
@@ -200,6 +210,11 @@
     "docs/archimate/capability-architecture/tests/fixtures/roundtrip": "docs/archimate/framework/tests/fixtures/roundtrip",
     "docs/archimate/capability-architecture/tests/fixtures": "docs/archimate/framework/tests/fixtures",
     "docs/archimate/capability-architecture/tests": "docs/archimate/framework/tests",
-    "docs/archimate/capability-architecture/tools": "docs/archimate/framework/tools"
+    "docs/archimate/capability-architecture/tools": "docs/archimate/framework/tools",
+    "docs/archimate/exchange/publish/1.0.14": "docs/archimate/governance-tooling/1.0.14/exchange",
+    "docs/archimate/processing/publishing/1.0.14": "docs/archimate/governance-tooling/1.0.14/processing"
+  },
+  "non_rad_evidence": {
+    "1.0.14": "docs/archimate/governance-tooling/1.0.14/manifest.json"
   }
 }

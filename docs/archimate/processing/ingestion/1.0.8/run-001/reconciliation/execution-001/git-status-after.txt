@@ -1,0 +1,50 @@
+ M architecture-release.json
+ M docs/archimate/exchange/ingest/1.0.8/HarmoniaArchictecture-1.0.8.archimate
+ M docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml
+ M docs/archimate/exchange/publish/README.md
+ M docs/archimate/framework/Makefile
+ M docs/archimate/framework/README.md
+ M docs/archimate/framework/tests/test_baseline.py
+ M docs/archimate/framework/tests/test_governed_metadata.py
+ M docs/archimate/framework/tests/test_roundtrip.py
+ M docs/archimate/framework/tests/test_workspace.py
+ M docs/archimate/framework/tools/diagnose_roundtrip.py
+ M docs/archimate/framework/tools/governed_metadata.py
+ M docs/archimate/framework/tools/report_baseline.py
+ M docs/archimate/framework/tools/synchronise_baseline.py
+ M docs/archimate/framework/tools/verify_baseline_outputs.py
+ M docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md
+ M docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md
+ M docs/markdown/governance/README.md
+ M docs/markdown/governance/archi-navigation-and-view-convention.md
+ M docs/markdown/governance/archimate-ingestion-change-review.md
+ M docs/markdown/governance/archimate-ingestion-publication-semantics.md
+ M docs/markdown/governance/architecture-release-policy.md
+ M docs/markdown/governance/baseline/README.md
+ M docs/markdown/governance/baseline/correspondence.json
+ M docs/markdown/governance/baseline/features.md
+ M docs/markdown/governance/baseline/processes.md
+ M docs/markdown/governance/baseline/relationships.md
+ M docs/markdown/governance/baseline/services.md
+ M docs/markdown/governance/canonical-identity-and-naming.md
+ M docs/markdown/governance/rad-archimate-model-mapping.md
+?? docs/archimate/exchange/publish/1.0.14/
+?? docs/archimate/exchange/publish/1.0.9/
+?? docs/archimate/framework/tests/test_home_relationships.py
+?? docs/archimate/framework/tests/test_reconciled_ingestion.py
+?? docs/archimate/framework/tools/analyse_home_submission.py
+?? docs/archimate/framework/tools/home_relationships.py
+?? docs/archimate/framework/tools/reconcile_108.py
+?? docs/archimate/framework/tools/report_home.py
+?? docs/archimate/framework/tools/report_reconciliation.py
+?? docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-003/
+?? docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/
+?? docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-004.json
+?? docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-005.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/
+?? docs/archimate/processing/publishing/1.0.14/
+?? docs/archimate/processing/publishing/1.0.9/
+?? docs/markdown/governance/architecture-modelling-strategy.md
+?? docs/markdown/governance/baseline/accepted-ingestion-1.0.8.json
+?? docs/markdown/governance/baseline/business-homes.json
+?? docs/markdown/governance/baseline/products.md

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "command": [
+    "env",
+    "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64",
+    "mvn",
+    "-o",
+    "test",
+    "-pl",
+    "paradeigma/paradeigma-test",
+    "-am",
+    "-Dtest=*ArchitectureTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "timeout_seconds": 120.0,
+  "elapsed_seconds": 30.854,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/architecture.log",
+  "log_sha256": "ee5a140ff6350a4e02e18974c48ce6da8165d13ca1d4062ce051e16cb2ed389e"
+}

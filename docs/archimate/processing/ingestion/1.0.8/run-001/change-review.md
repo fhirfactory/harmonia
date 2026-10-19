@@ -1,41 +1,45 @@
 | ID | Brief Description | Disposition | Outcome |
 | --- | --- | --- | --- |
-| [CR-001](#cr-001) | Add Identifier Capture Feature | On-Hold | Unresolved |
-| [CR-002](#cr-002) | Add Provider Registry - Satellite Product | On-Hold | Unresolved |
-| [CR-003](#cr-003) | Add Provider Registry - Central Product | On-Hold | Unresolved |
-| [CR-004](#cr-004) | Add Practitioner Collaboration Service Product | On-Hold | Unresolved |
-| [CR-005](#cr-005) | Add Health Information Exchange Service Product | On-Hold | Unresolved |
-| [CR-006](#cr-006) | Add Identifier Create Business Service | On-Hold | Unresolved |
-| [CR-007](#cr-007) | Add Identifier Update Business Service | On-Hold | Unresolved |
-| [CR-008](#cr-008) | Add Identifier Verification Business Process | On-Hold | Unresolved |
-| [CR-009](#cr-009) | Add Verify Identity Source Business Service | On-Hold | Unresolved |
-| [CR-010](#cr-010) | Add Composition to Cross-Authority Identifier Correlation | On-Hold | Unresolved |
-| [CR-011](#cr-011) | Add Composition to Governed Identity Correction | On-Hold | Unresolved |
-| [CR-012](#cr-012) | Add Composition to Identity Source & Correction Lineage | On-Hold | Unresolved |
-| [CR-013](#cr-013) | Add Composition to Identifier Resolution | On-Hold | Unresolved |
-| [CR-014](#cr-014) | Add Composition to Identity Alias Association | On-Hold | Unresolved |
-| [CR-015](#cr-015) | Add Composition to Identifier Capture | On-Hold | Unresolved |
+| [CR-001](#cr-001) | Add Identifier Capture Feature | Accept | Resolved |
+| [CR-002](#cr-002) | Add Provider Registry - Satellite Product | Accept | Resolved |
+| [CR-003](#cr-003) | Add Provider Registry - Central Product | Accept | Resolved |
+| [CR-004](#cr-004) | Add Practitioner Collaboration Service Product | Accept | Resolved |
+| [CR-005](#cr-005) | Add Health Information Exchange Service Product | Accept | Resolved |
+| [CR-006](#cr-006) | Add Identifier Create Business Service | Accept | Resolved |
+| [CR-007](#cr-007) | Add Identifier Update Business Service | Accept | Resolved |
+| [CR-008](#cr-008) | Add Identifier Verification Business Process | Accept | Resolved |
+| [CR-009](#cr-009) | Add Verify Identity Source Business Service | Accept | Resolved |
+| [CR-010](#cr-010) | Add Composition to Cross-Authority Identifier Correlation | Accept | Resolved |
+| [CR-011](#cr-011) | Add Composition to Governed Identity Correction |Accept | Resolved |
+| [CR-012](#cr-012) | Add Composition to Identity Source & Correction Lineage | Accept | Resolved |
+| [CR-013](#cr-013) | Add Composition to Identifier Resolution | Accept | Resolved |
+| [CR-014](#cr-014) | Add Composition to Identity Alias Association | Accept | Resolved |
+| [CR-015](#cr-015) | Add Composition to Identifier Capture | Accept | Resolved |
 | [CR-016](#cr-016) | Interpret CT3 framing for Cross-Authority Identifier Correlation | On-Hold | Resolved |
 | [CR-017](#cr-017) | Interpret CT3 framing for Governed Identity Correction | On-Hold | Resolved |
 | [CR-018](#cr-018) | Interpret CT3 framing for Identity Source & Correction Lineage | On-Hold | Resolved |
 | [CR-019](#cr-019) | Interpret CT3 framing for Identifier Resolution | On-Hold | Resolved |
 | [CR-020](#cr-020) | Interpret CT3 framing for Identity Alias Association | On-Hold | Resolved |
 | [CR-021](#cr-021) | Interpret CT3 framing for Identifier Capture | On-Hold | Resolved |
-| [CR-022](#cr-022) | Add Identifier Create Realization | On-Hold | Unresolved |
-| [CR-023](#cr-023) | Interpret Feature context for Identifier Create | On-Hold | Unresolved |
-| [CR-024](#cr-024) | Add Identifier Update Realization | On-Hold | Unresolved |
-| [CR-025](#cr-025) | Interpret Feature context for Identifier Update | On-Hold | Unresolved |
-| [CR-026](#cr-026) | Add Identifier Verification Realization | On-Hold | Unresolved |
-| [CR-027](#cr-027) | Interpret Feature context for Identifier Verification | On-Hold | Unresolved |
-| [CR-028](#cr-028) | Add Verify Identity Source Realization | On-Hold | Unresolved |
-| [CR-029](#cr-029) | Interpret Feature context for Verify Identity Source | On-Hold | Unresolved |
-| [CR-030](#cr-030) | Add Identifier Create Flow to Identifier Verification | On-Hold | Unresolved |
-| [CR-031](#cr-031) | Add Identifier Update Flow to Identifier Verification | On-Hold | Unresolved |
-| [CR-032](#cr-032) | Add Verify Identity Source Serving to Identifier Verification | On-Hold | Unresolved |
-| [CR-033](#cr-033) | Revise Person Identity Administration Feature Landscape | On-Hold | Unresolved |
-| [CR-034](#cr-034) | Expose existing Compositions in Entity Information Enablement View | On-Hold | Unresolved |
-| [CR-035](#cr-035) | Add Identifier Capture Feature realisation View | On-Hold | Unresolved |
-| [CR-036](#cr-036) | Add Identity Source and Correction Lineage realisation View | On-Hold | Unresolved |
+| [CR-022](#cr-022) | Add Identifier Create Realization | Accept | Resolved |
+| [CR-023](#cr-023) | Interpret Feature context for Identifier Create | On-Hold | Resolved |
+| [CR-024](#cr-024) | Add Identifier Update Realization | Accept | Resolved |
+| [CR-025](#cr-025) | Interpret Feature context for Identifier Update | On-Hold | Resolved |
+| [CR-026](#cr-026) | Add Identifier Verification Realization | Accept | Resolved |
+| [CR-027](#cr-027) | Interpret Feature context for Identifier Verification | On-Hold | Resolved |
+| [CR-028](#cr-028) | Add Verify Identity Source Realization | Accept | Resolved |
+| [CR-029](#cr-029) | Interpret Feature context for Verify Identity Source | On-Hold | Resolved |
+| [CR-030](#cr-030) | Add Identifier Create Flow to Identifier Verification | Accept | Resolved |
+| [CR-031](#cr-031) | Add Identifier Update Flow to Identifier Verification | Accept | Resolved |
+| [CR-032](#cr-032) | Add Verify Identity Source Serving to Identifier Verification | Accept | Resolved |
+| [CR-033](#cr-033) | Revise Person Identity Administration Feature Landscape | Accept | Resolved |
+| [CR-034](#cr-034) | Expose existing Compositions in Entity Information Enablement View |Accept | Resolved |
+| [CR-035](#cr-035) | Add Identifier Capture Feature realisation View | Accept | Resolved |
+| [CR-036](#cr-036) | Add Identity Source and Correction Lineage realisation View | Accept | Resolved |
+
+## Current execution revision 5 — 2026-10-19, RAD-1.0.9
+
+The Solution Architect's subsequent Accept instructions are executed below. Earlier On-Hold calls, Outcomes, reasons and Not authorised instructions are preserved in the [byte-identical pre-execution review](reconciliation/execution-001/change-review-before.md) and existing prior revisions. Interpretation findings resolved by governing decisions retain their original On-Hold Dispositions and reasons. The [execution audit](reconciliation/execution-001/results.json) records actual resulting states; acceptance alone was not treated as a satisfied dependency.
 
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
@@ -43,12 +47,12 @@
 
 ## Review basis
 
-- Review/run: **1.0.8/run-001**; revision **3**; originally prepared by **Codex / 2026-10-18**; revised by **Codex / 2026-10-19 (Australia/Sydney)** to separate Disposition, Outcome and Outcome Reason under the accepted Solution Architect governance decision. Revision 2 records the preceding metamodel decision. The original preparation date is unchanged.
-- Submitted incoming evidence: [docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml](../../../../exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml); SHA-256 **`6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e`**; 21,854,756 bytes.
+- Review/run: **1.0.8/run-001**; revision **4**; originally prepared by **Codex / 2026-10-18**; revised by **Codex / 2026-10-19 (Australia/Sydney)** for the accepted explicit Home decision. Revision 3 separated Disposition, Outcome and Outcome Reason. Revision 2 records the preceding metamodel decision. The original preparation date is unchanged.
+- Original reviewed incoming evidence (not the updated landing file): [retained original submission](detection/submission.xml); original landing path `docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml`; SHA-256 **`6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e`**; 21,854,756 bytes.
 - Byte-identical retained input: [detection/submission.xml](detection/submission.xml), same SHA-256. The Authoring Iteration is **closed** by this deliberate Submission. Earlier evolving exports are historical working-state evidence, not separate Submissions.
 - Exact originating Published Baseline: **Release/Publication 1.0.8**, [docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml](../../../../exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml); SHA-256 **`504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a`**; 20,800,334 bytes.
 - Publication provenance: [docs/archimate/exchange/publish/README.md](../../../../exchange/publish/README.md), [docs/archimate/processing/publishing/1.0.8/publication-1.0.8.md](../../../publishing/1.0.8/publication-1.0.8.md), [docs/archimate/processing/publishing/1.0.8/publication-comparison.json](../../../publishing/1.0.8/publication-comparison.json), [docs/archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md](../../../publishing/1.0.8/archi-inspection-1.0.8.md), [docs/archimate/processing/publishing/1.0.8/publication-validation-1.0.8.json](../../../publishing/1.0.8/publication-validation-1.0.8.json). The index identifies this published model; the publication/inspection/comparison pin its hash. Exact one-value restoration reproduces the published 1.0.7 byte stream. Submission retains the 1.0.8 model ID/release Property and all established bindings. Native edit/operator history beyond that evidence is not invented.
-- Governance release at detection/preparation: **1.0.11**, previous 1.0.10; target source HEAD **`6bf6767ce7449560d2e34401ff260fd7ae3cfeef`**, with pre-existing working-tree changes captured in [start-preservation](detection/start-preservation.json). Working-tree authority hashes, provenance and tool versions: [provenance.json](detection/provenance.json). **Neither the preparation release 1.0.11 nor current governance release 1.0.13 is this semantic comparison baseline.**
+- Governance release at detection/preparation: **1.0.11**, previous 1.0.10; target source HEAD **`6bf6767ce7449560d2e34401ff260fd7ae3cfeef`**, with pre-existing working-tree changes captured in [start-preservation](detection/start-preservation.json). Working-tree authority hashes, provenance and tool versions: [provenance.json](detection/provenance.json). **Neither the preparation release 1.0.11 nor current governance release 1.0.14 is this semantic comparison baseline.**
 - Transport control: [.junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml](../../../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml); SHA-256 `38e49fa348d015aba6b19e21b4f96dc00fddf3c4d7671b3e352b4c07748917ea`. Used solely to recognise characterised Archi transformations, not to select architecture.
 - Detection: unchanged Increment 1 P→submission and C→submission comparisons, identity/source audit, plus independent run-specific [query](detection/detect.py). [Observations](detection/observations.md), [raw diagnostics](detection/diagnostic-commands.json), [summary](detection/summary.json), [exact visual records](detection/views.json). All model inputs were read only.
 - Governed template: [docs/markdown/governance/templates/archimate-ingestion-change-review-template.md](../../../../../markdown/governance/templates/archimate-ingestion-change-review-template.md). Authority: [docs/markdown/governance/archimate-ingestion-change-review.md](../../../../../markdown/governance/archimate-ingestion-change-review.md), [docs/markdown/governance/archimate-ingestion-publication-semantics.md](../../../../../markdown/governance/archimate-ingestion-publication-semantics.md), [docs/markdown/governance/architecture-authoring-praxis.md](../../../../../markdown/governance/architecture-authoring-praxis.md). AX-04 preserves meaning independent of tools; AX-14 separates evidence/interpretation/decision and semantics/navigation/presentation/identity; AX-15 preserves uncertainty; AX-17 leaves missing meaning for adjudication; AX-18 forbids inferred domain authority.
@@ -80,7 +84,7 @@ This is **one governing metamodel decision**, not six instance decisions.
 Composition is subsequently accepted, its framing/containment meaning follows
 from the rule without a second independent interpretation decision. No edge,
 endpoint, placement standing, Canonical ID or publication is approved here.
-Realization/logical Feature context questions in CR-023/025/027/029 remain open.
+At revision 2, Realization/logical Feature context questions in CR-023/025/027/029 remained open; the revision-4 Home decision below now resolves them.
 
 **CR-016–CR-021:** Disposition remains **On-Hold**, the correct original call
 to action while the missing metamodel rule was unresolved. Outcome is now
@@ -102,8 +106,8 @@ On-Hold and Manual Intervention remain exactly the four Dispositions. Outcomes
 are Unresolved or Resolved. The decision date is the current review date;
 metamodel resolution remains attributed to the separate 1.0.12 authority.
 
-All **36 Dispositions remain On-Hold**. CR-016–CR-021 have **Outcome Resolved**;
-the other **30 CRs have Outcome Unresolved** and remain architecturally undecided.
+**Revision-3 state, retained as history:** All **36 Dispositions remain On-Hold**. CR-016–CR-021 had **Outcome Resolved**;
+the other **30 CRs had Outcome Unresolved** at revision 3.
 No acceptance/rejection/manual-resolution decision is fabricated. Resolution of
 the six interpretation findings accepts none of CR-010–CR-015 and authorises no
 submitted Composition reconciliation. Every instruction remains Not authorised;
@@ -116,24 +120,62 @@ gap. Links inside archived copies resolve from their original run-root location.
 The [prior overlay](review-revision-002.json) and prior validation are unchanged
 historical records. The [revision-3 overlay](review-revision-003.json) records the
 new fields and the conditional instance-state distinction. Immutable detection,
-original decomposition and observed evidence remain unchanged. Current checks are
+original decomposition and observed evidence remain unchanged. Revision-3 checks are retained as historical
 [revision-3 validation](validation/revision-003/validation-results.json).
-No new Submission, Authoring Iteration or run was created.
+No new Submission, Authoring Iteration or run was created by revision 3. Revision 4 separately records the explicitly updated input as run-002.
 
-### Decomposition record
+<a id="explicit-home-decision"></a>
 
-Revision 1 decomposed fresh observations into **36 CRs**, all On-Hold: 9 element additions, 13 explicit semantic edges, 6 CT3-framing interpretation questions, 4 Realization/logical-context questions and 4 View changes. All 36 IDs and On-Hold Dispositions are retained. The six CT3 interpretation findings have Outcome Resolved by one governing rule; the other **30 proposals** remain independently undecided with Outcome Unresolved. The original evidence-to-CR rationale and required-state matrix remain in [decomposition.md](detection/decomposition.md) and [change-requests.json](detection/change-requests.json) as revision-1 detection evidence; the [revision-3 overlay](review-revision-003.json) records the current fields/treatment. Revision-1 `status` fields are historical representations of Disposition, not Outcome.
+### Explicit Home governing decision — revision 4
+
+**Solution Architect decision, 2026-10-19, governance release 1.0.14:**
+[Architecture Modelling Strategy](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home)
+establishes directed Association specialised as Home. Realization supplies none
+of Home, logical containment, parentage, ownership, naming context or navigation
+context by itself. CR-023/025/027/029 now have **Outcome Resolved** with the
+governing decision as Outcome Reason. Their original **Disposition On-Hold**,
+all detected evidence and all native relationship proposals are preserved.
+All 36 Dispositions remain On-Hold; **10 Outcomes are Resolved, 26 Unresolved**.
+No native Realization is rejected by this decision.
+
+The updated landing file was freshly re-read, SHA-256
+`366bbcf305575b831ea7e8e72e1c2b19f9631518fda8f297a4f7c51a959a5556`.
+It contains four authored Home relationships and four added View connections;
+all previous elements, native relationships and existing visual objects survive.
+Under the distinct-input run rule it is preserved and analysed in
+[1.0.8/run-002](../run-002/change-review.md), without replacing this run's original
+snapshot or pretending those Home relationships were observed in revision 1.
+They supply authoritative authored intent; no Home is inferred for new elements.
+
+**Other affected CRs:** CR-022/024/026/028 retain Unresolved native Realization
+proposals, with Home independently authored. CR-035/036 retain their original
+View proposals and Unresolved Outcomes; updated Home connection proposals are
+recorded separately in run-002. Element and Composition proposals retain their
+standing. Resolution of an interpretation question supplies no missing identity,
+acceptance, endpoint or execution authority.
+
+**Audit:** [exact revision 3](history/revision-003/change-review.md) and its
+[manifest](history/revision-003/manifest.json) preserve all prior instructions,
+Outcomes and reasons. [Revision-4 overlay](review-revision-004.json) records the
+four Outcome transitions. The original input/detection and revisions 1–3 remain
+unchanged. The one-time existing-baseline migration is a separate accepted
+change, not reconciliation of this run's proposed additions.
+
+### Decomposition record (original decomposition retained)
+
+
+Revision 1 decomposed fresh observations into **36 CRs**, all On-Hold: 9 element additions, 13 explicit semantic edges, 6 CT3-framing interpretation questions, 4 Realization/logical-context questions and 4 View changes. All 36 IDs and On-Hold Dispositions are retained. The six CT3 interpretation findings have Outcome Resolved by one governing rule; at revision 3 the other **30 proposals** remained independently undecided; revision 4 resolves four additional interpretation questions, leaving **26 Outcomes Unresolved**. The original evidence-to-CR rationale and required-state matrix remain in [decomposition.md](detection/decomposition.md) and [change-requests.json](detection/change-requests.json) as revision-1 detection evidence; the [revision-4 overlay](review-revision-004.json) records current fields/treatment; the revision-3 overlay remains historical. Revision-1 `status` fields are historical representations of Disposition, not Outcome.
 
 Known transport transformations, expected absent machine metadata, arbitrary relationship folders and unchanged migration debt generate no architectural CRs. Seven V2 connections expose governed edges and support CR-034 only. Five new Compositions have fully resolved endpoints and no baseline duplicate; the remaining eight added edges retain unresolved final semantic duplicate status because new endpoint identities are unresolved. No positive attempted duplicate is established.
 
-The existing five Feature targets retain source-qualified CT3 context at Proposed placement standing. The general rule resolves the native encoding/effect without promoting that context's standing. Element, individual edge, Realization/context and View proposals remain undecided; CT3 framing meaning now follows from governance upon acceptance of the applicable Composition. All dependencies state the governed result required; none has been evaluated or executed.
+The existing five Feature targets retain source-qualified CT3 context at Proposed placement standing. The general rule resolves the native encoding/effect without promoting that context's standing. Element, individual edge and View proposals remain undecided; Realization/context interpretation is resolved by revision 4; CT3 framing meaning now follows from governance upon acceptance of the applicable Composition. All dependencies state the governed result required; none has been evaluated or executed.
 
 | Observation/evidence locator | CR(s) supported | Decomposition reason / evidence-only treatment |
 | --- | --- | --- |
 | A1–A9; elements.json | CR-001–009 | One proposed architectural instance each; recognised classification stays with its instance |
 | R1–R6; relationships.json | CR-010–015 | Six independently reviewable native Composition edges |
 | R1–R6 plus current RADS Feature context | CR-016–021 | Six valid original findings; Disposition On-Hold retained; Outcome Resolved by one governing metamodel decision |
-| R7–R9/R12 | CR-022/024/026/028 and CR-023/025/027/029 | Native Realizations and optional logical contexts can receive different decisions |
+| R7–R9/R12 | CR-022/024/026/028 and CR-023/025/027/029 | Native Realizations remain independent; revision 4 resolves the interpretation questions through explicit Home governance |
 | R10/R11/R13 | CR-030–032 | Two transfer proposals and one service-use proposal |
 | V1/V2/V3/V4; views.json | CR-033–036 | One coherent authored View proposal each, independent of semantic approvals |
 | Transport/navigation/absent metadata/pre-existing migration | None except View-home questions | Evidence retained; no inferred semantic architecture or machinery-only CR |
@@ -142,11 +184,11 @@ The existing five Feature targets retain source-qualified CT3 context at Propose
 
 ## CR-001 — Add Identifier Capture Feature
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-001`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -162,9 +204,11 @@ The existing five Feature targets retain source-qualified CT3 context at Propose
 2. What bounded responsibility/definition and architectural standing are authorised? The submission contains no Documentation or standing assertion.
 3. The governed `[Feature]` + Capability rule recognises the proposed Feature classification deterministically. Does the Solution Architect accept this architectural instance? Its proposed CT3 Composition remains independently adjudicable in CR-015; if accepted, framing/containment meaning follows from the shared metamodel rule. Recognition supplies no identity or acceptance.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -172,21 +216,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Capability `id-727a264026584f80bc3304ff8383dc92` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-001`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-002"></a>
 
 ## CR-002 — Add Provider Registry - Satellite Product
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-002`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -203,9 +248,11 @@ Not yet processed
 3. `[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -213,21 +260,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Product `id-234b080d0ea54d57bb0001a2cb861080` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-002`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-003"></a>
 
 ## CR-003 — Add Provider Registry - Central Product
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-003`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -244,9 +292,11 @@ Not yet processed
 3. `[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -254,21 +304,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Product `id-bfdd958364d1466a914d474dce8baab9` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-003`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-004"></a>
 
 ## CR-004 — Add Practitioner Collaboration Service Product
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-004`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -285,9 +336,11 @@ Not yet processed
 3. `[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -295,21 +348,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Product `id-3c5ae26723224eb0a6e6a70d70fe2c83` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-004`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-005"></a>
 
 ## CR-005 — Add Health Information Exchange Service Product
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-005`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -326,9 +380,11 @@ Not yet processed
 3. `[Product]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. What Product meaning/scope is intended? The Name supplies no deployment, component allocation, service ownership or domain-decision authority; none is proposed by inference.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -336,21 +392,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Product `id-d84d8e1f988c4bc998b18834aabfcd74` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-005`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-006"></a>
 
 ## CR-006 — Add Identifier Create Business Service
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-006`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -367,9 +424,11 @@ Not yet processed
 3. `[Business Service]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -377,21 +436,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native BusinessService `id-fddda503b8f0438e995465cd93204326` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-006`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-007"></a>
 
 ## CR-007 — Add Identifier Update Business Service
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-007`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -408,9 +468,11 @@ Not yet processed
 3. `[Business Service]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -418,21 +480,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native BusinessService `id-0088d61ccfcf4962b3aab8bc3b96021d` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-007`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-008"></a>
 
 ## CR-008 — Add Identifier Verification Business Process
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-008`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -449,9 +512,11 @@ Not yet processed
 3. `[Business Process]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -459,21 +524,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native BusinessProcess `id-c645a859ac2c4447ad5ae850cf384bf3` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-008`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-009"></a>
 
 ## CR-009 — Add Verify Identity Source Business Service
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-009`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -490,9 +556,11 @@ Not yet processed
 3. `[Business Service]` repeats the native type and establishes no extra Harmonia subtype. Confirm the intended local display wording under governed naming; no raw Name has been normalised in this review.
 4. Confirm the responsibility boundary, including whether identity verification acts on source-attributed information without assuming master-person matching, golden-record or autonomous merge authority. Any different domain authority requires explicit architecture review under AX-18.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Increment 2A granularity/adjudication; 2B recognition and metadata; AX-04/14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -500,21 +568,22 @@ No prerequisite CR. Established baseline endpoints/references and their current 
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native BusinessService `id-9bfedbfd5b404694a2224c039fa5d4c4` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-009`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-010"></a>
 
 ## CR-010 — Add Composition to Cross-Authority Identifier Correlation
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-010`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -530,9 +599,11 @@ Not yet processed
 2. Confirm native endpoint legality, architectural correctness and relationship standing. The [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy) defines meaning if accepted; it does not accept this relationship or promote existing standing.
 3. The original interpretation finding [CR-016](#cr-016) traces the shared metamodel question, now resolved. This Composition remains On-Hold; this revision supplies no instance acceptance or reconciliation authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy); mapping §5; 2B semantic containment; 2A independent instance adjudication; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -542,21 +613,22 @@ Informationally related (not automatic prerequisites): [CR-016](#cr-016), [CR-03
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Composition `id-73ecd7a39407404ba8e2bb663efbdc19` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-010`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-011"></a>
 
 ## CR-011 — Add Composition to Governed Identity Correction
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-011`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -572,9 +644,11 @@ Not yet processed
 2. Confirm native endpoint legality, architectural correctness and relationship standing. The [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy) defines meaning if accepted; it does not accept this relationship or promote existing standing.
 3. The original interpretation finding [CR-017](#cr-017) traces the shared metamodel question, now resolved. This Composition remains On-Hold; this revision supplies no instance acceptance or reconciliation authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy); mapping §5; 2B semantic containment; 2A independent instance adjudication; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -584,21 +658,22 @@ Informationally related (not automatic prerequisites): [CR-017](#cr-017), [CR-03
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Composition `id-36b2aa8ad58149fdb20d44c1c16dd64c` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-011`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-012"></a>
 
 ## CR-012 — Add Composition to Identity Source & Correction Lineage
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-012`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -614,9 +689,11 @@ Not yet processed
 2. Confirm native endpoint legality, architectural correctness and relationship standing. The [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy) defines meaning if accepted; it does not accept this relationship or promote existing standing.
 3. The original interpretation finding [CR-018](#cr-018) traces the shared metamodel question, now resolved. This Composition remains On-Hold; this revision supplies no instance acceptance or reconciliation authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy); mapping §5; 2B semantic containment; 2A independent instance adjudication; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -626,21 +703,22 @@ Informationally related (not automatic prerequisites): [CR-018](#cr-018), [CR-03
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Composition `id-3c3d723683c147a4a902b4d35a2af018` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-012`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-013"></a>
 
 ## CR-013 — Add Composition to Identifier Resolution
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-013`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -656,9 +734,11 @@ Not yet processed
 2. Confirm native endpoint legality, architectural correctness and relationship standing. The [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy) defines meaning if accepted; it does not accept this relationship or promote existing standing.
 3. The original interpretation finding [CR-019](#cr-019) traces the shared metamodel question, now resolved. This Composition remains On-Hold; this revision supplies no instance acceptance or reconciliation authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy); mapping §5; 2B semantic containment; 2A independent instance adjudication; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -668,21 +748,22 @@ Informationally related (not automatic prerequisites): [CR-019](#cr-019), [CR-03
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Composition `id-daf437bb32114daa8a6b9462cb9b4fb2` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-013`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-014"></a>
 
 ## CR-014 — Add Composition to Identity Alias Association
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-014`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -698,9 +779,11 @@ Not yet processed
 2. Confirm native endpoint legality, architectural correctness and relationship standing. The [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy) defines meaning if accepted; it does not accept this relationship or promote existing standing.
 3. The original interpretation finding [CR-020](#cr-020) traces the shared metamodel question, now resolved. This Composition remains On-Hold; this revision supplies no instance acceptance or reconciliation authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy); mapping §5; 2B semantic containment; 2A independent instance adjudication; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -710,21 +793,22 @@ Informationally related (not automatic prerequisites): [CR-020](#cr-020), [CR-03
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Composition `id-f9b270950f0241108b68f1c3daa50019` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-014`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-015"></a>
 
 ## CR-015 — Add Composition to Identifier Capture
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-015`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -740,9 +824,11 @@ Not yet processed
 2. Confirm native endpoint legality, architectural correctness and relationship standing. The [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy) defines meaning if accepted; it does not accept this relationship or promote existing standing.
 3. The original interpretation finding [CR-021](#cr-021) traces the shared metamodel question, now resolved. This Composition remains On-Hold; this revision supplies no instance acceptance or reconciliation authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy); mapping §5; 2B semantic containment; 2A independent instance adjudication; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -752,11 +838,12 @@ Informationally related (not automatic prerequisites): [CR-021](#cr-021), [CR-03
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Composition `id-bff76286f8994d20aa1b8aef166acebd` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-015`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-016"></a>
 
@@ -1062,13 +1149,15 @@ Not yet processed
 
 ## CR-022 — Add Identifier Create Realization
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-022`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
+
+**Revision-4 Home consequence:** The original observed evidence and On-Hold / Unresolved state below remain unchanged. The governing decision resolves only whether Realization establishes logical context (it does not). The updated input separately authors Home; this native Realization is neither rejected nor replaced.
 
 **Candidate Architectural Interpretation:** Add the explicit native Realization from `[Business Service] Identifier Create` to `[Feature] Identifier Capture`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.
 
@@ -1081,9 +1170,11 @@ Not yet processed
 1. Accept the submitted Realization from `[Business Service] Identifier Create` to `[Feature] Identifier Capture`?
 2. Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
-**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.
+**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and the explicit Home strategy; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1094,11 +1185,12 @@ Informationally related (not automatic prerequisites): [CR-023](#cr-023).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Realization `id-e84f2e9df66a48d795d604d75afc72cb` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-022`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-023"></a>
 
@@ -1106,11 +1198,13 @@ Not yet processed
 
 **Disposition:** On-Hold
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the Solution Architect’s [explicit Home modelling-strategy decision](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home), governance release **1.0.14**. Native Realization SHALL NOT by itself establish Home, logical containment, parentage, ownership, naming context or navigation context. The separate authored Association «Home» is preserved in updated-input run-002. This neither rejects Realization nor accepts/reconciles its element/relationship proposals. Historical On-Hold Disposition remains unchanged.
 
 ### Proposed Architectural Change
+
+**Historical candidate retained for audit; answered No by the governing decision:**
 
 **Candidate Architectural Interpretation:** For this instance only, consider treating R7 Realization as establishing Harmonia logical Feature context of `[Business Service] Identifier Create` in `[Feature] Identifier Capture`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.
 
@@ -1120,14 +1214,20 @@ Not yet processed
 
 ### Architectural Questions / Adjudication
 
+**Original questions retained below. Current treatment:** The governing decision answers the Realization/context question **No**. Home is separately explicit, not an additional meaning of Realization. The updated model now contains the Solution Architect-authored Home assertion; see [run-002](../run-002/change-review.md). No Home is manufactured for this new element.
+
 1. Does this Realization also establish Harmonia logical Feature context for `[Business Service] Identifier Create` in `[Feature] Identifier Capture`?
 2. If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical instruction:** The original/default On-Hold Disposition is preserved; no instance acceptance/rejection or reconciliation was issued.
 
-**Applicable authority / identified gap:** 2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.
+**Solution Architect Decision:** The explicit task decision on 2026-10-19 establishes [explicit Home](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home) in release 1.0.14 and answers this interpretation question No. Outcome is Resolved by governing authority; Disposition remains On-Hold. The native Realization proposal remains independently Unresolved. No reconciliation instruction is issued by this outcome update.
+
+**Applicable authority:** [Explicit Home strategy](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home); 2A Disposition/Outcome contract; AX-04/14/17.
 
 ### Related Change Requests
+
+The retained dependencies below do not condition this finding’s Resolved Outcome and do not manufacture Home. They describe only future independently authorised instance reconciliation.
 
 - Required resulting state from [CR-022](#cr-022): The native R7 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state.
 
@@ -1145,13 +1245,15 @@ Not yet processed
 
 ## CR-024 — Add Identifier Update Realization
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-024`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
+
+**Revision-4 Home consequence:** The original observed evidence and On-Hold / Unresolved state below remain unchanged. The governing decision resolves only whether Realization establishes logical context (it does not). The updated input separately authors Home; this native Realization is neither rejected nor replaced.
 
 **Candidate Architectural Interpretation:** Add the explicit native Realization from `[Business Service] Identifier Update` to `[Feature] Identifier Capture`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.
 
@@ -1164,9 +1266,11 @@ Not yet processed
 1. Accept the submitted Realization from `[Business Service] Identifier Update` to `[Feature] Identifier Capture`?
 2. Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
-**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.
+**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and the explicit Home strategy; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1177,11 +1281,12 @@ Informationally related (not automatic prerequisites): [CR-025](#cr-025).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Realization `id-69eb864f56df4d928f8abc3f7ab4e834` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-024`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-025"></a>
 
@@ -1189,11 +1294,13 @@ Not yet processed
 
 **Disposition:** On-Hold
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the Solution Architect’s [explicit Home modelling-strategy decision](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home), governance release **1.0.14**. Native Realization SHALL NOT by itself establish Home, logical containment, parentage, ownership, naming context or navigation context. The separate authored Association «Home» is preserved in updated-input run-002. This neither rejects Realization nor accepts/reconciles its element/relationship proposals. Historical On-Hold Disposition remains unchanged.
 
 ### Proposed Architectural Change
+
+**Historical candidate retained for audit; answered No by the governing decision:**
 
 **Candidate Architectural Interpretation:** For this instance only, consider treating R8 Realization as establishing Harmonia logical Feature context of `[Business Service] Identifier Update` in `[Feature] Identifier Capture`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.
 
@@ -1203,14 +1310,20 @@ Not yet processed
 
 ### Architectural Questions / Adjudication
 
+**Original questions retained below. Current treatment:** The governing decision answers the Realization/context question **No**. Home is separately explicit, not an additional meaning of Realization. The updated model now contains the Solution Architect-authored Home assertion; see [run-002](../run-002/change-review.md). No Home is manufactured for this new element.
+
 1. Does this Realization also establish Harmonia logical Feature context for `[Business Service] Identifier Update` in `[Feature] Identifier Capture`?
 2. If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical instruction:** The original/default On-Hold Disposition is preserved; no instance acceptance/rejection or reconciliation was issued.
 
-**Applicable authority / identified gap:** 2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.
+**Solution Architect Decision:** The explicit task decision on 2026-10-19 establishes [explicit Home](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home) in release 1.0.14 and answers this interpretation question No. Outcome is Resolved by governing authority; Disposition remains On-Hold. The native Realization proposal remains independently Unresolved. No reconciliation instruction is issued by this outcome update.
+
+**Applicable authority:** [Explicit Home strategy](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home); 2A Disposition/Outcome contract; AX-04/14/17.
 
 ### Related Change Requests
+
+The retained dependencies below do not condition this finding’s Resolved Outcome and do not manufacture Home. They describe only future independently authorised instance reconciliation.
 
 - Required resulting state from [CR-024](#cr-024): The native R8 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state.
 
@@ -1228,13 +1341,15 @@ Not yet processed
 
 ## CR-026 — Add Identifier Verification Realization
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-026`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
+
+**Revision-4 Home consequence:** The original observed evidence and On-Hold / Unresolved state below remain unchanged. The governing decision resolves only whether Realization establishes logical context (it does not). The updated input separately authors Home; this native Realization is neither rejected nor replaced.
 
 **Candidate Architectural Interpretation:** Add the explicit native Realization from `[Business Process] Identifier Verification` to `[Feature] Identifier Capture`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.
 
@@ -1247,9 +1362,11 @@ Not yet processed
 1. Accept the submitted Realization from `[Business Process] Identifier Verification` to `[Feature] Identifier Capture`?
 2. Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
-**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.
+**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and the explicit Home strategy; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1260,11 +1377,12 @@ Informationally related (not automatic prerequisites): [CR-027](#cr-027).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Realization `id-c0f84a8e4c8d496580a68cac4823c58c` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-026`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-027"></a>
 
@@ -1272,11 +1390,13 @@ Not yet processed
 
 **Disposition:** On-Hold
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the Solution Architect’s [explicit Home modelling-strategy decision](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home), governance release **1.0.14**. Native Realization SHALL NOT by itself establish Home, logical containment, parentage, ownership, naming context or navigation context. The separate authored Association «Home» is preserved in updated-input run-002. This neither rejects Realization nor accepts/reconciles its element/relationship proposals. Historical On-Hold Disposition remains unchanged.
 
 ### Proposed Architectural Change
+
+**Historical candidate retained for audit; answered No by the governing decision:**
 
 **Candidate Architectural Interpretation:** For this instance only, consider treating R9 Realization as establishing Harmonia logical Feature context of `[Business Process] Identifier Verification` in `[Feature] Identifier Capture`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.
 
@@ -1286,14 +1406,20 @@ Not yet processed
 
 ### Architectural Questions / Adjudication
 
+**Original questions retained below. Current treatment:** The governing decision answers the Realization/context question **No**. Home is separately explicit, not an additional meaning of Realization. The updated model now contains the Solution Architect-authored Home assertion; see [run-002](../run-002/change-review.md). No Home is manufactured for this new element.
+
 1. Does this Realization also establish Harmonia logical Feature context for `[Business Process] Identifier Verification` in `[Feature] Identifier Capture`?
 2. If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical instruction:** The original/default On-Hold Disposition is preserved; no instance acceptance/rejection or reconciliation was issued.
 
-**Applicable authority / identified gap:** 2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.
+**Solution Architect Decision:** The explicit task decision on 2026-10-19 establishes [explicit Home](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home) in release 1.0.14 and answers this interpretation question No. Outcome is Resolved by governing authority; Disposition remains On-Hold. The native Realization proposal remains independently Unresolved. No reconciliation instruction is issued by this outcome update.
+
+**Applicable authority:** [Explicit Home strategy](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home); 2A Disposition/Outcome contract; AX-04/14/17.
 
 ### Related Change Requests
+
+The retained dependencies below do not condition this finding’s Resolved Outcome and do not manufacture Home. They describe only future independently authorised instance reconciliation.
 
 - Required resulting state from [CR-026](#cr-026): The native R9 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state.
 
@@ -1311,13 +1437,15 @@ Not yet processed
 
 ## CR-028 — Add Verify Identity Source Realization
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-028`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
+
+**Revision-4 Home consequence:** The original observed evidence and On-Hold / Unresolved state below remain unchanged. The governing decision resolves only whether Realization establishes logical context (it does not). The updated input separately authors Home; this native Realization is neither rejected nor replaced.
 
 **Candidate Architectural Interpretation:** Add the explicit native Realization from `[Business Service] Verify Identity Source` to `Identity Source & Correction Lineage`, preserving direction and bounded realization meaning. This alone establishes no Harmonia logical Feature containment/context.
 
@@ -1330,9 +1458,11 @@ Not yet processed
 1. Accept the submitted Realization from `[Business Service] Verify Identity Source` to `Identity Source & Correction Lineage`?
 2. Confirm native legality, intended realization responsibility and standing. Does the stated scope respect the target Feature boundary? Additional logical context is a separate question.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
-**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and unresolved logical context; 2A; AX-14/17/18.
+**Applicable authority / identified gap:** Mapping §5 behaviour → Feature Realization; 2B explicit relationships and the explicit Home strategy; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1342,11 +1472,12 @@ Informationally related (not automatic prerequisites): [CR-029](#cr-029).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Realization `id-37f6913198e2434db5309c1c8e36fbc0` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-028`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-029"></a>
 
@@ -1354,11 +1485,13 @@ Not yet processed
 
 **Disposition:** On-Hold
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the Solution Architect’s [explicit Home modelling-strategy decision](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home), governance release **1.0.14**. Native Realization SHALL NOT by itself establish Home, logical containment, parentage, ownership, naming context or navigation context. The separate authored Association «Home» is preserved in updated-input run-002. This neither rejects Realization nor accepts/reconciles its element/relationship proposals. Historical On-Hold Disposition remains unchanged.
 
 ### Proposed Architectural Change
+
+**Historical candidate retained for audit; answered No by the governing decision:**
 
 **Candidate Architectural Interpretation:** For this instance only, consider treating R12 Realization as establishing Harmonia logical Feature context of `[Business Service] Verify Identity Source` in `Identity Source & Correction Lineage`. This additional interpretation is a question, not observed XML containment. Preserve the native Realization; do not substitute or add Composition.
 
@@ -1368,14 +1501,20 @@ Not yet processed
 
 ### Architectural Questions / Adjudication
 
+**Original questions retained below. Current treatment:** The governing decision answers the Realization/context question **No**. Home is separately explicit, not an additional meaning of Realization. The updated model now contains the Solution Architect-authored Home assertion; see [run-002](../run-002/change-review.md). No Home is manufactured for this new element.
+
 1. Does this Realization also establish Harmonia logical Feature context for `[Business Service] Verify Identity Source` in `Identity Source & Correction Lineage`?
 2. If so, specify the bounded context, standing and any naming consequences for this instance. If not, retain the native Realization without invented context. No universal Realization inference or Composition is authorised.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical instruction:** The original/default On-Hold Disposition is preserved; no instance acceptance/rejection or reconciliation was issued.
 
-**Applicable authority / identified gap:** 2B unresolved Realization → Feature logical-context matter; 2A separate interpretations; AX-14/17.
+**Solution Architect Decision:** The explicit task decision on 2026-10-19 establishes [explicit Home](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home) in release 1.0.14 and answers this interpretation question No. Outcome is Resolved by governing authority; Disposition remains On-Hold. The native Realization proposal remains independently Unresolved. No reconciliation instruction is issued by this outcome update.
+
+**Applicable authority:** [Explicit Home strategy](../../../../../markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home); 2A Disposition/Outcome contract; AX-04/14/17.
 
 ### Related Change Requests
+
+The retained dependencies below do not condition this finding’s Resolved Outcome and do not manufacture Home. They describe only future independently authorised instance reconciliation.
 
 - Required resulting state from [CR-028](#cr-028): The native R12 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state.
 
@@ -1393,11 +1532,11 @@ Not yet processed
 
 ## CR-030 — Add Identifier Create Flow to Identifier Verification
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-030`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -1412,9 +1551,11 @@ Not yet processed
 1. Accept this submitted Flow from `[Business Service] Identifier Create` to `[Business Process] Identifier Verification`?
 2. What actual information/value transfer does this Flow assert, with what bounded direction and standing? A Flow is not automatically Triggering, execution order or orchestration.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Mapping §5 Flow/Serving direction and meaning; 2B; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1425,21 +1566,22 @@ Informationally related (not automatic prerequisites): [CR-035](#cr-035).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Flow `id-bef77e2eb7de4691b4fbe9a0c84e8232` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-030`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-031"></a>
 
 ## CR-031 — Add Identifier Update Flow to Identifier Verification
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-031`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -1454,9 +1596,11 @@ Not yet processed
 1. Accept this submitted Flow from `[Business Service] Identifier Update` to `[Business Process] Identifier Verification`?
 2. What actual information/value transfer does this Flow assert, with what bounded direction and standing? A Flow is not automatically Triggering, execution order or orchestration.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Mapping §5 Flow/Serving direction and meaning; 2B; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1467,21 +1611,22 @@ Informationally related (not automatic prerequisites): [CR-035](#cr-035).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Flow `id-0849f31d6d7d4f7eb1e484d7437e5cd7` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-031`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-032"></a>
 
 ## CR-032 — Add Verify Identity Source Serving to Identifier Verification
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-032`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -1496,9 +1641,11 @@ Not yet processed
 1. Accept this submitted Serving from `[Business Service] Verify Identity Source` to `[Business Process] Identifier Verification`?
 2. What service consumption does Serving assert? Confirm native legality, consuming behaviour and standing; this does not create ownership or domain authority.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** Mapping §5 Flow/Serving direction and meaning; 2B; 2A; AX-14/17/18.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1509,21 +1656,22 @@ Informationally related (not automatic prerequisites): [CR-035](#cr-035).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Serving `id-c53c42ba0a4f437f9cb76a4c1a701816` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-032`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-033"></a>
 
 ## CR-033 — Revise Person Identity Administration Feature Landscape
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-033`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -1540,9 +1688,11 @@ Not yet processed
 3. The unchanged View Documentation says “Context and immediate governed children only. Standing remains in element Properties.” A1 has no standing Properties and Lineage remains Proposed. What precise scope/filter wording and standing presentation should the accepted View use?
 4. For any subsequently accepted and reconciled CT3 → Feature Composition shown here, framing/semantic containment follows from the [governed Business metamodel rule](../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy). CR-016–CR-021 supply historical traceability, not additional interpretation-approval prerequisites. The required governed element/edge states below still apply; this View remains independently undecided.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** 2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1558,21 +1708,22 @@ Informationally related (not automatic prerequisites): [CR-016](#cr-016), [CR-01
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Diagram `id-e2a326c7d36751af9076a32dabe0e9cd` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-033`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-034"></a>
 
 ## CR-034 — Expose existing Compositions in Entity Information Enablement View
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-034`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
 
@@ -1587,9 +1738,11 @@ Not yet processed
 1. Accept this modified authored presentation of `0-Entity Information Enablement — CT2 Landscape` with the scope, membership and visual connections listed below and in the View evidence?
 2. Confirm its bounded purpose, scope/standing filter, View home and submitted layout/readability for later authorised preservation. Geometry and folder placement establish no semantic containment.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** 2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1599,23 +1752,26 @@ Required existing governed state: the seven exact Composition bindings, endpoint
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Diagram `id-c8ec850977565a17869af357ee28d917` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-034`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-035"></a>
 
 ## CR-035 — Add Identifier Capture Feature realisation View
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-035`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
+
+**Revision-4 Home consequence:** The original observed evidence and On-Hold / Unresolved state below remain unchanged. The updated input adds explicit Home connections to this View, separately recorded in [run-002](../run-002/change-review.md). View placement does not establish Home.
 
 **Candidate Architectural Interpretation:** Present Identifier Capture, Identifier Create, Identifier Update, Identifier Verification and Verify Identity Source with the six submitted Realization/Flow/Serving appearances. This is one independently reviewable authored View delta; it accepts no element, semantic edge or additional logical interpretation.
 
@@ -1630,9 +1786,11 @@ Not yet processed
 3. There is no submitted Documentation or Properties for this new View. Confirm the proposed purpose above; its Feature-realisation Name is evidence of presentation intent, not proof of logical Feature containment.
 4. Does the accepted View require the separately reviewed logical Feature-context interpretations? Its explicit native-edge presentation can stand without them. Record any stronger context claim and corresponding resulting-state prerequisites before authorisation.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** 2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1652,23 +1810,26 @@ Informationally related (not automatic prerequisites): [CR-023](#cr-023), [CR-02
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Diagram `id-216c4ab0757b45b3894e7e0c2594b9f9` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-035`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.
+
 
 <a id="cr-036"></a>
 
 ## CR-036 — Add Identity Source and Correction Lineage realisation View
 
-**Disposition:** On-Hold
+**Disposition:** Accept
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The architectural proposal/question remains undecided; no governing decision or processing/validation evidence establishes its resolution. The existing On-Hold instruction is preserved.
+**Outcome Reason:** Resolved by the authorised 2026-10-19 reconciliation: the exact governed resulting state exists in RAD-1.0.9, with dependencies, canonical metadata, references and actual Archi 5.10 transport verified. See [the per-CR execution record](reconciliation/execution-001/results.json) (`CR-036`) and [publication verification](../../../publishing/1.0.9/reconciliation-verification.json). Original Disposition, Outcome and Outcome Reason remain unchanged in the [pre-execution review](reconciliation/execution-001/change-review-before.md). Human rendering inspection remains a separate gate.
 
 ### Proposed Architectural Change
+
+**Revision-4 Home consequence:** The original observed evidence and On-Hold / Unresolved state below remain unchanged. The updated input adds explicit Home connections to this View, separately recorded in [run-002](../run-002/change-review.md). View placement does not establish Home.
 
 **Candidate Architectural Interpretation:** Present Verify Identity Source realizing Identity Source & Correction Lineage, with two element appearances and one Realization connection. This is one independently reviewable authored View delta; it accepts no element, semantic edge or additional logical interpretation.
 
@@ -1683,9 +1844,11 @@ Not yet processed
 3. There is no submitted Documentation or Properties for this new View. Confirm the proposed purpose above; its Feature-realisation Name is evidence of presentation intent, not proof of logical Feature containment.
 4. Does the accepted View require the separately reviewed logical Feature-context interpretations? Its explicit native-edge presentation can stand without them. Record any stronger context claim and corresponding resulting-state prerequisites before authorisation.
 
-**Solution Architect Decision:** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
+**Historical Solution Architect Decision (before current acceptance):** No acceptance, rejection or manual-resolution decision recorded. The existing/default On-Hold Disposition is preserved. Rationale, authority reference, adjudicator and date: not yet recorded.
 
 **Applicable authority / identified gap:** 2B legitimate authored Views / existing-edge reuse; navigation/View convention; 2A dependencies; AX-14/17.
+
+**Current Solution Architect execution decision — 2026-10-19:** Accept, as recorded in the adjudicated summary and explicitly directed in the reconciliation task. Preserve the submitted bounded change and apply existing governance; the subsequent Product qualifier decision resolves the recorded Product vocabulary stop. The earlier On-Hold instruction and all prior reasons remain recoverable in the byte-identical pre-execution review.
 
 ### Related Change Requests
 
@@ -1696,8 +1859,8 @@ Informationally related (not automatic prerequisites): [CR-029](#cr-029).
 
 ### Authorised Reconciliation Instruction
 
-Not authorised
+Reconcile the accepted native Diagram `id-8fb2f8b1776f4ebf969e9b5b638e4ed3` and its exact submitted scope from the frozen input. Establish the required reconciled elements/edges before dependent relationships or View appearances; preserve native types, endpoints, direction, specialisation and authorised layout. Apply only governed identity/naming and publication metadata. The exact source capture and binding are [accepted-ingestion-1.0.8.json](../../../../../markdown/governance/baseline/accepted-ingestion-1.0.8.json). No Home is inferred and no native Realization is replaced. This subsequent execution instruction is linked to the Solution Architect decision above; the original Not authorised instruction remains in the pre-execution review.
 
 ### Reconciliation / Processing Record
 
-Not yet processed
+**PASS — reconciled.** [Execution result and dependency evidence](reconciliation/execution-001/results.json), record `CR-036`; [RAD-1.0.9 Open Exchange publication](../../../../exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml). Original inputs and frozen detection remain unchanged; prior processing statements remain in retained history.

@@ -1,0 +1,169 @@
+{
+  "revision": 5,
+  "date": "2026-10-19",
+  "actor": "Codex recording the Solution Architect instructions and deterministic execution results",
+  "architecture_release": "1.0.9",
+  "prior_review": "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/change-review-before.md",
+  "prior_review_sha256": "33e076e4746e1838987cf8524cb80d228d0f3880e9f3d11fe209183f02d840b3",
+  "current_review_sha256": "41953ee0abe7471511f56d88df640726a2862f71ac828616ed538acc581ab863",
+  "authority": "Explicit Solution Architect reconciliation task; subsequent Product qualifier decision; preserved adjudicated summary Accept dispositions.",
+  "historical_dispositions_outcomes_and_reasons": "Preserved unchanged in the prior review snapshot and prior revisions; interpretation findings unchanged in current review.",
+  "results": [
+    {
+      "cr": "CR-001",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-002",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-003",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-004",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-005",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-006",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-007",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-008",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-009",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-010",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-011",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-012",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-013",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-014",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-015",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-022",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-024",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-026",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-028",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-030",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-031",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-032",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-033",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-034",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-035",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    },
+    {
+      "cr": "CR-036",
+      "disposition": "Accept",
+      "outcome": "Resolved",
+      "processing": "reconciliation/execution-001/results.json"
+    }
+  ]
+}

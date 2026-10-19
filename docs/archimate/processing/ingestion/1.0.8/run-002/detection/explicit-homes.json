@@ -1,0 +1,261 @@
+{
+  "input": {
+    "path": "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml",
+    "sha256": "366bbcf305575b831ea7e8e72e1c2b19f9631518fda8f297a4f7c51a959a5556",
+    "bytes": 21858672
+  },
+  "previous_input": {
+    "path": "docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml",
+    "sha256": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e"
+  },
+  "published_baseline": {
+    "path": "docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml",
+    "sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a"
+  },
+  "authored_homes": [
+    {
+      "identifier": "id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf",
+      "native_type": "Association",
+      "source": "id-c645a859ac2c4447ad5ae850cf384bf3",
+      "target": "id-727a264026584f80bc3304ff8383dc92",
+      "isDirected": true,
+      "specialization": "Home",
+      "source_element": {
+        "identifier": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "name": "[Business Process] Identifier Verification",
+        "native_type": "BusinessProcess",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "target_element": {
+        "identifier": "id-727a264026584f80bc3304ff8383dc92",
+        "name": "[Feature] Identifier Capture",
+        "native_type": "Capability",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "feature_target_confirmed": true,
+      "capability_context": [
+        {
+          "identifier": "id-29e0bf94882559a7b6ed9d092303a560",
+          "name": "Person Identity Administration",
+          "native_type": "Capability",
+          "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+          "harmoniaType": null,
+          "parents": [
+            {
+              "identifier": "id-c67b67dba5cc512d94eac01eb1524775",
+              "name": "Client Administration",
+              "native_type": "Capability",
+              "canonicalId": "f0885472cced4bccbcce1568bf0360dc",
+              "harmoniaType": null,
+              "parents": [
+                {
+                  "identifier": "id-4726f9b8f6015e019238b5a8cc596c7c",
+                  "name": "Entity Information Enablement",
+                  "native_type": "Capability",
+                  "canonicalId": "b5a92874f8ac4509a30af5253590edc1",
+                  "harmoniaType": null,
+                  "parents": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "line": 95244,
+      "name": null,
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf\" source=\"id-c645a859ac2c4447ad5ae850cf384bf3\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    },
+    {
+      "identifier": "id-a21144ee285f467982d13c39b49228dd",
+      "native_type": "Association",
+      "source": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+      "target": "id-727a264026584f80bc3304ff8383dc92",
+      "isDirected": true,
+      "specialization": "Home",
+      "source_element": {
+        "identifier": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+        "name": "[Business Service] Identifier Update",
+        "native_type": "BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "target_element": {
+        "identifier": "id-727a264026584f80bc3304ff8383dc92",
+        "name": "[Feature] Identifier Capture",
+        "native_type": "Capability",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "feature_target_confirmed": true,
+      "capability_context": [
+        {
+          "identifier": "id-29e0bf94882559a7b6ed9d092303a560",
+          "name": "Person Identity Administration",
+          "native_type": "Capability",
+          "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+          "harmoniaType": null,
+          "parents": [
+            {
+              "identifier": "id-c67b67dba5cc512d94eac01eb1524775",
+              "name": "Client Administration",
+              "native_type": "Capability",
+              "canonicalId": "f0885472cced4bccbcce1568bf0360dc",
+              "harmoniaType": null,
+              "parents": [
+                {
+                  "identifier": "id-4726f9b8f6015e019238b5a8cc596c7c",
+                  "name": "Entity Information Enablement",
+                  "native_type": "Capability",
+                  "canonicalId": "b5a92874f8ac4509a30af5253590edc1",
+                  "harmoniaType": null,
+                  "parents": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "line": 95251,
+      "name": null,
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-a21144ee285f467982d13c39b49228dd\" source=\"id-0088d61ccfcf4962b3aab8bc3b96021d\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    },
+    {
+      "identifier": "id-3f9d4356f4b84ef7b45fe3435d27fde8",
+      "native_type": "Association",
+      "source": "id-fddda503b8f0438e995465cd93204326",
+      "target": "id-727a264026584f80bc3304ff8383dc92",
+      "isDirected": true,
+      "specialization": "Home",
+      "source_element": {
+        "identifier": "id-fddda503b8f0438e995465cd93204326",
+        "name": "[Business Service] Identifier Create",
+        "native_type": "BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "target_element": {
+        "identifier": "id-727a264026584f80bc3304ff8383dc92",
+        "name": "[Feature] Identifier Capture",
+        "native_type": "Capability",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "feature_target_confirmed": true,
+      "capability_context": [
+        {
+          "identifier": "id-29e0bf94882559a7b6ed9d092303a560",
+          "name": "Person Identity Administration",
+          "native_type": "Capability",
+          "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+          "harmoniaType": null,
+          "parents": [
+            {
+              "identifier": "id-c67b67dba5cc512d94eac01eb1524775",
+              "name": "Client Administration",
+              "native_type": "Capability",
+              "canonicalId": "f0885472cced4bccbcce1568bf0360dc",
+              "harmoniaType": null,
+              "parents": [
+                {
+                  "identifier": "id-4726f9b8f6015e019238b5a8cc596c7c",
+                  "name": "Entity Information Enablement",
+                  "native_type": "Capability",
+                  "canonicalId": "b5a92874f8ac4509a30af5253590edc1",
+                  "harmoniaType": null,
+                  "parents": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "line": 95258,
+      "name": null,
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-3f9d4356f4b84ef7b45fe3435d27fde8\" source=\"id-fddda503b8f0438e995465cd93204326\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    },
+    {
+      "identifier": "id-d559bbf53430465e90f47c40593403a5",
+      "native_type": "Association",
+      "source": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+      "target": "id-bdf18b5e580b5b85a34357a3b21f36db",
+      "isDirected": true,
+      "specialization": "Home",
+      "source_element": {
+        "identifier": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+        "name": "[Business Service] Verify Identity Source",
+        "native_type": "BusinessService",
+        "canonicalId": null,
+        "harmoniaType": null
+      },
+      "target_element": {
+        "identifier": "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "name": "Identity Source & Correction Lineage",
+        "native_type": "Capability",
+        "canonicalId": "d72134e75001449a9e7ffae53f61458f",
+        "harmoniaType": "Feature"
+      },
+      "feature_target_confirmed": true,
+      "capability_context": [
+        {
+          "identifier": "id-29e0bf94882559a7b6ed9d092303a560",
+          "name": "Person Identity Administration",
+          "native_type": "Capability",
+          "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+          "harmoniaType": null,
+          "parents": [
+            {
+              "identifier": "id-c67b67dba5cc512d94eac01eb1524775",
+              "name": "Client Administration",
+              "native_type": "Capability",
+              "canonicalId": "f0885472cced4bccbcce1568bf0360dc",
+              "harmoniaType": null,
+              "parents": [
+                {
+                  "identifier": "id-4726f9b8f6015e019238b5a8cc596c7c",
+                  "name": "Entity Information Enablement",
+                  "native_type": "Capability",
+                  "canonicalId": "b5a92874f8ac4509a30af5253590edc1",
+                  "harmoniaType": null,
+                  "parents": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "line": 95265,
+      "name": null,
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-d559bbf53430465e90f47c40593403a5\" source=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" target=\"id-bdf18b5e580b5b85a34357a3b21f36db\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    }
+  ],
+  "delta_from_prior_input": {
+    "elements": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "relationships": {
+      "added": [
+        "id-3f9d4356f4b84ef7b45fe3435d27fde8",
+        "id-a21144ee285f467982d13c39b49228dd",
+        "id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf",
+        "id-d559bbf53430465e90f47c40593403a5"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "views": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "id-216c4ab0757b45b3894e7e0c2594b9f9",
+        "id-8fb2f8b1776f4ebf969e9b5b638e4ed3"
+      ]
+    }
+  },
+  "original_relationships_preserved": true,
+  "schema_and_references": "PASS",
+  "inferred_homes": 0
+}

@@ -1,0 +1,932 @@
+{
+  "status": "PASS",
+  "governance_release": {
+    "version": "1.0.14",
+    "previous_version": "1.0.13"
+  },
+  "checks": [
+    {
+      "check": "Preserved starting file: docs/markdown/governance/baseline/architecture.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Preserved starting file: docs/markdown/governance/baseline/motivation.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Preserved starting file: docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Preserved starting file: docs/archimate/exchange/ingest/1.0.8/HarmoniaArchictecture-1.0.8.archimate",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Preserved starting file: docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Fresh input hash matches evidence",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Compressed updated input is byte-identical",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent fresh read reproduces all Home observations",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Exactly four authored Home relationships",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All prior submitted native semantic relationships unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No submitted element added, removed or changed in Home update",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Only four explicitly authored semantic edges added",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Authored Home native/direction/Feature target: id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Authored Home native/direction/Feature target: id-a21144ee285f467982d13c39b49228dd",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Authored Home native/direction/Feature target: id-3f9d4356f4b84ef7b45fe3435d27fde8",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Authored Home native/direction/Feature target: id-d559bbf53430465e90f47c40593403a5",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/business-capabilities.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/business-enabling-capabilities.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/features.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/functions.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/services.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/processes.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/enterprise-capabilities.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/relationships.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/motivation.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/markdown/governance/baseline/discrepancies.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/archimate/exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Independent generated output reproduction: docs/archimate/processing/publishing/1.0.14/publication-validation-1.0.14.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Normalised Exchange schema and references",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All original elements preserved exactly with resolved property names",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All original relationships preserved exactly with resolved property names",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All original views preserved exactly with resolved property names",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Exactly 208 fixed existing-baseline Home assertions",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No unregistered additional relationship",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No new 1.0.8 element Home manufactured",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:practitioner-directory-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:associate-order-outcome",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:order-outcome-notification",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:associate-care-plan-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:care-plan-context-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:distribute-care-plan-change",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:care-plan-change-notification",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:coordinate-multi-agency-chronic-care-plan",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:chronic-care-timeline-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:route-acute-critical-result-alert",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:acute-clinical-alert-dispatch",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:assemble-inpatient-discharge-dossier",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:discharge-dossier-packaging-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:receive-diagnostic-requisition-feed",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:modality-worklist-distribution",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:publish-governed-diagnostic-report",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:diagnostic-publication-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:correlate-adverse-reaction--allergy-profile",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:allergy--adverse-reaction-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:project-screening-eligibility-timeline",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:preventive-screening-status-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:bind-community-support-network-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:community-care-team-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-clinic--practice-capacity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-ward-capacity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:ward-operational-summary-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-theatre-capacity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-theatre-case-progression",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:theatre-case-progression-telemetry",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:coordinate-ed-departmental-capacity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:ed-operational-status-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-outpatient-capacity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:ambulatory-session-status-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-bed-turnover-progression",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:bed-turnover-lifecycle-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-mobile-service-capacity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:track-operational-staff-presence",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:staff-presence-telemetry-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:dispatch-operational-work-order",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:work-dispatch-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:verify-operational-access-credential",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:operational-credential-checkpoint-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-patient-transport-progression",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:patient-transport-tracking-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-specimen-transport-progression",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-discharge-coordination-progression",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:discharge-readiness-telemetry",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:retrieve-health-information",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:clinical-resource-retrieval-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:apply-access-qualified-result-filtering",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:mediate-standards-based-health-information-communication",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:standards-communication-gateway-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:evaluate-consent-constraint",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:consent-enforcement-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:propagate-security-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:security-context-validation-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:record-security-significant-activity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:security-audit-ingress",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:coordinate-work-order",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:work-order-coordination-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:coordinate-to-do",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:to-do-management-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:coordinate-synthetic-task",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:synthetic-task-execution-service",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:supervise-activity-timeout--escalation",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:activity-escalation-telemetry",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:govern-information-definition",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:information-dictionary-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:govern-terminology-binding",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:terminology-binding-specification-lookup",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:govern-exchange-profile",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:exchange-profile-specification-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:design-service-assurance",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:manage-assurance-criteria",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:establish-assurance-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:assess-assurance-evidence",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: function:adjudicate-assurance-assessment",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:request-service-assurance",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:request-service-assurance-status",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: service:communicate-service-assurance-outcome",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:theatre-case-progression-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:bed-turnover-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:patient-transport-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:specimen-transport-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:discharge-progression-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:work-order-progression-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:to-do-progression-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:synthetic-task-progression-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:assurance-process-design",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:assurance-process-execution",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: process:assurance-process-reporting--communication",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-resolve-associated-binary-content",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-assemble-associated-binary-content",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:service-associated-binary-content-retrieval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-qualify-information-authority-standing",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-accept-governed-dataset-revision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:service-governed-reference-dataset-content-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-capture-required-significant-audit-evidence",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:service-mandatory-audit-evidence-capture",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-record-significant-information-lineage",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-coordinate-entity-relative-input",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:service-entity-operational-input-submission",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-maintain-operational-fulfilment-definition",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-reconcile-indeterminate-activity-effects",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-establish-activity-effect-observation-basis",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-determine-reconciled-activity-continuation",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:process-indeterminate-activity-outcome-reconciliation-process",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-assess-service-offering-readiness",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:service-service-offering-readiness-query",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:function-assemble-purpose-qualified-research-release",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No guessed Home: proposal:service-authorised-research-information-export",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All 36 original CRs retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-001 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-001 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-016 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-016 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-017 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-017 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-018 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-018 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-019 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-019 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-020 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-020 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-021 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-021 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-033 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-033 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 original Disposition preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 original Detected Evidence preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 Resolved by governing Home decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 Resolved by governing Home decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 Resolved by governing Home decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 Resolved by governing Home decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Native Realizations independently remain unresolved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Review overlay and displayed fields agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Release patch increment",
+      "outcome": "PASS"
+    }
+  ],
+  "authored_home_count": 4,
+  "normalised_home_count": 208,
+  "assessments": {
+    "normalised": 208,
+    "ambiguous": 18,
+    "unresolved": 93
+  },
+  "resulting_model": "docs/archimate/exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml",
+  "resulting_model_sha256": "8be6fd16e617d96f7054572dbf896b2384647f16cc0c11b3039137610b9712be",
+  "cr_outcomes": {
+    "CR-023": "Resolved",
+    "CR-025": "Resolved",
+    "CR-027": "Resolved",
+    "CR-029": "Resolved"
+  },
+  "native_relationships_preserved": 852,
+  "original_views_preserved": 1196,
+  "new_canonical_ids": 0,
+  "downstream_information_application_ingestion": false
+}

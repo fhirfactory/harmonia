@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "docs/archimate/framework/tests",
+    "-p",
+    "test_view_presentation.py",
+    "-v"
+  ],
+  "timeout_seconds": 120.0,
+  "elapsed_seconds": 41.166,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/focused-release-final.log",
+  "log_sha256": "96c66e5bbd2bfb73999f92a31d4dcc733a3e9a3e73b192d22d91874534000c2b"
+}

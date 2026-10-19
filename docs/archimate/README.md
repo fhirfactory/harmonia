@@ -106,6 +106,7 @@ not release increment rules.
 ```text
 docs/archimate/
 ├── framework/                       reusable machinery
+├── governance-tooling/              non-RAD internal evidence and migration audits
 ├── processing/
 │   ├── publishing/<release>/        publication working state and evidence
 │   └── ingestion/                   incoming-export working state and evidence
@@ -120,6 +121,10 @@ keeps working material separate from exchanged files and separates publishing
 from ingestion. [Publish](exchange/publish/README.md) contains versioned finished
 packages: currently one Open Exchange XML per release. [Ingest](exchange/ingest/README.md)
 is the landing area for incoming Archi exports.
+
+[Governance/tooling evidence](governance-tooling/README.md) is structurally separate
+from architecture publications. The internal identifier 1.0.14 has no RAD release
+classification; its original artefacts and provenance are preserved there.
 
 ### Superseded architectural notes — preserved history
 

@@ -15,6 +15,7 @@ INGEST = EXCHANGE / 'ingest'
 PROCESSING = FRAMEWORK.parent / 'processing'
 PUBLISHING = PROCESSING / 'publishing'
 INGESTION = PROCESSING / 'ingestion'
+GOVERNANCE_TOOLING = FRAMEWORK.parent / 'governance-tooling'
 SYNCHRONISATION_EVIDENCE = PUBLISHING / '1.0.6'
 ESTABLISHMENT_EVIDENCE = PUBLISHING / '1.0.7'
 RECOVERY_EVIDENCE = PUBLISHING / '1.0.5'
@@ -29,13 +30,28 @@ def historical_path(path, root=ROOT):
     """Resolve only explicitly recorded moved files/directories, under root."""
     root = Path(root).resolve()
     path = Path(path)
-    absolute = path if path.is_absolute() else root / path
+    absolute = (path if path.is_absolute() else root / path).resolve()
     try:
         relative = absolute.relative_to(root).as_posix()
     except ValueError:
         return absolute
     target = LOCATIONS['files'].get(relative, LOCATIONS['directories'].get(relative))
     return root / target if target else absolute
+
+
+def require_rad_release(version):
+    """Reject identifiers explicitly classified as internal tooling evidence."""
+    if version in LOCATIONS.get('non_rad_evidence', {}):
+        raise ValueError('Internal governance/tooling identifier is not a RAD architecture release: ' + version)
+    return version
+
+
+def validate_publication_namespaces():
+    """Keep classified non-RAD evidence out of both architecture publication roots."""
+    for version in LOCATIONS.get('non_rad_evidence', {}):
+        for parent in (PUBLISH, PUBLISHING):
+            if (parent / version).exists() or (parent / version).is_symlink():
+                raise ValueError('Non-RAD evidence in architecture publication namespace: ' + str(parent / version))
 
 
 def incoming_path(path):

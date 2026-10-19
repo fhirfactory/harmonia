@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-v"
+  ],
+  "timeout_seconds": 120.0,
+  "elapsed_seconds": 33.2,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/governance.log",
+  "log_sha256": "756496483a33673195dd20748888f6455af529da6d84e303105e226de5152c02"
+}

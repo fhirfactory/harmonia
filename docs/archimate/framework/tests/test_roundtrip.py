@@ -302,13 +302,13 @@ class AcceptedBaselineDiagnosticTests(unittest.TestCase):
         # Expected accepted fixture counts are regression assertions; all report
         # values are computed from XML/source indexes, not from these constants.
         self.assertEqual("PASS", report["audit_status"])
-        self.assertEqual(1299, report["canonical_id"]["total_elements"])
-        self.assertEqual(1299, report["canonical_id"]["single_valid_uuid32"])
+        self.assertEqual(1308, report["canonical_id"]["total_elements"])
+        self.assertEqual(1308, report["canonical_id"]["single_valid_uuid32"])
         self.assertEqual([], report["canonical_id"]["missing"])
         self.assertEqual('CONFORMANT_WITH_GOVERNED_DERIVATION', report['future_naming_readiness'])
         self.assertEqual([], report['naming']['conflicts'])
         for role in ('displayName', 'friendlyName', 'canonicalName'):
-            self.assertEqual(1299, report['naming']['counts'][role + '_derived_match'])
+            self.assertEqual(1308, report['naming']['counts'][role + '_derived_match'])
         self.assertEqual(14, report["historical_ec_aliases"]["count"])
         self.assertEqual([], report["historical_ec_aliases"]["binding_conflicts"])
         self.assertEqual({"Established": 190, "Proposed": 756}, report["naming"]["source_path_standing"])

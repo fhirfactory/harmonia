@@ -19,6 +19,7 @@ import uuid
 import generate_views as g
 
 from workspace_paths import PUBLISH, PUBLISHING, SYNCHRONISATION_EVIDENCE, ESTABLISHMENT_EVIDENCE, historical_path
+from workspace_paths import require_rad_release, validate_publication_namespaces
 
 ROOT, BASE = g.BASE.parents[2], g.BASE
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -30,7 +31,8 @@ ROLES = ('canonicalId', 'displayName', 'friendlyName', 'canonicalName', 'archima
 FIELDS = ROLES[:4]
 SOURCE_FIELDS = (*FIELDS, 'nameComponent', 'nameComponentAuthority')
 UUID32 = re.compile(r'[0-9a-f]{32}\Z')
-FORMAL = {'feature': 'FEAT', 'function': 'FN', 'service': 'SV', 'process': 'PR'}
+FORMAL = {'feature': 'FEAT', 'function': 'FN', 'service': 'SV', 'process': 'PR',
+          'product': 'PRODUCT'}
 
 
 def encoded(value):
@@ -91,17 +93,19 @@ def release():
 
 
 def model_path():
+    validate_publication_namespaces()
     if active():
         from architecture_release import load_release
-        version = load_release()['version']
+        version = require_rad_release(load_release()['version'])
         return PUBLISH / version / ('Harmonia-Architecture-' + version + '.xml')
     return LEGACY_MODEL
 
 
 def validation_path():
+    validate_publication_namespaces()
     if active():
         from architecture_release import load_release
-        version = load_release()['version']
+        version = require_rad_release(load_release()['version'])
         if version != read(SOURCE)['governedMetadata']['establishedRelease']:
             return PUBLISHING / version / ('publication-validation-' + version + '.json')
         return ESTABLISHMENT_EVIDENCE / 'canonical-identity-validation.json'
@@ -163,6 +167,30 @@ def historical_records(b):
     return records
 
 
+def formal_qualifier(record):
+    """The governed naming vocabulary, independently of identity or ancestry."""
+    if record['type'] in FORMAL:
+        return FORMAL[record['type']]
+    tier = record.get('tier')
+    g.require(tier in ('CT1', 'CT2', 'CT3'), 'Missing formal tier: ' + record['key'])
+    return tier + {'business': '', 'business_enabling': '-BEC', 'enterprise': '-EC'}[record['category']]
+
+
+def qualified_names(path):
+    """Apply the same lexical and qualification rules to each governed component."""
+    labels = []
+    for resource in path:
+        if 'nameComponent' in resource:
+            value = resource['nameComponent']
+            g.require(isinstance(value, str) and re.fullmatch(r'[A-Z][A-Za-z0-9]*', value)
+                      and resource.get('nameComponentAuthority'), 'Unqualified/unproven name component decision')
+        else:
+            value = component(resource['name'])
+        labels.append(value)
+    return dict(friendlyName='.'.join(labels),
+                canonicalName='.'.join(formal_qualifier(e) + '-' + label for e, label in zip(path, labels)))
+
+
 def descriptors(b, source, motivation):
     """Index actual source resources using the existing publication bindings."""
     result = {}
@@ -186,13 +214,6 @@ def descriptors(b, source, motivation):
             current = population.get(key)
         return path
 
-    def prefix(record):
-        if record['type'] in FORMAL:
-            return FORMAL[record['type']]
-        tier = record.get('tier')
-        g.require(tier in ('CT1', 'CT2', 'CT3'), 'Missing formal tier: ' + record['key'])
-        return tier + {'business': '', 'business_enabling': '-BEC', 'enterprise': '-EC'}[record['category']]
-
     def add(identifier, record, path, native_type, motivation_record=False):
         g.require(identifier not in result, 'Multiple source owners for representation: ' + identifier)
         label = record['name']
@@ -207,12 +228,11 @@ def descriptors(b, source, motivation):
                           and resource.get('nameComponentAuthority'), 'Unqualified/unproven name component decision')
                 return value
             return component(text)
-        labels = [spelling(e, e['name']) for e in path] if not motivation_record else [spelling(record, label)]
-        qualified = [prefix(e) + '-' + token for e, token in zip(path, labels)] if not motivation_record else ['MOT-' + labels[0]]
+        names = qualified_names(path) if not motivation_record else dict(
+            friendlyName=spelling(record, label), canonicalName='MOT-' + spelling(record, label))
         kind = record['type']
         display = ('[' + (record['tier'] if kind in ('capability', 'enterprise_capability') else 'Feature') + '] ' + record['name']) if kind in ('capability', 'enterprise_capability', 'feature') else record['name']
-        result[identifier] = dict(record=record, expected=dict(displayName=display, friendlyName='.'.join(labels),
-                                                            canonicalName='.'.join(qualified)), archimateType=native_type,
+        result[identifier] = dict(record=record, expected=dict(displayName=display, **names), archimateType=native_type,
                                   harmoniaType='Feature' if kind == 'feature' else None)
 
     import recover_v02 as r
@@ -312,6 +332,12 @@ def remove_properties(root):
 
 def validate_publication(b, root):
     index, result = load(b)
+    if hasattr(b, 'reconciliation_index'):
+        index.update(b.reconciliation_index)
+        result = validate_records(index)
+    if hasattr(b, 'home_context_index'):
+        index = b.home_context_index
+        result = validate_records(index)
     definitions = {p.get('identifier'): p.findtext('a:name', namespaces=g.N)
                    for p in root.findall('a:propertyDefinitions/a:propertyDefinition', g.N)}
     for role in ROLES:
@@ -473,7 +499,9 @@ def main():
             result = bootstrap(args.establish_for)
         else:
             import synchronise_baseline as s
-            result = dict(status='PASS', **load(s.Baseline(*s.load_inputs()))[1])
+            import reconcile_108
+            outputs, b, _ = s.publish()
+            result = dict(status='PASS', **validate_publication(b, g.ET.fromstring(outputs[model_path()])))
         print(json.dumps(result, indent=2))
         return 0
     except (OSError, ValueError, KeyError, g.ET.LxmlError) as exc:

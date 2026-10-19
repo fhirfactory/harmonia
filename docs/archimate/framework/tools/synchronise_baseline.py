@@ -22,6 +22,7 @@ import publish_navigation as nav
 import feature_projection as fp
 from architecture_release import load_release
 import governed_metadata as metadata
+import home_relationships as home
 
 from workspace_paths import SYNCHRONISATION_EVIDENCE, historical_path
 
@@ -283,9 +284,9 @@ class Baseline:
             return chain
         return []
 
-    def feature_path(self, e):
-        chain = self.feature_ancestry(e)
-        if e["record_state"] == "current" and chain:
+    def feature_path(self, e, ancestry=None):
+        chain = self.feature_ancestry(e) if ancestry is None else ancestry
+        if (ancestry is not None or e["record_state"] == "current") and chain:
             return [*self.capability_path(chain[-1]), e["name"]]
         # Do not render responsibility-only evidence as direct CT1/CT2 framing.
         owner = self.records.get(e.get("owner_key"))
@@ -293,10 +294,10 @@ class Baseline:
         state = "Unresolved Feature Ancestry" if e["record_state"] == "current" else r.STATES[e["record_state"]]
         return ["Strategy", "Business Layer", r.CATEGORIES[category], state, e["name"]]
 
-    def context_paths(self, e):
+    def context_paths(self, e, ancestry=None):
         """Four navigation projections of one semantic subject, never copies."""
-        home = self.feature_path(e) if e["type"] == "feature" else self.capability_path(e)
-        category = self.category(e)
+        home = self.feature_path(e, ancestry) if e["type"] == "feature" else self.capability_path(e)
+        category = self.category(e) if ancestry is None else ancestry[0]['category']
         paths = [home, ["Views", "1-Strategy", "Capabilities", *home[2:]]]
         if category != "enterprise":
             paths += [["BusinessLayer", "BC-Grouped-Elements" if category == "business" else "BEC-Grouped-Elements", *home[3:]],
@@ -479,6 +480,7 @@ class Baseline:
                           "See docs/markdown/governance/baseline/coverage.md. No allocation or missing semantics is inferred from this empty canvas.")
         fp.landscapes(self)
         fp.business_layout(self)
+        home.apply(self)
         self.organizations()
         return self.root
 
@@ -570,9 +572,19 @@ def counts(root):
 def validate_projection_preservation(root, b=None):
     """Compare with the actual accepted starting candidate, not recovery counts."""
     proof = read(DEST / "human-inspection-start-preservation.json")
+    # The accepted Home migration adds only its literal, independently validated
+    # assertions and their specialisation definition to this historical boundary.
+    # Never exempt arbitrary Association edges or weaken the old digest check.
+    additions = {"relationships": set(), "property_definitions": set()}
+    if b is not None and hasattr(b, "business_homes"):
+        home.validate(b, root)
+        additions["relationships"] = {r["relationship_identifier"] for r in b.business_homes["records"]
+                                       if r["status"] == "normalised"}
+        additions["property_definitions"] = {"specialization"}
     for name, xpath in (("elements", "a:elements/a:element"), ("relationships", "a:relationships/a:relationship"),
                         ("property_definitions", "a:propertyDefinitions/a:propertyDefinition")):
-        records = {e.get("identifier"): g.signature(e) for e in root.findall(xpath, g.N)}
+        records = {e.get("identifier"): g.signature(e) for e in root.findall(xpath, g.N)
+                   if e.get("identifier") not in additions.get(name, set())}
         g.require(len(records) == proof["checks"][name]["count"] and
                   g.digest(records) == proof["checks"][name]["sha256"],
                   "Starting candidate changed protected semantic/Documentation/View content: " + name)
@@ -695,6 +707,12 @@ def validate_capability_navigation(b, root):
 
 
 def validate(b, root, *, legacy_replay=False):
+    if hasattr(b, 'reconciliation') and not legacy_replay:
+        import reconcile_108
+        if hasattr(b, 'view_presentation'):
+            import view_presentation
+            view_presentation.audit(b.view_presentation_before, root, b.presentation_scope)
+        return reconcile_108.validate(b, root)
     g.load_schema(BASE / "schemas/archimate3_Diagram.xsd").assertValid(root)
     g.validate_identifiers(root)
     if metadata.active() and not legacy_replay:
@@ -766,6 +784,7 @@ def validate(b, root, *, legacy_replay=False):
         g.require(root.find(f"a:propertyDefinitions/a:propertyDefinition[@identifier='{ref}']", g.N) is not None, "Invalid property definition reference")
     validate_capability_navigation(b, root)
     fp.validate(b, root)
+    home.validate(b, root)
     validate_projection_preservation(root, b)
     return counts(root)
 
@@ -836,6 +855,7 @@ def markdown(b):
     for i, e in enumerate(b.source["relationships"]):
         lines.append(f"| {link(b.records[e['from']])} | {e['type']} | {link(b.records[e['to']])} | {e['status']} | {states[i]} | " +
                      (f"{native[i]['archimate_type']} `{native[i]['identifier']}`" if i in native else "Metadata and finding; native profile/authority unresolved") + " |")
+    lines.extend(home.markdown(b, link))
     output[RAD / "relationships.md"] = ("\n".join(lines) + "\n").encode()
     lines = ["# Baseline Motivation correspondence", "", "[Reading guide](README.md). Definitions remain in their canonical current sources. "
              "Historical source constructs remain historical. Publication keys and XML IDs allocate no persistent Architecture Identities.", "",
@@ -868,7 +888,7 @@ def discrepancies(b):
             "other_preserved_review_items": ["214 unproven 1.0.4 crosswalks; no label-based equivalence", "CM-R05 Exchange naming qualification/conflict remains in snapshot name history and source notes; display rename is not closure", "Client consent / FEAT-EM-09 ownership history retained", "F46 and Domain05 C/F/D/M identity/type ambiguities remain in current RADS", "462 source relationship assertions retain their exact metadata-only findings", "Current Application/Information/Middleware/Technology semantic publication is future expansion, not absent RADS architecture"]}
 
 
-def publish():
+def publish(*, reconciled=True, home_derived=True, presentation=True):
     b = Baseline(*load_inputs())
     b.build()
     data = g.serialize(b.root)
@@ -915,7 +935,16 @@ def publish():
                           "feature_centred_diagram_layout", "no_false_feature_associations")}}
     outputs = {metadata.LEGACY_MODEL: data, DEST / "validation.json": encoded(report), **md}
     if metadata.active():
-        return metadata.overlay(outputs, b, report)
+        result = metadata.overlay(outputs, b, report)
+        if reconciled:
+            import reconcile_108
+            result = reconcile_108.publish(*result, home_derived=home_derived)
+            if home_derived and presentation:
+                import view_presentation
+                result = view_presentation.publish(*result)
+                validate(result[1], g.ET.fromstring(result[0][metadata.model_path()]))
+            return result
+        return result
     return outputs, b, report
 
 

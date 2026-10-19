@@ -1100,3 +1100,242 @@ All source assertions, including unresolved and historical assertions, are retai
 | [Authorised Research Release Assembly](features.md#hcm-ft-authorised-research-release-assembly) | purpose_context | [Research Information Curation](business-enabling-capabilities.md#hcm-bec-authorised-research-information-provision) | Proposed | current | Metadata and finding; native profile/authority unresolved |
 | [Population Notification Obligation Tracking](features.md#hcm-ft-population-notification-obligation-tracking) | purpose_context | [Population Health Information Reporting](business-enabling-capabilities.md#hcm-bec-population-health-notification-enablement) | Proposed | current | Metadata and finding; native profile/authority unresolved |
 | [Demand & Capacity Planning Projection](features.md#hcm-ft-demand-capacity-planning-projection) | purpose_context | [Service Planning Data Management](business-enabling-capabilities.md#hcm-bec-service-planning-information-provision) | Proposed | current | Metadata and finding; native profile/authority unresolved |
+
+## Explicit Business Home assertions
+
+[Modelling authority](../architecture-modelling-strategy.md). Fixed one-time [migration register](business-homes.json); native relationships above remain unchanged. Unresolved and ambiguous assessments are preserved in that register. No Realization or presentation inference applies.
+
+| Business behaviour | Directed Association «Home» target | Relationship ID |
+| --- | --- | --- |
+| [Resolve Person Identifier](functions.md#hcm-fn-resolve-person-identifier) | [Identifier Resolution](features.md#feat-em-01) | `id-3ef7388fa0bb57208626f9e78af67d8c` |
+| [Person Identifier Resolution](services.md#hcm-sv-person-identifier-resolution) | [Identifier Resolution](features.md#feat-em-01) | `id-8f7c9109d15751b69f87b870cd021116` |
+| [Correlate Person Identifiers](functions.md#hcm-fn-correlate-person-identifiers) | [Cross-Authority Identifier Correlation](features.md#feat-em-02) | `id-62888d6ec022567c90a0042be13e8414` |
+| [Person Identifier Correlation](services.md#hcm-sv-person-identifier-correlation) | [Cross-Authority Identifier Correlation](features.md#feat-em-02) | `id-2dadb6e4569d5009a6f50e2e3ec7482d` |
+| [Maintain Person Identity Aliases](functions.md#hcm-fn-maintain-person-identity-aliases) | [Identity Alias Association](features.md#feat-em-03) | `id-44412291e2d4502cbd1d7e4fb1f8e6fa` |
+| [Apply Governed Person Identity Correction](functions.md#hcm-fn-apply-governed-person-identity-correction) | [Governed Identity Correction](features.md#feat-em-04) | `id-14650486d079592ab6bf576bf2952d17` |
+| [Person Identity Correction](services.md#hcm-sv-person-identity-correction) | [Governed Identity Correction](features.md#feat-em-04) | `id-522e3c0de84f53509fc53e401c579c8e` |
+| [Establish Healthcare Subject Context](functions.md#hcm-fn-establish-healthcare-subject-context) | [Subject Context Binding](features.md#feat-em-05) | `id-931731cc40b7529ca9d61c304e128011` |
+| [Healthcare Subject Context Resolution](services.md#hcm-sv-healthcare-subject-context-resolution) | [Subject Context Binding](features.md#feat-em-05) | `id-6f8c36d87e2857eb91812b93180bc5bc` |
+| [Govern Subject Demographic Context](functions.md#hcm-fn-govern-subject-demographic-context) | [Demographic Context Governance](features.md#feat-em-06) | `id-97a17361c66c5536bc60bb987ab9e6fb` |
+| [Demographic Change Distribution](services.md#hcm-sv-demographic-change-distribution) | [Demographic Context Governance](features.md#feat-em-06) | `id-2858ff3790905cd8b6b49ec7af0d3338` |
+| [Maintain Client Relationships](functions.md#hcm-fn-maintain-client-relationships) | [Next-of-Kin & Guardian Association](features.md#feat-em-07) | `id-9ee7a421f8675e4c91f4d2ff402c58f7` |
+| [Client Relationship Query](services.md#hcm-sv-client-relationship-query) | [Next-of-Kin & Guardian Association](features.md#feat-em-07) | `id-9ff081b9dacb54a09fc1dc52b45286b2` |
+| [Govern Client Relationship Validity](functions.md#hcm-fn-govern-client-relationship-validity) | [Relationship Validity Tracking](features.md#feat-em-08) | `id-8aa05320be465b159ddfdc2422171a1f` |
+| [Representative Authority Verification](services.md#hcm-sv-representative-authority-verification) | [Relationship Validity Tracking](features.md#feat-em-08) | `id-f1c9c91980775174bbb1ce1cbf7d77a3` |
+| [Evaluate Client Consent](functions.md#hcm-fn-evaluate-client-consent) | [Consent Directive Evaluation](features.md#feat-em-09) | `id-f78a3e318e075ee0adc0f5be118d5af9` |
+| [Consent Decision Service](services.md#hcm-sv-consent-decision-service) | [Consent Directive Evaluation](features.md#feat-em-09) | `id-e4bf2a4218b55d3b9f9eb26951aa5d37` |
+| [Evaluate Client Confidentiality Restrictions](functions.md#hcm-fn-evaluate-client-confidentiality-restrictions) | [Confidentiality Flag Enforcement](features.md#feat-em-10) | `id-6a45285a9cf95107b37ddf18a98ff948` |
+| [Confidentiality Restriction Evaluation](services.md#hcm-sv-confidentiality-restriction-evaluation) | [Confidentiality Flag Enforcement](features.md#feat-em-10) | `id-e4e0c4442653576e9555dd7dd5fae545` |
+| [Verify Practitioner Registration](functions.md#hcm-fn-verify-practitioner-registration) | [National Practitioner Verification](features.md#feat-em-11) | `id-508e9cd6c19658b9b68baeb4686f0072` |
+| [Practitioner Verification Service](services.md#hcm-sv-practitioner-verification-service) | [National Practitioner Verification](features.md#feat-em-11) | `id-36c96e1f667c5bc5afa5b52b100623c0` |
+| [Govern Practitioner Profile](functions.md#hcm-fn-govern-practitioner-profile) | [Practitioner Profile Governance](features.md#feat-em-12) | `id-6fc2f4597e1653e798ffd110c3de8835` |
+| [Maintain Practitioner Roles](functions.md#hcm-fn-maintain-practitioner-roles) | [Role & Specialty Modeling](features.md#feat-em-13) | `id-e2a5b1562e5e5953b1f86dc8b80f0183` |
+| [Practitioner Role Resolution](services.md#hcm-sv-practitioner-role-resolution) | [Role & Specialty Modeling](features.md#feat-em-13) | `id-d86932cb30e05c17858deaa3581cffa0` |
+| [Bind Practitioner Electronic Endpoints](functions.md#hcm-fn-bind-practitioner-electronic-endpoints) | [Electronic Endpoint Binding](features.md#feat-em-14) | `id-a69bd8a299a05a54b33d4f5b90850abc` |
+| [Practitioner Endpoint Lookup](services.md#hcm-sv-practitioner-endpoint-lookup) | [Electronic Endpoint Binding](features.md#feat-em-14) | `id-a66617c38ccd54399a779a0fe82ddbf8` |
+| [Maintain Practitioner Affiliations](functions.md#hcm-fn-maintain-practitioner-affiliations) | [Practitioner-Organisation Affiliation](features.md#feat-em-15) | `id-efb132acb29750889ae0694c4b2fd894` |
+| [Practitioner Affiliation Resolution](services.md#hcm-sv-practitioner-affiliation-resolution) | [Practitioner-Organisation Affiliation](features.md#feat-em-15) | `id-5047d855bf1e5700b3b1cfb92c35956a` |
+| [Maintain Clinical Privileges](functions.md#hcm-fn-maintain-clinical-privileges) | [Clinical Privileging Record](features.md#feat-em-16) | `id-ce90e7fa706b517cb38947e93c0a6a66` |
+| [Clinical Privilege Verification](services.md#hcm-sv-clinical-privilege-verification) | [Clinical Privileging Record](features.md#feat-em-16) | `id-82bc873f87b35d8c8019ec6bdeb7bef6` |
+| [Verify Healthcare Organisation](functions.md#hcm-fn-verify-healthcare-organisation) | [National Organisation Verification](features.md#feat-em-17) | `id-08c4728a42845250bcf787d1d689d9b9` |
+| [Organisation Verification Service](services.md#hcm-sv-organisation-verification-service) | [National Organisation Verification](features.md#feat-em-17) | `id-4e669e02b9b75db6b2ef45c820b511c9` |
+| [Govern Organisation Profile](functions.md#hcm-fn-govern-organisation-profile) | [Organisation Profile Management](features.md#feat-em-18) | `id-347681699494556983132f64c37cc54e` |
+| [Organisation Directory Query](services.md#hcm-sv-organisation-directory-query) | [Organisation Profile Management](features.md#feat-em-18) | `id-54983dbe86eb57169ecab6280c772d5e` |
+| [Maintain Organisational Structure](functions.md#hcm-fn-maintain-organisational-structure) | [Hierarchical Structure Navigation](features.md#feat-em-19) | `id-ed87df029241554a995e559dce96d747` |
+| [Organisational Hierarchy Resolution](services.md#hcm-sv-organisational-hierarchy-resolution) | [Hierarchical Structure Navigation](features.md#feat-em-19) | `id-3495ad1d171c53e3920dd9bcba596287` |
+| [Maintain Organisation Contacts](functions.md#hcm-fn-maintain-organisation-contacts) | [Directory Contact Management](features.md#feat-em-20) | `id-8551562bdb2b5ac5b4d1f26f2c802628` |
+| [Organisation Contact Lookup](services.md#hcm-sv-organisation-contact-lookup) | [Directory Contact Management](features.md#feat-em-20) | `id-9f1b1bd1bc215245be506ff160ac4e46` |
+| [Maintain Healthcare Location](functions.md#hcm-fn-maintain-healthcare-location) | [Location Geospatial & Address Resolution](features.md#feat-em-21) | `id-66ab6ceedb4252aabd74c28cc3797866` |
+| [Location Directory Query](services.md#hcm-sv-location-directory-query) | [Location Geospatial & Address Resolution](features.md#feat-em-21) | `id-6a52a55c199d501bb593ea30c0196737` |
+| [Maintain Physical Location Hierarchy](functions.md#hcm-fn-maintain-physical-location-hierarchy) | [Physical Hierarchy Modeling](features.md#feat-em-22) | `id-56fe71aff1995b21a2cd1366f4595d6d` |
+| [Location Hierarchy Resolution](services.md#hcm-sv-location-hierarchy-resolution) | [Physical Hierarchy Modeling](features.md#feat-em-22) | `id-f3e7bd196b985416a3182a99fa8d6d7d` |
+| [Maintain Care-Place Definition](functions.md#hcm-fn-maintain-care-place-definition) | [Atomic Care-Place Modeling](features.md#feat-em-23) | `id-2ecd5c189eab5b9d969d856df57ad348` |
+| [Care-Place Specification Lookup](services.md#hcm-sv-care-place-specification-lookup) | [Atomic Care-Place Modeling](features.md#feat-em-23) | `id-9c41f7a2f7d95fc99cf256d5aeb8e513` |
+| [Maintain Healthcare Service Definition](functions.md#hcm-fn-maintain-healthcare-service-definition) | [Service Catalogue Publishing](features.md#feat-em-24) | `id-f294d9f9f1e853f3acc4b278333e581a` |
+| [Healthcare Service Directory Query](services.md#hcm-sv-healthcare-service-directory-query) | [Service Catalogue Publishing](features.md#feat-em-24) | `id-39901a98463f5b5284513f69d7a8b7f1` |
+| [Maintain Service / Location / Provider Map](functions.md#hcm-fn-maintain-service-location-provider-map) | [Service-Location-Provider Binding](features.md#feat-em-25) | `id-c05c1151872b5a33a17eb3fa6de3e838` |
+| [Service Provision Resolution](services.md#hcm-sv-service-provision-resolution) | [Service-Location-Provider Binding](features.md#feat-em-25) | `id-3f4309464dd353c0a430c55c45d35c8b` |
+| [Maintain Service Availability](functions.md#hcm-fn-maintain-service-availability) | [Operating Schedule Specification](features.md#feat-em-26) | `id-b780e80729fb5fc1be6fd172940a9df9` |
+| [Service Availability Query](services.md#hcm-sv-service-availability-query) | [Operating Schedule Specification](features.md#feat-em-26) | `id-32605b7421055fff9775dfe118bdbc28` |
+| [Maintain Service Eligibility Rules](functions.md#hcm-fn-maintain-service-eligibility-rules) | [Eligibility & Catchment Specification](features.md#feat-em-27) | `id-0bf1ede748e558859a2a9814b38ccd50` |
+| [Service Eligibility Evaluation](services.md#hcm-sv-service-eligibility-evaluation) | [Eligibility & Catchment Specification](features.md#feat-em-27) | `id-3569f9f81e4d53b6a2a0ad5da24a33c1` |
+| [Maintain Device Definition](functions.md#hcm-fn-maintain-device-definition) | [Device Type Specification](features.md#feat-em-28) | `id-bb38525c2275599cb84323ba34edb1f1` |
+| [Device Definition Query](services.md#hcm-sv-device-definition-query) | [Device Type Specification](features.md#feat-em-28) | `id-e9a44a2ae5805be89e0172eaaf9d6005` |
+| [Maintain Device Instance Identity](functions.md#hcm-fn-maintain-device-instance-identity) | [Device Serial Tracking](features.md#feat-em-29) | `id-8bf44962f1c651b9b441552043759579` |
+| [Device Instance Resolution](services.md#hcm-sv-device-instance-resolution) | [Device Serial Tracking](features.md#feat-em-29) | `id-bc09e3c9443e595bb5709660a1a12303` |
+| [Maintain Device Association](functions.md#hcm-fn-maintain-device-association) | [Device-Patient/Location Assignment](features.md#feat-em-30) | `id-bb4c599cfc285333b8d05616f78adf59` |
+| [Device Association Query](services.md#hcm-sv-device-association-query) | [Device-Patient/Location Assignment](features.md#feat-em-30) | `id-bb94d78a589a5a36930b21c5d4926c2e` |
+| [Maintain Device Communication Endpoints](functions.md#hcm-fn-maintain-device-communication-endpoints) | [Device Endpoint Registration](features.md#feat-em-31) | `id-cad8877a082a5eb595a954c19271a4b2` |
+| [Device Endpoint Resolution](services.md#hcm-sv-device-endpoint-resolution) | [Device Endpoint Registration](features.md#feat-em-31) | `id-3dfd000755e05e4ab63bfadf95331100` |
+| [Receive Client Demographic Change](functions.md#hcm-fn-receive-client-demographic-change) | [Demographic Update Ingestion](features.md#feat-sa-01) | `id-c0a690fb8c065c2e991160b627edd299` |
+| [Demographic Intake Service](services.md#hcm-sv-demographic-intake-service) | [Demographic Update Ingestion](features.md#feat-sa-01) | `id-91f6f4e557af59e99145b1713f1aca98` |
+| [Distribute Governed Demographic Change](functions.md#hcm-fn-distribute-governed-demographic-change) | [Demographic Change Distribution](features.md#feat-sa-02) | `id-9c33fcbd8f305c57824e9f78a2dcfb0f` |
+| [Demographic Update Notification](services.md#hcm-sv-demographic-update-notification) | [Demographic Change Distribution](features.md#feat-sa-02) | `id-c804aa63331456069986a6715acd242e` |
+| [Receive Referral](functions.md#hcm-fn-receive-referral) | [Referral Document Ingestion](features.md#feat-sa-03) | `id-574b630fc5a45429813e136965c015c3` |
+| [Referral Submission Service](services.md#hcm-sv-referral-submission-service) | [Referral Document Ingestion](features.md#feat-sa-03) | `id-c44bf6ca68635342864625b57a1ba70f` |
+| [Assemble Referral Context](functions.md#hcm-fn-assemble-referral-context) | [Referral Supporting Information](features.md#feat-sa-04) | `id-315a0c111be6574ba9bc88fbda1eb1ca` |
+| [Referral Context Query](services.md#hcm-sv-referral-context-query) | [Referral Supporting Information](features.md#feat-sa-04) | `id-6922f39dc8a954afb393d78476bb23df` |
+| [Manage Referral Progression](functions.md#hcm-fn-manage-referral-progression) | [Referral Status & Outcome Tracking](features.md#feat-sa-05) | `id-6cc58054d4a6541eb13df4104f572767` |
+| [Referral Status & Outcome Service](services.md#hcm-sv-referral-status-outcome-service) | [Referral Status & Outcome Tracking](features.md#feat-sa-05) | `id-6d410a47fe1f59368186c0f3d1eca53b` |
+| [Receive Appointment Notification](functions.md#hcm-fn-receive-appointment-notification) | [Appointment Notification Ingestion](features.md#feat-sa-06) | `id-92680864f3275d8c9566512efb6f9c5c` |
+| [Appointment Notification Ingress](services.md#hcm-sv-appointment-notification-ingress) | [Appointment Notification Ingestion](features.md#feat-sa-06) | `id-e9397b2ff6695071a84168c10425efc2` |
+| [Synchronise Appointment Status](functions.md#hcm-fn-synchronise-appointment-status) | [Appointment Status Synchronization](features.md#feat-sa-07) | `id-a6da819eb3bc531cb9913861a530dfba` |
+| [Appointment Schedule Query](services.md#hcm-sv-appointment-schedule-query) | [Appointment Status Synchronization](features.md#feat-sa-07) | `id-db42ea12baf455a787ff79c17a75bb3f` |
+| [Establish Encounter Context](functions.md#hcm-fn-establish-encounter-context) | [Encounter Context Creation](features.md#feat-sa-08) | `id-d007eee9f494522d8f3ce293c3f1834b` |
+| [Encounter Context Resolution](services.md#hcm-sv-encounter-context-resolution) | [Encounter Context Creation](features.md#feat-sa-08) | `id-112f2f46d62455ff9114986d360f115e` |
+| [Progress Encounter State](functions.md#hcm-fn-progress-encounter-state) | [Encounter State Progression](features.md#feat-sa-09) | `id-327fb23405905b70a2be68f43a26c80c` |
+| [Encounter Lifecycle Event Notification](services.md#hcm-sv-encounter-lifecycle-event-notification) | [Encounter State Progression](features.md#feat-sa-09) | `id-d45310c4e2f5525bb835c714c604e78f` |
+| [Maintain Encounter Care-Place Association](functions.md#hcm-fn-maintain-encounter-care-place-association) | [Encounter Bed/Location Association](features.md#feat-sa-10) | `id-d2a4e624c14950fe9584a29ec4b021f8` |
+| [Encounter Location History Query](services.md#hcm-sv-encounter-location-history-query) | [Encounter Bed/Location Association](features.md#feat-sa-10) | `id-17f7412c07b5595c874dd8b6ace813fc` |
+| [Receive Order Request](functions.md#hcm-fn-receive-order-request) | [Order Request Ingestion](features.md#feat-sa-11) | `id-5ff2444941755ec7ac439404041340d3` |
+| [Order Requisition Ingress](services.md#hcm-sv-order-requisition-ingress) | [Order Request Ingestion](features.md#feat-sa-11) | `id-d2f1f5771a875884902781e098970b27` |
+| [Resolve Order Destination](functions.md#hcm-fn-resolve-order-destination) | [Order Destination Resolution & Routing](features.md#feat-sa-12) | `id-6641f308a46855d7aaea82332817d334` |
+| [Order Dispatch Service](services.md#hcm-sv-order-dispatch-service) | [Order Destination Resolution & Routing](features.md#feat-sa-12) | `id-704b3118abb5558f998b93d662f44604` |
+| [Manage Order Progression](functions.md#hcm-fn-manage-order-progression) | [Order Closed-Loop Progression Tracking](features.md#feat-sa-13) | `id-8945ca63337b518b852da14a583c1ea3` |
+| [Order Status & Tracking Query](services.md#hcm-sv-order-status-tracking-query) | [Order Closed-Loop Progression Tracking](features.md#feat-sa-13) | `id-0b7e7914dd9754a5bac05a41e7837f52` |
+| [Coordinate Order Modification / Cancellation](functions.md#hcm-fn-coordinate-order-modification-cancellation) | [Order Cancellation & Modification Coordination](features.md#feat-sa-14) | `id-6afa399a012953689e9321058e176c18` |
+| [Order Cancellation Service](services.md#hcm-sv-order-cancellation-service) | [Order Cancellation & Modification Coordination](features.md#feat-sa-14) | `id-30940d7095f75d81be13bc759beee989` |
+| [Correlate Diagnostic Request](functions.md#hcm-fn-correlate-diagnostic-request) | [Diagnostic Request Correlation](features.md#feat-sa-15) | `id-61752b7fcbb05f7ab3f167ee6a3c8770` |
+| [Diagnostic Correlation Resolution](services.md#hcm-sv-diagnostic-correlation-resolution) | [Diagnostic Request Correlation](features.md#feat-sa-15) | `id-4022a711c3f65c6c95b051f80afbd994` |
+| [Bind Diagnostic Report](functions.md#hcm-fn-bind-diagnostic-report) | [Diagnostic Report Ingestion & Binding](features.md#feat-sa-16) | `id-a26ccccfad985b3eaa888190c7a65069` |
+| [Diagnostic Report Ingress](services.md#hcm-sv-diagnostic-report-ingress) | [Diagnostic Report Ingestion & Binding](features.md#feat-sa-16) | `id-3e5075abed5a599a874e5faa42b69a01` |
+| [Distribute Diagnostic Report](functions.md#hcm-fn-distribute-diagnostic-report) | [Diagnostic Report Distribution](features.md#feat-sa-17) | `id-f7d9eed828ec55f0a9a769cf06800faa` |
+| [Diagnostic Result Delivery Service](services.md#hcm-sv-diagnostic-result-delivery-service) | [Diagnostic Report Distribution](features.md#feat-sa-17) | `id-f1f2a2ff52c85b3ba0d443dbcabdda33` |
+| [Receive Medication Order](functions.md#hcm-fn-receive-medication-order) | [Medication Order Ingestion](features.md#feat-sa-18) | `id-a437dd50f4a359e38d9a17d9e18316e2` |
+| [Medication Order Ingress](services.md#hcm-sv-medication-order-ingress) | [Medication Order Ingestion](features.md#feat-sa-18) | `id-5381ecc78fea5829a117b0952df384bc` |
+| [Track Dispense Event](functions.md#hcm-fn-track-dispense-event) | [Dispense Event Tracking](features.md#feat-sa-19) | `id-2af69ee45fd95fb8adc06421835dee23` |
+| [Dispense Event Ingress](services.md#hcm-sv-dispense-event-ingress) | [Dispense Event Tracking](features.md#feat-sa-19) | `id-ddfde1973fab56da8d618410f4a1c29d` |
+| [Receive Medication Administration Event](functions.md#hcm-fn-receive-medication-administration-event) | [Medication Administration Record (MAR) Ingestion](features.md#feat-sa-20) | `id-f444ec5c5da35ce1afec7fa864c31edd` |
+| [Medication Administration Ingress](services.md#hcm-sv-medication-administration-ingress) | [Medication Administration Record (MAR) Ingestion](features.md#feat-sa-20) | `id-490badb795065278a26254b7d31dea91` |
+| [Receive Procedure Booking / Request](functions.md#hcm-fn-receive-procedure-booking-request) | [Procedure Booking Ingestion](features.md#feat-sa-21) | `id-f2d64b819796568d8d9e2b00e9214076` |
+| [Procedure Booking Ingress](services.md#hcm-sv-procedure-booking-ingress) | [Procedure Booking Ingestion](features.md#feat-sa-21) | `id-fd11fc7d89b650cc9f6f991209df4ae5` |
+| [Receive Procedural Documentation](functions.md#hcm-fn-receive-procedural-documentation) | [Procedural Documentation Ingestion](features.md#feat-sa-22) | `id-7bc0a557c1bb57eab46fb6f6ddbffe77` |
+| [Procedural Documentation Ingress](services.md#hcm-sv-procedural-documentation-ingress) | [Procedural Documentation Ingestion](features.md#feat-sa-22) | `id-59cf3e4b0ad655e288caf2b7b6e1d29e` |
+| [Receive Clinical Document](functions.md#hcm-fn-receive-clinical-document) | [Clinical Document Ingestion](features.md#feat-sa-23) | `id-1b9ac1fa2f765667a8b14a52f610567e` |
+| [Clinical Document Ingress](services.md#hcm-sv-clinical-document-ingress) | [Clinical Document Ingestion](features.md#feat-sa-23) | `id-841955da6b09521fa16bdb8a039fc859` |
+| [Govern Clinical Document Lifecycle](functions.md#hcm-fn-govern-clinical-document-lifecycle) | [Document Versioning & Supersession](features.md#feat-sa-24) | `id-7cbaa795a8f75857b3ab6e35ff0479ed` |
+| [Clinical Document Lifecycle Service](services.md#hcm-sv-clinical-document-lifecycle-service) | [Document Versioning & Supersession](features.md#feat-sa-24) | `id-3338fdab803b529cbda73a1c525e8cb2` |
+| [Index Clinical Document Metadata](functions.md#hcm-fn-index-clinical-document-metadata) | [Document Metadata Indexing](features.md#feat-sa-25) | `id-c9bad56d1eb75f90826bb5cef996e812` |
+| [Document Metadata Registry Query](services.md#hcm-sv-document-metadata-registry-query) | [Document Metadata Indexing](features.md#feat-sa-25) | `id-d9ab1faad6995e93997db79959024efd` |
+| [Receive Care Plan](functions.md#hcm-fn-receive-care-plan) | [Care Plan Ingestion & Distribution](features.md#feat-sa-26) | `id-a71687a2b74654a0b50b9fb3c46da93e` |
+| [Care Plan Ingress](services.md#hcm-sv-care-plan-ingress) | [Care Plan Ingestion & Distribution](features.md#feat-sa-26) | `id-a527d7f8a6735829bb613ae8861a0d47` |
+| [Distribute Clinical Communication](functions.md#hcm-fn-distribute-clinical-communication) | [Clinical Communication Distribution](features.md#feat-sa-27) | `id-ed4d516d718d57669a40a42cfb3e85fb` |
+| [Secure Clinical Message Dispatch](services.md#hcm-sv-secure-clinical-message-dispatch) | [Clinical Communication Distribution](features.md#feat-sa-27) | `id-d3f1c5592ae15de78efce81465de4a49` |
+| [Track Business Delivery Acknowledgement](functions.md#hcm-fn-track-business-delivery-acknowledgement) | [Delivery Acknowledgement Tracking](features.md#feat-sa-28) | `id-21ba46aee95257babcb6de3c55f232f8` |
+| [Communication Delivery Status Query](services.md#hcm-sv-communication-delivery-status-query) | [Delivery Acknowledgement Tracking](features.md#feat-sa-28) | `id-1c1797b5ee6f5b14a9aa682c92b5ab32` |
+| [Record Communication Transaction](functions.md#hcm-fn-record-communication-transaction) | [Communication Audit Logging](features.md#feat-sa-29) | `id-681f894163045aad978cbcbc5fd2b5d5` |
+| [Communication Audit Query](services.md#hcm-sv-communication-audit-query) | [Communication Audit Logging](features.md#feat-sa-29) | `id-015a4c53062652a79bc527d0e8ed3617` |
+| [Correlate Primary Care Consultation Context](functions.md#hcm-fn-correlate-primary-care-consultation-context) | [General Practice Shared Record Ingestion](features.md#feat-sd-01) | `id-37c28150ab105b0fafc573a71d8a234f` |
+| [Primary Care Summary Ingress](services.md#hcm-sv-primary-care-summary-ingress) | [General Practice Shared Record Ingestion](features.md#feat-sd-01) | `id-ceb5ad720026503ea3397fdf161f8e4d` |
+| [Assemble Acute Clinical Baseline](functions.md#hcm-fn-assemble-acute-clinical-baseline) | [Acute Care Clinical Context Provision](features.md#feat-sd-04) | `id-21f3307a0a555ce59b94cbc0ba0f16e6` |
+| [Acute Admission Dossier Query](services.md#hcm-sv-acute-admission-dossier-query) | [Acute Care Clinical Context Provision](features.md#feat-sd-04) | `id-b390015f04735dcb933edca7eef2f46d` |
+| [Bind ED Triage Assessment](functions.md#hcm-fn-bind-ed-triage-assessment) | [Emergency Department Arrival & Triage Ingestion](features.md#feat-sd-05) | `id-8acdb9a7df355351870e9488adf5dbde` |
+| [ED Triage Stream Ingress](services.md#hcm-sv-ed-triage-stream-ingress) | [Emergency Department Arrival & Triage Ingestion](features.md#feat-sd-05) | `id-872aaa34dafa51669b27b15ce13793e0` |
+| [Provide Emergency LHR Summary](functions.md#hcm-fn-provide-emergency-lhr-summary) | [Emergency Care Cross-Facility Correlation](features.md#feat-sd-06) | `id-9c960ca7251c575d80f15d61f96fae4a` |
+| [Emergency Fast-Path LHR Query](services.md#hcm-sv-emergency-fast-path-lhr-query) | [Emergency Care Cross-Facility Correlation](features.md#feat-sd-06) | `id-721beec83caf5ec28202cc10664cac69` |
+| [Consolidate Inpatient Clinical Round Feed](functions.md#hcm-fn-consolidate-inpatient-clinical-round-feed) | [Inpatient Rounding Context Provision](features.md#feat-sd-07) | `id-a2f935c39cb955b1b9c59319c77bf0e5` |
+| [Ward Round Clinical Briefing Query](services.md#hcm-sv-ward-round-clinical-briefing-query) | [Inpatient Rounding Context Provision](features.md#feat-sd-07) | `id-2d432c4abffc5139ac72497fdcc84d4a` |
+| [Project Longitudinal Medication History](functions.md#hcm-fn-project-longitudinal-medication-history) | [Medication History Reconciliation Ingestion](features.md#feat-sd-11) | `id-cc894fcf4cfd5ae5b1ff3c7a107b3192` |
+| [Longitudinal Medication History Query](services.md#hcm-sv-longitudinal-medication-history-query) | [Medication History Reconciliation Ingestion](features.md#feat-sd-11) | `id-12743088b6a755dda2380832c6b1038f` |
+| [Syndicate Immunisation Record](functions.md#hcm-fn-syndicate-immunisation-record) | [Immunisation Event Submission](features.md#feat-sd-13) | `id-d0c1dfc1a94a54eb9a295a4be8d043ff` |
+| [Immunisation History Query](services.md#hcm-sv-immunisation-history-query) | [Immunisation Event Submission](features.md#feat-sd-13) | `id-3164f0fd9a0359cab3d7234be15fd819` |
+| [Synchronize Community Visit Record](functions.md#hcm-fn-synchronize-community-visit-record) | [Community Encounter Ingestion](features.md#feat-sd-15) | `id-af8ce4569dbb537f84043c45c976735d` |
+| [Community Care Encounter Ingress](services.md#hcm-sv-community-care-encounter-ingress) | [Community Encounter Ingestion](features.md#feat-sd-15) | `id-07e3b387170053159678ab02cfad8d27` |
+| [Provide Outreach Visit Context](functions.md#hcm-fn-provide-outreach-visit-context) | [Outreach Visit Context Provision](features.md#feat-sd-17) | `id-beb600ac12f25958b90787a8cd7ab0d2` |
+| [Reconcile Outreach Clinical Batch](functions.md#hcm-fn-reconcile-outreach-clinical-batch) | [Outreach Encounter Outcome Ingestion](features.md#feat-sd-18) | `id-23cb0736c5f25d5ba03f5662328b5fe9` |
+| [Outreach Batch Reconciliation Service](services.md#hcm-sv-outreach-batch-reconciliation-service) | [Outreach Encounter Outcome Ingestion](features.md#feat-sd-18) | `id-34ec6f875d325b19b7e0bf47dc18870b` |
+| [Correlate Virtual Care Consultation Context](functions.md#hcm-fn-correlate-virtual-care-consultation-context) | [Virtual Care Session Context Binding](features.md#feat-sd-20) | `id-cc9961e096a254678e1f904f7ed9ddb9` |
+| [Virtual Encounter Context Resolution](services.md#hcm-sv-virtual-encounter-context-resolution) | [Virtual Care Session Context Binding](features.md#feat-sd-20) | `id-279086a2db185bfcb494e7be6f639f30` |
+| [Ingest Remote Patient Telemetry](functions.md#hcm-fn-ingest-remote-patient-telemetry) | [Remote Telemetry Ingestion](features.md#feat-sd-19) | `id-292749a71b385630af9319aa017ca5e6` |
+| [Remote Telemetry Ingress](services.md#hcm-sv-remote-telemetry-ingress) | [Remote Telemetry Ingestion](features.md#feat-sd-19) | `id-3c317c23476a59a8bb9119b114b18e2d` |
+| [Track Clinic Operating Session](functions.md#hcm-fn-track-clinic-operating-session) | [Clinic Session Tracking](features.md#feat-hso-01) | `id-86987c2a2e135e5e9d73eda5d49884fb` |
+| [Manage Clinic Queue Progression](functions.md#hcm-fn-manage-clinic-queue-progression) | [Operational Queue Progression](features.md#feat-hso-02) | `id-c354b3030132582db053c49b93dc543d` |
+| [Clinic Queue Telemetry Service](services.md#hcm-sv-clinic-queue-telemetry-service) | [Operational Queue Progression](features.md#feat-hso-02) | `id-b4b2d0e84a5150468da460e7c7f9a148` |
+| [Assemble Ward Handover Context](functions.md#hcm-fn-assemble-ward-handover-context) | [Clinical Handover Context Assembly](features.md#feat-hso-04) | `id-d662e6632f2d5d87837ef80e09bd3708` |
+| [Capture Post-Clinic Follow-up Requirements](functions.md#hcm-fn-capture-post-clinic-follow-up-requirements) | [Post-Clinic Order Coordination](features.md#feat-hso-10) | `id-f0ea6e7069dd53f58e3f7e4770188a1e` |
+| [Maintain Operational Bed State](functions.md#hcm-fn-maintain-operational-bed-state) | [Bed Availability Tracking](features.md#feat-hso-11) | `id-5d6a4946413451dbb5cc0d6e6b5c8443` |
+| [Bed Availability Query](services.md#hcm-sv-bed-availability-query) | [Bed Availability Tracking](features.md#feat-hso-11) | `id-d1a627ae63e554b6b2c2a69e96c2b0f2` |
+| [Track Mobile Clinical Asset Operational State](functions.md#hcm-fn-track-mobile-clinical-asset-operational-state) | [Mobile Clinical Equipment Tracking](features.md#feat-hso-14) | `id-2642a5f92c0855758806ebfdfcfec472` |
+| [Clinical Resource Availability Query](services.md#hcm-sv-clinical-resource-availability-query) | [Mobile Clinical Equipment Tracking](features.md#feat-hso-14) | `id-ef225fccf929517d8f3daa72b7c12236` |
+| [Aggregate Service Capacity Telemetry](functions.md#hcm-fn-aggregate-service-capacity-telemetry) | [Operational Capacity Metric Aggregation](features.md#feat-hso-15) | `id-d8995a6180355734be5b77d9311116f9` |
+| [Regional Health System Capacity Query](services.md#hcm-sv-regional-health-system-capacity-query) | [Operational Capacity Metric Aggregation](features.md#feat-hso-15) | `id-96588fac793f56cd9f4eb07dcb21fcb1` |
+| [Receive Mobile Visit Progression](functions.md#hcm-fn-receive-mobile-visit-progression) | [Mobile Visit Status Tracking](features.md#feat-hso-17) | `id-426fa1ed7f835865abda126749c59094` |
+| [Integrate Mobile Work Management](functions.md#hcm-fn-integrate-mobile-work-management) | [Mobile Worker Task Dispatch](features.md#feat-hso-16) | `id-c76e815255cd5744a52fd295c57e8a82` |
+| [Resolve Active On-Call Coverage](functions.md#hcm-fn-resolve-active-on-call-coverage) | [Active On-Call Provider Resolution](features.md#feat-hso-18) | `id-ea060aeed888514698bd0199bc859330` |
+| [On-Call Specialist Lookup](services.md#hcm-sv-on-call-specialist-lookup) | [Active On-Call Provider Resolution](features.md#feat-hso-18) | `id-267db4565d9e5bbfa8405a1a49bd281c` |
+| [Manage Operational Work Progression](functions.md#hcm-fn-manage-operational-work-progression) | [Work Progress Oversight & Escalation](features.md#feat-hso-22) | `id-cde1ca0c140954af82ce35722498eddf` |
+| [Operational Work Status Query](services.md#hcm-sv-operational-work-status-query) | [Work Progress Oversight & Escalation](features.md#feat-hso-22) | `id-2ee33a4658455f7db95e90bea7cfb130` |
+| [Specimen Transit Tracking Service](services.md#hcm-sv-specimen-transit-tracking-service) | [Pathology Specimen Transport Tracking](features.md#feat-hso-26) | `id-dc0c41b16a815ebe93d95c7019eb800b` |
+| [Verify Clinical Qualification for Work Dispatch](functions.md#hcm-fn-verify-clinical-qualification-for-work-dispatch) | [Operational Credential Check](features.md#feat-hso-23) | `id-c690c378a70553f4aa3fd6c9d1d26c4a` |
+| [Assemble Longitudinal Clinical Record](functions.md#hcm-fn-assemble-longitudinal-clinical-record) | [Longitudinal Health Record (LHR) Assembly](features.md#feat-ise-01) | `id-c1390265b7ac580f8f3d2657d0c5fbe8` |
+| [Longitudinal Clinical Record Query](services.md#hcm-sv-longitudinal-clinical-record-query) | [Longitudinal Health Record (LHR) Assembly](features.md#feat-ise-01) | `id-0139b7df0661545da56d1f9ff6f9aa7c` |
+| [Maintain Active Clinical Record](functions.md#hcm-fn-maintain-active-clinical-record) | [Active Clinical Record Access](features.md#feat-ise-02) | `id-4f25692ec2435a3ea9ea1f1ceeb1add3` |
+| [Active Problem & Allergy Summary Query](services.md#hcm-sv-active-problem-allergy-summary-query) | [Active Clinical Record Access](features.md#feat-ise-02) | `id-49673eb833c35d4bb7f643ab4fe4f28b` |
+| [Preserve Durable Clinical Record](functions.md#hcm-fn-preserve-durable-clinical-record) | [Durable Clinical Record Preservation](features.md#feat-ise-03) | `id-20cee57934795183b4a9252ef7361e85` |
+| [Historical Clinical Record Access](services.md#hcm-sv-historical-clinical-record-access) | [Durable Clinical Record Preservation](features.md#feat-ise-03) | `id-961a27edacc752d08daacee700ace36b` |
+| [Receive Information Submission](functions.md#hcm-fn-receive-information-submission) | [Direct Submission Ingestion & Delivery](features.md#feat-ise-04) | `id-9b63ade2f4cd5a5aaa310151b2774b94` |
+| [HIE Submission Gateway Service](services.md#hcm-sv-hie-submission-gateway-service) | [Direct Submission Ingestion & Delivery](features.md#feat-ise-04) | `id-c6a55e16a40d5b7a8f899de306d5ffdf` |
+| [Mediate Information Retrieval](functions.md#hcm-fn-mediate-information-retrieval) | [Clinical Record Retrieval Mediation](features.md#feat-ise-05) | `id-b77ac870efc6536889d13dffcc6aa686` |
+| [Federated Health Information Query](services.md#hcm-sv-federated-health-information-query) | [Clinical Record Retrieval Mediation](features.md#feat-ise-05) | `id-1f21e15ca99a517dbb64ece71b940a5b` |
+| [Distribute Addressed Information](functions.md#hcm-fn-distribute-addressed-information) | [Addressed Clinical Distribution](features.md#feat-ise-06) | `id-38e469d9342550f19a400341c935c727` |
+| [Addressed Document Delivery Service](services.md#hcm-sv-addressed-document-delivery-service) | [Addressed Clinical Distribution](features.md#feat-ise-06) | `id-a8527b80b88f572191286ea702ea2830` |
+| [Syndicate Information Change](functions.md#hcm-fn-syndicate-information-change) | [Event-Driven Syndication](features.md#feat-ise-07) | `id-5282f5eb14ee5302932c756bd33073ae` |
+| [Clinical Event Syndication Stream](services.md#hcm-sv-clinical-event-syndication-stream) | [Event-Driven Syndication](features.md#feat-ise-07) | `id-43a5b27e68f9569d9082bdf18b77e66e` |
+| [Search Health Information](functions.md#hcm-fn-search-health-information) | [Federated Clinical Query](features.md#feat-ise-08) | `id-81880c917f6658a5a930dd6b3a33b94b` |
+| [Clinical Information Search Service](services.md#hcm-sv-clinical-information-search-service) | [Federated Clinical Query](features.md#feat-ise-08) | `id-8e35e8ae48575095875e9b8f09d1c022` |
+| [Evaluate Information Access Authority](functions.md#hcm-fn-evaluate-information-access-authority) | [Health Information Access & Consent Control](features.md#feat-ise-11) | `id-f414817ff0d45be4b7e86b4d6b3e4563` |
+| [Policy Evaluation & Authorisation Service](services.md#hcm-sv-policy-evaluation-authorisation-service) | [Health Information Access & Consent Control](features.md#feat-ise-11) | `id-5b9460dc41715c4987af82b012e1aa50` |
+| [Resolve Clinical Concept](functions.md#hcm-fn-resolve-clinical-concept) | [Clinical Concept Resolution](features.md#feat-ise-14) | `id-0a9d7957daf35ff9bd893340e4a2908b` |
+| [Terminology Concept Resolution Service](services.md#hcm-sv-terminology-concept-resolution-service) | [Clinical Concept Resolution](features.md#feat-ise-14) | `id-b6b54318dbeb53309789c5e6f067d9b1` |
+| [Map Clinical Concept](functions.md#hcm-fn-map-clinical-concept) | [Bidirectional Terminology Mapping](features.md#feat-ise-15) | `id-9803f3b4954b53c8a157ada93597cc5c` |
+| [Terminology Mapping Service](services.md#hcm-sv-terminology-mapping-service) | [Bidirectional Terminology Mapping](features.md#feat-ise-15) | `id-5aab641c5c5056dd930414a9d88d852d` |
+| [Coordinate Care-Team Collaboration](functions.md#hcm-fn-coordinate-care-team-collaboration) | [Care-Team Clinical Collaboration Coordination](features.md#feat-ise-16) | `id-6092d716d7e0556583f05e71294304ba` |
+| [Clinical Collaboration Space Service](services.md#hcm-sv-clinical-collaboration-space-service) | [Care-Team Clinical Collaboration Coordination](features.md#feat-ise-16) | `id-4c4236df8a115213a39f19c0c2f874c4` |
+| [Resolve LHR Query within Collaboration](functions.md#hcm-fn-resolve-lhr-query-within-collaboration) | [In-Conversation LHR Query Resolution](features.md#feat-ise-17) | `id-b38c64ce322a56419a759fe9a4427eab` |
+| [Collaboration Clinical Summary Resolution](services.md#hcm-sv-collaboration-clinical-summary-resolution) | [In-Conversation LHR Query Resolution](features.md#feat-ise-17) | `id-e2b6cda4d7f75336b7ddf3ea008ade22` |
+| [Govern Collaboration Metadata](functions.md#hcm-fn-govern-collaboration-metadata) | [Zero-PHI Collaboration Metadata Governance](features.md#feat-ise-18) | `id-a2d6826474995a7b804801f24e3d3caf` |
+| [Collaboration Space Governance Service](services.md#hcm-sv-collaboration-space-governance-service) | [Zero-PHI Collaboration Metadata Governance](features.md#feat-ise-18) | `id-cff8f7615fb1593fad443fabd49176bc` |
+| [Coordinate Operational Collaboration](functions.md#hcm-fn-coordinate-operational-collaboration) | [Operational Team Chat Enablement](features.md#feat-ise-19) | `id-2702ae2458cf5db4bca7f2c3ab7dca27` |
+| [Operational Collaboration Service](services.md#hcm-sv-operational-collaboration-service) | [Operational Team Chat Enablement](features.md#feat-ise-19) | `id-d6fccab3a2b95b3fb8c48c6d78dc529d` |
+| [Project Operational Schedule](functions.md#hcm-fn-project-operational-schedule) | [Schedule Projection Integration](features.md#feat-ise-24) | `id-54fedfaa632458758ac1e9b3ece8790b` |
+| [Unified Calendar Projection Query](services.md#hcm-sv-unified-calendar-projection-query) | [Schedule Projection Integration](features.md#feat-ise-24) | `id-9418eabc963c50a19df8094b38107bf8` |
+| [Correlate Activity with Temporal Context](functions.md#hcm-fn-correlate-activity-with-temporal-context) | [Temporal Event Correlation](features.md#feat-ise-25) | `id-fe0f2b071a935280a2b87650af32e9a5` |
+| [Temporal Context Resolution](services.md#hcm-sv-temporal-context-resolution) | [Temporal Event Correlation](features.md#feat-ise-25) | `id-dfbd3e6ec8bd5cb889b21269cc9ad019` |
+| [Present Contextual Health and Operational Information](functions.md#hcm-fn-present-contextual-health-and-operational-information) | [Longitudinal Clinical & Operational Presentation](features.md#feat-ise-26) | `id-2a29068115ca5003ae8829936947c8e6` |
+| [Contextual Presentation Service](services.md#hcm-sv-contextual-presentation-service) | [Longitudinal Clinical & Operational Presentation](features.md#feat-ise-26) | `id-81f2b22e2ff35f9b95a55191568b5e1c` |
+| [Govern Information Semantics](functions.md#hcm-fn-govern-information-semantics) | [Information Standards & Semantic Governance](features.md#feat-ise-27) | `id-7c98486205315125af4e4ab9fb63477c` |
+| [Semantic Model Definition Service](services.md#hcm-sv-semantic-model-definition-service) | [Information Standards & Semantic Governance](features.md#feat-ise-27) | `id-ad8cdbdf0fae53909f318a2d8786f48a` |
+| [Verify Semantic Conformance](functions.md#hcm-fn-verify-semantic-conformance) | [Semantic Conformance Verification](features.md#feat-ise-28) | `id-bc65d2c3d90a5aa5bd7f61750d217393` |
+| [Semantic Conformance Verification Service](services.md#hcm-sv-semantic-conformance-verification-service) | [Semantic Conformance Verification](features.md#feat-ise-28) | `id-4ed2b971c3ea56b89fd2e7f9877c767d` |
+| [Governed Person Identity Correction Process](processes.md#hcm-pr-governed-person-identity-correction-process) | [Governed Identity Correction](features.md#feat-em-04) | `id-d742c203d21a5565bc97eb7dd316ba28` |
+| [Practitioner Verification Process](processes.md#hcm-pr-practitioner-verification-process) | [National Practitioner Verification](features.md#feat-em-11) | `id-bb42915aff855c6d94aac48badc3a26d` |
+| [Referral Progression Process](processes.md#hcm-pr-referral-progression-process) | [Referral Status & Outcome Tracking](features.md#feat-sa-05) | `id-456787ffdd2e5db2b5ea151e75cb6f18` |
+| [Encounter Lifecycle Process](processes.md#hcm-pr-encounter-lifecycle-process) | [Encounter State Progression](features.md#feat-sa-09) | `id-1f7c2303c3885f60a1986af112f79eb0` |
+| [Closed-Loop Order Progression Process](processes.md#hcm-pr-closed-loop-order-progression-process) | [Order Closed-Loop Progression Tracking](features.md#feat-sa-13) | `id-8dc79942362950269d90614ed6ca8bf7` |
+| [Clinical Document Lifecycle Process](processes.md#hcm-pr-clinical-document-lifecycle-process) | [Document Versioning & Supersession](features.md#feat-sa-24) | `id-ea3cde5a9e8a5b48af7e2846dc6493a4` |
+| [Clinic / Operational Queue Progression Process](processes.md#hcm-pr-clinic-operational-queue-progression-process) | [Operational Queue Progression](features.md#feat-hso-02) | `id-1b74e4cb238e549abc22d890fd80ed28` |
+| [Operational Work Progression Process](processes.md#hcm-pr-operational-work-progression-process) | [Work Progress Oversight & Escalation](features.md#feat-hso-22) | `id-7169c1327e87590e84dad98cbef1dfe7` |
+
+## Accepted 1.0.8 instance relationships
+
+Native Composition, Realization, Flow, Serving and explicit Home retain independent meanings.
+
+| Review / CR | Relationship | Native type | Source | Target | Specialisation |
+| --- | --- | --- | --- | --- | --- |
+| run-001/CR-010 | id-73ecd7a39407404ba8e2bb663efbdc19 | Composition | id-29e0bf94882559a7b6ed9d092303a560 | id-d9272acdc675539cb441d2db9c5ad6e6 |  |
+| run-001/CR-011 | id-36b2aa8ad58149fdb20d44c1c16dd64c | Composition | id-29e0bf94882559a7b6ed9d092303a560 | id-6f0bfe5e814c5734a7c530f2b7515666 |  |
+| run-001/CR-012 | id-3c3d723683c147a4a902b4d35a2af018 | Composition | id-29e0bf94882559a7b6ed9d092303a560 | id-bdf18b5e580b5b85a34357a3b21f36db |  |
+| run-001/CR-013 | id-daf437bb32114daa8a6b9462cb9b4fb2 | Composition | id-29e0bf94882559a7b6ed9d092303a560 | id-f1e1928516765880955f638a7fec8c35 |  |
+| run-001/CR-014 | id-f9b270950f0241108b68f1c3daa50019 | Composition | id-29e0bf94882559a7b6ed9d092303a560 | id-28d7815137a05a2aab6d1684011dbbde |  |
+| run-001/CR-015 | id-bff76286f8994d20aa1b8aef166acebd | Composition | id-29e0bf94882559a7b6ed9d092303a560 | id-727a264026584f80bc3304ff8383dc92 |  |
+| run-001/CR-022 | id-e84f2e9df66a48d795d604d75afc72cb | Realization | id-fddda503b8f0438e995465cd93204326 | id-727a264026584f80bc3304ff8383dc92 |  |
+| run-001/CR-024 | id-69eb864f56df4d928f8abc3f7ab4e834 | Realization | id-0088d61ccfcf4962b3aab8bc3b96021d | id-727a264026584f80bc3304ff8383dc92 |  |
+| run-001/CR-026 | id-c0f84a8e4c8d496580a68cac4823c58c | Realization | id-c645a859ac2c4447ad5ae850cf384bf3 | id-727a264026584f80bc3304ff8383dc92 |  |
+| run-001/CR-028 | id-37f6913198e2434db5309c1c8e36fbc0 | Realization | id-9bfedbfd5b404694a2224c039fa5d4c4 | id-bdf18b5e580b5b85a34357a3b21f36db |  |
+| run-001/CR-030 | id-bef77e2eb7de4691b4fbe9a0c84e8232 | Flow | id-fddda503b8f0438e995465cd93204326 | id-c645a859ac2c4447ad5ae850cf384bf3 |  |
+| run-001/CR-031 | id-0849f31d6d7d4f7eb1e484d7437e5cd7 | Flow | id-0088d61ccfcf4962b3aab8bc3b96021d | id-c645a859ac2c4447ad5ae850cf384bf3 |  |
+| run-001/CR-032 | id-c53c42ba0a4f437f9cb76a4c1a701816 | Serving | id-9bfedbfd5b404694a2224c039fa5d4c4 | id-c645a859ac2c4447ad5ae850cf384bf3 |  |
+| run-002/CR-001 | id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf | Association | id-c645a859ac2c4447ad5ae850cf384bf3 | id-727a264026584f80bc3304ff8383dc92 | Home |
+| run-002/CR-002 | id-a21144ee285f467982d13c39b49228dd | Association | id-0088d61ccfcf4962b3aab8bc3b96021d | id-727a264026584f80bc3304ff8383dc92 | Home |
+| run-002/CR-003 | id-3f9d4356f4b84ef7b45fe3435d27fde8 | Association | id-fddda503b8f0438e995465cd93204326 | id-727a264026584f80bc3304ff8383dc92 | Home |
+| run-002/CR-004 | id-d559bbf53430465e90f47c40593403a5 | Association | id-9bfedbfd5b404694a2224c039fa5d4c4 | id-bdf18b5e580b5b85a34357a3b21f36db | Home |

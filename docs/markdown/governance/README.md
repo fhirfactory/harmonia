@@ -38,6 +38,14 @@ The [RAD / Architecture release policy](architecture-release-policy.md) defines
 patch increments for every accepted repository change and the single root
 [machine-readable release authority](../../../architecture-release.json).
 
+The [Architecture Modelling Strategy](architecture-modelling-strategy.md) governs
+semantic compatibility of Harmonia specialisations and explicit logical
+architectural Home. Directed Association specialised as `Home` is independent
+of Realization, structural containment, ownership, naming and navigation.
+The [fixed Business Home migration register](baseline/business-homes.json)
+records the accepted one-time baseline normalisation and unresolved cases;
+prospective Home requires explicit authoring, never contextual inference.
+
 The [RAD → ArchiMate model mapping](rad-archimate-model-mapping.md),
 [mapping catalogue](rad-archimate-mapping-catalogue.md),
 [coverage assessment](rad-archimate-coverage-assessment.md) and
@@ -62,8 +70,10 @@ context, machine metadata, relationship recognition/reuse, source-based homes,
 accepted authored Views and the deterministic 1–20-child Containment View.
 The [Business metamodel Composition rule](../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy), accepted by the Solution
 Architect on 2026-10-19, establishes what an accepted BEC CT3 → Feature Composition
-means; it accepts no submitted instance. General Realization/context inference and
-presentation beyond 20 children remain explicitly unresolved. This contract
+means; it accepts no submitted instance. The explicit Home strategy resolves
+Realization/context inference negatively: Realization by itself establishes
+none of Home, containment, parentage, ownership, naming or navigation context.
+Presentation beyond 20 children remains explicitly unresolved. This contract
 implements no reconciliation or layout engine and accepts no blind-test proposal.
 
 The [Increment 2C Architecture Authoring Praxis](architecture-authoring-praxis.md)
@@ -84,7 +94,7 @@ locks and unresolved crosswalks remain intact. See the
 [identity release report](architecture-identity/release-report.md).
 
 The [Harmonia Archi Navigation & View Convention](archi-navigation-and-view-convention.md)
-governs canonical element/relationship homes, independent subject hierarchies and
+governs canonical element/relationship navigation homes, independent subject hierarchies and
 progressive Views. The [Release 1.0.4 report](../../archimate/processing/publishing/1.0.4/navigation-release-report.md)
 records its navigation-only application to existing capabilities and the human
 Archi inspection gate. The 1.0.3 identity report above remains historical.

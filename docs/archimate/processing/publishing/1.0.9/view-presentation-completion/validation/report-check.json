@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/framework/tools/report_baseline.py",
+    "--check"
+  ],
+  "timeout_seconds": 90.0,
+  "elapsed_seconds": 28.58,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-check.log",
+  "log_sha256": "95004a4b8ae927028ce17adfac35c6e636b4acfa01c5b062f12924220b3b010e"
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 180s python3 -B -m unittest discover -s docs/archimate/framework/tests -v",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "tests": 167,
+    "log": "framework-tests-final.log.gz"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "tests": 90,
+    "log": "architecture-tests.log.gz"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B -m unittest scripts.tests.test_architecture_release scripts.tests.test_rads_business_architecture scripts.tests.test_rads_source_presentation scripts.tests.test_architecture_identity",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "tests": 72,
+    "log": "governance-tests.log.gz"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B docs/archimate/processing/ingestion/1.0.8/run-002/validation/validate-home-change.py",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "checks": 226,
+    "log": "validation-final.log.gz"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B scripts/rads_business_architecture.py validate",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "unresolved_dimensions": 2467,
+    "log": "rads-validation.log.gz"
+  },
+  {
+    "command": "python3 -B scripts/architecture_release.py check",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "log": "release-check.log.gz"
+  },
+  {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B docs/archimate/framework/tools/synchronise_baseline.py --check",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "log": "baseline-check.log.gz"
+  }
+]

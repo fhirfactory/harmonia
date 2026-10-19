@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/framework/tools/governed_metadata.py",
+    "validate"
+  ],
+  "timeout_seconds": 60.0,
+  "elapsed_seconds": 24.577,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/identity.log",
+  "log_sha256": "649834621af8de09b8315082d096d872802ae8842a67f149baa68f7c5898df80"
+}

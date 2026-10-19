@@ -163,6 +163,18 @@ governance Properties to submit a proposal.
 
 ## Explicit relationships, reuse and duplicates
 
+The [Architecture Modelling Strategy](architecture-modelling-strategy.md#explicit-architectural-home)
+establishes directed Association specialised as `Home` as a distinct authored
+semantic relationship proposal. Detection and reconciliation SHALL preserve
+native type, source, target, direction and specialisation, independently of
+relationship Name. Resolve the Archi specialisation property through its
+property definition; preserve its original representation as evidence.
+Duplicate comparison must distinguish an ordinary Association from Home and
+from other specialised assertions, and directed from undirected Associations.
+No Realization, Serving, Flow, Composition, folder, View, name, proximity or
+other contextual heuristic may infer Home. Replaying the fixed accepted
+Business baseline Home register is not an ongoing inference mechanism.
+
 Every explicitly authored semantic relationship SHALL be detected as an
 architectural proposal. Preserve at least native relationship type, direction,
 source, target and incoming representation identity/evidence, with locators to
@@ -251,6 +263,24 @@ children. Selection inputs SHALL identify the source, purpose/filter and exact
 expected children/relationships from governed architecture. Filtering is explicit;
 it cannot hide an unsupported child count by silently dropping children.
 
+For generated Capability hierarchy Views, eligibility follows the identifiable
+source Capability, the declared purpose of presenting its immediate Capability
+children, and accepted native Composition from that source. Existing visual
+connections, legacy `context:`/`features:` roles, folders, ownership metadata and
+layout SHALL neither establish nor prevent eligibility. A Harmonia Feature is a
+native Capability: accepted CT3 → Feature Composition participates identically
+to other Capability containment tiers, using the same archetype.
+
+Projection SHALL determine complete direct-child membership from governed
+Composition before creating visual references, placing nodes and routing
+connections. Missing visual objects reference existing semantic identities;
+presentation SHALL NOT create or infer Composition from membership, Home,
+responsibility, Realization, folders or proximity. Accepted architect-authored
+presentation takes precedence over generated migration eligibility. The
+Solution Architect's RAD-1.0.9 scope correction applies this rule to the unsigned
+candidate; historical-reference and uncertain diagnostic exclusions remain,
+and more-than-20-child presentation remains unresolved.
+
 Include the selected source exactly once and each selected direct child once.
 Do not automatically include grandchildren, siblings, folder neighbours or other
 relationships. A broader archetype requires separate governance. This View uses
@@ -321,16 +351,15 @@ not resolve the following matters.
 
 | Matter | Current authority and required adjudication |
 | --- | --- |
-| Realization → Feature as universal logical context/containment | **Unresolved.** Native Business Process/Business Service → Feature Realization does not automatically supply Harmonia logical containment/context. Additional intended meaning requires a separate question/CR under 2A. A future general rule requires its own metamodel/governance decision. |
+| Realization → Feature as logical context/containment | **Resolved by the Solution Architect's [explicit Home decision](architecture-modelling-strategy.md#explicit-architectural-home), 2026-10-19.** Realization SHALL NOT by itself establish Home, logical containment, parentage, ownership, naming context or navigation context. Home requires a separate explicit directed Association specialised as `Home`. |
 | Containment View with more than 20 direct children | **Unresolved.** No presentation strategy is established; no third column, splitting, pagination or alternative is authorised. |
 
-If additional Realization context is explicitly accepted for an instance, retain
-the native Realization, do not convert it to Composition, and do not create a
-second Composition to encode that interpretation. Apply only the additional
-Harmonia context authorised by the accepted CR and its executable instruction.
-Composition is not a substitute for that cross-layer/type meaning. Acceptance
-of one instance establishes no universal Realization inference. These rules
-preserve the [2A evidence/interpretation distinction](archimate-ingestion-change-review.md#architectural-questions-and-separate-interpretations).
+Retain native Realization when Home is independently authored or reconciled.
+Neither conversion to Composition nor an additional Composition encodes Home.
+The [2A evidence/interpretation distinction](archimate-ingestion-change-review.md#architectural-questions-and-separate-interpretations)
+remains applicable. Home cardinality, exhaustive endpoint types, inheritance,
+automatic naming/navigation and Information/Application rules remain deferred
+by the modelling strategy.
 
 ## Adoption, conformance findings and stop boundary
 

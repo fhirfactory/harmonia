@@ -236,30 +236,25 @@ model appear to contain the accepted interpretation. Keep **Observed Evidence**,
 **Authorised Reconciliation Instruction** distinguishable, rather than blending
 them into one narrative.
 
-The current blind-test pattern motivates the distinction without deciding it:
+The first 1.0.8 review exposed whether native Realization from Identifier
+Verification to Identifier Capture could also establish logical Feature context.
+The Solution Architect's accepted [Architecture Modelling Strategy](architecture-modelling-strategy.md#explicit-architectural-home)
+now answers **No**: Realization by itself establishes no Home, logical
+containment, parentage, ownership, naming context or navigation context.
 
-```text
-Business Process "Identifier Verification"
-    -> Realization ->
-Feature "Identifier Capture"
-```
+An explicitly authored `element → directed Association «Home» → architectural
+home` is a separate semantic assertion and a distinct relationship proposal.
+Detect it independently of Realization and preserve native type, source,
+target, direction and specialisation. Do not infer Home from any native edge,
+folder, View, name, proximity or other contextual heuristic. An unnamed
+Association specialised as Home is not an ordinary Association or a
+Realization duplicate.
 
-The explicit native Realization is observed evidence. Whether it also establishes
-logical containment/context of the Business Process by the Feature is a separate
-Harmonia question. Its existence alone supplies no answer. If independently
-adjudicable, a possible decomposition is:
-
-```text
-CR-007  Add Identifier Verification Business Process
-CR-008  Add Realization to Identifier Capture
-CR-009  Treat Realization as establishing logical Feature context
-```
-
-These are illustrative review identities only, not generated or adjudicated CRs.
-Each could receive its own disposition. This contract establishes neither that
-interpretation nor an ArchiMate Composition to represent it. Accepting a specific
-Process A → Realization → Feature B, and separately accepting context for that
-instance, would not imply that all such Realizations establish logical context.
+Element addition, native Realization, explicit Home and View changes can be
+independently reviewed. The historical Realization/context questions may acquire
+Outcome Resolved by the governing decision while retaining their original
+Disposition On-Hold. This neither rejects native Realization nor authorises
+reconciliation of its endpoints or of the independent Home relationship.
 
 ## Executable reconciliation instructions
 
@@ -285,16 +280,16 @@ Missing metadata is a finding, not permission to allocate identities or invent
 names/context. Cite existing authority for deterministic governed treatment;
 where it is insufficient, obtain adjudication before execution.
 
-**Form-only example; not a decision on the blind-test relationship:**
+**Form-only example; not a decision on a submitted relationship:**
 
 ```text
-Preserve the native ArchiMate Realization relationship from
-Business Process "Identifier Verification" to Feature "Identifier Capture".
-For this accepted architectural instance, treat the Realization as establishing
-the governed Feature context authorised by this Change Request.
-Do not create an ArchiMate Composition relationship.
-Apply only identity, naming, organisation and publication rules independently
-authorised by applicable governance or related accepted Change Requests.
+Preserve the native Realization from Business Process "Identifier Verification"
+to Feature "Identifier Capture".
+Reconcile the separately accepted, explicitly authored directed Association
+specialised as Home between those exact endpoints, with its established binding.
+Leave its Name absent unless a separately meaningful Name is authorised.
+Do not replace any native relationship or infer naming, folders or Views.
+Apply only independently authorised identity and publication rules.
 ```
 
 An actual instruction also needs the precise evidence/target references and
@@ -408,6 +403,6 @@ The three observation-only Increment 2 reports informed this mechanism:
 These reports supply empirical evidence only and remain unchanged; no observed
 pattern becomes architectural authority. Automated detection/decomposition,
 instruction generation, reconciliation machinery, complete processing states,
-presentation replay/layout and any general Realization/context or Composition
+presentation replay/layout and any further Home rules or Composition
 profile decision remain separate work. This documentation change processes none
 of the blind-test additions.

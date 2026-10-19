@@ -13,3 +13,8 @@ Reusable machinery belongs in `../framework/`. Processing evidence is not
 architectural authority. Frozen historical evidence retains its original content;
 current navigation is in the [location map](../framework/historical-locations.json).
 Increment 2 reconciliation is future work.
+
+Internal governance/tooling development evidence belongs in the separate
+[governance-tooling namespace](../governance-tooling/README.md), including the
+1.0.14 normalisation evidence. It must not occupy `publishing/<release>/` or
+`exchange/publish/<release>/`. Those namespaces describe governed RAD publications.

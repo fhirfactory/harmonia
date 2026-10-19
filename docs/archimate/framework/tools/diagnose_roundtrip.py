@@ -193,6 +193,17 @@ def diagnose(model, previous=None, context=None, registry=None):
     governed = None
     if context is not None and metadata.active() and ("canonicalId" in model.definition_ids or model.path == metadata.model_path()):
         governed, _ = metadata.load(context)
+        import reconcile_108
+        if reconcile_108.SOURCE.exists() and set(model.elements) & {
+                e['representationId'] for e in reconcile_108.read()['elements']}:
+            governed = reconcile_108.extend_index(governed)
+            import home_context
+            if home_context.SOURCE.exists():
+                # Expected names come from governed resources and their explicit
+                # Homes, never from the incoming file's folders or assertions.
+                expected_root = g.parse(metadata.model_path())
+                governed = home_context.amended_index(governed,
+                    home_context.derive(context, expected_root, governed))
     source_identity_conflicts = []
     short_name_owners = defaultdict(list)
     for identifier, element in sorted(model.elements.items()):

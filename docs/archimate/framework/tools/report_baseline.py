@@ -16,6 +16,10 @@ if s.metadata.active():
     if s.load_release()['version'] == '1.0.8':
         REPORT = s.metadata.PUBLISHING / '1.0.8/publication-1.0.8.md'
         GUIDE = s.metadata.PUBLISHING / '1.0.8/archi-inspection-1.0.8.md'
+    import reconcile_108
+    if reconcile_108.SOURCE.exists():
+        REPORT = s.metadata.PUBLISHING / s.load_release()['version'] / 'reconciliation-publication.md'
+        GUIDE = REPORT.parent / 'archi-inspection-guide.md'
 
 
 def render_establishment():
@@ -151,6 +155,9 @@ def validate_correction_preservation(b, root):
 
 
 def render():
+    if REPORT.name == 'reconciliation-publication.md':
+        from report_reconciliation import render as render_reconciliation
+        return render_reconciliation(REPORT, GUIDE)
     if s.load_release()['version'] == '1.0.8':
         from report_workspace import render as render_workspace
         return render_workspace(REPORT, GUIDE)

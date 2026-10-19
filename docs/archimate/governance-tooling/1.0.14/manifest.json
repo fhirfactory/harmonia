@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "classification": "governance-tooling-evidence",
+  "governance_tooling_version": "1.0.14",
+  "rad_architecture_release": null,
+  "authority": "Solution Architect namespace-correction instruction, 2026-10-19",
+  "directory_moves": {
+    "docs/archimate/exchange/publish/1.0.14": "docs/archimate/governance-tooling/1.0.14/exchange",
+    "docs/archimate/processing/publishing/1.0.14": "docs/archimate/governance-tooling/1.0.14/processing"
+  },
+  "files": [
+    {
+      "original_path": "docs/archimate/exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml",
+      "path": "docs/archimate/governance-tooling/1.0.14/exchange/Harmonia-Architecture-1.0.14.xml",
+      "sha256": "8be6fd16e617d96f7054572dbf896b2384647f16cc0c11b3039137610b9712be",
+      "bytes": 20901636,
+      "original_link_base": "docs/archimate/exchange/publish/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/archi-inspection-guide.md",
+      "sha256": "3b6000344e9d4994278f6782d5df0633a6654ec523a9f74ef51df0bf82ad2af7",
+      "bytes": 1471,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/evidence-sha256.json",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/evidence-sha256.json",
+      "sha256": "2c582e539542a36b67c37069958aea78655a035acb8307e42ad678bb260cc87a",
+      "bytes": 8011,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/home-normalisation.md",
+      "sha256": "ebb05cbc28787fa7f77a310bb0fdb79bde7964192161ca1b980e7c5aa3034340",
+      "bytes": 34034,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/home-verification.json",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/home-verification.json",
+      "sha256": "40e6d4c81aa7e5b9138edbdb255b7876429a16eb272bc1c9f4a0ac1ba7e0fcae",
+      "bytes": 10685,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/independent-reproduction.json",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/independent-reproduction.json",
+      "sha256": "345e75401dac0a7fc0242b5077e17e7a3771421866792db20b01b73d08d71419",
+      "bytes": 2185,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/projection-checks.json",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/projection-checks.json",
+      "sha256": "9fe591f435dab2efc60a834095f40471e79e6c4450e9a09f061c8095ba346c43",
+      "bytes": 961,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/publication-validation-1.0.14.json",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/publication-validation-1.0.14.json",
+      "sha256": "6a35b98c4d3faf13f4e6bf30404d1177a129f0de2a7814649683df50405c4645",
+      "bytes": 98564,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/report-check-final.log.gz",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/report-check-final.log.gz",
+      "sha256": "a375a2257324302a80d41e7cc7df63a7c98fdfa1db432c54bc4a280220a0fb68",
+      "bytes": 90,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    },
+    {
+      "original_path": "docs/archimate/processing/publishing/1.0.14/reproduction.log.gz",
+      "path": "docs/archimate/governance-tooling/1.0.14/processing/reproduction.log.gz",
+      "sha256": "50157163c19d19221b6894fb1224f13b00c141161719d34b7a1fd174b3a585d4",
+      "bytes": 107,
+      "original_link_base": "docs/archimate/processing/publishing/1.0.14"
+    }
+  ]
+}

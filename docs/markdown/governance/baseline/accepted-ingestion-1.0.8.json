@@ -1,0 +1,356 @@
+{
+  "authority": "Solution Architect execution task and subsequent Product naming decision, 2026-10-19; accepted as submitted only.",
+  "originating_baseline": "1.0.8",
+  "resulting_architecture_release": "1.0.9",
+  "evidence_sha256": {
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e",
+    "docs/archimate/processing/ingestion/1.0.8/run-002/detection/submission.xml.gz": "c183d30c24b1efc4e74c5212e491ddbd05f5bd7c33b4c45150ffba247d41df52",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/change-review-before.md": "33e076e4746e1838987cf8524cb80d228d0f3880e9f3d11fe209183f02d840b3",
+    "docs/archimate/processing/ingestion/1.0.8/run-002/reconciliation/execution-001/change-review-before.md": "4f552b163313a5f3316b89453734ddd86ebc12132748466012f990bd4e7c49e5",
+    "docs/markdown/governance/canonical-identity-and-naming.md": "000fc41f4918240687563acc562ba722a3552338b3f80ff8b1eb7db95b514d84"
+  },
+  "elements": [
+    {
+      "key": "submitted:id-727a264026584f80bc3304ff8383dc92",
+      "representationId": "id-727a264026584f80bc3304ff8383dc92",
+      "type": "feature",
+      "name": "Identifier Capture",
+      "authored_name": "[Feature] Identifier Capture",
+      "archimateType": "Capability",
+      "naming_context": [
+        "id-4726f9b8f6015e019238b5a8cc596c7c",
+        "id-c67b67dba5cc512d94eac01eb1524775",
+        "id-29e0bf94882559a7b6ed9d092303a560"
+      ],
+      "navigation_path": [
+        "Strategy",
+        "Business Layer",
+        "Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identifier Capture"
+      ],
+      "cr": "CR-001",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Capability\">\n      <name xml:lang=\"en\">[Feature] Identifier Capture</name>\n    </element>",
+      "displayName": "[Feature] Identifier Capture",
+      "friendlyName": "EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.IdentifierCapture",
+      "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-IdentifierCapture",
+      "canonicalId": "3cae3c4810974c5f8ee5a4c942f38b07"
+    },
+    {
+      "key": "submitted:id-234b080d0ea54d57bb0001a2cb861080",
+      "representationId": "id-234b080d0ea54d57bb0001a2cb861080",
+      "type": "product",
+      "name": "Provider Registry - Satellite",
+      "authored_name": "[Product] Provider Registry - Satellite",
+      "archimateType": "Product",
+      "naming_context": [],
+      "navigation_path": [
+        "Business",
+        "Products"
+      ],
+      "cr": "CR-002",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-234b080d0ea54d57bb0001a2cb861080\" xsi:type=\"Product\">\n      <name xml:lang=\"en\">[Product] Provider Registry - Satellite</name>\n    </element>",
+      "displayName": "[Product] Provider Registry - Satellite",
+      "friendlyName": "ProviderRegistrySatellite",
+      "canonicalName": "PRODUCT-ProviderRegistrySatellite",
+      "canonicalId": "1846c512d8f5405aaa4f4e33b5177098"
+    },
+    {
+      "key": "submitted:id-bfdd958364d1466a914d474dce8baab9",
+      "representationId": "id-bfdd958364d1466a914d474dce8baab9",
+      "type": "product",
+      "name": "Provider Registry - Central",
+      "authored_name": "[Product] Provider Registry - Central",
+      "archimateType": "Product",
+      "naming_context": [],
+      "navigation_path": [
+        "Business",
+        "Products"
+      ],
+      "cr": "CR-003",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-bfdd958364d1466a914d474dce8baab9\" xsi:type=\"Product\">\n      <name xml:lang=\"en\">[Product] Provider Registry - Central</name>\n    </element>",
+      "displayName": "[Product] Provider Registry - Central",
+      "friendlyName": "ProviderRegistryCentral",
+      "canonicalName": "PRODUCT-ProviderRegistryCentral",
+      "canonicalId": "407f93e81fd740e6b10728941a5a5172"
+    },
+    {
+      "key": "submitted:id-3c5ae26723224eb0a6e6a70d70fe2c83",
+      "representationId": "id-3c5ae26723224eb0a6e6a70d70fe2c83",
+      "type": "product",
+      "name": "Practitioner Collaboration Service",
+      "authored_name": "[Product] Practitioner Collaboration Service",
+      "archimateType": "Product",
+      "naming_context": [],
+      "navigation_path": [
+        "Business",
+        "Products"
+      ],
+      "cr": "CR-004",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-3c5ae26723224eb0a6e6a70d70fe2c83\" xsi:type=\"Product\">\n      <name xml:lang=\"en\">[Product] Practitioner Collaboration Service</name>\n    </element>",
+      "displayName": "[Product] Practitioner Collaboration Service",
+      "friendlyName": "PractitionerCollaborationService",
+      "canonicalName": "PRODUCT-PractitionerCollaborationService",
+      "canonicalId": "09a928910d3d458da3aebfb93d114654"
+    },
+    {
+      "key": "submitted:id-d84d8e1f988c4bc998b18834aabfcd74",
+      "representationId": "id-d84d8e1f988c4bc998b18834aabfcd74",
+      "type": "product",
+      "name": "Health Information Exchange Service",
+      "authored_name": "[Product] Health Information Exchange Service",
+      "archimateType": "Product",
+      "naming_context": [],
+      "navigation_path": [
+        "Business",
+        "Products"
+      ],
+      "cr": "CR-005",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-d84d8e1f988c4bc998b18834aabfcd74\" xsi:type=\"Product\">\n      <name xml:lang=\"en\">[Product] Health Information Exchange Service</name>\n    </element>",
+      "displayName": "[Product] Health Information Exchange Service",
+      "friendlyName": "HealthInformationExchangeService",
+      "canonicalName": "PRODUCT-HealthInformationExchangeService",
+      "canonicalId": "59fb1f7c79eb4e5387fb0652649c2b9c"
+    },
+    {
+      "key": "submitted:id-fddda503b8f0438e995465cd93204326",
+      "representationId": "id-fddda503b8f0438e995465cd93204326",
+      "type": "service",
+      "name": "Identifier Create",
+      "authored_name": "[Business Service] Identifier Create",
+      "archimateType": "BusinessService",
+      "naming_context": [],
+      "navigation_path": [
+        "Business"
+      ],
+      "cr": "CR-006",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-fddda503b8f0438e995465cd93204326\" xsi:type=\"BusinessService\">\n      <name xml:lang=\"en\">[Business Service] Identifier Create</name>\n    </element>",
+      "displayName": "[Business Service] Identifier Create",
+      "friendlyName": "IdentifierCreate",
+      "canonicalName": "SV-IdentifierCreate",
+      "canonicalId": "063b7a6b4ad549428a7566a4ce2c5de5"
+    },
+    {
+      "key": "submitted:id-0088d61ccfcf4962b3aab8bc3b96021d",
+      "representationId": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+      "type": "service",
+      "name": "Identifier Update",
+      "authored_name": "[Business Service] Identifier Update",
+      "archimateType": "BusinessService",
+      "naming_context": [],
+      "navigation_path": [
+        "Business"
+      ],
+      "cr": "CR-007",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-0088d61ccfcf4962b3aab8bc3b96021d\" xsi:type=\"BusinessService\">\n      <name xml:lang=\"en\">[Business Service] Identifier Update</name>\n    </element>",
+      "displayName": "[Business Service] Identifier Update",
+      "friendlyName": "IdentifierUpdate",
+      "canonicalName": "SV-IdentifierUpdate",
+      "canonicalId": "281155a0820942b884a13fa08d2e0b04"
+    },
+    {
+      "key": "submitted:id-c645a859ac2c4447ad5ae850cf384bf3",
+      "representationId": "id-c645a859ac2c4447ad5ae850cf384bf3",
+      "type": "process",
+      "name": "Identifier Verification",
+      "authored_name": "[Business Process] Identifier Verification",
+      "archimateType": "BusinessProcess",
+      "naming_context": [],
+      "navigation_path": [
+        "Business"
+      ],
+      "cr": "CR-008",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-c645a859ac2c4447ad5ae850cf384bf3\" xsi:type=\"BusinessProcess\">\n      <name xml:lang=\"en\">[Business Process] Identifier Verification</name>\n    </element>",
+      "displayName": "[Business Process] Identifier Verification",
+      "friendlyName": "IdentifierVerification",
+      "canonicalName": "PR-IdentifierVerification",
+      "canonicalId": "6ea7f8afe17d4319ab6fa9691db4328d"
+    },
+    {
+      "key": "submitted:id-9bfedbfd5b404694a2224c039fa5d4c4",
+      "representationId": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+      "type": "service",
+      "name": "Verify Identity Source",
+      "authored_name": "[Business Service] Verify Identity Source",
+      "archimateType": "BusinessService",
+      "naming_context": [],
+      "navigation_path": [
+        "Business"
+      ],
+      "cr": "CR-009",
+      "xml": "<element xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" xsi:type=\"BusinessService\">\n      <name xml:lang=\"en\">[Business Service] Verify Identity Source</name>\n    </element>",
+      "displayName": "[Business Service] Verify Identity Source",
+      "friendlyName": "VerifyIdentitySource",
+      "canonicalName": "SV-VerifyIdentitySource",
+      "canonicalId": "b95f652107f4420b86cc10fb893c9b01"
+    }
+  ],
+  "relationships": [
+    {
+      "run": "run-001",
+      "cr": "CR-010",
+      "representationId": "id-73ecd7a39407404ba8e2bb663efbdc19",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-73ecd7a39407404ba8e2bb663efbdc19\" source=\"id-29e0bf94882559a7b6ed9d092303a560\" target=\"id-d9272acdc675539cb441d2db9c5ad6e6\" xsi:type=\"Composition\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-011",
+      "representationId": "id-36b2aa8ad58149fdb20d44c1c16dd64c",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-36b2aa8ad58149fdb20d44c1c16dd64c\" source=\"id-29e0bf94882559a7b6ed9d092303a560\" target=\"id-6f0bfe5e814c5734a7c530f2b7515666\" xsi:type=\"Composition\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-012",
+      "representationId": "id-3c3d723683c147a4a902b4d35a2af018",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-3c3d723683c147a4a902b4d35a2af018\" source=\"id-29e0bf94882559a7b6ed9d092303a560\" target=\"id-bdf18b5e580b5b85a34357a3b21f36db\" xsi:type=\"Composition\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-013",
+      "representationId": "id-daf437bb32114daa8a6b9462cb9b4fb2",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-daf437bb32114daa8a6b9462cb9b4fb2\" source=\"id-29e0bf94882559a7b6ed9d092303a560\" target=\"id-f1e1928516765880955f638a7fec8c35\" xsi:type=\"Composition\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-014",
+      "representationId": "id-f9b270950f0241108b68f1c3daa50019",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-f9b270950f0241108b68f1c3daa50019\" source=\"id-29e0bf94882559a7b6ed9d092303a560\" target=\"id-28d7815137a05a2aab6d1684011dbbde\" xsi:type=\"Composition\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-015",
+      "representationId": "id-bff76286f8994d20aa1b8aef166acebd",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-bff76286f8994d20aa1b8aef166acebd\" source=\"id-29e0bf94882559a7b6ed9d092303a560\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Composition\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-022",
+      "representationId": "id-e84f2e9df66a48d795d604d75afc72cb",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-e84f2e9df66a48d795d604d75afc72cb\" source=\"id-fddda503b8f0438e995465cd93204326\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Realization\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-024",
+      "representationId": "id-69eb864f56df4d928f8abc3f7ab4e834",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-69eb864f56df4d928f8abc3f7ab4e834\" source=\"id-0088d61ccfcf4962b3aab8bc3b96021d\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Realization\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-026",
+      "representationId": "id-c0f84a8e4c8d496580a68cac4823c58c",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-c0f84a8e4c8d496580a68cac4823c58c\" source=\"id-c645a859ac2c4447ad5ae850cf384bf3\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Realization\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-028",
+      "representationId": "id-37f6913198e2434db5309c1c8e36fbc0",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-37f6913198e2434db5309c1c8e36fbc0\" source=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" target=\"id-bdf18b5e580b5b85a34357a3b21f36db\" xsi:type=\"Realization\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-030",
+      "representationId": "id-bef77e2eb7de4691b4fbe9a0c84e8232",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-bef77e2eb7de4691b4fbe9a0c84e8232\" source=\"id-fddda503b8f0438e995465cd93204326\" target=\"id-c645a859ac2c4447ad5ae850cf384bf3\" xsi:type=\"Flow\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-031",
+      "representationId": "id-0849f31d6d7d4f7eb1e484d7437e5cd7",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-0849f31d6d7d4f7eb1e484d7437e5cd7\" source=\"id-0088d61ccfcf4962b3aab8bc3b96021d\" target=\"id-c645a859ac2c4447ad5ae850cf384bf3\" xsi:type=\"Flow\"/>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-032",
+      "representationId": "id-c53c42ba0a4f437f9cb76a4c1a701816",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-c53c42ba0a4f437f9cb76a4c1a701816\" source=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" target=\"id-c645a859ac2c4447ad5ae850cf384bf3\" xsi:type=\"Serving\"/>"
+    },
+    {
+      "run": "run-002",
+      "cr": "CR-001",
+      "representationId": "id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf",
+      "specialization": "Home",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf\" source=\"id-c645a859ac2c4447ad5ae850cf384bf3\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    },
+    {
+      "run": "run-002",
+      "cr": "CR-002",
+      "representationId": "id-a21144ee285f467982d13c39b49228dd",
+      "specialization": "Home",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-a21144ee285f467982d13c39b49228dd\" source=\"id-0088d61ccfcf4962b3aab8bc3b96021d\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    },
+    {
+      "run": "run-002",
+      "cr": "CR-003",
+      "representationId": "id-3f9d4356f4b84ef7b45fe3435d27fde8",
+      "specialization": "Home",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-3f9d4356f4b84ef7b45fe3435d27fde8\" source=\"id-fddda503b8f0438e995465cd93204326\" target=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    },
+    {
+      "run": "run-002",
+      "cr": "CR-004",
+      "representationId": "id-d559bbf53430465e90f47c40593403a5",
+      "specialization": "Home",
+      "xml": "<relationship xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-d559bbf53430465e90f47c40593403a5\" source=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" target=\"id-bdf18b5e580b5b85a34357a3b21f36db\" xsi:type=\"Association\" isDirected=\"true\">\n      <properties>\n        <property propertyDefinitionRef=\"specialization\">\n          <value xml:lang=\"en\">Home</value>\n        </property>\n      </properties>\n    </relationship>"
+    }
+  ],
+  "views": [
+    {
+      "run": "run-001",
+      "cr": "CR-033",
+      "representationId": "id-e2a326c7d36751af9076a32dabe0e9cd",
+      "navigation_path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration"
+      ],
+      "xml": "<view xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-e2a326c7d36751af9076a32dabe0e9cd\" xsi:type=\"Diagram\">\n        <name xml:lang=\"en\">0-Person Identity Administration — Feature Landscape</name>\n        <documentation xml:lang=\"en\">Context and immediate governed children only. Standing remains in element Properties. Navigation and proximity create no semantic relationships.</documentation>\n        <node identifier=\"id-a17cde2ab18f527f9103f8c50e32958f\" elementRef=\"id-29e0bf94882559a7b6ed9d092303a560\" xsi:type=\"Element\" x=\"12\" y=\"12\" w=\"192\" h=\"493\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-ce6796499a7e5e128aef2c2b31b44df9\" elementRef=\"id-d9272acdc675539cb441d2db9c5ad6e6\" xsi:type=\"Element\" x=\"241\" y=\"348\" w=\"240\" h=\"73\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-af6828d7edce5c05b5819b597293a981\" elementRef=\"id-6f0bfe5e814c5734a7c530f2b7515666\" xsi:type=\"Element\" x=\"241\" y=\"180\" w=\"240\" h=\"73\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-74781db5bf4e5fe38af2da1bf742f003\" elementRef=\"id-f1e1928516765880955f638a7fec8c35\" xsi:type=\"Element\" x=\"241\" y=\"96\" w=\"240\" h=\"76\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-8459b669dc085cabbcfca4ede19c444e\" elementRef=\"id-28d7815137a05a2aab6d1684011dbbde\" xsi:type=\"Element\" x=\"241\" y=\"429\" w=\"240\" h=\"76\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-0369c1bef15255da8cf693f89b7295e7\" elementRef=\"id-bdf18b5e580b5b85a34357a3b21f36db\" xsi:type=\"Element\" x=\"240\" y=\"264\" w=\"240\" h=\"73\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-073fae7e65554293bed1a47ff6e535ee\" elementRef=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Element\" x=\"241\" y=\"12\" w=\"240\" h=\"73\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <connection identifier=\"id-66c57297bd4f4d898a53fe3d4bcc6b13\" relationshipRef=\"id-36b2aa8ad58149fdb20d44c1c16dd64c\" xsi:type=\"Relationship\" source=\"id-a17cde2ab18f527f9103f8c50e32958f\" target=\"id-af6828d7edce5c05b5819b597293a981\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-3242d1af0d884c9ab36adbe7f0feb936\" relationshipRef=\"id-3c3d723683c147a4a902b4d35a2af018\" xsi:type=\"Relationship\" source=\"id-a17cde2ab18f527f9103f8c50e32958f\" target=\"id-0369c1bef15255da8cf693f89b7295e7\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-fa56f00e1759495d82b8c40c00792ab9\" relationshipRef=\"id-daf437bb32114daa8a6b9462cb9b4fb2\" xsi:type=\"Relationship\" source=\"id-a17cde2ab18f527f9103f8c50e32958f\" target=\"id-74781db5bf4e5fe38af2da1bf742f003\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-df01f77a7fa245d89bc3a6992ee3d829\" relationshipRef=\"id-f9b270950f0241108b68f1c3daa50019\" xsi:type=\"Relationship\" source=\"id-a17cde2ab18f527f9103f8c50e32958f\" target=\"id-8459b669dc085cabbcfca4ede19c444e\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-7239b62978b141519ddde72feb8b40fa\" relationshipRef=\"id-bff76286f8994d20aa1b8aef166acebd\" xsi:type=\"Relationship\" source=\"id-a17cde2ab18f527f9103f8c50e32958f\" target=\"id-073fae7e65554293bed1a47ff6e535ee\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-27509aa6cf6b40f6b3bdfd76f9ac949c\" relationshipRef=\"id-73ecd7a39407404ba8e2bb663efbdc19\" xsi:type=\"Relationship\" source=\"id-a17cde2ab18f527f9103f8c50e32958f\" target=\"id-ce6796499a7e5e128aef2c2b31b44df9\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n      </view>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-034",
+      "representationId": "id-c8ec850977565a17869af357ee28d917",
+      "navigation_path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement"
+      ],
+      "xml": "<view xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-c8ec850977565a17869af357ee28d917\" xsi:type=\"Diagram\">\n        <name xml:lang=\"en\">0-Entity Information Enablement — CT2 Landscape</name>\n        <documentation xml:lang=\"en\">Context and immediate governed children only. Standing remains in element Properties. Navigation and proximity create no semantic relationships.</documentation>\n        <node identifier=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" elementRef=\"id-4726f9b8f6015e019238b5a8cc596c7c\" xsi:type=\"Element\" x=\"40\" y=\"40\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"222\" b=\"150\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-92c2544bb75954fd8dfac150373bf8b5\" elementRef=\"id-c67b67dba5cc512d94eac01eb1524775\" xsi:type=\"Element\" x=\"40\" y=\"230\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-1ae6d706a2d85b9eac70a31e969c76d8\" elementRef=\"id-a6aaf19f1f225b67b1e3a19740d5f457\" xsi:type=\"Element\" x=\"450\" y=\"230\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-4b3c4cbc947a555b914c6a0bc31f4b93\" elementRef=\"id-c480beb83dfe55e599ff5dc56b4249bb\" xsi:type=\"Element\" x=\"860\" y=\"230\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-5bfc1365cdde59799f741698323c415b\" elementRef=\"id-19d0a7d9080e5758915878db238ec2d8\" xsi:type=\"Element\" x=\"1270\" y=\"230\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-82338ac3935152f0866281add52432b0\" elementRef=\"id-243b002011da54d5ac721e2a99d456ea\" xsi:type=\"Element\" x=\"40\" y=\"420\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-a2eee58a65e25eb0b7dfaa0186c6d11c\" elementRef=\"id-97a226da4bae53e9bb0cb071c6dbf5c2\" xsi:type=\"Element\" x=\"450\" y=\"420\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-302c6b450f875419b7ea4ea3dee8d0d0\" elementRef=\"id-7b438cff4f2d5b6d928cd7ea538f67a4\" xsi:type=\"Element\" x=\"860\" y=\"420\" w=\"360\" h=\"148\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"12\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <connection identifier=\"id-62f38f2147d54605be108818ddb65a25\" relationshipRef=\"id-f7deddb1eb2751aa96ba6a490b18003e\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-1ae6d706a2d85b9eac70a31e969c76d8\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-3709d706394f4695b9886cb76038762a\" relationshipRef=\"id-be1babf8397d51b3878b271f8775d711\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-4b3c4cbc947a555b914c6a0bc31f4b93\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-39efc4286edf40609e42ded6b79737c6\" relationshipRef=\"id-c099301d131c594580c840a6363997a3\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-5bfc1365cdde59799f741698323c415b\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-0d6cbbef60984cad9624700a2b53c2da\" relationshipRef=\"id-c97120325e3e5a1b99a11eeec1e5c89e\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-a2eee58a65e25eb0b7dfaa0186c6d11c\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-6ec0b7e2d8964fe287b08e19e3af6cd7\" relationshipRef=\"id-3fc7839fceda5f4193e58dd14415a0ab\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-92c2544bb75954fd8dfac150373bf8b5\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-587eff9341f64a99b0581ecc74030c17\" relationshipRef=\"id-b297858a4ab352cb942b88df159109ed\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-82338ac3935152f0866281add52432b0\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-b45f6090065040c5b2cf8a39ac28a9dc\" relationshipRef=\"id-05fb0b3f26d8545a8caf8fcb8a92b2e3\" xsi:type=\"Relationship\" source=\"id-84aa3ddd9d375b48981e4d7e4b8d2d7e\" target=\"id-302c6b450f875419b7ea4ea3dee8d0d0\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n      </view>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-035",
+      "representationId": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+      "navigation_path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identifier Capture"
+      ],
+      "xml": "<view xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-216c4ab0757b45b3894e7e0c2594b9f9\" xsi:type=\"Diagram\">\n        <name xml:lang=\"en\">Identifier Capture - Feature realisation</name>\n        <node identifier=\"id-4f78c588c80d42e0b4f52e765dc76ff2\" elementRef=\"id-fddda503b8f0438e995465cd93204326\" xsi:type=\"Element\" x=\"168\" y=\"36\" w=\"253\" h=\"55\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-3fd6725d68f4476884cf44f9fbf09794\" elementRef=\"id-727a264026584f80bc3304ff8383dc92\" xsi:type=\"Element\" x=\"12\" y=\"36\" w=\"120\" h=\"397\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-d0a1079102c14d26901ace75bd379281\" elementRef=\"id-0088d61ccfcf4962b3aab8bc3b96021d\" xsi:type=\"Element\" x=\"168\" y=\"108\" w=\"253\" h=\"55\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-a222a0f6a6804944b188e32ee5caa9a5\" elementRef=\"id-c645a859ac2c4447ad5ae850cf384bf3\" xsi:type=\"Element\" x=\"168\" y=\"180\" w=\"253\" h=\"55\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-8e77730d5e7147bea761ee18da71358c\" elementRef=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" xsi:type=\"Element\" x=\"636\" y=\"180\" w=\"253\" h=\"55\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <connection identifier=\"id-007507b4daa748ee8df77d2dbf8a496d\" relationshipRef=\"id-e84f2e9df66a48d795d604d75afc72cb\" xsi:type=\"Relationship\" source=\"id-4f78c588c80d42e0b4f52e765dc76ff2\" target=\"id-3fd6725d68f4476884cf44f9fbf09794\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-95c171f829a849a3ac544a931b4d6a5f\" relationshipRef=\"id-bef77e2eb7de4691b4fbe9a0c84e8232\" xsi:type=\"Relationship\" source=\"id-4f78c588c80d42e0b4f52e765dc76ff2\" target=\"id-a222a0f6a6804944b188e32ee5caa9a5\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"516\" y=\"48\"/>\n          <bendpoint x=\"516\" y=\"204\"/>\n          <bendpoint x=\"468\" y=\"204\"/>\n        </connection>\n        <connection identifier=\"id-89e5971d1e2a40c38b37c9fa1f9e3508\" relationshipRef=\"id-3f9d4356f4b84ef7b45fe3435d27fde8\" xsi:type=\"Relationship\" source=\"id-4f78c588c80d42e0b4f52e765dc76ff2\" target=\"id-3fd6725d68f4476884cf44f9fbf09794\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"156\" y=\"48\"/>\n        </connection>\n        <connection identifier=\"id-f64ce7c8aac347b2856dbceba42237d6\" relationshipRef=\"id-69eb864f56df4d928f8abc3f7ab4e834\" xsi:type=\"Relationship\" source=\"id-d0a1079102c14d26901ace75bd379281\" target=\"id-3fd6725d68f4476884cf44f9fbf09794\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-851cf4ffa1eb436983a9e47a6f5157b5\" relationshipRef=\"id-0849f31d6d7d4f7eb1e484d7437e5cd7\" xsi:type=\"Relationship\" source=\"id-d0a1079102c14d26901ace75bd379281\" target=\"id-a222a0f6a6804944b188e32ee5caa9a5\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"480\" y=\"132\"/>\n          <bendpoint x=\"480\" y=\"192\"/>\n        </connection>\n        <connection identifier=\"id-21667f305c0f4951b72b720272467c86\" relationshipRef=\"id-a21144ee285f467982d13c39b49228dd\" xsi:type=\"Relationship\" source=\"id-d0a1079102c14d26901ace75bd379281\" target=\"id-3fd6725d68f4476884cf44f9fbf09794\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"156\" y=\"120\"/>\n        </connection>\n        <connection identifier=\"id-b1f2f750233f4717b5bbedcf413e3c61\" relationshipRef=\"id-c0f84a8e4c8d496580a68cac4823c58c\" xsi:type=\"Relationship\" source=\"id-a222a0f6a6804944b188e32ee5caa9a5\" target=\"id-3fd6725d68f4476884cf44f9fbf09794\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-c045914e226d44dcb1667c1db75057ef\" relationshipRef=\"id-ba8d543c3f6a4f15bd41e5c2d7bcf6cf\" xsi:type=\"Relationship\" source=\"id-a222a0f6a6804944b188e32ee5caa9a5\" target=\"id-3fd6725d68f4476884cf44f9fbf09794\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"156\" y=\"192\"/>\n        </connection>\n        <connection identifier=\"id-e11b8af91143439bbb54ff0be650fb79\" relationshipRef=\"id-c53c42ba0a4f437f9cb76a4c1a701816\" xsi:type=\"Relationship\" source=\"id-8e77730d5e7147bea761ee18da71358c\" target=\"id-a222a0f6a6804944b188e32ee5caa9a5\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"528\" y=\"216\"/>\n        </connection>\n      </view>"
+    },
+    {
+      "run": "run-001",
+      "cr": "CR-036",
+      "representationId": "id-8fb2f8b1776f4ebf969e9b5b638e4ed3",
+      "navigation_path": [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities",
+        "[CT1] Entity Information Enablement",
+        "[CT2] Client Administration",
+        "[CT3] Person Identity Administration",
+        "[Feature] Identity Source & Correction Lineage"
+      ],
+      "xml": "<view xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" identifier=\"id-8fb2f8b1776f4ebf969e9b5b638e4ed3\" xsi:type=\"Diagram\">\n        <name xml:lang=\"en\">Identity Source &amp; Correction Lineage - Feature realisation</name>\n        <node identifier=\"id-030fc162b19b41c8930dac9f9c901bf0\" elementRef=\"id-bdf18b5e580b5b85a34357a3b21f36db\" xsi:type=\"Element\" x=\"12\" y=\"24\" w=\"240\" h=\"409\">\n          <style>\n            <fillColor r=\"245\" g=\"222\" b=\"170\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <node identifier=\"id-5a05920f7422487c930faff16187327b\" elementRef=\"id-9bfedbfd5b404694a2224c039fa5d4c4\" xsi:type=\"Element\" x=\"312\" y=\"24\" w=\"253\" h=\"55\">\n          <style>\n            <fillColor r=\"255\" g=\"255\" b=\"181\" a=\"100\"/>\n            <lineColor r=\"92\" g=\"92\" b=\"92\" a=\"100\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </node>\n        <connection identifier=\"id-d4301bf1848e4e7e9a1d5267dfa3594e\" relationshipRef=\"id-37f6913198e2434db5309c1c8e36fbc0\" xsi:type=\"Relationship\" source=\"id-5a05920f7422487c930faff16187327b\" target=\"id-030fc162b19b41c8930dac9f9c901bf0\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n        </connection>\n        <connection identifier=\"id-95cad3e7136d4f4582fc2614888f218c\" relationshipRef=\"id-d559bbf53430465e90f47c40593403a5\" xsi:type=\"Relationship\" source=\"id-5a05920f7422487c930faff16187327b\" target=\"id-030fc162b19b41c8930dac9f9c901bf0\">\n          <style>\n            <lineColor r=\"0\" g=\"0\" b=\"0\"/>\n            <font name=\"Sans\" size=\"9\">\n              <color r=\"0\" g=\"0\" b=\"0\"/>\n            </font>\n          </style>\n          <bendpoint x=\"300\" y=\"36\"/>\n        </connection>\n      </view>"
+    }
+  ]
+}
