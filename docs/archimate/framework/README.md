@@ -8,6 +8,34 @@ contains pinned historical XML and semantic/navigation locks for tests and repla
 `documentation-map.json` supports the projection. Architectural authority remains
 in the [Markdown RAD](../../markdown/).
 
+RAD-1.0.10 adds the [bounded initial IA projection](../../markdown/governance/initial-information-architecture-projection.md)
+after the unchanged RAD-1.0.9 replay. `information_population.py` validates the
+resource-owned capture and once-only allocation history, then introduces 50 native
+BusinessObjects and 4 native DataObjects, flat navigation and no relationships or
+diagram Views. It does not implement IA ingestion/reconciliation. `make all` uses
+the current overlay and independently reproduces all 15 generated outputs.
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: [IA vocabulary adjudication](../../markdown/governance/canonical-identity-and-naming.md#information-object-canonical-name-vocabulary)
+and [cross-layer Composition rule](../../markdown/governance/architecture-modelling-strategy.md#cross-layer-semantic-containment-and-contextual-naming).
+
+The canonical-name vocabulary/context stop on the new resources remains explicit;
+the existing diagnostic correctly reports incomplete future naming conformance.
+
+------- Legacy Content - Superseded ------- Finish ----
+
+The same unsigned candidate now completes local canonicalNames using BO/TOPIC
+and the existing friendlyName components. `canonical-name-completion/` preserves
+the original candidate, source/history and new verification. Composition ancestry
+governs contextual naming across all layers; no IA Composition is created and no
+root status is inferred. Context-dependent names await authored containment.
+Existing contextual Business names without Composition remain a reported finding.
+`synchronise_baseline.publish(information=False)` retains the pre-IA projection
+boundary for historical regression tests. Presentation selection and Home audits
+retain their original evidence release when replayed in the new publication.
+The test timeout is 420 seconds: the established full suite required about
+269 seconds before adding IA preservation tests; ongoing test completions remain
+the progress criterion. Publication and individual checks keep their own bounds.
+
 Requirements: Python 3.9+ and `lxml` from `requirements.txt`. From the repository root:
 
 ```bash

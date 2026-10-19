@@ -139,6 +139,20 @@ class IdentityContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'canonicalName drift'):
             m.validate_records(index)
 
+
+    def test_information_vocabulary_reuses_derivation_and_limits_topic_scope(self):
+        bo = dict(key='concept', type='BusinessObject', name='Practitioner BO')
+        topic = dict(key='logical', type='DataObject', name='Context Topic', information_map=True)
+        self.assertEqual(dict(friendlyName='PractitionerBo', canonicalName='BO-PractitionerBo'), m.qualified_names([bo]))
+        self.assertEqual(dict(friendlyName='ContextTopic', canonicalName='TOPIC-ContextTopic'), m.qualified_names([topic]))
+        del topic['information_map']
+        with self.assertRaisesRegex(ValueError, 'TOPIC requires'):
+            m.qualified_names([topic])
+        with self.assertRaisesRegex(ValueError, 'Missing formal tier'):
+            m.qualified_names([dict(key='physical', type='Artifact', name='Practitioner Artefact')])
+        self.assertNotIn('Artifact', m.FORMAL)
+        self.assertNotIn('ARTEFACT', m.FORMAL.values())
+
     def test_unadjudicated_digit_leading_name_stops_before_allocation(self):
         b = s.Baseline(*s.load_inputs())
         source, motivation = m.read(m.SOURCE), m.read(m.MOTIVATION)

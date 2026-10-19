@@ -1,0 +1,63 @@
+{
+  "status": "PASS_WITH_EXPLICIT_PROPERTY_STOP",
+  "published_sha256": "73a5f4d5356595cfc7dc78926d446923541fe9da36577285f634dcb00ba73094",
+  "checks": {
+    "publication_check": {
+      "command": "timeout 90s python3 -B docs/archimate/framework/tools/synchronise_baseline.py --check",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/publication-check.log.gz",
+      "log_sha256": "1f259083e113ec8050cab83c71ce5d15b93adfb77f1f154fb6257a9093caa3e3"
+    },
+    "report_check": {
+      "command": "timeout 45s python3 -B docs/archimate/framework/tools/report_baseline.py --check",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/report-check.log.gz",
+      "log_sha256": "a375a2257324302a80d41e7cc7df63a7c98fdfa1db432c54bc4a280220a0fb68"
+    },
+    "independent_reproduction": {
+      "command": "timeout 120s python3 -B docs/archimate/framework/tools/verify_baseline_outputs.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/independent-reproduction.log.gz",
+      "log_sha256": "a1080b6ab97888cb8a11acc5f14c4fd68c89b82014fab9a983b6d544bae3e708"
+    },
+    "final_model_diagnostic": {
+      "command": "timeout 90s python3 -B docs/archimate/framework/tools/diagnose_roundtrip.py diagnose --model docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml --previous docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml --baseline-context --output /tmp/harmonia-ia-initial/diagnostic-final.json",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/diagnostic-final.log.gz",
+      "log_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "release_check": {
+      "command": "timeout 30s python3 -B scripts/architecture_release.py check",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/release_check.log.gz",
+      "log_sha256": "ee18a2fc438bbeb29fa31f062a803e560a0660470be5410d4c7af3622d256c62"
+    },
+    "frozen_identity_registry": {
+      "command": "timeout 30s python3 -B scripts/architecture_identity.py validate",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/frozen_identity_registry.log.gz",
+      "log_sha256": "b173759535b3c53d4047bc149c6cc4cc01702865d5dedeeb32633c842c4488ee"
+    },
+    "git_whitespace": {
+      "command": "timeout 30s git diff --check",
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/git_whitespace.log.gz",
+      "log_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "prior_file_hash_census": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/prior-files-preservation.json",
+      "log_sha256": "6e1bfdd1c1ef910d3979e324d17218d988704f780da32adf66aa70d9a946da06"
+    }
+  },
+  "future_naming_readiness": "NONCONFORMANT: 54 deliberately absent canonicalName properties; not a waived contract",
+  "whole_model_Archi_comparator": "DIFFERENCES; scoped transport checks PASS, not whole-model lossless equivalence",
+  "timeouts_or_stalls": "NONE"
+}

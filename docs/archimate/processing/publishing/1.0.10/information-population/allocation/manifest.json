@@ -1,0 +1,7 @@
+{
+  "source": "docs/markdown/governance/baseline/information-architecture.json",
+  "source_sha256": "e021b98318c5e56868c82b65a974551544c822428c8ecd98b4d508df1510d942",
+  "canonical_ids_allocated_once": 54,
+  "allocation": "uuid.uuid4().hex; no name/type/path inputs; never during publication",
+  "prior_release_sha256": "dbff0c20aae7c5c8a1f79a7068ab4a46b22b986d002f2b8159e7742e06500c88"
+}

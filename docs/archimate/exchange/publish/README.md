@@ -7,7 +7,22 @@ exchange package. Keep it lean: currently the Open Exchange XML alone. Reports,
 validation results, source history, inspection guides and verification evidence
 belong in [processing/publishing](../../processing/publishing/).
 
-- [RAD-1.0.9](1.0.9/Harmonia-Architecture-1.0.9.xml): authorised run-001/run-002
+- [RAD-1.0.10](1.0.10/Harmonia-Architecture-1.0.10.xml): initial IA element population,
+  50 native BusinessObjects and 4 native DataObjects; [publication evidence](../../processing/publishing/1.0.10/information-population.md)
+  and [Archi handoff](../../processing/publishing/1.0.10/archi-inspection-guide.md).
+  No IA semantic relationships, diagrams or physical objects. The same candidate
+  now completes local BO/TOPIC canonicalNames under the [adjudication](../../../markdown/governance/canonical-identity-and-naming.md#information-object-canonical-name-vocabulary).
+  Composition ancestry governs contextual names; no IA containment is created.
+  Human rendering review remains pending.
+
+  ------- Legacy Content - Superseded ------- Start ------
+  Superseded by: [IA naming adjudication](../../../markdown/governance/canonical-identity-and-naming.md#information-object-canonical-name-vocabulary).
+
+  No IA semantic relationships, diagrams or physical objects; canonicalName remains
+  explicitly stopped on the 54 new elements. Human rendering review remains pending.
+
+  ------- Legacy Content - Superseded ------- Finish ----
+- [RAD-1.0.9](1.0.9/Harmonia-Architecture-1.0.9.xml): preserved originating model; authorised run-001/run-002
   reconciliation; [publication and validation](../../processing/publishing/1.0.9/reconciliation-publication.md)
   and [inspection guide](../../processing/publishing/1.0.9/archi-inspection-guide.md).
   Human rendering acceptance remains pending.

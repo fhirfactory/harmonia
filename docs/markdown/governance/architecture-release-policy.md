@@ -46,6 +46,13 @@ currently unsigned RAD-1.0.9 candidate within the same accepted change set.
 Regeneration and validation retain `version=1.0.9`, `previous_version=1.0.8`;
 they SHALL NOT advance this completion to RAD-1.0.10. Final sign-off remains pending.
 
+**Solution Architect decision — IA canonical-name completion, 2026-10-19:**
+RAD-1.0.10 remains the current unsigned candidate (`previous_version=1.0.9`).
+Authorising `BO` / `TOPIC` and completing the 54 IA canonicalName properties
+resolves the naming requirement explicitly left open during that candidate's
+creation. It belongs to the same change set and SHALL NOT increment the release.
+The normal patch policy otherwise remains unchanged.
+
 A small root JSON file follows existing repository JSON conventions without
 coupling architectural governance to Maven. The standard-library Python helper
 under [scripts/](../../../scripts/architecture_release.py) follows the repository's

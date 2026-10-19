@@ -1,0 +1,89 @@
+{
+  "standing": "Projection review evidence only; no architectural decisions or new identities",
+  "excluded": [
+    {
+      "material": "Endpoint BO (Practitioner interpretation) and Endpoint BO (Device interpretation)",
+      "classification": "unresolved ambiguity / Solution Architect decision required",
+      "sources": ["docs/markdown/04-information-architecture/information-families/practitioner.md#37-endpoint", "docs/markdown/04-information-architecture/information-families/device.md#34-endpoint"],
+      "reason": "Independent definitions concern practitioner/role routing coordinates and device telemetry/communication coordinates. Each produces Endpoint BO. Neither semantic merger nor a distinguishing base name is established. Both excluded, neither allocated."
+    },
+    {
+      "material": "Practitioner Identifier, Organisation Identifier, Location Identifier",
+      "classification": "unresolved independent-object boundary / Solution Architect decision required",
+      "sources": ["docs/markdown/04-information-architecture/information-families/practitioner.md#32-practitioner-identity--practitioner-identifier", "docs/markdown/04-information-architecture/information-families/organisation.md#32-organisation-identity--organisation-identifier", "docs/markdown/04-information-architecture/information-families/healthcare-location.md#32-location-identity--location-identifier"],
+      "reason": "Combined Identity & Identifier sections define the governed identity bundles and decompose identifier values/authorities; the diagram and definition independently establish Identity. Traceability-list and heading occurrences alone do not settle separate Identifier object boundaries. No split into two concepts and no merger with the Person Identifier object."
+    },
+    {
+      "material": "Support Person Relationship / Support Person",
+      "classification": "unresolved base-name/object boundary / Solution Architect decision required",
+      "sources": ["docs/markdown/04-information-architecture/information-families/person-healthcare-subject.md#2-domain-03-responsibility--traceability", "docs/markdown/04-information-architecture/information-families/person-healthcare-subject.md#52-key-information-relationships"],
+      "reason": "Traceability lists Support Person Relationship; the reified-relationship table calls its row Support Person; Business Role usages are distinct. Do not choose or invent a base name or conflate a person/role with relationship information."
+    },
+    {
+      "material": "Demographic Trait Assertion, Communication Preference, Identifier Value, Identifier Authority / Namespace, professional qualifications, specialties and other characteristic-level terms",
+      "classification": "not independently established objects in the reviewed evidence",
+      "sources": ["docs/markdown/04-information-architecture/information-families/person-healthcare-subject.md", "docs/markdown/04-information-architecture/information-families/practitioner.md", "docs/markdown/04-information-architecture/information-families/organisation.md"],
+      "reason": "Traceability entries, examples, characteristics or decomposition values do not alone establish independent object identity/base-name boundaries. Their meaning remains in the parent definitions; no automatic element-per-term conversion."
+    },
+    {
+      "material": "Information Concept, semantic categories, generic Information Relationship/Assembly/View/Collection metamodel kinds; Identity, Metadata, Content, Context, Version, Active Generation, ActivityContext and other partitions/characteristics",
+      "classification": "metamodel/pattern or property; not an automatic information-object instance",
+      "sources": ["docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md", "docs/markdown/04-information-architecture/patterns/information-relationships.md", "docs/markdown/04-information-architecture/patterns/metabole.md", "docs/markdown/04-information-architecture/assemblies-views/assemblies-and-views.md"],
+      "reason": "The mapping profile explicitly excludes heading-derived instances and automatic partition objects. The independently defined Information Unit, Metabolē and Search Result Set are admitted separately. No generic class or every field/value is instantiated."
+    },
+    {
+      "material": "Governed Representation and Management Context as additional independent BOs",
+      "classification": "unresolved independent-object boundary / Solution Architect decision required",
+      "sources": ["docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md#6-information-unit", "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md#65-context", "docs/markdown/governance/rad-archimate-mapping-catalogue.md"],
+      "reason": "The mapping permits these where separately defined. The reviewed metamodel establishes their conceptual roles within the Information Unit boundary, but does not settle additional independent projection objects rather than representation/management partitions. Do not infer separate identities, name a generic Context BO or map them to application Context."
+    },
+    {
+      "material": "Task Completion Metadata, Task.Output(s), concurrency controls and modes; ReportedTask; Work Order/To Do/Synthetic Task subclasses",
+      "classification": "characteristics/deferred or explicitly non-authorised objects",
+      "sources": ["docs/markdown/04-information-architecture/information-families/task-work.md#2-established-task-concepts", "docs/markdown/04-information-architecture/information-families/task-work.md#5-explicitly-unresolved-architecture"],
+      "reason": "The four established Task concepts are admitted. Controls and output/metadata partitions do not establish extra independent object types. ReportedTask is expressly unresolved; business work classifications expressly do not create new conceptual subclasses. Runtime TaskOutcome identity/lifecycle questions are not resolved by assigning the architectural model resource a canonicalId."
+    },
+    {
+      "material": "Referral and other unapproved G2 A/B/C/D propositions; Referral Context Assembly, Patient Appointment Schedule View, scheduling milestones, Order candidates, supporting-context/control objects and Responsibility Assumption Assertion",
+      "classification": "candidate/unresolved; no promotion",
+      "sources": ["docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md", "docs/markdown/04-information-architecture/information-families/referral.md", "docs/markdown/04-information-architecture/information-families/appointment-scheduling.md", "docs/markdown/04-information-architecture/information-families/episode-encounter.md", "docs/markdown/04-information-architecture/information-families/order.md"],
+      "reason": "G2 remains open. A denotes direct derivation within a candidate package, not approval. Only G2-D01–D04 explicitly approved conceptual meanings, including D04's retained Referral Progression Event, are admitted. The Order BO comes from established Package1 Healthcare Service section 4, not approval of the candidate Order family."
+    },
+    {
+      "material": "Referral Disposition, Referral Finalisation, Referral Closure, Episode Context as a duplicate of Episode",
+      "classification": "rejected/superseded or expressly not created",
+      "sources": ["docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md#g2-d01", "docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md#g2-d04"],
+      "reason": "D04 rejects independent Referral Disposition and does not establish workflow Closure/Finalisation concepts. D01 establishes Episode and supersedes the earlier suggestion; no duplicate historical name is projected."
+    },
+    {
+      "material": "Eight illustrative context assemblies/views and family candidate assemblies; care-place operational state, later clinical/operational families and illustrative healthcare types",
+      "classification": "candidate, later-family or illustrative material",
+      "sources": ["docs/markdown/04-information-architecture/assemblies-views/assemblies-and-views.md#2-illustrative-candidate-context-assemblies--views", "docs/markdown/04-information-architecture/information-families/healthcare-location.md#5-architectural-invariant-static-definition-vs-operational-state", "docs/markdown/04-information-architecture/information-families/README.md"],
+      "reason": "Candidate assembly names and their constituent examples do not become approved objects. A separately established Healthcare Subject Context BO remains independent of the candidate assembly of the same base phrase. Operational-state distinction and future family placement do not authorise a larger initial population."
+    },
+    {
+      "material": "Practitioner, PractitionerRole, Organization, Location, HealthcareService, Endpoint, Group, Patient, Encounter, ServiceRequest, Observation, DiagnosticReport, Communication, Consent, AuditEvent and Bundle as additional Topic elements",
+      "classification": "candidate logical resource references; no promotion from inventories",
+      "sources": ["docs/markdown/05-information-systems-architecture/data-and-persistence.md#coupled-logicalapplication-data-objects", "docs/markdown/governance/rad-archimate-mapping-catalogue.md"],
+      "reason": "D08/D09/D12 are mixed candidate resource/responsibility inventories. Native FHIR names, clinical persistence responsibility and resource-register membership alone do not establish independently identified logical IA objects under this task. No automatic one-resource-one-DataObject conversion; Healthcare Organisation BO does not establish Organization Topic or a mapping to it."
+    },
+    {
+      "material": "Journey Topic; Praxis/control/Pathway objects; Publishing/Subscription/Pattern/Topic/filter definitions; ErgonEvent, ErgonPayload; access/write/persistence carriers; Stimulus/Effector/BehaviourStimulus/BehaviourEffector and assurance roles",
+      "classification": "qualified/candidate logical representation or unresolved independent object/type boundary",
+      "sources": ["docs/markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#journey-common-observation-and-assurance-subject", "docs/markdown/05-information-systems-architecture/data-and-persistence.md", "docs/markdown/governance/rad-archimate-mapping-catalogue.md"],
+      "reason": "Journey is expressly a candidate Application Data Object despite established observed-progression meaning; its standing is not promoted. Mixed control/interface/behaviour, candidate specialisations, metadata constructs and historical carriers need separate boundary/type adjudication. Register D/C/F keys are navigation, not identities. The admitted Context/Pragma/Diadromí/PetasosParcel objects have bounded adjudicated carriage/snapshot/information meanings, without claiming final schema or Solution Architecture."
+    },
+    {
+      "material": "Criterion, AuthorisationRole, PEP-Criteria, PEP-Context, PractitionerCapacity, authorisation ValueSets and configuration/dataset/security content as additional Topics",
+      "classification": "qualified/candidate logical allocation; excluded from the deterministic initial allowlist",
+      "sources": ["docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Identity-Authentication-and-Authorisation-Architecture.md", "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Themis-Authorisation-Model-and-Distributed-Policy-Enforcement.md", "docs/markdown/05-information-systems-architecture/data-and-persistence.md", "docs/markdown/governance/rad-archimate-mapping-catalogue.md"],
+      "reason": "Preserve established security and nomenclature meaning without treating the working DesignNotes, D03/D16 bundles or mapping's conditional DataObject eligibility as accepted independent IA allocation. No object-per-dimension/ValueSet or inferred persistent security-context object is created. A later bounded source/representation review is required."
+    },
+    {
+      "material": "OperationResourceEntity, caches, database/schema/table examples, JPA/persistence structures, archived legacy physical material and every Artefact/Artifact",
+      "classification": "historical/implementation or physical population outside scope",
+      "sources": ["docs/markdown/05-information-systems-architecture/data-and-persistence.md", "docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md#1-foundational-semantic-distinction"],
+      "reason": "Persistence does not define information meaning. Legacy architectural content is not authoritative merely because implemented. DataMap remains empty; no Technology-layer Artifact, physical information object or Artefact-suffixed element is created. No legacy migration is performed."
+    }
+  ]
+}

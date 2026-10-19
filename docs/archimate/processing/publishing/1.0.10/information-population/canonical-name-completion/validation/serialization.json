@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "comparison_status": "EQUIVALENT",
+  "published_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+  "classifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 0,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 0,
+    "SEMANTIC DIFFERENCE": 0,
+    "UNEXPLAINED DIFFERENCE": 0
+  }
+}

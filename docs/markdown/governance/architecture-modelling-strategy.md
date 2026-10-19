@@ -108,6 +108,13 @@ all native relationships, and historical publications remain preserved.
 
 ## Home-derived naming and navigation
 
+**Subsequent cross-layer adjudication:** the naming-context aspect of this earlier
+Business Home decision is subject to the [Composition invariant below](#cross-layer-semantic-containment-and-contextual-naming).
+Home remains a distinct Business assertion and navigation mechanism. It does not
+create Composition ancestry or override established semantic containment. The
+earlier candidate's persisted names/navigation remain preserved in this bounded
+IA completion; no repository-wide naming migration is authorised here.
+
 **Solution Architect decision — 2026-10-19, completion of unsigned RAD-1.0.9.**
 For a governed Business Function, Business Process or Business Service with one
 established explicit Home to a Feature, that Home and its governed semantic
@@ -147,6 +154,44 @@ Ordinary publication validates these fields without repair or identity allocatio
 The [completion evidence](../../archimate/processing/publishing/1.0.9/home-context-completion/README.md)
 retains the pre-decision candidate and verification of the complete population.
 This completes RAD-1.0.9; it does not create RAD-1.0.10 or grant final sign-off.
+
+## Cross-layer semantic containment and contextual naming
+
+**Solution Architect adjudication — 2026-10-19, RAD-1.0.10 candidate completion.**
+Harmonia uses native ArchiMate **Composition** as its governed semantic
+containment relationship across all architectural layers. Directed Composition
+from parent to child establishes the child's governed semantic containment
+context. The resulting Composition ancestry is the authoritative contextual
+path for friendlyName and canonicalName, using the existing naming derivation
+and the applicable element-class qualifier at each component. This applies
+equally to Business, Information/Application and Technology architecture; it
+is not an IA specialisation.
+
+Folders, View membership, View nesting/geometry, lexical similarity and proximity
+SHALL NOT establish or infer containment. Home, responsibility, Realization and
+other relationships SHALL NOT be silently converted to Composition. Conflicting
+or incomplete ancestry required for a name remains unresolved; tooling SHALL NOT
+choose or manufacture a context to satisfy a naming diagnostic.
+
+No Composition is created for the 54 initial IA resources by this adjudication.
+The Solution Architect will author containment in Archi. Where a resource needs
+that semantic ancestry before its contextual names can be determined, retain
+the unresolved property until the authored containment is accepted and ingested.
+Existing local-name rules apply only where their semantic inputs are sufficient;
+absence of an authored parent must not be treated as proof of a semantic root.
+The candidate's other identities, elements, relationships, Views, navigation and
+presentation are preserved. This decision authorises neither physical population
+nor an Artifact/ARTEFACT naming qualifier.
+
+**Solution Architect adjudication — existing Business modelling debt:** preserve
+the existing contextual names of the 323 Business behaviour elements without
+direct Composition containment unchanged. This is acknowledged modelling debt,
+accepted as non-blocking for the current task. Do not infer, create or migrate
+Composition relationships for them. The Solution Architect will progressively
+establish their containment hierarchy during architectural modelling. Once
+explicit Composition containment exists, normal contextual naming SHALL apply
+from that governed ancestry. This acceptance does not declare their absent
+containment complete or waive the cross-layer invariant.
 
 ## Deliberately deferred decisions
 

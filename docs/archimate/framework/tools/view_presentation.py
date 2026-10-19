@@ -196,7 +196,9 @@ def selection(b, root):
     # Recorded historical/diagnostic exclusions remain exclusions. Include the
     # third oversized generated declaration even though it has no visual edges.
     oversized = {row['view']: row for row in [*previous['oversized'], *oversized]}
-    result = dict(authority=AUTHORITY, architecture_release=load_release(),
+    # Replay the pinned RAD-1.0.9 selection in later element-only publications.
+    # Its evidence release is independent of the new model's release metadata.
+    result = dict(authority=AUTHORITY, architecture_release=m.read(SELECTION)['architecture_release'],
                   containment=containment, historical_candidates=previous['historical_candidates'],
                   oversized=sorted(oversized.values(), key=lambda row: row['view']),
                   protected_authored=protected, business={}, known_stale_connections=[],

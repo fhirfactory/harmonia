@@ -242,7 +242,11 @@ def audit(b, root):
     index.update(x.descriptors(x.read(), index))
     derived = derive(b, root, index)
     amended_index(index, derived)
-    previous = g.ET.fromstring(before_bytes(str(m.model_path().relative_to(m.ROOT))))
+    # The Home completion's before evidence belongs to its originating release,
+    # even when unchanged Home semantics are replayed into a later publication.
+    version = m.read(SOURCE)['architecture_release']
+    historical_model = m.PUBLISH / version / ('Harmonia-Architecture-' + version + '.xml')
+    previous = g.ET.fromstring(before_bytes(str(historical_model.relative_to(m.ROOT))))
     old_locations, locations = nav.navigation_homes(previous), nav.navigation_homes(root)
     property_keys = model(root).keys
     for section in ('elements/a:element', 'relationships/a:relationship', 'views/a:diagrams/a:view'):

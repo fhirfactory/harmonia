@@ -62,9 +62,24 @@ def verify():
                   'docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml',
                   *(f'docs/archimate/processing/publishing/1.0.9/{name}' for name in (
                       'reconciliation-publication.md', 'archi-inspection-guide.md', 'publication-validation-1.0.9.json'))}
-    completed = []
+    completed, later_release, authority_amendments = [], [], []
     for relative, digest in before.items():
         if sha(w.ROOT / relative) != digest:
+            import information_population as ia
+            if ia.preserved_authority(relative, digest):
+                authority_amendments.append(relative)
+                continue
+            if relative == 'architecture-release.json':
+                import information_population as ia
+                if ia.active():
+                    data = ia.load()
+                    previous = ia.EVIDENCE / 'allocation/prior-release.json'
+                    require(sha(previous) == digest and
+                            json.loads((w.ROOT / relative).read_text()) == {
+                                'version': data['architecture_release'], 'previous_version': data['originating_release']},
+                            'IA release continuation differs from pinned predecessor/policy')
+                    later_release.append(relative)
+                    continue
             require(completion.exists() and relative in amendments and
                     hashlib.sha256(hc.before_bytes(relative)).hexdigest() == digest,
                     'Protected architecture/evidence changed without preserved Home-completion authority: ' + relative)
@@ -120,6 +135,8 @@ def verify():
                 rad_1_0_9_and_ingestion_evidence=('ORIGINAL SNAPSHOTS BYTE_IDENTICAL; authorised Home completion separate'
                     if completed else 'BYTE_IDENTICAL'),
                 authorised_home_completion_files=completed,
+                governed_patch_continuation_files=later_release,
+                governed_ia_completion_authority_files=authority_amendments,
                 historical_reconciliation_audit='REPRODUCED using exact locator resolution',
                 historical_ledgers_and_reports='UNCHANGED; not refreshed as RAD-1.0.9 evidence')
 

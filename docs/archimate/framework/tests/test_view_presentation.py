@@ -16,13 +16,13 @@ import view_presentation as p
 class ViewPresentationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        outputs, cls.b, cls.report = s.publish()
+        outputs, cls.b, cls.report = s.publish(information=False)
         cls.root = s.g.ET.fromstring(outputs[m.model_path()])
         cls.before = cls.b.view_presentation_before
         cls.scope = cls.b.presentation_scope
 
     def test_authorised_population_and_independent_semantic_preservation(self):
-        self.assertEqual(s.load_release(), self.scope['architecture_release'])
+        self.assertEqual({'version': '1.0.9', 'previous_version': '1.0.8'}, self.scope['architecture_release'])
         result = p.audit(self.before, self.root, self.scope)
         self.assertEqual((231, 61, 29, 4, 62, 3), tuple(result[k] if k != 'oversized_preserved'
             else len(result[k]) for k in ('containment_views_validated', 'business_views_validated',

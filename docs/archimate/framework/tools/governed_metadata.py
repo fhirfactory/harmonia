@@ -32,7 +32,7 @@ FIELDS = ROLES[:4]
 SOURCE_FIELDS = (*FIELDS, 'nameComponent', 'nameComponentAuthority')
 UUID32 = re.compile(r'[0-9a-f]{32}\Z')
 FORMAL = {'feature': 'FEAT', 'function': 'FN', 'service': 'SV', 'process': 'PR',
-          'product': 'PRODUCT'}
+          'product': 'PRODUCT', 'BusinessObject': 'BO'}
 
 
 def encoded(value):
@@ -169,6 +169,10 @@ def historical_records(b):
 
 def formal_qualifier(record):
     """The governed naming vocabulary, independently of identity or ancestry."""
+    if record['type'] == 'DataObject':
+        g.require(record.get('information_map') is True,
+                  'TOPIC requires established logical information in InformationMap')
+        return 'TOPIC'
     if record['type'] in FORMAL:
         return FORMAL[record['type']]
     tier = record.get('tier')
@@ -337,6 +341,9 @@ def validate_publication(b, root):
         result = validate_records(index)
     if hasattr(b, 'home_context_index'):
         index = b.home_context_index
+        result = validate_records(index)
+    if hasattr(b, 'information_index'):
+        index = {**index, **b.information_index}
         result = validate_records(index)
     definitions = {p.get('identifier'): p.findtext('a:name', namespaces=g.N)
                    for p in root.findall('a:propertyDefinitions/a:propertyDefinition', g.N)}

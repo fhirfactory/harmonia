@@ -172,7 +172,11 @@ def load_inputs(manifest_path=MANIFEST):
                   f"Pinned baseline input drift: {relative}")
     for relative, expected in manifest["current_authority_sha256"].items():
         path = historical_path(ROOT / relative).resolve()
-        g.require(path.is_relative_to(ROOT.resolve()) and r.sha(path) == expected,
+        matched = r.sha(path) == expected
+        if not matched:
+            import information_population
+            matched = information_population.preserved_authority(relative, expected)
+        g.require(path.is_relative_to(ROOT.resolve()) and matched,
                   f"Current baseline authority drift; reconcile explicitly: {relative}")
     # Verify the entire recovery boundary without refreshing or generating it.
     r.load_inputs()
@@ -707,6 +711,9 @@ def validate_capability_navigation(b, root):
 
 
 def validate(b, root, *, legacy_replay=False):
+    if hasattr(b, 'information_index') and not legacy_replay:
+        import information_population
+        return information_population.validate(b, root)
     if hasattr(b, 'reconciliation') and not legacy_replay:
         import reconcile_108
         if hasattr(b, 'view_presentation'):
@@ -888,7 +895,7 @@ def discrepancies(b):
             "other_preserved_review_items": ["214 unproven 1.0.4 crosswalks; no label-based equivalence", "CM-R05 Exchange naming qualification/conflict remains in snapshot name history and source notes; display rename is not closure", "Client consent / FEAT-EM-09 ownership history retained", "F46 and Domain05 C/F/D/M identity/type ambiguities remain in current RADS", "462 source relationship assertions retain their exact metadata-only findings", "Current Application/Information/Middleware/Technology semantic publication is future expansion, not absent RADS architecture"]}
 
 
-def publish(*, reconciled=True, home_derived=True, presentation=True):
+def publish(*, reconciled=True, home_derived=True, presentation=True, information=True):
     b = Baseline(*load_inputs())
     b.build()
     data = g.serialize(b.root)
@@ -943,6 +950,10 @@ def publish(*, reconciled=True, home_derived=True, presentation=True):
                 import view_presentation
                 result = view_presentation.publish(*result)
                 validate(result[1], g.ET.fromstring(result[0][metadata.model_path()]))
+                if information:
+                    import information_population
+                    if information_population.active():
+                        result = information_population.overlay(*result)
             return result
         return result
     return outputs, b, report

@@ -87,6 +87,17 @@ invent that spelling. The Solution Architect explicitly established
 `MOT-TwentyFourSevenAvailability` (canonical), retained with source-local decision
 provenance. This lexical operation supplies no architectural ancestry.
 
+The [cross-layer Composition invariant](architecture-modelling-strategy.md#cross-layer-semantic-containment-and-contextual-naming)
+is authoritative for contextual naming: native Composition parent → child
+establishes semantic containment, and its ancestry supplies the contextual path
+for both names across all layers. Folder/View structures, lexical similarity,
+proximity, responsibility and Home SHALL NOT create that ancestry. Required
+missing, ambiguous or conflicting ancestry stops the dependent property.
+The local forms above require sufficient semantic inputs; an unauthored parent
+is not proof of an independently established root.
+
+The earlier candidate derivation below is retained as provenance for unchanged
+Business names and navigation; it does not override the later cross-layer rule.
 The existing Capability/Feature/behaviour capture's `parent_key` and `owner_key`
 establish qualified context, preserving each assertion's standing, except where
 the explicitly governed [Home precedence](architecture-modelling-strategy.md#home-derived-naming-and-navigation)
@@ -131,6 +142,33 @@ Product retains native type `Product`; no additional Harmonia subtype is introdu
 
 This resolves the Product-vocabulary execution stop affecting run-001 CR-002–005.
 The stop and subsequent decision are retained in the ingestion reconciliation audit.
+
+### Information-object canonical-name vocabulary
+
+**Solution Architect adjudication — 2026-10-19, completion of unsigned
+RAD-1.0.10:** native ArchiMate `BusinessObject` representing a governed Harmonia
+conceptual/business information object uses the formal qualifier `BO`. Native
+ArchiMate `DataObject` representing governed Harmonia application/logical
+information within the InformationMap uses `TOPIC`. This does not assign TOPIC
+to every DataObject irrespective of its governed meaning or scope.
+
+Existing lexical and qualification rules otherwise apply unchanged. The 54
+initial IA resources have local names and no established semantic ancestry.
+Apply the formal qualifier to the same existing PascalCase component used by
+friendlyName: `Practitioner BO` → `PractitionerBo` → `BO-PractitionerBo`, and
+`Context Topic` → `ContextTopic` → `TOPIC-ContextTopic`. The governed Name suffix
+remains part of that lexical component; this adds no new spelling algorithm.
+Folders, Views and Business Home supply no IA semantic qualification.
+
+This adjudication authorises completion of canonicalName on the 54 existing
+resource-owned records where their naming inputs are sufficient. If a contextual
+name depends on Composition ancestry awaiting Solution Architect authoring,
+preserve that unresolved property until containment is ingested; never manufacture
+context. IDs, Names and architectural meaning remain unchanged. The original
+absent-property stop and source allocation history
+remain preserved in the [completion evidence](../../archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/).
+No `Artifact` / `ARTEFACT` canonical-name qualifier is authorised. Physical
+Information Architecture representation and DataMap governance remain deferred.
 
 ## Legacy fields and types
 

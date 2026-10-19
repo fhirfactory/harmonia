@@ -107,6 +107,14 @@ Model-tree folder placement SHALL NOT establish architectural containment.
 View placement, nesting, adjacency and geometry SHALL NOT establish architectural
 containment. Tooling SHALL NOT infer or create Composition from either structure.
 
+**Solution Architect cross-layer adjudication — 2026-10-19:** Harmonia uses native
+ArchiMate Composition as governed semantic containment across all architectural
+layers. Parent → child establishes the child's semantic containment context;
+the resulting Composition ancestry SHALL supply the authoritative contextual
+path for friendlyName and canonicalName using existing lexical rules and the
+applicable element-class qualifiers. This applies equally to Business,
+Information/Application and Technology; it is not an IA specialisation.
+
 An explicit, intentionally authored Composition establishes Harmonia semantic
 containment **where that relationship is valid for the native endpoints and its
 Harmonia meaning has been established and accepted**. A submitted Composition is
@@ -120,7 +128,7 @@ Accepted valid Composition = explicit semantic containment
 ```
 
 Semantic hierarchy SHALL remain reconstructable without folders or Views.
-Governed naming MAY use explicit accepted containment as architectural context,
+Governed contextual naming SHALL use explicit accepted Composition ancestry,
 following the existing naming derivation rules. The governed Business Enabling
 CT1 → Composition → CT2 → Composition → CT3 → Composition → Feature hierarchy
 supplies semantic context under the [2026-10-19 metamodel rule](../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy). An accepted
@@ -128,11 +136,11 @@ CT3 → Feature Composition establishes framing/semantic containment determinist
 recognition of its meaning does not accept any incoming relationship, resolve
 missing ancestry or promote standing.
 
-Naming context SHALL derive from authoritative semantic architecture, including
-other context explicitly established by existing governance or an accepted CR,
-and SHALL NOT derive from arbitrary navigation. Existing source-qualified
-`parent_key`/`owner_key` context retains its standing; this contract does not
-convert those assertions into native Composition. Conflicting parents, ambiguous
+Naming context SHALL NOT derive from arbitrary navigation, lexical similarity
+or proximity. Prior source-qualified `parent_key`/`owner_key` and Home-derived
+candidate names remain preserved evidence; these assertions are not converted
+into native Composition and cannot override established Composition ancestry.
+Conflicting parents, ambiguous
 context or insufficient semantic inputs needed for a name SHALL be raised through
 Change Review. Tooling SHALL NOT choose ancestry by folder location or symmetry.
 
@@ -142,6 +150,12 @@ governance and derive only names established by the element and other applicable
 authoritative rules. Existing local-name forms apply where governed. Do not invent
 a semantic parent, additional containment or qualification to make names symmetric.
 Semantic correctness takes precedence over naming symmetry.
+
+For the 54 initial IA elements, no Composition is created by the population or
+BO/TOPIC naming completion. Where required semantic ancestry is awaiting Solution
+Architect authoring in Archi, preserve the dependent unresolved name property
+until that containment is accepted and ingested. Lack of an authored parent does
+not prove root status. This completion does not implement future IA ingestion.
 
 ## Author-supplied information and machine-governed metadata
 

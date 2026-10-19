@@ -204,6 +204,11 @@ def diagnose(model, previous=None, context=None, registry=None):
                 expected_root = g.parse(metadata.model_path())
                 governed = home_context.amended_index(governed,
                     home_context.derive(context, expected_root, governed))
+        import information_population as ia
+        if ia.active():
+            extra = ia.descriptors(ia.load())
+            if set(model.elements) & set(extra):
+                governed = {**governed, **extra}
     source_identity_conflicts = []
     short_name_owners = defaultdict(list)
     for identifier, element in sorted(model.elements.items()):

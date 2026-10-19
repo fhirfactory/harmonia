@@ -20,6 +20,9 @@ if s.metadata.active():
     if reconcile_108.SOURCE.exists():
         REPORT = s.metadata.PUBLISHING / s.load_release()['version'] / 'reconciliation-publication.md'
         GUIDE = REPORT.parent / 'archi-inspection-guide.md'
+    import information_population as ia
+    if ia.active():
+        REPORT, GUIDE = ia.REPORT, ia.GUIDE
 
 
 def render_establishment():
@@ -155,6 +158,8 @@ def validate_correction_preservation(b, root):
 
 
 def render():
+    if ia.active():
+        return ia.render()
     if REPORT.name == 'reconciliation-publication.md':
         from report_reconciliation import render as render_reconciliation
         return render_reconciliation(REPORT, GUIDE)

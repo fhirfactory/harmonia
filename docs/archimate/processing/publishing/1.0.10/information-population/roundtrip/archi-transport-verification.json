@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Actual installed Archi 5.10 no-edit full-model import/export; no human rendering or architect-authored IA reconciliation assertion",
+  "published_sha256": "73a5f4d5356595cfc7dc78926d446923541fe9da36577285f634dcb00ba73094",
+  "exported_sha256": "efa0c33891e4253d773c3d017c806e0549cc08923d37fae096fd4e7028d92880",
+  "elements": 1362,
+  "relationships": 1077,
+  "views": 1198,
+  "exact_contract_properties": {
+    "canonicalId": 1362,
+    "displayName": 1362,
+    "friendlyName": 1362,
+    "canonicalName": 1308,
+    "archimateType": 1362,
+    "harmoniaType": 179
+  },
+  "metadata_stops": "54 canonicalName absences preserved exactly",
+  "semantic_non_property_content": "EXACT",
+  "existing_view_geometry_membership_and_connections": "EXACT",
+  "resource_and_view_navigation_including_empty_maps": "EXACT",
+  "historical_semantic_findings": "1669; EXACT same findings as originating RAD-1.0.9 transport",
+  "raw_comparator_status": "DIFFERENCES",
+  "raw_comparator_classifications": {
+    "INFORMATION LOSS": 1819,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "SEMANTIC DIFFERENCE": 1669,
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 65,
+    "UNEXPLAINED DIFFERENCE": 4871
+  }
+}

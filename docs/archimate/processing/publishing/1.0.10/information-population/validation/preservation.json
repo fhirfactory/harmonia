@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "counts": {
+    "elements": {
+      "existing_preserved": 1308,
+      "introduced": 54
+    },
+    "relationships": {
+      "existing_preserved": 1077,
+      "introduced": 0
+    },
+    "views": {
+      "existing_preserved": 1198,
+      "introduced": 0
+    }
+  },
+  "every_preexisting_xml_identity": "PRESERVED",
+  "prior_model_sha256": "0f53e81f90a1d62974747e262218612dd70956c3eb65ebf3b2eb2b19af6ec529",
+  "current_model_sha256": "73a5f4d5356595cfc7dc78926d446923541fe9da36577285f634dcb00ba73094",
+  "source_capture_sha256": "e021b98318c5e56868c82b65a974551544c822428c8ecd98b4d508df1510d942",
+  "IA_semantic_relationships": 0,
+  "Artifacts": 0,
+  "information_names": "54 UNIQUE",
+  "candidate_and_ambiguous_promotion": "NONE: exact reviewed allowlist only",
+  "canonicalName": "STOPPED on all 54 new resources; existing names exact"
+}
