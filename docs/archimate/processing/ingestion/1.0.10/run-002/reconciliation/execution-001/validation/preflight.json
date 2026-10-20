@@ -1,0 +1,27 @@
+{
+  "accepted_relationships": 60,
+  "accepted_view_changes": 12,
+  "checks": {
+    "actual_source_navigation": "PASS",
+    "composition_navigation": "PASS",
+    "exact_regeneration": "PASS",
+    "protected_content": "PASS",
+    "unique_navigation_references": "PASS",
+    "views_and_view_navigation": "UNCHANGED"
+  },
+  "deterministic_projection": "PASS",
+  "elements_reconciled": 82,
+  "held_unchanged": 4,
+  "identities": 1394,
+  "identities_allocated_by_replay": 0,
+  "model_sha256": "60492daac83ccf8a9f92aba9ba61aff1612dabbc1b76c19bca263ebe11e18d82",
+  "new_persisted_identities": 32,
+  "purpose": "Preflight with non-persisted synthetic UUIDs; no canonical resource or model output written",
+  "relationships_preserved": 1137,
+  "release_created": false,
+  "semantic_and_view_preservation": "PASS",
+  "standing": "ACCEPTED_RECONCILIATION_UNPUBLISHED",
+  "status": "PASS",
+  "view_navigation": "EXACT_SERIALIZED_MATCH",
+  "views_preserved": 1209
+}

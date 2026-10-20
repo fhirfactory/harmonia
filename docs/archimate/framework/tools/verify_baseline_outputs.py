@@ -14,7 +14,7 @@ import report_baseline as report
 def main():
     outputs, baseline, _ = s.publish()
     paths = sorted([*outputs, report.REPORT, report.GUIDE])
-    expected = 15 if hasattr(baseline, 'reconciliation') else 14
+    expected = 9 if getattr(baseline, 'information_release', False) else (15 if hasattr(baseline, 'reconciliation') else 14)
     s.g.require(len(set(paths)) == len(paths) == expected, "Complete generated-output set changed")
     release = (s.ROOT / "architecture-release.json").read_bytes()
     with tempfile.TemporaryDirectory(prefix="harmonia-publication-reproduction-", dir="/tmp") as temp:

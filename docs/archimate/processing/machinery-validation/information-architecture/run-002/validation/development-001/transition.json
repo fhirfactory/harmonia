@@ -1,0 +1,22 @@
+{
+  "candidate_xml": "BYTE_UNCHANGED",
+  "changed_files": {
+    "machinery/docs/archimate/framework/README.md.gz": {
+      "after_sha256": "5d0342ad09bf93ff8b9c492b6a6558534fd33857fee86acdb33605380aed8ff6",
+      "before_sha256": "d1ab8cd746b7dac632d0ef3a05b139275b1e891c1f185271dbb709493a4749ed"
+    },
+    "machinery/docs/archimate/framework/tests/test_workspace_navigation.py.gz": {
+      "after_sha256": "494c9f39f7bcab86bb5509a5fe49b1c2e200824443c544729040108059f108c3",
+      "before_sha256": "d8fab2ff786b65fe0e7776ec8569c6158aefa1041d6bf4456741fffaa6651317"
+    },
+    "machinery/docs/archimate/framework/tools/workspace_navigation.py.gz": {
+      "after_sha256": "74eed6b9c862699bf0d8e2a70a09f82267ef46169daad68e0c53fe69c5204db0",
+      "before_sha256": "3fb9c496768fd903e169f6fcee854def8f2a29ed0081be68b4b6473509c22a9b"
+    },
+    "manifest.json": {
+      "after_sha256": "3ea2bab69e20f97cae0ac92364095b50c4dfe730fdc95e23788355e5c7991167",
+      "before_sha256": "6542be6041e027d2c72dce41a01486334e638c673f4cc41356dec1245db72196"
+    }
+  },
+  "reason": "Namespace-qualified native-type recognition and isolated-replay instructions; initial source fingerprints preserved before update."
+}

@@ -1,0 +1,1794 @@
+{
+  "archived_files_verified": 130,
+  "candidate": "BYTE_IDENTICAL",
+  "candidate_xml_sha256": "589759a0dbca2fb19f5a263a65309cc94fa10260797299d6c7e245061a828599",
+  "corrected_manifest_sha256": "ae0dca75694b236ff8424c5d593baed1858503abbc79f7122f8af3d1ded80650",
+  "dispositions": [
+    {
+      "element": "id-014da71d575756afa0db8502a0d1c904",
+      "excluded_historical_relationships": {
+        "id-638a21bc4763512d87b1eb0f695d01ad": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-34e77a9793715ec5858a067ca3831952",
+        "id-638a21bc4763512d87b1eb0f695d01ad"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-014da71d575756afa0db8502a0d1c904"
+      ],
+      "selected_current_relationships": [
+        "id-34e77a9793715ec5858a067ca3831952"
+      ]
+    },
+    {
+      "element": "id-036bd5a9fa1b5fca9c3245abf3016f44",
+      "excluded_historical_relationships": {
+        "id-06b8c61e03d25d5f8f5ad41dc47160b0": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-06b8c61e03d25d5f8f5ad41dc47160b0",
+        "id-5b0756c95a9653959f0d14d04254e522"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-60e2aa8fae4d51b993b4022f9ed688ff",
+        "id-036bd5a9fa1b5fca9c3245abf3016f44"
+      ],
+      "selected_current_relationships": [
+        "id-5b0756c95a9653959f0d14d04254e522"
+      ]
+    },
+    {
+      "element": "id-048fd66ba8095ee3bb759b0c89bdf32f",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-1d94399f559b5720b5c7fc9af9c4bb6a"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-c7f56c1dcc525ca8805682bc1d92907d",
+        "id-048fd66ba8095ee3bb759b0c89bdf32f"
+      ],
+      "selected_current_relationships": [
+        "id-1d94399f559b5720b5c7fc9af9c4bb6a"
+      ]
+    },
+    {
+      "element": "id-0712aaf441dc5100a5ac79c4b7848477",
+      "excluded_historical_relationships": {
+        "id-19d09b2119a057299c1c11a7ac08703d": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-19d09b2119a057299c1c11a7ac08703d",
+        "id-409ee31a8ed0538b8b3a3e155d906813"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-0712aaf441dc5100a5ac79c4b7848477"
+      ],
+      "selected_current_relationships": [
+        "id-409ee31a8ed0538b8b3a3e155d906813"
+      ]
+    },
+    {
+      "element": "id-0770a7338b0a53adb14971ace57fea7f",
+      "excluded_historical_relationships": {
+        "id-27bb9c7ab44653ea8a1c47b36df1216d": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-27bb9c7ab44653ea8a1c47b36df1216d",
+        "id-635a9ec5c8d9566da49c0d0c2f41e49a"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-0770a7338b0a53adb14971ace57fea7f"
+      ],
+      "selected_current_relationships": [
+        "id-635a9ec5c8d9566da49c0d0c2f41e49a"
+      ]
+    },
+    {
+      "element": "id-0c99a409fcad5e30b1c384f25976197f",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-f71389e030bd5d6d91919f795714bfff"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-b9c636efc8a35c18bd0dce7db89caa88",
+        "id-0c99a409fcad5e30b1c384f25976197f"
+      ],
+      "selected_current_relationships": [
+        "id-f71389e030bd5d6d91919f795714bfff"
+      ]
+    },
+    {
+      "element": "id-0df9d488a0865c958bf5b6c3557b8976",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-31ebae897cf25699a507581cc3f7ceba"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-ee472a7091b85442911ccf12aac63a4d",
+        "id-0df9d488a0865c958bf5b6c3557b8976"
+      ],
+      "selected_current_relationships": [
+        "id-31ebae897cf25699a507581cc3f7ceba"
+      ]
+    },
+    {
+      "element": "id-1174f336b2b158229d94060f3b0f43ed",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-8140a99d807f525cbb82628376c1feb1"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-b9c636efc8a35c18bd0dce7db89caa88",
+        "id-1174f336b2b158229d94060f3b0f43ed"
+      ],
+      "selected_current_relationships": [
+        "id-8140a99d807f525cbb82628376c1feb1"
+      ]
+    },
+    {
+      "element": "id-12eca4e940755bed847e500b41770a5c",
+      "excluded_historical_relationships": {
+        "id-a2e829aee4a2597aaa0c19745be07f41": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-17935c9735b15bebb0ddcb2c69b47d0c",
+        "id-a2e829aee4a2597aaa0c19745be07f41"
+      ],
+      "resolved_ancestry": [
+        "id-7afbcec0122951079c2bb647251be323",
+        "id-12eca4e940755bed847e500b41770a5c"
+      ],
+      "selected_current_relationships": [
+        "id-17935c9735b15bebb0ddcb2c69b47d0c"
+      ]
+    },
+    {
+      "element": "id-143b994de5cd593897012a96963e43ca",
+      "excluded_historical_relationships": {
+        "id-f985ec8f63f256d098eb7b6a35a4aede": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-3eaf49b58fc35634b4dacbdd55974027",
+        "id-f985ec8f63f256d098eb7b6a35a4aede"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-143b994de5cd593897012a96963e43ca"
+      ],
+      "selected_current_relationships": [
+        "id-3eaf49b58fc35634b4dacbdd55974027"
+      ]
+    },
+    {
+      "element": "id-198c918e6b225485b2065dc763be8ce1",
+      "excluded_historical_relationships": {
+        "id-5299e053cc275b6f812d3a632de67ad6": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-0ff026d172245933a65bfb576771c552",
+        "id-5299e053cc275b6f812d3a632de67ad6"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-198c918e6b225485b2065dc763be8ce1"
+      ],
+      "selected_current_relationships": [
+        "id-0ff026d172245933a65bfb576771c552"
+      ]
+    },
+    {
+      "element": "id-1b8e6ac4079f5e8dad95cae8bbb52aaf",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-cddae672565c5c1983201b8311189fe9"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-60e2aa8fae4d51b993b4022f9ed688ff",
+        "id-1b8e6ac4079f5e8dad95cae8bbb52aaf"
+      ],
+      "selected_current_relationships": [
+        "id-cddae672565c5c1983201b8311189fe9"
+      ]
+    },
+    {
+      "element": "id-1c66c2d5d4925e4cb8872aa25ea0071b",
+      "excluded_historical_relationships": {
+        "id-ee2f72127c765afdb2d425ffc229b043": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-c66319b6fedc5864b0ff0b3ab1bb4d8c",
+        "id-ee2f72127c765afdb2d425ffc229b043"
+      ],
+      "resolved_ancestry": [
+        "id-7afbcec0122951079c2bb647251be323",
+        "id-1c66c2d5d4925e4cb8872aa25ea0071b"
+      ],
+      "selected_current_relationships": [
+        "id-c66319b6fedc5864b0ff0b3ab1bb4d8c"
+      ]
+    },
+    {
+      "element": "id-20ff65f6cd1d5932968574bc72bd7aa3",
+      "excluded_historical_relationships": {
+        "id-59b01806a5105ebebef54c3f9f96a7bd": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-59b01806a5105ebebef54c3f9f96a7bd",
+        "id-c99f0a1cf0a05c1b9ff882c4734b2f69"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-20ff65f6cd1d5932968574bc72bd7aa3"
+      ],
+      "selected_current_relationships": [
+        "id-c99f0a1cf0a05c1b9ff882c4734b2f69"
+      ]
+    },
+    {
+      "element": "id-220d1f41d46b57fba6377fcd533fb94a",
+      "excluded_historical_relationships": {
+        "id-6e6bd3cbcab35231a3cfaf3755ecb448": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-131413fff1355dd79fb4135c299d4bce",
+        "id-6e6bd3cbcab35231a3cfaf3755ecb448"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-220d1f41d46b57fba6377fcd533fb94a"
+      ],
+      "selected_current_relationships": [
+        "id-131413fff1355dd79fb4135c299d4bce"
+      ]
+    },
+    {
+      "element": "id-2a555773d20b5eaaac720432d7e6f4ec",
+      "excluded_historical_relationships": {
+        "id-4d8b39ee36815bd3a023b9f5f2e3b6ba": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-4d8b39ee36815bd3a023b9f5f2e3b6ba",
+        "id-d1e7154c53ef5bcf88c3ccf98a715056"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-4759e7e551b45a3ab1b24088b8421b9f",
+        "id-2a555773d20b5eaaac720432d7e6f4ec"
+      ],
+      "selected_current_relationships": [
+        "id-d1e7154c53ef5bcf88c3ccf98a715056"
+      ]
+    },
+    {
+      "element": "id-2b06d69a6fe75ab79dc8d11abe5c780a",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-84fe9f3578535be4841430d56b13de66"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-20ff65f6cd1d5932968574bc72bd7aa3",
+        "id-2b06d69a6fe75ab79dc8d11abe5c780a"
+      ],
+      "selected_current_relationships": [
+        "id-84fe9f3578535be4841430d56b13de66"
+      ]
+    },
+    {
+      "element": "id-2de1ef69d9675c59baa5c66e541e1df5",
+      "excluded_historical_relationships": {
+        "id-c83e5994173455b88dd85834ab24643f": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-59df38bb3e6b5b40a251777b93fa486c",
+        "id-c83e5994173455b88dd85834ab24643f"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-2de1ef69d9675c59baa5c66e541e1df5"
+      ],
+      "selected_current_relationships": [
+        "id-59df38bb3e6b5b40a251777b93fa486c"
+      ]
+    },
+    {
+      "element": "id-2fb39d490c105c5d985595cc71f06003",
+      "excluded_historical_relationships": {
+        "id-26b0b617cbfd54ec9cc3926a3c1cfcba": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-26b0b617cbfd54ec9cc3926a3c1cfcba",
+        "id-8497028149d8587091a9114c6805345f"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-014da71d575756afa0db8502a0d1c904",
+        "id-2fb39d490c105c5d985595cc71f06003"
+      ],
+      "selected_current_relationships": [
+        "id-8497028149d8587091a9114c6805345f"
+      ]
+    },
+    {
+      "element": "id-306525d358285c6cb525859aba8c7f7f",
+      "excluded_historical_relationships": {
+        "id-d731233371af5a4b845c465b47aadeca": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-74f96ce74a5a52a4a06d3a7caa4bd85e",
+        "id-d731233371af5a4b845c465b47aadeca"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-306525d358285c6cb525859aba8c7f7f"
+      ],
+      "selected_current_relationships": [
+        "id-74f96ce74a5a52a4a06d3a7caa4bd85e"
+      ]
+    },
+    {
+      "element": "id-315b46c620d151868c9f84a0ed45ccd2",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-a86ab90caf975b33845c936c073f05a8"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-99e98c1485575f90883330359d72b921",
+        "id-315b46c620d151868c9f84a0ed45ccd2"
+      ],
+      "selected_current_relationships": [
+        "id-a86ab90caf975b33845c936c073f05a8"
+      ]
+    },
+    {
+      "element": "id-31701b65e27a544297e8b3807896433e",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-f37b5c0b280b5c998ca2d713802949a2"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-839d37ad5fcd510d924a18389bada633",
+        "id-31701b65e27a544297e8b3807896433e"
+      ],
+      "selected_current_relationships": [
+        "id-f37b5c0b280b5c998ca2d713802949a2"
+      ]
+    },
+    {
+      "element": "id-35b56e00f8885f5f97147eca279b8ef6",
+      "excluded_historical_relationships": {
+        "id-c40156319c495d2ab3da35834b327107": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-c40156319c495d2ab3da35834b327107",
+        "id-def0a301eaf9549e9618fd95c316d3df"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-35b56e00f8885f5f97147eca279b8ef6"
+      ],
+      "selected_current_relationships": [
+        "id-def0a301eaf9549e9618fd95c316d3df"
+      ]
+    },
+    {
+      "element": "id-38a9a0f14b5659f4b88fab8c9ae53274",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-6073189f20f45f0881f401c678f399ef"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-b9c636efc8a35c18bd0dce7db89caa88",
+        "id-38a9a0f14b5659f4b88fab8c9ae53274"
+      ],
+      "selected_current_relationships": [
+        "id-6073189f20f45f0881f401c678f399ef"
+      ]
+    },
+    {
+      "element": "id-38ea53c83c9a55cf920b5ce358b95c74",
+      "excluded_historical_relationships": {
+        "id-824889819cc55cf49d7a4d0b88ce81c6": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-043aea128eb850fdaa02f14f76ff870e",
+        "id-824889819cc55cf49d7a4d0b88ce81c6"
+      ],
+      "resolved_ancestry": [
+        "id-7afbcec0122951079c2bb647251be323",
+        "id-38ea53c83c9a55cf920b5ce358b95c74"
+      ],
+      "selected_current_relationships": [
+        "id-043aea128eb850fdaa02f14f76ff870e"
+      ]
+    },
+    {
+      "element": "id-390fb11c89e7528e96684afcec04539a",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-2603b2ceb6bc5005bfdc1bb2eb376f28"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-0712aaf441dc5100a5ac79c4b7848477",
+        "id-390fb11c89e7528e96684afcec04539a"
+      ],
+      "selected_current_relationships": [
+        "id-2603b2ceb6bc5005bfdc1bb2eb376f28"
+      ]
+    },
+    {
+      "element": "id-3fd840ab23015c128060f2b3dd4359b4",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-efab1044a5e8544aa1a5ad96ef3e6b94"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-bfbdb4730780550e884dabf485f6cc6f",
+        "id-3fd840ab23015c128060f2b3dd4359b4"
+      ],
+      "selected_current_relationships": [
+        "id-efab1044a5e8544aa1a5ad96ef3e6b94"
+      ]
+    },
+    {
+      "element": "id-4125661f05bc5551a63787e0afe15491",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-eee8b14bef415602abe92d485b001508"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-2de1ef69d9675c59baa5c66e541e1df5",
+        "id-4125661f05bc5551a63787e0afe15491"
+      ],
+      "selected_current_relationships": [
+        "id-eee8b14bef415602abe92d485b001508"
+      ]
+    },
+    {
+      "element": "id-4595d9da485357d4b4d5ab830b5ad0a1",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-e4bee0d6103156e2a4bc29952f4e9fe8"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-f8932fe58ea154028a1a5dfa4887f491",
+        "id-4595d9da485357d4b4d5ab830b5ad0a1"
+      ],
+      "selected_current_relationships": [
+        "id-e4bee0d6103156e2a4bc29952f4e9fe8"
+      ]
+    },
+    {
+      "element": "id-4759e7e551b45a3ab1b24088b8421b9f",
+      "excluded_historical_relationships": {
+        "id-2b4df038bf0d5c718f6ef1d1aa4e0e1d": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-2b4df038bf0d5c718f6ef1d1aa4e0e1d",
+        "id-958822b3fad8502daaaecd1e60128205"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-4759e7e551b45a3ab1b24088b8421b9f"
+      ],
+      "selected_current_relationships": [
+        "id-958822b3fad8502daaaecd1e60128205"
+      ]
+    },
+    {
+      "element": "id-481836991b9257c69af3d3dceb781a72",
+      "excluded_historical_relationships": {
+        "id-8353630048ab5d09a287c03e7db3dfc3": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-8353630048ab5d09a287c03e7db3dfc3",
+        "id-a102efceedf1574f9e329f905b850238"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-481836991b9257c69af3d3dceb781a72"
+      ],
+      "selected_current_relationships": [
+        "id-a102efceedf1574f9e329f905b850238"
+      ]
+    },
+    {
+      "element": "id-4aa8850ccaab516b9d3854b9e82971eb",
+      "excluded_historical_relationships": {
+        "id-70bb45b8355154ce9b844b8e43af3104": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-371c90009eea5b24a69e5ad07cbc8b87",
+        "id-70bb45b8355154ce9b844b8e43af3104"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-4aa8850ccaab516b9d3854b9e82971eb"
+      ],
+      "selected_current_relationships": [
+        "id-371c90009eea5b24a69e5ad07cbc8b87"
+      ]
+    },
+    {
+      "element": "id-50bd81c2c0425bbba29347b0aeb4025a",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-e9dd437ac28a51bc8957c4e74d7b5e52"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-cbe0d80e3f8c501781eb087d3f932b11",
+        "id-50bd81c2c0425bbba29347b0aeb4025a"
+      ],
+      "selected_current_relationships": [
+        "id-e9dd437ac28a51bc8957c4e74d7b5e52"
+      ]
+    },
+    {
+      "element": "id-5463239c9ef65cef98c5274ab6e8f6db",
+      "excluded_historical_relationships": {
+        "id-b280f6f1561851168fd2343ad4aff639": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-6236459728eb58fc8b76e4ebeaa710a2",
+        "id-b280f6f1561851168fd2343ad4aff639"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-5463239c9ef65cef98c5274ab6e8f6db"
+      ],
+      "selected_current_relationships": [
+        "id-6236459728eb58fc8b76e4ebeaa710a2"
+      ]
+    },
+    {
+      "element": "id-54b2e4d160c052c18e147e5980c3a02d",
+      "excluded_historical_relationships": {
+        "id-d14bfe06bb0458dcbfb931c1eae746ef": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-78a557aef2b85390b756c365782aea6e",
+        "id-d14bfe06bb0458dcbfb931c1eae746ef"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-54b2e4d160c052c18e147e5980c3a02d"
+      ],
+      "selected_current_relationships": [
+        "id-78a557aef2b85390b756c365782aea6e"
+      ]
+    },
+    {
+      "element": "id-57136cee07f65bf98b7bfe63fba60fa4",
+      "excluded_historical_relationships": {
+        "id-d2c354c59e135a0fa50908e0c91a220c": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-d2c354c59e135a0fa50908e0c91a220c",
+        "id-de277a4b6d0350559cde8fe47df35362"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-57136cee07f65bf98b7bfe63fba60fa4"
+      ],
+      "selected_current_relationships": [
+        "id-de277a4b6d0350559cde8fe47df35362"
+      ]
+    },
+    {
+      "element": "id-59010f4f41df5e509a40226be95a123b",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-5a858fb9891350018fa4894f06e27bad"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-c7f56c1dcc525ca8805682bc1d92907d",
+        "id-59010f4f41df5e509a40226be95a123b"
+      ],
+      "selected_current_relationships": [
+        "id-5a858fb9891350018fa4894f06e27bad"
+      ]
+    },
+    {
+      "element": "id-5ae6f84e6e865ab78d46b5a33357cb9d",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-ac62936545b75b9694da7f53ec252d12"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+        "id-5ae6f84e6e865ab78d46b5a33357cb9d"
+      ],
+      "selected_current_relationships": [
+        "id-ac62936545b75b9694da7f53ec252d12"
+      ]
+    },
+    {
+      "element": "id-5beae734749a57468bf09956473d2f40",
+      "excluded_historical_relationships": {
+        "id-41c64d2cee9e5a669bcce5173ab08db5": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-3d3dadbc8cc659c0bafee65dc980a009",
+        "id-41c64d2cee9e5a669bcce5173ab08db5"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-5beae734749a57468bf09956473d2f40"
+      ],
+      "selected_current_relationships": [
+        "id-3d3dadbc8cc659c0bafee65dc980a009"
+      ]
+    },
+    {
+      "element": "id-5c2d8bf1b2ec5762b2be0bc402aa7ca1",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-b06cb3b2497059049e92d5417236825a"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-c907d86a7e995d0f99f48365418f41f8",
+        "id-5c2d8bf1b2ec5762b2be0bc402aa7ca1"
+      ],
+      "selected_current_relationships": [
+        "id-b06cb3b2497059049e92d5417236825a"
+      ]
+    },
+    {
+      "element": "id-5d528e4fcb5e5092a26ac5fba62d8fe9",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-63ae61f37eb45f909a3a3d9ec07edb50"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-014da71d575756afa0db8502a0d1c904",
+        "id-5d528e4fcb5e5092a26ac5fba62d8fe9"
+      ],
+      "selected_current_relationships": [
+        "id-63ae61f37eb45f909a3a3d9ec07edb50"
+      ]
+    },
+    {
+      "element": "id-5f410811dfd950f0a195ba1f600b15f0",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-e6d095d67f7c5741a0885e5209a42893"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-35b56e00f8885f5f97147eca279b8ef6",
+        "id-5f410811dfd950f0a195ba1f600b15f0"
+      ],
+      "selected_current_relationships": [
+        "id-e6d095d67f7c5741a0885e5209a42893"
+      ]
+    },
+    {
+      "element": "id-60e2aa8fae4d51b993b4022f9ed688ff",
+      "excluded_historical_relationships": {
+        "id-5192c66b649850288df9fb4eb54ce55c": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-5192c66b649850288df9fb4eb54ce55c",
+        "id-63b93c19fc6355daadb2e4a1fdb29017"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-60e2aa8fae4d51b993b4022f9ed688ff"
+      ],
+      "selected_current_relationships": [
+        "id-63b93c19fc6355daadb2e4a1fdb29017"
+      ]
+    },
+    {
+      "element": "id-69fe602fea3e5afc95441b03dd7c198a",
+      "excluded_historical_relationships": {
+        "id-31c2bfbcfed25f6fa5cb8fc5b2af1ea0": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-31c2bfbcfed25f6fa5cb8fc5b2af1ea0",
+        "id-ae3668c1170b542f8672bd2d4e4b94ae"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-69fe602fea3e5afc95441b03dd7c198a"
+      ],
+      "selected_current_relationships": [
+        "id-ae3668c1170b542f8672bd2d4e4b94ae"
+      ]
+    },
+    {
+      "element": "id-6a1c86bc579e59e5854aafb3ace5c01f",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-43c9c1c6c5665a55956129c7769830a0"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-0712aaf441dc5100a5ac79c4b7848477",
+        "id-6a1c86bc579e59e5854aafb3ace5c01f"
+      ],
+      "selected_current_relationships": [
+        "id-43c9c1c6c5665a55956129c7769830a0"
+      ]
+    },
+    {
+      "element": "id-6b7034b5239c505d858d651b8ee78832",
+      "excluded_historical_relationships": {
+        "id-4b1f7a67f73f556b8764a386688d65dc": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-4b1f7a67f73f556b8764a386688d65dc",
+        "id-70f298f48f3958b892c2f08a504241c2"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-6b7034b5239c505d858d651b8ee78832"
+      ],
+      "selected_current_relationships": [
+        "id-70f298f48f3958b892c2f08a504241c2"
+      ]
+    },
+    {
+      "element": "id-714b37e59d095316bb94389ebbc14e33",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-5f43371dad72578c9ae5eb122081f050"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-4759e7e551b45a3ab1b24088b8421b9f",
+        "id-714b37e59d095316bb94389ebbc14e33"
+      ],
+      "selected_current_relationships": [
+        "id-5f43371dad72578c9ae5eb122081f050"
+      ]
+    },
+    {
+      "element": "id-72018038e84c518c8bb24cb76c3b418e",
+      "excluded_historical_relationships": {
+        "id-50f772edf6cd5584b51d7c0a4fc3dd98": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-50f772edf6cd5584b51d7c0a4fc3dd98",
+        "id-8987c7c0846d53259f9b97e50861d77a"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-f4e98809bf18585aac90aa1597b89bb0",
+        "id-72018038e84c518c8bb24cb76c3b418e"
+      ],
+      "selected_current_relationships": [
+        "id-8987c7c0846d53259f9b97e50861d77a"
+      ]
+    },
+    {
+      "element": "id-75679799ab975e8088f69be6f0f414f0",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-a8acfa5129a35caf950d219d92dc1e25"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-fa4797b3d84052ecbea381b52dfa8b3f",
+        "id-75679799ab975e8088f69be6f0f414f0"
+      ],
+      "selected_current_relationships": [
+        "id-a8acfa5129a35caf950d219d92dc1e25"
+      ]
+    },
+    {
+      "element": "id-77908c3422545c70ba9ce082db020c0f",
+      "excluded_historical_relationships": {
+        "id-cadb1624c3cd545e86a4006a34188498": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-243b6e37b771560c9b95ddc234e45b0a",
+        "id-cadb1624c3cd545e86a4006a34188498"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-77908c3422545c70ba9ce082db020c0f"
+      ],
+      "selected_current_relationships": [
+        "id-243b6e37b771560c9b95ddc234e45b0a"
+      ]
+    },
+    {
+      "element": "id-7a89497d659f50629cd7dd7105c0e411",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-4bcf52de8d995ebaae1bb6f607a62415"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-220d1f41d46b57fba6377fcd533fb94a",
+        "id-7a89497d659f50629cd7dd7105c0e411"
+      ],
+      "selected_current_relationships": [
+        "id-4bcf52de8d995ebaae1bb6f607a62415"
+      ]
+    },
+    {
+      "element": "id-7b77530f0c8a569498954dc0a5fcf798",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-886e419c185b5d4f8fbabdbeee546a4b"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+        "id-7b77530f0c8a569498954dc0a5fcf798"
+      ],
+      "selected_current_relationships": [
+        "id-886e419c185b5d4f8fbabdbeee546a4b"
+      ]
+    },
+    {
+      "element": "id-7c8885a8c55552888e8b3cda35c06693",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-b4b42bb7057f5da8953a52a1f079aa64"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-0712aaf441dc5100a5ac79c4b7848477",
+        "id-7c8885a8c55552888e8b3cda35c06693"
+      ],
+      "selected_current_relationships": [
+        "id-b4b42bb7057f5da8953a52a1f079aa64"
+      ]
+    },
+    {
+      "element": "id-7f29effdff4f526fb023f7c3f8d2d82e",
+      "excluded_historical_relationships": {
+        "id-b14443f1d2185796ba47ff42d64a67ad": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-6acf7bca1c975ff6adcbbb9954f0e9ad",
+        "id-b14443f1d2185796ba47ff42d64a67ad"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e"
+      ],
+      "selected_current_relationships": [
+        "id-6acf7bca1c975ff6adcbbb9954f0e9ad"
+      ]
+    },
+    {
+      "element": "id-802e169720d253d1979cf0de2eb2004b",
+      "excluded_historical_relationships": {
+        "id-cfb1f2def1bd5ed49e327bb55e80dcb3": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-cfb1f2def1bd5ed49e327bb55e80dcb3",
+        "id-e8eaf177a6485043aceec3c43d9188bb"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-802e169720d253d1979cf0de2eb2004b"
+      ],
+      "selected_current_relationships": [
+        "id-e8eaf177a6485043aceec3c43d9188bb"
+      ]
+    },
+    {
+      "element": "id-839d37ad5fcd510d924a18389bada633",
+      "excluded_historical_relationships": {
+        "id-23179a691748510194f80fd13f08735e": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-23179a691748510194f80fd13f08735e",
+        "id-a8e96c967238574391d0ce2e944598a7"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-839d37ad5fcd510d924a18389bada633"
+      ],
+      "selected_current_relationships": [
+        "id-a8e96c967238574391d0ce2e944598a7"
+      ]
+    },
+    {
+      "element": "id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf",
+      "excluded_historical_relationships": {
+        "id-17cde419d3c05272937f684ca8cb4671": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-17cde419d3c05272937f684ca8cb4671",
+        "id-3f5170911ed65f9f86fb5294b90c0346"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-77908c3422545c70ba9ce082db020c0f",
+        "id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf"
+      ],
+      "selected_current_relationships": [
+        "id-3f5170911ed65f9f86fb5294b90c0346"
+      ]
+    },
+    {
+      "element": "id-8c082e2d6c605903834291c424722f75",
+      "excluded_historical_relationships": {
+        "id-a963478530c95f378300e525bb15c10c": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-a963478530c95f378300e525bb15c10c",
+        "id-bc9dcf00b2795ff8bf6a4f2116abe3c0"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-8c082e2d6c605903834291c424722f75"
+      ],
+      "selected_current_relationships": [
+        "id-bc9dcf00b2795ff8bf6a4f2116abe3c0"
+      ]
+    },
+    {
+      "element": "id-8c4d5090fb7150469d8e4b10a7551dab",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-5511cf0501a054c0ad9745bdc3c082b4"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-143b994de5cd593897012a96963e43ca",
+        "id-8c4d5090fb7150469d8e4b10a7551dab"
+      ],
+      "selected_current_relationships": [
+        "id-5511cf0501a054c0ad9745bdc3c082b4"
+      ]
+    },
+    {
+      "element": "id-8c9e5a5c2384558db1e86af56d2c942b",
+      "excluded_historical_relationships": {
+        "id-83c7580c5d5b56559a79326c5740c6e7": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-83c7580c5d5b56559a79326c5740c6e7",
+        "id-90d0ac0e0b235fc39cb9493bdc68d3e7"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-198c918e6b225485b2065dc763be8ce1",
+        "id-8c9e5a5c2384558db1e86af56d2c942b"
+      ],
+      "selected_current_relationships": [
+        "id-90d0ac0e0b235fc39cb9493bdc68d3e7"
+      ]
+    },
+    {
+      "element": "id-8cbd1321a0c15306b7355745d2e22818",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-44cc81a1ebd954e2bc9104de6f951afd"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e",
+        "id-8cbd1321a0c15306b7355745d2e22818"
+      ],
+      "selected_current_relationships": [
+        "id-44cc81a1ebd954e2bc9104de6f951afd"
+      ]
+    },
+    {
+      "element": "id-95b79770d57e537bbfb65b05c9c21829",
+      "excluded_historical_relationships": {
+        "id-a141c733754a5515a7d7e26a9085fd45": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-1ea900ddfb2c5a938dc191a60f532b15",
+        "id-a141c733754a5515a7d7e26a9085fd45"
+      ],
+      "resolved_ancestry": [
+        "id-7afbcec0122951079c2bb647251be323",
+        "id-95b79770d57e537bbfb65b05c9c21829"
+      ],
+      "selected_current_relationships": [
+        "id-1ea900ddfb2c5a938dc191a60f532b15"
+      ]
+    },
+    {
+      "element": "id-974025114007505b922d37dc6ba0a04f",
+      "excluded_historical_relationships": {
+        "id-a94037fbfdd35c08a5c817dd737196cb": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-a75fd5c5ea1c593199b62f4fc1a314fa",
+        "id-a94037fbfdd35c08a5c817dd737196cb"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-974025114007505b922d37dc6ba0a04f"
+      ],
+      "selected_current_relationships": [
+        "id-a75fd5c5ea1c593199b62f4fc1a314fa"
+      ]
+    },
+    {
+      "element": "id-97b0afca9c9e513d8205eb624be06169",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-898f3e90614b5b9ea007953a8ab503b1"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-0770a7338b0a53adb14971ace57fea7f",
+        "id-97b0afca9c9e513d8205eb624be06169"
+      ],
+      "selected_current_relationships": [
+        "id-898f3e90614b5b9ea007953a8ab503b1"
+      ]
+    },
+    {
+      "element": "id-97b7e74f9a4d5e95a1f89de6b3cfc393",
+      "excluded_historical_relationships": {
+        "id-9eeaf50c437b527786e80922e367a61a": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-9eeaf50c437b527786e80922e367a61a",
+        "id-a6fbe348e1c05f41bdd8d009684200cf"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-97b7e74f9a4d5e95a1f89de6b3cfc393"
+      ],
+      "selected_current_relationships": [
+        "id-a6fbe348e1c05f41bdd8d009684200cf"
+      ]
+    },
+    {
+      "element": "id-99e98c1485575f90883330359d72b921",
+      "excluded_historical_relationships": {
+        "id-7940c2cb29905dd98826b83ac2a6e0f3": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-320ffe30d9c05809a2734f8388a1df5b",
+        "id-7940c2cb29905dd98826b83ac2a6e0f3"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-99e98c1485575f90883330359d72b921"
+      ],
+      "selected_current_relationships": [
+        "id-320ffe30d9c05809a2734f8388a1df5b"
+      ]
+    },
+    {
+      "element": "id-a0b4e1a965765006a8dc7b598f517bb3",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-bd45fc2d21ea5a27be5ae5f2c183356c"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-77908c3422545c70ba9ce082db020c0f",
+        "id-a0b4e1a965765006a8dc7b598f517bb3"
+      ],
+      "selected_current_relationships": [
+        "id-bd45fc2d21ea5a27be5ae5f2c183356c"
+      ]
+    },
+    {
+      "element": "id-a3005df7ce87583ea31e0c4a7c3be749",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-30f294a8bcb15053bd2556604f63d047"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e",
+        "id-a3005df7ce87583ea31e0c4a7c3be749"
+      ],
+      "selected_current_relationships": [
+        "id-30f294a8bcb15053bd2556604f63d047"
+      ]
+    },
+    {
+      "element": "id-a99640e4d2c05ac3be8b58e113e550dc",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-1dcca114c02359ce878eef61e491e00f"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-481836991b9257c69af3d3dceb781a72",
+        "id-a99640e4d2c05ac3be8b58e113e550dc"
+      ],
+      "selected_current_relationships": [
+        "id-1dcca114c02359ce878eef61e491e00f"
+      ]
+    },
+    {
+      "element": "id-ab0baa5289245368afb3d9943f0dee5c",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-6e20779c45ea544a98ae0150a8eba6b1"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-8c082e2d6c605903834291c424722f75",
+        "id-ab0baa5289245368afb3d9943f0dee5c"
+      ],
+      "selected_current_relationships": [
+        "id-6e20779c45ea544a98ae0150a8eba6b1"
+      ]
+    },
+    {
+      "element": "id-afd1a07848325b678cdee592358efbb4",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-13e0eed934335d8ca74f2ffa7ad1c966"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-4aa8850ccaab516b9d3854b9e82971eb",
+        "id-afd1a07848325b678cdee592358efbb4"
+      ],
+      "selected_current_relationships": [
+        "id-13e0eed934335d8ca74f2ffa7ad1c966"
+      ]
+    },
+    {
+      "element": "id-b2fc16d589fe5693abaf68993d5e5701",
+      "excluded_historical_relationships": {
+        "id-5f2caa8148aa57468de97862ca4d84c2": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-5f2caa8148aa57468de97862ca4d84c2",
+        "id-6becc39029d35ed8b2e15aa61ec50eea"
+      ],
+      "resolved_ancestry": [
+        "id-7afbcec0122951079c2bb647251be323",
+        "id-b2fc16d589fe5693abaf68993d5e5701"
+      ],
+      "selected_current_relationships": [
+        "id-6becc39029d35ed8b2e15aa61ec50eea"
+      ]
+    },
+    {
+      "element": "id-b4d502174176517d89e42e4cd48e1fff",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-d406de5e8e2d5d84b5796dd4768d1650"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-802e169720d253d1979cf0de2eb2004b",
+        "id-b4d502174176517d89e42e4cd48e1fff"
+      ],
+      "selected_current_relationships": [
+        "id-d406de5e8e2d5d84b5796dd4768d1650"
+      ]
+    },
+    {
+      "element": "id-b87005ff372252e1893fbd216a77d525",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-58070bcfa27151719c659285296806b9"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-69fe602fea3e5afc95441b03dd7c198a",
+        "id-b87005ff372252e1893fbd216a77d525"
+      ],
+      "selected_current_relationships": [
+        "id-58070bcfa27151719c659285296806b9"
+      ]
+    },
+    {
+      "element": "id-b977d4fbbfbc5943bf2b03b300408b3a",
+      "excluded_historical_relationships": {
+        "id-315134648336535f8a4701aee90a210c": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-315134648336535f8a4701aee90a210c",
+        "id-b23acadd5432516896eba26d03840690"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-b977d4fbbfbc5943bf2b03b300408b3a"
+      ],
+      "selected_current_relationships": [
+        "id-b23acadd5432516896eba26d03840690"
+      ]
+    },
+    {
+      "element": "id-b9ab7bb6c4865419928c0c1f13bf45b7",
+      "excluded_historical_relationships": {
+        "id-3f21439e69455701849ed32913f11ec1": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-3f21439e69455701849ed32913f11ec1",
+        "id-637d8aba708a58ed982c42221349e785"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-974025114007505b922d37dc6ba0a04f",
+        "id-b9ab7bb6c4865419928c0c1f13bf45b7"
+      ],
+      "selected_current_relationships": [
+        "id-637d8aba708a58ed982c42221349e785"
+      ]
+    },
+    {
+      "element": "id-b9c636efc8a35c18bd0dce7db89caa88",
+      "excluded_historical_relationships": {
+        "id-c38af2d256de513b9b2724ac4f22d532": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-b02c62ac49de5f74b21ab40f91919704",
+        "id-c38af2d256de513b9b2724ac4f22d532"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-b9c636efc8a35c18bd0dce7db89caa88"
+      ],
+      "selected_current_relationships": [
+        "id-b02c62ac49de5f74b21ab40f91919704"
+      ]
+    },
+    {
+      "element": "id-baf9aba95d5c539bab7fc75f6861f176",
+      "excluded_historical_relationships": {
+        "id-ebdcbc8d53465a7c8276c671b97724e0": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-5a54a7656f2950ca907d343f5214964b",
+        "id-ebdcbc8d53465a7c8276c671b97724e0"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-974025114007505b922d37dc6ba0a04f",
+        "id-baf9aba95d5c539bab7fc75f6861f176"
+      ],
+      "selected_current_relationships": [
+        "id-5a54a7656f2950ca907d343f5214964b"
+      ]
+    },
+    {
+      "element": "id-bb43c048f11e5d069f844bdb8c3a1ed9",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-0e4725ebaacc514987f5d5882cfbd752"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e",
+        "id-bb43c048f11e5d069f844bdb8c3a1ed9"
+      ],
+      "selected_current_relationships": [
+        "id-0e4725ebaacc514987f5d5882cfbd752"
+      ]
+    },
+    {
+      "element": "id-bfbdb4730780550e884dabf485f6cc6f",
+      "excluded_historical_relationships": {
+        "id-5b56e9a9cd2e5dfa955756d227dafffb": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-5b56e9a9cd2e5dfa955756d227dafffb",
+        "id-9deea1af7f4053488b2fe3f520acb47b"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-bfbdb4730780550e884dabf485f6cc6f"
+      ],
+      "selected_current_relationships": [
+        "id-9deea1af7f4053488b2fe3f520acb47b"
+      ]
+    },
+    {
+      "element": "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+      "excluded_historical_relationships": {
+        "id-6d1a048c48eb5fef9f59cca19a9bd3ed": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-6d1a048c48eb5fef9f59cca19a9bd3ed",
+        "id-846df338b9a458aa91b7b2a0d247162f"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-c1ec3269b7655d079fee5f5b92fbd5e6"
+      ],
+      "selected_current_relationships": [
+        "id-846df338b9a458aa91b7b2a0d247162f"
+      ]
+    },
+    {
+      "element": "id-c2df74422094583c85e83601696f971f",
+      "excluded_historical_relationships": {
+        "id-5f8a1512a4f35918be29c433629e9270": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-5f8a1512a4f35918be29c433629e9270",
+        "id-d5a892665b035138936bb527acebeb34"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-c2df74422094583c85e83601696f971f"
+      ],
+      "selected_current_relationships": [
+        "id-d5a892665b035138936bb527acebeb34"
+      ]
+    },
+    {
+      "element": "id-c3f38627d9395f77bf64711330c8f290",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-a5e6a72934f15ebb89395319507b77c5"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-d398ed8aeb1c5dc49a55367f1421d42c",
+        "id-c3f38627d9395f77bf64711330c8f290"
+      ],
+      "selected_current_relationships": [
+        "id-a5e6a72934f15ebb89395319507b77c5"
+      ]
+    },
+    {
+      "element": "id-c5461090ddce50daa204e0c031c184aa",
+      "excluded_historical_relationships": {
+        "id-0df38e956d78565bb83d2ef8c84fa7b0": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-0df38e956d78565bb83d2ef8c84fa7b0",
+        "id-c4a657c49aff5f768832126cc2433aee"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-8c082e2d6c605903834291c424722f75",
+        "id-c5461090ddce50daa204e0c031c184aa"
+      ],
+      "selected_current_relationships": [
+        "id-c4a657c49aff5f768832126cc2433aee"
+      ]
+    },
+    {
+      "element": "id-c67d028a12d457b1bff85ea82df63718",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-5e2b49ac0cf95da987c56c8084a5831b"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-97b7e74f9a4d5e95a1f89de6b3cfc393",
+        "id-c67d028a12d457b1bff85ea82df63718"
+      ],
+      "selected_current_relationships": [
+        "id-5e2b49ac0cf95da987c56c8084a5831b"
+      ]
+    },
+    {
+      "element": "id-c7f56c1dcc525ca8805682bc1d92907d",
+      "excluded_historical_relationships": {
+        "id-6a43822b7f7f5b5a9718df4ed51b7692": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-2c38d0dd86b05054971561b058752f9e",
+        "id-6a43822b7f7f5b5a9718df4ed51b7692"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-c7f56c1dcc525ca8805682bc1d92907d"
+      ],
+      "selected_current_relationships": [
+        "id-2c38d0dd86b05054971561b058752f9e"
+      ]
+    },
+    {
+      "element": "id-c907d86a7e995d0f99f48365418f41f8",
+      "excluded_historical_relationships": {
+        "id-dd1251eb380f5d33b2382e5d56b4f9b0": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-377be234fffe51fd92677bd95aef452a",
+        "id-dd1251eb380f5d33b2382e5d56b4f9b0"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-c907d86a7e995d0f99f48365418f41f8"
+      ],
+      "selected_current_relationships": [
+        "id-377be234fffe51fd92677bd95aef452a"
+      ]
+    },
+    {
+      "element": "id-c9ed027109de56548cba237529d5f6d8",
+      "excluded_historical_relationships": {
+        "id-6a3677d8cdf555f9b7e592e05062ec5e": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-6a3677d8cdf555f9b7e592e05062ec5e",
+        "id-f7114c80d2ac571d88c5c1a4d7425046"
+      ],
+      "resolved_ancestry": [
+        "id-7afbcec0122951079c2bb647251be323",
+        "id-c9ed027109de56548cba237529d5f6d8"
+      ],
+      "selected_current_relationships": [
+        "id-f7114c80d2ac571d88c5c1a4d7425046"
+      ]
+    },
+    {
+      "element": "id-cb13e2de68e55d8c9204e770611aef37",
+      "excluded_historical_relationships": {
+        "id-5d0c452562815c7db3bcabfc5690a178": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-5d0c452562815c7db3bcabfc5690a178",
+        "id-df8f72ab44cd5077af20d8eb55631a88"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-974025114007505b922d37dc6ba0a04f",
+        "id-cb13e2de68e55d8c9204e770611aef37"
+      ],
+      "selected_current_relationships": [
+        "id-df8f72ab44cd5077af20d8eb55631a88"
+      ]
+    },
+    {
+      "element": "id-cbe0d80e3f8c501781eb087d3f932b11",
+      "excluded_historical_relationships": {
+        "id-9aeb59ddb2215de2a87248562df9438e": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-9aeb59ddb2215de2a87248562df9438e",
+        "id-c687ad2b813f5528bb7412010351ce84"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-cbe0d80e3f8c501781eb087d3f932b11"
+      ],
+      "selected_current_relationships": [
+        "id-c687ad2b813f5528bb7412010351ce84"
+      ]
+    },
+    {
+      "element": "id-cc4edaeee1d3519185ee94a683e4a5e0",
+      "excluded_historical_relationships": {
+        "id-1f930e41c10258ad9fa655add4df24eb": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-1f930e41c10258ad9fa655add4df24eb",
+        "id-5e19a7d4168154888ecc5abfa13b3a75"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-c7f56c1dcc525ca8805682bc1d92907d",
+        "id-cc4edaeee1d3519185ee94a683e4a5e0"
+      ],
+      "selected_current_relationships": [
+        "id-5e19a7d4168154888ecc5abfa13b3a75"
+      ]
+    },
+    {
+      "element": "id-cd6d12693e255af7876c44caddfdbdb4",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-1173b361886354b3acdec3b49e5b31af"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e",
+        "id-cd6d12693e255af7876c44caddfdbdb4"
+      ],
+      "selected_current_relationships": [
+        "id-1173b361886354b3acdec3b49e5b31af"
+      ]
+    },
+    {
+      "element": "id-d398ed8aeb1c5dc49a55367f1421d42c",
+      "excluded_historical_relationships": {
+        "id-52b85a7ff6f65ce4bc9557a719c9b09c": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-52b85a7ff6f65ce4bc9557a719c9b09c",
+        "id-5ae522c3b073561fb50a0a6108f95dbf"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-d398ed8aeb1c5dc49a55367f1421d42c"
+      ],
+      "selected_current_relationships": [
+        "id-5ae522c3b073561fb50a0a6108f95dbf"
+      ]
+    },
+    {
+      "element": "id-d835f657a75459268088115e97986dd1",
+      "excluded_historical_relationships": {
+        "id-69bbf3bea76054ef83e82c7d2db73c17": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-22797c02be4852d2907d5e5c955a623f",
+        "id-69bbf3bea76054ef83e82c7d2db73c17"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-8c082e2d6c605903834291c424722f75",
+        "id-d835f657a75459268088115e97986dd1"
+      ],
+      "selected_current_relationships": [
+        "id-22797c02be4852d2907d5e5c955a623f"
+      ]
+    },
+    {
+      "element": "id-d975937d894d521eaf2465cf00b08aaf",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-13d8cd7496685d96949accc85d515545"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-6b7034b5239c505d858d651b8ee78832",
+        "id-d975937d894d521eaf2465cf00b08aaf"
+      ],
+      "selected_current_relationships": [
+        "id-13d8cd7496685d96949accc85d515545"
+      ]
+    },
+    {
+      "element": "id-db254db117db5f77926aa5add9ddb6bc",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-1cba280f030d5f62bfc7f0be9bc304db"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-198c918e6b225485b2065dc763be8ce1",
+        "id-db254db117db5f77926aa5add9ddb6bc"
+      ],
+      "selected_current_relationships": [
+        "id-1cba280f030d5f62bfc7f0be9bc304db"
+      ]
+    },
+    {
+      "element": "id-dbb8a6f722f756808d5022cbd06aec85",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-faf5cf493aa956acb900d6bcb09ff5ef"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-974025114007505b922d37dc6ba0a04f",
+        "id-dbb8a6f722f756808d5022cbd06aec85"
+      ],
+      "selected_current_relationships": [
+        "id-faf5cf493aa956acb900d6bcb09ff5ef"
+      ]
+    },
+    {
+      "element": "id-dc26649d879b5c23813b59e7ada49e3d",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-e01ddadb62d2551aa4b9ad69a78fd529"
+      ],
+      "resolved_ancestry": [
+        "id-a5127b36f8a25c748c68426668173fcd",
+        "id-306525d358285c6cb525859aba8c7f7f",
+        "id-dc26649d879b5c23813b59e7ada49e3d"
+      ],
+      "selected_current_relationships": [
+        "id-e01ddadb62d2551aa4b9ad69a78fd529"
+      ]
+    },
+    {
+      "element": "id-e4265b53f55553c2acc4f7322e9f1cf2",
+      "excluded_historical_relationships": {
+        "id-24b7d51943355da3a9ce62626162ae88": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-24b7d51943355da3a9ce62626162ae88",
+        "id-30c640b5c00f58e9b64174415cc26efd"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-e4265b53f55553c2acc4f7322e9f1cf2"
+      ],
+      "selected_current_relationships": [
+        "id-30c640b5c00f58e9b64174415cc26efd"
+      ]
+    },
+    {
+      "element": "id-e58d7bdb27f95fb396623167a677a5ba",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-2af8cd96ae125494a5211936a5817aca"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-143b994de5cd593897012a96963e43ca",
+        "id-e58d7bdb27f95fb396623167a677a5ba"
+      ],
+      "selected_current_relationships": [
+        "id-2af8cd96ae125494a5211936a5817aca"
+      ]
+    },
+    {
+      "element": "id-e77accf68d2a5f63b25c3c257d97feec",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-7c7ad1d9a3e1567c9bf32c2185ccc2bf"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-57136cee07f65bf98b7bfe63fba60fa4",
+        "id-e77accf68d2a5f63b25c3c257d97feec"
+      ],
+      "selected_current_relationships": [
+        "id-7c7ad1d9a3e1567c9bf32c2185ccc2bf"
+      ]
+    },
+    {
+      "element": "id-e9ea67f4568d5b698a547301aa89e4bd",
+      "excluded_historical_relationships": {
+        "id-cbeed10c123a5ab69ba558630d527ca0": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-17f9d5116b7a5293be59a58af15b77df",
+        "id-cbeed10c123a5ab69ba558630d527ca0"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-e9ea67f4568d5b698a547301aa89e4bd"
+      ],
+      "selected_current_relationships": [
+        "id-17f9d5116b7a5293be59a58af15b77df"
+      ]
+    },
+    {
+      "element": "id-ea9da64cb51253f1aabacc59253b8db8",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-21db0221d4a85e11944f7d92fe94b48e"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-b977d4fbbfbc5943bf2b03b300408b3a",
+        "id-ea9da64cb51253f1aabacc59253b8db8"
+      ],
+      "selected_current_relationships": [
+        "id-21db0221d4a85e11944f7d92fe94b48e"
+      ]
+    },
+    {
+      "element": "id-ee472a7091b85442911ccf12aac63a4d",
+      "excluded_historical_relationships": {
+        "id-4723046b1a2e51a0ae3fed86a9799258": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-00bb91295bb45912bb57a7f8ca2c3ac8",
+        "id-4723046b1a2e51a0ae3fed86a9799258"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-ee472a7091b85442911ccf12aac63a4d"
+      ],
+      "selected_current_relationships": [
+        "id-00bb91295bb45912bb57a7f8ca2c3ac8"
+      ]
+    },
+    {
+      "element": "id-f498770b9a45551990afc0c14336212f",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-41979b1db3e753679aadf89db7d98521"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-99e98c1485575f90883330359d72b921",
+        "id-f498770b9a45551990afc0c14336212f"
+      ],
+      "selected_current_relationships": [
+        "id-41979b1db3e753679aadf89db7d98521"
+      ]
+    },
+    {
+      "element": "id-f6b618c033b55400a9e26a6c1c5d9c16",
+      "excluded_historical_relationships": {
+        "id-225b55138d2a51f683a232392c07c67d": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-225b55138d2a51f683a232392c07c67d",
+        "id-bd48947def8d5df890d3c0fe4a89c5a4"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-b977d4fbbfbc5943bf2b03b300408b3a",
+        "id-f6b618c033b55400a9e26a6c1c5d9c16"
+      ],
+      "selected_current_relationships": [
+        "id-bd48947def8d5df890d3c0fe4a89c5a4"
+      ]
+    },
+    {
+      "element": "id-f7fc7616aa89520a84e2235872dc93ed",
+      "excluded_historical_relationships": {},
+      "original_direct_relationships": [
+        "id-7a77ee43a6685b34948346ddffd916a8"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-5beae734749a57468bf09956473d2f40",
+        "id-f7fc7616aa89520a84e2235872dc93ed"
+      ],
+      "selected_current_relationships": [
+        "id-7a77ee43a6685b34948346ddffd916a8"
+      ]
+    },
+    {
+      "element": "id-f8932fe58ea154028a1a5dfa4887f491",
+      "excluded_historical_relationships": {
+        "id-85a612d705c7548391ac2906ddd986ae": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-85a612d705c7548391ac2906ddd986ae",
+        "id-8865da6932a95fb68965a5e96b4158a5"
+      ],
+      "resolved_ancestry": [
+        "id-7d2f4319495b59248bd13f7b256a1c32",
+        "id-f8932fe58ea154028a1a5dfa4887f491"
+      ],
+      "selected_current_relationships": [
+        "id-8865da6932a95fb68965a5e96b4158a5"
+      ]
+    },
+    {
+      "element": "id-fa4797b3d84052ecbea381b52dfa8b3f",
+      "excluded_historical_relationships": {
+        "id-f90cf0b2b2b453b0b7d859829f5b0c33": "preserved historical assertion"
+      },
+      "original_direct_relationships": [
+        "id-677a2c2c85b156789fbc4333cbf0c87d",
+        "id-f90cf0b2b2b453b0b7d859829f5b0c33"
+      ],
+      "resolved_ancestry": [
+        "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+        "id-fa4797b3d84052ecbea381b52dfa8b3f"
+      ],
+      "selected_current_relationships": [
+        "id-677a2c2c85b156789fbc4333cbf0c87d"
+      ]
+    }
+  ],
+  "element_placement": "UNCHANGED",
+  "excluded_historical_relationships": 121,
+  "frozen_files_verified": 28,
+  "genuine_current_ambiguities": 0,
+  "historical_assertions": "PRESERVED_IN_BYTE_IDENTICAL_CANDIDATE",
+  "original_affected_paths": 109,
+  "original_direct_cases": 61,
+  "original_manifest_sha256": "3ea2bab69e20f97cae0ac92364095b50c4dfe730fdc95e23788355e5c7991167",
+  "policy": "harmonia-type-selected-containment-v1",
+  "propagated_cases": 48,
+  "relationship_placement": "UNCHANGED",
+  "selected_by_mechanism": {
+    "Composition": 632,
+    "Home": 212
+  },
+  "status": "PASS"
+}

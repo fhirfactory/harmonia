@@ -1,0 +1,15 @@
+{
+  "baseline": {
+    "path": "docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+    "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+  },
+  "incoming": {
+    "path": "docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+    "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+  },
+  "control": {
+    "path": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/roundtrip/Archi-no-edit-export.xml.gz",
+    "sha256": "1e2ecfb5585448c84eb009d22c9d1f7794d8e452f6d841865e08d675526aca8d",
+    "xml_sha256": "ac7fad3d30b230e894fa12e64e74e77939fc6574dd3336a8ddd7569f70c22b65"
+  }
+}

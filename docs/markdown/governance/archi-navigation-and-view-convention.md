@@ -2,6 +2,25 @@
 
 # Harmonia Archi Navigation & View Convention
 
+## Current round-trip projection — 2026-10-20
+
+The [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules)
+governs current round-trip regeneration. Element and Relationship folders are
+derived from shared state-filtered Home/type-selected Composition containment and
+governed collection roles, including when submitted folders are absent or wrong.
+It supersedes earlier preservation of unestablished Home locations for this
+projection: retain names and semantic uncertainty, and display unresolved Home or
+Feature ancestry explicitly in derived navigation rather than replaying submitted
+paths. Recorded source context may classify a collection; it supplies no absent
+current containment. Every element participating in resolved containment has its
+own same-named Element folder containing its single element reference, including
+contained leaves; child folders nest recursively under their parent context with
+governed collection/role placement. Standalone collection policy remains in force
+outside that hierarchy. Relationship folders mirror the actual source, reusing a
+source context or adding one where needed. All existing Views, including their
+navigation, are preserved presentation artefacts; historical generated-View
+replay descriptions below grant no authority to replace submitted Views.
+
 ## Authority and purpose
 
 The architecture owner's Release 1.0.4 task authorises this reusable publication

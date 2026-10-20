@@ -169,6 +169,17 @@ major increments require an explicit governance decision. Maven software version
 and branch names remain independent. Include the increment in the same accepted
 change set, regardless of author or tool.
 
+## ArchiMate round-trip task entry
+
+For “Model Updated. Please review and generate change-review.md.” or
+“change-review.md reviewed and updated. Apply directives.” (including equivalent
+requests), load the repository-governed
+[ArchiMate Round-Trip Engineering Praxis](docs/markdown/governance/archimate-round-trip-engineering-praxis.md)
+and follow its authority links and human checkpoints. Discover exact baseline,
+submission and review provenance; never substitute session memory or select an
+ambiguous export by timestamp. Machinery-validation runs are not RAD releases;
+the bounded release-policy exception applies to the RAD-1.0.10 proving cycle.
+
 ## 2. System Taxonomy & Module Hierarchy
 
 Harmonia enforces strict separation of concerns across its 9 core

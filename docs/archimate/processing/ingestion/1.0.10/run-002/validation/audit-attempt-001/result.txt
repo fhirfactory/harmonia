@@ -1,0 +1,1 @@
+FAIL — review-audit harness assertion used unresolved Property definition IDs in the full Views signature. Shared comparator established zero changed Views; resolving Property references through exact definition keys establishes equal Views content. No input or framework code changed. Corrected audit uses change_review.signature for this check.

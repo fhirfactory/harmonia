@@ -143,16 +143,15 @@ class Recovery:
         return g.visual_id(self.mid, "latex-rad-recovery-v1", role, *keys)
 
     def ancestry(self, key, owner=False):
-        record = self.records[key]
-        key = record.get("owner_key") if owner else key
-        result, seen = [], set()
-        while key:
-            g.require(key in self.records and key not in seen, "Missing/cyclic source ancestry")
-            seen.add(key)
-            item = self.records[key]
-            result.insert(0, item)
-            key = item.get("parent_key")
-        return result
+        import containment
+        key = self.records[key].get("owner_key") if owner else key
+        if key is None:
+            return []
+        if not hasattr(self, '_recorded_ancestry'):
+            self._recorded_ancestry = containment.recorded_context(
+                {k: dict(record=r) for k, r in self.records.items()},
+                pointer=lambda r: r.get('parent_key'), accepted_context=False)
+        return [self.records[k] for k in self._recorded_ancestry.ancestry(key)]
 
     def category(self, e):
         if e.get("category"):

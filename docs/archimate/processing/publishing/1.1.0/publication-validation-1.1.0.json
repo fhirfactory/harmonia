@@ -1,0 +1,462 @@
+{
+  "accepted_crs": [
+    "CR-001",
+    "CR-002",
+    "CR-003",
+    "CR-004",
+    "CR-005",
+    "CR-006",
+    "CR-007",
+    "CR-008",
+    "CR-009",
+    "CR-010",
+    "CR-011",
+    "CR-012",
+    "CR-013",
+    "CR-014",
+    "CR-015",
+    "CR-016",
+    "CR-017",
+    "CR-018",
+    "CR-019",
+    "CR-020",
+    "CR-021",
+    "CR-022",
+    "CR-023",
+    "CR-024",
+    "CR-025",
+    "CR-026",
+    "CR-027",
+    "CR-028",
+    "CR-029",
+    "CR-030",
+    "CR-031",
+    "CR-032",
+    "CR-033",
+    "CR-034",
+    "CR-035",
+    "CR-036",
+    "CR-037",
+    "CR-038",
+    "CR-039",
+    "CR-040",
+    "CR-041",
+    "CR-042",
+    "CR-043",
+    "CR-044",
+    "CR-045",
+    "CR-046",
+    "CR-047",
+    "CR-048",
+    "CR-049",
+    "CR-050",
+    "CR-051",
+    "CR-052",
+    "CR-053",
+    "CR-054",
+    "CR-055",
+    "CR-056",
+    "CR-057",
+    "CR-058",
+    "CR-059",
+    "CR-060",
+    "CR-061",
+    "CR-062",
+    "CR-063",
+    "CR-064",
+    "CR-065",
+    "CR-066",
+    "CR-067",
+    "CR-068",
+    "CR-069",
+    "CR-070",
+    "CR-071",
+    "CR-072",
+    "CR-073",
+    "CR-074",
+    "CR-075",
+    "CR-076",
+    "CR-077",
+    "CR-078",
+    "CR-079",
+    "CR-080",
+    "CR-081",
+    "CR-082",
+    "CR-083",
+    "CR-084",
+    "CR-085",
+    "CR-086",
+    "CR-087",
+    "CR-088",
+    "CR-089",
+    "CR-090",
+    "CR-091",
+    "CR-092",
+    "CR-093",
+    "CR-094",
+    "CR-095",
+    "CR-096",
+    "CR-097",
+    "CR-098",
+    "CR-099",
+    "CR-100",
+    "CR-101",
+    "CR-102",
+    "CR-103",
+    "CR-104",
+    "CR-105",
+    "CR-106",
+    "CR-107",
+    "CR-108",
+    "CR-109",
+    "CR-110",
+    "CR-111",
+    "CR-112",
+    "CR-113",
+    "CR-114",
+    "CR-115",
+    "CR-116",
+    "CR-117",
+    "CR-118",
+    "CR-119",
+    "CR-120",
+    "CR-121",
+    "CR-122",
+    "CR-123",
+    "CR-124",
+    "CR-125",
+    "CR-126",
+    "CR-127",
+    "CR-128",
+    "CR-129",
+    "CR-130",
+    "CR-131",
+    "CR-132",
+    "CR-133",
+    "CR-134",
+    "CR-135",
+    "CR-136",
+    "CR-137",
+    "CR-138",
+    "CR-139",
+    "CR-140",
+    "CR-141",
+    "CR-142",
+    "CR-143",
+    "CR-144",
+    "CR-145",
+    "CR-146",
+    "CR-147",
+    "CR-148",
+    "CR-149",
+    "CR-150",
+    "CR-151",
+    "CR-152",
+    "CR-153",
+    "CR-154"
+  ],
+  "actual_archi_transport": "See roundtrip/archi-transport-verification.json; separate from visual inspection",
+  "after": {
+    "element_types": {
+      "Assessment": 5,
+      "BusinessFunction": 160,
+      "BusinessObject": 12,
+      "BusinessProcess": 21,
+      "BusinessService": 142,
+      "Capability": 842,
+      "Constraint": 3,
+      "DataObject": 74,
+      "Driver": 10,
+      "Goal": 9,
+      "Outcome": 3,
+      "Principle": 25,
+      "Product": 4,
+      "Requirement": 74,
+      "Stakeholder": 10
+    },
+    "elements": 1394,
+    "relationships": 1137,
+    "views": 1209
+  },
+  "architecture_release": {
+    "previous_version": "1.0.10",
+    "version": "1.1.0"
+  },
+  "before": {
+    "element_types": {
+      "Assessment": 5,
+      "BusinessFunction": 160,
+      "BusinessObject": 50,
+      "BusinessProcess": 21,
+      "BusinessService": 142,
+      "Capability": 842,
+      "Constraint": 3,
+      "DataObject": 4,
+      "Driver": 10,
+      "Goal": 9,
+      "Outcome": 3,
+      "Principle": 25,
+      "Product": 4,
+      "Requirement": 74,
+      "Stakeholder": 10
+    },
+    "elements": 1362,
+    "relationships": 1077,
+    "views": 1198
+  },
+  "canonical_identities": 1394,
+  "checks": {
+    "canonical_continuity": "PASS",
+    "deterministic_workspace": "PASS",
+    "held_dataobjects_unchanged": "PASS",
+    "identifiers_references": "PASS",
+    "offline_xsd": "PASS",
+    "persisted_metadata_derivation": "PASS",
+    "projection_independent_of_incoming_folders": "PASS",
+    "semantic_and_view_preservation": "PASS"
+  },
+  "existing_canonical_identities_preserved": 1362,
+  "expected_representation_changes": [
+    "32 persisted canonicalId properties added since Run-002 candidate",
+    "Workspace projection identities use those canonical IDs instead of temporary representation identities",
+    "Model release becomes 1.1.0; candidate-standing property and unused definition removed"
+  ],
+  "final_visual_inspection": "PENDING_SOLUTION_ARCHITECT",
+  "held_unchanged": [
+    {
+      "canonicalId": "76ded4866bf443dabc0849d68b215690",
+      "content": "UNCHANGED",
+      "cr": "CR-155",
+      "name": "Context Topic",
+      "native_type": "DataObject",
+      "representationId": "id-584ea943d2c25bb4a1d6f381e24b026f",
+      "status": "On-Hold / Unresolved"
+    },
+    {
+      "canonicalId": "27ad143e7c784e378556af8a57c438f7",
+      "content": "UNCHANGED",
+      "cr": "CR-156",
+      "name": "Pragma Topic",
+      "native_type": "DataObject",
+      "representationId": "id-7e466917d880545b949fe8e07a20cb68",
+      "status": "On-Hold / Unresolved"
+    },
+    {
+      "canonicalId": "f0a88f05a0cb438cb42572ec07fb8513",
+      "content": "UNCHANGED",
+      "cr": "CR-157",
+      "name": "PetasosParcel Topic",
+      "native_type": "DataObject",
+      "representationId": "id-99b474f57b075557a25ae229f1185ba6",
+      "status": "On-Hold / Unresolved"
+    },
+    {
+      "canonicalId": "978f5c2bd2d343ffaf3a13dff700c258",
+      "content": "UNCHANGED",
+      "cr": "CR-158",
+      "name": "Pylai.Diadromí Topic",
+      "native_type": "DataObject",
+      "representationId": "id-d64929ff4825570e8484be3a85e9de53",
+      "status": "On-Hold / Unresolved"
+    }
+  ],
+  "identities_allocated_by_publication": 0,
+  "new_governed_identities": [
+    {
+      "canonicalId": "99dc695355384ea29ac3515b9178dfd0",
+      "cr": "CR-001",
+      "displayName": "[Topic] Authority",
+      "representationId": "id-3d77d9bbfd9747c792d456d41f489bae"
+    },
+    {
+      "canonicalId": "f702d357183847dd8f0fd09545679ffd",
+      "cr": "CR-002",
+      "displayName": "[Topic] Care",
+      "representationId": "id-395f82a0d8664955b6f542d80de3f5b5"
+    },
+    {
+      "canonicalId": "cfc241a7b6904bd19ccc1b9adbac0393",
+      "cr": "CR-003",
+      "displayName": "[Topic] CareLocation",
+      "representationId": "id-02f975c032b549d4b7e951d0a427533a"
+    },
+    {
+      "canonicalId": "410be08eea0b4653a88f4e4235354cea",
+      "cr": "CR-004",
+      "displayName": "[Topic] CommunicationAddress",
+      "representationId": "id-a60925c7b1db471589f42b064429bb82"
+    },
+    {
+      "canonicalId": "5c33b01e23964ef5935be79364e7c0f9",
+      "cr": "CR-005",
+      "displayName": "[Topic] Contact",
+      "representationId": "id-5e6cbbe10a2c4a0b8e1d50fedd53c0c2"
+    },
+    {
+      "canonicalId": "882234c291ca4c6492ad6dfbe1e23fea",
+      "cr": "CR-006",
+      "displayName": "[Topic] Coordination",
+      "representationId": "id-68a83c289478490197dfb2920534da86"
+    },
+    {
+      "canonicalId": "95a13e957f5c471797869b901085266c",
+      "cr": "CR-007",
+      "displayName": "[Topic] Demographics",
+      "representationId": "id-f922329ab6fe40b8ab2ddb9ebdc80867"
+    },
+    {
+      "canonicalId": "a8be2b6474cd43cd9845b93258bd2fe3",
+      "cr": "CR-008",
+      "displayName": "[Topic] EncounterContext",
+      "representationId": "id-677d8b45df5a47efa21085a7fbfffe1a"
+    },
+    {
+      "canonicalId": "a3badcf73eaa4331b75d7b3eb6e67fc8",
+      "cr": "CR-009",
+      "displayName": "[Topic] EncounterProgression",
+      "representationId": "id-e5fda3f50b22419bbac4e39e6cadc416"
+    },
+    {
+      "canonicalId": "5c5da6a06dac413aa2809a1397f8a3b9",
+      "cr": "CR-010",
+      "displayName": "[Topic] Enterprise",
+      "representationId": "id-74f9c5df31f2430ca725c39e285cd9c3"
+    },
+    {
+      "canonicalId": "8e658834311d41e68a8ecf71d8ccd5db",
+      "cr": "CR-011",
+      "displayName": "[Topic] Equipment",
+      "representationId": "id-40f54ad3867549dba20c6f197c0c43be"
+    },
+    {
+      "canonicalId": "0781dd44748d42338c18bf01993af656",
+      "cr": "CR-012",
+      "displayName": "[Topic] ExecutionConcurrency",
+      "representationId": "id-10b5bc11da7d43c999ea4a37e6ae58d1"
+    },
+    {
+      "canonicalId": "4af969b8c23a4dcab7569dc51b263383",
+      "cr": "CR-013",
+      "displayName": "[Topic] Individual",
+      "representationId": "id-bd2c303e65434409b69777c403116005"
+    },
+    {
+      "canonicalId": "73abd9430cfa4395ac38b41acfb169ec",
+      "cr": "CR-014",
+      "displayName": "[Topic] OrderChange",
+      "representationId": "id-baee40c9809143febeb1e82bf00724ac"
+    },
+    {
+      "canonicalId": "614c48fd853643578788b738f8017b53",
+      "cr": "CR-015",
+      "displayName": "[Topic] OrderContext",
+      "representationId": "id-859e6f00b88a46b4b7647a1fe8fe946a"
+    },
+    {
+      "canonicalId": "8fb3a767d7a04d638ef76f98d61496b1",
+      "cr": "CR-016",
+      "displayName": "[Topic] OrderProgressionEvent",
+      "representationId": "id-6215587fc627479f906c85881f1acc05"
+    },
+    {
+      "canonicalId": "24187967f53446479c87d7676c66ba12",
+      "cr": "CR-017",
+      "displayName": "[Topic] OrderResult",
+      "representationId": "id-ea0e962d9eb7422c910091d8de80f8a8"
+    },
+    {
+      "canonicalId": "06bde79727884b27b3599e373b3cee5f",
+      "cr": "CR-018",
+      "displayName": "[Topic] OrderRouting",
+      "representationId": "id-28bf91e4dae44a3eaa32741d43368075"
+    },
+    {
+      "canonicalId": "1c4e2d5ce4574856a7d3605838e8afcb",
+      "cr": "CR-019",
+      "displayName": "[Topic] Ordering",
+      "representationId": "id-939dda01afdc40eabc1bb723f9da5b7b"
+    },
+    {
+      "canonicalId": "72c505782347448d8f89d74ef76359af",
+      "cr": "CR-020",
+      "displayName": "[Topic] OutcomeConcurrency",
+      "representationId": "id-51be9c9bc4654d6fa65dad89cdc5b0d3"
+    },
+    {
+      "canonicalId": "a035fe1913db4d2589a2e4edde8db737",
+      "cr": "CR-021",
+      "displayName": "[Topic] OutputRules",
+      "representationId": "id-41356fd06ed64e5f861e04f101d83da0"
+    },
+    {
+      "canonicalId": "c109f726f6ae4ee1b7fde1c012cfae74",
+      "cr": "CR-022",
+      "displayName": "[Topic] PatientSchedule",
+      "representationId": "id-0aad63d77e7f41ac96b9ddcfc09a98a1"
+    },
+    {
+      "canonicalId": "36539e3eee7041e585aa3c5a06424bcc",
+      "cr": "CR-023",
+      "displayName": "[Topic] Place",
+      "representationId": "id-e7b6552e6cd748fcae781becea007f01"
+    },
+    {
+      "canonicalId": "d79d14c20bf14ecdab0434d4aa7db9b8",
+      "cr": "CR-024",
+      "displayName": "[Topic] Referral",
+      "representationId": "id-8ca7580325de469586e67ca5b627b8c2"
+    },
+    {
+      "canonicalId": "9eb5906e93ca4625bdb675a3397c4c8d",
+      "cr": "CR-025",
+      "displayName": "[Topic] ReferralContext",
+      "representationId": "id-f93795e4a3ba44a9a6a51e0b43aa3f51"
+    },
+    {
+      "canonicalId": "c0ec3c75d9c54b3097e12c240ee816fe",
+      "cr": "CR-026",
+      "displayName": "[Topic] Relationship",
+      "representationId": "id-3f83a623c30d4ea19d8a6b6ef760782c"
+    },
+    {
+      "canonicalId": "0e98b52f18274a81ad3e3b9ff9cca747",
+      "cr": "CR-027",
+      "displayName": "[Topic] ScheduleChange",
+      "representationId": "id-9d712f74c4c748c794cf6f00044353a5"
+    },
+    {
+      "canonicalId": "6c4e9a91baf7460387d298366c5c6d0a",
+      "cr": "CR-028",
+      "displayName": "[Topic] ScheduleState",
+      "representationId": "id-97827a0c71f14329a3ac885cec54cf51"
+    },
+    {
+      "canonicalId": "1225bfab0a6c4312875091a027f24275",
+      "cr": "CR-029",
+      "displayName": "[Topic] Scheduling",
+      "representationId": "id-294239d293f4437db7b9e5c9775e6be0"
+    },
+    {
+      "canonicalId": "0b990e0c64684bb8a45643e48eb4470a",
+      "cr": "CR-030",
+      "displayName": "[Topic] Service",
+      "representationId": "id-d4e25394de4544b883fe10dd669e7155"
+    },
+    {
+      "canonicalId": "8a9351cd170940d0b36f8d56584f15ec",
+      "cr": "CR-031",
+      "displayName": "[Topic] TaskCompletion",
+      "representationId": "id-ea066123b5304c67ba344bb021d14dca"
+    },
+    {
+      "canonicalId": "9f689e261140436eb94295d63e2b3370",
+      "cr": "CR-032",
+      "displayName": "[Topic] Workforce",
+      "representationId": "id-b931a047f2d24e27ab550368f9f63283"
+    }
+  ],
+  "output_sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1",
+  "rebindings_preserved": 38,
+  "status": "PASS",
+  "unexpected_architectural_differences": []
+}

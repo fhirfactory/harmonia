@@ -35,6 +35,16 @@ authority. This contract adds their ingestion/publication consequences and the
 new Containment View archetype; it does not replace their identity syntax,
 mapping profile, preserved history or unresolved metamodel decisions.
 
+## Round-trip engineering authority — 2026-10-20
+
+The [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md)
+coordinates these contracts and supplies the current Home-default, native-type
+Composition exceptions, standing-before-ancestry and regeneration rules. That
+clarification narrows the earlier general Composition wording below. Element and
+Relationship navigation is derived; all existing submitted Views and their
+navigation/presentation are preserved unless a separately reviewed directive
+changes them. Historical generated-View replay grants no replacement authority.
+
 ## Four distinct stages
 
 | Stage | Governed responsibility |
@@ -174,6 +184,24 @@ against an established governed identity. Existing identity validation remains
 strict. Ordinary publication reads and validates reconciled metadata; it SHALL
 NOT allocate identity. The architect need not hand-build derived names or
 governance Properties to submit a proposal.
+
+### Proposed metadata during machinery validation — 2026-10-20
+
+The [information-element naming decision](canonical-identity-and-naming.md#information-element-naming--machinery-validation-decision-2026-10-20)
+establishes the three display conventions and Topic recognition. Explicit authored
+native type, Name, Specialization and Composition are derivation inputs; stale
+`archimateType`, names and `harmoniaType` Properties cannot reverse those inputs.
+Keep authored information, canonical identity, submitted derived claims and
+proposed regenerated metadata separately observable. Unknown semantic inputs
+remain unresolved. Only native Composition supplies contextual ancestry.
+
+The [machinery-validation lifecycle](architecture-release-policy.md#machinery-validation-runs--2026-10-20)
+authorises producing a separate machine candidate from the immutable submission
+for inspection and testing before acceptance. It does not authorise modifying
+that submission, allocating identities, updating accepted captures, accepting
+relationships or publishing a RAD release. Mark candidate standing explicitly
+in the run evidence and candidate model. Successful metadata derivation is a
+conditional processing result, not an architectural reconciliation outcome.
 
 ## Explicit relationships, reuse and duplicates
 

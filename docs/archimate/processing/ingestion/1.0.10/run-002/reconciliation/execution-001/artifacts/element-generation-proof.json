@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "generated_element_references": 1394,
+      "input_element_relationship_navigation": "ABSENT",
+      "protected_content": "UNCHANGED",
+      "regenerated_organisation": "EXACT_MATCH"
+    },
+    {
+      "generated_element_references": 1394,
+      "input_element_relationship_navigation": "MISLEADING",
+      "protected_content": "UNCHANGED",
+      "regenerated_organisation": "EXACT_MATCH"
+    }
+  ],
+  "immutable_input_modified": false,
+  "status": "PASS",
+  "view_navigation_sha256": "863be1b0b47f7e273c1d5b9a9353c180eea6f1340748cb5b94875313531670ca",
+  "views_sha256": "7884117cd23076e1c21e69a886287e642e6ab76675a0767619e21488d05c146b"
+}

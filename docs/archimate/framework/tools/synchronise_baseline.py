@@ -176,6 +176,10 @@ def load_inputs(manifest_path=MANIFEST):
         if not matched:
             import information_population
             matched = information_population.preserved_authority(relative, expected)
+        if not matched:
+            import governance_history
+            matched = governance_history.follows(ROOT, relative, expected, r.sha(path),
+                                                  g.BASE / 'governance-transitions.json')
         g.require(path.is_relative_to(ROOT.resolve()) and matched,
                   f"Current baseline authority drift; reconcile explicitly: {relative}")
     # Verify the entire recovery boundary without refreshing or generating it.
@@ -257,13 +261,14 @@ class Baseline:
     def chain(self, key, owner=False):
         if owner:
             key = self.records[key].get("owner_key")
-        result, seen = [], set()
-        while key:
-            g.require(key in self.records and key not in seen, "Missing/cyclic baseline context")
-            seen.add(key)
-            result.insert(0, self.records[key])
-            key = self.records[key].get("parent_key")
-        return result
+        if not key:
+            return []
+        import containment
+        if getattr(self, '_recorded_context_source', None) is not self.records:
+            index = {k: dict(record=e) for k, e in self.records.items()}
+            self._recorded_naming_context = containment.recorded_context(index)
+            self._recorded_context_source = self.records
+        return [self.records[k] for k in self._recorded_naming_context.ancestry(key)]
 
     def category(self, e):
         chain = self.chain(e["key"], owner=e["type"] not in ("capability", "enterprise_capability"))
@@ -896,6 +901,10 @@ def discrepancies(b):
 
 
 def publish(*, reconciled=True, home_derived=True, presentation=True, information=True):
+    if reconciled and home_derived and presentation and information:
+        import publish_information_release
+        if publish_information_release.active():
+            return publish_information_release.publish()
     b = Baseline(*load_inputs())
     b.build()
     data = g.serialize(b.root)
@@ -960,6 +969,9 @@ def publish(*, reconciled=True, home_derived=True, presentation=True, informatio
 
 
 def main():
+    import publish_information_release
+    if publish_information_release.active():
+        return publish_information_release.main()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--output-directory", type=Path, help="Write an independent reproduction under /tmp (including Markdown)")

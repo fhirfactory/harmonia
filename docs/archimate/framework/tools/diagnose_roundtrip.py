@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
-"""Read-only Increment 1 conformance and no-edit Exchange transport diagnostics.
+"""Read-only Exchange transport diagnostics and Change Review evidence.
 
-This is a same-representation fidelity probe, not an architecture reconciler.
+Raw representation fidelity and candidate architectural interpretation are separate.
 No IDs are allocated, no inputs are written, and no publication gates are changed.
 """
 import argparse
 from collections import Counter, defaultdict
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -22,6 +23,7 @@ ROOT = BASE.parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from architecture_release import load_release
 import governed_metadata as metadata
+from element_correlation import correlate
 
 ACTIVE = metadata.model_path()
 MANIFEST = BASE / "tests/fixtures/roundtrip/manifest.json"
@@ -86,6 +88,8 @@ class Exchange:
         self.path = Path(path)
         self.root = g.parse(path)
         self.sha256 = sha(path)
+        self.xml_sha256 = (hashlib.sha256(gzip.decompress(historical_path(self.path).read_bytes())).hexdigest()
+                           if self.path.suffix == '.gz' else self.sha256)
         self.issues = []
         try:
             g.validate_identifiers(self.root)
@@ -209,6 +213,9 @@ def diagnose(model, previous=None, context=None, registry=None):
             extra = ia.descriptors(ia.load())
             if set(model.elements) & set(extra):
                 governed = {**governed, **extra}
+        import publish_information_release as information_release
+        if information_release.active() and model.path.resolve() == metadata.model_path().resolve():
+            governed = information_release.amend_metadata_index(governed)
     source_identity_conflicts = []
     short_name_owners = defaultdict(list)
     for identifier, element in sorted(model.elements.items()):
@@ -295,22 +302,19 @@ def diagnose(model, previous=None, context=None, registry=None):
                 historical_conflicts.append(dict(alias=code, expected_owner=owner, observed_owners=aliases.get(code, [])))
     continuity = source_identity_conflicts
     if governed is not None:
+        observed_canonical = set(owners)
         for identifier in sorted(governed.keys() - model.elements.keys()):
+            if governed[identifier]['record']['canonicalId'] in observed_canonical:
+                continue
             continuity.append(dict(element=identifier, finding='MISSING ESTABLISHED SOURCE OWNER'))
+    correlation = None
     if previous is not None:
-        old_owners = defaultdict(set)
-        for identifier, element in previous.elements.items():
-            old = previous.single(element, "canonicalId")
-            if old is not None and UUID32.fullmatch(old):
-                old_owners[old].add(identifier)
-                current = model.elements.get(identifier)
-                now = None if current is None else model.single(current, "canonicalId")
-                if current is not None and now != old:
-                    continuity.append(dict(element=identifier, previous=old, current=now, finding="IMMUTABLE BINDING CONFLICT"))
-        for value in sorted(owners.keys() & old_owners.keys()):
-            if set(owners[value]) != old_owners[value]:
-                continuity.append(dict(canonicalId=value, previous_owners=sorted(old_owners[value]), current_owners=sorted(set(owners[value])),
-                                       finding="BINDING CONFLICT / POSSIBLE REUSE; representation drift requires adjudication"))
+        correlation = correlate(previous, model)
+        continuity.extend(dict(finding='CANONICAL IDENTITY CONFLICT / POSSIBLE REUSE', evidence=issue)
+                          for issue in correlation['issues'])
+        continuity.extend(dict(element=identifier, finding='ESTABLISHED CANONICAL ID DISAPPEARED')
+                          for identifier in correlation['deleted']
+                          if previous.claims(previous.elements[identifier], 'canonicalId'))
     valid_count = sum(row["canonicalId_single_valid"] for row in rows)
     identity_ready = not (missing or malformed or multiple or duplicates or continuity)
     for key in ROLES[1:4]:
@@ -328,6 +332,8 @@ def diagnose(model, previous=None, context=None, registry=None):
                                   unique_valid_uuid32_elements=sum(row["canonicalId_single_valid"] and row["canonicalId"][0] not in duplicates for row in rows),
                                   missing=missing, malformed=malformed, multiple_claims=multiple, duplicates=duplicates,
                                   continuity_findings=continuity,
+                                  representation_rebindings=[] if correlation is None else correlation['representation_rebindings'],
+                                  snapshot_correlation=correlation,
                                   lifetime_nonreuse="Retained resource-owned IDs and pinned complete source history; physical source deletion is rejected" if governed is not None else "UNRESOLVED: no active UUID32 allocation/tombstone history; two snapshots cannot prove lifetime non-reuse"),
                 historical_ec_aliases=dict(count=sum(len(v) for v in aliases.values()), owners=dict(sorted(aliases.items())),
                                            duplicates={k: v for k, v in sorted(aliases.items()) if len(v) > 1}, binding_conflicts=historical_conflicts),
@@ -339,7 +345,7 @@ def diagnose(model, previous=None, context=None, registry=None):
                 canonicalName_derivation="Validated against the same components/context with formal qualifiers" if governed is not None else "Existing bound source paths and Baseline.chain context only; no universal grammar or inferred ancestry"), elements=rows)
 
 
-def compare(before, after):
+def compare(before, after, control=None):
     """Exhaustive XML probe; match existing representation IDs, never names.
 
     Only Property-definition *keys* use exact names (not architectural identity).
@@ -441,9 +447,17 @@ def compare(before, after):
     issues = {"published": before.issues, "incoming": after.issues}
     status = "UNRESOLVED" if any(issues.values()) else "DIFFERENCES" if any(counts[k] for k in (LOSS, SEMANTIC, UNKNOWN)) else "EQUIVALENT"
 
+    changed_records = defaultdict(set)
+    record_pattern = re.compile(r'/((?:element|relationship|view))\[id=([^\]]+)\]')
+    material_paths = [f['path'] for f in findings if f['classification'] != EQUIVALENT]
+    for path in material_paths:
+        for prefix, identifier in record_pattern.findall(path):
+            changed_records[prefix].add(identifier)
+
     def record_evidence(table_a, table_b, prefix):
-        changed = sorted({key for key in table_a.keys() & table_b.keys()
-                          if any(f["classification"] != EQUIVALENT and f"/{prefix}[id={key}]" in f["path"] for f in findings)})
+        common = table_a.keys() & table_b.keys()
+        changed = sorted(key for key in common if key in changed_records[prefix] or
+                         (']' in key and any(f'/{prefix}[id={key}]' in path for path in material_paths)))
         return dict(before=len(table_a), after=len(table_b), retained_ids=len(table_a.keys() & table_b.keys()),
                     missing_ids=sorted(table_a.keys() - table_b.keys()), additional_ids=sorted(table_b.keys() - table_a.keys()),
                     changed_records=changed)
@@ -471,12 +485,14 @@ def compare(before, after):
             else:
                 changed.append(dict(element=identifier, before=left, after=right))
         contract[role] = dict(published_owners=observed, exact_value_language_multiplicity_owner_preserved=preserved, changes=changed)
-    return dict(comparison_status=status, purpose="No-edit transport probe; not an architectural change set or architecture acceptance",
+    from change_review import review
+    return dict(comparison_status=status, purpose="Raw representation fidelity plus separate canonical-identity-first Change Review evidence; no architecture acceptance",
                 published_sha256=before.sha256, incoming_sha256=after.sha256, input_issues=issues,
                 classifications={k: counts[k] for k in CATEGORIES}, metrics={"published": before.metrics(), "incoming": after.metrics()},
                 elements=record_evidence(before.elements, after.elements, "element"),
                 relationships=record_evidence(before.relationships, after.relationships, "relationship"),
                 presentation=presentation, contract_properties=contract, findings=findings,
+                architectural_review=review(before, after, control),
                 empirical_archi_fidelity="UNRESOLVED: comparator alone does not authenticate an Archi execution; use the hash-pinned evidence procedure")
 
 
@@ -533,9 +549,10 @@ def main():
     audit.add_argument("--previous", type=Path, help="Optional earlier Exchange snapshot for observed immutable binding conflicts")
     audit.add_argument("--baseline-context", action="store_true", help="Read validated source naming context, established metadata and frozen EC bindings")
     audit.add_argument("--output", type=Path)
-    fidelity = commands.add_parser("compare", help="Same-representation no-edit fidelity probe")
+    fidelity = commands.add_parser("compare", help="Raw fidelity and canonical-identity-first Change Review evidence")
     fidelity.add_argument("--published", type=Path, required=True)
     fidelity.add_argument("--incoming", type=Path, required=True)
+    fidelity.add_argument("--control", type=Path, help="Explicit no-edit export of this baseline; isolate per-field transport observations from submitted changes")
     fidelity.add_argument("--output", type=Path)
     proof = commands.add_parser("verify-exports", help="Run both hash-pinned no-edit probes; absent exports remain an explicit gate")
     proof.add_argument("--manifest", type=Path, default=MANIFEST)
@@ -569,8 +586,8 @@ def main():
                       expected_incoming=str(args.incoming), empirical_archi_fidelity="UNRESOLVED")
         emit(report, args.output, [args.published, args.incoming])
         return 3
-    report = compare(Exchange(args.published), Exchange(args.incoming))
-    emit(report, args.output, [args.published, args.incoming])
+    report = compare(Exchange(args.published), Exchange(args.incoming), Exchange(args.control) if args.control else None)
+    emit(report, args.output, [args.published, args.incoming, *([args.control] if args.control else [])])
     return 0 if report["comparison_status"] == "EQUIVALENT" else 2
 
 

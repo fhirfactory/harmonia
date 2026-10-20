@@ -30,6 +30,47 @@ independent and SHALL NOT determine or change this release value.
 
 ## Mechanism and repository convention
 
+### Machinery-validation runs — 2026-10-20
+
+The Solution Architect explicitly establishes RAD-1.0.10 as the frozen baseline
+for Information Architecture machinery validation. Its published model and
+architect-authored submission are immutable regression specimens:
+
+```text
+docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml
+docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml
+```
+
+`run-001`, `run-002`, … are processing attempts against these same hash-pinned
+inputs. They are not RAD releases. Naming governance, machinery, tests, proposed
+models and evidence developed in this cycle SHALL NOT increment the RAD patch
+number or create RAD-1.1.0. This explicit bounded decision takes precedence over
+the general accepted-change patch rule for this cycle, including its supporting
+governance changes. Root `architecture-release.json` remains `1.0.10` with
+predecessor `1.0.9`; runs introduce no second release allocator.
+
+```text
+RAD-1.0.10 + immutable architect submission
+    → run-001 → review / machinery improvement → run-002 → …
+    → successful automation and real Archi round-trip proof
+    → Solution Architect acceptance → RAD-1.1.0
+```
+
+Allocate RAD-1.1.0 only at the explicitly accepted architectural transition after
+those gates; do not create its directories, release authority or publication now.
+Submitted semantics and regenerated metadata remain proposed until acceptance.
+No run performs general IA reconciliation or rewrites its input to pass tooling.
+
+Retain runs under
+`docs/archimate/processing/machinery-validation/information-architecture/run-NNN/`,
+outside publication-release directories. Each run retains input paths and byte/XML
+hashes, release authority, machinery/governance fingerprints, proposed metadata,
+candidate model, identity/rebinding evidence, unresolved findings and bounded
+verification results. Keep prior runs intact; a new attempt uses a new directory.
+Verification may replay an existing run read-only. Preserve before snapshots and
+explicit governance hash transitions where historical replay pins an earlier
+authority document; never rewrite old pins or baseline source captures.
+
 ### Explicit RAD-1.0.9 reconciliation decision — 2026-10-19
 
 The Solution Architect explicitly establishes the authorised 1.0.8 reconciliation

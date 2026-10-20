@@ -37,10 +37,7 @@ def name(model, key):
 
 
 def ancestry(model, key):
-    result = [key]
-    while result[0] in model.parents:
-        result.insert(0, model.parents[result[0]])
-    return result
+    return model.containment.ancestry(key)
 
 
 def detail_id(model, key):

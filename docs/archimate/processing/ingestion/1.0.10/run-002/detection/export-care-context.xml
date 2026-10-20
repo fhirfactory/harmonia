@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<item xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <label xml:lang="en">[Topic] Care</label>
+          <item>
+            <label xml:lang="en">[Topic] CareLocation</label>
+            <item identifierRef="id-02f975c032b549d4b7e951d0a427533a"/>
+          </item>
+          <item>
+            <label xml:lang="en">[Topic] Encounter</label>
+            <item identifierRef="id-bcfd7137c33f4255ad3780826a64b4c5"/>
+          </item>
+          <item>
+            <label xml:lang="en">[Topic] EncounterContext</label>
+            <item identifierRef="id-677d8b45df5a47efa21085a7fbfffe1a"/>
+          </item>
+          <item>
+            <label xml:lang="en">[Topic] EncounterProgression</label>
+            <item identifierRef="id-e5fda3f50b22419bbac4e39e6cadc416"/>
+          </item>
+          <item>
+            <label xml:lang="en">[Topic] Episode</label>
+            <item identifierRef="id-e2c9fed13a2840a3931c2990bfb76da5"/>
+          </item>
+          <item identifierRef="id-395f82a0d8664955b6f542d80de3f5b5"/>
+        </item>
+        

@@ -6,6 +6,22 @@ Start with a published Harmonia model, author architecture in Archi, and submit
 the completed iteration once for governed review. Continue from the next
 publication after adjudication, reconciliation and validation.
 
+## Round-trip engineering requests
+
+Use the [governed Round-Trip Engineering Praxis](../markdown/governance/archimate-round-trip-engineering-praxis.md)
+with Codex or Junie:
+
+> Model Updated. Please review and generate change-review.md.
+
+After adjudicating the resulting review:
+
+> change-review.md reviewed and updated. Apply directives.
+
+Identify the export or review only when provenance is ambiguous. The reviewed
+document is the architectural checkpoint; generation does not accept proposals.
+The framework supports governed agent execution with explicit capability limits,
+not an unattended reconciliation service.
+
 ## Quick-start
 
 1. Obtain the current applicable model from the [published package index](exchange/publish/README.md)

@@ -49,6 +49,10 @@ def active():
     from architecture_release import load_release, version_parts
     if SOURCE.exists():
         version = load_release()['version']
+        if version == '1.1.0':
+            # The explicit accepted release has its own amendment replay adapter;
+            # this frozen 54-element projection remains historical evidence.
+            return False
         g.require(version_parts(version) <= version_parts('1.0.10'),
                   'IA capture exists: explicitly review its carry-forward before a later publication')
         return version == '1.0.10'
@@ -68,8 +72,15 @@ def preserved_authority(relative, expected):
     if row is None:
         return False
     original = gzip.decompress((COMPLETION / 'before' / (Path(relative).name + '.gz')).read_bytes())
-    g.require(sha(original) == row['original_sha256'] == expected and
-              sha((m.ROOT / relative).read_bytes()) == row['current_sha256'],
+    current_digest = sha((m.ROOT / relative).read_bytes())
+    matches = current_digest == row['current_sha256']
+    if not matches:
+        # Explicit governance-only transition; old source pins/history stay exact.
+        # This is not a wildcard exemption for arbitrary live authority edits.
+        import governance_history
+        matches = governance_history.follows(m.ROOT, relative, row['current_sha256'], current_digest,
+                                              g.BASE / 'governance-transitions.json')
+    g.require(sha(original) == row['original_sha256'] == expected and matches,
               'IA adjudicated authority/history drift: ' + relative)
     return True
 

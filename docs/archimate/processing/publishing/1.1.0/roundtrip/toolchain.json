@@ -1,0 +1,15 @@
+{
+  "archi_version": "5.10.0",
+  "files_sha256": {
+    "/home/hunterm/Development/Tools/Archi/Archi": "d7d0a675a686ac013882b447420feb316b48dafbe4ecb9c1b36badafd47ae7b7",
+    "/home/hunterm/Development/Tools/Archi/Archi.ini": "d7242119e5b61123a67d2f4b6a0a24d02c51c76bbaf818a8cf2bf558bf8ff8c4",
+    "/home/hunterm/Development/Tools/Archi/plugins/com.archimatetool.editor_5.10.0.202608252016/META-INF/MANIFEST.MF": "2bcfffc39221cff75091f3b1bd61f8e2b6d6d1c11fb3f0292f50083058f2e599",
+    "/home/hunterm/Development/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange.commandline_5.10.0.202605271610.jar": "83ad0f08d525ab35f2a56fd8016a26d12301d5c796cd0fb7fdc6eda041496374",
+    "/home/hunterm/Development/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange_5.10.0.202607081558.jar": "7442b0a8ee987b26ea53c98ce040890cb7c18945771a5f364f470f03de295e1a",
+    "/home/hunterm/Development/Tools/Archi/plugins/com.archimatetool.jasperreports.commandline_5.10.0.202605271610.jar": "e7871d561a0f5548f3da414d0da79ee9c9c47325aacfe711ccc593b161320af9",
+    "/home/hunterm/Development/Tools/Archi/plugins/com.archimatetool.csv.commandline_5.10.0.202605271610.jar": "9d7a89dd3a9e89db15d7962b5b312022eb43f5ac409859def6fd7836b8c8b2bc",
+    "/home/hunterm/Development/Tools/Archi/plugins/com.archimatetool.commandline_5.10.0.202605271610.jar": "1842531db440847ae9adab2c22fdaccd544202773155553d7d1f5b3fa31949c8",
+    "/home/hunterm/Development/Tools/Archi/plugins/com.archimatetool.modelimporter.commandline_5.10.0.202605271610.jar": "b36e27f90805a673eb9b7994de78f3b869c747f81d4d849a78703c73d7ccf793",
+    "/home/hunterm/Development/Tools/Archi/plugins/com.archimatetool.reports.commandline_5.10.0.202605271610.jar": "fec6717bd0d403ffc97f9639c4bc7b1a7ac93463f726b3e98134d57a0a0fc697"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "standing": "Authorised machinery/naming governance only; no architecture acceptance",
+  "files": {
+    "docs/markdown/governance/canonical-identity-and-naming.md": {
+      "before_sha256": "ba2de5ad8bd7eb065ae6611a940f912d3345e67ceb7f0fa7514a5f1b0aee7bdb",
+      "snapshot": "canonical-identity-and-naming.md.gz",
+      "after_sha256": "b502e294dfbfdca629d5e0ba4ebeb658dc545f7467b199292b277f3129d326c5"
+    },
+    "docs/markdown/governance/architecture-release-policy.md": {
+      "before_sha256": "929491ffaceb702a09e47caf89ba4357b0c5c0a013d2ae0070670fd817af0c75",
+      "snapshot": "architecture-release-policy.md.gz",
+      "after_sha256": "2a06d4f59c274512fd6eb77ec6fc60dc7fbe2a02b0c221ed8e9a38b2800451d2"
+    },
+    "docs/markdown/governance/architecture-modelling-strategy.md": {
+      "before_sha256": "5d7f17691a1947f2d95b43a1a4ab2ab920e2a936fa47b46029ea526fa66b9abf",
+      "snapshot": "architecture-modelling-strategy.md.gz",
+      "after_sha256": "d64db47bd2e7063c773846b481dd643b1519fd175710afd6c16472e5b05eaa97"
+    },
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": {
+      "before_sha256": "7efcc219b3fad6bd685b1d4b91ff8e30e8f5f65d87b4b7bb762b39ec669670d5",
+      "snapshot": "archimate-ingestion-publication-semantics.md.gz",
+      "after_sha256": "40ec4e821ba82cba4d661876cf7278544ebba5c094a0db289582e75f74a934e5"
+    }
+  }
+}

@@ -1,0 +1,1484 @@
+{
+  "architectural_changes_introduced_by_transport": [],
+  "canonical_identity_and_owners": "EXACT_ALL_1394_INCLUDING_32_NEW_IDS",
+  "complete_authored_view_content": "EXACT",
+  "containment_self_folders": 993,
+  "element_authored_content": "EXACT",
+  "elements": 1394,
+  "exact_contract_properties": {
+    "archimateType": 1394,
+    "canonicalId": 1394,
+    "canonicalName": 1394,
+    "displayName": 1394,
+    "friendlyName": 1394,
+    "harmoniaType": 249
+  },
+  "export_gzip_sha256": "83b10ca8fdbaecfc1c734c68e1996b21f807c2347cab4bd78e627ad0f2ad5dee",
+  "exported_xml_sha256": "e5240af7986d8e4025c03ef4b451a7de4451ff561b5423613dd0698053b90816",
+  "folder_paths": "EXACT",
+  "held_classifications": "FOUR_UNCHANGED_UNRESOLVED_DATAOBJECTS",
+  "human_visual_acceptance": "PENDING_SOLUTION_ARCHITECT",
+  "navigation_item_ids_lost": 4717,
+  "published_sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1",
+  "raw_comparator_classifications": {
+    "INFORMATION LOSS": 4916,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "SEMANTIC DIFFERENCE": 0,
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 120,
+    "UNEXPLAINED DIFFERENCE": 2257
+  },
+  "raw_comparator_status": "DIFFERENCES",
+  "reference_paths": "EXACT",
+  "relationship_content": "EXACT",
+  "relationships": 1137,
+  "reordered_contexts": [
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Care"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Coordination"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Enterprise"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Equipment"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Individual"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Ordering"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Place"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Scheduling"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Service"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] TaskCompletion"
+    ],
+    [
+      "Application",
+      "InformationMap",
+      "[Topic] Workforce"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Community Health & Wellbeing"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Diagnostic, Therapeutic & Clinical Support Services"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Research & Innovation"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Population Health & Health-System Planning"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Client Administration"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Community Health & Wellbeing"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement"
+    ],
+    [
+      "Relations",
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Coordinated Activity & Interaction"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Coordinated Activity & Interaction",
+      "EC-10 Activity & Execution"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Governed Information Operations"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Governed Information Operations",
+      "EC-04 Information Management"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Trust, Accountability & Assurance"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Trust, Accountability & Assurance",
+      "EC-06 Policy & Control"
+    ],
+    [
+      "Strategy",
+      "Application Layer",
+      "Enterprise Capabilities",
+      "Trust, Accountability & Assurance",
+      "EC-07 Provenance & Traceability"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination",
+      "Care Access Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination",
+      "Care Coordination & Transition"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination",
+      "Care Scheduling & Capacity Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination",
+      "Care Support Logistics Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Care Access & Coordination",
+      "Service Delivery Preparedness Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Clinical Quality, Safety & Improvement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Clinical Quality, Safety & Improvement",
+      "Clinical Quality Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Clinical Quality, Safety & Improvement",
+      "Clinical Safety Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Community Health & Wellbeing"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Community Health & Wellbeing",
+      "Preventative Health"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Connected Health Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Connected Health Services",
+      "Health Information Exchange"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Corporate Resources & Enterprise Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Corporate Resources & Enterprise Services",
+      "Corporate Support Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Corporate Resources & Enterprise Services",
+      "Financial & Commercial Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Diagnostic, Therapeutic & Clinical Support Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Diagnostic, Therapeutic & Clinical Support Services",
+      "Diagnostic Support Provision"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Diagnostic, Therapeutic & Clinical Support Services",
+      "Medication & Pharmacy Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Information & Knowledge Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Information & Knowledge Management",
+      "Clinical Knowledge Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Information & Knowledge Management",
+      "Health Information Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Products & Clinical Technology"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Products & Clinical Technology",
+      "Clinical Technology Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Research & Innovation"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Research & Innovation",
+      "Health Innovation"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Research & Innovation",
+      "Research Information Support"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Assurance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Assurance",
+      "Assurance Evaluation"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Assurance",
+      "Health Service Assurance Specification"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Direction & Stewardship"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Direction & Stewardship",
+      "Health Service Alignment"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Direction & Stewardship",
+      "Health Service Modelling"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Governance",
+      "Compliance Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Health Service Governance",
+      "Governance Framework Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Clinical Determination"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Care Planning"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Care Review"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Health Assessment"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Health Monitoring"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Population Health & Health-System Planning"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Population Health & Health-System Planning",
+      "Health-System Planning"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Population Health & Health-System Planning",
+      "Population Health Surveillance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Security, Privacy & Digital Trust"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Security, Privacy & Digital Trust",
+      "Digital Accountability & Trust"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Security, Privacy & Digital Trust",
+      "Digital Identity & Access Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Security, Privacy & Digital Trust",
+      "Health Information Protection"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Standards, Semantics & Reference Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Standards, Semantics & Reference Governance",
+      "Clinical Semantics Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Standards, Semantics & Reference Governance",
+      "Health Information Standards Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Workforce & Organisational Capability"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Workforce & Organisational Capability",
+      "Health Workforce Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Capabilities",
+      "Workforce & Organisational Capability",
+      "Healthcare Organisation & Service Structure Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Care Plan Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Client-Centred Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Clinical Communication Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Clinical Record Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Diagnostic Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Episode & Encounter Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Medication Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Order Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Procedure Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Referral Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Scheduling Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Clinical Service Dependency Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Client Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Client Administration",
+      "Person Identity Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Clinical Device Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Health Materiel Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Health Service Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Location Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Organisation Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Provider Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Informatics Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Bed & Care-Place Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinic & Practice Operations"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Logistics Coordination"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Qualification Administration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Rostering"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Supervision"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Credential Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Discharge Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Emergency Department Operations"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Mobile Staff Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "On-Call Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Outpatient Operations"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Patient Transport"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Service Capacity Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Theatre Operations"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Ward Operations"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Work Allocation & Dispatch"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Independent Assurance Enablement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Independent Assurance Enablement",
+      "Assurance Service Review"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Independent Assurance Enablement",
+      "Assurance Specification"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Calendar Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Clinical Collaboration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Clinical Knowledge Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "General Collaboration"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Access"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Communication"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Control"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Exchange Enablement"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Information Asset Stewardship Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Information Content Maintainer Management"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Information Design Governance"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Patient Clinical Record"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Presentation Services"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Workflow & Activity Coordination"
+    ],
+    [
+      "Strategy",
+      "Business Layer",
+      "Business Enabling Capabilities",
+      "Unresolved Feature Ancestry"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Clinical Quality, Safety & Improvement"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Clinical Quality, Safety & Improvement",
+      "Clinical Quality Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Clinical Quality, Safety & Improvement",
+      "Clinical Safety Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Community Health & Wellbeing"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Community Health & Wellbeing",
+      "Preventative Health"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Clinical Determination"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Care Planning"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Care Review"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Health Assessment"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Capabilities",
+      "Individual Care Delivery",
+      "Individual Health Monitoring"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Care Plan Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Clinical Record Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Order Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Referral Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Care Administration Enablement",
+      "Scheduling Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Clinical Service Dependency Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Client Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Clinical Device Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Health Materiel Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Health Service Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Location Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Organisation Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Entity Information Enablement",
+      "Provider Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Informatics Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Bed & Care-Place Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinic & Practice Operations"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Logistics Coordination"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Qualification Administration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Rostering"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Clinical Supervision"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Credential Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Discharge Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Emergency Department Operations"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Mobile Staff Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "On-Call Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Outpatient Operations"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Patient Transport"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Service Capacity Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Theatre Operations"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Ward Operations"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Health Service Operations Enablement",
+      "Work Allocation & Dispatch"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Independent Assurance Enablement"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Independent Assurance Enablement",
+      "Assurance Service Review"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Independent Assurance Enablement",
+      "Assurance Specification"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Calendar Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Clinical Collaboration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Clinical Knowledge Services"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "General Collaboration"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Access"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Communication"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Control"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Health Information Exchange"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Information Asset Stewardship Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Information Content Maintainer Management"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Information Design Governance"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Patient Clinical Record"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Presentation Services"
+    ],
+    [
+      "Strategy",
+      "Unreconciled 1.0.4 Reference",
+      "Business Enabling Capabilities",
+      "Shared Information & Coordination Enablement",
+      "Workflow & Activity Coordination"
+    ]
+  ],
+  "scope": "Actual installed Archi 5.10 no-edit complete-model import/export; isolated configuration/workspace/keyring; no human visual acceptance",
+  "sibling_contexts_reordered": 215,
+  "status": "PASS",
+  "views": 1209,
+  "whole_xml_lossless": false
+}

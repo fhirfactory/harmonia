@@ -7,6 +7,12 @@ exchange package. Keep it lean: currently the Open Exchange XML alone. Reports,
 validation results, source history, inspection guides and verification evidence
 belong in [processing/publishing](../../processing/publishing/).
 
+- [RAD-1.1.0](1.1.0/Harmonia-Architecture-1.1.0.xml): current governed baseline,
+  promoting corrected Run-002 CR-001–154; 1,394 elements, 1,137 relationships
+  and 1,209 preserved Views. CR-155–158 remain unresolved and unchanged.
+  [Release authority and scope](../../../markdown/governance/baseline/release-1.1.0.json),
+  [publication evidence](../../processing/publishing/1.1.0/information-architecture-publication.md)
+  and [final Archi inspection](../../processing/publishing/1.1.0/archi-inspection-guide.md).
 - [RAD-1.0.10](1.0.10/Harmonia-Architecture-1.0.10.xml): initial IA element population,
   50 native BusinessObjects and 4 native DataObjects; [publication evidence](../../processing/publishing/1.0.10/information-population.md)
   and [Archi handoff](../../processing/publishing/1.0.10/archi-inspection-guide.md).

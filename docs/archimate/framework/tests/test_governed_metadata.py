@@ -148,9 +148,10 @@ class IdentityContractTests(unittest.TestCase):
         del topic['information_map']
         with self.assertRaisesRegex(ValueError, 'TOPIC requires'):
             m.qualified_names([topic])
-        with self.assertRaisesRegex(ValueError, 'Missing formal tier'):
-            m.qualified_names([dict(key='physical', type='Artifact', name='Practitioner Artefact')])
-        self.assertNotIn('Artifact', m.FORMAL)
+        self.assertEqual(dict(friendlyName='PractitionerFile', canonicalName='ARTIFACT-PractitionerFile'),
+                         m.qualified_names([dict(key='physical', type='Artifact', name='Practitioner File')]))
+        self.assertEqual(dict(friendlyName='Context', canonicalName='TOPIC-Context'),
+                         m.qualified_names([dict(key='topic', type='DataObject', name='Context', specialization='Topic')]))
         self.assertNotIn('ARTEFACT', m.FORMAL.values())
 
     def test_unadjudicated_digit_leading_name_stops_before_allocation(self):

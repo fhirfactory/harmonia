@@ -20,6 +20,19 @@ Native concepts retain their native semantics. Where a Harmonia definition has
 no faithful native representation, its representation requires an explicit
 modelling decision rather than a reinterpretation of a native concept.
 
+## Current round-trip containment clarification — 2026-10-20
+
+The Solution Architect's [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules)
+is the current type-selected containment authority. Home is the default;
+Composition applies to contained native Capability (including Feature),
+BusinessObject, DataObject (including Topic) and Artifact. Current/historical
+relationship selection precedes ancestry. This narrows the earlier cross-layer
+Composition and Business modelling-debt wording below. Missing Composition on
+Business behaviour is not a requirement to replace Home or create Composition.
+Earlier candidate naming/context decisions remain preserved replay evidence;
+they do not establish current containment. No relationship instance is accepted,
+converted or removed by this clarification.
+
 ## Explicit architectural Home
 
 Harmonia SHALL use a **directed ArchiMate Association specialised as `Home`** to
@@ -180,8 +193,12 @@ the unresolved property until the authored containment is accepted and ingested.
 Existing local-name rules apply only where their semantic inputs are sufficient;
 absence of an authored parent must not be treated as proof of a semantic root.
 The candidate's other identities, elements, relationships, Views, navigation and
-presentation are preserved. This decision authorises neither physical population
-nor an Artifact/ARTEFACT naming qualifier.
+presentation are preserved. This decision authorised neither physical population
+nor an Artifact/ARTEFACT naming qualifier. The
+[2026-10-20 naming decision](canonical-identity-and-naming.md#information-element-naming--machinery-validation-decision-2026-10-20)
+subsequently establishes `[BusinessObject]`, `[Topic]` and `[Artifact]` displays
+and `ARTIFACT` vocabulary for machinery validation, without physical population
+or architectural reconciliation. The original RAD-1.0.10 baseline remains frozen.
 
 **Solution Architect adjudication — existing Business modelling debt:** preserve
 the existing contextual names of the 323 Business behaviour elements without

@@ -10,6 +10,16 @@ registers, captured legacy fields and historical publication evidence retain the
 original meaning and values. AX-04, AX-14 and AX-17 apply: reuse existing machinery,
 preserve distinct semantic roles and retain missing authority explicitly.
 
+## Current containment interpretation — 2026-10-20
+
+The [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules)
+clarifies contextual resolution: Home by default; Composition for contained
+native Capability/Feature, BusinessObject, DataObject/Topic and Artifact.
+Current/historical relationship selection precedes ancestry. Earlier broad
+Composition wording is subject to that clarification; the Information naming
+rules below still use Composition because all their native types are exceptions.
+Canonical continuity and observable Exchange rebinding remain distinct.
+
 ## Architectural identity
 
 Every governed architectural **element/resource**, including retained historical,
@@ -47,7 +57,7 @@ Names are governed resource attributes; none establishes architectural identity.
 
 | Property | Meaning |
 | --- | --- |
-| `displayName` | Human-facing presentation name, with established formal qualification where applicable. Capability display names carry `[CT1]`, `[CT2]` or `[CT3]`; Features carry `[Feature]`. Every governed element's native ArchiMate `Name` SHALL equal this value. |
+| `displayName` | Human-facing presentation name, with established formal qualification where applicable. Capability display names carry `[CT1]`, `[CT2]` or `[CT3]`; Features carry `[Feature]`. Information elements use `[BusinessObject]`, `[Topic]` or `[Artifact]` as governed below. Every governed element's native ArchiMate `Name` SHALL equal this value. |
 | `friendlyName` | Developer-friendly qualified name. Every component is whitespace-free UpperCamelCase/PascalCase and omits formal architectural type/tier qualifiers. Only genuine governed context supplies `.` qualification. |
 | `canonicalName` | The same PascalCase components and context, with formal governed type/tier qualification on each component. |
 
@@ -145,7 +155,7 @@ The stop and subsequent decision are retained in the ingestion reconciliation au
 
 ### Information-object canonical-name vocabulary
 
-**Solution Architect adjudication — 2026-10-19, completion of unsigned
+**Historical Solution Architect adjudication — 2026-10-19, completion of unsigned
 RAD-1.0.10:** native ArchiMate `BusinessObject` representing a governed Harmonia
 conceptual/business information object uses the formal qualifier `BO`. Native
 ArchiMate `DataObject` representing governed Harmonia application/logical
@@ -167,8 +177,63 @@ preserve that unresolved property until containment is ingested; never manufactu
 context. IDs, Names and architectural meaning remain unchanged. The original
 absent-property stop and source allocation history
 remain preserved in the [completion evidence](../../archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/).
-No `Artifact` / `ARTEFACT` canonical-name qualifier is authorised. Physical
-Information Architecture representation and DataMap governance remain deferred.
+At that completion no `Artifact` / `ARTEFACT` canonical-name qualifier was
+authorised. The following decision supersedes its naming rules for subsequent
+processing; the RAD-1.0.10 capture and publication retain their historical suffixes
+and lexical components for exact baseline replay.
+
+### Information-element naming — machinery-validation decision, 2026-10-20
+
+The Solution Architect establishes these independent abstraction levels:
+
+| Abstraction | Native ArchiMate type and authored classification | Display convention | Canonical component qualifier |
+| --- | --- | --- | --- |
+| Business / Conceptual | `BusinessObject` | `[BusinessObject] ElementName` | `BO` |
+| Application / Logical | `DataObject` with one explicit `Specialization=Topic` (Exchange key `Specialization` or `specialization`) | `[Topic] ElementName` | `TOPIC` |
+| Technology / Physical | `Artifact` | `[Artifact] ElementName` | `ARTIFACT` |
+
+`[BusinessObject]` and `[Artifact]` repeat native types and establish no additional
+Harmonia subtype. Topic is an explicit Harmonia specialisation of DataObject;
+regenerate `harmoniaType=Topic` from that authored specialisation. An unclassified
+DataObject, folder, display prefix or stale `harmoniaType` alone SHALL NOT establish
+Topic. Unknown/multiple/incompatible authored specialisations or display qualifiers
+remain unresolved.
+
+The architectural local name is the native Name with the matching display prefix
+removed. For native BusinessObject only, remove the superseded terminal ` BO`:
+`Practitioner BO` becomes `[BusinessObject] Practitioner`, `Practitioner` and
+`BO-Practitioner` for displayName, local friendlyName and local canonicalName.
+Otherwise retain the words of an unqualified architectural Name; do not strip
+arbitrary suffixes or guess semantic spelling. Matching display qualifiers are
+omitted from lexical components. Prefix/suffix ambiguity, empty names and missing
+spelling authority stop dependent derivation. Existing PascalCase lexical rules
+apply; no new identity or word-equivalence rule is introduced.
+
+Only explicit native Composition parent → child supplies contextual ancestry.
+Apply each ancestor's qualifier to its own canonicalName component; friendlyName
+uses the same components without qualifiers. For example, `[Topic] Pragma` →
+Composition → `[Topic] Payload` yields `Pragma.Payload` and
+`TOPIC-Pragma.TOPIC-Payload`. No ancestor gives a local candidate, explicitly
+without asserting root completeness. Competing parents, duplicate assertions,
+cycles, missing endpoints or unestablished ancestor naming inputs stop dependent
+contextual properties; independent determinate properties may still be proposed.
+Aggregation, Specialization, Realization, Association, Grouping, folders and Views
+supply no naming ancestry.
+
+No BusinessObject, Topic or Artifact requires counterparts at the other levels.
+Artifact vocabulary authorises naming machinery, not physical population, DataMap
+reconciliation or cross-level mappings.
+
+Authored native type, Name, explicit specialisation and Composition take precedence
+over stale derived Properties. In machinery-validation runs, record submitted
+claims separately from proposed `displayName`, `friendlyName`, `canonicalName`,
+`archimateType` and applicable `harmoniaType` (including proposed removal of an
+inapplicable derived subtype). Preserve canonical identity claims and representation
+rebinding evidence. Never allocate missing canonical IDs in a run. Regeneration
+does not accept semantics, metadata or root status; accepted-source publication
+continues validating persisted fields without repair. The
+[run lifecycle](architecture-release-policy.md#machinery-validation-runs--2026-10-20)
+governs candidate standing and the release boundary.
 
 ## Legacy fields and types
 
@@ -182,7 +247,7 @@ provenance; no discarded field is silently reclassified into another alias chann
 
 `archimateType` records the native type independently of the opaque ID. Existing
 Feature specialisation uses native `Capability` and `harmoniaType=Feature`.
-No additional Harmonia semantic type is established by this contract.
+Topic specialisation is governed by the information-element decision above.
 
 ## Establishment, publication and history
 

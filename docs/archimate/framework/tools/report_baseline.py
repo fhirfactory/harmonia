@@ -23,6 +23,9 @@ if s.metadata.active():
     import information_population as ia
     if ia.active():
         REPORT, GUIDE = ia.REPORT, ia.GUIDE
+    import publish_information_release as information_release
+    if information_release.active():
+        REPORT, GUIDE = information_release.REPORT, information_release.GUIDE
 
 
 def render_establishment():
@@ -158,6 +161,8 @@ def validate_correction_preservation(b, root):
 
 
 def render():
+    if information_release.active():
+        return information_release.render_reports()
     if ia.active():
         return ia.render()
     if REPORT.name == 'reconciliation-publication.md':

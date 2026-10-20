@@ -7,6 +7,7 @@ it establishes neither identities, Homes, responsibility nor semantic containmen
 Establishment is explicit; ordinary validation/publication never repairs metadata.
 """
 import collections
+import containment
 import copy
 import gzip
 import hashlib
@@ -29,31 +30,12 @@ def model(root):
                                           for p in root.findall('a:relationships/a:relationship', g.N)})
 
 
-def ancestry(identifier, index, visiting=frozenset()):
-    """Read only recorded semantic context, including its unchanged standing."""
-    g.require(identifier not in visiting, 'Cyclic accepted Home ancestry: ' + identifier)
-    path, seen = [], set()
-    current = identifier
-    bykey = {item['record']['key']: key for key, item in index.items()}
-    while current is not None:
-        g.require(current in index and current not in seen,
-                  'Missing/cyclic Home ancestry: ' + str(current))
-        seen.add(current)
-        record = index[current]['record']
-        path.insert(0, current)
-        if 'naming_context' in record:
-            context = record['naming_context']
-            g.require(len(context) == len(set(context)) and not set(context) & seen and
-                      all(key in index for key in context), 'Invalid accepted Home ancestry: ' + current)
-            # The accepted capture supplies the complete semantic context, not a folder.
-            if context:
-                g.require(ancestry(context[-1], index, visiting | seen) == context, 'Inconsistent accepted Home ancestry')
-            path = [*context, *path]
-            break
-        key = record.get('owner_key') if record['type'] == 'feature' else record.get('parent_key')
-        g.require(key is None or key in bykey, 'Unestablished Home ancestry: ' + str(key))
-        current = bykey.get(key)
-    return path
+def ancestry(identifier, index, recorded=None):
+    """Replay the accepted naming context through the common ancestry engine."""
+    try:
+        return (containment.recorded_context(index) if recorded is None else recorded).ancestry(identifier)
+    except ValueError as exc:
+        raise g.PublicationError('Invalid Home ancestry: ' + str(exc)) from exc
 
 
 def feature_navigation(b, path, index):
@@ -74,26 +56,34 @@ def feature_navigation(b, path, index):
 
 def derive(b, root, index):
     """Recognise explicit assertions first. Presentation is never an input."""
+    resolved = containment.resolve(root)
     assertions = collections.defaultdict(list)
-    for edge in h.authored_homes(model(root)):
-        g.require(edge['source'] in index and edge['target'] in index, 'Invalid Home endpoint')
-        if index[edge['source']]['archimateType'] in h.BUSINESS.values():
-            assertions[edge['source']].append(edge)
+    for edge in resolved.selected.values():
+        if edge['mechanism'] != 'Home':
+            continue
+        g.require(edge['child'] in index and edge['parent'] in index, 'Invalid Home endpoint')
+        if index[edge['child']]['archimateType'] in h.BUSINESS.values():
+            resolved.parent_link(edge['child'])
+            assertions[edge['child']].append(edge)
     result = {}
     import recover_v02 as r
+    try:
+        recorded = containment.recorded_context(index)
+    except ValueError as exc:
+        raise g.PublicationError('Invalid Home ancestry: ' + str(exc)) from exc
     for source, edges in sorted(assertions.items()):
         g.require(len(edges) == 1, 'Multiple explicit Homes; adjudication required: ' + source)
         edge = edges[0]
-        target = index[edge['target']]
+        target = index[edge['parent']]
         g.require(target['harmoniaType'] == 'Feature' and target['archimateType'] == 'Capability',
                   'Invalid explicit Home target: ' + source)
-        path = ancestry(edge['target'], index)
+        path = ancestry(edge['parent'], index, recorded)
         g.require(all(index[key]['record']['type'] in ('capability', 'enterprise_capability') for key in path[:-1]),
                   'Invalid governed Feature ancestry: ' + source)
         record = index[source]['record']
         names = m.qualified_names([*[index[key]['record'] for key in path], record])
         result[source] = dict(source_key=record['key'], canonicalId=record['canonicalId'],
-                              home_relationship=edge['identifier'], home=edge['target'],
+                              home_relationship=edge['identifier'], home=edge['parent'],
                               semantic_context=path, **names,
                               navigation_path=[*feature_navigation(b, path, index), r.BEHAVIOURS[record['type']]])
     return result

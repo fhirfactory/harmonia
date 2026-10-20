@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "candidate_xml_sha256": "541219c023d2cd507d591e81df9a0a82fbf1c8f4d324448a02bc476e00c3e59a",
+  "candidate_bytes": 22336985,
+  "final_serialized_care_encounter": {
+    "status": "PASS",
+    "care_folder": "workspace-04179944a6c610d6a759c58485418bdd",
+    "care_reference": "id-395f82a0d8664955b6f542d80de3f5b5",
+    "encounter_folder": "workspace-f4d00a368ac3353024faed824799b563",
+    "encounter_reference": "id-bcfd7137c33f4255ad3780826a64b4c5",
+    "care_direct_references": [
+      "id-395f82a0d8664955b6f542d80de3f5b5"
+    ],
+    "encounter_direct_references": [
+      "id-bcfd7137c33f4255ad3780826a64b4c5"
+    ]
+  },
+  "element_navigation": {
+    "total_folders": 1349,
+    "references": 1394,
+    "containment_participants": 993,
+    "contained_leaf_folders": 691,
+    "context_and_role_folders": 1317
+  },
+  "relationship_navigation": {
+    "status": "EXACT_MATCH",
+    "signature_sha256": "8d56e03718583b7590293f0357f209d365d676f8f379c150a72ff5d9fc3b398b",
+    "serialized_subtree_sha256": "712b43d6c558adc526b184b74b662cdfd69b5796fd0f1e578c1ab5216ad3e7be"
+  },
+  "view_navigation": {
+    "status": "EXACT_MATCH",
+    "signature_sha256": "628c04614899102fce3f5b9840258364a52df7d8cc1d9b19616e79eb1fb0b20b",
+    "serialized_subtree_sha256": "5edd5a52016d3aafa7fccad5dd2c7d844b43f73839c1d5606d8912c019bedbf2"
+  },
+  "views": {
+    "count": 1209,
+    "status": "EXACT_MATCH",
+    "signature_sha256": "7884117cd23076e1c21e69a886287e642e6ab76675a0767619e21488d05c146b",
+    "serialized_subtree_sha256": "ddca4418ecb85bb73c67a4b1442ddecf17c43f9bcafe73a0edd489a225e28dc7"
+  },
+  "containment_resolver_standing_and_collection_policy": "BYTE_IDENTICAL",
+  "naming_types_specialisation_identities_and_protected_content": "UNCHANGED",
+  "metadata_containment_and_rebinding_evidence": "BYTE_IDENTICAL",
+  "counterfactuals": [
+    {
+      "generated_element_references": 1394,
+      "input_element_relationship_navigation": "ABSENT",
+      "protected_content": "UNCHANGED",
+      "regenerated_organisation": "EXACT_MATCH"
+    },
+    {
+      "generated_element_references": 1394,
+      "input_element_relationship_navigation": "MISLEADING",
+      "protected_content": "UNCHANGED",
+      "regenerated_organisation": "EXACT_MATCH"
+    }
+  ],
+  "verified_before_archive_files": 180,
+  "history_archives": {
+    "pre-contained-leaf-correction": 180,
+    "pre-contained-leaf-regression-completion": 97,
+    "pre-containment-correction": 130,
+    "pre-context-completion": 92,
+    "pre-element-projection-correction": 120,
+    "pre-view-navigation-guard": 93
+  },
+  "generated_outputs": 95,
+  "machinery_sources": 88,
+  "frozen_files": 28,
+  "release_created": false,
+  "archi_import": "PENDING_SOLUTION_ARCHITECT",
+  "architect_acceptance": "NOT_RECORDED"
+}

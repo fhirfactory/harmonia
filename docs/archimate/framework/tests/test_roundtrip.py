@@ -80,8 +80,9 @@ class RoundtripTests(unittest.TestCase):
         self.value().text, self.value(element="test-feature").text = self.value(element="test-feature").text, self.value().text
         report = d.diagnose(self.incoming(), previous=self.before)
         findings = report["canonical_id"]["continuity_findings"]
-        self.assertEqual(4, len(findings))
+        self.assertEqual(2, len(findings))
         self.assertTrue(any("POSSIBLE REUSE" in f["finding"] for f in findings))
+        self.assertEqual(2, len(report['canonical_id']['representation_rebindings']))
 
     def test_naming_roles_remain_independent_and_display_conflict_is_visible(self):
         report = d.diagnose(self.before)
@@ -301,6 +302,9 @@ class AcceptedBaselineDiagnosticTests(unittest.TestCase):
         report = d.diagnose(model, context=context, registry=json.loads(d.REGISTRY.read_text()))
         import information_population as ia
         extra = len(ia.load()['elements']) if ia.active() else 0
+        import publish_information_release as information_release
+        if information_release.active():
+            extra = 86  # 54 original IA instances plus 32 accepted additions.
         # Expected accepted fixture counts are regression assertions; all report
         # values are computed from XML/source indexes, not from these constants.
         self.assertEqual("PASS", report["audit_status"])

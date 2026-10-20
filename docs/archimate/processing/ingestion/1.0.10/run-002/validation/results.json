@@ -1,0 +1,50 @@
+{
+  "acceptable_residual_treatment": "UNRESOLVED",
+  "archi_export_provenance": "User-provided Run-002 Archi round-trip export; no independent execution attestation inferred.",
+  "architectural_acceptance": "NOT_RECORDED",
+  "architectural_mutations": 0,
+  "architecture_tests": {
+    "command": "timeout --signal=TERM --kill-after=5s 300s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "errors": 0,
+    "failures": 0,
+    "maven_seconds": 17.973,
+    "skipped": 0,
+    "status": "PASS",
+    "tests": 90
+  },
+  "authenticated_archi_version_operator_profile": "UNRESOLVED",
+  "canonical_ids_allocated": 0,
+  "change_requests": {
+    "disposition": "On-Hold",
+    "inherited_proposed_changes": 154,
+    "instruction": "Not authorised",
+    "outcome": "Unresolved",
+    "processing": "Not yet processed",
+    "total": 158,
+    "unchanged_classification_findings": 4
+  },
+  "content_audit_replay": {
+    "command": "timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/processing/ingestion/1.0.10/run-002/validation/observe-content.py --check",
+    "development_failures": [
+      "Raw Views signature retained rekeyed Property definition IDs; corrected to existing exact-key-resolved signature.",
+      "In-memory tuple vs JSON-array comparison in audit replay; corrected JSON-domain equality."
+    ],
+    "evidence_or_framework_mutation_for_corrections": false,
+    "status": "PASS"
+  },
+  "date": "2026-10-20",
+  "exact_xml_navigation_preservation": "FAIL",
+  "release_authority": {
+    "previous_version": "1.0.9",
+    "version": "1.0.10"
+  },
+  "release_created": false,
+  "review": "ingestion/1.0.10/run-002",
+  "run_replay": {
+    "command": "timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/framework/tools/information_workspace_run.py --check",
+    "status": "PASS"
+  },
+  "semantic_and_view_content": "PASS",
+  "stalls": 0,
+  "timeouts": 0
+}

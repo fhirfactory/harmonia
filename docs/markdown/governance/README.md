@@ -98,3 +98,8 @@ governs canonical element/relationship navigation homes, independent subject hie
 progressive Views. The [Release 1.0.4 report](../../archimate/processing/publishing/1.0.4/navigation-release-report.md)
 records its navigation-only application to existing capabilities and the human
 Archi inspection gate. The 1.0.3 identity report above remains historical.
+
+The [Harmonia ArchiMate Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md)
+is the two-trigger processing entry for Codex and Junie. It identifies the Change
+Review and directive/application checkpoints, reusable tools, current containment
+rules, navigation regeneration, View preservation and run/release boundaries.

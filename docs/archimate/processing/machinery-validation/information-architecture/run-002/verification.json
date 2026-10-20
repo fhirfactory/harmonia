@@ -1,0 +1,107 @@
+{
+  "archi_import": "PENDING_SOLUTION_ARCHITECT_INSPECTION",
+  "archi_roundtrip": "NOT_PERFORMED",
+  "architect_acceptance": "NOT_RECORDED",
+  "candidate_standing": "PROPOSED_NOT_ACCEPTED",
+  "candidate_xml_sha256": "541219c023d2cd507d591e81df9a0a82fbf1c8f4d324448a02bc476e00c3e59a",
+  "canonical_ids_allocated": 0,
+  "collection_sources_sha256": {
+    "docs/markdown/governance/baseline/accepted-ingestion-1.0.8.json": "4f1a5b08882193e8c66d7e0ac815f4c23a6afb2b11ea420bae37f4b1b1dc4b37",
+    "docs/markdown/governance/baseline/architecture.json": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+    "docs/markdown/governance/baseline/motivation.json": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+  },
+  "containment": {
+    "current_ambiguities": [],
+    "excluded_historical": 121,
+    "policy": "harmonia-type-selected-containment-v1"
+  },
+  "documentation": "UNCHANGED_CLEANUP_DEFERRED",
+  "element_generation_proof": {
+    "cases": [
+      {
+        "generated_element_references": 1394,
+        "input_element_relationship_navigation": "ABSENT",
+        "protected_content": "UNCHANGED",
+        "regenerated_organisation": "EXACT_MATCH"
+      },
+      {
+        "generated_element_references": 1394,
+        "input_element_relationship_navigation": "MISLEADING",
+        "protected_content": "UNCHANGED",
+        "regenerated_organisation": "EXACT_MATCH"
+      }
+    ],
+    "immutable_input_modified": false,
+    "status": "PASS",
+    "view_navigation_sha256": "863be1b0b47f7e273c1d5b9a9353c180eea6f1340748cb5b94875313531670ca",
+    "views_sha256": "7884117cd23076e1c21e69a886287e642e6ab76675a0767619e21488d05c146b"
+  },
+  "naming": {
+    "absent_identity": 32,
+    "canonical_ids_allocated": 0,
+    "classifications": {
+      "BusinessObject": 12,
+      "Topic": 70,
+      "UNRESOLVED": 4
+    },
+    "contextual": 59,
+    "fully_derived": 82,
+    "information_elements": 86,
+    "metadata_changes": {
+      "archimateType": 38,
+      "canonicalName": 82,
+      "displayName": 80,
+      "friendlyName": 82,
+      "harmoniaType": 70
+    },
+    "native_types": {
+      "BusinessObject": 12,
+      "DataObject": 74
+    },
+    "preserved_identity": 54,
+    "unresolved": 4
+  },
+  "naming_preservation": {
+    "authored_types_specializations_composition_views_navigation_documentation": "UNCHANGED",
+    "canonical_identity_claims": "UNCHANGED",
+    "exact_allowlist_preservation": "PASS",
+    "representation_ids": "UNCHANGED",
+    "xsd": "PASS"
+  },
+  "navigation": {
+    "composition_roots": 149,
+    "contained_elements": 844,
+    "contained_leaf_contexts": 691,
+    "containment_participant_elements": 993,
+    "element_context_folders": 1317,
+    "maximum_composition_depth": 4,
+    "non_contained_elements": 401,
+    "projected_elements": 1394,
+    "projected_without_canonical_identity": 32,
+    "relationship_mirror_folders": 538,
+    "relationship_references": 1137,
+    "relationship_source_contexts": 493
+  },
+  "population": {
+    "canonical_matches": 1362,
+    "deleted": 0,
+    "evolved": 38,
+    "new": 32,
+    "representation_only_matches": 0,
+    "representation_rebindings": 38,
+    "unchanged": 1324,
+    "unresolved_baseline": 0,
+    "unresolved_incoming": 0
+  },
+  "release_created": false,
+  "semantic_changes": 0,
+  "status": "PASS",
+  "workspace": {
+    "actual_source_navigation": "PASS",
+    "composition_navigation": "PASS",
+    "exact_regeneration": "PASS",
+    "protected_content": "PASS",
+    "unique_navigation_references": "PASS",
+    "views_and_view_navigation": "UNCHANGED"
+  }
+}

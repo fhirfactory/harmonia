@@ -1,0 +1,35 @@
+{
+  "files": {
+    "AGENTS.md": {
+      "after_sha256": "9b32d26bb1f0ebd62912fe095125f344c75b8d211f36187e9cef9881db9ebaab",
+      "before_sha256": "df693d4b012f8b94e595641f0e04494a683e6382e771b5398d730ecaee685411",
+      "snapshot": "AGENTS.md.gz"
+    },
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": {
+      "after_sha256": "203123a56d95173a87db59f49552cb9fce08b5648fe51ab3d0a61c54d26af0e2",
+      "before_sha256": "740d433146bca5ee06e066f07b8649e7ca49c42490583b0017293b9a8e1280d8",
+      "snapshot": "archi-navigation-and-view-convention.md.gz"
+    },
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": {
+      "after_sha256": "eaf9521a084ad88f58ea756b77b68166971418885c2316b0eb5b29cb62d0efe5",
+      "before_sha256": "40ec4e821ba82cba4d661876cf7278544ebba5c094a0db289582e75f74a934e5",
+      "snapshot": "archimate-ingestion-publication-semantics.md.gz"
+    },
+    "docs/markdown/governance/architecture-authoring-praxis.md": {
+      "after_sha256": "87a56bf28ea688e75f76d5cbb13f1ae9c439463fa5628627629c9c8d1cf2a668",
+      "before_sha256": "3872a5ff3c0c49ab3929ea0d111edea2008b438ae568d1c1bae7c795581777dc",
+      "snapshot": "architecture-authoring-praxis.md.gz"
+    },
+    "docs/markdown/governance/architecture-modelling-strategy.md": {
+      "after_sha256": "a69e1340925abc118df729835ffa3b2362e334b013ea95c9a3646b78169273e8",
+      "before_sha256": "d64db47bd2e7063c773846b481dd643b1519fd175710afd6c16472e5b05eaa97",
+      "snapshot": "architecture-modelling-strategy.md.gz"
+    },
+    "docs/markdown/governance/canonical-identity-and-naming.md": {
+      "after_sha256": "7abe49de099ca4b82788a6a882df687ffda0a99bf314de0841f1e6188b42fabe",
+      "before_sha256": "b502e294dfbfdca629d5e0ba4ebeb658dc545f7467b199292b277f3129d326c5",
+      "snapshot": "canonical-identity-and-naming.md.gz"
+    }
+  },
+  "standing": "Authorised reusable Praxis clarification only; no architecture acceptance or RAD release"
+}

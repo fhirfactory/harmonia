@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<item xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="workspace-04179944a6c610d6a759c58485418bdd">
+          <label xml:lang="en">[Topic] Care</label>
+          <item identifier="workspace-1bb481e1b485b626981c12b72f913c75" identifierRef="id-395f82a0d8664955b6f542d80de3f5b5"/>
+          <item identifier="workspace-8f047b193d6f1099e7dfd4fd86034e55">
+            <label xml:lang="en">[Topic] CareLocation</label>
+            <item identifier="workspace-f6d3fa6b2f1c60d2b8ae1ddad0936b4a" identifierRef="id-02f975c032b549d4b7e951d0a427533a"/>
+          </item>
+          <item identifier="workspace-f4d00a368ac3353024faed824799b563">
+            <label xml:lang="en">[Topic] Encounter</label>
+            <item identifier="workspace-497fb9c911552088b0d6e00cf0be7bcc" identifierRef="id-bcfd7137c33f4255ad3780826a64b4c5"/>
+          </item>
+          <item identifier="workspace-40bd33a25e84c1944fa94cbc7213103c">
+            <label xml:lang="en">[Topic] EncounterContext</label>
+            <item identifier="workspace-bd39b77189ded4ca84a59ae67e6c967d" identifierRef="id-677d8b45df5a47efa21085a7fbfffe1a"/>
+          </item>
+          <item identifier="workspace-702a02e84738ea21986bb42e0487ffc6">
+            <label xml:lang="en">[Topic] EncounterProgression</label>
+            <item identifier="workspace-e88f1d1af63fe658fada56c6f2f48681" identifierRef="id-e5fda3f50b22419bbac4e39e6cadc416"/>
+          </item>
+          <item identifier="workspace-11b620888331bc77d1a653b316d9dc9c">
+            <label xml:lang="en">[Topic] Episode</label>
+            <item identifier="workspace-b15344c98a7dc9a22638605e800b82b4" identifierRef="id-e2c9fed13a2840a3931c2990bfb76da5"/>
+          </item>
+        </item>

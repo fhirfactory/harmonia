@@ -30,6 +30,15 @@ boundaries. Detailed governance remains in its existing contracts:
 | 2A | How are submitted architectural changes reviewed and authorised? | [Executable Ingestion Change Review](archimate-ingestion-change-review.md), including dispositions, instructions, dependencies and processing evidence. |
 | 2B | How are authorised architectural changes interpreted, represented, organised and published? | [Ingestion and Publication Semantics](archimate-ingestion-publication-semantics.md). |
 
+## Reusable engineering mechanism — 2026-10-20
+
+The [ArchiMate Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md)
+now establishes the repository-discoverable engineering stages, two-trigger
+vocabulary, review/application checkpoints and framework responsibilities for
+this lifecycle. Its current containment and submitted-View preservation rules
+qualify older general wording below. This is governed agent execution through
+shared tools; historical bounded reconcilers are not a universal automatic engine.
+
 ## Working model and representations
 
 **The Harmonia repository is the governed architecture system of record.**

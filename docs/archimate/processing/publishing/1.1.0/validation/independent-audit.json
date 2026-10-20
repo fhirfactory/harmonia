@@ -1,0 +1,44 @@
+{
+  "accepted_crs": 154,
+  "architecture_release": {
+    "previous_version": "1.0.10",
+    "version": "1.1.0"
+  },
+  "architecture_transport": "PASS",
+  "authorised_textual_amendments": [
+    "docs/archimate/exchange/publish/README.md",
+    "docs/markdown/governance/baseline/information-architecture.md"
+  ],
+  "canonical_ids_allocated_by_promotion": 0,
+  "checked_local_links": 223,
+  "counts": {
+    "element_types": {
+      "Assessment": 5,
+      "BusinessFunction": 160,
+      "BusinessObject": 12,
+      "BusinessProcess": 21,
+      "BusinessService": 142,
+      "Capability": 842,
+      "Constraint": 3,
+      "DataObject": 74,
+      "Driver": 10,
+      "Goal": 9,
+      "Outcome": 3,
+      "Principle": 25,
+      "Product": 4,
+      "Requirement": 74,
+      "Stakeholder": 10
+    },
+    "elements": 1394,
+    "relationships": 1137,
+    "views": 1209
+  },
+  "frozen_and_existing_files_unchanged": 1714,
+  "held_crs_unchanged": 4,
+  "model_sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1",
+  "new_canonical_ids_from_persisted_source": 32,
+  "new_machinery_runs_or_restructured_paths": 0,
+  "status": "PASS",
+  "unexpected_element_relationship_view_differences": 0,
+  "visual_inspection": "PENDING_SOLUTION_ARCHITECT"
+}

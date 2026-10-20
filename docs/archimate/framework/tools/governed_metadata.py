@@ -32,7 +32,7 @@ FIELDS = ROLES[:4]
 SOURCE_FIELDS = (*FIELDS, 'nameComponent', 'nameComponentAuthority')
 UUID32 = re.compile(r'[0-9a-f]{32}\Z')
 FORMAL = {'feature': 'FEAT', 'function': 'FN', 'service': 'SV', 'process': 'PR',
-          'product': 'PRODUCT', 'BusinessObject': 'BO'}
+          'product': 'PRODUCT', 'BusinessObject': 'BO', 'Artifact': 'ARTIFACT'}
 
 
 def encoded(value):
@@ -140,11 +140,11 @@ def historical_records(b):
     records = []
     ids = {e.get('identifier') for e in root.findall('a:elements/a:element', g.N)
            if e.get(g.TYPE) == 'Capability' and e.get('identifier') not in b.byid}
-    parents = collections.defaultdict(list)
-    for edge in root.findall('a:relationships/a:relationship', g.N):
-        if edge.get(g.TYPE) == 'Composition' and edge.get('target') in ids:
-            g.require(edge.get('source') in ids, 'Historical context crosses an unestablished binding')
-            parents[edge.get('target')].append(edge.get('source'))
+    import containment
+    resolved = containment.resolve(root)
+    parents = {identifier: resolved.ancestry(identifier)[:-1] for identifier in ids}
+    for path in parents.values():
+        g.require(set(path) <= ids, 'Historical context crosses an unestablished binding')
     categories = {'Business Capability': 'business', 'Business Enabling Capability': 'business_enabling'}
     for element in root.findall('a:elements/a:element', g.N):
         identifier = element.get('identifier')
@@ -153,7 +153,7 @@ def historical_records(b):
         props = collections.defaultdict(list)
         for prop in element.findall('a:properties/a:property', g.N):
             props[definitions[prop.get('propertyDefinitionRef')]].extend(v.text for v in prop.findall('a:value', g.N))
-        g.require(len(parents[identifier]) <= 1, 'Multiple historical responsibility parents')
+        g.require(len(resolved.incoming.get(identifier, [])) <= 1, 'Multiple historical responsibility parents')
         g.require(len(props['Capability Tier']) == len(props['Harmonia Architecture Layer']) == 1,
                   'Missing/ambiguous historical tier/category: ' + identifier)
         tier = props['Capability Tier'][0]
@@ -161,7 +161,7 @@ def historical_records(b):
         records.append(dict(key='historical-reference:' + identifier, representationId=identifier,
                             name=element.findtext('a:name', namespaces=g.N), type='capability', tier=tier,
                             category=categories[props['Harmonia Architecture Layer'][0]],
-                            parent_key=('historical-reference:' + parents[identifier][0]) if parents[identifier] else None,
+                            parent_key=('historical-reference:' + parents[identifier][-1]) if parents[identifier] else None,
                             record_state='historical_reference',
                             source='Accepted Release 1.0.6 historical resource; no RAD identity crosswalk adopted'))
     return records
@@ -170,8 +170,8 @@ def historical_records(b):
 def formal_qualifier(record):
     """The governed naming vocabulary, independently of identity or ancestry."""
     if record['type'] == 'DataObject':
-        g.require(record.get('information_map') is True,
-                  'TOPIC requires established logical information in InformationMap')
+        g.require(record.get('information_map') is True or record.get('specialization') == 'Topic',
+                  'TOPIC requires established InformationMap capture or explicit Topic specialization')
         return 'TOPIC'
     if record['type'] in FORMAL:
         return FORMAL[record['type']]
@@ -206,17 +206,17 @@ def descriptors(b, source, motivation):
               'Historical resource source/type/context drift')
     historical_keys = {e['key']: e for e in historical}
 
+    # Replay the persisted capture's original context contract. This is archival
+    # naming provenance, not a fallback assertion of current native containment.
+    import containment
+    def context_graph(population):
+        return containment.recorded_context({key: dict(record=row) for key, row in population.items()},
+            pointer=lambda r: r.get('parent_key') if r['type'] in ('capability', 'enterprise_capability')
+                              else r.get('owner_key'), accepted_context=False)
+    graphs = {id(population): context_graph(population) for population in (bykey, historical_keys)}
+
     def chain(record, population):
-        path, seen = [], set()
-        current = record
-        while current:
-            g.require(current['key'] not in seen, 'Cyclic governed naming context')
-            seen.add(current['key'])
-            path.insert(0, current)
-            key = current.get('owner_key') if current['type'] not in ('capability', 'enterprise_capability') else current.get('parent_key')
-            g.require(key is None or key in population, 'Unestablished naming context: ' + str(key))
-            current = population.get(key)
-        return path
+        return [population[key] for key in graphs[id(population)].ancestry(record['key'])]
 
     def add(identifier, record, path, native_type, motivation_record=False):
         g.require(identifier not in result, 'Multiple source owners for representation: ' + identifier)

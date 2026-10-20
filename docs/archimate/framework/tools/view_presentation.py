@@ -14,6 +14,7 @@ import json
 import math
 
 import generate_views as g
+import containment
 import governed_metadata as m
 from architecture_release import load_release
 
@@ -157,13 +158,11 @@ def containment_candidates(b, root, protected):
     """
     index = b.home_context_index
     accepted = b.reconciliation
-    relationship_ids = {row['identifier'] for row in b.crosswalk['relationships']
-                        if row['record_state'] == 'current'}
-    relationship_ids.update(row['representationId'] for row in accepted['relationships'])
+    resolved = containment.resolve(root, records=b.crosswalk['relationships'],
+        accepted=[row['representationId'] for row in accepted['relationships']], include_proposals=False)
     element_ids = {key for key, item in index.items() if item['record'].get('record_state') == 'current'}
     element_ids.update(row['representationId'] for row in accepted['elements'])
     elements = {e.get('identifier'): e for e in root.findall('a:elements/a:element', g.N)}
-    edges = root.findall('a:relationships/a:relationship', g.N)
     eligible, oversized = {}, []
     for vid, declaration in b.landscapes.items():
         context = declaration['context']
@@ -172,10 +171,10 @@ def containment_candidates(b, root, protected):
         source = b.ids[context]
         if source not in element_ids or elements[source].get(g.TYPE) != 'Capability':
             continue
-        direct = {e.get('identifier'): e.get('target') for e in edges
-                  if e.get('identifier') in relationship_ids and e.get(g.TYPE) == 'Composition'
-                  and e.get('source') == source and e.get('target') in element_ids
-                  and elements[e.get('target')].get(g.TYPE) == 'Capability'}
+        direct = {key: edge['child'] for key, edge in resolved.selected.items()
+                  if edge['mechanism'] == 'Composition' and edge['parent'] == source
+                  and edge['child'] in element_ids
+                  and elements[edge['child']].get(g.TYPE) == 'Capability'}
         if not direct or vid in protected:
             continue
         g.require(len(direct) == len(set(direct.values())), 'Duplicate direct Composition child: ' + vid)

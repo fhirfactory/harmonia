@@ -1,0 +1,1 @@
+FAIL — read-only audit replay compared in-memory tuple tokens against JSON arrays. Corrected comparison normalises the in-memory evidence through JSON before equality. Evidence bytes, semantic checks, input models, release and shared framework remain unchanged.

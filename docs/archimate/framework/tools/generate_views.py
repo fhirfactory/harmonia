@@ -192,20 +192,13 @@ class Model:
                     f"Unresolved semantic relationship endpoint: {key}")
             require(self.layer(source) == self.layer(target),
                     f"Cross-layer Composition needs explicit presentation handling: {key}")
-            require(target not in self.parents,
-                    f"Multiple Composition parents need explicit presentation handling: {target}")
-            self.parents[target] = source
+        # The bounded reader retains its type/layer contract; ancestry is shared.
+        import containment
+        self.containment = containment.resolve(root)
+        self.containment.paths()
+        self.parents = {key: links[0]['parent'] for key, links in self.containment.incoming.items()}
+        for target, source in self.parents.items():
             self.children[source].append(target)
-        # Walk from existing roots, detecting cycles without filling missing ancestry.
-        reached = set()
-        def visit(key):
-            require(key not in reached, f"Cyclic Composition hierarchy: {key}")
-            reached.add(key)
-            for c in self.children[key]:
-                visit(c)
-        for key in self.elements.keys() - self.parents.keys():
-            visit(key)
-        require(len(reached) == len(self.elements), "Cyclic Composition hierarchy has no root")
 
     def layer(self, key):
         return self.properties[key]["prop-layer"]

@@ -40,6 +40,15 @@ authority. Existing [identity and naming](canonical-identity-and-naming.md),
 their respective roles. A review cannot override higher authority; a conflict
 SHALL be recorded and raised before dependent execution.
 
+## Praxis entry and checkpoints
+
+The [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md)
+activates this contract from “Model Updated. Please review and generate
+change-review.md.” and consumes the reviewed document from “change-review.md
+reviewed and updated. Apply directives.” The first produces a human checkpoint;
+the second authorises only its unambiguous reviewed directives under this
+contract, with pinned applicability and preserved decision history.
+
 ## Lifecycle and transaction boundary
 
 ```text
