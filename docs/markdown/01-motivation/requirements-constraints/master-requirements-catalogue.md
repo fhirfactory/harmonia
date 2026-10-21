@@ -4,6 +4,14 @@
 
 The **Master Requirements Navigation & Traceability Catalogue** serves as the repository-wide index connecting platform motivation, architectural axioms, and downstream requirements across all architecture domains.
 
+The RAD-1.1.2 [common governance adoption](../../../../enterprise-architecture/governance/architecture-governance.md#governance-and-architectural-knowledge)
+qualifies prospective Domain13 governance/navigation statements in this catalogue.
+Domain13 is not the EA master catalogue. Governance machinery, rules and context
+belong in `enterprise-architecture/governance/` and do not require continuum or
+ArchiMate counterparts. Genuine Enterprise/Solution Architecture follows its
+applicable architectural classification. This navigation amendment reclassifies
+no requirement, allocates no new domain responsibility and performs no migration.
+
 ### Scope & Architectural Authority
 - **Domain 01 Ownership**: Domain 01 owns the five cross-cutting [Foundational Platform Requirements](foundational-requirements.md) (`REQ-FND-001` through `REQ-FND-005`), the three generalized external constraint categories (`CST-EXT-001` through `CST-EXT-003`), and this master navigation catalogue. The original four requirements retain Accepted status; `REQ-FND-005` is **APPROVED**, the authorised Independent Assurance reconciliation is **APPROVED / CLOSED**, and Domain01 is again **CLOSED / FROZEN**, as recorded in the [reconciliation record](../reviews/independent-assurance-reconciliation.md).
 - **Downstream Ownership**: Detailed, subsystem-specific requirements remain strictly owned by their respective downstream architecture domains (Domain 04 Information, Domain 05 Application, Domain 06 Integration, Domain 08 Security, Domain 11 Solution Packs, Domain 13 Governance). Downstream requirements are marked `Candidate` until their owning architecture domains undergo formal canonical reconciliation.
@@ -67,4 +75,4 @@ Domain 01 Motivation establishes the bedrock upon which subsequent architecture 
 - **Domain 06 (Integration Architecture)**: Realizes `REQ-FND-001` (Durable Ingress Acceptance Boundary via `REC-001`), `INT-TRANS-001` (At-Least-Once Transport), and external wire protocol gateways (`CST-EXT-003`).
 - **Domain 08 (Security Architecture)**: Realizes `SEC-001`, `SEC-002`, `SEC-010` (PHI-Safe Operational Logging), and `PROV-001` derived from `AX-07`, `AX-08`, and `CST-EXT-001`.
 - **Domain 11 (Solution Packs)**: Implements specialized solution workflows (such as Provider Directory `DIR-001..DIR-006`).
-- **Domain 13 (Governance & Decisions)**: Owns formal architectural guardrails, Architecture Decision Records (ADRs), and compliance enforcement.
+- **Domain 13 (Governance & Decisions)**: This prospective navigation reference does not establish an EA master catalogue or override the current common-governance location and knowledge boundary above. Existing requirement standing is preserved; further content placement requires bounded review.

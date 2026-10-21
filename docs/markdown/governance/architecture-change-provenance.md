@@ -1,3 +1,27 @@
+# Architecture Change Provenance — current authority
+
+The single maintained normative contract is now
+[Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md),
+under [Architecture Governance](../../../enterprise-architecture/governance/architecture-governance.md).
+The Solution Architect's RAD-1.1.2 HCRL dispositions and application instruction
+supersede this predecessor contract as the current rule. Required evidence no
+longer follows a mandatory three-file archive package or universal exact-byte
+duplication/hashing requirement. HCRL is the single final semantic review record.
+
+The complete predecessor contract is preserved below unchanged for existing
+references and historical meaning. Its original adoption/pilot statements are
+not instructions to investigate or reconcile history in this transition.
+No existing processing carrier becomes disposable and no repository migration
+is authorised by this in-place supersession.
+
+------- Legacy Content - Superseded ------- Start ------
+
+Superseded by:
+[current provenance contract](../../../enterprise-architecture/governance/architecture-change-provenance.md)
+and [common review, completion and adoption rules](../../../enterprise-architecture/governance/architecture-governance.md).
+
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Harmonia Architecture Change Provenance
@@ -319,3 +343,5 @@ of its filename, extension, age, duplication, compression or generated status.
 Unknown architectural value or a live dependency blocks disposal of that content.
 Physical layout, migration selection and disposal execution require separately
 authorised work; this contract creates no blanket cleanup authority.
+
+------- Legacy Content - Superseded ------- Finish ----

@@ -27,9 +27,15 @@ Read and apply it before work, including the standing
 for reconciliation, original-content preservation and section supersession.
 
 For all architecture-related work, load and apply the same
-[Architecture Change Provenance contract](markdown/governance/architecture-change-provenance.md)
+[Architecture Change Provenance contract](../enterprise-architecture/governance/architecture-change-provenance.md)
 required by root instructions for Codex, Junie and other agents. This is a
 navigation reference to the normative contract, not a separate provenance rule.
+
+Apply the common [Architecture Review and HCRL governance](../enterprise-architecture/governance/architecture-governance.md).
+Every change receives review; material implementation discoveries require
+adjudication. The accepted target structure does not authorise repository
+migration. Existing documentation remains at its current paths until bounded
+mapping and application are separately authorised.
 
 For architecture-completion tasks, also follow the
 [Architecture Completion Plan](markdown/architecture-completion-plan.md),

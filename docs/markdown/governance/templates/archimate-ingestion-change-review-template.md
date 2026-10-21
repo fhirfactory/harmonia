@@ -20,11 +20,11 @@ Architect instruction may revise a previously issued Disposition; retain its aud
 history. A later Outcome does not rewrite the call to action. No placeholder-bearing instruction is executable.
 
 Follow the [governed Change Review contract](../archimate-ingestion-change-review.md)
-and the single [Architecture Change Provenance contract](../architecture-change-provenance.md).
+and the single [Architecture Change Provenance contract](../../../../enterprise-architecture/governance/architecture-change-provenance.md).
 This template implements those contracts; it defines no independent provenance
 policy. Run-relative links and detailed attempts below are active processing
 records. At closure, preserve the material architectural meaning, decision facts
-and verification conclusions in this review without requiring those links to
+and verification conclusions in the applicable HCRL DR without requiring those links to
 remain available. Retain working records while recovery or unresolved dependencies
 require them; completing this form does not authorise disposal.
 Keep the linked summary as the first visible content, with one phrase of at most
@@ -36,6 +36,15 @@ Architect Decision/rationale/authority/adjudicator/date, Outcome, Outcome Reason
 Authorised Reconciliation Instruction and processing record distinguishable.
 Disposition is a call to action; Outcome records what happened to the CR. Use only
 Unresolved/Resolved for Outcome; no Disposition determines it automatically.
+
+This is a specialised producer/working review under
+[Architecture Governance](../../../../enterprise-architecture/governance/architecture-governance.md),
+not a competing final acceptance record. Bind its material findings, decision
+references and validation conclusions to the applicable HCRL DR. The
+[common HCRL template](../../../../enterprise-architecture/governance/templates/hcrl-template.pending.md)
+defines the release-level Decision Review structure. The specialised CR summary,
+four Dispositions, separate Outcomes and existing exact-input checkpoints remain
+binding for this form; their placeholders supply no application permission.
 
 ## Review basis
 
@@ -69,6 +78,7 @@ state, evidence and closure facts **Pending**, rather than claiming acceptance.
 - Originating governed state / RAD release: `<identity, source boundaries,
   immutable repository locator where available, and governing authority>`.
 - Intended resulting state / release: `<proposed identity and scope>`.
+- Target HCRL and applicable DR(s): `<review path, reviewed iteration and scoped DR references>`.
 - Actual resulting governed state / release: `<identity and immutable locator
   where available, or Pending>`.
 - Architectural purpose and bounded differences: `<meaning of the change>`.
@@ -83,28 +93,29 @@ state, evidence and closure facts **Pending**, rather than claiming acceptance.
 
 ## Changed-content inventory
 
-Inventory the actual authorised changed architectural content at closure. Archive
-complete files, with their exact bytes and repository-relative paths; explain the
-narrower architectural meaning in the CRs. Record both sides and correspondence
-for renames or release-representation succession. Explicit **ABSENT** is distinct
-from an empty file. Unchanged dependencies and processing payloads are excluded.
-Per-file/member hashes are optional where they materially assist verification;
-this table is not an exhaustive machine manifest.
+Inventory the actual authorised changed architectural content and contribute its
+meaning/correspondence to the applicable HCRL DR. Identify adequate Git recovery
+locators or retain required evidence that cannot reliably be recovered there.
+Do not require duplicate exact-byte archives or universal hashing. Record both
+sides and correspondence for renames or release-representation succession.
+Explicit **ABSENT** is distinct from an empty file. Exclude unchanged dependencies
+and processing payloads selected merely for historical completeness. This table
+is a specialised working inventory, not a parallel final decision structure.
 
-| CR/directive | Operation / correspondence | Before path and existence | After path and existence | Architectural change within the complete file |
+| CR/directive | Operation / correspondence | Before path and existence | After path and existence | Architectural meaning / evidence contribution |
 | --- | --- | --- | --- | --- |
 | `<CR/decision>` | `<modify/add/remove/rename/release succession>` | `<repository-relative path: PRESENT or ABSENT>` | `<repository-relative path: PRESENT or ABSENT>` | `<bounded meaning and authorisation>` |
 
-Optional member identity/verification hashes: `<path, side, hash and purpose,
-where useful; otherwise Not recorded>`.
+Optional identity/verification hashes: `<source, side, hash and purpose where
+useful; otherwise Not recorded; no universal requirement>`.
 
 ## Evidence and closure
 
-- before.tar.gz SHA-256: `<recommended in the final review; Pending before capture>`.
-- after.tar.gz SHA-256: `<recommended in the final review; Pending before capture>`.
-- Package locator: `<durable locator of the three-file evidence package, or Pending>`.
-- Verification conclusions and limits: `<inventory/member/absence/path checks,
-  exact changed-file correspondence, any recorded hash verification, identity
+- HCRL/DR evidence contribution: `<scope and locators of material conclusions>`.
+- Before/after state: `<adequate source-control locators or necessary retained evidence and correspondence; mark unestablished facts Pending>`.
+- Evidence selection: `<why retained evidence materially assists interpretation, verification or preservation; no duplicate Git history for completeness>`.
+- Verification conclusions and limits: `<inventory/absence/path checks,
+  faithful state/correspondence, any purpose-specific hash verification, identity
   continuity, validation conclusions and unresolved uncertainty>`.
 - Distinct gate results: `<Solution Architect acceptance, validation, publication
   and actual Archi transport/inspection where applicable; no inferred PASS>`.
@@ -115,10 +126,13 @@ where useful; otherwise Not recorded>`.
 - Processing retention/dependencies: `<remaining recovery, validation, unresolved
   decisions or migration purposes; eligibility is not disposal authorisation>`.
 
-The final review must be understandable without permanent companion decision
-files, logs or machinery snapshots. Record material facts here rather than only
-linking to disposable working material. Closure follows Architecture Change
-Provenance; its archive hashes do not require a review self-hash.
+The completed HCRL must preserve material decision facts and conclusions without
+requiring disposable working material. Contribute those facts to its applicable
+DR rather than relying only on this processing form. Common provenance governs
+faithful evidence; no mandatory three-file package, universal hash or duplicate
+exact-byte archive is required. Completing this specialised form does not confirm
+architectural closure or replace Solution Architect confirmation of the HCRL's
+authorised and actually incorporated result.
 
 <a id="cr-001--example-proposal-awaiting-adjudication"></a>
 

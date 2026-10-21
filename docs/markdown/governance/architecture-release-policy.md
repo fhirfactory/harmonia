@@ -30,6 +30,35 @@ independent and SHALL NOT determine or change this release value.
 
 ## Mechanism and repository convention
 
+### Common Architecture Governance adoption — RAD-1.1.2, 2026-10-21
+
+The Solution Architect's reviewed
+[HCRL 1.1.2 iteration 002](../../../enterprise-architecture/design/review/1.1.2/hcrl-1.1.2-002.pending.md)
+and instruction to apply adopt the common
+[Architecture Governance](../../../enterprise-architecture/governance/architecture-governance.md)
+and [Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md)
+contracts. HCRL is the single semantic Decision Review Log for the immediate
+governed release transition, including transitions with only reviewed minutiae.
+Specialised reviews retain their specialised purpose and feed HCRL. The mandatory
+three-file evidence package is superseded; no universal archive, hash or duplicate
+exact-byte requirement replaces it.
+
+This governance-only change set advances **1.1.1 → 1.1.2**, without regenerating
+the unchanged architecture/model publication. The normal accepted-change patch
+rule remains in force; pending HCRL iterations consume no releases. Application
+facts and final Solution Architect confirmation are recorded in the
+[completed iteration 003](../../../enterprise-architecture/design/register/1.1.2/hcrl-1.1.2-003.complete.md).
+Mark Hunter confirmed the result on 2026-10-21: “result confirmed - complete”.
+Completion belongs to this same accepted change set and consumes no further
+release increment.
+
+The accepted target structure does not authorise repository migration. Erratum
+mechanics are deferred until an actual need. HCRL adoption is prospective; the
+historical 1.0.10 → 1.1.0 pilot is excluded and SHALL NOT be investigated,
+completed, cancelled or otherwise reconciled unless a future specific
+architectural need requires it. Historical decisions below remain preserved;
+they do not instruct work in this transition or override the current root value.
+
 ### Architecture-change provenance — 2026-10-20
 
 The Solution Architect adopts [Architecture Change Provenance](architecture-change-provenance.md)

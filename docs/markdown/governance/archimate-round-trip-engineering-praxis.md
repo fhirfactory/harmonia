@@ -22,7 +22,7 @@ reserves architectural adjudication to the Solution Architect. The
 [publication semantics](archimate-ingestion-publication-semantics.md) and
 [release policy](architecture-release-policy.md) retain their respective roles.
 
-[Architecture Change Provenance](architecture-change-provenance.md) defines
+[Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md) defines
 durable transition evidence for this Praxis, as for Markdown/RADS and future
 representations. Its adoption decision supersedes the permanent retention
 interpretation of run snapshots and complete execution evidence. Detailed input
@@ -30,6 +30,21 @@ pins, previous reviews, machinery/configuration pins and before snapshots serve
 active processing/recovery, validation and unresolved dependencies. Final closure
 preserves the authorised change and decision under that contract, without
 requiring the processing workspace to interpret them.
+
+## Common HCRL integration — RAD-1.1.2
+
+[Architecture Governance](../../../enterprise-architecture/governance/architecture-governance.md)
+defines the release-level Decision Review Log and final semantic acceptance
+record. This Praxis retains its specialised discovery, analysis, validation,
+presentation and governed application checkpoints. Material findings requiring
+adjudication feed the applicable HCRL DR with source review/CR correspondence;
+supporting detail may be minutiae/evidence. A specialised `change-review.md` is
+not a competing final acceptance record. Existing trigger vocabulary, exact-input
+applicability, native semantics, identity, containment, navigation and View
+preservation remain binding. No current model, input or processing path is moved.
+Required transition evidence follows current provenance rather than a mandatory
+archive package. Common completion requires Solution Architect confirmation of
+the authorised and actually incorporated result.
 
 ## Actors and trigger vocabulary
 
@@ -161,7 +176,7 @@ or arbitrary generated locations alone are insufficient. Secure before bytes
 before explicitly authorised in-run correction and pin machinery/configuration
 as needed for recovery and bounded read-only validation. These safeguards do not
 require permanent machinery snapshots, logs or reproduction of every historical
-execution. Record material validation conclusions and limits in change-review.md
+execution. Record material validation conclusions and limits in the applicable HCRL DR
 under Architecture Change Provenance. Missing originals or uncertain effects
 block closure; a successful replay does not establish architectural acceptance.
 
