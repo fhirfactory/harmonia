@@ -26,6 +26,30 @@ Governance knowledge does not require ArchiMate elements or continuum entries.
 Existing source paths and specialised semantics remain in place: repository
 migration requires a separately established bounded mapping and authorisation.
 
+The common [Architecture Review Praxis](../../../enterprise-architecture/governance/architecture-review-praxis.md)
+implements review for every Harmonia change, with review activity and evidence
+proportionate to scope, complexity, uncertainty and materiality identified through
+review. The reviewed RAD-1.1.3 extension requires formal AI-agent Task Details and
+corresponding execution Reports for Tasks directing an identifiable
+adjudicated/authorised change, irrespective of materiality, at the common
+provenance contract's task/report evidence locations. Execution records require
+authoritative issuance/production timestamps and filenames beginning with sortable
+UTC timestamps derived from those same events. Investigation, analysis, candidate
+preparation and pending-HCRL preparation/revision remain Architecture Review
+provenance within the HCRL lifecycle, without a separate formal review Task/Report
+convention. [Application iteration 004](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-004.pending.md)
+records the corrections and then-unresolved original event times/prefixes. Its
+updated Solution Architect table DR-9 expressly clarifies DR-7: attributable system
+timestamps of operative instruction entry into the agent interaction and completed
+Report emission are the governed issuance/production events. Subsequent amendments
+preserve original Report production time. [Application iteration 005](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-005.pending.md)
+records recovery and filename mappings. Mark Hunter, Solution Architect,
+confirmed the incorporated result on 2026-10-21: “result confirmed. Complete!”
+The [completed HCRL iteration 005](../../../enterprise-architecture/design/register/1.1.3/hcrl-1.1.3-005.complete.md)
+records the accepted RAD-1.1.2 → RAD-1.1.3 transition; completion consumes no
+additional release.
+Existing specialised contracts below retain their purposes and semantics.
+
 This location contains cross-domain architecture governance material applying
 across the canonical Harmonia architecture corpus. It is not a numbered
 architecture domain and does not replace Motivation, Strategy or another domain.

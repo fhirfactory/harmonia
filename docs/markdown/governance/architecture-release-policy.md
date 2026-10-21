@@ -30,6 +30,45 @@ independent and SHALL NOT determine or change this release value.
 
 ## Mechanism and repository convention
 
+### AI-agent execution provenance and common Review Praxis — RAD-1.1.3, 2026-10-21
+
+The Solution Architect's [reviewed HCRL 1.1.3 iteration 001](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-001.pending.md)
+and subsequent Apply instruction establish the common
+[Architecture Review Praxis](../../../enterprise-architecture/governance/architecture-review-praxis.md)
+and required formal AI-agent Task/Report execution provenance under
+[Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md).
+Task Details directing execution of an identifiable adjudicated/authorised change
+and corresponding execution Reports SHALL be retained irrespective of materiality.
+The Solution Architect's [reviewed iteration 003](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-003.pending.md),
+DR-6/DR-7, clarifies that investigation, analysis, candidate preparation and
+pending-HCRL preparation/revision are Architecture Review provenance within the
+HCRL lifecycle, without a new formal review Task/Report convention. Execution
+records require authoritative issuance/production timestamps and filenames
+beginning with filesystem-safe sortable UTC timestamps derived from those events,
+under the common provenance contract. RAD-1.1.3 is the first
+prospective use of `before/ai-agent-tasks/` and `after/ai-agent-reports/` beneath
+the resulting release's evidence directory.
+
+This bounded governance-only change advances **1.1.2 → 1.1.3**, using the
+existing expected-current patch mechanism once. Application facts and validation
+are preserved in [pending iteration 002](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-002.pending.md);
+[iteration 004](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-004.pending.md)
+records corrective application and then-unresolved original event times/prefixes.
+Its updated Solution Architect table DR-9 expressly clarifies DR-7: attributable
+system timestamps of operative instruction entry into the agent interaction and
+completed Report emission constitute the governed issuance/production events;
+subsequent amendments preserve original Report production time.
+[Application iteration 005](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-005.pending.md)
+records recovery of the three times and the required filename mappings.
+Mark Hunter, Solution Architect, confirmed the incorporated result on 2026-10-21:
+“result confirmed. Complete!” The [completed HCRL iteration 005](../../../enterprise-architecture/design/register/1.1.3/hcrl-1.1.3-005.complete.md)
+is the authoritative semantic record for this accepted transition; the increment
+does not itself supply acceptance. Completion within this same
+change set consumes no additional release. No model/publication regeneration,
+repository migration, retrospective reconstruction, historical cleanup, erratum
+machinery, production code or other machinery change is authorised. The existing
+patch mechanism and historical decisions below remain unchanged.
+
 ### Common Architecture Governance adoption — RAD-1.1.2, 2026-10-21
 
 The Solution Architect's reviewed

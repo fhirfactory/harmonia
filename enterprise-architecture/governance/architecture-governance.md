@@ -14,6 +14,26 @@ authorised for application on 2026-10-21. Its adoption transition is
 Architectural acceptance of the decisions, application and confirmation of the
 actual result remain distinct.
 
+The Solution Architect's [reviewed HCRL 1.1.3 iteration 001](../design/review/1.1.3/hcrl-1.1.3-001.pending.md)
+and subsequent Apply instruction extend this contract with required formal
+AI-agent Task/Report execution provenance and the common
+[Architecture Review Praxis](architecture-review-praxis.md). Application facts
+for RAD-1.1.2 → RAD-1.1.3 are recorded in
+[pending iteration 002](../design/review/1.1.3/hcrl-1.1.3-002.pending.md).
+The Solution Architect's [reviewed iteration 003](../design/review/1.1.3/hcrl-1.1.3-003.pending.md),
+DR-6/DR-7, clarifies the review/execution boundary and requires durable event
+timestamps and timestamped filenames. [Application iteration 004](../design/review/1.1.3/hcrl-1.1.3-004.pending.md)
+records the corrections and then-unresolved temporal provenance. Its updated
+Solution Architect table DR-9 expressly clarifies DR-7: attributable system
+instruction-entry and completed-Report-emission timestamps are the governed
+issuance/production events. Subsequent Report amendments preserve original
+production time. [Application iteration 005](../design/review/1.1.3/hcrl-1.1.3-005.pending.md)
+records recovery of the three times and filename mappings; final Solution
+Architect confirmation of that incorporated result was supplied on 2026-10-21:
+“result confirmed. Complete!” The [completed HCRL iteration 005](../design/register/1.1.3/hcrl-1.1.3-005.complete.md)
+is the authoritative semantic record for RAD-1.1.2 → RAD-1.1.3. Completion belongs
+to the same accepted change set and consumes no additional release.
+
 The [Architectural Axioms](../../docs/markdown/governance/architectural-axioms.md)
 remain the highest architectural authority. This contract applies AX-04, AX-08,
 AX-09, AX-14, AX-15 and AX-17: machinery supplies evidence, meaningful decisions
@@ -48,7 +68,11 @@ separate explicit governance decision.
 
 Every Harmonia change SHALL receive Architecture Review, including architecture,
 features, backlog, implementation, bugs, patches and refactoring. A change's label
-does not exempt it. Review does not imply material architectural effect.
+does not exempt it or itself reduce the Praxis. The
+[Architecture Review Praxis](architecture-review-praxis.md) applies to every
+change. The extent of review activity and evidence SHALL be proportionate to the
+scope, complexity, uncertainty and architectural materiality identified through
+review. Review does not imply material architectural effect.
 Submitters use architectural judgement to distinguish material matters from
 minutiae/non-material implementation change; ARB/SA adjudicates that assessment.
 
@@ -66,12 +90,26 @@ adjudication. Implementation is a legitimate discovery mechanism, not independen
 architectural authorisation. Ordinary detail without architectural effect needs
 normal HCRL/minutiae review, without separate material treatment.
 
-Task Details and Task Reports for significant collaborative work are useful
-transition provenance, normally minutiae unless materially architectural. Git is
-authoritative for source-code history. Do not reproduce implementation source as
-architectural evidence merely for historical completeness. A bounded code exemplar
-may be retained where it materially explains a decision, principle, pattern,
-constraint or design.
+For formal AI-agent Tasks directing execution of an identifiable
+adjudicated/authorised change, Task Details and corresponding execution Reports
+SHALL be retained as execution provenance at the governed task/report locations
+below, with authoritative issuance/production timestamps and filenames beginning
+with sortable UTC timestamps derived from those events, in accordance with
+[Architecture Change Provenance](architecture-change-provenance.md#ai-agent-execution-provenance).
+Retention is required irrespective of architectural materiality. Their review
+treatment is normally minutiae unless materially architectural; material content
+belongs in the applicable substantive DR. Retaining the formal Task/Report does
+not require retaining every prompt, conversation, tool invocation, working log
+or other agent interaction. Investigation, analysis, candidate preparation and
+pending-HCRL preparation/revision are Architecture Review provenance, preserved
+through the HCRL lifecycle and applicable materiality/Minutiae treatment. They do
+not become execution provenance through agent participation or contribution to
+the same transition. No separate formal review Task/Report convention is created.
+
+Git is authoritative for source-code history. Do not reproduce implementation
+source as architectural evidence merely for historical completeness. A bounded
+code exemplar may be retained where it materially explains a decision, principle,
+pattern, constraint or design.
 
 ## HCRL as the common Decision Review Log
 
@@ -155,7 +193,9 @@ enterprise-architecture/
 │   ├── register/<version>/
 │   └── evidence/<version>/
 │       ├── before/
+│       │   └── ai-agent-tasks/
 │       └── after/
+│           └── ai-agent-reports/
 └── governance/
 ```
 
@@ -171,6 +211,15 @@ another iteration, belongs in `design/review/<version>/`. Approved architectural
 artefacts/design records belong in `design/register/<version>/`. Partially
 approved artefacts do not enter the register. Required evidence belongs in the
 before/after locations under the provenance contract.
+
+`before/ai-agent-tasks/` and `after/ai-agent-reports/` are the governed locations
+for formal AI-agent Tasks directing execution of an identifiable
+adjudicated/authorised change and corresponding execution Reports in that
+transition. They represent task-input and execution-result roles, respectively;
+they do not assert that a contained artefact existed in the predecessor or
+successor Git state, or that a result is accepted. RAD-1.1.3 is the first
+prospective use of this convention. Other required transition evidence retains
+its appropriate before/after placement.
 
 Use `hcrl-<target-version>-<iteration>.pending.md` and
 `hcrl-<target-version>-<iteration>.complete.md`. The completed HCRL belongs in the

@@ -32,6 +32,31 @@ required by root instructions for Codex, Junie and other agents. This is a
 navigation reference to the normative contract, not a separate provenance rule.
 
 Apply the common [Architecture Review and HCRL governance](../enterprise-architecture/governance/architecture-governance.md).
+Load and follow the common
+[Architecture Review Praxis](../enterprise-architecture/governance/architecture-review-praxis.md)
+for every change, with review activity/evidence proportionate to scope,
+complexity, uncertainty and materiality identified through review. Classification
+as implementation or similar does not itself reduce or bypass the Praxis.
+For formal AI-agent Tasks directing execution of an identifiable
+adjudicated/authorised change, Task Details and corresponding execution Reports
+MUST be retained at
+`enterprise-architecture/design/evidence/<resulting-version>/before/ai-agent-tasks/`
+and `after/ai-agent-reports/`, respectively, under the common provenance contract,
+irrespective of architectural materiality. This is required execution provenance;
+material content still belongs in the applicable HCRL DR. Apply the provenance
+contract's authoritative issuance/production timestamps, mandatory sortable UTC
+filename prefixes and unresolved-original-time treatment. The attributable system
+timestamps of operative instruction entry into the agent interaction and completed
+Report emission are the governed Task-Issued-At and Report-Produced-At events.
+Preserve subsequent Report amendments without replacing original production time;
+these events assert no earlier composition or internal model-generation time.
+Investigation, analysis, candidate preparation and pending-HCRL
+preparation/revision are Architecture Review provenance preserved through the
+HCRL lifecycle and applicable
+materiality/Minutiae treatment, without a new formal review Task/Report convention.
+The convention first applies to RAD-1.1.3 and supplies no historical migration
+authority.
+
 Every change receives review; material implementation discoveries require
 adjudication. The accepted target structure does not authorise repository
 migration. Existing documentation remains at its current paths until bounded

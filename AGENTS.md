@@ -180,6 +180,38 @@ change set, regardless of author or tool.
 
 Every Harmonia change MUST receive Architecture Review under
 [Architecture Governance](enterprise-architecture/governance/architecture-governance.md).
+Load and follow the common
+[Architecture Review Praxis](enterprise-architecture/governance/architecture-review-praxis.md)
+for every change. Review activity and evidence MUST be proportionate to scope,
+complexity, uncertainty and architectural materiality identified through review;
+an implementation, bug, patch or backlog label does not itself reduce or bypass
+the Praxis. For formal AI-agent Tasks directing execution of an identifiable
+adjudicated/authorised change, retain Task Details at
+`enterprise-architecture/design/evidence/<resulting-version>/before/ai-agent-tasks/`
+and corresponding Task Reports at `after/ai-agent-reports/`, irrespective of
+architectural materiality, under the provenance contract. Preserve operative
+instructions, attributable context, factual outcomes and adequate correspondence.
+Record authoritative Task-issuance and Report-production ISO 8601 timestamps
+with UTC `Z` or an explicit offset; filenames MUST begin with filesystem-safe
+sortable UTC timestamps derived from those same events, followed by descriptive
+names. The attributable system timestamp of the operative instruction entering
+the agent interaction is the governed Task-Issued-At event; the attributable
+system timestamp of completed Report emission is Report-Produced-At. These
+observable events assert no earlier human composition or internal model-generation
+time. Preserve subsequent Report amendments as subsequent provenance without
+replacing the original production timestamp. Preserve unavailable original times
+as explicitly unresolved for Solution Architect treatment before closure,
+including unresolved filename prefixes; never guess them from unrelated
+receipt/capture, filesystem metadata, commits or current time.
+Investigation, analysis, candidate preparation and pending-HCRL preparation/revision
+are Architecture Review provenance preserved through the HCRL lifecycle and
+applicable materiality/Minutiae treatment, without a separate formal review
+Task/Report convention.
+Retention of the formal Task/Report does not require every agent interaction or
+working log. Material content belongs in the applicable HCRL DR; directory
+placement confers no acceptance. RAD-1.1.3 is the first prospective use; existing
+`.junie` artefacts and historical material are not migrated by this rule.
+
 HCRL is the common Decision Review Log and single semantic record for each
 governed release transition. Read the exact reviewed HCRL and its attributable
 Solution Architect dispositions before applying directives. Apply only the
