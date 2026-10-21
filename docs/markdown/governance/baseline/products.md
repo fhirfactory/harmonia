@@ -1,3 +1,9 @@
+<!-- continuum-source-succession -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+[Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Accepted native Products
@@ -53,3 +59,5 @@ Accepted as submitted in CR-005 of [run-001](../../../archimate/processing/inges
 | displayName | [Product] Health Information Exchange Service |
 | friendlyName | HealthInformationExchangeService |
 | canonicalName | PRODUCT-HealthInformationExchangeService |
+
+------- Legacy Content - Superseded ------- Finish ----

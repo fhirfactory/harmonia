@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # DesignNote — Digital Twin Behaviour and Execution Semantics
@@ -14,6 +17,13 @@ Domain05 A4.7, registered as [U19](../sources.md#u19). It reconciles the
 accept the whole candidate, commence Step B or authorise implementation.
 The [Architectural Axioms](../../governance/architectural-axioms.md) remain
 controlling. Deferred mechanisms remain distinguishable from agreed semantics.
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Purpose and architectural boundaries
 
@@ -46,6 +56,18 @@ semantics; Omilia provides collaboration operations and experience. Iris does
 not directly interact with Agora or Omilia. Administrative access confers no
 privileged route into subsystem internals.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Behaviour](../../../../enterprise-architecture/continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 2. Digital Twin Behaviour structure
 
 ```text
@@ -70,6 +92,18 @@ and does not require all other Praxes to have a Pathway or exactly one Ergo.
 The structure describes realisation, not new Composition, process or deployment
 boundaries.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. Twin-relative execution
 
 A Digital Twin establishes an execution reference frame relative to the singular
@@ -88,6 +122,18 @@ References may be implicit within the Twin execution domain where its reference
 frame establishes their meaning. Globally explicit references need not be
 repeated throughout Behaviour processing. This convenience does not change
 governed information ownership or authorisation.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 4. One input queue and Behaviour-specific information
 
@@ -145,6 +191,18 @@ concurrent execution. The equivalence is semantic and architectural. It implies
 neither inheritance nor identical information types, and does not establish
 Stimulus/Effector processing through ActionableTask/FulfillmentTask.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Interest fan-out and execution concurrency
 
 For ordinary Ergon processing, multiple independent **Ergon types** may register
@@ -161,6 +219,18 @@ Those interested Behaviours execute **sequentially** within that Twin.
 Concurrency is expected **across independent Digital Twins**, rather than between
 Behaviours within one Twin. The runtime/threading mechanism remains deferred;
 there is no requirement for a thread per Twin.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 6. Digital Twin serialisation invariant
 
@@ -206,6 +276,18 @@ complete. Load / Execute / Save shows the normal path, not further processing
 after an immediate stop. Context Save denotes Mneme management of consequences,
 not a new persistence mechanism or automatic proof of authoritative commit.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Behaviour](../../../../enterprise-architecture/continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 7. Fresh Context for each Behaviour
 
 Each Behaviour has its own **Praxis-defined Context requirements**. Mneme loads
@@ -233,6 +315,18 @@ and Context Save invocation do not manufacture confirmed persistence outcomes.
 Existing exceptional harmonisation and AX-15 uncertainty semantics remain intact.
 This note adds no cross-Behaviour transaction, universal globally consistent
 snapshot or conflict-resolution mechanism.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Behaviour](../../../../enterprise-architecture/continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 8. Behaviour sequence and developer policy
 
@@ -265,6 +359,18 @@ relationships, Criteria-based ordering or adaptive sequencing. Behaviour
 sequencing is not Pathway orchestration. Richer R3.x sequencing/priority
 mechanisms and dynamic/Criteria-driven sequencing remain deferred.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Behaviour](../../../../enterprise-architecture/continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 9. Behaviour outputs and egress
 
 A Behaviour may generate ordinary Harmonia-governed outputs, including Stimulus,
@@ -293,6 +399,18 @@ leaves Harmonia. The reference-resolution implementation mechanism is deferred.
 Output Stimulus or Effector applicable to the **same Twin** enters that Twin's
 **normal input queue**. It does not recursively interrupt or re-enter processing
 of the current input, and remains subject to serialisation and any stop disposition.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Behaviour](../../../../enterprise-architecture/continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 10. Behaviour failure dispositions
 
@@ -332,6 +450,18 @@ Failure does not prove that no information consequences occurred; AX-15
 uncertainty remains binding. No default disposition, automatic retry, replay or
 skip semantics is introduced.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 11. Authorised administrative recovery
 
 A Twin halted by `StopBehaviourOnFailure` or `StopDigitalTwinOnFailure`
@@ -367,6 +497,11 @@ a Behaviour stopped by `StopBehaviourOnFailure`, including whether/how it is
 reset, resumed, replaced or otherwise recovered, remains deferred to the
 Administrative Function/recovery design.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## 12. Broader Administrative Function finding
 
 > **Administrative Functions are first-class governed Harmonia functions
@@ -382,6 +517,13 @@ governance administration beyond Digital Twins. It is flagged for **subsequent
 Domain05 reconciliation** in [CDG-55](../gaps.md#administrative-function-finding).
 This task creates neither a complete administration architecture nor a catalogue
 of Administrative Functions or Administrative Ergon.
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 13. Deferred matters and open questions
 
@@ -413,3 +555,7 @@ The [U19 reconciliation record](../sources.md#u19) identifies affected candidate
 views and the authorised AGENTS taxonomy correction. Documentation readiness
 supports **Mark/ChatGPT A4.7 architectural adjudication**; it does not establish
 that adjudication's result.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

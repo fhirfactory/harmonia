@@ -25,7 +25,6 @@ from architecture_release import load_release
 import governed_metadata as metadata
 from element_correlation import correlate
 
-ACTIVE = metadata.model_path()
 MANIFEST = BASE / "tests/fixtures/roundtrip/manifest.json"
 REGISTRY = ROOT / "docs/markdown/governance/architecture-identity/registry.json"
 UUID32 = re.compile(r"[0-9a-f]{32}\Z")
@@ -44,6 +43,14 @@ LOSS = "INFORMATION LOSS"
 SEMANTIC = "SEMANTIC DIFFERENCE"
 UNKNOWN = "UNEXPLAINED DIFFERENCE"
 CATEGORIES = (EQUIVALENT, PRESENTATION, LOSS, SEMANTIC, UNKNOWN)
+
+
+def __getattr__(name):
+    # Preserve the historical public convenience attribute for its existing
+    # callers, while keeping the maintained Exchange reader independent.
+    if name == 'ACTIVE':
+        return metadata.model_path()
+    raise AttributeError(name)
 
 
 def encoded(value):
@@ -545,7 +552,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     audit = commands.add_parser("diagnose", help="Future-contract census, never a publication gate")
-    audit.add_argument("--model", type=Path, default=ACTIVE)
+    audit.add_argument("--model", type=Path)
     audit.add_argument("--previous", type=Path, help="Optional earlier Exchange snapshot for observed immutable binding conflicts")
     audit.add_argument("--baseline-context", action="store_true", help="Read validated source naming context, established metadata and frozen EC bindings")
     audit.add_argument("--output", type=Path)
@@ -569,6 +576,10 @@ def main():
         emit(report, args.output, inputs)
         return 0 if report["status"] == "PASS" else 3 if report["status"] == "AWAITING ARCHI EXPORT" else 2
     if args.command == "diagnose":
+        # Historical default discovery belongs to that CLI operation. Importing
+        # the reusable Exchange reader must not open historical source captures.
+        if args.model is None:
+            args.model = metadata.model_path()
         context = baseline_context() if args.baseline_context else None
         registry = json.loads(REGISTRY.read_text()) if args.baseline_context else None
         previous = Exchange(args.previous) if args.previous else None

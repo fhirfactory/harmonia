@@ -1,0 +1,449 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "d7e9ba5addd94db2bce164c7c9809e4e",
+  "archimateType": "BusinessFunction",
+  "specialization": null,
+  "displayName": "Manage Assurance Criteria",
+  "friendlyName": "IndependentAssuranceEnablement.AssuranceSpecification.AssuranceCriteriaAdministration.ManageAssuranceCriteria",
+  "canonicalName": "CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification.CT3-BEC-AssuranceCriteriaAdministration.FN-ManageAssuranceCriteria",
+  "standing": {
+    "semantic": "Canonical",
+    "currentness": "current",
+    "placement_status": "Established",
+    "structural_id_status": "Proposed",
+    "name_status": "Canonical",
+    "ancestry_status": "proposed"
+  },
+  "identity": {
+    "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+    "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
+    "expected": {
+      "displayName": "Manage Assurance Criteria",
+      "friendlyName": "IndependentAssuranceEnablement.AssuranceSpecification.AssuranceCriteriaAdministration.ManageAssuranceCriteria",
+      "canonicalName": "CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification.CT3-BEC-AssuranceCriteriaAdministration.FN-ManageAssuranceCriteria"
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/elements/679",
+      "role": "governed source resource",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "sourceKey": "function:manage-assurance-criteria"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+      "selector": "element[@identifier=\"id-a80591b425a55e9c92ed5b400f1219d6\"]",
+      "role": "accepted representation binding and presentation; not an additional architecture source",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/behaviours/health-service-assurance.md",
+      "selector": "manage-assurance-criteria",
+      "role": "original source locator; recorded edition",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "captureSource": "docs/markdown/governance/baseline/architecture.json",
+      "recordedSourceSha256": "fa976de7417f4979c95f3d44cd2cbed979407744053918cc903e0d1059e4c5bb"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/elements/679"
+    }
+  ],
+  "exchange": {
+    "identifier": "id-a80591b425a55e9c92ed5b400f1219d6",
+    "previousNativeName": "Manage Assurance Criteria",
+    "properties": [
+      {
+        "ref": "propid-1",
+        "values": [
+          {
+            "text": "function:manage-assurance-criteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-2",
+        "values": [
+          {
+            "text": "HCM-FN-manage-assurance-criteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-3",
+        "values": [
+          {
+            "text": "function:manage-assurance-criteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-4",
+        "values": [
+          {
+            "text": "function",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-6",
+        "values": [
+          {
+            "text": "Canonical",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "current",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-8",
+        "values": [
+          {
+            "text": "Established",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-9",
+        "values": [
+          {
+            "text": "Proposed",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-10",
+        "values": [
+          {
+            "text": "CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-ASSURANCE-SPECIFICATION-ENABLEMENT.CT3-BEC-ASSURANCE-CRITERIA-MANAGEMENT.FN-MANAGE-ASSURANCE-CRITERIA",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-11",
+        "values": [
+          {
+            "text": "Canonical",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-28",
+        "values": [
+          {
+            "text": "Manage Assurance Criteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-12",
+        "values": [
+          {
+            "text": "Unresolved — representation ID only",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-30",
+        "values": [
+          {
+            "text": "[{\"anchor\":\"manage-assurance-criteria\",\"line\":84,\"source\":\"assurance\",\"text\":\"#### Manage Assurance Criteria\"}]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-14",
+        "values": [
+          {
+            "text": "{\"ancestry_status\":\"proposed\",\"architectural_status\":\"Canonical\",\"baseline_description\":{\"Function Overview\":\"Criteria management maintains the reusable evaluative basis and its temporal standing. It permits an assessment to be understood against the criterion applicable at the relevant time, rather than today's unqualified version. Management of that basis does not inherently grant approval authority or permit alteration of the governing obligation.\"},\"baseline_placement\":{\"canonical_id\":null,\"owner_key\":\"capability:assurance-criteria-management\",\"parent_key\":null,\"tier\":null},\"baseline_unresolved\":[\"ancestry\",\"canonical_id\",\"code_allocation\",\"feature_association\",\"contextual_view\"],\"baseline_version\":\"0.1\",\"canonical_id\":\"CT1-BEC-INDEPENDENT-SERVICE-ASSURANCE-ENABLEMENT.CT2-BEC-ASSURANCE-SPECIFICATION-ENABLEMENT.CT3-BEC-ASSURANCE-CRITERIA-MANAGEMENT.FN-MANAGE-ASSURANCE-CRITERIA\",\"canonical_name\":\"Manage Assurance Criteria\",\"category\":null,\"governed_definition_latex\":\"\\n\\\\begin{itemize}\\n\\n\\\\item \\n\\\\textbf{Canonical Name}: \\\\texttt{\\\\seqsplit{Manage Assurance Criteria}}.\\n\\n\\n\\n\\\\item \\n\\\\textbf{Definition}: Establishes and manages reusable, governed and temporally identifiable assurance criteria through which governed subjects may be evaluated.\\n\\n\\n\\n\\\\item \\n\\\\textbf{Scope}: Criteria may express governance rule boundaries, quality constraints, performance expectations, compliance criteria, temporal criteria, evidence requirements or completeness expectations. These examples are not an exhaustive taxonomy. Criteria may have lifecycle, version and temporal applicability.\\n\\n\\n\\n\\\\item \\n\\\\textbf{Boundary}: Managing a criterion does not transfer authority for the governing requirement from which it may derive. Criteria may operationalise a requirement without silently altering, weakening, strengthening or replacing it; not every criterion must derive from formal Governance. Modelling/\\\\allowbreak{}managing criteria does not inherently confer approval authority. Detailed criterion lifecycle states and approval workflows remain unresolved.\\n\\n\\n\\n\\\\end{itemize}\\n\",\"id_aliases\":[],\"key\":\"function:manage-assurance-criteria\",\"latex_label\":\"function:manage-assurance-criteria\",\"local_id\":\"MANAGE-ASSURANCE-CRITERIA\",\"name\":\"Manage Assurance Criteria\",\"name_aliases\":[],\"name_status\":\"Canonical\",\"owner_identifier\":\"HCM-BEC-assurance-criteria-management\",\"owner_key\":\"capability:assurance-criteria-management\",\"parent_identifier\":null,\"parent_key\":null,\"placement_status\":\"Established\",\"record_state\":\"current\",\"reference_id\":\"HCM-FN-manage-assurance-criteria\",\"responsibility_owner_key\":\"capability:assurance-criteria-management\",\"source_rad_documents\":[\"docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\"],\"sources\":[{\"anchor\":\"manage-assurance-criteria\",\"line\":84,\"source\":\"assurance\",\"text\":\"#### Manage Assurance Criteria\"}],\"structural_id_status\":\"Proposed\",\"tier\":null,\"type\":\"function\",\"unresolved\":[\"feature_association\",\"contextual_view\"],\"views\":[]}",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-31",
+        "values": [
+          {
+            "text": "[\"feature_association\",\"contextual_view\"]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-33",
+        "values": [
+          {
+            "text": "HCM-BEC-assurance-criteria-management",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-16",
+        "values": [
+          {
+            "text": "[{\"disposition\":\"metadata_and_finding\",\"reason\":\"Participation alone does not establish an ordered/whole-part process or realisation.\",\"record_state\":\"current\",\"snapshot_pointer\":\"/relationships/231\",\"source_assertion\":{\"from\":\"process:assurance-process-design\",\"sources\":[{\"anchor\":\"61-assurance-process-design\",\"line\":361,\"source\":\"processes\",\"text\":\"- **Participating Functions**: [Design Service Assurance](../behaviours/health-service-assurance.md#design-service-assurance) and [Manage Assurance Criteria](../behaviours/health-service-assurance.md#manage-assurance-criteria). Manage Assurance Criteria retains ownership within Assurance Criteria Management; its participation does not subsume that Capability's criteria lifecycle or transfer its information responsibility to Assurance Design.\"}],\"status\":\"established\",\"to\":\"function:manage-assurance-criteria\",\"type\":\"participating_function\"},\"source_index\":231}]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-17",
+        "values": [
+          {
+            "text": "docs/markdown/governance/baseline/functions.md#hcm-fn-manage-assurance-criteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-18",
+        "values": [
+          {
+            "text": "d7e9ba5addd94db2bce164c7c9809e4e",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-19",
+        "values": [
+          {
+            "text": "Manage Assurance Criteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-20",
+        "values": [
+          {
+            "text": "IndependentAssuranceEnablement.AssuranceSpecification.AssuranceCriteriaAdministration.ManageAssuranceCriteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-21",
+        "values": [
+          {
+            "text": "CT1-BEC-IndependentAssuranceEnablement.CT2-BEC-AssuranceSpecification.CT3-BEC-AssuranceCriteriaAdministration.FN-ManageAssuranceCriteria",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-22",
+        "values": [
+          {
+            "text": "BusinessFunction",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": [
+    {
+      "identifier": "id-fe366c55fe245dddaa5dca8175168160",
+      "source": "id-a80591b425a55e9c92ed5b400f1219d6",
+      "target": "id-e2307fc080bf598bb4a5d37d18533361",
+      "archimateType": "Realization",
+      "attributes": {},
+      "standing": {
+        "v0.2 / Assertion Status": "Proposed",
+        "v0.2 / Record State": "current",
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+      },
+      "provenance": {
+        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+        "selector": "relationship[@identifier=\"id-fe366c55fe245dddaa5dca8175168160\"]"
+      },
+      "properties": [
+        {
+          "ref": "propid-54",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-55",
+          "values": [
+            {
+              "text": "realises_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-56",
+          "values": [
+            {
+              "text": "{\"from\":\"function:manage-assurance-criteria\",\"provenance\":{\"authority\":\"Proposed only; cited source standing is not inherited\",\"derivation\":\"Semantic responsibility analysis; no authority transfer\",\"evidence\":[{\"line\":10,\"path\":\"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\",\"standing\":\"Current corpus evidence; does not promote the derived assertion\",\"text\":\"### 1.2 Non-Transfer of Ownership Guardrail\"}],\"method\":\"AI architectural synthesis under the explicitly authorised Step 2 task\"},\"rationale\":\"This existing behaviour materially discharges the proposed Feature; ownership and canonical definition remain unchanged.\",\"sources\":[],\"status\":\"Proposed\",\"to\":\"proposal:feature-temporal-assurance-criteria-stewardship\",\"type\":\"realises_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/468",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-12",
+          "values": [
+            {
+              "text": "Unresolved — representation ID only",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "name": [],
+      "documentation": [
+        {
+          "text": "Snapshot predicate: realises_feature; assertion status: Proposed; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:manage-assurance-criteria\",\n  \"to\": \"proposal:feature-temporal-assurance-criteria-stewardship\",\n  \"status\": \"Proposed\",\n  \"sources\": [],\n  \"rationale\": \"This existing behaviour materially discharges the proposed Feature; ownership and canonical definition remain unchanged.\",\n  \"provenance\": {\n    \"derivation\": \"Semantic responsibility analysis; no authority transfer\",\n    \"evidence\": [\n      {\n        \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\",\n        \"line\": 10,\n        \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\",\n        \"standing\": \"Current corpus evidence; does not promote the derived assertion\"\n      }\n    ],\n    \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\",\n    \"authority\": \"Proposed only; cited source standing is not inherited\"\n  }\n}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    }
+  ],
+  "unresolvedProperties": {},
+  "sourceUnresolved": {
+    "dimensions": [
+      "feature_association",
+      "contextual_view"
+    ],
+    "adjudication": null
+  },
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# Manage Assurance Criteria
+
+## Architectural content
+
+•
+Canonical Name: Manage Assurance Criteria.
+
+•
+Definition: Establishes and manages reusable, governed and temporally identifiable assurance criteria through which governed subjects may be evaluated.
+
+•
+Scope: Criteria may express governance rule boundaries, quality constraints, performance expectations, compliance criteria, temporal criteria, evidence requirements or completeness expectations. These examples are not an exhaustive taxonomy. Criteria may have lifecycle, version and temporal applicability.
+
+•
+Boundary: Managing a criterion does not transfer authority for the governing requirement from which it may derive. Criteria may operationalise a requirement without silently altering, weakening, strengthening or replacing it; not every criterion must derive from formal Governance. Modelling/managing criteria does not inherently confer approval authority. Detailed criterion lifecycle states and approval workflows remain unresolved.
+
+Criteria management maintains the reusable evaluative basis and its temporal standing. It permits an assessment to be understood against the criterion applicable at the relevant time, rather than today's unqualified version. Management of that basis does not inherently grant approval authority or permit alteration of the governing obligation.

@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Harmonia.Sylloge — Binary Content Management
@@ -10,6 +13,13 @@ task confirms A4 PASS. The [current standing](README.md) additionally records
 the bounded B2.1 PASS; B2.2 is not commenced. This adds no Sylloge mapping.
 
 <a id="sylloge-responsibility"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Sylloge](../../../enterprise-architecture/continuum/application/application-component/feea742463b84021b66853d287d8916f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Application responsibility
 
@@ -35,7 +45,19 @@ responsibility. F31 allocates the behaviour and D15 records the associated
 information responsibility; neither a storage product nor an upstream Information
 Concept is introduced by that allocation.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="management-and-custody"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Sylloge](../../../enterprise-architecture/continuum/application/application-component/feea742463b84021b66853d287d8916f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Management and physical custody
 
@@ -58,7 +80,19 @@ responsibility without becoming a generic persistence manager. Logical clinical
 information and its binary payload remain distinct; an Information Unit reference
 does not itself establish physical custody or make the payload an Information Unit.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="mneme-and-mnemosyne-boundary"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Sylloge](../../../enterprise-architecture/continuum/application/application-component/feea742463b84021b66853d287d8916f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Mneme and Mnemosyne
 
@@ -78,7 +112,19 @@ component may interact with Sylloge to obtain or resolve it. This is a minimal
 responsibility relationship; detailed calls, routing and contracts are deferred.
 No Mneme service, Mnemosyne responsibility or persistence domain is redesigned.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="agora-and-omilia-boundary"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Sylloge](../../../enterprise-architecture/continuum/application/application-component/feea742463b84021b66853d287d8916f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Agora and Omilia
 
@@ -105,7 +151,19 @@ content; Agora does not thereby become its custodian. Omilia acquires no Binary
 Content Management responsibility. The originating logical information owner and
 any external physical custodian retain their respective responsibilities.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="sylloge-deferred-design"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Sylloge](../../../enterprise-architecture/continuum/application/application-component/feea742463b84021b66853d287d8916f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Deliberate deferred design
 
@@ -128,3 +186,7 @@ Data Structures and Technology Platforms remain. Themis governance, Kleio audit,
 originating authority and AX-05/06/07/13/14/15/17/18 constraints apply without a new
 security, audit or persistence mechanism. No build, process or deployment boundary
 is selected.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

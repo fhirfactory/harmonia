@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Principal Business Processes
 
 ## 1. Process Demarcation & Justification Rules
@@ -66,6 +69,13 @@ Principal Business Processes
 
 ## 2. Entity & Administrative Processes
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Governed Person Identity Correction Process](../../../../enterprise-architecture/continuum/business/business-process/72f3c63da45d44868579a3bb15d1568c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 2.1 Governed Person Identity Correction Process
 - **Owning Capability**: `Person Identity` (under `Client Administration`)
 - **Process Purpose**: Processes externally authoritative identity corrections and merge/unlink outcomes, applies their consequences to Harmonia-managed identity information and identifier associations, and communicates resulting changes with an audit history.
@@ -82,6 +92,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Practitioner Verification Process](../../../../enterprise-architecture/continuum/business/business-process/32a3e1f948474d3aa77ca71bfa515f58.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 2.2 Practitioner Verification Process
 - **Owning Capability**: `Provider Administration`
 - **Process Purpose**: Governs the lifecycle of validating, certifying, and periodically re-verifying a healthcare practitioner's professional credentials, registration status, and clinical scope of practice.
@@ -97,7 +119,19 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 ## 3. Clinical Lifecycle & Service Administration Processes
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Referral Progression Process](../../../../enterprise-architecture/continuum/business/business-process/cfb714e9320647ffa1dffc80dddd01d9.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 3.3 Referral Progression Process
 - **Owning Capability**: `Referral Administration`
@@ -116,6 +150,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Encounter Lifecycle Process](../../../../enterprise-architecture/continuum/business/business-process/df49e2e8bb3748f3abbdd1c28ae1be8f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.4 Encounter Lifecycle Process
 - **Owning Capability**: `Episode & Encounter Administration`
 - **Process Purpose**: Governs the clinical and administrative lifecycle of an acute, emergency, inpatient, or outpatient encounter between a patient and healthcare services.
@@ -131,6 +177,18 @@ Principal Business Processes
 - **Scope qualification**: These completion criteria retain their locally described applicability; they do not establish universal signing, legal closure or originating authority over clinical information. Finalisation, signing and legal qualification remain distinct. The relationship with Strategy `ON_LEAVE`, including applicability and transitions, remains unresolved.
 
 ---
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Closed-Loop Order Progression Process](../../../../enterprise-architecture/continuum/business/business-process/e19a7c9594a4401e92450e4c31598982.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 3.5 Closed-Loop Order Progression Process
 - **Owning Capability**: `Order Administration`
@@ -149,6 +207,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Clinical Document Lifecycle Process](../../../../enterprise-architecture/continuum/business/business-process/eacdec16b96844b4963b8a960d1a8666.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.6 Clinical Document Lifecycle Process
 - **Owning Capability**: `Clinical Record Administration`
 - **Process Purpose**: Governs the versioning, clinical sign-off, addenda, superseding, and legal status of clinical documents (discharge summaries, specialist letters, advance care directives).
@@ -165,7 +235,19 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 ## 4. Healthcare Facility & Logistics Operations Processes
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Theatre Case Progression Process](../../../../enterprise-architecture/continuum/business/business-process/8ad97120b5b54a31a64a4522e6bc9fd1.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 4.7 Theatre Case Progression Process
 - **Owning Capability**: `Theatre Operations`
@@ -184,6 +266,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Clinic / Operational Queue Progression Process](../../../../enterprise-architecture/continuum/business/business-process/319d6956276a4cdeb43e350e1b01d078.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 4.8 Clinic / Operational Queue Progression Process
 - **Owning Capability**: `Clinic & Practice Operations`
 - **Process Purpose**: Governs the movement and state tracking of outpatients through an ambulatory specialty clinic session.
@@ -200,6 +294,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Bed Turnover Process](../../../../enterprise-architecture/continuum/business/business-process/69f74289926942f4baed4acf4c654a3b.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 4.9 Bed Turnover Process
 - **Owning Capability**: `Bed & Care-Place Management`
 - **Process Purpose**: Governs the rapid physical turnover, cleaning, sanitisation, and re-allocation of inpatient and emergency care-places.
@@ -214,6 +320,18 @@ Principal Business Processes
   - `Bed Allocated / Occupied`: Incoming patient allocated and physically placed in bed.
 
 ---
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Operational Work Progression Process](../../../../enterprise-architecture/continuum/business/business-process/5ebba522194b4de5a5b3963e855d712d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 4.10 Operational Work Progression Process
 - **Owning Capability**: `Work Allocation & Dispatch`
@@ -230,6 +348,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Patient Transport Process](../../../../enterprise-architecture/continuum/business/business-process/f2e58fd18cd94b0faaa364d3890a7c9e.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 4.11 Patient Transport Process
 - **Owning Capability**: `Patient Transport`
 - **Process Purpose**: Governs the physical portering and transport of patients between hospital departments, wards, diagnostic suites, and external facilities.
@@ -245,6 +375,18 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Specimen Transport Process](../../../../enterprise-architecture/continuum/business/business-process/11bb000294fc44a8af295f4682e2fe6c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 4.12 Specimen Transport Process
 - **Owning Capability**: `Clinical Logistics Coordination`
 - **Process Purpose**: Governs the physical courier chain-of-custody, transport, and delivery of pathology bio-specimens, blood products, and surgical biopsies.
@@ -259,6 +401,18 @@ Principal Business Processes
   - `Specimen Accepted`: Specimen integrity verified and passed to analytical track.
 
 ---
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Discharge Progression Process](../../../../enterprise-architecture/continuum/business/business-process/7165955d9c454175a04b9ad00293f011.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 4.13 Discharge Progression Process
 - **Owning Capability**: `Discharge Management`
@@ -277,7 +431,19 @@ Principal Business Processes
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 ## 5. Horizontal Workflow Coordination Processes
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Work Order Progression Process](../../../../enterprise-architecture/continuum/business/business-process/73fbbe4e027b4805809fad430e791eba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 5.14 Work Order Progression Process
 - **Owning Capability**: `Workflow & Activity Coordination`
@@ -293,6 +459,18 @@ Principal Business Processes
   - `Completed`: Task finished with recorded completion telemetry.
 
 ---
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [To Do Progression Process](../../../../enterprise-architecture/continuum/business/business-process/c5e4c3076b094c98a628179b91ae03d0.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 5.15 To Do Progression Process
 - **Owning Capability**: `Workflow & Activity Coordination`
@@ -319,6 +497,18 @@ graph LR
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Synthetic Task Progression Process](../../../../enterprise-architecture/continuum/business/business-process/618acdb38fc74952ab360fdde4f7d865.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 5.16 Synthetic Task Progression Process
 - **Owning Capability**: `Workflow & Activity Coordination`
 - **Activity Archetype**: **Non-Human Executable Work** — automated system workflows, batch syndications, or policy evaluation tasks.
@@ -344,6 +534,11 @@ graph LR
 
 ---
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="6-governed-assurance-process-derivation-boundary"></a>
 
 ## 6. Health Service Assurance Processes
@@ -351,6 +546,13 @@ graph LR
 The approved human review decisions on 2026-10-08 establish exactly the following three assurance Processes, building on the [assurance Strategy](../../02-strategy/capability-maps/health-service-assurance-derivation.md) and the two established assurance Roles and five Functions. **Element Type: Business Process (PR)** applies to each. Capability ownership below follows the established responsibility; **Feature association is not established** and **Canonical IDs remain unresolved** because Capability Tier, complete ancestry and local identifier allocation remain unestablished. Catalogue numbering is navigation, not identifier allocation.
 
 <a id="assurance-process-design"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Assurance Process Design](../../../../enterprise-architecture/continuum/business/business-process/aec3177dcdd84961814f2ba4f688ad33.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 6.1 Assurance Process Design
 
@@ -362,7 +564,19 @@ The approved human review decisions on 2026-10-08 establish exactly the followin
 - **Conceptual Output**: [Assurance Definition](../behaviours/health-service-assurance.md#42-assurance-definition--conceptual-modelling-output), retaining its conceptual Business Architecture output/boundary treatment.
 - **Boundary**: Governance Authority establishes what is authoritative. Design does not grant Service Assurance Modeller approval authority. Detailed Assurance Definition lifecycle, approval/publication workflows, criteria lifecycle and information modelling remain unresolved. Participation of the two Functions does not establish a cross-capability lifecycle or a new exchange/Service between their owners.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="assurance-process-execution"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Assurance Process Execution](../../../../enterprise-architecture/continuum/business/business-process/3c67e57403b041bb8ccdaf3980b6ff94.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 6.2 Assurance Process Execution
 
@@ -384,7 +598,19 @@ graph TD
     EXEC -->|Establishes through adjudication| FINDING["Assurance Finding / Conclusion"]
 ```
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="assurance-process-reporting-communication"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Assurance Process Reporting / Communication](../../../../enterprise-architecture/continuum/business/business-process/2fc0b626577b43feb050bcd91ac2b0a9.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 6.3 Assurance Process Reporting / Communication
 
@@ -394,6 +620,11 @@ graph TD
 - **Starting Basis**: An already established Assurance Finding / Conclusion. This Process does not perform assessment or adjudication, alter or reinterpret the established outcome.
 - **Communication Participation**: Service Guardian participates through [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication), associated with [Communicate Service Assurance Outcome](../behaviours/health-service-assurance.md#communicate-service-assurance-outcome). No additional Function is introduced to populate this Process.
 - **Boundary**: Reporting / Communication is not limited to documentary report production; an appropriate Business Interaction may communicate the outcome without a report document. It assumes no operational response, remediation, escalation, policy/compliance response, process improvement, clinical management, clinical judgement or other recipient action. Detailed communication progression and completion semantics remain unresolved.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ### 6.4 Process-Family Relationship and Preserved Boundaries
 

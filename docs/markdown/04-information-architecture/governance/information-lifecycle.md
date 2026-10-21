@@ -1,4 +1,14 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Information Lifecycle Principles & Transition Governance
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Rejection of Universal Lifecycles
 
@@ -48,6 +58,18 @@ the unresolved ReportedTask meaning.
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 2. Lifecycle Transition Governance
 
 Where an Information Concept is stateful, transitions between states are **governed semantic events**:
@@ -66,6 +88,18 @@ Every material lifecycle transition SHALL support:
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. Immutability of History & Non-Destructive Progression
 
 In accordance with healthcare safety and legal compliance:
@@ -74,6 +108,18 @@ In accordance with healthcare safety and legal compliance:
 - **Bi-Temporal Integrity**: Information architecture supports reconstructing what was known at any specific past historical point in time (*as-of query*), distinguishing when an event occurred from when it was recorded or amended.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 4. Information Unit Context and Managed-State Boundary
 
@@ -85,3 +131,7 @@ distinct from valid Active Generation under AX-05. Documenting these concerns
 does not complete managed-state, history, snapshot or evidence/retention
 reconciliation, or equate information lifecycle with real-world activity or
 workflow progression.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

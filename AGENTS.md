@@ -31,7 +31,7 @@ All architecture, design, implementation and automated-agent activity
 within Harmonia is governed by the Harmonia Architectural Axioms defined
 in:
 
-    docs/markdown/governance/architectural-axioms.md
+    enterprise-architecture/governance/architectural-axioms.md
 
 The Architectural Axioms are the highest-level design authority within
 the Harmonia repository.
@@ -87,8 +87,23 @@ repository.
 
 #### Definitions and Authority
 
-`/docs/markdown` remains the existing **Reference Architecture Documentation Set
-(RADS)** pending separately authorised migration. The adopted common
+RAD-1.1.5's explicitly authorised element ingestion establishes
+`enterprise-architecture/continuum/` as the canonical source for individually
+represented architectural elements. Load the
+[Continuum Representation](enterprise-architecture/governance/continuum-representation.md)
+and [Incorporation Praxis](enterprise-architecture/governance/continuum-incorporation-praxis.md)
+for element authoring, migration, validation and projection. Native ArchiMate types
+and governed Harmonia specialisations determine placement; documents and paths
+never establish identity or architectural standing. The
+[HCRL 002](enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md)
+records application and unresolved matters; holistic acceptance remains pending.
+
+`/docs/markdown` retains governance/metamodel contracts, qualified unresolved
+source material and unchanged historical carriers with explicit section
+supersession. Only incorporated sections lose their active architectural role;
+unretired authority and unresolved source assertions are not silently discarded.
+The [source succession evidence](enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json)
+defines that exact boundary. The adopted common
 [Architecture Governance](enterprise-architecture/governance/architecture-governance.md)
 and [Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md)
 contracts are authoritative at `enterprise-architecture/governance/`.
@@ -654,7 +669,7 @@ reconciliation and authorisation governed by that contract and section 1.2.
 
 A Junie plan MUST be interpreted against, in order of authority:
 
-1. `docs/markdown/governance/architectural-axioms.md`
+1. `enterprise-architecture/governance/architectural-axioms.md`
 2. this `AGENTS.md`
 3. applicable accepted Architecture Decision Records
 4. applicable requirements and design contracts

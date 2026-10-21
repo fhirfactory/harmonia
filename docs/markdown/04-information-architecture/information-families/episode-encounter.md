@@ -1,8 +1,18 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Episode / Encounter Information Family
 
 **Status: G2 CANDIDATE — Block 1; G2-D01–D03 approved; remaining propositions await review. Not CLOSED or FROZEN.**
 
 [G2 review standing A–D](../reviews/package2-g2-block1-review.md#2-review-standing) qualifies derivation strength separately from the [approved G2 decisions](../reviews/package2-g2-block1-review.md#10-approved-architectural-decisions). [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure). Episode is now independently established by G2-D01; its authority, information-responsibility allocation and Encounter-association rules remain unresolved.
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Encounter](../../../../enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Purpose & Semantic Boundary
 
@@ -16,6 +26,11 @@ Care-place association ≠ Care-Place Definition ≠ operational bed state
 ```
 
 The owner name includes Episode, but the reconciled Functions, Services and ownership-matrix asset are encounter-specific. G1 K5 still prohibits using owner-name correction to infer Episode ownership. G2-D01 supplies Episode's approved meaning directly; it does not allocate an upstream owner, new Feature or Service. Longitudinal record synthesis remains with Patient Clinical Record. Episode is not merely a Collection of Encounters; Encounter association contributes to its longitudinal treatment meaning without establishing ownership or containment.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 2. Domain 03 Responsibility & Traceability
 
@@ -37,6 +52,13 @@ EC-IR5 retains the original [Care-Team Collaboration](../../03-business-architec
 
 ## 3. Principal Information Concepts
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Encounter](../../../../enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.1 Encounter — G2-D02/D03 approved meaning; remaining classification/tracking boundary B
 
 - **Semantic Classification**: Activity / Contextual Binding — exact metamodel classification and administrative tracking/Assembly boundary remain under G2-Q03; actual care-interaction/context meaning is established by G2-D02/D03.
@@ -44,6 +66,11 @@ EC-IR5 retains the original [Care-Team Collaboration](../../03-business-architec
 - **Necessity**: EC-IR1 and EC-IR2 require continuity of encounter tracking across planning, arrival, active care and discharge information. G2-D02/D03 establish the represented care-interaction meaning; how administrative planning/tracking relates to that actual interaction and the Assembly remains [G2-Q03](../reviews/package2-g2-block1-review.md#g2-q03).
 - **Characteristics**: Source/namespace-qualified encounter identity, subject reference, attending participant, clinical class, admitting diagnosis/context as supplied, and attributable administrative state. These are governed characteristics/relationships, not automatically separate Concepts.
 - **Boundary**: Planned tracking information does not prove an actual Encounter occurred. Appointment existence is not occurrence evidence, and an actual Encounter does not prove a prospective Appointment existed. An Encounter may contextualise zero or more deliveries, but neither proves delivery nor owns/contains it; delivery may occur without Encounter context. Encounter identity remains distinct from Person, Appointment and Episode identity.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ### 3.2 Encounter Progression Event — A
 
@@ -66,6 +93,13 @@ EC-IR5 retains the original [Care-Team Collaboration](../../03-business-architec
 - **Necessity**: EC-IR1 and EC-IR3 support coordinated provision of these facts. Reuse [Foundation Encounter Context](../assemblies-views/assemblies-and-views.md#2-illustrative-candidate-context-assemblies--views) and Package1 assembly participation rather than create an equivalent local pattern.
 - **Boundary**: This is not the Encounter activity, an Episode Collection, a longitudinal record or a mandatory persisted aggregate. It acquires no originating authority over constituents. Exact inclusion/composition scope remains [G2-Q06](../reviews/package2-g2-block1-review.md#g2-q06).
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Episode](../../../../enterprise-architecture/continuum/application/data-object/topic/3927d161556d48f4b2cc57bd46ab785d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.5 Episode — APPROVED (G2-D01)
 
 - **Semantic Classification**: Longitudinal Information Context. It is not merely a Collection of Encounters; no additional metamodel kind or implementation aggregate is assigned by this decision.
@@ -74,6 +108,11 @@ EC-IR5 retains the original [Care-Team Collaboration](../../03-business-architec
 - **Necessity**: EC-IR5 now has this explicit approved longitudinal treatment meaning. Problems/Conditions and related Encounters contribute to the treatment context; Encounter association does not define Episode's complete meaning. These are boundary references, not derivation of a later clinical family.
 - **Relationships and boundary**: Episode relates one or more Problems/Conditions [1..*] to a longitudinal course of treatment and may relate to multiple Encounters [0..*]. Not every Encounter for the subject necessarily belongs to a particular Episode. No Encounter-association rules, reverse cardinality, Encounter ownership or implementation containment are established.
 - **Remaining uncertainty**: Originating authority, Harmonia information-responsibility allocation, detailed identity, association evidence/rules and temporal/lifecycle details remain unresolved under G2-Q04. Assurance/workflow/financial perspective does not confer performance, billing or assurance authority.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 4. Key Information Relationships
 
@@ -99,6 +138,13 @@ EC-IR5 retains the original [Care-Team Collaboration](../../03-business-architec
 | Encounter Context Assembly | Each constituent originator; Episode & Encounter Administration for encounter-context composition | Govern assembled contextual provision only | Composition/inclusion context and generating time; constituent authority and source references. No assembly acquires clinical or booking authority. |
 | Episode | Originating treatment-context/association authority is not established by G2-D01 | Episode's meaning is approved; a specific Harmonia owning/managing responsibility is not allocated. No authority over Encounters, Problems/Conditions or constituent information is inferred | Source, context and association provenance need further review under G2-Q04; no particular originator, association mechanism or authority transfer is asserted. |
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Encounter](../../../../enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 6. Temporal & Lifecycle Characteristics
 
 Encounter progression requires transition/occurrence time distinct from asserted/recorded time. Care-place movement requires effective association periods to explain where a subject was accommodated over time. Planned timing and actual arrival/care/discharge timing remain distinguishable where evidenced; neither scheduled time nor a last-known state establishes actual service start/end.
@@ -109,6 +155,11 @@ Information lifecycle governance, real-world care progression and Business Proce
 
 Episode is longitudinal treatment context under G2-D01. No start/end criteria, episode closure state, Encounter-association effective rules or common lifecycle with its related Encounters are established. G2-D02's retrospectively established Appointment must not be mistaken for prospective scheduling; G2-D03's contextual association does not create an Encounter-to-delivery lifecycle.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## 7. Assembly Participation & Other Families
 
 Reuse Healthcare Subject Context, Practitioner Role Binding, Healthcare Location / Care-Place Definition, and the existing candidate Encounter Context Assembly. Encounter information can contribute to the established longitudinal assembly owned by Patient Clinical Record; this does not make Episode & Encounter Administration owner of longitudinal synthesis.
@@ -117,6 +168,13 @@ An Appointment may provide prospective scheduling context or be established retr
 
 Clinical orders may occur during the local encounter pathway, but exact universal Order–Encounter correlation and cardinality remain unestablished. A Referral's attended consultation does not by itself supply an explicit Referral–Encounter link. See [cross-family analysis](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis).
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Encounter](../../../../enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
 
 G2-Q03 retains metamodel classification and the administrative tracking/Assembly boundary after approval of actual care-interaction meaning. Episode is established; G2-Q04 concerns only unresolved authority/responsibility, detailed identity, association rules/evidence and temporal/lifecycle details. The [prior Episode Context suggestion](../reviews/package2-g2-block1-review.md#7-non-authoritative-suggestions) is historical and superseded by G2-D01, not a current D suggestion. No Episode = Collection of Encounters rule, membership mechanism, hierarchy or universal lifecycle is added.
@@ -124,3 +182,7 @@ G2-Q03 retains metamodel classification and the administrative tracking/Assembly
 G2-Q05's Encounter/delivery optional contextual association and [0..*] multiplicity are resolved by G2-D03; additional authority/evidence qualifications and the unrelated Referral portion remain unreviewed. G2-Q06 retains the Assembly boundary. G1 U4's universal delivery/outcome authority, U8's ON_LEAVE correspondence and U9's discharge applicability/timing beyond the established preparation/confirmed-exit distinction remain unresolved. No clinical responsibility transfer is inferred from movement or discharge, and no operational bed model is derived.
 
 No FHIR mapping, application component, class, persistence entity, schema, API, integration message, cache model or implementation allocation is created. [AX-17](../../governance/architectural-axioms.md#ax-17) governs the derivation itself.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

@@ -1,3 +1,9 @@
+<!-- continuum-source-succession -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+[Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Baseline — Business Capabilities
@@ -8972,3 +8978,5 @@ Parent: [Healthcare Organisation & Service Structure Management](business-capabi
 No further governed Capability decomposition recorded in this baseline. The anchor View is retained.
 
 Exact source locators, provenance, name/identity history and deferred assertions are retained in [architecture.json](architecture.json) (record `business-capability:healthcare-service-offering-management`) and the element's version-qualified Properties.
+
+------- Legacy Content - Superseded ------- Finish ----

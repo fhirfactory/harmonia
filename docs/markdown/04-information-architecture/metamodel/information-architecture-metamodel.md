@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Information Architecture Metamodel & Core Concept Model
 
 ## 1. Foundational Semantic Distinction
@@ -187,6 +190,13 @@ graph TD
 
 ---
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Harmonia-Managed Information
 
 > **Harmonia-managed information is information for which Harmonia has accepted an explicit responsibility to maintain a governed representation and its management context over time.**
@@ -211,6 +221,18 @@ continue to apply. Management responsibility does not redefine the meaning or
 originating responsibility of an Information Concept, assertion or relationship.
 [AX-06](../../governance/architectural-axioms.md#ax-06) preserves information
 authority independently of technical transport, persistence and concurrency.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 6. Information Unit
 
@@ -618,6 +640,18 @@ and supplement VG-01–VG-08 without replacing them.
 | **AG-06 — Existing Generation Preservation** | Failure to establish a subsequent Active Generation SHALL NOT, by itself, invalidate an already established Active Generation. |
 | **AG-07 — No Transactional Inference** | Semantic indivisibility SHALL NOT imply any particular transactional, concurrency, persistence or cache mechanism. |
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 7. Release-Bound Information Unit Model
 
 > **Harmonia SHALL support a bound set of Information Unit structures for each architectural release. The composition and semantics of that set MAY evolve between releases, but SHALL be explicitly defined and governed within a release. Information Unit structures SHALL NOT arise implicitly through implementation convenience or runtime behaviour.**
@@ -656,6 +690,18 @@ claim that these release models have been fully defined. An implementation
 wrapper, envelope, DTO, cache object or transport object SHALL NOT invent a new
 Information Unit structure or its semantics.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 8. Relationship to Existing Information Architecture
 
 Information Unit adds a governed management boundary without redefining the
@@ -682,6 +728,18 @@ and [AX-12](../../governance/architectural-axioms.md#ax-12) preserve appropriate
 native standards models and fluent access to information; the conceptual Unit
 boundary does not require replacement models or an implementation wrapper.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 9. Platform / Framework Obligations
 
 > **Harmonia capabilities/services concerned with persistence, security, provenance or transport SHALL recognise and support both the Information Unit itself and the information represented within the Information Unit.**
@@ -704,6 +762,18 @@ terminates Harmonia management of the emitted representation at external egress.
 Retained internal information and provenance do not extend operational control
 beyond that boundary. No external Unit envelope or transport mapping is defined.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 10. Information Unit Guardrails
 
 These G1–G8 identifiers are local to the Information Unit model and supplement
@@ -719,6 +789,18 @@ the existing [sixteen core modelling guardrails](../guardrails/modelling-guardra
 | **G6 — Release Models Are Bound** | Within a release, supported Information Unit structures and semantics SHALL be explicitly governed. |
 | **G7 — Evolution Is Explicit** | Change between release-bound Information Unit models is architectural evolution, not uncontrolled schema drift. |
 | **G8 — Implementation Does Not Invent Information Unit Semantics** | New Information Unit structures SHALL NOT arise merely because an implementation component requires a convenient wrapper, envelope, DTO, cache object or transport object. |
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 11. Downstream Derivation and Retained Questions
 
@@ -763,3 +845,7 @@ Snapshot/export and detailed Audit / Assurance remain separate concerns.
 Result encoding, projection or cache treatment SHALL NOT redefine this boundary.
 [AX-17](../../governance/architectural-axioms.md#ax-17) preserves genuinely
 unestablished details without retaining the resolved generic acceptance question.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

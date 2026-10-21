@@ -1,3 +1,9 @@
+<!-- continuum-source-succession -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+[Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Baseline — Functions
@@ -5514,3 +5520,5 @@ Specific capture authority is not borrowed from the originating identity and is 
 Responsibility/framing context: [Significant Activity Audit Capture](business-enabling-capabilities.md#hcm-bec-significant-activity-audit-capture). This assertion retains Proposed placement standing.
 
 Exact source locators, provenance, name/identity history and deferred assertions are retained in [architecture.json](architecture.json) (record `proposal:function-capture-required-significant-audit-evidence`) and the element's version-qualified Properties.
+
+------- Legacy Content - Superseded ------- Finish ----

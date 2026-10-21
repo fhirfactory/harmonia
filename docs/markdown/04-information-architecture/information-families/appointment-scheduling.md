@@ -1,8 +1,18 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Appointment / Scheduling Information Family
 
 **Status: G2 CANDIDATE — Block 1; G2-D02 approved; remaining propositions await review. Not CLOSED or FROZEN.**
 
 [G2 review standing A–D](../reviews/package2-g2-block1-review.md#2-review-standing) distinguishes derivation strength from acceptance. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure).
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Appointment](../../../../enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Purpose & Semantic Boundary
 
@@ -17,6 +27,11 @@ Encounter does not prove prospective Appointment existed
 ```
 
 These distinctions identify meanings that must not be conflated when supplied; they do not establish separate prospective and retrospective Appointment Concepts. A retrospective Appointment represents scheduling/administrative context associated with an unscheduled Encounter, such as an emergency or walk-in interaction; it is not evidence of prospective scheduling. Independent scheduling-request/proposal responsibility, booking negotiation and scheduler authority transfer remain unestablished.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 2. Domain 03 Responsibility & Traceability
 
@@ -36,12 +51,24 @@ AP-IR3 traces to the [Referral](../../03-business-architecture/processes/busines
 
 ## 3. Principal Information Concepts
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Appointment](../../../../enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.1 Appointment — G2-D02 approved meaning; remaining classification/qualification B/C
 
 - **Semantic Classification**: Assertion / Scheduling Contextual Binding — metamodel classification remains proposed for review; prospective/retrospective scheduling meaning and distinction from Encounter are approved under G2-D02.
 - **Definition**: An identifiable scheduling/administrative context for a healthcare subject's intended or actual care interaction. An Appointment may provide prospective scheduling context for an Encounter or be created retrospectively to represent that context for an Encounter without a pre-existing Appointment.
 - **Necessity**: AP-IR1 requires creation, rescheduling, cancellation and check-in notifications to concern a recognisable arrangement; AP-IR2 requires a schedule of those arrangements. Identity is scoped to the source authority, not presumed globally unique merely from a booking identifier.
 - **Boundary**: Appointment and Encounter are distinct. Appointment existence does not prove an Encounter occurred; an Encounter does not prove a prospective Appointment existed. Retrospective creation must not be interpreted as evidence of prospective scheduling. No separate prospective/retrospective Concepts or Appointment → Encounter cardinality are established. Remaining source/context qualification and metamodel classification are [G2-Q02](../reviews/package2-g2-block1-review.md#g2-q02); Harmonia does not become the booking authority by representing this context.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ### 3.2 Scheduling Change Event — A
 
@@ -86,6 +113,13 @@ Use [Source / Target / Type / Qualification / Properties](../patterns/informatio
 | Schedule Synchronisation State | Harmonia for its own evidenced synchronisation/derivation facts only | Own/govern synchronisation knowledge under Scheduling Administration | Source evidence used, derivation/correlation context and recorded time; uncertainty or conflict remains explicit without an invented resolution rule. |
 | Patient Appointment Schedule View | Constituent source authorities; Scheduling Administration for projection only | Assemble/expose the consolidated subject schedule with access qualification | Composition/inclusion basis, constituent references and projection time. Neither presentation nor aggregation transfers booking authority. |
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Appointment](../../../../enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 6. Temporal & Lifecycle Characteristics
 
 Allocated/scheduled time or period is required to understand a prospective appointment schedule. Source change/occurrence time and received/recorded time are required to distinguish rescheduling from delayed notification. Attendance/check-in occurrence time matters only where that milestone is supplied; scheduled time is never actual encounter or delivery time by assumption.
@@ -96,11 +130,23 @@ Requested periods and proposed periods must be distinguished from allocations if
 
 An Appointment's source booking lifecycle, the scheduling-event history, Harmonia synchronisation progression and an Encounter's real-world/admin progression differ. No universal recurrence, missed-appointment disposition, calendar horizon or status transition model is derived. Foundation provenance/correction rules apply to managed information; they do not authorise Harmonia to alter the host scheduler's truth.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## 7. Assembly Participation & Other Families
 
 The proposed View directly supports Appointment Schedule Query. It does not require a persistent appointment Collection or a new scheduler-owned assembly. Existing Service Provision Context may explain an identified service's availability; service availability is not a booked appointment, calendar or clinic slot model.
 
 Referral–Appointment and Order–Appointment associations remain conditional on their evidenced local pathways, including the Order Process's imaging scheduling checkpoint. Appointment–Encounter scheduling-context association is now approved by G2-D02 for both prospective context and retrospective establishment after an unscheduled Encounter; an Appointment is not a real-world prerequisite to every Encounter. An operational clinic queue may consume booking/check-in information ([Clinic / Operational Queue Process](../../03-business-architecture/processes/business-processes.md#48-clinic--operational-queue-progression-process)); its arrival/readiness progression remains operational information, not an Appointment lifecycle. The [cross-family review](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis) qualifies these relationships.
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Appointment](../../../../enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
 
@@ -109,3 +155,7 @@ No scheduling engine, slot, calendar, recurrence structure, booking algorithm or
 G2-Q02 retains metamodel classification, source/context qualification, retrospective-establishment responsibility and unsupported Appointment → Encounter cardinality; it no longer questions the approved scheduling-context meaning or distinction from Encounter. G2-Q06 retains the View boundary. Requested need/proposed context remain unestablished as independently governed Concepts. Roles of schedulers and notification reporters are identified by source evidence; no new Scheduler Business Role or exhaustive participant eligibility is invented.
 
 This is conceptual Information Architecture. No FHIR resource/profile, application object, cache/persistence model, schema, API or integration contract is allocated. [AX-17](../../governance/architectural-axioms.md#ax-17) remains authoritative.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

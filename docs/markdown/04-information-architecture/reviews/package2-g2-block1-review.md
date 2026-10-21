@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Domain04 Package2 — G2 Block 1 Semantic Review
 
 **Status: G2 CANDIDATE ARCHITECTURE — G2-D01–D04 APPROVED; G2-Q01 RESOLVED; remaining propositions await review. G2 is not CLOSED.**
@@ -186,6 +189,13 @@ Initial Block 1 derivation verification and diff are recorded in the [execution 
 
 <a id="g2-d01"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Episode](../../../../enterprise-architecture/continuum/application/data-object/topic/3927d161556d48f4b2cc57bd46ab785d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### G2-D01 — Episode
 
 **Status: RESOLVED — APPROVED, with explicit unresolved association/responsibility details.**
@@ -202,7 +212,19 @@ Episode is now an independently meaningful Information Concept. The former non-a
 
 **Review consequence:** G2-Q04 no longer asks whether Episode exists or what its basic meaning is; only genuinely unresolved details remain. No Problems/Conditions family is derived.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="g2-d02"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Appointment](../../../../enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### G2-D02 — Appointment and Encounter
 
@@ -225,7 +247,19 @@ Retrospective Appointment establishment is not evidence of prospective schedulin
 
 **Review consequence:** G2-Q02 reflects approved prospective/retrospective meaning and retains only unreviewed qualification/classification/authority/cardinality details. G2-Q03 preserves actual care-interaction meaning while retaining administrative tracking/Assembly questions.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="g2-d03"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Encounter](../../../../enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### G2-D03 — Encounter and HealthcareServiceDelivery
 
@@ -242,6 +276,11 @@ Encounter and HealthcareServiceDelivery are distinct Information Concepts. A sin
 - Further source/correlation qualification and universal delivery/outcome ownership are not established by this decision.
 
 **Review consequence:** G2-Q05's Encounter/delivery existence, basic meaning and multiplicity questions are resolved. Further qualifications and the Referral portion remain unreviewed; no Referral Disposition review is commenced.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ### 10.1 Combined Semantic View and Persistence Boundary
 
@@ -266,6 +305,13 @@ Only the review record, affected Appointment/Episode–Encounter candidate famil
 **Decision/persistence date:** 2026-10-08. **Authority:** explicit architectural review approval of G2-D04 resolving G2-Q01. Section 10 remains the unchanged historical G2-D01–D03 record; its then-unreviewed Q01 statements describe that earlier boundary. AX-17 governs every detail not established by this decision.
 
 <a id="g2-d04"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] ReferralOutcome](../../../../enterprise-architecture/continuum/application/data-object/topic/18ad2e58913b4a938e172df7b03f366a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### G2-D04 — Referral Outcome
 
@@ -304,3 +350,7 @@ An inability to establish what became of a Referral is itself an assurance gap. 
 **Review history and consequence:** Q01 retains its original B question. The former Referral Disposition candidate proposed an independent Assertion for an attributable decision/reported disposition, with acceptance, decline, redirection and context-specific waitlisting examples. Architectural review rejects that separate Concept and reframes its assurance/governance purpose as Referral Outcome. Recipient-decision meanings and the canonical upstream Referral Disposition Log label are not erased. Q01 is resolved, without answering acceptance's clinical responsibility effects or the precise Referral–delivery/outcome relationships under Q05. Responsibility Assumption Assertion remains a non-authoritative D suggestion.
 
 **Persistence boundary:** Only the Referral family, this review record and the necessary Referral navigation text are reconciled. Q02–Q07 and the complete G2-D01–D03 record remain unchanged. Frozen upstream architecture, Foundation, Package1 and initial historical report/diff are not modified. No other G2 question, G3, later Package2 family, FHIR mapping or downstream representation is commenced. G1 remains CLOSED; G2 is not CLOSED.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

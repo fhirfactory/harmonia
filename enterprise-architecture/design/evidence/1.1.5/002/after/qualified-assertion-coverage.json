@@ -1,0 +1,21 @@
+{
+  "sourcePredicatesPreserved": 462,
+  "sourceElements": 254,
+  "byPredicate": {
+    "governed_process": 16,
+    "uses_function": 6,
+    "realises_feature": 11,
+    "participating_function": 8,
+    "contributes_feature": 1,
+    "exposes_process": 1,
+    "uses_process": 1,
+    "associated_feature": 120,
+    "enabled_by": 62,
+    "enterprise_enabled_by": 194,
+    "enterprise_contribution": 38,
+    "purpose_context": 3,
+    "responsibility_parent": 1
+  },
+  "nativeRelationshipsAdded": 0,
+  "canonicalIdsAllocated": 0
+}

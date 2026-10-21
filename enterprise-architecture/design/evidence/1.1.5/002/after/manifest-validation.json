@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "manifest": "enterprise-architecture/continuum/MANIFEST.md",
+  "manifestSha256": "93d79145b55b7168b144ca23e77abc4be988e2725306add8c52d8cbbc132cf45",
+  "elements": 1559,
+  "manifestRows": 1559,
+  "uniqueCanonicalIds": 1559,
+  "populatedNativeTypes": 26,
+  "supportedNativeTypes": 60,
+  "currentness": {
+    "current": 1158,
+    "historical_reference": 300,
+    "pending_adjudication": 69,
+    "superseded": 32
+  },
+  "specializations": {
+    "Feature": 179,
+    "Topic": 70
+  },
+  "unresolvedCanonicalNames": 164,
+  "renderedLocalLinksChecked": 1595,
+  "canonicalSourceComparison": {
+    "status": "PASS",
+    "files": 1559,
+    "beforeAggregateSha256": "fa3f54b412e55ceae4a75ce2eeeb8163a51f3c7c58991f2dda3961da600503e2",
+    "afterAggregateSha256": "fa3f54b412e55ceae4a75ce2eeeb8163a51f3c7c58991f2dda3961da600503e2",
+    "changedFiles": [],
+    "addedFiles": [],
+    "removedFiles": []
+  },
+  "existingPublicationComparison": {
+    "status": "PASS",
+    "unchangedFiles": {
+      "enterprise-architecture/continuum/documentation/published/1.1.5/Harmonia-Architecture.xml": "ed9bf132230896b17d94a5345e7e6bf749e43cd4cccd81a2d9598b62730e628e",
+      "enterprise-architecture/continuum/documentation/published/1.1.5/continuum-catalogue.tex": "179f001a1f99a85c26c0cb7d092b936f2c20d27e914705b0894d1592ea111148",
+      "enterprise-architecture/continuum/documentation/published/1.1.5/continuum.html": "d703d9117dee0c4247692f82eeb1983b5625c6a0baa8dcbe3cbb4b85387ab83a",
+      "enterprise-architecture/continuum/documentation/published/1.1.5/continuum-catalogue.pdf": "ff7df009eca678ffd8f8daeec61be6c5280536ad651ffa67723a020c91de054f",
+      "enterprise-architecture/continuum/documentation/published/1.1.5/README.md": "d6d5c5c8277837493300c7c63e5cf723dd5bae0c7454fdba55a4e16f11c9dcc9",
+      "enterprise-architecture/continuum/documentation/published/1.1.5/publication.json": "71c65d52d13e4194fbecb5168d0baee6db7642c50b653b7416e4c46c6c7e5f9e"
+    }
+  },
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s scripts/tests -p 'test_continuum*.py' -v",
+      "status": "PASS",
+      "tests": 16,
+      "seconds": 75.256
+    },
+    {
+      "command": "make -C docs/archimate/framework continuum continuum-check",
+      "status": "PASS",
+      "includes": "Manifest generation/check; XML generation/check and validation; HTML/Markdown/LaTeX publication/check"
+    },
+    {
+      "command": "python3 scripts/verify_continuum_reproducibility.py --report <report>",
+      "status": "PASS",
+      "evidence": "manifest-reproducibility.json"
+    },
+    {
+      "command": "mvn test -pl paradeigma/paradeigma-test -am -Dtest=\"*ArchitectureTest\" -Dsurefire.failIfNoSpecifiedTests=false",
+      "status": "PASS",
+      "tests": 90,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 18.874
+    }
+  ],
+  "scope": "Generated navigation/review projection only. Canonical elements and all six existing published artifacts are byte-identical to this follow-up entry. No identities allocated.",
+  "limits": "Rendered table/link structure was checked; no interactive visual or new Archi transport review is claimed. Earlier historical-suite authority-pin failures remain recorded in the original migration evidence; this bounded follow-up did not rerun or rewrite those fixtures. Architectural acceptance remains pending."
+}

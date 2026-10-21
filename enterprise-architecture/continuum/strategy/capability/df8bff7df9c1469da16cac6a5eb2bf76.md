@@ -1,0 +1,193 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "df8bff7df9c1469da16cac6a5eb2bf76",
+  "archimateType": "Capability",
+  "specialization": null,
+  "displayName": "[CT2] Clinical Training & Education",
+  "friendlyName": "HealthServiceOperationsEnablement.ClinicalTrainingAndEducation",
+  "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalTrainingAndEducation",
+  "standing": {
+    "semantic": "Historical reference — RAD correspondence unresolved",
+    "currentness": "historical_reference"
+  },
+  "identity": {
+    "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+    "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
+    "expected": {
+      "displayName": "[CT2] Clinical Training & Education",
+      "friendlyName": "HealthServiceOperationsEnablement.ClinicalTrainingAndEducation",
+      "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalTrainingAndEducation"
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/historical_reference_elements/140",
+      "role": "governed source resource",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "sourceKey": "historical-reference:id-4701f92969965a7390095f36e1a8c5da"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+      "selector": "element[@identifier=\"id-4701f92969965a7390095f36e1a8c5da\"]",
+      "role": "accepted representation binding and presentation; not an additional architecture source",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/historical_reference_elements/140"
+    }
+  ],
+  "exchange": {
+    "identifier": "id-4701f92969965a7390095f36e1a8c5da",
+    "previousNativeName": "Clinical Training & Education",
+    "properties": [
+      {
+        "ref": "propid-23",
+        "values": [
+          {
+            "text": "Business Enabling Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-24",
+        "values": [
+          {
+            "text": "CT2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-26",
+        "values": [
+          {
+            "text": "Human-adjudicated candidate",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-42",
+        "values": [
+          {
+            "text": "Not Addressed in R1.x / R2.x",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-40",
+        "values": [
+          {
+            "text": "historical_reference",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-41",
+        "values": [
+          {
+            "text": "Unreconciled — no proven baseline crosswalk",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-18",
+        "values": [
+          {
+            "text": "df8bff7df9c1469da16cac6a5eb2bf76",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-19",
+        "values": [
+          {
+            "text": "[CT2] Clinical Training & Education",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-20",
+        "values": [
+          {
+            "text": "HealthServiceOperationsEnablement.ClinicalTrainingAndEducation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-21",
+        "values": [
+          {
+            "text": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalTrainingAndEducation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-22",
+        "values": [
+          {
+            "text": "Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": [],
+  "unresolvedProperties": {
+    "definition": "Absent in the exact governed source and accepted representation."
+  },
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# [CT2] Clinical Training & Education
+
+## Architectural content
+
+The governed source has no established definition. This absence is retained for Solution Architect review; no definition is inferred from the name.

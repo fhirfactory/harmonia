@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Agora controlled collaboration and Omilia realisation
@@ -9,6 +12,13 @@ and generic clinical-submission accounts. It does not accept the whole candidate
 complete A4 or authorise Step B. [Scope and authority](README.md) apply.
 
 <a id="control-and-operations"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Collaboration control and collaboration operations
 
@@ -41,7 +51,19 @@ not give Omilia Harmonia collaboration policy, semantics or control authority.
 These are logical responsibilities; no new Maven module, runtime topology or
 implementation completion is asserted.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="application-services-api"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Omilia.Server](../../../enterprise-architecture/continuum/application/application-component/369907025d06492bb414a72cea834a77.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Application Services API
 
@@ -80,7 +102,19 @@ Identity mapping/provisioning is collaboration integration, not authentication
 authority. Existing isolation constraints are not relaxed; detailed security,
 privacy and external/federated interactions remain deferred.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="membership-and-roster"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Managed membership and the roster boundary
 
@@ -108,7 +142,19 @@ or an authority grant. Its exact contribution to membership derivation is deferr
 No rostering, scheduling, workforce allocation, substitution, shift management or
 general workforce-management responsibility is introduced into Agora.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="information-ownership"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Native collaboration ownership and conduit behaviour
 
@@ -133,7 +179,19 @@ is authorised here. Detailed collaboration persistence, mapping/transaction
 structures, storage allocation and retention remain deferred. A legacy homeserver
 database or JPA repository does not settle that design.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="managed-room-capture"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Managed Rooms as bidirectional Harmonia interaction surfaces
 
@@ -175,7 +233,19 @@ Pragma specialisations and provenance/reference representations are deferred.
 No NLP, AI interpretation, recognition algorithm, UI mechanism or unconstrained
 clinical interpretation is established.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="dialogue-logging-and-audit"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Dialogue retention, activity logging and audit
 
@@ -199,7 +269,19 @@ constraints. Neither Agora nor Omilia becomes an authoritative audit manager.
 The detailed event catalogue, logging architecture and retention policy remain
 deferred; Kleio architecture is unchanged.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="binary-and-media-custody"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Binary and media custody
 
@@ -220,7 +302,19 @@ Sylloge management does not require physical custody: a payload may remain with
 an external authoritative/source system. [CDG-25](gaps.md#binary-custody-question)
 now retains deferred detailed design with the application responsibility closed.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="deferred-collaboration-design"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Deliberate deferred design and discovery
 
@@ -246,3 +340,7 @@ established above:
 These details SHALL NOT be supplied by analogy with Matrix, Synapse, Element,
 Teams or Slack. [CDG-19/21–23/52](gaps.md#agora-omilia-contracts) retains their
 disposition; Sylloge's separate detailed deferrals remain CDG-25.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

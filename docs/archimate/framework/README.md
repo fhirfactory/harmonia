@@ -1,3 +1,11 @@
+> **Current RAD-1.1.5 pipeline:** `make all` publishes and checks canonical element Markdown through [the continuum machinery](../../../enterprise-architecture/design/archimate/README.md). The shared schemas, containment and naming rules remain reusable. The historical baseline procedures below retain their originating fixtures and recovery role; `historical-baseline-all` is for an isolated historical checkout. They do not govern current source authoring or overwrite retired carriers during current publication.
+
+The current pipeline also generates the root [continuum review manifest](../../../enterprise-architecture/continuum/MANIFEST.md).
+`make continuum-check` checks its exact bytes against canonical inputs. For a
+manifest-only update, run `python3 scripts/continuum_manifest.py` from the repository
+root; add `--check` for read-only verification. This navigation projection does not
+supply element input or architectural authority.
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Harmonia ArchiMate framework

@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Candidate Internal Information Systems Middleware
@@ -37,25 +40,241 @@ administrative finding remains [CDG-55](gaps.md#administrative-function-finding)
 
 | ID | Internal responsibility / candidate allocation | Information and collaboration contract | Current standing / limits |
 | :--- | :--- | :--- | :--- |
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Petasos](../../../enterprise-architecture/continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M01 | **Petasos durable message/event queue management** | Creation, operation and operational status of purpose-defined queues for inter-Ergon flow and other architecturally established communication/notification/event sharing; every queue carries PetasosParcel by value, associated information predominantly by reference | U05/U09, AX-10. First-class shared capability; Mneme selects information and retains ActionableTask/Pragma management. Petasos Parcel reference supports own distinct consumer FulfillmentTask, not transported other-consumer undertaking. Queue state Petasos-owned; Energeia observes/reports. Detail CDG-16/19/34/37/44. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Petasos](../../../enterprise-architecture/continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M02 | **Recoverable backlog, redelivery, rejection, dead-letter and designated replay** | Durable backlog absorbs pressure; consumer acknowledgement/rejection and dead-letter observations support recovery. Deliberate replay starts a new linked attempt at a designated transition, preserving the original. | L13 ADR-015/017, L02/L29. Exact queue sizes/retry limits are implementation detail. Replay is not transport redelivery, arbitrary cache restart or redelivery of an established result, CDG-17. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ponos](../../../enterprise-architecture/continuum/application/application-component/b521762c1ea444b48cd5f66be3752d30.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M03 | **Ponos governed execution ingress, dispatch and progression** | Consumer resolves Pragma/context through Mneme and establishes its distinct FulfillmentTask for ActionableTask undertaking; Ponos manages execution and execution retry/re-attempts | U02/U05. Ponos does not convert an opaque transport payload into information it manages, match Subscriptions or own handoff dead-letter recovery. Detailed continuation/acknowledgement CDG-01/03/16/17. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ergon](../../../enterprise-architecture/continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M04 | **Ergo/Ergon Context Loader/Unloader and Erga Aggregation** | Ergo declares likely non-exhaustive set; Mneme Context Load materialises; Ergo Loader exposes values; bounded logic acts/produces Pragma Output; Unloader returns results; Mneme Context Save manages consequences | U10 refines U02/U04–U06; Loader/Unloader differ from Mneme services and Unloader is not persistence. Bounded Adhoc acquisition supported; Erga collection and Praxis Pathway Aggregation unchanged. Detail CDG-45/01/06. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mneme](../../../enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M05 | **Mneme Context/Pragma-facing four-service surface and supporting coordination** | Context Load, Context Save, Adhoc Resource Access, Adhoc Search; controlled concurrent active use, Mnemosyne authoritative persistence outcomes and post-commit convergence | U10/U11 and AX-05/07/11/12/14/15. C11 facade/carrier intent is supporting, not extra exposed services/network boundary; Context/resource versions and active generation distinct. Detail CDG-31/45/47/48. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M06 | **Governed definitions and runtime DataSet collaboration** | Energeia manages Praxis; Mneme manages governed runtime representations/selection; Calliope-Models supplies build-time structures/definitions and Calliope-DataSets manages mutable governed content through established access/persistence | U06/U13. Static structural dependency differs from runtime operational collaboration; no self-bootstrapping contracts, mandatory universal mediator or new workflow engine. Detail CDG-24/49. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Themis](../../../enterprise-architecture/continuum/application/application-component/899d34ec491948b68aad09e507dea6d1.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M07 | **Themis constrained distributed enforcement and Kleio Audit Capture** | External OIDC/OAuth authentication establishes trusted Identity (SEP). Themis resolves authoritative Criteria/collections/direct and AuthorisationRole assignments, temporal constraints and applicable PractitionerCapacity into precomputed Identity-specific PEP-Criteria through PEP-Context; local Themis PEP enforces at action-controlling host. Kleio constructs immutable AuditEvent from significant client occurrences | U07/U08/U12, AX-04/07–09/14. Conjunctive Criterion, additive UNION grants, no negative Criteria or general-purpose interpreter. Valid sufficient context may continue during PDP loss; required new context waits, unavailability is not DENY. Untagged information governed/fail-closed. Required durable audit capture and Dokimasia terminal rules retained; CDG-42/43. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M08 | **Agora control / Omilia operations / governed capture** | Omilia.Server exposes Application Services API for Agora operation requests and dialogue/activity from all managed Rooms; Omilia.Client uses Matrix protocol. Agora captures defined interactions; Petasos mediates wider execution collaboration | U16; Agora owns native collaboration, originating owners retain conveyed information, original dialogue ownership survives capture. Roster SEP supplies applicable Shift Start/End only. No direct Ponos dependency/DTO leakage. Dialogue/logs differ from Kleio audit. Partial effects CDG-19; API/storage/representation detail CDG-21–23/52. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Energeia](../../../enterprise-architecture/continuum/application/application-component/fb3f37a6ac614415ac486a6de9d35994.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M09 | **Harmonia operational observation/reporting and presentation mediation** | Energeia owns Harmonia operational management; Journey is common observed progression; Iris presents; component contributors retain their responsibilities; external IT/Ops manages technical platform | U06: R1.x/R2.x Observe → Report; no autonomous adaptation. Journey, diagnostics, AuditEvent and findings distinct; detailed freshness/projection/reporting contracts CDG-28/38/39; terminal rules retained. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Management](../../../enterprise-architecture/continuum/application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M10 | **Mneme Pragma Management and new Content collaboration** | Factory initialises; Pragma expresses inputs/outputs; Ergon changes Context values and produces new Content as Pragma Output; Mneme manages resulting consequences and retained Pub/Sub semantics | U10 extends U02/U03/U05. Outputs and changed Context values distinct; Ponos executes, Petasos hands off; recording observations does not own handoff obligations. Output detail CDG-45, existing state/fan-out CDG-03/18/37. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M11 | **DigitalTwin entity-relative serial input processing** | Single Stimulus/Effector queue; interest matching creates BehaviourStimulus/BehaviourEffector per interested Behaviour; sequential one-Ergo Behaviour Praxes with fresh Mneme Context Load/Save on the normal path; same-Twin outputs requeue without interruption | U02/U19 preserve A02. Developer sequencing policy uses framework API; no policy means unspecified order. Applicable sequence stable for each input; changes apply to subsequent inputs. ContinueBehaviourOnFailure contains failure to the current execution, leaving the Behaviour active and other interested Behaviours and queue processing unaffected. StopBehaviourOnFailure stops the failing Behaviour immediately, lets remaining interested Behaviours complete the current input, then halts the Twin. StopDigitalTwinOnFailure terminates the failing Behaviour and halts the Twin immediately, preventing remaining current-input and subsequent queued processing. Pending queue requires governed administrative resume; stopped-Behaviour recovery deferred. Bounded concurrency across independent Twins, no thread per Twin. Runtime/schema/API detail CDG-07/54. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Dokimasia](../../../enterprise-architecture/continuum/application/application-component/d739c75dffe2453081735710b285f03b.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M12 | **Dokimasia independent assurance collaboration** | Ponos-specialised Dokimasia uses **Praxis as assurance basis and Journey as observed evidence subject**; executes Dokimasia Ergon / AI Assurance Ergon where selected; reuses common activity/information/platform contracts | U02/U06 preserve A04 independence and terminal rules: no recursive Dokimasia assessment or separate own-execution AuditEvent. Detailed independence/evidence access CDG-08/09; AI discovery CDG-35. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Management](../../../enterprise-architecture/continuum/application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M13 | **Mneme Publishing / Subscription / Pattern selection** | Provider Pattern filtering governs semantic eligibility; consumer Pattern matching selects available Pragma and eligible recipient/consumer relationships; Petasos establishes/manages concrete persistent handoff to destination | U05/U06. Mneme manages Context/Pragma availability/selection; Petasos owns queue/destination mechanics/state; Ponos executes. Topic remains classification; Pattern/lifecycle CDG-36, fan-out detail CDG-37. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 | M14 | **Pathway-controlled progression** | Ergon PathwayEndpoints, inter-component Segments, encapsulated Traversals, Route = ordered Segment [1..N], Pathway interaction with available Routes; Praxis aggregates Pathway [0..1] | U04/U06. Distinct from Pub/Sub; Journey observes both under Energeia application ownership. Detailed control/definition contracts CDG-01/06; no routing technology selected. |
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Journey](../../../enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M15 | **Journey management, evidence contribution and assurance use** | Energeia Journey Management Services aggregate/reference observations/information from Mneme, Petasos, Ponos/Ergon, DigitalTwin and other governed contributors; Mneme Context/Pragma management; Mnemosyne O&A durable responsibility | U06 resolves owner without owning all contributors or duplicating payloads. Journey evidence subject differs from Praxis assurance basis and Dokimasia inference/findings. Construction/reference/causal/correlation/retention contracts CDG-38; no schema/shard key or universal AuditEvents. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M16 | **Application management versus durable persistence collaboration** | Energeia owns Praxis/Journey; Themis owns Authorisation Model/PRP semantics; Kleio owns Audit Information Management. Mneme provides governed Context/Pragma access; Mnemosyne C&G/O&A supplies authoritative durable state | U06–U08. Themis PRP may use Mneme/C&G; Kleio uses Mneme/O&A with independent authoritative audit targets permitted and R1.x/R2.x harmonisation SEP. C&G coherent authority and O&A partitionability create no prescribed databases/services/topology. Physical design CDG-40; audit mechanisms CDG-43. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Resource Harmonisation Manager](../../../enterprise-architecture/continuum/application/application-function/a6580e0b9f0f40c9a33d731d20110057.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M17 | **Exceptional resource delivery through common execution** | Internal Mneme Resource Harmonisation Manager causes appropriate Harmonisation Ergon work through established work/execution contract and common Ponos | U10. New governed work, no resumed originating Ergon or duplicate execution; approximately 5% or less at worst is design expectation, not SLA; normal path efficient; detail CDG-46. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M18 | **Mnemosyne persistence oversight and local enforcement** | Transaction/service oversight, shard management, compartment validation/reapplication, persistence logging and authoritative reporting; Mneme receives established/uncertain outcomes; Themis owns hosted PEP | U11. Persistence API response not automatically Harmonia outcome; semantic compartment/sharding constraints retained; Energeia R1.x/R2.x Observe → Report receives state without management transfer; detail CDG-47. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | M19 | **Adhoc Search / authoritative Search Management / Research Metadata** | Mneme provides activity-facing search; Mnemosyne searches authoritative managed persistence, optionally using capability and distinct AI-derived Research Metadata; derivation outside Mnemosyne through appropriate Harmonia execution | Explicit U11 task decisions. Source Content unchanged; cache not complete searchable space; provenance/confidence/schema/query/index detail unresolved CDG-48. No physical technology or deriving-component selection. |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ## Documented collaboration examples
 

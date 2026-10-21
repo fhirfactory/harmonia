@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Candidate Pathway, Journey, Publish/Subscribe and Handoff Architecture
@@ -45,6 +48,13 @@ Praxis application ownership and the semantic persistence domains are now
 established below and in [Data/Persistence](data-and-persistence.md#persistence-responsibility-domains).
 
 <a id="praxis-operational-context"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Praxis](../../../enterprise-architecture/continuum/application/data-object/0f961462340348b290fd844357d54d67.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Praxis: operational context and assurance basis
 
@@ -103,7 +113,19 @@ representation and lifecycle remain [CDG-01/06](gaps.md): versioning,
 activation/deactivation, replacement, retirement and treatment of in-flight
 activity following change are deliberately unestablished.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="pathway-continuation"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Ergon outputs and the Pathway-continuation role
 
@@ -131,6 +153,11 @@ resource declarations and bounded Adhoc access remain supported. R3.x may
 introduce criteria-driven dynamic Context determination and dynamically configured
 reusable/generic Ergo; that direction and its mechanisms remain deferred, with
 no AI-driven selection/configuration introduced here.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="publication-and-selection"></a>
 
@@ -160,6 +187,13 @@ retry requires the same active interaction and Diadromí. A lost/terminated
 Diadromí cannot resume; an appropriate client retry creates a new interaction
 and Diadromí. Terma/Diadromí provides no durable application recovery. Petasos
 and established execution retain durable messaging/recovery responsibilities.
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Management](../../../enterprise-architecture/continuum/application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Dynamic information selection through Mneme
 
@@ -214,7 +248,19 @@ the established work/execution contract and common Ponos execution; it does not
 execute harmonisation or embed a second framework. This refines the information/
 execution seam without transferring handoff obligations from Petasos.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="pragma-and-topic"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Pragma payload and Topic semantics
 
@@ -255,7 +301,20 @@ Detailed metadata definitions and Container/Content Topic semantics remain
 unresolved. Neither broker topic naming nor framework routing conventions
 establish those definitions.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="persistent-handoff"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Petasos](../../../enterprise-architecture/continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md)
+- [PetasosParcel Topic](../../../enterprise-architecture/continuum/application/data-object/f0a88f05a0cb438cb42572ec07fb8513.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Persistent handoff without information ownership
 
@@ -316,7 +375,19 @@ Petasos hosts enforcement because it controls the operation, using **Themis-owne
 PEP capability and relevant PEP-Criteria through PEP-Context**. Themis owns semantics; Petasos
 owns the queue operation. Detailed protocols/state metrics remain unresolved.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="state-and-recovery"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Petasos](../../../enterprise-architecture/continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Distinct state and recovery responsibilities
 
@@ -342,7 +413,19 @@ continuation contracts remain unresolved. An uncertain previous effect remains
 uncertain under AX-15; technical failure alone proves neither success nor
 non-occurrence. No safe re-attempt algorithm is invented here.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="fan-out-boundary"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Petasos](../../../enterprise-architecture/continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Fan-out: established principle and retained detail
 
@@ -382,7 +465,19 @@ shared mutable processing-state model follows. Domain04 execution concurrency,
 outcome participation, output rules and TaskOutcome ownership remain unchanged.
 [CDG-37](gaps.md#pubsub-fanout) retains the remaining question.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="journey-and-assurance"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Journey](../../../enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Journey: common observation and assurance subject
 
@@ -499,7 +594,19 @@ remain distinct; not every Journey observation becomes a permanent AuditEvent
 (AX-08/09). Dokimasia's [terminal constraints](component-register.md#dokimasia-terminal-boundaries)
 and operational independence remain intact.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="journey-and-audit"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Journey](../../../enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Journey and authoritative Audit Capture
 
@@ -526,3 +633,7 @@ under Harmonia security policy. The audited Identity remains evidence, not the
 authority persisting its mandatory AuditEvent; its PEP-Criteria is not borrowed.
 Insufficient capture authority fails the governed operation closed. This supplies
 no equivalent intrinsic authority to Journey, Energeia or other components.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

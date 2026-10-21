@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Architectural & Operational Assessments
 
 ## Overview
@@ -7,6 +10,13 @@ Assessments represent the formal architectural and operational evaluations of sy
 Harmonia recognizes strictly **five agreed assessments**. These assessments identify concrete failure modes and performance hazards observed in distributed healthcare integration environments. Assessments are not manufactured to force artificial symmetry; they exist only where an explicit systemic risk has been analyzed.
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Silent Data Loss via False Acceptance](../../../../enterprise-architecture/continuum/motivation/assessment/9f185cd26a0f4118a0b28bb08134f472.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Silent Data Loss via False Acceptance
 
@@ -35,6 +45,18 @@ In traditional HL7 v2 and MLLP transport middleware, inbound gateways often retu
 - **Foundational Requirement**: [`REQ-FND-001` Durable Ingress Acceptance Boundary](../requirements-constraints/foundational-requirements.md)
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Unmonitored Destination Failure / Fan-Out Divergence](../../../../enterprise-architecture/continuum/motivation/assessment/3357fcd2f7ce457386e33a2f06ae2182.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 2. Unmonitored Destination Failure / Fan-Out Divergence
 
@@ -65,6 +87,18 @@ If the integration platform considers the parent activity "completed" merely bec
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [PHI Leakage through Operational Logging](../../../../enterprise-architecture/continuum/motivation/assessment/6d8848b700df4f6eacc0347993ac541a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. PHI Leakage through Operational Logging
 
 ### Assessment Summary
@@ -86,6 +120,18 @@ In a healthcare environment, these logs are ingested into centralized search clu
 - **Derived Guardrail & Requirement**: Classifies downstream as a mandatory Security Architecture requirement (`SEC-010` PHI-Safe Operational Logging), with formal governance guardrails owned under Domain 13.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Implicit Perimeter Trust](../../../../enterprise-architecture/continuum/motivation/assessment/f1b3b73329ae46b9b5105fb8ff236be5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 4. Implicit Perimeter Trust
 
@@ -110,6 +156,18 @@ In modern distributed and containerized integration environments, perimeter-only
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Centralised Synchronous Persistence Can Constrain Concurrent Processing](../../../../enterprise-architecture/continuum/motivation/assessment/4f7b18cecb08415bad2b4247068a511e.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Centralised Synchronous Persistence Can Constrain Concurrent Processing
 
 ### Assessment Summary
@@ -130,3 +188,7 @@ In a high-volume regional integration hub, thousands of clinical messages arrive
 - **Related Driver**: [Continuous Clinical Service Availability](drivers.md)
 - **Target Goal**: [Responsive Access to Managed Information](../goals-outcomes/strategic-goals.md)
 - **Governing Axioms**: [AX-11 (Responsive & Resilient Information Access)](../../governance/architectural-axioms.md#ax-11), [AX-05 (Active Coordination ≠ Authoritative State)](../../governance/architectural-axioms.md#ax-05), [AX-09 (Default Ephemerality of Operational State)](../../governance/architectural-axioms.md#ax-09)
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

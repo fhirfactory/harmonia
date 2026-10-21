@@ -1,0 +1,348 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "caac8a83dc974cdb9c9bc1b778b9cee7",
+  "archimateType": "Capability",
+  "specialization": "Feature",
+  "displayName": "[Feature] Worker Matching & Allocation",
+  "friendlyName": "HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkAssignmentAndDispatchCoordination.WorkerMatchingAndAllocation",
+  "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination.FEAT-WorkerMatchingAndAllocation",
+  "standing": {
+    "semantic": "Canonical",
+    "currentness": "current",
+    "placement_status": "Proposed",
+    "structural_id_status": "Proposed",
+    "name_status": "Canonical",
+    "ancestry_status": "proposed"
+  },
+  "identity": {
+    "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+    "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
+    "expected": {
+      "displayName": "[Feature] Worker Matching & Allocation",
+      "friendlyName": "HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkAssignmentAndDispatchCoordination.WorkerMatchingAndAllocation",
+      "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination.FEAT-WorkerMatchingAndAllocation"
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/elements/352",
+      "role": "governed source resource",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "sourceKey": "feature:worker-matching--allocation"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+      "selector": "element[@identifier=\"id-109077f750945afeb4ab67ed67f204f0\"]",
+      "role": "accepted representation binding and presentation; not an additional architecture source",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+    },
+    {
+      "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+      "selector": "13-work-allocation--dispatch-harmonia-core",
+      "role": "original source locator; recorded edition",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "captureSource": "docs/markdown/governance/baseline/architecture.json",
+      "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/elements/352"
+    }
+  ],
+  "exchange": {
+    "identifier": "id-109077f750945afeb4ab67ed67f204f0",
+    "previousNativeName": "Worker Matching & Allocation",
+    "properties": [
+      {
+        "ref": "propid-1",
+        "values": [
+          {
+            "text": "feature:worker-matching--allocation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-2",
+        "values": [
+          {
+            "text": "FEAT-HSO-20",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-3",
+        "values": [
+          {
+            "text": "feature:feat-hso-20",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-4",
+        "values": [
+          {
+            "text": "feature",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-5",
+        "values": [
+          {
+            "text": "FT",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-6",
+        "values": [
+          {
+            "text": "Canonical",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "current",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-8",
+        "values": [
+          {
+            "text": "Proposed",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-9",
+        "values": [
+          {
+            "text": "Proposed",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-10",
+        "values": [
+          {
+            "text": "CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WORK-ALLOCATION-DISPATCH.CT3-BEC-OPERATIONAL-WORK-ASSIGNMENT-DISPATCH-COORDINATION.FEAT-HSO-20",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-27",
+        "values": [
+          {
+            "text": "[\"CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OPERATIONAL-WORKFORCE-COORDINATION.CT3-BEC-WORK-ALLOCATION-DISPATCH.FEAT-HSO-20\"]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-11",
+        "values": [
+          {
+            "text": "Canonical",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-28",
+        "values": [
+          {
+            "text": "Worker Matching & Allocation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-12",
+        "values": [
+          {
+            "text": "Unresolved — representation ID only",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-30",
+        "values": [
+          {
+            "text": "[{\"anchor\":\"13-work-allocation--dispatch-harmonia-core\",\"line\":533,\"source\":\"enabling\",\"text\":\" - `FEAT-HSO-20`: **Worker Matching & Allocation**: Match work items against available staff roles, credentials, and locations based on allocation policies.\"}]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-14",
+        "values": [
+          {
+            "text": "{\"ancestry_status\":\"proposed\",\"architectural_status\":\"Canonical\",\"baseline_description\":{\"Feature Overview\":\"Worker matching relates an operational requirement to eligible roles, credentials, locations and availability under policy. It consumes those constraints rather than changing their authoritative records, and does not turn operational allocation into permission to decide clinical work.\"},\"baseline_placement\":{\"canonical_id\":null,\"owner_key\":\"capability:work-allocation--dispatch\",\"parent_key\":null,\"tier\":\"FT\"},\"baseline_unresolved\":[\"ancestry\",\"canonical_id\"],\"baseline_version\":\"0.1\",\"canonical_id\":\"CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-WORK-ALLOCATION-DISPATCH.CT3-BEC-OPERATIONAL-WORK-ASSIGNMENT-DISPATCH-COORDINATION.FEAT-HSO-20\",\"canonical_name\":\"Worker Matching & Allocation\",\"catalogue_context\":\"context:hso-operational-work-assignment--supervision\",\"category\":null,\"governed_definition_latex\":\"\\nMatch work items against available staff roles, credentials, and locations based on allocation policies.\\n\\n\",\"id_aliases\":[\"CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OPERATIONAL-WORKFORCE-COORDINATION.CT3-BEC-WORK-ALLOCATION-DISPATCH.FEAT-HSO-20\"],\"key\":\"feature:worker-matching--allocation\",\"latex_label\":\"feature:feat-hso-20\",\"local_id\":\"FEAT-HSO-20\",\"name\":\"Worker Matching & Allocation\",\"name_aliases\":[],\"name_status\":\"Canonical\",\"owner_identifier\":\"HCM-BEC-reviewed-operational-work-assignment-dispatch-coordination\",\"owner_key\":\"reviewed:bec-operational-work-assignment-dispatch-coordination\",\"parent_identifier\":null,\"parent_key\":null,\"placement_provenance\":{\"authority\":\"Proposed structural assertions; existing Canonical semantic standing retained\",\"derivation\":\"Reconciliation against the explicit human-reviewed BEC candidate hierarchy\",\"evidence\":[{\"line\":2,\"path\":\"docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json\",\"standing\":\"Explicit human task decision; reviewed candidate, not RADS acceptance\",\"text\":\" \\\"authority\\\": \\\"User-provided human-adjudicated reviewed candidate BEC hierarchy, 2026-10-16; bounded reconciliation input, not RADS acceptance.\\\",\"}],\"method\":\"Bounded semantic reconciliation; no unconstrained synthesis\"},\"placement_rationale\":\"Meaningful reviewed CT3 framing selected for the existing Feature semantics; established responsibility provenance is preserved.\",\"placement_status\":\"Proposed\",\"pre_review_record\":{\"ancestry_status\":\"proposed\",\"architectural_status\":\"Canonical\",\"baseline_description\":{\"Feature Overview\":\"Worker matching relates an operational requirement to eligible roles, credentials, locations and availability under policy. It consumes those constraints rather than changing their authoritative records, and does not turn operational allocation into permission to decide clinical work.\"},\"baseline_placement\":{\"canonical_id\":null,\"owner_key\":\"capability:work-allocation--dispatch\",\"parent_key\":null,\"tier\":\"FT\"},\"baseline_unresolved\":[\"ancestry\",\"canonical_id\"],\"baseline_version\":\"0.1\",\"canonical_id\":\"CT1-BEC-CARE-OPERATIONS-COORDINATION-ENABLEMENT.CT2-BEC-OPERATIONAL-WORKFORCE-COORDINATION.CT3-BEC-WORK-ALLOCATION-DISPATCH.FEAT-HSO-20\",\"canonical_name\":\"Worker Matching & Allocation\",\"catalogue_context\":\"context:hso-operational-work-assignment--supervision\",\"category\":null,\"governed_definition_latex\":\"\\nMatch work items against available staff roles, credentials, and locations based on allocation policies.\\n\\n\",\"id_aliases\":[],\"key\":\"feature:worker-matching--allocation\",\"latex_label\":\"feature:feat-hso-20\",\"local_id\":\"FEAT-HSO-20\",\"name\":\"Worker Matching & Allocation\",\"name_aliases\":[],\"name_status\":\"Canonical\",\"owner_identifier\":\"HCM-BEC-work-allocation-dispatch\",\"owner_key\":\"capability:work-allocation--dispatch\",\"parent_identifier\":null,\"parent_key\":null,\"placement_status\":\"Proposed\",\"reference_id\":\"FEAT-HSO-20\",\"responsibility_owner_key\":\"capability:work-allocation--dispatch\",\"source_rad_documents\":[\"docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md\"],\"sources\":[{\"anchor\":\"13-work-allocation--dispatch-harmonia-core\",\"line\":533,\"source\":\"enabling\",\"text\":\" - `FEAT-HSO-20`: **Worker Matching & Allocation**: Match work items against available staff roles, credentials, and locations based on allocation policies.\"}],\"structural_id_status\":\"Proposed\",\"tier\":\"FT\",\"type\":\"feature\",\"unresolved\":[],\"views\":[\"view:health-service-operations\"]},\"record_state\":\"current\",\"reference_id\":\"FEAT-HSO-20\",\"responsibility_owner_key\":\"capability:work-allocation--dispatch\",\"reviewed_responsibility_relocation\":{\"current_frame\":\"reviewed:bec-operational-work-assignment-dispatch-coordination\",\"previous_owner\":\"capability:work-allocation--dispatch\",\"provenance\":{\"authority\":\"Proposed structural assertions; existing Canonical semantic standing retained\",\"derivation\":\"Reconciliation against the explicit human-reviewed BEC candidate hierarchy\",\"evidence\":[{\"line\":2,\"path\":\"docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json\",\"standing\":\"Explicit human task decision; reviewed candidate, not RADS acceptance\",\"text\":\" \\\"authority\\\": \\\"User-provided human-adjudicated reviewed candidate BEC hierarchy, 2026-10-16; bounded reconciliation input, not RADS acceptance.\\\",\"}],\"method\":\"Bounded semantic reconciliation; no unconstrained synthesis\"},\"status\":\"Proposed\"},\"source_rad_documents\":[\"docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md\"],\"sources\":[{\"anchor\":\"13-work-allocation--dispatch-harmonia-core\",\"line\":533,\"source\":\"enabling\",\"text\":\" - `FEAT-HSO-20`: **Worker Matching & Allocation**: Match work items against available staff roles, credentials, and locations based on allocation policies.\"}],\"structural_id_status\":\"Proposed\",\"tier\":\"FT\",\"type\":\"feature\",\"unresolved\":[],\"views\":[\"view:health-service-operations\"]}",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-33",
+        "values": [
+          {
+            "text": "HCM-BEC-reviewed-operational-work-assignment-dispatch-coordination",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-17",
+        "values": [
+          {
+            "text": "docs/markdown/governance/baseline/features.md#feat-hso-20",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-18",
+        "values": [
+          {
+            "text": "caac8a83dc974cdb9c9bc1b778b9cee7",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-19",
+        "values": [
+          {
+            "text": "[Feature] Worker Matching & Allocation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-20",
+        "values": [
+          {
+            "text": "HealthServiceOperationsEnablement.WorkAllocationAndDispatch.OperationalWorkAssignmentAndDispatchCoordination.WorkerMatchingAndAllocation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-21",
+        "values": [
+          {
+            "text": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination.FEAT-WorkerMatchingAndAllocation",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-22",
+        "values": [
+          {
+            "text": "Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-34",
+        "values": [
+          {
+            "text": "Feature",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": [],
+  "unresolvedProperties": {},
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# [Feature] Worker Matching & Allocation
+
+## Architectural content
+
+Match work items against available staff roles, credentials, and locations based on allocation policies.
+
+Worker matching relates an operational requirement to eligible roles, credentials, locations and availability under policy. It consumes those constraints rather than changing their authoritative records, and does not turn operational allocation into permission to decide clinical work.

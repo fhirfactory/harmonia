@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # DesignNote --- Pragma Outputs and Pathway Continuation
@@ -14,12 +17,31 @@ It does not accept the whole candidate, change A4 standing, commence Step B or
 authorise implementation. The [Architectural Axioms](../../governance/architectural-axioms.md)
 remain controlling; the [Domain05 scope](../README.md) applies.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 1. Purpose
 
 Distinguish Pragma independently resulting from Ergon execution from the Pragma
 used to continue fulfilment of the current Praxis along its Pathway. Preserve
 the corresponding boundary between Journey progression and complete Pragma
 provenance without prescribing new components or representations.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Praxis](../../../../enterprise-architecture/continuum/application/data-object/0f961462340348b290fd844357d54d67.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 2. Pathway and Praxis
 
@@ -45,6 +67,18 @@ This clarifies fulfilment semantics within Praxis's established operational and
 assurance envelope. It preserves Praxis Aggregation of Pathway [0..1], including
 the established possibility of Pub/Sub activity without a predefined Pathway.
 It does not make Praxis an orchestrator, choreographer or execution engine.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 3. Outputs and continuation
 
@@ -91,6 +125,18 @@ Publish/Subscribe, another Praxis, other governed Harmonia processing, or no
 further processing. Availability does not imply publication, selection, handoff
 or execution, and does not bypass applicable governance.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 4. Continuation is a role; representation is deferred
 
 **Pathway-continuation is a role played by a Pragma.** This adjudication creates
@@ -106,6 +152,18 @@ Future detailed modelling must determine whether:
 
 That decision is explicitly deferred. No schema, designation mechanism, factory
 extension, copy/version rule or persistence mechanism follows from this note.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Journey](../../../../enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 5. Journey consequence
 
@@ -127,6 +185,18 @@ Existing Pub/Sub-only and mixed, potentially graph-shaped Journeys remain valid;
 this note does not require every Journey to have a Pathway or prescribe correlation
 or reconstruction algorithms.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 6. Responsibility boundaries
 
 | Responsibility | Established allocation |
@@ -136,6 +206,18 @@ or reconstruction algorithms.
 | Context and Pragma management; semantic Publish/Subscribe | Mneme retains governed information management, creation/initialisation through established PragmaFactory responsibility, selection and availability. |
 | Durable physical handoff, where applicable | Petasos retains concrete persistent handoff obligations, queue operations and recovery; semantic selection remains Mneme's. |
 | Authoritative durable information and audit | Mnemosyne establishes durable state; Kleio retains authoritative audit capture. Neither responsibility is replaced by continuation lineage or Journey. |
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 7. Release boundary
 
@@ -147,6 +229,18 @@ establish criteria-driven dynamic determination of Context.
 configured reusable/generic Ergo.** This is deferred architectural direction only.
 No R3.x mechanism is designed and no AI-driven selection/configuration is
 introduced into the current architecture by this adjudication.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 8. Axiom consistency, reconciliation and retained conflicts
 
@@ -174,3 +268,7 @@ authorised **Pathway fulfilment management** correction: Praxis defines Context,
 expected criteria and housekeeping and is neither orchestrator nor choreographer.
 Previously superseded historical Praxis engine/blueprint descriptions remain
 historical; the continuation representation remains deferred.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

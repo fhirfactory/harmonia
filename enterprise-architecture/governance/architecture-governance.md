@@ -260,6 +260,31 @@ completed continuum.
 
 ## Governance and architectural knowledge
 
+### RAD-1.1.5 authorised application
+
+The Solution Architect's [operative element-continuum Task](../design/evidence/1.1.5/002/before/ai-agent-tasks/20261021T092725Z-establish-and-apply-element-continuum.md)
+supplies the separately required migration authority. It rejects the 1.1.5-001
+document-carrier strategy as a whole and requires applying the element model to
+the real RAD corpus. The [representation contract](continuum-representation.md)
+and [incorporation Praxis](continuum-incorporation-praxis.md) govern current
+canonical Markdown resources. [HCRL 002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md)
+records actual incorporation, bounded source retirement and unresolved meaning.
+
+Qualified Candidate, Proposed and historical elements may be represented under
+that explicit migration authority while retaining their standing. Their presence
+does not approve their assertions or accept the overall result. Pending decisions
+remain in design/review; the completed register still requires Solution Architect
+confirmation. The [individual Architectural Axioms](architectural-axioms.md)
+retain highest authority. Original register sections remain unchanged history.
+
+The preceding adoption account records its original migration deferral; this
+application does not retrospectively change that account. Unretired source
+authority remains applicable to its defined scope. The governed publication area
+under continuum/documentation/published contains derived reading material, never
+additional architectural elements or source identities.
+
+### Continuing knowledge boundary
+
 Governance machinery, rules and context belong in
 `enterprise-architecture/governance/`. Durable governance knowledge SHALL NOT be
 manufactured into ArchiMate architectural knowledge merely because it is durable.

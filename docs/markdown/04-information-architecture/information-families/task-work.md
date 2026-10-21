@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Task / Work — Bounded Information Model
 
 ## 1. Authority and Scope
@@ -24,6 +27,13 @@ conceptual, representation-independent meaning.
 
 ## 2. Established Task Concepts
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] TaskDefinition](../../../../enterprise-architecture/continuum/application/data-object/topic/1d6d4c3a2df440be94262855fa6564eb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 2.1 ActionableTaskArchetype — Reusable Work Definition
 
 **ActionableTaskArchetype** is the reusable definition/archetype for a kind of
@@ -44,6 +54,18 @@ without defining that content's structural representation or requiring
 Harmonia to comprehend its domain semantics. The
 [observable-information boundary](../guardrails/observable-information-and-domain-meaning.md#2-observability-and-encapsulated-domain-meaning)
 applies.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Task](../../../../enterprise-architecture/continuum/application/data-object/topic/c43139289cb649b4836521a96a51604c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 2.2 ActionableTask — Identifiable Work Instance
 
@@ -133,6 +155,18 @@ participate while their outputs are collected or used to derive another
 output. No universal mode combination, default or execution algorithm is
 inferred from these examples.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] TaskFulfillment](../../../../enterprise-architecture/continuum/application/data-object/topic/30f4deffcd694f07bf54b2b192695d4f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 2.3 FulfillmentTask — Identifiable Undertaking
 
 **FulfillmentTask** represents an identifiable undertaking of an
@@ -165,6 +199,18 @@ governed by the ActionableTask's explicit outcome policy. No universal
 execution state machine or satisfaction rule is established here. Information
 representing an undertaking remains distinct from the undertaking itself.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] TaskOutcome](../../../../enterprise-architecture/continuum/application/data-object/topic/08d8ee19a30f418f9d5bc497ced0d1ef.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 2.4 TaskOutcome — Governed ActionableTask Resolution
 
 > **TaskOutcome is the governed resolution of an ActionableTask according to
@@ -194,6 +240,11 @@ governed TaskOutcome to the relevant participating FulfillmentTask
 undertakings, rather than through recursive outcome aggregation hierarchies.
 Aggregate participation does not imply recursive composition. The remaining
 questions in §5 remain unresolved.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 3. Established Conceptual Relationships
 
