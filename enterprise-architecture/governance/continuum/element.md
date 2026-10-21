@@ -4,7 +4,8 @@
 
 Generate the exact metadata skeleton with
 `python3 scripts/architecture_continuum.py template --type <NativeType>` and the
-explicit `--specialization Feature` or `--specialization Topic` where applicable.
+explicit `--specialization Feature`, `--specialization Topic`, or
+`--specialization ImplementationGuideline` where applicable.
 Fill the metadata and body according to the [representation contract](../continuum-representation.md).
 The tool's template is the executable form; placeholders are not architecture.
 

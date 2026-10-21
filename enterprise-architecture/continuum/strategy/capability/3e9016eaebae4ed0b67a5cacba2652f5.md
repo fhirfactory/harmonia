@@ -436,7 +436,17 @@
         "to": "enterprise:ec-02",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 822
+      "source_index": 822,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-1749412ad0e256288f38dbe6e664f8c1",
+        "sourceCanonicalId": "3cfd3e56c23a4943bd1b476ec248ac49",
+        "targetCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5"
+      }
     },
     {
       "sourcePointer": "/relationships/823",
@@ -476,7 +486,17 @@
         "to": "enterprise:ec-04",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 823
+      "source_index": 823,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-8ecb084173cb5701927986273a865e95",
+        "sourceCanonicalId": "43051efd406b4040bff8e794b7a631e0",
+        "targetCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5"
+      }
     },
     {
       "sourcePointer": "/relationships/824",
@@ -516,7 +536,17 @@
         "to": "enterprise:ec-08",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 824
+      "source_index": 824,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-f65b8515eac8577db047c309af6f8a55",
+        "sourceCanonicalId": "0f2e5222874949d8b0cce234941ecb20",
+        "targetCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5"
+      }
     }
   ]
 }
@@ -546,13 +576,13 @@ Register integration and recall distribution materially connect preventative act
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| enterprise_enabled_by | [[CT2] Context Management](3cfd3e56c23a4943bd1b476ec248ac49.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
-| enterprise_enabled_by | [[CT2] Information Management](43051efd406b4040bff8e794b7a631e0.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
-| enterprise_enabled_by | [[CT2] Interoperability & Exchange](0f2e5222874949d8b0cce234941ecb20.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
+| enterprise_enabled_by | [[CT2] Context Management](3cfd3e56c23a4943bd1b476ec248ac49.md) | Proposed / current | Serving (reverse) — `id-1749412ad0e256288f38dbe6e664f8c1` |
+| enterprise_enabled_by | [[CT2] Information Management](43051efd406b4040bff8e794b7a631e0.md) | Proposed / current | Serving (reverse) — `id-8ecb084173cb5701927986273a865e95` |
+| enterprise_enabled_by | [[CT2] Interoperability & Exchange](0f2e5222874949d8b0cce234941ecb20.md) | Proposed / current | Serving (reverse) — `id-f65b8515eac8577db047c309af6f8a55` |
 
 ## Source-qualified contribution
 

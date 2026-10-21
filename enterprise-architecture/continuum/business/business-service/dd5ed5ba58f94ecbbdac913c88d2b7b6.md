@@ -353,6 +353,112 @@
       "specialization": "Home",
       "name": [],
       "documentation": []
+    },
+    {
+      "identifier": "id-ce3f2c3bce4a55bea7b58ccf7560ed6e",
+      "archimateType": "Association",
+      "source": "id-a236d718153153808c072f1d8cae8c1f",
+      "target": "id-6f0bfe5e814c5734a7c530f2b7515666",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "established",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/12",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "dd5ed5ba58f94ecbbdac913c88d2b7b6",
+        "sourceAssertion": {
+          "from": "service:person-identity-correction",
+          "sources": [
+            {
+              "anchor": "21-person-identity",
+              "line": 34,
+              "source": "em",
+              "text": " - *Exposed Service*: `Person Identity Correction` — Exposed to authorized HIM/Medical Records administrators."
+            }
+          ],
+          "status": "established",
+          "to": "feature:governed-identity-correction",
+          "type": "associated_feature"
+        }
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:person-identity-correction\", \"sources\": [{\"anchor\": \"21-person-identity\", \"line\": 34, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Person Identity Correction` — Exposed to authorized HIM/Medical Records administrators.\"}], \"status\": \"established\", \"to\": \"feature:governed-identity-correction\", \"type\": \"associated_feature\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:person-identity-correction\", \"sources\": [{\"anchor\": \"21-person-identity\", \"line\": 34, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Person Identity Correction` — Exposed to authorized HIM/Medical Records administrators.\"}], \"status\": \"established\", \"to\": \"feature:governed-identity-correction\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/12",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},
@@ -383,7 +489,17 @@
         "to": "feature:governed-identity-correction",
         "type": "associated_feature"
       },
-      "source_index": 12
+      "source_index": 12,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Association",
+        "reverse": false,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-ce3f2c3bce4a55bea7b58ccf7560ed6e",
+        "sourceCanonicalId": "dd5ed5ba58f94ecbbdac913c88d2b7b6",
+        "targetCanonicalId": "f7ab7a24e8234129b2ab02e9abd4fba2"
+      }
     }
   ]
 }
@@ -397,11 +513,11 @@ Exposed to authorized HIM/Medical Records administrators.
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| associated_feature | [[Feature] Governed Identity Correction](../../strategy/capability/feature/f7ab7a24e8234129b2ab02e9abd4fba2.md) | established / current | Feature association does not establish a particular native edge or whole-Feature realisation. |
+| associated_feature | [[Feature] Governed Identity Correction](../../strategy/capability/feature/f7ab7a24e8234129b2ab02e9abd4fba2.md) | established / current | Association — `id-ce3f2c3bce4a55bea7b58ccf7560ed6e` |
 
 ## Source-qualified contribution
 

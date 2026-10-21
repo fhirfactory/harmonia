@@ -18,7 +18,10 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "predecessorCanonicalIds": [
+      "759a2e52172345e8ad1bc96d7e5ddad3"
+    ]
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -326,3 +329,7 @@ Manage clinical escalation paths and their applicability, contacts and progressi
 **Boundary**
 
 Harmonia manages the escalation path; responsible clinical participants perform supervision and retain clinical judgement.
+
+## ARB identity continuity
+
+Historical identity [759a2e52172345e8ad1bc96d7e5ddad3](759a2e52172345e8ad1bc96d7e5ddad3.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.

@@ -46,7 +46,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1559,1137,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1602,1651,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_identity_type_location_and_standing_fail_closed(self):
@@ -100,7 +100,49 @@ class ContinuumTests(unittest.TestCase):
         for spec in (invalid,empty):
             with patch.object(c.uuid,'uuid4',side_effect=AssertionError('Unexpected allocation')):
                 with self.assertRaises(ValueError):c.create(spec,self.root)
-        self.assertEqual(len(c.load(self.root)[1]),1559)
+        self.assertEqual(len(c.load(self.root)[1]),1602)
+
+    def test_native_endpoints_reject_schema_valid_but_illegal_relationship(self):
+        cid = next(cid for cid, (m, _, _) in self.elements.items()
+                   if m['archimateType'] == 'Capability' and m['relationships'])
+        rows = copy.deepcopy(self.elements[cid][0]['relationships'])
+        # Capability cannot assign behaviour, even though Assignment is an XSD type.
+        rows[0]['archimateType'] = 'Assignment'
+        with self.changed(cid, relationships=rows), self.assertRaisesRegex(ValueError, 'native relationship endpoints'):
+            c.validate(self.root)
+
+    def test_reserved_historical_identity_cannot_become_a_second_current_capability(self):
+        cid = next(cid for cid, (m, _, _) in self.elements.items() if m['identity'].get('correspondence'))
+        standing = copy.deepcopy(self.elements[cid][0]['standing']); standing['currentness'] = 'current'
+        with self.changed(cid, standing=standing), self.assertRaisesRegex(ValueError, 'remain reserved'):
+            c.validate(self.root)
+        identity = copy.deepcopy(self.elements[cid][0]['identity'])
+        identity['correspondence']['successorCanonicalId'] = cid
+        with self.changed(cid, identity=identity), self.assertRaisesRegex(ValueError, 'identity correspondence'):
+            c.validate(self.root)
+
+    def test_native_predicate_cannot_lose_qualification_or_reverse_enablement(self):
+        cid = next(cid for cid, (m, _, _) in self.elements.items()
+                   if any(q['source_assertion']['type'] == 'enabled_by' for q in m.get('qualifiedAssertions', [])))
+        rows = copy.deepcopy(self.elements[cid][0]['qualifiedAssertions'])
+        row = next(q for q in rows if q['source_assertion']['type'] == 'enabled_by')
+        row['nativeMapping']['reverse'] = False
+        with self.changed(cid, qualifiedAssertions=rows), self.assertRaisesRegex(ValueError, 'Serving rule'):
+            c.validate(self.root)
+        rows = copy.deepcopy(self.elements[cid][0]['qualifiedAssertions'])
+        row = next(q for q in rows if q['source_assertion']['type'] == 'enabled_by')
+        row['source_assertion']['status'] = 'unresolved'
+        with self.changed(cid, qualifiedAssertions=rows), self.assertRaisesRegex(ValueError, 'Unestablished relationship'):
+            c.validate(self.root)
+
+    def test_implementation_guideline_keeps_course_of_action_semantics(self):
+        cid = next(cid for cid, (m, _, _) in self.elements.items() if m.get('specialization') == 'ImplementationGuideline')
+        m = self.elements[cid][0]
+        self.assertEqual(m['archimateType'], 'CourseOfAction')
+        self.assertIsNone(m['canonicalName'])
+        self.assertIn('canonicalName', m['unresolvedProperties'])
+        with self.changed(cid, archimateType='Requirement'), self.assertRaisesRegex(ValueError, 'incompatible'):
+            c.load(self.root)
 
     def test_creation_then_duplicate_retry_preserves_one_identity(self):
         spec=self.valid_spec();path=c.create(spec,self.root)
@@ -121,6 +163,11 @@ class ContinuumTests(unittest.TestCase):
         self.assertEqual(report['informationNaming']['metadata_changes'],{})
         template=c.secure_xml(self.root/c.DESIGN/'projection-template.xml');model=c.ET.fromstring(a)
         self.assertEqual(c.ET.tostring(template.find('a:views',c.N)),c.ET.tostring(model.find('a:views',c.N)))
+        projected={node.get('identifier'):node for node in model.findall('a:elements/a:element',c.N)}
+        for m,body,_ in self.elements.values():
+            self.assertEqual(projected[m['exchange']['identifier']].findtext('a:documentation',namespaces=c.N),
+                             body.split('## Architectural content\n',1)[1].strip())
+        self.assertNotRegex(a,rb'[^\s][ \t]+\r?\n')
 
     def manifest_document(self):
         return html.fromstring(markdown.markdown(manifest.render(self.root).decode(), extensions=['tables']))

@@ -18,7 +18,10 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "predecessorCanonicalIds": [
+      "a1c557bd263047d0b3ff566cf50b98c1"
+    ]
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -530,3 +533,7 @@ Managing or preserving information does not originate its clinical facts. Govern
 **Harmonia Architectural Relevance**
 
 These are substantive information-management responsibilities within Harmonia's assigned boundary. The Core classification remains bounded by information authority, active/durable-state separation and clinical decision authority.
+
+## ARB identity continuity
+
+Historical identity [a1c557bd263047d0b3ff566cf50b98c1](a1c557bd263047d0b3ff566cf50b98c1.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.

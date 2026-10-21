@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "canonicalSources": 1602,
+  "identicalArtifacts": {
+    "Harmonia-Architecture.xml": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b",
+    "continuum.html": "5cc547456bd9bd2eadf9a8d44fa200df186e61479e783f9eb69c218cbeeabec2",
+    "README.md": "70949989bcc1174d7c09e4425a0938885659b83e95d26f4cfd71f9dd14c1b8e7",
+    "continuum-catalogue.tex": "e26000d6751d167ea636536973d3deadcbb4ee386d735c2aba675dad4180de73",
+    "publication.json": "f6308e99d61c36905a7b683c747aa6f413327affc97904433b2807d8da358ccd",
+    "enterprise-architecture/continuum/MANIFEST.md": "dbef2f2f1e64f09adb0257047183d8a18931bd6b713f7595974992c61d441ec4"
+  },
+  "historicalCapturesPresent": false,
+  "historicalProcessingPresent": false,
+  "latexSourceCopiesPresent": false,
+  "sessionLogsPresent": false,
+  "allocatedIdentities": 0,
+  "inputs": "Canonical Markdown, maintained configuration/presentation, Python sources, offline schemas, historical-location configuration (no historical files), root release. Installed Python dependencies: lxml, jsonschema, markdown."
+}

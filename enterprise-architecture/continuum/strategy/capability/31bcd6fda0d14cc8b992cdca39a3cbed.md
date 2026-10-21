@@ -18,7 +18,10 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "predecessorCanonicalIds": [
+      "3792be10541e4d68b3f740b1ba964966"
+    ]
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -80,12 +83,24 @@
       "selector": "entry lines 193-193",
       "role": "Exact source-locator contribution; original qualifications retained",
       "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 9",
+      "revision": "798344f80eb7fd3998e17f4f040cf7dabe260388",
+      "role": "existing capability responsibility contribution; no new asset identity",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
     }
   ],
   "sourceBindings": [
     {
       "source": "docs/markdown/governance/baseline/architecture.json",
       "selector": "/elements/199"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 9"
     }
   ],
   "exchange": {
@@ -1027,6 +1042,126 @@
           }
         }
       ]
+    },
+    {
+      "identifier": "id-546d88c5821151208d0fa6664fcdc9ce",
+      "archimateType": "Serving",
+      "source": "id-a6aaf19f1f225b67b1e3a19740d5f457",
+      "target": "id-63b57eb4fcb458f6a7e0a8394bdfb606",
+      "attributes": {},
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/683",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "6c91476a45eb4432b1f90b47a4c2ad35",
+        "sourceAssertion": {
+          "from": "business-capability:clinical-technology-management",
+          "provenance": {
+            "authority": "Proposed only; cited source standing is not inherited",
+            "derivation": "Semantic responsibility analysis; no authority transfer",
+            "evidence": [
+              {
+                "line": 10,
+                "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                "standing": "Current corpus evidence; does not promote the derived assertion",
+                "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+              }
+            ],
+            "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+          },
+          "rationale": "Device identity, associations and operational equipment context support technology use; maintenance, regulatory and lifecycle decisions retain their owners.",
+          "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+          "sources": [],
+          "status": "Proposed",
+          "supporting_responsibility_elements": [
+            "function:maintain-device-definition",
+            "service:device-definition-query",
+            "function:maintain-device-instance-identity",
+            "service:device-instance-resolution",
+            "function:maintain-device-association",
+            "service:device-association-query"
+          ],
+          "to": "capability:clinical-device-administration",
+          "type": "enabled_by"
+        }
+      },
+      "name": [
+        {
+          "text": "enabled_by",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"business-capability:clinical-technology-management\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Device identity, associations and operational equipment context support technology use; maintenance, regulatory and lifecycle decisions retain their owners.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"function:maintain-device-definition\", \"service:device-definition-query\", \"function:maintain-device-instance-identity\", \"service:device-instance-resolution\", \"function:maintain-device-association\", \"service:device-association-query\"], \"to\": \"capability:clinical-device-administration\", \"type\": \"enabled_by\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "enabled_by",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"business-capability:clinical-technology-management\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Device identity, associations and operational equipment context support technology use; maintenance, regulatory and lifecycle decisions retain their owners.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"function:maintain-device-definition\", \"service:device-definition-query\", \"function:maintain-device-instance-identity\", \"service:device-instance-resolution\", \"function:maintain-device-association\", \"service:device-association-query\"], \"to\": \"capability:clinical-device-administration\", \"type\": \"enabled_by\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/683",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},
@@ -1079,7 +1214,17 @@
         "to": "enterprise:ec-01",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 740
+      "source_index": 740,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-55bba08abc535e38b03704cc7bfedcfd",
+        "sourceCanonicalId": "910634fb1621416c818a022ab0b5d3a1",
+        "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
+      }
     },
     {
       "sourcePointer": "/relationships/741",
@@ -1119,7 +1264,17 @@
         "to": "enterprise:ec-03",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 741
+      "source_index": 741,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-791f28bc30e85e5bbe7912c1041ca31a",
+        "sourceCanonicalId": "6296abeee5074b9e80f21aea3a297e42",
+        "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
+      }
     },
     {
       "sourcePointer": "/relationships/742",
@@ -1159,7 +1314,17 @@
         "to": "enterprise:ec-05",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 742
+      "source_index": 742,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-d0e7bf0824915aeca3cbf0ccf08c4572",
+        "sourceCanonicalId": "6a45701634f04b43919d9152a61e5f2e",
+        "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
+      }
     },
     {
       "sourcePointer": "/relationships/743",
@@ -1199,7 +1364,17 @@
         "to": "enterprise:ec-07",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 743
+      "source_index": 743,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-ef983ed19bc75757be46f66b6b200dbe",
+        "sourceCanonicalId": "68a0755aa4e14a509ac5e6c0bbcff3e7",
+        "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
+      }
     }
   ]
 }
@@ -1233,17 +1408,31 @@ Device registration is not maintenance, release management or clinical interpret
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| enterprise_enabled_by | [[CT2] Managed Entity & Relationship](910634fb1621416c818a022ab0b5d3a1.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
-| enterprise_enabled_by | [[CT2] Managed State & Lifecycle](6296abeee5074b9e80f21aea3a297e42.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
-| enterprise_enabled_by | [[CT2] Search & Discovery](6a45701634f04b43919d9152a61e5f2e.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
-| enterprise_enabled_by | [[CT2] Provenance & Traceability](68a0755aa4e14a509ac5e6c0bbcff3e7.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
+| enterprise_enabled_by | [[CT2] Managed Entity & Relationship](910634fb1621416c818a022ab0b5d3a1.md) | Proposed / current | Serving (reverse) — `id-55bba08abc535e38b03704cc7bfedcfd` |
+| enterprise_enabled_by | [[CT2] Managed State & Lifecycle](6296abeee5074b9e80f21aea3a297e42.md) | Proposed / current | Serving (reverse) — `id-791f28bc30e85e5bbe7912c1041ca31a` |
+| enterprise_enabled_by | [[CT2] Search & Discovery](6a45701634f04b43919d9152a61e5f2e.md) | Proposed / current | Serving (reverse) — `id-d0e7bf0824915aeca3cbf0ccf08c4572` |
+| enterprise_enabled_by | [[CT2] Provenance & Traceability](68a0755aa4e14a509ac5e6c0bbcff3e7.md) | Proposed / current | Serving (reverse) — `id-ef983ed19bc75757be46f66b6b200dbe` |
 
 ## Source-qualified contribution
 
 Source: `docs/markdown/03-business-architecture/behaviours/01-entity-management.md` — entry lines 193-193. Standing: exact originating assertion; current resource standing unchanged.
 
 - **Owning Capability**: `Clinical Device Administration`
+
+## ARB identity continuity
+
+Historical identity [3792be10541e4d68b3f740b1ba964966](3792be10541e4d68b3f740b1ba964966.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.
+
+## ARB source correspondence
+
+Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.
+
+Source: `docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md` — information responsibility row 9. Standing: Established Business responsibility only; formal information identity/lifecycle not inferred.
+
+```text
+| **Clinical Device Administration** | **Device Registry & Association Ledger** | Medical device types, manufacturers, Unique Device Identifiers (UDI), physical serial numbers, active device-to-patient/bed bindings, and network communication endpoints. | Does not own physiological observation streams. |
+```

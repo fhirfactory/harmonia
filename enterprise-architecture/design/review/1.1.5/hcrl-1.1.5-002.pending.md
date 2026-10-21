@@ -49,6 +49,9 @@ control; paths and labels confer neither identity nor semantic relationships.
 <a id="dr-2"></a>
 ## DR-2 — Canonical element representation and Praxis
 
+The following initial migration figures are retained as the reviewed entry
+snapshot. The authorised ARB follow-up and current population are recorded below.
+
 **Applied under the operative Task; result acceptance pending.** The continuum is
 one resource-owned UUID32 and one Markdown file per architectural element. Its
 native classification selects a deterministic directory from the governed
@@ -82,6 +85,41 @@ inventing meaning. Currentness is independent of semantic standing: 1,158 curren
 69 pending adjudication, 300 historical-reference and 32 superseded records.
 [Detailed validation and exact type/standing counts](../../evidence/1.1.5/002/after/continuum-validation.json)
 retain the source's full qualified standing text.
+
+### Applied ARB follow-up — continuity and assertion representation
+
+The Solution Architect's [Apply Task](../../evidence/1.1.5/002/before/ai-agent-tasks/20261021T114345Z-apply-arb-semantic-reconciliation.md)
+authorises the recorded ARB rules within this same pending release transition.
+Entry HEAD is `798344f80eb7fd3998e17f4f040cf7dabe260388`. AX-03/AX-04 require native
+semantics and architecture-led machinery; AX-14 separates identity, lineage,
+classification, representation and standing; AX-08/AX-09 govern selected evidence;
+AX-15/AX-17 preserve conditional assertions and genuine uncertainty.
+
+All **214 historical Capability references** now have explicit correspondence:
+**209 direct, five evolved, zero related-only and zero no-counterpart**. Historical
+UUIDs/representation IDs remain reserved in superseded resources, with reciprocal
+successor/predecessor lineage. The current counterpart retains its independent
+standing. The HIE Enablement predecessor is distinguished from the separate
+Connected Health Services HIE capability; Care Intent Appropriateness evolves to
+Care Appropriateness Review. The **223 missing original definitions** remain absent.
+
+The result contains **1,602 elements**, **1,651 native relationships** and all
+**462 original qualified predicates**. The **43 new element identities** represent
+33 Constraints, nine Requirements and one **ImplementationGuideline**, the
+authorised CourseOfAction specialisation. Its Keycloak/PostgreSQL direction is
+bounded to development/test/POC, with an external replaceable IdP and no
+product-specific architectural coupling. No qualifier is invented for its formal
+canonicalName: **165 canonicalNames remain unresolved**. All 26 previously
+populated native types remain supported; currentness is **1,201 current, 69 pending
+adjudication, 86 historical-reference and 246 superseded**. This does not promote
+source-level Candidate or Proposed semantics to approved architecture.
+
+The representation/schema/type catalogue and incorporation Praxis record the
+ImplementationGuideline direction, source-qualified native predicates, reserved
+lineage and assertion-level DesignNote processing. Package→Grouping remains the
+note's agreed metamodel direction without manufacturing concrete Package
+instances; Class native mapping and the four named historical DataObject
+classifications remain individually deferred.
 
 <a id="dr-3"></a>
 ## DR-3 — Ingestion, reconciliation and source retirement
@@ -122,6 +160,10 @@ legacy-doco or unrelated historical processing disposal is performed.
 
 <a id="dr-4"></a>
 ## DR-4 — Projection, publication and reproducibility
+
+The original control and manifest-follow-up results below retain their actual
+populations and verification events. The new ARB result is separately verified at
+the end of this DR.
 
 **Applied and exercised.** The [review entry point](../../../README.md) exposes the
 full-content HTML browser, canonical index, Exchange model and derived PDF catalogue.
@@ -192,8 +234,52 @@ canonical files and six existing publication artifacts are byte-identical to
 this follow-up's entry state. This adds review navigation without changing the
 migrated architecture, original verification limits or pending holistic acceptance.
 
+### Applied ARB follow-up — native validation and current publication
+
+Native endpoint applicability is now checked independently of XML XSD validity,
+using the retained ArchiMate 3.2 endpoint matrix and source hashes. Reciprocal
+historical lineage, source standing/provenance, reverse Serving and justified
+endpoint-invalid fallback are validated. The initial projection exposed a second
+Composition parent for the same responsibility assertion; application was
+corrected to **reuse the original Composition**, retaining the qualified source
+contribution. No duplicate structural parent remains.
+
+The current pipeline passes **20 continuum tests** and generation/staleness,
+schema, references, containment, identity/provenance, native endpoint and naming
+checks. All **90 required Maven architecture tests** pass. The existing historical
+authority-pin failures above remain historical results; those fixtures were not
+rewritten. The [transition check](../../evidence/1.1.5/002/after/arb-transition-verification.json)
+verifies all 1,559 prior canonical/representation IDs, all 1,137 original native
+relationships, the unchanged original predicates, 18 entry-state DesignNotes and
+the presentation template. It records **691 modified existing elements**, **43
+new elements** and **514 additional native relationships**. Reapplying all three
+bounded plans allocates zero IDs and changes zero canonical files.
+
+[Current isolated regeneration](../../evidence/1.1.5/002/after/arb-reproducibility.json)
+reproduces the manifest, Exchange XML, full-content HTML, index, TeX and publication
+metadata from maintained inputs. [Rendered local-link validation](../../evidence/1.1.5/002/after/arb-link-validation.json)
+passes after correcting nested-label and source-local-fragment link rebasing in
+DesignNote contributions. Canonical rendering removes source-table trailing
+padding while exact original text remains in the source/disposition evidence.
+The XML serializer uses numeric references for retained line-end whitespace,
+preserving parsed documentation exactly; the projection test checks every
+element's complete documentation against its canonical body. The derived **261-page PDF** compiles and repeats
+byte-for-byte in the recorded fixed XeLaTeX environment; full visual inspection
+is not asserted. [Actual Archi 5.10 import/export](../../evidence/1.1.5/002/after/arb-transport/validation.json)
+passes for **1,602 elements, 1,651 relationships and all 1,209 Views**. Canonical
+properties/owners, native types, names and documentation survive, and the no-edit
+workbench review detects zero changes. The raw comparator still reports language,
+navigation and other representation differences; the retained returned XML and
+comparison counts do **not** establish whole-model byte fidelity. The authored
+presentation is not replaced by the return. Initial sandbox GTK display access
+failed; authorised local display execution succeeded, with no network dependency.
+
 <a id="dr-5"></a>
 ## DR-5 — Unresolved questions and holistic review
+
+The original question table is retained as reviewed decision history. The ARB
+dispositions and subsequent application facts below govern its current treatment;
+the former absence of application authority is not an ongoing blanket blocker.
 
 **Solution Architect/ARB disposition requested on the resulting architecture as a
 whole.** No agent architectural closure is asserted. These affected matters remain
@@ -573,6 +659,80 @@ verify. Mechanical application evidence must report exact mapped, evolved,
 related-only and residual counts rather than converting this architectural
 decision into an unsupported PASS.
 
+### Applied reconciliation and final residual boundary
+
+The Apply instruction now supplies the mechanical application event; the preceding
+ARB text remains unchanged decision authority/history. [Capability and predicate
+application](../../evidence/1.1.5/002/after/arb-semantic-reconciliation.json) records
+all 214 correspondences and 462 predicate dispositions. **440 predicates map to
+native relationships:** 264 Serving, 175 Association and one reused Composition,
+so **439 new predicate edges** are added. All 256 enabled-by assertions use reverse
+Serving with legal endpoints. **22 predicates remain excluded:** 11
+realises_feature and 11 associated_feature assertions whose original sources
+expressly say that the Feature association is not established. The ARB Realization
+rule is conditional on established meaning/existence; neither it nor fallback
+Association authorises manufacturing those relationships. The original predicates,
+record state and source qualifications remain unchanged.
+
+[DesignNote dispositions](../../evidence/1.1.5/002/after/arb-designnote-assertion-dispositions.json)
+account for **2,198 source blocks across 18 notes**, using original-edition line
+selectors and complete paragraph/list-entry text. These are evidence selectors,
+not 2,198 independently normative elements. **1,527** blocks contribute exact
+source-qualified assertions to existing canonical subjects; **43** become the
+bounded new Constraint/Requirement/ImplementationGuideline elements in DR-2;
+**281** remain rationale/example/provenance; **23** record later evolution; **one**
+is superseded by U15; **six** retain metamodel direction without asserting an
+instance; and **317** retain explicit source-level design/classification deferrals.
+All notes remain byte-identical to this follow-up's entry state, including the
+already installed Digital Twin supersession wrappers. Original wording is not
+rewritten to agree with later decisions.
+
+The assertion audit preserves U09's **Observe → Report**, U15's policy-governed
+intrinsic Kleio capture authority (rather than a blanket authorisation exemption),
+U06/U19's discrete Energeia and peer Ponos, U14's limited logical Horos rename,
+U18's continuation-role representation deferral and U19's serial Twin processing,
+fresh per-Behaviour Context, stable per-input sequence, failure dispositions and
+authorised administrative resume. Mixed statements retain the established rule
+alongside the expressly deferred detail. Inventory coverage and exact contribution
+checks are evidence for review, not a claim that automated counting proves
+semantic completeness or architectural acceptance.
+
+[Remaining source application](../../evidence/1.1.5/002/after/arb-remaining-source-dispositions.json)
+records **nine catalogue-row dispositions**, **37 information-responsibility
+contributions** and **32 additional native relationships**. Seven catalogue
+requirements correspond to existing historical concerns (including INT-TRANS-001
+to historical INT-002); APP-SEP-001 binds to the related reclassified layering
+pattern without becoming a Requirement. The DIR range remains navigation, with
+six distinct historical requirements and no six-way workflow-Pragma equivalence
+invented. Candidate owning-domain standing is preserved.
+
+All **18 active Service-consumption rows** have known endpoints and become directed
+Associations: native BusinessService→Capability Serving is invalid. The separately
+approved assurance Role-level use produces **11 legal Serving relationships**,
+with status limited to System Steward and no mandatory outcome broadcast or
+consuming-Capability allocation. Three approved G2 contextual Associations now
+represent Episode→Encounter, Appointment→Encounter and Encounter→ServiceDelivery,
+retaining only authorised multiplicities and qualifications. No withdrawn
+Service-consumption row is reinstated and no descriptive ownership-ledger label
+is manufactured into an information element. Reified information Relationships
+retain their separate semantics and identities.
+
+The final residual register is bounded as follows:
+
+| Question | Current application / genuinely retained boundary |
+| --- | --- |
+| Q-01 | 165 formal canonicalNames remain unresolved for unauthorised qualifier vocabulary; their elements/content are represented. |
+| Q-02 | Applied: 209 direct and five evolved correspondences; UUID reservation and reciprocal lineage verified. Missing historical definitions remain absent. |
+| Q-03 | Classification resolved. External authority references do not require Actor instances; participating identifiable organisations use the Government / Regulatory Body BusinessActor facet when needed. |
+| Q-04 | Record-by-record correspondence performed; catalogue Candidate standing and the DIR range's absent individual workflow definitions remain explicit. |
+| Q-05 | G2-D01–D04 meanings and accepted Topic correspondences retained; three native contextual associations applied. Problems/Conditions lacks separately established family endpoints, so Episode's [1..*] meaning remains on Episode. G2-Q02–Q07 retain their precise recorded classification, qualification, authority, association, composition and change questions. Rejected Referral Disposition and Category-D Responsibility Assumption Assertion are not resurrected. |
+| Q-06 | Separate strategic/application facets retained; no label-based merge or unsupported realisation allocated. |
+| Q-07/Q-08 | Independent meanings and assertion-versus-element rule applied; only individually deferred classification/physical representation remains. No control/support bundles or automatic keyed-row elements. |
+| Q-09 | Capture-carrier question resolved; assertion dispositions retained. Class mapping and specific historical DataObject classifications remain deferred; Package's agreed Grouping direction does not resolve Class or instantiate a Package. |
+| Q-10 | Active matrix endpoint work performed as above. Definition-to-Accountability remains reusable guidance, not mandatory five-stage instances. Its established HealthcareService/Task concepts already correspond to retained family elements; ReportedTask accountability, universal Delivery/Outcome ownership and explicitly unestablished provider contracts remain unresolved. |
+| Q-11 | Applied: 440 native mappings, 22 expressly unestablished exclusions; original assertions and qualifications preserved. |
+| Q-12 | Application and verification evidence supplied. Holistic acceptance remains with the Solution Architect/ARB; no unspecified future authority is substituted for the present adjudications. |
+
 
 <a id="dr-6"></a>
 ## DR-6 — Bounded Minutiae and formal evidence
@@ -603,3 +763,20 @@ Manifest follow-up Report: [generated review manifest](../../evidence/1.1.5/002/
 Follow-up iteration-evidence validation: PASS (five Tasks, two Reports; no errors
 or unresolved event-time/prefix correspondence). This mechanical check supplies
 no architectural acceptance or attribution-authenticity adjudication.
+
+ARB application Report: [applied semantic reconciliation and verification](../../evidence/1.1.5/002/after/ai-agent-reports/20261021T121642Z-arb-semantic-reconciliation-applied.md).
+Report production event: `2026-10-21T12:16:42.780Z`; operative Task issuance event:
+`2026-10-21T11:43:45.839Z`. Entry HEAD for this follow-up remains
+`798344f80eb7fd3998e17f4f040cf7dabe260388`. The [validation summary](../../evidence/1.1.5/002/after/arb-validation-summary.json)
+and exact plans/checks support the material application facts in DR-2/DR-4/DR-5.
+Generic transport evidence now retains a trackable text log and attributes the
+actual supplied environment rather than asserting an earlier run's recovery.
+Task-generated Python bytecode is excluded from the resulting change.
+
+Current iteration evidence-layout validation: **PASS — six Tasks, three Reports**;
+no errors or unresolved recorded timestamp/prefix correspondence. This is a
+mechanical check, not architectural acceptance or authenticity adjudication.
+The original Minutiae disposition and human decision history are unchanged.
+The authorised application is reviewable in the working tree; holistic Solution
+Architect/ARB acceptance remains pending. No additional release, commit, push or
+architectural closure is claimed.

@@ -305,6 +305,13 @@
     }
   },
   "specializations": {
+    "ImplementationGuideline": {
+      "nativeType": "CourseOfAction",
+      "directory": "strategy/course-of-action/implementation-guideline",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "displayPrefix": "[ImplementationGuideline]",
+      "canonicalQualifier": null
+    },
     "Feature": {
       "nativeType": "Capability",
       "directory": "strategy/capability/feature",

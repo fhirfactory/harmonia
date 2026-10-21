@@ -1,0 +1,950 @@
+{
+  "entryRevision": "798344f80eb7fd3998e17f4f040cf7dabe260388",
+  "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+  "catalogue": [
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row CORE-001",
+      "sourceText": "| **CORE-001** | Authority Classification | Domain 04 (Information) | [AX-06](../../governance/architectural-axioms.md#ax-06) | [Clinical Information Independence](../drivers-assessments/drivers.md) | Core Semantic Requirement | **Candidate** |",
+      "canonicalId": "6e76bb1db8f2464496355d47d2f981ef",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Same information-authority classification concern; source keeps downstream owning-domain reconciliation Candidate, independently of historical representation.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "CORE-001"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row CORE-003",
+      "sourceText": "| **CORE-003** | Governed Canonical Semantics | Domain 04 (Information) | [AX-02](../../governance/architectural-axioms.md#ax-02), [AX-03](../../governance/architectural-axioms.md#ax-03) | [Clinical Interoperability](../drivers-assessments/drivers.md) | Core Semantic Requirement | **Candidate** |",
+      "canonicalId": "006383a5cce64780960fda32b6682d8d",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Same governed internal canonical meaning and preservation of meaning across transformations; catalogue navigates rather than defines a separate requirement.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "CORE-003"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row SEC-001",
+      "sourceText": "| **SEC-001** | Trusted Identity & Authentication | Domain 08 (Security) | [AX-07](../../governance/architectural-axioms.md#ax-07) | [Implicit Perimeter Trust](../drivers-assessments/assessments.md) | Security Architecture Requirement | **Candidate** |",
+      "canonicalId": "e4998b0a132c41afbe610b11869c3297",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Same trusted authentication boundary concern; broader catalogue title supplies no new identity or independent authorisation responsibility.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "SEC-001"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row SEC-002",
+      "sourceText": "| **SEC-002** | Default-Deny Authorization | Domain 08 (Security) | [AX-07](../../governance/architectural-axioms.md#ax-07) | [Implicit Perimeter Trust](../drivers-assessments/assessments.md) | Security Architecture Requirement | **Candidate** |",
+      "canonicalId": "3bdecb66e3f34110aa0871ba34091bfd",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Same default-deny operation-authorisation requirement; spelling difference does not establish another thing.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "SEC-002"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row SEC-010",
+      "sourceText": "| **SEC-010** | PHI-Safe Operational Logging | Domain 08 (Security) / Domain 13 (Governance) | [AX-07](../../governance/architectural-axioms.md#ax-07) | [PHI Leakage through Operational Logging](../drivers-assessments/assessments.md) | Security Architecture Requirement | **Candidate** |",
+      "canonicalId": "4a078bd44e874a48abc650f87d64f16f",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Same PHI-safe operational diagnostic logging concern; catalogue gives owning-domain handoff, not new approval.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "SEC-010"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row PROV-001",
+      "sourceText": "| **PROV-001** | End-to-End Accountable Provenance | Domain 08 (Security) / Domain 04 (Info) | [AX-08](../../governance/architectural-axioms.md#ax-08) | [Statutory Health Privacy](../drivers-assessments/drivers.md) | Security & Provenance Requirement | **Candidate** |",
+      "canonicalId": "3e45e60affb44bf384d54de26d3add6a",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Same end-to-end attributable origin, actors, transformations, processing and outcomes concern; accountable is contextual qualification, not a distinct requirement.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "PROV-001"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row INT-TRANS-001",
+      "sourceText": "| **INT-TRANS-001**| At-Least-Once Transport & Idempotency | Domain 06 (Integration) | [AX-10](../../governance/architectural-axioms.md#ax-10) | [Continuous Clinical Availability](../drivers-assessments/drivers.md) | Integration Architecture Requirement | **Candidate** |",
+      "canonicalId": "aac9b66911e849cb9792c3a2b7eacb88",
+      "disposition": "qualified same-concern correspondence",
+      "reason": "Historical INT-002 explicitly requires durable at-least-once messaging and duplicate-safe consumers; catalogue combines those same transport/idempotency obligations. Code differs, meaning corresponds.",
+      "standing": "Candidate catalogue assertion; historical resource standing unchanged",
+      "alias": "INT-TRANS-001"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row APP-SEP-001",
+      "sourceText": "| **APP-SEP-001** | Transport / Business Separation | Domain 05 (App) / Domain 06 (Integration) | [AX-02](../../governance/architectural-axioms.md#ax-02), [AX-04](../../governance/architectural-axioms.md#ax-04) | [Clinical Interoperability](../drivers-assessments/drivers.md) | Application Layering Pattern | **Candidate** |",
+      "canonicalId": "5ae28648334e4f6184044af0462eb9a8",
+      "disposition": "related reclassified layering pattern; not requirement equivalence",
+      "reason": "Catalogue explicitly classifies transport/business separation as Application Layering Pattern. Historical opaque-Petasos/modular-Erga principle records this bounded concern; no new Requirement is allocated or current Principle approval inferred.",
+      "standing": "Candidate handoff; Historical / Reclassified pattern retained",
+      "alias": "APP-SEP-001"
+    },
+    {
+      "source": "docs/markdown/01-motivation/requirements-constraints/master-requirements-catalogue.md",
+      "selector": "catalogue row DIR-001..006",
+      "sourceText": "| **DIR-001..006** | Provider Directory Workflow Pragmas | Domain 11 (Solution Pack: Provider Directory) | [AX-14](../../governance/architectural-axioms.md#ax-14), [AX-16](../../governance/architectural-axioms.md#ax-16) | [Directory & Endpoint Governance](../drivers-assessments/drivers.md) | Solution-Specific Requirement | **Candidate** |",
+      "canonicalId": null,
+      "disposition": "range retained as navigation; six individual historical requirements remain distinct",
+      "reason": "Provider Directory Workflow Pragmas is a range-level title, not six bounded semantic definitions. Existing DIR-001..006 cover standards, discovery, governed change, referential integrity, identifiers and self-service. The row does not establish six same-instance workflow Pragma correspondences.",
+      "standing": "Candidate Domain11 owner handoff; no approval or instance equivalence inferred",
+      "relatedCanonicalIds": [
+        "c1b1d82f8a9b4c649a3216c5e09a22c6",
+        "27998c2a8f2e497a814b32e7a0bc5e03",
+        "934462c11133409cb3aa59bf2502fa81",
+        "f866ae5adb08499794331bc600db827c",
+        "097368b4b0b4468dbf1c57c11d9ed86c",
+        "4230f93461a4470383fb99fddc35f8bf"
+      ]
+    }
+  ],
+  "nativeRelationships": [
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 1",
+      "sourceText": "| **Referral Administration** | `Person Identifier Resolution` | **Person Identity** *(Client Administration)* | Validates source-attributed identifiers against their authoritative issuing information; does not determine a master person. |",
+      "sourceCanonicalId": "a533cf0d23364f398f2a71843cce98c4",
+      "targetCanonicalId": "ae0de25600ee416aa24d2a167b64f230",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 2",
+      "sourceText": "| **Referral Administration** | `Service Provision Resolution` | **Health Service Administration** | Resolves target clinical specialty clinics, receiving providers, and referral catchment rules. |",
+      "sourceCanonicalId": "e54866d88b1e442f8ea170f06f98028b",
+      "targetCanonicalId": "ae0de25600ee416aa24d2a167b64f230",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 3",
+      "sourceText": "| **Episode & Encounter Administration** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical ward, room, and bed structural attributes for encounter bed placement. |",
+      "sourceCanonicalId": "43b011b0c233408eaf6e555ecbf05d9e",
+      "targetCanonicalId": "61d7067aee0540259b3daca4287d66d2",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 4",
+      "sourceText": "| **Episode & Encounter Administration** | `Bed Availability Query` | **Bed & Care-Place Management** | Checks real-time operational bed readiness before confirming patient bed moves. |",
+      "sourceCanonicalId": "c51894eccd7b45019c2f084993f4cfc6",
+      "targetCanonicalId": "61d7067aee0540259b3daca4287d66d2",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 5",
+      "sourceText": "| **Order Administration** | `Service Provision Resolution` | **Health Service Administration** | Determines performing diagnostic laboratory or imaging centre routing destinations. |",
+      "sourceCanonicalId": "e54866d88b1e442f8ea170f06f98028b",
+      "targetCanonicalId": "c3c5abd7987f4433a46cbfed8167914c",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 6",
+      "sourceText": "| **Diagnostic Administration** | `Terminology Mapping Service` | **Clinical Knowledge Services** | Normalises local laboratory and radiology test codes to canonical SNOMED-CT/LOINC concepts. |",
+      "sourceCanonicalId": "27dfb51817344e17ab78aa6f33f959ba",
+      "targetCanonicalId": "3cc720ba2e8b4d7a94bb349391d61895",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 7",
+      "sourceText": "| **Clinical Record Administration** | `Healthcare Subject Context Resolution` | **Healthcare Subject** | Validates patient demographic context and indigenous/interpreter requirements for document headers. |",
+      "sourceCanonicalId": "99a739efc7be4d7b92d90181ecd69d15",
+      "targetCanonicalId": "ce9e7e7b22054cefb707a650d5be7219",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 8",
+      "sourceText": "| **Clinical Record Administration** | `Semantic Conformance Verification Service` | **Information Design Governance** | Verifies clinical document structural and semantic compliance against governed interchange profiles. |",
+      "sourceCanonicalId": "3d492f97eb3f4d50a1c448477c61bf2b",
+      "targetCanonicalId": "ce9e7e7b22054cefb707a650d5be7219",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 9",
+      "sourceText": "| **Primary Care** | `Longitudinal Clinical Record Query` | **Patient Clinical Record** | Retrieves regional patient history, past discharge summaries, and medication timelines for GP consultations. |",
+      "sourceCanonicalId": "df10431b93bf47dfae2b8ec7b3e6552b",
+      "targetCanonicalId": "d118673d77d74c8cb8cec24f03adddd8",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 10",
+      "sourceText": "| **Acute Care** | `Consent Enforcement Service` | **Health Information Control** | Evaluates patient consent directives and break-glass emergency access permissions during acute admissions. |",
+      "sourceCanonicalId": "67bf392d2dd6464292619e259cc37f8e",
+      "targetCanonicalId": "9bb988c526404522b83aeed5069e0eb5",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 11",
+      "sourceText": "| **Emergency Care** | `Person Identifier Correlation` | **Person Identity** *(Client Administration)* | Resolves established, source-authoritative identity associations for emergency presentations; does not originate probabilistic matching or person-merge decisions. |",
+      "sourceCanonicalId": "71220901361e42f686faf7d852f57e45",
+      "targetCanonicalId": "aa088f0647ad4b78966fe28fa80af674",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 12",
+      "sourceText": "| **Inpatient Care** | `Discharge Readiness Telemetry` | **Discharge Management** | Coordinates multidisciplinary ward discharge checklists and pharmacy reconciliation. |",
+      "sourceCanonicalId": "03d01a9b024c4497badf3fe011a8dd20",
+      "targetCanonicalId": "b39fb49c01b545a5b51d3313531efb1b",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 13",
+      "sourceText": "| **Bed & Care-Place Management** | `Care-Place Specification Lookup` | **Location Administration** | Resolves physical care-place capabilities (e.g., negative pressure, telemetry wiring) for isolation placement. |",
+      "sourceCanonicalId": "43b011b0c233408eaf6e555ecbf05d9e",
+      "targetCanonicalId": "f117ccec0bfa4f738e6ddb646b3534a2",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 14",
+      "sourceText": "| **Work Allocation & Dispatch** | `Staff Presence Telemetry Query` | **Mobile Staff Management** | Allocates portering and cleaning work orders to active on-duty staff in the nearest physical zone. |",
+      "sourceCanonicalId": "b3cd0d8e40f44b9fa2b64367237345fa",
+      "targetCanonicalId": "152a5252952c405994e9b171234efcb0",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 15",
+      "sourceText": "| **Patient Transport** | `Encounter Location History Query` | **Episode & Encounter Administration** | Validates current patient ward location and target diagnostic department before dispatching porters. |",
+      "sourceCanonicalId": "5f0f9fec1d16458aaf914b0957793953",
+      "targetCanonicalId": "6041d7c0cc5d4519aaea584bb4e6d365",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 16",
+      "sourceText": "| **Clinical Logistics Coordination** | `Secure Clinical Message Dispatch` | **Clinical Communication Administration** | Sends automated electronic specimen tracking notifications and urgent critical result dispatch alerts. |",
+      "sourceCanonicalId": "d28fb3b4123b4e569a95a823fd83f837",
+      "targetCanonicalId": "0c27be11b4a44cb19e992309b8146a17",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 17",
+      "sourceText": "| **Workflow & Activity Coordination**| `Policy Evaluation & Authorisation Service` | **Health Information Control** | Evaluates actor task-claiming permissions before allowing work order acceptance or document countersignature. |",
+      "sourceCanonicalId": "a025ac002b6a461abaac07fcb87f411f",
+      "targetCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "service consumption row 18",
+      "sourceText": "| **Presentation Services** | `Clinical Information Search Service` | **Health Information Access** | Executes search queries across longitudinal clinical records for display in clinical portals. |",
+      "sourceCanonicalId": "ef87ad2b419443a9989849bf18dfb385",
+      "targetCanonicalId": "e9b6ba1917ba44cca7466444d0836c98",
+      "archimateType": "Association",
+      "name": "serves capability context",
+      "reason": "Known service consumption, exact Service behaviour and bounded consuming Capability correspondence. BusinessService → Capability Serving is endpoint-invalid; directed Association is the authorised fallback. Ownership remains with the exposing source responsibility; no Function ownership transfer.",
+      "standing": {
+        "semantic": "Established Business Architecture dependency; source exclusions retained",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 1; Care Coordinator",
+      "sourceText": "| **Request Service Assurance** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — authorised requesters | [Service Assurance Request](../collaborations-interactions/interactions.md#service-assurance-request) |",
+      "sourceCanonicalId": "a76c0be369744fcfb5eb91b90c9b59e7",
+      "targetCanonicalId": "84cf0b0868b94a1ea5ce5791fcfa66f9",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 1; Service Coordinator",
+      "sourceText": "| **Request Service Assurance** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — authorised requesters | [Service Assurance Request](../collaborations-interactions/interactions.md#service-assurance-request) |",
+      "sourceCanonicalId": "a76c0be369744fcfb5eb91b90c9b59e7",
+      "targetCanonicalId": "0dbbce90dc3e48b190890c832f52cb6f",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 1; Regulator",
+      "sourceText": "| **Request Service Assurance** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — authorised requesters | [Service Assurance Request](../collaborations-interactions/interactions.md#service-assurance-request) |",
+      "sourceCanonicalId": "a76c0be369744fcfb5eb91b90c9b59e7",
+      "targetCanonicalId": "1160219638ef42b292a5612e5ac7c539",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 1; Policy Authority",
+      "sourceText": "| **Request Service Assurance** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — authorised requesters | [Service Assurance Request](../collaborations-interactions/interactions.md#service-assurance-request) |",
+      "sourceCanonicalId": "a76c0be369744fcfb5eb91b90c9b59e7",
+      "targetCanonicalId": "e0ff9ce2cf4448568d1caf7a44023f48",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 1; System Steward",
+      "sourceText": "| **Request Service Assurance** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — authorised requesters | [Service Assurance Request](../collaborations-interactions/interactions.md#service-assurance-request) |",
+      "sourceCanonicalId": "a76c0be369744fcfb5eb91b90c9b59e7",
+      "targetCanonicalId": "27d2797d2f9e4a9f9131300467d212bc",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 2; System Steward",
+      "sourceText": "| **Request Service Assurance Status** | **Governed Assurance** | **System Steward only** — stewardship of activity progression | [Service Assurance Status](../collaborations-interactions/interactions.md#service-assurance-status) |",
+      "sourceCanonicalId": "60f8cbc814614f669f31d4e78734c6d6",
+      "targetCanonicalId": "27d2797d2f9e4a9f9131300467d212bc",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 3; Care Coordinator",
+      "sourceText": "| **Communicate Service Assurance Outcome** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — applicable authorised recipients | [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication) |",
+      "sourceCanonicalId": "371b04d6bbf84b53a3c5667ae6df2809",
+      "targetCanonicalId": "84cf0b0868b94a1ea5ce5791fcfa66f9",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 3; Service Coordinator",
+      "sourceText": "| **Communicate Service Assurance Outcome** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — applicable authorised recipients | [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication) |",
+      "sourceCanonicalId": "371b04d6bbf84b53a3c5667ae6df2809",
+      "targetCanonicalId": "0dbbce90dc3e48b190890c832f52cb6f",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 3; Regulator",
+      "sourceText": "| **Communicate Service Assurance Outcome** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — applicable authorised recipients | [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication) |",
+      "sourceCanonicalId": "371b04d6bbf84b53a3c5667ae6df2809",
+      "targetCanonicalId": "1160219638ef42b292a5612e5ac7c539",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 3; Policy Authority",
+      "sourceText": "| **Communicate Service Assurance Outcome** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — applicable authorised recipients | [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication) |",
+      "sourceCanonicalId": "371b04d6bbf84b53a3c5667ae6df2809",
+      "targetCanonicalId": "e0ff9ce2cf4448568d1caf7a44023f48",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+      "selector": "approved assurance consumption row 3; System Steward",
+      "sourceText": "| **Communicate Service Assurance Outcome** | **Governed Assurance** | Care Coordinator, Service Coordinator, Regulator, Policy Authority, System Steward — applicable authorised recipients | [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication) |",
+      "sourceCanonicalId": "371b04d6bbf84b53a3c5667ae6df2809",
+      "targetCanonicalId": "27d2797d2f9e4a9f9131300467d212bc",
+      "archimateType": "Serving",
+      "name": "approved role-level service use",
+      "reason": "Approved Role-level request/status/communication relationship. No consuming Capability, control authority, mandatory broadcast or access grant is inferred; status is System Steward only.",
+      "standing": {
+        "semantic": "Approved governed assurance Business Service relationship; detailed contracts deferred",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md",
+      "selector": "G2-D01",
+      "sourceText": "Episode may relate zero or more Encounters [0..*]. Not containment/ownership; reverse multiplicity, evidence/rules and authority remain unresolved.",
+      "sourceCanonicalId": "3927d161556d48f4b2cc57bd46ab785d",
+      "targetCanonicalId": "fb464349f13b41c4ae9920a743fc6c12",
+      "archimateType": "Association",
+      "name": "related encounter context",
+      "reason": "Episode may relate zero or more Encounters [0..*]. Not containment/ownership; reverse multiplicity, evidence/rules and authority remain unresolved. The native type-level association preserves rather than replaces any reified information Relationship.",
+      "standing": {
+        "semantic": "APPROVED G2-D01 only; G2 remains open",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md",
+      "selector": "G2-D02",
+      "sourceText": "Prospective or retrospective scheduling/administrative context; no cardinality, actual occurrence or booking-authority transfer inferred.",
+      "sourceCanonicalId": "9badf0d360b64215bc60e74eec954018",
+      "targetCanonicalId": "fb464349f13b41c4ae9920a743fc6c12",
+      "archimateType": "Association",
+      "name": "scheduling context",
+      "reason": "Prospective or retrospective scheduling/administrative context; no cardinality, actual occurrence or booking-authority transfer inferred. The native type-level association preserves rather than replaces any reified information Relationship.",
+      "standing": {
+        "semantic": "APPROVED G2-D02 only; G2 remains open",
+        "currentness": "current"
+      }
+    },
+    {
+      "source": "docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md",
+      "selector": "G2-D03",
+      "sourceText": "Encounter contextualises zero or more deliveries [0..*]; delivery may occur independently. No reverse cardinality, ownership, containment or universal Delivery owner.",
+      "sourceCanonicalId": "fb464349f13b41c4ae9920a743fc6c12",
+      "targetCanonicalId": "4627ee33845744f2ae2e10c84e313755",
+      "archimateType": "Association",
+      "name": "optional care interaction context",
+      "reason": "Encounter contextualises zero or more deliveries [0..*]; delivery may occur independently. No reverse cardinality, ownership, containment or universal Delivery owner. The native type-level association preserves rather than replaces any reified information Relationship.",
+      "standing": {
+        "semantic": "APPROVED G2-D03 only; G2 remains open",
+        "currentness": "current"
+      }
+    }
+  ],
+  "responsibilityAssertions": [
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 1",
+      "sourceText": "| **Person Identity** *(Client Administration)* | **Person Identity & Identifier Correlation Graph** | Ingested authoritative person identifiers and source-attributed identity information, namespace bindings, demographic traits, aliases, authoritative relationship correlations, and history of externally decided corrections/merge/unlink outcomes and their managed-state consequences. | Does not originate probabilistic matching, golden-record determination, authoritative master-person selection or person-merge decisions; does not own encounter registrations or clinical observations. |",
+      "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 2",
+      "sourceText": "| **Healthcare Subject** | **Healthcare Subject Profile** | Subject demographic context, preferred communication methods, language/interpreter needs, cultural requirements, and verified vital status (death notifications). | Does not own person identifier correlation. |",
+      "canonicalId": "df214b5499694b768eb4a7a175a9d471",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 3",
+      "sourceText": "| **Client Relationship** | **Client Support Network & Legal Mandates** | Carer relationships, next-of-kin contacts, nominated representatives, and verified legal mandates (powers of attorney, guardianship orders). | Does not own clinical consent directives or clinical decisions. |",
+      "canonicalId": "d682c11d3eb04770b1f20be478fd475e",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 4",
+      "sourceText": "| **Client Privacy** | **Client Consent & Privacy Directives** | Patient consent preferences, opt-in/opt-out records, sensitive health category exclusions, and disclosure restriction directives. | Does not own access control policy evaluation rules. |",
+      "canonicalId": "7577a6e1815243648dd5356c21cca151",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 5",
+      "sourceText": "| **Provider Administration** | **Practitioner Registry & Role Bindings** | Practitioner master profiles, national registration identifiers (HPI-I), professional qualifications, verified specialties, practitioner role assignments, electronic messaging endpoints, and approved scopes of clinical practice. | Does not own healthcare service catalogue definitions or facility operational rosters. |",
+      "canonicalId": "d6312f85968a4209bafff5ed009297a6",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 6",
+      "sourceText": "| **Organisation Administration** | **Healthcare Organisation Registry** | Enterprise legal identities, national facility identifiers (HPI-O), accreditation status, organisational hierarchy trees (directorates/departments), and official facility contacts. | Does not own physical location geospatial data. |",
+      "canonicalId": "14fbdc5ce3dd4c2092c5397dab3ed743",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 7",
+      "sourceText": "| **Location Administration** | **Location & Care-Place Definitions** | Physical sites, campuses, buildings, floors, wards, rooms, bays, and structural care-place specifications (bed bay infrastructure, gas outlets, physical telemetry wiring). | Does not own operational occupancy, cleaning state, or bed turnover workflows. |",
+      "canonicalId": "c410005667444f99a221483bf577fad2",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 8",
+      "sourceText": "| **Health Service Administration** | **Service Catalogue & Service/Location/Provider Map** | Healthcare service definitions, clinical specialty taxonomy, service availability schedules, eligibility rules, and the multi-dimensional mapping matrix: $\\text{Service} \\leftrightarrow \\text{Provider} \\leftrightarrow \\text{Location} \\leftrightarrow \\text{Practitioner}$. | Owns the *mapping associations*; does not own the mapped Provider, Location, or Practitioner entities. |",
+      "canonicalId": "ba68a52913a0499d8377553bddfa74a4",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 9",
+      "sourceText": "| **Clinical Device Administration** | **Device Registry & Association Ledger** | Medical device types, manufacturers, Unique Device Identifiers (UDI), physical serial numbers, active device-to-patient/bed bindings, and network communication endpoints. | Does not own physiological observation streams. |",
+      "canonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 10",
+      "sourceText": "| **Client-Centred Administration** | **Administrative Intake Ledger** | Departmental registration intake queues, administrative demographic modification batches, and demographic distribution subscriber lists. | Does not own authoritative person master identity. |",
+      "canonicalId": "8752b7a937754b2faa296300c6a48911",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 11",
+      "sourceText": "| **Referral Administration** | **Referral Master & Triage Ledger** | Incoming referral packages, clinical indications, priority triage categories, specialist acceptance decisions, and referral disposition histories. | Does not own closed-loop diagnostic or therapeutic orders. |",
+      "canonicalId": "ae0de25600ee416aa24d2a167b64f230",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 12",
+      "sourceText": "| **Scheduling Administration** | **Appointment Synchronisation State** | Ingested appointment booking milestones, schedule change events, and consolidated patient appointment timeline caches. | Does not own host PAS booking engines or master clinic slots. |",
+      "canonicalId": "35fb3744c900470f9895056246a13fb1",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 13",
+      "sourceText": "| **Episode & Encounter Administration** | **Encounter Master & Movement Ledger** | Encounter identifiers, clinical class, admitting diagnoses, attending clinicians, encounter lifecycle states, and historical care-place movement logs. | Does not own longitudinal health record aggregation. |",
+      "canonicalId": "61d7067aee0540259b3daca4287d66d2",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 14",
+      "sourceText": "| **Order Administration** | **Clinical Order & Closed-Loop Matrix** | Clinical diagnostic, medication and procedural order information, routing directives, closed-loop state milestones, and order-result correlation links. | Does not own diagnostic interpretations or referral assumption of care. |",
+      "canonicalId": "c3c5abd7987f4433a46cbfed8167914c",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 15",
+      "sourceText": "| **Diagnostic Administration** | **Diagnostic Correlation & Linkage Registry** | Diagnostic order-to-report correlation bindings, accession number linkages, report delivery status ledgers, and addenda/correction notices. | Does not own clinical specimen analysis or imaging interpretation. |",
+      "canonicalId": "3cc720ba2e8b4d7a94bb349391d61895",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 16",
+      "sourceText": "| **Medication Administration** | **Medication Event Timeline Matrix** | Aggregated medication-order information, community/hospital dispensing updates and administration-event information. Nurse e-MAR records are non-exhaustive examples; scope is not restricted to bedside, nursing or inpatient contexts. | Does not prescribe, dispense, or administer medications. |",
+      "canonicalId": "c907e2a95629435b9951941ad4e2ebe9",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 17",
+      "sourceText": "| **Procedure Administration** | **Procedure Request & Documentation Index** | Surgical/procedural booking requisitions, operation reports, anaesthetic records, and procedural note indices. | Does not own surgical theatre suite logistics. |",
+      "canonicalId": "649dd7cc26094e539386a050086dfb91",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 18",
+      "sourceText": "| **Clinical Record Administration** | **Clinical Document Registry & Lifecycle State** | Clinical document master metadata, structured and narrative document repository, document version histories, addenda links, and legal document states (*Draft* to *Superseded*). | Does not own real-time collaborative discussion transcripts. |",
+      "canonicalId": "ce9e7e7b22054cefb707a650d5be7219",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 19",
+      "sourceText": "| **Care Plan Administration** | **Shared Care Plan & Clinical Goal Registry** | Multidisciplinary care plan definitions, agreed clinical goals, barrier logs, action items, and care team participant enrolments. | Does not own individual clinical encounter notes. |",
+      "canonicalId": "cf06eec5699f406fa30a00d2f76e3098",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 20",
+      "sourceText": "| **Clinical Communication Administration** | **Clinical Message Dispatch & Audit Register** | Secure message dispatch logs, end-to-end business delivery acknowledgements (business ACKs), and non-repudiation communication audit trails. | Does not own the clinical content of messages. |",
+      "canonicalId": "b38f2c2811724734b5887b6dbaaabbfc",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 21",
+      "sourceText": "| **Patient Clinical Record** | **Governed Longitudinal Health Record (LHR)** | Governed longitudinal synthesis, chronological clinical timeline, active problem/allergy information and immutable history of what Harmonia received, knew or managed. Correction/supersession does not retrospectively alter that historical record. | Does not own original legal documents or acquire originating clinical authority; current authoritative state remains distinct from historical operational truth. |",
+      "canonicalId": "5478878e0e6e4d34a8d5023ac6ac2d54",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 22",
+      "sourceText": "| **Bed & Care-Place Management** | **Operational Bed State & Turnover Ledger** | Real-time bed occupancy status (*Available*, *Occupied*, *Cleaning*, *Locked*), environmental locks, turnover milestone logs, and cleaning verification timestamps. | Does not own static physical care-place definitions or establish Ward capacity; an available bed alone is insufficient. |",
+      "canonicalId": "f117ccec0bfa4f738e6ddb646b3534a2",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 23",
+      "sourceText": "| **Work Allocation & Dispatch** | **Operational Work Dispatch & Milestone Ledger** | Facility support work requests, portering/cleaning queues, non-clinical operational mobile worker assignments, and job progression milestone timestamps. | May consume capacity/availability; does not own context-specific capacity, underlying clinical work/assignments, clinical task review decisions or clinical orders. |",
+      "canonicalId": "152a5252952c405994e9b171234efcb0",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 24",
+      "sourceText": "| **Clinical Qualification Management** | **Qualification/Competency Checkpoint Outcome & Work Context** | Verification of active clinical credentials and required competency certificates before specialised work dispatch, derived from `FEAT-HSO-23`. | Does not originate qualifications or confer clinical privileges; source facts retain their authority. Clinical Privilege and Operational Privilege remain distinct; physical badge/access Credential Management is separate. |",
+      "canonicalId": "0511a705d74a4f48a0ce92590ae764fa",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 25",
+      "sourceText": "| **Patient Transport** | **Patient Transport Request & Transit Log** | Transport booking manifests, escort requirements, transit milestone logs, and clinical handover receipts. | Does not own vehicle fleet asset maintenance. |",
+      "canonicalId": "6041d7c0cc5d4519aaea584bb4e6d365",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 26",
+      "sourceText": "| **Clinical Logistics Coordination** | **Specimen Manifest & Chain-of-Custody Register** | Pathology bio-specimen courier manifests, temperature compliance logs, courier custody signatures, and laboratory delivery receipts. | Does not own pathology diagnostic results. |",
+      "canonicalId": "0c27be11b4a44cb19e992309b8146a17",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 27",
+      "sourceText": "| **Discharge Management** | **Discharge Readiness & EDD Register** | Multidisciplinary discharge barrier checklists, Estimated Date of Discharge (EDD) records, and departure readiness confirmations. | Does not own clinical discharge summary authoring. |",
+      "canonicalId": "ec5e8d6732764aa489c2dd7630fc8fef",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 28",
+      "sourceText": "| **Health Information Exchange** | **Exchange Transaction Ledger & Route Matrix** | Ingress message transaction receipts, federated query logs, point-to-point routing tables, and publish-subscribe syndication topic matrices. | Does not own transported message content. |",
+      "canonicalId": "baad6b6117084311acbf5fc4044dfabf",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 29",
+      "sourceText": "| **Health Information Access** | **Query Execution Context & Projection State** | Semantic query execution contexts, search indices, and access-qualified temporary result projection state. | Does not own access control policies or queried source records. |",
+      "canonicalId": "cc253aea3c5f489da0502df74dde1669",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 30",
+      "sourceText": "| **Health Information Control** | **Security Context & Policy Ruleset** | Authorisation policy definitions (RBAC/ABAC rules), security context tokens, consent restriction matrices, and tamper-evident security audit trails. | Does not own patient demographic or clinical data. |",
+      "canonicalId": "44cc0e17ad534675bf26dce6e46a68ff",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 31",
+      "sourceText": "| **Clinical Knowledge Services** | **Canonical Ontologies & Mapping Tables** | Governed clinical terminology structures (SNOMED-CT, LOINC, AMT), value sets, and cross-ontology semantic translation maps. | Does not own patient-specific clinical coded observations. |",
+      "canonicalId": "bbd2bd21859f40e39963bdbe7a851686",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 32",
+      "sourceText": "| **Clinical Collaboration** | **Collaboration Space Metadata & Discourse Index** | Care-team collaboration channel metadata, membership registries, discussion thread indices, and clinical summary contextual projection links. | Collaborative discourse does not constitute authoritative clinical records. |",
+      "canonicalId": "e6429225463a44d39f82e490e254e5d4",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 33",
+      "sourceText": "| **General Collaboration** | **Operational Collaboration Space Ledger** | Non-clinical operational messaging spaces, committee rooms, and logistics discussion logs. | Does not own patient clinical data. |",
+      "canonicalId": "3bb740e6db284112b054905c0c6c80be",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 34",
+      "sourceText": "| **Workflow & Activity Coordination** | **Generic Activity Instance Registry & Timers** | Generic task state progression graphs, timer triggers, deadline escalation rules, and worklist queues across Work Orders, To Dos, and Synthetic Tasks. | Owns generic coordination semantics; does not own business meaning or clinical outcome. |",
+      "canonicalId": "c724f3d38bfa4567983a11ad22095d61",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 35",
+      "sourceText": "| **Calendar Management** | **Projected Unified Temporal Timeline** | Composite chronological schedule projections, shift boundaries, and temporal activity correlation indices. | Does not own authoritative host rosters or booking slots. |",
+      "canonicalId": "7669036f7e6749219412fc64df5f7064",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 36",
+      "sourceText": "| **Presentation Services** | **Presentation Specification & Layout Preferences** | Responsive presentation structures, presentation layouts, and clinician preference configurations. | Does not own presented clinical or operational data. |",
+      "canonicalId": "e9b6ba1917ba44cca7466444d0836c98",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    },
+    {
+      "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+      "selector": "information responsibility row 37",
+      "sourceText": "| **Information Design Governance** | **Canonical Semantic Models & Conformance Schemas** | Enterprise canonical semantic model definitions, data element dictionaries, terminology binding rules, exchange profiles, and semantic conformance constraint sets. | Does not own runtime instances of data. |",
+      "canonicalId": "f39ed9ebcc724857a4bf7a2b8e045c7a",
+      "disposition": "existing capability responsibility contribution; no new asset identity",
+      "reason": "Scope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.",
+      "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+    }
+  ],
+  "residuals": [
+    {
+      "question": "Q-01",
+      "status": "unresolved naming vocabulary",
+      "detail": "165 canonicalNames lack authorised vocabulary (164 retained and one ImplementationGuideline); identity/content independently represented."
+    },
+    {
+      "question": "Q-02",
+      "status": "applied",
+      "detail": "All 214 historical Capability correspondences: 209 direct, 5 evolved; reserved historical UUIDs and inverse lineage."
+    },
+    {
+      "question": "Q-03",
+      "status": "classification resolved; no unnecessary instances",
+      "detail": "Government / Regulatory Body is the native BusinessActor facet when an organisation requires independent ecosystem identity. Motivation constraint effects remain distinct; source references do not require Actor allocations."
+    },
+    {
+      "question": "Q-04",
+      "status": "bounded catalogue correspondence applied; owner acceptance retained",
+      "detail": "Seven same-concern historical requirement correspondences, one related layering-pattern binding, one DIR range navigation row. Candidate owning-domain standing remains; DIR range lacks six individual workflow-assertion definitions."
+    },
+    {
+      "question": "Q-05",
+      "status": "approved meanings retained; three native contextual Associations applied",
+      "detail": "G2-D01–D04 already incorporated with accepted Topic identity/retyping correspondence. Episode→Encounter, Appointment→Encounter, Encounter→ServiceDelivery now native. Problems/Conditions lacks independently represented family endpoints, so [1..*] remains explicit on Episode. G2-Q02–Q07 retain only their recorded classification/qualification/authority/association/composition/change questions. Rejected Referral Disposition stays absent; Responsibility Assumption Assertion remains nonauthoritative Category D."
+    },
+    {
+      "question": "Q-06",
+      "status": "resolved; separate facets retained",
+      "detail": "Strategic Digital Twin and application DigitalTwin remain separate elements; no unsupported identity merger or new realisation asserted."
+    },
+    {
+      "question": "Q-07",
+      "status": "classification method applied; local type/representation deferrals retained",
+      "detail": "Ergon/Erga, Praxis/Pathway, Horos/Terma/Diadromí retain distinct meanings. No composite bundle elements allocated; physical structures and individually deferred types remain source-qualified."
+    },
+    {
+      "question": "Q-08",
+      "status": "assertion versus element rule applied",
+      "detail": "Existing F/D/M rows remain attributable contributions to their subjects; no keyed-row allocations. DesignNote assertions have bounded dispositions; carrier/control facets do not manufacture constructs."
+    },
+    {
+      "question": "Q-09",
+      "status": "capture carrier resolved; individual design matters retained",
+      "detail": "18 notes remain unchanged attributable evidence. Class native/specialisation mapping and the four named historical DataObject classifications remain deferred. Package Grouping specialisation is agreed metamodel direction, not an instance or Class-classification resolution."
+    },
+    {
+      "question": "Q-10",
+      "status": "bounded endpoint application performed; specific absent endpoints retained",
+      "detail": "18 active Service-consumption rows map to native directed Association because BusinessService→Capability Serving is invalid. Withdrawn rows remain excluded. 37 information-ownership rows bind to established Capability responsibility without allocating ledger labels as Information Concepts. Definition-to-Accountability remains reusable guidance, not mandatory five-stage instances; its HealthcareService and Task family definitions already correspond to retained accepted elements. ReportedTask accountability and universal Delivery/Outcome owners remain expressly unestablished."
+    },
+    {
+      "question": "Q-11",
+      "status": "applied",
+      "detail": "462 original predicates preserved; 440 native mappings include one reused Composition, 22 explicitly unestablished assertions excluded."
+    },
+    {
+      "question": "Q-12",
+      "status": "application and verification recorded; holistic acceptance pending",
+      "detail": "Current ARB rules supply authority; agent does not self-confirm release closure. Remaining naming, source-qualified candidate questions and deferred physical designs are precise residuals, not an unspecified future-authority bucket."
+    }
+  ]
+}

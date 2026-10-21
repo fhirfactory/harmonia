@@ -353,6 +353,112 @@
       "specialization": "Home",
       "name": [],
       "documentation": []
+    },
+    {
+      "identifier": "id-a0765054771b5cf7b761751254c8e8aa",
+      "archimateType": "Association",
+      "source": "id-975b6adcaec55a84b41eeff62e424af2",
+      "target": "id-cf983a3e0da35a50a06f2e8c3d7e5f2d",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "established",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/38",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "223b2cbe762b40efb9f05bb5cdd66bcb",
+        "sourceAssertion": {
+          "from": "service:organisation-verification-service",
+          "sources": [
+            {
+              "anchor": "4-organisation-administration",
+              "line": 122,
+              "source": "em",
+              "text": " - *Exposed Service*: `Organisation Verification Service` — Provides verified organisation credentials to external and internal partners."
+            }
+          ],
+          "status": "established",
+          "to": "feature:national-organisation-verification",
+          "type": "associated_feature"
+        }
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:organisation-verification-service\", \"sources\": [{\"anchor\": \"4-organisation-administration\", \"line\": 122, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Organisation Verification Service` — Provides verified organisation credentials to external and internal partners.\"}], \"status\": \"established\", \"to\": \"feature:national-organisation-verification\", \"type\": \"associated_feature\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:organisation-verification-service\", \"sources\": [{\"anchor\": \"4-organisation-administration\", \"line\": 122, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Organisation Verification Service` — Provides verified organisation credentials to external and internal partners.\"}], \"status\": \"established\", \"to\": \"feature:national-organisation-verification\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/38",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},
@@ -383,7 +489,17 @@
         "to": "feature:national-organisation-verification",
         "type": "associated_feature"
       },
-      "source_index": 38
+      "source_index": 38,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Association",
+        "reverse": false,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-a0765054771b5cf7b761751254c8e8aa",
+        "sourceCanonicalId": "223b2cbe762b40efb9f05bb5cdd66bcb",
+        "targetCanonicalId": "0f17fe5439fe45dc8f4edbff3cca0776"
+      }
     }
   ]
 }
@@ -397,11 +513,11 @@ Provides verified organisation credentials to external and internal partners.
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| associated_feature | [[Feature] National Organisation Verification](../../strategy/capability/feature/0f17fe5439fe45dc8f4edbff3cca0776.md) | established / current | Feature association does not establish a particular native edge or whole-Feature realisation. |
+| associated_feature | [[Feature] National Organisation Verification](../../strategy/capability/feature/0f17fe5439fe45dc8f4edbff3cca0776.md) | established / current | Association — `id-a0765054771b5cf7b761751254c8e8aa` |
 
 ## Source-qualified contribution
 

@@ -1,0 +1,40 @@
+make: Entering directory '/home/hunterm/Development/Code/harmonia/docs/archimate/framework'
+timeout --signal=TERM --kill-after=5s 90s python3 ../../../scripts/continuum_manifest.py
+{"status": "PASS", "manifest": "enterprise-architecture/continuum/MANIFEST.md", "check": false, "sha256": "dbef2f2f1e64f09adb0257047183d8a18931bd6b713f7595974992c61d441ec4"}
+timeout --signal=TERM --kill-after=5s 90s python3 ../../../scripts/architecture_continuum.py project --output ../../../enterprise-architecture/continuum/documentation/published/1.1.5/Harmonia-Architecture.xml
+{"status": "PASS", "elements": 1602, "relationships": 1651, "qualifiedSourcePredicates": 462, "canonicalIdentities": 1602, "representationIdentities": 1602, "provenanceCoverage": 1602, "sourceBindings": 3421, "supportedNativeTypes": 60, "architecturalAcceptance": "Pending holistic Solution Architect/ARB review", "containment": "PASS", "informationNaming": {"information_elements": 94, "native_types": {"DataObject": 81, "BusinessObject": 13}, "classifications": {"Topic": 70, "BusinessObject": 13, "UNRESOLVED": 11}, "fully_derived": 83, "unresolved": 11, "contextual": 59, "preserved_identity": 94, "absent_identity": 0, "canonical_ids_allocated": 0, "metadata_changes": {}}, "offlineXsd": "PASS", "exchangeReferences": "PASS", "outputSha256": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b", "publicationAllocatedIdentities": 0, "actualArchiTransport": "NOT_PERFORMED"}
+timeout --signal=TERM --kill-after=5s 90s python3 ../../../scripts/publish_continuum.py --output ../../../enterprise-architecture/continuum/documentation/published/1.1.5
+{"status": "PASS", "artifacts": 4, "check": false}
+timeout --signal=TERM --kill-after=5s 120s python3 -m unittest discover -s ../../../scripts/tests -p 'test_continuum*.py' -v
+test_containment_cycle_is_rejected (test_continuum.ContinuumTests.test_containment_cycle_is_rejected) ... ok
+test_creation_invalid_input_allocates_and_writes_nothing (test_continuum.ContinuumTests.test_creation_invalid_input_allocates_and_writes_nothing) ... ok
+test_creation_then_duplicate_retry_preserves_one_identity (test_continuum.ContinuumTests.test_creation_then_duplicate_retry_preserves_one_identity) ... ok
+test_duplicate_binding_and_withdrawn_id (test_continuum.ContinuumTests.test_duplicate_binding_and_withdrawn_id) ... ok
+test_identity_type_location_and_standing_fail_closed (test_continuum.ContinuumTests.test_identity_type_location_and_standing_fail_closed) ... ok
+test_implementation_guideline_keeps_course_of_action_semantics (test_continuum.ContinuumTests.test_implementation_guideline_keeps_course_of_action_semantics) ... ok
+test_manifest_check_rejects_missing_stale_and_changed_metadata_without_writing (test_continuum.ContinuumTests.test_manifest_check_rejects_missing_stale_and_changed_metadata_without_writing) ... ok
+test_manifest_covers_each_element_once_with_native_grouping_and_source_values (test_continuum.ContinuumTests.test_manifest_covers_each_element_once_with_native_grouping_and_source_values) ... ok
+test_manifest_escapes_source_text_without_hiding_qualifications (test_continuum.ContinuumTests.test_manifest_escapes_source_text_without_hiding_qualifications) ... ok
+test_manifest_exclusion_is_exact_and_invalid_elements_still_fail (test_continuum.ContinuumTests.test_manifest_exclusion_is_exact_and_invalid_elements_still_fail) ... ok
+test_manifest_is_deterministic_and_changes_no_sources_or_projection (test_continuum.ContinuumTests.test_manifest_is_deterministic_and_changes_no_sources_or_projection) ... ok
+test_native_endpoints_reject_schema_valid_but_illegal_relationship (test_continuum.ContinuumTests.test_native_endpoints_reject_schema_valid_but_illegal_relationship) ... ok
+test_native_information_naming_is_checked_independently (test_continuum.ContinuumTests.test_native_information_naming_is_checked_independently) ... ok
+test_native_predicate_cannot_lose_qualification_or_reverse_enablement (test_continuum.ContinuumTests.test_native_predicate_cannot_lose_qualification_or_reverse_enablement) ... ok
+test_population_and_provenance (test_continuum.ContinuumTests.test_population_and_provenance) ... ok
+test_projection_and_publication_are_deterministic_and_allocate_nothing (test_continuum.ContinuumTests.test_projection_and_publication_are_deterministic_and_allocate_nothing) ... ok
+test_qualified_predicates_keep_subject_target_and_standing (test_continuum.ContinuumTests.test_qualified_predicates_keep_subject_target_and_standing) ... ok
+test_reserved_historical_identity_cannot_become_a_second_current_capability (test_continuum.ContinuumTests.test_reserved_historical_identity_cannot_become_a_second_current_capability) ... ok
+test_review_hash_must_match (test_continuum.ContinuumTests.test_review_hash_must_match) ... ok
+test_workbench_exact_baseline_and_complete_dispositions (test_continuum.ContinuumTests.test_workbench_exact_baseline_and_complete_dispositions) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 97.215s
+
+OK
+timeout --signal=TERM --kill-after=5s 90s python3 ../../../scripts/continuum_manifest.py --check
+{"status": "PASS", "manifest": "enterprise-architecture/continuum/MANIFEST.md", "check": true, "sha256": "dbef2f2f1e64f09adb0257047183d8a18931bd6b713f7595974992c61d441ec4"}
+timeout --signal=TERM --kill-after=5s 90s python3 ../../../scripts/architecture_continuum.py project --output ../../../enterprise-architecture/continuum/documentation/published/1.1.5/Harmonia-Architecture.xml --check
+{"status": "PASS", "elements": 1602, "relationships": 1651, "qualifiedSourcePredicates": 462, "canonicalIdentities": 1602, "representationIdentities": 1602, "provenanceCoverage": 1602, "sourceBindings": 3421, "supportedNativeTypes": 60, "architecturalAcceptance": "Pending holistic Solution Architect/ARB review", "containment": "PASS", "informationNaming": {"information_elements": 94, "native_types": {"DataObject": 81, "BusinessObject": 13}, "classifications": {"Topic": 70, "BusinessObject": 13, "UNRESOLVED": 11}, "fully_derived": 83, "unresolved": 11, "contextual": 59, "preserved_identity": 94, "absent_identity": 0, "canonical_ids_allocated": 0, "metadata_changes": {}}, "offlineXsd": "PASS", "exchangeReferences": "PASS", "outputSha256": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b", "publicationAllocatedIdentities": 0, "actualArchiTransport": "NOT_PERFORMED"}
+timeout --signal=TERM --kill-after=5s 90s python3 ../../../scripts/publish_continuum.py --output ../../../enterprise-architecture/continuum/documentation/published/1.1.5 --check
+{"status": "PASS", "artifacts": 4, "check": true}
+make: Leaving directory '/home/hunterm/Development/Code/harmonia/docs/archimate/framework'

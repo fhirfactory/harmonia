@@ -561,77 +561,77 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 
 | Element | Canonical identity | Standing / currentness |
 | --- | --- | --- |
-| [[CT1] Care Access & Coordination](../../../strategy/capability/0dec07b6ddbe48bda93a2295dd3e2d7d.md) | 0dec07b6ddbe48bda93a2295dd3e2d7d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Care Access & Coordination](../../../strategy/capability/0dec07b6ddbe48bda93a2295dd3e2d7d.md) | 0dec07b6ddbe48bda93a2295dd3e2d7d | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Care Access & Coordination](../../../strategy/capability/ed342cb8656b4f80b55ad519ecbd2d3a.md) | ed342cb8656b4f80b55ad519ecbd2d3a | Canonical / current |
 | [[CT1] Care Administration Enablement](../../../strategy/capability/28df27d55c514a37995145ab46945f78.md) | 28df27d55c514a37995145ab46945f78 | Proposed / current |
-| [[CT1] Care Administration Enablement](../../../strategy/capability/b611a1fcfadb4b30af9ba74a4c993d8a.md) | b611a1fcfadb4b30af9ba74a4c993d8a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Care Administration Enablement](../../../strategy/capability/b611a1fcfadb4b30af9ba74a4c993d8a.md) | b611a1fcfadb4b30af9ba74a4c993d8a | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Care Context Integration Enablement](../../../strategy/capability/a84a7e96e7874a4b87d18c53b1b5cf29.md) | a84a7e96e7874a4b87d18c53b1b5cf29 | Proposed / superseded |
 | [[CT1] Clinical Quality, Safety & Improvement](../../../strategy/capability/63837bf848774572a06b935af95581a2.md) | 63837bf848774572a06b935af95581a2 | Canonical / current |
-| [[CT1] Clinical Quality, Safety & Improvement](../../../strategy/capability/b967c383dbcd4c24abe6a83ea5e79e00.md) | b967c383dbcd4c24abe6a83ea5e79e00 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Clinical Quality, Safety & Improvement](../../../strategy/capability/b967c383dbcd4c24abe6a83ea5e79e00.md) | b967c383dbcd4c24abe6a83ea5e79e00 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Clinical Service Dependency Management](../../../strategy/capability/232db9b8b47c450cb0aa9acaf539c09d.md) | 232db9b8b47c450cb0aa9acaf539c09d | Proposed / current |
-| [[CT1] Clinical Service Dependency Management](../../../strategy/capability/984ee17123eb4f92b3e55e55d24459b8.md) | 984ee17123eb4f92b3e55e55d24459b8 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT1] Community Health & Wellbeing](../../../strategy/capability/175174c5cce549d2b154a4f6704721dc.md) | 175174c5cce549d2b154a4f6704721dc | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Clinical Service Dependency Management](../../../strategy/capability/984ee17123eb4f92b3e55e55d24459b8.md) | 984ee17123eb4f92b3e55e55d24459b8 | Superseded historical identity — direct correspondence / superseded |
+| [[CT1] Community Health & Wellbeing](../../../strategy/capability/175174c5cce549d2b154a4f6704721dc.md) | 175174c5cce549d2b154a4f6704721dc | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Community Health & Wellbeing](../../../strategy/capability/b326b4aaf02a41a986ed22d184cbc152.md) | b326b4aaf02a41a986ed22d184cbc152 | Canonical / current |
 | [[CT1] Connected Health Services](../../../strategy/capability/3ef397463e584737b367e93f0bf1d85d.md) | 3ef397463e584737b367e93f0bf1d85d | Canonical / current |
-| [[CT1] Connected Health Services](../../../strategy/capability/48f01ef8b0e6431c85cf4f40cf8f94c3.md) | 48f01ef8b0e6431c85cf4f40cf8f94c3 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Connected Health Services](../../../strategy/capability/48f01ef8b0e6431c85cf4f40cf8f94c3.md) | 48f01ef8b0e6431c85cf4f40cf8f94c3 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Coordinated Activity & Interaction](../../../strategy/capability/5187c3db390e444db3eb809c02a2f1c1.md) | 5187c3db390e444db3eb809c02a2f1c1 | Proposed / current |
-| [[CT1] Corporate Resources & Enterprise Services](../../../strategy/capability/a2dbd74847a44f4c879983229f5c9d08.md) | a2dbd74847a44f4c879983229f5c9d08 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Corporate Resources & Enterprise Services](../../../strategy/capability/a2dbd74847a44f4c879983229f5c9d08.md) | a2dbd74847a44f4c879983229f5c9d08 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Corporate Resources & Enterprise Services](../../../strategy/capability/b79628f156e14a8cbb82a0dea2fc57ff.md) | b79628f156e14a8cbb82a0dea2fc57ff | Canonical / current |
 | [[CT1] Diagnostic, Therapeutic & Clinical Support Services](../../../strategy/capability/4d98c3503a9f4890a677f09b0c3b6f82.md) | 4d98c3503a9f4890a677f09b0c3b6f82 | Canonical / current |
-| [[CT1] Diagnostic, Therapeutic & Clinical Support Services](../../../strategy/capability/e003b9cd0730459a84775d2837d1d173.md) | e003b9cd0730459a84775d2837d1d173 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Diagnostic, Therapeutic & Clinical Support Services](../../../strategy/capability/e003b9cd0730459a84775d2837d1d173.md) | e003b9cd0730459a84775d2837d1d173 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Entity Information Enablement](../../../strategy/capability/b5a92874f8ac4509a30af5253590edc1.md) | b5a92874f8ac4509a30af5253590edc1 | Proposed / current |
-| [[CT1] Entity Information Enablement](../../../strategy/capability/e4d959d6c71d498c9ce00d2be4c048e3.md) | e4d959d6c71d498c9ce00d2be4c048e3 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Entity Information Enablement](../../../strategy/capability/e4d959d6c71d498c9ce00d2be4c048e3.md) | e4d959d6c71d498c9ce00d2be4c048e3 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Governed Information Operations](../../../strategy/capability/15e57021490c4e738aee9009ff84a7c3.md) | 15e57021490c4e738aee9009ff84a7c3 | Proposed / current |
-| [[CT1] Health Informatics Management](../../../strategy/capability/50c56bac0dc540a2b392fc2376efc129.md) | 50c56bac0dc540a2b392fc2376efc129 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Health Informatics Management](../../../strategy/capability/50c56bac0dc540a2b392fc2376efc129.md) | 50c56bac0dc540a2b392fc2376efc129 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Health Informatics Management](../../../strategy/capability/a790b5f2c5a1497fa6ec09d7824da32e.md) | a790b5f2c5a1497fa6ec09d7824da32e | Proposed / current |
-| [[CT1] Health Information & Knowledge Management](../../../strategy/capability/a1c557bd263047d0b3ff566cf50b98c1.md) | a1c557bd263047d0b3ff566cf50b98c1 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Health Information & Knowledge Management](../../../strategy/capability/a1c557bd263047d0b3ff566cf50b98c1.md) | a1c557bd263047d0b3ff566cf50b98c1 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Health Information & Knowledge Management](../../../strategy/capability/cca5d5abec204b339eb5b9bd924ed64e.md) | cca5d5abec204b339eb5b9bd924ed64e | Canonical / current |
 | [[CT1] Health Products & Clinical Technology](../../../strategy/capability/54388e3202c2403089b5c476c78c4567.md) | 54388e3202c2403089b5c476c78c4567 | Canonical / current |
-| [[CT1] Health Products & Clinical Technology](../../../strategy/capability/a631a8600b8b49df9ef452c48c91349a.md) | a631a8600b8b49df9ef452c48c91349a | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT1] Health Research & Innovation](../../../strategy/capability/2cc31384c8864c73989025cbe96dcfa7.md) | 2cc31384c8864c73989025cbe96dcfa7 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Health Products & Clinical Technology](../../../strategy/capability/a631a8600b8b49df9ef452c48c91349a.md) | a631a8600b8b49df9ef452c48c91349a | Superseded historical identity — direct correspondence / superseded |
+| [[CT1] Health Research & Innovation](../../../strategy/capability/2cc31384c8864c73989025cbe96dcfa7.md) | 2cc31384c8864c73989025cbe96dcfa7 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Health Research & Innovation](../../../strategy/capability/582bf62145fd42118e5d57bb714841e8.md) | 582bf62145fd42118e5d57bb714841e8 | Canonical / current |
-| [[CT1] Health Rights, Advocacy & Participation](../../../strategy/capability/58376e5c53bf4af0a54f99f21ac52666.md) | 58376e5c53bf4af0a54f99f21ac52666 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Health Rights, Advocacy & Participation](../../../strategy/capability/58376e5c53bf4af0a54f99f21ac52666.md) | 58376e5c53bf4af0a54f99f21ac52666 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Health Rights, Advocacy & Participation](../../../strategy/capability/7ab5c82a500b45f39267883a6e78c482.md) | 7ab5c82a500b45f39267883a6e78c482 | Canonical / current |
 | [[CT1] Health Service Assurance](../../../strategy/capability/14860102964c441681d41ec3da423fe0.md) | 14860102964c441681d41ec3da423fe0 | Canonical / current |
-| [[CT1] Health Service Assurance](../../../strategy/capability/6a82dc1423374e809dbf542eeaa69482.md) | 6a82dc1423374e809dbf542eeaa69482 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT1] Health Service Direction & Stewardship](../../../strategy/capability/360bf50f92484448a01cc57f2dbce23c.md) | 360bf50f92484448a01cc57f2dbce23c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Health Service Assurance](../../../strategy/capability/6a82dc1423374e809dbf542eeaa69482.md) | 6a82dc1423374e809dbf542eeaa69482 | Superseded historical identity — direct correspondence / superseded |
+| [[CT1] Health Service Direction & Stewardship](../../../strategy/capability/360bf50f92484448a01cc57f2dbce23c.md) | 360bf50f92484448a01cc57f2dbce23c | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Health Service Direction & Stewardship](../../../strategy/capability/d51e7125bf9c4d2c9c59b60346b4d86f.md) | d51e7125bf9c4d2c9c59b60346b4d86f | Canonical / current |
 | [[CT1] Health Service Governance](../../../strategy/capability/209aada781e844e28202a2535a264c21.md) | 209aada781e844e28202a2535a264c21 | Canonical / current |
-| [[CT1] Health Service Governance](../../../strategy/capability/24f3dd30223142efa35a5826552d53ab.md) | 24f3dd30223142efa35a5826552d53ab | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT1] Health Service Operations Enablement](../../../strategy/capability/a98424298dac46d8b2ddd109d928270a.md) | a98424298dac46d8b2ddd109d928270a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Health Service Governance](../../../strategy/capability/24f3dd30223142efa35a5826552d53ab.md) | 24f3dd30223142efa35a5826552d53ab | Superseded historical identity — direct correspondence / superseded |
+| [[CT1] Health Service Operations Enablement](../../../strategy/capability/a98424298dac46d8b2ddd109d928270a.md) | a98424298dac46d8b2ddd109d928270a | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Health Service Operations Enablement](../../../strategy/capability/b13ee2c5a4ef4fd6be8a44795696dfc2.md) | b13ee2c5a4ef4fd6be8a44795696dfc2 | Proposed / current |
 | [[CT1] Human Collaboration & Work Enablement](../../../strategy/capability/c9347f73b21242c5b8cce41252b74da0.md) | c9347f73b21242c5b8cce41252b74da0 | Proposed / superseded |
 | [[CT1] Independent Assurance Enablement](../../../strategy/capability/616682b612d244429e656b040e002d56.md) | 616682b612d244429e656b040e002d56 | Proposed / current |
-| [[CT1] Independent Assurance Enablement](../../../strategy/capability/88bf57b7a92c4c1da1b5f0a67d3ebd82.md) | 88bf57b7a92c4c1da1b5f0a67d3ebd82 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT1] Individual Care Delivery](../../../strategy/capability/162deb7e292042f78f677a14476a3a1d.md) | 162deb7e292042f78f677a14476a3a1d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Independent Assurance Enablement](../../../strategy/capability/88bf57b7a92c4c1da1b5f0a67d3ebd82.md) | 88bf57b7a92c4c1da1b5f0a67d3ebd82 | Superseded historical identity — direct correspondence / superseded |
+| [[CT1] Individual Care Delivery](../../../strategy/capability/162deb7e292042f78f677a14476a3a1d.md) | 162deb7e292042f78f677a14476a3a1d | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Individual Care Delivery](../../../strategy/capability/b964a11cde594318aa14ff935414158a.md) | b964a11cde594318aa14ff935414158a | Canonical / current |
-| [[CT1] Population Health & Health-System Planning](../../../strategy/capability/a5003436a7f348b1bff60ba593adfa27.md) | a5003436a7f348b1bff60ba593adfa27 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Population Health & Health-System Planning](../../../strategy/capability/a5003436a7f348b1bff60ba593adfa27.md) | a5003436a7f348b1bff60ba593adfa27 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Population Health & Health-System Planning](../../../strategy/capability/c63b38b37e9b4e9b97dc87ed54604def.md) | c63b38b37e9b4e9b97dc87ed54604def | Canonical / current |
 | [[CT1] Security, Privacy & Digital Trust](../../../strategy/capability/71f0431fdfcd4f779e16d9e5ea609833.md) | 71f0431fdfcd4f779e16d9e5ea609833 | Canonical / current |
-| [[CT1] Security, Privacy & Digital Trust](../../../strategy/capability/b01441b2f5584fc2b9c3988643a7c93b.md) | b01441b2f5584fc2b9c3988643a7c93b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Security, Privacy & Digital Trust](../../../strategy/capability/b01441b2f5584fc2b9c3988643a7c93b.md) | b01441b2f5584fc2b9c3988643a7c93b | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Shared Information & Coordination Enablement](../../../strategy/capability/0062fcacae1740988b6be2bda2aa1674.md) | 0062fcacae1740988b6be2bda2aa1674 | Proposed / current |
-| [[CT1] Shared Information & Coordination Enablement](../../../strategy/capability/eeabb9c3c526404cbe4302906560fa7e.md) | eeabb9c3c526404cbe4302906560fa7e | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT1] Standards, Semantics & Reference Governance](../../../strategy/capability/3b65a3d007f54aa9b875e655475e1786.md) | 3b65a3d007f54aa9b875e655475e1786 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Shared Information & Coordination Enablement](../../../strategy/capability/eeabb9c3c526404cbe4302906560fa7e.md) | eeabb9c3c526404cbe4302906560fa7e | Superseded historical identity — direct correspondence / superseded |
+| [[CT1] Standards, Semantics & Reference Governance](../../../strategy/capability/3b65a3d007f54aa9b875e655475e1786.md) | 3b65a3d007f54aa9b875e655475e1786 | Superseded historical identity — direct correspondence / superseded |
 | [[CT1] Standards, Semantics & Reference Governance](../../../strategy/capability/5ffeb7401d314f06b05d79c3aff98242.md) | 5ffeb7401d314f06b05d79c3aff98242 | Canonical / current |
 | [[CT1] Trust, Accountability & Assurance](../../../strategy/capability/321de197612f49089d8b4a4cc1a2e003.md) | 321de197612f49089d8b4a4cc1a2e003 | Proposed / current |
 | [[CT1] Workforce & Organisational Capability](../../../strategy/capability/631b43664bfb4c50ac8cf4958b2c347d.md) | 631b43664bfb4c50ac8cf4958b2c347d | Canonical / current |
-| [[CT1] Workforce & Organisational Capability](../../../strategy/capability/b1161fe1a315420fbc7d048a1ea58126.md) | b1161fe1a315420fbc7d048a1ea58126 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT1] Workforce & Organisational Capability](../../../strategy/capability/b1161fe1a315420fbc7d048a1ea58126.md) | b1161fe1a315420fbc7d048a1ea58126 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Activity & Execution](../../../strategy/capability/e5ff80e655084524a8dcee8e4ded788a.md) | e5ff80e655084524a8dcee8e4ded788a | Canonical / current |
-| [[CT2] Acute Care](../../../strategy/capability/7b591957f7424424abc80f699e9f1960.md) | 7b591957f7424424abc80f699e9f1960 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Acute Care](../../../strategy/capability/7b591957f7424424abc80f699e9f1960.md) | 7b591957f7424424abc80f699e9f1960 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Acute Care](../../../strategy/capability/9bb988c526404522b83aeed5069e0eb5.md) | 9bb988c526404522b83aeed5069e0eb5 | Proposed / current |
 | [[CT2] Allied Health](../../../strategy/capability/63cd714a3e2a4354aa5383b189fea566.md) | 63cd714a3e2a4354aa5383b189fea566 | Canonical / current |
-| [[CT2] Allied Health](../../../strategy/capability/6cd45c27d0c344b9807174dbd812d572.md) | 6cd45c27d0c344b9807174dbd812d572 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Ambulatory Care](../../../strategy/capability/e996b61b6e7b4619913f427aed2b55b1.md) | e996b61b6e7b4619913f427aed2b55b1 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Allied Health](../../../strategy/capability/6cd45c27d0c344b9807174dbd812d572.md) | 6cd45c27d0c344b9807174dbd812d572 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Ambulatory Care](../../../strategy/capability/e996b61b6e7b4619913f427aed2b55b1.md) | e996b61b6e7b4619913f427aed2b55b1 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Ambulatory Care](../../../strategy/capability/f74d7c3a39c540c4b462576e8f09fc58.md) | f74d7c3a39c540c4b462576e8f09fc58 | Canonical / current |
 | [[CT2] Assurance Evaluation](../../../strategy/capability/d1b20e0fb91e4bd1950ad57b84e2cafd.md) | d1b20e0fb91e4bd1950ad57b84e2cafd | Canonical / current |
 | [[CT2] Assurance Service Review](../../../strategy/capability/b1a791458d644d4794895e4fa42ec83c.md) | b1a791458d644d4794895e4fa42ec83c | Proposed / current |
-| [[CT2] Assurance Service Review](../../../strategy/capability/b345cb12b45746409302899514126170.md) | b345cb12b45746409302899514126170 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Assurance Specification](../../../strategy/capability/8006ee0dd95f4d7fb1f408fa09b6ce19.md) | 8006ee0dd95f4d7fb1f408fa09b6ce19 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Assurance Service Review](../../../strategy/capability/b345cb12b45746409302899514126170.md) | b345cb12b45746409302899514126170 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Assurance Specification](../../../strategy/capability/8006ee0dd95f4d7fb1f408fa09b6ce19.md) | 8006ee0dd95f4d7fb1f408fa09b6ce19 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Assurance Specification](../../../strategy/capability/b81775d89d774cf8ba61731d13c67a54.md) | b81775d89d774cf8ba61731d13c67a54 | Proposed / current |
-| [[CT2] Bed & Care-Place Management](../../../strategy/capability/c94d29b7d1c045dabc7814ceea795484.md) | c94d29b7d1c045dabc7814ceea795484 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Bed & Care-Place Management](../../../strategy/capability/c94d29b7d1c045dabc7814ceea795484.md) | c94d29b7d1c045dabc7814ceea795484 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Bed & Care-Place Management](../../../strategy/capability/f117ccec0bfa4f738e6ddb646b3534a2.md) | f117ccec0bfa4f738e6ddb646b3534a2 | Canonical / current |
 | [[CT2] Calendar Management](../../../strategy/capability/7669036f7e6749219412fc64df5f7064.md) | 7669036f7e6749219412fc64df5f7064 | Canonical / current |
-| [[CT2] Calendar Management](../../../strategy/capability/8b42aac6083441caa78b59f5e62eebd9.md) | 8b42aac6083441caa78b59f5e62eebd9 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Calendar Management](../../../strategy/capability/8b42aac6083441caa78b59f5e62eebd9.md) | 8b42aac6083441caa78b59f5e62eebd9 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Care Access Management](../../../strategy/capability/acbcad8330e64b59be5e3ec4a100a544.md) | acbcad8330e64b59be5e3ec4a100a544 | Canonical / current |
 | [[CT2] Care Access Transaction Enablement](../../../strategy/capability/b65973b576154d3a96cf458bf33df53a.md) | b65973b576154d3a96cf458bf33df53a | Proposed / superseded |
 | [[CT2] Care Coordination & Transition](../../../strategy/capability/174a9b93d19c44828f20360e9d543925.md) | 174a9b93d19c44828f20360e9d543925 | Canonical / current |
@@ -640,107 +640,107 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT2] Care Fulfilment Administration Enablement](../../../strategy/capability/9f0f4379c1954524ba5e691d0c7d95ab.md) | 9f0f4379c1954524ba5e691d0c7d95ab | Proposed / superseded |
 | [[CT2] Care Movement & Transition Coordination](../../../strategy/capability/59b9331fa3c04ef09bf963ad8a5d0d71.md) | 59b9331fa3c04ef09bf963ad8a5d0d71 | Proposed / superseded |
 | [[CT2] Care Plan Administration](../../../strategy/capability/cf06eec5699f406fa30a00d2f76e3098.md) | cf06eec5699f406fa30a00d2f76e3098 | Canonical / current |
-| [[CT2] Care Plan Administration](../../../strategy/capability/e31407cea7624632a8ed2dc53b09d726.md) | e31407cea7624632a8ed2dc53b09d726 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Care Plan Administration](../../../strategy/capability/e31407cea7624632a8ed2dc53b09d726.md) | e31407cea7624632a8ed2dc53b09d726 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Care Resource & Capacity Coordination](../../../strategy/capability/96f71cb8fa6844d7aa7e9f16759a3a62.md) | 96f71cb8fa6844d7aa7e9f16759a3a62 | Proposed / superseded |
 | [[CT2] Care Scheduling & Capacity Management](../../../strategy/capability/61dd4b247df14546bf012587164bfe91.md) | 61dd4b247df14546bf012587164bfe91 | Canonical / current |
 | [[CT2] Care Setting Operations Enablement](../../../strategy/capability/a03741e6e98642bea44680d23fdcb434.md) | a03741e6e98642bea44680d23fdcb434 | Proposed / superseded |
 | [[CT2] Care Support Logistics Management](../../../strategy/capability/92be036674254f719cf4bb613120128a.md) | 92be036674254f719cf4bb613120128a | Canonical / current |
-| [[CT2] Client Administration](../../../strategy/capability/70d2a44a0442441f8b306b82b297bb8a.md) | 70d2a44a0442441f8b306b82b297bb8a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Client Administration](../../../strategy/capability/70d2a44a0442441f8b306b82b297bb8a.md) | 70d2a44a0442441f8b306b82b297bb8a | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Client Administration](../../../strategy/capability/f0885472cced4bccbcce1568bf0360dc.md) | f0885472cced4bccbcce1568bf0360dc | Canonical / current |
-| [[CT2] Client-Centred Administration](../../../strategy/capability/232b3fb2ff204c9b9ff7a60ff6a7a32d.md) | 232b3fb2ff204c9b9ff7a60ff6a7a32d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Client-Centred Administration](../../../strategy/capability/232b3fb2ff204c9b9ff7a60ff6a7a32d.md) | 232b3fb2ff204c9b9ff7a60ff6a7a32d | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Client-Centred Administration](../../../strategy/capability/8752b7a937754b2faa296300c6a48911.md) | 8752b7a937754b2faa296300c6a48911 | Canonical / current |
-| [[CT2] Clinic & Practice Operations](../../../strategy/capability/0856d2daf2ba4b92b5390b38b98efb54.md) | 0856d2daf2ba4b92b5390b38b98efb54 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinic & Practice Operations](../../../strategy/capability/0856d2daf2ba4b92b5390b38b98efb54.md) | 0856d2daf2ba4b92b5390b38b98efb54 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinic & Practice Operations](../../../strategy/capability/3dffe63e03124efab255204ee4e9a5d9.md) | 3dffe63e03124efab255204ee4e9a5d9 | Canonical / current |
-| [[CT2] Clinical Assessment](../../../strategy/capability/1c3b553c87704e27ba211fbbd02d95cb.md) | 1c3b553c87704e27ba211fbbd02d95cb | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Assessment](../../../strategy/capability/1c3b553c87704e27ba211fbbd02d95cb.md) | 1c3b553c87704e27ba211fbbd02d95cb | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Assessment](../../../strategy/capability/a7d84c95e48c453797419813ca80a66c.md) | a7d84c95e48c453797419813ca80a66c | Canonical / current |
-| [[CT2] Clinical Charging & Claims Administration](../../../strategy/capability/44433108cc8f4f5f9d7581f9e5b29eb5.md) | 44433108cc8f4f5f9d7581f9e5b29eb5 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Charging & Claims Administration](../../../strategy/capability/44433108cc8f4f5f9d7581f9e5b29eb5.md) | 44433108cc8f4f5f9d7581f9e5b29eb5 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Charging & Claims Administration](../../../strategy/capability/af78ab7c89454a608cd4d34ec7703331.md) | af78ab7c89454a608cd4d34ec7703331 | Canonical / current |
-| [[CT2] Clinical Collaboration](../../../strategy/capability/c5adc1955b6046d8b920b0176cebc9de.md) | c5adc1955b6046d8b920b0176cebc9de | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Collaboration](../../../strategy/capability/c5adc1955b6046d8b920b0176cebc9de.md) | c5adc1955b6046d8b920b0176cebc9de | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Collaboration](../../../strategy/capability/e6429225463a44d39f82e490e254e5d4.md) | e6429225463a44d39f82e490e254e5d4 | Canonical / current |
 | [[CT2] Clinical Communication Administration](../../../strategy/capability/b38f2c2811724734b5887b6dbaaabbfc.md) | b38f2c2811724734b5887b6dbaaabbfc | Canonical / current |
-| [[CT2] Clinical Communication Administration](../../../strategy/capability/bd4d6f4a7f03402ba7857383c7be7a4c.md) | bd4d6f4a7f03402ba7857383c7be7a4c | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Clinical Competency Administration](../../../strategy/capability/8a4b918e1c9d47bb99daf2b42008ab39.md) | 8a4b918e1c9d47bb99daf2b42008ab39 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Communication Administration](../../../strategy/capability/bd4d6f4a7f03402ba7857383c7be7a4c.md) | bd4d6f4a7f03402ba7857383c7be7a4c | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Clinical Competency Administration](../../../strategy/capability/8a4b918e1c9d47bb99daf2b42008ab39.md) | 8a4b918e1c9d47bb99daf2b42008ab39 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Competency Administration](../../../strategy/capability/8a99f4a6e5054d6c997bacec04805c01.md) | 8a99f4a6e5054d6c997bacec04805c01 | Canonical / current |
-| [[CT2] Clinical Determination](../../../strategy/capability/018ccd818ec142fba1ffb086d900acc6.md) | 018ccd818ec142fba1ffb086d900acc6 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Determination](../../../strategy/capability/018ccd818ec142fba1ffb086d900acc6.md) | 018ccd818ec142fba1ffb086d900acc6 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Determination](../../../strategy/capability/39219464b6304b59bd7c3de4e237066e.md) | 39219464b6304b59bd7c3de4e237066e | Canonical / current |
 | [[CT2] Clinical Device Administration](../../../strategy/capability/31bcd6fda0d14cc8b992cdca39a3cbed.md) | 31bcd6fda0d14cc8b992cdca39a3cbed | Canonical / current |
-| [[CT2] Clinical Device Administration](../../../strategy/capability/3792be10541e4d68b3f740b1ba964966.md) | 3792be10541e4d68b3f740b1ba964966 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Device Administration](../../../strategy/capability/3792be10541e4d68b3f740b1ba964966.md) | 3792be10541e4d68b3f740b1ba964966 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Information Stewardship Enablement](../../../strategy/capability/3811c758ff2140c39a801bf89f75098a.md) | 3811c758ff2140c39a801bf89f75098a | Proposed / superseded |
 | [[CT2] Clinical Intervention](../../../strategy/capability/5359d1b0ff814a0e871384469f5ebcd7.md) | 5359d1b0ff814a0e871384469f5ebcd7 | Canonical / current |
-| [[CT2] Clinical Intervention](../../../strategy/capability/958345ee65f446d3b1259b8895ab100f.md) | 958345ee65f446d3b1259b8895ab100f | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Intervention](../../../strategy/capability/958345ee65f446d3b1259b8895ab100f.md) | 958345ee65f446d3b1259b8895ab100f | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Knowledge Management](../../../strategy/capability/76b375248aee49aeb5a5044176a688d8.md) | 76b375248aee49aeb5a5044176a688d8 | Canonical / current |
-| [[CT2] Clinical Knowledge Services](../../../strategy/capability/5b8478b08c3f42c0a3480edb8f0b9ea7.md) | 5b8478b08c3f42c0a3480edb8f0b9ea7 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Knowledge Services](../../../strategy/capability/5b8478b08c3f42c0a3480edb8f0b9ea7.md) | 5b8478b08c3f42c0a3480edb8f0b9ea7 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Knowledge Services](../../../strategy/capability/bbd2bd21859f40e39963bdbe7a851686.md) | bbd2bd21859f40e39963bdbe7a851686 | Canonical / current |
 | [[CT2] Clinical Logistics Coordination](../../../strategy/capability/0c27be11b4a44cb19e992309b8146a17.md) | 0c27be11b4a44cb19e992309b8146a17 | Canonical / current |
-| [[CT2] Clinical Logistics Coordination](../../../strategy/capability/90a782ff2d004fa984ae0465528b2253.md) | 90a782ff2d004fa984ae0465528b2253 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Logistics Coordination](../../../strategy/capability/90a782ff2d004fa984ae0465528b2253.md) | 90a782ff2d004fa984ae0465528b2253 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Qualification Administration](../../../strategy/capability/0511a705d74a4f48a0ce92590ae764fa.md) | 0511a705d74a4f48a0ce92590ae764fa | Canonical / current |
-| [[CT2] Clinical Qualification Administration](../../../strategy/capability/5fea7aaac4384245b1f08a3d8a076bd9.md) | 5fea7aaac4384245b1f08a3d8a076bd9 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Qualification Administration](../../../strategy/capability/5fea7aaac4384245b1f08a3d8a076bd9.md) | 5fea7aaac4384245b1f08a3d8a076bd9 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Quality Management](../../../strategy/capability/89761f2d38f846c39df1df0975964288.md) | 89761f2d38f846c39df1df0975964288 | Canonical / current |
-| [[CT2] Clinical Quality Management](../../../strategy/capability/dc1bece79eb7452e951d03a2ee6dfaa6.md) | dc1bece79eb7452e951d03a2ee6dfaa6 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Clinical Record Administration](../../../strategy/capability/be3f2e695eda403fbce8118daf83d386.md) | be3f2e695eda403fbce8118daf83d386 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Quality Management](../../../strategy/capability/dc1bece79eb7452e951d03a2ee6dfaa6.md) | dc1bece79eb7452e951d03a2ee6dfaa6 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Clinical Record Administration](../../../strategy/capability/be3f2e695eda403fbce8118daf83d386.md) | be3f2e695eda403fbce8118daf83d386 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Record Administration](../../../strategy/capability/ce9e7e7b22054cefb707a650d5be7219.md) | ce9e7e7b22054cefb707a650d5be7219 | Canonical / current |
 | [[CT2] Clinical Rostering](../../../strategy/capability/192ca88a289544dcbf6adaf643f39969.md) | 192ca88a289544dcbf6adaf643f39969 | Canonical / current |
-| [[CT2] Clinical Rostering](../../../strategy/capability/b6527516a69c499d8cc9c8fe881169fe.md) | b6527516a69c499d8cc9c8fe881169fe | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Rostering](../../../strategy/capability/b6527516a69c499d8cc9c8fe881169fe.md) | b6527516a69c499d8cc9c8fe881169fe | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Safety Management](../../../strategy/capability/28d1bf3e514e4c29837ebedaf9e4917b.md) | 28d1bf3e514e4c29837ebedaf9e4917b | Canonical / current |
-| [[CT2] Clinical Safety Management](../../../strategy/capability/650ccec030fa46cc8c9d6b508a841778.md) | 650ccec030fa46cc8c9d6b508a841778 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Safety Management](../../../strategy/capability/650ccec030fa46cc8c9d6b508a841778.md) | 650ccec030fa46cc8c9d6b508a841778 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Semantics Governance](../../../strategy/capability/5cc8319e1dde4c818cc248a47233b67b.md) | 5cc8319e1dde4c818cc248a47233b67b | Canonical / current |
-| [[CT2] Clinical Supervision](../../../strategy/capability/50c838981f3946d78e8f78d18e31c70c.md) | 50c838981f3946d78e8f78d18e31c70c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Supervision](../../../strategy/capability/50c838981f3946d78e8f78d18e31c70c.md) | 50c838981f3946d78e8f78d18e31c70c | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Supervision](../../../strategy/capability/f697b1ac79b544749315f31819b17969.md) | f697b1ac79b544749315f31819b17969 | Canonical / current |
 | [[CT2] Clinical Technology Management](../../../strategy/capability/6c91476a45eb4432b1f90b47a4c2ad35.md) | 6c91476a45eb4432b1f90b47a4c2ad35 | Canonical / current |
 | [[CT2] Clinical Training & Education](../../../strategy/capability/d016f35ffbc345d99d7281e968c14ddb.md) | d016f35ffbc345d99d7281e968c14ddb | Canonical / current |
-| [[CT2] Clinical Training & Education](../../../strategy/capability/df8bff7df9c1469da16cac6a5eb2bf76.md) | df8bff7df9c1469da16cac6a5eb2bf76 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Clinical Workforce Capability Monitoring](../../../strategy/capability/24c015676c254e2e82e8e4287c295179.md) | 24c015676c254e2e82e8e4287c295179 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Clinical Training & Education](../../../strategy/capability/df8bff7df9c1469da16cac6a5eb2bf76.md) | df8bff7df9c1469da16cac6a5eb2bf76 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Clinical Workforce Capability Monitoring](../../../strategy/capability/24c015676c254e2e82e8e4287c295179.md) | 24c015676c254e2e82e8e4287c295179 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Clinical Workforce Capability Monitoring](../../../strategy/capability/367b3e5643f44fa785f093db8bb9a6e8.md) | 367b3e5643f44fa785f093db8bb9a6e8 | Canonical / current |
 | [[CT2] Collaborative Interaction Enablement](../../../strategy/capability/6140b21c874241d092708e2411caceed.md) | 6140b21c874241d092708e2411caceed | Proposed / superseded |
-| [[CT2] Community Care](../../../strategy/capability/4b7177f3f40449518fba381acae6ba1e.md) | 4b7177f3f40449518fba381acae6ba1e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Community Care](../../../strategy/capability/4b7177f3f40449518fba381acae6ba1e.md) | 4b7177f3f40449518fba381acae6ba1e | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Community Care](../../../strategy/capability/942aa78cad004ef99de6b3aae8ddd014.md) | 942aa78cad004ef99de6b3aae8ddd014 | Proposed / current |
 | [[CT2] Compliance Governance](../../../strategy/capability/02a52157967f4b498807cac70e3410e9.md) | 02a52157967f4b498807cac70e3410e9 | Canonical / current |
 | [[CT2] Context Management](../../../strategy/capability/3cfd3e56c23a4943bd1b476ec248ac49.md) | 3cfd3e56c23a4943bd1b476ec248ac49 | Canonical / current |
 | [[CT2] Corporate Support Services](../../../strategy/capability/c8777bccbe304e36b7d9fbd955d67579.md) | c8777bccbe304e36b7d9fbd955d67579 | Canonical / current |
 | [[CT2] Credential Management](../../../strategy/capability/21eed4fc8c924496b16c6ddaa32f3d01.md) | 21eed4fc8c924496b16c6ddaa32f3d01 | Proposed / current |
-| [[CT2] Credential Management](../../../strategy/capability/bab3d0ab6eb748978b962ea20fb31640.md) | bab3d0ab6eb748978b962ea20fb31640 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Diagnostic Administration](../../../strategy/capability/2b1a27d5d9944e05b4cf0fcaad4ca433.md) | 2b1a27d5d9944e05b4cf0fcaad4ca433 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Credential Management](../../../strategy/capability/bab3d0ab6eb748978b962ea20fb31640.md) | bab3d0ab6eb748978b962ea20fb31640 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Diagnostic Administration](../../../strategy/capability/2b1a27d5d9944e05b4cf0fcaad4ca433.md) | 2b1a27d5d9944e05b4cf0fcaad4ca433 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Diagnostic Administration](../../../strategy/capability/3cc720ba2e8b4d7a94bb349391d61895.md) | 3cc720ba2e8b4d7a94bb349391d61895 | Canonical / current |
-| [[CT2] Diagnostic Services](../../../strategy/capability/03a57e0c9ea34f7fb7b78e5f5c85379f.md) | 03a57e0c9ea34f7fb7b78e5f5c85379f | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Diagnostic Services](../../../strategy/capability/03a57e0c9ea34f7fb7b78e5f5c85379f.md) | 03a57e0c9ea34f7fb7b78e5f5c85379f | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Diagnostic Services](../../../strategy/capability/b825ebab42f444d8b738b4c1f489f785.md) | b825ebab42f444d8b738b4c1f489f785 | Proposed / current |
 | [[CT2] Diagnostic Support Provision](../../../strategy/capability/827910cf74ae4061afbda52dde3da106.md) | 827910cf74ae4061afbda52dde3da106 | Canonical / current |
 | [[CT2] Digital Accountability & Trust](../../../strategy/capability/9a600233ae1f4f3289c09a0b08ce029d.md) | 9a600233ae1f4f3289c09a0b08ce029d | Canonical / current |
 | [[CT2] Digital Communication Channel](../../../strategy/capability/f5defe141228490598115fe41db89bd7.md) | f5defe141228490598115fe41db89bd7 | Canonical / current |
 | [[CT2] Digital Identity & Access Governance](../../../strategy/capability/b9cb3666f9134ba29eb896e67eba7250.md) | b9cb3666f9134ba29eb896e67eba7250 | Canonical / current |
-| [[CT2] Discharge Management](../../../strategy/capability/c57c0721ab0040ccb24e88e5e92e8cf8.md) | c57c0721ab0040ccb24e88e5e92e8cf8 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Discharge Management](../../../strategy/capability/c57c0721ab0040ccb24e88e5e92e8cf8.md) | c57c0721ab0040ccb24e88e5e92e8cf8 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Discharge Management](../../../strategy/capability/ec5e8d6732764aa489c2dd7630fc8fef.md) | ec5e8d6732764aa489c2dd7630fc8fef | Canonical / current |
 | [[CT2] Emergency Care](../../../strategy/capability/aa088f0647ad4b78966fe28fa80af674.md) | aa088f0647ad4b78966fe28fa80af674 | Proposed / current |
-| [[CT2] Emergency Care](../../../strategy/capability/e5edbb54258c490aaba0816d980dc624.md) | e5edbb54258c490aaba0816d980dc624 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Emergency Care](../../../strategy/capability/e5edbb54258c490aaba0816d980dc624.md) | e5edbb54258c490aaba0816d980dc624 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Emergency Department Operations](../../../strategy/capability/24a4b5815faa4d369bc756a6e97d3e9e.md) | 24a4b5815faa4d369bc756a6e97d3e9e | Canonical / current |
-| [[CT2] Emergency Department Operations](../../../strategy/capability/8963b571e9cc40e49c5d738e31d2f97e.md) | 8963b571e9cc40e49c5d738e31d2f97e | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Episode & Encounter Administration](../../../strategy/capability/2778f988e8d44e3091749542c39d38a4.md) | 2778f988e8d44e3091749542c39d38a4 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Emergency Department Operations](../../../strategy/capability/8963b571e9cc40e49c5d738e31d2f97e.md) | 8963b571e9cc40e49c5d738e31d2f97e | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Episode & Encounter Administration](../../../strategy/capability/2778f988e8d44e3091749542c39d38a4.md) | 2778f988e8d44e3091749542c39d38a4 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Episode & Encounter Administration](../../../strategy/capability/61d7067aee0540259b3daca4287d66d2.md) | 61d7067aee0540259b3daca4287d66d2 | Canonical / current |
 | [[CT2] Event & Subscription](../../../strategy/capability/b768b129971e4bf5bccc03d33d2fcb4e.md) | b768b129971e4bf5bccc03d33d2fcb4e | Canonical / current |
 | [[CT2] Facility & Episodic Care Integration](../../../strategy/capability/c1eb24ed7e36417cb426288ff57512c0.md) | c1eb24ed7e36417cb426288ff57512c0 | Proposed / superseded |
 | [[CT2] Financial & Commercial Services](../../../strategy/capability/290b574a02634f559b35a28daad0dea8.md) | 290b574a02634f559b35a28daad0dea8 | Canonical / current |
-| [[CT2] Funding & Coverage Administration](../../../strategy/capability/58beafcbcd084331be710eb00d27f6cf.md) | 58beafcbcd084331be710eb00d27f6cf | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Funding & Coverage Administration](../../../strategy/capability/58beafcbcd084331be710eb00d27f6cf.md) | 58beafcbcd084331be710eb00d27f6cf | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Funding & Coverage Administration](../../../strategy/capability/640432d413cf47928ea2b3d221f92313.md) | 640432d413cf47928ea2b3d221f92313 | Canonical / current |
 | [[CT2] General Collaboration](../../../strategy/capability/3bb740e6db284112b054905c0c6c80be.md) | 3bb740e6db284112b054905c0c6c80be | Canonical / current |
-| [[CT2] General Collaboration](../../../strategy/capability/4f58c82aca7a4b54aeb6e2920ce5c12a.md) | 4f58c82aca7a4b54aeb6e2920ce5c12a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] General Collaboration](../../../strategy/capability/4f58c82aca7a4b54aeb6e2920ce5c12a.md) | 4f58c82aca7a4b54aeb6e2920ce5c12a | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Governance Framework Management](../../../strategy/capability/b39f53b3ffb441f388a89b45cc517deb.md) | b39f53b3ffb441f388a89b45cc517deb | Canonical / current |
-| [[CT2] Health Information Access](../../../strategy/capability/5019ae9f2cdc45a1b2de97bc0f5a313d.md) | 5019ae9f2cdc45a1b2de97bc0f5a313d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Health Information Access](../../../strategy/capability/5019ae9f2cdc45a1b2de97bc0f5a313d.md) | 5019ae9f2cdc45a1b2de97bc0f5a313d | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Health Information Access](../../../strategy/capability/cc253aea3c5f489da0502df74dde1669.md) | cc253aea3c5f489da0502df74dde1669 | Canonical / current |
 | [[CT2] Health Information Communication](../../../strategy/capability/7925605bf60f4b288e826020409a09d9.md) | 7925605bf60f4b288e826020409a09d9 | Proposed / current |
-| [[CT2] Health Information Communication](../../../strategy/capability/bcefb378424842fcb6d703208c3f8773.md) | bcefb378424842fcb6d703208c3f8773 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Health Information Communication](../../../strategy/capability/bcefb378424842fcb6d703208c3f8773.md) | bcefb378424842fcb6d703208c3f8773 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Health Information Connectivity Enablement](../../../strategy/capability/6a1030483dfc4ae6af6998b587129d1c.md) | 6a1030483dfc4ae6af6998b587129d1c | Proposed / superseded |
 | [[CT2] Health Information Control](../../../strategy/capability/44cc0e17ad534675bf26dce6e46a68ff.md) | 44cc0e17ad534675bf26dce6e46a68ff | Canonical / current |
-| [[CT2] Health Information Control](../../../strategy/capability/a3196aef21d443519de874c24f64a185.md) | a3196aef21d443519de874c24f64a185 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Health Information Exchange](../../../strategy/capability/330d1c43856a4322a2e9f331b1a5ed20.md) | 330d1c43856a4322a2e9f331b1a5ed20 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Health Information Control](../../../strategy/capability/a3196aef21d443519de874c24f64a185.md) | a3196aef21d443519de874c24f64a185 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Health Information Exchange](../../../strategy/capability/330d1c43856a4322a2e9f331b1a5ed20.md) | 330d1c43856a4322a2e9f331b1a5ed20 | Superseded historical identity — evolved correspondence / superseded |
 | [[CT2] Health Information Exchange](../../../strategy/capability/baad6b6117084311acbf5fc4044dfabf.md) | baad6b6117084311acbf5fc4044dfabf | Canonical / current |
 | [[CT2] Health Information Exchange Enablement](../../../strategy/capability/a61a15908ed544e6acf3e9cab63a0267.md) | a61a15908ed544e6acf3e9cab63a0267 | Canonical / current |
 | [[CT2] Health Information Management](../../../strategy/capability/eb2984f0ca79420e83012f9e06a005fb.md) | eb2984f0ca79420e83012f9e06a005fb | Canonical / current |
 | [[CT2] Health Information Protection](../../../strategy/capability/4ae0de8fa16840d09ab2ef3f5545a5e7.md) | 4ae0de8fa16840d09ab2ef3f5545a5e7 | Canonical / current |
 | [[CT2] Health Information Standards Governance](../../../strategy/capability/b228039d8e764f9b98cb810b68af329d.md) | b228039d8e764f9b98cb810b68af329d | Canonical / current |
 | [[CT2] Health Innovation](../../../strategy/capability/f263989e25c9469cac1bbad6491432f0.md) | f263989e25c9469cac1bbad6491432f0 | Canonical / current |
-| [[CT2] Health Materiel Administration](../../../strategy/capability/4952f86078c54a8d898ac992e6f4f577.md) | 4952f86078c54a8d898ac992e6f4f577 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Health Materiel Administration](../../../strategy/capability/4952f86078c54a8d898ac992e6f4f577.md) | 4952f86078c54a8d898ac992e6f4f577 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Health Materiel Administration](../../../strategy/capability/e7081070a9f8444f81c1d8fce37ef664.md) | e7081070a9f8444f81c1d8fce37ef664 | Canonical / current |
 | [[CT2] Health Service Administration](../../../strategy/capability/ba68a52913a0499d8377553bddfa74a4.md) | ba68a52913a0499d8377553bddfa74a4 | Canonical / current |
-| [[CT2] Health Service Administration](../../../strategy/capability/f1ab1258cf2944efb50105e7885f8027.md) | f1ab1258cf2944efb50105e7885f8027 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Health Service Administration](../../../strategy/capability/f1ab1258cf2944efb50105e7885f8027.md) | f1ab1258cf2944efb50105e7885f8027 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Health Service Alignment](../../../strategy/capability/d4fc5367352741a99bd334f7e8bf5856.md) | d4fc5367352741a99bd334f7e8bf5856 | Canonical / current |
 | [[CT2] Health Service Assurance Specification](../../../strategy/capability/ec5c4d1219464433b2cee5c5a988fef7.md) | ec5c4d1219464433b2cee5c5a988fef7 | Canonical / current |
 | [[CT2] Health Service Modelling](../../../strategy/capability/9a3e90db97b94d1888a2a5c5effb8999.md) | 9a3e90db97b94d1888a2a5c5effb8999 | Canonical / current |
@@ -748,107 +748,107 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT2] Health-System Planning](../../../strategy/capability/9ca4df07eceb4150a0190cc488270ce2.md) | 9ca4df07eceb4150a0190cc488270ce2 | Canonical / current |
 | [[CT2] Healthcare Organisation & Service Structure Management](../../../strategy/capability/de8c1b408c774e59899662495f4d6ced.md) | de8c1b408c774e59899662495f4d6ced | Canonical / current |
 | [[CT2] Independent Assurance Evaluation Enablement](../../../strategy/capability/7fa5112efb724b90a17a03c7c19c516a.md) | 7fa5112efb724b90a17a03c7c19c516a | Proposed / pending_adjudication |
-| [[CT2] Individual Care Planning](../../../strategy/capability/574e61e230e643f78c58649adb4db313.md) | 574e61e230e643f78c58649adb4db313 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Individual Care Planning](../../../strategy/capability/574e61e230e643f78c58649adb4db313.md) | 574e61e230e643f78c58649adb4db313 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Individual Care Planning](../../../strategy/capability/f036a9866459429a8fb5f5e10727b5e8.md) | f036a9866459429a8fb5f5e10727b5e8 | Canonical / current |
 | [[CT2] Individual Care Review](../../../strategy/capability/625a93f132f242f5a8e2ae1dc19979fb.md) | 625a93f132f242f5a8e2ae1dc19979fb | Canonical / current |
-| [[CT2] Individual Care Review](../../../strategy/capability/e1048f6c635d4e16b5384cc2cb45a71b.md) | e1048f6c635d4e16b5384cc2cb45a71b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Individual Care Review](../../../strategy/capability/e1048f6c635d4e16b5384cc2cb45a71b.md) | e1048f6c635d4e16b5384cc2cb45a71b | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Individual Health Assessment](../../../strategy/capability/045f819bb3694d3c9db7f20886e2993f.md) | 045f819bb3694d3c9db7f20886e2993f | Canonical / current |
-| [[CT2] Individual Health Assessment](../../../strategy/capability/9111446aa2d045bd9acd98542b0eef1f.md) | 9111446aa2d045bd9acd98542b0eef1f | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Individual Health Monitoring](../../../strategy/capability/31e7c27556314cafb74d040441d2dac6.md) | 31e7c27556314cafb74d040441d2dac6 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Individual Health Assessment](../../../strategy/capability/9111446aa2d045bd9acd98542b0eef1f.md) | 9111446aa2d045bd9acd98542b0eef1f | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Individual Health Monitoring](../../../strategy/capability/31e7c27556314cafb74d040441d2dac6.md) | 31e7c27556314cafb74d040441d2dac6 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Individual Health Monitoring](../../../strategy/capability/c7d0e498e1ad44138df940af2f91cd2d.md) | c7d0e498e1ad44138df940af2f91cd2d | Canonical / current |
 | [[CT2] Information Asset Stewardship Management](../../../strategy/capability/5bac15316d8d4f4db6e7a253f1acfbe3.md) | 5bac15316d8d4f4db6e7a253f1acfbe3 | Proposed / current |
-| [[CT2] Information Asset Stewardship Management](../../../strategy/capability/cee085c690314802851de71f4741d8db.md) | cee085c690314802851de71f4741d8db | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Information Asset Stewardship Management](../../../strategy/capability/cee085c690314802851de71f4741d8db.md) | cee085c690314802851de71f4741d8db | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Information Authority Qualification](../../../strategy/capability/cbba9984dd404deabed41fdcc96088b1.md) | cbba9984dd404deabed41fdcc96088b1 | Proposed / current |
-| [[CT2] Information Content Maintainer Management](../../../strategy/capability/acb977e879204f1491293e5452e0ddf0.md) | acb977e879204f1491293e5452e0ddf0 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Information Content Maintainer Management](../../../strategy/capability/acb977e879204f1491293e5452e0ddf0.md) | acb977e879204f1491293e5452e0ddf0 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Information Content Maintainer Management](../../../strategy/capability/b81a1ab42af24c2e9896b8f3f78d291a.md) | b81a1ab42af24c2e9896b8f3f78d291a | Proposed / current |
-| [[CT2] Information Design Governance](../../../strategy/capability/0bdd7f8c0cd74d9fabc49801af037fc2.md) | 0bdd7f8c0cd74d9fabc49801af037fc2 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Information Design Governance](../../../strategy/capability/0bdd7f8c0cd74d9fabc49801af037fc2.md) | 0bdd7f8c0cd74d9fabc49801af037fc2 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Information Design Governance](../../../strategy/capability/f39ed9ebcc724857a4bf7a2b8e045c7a.md) | f39ed9ebcc724857a4bf7a2b8e045c7a | Canonical / current |
 | [[CT2] Information Management](../../../strategy/capability/43051efd406b4040bff8e794b7a631e0.md) | 43051efd406b4040bff8e794b7a631e0 | Canonical / current |
 | [[CT2] Information Protection & Accountability Enablement](../../../strategy/capability/e922cba7cf1d4ebeb9abf6472a3803ce.md) | e922cba7cf1d4ebeb9abf6472a3803ce | Proposed / superseded |
 | [[CT2] Inpatient Care](../../../strategy/capability/b39fb49c01b545a5b51d3313531efb1b.md) | b39fb49c01b545a5b51d3313531efb1b | Proposed / current |
-| [[CT2] Inpatient Care](../../../strategy/capability/bcc40a14465e48aca42c9505a6853081.md) | bcc40a14465e48aca42c9505a6853081 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Inpatient Care](../../../strategy/capability/bcc40a14465e48aca42c9505a6853081.md) | bcc40a14465e48aca42c9505a6853081 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Interaction & Experience](../../../strategy/capability/4ec9757b1c6947b4b70b0f1159b760d3.md) | 4ec9757b1c6947b4b70b0f1159b760d3 | Canonical / current |
 | [[CT2] Interoperability & Exchange](../../../strategy/capability/0f2e5222874949d8b0cce234941ecb20.md) | 0f2e5222874949d8b0cce234941ecb20 | Canonical / current |
 | [[CT2] Location Administration](../../../strategy/capability/c410005667444f99a221483bf577fad2.md) | c410005667444f99a221483bf577fad2 | Canonical / current |
-| [[CT2] Location Administration](../../../strategy/capability/d412aff3a5c64e6aaba910d4c2c9356d.md) | d412aff3a5c64e6aaba910d4c2c9356d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Location Administration](../../../strategy/capability/d412aff3a5c64e6aaba910d4c2c9356d.md) | d412aff3a5c64e6aaba910d4c2c9356d | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Longitudinal & Community Care Integration](../../../strategy/capability/8430d50adc504ecc959f15b7cbbcd095.md) | 8430d50adc504ecc959f15b7cbbcd095 | Proposed / superseded |
 | [[CT2] Managed Entity & Relationship](../../../strategy/capability/910634fb1621416c818a022ab0b5d3a1.md) | 910634fb1621416c818a022ab0b5d3a1 | Canonical / current |
 | [[CT2] Managed State & Lifecycle](../../../strategy/capability/6296abeee5074b9e80f21aea3a297e42.md) | 6296abeee5074b9e80f21aea3a297e42 | Canonical / current |
 | [[CT2] Medication & Pharmacy Services](../../../strategy/capability/ab2a4e6a7acc4868bc4e7b6c0d292cb4.md) | ab2a4e6a7acc4868bc4e7b6c0d292cb4 | Canonical / current |
-| [[CT2] Medication Administration](../../../strategy/capability/5a38bf2527a8404bac714121f2dc76a9.md) | 5a38bf2527a8404bac714121f2dc76a9 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Medication Administration](../../../strategy/capability/5a38bf2527a8404bac714121f2dc76a9.md) | 5a38bf2527a8404bac714121f2dc76a9 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Medication Administration](../../../strategy/capability/c907e2a95629435b9951941ad4e2ebe9.md) | c907e2a95629435b9951941ad4e2ebe9 | Canonical / current |
 | [[CT2] Medication Therapy](../../../strategy/capability/bb04996164c94e0c827a020432f4e498.md) | bb04996164c94e0c827a020432f4e498 | Proposed / current |
-| [[CT2] Medication Therapy](../../../strategy/capability/db064e0cd4794479be1374e97a3d7e63.md) | db064e0cd4794479be1374e97a3d7e63 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Mobile Staff Management](../../../strategy/capability/32118856636f400a95fc28daacea61c8.md) | 32118856636f400a95fc28daacea61c8 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Medication Therapy](../../../strategy/capability/db064e0cd4794479be1374e97a3d7e63.md) | db064e0cd4794479be1374e97a3d7e63 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Mobile Staff Management](../../../strategy/capability/32118856636f400a95fc28daacea61c8.md) | 32118856636f400a95fc28daacea61c8 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Mobile Staff Management](../../../strategy/capability/79a4a48fddf74c69acf7e16404d06ea5.md) | 79a4a48fddf74c69acf7e16404d06ea5 | Canonical / current |
 | [[CT2] On-Call Management](../../../strategy/capability/b16cef8f2bfd4b92948ec75cbcfa7b9a.md) | b16cef8f2bfd4b92948ec75cbcfa7b9a | Canonical / current |
-| [[CT2] On-Call Management](../../../strategy/capability/c8e6e66e8718493c9093f37d129f9ff2.md) | c8e6e66e8718493c9093f37d129f9ff2 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] On-Call Management](../../../strategy/capability/c8e6e66e8718493c9093f37d129f9ff2.md) | c8e6e66e8718493c9093f37d129f9ff2 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Operational Activity & Temporal Enablement](../../../strategy/capability/ca96b2b2ff434854995711e403e95f6f.md) | ca96b2b2ff434854995711e403e95f6f | Proposed / superseded |
 | [[CT2] Operational Assurance](../../../strategy/capability/938cd44380ab431fa8dae13c702d83c1.md) | 938cd44380ab431fa8dae13c702d83c1 | Canonical / current |
 | [[CT2] Operational Workforce Coordination](../../../strategy/capability/66e72222f2064a23adbdb0311092918b.md) | 66e72222f2064a23adbdb0311092918b | Proposed / superseded |
 | [[CT2] Order Administration](../../../strategy/capability/c3c5abd7987f4433a46cbfed8167914c.md) | c3c5abd7987f4433a46cbfed8167914c | Canonical / current |
-| [[CT2] Order Administration](../../../strategy/capability/ebb735a2915744819d4001d9b8425cc6.md) | ebb735a2915744819d4001d9b8425cc6 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Order Administration](../../../strategy/capability/ebb735a2915744819d4001d9b8425cc6.md) | ebb735a2915744819d4001d9b8425cc6 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Organisation Administration](../../../strategy/capability/14fbdc5ce3dd4c2092c5397dab3ed743.md) | 14fbdc5ce3dd4c2092c5397dab3ed743 | Canonical / current |
-| [[CT2] Organisation Administration](../../../strategy/capability/1b0eacfbb27d4631a24f9279dab6681d.md) | 1b0eacfbb27d4631a24f9279dab6681d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Organisation Administration](../../../strategy/capability/1b0eacfbb27d4631a24f9279dab6681d.md) | 1b0eacfbb27d4631a24f9279dab6681d | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Outpatient Operations](../../../strategy/capability/21399d52b9624ddfbeb786f1d72e40c3.md) | 21399d52b9624ddfbeb786f1d72e40c3 | Canonical / current |
-| [[CT2] Outpatient Operations](../../../strategy/capability/3db41bc06ade4f9088eec7b8aedd7448.md) | 3db41bc06ade4f9088eec7b8aedd7448 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Outreach Care](../../../strategy/capability/75f8b32a3d5048ccbdfb30d61ae73dad.md) | 75f8b32a3d5048ccbdfb30d61ae73dad | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Outpatient Operations](../../../strategy/capability/3db41bc06ade4f9088eec7b8aedd7448.md) | 3db41bc06ade4f9088eec7b8aedd7448 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Outreach Care](../../../strategy/capability/75f8b32a3d5048ccbdfb30d61ae73dad.md) | 75f8b32a3d5048ccbdfb30d61ae73dad | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Outreach Care](../../../strategy/capability/b9ddbe2dd6a7485ba9cd3482215ea09e.md) | b9ddbe2dd6a7485ba9cd3482215ea09e | Proposed / current |
-| [[CT2] Patient Clinical Record](../../../strategy/capability/2e4de521bda24ad7b0ea64ae535b7f84.md) | 2e4de521bda24ad7b0ea64ae535b7f84 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Patient Clinical Record](../../../strategy/capability/2e4de521bda24ad7b0ea64ae535b7f84.md) | 2e4de521bda24ad7b0ea64ae535b7f84 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Patient Clinical Record](../../../strategy/capability/5478878e0e6e4d34a8d5023ac6ac2d54.md) | 5478878e0e6e4d34a8d5023ac6ac2d54 | Canonical / current |
 | [[CT2] Patient Transport](../../../strategy/capability/6041d7c0cc5d4519aaea584bb4e6d365.md) | 6041d7c0cc5d4519aaea584bb4e6d365 | Canonical / current |
-| [[CT2] Patient Transport](../../../strategy/capability/e9c1a897884f4d758f5654b824364030.md) | e9c1a897884f4d758f5654b824364030 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Patient Transport](../../../strategy/capability/e9c1a897884f4d758f5654b824364030.md) | e9c1a897884f4d758f5654b824364030 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Policy & Control](../../../strategy/capability/0c5d986cc948421a8bebcab3b74d108f.md) | 0c5d986cc948421a8bebcab3b74d108f | Canonical / current |
 | [[CT2] Population Health Information Reporting](../../../strategy/capability/2135b45eab034370b0063b20e821985d.md) | 2135b45eab034370b0063b20e821985d | Proposed / current |
-| [[CT2] Population Health Information Reporting](../../../strategy/capability/ced472b2d1a54016878ee541de969d9b.md) | ced472b2d1a54016878ee541de969d9b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Population Health Information Reporting](../../../strategy/capability/ced472b2d1a54016878ee541de969d9b.md) | ced472b2d1a54016878ee541de969d9b | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Population Health Surveillance](../../../strategy/capability/83e568fa8af14d7791a7253765ea390f.md) | 83e568fa8af14d7791a7253765ea390f | Canonical / current |
-| [[CT2] Presentation Services](../../../strategy/capability/c89e7c8b277247d9965fdb534aad2d1f.md) | c89e7c8b277247d9965fdb534aad2d1f | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Presentation Services](../../../strategy/capability/c89e7c8b277247d9965fdb534aad2d1f.md) | c89e7c8b277247d9965fdb534aad2d1f | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Presentation Services](../../../strategy/capability/e9b6ba1917ba44cca7466444d0836c98.md) | e9b6ba1917ba44cca7466444d0836c98 | Canonical / current |
-| [[CT2] Preventative Health](../../../strategy/capability/80affa7bcd284ecbbcbc5092f8497ddf.md) | 80affa7bcd284ecbbcbc5092f8497ddf | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Preventative Health](../../../strategy/capability/80affa7bcd284ecbbcbc5092f8497ddf.md) | 80affa7bcd284ecbbcbc5092f8497ddf | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Preventative Health](../../../strategy/capability/81be04a2d58548a4aea94f9aae90feb6.md) | 81be04a2d58548a4aea94f9aae90feb6 | Canonical / current |
-| [[CT2] Preventive Care](../../../strategy/capability/97f0d1acc37b4ca994c6c1ca006f2daa.md) | 97f0d1acc37b4ca994c6c1ca006f2daa | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Preventive Care](../../../strategy/capability/97f0d1acc37b4ca994c6c1ca006f2daa.md) | 97f0d1acc37b4ca994c6c1ca006f2daa | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Preventive Care](../../../strategy/capability/dfdc4f0273ba4910848b3b65c9ef6ab2.md) | dfdc4f0273ba4910848b3b65c9ef6ab2 | Proposed / current |
 | [[CT2] Primary Care](../../../strategy/capability/d118673d77d74c8cb8cec24f03adddd8.md) | d118673d77d74c8cb8cec24f03adddd8 | Proposed / current |
-| [[CT2] Primary Care](../../../strategy/capability/fe9d58b5cfe14e8cb7a83a1ac6686d65.md) | fe9d58b5cfe14e8cb7a83a1ac6686d65 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Procedure Administration](../../../strategy/capability/466a4057001846bb8ae0481453d3e410.md) | 466a4057001846bb8ae0481453d3e410 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Primary Care](../../../strategy/capability/fe9d58b5cfe14e8cb7a83a1ac6686d65.md) | fe9d58b5cfe14e8cb7a83a1ac6686d65 | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Procedure Administration](../../../strategy/capability/466a4057001846bb8ae0481453d3e410.md) | 466a4057001846bb8ae0481453d3e410 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Procedure Administration](../../../strategy/capability/649dd7cc26094e539386a050086dfb91.md) | 649dd7cc26094e539386a050086dfb91 | Canonical / current |
 | [[CT2] Provenance & Traceability](../../../strategy/capability/68a0755aa4e14a509ac5e6c0bbcff3e7.md) | 68a0755aa4e14a509ac5e6c0bbcff3e7 | Canonical / current |
-| [[CT2] Provider Administration](../../../strategy/capability/a352fd50419d451887c85fcb98566cd5.md) | a352fd50419d451887c85fcb98566cd5 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Provider Administration](../../../strategy/capability/a352fd50419d451887c85fcb98566cd5.md) | a352fd50419d451887c85fcb98566cd5 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Provider Administration](../../../strategy/capability/d6312f85968a4209bafff5ed009297a6.md) | d6312f85968a4209bafff5ed009297a6 | Canonical / current |
-| [[CT2] Referral Administration](../../../strategy/capability/5b0ccf4b30054145952c298b348ed266.md) | 5b0ccf4b30054145952c298b348ed266 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Referral Administration](../../../strategy/capability/5b0ccf4b30054145952c298b348ed266.md) | 5b0ccf4b30054145952c298b348ed266 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Referral Administration](../../../strategy/capability/ae0de25600ee416aa24d2a167b64f230.md) | ae0de25600ee416aa24d2a167b64f230 | Canonical / current |
-| [[CT2] Rehabilitation](../../../strategy/capability/28ec21d5918a49aaac12740c69f42d77.md) | 28ec21d5918a49aaac12740c69f42d77 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Rehabilitation](../../../strategy/capability/28ec21d5918a49aaac12740c69f42d77.md) | 28ec21d5918a49aaac12740c69f42d77 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Rehabilitation](../../../strategy/capability/99ed51abcc5e4e8ba3b3d0161b17544a.md) | 99ed51abcc5e4e8ba3b3d0161b17544a | Canonical / current |
 | [[CT2] Remote & Virtual Care](../../../strategy/capability/30dff22d40b64da29ede7c41673db085.md) | 30dff22d40b64da29ede7c41673db085 | Proposed / current |
-| [[CT2] Remote & Virtual Care](../../../strategy/capability/75e2b447659c4fdf94107d94758337ed.md) | 75e2b447659c4fdf94107d94758337ed | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Research Information Curation](../../../strategy/capability/11203b9c80964a9b96883eeab07f41d5.md) | 11203b9c80964a9b96883eeab07f41d5 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Remote & Virtual Care](../../../strategy/capability/75e2b447659c4fdf94107d94758337ed.md) | 75e2b447659c4fdf94107d94758337ed | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Research Information Curation](../../../strategy/capability/11203b9c80964a9b96883eeab07f41d5.md) | 11203b9c80964a9b96883eeab07f41d5 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Research Information Curation](../../../strategy/capability/4f5b8cec90324c2989cdc30e80bc8cb9.md) | 4f5b8cec90324c2989cdc30e80bc8cb9 | Proposed / current |
 | [[CT2] Research Information Support](../../../strategy/capability/ef18f999eef3488ba584d263a551732b.md) | ef18f999eef3488ba584d263a551732b | Canonical / current |
-| [[CT2] Scheduling Administration](../../../strategy/capability/1a6630940ffb44fcad4543b93a367b67.md) | 1a6630940ffb44fcad4543b93a367b67 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Scheduling Administration](../../../strategy/capability/1a6630940ffb44fcad4543b93a367b67.md) | 1a6630940ffb44fcad4543b93a367b67 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Scheduling Administration](../../../strategy/capability/35fb3744c900470f9895056246a13fb1.md) | 35fb3744c900470f9895056246a13fb1 | Canonical / current |
 | [[CT2] Search & Discovery](../../../strategy/capability/6a45701634f04b43919d9152a61e5f2e.md) | 6a45701634f04b43919d9152a61e5f2e | Canonical / current |
 | [[CT2] Semantic & Reference Knowledge Enablement](../../../strategy/capability/92a71292710c41b29775d19b98c197d6.md) | 92a71292710c41b29775d19b98c197d6 | Proposed / superseded |
 | [[CT2] Semantic Governance & Conformance](../../../strategy/capability/9ee41437bd4c4bd18389f05c12108f97.md) | 9ee41437bd4c4bd18389f05c12108f97 | Canonical / current |
-| [[CT2] Service Capacity Management](../../../strategy/capability/ac205f374c9d41c3b6d18a6b7c356152.md) | ac205f374c9d41c3b6d18a6b7c356152 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Service Capacity Management](../../../strategy/capability/ac205f374c9d41c3b6d18a6b7c356152.md) | ac205f374c9d41c3b6d18a6b7c356152 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Service Capacity Management](../../../strategy/capability/d86105bf9c86445394088f65c895d37f.md) | d86105bf9c86445394088f65c895d37f | Canonical / current |
 | [[CT2] Service Delivery Preparedness Management](../../../strategy/capability/9665d894c4c9438999d8cc10afae695d.md) | 9665d894c4c9438999d8cc10afae695d | Proposed / current |
 | [[CT2] Service Establishment Support](../../../strategy/capability/20e67a41e7f44398b0f0cf3d379d8b9c.md) | 20e67a41e7f44398b0f0cf3d379d8b9c | Proposed / current |
-| [[CT2] Service Establishment Support](../../../strategy/capability/8a63b08f34fa42c5bda2a3e12b9ecd55.md) | 8a63b08f34fa42c5bda2a3e12b9ecd55 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Service Establishment Support](../../../strategy/capability/8a63b08f34fa42c5bda2a3e12b9ecd55.md) | 8a63b08f34fa42c5bda2a3e12b9ecd55 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Service Guardian](../../../strategy/capability/d767f12f9b1c495883216ace464ee1c2.md) | d767f12f9b1c495883216ace464ee1c2 | Canonical / current |
-| [[CT2] Service Planning Data Management](../../../strategy/capability/19263e0802cc4b88af7a345f1410cffd.md) | 19263e0802cc4b88af7a345f1410cffd | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Service Planning Data Management](../../../strategy/capability/19263e0802cc4b88af7a345f1410cffd.md) | 19263e0802cc4b88af7a345f1410cffd | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Service Planning Data Management](../../../strategy/capability/4873cd4b960d45d8b93560d5c8b98500.md) | 4873cd4b960d45d8b93560d5c8b98500 | Proposed / current |
 | [[CT2] Specialist Clinical Context Integration](../../../strategy/capability/062802a425d14530b0ce9434c5980d85.md) | 062802a425d14530b0ce9434c5980d85 | Proposed / superseded |
-| [[CT2] Surgical & Procedural Care](../../../strategy/capability/8bc2a106165a4702b5f72fe46a206b69.md) | 8bc2a106165a4702b5f72fe46a206b69 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Surgical & Procedural Care](../../../strategy/capability/8bc2a106165a4702b5f72fe46a206b69.md) | 8bc2a106165a4702b5f72fe46a206b69 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Surgical & Procedural Care](../../../strategy/capability/c9a26d1aa1014545b9ae759b663c807b.md) | c9a26d1aa1014545b9ae759b663c807b | Canonical / current |
 | [[CT2] Theatre Operations](../../../strategy/capability/4bf7a8260e1444fdac44e97c3557b533.md) | 4bf7a8260e1444fdac44e97c3557b533 | Canonical / current |
-| [[CT2] Theatre Operations](../../../strategy/capability/9ac72fea821c45e2b18632ae9a9867dd.md) | 9ac72fea821c45e2b18632ae9a9867dd | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Therapeutic Services](../../../strategy/capability/54032b52ee444bfe8b611fb9e8e2ba10.md) | 54032b52ee444bfe8b611fb9e8e2ba10 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Theatre Operations](../../../strategy/capability/9ac72fea821c45e2b18632ae9a9867dd.md) | 9ac72fea821c45e2b18632ae9a9867dd | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Therapeutic Services](../../../strategy/capability/54032b52ee444bfe8b611fb9e8e2ba10.md) | 54032b52ee444bfe8b611fb9e8e2ba10 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Therapeutic Services](../../../strategy/capability/b512b6d326004cb7b91a627fe6dbd8be.md) | b512b6d326004cb7b91a627fe6dbd8be | Canonical / current |
-| [[CT2] Ward Operations](../../../strategy/capability/bf3d2e3581f24beda20a6a3a3348460e.md) | bf3d2e3581f24beda20a6a3a3348460e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Ward Operations](../../../strategy/capability/bf3d2e3581f24beda20a6a3a3348460e.md) | bf3d2e3581f24beda20a6a3a3348460e | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Ward Operations](../../../strategy/capability/f996ecca728f4942a88b034aca818a99.md) | f996ecca728f4942a88b034aca818a99 | Canonical / current |
 | [[CT2] Work Allocation & Dispatch](../../../strategy/capability/152a5252952c405994e9b171234efcb0.md) | 152a5252952c405994e9b171234efcb0 | Canonical / current |
-| [[CT2] Work Allocation & Dispatch](../../../strategy/capability/f8c13b6f74b840cc96fbeada5865455a.md) | f8c13b6f74b840cc96fbeada5865455a | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT2] Workflow & Activity Coordination](../../../strategy/capability/4422d865978c4353ad575759c6026d27.md) | 4422d865978c4353ad575759c6026d27 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT2] Work Allocation & Dispatch](../../../strategy/capability/f8c13b6f74b840cc96fbeada5865455a.md) | f8c13b6f74b840cc96fbeada5865455a | Superseded historical identity — direct correspondence / superseded |
+| [[CT2] Workflow & Activity Coordination](../../../strategy/capability/4422d865978c4353ad575759c6026d27.md) | 4422d865978c4353ad575759c6026d27 | Superseded historical identity — direct correspondence / superseded |
 | [[CT2] Workflow & Activity Coordination](../../../strategy/capability/c724f3d38bfa4567983a11ad22095d61.md) | c724f3d38bfa4567983a11ad22095d61 | Proposed / current |
 | [[CT2] Workforce Qualification & Development Enablement](../../../strategy/capability/d24a1f4c4f674c45a95c317998ff4186.md) | d24a1f4c4f674c45a95c317998ff4186 | Proposed / superseded |
 | [[CT3] Access Control Assurance & Reporting](../../../strategy/capability/ba0bf23c2b5b4de1bdfbc5df90f57a2f.md) | ba0bf23c2b5b4de1bdfbc5df90f57a2f | Canonical / current |
@@ -856,63 +856,63 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Access Control Context Management](../../../strategy/capability/a51f7a8045d24d0f982320025ba3a6ae.md) | a51f7a8045d24d0f982320025ba3a6ae | Canonical / current |
 | [[CT3] Access Control Enforcement](../../../strategy/capability/b72a7b3fb7384870a9790b04d3c9e94a.md) | b72a7b3fb7384870a9790b04d3c9e94a | Canonical / current |
 | [[CT3] Active Information Availability](../../../strategy/capability/bb711f4d8fb74af2917869b9b05f7f84.md) | bb711f4d8fb74af2917869b9b05f7f84 | Proposed / current |
-| [[CT3] Activity Routing Management](../../../strategy/capability/243ea93e7b7448fe97dc74f90bfc8946.md) | 243ea93e7b7448fe97dc74f90bfc8946 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Activity Routing Management](../../../strategy/capability/243ea93e7b7448fe97dc74f90bfc8946.md) | 243ea93e7b7448fe97dc74f90bfc8946 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Activity Routing Management](../../../strategy/capability/27411c143e6e41ffba1af139fbbcd7e2.md) | 27411c143e6e41ffba1af139fbbcd7e2 | Proposed / current |
 | [[CT3] Acute Care Monitoring & Event Coordination](../../../strategy/capability/ee17b26b8c874cc3af50d07a787ce488.md) | ee17b26b8c874cc3af50d07a787ce488 | Canonical / current |
 | [[CT3] Appointment & Booking Administration](../../../strategy/capability/7b3ba9bcac564dd4a7a08631581db2ca.md) | 7b3ba9bcac564dd4a7a08631581db2ca | Proposed / current |
-| [[CT3] Appointment & Booking Administration](../../../strategy/capability/cdc16dd0f84049f8af3f1ec76f1e1428.md) | cdc16dd0f84049f8af3f1ec76f1e1428 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Appointment & Booking Administration](../../../strategy/capability/cdc16dd0f84049f8af3f1ec76f1e1428.md) | cdc16dd0f84049f8af3f1ec76f1e1428 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Assurance Approach Definition](../../../strategy/capability/d672f8831df54f2099927f820d0025f5.md) | d672f8831df54f2099927f820d0025f5 | Canonical / current |
 | [[CT3] Assurance Conclusion Determination](../../../strategy/capability/10f538feae4042829fafeae472882128.md) | 10f538feae4042829fafeae472882128 | Canonical / current |
 | [[CT3] Assurance Criteria Administration](../../../strategy/capability/1bfd71f24321428c8871b587d413f47e.md) | 1bfd71f24321428c8871b587d413f47e | Canonical / current |
-| [[CT3] Assurance Criteria Administration](../../../strategy/capability/6dab08ab1e3249d7b314843ca9ed0149.md) | 6dab08ab1e3249d7b314843ca9ed0149 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Assurance Criteria Administration](../../../strategy/capability/6dab08ab1e3249d7b314843ca9ed0149.md) | 6dab08ab1e3249d7b314843ca9ed0149 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Assurance Design](../../../strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md) | 71c8a612b88f4ecba049e94d506bd0c2 | Canonical / current |
-| [[CT3] Assurance Design](../../../strategy/capability/e1b8db7c95fa4e7ea296351a03532e24.md) | e1b8db7c95fa4e7ea296351a03532e24 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Assurance Design](../../../strategy/capability/e1b8db7c95fa4e7ea296351a03532e24.md) | e1b8db7c95fa4e7ea296351a03532e24 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Assurance Evaluation Criteria Governance](../../../strategy/capability/f3e32f2a2c9d47a89eaf124647161522.md) | f3e32f2a2c9d47a89eaf124647161522 | Canonical / current |
 | [[CT3] Assurance Evidence Assessment](../../../strategy/capability/1b295763b37f4622bd1bb80c6ea3741c.md) | 1b295763b37f4622bd1bb80c6ea3741c | Canonical / current |
 | [[CT3] Assurance Service Evaluation](../../../strategy/capability/039343518db542d48cde6afab84a3e1e.md) | 039343518db542d48cde6afab84a3e1e | Proposed / current |
-| [[CT3] Assurance Service Evaluation](../../../strategy/capability/be34b54314c6444f8418d645f6c83b6d.md) | be34b54314c6444f8418d645f6c83b6d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Assurance Service Evaluation](../../../strategy/capability/be34b54314c6444f8418d645f6c83b6d.md) | be34b54314c6444f8418d645f6c83b6d | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Authoritative Durable State Establishment](../../../strategy/capability/0d5bd68ff50f410aaceed05377e1a4df.md) | 0d5bd68ff50f410aaceed05377e1a4df | Proposed / current |
 | [[CT3] Authority & Constraint Governance](../../../strategy/capability/ad7f41dc48a046b185f044f0a24517ca.md) | ad7f41dc48a046b185f044f0a24517ca | Canonical / current |
 | [[CT3] Back-Office Services](../../../strategy/capability/9f4d3705403647f4a1e25bc3dece035f.md) | 9f4d3705403647f4a1e25bc3dece035f | Canonical / current |
 | [[CT3] Bed & Care-Place State Administration](../../../strategy/capability/26a9383d7bb146a19141558d232843de.md) | 26a9383d7bb146a19141558d232843de | Proposed / current |
-| [[CT3] Bed & Care-Place State Administration](../../../strategy/capability/dd2e2ee1a68845c087ba93610752181b.md) | dd2e2ee1a68845c087ba93610752181b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Bed & Care-Place State Administration](../../../strategy/capability/dd2e2ee1a68845c087ba93610752181b.md) | dd2e2ee1a68845c087ba93610752181b | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Bed & Care-Place Turnover Coordination](../../../strategy/capability/3c9464f9eae1415d8fa041bd1f3da4f2.md) | 3c9464f9eae1415d8fa041bd1f3da4f2 | Proposed / current |
-| [[CT3] Bed & Care-Place Turnover Coordination](../../../strategy/capability/a50662edda954bc58c44184d84591d5b.md) | a50662edda954bc58c44184d84591d5b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Bed & Care-Place Turnover Coordination](../../../strategy/capability/a50662edda954bc58c44184d84591d5b.md) | a50662edda954bc58c44184d84591d5b | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Binary Content Association & Resolution](../../../strategy/capability/5314959509dc4b558711ec169ddee5a0.md) | 5314959509dc4b558711ec169ddee5a0 | Proposed / current |
 | [[CT3] Care Appointment Management](../../../strategy/capability/14dc21b28938425498ff7b04e49efd30.md) | 14dc21b28938425498ff7b04e49efd30 | Canonical / current |
 | [[CT3] Care Appropriateness Review](../../../strategy/capability/5eac5fb73e31416288d8c992805b33cb.md) | 5eac5fb73e31416288d8c992805b33cb | Canonical / current |
 | [[CT3] Care Discharge Coordination](../../../strategy/capability/62e436db8ce44a98ba855de68ac6b876.md) | 62e436db8ce44a98ba855de68ac6b876 | Canonical / current |
-| [[CT3] Care Effectiveness Review](../../../strategy/capability/31f49cdea9f44f188459503580c2b86e.md) | 31f49cdea9f44f188459503580c2b86e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care Effectiveness Review](../../../strategy/capability/31f49cdea9f44f188459503580c2b86e.md) | 31f49cdea9f44f188459503580c2b86e | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Care Effectiveness Review](../../../strategy/capability/79cfeaefeb174a54ba43343d37f035c1.md) | 79cfeaefeb174a54ba43343d37f035c1 | Canonical / current |
 | [[CT3] Care Eligibility Determination](../../../strategy/capability/0922a1141f82416ca9de12054c28a69a.md) | 0922a1141f82416ca9de12054c28a69a | Canonical / current |
 | [[CT3] Care Goal Definition](../../../strategy/capability/609e1bef516b44bb976b5dbebe7f684b.md) | 609e1bef516b44bb976b5dbebe7f684b | Proposed / current |
-| [[CT3] Care Goal Definition](../../../strategy/capability/8bfbcc0a455d423c90ae2f1cfb732ca8.md) | 8bfbcc0a455d423c90ae2f1cfb732ca8 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care Goal Definition](../../../strategy/capability/8bfbcc0a455d423c90ae2f1cfb732ca8.md) | 8bfbcc0a455d423c90ae2f1cfb732ca8 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Care Intake Management](../../../strategy/capability/1582467fff3b4dafa348aa100e9ca2de.md) | 1582467fff3b4dafa348aa100e9ca2de | Canonical / current |
-| [[CT3] Care Intent Appropriateness Review](../../../strategy/capability/905eb2de1ac341ac96331e3d7f76079b.md) | 905eb2de1ac341ac96331e3d7f76079b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care Intent Appropriateness Review](../../../strategy/capability/905eb2de1ac341ac96331e3d7f76079b.md) | 905eb2de1ac341ac96331e3d7f76079b | Superseded historical identity — evolved correspondence / superseded |
 | [[CT3] Care Plan Lifecycle & Coordination](../../../strategy/capability/4cb7db65392f4fab801d7794af4d4b29.md) | 4cb7db65392f4fab801d7794af4d4b29 | Proposed / current |
-| [[CT3] Care Plan Lifecycle & Coordination](../../../strategy/capability/689bb3f8a24249b79f787e1f48eb268d.md) | 689bb3f8a24249b79f787e1f48eb268d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care Plan Lifecycle & Coordination](../../../strategy/capability/689bb3f8a24249b79f787e1f48eb268d.md) | 689bb3f8a24249b79f787e1f48eb268d | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Care Referral Management](../../../strategy/capability/ebdaa781bba542f8b744ef34a836a269.md) | ebdaa781bba542f8b744ef34a836a269 | Canonical / current |
 | [[CT3] Care Resource Deployment](../../../strategy/capability/7854224c3b064116b0d48f01ce5537d8.md) | 7854224c3b064116b0d48f01ce5537d8 | Canonical / current |
-| [[CT3] Care Response Monitoring](../../../strategy/capability/615f93d05fbb4a8481f07778bd4f4803.md) | 615f93d05fbb4a8481f07778bd4f4803 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care Response Monitoring](../../../strategy/capability/615f93d05fbb4a8481f07778bd4f4803.md) | 615f93d05fbb4a8481f07778bd4f4803 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Care Response Monitoring](../../../strategy/capability/d6951c9357fa40a4943cde581d95d5b1.md) | d6951c9357fa40a4943cde581d95d5b1 | Canonical / current |
 | [[CT3] Care Response Planning](../../../strategy/capability/2636e43903e44a97ad5b8db32692ce8b.md) | 2636e43903e44a97ad5b8db32692ce8b | Proposed / current |
-| [[CT3] Care Response Planning](../../../strategy/capability/d64569acaf2c44f3b2a5332f74fff7c7.md) | d64569acaf2c44f3b2a5332f74fff7c7 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care Response Planning](../../../strategy/capability/d64569acaf2c44f3b2a5332f74fff7c7.md) | d64569acaf2c44f3b2a5332f74fff7c7 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Care Responsibility Transition](../../../strategy/capability/f8c9f7e2dcf14ceb9f228daaf9fed45e.md) | f8c9f7e2dcf14ceb9f228daaf9fed45e | Canonical / current |
 | [[CT3] Care Support Work Coordination](../../../strategy/capability/f9f5c69b0f0b472287cd4ac56ccff6f3.md) | f9f5c69b0f0b472287cd4ac56ccff6f3 | Canonical / current |
 | [[CT3] Care-Place Allocation](../../../strategy/capability/f8a4df47bea742a0869802472136d55f.md) | f8a4df47bea742a0869802472136d55f | Canonical / current |
 | [[CT3] Care-Place Definition Administration](../../../strategy/capability/629b493c7d9844baa25c029a87ed04f6.md) | 629b493c7d9844baa25c029a87ed04f6 | Proposed / current |
-| [[CT3] Care-Place Definition Administration](../../../strategy/capability/a3464bd9c0dc4a01b50803acc7705b4e.md) | a3464bd9c0dc4a01b50803acc7705b4e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Care-Place Definition Administration](../../../strategy/capability/a3464bd9c0dc4a01b50803acc7705b4e.md) | a3464bd9c0dc4a01b50803acc7705b4e | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Care-Place Readiness Management](../../../strategy/capability/4dd0f1b9f9334c5c80066a8974fdfb7a.md) | 4dd0f1b9f9334c5c80066a8974fdfb7a | Canonical / current |
 | [[CT3] Care-Team Coordination](../../../strategy/capability/bbd138aab70d4b06b43662fb3f5373db.md) | bbd138aab70d4b06b43662fb3f5373db | Canonical / current |
 | [[CT3] Classification Governance](../../../strategy/capability/4520ce37454e4de68580d75fdb08efe6.md) | 4520ce37454e4de68580d75fdb08efe6 | Canonical / current |
 | [[CT3] Classification Utilisation Oversight](../../../strategy/capability/1d7c50aa80464613864dd6efb3fb56cc.md) | 1d7c50aa80464613864dd6efb3fb56cc | Canonical / current |
 | [[CT3] Client Intake & Demographic Update](../../../strategy/capability/f51f8d6b7556424987c76d9a7465c67c.md) | f51f8d6b7556424987c76d9a7465c67c | Proposed / current |
 | [[CT3] Client Privacy Guardrail Management](../../../strategy/capability/7577a6e1815243648dd5356c21cca151.md) | 7577a6e1815243648dd5356c21cca151 | Canonical / current |
-| [[CT3] Client Privacy Guardrail Management](../../../strategy/capability/d2e6078b5db041cb904e0cadcebce6eb.md) | d2e6078b5db041cb904e0cadcebce6eb | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Client Relationship Administration](../../../strategy/capability/2c799ec0c4c74c97a75c12e949887b95.md) | 2c799ec0c4c74c97a75c12e949887b95 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Client Privacy Guardrail Management](../../../strategy/capability/d2e6078b5db041cb904e0cadcebce6eb.md) | d2e6078b5db041cb904e0cadcebce6eb | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Client Relationship Administration](../../../strategy/capability/2c799ec0c4c74c97a75c12e949887b95.md) | 2c799ec0c4c74c97a75c12e949887b95 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Client Relationship Administration](../../../strategy/capability/d682c11d3eb04770b1f20be478fd475e.md) | d682c11d3eb04770b1f20be478fd475e | Canonical / current |
 | [[CT3] Clinical Activity Charging Information Provision](../../../strategy/capability/ce9655c00f044ca996c9d4a1222785f5.md) | ce9655c00f044ca996c9d4a1222785f5 | Canonical / current |
-| [[CT3] Clinical Context Collaboration](../../../strategy/capability/750ef0d8e1504a8e9a1fde9bf13a6d0c.md) | 750ef0d8e1504a8e9a1fde9bf13a6d0c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Context Collaboration](../../../strategy/capability/750ef0d8e1504a8e9a1fde9bf13a6d0c.md) | 750ef0d8e1504a8e9a1fde9bf13a6d0c | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Context Collaboration](../../../strategy/capability/f11617eed6ff4d6fa237644ec95b28b2.md) | f11617eed6ff4d6fa237644ec95b28b2 | Proposed / current |
 | [[CT3] Clinical Device Data Integration](../../../strategy/capability/382a6fe3546f491f940cba1c1e5df5ef.md) | 382a6fe3546f491f940cba1c1e5df5ef | Canonical / current |
 | [[CT3] Clinical Device Feature & Release Management](../../../strategy/capability/23d87ead4cdc40b785b006ca80f6d7b1.md) | 23d87ead4cdc40b785b006ca80f6d7b1 | Canonical / current |
@@ -922,69 +922,69 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Clinical Device Loan & Deployment Management](../../../strategy/capability/5ac802cf322d408f82c4a28cd24cb43b.md) | 5ac802cf322d408f82c4a28cd24cb43b | Canonical / current |
 | [[CT3] Clinical Device Maintenance Management](../../../strategy/capability/731ea36d36d8466d84196ccda2e61cf9.md) | 731ea36d36d8466d84196ccda2e61cf9 | Candidate / current |
 | [[CT3] Clinical Device Profile Administration](../../../strategy/capability/d0a1ba80c790476ea6042290eb7ea09e.md) | d0a1ba80c790476ea6042290eb7ea09e | Proposed / current |
-| [[CT3] Clinical Device Profile Administration](../../../strategy/capability/e8c72952da144d6883caba7fd2afb88d.md) | e8c72952da144d6883caba7fd2afb88d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Device Profile Administration](../../../strategy/capability/e8c72952da144d6883caba7fd2afb88d.md) | e8c72952da144d6883caba7fd2afb88d | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Device Utilisation Support](../../../strategy/capability/0100cdb80a0c41c5930b1ca66248adf9.md) | 0100cdb80a0c41c5930b1ca66248adf9 | Canonical / current |
-| [[CT3] Clinical Documentation Lifecycle Administration](../../../strategy/capability/5b1636373a8d4e788b3ddbc1659a47ef.md) | 5b1636373a8d4e788b3ddbc1659a47ef | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Documentation Lifecycle Administration](../../../strategy/capability/5b1636373a8d4e788b3ddbc1659a47ef.md) | 5b1636373a8d4e788b3ddbc1659a47ef | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Documentation Lifecycle Administration](../../../strategy/capability/df683100067b47e785037c27cfd17a3c.md) | df683100067b47e785037c27cfd17a3c | Proposed / current |
-| [[CT3] Clinical Escalation Path Management](../../../strategy/capability/759a2e52172345e8ad1bc96d7e5ddad3.md) | 759a2e52172345e8ad1bc96d7e5ddad3 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Escalation Path Management](../../../strategy/capability/759a2e52172345e8ad1bc96d7e5ddad3.md) | 759a2e52172345e8ad1bc96d7e5ddad3 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Escalation Path Management](../../../strategy/capability/cca86a32ba8c4dda84caeaa248e9f444.md) | cca86a32ba8c4dda84caeaa248e9f444 | Proposed / current |
 | [[CT3] Clinical Examination](../../../strategy/capability/8855d4d9e2954e0ab66ab65a556fc61a.md) | 8855d4d9e2954e0ab66ab65a556fc61a | Canonical / current |
-| [[CT3] Clinical Examination](../../../strategy/capability/8bc15e2b8f114deebcbbe3f2013a8147.md) | 8bc15e2b8f114deebcbbe3f2013a8147 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Clinical Finding Interpretation](../../../strategy/capability/cf8ddfca7a8e4ed893ec39b795200d77.md) | cf8ddfca7a8e4ed893ec39b795200d77 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Examination](../../../strategy/capability/8bc15e2b8f114deebcbbe3f2013a8147.md) | 8bc15e2b8f114deebcbbe3f2013a8147 | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Clinical Finding Interpretation](../../../strategy/capability/cf8ddfca7a8e4ed893ec39b795200d77.md) | cf8ddfca7a8e4ed893ec39b795200d77 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Finding Interpretation](../../../strategy/capability/deb78ba3b1514074a8ca5bc5da0673f5.md) | deb78ba3b1514074a8ca5bc5da0673f5 | Proposed / current |
 | [[CT3] Clinical Knowledge Artefact Distribution Management](../../../strategy/capability/cd29a9eb798949bc8bc81bb5d434cabf.md) | cd29a9eb798949bc8bc81bb5d434cabf | Proposed / current |
-| [[CT3] Clinical Knowledge Artefact Distribution Management](../../../strategy/capability/d81e0d6d76014066a682e3d9e03e5f8a.md) | d81e0d6d76014066a682e3d9e03e5f8a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Knowledge Artefact Distribution Management](../../../strategy/capability/d81e0d6d76014066a682e3d9e03e5f8a.md) | d81e0d6d76014066a682e3d9e03e5f8a | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Knowledge Concept Association](../../../strategy/capability/3666bf40ec894f5aac3714dc76df392a.md) | 3666bf40ec894f5aac3714dc76df392a | Canonical / current |
 | [[CT3] Clinical Knowledge Context Extraction](../../../strategy/capability/0911997eb4584172afd10b1d37946061.md) | 0911997eb4584172afd10b1d37946061 | Canonical / current |
 | [[CT3] Clinical Knowledge Context Identification](../../../strategy/capability/a0facf9015514223a928e39fcbbb6bee.md) | a0facf9015514223a928e39fcbbb6bee | Canonical / current |
 | [[CT3] Clinical Knowledge Information Formulation](../../../strategy/capability/05421be130ff4020b119c314aca46573.md) | 05421be130ff4020b119c314aca46573 | Canonical / current |
 | [[CT3] Clinical Knowledge Publication & Sharing](../../../strategy/capability/962a5e3048424ff7b2413e21a8e51f53.md) | 962a5e3048424ff7b2413e21a8e51f53 | Canonical / current |
 | [[CT3] Clinical Knowledge Request Administration](../../../strategy/capability/543c53483a2249d78044c6635b7b7c48.md) | 543c53483a2249d78044c6635b7b7c48 | Proposed / current |
-| [[CT3] Clinical Knowledge Request Administration](../../../strategy/capability/eb370c01fbdb4d22956d97e9ecd74b57.md) | eb370c01fbdb4d22956d97e9ecd74b57 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Knowledge Request Administration](../../../strategy/capability/eb370c01fbdb4d22956d97e9ecd74b57.md) | eb370c01fbdb4d22956d97e9ecd74b57 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Knowledge Review & Approval Management](../../../strategy/capability/ee04d00077d548a7a0a2dffd424c3d78.md) | ee04d00077d548a7a0a2dffd424c3d78 | Canonical / current |
 | [[CT3] Clinical Material Logistics Coordination](../../../strategy/capability/4b66444de58a48a9a9433568bf3a60d3.md) | 4b66444de58a48a9a9433568bf3a60d3 | Canonical / current |
 | [[CT3] Clinical Quality Criteria Management](../../../strategy/capability/1f48527a9a7c4382a7f8a660ccb9f29f.md) | 1f48527a9a7c4382a7f8a660ccb9f29f | Canonical / current |
-| [[CT3] Clinical Quality Criteria Management](../../../strategy/capability/7a51321b00464016920976b269981edd.md) | 7a51321b00464016920976b269981edd | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Quality Criteria Management](../../../strategy/capability/7a51321b00464016920976b269981edd.md) | 7a51321b00464016920976b269981edd | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Quality Evidence Management](../../../strategy/capability/1b0a1c6945ed4fadba045ff4753c104c.md) | 1b0a1c6945ed4fadba045ff4753c104c | Canonical / current |
-| [[CT3] Clinical Quality Evidence Management](../../../strategy/capability/f31902d474894670aeef3e0abbedccf0.md) | f31902d474894670aeef3e0abbedccf0 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Quality Evidence Management](../../../strategy/capability/f31902d474894670aeef3e0abbedccf0.md) | f31902d474894670aeef3e0abbedccf0 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Quality Reporting](../../../strategy/capability/70f34839c23042d59469e6ef96944057.md) | 70f34839c23042d59469e6ef96944057 | Canonical / current |
-| [[CT3] Clinical Quality Reporting](../../../strategy/capability/e5812fcdf3f5465b9b1d8ba536075c5f.md) | e5812fcdf3f5465b9b1d8ba536075c5f | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Clinical Quality Review & Assessment Management](../../../strategy/capability/4b17ec92f0af4c4b9556912dbdd0f29f.md) | 4b17ec92f0af4c4b9556912dbdd0f29f | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Quality Reporting](../../../strategy/capability/e5812fcdf3f5465b9b1d8ba536075c5f.md) | e5812fcdf3f5465b9b1d8ba536075c5f | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Clinical Quality Review & Assessment Management](../../../strategy/capability/4b17ec92f0af4c4b9556912dbdd0f29f.md) | 4b17ec92f0af4c4b9556912dbdd0f29f | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Quality Review & Assessment Management](../../../strategy/capability/8318c35b302b4dcaa0e795fbfdc93e3b.md) | 8318c35b302b4dcaa0e795fbfdc93e3b | Canonical / current |
 | [[CT3] Clinical Resource Management](../../../strategy/capability/a5faedcd97064c28b9e7e551e9106ea1.md) | a5faedcd97064c28b9e7e551e9106ea1 | Canonical / superseded |
-| [[CT3] Clinical Risk Identification](../../../strategy/capability/690da55f1f5b4c44ba58cf67a717a564.md) | 690da55f1f5b4c44ba58cf67a717a564 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Risk Identification](../../../strategy/capability/690da55f1f5b4c44ba58cf67a717a564.md) | 690da55f1f5b4c44ba58cf67a717a564 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Risk Identification](../../../strategy/capability/d54c19c6efaf42af82ad71a4142149d4.md) | d54c19c6efaf42af82ad71a4142149d4 | Canonical / current |
-| [[CT3] Clinical Risk Mitigation Management](../../../strategy/capability/0bd3311d89af45bb935fde20e719369c.md) | 0bd3311d89af45bb935fde20e719369c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Risk Mitigation Management](../../../strategy/capability/0bd3311d89af45bb935fde20e719369c.md) | 0bd3311d89af45bb935fde20e719369c | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Risk Mitigation Management](../../../strategy/capability/2c232ade21ec45619c3ee4e928bd97ee.md) | 2c232ade21ec45619c3ee4e928bd97ee | Canonical / current |
-| [[CT3] Clinical Risk Response Management](../../../strategy/capability/20f719ab4b6741b393ef570b4d1b05df.md) | 20f719ab4b6741b393ef570b4d1b05df | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Risk Response Management](../../../strategy/capability/20f719ab4b6741b393ef570b4d1b05df.md) | 20f719ab4b6741b393ef570b4d1b05df | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Risk Response Management](../../../strategy/capability/5e36cb137e4e4782b2ddbf78cdf0da7b.md) | 5e36cb137e4e4782b2ddbf78cdf0da7b | Canonical / current |
-| [[CT3] Clinical Roster Capture & Communication](../../../strategy/capability/2054d57bb33a4361b3ef0824545a1784.md) | 2054d57bb33a4361b3ef0824545a1784 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Roster Capture & Communication](../../../strategy/capability/2054d57bb33a4361b3ef0824545a1784.md) | 2054d57bb33a4361b3ef0824545a1784 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Roster Capture & Communication](../../../strategy/capability/8243cba81fb6449781d10823ae194237.md) | 8243cba81fb6449781d10823ae194237 | Proposed / current |
-| [[CT3] Clinical Service Credential Definition Management](../../../strategy/capability/0115ed50867d468a95c0fafa1c5d79e2.md) | 0115ed50867d468a95c0fafa1c5d79e2 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Clinical Service Credential Definition Management](../../../strategy/capability/0115ed50867d468a95c0fafa1c5d79e2.md) | 0115ed50867d468a95c0fafa1c5d79e2 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Clinical Service Credential Definition Management](../../../strategy/capability/2e5c97f51e7e48d1b865ac416dd8099d.md) | 2e5c97f51e7e48d1b865ac416dd8099d | Proposed / current |
-| [[CT3] Closed-Loop Order Progression](../../../strategy/capability/2ad29cebc1e94053a300d869e7797232.md) | 2ad29cebc1e94053a300d869e7797232 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Closed-Loop Order Progression](../../../strategy/capability/2ad29cebc1e94053a300d869e7797232.md) | 2ad29cebc1e94053a300d869e7797232 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Closed-Loop Order Progression](../../../strategy/capability/2f79ebd7392c46ef92def6f25bc9c7ce.md) | 2f79ebd7392c46ef92def6f25bc9c7ce | Proposed / current |
 | [[CT3] Communications & Publicity](../../../strategy/capability/1fec53fb12444abcac41094dace1d3c2.md) | 1fec53fb12444abcac41094dace1d3c2 | Canonical / current |
 | [[CT3] Community Care Coordination](../../../strategy/capability/8c8c6266d9ed43e09dbe44fcdd669132.md) | 8c8c6266d9ed43e09dbe44fcdd669132 | Canonical / current |
 | [[CT3] Compliance Assessment Definition](../../../strategy/capability/8a6db4bd0ed845dda125896c4e3ad3d0.md) | 8a6db4bd0ed845dda125896c4e3ad3d0 | Canonical / current |
 | [[CT3] Contextual Information Presentation](../../../strategy/capability/9f900c53ae56488cad69e53c2205e898.md) | 9f900c53ae56488cad69e53c2205e898 | Proposed / current |
-| [[CT3] Contextual Information Presentation](../../../strategy/capability/e349d5f6a8774bbe8d150f9c51af770c.md) | e349d5f6a8774bbe8d150f9c51af770c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Contextual Information Presentation](../../../strategy/capability/e349d5f6a8774bbe8d150f9c51af770c.md) | e349d5f6a8774bbe8d150f9c51af770c | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Credential Management](../../../strategy/capability/3a7a4d2d0ce8446b8a6293284fb16b83.md) | 3a7a4d2d0ce8446b8a6293284fb16b83 | Canonical / pending_adjudication |
 | [[CT3] Data Provenance Capture](../../../strategy/capability/44a7937520a54945b06b5fd4a2bbd870.md) | 44a7937520a54945b06b5fd4a2bbd870 | Proposed / current |
-| [[CT3] Data Provenance Capture](../../../strategy/capability/61258c7fe41f4541871a67ec9d7185cf.md) | 61258c7fe41f4541871a67ec9d7185cf | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Data Scientist Administration](../../../strategy/capability/1cb497aec93c4b82ba7f5b622813e54e.md) | 1cb497aec93c4b82ba7f5b622813e54e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Data Provenance Capture](../../../strategy/capability/61258c7fe41f4541871a67ec9d7185cf.md) | 61258c7fe41f4541871a67ec9d7185cf | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Data Scientist Administration](../../../strategy/capability/1cb497aec93c4b82ba7f5b622813e54e.md) | 1cb497aec93c4b82ba7f5b622813e54e | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Data Scientist Administration](../../../strategy/capability/3bb1a11fba234717bf40c9e6452f401a.md) | 3bb1a11fba234717bf40c9e6452f401a | Proposed / current |
 | [[CT3] Device Association](../../../strategy/capability/902daf2ce9714876bbfee52eef1a7ab0.md) | 902daf2ce9714876bbfee52eef1a7ab0 | Proposed / superseded |
 | [[CT3] Device Connectivity](../../../strategy/capability/658d4b6770a943bcb5801fb7ca9b47be.md) | 658d4b6770a943bcb5801fb7ca9b47be | Proposed / superseded |
-| [[CT3] Device Connectivity Compliance Management](../../../strategy/capability/9225f083d3474715a75af2a827a4016d.md) | 9225f083d3474715a75af2a827a4016d | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Device Connectivity Compliance Management](../../../strategy/capability/9225f083d3474715a75af2a827a4016d.md) | 9225f083d3474715a75af2a827a4016d | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Device Connectivity Compliance Management](../../../strategy/capability/b16ab359030a4583868f3aac2221074e.md) | b16ab359030a4583868f3aac2221074e | Proposed / current |
 | [[CT3] Device Instance](../../../strategy/capability/dd860926038f41e082c56e38cbb5ab95.md) | dd860926038f41e082c56e38cbb5ab95 | Proposed / superseded |
 | [[CT3] Device OA&M Metadata Management](../../../strategy/capability/659bb194a7ef42ab9ba8a938adb5c179.md) | 659bb194a7ef42ab9ba8a938adb5c179 | Proposed / current |
-| [[CT3] Device OA&M Metadata Management](../../../strategy/capability/a398c72bef094dee96c96d97994449fb.md) | a398c72bef094dee96c96d97994449fb | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Device OA&M Metadata Management](../../../strategy/capability/a398c72bef094dee96c96d97994449fb.md) | a398c72bef094dee96c96d97994449fb | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Device Utilisation Administration](../../../strategy/capability/1a3732b5911c45b3aece38b2db2d0f15.md) | 1a3732b5911c45b3aece38b2db2d0f15 | Proposed / current |
-| [[CT3] Device Utilisation Administration](../../../strategy/capability/a0af0a86667d48f4ab95ed2920e878cb.md) | a0af0a86667d48f4ab95ed2920e878cb | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Device Utilisation Administration](../../../strategy/capability/a0af0a86667d48f4ab95ed2920e878cb.md) | a0af0a86667d48f4ab95ed2920e878cb | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Diagnosis & Problem Determination](../../../strategy/capability/d965032637e64275b7a61c0413834590.md) | d965032637e64275b7a61c0413834590 | Proposed / current |
-| [[CT3] Diagnosis & Problem Determination](../../../strategy/capability/e575c583783546ef85cf898523d18797.md) | e575c583783546ef85cf898523d18797 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Diagnosis & Problem Determination](../../../strategy/capability/e575c583783546ef85cf898523d18797.md) | e575c583783546ef85cf898523d18797 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Diagnostic Data Management](../../../strategy/capability/aeb8e6d2225a4df38e61ae116850b32c.md) | aeb8e6d2225a4df38e61ae116850b32c | Canonical / current |
 | [[CT3] Diagnostic Interpretation](../../../strategy/capability/82ad867109f1438eb1b0916ed9cd820f.md) | 82ad867109f1438eb1b0916ed9cd820f | Canonical / current |
 | [[CT3] Diagnostic Report Distribution](../../../strategy/capability/c8fdba3d18e143acb2bd77ae828afd4b.md) | c8fdba3d18e143acb2bd77ae828afd4b | Canonical / current |
@@ -994,25 +994,25 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Diagnostic Service Integration](../../../strategy/capability/9ded2f3a28d24017bb921a0cdcf65a2b.md) | 9ded2f3a28d24017bb921a0cdcf65a2b | Canonical / current |
 | [[CT3] Diagnostic Specimen Management](../../../strategy/capability/93ab99a055314129984a18ea85db5cc2.md) | 93ab99a055314129984a18ea85db5cc2 | Canonical / current |
 | [[CT3] Diagnostic Workflow Management](../../../strategy/capability/270ed0e32b294458aa52cf57df7e55db.md) | 270ed0e32b294458aa52cf57df7e55db | Proposed / current |
-| [[CT3] Discharge Progression & Coordination](../../../strategy/capability/68344272ca6049648a3ddae20c150f37.md) | 68344272ca6049648a3ddae20c150f37 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Discharge Progression & Coordination](../../../strategy/capability/68344272ca6049648a3ddae20c150f37.md) | 68344272ca6049648a3ddae20c150f37 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Discharge Progression & Coordination](../../../strategy/capability/d6048993146b45639bab27860f94f34f.md) | d6048993146b45639bab27860f94f34f | Proposed / current |
 | [[CT3] Emergency Care Progression](../../../strategy/capability/7125e459a48946d0ba075b5ecc3571b4.md) | 7125e459a48946d0ba075b5ecc3571b4 | Canonical / current |
-| [[CT3] Emergency Department Operational Coordination](../../../strategy/capability/15b6d2518e60444098b7c546ca31c49b.md) | 15b6d2518e60444098b7c546ca31c49b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Emergency Department Operational Coordination](../../../strategy/capability/15b6d2518e60444098b7c546ca31c49b.md) | 15b6d2518e60444098b7c546ca31c49b | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Emergency Department Operational Coordination](../../../strategy/capability/8f0b0f3d9e8d44a7827b0835870b4a4f.md) | 8f0b0f3d9e8d44a7827b0835870b4a4f | Proposed / current |
 | [[CT3] Encounter Lifecycle Management](../../../strategy/capability/2ebf1bb20ab34755b41567c156cc5928.md) | 2ebf1bb20ab34755b41567c156cc5928 | Proposed / current |
 | [[CT3] Enterprise Canonical/Reusable Model Design](../../../strategy/capability/90e9cd401ddf4c7690c978d8dd131413.md) | 90e9cd401ddf4c7690c978d8dd131413 | Proposed / current |
-| [[CT3] Enterprise Canonical/Reusable Model Design](../../../strategy/capability/dbc37445ad944a85a7c4f26f410967b2.md) | dbc37445ad944a85a7c4f26f410967b2 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Enterprise Canonical/Reusable Model Design](../../../strategy/capability/dbc37445ad944a85a7c4f26f410967b2.md) | dbc37445ad944a85a7c4f26f410967b2 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Enterprise Canonical/Reusable Model Library Management](../../../strategy/capability/76943b4b68644c4dac1368fce8bb20d9.md) | 76943b4b68644c4dac1368fce8bb20d9 | Proposed / current |
-| [[CT3] Enterprise Canonical/Reusable Model Library Management](../../../strategy/capability/f5eccd4f65df49bba98104e5abfa5e19.md) | f5eccd4f65df49bba98104e5abfa5e19 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Enterprise Canonical/Reusable Model Library Management](../../../strategy/capability/f5eccd4f65df49bba98104e5abfa5e19.md) | f5eccd4f65df49bba98104e5abfa5e19 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Enterprise Canonical/Reusable Model Utilisation Support](../../../strategy/capability/5744cb9d86494064af87afb3cbf2cf97.md) | 5744cb9d86494064af87afb3cbf2cf97 | Proposed / current |
-| [[CT3] Enterprise Canonical/Reusable Model Utilisation Support](../../../strategy/capability/7ae95677a00346f18a0ba01522a20153.md) | 7ae95677a00346f18a0ba01522a20153 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Enterprise Canonical/Reusable Model Utilisation Support](../../../strategy/capability/7ae95677a00346f18a0ba01522a20153.md) | 7ae95677a00346f18a0ba01522a20153 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Enterprise Reference Data Stewardship](../../../strategy/capability/971d4b079ad24e89b70a8ed8dec0c8bf.md) | 971d4b079ad24e89b70a8ed8dec0c8bf | Proposed / current |
-| [[CT3] Enterprise Reference Data Stewardship](../../../strategy/capability/fd9f3239fdb64ea687825b66bb4d1f17.md) | fd9f3239fdb64ea687825b66bb4d1f17 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Enterprise Reference Data Stewardship](../../../strategy/capability/fd9f3239fdb64ea687825b66bb4d1f17.md) | fd9f3239fdb64ea687825b66bb4d1f17 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Entity-Relative Operational Progression](../../../strategy/capability/69c82474fb534152b151c92f706197d0.md) | 69c82474fb534152b151c92f706197d0 | Proposed / current |
 | [[CT3] Entity-Specific Operational Coordination](../../../strategy/capability/9f0c1429b64f4f88982fbbda6eaec233.md) | 9f0c1429b64f4f88982fbbda6eaec233 | Proposed / pending_adjudication |
-| [[CT3] External Task Coordination](../../../strategy/capability/32be309d65594592bac4d7b068def0d2.md) | 32be309d65594592bac4d7b068def0d2 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] External Task Coordination](../../../strategy/capability/32be309d65594592bac4d7b068def0d2.md) | 32be309d65594592bac4d7b068def0d2 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] External Task Coordination](../../../strategy/capability/ff3447c929724245a13ee864874b5561.md) | ff3447c929724245a13ee864874b5561 | Proposed / current |
-| [[CT3] External Task Status & Traceability Management](../../../strategy/capability/95985d244a234571892a9e9b4024f594.md) | 95985d244a234571892a9e9b4024f594 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] External Task Status & Traceability Management](../../../strategy/capability/95985d244a234571892a9e9b4024f594.md) | 95985d244a234571892a9e9b4024f594 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] External Task Status & Traceability Management](../../../strategy/capability/b25bb04a8aa94dcfac105a646878ccfc.md) | b25bb04a8aa94dcfac105a646878ccfc | Proposed / current |
 | [[CT3] Facilities Management](../../../strategy/capability/9c82e623bd174409b90d24af6b58ebf0.md) | 9c82e623bd174409b90d24af6b58ebf0 | Canonical / current |
 | [[CT3] Governance Reporting & Checkpoint Definition](../../../strategy/capability/0ff9f332acdc435e98f4f527c74f60c9.md) | 0ff9f332acdc435e98f4f527c74f60c9 | Canonical / current |
@@ -1022,19 +1022,19 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Governed Activity Execution Control](../../../strategy/capability/1e351cdfdc1045e384c3bd768eed8e80.md) | 1e351cdfdc1045e384c3bd768eed8e80 | Proposed / current |
 | [[CT3] Governed Assurance](../../../strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md) | da1a983d4dcf4d5bb772b8f69bc08426 | Canonical / pending_adjudication |
 | [[CT3] Governed Health Information Retrieval](../../../strategy/capability/76e74e46ca4d44a1a7bb116b358f231c.md) | 76e74e46ca4d44a1a7bb116b358f231c | Proposed / current |
-| [[CT3] Governed Health Information Retrieval](../../../strategy/capability/90b838d703dd472b8b6d74961f3a748c.md) | 90b838d703dd472b8b6d74961f3a748c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Governed Health Information Retrieval](../../../strategy/capability/90b838d703dd472b8b6d74961f3a748c.md) | 90b838d703dd472b8b6d74961f3a748c | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Governed Operational Activity Design](../../../strategy/capability/3a96040821c14fe38830411dab4f8453.md) | 3a96040821c14fe38830411dab4f8453 | Proposed / pending_adjudication |
-| [[CT3] Governed Reference Dataset Administration](../../../strategy/capability/15d972931ed6447797c30a5ddb71737e.md) | 15d972931ed6447797c30a5ddb71737e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Governed Reference Dataset Administration](../../../strategy/capability/15d972931ed6447797c30a5ddb71737e.md) | 15d972931ed6447797c30a5ddb71737e | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Governed Reference Dataset Administration](../../../strategy/capability/682b8684ad9e49d5a5c348a148081607.md) | 682b8684ad9e49d5a5c348a148081607 | Proposed / current |
 | [[CT3] Governed Research Information Provision](../../../strategy/capability/6907401e6786470083c1d34a65aa225b.md) | 6907401e6786470083c1d34a65aa225b | Canonical / current |
 | [[CT3] HIE Endpoint State Management](../../../strategy/capability/1bec951a1c98450b8d4672c5c424f9bd.md) | 1bec951a1c98450b8d4672c5c424f9bd | Proposed / current |
-| [[CT3] HIE Endpoint State Management](../../../strategy/capability/697de08ac49a4b7f8df7a1ed6f04210e.md) | 697de08ac49a4b7f8df7a1ed6f04210e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] HIE Endpoint State Management](../../../strategy/capability/697de08ac49a4b7f8df7a1ed6f04210e.md) | 697de08ac49a4b7f8df7a1ed6f04210e | Superseded historical identity — evolved correspondence / superseded |
 | [[CT3] HIE Implementation Management](../../../strategy/capability/8ce29be373e04252b7aa881b6a72f375.md) | 8ce29be373e04252b7aa881b6a72f375 | Proposed / current |
-| [[CT3] HIE Implementation Management](../../../strategy/capability/a99b4119339545a89dc54ebb216ddb85.md) | a99b4119339545a89dc54ebb216ddb85 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] HIE Implementation Management](../../../strategy/capability/a99b4119339545a89dc54ebb216ddb85.md) | a99b4119339545a89dc54ebb216ddb85 | Superseded historical identity — evolved correspondence / superseded |
 | [[CT3] HIE Requirement Management](../../../strategy/capability/1c852a1799984feba50011172983c865.md) | 1c852a1799984feba50011172983c865 | Proposed / current |
-| [[CT3] HIE Requirement Management](../../../strategy/capability/a32c8bff0c284f5c9d6ab1f46991c232.md) | a32c8bff0c284f5c9d6ab1f46991c232 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] HIE Requirement Management](../../../strategy/capability/a32c8bff0c284f5c9d6ab1f46991c232.md) | a32c8bff0c284f5c9d6ab1f46991c232 | Superseded historical identity — evolved correspondence / superseded |
 | [[CT3] Health History Assessment](../../../strategy/capability/7ea7e3f74e2940a7934b588a1a038834.md) | 7ea7e3f74e2940a7934b588a1a038834 | Canonical / current |
-| [[CT3] Health History Assessment](../../../strategy/capability/bcaacf446f45443eafd8e21a1fd74ee1.md) | bcaacf446f45443eafd8e21a1fd74ee1 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Health History Assessment](../../../strategy/capability/bcaacf446f45443eafd8e21a1fd74ee1.md) | bcaacf446f45443eafd8e21a1fd74ee1 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Health Information Access Monitoring](../../../strategy/capability/01854c7311404bbf9f698fce4656b54d.md) | 01854c7311404bbf9f698fce4656b54d | Canonical / current |
 | [[CT3] Health Information Catalogue and Index Management](../../../strategy/capability/4c834101307546d39a0ac36b07358faf.md) | 4c834101307546d39a0ac36b07358faf | Canonical / current |
 | [[CT3] Health Information Classification Assurance](../../../strategy/capability/4a4a871081bf45829eab2a93c9d1c21f.md) | 4a4a871081bf45829eab2a93c9d1c21f | Canonical / current |
@@ -1050,13 +1050,13 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Health Information Structure Management](../../../strategy/capability/c3b3e39dd141448e96b7dd7b4c4516f2.md) | c3b3e39dd141448e96b7dd7b4c4516f2 | Canonical / current |
 | [[CT3] Health Innovation Evaluation](../../../strategy/capability/adc555bcb54e4de290869c7deebd128c.md) | adc555bcb54e4de290869c7deebd128c | Canonical / current |
 | [[CT3] Health Materiel Catalogue & Formulary Administration](../../../strategy/capability/28b327760af94b8b986357469524d793.md) | 28b327760af94b8b986357469524d793 | Proposed / current |
-| [[CT3] Health Materiel Catalogue & Formulary Administration](../../../strategy/capability/5c691959e2cc4a289fc25b9f3497eed9.md) | 5c691959e2cc4a289fc25b9f3497eed9 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Health Materiel Profile Administration](../../../strategy/capability/9216f9cc905e4526b1d98cd4ab382cbf.md) | 9216f9cc905e4526b1d98cd4ab382cbf | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Health Materiel Catalogue & Formulary Administration](../../../strategy/capability/5c691959e2cc4a289fc25b9f3497eed9.md) | 5c691959e2cc4a289fc25b9f3497eed9 | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Health Materiel Profile Administration](../../../strategy/capability/9216f9cc905e4526b1d98cd4ab382cbf.md) | 9216f9cc905e4526b1d98cd4ab382cbf | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Health Materiel Profile Administration](../../../strategy/capability/9626edae517d40d2bfae619860f18e20.md) | 9626edae517d40d2bfae619860f18e20 | Proposed / current |
 | [[CT3] Health Materiel Traceability Administration](../../../strategy/capability/2d41ed0f00a94a4b90ffe87d6fd4e9fe.md) | 2d41ed0f00a94a4b90ffe87d6fd4e9fe | Proposed / current |
-| [[CT3] Health Materiel Traceability Administration](../../../strategy/capability/f1b888e8d50c4019ac1afe162d6223f3.md) | f1b888e8d50c4019ac1afe162d6223f3 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Health Materiel Traceability Administration](../../../strategy/capability/f1b888e8d50c4019ac1afe162d6223f3.md) | f1b888e8d50c4019ac1afe162d6223f3 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Health Privacy Safeguard Management](../../../strategy/capability/089cd8744ed6410388daeff463507fc1.md) | 089cd8744ed6410388daeff463507fc1 | Canonical / current |
-| [[CT3] Health Risk & Prognostic Determination](../../../strategy/capability/3215f0b0e1ce45e8ab16dae272ea6fe7.md) | 3215f0b0e1ce45e8ab16dae272ea6fe7 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Health Risk & Prognostic Determination](../../../strategy/capability/3215f0b0e1ce45e8ab16dae272ea6fe7.md) | 3215f0b0e1ce45e8ab16dae272ea6fe7 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Health Risk & Prognostic Determination](../../../strategy/capability/5bba0ea969814b5fa7ad11b67ab40a0c.md) | 5bba0ea969814b5fa7ad11b67ab40a0c | Proposed / current |
 | [[CT3] Health Service Capability Identification](../../../strategy/capability/53f64a402905438aa87f9d16eff876da.md) | 53f64a402905438aa87f9d16eff876da | Canonical / current |
 | [[CT3] Health Service Capacity Planning](../../../strategy/capability/c1d1db0e2c854077a41721615e86119d.md) | c1d1db0e2c854077a41721615e86119d | Canonical / current |
@@ -1070,20 +1070,20 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Health Service Need Identification](../../../strategy/capability/976c90e05d0e44b1b24c89bf61eac005.md) | 976c90e05d0e44b1b24c89bf61eac005 | Canonical / current |
 | [[CT3] Health Service Operational Readiness](../../../strategy/capability/cc91eb4017034939ab82b152bddf7b1c.md) | cc91eb4017034939ab82b152bddf7b1c | Candidate / current |
 | [[CT3] Health Service Resource Identification](../../../strategy/capability/7d46575486c847cd8fdbb665b3ed1090.md) | 7d46575486c847cd8fdbb665b3ed1090 | Canonical / current |
-| [[CT3] Health State Monitoring](../../../strategy/capability/346f024f74b447a8b6056b9d521837ff.md) | 346f024f74b447a8b6056b9d521837ff | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Health State Monitoring](../../../strategy/capability/346f024f74b447a8b6056b9d521837ff.md) | 346f024f74b447a8b6056b9d521837ff | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Health State Monitoring](../../../strategy/capability/d77f22909f8b47dba4cbd95982e576df.md) | d77f22909f8b47dba4cbd95982e576df | Canonical / current |
-| [[CT3] Health Status Measurement](../../../strategy/capability/3717906f7f8840d3a8a3e3877543dd18.md) | 3717906f7f8840d3a8a3e3877543dd18 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Health Status Measurement](../../../strategy/capability/3717906f7f8840d3a8a3e3877543dd18.md) | 3717906f7f8840d3a8a3e3877543dd18 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Health Status Measurement](../../../strategy/capability/a796bfb3335d44f6aeb9970628ed8554.md) | a796bfb3335d44f6aeb9970628ed8554 | Canonical / current |
 | [[CT3] Healthcare Location Definition Management](../../../strategy/capability/d77a5c8f1818465c98125acc4bc2ac81.md) | d77a5c8f1818465c98125acc4bc2ac81 | Canonical / current |
-| [[CT3] Healthcare Location Profile Administration](../../../strategy/capability/8a04d1f16d0849e786d2aaec33e0ba87.md) | 8a04d1f16d0849e786d2aaec33e0ba87 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Healthcare Location Profile Administration](../../../strategy/capability/8a04d1f16d0849e786d2aaec33e0ba87.md) | 8a04d1f16d0849e786d2aaec33e0ba87 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Healthcare Location Profile Administration](../../../strategy/capability/e579e54a08bb4f899a504aa998ba246b.md) | e579e54a08bb4f899a504aa998ba246b | Proposed / current |
 | [[CT3] Healthcare Organisation Identity & Structure Management](../../../strategy/capability/4684348b4d144e61aa7dd203facfebdd.md) | 4684348b4d144e61aa7dd203facfebdd | Canonical / current |
-| [[CT3] Healthcare Organisation Profile Administration](../../../strategy/capability/e485424b799c42aca7399d341ca02d0b.md) | e485424b799c42aca7399d341ca02d0b | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Healthcare Organisation Profile Administration](../../../strategy/capability/e485424b799c42aca7399d341ca02d0b.md) | e485424b799c42aca7399d341ca02d0b | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Healthcare Organisation Profile Administration](../../../strategy/capability/f2de9e9394b849f2943355c7a2882a15.md) | f2de9e9394b849f2943355c7a2882a15 | Proposed / current |
 | [[CT3] Healthcare Service Offering Management](../../../strategy/capability/9fe177e4422b4853acb1dd0d0b74c4ba.md) | 9fe177e4422b4853acb1dd0d0b74c4ba | Canonical / current |
-| [[CT3] Healthcare Service Profile Administration](../../../strategy/capability/7780ca2fed2346439d5f559d00cc4ee4.md) | 7780ca2fed2346439d5f559d00cc4ee4 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Healthcare Service Profile Administration](../../../strategy/capability/7780ca2fed2346439d5f559d00cc4ee4.md) | 7780ca2fed2346439d5f559d00cc4ee4 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Healthcare Service Profile Administration](../../../strategy/capability/e75d5eb30936476ea7a9cbadfa43d5ef.md) | e75d5eb30936476ea7a9cbadfa43d5ef | Proposed / current |
-| [[CT3] Healthcare Subject Profile Administration](../../../strategy/capability/d653c3247ddd49479f985f6b435933a0.md) | d653c3247ddd49479f985f6b435933a0 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Healthcare Subject Profile Administration](../../../strategy/capability/d653c3247ddd49479f985f6b435933a0.md) | d653c3247ddd49479f985f6b435933a0 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Healthcare Subject Profile Administration](../../../strategy/capability/df214b5499694b768eb4a7a175a9d471.md) | df214b5499694b768eb4a7a175a9d471 | Canonical / current |
 | [[CT3] IT Infrastructure Management](../../../strategy/capability/9a37413582314e0dbac006f82900858b.md) | 9a37413582314e0dbac006f82900858b | Canonical / current |
 | [[CT3] Identity Assurance](../../../strategy/capability/56ccd6d3bf5b4ec980a333dfadf8d9fa.md) | 56ccd6d3bf5b4ec980a333dfadf8d9fa | Canonical / current |
@@ -1091,8 +1091,8 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Identity Modelling & Interoperability](../../../strategy/capability/c40a00b0fe56405d99b6bb6ede72e18e.md) | c40a00b0fe56405d99b6bb6ede72e18e | Canonical / current |
 | [[CT3] Identity Qualification Control](../../../strategy/capability/3d53064f2fb7475b8f49fb58ec8ad4a5.md) | 3d53064f2fb7475b8f49fb58ec8ad4a5 | Canonical / current |
 | [[CT3] Information Asset Definition](../../../strategy/capability/05c58b2ccfcc45e9a6c70d9a569c4f61.md) | 05c58b2ccfcc45e9a6c70d9a569c4f61 | Proposed / current |
-| [[CT3] Information Asset Definition](../../../strategy/capability/166a22463d2c4534bda7ae31273398b6.md) | 166a22463d2c4534bda7ae31273398b6 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Information Asset Tag Management](../../../strategy/capability/ae44a4ee78414d1098814315793bd751.md) | ae44a4ee78414d1098814315793bd751 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Information Asset Definition](../../../strategy/capability/166a22463d2c4534bda7ae31273398b6.md) | 166a22463d2c4534bda7ae31273398b6 | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Information Asset Tag Management](../../../strategy/capability/ae44a4ee78414d1098814315793bd751.md) | ae44a4ee78414d1098814315793bd751 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Information Asset Tag Management](../../../strategy/capability/df27c3ba6e164e56af7bff4e1eb1954a.md) | df27c3ba6e164e56af7bff4e1eb1954a | Proposed / current |
 | [[CT3] Information Attribution & Lineage](../../../strategy/capability/8bc66c9bc1024a68a1bfd010b4dd1b79.md) | 8bc66c9bc1024a68a1bfd010b4dd1b79 | Proposed / current |
 | [[CT3] Information Authority Representation](../../../strategy/capability/8c850faafb334f97a81a0b4cd8fdb65f.md) | 8c850faafb334f97a81a0b4cd8fdb65f | Proposed / pending_adjudication |
@@ -1101,97 +1101,97 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Information Model Discovery](../../../strategy/capability/f33dc5b8ba9643329bb7b9431e1f9a6f.md) | f33dc5b8ba9643329bb7b9431e1f9a6f | Canonical / current |
 | [[CT3] Information Model Education](../../../strategy/capability/7dcb6427f9134fb7a4a63a5ec1d5c85b.md) | 7dcb6427f9134fb7a4a63a5ec1d5c85b | Canonical / current |
 | [[CT3] Information Model Governance Oversight](../../../strategy/capability/1e71b707beab450f9cbfaf0bf88b6ec4.md) | 1e71b707beab450f9cbfaf0bf88b6ec4 | Canonical / current |
-| [[CT3] Information Product Administration](../../../strategy/capability/5d9b7f8d2d7b41759b6d4931c1d2aaa2.md) | 5d9b7f8d2d7b41759b6d4931c1d2aaa2 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Information Product Administration](../../../strategy/capability/5d9b7f8d2d7b41759b6d4931c1d2aaa2.md) | 5d9b7f8d2d7b41759b6d4931c1d2aaa2 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Information Product Administration](../../../strategy/capability/b5a6a31855834ea58870ebb6c51ed4b0.md) | b5a6a31855834ea58870ebb6c51ed4b0 | Proposed / current |
 | [[CT3] Linked Information Curation](../../../strategy/capability/5edb2a8b5ee54ddda8104d1fab323a94.md) | 5edb2a8b5ee54ddda8104d1fab323a94 | Proposed / current |
-| [[CT3] Linked Information Curation](../../../strategy/capability/9d0925bb39664a5985cacf3cea7442d1.md) | 9d0925bb39664a5985cacf3cea7442d1 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Linked Information Curation](../../../strategy/capability/9d0925bb39664a5985cacf3cea7442d1.md) | 9d0925bb39664a5985cacf3cea7442d1 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Location Structure](../../../strategy/capability/2436c87195334daf85ed4e2de4ec4bd5.md) | 2436c87195334daf85ed4e2de4ec4bd5 | Proposed / superseded |
 | [[CT3] Longitudinal Clinical Record Administration](../../../strategy/capability/14748dc6117f4b6ba7c0fc554b76bd89.md) | 14748dc6117f4b6ba7c0fc554b76bd89 | Proposed / current |
-| [[CT3] Longitudinal Clinical Record Administration](../../../strategy/capability/bd91d848cf424c42bec7c80cd32edd28.md) | bd91d848cf424c42bec7c80cd32edd28 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Longitudinal Clinical Record Administration](../../../strategy/capability/bd91d848cf424c42bec7c80cd32edd28.md) | bd91d848cf424c42bec7c80cd32edd28 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Medication Advice](../../../strategy/capability/b867a2fde009437196a5fed682abf073.md) | b867a2fde009437196a5fed682abf073 | Canonical / current |
 | [[CT3] Medication Compounding & Preparation](../../../strategy/capability/07380933da66427c865ca8e64d414e59.md) | 07380933da66427c865ca8e64d414e59 | Proposed / current |
 | [[CT3] Medication Dose Administration Aid Provision](../../../strategy/capability/bd597608766b4d709703977c02cc5f07.md) | bd597608766b4d709703977c02cc5f07 | Canonical / current |
 | [[CT3] Medication Order & Dispense Management](../../../strategy/capability/9874098228764b62b1f640ea749b742d.md) | 9874098228764b62b1f640ea749b742d | Proposed / current |
 | [[CT3] Medication Therapy Provision and Monitoring](../../../strategy/capability/d1821b4f6d5746f9a697dfe3b792a186.md) | d1821b4f6d5746f9a697dfe3b792a186 | Canonical / current |
-| [[CT3] Mobile Worker Dispatch & Safety Coordination](../../../strategy/capability/5aafd1f4bff046b2b532c20dfb191473.md) | 5aafd1f4bff046b2b532c20dfb191473 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Mobile Worker Dispatch & Safety Coordination](../../../strategy/capability/5aafd1f4bff046b2b532c20dfb191473.md) | 5aafd1f4bff046b2b532c20dfb191473 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Mobile Worker Dispatch & Safety Coordination](../../../strategy/capability/d72164668dfe448bbebe74e9e1a75233.md) | d72164668dfe448bbebe74e9e1a75233 | Proposed / current |
 | [[CT3] Multidisciplinary Inpatient Care Coordination](../../../strategy/capability/c798e38e12e5428dbb8b3cabc977d430.md) | c798e38e12e5428dbb8b3cabc977d430 | Canonical / current |
 | [[CT3] Non-Prescription Medication Provision](../../../strategy/capability/7bbe4810fb974a8ab6d47b30d6475df3.md) | 7bbe4810fb974a8ab6d47b30d6475df3 | Canonical / current |
 | [[CT3] Notifiable Health Event Management](../../../strategy/capability/e605436254ed4dad819f452448e054a1.md) | e605436254ed4dad819f452448e054a1 | Canonical / current |
 | [[CT3] On-Call Availability & Contact Resolution](../../../strategy/capability/677a816c42414ea694791b4ee5a14285.md) | 677a816c42414ea694791b4ee5a14285 | Proposed / current |
-| [[CT3] On-Call Availability & Contact Resolution](../../../strategy/capability/a03075a46f75497f8c6ba95d9c9e27c4.md) | a03075a46f75497f8c6ba95d9c9e27c4 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] On-Call Availability & Contact Resolution](../../../strategy/capability/a03075a46f75497f8c6ba95d9c9e27c4.md) | a03075a46f75497f8c6ba95d9c9e27c4 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Operation Policy Resolution](../../../strategy/capability/7eca9fc4d2244b0facc83376e57ebbc4.md) | 7eca9fc4d2244b0facc83376e57ebbc4 | Proposed / current |
 | [[CT3] Operation-Bound Policy Enforcement](../../../strategy/capability/cb32b32c657445b3b9b27bebc069ace9.md) | cb32b32c657445b3b9b27bebc069ace9 | Proposed / current |
-| [[CT3] Operational & Clinical Calendar Coordination](../../../strategy/capability/c0f6e5f7f5a94d1580fa6e0e8b82c93a.md) | c0f6e5f7f5a94d1580fa6e0e8b82c93a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Operational & Clinical Calendar Coordination](../../../strategy/capability/c0f6e5f7f5a94d1580fa6e0e8b82c93a.md) | c0f6e5f7f5a94d1580fa6e0e8b82c93a | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Operational & Clinical Calendar Coordination](../../../strategy/capability/f6d8f1310ba543f69e8b57bf05603db3.md) | f6d8f1310ba543f69e8b57bf05603db3 | Proposed / current |
 | [[CT3] Operational Care Capacity Management](../../../strategy/capability/3040519e1fec43699c14a3cafb2d945d.md) | 3040519e1fec43699c14a3cafb2d945d | Canonical / current |
 | [[CT3] Operational Care Flow Coordination](../../../strategy/capability/d1dedb10ea694af5b88dbe1b6192f3ac.md) | d1dedb10ea694af5b88dbe1b6192f3ac | Canonical / current |
 | [[CT3] Operational Collaboration](../../../strategy/capability/631fdb8b47084008ac9b5de28b26972b.md) | 631fdb8b47084008ac9b5de28b26972b | Proposed / current |
-| [[CT3] Operational Collaboration](../../../strategy/capability/99e9d9763ec94140b7d7642f4b5966f6.md) | 99e9d9763ec94140b7d7642f4b5966f6 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Operational Collaboration](../../../strategy/capability/99e9d9763ec94140b7d7642f4b5966f6.md) | 99e9d9763ec94140b7d7642f4b5966f6 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Operational Fulfilment Definition](../../../strategy/capability/2b52c0de17b146da962f303e99f90a4a.md) | 2b52c0de17b146da962f303e99f90a4a | Proposed / current |
 | [[CT3] Operational Oversight](../../../strategy/capability/d6f39d94cd2e4bf2ab91ff58ba604ab0.md) | d6f39d94cd2e4bf2ab91ff58ba604ab0 | Canonical / current |
 | [[CT3] Operational Work Assignment & Dispatch Coordination](../../../strategy/capability/3b58935cfa974176989c3c75d76a00fe.md) | 3b58935cfa974176989c3c75d76a00fe | Proposed / current |
-| [[CT3] Operational Work Assignment & Dispatch Coordination](../../../strategy/capability/b42afda9e876463ba56fa8f73fe7a32a.md) | b42afda9e876463ba56fa8f73fe7a32a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Operational Work Assignment & Dispatch Coordination](../../../strategy/capability/b42afda9e876463ba56fa8f73fe7a32a.md) | b42afda9e876463ba56fa8f73fe7a32a | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Organisation Clinical Certification & Compliance Support](../../../strategy/capability/4de624e7bf49472f91e3e5c734ee8725.md) | 4de624e7bf49472f91e3e5c734ee8725 | Proposed / current |
-| [[CT3] Organisation Clinical Certification & Compliance Support](../../../strategy/capability/cee76a930a4e4e7d9c49357ba290c8bf.md) | cee76a930a4e4e7d9c49357ba290c8bf | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Organisation Clinical Certification & Compliance Support](../../../strategy/capability/cee76a930a4e4e7d9c49357ba290c8bf.md) | cee76a930a4e4e7d9c49357ba290c8bf | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Organisation Contact](../../../strategy/capability/b7f5108880eb429bb407c87a37b0e23f.md) | b7f5108880eb429bb407c87a37b0e23f | Proposed / superseded |
 | [[CT3] Organisational Structure](../../../strategy/capability/19d211cf601c49e5a65665330d0c5c3d.md) | 19d211cf601c49e5a65665330d0c5c3d | Proposed / superseded |
 | [[CT3] Outpatient Flow Coordination](../../../strategy/capability/799ea278af014168b9b534e5fdadc6d1.md) | 799ea278af014168b9b534e5fdadc6d1 | Proposed / current |
-| [[CT3] Outpatient Flow Coordination](../../../strategy/capability/e6c59c7b72fe44169a5fdfd08a5e91c4.md) | e6c59c7b72fe44169a5fdfd08a5e91c4 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Outpatient Flow Coordination](../../../strategy/capability/e6c59c7b72fe44169a5fdfd08a5e91c4.md) | e6c59c7b72fe44169a5fdfd08a5e91c4 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Outreach Care Continuity](../../../strategy/capability/8526d971b07f40de84ef05b0d192089c.md) | 8526d971b07f40de84ef05b0d192089c | Canonical / current |
-| [[CT3] Patient Health Information Disclosure Management](../../../strategy/capability/07cf507f183d4905a7ad2adbb8555df5.md) | 07cf507f183d4905a7ad2adbb8555df5 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Health Information Disclosure Management](../../../strategy/capability/07cf507f183d4905a7ad2adbb8555df5.md) | 07cf507f183d4905a7ad2adbb8555df5 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Health Information Disclosure Management](../../../strategy/capability/7f918639e23842e78fa92f1bf47c5a7b.md) | 7f918639e23842e78fa92f1bf47c5a7b | Proposed / current |
-| [[CT3] Patient Health Information Filter Management](../../../strategy/capability/589f192797454d9e8960fb63774e5e9c.md) | 589f192797454d9e8960fb63774e5e9c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Health Information Filter Management](../../../strategy/capability/589f192797454d9e8960fb63774e5e9c.md) | 589f192797454d9e8960fb63774e5e9c | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Health Information Filter Management](../../../strategy/capability/62f673613c76494eba972cad3e4e8d0b.md) | 62f673613c76494eba972cad3e4e8d0b | Proposed / current |
 | [[CT3] Patient Health Information Restriction Management](../../../strategy/capability/262366990bda4ac4ace5429269cf6a98.md) | 262366990bda4ac4ace5429269cf6a98 | Proposed / current |
-| [[CT3] Patient Health Information Restriction Management](../../../strategy/capability/5ad91d045474435a96b560e66ff7de05.md) | 5ad91d045474435a96b560e66ff7de05 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Health Information Restriction Management](../../../strategy/capability/5ad91d045474435a96b560e66ff7de05.md) | 5ad91d045474435a96b560e66ff7de05 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Health Library Access](../../../strategy/capability/808e5a3c3f6b496fa329962088f0bee0.md) | 808e5a3c3f6b496fa329962088f0bee0 | Proposed / current |
-| [[CT3] Patient Health Library Access](../../../strategy/capability/b132224cfa6f435f8f2a66a3878d6df6.md) | b132224cfa6f435f8f2a66a3878d6df6 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Health Library Access](../../../strategy/capability/b132224cfa6f435f8f2a66a3878d6df6.md) | b132224cfa6f435f8f2a66a3878d6df6 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Movement Coordination](../../../strategy/capability/f404b6647fe04a3390e57022bdef0843.md) | f404b6647fe04a3390e57022bdef0843 | Canonical / current |
-| [[CT3] Patient Notification Services](../../../strategy/capability/35c5be472bf2433fbbde9646d87aefb3.md) | 35c5be472bf2433fbbde9646d87aefb3 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Notification Services](../../../strategy/capability/35c5be472bf2433fbbde9646d87aefb3.md) | 35c5be472bf2433fbbde9646d87aefb3 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Notification Services](../../../strategy/capability/9d172cd511b742499c4e7c23f6630a35.md) | 9d172cd511b742499c4e7c23f6630a35 | Proposed / current |
-| [[CT3] Patient Self-Service](../../../strategy/capability/60f427e6b5764757b909624085a2af89.md) | 60f427e6b5764757b909624085a2af89 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Self-Service](../../../strategy/capability/60f427e6b5764757b909624085a2af89.md) | 60f427e6b5764757b909624085a2af89 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Self-Service](../../../strategy/capability/d4956cab8b2b46c396899949c9486a1c.md) | d4956cab8b2b46c396899949c9486a1c | Proposed / current |
-| [[CT3] Patient Task Communication Services](../../../strategy/capability/0914f2bb267449e282e9ae0f7407d9fe.md) | 0914f2bb267449e282e9ae0f7407d9fe | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Task Communication Services](../../../strategy/capability/0914f2bb267449e282e9ae0f7407d9fe.md) | 0914f2bb267449e282e9ae0f7407d9fe | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Task Communication Services](../../../strategy/capability/ba8ce1d54ace4bc9aa3521dd954f36cb.md) | ba8ce1d54ace4bc9aa3521dd954f36cb | Proposed / current |
-| [[CT3] Patient Transfer Coordination](../../../strategy/capability/b5a76d4877424b2ea9b01fb5fa22772c.md) | b5a76d4877424b2ea9b01fb5fa22772c | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Patient Transfer Coordination](../../../strategy/capability/b5a76d4877424b2ea9b01fb5fa22772c.md) | b5a76d4877424b2ea9b01fb5fa22772c | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Patient Transfer Coordination](../../../strategy/capability/c7c7aa8e34df4568ae4b91cdde380a11.md) | c7c7aa8e34df4568ae4b91cdde380a11 | Proposed / current |
 | [[CT3] People Management](../../../strategy/capability/df8b9d309b354efcb15991b3d75ed852.md) | df8b9d309b354efcb15991b3d75ed852 | Canonical / current |
 | [[CT3] Perioperative Logistics Coordination](../../../strategy/capability/6b7c08b60b5b48519bfe4b6f993dd6fb.md) | 6b7c08b60b5b48519bfe4b6f993dd6fb | Proposed / current |
-| [[CT3] Perioperative Logistics Coordination](../../../strategy/capability/e7813a06b9df462fa135c299261f192e.md) | e7813a06b9df462fa135c299261f192e | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Perioperative Logistics Coordination](../../../strategy/capability/e7813a06b9df462fa135c299261f192e.md) | e7813a06b9df462fa135c299261f192e | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Person Identity Administration](../../../strategy/capability/6c3de7750ef1436cad6a9533731782b6.md) | 6c3de7750ef1436cad6a9533731782b6 | Canonical / current |
-| [[CT3] Person Identity Administration](../../../strategy/capability/7550fd5b17e643118fa76d2616e1ba20.md) | 7550fd5b17e643118fa76d2616e1ba20 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Person Identity Administration](../../../strategy/capability/7550fd5b17e643118fa76d2616e1ba20.md) | 7550fd5b17e643118fa76d2616e1ba20 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Policy / Obligation Governance](../../../strategy/capability/73c6e5b36bdf4bf0ad2b8b50c9b9a00b.md) | 73c6e5b36bdf4bf0ad2b8b50c9b9a00b | Canonical / current |
 | [[CT3] Population Health Event Identification](../../../strategy/capability/e084ba370bb545d0a4c28c37e2e8e850.md) | e084ba370bb545d0a4c28c37e2e8e850 | Canonical / current |
 | [[CT3] Population Health Longitudinal Assessment](../../../strategy/capability/4d52b8acda504329a595be27a736e63c.md) | 4d52b8acda504329a595be27a736e63c | Canonical / current |
 | [[CT3] Population Health Reporting](../../../strategy/capability/50b8b0884f8444c4b11d9e0f7a7754a3.md) | 50b8b0884f8444c4b11d9e0f7a7754a3 | Canonical / current |
 | [[CT3] Population Health Surveillance Management](../../../strategy/capability/f0791768ef494e619006ee0d89d0d9d8.md) | f0791768ef494e619006ee0d89d0d9d8 | Canonical / current |
 | [[CT3] Practitioner Engagement & Privilege Management](../../../strategy/capability/36d5bf4c19d34172b72f4b77099ff235.md) | 36d5bf4c19d34172b72f4b77099ff235 | Canonical / current |
-| [[CT3] Practitioner Profile Administration](../../../strategy/capability/2415ddcbc73c47e1a63be310bd4342ee.md) | 2415ddcbc73c47e1a63be310bd4342ee | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Practitioner Profile Administration](../../../strategy/capability/2415ddcbc73c47e1a63be310bd4342ee.md) | 2415ddcbc73c47e1a63be310bd4342ee | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Practitioner Profile Administration](../../../strategy/capability/40759a835f7b456e9257c38b67b0a380.md) | 40759a835f7b456e9257c38b67b0a380 | Proposed / current |
 | [[CT3] Practitioner Qualification Management](../../../strategy/capability/279bab5de1b74c17a5ee2db5cae8d385.md) | 279bab5de1b74c17a5ee2db5cae8d385 | Canonical / current |
 | [[CT3] Practitioner Role Administration](../../../strategy/capability/6651471e67ae46fb8d1c1241c8590be9.md) | 6651471e67ae46fb8d1c1241c8590be9 | Proposed / current |
-| [[CT3] Practitioner Role Administration](../../../strategy/capability/6b777f1201db474eb22dd89f2b1f68c6.md) | 6b777f1201db474eb22dd89f2b1f68c6 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Practitioner Role Administration](../../../strategy/capability/6b777f1201db474eb22dd89f2b1f68c6.md) | 6b777f1201db474eb22dd89f2b1f68c6 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Prescription Medication Dispensing](../../../strategy/capability/fef5b79eea77438d9d453a7daef744fc.md) | fef5b79eea77438d9d453a7daef744fc | Canonical / current |
 | [[CT3] Preventative Health Cohort Management](../../../strategy/capability/97625bb28e5745d5994e1bffd4037188.md) | 97625bb28e5745d5994e1bffd4037188 | Canonical / current |
-| [[CT3] Preventative Health Cohort Management](../../../strategy/capability/fef479f0fd5048b19b2aec770f0233fe.md) | fef479f0fd5048b19b2aec770f0233fe | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Preventative Health Cohort Management](../../../strategy/capability/fef479f0fd5048b19b2aec770f0233fe.md) | fef479f0fd5048b19b2aec770f0233fe | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Preventative Health Education Services](../../../strategy/capability/7541d9b3b65d47d286dabdc093cb0eed.md) | 7541d9b3b65d47d286dabdc093cb0eed | Canonical / current |
-| [[CT3] Preventative Health Education Services](../../../strategy/capability/dbe10959237f405caeadef2a5748303a.md) | dbe10959237f405caeadef2a5748303a | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Preventative Health Problem Identification](../../../strategy/capability/b35d3521141c419fb676a79b2ede40bd.md) | b35d3521141c419fb676a79b2ede40bd | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Preventative Health Education Services](../../../strategy/capability/dbe10959237f405caeadef2a5748303a.md) | dbe10959237f405caeadef2a5748303a | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Preventative Health Problem Identification](../../../strategy/capability/b35d3521141c419fb676a79b2ede40bd.md) | b35d3521141c419fb676a79b2ede40bd | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Preventative Health Problem Identification](../../../strategy/capability/c1567022671f433fa1eeb37a9d156d92.md) | c1567022671f433fa1eeb37a9d156d92 | Canonical / current |
 | [[CT3] Preventative Health Programme Management](../../../strategy/capability/563d36b179d34cb6913253d06e8d77f6.md) | 563d36b179d34cb6913253d06e8d77f6 | Canonical / current |
-| [[CT3] Preventative Health Programme Management](../../../strategy/capability/d71def9e76a544ff9761c672bb24f3be.md) | d71def9e76a544ff9761c672bb24f3be | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Preventative Health Programme Management](../../../strategy/capability/d71def9e76a544ff9761c672bb24f3be.md) | d71def9e76a544ff9761c672bb24f3be | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Preventative Health Programme Monitoring](../../../strategy/capability/945b40ced8004e1cbf7c98c731d17daf.md) | 945b40ced8004e1cbf7c98c731d17daf | Canonical / current |
-| [[CT3] Preventative Health Programme Monitoring](../../../strategy/capability/e05f6310f6d544efaca5568604f27dd8.md) | e05f6310f6d544efaca5568604f27dd8 | Historical reference — RAD correspondence unresolved / historical_reference |
-| [[CT3] Preventative Health Reporting](../../../strategy/capability/4faef45b4ebe4fa69e57c3d81bfea05f.md) | 4faef45b4ebe4fa69e57c3d81bfea05f | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Preventative Health Programme Monitoring](../../../strategy/capability/e05f6310f6d544efaca5568604f27dd8.md) | e05f6310f6d544efaca5568604f27dd8 | Superseded historical identity — direct correspondence / superseded |
+| [[CT3] Preventative Health Reporting](../../../strategy/capability/4faef45b4ebe4fa69e57c3d81bfea05f.md) | 4faef45b4ebe4fa69e57c3d81bfea05f | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Preventative Health Reporting](../../../strategy/capability/d2ef01c4cab348df822e802ab084faae.md) | d2ef01c4cab348df822e802ab084faae | Canonical / current |
 | [[CT3] Primary Care Coordination](../../../strategy/capability/f80e73ee91624ce5baa11ae15480fd35.md) | f80e73ee91624ce5baa11ae15480fd35 | Canonical / current |
 | [[CT3] Procedure & Surgical Administration](../../../strategy/capability/3c4a53dd8c8f468f83ca5d92397dd7e8.md) | 3c4a53dd8c8f468f83ca5d92397dd7e8 | Proposed / current |
 | [[CT3] Provider Clinical Qualification Tracking](../../../strategy/capability/8fd5c78eba3046fa9153fb4efb44e9c8.md) | 8fd5c78eba3046fa9153fb4efb44e9c8 | Proposed / current |
-| [[CT3] Provider Clinical Qualification Tracking](../../../strategy/capability/ab0415e2ea0a4da4ad3dc46997d48bc3.md) | ab0415e2ea0a4da4ad3dc46997d48bc3 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Provider Clinical Qualification Tracking](../../../strategy/capability/ab0415e2ea0a4da4ad3dc46997d48bc3.md) | ab0415e2ea0a4da4ad3dc46997d48bc3 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Provider Engagement](../../../strategy/capability/a0777dbd9b0c4528817e99a7f34aa444.md) | a0777dbd9b0c4528817e99a7f34aa444 | Proposed / superseded |
 | [[CT3] Provider Relationship](../../../strategy/capability/3bb8a3d5b62a4b779442290fe8d5106c.md) | 3bb8a3d5b62a4b779442290fe8d5106c | Proposed / superseded |
-| [[CT3] Referral Intake & Progression](../../../strategy/capability/7180f6265d5c4687a001220c6126e301.md) | 7180f6265d5c4687a001220c6126e301 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Referral Intake & Progression](../../../strategy/capability/7180f6265d5c4687a001220c6126e301.md) | 7180f6265d5c4687a001220c6126e301 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Referral Intake & Progression](../../../strategy/capability/d11bdb9464b2476894aa372ab9b929a7.md) | d11bdb9464b2476894aa372ab9b929a7 | Proposed / current |
 | [[CT3] Remote Patient Monitoring](../../../strategy/capability/2d1addc7dd1d4821b71a11c692d35b27.md) | 2d1addc7dd1d4821b71a11c692d35b27 | Canonical / current |
 | [[CT3] Screening and Immunisation Enablement](../../../strategy/capability/3e9016eaebae4ed0b67a5cacba2652f5.md) | 3e9016eaebae4ed0b67a5cacba2652f5 | Canonical / current |
@@ -1200,28 +1200,28 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [[CT3] Semantic Mapping Governance](../../../strategy/capability/17dc6ab9f4394049a5327415d19628f2.md) | 17dc6ab9f4394049a5327415d19628f2 | Canonical / current |
 | [[CT3] Service Availability Definition](../../../strategy/capability/9e5329a42f964199b4b0a87ab1cacc2e.md) | 9e5329a42f964199b4b0a87ab1cacc2e | Proposed / superseded |
 | [[CT3] Service Demand & Capacity Coordination](../../../strategy/capability/93b5548ce8d04fcd999b97536c1eebf9.md) | 93b5548ce8d04fcd999b97536c1eebf9 | Proposed / current |
-| [[CT3] Service Demand & Capacity Coordination](../../../strategy/capability/b57081e650f74ad488549fdaa5305bcb.md) | b57081e650f74ad488549fdaa5305bcb | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Service Demand & Capacity Coordination](../../../strategy/capability/b57081e650f74ad488549fdaa5305bcb.md) | b57081e650f74ad488549fdaa5305bcb | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Service Eligibility Definition](../../../strategy/capability/8a3f29e5948141e2a3d0c72539759daf.md) | 8a3f29e5948141e2a3d0c72539759daf | Proposed / superseded |
 | [[CT3] Service Offering Readiness Coordination](../../../strategy/capability/0caecaba5d3e4781b8671b12c13ee283.md) | 0caecaba5d3e4781b8671b12c13ee283 | Proposed / pending_adjudication |
 | [[CT3] Service Provision Relationship](../../../strategy/capability/718ebe1fa8d44ad9a6632a5932277a8e.md) | 718ebe1fa8d44ad9a6632a5932277a8e | Proposed / superseded |
 | [[CT3] Session & Queue Coordination](../../../strategy/capability/22981a95ca6e466582363706fde8fceb.md) | 22981a95ca6e466582363706fde8fceb | Proposed / current |
-| [[CT3] Session & Queue Coordination](../../../strategy/capability/5298c6170cef4f05a6d956da716071bd.md) | 5298c6170cef4f05a6d956da716071bd | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Session & Queue Coordination](../../../strategy/capability/5298c6170cef4f05a6d956da716071bd.md) | 5298c6170cef4f05a6d956da716071bd | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Significant Activity Audit Capture](../../../strategy/capability/d903948169eb4785b0f03d916c842a8a.md) | d903948169eb4785b0f03d916c842a8a | Proposed / pending_adjudication |
-| [[CT3] Specimen Metadata Management](../../../strategy/capability/3b000d3712534d16a48470f79df8e33a.md) | 3b000d3712534d16a48470f79df8e33a | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Specimen Metadata Management](../../../strategy/capability/3b000d3712534d16a48470f79df8e33a.md) | 3b000d3712534d16a48470f79df8e33a | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Specimen Metadata Management](../../../strategy/capability/738736425b7446fdae47b06c91c4f69c.md) | 738736425b7446fdae47b06c91c4f69c | Proposed / current |
-| [[CT3] Specimen Movement Traceability](../../../strategy/capability/129119d7b2744ffd805c58f25557fa27.md) | 129119d7b2744ffd805c58f25557fa27 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Specimen Movement Traceability](../../../strategy/capability/129119d7b2744ffd805c58f25557fa27.md) | 129119d7b2744ffd805c58f25557fa27 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Specimen Movement Traceability](../../../strategy/capability/bfa2e9a84ddd4287897573dc0d917a00.md) | bfa2e9a84ddd4287897573dc0d917a00 | Proposed / current |
 | [[CT3] Standards Adoption](../../../strategy/capability/0d59f956f5714d3985398f09aeb7c541.md) | 0d59f956f5714d3985398f09aeb7c541 | Canonical / current |
 | [[CT3] Standards Impact Identification](../../../strategy/capability/6b9c96c7d9174e7fbfd11267673d42f3.md) | 6b9c96c7d9174e7fbfd11267673d42f3 | Canonical / current |
 | [[CT3] Terminology Governance](../../../strategy/capability/e926a47881fa482088859f59fa6fe7e4.md) | e926a47881fa482088859f59fa6fe7e4 | Canonical / current |
 | [[CT3] Terminology Localisation](../../../strategy/capability/3aa80e1d84ea4e009b149c4f9a23f0f8.md) | 3aa80e1d84ea4e009b149c4f9a23f0f8 | Canonical / current |
 | [[CT3] Terminology Utilisation Oversight](../../../strategy/capability/4ca436cd90b745daa290b067c57a0450.md) | 4ca436cd90b745daa290b067c57a0450 | Canonical / current |
-| [[CT3] Vendor Liaison](../../../strategy/capability/29076cbb9fc5442fb25faf43947574f7.md) | 29076cbb9fc5442fb25faf43947574f7 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Vendor Liaison](../../../strategy/capability/29076cbb9fc5442fb25faf43947574f7.md) | 29076cbb9fc5442fb25faf43947574f7 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Vendor Liaison](../../../strategy/capability/66358bd6698e4050b12342522fbbb923.md) | 66358bd6698e4050b12342522fbbb923 | Proposed / current |
 | [[CT3] Ward Logistics Coordination](../../../strategy/capability/3249647f7b9846c899f982ab339c81f9.md) | 3249647f7b9846c899f982ab339c81f9 | Proposed / current |
-| [[CT3] Ward Logistics Coordination](../../../strategy/capability/8a9dcc3b5f0143458ec71bc188a56020.md) | 8a9dcc3b5f0143458ec71bc188a56020 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Ward Logistics Coordination](../../../strategy/capability/8a9dcc3b5f0143458ec71bc188a56020.md) | 8a9dcc3b5f0143458ec71bc188a56020 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Work Boundary Governance](../../../strategy/capability/35b66a0b38db4568849ecb842ffdcbf3.md) | 35b66a0b38db4568849ecb842ffdcbf3 | Proposed / current |
-| [[CT3] Work Boundary Governance](../../../strategy/capability/b4d14abf930a4230a7f5b93e9ce3df91.md) | b4d14abf930a4230a7f5b93e9ce3df91 | Historical reference — RAD correspondence unresolved / historical_reference |
+| [[CT3] Work Boundary Governance](../../../strategy/capability/b4d14abf930a4230a7f5b93e9ce3df91.md) | b4d14abf930a4230a7f5b93e9ce3df91 | Superseded historical identity — direct correspondence / superseded |
 | [[CT3] Workflow & Activity Coordination](../../../strategy/capability/94c683c7588f475e973b58cb226345db.md) | 94c683c7588f475e973b58cb226345db | Canonical / pending_adjudication |
 | [[CT3] Workforce Service Coverage Management](../../../strategy/capability/cfb04e13895745619171a3e8f15d349c.md) | cfb04e13895745619171a3e8f15d349c | Canonical / current |
 
@@ -1413,9 +1413,42 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 
 | Element | Canonical identity | Standing / currentness |
 | --- | --- | --- |
+| [AuthorisationRole Criteria Are Additive](../../../motivation/constraint/d5cfaf6f8c224d1b9769b1edd7c27591.md) | d5cfaf6f8c224d1b9769b1edd7c27591 | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
+| [Authoritative AuditEvents Are Immutable](../../../motivation/constraint/21eb20cdc600411cb71fbfe2abce4dbe.md) | 21eb20cdc600411cb71fbfe2abce4dbe | Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending / current |
+| [Authority Forwarding Requires FORWARD Authorisation](../../../motivation/constraint/5aed12f6540445ed85c1866adbef93af.md) | 5aed12f6540445ed85c1866adbef93af | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
 | [CST-EXT-001: Applicable Health-Information Privacy and Data-Protection Obligations](../../../motivation/constraint/0ed6fb9fcc9547659ce76b917881274e.md) | 0ed6fb9fcc9547659ce76b917881274e | Accepted / current |
 | [CST-EXT-002: Applicable National / Jurisdictional Healthcare Identifier Obligations](../../../motivation/constraint/edb1db6b18d84487ab48b9416f26e980.md) | edb1db6b18d84487ab48b9416f26e980 | Accepted / current |
 | [CST-EXT-003: Mandated External Interoperability Contracts](../../../motivation/constraint/cad6d41364ef4bb1ae0a2a519db11da4.md) | cad6d41364ef4bb1ae0a2a519db11da4 | Accepted / current |
+| [Configuration and Governance Has Coherent Authority](../../../motivation/constraint/7cdbc752ca2e4ebf9ee5acff84fd7400.md) | 7cdbc752ca2e4ebf9ee5acff84fd7400 | Adjudicated Domain05 direction — U11; holistic result acceptance pending / current |
+| [Dataset Access Has No Runtime Bootstrap Cycle](../../../motivation/constraint/c8c479dc9aad450ea58d07dec9aea1a6.md) | c8c479dc9aad450ea58d07dec9aea1a6 | Adjudicated Domain05 direction — U13/U15; holistic result acceptance pending / current |
+| [Dokimasia Evidence Replaces a Separate Self AuditEvent](../../../motivation/constraint/e1ce978457e543d5894de24e9be9ac2c.md) | e1ce978457e543d5894de24e9be9ac2c | Adjudicated Domain05 direction — U02/U06/U19; holistic result acceptance pending / current |
+| [Dokimasia Has a Finite Assurance Boundary](../../../motivation/constraint/3ba73277abf146728ca8c1f5846227d7.md) | 3ba73277abf146728ca8c1f5846227d7 | Adjudicated Domain05 direction — U02/U06/U19; holistic result acceptance pending / current |
+| [Every Petasos Queue Has a Defined Functional Purpose](../../../motivation/constraint/6fa0f390bfa140aa8bb6acc56f1a5ec6.md) | 6fa0f390bfa140aa8bb6acc56f1a5ec6 | Adjudicated Domain05 direction — U09; holistic result acceptance pending / current |
+| [Harmonisation Does Not Resume the Originating Ergon](../../../motivation/constraint/1739ad181a754d01ae07f94de49cd65e.md) | 1739ad181a754d01ae07f94de49cd65e | Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending / current |
+| [Harmonisation Reuses the Common Execution Framework](../../../motivation/constraint/59e1a236500240609a78b6529fe8e358.md) | 59e1a236500240609a78b6529fe8e358 | Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending / current |
+| [Host Components Do Not Reinterpret Themis Policy](../../../motivation/constraint/80e5d019948b4c16acb510547d7a3ac6.md) | 80e5d019948b4c16acb510547d7a3ac6 | Adjudicated Domain05 direction — U08/U12/U15; holistic result acceptance pending / current |
+| [Independent Audit Targets Are Not Assumed Replicas](../../../motivation/constraint/e84fc7e020474eda99a0e32def0a6371.md) | e84fc7e020474eda99a0e32def0a6371 | Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending / current |
+| [Information Topic and Messaging Destination Remain Distinct](../../../motivation/constraint/ba909d70784349cd94b8adb4d6a9ab69.md) | ba909d70784349cd94b8adb4d6a9ab69 | Adjudicated Domain05 direction — U05/U09/U18; holistic result acceptance pending / current |
+| [Ingress Context Loading Does Not Interpret Raw Payload Semantics](../../../motivation/constraint/f5af90e09e9a422d9b1c9a7f3c44090f.md) | f5af90e09e9a422d9b1c9a7f3c44090f | Adjudicated Domain05 direction — U14/U15; holistic result acceptance pending / current |
+| [Internal Mneme Responsibilities Are Not Automatically Exposed Services](../../../motivation/constraint/f0a85fcf515946e2b7c88543061ebac1.md) | f0a85fcf515946e2b7c88543061ebac1 | Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending / current |
+| [Journey Observations Remain Distinct from Assurance Inference](../../../motivation/constraint/ae2fa71039034290b019eb1cc6eb1996.md) | ae2fa71039034290b019eb1cc6eb1996 | Adjudicated Domain05 direction — U06/U09/U19; holistic result acceptance pending / current |
+| [Kleio Constructs AuditEvent Representations for Clients](../../../motivation/constraint/1aa42a9aa5a644bc9072522e0a123352.md) | 1aa42a9aa5a644bc9072522e0a123352 | Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending / current |
+| [Local PEP Enforcement Is Constrained and Deterministic](../../../motivation/constraint/8c9ef077cb5d4cc9aacb55d743b1af92.md) | 8c9ef077cb5d4cc9aacb55d743b1af92 | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
+| [Mneme Is Insulated from Ponos Implementation Internals](../../../motivation/constraint/c30ae90fc19b465982b28d61ac1edca5.md) | c30ae90fc19b465982b28d61ac1edca5 | Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending / current |
+| [Negative Criteria Require a Demonstrated Business Requirement](../../../motivation/constraint/820e647c43614052aa25e385d6fe1dac.md) | 820e647c43614052aa25e385d6fe1dac | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
+| [New Policy Context Requires Authoritative PDP Processing](../../../motivation/constraint/80629d4c229e4b7095d011bf77d704aa.md) | 80629d4c229e4b7095d011bf77d704aa | Adjudicated Domain05 direction — U08/U12/U15; holistic result acceptance pending / current |
+| [PDP Unavailability Is Not Policy Denial](../../../motivation/constraint/8d0e87312d1f4d6f9298843ce840e654.md) | 8d0e87312d1f4d6f9298843ce840e654 | Adjudicated Domain05 direction — U08/U12/U15; holistic result acceptance pending / current |
+| [Persistence Preserves Applicable Compartments](../../../motivation/constraint/6e963678cf6f4c3488c798d6afc3b910.md) | 6e963678cf6f4c3488c798d6afc3b910 | Adjudicated Domain05 direction — U11; holistic result acceptance pending / current |
+| [PetasosParcel Is Transported by Value](../../../motivation/constraint/b599ebffaf2f4e9e8deaec2ed98f2cd7.md) | b599ebffaf2f4e9e8deaec2ed98f2cd7 | Adjudicated Domain05 direction — U09; holistic result acceptance pending / current |
+| [R1 and R2 Observation Does Not Authorise Autonomous Adaptation](../../../motivation/constraint/7ca8481aa04a4dfdb34766511e002a5b.md) | 7ca8481aa04a4dfdb34766511e002a5b | Adjudicated Domain05 direction — U06/U09/U19; holistic result acceptance pending / current |
+| [Revocation Is Distinct from Temporal Expiry](../../../motivation/constraint/462d94a9a14d4eb8a74710fff4b12402.md) | 462d94a9a14d4eb8a74710fff4b12402 | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
+| [Runtime Vocabulary Membership Is Authoritative](../../../motivation/constraint/872a5f1aa5a44fd4ba68d793c022adf2.md) | 872a5f1aa5a44fd4ba68d793c022adf2 | Adjudicated Domain05 direction — U13/U15; holistic result acceptance pending / current |
+| [Semantic Persistence Domains Do Not Prescribe Physical Topology](../../../motivation/constraint/eca9a99c2ad44a1ea7833d2b0c5a3e93.md) | eca9a99c2ad44a1ea7833d2b0c5a3e93 | Adjudicated Domain05 direction — U11; holistic result acceptance pending / current |
+| [Separate Models and DataSets Lifecycles](../../../motivation/constraint/5c15fa0761da496b8194f3a6f742ecb5.md) | 5c15fa0761da496b8194f3a6f742ecb5 | Adjudicated Domain05 direction — U13/U15; holistic result acceptance pending / current |
+| [Specialised Execution Reuses Common Platform Capabilities](../../../motivation/constraint/968e208d336c48b781a4eabd76e6337b.md) | 968e208d336c48b781a4eabd76e6337b | Adjudicated Domain05 direction — U02/U06/U19; holistic result acceptance pending / current |
+| [Unavailable Authoritative Audit Capture Fails Closed](../../../motivation/constraint/6c5d5f1d872642f2b7770248d4e1e1f4.md) | 6c5d5f1d872642f2b7770248d4e1e1f4 | Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending / current |
+| [Unknown Required Security Attributes Fail Closed](../../../motivation/constraint/7ea0d91ed25848f4add672ddf08f42a2.md) | 7ea0d91ed25848f4add672ddf08f42a2 | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
+| [Valid Context Permits Enforcement During PDP Unavailability](../../../motivation/constraint/5a6285eb1a1646e1badd693b8c175f01.md) | 5a6285eb1a1646e1badd693b8c175f01 | Adjudicated Domain05 direction — U08/U12/U15; holistic result acceptance pending / current |
 
 ## CourseOfAction
 
@@ -1427,6 +1460,12 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [Entity-Centred Operational Coordination](../../../strategy/course-of-action/f601fe1f39a3447f8e9fb2cc4ffe9dee.md) | f601fe1f39a3447f8e9fb2cc4ffe9dee | Canonical / current |
 | [Governed Asynchronous Activity Progression](../../../strategy/course-of-action/a8ab09ee29454376bd45ba90b320d6ec.md) | a8ab09ee29454376bd45ba90b320d6ec | Canonical / current |
 | [Meaning-Centric Provenance and Traceability](../../../strategy/course-of-action/fd00bdbdc2234a208c5045aa69279db8.md) | fd00bdbdc2234a208c5045aa69279db8 | Canonical / current |
+
+## CourseOfAction / ImplementationGuideline
+
+| Element | Canonical identity | Standing / currentness |
+| --- | --- | --- |
+| [[ImplementationGuideline] Default Development Test and POC Identity Provider](../../../strategy/course-of-action/implementation-guideline/f8874dd3bc5c4b68b1ece4eb2859d1d9.md) | f8874dd3bc5c4b68b1ece4eb2859d1d9 | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
 
 ## DataObject
 
@@ -1599,7 +1638,9 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 
 | Element | Canonical identity | Standing / currentness |
 | --- | --- | --- |
+| [AI Assurance Architecture Discovery Before Implementation](../../../motivation/requirement/24a609117a4f40839f8b669ebf720cde.md) | 24a609117a4f40839f8b669ebf720cde | Adjudicated Domain05 direction — U02/U06/U19; holistic result acceptance pending / current |
 | [Artemis HA Failover](../../../motivation/requirement/8c0f08d0d12f48b9ae6a001c19ede377.md) | 8c0f08d0d12f48b9ae6a001c19ede377 | Historical — current applicability unresolved / historical_reference |
+| [Audit Corrections Create New Linked Events](../../../motivation/requirement/ddaa9bff2b684af7a6ad18fe4f2da8ad.md) | ddaa9bff2b684af7a6ad18fe4f2da8ad | Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending / current |
 | [CLIN-001 — Vendor-Neutral Clinical Information Layer](../../../motivation/requirement/44eec8cf17f44593824a1f723d949352.md) | 44eec8cf17f44593824a1f723d949352 | Historical — current owning-domain standing not inferred / historical_reference |
 | [CLIN-002 — FHIR-Based Longitudinal Clinical Representation](../../../motivation/requirement/9ad88c6b7f934923800dd46c8522b9a1.md) | 9ad88c6b7f934923800dd46c8522b9a1 | Historical — current owning-domain standing not inferred / historical_reference |
 | [CLIN-003 — Medication as a First-Class Clinical Domain](../../../motivation/requirement/f5a6dd8f23f047bb9f4c327bbd3e85f2.md) | f5a6dd8f23f047bb9f4c327bbd3e85f2 | Historical — current owning-domain standing not inferred / historical_reference |
@@ -1629,6 +1670,10 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [DIR-004 — Directory Referential Integrity](../../../motivation/requirement/f866ae5adb08499794331bc600db827c.md) | f866ae5adb08499794331bc600db827c | Historical — current owning-domain standing not inferred / historical_reference |
 | [DIR-005 — Healthcare Identifier Governance](../../../motivation/requirement/097368b4b0b4468dbf1c57c11d9ed86c.md) | 097368b4b0b4468dbf1c57c11d9ed86c | Historical — current owning-domain standing not inferred / historical_reference |
 | [DIR-006 — Provider Self-Service Governance](../../../motivation/requirement/4230f93461a4470383fb99fddc35f8bf.md) | 4230f93461a4470383fb99fddc35f8bf | Historical — current owning-domain standing not inferred / historical_reference |
+| [Development Representations of Runtime Governed Datasets](../../../motivation/requirement/0a4a5c73048c4e49a82d40e349e70a95.md) | 0a4a5c73048c4e49a82d40e349e70a95 | Adjudicated Domain05 direction — U13/U15; holistic result acceptance pending / current |
+| [Efficient Materialisation of Anticipated Context Resources](../../../motivation/requirement/1f3431ca25284783ac69f8f6affcd103.md) | 1f3431ca25284783ac69f8f6affcd103 | Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending / current |
+| [Establish Effective Security Attributes through Governed Rules](../../../motivation/requirement/d14061c03b9042948ba33cae91e02efb.md) | d14061c03b9042948ba33cae91e02efb | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
+| [Explain Effective PEP Criteria Derivation](../../../motivation/requirement/f027de050273400eaac0de083b820238.md) | f027de050273400eaac0de083b820238 | Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending / current |
 | [FHIR R5 Schemas](../../../motivation/requirement/8d8c62b8cb7b40b0be2ce23f7f41f154.md) | 8d8c62b8cb7b40b0be2ce23f7f41f154 | Historical / Reclassified — Domain04/06 / historical_reference |
 | [INT-001 — Standards-Based Healthcare Interoperability](../../../motivation/requirement/44dba056ada04f6583b77859aac9ac68.md) | 44dba056ada04f6583b77859aac9ac68 | Historical — current owning-domain standing not inferred / historical_reference |
 | [INT-002 — Reliable Messaging](../../../motivation/requirement/aac9b66911e849cb9792c3a2b7eacb88.md) | aac9b66911e849cb9792c3a2b7eacb88 | Historical — current owning-domain standing not inferred / historical_reference |
@@ -1637,18 +1682,21 @@ Holistic Solution Architect/ARB review pending. Existing source standing remains
 | [INT-005 — Opaque Resource Identity](../../../motivation/requirement/91bd7a8732b3468b84be2493103433e7.md) | 91bd7a8732b3468b84be2493103433e7 | Historical — current owning-domain standing not inferred / historical_reference |
 | [INT-006 — Governed Validation](../../../motivation/requirement/6c14251b5d4e4eff96d2fd812834d124.md) | 6c14251b5d4e4eff96d2fd812834d124 | Historical — current owning-domain standing not inferred / historical_reference |
 | [INT-007 — Terminology Abstraction](../../../motivation/requirement/6fe86be142044e5aa7720e2e6493a72a.md) | 6fe86be142044e5aa7720e2e6493a72a | Historical — current owning-domain standing not inferred / historical_reference |
+| [Normal Reporting Does Not Require Raw PubSub Topology Interpretation](../../../motivation/requirement/aa569bb1448648f685bb73cf9c6563e3.md) | aa569bb1448648f685bb73cf9c6563e3 | Adjudicated Domain05 direction — U04/U06/U14/U18; holistic result acceptance pending / current |
 | [OPS-001 — Reproducible Deployment](../../../motivation/requirement/c4373b1fd8444f10b502a5c3216152d7.md) | c4373b1fd8444f10b502a5c3216152d7 | Historical — current owning-domain standing not inferred / historical_reference |
 | [OPS-002 — Durable Infrastructure State](../../../motivation/requirement/d5d6a9ea450047b1bd62b13177e8fca6.md) | d5d6a9ea450047b1bd62b13177e8fca6 | Historical — current owning-domain standing not inferred / historical_reference |
 | [OPS-003 — Meaningful Health and Readiness](../../../motivation/requirement/4c02fec3af264b878ee3e0cfaecbf55f.md) | 4c02fec3af264b878ee3e0cfaecbf55f | Historical — current owning-domain standing not inferred / historical_reference |
 | [OPS-004 — Operational Observability](../../../motivation/requirement/b5d3447a05b249a8af154136fc36c4d9.md) | b5d3447a05b249a8af154136fc36c4d9 | Historical — current owning-domain standing not inferred / historical_reference |
 | [OPS-005 — Production Resilience](../../../motivation/requirement/01e7d6168d554048a424ef75a6556040.md) | 01e7d6168d554048a424ef75a6556040 | Historical — current owning-domain standing not inferred / historical_reference |
 | [OPS-006 — Architecture Conformance](../../../motivation/requirement/dee1792d83bf413f974fc24802084872.md) | dee1792d83bf413f974fc24802084872 | Historical — current owning-domain standing not inferred / historical_reference |
+| [Operations and Assurance Supports Semantic Preserving Partitioning](../../../motivation/requirement/3238d37e27a7421e905b705c5f30fc85.md) | 3238d37e27a7421e905b705c5f30fc85 | Adjudicated Domain05 direction — U11; holistic result acceptance pending / current |
 | [PROV-001 — End-to-End Provenance](../../../motivation/requirement/3e45e60affb44bf384d54de26d3add6a.md) | 3e45e60affb44bf384d54de26d3add6a | Historical — current owning-domain standing not inferred / historical_reference |
 | [PROV-002 — Source Context](../../../motivation/requirement/929ed42779a843dd84b683e3dcc35eb3.md) | 929ed42779a843dd84b683e3dcc35eb3 | Historical — current owning-domain standing not inferred / historical_reference |
 | [PROV-003 — Dual-Actor Provenance](../../../motivation/requirement/c016286faa3d4dfbbad133f73e855f1c.md) | c016286faa3d4dfbbad133f73e855f1c | Historical — current owning-domain standing not inferred / historical_reference |
 | [PROV-004 — Provenance and Authority Independence](../../../motivation/requirement/3fb9a89d345a4cb6a56d62823316664e.md) | 3fb9a89d345a4cb6a56d62823316664e | Historical — current owning-domain standing not inferred / historical_reference |
 | [PROV-005 — Immutable Audit](../../../motivation/requirement/0f7b23cfd94e450c8a2772879bc9bb1e.md) | 0f7b23cfd94e450c8a2772879bc9bb1e | Historical — current owning-domain standing not inferred / historical_reference |
 | [PROV-006 — Audit Discoverability](../../../motivation/requirement/927c65d2d665451396782b4c1d7c8c86.md) | 927c65d2d665451396782b4c1d7c8c86 | Historical — current owning-domain standing not inferred / historical_reference |
+| [Preserve Necessary Evidence When Historical Resolution Is Unavailable](../../../motivation/requirement/81ce6a25725e41bb8e92c945f53c8b4c.md) | 81ce6a25725e41bb8e92c945f53c8b4c | Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending / current |
 | [REQ-FND-001: Durable Ingress Acceptance Boundary](../../../motivation/requirement/01c834537a1e41dfb523d48f287d93e9.md) | 01c834537a1e41dfb523d48f287d93e9 | Accepted / current |
 | [REQ-FND-002: Operational Activity Progression State](../../../motivation/requirement/eaabcdb96aad4f32a050c94f9ecec049.md) | eaabcdb96aad4f32a050c94f9ecec049 | Accepted / current |
 | [REQ-FND-003: Subject Referential Integrity](../../../motivation/requirement/43ecbfe8f9b14fcbbc59ee0c03c8774b.md) | 43ecbfe8f9b14fcbbc59ee0c03c8774b | Accepted / current |

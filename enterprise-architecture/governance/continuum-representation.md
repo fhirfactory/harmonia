@@ -12,7 +12,8 @@ The rejected 001 document-carrier strategy supplies no application authority.
 The continuum's architectural unit is **one architectural element with one
 resource-owned canonicalId and one canonical Markdown file**. The native ArchiMate
 metamodel supplies its classification. Harmonia Feature specialises Capability;
-Topic specialises DataObject. A source document, heading, software module, diagram
+Topic specialises DataObject; the ARB follow-up below establishes
+ImplementationGuideline as a CourseOfAction specialisation. A source document, heading, software module, diagram
 folder, information family or contextual bundle does not establish an element.
 There is no miscellaneous or multi-concept document category in the continuum.
 
@@ -20,7 +21,8 @@ AX-03/04 require native semantics and architecture-led machinery. AX-08/09 requi
 meaningful provenance. AX-14 preserves semantic standing, currentness, placement,
 identity, representation and approval as different matters. AX-15/17 require
 explicit uncertainty without blocking independent authorised work. This mechanism
-introduces no runtime architecture or new architectural specialisation.
+introduces no runtime architecture. The initial migration introduced no new
+specialisation; the subsequent ARB decision explicitly adds ImplementationGuideline.
 
 The [canonical identity/naming contract](../../docs/markdown/governance/canonical-identity-and-naming.md),
 [modelling strategy](../../docs/markdown/governance/architecture-modelling-strategy.md),
@@ -115,8 +117,9 @@ their own canonical files where established.
 
 Architectural explanation belongs in the Markdown body. Projection metadata is
 subordinate; copied source JSON and old model properties are provenance, not a
-second authoring mechanism. Existing qualified relationship assertions without a
-safe native mapping remain documented findings; they are not coerced into edges.
+second authoring mechanism. Qualified relationship assertions follow their actual
+adjudication. The ARB follow-up below supplies native mapping authority for known
+predicates; explicitly unestablished relationship existence remains a finding.
 
 ## Identity, names and standing
 
@@ -237,3 +240,50 @@ entry-revision source locators to preserve additional contributions;
 `continuum_source_succession.py` and `finalize_continuum_succession.py` apply the
 recorded bounded retirement. They read the entry Git edition, preserve original
 bytes and use keyed correspondence. Do not use these as future classifiers.
+
+## ARB semantic reconciliation follow-up
+
+The [reviewed HCRL semantic reconciliation](../design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation)
+and subsequent Apply instruction authorise semantic correspondence independently
+of migration UUID equality. Identity reconciliation considers meaning and scope,
+tier and parentage, governed canonical context, provenance and accepted evolution;
+names and catalogue codes alone never establish identity. `identity.correspondence`
+reserves a superseded historical resource and names its existing current successor;
+the successor records the inverse `predecessorCanonicalIds`. Historical identities,
+original definitions (including their absence), representation bindings and Views
+remain recoverable. This does not allocate replacement UUIDs or promote candidates.
+Strategic Digital Twin and application DigitalTwin retain separate layer meanings.
+
+`qualifiedAssertions[].nativeMapping` records the actual ARB disposition alongside
+the unchanged original predicate. Enabled-by families use provider → consumer
+Serving in the reverse direction; the actual endpoint types must permit it.
+Other predicates use the strongest source-justified, endpoint-valid relationship,
+with Association where existence is known but stronger semantics are not established.
+Source status/currentness and original predicate provenance travel with the edge.
+An expressly unestablished Feature association has no asserted relationship
+existence: neither Realization nor Association may manufacture it. The maintained
+`native-relationships.json` checks actual native endpoint applicability separately
+from XSD validity. Runtime semantics and Service-consumption are never invented.
+
+ImplementationGuideline is the explicitly authorised Harmonia specialisation of
+native CourseOfAction, placed under
+`strategy/course-of-action/implementation-guideline/`, with display prefix
+`[ImplementationGuideline]`. It records an authorised architectural or implementation
+direction without recasting a selected means as an enduring Requirement. Its
+formal canonicalName qualifier remains unresolved under Q-01; no token is invented.
+Constraints and Requirements retain their native Motivation classifications.
+
+Domain05 DesignNotes are governed capture/provenance artefacts. They remain at
+their governed source paths after processing. Every substantive normative assertion
+requires an explicit release disposition: an appropriate canonical element or
+relationship, represented by an existing canonical assertion, superseded/rejected/
+excluded, or genuinely unresolved. Preserve assertion modality, scope and later
+U01–U19 corrections. Rationale, examples and diagrams may remain provenance;
+implementation menus and deferred mechanisms do not become Requirements. A note
+is fully processed only when every normative assertion has a disposition, with
+source selectors and canonical/decision correspondence adequate for review.
+Neither its filename nor its paragraph count establishes architectural completeness.
+
+The bounded application adapters consume retained explicit correspondence plans;
+routine validation/publication reads maintained canonical resources and configuration
+without those plans, original DesignNotes, old captures or interaction logs.

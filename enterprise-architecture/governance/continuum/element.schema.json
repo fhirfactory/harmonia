@@ -95,6 +95,7 @@
     "specialization": {
       "enum": [
         null,
+        "ImplementationGuideline",
         "Feature",
         "Topic"
       ]

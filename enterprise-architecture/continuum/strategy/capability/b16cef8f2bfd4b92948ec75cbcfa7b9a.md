@@ -18,7 +18,10 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "predecessorCanonicalIds": [
+      "c8e6e66e8718493c9093f37d129f9ff2"
+    ]
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -506,7 +509,17 @@
         "to": "enterprise:ec-05",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 787
+      "source_index": 787,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-eca076690a47576f971456ebd2703af1",
+        "sourceCanonicalId": "6a45701634f04b43919d9152a61e5f2e",
+        "targetCanonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a"
+      }
     },
     {
       "sourcePointer": "/relationships/788",
@@ -543,7 +556,17 @@
         "to": "enterprise:ec-06",
         "type": "enterprise_enabled_by"
       },
-      "source_index": 788
+      "source_index": 788,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Serving",
+        "reverse": true,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-f090b6a28adb5b3dbb76e7bc0067d5fa",
+        "sourceCanonicalId": "0c5d986cc948421a8bebcab3b74d108f",
+        "targetCanonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a"
+      }
     }
   ]
 }
@@ -581,15 +604,19 @@ Current provider resolution materially enables appropriate contact and routing a
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| enterprise_enabled_by | [[CT2] Search & Discovery](6a45701634f04b43919d9152a61e5f2e.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
-| enterprise_enabled_by | [[CT2] Policy & Control](0c5d986cc948421a8bebcab3b74d108f.md) | Proposed / current | Enterprise enablement does not establish native Serving or Composition; qualified profile requires review. |
+| enterprise_enabled_by | [[CT2] Search & Discovery](6a45701634f04b43919d9152a61e5f2e.md) | Proposed / current | Serving (reverse) — `id-eca076690a47576f971456ebd2703af1` |
+| enterprise_enabled_by | [[CT2] Policy & Control](0c5d986cc948421a8bebcab3b74d108f.md) | Proposed / current | Serving (reverse) — `id-f090b6a28adb5b3dbb76e7bc0067d5fa` |
 
 ## Source-qualified contribution
 
 Source: `docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md` — entry lines 211-211. Standing: exact originating assertion; current resource standing unchanged.
 
 - **Owning Capability**: `On-Call Management`
+
+## ARB identity continuity
+
+Historical identity [c8e6e66e8718493c9093f37d129f9ff2](c8e6e66e8718493c9093f37d129f9ff2.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.

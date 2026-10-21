@@ -136,6 +136,8 @@ def validate(root=ROOT, *, previous=None, pending=None):
     native_types = {n.get('name') for n in native_schema.xpath("xs:complexType[xs:complexContent/xs:extension/@base='RealElementType' or xs:complexContent/xs:extension/@base='CompositeType']", namespaces=xsd)}
     require(set(catalogue['types']) == native_types, 'Native type catalogue/schema drift')
     native_relationships = {n.get('name') for n in native_schema.xpath("xs:complexType[xs:complexContent/xs:extension/@base='RelationshipType']", namespaces=xsd)}
+    applicability = read_json(root / CONFIG / 'native-relationships.json')
+    require(set(applicability['keys']) == native_relationships, 'Native relationship applicability/schema drift')
     representations, bindings, relationships, qualified = {}, {}, {}, {}
     unresolved = []
     for cid, (m, body, path) in elements.items():
@@ -222,6 +224,57 @@ def validate(root=ROOT, *, previous=None, pending=None):
             unresolved.append({'canonicalId': cid, 'property': prop, 'reason': reason})
     for rid, row in relationships.items():
         require(row['target'] in representations or row['target'] in relationships, 'Unresolved relationship endpoint: ' + rid)
+        if row['target'] in representations:
+            a = elements[representations[row['source']]][0]['archimateType']
+            b = elements[representations[row['target']]][0]['archimateType']
+            require(applicability['keys'][row['archimateType']] in applicability['endpoints'].get(a, {}).get(b, ''),
+                    'Invalid native relationship endpoints: ' + rid + ' (' + a + ' → ' + b + ')')
+        else:
+            require(row['archimateType'] == 'Association', 'Only Association may target a relationship: ' + rid)
+    for cid, (m, _, _) in elements.items():
+        lineage = m['identity'].get('correspondence')
+        if lineage:
+            successor = lineage.get('successorCanonicalId')
+            require(successor in elements and successor != cid and lineage.get('authority'), 'Invalid identity correspondence: ' + cid)
+            current = elements[successor][0]
+            require(lineage.get('historicalIdentityReserved') and m['standing']['currentness'] == 'superseded', 'Historical identity must remain reserved: ' + cid)
+            require(current['standing']['currentness'] == 'current' and current['archimateType'] == m['archimateType'], 'Invalid correspondence successor: ' + cid)
+            require(cid in current['identity'].get('predecessorCanonicalIds', []), 'Missing inverse identity lineage: ' + cid)
+        for predecessor in m['identity'].get('predecessorCanonicalIds', []):
+            require(predecessor in elements and elements[predecessor][0]['identity'].get('correspondence', {}).get('successorCanonicalId') == cid,
+                    'Inconsistent predecessor identity lineage: ' + cid)
+        for q in m.get('qualifiedAssertions', []):
+            mapping = q.get('nativeMapping')
+            if not mapping:
+                continue
+            require(mapping.get('authority'), 'Unqualified native predicate mapping: ' + q['sourcePointer'])
+            excluded = q['source_assertion']['status'].lower() in {'unresolved', 'rejected', 'superseded'}
+            if excluded:
+                require(mapping.get('relationshipType') is None and not mapping.get('relationshipIdentifier'), 'Unestablished relationship materialised: ' + q['sourcePointer'])
+                continue
+            rid = mapping.get('relationshipIdentifier')
+            require(rid in relationships, 'Missing materialised predicate: ' + q['sourcePointer'])
+            relation = relationships[rid]
+            predicate = q['source_assertion']['type']
+            if predicate in {'enabled_by', 'enterprise_enabled_by', 'uses_function', 'uses_process', 'exposes_process'}:
+                provider_type = elements[q['targetCanonicalId']][0]['archimateType']
+                consumer_type = m['archimateType']
+                serving_valid = applicability['keys']['Serving'] in applicability['endpoints'].get(provider_type, {}).get(consumer_type, '')
+                require(mapping.get('reverse') is True and mapping['relationshipType'] == ('Serving' if serving_valid else 'Association'), 'ARB provider-to-consumer Serving rule violated: ' + q['sourcePointer'])
+            elif predicate == 'realises_feature':
+                target_type = elements[q['targetCanonicalId']][0]['archimateType']
+                realization_valid = applicability['keys']['Realization'] in applicability['endpoints'].get(m['archimateType'], {}).get(target_type, '')
+                require(not mapping.get('reverse') and mapping['relationshipType'] == ('Realization' if realization_valid else 'Association'), 'ARB Realization rule violated: ' + q['sourcePointer'])
+            a, b = (q['targetCanonicalId'], cid) if mapping.get('reverse') else (cid, q['targetCanonicalId'])
+            require(mapping.get('sourceCanonicalId') == a and mapping.get('targetCanonicalId') == b, 'Incorrect predicate mapping direction: ' + q['sourcePointer'])
+            require(relation['source'] == elements[a][0]['exchange']['identifier'] and relation['target'] == elements[b][0]['exchange']['identifier'],
+                    'Materialised predicate endpoint mismatch: ' + q['sourcePointer'])
+            require(relation['archimateType'] == mapping['relationshipType'], 'Materialised predicate type mismatch: ' + q['sourcePointer'])
+            contribution = {'sourcePointer': q['sourcePointer'], 'sourceAssertion': q['source_assertion'], 'recordState': q['record_state'], 'authority': mapping['authority']}
+            preserved = (contribution in relation.get('qualifiedPredicateContributions', [])) if mapping.get('existingNativeRelationshipReused') else (
+                relation['standing'] == {'semantic': q['source_assertion']['status'], 'currentness': q['record_state']} and relation['provenance'].get('sourceAssertion') == q['source_assertion'])
+            require(preserved,
+                    'Materialised predicate loses source standing/provenance: ' + q['sourcePointer'])
     boundary_path = root / CONFIG / 'migration-boundary.json'
     if boundary_path.exists():
         boundary = read_json(boundary_path)
@@ -325,6 +378,11 @@ def project(root=ROOT):
                 groups[kind] = group
             ET.SubElement(groups[kind], tag('item'), identifierRef=m['exchange']['identifier'])
     content = ET.tostring(model, encoding='UTF-8', xml_declaration=True, pretty_print=True)
+    # Preserve literal source-text padding in parsed documentation without
+    # emitting trailing whitespace in the generated XML's physical lines.
+    # Numeric character references round-trip to the original characters.
+    content = re.sub(rb'(?<=\S)[ \t]+(?=\r?\n)',
+                     lambda match: b''.join(b'&#32;' if char == 32 else b'&#9;' for char in match.group()), content)
     parsed = ET.fromstring(content)
     # Reuse the existing offline resolver for the XML namespace and DC imports.
     sys.path.insert(0, str(root / 'docs/archimate/framework/tools'))

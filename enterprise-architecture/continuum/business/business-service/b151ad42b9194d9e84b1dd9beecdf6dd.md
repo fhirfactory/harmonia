@@ -386,6 +386,112 @@
       "specialization": "Home",
       "name": [],
       "documentation": []
+    },
+    {
+      "identifier": "id-3299f4b6a38558188642ba9d76298a1b",
+      "archimateType": "Association",
+      "source": "id-77ff0fef85f05d44b38dda24fc719a2b",
+      "target": "id-edd2707ca7e458b190c0e857d51bc695",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "established",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/98",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "b151ad42b9194d9e84b1dd9beecdf6dd",
+        "sourceAssertion": {
+          "from": "service:diagnostic-report-ingress",
+          "sources": [
+            {
+              "anchor": "7-diagnostic-administration",
+              "line": 120,
+              "source": "sa",
+              "text": " - *Exposed Service*: `Diagnostic Report Ingress` — Ingests results from external LIS/RIS systems."
+            }
+          ],
+          "status": "established",
+          "to": "feature:diagnostic-report-ingestion--binding",
+          "type": "associated_feature"
+        }
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:diagnostic-report-ingress\", \"sources\": [{\"anchor\": \"7-diagnostic-administration\", \"line\": 120, \"source\": \"sa\", \"text\": \" - *Exposed Service*: `Diagnostic Report Ingress` — Ingests results from external LIS/RIS systems.\"}], \"status\": \"established\", \"to\": \"feature:diagnostic-report-ingestion--binding\", \"type\": \"associated_feature\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:diagnostic-report-ingress\", \"sources\": [{\"anchor\": \"7-diagnostic-administration\", \"line\": 120, \"source\": \"sa\", \"text\": \" - *Exposed Service*: `Diagnostic Report Ingress` — Ingests results from external LIS/RIS systems.\"}], \"status\": \"established\", \"to\": \"feature:diagnostic-report-ingestion--binding\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/98",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},
@@ -416,7 +522,17 @@
         "to": "feature:diagnostic-report-ingestion--binding",
         "type": "associated_feature"
       },
-      "source_index": 98
+      "source_index": 98,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Association",
+        "reverse": false,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-3299f4b6a38558188642ba9d76298a1b",
+        "sourceCanonicalId": "b151ad42b9194d9e84b1dd9beecdf6dd",
+        "targetCanonicalId": "a00823445a8a44c1a00f3ec93a7e0e6f"
+      }
     }
   ]
 }
@@ -430,11 +546,11 @@ Ingests results from external LIS/RIS systems.
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| associated_feature | [[Feature] Diagnostic Report Ingestion & Binding](../../strategy/capability/feature/a00823445a8a44c1a00f3ec93a7e0e6f.md) | established / current | Feature association does not establish a particular native edge or whole-Feature realisation. |
+| associated_feature | [[Feature] Diagnostic Report Ingestion & Binding](../../strategy/capability/feature/a00823445a8a44c1a00f3ec93a7e0e6f.md) | established / current | Association — `id-3299f4b6a38558188642ba9d76298a1b` |
 
 ## Source-qualified contribution
 

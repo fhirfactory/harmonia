@@ -104,7 +104,7 @@ Every relationship needs source evidence, typed endpoints, bounded meaning, dire
 | Explicit performer fulfils Role / performs behaviour | Assignment: Actor → Role; Role/Actor → behaviour where supported and established | Qualified references are references, not new actors. No exhaustive participant matrix. |
 | Function/Process fulfils exposed Service | Realization: behaviour → Service | Never one Service per Function. Exposure and consumption must be established. |
 | Exposed Service used by consumer | Serving: provider Service → consuming behaviour/actor/component as permitted | No inference of ownership transfer. Native legality checked for the actual types. |
-| BEC materially enables BC (including B2.1) | Directed Association: BEC → BC, labelled material enablement; source records its inverse `enabled-by` | Proposed conservative encoding avoids mandatory runtime Serving semantics. No automatic application dependency. Requires profile review before new edges. |
+| BEC/EC materially enables a consumer (including B2.1) | Serving: enabling provider → enabled consumer, reversing `enabled_by` / `enterprise_enabled_by`, subject to native endpoint validity | [HCRL 1.1.5-002 ARB adjudication](../../../enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation) supersedes the earlier proposed Association default. Preserve source standing and predicate; no automatic runtime dependency or ownership transfer. |
 | Requires / Consumes / Produces information | Initially distinct directed Associations: responsible Function → information, preserving those three source predicates | `Consumes` is semantic action, not deletion; Requires is not necessarily read. A later Access mapping needs separately established Read/Write semantics. Do not collapse Requires and Consumes into Read. |
 | Established read/write of passive information | Access: active/behaviour → passive object with explicit accessType | Do not infer Write from information custody or Produces without the established representation contract. |
 | Explicit transfer or causal progression | Flow: sender → receiver for actual transfer; Triggering: antecedent → consequent for established causality/order | Consumption, dependency and proximity do not imply transfer or causality. |
@@ -113,7 +113,13 @@ Every relationship needs source evidence, typed endpoints, bounded meaning, dire
 | Motivation contributes to intent | Influence: source → affected motivation/strategy element, only where causal/contribution meaning and native endpoint legality fit | Co-governance and textual contribution may require labelled Association. No invented strength, Goal, Outcome or causal path; AX-07/08 have no causal outcome edges in the orientation source. |
 | Decision governs construct | Source/provenance properties and governed decision documentation; Motivation representation only if it actually is a Principle/Requirement/Constraint | No native ADR element; no automatic decision-to-Requirement conversion. |
 
-A labelled Association is proposed only for an explicitly established association whose specific Harmonia predicate must be retained. It is never a fallback for missing relationships or a way to bypass adjudication. New specialised association profiles above require review before their generation slice. Unresolved relations remain report entries, never ordinary graph edges labelled as fact.
+A labelled Association represents an established architectural relationship whose
+stronger native meaning is not justified, under the
+[ARB reconciliation rules](../../../enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation).
+This authorises a fallback for known relationship existence; an explicitly
+unestablished relationship remains a finding. The original predicate and standing
+remain available. Source status is not promoted by graph materialisation. Other
+new specialised profiles still require their actual review authority.
 
 ## 6. Traceability and navigation
 

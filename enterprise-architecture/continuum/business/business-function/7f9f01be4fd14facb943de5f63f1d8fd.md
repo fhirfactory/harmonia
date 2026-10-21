@@ -478,6 +478,112 @@
           }
         }
       ]
+    },
+    {
+      "identifier": "id-799dfbfc8a0e5b2aa911c086e1e9741d",
+      "archimateType": "Association",
+      "source": "id-770c0b13f2a05e4184064d7056a35ac1",
+      "target": "id-c1a4b8f0f5275f89bec405d882a45d07",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "established",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/280",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "7f9f01be4fd14facb943de5f63f1d8fd",
+        "sourceAssertion": {
+          "from": "function:manage-referral-progression",
+          "sources": [
+            {
+              "anchor": "3-referral-administration",
+              "line": 41,
+              "source": "sa",
+              "text": " - *Governed Process*: **Referral Progression Process**."
+            }
+          ],
+          "status": "established",
+          "to": "process:referral-progression-process",
+          "type": "governed_process"
+        }
+      },
+      "name": [
+        {
+          "text": "governed_process",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"function:manage-referral-progression\", \"sources\": [{\"anchor\": \"3-referral-administration\", \"line\": 41, \"source\": \"sa\", \"text\": \" - *Governed Process*: **Referral Progression Process**.\"}], \"status\": \"established\", \"to\": \"process:referral-progression-process\", \"type\": \"governed_process\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "governed_process",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"function:manage-referral-progression\", \"sources\": [{\"anchor\": \"3-referral-administration\", \"line\": 41, \"source\": \"sa\", \"text\": \" - *Governed Process*: **Referral Progression Process**.\"}], \"status\": \"established\", \"to\": \"process:referral-progression-process\", \"type\": \"governed_process\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/280",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},
@@ -508,7 +614,17 @@
         "to": "process:referral-progression-process",
         "type": "governed_process"
       },
-      "source_index": 280
+      "source_index": 280,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Association",
+        "reverse": false,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-799dfbfc8a0e5b2aa911c086e1e9741d",
+        "sourceCanonicalId": "7f9f01be4fd14facb943de5f63f1d8fd",
+        "targetCanonicalId": "cfb714e9320647ffa1dffc80dddd01d9"
+      }
     }
   ]
 }
@@ -522,11 +638,11 @@ Tracks referral disposition in an illustrative specialist pathway; dispositions 
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| governed_process | [Referral Progression Process](../business-process/cfb714e9320647ffa1dffc80dddd01d9.md) | established / current | Process responsibility/governance is not automatically Assignment or Composition. |
+| governed_process | [Referral Progression Process](../business-process/cfb714e9320647ffa1dffc80dddd01d9.md) | established / current | Association — `id-799dfbfc8a0e5b2aa911c086e1e9741d` |
 
 ## Source-qualified contribution
 

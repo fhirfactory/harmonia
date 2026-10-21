@@ -6,6 +6,15 @@ This Praxis operationalises the [continuum representation](continuum-representat
 under the common [Architecture Review Praxis](architecture-review-praxis.md).
 The operative Task/HCRL determines creation, change and allocation authority.
 
+For DesignNote release processing, apply the
+[ARB assertion-disposition rules](continuum-representation.md#arb-semantic-reconciliation-follow-up).
+Review individual normative assertions and their later adjudications, retaining
+an explicit disposition and exact source correspondence for each. Use native
+Constraint/Requirement or the governed CourseOfAction specialisation
+ImplementationGuideline where that is what the assertion means. Existing canonical
+assertions can represent the meaning without allocating duplicates. Preserve
+genuine design deferrals and the DesignNote itself as attributable capture/evidence.
+
 1. **Identify.** Read the actual source and its governing decisions. Establish the
    bounded architectural thing, full responsibility/definition, exclusions and
    assertion standing. Distinguish an element from a category, example, bundle,

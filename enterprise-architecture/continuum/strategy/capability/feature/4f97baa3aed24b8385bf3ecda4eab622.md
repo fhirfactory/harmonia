@@ -328,7 +328,120 @@
       }
     ]
   },
-  "relationships": [],
+  "relationships": [
+    {
+      "identifier": "id-6bc506cfd4f35efe9fa8e069b2775d17",
+      "archimateType": "Association",
+      "source": "id-1bd07e714962537590dc80ad2f2c7acd",
+      "target": "id-95802b6c6b505351b4d3d57f8aed2753",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/1095",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "4f97baa3aed24b8385bf3ecda4eab622",
+        "sourceAssertion": {
+          "from": "proposal:feature-demand-capacity-planning-projection",
+          "provenance": {
+            "authority": "Proposed structural assertions; existing Canonical semantic standing retained",
+            "derivation": "Reconciliation against the explicit human-reviewed BEC candidate hierarchy",
+            "evidence": [
+              {
+                "line": 2,
+                "path": "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json",
+                "standing": "Explicit human task decision; reviewed candidate, not RADS acceptance",
+                "text": " \"authority\": \"User-provided human-adjudicated reviewed candidate BEC hierarchy, 2026-10-16; bounded reconciliation input, not RADS acceptance.\","
+              }
+            ],
+            "method": "Bounded semantic reconciliation; no unconstrained synthesis"
+          },
+          "rationale": "The existing purpose-specific Feature uses shared Information Product Administration framing while retaining its research, population-health or planning purpose. This does not decompose the purpose CT2 or confer analytical authority.",
+          "status": "Proposed",
+          "to": "proposal:bec-service-planning-information-provision",
+          "type": "purpose_context"
+        }
+      },
+      "name": [
+        {
+          "text": "purpose_context",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"proposal:feature-demand-capacity-planning-projection\", \"provenance\": {\"authority\": \"Proposed structural assertions; existing Canonical semantic standing retained\", \"derivation\": \"Reconciliation against the explicit human-reviewed BEC candidate hierarchy\", \"evidence\": [{\"line\": 2, \"path\": \"docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json\", \"standing\": \"Explicit human task decision; reviewed candidate, not RADS acceptance\", \"text\": \" \\\"authority\\\": \\\"User-provided human-adjudicated reviewed candidate BEC hierarchy, 2026-10-16; bounded reconciliation input, not RADS acceptance.\\\",\"}], \"method\": \"Bounded semantic reconciliation; no unconstrained synthesis\"}, \"rationale\": \"The existing purpose-specific Feature uses shared Information Product Administration framing while retaining its research, population-health or planning purpose. This does not decompose the purpose CT2 or confer analytical authority.\", \"status\": \"Proposed\", \"to\": \"proposal:bec-service-planning-information-provision\", \"type\": \"purpose_context\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "purpose_context",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"proposal:feature-demand-capacity-planning-projection\", \"provenance\": {\"authority\": \"Proposed structural assertions; existing Canonical semantic standing retained\", \"derivation\": \"Reconciliation against the explicit human-reviewed BEC candidate hierarchy\", \"evidence\": [{\"line\": 2, \"path\": \"docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json\", \"standing\": \"Explicit human task decision; reviewed candidate, not RADS acceptance\", \"text\": \" \\\"authority\\\": \\\"User-provided human-adjudicated reviewed candidate BEC hierarchy, 2026-10-16; bounded reconciliation input, not RADS acceptance.\\\",\"}], \"method\": \"Bounded semantic reconciliation; no unconstrained synthesis\"}, \"rationale\": \"The existing purpose-specific Feature uses shared Information Product Administration framing while retaining its research, population-health or planning purpose. This does not decompose the purpose CT2 or confer analytical authority.\", \"status\": \"Proposed\", \"to\": \"proposal:bec-service-planning-information-provision\", \"type\": \"purpose_context\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/1095",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "unresolvedProperties": {},
   "representation": {
     "sourceLinksRebased": true,
@@ -363,7 +476,17 @@
         "to": "proposal:bec-service-planning-information-provision",
         "type": "purpose_context"
       },
-      "source_index": 1095
+      "source_index": 1095,
+      "nativeMapping": {
+        "disposition": "native relationship",
+        "relationshipType": "Association",
+        "reverse": false,
+        "reason": "ARB predicate rule; native endpoint applicability verified.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "relationshipIdentifier": "id-6bc506cfd4f35efe9fa8e069b2775d17",
+        "sourceCanonicalId": "4f97baa3aed24b8385bf3ecda4eab622",
+        "targetCanonicalId": "4873cd4b960d45d8b93560d5c8b98500"
+      }
     }
   ]
 }
@@ -385,8 +508,8 @@ Projection does not establish a planning conclusion or allocate services and sta
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| purpose_context | [[CT2] Service Planning Data Management](../4873cd4b960d45d8b93560d5c8b98500.md) | Proposed / current | Purpose context is preserved as context; it is not decomposition. |
+| purpose_context | [[CT2] Service Planning Data Management](../4873cd4b960d45d8b93560d5c8b98500.md) | Proposed / current | Association — `id-6bc506cfd4f35efe9fa8e069b2775d17` |

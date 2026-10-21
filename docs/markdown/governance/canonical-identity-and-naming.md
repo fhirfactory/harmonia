@@ -249,6 +249,15 @@ provenance; no discarded field is silently reclassified into another alias chann
 Feature specialisation uses native `Capability` and `harmoniaType=Feature`.
 Topic specialisation is governed by the information-element decision above.
 
+The [RAD-1.1.5 ARB adjudication](../../../enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation)
+additionally authorises ImplementationGuideline as a native CourseOfAction
+specialisation. Its display prefix is `[ImplementationGuideline]`; this supplies
+no new formal canonicalName qualifier. Preserve the affected name as unresolved
+under Q-01 until vocabulary is explicitly established. The same adjudication
+authorises semantic historical/current correspondence while reserving historical
+UUIDs and provenance; the initial unresolved-crosswalk account below remains
+establishment history, not a prohibition on the authorised reconciliation.
+
 ## Establishment, publication and history
 
 The existing RADS resource captures own the new metadata. Historical-reference

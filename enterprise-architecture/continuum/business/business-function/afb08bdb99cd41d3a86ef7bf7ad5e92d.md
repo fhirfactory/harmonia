@@ -414,7 +414,14 @@
         "to": "feature:screening-recall-notification-distribution",
         "type": "realises_feature"
       },
-      "source_index": 258
+      "source_index": 258,
+      "nativeMapping": {
+        "disposition": "explicitly unestablished",
+        "relationshipType": null,
+        "reverse": false,
+        "reason": "Feature association is explicitly not established; this is not an approved edge.",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation"
+      }
     }
   ]
 }
@@ -430,11 +437,11 @@ Feature association not established: FEAT-SD-14 — Screening Recall Notificatio
 
 ## Qualified relationship assertions
 
-These source predicates retain their recorded standing and currentness. Their native mapping remains unestablished; they are not inferred ArchiMate edges. The complete original assertions and qualifications are retained in this element’s metadata.
+Original source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.
 
-| Source predicate | Target element | Standing / currentness | Unresolved native meaning |
+| Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
-| realises_feature | [[Feature] Screening Recall Notification Distribution](../../strategy/capability/feature/7ec85487625349a7b3292585fadb20c7.md) | unresolved / current | Unresolved source assertion; native mapping cannot promote it to a graph fact.  |
+| realises_feature | [[Feature] Screening Recall Notification Distribution](../../strategy/capability/feature/7ec85487625349a7b3292585fadb20c7.md) | unresolved / current | Excluded: source expressly leaves relationship unestablished |
 
 ## Source-qualified contribution
 

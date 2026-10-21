@@ -300,7 +300,601 @@
       }
     ]
   },
-  "relationships": [],
+  "relationships": [
+    {
+      "identifier": "id-c3910e52440850b6ba3c7e9cf5e7c4a4",
+      "archimateType": "Serving",
+      "source": "id-e4ba93a12970559e916ecaabb0eb0bb3",
+      "target": "id-974025114007505b922d37dc6ba0a04f",
+      "attributes": {},
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/886",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "5478878e0e6e4d34a8d5023ac6ac2d54",
+        "sourceAssertion": {
+          "from": "capability:patient-clinical-record",
+          "provenance": {
+            "authority": "Proposed only; cited source standing is not inherited",
+            "derivation": "Semantic responsibility analysis; no authority transfer",
+            "evidence": [
+              {
+                "line": 10,
+                "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                "standing": "Current corpus evidence; does not promote the derived assertion",
+                "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+              }
+            ],
+            "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+          },
+          "rationale": "Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.",
+          "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+          "sources": [],
+          "status": "Proposed",
+          "supporting_responsibility_elements": [
+            "feature:longitudinal-health-record-lhr-assembly",
+            "feature:active-clinical-record-access",
+            "feature:durable-clinical-record-preservation",
+            "function:assemble-longitudinal-clinical-record",
+            "service:longitudinal-clinical-record-query",
+            "function:maintain-active-clinical-record"
+          ],
+          "to": "proposal:ec-information-authority-qualification",
+          "type": "enterprise_enabled_by"
+        }
+      },
+      "name": [
+        {
+          "text": "enterprise_enabled_by",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"capability:patient-clinical-record\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"feature:longitudinal-health-record-lhr-assembly\", \"feature:active-clinical-record-access\", \"feature:durable-clinical-record-preservation\", \"function:assemble-longitudinal-clinical-record\", \"service:longitudinal-clinical-record-query\", \"function:maintain-active-clinical-record\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "enterprise_enabled_by",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"capability:patient-clinical-record\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"feature:longitudinal-health-record-lhr-assembly\", \"feature:active-clinical-record-access\", \"feature:durable-clinical-record-preservation\", \"function:assemble-longitudinal-clinical-record\", \"service:longitudinal-clinical-record-query\", \"function:maintain-active-clinical-record\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/886",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "id-88d9d930ffc053f793c213e6f79c6d8d",
+      "archimateType": "Serving",
+      "source": "id-e4ba93a12970559e916ecaabb0eb0bb3",
+      "target": "id-cc4edaeee1d3519185ee94a683e4a5e0",
+      "attributes": {},
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/889",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "682b8684ad9e49d5a5c348a148081607",
+        "sourceAssertion": {
+          "from": "proposal:bec-governed-reference-dataset-administration",
+          "provenance": {
+            "authority": "Proposed only; cited source standing is not inherited",
+            "derivation": "Semantic responsibility analysis; no authority transfer",
+            "evidence": [
+              {
+                "line": 10,
+                "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                "standing": "Current corpus evidence; does not promote the derived assertion",
+                "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+              }
+            ],
+            "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+          },
+          "rationale": "Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.",
+          "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+          "sources": [],
+          "status": "Proposed",
+          "supporting_responsibility_elements": [
+            "proposal:feature-governed-dataset-content-revision",
+            "proposal:function-accept-governed-dataset-revision",
+            "proposal:service-governed-reference-dataset-content-query"
+          ],
+          "to": "proposal:ec-information-authority-qualification",
+          "type": "enterprise_enabled_by"
+        }
+      },
+      "name": [
+        {
+          "text": "enterprise_enabled_by",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"proposal:bec-governed-reference-dataset-administration\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"proposal:feature-governed-dataset-content-revision\", \"proposal:function-accept-governed-dataset-revision\", \"proposal:service-governed-reference-dataset-content-query\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "enterprise_enabled_by",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"proposal:bec-governed-reference-dataset-administration\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"proposal:feature-governed-dataset-content-revision\", \"proposal:function-accept-governed-dataset-revision\", \"proposal:service-governed-reference-dataset-content-query\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/889",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "id-e64f76bbe27c530d8c8616059437de82",
+      "archimateType": "Serving",
+      "source": "id-e4ba93a12970559e916ecaabb0eb0bb3",
+      "target": "id-29e0bf94882559a7b6ed9d092303a560",
+      "attributes": {},
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/887",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "6c3de7750ef1436cad6a9533731782b6",
+        "sourceAssertion": {
+          "from": "capability:person-identity",
+          "provenance": {
+            "authority": "Proposed only; cited source standing is not inherited",
+            "derivation": "Semantic responsibility analysis; no authority transfer",
+            "evidence": [
+              {
+                "line": 10,
+                "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                "standing": "Current corpus evidence; does not promote the derived assertion",
+                "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+              }
+            ],
+            "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+          },
+          "rationale": "Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.",
+          "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+          "sources": [],
+          "status": "Proposed",
+          "supporting_responsibility_elements": [
+            "feature:identifier-resolution",
+            "feature:cross-authority-identifier-correlation",
+            "feature:identity-alias-association",
+            "feature:governed-identity-correction",
+            "function:resolve-person-identifier",
+            "service:person-identifier-resolution"
+          ],
+          "to": "proposal:ec-information-authority-qualification",
+          "type": "enterprise_enabled_by"
+        }
+      },
+      "name": [
+        {
+          "text": "enterprise_enabled_by",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"capability:person-identity\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"feature:identifier-resolution\", \"feature:cross-authority-identifier-correlation\", \"feature:identity-alias-association\", \"feature:governed-identity-correction\", \"function:resolve-person-identifier\", \"service:person-identifier-resolution\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "enterprise_enabled_by",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"capability:person-identity\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"feature:identifier-resolution\", \"feature:cross-authority-identifier-correlation\", \"feature:identity-alias-association\", \"feature:governed-identity-correction\", \"function:resolve-person-identifier\", \"service:person-identifier-resolution\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/887",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "id-b0cce339e3ce59d99feeef2959d1cd7d",
+      "archimateType": "Serving",
+      "source": "id-e4ba93a12970559e916ecaabb0eb0bb3",
+      "target": "id-b78f67bb04765785bb46be9e9c5427d3",
+      "attributes": {},
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "preserved historical assertion"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/885",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "8c850faafb334f97a81a0b4cd8fdb65f",
+        "sourceAssertion": {
+          "from": "proposal:bec-information-authority-representation",
+          "provenance": {
+            "authority": "Proposed only; cited source standing is not inherited",
+            "derivation": "Semantic responsibility analysis; no authority transfer",
+            "evidence": [
+              {
+                "line": 10,
+                "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                "standing": "Current corpus evidence; does not promote the derived assertion",
+                "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+              }
+            ],
+            "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+          },
+          "rationale": "Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.",
+          "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+          "sources": [],
+          "status": "Proposed",
+          "supporting_responsibility_elements": [
+            "proposal:feature-information-authority-source-standing-representation",
+            "proposal:function-qualify-information-authority-standing"
+          ],
+          "to": "proposal:ec-information-authority-qualification",
+          "type": "enterprise_enabled_by"
+        }
+      },
+      "name": [
+        {
+          "text": "enterprise_enabled_by",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"proposal:bec-information-authority-representation\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"proposal:feature-information-authority-source-standing-representation\", \"proposal:function-qualify-information-authority-standing\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "preserved historical assertion",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "enterprise_enabled_by",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"proposal:bec-information-authority-representation\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"proposal:feature-information-authority-source-standing-representation\", \"proposal:function-qualify-information-authority-standing\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/885",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "id-aa3e82bfe4045610acf0fa9c5912a148",
+      "archimateType": "Serving",
+      "source": "id-e4ba93a12970559e916ecaabb0eb0bb3",
+      "target": "id-14dccd7d85915b23b805d452c4bb35e2",
+      "attributes": {},
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "preserved historical assertion"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+        "selector": "/relationships/888",
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "qualifiedSourceCanonicalId": "da1a983d4dcf4d5bb772b8f69bc08426",
+        "sourceAssertion": {
+          "from": "capability:governed-assurance",
+          "provenance": {
+            "authority": "Proposed only; cited source standing is not inherited",
+            "derivation": "Semantic responsibility analysis; no authority transfer",
+            "evidence": [
+              {
+                "line": 10,
+                "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                "standing": "Current corpus evidence; does not promote the derived assertion",
+                "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+              }
+            ],
+            "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+          },
+          "rationale": "Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.",
+          "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+          "sources": [],
+          "status": "Proposed",
+          "supporting_responsibility_elements": [
+            "function:establish-assurance-context",
+            "function:assess-assurance-evidence",
+            "function:adjudicate-assurance-assessment",
+            "service:request-service-assurance",
+            "service:request-service-assurance-status",
+            "service:communicate-service-assurance-outcome"
+          ],
+          "to": "proposal:ec-information-authority-qualification",
+          "type": "enterprise_enabled_by"
+        }
+      },
+      "name": [
+        {
+          "text": "enterprise_enabled_by",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"capability:governed-assurance\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"function:establish-assurance-context\", \"function:assess-assurance-evidence\", \"function:adjudicate-assurance-assessment\", \"service:request-service-assurance\", \"service:request-service-assurance-status\", \"service:communicate-service-assurance-outcome\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "preserved historical assertion",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "Proposed",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "enterprise_enabled_by",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"capability:governed-assurance\", \"provenance\": {\"authority\": \"Proposed only; cited source standing is not inherited\", \"derivation\": \"Semantic responsibility analysis; no authority transfer\", \"evidence\": [{\"line\": 10, \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\", \"standing\": \"Current corpus evidence; does not promote the derived assertion\", \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\"}], \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\"}, \"rationale\": \"Source standing recurs in competing identity assertions, clinical synthesis, reference content and evidence use; persistence success and freshness are insufficient substitutes.\", \"responsibility_boundary\": \"Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.\", \"sources\": [], \"status\": \"Proposed\", \"supporting_responsibility_elements\": [\"function:establish-assurance-context\", \"function:assess-assurance-evidence\", \"function:adjudicate-assurance-assessment\", \"service:request-service-assurance\", \"service:request-service-assurance-status\", \"service:communicate-service-assurance-outcome\"], \"to\": \"proposal:ec-information-authority-qualification\", \"type\": \"enterprise_enabled_by\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/888",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "unresolvedProperties": {},
   "representation": {
     "sourceLinksRebased": true,

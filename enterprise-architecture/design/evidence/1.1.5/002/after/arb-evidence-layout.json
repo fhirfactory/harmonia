@@ -1,0 +1,19 @@
+{
+  "outcome": "PASS",
+  "version": "1.1.5",
+  "iteration": "002",
+  "records": [
+    "evidence/1.1.5/002/after/ai-agent-reports/20261021T100913Z-element-continuum-applied-migration.md",
+    "evidence/1.1.5/002/after/ai-agent-reports/20261021T102230Z-continuum-review-manifest.md",
+    "evidence/1.1.5/002/after/ai-agent-reports/20261021T121642Z-arb-semantic-reconciliation-applied.md",
+    "evidence/1.1.5/002/before/ai-agent-tasks/20261021T092725Z-establish-and-apply-element-continuum.md",
+    "evidence/1.1.5/002/before/ai-agent-tasks/20261021T093758Z-present-holistic-review.md",
+    "evidence/1.1.5/002/before/ai-agent-tasks/20261021T094745Z-continue-interrupted-work.md",
+    "evidence/1.1.5/002/before/ai-agent-tasks/20261021T094837Z-retry-transient-failures.md",
+    "evidence/1.1.5/002/before/ai-agent-tasks/20261021T101602Z-generate-continuum-review-manifest.md",
+    "evidence/1.1.5/002/before/ai-agent-tasks/20261021T114345Z-apply-arb-semantic-reconciliation.md"
+  ],
+  "errors": [],
+  "unresolved": [],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}
