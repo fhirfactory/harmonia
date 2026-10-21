@@ -6,7 +6,7 @@
 | [DR-2](#dr-2) | Element representation, identity, standing and incorporation Praxis | Establishment and application authorised by Task | Applied representation and checks below; holistic acceptance pending. |
 | [DR-3](#dr-3) | RAD ingestion, reconciliation and source retirement | Application authorised by Task | Preserve authority and qualified assertions; defer only affected matters requiring new architectural decisions. |
 | [DR-4](#dr-4) | ArchiMate, publication and reproducible machinery | Bounded extensions authorised by Task | Preserve projection/workbench roles and actual verification limits. |
-| [DR-5](#dr-5) | Unresolved architectural questions and result acceptance | Result review pending | Agent cannot supply missing architectural decisions or confirm closure. |
+| [DR-5](#dr-5) | Unresolved architectural questions and result acceptance | ARB review in progress; substantial residuals adjudicated below | Migration uncertainty is preserved, but the Solution Architect/ARB now supplies authorised semantic reconciliation rules. |
 | [DR-6](#dr-6) | Bounded Minutiae and formal activity evidence | Not recorded | Supporting edits and formal evidence disclosed below. |
 
 # HCRL — RAD-1.1.5 element-oriented Enterprise Architecture Continuum
@@ -221,6 +221,187 @@ historical, superseded and unresolved assertions remain available. Native graph
 validity and tooling PASS are not architectural approval. The maintained result is
 mechanically reproducible and reviewable; full semantic reconciliation/stability
 is qualified by these questions and final Solution Architect confirmation.
+
+<a id="arb-semantic-reconciliation"></a>
+## ARB semantic reconciliation — continuum migration residuals
+
+**ARB adjudication recorded after migration review.** The migration correctly
+preserved uncertainty rather than manufacturing identity or native ArchiMate
+relationships. That conservative migration boundary is not, however, an
+architectural prohibition on subsequent adjudication. The Solution Architect and
+ARB may establish semantic continuity, identity correspondence and relationship
+typing from the architectural evidence. A migration residual therefore does not
+remain unresolved merely because the migration machinery declined to infer it.
+
+The review applies a semantic-continuity test rather than a string-identity test.
+An architectural assertion is represented when its architectural meaning survives
+in the continuum, including where its name, decomposition, native representation
+or carrier has changed. Exact labels remain useful evidence but are neither
+necessary nor sufficient by themselves. Where an earlier and current element have
+the same meaning, tier, parentage and governed canonical context, the ARB may
+establish identity/correspondence notwithstanding different migration UUIDs.
+Where the concept has evolved, the ARB records the evolution rather than creating
+a false duplicate. Only a source assertion for which no represented,
+superseded/historical, deliberately excluded or explicitly unresolved disposition
+can be established is an omission.
+
+### Capability reconciliation
+
+The **214 historical Capability references in Q-02 are not to be treated as 214
+architecture gaps**. Review has established that a substantial population has
+direct current RAD counterparts, including examples with the same display name,
+capability tier, hierarchy and canonicalName but a different migration identity.
+Those are strong correspondence/duplicate candidates rather than orphaned
+architecture.
+
+The ARB authorises capability reconciliation using the following evidence order:
+semantic responsibility and architectural meaning; capability tier and governed
+parentage; canonical hierarchy/name; source provenance and accepted evolution; and
+display-name correspondence. Exact name/path agreement is strong evidence but does
+not override contradictory semantics. Reconciliation SHALL distinguish:
+
+1. **direct correspondence** — same architectural capability represented by a
+   current canonical capability;
+2. **evolved correspondence** — the architectural concern survives through an
+   accepted rename, refinement or decomposition;
+3. **related only** — same architectural vicinity but not sufficient evidence of
+   same identity; and
+4. **no counterpart** — genuinely historical/unmapped and retained as such.
+
+Where direct correspondence is established, the historical/current pair SHALL NOT
+remain represented as two independent current architectural capabilities merely
+because migration UUIDs differ. Identity/lineage mechanics must preserve the
+historical provenance and prevent UUID reuse while presenting one coherent
+architectural concept.
+
+The **223 records lacking an established original definition** remain a separate
+evidence-quality fact. Missing historical definition text SHALL NOT be invented;
+it does not prevent correspondence where other authoritative architectural
+evidence is sufficient.
+
+### Qualified predicate reconciliation
+
+The **462 qualified source predicates in Q-11 are preserved architectural
+relationship assertions, not 462 missing architectural decisions**. Their
+population is:
+
+| Predicate | Count | ARB native-treatment rule |
+| --- | ---: | --- |
+| governed_process | 16 | Use the strongest endpoint-valid native relationship established by source semantics; otherwise Association. |
+| uses_function | 6 | Prefer the endpoint-valid Serving direction where the Function provides behaviour used by the consumer; otherwise Association pending stronger semantics. |
+| realises_feature | 11 | Realization where the source assertion and endpoint types preserve that meaning. |
+| participating_function | 8 | Use the strongest endpoint-valid participation/behaviour relationship established by the source; otherwise Association. |
+| contributes_feature | 1 | Use the strongest justified contribution relationship; otherwise Association. |
+| exposes_process | 1 | Prefer Serving where the Process exposes behaviour to the consumer; otherwise Association. |
+| uses_process | 1 | Prefer the endpoint-valid reverse Serving direction where the Process serves the user; otherwise Association. |
+| associated_feature | 120 | Association unless a stronger relationship is established by the source assertion. |
+| enabled_by | 62 | **Reverse Serving:** if A is enabled_by B, represent B —Serving→ A, subject to native endpoint validity. |
+| enterprise_enabled_by | 194 | **Reverse Serving:** if A is enterprise_enabled_by B, represent B —Serving→ A, subject to native endpoint validity. |
+| enterprise_contribution | 38 | Preserve contribution semantics using the strongest justified native relationship; otherwise Association. Do not invent Service-consumption semantics. |
+| purpose_context | 3 | Association unless the source establishes a stronger architectural relationship; retain the predicate qualification where it carries context not expressible by the edge. |
+| responsibility_parent | 1 | Apply the native structural relationship justified by the governed responsibility model; otherwise Association pending endpoint adjudication. |
+
+Thus **256 predicates (55.4%)** in the two enabled-by families have an ARB-approved
+default mapping to reverse Serving, and **11** explicit realises-feature predicates
+have a direct Realization rule where endpoint validity holds. Association is the
+governed fallback when the existence of the architectural relationship is known
+but a stronger ArchiMate semantic cannot be demonstrated.
+
+The governing principle is:
+
+> **Represent the known relationship using the strongest justified native
+> ArchiMate relationship. Use Association as the safe native fallback; strengthen
+> it only when the source semantics justify the stronger relationship.**
+
+The original qualified predicate and source provenance SHALL remain available
+where they convey semantics not fully expressed by the native edge. Native
+relationship materialisation SHALL NOT erase the evidence from which the
+adjudication was made. Conversely, the existence of a qualified predicate is no
+longer sufficient reason to leave a known architectural relationship outside the
+native graph.
+
+### DesignNote capture and release Praxis
+
+The retained Domain05 **DesignNotes are governed architectural capture artefacts**.
+They are not required to correspond one-for-one with canonical ArchiMate elements,
+and they are not historical junk to be discarded after ingestion. Their purpose is
+to permit architectural thinking to be captured before every contained assertion
+has been normalised into the continuum.
+
+A DesignNote may contain zero, one or many architectural assertions. During the
+release Praxis, each substantive assertion SHALL be analysed and given an explicit
+disposition. The normal classifications include:
+
+- **Constraint** — invariant, prohibition, responsibility boundary, semantic
+  distinction or other restriction on the architecture;
+- **Requirement** — behaviour, capability, service or outcome the architecture is
+  required to provide or support;
+- **ImplementationGuideline** — Harmonia specialisation of CourseOfAction,
+  recording an authorised architectural/implementation direction for satisfying
+  requirements without incorrectly turning that choice into an enduring
+  requirement;
+- an appropriate existing/new canonical architectural element or relationship
+  where the assertion defines such a thing;
+- represented by an existing canonical assertion;
+- superseded/rejected/deliberately excluded; or
+- explicitly unresolved.
+
+Rationale, examples, explanatory prose and diagrams may remain provenance without
+being manufactured into canonical elements. Explicitly unresolved implementation
+choices SHALL remain unresolved and SHALL NOT be converted into Requirements merely
+because they occur in a DesignNote.
+
+A DesignNote is considered **fully processed for a release only when every
+normative architectural assertion has an explicit disposition**. Processing does
+not delete the DesignNote: it remains attributable provenance/evidence for the
+canonical architecture and its decisions. New DesignNotes may continue to be
+captured in the governed DesignNote source directory and are inputs to this release
+Praxis.
+
+Review of the current 18 pre-migration Domain05 DesignNotes confirms that this
+classification is materially applicable. They contain substantial normative
+Constraints, Requirements and implementation directions alongside rationale and
+explicitly deferred matters. Examples include Mneme Context/Pragma boundaries,
+Petasos durable handoff semantics, Themis distributed policy enforcement,
+Mnemosyne persistence constraints, Kleio authoritative audit capture, Pylai
+interoperability boundaries, Energeia/Praxis responsibility, Digital Twin
+execution semantics and Identity/Authentication/Authorisation implementation
+direction. Their architectural content SHALL therefore be reconciled assertion by
+assertion rather than treated as an indivisible DesignNote element.
+
+### Effect on DR-5 questions
+
+This ARB review changes the interpretation of the original migration residuals:
+
+- **Q-02 is substantially resolved in principle.** Capability correspondence is
+  authorised under the semantic-continuity rules above. The remaining activity is
+  exhaustive application of those rules to the 214 records and retention of any
+  genuine no-counterpart cases.
+- **Q-09 is resolved as a carrier question.** DesignNote is a governed capture and
+  provenance artefact; its assertions are classified/disposed during the release
+  Praxis. The Class/Package assertions may remain explicitly unresolved where the
+  note itself defers their native classification.
+- **Q-11 is substantially resolved in principle.** Qualified predicates are known
+  architectural relationship assertions. Native mapping follows the rules above,
+  with reverse Serving for enabled-by families and Association as the safe fallback
+  where no stronger semantics are established. Remaining work is endpoint-valid
+  application and validation, not rediscovery of whether a relationship exists.
+- **Q-10 is narrowed accordingly.** Service-consumption and cross-level matrices
+  still require correct endpoint correspondence, but known relationships need not
+  remain non-native solely because the migration lacked permission to adjudicate
+  them.
+- **Q-12 no longer reserves these matters to an unspecified future authority.**
+  The present Solution Architect/ARB review is that authority. Holistic acceptance
+  still requires completion of the semantic audit and truthful recording of any
+  genuine residuals.
+
+These adjudications do **not** assert that the 214 capability records and 462
+predicate records have already been mechanically rewritten. They authorise and
+define the deterministic reconciliation that the release machinery must apply and
+verify. Mechanical application evidence must report exact mapped, evolved,
+related-only and residual counts rather than converting this architectural
+decision into an unsupported PASS.
+
 
 <a id="dr-6"></a>
 ## DR-6 — Bounded Minutiae and formal evidence
