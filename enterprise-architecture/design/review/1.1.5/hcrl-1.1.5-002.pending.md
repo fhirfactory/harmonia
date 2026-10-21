@@ -395,6 +395,177 @@ This ARB review changes the interpretation of the original migration residuals:
   still requires completion of the semantic audit and truthful recording of any
   genuine residuals.
 
+### Further ARB adjudication of DR-5 residuals
+
+The remaining DR-5 questions have been reviewed against the maintained RAD sources.
+The following dispositions replace a blanket interpretation of them as equally
+unresolved migration blockers.
+
+#### Q-01 — canonical-name vocabulary: retained, but narrowed
+
+Q-01 remains a **real naming-governance question**, not an architectural-content
+gap. The maintained naming governance explicitly requires formal qualifiers to be
+authorised and explicitly prohibits manufacturing missing vocabulary or ancestry.
+Existing governed vocabularies already cover Motivation local naming, CT1/CT2/CT3,
+BEC/EC where applicable, FEAT/FN/SV/PR, and the information abstractions BO/TOPIC/
+ARTIFACT. The review has not found an authorised general qualifier vocabulary for
+all newly represented native types responsible for the remaining 164 unresolved
+canonicalNames.
+
+The ARB therefore preserves those canonicalNames as unresolved until the naming
+vocabulary is deliberately completed. Their identity, native classification,
+displayName, friendlyName where established, architectural content and standing
+remain independently valid. **No element is an architectural omission merely
+because canonicalName is unresolved.**
+
+#### Q-03 — external authorities: resolved
+
+The Motivation architecture explicitly distinguishes external authorities and
+regulatory bodies from Harmonia's six enterprise Stakeholders. The Business
+Architecture independently establishes **Government / Regulatory Body** as one of
+the seven canonical Business Actor categories.
+
+The ARB therefore establishes:
+
+- an external authority/regulatory organisation is **not** an enterprise
+  Stakeholder merely because it influences Harmonia;
+- where the authority itself is represented as a participating identifiable
+  enterprise-ecosystem entity, its appropriate Business Architecture
+  classification is **BusinessActor — Government / Regulatory Body**;
+- the legal, statutory, identifier, privacy, interoperability or standards effect
+  imposed by that authority is represented through the applicable Motivation
+  Driver/Constraint/Requirement/Influence architecture rather than by converting
+  the authority into a Stakeholder; and
+- a Motivation-level reference to the source of a constraint and a BusinessActor
+  representation of the external organisation are architectural facets, not
+  automatically the same element identity.
+
+Q-03 is therefore closed as a classification question. Individual authority
+instances need only be materialised where the architecture actually requires an
+independently represented Actor.
+
+#### Q-04 — coded catalogue handoffs: identity rule resolved; instance work remains
+
+CORE/SEC/PROV/INT/APP/DIR catalogue codes, titles and handoff labels are evidence,
+not identity. The ARB retains the migration's refusal to merge instances from code
+or title equality alone, but removes any implication that such records require a
+special identity doctrine.
+
+The ordinary semantic-continuity rule established above applies: where source
+responsibility, meaning, scope and provenance establish the same architectural
+thing, reconcile it to the existing canonical element and retain the catalogue
+code as alias/provenance. Where the catalogue entry is an evolved predecessor,
+record lineage/evolution. Where it represents a distinct architectural thing,
+retain a distinct identity. A layering-pattern or catalogue row does not become an
+element merely by appearing in a catalogue.
+
+Q-04 is therefore **resolved in principle**. Remaining work is bounded
+record-by-record correspondence, not an unresolved architectural rule.
+
+#### Q-05 — G2 information candidates and reified relationships: standing governs
+
+Q-05 is narrowed rather than globally closed. The maintained G2 review already
+contains explicit architectural standing and decisions and SHALL be honoured as
+such. In particular, approved decisions such as G2-D01–D04, accepted Topic
+retypings/correspondences and explicitly approved relationships may be reconciled
+into the continuum under semantic continuity. Rejected/superseded candidates,
+including the former independent Referral Disposition candidate, SHALL NOT be
+resurrected by migration. Category-D suggestions remain non-authoritative.
+Residual G2 B/C questions remain genuinely candidate/unresolved only to the extent
+recorded by that review.
+
+Assemblies, Views, Collections, Relationships and Topics SHALL retain their
+different semantics. A reified information Relationship is not collapsed into an
+ArchiMate edge merely because both describe a relationship; nor does an ArchiMate
+edge manufacture an information Concept. Known same-instance retypings may be
+reconciled; cross-level correspondence requires the semantic assertion actually
+established by the G2 decision.
+
+Thus Q-05 is no longer a single unresolved migration bucket. Its disposition is
+the **per-assertion standing already established by G2**, with only the explicitly
+retained G2 questions remaining unresolved.
+
+#### Q-06 — strategic versus application facets: resolved
+
+Shared terminology does not establish identity across architectural layers. A
+strategic construct such as Digital Twin expresses strategic capability/resource/
+course meaning at its governed abstraction, while an ApplicationComponent named
+DigitalTwin represents an application-structure realisation. They SHALL remain
+separate architectural elements unless explicit architectural evidence establishes
+a relationship between them.
+
+Where the architecture establishes implementation/realisation, represent the
+appropriate native relationship rather than merging identities. Q-06 is closed.
+
+#### Q-07 — Ergo/Erga, Pathway and interoperability constructs: classify by meaning, not bundle
+
+Q-07 is substantially narrowed by the maintained Domain05 adjudications. The
+architecture already distinguishes the meanings that the migration grouped into
+one question:
+
+- **Ergon/Ergo** is the discrete governed unit of executable business behaviour;
+  Ponos executes it under the established execution boundaries.
+- **Erga** denotes a meaningful collection/population of Ergo and is not thereby
+  another executable Ergo.
+- **Praxis** defines fulfilment semantics and the applicable Pathway structure; it
+  is not an orchestration engine.
+- **Pathway** defines conceptual sequencing of Ergo. A Pathway/segment/traversal
+  description is not automatically an ApplicationComponent.
+- **Horos** is the logical Praxis boundary construct established by the Pylai
+  adjudication; it replaces the ambiguous logical Praxis "Endpoint" meaning only,
+  without renaming genuine FHIR/network/Camel/Ergon endpoints.
+- **Terma** is the logical external interface responsible for external
+  communication mechanics and is explicitly **not Ergo**.
+- **Diadromí** is transient interaction state and is neither Task/Pragma nor Ergon.
+
+The ARB therefore rejects materialising composite control/support **bundles** as
+elements merely to satisfy migration structure. Each independently meaningful
+construct is classified at the abstraction its accepted semantics establish;
+otherwise the assertion remains a relationship, Constraint, Requirement,
+ImplementationGuideline or unresolved DesignNote assertion under the release
+Praxis.
+
+Q-07 is **resolved as a classification method and semantic separation**. Any
+construct whose accepted source still explicitly defers its precise native
+ArchiMate type remains individually unresolved; that local deferral does not make
+the entire family unresolved.
+
+#### Q-08 — F/D/M rows and carrier/control facets: resolved as assertion-versus-element rule
+
+The ARB confirms the migration's conservative rule: an F/D/M table row or
+carrier/control facet does not establish a new architectural element merely
+because it has a key and description. The release Praxis SHALL analyse what the
+row asserts.
+
+Where it identifies an already established Feature, Function, information object,
+component, service or relationship, bind the assertion to that element. Where its
+normative content is a Constraint, Requirement or ImplementationGuideline, model
+that assertion accordingly. Allocate a new element only where the source actually
+establishes an independently bounded architectural thing. Otherwise retain the
+row as traceability/provenance or as an explicitly unresolved assertion.
+
+Q-08 is therefore closed as a general representation question; only individually
+unresolved source assertions remain open.
+
+#### Q-10 and Q-12 — narrowed release-application boundary
+
+Q-10 no longer requires labels to prove identity, but neither does it prohibit ARB
+semantic adjudication. Ownership, Service-consumption and cross-level matrices
+SHALL use the semantic-continuity and relationship rules established in this
+review. A known service-consumption relationship should be represented natively
+when its endpoints are established; Association is available where relationship
+existence is known but stronger native semantics are not. Information ownership
+remains with the responsible Capability/Function/Process architecture and is not
+transferred by search, transport, caching, indexing, persistence or presentation.
+
+Q-12 is narrowed to **completion evidence and genuinely residual architecture**.
+This review is the authorised Solution Architect/ARB adjudication; no further
+unspecified authority is required for Q-02/Q-03/Q-04/Q-06/Q-07/Q-08/Q-09/Q-11 or
+the general Q-10 mapping method. Release completion still requires mechanical
+application of authorised reconciliations, assertion-by-assertion DesignNote
+processing, validation of the resulting native graph and a final residual register
+showing anything that genuinely remains unresolved.
+
 These adjudications do **not** assert that the 214 capability records and 462
 predicate records have already been mechanically rewritten. They authorise and
 define the deterministic reconciliation that the release machinery must apply and
