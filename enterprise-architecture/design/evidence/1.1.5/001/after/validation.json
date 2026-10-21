@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-10-21T08:59:14.858068Z",
+  "time_meaning": "Completion of this bounded verification, not Task issuance or Report production.",
+  "outcome": "PASS",
+  "errors": [],
+  "source_state": {
+    "head": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+    "release": {
+      "version": "1.1.4",
+      "previous_version": "1.1.3"
+    },
+    "tracked_changes": ""
+  },
+  "structure": {
+    "DRs": 13,
+    "migration_DRs_carried": 11,
+    "new_material_DR": 12,
+    "bounded_minutiae_groups": 1,
+    "all_dispositions": "Not recorded"
+  },
+  "carry_forward": {
+    "explicit_adaptations": 16,
+    "all_11_migration_bodies_accounted_for": true
+  },
+  "mapping": {
+    "inherited_records": 3321,
+    "additional_retained_sources": 27,
+    "total_entry_records": 3348,
+    "move": 2143,
+    "remain": 1205,
+    "fixture_copies": 3,
+    "version_destination_amendments": 57,
+    "locator_cell_amendments": 2,
+    "collisions": 0
+  },
+  "preservation": {
+    "earlier_lifecycle_files": 42,
+    "all_inherited_sources_checked": 3321,
+    "no_tracked_mutation": true
+  },
+  "current_links_checked": 44,
+  "architecture_tests": {
+    "outcome": "PASS",
+    "command": "timeout --signal=TERM --kill-after=5s 240s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "exit_code": 0,
+    "elapsed_seconds": 17.298,
+    "classes": 11,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "current_metadata_validation": {
+    "outcome": "FAIL",
+    "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+    "exit_code": 1,
+    "diagnostic": "INVALID: Current baseline authority drift; reconcile explicitly: AGENTS.md",
+    "limits": "Reproduces the known first failure at 1.1.4 entry. No later-chain PASS or migrated-state result."
+  },
+  "selected_iteration_evidence": {
+    "outcome": "PASS",
+    "version": "1.1.5",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.5/001/after/ai-agent-reports/20261021T085840Z-migration-review-preparation.md",
+      "evidence/1.1.5/001/before/ai-agent-tasks/20261021T085355Z-migration-review-preparation.md"
+    ],
+    "errors": [],
+    "unresolved": [],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "timeout_or_stall": "None observed",
+  "limits": "Review preparation only. Integrity checks do not re-adjudicate classifications, prove dynamic reference reachability, establish migrated standalone publication/current-operation independence, or grant architectural acceptance. Full framework suite not rerun; its disclosed prior ten errors remain historical. Report event registration follows completed emission; pre-registration checker may report absent Report as UNRESOLVED.",
+  "report_registration": {
+    "Report_Produced_At": "2026-10-21T08:58:40.275Z",
+    "event_meaning": "Attributable completed Report emission, distinct from later recording or verification.",
+    "source": {
+      "session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T19-53-53-01a15daa-bd26-7621-ac8d-f80638ba8265.jsonl",
+      "line": 196,
+      "type": "response_item/custom_tool_call",
+      "call_id": "call_4IY4H2vfX4wuG8USwr3NSCHX"
+    },
+    "path": "enterprise-architecture/design/evidence/1.1.5/001/after/ai-agent-reports/20261021T085840Z-migration-review-preparation.md",
+    "emitted_body_sha256": "079a906b1e4e1f36b330c002e76a3189043cdf8f0c6d2baed413d883481f875b",
+    "subsequent_changes": "Formal event wrapper/filename installed; current HCRL Report link added. Emitted Report body remains unchanged."
+  }
+}

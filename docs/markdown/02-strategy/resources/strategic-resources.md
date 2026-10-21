@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Strategic Resources Catalogue & Candidate Adjudication
 
 ## Overview
@@ -37,6 +40,13 @@ The three admitted resources and their Australian instances are preserved. No ad
 
 ## 2. Admitted Strategic Resources
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Healthcare Interoperability Standards and Specifications](../../../../enterprise-architecture/continuum/strategy/resource/4d725c804fb34dfa90486b21118bab8e.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### SR-01: Healthcare Interoperability Standards and Specifications
 
 #### Strategic Definition
@@ -58,6 +68,18 @@ Harmonia is architected to facilitate vendor-neutral health data exchange across
 - **Courses of Action**: `COA-01` (Boundary Membrane Sovereignty).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Australian National Healthcare Directory & Identifier Specifications](../../../../enterprise-architecture/continuum/strategy/resource/eac71c56624d43bda2b9d3648f14603a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### SR-02: Australian National Healthcare Directory & Identifier Specifications
 
@@ -83,6 +105,18 @@ Harmonia depends upon external national specifications to participate in federat
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [National Clinical Terminology Assets (SNOMED CT-AU / AMT)](../../../../enterprise-architecture/continuum/strategy/resource/430f641e40aa4bd4a8e85a5cbc1f93be.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### SR-03: National Clinical Terminology Assets (SNOMED CT-AU / AMT)
 
 #### Strategic Definition
@@ -103,6 +137,11 @@ These terminology assets enable Harmonia to evaluate clinical semantic equivalen
 - **Courses of Action**: `COA-03` (Meaning-Centric Provenance and Traceability).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 3. Current Constraint Relationships
 

@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Foundational Platform Requirements
 
 ## Overview
@@ -7,6 +10,13 @@ Foundational Platform Requirements represent the enduring, non-negotiable archit
 This catalogue contains **five foundational requirements**: `REQ-FND-001` through `REQ-FND-004` retain their Accepted status; `REQ-FND-005` is **APPROVED**, the authorised Independent Assurance reconciliation is **APPROVED / CLOSED**, and Domain01 is again **CLOSED / FROZEN**. Each requirement is stated using a protocol-neutral normative formulation, ensuring that implementation choices and wire protocols are recognized as downstream realisations rather than foundational definitions. The [reconciliation record](../reviews/independent-assurance-reconciliation.md) records the deliberate reopening and human approval/refreeze decision.
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [REQ-FND-001: Durable Ingress Acceptance Boundary](../../../../enterprise-architecture/continuum/motivation/requirement/01c834537a1e41dfb523d48f287d93e9.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## REQ-FND-001: Durable Ingress Acceptance Boundary
 
@@ -31,6 +41,18 @@ Releasing an upstream sender from responsibility (by returning a positive transp
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [REQ-FND-002: Operational Activity Progression State](../../../../enterprise-architecture/continuum/motivation/requirement/eaabcdb96aad4f32a050c94f9ecec049.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## REQ-FND-002: Operational Activity Progression State
 
 ### Normative Requirement Statement
@@ -50,6 +72,18 @@ Harmonia mandates that every multi-stage operational activity must maintain expl
 - **Historical Identifier Reference**: `REQ-COORD-001`
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [REQ-FND-003: Subject Referential Integrity](../../../../enterprise-architecture/continuum/motivation/requirement/43ecbfe8f9b14fcbbc59ee0c03c8774b.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## REQ-FND-003: Subject Referential Integrity
 
@@ -73,6 +107,18 @@ Harmonia mandates that any subject reference attached to a managed clinical even
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [REQ-FND-004: Explicit Indeterminate Outcome](../../../../enterprise-architecture/continuum/motivation/requirement/fc732b64fc564127b73174e28d9ccce8.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## REQ-FND-004: Explicit Indeterminate Outcome
 
 ### Normative Requirement Statement
@@ -92,6 +138,18 @@ A frequent architectural failure mode is "binary collapsing": assuming an unconf
 - **Historical Identifier Reference**: `REQ-UNCERT-001`
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [REQ-FND-005: Independent Assurance of Governed Activity](../../../../enterprise-architecture/continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## REQ-FND-005: Independent Assurance of Governed Activity
 
@@ -161,3 +219,7 @@ These are branching relationships, not a sequential motivation pipeline. The ind
 ### Downstream Derivation Boundary
 
 The requirement supplies upstream motivation from which Strategy responsibility, Business assurance behaviour and Information Architecture may subsequently be derived, followed by Application Architecture and an eventual solution. Those relationships remain unestablished here. No capability allocation, workflow specification, solution construct, outcome values, evidence model, execution mechanism or deployment boundary is defined by this requirement.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

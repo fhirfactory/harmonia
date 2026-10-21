@@ -1,3 +1,9 @@
+<!-- continuum-source-succession -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+[Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
+---------------------------------------------------------
+
 # Baseline Motivation correspondence
 
 [Reading guide](README.md). Definitions remain in their canonical current sources. Historical source constructs remain historical. Resource-owned metadata follows the identity and naming contract; publication keys and XML IDs remain separate.
@@ -143,3 +149,5 @@
 | OPS-004 — Operational Observability | Requirement | Historical — current owning-domain standing not inferred | historical_reference | [OPS-004 --- Operational Observability](../../../../docs/latex-legacy/chapters/appendix-requirements.tex) | `id-8863f2e9f95d50b4aa987cef2eff30e9` | b5d3447a05b249a8af154136fc36c4d9 | OPS-004 — Operational Observability | OperationalObservability | MOT-OperationalObservability |
 | OPS-005 — Production Resilience | Requirement | Historical — current owning-domain standing not inferred | historical_reference | [OPS-005 --- Production Resilience](../../../../docs/latex-legacy/chapters/appendix-requirements.tex) | `id-b56acefd27625d9584980f66259a43f8` | 01e7d6168d554048a424ef75a6556040 | OPS-005 — Production Resilience | ProductionResilience | MOT-ProductionResilience |
 | OPS-006 — Architecture Conformance | Requirement | Historical — current owning-domain standing not inferred | historical_reference | [OPS-006 --- Architecture Conformance](../../../../docs/latex-legacy/chapters/appendix-requirements.tex) | `id-6f626cf9e666513180693c6f5759e825` | dee1792d83bf413f974fc24802084872 | OPS-006 — Architecture Conformance | ArchitectureConformance | MOT-ArchitectureConformance |
+
+------- Legacy Content - Superseded ------- Finish ----

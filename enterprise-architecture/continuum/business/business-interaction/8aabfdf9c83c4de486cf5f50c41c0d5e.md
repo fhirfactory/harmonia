@@ -1,0 +1,63 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "8aabfdf9c83c4de486cf5f50c41c0d5e",
+  "archimateType": "BusinessInteraction",
+  "specialization": null,
+  "displayName": "Clinical Information Query",
+  "friendlyName": "ClinicalInformationQuery",
+  "canonicalName": null,
+  "standing": {
+    "semantic": "Canonical",
+    "currentness": "current",
+    "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+  },
+  "identity": {
+    "allocation": "UUIDv4 allocated once under the explicit RAD-1.1.5 migration Task",
+    "authority": "enterprise-architecture/design/evidence/1.1.5/002/before/ai-agent-tasks/20261021T092725Z-establish-and-apply-element-continuum.md",
+    "sourceAbsenceCheck": "No existing governed canonical source binding for this bounded definition; no name-based correspondence adopted."
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Local lexical component; no root or containment completeness inferred",
+    "expected": {
+      "friendlyName": "ClinicalInformationQuery",
+      "canonicalName": null
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/03-business-architecture/collaborations-interactions/interactions.md",
+      "selector": "- **Clinical Information Query**: A targeted request to discover or search for clinical records, observations, or history for a specific healthcare subject.",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "a1c77a1577e379345ed0b31e432d86939670a5b752d5886b1fb4fc95696e0de7",
+      "standing": "Canonical"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/03-business-architecture/collaborations-interactions/interactions.md",
+      "selector": "- **Clinical Information Query**: A targeted request to discover or search for clinical records, observations, or history for a specific healthcare subject."
+    }
+  ],
+  "exchange": {
+    "identifier": "id-927aef4336e95b3985ee9675bce9b793",
+    "properties": []
+  },
+  "relationships": [],
+  "unresolvedProperties": {
+    "canonicalName": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+  },
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# Clinical Information Query
+
+## Architectural content
+
+- **Clinical Information Query**: A targeted request to discover or search for clinical records, observations, or history for a specific healthcare subject.

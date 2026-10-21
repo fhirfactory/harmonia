@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Metabolē — Bounded Information Progression
@@ -6,6 +9,13 @@
 2026-10-13, recorded for Domain05 B1 reconciliation.** This is the canonical
 definition of Metabolē. Recording the supplied decisions does not declare B1
 PASS or commence B2 capability mapping.
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Metabolē](../../../../enterprise-architecture/continuum/business/business-object/c34b4929f71946708d37dbe6c1da920a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Concept and information boundary
 
@@ -35,6 +45,18 @@ new universal lifecycle.
 Metabolē is conceptual. It is not an application subsystem, persistence service,
 execution component or runtime manager. No `MetaboleManager` or equivalent
 application responsibility SHALL be inferred.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Metabolē](../../../../enterprise-architecture/continuum/business/business-object/c34b4929f71946708d37dbe6c1da920a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 2. Architectural Realisation
 
@@ -67,6 +89,18 @@ representations, persistence requirements or lifecycles.
 | :--- | :--- |
 | [Pragma](../../05-information-systems-architecture/context-and-persistence-management.md#pragma-output) | Mneme retains Context and Pragma management. Execution does not acquire information-management responsibility. Mnemosyne alone establishes authoritative durable state where required. |
 | [Pylai.Diadromí](../../05-information-systems-architecture/pylai-external-interoperability.md#terma-and-diadromi) | Pylai retains responsibility for transient interoperability progression. Diadromí remains non-recoverable after loss/termination; appropriate client retry creates a new interaction. Realisation does not make it a Pragma, Task, Ergon or durable handoff. |
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Metabolē](../../../../enterprise-architecture/continuum/business/business-object/c34b4929f71946708d37dbe6c1da920a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 3. Context and ActivityContext
 
@@ -113,6 +147,18 @@ Mneme's [value-based activity Context](../../05-information-systems-architecture
 and Themis PEP-Context retain their distinct meanings. This classification
 does not equate those Contexts or decide their detailed representation/mapping.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Metabolē](../../../../enterprise-architecture/continuum/business/business-object/c34b4929f71946708d37dbe6c1da920a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 4. Additive progression and information accountability
 
 Service fulfilment may progress through a Metabolē carrying the governing
@@ -131,6 +177,18 @@ present within the Metabolē.** Carriage alone establishes neither a
 `requires`/`consumes` relationship nor Function accountability. The
 [Step B relationship rules](../../05-information-systems-architecture/traceability/step-b-method.md#b1-r03)
 identify only relationships material to the Function's state transition.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Metabolē](../../../../enterprise-architecture/continuum/business/business-object/c34b4929f71946708d37dbe6c1da920a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 5. Provenance, evidence and architectural consistency
 
@@ -156,3 +214,7 @@ and AX-17/18 (explicit uncertainty and no inferred authority). The conceptual
 definition and domain-specific realisations preserve these boundaries. Detailed
 schemas, lifecycle/retention mechanisms and application contracts remain
 downstream; the concept establishes no new persistence or management authority.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

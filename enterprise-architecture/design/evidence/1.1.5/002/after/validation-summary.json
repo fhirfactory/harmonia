@@ -1,0 +1,66 @@
+{
+  "currentContinuumPipeline": {
+    "outcome": "PASS",
+    "command": "make -C docs/archimate/framework all",
+    "tests": 11,
+    "testDurationSeconds": 53.154,
+    "log": "validation/continuum-checks.log"
+  },
+  "requiredArchitectureSuite": {
+    "outcome": "PASS",
+    "command": "mvn test -pl paradeigma/paradeigma-test -am -Dtest=*ArchitectureTest -Dsurefire.failIfNoSpecifiedTests=false",
+    "durationSeconds": 18.318,
+    "log": "validation/architecture-tests.log",
+    "tests": 90
+  },
+  "historicalFrameworkAtEntry": {
+    "outcome": "FAIL",
+    "testsRun": 251,
+    "errors": 10,
+    "reason": "Current baseline authority drift; reconcile explicitly: AGENTS.md. Present at task entry, before this migration. Historical pins preserved.",
+    "log": "validation/historical-suite-at-entry.log"
+  },
+  "sharedSemantics": {
+    "outcome": "FAIL",
+    "testsPassed": 45,
+    "setupErrors": 2,
+    "reason": "Two historical publication fixture classes hit the same AGENTS.md authority pin. Independent semantic tests pass.",
+    "log": "validation/shared-semantics-tests.log"
+  },
+  "pdf": {
+    "outcome": "PASS",
+    "pages": 255,
+    "sha256": "ff7df009eca678ffd8f8daeec61be6c5280536ad651ffa67723a020c91de054f",
+    "sameEnvironmentByteReproducibility": true,
+    "environment": "XeLaTeX / DejaVu Sans; SOURCE_DATE_EPOCH=1792574845 FORCE_SOURCE_DATE=1",
+    "inspection": "Sample page 45 visually inspected; long qualified names wrap. One title exceeds text width by approximately 2.49pt. Full 255-page inspection not asserted."
+  },
+  "currentAcceptance": "Pending holistic Solution Architect/ARB review",
+  "finalContinuumTests": {
+    "outcome": "PASS",
+    "tests": 11,
+    "durationSeconds": 55.097,
+    "log": "validation/continuum-tests-final.log"
+  },
+  "sourceCompletionRepeat": {
+    "outcome": "PASS",
+    "exactSourceRanges": 452,
+    "addedContributions": 0,
+    "allocatedIdentities": 0
+  },
+  "releaseAndDiffHygiene": {
+    "outcome": "PASS",
+    "version": "1.1.5",
+    "previous_version": "1.1.4",
+    "whitespaceErrors": 0
+  },
+  "formalEvidenceLayout": {
+    "outcome": "PASS",
+    "taskRecords": 4,
+    "reportRecords": 1,
+    "reportProducedAt": "2026-10-21T10:09:13.320Z",
+    "report": "ai-agent-reports/20261021T100913Z-element-continuum-applied-migration.md",
+    "correction": "Plain ISO event fields conform to the existing checker; original timestamps and prefixes unchanged.",
+    "finalReviewLinkFailures": 0
+  }
+}

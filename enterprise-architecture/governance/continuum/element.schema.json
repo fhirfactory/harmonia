@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:harmonia:continuum:element:v1",
+  "title": "Canonical architectural element metadata",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "canonicalId",
+    "archimateType",
+    "specialization",
+    "displayName",
+    "friendlyName",
+    "canonicalName",
+    "standing",
+    "identity",
+    "naming",
+    "provenance",
+    "sourceBindings",
+    "exchange",
+    "relationships",
+    "unresolvedProperties"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "canonicalId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{32}$"
+    },
+    "archimateType": {
+      "enum": [
+        "Stakeholder",
+        "Driver",
+        "Assessment",
+        "Goal",
+        "Outcome",
+        "Principle",
+        "Requirement",
+        "Constraint",
+        "Meaning",
+        "Value",
+        "Resource",
+        "Capability",
+        "CourseOfAction",
+        "ValueStream",
+        "BusinessActor",
+        "BusinessRole",
+        "BusinessCollaboration",
+        "BusinessInterface",
+        "BusinessProcess",
+        "BusinessFunction",
+        "BusinessInteraction",
+        "BusinessEvent",
+        "BusinessService",
+        "BusinessObject",
+        "Contract",
+        "Representation",
+        "Product",
+        "ApplicationComponent",
+        "ApplicationCollaboration",
+        "ApplicationInterface",
+        "ApplicationFunction",
+        "ApplicationInteraction",
+        "ApplicationProcess",
+        "ApplicationEvent",
+        "ApplicationService",
+        "DataObject",
+        "Node",
+        "Device",
+        "SystemSoftware",
+        "TechnologyCollaboration",
+        "TechnologyInterface",
+        "Path",
+        "CommunicationNetwork",
+        "TechnologyFunction",
+        "TechnologyProcess",
+        "TechnologyInteraction",
+        "TechnologyEvent",
+        "TechnologyService",
+        "Artifact",
+        "Equipment",
+        "Facility",
+        "DistributionNetwork",
+        "Material",
+        "WorkPackage",
+        "Deliverable",
+        "ImplementationEvent",
+        "Plateau",
+        "Gap",
+        "Grouping",
+        "Location"
+      ]
+    },
+    "specialization": {
+      "enum": [
+        null,
+        "Feature",
+        "Topic"
+      ]
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "friendlyName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "canonicalName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "standing": {
+      "type": "object",
+      "required": [
+        "semantic",
+        "currentness"
+      ],
+      "properties": {
+        "semantic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currentness": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "authority"
+      ],
+      "properties": {
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "naming": {
+      "type": "object",
+      "required": [
+        "authority"
+      ],
+      "properties": {
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "selector",
+          "role"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selector": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retainedAt": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "revision"
+            ]
+          },
+          {
+            "required": [
+              "retainedAt"
+            ]
+          },
+          {
+            "required": [
+              "maintained"
+            ],
+            "properties": {
+              "maintained": {
+                "const": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "selector"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selector": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "exchange": {
+      "type": "object",
+      "required": [
+        "identifier",
+        "properties"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "properties": {
+          "type": "array"
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "archimateType",
+          "source",
+          "target",
+          "standing",
+          "provenance"
+        ],
+        "not": {
+          "required": [
+            "canonicalId"
+          ]
+        },
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "minLength": 1
+          },
+          "archimateType": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "unresolvedProperties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

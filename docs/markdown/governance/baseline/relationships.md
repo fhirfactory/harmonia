@@ -1,3 +1,9 @@
+<!-- continuum-source-succession -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+[Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
+---------------------------------------------------------
+
 # Baseline relationship assertions
 
 All source assertions, including unresolved and historical assertions, are retained. Native mapping does not promote assertion standing. Metadata-only rows are UNRESOLVED BY ARCHITECTURAL DECISION; absence of an edge is deliberate.
@@ -1339,3 +1345,5 @@ Native Composition, Realization, Flow, Serving and explicit Home retain independ
 | run-002/CR-002 | id-a21144ee285f467982d13c39b49228dd | Association | id-0088d61ccfcf4962b3aab8bc3b96021d | id-727a264026584f80bc3304ff8383dc92 | Home |
 | run-002/CR-003 | id-3f9d4356f4b84ef7b45fe3435d27fde8 | Association | id-fddda503b8f0438e995465cd93204326 | id-727a264026584f80bc3304ff8383dc92 | Home |
 | run-002/CR-004 | id-d559bbf53430465e90f47c40593403a5 | Association | id-9bfedbfd5b404694a2224c039fa5d4c4 | id-bdf18b5e580b5b85a34357a3b21f36db | Home |
+
+------- Legacy Content - Superseded ------- Finish ----

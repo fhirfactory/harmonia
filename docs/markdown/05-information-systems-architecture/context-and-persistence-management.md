@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Mneme Context and Pragma Management / Mnemosyne Persistence Management
@@ -18,6 +21,17 @@ prevent technology assumptions, invented detail and inferred domain authority.
 The [axiom register](../governance/architectural-axioms.md) remains controlling.
 
 <a id="mneme-responsibility"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Adhoc Search](../../../enterprise-architecture/continuum/application/application-service/02bf54d699b44ed0b26fa5b8125f0f01.md)
+- [Mneme](../../../enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md)
+- [Context Load](../../../enterprise-architecture/continuum/application/application-service/1ccfe420541945bb9c0756a949799d95.md)
+- [Context Save](../../../enterprise-architecture/continuum/application/application-service/24d4fc42d9524d53a747f0550833f1a4.md)
+- [Adhoc Resource Access](../../../enterprise-architecture/continuum/application/application-service/410f2f55bbda481b973c6c67b924f0be.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Mneme — Context and Pragma Manager
 
@@ -47,7 +61,19 @@ exposed service. Historical read/write facades and supporting contracts are not
 additional principal services; their detailed relationship to this surface remains
 unresolved. No additional exposed Mneme services are established here.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="context-values"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Context Topic](../../../enterprise-architecture/continuum/application/data-object/76ded4866bf443dabc0849d68b215690.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Context — versioned temporal values
 
@@ -89,7 +115,19 @@ This activity Context does not redefine Domain04's Information Unit
 Their detailed mapping, physical bucket representation, Context identity/version
 mechanisms and concurrency algorithms remain unresolved under AX-17.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ergon-information-access"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ergon](../../../enterprise-architecture/continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Expected resource set and the Ergon information boundary
 
@@ -144,7 +182,19 @@ database/shard selection, transactions, persistence tagging/indexing or generic
 conflict resolution. No exact loader/unloader API, acquisition/batching strategy,
 query language, locking/MVCC or Context concurrency algorithm is selected.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="twin-behaviour-context"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Digital Twin Behaviour Context lifecycle
 
@@ -171,7 +221,19 @@ may require resolution/dereferencing for the receiving context; sufficiently
 explicit outputs need no transformation. Same-Twin Stimulus/Effector outputs
 join its normal queue without interrupting the current input.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="pragma-output"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Topic](../../../enterprise-architecture/continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Pragma and new Content
 
@@ -227,7 +289,19 @@ Journey progression without making Journey a complete provenance graph, executio
 log, audit trail or queue history; [Journey's boundary](pathways-journeys-and-handoff.md#journey-and-assurance)
 and Energeia ownership remain intact.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="resource-harmonisation"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Resource Harmonisation Manager](../../../enterprise-architecture/continuum/application/application-function/a6580e0b9f0f40c9a33d731d20110057.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Resource Harmonisation Manager — internal exceptional path
 
@@ -266,7 +340,19 @@ terminal/escalation handling for repeated harmonisation remain unresolved.
 This path does not override Kleio's separately excluded R1.x/R2.x cross-target
 audit harmonisation.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="mnemosyne-responsibility"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Mnemosyne — Persistence Manager
 
@@ -302,7 +388,19 @@ and no prescribed database/service topology. Energeia may observe/report Mnemosy
 operational state under **R1.x/R2.x Observe → Report**, without acquiring persistence
 management or infrastructure authority.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="search-management"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Mnemosyne Search Management
 
@@ -319,7 +417,19 @@ distinct from, but usable by, Search Management. Query/result contracts,
 completeness/consistency detail and physical search/index technology remain
 unresolved; no distributed search algorithm is prescribed.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="research-metadata"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Mnemosyne Research Metadata Management
 
@@ -349,7 +459,19 @@ boundaries. No AI framework, model/provider, vector technology, embedding
 mechanism, proximity algorithm or physical index is selected. Detailed
 **provenance, confidence and Research Metadata schema remain unresolved**.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="unresolved-management-detail"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mneme](../../../enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Retained uncertainty and existing adjudications
 
@@ -372,6 +494,18 @@ Those A2/A3 corrections did not themselves establish A4 acceptance. Current A4
 acceptance and the bounded B1 scope are recorded in the [orientation](README.md).
 
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## Calliope and Pylai use of established responsibilities
 
 [Calliope-DataSets](calliope-models-and-datasets.md#calliope-datasets) owns governed
@@ -391,3 +525,7 @@ semantic mapping remains in BusinessLogic. EgressHoros returns communication
 state/outcome before ContextUnloader completes. Neither Loader/Unloader nor Pylai
 establishes durable truth. Protocol success, engine success and authoritative
 Harmonia persistence outcome remain distinct, including uncertainty.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

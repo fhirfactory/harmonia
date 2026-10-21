@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!--
   Copyright (c) 2026 Mark Hunter
 
@@ -71,6 +74,13 @@ normatively throughout this document.
 
 <a id="ax-01"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-01 Harmonia Is Health-Information Centric](../../../enterprise-architecture/continuum/motivation/principle/e9bd61acaaea4577bc4086a5639e52c3.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### AX-01 --- Harmonia Is Health-Information Centric
 
 #### Axiom
@@ -113,7 +123,19 @@ SHALL NOT dictate Harmonia's health-information semantics.
 - Harmonia is restricted to FHIR information.
 - Every internal Harmonia object must correspond to a healthcare interoperability standard.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-02"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-02 Standards at the Boundary; Harmonia Within the Boundary](../../../enterprise-architecture/continuum/motivation/principle/eee8c3783d964d18a7f9dcea85fcd4cf.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-02 --- Standards at the Boundary; Harmonia Within the Boundary
 
@@ -156,7 +178,19 @@ interoperability contract.
 
 Standards at the boundary. Harmonia within the boundary.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-03"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-03 Native Standards Models Remain Native](../../../enterprise-architecture/continuum/motivation/principle/e99a4e2bf99f476d876394300d6b9c3d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-03 --- Native Standards Models Remain Native
 
@@ -199,7 +233,19 @@ metadata mechanisms.
 - Cache-specific state must be embedded into FHIR resources.
 - Non-FHIR Harmonia objects must be converted into FHIR.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-04"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-04 Harmonia Owns the Semantics; Engines Provide the Machinery](../../../enterprise-architecture/continuum/motivation/principle/54508cda80484a6caf95b901780eaf7d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-04 --- Harmonia Owns the Semantics; Engines Provide the Machinery
 
@@ -242,7 +288,19 @@ Use the machinery. Own the semantics.
 - An engine's native behaviour automatically satisfies a Harmonia invariant.
 - Using HAPI FHIR makes Harmonia a HAPI FHIR application.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-05"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-05 Active State and Authoritative Durable State Are Distinct](../../../enterprise-architecture/continuum/motivation/principle/0412a2084f0145babc4f022c71fea65f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-05 --- Active State and Authoritative Durable State Are Distinct
 
@@ -298,7 +356,19 @@ Failed or degraded convergence following authoritative state progression SHALL N
 
 Mneme active-state generation and Mnemosyne authoritative version SHALL remain distinct concurrency domains. Neither SHALL be inferred from, substituted for, or treated as an alias of the other.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-06"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-06 Information Authority Is Explicit](../../../enterprise-architecture/continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-06 --- Information Authority Is Explicit
 
@@ -343,7 +413,19 @@ Harmonia processes and policies apply those semantics.
 - Anecdotal information is discarded.
 - Persistence success establishes information authority.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-07"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-07 Security Is Intrinsic to Managed Operations](../../../enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-07 --- Security Is Intrinsic to Managed Operations
 
@@ -406,7 +488,19 @@ and enforcement mechanisms remain deferred.
 - Every authorization evaluation belongs in the audit repository.
 - Internal security context should be exposed to external systems.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-08"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-08 Evidence Records Meaning, Not Machinery](../../../enterprise-architecture/continuum/motivation/principle/21d6864657964ba5b03e3f6b5eb29cd5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-08 --- Evidence Records Meaning, Not Machinery
 
@@ -441,7 +535,19 @@ Kleio preserves durable evidence.
 
 Preserve the meaningful fact, not every mechanism that produced it.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-09"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-09 Transient Operational State Is Ephemeral by Default](../../../enterprise-architecture/continuum/motivation/principle/9a5cb9e8876844e58e660f909f7df9fc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-09 --- Transient Operational State Is Ephemeral by Default
 
@@ -485,7 +591,19 @@ framework extremely difficult to diagnose.
 - Transient state cannot be logged or inspected.
 - Diagnostic traces should automatically become permanent evidence.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-10"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-10 Distribution, Load and Failure Are Normal Operating Conditions](../../../enterprise-architecture/continuum/motivation/principle/0d9673833eb840eab03804aa076c1b0c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-10 --- Distribution, Load and Failure Are Normal Operating Conditions
 
@@ -522,7 +640,19 @@ weaker local behaviour.
 - Every operation must be asynchronous.
 - Every internal Java boundary should become a network boundary.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-11"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-11 Managed Information Access Is Highly Available and Responsive](../../../enterprise-architecture/continuum/motivation/principle/8a1e995f16954484a78ae1c5c114d546.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-11 --- Managed Information Access Is Highly Available and Responsive
 
@@ -562,7 +692,19 @@ universally.
 - Every managed resource must always reside in memory.
 - Cache availability is equivalent to authoritative information availability.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-12"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-12 Hide Plumbing, Not Information](../../../enterprise-architecture/continuum/motivation/principle/ce85889bd9b34f79a53d4c907ceb19d4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-12 --- Hide Plumbing, Not Information
 
@@ -608,7 +750,19 @@ Hide plumbing, not information.
 - Standards models should contain Harmonia infrastructure logic.
 - Developers should directly manipulate RemoteCache, EntityManager, JMS or other infrastructure merely because Harmonia uses those technologies internally.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-13"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-13 Harmonia Management Has an Explicit Boundary](../../../enterprise-architecture/continuum/motivation/principle/b6a55decfeec4f1bb3d7f18534a2ffea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-13 --- Harmonia Management Has an Explicit Boundary
 
@@ -663,7 +817,19 @@ not.
 - Harmonia forgets what it transmitted.
 - Acknowledgements and transaction outcomes are irrelevant to audit or provenance.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-14"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-14 Semantic Distinctions Are Preserved](../../../enterprise-architecture/continuum/motivation/principle/d3fc6025dc7646d1b2020b51f7a44bfa.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-14 — Semantic Distinctions Are Preserved
 #### Axiom
@@ -702,7 +868,19 @@ Preserve semantics internally; project deliberately at boundaries.
 
 This does not mean: Harmonia must expose every internal distinction externally. Similar outcomes can never share implementation machinery. Every semantic distinction requires a separate Java type. External standards or interface contracts may be ignored in favour of Harmonia's internal model.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-15"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-15 Uncertainty Is Preserved Until Resolved](../../../enterprise-architecture/continuum/motivation/principle/ef8abbaec37e4890ad78b9f263e67906.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-15 — Uncertainty Is Preserved Until Resolved
 #### Axiom
@@ -737,7 +915,19 @@ __Do not turn “unknown” into “yes” or “no”.__
 
 __This does not mean:__ Harmonia must retain uncertainty indefinitely. Every technical failure produces an uncertain outcome. Operations known not to have crossed the relevant state-changing boundary cannot be safely retried. Reconciliation must always require human intervention.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-16"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-16 Operational Activity & Entity State Progress Together](../../../enterprise-architecture/continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-16 — Operational Activity & Entity State Progress Together
 
@@ -767,7 +957,19 @@ The [Strategy entity-specific Digital Twin coordination rule](../02-strategy/str
 remains the controlling Strategy-level specialisation of AX-16.
 [AX-18](#ax-18) constrains inference of domain authority from coordination.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-17"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-17 Architectural Authority and Explicit Uncertainty](../../../enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-17 — Architectural Authority and Explicit Uncertainty
 
@@ -871,7 +1073,19 @@ of managed information; architectural authority remains a distinct concern.
 
 **Traceability must be truthful, not artificially complete.**
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="ax-18"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AX-18 Integration and Coordination Do Not Confer Domain Authority](../../../enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### AX-18 — Integration and Coordination Do Not Confer Domain Authority
 
@@ -965,6 +1179,11 @@ AI allocation or implementation mechanisms.
 - [AX-17](#ax-17) governs architectural authority and explicit uncertainty.
 - AX-18 governs inference of domain authority from participation, information,
   integration or coordination.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 3. Subsystem Responsibilities Derived from the Axioms
 

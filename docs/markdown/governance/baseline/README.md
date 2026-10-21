@@ -1,3 +1,5 @@
+> **RAD-1.1.5 succession:** Current architecture is authored in the [element continuum](../../../../enterprise-architecture/README.md). This directory retains frozen captures, identity correspondence and historical generation evidence. The descriptive baseline account below records its original role; generated carriers are explicitly retired in place. Current publication does not read this directory.
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Harmonia governed architecture — synchronised baseline

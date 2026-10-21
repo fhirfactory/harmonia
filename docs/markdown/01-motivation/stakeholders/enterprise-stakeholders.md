@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Enterprise Stakeholders
 
 ## Overview
@@ -7,6 +10,13 @@ Enterprise Stakeholders represent the human actors, clinical groups, delivery or
 Harmonia recognizes strictly **six agreed enterprise stakeholders**. External regulatory agencies, standards bodies, and national identifier registrars are treated distinctly as [External Authorities & Regulatory Bodies](external-authorities.md).
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Regional Health Network Operator](../../../../enterprise-architecture/continuum/motivation/stakeholder/e76216c494fa4500bb80eda6f83513c1.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Regional Health Network Operator
 
@@ -27,6 +37,18 @@ The Regional Health Network Operator is the statutory or corporate governing bod
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Healthcare Delivery Organizations](../../../../enterprise-architecture/continuum/motivation/stakeholder/31a8e1054c02483a9d5e314a91a91364.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 2. Healthcare Delivery Organizations
 
 ### Profile & Role
@@ -44,6 +66,18 @@ Healthcare Delivery Organizations (HDOs) encompass the institutional entities pr
 - **Clear Demarcation of Responsibility**: Explicit integration boundaries defining where the delivery organization's operational responsibility ends and Harmonia's management begins.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Clinicians & Care Teams](../../../../enterprise-architecture/continuum/motivation/stakeholder/37264af5adb64b37b7537e3d48b6747b.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 3. Clinicians & Care Teams
 
@@ -63,6 +97,18 @@ Clinicians and Care Teams represent the front-line healthcare workforce: medical
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Patients & Care Recipients](../../../../enterprise-architecture/continuum/motivation/stakeholder/ea5a315450ce4cfb87417263560c2b6d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 4. Patients & Care Recipients
 
 ### Profile & Role
@@ -79,6 +125,18 @@ Patients and Care Recipients are the individual citizens, families, and communit
 - **Continuity of Care**: Seamless information transfer between disparate healthcare facilities so that clinical history follows the patient across the continuum of care.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Healthcare Directory Stewards & Registrars](../../../../enterprise-architecture/continuum/motivation/stakeholder/1c8e2c898a28436693cf2ae69776e125.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 5. Healthcare Directory Stewards & Registrars
 
@@ -97,6 +155,18 @@ Healthcare Directory Stewards and Registrars are the specialized operational cus
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Platform Operations & Integration Engineers](../../../../enterprise-architecture/continuum/motivation/stakeholder/c20aa17ce4aa4a58be5eb3cff2ecdd1d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 6. Platform Operations & Integration Engineers
 
 ### Profile & Role
@@ -112,3 +182,7 @@ Platform Operations and Integration Engineers are the systems reliability engine
 - **Zero Unmonitored Message Loss**: Deterministic verification regarding the progression state of incoming events, ensuring that failed downstream deliveries are immediately flagged rather than lost in silent dead-letter sinks.
 - **Observable Multi-Stage Activity State**: Transparent visibility into complex, distributed workflows (such as fan-out distributions) where tasks progress across multiple hops and destination endpoints.
 - **Deterministic Failure Semantics**: Clean separation of active operational coordination from authoritative durable state, preventing data corruption during unexpected node crashes or network partitions.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

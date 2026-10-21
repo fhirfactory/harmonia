@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Enterprise & Clinical Drivers
 
 ## Overview
@@ -7,6 +10,13 @@ Drivers represent the external pressures, operational imperatives, clinical cond
 Harmonia recognizes strictly **seven agreed drivers**. These drivers span clinical safety, standards divergence, service continuity, statutory privacy, and operational coordination.
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Clinical Interoperability Across Heterogeneous Standards](../../../../enterprise-architecture/continuum/motivation/driver/921d7cf84d2b4abca0deb0d300fa75ea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Clinical Interoperability Across Heterogeneous Standards
 
@@ -27,6 +37,18 @@ Harmonia must bridge these heterogeneous standards without forcing disruptive, m
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Durable Clinical Information Independence](../../../../enterprise-architecture/continuum/motivation/driver/3d81912dd8c94603ba0e10c98b7a62d8.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 2. Durable Clinical Information Independence
 
 ### Context & Pressure
@@ -42,6 +64,18 @@ Harmonia must establish durable clinical information independence. Patient healt
 - **Governing Axioms**: [AX-01 (Health-Information Centricity)](../../governance/architectural-axioms.md#ax-01), [AX-06 (Explicit Information Authority)](../../governance/architectural-axioms.md#ax-06)
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Continuous Clinical Service Availability](../../../../enterprise-architecture/continuum/motivation/driver/80e2d5f142da4dae8b7bb70e9ddcab06.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 3. Continuous Clinical Service Availability
 
@@ -59,6 +93,18 @@ Harmonia must provide continuous clinical service availability. The platform mus
 - **Governing Axioms**: [AX-10 (Failure as Normal Condition)](../../governance/architectural-axioms.md#ax-10), [AX-11 (Responsive & Resilient Access)](../../governance/architectural-axioms.md#ax-11), [AX-05 (State Separation)](../../governance/architectural-axioms.md#ax-05)
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Patient Safety & Identity Integrity](../../../../enterprise-architecture/continuum/motivation/driver/b835c7b1055e4dbc9e1cd3a0c545c1c8.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 4. Patient Safety & Identity Integrity
 
@@ -79,6 +125,18 @@ Harmonia must rigorously preserve and validate subject referential integrity acr
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Statutory Health Information Privacy & Protection](../../../../enterprise-architecture/continuum/motivation/driver/1dbf34b452b6497f914c704e037aec24.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Statutory Health Information Privacy & Protection
 
 ### Context & Pressure
@@ -95,6 +153,18 @@ Harmonia must implement intrinsic, default-deny security and privacy controls ac
 - **Governing Axioms**: [AX-07 (Security Is Intrinsic to Managed Operations)](../../governance/architectural-axioms.md#ax-07), [AX-08 (Evidence Records Meaning)](../../governance/architectural-axioms.md#ax-08)
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [National Healthcare Directory / Endpoint Governance](../../../../enterprise-architecture/continuum/motivation/driver/5ea7e57dcde04ef88c19a88ade9af6ca.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 6. National Healthcare Directory / Endpoint Governance
 
@@ -113,6 +183,18 @@ Harmonia must govern practitioner credentials and electronic service endpoints t
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Coordinated Operational Activity and Entity State](../../../../enterprise-architecture/continuum/motivation/driver/b3fb294d95024e4382b2c251c389fa66.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 7. Coordinated Operational Activity and Entity State
 
 ### Context & Pressure
@@ -127,3 +209,7 @@ Harmonia must coordinate multi-stage operational activity in lockstep with the g
 - **Key Assessment**: [Unmonitored Destination Failure / Fan-Out Divergence](assessments.md)
 - **Associated Goal**: [Coordinated Progression of Operational Activities & Associated Entity State](../goals-outcomes/strategic-goals.md)
 - **Governing Axiom**: [AX-16 (Operational Activity & Entity State Progress Together)](../../governance/architectural-axioms.md#ax-16)
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

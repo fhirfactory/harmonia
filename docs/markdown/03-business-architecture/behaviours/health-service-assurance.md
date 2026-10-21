@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Health Service Assurance — Bounded Business Architecture Derivation
 
 ## 1. Authority and Derivation Scope
@@ -167,7 +170,19 @@ The Services expose approved request, activity-progression observation and estab
 - **Definition**: Enables an authorised consumer to request that Service Assurance be performed for an applicable governed subject in accordance with an established Assurance Definition.
 - **Approved Consumers**: `Care Coordinator`, `Service Coordinator`, `Regulator`, `Policy Authority`, `System Steward`.
 - **Associated Interaction**: [Service Assurance Request](../collaborations-interactions/interactions.md#service-assurance-request), with Service Guardian and one authorised requesting Role.
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Request Service Assurance](../../../../enterprise-architecture/continuum/business/business-service/a76c0be369744fcfb5eb91b90c9b59e7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Process Relationship**: Requests [Assurance Process Execution](../processes/business-processes.md#assurance-process-execution) under an applicable established Assurance Definition. It does not require a new Assurance Process Design instance for each request.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 - **Independence Boundary**: The requesting Role identifies the assurance need within its responsibility and authority. Requesting does not grant authority to define or alter the Assurance Definition, alter Assurance Criteria, direct evidence assessment, determine adjudication or control the resulting Assurance Finding / Conclusion. REQ-FND-005 control independence remains applicable, including where a requester performs or manages the subject. Detailed payloads, contracts, initiation mechanics and states remain unresolved.
 
 <a id="request-service-assurance-status"></a>
@@ -192,7 +207,19 @@ The Services expose approved request, activity-progression observation and estab
 - **Definition**: Communicates applicable established Assurance Findings and Conclusions to authorised recipients according to their responsibilities, authority and information requirements.
 - **Approved Potential Recipients**: `Care Coordinator`, `Service Coordinator`, `Regulator`, `Policy Authority`, `System Steward`.
 - **Associated Interaction**: [Service Assurance Outcome Communication](../collaborations-interactions/interactions.md#service-assurance-outcome-communication), with Service Guardian and one or more authorised recipient Roles.
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Communicate Service Assurance Outcome](../../../../enterprise-architecture/continuum/business/business-service/371b04d6bbf84b53a3c5667ae6df2809.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Process Relationship**: Exposes the communication behaviour of [Assurance Process Reporting / Communication](../processes/business-processes.md#assurance-process-reporting-communication), beginning from an already established finding/conclusion. It does not perform assessment or adjudication or alter/reinterpret the established outcome. A documentary report is not required.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 - **Recipient Boundary**: No mandatory broadcast is established. A particular outcome may be communicated to one, some or all legitimate recipients according to applicability, authority, responsibility and information requirements. Requester, status consumer and outcome recipient need not be the same Role. Communication does not transfer responsibility for recipients' interpretation within their authority, operational/clinical management, remediation, escalation, policy/compliance response, process improvement or other subsequent action to Service Guardian.
 
 ### 5.4 Approved Consumer and Recipient Concerns

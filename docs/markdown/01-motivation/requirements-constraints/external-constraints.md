@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # External Regulatory & Standards Constraints
 
 ## Overview
@@ -7,6 +10,13 @@ External Constraints represent the non-negotiable boundaries, legal obligations,
 To prevent deployment-specific statutes or regional protocols from being mistakenly universalized into core platform axioms, Harmonia categorizes external constraints into strictly **three generalized external constraint categories**. Specific regional statutes (such as Australian privacy acts or national identifier formats) and wire protocols (such as HL7 v2 over MLLP) serve as concrete jurisdictional instances of these categories rather than universal platform laws.
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [CST-EXT-001: Applicable Health-Information Privacy and Data-Protection Obligations](../../../../enterprise-architecture/continuum/motivation/constraint/0ed6fb9fcc9547659ce76b917881274e.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## CST-EXT-001: Applicable Health-Information Privacy and Data-Protection Obligations
 
@@ -29,6 +39,18 @@ Health data is categorized as hypersensitive personal data across all legal juri
 - Bounds Platform Driver: [Statutory Health Information Privacy & Protection](../drivers-assessments/drivers.md).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [CST-EXT-002: Applicable National / Jurisdictional Healthcare Identifier Obligations](../../../../enterprise-architecture/continuum/motivation/constraint/edb1db6b18d84487ab48b9416f26e980.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## CST-EXT-002: Applicable National / Jurisdictional Healthcare Identifier Obligations
 
@@ -54,6 +76,18 @@ Many modern nations operate statutory healthcare identifier services to uniquely
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [CST-EXT-003: Mandated External Interoperability Contracts](../../../../enterprise-architecture/continuum/motivation/constraint/cad6d41364ef4bb1ae0a2a519db11da4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## CST-EXT-003: Mandated External Interoperability Contracts
 
 ### Categorical Definition
@@ -75,3 +109,7 @@ However, in accordance with [AX-02 (Standards at Boundary; Sovereignty Within)](
 - Governs wire-level error signaling (e.g., mapping internal durable persistence failures to protocol-appropriate error responses).
 - Prevents external wire formats from polluting internal domain models.
 - Imposes on Platform Driver: [Clinical Interoperability Across Heterogeneous Standards](../drivers-assessments/drivers.md).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

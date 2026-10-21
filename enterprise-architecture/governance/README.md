@@ -2,6 +2,8 @@
 
 # Architecture governance
 
+Current element authoring follows [Continuum Representation](continuum-representation.md) and the [Incorporation Praxis](continuum-incorporation-praxis.md). The [individual Architectural Axioms](architectural-axioms.md) retain highest authority. [RAD-1.1.5 HCRL 002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md) presents the incorporated result for holistic review; the historical adoption accounts below retain their original scope.
+
 [Architecture Governance](architecture-governance.md) defines the common
 Architecture Review, Solution Architect authority, HCRL Decision Review Log,
 repository structure, governance/architecture distinction and prospective

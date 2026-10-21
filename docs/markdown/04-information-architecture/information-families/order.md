@@ -1,8 +1,18 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Order Information Family
 
 **Status: G2 CANDIDATE — Block 1; not approved, CLOSED or FROZEN.**
 
 [G2 categories A–D](../reviews/package2-g2-block1-review.md#2-review-standing) describe derivation/review standing, not approval. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure).
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Order](../../../../enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Purpose & Semantic Boundary
 
@@ -16,6 +26,11 @@ Order closure / requester acknowledgement ≠ diagnostic-content verification
 ```
 
 Reuse the [Healthcare Service semantic chain](healthcare-service.md#4-associated-request-mechanism-order): DeliverableHealthcareService → optional Order → HealthcareServiceDelivery → ServiceOutcome. These arrows distinguish meanings and evidenced associations, not mandatory states of a single lifecycle. Delivery may occur without an Order; an Order may remain unfulfilled.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 2. Domain 03 Responsibility & Traceability
 
@@ -36,12 +51,24 @@ Local keys below allocate no architectural Canonical IDs or ancestry. Outcome as
 
 ## 3. Principal Information Concepts
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Order](../../../../enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.1 Order — A; existing Concept reused
 
 - **Semantic Classification**: Assertion / Request / Direction.
 - **Definition**: The independently identifiable clinical requisition, directive or prescription requesting bounded activity/service fulfilment for a stated subject and purpose.
 - **Necessity**: OR-IR1 requires the requested work to be understood and OR-IR3 requires returned facts to correlate with the same originating Order. Package1 already establishes Order as an associated direction mechanism; this family elaborates its information responsibility rather than creates a duplicate request Concept.
 - **Boundary**: The Order's directive standing is attributable to its originator/context; ingestion does not certify that every submitted Order is clinically valid. Order does not establish receipt, acceptance, execution or delivery. Requested clinical responsibility for bounded work does not by itself distinguish every assessment Order from Referral; G1 U1 remains.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ### 3.2 Order Routing Directive — A; Foundation Concept reused
 
@@ -102,6 +129,13 @@ Local keys below allocate no architectural Canonical IDs or ancestry. Outcome as
 | Order-Result Correlation Link | Order Administration for the correlation assertion; result/report originator retains substantive authority | Own/govern association and notification; consume qualification without defining it | Source result/request references, correlation evidence/context, assertion time, qualification and correction/rebinding lineage. |
 | Order Context Assembly | Each constituent originator; Order Administration for composition | Govern tracking-context assembly/provision only | Inclusion/composition context, generating time and constituent lineage; no originating authority acquired by aggregation or review. |
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Order](../../../../enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 6. Temporal & Lifecycle Characteristics
 
 Closed-loop progression requires requested/issued and received time where available, dispatch time, recipient-reported occurrence/disposition time, association time and Harmonia recorded time to be distinguished. Requested timing, imaging scheduled timing and actual execution timing apply only where supplied/evidenced. A cancellation/modification request's time is distinct from an established effect time; a response delay does not determine whether the effect occurred.
@@ -112,11 +146,23 @@ Foundation's illustrative independent Order states remain guidance, not an exhau
 
 Foundation correction/provenance principles apply; the Closed-Loop Tracking Ledger label does not independently establish exhaustive retention policy. No cancellation race-resolution, retry protocol, order-entry workflow or universal completion rule is added.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## 7. Assembly Participation & Other Families
 
 Reuse Package1 service definition/context/fulfilment/outcome distinctions, Practitioner Role Binding/Clinical Privilege/Endpoint, subject context and the existing Order Context Assembly candidate. Diagnostic information is an externally attributable boundary input to outcome association in this block; medication Order scope is retained without deriving Medication. Broader outcome-kind semantics and complete Delivery/Outcome owner traces remain G1 U3/U4.
 
 The imaging scheduling checkpoint supports a conditional Order–Appointment relationship, with scheduler authority external. Encounter Process context supports contextual occurrence of Orders during care but supplies no universal Order–Encounter relationship/cardinality. Referral–Order conversion/causation is not established. See [cross-family analysis](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis).
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Order](../../../../enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
 
@@ -125,3 +171,7 @@ G2-Q07 retains who may request/authorise changes, the meaning of performing-syst
 No Order subtype taxonomy, universal healthcare request superclass, order-entry system, clinical verification system or unsupported Service dependency is designed. Order Outcome association has no allocated Feature identity. The assessment Referral/bounded Order semantic boundary remains unresolved rather than merged.
 
 No FHIR/resource/profile mapping, Java/application representation, schema, persistence/cache model, API, integration message, topic or implementation allocation is created. [AX-17](../../governance/architectural-axioms.md#ax-17) governs all candidate and unestablished derivation links.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

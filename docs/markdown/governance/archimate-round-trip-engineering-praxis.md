@@ -1,3 +1,5 @@
+> **RAD-1.1.5 canonical-source adapter:** The [continuum workbench procedure](../../../enterprise-architecture/design/archimate/README.md) implements the exact-baseline, review and application gates below for individual canonical Markdown resources. Existing standing, identity and native interpretation rules remain controlling. Historical source-adapter instructions remain applicable only to their originating editions.
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Harmonia ArchiMate Round-Trip Engineering Praxis

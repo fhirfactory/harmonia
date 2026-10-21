@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Business Role Model
 
 ## 1. Definition & Architectural Purpose
@@ -65,9 +68,45 @@ Business Role
 
 Care Participant Roles represent individuals or subjects receiving healthcare, health monitoring, or preventive services.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Client](../../../../enterprise-architecture/continuum/business/business-role/3b90ebcc858e4b0685c7950ceeb8f3fd.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Client**: A person or party who enters into a service relationship with a healthcare organisation or practitioner.
-  - **Patient**: A Client actively receiving clinical assessment, diagnosis, medical treatment, nursing care, or direct clinical management.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+  <!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Patient](../../../../enterprise-architecture/continuum/business/business-role/0d4ad18a7472447ebcd30619b37dce39.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
+- **Patient**: A Client actively receiving clinical assessment, diagnosis, medical treatment, nursing care, or direct clinical management.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Subject of Care](../../../../enterprise-architecture/continuum/business/business-role/ada564bbff80416aa661a1d2cde705f4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Subject of Care**: The identifiable individual whose health, clinical observations, biological samples, or clinical documents form the subject matter of an encounter or health record (often synonymous with Patient, but distinct when specimens, genomic data, or population screening cohorts are processed).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ---
 
@@ -75,13 +114,97 @@ Care Participant Roles represent individuals or subjects receiving healthcare, h
 
 Care Delivery Roles represent healthcare professionals, clinical teams, and service agents directly involved in clinical decision-making, order placement, or service execution.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Practitioner](../../../../enterprise-architecture/continuum/business/business-role/0b5544e3d9d741b39607a5e61d79049f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Practitioner**: An individual registered, certified, or qualified to provide healthcare services.
-  - **Clinician**: A Practitioner actively engaged in direct clinical assessment, diagnosis, treatment, or medical decision-making.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+  <!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Clinician](../../../../enterprise-architecture/continuum/business/business-role/94fbd35dadc543dd8c5efaca1951e005.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
+- **Clinician**: A Practitioner actively engaged in direct clinical assessment, diagnosis, treatment, or medical decision-making.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Care Coordinator](../../../../enterprise-architecture/continuum/business/business-role/84cf0b0868b94a1ea5ce5791fcfa66f9.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Care Coordinator**: A practitioner or case manager responsible for planning, synchronising, and monitoring cross-specialty or cross-setting care delivery for a patient.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Referrer](../../../../enterprise-architecture/continuum/business/business-role/197b811fc8594cc3a68a372b74008ba0.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Referrer**: A practitioner or service agent who formally requests another service provider to assess, manage, or assume partial/total clinical responsibility for a patient.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Requester](../../../../enterprise-architecture/continuum/business/business-role/dd262c6bed9a44829e7a4f6796c13b3b.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Requester**: A practitioner or clinical agent who formally places an order for a diagnostic investigation, medication supply, or procedural intervention.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Prescriber](../../../../enterprise-architecture/continuum/business/business-role/4a6e12d4f48d426a98136ea50ad91ef9.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Prescriber**: A practitioner legally authorised and clinically responsible for authorising the dispensing and administration of scheduled medications.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Performer](../../../../enterprise-architecture/continuum/business/business-role/c87e99ff36224b9da5a05bbd3002da34.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Performer**: A clinician, proceduralist, technician, or care agent who executes a diagnostic test, surgical procedure, clinical observation, or therapeutic intervention.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ---
 
@@ -89,13 +212,97 @@ Care Delivery Roles represent healthcare professionals, clinical teams, and serv
 
 Care Support Roles represent informal carers, personal supporters, patient advocates, and legally constituted representatives who support the patient or exercise surrogate decision-making authority.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Carer](../../../../enterprise-architecture/continuum/business/business-role/3c2784f8f3404e978c618311148e3422.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Carer**: An individual who provides unpaid, ongoing personal care, support, or assistance to a patient.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Support Person](../../../../enterprise-architecture/continuum/business/business-role/c2334e0e5c3b40789c672471ea82c465.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Support Person**: An individual nominated by the patient to accompany them, provide moral/emotional support, or assist in communication during care episodes.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Advocate](../../../../enterprise-architecture/continuum/business/business-role/8845af697832409b90c51a65d7b06669.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Advocate**: An individual or agency acting on behalf of the patient to promote their rights, preferences, and interests within the healthcare system.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Representative](../../../../enterprise-architecture/continuum/business/business-role/ca4ae4c178eb488d98118db7773b2127.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Representative**: An individual or legal entity empowered to act or make decisions on behalf of the patient.
-  - **Guardian**: A legally appointed guardian exercising general legal custody and personal welfare decision-making.
-  - **Substitute Decision-Maker**: An individual legally authorised to make specific medical treatment decisions when the patient lacks decision-making capacity.
-  - **Delegate / Proxy**: An individual nominated by the patient or authorised by law to access health information, receive communications, or perform specific administrative acts.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+  <!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Guardian](../../../../enterprise-architecture/continuum/business/business-role/81942689c7b74960a23ce0d6da94859c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
+- **Guardian**: A legally appointed guardian exercising general legal custody and personal welfare decision-making.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+  <!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Substitute Decision-Maker](../../../../enterprise-architecture/continuum/business/business-role/c30a4e1e36b44fd3a953395740d946ef.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
+- **Substitute Decision-Maker**: An individual legally authorised to make specific medical treatment decisions when the patient lacks decision-making capacity.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+  <!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Delegate / Proxy](../../../../enterprise-architecture/continuum/business/business-role/da5d23f9d93a49f8ad11232c12a23e3f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
+- **Delegate / Proxy**: An individual nominated by the patient or authorised by law to access health information, receive communications, or perform specific administrative acts.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ---
 
@@ -103,12 +310,84 @@ Care Support Roles represent informal carers, personal supporters, patient advoc
 
 Operational Roles represent personnel and logistics agents responsible for managing healthcare facilities, inpatient wards, theatre suites, bed capacity, work allocation, and physical patient movement.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Service Coordinator](../../../../enterprise-architecture/continuum/business/business-role/0dbbce90dc3e48b190890c832f52cb6f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Service Coordinator**: An operational administrator who manages service schedules, clinic queues, and service capacity.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ward Coordinator](../../../../enterprise-architecture/continuum/business/business-role/9b4ea5f137c9474db1c9dc5ac57a1207.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Ward Coordinator**: A senior nurse or ward administrator responsible for shift-level operational oversight, staffing balance, and bed usage within a clinical unit.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Patient Flow Coordinator](../../../../enterprise-architecture/continuum/business/business-role/e8f5b7caaee84a67afda4844b1580cee.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Patient Flow Coordinator**: A facility-wide coordinator managing admissions, emergency department egress, transfers, and bed allocations across hospital directorates.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Bed Manager](../../../../enterprise-architecture/continuum/business/business-role/4f44e0f4c2ae4774a652c44874449487.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Bed Manager**: An operational agent who tracks physical bed availability, assigns care-places, and coordinates bed turnover logistics.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Work Coordinator](../../../../enterprise-architecture/continuum/business/business-role/5c52eb31e8ba45a7a4eea4fa8d66d0c5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Work Coordinator**: An operational manager or dispatch supervisor who creates, assigns, reallocates, and tracks operational work tasks (e.g., portering, cleaning, specimen transport).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Wardsperson](../../../../enterprise-architecture/continuum/business/business-role/ebc0fbc6ad7645439a32e1f1a7944209.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Wardsperson**: An operational staff member (orderly/porter) responsible for the physical transport of patients, equipment, specimens, and clinical supplies.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ---
 
@@ -116,14 +395,93 @@ Operational Roles represent personnel and logistics agents responsible for manag
 
 Governance and Authority Roles represent statutory regulators, policy bodies, enterprise data stewards, Service Assurance modelling and independent governed-assurance responsibility. Membership of this family does not make governance authority, assurance modelling, stewardship and Guardianship the same responsibility or grant either assurance Role authority to approve governing requirements, Assurance Definitions or Assurance Criteria.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Regulator](../../../../enterprise-architecture/continuum/business/business-role/1160219638ef42b292a5612e5ac7c539.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Regulator**: A statutory authority responsible for professional registration, healthcare standards enforcement, and accreditation (e.g., AHPRA).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Policy Authority](../../../../enterprise-architecture/continuum/business/business-role/e0ff9ce2cf4448568d1caf7a44023f48.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Policy Authority**: An entity responsible for defining enterprise or jurisdictional clinical, security, and operational policies.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [System Steward](../../../../enterprise-architecture/continuum/business/business-role/27d2797d2f9e4a9f9131300467d212bc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **System Steward**: An organisational authority responsible for the governance, availability, and lifecycle integrity of digital health systems.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Information Steward](../../../../enterprise-architecture/continuum/business/business-role/4110a988149e4049844d4b683ff5d8d4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Information Steward**: An authority responsible for defining the governance policies, classification rules, retention periods, and privacy standards for health information assets.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Information Custodian](../../../../enterprise-architecture/continuum/business/business-role/603a0fada51746ef9d26dd6fe20b2e78.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Information Custodian**: An entity or designated role holding operational custody and legal responsibility for safeguarding, preserving, and managing access to health records.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Terminology Steward](../../../../enterprise-architecture/continuum/business/business-role/c3cdd7a91a584942abac167af15f642c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Terminology Steward**: An authority responsible for authoring, validating, and governing canonical value sets, clinical ontologies, and semantic mapping tables.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="service-assurance-modeller"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Service Assurance Modeller](../../../../enterprise-architecture/continuum/business/business-role/962735ea17a840e5a772f813d3ad7d45.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 #### Service Assurance Modeller
 
@@ -137,7 +495,19 @@ Governance and Authority Roles represent statutory regulators, policy bodies, en
 - **Allocation Boundary**: The Role models how satisfaction is assured; it does not perform the resulting independent assurance merely by fulfilling this Role. Detailed Actor eligibility, mandates, approval workflows, further Interactions and Collaborations remain unresolved. No application, runtime or implementation allocation is established.
 
 <a id="guardian-governed-assurance"></a>
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="service-guardian"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Service Guardian](../../../../enterprise-architecture/continuum/business/business-role/3ed945eeff23404d8dae43382ea746d1.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 #### Service Guardian
 
@@ -153,13 +523,54 @@ Governance and Authority Roles represent statutory regulators, policy bodies, en
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ### 2.6 Information / Service Participation Roles
 
 Information and Service Participation Roles represent general participant capacities in service provision and information exchange.
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Service Provider](../../../../enterprise-architecture/continuum/business/business-role/7e85b6b2c65a4e038e11711a4c7f7c60.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Service Provider**: An organisation, facility, or practitioner acting in the capacity of delivering a defined healthcare or diagnostic service.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Information Supplier](../../../../enterprise-architecture/continuum/business/business-role/545713793b154ed189f4229256933053.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Information Supplier**: A participant (person, organisation, or system) that routinely produces, transmits, or submits healthcare information, diagnostic results, or clinical documents into the integration environment.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Information Client](../../../../enterprise-architecture/continuum/business/business-role/3ac6ca6e8c9a42b8a3b48e9631073235.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 - **Information Client**: A participant (person, organisation, or system) that queries, retrieves, or consumes healthcare information for clinical review or operational support.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 ---
 

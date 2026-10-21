@@ -1,3 +1,5 @@
+> **RAD-1.1.5 representation:** Use the [element incorporation Praxis](../../../enterprise-architecture/governance/continuum-incorporation-praxis.md) for current canonical Markdown placement and resource allocation. The semantic authoring and review rules below continue to govern; historical document carriers do not receive new architecture after successful ingestion.
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Architecture Authoring and Round-Trip Praxis — Increment 2C

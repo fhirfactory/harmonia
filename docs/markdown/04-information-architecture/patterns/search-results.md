@@ -1,9 +1,19 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!--
   Copyright (c) 2026 Mark Hunter
   SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 # Governed Search Result Semantics
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Search Result Set](../../../../enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Authority and Two Search Cases
 
@@ -39,6 +49,18 @@ govern security context and meaningful evidence; [AX-13](../../governance/archit
 preserves the external management boundary; [AX-14](../../governance/architectural-axioms.md#ax-14)
 and [AX-17](../../governance/architectural-axioms.md#ax-17) preserve the
 distinctions and explicitly unestablished details below. No new axiom is required.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Search Result Set](../../../../enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 2. Harmonia-Managed Information Search
 
@@ -120,6 +142,18 @@ act/capability. Such acts are not intrinsic to search and are not designed here.
 The existing [Assembly/View and snapshot distinctions](../assemblies-views/assemblies-and-views.md#3-assembly-lifecycle-vs-constituent-lifecycle)
 remain applicable without an automatic Search Result Set-to-Assembly mapping.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ergon](../../../../enterprise-architecture/continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. External Information Search within an Ergo Activity
 
 > **An external search performed by Harmonia is intentionally undertaken
@@ -172,6 +206,18 @@ The established [observable-information and governed Ergo logic boundary](../gua
 continues to apply. No new execution allocation, intrinsic inference or
 runtime-AI responsibility is established.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Search Result Set](../../../../enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 4. Search Result Information and Audit / Assurance
 
 The Search Result Set establishes which managed Information Unit Versions
@@ -207,6 +253,18 @@ interoperability contract. AX-13 terminates Harmonia management of the emitted
 representation, while internally retained managed information remains governed.
 This conceptual result set prescribes no external envelope or response format.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Search Result Set](../../../../enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Resolution and Retained Boundaries
 
 This two-case adjudication resolves the former generic search-management
@@ -221,3 +279,7 @@ snapshot/export capabilities are not designed here. Existing explicit
 TaskOutcome detail, ReportedTask, candidate-family and Audit / Assurance
 deferrals retain their standing under AX-17. This bounded decision does not
 declare Domain04 complete or authorise Domain05 derivation.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

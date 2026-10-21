@@ -11,7 +11,27 @@ INVENTORY ?= ../../markdown/governance/rad-archimate-source-inventory.json
 .NOTPARALLEL:
 
 .PHONY: all baseline baseline-check baseline-report baseline-independent recovery-all recovery recovery-check recovery-report legacy-all generate inventory adoption bindings check test report
-all: baseline test baseline-check baseline-report baseline-independent
+RAD_VERSION := $(shell $(PYTHON) $(REPOSITORY)/scripts/architecture_release.py show)
+CONTINUUM_OUTPUT ?= $(REPOSITORY)/enterprise-architecture/continuum/documentation/published/$(RAD_VERSION)
+all: continuum continuum-test continuum-check
+
+.PHONY: continuum continuum-test continuum-check historical-baseline-all
+continuum:
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) $(REPOSITORY)/scripts/continuum_manifest.py
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) $(REPOSITORY)/scripts/architecture_continuum.py project --output $(CONTINUUM_OUTPUT)/Harmonia-Architecture.xml
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) $(REPOSITORY)/scripts/publish_continuum.py --output $(CONTINUUM_OUTPUT)
+
+continuum-check:
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) $(REPOSITORY)/scripts/continuum_manifest.py --check
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) $(REPOSITORY)/scripts/architecture_continuum.py project --output $(CONTINUUM_OUTPUT)/Harmonia-Architecture.xml --check
+	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) $(REPOSITORY)/scripts/publish_continuum.py --output $(CONTINUUM_OUTPUT) --check
+
+continuum-test:
+	timeout --signal=TERM --kill-after=5s 120s $(PYTHON) -m unittest discover -s $(REPOSITORY)/scripts/tests -p 'test_continuum*.py' -v
+
+# Historical procedures require their originating checkout/fixtures. They are
+# retained for historical recovery and are not the current publication pipeline.
+historical-baseline-all: baseline test baseline-check baseline-report baseline-independent
 
 baseline:
 	timeout --signal=TERM --kill-after=5s 90s $(PYTHON) tools/synchronise_baseline.py

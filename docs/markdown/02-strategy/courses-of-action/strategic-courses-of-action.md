@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Strategic Courses of Action Catalogue
 
 ## Overview
@@ -11,6 +14,13 @@ All Courses of Action comply with the five-point quality test: they possess expl
 The existing specific COA mappings remain bounded to their established EC-01 through EC-13 contributions. Generic eligibility does not establish a COA-to-EC-14 relationship; those relationships remain unresolved.
 
 ## 1. Catalogue of Strategic Courses of Action
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Boundary Membrane Sovereignty](../../../../enterprise-architecture/continuum/strategy/course-of-action/25d8509146fd4f2794a17f4a5253b7a3.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### COA-01: Boundary Membrane Sovereignty
 
@@ -40,6 +50,18 @@ Harmonia acts as an integration environment bridging heterogeneous external heal
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Distinct Management and Durable Preservation of Information and State](../../../../enterprise-architecture/continuum/strategy/course-of-action/4c71b89477b34733b31e478485e89b1a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### COA-02: Distinct Management and Durable Preservation of Information and State
 
 #### Strategic Approach
@@ -67,6 +89,18 @@ This course of action establishes that:
 - Technology Architecture (Domain 07) must allow distributed in-memory data fabrics (for runtime state) and durable relational/document stores (for preservation) to be configured and scaled independently.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Meaning-Centric Provenance and Traceability](../../../../enterprise-architecture/continuum/strategy/course-of-action/fd00bdbdc2234a208c5045aa69279db8.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### COA-03: Meaning-Centric Provenance and Traceability
 
@@ -96,6 +130,18 @@ Healthcare integration requires undeniable accountability without overwhelming s
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Governed Asynchronous Activity Progression](../../../../enterprise-architecture/continuum/strategy/course-of-action/a8ab09ee29454376bd45ba90b320d6ec.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### COA-04: Governed Asynchronous Activity Progression
 
 #### Strategic Approach
@@ -121,6 +167,18 @@ Complex healthcare integrations (e.g., closed-loop diagnostic ordering, multi-de
 - Application Architecture (Domain 05) and Integration Architecture (Domain 06) realise governed work context, recoverable activity handoffs and explicit per-destination progression according to the applicable acceptance and delivery contracts (preserving Invariants 4 and 5). Established downstream constructs such as Pragma envelopes and Petasos messaging illustrate traceability; their APIs, queues, packaging and runtime mechanisms are not selected by this strategic responsibility.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Entity-Centred Operational Coordination](../../../../enterprise-architecture/continuum/strategy/course-of-action/f601fe1f39a3447f8e9fb2cc4ffe9dee.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### COA-05: Entity-Centred Operational Coordination
 
@@ -149,6 +207,18 @@ Healthcare operations naturally center around authentic real-world entities: pat
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Collaborative Reusable Capability Realisation](../../../../enterprise-architecture/continuum/strategy/course-of-action/503939e1fa464b78b1d980ddedfeb3cf.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### COA-06: Collaborative Reusable Capability Realisation
 
 #### Strategic Approach
@@ -174,6 +244,11 @@ Harmonia requires pervasive platform capabilities—such as security policy eval
 - Application Architecture (Domain 05) and Technology Architecture (Domain 07) realise reusable responsibilities through governed contracts while preserving bounded ownership, scalability and fault isolation. Existing `themis-api` and `petasos-api` packages are illustrative downstream traceability only; Strategy does not mandate API packaging, local embedding, frameworks or deployment choices.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 2. Traceability & Alignment Matrix
 

@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Enterprise & Clinical Outcomes
 
 ## Overview
@@ -7,6 +10,13 @@ Business Outcomes represent the demonstrable clinical, operational, and societal
 Harmonia recognizes strictly **three agreed outcomes**. These outcomes serve as common consequence sinks across the platform's motivational threads. Goals hand off directly to outcomes without passing through intermediate principles.
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information (O1)](../../../../enterprise-architecture/continuum/motivation/outcome/0582153fb1f1402b83e5358b61fd60af.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information (O1)
 
@@ -23,6 +33,18 @@ Patients experience significantly safer care and reduced preventable harm across
 - [Reliable Subject Identity and Referential Integrity](strategic-goals.md) (Thread 5)
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Continuous and Resilient Regional Health Information Exchange (O2)](../../../../enterprise-architecture/continuum/motivation/outcome/aed90b4a88f24b78adfeadbf0bca8980.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 2. Continuous and Resilient Regional Health Information Exchange (O2)
 
@@ -43,6 +65,18 @@ Regional healthcare facilities operate within an uninterrupted, highly available
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Demonstrable Protection and Accountable Handling of Health Information (O3)](../../../../enterprise-architecture/continuum/motivation/outcome/75519ed8f7de4a619cc9065f525d703a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. Demonstrable Protection and Accountable Handling of Health Information (O3)
 
 ### Outcome Definition
@@ -60,6 +94,11 @@ Unlike Outcomes O1 and O2 (which receive direct handovers from specific strategi
 - As established in the [Orientation View](../orientation-view.md), AX-07 and AX-08 do not maintain causal arrows to outcomes; O3 acts as a common consequence sink for the entire platform.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## Goal-to-Outcome Handover Matrix
 

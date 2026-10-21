@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Business Collaboration Model
 
 ## 1. Definition & Architectural Purpose
@@ -47,35 +50,114 @@ Business Collaboration
 └── Information-Sharing Collaboration
 ```
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Patient Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/05cb06fbfc3d4b119f067f5699f67efa.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.1 Patient Collaboration
 - **Purpose**: Governs the structured, longitudinal relationship between a patient (or their authorised carer/representative) and their primary care network, health navigators, and participating health services.
 - **Participating Roles**: `Patient`, `Carer`, `Support Person`, `Advocate`, `Representative`, `Clinician`, `Care Coordinator`.
 - **Governed Activities**: Shared goal setting, patient-reported outcome tracking, consent directive establishment, and preference communication.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Practitioner Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/aeca28004a834fb1acbbf6946ab84a33.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 3.2 Practitioner Collaboration
 - **Purpose**: Governs professional peer-to-peer clinical engagement, informal secondary consultations, multidisciplinary review panels, and clinical knowledge sharing across practitioner networks.
 - **Participating Roles**: `Practitioner`, `Clinician`, `Care Coordinator`, `Terminology Steward`.
 - **Governed Activities**: Peer review, diagnostic consultation, case conferencing, and shared clinical governance discussions.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Service Provider Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/f558b3e0948a409a87b26989156063dc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.3 Service Provider Collaboration
 - **Purpose**: Governs formal inter-organisational healthcare service partnerships, diagnostic service level agreements, shared service networks, and regional commissioning alliances.
 - **Participants**: Actors in the `Organisation` and `Organisational Unit` categories; participation through the `Service Provider` and `Service Coordinator` Business Roles. Actor categories and Roles remain distinct; no universal Actor-to-Role assignment is established.
 - **Governed Activities**: Service directory coordination, regional capacity sharing, diagnostic panel contracting, and cross-organisational service eligibility alignment.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Care-Team Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/f748b6d3b83c4591a721f773a3f372be.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 3.4 Care-Team Collaboration
 - **Purpose**: Governs the active, multidisciplinary clinical team assembled around a specific patient for an acute episode, chronic disease management programme, or inpatient stay.
 - **Participating Roles**: `Clinician` (Lead & Consulting), `Care Coordinator`, `Patient`, `Carer`, `Performer`.
 - **Governed Activities**: Shared care planning, real-time longitudinal health record (LHR) review, multidisciplinary ward rounds, clinical messaging, and transition-of-care handovers.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Service-Delivery Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/db39b636a6904a50a9225c98b30bc5a9.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.5 Service-Delivery Collaboration
 - **Purpose**: Governs the operational and clinical partnership between requesting clinicians and service-fulfilment teams during the active execution of a complex clinical procedure, diagnostic pathway, or surgical episode.
 - **Participating Roles**: `Requester`, `Performer`, `Clinician`, `Service Coordinator`, `Ward Coordinator`.
 - **Governed Activities**: Theatre list progression, procedural preparation, perioperative care coordination, and diagnostic order closed-loop fulfilment.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Operational Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/20f31ce141f947af8700fe7f41d695f6.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### 3.6 Operational Collaboration
 - **Purpose**: Governs facility-wide operational logistics, resource balancing, bed management, patient flow coordination, and dispatch between clinical units and non-clinical support services.
 - **Participating Roles**: `Patient Flow Coordinator`, `Bed Manager`, `Ward Coordinator`, `Work Coordinator`, `Wardsperson`.
 - **Governed Activities**: Daily operational huddles, emergency department bed pull, ward turnover coordination, porter dispatch, and discharge transport scheduling.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Information-Sharing Collaboration](../../../../enterprise-architecture/continuum/business/business-collaboration/232a2bc1e9604266b042ebf448e2297c.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### 3.7 Information-Sharing Collaboration
 - **Purpose**: Governs formal, trusted regional health information exchange, cross-custodian clinical data syndication, and statutory reporting networks.
@@ -83,6 +165,11 @@ Business Collaboration
 - **Governed Activities**: Federated health information exchange, public health surveillance reporting, registry submission, and privacy policy compliance monitoring.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 4. Collaboration Governance Guardrails and Invariants
 

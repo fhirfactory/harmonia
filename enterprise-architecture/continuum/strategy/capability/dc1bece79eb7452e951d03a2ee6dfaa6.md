@@ -1,0 +1,255 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "dc1bece79eb7452e951d03a2ee6dfaa6",
+  "archimateType": "Capability",
+  "specialization": null,
+  "displayName": "[CT2] Clinical Quality Management",
+  "friendlyName": "ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement",
+  "canonicalName": "CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement",
+  "standing": {
+    "semantic": "Historical reference — RAD correspondence unresolved",
+    "currentness": "historical_reference"
+  },
+  "identity": {
+    "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+    "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
+    "expected": {
+      "displayName": "[CT2] Clinical Quality Management",
+      "friendlyName": "ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement",
+      "canonicalName": "CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement"
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/historical_reference_elements/28",
+      "role": "governed source resource",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "sourceKey": "historical-reference:id-e9b2533401765481aa27d5c901bd8fd2"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+      "selector": "element[@identifier=\"id-e9b2533401765481aa27d5c901bd8fd2\"]",
+      "role": "accepted representation binding and presentation; not an additional architecture source",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/historical_reference_elements/28"
+    }
+  ],
+  "exchange": {
+    "identifier": "id-e9b2533401765481aa27d5c901bd8fd2",
+    "previousNativeName": "Clinical Quality Management",
+    "properties": [
+      {
+        "ref": "propid-23",
+        "values": [
+          {
+            "text": "Business Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-24",
+        "values": [
+          {
+            "text": "CT2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-26",
+        "values": [
+          {
+            "text": "Established working hierarchy",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-40",
+        "values": [
+          {
+            "text": "historical_reference",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-41",
+        "values": [
+          {
+            "text": "Unreconciled — no proven baseline crosswalk",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-18",
+        "values": [
+          {
+            "text": "dc1bece79eb7452e951d03a2ee6dfaa6",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-19",
+        "values": [
+          {
+            "text": "[CT2] Clinical Quality Management",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-20",
+        "values": [
+          {
+            "text": "ClinicalQualitySafetyAndImprovement.ClinicalQualityManagement",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-21",
+        "values": [
+          {
+            "text": "CT1-ClinicalQualitySafetyAndImprovement.CT2-ClinicalQualityManagement",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-22",
+        "values": [
+          {
+            "text": "Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": [
+    {
+      "identifier": "id-79a0a9a6f20456dd9830c536756a7545",
+      "source": "id-e9b2533401765481aa27d5c901bd8fd2",
+      "target": "id-143c6a0eb6675280a374d05aac61fe58",
+      "archimateType": "Composition",
+      "attributes": {},
+      "standing": {
+        "source": "Retained accepted model assertion; original qualifications apply"
+      },
+      "provenance": {
+        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+        "selector": "relationship[@identifier=\"id-79a0a9a6f20456dd9830c536756a7545\"]"
+      },
+      "properties": [],
+      "name": [],
+      "documentation": []
+    },
+    {
+      "identifier": "id-7ceb57312cd055d5b2eb43924b9c378d",
+      "source": "id-e9b2533401765481aa27d5c901bd8fd2",
+      "target": "id-3940059fa2735c8fa10020170420ee91",
+      "archimateType": "Composition",
+      "attributes": {},
+      "standing": {
+        "source": "Retained accepted model assertion; original qualifications apply"
+      },
+      "provenance": {
+        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+        "selector": "relationship[@identifier=\"id-7ceb57312cd055d5b2eb43924b9c378d\"]"
+      },
+      "properties": [],
+      "name": [],
+      "documentation": []
+    },
+    {
+      "identifier": "id-16397d4cef825863ab8ccf3dea3d548c",
+      "source": "id-e9b2533401765481aa27d5c901bd8fd2",
+      "target": "id-3e15dac60a7851bf820f6269d07b6a37",
+      "archimateType": "Composition",
+      "attributes": {},
+      "standing": {
+        "source": "Retained accepted model assertion; original qualifications apply"
+      },
+      "provenance": {
+        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+        "selector": "relationship[@identifier=\"id-16397d4cef825863ab8ccf3dea3d548c\"]"
+      },
+      "properties": [],
+      "name": [],
+      "documentation": []
+    },
+    {
+      "identifier": "id-3be52abbffc15311a0df53ff2664e6a8",
+      "source": "id-e9b2533401765481aa27d5c901bd8fd2",
+      "target": "id-943c0e41cdf55f05ac5fdd126cbcae3d",
+      "archimateType": "Composition",
+      "attributes": {},
+      "standing": {
+        "source": "Retained accepted model assertion; original qualifications apply"
+      },
+      "provenance": {
+        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+        "selector": "relationship[@identifier=\"id-3be52abbffc15311a0df53ff2664e6a8\"]"
+      },
+      "properties": [],
+      "name": [],
+      "documentation": []
+    }
+  ],
+  "unresolvedProperties": {
+    "definition": "Absent in the exact governed source and accepted representation."
+  },
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# [CT2] Clinical Quality Management
+
+## Architectural content
+
+The governed source has no established definition. This absence is retained for Solution Architect review; no definition is inferred from the name.

@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Candidate Pylai External Interoperability and Praxis.Horos Architecture
@@ -11,6 +14,13 @@ durable state, distinct outcomes and architectural uncertainty. No implementatio
 design or whole-Domain05 acceptance is established.
 
 <a id="pylai-responsibility"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [External Interoperability Service](../../../enterprise-architecture/continuum/application/application-service/43b79574792443faa57daa76b9a47a19.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## External Interoperability Service
 
@@ -36,7 +46,19 @@ The [Strategy/Terma reconciliation](gaps.md#pylai-strategy-conflict) distinguish
 external communication mechanics from Harmonia application meaning and generic
 network/infrastructure management.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="terma-and-diadromi"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pylai.Diadromí Topic](../../../enterprise-architecture/continuum/application/data-object/978f5c2bd2d343ffaf3a13dff700c258.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Terma and Diadromí
 
@@ -90,7 +112,19 @@ non-recoverable lifecycle does not acquire Pragma persistence or Mneme managemen
 requirements. Conceptual ActivityContext does not replace a specific interaction
 action or grant authorisation.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="diadromi-recoverability"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pylai.Diadromí Topic](../../../enterprise-architecture/continuum/application/data-object/978f5c2bd2d343ffaf3a13dff700c258.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Transience, loss and recoverability
 
@@ -122,6 +156,11 @@ Audit, Journey and operational evidence about the failed interaction may remain:
 Loss of interaction does not prove failure/non-occurrence of a previously requested
 state change. AX-15 uncertainty and safe-retry constraints still apply. A new
 Diadromí supplies no automatic permission to repeat an uncertain mutation.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="pylai-patterns"></a>
 
@@ -339,6 +378,13 @@ forms through the Controller is a possible future implementation consideration,
 
 <a id="pylai-governance"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pylai](../../../enterprise-architecture/continuum/application/application-component/e3e4147fea3640198dc251ed41ee854d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## Identity, authorisation, audit, assurance and Journey
 
 **Pylai carries external identity into Harmonia.** Trusted external Identity/context
@@ -382,7 +428,19 @@ Architecture representation merely by being an Ergon. Dokimasia's terminal
 constraints remain intact. Pylai does not acquire these responsibilities through
 participation in governed activity.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="pylai-deferred"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pylai](../../../enterprise-architecture/continuum/application/application-component/e3e4147fea3640198dc251ed41ee854d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Deferred design
 
@@ -396,3 +454,7 @@ consideration. [CDG-50](gaps.md#pylai-contracts) retains these deferrals;
 [CDG-51](gaps.md#pylai-strategy-conflict) records the resolved Strategy boundary.
 No Java structure, Camel route, topology, protocol, persistence
 schema, PEP-Criteria representation or complete endpoint/API design is selected.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

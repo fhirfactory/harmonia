@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Candidate Component and Construct Register
@@ -20,6 +23,13 @@ that earlier corrections did not accept A4 retain their historical scope.
 ## Semantic, policy and evidence responsibilities
 
 <a id="c01"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C01 — Calliope
 
@@ -75,7 +85,23 @@ their structural definitions/contracts belong to Calliope-Models. This allocatio
 does not reopen U12 or permit unrestricted runtime changes to release-bounded
 content; detailed release/change rules remain deferred.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c02"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [PractitionerCapacity](../../../enterprise-architecture/continuum/application/data-object/008f622bf9ce4d40b8a85024748bd485.md)
+- [Themis](../../../enterprise-architecture/continuum/application/application-component/899d34ec491948b68aad09e507dea6d1.md)
+- [PEP-Context](../../../enterprise-architecture/continuum/application/data-object/90c3f7e03448452baec5c425c34fd77a.md)
+- [Criterion](../../../enterprise-architecture/continuum/application/data-object/b5be4886ec77466e860209443a03771b.md)
+- [AuthorisationRole](../../../enterprise-architecture/continuum/application/data-object/bad6431f87bd4bf59645c0962cc219a7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C02 — Themis
 
@@ -410,7 +436,19 @@ their conceptual models SHALL NOT redefine Harmonia semantics.
   Historical fixed gate counts and automatic context persistence remain
   CDG-15/30 provenance, without reopening established security boundaries.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c03"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Kleio](../../../enterprise-architecture/continuum/application/application-component/fefda110e2274884ad58906733606efd.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C03 — Kleio
 
@@ -543,6 +581,11 @@ corpus. No future harmonisation/convergence mechanism is selected.
   mechanisms. Historical FHIR/operational storage structures remain provenance,
   without competing with the established O&A semantic alignment.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## Energeia management and associated execution responsibilities
 
 Energeia is a **discrete Harmonia Software Component responsible for management
@@ -559,6 +602,13 @@ execution envelope, not structural containment of Ponos. The repository/module
 grouping does not override this logical boundary. [U19](sources.md#u19).
 
 <a id="c39"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Energeia](../../../enterprise-architecture/continuum/application/application-component/fb3f37a6ac614415ac486a6de9d35994.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C39 — Energeia
 
@@ -606,7 +656,19 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   is recorded in the [orientation](README.md). Possible upstream omissions require
   later review, without deriving Business Architecture or capability demand here.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c04"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ponos](../../../enterprise-architecture/continuum/application/application-component/b521762c1ea444b48cd5f66be3752d30.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C04 — Ponos
 
@@ -648,6 +710,11 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   detailed model remains candidate. CDG-03/08/16–18 retain incomplete control
   and continuation semantics. Numerical worker/retry defaults are not baselined.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c05"></a>
 
 ### C05 — Ergo
@@ -681,6 +748,13 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   combined entry is not retained as a single component.
 
 <a id="c23"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ergon](../../../enterprise-architecture/continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C23 — Ergon
 
@@ -717,6 +791,11 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   Ergon may intentionally invoke an AI service internally as an implementation
   choice without becoming AI Assurance Ergon or transferring authority.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c24"></a>
 
 ### C24 — Erga
@@ -741,6 +820,13 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   assembly/library contracts remain unfinalised.
 
 <a id="c25"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Behaviour](../../../enterprise-architecture/continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C25 — Behaviour
 
@@ -778,7 +864,19 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   genuinely Twin-specific behaviour instead of duplicating platform mechanisms;
   Behaviour acquires no standalone Information Resource merely by being activity.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c26"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Dokimasia Ergon](../../../enterprise-architecture/continuum/application/application-component/34d7c844da3344a09e96ad821ff9fcea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C26 — Dokimasia Ergon
 
@@ -796,7 +894,19 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   AI Assurance Ergon C27 specialises this component. Other potential assurance
   classifications, including deterministic/human subclasses, require adjudication.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c27"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [AI Assurance Ergon](../../../enterprise-architecture/continuum/application/application-component/8fe50975372b4d399a4bcb9f3d9348f7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C27 — AI Assurance Ergon
 
@@ -818,7 +928,19 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   selected. Discovery precedes final implementation modelling. Inherits both
   Dokimasia terminal rules; unresolved design does not invalidate its boundary.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c06"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Praxis](../../../enterprise-architecture/continuum/application/data-object/0f961462340348b290fd844357d54d67.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C06 — Praxis
 
@@ -858,9 +980,21 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   selection, Petasos concrete persistent handoff and Ponos execution remain distinct.
   No detailed Praxis schema is invented.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## Information management, preservation and middleware
 
 <a id="c28"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pragma Management](../../../enterprise-architecture/continuum/application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C28 — Pragma Management
 
@@ -890,6 +1024,11 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   detailed management contracts and persistence structures remain unresolved.
   Execution of, behaviour upon, or handoff of managed information does not
   confer information-management responsibility for that information.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="c07"></a>
 
@@ -944,6 +1083,13 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
 
 <a id="c08"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [PragmaFactory](../../../enterprise-architecture/continuum/application/application-component/75e77d8dfd1d4870aa6151485d28d1dd.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### C08 — PragmaFactory
 
 - **Role:** candidate logical application embodiment associated with the
@@ -962,7 +1108,19 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
 - **Standing:** explicitly instructed candidate solution meaning, CDG-04; not
   invented from a matching class and not rejected for missing implementation.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c09"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mneme](../../../enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C09 — Mneme
 
@@ -996,7 +1154,19 @@ grouping does not override this logical boundary. [U19](sources.md#u19).
   concurrency/access/Output and harmonisation contracts remain CDG-45/46; older
   cache/write-behind and access variants remain CDG-10/11/16/27/31.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c10"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Petasos](../../../enterprise-architecture/continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C10 — Petasos
 
@@ -1062,6 +1232,11 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   [CDG-44](gaps.md#petasos-detailed-contracts) retains schema, queue and interaction
   detail. Internal middleware remains Domain05; external protocols remain Domain06.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c11"></a>
 
 ### C11 — Supporting governed access and change contracts
@@ -1083,6 +1258,13 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   automatic security-context persistence.
 
 <a id="c12"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Mnemosyne](../../../enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C12 — Mnemosyne
 
@@ -1131,7 +1313,19 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   oversight/transaction/compartment/outcome/search/Research Metadata contracts remain
   CDG-47/48, alongside historical structures CDG-12/13/40.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c49"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Sylloge](../../../enterprise-architecture/continuum/application/application-component/feea742463b84021b66853d287d8916f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C49 — Harmonia.Sylloge
 
@@ -1157,7 +1351,19 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   mechanisms](sylloge-binary-content-management.md#sylloge-deferred-design) remain
   non-blocking later design. No module, dependency or deployment allocation.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c13"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Provider Registry solution collaboration](../../../enterprise-architecture/continuum/application/application-collaboration/9305dc8d55b34b70950190e28b5464cf.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C13 — Provider Registry solution collaboration
 
@@ -1183,9 +1389,21 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   Direct persistence search and published async response claims are not approved
   external contracts by inclusion here.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## Boundary, human interaction and collaboration
 
 <a id="c14"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Pylai](../../../enterprise-architecture/continuum/application/application-component/e3e4147fea3640198dc251ed41ee854d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C14 — Pylai
 
@@ -1216,7 +1434,19 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   Kleio mandatory capture uses its own governed platform authority, not the
   external/acting Identity's grants; Pylai gains no such authority.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c15"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Iris](../../../enterprise-architecture/continuum/application/application-component/e927c1af96c64fcd979be659bee2cbe3.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C15 — Iris
 
@@ -1240,6 +1470,11 @@ does not make all Parcels reference-only. [Handoff view](pathways-journeys-and-h
   CDG-11/24/26/28. Diagnostic zero-PHI controls do not turn clinical presentation
   into a technical-identifiers-only application.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c16"></a>
 
 ### C16 — Iris clinical, console and administration applications
@@ -1256,6 +1491,13 @@ services. Details beyond the documented views, including universal workflow
 approval rules and durable UI state, are unknown.
 
 <a id="c17"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Iris backend-for-frontend mediation](../../../enterprise-architecture/continuum/application/application-component/37b82d161c5640298e951acc361b338a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C17 — Iris backend-for-frontend mediation
 
@@ -1275,7 +1517,19 @@ approval rules and durable UI state, are unknown.
   Candidate mediation component; ports/server frameworks/provider class catalogues
   are support details, and telemetry persistence/provenance remains CDG-28.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c18"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Agora](../../../enterprise-architecture/continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C18 — Agora
 
@@ -1315,12 +1569,24 @@ approval rules and durable UI state, are unknown.
   Binary Content Management under U17; Agora retains collaboration references.
   Historical class/table names are implementation evidence.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ### Omilia — Harmonia collaboration subsystem
 
 The following responsibilities are distinct from Agora control. Upstream lineage
 records provenance, not architectural identity, Maven allocation or deployment.
 
 <a id="c47"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Omilia.Server](../../../enterprise-architecture/continuum/application/application-component/369907025d06492bb414a72cea834a77.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C47 — Harmonia.Omilia.Server
 
@@ -1335,7 +1601,19 @@ records provenance, not architectural identity, Maven allocation or deployment.
   API technology, modifications and persistence mechanics are deferred, not
   inferred from historical Synapse deployment/configuration.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c48"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Harmonia.Omilia.Client](../../../enterprise-architecture/continuum/application/application-component/33b8421ffc444b78b2d059201a58a688.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C48 — Harmonia.Omilia.Client
 
@@ -1347,9 +1625,21 @@ records provenance, not architectural identity, Maven allocation or deployment.
   Detailed modifications and human-experience integration remain deferred;
   Iris has no direct Agora/Omilia interaction (U19).
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 ## Specialised execution components associated with Energeia
 
 <a id="c19"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [DigitalTwin](../../../enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C19 — DigitalTwin
 
@@ -1403,7 +1693,19 @@ records provenance, not architectural identity, Maven allocation or deployment.
   representation/runtime details remain CDG-07/54. DigitalTwin and Dokimasia are sibling
   Ponos specialisations; neither contains the other or manages Pragma by execution.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c20"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Dokimasia](../../../enterprise-architecture/continuum/application/application-component/d739c75dffe2453081735710b285f03b.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C20 — Dokimasia
 
@@ -1444,6 +1746,11 @@ records provenance, not architectural identity, Maven allocation or deployment.
   and discrete activity responsibilities are adjudicated for the candidate by U02.
   Detailed AI architecture requires CDG-35 discovery. No upstream responsibility
   is reopened; detailed Praxis/Journey and assurance contracts remain unresolved.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="dokimasia-terminal-boundaries"></a>
 
@@ -1522,11 +1829,23 @@ contracts remain CDG-38; no final physical representation is selected.
 
 <a id="c29"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [PathwayEndpoint](../../../enterprise-architecture/continuum/application/application-interface/800789f54ba24f53a354600d5cd43f6f.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### C29 — PathwayEndpoint
 
 Application Interface conceptually equivalent to ArchiMate ApplicationInterface.
 Every Ergon exposes IngressEndpoint and EgressEndpoint. These surfaces do not
 expose internal processing; endpoint identity and technical interfaces remain open.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="c30"></a>
 
@@ -1574,6 +1893,13 @@ is a distinct progression mechanism and need not have a Pathway.
 
 <a id="c35"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Journey](../../../enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### C35 — Journey
 
 First-class observational construct / candidate Application Data Object: governed
@@ -1597,6 +1923,11 @@ Pragma provenance**: independent outputs may establish their own activity,
 Pub/Sub interactions, Praxes and Journeys. Mneme may manage richer relationships.
 Journey is not a complete provenance graph, execution log, audit trail or Petasos
 queue history. [U18 reconciliation](pathways-journeys-and-handoff.md#journey-and-assurance).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="c36"></a>
 
@@ -1630,6 +1961,13 @@ runtime Pattern management/evaluation/matching remains Mneme-owned under U13.
 
 <a id="c40"></a>
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Resource Harmonisation Manager](../../../enterprise-architecture/continuum/application/application-function/a6580e0b9f0f40c9a33d731d20110057.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### C40 — Resource Harmonisation Manager
 
 **Internal Mneme responsibility/capability, not a fifth exposed service or an
@@ -1650,7 +1988,19 @@ bounded Harmonisation Ergon work; it does not perform domain harmonisation itsel
   terminal/escalation handling (CDG-46). No UI/forms architecture is selected.
   Kleio cross-target audit harmonisation remains R1.x/R2.x SEP.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c41"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope-Models](../../../enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C41 — Calliope-Models
 
@@ -1662,7 +2012,19 @@ known runtime DataSets as normal library dependencies; those representations do
 not establish current membership. Models' pure-library dependency semantics remain.
 Definition ownership is not runtime operational ownership. [U13 lifecycle and authority](calliope-models-and-datasets.md#calliope-models).
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="c42"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope-DataSets](../../../enterprise-architecture/continuum/application/application-component/53bf6815c7a54ed0abde9b1aad311843.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### C42 — Calliope-DataSets
 
@@ -1672,6 +2034,11 @@ governed content, not persistence machinery; uses established Mneme/Mnemosyne an
 where workflow is required, existing Ponos/Ergo/Praxis. Models/build definitions
 establish its structural contracts. Detailed ontology boundary, workflow, UI and
 physical realisation remain [deferred](calliope-models-and-datasets.md#calliope-deferred).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 <a id="c43"></a>
 

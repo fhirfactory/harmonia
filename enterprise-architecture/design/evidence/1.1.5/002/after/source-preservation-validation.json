@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "retiredSourceRanges": 855,
+  "sourceFiles": 57,
+  "originalRangeBytesPreserved": true,
+  "characterOffsets": "Unicode code-point offsets in the exact UTF-8 entry source; line numbers are navigation only.",
+  "preservedStandingRecords": 1394,
+  "rejectedReviewSha256": "26d8d42988736657a7c23f0be31350bdfd9b023a57fe7f2b785e6016a2693784"
+}

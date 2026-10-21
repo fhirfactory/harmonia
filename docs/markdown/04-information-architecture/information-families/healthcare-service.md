@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Healthcare Service Information Family
 
 ## 1. Purpose & Semantic Boundary
@@ -81,6 +84,13 @@ This information family derives directly from Domain 03 Business Information Res
 
 ---
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[Topic] Order](../../../../enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 4. Associated Request Mechanism: Order
 
 Harmonia enforces an essential architectural rule regarding clinical requisitions and service delivery:
@@ -104,6 +114,11 @@ graph TD
 3. **Independent Lifecycles**: An `Order` possesses its own lifecycle states (*Requested*, *Accepted*, *In-Progress*, *Completed*, *Discontinued*), owned by `Order Administration`, distinct from the lifecycle of the service delivery itself.
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 5. Service Provision Modelling Evaluation & Decision
 

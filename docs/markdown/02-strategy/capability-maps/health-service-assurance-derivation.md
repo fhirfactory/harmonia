@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Health Service Assurance — Approved Strategy Derivation
 
 > **BC reconciliation — 2026-10-14:** The [current BC catalogue](../capabilities/business-capabilities.md#18-health-service-assurance)
@@ -57,20 +60,212 @@ This is the approved **first-pass contribution model**. Existing canonical EC na
 
 | Enterprise Capability | Assurance Design | Assurance Criteria Management | Governed Assurance |
 | :--- | :--- | :--- | :--- |
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-01 Managed Entity & Relationship](../capabilities/enterprise-capabilities.md#ec-01-managed-entity--relationship) | Supporting | No Material Role | Supporting |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-02 Context Management](../capabilities/enterprise-capabilities.md#ec-02-context-management) | Supporting | Supporting | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-03 Managed State & Lifecycle](../capabilities/enterprise-capabilities.md#ec-03-managed-state--lifecycle) | Supporting | Direct | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-04 Information Management](../capabilities/enterprise-capabilities.md#ec-04-information-management) | Direct | Direct | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-05 Search & Discovery](../capabilities/enterprise-capabilities.md#ec-05-search--discovery) | Supporting | Supporting | Supporting |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-06 Policy & Control](../capabilities/enterprise-capabilities.md#ec-06-policy--control) | Direct | Direct | Supporting |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-07 Provenance & Traceability](../capabilities/enterprise-capabilities.md#ec-07-provenance--traceability) | Supporting | Supporting | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-08 Interoperability & Exchange](../capabilities/enterprise-capabilities.md#ec-08-interoperability--exchange) | No Material Role | Supporting | Supporting |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-09 Event & Subscription](../capabilities/enterprise-capabilities.md#ec-09-event--subscription) | Supporting | No Material Role | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-10 Activity & Execution](../capabilities/enterprise-capabilities.md#ec-10-activity--execution) | Supporting | No Material Role | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-11 Interaction & Experience](../capabilities/enterprise-capabilities.md#ec-11-interaction--experience) | Supporting | Supporting | Supporting |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-12 Operational Assurance](../capabilities/enterprise-capabilities.md#ec-12-operational-assurance) | Supporting | Supporting | Direct, limited to generic operational/processing assurance contribution |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-13 Semantic Governance & Conformance](../capabilities/enterprise-capabilities.md#ec-13-semantic-governance--conformance) | Supporting | Direct | Supporting |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[CT3] Assurance Criteria Administration](../../../../enterprise-architecture/continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md)
+- [[CT3] Assurance Design](../../../../enterprise-architecture/continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md)
+- [[CT3] Governed Assurance](../../../../enterprise-architecture/continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 | [EC-14 Service Guardian](../capabilities/enterprise-capabilities.md#ec-14-service-guardian) | Direct | Direct | Direct |
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
 
 The three Business Enabling Capabilities are collaboratively realised. EC-14 contributes the assurance-specific semantics not truthfully represented by EC-01 through EC-13. Their contributions do not transfer source-information ownership, governing-requirement authority or subject-activity management to assurance. In particular, EC-10's direct contribution does not make Governed Assurance responsible for managing the subject activity, and it does not establish a relationship to an execution component.
 

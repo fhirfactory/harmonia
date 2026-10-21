@@ -1,4 +1,14 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Information Governance: Assertion, Authority, Custody & Provenance
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Assertion](../../../../enterprise-architecture/continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Information Assertion
 
@@ -24,6 +34,18 @@ While the assertion concept provides rigorous semantic governance, **Domain 04 d
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Assertion](../../../../enterprise-architecture/continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 2. The Four Pillars of Information Governance
 
 Harmonia enforces strict separation across four distinct governance dimensions:
@@ -43,6 +65,18 @@ Information Responsibility
 | **Information Consumption** | The reading, querying, evaluating, aggregating, or rendering of information by a consuming service or user. | The **consuming Capability, presentation tier, or external subscriber**. | Consumption grants no authority to alter originating facts or re-author source semantics. |
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Assertion](../../../../enterprise-architecture/continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 3. Granular Assertion-Level and Relationship-Level Authority
 
@@ -68,6 +102,18 @@ graph TD
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Assertion](../../../../enterprise-architecture/continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 4. Provenance & Lineage Framework
 
 Provenance describes where/how governed information arose, its derivation and
@@ -92,6 +138,18 @@ Provenance attaches to:
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Assertion](../../../../enterprise-architecture/continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Semantic Qualification Dimensions
 
 An Information Assertion or Relationship may be qualified across several semantic dimensions:
@@ -104,6 +162,18 @@ An Information Assertion or Relationship may be qualified across several semanti
 6. **Effective Context**: Clinical setting or situational bounds under which the assertion applies (e.g. *Post-Operative Recovery*, *Fasting State*).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 6. Information Unit Management Boundary
 
@@ -124,3 +194,7 @@ within it is a [platform/framework obligation](../metamodel/information-architec
 not a provenance schema, universal durable-evidence requirement or transfer of
 source responsibility. The wider evidence/retention and authority vocabulary
 questions remain for separate reconciliation.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

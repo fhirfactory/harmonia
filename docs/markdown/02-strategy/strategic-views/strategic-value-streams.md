@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Strategic Value Streams
 
 ## Overview & Purpose
@@ -55,6 +58,13 @@ Harmonia R1.x/R2.x defines exactly four principal Strategic Value Streams:
 
 ---
 
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Multi-Source Clinical Information → Coherent Clinical Picture](../../../../enterprise-architecture/continuum/strategy/value-stream/01f655eae3d8485699449c3dcf4f9b56.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ### VS-01: Multi-Source Clinical Information → Coherent Clinical Picture
 
 #### Strategic Purpose & Value Focus
@@ -105,6 +115,18 @@ Harmonia provides **governed, vendor-neutral longitudinal clinical representatio
 - **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-02` (Distinct Management and Durable Preservation), `COA-03` (Meaning-Centric Provenance and Traceability).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Unqualified Information → Governed, Consumable Information](../../../../enterprise-architecture/continuum/strategy/value-stream/02e036f18bab400bac261007e39457ee.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### VS-02: Unqualified Information → Governed, Consumable Information
 
@@ -160,6 +182,18 @@ $$\text{Aggregation} \longrightarrow \text{Processing} \longrightarrow \text{Per
 - **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-02` (Distinct Management and Durable Preservation), `COA-03` (Meaning-Centric Provenance and Traceability), `COA-06` (Collaborative Reusable Capability Realisation).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Operational Need → Coordinated Activity → Resolved Outcome](../../../../enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### VS-03: Operational Need → Coordinated Activity → Resolved Outcome
 
@@ -217,6 +251,18 @@ Activity execution constructs and downstream mechanisms (illustratively, worker 
 - **Strategic Courses of Action**: `COA-04` (Governed Asynchronous Activity Progression), `COA-05` (Entity-Centred Operational Coordination), `COA-06` (Collaborative Reusable Capability Realisation).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Distributed Clinical Knowledge → Informed Clinical Collaboration](../../../../enterprise-architecture/continuum/strategy/value-stream/3ba98c0c1170458f8c02fa76694fee67.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ### VS-04: Distributed Clinical Knowledge → Informed Clinical Collaboration
 
@@ -276,6 +322,11 @@ Harmonia establishes the governed information context in which clinical collabor
 - **Strategic Courses of Action**: `COA-01` (Boundary Membrane Sovereignty), `COA-03` (Meaning-Centric Provenance and Traceability), `COA-06` (Collaborative Reusable Capability Realisation).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
 
 ## 3. Value Stream Sufficiency Boundary & Runtime Pipeline Rejection
 

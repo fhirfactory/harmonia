@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+  "nativeMetamodel": "docs/archimate/framework/schemas/archimate3_Model.xsd",
+  "types": {
+    "Stakeholder": {
+      "directory": "motivation/stakeholder",
+      "template": "element.md",
+      "nativeType": "Stakeholder"
+    },
+    "Driver": {
+      "directory": "motivation/driver",
+      "template": "element.md",
+      "nativeType": "Driver"
+    },
+    "Assessment": {
+      "directory": "motivation/assessment",
+      "template": "element.md",
+      "nativeType": "Assessment"
+    },
+    "Goal": {
+      "directory": "motivation/goal",
+      "template": "element.md",
+      "nativeType": "Goal"
+    },
+    "Outcome": {
+      "directory": "motivation/outcome",
+      "template": "element.md",
+      "nativeType": "Outcome"
+    },
+    "Principle": {
+      "directory": "motivation/principle",
+      "template": "element.md",
+      "nativeType": "Principle"
+    },
+    "Requirement": {
+      "directory": "motivation/requirement",
+      "template": "element.md",
+      "nativeType": "Requirement"
+    },
+    "Constraint": {
+      "directory": "motivation/constraint",
+      "template": "element.md",
+      "nativeType": "Constraint"
+    },
+    "Meaning": {
+      "directory": "motivation/meaning",
+      "template": "element.md",
+      "nativeType": "Meaning"
+    },
+    "Value": {
+      "directory": "motivation/value",
+      "template": "element.md",
+      "nativeType": "Value"
+    },
+    "Resource": {
+      "directory": "strategy/resource",
+      "template": "element.md",
+      "nativeType": "Resource"
+    },
+    "Capability": {
+      "directory": "strategy/capability",
+      "template": "element.md",
+      "nativeType": "Capability"
+    },
+    "CourseOfAction": {
+      "directory": "strategy/course-of-action",
+      "template": "element.md",
+      "nativeType": "CourseOfAction"
+    },
+    "ValueStream": {
+      "directory": "strategy/value-stream",
+      "template": "element.md",
+      "nativeType": "ValueStream"
+    },
+    "BusinessActor": {
+      "directory": "business/business-actor",
+      "template": "element.md",
+      "nativeType": "BusinessActor"
+    },
+    "BusinessRole": {
+      "directory": "business/business-role",
+      "template": "element.md",
+      "nativeType": "BusinessRole"
+    },
+    "BusinessCollaboration": {
+      "directory": "business/business-collaboration",
+      "template": "element.md",
+      "nativeType": "BusinessCollaboration"
+    },
+    "BusinessInterface": {
+      "directory": "business/business-interface",
+      "template": "element.md",
+      "nativeType": "BusinessInterface"
+    },
+    "BusinessProcess": {
+      "directory": "business/business-process",
+      "template": "element.md",
+      "nativeType": "BusinessProcess"
+    },
+    "BusinessFunction": {
+      "directory": "business/business-function",
+      "template": "element.md",
+      "nativeType": "BusinessFunction"
+    },
+    "BusinessInteraction": {
+      "directory": "business/business-interaction",
+      "template": "element.md",
+      "nativeType": "BusinessInteraction"
+    },
+    "BusinessEvent": {
+      "directory": "business/business-event",
+      "template": "element.md",
+      "nativeType": "BusinessEvent"
+    },
+    "BusinessService": {
+      "directory": "business/business-service",
+      "template": "element.md",
+      "nativeType": "BusinessService"
+    },
+    "BusinessObject": {
+      "directory": "business/business-object",
+      "template": "element.md",
+      "nativeType": "BusinessObject"
+    },
+    "Contract": {
+      "directory": "business/contract",
+      "template": "element.md",
+      "nativeType": "Contract"
+    },
+    "Representation": {
+      "directory": "business/representation",
+      "template": "element.md",
+      "nativeType": "Representation"
+    },
+    "Product": {
+      "directory": "business/product",
+      "template": "element.md",
+      "nativeType": "Product"
+    },
+    "ApplicationComponent": {
+      "directory": "application/application-component",
+      "template": "element.md",
+      "nativeType": "ApplicationComponent"
+    },
+    "ApplicationCollaboration": {
+      "directory": "application/application-collaboration",
+      "template": "element.md",
+      "nativeType": "ApplicationCollaboration"
+    },
+    "ApplicationInterface": {
+      "directory": "application/application-interface",
+      "template": "element.md",
+      "nativeType": "ApplicationInterface"
+    },
+    "ApplicationFunction": {
+      "directory": "application/application-function",
+      "template": "element.md",
+      "nativeType": "ApplicationFunction"
+    },
+    "ApplicationInteraction": {
+      "directory": "application/application-interaction",
+      "template": "element.md",
+      "nativeType": "ApplicationInteraction"
+    },
+    "ApplicationProcess": {
+      "directory": "application/application-process",
+      "template": "element.md",
+      "nativeType": "ApplicationProcess"
+    },
+    "ApplicationEvent": {
+      "directory": "application/application-event",
+      "template": "element.md",
+      "nativeType": "ApplicationEvent"
+    },
+    "ApplicationService": {
+      "directory": "application/application-service",
+      "template": "element.md",
+      "nativeType": "ApplicationService"
+    },
+    "DataObject": {
+      "directory": "application/data-object",
+      "template": "element.md",
+      "nativeType": "DataObject"
+    },
+    "Node": {
+      "directory": "technology/node",
+      "template": "element.md",
+      "nativeType": "Node"
+    },
+    "Device": {
+      "directory": "technology/device",
+      "template": "element.md",
+      "nativeType": "Device"
+    },
+    "SystemSoftware": {
+      "directory": "technology/system-software",
+      "template": "element.md",
+      "nativeType": "SystemSoftware"
+    },
+    "TechnologyCollaboration": {
+      "directory": "technology/technology-collaboration",
+      "template": "element.md",
+      "nativeType": "TechnologyCollaboration"
+    },
+    "TechnologyInterface": {
+      "directory": "technology/technology-interface",
+      "template": "element.md",
+      "nativeType": "TechnologyInterface"
+    },
+    "Path": {
+      "directory": "technology/path",
+      "template": "element.md",
+      "nativeType": "Path"
+    },
+    "CommunicationNetwork": {
+      "directory": "technology/communication-network",
+      "template": "element.md",
+      "nativeType": "CommunicationNetwork"
+    },
+    "TechnologyFunction": {
+      "directory": "technology/technology-function",
+      "template": "element.md",
+      "nativeType": "TechnologyFunction"
+    },
+    "TechnologyProcess": {
+      "directory": "technology/technology-process",
+      "template": "element.md",
+      "nativeType": "TechnologyProcess"
+    },
+    "TechnologyInteraction": {
+      "directory": "technology/technology-interaction",
+      "template": "element.md",
+      "nativeType": "TechnologyInteraction"
+    },
+    "TechnologyEvent": {
+      "directory": "technology/technology-event",
+      "template": "element.md",
+      "nativeType": "TechnologyEvent"
+    },
+    "TechnologyService": {
+      "directory": "technology/technology-service",
+      "template": "element.md",
+      "nativeType": "TechnologyService"
+    },
+    "Artifact": {
+      "directory": "technology/artifact",
+      "template": "element.md",
+      "nativeType": "Artifact"
+    },
+    "Equipment": {
+      "directory": "physical/equipment",
+      "template": "element.md",
+      "nativeType": "Equipment"
+    },
+    "Facility": {
+      "directory": "physical/facility",
+      "template": "element.md",
+      "nativeType": "Facility"
+    },
+    "DistributionNetwork": {
+      "directory": "physical/distribution-network",
+      "template": "element.md",
+      "nativeType": "DistributionNetwork"
+    },
+    "Material": {
+      "directory": "physical/material",
+      "template": "element.md",
+      "nativeType": "Material"
+    },
+    "WorkPackage": {
+      "directory": "implementation-migration/work-package",
+      "template": "element.md",
+      "nativeType": "WorkPackage"
+    },
+    "Deliverable": {
+      "directory": "implementation-migration/deliverable",
+      "template": "element.md",
+      "nativeType": "Deliverable"
+    },
+    "ImplementationEvent": {
+      "directory": "implementation-migration/implementation-event",
+      "template": "element.md",
+      "nativeType": "ImplementationEvent"
+    },
+    "Plateau": {
+      "directory": "implementation-migration/plateau",
+      "template": "element.md",
+      "nativeType": "Plateau"
+    },
+    "Gap": {
+      "directory": "implementation-migration/gap",
+      "template": "element.md",
+      "nativeType": "Gap"
+    },
+    "Grouping": {
+      "directory": "grouping",
+      "template": "element.md",
+      "nativeType": "Grouping"
+    },
+    "Location": {
+      "directory": "location",
+      "template": "element.md",
+      "nativeType": "Location"
+    }
+  },
+  "specializations": {
+    "Feature": {
+      "nativeType": "Capability",
+      "directory": "strategy/capability/feature",
+      "authority": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "displayPrefix": "[Feature]",
+      "canonicalQualifier": "FEAT"
+    },
+    "Topic": {
+      "nativeType": "DataObject",
+      "directory": "application/data-object/topic",
+      "authority": "docs/markdown/governance/canonical-identity-and-naming.md#information-element-naming--machinery-validation-decision-2026-10-20",
+      "displayPrefix": "[Topic]",
+      "canonicalQualifier": "TOPIC"
+    }
+  },
+  "relationshipSpecializations": {
+    "Home": {
+      "nativeType": "Association",
+      "isDirected": true,
+      "direction": "element to home",
+      "authority": "docs/markdown/governance/archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules"
+    }
+  },
+  "connectors": {
+    "AndJunction": "Native relationship connector, not an independently authored architectural resource; preserve in projection support if present.",
+    "OrJunction": "Native relationship connector, not an independently authored architectural resource; preserve in projection support if present."
+  }
+}

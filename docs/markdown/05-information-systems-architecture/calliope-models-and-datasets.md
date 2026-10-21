@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Candidate Calliope Models, DataSets and Nomenclature Architecture
@@ -10,6 +13,13 @@ AX-04/05/06/07/08/09/12/14/17 constrain definition, authority, persistence,
 governance, developer support and retained uncertainty.
 
 <a id="calliope-responsibility"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Responsibility and decomposition
 
@@ -76,7 +86,19 @@ a mandatory mediator of every runtime transaction; current governed content may
 require DataSets runtime resolution. Packaging, APIs and other mechanisms remain
 [deferred](gaps.md#calliope-contracts).
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="calliope-models"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope-Models](../../../enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Calliope-Models
 
@@ -115,7 +137,19 @@ support does not move interface-specific semantic processing out of
 [developer-defined Ergo.BusinessLogic](pylai-external-interoperability.md#pylai-pathway-ingress).
 The remaining general converter/activity allocation questions stay in CDG-05.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="calliope-datasets"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope-DataSets](../../../enterprise-architecture/continuum/application/application-component/53bf6815c7a54ed0abde9b1aad311843.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Calliope-DataSets
 
@@ -144,7 +178,19 @@ Praxis capabilities may be used. No Calliope workflow engine or separate
 human-interaction framework is introduced. Detailed management UI, Iris/forms
 design and workflow are deferred.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="build-time-and-runtime"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Build-time knowledge and runtime authority
 
@@ -175,7 +221,19 @@ provide mutable content under those contracts; they SHALL NOT bootstrap the
 structural contracts required for their own access. This separates foundational
 software dependency from runtime collaboration with Mneme, Mnemosyne and Ponos.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="security-and-assurance-nomenclature"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Security and Assurance Nomenclature
 
@@ -219,7 +277,19 @@ Kleio's [mandatory capture authority](component-register.md#kleio-capture-author
 is governed intrinsic platform authority, separate from the originating
 Identity's authorisation and from nomenclature ownership.
 
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+
 <a id="calliope-deferred"></a>
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Calliope](../../../enterprise-architecture/continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## Deferred design and review boundary
 
@@ -237,3 +307,7 @@ management responsibility from these open details and from proposed clinical
 terminology/authoring services. Domain03 clinical-knowledge behaviour is not
 automatically allocated wholesale to Calliope. No Domain04 Information Family or
 capability coverage is inferred by this consolidation.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

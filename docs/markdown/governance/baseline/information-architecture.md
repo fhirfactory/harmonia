@@ -1,3 +1,9 @@
+<!-- continuum-source-succession -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+[Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Accepted Information Architecture — RAD-1.1.0
@@ -2087,3 +2093,5 @@ The existing [Assembly/View and snapshot distinctions](../../04-information-arch
 remain applicable without an automatic Search Result Set-to-Assembly mapping.
 
 Source standing: Adjudicated conceptual managed metadata collection; Search Result Metadata-Set is the same concept, not an additional element.
+
+------- Legacy Content - Superseded ------- Finish ----

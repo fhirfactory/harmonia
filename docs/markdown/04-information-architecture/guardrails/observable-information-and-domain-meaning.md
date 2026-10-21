@@ -1,4 +1,14 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Historical source and navigation; all architectural sections incorporated. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Observable Information and Encapsulated Domain Meaning
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Authority and Architectural Boundary
 
@@ -21,6 +31,18 @@ preserves the distinctions below; [AX-17](../../governance/architectural-axioms.
 prohibits inferred architecture, and
 [AX-18](../../governance/architectural-axioms.md#ax-18) prevents observation or
 participation from conferring domain authority.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [[BusinessObject] Information Unit](../../../../enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 2. Observability and Encapsulated Domain Meaning
 
@@ -61,6 +83,18 @@ participating outputs without requiring Harmonia to infer their domain
 meaning. This information semantic prescribes no derivation implementation
 mechanism and does not make runtime AI intrinsic to Harmonia.
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ergon](../../../../enterprise-architecture/continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. Governed Ergo Logic Boundary
 
 The Harmonia Platform is responsible for the governed execution boundary
@@ -88,6 +122,18 @@ calculate results and produce outputs. Such intentional interpretation belongs
 to that defined logic or invoked service; it does not imply intrinsic domain
 comprehension by the Harmonia Platform. Platform governance and the applicable
 work, information and domain-authority boundaries remain in force.
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Ergon](../../../../enterprise-architecture/continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 4. Runtime AI as an Optional Adjunct
 
@@ -123,3 +169,7 @@ participant in runtime business execution.
 business logic to contribute to governed execution. The distinction concerns
 the purpose of invocation, not the product name. Neither development-time use
 nor runtime invocation establishes intrinsic Platform intelligence.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->

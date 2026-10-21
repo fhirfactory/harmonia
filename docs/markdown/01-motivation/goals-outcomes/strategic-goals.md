@@ -1,3 +1,6 @@
+<!-- continuum-source-succession -->
+> **RAD-1.1.5 source succession:** Partial section succession; unwrapped scope/governance and unresolved material retain their recorded roles. See the [canonical continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md) and [section correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json). Original source wording and standing below are preserved.
+
 # Strategic Platform Goals
 
 ## Overview
@@ -7,6 +10,13 @@ Strategic Goals represent the high-level desired states and operational objectiv
 Harmonia recognizes strictly **six agreed strategic goals**. These goals define the target capabilities of the integration environment while establishing clear boundaries against scope creep.
 
 ---
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Durable Acceptance and Preservation of Clinical Events](../../../../enterprise-architecture/continuum/motivation/goal/44daa77317aa44b7967b62b295d7288d.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 1. Durable Acceptance and Preservation of Clinical Events
 
@@ -23,6 +33,18 @@ Clinical events—such as patient admissions, pathology test orders, critical la
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Timely Availability of Clinical Information](../../../../enterprise-architecture/continuum/motivation/goal/26e84fb0acfc49f1ac501b64a6e4bbf7.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 2. Timely Availability of Clinical Information
 
 ### Goal Statement
@@ -38,6 +60,18 @@ Healthcare delivery operates under tight clinical timelines. Point-of-care decis
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Responsive Access to Managed Information](../../../../enterprise-architecture/continuum/motivation/goal/c7b8639a922f4d1cb2fcc68933cf7a90.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 3. Responsive Access to Managed Information
 
 ### Goal Statement
@@ -52,6 +86,18 @@ In a regional network processing thousands of concurrent clinical interactions, 
 - Realized downstream under [AX-11 (Responsive & Resilient Access)](../../governance/architectural-axioms.md#ax-11) and [AX-05 (State Separation)](../../governance/architectural-axioms.md#ax-05).
 
 ---
+
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Reliable Subject Identity and Referential Integrity](../../../../enterprise-architecture/continuum/motivation/goal/e2f8b62e2cbd486282d68b6009c06de6.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
 
 ## 4. Reliable Subject Identity and Referential Integrity
 
@@ -70,6 +116,18 @@ Harmonia explicitly defines what this goal **does NOT entail**:
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Vendor-Independent Longitudinal Clinical Information Coherence](../../../../enterprise-architecture/continuum/motivation/goal/905aca03c85748d79c3c065f6f16fc0a.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 5. Vendor-Independent Longitudinal Clinical Information Coherence
 
 ### Goal Statement
@@ -84,6 +142,18 @@ Patient care spans decades across multiple disparate healthcare institutions. Co
 
 ---
 
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
+
+<!-- continuum-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by canonical continuum element(s), RAD-1.1.5 authorised ingestion:
+- [Coordinated Progression of Operational Activities and Associated Entity State](../../../../enterprise-architecture/continuum/motivation/goal/221eaf405d454c749112ece28ac595f1.md)
+Original source standing and unresolved qualifications are preserved.
+---------------------------------------------------------
+
 ## 6. Coordinated Progression of Operational Activities and Associated Entity State
 
 ### Goal Statement
@@ -96,3 +166,7 @@ Healthcare integration activities (such as ADT distribution, lab order dispatch,
 - **Beyond Conventional Workflow Engines**: Avoid language implying that Harmonia is merely a generic workflow engine. Harmonia does not simply execute arbitrary BPMN scripts; it coordinates distributed integration activities in lockstep with the real-world lifecycle of clinical entities (e.g., patient admission state, lab specimen lifecycle, encounter status).
 - Requires explicit, observable progression state across multi-stage activities ([`REQ-FND-002`](../requirements-constraints/foundational-requirements.md)).
 - Governed by [AX-16 (Operational Activity & Entity State Progress Together)](../../governance/architectural-axioms.md#ax-16).
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- continuum-supersession:end -->
