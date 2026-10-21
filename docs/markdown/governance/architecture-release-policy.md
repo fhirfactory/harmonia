@@ -30,7 +30,44 @@ independent and SHALL NOT determine or change this release value.
 
 ## Mechanism and repository convention
 
+### Iteration-scoped Architecture Review evidence — RAD-1.1.4 iteration 004, 2026-10-21
+
+The operative 004 Task retained with [HCRL 1.1.4 iteration 004](../../../enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-004.pending.md)
+authorises prospective implementation of the model demonstrated by
+[003](../../../enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md).
+The maintained [Review Praxis](../../../enterprise-architecture/governance/architecture-review-praxis.md)
+and [Provenance contract](../../../enterprise-architecture/governance/architecture-change-provenance.md)
+now place evidence at `design/evidence/<RAD-version>/<HCRL-iteration>/before/`
+and `after/`. The iteration is the provenance boundary for substantive AI-agent
+investigation, review, correction, application and verification, including formal
+Tasks/Reports with the established attributable event times and UTC filename
+prefixes. Transient working material is not retained merely because it existed;
+purpose-selected durable supporting outputs are evidence; HCRL is the governed
+semantic change/decision record, not the review workspace or evidence-file manifest.
+
+This explicitly supersedes the execution-only Task/Report scope and release-level
+placement described in the historical RAD-1.1.3 decision below. 003 demonstrated
+and refactored the structure; 004 governs it prospectively. No earlier decision,
+record or original provenance is rewritten. Solution Architect decision and final
+confirmation authority remain unchanged.
+
+Governance application prepares **1.1.3 → 1.1.4** once through the existing
+expected-current patch mechanism. Pending iterations themselves allocate nothing;
+the increment records this applied change set and supplies no acceptance. Further
+iterations of this same transition, including the substantive migration decisions
+reserved for **005**, consume no additional release. That migration is neither
+resumed nor adjudicated by 004. No frozen model/publication is regenerated.
+Mark Hunter, Solution Architect, confirmed the bounded 004 result on 2026-10-21:
+“result confirmed, complete!” The [completed HCRL 004](../../../enterprise-architecture/design/register/1.1.4/hcrl-1.1.4-004.complete.md)
+retains the attributable confirmation, actual result and explicit 005 deferrals.
+Completion consumes no additional release; original pending inputs and evidence
+are preserved, including the recorded validation failures and limits.
+
 ### AI-agent execution provenance and common Review Praxis — RAD-1.1.3, 2026-10-21
+
+**Historical decision:** its execution-only scope and release-level placement
+were the rules in force for RAD-1.1.3. They are superseded prospectively by the
+1.1.4-004 decision above; the original timestamp/event meanings remain operative.
 
 The Solution Architect's [reviewed HCRL 1.1.3 iteration 001](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-001.pending.md)
 and subsequent Apply instruction establish the common

@@ -185,11 +185,15 @@ Load and follow the common
 for every change. Review activity and evidence MUST be proportionate to scope,
 complexity, uncertainty and architectural materiality identified through review;
 an implementation, bug, patch or backlog label does not itself reduce or bypass
-the Praxis. For formal AI-agent Tasks directing execution of an identifiable
-adjudicated/authorised change, retain Task Details at
-`enterprise-architecture/design/evidence/<resulting-version>/before/ai-agent-tasks/`
-and corresponding Task Reports at `after/ai-agent-reports/`, irrespective of
-architectural materiality, under the provenance contract. Preserve operative
+the Praxis. For substantive AI-agent activity associated with an HCRL iteration,
+retain formal Task Details at
+`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
+and corresponding Reports at that iteration's `after/ai-agent-reports/`,
+irrespective of architectural materiality, under the provenance contract.
+Investigation, analysis, review, candidate/pending-HCRL preparation or revision,
+corrective work, application and verification use this same evidence model. The
+HCRL iteration is the provenance boundary; activity purpose supplies no separate
+review/execution provenance taxonomy. Preserve operative
 instructions, attributable context, factual outcomes and adequate correspondence.
 Record authoritative Task-issuance and Report-production ISO 8601 timestamps
 with UTC `Z` or an explicit offset; filenames MUST begin with filesystem-safe
@@ -203,14 +207,21 @@ replacing the original production timestamp. Preserve unavailable original times
 as explicitly unresolved for Solution Architect treatment before closure,
 including unresolved filename prefixes; never guess them from unrelated
 receipt/capture, filesystem metadata, commits or current time.
-Investigation, analysis, candidate preparation and pending-HCRL preparation/revision
-are Architecture Review provenance preserved through the HCRL lifecycle and
-applicable materiality/Minutiae treatment, without a separate formal review
-Task/Report convention.
-Retention of the formal Task/Report does not require every agent interaction or
-working log. Material content belongs in the applicable HCRL DR; directory
-placement confers no acceptance. RAD-1.1.3 is the first prospective use; existing
-`.junie` artefacts and historical material are not migrated by this rule.
+Working material is transient and discardable when its purpose ends; its existence
+does not make it evidence. Evidence is durable input, output or supporting material
+retained because it materially supports, explains, reproduces or verifies the
+iteration's governed activity. Purpose-selected mappings, inventories and checks
+can be evidence of review. Retention does not extend to every intermediate
+artefact, interaction or working log. Preserve material still needed for active
+recovery, validation or unresolved dependencies.
+HCRL is the authoritative semantic change/decision record, not the Architecture
+Review working document, an evidence-file manifest or a substitute for detailed
+evidence. Material meaning/conclusions belong in the applicable DR with sufficient
+traceability references. Directory placement confers no acceptance.
+RAD-1.1.3 first required execution-only Task/Report records at release level.
+1.1.4-003 demonstrated/refactored the iteration layout; 1.1.4-004 implements it
+prospectively and supersedes the narrower rule. Historical records and `.junie`
+material are not rewritten, migrated or declared retrospectively compliant.
 
 HCRL is the common Decision Review Log and single semantic record for each
 governed release transition. Read the exact reviewed HCRL and its attributable

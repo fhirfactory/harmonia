@@ -37,25 +37,30 @@ Load and follow the common
 for every change, with review activity/evidence proportionate to scope,
 complexity, uncertainty and materiality identified through review. Classification
 as implementation or similar does not itself reduce or bypass the Praxis.
-For formal AI-agent Tasks directing execution of an identifiable
-adjudicated/authorised change, Task Details and corresponding execution Reports
-MUST be retained at
-`enterprise-architecture/design/evidence/<resulting-version>/before/ai-agent-tasks/`
-and `after/ai-agent-reports/`, respectively, under the common provenance contract,
-irrespective of architectural materiality. This is required execution provenance;
-material content still belongs in the applicable HCRL DR. Apply the provenance
+For substantive AI-agent activity associated with an HCRL iteration, formal Tasks
+and corresponding Reports MUST be retained at
+`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
+and that iteration's `after/ai-agent-reports/`, under the common provenance
+contract, irrespective of architectural materiality. Investigation, analysis,
+review, candidate/pending-HCRL preparation or revision, corrective work, application
+and verification use the same model; the iteration is the provenance boundary.
+Material meaning and conclusions belong in the applicable HCRL DR with sufficient
+traceability references. HCRL is the semantic change/decision record, not the
+Architecture Review working document, an evidence-file manifest or a substitute
+for detailed supporting evidence. Durable mappings, inventories and checks are
+evidence when they materially support the activity. Transient working material
+is discardable when its purpose ends and is not retained merely because it existed;
+preserve active recovery, validation and unresolved dependencies. Apply the provenance
 contract's authoritative issuance/production timestamps, mandatory sortable UTC
 filename prefixes and unresolved-original-time treatment. The attributable system
 timestamps of operative instruction entry into the agent interaction and completed
 Report emission are the governed Task-Issued-At and Report-Produced-At events.
 Preserve subsequent Report amendments without replacing original production time;
 these events assert no earlier composition or internal model-generation time.
-Investigation, analysis, candidate preparation and pending-HCRL
-preparation/revision are Architecture Review provenance preserved through the
-HCRL lifecycle and applicable
-materiality/Minutiae treatment, without a new formal review Task/Report convention.
-The convention first applies to RAD-1.1.3 and supplies no historical migration
-authority.
+RAD-1.1.3 first required execution-only records at release level; 1.1.4-003
+demonstrated/refactored the iteration structure, and 1.1.4-004 implements it
+prospectively, superseding the narrower rule. No retrospective compliance,
+historical rewrite, migration or unrelated disposal authority is supplied.
 
 Every change receives review; material implementation discoveries require
 adjudication. The accepted target structure does not authorise repository

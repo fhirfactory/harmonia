@@ -34,6 +34,20 @@ Architect confirmation of that incorporated result was supplied on 2026-10-21:
 is the authoritative semantic record for RAD-1.1.2 → RAD-1.1.3. Completion belongs
 to the same accepted change set and consumes no additional release.
 
+The operative 004 Task recorded in [HCRL 1.1.4 iteration 004](../design/review/1.1.4/hcrl-1.1.4-004.pending.md)
+authorises prospective implementation of the iteration-scoped evidence model
+[demonstrated by 003](../design/review/1.1.4/hcrl-1.1.4-003.pending.md), DR-13/DR-14.
+The rules below supersede the earlier execution-only Task/Report scope and
+release-level placement from 004, preserving historical truth, attributable
+event-time rules and the Solution Architect's authority. 003 demonstrated the
+structure; 004 governs it prospectively. Substantive migration/adjudication
+remains reserved for 005.
+Mark Hunter, Solution Architect, subsequently confirmed the bounded 004 result
+on 2026-10-21: “result confirmed, complete!” The [completed HCRL 004](../design/register/1.1.4/hcrl-1.1.4-004.complete.md)
+records that confirmation with its attributable event and explicit migration
+deferrals. Completion consumes no additional release; the substantive migration
+remains reserved for 005.
+
 The [Architectural Axioms](../../docs/markdown/governance/architectural-axioms.md)
 remain the highest architectural authority. This contract applies AX-04, AX-08,
 AX-09, AX-14, AX-15 and AX-17: machinery supplies evidence, meaningful decisions
@@ -90,21 +104,27 @@ adjudication. Implementation is a legitimate discovery mechanism, not independen
 architectural authorisation. Ordinary detail without architectural effect needs
 normal HCRL/minutiae review, without separate material treatment.
 
-For formal AI-agent Tasks directing execution of an identifiable
-adjudicated/authorised change, Task Details and corresponding execution Reports
-SHALL be retained as execution provenance at the governed task/report locations
-below, with authoritative issuance/production timestamps and filenames beginning
-with sortable UTC timestamps derived from those events, in accordance with
-[Architecture Change Provenance](architecture-change-provenance.md#ai-agent-execution-provenance).
-Retention is required irrespective of architectural materiality. Their review
-treatment is normally minutiae unless materially architectural; material content
-belongs in the applicable substantive DR. Retaining the formal Task/Report does
-not require retaining every prompt, conversation, tool invocation, working log
-or other agent interaction. Investigation, analysis, candidate preparation and
-pending-HCRL preparation/revision are Architecture Review provenance, preserved
-through the HCRL lifecycle and applicable materiality/Minutiae treatment. They do
-not become execution provenance through agent participation or contribution to
-the same transition. No separate formal review Task/Report convention is created.
+For substantive AI-agent activity associated with an HCRL iteration, formal Task
+Details and corresponding Reports SHALL be retained at that iteration's governed
+locations below, with authoritative issuance/production timestamps and sortable
+UTC filename prefixes derived from those events, under
+[Architecture Change Provenance](architecture-change-provenance.md#ai-agent-activity-provenance).
+This includes investigation, analysis, review, candidate/pending-HCRL preparation
+or revision, corrective work, application and verification. The iteration is the
+provenance boundary; review and authorised execution use one evidence model.
+Retention is required irrespective of architectural materiality. Supporting
+provenance normally receives Minutiae treatment; substantive meaning belongs in
+its applicable DR. Retention does not extend to every interaction or intermediate
+artefact merely because it existed.
+
+Apply the provenance contract's normative distinction between
+[working material, evidence and HCRL](architecture-change-provenance.md#working-material-evidence-and-hcrl).
+Transient working material is discardable when its purpose ends. Durable mappings,
+reference inventories, checks and similar outputs are evidence when they materially
+support, explain, reproduce or verify the iteration's governed activity. HCRL
+retains semantic decisions/conclusions and sufficient traceability references;
+it SHALL NOT become the Architecture Review working document, an evidence-file
+manifest or a substitute for detailed supporting evidence.
 
 Git is authoritative for source-code history. Do not reproduce implementation
 source as architectural evidence merely for historical completeness. A bounded
@@ -191,11 +211,11 @@ enterprise-architecture/
 │   ├── archimate/
 │   ├── review/<version>/
 │   ├── register/<version>/
-│   └── evidence/<version>/
+│   └── evidence/<RAD-version>/<HCRL-iteration>/
 │       ├── before/
-│       │   └── ai-agent-tasks/
+│       │   └── ai-agent-tasks/<timestamp>-<task>.md
 │       └── after/
-│           └── ai-agent-reports/
+│           └── ai-agent-reports/<timestamp>-<report>.md
 └── governance/
 ```
 
@@ -210,16 +230,20 @@ Material not fully approved, including partially approved artefacts requiring
 another iteration, belongs in `design/review/<version>/`. Approved architectural
 artefacts/design records belong in `design/register/<version>/`. Partially
 approved artefacts do not enter the register. Required evidence belongs in the
-before/after locations under the provenance contract.
+iteration-scoped before/after locations under the provenance contract.
 
-`before/ai-agent-tasks/` and `after/ai-agent-reports/` are the governed locations
-for formal AI-agent Tasks directing execution of an identifiable
-adjudicated/authorised change and corresponding execution Reports in that
-transition. They represent task-input and execution-result roles, respectively;
-they do not assert that a contained artefact existed in the predecessor or
-successor Git state, or that a result is accepted. RAD-1.1.3 is the first
-prospective use of this convention. Other required transition evidence retains
-its appropriate before/after placement.
+`before/ai-agent-tasks/` and `after/ai-agent-reports/` beneath the corresponding
+HCRL iteration retain formal substantive AI-agent Tasks and Reports. They
+represent activity-input and activity-output roles, not assertions of presence
+in predecessor/successor Git states or acceptance. The resulting RAD version and
+HCRL iteration identify the boundary (for example `1.1.4/004`), independently of
+agent/session or processing-run identity. Earlier evidence stays with its
+originating iteration and is referenced where relevant by subsequent iterations.
+Other purpose-selected evidence uses the same before/after structure. Empty
+packages, universal archives, hashes or duplicate source copies are not required.
+RAD-1.1.3 established execution-only records at release level; the common
+iteration-scoped rule takes prospective effect in 1.1.4-004 after 003's bounded
+demonstration/refactoring. No earlier record is rewritten to assert compliance.
 
 Use `hcrl-<target-version>-<iteration>.pending.md` and
 `hcrl-<target-version>-<iteration>.complete.md`. The completed HCRL belongs in the
@@ -273,9 +297,11 @@ attributable erratum; a material correction/change requires a subsequent governe
 HCRL transition. Detailed erratum mechanics SHALL be established when an actual
 requirement arises; no speculative carrier, procedure or machinery is installed.
 
-Pending iterations are working review provenance and SHALL be retained while
-needed for active review and traceability. The completed HCRL is the durable
-authoritative transition record. There is no requirement to retain every
+Pending iterations preserve the HCRL review/adjudication lifecycle and SHALL be
+retained while needed for active review and traceability. They are semantic review
+records, not the Architecture Review working area. Transient analysis stays working
+material; durable supporting outputs stay in the originating iteration's evidence.
+The completed HCRL is the durable authoritative transition record. There is no requirement to retain every
 superseded pending iteration indefinitely. Retention/disposal may be determined
 pragmatically after completion provided required evidence and attributable
 decision history are not lost. This does not authorise loss of needed recovery

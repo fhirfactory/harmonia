@@ -29,15 +29,15 @@ migration requires a separately established bounded mapping and authorisation.
 The common [Architecture Review Praxis](../../../enterprise-architecture/governance/architecture-review-praxis.md)
 implements review for every Harmonia change, with review activity and evidence
 proportionate to scope, complexity, uncertainty and materiality identified through
-review. The reviewed RAD-1.1.3 extension requires formal AI-agent Task Details and
+review. The reviewed RAD-1.1.3 extension required formal AI-agent Task Details and
 corresponding execution Reports for Tasks directing an identifiable
 adjudicated/authorised change, irrespective of materiality, at the common
 provenance contract's task/report evidence locations. Execution records require
 authoritative issuance/production timestamps and filenames beginning with sortable
 UTC timestamps derived from those same events. Investigation, analysis, candidate
-preparation and pending-HCRL preparation/revision remain Architecture Review
+preparation and pending-HCRL preparation/revision remained Architecture Review
 provenance within the HCRL lifecycle, without a separate formal review Task/Report
-convention. [Application iteration 004](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-004.pending.md)
+convention at that time. [Application iteration 004](../../../enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-004.pending.md)
 records the corrections and then-unresolved original event times/prefixes. Its
 updated Solution Architect table DR-9 expressly clarifies DR-7: attributable system
 timestamps of operative instruction entry into the agent interaction and completed
@@ -48,6 +48,25 @@ confirmed the incorporated result on 2026-10-21: “result confirmed. Complete!�
 The [completed HCRL iteration 005](../../../enterprise-architecture/design/register/1.1.3/hcrl-1.1.3-005.complete.md)
 records the accepted RAD-1.1.2 → RAD-1.1.3 transition; completion consumes no
 additional release.
+
+[HCRL 1.1.4 iteration 004](../../../enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-004.pending.md)
+prospectively supersedes that execution-only/release-level rule, implementing the
+iteration model [demonstrated by 003](../../../enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md).
+Durable evidence belongs under
+`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/`
+and `after/`. Substantive AI-agent investigation, review, corrective work,
+application and verification retain formal Tasks and Reports in that iteration's
+`before/ai-agent-tasks/` and `after/ai-agent-reports/`, with the existing attributable
+event times and UTC filename prefixes. The common contracts distinguish transient
+working material, purpose-selected durable evidence (including material mappings,
+inventories and checks), and HCRL as semantic change/decision record. HCRL supplies
+conclusions and traceability references, not a working area or evidence-file
+manifest. No rule requires every intermediate artefact to be retained. Historical
+records stay unchanged; substantive migration/adjudication remains reserved for 005.
+Mark Hunter, Solution Architect, confirmed the bounded 004 result on 2026-10-21:
+“result confirmed, complete!” The [completed HCRL 004](../../../enterprise-architecture/design/register/1.1.4/hcrl-1.1.4-004.complete.md)
+records that confirmation, its attributable event and explicit deferrals.
+Completion consumes no additional release.
 Existing specialised contracts below retain their purposes and semantics.
 
 This location contains cross-domain architecture governance material applying

@@ -19,6 +19,19 @@ confirmed the incorporated result on 2026-10-21: “result confirmed. Complete!�
 The [completed HCRL iteration 005][completed] is the authoritative RAD-1.1.2 →
 RAD-1.1.3 transition record; completion consumes no additional release.
 
+The operative 004 Task recorded in [HCRL 1.1.4 iteration 004][iteration-004]
+authorises the prospective Praxis below, carrying forward the iteration-scoped
+structure demonstrated by [iteration 003][iteration-003], DR-13/DR-14. From 004,
+this explicitly supersedes the 1.1.3 execution-only Task/Report boundary and
+release-level evidence placement. The original event-time requirements and
+Solution Architect authority remain in force. 003 demonstrated and refactored
+the structure; 004 implements its governed process. Prior practice is preserved.
+Mark Hunter, Solution Architect, subsequently confirmed the bounded 004 result
+on 2026-10-21: “result confirmed, complete!” The [completed HCRL 004](../design/register/1.1.4/hcrl-1.1.4-004.complete.md)
+records that confirmation with its attributable event and explicit migration
+deferrals. Completion consumes no additional release; the substantive migration
+remains reserved for 005.
+
 [Architecture Governance][governance] controls review authority, HCRL structure,
 materiality, bounded Minutiae and completion. [Architecture Change Provenance][provenance]
 is the single representation-neutral transition-evidence contract. The
@@ -34,32 +47,59 @@ implementation, bug, patch, backlog item or similar does not itself reduce or
 bypass the Praxis. Review may establish that a change has no material
 architectural effect; such a transition still receives appropriate HCRL review.
 
-For formal AI-agent Tasks directing execution of an identifiable
-adjudicated/authorised change, Task Details and corresponding execution Reports
-SHALL be retained as execution provenance, irrespective of architectural
-materiality, under the provenance contract:
+## Activity, evidence and semantic record
+
+The Praxis SHALL distinguish the following, using the normative definitions in
+[Architecture Change Provenance][evidence-semantics]:
+
+- **Working material:** transient material used while performing an activity;
+  discardable when its purpose ends, without retention merely because it existed.
+- **Evidence:** durable inputs, outputs or supporting material retained because
+  they materially support, explain, reproduce or verify the governed activity
+  associated with an HCRL iteration.
+- **HCRL:** the authoritative semantic change/decision record for the governed RAD
+  transition. It is not the Architecture Review working document or a substitute
+  for detailed supporting evidence.
 
 ```text
-enterprise-architecture/design/evidence/<resulting-version>/
-├── before/
-│   └── ai-agent-tasks/
-└── after/
-    └── ai-agent-reports/
+Architecture Review activity
+├── transient working material
+│   └── not retained merely because it existed
+├── durable evidence
+│   └── enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/
+│       ├── before/
+│       │   └── ai-agent-tasks/<timestamp>-<task>.md
+│       └── after/
+│           └── ai-agent-reports/<timestamp>-<report>.md
+└── HCRL
+    └── governed semantic change/decision record
 ```
 
-These are task-input and execution-result roles, not assertions that a record
-existed in the predecessor or successor Git state. Retaining formal Tasks/Reports
-does not require every prompt, conversation, tool invocation, working log or
-other agent interaction. Additional evidence remains purpose-selected. Materiality
-determines review treatment, not whether formal AI-agent Task/Report provenance
-is retained. RAD-1.1.3 is the first prospective use of this convention.
+The HCRL iteration SHALL be the provenance boundary. The version is the resulting
+RAD release; the iteration corresponds to its HCRL, such as `1.1.4/004`.
+`before/` contains activity inputs/input provenance; `after/` contains outputs/output
+provenance. These roles do not assert presence in predecessor/successor Git states
+or acceptance of results. Keep earlier evidence with its originating iteration;
+later iterations use sufficient references and correspondence rather than recopying
+it. An iteration does not become a release, session or processing-run identity.
 
-Investigation, analysis, candidate preparation and preparation/revision of a
-pending HCRL are Architecture Review provenance. Preserve their relevant
-instructions, findings and review history through the HCRL lifecycle and bounded
-Minutiae where appropriate. Agent participation and contribution to the same
-release do not make that activity execution provenance. No new formal review
-Task/Report convention is established.
+For substantive AI-agent activity associated with an iteration, formal Tasks and
+corresponding Reports SHALL be retained in these locations, irrespective of
+architectural materiality. Investigation, analysis, review, candidate/pending-HCRL
+preparation or revision, corrective work, application and verification all use
+this model. Their authority and outcomes remain distinct; an investigation Task
+supplies no authority to apply a candidate. There is no separate review/execution
+evidence taxonomy. Materiality determines review treatment, not retention of
+these required substantive-activity records.
+
+Select additional evidence by purpose: durable mappings, reference inventories,
+checks and similar review outputs belong in the originating iteration's evidence
+when they materially support the review. Retaining formal Tasks/Reports does not
+require every prompt, conversation, tool invocation, intermediate artefact or
+working log. Preserve material still needed for recovery, validation or unresolved
+dependencies; the convention authorises no unrelated historical cleanup.
+HCRL records material semantics and conclusions with enough references for
+traceability, without becoming a manifest of every evidence file.
 
 ## 1. Establish the task and originating state
 
@@ -70,9 +110,10 @@ substitute prior-session interpretations or existing implementation for authorit
 Identify relevant axioms, constraints, conditions and exclusions. Preserve
 unestablished authority and unresolved effects explicitly.
 
-Classify the instruction against its actual purpose and authority. For a Task
-directing execution of an identifiable adjudicated/authorised change, retain the
-formal Task Detail at the governed task location. Preserve operative issued
+Identify the instruction's actual purpose, authority and associated HCRL iteration.
+For substantive AI-agent activity, retain the formal Task Detail at that
+iteration's `before/ai-agent-tasks/` location, whether the activity is investigation,
+review, corrective work, application or verification. Preserve operative issued
 wording, attributable context, material corrections/follow-ups and adequate
 source/review correspondence. Record the authoritative issuance timestamp in
 ISO 8601 with `Z` or an explicit offset and its source; begin the filename with
@@ -83,8 +124,8 @@ no earlier human composition time. Separate receipt/capture or later recording
 does not replace that event. Follow the provenance contract's treatment of
 unavailable original times; record unresolved
 times and filename prefixes for Solution Architect treatment before closure.
-An instruction to investigate or prepare a candidate remains review provenance
-and does not itself approve the proposed architecture.
+An instruction to investigate or prepare a candidate does not itself approve the
+proposed architecture; its Task/Report nonetheless follows the same iteration model.
 
 ## 2. Prepare the candidate HCRL
 
@@ -95,11 +136,12 @@ proposals, relevant authority, uncertainties, evidence, consequences and
 dependencies within the applicable DR. Disclose supporting/minor provenance in
 one bounded Minutiae group without demoting substantive architectural content.
 
-Preserve the review-preparation instruction, relevant findings, source references
-and preparation/verification facts within the pending HCRL and its applicable DRs.
-Reference genuine execution records where relevant to the matter under review.
-Do not create formal execution Tasks/Reports for preparation or investigation,
-or imply that a Report for future application already exists. Pending iterations
+Retain the substantive review-preparation Task in the iteration's `before/` and
+its actual Report and durable supporting outputs in `after/`. Preserve findings,
+source correspondence and preparation/verification conclusions in the applicable
+DR with sufficient evidence references. Keep detailed analysis outside the HCRL;
+use transient working material while developing it. A Report for completed review
+activity does not imply a future application Report exists. Pending iterations
 consume no releases and supply no acceptance.
 
 ## 3. Obtain and preserve adjudication
@@ -122,8 +164,8 @@ Read the exact reviewed HCRL and applicable application instruction. Recheck the
 originating source/baseline and immediate predecessor before mutation. Apply only
 unambiguous authorised directives and deterministic derivations, with their actual
 conditions/exclusions. Retain formal application Task Details and material
-follow-up instructions at the task location, preserving their correspondence,
-issuance event times and required timestamped filenames.
+follow-up instructions at the associated iteration's task location, preserving
+their correspondence, issuance event times and required timestamped filenames.
 
 Prepare the one accepted-change patch increment under the existing release policy
 and expected-current check; identify the release used for resulting-state
@@ -137,9 +179,10 @@ under AX-15 and missing architectural authority under AX-17.
 
 ## 5. Report and verify the incorporated result
 
-Retain formal Task Reports at `after/ai-agent-reports/`. Preserve sufficient
-factual execution, outcome, verification, limitation and correspondence information
-to establish what occurred. Identify the corresponding tasks, actual affected
+Retain formal Task Reports at the associated iteration's `after/ai-agent-reports/`,
+including completed investigation/review and corrective/verification activity.
+Preserve sufficient factual activity, outcome, verification, limitation and
+correspondence information to establish what occurred. Identify the corresponding tasks, actual affected
 paths/source-state locators, departures and unresolved effects. Correspondence
 SHALL support reconstruction of the governed transition without imposing
 one-to-one Task/Report file pairing.
@@ -160,12 +203,16 @@ Solution Architect treatment before closure. Never infer missing times or order
 from filesystem metadata, commit time, the current clock or sequence. Filename
 ordering aids navigation and does not replace the authoritative event record.
 
-Record actual application, source/result correspondence, material validation
+Record actual activity/application, source/result correspondence, material validation
 conclusions and limits in the applicable HCRL DR, with useful report references.
 A report does not replace the semantic record. Distinguish proposed, performed
 and incorporated work; PASS, FAIL, TIMEOUT, STALLED and UNRESOLVED; automated
 verification, human review, publication and actual inspection/transport outcomes.
-Use bounded execution and required repository checks. Do not claim uncommitted
+Use bounded execution and required repository checks. The read-only
+[iteration evidence check][evidence-check] checks the selected iteration's layout
+and conventional Markdown Task/Report event-time/prefix correspondence. It cannot
+adjudicate evidence significance, attribution authenticity or architectural acceptance;
+record its limits and any unresolved original times. Do not claim uncommitted
 results are recoverable from an earlier Git commit.
 
 An attributable Solution Architect decision in a task retains its actual authority
@@ -214,7 +261,11 @@ or ArchiMate element, and changes no runtime responsibility or module boundary.
 [temporal-application]: ../design/review/1.1.3/hcrl-1.1.3-005.pending.md
 [completed]: ../design/register/1.1.3/hcrl-1.1.3-005.complete.md
 [governance]: architecture-governance.md
-[provenance]: architecture-change-provenance.md#ai-agent-execution-provenance
+[provenance]: architecture-change-provenance.md#ai-agent-activity-provenance
+[evidence-semantics]: architecture-change-provenance.md#working-material-evidence-and-hcrl
+[iteration-003]: ../design/review/1.1.4/hcrl-1.1.4-003.pending.md
+[iteration-004]: ../design/review/1.1.4/hcrl-1.1.4-004.pending.md
+[evidence-check]: ../../scripts/architecture_review_evidence.py
 [template]: templates/hcrl-template.pending.md
 [axioms]: ../../docs/markdown/governance/architectural-axioms.md
 [release-policy]: ../../docs/markdown/governance/architecture-release-policy.md

@@ -1,0 +1,72 @@
+{
+  "head": "41047e1dc5c7d1ca4769dc7479bb50cae60989a7",
+  "branch": "ArchitecturalGovernance",
+  "release": {
+    "version": "1.1.3",
+    "previous_version": "1.1.2"
+  },
+  "entry_git_status": "?? enterprise-architecture/design/evidence/1.1.4/\n?? enterprise-architecture/design/review/1.1.4/\n",
+  "preserved_001_002_003": {
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-001.pending.md": {
+      "bytes": 61235,
+      "sha256": "6019d3793dc148e0a99db84374f1fb0f98440d17ce6e1e4b62144eb1ea369909"
+    },
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md": {
+      "bytes": 72820,
+      "sha256": "3a41bad3516a2bf35ebfd42f9cc5fc35057498956f362adc69649a3584a63341"
+    },
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md": {
+      "bytes": 80379,
+      "sha256": "9c88a7e52e2b24a23f5498a626e35fcdfa183ae639f391d85b5a2e81ae8a5252"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports/20261021T055042Z-migration-candidate-preparation.md": {
+      "bytes": 2710,
+      "sha256": "0b880e79c80115ba844df2cc20ec55418c8c1aa53ee1d84850dfec220033d9a7"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks/20261021T054402Z-migration-candidate-preparation.md": {
+      "bytes": 3630,
+      "sha256": "21281403658ae2a5c7c9f33f260c2eed9594f7b2f7adfc85e9fcc6b1bb25690f"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports/20261021T061342Z-migration-analysis.md": {
+      "bytes": 3885,
+      "sha256": "e0c917ad1959ce56e2e709efc92ef402d63aef11d8e20773d94f0d64b04e9375"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json": {
+      "bytes": 3665,
+      "sha256": "0e36cd56fb8cf61a89ee1bf9b9a8233bc9be641e0cc3b189cc6c40d55ff41ce3"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv": {
+      "bytes": 4138585,
+      "sha256": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz": {
+      "bytes": 437163,
+      "sha256": "36e7a5c03c03a67688e81d606670b038c146541f05b29b361771640124176562"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks/20261021T055929Z-migration-analysis.md": {
+      "bytes": 5892,
+      "sha256": "6de2563ed834fff2f92a45d94c0a11fc94c0e5e2d4ff2684a3c52168fa50dfa9"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports/20261021T064017Z-evidence-refactoring.md": {
+      "bytes": 15891,
+      "sha256": "ef4015a1f26128425f944bb8dbdc58fd7348b283afb24e33042a87b7d4e0f4c5"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/after/refactoring-checks.json": {
+      "bytes": 20083,
+      "sha256": "1d17a9b2aabc7f13d08670b53e40acc1492a9ba3295816c2856ab8a418459ce9"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks/20261021T063419Z-evidence-refactoring.md": {
+      "bytes": 8462,
+      "sha256": "c2e7f93b1499029d0ae675712701477e364a9f6b73ce47e19cb4bd099efd8347"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/before/entry-state.json": {
+      "bytes": 1847,
+      "sha256": "721c86d67c7935ac3e1ab269352a462e0bb2ab6e7c4748c07129b92c2da70f12"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md": {
+      "bytes": 72727,
+      "sha256": "298534c9ca078ae40e9edabc16e47830639f8937a87bcb32370a8e9814bd669b"
+    }
+  },
+  "governance_baseline": "Tracked governance source is recoverable from the recorded HEAD. Existing 1.1.4 review/evidence inputs are untracked; no claim of recovery from HEAD is made."
+}
