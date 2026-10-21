@@ -19,7 +19,14 @@ Unresolved**, with a descriptive/evidence-referencing **Outcome Reason**,
 Architect instruction may revise a previously issued Disposition; retain its audit
 history. A later Outcome does not rewrite the call to action. No placeholder-bearing instruction is executable.
 
-Follow the [governed contract](../archimate-ingestion-change-review.md).
+Follow the [governed Change Review contract](../archimate-ingestion-change-review.md)
+and the single [Architecture Change Provenance contract](../architecture-change-provenance.md).
+This template implements those contracts; it defines no independent provenance
+policy. Run-relative links and detailed attempts below are active processing
+records. At closure, preserve the material architectural meaning, decision facts
+and verification conclusions in this review without requiring those links to
+remain available. Retain working records while recovery or unresolved dependencies
+require them; completing this form does not authorise disposal.
 Keep the linked summary as the first visible content, with one phrase of at most
 80 characters per description. Allocate stable review-local `CR-nnn` IDs; keep
 anchors stable and summary/detail Disposition and Outcome values synchronised. These IDs are not
@@ -40,7 +47,7 @@ Unresolved/Resolved for Outcome; no Disposition determines it automatically.
 - Transport control, if used: `<path / hash / why applicable>`.
 - Detection: `<methods, tool versions, commands and detection evidence links>`.
 - Evidence limits: `<missing snapshots, unknown provenance or explicit none>`.
-- Run evidence: `detection/`, `reconciliation/`, `validation/` (paths are relative
+- Active run records: `detection/`, `reconciliation/`, `validation/` (paths are relative
   to the instantiated run, not this governed template).
 
 ### Decomposition record
@@ -53,6 +60,65 @@ any subsequent split/correction with the original IDs and history retained.
 | Observation/evidence locator | CR(s) supported | Decomposition reason / evidence-only treatment |
 | --- | --- | --- |
 | `<exact record(s), fields, references, View objects or evidence file>` | `<CR-nnn or none>` | `<why one decision, separate decisions, or evidence only>` |
+
+## Governed transition and authorised scope
+
+Complete these fields progressively. During proposal/review, mark the resulting
+state, evidence and closure facts **Pending**, rather than claiming acceptance.
+
+- Originating governed state / RAD release: `<identity, source boundaries,
+  immutable repository locator where available, and governing authority>`.
+- Intended resulting state / release: `<proposed identity and scope>`.
+- Actual resulting governed state / release: `<identity and immutable locator
+  where available, or Pending>`.
+- Architectural purpose and bounded differences: `<meaning of the change>`.
+- Dependencies, exclusions and unresolved matters: `<facts, standing and impact>`.
+- Solution Architect authorisation: `<actor, date, reviewed decision/revision,
+  permitted content and deterministic derivations, conditions and exclusions>`.
+- Material decision revisions: `<original and subsequent decision, actor/date,
+  reason, directives and scope; preserve issued dispositions separately from outcomes>`.
+- Historical reconstruction, only if separately authorised: `<reconstruction date,
+  provenance sources, original authorisation facts, approval and recovery limits;
+  otherwise Not applicable>`. No historical authorisation may be invented.
+
+## Changed-content inventory
+
+Inventory the actual authorised changed architectural content at closure. Archive
+complete files, with their exact bytes and repository-relative paths; explain the
+narrower architectural meaning in the CRs. Record both sides and correspondence
+for renames or release-representation succession. Explicit **ABSENT** is distinct
+from an empty file. Unchanged dependencies and processing payloads are excluded.
+Per-file/member hashes are optional where they materially assist verification;
+this table is not an exhaustive machine manifest.
+
+| CR/directive | Operation / correspondence | Before path and existence | After path and existence | Architectural change within the complete file |
+| --- | --- | --- | --- | --- |
+| `<CR/decision>` | `<modify/add/remove/rename/release succession>` | `<repository-relative path: PRESENT or ABSENT>` | `<repository-relative path: PRESENT or ABSENT>` | `<bounded meaning and authorisation>` |
+
+Optional member identity/verification hashes: `<path, side, hash and purpose,
+where useful; otherwise Not recorded>`.
+
+## Evidence and closure
+
+- before.tar.gz SHA-256: `<recommended in the final review; Pending before capture>`.
+- after.tar.gz SHA-256: `<recommended in the final review; Pending before capture>`.
+- Package locator: `<durable locator of the three-file evidence package, or Pending>`.
+- Verification conclusions and limits: `<inventory/member/absence/path checks,
+  exact changed-file correspondence, any recorded hash verification, identity
+  continuity, validation conclusions and unresolved uncertainty>`.
+- Distinct gate results: `<Solution Architect acceptance, validation, publication
+  and actual Archi transport/inspection where applicable; no inferred PASS>`.
+- Completion facts recorded after application authorisation: `<actor/date and
+  facts, distinguishable from the original authorisation>`.
+- Closure confirmation: `<authorised result and evidence match; unique content
+  preserved; dependencies resolved or explicitly held; actor/date and authority>`.
+- Processing retention/dependencies: `<remaining recovery, validation, unresolved
+  decisions or migration purposes; eligibility is not disposal authorisation>`.
+
+The final review must be understandable without permanent companion decision
+files, logs or machinery snapshots. Record material facts here rather than only
+linking to disposable working material. Closure follows Architecture Change
+Provenance; its archive hashes do not require a review self-hash.
 
 <a id="cr-001--example-proposal-awaiting-adjudication"></a>
 
@@ -166,7 +232,9 @@ broaden or improve this decision.
 Not yet processed. Architectural disposition remains Accept independently of
 execution and validation outcomes.
 
-When processed, retain the actual entry and evidence for each attempt:
+During active processing, retain the actual entry and recovery records for each
+attempt. At closure, retain material facts and conclusions under the provenance
+contract above rather than a permanent history of every attempt:
 
 - Instruction revision used; executing actor/date; automatic or manual handling.
 - Prerequisite checks and observed governed target state.

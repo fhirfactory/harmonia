@@ -8,6 +8,23 @@ contains pinned historical XML and semantic/navigation locks for tests and repla
 `documentation-map.json` supports the projection. Architectural authority remains
 in the [Markdown RAD](../../markdown/).
 
+## Provenance and existing processing dependencies
+
+[Architecture Change Provenance](../../markdown/governance/architecture-change-provenance.md)
+is the single normative evidence contract. The framework implements governed
+semantics; run-local machinery copies, command logs, manifests and snapshots are
+processing/recovery material, not additional durable architectural evidence.
+The historical procedures and links below remain useful but do not establish a
+permanent run-retention rule.
+
+Existing machinery still depends on historical processing. Current operation
+must eventually use maintained governed source, framework/configuration and
+declared fixtures/releases independently of those workspaces. Dependency removal,
+framework changes and evidence migration require separately authorised work;
+this installation performs none and establishes no disposal eligibility.
+
+## Existing framework procedures
+
 RAD-1.0.10 adds the [bounded initial IA projection](../../markdown/governance/initial-information-architecture-projection.md)
 after the unchanged RAD-1.0.9 replay. `information_population.py` validates the
 resource-owned capture and once-only allocation history, then introduces 50 native
@@ -213,6 +230,19 @@ pins the same baseline, immutable submission and no-edit control for every run.
 Output lives under `processing/machinery-validation/information-architecture/run-NNN/`,
 never a publication-release directory. Runs leave root release authority unchanged.
 
+`information_naming.py` uses the governed native-type and explicit ancestry
+rules described below. Its historical governance snapshots and source pins remain
+needed by existing validation/recovery paths; this is an operational dependency
+to resolve separately, not a permanent architectural-evidence requirement.
+
+------- Legacy Content - Superseded ------- Start ------
+
+Superseded by: [Architecture Change Provenance, adoption and reconciliation](../../markdown/governance/architecture-change-provenance.md#adoption-and-reconciliation--solution-architect-decision-2026-10-20) and [Round-Trip Praxis recovery](../../markdown/governance/archimate-round-trip-engineering-praxis.md#stop-recovery-and-evidence).
+Only the retention/evidentiary meaning of the following unchanged
+guidance is superseded; operational and historical details remain useful.
+
+---------------------------------------------------------
+
 `information_naming.py` resolves native semantics and reuses the shared lexical
 and canonical-qualifier machinery in `governed_metadata.py`. Only explicit native
 Composition supplies context. Missing classification, ambiguous ancestry and
@@ -220,6 +250,8 @@ unestablished ancestor vocabulary block dependent names. The historical 54-eleme
 source publisher continues to replay its original suffix-based inputs; the run
 contains a separate baseline naming preview. Exact governance transition snapshots
 preserve old hash pins without allowing arbitrary live-document changes.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 Run-001 contains a full `candidate.xml.gz` (decompress before importing into
 Archi), proposed metadata with authored inputs and submitted claims, baseline
@@ -310,6 +342,20 @@ timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/framework/t
 timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/reproduce_candidate.py
 ```
 
+Guarded correction archives described below preserve active recovery and existing
+migration dependencies. They remain unchanged. Their full processing history is
+not the durable architectural-evidence definition, and the historical Run-002
+release statements do not identify the current root release. No correction,
+reproduction, migration or cleanup is authorised by installing this guidance.
+
+------- Legacy Content - Superseded ------- Start ------
+
+Superseded by: [Architecture Change Provenance, lifecycle and adoption](../../markdown/governance/architecture-change-provenance.md#lifecycle-closure-and-migration) and [Round-Trip Praxis recovery](../../markdown/governance/archimate-round-trip-engineering-praxis.md#stop-recovery-and-evidence).
+Only the retention/evidentiary meaning of the following unchanged
+guidance is superseded; operational and historical details remain useful.
+
+---------------------------------------------------------
+
 For an explicitly authorised correction only, `--before-archive PATH` invokes the
 shared writer, which checks the archived manifest and every old generated output
 before replacing anything. A stale archive or repeated correction is refused.
@@ -320,6 +366,8 @@ The subsequent contained-leaf correction retains its preceding state under
 `run-002/validation/pre-contained-leaf-correction/` and proves exact preservation
 of the existing Relationship navigation, including projection identities.
 Actual Archi inspection/round-trip and acceptance remain separate human gates.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ### Historical Run-002 implementation description
 

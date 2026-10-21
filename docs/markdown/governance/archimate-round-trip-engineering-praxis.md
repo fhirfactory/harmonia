@@ -22,6 +22,15 @@ reserves architectural adjudication to the Solution Architect. The
 [publication semantics](archimate-ingestion-publication-semantics.md) and
 [release policy](architecture-release-policy.md) retain their respective roles.
 
+[Architecture Change Provenance](architecture-change-provenance.md) defines
+durable transition evidence for this Praxis, as for Markdown/RADS and future
+representations. Its adoption decision supersedes the permanent retention
+interpretation of run snapshots and complete execution evidence. Detailed input
+pins, previous reviews, machinery/configuration pins and before snapshots serve
+active processing/recovery, validation and unresolved dependencies. Final closure
+preserves the authorised change and decision under that contract, without
+requiring the processing workspace to interpret them.
+
 ## Actors and trigger vocabulary
 
 | Actor | Authority and responsibility |
@@ -148,12 +157,20 @@ folder generation with absent and misleading input folders, semantic-change
 sensitivity and unchanged semantic/View signatures. Assert the final serialized
 XML's parent/self and child-folder/child-reference structure, including contained
 leaves, non-leaves, multiple levels and both Home and Composition; output presence
-or arbitrary generated locations alone are insufficient. Preserve before evidence before explicitly authorised in-run
-correction, pin machinery/configuration, and provide read-only reproduction.
+or arbitrary generated locations alone are insufficient. Secure before bytes
+before explicitly authorised in-run correction and pin machinery/configuration
+as needed for recovery and bounded read-only validation. These safeguards do not
+require permanent machinery snapshots, logs or reproduction of every historical
+execution. Record material validation conclusions and limits in change-review.md
+under Architecture Change Provenance. Missing originals or uncertain effects
+block closure; a successful replay does not establish architectural acceptance.
 
 ## Runs and RAD releases
 
-Processing identities (`run-001`, `run-002`, …) identify attempts, not releases.
+Processing identities (`run-001`, `run-002`, …) identify attempts, not releases
+or necessarily architectural transitions. The following RAD-1.0.10/1.1.0
+conditions describe the bounded historical proving/promotion cycle; they are
+not the current release allocator or a new processing instruction.
 The [bounded RAD-1.0.10 validation decision](architecture-release-policy.md#machinery-validation-runs--2026-10-20)
 keeps baseline and architect submission immutable and the release unchanged,
 including supporting Praxis/governance corrections. An explicitly authorised
@@ -162,3 +179,8 @@ RAD-1.1.0 requires faithful processing, real Archi round-trip proof and the gove
 acceptance/publication transition. Establishing this Praxis creates no release,
 final reconciliation or acceptance. General future releases follow the existing
 patch policy and explicit minor/major decisions.
+
+Current operation must become independent of historical processing under
+Architecture Change Provenance. Existing dependencies and recovery requirements
+remain until separately authorised migration and verification resolve them.
+Installing the contract neither demonstrates independence nor permits cleanup.

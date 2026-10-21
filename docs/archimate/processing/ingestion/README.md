@@ -22,6 +22,12 @@ reconciliation engine remains unimplemented. Use the
 [governed template](../../../markdown/governance/templates/archimate-ingestion-change-review-template.md)
 when preparing a review. A generated review defaults every CR to On-Hold.
 
+[Architecture Change Provenance](../../../markdown/governance/architecture-change-provenance.md)
+is the normative evidence contract. The layout below identifies active processing
+and recovery records, not a permanent architectural-evidence package. Final
+review facts and closure follow that contract without depending on run-relative
+links. Retention continues while recovery, validation, unresolved decisions or
+migration dependencies require it; installation permits no disposal.
 <a id="run-layout"></a>
 
 ## Run layout
@@ -43,6 +49,28 @@ number, starting `run-001`, zero-padded to at least three digits. Keep it fixed;
 never reuse it or rename it after adjudication or a release bump. The run locator
 and CR IDs are process identities, never architectural identities. Allocate no
 run merely to install this convention.
+
+During active work, pin exact baseline and incoming paths/hashes in the review;
+retain immutable inputs, prior decisions/instructions and before/after recovery
+records while required. Distinct incoming revisions use predecessor-linked new
+runs; review revisions for the same input retain their run identity. Detection,
+reconciliation and validation subdirectories serve their respective working
+purposes and must not contain invented success records.
+
+At closure, consolidate material architectural observations, decisions,
+dispositions, independent Outcomes/reasons, instructions and validation
+conclusions into change-review.md under the normative provenance contract.
+The final record must remain understandable without permanent run histories,
+revision sidecars or raw command logs. Frozen historical copies remain unchanged;
+none becomes disposable solely through this installation.
+
+------- Legacy Content - Superseded ------- Start ------
+
+Superseded by: [Architecture Change Provenance](../../../markdown/governance/architecture-change-provenance.md#lifecycle-closure-and-migration) and [Change Review closure](../../../markdown/governance/archimate-ingestion-change-review.md#processing-record-and-audit-evidence).
+Only the retention/evidentiary meaning of the following unchanged
+guidance is superseded; operational and historical details remain useful.
+
+---------------------------------------------------------
 
 Record the exact incoming path/hash and baseline path/hash in `change-review.md`,
 along with source revision, detection methods, decomposition and evidence limits.
@@ -69,6 +97,8 @@ Link evidence by relative paths from the review and cross-reference the stable
 CR IDs. Create evidence directories when they contain evidence; do not invent
 successful reconciliation or validation records to fill the layout. Publication
 packages and publishing working state retain their existing locations.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 The pre-existing `1.0.8/blind-observation/` directory and the three blind-analysis
 report bundles retain their original names and bytes. They are historical

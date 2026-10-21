@@ -26,6 +26,11 @@ Read and apply it before work, including the standing
 [RADS and legacy-doco rules](../AGENTS.md#12-rads-and-legacy-documentation-governance)
 for reconciliation, original-content preservation and section supersession.
 
+For all architecture-related work, load and apply the same
+[Architecture Change Provenance contract](markdown/governance/architecture-change-provenance.md)
+required by root instructions for Codex, Junie and other agents. This is a
+navigation reference to the normative contract, not a separate provenance rule.
+
 For architecture-completion tasks, also follow the
 [Architecture Completion Plan](markdown/architecture-completion-plan.md),
 including its context-loading guidance and completion gates. This scoped file

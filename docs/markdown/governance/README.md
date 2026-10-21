@@ -38,6 +38,15 @@ The [RAD / Architecture release policy](architecture-release-policy.md) defines
 patch increments for every accepted repository change and the single root
 [machine-readable release authority](../../../architecture-release.json).
 
+[Architecture Change Provenance](architecture-change-provenance.md) is the
+governed, representation-neutral definition of evidence for authorised
+architecture transitions, applicable to Markdown/RADS, ArchiMate and future
+representations. Codex, Junie, other agents, Praxes, templates and machinery
+reference this one contract. Its 2026-10-20 adoption decision reconciles former
+permanent processing-retention requirements, preserves active recovery and
+migration dependencies, and establishes eventual independence from historical
+processing. Installation authorises no evidence migration or disposal.
+
 The [Architecture Modelling Strategy](architecture-modelling-strategy.md) governs
 semantic compatibility of Harmonia specialisations and explicit logical
 architectural Home. Directed Association specialised as `Home` is independent
@@ -55,7 +64,8 @@ mapping decisions remain explicit; installation does not authorise later slices.
 
 The [ArchiMate Ingestion Change Review contract](archimate-ingestion-change-review.md)
 governs independently adjudicable incoming changes, Solution Architect decisions,
-executable reconciliation instructions and retained processing evidence.
+executable reconciliation instructions and active processing records. Durable
+transition evidence follows Architecture Change Provenance above.
 Disposition records the Solution Architect's call to action; separate
 [Outcome and Outcome Reason](archimate-ingestion-change-review.md#outcome-and-outcome-reason)
 record the resulting CR state and why, including resolution without reconciliation.

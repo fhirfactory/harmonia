@@ -30,6 +30,26 @@ independent and SHALL NOT determine or change this release value.
 
 ## Mechanism and repository convention
 
+### Architecture-change provenance — 2026-10-20
+
+The Solution Architect adopts [Architecture Change Provenance](architecture-change-provenance.md)
+as the single contract for durable architectural evidence. This explicitly
+supersedes the permanent retention interpretation of machinery runs, frozen
+machinery/governance snapshots and complete processing evidence in this policy
+and the associated Praxes. Preserve processing material while necessary for
+active recovery, validation, unresolved decisions or migration dependencies;
+closure and any later disposal follow that contract. Immutable input pins and
+frozen historical claims must not be rewritten to assert retrospective compliance.
+
+The machinery-validation and earlier reconciliation decisions below record
+bounded historical release decisions. They do not freeze the current root
+authority or exempt this governance installation from the normal patch rule.
+This change set advances RAD-1.1.0 to RAD-1.1.1 without regenerating or changing
+the RAD-1.1.0 architecture/publication. No historical evidence package is created.
+Current-operation independence from historical processing remains a required
+end state for separately authorised work; no existing carrier becomes disposable
+through this installation.
+
 ### Machinery-validation runs — 2026-10-20
 
 The Solution Architect explicitly establishes RAD-1.0.10 as the frozen baseline
@@ -61,22 +81,28 @@ those gates; do not create its directories, release authority or publication now
 Submitted semantics and regenerated metadata remain proposed until acceptance.
 No run performs general IA reconciliation or rewrites its input to pass tooling.
 
-Retain runs under
+For active processing, retain runs under
 `docs/archimate/processing/machinery-validation/information-architecture/run-NNN/`,
-outside publication-release directories. Each run retains input paths and byte/XML
+outside publication-release directories. Each active run retains input paths and byte/XML
 hashes, release authority, machinery/governance fingerprints, proposed metadata,
 candidate model, identity/rebinding evidence, unresolved findings and bounded
-verification results. Keep prior runs intact; a new attempt uses a new directory.
-Verification may replay an existing run read-only. Preserve before snapshots and
-explicit governance hash transitions where historical replay pins an earlier
-authority document; never rewrite old pins or baseline source captures.
+verification results needed for its recovery/validation. Preserve prior runs
+while those purposes or unresolved dependencies remain; a new attempt uses a new
+directory. Read-only historical replay is a separate diagnostic activity, not
+architectural-transition evidence or a permanent current-operation prerequisite.
+Before snapshots and explicit governance hash transitions serve recovery and
+remaining dependencies under Architecture Change Provenance; never rewrite old
+pins or baseline source captures. This replaces the former unqualified "keep
+prior runs intact" and machinery-snapshot preservation requirements, not the
+requirement to preserve needed content until verified, authorised closure.
 
 ### Explicit RAD-1.0.9 reconciliation decision — 2026-10-19
 
 The Solution Architect explicitly establishes the authorised 1.0.8 reconciliation
 as **RAD-1.0.9**, with architecture baseline **1.0.8** as its predecessor. The
-intervening governance/tooling sequence, recorded through 1.0.14, remains preserved
-historical evidence and does not determine this RAD version. For this accepted
+intervening governance/tooling sequence, recorded through 1.0.14, remains a
+preserved historical record, subject to the provenance/recovery distinction
+above, and does not determine this RAD version. For this accepted
 change set the root authority records `version=1.0.9`, `previous_version=1.0.8`.
 Publication reads that authority; it must not derive the RAD number from the
 governance/tooling evidence sequence. The normal patch mechanism continues from
@@ -119,8 +145,11 @@ file with its preceding value and record the decision in governed documentation.
 Publication and assessment tools load the authority through the shared helper.
 They accept `--release-file` for an explicit portable release fixture; they
 never invoke `bump`. Validate, regenerate and compare reports after a release
-change. Generated evidence must identify the release used, check all relevant
-identity/reference/schema gates and retain unresolved findings. No release
+change when publication is in scope; a governance-only increment need not
+regenerate frozen architecture publications. Validation conclusions must identify
+the release used, check all applicable identity/reference/schema gates and retain
+unresolved findings. Durable evidence follows Architecture Change Provenance;
+complete execution history is not required. No release
 increment creates architectural identity or supplies missing architecture.
 
 ## Review and publication gate

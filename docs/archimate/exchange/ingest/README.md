@@ -7,6 +7,11 @@ Begin with [Working on the Harmonia architecture](../../README.md). The governed
 defines deliberate Submission and closure of its Authoring Iteration; the
 landing area is not a continuing authoring workspace.
 
+[Architecture Change Provenance](../../../markdown/governance/architecture-change-provenance.md)
+governs durable transition evidence. Landing files and preserved analysis inputs
+serve active recovery, validation and unresolved dependencies; their presence
+alone supplies neither architectural acceptance nor permanent evidence standing.
+Installation authorises no movement or disposal of these inputs.
 This is the landing area for incoming Archi/Open Exchange exports intended for
 future analysis and reconciliation. An artefact appearing here is not automatically
 authoritative architecture. It is change/reconciliation input and may contain

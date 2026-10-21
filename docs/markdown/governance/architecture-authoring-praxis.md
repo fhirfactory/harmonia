@@ -10,6 +10,15 @@ point is [Working on the Harmonia architecture](../../archimate/README.md).
 This RADS contract is the normative lifecycle authority behind that entry point.
 It establishes no ingestion or reconciliation engine.
 
+[Architecture Change Provenance](architecture-change-provenance.md) is the single
+contract for durable transition evidence across all representations and agents.
+Its 2026-10-20 adoption decision supersedes this Praxis's former unqualified
+submission/run preservation wording. Input pins, working snapshots and detailed
+processing records support active recovery, validation and unresolved matters;
+they are not permanent architectural evidence by participating in this lifecycle.
+Retain them while needed, including for migration dependencies. Final closure
+and any separately authorised disposal follow that contract.
+
 The Solution Architect's Increment 2C task authorises this lifecycle. Existing
 [repository authority](../../../AGENTS.md#1-architectural-authority), accepted
 decisions and the [Architectural Axioms](architectural-axioms.md) continue to govern:
@@ -155,17 +164,20 @@ lifecycle event. An Archi save, autosave, local backup export, intermediate
 working copy or Git commit unrelated to that mechanism is not Submission.
 
 Retain sufficient provenance to establish the originating governed baseline and
-release, exact submitted artefact, submission/run identity as applicable, and
-immutable evidence with incoming and baseline hashes under 2A. Use its existing
-run layout, numbering, template and evidence rules; this Praxis defines no new
+release, exact submitted artefact and submission/run identity as applicable.
+Pin incoming and baseline hashes under 2A for active processing and recovery.
+Use its existing working run layout, numbering and template, subject to
+Architecture Change Provenance for durable evidence; this Praxis defines no new
 allocation or storage mechanism. The engine remains future work; an explicitly
 authorised human/agent procedure must still honour those governance boundaries.
 
 **Submission closes that Authoring Iteration.** Once submitted, it SHALL NOT
 remain an open source for another Harmonia submission. Additional changes SHALL
 NOT be submitted as another descendant of that closed iteration. Preserve the
-submitted model as evidence/history and retain local copies for inspection as
-needed; those copies are no longer starting points for new governed submissions.
+submitted model while required for recovery, validation, unresolved decisions or
+migration dependencies, and retain local copies for inspection as needed under
+Architecture Change Provenance. These copies are no longer starting points for
+new governed submissions; Submission does not impose permanent export retention.
 
 The 2A provision for a distinct incoming revision and a predecessor-linked new
 run preserves evidence and processing identity; it does not authorise reopening
@@ -197,7 +209,8 @@ Unresolved meaning, missing authority or instruction ambiguity returns for
 adjudication; it is not filled in to complete execution.
 
 After authorised reconciliation, validate the resulting governed architecture,
-retain required reconciliation and validation evidence, satisfy the existing
+retain working recovery/validation records and record material conclusions in
+change-review.md under Architecture Change Provenance, satisfy the existing
 [release/publication gates](architecture-release-policy.md#review-and-publication-gate)
 and [mapping verification gates](rad-archimate-model-mapping.md#8-deterministic-publication-and-verification),
 then produce the next coherent publication through its applicable representations.
@@ -261,6 +274,12 @@ authority.
 | Working iteration lost before Submission | Recover from ordinary working copies/backups where available, retaining the original published-baseline provenance. No Submission occurred; the governed baseline remains unchanged. |
 | Processing fails after Submission | The iteration remains closed. Preserve the submitted artefact and evidence; follow [2A processing/recovery rules](archimate-ingestion-change-review.md#processing-record-and-audit-evidence), including instruction history and before/after evidence. Do not reopen the model or create an untracked replacement submission. |
 | Reconciliation cannot complete or its effects are uncertain | Preserve the actual state and uncertainty under AX-15. Return necessary matters through Change Review for adjudication or Manual Intervention as governed by 2A; an agent cannot assign a disposition. Do not presume rollback, non-occurrence, success or a new baseline. |
+
+The recovery records above remain available while needed. After an authorised
+transition, its durable evidence and closure conditions follow Architecture
+Change Provenance; permanent recovery histories are not an additional evidence
+requirement. Existing dependencies must be resolved through separately authorised
+work before any affected workspace is eligible for disposal.
 
 This is practical lifecycle guidance, not a new retry, recovery or reconciliation
 system.

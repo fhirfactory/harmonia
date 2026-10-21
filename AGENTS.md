@@ -169,13 +169,25 @@ major increments require an explicit governance decision. Maven software version
 and branch names remain independent. Include the increment in the same accepted
 change set, regardless of author or tool.
 
+### 1.4 Architecture-change provenance
+
+For all architecture-related review, planning, change, reconciliation,
+publication or evidence work, Codex, Junie and other agents MUST load and apply
+[Architecture Change Provenance](docs/markdown/governance/architecture-change-provenance.md).
+It is the single representation-neutral normative contract; agent instructions,
+Praxes, templates and machinery reference and implement it. Its adoption decision
+reconciles former permanent processing-retention requirements while preserving
+active recovery and migration dependencies. Installation supplies no evidence
+migration or processing-disposal authority.
+
 ## ArchiMate round-trip task entry
 
 For “Model Updated. Please review and generate change-review.md.” or
 “change-review.md reviewed and updated. Apply directives.” (including equivalent
 requests), load the repository-governed
 [ArchiMate Round-Trip Engineering Praxis](docs/markdown/governance/archimate-round-trip-engineering-praxis.md)
-and follow its authority links and human checkpoints. Discover exact baseline,
+and [Architecture Change Provenance](docs/markdown/governance/architecture-change-provenance.md),
+then follow their authority links and human checkpoints. Discover exact baseline,
 submission and review provenance; never substitute session memory or select an
 ambiguous export by timestamp. Machinery-validation runs are not RAD releases;
 the bounded release-policy exception applies to the RAD-1.0.10 proving cycle.
@@ -569,6 +581,13 @@ A timeout or stall is diagnostic evidence, not proof that the implementation is 
 
 Files under `.junie/plans/` and `.junie/reports/` are working and historical
 execution artefacts. They are NOT sources of architectural authority.
+
+For architecture-related planning, reporting or execution, Junie MUST apply
+[Architecture Change Provenance](docs/markdown/governance/architecture-change-provenance.md),
+the same normative contract used by Codex. Plans and completion reports do not
+define a separate provenance policy or an additional architectural-evidence
+component. Any architectural meaning incorporated from them requires the
+reconciliation and authorisation governed by that contract and section 1.2.
 
 ### 6.1 Authority hierarchy
 

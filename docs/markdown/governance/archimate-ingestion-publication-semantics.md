@@ -35,6 +35,16 @@ authority. This contract adds their ingestion/publication consequences and the
 new Containment View archetype; it does not replace their identity syntax,
 mapping profile, preserved history or unresolved metamodel decisions.
 
+[Architecture Change Provenance](architecture-change-provenance.md) governs the
+evidentiary standing of that history and of the processing records referenced
+below. Preserve inputs and actual state while necessary for active recovery,
+validation, unresolved decisions or migration dependencies. Durable transition
+evidence records the authorised change and material validation conclusions;
+these semantics do not require permanent processing trees or execution histories.
+Accepted identity, semantic content and authored Views remain preserved governed
+architecture. Frozen historical records are not rewritten; current dependencies
+on historical processing require separately authorised resolution before disposal.
+
 ## Round-trip engineering authority — 2026-10-20
 
 The [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md)

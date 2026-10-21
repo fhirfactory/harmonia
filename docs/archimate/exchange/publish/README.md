@@ -2,10 +2,28 @@
 
 # Published exchange packages
 
+Each `<release>/` directory contains a governed exchange representation,
+currently the Open Exchange XML alone. [Architecture Change Provenance](../../../markdown/governance/architecture-change-provenance.md)
+defines durable evidence of the authorised transition; a processing tree is not
+that evidence package. Reports, raw validation results and recovery records
+remain working/historical material in [processing/publishing](../../processing/publishing/)
+while needed. The historical release links below retain their recorded standing;
+installation does not migrate their evidence, change their bytes or permit cleanup.
+
+------- Legacy Content - Superseded ------- Start ------
+
+Superseded by: [Architecture Change Provenance](../../../markdown/governance/architecture-change-provenance.md#transition-verification-versus-historical-machinery-reproduction) and [Change Review closure](../../../markdown/governance/archimate-ingestion-change-review.md#processing-record-and-audit-evidence).
+Only the retention/evidentiary meaning of the following unchanged
+guidance is superseded; operational and historical details remain useful.
+
+---------------------------------------------------------
+
 Each `<release>/` directory contains the finished governed Harmonia → Archi
 exchange package. Keep it lean: currently the Open Exchange XML alone. Reports,
 validation results, source history, inspection guides and verification evidence
 belong in [processing/publishing](../../processing/publishing/).
+
+------- Legacy Content - Superseded ------- Finish ----
 
 - [RAD-1.1.0](1.1.0/Harmonia-Architecture-1.1.0.xml): current governed baseline,
   promoting corrected Run-002 CR-001–154; 1,394 elements, 1,137 relationships

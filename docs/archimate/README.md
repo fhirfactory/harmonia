@@ -6,6 +6,17 @@ Start with a published Harmonia model, author architecture in Archi, and submit
 the completed iteration once for governed review. Continue from the next
 publication after adjudication, reconciliation and validation.
 
+## Architecture-change provenance
+
+[Architecture Change Provenance](../markdown/governance/architecture-change-provenance.md)
+is the single governed evidence contract for this workspace, Markdown/RADS and
+future representations, including work by Codex and Junie. Processing runs and
+the history linked below describe working or historical material; they do not
+define permanent architectural evidence. Retain material while recovery,
+validation, unresolved decisions or migration dependencies require it. Current
+operation must eventually be independent of historical processing; that work
+and any later disposal require separate authorisation. Installation changes no
+processing material or historical evidence.
 ## Round-trip engineering requests
 
 Use the [governed Round-Trip Engineering Praxis](../markdown/governance/archimate-round-trip-engineering-praxis.md)
@@ -71,6 +82,21 @@ an XML exists for every release or opening an arbitrary older Archi file.
 
 ## Submission and review
 
+Submission deliberately hands over a completed iteration through the
+[incoming-exchange procedure](exchange/ingest/README.md). Retain baseline/input
+pins and recovery records using the [active run layout](processing/ingestion/README.md#run-layout).
+The provenance contract above governs durable evidence and closure; the run
+layout does not impose permanent processing preservation. Saving, autosaving or
+an unrelated Git commit does not submit an iteration.
+
+------- Legacy Content - Superseded ------- Start ------
+
+Superseded by: [Architecture Change Provenance, lifecycle and adoption](../markdown/governance/architecture-change-provenance.md#lifecycle-closure-and-migration) and [2A processing records](../markdown/governance/archimate-ingestion-change-review.md#processing-record-and-audit-evidence).
+Only the retention/evidentiary meaning of the following unchanged
+guidance is superseded; operational and historical details remain useful.
+
+---------------------------------------------------------
+
 Submission is the deliberate handover of your completed iteration to governed
 ingestion: export the model and place/provide it through the
 [incoming-exchange procedure](exchange/ingest/README.md), retaining the
@@ -78,6 +104,8 @@ ingestion: export the model and place/provide it through the
 Saving, autosaving, retaining a backup export or making an unrelated Git commit
 does not submit anything. The reconciliation engine remains future work; use
 the governed procedure without assuming an automatic ingestion service exists.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ```text
 save != submission
