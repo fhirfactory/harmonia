@@ -40,14 +40,34 @@ authority. Existing [identity and naming](canonical-identity-and-naming.md),
 their respective roles. A review cannot override higher authority; a conflict
 SHALL be recorded and raised before dependent execution.
 
-[Architecture Change Provenance](architecture-change-provenance.md) is the
+[Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md) is the
 single normative definition of durable architecture-transition evidence. The
 2026-10-20 adoption decision explicitly reconciles this contract's former
 complete-processing-evidence interpretation: detailed attempts, commands,
 snapshots and review revision copies support active recovery/validation and
 unresolved dependencies, without becoming permanently required architecture
 evidence. Material decision facts and validation conclusions must survive in
-the final review under that contract. Frozen historical records remain unchanged.
+the final HCRL under that contract. Frozen historical records remain unchanged.
+
+## Common HCRL integration — RAD-1.1.2
+
+[Architecture Governance](../../../enterprise-architecture/governance/architecture-governance.md)
+defines the common Decision Review Log, final Solution Architect authority and
+bounded Minutiae mechanism. This contract retains its specialised discovery,
+analysis, validation, presentation and decision-linked reconciliation purpose.
+Material findings requiring adjudication SHALL be represented in the applicable
+HCRL DR, preserving relevant source CR/decision references. Minor detail may be
+supporting evidence/minutiae. This specialised review is not a competing final
+semantic acceptance record.
+
+The four CR Dispositions and separate Outcomes below remain specialised
+processing semantics, not a restriction on recording attributable HCRL decisions
+and clarifications. Existing triggers, input applicability, native modelling,
+identity, navigation, View preservation and validation gates remain binding.
+Common HCRL completion requires Solution Architect confirmation of the actual
+incorporated result. The old mandatory evidence package is superseded; active
+input pins and recovery evidence do not create a universal archival/hash duty.
+No repository/machinery migration is authorised by this integration.
 
 ## Praxis entry and checkpoints
 
@@ -144,11 +164,11 @@ control, detection methods/tool versions and working-record locations. Record un
 snapshots or uncertain provenance explicitly; do not reconstruct them as observed
 input. Record how observations were decomposed into CRs.
 
-For transition closure, complete the governed-state bindings, changed-content
-inventory, authorisation and verification/closure portions of the template under
-Architecture Change Provenance. A draft review must mark the resulting state and
-package facts as pending; it must not fabricate a closed transition. Member
-hashes are optional; final archive SHA-256 hashes are recommended by that contract.
+For transition closure, contribute the governed-state bindings, changed-content
+correspondence, attributable decisions and verification conclusions to the
+applicable HCRL DR under common provenance. Mark unestablished result/evidence
+facts as pending; do not fabricate closure. Required evidence may use adequate
+Git recovery rather than duplicate exact-byte archives or mandatory hashing.
 
 The [governed template](templates/archimate-ingestion-change-review-template.md)
 demonstrates the standard structure. Each detailed CR SHALL distinguish:
@@ -203,7 +223,7 @@ an issued Disposition; retain the earlier instruction and decision with who chan
 it, when and why. Record later resulting states through Outcome, Outcome Reason
 and processing evidence. Keep prior adjudication, instruction and Outcome revisions
 recoverable during active work under the existing revision mechanism. At closure,
-retain the material decision history and reasons in change-review.md so that
+retain the material decision history and reasons in the applicable HCRL DR so that
 architectural interpretation does not require permanent companion revision files.
 
 Acceptance of an architectural instance SHALL NOT automatically establish a
@@ -409,10 +429,10 @@ Outcome Reason. CRs with Disposition Reject, On-Hold or Manual Intervention rema
 auditable, including after resolution without reconciliation. Release and publication gates remain separate from
 architectural acceptance and from validation success.
 
-At authorised transition closure, change-review.md SHALL retain those material
+At authorised transition closure, HCRL SHALL retain those material
 architectural facts, attributable decisions and relevant validation conclusions
 and limitations without needing a processing workspace to interpret them.
-Decision revisions may be consolidated into that same reviewed record with their
+Decision revisions may be consolidated into the applicable DR with their
 actor/date, reason and scope intact; issued Dispositions, Outcomes and processing
 results remain distinct. Raw commands, unsuccessful-attempt logs, detailed
 execution histories and complete machinery snapshots need not be durable
@@ -428,8 +448,9 @@ Use the deterministic run structure in
 Keep the active Change Review with detection, reconciliation and validation
 records, separate from immutable incoming exports and published packages. This
 is a processing layout, not a permanent architectural-evidence package layout.
-Final evidence follows Architecture Change Provenance; it prescribes no new
-physical repository layout here. The reusable
+Final evidence follows the current common provenance contract and its governed
+before/after layout. Existing active processing paths stay in place pending
+separately authorised migration; their working purpose is unchanged. The reusable
 [template](templates/archimate-ingestion-change-review-template.md) is governed
 here in RADS; individual run records are scoped adjudication/execution evidence,
 not a second architectural repository. Approved changes enter RADS through their

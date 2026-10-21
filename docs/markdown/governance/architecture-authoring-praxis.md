@@ -10,7 +10,7 @@ point is [Working on the Harmonia architecture](../../archimate/README.md).
 This RADS contract is the normative lifecycle authority behind that entry point.
 It establishes no ingestion or reconciliation engine.
 
-[Architecture Change Provenance](architecture-change-provenance.md) is the single
+[Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md) is the single
 contract for durable transition evidence across all representations and agents.
 Its 2026-10-20 adoption decision supersedes this Praxis's former unqualified
 submission/run preservation wording. Input pins, working snapshots and detailed
@@ -18,6 +18,15 @@ processing records support active recovery, validation and unresolved matters;
 they are not permanent architectural evidence by participating in this lifecycle.
 Retain them while needed, including for migration dependencies. Final closure
 and any separately authorised disposal follow that contract.
+
+[Architecture Governance](../../../enterprise-architecture/governance/architecture-governance.md)
+now defines common Architecture Review and HCRL as the single final semantic
+Decision Review Log for the release transition. This Praxis and the specialised
+Change Review retain their specialised authoring/submission/reconciliation and
+validation purposes, feeding relevant material into HCRL. Governance knowledge
+requires no ArchiMate element or continuum counterpart merely through durability.
+The target structure does not authorise moving this Praxis or its machinery;
+existing paths and specialised semantics remain pending bounded migration.
 
 The Solution Architect's Increment 2C task authorises this lifecycle. Existing
 [repository authority](../../../AGENTS.md#1-architectural-authority), accepted
@@ -210,7 +219,7 @@ adjudication; it is not filled in to complete execution.
 
 After authorised reconciliation, validate the resulting governed architecture,
 retain working recovery/validation records and record material conclusions in
-change-review.md under Architecture Change Provenance, satisfy the existing
+the applicable HCRL DR under Architecture Change Provenance, satisfy the existing
 [release/publication gates](architecture-release-policy.md#review-and-publication-gate)
 and [mapping verification gates](rad-archimate-model-mapping.md#8-deterministic-publication-and-verification),
 then produce the next coherent publication through its applicable representations.

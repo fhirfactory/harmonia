@@ -17,6 +17,15 @@
 
 # Cross-Domain Architecture Governance
 
+The current common [Architecture Governance](../../../enterprise-architecture/governance/architecture-governance.md)
+and [Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md)
+contracts implement the reviewed RAD-1.1.2 adoption. HCRL is the common Decision
+Review Log; specialised contracts below retain their specialised purpose and
+feed relevant material into HCRL without competing final acceptance records.
+Governance knowledge does not require ArchiMate elements or continuum entries.
+Existing source paths and specialised semantics remain in place: repository
+migration requires a separately established bounded mapping and authorisation.
+
 This location contains cross-domain architecture governance material applying
 across the canonical Harmonia architecture corpus. It is not a numbered
 architecture domain and does not replace Motivation, Strategy or another domain.
@@ -38,11 +47,13 @@ The [RAD / Architecture release policy](architecture-release-policy.md) defines
 patch increments for every accepted repository change and the single root
 [machine-readable release authority](../../../architecture-release.json).
 
-[Architecture Change Provenance](architecture-change-provenance.md) is the
+[Architecture Change Provenance](../../../enterprise-architecture/governance/architecture-change-provenance.md) is the
 governed, representation-neutral definition of evidence for authorised
 architecture transitions, applicable to Markdown/RADS, ArchiMate and future
 representations. Codex, Junie, other agents, Praxes, templates and machinery
-reference this one contract. Its 2026-10-20 adoption decision reconciles former
+reference this one contract. Its current adoption supersedes the mandatory
+three-file package and uses required evidence without duplicate exact-byte
+archives or universal hashing. The preserved 2026-10-20 contract reconciled former
 permanent processing-retention requirements, preserves active recovery and
 migration dependencies, and establishes eventual independence from historical
 processing. Installation authorises no evidence migration or disposal.

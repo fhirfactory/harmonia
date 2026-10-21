@@ -87,15 +87,22 @@ repository.
 
 #### Definitions and Authority
 
-`/docs/markdown` (relative to the repository root) is the **Reference
-Architecture Documentation Set (RADS)**. RADS is authoritative for the current
-Harmonia architecture, with the Architectural Axioms remaining the highest-level
-design authority under section 1. Unresolved matters, candidates and proposals
-within RADS MUST remain distinguishable from approved architecture under AX-17.
+`/docs/markdown` remains the existing **Reference Architecture Documentation Set
+(RADS)** pending separately authorised migration. The adopted common
+[Architecture Governance](enterprise-architecture/governance/architecture-governance.md)
+and [Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md)
+contracts are authoritative at `enterprise-architecture/governance/`.
+The Architectural Axioms remain the highest-level design authority. The accepted
+target structure does not itself authorise moving existing architecture,
+specialised contracts, machinery or publications; migration requires a separately
+established bounded mapping and application authority. Review/register artefacts
+retain their explicitly recorded standing; location supplies no acceptance.
+Unresolved matters, candidates and proposals MUST remain distinguishable from
+approved architecture under AX-17.
 
 **Legacy documentation (legacy-doco)** comprises architectural, design,
 execution, module and other documentation elsewhere in the repository, outside
-`/docs/markdown`. Its location, historical status or correspondence to existing
+these governed sources. Its location, historical status or correspondence to existing
 implementation MUST NOT, by itself, establish current architectural authority
 or permit it to override RADS. Repository governance instructions and explicitly
 assigned implementation-sequencing authority remain in force in their defined
@@ -171,9 +178,20 @@ change set, regardless of author or tool.
 
 ### 1.4 Architecture-change provenance
 
+Every Harmonia change MUST receive Architecture Review under
+[Architecture Governance](enterprise-architecture/governance/architecture-governance.md).
+HCRL is the common Decision Review Log and single semantic record for each
+governed release transition. Read the exact reviewed HCRL and its attributable
+Solution Architect dispositions before applying directives. Apply only the
+unambiguous authorised scope, clarifications and conditions; preserve exclusions,
+deferrals and decision history. Record actual application/validation facts in the
+applicable DR. Agents cannot confirm architectural closure or manufacture
+missing decisions. New material architectural meaning discovered in
+implementation MUST return through HCRL for adjudication.
+
 For all architecture-related review, planning, change, reconciliation,
 publication or evidence work, Codex, Junie and other agents MUST load and apply
-[Architecture Change Provenance](docs/markdown/governance/architecture-change-provenance.md).
+[Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md).
 It is the single representation-neutral normative contract; agent instructions,
 Praxes, templates and machinery reference and implement it. Its adoption decision
 reconciles former permanent processing-retention requirements while preserving
@@ -186,7 +204,7 @@ For “Model Updated. Please review and generate change-review.md.” or
 “change-review.md reviewed and updated. Apply directives.” (including equivalent
 requests), load the repository-governed
 [ArchiMate Round-Trip Engineering Praxis](docs/markdown/governance/archimate-round-trip-engineering-praxis.md)
-and [Architecture Change Provenance](docs/markdown/governance/architecture-change-provenance.md),
+and [Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md),
 then follow their authority links and human checkpoints. Discover exact baseline,
 submission and review provenance; never substitute session memory or select an
 ambiguous export by timestamp. Machinery-validation runs are not RAD releases;
@@ -583,7 +601,7 @@ Files under `.junie/plans/` and `.junie/reports/` are working and historical
 execution artefacts. They are NOT sources of architectural authority.
 
 For architecture-related planning, reporting or execution, Junie MUST apply
-[Architecture Change Provenance](docs/markdown/governance/architecture-change-provenance.md),
+[Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md),
 the same normative contract used by Codex. Plans and completion reports do not
 define a separate provenance policy or an additional architectural-evidence
 component. Any architectural meaning incorporated from them requires the
