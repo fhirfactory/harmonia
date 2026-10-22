@@ -1,3 +1,5 @@
+# HISTORICAL ONLY: current EA operations use make -C enterprise-architecture/tooling all.
+# This frozen entry point is retained for originating-checkout replay.
 # Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
 PYTHON ?= python3
 BASELINE ?= baseline/Harmonia-Capability-Architecture-v2.1a.xml

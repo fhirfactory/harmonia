@@ -70,6 +70,12 @@ The five-stage [Domain02 derivation progression](../../02-strategy/capability-ma
 
 The [approved fixed-decomposition decision record](../../02-strategy/reviews/fixed-capability-decomposition-decision.md) records the rationale and superseded permissive position. It changes the target metamodel, not the reconciliation status, tier allocation or identity of existing catalogue elements. K9's uncertainty and evidence rules remain controlling.
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current Capability / Feature profile](../../../../enterprise-architecture/governance/capability-feature-profile.md#bec-composition-hierarchy)
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
 <a id="bec-composition-hierarchy"></a>
 
 #### Business Enabling Composition hierarchy
@@ -107,6 +113,9 @@ The decision arose from the common question exposed by CR-016–CR-021 in
 those review findings are traceability evidence, while this subsection establishes
 the durable metamodel authority. Realization-to-Feature logical context is outside
 this decision.
+
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ### 1.2 Hierarchy Naming & Uniqueness Rules
 

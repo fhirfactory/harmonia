@@ -24,9 +24,9 @@ explicit uncertainty without blocking independent authorised work. This mechanis
 introduces no runtime architecture. The initial migration introduced no new
 specialisation; the subsequent ARB decision explicitly adds ImplementationGuideline.
 
-The [canonical identity/naming contract](../../docs/markdown/governance/canonical-identity-and-naming.md),
-[modelling strategy](../../docs/markdown/governance/architecture-modelling-strategy.md),
-[Round-Trip Praxis](../../docs/markdown/governance/archimate-round-trip-engineering-praxis.md),
+The [canonical identity/naming contract](canonical-identity-and-naming.md),
+[modelling strategy](architecture-modelling-strategy.md),
+[Round-Trip Praxis](archimate-round-trip-engineering-praxis.md),
 [Architecture Governance](architecture-governance.md) and
 [Change Provenance](architecture-change-provenance.md) remain controlling in their
 roles. An unresolved native classification stays in the originating review/source;
@@ -71,9 +71,9 @@ schemas while retaining exact native typing. The template command materialises
 the applicable profile:
 
 ```bash
-python3 scripts/architecture_continuum.py template --type Principle
-python3 scripts/architecture_continuum.py template --type Capability --specialization Feature
-python3 scripts/architecture_continuum.py template --type DataObject --specialization Topic
+python3 enterprise-architecture/tooling/architecture_continuum.py template --type Principle
+python3 enterprise-architecture/tooling/architecture_continuum.py template --type Capability --specialization Feature
+python3 enterprise-architecture/tooling/architecture_continuum.py template --type DataObject --specialization Topic
 ```
 
 This is representation selection, not authority to create a construct. A Feature
@@ -196,7 +196,7 @@ canonical element ingestion; arbitrary Markdown elsewhere still must validate as
 an element. The manifest's presence or manual modification never alters projection
 inputs. Its separate byte-for-byte staleness check detects missing or changed output.
 
-`scripts/continuum_manifest.py` validates canonical inputs before generating the
+`enterprise-architecture/tooling/continuum_manifest.py` validates canonical inputs before generating the
 manifest. Native layer/aspect groups and type order come from the governed type
 catalogue. Within a type, rows sort by case-folded displayName, exact displayName
 and canonicalId as the final tie-breaker; Feature/Topic remain under their native
@@ -227,11 +227,10 @@ vocabulary remains an explicit unresolved property. Human review still establish
 that a semantic input or same-instance correspondence is architecturally correct.
 
 The [workbench adapter](../design/archimate/README.md) makes reviewed amendment and
-explicit deferral repeatable. The [reproducibility check](../../scripts/verify_continuum_reproducibility.py)
+explicit deferral repeatable. The [reproducibility check](../tooling/verify_continuum_reproducibility.py)
 regenerates the root manifest, XML, HTML, versioned Markdown index and LaTeX catalogue in a temporary checkout
 with no old RAD captures, processing workspaces, copied LaTeX architecture or local
-interaction logs. Shared code retains historical command support, but importing
-its Exchange reader no longer loads historical source captures.
+interaction logs. Current shared code lives under `enterprise-architecture/tooling/` and imports no historical command dispatcher, baseline processor or source capture.
 
 The one-time source ingestion scripts are bounded migration adapters. Their
 allocated identity results are persisted. Routine regeneration never reruns UUID

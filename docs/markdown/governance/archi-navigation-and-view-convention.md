@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[archi-navigation-and-view-convention.md](../../../enterprise-architecture/governance/archi-navigation-and-view-convention.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Harmonia Archi Navigation & View Convention
@@ -441,3 +447,5 @@ open the retained three-tier overviews, follow source-based Relations folders,
 and open successive context/immediate-child Views. The release report identifies
 the exact model and paths. Automated validation establishes the structure and
 importability; human visual acceptance remains a separate review outcome.
+
+------- Legacy Content - Superseded ------- Finish ----

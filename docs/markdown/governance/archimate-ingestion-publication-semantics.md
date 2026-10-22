@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[archimate-ingestion-publication-semantics.md](../../../enterprise-architecture/governance/archimate-ingestion-publication-semantics.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # ArchiMate Ingestion and Publication Semantics — Increment 2B
@@ -431,3 +437,5 @@ identity, reference, source-preservation and deterministic-reproduction checks.
 This increment ends after formalisation, release handling, bounded validation
 and the implementation report. Do not reconcile or adjudicate current blind-test
 changes, allocate their identities, implement layout or begin Increment 2C.
+
+------- Legacy Content - Superseded ------- Finish ----

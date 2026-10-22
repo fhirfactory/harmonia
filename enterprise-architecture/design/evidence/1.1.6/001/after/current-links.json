@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "renderedLocalLinksChecked": 1143,
+  "promotedAuthorityLinks": 5,
+  "historicalProvenanceLinks": 354,
+  "repositoryInstructionSourceCitations": 2,
+  "missingTargetFiles": [],
+  "unresolvedAnchors": [],
+  "limit": "Current EA local targets/anchors only. Historical source/evidence and repository-instruction citations remain locators and are not prerequisites; external network targets and code examples are not dereferenced."
+}

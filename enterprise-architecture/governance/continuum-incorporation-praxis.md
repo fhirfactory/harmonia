@@ -70,12 +70,12 @@ actual CT3 framing and uncertainty. Neither request creates identity from its na
 Useful commands, from the repository root:
 
 ```bash
-python3 scripts/architecture_continuum.py template --type Principle
-python3 scripts/architecture_continuum.py create --spec /tmp/authorised-element.json
-python3 scripts/architecture_continuum.py validate
-python3 scripts/architecture_continuum.py project --output /tmp/harmonia.xml
-python3 scripts/continuum_manifest.py
-python3 scripts/continuum_manifest.py --check
+python3 enterprise-architecture/tooling/architecture_continuum.py template --type Principle
+python3 enterprise-architecture/tooling/architecture_continuum.py create --spec /tmp/authorised-element.json
+python3 enterprise-architecture/tooling/architecture_continuum.py validate
+python3 enterprise-architecture/tooling/architecture_continuum.py project --output /tmp/harmonia.xml
+python3 enterprise-architecture/tooling/continuum_manifest.py
+python3 enterprise-architecture/tooling/continuum_manifest.py --check
 ```
 
 The source-specific `ingest_rad_*` adapters implement the bounded RAD-1.1.5
@@ -91,7 +91,7 @@ existing Motivation rule. Retain any required spelling decision.
 Do not manufacture ancestor descriptors to complete a name. The bounded migration
 retains accepted naming expectations and explicitly unresolved inputs.
 
-Run `make -C docs/archimate/framework all` for current publication, the root
+Run `make -C enterprise-architecture/tooling all` for current publication, the root
 [review manifest](../continuum/MANIFEST.md), mutation tests and staleness checks.
 Regenerate the manifest after authorised element changes; edit canonical sources
 through this Praxis rather than editing generated rows. The manifest preserves

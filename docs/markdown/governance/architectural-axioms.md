@@ -21,6 +21,12 @@
 
 # Harmonia Architectural Axioms
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current axiom governance](../../../enterprise-architecture/governance/architectural-axioms.md) — corresponding Purpose / Relationship to Architecture Decisions / Architectural Review Rule sections.
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
 ## 1. Purpose
 
 This is the single maintained authoritative architectural axiom register for
@@ -69,6 +75,9 @@ implementation is not, by itself, evidence of architectural intent.
 
 The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are used
 normatively throughout this document.
+
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ## 2. Architectural Axioms
 
@@ -1263,6 +1272,12 @@ Not every axiom can or should be directly represented by a single
 automated test. Tests SHOULD enforce concrete architectural consequences
 rather than attempt to encode architectural philosophy.
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current axiom governance](../../../enterprise-architecture/governance/architectural-axioms.md) — corresponding Purpose / Relationship to Architecture Decisions / Architectural Review Rule sections.
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
 ## 6. Relationship to Architecture Decisions
 
 Architecture Decision Records explain consequential design choices made
@@ -1279,6 +1294,15 @@ tests. Changes to an axiom therefore require a higher level of
 architectural consideration than ordinary implementation or design
 changes.
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current axiom governance](../../../enterprise-architecture/governance/architectural-axioms.md) — corresponding Purpose / Relationship to Architecture Decisions / Architectural Review Rule sections.
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
+
+------- Legacy Content - Superseded ------- Finish ----
+
 ## 7. Architectural Review Rule
 
 Before proposing a material architectural change, the following
@@ -1292,3 +1316,5 @@ questions SHALL be answered:
 
 Where the answer reveals an architectural conflict, the conflict SHALL
 be resolved explicitly before implementation proceeds.
+
+------- Legacy Content - Superseded ------- Finish ----

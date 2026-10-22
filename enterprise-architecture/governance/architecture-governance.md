@@ -48,7 +48,7 @@ records that confirmation with its attributable event and explicit migration
 deferrals. Completion consumes no additional release; the substantive migration
 remains reserved for 005.
 
-The [Architectural Axioms](../../docs/markdown/governance/architectural-axioms.md)
+The [Architectural Axioms](architectural-axioms.md)
 remain the highest architectural authority. This contract applies AX-04, AX-08,
 AX-09, AX-14, AX-15 and AX-17: machinery supplies evidence, meaningful decisions
 are preserved, working material serves its purpose, significant distinctions and
@@ -57,7 +57,7 @@ No axiom, runtime responsibility or native modelling semantics is changed.
 
 [Architecture Change Provenance](architecture-change-provenance.md) is the single
 representation-neutral transition-evidence contract. The
-[release policy](../../docs/markdown/governance/architecture-release-policy.md)
+[release policy](architecture-release-policy.md)
 and root [release authority](../../architecture-release.json) continue to control
 allocation. Specialised contracts retain their specialised purpose, subject to
 these common review and provenance rules.

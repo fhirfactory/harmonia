@@ -265,11 +265,11 @@ or ArchiMate element, and changes no runtime responsibility or module boundary.
 [evidence-semantics]: architecture-change-provenance.md#working-material-evidence-and-hcrl
 [iteration-003]: ../design/review/1.1.4/hcrl-1.1.4-003.pending.md
 [iteration-004]: ../design/review/1.1.4/hcrl-1.1.4-004.pending.md
-[evidence-check]: ../../scripts/architecture_review_evidence.py
+[evidence-check]: ../tooling/architecture_review_evidence.py
 [template]: templates/hcrl-template.pending.md
-[axioms]: ../../docs/markdown/governance/architectural-axioms.md
-[release-policy]: ../../docs/markdown/governance/architecture-release-policy.md
+[axioms]: architectural-axioms.md
+[release-policy]: architecture-release-policy.md
 [release-json]: ../../architecture-release.json
-[authoring]: ../../docs/markdown/governance/architecture-authoring-praxis.md
-[roundtrip]: ../../docs/markdown/governance/archimate-round-trip-engineering-praxis.md
-[specialised-review]: ../../docs/markdown/governance/archimate-ingestion-change-review.md
+[authoring]: architecture-authoring-praxis.md
+[roundtrip]: archimate-round-trip-engineering-praxis.md
+[specialised-review]: archimate-ingestion-change-review.md

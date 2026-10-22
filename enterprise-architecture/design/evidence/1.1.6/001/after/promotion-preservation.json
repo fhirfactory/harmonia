@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "entryRevision": "7fda4410a9d3583d674d9530710b86b4ec748c2a",
+  "originalRelease": "1.1.5",
+  "resultingRelease": "1.1.6",
+  "baselineAndPromotedProjectorSha256At115": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b",
+  "resultingProjectionSha256": "f794177a9785d6e05685b6675e9dd035422ebb64b38866d0ff0b7993a07d4e1a",
+  "onlyParsedProjectionChange": "One model Baseline / Architecture Release value: 1.1.5 -> 1.1.6; canonicalized full XML otherwise identical.",
+  "canonicalTrackedFilesChanged": [
+    "enterprise-architecture/continuum/MANIFEST.md"
+  ],
+  "legacyEdits": "Additions only: historical-standing notices and supersession wrappers; no original legacy lines deleted/replaced.",
+  "offlineSchemasByteIdentical": {
+    "archimate3_Diagram.xsd": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+    "dc.xsd": "9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf",
+    "xml.xsd": "f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7",
+    "archimate3_View.xsd": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+    "archimate3_Model.xsd": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794"
+  },
+  "currentGovernanceHistoricalLinks": 12
+}

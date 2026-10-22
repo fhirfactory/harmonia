@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[archimate-ingestion-change-review-template.md](../../../../enterprise-architecture/governance/templates/archimate-ingestion-change-review-template.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 | ID | Brief Description | Disposition | Outcome |
@@ -393,3 +399,5 @@ Not authorised
 Not yet processed. The finding is resolved by architecture authority without
 reconciliation; no execution is claimed. Retain the prior unresolved Outcome,
 issued Disposition and evidence in review history.
+
+------- Legacy Content - Superseded ------- Finish ----

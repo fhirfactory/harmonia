@@ -98,9 +98,15 @@ never establish identity or architectural standing. The
 [HCRL 002](enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md)
 records application and unresolved matters; holistic acceptance remains pending.
 
-`/docs/markdown` retains governance/metamodel contracts, qualified unresolved
-source material and unchanged historical carriers with explicit section
-supersession. Only incorporated sections lose their active architectural role;
+Current EA governance/metamodel contracts and operational tooling are maintained under
+`enterprise-architecture/governance/` and `enterprise-architecture/tooling/`.
+Promoted legacy governance copies are historical; the current
+[operational entry point](enterprise-architecture/tooling/README.md) and
+[authority succession](enterprise-architecture/governance/authority-successors.json)
+identify their successors. `/docs/markdown` retains qualified unresolved source
+material and unchanged historical carriers with explicit section supersession;
+those locators supply historical/source provenance, not current EA operational
+behaviour, configuration, schemas or authority. Only incorporated sections lose their active architectural role;
 unretired authority and unresolved source assertions are not silently discarded.
 The [source succession evidence](enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json)
 defines that exact boundary. The adopted common
@@ -184,7 +190,7 @@ deletion or migration of existing legacy material.
 ### 1.3 RAD / Architecture Release Governance
 
 Every accepted repository change MUST apply the patch increment defined in
-[the governed release policy](docs/markdown/governance/architecture-release-policy.md).
+[the governed release policy](enterprise-architecture/governance/architecture-release-policy.md).
 The root `architecture-release.json` is the single current-release authority.
 Publication/report tooling reads it; generation does not increment it. Minor or
 major increments require an explicit governance decision. Maven software versions
@@ -261,7 +267,7 @@ migration or processing-disposal authority.
 For “Model Updated. Please review and generate change-review.md.” or
 “change-review.md reviewed and updated. Apply directives.” (including equivalent
 requests), load the repository-governed
-[ArchiMate Round-Trip Engineering Praxis](docs/markdown/governance/archimate-round-trip-engineering-praxis.md)
+[ArchiMate Round-Trip Engineering Praxis](enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md)
 and [Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md),
 then follow their authority links and human checkpoints. Discover exact baseline,
 submission and review provenance; never substitute session memory or select an

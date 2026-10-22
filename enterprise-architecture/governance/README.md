@@ -20,9 +20,9 @@ The adoption transition is recorded in the
 confirmed by Mark Hunter, Solution Architect, on 2026-10-21 with the instruction
 “result confirmed - complete”. The issued decisions remain preserved in
 [reviewed iteration 002](../design/review/1.1.2/hcrl-1.1.2-002.pending.md). The
-[Architectural Axioms](../../docs/markdown/governance/architectural-axioms.md)
-and [release policy](../../docs/markdown/governance/architecture-release-policy.md)
-remain at their current paths. Root [architecture-release.json](../../architecture-release.json)
+[Architectural Axioms](architectural-axioms.md)
+and [release policy](architecture-release-policy.md)
+are maintained here. Root [architecture-release.json](../../architecture-release.json)
 remains the single current-release authority.
 
 The [reviewed RAD-1.1.3 HCRL](../design/review/1.1.3/hcrl-1.1.3-001.pending.md)
@@ -72,7 +72,7 @@ remains reserved for 005.
 The read-only conventional Markdown evidence check is:
 
 ```bash
-python3 scripts/architecture_review_evidence.py --version 1.1.4 --iteration 004
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version 1.1.4 --iteration 004
 ```
 
 It checks only the selected iteration's layout and recorded timestamp/prefix
@@ -81,13 +81,11 @@ prove attributable events, semantic completeness, substantive activity coverage
 or architectural acceptance. Run the complete relevant suites from the repository root:
 
 ```bash
-timeout --signal=TERM --kill-after=5s 420s python3 -B -m unittest discover -s scripts/tests -v
-timeout --signal=TERM --kill-after=5s 420s python3 -B -m unittest discover -s docs/archimate/framework/tests -v
+make -C enterprise-architecture/tooling all
+make -C enterprise-architecture/tooling verify-independent
 timeout --signal=TERM --kill-after=5s 240s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false
 ```
 
 Governance machinery, rules and context belong here. They do not acquire
 ArchiMate classification or require continuum entries merely through durability.
-The [existing governance/specialised-contract index](../../docs/markdown/governance/README.md)
-remains available. Existing files, architecture, models and publications have not
-been migrated; migration requires its own bounded mapping and authorisation.
+The [current EA tooling entry point](../tooling/README.md) provides current build, schema, creation, projection, review/application, publication and standing checks. Promoted specialised contracts are maintained here. Legacy-RAD and historical source adapters retain archaeology/replay roles; they supply no current operational authority.

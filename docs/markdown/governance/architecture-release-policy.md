@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[architecture-release-policy.md](../../../enterprise-architecture/governance/architecture-release-policy.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. Licensed under GPL-3.0-or-later. -->
 
 # Harmonia RAD / Architecture release governance
@@ -266,3 +272,5 @@ Archi 5.9 bundled XSDs, runs required bounded checks and records change/coverage
 evidence. Archi visual inspection precedes the next architecture slice.
 AX-14 and AX-17 apply: unresolved identities, conflicting assertions and
 deferred decisions remain findings until separately adjudicated.
+
+------- Legacy Content - Superseded ------- Finish ----

@@ -12,7 +12,7 @@ Solution Architect's result confirmation are recorded in the
 [completed HCRL 1.1.2 iteration 003](../design/register/1.1.2/hcrl-1.1.2-003.complete.md).
 The [common governance contract](architecture-governance.md)
 defines review authority, HCRL structure, lifecycle and prospective adoption.
-The [Architectural Axioms](../../docs/markdown/governance/architectural-axioms.md)
+The [Architectural Axioms](architectural-axioms.md)
 remain controlling; AX-04, AX-08, AX-09, AX-14, AX-15 and AX-17 apply.
 
 The Solution Architect's [reviewed HCRL 1.1.3 iteration 001](../design/review/1.1.3/hcrl-1.1.3-001.pending.md)

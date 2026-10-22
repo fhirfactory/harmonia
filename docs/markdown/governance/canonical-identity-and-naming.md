@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[canonical-identity-and-naming.md](../../../enterprise-architecture/governance/canonical-identity-and-naming.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Canonical Identity and Governed Naming Contract
@@ -292,3 +298,5 @@ relationship identity/endpoints must survive exactly. Known evidence-text,
 organisation, language, newline, style and ordering transformations remain visible.
 There is no claim of whole-model lossless fidelity or new comparator normalisation.
 Reconciliation / Increment 2 and presentation replay remain outside establishment.
+
+------- Legacy Content - Superseded ------- Finish ----

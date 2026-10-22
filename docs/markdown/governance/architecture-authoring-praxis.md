@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[architecture-authoring-praxis.md](../../../enterprise-architecture/governance/architecture-authoring-praxis.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 > **RAD-1.1.5 representation:** Use the [element incorporation Praxis](../../../enterprise-architecture/governance/continuum-incorporation-praxis.md) for current canonical Markdown placement and resource allocation. The semantic authoring and review rules below continue to govern; historical document carriers do not receive new architecture after successful ingestion.
 
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
@@ -326,3 +332,5 @@ implements no ingestion/reconciliation pipeline, Containment View layout engine,
 branching or merge system. The existing 2B Name/displayName findings and deferred
 metamodel decisions remain unresolved and unmigrated. Stop after documentation,
 required patch handling, bounded validation and the implementation report.
+
+------- Legacy Content - Superseded ------- Finish ----

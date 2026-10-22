@@ -25,6 +25,12 @@ The user's decision establishes the model's publication purpose. It does not app
 | AX-16/18 | Coordination and information management do not confer clinical/domain authority. Digital Twin information, coordination and execution projections retain their domain distinctions. |
 | AX-17 | Missing IDs, ancestry, relationships, definitions and adjudications are explicit. No similar-name merges, diagram-driven edges or conventional architecture completion. |
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current native mapping profile](../../../enterprise-architecture/governance/archimate-model-mapping.md) — corresponding assertion / relationship / documentary-content sections.
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
 ## 2. Source and assertion contract
 
 Publication must use reviewed assertions, not derive semantics from directory names, headings, ordinals, indentation, Mermaid arrow syntax, implementation classes or catalogue juxtaposition. A source document can contain approved definitions, candidates, examples, historical content and unresolved assertions together. Standing attaches to each assertion and relationship, not merely to the file.
@@ -32,6 +38,9 @@ Publication must use reviewed assertions, not derive semantics from directory na
 Each proposed publication record must identify its RAD source document, stable source section/explicit anchor, assertion text or selected definition, source fingerprint and architectural standing. Source fingerprints detect drift; they do not confer approval. Snapshot/line numbers assist inspection but are not identity. Repeated descriptions of the same identity contribute provenance without generating duplicate elements.
 
 The source must establish the construct's name, semantic kind and bounded responsibility. A direct type mapping does not establish an ID, description, owner, relationship or R1/R2 inclusion. Generation must check these independently. Candidate Domain05 content may later be represented with its accepted candidate standing clearly retained; it must not appear as the final Solution Architecture or MVP baseline.
+
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ## 3. Mapping and identity rules
 
@@ -77,6 +86,12 @@ For the first slice, copy the entire EC section body verbatim, including EC-12/1
 
 Where established and applicable, future structured properties may carry existing RAD identifier/aliases, construct kind, architecture domain/category, Capability Tier or FT classification, status, release scope, source document/section and architectural standing. Include only source-governed values. A content hash is publication evidence, not invented architectural metadata. Unknown tier, release scope or status must not be supplied by default or from a directory. Publication release, architecture release scope, Maven version, native standards version, authoritative information version and active-state generation remain distinct.
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current native mapping profile](../../../enterprise-architecture/governance/archimate-model-mapping.md) — corresponding assertion / relationship / documentary-content sections.
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
 ## 5. Relationship profile and direction
 
 The accepted [Architecture Modelling Strategy](architecture-modelling-strategy.md)
@@ -120,6 +135,9 @@ This authorises a fallback for known relationship existence; an explicitly
 unestablished relationship remains a finding. The original predicate and standing
 remain available. Source status is not promoted by graph materialisation. Other
 new specialised profiles still require their actual review authority.
+
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ## 6. Traceability and navigation
 
@@ -165,11 +183,20 @@ Use stable ordering and fixed namespace/identity keys. Exclude clock time, absol
 
 Required gates per increment: source drift and authority checks; identity/alias uniqueness and non-reuse; baseline preservation except explicitly allowed changes; no duplicate XML identifiers; all elementRef/relationshipRef/org references resolve; connections use View-local visual IDs; semantic endpoints match represented elements; each generated View is organised; native relationship legality and source predicate/direction agree; local offline Archi 5.9 Diagram/Model/View XSD validation of serialized XML; repeat generation/idempotence; bounded relevant tests and required repository architecture suite; change/coverage report; visual import/inspection in Archi before the next increment. XSD PASS does not claim visual import or semantic approval.
 
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[Current native mapping profile](../../../enterprise-architecture/governance/archimate-model-mapping.md) — corresponding assertion / relationship / documentary-content sections.
+Original content below is unchanged historical material.
+---------------------------------------------------------
+
 ## 9. Documentary content and ambiguity
 
 Contents pages, reading paths, domain folders, metamodel class headings, examples, references, historical migration wrappers, review checklists, source keys, gap navigation IDs, counts, status dashboards and implementation module lists do not automatically become architecture elements. Metamodel categories describe how to model instances; they are not themselves all architectural instances. Keep suitable content as documentation, metadata, View annotation or a report. Exclude deliberately rejected/retired meanings from current architecture while retaining source history.
 
 Escalate ambiguous type, identity, source standing, definition, endpoint, relation predicate, Feature ancestry, ID conflict or contradictory source. Report both assertions with evidence; do not choose by similar names, latest file date, structural symmetry or implementation convenience. Block only dependent publication records/slices, preserving the rest where independently authorised.
+
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ## 10. Release rules and stop point
 

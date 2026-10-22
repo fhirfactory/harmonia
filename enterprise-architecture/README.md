@@ -1,6 +1,10 @@
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
-# Harmonia Enterprise Architecture — RAD 1.1.5
+# Harmonia Enterprise Architecture
+
+Current operations: [EA tooling](tooling/README.md), [governance](governance/README.md), and [completed RAD-1.1.6 operational succession](design/register/1.1.6/hcrl-1.1.6-001.complete.md).
+
+The following RAD-1.1.5 review-package account and links preserve their originating standing. Current publication is generated for the root `architecture-release.json` version under `continuum/documentation/published/<version>/`.
 
 The migrated architecture is ready for **holistic Solution Architect / ARB review**.
 Its architectural unit is one individually identified ArchiMate element. Existing
@@ -34,8 +38,8 @@ remain readable source; this publication does not execute external diagram code.
 From the repository root:
 
 ```bash
-make -C docs/archimate/framework all
-python3 scripts/verify_continuum_reproducibility.py --report /tmp/reproducibility.json
+make -C enterprise-architecture/tooling all
+python3 enterprise-architecture/tooling/verify_continuum_reproducibility.py --report /tmp/reproducibility.json
 ```
 
 Python dependencies are `lxml`, `jsonschema` and `markdown`. The optional PDF uses

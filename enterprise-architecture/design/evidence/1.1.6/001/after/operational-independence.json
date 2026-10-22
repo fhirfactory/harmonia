@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "canonicalSources": 1602,
+  "identicalArtifacts": {
+    "Harmonia-Architecture.xml": "f794177a9785d6e05685b6675e9dd035422ebb64b38866d0ff0b7993a07d4e1a",
+    "continuum.html": "f0a2b84b367e3a4dd71827a44abfde2b22241d07f57f5a5111cfa385b3f01fa4",
+    "README.md": "2ef27eac56c7956726ad21a7c62fc0a9cbb38c421df653607eb7500b0ca93ce6",
+    "continuum-catalogue.tex": "a1c08ea566b5bf9a73c0b3ed3971ae79ae661f52f781b64bb1d7d9cc1e73cc85",
+    "publication.json": "4f11d7813253ca96b01306134eb0bba65d95b5d3c024475eba7fdcb009b3107a",
+    "enterprise-architecture/continuum/MANIFEST.md": "8432a9a6e15f536ab4b476f2021c494db88a8494290c04ea0eab2f9ea827b732"
+  },
+  "steps": [
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "validate"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"elements\": 1602, \"relationships\": 1651, \"qualifiedSourcePredicates\": 462, \"canonicalIdentities\": 1602, \"representationIdentities\": 1602, \"provenanceCoverage\": 1602, \"sourceBindings\": 3421, \"supportedNativeTypes\": 60, \"architecturalAcceptance\": \"Pending holistic Solution Architect/ARB review\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_manifest.py"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": false, \"sha256\": \"8432a9a6e15f536ab4b476f2021c494db88a8494290c04ea0eab2f9ea827b732\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml"
+      ],
+      "status": "PASS",
+      "summary": "\": 13, \"UNRESOLVED\": 11}, \"fully_derived\": 83, \"unresolved\": 11, \"contextual\": 59, \"preserved_identity\": 94, \"absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"f794177a9785d6e05685b6675e9dd035422ebb64b38866d0ff0b7993a07d4e1a\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/continuum/documentation/published/1.1.6"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"artifacts\": 4, \"check\": false}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_manifest.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": true, \"sha256\": \"8432a9a6e15f536ab4b476f2021c494db88a8494290c04ea0eab2f9ea827b732\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "\": 13, \"UNRESOLVED\": 11}, \"fully_derived\": 83, \"unresolved\": 11, \"contextual\": 59, \"preserved_identity\": 94, \"absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"f794177a9785d6e05685b6675e9dd035422ebb64b38866d0ff0b7993a07d4e1a\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/continuum/documentation/published/1.1.6",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"artifacts\": 4, \"check\": true}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/verify_continuum_links.py",
+        "--report",
+        "links.json"
+      ],
+      "status": "PASS",
+      "summary": "PASS\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_workbench.py",
+        "review",
+        "--baseline",
+        "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml",
+        "--submitted",
+        "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml",
+        "--output",
+        "review.json"
+      ],
+      "status": "PASS",
+      "summary": "{\"elementChanges\": 0, \"relationshipAndViewChanges\": 0, \"unresolved\": 0}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/exchange_compare.py",
+        "compare",
+        "--baseline",
+        "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml",
+        "--submitted",
+        "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml",
+        "--report",
+        "raw.json"
+      ],
+      "status": "PASS",
+      "summary": "EQUIVALENT\n"
+    },
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "enterprise-architecture/tooling/tests",
+        "-v"
+      ],
+      "status": "PASS",
+      "summary": ""
+    }
+  ],
+  "legacyRadPresent": false,
+  "scriptsPresent": false,
+  "historicalConfigurationPresent": false,
+  "allocatedLiveIdentities": 0,
+  "currentDesignLinkTargets": [],
+  "inputs": "EA continuum, governance, design presentation/declared retained evidence, tooling; root release and installed Python dependencies",
+  "limits": "Synthetic creation/application and transport fixtures; no actual Archi execution, visual inspection or architectural acceptance asserted."
+}

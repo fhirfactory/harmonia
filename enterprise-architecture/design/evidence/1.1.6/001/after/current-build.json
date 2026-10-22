@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "command": "PYTHONPATH=/tmp/harmonia-ea-deps timeout --signal=TERM --kill-after=5s 600s make -C enterprise-architecture/tooling all",
+  "currentTests": 43,
+  "testElapsedSeconds": 124.342,
+  "generation": "PASS",
+  "release": "1.1.6",
+  "staleness": "PASS",
+  "offlineSchemaAndReferences": "PASS",
+  "namingAndContainment": "PASS",
+  "currentLinks": "PASS",
+  "currentGovernanceFileLinks": {
+    "checked": 315,
+    "missing": 0
+  },
+  "browserDomSmoke": "PASS; 1602 elements",
+  "diffCheck": "PASS",
+  "limits": "No actual Archi execution, interactive visual inspection or architectural acceptance asserted. Isolated proof (42 tests before the final added regression) and subsequent focused checks are separate evidence."
+}

@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[archimate-round-trip-engineering-praxis.md](../../../enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 > **RAD-1.1.5 canonical-source adapter:** The [continuum workbench procedure](../../../enterprise-architecture/design/archimate/README.md) implements the exact-baseline, review and application gates below for individual canonical Markdown resources. Existing standing, identity and native interpretation rules remain controlling. Historical source-adapter instructions remain applicable only to their originating editions.
 
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
@@ -201,3 +207,5 @@ Current operation must become independent of historical processing under
 Architecture Change Provenance. Existing dependencies and recovery requirements
 remain until separately authorised migration and verification resolve them.
 Installing the contract neither demonstrates independence nor permits cleanup.
+
+------- Legacy Content - Superseded ------- Finish ----

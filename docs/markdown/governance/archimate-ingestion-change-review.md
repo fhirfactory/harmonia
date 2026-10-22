@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[archimate-ingestion-change-review.md](../../../enterprise-architecture/governance/archimate-ingestion-change-review.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # ArchiMate Ingestion Change Review contract
@@ -470,3 +476,5 @@ instruction generation, reconciliation machinery, complete processing states,
 presentation replay/layout and any further Home rules or Composition
 profile decision remain separate work. This documentation change processes none
 of the blind-test additions.
+
+------- Legacy Content - Superseded ------- Finish ----

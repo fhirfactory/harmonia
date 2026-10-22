@@ -1,3 +1,5 @@
+> **Historical standing:** Current EA operations and authority are maintained at the [EA successor](../../enterprise-architecture/tooling/README.md). The original instructions below describe their originating editions only; they supply no current operational behaviour or authority. Historical content is preserved unchanged.
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Working on the Harmonia architecture

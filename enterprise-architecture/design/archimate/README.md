@@ -16,17 +16,17 @@ or supplies acceptance. Preserve the exact baseline and submitted export under
 the originating iteration's evidence contract when they materially support review.
 
 ```bash
-python3 scripts/continuum_workbench.py review \
+python3 enterprise-architecture/tooling/continuum_workbench.py review \
   --baseline /path/to/exact-current-projection.xml \
   --submitted /path/to/complete-model-export.xml \
   --output /path/to/iteration/evidence/review.json
-python3 scripts/continuum_workbench.py apply --decision /path/to/reviewed-decision.json
+python3 enterprise-architecture/tooling/continuum_workbench.py apply --decision /path/to/reviewed-decision.json
 ```
 
 Commands run from the repository root. Review correlates only valid canonicalId
 claims. It reports native fields, property values, relationships and Views without
 writing sources. The baseline must match the current projection byte for byte.
-The [existing Round-Trip Praxis](../../../docs/markdown/governance/archimate-round-trip-engineering-praxis.md)
+The [existing Round-Trip Praxis](../../governance/archimate-round-trip-engineering-praxis.md)
 and common HCRL process govern adjudication; the JSON adapter does not replace them.
 
 A decision names `authority` (repository-relative HCRL path and DR anchor), `review`
@@ -55,5 +55,5 @@ preserves canonical values/owners, native relationships and Views. Archi adds
 language attributes and restructures organization folders; whole-model raw
 fidelity is not claimed. Preserve the presentation source and exact returned
 control; do not silently replace the template with that return. The full raw
-comparison can be regenerated with `diagnose_roundtrip.py compare` using the
+comparison can be regenerated with `python3 enterprise-architecture/tooling/exchange_compare.py compare --baseline <exact-XML> --submitted <returned-XML-or-gz> --report <report.json>` using the
 published XML and retained `returned-model.xml.gz` (decompress first).

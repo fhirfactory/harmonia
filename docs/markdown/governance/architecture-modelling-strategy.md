@@ -1,3 +1,9 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+[architecture-modelling-strategy.md](../../../enterprise-architecture/governance/architecture-modelling-strategy.md)
+Current EA governance is maintained at the successor; original content below is unchanged historical material.
+---------------------------------------------------------
+
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
 # Harmonia Architecture Modelling Strategy
@@ -220,3 +226,5 @@ Information Architecture or Application Architecture Home rules. The current
 Business examples target Features, native `Capability`; they do not establish
 an exhaustive target restriction. General rules require a separate Solution
 Architect decision. The existing CT3 → Feature Composition rule remains distinct.
+
+------- Legacy Content - Superseded ------- Finish ----

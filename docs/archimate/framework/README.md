@@ -1,3 +1,5 @@
+> **Historical standing:** Current EA operations and authority are maintained at the [EA successor](../../../enterprise-architecture/tooling/README.md). The original instructions below describe their originating editions only; they supply no current operational behaviour or authority. Historical content is preserved unchanged.
+
 > **Current RAD-1.1.5 pipeline:** `make all` publishes and checks canonical element Markdown through [the continuum machinery](../../../enterprise-architecture/design/archimate/README.md). The shared schemas, containment and naming rules remain reusable. The historical baseline procedures below retain their originating fixtures and recovery role; `historical-baseline-all` is for an isolated historical checkout. They do not govern current source authoring or overwrite retired carriers during current publication.
 
 The current pipeline also generates the root [continuum review manifest](../../../enterprise-architecture/continuum/MANIFEST.md).

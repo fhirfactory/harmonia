@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
-  "nativeMetamodel": "docs/archimate/framework/schemas/archimate3_Model.xsd",
+  "nativeMetamodel": "enterprise-architecture/tooling/schemas/archimate3_Model.xsd",
   "types": {
     "Stakeholder": {
       "directory": "motivation/stakeholder",
@@ -315,14 +315,14 @@
     "Feature": {
       "nativeType": "Capability",
       "directory": "strategy/capability/feature",
-      "authority": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "authority": "enterprise-architecture/governance/capability-feature-profile.md#bec-composition-hierarchy",
       "displayPrefix": "[Feature]",
       "canonicalQualifier": "FEAT"
     },
     "Topic": {
       "nativeType": "DataObject",
       "directory": "application/data-object/topic",
-      "authority": "docs/markdown/governance/canonical-identity-and-naming.md#information-element-naming--machinery-validation-decision-2026-10-20",
+      "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md#information-element-naming--machinery-validation-decision-2026-10-20",
       "displayPrefix": "[Topic]",
       "canonicalQualifier": "TOPIC"
     }
@@ -332,7 +332,7 @@
       "nativeType": "Association",
       "isDirected": true,
       "direction": "element to home",
-      "authority": "docs/markdown/governance/archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules"
+      "authority": "enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules"
     }
   },
   "connectors": {

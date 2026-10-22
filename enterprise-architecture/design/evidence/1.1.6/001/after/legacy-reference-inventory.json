@@ -1,0 +1,125 @@
+{
+  "scope": "Only current governance dependency carriers inspected for this task, plus explicit successor keys. Canonical source provenance, earlier design/evidence and frozen publications remain unchanged; no corpus-wide archaeology or reconciliation was performed.",
+  "references": [
+    {
+      "file": "enterprise-architecture/governance/archi-navigation-and-view-convention.md",
+      "line": 261,
+      "label": "Historical source: classification manifest",
+      "target": "../../docs/markdown/governance/baseline/documentation-classification.json",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/archi-navigation-and-view-convention.md",
+      "line": 308,
+      "label": "Historical source: Release 1.0.3",
+      "target": "../../docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/archimate-ingestion-change-review.md",
+      "line": 282,
+      "label": "Historical source: 1.0.8/run-001",
+      "target": "../../docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md#disposition-outcome-transition",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/architectural-axioms.md",
+      "line": 7,
+      "label": "original register",
+      "target": "../../docs/markdown/governance/architectural-axioms.md",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-change-provenance.md",
+      "line": 55,
+      "label": "pre-adoption contract",
+      "target": "../../docs/markdown/governance/architecture-change-provenance.md",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-modelling-strategy.md",
+      "line": 98,
+      "label": "Historical source: 1.0.8 submission",
+      "target": "../../docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-modelling-strategy.md",
+      "line": 117,
+      "label": "Historical source: fixed Business Home register",
+      "target": "../../docs/markdown/governance/baseline/business-homes.json",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-modelling-strategy.md",
+      "line": 175,
+      "label": "Historical source: Current resource naming amendments",
+      "target": "../../docs/markdown/governance/baseline/home-derived-metadata.json",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-modelling-strategy.md",
+      "line": 180,
+      "label": "Historical source: completion evidence",
+      "target": "../../docs/archimate/processing/publishing/1.0.9/home-context-completion/README.md",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+      "line": 149,
+      "label": "Historical source: resource amendments",
+      "target": "../../docs/markdown/governance/baseline/home-derived-metadata.json",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+      "line": 192,
+      "label": "Historical source: completion evidence",
+      "target": "../../docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    },
+    {
+      "file": "enterprise-architecture/governance/capability-feature-profile.md",
+      "line": 51,
+      "label": "Historical source: 1.0.8/run-001",
+      "target": "../../docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md#shared-metamodel-decision",
+      "role": "Historical source/decision/adoption provenance; maintained rule text and current successors are within EA; no legacy file is read by current tooling."
+    }
+  ],
+  "authoritySuccessors": {
+    "purpose": "Explicit promotion of current governance authority. Legacy locators in unchanged canonical sources preserve original provenance; current rendering/checks use these successors. No identity or semantic correspondence is inferred from paths.",
+    "successors": {
+      "docs/markdown/governance/architecture-release-policy.md": "enterprise-architecture/governance/architecture-release-policy.md",
+      "docs/markdown/governance/canonical-identity-and-naming.md": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+      "docs/markdown/governance/architecture-modelling-strategy.md": "enterprise-architecture/governance/architecture-modelling-strategy.md",
+      "docs/markdown/governance/architecture-authoring-praxis.md": "enterprise-architecture/governance/architecture-authoring-praxis.md",
+      "docs/markdown/governance/archimate-round-trip-engineering-praxis.md": "enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md",
+      "docs/markdown/governance/archimate-ingestion-change-review.md": "enterprise-architecture/governance/archimate-ingestion-change-review.md",
+      "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "enterprise-architecture/governance/archimate-ingestion-publication-semantics.md",
+      "docs/markdown/governance/archi-navigation-and-view-convention.md": "enterprise-architecture/governance/archi-navigation-and-view-convention.md",
+      "docs/markdown/governance/architectural-axioms.md": "enterprise-architecture/governance/architectural-axioms.md",
+      "docs/markdown/governance/architecture-change-provenance.md": "enterprise-architecture/governance/architecture-change-provenance.md",
+      "docs/markdown/governance/rad-archimate-model-mapping.md": "enterprise-architecture/governance/archimate-model-mapping.md"
+    }
+  },
+  "historicalReleasePolicyLiteralLocators": [
+    {
+      "file": "enterprise-architecture/governance/architecture-release-policy.md",
+      "line": 178,
+      "literal": "docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "role": "Explicit bounded 1.0.10 machinery-validation/release account; no current run, release selection or configuration is obtained from these historical locators."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-release-policy.md",
+      "line": 179,
+      "literal": "docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "role": "Explicit bounded 1.0.10 machinery-validation/release account; no current run, release selection or configuration is obtained from these historical locators."
+    },
+    {
+      "file": "enterprise-architecture/governance/architecture-release-policy.md",
+      "line": 203,
+      "literal": "`docs/archimate/processing/machinery-validation/information-architecture/run-NNN/`,",
+      "role": "Explicit bounded 1.0.10 machinery-validation/release account; no current run, release selection or configuration is obtained from these historical locators."
+    }
+  ]
+}
