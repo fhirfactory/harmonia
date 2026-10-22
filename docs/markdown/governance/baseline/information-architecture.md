@@ -1,6 +1,6 @@
 <!-- continuum-source-succession -->
 ------- Legacy Content - Superseded ------- Start ------
-Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/continuum/documentation/published/1.1.5/README.md).
+Superseded as an active architectural carrier by the [canonical element continuum](../../../../enterprise-architecture/documentation/continuum-manifest/published/1.1.5/README.md).
 [Exact source/identity correspondence](../../../../enterprise-architecture/design/evidence/1.1.5/002/after/source-succession.json) records this historical generated carrier. Its original bytes and then-current claims are retained below; it is no longer a current authoring source.
 ---------------------------------------------------------
 

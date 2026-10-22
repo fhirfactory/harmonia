@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "elements": 1602,
+  "relationships": 1651,
+  "qualifiedSourcePredicates": 462,
+  "canonicalIdentities": 1602,
+  "representationIdentities": 1602,
+  "provenanceCoverage": 1602,
+  "sourceBindings": 3421,
+  "supportedNativeTypes": 60,
+  "architecturalAcceptance": "Pending holistic Solution Architect/ARB review",
+  "publication": "Generated HTML full-content browser and LaTeX identity/standing catalogue",
+  "sha256": {
+    "continuum.html": "b06793532edb9c8add6f1422956a208c41956918e593ed71b1b476ae680fcfa3",
+    "README.md": "07ca95c8e148e844ea24ecf31e805eae0fab10e5f07d26a223e2b7e9a613fae4",
+    "continuum-catalogue.tex": "a1a8108cbc5bb9af5358d7565553b9fa9e284c04951865edf795ff5b652a8279"
+  },
+  "sourceInputs": "Canonical Markdown, maintained type/schema configuration and root release",
+  "latexIngested": false
+}

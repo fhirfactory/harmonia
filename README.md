@@ -464,10 +464,19 @@ mvn clean package
 
 ## Documentation & Architectural Specifications
 
+Current architecture is held in the canonical [Architecture Continuum](enterprise-architecture/continuum/MANIFEST.md),
+accepted as the baseline in 1.1.7 with individual standing preserved. Its
+[Continuum RAD](enterprise-architecture/documentation/continuum-rad/README.md)
+provides the narrative architectural publication; the
+[Continuum Manifest](enterprise-architecture/documentation/continuum-manifest/README.md)
+provides the structural catalogue and browser. These 1.1.8 publications derive
+from the Continuum. Legacy technical guides below retain their qualified roles
+under the [repository governance rules](AGENTS.md#12-rads-and-legacy-documentation-governance).
+
 Comprehensive technical specifications, message lifecycles, and security guides are organized across the following documentation modules:
 
 - **[System Architecture Overview](docs/architecture/overview.md)**: Comprehensive architectural blueprint, multi-tier layout, and cross-subsystem contracts.
-- **[Architectural Guardrails for AI Agents (AGENTS.md)](AGENTS-old.md)**: Authoritative architectural boundaries, subproject hierarchy, mandatory invariants, and test commands.
+- **[Architectural Guardrails for AI Agents (AGENTS.md)](AGENTS.md)**: Authoritative architectural boundaries, subproject hierarchy, mandatory invariants, and test commands.
 - **[Runtime Architecture & Topology](docs/architecture/runtime-architecture.md)**: Concrete runtime topology, clustering models, network flows, and failure domains.
 - **[Execution Model & Task Processing](docs/architecture/execution-model.md)**: Deep dive into Ponos, Erga, Praxis, and Pragma task lifecycle execution.
 - **[Security Architecture & Themis Framework](docs/security/architecture.md)**: Defence-in-depth principles, default-deny policy engine, role-to-authority mappings, service identities, and boundary checkpoint matrices.

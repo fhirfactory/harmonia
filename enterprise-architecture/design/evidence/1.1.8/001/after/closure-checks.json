@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scope": "Completion mechanics, source/publication preservation, disposition correspondence and current navigation; no full temporal-conformance claim.",
+  "release": {
+    "version": "1.1.8",
+    "previous_version": "1.1.7"
+  },
+  "reviewedInput": "enterprise-architecture/design/review/1.1.8/hcrl-1.1.8-001.pending.md",
+  "reviewedInputSha256": "9bd627dd8bba4a4f87347ab9cdce338ebf12020b8b89e94b8b1b74f78890bd76",
+  "reviewedInputUnchanged": true,
+  "completedRegister": "enterprise-architecture/design/register/1.1.8/hcrl-1.1.8-001.complete.md",
+  "completedRegisterSha256": "98991567a322c1de384bae91e5e66d10d15266907a76ccea22d07a76d5d91fa1",
+  "openingDispositionsCarriedVerbatim": true,
+  "decisionReviews": 3,
+  "minutiaeAccepted": true,
+  "humanAuthority": "Mark Hunter, Solution Architect: Accept DR-1\u2013DR-3 in the reviewed HCRL; user completion instruction retained verbatim with the Task.",
+  "temporalTreatment": "Accept DR-3: sufficient provenance for this transition; no further remediation required. Original and follow-up instruction-entry times remain unavailable; none reconstructed.",
+  "canonicalElementsUnchanged": 1602,
+  "canonicalProjectionTemplateUnchanged": true,
+  "publications": {
+    "continuum-manifest": {
+      "metadataSha256": "cfe8f6247985c0102e3cfb251879106101dd804fb9c4a89e458e5e4209b018ab",
+      "hashedArtifactsChecked": 3
+    },
+    "continuum-rad": {
+      "metadataSha256": "d3d893d6c122806d39d7acaefaa0ab9cf2e5e946b1f339a0389f7aa5189bd01a",
+      "hashedArtifactsChecked": 7
+    }
+  },
+  "partFiles": 4,
+  "pdfSha256Unchanged": "3dd21d32b3fcf6dac10bfcbab59e6a785c70bd7d0fde212bb9b74a4711ee5470",
+  "currentRegisterAndNavigationLinksChecked": 72,
+  "iterationEvidenceOutcome": "UNRESOLVED",
+  "iterationEvidenceErrors": [],
+  "iterationEvidenceUnresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.8/001/before/ai-agent-tasks/unresolved-documentation-publications.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "whitespaceCheck": "PASS: git diff --check",
+  "testsNotRepeated": "No architecture/publication inputs changed by completion; preceding full and targeted checks remain valid.",
+  "limits": "Closure records supplied human acceptance; automated checks establish neither event authenticity nor new architectural meaning. No additional release, publication regeneration or commit performed."
+}

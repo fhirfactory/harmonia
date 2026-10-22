@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "release": {
+    "version": "1.1.8",
+    "previous_version": "1.1.7"
+  },
+  "canonicalSources": 1602,
+  "narrativeDescriptions": 1270,
+  "historicalReferencesInModelHierarchy": 332,
+  "architectureHeadings": 2970,
+  "architectureHeadingOrigins": {
+    "model organisation": 1368,
+    "model element reference": 1602
+  },
+  "aiAssistance": "Retained source-cited reader notes and deterministic presentation code; no model/API call during generation. Canonical descriptions are rendered without semantic rewriting. Diagrams select existing native assertions with their direction/state/standing.",
+  "sourceInputs": [
+    "canonical Continuum Markdown",
+    "enterprise-architecture/design/archimate/projection-template.xml",
+    "enterprise-architecture/governance/continuum/type-catalogue.json",
+    "enterprise-architecture/documentation/continuum-rad/reader-notes.json",
+    "enterprise-architecture/documentation/continuum-rad/templates/publication.tex",
+    "architecture-release.json"
+  ],
+  "allocatedIdentities": 0,
+  "legacyRadIngested": false,
+  "sha256": {
+    "README.md": "835fc92a71226826867399a10df88abfece5975ab6c3889ef139be643847ed10",
+    "continuum-rad.tex": "c889d00635dbecd462685ee04061723cf8b73898959802c89a5c5fcd8a0991cd",
+    "parts/application.tex": "15ade6736d00de04175ed18ee6f4daab18af188498bbcc26de3b74f539c7da93",
+    "parts/business.tex": "5cb14a8e606937973232105c214d0fe35ca31da2df93eb946f30e5cf71d77bc1",
+    "parts/motivation.tex": "a5d1c86db142b2a8cfb35fbf2517f645e49e71aa68b7c327f561b86f18936fd8",
+    "parts/strategy.tex": "24ad79db01ff08ee20823419040129a165d84e757ae4ce713282fa32186d79df",
+    "structure.json": "96bf9aa593d9fc256ccf06b59e8fb8d46884cadd37ab058b8e5f16ecec45d025"
+  }
+}

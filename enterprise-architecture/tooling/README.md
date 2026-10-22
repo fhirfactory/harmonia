@@ -4,7 +4,9 @@
 
 Run current EA operations here. Maintained inputs are the canonical
 `enterprise-architecture/continuum/`, current `governance/`, `design/` and
-`tooling/`, plus the repository-root `architecture-release.json` release authority.
+`tooling/`, the narrative publication's presentation inputs under
+`documentation/continuum-rad/`, plus the repository-root
+`architecture-release.json` release authority.
 Python 3.10 or later, GNU Make/timeout and the packages in
 [requirements.txt](requirements.txt) are required. The browser smoke check uses Node.
 
@@ -17,14 +19,23 @@ make -C enterprise-architecture/tooling verify-independent
 make -C enterprise-architecture/tooling browser-test
 ```
 
-`continuum` validates and generates the manifest, Open Exchange, HTML browser,
+`continuum` validates and generates the root navigation manifest, Open Exchange, HTML browser,
 Markdown index, LaTeX catalogue source and publication manifest for the root
-release. `check` performs read-only staleness and link checks. `test` runs current
+release under `documentation/continuum-manifest/published/<version>/`.
+`continuum-rad` generates the narrative LaTeX publication and complete model/source
+correspondence under `documentation/continuum-rad/published/<version>/`.
+`all` includes both products. `rad-pdf` compiles the narrative PDF with XeLaTeX,
+latexmk, makeindex, DejaVu fonts and TikZ using a fixed `SOURCE_DATE_EPOCH`;
+the release-local `build/` intermediates are ignored. Its PDF remains a derived
+publication, separate from source-byte checks and human acceptance.
+`check` performs read-only staleness and link checks. `test` runs current
 creation, mutation, identity, naming, containment, round-trip, publication, release
 and evidence-layout tests. `verify-independent` repeats generation, checks and
 the current tests in an isolated tree with no `docs/`, `scripts/`, Git metadata,
 historical framework, historical location mapping or historical processors.
-It compares derived bytes and confirms canonical source bytes are unchanged.
+It compares derived bytes for both products and confirms canonical source bytes
+are unchanged. The isolated run retains only the new RAD's template and cited
+reader notes as presentation inputs; it reads no superseded LaTeX RAD workspace.
 Override `PYTHON` for a Python environment containing the declared dependencies.
 
 ```bash
@@ -46,7 +57,7 @@ agent prepares `change-review.md` from that evidence and the
 The tools supply no Solution Architect decision or final acceptance.
 Review and apply use explicit locators; there is no newest-export discovery rule.
 
-For an optional PDF, compile the generated `continuum-catalogue.tex` twice with
+For an optional catalogue PDF, compile the generated `continuum-catalogue.tex` twice with
 XeLaTeX, a fixed `SOURCE_DATE_EPOCH` and temporary output directory. Inspect it
 before retaining it as a derived publication. Existing historical PDFs are unchanged.
 

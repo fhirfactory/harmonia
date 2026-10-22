@@ -1,0 +1,42 @@
+{
+  "motivation": [
+    {
+      "text": "Read the axioms as constraints on the rest of the architecture. Harmonia owns its semantics while using underlying engines for machinery; native engine behaviour does not establish information authority. Semantic distinctions and explicit uncertainty must survive downstream representation. These points explain why the following chapters distinguish currentness, acceptance, responsibility, persistence and execution rather than treating them as interchangeable.",
+      "sources": ["54508cda80484a6caf95b901780eaf7d", "d3fc6025dc7646d1b2020b51f7a44bfa", "8882573df7ce43c6bc0f66da0a676139"]
+    }
+  ],
+  "strategy": [
+    {
+      "text": "The model separates Business Capabilities, Business Enabling Capabilities and Enterprise Capabilities within Strategy. Follow those existing branches to move from health-service responsibilities to their enabling concerns and platform capabilities. The folder called Application Layer here remains inside Strategy: it contains Enterprise Capabilities, and its navigation label does not reclassify those capabilities as application components.",
+      "sources": ["ed342cb8656b4f80b55ad519ecbd2d3a", "b5a92874f8ac4509a30af5253590edc1", "15e57021490c4e738aee9009ff84a7c3"]
+    },
+    {
+      "text": "Health Service Governance illustrates a boundary that matters when reading capability descriptions: it establishes obligations, authority and compliance expectations, while operational management progresses means within that envelope and assurance evaluates evidence. Follow the capability's stated boundary and its qualified links rather than reading all neighbouring responsibilities as one owner. Proposed placement, relevance or enablement remains independently qualified even where the responsibility is canonical.",
+      "sources": ["209aada781e844e28202a2535a264c21"]
+    }
+  ],
+  "business": [
+    {
+      "text": "The Business chapters retain the model's enabling-capability groupings, BusinessObjectMap and Products. Functions, services, interactions, roles and processes retain their own native types. Use the canonical descriptions to understand each responsibility; their co-location in a folder does not itself establish a service consumer, process sequence or execution mapping. Explicit relationships and their qualifications remain available in the Continuum Manifest.",
+      "sources": ["8882573df7ce43c6bc0f66da0a676139"]
+    }
+  ],
+  "application": [
+    {
+      "text": "Begin with the distinction between managed active information and authoritative persistence. Mneme manages Context and Pragma and provides Context Load, Context Save, Adhoc Resource Access and Adhoc Search. Mnemosyne establishes authoritative durable state and persistence outcomes. Cache retention, completed execution and publication of outputs do not independently establish durable authority. The component definitions retain the candidate standing and detailed-contract reservations of the accepted baseline.",
+      "sources": ["1af8a56358f7429fabfb57be66542a99", "7985e647bf9e4ca3ba70faf9e3e4ae02"]
+    },
+    {
+      "text": "Execution, operational management and messaging are separate responsibilities. Ponos provides governed execution; Energeia owns Praxis and Journey and observes operational progression. Energeia's R1.x/R2.x boundary is Observe to Report, without autonomous changes to execution or workload. Petasos manages durable queues and PetasosParcel handoff; referenced information retains its own authority. Read these responsibilities together without turning their collaboration into an inferred component hierarchy.",
+      "sources": ["b521762c1ea444b48cd5f66be3752d30", "fb3f37a6ac614415ac486a6de9d35994", "195e5f10db8e419391354197b5d7a8cc"]
+    },
+    {
+      "text": "At the interaction boundaries, Pylai supplies external interoperability while Iris supplies contextual human interaction. Themis owns authorisation semantics and consumes trusted authenticated Identity rather than authenticating it. Agora controls collaboration semantics and managed Room/Space intent; Omilia performs collaboration operations. These responsibilities do not confer ownership of information merely conveyed through them. Detailed representations and deferred mechanisms remain as qualified in their definitions.",
+      "sources": ["e3e4147fea3640198dc251ed41ee854d", "e927c1af96c64fcd979be659bee2cbe3", "899d34ec491948b68aad09e507dea6d1", "d1c4053e68384080b8eb79d2008632ba"]
+    },
+    {
+      "text": "Calliope-Models and Calliope-DataSets distinguish build-time representation from runtime content management. Models supplies structural definitions and library contracts. DataSets owns mutable governed content and uses the established information-management and persistence responsibilities. This distinction does not select a new deployment or storage allocation. The information map that follows remains a separate view of information concepts, not an inferred physical schema.",
+      "sources": ["307b3440a507403f8bc214d290bffb6a", "53bf6815c7a54ed0abde9b1aad311843"]
+    }
+  ]
+}

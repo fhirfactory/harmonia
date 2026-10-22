@@ -28,7 +28,9 @@ CONFIG = Path('enterprise-architecture/governance/continuum')
 TOOLING = Path('enterprise-architecture/tooling')
 SCHEMAS = TOOLING / 'schemas'
 DESIGN = Path('enterprise-architecture/design/archimate')
-PUBLICATION = CONTINUUM / 'documentation/published'
+DOCUMENTATION = Path('enterprise-architecture/documentation')
+PUBLICATION = DOCUMENTATION / 'continuum-manifest/published'
+RAD_PUBLICATION = DOCUMENTATION / 'continuum-rad/published'
 MANIFEST = CONTINUUM / 'MANIFEST.md'
 NS = 'http://www.opengroup.org/xsd/archimate/3.0/'
 N = {'a': NS}
@@ -111,9 +113,9 @@ def load(root=ROOT):
     catalogue = read_json(root / CONFIG / 'type-catalogue.json')
     result = {}
     for path in sorted((root / CONTINUUM).rglob('*.md')):
-        # Only the governed publication subtree and exact root manifest path
-        # are derived outputs. Other Markdown must still validate as elements.
-        if path.is_relative_to(root / PUBLICATION) or path == root / MANIFEST:
+        # Publications live outside canonical state. Only the exact generated
+        # navigation manifest is exempt; every other Markdown must be an element.
+        if path == root / MANIFEST:
             continue
         metadata, body = decode(path.read_text())
         expected = element_path(metadata, catalogue)

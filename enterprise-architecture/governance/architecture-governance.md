@@ -202,11 +202,10 @@ The accepted target structure is:
 
 ```text
 enterprise-architecture/
-├── continuum/
-│   ├── <Enterprise/Solution Architecture content>
-│   └── documentation/
-│       └── published/
-│           └── <LaTeX publication>
+├── continuum/                 <canonical Enterprise/Solution Architecture>
+├── documentation/
+│   ├── continuum-manifest/    <structural/catalogue publication>
+│   └── continuum-rad/         <narrative LaTeX publication>
 ├── design/
 │   ├── archimate/
 │   ├── review/<version>/
@@ -216,13 +215,18 @@ enterprise-architecture/
 │       │   └── ai-agent-tasks/<timestamp>-<task>.md
 │       └── after/
 │           └── ai-agent-reports/<timestamp>-<report>.md
-└── governance/
+├── governance/
+└── tooling/
 ```
 
 The version is the resulting architecture release. `continuum/` contains the
 governed Enterprise/Solution Architecture; Markdown is its representation format,
-not its architectural taxonomy. The publication location holds LaTeX publication
-material. `design/` holds architecture design/change lifecycle material. The
+not its architectural taxonomy. The two publication locations hold derived
+documentation outside canonical Continuum state. RAD-1.1.8's
+[bounded documentation change](../design/register/1.1.8/hcrl-1.1.8-001.complete.md)
+supplies the explicit relocation and narrative-publication authority; this changes
+publication placement, not the governance framework or architectural taxonomy.
+`design/` holds architecture design/change lifecycle material. The
 existing ArchiMate strategy remains authoritative beneath `design/archimate/`;
 restructuring does not authorise redesigning it.
 
@@ -280,7 +284,7 @@ retain highest authority. Original register sections remain unchanged history.
 The preceding adoption account records its original migration deferral; this
 application does not retrospectively change that account. Unretired source
 authority remains applicable to its defined scope. The governed publication area
-under continuum/documentation/published contains derived reading material, never
+at `documentation/continuum-manifest/published/` (relocated in RAD-1.1.8) contains derived reading material, never
 additional architectural elements or source identities.
 
 ### RAD-1.1.7 prospective baseline acceptance

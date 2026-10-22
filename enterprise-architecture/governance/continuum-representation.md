@@ -198,9 +198,12 @@ The root [MANIFEST.md](../continuum/MANIFEST.md) is a generated navigation/revie
 projection of every canonical element, authorised by the
 [manifest follow-up Task](../design/evidence/1.1.5/002/before/ai-agent-tasks/20261021T101602Z-generate-continuum-review-manifest.md).
 It owns no architectural meaning, identity or standing. Only this exact root file
-and the existing `continuum/documentation/published/` subtree are excluded from
-canonical element ingestion; arbitrary Markdown elsewhere still must validate as
-an element. The manifest's presence or manual modification never alters projection
+is excluded from canonical element ingestion; arbitrary Markdown elsewhere in
+`continuum/` still must validate as an element. RAD-1.1.8 relocates publications
+outside canonical state to `documentation/continuum-manifest/` and establishes
+the narrative LaTeX publication at `documentation/continuum-rad/`. Both are
+derived documentation products; neither supplies canonical architectural content.
+The manifest's presence or manual modification never alters projection
 inputs. Its separate byte-for-byte staleness check detects missing or changed output.
 
 `enterprise-architecture/tooling/continuum_manifest.py` validates canonical inputs before generating the

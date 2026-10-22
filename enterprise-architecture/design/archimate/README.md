@@ -9,7 +9,7 @@ geometry. Its element/relationship collections are empty. The current projector
 fills those collections from canonical Markdown, preserves the Views and adds
 navigation for newly represented elements.
 
-Import the [RAD-1.1.5 Exchange model](../../continuum/documentation/published/1.1.5/Harmonia-Architecture.xml)
+Import the [RAD-1.1.5 Exchange model](../../documentation/continuum-manifest/published/1.1.5/Harmonia-Architecture.xml)
 into Archi 5.10. A local native `.archimate` workspace is a human workbench;
 exported submissions are review inputs. Neither overwrites the canonical source
 or supplies acceptance. Preserve the exact baseline and submitted export under

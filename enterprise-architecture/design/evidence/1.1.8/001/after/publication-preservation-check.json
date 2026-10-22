@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "entryHead": "ca7c471d6a2cc65b5bb2c52a031d9fde27b7f474",
+  "release": {
+    "version": "1.1.8",
+    "previous_version": "1.1.7"
+  },
+  "unchangedCanonicalElements": 1602,
+  "canonicalProjectionTemplateUnchanged": true,
+  "exchangeDifference": "model release value only",
+  "manifestArchitecturalPayloadIdenticalTo117": true,
+  "legacyDocumentsWithOnlyNavigationPathChanges": 57,
+  "retainedManifestFilesRelocated": 16,
+  "historicalXmlPdfBytesUnchanged": true,
+  "navigationLinksChecked": 49,
+  "manifestBrowserSourceLinksChecked": 6408,
+  "modelArchitecturalHeadingsChecked": 2970,
+  "pdfArchitecturalBookmarksChecked": 2970,
+  "pdfBookmarkModelOrderTitlesAndDepth": "PASS",
+  "maximumModelSectionDepth": 7,
+  "pdfPages": 532,
+  "pdfSha256": "3dd21d32b3fcf6dac10bfcbab59e6a785c70bd7d0fde212bb9b74a4711ee5470",
+  "pdfLog": "no overfull boxes, missing characters, undefined or duplicate references, or pending rerun",
+  "visualInspection": "Inspected source-cited Strategy explanation/diagram, historical model chapter (PDF page 291), and Petasos/Mneme descriptions (PDF page 490). Historical branches remain qualified in model position; no appendix reclassification.",
+  "limits": "No architectural acceptance or real Archi transport asserted. Task instruction-entry event times and prefixes remain unresolved for Solution Architect treatment. Historical evidence/register paths retain originating locators."
+}

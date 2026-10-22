@@ -12,6 +12,7 @@ from urllib.parse import urlsplit, unquote
 import markdown
 from lxml import html
 import architecture_continuum as c
+import publish_continuum_rad as rad
 
 
 def verify(root=c.ROOT):
@@ -25,8 +26,8 @@ def verify(root=c.ROOT):
             dest = stage / path.relative_to(root)
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(path, dest)
-        for rel in (Path('enterprise-architecture/governance'), c.TOOLING, c.DESIGN):
-            shutil.copytree(root / rel, stage / rel, ignore=shutil.ignore_patterns('__pycache__', '.venv'))
+        for rel in (Path('enterprise-architecture/governance'), c.TOOLING, c.DESIGN, rad.SOURCE):
+            shutil.copytree(root / rel, stage / rel, ignore=shutil.ignore_patterns('__pycache__', '.venv', 'published'))
         shutil.copyfile(root / 'architecture-release.json', stage / 'architecture-release.json')
         # Copy only concrete current EA design targets used by standing link
         # verification. Do not load/copy historical evidence trees or releases.
@@ -59,13 +60,16 @@ def verify(root=c.ROOT):
                                          if p and not Path(p).resolve().is_relative_to(root.resolve()))
         prefix = [sys.executable, '-B']
         code = str(c.TOOLING)
+        rad_relative = c.RAD_PUBLICATION / version
         commands = [prefix + [code + '/architecture_continuum.py', 'validate'],
                     prefix + [code + '/continuum_manifest.py'],
                     prefix + [code + '/architecture_continuum.py', 'project', '--output', str(relative / 'Harmonia-Architecture.xml')],
                     prefix + [code + '/publish_continuum.py', '--output', str(relative)],
+                    prefix + [code + '/publish_continuum_rad.py', '--output', str(rad_relative)],
                     prefix + [code + '/continuum_manifest.py', '--check'],
                     prefix + [code + '/architecture_continuum.py', 'project', '--output', str(relative / 'Harmonia-Architecture.xml'), '--check'],
                     prefix + [code + '/publish_continuum.py', '--output', str(relative), '--check'],
+                    prefix + [code + '/publish_continuum_rad.py', '--output', str(rad_relative), '--check'],
                     prefix + [code + '/verify_continuum_links.py', '--report', 'links.json'],
                     prefix + [code + '/continuum_workbench.py', 'review', '--baseline', str(relative / 'Harmonia-Architecture.xml'), '--submitted', str(relative / 'Harmonia-Architecture.xml'), '--output', 'review.json'],
                     prefix + [code + '/exchange_compare.py', 'compare', '--baseline', str(relative / 'Harmonia-Architecture.xml'), '--submitted', str(relative / 'Harmonia-Architecture.xml'), '--report', 'raw.json'],
@@ -91,6 +95,12 @@ def verify(root=c.ROOT):
         actual = (stage / c.MANIFEST).read_bytes()
         c.require(actual == (root / c.MANIFEST).read_bytes(), 'Isolated manifest differs')
         hashes[str(c.MANIFEST)] = c.sha(actual)
+        # Compare every derived narrative source/correspondence artifact; PDF
+        # compilation/inspection is a separate publication check.
+        for name in rad.outputs(stage, stage / rad_relative):
+            actual = (stage / rad_relative / name).read_bytes()
+            c.require(actual == (root / rad_relative / name).read_bytes(), 'Isolated RAD differs: ' + name)
+            hashes[str(rad_relative / name)] = c.sha(actual)
         for forbidden in ('docs', 'scripts', '.git'):
             c.require(not (stage / forbidden).exists(), 'Forbidden isolated input: ' + forbidden)
         c.require(before == {str(p.relative_to(stage)): c.sha(p.read_bytes()) for _, _, p in c.load(stage)[1].values()}, 'Isolated operations modified canonical sources')

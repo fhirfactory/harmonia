@@ -44,6 +44,9 @@ docs/latex/*.synctex.gz
 docs/latex/*.pdf
 docs/latex/*.toc
 
+# Derived Continuum RAD compilation intermediates (published PDF is retained)
+enterprise-architecture/documentation/continuum-rad/published/*/build/
+
 # Logs and runtime artifacts
 *.log
 npm-debug.log*
