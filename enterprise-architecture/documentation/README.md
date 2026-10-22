@@ -18,7 +18,13 @@ and [existing EA tooling](../tooling/README.md). Generate/check with
 `make -C enterprise-architecture/tooling all`; compile the narrative PDF with
 `make -C enterprise-architecture/tooling rad-pdf`.
 
-Current release: **1.1.8**, predecessor **1.1.7**. The
+Current governed release: **1.1.9**, predecessor **1.1.8**. The
+[completed 1.1.9 HCRL](../design/register/1.1.9/hcrl-1.1.9-001.complete.md) records
+the Solution Architect's acceptance and confirmation of the governance-only
+Principle-authority consolidation.
+The unchanged architecture publications remain at **1.1.8** under the
+[release policy](../governance/architecture-release-policy.md).
+The
 [completed 1.1.8 HCRL](../design/register/1.1.8/hcrl-1.1.8-001.complete.md)
 records the Solution Architect's accepted documentation change and confirmation. The
 [accepted 1.1.7 baseline](../design/register/1.1.7/hcrl-1.1.7-001.complete.md)

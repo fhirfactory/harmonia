@@ -2,7 +2,16 @@
 
 # Harmonia Architectural Axioms
 
-The following individually represented Principles are the highest architectural authority. RAD-1.1.5 changes their canonical representation, not their meaning, identity or authority. This page is navigation, not a second definition register.
+The Architecture Continuum Principle elements linked below are the sole current
+normative definitions of Harmonia's architectural axioms and retain the highest
+architectural authority. Their canonical meaning, wording and identity are unchanged.
+This page provides navigation and governance context; it does not define the axioms.
+
+**One definition; many references.** Current governance, guidance, documentation
+and tooling reference these Principles rather than maintain independent normative
+copies. Context about their application does not redefine them. Derived publications
+remain reading projections of canonical content, with no independent authority.
+Historical registers, release publications and evidence retain their historical roles.
 
 The [original register](../../docs/markdown/governance/architectural-axioms.md) preserves unchanged source sections and supersession correspondence. The [representation contract](continuum-representation.md) and [HCRL 002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md) record application and historical review standing; [RAD-1.1.7 acceptance](../design/register/1.1.7/hcrl-1.1.7-001.complete.md) records prospective holistic acceptance with individual standing and residual matters preserved.
 
@@ -48,8 +57,8 @@ The [original register](../../docs/markdown/governance/architectural-axioms.md) 
 
 The individual Principles linked above are the maintained axiom definitions.
 
-This document defines the Architectural Axioms of the Harmonia Health
-Integration Environment (HIE). The axioms describe the fundamental
+The linked Continuum Principles define the Architectural Axioms of the Harmonia
+Health Integration Environment (HIE). The axioms describe the fundamental
 architectural truths upon which Harmonia is designed. They establish the
 boundaries within which architecture decisions, subsystem designs,
 implementation patterns and technology choices are made. The axioms are
@@ -86,8 +95,9 @@ Where existing implementation or documentation conflicts with an axiom,
 the conflict SHALL be identified and resolved explicitly. Existing
 implementation is not, by itself, evidence of architectural intent.
 
-The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are used
-normatively throughout this document.
+The governance and review guidance on this page applies the linked Principles;
+it supplies no alternative axiom definitions. The keywords SHALL, SHALL NOT,
+SHOULD, SHOULD NOT and MAY govern that application context.
 
 ## 6. Relationship to Architecture Decisions
 

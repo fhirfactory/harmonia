@@ -3,6 +3,7 @@
 import copy
 import gzip
 from pathlib import Path
+import re
 import sys
 import tempfile
 import unittest
@@ -116,6 +117,49 @@ class CurrentEaTests(unittest.TestCase):
             self.assertEqual(report['repositoryInstructionSourceCitations'], 1)
             (config / 'current.md').write_text('# Current\n')
             self.assertEqual(links.verify(root)['status'], 'PASS')
+
+    def test_axiom_navigation_identifies_each_canonical_principle(self):
+        elements = c.load()[1]
+        axioms = {m['displayName'].split()[0]: (m, path)
+                  for m, _, path in elements.values()
+                  if m['archimateType'] == 'Principle'
+                  and re.match(r'^AX-\d{2} ', m['displayName'])}
+        self.assertEqual(set(axioms), {f'AX-{n:02}' for n in range(1, 19)})
+        page = c.ROOT / 'enterprise-architecture/governance/architectural-axioms.md'
+        text = page.read_text()
+        for axiom, (metadata, path) in axioms.items():
+            with self.subTest(axiom=axiom):
+                self.assertIn(f'<a id="{axiom.lower()}"></a>', text)
+                self.assertIn(f'[{metadata["displayName"]}](../continuum/motivation/principle/{path.name})', text)
+        self.assertIn('sole current normative definitions', ' '.join(text.split()))
+        self.assertNotIn('This document defines the Architectural Axioms', text)
+
+    def test_current_ea_does_not_copy_axiom_definition_paragraphs(self):
+        # A bounded copy guard, not a semantic classifier: contextual application
+        # remains legitimate. Canonical content, prior publications and governed
+        # historical review/register/evidence are deliberately outside this scan.
+        definitions = []
+        for metadata, body, _ in c.load()[1].values():
+            if metadata['archimateType'] != 'Principle' or not re.match(r'^AX-\d{2} ', metadata['displayName']):
+                continue
+            section = re.search(r'^#### Axiom\s*\n(.*?)(?=^#### |\Z)', body, re.M | re.S)
+            self.assertIsNotNone(section, metadata['displayName'])
+            for paragraph in re.split(r'\n\s*\n', section[1].strip()):
+                normalized = ' '.join(paragraph.split())
+                if len(normalized.split()) >= 10:
+                    definitions.append((metadata['displayName'], normalized))
+        ea = c.ROOT / 'enterprise-architecture'
+        for path in sorted(ea.rglob('*')):
+            relative = path.relative_to(ea)
+            if relative.parts[0] == 'continuum' or set(relative.parts) & {'published', '__pycache__', 'schemas'}:
+                continue
+            if relative.parts[:2] in (('design', 'review'), ('design', 'register'), ('design', 'evidence')):
+                continue
+            if not path.is_file() or path.suffix not in {'.md', '.tex', '.json', '.py', '.js'}:
+                continue
+            text = ' '.join(path.read_text().split())
+            for name, definition in definitions:
+                self.assertNotIn(definition, text, f'{relative}: copied definition of {name}; reference its Continuum Principle')
 
 
 if __name__ == '__main__':

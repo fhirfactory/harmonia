@@ -1,0 +1,50 @@
+{
+  "release": {
+    "version": "1.1.9",
+    "previous_version": "1.1.8"
+  },
+  "currentEaTests": {
+    "status": "PASS",
+    "tests": 50,
+    "seconds": 157.384,
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps timeout 180s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -v"
+  },
+  "architectureTests": {
+    "status": "PASS",
+    "tests": 90,
+    "classes": 11,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 30.621,
+    "command": "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 timeout 180s mvn -o test -pl paradeigma/paradeigma-test -am -Dtest=*ArchitectureTest -Dsurefire.failIfNoSpecifiedTests=false"
+  },
+  "temporaryPublicationChecks": {
+    "status": "PASS",
+    "stage": "/tmp/harmonia-1.1.9-verification",
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps timeout 240s make -C enterprise-architecture/tooling continuum continuum-rad check browser-test",
+    "checks": [
+      "canonical identity/reference/provenance",
+      "native naming/containment",
+      "offline XSD/Exchange references",
+      "generated Manifest/Exchange/browser/catalogue/narrative sources",
+      "release/staleness/local links",
+      "browser DOM contract"
+    ],
+    "retainedReleasePublicationsChanged": false
+  },
+  "touchedEaTaskHcrlLinks": {
+    "status": "PASS",
+    "links": 73
+  },
+  "initialEnvironmentFailure": {
+    "status": "FAIL: dependency/import prerequisite; corrected before completed suite",
+    "diagnostic": "Default Python lacked jsonschema: 3 import errors; no architectural behaviour failure established",
+    "resolution": "Used already installed declared dependencies at /tmp/harmonia-ea-deps; no production change or network installation"
+  },
+  "limits": [
+    "No new retained architecture publication or PDF compilation",
+    "No actual Archi transport or visual review",
+    "No architectural acceptance supplied"
+  ]
+}

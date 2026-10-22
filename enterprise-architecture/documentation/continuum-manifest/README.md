@@ -7,7 +7,7 @@ here, relocated from `enterprise-architecture/continuum/documentation/` in 1.1.8
 The root Continuum `MANIFEST.md` remains its existing generated navigation
 projection; individually represented Markdown elements remain canonical.
 
-Current **1.1.8**: [browser](published/1.1.8/continuum.html),
+Latest publication (**1.1.8**): [browser](published/1.1.8/continuum.html),
 [element index](published/1.1.8/README.md),
 [ArchiMate Exchange](published/1.1.8/Harmonia-Architecture.xml),
 [LaTeX catalogue](published/1.1.8/continuum-catalogue.tex).

@@ -28,8 +28,9 @@ Integration Environment (HIE) codebase.
 ## 1. Architectural Authority
 
 All architecture, design, implementation and automated-agent activity
-within Harmonia is governed by the Harmonia Architectural Axioms defined
-in:
+within Harmonia is governed by the Harmonia Architectural Axioms normatively
+defined by the canonical Architecture Continuum Principle elements. Navigate to
+those definitions through:
 
     enterprise-architecture/governance/architectural-axioms.md
 
@@ -679,7 +680,7 @@ reconciliation and authorisation governed by that contract and section 1.2.
 
 A Junie plan MUST be interpreted against, in order of authority:
 
-1. `enterprise-architecture/governance/architectural-axioms.md`
+1. The canonical Continuum Principles linked from `enterprise-architecture/governance/architectural-axioms.md` (navigation and governance context)
 2. this `AGENTS.md`
 3. applicable accepted Architecture Decision Records
 4. applicable requirements and design contracts

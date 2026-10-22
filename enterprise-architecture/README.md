@@ -15,7 +15,14 @@ The [Continuum Manifest](documentation/continuum-manifest/README.md) publishes t
 structural catalogue; the [Continuum RAD](documentation/continuum-rad/README.md)
 publishes the narrative architecture. Both derive from canonical Continuum state.
 
-Current **1.1.8** outputs: [narrative RAD PDF](documentation/continuum-rad/published/1.1.8/continuum-rad.pdf),
+Current governed release: **1.1.9**, predecessor **1.1.8**. The
+[completed 1.1.9 HCRL](design/register/1.1.9/hcrl-1.1.9-001.complete.md) records
+the Solution Architect's acceptance and confirmation of the bounded
+Principle-authority consolidation.
+The [axiom navigation page](governance/architectural-axioms.md) links to the
+Continuum Principles that solely define the architectural axioms.
+
+Latest architecture publications (**1.1.8**): [narrative RAD PDF](documentation/continuum-rad/published/1.1.8/continuum-rad.pdf),
 [architecture browser](documentation/continuum-manifest/published/1.1.8/continuum.html),
 [element index](documentation/continuum-manifest/published/1.1.8/README.md),
 [ArchiMate Exchange](documentation/continuum-manifest/published/1.1.8/Harmonia-Architecture.xml)
