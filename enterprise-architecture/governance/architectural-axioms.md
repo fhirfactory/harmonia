@@ -4,7 +4,7 @@
 
 The following individually represented Principles are the highest architectural authority. RAD-1.1.5 changes their canonical representation, not their meaning, identity or authority. This page is navigation, not a second definition register.
 
-The [original register](../../docs/markdown/governance/architectural-axioms.md) preserves unchanged source sections and supersession correspondence. The [representation contract](continuum-representation.md) and [HCRL 002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md) record application and holistic review standing.
+The [original register](../../docs/markdown/governance/architectural-axioms.md) preserves unchanged source sections and supersession correspondence. The [representation contract](continuum-representation.md) and [HCRL 002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md) record application and historical review standing; [RAD-1.1.7 acceptance](../design/register/1.1.7/hcrl-1.1.7-001.complete.md) records prospective holistic acceptance with individual standing and residual matters preserved.
 
 <a id="ax-01"></a>
 - [AX-01 Harmonia Is Health-Information Centric](../continuum/motivation/principle/e9bd61acaaea4577bc4086a5639e52c3.md)

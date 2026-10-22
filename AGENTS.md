@@ -96,7 +96,11 @@ for element authoring, migration, validation and projection. Native ArchiMate ty
 and governed Harmonia specialisations determine placement; documents and paths
 never establish identity or architectural standing. The
 [HCRL 002](enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md)
-records application and unresolved matters; holistic acceptance remains pending.
+preserves historical application and unresolved matters. The prospective
+[1.1.7 acceptance](enterprise-architecture/design/register/1.1.7/hcrl-1.1.7-001.complete.md)
+records the Solution Architect's acceptance of the reconciled Continuum as the
+canonical architectural baseline, preserving every element/assertion's existing
+standing and all explicit residual matters. Releases 1.1.5 and 1.1.6 are unchanged.
 
 Current EA governance/metamodel contracts and operational tooling are maintained under
 `enterprise-architecture/governance/` and `enterprise-architecture/tooling/`.

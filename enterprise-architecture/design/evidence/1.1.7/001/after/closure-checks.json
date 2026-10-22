@@ -1,0 +1,123 @@
+{
+  "version": "1.1.7",
+  "previous_version": "1.1.6",
+  "originating_head": "e84c45f627ba958755167a99362e7b8fd5a74847",
+  "historical_records_evidence_publications_sources_preserved": "PASS: no tracked changes against originating HEAD",
+  "canonical_source_preservation": {
+    "outcome": "PASS",
+    "tracked_files_unchanged": 1602,
+    "untracked_canonical_files": 0,
+    "meaning": "Byte preservation includes element/assertion standing, residual metadata and authored Views; no semantic re-review."
+  },
+  "exchange_comparison": "PASS: byte-identical to 1.1.6 except the single model release value",
+  "browser_architectural_payload": "PASS: identical to 1.1.6; presentation boilerplate changes only",
+  "index_catalogue_comparison": "PASS: release value and neutral acceptance boilerplate only",
+  "architecture_tests": {
+    "outcome": "PASS",
+    "classes": 11,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": "timeout --signal=TERM --kill-after=5s 240s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false"
+  },
+  "navigation_and_hcrl_structure": {
+    "outcome": "PASS",
+    "checked_documents": [
+      "AGENTS.md",
+      "enterprise-architecture/README.md",
+      "enterprise-architecture/governance/README.md",
+      "enterprise-architecture/governance/architectural-axioms.md",
+      "enterprise-architecture/governance/architecture-governance.md",
+      "enterprise-architecture/governance/continuum-representation.md",
+      "enterprise-architecture/design/review/1.1.7/hcrl-1.1.7-001.pending.md"
+    ],
+    "local_links_checked": 141,
+    "hcrl": "One opening table, three consecutive top-level DR sections; source decisions preserved verbatim."
+  },
+  "authored_views_and_projection_template": "PASS: design/archimate/ unchanged against originating HEAD",
+  "release_metadata": {
+    "outcome": "PASS",
+    "mechanism": "architecture_release.py bump --expect 1.1.6, invoked once",
+    "result": {
+      "version": "1.1.7",
+      "previous_version": "1.1.6"
+    }
+  },
+  "current_build": {
+    "outcome": "PASS",
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps make -C enterprise-architecture/tooling all",
+    "tests": 43,
+    "limits": "Initial default-Python invocation failed before validation because jsonschema was unavailable. Existing declared packages under /tmp/harmonia-ea-deps supplied the corrected run; no dependency installation or repository change."
+  },
+  "final_generation": {
+    "outcome": "PASS",
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps make -C enterprise-architecture/tooling continuum check",
+    "scope": "After the final validation-report status wording correction; generation, staleness, offline schema, references, naming, containment and standing-aware links."
+  },
+  "browser_smoke": {
+    "outcome": "PASS",
+    "command": "make -C enterprise-architecture/tooling browser-test",
+    "limits": "DOM-contract smoke only; no visual browser or actual Archi transport claim."
+  },
+  "publication_report_comparison": "PASS: unchanged validation facts except neutral acceptance-status wording and derived artifact hashes",
+  "independent_reproducibility": {
+    "outcome": "PASS",
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps make -C enterprise-architecture/tooling verify-independent",
+    "canonical_sources": 1602,
+    "identical_artifacts": {
+      "Harmonia-Architecture.xml": "87b83ec162bf06fd35044eb22f724a81a39df2f99551190bf5050d82dafbfded",
+      "continuum.html": "a12c951084fd938ceeb155200be25b974295f0b8626d76dd25a5cfd33dbcaef2",
+      "README.md": "70798d834345759ce61427c28437a82cab465271ef2ae834866f19320262127e",
+      "continuum-catalogue.tex": "a0667fced99df4c4a646f6b778521b2127f1c3121d691532394e26cfa9dfa0dd",
+      "publication.json": "3a49dc7420fb68972f5e710cba12423b44ed4e86f1b385a775bb66754b56200f",
+      "enterprise-architecture/continuum/MANIFEST.md": "35d2c64b9439badccb8d97153d6b533c17365e65d8ed24e5f230bd5c4b244aa5"
+    },
+    "isolated_tests": 43,
+    "legacy_rad_present": false,
+    "scripts_present": false,
+    "historical_configuration_present": false,
+    "limits": "Synthetic creation/application and transport fixtures; no actual Archi execution, visual inspection or architectural acceptance asserted."
+  },
+  "reviewed_pending_input": {
+    "path": "enterprise-architecture/design/review/1.1.7/hcrl-1.1.7-001.pending.md",
+    "sha256": "2481a9fb1e38d3f588741319d1cbdbbb1fe20e9d1e8cc78db377535a99dac674",
+    "preserved": "Required unchanged as reviewed input; Accepted DR-1, DR-2 and DR-3; subsequent Complete instruction."
+  },
+  "final_registration": {
+    "outcome": "PASS",
+    "completed_hcrl": "enterprise-architecture/design/register/1.1.7/hcrl-1.1.7-001.complete.md",
+    "reviewed_input_and_dispositions": "Unchanged reviewed pending SHA-256 and verbatim opening table",
+    "local_links_checked": 839,
+    "documents_checked": [
+      "AGENTS.md",
+      "enterprise-architecture/README.md",
+      "enterprise-architecture/continuum/documentation/published/1.1.7/README.md",
+      "enterprise-architecture/design/evidence/1.1.7/001/before/ai-agent-tasks/unresolved-continuum-baseline-acceptance.md",
+      "enterprise-architecture/design/review/1.1.7/hcrl-1.1.7-001.pending.md",
+      "enterprise-architecture/governance/README.md",
+      "enterprise-architecture/governance/architectural-axioms.md",
+      "enterprise-architecture/governance/architecture-governance.md",
+      "enterprise-architecture/governance/continuum-representation.md",
+      "enterprise-architecture/design/review/1.1.7/hcrl-1.1.7-001.pending.md",
+      "enterprise-architecture/design/register/1.1.7/hcrl-1.1.7-001.complete.md",
+      "enterprise-architecture/design/evidence/1.1.7/001/before/ai-agent-tasks/unresolved-continuum-baseline-acceptance.md",
+      "enterprise-architecture/design/evidence/1.1.7/001/after/ai-agent-reports/20261022T090930Z-continuum-baseline-acceptance.md"
+    ],
+    "source_and_history_preservation": "Rechecked against originating HEAD after completion",
+    "whitespace": "PASS",
+    "release": "1.1.7 / previous 1.1.6, no additional increment"
+  },
+  "final_read_only_check": {
+    "outcome": "PASS",
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps make -C enterprise-architecture/tooling check",
+    "meaning": "After completed-register navigation; no stale generated artifact, reference, schema or link finding."
+  },
+  "iteration_provenance": {
+    "outcome": "UNRESOLVED",
+    "errors": 0,
+    "tasks": 1,
+    "reports": 1,
+    "treatment": "Solution Architect Accepted DR-3 explicitly treats the unavailable Task time/prefix; no further remediation required, no fabricated time or mechanical PASS."
+  }
+}

@@ -2,7 +2,7 @@
 
 # Architecture governance
 
-Current element authoring follows [Continuum Representation](continuum-representation.md) and the [Incorporation Praxis](continuum-incorporation-praxis.md). The [individual Architectural Axioms](architectural-axioms.md) retain highest authority. [RAD-1.1.5 HCRL 002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md) presents the incorporated result for holistic review; the historical adoption accounts below retain their original scope.
+Current element authoring follows [Continuum Representation](continuum-representation.md) and the [Incorporation Praxis](continuum-incorporation-praxis.md). The [individual Architectural Axioms](architectural-axioms.md) retain highest authority. [RAD-1.1.7 acceptance](../design/register/1.1.7/hcrl-1.1.7-001.complete.md) records prospective acceptance of the reconciled Continuum baseline and [1.1.5-002](../design/review/1.1.5/hcrl-1.1.5-002.pending.md)'s supporting group, preserving all residual standing. The original review and historical adoption accounts retain their original scope.
 
 [Architecture Governance](architecture-governance.md) defines the common
 Architecture Review, Solution Architect authority, HCRL Decision Review Log,

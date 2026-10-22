@@ -283,6 +283,22 @@ authority remains applicable to its defined scope. The governed publication area
 under continuum/documentation/published contains derived reading material, never
 additional architectural elements or source identities.
 
+### RAD-1.1.7 prospective baseline acceptance
+
+Mark Hunter, Solution Architect, accepts historical HCRL 1.1.5-002 DR-5 and DR-6
+through the [prospective 1.1.7 HCRL](../design/register/1.1.7/hcrl-1.1.7-001.complete.md).
+The reconciled Architecture Continuum is the current canonical architectural
+baseline and the RAD → Continuum transition is accepted as complete. The bounded
+supporting Minutiae and retained formal evidence are accepted with no further
+remediation required solely to close that transition.
+
+This is a new **1.1.6 → 1.1.7** acceptance event. The original 1.1.5-002 pending
+record/evidence and completed release history remain unchanged. Baseline acceptance
+preserves individual element/assertion standing and all deliberately unresolved,
+pending, historical and superseded material; it creates no residual resolution
+or new canonical architectural content. The earlier migration/adoption accounts
+above retain their historical scope.
+
 ### Continuing knowledge boundary
 
 Governance machinery, rules and context belong in

@@ -9,6 +9,12 @@ authorises establishment and application of this representation. [HCRL 002](../d
 records the incorporated result and unresolved questions for holistic review.
 The rejected 001 document-carrier strategy supplies no application authority.
 
+The Solution Architect's [prospective RAD-1.1.7 acceptance](../design/register/1.1.7/hcrl-1.1.7-001.complete.md)
+accepts the reconciled Continuum as the canonical architectural baseline and the
+bounded supporting group from HCRL 002. This completes its holistic review without
+altering individual element/assertion standing, residual questions or released
+1.1.5/1.1.6 history. The original application/review account remains provenance.
+
 The continuum's architectural unit is **one architectural element with one
 resource-owned canonicalId and one canonical Markdown file**. The native ArchiMate
 metamodel supplies its classification. Harmonia Feature specialises Capability;
@@ -182,8 +188,9 @@ never supplies duplicate source elements. Historical releases remain historical.
 
 Automated PASS demonstrates its stated checks only. Real Archi import/export,
 visual review and Solution Architect acceptance remain distinct outcomes. The
-resulting continuum is submitted for holistic review under HCRL 002; an agent
-cannot confirm its own architectural closure.
+resulting continuum was submitted for holistic review under HCRL 002; the
+prospective 1.1.7 decision above supplies human acceptance. An agent cannot
+confirm its own architectural closure.
 
 ## Applied validation and publication boundary
 

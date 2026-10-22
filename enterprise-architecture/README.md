@@ -4,6 +4,19 @@
 
 Current operations: [EA tooling](tooling/README.md), [governance](governance/README.md), and [completed RAD-1.1.6 operational succession](design/register/1.1.6/hcrl-1.1.6-001.complete.md).
 
+The Solution Architect's [prospective RAD-1.1.7 acceptance](design/register/1.1.7/hcrl-1.1.7-001.complete.md)
+accepts the reconciled Architecture Continuum as the current canonical
+architectural baseline and the completed RAD → Continuum transition. Existing
+unresolved, pending, historical and superseded material retains its standing;
+individual elements/assertions gain no different semantic approval.
+
+Current release outputs: [architecture browser](continuum/documentation/published/1.1.7/continuum.html),
+[element index](continuum/documentation/published/1.1.7/README.md),
+[ArchiMate Exchange](continuum/documentation/published/1.1.7/Harmonia-Architecture.xml)
+and [review/navigation manifest](continuum/MANIFEST.md).
+
+## Historical RAD-1.1.5 review-package account
+
 The following RAD-1.1.5 review-package account and links preserve their originating standing. Current publication is generated for the root `architecture-release.json` version under `continuum/documentation/published/<version>/`.
 
 The migrated architecture is ready for **holistic Solution Architect / ARB review**.

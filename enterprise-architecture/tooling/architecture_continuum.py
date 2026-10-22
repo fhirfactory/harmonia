@@ -296,7 +296,7 @@ def validate(root=ROOT, *, previous=None, pending=None):
             'provenanceCoverage': len(elements), 'sourceBindings': len(bindings),
             'supportedNativeTypes': len(catalogue['types']),
             'counts': [{'type': key[0], 'specialization': key[1], 'standing': key[2], 'currentness': key[3], 'count': count} for key, count in sorted(counts.items())],
-            'unresolvedProperties': unresolved, 'architecturalAcceptance': 'Pending holistic Solution Architect/ARB review'}
+            'unresolvedProperties': unresolved, 'architecturalAcceptance': 'See governed HCRLs; validation supplies no acceptance'}
 
 
 def properties(node, rows):
